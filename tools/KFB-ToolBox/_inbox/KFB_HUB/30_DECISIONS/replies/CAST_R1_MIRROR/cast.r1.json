@@ -1,0 +1,698 @@
+{
+ "schema": "kfb.cast/1",
+ "rev": 1,
+ "date": "2026-10-19",
+ "decision": "V-559",
+ "note": "Eine Darsteller-Liste für alle Scenelets. status ready = KFB-Augen/Lider/Clay/Karte geprüft (Bühne v1.2); pending = Rohasset, WSB optimiert vor dem ersten Auftritt. faction nach V-558 (Tabelle unten, offen bis Georgs Entscheid q124).",
+ "actors": {
+  "pencil": {
+   "label": "Bleistift",
+   "asset": "dropbox:50_BLENDER/B46/props/KFB_Prop_Pencil.r1.glb",
+   "card": "dropbox:50_BLENDER/B46/scenelet/pencil.figure.json",
+   "rig": "KFB_Squash",
+   "clips": [
+    "Idle",
+    "Hop",
+    "Joy",
+    "Scare",
+    "Write"
+   ],
+   "license": "CC0 (KayKit RPG Tools)",
+   "private": false,
+   "status": "ready",
+   "hub": "q123"
+  },
+  "eraser": {
+   "label": "Radiergummi",
+   "asset": "dropbox:50_BLENDER/B46/props/KFB_Prop_Eraser.r1.glb",
+   "card": "dropbox:50_BLENDER/B46/scenelet/eraser.figure.json",
+   "rig": "KFB_Squash",
+   "clips": [
+    "Idle",
+    "Hop",
+    "Joy",
+    "Scare",
+    "Erase"
+   ],
+   "license": "eigen (WSB)",
+   "private": false,
+   "status": "ready",
+   "hub": "q123"
+  },
+  "farmer_hut": {
+   "label": "Farmerin mit Hut",
+   "asset": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_hut.r1b.glb",
+   "card": "dropbox:50_BLENDER/B44/scenelet/farmer_hut.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready",
+   "hub": "q121"
+  },
+  "farmer_daumen": {
+   "label": "Farmer Daumen hoch",
+   "asset": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_daumen.r1.glb",
+   "card": "dropbox:50_BLENDER/B44/scenelet/farmer_daumen.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready"
+  },
+  "farmer_harke": {
+   "label": "Farmerin mit Mistgabel",
+   "asset": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_harke.r1b.glb",
+   "card": "dropbox:50_BLENDER/B44/scenelet/farmer_harke.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready"
+  },
+  "farmer_karre": {
+   "label": "Farmer mit Schubkarre",
+   "asset": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_karre.r1.glb",
+   "card": "dropbox:50_BLENDER/B44/scenelet/farmer_karre.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready"
+  },
+  "pet_cow": {
+   "label": "Cube Pet Kuh",
+   "card": "dropbox:50_BLENDER/B44/scenelet/cube_pet_cow.figure.json",
+   "rig": "pet",
+   "license": "CC0",
+   "private": false,
+   "status": "ready"
+  },
+  "pet_pig": {
+   "label": "Cube Pet Schwein",
+   "card": "dropbox:50_BLENDER/B44/scenelet/cube_pet_pig.figure.json",
+   "rig": "pet",
+   "license": "CC0",
+   "private": false,
+   "status": "ready"
+  },
+  "pet_chick": {
+   "label": "Cube Pet Küken",
+   "card": "dropbox:50_BLENDER/B44/scenelet/cube_pet_chick.figure.json",
+   "rig": "pet",
+   "license": "CC0",
+   "private": false,
+   "status": "ready"
+  },
+  "toy_soldier": {
+   "label": "Spielzeugsoldat (Squad)",
+   "asset": "dropbox:50_BLENDER/B11/_privat_kauf_asset/",
+   "card": "dropbox:50_BLENDER/B11/data/toy_soldier_squad.figure.r4.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb"
+   ],
+   "variant_assets": {
+    "duel_carbine": {
+     "asset": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_ToySoldier_duel.r2.glb",
+     "card": "dropbox:50_BLENDER/B50/data/toysoldier_duel.figure.json",
+     "note": "B50 Gunfight r2: Karabiner einhändig (q132 A), 18 Kampf-Clips"
+    },
+    "disco": {
+     "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_soldier.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/disco/data/disco_soldier.figure.json",
+     "note": "ohne Trage-Gewehr, Tanz-Clips"
+    }
+   }
+  },
+  "orc_legacy_b": {
+   "label": "Legacy Orc B (Bandleader)",
+   "asset": "dropbox:50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_Leader.r1.glb",
+   "card": "dropbox:50_BLENDER/ORKBAND/scenelet/orc_legacy_b.figure.json",
+   "rig": "KFB_Rig_Legacy",
+   "stretch": "V-555",
+   "license": "KayKit Legacy",
+   "private": true,
+   "status": "pending",
+   "note": "r1b mit Gummiarm in Arbeit",
+   "ra_paths": [
+    "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf"
+   ]
+  },
+  "orc_legacy_a": {
+   "label": "Legacy Orc A (Trompeter)",
+   "asset": "dropbox:50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_Trumpeter.r1.glb",
+   "card": "dropbox:50_BLENDER/ORKBAND/scenelet/orc_legacy_a.figure.json",
+   "rig": "KFB_Rig_Legacy",
+   "stretch": "V-555",
+   "license": "KayKit Legacy",
+   "private": true,
+   "status": "pending",
+   "ra_paths": [
+    "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf"
+   ]
+  },
+  "orc_raider": {
+   "label": "Orc Raider",
+   "asset": "dropbox:50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_Guitarist.r1.glb",
+   "card": "dropbox:50_BLENDER/ORKBAND/data/band_guitarist.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready",
+   "note": "Stammfassung Ork-Band r1b (proof-r1, sha = Band-GLB); Kampf-Fassung als Variante fight",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/character/OrcRaider.glb"
+   ],
+   "variant_assets": {
+    "fight": {
+     "asset": "dropbox:50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_raider.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/wrestling/data/fight_raider.figure.json",
+     "note": "ohne Instrument, 14 Kampf-Clips (Kontaktdaten 0.3), Boden ±1 cm"
+    }
+   }
+  },
+  "orc_brute": {
+   "label": "Orc Brute",
+   "asset": "dropbox:50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_Drummer.r1.glb",
+   "card": "dropbox:50_BLENDER/ORKBAND/data/band_drummer.figure.json",
+   "rig": "Rig_Large",
+   "license": "KayKit Mystery S6 (Kauf)",
+   "private": true,
+   "status": "ready",
+   "note": "Stammfassung Ork-Band r1b (proof-r1, sha = Band-GLB); Kampf-Fassung als Variante fight",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb"
+   ],
+   "variant_assets": {
+    "fight": {
+     "asset": "dropbox:50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_brute.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/wrestling/data/fight_brute.figure.json",
+     "note": "ohne Instrument, 14 Kampf-Clips (Kontaktdaten 0.3), Boden ±1 cm"
+    }
+   }
+  },
+  "skeleton_warrior": {
+   "label": "Skeleton Warrior",
+   "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_warrior.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Skeletons CC0; Tanz-Clips Mixamo-Ableitung → privat",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_warrior.figure.json",
+   "variant_assets": {
+    "friedhof": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_warrior.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_warrior.figure.json"
+    },
+    "cc0_ohne_tanz": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_warrior.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_warrior_cc0.figure.json",
+     "private": false
+    }
+   },
+   "clips": [
+    "kfb_dance_chicken_a",
+    "kfb_dance_house_a",
+    "kfb_dance_samba_a",
+    "kfb_dance_hip_hop_a",
+    "Idle_A",
+    "Death_A",
+    "kfb_rise_reverse_a",
+    "Spawn_Ground"
+   ],
+   "ready_by": "WSB B50 Friedhof 2026-10-19"
+  },
+  "skeleton_rogue": {
+   "label": "Skeleton Rogue",
+   "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_rogue.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Skeletons CC0; Tanz-Clips Mixamo-Ableitung → privat",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_rogue.figure.json",
+   "variant_assets": {
+    "friedhof": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_rogue.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_rogue.figure.json"
+    },
+    "cc0_ohne_tanz": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_rogue.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_rogue_cc0.figure.json",
+     "private": false
+    }
+   },
+   "clips": [
+    "kfb_dance_chicken_a",
+    "kfb_dance_house_a",
+    "kfb_dance_samba_a",
+    "kfb_dance_hip_hop_a",
+    "Idle_A",
+    "Death_A",
+    "kfb_rise_reverse_a",
+    "Spawn_Ground"
+   ],
+   "ready_by": "WSB B50 Friedhof 2026-10-19"
+  },
+  "skeleton_mage": {
+   "label": "Skeleton Mage",
+   "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_mage.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Skeletons CC0; Tanz-Clips Mixamo-Ableitung → privat",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_mage.figure.json",
+   "variant_assets": {
+    "friedhof": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_mage.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_mage.figure.json"
+    },
+    "cc0_ohne_tanz": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_mage.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_mage_cc0.figure.json",
+     "private": false
+    }
+   },
+   "clips": [
+    "kfb_dance_chicken_a",
+    "kfb_dance_house_a",
+    "kfb_dance_samba_a",
+    "kfb_dance_hip_hop_a",
+    "Idle_A",
+    "Death_A",
+    "kfb_rise_reverse_a",
+    "Spawn_Ground"
+   ],
+   "ready_by": "WSB B50 Friedhof 2026-10-19"
+  },
+  "skeleton_minion": {
+   "label": "Skeleton Minion",
+   "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_minion.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Skeletons CC0; Tanz-Clips Mixamo-Ableitung → privat",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Minion.glb",
+    "media/3D_Assets/KayKit Legacy/KayKit Legacy Character Pack - Skeletons 1.0/Models/characters/gltf/character_skeleton_minion.gltf"
+   ],
+   "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_minion.figure.json",
+   "ready_by": "WSB B50 Friedhof 2026-10-19",
+   "clips": [
+    "kfb_dance_chicken_a",
+    "kfb_dance_house_a",
+    "kfb_dance_samba_a",
+    "kfb_dance_hip_hop_a",
+    "Idle_A",
+    "Death_A",
+    "kfb_rise_reverse_a",
+    "Spawn_Ground"
+   ],
+   "variant_assets": {
+    "friedhof": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_minion.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_minion.figure.json"
+    },
+    "cc0_ohne_tanz": {
+     "asset": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_minion.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/graveyard/data/gy_minion_cc0.figure.json",
+     "private": false
+    },
+    "disco": {
+     "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_minion.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/disco/data/disco_minion.figure.json"
+    }
+   }
+  },
+  "black_knight": {
+   "label": "Black Knight (Torwächter, B45)",
+   "asset": "dropbox:50_BLENDER/B45/_privat_kauf_asset/KFB_Dark_Knight.r1c.glb",
+   "rig": "Rig_Large",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "note": "B45 prüft Large-Rig",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb"
+   ],
+   "variant_assets": {
+    "disco": {
+     "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_knight.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/disco/data/disco_knight.figure.json",
+     "note": "ohne Zweihänder, Umhang gekürzt; Stammfassung B45 r1c"
+    }
+   },
+   "card": "dropbox:50_BLENDER/B45/data/dark_knight.figure.json"
+  },
+  "demon_lord": {
+   "label": "Demon Lord",
+   "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_demon.r1.glb",
+   "rig": "Rig_Large",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "note": "Anführer der Monster (V-558)",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/disco/data/disco_demon.figure.json",
+   "ready_by": "WSB B50 Disco 2026-10-19",
+   "clips": "Tanz-Clips aus ra_disco_01 (Motion Library v2, privat) + Idle_A"
+  },
+  "witch": {
+   "label": "Hexe",
+   "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_witch.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "note": "Zauber-Clips aus B48 (V-557)",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/disco/data/disco_witch.figure.json",
+   "ready_by": "WSB B50 Disco 2026-10-19",
+   "clips": "Tanz-Clips aus ra_disco_01 (Motion Library v2, privat) + Idle_A"
+  },
+  "avian_swordsman": {
+   "label": "Avian Swordsman",
+   "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_avian.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/disco/data/disco_avian.figure.json",
+   "ready_by": "WSB B50 Disco 2026-10-19",
+   "clips": "Tanz-Clips aus ra_disco_01 (Motion Library v2, privat) + Idle_A"
+  },
+  "protagonist_a": {
+   "label": "Protagonist A (Teen)",
+   "asset": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_teen.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/disco/data/disco_teen.figure.json",
+   "ready_by": "WSB B50 Disco 2026-10-19",
+   "clips": "Tanz-Clips aus ra_disco_01 (Motion Library v2, privat) + Idle_A"
+  },
+  "hero_man": {
+   "label": "Ultra Turbo Hero Man",
+   "asset": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_red.r1.glb",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "variants": [
+    "rot",
+    "blau"
+   ],
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb"
+   ],
+   "card": "dropbox:50_BLENDER/B50/data/heroman_red.figure.json",
+   "variant_assets": {
+    "rot": {
+     "asset": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_red.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/data/heroman_red.figure.json"
+    },
+    "blau": {
+     "asset": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_blue.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/data/heroman_blue.figure.json"
+    }
+   },
+   "b64": "dropbox:50_BLENDER/B50/scenelet/_privat_kauf_asset/heroman_{red,blue}.glb.b64.txt",
+   "weapon": "Blaster an lowerarm.r (KFB_Grip/KFB_Muzzle, V-536/V-540)",
+   "clips": "17 (CombatRanged 1H, Dodge, Hit, Death, Idle, Strafe) mit Marken; Liste in der Karte",
+   "eyes": "KFB-Augen hinter dem Visier (occludedBy visor)",
+   "ready_by": "WSB B50 Gunfight r1 2026-10-19"
+  },
+  "astronaut_barbarathebee": {
+   "label": "Astronaut BarbaraTheBee",
+   "asset": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_BarbaraTheBee.r1.glb",
+   "rig": "Quaternius",
+   "license": "CC0",
+   "private": false,
+   "status": "ready",
+   "note": "V-552: Karte, KFB-Augen, Clay",
+   "ra_paths": [
+    "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Characters/GLTF/Astronaut_BarbaraTheBee.gltf"
+   ],
+   "card": "dropbox:50_BLENDER/B50/scifi/data/sf_BarbaraTheBee.figure.json",
+   "clips": [
+    "Idle",
+    "Wave",
+    "Yes",
+    "No",
+    "Walk",
+    "Run",
+    "Jump",
+    "Jump_Idle",
+    "Jump_Land",
+    "Duck",
+    "Punch",
+    "HitReact",
+    "Death"
+   ],
+   "ready_by": "WSB B50 Sci-Fi 2026-10-19"
+  },
+  "astronaut_fernandotheflamingo": {
+   "label": "Astronaut FernandoTheFlamingo",
+   "asset": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_FernandoTheFlamingo.r1.glb",
+   "rig": "Quaternius",
+   "license": "CC0",
+   "private": false,
+   "status": "ready",
+   "note": "V-552: Karte, KFB-Augen, Clay",
+   "ra_paths": [
+    "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Characters/GLTF/Astronaut_FernandoTheFlamingo.gltf"
+   ],
+   "card": "dropbox:50_BLENDER/B50/scifi/data/sf_FernandoTheFlamingo.figure.json",
+   "clips": [
+    "Idle",
+    "Wave",
+    "Yes",
+    "No",
+    "Walk",
+    "Run",
+    "Jump",
+    "Jump_Idle",
+    "Jump_Land",
+    "Duck",
+    "Punch",
+    "HitReact",
+    "Death"
+   ],
+   "ready_by": "WSB B50 Sci-Fi 2026-10-19"
+  },
+  "astronaut_finnthefrog": {
+   "label": "Astronaut FinnTheFrog",
+   "asset": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_FinnTheFrog.r1.glb",
+   "rig": "Quaternius",
+   "license": "CC0",
+   "private": false,
+   "status": "ready",
+   "note": "V-552: Karte, KFB-Augen, Clay",
+   "ra_paths": [
+    "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Characters/GLTF/Astronaut_FinnTheFrog.gltf"
+   ],
+   "card": "dropbox:50_BLENDER/B50/scifi/data/sf_FinnTheFrog.figure.json",
+   "clips": [
+    "Idle",
+    "Wave",
+    "Yes",
+    "No",
+    "Walk",
+    "Run",
+    "Jump",
+    "Jump_Idle",
+    "Jump_Land",
+    "Duck",
+    "Punch",
+    "HitReact",
+    "Death"
+   ],
+   "ready_by": "WSB B50 Sci-Fi 2026-10-19"
+  },
+  "astronaut_raetheredpanda": {
+   "label": "Astronaut RaeTheRedPanda",
+   "asset": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_RaeTheRedPanda.r1.glb",
+   "rig": "Quaternius",
+   "license": "CC0",
+   "private": false,
+   "status": "ready",
+   "note": "V-552: Karte, KFB-Augen, Clay",
+   "ra_paths": [
+    "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Characters/GLTF/Astronaut_RaeTheRedPanda.gltf"
+   ],
+   "card": "dropbox:50_BLENDER/B50/scifi/data/sf_RaeTheRedPanda.figure.json",
+   "clips": [
+    "Idle",
+    "Wave",
+    "Yes",
+    "No",
+    "Walk",
+    "Run",
+    "Jump",
+    "Jump_Idle",
+    "Jump_Land",
+    "Duck",
+    "Punch",
+    "HitReact",
+    "Death"
+   ],
+   "ready_by": "WSB B50 Sci-Fi 2026-10-19"
+  },
+  "combat_mech": {
+   "label": "Combat Mech",
+   "asset": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_CombatMech_duel.r2.glb",
+   "card": "dropbox:50_BLENDER/B50/data/combatmech_duel.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "weapon": "Minigun einhändig an lowerarm.r (KFB_Muzzle, V-536)",
+   "eyes": "KFB-Augen in der Visier-Nische",
+   "ready_by": "WSB B50 Gunfight r2 2026-10-19",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb"
+   ]
+  },
+  "clown": {
+   "label": "Clown (Jongleur)",
+   "asset": "dropbox:50_BLENDER/B50/clown/_privat_kauf_asset/KFB_Clown.r1.glb",
+   "card": "dropbox:50_BLENDER/B50/clown/data/clown.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "clips": "J5-Jonglage (cascade3_d, stop, talk, resume) + Idle_A; Requisiten-Spuren pin/donut/candy",
+   "ready_by": "WSB B50 Clown 2026-10-19",
+   "ra_paths": [
+    "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown"
+   ]
+  },
+  "ninja": {
+   "label": "Ninja (B26)",
+   "asset": "dropbox:50_BLENDER/B50/ninja/_privat_kauf_asset/KFB_Ninja_red_katana.r1.glb",
+   "card": "dropbox:50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json",
+   "rig": "Rig_Medium",
+   "license": "KayKit Mystery (Kauf)",
+   "private": true,
+   "status": "ready",
+   "variant_assets": {
+    "rot": {
+     "asset": "dropbox:50_BLENDER/B50/ninja/_privat_kauf_asset/KFB_Ninja_red_katana.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json"
+    },
+    "weiss": {
+     "asset": "dropbox:50_BLENDER/B50/ninja/_privat_kauf_asset/KFB_Ninja_white_dual.r1.glb",
+     "card": "dropbox:50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json"
+    },
+    "npc_b26": {
+     "asset": "dropbox:50_BLENDER/B26/_privat_kauf_asset/",
+     "card": "dropbox:50_BLENDER/B26/data/ninja_npc.figure.r1.json"
+    }
+   },
+   "weaponRule": "kaykit_melee_candidate (q136)",
+   "ready_by": "WSB B50 Ninja 2026-10-19"
+  }
+ },
+ "roles_by_scene": {
+  "skeleton_warrior": [
+   {
+    "scene": "ra_graveyard_01",
+    "role": "dancer"
+   },
+   {
+    "scene": "rpg_monster_camp (B49)",
+    "role": "raider",
+    "faction": "horde?"
+   }
+  ],
+  "skeleton_rogue": [
+   {
+    "scene": "ra_graveyard_01",
+    "role": "dancer"
+   },
+   {
+    "scene": "rpg_monster_camp (B49)",
+    "role": "raider"
+   }
+  ],
+  "skeleton_mage": [
+   {
+    "scene": "ra_graveyard_01",
+    "role": "dancer"
+   },
+   {
+    "scene": "rpg_monster_camp (B49)",
+    "role": "caster"
+   }
+  ],
+  "monstrosity": [
+   {
+    "scene": "ra_disco_01",
+    "role": "Alternative zum Knight"
+   },
+   {
+    "scene": "Dungeon-Raid",
+    "role": "boss",
+    "note": "wohnt nicht auf dem Friedhof (V-559)"
+   }
+  ],
+  "orc_raider": [
+   {
+    "scene": "orc_band_01",
+    "role": "guitarist"
+   },
+   {
+    "scene": "ra_fight_01",
+    "role": "fighter"
+   }
+  ],
+  "orc_brute": [
+   {
+    "scene": "orc_band_01",
+    "role": "drummer"
+   },
+   {
+    "scene": "ra_fight_01",
+    "role": "fighter"
+   }
+  ]
+ },
+ "factions": {
+  "schema": "kfb.factions/1",
+  "decision": "V-558",
+  "allianz": [
+   "adventurers (B48)",
+   "cleric",
+   "hoarder"
+  ],
+  "horde": [
+   "skeletons",
+   "demon_lord",
+   "tiefling"
+  ],
+  "open": [
+   "orcs_light_blue (q124)",
+   "orcs_green"
+  ],
+  "note": "Vampir bleibt außen vor (Georg 19.10.)."
+ }
+}

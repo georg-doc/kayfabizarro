@@ -8319,6 +8319,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-588",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "WS-NPC Status 1 beantwortet: Go für Push auf ws-npc/* (Deploy-Key nur mit Georgs Bestätigung, kein Merge); cast.r1.json + clips.r1.json als Daten-Spiegel in replies/CAST_R1_MIRROR (private GLBs nie in Git, Georg kopiert lokal); adventurer-mage nur als technischer Platzhalter hinter dem Debug-Hash, Abnahme nur mit farmer_harke + Lorekeeper; Waving (kfb_wave_a) as-is nur bei CC0-Lizenz, sonst lokal; Konzeptblatt NPC Phase A (65_SCENELETS/npc_a); NPC-Recherche-Kurzfassung für Sitzungen ohne Google-Doc; worldSave.js beim WS1-Lead ACK.",
+   "values": {},
+   "owner": "WS-NPC · WS1-Lead · Georg (lokale Kopie privater GLBs)",
+   "check": "A0/A1 gepusht, A2–A4 mit Platzhalter, Abnahme mit echten Figuren",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS-NPC kann ohne Dropbox nur über Git-Daten und lokale Kopien arbeiten; Mechanik darf vor den Figuren laufen, Abnahme nicht.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8406,7 +8421,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1010",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1011",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

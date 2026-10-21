@@ -1,0 +1,72 @@
+{
+ "scene": "npc_a",
+ "source": "BRIEF_WS1_NPC_LIFE_R2 (V-585) Phase A; WS-NPC Bauplan Status 1 (ws-npc/status); Writers Room Export 2026-10-20c (Rollen)",
+ "one_sentence": "Diese Szene zeigt zwei Bewohner, die ihren Tag leben und sich an der Wegkreuzung begegnen, weil ihre Pläne sich dort kreuzen, und der Spieler soll zuerst die Farmerin bei der Fluff-Ernte am Baum sehen.",
+ "story": "Farmer B (farmer_harke) erntet morgens Fluff im Obstgarten und träumt davon, aus der Scheune eine Strohballen-Bühne zu machen. Der Lorekeeper liest an der Billboard-Karte, was neu in der Welt ist, und sucht jemanden, dem er eine Aufgabe geben kann. An der Kreuzung grüßen sie sich (oder schweigen, wenn einer beschäftigt ist) und gehen weiter. Fühlen soll man: Die Welt läuft auch ohne mich.",
+ "image_idea": "Die Farmerin hebt die Mistgabel zum Gruß, der Lorekeeper hebt das Buch, beide stehen mit 1,5 m Abstand auf der Kreuzung, der Weg führt in zwei Richtungen weiter.",
+ "focal": {
+  "first": "farmer_harke am Ernte-Baum (Bewegung + Fluff)",
+  "then": [
+   "Weg zur Kreuzung",
+   "Lorekeeper an der Billboard-Karte"
+  ]
+ },
+ "read_order": "Bewegung am Baum → Weg → zweite Figur → Begegnung",
+ "space": {
+  "foreground": "Weg-Rand mit Kontakt-Geometrie (Steinchen, Gras)",
+  "midground": "Kreuzung als Bühne der Begegnung, frei (Negativraum für die zwei Figuren + 1,5 m Aktionsraum)",
+  "background": "Obstgarten-Bäume und Billboard als Ziele, Amphitheater-Rand als Landmarke",
+  "value": "Figuren mittelhell vor dunklerem Baumgrün; stärkster Kontrast an den Figuren-Silhouetten",
+  "ratio_70_20_10": "70 Gelände/Weg ruhig, 20 Bäume/Billboard Struktur, 10 Figuren + Fluff Bedeutung"
+ },
+ "color_script": {
+  "mood": "heller Spielvormittag",
+  "terrain": "vorhandene Spielwelt (terrain/439 bzw. Probe) unverändert",
+  "secondary": "Baumgrün, Wegton",
+  "accent": "bunter Fluff am Baum = Fokus der Farmerin; sonst keine neuen Akzente",
+  "forbidden": "neue Lichter, Spotlights, Glow, Blob-Schatten",
+  "light": "ein Rig wie im Spiel (V-385/386)"
+ },
+ "form_dna": {
+  "primary": [
+   "Kugel (Fluff, Baumkronen)",
+   "Zylinder (Stämme, Figuren)",
+   "flache Wegbänder"
+  ],
+  "secondary": [
+   "Billboard-Tafel",
+   "Zaun"
+  ],
+  "forbidden": "scharfkantige Neuformen, neue Requisiten",
+  "edges": "gerundet wie KayKit"
+ },
+ "life_anchor": "Tagesplan: Gehen mit Füßen am Boden (GaitAnimator), Ankunft abbremsen-drehen-Blick, Aktions-Clip as-is (Ernte bzw. Lesen), Gruß (kfb_wave_a) oder Schweigen; Unterbrechen beim Spieler und Fortsetzen",
+ "palette_roles": "aus der Spielwelt, keine neuen Töne; Figuren mit ihren Cast-Texturen und KFB-Augen",
+ "light": "Spiel-Rig unverändert",
+ "material_codes": [
+  "Weg: vorhandenes Weg-Material, Ränder mit Kontakt-Geometrie (Kanon Gebiet 4)",
+  "Obstgarten: vorhandene Ernte-Bäume mit Fluff (fluff.js)"
+ ],
+ "biography": "Weg = Trampelpfad zwischen Arbeit und Kreuzung (Nutzen sichtbar an Rand-Steinchen); Billboard = Nachrichten der Welt; Obstgarten = Fluff-Ernte. Signatur: 1 Hero (Begegnung an der Kreuzung), 2 Echos (Ernte-Baum, Billboard).",
+ "signature": {
+  "hero": "Begegnung an der Kreuzung",
+  "echoes": [
+   "Ernte-Baum",
+   "Billboard"
+  ]
+ },
+ "story_beat": [
+  "morgens: Farmerin erntet, Lorekeeper liest",
+  "Vormittag: beide auf dem Weg (je 2 Routen-Varianten)",
+  "Kreuzung: bemerken → annähern → ausrichten → grüßen/schweigen → reagieren → trennen → weitermachen",
+  "Spieler kommt: Blick + Gruß, danach Fortsetzen",
+  "Spieler geht weg und kommt zurück: beide dort, wo der Plan sie sieht"
+ ],
+ "cast": [
+  "farmer_harke",
+  "lorekeeper (WSB K11, sobald ready)"
+ ],
+ "cast_note": "Technische Platzhalter (Spiel-Figuren mit KFB-Augen) nur für Tests hinter dem Debug-Hash; Abnahme-Clip und Georg nur mit den echten Figuren.",
+ "cameras": "4 feste Kritiker-Kameras um die Kreuzung + Spielkamera (Third-Person)",
+ "contact_geometry": "Jeder POI und die Kreuzung mit gebrochener Fuge Boden/Objekt (Steinchen, Gras-Büschel mit Ursache, Kanon Gebiet 4); keine neuen Assets außer vorhandenen Kanon-Teilen"
+}

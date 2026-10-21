@@ -1,5 +1,29 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~06:00) · Antworten an WS-NPC (Status 1) und an den Lead (§118) · V-588
+**An WS-NPC:**
+- **Go für Push auf `ws-npc/*`** (A0 Kern, A1 Daten, danach A2–A4). Den Deploy-Key wie bisher nur mit Georgs direkter Bestätigung in deiner Sitzung. Kein Merge.
+- **Blocker 1 (Cast):**
+  - `cast.r1.json` und `clips.r1.json` liegen jetzt als Spiegel im Register: `30_DECISIONS/replies/CAST_R1_MIRROR/`.
+  - Die GLBs (`farmer_harke` u. a.) sind privat bzw. gekauft und kommen nie in Git. Georg kopiert sie nach seiner Rückkehr nach `~/kfb-ws1/private/cast/`.
+  - Bis dahin baust du A0/A1 und die Mechanik.
+- **Blocker 2 (Platzhalter):** `adventurer-mage` ist OK als **technischer Platzhalter für beide Rollen**, nur hinter dem Debug-Hash und sichtbar markiert, damit A2–A4 laufen.
+  - Abnahme-Clip und alles, was Georg sieht: nur mit `farmer_harke` und dem Lorekeeper (WSB K11, in Arbeit).
+- **Blocker 3 (`Waving`):** `clips.r1.json` führt ihn als `kfb_wave_a` (Waving/Wave).
+  - Liegt dem Paket `Rig_Medium_Simulation.glb` eine CC0-Lizenzdatei bei (KayKit Character Animations, freie Version), übernimm es as-is (V-574) nach `src/assets/actors/`.
+  - Ist es die gekaufte Erweiterung oder die Lizenz unklar: lokal lassen, nicht in Git, und Georg fragen.
+- **Konzeptblatt Phase A:** `65_SCENELETS/npc_a/KONZEPTBLATT_NPC_A_R1.md` + `concept.json`.
+  - Fokus: die Farmerin am Ernte-Baum. Hero ist die Begegnung an der Kreuzung, die Echos sind Ernte-Baum und Billboard.
+  - Keine neuen Assets, Licht wie im Spiel, Kontakt-Geometrie an POIs und Kreuzung.
+  - Dein Bauplan A0–A5 passt dazu; „Plan ist Wahrheit“ mit Aufholen ≤ 1,25× ist gut.
+- **Google-Doc:** WS0-Kurzfassung `30_DECISIONS/replies/NPC_RESEARCH_DIGEST_R1.md`. Die Kerninhalte stecken außerdem in den PR-#400-Dokumenten, die du gelesen hast.
+
+**An den Lead (§118):**
+- Speicher-Owner `kfb.world-save/1` = WS1-Lead mit `src/world/worldSave.js`: ACK. Phase B wartet auf den Vorschlag von WS-NPC.
+- **K4/K5 und ORKBAND:** Option 1 (Georg kopiert nach `~/kfb-ws1/private/`, lokal) ist der Weg. Ein privates Repo entscheidet Georg. WS0 hat es ihm vorgelegt; bis er zurück ist, weiter mit den RA-Platzhaltern.
+- Dioramen Schritt 1 (8 Anker, Kreis = Box mit Halbachsen 0, bitgleich) und Leistungsstufen: gut. Weiter wie geplant mit Gegenprobe, Disco, Band und `kfb_edge`.
+
+
 # NEU OBEN (21.10., Mittag) · Antworten auf WS1_STATUS §116 und §117 (V-587)
 **Am Kanon ändert sich weiterhin nichts** (Georg). Was unten als „Arbeitsstand“ steht, gilt für Probe und Spiel, bis Georg die Entwicklung sieht; danach arbeitet WS0 es ein.
 

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-588 WS-NPC Status 1 beantwortet (Go Push ws-npc/*, Cast-Spiegel, Platzhalter nur technisch, Waving nur CC0) + Konzeptblatt NPC Phase A + NPC-Recherche-Kurzfassung; Lead §118: worldSave ACK, K4/K5 per lokaler Kopie durch Georg.
 - V-587 korrigiert: WS1 hat keinen Dropbox-Zugriff; K4/K5 vorerst nicht verfügbar, WS1 baut Job 3 mit RA-Rohteilen; Weg der freien Teile (CC0/CC-BY) entscheidet Georg.
 - WS0-Sounds erzeugt und normalisiert: dark_fluffer_r1 (18) + alchemy_r1 (14, Hexen-Trankküche) in 40_AUDIO/elevenlabs_r1/*_norm; Farmer B = farmer_harke (WSB), Lorekeeper-Aufnahme K11 auf Basis B31.
 - V-587 Antworten an WS1 §116/§117 (oben in WS0_TO_WS1): K4/K5-Ort, K1 vs. ORKBAND r1b, Felsen bleiben, Gimmicks ACK, Schattenkonzept R1 als Arbeitsstand, createContactAO raus, Island-Kit-Wasser Standard, WS-NPC jetzt; Kanon unverändert.
