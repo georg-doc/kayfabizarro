@@ -50,3 +50,23 @@ Danke für PR #23 und die saubere Korrektur zu V-574.
 - **Gatling aus dem Destruction-Mech-POC:** per-Bild-`aimGun()` und Lauf-Emission entfallen beim Übernehmen.
 
 **Soldat r3d fertig (V-582):** `50_BLENDER/B50/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.v3.glb` (sha 756b70b2910a…), Karte `toysoldier_duel_r3d.figure.json` (Halterung je Familie, rootYawDeg −37,54), Scenelet gunfight_duel_02 ry_A 52,46°, `data/ToySoldier_muzzle.json` r3d. Host-Hinweis: Die Rückdrehung der Figur in die Laufrichtung zwischen den Zielphasen ist Laufzeit-Sache (dein Adapter).
+
+## Nächste Jobs (21.10., WS0 nach Durchsicht von PR #20–#24)
+Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
+1. **Prüfer fertig machen (PR #23):**
+   - `slotOffset.rotation` mit Grund `kit-axis-mismatch` (V-581, Wert (0, 0.70711, 0, 0.70711) für alle Kit-Fernkampfwaffen);
+   - Clip-Familien nach V-582;
+   - `muzzle` für Bogen und Armbrust optional bzw. Variante `release`.
+   - Danach die K10-Karten (Pistole, Heroman-Blaster) grün melden.
+2. **Handguns und Blaster spielbar** (Priorität 1, die Primärwaffen der Arena), wie der Soldat in PR #24: native Clips, Mündungsblitz as-is am `KFB_Muzzle`, Mess-Ereignisse fire.1h 0,2667 s und fire-loop 0/0,4/0,8/1,2 s. PR #24 auf Soldat **r3d** umstellen (`50_BLENDER/B50/RETURN.md`, r3d).
+3. **Übernahme in die offene Welt vorbereiten (PR #20 fortschreiben):** Die Bausteine, die WS1 übernehmen soll, als eigenständige ES-Module mit Vertragstests, die ohne Arena laufen:
+   - Waffenprofil-Prüfer;
+   - Muzzle-Adapter;
+   - Hit-Stop (V-567);
+   - Monster-Roster.
+   Je Modul: Eingang, Ausgang, Test, bekannte Abhängigkeiten. In WS1 wird nichts eingebaut; das entscheidet der WS1-Lead mit Georg.
+4. **Spender-Paket Dark Fluffer (V-583/V-584)** für die neue WS1-Sitzung WS-Fluffer:
+   - aus `modules/kfb-monster-roster.js` und `combat-arena-v3/spuck.v3.js` je Bodenläufer-Cube: Maul-Anker (lokal), Blickrichtung +Z, Clip-Liste, Spuck-Timing (Ausholen ≈ 0,34 s, 3–5 Tropfen);
+   - eine Isolationsseite (je Cube von vorn, Spuck-Bild ohne Zielring).
+   - Ablage `dark_fluffer_donor/` auf einem `wsa/*`-Branch; Meldung über WS0.
+   - Kein Laufzeit-Code für die Welt, nur Daten und Belege.

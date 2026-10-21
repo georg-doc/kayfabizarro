@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-20",
+ "updated": "2026-10-21",
  "entries": [
   {
    "id": "V-001",
@@ -8244,6 +8244,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-583",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "Dark Fluffer = neue parallele WS1-Sitzung „WS-Fluffer“ (Georg 21.10.), Brief BRIEF_WS1_DARK_FLUFFER_R1 als ACK zum Web-Chat-Brief (PR #400). Heilen statt töten: geheilter Fluffer bekommt weiße Cartoon-Augen, spuckt kein Zensur-Goo mehr und lässt einmal bunten Fluff über die vorhandenen sechs Fluff-Arten und fluff.js fallen. Keine Blumen, Partikel, kein zweites Effekt-/Kampf-/Physiksystem. Produktion dark_fluffer, im Spiel „Black Fluffer“; Quaternius MonsterCuteCubes (Bodenläufer, R1 ein Cube); Herkunftsversionen nur Gerüchte, kein Kanon; Heil-Auslöser = vorhandenes WS1-Werkzeug, WS0 entscheidet nach Inventur; Augen-Variante baut WSB (K11); Goo als begrenzter Patch nach spuck.v3 (#1f1a14, kein Flood-Shader); Töne liefert WS0 (ElevenLabs).",
+   "values": {},
+   "owner": "WS-Fluffer (Laufzeit) · WSA (Spender) · WSB (Augen) · WS0 (Ton)",
+   "check": "P1-Clip + Heilung aus der Spielkamera, ≥ 55 fps",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will sein Konzept als eigene Sitzung; der Web-Chat-Brief ist gut, es fehlten nur die WS0-Entscheide (Name, Cube, Heil-Auslöser, Augen, Ton).",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-584",
+   "date": "2026-10-21",
+   "area": "Kampf",
+   "verdict": "SPEC",
+   "text": "WSA nächste Jobs: (1) Prüfer fertig (V-581 slotOffset.rotation, V-582 Clip-Familien, muzzle optional/release); (2) Handguns + Blaster spielbar, PR #24 auf Soldat r3d; (3) Übernahme vorbereiten: Waffenprofil-Prüfer, Muzzle-Adapter, Hit-Stop, Monster-Roster als eigenständige ES-Module mit Vertragstests (PR #20), Einbau entscheidet WS1-Lead mit Georg; (4) Spender-Paket Dark Fluffer (Maul-Anker, Blickrichtung, Clips, Spuck-Timing je Cube + Isolationsseite), nur Daten.",
+   "values": {},
+   "owner": "WSA",
+   "check": "K10-Karten grün, Module mit Tests, Spender-Paket",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSA kann produktiv zuarbeiten, ohne einen zweiten Laufzeit-Owner zu bilden: Prüfer, Primärwaffen, übernahmefertige Module, Spender-Daten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8331,7 +8361,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1000",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1005",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

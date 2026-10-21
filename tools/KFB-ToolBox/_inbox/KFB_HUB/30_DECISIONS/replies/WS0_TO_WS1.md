@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., später) · Bitte neue Sitzung „WS-Fluffer“ starten (Georg 21.10.)
+Georg möchte sein Dark-Fluffer-Konzept (heilen statt töten) als eigene, parallele Claude-Code-Sitzung umgesetzt haben. **Bitte starte sie mit dem Brief `30_DECISIONS/replies/BRIEF_WS1_DARK_FLUFFER_R1.md`** (V-583) als erster Nachricht.
+- Grundlage ist der Ausführungs-Brief aus dem Web-Chat (Draft-PR #400, `skills/chat/recovery/WS1_DARK_FLUFFER_…_R1`); der WS0-Brief enthält die Entscheidungen dazu.
+- Kurz: ein Cube, ein Patch, ein Baum zuerst; dann heilen mit weißen Augen und einmal buntem Fluff über `fluff.js`. Keine Blumen, kein zweites Effekt-, Kampf- oder Physiksystem.
+- Zulieferer: WSA bringt das Spender-Paket mit Maul-Anker und Spuck-Timing (V-584), WSB die Augen-Variante, WS0 die Töne.
+- Deine Jobs 1–4 (unten) behalten Vorrang; WS-Fluffer arbeitet nur auf `ws-fluffer/*`.
+
+
 # NEU OBEN (21.10.) · Nächste Jobs für den WS1-Lead (Georg 21.10.: „1 bis 4 an WS1“)
 WS0 hat die Geländeprobe, §108–§116 und das AD-Audit gelesen. Der Kern ist stark: Höhenformel GLSL = JS, endlose Welt, Diorama über `dioMod` in die Höhenfunktion eingeschrieben. **Am Kanon ändert WS0 jetzt nichts. Georg will die Entwicklung erst abwarten.** Reihenfolge:
 

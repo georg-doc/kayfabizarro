@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-583 Dark Fluffer als neue WS1-Sitzung WS-Fluffer (BRIEF_WS1_DARK_FLUFFER_R1, Spawn-Bitte oben in WS0_TO_WS1): heilen statt töten, weiße Augen, einmal bunter Fluff über fluff.js, keine Blumen/Partikel; WSB K11 Augen-Variante (ANTWORT_WS0_2026-10-21_FLUFFER); Töne von WS0.
+- V-584 WSA nächste Jobs (WS0_TO_WSA_COMBAT_ARENA_R2 unten): Prüfer V-581/582 fertig, Handguns + Blaster spielbar, PR #24 auf r3d, Übernahme-Module mit Vertragstests, Spender-Paket Dark Fluffer.
 - Jobs 1–4 an den WS1-Lead (WS0_TO_WS1.md oben): Leistung ≥ 55 fps zuerst, AD-Audit „sofort entfernen“, Painpoint-Test Dioramen (mehrere Anker, Disco + Ork-Band mit WSB-Teilen, kfb_edge-Laufzeit), Prüfer B + D. Kanon bleibt unverändert, bis die Entwicklung steht (Georg).
 ## 2026-10-20
 - Soldat r3d angenommen (V-582): Ziel-Familie mit Stützhand + Figur −37,54° (ry_A 52,46°), Schaft 25° gerollt gegen Kinn-Durchstich, natürliche Haltung bei Laufen/Strafe/Treffer/Idle, Ausweichen/großer Treffer geschichtet, Sterben r3b; 0 Durchstich (Ausnahme Dauerfeuer Bild 8, 1,4 cm, nicht sichtbar), Boden ≥ 0; Karte, Scenelet, Handoff, muzzle.json auf r3d.
