@@ -4,7 +4,7 @@ Neueste Einträge oben.
 
 ## 2 · 21.10. · Phase A gebaut (lokal, Zweig `ws-npc/phase-a`, kein Push) · Abnahmematrix
 
-**Stand:** Spiel `kfb-planet`, Basis `terrain/439` @4c6ec5a (mit `kfb.world-save/1` des Leads), lokale Commits auf `ws-npc/phase-a` (Hash siehe Meldung an den Lead). Aufruf: `dist/index.html#m1,harvest,npc` (Start 0,27 Tag: erstes Treffen nach ≈ 20 s; `npct=<s>` setzt die Tageszeit).
+**Stand:** Spiel `kfb-planet`, Basis `terrain/439` @a701da4 (mit `kfb.world-save/1` und M1 dpr ≤ 1,25 des Leads), lokale Commits auf `ws-npc/phase-a` (Hash siehe Meldung an den Lead). Aufruf: `dist/index.html#m1,harvest,npc` (Start 0,27 Tag: erstes Treffen nach ≈ 20 s; `npct=<s>` setzt die Tageszeit).
 
 **Was läuft:**
 - Zwei Bewohner mit Tagesplan `kfb.npc-day/1` (Tag = 300 s): Farmer B (Bäuerin/Theaterdirektorin: Zuhause → Fluff-Baum pflegen → Treffpunkt Wiesenrand → Bühne prüfen → Baum → Zuhause) und **PLATZHALTER · Lorekeeper (WSB K11)** (Zuhause → Helden-Fluff studieren → Treffpunkt → zurück). Figuren: Farmer B fehlt auf diesem Mac, Platzhalter-Figur `adventurer-barbarian`, klar markiert; Lorekeeper-Platzhalter `adventurer-mage` (Lead-OK).
@@ -31,12 +31,12 @@ Neueste Einträge oben.
 | M2-4 | Gruß-Geste | **PASS** | Gruß und Antwort-Gruß = `Waving` (npc-a C_greetGesture) |
 | M2-5 | Zeile oder Schweigen | **PASS** (Schweigen) | stumm bis WS0 Ton/Text liefert; Ausgang `silent` vorhanden |
 | M2-6 | Spieler-Hinweis E an Bewohnern (`interactable`) | **NOT RUN** | in M1 gibt es keinen interactable-Host, E = seitwärts |
-| P-1a | ≥ 55 fps aus der Spielkamera (Spiel gesamt) | **FAIL** · Basis-Grenze | sichtbares Chromium, Metal, 1600×900, dpr 1: Spiel **ohne** Bewohner 15,5/15,7 fps, **mit** 15,7/15,4 fps (p95 ≈ 12 fps). Die Grenze liegt im Spiel selbst (GPU geteilt mit ~8 Sitzungen; Prüfer C misst, CODE_PERF_R1 §7) |
-| P-1b | Anteil der Bewohner an der Bildzeit | **PASS** · kein messbarer Anteil | A/B je 900 Bilder: Unterschied innerhalb der Streuung; Modul 0,15 ms/Schritt, +33 Draw Calls, +42 k Dreiecke |
+| P-1a | ≥ 55 fps aus der Spielkamera (Spiel gesamt) | **FAIL** · Basis-Grenze | sichtbares Chromium, Metal, 1600×900, dpr 1, Stand a701da4: Spiel **ohne** Bewohner 35,1/35,1 fps, **mit** 34,9/35,1 fps (p95 ≈ 28,6 fps); auf 4c6ec5a unter höherer GPU-Last 15,5 bzw. 15,4–15,7. Die Grenze liegt im Spiel selbst (GPU geteilt mit ~8 Sitzungen; Prüfer C misst, CODE_PERF_R1 §7) |
+| P-1b | Anteil der Bewohner an der Bildzeit | **PASS** · kein messbarer Anteil | A/B je 900 Bilder auf beiden Ständen: Unterschied innerhalb der Streuung (≤ 0,2 ms); Modul 0,11–0,15 ms/Schritt, +41 Draw Calls, +51 k Dreiecke |
 | P-2 | Stresstest 8/12/20 | **NOT RUN** | erst nach 2 Figuren + fps-Basis |
 | V-1 | Clip aus der Spielkamera | **PASS** | `test/out/npc/clip/page@….webm` (32 s, Headless-GPU mit Aufnahme) |
 | V-2 | Mechanisches Gate + blinder Kritiker (CRITIC_3D_R1) | **NOT RUN** | nach echten Figuren |
-| T-1 | volle `npm test` (46 Tests, PW_GPU) | **PASS** außer bekannten Wacklern | Gesamtlauf 42/46; einzeln: s5a PASS (zuvor Zeitprüfung bzw. Netz 403), drift PASS (fehlte nur `test/out/drift/drift-report.json` im frischen Worktree), c2 PASS im Software-Modus; **orbit FAIL** (`calmAfterRelease`, SW: Zeitüberschreitung). Gegenprobe auf dem unveränderten Lead-Stand 4c6ec5a: orbit und c2 scheitern dort gleich → nicht durch Phase A |
+| T-1 | volle `npm test` (46 Tests, PW_GPU, Stand 4c6ec5a; nach Rebase auf a701da4: Node-Tests + npc-a erneut PASS, volle Reihe vor dem Code-Push) | **PASS** außer bekannten Wacklern | Gesamtlauf 42/46; einzeln: s5a PASS (zuvor Zeitprüfung bzw. Netz 403), drift PASS (fehlte nur `test/out/drift/drift-report.json` im frischen Worktree), c2 PASS im Software-Modus; **orbit FAIL** (`calmAfterRelease`, SW: Zeitüberschreitung). Gegenprobe auf dem unveränderten Lead-Stand 4c6ec5a: orbit und c2 scheitern dort gleich → nicht durch Phase A |
 
 **Phase A ist damit nicht abgenommen** (M0-2 FAIL, P-1a FAIL als Basis-Grenze; mehrere NOT RUN). Kein „MVP PASS“.
 
