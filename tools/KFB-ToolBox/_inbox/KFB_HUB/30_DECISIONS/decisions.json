@@ -9099,6 +9099,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-641",
+   "date": "2026-10-22",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Abnahme im Spiel statt Standbilder (Georg 22.10.: NPC-Bilder im Hub ohne Aussage): Verhalten, Ereignisse, Begrüßungen, Kampf und alles schon Eingebaute nimmt Georg im MVP selbst ab. Der WS1-Lead baut dafür ein Abnahme-Menü (Liste der offenen Punkte, je Punkt Sprung an den Ort und Auslöser, z. B. Ereignis E3 starten, Bewohner begrüßt mit fight, Ork-Band, Fluffer heilen), Georg urteilt dort PASS/TUNE. Hub nur noch für Dinge, die noch nicht im Spiel sind (Blender-Look-Tests, Konzepte, Texte). q150/q151 ins Spiel verschoben.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Im laufenden Spiel ist alles sofort beurteilbar; Bilder aus Repos kosten Zeit und zeigen oft nicht das Richtige.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9186,7 +9201,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1083",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1085",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

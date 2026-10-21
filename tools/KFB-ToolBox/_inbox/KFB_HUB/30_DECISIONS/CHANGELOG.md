@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-641 Abnahme im Spiel: WS1-Lead baut ein Abnahme-Menü (Sprung + Auslöser je Punkt); Hub nur für noch nicht Eingebautes; q150/q151 ins Spiel verschoben.
 - Hub q152 Begrüßungs-Zeilen (Entwurf) und q153 K13 Nahkampf groß + Boss-Waffe (Proof-Stage) eingestellt; K13/K10 neu im privaten Branch. WSB J-5 Marsch: vorerst Lauf-Clip mit Gewehr (a), Mixamo-Marsch (b) wartet auf Georg.
 - V-640 Begrüßungs-Stimmen aus den KFB-Social-Calls (ElevenLabs weiblich/männlich) mit Sprachmelodie und Fluff-o-lect (WS-Audio); WSB K13 floorLift für Death_A, weaponDrop am Weltboden (WSA informiert).
 - V-639 Status-Kanal: WS1 nur noch auf ws1/status; WS0 findet den neuesten Status mechanisch (tools/status_latest.sh).

@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead + WS-NPC: Abnahmen ab jetzt im Spiel (V-641, Georg)
+- **Georg nimmt Verhalten und Eingebautes selbst im MVP ab**, nicht mehr über Standbilder.
+- **Bitte ins MVP:** ein Abnahme-Menü, Taste bzw. Schalter `?abnahme=1`.
+  - Darin eine Liste der offenen Punkte. Je Punkt ein Sprung an den Ort und ein Auslöser. Georg setzt PASS oder TUNE mit Notiz; der Export geht an WS0.
+  - **Erste Punkte:**
+    - G-2 Gerücht und Begrüßung (Farmer B sieht Kampf → Lorekeeper grüßt);
+    - A-1 bis A-7 von WS-NPC (Fluffer 0,8 m, Heilschuss am Baum, Lorekeeper, Farmer B, Spucken und Augen, Ork-Band, Skelette);
+    - E3 Geschenk sobald gebaut;
+    - Kampf R1.
+- **WS-NPC** liefert die Sprünge und Auslöser für seine Punkte.
+- **Keine Abnahme-Bilder mehr über Repos** für Dinge, die schon im Spiel sind.
+
+
 # NEU OBEN (22.10.) · An WS-Audio: Stimme der Begrüßungen aus den KFB-Social-Calls (V-640, Georg)
 - **Grundlage:** die vorhandenen ElevenLabs-Social-Calls in `media/3D_Assets/Audio/KFB ChatterBox/`, 15 Dateien, weiblich „Siren“ und männlich „Roger“.
 - **Auftrag:**
