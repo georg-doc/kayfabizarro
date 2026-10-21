@@ -65,3 +65,17 @@ Georg supplied `GvW_Comic_Ink_Brushes_02.brushset` (private chat file) and point
 
 ### Extended gate
 This is a source-inspection and design-only increment, not a production import. Keep the original single next gate: WS0 owner routing + private source-isolated CRAYONIC draw/undo/PNG vertical slice. .brushset batch parser and multi-root catalog are immediate successor phases, Comic (Re)Motion remains optional after working paint export.
+
+## Additive R1.2 · Notion editorial catalog / georgbrush.club · 2026-10-21
+User confirms georgbrush.club is built using Notion, with pack descriptions and brush metadata. Existing public site remains authoritative brand/product surface: **do not replace or publish a duplicate site**.
+
+Notion connector source read:
+- Knowledge Base https://app.notion.com/p/3fa0bb06e5ee4f22b2b4cd3730097530 (content largely historical, including 2020 product figures/prices; NOT proof of current sales claims).
+- Individual brush DB https://app.notion.com/p/9945d77ecf5c42219d4c65d399403f97 ; data source `collection://f7480942-36ad-4689-8d94-10f8515d082a`. Schema includes relation `.brushset` to Sets, Tags (Ink, Marker, Pastel, Watercolour, Acrylic, etc.), Link, Rank and Size; source detail pages may contain strokes, screenshots, videos, cheat sheets, reference art.
+- Sets DB https://app.notion.com/p/4b0ccd5869fe456fa491ebc046ae5f09 ; data source `collection://41acd22c-8d19-4a53-9582-563ca557e8c9`. Includes Brush Set, Brushes count, relation Brushes Ref., MegaPack Version, Status, File List (PDF), Stand-alone set and Event/Update.
+- Swatches DB https://app.notion.com/p/498009d4f6e847c79b2c6a84c231da8f ; data source `collection://89e752ed-bea8-4a80-a263-057ed3dbdf5e`, with Color Palette, Tags, Size, Update.
+- Notion history describes 1800+, 50+ sets and 160+ swatches in earlier editions; these are *historical labels*, not a verified current 2000+ count.
+
+**Ownership/data split**: Notion = editorial product story, taxonomy, brush→set relations, previews and demo evidence; Dropbox/.brush/.brushset = private binary source/provenance; exported approved manifest = only browser-consumable catalog; georgbrush.club = existing public brand and primary commercial destination. Never expose Notion credentials, private property fields, Dropbox tokens/edit links, or copyrighted brush tip assets in public bundle by default. Reconcile metadata by stable Notion page IDs, source file IDs/hashes, brushset membership, releases, not filename alone. Match missing/ambiguous brushes via reviewed mapping rather than guessing; preserve old historical entries. Curated demo may link back to exact existing Notion page and current verified sales link rather than publish stale $15 claims.
+
+**Pilot success criterion extension**: isolated CRAYONIC visual parity + draw/undo/PNG remains first runtime gate; add Notion read-only lookup of one real brush and owning set during intake to prove semantic metadata → source archive mapping, no complete 2k sync yet. Optional later Comic (Re)Motion channel unchanged.
