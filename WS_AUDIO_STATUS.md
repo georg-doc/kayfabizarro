@@ -2,6 +2,30 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 4 · 21.10. · Gruppen-Ton für die NPC-Gruppen
+
+**Georg 21.10.:** „mach weiter mit dem Gruppen-Ton“. **Stand:** `ws-audio/r1` @6d4c43c, lokal.
+**Quelle:** WS-NPC 21.10. Gelesen wird `mods.groups.events()`, ein Ringpuffer mit `{ type, id, n?, at:[x,z], tag?, t, group }`. Er wird alle 0,1 s abgefragt und über `group|type|id|t` bzw. `tag` entdoppelt. Die Ereignisse kommen nur aus der Spielerblase. Bei WS-NPC ist keine Änderung nötig.
+
+| Gruppe | hit (Stufe n hebt an) | aggro | ko | awake | calm | fluff |
+|---|---|---|---|---|---|---|
+| skeleton_patrol | C06 skeleton_clatter | C06 + M02 club_whoosh (Ausholen) | C06 + C01 body_fall + M08 dizzy_stars | M09 getting_up + C06 leise | C06 leise | E05 fluff_scatter |
+| toy_squad | D04 toy_plastic_bounce | X06 holster_draw (Waffe ziehen) | K06 cartoon_bonk + D04 + M08 | M09 | X06 leise (wegstecken) | E05 |
+| bot_crew | C08 bot_servo | C13 bot_angry (WSA-Kampf) | C14 bot_collapse (WSA) + M08 | C08 + M09 | C08 leise | E05 |
+
+- **Tests:**
+  - `audio-mixer`: alle 18 Kombinationen haben Ton, die Stufe n wirkt, die Schlüssel stimmen – **PASS**.
+  - `audio` (Browser): 18 Kombinationen direkt (26 Klänge). Danach der Abfrage-Weg wie bei WS-NPC über ein Prüfmodul `mods.groups`: 3 Ereignisse genau einmal, beim zweiten Lesen keine Wiederholung – **PASS**.
+- **Zusammenführung mit WS-NPC** (für den Lead), Probe mit `git merge-tree`, ohne Last:
+  - `terrain/probe-world` und `ws-npc/phase-a` stoßen schon untereinander zusammen, in `package.json` und `m1-terrain.js`. WS-NPC enthält probe-world noch nicht.
+  - Dazu kommt `M1World.jsx` mit den 3 AudioHost-Zeilen.
+  - Alle Teile von WS-Audio sind additiv und klein.
+- **Gruppen-Lücken (an WS0, optional):**
+  - ein eigenes Skelett-Knochen-Zerfallen für das K.o.;
+  - ein Spielzeugsoldaten-Ruf ohne Worte;
+  - ein Bot-Piepser ohne Arcade-Ton.
+  - Bis dahin klingt es mit den vorhandenen Sätzen.
+
 ## 3 · 21.10. · WS0-Lieferung ws_audio_gaps_r1 eingebaut · Kampf-Video
 
 **Georg 21.10.:** „mach ein neues Video mit dem Kampf-Ton“.
