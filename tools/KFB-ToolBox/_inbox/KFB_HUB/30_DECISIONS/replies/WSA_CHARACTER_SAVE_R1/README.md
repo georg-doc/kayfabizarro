@@ -47,3 +47,7 @@ These tests prove the prepared transaction logic, not hosted visitor identity/co
 Register snapshot `2a842c5f67cb75c2f6839e50f31ca5dc5b9c1856`: 11 character sheets and 13 figure cards. `4gtn_ceo` and `4gtn_forgotten` now have character sheets but no figure card; the R1 union reader already includes them after GitHub Refresh. Black Knight, Demon Lord, Monstrosity and Witch still have no character sheets. Do not create those four on WSA initiative.
 
 All 13 figure cards have at least one unresolved item, including FrizzleBob's remaining R2-light clay proof despite card status approved. Brain-Cyborg has no delivered GLB/eye setting. Asset Library 3D remains locked. Current WS1 vendor listing @32480cf497e75640790b63f52eb8b1e7f5e6b4ef has light but no shared figure-card loader. Do not substitute ToolBox's temporary tuning admission for that consumer.
+
+## 2026-10-22 · Work follow-up
+
+Reused this existing owner and PR #416; no second backend or Site. The confirmation now re-reads the immutable base and reconstructs the exact requested edits before returning a field-level before/after diff and server-owned GitHub branch, commit and compare URLs. Retries return the same verified confirmation. Current validation: 39/39 deterministic local tests PASS (36 existing + 3 new); no hosted visitor read/write proof. See RETURN_2026-10-22.md and TEST_REPORT.json. The missing Sites eligibility tool is still outcome-critical. No production Site source/manifest or canonical figure values changed.
