@@ -45,7 +45,7 @@ h1 { font: 700 26px/1.15 var(--f-display); margin: 0; }
 button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 9px; }
 legend { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0; margin-bottom: 8px; }
-.row { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: center; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; align-items: center; }
 .row label { font-size: 14px; }
 .row output { font: 500 12px var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; min-width: 5.5em; }
 .row input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
@@ -56,13 +56,17 @@ legend { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: 
 .swatches i { flex: 1; height: 14px; border-radius: 3px; }
 .recipe { display: grid; gap: 8px; }
 .recipe textarea { width: 100%; height: 150px; resize: vertical; font: 500 11.5px/1.4 var(--f-mono); color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 6px; padding: 8px; }
-.recipe .bar { display: flex; gap: 8px; align-items: center; }
+.recipe .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }   /* QA P2-6: vier Knöpfe liefen über */
+.panel { min-width: 0; }
+.panel select, .panel button { max-width: 100%; }
+fieldset { min-width: 0; grid-template-columns: minmax(0, 1fr); }   /* Browser-Vorgabe min-content ließ die Spalte wachsen */
+.panel fieldset > *, .row > * { min-width: 0; }   /* lange Auswahltexte sprengten am Handy die Spalte (QA P2-6) */
 .recipe .msg { font-size: 13px; color: var(--muted); }
 .notes { color: var(--muted); font-size: 13.5px; display: grid; gap: 4px; max-width: 90ch; }
 .notes p { margin: 0; }
 .keys { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.7; }
 kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; }
-@media (max-width: 900px) { .main { grid-template-columns: 1fr; } .stage { aspect-ratio: 4 / 3; } }
+@media (max-width: 900px) { .main { grid-template-columns: minmax(0, 1fr); } .stage { aspect-ratio: 4 / 3; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
 </head>
@@ -2709,7 +2713,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol; if (p.gtex != null) $('gtex').value = p.gtex; if (p.fstage != null) $('fstage').value = p.fstage; if (p.kus != null) $('kus').value = p.kus; if (p.moon != null) $('moon').value = p.moon; if (p.voxs != null) $('voxs').value = p.voxs; if (p.flow != null) $('flow').value = p.flow; if (p.flowtree != null) $('flowtree').value = p.flowtree; if (p.bands != null) $('bands').value = p.bands; if (p.voxhSel != null) $('voxh').value = p.voxhSel; if (p.dbg != null) $('dbg').value = p.dbg;
   }
   function markPreset(name) { for (const b of presetBox.children) b.setAttribute('aria-pressed', b.dataset.preset === name ? 'true' : 'false') }
-  function applyPreset(name) { const grid = $('grid').checked; setUI(PRESETS[name]); $('grid').checked = grid; markPreset(name); update() }
+  function applyPreset(name) { const grid = $('grid').checked; setUI(PRESETS[name]); $('grid').checked = grid; markPreset(name); update(); setTimeout(() => { try { settleCar() } catch (e) {} }, 0) }   /* neues Gelände: Wagen auf befahrbaren Grund (QA P2: Grat-Gebirge startete auf 69°) */
   function update() { readUI(); pushUniforms(); outputs(); recipe(); save() }
   /* Leistung messen (WS0 Job 1: je Schalter ms festhalten): schaltet jeden Effekt an/aus, Median über 60 Bilder, auf Georgs eigenem Rechner */
   async function benchRun() { const btn = $('bench'), out = $('benchOut'); btn.disabled = true; $('benchCopy').disabled = true
@@ -2957,7 +2961,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const OT = { group: new THREE.Group(), site: null, n: 0 }; worldRoot.add(OT.group);
   const DISCO_A = { kind: 'disco', x: 0, z: 0, R: 9.5, y: 0, on: false, bh: 1.1, bw: 16, open: 0, hx: 0, hz: 0, rot: 0, blend: 10 };
   const BAND_A = { kind: 'band', x: 0, z: 0, R: 0.6, y: 0, on: false, bh: 0.7, bw: 6, open: 0, hx: 3.3, hz: 3.65, rot: 0, blend: 6 };
-  DIOS.push(DISCO_A, BAND_A);
+  const SPAWN_A = { kind: 'spawn', x: 0, z: 0, R: 5, y: 0, on: false, bh: 0, bw: 0.1, open: 0, hx: 0, hz: 0, rot: 0, blend: 7 };   /* ebene Startfläche (QA P2: Grat-Gebirge startete auf 69°) */
+  DIOS.push(DISCO_A, BAND_A, SPAWN_A);
   const OT_MAIN = RAW + 'c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/';
   const OT_PARTS = { radio: 'Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf', speaker: 'KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf', drum: 'KFB/Drum Machine 2 by Peter Simcoe - eflBcV4gcIl.glb', wardrum: 'KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Wardrum.gltf.glb', stick: 'KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb', banner: 'KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Banner_Large.gltf' };
   const OT_TPL = {}; let otLoading = null;
@@ -2971,6 +2976,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     return best }
   const ringY = (A) => { let y = 0; for (let k = 0; k < 9; k++) { const a = (k / 8) * Math.PI * 2, rr0 = A.R + Math.max(A.hx, A.hz); y += k === 8 ? hgt(A.x, A.z) : hgt(A.x + Math.cos(a) * rr0, A.z + Math.sin(a) * rr0) } return Math.max(y / 9, S.water * S.amp + 0.4) }
   function syncOtown() {
+    SPAWN_A.on = false; SPAWN_A.y = ringY(SPAWN_A); SPAWN_A.on = !S.vox; pushDio(...(() => { try { return [P.x, P.z] } catch (e) { return [0, 0] } })())   /* Startfläche immer (außer Voxel-Welt) */
     DISCO_A.on = BAND_A.on = false; DISCO.ot = null; OT.group.visible = !!S.otown; OT.group.clear()
     const cxz = (() => { try { return [P.x, P.z] } catch (e) { return [0, 0] } })()
     if (!S.otown) { pushDio(...cxz); return }
@@ -3083,6 +3089,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   KD.SLOPE.takeoffGap = 0.35 * KD.K;   /* Probe-Gelände ist viel welliger als die Spielwelt: erst ab 35 cm Bodenverlust je Schritt abheben (Spiel 8 cm) – kleine Wellen fährt der Wagen am Boden aus (Georg 21.10.: Dauer-Hüpfer, ruckeliges Aufkommen) */
   const applyTempo = () => { const T = TEMPO[S.tempo] || TEMPO.spiel, k = T[0] / TEMPO.spiel[0];   // Test-Tempo der Probe: nur die Tempi skaliert, Kurven/Drift bleiben
     for (const n of ['accel', 'brake', 'reverseAccel', 'maxForward', 'maxReverse']) KD.FLOW[n] = BASE.f[n] * k; KD.FEEL.boostMaxForward = BASE.e.boostMaxForward * k }
+  { const sel = $('tempo'); if (sel) for (const o of sel.options) { const T = TEMPO[o.value]; if (!T) continue; const k = T[0] / TEMPO.spiel[0], v = Math.round(BASE.f.maxForward * k * 3.6), vb = Math.round(BASE.e.boostMaxForward * k * 3.6); o.textContent = `${o.textContent.split(':')[0]}: ${v} km/h, Boost ${vb}` } }   /* Beschriftung aus den echten k2t-Werten (QA P2: versprach 114/165, tatsächlich 96/114) */
   const gN = (x, z) => { const e = 0.4 * KD.K, n = [groundAt(x - e, z) - groundAt(x + e, z), 2 * e, groundAt(x, z - e) - groundAt(x, z + e)], l = Math.hypot(...n); return [n[0] / l, n[1] / l, n[2] / l] };
   // Boden und Hindernisse für k2t (Georg 21.10.: „Nase federt immer weiter“, „steckt in Stein oder fährt durch“):
   //   Boden = Ebene durch die vier Schwebepunkte des Rigs (FL FR RL RR) statt eines Punkts → Lage folgt der Fahrzeuglänge, keine Einzelbuckel;
@@ -3148,6 +3155,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const P = { x: 0, z: 0, y: D.y, vy: 0, yaw: 0, vf: 0, vl: 0, fly: false, air: false, pitch: 0, boost: 1, odo: 0, sq: 0, vPitch: 0, vRoll: 0, steer: 0, thrust: 0, boosting: false };
   function placeCar(x, z, yaw = P.yaw) { D = KD.createK2t(x, groundAt(x, z) + RIDE, z, yaw); F = KD.createRacerFlight(KD.K / KD.WORLD_K, KD.G); dAcc = 0; syncP(0) }
   function resetCar() { placeCar(P.x, P.z, P.yaw) }
+  /* nächste befahrbare Stelle (≤ 30°, über dem Wasser), Ringsuche bis 60 m; nur wenn die jetzige zu steil ist */
+  function slopeDeg(x, z) { const e = 1.5; return Math.atan(Math.hypot(groundAt(x + e, z) - groundAt(x - e, z), groundAt(x, z + e) - groundAt(x, z - e)) / (2 * e)) * 180 / Math.PI }
+  function settleCar() { if (slopeDeg(P.x, P.z) <= 35) return; const wl = S.water * S.amp + 0.3
+    for (let r = 4; r <= 60; r += 4) for (let k = 0; k < 16; k++) { const a = k / 16 * Math.PI * 2, x = P.x + Math.cos(a) * r, z = P.z + Math.sin(a) * r; if (hgt(x, z) > wl && slopeDeg(x, z) <= 30) { placeCar(x, z, P.yaw); return } } }
   const keys = {};
   const typing = (t) => t && (t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && t.type !== 'range' && t.type !== 'checkbox'));
   window.addEventListener('keydown', (e) => {
