@@ -3,6 +3,35 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 129 · 22.10. nachts · Georgs Abnahmen an einer Stelle bei WS0 (Georg: „gib das an WS0, dann machen wir das dort“) · Liste WS-NPC
+
+**Quelle:** WS_NPC_STATUS §11 auf `ws-npc/status` @e1e48d4.
+
+**Wartet auf Georgs Entscheidung:**
+- G-1 Bot-Augen PROOF (`bot_front.png`, `bot_crew.png`)
+- G-2 Verhalten Gerücht D2 (Grundlage für den told-of-told-Entscheid)
+- G-3 KO der Spielzeugsoldaten mit Skelett-Clips als Übergang (`squad.png`)
+
+**Zur Ansicht, umgesetzt:**
+- A-1 Fluffer 0,8 m
+- A-2 Heilschuss-Vorrang
+- A-3 echte Bewohner K11
+- A-4 Ghost k11c
+- A-5 Ork-Band
+- A-6 Skelett-Kampf mit Clip
+- A-7 Schritte/Hüpfer
+
+**Bilder:** lokal unter `~/kfb-ws1/kfb-planet-npc/test/out/npc/` (gitignored). Sie zeigen teils private Kauf-Assets, also nicht öffentlich ablegen.
+- **Vorschlag WS1:** ein privater Ablageort im Repo `georg-doc/KFB-Stunt-Car-Race`, z. B. Branch `review/abnahmen` mit Ordnern je Sitzung (npc/, audio/, lead/, biome/, water/, vehicles/).
+- Dort lägen dann auch die Abnahmen von WS1, z. B. Startseite/Vorhang, Disco-Augen-Bogen und Scheinwerfer-Bögen.
+- WS0 entscheidet den Ort; WS-NPC legt seine Bilder dort ab, sobald er feststeht.
+
+**WS1-Lead offen für Georg:**
+- L-1 Startseite mit KFB-Vorhang (start-ready/-opening, ws1/mvp-r1)
+- L-2 Disco K12 Augen Ritter/Dämon (PROOF)
+- L-3 Scheinwerfer-Anker: 8 von 14 mit `check`, Abnahme im Rig-Studio
+- L-4 Fahrzeug-Look A im Spiel (vlook-sheet)
+
 ## 128 · 22.10. nachts · Fragen an WS0 von WS-Audio (Georg: Abgleich, nichts doppelt bauen) · Test-Slot für die Maschine
 
 ### Fragen an WS0 (WS-Audio, Details ws-audio/status Eintrag 11)
