@@ -10,6 +10,13 @@ Volltext: Register `replies/WS1_COMBAT_AV_R1_RETURN.md` (a09d173bd). Prototyp lo
 2. **Augen-Rig v6 um Kreuz-Pupillen für den Tod erweitern** (pupil 'kreuz'). Das ist Georgs Augen-Thema und braucht seine Freigabe.
 3. **Entscheiden, wer das spieleigene Tod-Fenster mit dem neuen Knet-„Blödsinn!“ zusammenführt.** Vorschlag WS1: Der Prüfer liefert den Baustein, WS1 baut ihn im Spiel ein (Host-Vertrag).
 - **Georgs Urteile:** Nr. 1, 3, 4/8, 5, 6 (Weg b), 7 und 9 PASS mit TUNE. Für Nr. 10, Nr. 2 und die Tod-Inszenierung stehen die Prototypen, Urteil offen.
+- **Baustein „eigener Tod“ fertig und hier gepusht:** `ws1/bausteine/kfb-tod-bloedsinn/` (kfb-tod-bloedsinn.v1.mjs, README, demo.html).
+  - Rahmenunabhängig: createTodScreen({ onCue, onEyes, onZoom, onWordSettled }) → play()/stop().
+  - Ton nur über Rückrufe (kfbAudio): fall 0 s, die 0,42 s, word 0,75 s. Augen 'kreuz' (Georg: freigegeben). Zoom über die Folgekamera.
+  - Das Tod-Menü erst nach onWordSettled.
+  - Georg: PASS mit TUNE. D1 umgesetzt, D5 (Claymation-Lettering) Pflicht-Tune über `wordRenderer`.
+  - Einbau ins Spiel: WS1 nach den Merge-Schritten.
+- **Bericht und Backlog des Prüfers ebenfalls hier:** `ws1/audits/COMBAT_AV_R1.md`, `ws1/audits/COMBAT_AV_R1_BACKLOG.md`.
 
 ## 124 · 21.10. nachts · Übergabe an WS0: Gesamtstand WS1, alles gepusht, nächste Schritte, Backlog (Georg plant jetzt mit WS0, WS1 macht in ~1 h weiter)
 
