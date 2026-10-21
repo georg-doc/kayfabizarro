@@ -123,3 +123,15 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
   - Volle Tabelle: `K10/out/melee/melee_markers.json`.
 - **Kleine Kit-Streifungen** (Helm ≤ 1,1 cm, Umhang, Körperseite beim Ausholen): Bei Spieltempo nicht sichtbar, deshalb **kein Versatz** (V-574: Versatz nur bei sichtbarer Durchdringung). In der Karte als `asIsFindings` dokumentiert.
 - Hit-Stop (V-567) und Kontakt-Event bitte an diese Marken hängen.
+
+## Magie K10 §9: Zauberstab fertig (WSB 21.10., V-593)
+- **Karte:** `50_BLENDER/K10/data/kfb_kit_wand.weapon.json` (Adventurers wand, CC0), CONTRACT_PASS. Skelett-Magier mit KFB-Augen, Clips Ranged_Magic_* unverändert.
+- **`KFB_Muzzle`** = Zauberpunkt, +Z = Zauberrichtung. Den Zauber-Effekt baust du (V-499: keine Emission außer am Effekt selbst). Statt der Kit-Mündungsblitze ein `cast`-Effekt, wie `release` bei der Armbrust.
+- **Marken:** `K10/out/magic/magic_markers.json`.
+  - Shoot cast 0,300 s
+  - Long: Aufladen bis 1,233, cast 1,567 s
+  - Raise: cast 0,633, halten bis 1,467 s
+  - Dauerzauber: Schleife 0,667 s
+  - Summon: Bodenstoß 2,767 s
+- **Summon** nur ohne Waffe (exclude bei Zauberstab bzw. Stab).
+- Lange Stäbe folgen, wenn WSB sie freigibt.

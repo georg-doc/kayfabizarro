@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-593 Magie: Zauberstab angenommen (an WSA), Summon nur ohne Waffe, lange Stäbe je Clip feste Kippung sonst exclude, keine andere Figur.
 - WSB K10 §8 1H-Nahkampf as-is angenommen (Kontakt-Marken je Clip, kleine Kit-Streifungen bei Spieltempo unsichtbar, kein Versatz); an WSA übergeben.
 - WSB K10 §7 Wurf (Rauchbombe, CC0) angenommen: Versatz 10 cm, 0 Durchstich in 42 Bildern, Abwurf 0,633 s gemessen; an WSA übergeben.
 - V-592 Action-Figur-Gewehr 1H an der Hüfte wie im Kit-Artwork (WSB K10 §6 angenommen, an WSA übergeben).

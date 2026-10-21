@@ -8394,6 +8394,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-593",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Magie K10 §9: Zauberstab angenommen (KFB_Muzzle = Zauberpunkt +Z, Marken nach Bedeutung). Summon mit Waffe ausgeschlossen, läuft nur ohne Waffe (kein Ausblenden im Clip). Lange Stäbe: je Clip eine feste Kippung plus Griff am Stiel wie bei der Harke; was nicht frei wird, kommt in die exclude-Liste (mindestens Shoot bleibt, sonst Zauberstab). Keine andere Magier-Figur, Krempe as-is. Zauber-Effekt baut WSA als cast-Effekt.",
+   "values": {},
+   "owner": "WSB (K10) · WSA (Effekt, Arena)",
+   "check": "Stab-Clips ohne Durchstich oder exclude",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiches Muster wie Harke und Minigun: eine feste Haltung je Clip, sonst ausschließen; die Figur bleibt as-is.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8481,7 +8496,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1024",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1025",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
