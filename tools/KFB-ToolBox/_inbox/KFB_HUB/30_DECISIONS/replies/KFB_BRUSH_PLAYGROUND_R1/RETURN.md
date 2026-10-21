@@ -25,3 +25,10 @@
 - No modification of KFB Hub/router because no newly accepted product route, P0 gate, or canonical URL changed.
 - Open: confirm ToolBox and comic animation exact owning modules/SSOT, privacy/proprietary brush extraction limits, p5.brush fidelity, on-device pressure/tilt behavior.
 - **Only next gate:** WS0 identifies receiving owner/modules and approves a tiny private CRAYONIC→draw/undo/PNG vertical slice with actual visual parity tests, followed later by catalog/animation phases.
+
+## Additive R1.1 verification · 2026-10-21
+- User-added private `GvW_Comic_Ink_Brushes_02.brushset` checked as ZIP: 21,637,576 bytes; 213 members; 21 active `Brush.archive`, 21 matching Reset archives, 21 active Shape images, 1 active Grain image, brushset.plist; 21 active archive headers verify binary plist signature.
+- Connected Dropbox metadata read for historical `Georg's Procreate MEGAPACK Brushes & Swatches  In Order`, shared folder; no listing/pagination, no assumed item count, no uploads.
+- PLAN R1.1 additive update GitHub commit `82070a8df5f111394743e476428aafb756240350`, exact branch HEAD and updated file content readback verified. No public assets, no canonical Hub route changes.
+- Tests actually run for addition: 1 ZIP format check, 1 ZIP inventory, 21/21 binary-plist signature inspections, 1 Dropbox shared-link lookup, 1 GitHub exact content verification. Runtime/renderer/brush import implementation, browser/device/Comic Motion tests = 0.
+- Next gate UNCHANGED: WS0 selects existing receiving owner and approves private CRAYONIC draw/undo/PNG implementation with original-tip isolation; then brushset importer and multi-source provenance catalog; Comic (Re)Motion later.
