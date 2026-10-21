@@ -8589,6 +8589,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-606",
+   "date": "2026-10-21",
+   "area": "Medien",
+   "verdict": "SPEC",
+   "text": "Hypernormalisation-Lesefolge (WS-Media-Vorschlag angenommen): ein zustandsloses Modul kfb-quote-sequence (WS-Media, mit Test) über der H13/H14-Basis, zwei Ausgaben: Spiel-Inhaltsart quote (Einbau WS1 hinter privatem Schalter) und Remotion-Render (WS-Media nach WSV-Regeln V-527). Drei Zitate APPROVED_PRIVATE (Thoreau tools, Morris hope work, Wilde mask truth; Georg 21.10.). MVP1-Gate gilt nicht für die private P0-Probe. Ferne Tafeln: kein Video-Loop, nah live Canvas2D gedrosselt, fern eingefrorenes Bild. Quelle für P0 der Planungs-Branch @fc47e98e4. Format 1,79:1.",
+   "values": {},
+   "owner": "WS-Media · WS1 (Einbau)",
+   "check": "P0 privat: Modul + Test, Tafel im Amphitheater, Loop + 9:16-Clip",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Quelle für Tafel und Video verhindert den Collage-Fehlschlag vom 30.09.; live statt Video-Loop spart Speicher.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8676,7 +8691,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1057",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1058",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

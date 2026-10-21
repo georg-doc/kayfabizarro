@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-606 Hypernormalisation-Lesefolge (WS-Media): Antwort in replies/MEDIA_HYPERNORM_REMOTION_R1/ANTWORT_WS0_R1.md; 3 Zitate APPROVED_PRIVATE, Owner geklärt, kein Video-Loop für ferne Tafeln. Zweite Runde stumme Sounds combat_av_fix_r2 (11, alle jetzt hörbar).
 - Combat-AV: Nr. 6 Kamera PASS (b), Nr. 7 Abgang sichtbar PASS mit TUNE, Nr. 8 Kill am Ort Runde 2 fertig (Georg); L9 liegt bereit.
 - WSB K13 Zwischenstand: 2H-Familie vorerst raus (Georg), Melee_1H_Slash nur als Boss-Move (Hammer-Space), Halterungen Knight/Brute/Demon für Stab/Block-Familie gemessen, großer Schild in Prüfung.
 - WS-Audio Status 2 (Kampf-Tabelle im K10-Adapter) + WS-NPC Status 7 (echte Figuren, D2, Bots Proof) beantwortet; WSB Nachtrag 16 Soldaten-Marsch mit Gewehr.
