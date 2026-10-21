@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-599 kayfabizarro wird privat: WSA bereitet die öffentlichen Seiten vor (FrizzleBob, PDF/Deck-Viewer, Pages, Sites → Cloudflare), Georg legt den Schalter um. Hub aktualisiert (Stand, 3 Fragen, 7 Schritte, 5 Briefings).
 - PR #27 (K10-Waffenfamilien) von Georg gemergt. V-598 WS-Audio (spielbare Version mit Ton) + privater Branch um alle Töne und Musik ergänzt (708 Dateien); WS1 soll Zugang zuerst über gh-Login prüfen.
 - WSA PR #27: alle K10-Waffen in der Arena spielbar (Familien, Marken, exclude, Pfeile, HitStop, weaponDrop); WS0: Bogen-Death_B freigeben, Rauchbombe-Rückfall ok.
 - V-597 Zerstörung = Goo-Vorstadt (Georg): Konzeptblatt 65_SCENELETS/goo_suburb (Joyride-Stadt als Standard, Ampeln neu, Goo-Häuser, vorgebrochene Bausteine, 2 ms); WSB K14 Look-Test nach K13.

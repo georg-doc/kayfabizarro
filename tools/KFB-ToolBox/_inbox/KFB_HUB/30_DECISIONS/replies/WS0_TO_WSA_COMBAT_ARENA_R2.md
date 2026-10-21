@@ -177,3 +177,6 @@ Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), n
 - **Rauchbombe ohne weaponDrop-Karte:** Dein Laufzeit-Rückfall ist ok. Sie wird beim Wurf verbraucht; stirbt die Figur mit der Bombe in der Hand, fällt sie nach derselben Bahnregel. Kein WSB-Nachzug nötig.
 - **Offen:** Stab-Long/Channel/Area und finales Waffensounddesign. Für Ton nimm die vorhandenen WSA- bzw. ElevenLabs-Sets (`KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1`, `blaster_r1`, `throwables_r1`). Hörabnahme macht Georg.
 - **Als Nächstes von WSB:** K13 Large-Rig-Nahkampf (black_knight, demon_lord, orc_brute). Meldung über WS0.
+
+## Neuer Job (21.10., V-599): Repo `kayfabizarro` privat vorbereiten
+Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weiterlaufen: `kayfabizarro.pages.dev/FrizzleBob/` (Regeln, Essays), PDF- bzw. Deck-Viewer, die übrigen Pages und die chatgpt.site-Werkzeuge. Brief: `replies/BRIEF_WSA_REPO_PRIVATE_SWITCH_R1.md` (auf deiner Inventur vom 17.10. aufbauend). Den Schalter legt Georg um, nicht du.

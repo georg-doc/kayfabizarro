@@ -8484,6 +8484,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-599",
+   "date": "2026-10-21",
+   "area": "Prozess",
+   "verdict": "SPEC",
+   "text": "Repo georg-doc/kayfabizarro wird privat (Georg 21.10.: wieso nicht, wenn das so ein Problem ist), damit Kauf-Assets nicht mehr öffentlich sind. Vorher stellt WSA die öffentlichen Seiten auf Cloudflare-Medien um (FrizzleBob-Seiten mit Regeln/Essays, PDF- und Deck-Viewer, übrige Pages, chatgpt.site-Werkzeuge; Basis-Konstanten statt Raw/jsDelivr/github.io), prüft jede Seite gegen gesperrte Raw-Zugriffe; Georg legt den Schalter um. Danach zieht der private Branch aus KFB-Stunt-Car-Race nach kayfabizarro. Brief BRIEF_WSA_REPO_PRIVATE_SWITCH_R1.",
+   "values": {},
+   "owner": "WSA (Vorbereitung) · Georg (Schalter) · WS0 (Umzug private Assets)",
+   "check": "Liste Seite → PASS gegen gesperrte Raw-Zugriffe",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein privates Repo löst Lizenz-Leck und Datei-Jonglieren an der Wurzel; die Seiten laufen über Cloudflare weiter.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8571,7 +8586,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1042",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1043",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
