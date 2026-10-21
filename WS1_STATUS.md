@@ -3,6 +3,47 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 118 · 21.10. · Antworten auf V-587 umgesetzt · WS-NPC gestartet · Dioramen Schritt 1 · Bitte an WS0: K4/K5
+
+**Danke für V-587.** Umgesetzt bzw. eingeplant:
+- Schattenlicht ≥ 42° bleibt.
+- `createContactAO` kommt im Spiel raus (nächster Spiel-Commit mit Testreihe).
+- Felsen bleiben.
+- Gemalte Racer über WSB.
+- Island-Kit-Wasser ist Standard.
+
+**WS-NPC läuft seit heute Vormittag** (Georg hat den Chip gestartet), erster Auftrag `BRIEF_WS1_NPC_LIFE_R2.md`.
+- **Speicher-Owner `kfb.world-save/1`: der WS1-Lead.**
+  - Modul `src/world/worldSave.js` im Spiel, Muster `src/world/save.js` (rein, Node-geprüft, Laden repariert).
+  - WS-NPC liefert den NPC-Gedächtnis-Abschnitt als Vorschlag (Schema, Grenzen, Test) zu. Bis dahin nur flüchtiger Zustand, Phase B wartet darauf.
+- **Status-Pfad:** `WS1_STATUS.md` im Wurzelverzeichnis von `ws1/r3f-frame`; den Abschnitt WS-NPC schreibt der Lead.
+  - WS-NPC pusht zusätzlich additiv `WS_NPC_STATUS.md` auf `ws-npc/status`, damit ihr direkt lesen könnt.
+  - Laufzeit-Code erst nach eurem Go auf `ws-npc/*`.
+
+**Bitte an WS0 – K4/K5:** Auf diesem Mac gibt es **kein Dropbox**: weder `~/Dropbox` noch `~/Library/CloudStorage/Dropbox`, nur OneDrive. Die Dropbox-Pfade aus V-587 sind für WS1 also nicht lesbar. Möglichkeiten, die ohne öffentlichen Zweig auskommen:
+1. Georg kopiert `50_BLENDER/K4/out` und `K5/out` sowie `ORKBAND` r1b einmal nach `~/kfb-ws1/private/` (lokal, nicht in Git).
+2. Oder das private Repo `kfb-private-assets` (Vorschlag §82/§87).
+
+Bis dahin laufen die RA-Rohteile als Platzhalter.
+
+**Dioramen-Test, Schritt 1 fertig** (Probe `ws1/preview` @… siehe Commit):
+- Anker-System mit bis zu 8 Ankern als Uniform-Array (die nächsten), Form als abgerundete Box mit Drehung und eigener Anschlussbreite. Kreis = Box mit Halbachsen 0, damit ist das Amphitheater als Anker 0 bitgleich.
+- Prüfung:
+  - JS-Höhen an 4 Messpunkten identisch.
+  - Bildvergleich alt/neu in 3 festen Kameras: Die Abweichung liegt innerhalb der Lauf-zu-Lauf-Streuung durch Animation.
+- Farbring und Tonmasse rechnet das Fragment weiter für den nächsten Anker.
+- Nächster Schritt: zweites Diorama als Gegenprobe, dann Disco (Platzhalter-Teile), Ork-Band, Übergänge `kfb_edge`.
+
+**Leistung (Fortsetzung §117):**
+- Wolkenkörper standardmäßig aus (Georg: Kuppelwolken reichen).
+- Neuer Schalter „Schatten nur für Bewegtes“ (Schattenkarte ±20 m, ruhende Welt erdet sich über AO); bringt kaum ms, ist aber schärfer.
+- Leistungsstufen Hoch/Mittel/Niedrig als Auswahl, headless 46 / 37 / 27 ms; gilt bis Georgs Messknopf-Tabelle vorliegt.
+- Der Schattenwerfer-Ersatz für das Amphitheater warf zuerst nicht, weil three r147 die Ebenen der Hauptkamera prüft. Jetzt ist er im Bild unsichtbar und zeichnet nur in die Schattenkarte.
+
+**Spiel:**
+- `c2e46b8` und `fd5ccc5` sind lokal grün, bis auf `orbit` (calmAfterRelease, GPU).
+- Ich prüfe gerade am Stand davor (`eac5cb0`), ob der Fehler schon vorher bestand. Erst dann spiegle ich `ws1/terrain-439`.
+
 ## 117 · 21.10. früh · Jobs 1–4 von WS0 · erste Runde (Lead WS1)
 
 **Job 1 Leistung (Ziel ≥ 55 fps auf Georgs Mac):**
