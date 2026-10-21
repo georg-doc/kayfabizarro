@@ -130,3 +130,10 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
   - Das Rauch-Flipbook ist im Knet-Modus aus.
   - TUNE T1–T3 erledigt: Wort ×1,3, beide Töne sichtbar, 3 Kuppeln.
 - Gesamtprobe mit allen Schaltern: R1, R2, R4 und R6 PASS (11/11 Würfe angekündigt).
+
+## Nachtrag: Kill am Ort PASS mit TUNE · Spieler-Treffer ohne Geist als Prototyp
+- Nr. 8 Runde 2 (`fe1e98d`): **Georg PASS mit TUNE** (T4: L9 Platzhalter).
+- Nr. 5 Spieler-Treffer (`1b1ee3b`, `?hurt=1`), Urteil offen:
+  - **Ursache des Geists:** ein rosa `burst`-Sprite über der Figur (0,42 s) plus ein rosa Materialblitz.
+  - **Neu:** roter Knet-Treffer am Körperrand, Blitz dunkel-warm (ein heller Ton überstrahlt bei Zuschlag 1,8), eigener Bonk-Cue **ohne confirm.hit**.
+  - Backlog H1–H3, **L8 `player_hurt` bitte erzeugen.**
