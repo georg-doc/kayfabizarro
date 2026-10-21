@@ -15,7 +15,7 @@ import { createOrchard } from '../world/harvest.js'
 export const FOREST_PIN = '54b9bb669fda8a5bc3d76a0743884473d04c1f50'
 const FOREST = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${FOREST_PIN}/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/`
 export const CANOPY = ['Tree_1_A_Color1', 'Tree_1_B_Color1', 'Tree_2_B_Color1', 'Tree_2_C_Color1', 'Tree_3_A_Color1', 'Tree_3_B_Color1', 'Tree_3_C_Color1', 'Tree_4_A_Color1', 'Tree_4_B_Color1']
-export const ORCHARD = Object.freeze({ trees: 5, spacing: [5.5, 8.5], reach: 1.9, shotRange: 26, blastRange: 22, wiggle: 0.5 })
+export const ORCHARD = Object.freeze({ trees: 5, spacing: [5.5, 8.5], reach: 1.9, shotRange: 26, blastRange: 22, wiggle: 0.5, priorityBehind: 1.5 }) // priorityBehind: Georg 21.10. (a)
 // WS-NPC Phase C (V-583 Dark Fluffer, Lead-OK 21.10. b): ein Baum wird „tainted“ – nur Darstellung + Weltzustand, keine 7. Sorte. Die Kügelchen
 // werden dunkel (Instanzfarbe Richtung Tinte #1f1a14), fallen über den vorhandenen Treffer-Weg, bleiben liegen und sinken nach sinkAfter s in sinkDur s ein
 // (Zustand 'sunk', unsichtbar); tainted ist weder aufsammelbar noch ansaugbar. Flüchtig (kein Spielstand, V-585).
@@ -88,12 +88,14 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
     // Schuss: einfaches Projektil vom Spieler zum nächsten Baum im Blickkegel, Treffer bei Ankunft
     shoot(p, dir) { const t = nearestTree(p, ORCHARD.shotRange, dir, 0.75), g = nearestTarget(p, ORCHARD.shotRange, dir, 0.75)
       if (!t && !g) return null
-      const toTarget = g && (!t || g.d < Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2])) // WS-NPC Phase C (Lead-OK d): näheres Ziel gewinnt
+      const td = t ? Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2]) : Infinity // WS-NPC Phase C (Lead-OK d): näheres Ziel gewinnt; Georg 21.10. (a): ein Ziel mit Vorrang
+      const toTarget = g && (g.d < td || (!!g.it.priority?.() && g.d <= td + ORCHARD.priorityBehind)) // (z. B. feindlicher Dark Fluffer am Stamm) nimmt der Schuss auch bis priorityBehind m hinter dem Baum
       const m = new THREE.Mesh(fxGeo, new THREE.MeshStandardMaterial({ color: '#ffd46b', roughness: 1, emissive: '#ff9a2e', emissiveIntensity: 0.6 })); m.scale.setScalar(0.12); m.position.set(p[0], p[1] + 1.2, p[2]); root.add(m)
       if (toTarget) { flights.push({ m, g: g.it, v: 34 }); info.shots++; return { target: g.it.id } }
       const [cx, cy, cz] = crown(t)
       flights.push({ m, t, to: new THREE.Vector3(cx, cy, cz), v: 34 }); info.shots++; return { tree: t.id, zone: t.zone } },
-    // WS-NPC Phase C (Lead-OK 21.10. d): Ziele für den Schuss (z. B. Dark Fluffer zum Heilen). { id, pos: () => [x, y, z] (Mitte), r, onHit(id) }.
+    // WS-NPC Phase C (Lead-OK 21.10. d): Ziele für den Schuss (z. B. Dark Fluffer zum Heilen). { id, pos: () => [x, y, z] (Mitte), r, onHit(id), priority?() }.
+    // priority() true (Georg 21.10. (a)): Vorrang vor einem höchstens ORCHARD.priorityBehind m näheren Baum im Kegel
     // Kein Schaden, kein Kampfsystem: das Projektil folgt der Mitte und meldet beim Auftreffen onHit; Rückgabe = Abmeldung
     addTarget(it) { if (!it || it.id == null || !(it.r > 0) || typeof it.pos !== 'function') throw new Error('ORCHARD_TARGET_INVALID'); targets.set(it.id, it); return () => targets.delete(it.id) },
     // Explosion (Sekundärtreffer): Ball am nächsten Baum, leert ihn auf einmal (gestaffelt zusammengedrückt)

@@ -2,6 +2,49 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 9 · 21.10. spät · An WS0: WSB-Auftrag „Dark-Fluffer-Cubes K11 für alle Boden-Cubes“ (Georg 21.10.)
+
+**Georg 21.10.:** „wir könnten auch die anderen Enemies aus der Combat-Slice als Dark Fluffer gebrauchen, das war die Idee“ → WSB-Auftrag über WS0.
+
+**Ausgangslage:**
+- Das WSA-Spenderpaket (`georg-doc/KFB-Combat-Arena` @028dd00, `wsa/dark-fluffer-donor-v584-2026-10-21`, `dark_fluffer_donor/cubes.json`) enthält 17 Boden-Cubes aus MonsterCuteCubes (Quaternius, CC0), Quelle kayfabizarro @c746a95.
+- Einen vermessenen Maul-Anker `KFB_Mouth` und die geheilte Fassung `*_healed` gibt es bisher nur für den Ghost (WSB K11 k11c).
+- Die Arena-Formel (Höhe × 0,62) liegt auf der Stirn. Die `Mouth`-Knochen sind Gelenke, nicht die sichtbare Maulöffnung (WSA-Befund).
+- WS0 V-589: Spucken nur aus `KFB_Mouth`.
+
+**Auftrag an WSB (Vorschlag WS-NPC, wie Ghost K11 k11c):**
+1. **Je Cube eine Datei** `KFB_<Name>_healed.k11c.glb`, as-is (V-574, CC0, Clips unverändert), mit:
+   - `KFB_Mouth`: Kind von `Head`, Mitte der sichtbaren Maulöffnung, lokal +Z = Spuckrichtung (V-589);
+   - `KFB_HealedEyes`: weiße Augen-Auflage mit Pupille, im Spiel erst nach dem Heilen sichtbar.
+2. **Karten** `q_<name>.figure.json` und `q_<name>_healed.figure.json` mit sha256, Anker-Regel und Clip-Liste, wie `q_ghost`.
+3. **Frontbild je Cube** (dunkel/geheilt) mit markiertem `KFB_Mouth`.
+4. **Liste**, 15 Cubes, Mushroom zuerst (WS0 V-589: lebt am Waldboden bei den Obstbäumen):
+   - q_mushroom, q_alien, q_alien_tall, q_cactus, q_chicken, q_crab, q_cyclops, q_deer, q_demon, q_greendemon, q_panda, q_penguin, q_pig, q_tree, q_yeti.
+   - Ausgeschlossen: q_skull (leere Augenhöhlen, nichts wird weiß; Arena schließt ihn aus) und die vier Flieger.
+   - Hinweis: Tree hat keinen `Death`; das ist für das Heilen nicht nötig.
+5. **Größe:** Georg prüft gerade 0,7–0,8 m statt 1,1 m (Vergleichsbilder folgen). Die Höhe stellt das Spiel ein (`heightM`); WSB liefert in Originalgröße.
+
+**WS-NPC danach:**
+- Mehrere Dark Fluffer über die Daten (`fluffers[]`), je Sorte und Baum.
+- Spucken aus `KFB_Mouth`, weiße Augen nach dem Heilen.
+- Gleiche Tests wie beim Ghost (fluffer, orchard-npc).
+- Bis die Cubes da sind, bleibt der Ghost der einzige Dark Fluffer.
+
+## 8 · 21.10. spät · An WS0 und den Lead: Heilschuss trifft den Baum statt des Dark Fluffer (Entscheidung erbeten)
+
+**Beobachtung (WS-Audio, Video mit Kampf-Ton, 21.10.):** Aus etwa 6 m ging der Heilschuss auf den Ghost zweimal daneben. Getroffen wurde jeweils der Goblin-Baum t4, an dem der Ghost spuckt; geheilt wurde nicht.
+
+**Ursache (abgenommenes Verhalten, kein Fehler):** Schuss B (`orchard.shoot`) sucht im Zielkegel vor dem Spieler (cos ≥ 0,75, also etwa ±41°) zwei Kandidaten: den nächsten Baum und das nächste Ziel (`addTarget`, hier der Ghost). Gewählt wird der nähere der beiden („näheres Ziel gewinnt“, Lead-OK Phase C d). Der Ghost steht beim Spucken direkt am Stamm. Je nach Winkel ist der Stamm deshalb näher am Spieler als die Mitte des Ghost, und der Schuss fliegt in die Krone. Von nah (2–3 m) auf der baumabgewandten Seite trifft er sicher; so prüft es `fluffer.mjs`.
+
+**Vorschlag (WS-NPC, noch nicht gebaut):** Ein Ziel, das gerade feindlich ist (Dark Fluffer in Phase hostile), gewinnt im Kegel vor dem Baum, wenn es höchstens etwa 1,5 m hinter dem Baum steht. Bäume ohne Fluffer und alle anderen Fälle bleiben, wie sie sind. Gruppen-Mitglieder (Skelette, Soldaten, Bots) sind nicht betroffen, weil sie nicht an Bäumen stehen. Umfang: eine Zeile Vorrang in `orchard3d.shoot` und ein Prüffall in `orchard-npc.mjs`.
+
+**Entscheidung erbeten (Georg / WS0):**
+- (a) Vorrang für den feindlichen Fluffer wie vorgeschlagen.
+- (b) Alles bleibt („näheres Ziel gewinnt“); der Spieler muss nah heran.
+- (c) Eine andere Regel, z. B. das Ziel in der Kegelmitte gewinnt.
+
+Bis dahin bleibt alles, wie es ist.
+
 ## 7 · 21.10. abends · WS0 V-602 umgesetzt: echte Figuren, Ghost k11c, Gerücht D2, Bots · Push ws-npc/phase-a
 
 **WS0 V-602:**

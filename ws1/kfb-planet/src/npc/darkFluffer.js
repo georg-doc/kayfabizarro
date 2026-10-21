@@ -69,7 +69,7 @@ export function createDarkFluffer(options) {
     if (S.offTarget || S.status !== 'OK') return
     const O = options.orchard?.(); if (!O?.addTarget) return
     S.offTarget = O.addTarget({ id: def.id, r: 0.7, pos: () => (sim.at(S.t).target ? [holder.position.x, holder.position.y + (def.heightM || 1.1) * 0.5, holder.position.z] : null),
-      onHit: () => { if (sim.heal(S.t)) S.heals++ } })
+      onHit: () => { if (sim.heal(S.t)) S.heals++ }, priority: () => !!sim.at(S.t).hostile }) // Georg 21.10. (a): feindlich am Stamm → Schuss nimmt den Ghost statt der Krone
   }
   function world(e) {
     const O = options.orchard?.(), tr = def.tree

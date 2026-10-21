@@ -33,6 +33,11 @@ const d = await page.evaluate(() => ({ ...window.__flRec, last: window.__flRec.l
 // E: heilen
 const counts0 = await page.evaluate(() => Object.values(window.__kfbM1.mods.orchard.counts()).reduce((s, v) => s + v, 0))
 const eyesBefore = await page.evaluate(() => window.__kfbM1.fluffer().status.eyes)
+// Georg 21.10. (a): Heilschuss aus 6 m schräg von der Baumseite (Stamm näher als die Ghost-Mitte, Fall aus dem WS-Audio-Video) trifft den Ghost
+const six = await page.evaluate(() => { const M = window.__kfbM1, g = M.fluffer().debug, tr = M.mods.orchard.trees().find((t) => t.zone === 'goblin' && t.id === 't4'), tx = tr.pos[0] - g.x, tz = tr.pos[2] - g.z, n = Math.hypot(tx, tz) || 1
+  const a = Math.atan2(tx, tz) + 0.45, px = g.x + Math.sin(a) * 6, pz = g.z + Math.cos(a) * 6; M.player().teleport([px, M.terrainH(px, pz) + 1.2, pz], Math.atan2(g.x - px, g.z - pz))
+  return { treeD: +Math.hypot(tr.pos[0] - px, tr.pos[2] - pz).toFixed(2), ghostD: 6, hostile: g.hostile } })
+await page.waitForTimeout(400)
 const e0 = await page.evaluate(async () => { const M = window.__kfbM1, p = M.feet(), g = M.fluffer().debug, dx = g.x - p[0], dz = g.z - p[2], l = Math.hypot(dx, dz); const r = M.mods.orchard.shoot(p, [dx / l, 0, dz / l]); await new Promise((res) => setTimeout(res, 1600)); return { r, healed: M.fluffer().debug.healed } })
 const spitsAtHeal = (await F()).debug.spitsDone
 await page.waitForTimeout(6500)
@@ -54,6 +59,7 @@ process.exit(report('fluffer (WS-NPC Phase C P1 im Spiel)', {
   D_residentNoticesOnce: d.alertT !== null && d.last.alerts === 1 && d.faced,
   D_residentBackToPlan: d.last.mode === 'plan' && d.last.lag < 1e-6,
   E_healedByShot: e0.r?.target === 'dark_fluffer_ghost' && e0.healed,
+  E_healFromSixMetresTreeNearer: six.hostile && six.treeD < six.ghostD && e0.r?.target === 'dark_fluffer_ghost', // Vorrang feindlicher Fluffer vor dem Baum
   E_whiteEyesAfterHeal: eyesBefore === 'hidden' && G.fluffer.eyes === 'white' && G.fluffer.mouth === 'KFB_Mouth', // WSB K11 k11c: weiße Augen erst nach dem Heilen, Spucken aus KFB_Mouth
   E_noSpitAfterHeal: e1.debug.spitsDone === spitsAtHeal && evTypes.filter((t) => t === 'spit').length === 3,
   E_burstOnceSixKinds: burst.length === 6 && new Set(burst.map((b) => b.kind)).size === 6 && again.bursts === 1 && again.heals === 1,
