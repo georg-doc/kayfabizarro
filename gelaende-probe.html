@@ -2659,6 +2659,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function applyShadowDyn(force) { const on = !!S.shadowdyn; if (!force && on === SDYN.on) return; SDYN.on = on
     if (typeof worldRoot !== 'undefined') worldRoot.traverse((o) => { if (!o.isMesh) return; if (o.userData.cs0 === undefined) o.userData.cs0 = o.castShadow; o.castShadow = on ? false : o.userData.cs0 })
     const e = on ? 20 : 55; Object.assign(sun.shadow.camera, { left: -e, right: e, top: e, bottom: -e }); sun.shadow.camera.updateProjectionMatrix() }
+  /* CODE_PERF_R1 F5: Diorama/Felsen nur neu aufbauen, wenn ein Regler Gelände oder Platzierung ändert (vorher 8 ms je Ereignis, beim Ziehen 43–53 ms). Unbekannte Schlüssel lösen weiter aus. */
+  const VISUAL_ONLY = new Set(['sunel', 'sgrad', 'shadowdyn', 'retina', 'claytex', 'hero', 'toon', 'painted', 'puffs', 'trails', 'rings', 'ground', 'shadows', 'edges', 'sky2', 'flowspeed', 'flare', 'cards', 'flowdown', 'tod', 'tempo', 'moon', 'cform', 'fluid'])
+  const PUSHSIG = { dio: null, rock: null }
+  function geoSignature() { let k = ''; for (const key of Object.keys(S).sort()) if (!VISUAL_ONLY.has(key)) k += key + '=' + S[key] + ';'; return k }
   function pushUniforms() {
     try { applyShadowDyn() } catch (e) {}
     { const pr = Math.min(window.devicePixelRatio || 1, S.retina ? 2 : 1.25);   /* 1,25 kostet gemessen kaum mehr als 1 */ if (renderer.getPixelRatio() !== pr) { renderer.setPixelRatio(pr); try { resize() } catch (e) {} } }
@@ -2686,7 +2690,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       U.uWKit.value = kit ? 1 : 0; BANK.L = U.uBankL.value = wl; BANK.D = U.uBankD.value = kit && S.water > 0.005 && !S.vox ? 1.5 : 0   /* Island Kit: Becken vertieft (Kit: Pegel −0,35, Sohle −2,6); 1,5 m, damit die Böschung sanft bleibt */   /* Fluid-Parametersätze (WASSER_R1 §4) */
       if (k === 1) { U.uFlShal.value.set('#ffb3dc'); U.uFlDeep.value.set('#d9468f'); U.uFlClar.value = Math.max(0.15, 0.05 * wl); U.uFlGlow.value.set('#ffd1ea') }
       else if (k === 2) { U.uFlShal.value.set('#b6ff4a'); U.uFlDeep.value.set('#24401a'); U.uFlClar.value = Math.max(0.25, 0.12 * wl); U.uFlGlow.value.set('#9dff3a') }
-      else { U.uFlShal.value.copy(wc).multiplyScalar(1.3); U.uFlDeep.value.copy(wc).multiplyScalar(0.72); U.uFlClar.value = Math.min(3, Math.max(0.6, 0.35 * wl)); U.uFlGlow.value.set('#000000') } } { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
+      else { U.uFlShal.value.copy(wc).multiplyScalar(1.3); U.uFlDeep.value.copy(wc).multiplyScalar(0.72); U.uFlClar.value = Math.min(3, Math.max(0.6, 0.35 * wl)); U.uFlGlow.value.set('#000000') } } { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; const geoSig = geoSignature(); if (window.__rockc && geoSig !== PUSHSIG.rock) { window.__rockc.dirty = true; PUSHSIG.rock = geoSig } renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; if (geoSig !== PUSHSIG.dio) { PUSHSIG.dio = geoSig; window.__syncDio?.() } for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
     trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = false; for (const L of CLOUDL) L.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
     const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
@@ -2880,7 +2884,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // ---------- Diorama + Requisiten (Einpassung, Kanon Gebiet 15): öffentliche Modelle von festen Commit-Adressen ----------
   const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/';
-  const AMPH_URL = RAW + '829d551d5cf45eb2fe18ce7a532e37ba7282005a/media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb';
+  const AMPH_URL = window.__AMPH_URL || RAW + 'b28d728ca46ed79cb0a57e10b3500226e5650376/assets/kfb-stage-amphitheater-meshy.browser.v1-lod60k.glb'   /* LOD 59k statt 349k Dreiecke, 2,8 statt 11,7 MB; Bild aus 16–75 m gleich (CODE_PERF_R1 D5). Original: 829d551d…/media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb */;
   const FOREST = RAW + '54b9bb669fda8a5bc3d76a0743884473d04c1f50/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/';
   const ROCKS = ['Rock_3_A_Color1', 'Rock_3_C_Color1', 'Rock_3_E_Color1', 'Rock_3_H_Color1', 'Rock_3_K_Color1'], TREES = ['Tree_1_A_Color1', 'Tree_2_B_Color1', 'Tree_3_A_Color1', 'Tree_4_B_Color1'], BUSHES = ['Bush_1_A_Color1', 'Bush_2_B_Color1', 'Bush_4_A_Color1'];
   const worldRoot = new THREE.Group(), dioGroup = new THREE.Group(), stoneGroup = new THREE.Group(), propGroup = new THREE.Group(); worldRoot.add(dioGroup, stoneGroup, propGroup); scene.add(worldRoot);
