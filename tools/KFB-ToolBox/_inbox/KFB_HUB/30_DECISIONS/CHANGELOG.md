@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-625 Goo-Vorstadt: übernommene Häuser in Graustufen (Farbe gestohlen), Farbe kehrt mit Fluff-Kugeln zurück; Hub q149 Richtung mit Konzeptkarte und Referenzen.
 - V-624 MVP-Site als GPT-Site/Stage durch WSA work statt Cloudflare (Georg), Brief V-618 angepasst.
 
 ## 2026-10-21

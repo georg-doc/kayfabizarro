@@ -1,4 +1,6 @@
 # Konzeptblatt · Goo-Vorstadt (Zerstörung) · R1 · 2026-10-21 · WS0
+
+> **TUNE Georg 22.10. (V-625):** Die übernommenen Häuser sind **nicht schwarz, sondern in Graustufen**, als hätte jemand die Farbe gestohlen. Die Farbe kommt mit den Fluff-Kugeln zurück. Das gilt überall, wo unten „schwarz“ oder „Tusche“ steht.
 Felder vollständig in `concept.json`. **Use what works:** Grundlage ist die Joyride-Stadt (J15 `transition-atlas.v1.js`, J17 Clay v8 + Soften, `houseLOD`/`flatNoCast`, Style Guide §7). Nicht neu erfinden.
 
 **Ein Satz:** Diese Szene zeigt eine freundliche Vorstadt, in der einzelne Häuser von den Black Fluffern mit Zensur-Goo überzogen sind, weil Utopia dort folgsame Bewohner hält, und der Spieler soll zuerst das tropfende schwarze Haus zwischen den bunten Knethäusern sehen.

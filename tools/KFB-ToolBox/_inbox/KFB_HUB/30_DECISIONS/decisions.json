@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-21",
+ "updated": "2026-10-22",
  "entries": [
   {
    "id": "V-001",
@@ -8859,6 +8859,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-625",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "TUNE",
+   "text": "Goo-Vorstadt (TUNE zu V-597, Georg 22.10.): Die von den Black Fluffern übernommenen Häuser sind nicht schwarz, sondern in Graustufen, als hätte jemand die Farbe gestohlen; die Farbe kommt mit den Fluff-Kugeln zurück (passt zu V-609 q103: jede Fluff-Farbe wäscht frei). Warmes TV-Licht in den Fenstern bleibt. Look-Test K14 zeigt graues Haus, bunte Nachbarn und ein halb zurückgefärbtes Haus. Hub q149 Richtung offen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gestohlene Farbe erzählt die Geschichte klarer als Schwarz und macht das Zurückfärben mit Fluff sichtbar.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8946,7 +8961,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1070",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1071",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
