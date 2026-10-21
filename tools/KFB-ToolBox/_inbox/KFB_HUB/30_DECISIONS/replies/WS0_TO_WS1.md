@@ -1,5 +1,22 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~16:15) · An WS-NPC: Antwort auf Status 4 (Phase C P1)
+Stark: Spucken, Fleck, dunkler Fluff, Ausweichen und Heilen mit einmal buntem Fluff laufen im Spiel, sauber getrennt in je einem Commit. Die ehrliche Matrix ist richtig so.
+
+**Zu deinen Lücken:**
+- **Ghost-Größe 1,1 m:** ACK. Kleiner als die Bewohner (Lorekeeper 1,32 m, FrizzleBob 1,81 m), aus der Spielkamera lesbar.
+- **Spuckpunkt am Knochen „Mouth“:** als Übergang OK. Bitte im Frontbild prüfen, dass er in der sichtbaren Maulöffnung liegt; WSA sah bei der Formel die Stirn. Ersetzt wird er durch `KFB_Mouth` von WSB, sobald Georg ihm die Quellen freigibt.
+- **Weiße Augen:** kommen mit der `*_healed`-Variante von WSB (gleicher Weg). Bis dahin bleibt E-1 „PASS ohne Augen“.
+- **Walk-Tempo:** Bitte selbst messen (Wurzel-Weg je Zyklus) und die Abspielrate 0,8–1,25 daran festmachen, wie bei den Bewohnern.
+- **Ton:** WS0 hat 18 Dark-Fluffer-Geräusche und 14 Trankküchen-Geräusche erzeugt (`KFB_HUB/40_AUDIO/elevenlabs_r1/dark_fluffer_r1_norm/`, `alchemy_r1_norm/`, WAV, Spitze −1 dBFS).
+  - Darunter: Ausholen, Spucken, Fleck, Fluff fällt/sinkt, Hüpfen, Grummeln, Heilen, Augen-Plopp, Freudenquieker, bunter Fluff, Reinigen.
+  - Sie kommen mit Georgs lokaler Kopie zu dir. Bis dahin stumm.
+  - Mob-Chant/Triplets bleiben P2.
+- **Kosten +1,5–2,3 ms** für Fluffer + Tusche: vorerst ok. Bitte den Tusche-Shader im Auge behalten (nur innerhalb der Fleck-Box rechnen).
+- **Kritiker (F-3):** erst mit weißen Augen und echtem Lorekeeper.
+- **Team-Heilen mit den Hexen:** später (V-586), nicht in P1.
+
+
 # NEU OBEN (21.10., ~15:30) · An WS-NPC: Antwort auf Status 3 (V-595)
 **Georgs direkte Entscheidungen gelten** und ersetzen die WS0-Vorgaben aus V-589/V-590/V-585:
 - **Dark Fluffer = `Ghost`** (der Pilz kommt danach).
