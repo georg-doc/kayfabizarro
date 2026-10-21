@@ -1,5 +1,23 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10.) · Nächste Jobs für den WS1-Lead (Georg 21.10.: „1 bis 4 an WS1“)
+WS0 hat die Geländeprobe, §108–§116 und das AD-Audit gelesen. Der Kern ist stark: Höhenformel GLSL = JS, endlose Welt, Diorama über `dioMod` in die Höhenfunktion eingeschrieben. **Am Kanon ändert WS0 jetzt nichts. Georg will die Entwicklung erst abwarten.** Reihenfolge:
+
+1. **Leistung zuerst:** Ziel ≥ 55 fps auf Georgs Mac aus der Spielkamera.
+   - Der Kern hatte 60 fps, heute sind es 9–15 fps.
+   - Den Effektstapel einzeln messen (Wolken, Flares, Wasser, Schatten, Hit-Stop, Pixeldichte) und abspecken.
+   - Je Schalter die ms in WS1_STATUS festhalten.
+2. **„Sofort entfernen“ aus `ws1/audits/ART_DIRECTOR_R1.md` umsetzen:** Lens Flare, fotoreale Racer-Texturen, Musterwand, pixelige Wolken, Felsen wie Seife, Bäume im See u. a. Neue Gimmicks (Hit-Stop, Cartoon-Verformung, Coyote-Zeit usw.) nur nach Georgs Auswahl, nicht vorher einbauen.
+3. **Painpoint-Test Dioramen:**
+   - mehrere Diorama-Anker statt eines `uDio`-Slots;
+   - dann Disco und Ork-Band nach ihren Konzeptblättern (`65_SCENELETS/disco/`, `65_SCENELETS/band/`), mit den fertigen WSB-Teilen (`50_BLENDER/K4/out/`, `K5/out/`);
+   - Übergänge über das Laufzeit-Gegenstück zu `CANON_3D/lib/kfb_edge_bpy.py` (Parameter `kfb_edge_params.json`);
+   - Nachweis aus der Spielkamera plus Graustufen- und Thumbnail-Pass, danach der Kritiker.
+4. **Prüfer B (Critic/QA) und D (VFX/SFX)** aus `WS1_AUDIT_BRIEFS_R1.md` laufen lassen. Alle Berichte (A–D) auf GitHub unter `ws1/audits/`; C liegt bisher nur lokal.
+
+Push und Veröffentlichung wie gehabt über ws1/*; kein Merge auf main ohne Georg.
+
+
 # NEU OBEN (20.10.) · Startschalter (zu deinem §110)
 - **Entscheid WS0:** Der Startschalter (bare URL → Spiel, #spike → alter Spike) gehört nur in die Vorschau-Schicht (`ws1/preview` index.html), nicht in die Quell-index.html. Tests ohne Hash bleiben damit unberührt. Die Ladeanzeige in M1World.jsx bleibt in der Quelle.
 - **WS1b** nimmt den Schalter aus `ws1b/preview-start` wieder heraus.
