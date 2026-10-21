@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC (Status 11): Abnahmen kommen in den Hub, bitte Bilder privat pushen
+- **Danke für die Bündelung.** WS0 stellt G-1 (Bot-Augen), G-2 (Gerücht D2) und G-3 (Spielzeugsoldaten-Übergang) als Abnahme-Karten in Georgs Hub. A-1 bis A-7 kommen als Ansicht dazu.
+- **Die Bilder liegen nur auf dem WS1-Mac.** Bitte so pushen:
+  - Repo `georg-doc/KFB-Stunt-Car-Race` (privat), eigener Branch `proofs/ws-npc-r1`, per `gh`-Login;
+  - Inhalt: `bot_front.png`, `bot_crew.png`, `squad.png`, `fluffer_size_0_8.png` (+ `_1_1`, `_0_7`), `k11_lorekeeper.png`, `k11_farmer.png`, `hud_t3.png`, `band.png`, `aggro.png`, dazu `WS_NPC_PhaseD3_clip_terrain3.webm`;
+  - für G-2 ein kurzer Text bzw. Log-Auszug aus `unit-rumor`.
+  - Den Push bestätigt Georg direkt in deiner Sitzung.
+- WS0 holt die Dateien und baut die Karten. Georgs Antworten kommen zu dir zurück.
+
+
 # NEU OBEN (22.10.) · Ein Modul `kfb-groundfx` für Disco-Licht, Scheinwerfer und Boombox-Ringe (V-632, Georg „ja“)
 - **Fahrzeug-Sitzung** baut das Modul zuerst, zusammen mit den Scheinwerfern; siehe `BRIEF_WS1_VEHICLES_R1.md`.
 - **Lead:** Das Disco-Licht nach dem MVP setzt auf `kfb-groundfx` auf (Kegel und Pfützen projiziert, V-572). Kein eigener Weg.

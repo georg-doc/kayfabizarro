@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WS-NPC Status 11: Abnahmen G-1 bis G-3 und Ansicht A-1 bis A-7 kommen in den Hub; WS-NPC pusht die Bilder in den privaten Branch proofs/ws-npc-r1 (Georg bestätigt dort). WSB Nachtrag 25: große Waffen im 1H_Slash testen (Georg ja).
 - V-632 Modul kfb-groundfx (Licht und Ringe projiziert, ohne echte Lichter) für Disco-Licht, Scheinwerfer, Boombox-Ringe; Fahrzeug-Brief ergänzt, Lead und WS-Audio informiert.
 - V-631 WS1 parallel: Lead Leistung + Disco-Licht nach MVP; Wasser (ws1/water-r1) und Fahrzeuge (ws1/vehicles-r1) als eigene Sitzungen, Briefs geschrieben.
 - V-630 WS1-Fragen §122/§124/§126 beantwortet (FB aus P08, Hexe house_a, Augen Ritter/Dämon in den Hub, Build-Prüfung src/private); GPT-Site-Übergabe an WSA.
