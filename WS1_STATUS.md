@@ -3,6 +3,65 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 117 · 21.10. früh · Jobs 1–4 von WS0 · erste Runde (Lead WS1)
+
+**Job 1 Leistung (Ziel ≥ 55 fps auf Georgs Mac):**
+- Neu in der Probe: Knopf **„Leistung messen“** (Panel, ≈ 2 Min., im Fahrmodus stehen lassen). Er schaltet jeden Effekt an und aus, misst den Median über 60 Bilder auf dem eigenen Rechner und zeigt eine Tabelle zum Kopieren. **Georgs Tabelle ist die Grundlage der Leistungsstufen.** Die Headless-Werte streuen, weil vier Sitzungen sich die GPU teilen.
+- Umgesetzt:
+  - Pixeldichte max. 1,25 statt 2; Retina als Schalter. Headless 52 → 32 ms bei Pixeldichte 1.
+  - Amphitheater-Erdung mit fester Sockelhöhe statt Höhenformel je Vertex (349k Dreiecke): −13 ms.
+  - Schattenwerfer-Ersatz für das Amphitheater: 31k-Kopie auf Ebene 3, nur die Schattenkamera sieht sie.
+  - Boden-AO nur bei > 1,5 m Bewegung neu.
+  - Schattenfilter 18 statt 74 Abfragen.
+- Befund aus CPU-Profil und Pixeldichte-Reihe: Die CPU ist zu 78 % untätig, eine kleinere Auflösung bringt unter Pixeldichte 1 nichts. Der Rest ist Effektsumme auf der GPU: jeder Effekt 1–5 ms, zusammen ≈ 27 ms.
+- Größte Posten headless:
+  - Fließfarben 4,6 ms, Schatten 3–4 ms, Etherington-Normalen 2,8–4,3 ms, Himmel v2 2,7–3,5 ms, Amphitheater 2,7–6,8 ms, Kulissen ≈ 3 ms.
+  - Das Gelände selbst (Nahgitter) nur ≈ 2,5 ms.
+  - Gelände vereinfachen bringt also wenig (Georg fragte).
+- Messskripte: `probe/tests/perf-pair.mjs`, `perf-dpr.mjs`, `perf-terrain.mjs`, `perf-profile.mjs`.
+
+**Job 2 „Sofort entfernen“ (AD-Audit):**
+- Erledigt:
+  - Blendenflecken aus (Standard und einmalig bei Bestandsnutzern)
+  - Dunstlinie / heller Streifen (step(rd.y))
+  - pixelige und zerfranste Wolken (Kantenbreite aus der Pixelgröße statt fwidth, Blickrichtung je Bildpunkt; keine Haarlinien mehr an den Kuppelkanten)
+  - Bäume im See
+  - Küsten ohne Verschmieren
+  - Schatten als ruhige Fläche über den Fließfarben
+- Offen:
+  - fotoreale Racer-Texturen (Heldenfarbe KFB-Rot als Zwischenschritt; gemalte Racer wären ein Job für Mac mini/Blender)
+  - Musterwand in der Ferne (Spiel, kommt mit dem Port)
+  - **Felsen wie Seife:** widerspricht Georgs Urteil vom 20.10. (Boden-Familie fließt gedämpft und heller mit). Georg entscheidet.
+- **Zu den Gimmicks:** Georg hat am 21.10. ausdrücklich alle fünf ausgewählt („alle fünf ideen bauen“), also vor eurer Nachricht von 03:58:
+  - Coyote-Zeit, Sprung-Puffer, Mini-Turbo mit Boost-Anzeige: k2t `fd5ccc5`, je ein Node-Test, der gegen den alten Code FAILt
+  - Hit-Stop mit Trauma-Kamera, Cartoon-Verformung, Heldenfarbe: in der Probe
+
+**Job 3 Painpoint-Test Dioramen:** Plan liegt lokal (`research/dioramen/DIORAMEN_PAINPOINT_PLAN_R1.md`).
+- N Anker als Uniform-Array (max. 8 zugleich, die nächsten), abgerundete Box statt Kreis.
+- `kfb_edge` als Feld D und Sprenkel in `dioMod` (GLSL = JS), Bruchstücke als Mesh je Anker, Rubbel-Nester als Instanzen.
+- Sechs Schritte mit Abnahmekriterien.
+- **Blocker, bitte WS0:**
+  - `50_BLENDER/K4/out` und `K5/out` liegen in keinem erreichbaren Zweig, der Register-Zweig spiegelt nur `30_DECISIONS` und `65_SCENELETS`. Bitte spiegeln oder den Ort nennen.
+  - Das Disco-Blatt nennt „WSB K1“, das Band-Blatt „ORKBAND r1b“. Was gilt?
+  - Bis dahin baut WS1 mit den öffentlichen RA-Rohteilen (Radio, Boxen, Drum Machine, Wardrum, Orc_Banner_Large, Figuren, Disco-Kugel) und tauscht später.
+
+**Job 4 Prüfer:**
+- Auf `ws1/r3f-frame` unter `ws1/audits/`: A (Art Director), B (Critic/QA), D (VFX/SFX); der Lizenz-Anhang von D bleibt lokal.
+- C (Code/Leistung) läuft noch und folgt, sobald fertig.
+- **QA P1 „Wagen schwebt“:**
+  - Wand an Bug, Heck und Seite blockiert.
+  - Fahrfläche über Terrassenstufen geglättet.
+  - LIFT max. 1 m, gleitend, nach dem viertgrößten Eintauchpunkt.
+  - Ergebnis: QA-Nachprüfung 15 % → 5 % (Georgs Werte 1,5 %); Eintauchen 26 → 12 Bilder.
+  - Zwei Reststellen an steilen Terrassenhängen vor Wänden. Sauber geht das nur mit Rumpf-Kollision gegen das Höhenfeld, eigener Slice.
+
+**Spiel `terrain/439`:**
+- `c2e46b8`: vyG-Fix (nach Rampen kein Mehrfach-Abheben) mit Test `k2tRamp`.
+- `fd5ccc5`: Spielgefühl.
+- Volle Reihe grün bis auf die bekannten GPU-Wackler c2 und orbit; die laufen gerade im Software-Modus. Danach folgt der Spiegel auf `ws1/terrain-439`.
+
+**Probe:** `ws1/preview` @910d261, Artefakt v36.
+
 ## 116 · 21.10. · Rückblick für WS0 (Pause seit 20.10. abends) · WS1-Stand · Querblick auf alle Stränge · Plan für das Reset-Fenster
 
 **Kurz:** WS1 hat die Gelände-Probe produktreif gemacht (Spiel-Physik und -Kamera, Island-Kit-Wasser, Schatten nach Konzept R1) und terrain3 hinter einem Schalter ins Spiel gebracht. Georg will das Reset-Fenster bis Do. 02:00 für parallele externe Prüfungen nutzen. Dafür braucht es vier WS0-Entscheidungen (unten).
