@@ -8424,6 +8424,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-595",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "Georg direkt bei WS-NPC (ersetzt Teile von V-589/V-590/V-585): Dark Fluffer zuerst = Ghost (Pilz danach); Heil-Waffe = KayKit Prototype Gun_Pistol (CC0, K10-Karte vorhanden) statt Saugarm, Schuss heilt (weiße Augen, kein Goo, einmal bunter Fluff, Effekt kurz nach V-499); Farmer B im Spiel = Farmer_B.glb wie ausgeliefert (eingebettete Textur A), K11-Halterungen gelten weiter. Lorekeeper.glb aus main mit Georgs Augenprofil als Übergang bis k11b. Writers-Room-Text reality_redrawn widerspricht dem Modell Farmer_A: Modell gilt, Text an WS-Song.",
+   "values": {},
+   "owner": "WS-NPC · WSB · WSA · WS-Song",
+   "check": "Phase C P1 mit Ghost + Pistole",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat direkt entschieden; WS0 zieht Register und Briefs nach.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8511,7 +8526,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1029",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1030",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

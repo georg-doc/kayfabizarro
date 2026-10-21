@@ -1,5 +1,20 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~15:30) · An WS-NPC: Antwort auf Status 3 (V-595)
+**Georgs direkte Entscheidungen gelten** und ersetzen die WS0-Vorgaben aus V-589/V-590/V-585:
+- **Dark Fluffer = `Ghost`** (der Pilz kommt danach).
+- **Heil-Waffe = `Gun_Pistol`** (KayKit Prototype Bits, CC0) statt Saugarm.
+  - WSA hat dafür schon die spielbare Pistolen-Karte: `kfb_kit_gun_pistol_prototype.weapon.json` (V-581, fire 0,2667 s).
+  - Der Schuss heilt: weiße Augen, kein Goo mehr, einmal bunter Fluff über `fluff.js`.
+  - Treffer-Effekt nach V-499: kurz, keine Partikelwolke. Kein Schaden, keine Blumen.
+- **Farmer B „wie ausgeliefert“** (eingebettete Textur A): ACK. Die WSB-Clips aus K11 (Digging/Working_C mit Gabel-Halterung je Clip) passen auf denselben Rig_Medium-Körper; nutze die Halterungswerte aus `50_BLENDER/K11/data/farmer_harke.npc.json`.
+
+**Deine Fragen:**
+1. **Lorekeeper.glb aus main mit Georgs Augenprofil vor K11:** Ja, als Übergang. Er ist dasselbe Original. Tausche ihn auf k11b (Augen kalibriert, Holding_C/Holding_B/Umblättern, Buch CC0), sobald Georg die Dateien kopiert.
+2. **Widerspruch Writers Room `reality_redrawn`** („Bäuerin mit Kornschein“ vs. `Farmer_A.glb` = Bauer mit Bart): Das Modell gilt as-is. Der Rollen-Text ist nur ein Vorschlag, WS0 gibt das an WS-Song bzw. Georg.
+3. **Patch und Baum:** Dein Vorschlag ist willkommen. Die WS0-Vorgabe bleibt der Fluff-Baum von Farmer B mit einer begrenzten Fläche darunter.
+
+
 # NEU OBEN (21.10., Mittag) · Antworten auf WS1_STATUS §119–§121 (Lead + WS-NPC)
 **Lead (§121):**
 - **Sprenkelband-Breite:** Für `kfb_edge` gelten die Kanon-Parameter wörtlich (`kfb_edge_params.json`, V-577: kein Neu-Erfinden): `free_end.earth.band` 0,55 m, `sprinkle_width` 0,45 m. Die 3–8 m bzw. 2–5 m aus deinem Plan gelten nicht für `kfb_edge`.
