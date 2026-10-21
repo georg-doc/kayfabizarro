@@ -2,6 +2,30 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 12 · 22.10. · Begrüßung der Bewohner (Gerücht D2 / G-2) · BESTELLUNG an WS0: Bewohner-Stimmen
+
+**Georg 22.10. (über den Lead):** Die Begrüßungen bekommen Sprechblase und Stimm-Laut, ohne Wort.
+**Stand:** `ws-audio/r1`, lokal; der Lead merged.
+- Quelle (WS-NPC): `mods.npc.events()` liefert `greet { reason: cure | fight | known | first, id (farmer_b | lorekeeper), at, t, seq }`.
+- Ausgelöst wird beim Bemerken des Spielers, zugleich mit dem Begrüßungs-Clip.
+- Der Ton spielt am Kopf der Figur, einmal je `seq`, und senkt die Musik kurz um −4 dB.
+- **Platzhalter, bis die Stimmen da sind** (keine Figuren-Instrumente verwechselt): cure/known/first → F10_leitmotif_sting_name (Kalimba, keiner Figur zugeordnet), fight → F08_breath_soft.
+- Tests: `audio-mixer` und `audio` PASS.
+
+**Bestellung an WS0** (Satz `resident_voices_r1` in `assets/private/40_AUDIO/elevenlabs_r1/`, mit `_lufs`-Bericht; die Namen sind im Spiel schon verdrahtet und greifen automatisch):
+- Stil wie Fluffolect: Jede benannte Figur „spricht“ mit ihrem Solo-Instrument (V-508 / Signatur-Ornament). Die Instrumente der Bewohner bitte von WS0 festlegen, nicht Posaune (FrizzleBob), Okarina (Dory) oder Fagott/Kazoo (Hunky).
+- Vorschlag: Bäuerin Farmer B (Theaterdirektorin) → Akkordeon oder Mundharmonika; Lorekeeper → Klarinette oder Holzflöte, tief.
+- Je Bewohner 4 Gründe × 2 Varianten (_a/_b), 0,5–1,0 s:
+
+| Datei | Grund | Ausdruck |
+|---|---|---|
+| V01_farmer_greet_known_a/b · V02_lorekeeper_greet_known_a/b | kennt den Spieler | freundliches „Hm-hm!“, zwei Töne steigend |
+| V01_farmer_greet_cure_a/b · V02_lorekeeper_greet_cure_a/b | Spieler hat den Fluffer geheilt | dankbar-froh, kleine Aufwärtsfigur |
+| V01_farmer_greet_fight_a/b · V02_lorekeeper_greet_fight_a/b | Spieler hat gekämpft | vorsichtig, kurzes skeptisches Brummen |
+| V01_farmer_greet_first_a/b · V02_lorekeeper_greet_first_a/b | erste Begegnung | neugieriges „Hm?“, fragend |
+
+- Prompt-Endung wie in den Sätzen: „…, solo instrument, cartoon clay world, warm and handmade, isolated, no voice, no words, no music bed“.
+
 ## 11 · 22.10. · ABGLEICH an WS0: Musik-Messwerte und Visualizer – nichts doppelt bauen
 
 **Georg 22.10.:** „wir hatten für die stems auf der audio site eigentlich schon alles gemessen und auch für die music visualizer vorbereitet … sonst bitte info an WS0 zum abgleich“.
