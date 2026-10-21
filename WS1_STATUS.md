@@ -3,6 +3,45 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 126 · 22.10. · MVP (V-618): ein Spiel-Branch steht · Site-Plattform: GPT-Site über WSA-Work-Job (Georg), Cloudflare nur Rückfall · Übergabe an WS0/WSA
+
+### Übergabe an WSA (bitte als WSA-Work-Job „GPT-Site mit allen Features“ einplanen, Georg 22.10.)
+**Dokument:** `ws1/handoff/HANDOFF_GPT_SITE_R1.md` (diesem Branch beigelegt; Original im Spiel-Branch `docs/`).
+- **Quelle:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Branch `game/mvp-r1`. Private Dateien kommen aus `assets/private` desselben Repos.
+- **Build statisch:** `npm ci && node scripts/site/build-site.mjs` (Node 22, `ASSETS_TOKEN` = Lese-Token) → `dist/`. Das Spiel hat 46 MB in einzelnen Dateien (größte 6,75 MB), der Ton 242 MB in 341 Dateien (Georg: „ja, alles darf auf die Site“, nur passwortgeschützt).
+- **Laufzeit-Bedarf:**
+  - Passwort für alle Pfade (Georg: KISS per Passwort, später E-Mail; nur Plattform-Secret);
+  - `/raw`-Proxy für die kayfabizarro-Abrufe (das Bündel schreibt im Site-Build um);
+  - HTTP-Range für die Musik;
+  - MIME-Typen.
+  - Vorlagen für die Cloudflare-Version: `functions/_middleware.js`, `functions/raw/[[path]].js`.
+- **Fragen an WSA:** Grenzen der Plattform, Funktionen/Secrets, Deploy-Auslöser, Adresse und Tester.
+- **Cloudflare:** nicht eingerichtet; Anleitung als Rückfall `docs/SITE_SETUP.md`.
+
+### Spiel-Branch `ws1/mvp-r1` (kfb-planet, lokal; Schnappschuss im privaten Repo `game/mvp-r1`)
+- **Zusammengeführt:**
+  - terrain/probe-world @ba94c9d
+  - ws-npc/phase-a @f6e7eed: Konflikte package.json und m1-terrain.js gelöst (Wasser + Tusche + hydro)
+  - disco/k12 @7f5750f
+  - ws-audio/r1 @40e8c8c: M1World additiv
+- **Volle Reihe (71 Tests, laufend):** bisher rot nur orbit (calmAfterRelease, wird einzeln wiederholt), drift (Messdatei fehlte im neuen Worktree, nachgelegt) und c2 (bekannter Wackler).
+- **probeHeight:** Prüfsumme ohne das neue `ink`-Statusfeld (Höhen und Kollision unverändert).
+- **Site-Pipeline gebaut:** build-site.mjs, siteRaw.js, KFB_SITE-Modus in vite.config, Passwort-Middleware und /raw-Proxy als Vorlage.
+- **Als Nächstes WS1:**
+  - nachmergen: Fluffer 0,8 m (WS-NPC 5ae84c8, V-616) und die WS-Audio-Commits (site-copy);
+  - Startseite;
+  - Qualitätsstufen und fps-Tabelle;
+  - Kampf-Module;
+  - danach der blinde Kritiker.
+
+### Zweite WS1-Sitzung (V-619) gestartet
+- WS1b „Endlose Biom-Fahrt“ auf `ws1/biome-drive-r1`, rebased auf ws1/mvp-r1 @debec4f.
+- Schalter `world=endless`; Licht nur über moods; M1World nur an einer Stelle.
+
+### Nach dem MVP vorgemerkt
+- **Front-Scheinwerfer** (Georg 22.10.): Glas-Glow, Lichtkegel und Bodenlicht über die Lichtpfützen, keine echten Lichter, Ziel < 0,2 ms. Farbe aus der Antriebsfarbe.
+- Wird in der Probe vorbereitet (Modul `port/kfb-headlights.v1.js`, Anker je Racer halbautomatisch, Abnahme im Rig-Studio).
+
 ## 125 · 21.10. nachts · Nachtrag: Bitten des VFX/SFX-Prüfers (Combat-AV R1) an WS0
 
 Volltext: Register `replies/WS1_COMBAT_AV_R1_RETURN.md` (a09d173bd). Prototyp lokal auf `ws1/combat-av-r1` (bis 17f4403), nicht gepusht.
