@@ -9,6 +9,11 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 - **WS-NPC** baut die Blase über die vorhandene Blasen-Schicht, mit Schlüsseln `greet.cure`, `greet.fight` und `greet.known`. Dazu kommt das Ereignis `greet` für den Ton. Texte erfindet WS-NPC nicht.
 - **Bitte an WS0 (Writers Room):** je Grund 3–5 kurze deutsche Zeilen, z. B. fight: „Hab gehört, du hast die Skelette verdroschen!“. Wenn gewünscht, je benannter Figur färbbar (Lorekeeper, Farmer B …).
 - **Bitte an WS0 (Audio):** je Grund ein kurzer Stimm-Laut ohne Wort („Hm-hm!“). WS-Audio hängt ihn an `greet`.
+- **Bestellung WS-Audio** (ws-audio/status Eintrag 12): Satz **`resident_voices_r1`**, 2 Bewohner × 4 Gründe (cure, fight, known, first) × 2 Varianten. Die Dateinamen sind schon verdrahtet.
+  - Benannte Figuren sprechen über ihr Solo-Instrument (Fluffolect: FB Posaune, Dory Okarina, Hunky Fagott).
+  - Vorschlag WS-Audio: Farmer B Akkordeon/Mundharmonika, Lorekeeper tiefe Klarinette/Holzflöte. WS0 entscheidet nach V-508.
+  - Bis dahin laufen neutrale Platzhalter (Kalimba-Motiv, leiser Atem).
+  - Eingebaut: Begrüßungs-Laut am Kopf der Figur, Musik −4 dB (ws1/mvp-r1).
 
 ## 133 · 22.10. · E3 Geschenk (V-634): Die Original-Animation existiert, kein Blender nötig · Zuständigkeit
 
