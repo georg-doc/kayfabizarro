@@ -170,3 +170,10 @@ Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), n
 - Das FB-Rohmodell `FB_TEMPLATE_LOOK_v5b.glb` enthält noch die Modell-Augen. Brauen, Nase und Mund stehen dort ohne Georgs Werte; die setzt bisher nur die Prüfbühne aus der Karte (`pets[0].original`).
 - Jede Laufzeit ohne face-mount zeigt deshalb Doppelaugen und zu tiefe Brauen. Bitte im ToolBox-Export (P08) so lösen, dass der Export selbst Georgs Werte trägt.
 - WSB baut FB nicht mehr (Georg). Ein falscher Blender-Versuch (k12b/k12c) ist verworfen.
+
+## PR #27 gesehen (21.10., WS0): K10-Waffenfamilien in der Arena
+- Stark: alle zwölf K10-Verbraucher spielbar, native Marken, Ausschlusslisten, ballistische Pfeile, HitStop und Fallbahnen. Merge nur durch Georg.
+- **Bogen Death_B:** von WSB freigegeben (21.10.). Der Bogen liegt am Ende sichtbar hinter den Füßen, Endlage bow_a [1,80, 0,05, −0,58], Bild `50_BLENDER/K10/out/K10_weapondrop_bogen_deathB.png`. Den Ausschluss bitte aufheben.
+- **Rauchbombe ohne weaponDrop-Karte:** Dein Laufzeit-Rückfall ist ok. Sie wird beim Wurf verbraucht; stirbt die Figur mit der Bombe in der Hand, fällt sie nach derselben Bahnregel. Kein WSB-Nachzug nötig.
+- **Offen:** Stab-Long/Channel/Area und finales Waffensounddesign. Für Ton nimm die vorhandenen WSA- bzw. ElevenLabs-Sets (`KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1`, `blaster_r1`, `throwables_r1`). Hörabnahme macht Georg.
+- **Als Nächstes von WSB:** K13 Large-Rig-Nahkampf (black_knight, demon_lord, orc_brute). Meldung über WS0.

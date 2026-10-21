@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSA PR #27: alle K10-Waffen in der Arena spielbar (Familien, Marken, exclude, Pfeile, HitStop, weaponDrop); WS0: Bogen-Death_B freigeben, Rauchbombe-Rückfall ok.
 - V-597 Zerstörung = Goo-Vorstadt (Georg): Konzeptblatt 65_SCENELETS/goo_suburb (Joyride-Stadt als Standard, Ampeln neu, Goo-Häuser, vorgebrochene Bausteine, 2 ms); WSB K14 Look-Test nach K13.
 - WSB K12 Disco-Besetzung angenommen (7 Tänzer mit floorLift, MC = fb_game, Ork-Legacy ready); privater Branch aktualisiert (179 Dateien, inkrementell); WS1 informiert; FB-face-mount-Befund an WSA (ToolBox).
 - STOPP an WSB: FrizzleBob nicht in Blender zusammenbauen (Georg); FB nur aus der ToolBox (P08), MC-Platz in K12 offen.
