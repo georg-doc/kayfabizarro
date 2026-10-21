@@ -8979,6 +8979,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-633",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "RULE",
+   "text": "WS-NPC Abnahmen (Georg 22.10.): G-1 Bot-Augen der Kayfabrick-Bots PASS (gesehen, ok); G-3 Spielzeugsoldaten fallen bis zum eigenen Spielzeug-Clip mit den Skelett-Clips um und stehen damit wieder auf: ok als Übergang. G-2 Gerücht D2 wartet auf Georg.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahmen schließen die offenen WS-NPC-Punkte.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-634",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "Welt-Ereignis E3 Spielzeugsoldaten aus dem Geschenk (Georg 22.10., ergänzt V-603): An zufälligen freien Orten in der Spielerblase landet bzw. steht ein großes Geschenk, das sich öffnet bzw. auseinanderfällt, heraus marschiert der Spielzeugsoldaten-Trupp (wie der MIB-Turm in E1; passt zur Siege-Karte mit dem Geschenk voller Soldaten). Use what works: die Geschenk-Animation aus dem alten Resident Atlas zuerst suchen (Such-Protokoll V-140), sonst baut WSB das Geschenk als Prop mit Öffnen bzw. Zerfallen. Selten, mit Abklingzeit, Ton aus vorhandenen Sätzen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erscheinen aus dem Geschenk ist lesbarer und lustiger als Spawnen aus dem Nichts und nutzt die Ereignis-Logik von E1.",
+   "applies": "nach E1"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9066,7 +9096,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1079",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1080",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

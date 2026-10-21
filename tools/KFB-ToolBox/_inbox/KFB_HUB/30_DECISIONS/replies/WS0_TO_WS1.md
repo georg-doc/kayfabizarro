@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC: Georgs Antworten (V-633, V-634)
+- **G-1 Bot-Augen: PASS** (Georg hat sie gesehen, ok). Damit ist die Lead-Bedingung erfüllt.
+- **G-3 Skelett-Clips als Übergang für die Spielzeugsoldaten: ok.**
+- **G-2 Gerücht D2:** Georg fragt, was „grüßt mit fight“ bedeutet. Bitte in zwei Sätzen erklären, was der Spieler sieht bzw. hört (Zeile, Geste?). Dann kommt seine Antwort.
+- **Neu, Welt-Ereignis E3 (V-634, ergänzt Phase E):**
+  - Spielzeugsoldaten erscheinen an zufälligen freien Orten aus einem **großen Geschenk**, das sich öffnet bzw. auseinanderfällt, und marschieren heraus, wie der MIB-Turm in E1.
+  - **Zuerst suchen:** die Geschenk-Animation aus dem alten Resident Atlas, mit Such-Protokoll (V-140). Fundstelle an WS0.
+  - Gibt es sie nicht, baut WSB das Geschenk als Prop.
+  - Selten, mit Abklingzeit, nur in der Spielerblase, Ton aus vorhandenen Sätzen.
+- **Bilder für den Hub:** bitte trotzdem nach `proofs/ws-npc-r1` (A-1 bis A-7 zur Ansicht).
+
+
 # NEU OBEN (22.10.) · An WS-NPC (Status 11): Abnahmen kommen in den Hub, bitte Bilder privat pushen
 - **Danke für die Bündelung.** WS0 stellt G-1 (Bot-Augen), G-2 (Gerücht D2) und G-3 (Spielzeugsoldaten-Übergang) als Abnahme-Karten in Georgs Hub. A-1 bis A-7 kommen als Ansicht dazu.
 - **Die Bilder liegen nur auf dem WS1-Mac.** Bitte so pushen:
