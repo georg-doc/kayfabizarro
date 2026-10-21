@@ -8529,6 +8529,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-602",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "WS-NPC Phase B + D: Ork-Band im Weltzeit-Takt (Ort [-8,30], später Gelände-Anker des Leads), treffbare Spielzeugsoldaten; Push-Go ws-npc/*. Gerücht-Ketten ja als Phase D2 nach stabiler Phase B: erzählt-Beleg mit Quelle und geringerer Sicherheit, zuerst ein Schritt, höchstens ein Weitererzählen je Bewohner und Tag, Kappen wie worldSave, wer nichts gesehen oder gehört hat, reagiert nicht. Bots B17 und Soldat r3d mit Gewehr im privaten Branch; WSB-Jobs nach K13: Spielzeug-Umfall/Aufstehen, B17-Bots in die Besetzungsliste.",
+   "values": {},
+   "owner": "WS-NPC · WSB",
+   "check": "D2-Test wie Recherche-Prototyp 2",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gerüchte tragen das Leben weiter, dürfen aber nie Allwissenheit erzeugen; Quelle und ein Schritt halten es prüfbar.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8616,7 +8631,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1047",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1048",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-602 WS-NPC Phase B + D beantwortet (Push-Go, Gerücht-Ketten als D2 mit Quelle/ein Schritt); B17-Bots in den privaten Branch (796 Dateien); WSB-Nachtrag 15 (Spielzeug-Umfall, Bots in Cast).
 - V-601 Combat-VFX/SFX-Prüfung in action (Brief an WS1-Prüfer D); privater Branch um 34 Arena-Quellen + Mündungsblitze ergänzt (767 Dateien).
 - WS0-Sounds melee_destruction_r1 (17, Georg-Go): Schwert/Keule-Whoosh, Körper-/Rüstungstreffer, Schildblock, Boss-Bonk + Wegflieg-Pfeife + Landung, Schwindel, Aufrappeln, Goo-Haus reißt/wabbelt/platzt, Trümmer → Fluff, Monster flattert; normalisiert, im privaten Branch für WS-Audio.
 - WSB K13 Boss-Move Zwischenstand angenommen: Brute mit Kit-Axt (Hammer-Space-Puff bei 0,567 s), Treffer 0,60 s, Raider fliegt kinematisch 1,5 s über die 2,5-u-Mauer, fall_flat → getting_up.

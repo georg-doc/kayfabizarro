@@ -1,5 +1,22 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · An WS-NPC: Antwort auf Phase B + D (V-602)
+Stark: Ork-Band im Weltzeit-Takt mit Kopfdrehung, treffbare Soldaten, Platzhalter-Fall getestet, nichts Privates im Repo, Clip aus der Spielkamera mit `look=terrain3`.
+
+1. **Push-Go für `ws-npc/*`** (wie V-588): Code darf gepusht werden. Den Deploy-Key nur mit Georgs Bestätigung in deiner Sitzung; kein Merge.
+2. **Gerücht-Ketten: ja, als Phase D2, nach stabiler Phase B.**
+   - Ein „erzählt“-Beleg trägt immer die Quelle (wer hat es wem erzählt) und eine kleinere Sicherheit als „gesehen“.
+   - Zuerst nur **ein Schritt** (Zeuge → Dritter), höchstens ein Weitererzählen je Bewohner und Tag.
+   - Kein allwissendes Wissen; Kappen wie in `worldSave` (16 je Bewohner).
+   - Prüfung wie Prototyp 2 der Recherche: Wer nichts gesehen und nichts gehört hat, reagiert nicht.
+3. **Blocker gelöst bzw. geklärt:**
+   - **Bots:** Die Kayfabrick-Bots aus WSB B17 liegen jetzt im privaten Branch: `50_BLENDER/B17/_privat_kauf_asset/KayfabrickBot_<farbe>[_helm].r1.glb` (6 Fluff-Farben, mit und ohne Grubenhelm) + Stationen + Blöcke + `B17/data`, `B17/RETURN.md`. Sie stehen noch nicht in `cast.r1.json` (r1 als Proof). Für deine Tests sind sie als Platzhalter-frei nutzbar; die Cast-Aufnahme macht WSB.
+   - **Gewehre der Soldaten:** Der Soldat r3d mit Kit-Gewehr und Halterungen nach V-582 liegt im Branch (`50_BLENDER/B50/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.v3.glb` + `B50/data/toysoldier_duel_r3d.figure.json`, Clip-Familien im RETURN B50 r3d). Für die Gruppe nimm diese Fassung; Kampf-Marken wie in der Arena.
+4. **Eigener Umfall- bzw. Aufsteh-Clip für den Spielzeugsoldaten:** geht als Job an WSB (nach K13). Bis dahin die Skelett-Clips, wie du es machst.
+5. **fps:** Die gültige Messung headless mit `look=terrain3` nach der Lead-Reihe, richtig so.
+6. **`~/kfb-ws1/private` (dein Zwischenauszug):** Löschen nur mit Georgs Ja in deiner Sitzung. Bis dahin liegen lassen.
+
+
 # NEU OBEN (21.10., abends) · An den VFX/SFX-Prüfer: Combat-VFX & -SFX in action (V-601)
 Brief: `30_DECISIONS/replies/BRIEF_WS1_COMBAT_AV_REVIEW_R1.md`.
 - Er enthält den gepinnten Stand (Arena-Branch `wsa/toysoldier-r3c-playable-2026-10-20` @ `f712f0d`, PR #24 + #27 gemergt), den Start ohne Dropbox (private Dateien jetzt im Branch `KFB-Stunt-Car-Race/assets/private`, inkl. der 34 Arena-Quellen und Mündungsblitze), den Fokus, die schon entschiedenen Punkte und die zwei Durchgänge (Kritik, dann Top-10 mit Prototypen).
