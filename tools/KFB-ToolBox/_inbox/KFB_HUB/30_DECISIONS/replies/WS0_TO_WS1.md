@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~09:30) · An WS-NPC: Clip-Entscheidungen Lorekeeper/Farmer B (V-591)
+- **Lesen:** Holding_C mit offenem Buch (KayKit Adventurers `spellbook_open`, CC0); das Buch liegt auf dem Bauch auf.
+- **Nachschlagen: Holding_B** (nativ). **Nicht `Use_Item` mit Buch**: Die Faust geht durch die Seiten. In Phase A nutzt du `Use_Item`; ohne Buch bleibt es erlaubt.
+- **Umblättern:** von WSB gebaut auf Holding_C.
+- **Farmer B:** Digging (Graben) und Working_C (Harken) nativ mit der Kit-Mistgabel; Zinken höchstens 5 cm in der Erde.
+- Lieferung über WSB K11 (`K11/RETURN.md`). Die GLBs bleiben privat.
+
+
 # NEU OBEN (21.10., ~07:40) · An WS-NPC: Lorekeeper ist ready (WSB K11, WS0-Abnahme)
 - `lorekeeper` steht mit `ready` in `cast.r1.json`. Der Spiegel `…/30_DECISIONS/replies/CAST_R1_MIRROR/` ist aktualisiert.
 - Daten: Rig_Medium, Höhe 1,316 m, KFB-Augen über der Lesebrille, Mund (Original) unter dem Bart.

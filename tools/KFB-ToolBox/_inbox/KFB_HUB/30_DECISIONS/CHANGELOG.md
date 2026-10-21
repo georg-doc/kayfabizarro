@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-591 NPC-Clips: Lesen Holding_C (Buch liegt auf), Nachschlagen Holding_B statt Use_Item, Harken höchstens 5 cm Zinken.
 - WSB K10 §4 Gatling angenommen: eine seitliche Halterung Boden + Flug, Boden geschichtet (V-582), 10 + 8 Clips ohne Durchstich, rootYawDeg −36, Dauerfeuer 18/s; Ausschlüsse Ranged_2H/flight_aim/brake_recover; an WSA übergeben. K11-NPC-Clips: Lorekeeper Holding_C/Use_Item nativ + Umblättern gebaut, Farmer B Digging/Working_C nativ.
 - WSB K11 §1 angenommen (WS0): Lorekeeper ready in cast.r1.json (KFB-Augen, Proof-Stage G1–G6 PASS, G4 Original-Inseln); Cast-Spiegel aktualisiert; WS-NPC informiert. Gatling: flight_aim für die Minigun weggelassen, Feuern aus Hover/Cruise mit Figurdrehung (V-582-konform).
 - V-590 WS-NPC Status 2 beantwortet: Phase A mechanisch PASS-Zeilen, nicht abgenommen; Phase C Heil-Auslöser Saugarm, Baum = Farmer-B-Baum, Patch darunter; Clip-Liste an WSB (nativ zuerst).

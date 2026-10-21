@@ -8364,6 +8364,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-591",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "NPC-Clips K11 nach Sicht: Lorekeeper Lesen = Holding_C, offenes Kit-Buch liegt auf dem Bauch auf (glaubwürdig, dokumentiert); Nachschlagen = Holding_B nativ statt Use_Item (Faust durch die Seiten); Umblättern gebaut OK. Farmer B Graben 5 cm Zinken OK, Harken 18 cm zu tief, Ziel höchstens 5 cm per Versatz mit Beleg.",
+   "values": {},
+   "owner": "WSB (K11) · WS-NPC",
+   "check": "Clips ohne sichtbaren Durchstich, Zinken höchstens 5 cm",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSB brauchte eine Sicht-Entscheidung; nativ vor gebaut, sichtbare Fehler nie durchreichen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8451,7 +8466,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1016",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1017",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
