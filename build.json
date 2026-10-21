@@ -37,13 +37,28 @@
   "stageNightLamps": "#stage,actors=fb,light=l1,tod=night",
   "harvestNight": "#m1,harvest,tod=night",
   "harvestGold": "#m1,harvest,tod=gold",
-  "racerDragsterNight": "#m1,car,racer=crimson_flame_dragster,tod=night"
+  "racerDragsterNight": "#m1,car,racer=crimson_flame_dragster,tod=night",
+  "probeWelt": "probe-welt.html",
+  "probeWeltFahrt": "probe-welt.html#m1,car,harvest,look=terrain3,world=probe",
+  "probeWeltRacer": "probe-welt.html#m1,car,harvest,look=terrain3,world=probe,racer=graffiti_jet_cruiser"
  },
  "notes": "Ohne Hash startet das Spiel (#m1,harvest) mit Ladeanzeige; der alte Spike R4 (Hex-Insel) nur noch über #spike. combo/r2 (Branch, nicht main). Fluff-Ernte (#m1,harvest): V Faust, B Blaster, N Bombe, T Saugarm (saugt bis zu 6 Kügelchen vor dir ein), I Fundsache aufheben, Rucksack unten links; nachts (tod=night) leuchten Kristall-Laternen am Weg. Racer: W Gas, Shift Boost (Stauchen/Strecken), S Bremse (Nase taucht), Motor mit Ton (mute = stumm); mit fly: Rampe/Doppel-Leertaste = Schwungflug, Pfeile/RMB Nase. Skyriding (flight=elan): G in der Luft, Leertaste steigen, Shift Schub, Leertaste+A/D Rolle, K Komfort. Ton startet nach der ersten Taste.",
  "extraPages": {
   "gelaendeProbe": {
    "path": "gelaende-probe.html",
    "note": "Gelände-Probe (WS1 §98): Cartoon-Gelände, endlose Welt, 6 Racer fahren/fliegen, Himmel, Ringgitter, Gitter-Welt. Entscheidungsgrundlage, nicht das Spiel."
+  }
+ },
+ "extra": {
+  "probeWelt": {
+   "commit": "terrain/probe-world@ba94c9d (Spiegel ws1/terrain-probe-world)",
+   "date": "2026-10-21T21:00:00+02:00",
+   "tests": {
+    "passed": 22,
+    "total": 22,
+    "info": "Gesamtreihe unter Fremdlast abgebrochen; alle vorher roten bzw. offenen Tests einzeln PASS (inkl. probeWorld, probeWater, vlook, drift)"
+   },
+   "notes": "Neues Gelände (Probe 1:1) mit Flüssen, Bergseen, Wasserfällen, Meer in den Talböden; Fahrzeug-Look A; HUD R5f. Ohne Hash startet die Datei auf #m1,harvest,look=terrain3,world=probe. Ohne private Töne (die volle Tonfassung läuft lokal über WS-Audio)."
   }
  }
 }
