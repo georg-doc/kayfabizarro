@@ -1,0 +1,71 @@
+T = {
+1:"The Rules Lawyer: Objection! Cite a non-existent rule. If you hesitate, your action fails.",
+2:"The Optimizer's story is devoid of fun or flavor: nothing breaks faster than trying to weaponize ambiguity.",
+3:"The Nervous Beginner asks: is this right? Confusing clarity with safety.",
+4:"The Authority Figure cancels a move as too fun: authority sneaks back in wearing a helpful voice.",
+5:"The Panic, internal scream: a die rolls off the table and you freeze until someone tells you it's okay.",
+6:"The Crutch: you cannot take an action unless another player gives you permission first.",
+7:"The Sweat cannot handle success without questioning it. Others start sweating; this booklet is for them.",
+8:"The Silence, a controlled void when the table stalls: a moment where players stop asking.",
+9:'The Lost Winner: give it to anyone discussing Victory Points. Whoever asks how to win has already lost.',
+10:"The Nonsense State justifies what defies logic but feels right. Blödsinn is not a mistake; it is a state.",
+11:"The Effective Move ignores a rule if it creates a better story. Nobody is right; some things are effective.",
+12:"The Amnesia: we start fresh. The game remembers nothing; the players do.",
+13:"Esq's Tears instantly win the meta-argument about rules interpretation. Cry harder, Esq.",
+14:"The Correct Nonsense: if the table laughs, you succeed. If it makes no sense, it may be correct.",
+15:'The Pressure Valve exists to interrupt panic: stop the game, everyone takes a deep breath.',
+16:"The Less Rules removes one constraint: if you need more rules, you may use fewer.",
+17:"The Red Pen crosses out one word forever: hand-written rule lists and crossed-out instructions.",
+18:"The 'Final' Draft: documents labeled final and immediately contradicted.",
+19:"The Fake Stamp approves a move the Rules Lawyer rejected.",
+20:"The Disclaimer, pseudo-legal loophole: avoid a consequence by claiming you read the fine print.",
+21:"The Table: read the Anti-Rule aloud as a declaration. No discussion allowed.",
+22:'The Controlled Void replaces a card with nothing and narrates the gap: a deliberate absence of authority.',
+23:"The Shared Attention: everyone looks at you. Re-anchor play in attention instead of correctness.",
+24:"The Safety Rail: if a rule makes you feel safer, ask yourself, safer from what?",
+25:"Nervous Laughter: someone laughs nervously, which indicates correct operation.",
+26:"Bad Design: claim this is bad design and reroll your die.",
+27:"The Stall: when the table stalls, the Anti-Rule stands in the room like a smell.",
+28:"The Rage Quit: someone stops trying to win, and they are now telling stories.",
+29:"The Compliance Aid forces simple words only, for people who hate improvisation.",
+30:"The Safety Blanket protects from Blödsinn, for players who need rules to feel safe.",
+31:'The Ironic Poster: vibes. It does nothing.',
+32:"The Slide Deck: stand up and explain your move like a CEO. If they buy it, it works.",
+33:"Hidden Power: point at the player who is actually leading the table.",
+34:"The Illusion: challenge a correct move. There is no correct move.",
+35:"The Blame shifts the consequence of a bad roll to the Game Designer.",
+36:"The Interpretation: you decide what another player's card really means.",
+37:"The Pot Plant does nothing, just observes. Your silence is a valid move.",
+38:"The Bureaucrat demands you mime filling out a form before rolling.",
+39:"The Alien Tourist's snapshot: remember the current board state; you may revert to it later.",
+40:"Uncle FrizzleBob's anarchy: rip this card up and rewrite one rule for the rest of the game.",
+41:"The Judge's Wig: wear it, and you are in charge until you laugh.",
+42:"The Police Badge catches someone optimizing: default to policing or rule-lawyering.",
+43:"The Lab Coat: explain the science of your move. The table is encouraged to let them try.",
+44:"The Dunce Cap protects you from judgment and makes rule anxiety visible without punishing it.",
+45:"The Dead Author: the rules mean whatever the group decides they mean.",
+46:"The Ambiguity opens another card's text to interpretation: most games collapse under ambiguity.",
+47:"The Social Contract: break a promise for narrative effect.",
+48:"The Emergency Handle: please tell me the correct move. Pull it if it gets boring.",
+49:"The Mood Swing forces your mood to anxious.",
+50:"The Skill Issue: incompetence. You forget the trained ability you rely on.",
+52:"The Collapsed Quest: if it tips, the quest collapses.",
+53:"The Story Breaker interrupts a story connection that feels forced.",
+54:"Stay Fluffy: game over when everyone at the table feels relaxed or confused.",
+55:"Kayfabingo! Win the game instantly if you shout bingo for no reason.",
+56:"The Strange Alertness: visibly uncomfortable, irritated, or strangely alert.",
+57:"The End: the group decides when it is done. No winner.",
+}
+INTRO="The Anti-Rules Manifesto, for people who panic when the adults leave the room."
+OUTRO="Kayfabizarro does not break because rules are missing. It breaks because authority sneaks back in."
+import csv,os
+D=os.path.dirname(os.path.abspath(__file__)); B='anti_rules_toolkit'
+N=sorted(T)
+w=csv.writer(open(os.path.join(D,B+'.t1.triplets.csv'),'w',newline=''))
+w.writerow(['line_no','kind','card_number','opener','triplet'])
+for i,n in enumerate(N,1): w.writerow([i,'card',n,'',T[n]])
+beats=['[Spoken Word]',INTRO]+[T[n] for n in N]+[OUTRO,'Stay Fluffy, Folks!']
+txt='\n\n'.join(beats)+'\n'
+open(os.path.join(D,B+'.t1.suno.txt'),'w').write(txt)
+L=[len(T[n]) for n in T]
+print('cards',len(T),'chars',len(txt),'avg',round(sum(L)/len(L),1),'max',max(L),[(n,len(T[n])) for n in T if len(T[n])>100])

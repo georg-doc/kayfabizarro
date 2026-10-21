@@ -1,0 +1,58 @@
+# Transkription der GEDRUCKTEN Karten (PDF media/kfb/FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf, gerendert und gelesen 21.10.2026).
+# Grund: registry/pdf.json weicht stark ab (Karten 37-56 existieren im Druck nicht; viele Power/Lore-Texte falsch).
+# Schreibt <deck>.t1.print_cards.json im Format, das triplet_set_check.py liest. Stats [R/A/F] und Kartentyp-Etiketten weggelassen.
+import json, os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+C = [
+(2,"The Pond-Gazing Peacock","Mirror Lock. Skip 3 turns. If water ripples, take 5 Emotional Damage.","I'd help you, but I'm currently busy existing as a visual masterpiece."),
+(2,"The Flexing Rooster","Intimidating Decor. Use antlers in decorating to gain +2 Presence.","No one spits like me. I am nature's special effect."),
+(2,"The Portrait Poodle","Dorian's Pact. Transfer physical damage to the card in hand.","The painting ages so I don't have to. Don't look in the attic."),
+(2,"The Selfie-Stick Swan","Crop & Filter. Remove 'Negative Vibes' tokens. Ignore reality.","If I didn't post it, did the forest really burn down? Doubtful."),
+(3,"The Fog-Weaving Cuttlefish","Rewrite History. Force opponent to discard last card and apologize.","I never said that. And if I did, you made me say it."),
+(3,"The Mockingbird","Tone Policing. Negate argument by repeating it in a whiny voice.","You're crazy. You're imagining things. You're just like your mother."),
+(3,"The Lure-Light Anglerfish","Love Bomb. Offer a gift. If accepted, swallow opponent whole next turn.","Mother knows best. Stay in the dark. It's dangerous out there."),
+(3,"The Revisionist Owl","Alternative Facts. Change game rules mid-turn.","We have always been at war with Eastasia. I have always been the victim."),
+(4,"The Caped Eagle","Ratings Crash. If Adoration drops below 5, Laser Eye the board.","You guys are the real heroes. I'm just a god."),
+(4,"The Plagiarist Magpie","Memory Charn. Steal an Ability. Claim invention.","Fame is fickle, Harry. But stolen shiny objects are forever."),
+(4,"The Smile-Bot Dolphin","Performative Empathy. Cry one tear on camera. Gain +10 Support.","I just want to be loved. Is that a crime? (Yes, it is murder)."),
+(4,"The Medal-Heavy General","Stolen Valor. Sacrifice minions to gain a medal.","I have won battles I wasn't even present for. That is leadership."),
+(5,"The Legacy Lion","The Family Name. Discard a 'Child' card to save reputation.","A lion does not concern himself with the opinions of the sheep he sired."),
+(5,"The Smothering Kangaroo","Infantilize. Opponent cannot move without permission.","You'll never leave me. You're too weak. I made sure of it."),
+(5,"The Wire-Hanger Persian","No Wire Hangers. Deal 10 Psychic Damage. Scream until glass breaks.","I gave you life! And this is how you repay me? With dirt?"),
+(5,"The Golden Child Ant","Triangulation. Transfer all blame to Scapegoat.","Why can't you be more like your brother? He sparkles."),
+(6,"The Business Wolf","Silian Rail. Stun opponent with superior card stock.","Look at that subtle off-white coloring. It's... beautiful."),
+(6,"The Tech-Bro Ferret","Disrupt. Destroy game board. Claim you saved humanity.","Move fast and break things. Mostly people. People are things."),
+(6,"The Micromanager Queen","CC on Reply All. Freeze productivity for 3 turns.","I need you to maximize synergy by asking me before you breathe."),
+(6,"The Brand-Ambassador Cheetah","Influencer. Convert Followers into Currency. Hollow out soul.","It's not a pyramid scheme. It's a trapezoid of opportunity!"),
+(7,"The Tantrum Hippo","Smash. Destroy all cards on table. Including yours.","I ordered the tea ICED! ICED! THE JUNGLE IS RUINED!"),
+(7,"The Thin-Skinned Balloon Fish","Explosive Sensitivity. If criticized, deal 20 damage to everyone.","Are you saying I'm puffy? You're dead. You're all dead."),
+(7,"The Spiteful Wasp","Petty Vengeance. Spend all energy to inflict 1 point of annoyance.","I don't want the honey. I just want the flower to suffer."),
+(7,"The Scream-Pillar","Sonic Wall. Silence all logic.","AAAAAAHHHHHHHHH!!! (Pay attention to me!)"),
+(8,"The Gauntlet Gorilla","The Snap. Remove 50% of the deck. Perfectly balanced.","I'm the only one with the will to act. Also, I want a banana."),
+(8,"The Note-Writing Rat","Delete. Write a name. Eliminated after 40 seconds.","I will become the God of the new sewer."),
+(8,"The Sun-King Scarab","Divine Right. All players must bow (skip turn) or be blinded.","Without me, the day does not start. Worship the sphere!"),
+(8,"The Clockwork Kraken","Mechanize. Turn organic cards into rigid metal.","Nature is messy. I have fixed it. You're welcome."),
+(9,"The Flying Monkey","Proxy War. Attack opponent. Narcissist takes no blame.","The Boss is actually really nice once you get to know him!"),
+(9,"The Doormat Turtle","Absorb Abuse. Take double damage so Narcissist takes none.","If I just stay quiet, maybe he won't yell today."),
+(9,"The Yes-Parrot","Echo Chamber. Double effectiveness of Gaslighting.","Brilliant, sir! Genius, sir! You're so right, sir!"),
+(9,"The Energy Vampire Bat","Vibe Kill. Drain 2 Action Points from every player.","I don't drink blood. I drink your will to live."),
+(10,"The Magic Mirror","Validation Loop. Recover full health by lying to yourself.","You are the fairest. Everyone else is trash."),
+(10,"The Pedestal","High Ground. +5 Attack, but instant death if you fall.","It's lonely at the top. But the view of you ants is great."),
+(10,"The Black Hole Smartphone","Doomscroll. Paralyze opponent with envy.","Feed me attention. I am starving in 4K resolution."),
+(10,"The Crown of Thorns (Fake)","Victim Card. Immunity to criticism by claiming persecution.","Look how much I suffer for you! LOOK AT IT!"),
+(11,"The Cross-Bearing Donkey","Guilt Trip. Opponent loses turn due to obligation.","No, go have fun. I'll just stay here and rot. Alone."),
+(11,"The Bandaged Leech","Medical Mystery. Feign illness to escape accountability.","I would apologize, but my condition is flaring up."),
+(11,"The Grudging Camel","The Last Straw. Explode over minor inconvenience. Recall grievance from 1994.","I forgive. But I never, ever, ever forget."),
+(11,"The Emo-Goth Raven","Main Character Syndrome. The music swells. You matter most.","My darkness is too deep for you to understand."),
+(12,"The Naked Mole Rat King","Delusion. Defense is 0, but you act like it is 10.","Is it a draft? Or just the chill of pure excellence?"),
+(12,"The Shattered Visage","Despair. Look on my works, ye Mighty, and lose turn.","King of Kings. Name implies heavy depreciation."),
+(12,"The Bottomless Pit","Insatiable. Discard your hand. It is not enough.","More. More. It's never enough. Fill the hole."),
+(12,"The Ghost of Future Past","Nostalgia Trap. Become immune to the present.","I used to be somebody. I used to be big."),
+(13,"Uncle FrizzleBob (The Rogue)","Cut & Paste. Physically cut an opponent's card in half.","Rules are for people who don't have scissors."),
+(13,"The Grey Rock","Bore to Death. Narcissist loses interest and wanders off.","I am boring. I am uninteresting. Go away."),
+(13,"The Truth Bomb","Boundaries. Cancel a Gaslighting effect.","No. (A complete sentence)."),
+(13,"The Exit Door","No Contact. Leave the game. You win by not playing.","The only winning move."),
+]
+cards=[{"cardNumber":i+1,"page":p,"cardName":n,"power":pw,"lore":lo,"source":"print"} for i,(p,n,pw,lo) in enumerate(C)]
+json.dump({"deckId":"frizzlebob_s_ego_mania_narcissist","deckTitle":"It's All About Me! (And Also FrizzleBob)","source":"printed PDF, pages 2-13; p14 How-To and p15 back cover are meta","cards":cards},open('frizzlebob_s_ego_mania_narcissist.t1.print_cards.json','w'),indent=1,ensure_ascii=False)
+print(len(cards))
