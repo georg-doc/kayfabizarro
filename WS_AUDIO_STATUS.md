@@ -2,6 +2,45 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 2 · 21.10. · Kampf-Tabelle aus Combat-AV R1 im K10-Adapter
+
+**Lead 21.10.:** Die Cue-Tabelle aus `research/audits/COMBAT_AV_R1.md` (VFX/SFX-Sitzung, Prototyp `ws1/combat-av-r1` @d408688) geht als Daten in `kfbAudio.k10`, ohne zweite Engine.
+**Georg 21.10.:** „mach weiter mit der Kampf-Tabelle“.
+**Stand:** `ws-audio/r1` @2c0272f, lokal.
+
+- **Abgang je Waffe** (`WEAPON_LAUNCH`/`LAUNCH` in `src/audio/cueMap.js`):
+  - gilt für die 13 Arena-Figuren, Zuordnung wie `_launchCue()`;
+  - Ebenen Anschlag, Körper und Ausklang mit denselben Dateien, Pegeln, Versätzen und Tonhöhen wie der Prototyp r2.
+
+| Waffe | Anschlag | Körper / Ausklang |
+|---|---|---|
+| Pistole | C05 a/b | X09_a +60 ms ×0,23 |
+| Blaster | X01 a/b | C05_c +10 ms ×0,48 · X09_a +70 ms ×0,23 |
+| Gewehr, Soldat r3d | C05 c/a, Tonhöhe ×0,85 | X09_a +60 ms ×0,27 |
+| Gatling | C05 a/b/c ×0,42, Tonhöhe ×1,25, höchstens 9/s | dazu Schleife X02 (loopKeep), endet 180 ms nach dem letzten Schuss |
+| Armbrust (Platzhalter L2) | M01_b ×0,86, Tonhöhe ×1,3 | T03_a +20 ms ×0,57 |
+| Bogen (Platzhalter L1) | T03_b ×0,95, Tonhöhe ×1,15 | – |
+| Zauberstab, Stab, Skelettstab, raise (Platzhalter L4) | X03 a/b ×0,67 | X09 +90 ms ×0,27 |
+| Klinge | M01 a/b | Schwung immer vor dem Treffer (Regel R5) |
+| Wurf, Rauchbombe | T03_a | Rauchbombe beim Aufschlag T08 (statt des fehlenden `impact.kinetic.air`) |
+
+- **Gegner:** Der Wurf ist ein C04-Whoosh statt der Arcade-Kanone, Pegel ×0,4 (≈ −8 dB, Regel R3).
+- **confirm.hit** gibt es nur bei eigenen Treffern auf Gegner, nicht bei eigenem Schaden und nicht bei der Rauchbombe.
+- **Bisher stumm, jetzt mit Ton:** weaponDrop → I05; jump/land → C02/C01.
+- **Weiter stumm** (Lücke): Kill/Schädel L9; Spieler-Treffer L8, bis dahin C01 punch_light leise.
+- **Einsatz:** Die Bank plant 5 ms nach dem Aufruf (Regel R2 ≤ 20 ms; die Ausgabelatenz des Geräts ist nicht mitgemessen).
+- **Tests:**
+  - `audio-mixer`: Zuordnung aller 13 Waffen, Ebenen, Gegner −8 dB, confirm, Gatling, Rauch – **PASS**.
+  - `audio` (Browser): jede Waffe spielt ihre Ebenen (Blaster 3, Pistole 2 …), Gegner 1, Klinge mit Schwung, Rauch, 12 Gatling-Schüsse mit Schleife, Bank danach ≤ 24 Stimmen – **PASS**.
+- **Offen** (aus Combat-AV, nicht WS-Audio):
+  - Ankündigung der Gegner, Lücke L13 Ausholen;
+  - Motor-Ducking −4 dB bei schweren Treffern;
+  - Lautheits-Normierung −16 LUFS durch WS0. Der Bericht hält fest, dass die Laufzeit-Normierung mit ±12 dB die Spanne von 30 LU nicht abdeckt.
+- **Volle Reihe auf @2c0272f:** 33 von 48 grün, rot ist nichts.
+  - g4 lief in der Kette einmal in ein Bildschirmfoto-Timeout (Last 22–24); allein ist g4 **PASS**.
+  - Die übrigen 14 (g4preview … probeWater) sind auf Wunsch des Lead angehalten, damit er die Maschine bekommt. Sie folgen einzeln.
+- **Anschluss im Spiel:** Die Arena-Module müssen ihre Ereignisse an `kfbAudio.k10({ type, weapon, side, target, energy, explosive, material, confirmed, position })` geben. Sobald K10 im Spiel ist, ist das eine Zeile beim Besitzer.
+
 ## 1 · 21.10. · Tier 0 steht lokal: ein Ton-Pfad, ganzer Ton auf dem Probe-Gelände
 
 **Stand:**
@@ -105,7 +144,7 @@ cd ~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea && npm run to
 2. Drift: Rutschen bzw. Schleifen als Schleife, dazu Drift-Laden (`driftCharge`).
 3. Bremsen: eine spielbare Schwebe-Bremse bzw. ein Luftzischen. `S2_brake_downshifts` ist nur Referenz. Hörbar ist bisher nur das Runterschalten.
 4. Schritte im Wasser (Waten am Fluss).
-5. Kampf: die Liste der WSA aus `combat/WS0_GAPS.json` (12 Wünsche, u. a. Block, Raketen-Flug als Schleife, Bombenwurf, Metall, Glas, Lehm-Aufprall, Trümmer-Ausklang, Einzel-Domino, Laub, Obstfall).
+5. Kampf: Combat-AV-Lücken L1–L13 (Prompts im Bericht COMBAT_AV_R1, u. a. Bogen, Armbrust, Cast, Spieler-Bonk, Kill-Pop, Gatling-Anlauf, Gegner-Ausholen) und die Liste der WSA aus `combat/WS0_GAPS.json` (12 Wünsche, u. a. Block, Raketen-Flug als Schleife, Bombenwurf, Metall, Glas, Lehm-Aufprall, Trümmer-Ausklang, Einzel-Domino, Laub, Obstfall).
 6. Atmo: die Liste der WSA aus `ambience/WS0_REQUESTS.md` (Dschungel-Nacht, Küstenvögel, Donner trocken).
 
 **Spiel-Anschlüsse (keine Töne, die Töne liegen bereit):**
