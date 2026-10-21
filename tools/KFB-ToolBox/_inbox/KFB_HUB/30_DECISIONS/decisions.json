@@ -8409,6 +8409,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-594",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Bogen K10 §11: Sehne über Kit-Blendshape Draw und feste Ziel-Halterung angenommen. Draw/Release/Draw_Up: erst ein Raster je Clip (Rollung, Kippung ±10 Grad, Griff ±10 cm, Sehne höchstens 6 cm an der Faust), was nicht frei wird, kommt in die exclude-Liste; as-is mit sichtbarem Kopfdurchgang abgelehnt. Ein spielbarer Schusszyklus bleibt Pflicht (notfalls Aiming_Idle halten + Release_Up lösen); Figurdrehung etwa 24 Grad über den Host.",
+   "values": {},
+   "owner": "WSB (K10) · WSA (Arena)",
+   "check": "Bogen-Clips ohne Durchstich, shootCycle in der Karte",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiches Muster wie Harke/Stäbe; sichtbare Fehler werden nie durchgereicht, aber die Waffe muss schießen können.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8496,7 +8511,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1028",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1029",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
