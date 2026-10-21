@@ -137,3 +137,11 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
   - **Ursache des Geists:** ein rosa `burst`-Sprite über der Figur (0,42 s) plus ein rosa Materialblitz.
   - **Neu:** roter Knet-Treffer am Körperrand, Blitz dunkel-warm (ein heller Ton überstrahlt bei Zuschlag 1,8), eigener Bonk-Cue **ohne confirm.hit**.
   - Backlog H1–H3, **L8 `player_hurt` bitte erzeugen.**
+
+## Nachtrag: Spieler-Treffer PASS mit TUNE · Tusche (Georg: „Beides“) als Prototyp
+- Nr. 5 (`1b1ee3b`): **Georg PASS mit TUNE** (H1–H3).
+- Nr. 9 Tusche (`76b16ad`, `?tusche=1`):
+  - **Korrektur:** Die Tusche ist Spielregel (Zensur-Uhr, Deckung kann nicht fallen, C22) und Kanonton `#1f1a14`. Mein Vorschlag „verblassen/aufhellen“ ist verworfen.
+  - Neu: Freisteller in Papierton für Gegner auf Tusche und nasser Glanz auf frischen Klecksen (1,6 s). Tusche und Deckung bleiben unverändert.
+  - Fix in den ws1-Modulen: kein `Math.random` mehr (C10).
+  - Backlog I1–I3, dazu **A4:** Das Ausholen-Stauchen gehört beim Einbau auf den `deform`-Kanal (DP3/S6).
