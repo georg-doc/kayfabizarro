@@ -32,3 +32,9 @@
 - PLAN R1.1 additive update GitHub commit `82070a8df5f111394743e476428aafb756240350`, exact branch HEAD and updated file content readback verified. No public assets, no canonical Hub route changes.
 - Tests actually run for addition: 1 ZIP format check, 1 ZIP inventory, 21/21 binary-plist signature inspections, 1 Dropbox shared-link lookup, 1 GitHub exact content verification. Runtime/renderer/brush import implementation, browser/device/Comic Motion tests = 0.
 - Next gate UNCHANGED: WS0 selects existing receiving owner and approves private CRAYONIC draw/undo/PNG implementation with original-tip isolation; then brushset importer and multi-source provenance catalog; Comic (Re)Motion later.
+
+## Additive R1.2 · Notion inventory, 2026-10-21
+- Read via connected Notion: Knowledge Base, historical MegaPack Wiki and 3 exact database schemas (Brushes, Sets, Swatches), plus a legacy GeorgBrush.clubX page. Notion = editorial / metadata authority; Dropbox = binary source; georgbrush.club = existing public shop/brand owner. These are source discoveries, no bulk DB row export, no current 2,000 record verification.
+- Plan updated @6e3ee5c85f77394f40c83839a03cd63044101ec2, exact GitHub readback PASS. Prior 2020 pack counts and price are historical only, do not advertise them as current.
+- Existing brand/site untouched; no Notion write, no storefront modification, no brush binary copied, no Site/Stage. Browser/editor/Comic Motion tests 0.
+- Next gate remains WS0 receiver plus private CRAYONIC draw/undo/PNG visual-proof slice, including one Notion brush→set→private source identity check.
