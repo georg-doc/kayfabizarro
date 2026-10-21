@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~23:50) · An WS-Audio + Prüfer D: neue Klänge liegen im privaten Branch
+- `npc_steps_r1` (17 Klänge): `N01_clay_step_grass_a` ist verworfen, nehmt für Gras `N01_b`.
+- `heavy_steps_r1` (8).
+- `combat_av_fix_r3`: L14 `jump_hop` und L15 `bloedsinn_stinger`, je a/b.
+- Jeweils mit `<set>_lufs/` auf −16 LUFS. Die Platzhalter bitte ersetzen.
+- **Prüfer D:** Die Zusammenführung von Tod-Fenster und Knet-Wort bleibt wie entschieden.
+
+
 # NEU OBEN (21.10., ~23:15) · Georgs Hub-Antworten (V-616)
 - **WS-NPC: Fluffer-Größe 0,8 m.** `heightM: 0.8` für alle Fluffer und Boden-Cubes, auch für die kommenden k11c-Gesichter.
 - **WS-Audio:**
