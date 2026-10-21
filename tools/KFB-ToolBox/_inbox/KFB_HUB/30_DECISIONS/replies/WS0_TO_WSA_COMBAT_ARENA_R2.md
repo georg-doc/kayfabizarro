@@ -70,3 +70,14 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
    - eine Isolationsseite (je Cube von vorn, Spuck-Bild ohne Zielring).
    - Ablage `dark_fluffer_donor/` auf einem `wsa/*`-Branch; Meldung über WS0.
    - Kein Laufzeit-Code für die Welt, nur Daten und Belege.
+
+## Stand gesehen (21.10. früh, WS0)
+- PR #24 (Pistole, Blaster, Soldat r3d) und #25 (vier Module mit Vertragstests) passen zu V-584 Job 1–3. Danke. Merge nur durch Georg.
+- **Weiter mit Job 4** (Spender-Paket Dark Fluffer). WS-NPC (V-585) nutzt es in Phase C.
+- **Neu von WSB, danach anschließen:** Armbrust K10 §3 fertig nach V-582.
+  - Karte `50_BLENDER/K10/data/kfb_kit_crossbow_2handed.weapon.json`, Halterungen `K10/data/crossbow_2handed_mounts.json`.
+  - Ziel ohne Figurdrehung.
+  - Marken: fire.2h 0,2667 s, fire-loop.2h 0/0,267/0,533/0,8 s.
+  - Kein Mündungsfeuer, sondern dein kurzer `release`-Effekt (Sehnen-Schnapp bzw. Staub-Puff, V-499).
+  - Liegt nur in Georgs Dropbox; Zugriff wie bei den K10-Handwaffen.
+- Gatling folgt (am Boden fertig, Flug in Arbeit), Meldung über WS0.
