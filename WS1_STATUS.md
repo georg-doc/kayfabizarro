@@ -3,6 +3,40 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 123 · 21.10. nachts · Disco K12 läuft im Spiel · Weitergaben an WS0: Fluffer kleiner, Combat-Cubes als Dark Fluffer, Heilschuss-Vorrang
+
+### Bitten an WS0 (Georg 21.10., über WS-NPC bzw. WS-Audio)
+1. **Dark Fluffer 30–40 % kleiner** (Georg: „damit es besser zu den KayKit passt“): `residents.r1.json → fluffers[0].heightM` 1,1 → etwa 0,66–0,77 m.
+   - Spuck-Tropfen (SPIT.ballR) und Fleck-Radius ziehen mit.
+   - Der Trefferradius bleibt etwa gleich, damit das Heilen nicht schwerer wird.
+   - WS-Audio spielt die Fluffer-Töne dann 5–8 % höher.
+   - Umsetzung bei WS-NPC (Besitzer); Georg sieht Vergleichsbilder 0,7 / 0,8 m.
+2. **Combat-Slice-Gegner werden Dark Fluffer** (Georg) → **WSB-Auftrag** wie Ghost K11 k11c, je Cube:
+   - `KFB_<Name>_healed.k11c.glb`, as-is, CC0;
+   - `KFB_Mouth` (Kind von Head, Mitte der sichtbaren Maulöffnung, +Z = Spuckrichtung, V-589);
+   - `KFB_HealedEyes` (weiße Augen erst nach dem Heilen);
+   - Karten `q_<name>[_healed].figure.json` und Frontbilder.
+   - Liste (15 Boden-Cubes aus KFB-Combat-Arena @028dd00), Mushroom zuerst: mushroom, alien, alien_tall, cactus, chicken, crab, cyclops, deer, demon, greendemon, panda, penguin, pig, tree, yeti.
+   - Ohne Skull und die Flieger. Volltext: WS_NPC_STATUS §9 (`ws-npc/status` @e2fd549).
+3. **Heilschuss: Georg hat (a) entschieden, umgesetzt** (WS-NPC d923b9b, orchard3d additiv): Ein feindlicher Fluffer gewinnt vor einem Baum, der höchstens 1,5 m näher steht.
+   - Die Fehlschüsse im Ton-Video kamen eigentlich von der Kamera: Teleport dreht nur die Figur.
+
+### Disco K12 (Dioramen-Test Schritt 3) – läuft im Spiel, lokal
+- **Zweig:** `disco/k12` @7f5750f über ws-npc/phase-a @4625c6e (braucht bandClock, npcFigure, eyeActor eyeAnchors). Schalter `#m1,disco,look=terrain3`, Ort `discoat=x,z[,Grad]`.
+- **Inhalt:**
+  - 7 Tänzer aus `assets/private` mit Georgs Augenprofilen; Ritter und Dämon Anker-Sitz = PROOF.
+  - MC FrizzleBob (14.10.-Export, siehe Frage §122) hinter der Drum Machine, Clips der Motion Library Rig_Medium.
+  - Cues auf der 100-bpm-Uhr; HIT 1: alle Chicken.
+  - floorLift V-596; für FB beim Laden nach der WSB-Regel gemessen, Füße −0,6 … +4 cm.
+  - Kulisse wie in der Probe.
+- **Test** `test/disco.mjs` PASS. Bilder: Übersicht und Augen-Bogen in Ruhe.
+- **Hexe 30,6 s:** `house_a` (der spätere Eintrag) bis zur Entscheidung.
+- **Private Körper** nur über `src/private`; ein Build damit ist nur lokal (nie Vorschau). Öffentliche Fassung: Kulisse + MC.
+- **Offen:**
+  - FB-Stand (Frage §122);
+  - Augen Ritter/Dämon (PROOF, Georg-Blick);
+  - Disco auf dem neuen Gelände erst nach dem Merge (Reihenfolge §122) bzw. in einem lokalen Vorschau-Zweig.
+
 ## 122 · 21.10. spät · Disco K12 startet · FRAGE an WS0: welcher FrizzleBob ist der aktuelle ToolBox-Stand? · Vorschau probe-welt
 
 ### Frage an WS0 (Georg 21.10.: „den korrekten FrizzleBob v5, aktuellster ToolBox-Stand“) – bitte bald beantworten
