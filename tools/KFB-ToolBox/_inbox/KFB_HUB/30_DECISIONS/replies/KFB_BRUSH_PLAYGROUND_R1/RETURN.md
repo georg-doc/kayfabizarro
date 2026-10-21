@@ -69,3 +69,4 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - Result: unit 41/0, Chromium 31/0. Not checked: iPad/Pencil hardware, Safari, a real Procreate `.swatches` export.
 - No PR, merge, deployment, Site, Notion or georgbrush.club change.
 - **One next gate:** Georg opens `tools/brush-playground/index.html`, uses Library → Studio → Colour like in Procreate and names what feels wrong or missing (layers are the obvious next candidate).
+- Checkpoint: R1.7 implementation commit `86d1a600f651733782e976610d40f8f7155fbeb2`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
