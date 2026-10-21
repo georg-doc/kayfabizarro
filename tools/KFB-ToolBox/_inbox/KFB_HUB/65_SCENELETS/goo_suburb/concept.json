@@ -1,0 +1,102 @@
+{
+ "scene": "goo_suburb",
+ "version": "R1",
+ "date": "2026-10-21",
+ "source": {
+  "georg": "21.10.: Goo-Siedlungen der Black Fluffer in einer Vorstadt mit Bürgersteigen, Laternen, Ampeln; Joyride-Stadt als Design-Standard, use what works; Bewohner fliehen und schimpfen; Monster fliegen raus; überall möglich, überfliegbar, zerstörbar",
+  "reuse": [
+   "KFB_JOYRIDE_J15_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-atlas.v1.js (makeAtlas: Bordstein t4-bordstein, Stadtsockel, Gehwegplatten t4-gehweg, Häuser KayKit building_A–H SC 4.1 mit Höhenrhythmus, Möbel-Takt Laterne 21 m · Baum versetzt · Bank+Mülleimer 42 m · Hydrant 63 m)",
+   "KFB_JOYRIDE_J15_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/prop-guard.p1.js (Georg: alle Lampen korrekt zur Straße; nichts auf Fahrbahn) + Fix yaw.streetlight = π/2 (KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01/code/… makePropGuard)",
+   "KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01/code/lab-drive/joyride-drive.j10.js + clay-material.v8.js (Profil house) + clay-soften.v1.js (RC.facade.h0)",
+   "KFB_JOYRIDE_J15_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/FIX_2026-09-30_WSA.md (houseLOD InstancedMesh je Quelle, claySeed je Instanz, flatNoCast, hiDist 55)",
+   "KFB_HUB/30_DECISIONS/STYLE_GUIDE_3D_R1.md §7 Town-Skin (Ecke, T, Kreuzung, Kreisel, Haifischzähne, Zebra nur mit Gehweg, Sackgasse mit Wendeschleife; Gehweg ≥ 1,3 H, Bord ≈ 0,1 H, Mauerwerk A #e6d5b7→#b49d7e; Laternen an der Bordseite beidseitig im Wechsel mit Bäumen)",
+   "KayKit City Builder Bits 1.0 FREE (building_A–H, streetlight, firehydrant, trafficlight_A/B/C bisher ungenutzt), Tiny Treats Pretty Park + Homely House, Kenney City Kits (3, knetig übersetzt) – alles CC0",
+   "Gold-Referenz Look: J17 pictures/chase-straight.jpg, chase-curve.jpg (V-010)"
+  ],
+  "avoid": [
+   "V-014 RKIT-Test-Hub-Look (flacher Asphalt, Gehwegplatten-Raster)",
+   "V-429 eigene Lampen mit harten Schatten",
+   "OSM-Häuser (passen nicht zu den Dioramen)",
+   "J13-Bugs sockelFold, curbAir"
+  ]
+ },
+ "one_sentence": "Diese Szene zeigt eine freundliche Vorstadt, in der einzelne Häuser von den Black Fluffern mit Zensur-Goo überzogen sind, weil Utopia dort folgsame Bewohner hält, und der Spieler soll zuerst das tropfende schwarze Haus zwischen den bunten Knethäusern sehen.",
+ "story": "Die Black Fluffer bauen und übernehmen Wohnblocks als gemütliches Gefängnis (Utopia-Sozialbau, Matrix): drinnen flimmert der Fernseher, die Bewohner leben ein bequemes, folgsames NPC-Dasein. Wer ein Goo-Haus zerstört, befreit sie – sie fliehen empört und schimpfen, aus den Mauern flattern Monster, das Haus zerfällt zu buntem Fluff. Zerstörung = Reinigung, nicht Töten (passt zu V-583/V-595).",
+ "image_idea": "Eine sonnige Vorstadtstraße mit Bürgersteig, Laternen und Ampel; mittendrin ein glänzend-schwarzes, tropfendes Haus mit warmem Fernsehlicht in den Fenstern.",
+ "focal": {
+  "first": "Goo-Haus (dunkelster Wert + Glanz + TV-Fenster)",
+  "then": [
+   "Straße/Bürgersteig als Leselinie",
+   "bunte Nachbarhäuser als Kontrast",
+   "Ampel an der Kreuzung"
+  ]
+ },
+ "space": {
+  "foreground": "Bürgersteig mit Bord, Laterne, Hydrant",
+  "midground": "Häuserzeile (locker, Vorgärten, Zäune), ein Goo-Haus",
+  "background": "Kreuzung mit Ampel, weitere Zeile, Gelände dahinter",
+  "value": "Goo-Haus = dunkelster Wert der Szene, Rest mittel-hell; stärkster Kontrast am Goo-Haus",
+  "ratio_70_20_10": "70 Straße/Gehweg/Gärten ruhig, 20 Häuser Struktur, 10 Goo-Haus + Monster Bedeutung"
+ },
+ "color_script": {
+  "mood": "heller, freundlicher Vorstadt-Vormittag",
+  "terrain": "Spielgelände unverändert, Straßenzone als Diorama-Fläche eingepasst",
+  "secondary": "Mauerwerk A #e6d5b7→#b49d7e, Häuser in Joyride-Hausfarben",
+  "accent": "Goo #1f1a14 mit Glanz und Tropfen; warmes TV-Licht in Goo-Fenstern (Materialfarbe, kein Licht); bunter Fluff beim Zerfall",
+  "forbidden": "neue Lichtquellen, Emission außer Effekt-Puffs (V-499), OSM-Optik, harte Schnitte zum Gelände",
+  "light": "Spiel-Rig (V-385/386)"
+ },
+ "form_dna": {
+  "primary": [
+   "KayKit-Hauskörper (weich, J17-softened)",
+   "gerundete Bordsteine",
+   "Platten mit Fugen"
+  ],
+  "secondary": [
+   "Goo-Tropfen an Traufe/Kanten",
+   "Laternen- und Ampelmasten"
+  ],
+  "forbidden": "scharfkantige Kisten, flacher Asphalt ohne Profil",
+  "edges": "alle Enden und Schnittflächen gerundet (V-168)"
+ },
+ "life_anchor": "Bewohner im Garten/auf dem Gehweg (WS-NPC); Goo tropft langsam; TV-Fenster flackern weich; bei Zerstörung fliehen Bewohner schimpfend, Monster (Quaternius-Flieger) flattern raus",
+ "material_codes": [
+  "Bordstein: gerundete Knetsteine 0,56×0,36×0,9, alle 1,05 m (J15)",
+  "Gehweg: Platten in 3 Reihen auf Stadtsockel, Mauerwerk A",
+  "Goo: glänzende Tusche #1f1a14, Tropfen in Dreiergruppen an Traufen, wandert nicht"
+ ],
+ "biography": "Straße = gebaut und genutzt (Bordkanten abgerundet, Laternen im Takt); Goo-Haus = übernommen (Goo über altem Hauskörper, Fensterlicht als Lockmittel); nach Zerstörung = Fluff, später bauen Utopia-Bots nach.",
+ "signature": {
+  "hero": "Goo-Haus",
+  "echoes": [
+   "Ampel-Kreuzung",
+   "bunte Nachbarhäuser"
+  ]
+ },
+ "story_beat": [
+  "heil: Goo-Haus ruhig, TV flackert",
+  "getroffen: wabbelt, Risse, Goo spritzt",
+  "bricht: Teile fliegen, Monster flattern raus, Bewohner fliehen und schimpfen",
+  "Fluff: Teile ploppen zu buntem Fluff, Fleck verblasst"
+ ],
+ "destruction": {
+  "zone": "überall möglich; zerstörbar ist nur, was nahe beim Spieler steht (Radius), der Rest ist Kulisse",
+  "model": "Baustein-Typen (Wand, Ecke, Dach, Fenster) je einmal in 3–6 Stücke vorgebrochen (WSB), instanziert; keine Laufzeit-Bruchphysik; Stücke fliegen kinematisch ≤ 2 s, dann Fluff über fluff.js",
+  "budget": "≤ 2 ms je Bild, ≤ 200 Stücke gleichzeitig, ≤ 3 Rauchkörper + 11 Sprites (V-514 §3), keine neuen Lichter, Schalter",
+  "weapons": "K10-Karten, Mech Gatling/Rakete"
+ },
+ "traffic_lights": "KayKit trafficlight_A/B/C an Kreuzungen auf dem Gehweg an der Bordkante, Signal zeigt zur ankommenden Fahrspur; gleiche prop-guard-Regel wie Laternen (Ausrichtung zur Straße, nie auf Fahrbahn)",
+ "cast": [
+  "Bewohner aus 60_CAST (WS-NPC)",
+  "Black Fluffer (q_ghost, q_mushroom)",
+  "Quaternius-Flieger als Monster (später, P4)"
+ ],
+ "cameras": "4 Kritiker-Kameras (Straße längs, Kreuzung, Goo-Haus nah, Überflug) + Spielkamera (Fahren und Fliegen)",
+ "contact_geometry": "Häuser auf Stadtsockel/Vorgarten mit gebrochener Fuge (Kanon Gebiet 4); Masten im Gehweg mit Sockel; Straßenzone über Diorama-Anker ins Gelände (Gebiet 15, kfb_edge an freien Enden)",
+ "phases": [
+  "1 Look-Test WSB (K14, Standbilder, Georg wählt)",
+  "2 WS1 Straßengenerator aus transition-atlas (Spline → Raster), houseLOD, flatNoCast",
+  "3 Zerstörung + Fluff",
+  "4 Bewohner fliehen/schimpfen (WS-NPC), Monster"
+ ]
+}

@@ -8454,6 +8454,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-597",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "Zerstörungs-Richtung (Georg 21.10.): Goo-Vorstadt. Black Fluffer übernehmen bzw. bauen Wohnhäuser als gemütliches Gefängnis (Utopia-Sozialbau, Matrix); Zerstörung befreit, Bewohner fliehen und schimpfen, Monster fliegen raus, Haus zerfällt zu buntem Fluff (Reinigung statt Töten). Stadtbild = Joyride-Standard, use what works: J15 transition-atlas (Bordstein, Stadtsockel, Gehweg, KayKit building_A-H, Möbel-Takt, Laternen zur Straße mit yaw pi/2), J17 clay-material v8 + soften, houseLOD/flatNoCast; neu Straßenraster als Vorstadt (Style Guide §7) und Ampeln KayKit trafficlight an Kreuzungen; KayKit City + Kenney City (CC0). Überall möglich und überfliegbar; zerstörbar nur nahe beim Spieler, Baustein-Typen einmal vorgebrochen, keine Laufzeit-Bruchphysik, 2 ms Budget. Konzeptblatt 65_SCENELETS/goo_suburb, Look-Test WSB K14 nach K13.",
+   "values": {},
+   "owner": "WS0 · WSB (K14) · später WS1 (Generator), WS-NPC (Bewohner)",
+   "check": "Georg wählt Look aus K14-Standbildern",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will Zerstörung mit eigenem Design statt schlampiger Kulisse; die Joyride-Stadt ist schon abgenommen und performant (houseLOD).",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8541,7 +8556,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1039",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1040",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

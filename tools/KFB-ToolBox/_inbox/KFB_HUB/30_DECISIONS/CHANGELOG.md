@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-597 Zerstörung = Goo-Vorstadt (Georg): Konzeptblatt 65_SCENELETS/goo_suburb (Joyride-Stadt als Standard, Ampeln neu, Goo-Häuser, vorgebrochene Bausteine, 2 ms); WSB K14 Look-Test nach K13.
 - WSB K12 Disco-Besetzung angenommen (7 Tänzer mit floorLift, MC = fb_game, Ork-Legacy ready); privater Branch aktualisiert (179 Dateien, inkrementell); WS1 informiert; FB-face-mount-Befund an WSA (ToolBox).
 - STOPP an WSB: FrizzleBob nicht in Blender zusammenbauen (Georg); FB nur aus der ToolBox (P08), MC-Platz in K12 offen.
 - Private Assets gepusht: georg-doc/KFB-Stunt-Car-Race Branch assets/private (156 Dateien, Georg-Freigabe); WS1/WS-NPC holen per eigenem Lese-Schlüssel, keine lokalen Kopien mehr. K13 Large-Rig-Nahkampf (black_knight, demon_lord, orc_brute; 1H+Schild, 2H) an WSB nach K12. Zerstörungs-Block: Design und Leistung erst mit Georg besprechen.
