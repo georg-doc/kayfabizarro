@@ -156,3 +156,7 @@ Read [full provenance, donor ranking & KFB architecture](./KFB_AI_TOWN_GENERATIV
 
 ## R0.9 · Google Doc Research R1 / NotebookLM research corpus, 2026-10-20
 See [Research Doc handoff](./KFB_RESIDENT_RESEARCH_GOOGLE_DOC_NOTEBOOKLM_HANDOFF_R0_9_2026-10-20.md): created native tabbed Google Doc with research background (Develop Character Personality), AI Town/Smallville/Yuka, intent/POIs, conversation, Lean Memory, KFB WS0 and source index. This is editorial research, not an additional technical runtime SSOT. NotebookLM not yet created. One existing WS0 intake gate preserved.
+
+
+## R1 · 2026-10-21 · Emergent Resident Life code audit + WS0-gated WS1 workshop
+Read [source-level KEEP/ADAPT/TEST/REJECT audit](./KFB_EMERGENT_RESIDENT_LIFE_SOURCE_CODE_DONOR_AUDIT_R1_2026-10-21.md), [WS0 decision intake](./WS0_EMERGENT_RESIDENT_LIFE_WS1_WORKSHOP_INTAKE_R1_2026-10-21.md), and [WS1 executable milestone workshop](./WS1_EMERGENT_RESIDENT_LIFE_SOCIAL_MEMORY_WORKSHOP_R1_2026-10-21.md). Source-read existing `NPC-LIFE-01` EncounterBeatBus PR #210 actual implementation (historic 21/21 Node report), Town AIDA/POI PR #272 schema and semantic social memory, current `ws1/r3f-frame` host/interactable/player-save/fluff/perf budgets, external Yuka/Dive/navcat/recast READMEs. No live/visual/benchmark tests, no approved memory migration; WS0 must locate `kfb.world-save/1` owner and accept actor/clip/POI sources. One product outcome, WS1 one writer with milestone M0-M3 first, optional LLM and combat later. **One gate unchanged:** `WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE`.
