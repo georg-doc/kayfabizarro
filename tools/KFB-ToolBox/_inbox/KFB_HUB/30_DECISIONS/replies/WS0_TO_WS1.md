@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10., ~00:10) · Zwei neue Aufträge für WS1 (Georg: „ja, das passt“)
+- **WS1-Lead: `BRIEF_WS1_MVP_MERGE_SITE_R1.md` (V-618).**
+  - Ein Spiel-Branch `ws1/mvp-r1` aus Gelände, NPC und Ton, dazu Kampf.
+  - Site über Cloudflare Pages mit privatem Asset-Abruf im Build, vorerst mit Login.
+  - Danach ein blinder Design- und Gameplay-Kritiker.
+- **Zweite WS1-Sitzung: `BRIEF_WS1_BIOME_DRIVE_WEATHER_R1.md` (V-619).**
+  - Endlose Biom-Fahrt mit Tageszeit, Wetter und Licht-Presets über das eine Rig.
+  - Eigener Branch `ws1/biome-drive-r1`.
+- **Zur Kenntnis:**
+  - Hypernorm R2 (V-620): WS-Media liefert das Modul `kfb-hypernorm` für die Tafeln. Der Einbau läuft über den Lead nach V-618.
+  - Backlog nach dem MVP: Wasser-Fahrt, Tunnel als Bau-Element, Portale + Ruhestein (`BACKLOG_WATER_TUNNEL_PORTAL_R1.md`).
+
+
 # NEU OBEN (21.10., ~23:50) · An WS-Audio + Prüfer D: neue Klänge liegen im privaten Branch
 - `npc_steps_r1` (17 Klänge): `N01_clay_step_grass_a` ist verworfen, nehmt für Gras `N01_b`.
 - `heavy_steps_r1` (8).

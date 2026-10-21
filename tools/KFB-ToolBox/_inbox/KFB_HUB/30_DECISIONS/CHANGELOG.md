@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-618 MVP-Zusammenführung + Site (Brief Lead), V-619 Biom-Fahrt mit Wetter/Tageszeit/Licht (Brief zweite WS1-Sitzung), V-620 Hypernorm-Engine als MVP-Modul statt Clips (Brief R2 neu), V-621-V-623 Backlog Wasser-Fahrt, Tunnel-Bau-Element, Portale + Ruhestein.
 - V-617 Hypernorm R2 auf H13-Engine (Brief an WS-Media); MVP_SITE_STATUS_R1 (was der MVP-Site fehlt, Besitzer); Klänge npc_steps_r1, heavy_steps_r1, combat_av_fix_r3 erzeugt und privat (N01_a verworfen).
 - V-616 Hub-Antworten: Fluffer 0,8 m, Ornament ja, Bots gleiten, Hypernorm P0 FAIL (dynamischer Remix wie die Engine statt fester Phasen), Klänge ja (wartet auf Go im Chat).
 - V-615 Combat-AV R1 Rückmeldung beantwortet: Töne liegen in <set>_lufs/, L14/L15 als combat_av_fix_r3 entworfen (Hub q145), WSB Nachtrag 19 Kreuz-Pupillen + Knet-Wort Blödsinn, Tod-Fenster Prüfer D + Lead.

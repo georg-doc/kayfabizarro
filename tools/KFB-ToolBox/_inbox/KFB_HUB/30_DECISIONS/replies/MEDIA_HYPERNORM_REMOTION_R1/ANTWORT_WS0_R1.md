@@ -36,3 +36,9 @@ Alles privat, Abnahme durch Georg. Fonts lokal und mit Credits-Einträgen. Ton P
 - **Georg:** Er will einen dynamischen Remix wie die Hypernormalisation-Engine, keine festen Phasen und kein festes Layout.
 - **P0** hatte die Text-Folie aus Clay Stage R2 kopiert. Die Engine ist H13.
 - **Neuer Auftrag:** `BRIEF_WS0_HYPERNORM_R2.md` in diesem Ordner.
+
+
+## 22.10., ~00:10 · R2 geändert (V-620): keine Clips, sondern Engine als Modul fürs MVP
+- `BRIEF_WS0_HYPERNORM_R2.md` ist neu gefasst.
+- Inhalt: H13 sauber als Modul `kfb-hypernorm` übernehmen, Darstellung und Remix verbessern, Pool um etwa 300 PD-Assets aus klaren Quellen erweitern, steuerbar und performant für die Spiel-Tafeln.
+- Abgabe: eine Tafel in der Probe-Welt, keine Video-Clips.
