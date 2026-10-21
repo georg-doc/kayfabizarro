@@ -27,7 +27,8 @@ canvas{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair}
 </main>
 <script type="module">
 const $=id=>document.getElementById(id), canvas=$('paper'), ctx=canvas.getContext('2d'), W=canvas.width,H=canvas.height;
-const undo=[],redo=[];let tip=null,tipName='',drawing=null,activePointer=null;
+const undo=[],redo=[];let tip=null,tipName='',drawing=null,activePointer=null;const tintCache=new Map();
+function tintedTip(color){if(!tip)return null;if(tintCache.has(color))return tintCache.get(color);const off=document.createElement('canvas');off.width=tip.width;off.height=tip.height;const c=off.getContext('2d');c.drawImage(tip,0,0);c.globalCompositeOperation='source-in';c.fillStyle=color;c.fillRect(0,0,off.width,off.height);tintCache.set(color,off);return off;}
 const num=id=>Number($(id).value);
 function stateButtons(){ $('undo').disabled=!undo.length; $('redo').disabled=!redo.length;}
 function seedRand(seed){let x=seed|0;return ()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296;};}
@@ -49,8 +50,7 @@ function renderStroke(s){
    const ox=(random()-.5)*offset,oy=(random()-.5)*offset;
    ctx.save();ctx.translate(x+ox,y+oy);ctx.rotate(angle);ctx.globalAlpha=opacity*(.25+.75*pressure);
    if(tip){
-    ctx.drawImage(tip,-radius/2,-radius/2,radius,radius);
-    ctx.globalCompositeOperation='source-in';ctx.fillStyle=s.color;ctx.fillRect(-radius/2,-radius/2,radius,radius);
+    ctx.drawImage(tintedTip(s.color),-radius/2,-radius/2,radius,radius);
    }else{ctx.fillStyle=s.color;ctx.beginPath();ctx.arc(0,0,radius/2,0,Math.PI*2);ctx.fill();}
    ctx.restore();
   }
@@ -95,7 +95,7 @@ $('file').onchange=async e=>{
  try{if(file.size>32e6)throw Error('Archive exceeds 32 MB private-import limit');
  const blob=await unzipEntry(file,'Shape.png');const bitmap=await createImageBitmap(blob);
  if(bitmap.width>4096||bitmap.height>4096){bitmap.close();throw Error('Tip exceeds 4096px');}
- tip?.close?.();tip=bitmap;tipName=file.name;
+ tip?.close?.();tip=bitmap;tintCache.clear();tipName=file.name;
  $('status').textContent='Loaded '+tipName+' locally ('+bitmap.width+'×'+bitmap.height+'). Stamp dynamics are experimental; Procreate parameters are NOT yet decoded.';
  redraw();
  }catch(err){$('status').textContent='Import error: '+err.message;}
