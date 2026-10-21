@@ -70,10 +70,10 @@ Spender gelesen: `georg-doc/KFB-Combat-Arena` main **@f6a59ad** (= Pin im Brief)
 | `zensur.v3.js`: Tusche als Karten-UV-Maske (Canvas) | **N** 1:1 (Karte ≠ Gelände). **L** Für das Gelände braucht es einen begrenzten Patch (Decal/Zellmaske) über den Terrain-Owner (Lead), kein Flood-Shader. |
 | `mobs.v2.js` | **N** als Laufzeit (zweites Spawn-/Bewegungssystem verboten); nur Idee „Blick dreht weich, Spucken wartet auf Blick“. |
 | `ENTWURF_zensur-und-heilung.md` (7.9.): Heilen statt Töten, weiße Augen, Tinte stoppt | **Ü** Kern. **N** Blumen (Georg 21.10.: abgelehnt). |
-| Welche Cube? | **L → WS0** wählt aus der Aufstellung (Vorschlag aus Lesbarkeit im Spiel: `Skull` oder `GreenDemon`; beide 10 Clips). |
+| Welche Cube? | **Ü Georg 21.10.: `Ghost.gltf`** (Bodenläufer, 10 Clips, Höhe 1,41). |
 | Weiße Augen | **L** Variante baut WSB (Blender, as-is bis auf die Augen); bis dahin Heilung ohne Augenwechsel. |
 
-**Heil-Werkzeug-Kandidaten im Spiel** (`#m1,harvest`, vorhandene Aktionen, keine neue Waffe): V Faust (`punch`), B Schuss (`shoot`, echtes Projektil), N Cartoon-Bombe (`blast`), T Saugarm (`fluffSuck`, saugt bis zu 6 Kügelchen im Kegel), I Aufheben. Team-Heilen: Hexen als Fluff-Alchemistinnen (Georg 21.10.), Figur noch nicht auf diesem Mac. WS0 entscheidet anhand eines Bildes; Vorschlag: **T Saugarm** (saugt das dunkle Goo ab statt zu schlagen, passt zu „Heilen statt Töten“; bunter Fluff fällt danach einmal über `fluff.js`).
+**Heil-Werkzeug-Kandidaten im Spiel** (`#m1,harvest`, vorhandene Aktionen, keine neue Waffe): V Faust (`punch`), B Schuss (`shoot`, echtes Projektil), N Cartoon-Bombe (`blast`), T Saugarm (`fluffSuck`, saugt bis zu 6 Kügelchen im Kegel), I Aufheben. Team-Heilen: Hexen als Fluff-Alchemistinnen (Georg 21.10.), Figur noch nicht auf diesem Mac. **Georg 21.10.: Heil-Waffe vorerst `KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Gun_Pistol.gltf`** (statt töten). Früherer Vorschlag war T Saugarm (saugt das dunkle Goo ab statt zu schlagen, passt zu „Heilen statt Töten“; bunter Fluff fällt danach einmal über `fluff.js`).
 **Kampf-Schnittstelle:** Treffer gibt es heute nur gegen Obstgarten-Bäume (`orchard.hitTree/shoot/blast`), keine Gegner-Trefferwahrheit. P1 bleibt deshalb gewaltfrei (Spucken, Ausweichen, Reinigen/Ablauf).
 
 ## 7 · Lücken-Liste (Kurzform)

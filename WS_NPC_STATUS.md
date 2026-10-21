@@ -2,6 +2,15 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 3 · 21.10. · Farmer B echt im Spiel · Georgs Entscheide zu Phase C
+
+**Farmer B:** `Farmer_B.glb` aus `kayfabizarro` main (KayKit Mystery S6 „12 - June 2026 - Farmers“, Blob bc765229 = Pin @29c7500 in Georgs Augen-Batch), über das vorhandene Besetzungs-Werkzeug `scripts/cast/build-cast.py` als `farmer-b` aufgenommen (Augen aus `eye-rig-medium.batch-1` @ac9dbaed, AUTO_CANDIDATE wie Mage/Barbarian; bestehende Besetzung byte-gleich). **Georg 21.10.:** Farmer B „wie ausgeliefert“, also mit der eingebetteten Textur (das ist farmer_texture_A; farmer_texture_B.png liegt nur daneben). Vergleichsbild `evidence/phase-a/farmer-ab.png`.
+- npc-a im Spiel PASS mit echter Figur (Sohlen −4,2 … +5,1 cm, Gang-Rate 0,8–1,25, Begegnung volle Grammatik + Waving, 0 Pop-ins).
+- Matrix-Zeile M0-2: **Farmer B PASS** (echte Figur, Augen); **Lorekeeper weiter Platzhalter** (Mage, WSB K11). Georgs Batch enthält auch ein Lorekeeper-Augenprofil und `Lorekeeper.glb` mit Buch und Stab liegt in main – Frage an WS0, ob er vor K11 so laufen darf.
+- **Widerspruch an WS0:** Writers Room `reality_redrawn` nennt Farmer_A „Bäuerin mit Kornschein“; `Farmer_A.glb` ist der Bauer mit Bart.
+
+**Phase C, Georg 21.10.:** Dark Fluffer = `MonsterCuteCubes/glTF/Ghost.gltf`. Heil-Waffe (statt töten) vorerst `KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Gun_Pistol.gltf`. Damit sind Cube und Heil-Auslöser entschieden; offen bleiben Patch-Ort und Baum (Vorschlag folgt), weiße Augen (WSB).
+
 ## 2 · 21.10. · Phase A gebaut (lokal, Zweig `ws-npc/phase-a`, kein Push) · Abnahmematrix
 
 **Stand:** Spiel `kfb-planet`, Basis `terrain/439` @a701da4 (mit `kfb.world-save/1` und M1 dpr ≤ 1,25 des Leads), lokale Commits auf `ws-npc/phase-a` (Hash siehe Meldung an den Lead). Aufruf: `dist/index.html#m1,harvest,npc` (Start 0,27 Tag: erstes Treffen nach ≈ 20 s; `npct=<s>` setzt die Tageszeit).
@@ -17,7 +26,7 @@ Neueste Einträge oben.
 | # | Zeile | Ergebnis | Beleg |
 |---|---|---|---|
 | M0-1 | Inventur je Quelle (übernommen / nicht / Lücke) | **PASS** (Entwurf) | `CANON_3D/sources/WS_NPC_INVENTUR_R1.md` |
-| M0-2 | Echte Figuren aus cast.r1.json, `ready`, quell-isoliert (Farmer B, Lorekeeper) | **FAIL** | Farmer-B-Dateien + cast.r1.json nicht auf diesem Mac; Lorekeeper erst WSB K11; Platzhalter laufen |
+| M0-2 | Echte Figuren aus cast.r1.json, `ready`, quell-isoliert (Farmer B, Lorekeeper) | **Farmer B PASS · Lorekeeper FAIL** | Farmer B echt (§3); Lorekeeper erst WSB K11, Mage-Platzhalter; cast.r1.json selbst weiter nicht auf diesem Mac |
 | M0-3 | Jeder Clip isoliert nachgewiesen | **NOT RUN** | genutzt as-is: Idle_A, Idle_B, Walking_B, Interact, PickUp, Use_Item, Waving (Rig_Medium General/MovementBasic/Simulation) |
 | M0-4 | Konzeptblatt Phase A | **NOT RUN** | WS0 schreibt es |
 | M1-1 | Tagesplan `kfb.npc-day/1` für zwei Bewohner, deterministisch je Seed | **PASS** | npcWorld, npcSim |
