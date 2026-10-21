@@ -2951,6 +2951,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * (P.fly ? 14 : 10)) : 1)   /* Luftpolster schluckt kleine Wellen (Georg: Nase federt) */
     const nf = TV.f.set(0, 0, 1).applyQuaternion(P.qTilt), nr = TV.x.set(1, 0, 0).applyQuaternion(P.qTilt); P.vPitch = Math.asin(Math.max(-1, Math.min(1, nf.y))); P.vRoll = -Math.asin(Math.max(-1, Math.min(1, nr.y)))
   }
+  const PARK = { t: 0 };
   function step(dt) {
     applyTempo();
     const fin = { gas: !!(keys.KeyW || keys.ArrowUp), brake: !!(keys.KeyS || keys.ArrowDown), left: !!(keys.KeyA || keys.ArrowLeft), right: !!(keys.KeyD || keys.ArrowRight),
@@ -2959,7 +2960,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     dAcc = Math.min(dAcc + dt, 0.25)
     while (dAcc >= DSTEP) { dAcc -= DSTEP
       const flew = KD.racerFlightStep(F, D, fin, DSTEP, FENV)
-      if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); if (S.rampfly) KD.racerAfterK2t(F, D) }   // Rampen-Abflug nur wie im Spiel mit #fly (sonst hob der Wagen an jeder steilen Düne ab); Doppel-Leertaste fliegt immer
+      if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); if (S.rampfly) KD.racerAfterK2t(F, D)
+        /* Parkbremse (Georg 21.10.: Wagen rollte nach dem Laden weg, stand dann am Stein und zeigte 5 km/h): ohne jede Eingabe, am Boden, Hang bis ~35° → sofort stehen */
+        const idle = !fin.gas && !fin.brake && !fin.left && !fin.right && !fin.jump && !keys.KeyQ && !keys.KeyE; PARK.t = idle ? PARK.t + DSTEP : 0
+        if (idle && PARK.t > 0.15 && !D.air && !F.st && (D.up ? D.up[1] : 1) > KD.SLOPE.flatNy) { D.speed *= 0.6; D.latV = (D.latV || 0) * 0.6; if (Math.abs(D.speed) < 0.05) D.speed = 0 } }   // Rampen-Abflug nur wie im Spiel mit #fly (sonst hob der Wagen an jeder steilen Düne ab); Doppel-Leertaste fliegt immer
       if (!Number.isFinite(D.x + D.y + D.z)) { placeCar(P.x, P.z); break } }
     syncP(dt)
     const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : fin.boost; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : 1
