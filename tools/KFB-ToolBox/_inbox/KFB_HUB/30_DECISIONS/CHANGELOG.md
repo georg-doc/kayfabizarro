@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-629 Goo-Vorstadt Bautypen: Kenney Commercial/Industrial/Suburban = Utopia-Einheitsbau (grau), KayKit = gute NPC-Behausung, Straßen Joyride, ein Knete-Material; Hub q149 und WSB Nachtrag 24 ergänzt.
 - V-628 gerichtete Waffen: Anker KFB_Edge, Halterungs-Suche nur mit Schneide in Schlagrichtung, WSA-Kartenprüfung schlägt bei verdrehter Schneide fehl (auch Katana, Samurai-Schwert); WSB Nachtrag 23, WSA informiert.
 - V-627 Boss-Move mit großer Orc-Keule bzw. Zweihändern und Melee_2H_Slam (WSB Nachtrag 22).
 - V-626 K13 Orc-Axt: Klinge nach vorne (Halterung 180 Grad um die Griffachse), WSB Nachtrag 21.

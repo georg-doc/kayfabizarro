@@ -8919,6 +8919,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-629",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "RULE",
+   "text": "Goo-Vorstadt Bautypen (Georg 22.10., ergänzt V-597/V-625): Utopia-Einheitsbau aus den Kenney City Kits Commercial, Industrial und Suburban (kantig, gleichförmig, modular, größere Blöcke, leicht vorzubrechen) ist der von den Black Fluffern übernommene Bau in Graustufen; die gute Behausung der NPCs ist KayKit City (rund, verspielt, Einzelhäuser). Straßen, Bordsteine und Gehwege bleiben Joyride-Standard (V-010), Kenney Roads nur für Kreisverkehr, Brücken, Auffahrten, Überführungen. Beide Kits im selben Knete-Material J17; Kontrast über Formsprache und Grau gegen Farbe.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Kontrast der Modell-Familien erzählt Utopia gegen gutes Wohnen ohne Text; modulare Kenney-Teile erleichtern große Blöcke und Zerstörung.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9006,7 +9021,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1074",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1075",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
