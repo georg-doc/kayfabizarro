@@ -2,6 +2,51 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 2 · 21.10. · Phase A gebaut (lokal, Zweig `ws-npc/phase-a`, kein Push) · Abnahmematrix
+
+**Stand:** Spiel `kfb-planet`, Basis `terrain/439` @4c6ec5a (mit `kfb.world-save/1` des Leads), lokale Commits auf `ws-npc/phase-a` (Hash siehe Meldung an den Lead). Aufruf: `dist/index.html#m1,harvest,npc` (Start 0,27 Tag: erstes Treffen nach ≈ 20 s; `npct=<s>` setzt die Tageszeit).
+
+**Was läuft:**
+- Zwei Bewohner mit Tagesplan `kfb.npc-day/1` (Tag = 300 s): Farmer B (Bäuerin/Theaterdirektorin: Zuhause → Fluff-Baum pflegen → Treffpunkt Wiesenrand → Bühne prüfen → Baum → Zuhause) und **PLATZHALTER · Lorekeeper (WSB K11)** (Zuhause → Helden-Fluff studieren → Treffpunkt → zurück). Figuren: Farmer B fehlt auf diesem Mac, Platzhalter-Figur `adventurer-barbarian`, klar markiert; Lorekeeper-Platzhalter `adventurer-mage` (Lead-OK).
+- Fahrplan statt Simulation: Lage = `planAt(t)` aus Plan + Route + Weltzeit; Live-Abweichungen (Spieler, Begegnung) holen mit ≤ 1,25 × Plantempo wieder auf.
+- Begegnung über den portierten #210-Bus, Grammatik notice → approach → orient → greet|silent → react → part → resume, stabile ID `meet:farmer_b+lore_ph:d<Tag>:wiese_rand`.
+- Einbau: ein ModuleHost-Modul `src/npc/residentLife.js` + kinematische Kapseln; `M1World.jsx` nur hinter Hash `npc` (+24 Zeilen), dunkler Fuß (terrain3) wie bei Spieler und Partnerin; Kontaktverdeckung ist seit V-587 aus M1 entfernt. Gruß-Clip `Waving` aus `Rig_Medium_Simulation.glb` as-is (KayKit Character Animations, byte-gleich mit `intake/loco`, Lead-OK 21.10.). Keine eigenen Licht-, Schatten- oder Materiallösungen.
+
+**Abnahmematrix Phase A** (Belege: `test/unit/npcEncounter|npcWorld|npcSim.mjs`, `test/npc-a.mjs`, Bildreihe `test/out/npc/npc-a-sheet.png`, Clip `test/out/npc/clip/*.webm`)
+
+| # | Zeile | Ergebnis | Beleg |
+|---|---|---|---|
+| M0-1 | Inventur je Quelle (übernommen / nicht / Lücke) | **PASS** (Entwurf) | `CANON_3D/sources/WS_NPC_INVENTUR_R1.md` |
+| M0-2 | Echte Figuren aus cast.r1.json, `ready`, quell-isoliert (Farmer B, Lorekeeper) | **FAIL** | Farmer-B-Dateien + cast.r1.json nicht auf diesem Mac; Lorekeeper erst WSB K11; Platzhalter laufen |
+| M0-3 | Jeder Clip isoliert nachgewiesen | **NOT RUN** | genutzt as-is: Idle_A, Idle_B, Walking_B, Interact, PickUp, Use_Item, Waving (Rig_Medium General/MovementBasic/Simulation) |
+| M0-4 | Konzeptblatt Phase A | **NOT RUN** | WS0 schreibt es |
+| M1-1 | Tagesplan `kfb.npc-day/1` für zwei Bewohner, deterministisch je Seed | **PASS** | npcWorld, npcSim |
+| M1-2 | Arbeits- und Sozial-POIs mit Aktionsraum ≥ 1,5 m an echten Weltobjekten | **PASS** | npcWorld (Baum in Reichweite 1,7–1,8 m; kein Stamm/Fundsache/Laterne im Raum) |
+| M1-3 | Zwei Routen-Varianten je Weg, beide benutzt; frei von Stämmen (≥ 1,7 m), Fundsachen (≥ 0,96 m), Laternen, Rang-Zaun, Theaterring | **PASS** | npcWorld; Spiegel = Spielstand (npc-a B) |
+| M1-4 | Gang ohne Rutschen: Abspielrate 0,8–1,25, Sohlen am Boden (tiefste Sohle −2 … +6,7 cm), Wurzel auf dem Gelände | **PASS** | npc-a D |
+| M1-5 | Unterbrechen durch den Spieler (stehen, drehen, schauen) und Fortsetzen mit Aufholen ≤ 1,25 × | **PASS** | npc-a E (aufgeholt nach 13 s), npcSim |
+| M2-1 | Echte gegenseitige Begegnung über die Grammatik, beide richten sich aus | **PASS** | npc-a C (Blickfehler < 1°), Clip |
+| M2-2 | Begegnung pausiert, wenn der Spieler dazukommt, und setzt am selben Beat fort; Fensterende bricht sauber ab | **PASS** (Node) / **NOT RUN** (im Spiel) | npcSim 4a/4b |
+| M2-3 | Weggehen und Zurückkommen: beide exakt auf dem Plan, kein Sprung im Kamerabild | **PASS** | npc-a F (Abweichung 4e-16 m, 0 Pop-ins in 4 289 Schritten) |
+| M2-4 | Gruß-Geste | **PASS** | Gruß und Antwort-Gruß = `Waving` (npc-a C_greetGesture) |
+| M2-5 | Zeile oder Schweigen | **PASS** (Schweigen) | stumm bis WS0 Ton/Text liefert; Ausgang `silent` vorhanden |
+| M2-6 | Spieler-Hinweis E an Bewohnern (`interactable`) | **NOT RUN** | in M1 gibt es keinen interactable-Host, E = seitwärts |
+| P-1a | ≥ 55 fps aus der Spielkamera (Spiel gesamt) | **FAIL** · Basis-Grenze | sichtbares Chromium, Metal, 1600×900, dpr 1: Spiel **ohne** Bewohner 15,5/15,7 fps, **mit** 15,7/15,4 fps (p95 ≈ 12 fps). Die Grenze liegt im Spiel selbst (GPU geteilt mit ~8 Sitzungen; Prüfer C misst, CODE_PERF_R1 §7) |
+| P-1b | Anteil der Bewohner an der Bildzeit | **PASS** · kein messbarer Anteil | A/B je 900 Bilder: Unterschied innerhalb der Streuung; Modul 0,15 ms/Schritt, +33 Draw Calls, +42 k Dreiecke |
+| P-2 | Stresstest 8/12/20 | **NOT RUN** | erst nach 2 Figuren + fps-Basis |
+| V-1 | Clip aus der Spielkamera | **PASS** | `test/out/npc/clip/page@….webm` (32 s, Headless-GPU mit Aufnahme) |
+| V-2 | Mechanisches Gate + blinder Kritiker (CRITIC_3D_R1) | **NOT RUN** | nach echten Figuren |
+| T-1 | volle `npm test` (46 Tests, PW_GPU) | **PASS** außer bekannten Wacklern | Gesamtlauf 42/46; einzeln: s5a PASS (zuvor Zeitprüfung bzw. Netz 403), drift PASS (fehlte nur `test/out/drift/drift-report.json` im frischen Worktree), c2 PASS im Software-Modus; **orbit FAIL** (`calmAfterRelease`, SW: Zeitüberschreitung). Gegenprobe auf dem unveränderten Lead-Stand 4c6ec5a: orbit und c2 scheitern dort gleich → nicht durch Phase A |
+
+**Phase A ist damit nicht abgenommen** (M0-2 FAIL, P-1a FAIL als Basis-Grenze; mehrere NOT RUN). Kein „MVP PASS“.
+
+**Clip-Liste an WS0 (WSB baut):** `Digging` bzw. Harke/Mistgabel-Arbeit (Farmer B am Baum), Lesen/Buch (Lorekeeper). Alles für Rig_Medium.
+**Lücken an WS0:** Konzeptblatt Phase A; Scheune/Strohballen-Bühne und Kartenraum als Orte (heute nur Stellen ohne Asset); Knete für die KayKit-Adventurer (keine Figurenkarte → kein `claySSOT`-Profil, Spieler und Partnerin haben eins).
+
+**Phase C Schritt 0 (Quell-Audit, Lead-Freigabe):** erledigt, siehe Inventur §6. Isolationsbilder der 16 Bodenläufer (+Z bestätigt, Höhen = Spender), Lücken Maul-Anker (V-584) und Gelände-Patch (Terrain-Owner). **An WS0:** Cube wählen (Vorschlag Skull oder GreenDemon), Heil-Auslöser wählen (Vorschlag T Saugarm), weiße Augen bei WSB.
+
+**Nächstes Gate:** Farmer-B-Dateien auf diesem Mac (Lead/WS0) → Tausch der Platzhalter-Figur, Clip-Isolation, Kritiker. Phase C P1 nach WS0-Entscheid zu Cube, Patch, Baum und Heil-Auslöser.
+
 ## 1 · 21.10. · Inventur-Entwurf + Bauplan Phase A
 
 **Gelesen:** Brief R2, Dark-Fluffer-Brief, Patrol-Spec, PR-#400-Paket (R0.6, R0.7, R0.8, R1-Audit, Workshop R1, Intake, R0.9, Fluffer-Konzept + Follow-on), Dramatis Personae + Writers Room (`ws-song/workshop-r1`: FIGURES_R1, PERSONAE_PATCH_R1, RESIDENT_DP_ALIGNMENT_R1, Export 2026-10-20c), CANON_3D R1 + Konzeptblatt-Vorlage + Kritiker, PR #210 `encounter-bus.js` @f534a056, PR #272 AIDA @992ea98, Spielcode `terrain/439` @fd5ccc5.

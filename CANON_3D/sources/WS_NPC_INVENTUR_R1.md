@@ -60,8 +60,21 @@ Legende: **Ü** = übernommen · **N** = nicht übernommen (Grund) · **L** = L�
 | Clips unter `~/kfb-ws1/intake/loco/`: `Rig_Medium_Simulation` (**Waving**, Cheering, Sit_Floor_*, Sit_Chair_*), `MovementAdvanced`, `Special` | **Ü nach Freigabe:** `Waving` = Grüßen, `Sit_Floor_*` = Pause. Nicht im Spiel eingebunden; Herkunft KayKit Character Animations wie die beiden Spiel-Pakete. Frage an Lead: in `src/assets/actors/` aufnehmen? |
 | Clip `Digging` (R0.7, Farmer) | **L** in keinem lokalen Paket. Bis WSB liefert: `Interact`/`Use_Item` am Baum. Liste an WS0. |
 
-## 6 · Dark Fluffer (Phase C, nur Vorschau)
-Heil-Werkzeug-Kandidaten im Spiel (`#m1,harvest`): V Faust, B Schuss (Projektil), N Cartoon-Bombe, T Saugarm (`fluffSuck.js`). Bild für WS0 folgt in Phase C Schritt 0.
+## 6 · Dark Fluffer (Phase C, Schritt 0 · Quell-Audit, Lead-Freigabe 21.10., kein Laufzeit-Code)
+Spender gelesen: `georg-doc/KFB-Combat-Arena` main **@f6a59ad** (= Pin im Brief): `modules/kfb-monster-roster.js` (204 Z.), `combat-arena-v2/mobs.v2.js` (581), `combat-arena-v3/spuck.v3.js` (404), `combat-arena-v3/zensur.v3.js` (1015), `docs/ENTWURF_zensur-und-heilung.md` (98). Modelle: `kayfabizarro` main `media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/` + `Textures/`.
+
+| Quelle | Ü / N / L |
+|---|---|
+| Roster: 21 Cubes, 16 Bodenläufer mit 10 Clips (Bite_Front, Bite_InPlace, Dance, Death, HitRecieve, Idle, Jump, No, Walk, Yes), `Tree` ohne Death, 4 Flieger ohne Walk/Idle; vorne = **+Z** (im Spender gemessen) | **Ü**. Isoliert nachgerendert (Licht nur `kfb-stage-light`): 16 Läufer frontal, Blick +Z als Pfeil, `Bite_Front` von vorn und seitlich. Höhen = Spender-Messung (z. B. Skull 1,56, Alien 2,07, Cactus 2,236). Bilder: `test/out/npc/iso/cubes-sheet.png`, `lineup1_front.png`, `lineup2_front.png`, `bite_front.png`, `bite_side.png` (lokal). **N** Flieger (P4). |
+| `spuck.v3.js`: Ansage 0,34 s, Tropfen sammeln sich am Maul, 3–5 Tropfen, Flug 0,42–0,95 s, Bogen mit Mindeststeigung, Klecks erst beim Aufprall, Abgang erst wenn der Körper ±29° aufs Ziel schaut, keine Zielmarke, Tinte `#1f1a14` | **Ü** als Choreografie. **L** Maul-Ort ist im Spender geschätzt (`maulHoehe` 0,62 × Körperhöhe, `maulVor` 1,02 × Radius); ein gemessener Maul-Anker je Cube kommt erst mit dem WSA-Spenderpaket (V-584). |
+| `zensur.v3.js`: Tusche als Karten-UV-Maske (Canvas) | **N** 1:1 (Karte ≠ Gelände). **L** Für das Gelände braucht es einen begrenzten Patch (Decal/Zellmaske) über den Terrain-Owner (Lead), kein Flood-Shader. |
+| `mobs.v2.js` | **N** als Laufzeit (zweites Spawn-/Bewegungssystem verboten); nur Idee „Blick dreht weich, Spucken wartet auf Blick“. |
+| `ENTWURF_zensur-und-heilung.md` (7.9.): Heilen statt Töten, weiße Augen, Tinte stoppt | **Ü** Kern. **N** Blumen (Georg 21.10.: abgelehnt). |
+| Welche Cube? | **L → WS0** wählt aus der Aufstellung (Vorschlag aus Lesbarkeit im Spiel: `Skull` oder `GreenDemon`; beide 10 Clips). |
+| Weiße Augen | **L** Variante baut WSB (Blender, as-is bis auf die Augen); bis dahin Heilung ohne Augenwechsel. |
+
+**Heil-Werkzeug-Kandidaten im Spiel** (`#m1,harvest`, vorhandene Aktionen, keine neue Waffe): V Faust (`punch`), B Schuss (`shoot`, echtes Projektil), N Cartoon-Bombe (`blast`), T Saugarm (`fluffSuck`, saugt bis zu 6 Kügelchen im Kegel), I Aufheben. Team-Heilen: Hexen als Fluff-Alchemistinnen (Georg 21.10.), Figur noch nicht auf diesem Mac. WS0 entscheidet anhand eines Bildes; Vorschlag: **T Saugarm** (saugt das dunkle Goo ab statt zu schlagen, passt zu „Heilen statt Töten“; bunter Fluff fällt danach einmal über `fluff.js`).
+**Kampf-Schnittstelle:** Treffer gibt es heute nur gegen Obstgarten-Bäume (`orchard.hitTree/shoot/blast`), keine Gegner-Trefferwahrheit. P1 bleibt deshalb gewaltfrei (Spucken, Ausweichen, Reinigen/Ablauf).
 
 ## 7 · Lücken-Liste (Kurzform)
 1. `60_CAST/cast.r1.json` + `clips.r1.json` auf diesem Mac (Blocker, Dropbox fehlt).
