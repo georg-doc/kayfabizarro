@@ -183,6 +183,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
         <label class="check"><input type="checkbox" id="hero" checked> Heldenfarbe: Racer-Lack in KFB-Rot</label>
         <label class="check"><input type="checkbox" id="retina"> Retina-Schärfe (×2, kostet etwa die halbe Bildrate)</label>
+        <div class="row"><label for="perfLevel">Leistungsstufe</label><select id="perfLevel"><option value="">– eigene Auswahl –</option><option value="hoch">Hoch: alles an</option><option value="mittel">Mittel: Wolken-Ebenen, Brocken, Farbring, Steinband, Vordergrund-Masse aus</option><option value="niedrig">Niedrig: dazu Schatten, Etherington, Kulissen, Himmel v2 aus</option></select></div>
         <div class="row"><button type="button" id="bench">Leistung messen (≈ 2 Min., im Fahrmodus stehen lassen)</button><button type="button" id="benchCopy" disabled>Tabelle kopieren</button></div>
         <pre id="benchOut" style="font:11px/1.35 ui-monospace,monospace;white-space:pre-wrap;margin:4px 0 0"></pre>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
@@ -2701,6 +2702,11 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     rows.sort((a, b) => b[1] - a[1])
     out.textContent = `Grundbild ${base.toFixed(1)} ms (${(1000 / base).toFixed(0)} fps) · ${renderer.getContext().getParameter(renderer.getContext().VERSION)} · ${innerWidth}×${innerHeight} @${renderer.getPixelRatio()}\n` + rows.map((r) => `${r[0].padEnd(20)} ${r[1].toFixed(1).padStart(5)} ms${r[2] ? '' : '  (sonst aus)'}`).join('\n')
     btn.disabled = false; $('benchCopy').disabled = false }
+  /* Leistungsstufen (WS0 Job 1, Vorschlag bis Georgs Messung vorliegt): setzen nur Schalter, Grundeinstellung bleibt „eigene Auswahl“ */
+  const PERF = { hoch: { painted: 1, cards: 1, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
+    mittel: { painted: 0, cards: 0, crumbs: 0, ring: 0, stones: 0, fgmass: 0, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
+    niedrig: { painted: 0, cards: 0, crumbs: 0, ring: 0, stones: 0, fgmass: 0, shadows: 0, ether: 0, kul: 0, sky2: 0, ground: 1, retina: 0 } }
+  $('perfLevel').addEventListener('change', (e) => { const L = PERF[e.target.value]; if (!L) return; for (const [id, v] of Object.entries(L)) { const el = $(id); if (el && el.checked !== !!v) el.click() } })
   $('bench').addEventListener('click', () => { benchRun().catch((e) => { $('benchOut').textContent = 'Messung abgebrochen: ' + e.message; $('bench').disabled = false }) })
   $('benchCopy').addEventListener('click', () => { const t = $('benchOut').textContent; try { navigator.clipboard.writeText(t).catch(() => {}) } catch (e) {} })
   $('panel').addEventListener('input', (e) => { if (e.target.id === 'car') return; if (['recipe', 'slotName', 'slotSel', 'rcFile'].includes(e.target.id)) { if (e.target.id === 'recipe') RC.dirty = true; return } if (e.target.id !== 'grid') markPreset(null); update() });
