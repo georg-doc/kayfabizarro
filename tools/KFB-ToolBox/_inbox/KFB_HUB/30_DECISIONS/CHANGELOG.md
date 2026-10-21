@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB K13 Zwischenstand: 2H-Familie vorerst raus (Georg), Melee_1H_Slash nur als Boss-Move (Hammer-Space), Halterungen Knight/Brute/Demon für Stab/Block-Familie gemessen, großer Schild in Prüfung.
 - WS-Audio Status 2 (Kampf-Tabelle im K10-Adapter) + WS-NPC Status 7 (echte Figuren, D2, Bots Proof) beantwortet; WSB Nachtrag 16 Soldaten-Marsch mit Gewehr.
 - V-605 Gemeinsamer Wind mit wiegenden Gruppen + Wind als Wegweiser (Schalter) an den WS1-Lead; Kamera-Nähe nur im Kampf (Georg, Combat-AV Nr. 6 Variante b). Combat-Sounds combat_av_fix_r1 erzeugt (42, davon 11 weiter fast stumm).
 - V-604 Combat-AV R1: Georgs Urteile (Klang je Waffe PASS/TUNE, Knet-Treffer als Umschalter, Ankündigung PASS/TUNE); alle 28 SFX-Sätze auf -16 LUFS als m4a im privaten Branch (lufs_set.py); Satz combat_av_fix_r1 (L1–L13 + 27 Neuaufnahmen) vorbereitet bis Georg-Go; WSA-Werkzeug-Fixes.
