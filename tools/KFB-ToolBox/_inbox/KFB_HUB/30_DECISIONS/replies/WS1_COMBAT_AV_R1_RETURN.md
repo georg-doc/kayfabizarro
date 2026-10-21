@@ -114,3 +114,11 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
   - Messung: Figur 11,8 → 17,9 % Bildhöhe
 - **C8 (Karte ≥ 85 % im Bild) fällt von 89 auf 73 %.** Georg entscheidet: (a) C8 im Kampf 70 %, (b) Nähe nur im Kampf (empfohlen), (c) Faktor 5,5.
 - Backlog B1–B3 ergänzt: C8-Entscheidung, Hintergrund nach Drehung, Waffenleiste.
+
+## Nachtrag: Kamera PASS mit (b) · Abgang sichtbar als Prototyp
+- Nr. 6 **PASS mit Weg (b)** (`94d0123`): Nähe nur im Kampf, in Ruhe wie heute (C8 89 %). TUNE B2 Hintergrund nach Drehung, B3 Waffenleiste (Georg bestätigt).
+- Nr. 7 Abgang sichtbar (`e94b0e2`, `?abgang=1`), Urteil offen:
+  - **Korrektur:** Der Mündungsblitz sitzt im selben Bild wie die Marke (2 ms), steht 4 Bilder und ist 0,66 u groß. Das „+100 ms“ war ein Aufnahme-Artefakt.
+  - Neu: Cast- und Sehnen-Pop als Knet-Masse an der Mündung, Band hinter eigenen Geschossen.
+  - Fix im Prototyp: Knet und Wort starten bei Maßstab 0.
+  - Backlog V1–V3.
