@@ -3,6 +3,47 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 127 · 22.10. · MVP: Startseite mit KFB-Vorhang fertig, Ton abgenommen, Fluffer 0,8 m drin · Scheinwerfer vorbereitet · neue Backlog-Ideen von Georg
+
+### Stand ws1/mvp-r1 @bfa4e09
+- **Privat:** `game/mvp-r1` @2abb98c (für WSA/GPT-Site).
+- **Öffentlicher Spiegel** ohne private Dateien: `ws1/mvp-r1` @ff69b8a.
+- **Startseite (V-618 „Einstieg“, Georg: KFB-Vorhang mit Bühne nutzen):**
+  - Clay Stage R2 (Georg 09.10. PASS mit TUNE); der Vorhang-Kern #372 ist byte-gleich gepinnt (`src/vendor/curtain`, main @c746a956, Blob 87d44e2c), dazu clay-look R2. Eigener WebGPU-Renderer vor dem Spiel.
+  - Tafel: Titel, Ladebalken (DefaultLoadingManager + Ereignis `kfb:ready`), Steuerung, Tonregler (kfbAudio), Qualität Schnell/Standard/Scharf (dpr 1/[1,1.25]/[1,1.5], live).
+  - „Vorhang auf!“ oder Enter (über hostKeys) schaltet den Ton frei, öffnet vor dem gemalten Prospekt, dann blendet die Ebene aus.
+  - Ohne WebGPU: CSS-Vorhang.
+  - Auf der Site führt die Adresse ohne Hash zur Startseite, sonst der Schalter `start`. Test `test/start.mjs` PASS.
+- **Ton (WS-Audio):**
+  - Abnahme auf mvp: test:audio PASS, Hörprobe an Georg, 0,25 ms/Bild.
+  - Site-Build mit Ton: 421 Dateien, 288,6 MB, keine 4xx.
+  - Neu gemergt: Combat-AV L1–L13 + v2/v3, npc_steps_r1, heavy_steps_r1; K10-Typen windup/kill/block.
+- **NPC (WS-NPC):** Fluffer 0,8 m (V-616), Schritt-Ereignisse mit rig.
+- **Volle Reihe auf mvp: 67/71.** Behoben: audio (Gruppen-Attrappe vs. FootShade), drift (Messdatei), contract-static (AudioHost wurde als Modul erkannt).
+- **Offen:**
+  - c2 (bekannter Wackler);
+  - orbit `calmAfterRelease`: schon auf terrain/probe-world rot, auf ws-npc grün. Wird untersucht; betrifft nur #stage, nicht den MVP-Pfad.
+
+### Scheinwerfer (nach dem MVP, vorbereitet in der Probe)
+- **Modul:** `~/kfb-ws1/probe/port/kfb-headlights.v1.js` (rahmenunabhängig, r147 und 0.186), Prüfseite `pubsrv/headlights.html`.
+- **Aufbau:** Glas-Glow und Blendstern, Lichtkegel, Bodenfleck über die Lichtpfützen; Farbe aus der Antriebsfarbe. Keine echten Lichter, keine Neukompilierung.
+- **Kosten:** etwa 0,12–0,2 ms je Bild (rustwing, 4 Lampen).
+- **Anker:** `headlight-anchors.r1.json` (halbautomatisch). 8 von 14 Racern mit `check` → Georg nimmt sie im Rig-Studio ab.
+
+### Neue Ideen von Georg (Backlog nach dem MVP, kein Feature-Creep jetzt)
+1. **Farbfluss des Geländes folgt dem Wind** (geteilter Wind/Leitwind V-605, „leichter Schwindel passt zu KFB“, Regler in den Einstellungen) → an WS1b gegeben. Dort ist es schon eingebaut (Regler 0–1, Standard 0,35).
+2. **Boombox-Ringe:** Läuft die Radio-Playlist, zeigt der Wagen im Gelände Ringwellen synchron zur Musik (Analyse am Musik-Bus von WS-Audio; Bass = Ring, Mitten/Höhen = Farbe; keine echten Stems). Kosten ~0,05 ms.
+3. **Fahrer im Dach:**
+   - Die Spielfigur steckt bis zur Hüfte mittig im Dach; Arme bzw. Fäuste greifen das Lenkrad per IK.
+   - Cartoon-Kinetik wie Joyride Cabrio v17; Deformer v2 und FBs Ohren-Impuls vorhanden, ebenso Augenstiele/Antennen der Aliens.
+   - Ein- und Aussteigen = das vorhandene Hineinhüpfen, nur bis zur Hüfte.
+   - Braucht je Racer einen Anker „Fahrersitz“.
+
+### Zweite Sitzung WS1b (V-619)
+- Endlose Biom-Fahrt läuft (`world=endless`): Quadtree-Chunks ohne Nähte, 6 Biome, Licht nur über das Rig, Tageszeit, Wetter, Presets.
+- Misst gerade fps und nimmt den Clip im ruhigen Fenster auf.
+- Ändert additiv cueMap/kfbAudio (mit WS-Audio abzustimmen).
+
 ## 126 · 22.10. · MVP (V-618): ein Spiel-Branch steht · Site-Plattform: GPT-Site über WSA-Work-Job (Georg), Cloudflare nur Rückfall · Übergabe an WS0/WSA
 
 ### Übergabe an WSA (bitte als WSA-Work-Job „GPT-Site mit allen Features“ einplanen, Georg 22.10.)
