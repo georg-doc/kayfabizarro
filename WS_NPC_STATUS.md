@@ -2,6 +2,40 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 4 · 21.10. · Phase C P1 Dark Fluffer gebaut (lokal) · Abnahmematrix
+
+**Stand:** `ws-npc/phase-a` lokal, kein Push. Aufruf: `dist/index.html#m1,harvest,npc,fluffer` (`fluffert=<s>` Start des Fluffers, Standard 4 s).
+**Georg 21.10.:** Gegner `Ghost.gltf` (MonsterCuteCubes), Heil-Waffe `Gun_Pistol.gltf` (KayKit Prototype Bits). **Lead 21.10.:** Punkte a–d baut WS-NPC selbst, je ein Commit; Patch-Ort Goblin-Garten t4.
+
+**Ablauf im Spiel:** Ghost marschiert an → spuckt dreimal nach `spuck.v3` (Tropfen sammeln sich 0,34 s am Maul-Knochen „Mouth“ des Modells, Bogen, Aufprall) → Tusche-Fleck wächst 0,4/0,7/1,0 → Baum t4 dunkelt nach dem 1. Aufprall, wirft nach dem 2. ab, die dunklen Kügelchen liegen und sinken ein → Ghost lauert. Kommt ein Bewohner auf ≤ 12 m vorbei: zuckt zusammen (`Hit_A`), schaut hin, weicht seitlich aus, macht weiter. **Heilen:** Schuss (B) mit der Pistole in FrizzleBobs Hand trifft Ghost → hört auf zu spucken, freut sich (`Yes`, `Dance`), lässt **einmal** bunten Fluff (6 Sorten) fallen, Fleck verblasst, Tusche-Shader wieder ab. Ohne Heilen läuft der Fleck nach 180 s ab und Ghost geht.
+
+| Commit | Inhalt |
+|---|---|
+| 296f8e7 | (a) `m1-terrain.setInkPatches` + `src/look/inkPatch.js` (≤ 4, `uInk[4]`, `uInkSeed`, Kante über `NOISE_GLSL`) |
+| 04c2d24 | (b) `orchard.taint` (Instanzfarbe, Abwurf über `hitTree`, Einsinken, nicht aufsammelbar) |
+| 7930fad | (c) `fluff.releaseAt` + `orchard.burst` (gleiche Physik, keine 7. Sorte, einmal je Tag) |
+| 792c87d | (d) `orchard.addTarget` + `shoot → onHit` (kein Schaden, kein Kampfsystem) |
+| fa91782 | Fluffer-Modul `src/npc/darkFluffer.js` + `flufferSim.js`, Bewohner-Reaktion, Assets byte-gleich mit main @c746a95 |
+| 55f6bb3 | Gun_Pistol: eine feste Halterungsdrehung (V-581, gemessen: Euler −90°/0°/180°) |
+| (neu) | Tusche-Shader: Rauschen nur innerhalb der Fleck-Kante |
+
+**Abnahmematrix Phase C P1** (Web-Chat-Brief A–F; Belege `test/unit/flufferSim|npcThreat|taint|releaseAt.mjs`, `test/ink.mjs`, `test/orchard-npc.mjs`, `test/fluffer.mjs`, Clip `evidence/phase-c/phase-c-spielkamera.webm`)
+
+| # | Zeile | Ergebnis | Beleg |
+|---|---|---|---|
+| A-1 | Cube isoliert, vorne +Z, Clips | **PASS** | `evidence/phase-c0/*`, Ghost-Bildreihe; +Z im Spender gemessen und nachgerendert |
+| A-2 | Spucken: Ansage, 3–5 Tropfen aus dem Maul, keine Zielmarke | **PASS** | Maul = Knochen „Mouth“ des Modells (statt spuck.v3-Schätzung); fluffer A, Clip |
+| B-1 | Fleck nur nach echtem Aufprall, begrenzt, organisch, keine Änderung an Kollision/Bäumen | **PASS** | ink (byte-gleich ohne Patch, Kollision/Höhen gleich), fluffer B |
+| C-1 | Fluff dunkel → fällt nativ → liegt → sinkt; außerhalb unverändert; gleicher Seed = gleiches Ereignis | **PASS** | orchard-npc b, fluffer C, flufferSim (deterministisch) |
+| D-1 | Ein Bewohner bemerkt, weicht aus bzw. warnt, kehrt zurück; nicht allwissend | **PASS** | fluffer D (Lorekeeper-Platzhalter, einmal, Blick, Rückstand 0), npcThreat. Warnen nur als Geste (stumm, Ton von WS0) |
+| E-1 | Heilen statt töten: weiße Augen, Goo hört auf, einmal bunter Fluff über `fluff.js` | **PASS** ohne Augen | fluffer E. **Weiße Augen: Lücke** (WSB-Variante), Heilung läuft ohne Augenwechsel |
+| E-2 | Reinigen/Ablauf stellt den Patch wieder her, kein Quest-/Karten-Eingriff, kein geschenkter Ertrag außer dem einen Burst | **PASS** | flufferSim (Ablauf 180 s), fluffer E (Burst einmal, zweiter Treffer nichts) |
+| F-1 | Kosten | **PASS** Modul · **FAIL** Gesamt-fps | Bewohner-Modul 0,1–0,17 ms/Schritt. fps A/B (sichtbares Chromium, 1600×900): ohne 32,3/31,4, mit Bewohnern + Fluffer 30,1/29,8 → **+1,5–2,3 ms** (Tusche-Shader + Ghost + Tropfen); zweite Messung unter fremder GPU-Last verrauscht. ≥ 55 fps: Basis-Grenze wie P-1a |
+| F-2 | Clip aus der Spielkamera | **PASS** | `phase-c-spielkamera.webm` |
+| F-3 | Kritiker CRITIC_3D_R1 | **NOT RUN** | |
+
+**Lücken an WS0/WSB:** weiße Augen für Ghost; Eigentempo des Ghost-Walk-Clips nicht gemessen (Abspielrate 0,8–1,25 nach Tempo); Ghost-Größe 1,1 m gewählt (WS0 bitte bestätigen); Mob-Chant/Triplets und Ton (P2, WS0); Heil-Waffe vorerst Gun_Pistol (Georg), Team-Heilen mit den Hexen offen.
+
 ## 3 · 21.10. · Farmer B echt im Spiel · Georgs Entscheide zu Phase C
 
 **Farmer B:** `Farmer_B.glb` aus `kayfabizarro` main (KayKit Mystery S6 „12 - June 2026 - Farmers“, Blob bc765229 = Pin @29c7500 in Georgs Augen-Batch), über das vorhandene Besetzungs-Werkzeug `scripts/cast/build-cast.py` als `farmer-b` aufgenommen (Augen aus `eye-rig-medium.batch-1` @ac9dbaed, AUTO_CANDIDATE wie Mage/Barbarian; bestehende Besetzung byte-gleich). **Georg 21.10.:** Farmer B „wie ausgeliefert“, also mit der eingebetteten Textur (das ist farmer_texture_A; farmer_texture_B.png liegt nur daneben). Vergleichsbild `evidence/phase-a/farmer-ab.png`.
