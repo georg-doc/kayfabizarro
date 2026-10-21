@@ -189,7 +189,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
         <label class="check"><input type="checkbox" id="hero" checked> Heldenfarbe: Racer-Lack in KFB-Rot</label>
         <label class="check"><input type="checkbox" id="retina"> Retina-Schärfe (×2, kostet etwa die halbe Bildrate)</label>
-        <div class="row"><label for="perfLevel">Leistungsstufe</label><select id="perfLevel"><option value="">– eigene Auswahl –</option><option value="hoch">Hoch: alles an</option><option value="mittel">Mittel: Wolken-Ebenen, Brocken, Farbring, Steinband, Vordergrund-Masse aus</option><option value="niedrig">Niedrig: dazu Schatten, Etherington, Kulissen, Himmel v2 aus</option></select></div>
+        <div class="row"><label for="perfLevel">Leistungsstufe</label><select id="perfLevel"><option value="">– eigene Auswahl –</option><option value="hoch">Hoch: alles an, Retina-Schärfe</option><option value="mittel">Mittel: alles an, normale Schärfe (empfohlen)</option><option value="niedrig">Niedrig: wie Mittel, ohne Brösel und Steinband</option></select></div>
         <div class="row"><button type="button" id="bench">Leistung messen (≈ 2 Min., im Fahrmodus stehen lassen)</button><button type="button" id="benchCopy" disabled>Tabelle kopieren</button></div>
         <pre id="benchOut" style="font:11px/1.35 ui-monospace,monospace;white-space:pre-wrap;margin:4px 0 0"></pre>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
@@ -1987,7 +1987,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     return mix(o, mix(ca,cb,0.5), smoothstep(0.25,0.6,aw));
   }`;
   const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
-  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL; varying vec2 vVuv; varying float vVid;
+  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE, uOrg, uFS; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL; varying vec2 vVuv; varying float vVid;
   void main(){ vVuv=vec2(0.0); vVid=0.0;
     vec2 p=position.xz+uOffset; { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); }
     { float om=gOcMax; gOcMax=5.0; float a0=hraw(p); gG=length(vec2(hraw(p+vec2(2.34375,0.0))-a0, hraw(p+vec2(0.0,2.34375))-a0))/2.34375; gOcMax=om; }
@@ -1996,7 +1996,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
     // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
     if(uEther>0.5 && uNE<3.0){ float eF=max(6.0,uNE*2.5); float ha=hgt(p+vec2(eF,0.0)), hb=hgt(p-vec2(eF,0.0)), hc=hgt(p+vec2(0.0,eF)), hd=hgt(p-vec2(0.0,eF)); vN=normalize(mix(vN, normalize(vec3(hb-ha, 2.0*eF, hd-hc)), 0.75)); }
-    { float L=28.0; vCL=(hlow(p+vec2(L,0.0))+hlow(p-vec2(L,0.0))+hlow(p+vec2(0.0,L))+hlow(p-vec2(0.0,L)))*0.25-hlow(p); }   /* >0 Mulde/Tal, <0 Rücken (große Form) */
+    vCL=0.0; if(uOrg>0.5 && uFS>3.5 && uFS<4.5){ float L=28.0; vCL=(hlow(p+vec2(L,0.0))+hlow(p-vec2(L,0.0))+hlow(p+vec2(0.0,L))+hlow(p-vec2(0.0,L)))*0.25-hlow(p); }   /* >0 Mulde/Tal, <0 Rücken (große Form) */
     vCurv=0.0; if(uEdges>0.5){ float e2=max(6.0,uNE*2.5); vCurv=(hgt(p+vec2(e2,0.0))+hgt(p-vec2(e2,0.0))+hgt(p+vec2(0.0,e2))+hgt(p-vec2(0.0,e2)))*0.25-h; } // <0: Grat/Kante (konvex)
     float y=h;
     // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
@@ -2309,7 +2309,7 @@ ${window.KFB_FLUID.glsl}
       float hh(vec2 c){ return fract(sin(dot(c, vec2(127.1, 311.7)))*43758.5453); }
       void main(){
         vec2 wp=vP.xz+uCarW; float wl=uWater*uAmp+0.15;
-        float dep=vDep; if(dep<1.6){ gNE=0.6; dep=wl-hgt(wp); }                                              /* am Ufer je Pixel: Schaumlinie sitzt genau */
+        float dep=vDep; if(dep<1.6 && distance(vP, cameraPosition)<140.0){ gNE=0.6; dep=wl-hgt(wp); }                                              /* am Ufer je Pixel: Schaumlinie sitzt genau */
         float dw=fwidth(dep)+1e-3;
         /* Island Kit (Fluid F2, Georg 21.10.: „1:1 einbauen“): Kit-Shader unverändert, die Probe liefert seine vier Eingänge –
            Weltort, Fließrichtung (Stillwasser: 0), Meter zum Ufer (Tiefe ÷ Geländeneigung, Neigung aus den Bildschirm-Ableitungen), Fließkoordinaten */
@@ -2728,9 +2728,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     out.textContent = `Grundbild ${base.toFixed(1)} ms (${(1000 / base).toFixed(0)} fps) · ${renderer.getContext().getParameter(renderer.getContext().VERSION)} · ${innerWidth}×${innerHeight} @${renderer.getPixelRatio()}\n` + rows.map((r) => `${r[0].padEnd(20)} ${r[1].toFixed(1).padStart(5)} ms${r[2] ? '' : '  (sonst aus)'}`).join('\n')
     btn.disabled = false; $('benchCopy').disabled = false }
   /* Leistungsstufen (WS0 Job 1, Vorschlag bis Georgs Messung vorliegt): setzen nur Schalter, Grundeinstellung bleibt „eigene Auswahl“ */
-  const PERF = { hoch: { painted: 1, cards: 1, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
-    mittel: { painted: 0, cards: 0, crumbs: 0, ring: 0, stones: 0, fgmass: 0, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
-    niedrig: { painted: 0, cards: 0, crumbs: 0, ring: 0, stones: 0, fgmass: 0, shadows: 0, ether: 0, kul: 0, sky2: 0, ground: 1, retina: 0 } }
+  /* Leistungsstufen nach Messung CODE_PERF_R1 §4 (ms in der Fahrt, Georgs Werte): retina 13 · crumbs 3,5 · shadows 2 · painted 1 · stones 0,3. Schatten, Etherington, Kulissen, Himmel v2 bleiben an (zusammen < 2,5 ms, viel Look) */
+  const PERF = { hoch: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 1 },
+    mittel: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
+    niedrig: { painted: 1, cards: 0, crumbs: 0, ring: 1, stones: 0, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 } }
   $('perfLevel').addEventListener('change', (e) => { const L = PERF[e.target.value]; if (!L) return; for (const [id, v] of Object.entries(L)) { const el = $(id); if (el && el.checked !== !!v) el.click() } })
   $('bench').addEventListener('click', () => { benchRun().catch((e) => { $('benchOut').textContent = 'Messung abgebrochen: ' + e.message; $('bench').disabled = false }) })
   $('benchCopy').addEventListener('click', () => { const t = $('benchOut').textContent; try { navigator.clipboard.writeText(t).catch(() => {}) } catch (e) {} })
@@ -2853,7 +2854,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
         const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
         scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
-        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm) }); heroColor(scn); cache.set(info.id, scn);
+        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm, 'plane') }); heroColor(scn); cache.set(info.id, scn);
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
@@ -2898,15 +2899,15 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   }
   // Erdung (Grounding): unten am Objekt und an nach unten gerichteten Flächen (Kronen-Unterseiten) dunkler im Kontaktton der Palette, nie schwarz;
   // die Bodenhöhe kommt aus derselben Höhenformel wie das Gelände (im Vertex-Shader)
-  const GU = { uGFlatY: { value: 0 }, uBankL: U.uBankL, uBankD: U.uBankD, uKus: U.uKus, uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uTanMax: U.uTanMax, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uDioA: U.uDioA, uDioBA: U.uDioBA, uDioC: U.uDioC, uDioN: U.uDioN, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 1.3 }, uGOn: { value: 1 } };
+  const GU = { uGFlatY: { value: 0 }, uGPl: { value: new THREE.Vector3() }, uBankL: U.uBankL, uBankD: U.uBankD, uKus: U.uKus, uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uTanMax: U.uTanMax, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uDioA: U.uDioA, uDioBA: U.uDioBA, uDioC: U.uDioC, uDioN: U.uDioN, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 1.3 }, uGOn: { value: 1 } };
   window.__GU = GU;
   function addGrounding(mat, flat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey   /* flat: Bodenhöhe = GU.uGFlatY (Amphitheater auf dem Sockel, 349k Dreiecke: sparte ~19 ms je Bild, Audit C) */
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
-      sh.vertexShader = (flat ? '' : GLSL_NOISE + '\n' + GLSL_HEIGHT + '\n') + 'uniform vec2 uGOff; uniform float uGFlatY; varying float vGA; varying float vGD; varying vec3 vKW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec4 lpG = vec4(transformed, 1.0); vec3 lnG = objectNormal;\n#ifdef USE_INSTANCING\n  lpG = instanceMatrix * lpG; lnG = mat3(instanceMatrix) * lnG;\n#endif\n  vec3 wpG = (modelMatrix * lpG).xyz; vKW = wpG + vec3(uGOff.x, 0.0, uGOff.y); ' + (flat ? 'vGA = wpG.y - uGFlatY;' : '{ vec2 gp = wpG.xz + uGOff; float om = gOcMax; gOcMax = 5.0; float a0 = hraw(gp); gG = length(vec2(hraw(gp + vec2(2.34375, 0.0)) - a0, hraw(gp + vec2(0.0, 2.34375)) - a0)) / 2.34375; gOcMax = om; } vGA = wpG.y - hgt(wpG.xz + uGOff);') + ' vGD = normalize(mat3(modelMatrix) * lnG).y; }')
+      sh.vertexShader = (flat ? '' : GLSL_NOISE + '\n' + GLSL_HEIGHT + '\n') + 'uniform vec2 uGOff; uniform float uGFlatY; uniform vec3 uGPl; varying float vGA; varying float vGD; varying vec3 vKW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec4 lpG = vec4(transformed, 1.0); vec3 lnG = objectNormal;\n#ifdef USE_INSTANCING\n  lpG = instanceMatrix * lpG; lnG = mat3(instanceMatrix) * lnG;\n#endif\n  vec3 wpG = (modelMatrix * lpG).xyz; vKW = wpG + vec3(uGOff.x, 0.0, uGOff.y); ' + (flat === 'plane' ? 'vGA = wpG.y - (uGPl.x + wpG.x * uGPl.y + wpG.z * uGPl.z);' : flat ? 'vGA = wpG.y - uGFlatY;' : '{ vec2 gp = wpG.xz + uGOff; float om = gOcMax; gOcMax = 5.0; float a0 = hraw(gp); gG = length(vec2(hraw(gp + vec2(2.34375, 0.0)) - a0, hraw(gp + vec2(0.0, 2.34375)) - a0)) / 2.34375; gOcMax = om; } vGA = wpG.y - hgt(wpG.xz + uGOff);') + ' vGD = normalize(mat3(modelMatrix) * lnG).y; }')
       sh.fragmentShader = 'uniform vec3 uContact; uniform float uGBand, uGOn, uKus; varying float vGA; varying float vGD; varying vec3 vKW;\n' + GLSL_NOISE + GLSL_KUS + '\n' + sh.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
   if (uKus > 0.5) { vec3 kd = kusDots(vKW, uKus > 2.5 ? 3.0 : 1.0); float lum = dot(diffuseColor.rgb, vec3(0.299, 0.587, 0.114)); vec3 dc = lum > 0.45 ? diffuseColor.rgb * 0.35 : mix(diffuseColor.rgb, vec3(1.0), 0.8); diffuseColor.rgb = mix(diffuseColor.rgb, dc, kd.x); }
   if (uGOn > 0.5) { vec3 cc = mix(diffuseColor.rgb * 0.5, uContact, 0.5); diffuseColor.rgb = mix(cc, diffuseColor.rgb, smoothstep(-0.1, uGBand, vGA)); diffuseColor.rgb = mix(diffuseColor.rgb, cc, smoothstep(0.1, -0.7, vGD) * 0.55); /* dunkle (nie schwarze) Kontaktzone unten + Unterseiten */ }`) }
-    mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + (flat ? '|kfb-ground-flat' : '|kfb-ground'); mat.needsUpdate = true }
+    mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + (flat === 'plane' ? '|kfb-ground-plane' : flat ? '|kfb-ground-flat' : '|kfb-ground'); mat.needsUpdate = true }
   // Fließfarben auf Props (Georg 20.10.: „was zum Boden gehört, fließt mit; was Bedeutung trägt, bleibt eigen“): Stärke je Klasse als Uniform
   function addFlow(mat, cls) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey, sk = cls === 'tree' ? 'uFlowTree' : 'uFlowRock'
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); for (const k of ['uTimeT', 'uFlow', 'uBands', 'uFlowDown', 'uMix', 'uSeed', 'uScale', 'uAmp', 'uOrg', 'uFS', 'uFlowRock', 'uFlowTree']) sh.uniforms[k] = U[k]; for (const k of PAL_KEYS) { sh.uniforms['uA_' + k] = U['uA_' + k]; sh.uniforms['uB_' + k] = U['uB_' + k] }
@@ -2922,7 +2923,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function tint(obj, col, k) { obj.traverse((o) => { const b = o.isMesh && o.material.userData.base; if (b) o.material.color.copy(b).lerp(col, k) }) }
   function put(name, x, z, scale, sink, rotY, group) { const t = TPL[name]; if (!t) return; const o = t.clone(true); o.userData.kfbName = name; o.scale.setScalar(scale); o.rotation.y = rotY; o.position.set(x, surfH(x, z) - sink, z); group.add(o) }
   // Kontakt-Geometrie (V-565): jede Fuge Objekt/Boden durch kleine Knet-Brocken gebrochen (gequetschte Kugeln, Palettenton zwischen Boden und Kontakt)
-  const CRUMB_N = 900, crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }), CRUMB_N);
+  const CRUMB_GEO = indexByPos(new THREE.IcosahedronGeometry(1, 1)), CRUMB_N = 900, crumbs = new THREE.InstancedMesh(CRUMB_GEO, new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }), CRUMB_N);
   crumbs.castShadow = crumbs.receiveShadow = true; crumbs.count = 0; worldRoot.add(crumbs); addGrounding(crumbs.material); addFlow(crumbs.material, 'rock');
   const cm4 = new THREE.Matrix4(), cq = new THREE.Quaternion(), ce = new THREE.Euler(), ccv = new THREE.Vector3(), cs3 = new THREE.Vector3();
   function crumbRing(x, z, r0, r1, n, s0, s1) { for (let k = 0; k < n && crumbs.count < CRUMB_N; k++) { const a = rr() * 6.283, r = r0 + rr() * (r1 - r0), px = x + Math.cos(a) * r, pz = z + Math.sin(a) * r, sz = s0 + (s1 - s0) * rr() * rr()
@@ -3003,6 +3004,11 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const A = PALETTES[S.palA]; OT.group.traverse((o) => { if (o.isMesh && o.material?.color && S.dpal) o.material.color.lerp(new THREE.Color(A.sand), 0.15) }) }
   // Felsgruppen an Steilhängen (Etherington R2): Dreiergruppen 1 : 0,6 : 0,35 (N5 ≤ 3 Hauptformen), 40–50 % eingesunken (S1), Ei auf dem breiten Ende +
   // nach oben schmaler (N2/N3), gemeinsame Neigung ≤ 15° mit Abständen ≥ 5° und genau einer Ausnahme 25–45° je Gruppe (N1), Brösel hangabwärts ≤ 12 % (E3)
+  /* gleiche Positionen zu einem Vertex zusammenfassen (r147-Polyeder sind nicht indiziert): Bild gleich, ~6× weniger Vertex-Aufrufe (CODE_PERF_R1 D2) */
+  function indexByPos(g) { const pa = g.attributes.position, na = g.attributes.normal, map = new Map(), pos = [], nor = [], idx = []
+    for (let i = 0; i < pa.count; i++) { const k = `${pa.getX(i).toFixed(4)},${pa.getY(i).toFixed(4)},${pa.getZ(i).toFixed(4)}`; let j = map.get(k)
+      if (j === undefined) { j = pos.length / 3; map.set(k, j); pos.push(pa.getX(i), pa.getY(i), pa.getZ(i)); nor.push(na.getX(i), na.getY(i), na.getZ(i)) } idx.push(j) }
+    const o = new THREE.BufferGeometry(); o.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); o.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3)); o.setIndex(idx); g.dispose(); return o }
   function etherRockGeo(seed) { let z = seed; const r = () => { z = (z * 16807) % 2147483647; return z / 2147483647 }; for (let k = 0; k < 4; k++) r()
     const g = new THREE.IcosahedronGeometry(1, 2), pa = g.attributes.position, v = new THREE.Vector3()
     // Block statt Kugel: 8 Schnittebenen (große, flache Facetten), Ober- und Seitenschnitte, unten abgeflacht zum Aufsitzen; leicht länglich
@@ -3015,12 +3021,12 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const nr = g.attributes.normal, acc = new Map(), key = (i) => `${pa.getX(i).toFixed(4)},${pa.getY(i).toFixed(4)},${pa.getZ(i).toFixed(4)}`
     for (let i = 0; i < pa.count; i++) { const k = key(i), a = acc.get(k) || [0, 0, 0]; a[0] += nr.getX(i); a[1] += nr.getY(i); a[2] += nr.getZ(i); acc.set(k, a) }
     for (let i = 0; i < pa.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; nr.setXYZ(i, a[0] / l, a[1] / l, a[2] / l) }
-    return g }
+    return indexByPos(g) }
   const ROCKC = { dirty: true, cx: 1e9, cz: 1e9, meshes: [], crumbs: null };
   const OBST = { rocks: [] };   /* Kollision für die Fahrphysik (Georg 21.10.: man fährt durch Steine oder steckt darin) */
   { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0 }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
-    ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
+    ROCKC.crumbs = new THREE.InstancedMesh(CRUMB_GEO, crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
     ROCKC.mat = mat;
     addFlow(mat, 'rock');
     LP.injectStandard(mat); for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
@@ -3130,9 +3136,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       HV.a.subVectors(HV.p[1], HV.p[2]); HV.b.subVectors(HV.p[0], HV.p[3]); HV.n.crossVectors(HV.a, HV.b).normalize(); if (HV.n.y < 0) HV.n.negate()   // Diagonalen FR−RL × FL−RR
       if (HV.n.y < 0.35) HV.n.set(0, 1, 0)
       // Rumpf frei halten (Georg 21.10.: Wagen steckte in Hügeln): Nase, Heck und Seitenmitten des Kastens abtasten – die Unterseite bleibt über allen Punkten
-      const bx = carInfo.box, hw = bx.h[0] * UNIT, zf = (bx.c[2] + bx.h[2]) * UNIT, zb = (bx.c[2] - bx.h[2]) * UNIT; let tip = -Infinity
-      for (const [lx, lz] of [[0, zf], [0, zb], [hw, 0], [-hw, 0], [hw * 0.7, zf * 0.8], [-hw * 0.7, zf * 0.8]]) tip = Math.max(tip, surfAt(x + lx * cy + lz * sy, z - lx * sy + lz * cy))
-      const y = Math.max(gc + RIDE, sum / 4 + RIDE); void tip; return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },   /* Nase/Heck nicht mehr in der Physik: in Mulden ergab das ein V, der Wagen pendelte ohne Gas (Georg 21.10.); den Rumpf hält LIFT frei */
+      const bx = carInfo.box, hw = bx.h[0] * UNIT, zf = (bx.c[2] + bx.h[2]) * UNIT, zb = (bx.c[2] - bx.h[2]) * UNIT; void hw; void zf; void zb
+      const y = Math.max(gc + RIDE, sum / 4 + RIDE); return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },   /* Nase/Heck nicht mehr in der Physik: in Mulden ergab das ein V, der Wagen pendelte ohne Gas (Georg 21.10.); den Rumpf hält LIFT frei */
     sweep: (from, delta) => { const tx = from[0] + delta[0], tz = from[2] + delta[2], base = from[1] - RIDE, g = groundAt(tx, tz); const h = Math.hypot(delta[0], delta[2])
       if (h > 1e-6 && g - base > 1.2) { const n = [-delta[0] / h, 0, -delta[2] / h]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } }   // Stufe höher als 1,2 m = Wand
       /* Wand an Bug/Heck/Seite (QA P1 21.10.: Heck oder Flügel fuhren in Terrassenwände, die Darstellung hob den Wagen dann bis 5 m an): eine Ecke in Fahrtrichtung,
@@ -3219,21 +3224,23 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       for (let i = 0; i < N - 1; i++) { const a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2) } for (let i = 0; i < N; i++) { as[i * 2] = -1; as[i * 2 + 1] = 1 }
       g.setIndex(idx); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('aT', new THREE.BufferAttribute(at, 1)); g.setAttribute('aS', new THREE.BufferAttribute(as, 1))
       const m = new THREE.Mesh(g, mat); m.frustumCulled = false; m.renderOrder = 6; scene.add(m); return { m, g, pos, at, pts: [] } }
-    return { N, mat, R: [mk(), mk()], v: new THREE.Vector3(), a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3() } })();
+    return { N, mat, R: [mk(), mk()], v: new THREE.Vector3(), a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3(), f: new THREE.Vector3() } })();
   function updateSpeedlines(dt, t) {
     const box = carInfo?.box; if (!box || !carHolder) return; carRoot.updateMatrixWorld(true)
     const k = Math.max(sstep(0.55, 0.92, Math.abs(P.vf) / KD.FLOW.maxForward), P.boosting && Math.abs(P.vf) > 6 ? 1 : 0, P.fly ? sstep(8, 18, Math.abs(P.vf)) : 0)
     SPL.mat.uniforms.uK.value += (k - SPL.mat.uniforms.uK.value) * Math.min(1, dt * 4); SPL.mat.uniforms.uCol.value.set(SKY.uLit.value).lerp(new THREE.Color('#ffffff'), 0.6)
-    const LIFE = 0.38, W = 0.05
+    const LIFE = 0.38, W = 0.06, LMAX = 0.2 * Math.max(4, camera.position.distanceTo(carHolder.position)); camera.getWorldDirection(SPL.f)   /* QA P2-4: Länge über den Weg (≤ 0,4 × Kameraabstand), nicht über die Zeit – sonst reichte die Spur bis an den Bildrand */
     SPL.R.forEach((r, j) => { const sd = j ? 1 : -1, lp = SPL.v.set(sd * box.h[0] * 0.92, box.c[1] - box.h[1] * 0.2, box.c[2] - box.h[2] * 0.97); carHolder.localToWorld(lp)
       const ax = lp.x + P.x, ay = lp.y, az = lp.z + P.z, h = r.pts[0]
       if (!h || r.pts.length < 2 || Math.hypot(ax - r.pts[1].x, ay - r.pts[1].y, az - r.pts[1].z) > 0.3) r.pts.unshift({ x: ax, y: ay, z: az, t }); else { h.x = ax; h.y = ay; h.z = az; h.t = t }
       while (r.pts.length > SPL.N || (r.pts.length > 2 && t - r.pts[r.pts.length - 1].t > LIFE)) r.pts.pop()
+      let acc = 0; r.pts[0].s = 0; for (let i = 1; i < r.pts.length; i++) { const a = r.pts[i - 1], b = r.pts[i]; acc += Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z); b.s = acc; if (acc > LMAX && i > 1) { r.pts.length = i + 1; break } }
       const n = r.pts.length, pos = r.pos, at = r.at
       for (let i = 0; i < SPL.N; i++) { const q = r.pts[Math.min(i, n - 1)], qa = r.pts[Math.max(0, Math.min(i, n - 1) - 1)], qb = r.pts[Math.min(n - 1, Math.min(i, n - 1) + 1)]
         const cx = q.x - P.x, cy = q.y, cz = q.z - P.z; SPL.a.set(qa.x - qb.x, qa.y - qb.y, qa.z - qb.z); SPL.b.set(camera.position.x - cx, camera.position.y - cy, camera.position.z - cz)
-        SPL.c.crossVectors(SPL.a, SPL.b); const l = SPL.c.length() || 1, age = Math.min(1, (t - q.t) / LIFE), w = W * (1 - age) * (i >= n ? 0 : 1) * sstep(3, 8, SPL.b.length())   // vor der Kamera ausblenden (sonst Balken im Bild)
-        SPL.c.multiplyScalar(w / l); pos.set([cx - SPL.c.x, cy - SPL.c.y, cz - SPL.c.z, cx + SPL.c.x, cy + SPL.c.y, cz + SPL.c.z], i * 6); at[i * 2] = at[i * 2 + 1] = i >= n ? 1 : age }
+        const depth = -SPL.b.dot(SPL.f), fr = Math.min(1, Math.max((t - q.t) / LIFE, (q.s || 0) / LMAX))   /* Abstand vor der Kameraebene; Anteil der Spur (Alter oder Weg, was größer ist) */
+        SPL.c.crossVectors(SPL.a, SPL.b); const l = SPL.c.length() || 1, w = W * Math.pow(1 - fr, 1.6) * (i >= n ? 0 : 1) * sstep(2.5, 6, depth) * sstep(-0.75, -0.25, SPL.v.set(cx, cy, cz).project(camera).y)   /* zur Spitze stark verjüngt, 2,5 m vor der Kameraebene weg, im unteren Bildviertel ausgeblendet (nie bis zum Rand) */
+        SPL.c.multiplyScalar(w / l); pos.set([cx - SPL.c.x, cy - SPL.c.y, cz - SPL.c.z, cx + SPL.c.x, cy + SPL.c.y, cz + SPL.c.z], i * 6); at[i * 2] = at[i * 2 + 1] = i >= n ? 1 : fr }
       r.g.attributes.position.needsUpdate = true; r.g.attributes.aT.needsUpdate = true; r.m.visible = SPL.mat.uniforms.uK.value > 0.01 })
   }
 
@@ -3368,7 +3375,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         tWorld[tNext * 3] = v3.x + P.x; tWorld[tNext * 3 + 1] = v3.y; tWorld[tNext * 3 + 2] = v3.z + P.z; tLife[tNext] = 1; tNext = (tNext + 1) % TRAIL_N } } }
     for (let i = 0; i < TRAIL_N; i++) { if (tLife[i] > 0) tLife[i] = Math.max(0, tLife[i] - dt / 2.6); tPos[i * 3] = tWorld[i * 3] - P.x; tPos[i * 3 + 1] = tWorld[i * 3 + 1]; tPos[i * 3 + 2] = tWorld[i * 3 + 2] - P.z }
     tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aLife.needsUpdate = true;
-    U.uCam.value.copy(camera.position); GU.uGOff.value.set(P.x, P.z); GU.uGOn.value = S.ground ? 1 : 0;
+    U.uCam.value.copy(camera.position); GU.uGOff.value.set(P.x, P.z); { const e = 1.2, h0 = hgt(P.x, P.z); GU.uGPl.value.set(h0, (hgt(P.x + e, P.z) - hgt(P.x - e, P.z)) / (2 * e), (hgt(P.x, P.z + e) - hgt(P.x, P.z - e)) / (2 * e)) }   /* Wagen: Bodenebene je Bild statt hgt je Vertex (64k Vertices, CODE_PERF_R1 D1) */ GU.uGOn.value = S.ground ? 1 : 0;
     if (S.shadows) { sun.updateMatrixWorld(); sun.target.updateMatrixWorld(); sun.shadow.updateMatrices(sun); U.uShadowM.value.copy(sun.shadow.matrix); U.uShadowMap.value = sun.shadow.map ? sun.shadow.map.texture : null }
     if (S.shadowdyn && ++SDYN.n % 60 === 0) applyShadowDyn(true);   /* neu gebaute Steine/Props auch ohne Wurf */
     updateDisco(now / 1000); renderAO(); renderer.render(scene, camera);
