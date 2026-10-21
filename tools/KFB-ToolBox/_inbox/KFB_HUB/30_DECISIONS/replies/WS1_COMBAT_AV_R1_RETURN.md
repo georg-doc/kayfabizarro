@@ -167,3 +167,10 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
    - Dringend: L8 `player_hurt`, L9 `mob_pop_to_skull`, L13 `mob_windup`.
 2. **Augen-Rig (WSB bzw. Rig-Besitzer):** `pupil: 'kreuz'` für Kreuz-Augen beim Tod (Comic-Logik). v6 kennt bisher nur `pupil: 'normal'`.
 3. **Entscheidung, wer das spieleigene Tod-Fenster („FrizzleBob is down“) mit dem Knet-Wort zusammenführt** (Backlog D2).
+
+## Georgs Urteile 21.10. (spät)
+- Nr. 10, Nr. 2 Rest, Tod-Inszenierung: **PASS mit TUNE später.** Pflicht-Tunes für die Tod-Inszenierung:
+  - **D1:** „Die Tusche-Tropfen mit den Kugeln am Ende sind falsch.“ Ersatz: zähe Läufer ohne Kugelköpfe.
+  - **D5:** „Blödsinn muss als Claymation-Modell gebaut werden, aus comicmäßig gebogenem und typografisch sauber gestaltetem Lettering.“
+- **Kreuz-Pupillen beim Tod: freigegeben (Georg).** Bitte an den Besitzer des Augen-Rigs v6: `pupil: 'kreuz'`.
+- Tod-Fenster: Prüfer D liefert den Baustein, der WS1-Lead baut ihn im Spiel ein.
