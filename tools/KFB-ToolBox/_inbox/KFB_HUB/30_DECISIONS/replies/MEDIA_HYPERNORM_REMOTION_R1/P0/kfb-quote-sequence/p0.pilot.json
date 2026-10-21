@@ -1,0 +1,92 @@
+{
+ "schema": "kfb.quote-sequence.pilot/1",
+ "id": "P0",
+ "decision": "V-606 (WS0, 21.10.2026)",
+ "approvals": {
+  "by": "Georg, 21.10.2026 (Freigabe: 3 bis 5 gemeinfreie Zitate aus Batch 01 für eine private Probe; Auswahl WS-Media)",
+  "status": {
+   "q-b01-utopia-thoreau-tools": "APPROVED_PRIVATE",
+   "q-b01-utopia-morris-hope-work": "APPROVED_PRIVATE",
+   "q-b01-1001-wilde-mask-truth": "APPROVED_PRIVATE"
+  },
+  "note": "quote.status nur hier überlagert; der Pool bleibt unverändert am Pin. rights bleibt."
+ },
+ "pool": "data/pool.p0.verbatim.json",
+ "order": [
+  "q-b01-utopia-thoreau-tools",
+  "q-b01-utopia-morris-hope-work",
+  "q-b01-1001-wilde-mask-truth"
+ ],
+ "place": {
+  "billboard": "billboard-plain im Knet-Amphitheater",
+  "card": "The Glossy Horizon",
+  "deck": "forget_utopia",
+  "planet": "kfb-planet terrain/439 @a701da4"
+ },
+ "palette": {
+  "id": "otown",
+  "via": "stagePaletteFor: deck forget_utopia → genre satire → otown (kfb-planet src/stagePalette.js @a701da4)",
+  "envAccent": [
+   "#f08ab8",
+   "#e0679f",
+   "#c9508f"
+  ],
+  "stops": [
+   "#462e60",
+   "#c9508f",
+   "#f08ab8"
+  ],
+  "rule": "stopsFromEnvRoles: [earth[2], accent[2], accent[0]] → facePal wie Clay Stage R2; Zuordnung ist Vorschlag für WS1",
+  "envEarth": [
+   "#6b4a8a",
+   "#5a3c78",
+   "#462e60"
+  ]
+ },
+ "format": "1,79:1 (V-259)",
+ "audio": "stumm (V-389: Ton nur aus der Audio Site)",
+ "context": {
+  "q-b01-utopia-thoreau-tools": {
+   "packId": "forget_utopia",
+   "deckTitle": "Forget Utopia",
+   "card": {
+    "cardNumber": 1,
+    "cardName": "The Glossy Horizon"
+   },
+   "base": "card"
+  },
+  "q-b01-utopia-morris-hope-work": {
+   "packId": "forget_utopia",
+   "deckTitle": "Forget Utopia",
+   "card": {
+    "cardNumber": 1,
+    "cardName": "The Glossy Horizon"
+   },
+   "base": "card"
+  },
+  "q-b01-1001-wilde-mask-truth": {
+   "packId": "1001_kayfabe_nights",
+   "deckTitle": "Uncle FrizzleBob's 1001 Kayfabe Nights",
+   "card": null,
+   "base": null,
+   "note": "Zitat aus einem anderen Deck: Kontextzeile auf Deck-Ebene, ohne Karte (keine Kartenzuordnung im Pool)"
+  }
+ },
+ "deckRegistry": "media/kfb/index.json @fc47e98e4; Karte #1 aus Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+ "boards": {
+  "glossy_horizon": {
+   "quotes": [
+    "q-b01-utopia-thoreau-tools",
+    "q-b01-utopia-morris-hope-work"
+   ],
+   "note": "Tafel mit Karte #1 aus forget_utopia: nur Zitate dieses Decks"
+  },
+  "wilde_1001": {
+   "quotes": [
+    "q-b01-1001-wilde-mask-truth"
+   ],
+   "status": "offen",
+   "note": "Freigegeben, braucht eine eigene Tafel mit einer Karte aus 1001 Kayfabe Nights (R2 contextCard per Card-Seed); ohne Karte wirkt sie wie eine leere Folie"
+  }
+ }
+}

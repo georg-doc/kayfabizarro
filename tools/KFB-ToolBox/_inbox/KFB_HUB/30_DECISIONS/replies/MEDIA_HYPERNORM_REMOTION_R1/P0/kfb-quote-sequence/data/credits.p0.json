@@ -1,0 +1,39 @@
+{
+ "schema": "kfb.creator-credits/1",
+ "note": "Einträge für kfb-planet src/data/credits/kfb-credits.r1.json (V-606: Fonts lokal und mit Credits). Übernahme durch WS1 beim Einbau; fbComment bewusst leer. Urheber wie in den Upstream-Lizenzdateien (Big Shoulders: OFL.txt aus xotypeco/big_shoulders, die fontsource-Datei nennt nur Google Inc.).",
+ "credits": [
+  {
+   "id": "font-bodoni-moda",
+   "creator": "The Bodoni Moda Project Authors",
+   "what": "Schrift Bodoni Moda (Zitat-Lesefolge, Hypernormalisation)",
+   "use": "font",
+   "license": "OFL-1.1",
+   "link": "https://github.com/indestructible-type/Bodoni"
+  },
+  {
+   "id": "font-big-shoulders-display",
+   "creator": "The Big Shoulders Project Authors",
+   "what": "Schrift Big Shoulders Display (Zitat-Lesefolge, Hypernormalisation)",
+   "use": "font",
+   "license": "OFL-1.1",
+   "link": "https://github.com/xotypeco/big_shoulders"
+  },
+  {
+   "id": "font-archivo",
+   "creator": "The Archivo Project Authors",
+   "what": "Schrift Archivo (FrizzleBob-Frage, Hypernormalisation)",
+   "use": "font",
+   "license": "OFL-1.1",
+   "link": "https://github.com/Omnibus-Type/Archivo"
+  },
+  {
+   "id": "font-ibm-plex-mono",
+   "creator": "IBM Corp.",
+   "what": "Schrift IBM Plex Mono (Fundstellen, Kontextzeile, Hypernormalisation)",
+   "use": "font",
+   "license": "OFL-1.1",
+   "link": "https://github.com/IBM/plex"
+  }
+ ],
+ "files": "woff2 über @fontsource@5 (jsDelivr), mit Lizenztexten im Modul unter fonts/"
+}

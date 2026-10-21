@@ -1,0 +1,212 @@
+{
+ "schema": "kfb.quote-pool.v1",
+ "pin": {
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "planning/billboard-quote-hypernorm-curator-2026-10-04",
+  "commit": "fc47e98e4",
+  "path": "skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/QUOTE_POOL_BATCH_01.json"
+ },
+ "quotes": [
+  {
+   "id": "q-b01-utopia-thoreau-tools",
+   "text": "But lo! men have become the tools of their tools.",
+   "author": "Henry David Thoreau",
+   "work": "Walden",
+   "language": "en",
+   "status": "RESEARCHED",
+   "provenance": {
+    "verificationStatus": "DOUBLE_CHECKED",
+    "sourceUrl": "https://en.wikisource.org/wiki/Men_say_they_know_many_things",
+    "edition": "Walden, or, Life in the Woods",
+    "pageOrLocator": "Economy / Shelter discussion; 1854 scan p. 41",
+    "publicationYear": 1854,
+    "retrievedAt": "2026-10-04",
+    "notes": "Exact wording verified in Wikisource and the validated Walden scan."
+   },
+   "rights": {
+    "status": "PUBLIC_DOMAIN_CONFIRMED",
+    "jurisdictions": [
+     "US",
+     "EU"
+    ],
+    "basis": "Underlying quoted English text is public domain in the US and EU.",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AWalden%2C_or%2C_Life_in_the_Woods.djvu/45",
+    "checkedAt": "2026-10-04"
+   },
+   "themes": [
+    "technology",
+    "dependence",
+    "convenience",
+    "agency"
+   ],
+   "antiClicheNotes": [
+    "A compact reversal of tool-user relations that maps to frictionless-future critique rather than anti-technology nostalgia."
+   ],
+   "biomeTags": [
+    "smart-city-model",
+    "domestic-future"
+   ],
+   "deckRefs": [
+    {
+     "packId": "forget_utopia",
+     "weight": 9,
+     "reason": "The deck repeatedly asks when ease, outsourcing and seamlessness erode capability or agency."
+    }
+   ],
+   "frizzleQuestion": "Which convenience still serves you, and which has quietly converted you into the maintenance crew for the convenience itself?",
+   "brainFood": [
+    {
+     "label": "Walden — Wikisource excerpt",
+     "url": "https://en.wikisource.org/wiki/Men_say_they_know_many_things",
+     "kind": "PRIMARY_SOURCE",
+     "verifiedAt": "2026-10-04",
+     "notes": "Public-domain transcription."
+    },
+    {
+     "label": "Walden, validated scan p. 41",
+     "url": "https://en.wikisource.org/wiki/Page%3AWalden%2C_or%2C_Life_in_the_Woods.djvu/45",
+     "kind": "EDITION",
+     "verifiedAt": "2026-10-04",
+     "notes": "Validated scan containing the sentence."
+    }
+   ],
+   "curatorNotes": "Keeps the deck's technology critique focused on agency rather than blanket Luddism.",
+   "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+   "updatedAt": "2026-10-04T16:20:00Z"
+  },
+  {
+   "id": "q-b01-utopia-morris-hope-work",
+   "text": "What is the difference between them, then? This: one has hope in it, the other has not.",
+   "author": "William Morris",
+   "work": "Useful Work versus Useless Toil",
+   "language": "en",
+   "status": "RESEARCHED",
+   "provenance": {
+    "verificationStatus": "DOUBLE_CHECKED",
+    "sourceUrl": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+    "edition": "Useful Work versus Useless Toil",
+    "pageOrLocator": "Opening discussion of two kinds of work",
+    "publicationYear": 1884,
+    "retrievedAt": "2026-10-04",
+    "notes": "Exact wording verified in the Morris text and cross-checked against collected-works editions."
+   },
+   "rights": {
+    "status": "PUBLIC_DOMAIN_CONFIRMED",
+    "jurisdictions": [
+     "US",
+     "EU"
+    ],
+    "basis": "Underlying quoted English text is public domain in the US and EU.",
+    "evidenceUrl": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+    "checkedAt": "2026-10-04"
+   },
+   "themes": [
+    "work",
+    "hope",
+    "utopia",
+    "labor"
+   ],
+   "antiClicheNotes": [
+    "Defines a concrete criterion for good work inside a utopian critique instead of using abstract hope rhetoric."
+   ],
+   "biomeTags": [
+    "workshop",
+    "future-city"
+   ],
+   "deckRefs": [
+    {
+     "packId": "forget_utopia",
+     "weight": 9,
+     "reason": "The deck distinguishes futures that improve lived agency from futures sold as polished rescue."
+    }
+   ],
+   "frizzleQuestion": "If a future promises effortless abundance but removes hope from the work of getting there, what kind of utopia is it actually selling?",
+   "brainFood": [
+    {
+     "label": "Morris, Useful Work versus Useless Toil",
+     "url": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+     "kind": "PRIMARY_SOURCE",
+     "verifiedAt": "2026-10-04",
+     "notes": "Full text."
+    },
+    {
+     "label": "Collected Works — Google Books",
+     "url": "https://books.google.com/books?id=5Z70JdCedV8C",
+     "kind": "EDITION",
+     "verifiedAt": "2026-10-04",
+     "notes": "Collected-works record with the passage and page locator."
+    }
+   ],
+   "curatorNotes": "Adds a constructive criterion to a deck otherwise dominated by critique of future-selling.",
+   "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+   "updatedAt": "2026-10-04T16:20:00Z"
+  },
+  {
+   "id": "q-b01-1001-wilde-mask-truth",
+   "text": "Man is least himself when he talks in his own person. Give him a mask, and he will tell you the truth.",
+   "author": "Oscar Wilde",
+   "work": "The Critic as Artist",
+   "language": "en",
+   "status": "RESEARCHED",
+   "provenance": {
+    "verificationStatus": "DOUBLE_CHECKED",
+    "sourceUrl": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+    "edition": "Intentions (The Critic as Artist), public-domain edition",
+    "pageOrLocator": "Part II",
+    "publicationYear": 1891,
+    "retrievedAt": "2026-10-04",
+    "notes": "Exact wording checked in Wikisource and a Project Gutenberg edition of Intentions."
+   },
+   "rights": {
+    "status": "PUBLIC_DOMAIN_CONFIRMED",
+    "jurisdictions": [
+     "US",
+     "EU"
+    ],
+    "basis": "Underlying quoted English text is public domain in the US and EU.",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+    "checkedAt": "2026-10-04"
+   },
+   "themes": [
+    "mask",
+    "truth",
+    "performance",
+    "identity"
+   ],
+   "antiClicheNotes": [
+    "Mapped to literal kayfabe-mask identity rather than used as an authenticity poster quote."
+   ],
+   "biomeTags": [
+    "backstage-kayfabe",
+    "mask-vault"
+   ],
+   "deckRefs": [
+    {
+     "packId": "1001_kayfabe_nights",
+     "weight": 9,
+     "reason": "The deck repeatedly treats masks, roles and performed identity as truth-bearing devices."
+    }
+   ],
+   "frizzleQuestion": "When does a mask reveal motives more accurately than a confession spoken in a supposedly authentic voice?",
+   "brainFood": [
+    {
+     "label": "The Critic as Artist — Wikisource",
+     "url": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+     "kind": "PRIMARY_SOURCE",
+     "verifiedAt": "2026-10-04",
+     "notes": "Public-domain text."
+    },
+    {
+     "label": "Intentions — Project Gutenberg",
+     "url": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+     "kind": "EDITION",
+     "verifiedAt": "2026-10-04",
+     "notes": "Independent public-domain edition."
+    }
+   ],
+   "curatorNotes": "Deck-level mapping only; the mask motif is strong but no card-specific mapping is needed to force the fit.",
+   "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+   "updatedAt": "2026-10-04T16:20:00Z"
+  }
+ ]
+}
