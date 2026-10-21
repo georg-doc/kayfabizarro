@@ -41,3 +41,13 @@
 
 ## R1.4 · 2026-10-21 · Editor source candidate
 Added prototype/index.html (local brush shape import, pointer drawing, undo/redo, PNG export), and TEST_REPORT_R1.md. GitHub source readback verified. Actual browser and private-brush runtime checks: 0. Current code is an unaccepted prototype; no public release or brush binaries. Next: existing ToolBox owner runs real isolated CRAYONIC import, stroke, undo and PNG browser tests, and fixes documented limitations before any user acceptance.
+
+## R1.5 · 2026-10-21 · Claude Code workshop · local CRAYONIC editor tested
+- Mode BOUNDED_SLICE · implementation + browser test. Base `7a1e73ecb07bcbacd0518499a52aabb6373abc74`; implementation commit and final head are named in the checkpoint line below.
+- Result: **local MVP candidate, all automated checks PASS** (unit 28/0, Chromium 17/0). Not "Procreate parity", not accepted by Georg yet, not public, no PR, no merge, no deployment.
+- Delivered: private local `.brush` import with in-browser `Brush.archive` decode; original Shape rendering with source isolation; pressure, tilt, speed, rotation, scatter, spacing, taper and glaze simulation from decoded values (editable, labelled HEURISTIC); color, size, opacity, eraser; deterministic undo/redo/clear; transparent and paper PNG export; comparison against each file's own Procreate preview stroke.
+- Fidelity truth: CRAYONIC silhouette IoU 0.867 / mean α 0.472 vs 0.484, texture flatter because Procreate's built-in charcoal grain is not in the file (labelled substitute). PASTEL holdout ~30 % too light. ACRYLOID's bristle look (rolling grain) is not simulated.
+- Protection kept: no brush binaries, shapes, grains, thumbnails or isolation screenshots in Git (private evidence in `~/kfb-ws1/brush-evidence-private/run6/`); ToolBox and animation owners untouched; no second runtime, Site, branding, georgbrush.club or Notion change.
+- Files: `prototype/index.html`, `prototype/brush-core.js`, `prototype/vendor/fflate-0.8.3.umd.js` + `FFLATE_LICENSE.txt`, `prototype/tests/unit.mjs`, `prototype/tests/browser.mjs`, `prototype/README.md`, `evidence/*` (5 public-safe files), `TEST_REPORT_R1.md` (R1.5), `CHANGELOG.md` (new, additive), this Return.
+- Open: Safari/iPad + Apple Pencil on hardware; Georg draws with CRAYONIC and judges against Procreate; real grain (Georg-supplied grain image or approved substitute); `.brushset`, catalog, Notion and Comic (Re)Motion stay deferred.
+- **One next gate:** Georg opens `prototype/index.html` locally (double-click), imports `The_CRAYONIC (1).brush`, draws with mouse and ideally iPad/Pencil, and returns PASS / TUNE / FAIL on the CRAYONIC look against Procreate.

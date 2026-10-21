@@ -1,104 +1,755 @@
 <!doctype html>
-<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Georg Brush Playground · private source trial</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Georg Brush Playground</title>
 <style>
-:root{font:15px system-ui,sans-serif;color:#25201e;background:#e5ded2}
-body{margin:0}header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 22px;background:#fbf8f2;border-bottom:1px solid #b9ae9e}
-h1{font-size:18px;margin:0}small{color:#6c635e}main{max-width:1200px;margin:auto;padding:16px}
-.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px}
-label{display:flex;gap:6px;align-items:center}button,.file{border:1px solid #998b7a;border-radius:6px;background:#fff9ef;padding:8px;cursor:pointer}
-button:disabled{opacity:.4}.surface{background:white;box-shadow:0 2px 16px #0002;overflow:hidden}
-canvas{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair}
-#status{margin-top:12px}a{color:inherit}input[type=color]{height:36px}
+:root{
+  --ink:#25201e;--muted:#6c635e;--line:#c9bfb0;--panel:#fbf8f2;--bg:#e5ded2;--paper:#fffdf8;
+  --accent:#8a3b1e;--ok:#2f6b3a;--warn:#9a5b00;--bad:#9b1c1c;
+  font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;padding:10px 18px;background:var(--panel);border-bottom:1px solid var(--line)}
+h1{font-size:17px;margin:0}
+header .note{color:var(--muted);font-size:12.5px}
+.badge{display:inline-block;font-size:11px;letter-spacing:.04em;padding:2px 7px;border-radius:9px;background:#efe6d6;border:1px solid var(--line);color:var(--warn);font-weight:600}
+.app{flex:1;display:grid;grid-template-columns:250px minmax(0,1fr) 330px;gap:12px;padding:12px;align-items:start}
+@media (max-width:1180px){.app{grid-template-columns:230px minmax(0,1fr)}.inspector{grid-column:1/-1}}
+@media (max-width:760px){.app{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.panel h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:10px 0 6px}
+.panel h2:first-child{margin-top:0}
+.row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.row label{flex:1;font-size:13px}
+.row input[type=range]{width:112px}
+.row output{width:40px;text-align:right;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+button,.file{font:inherit;border:1px solid #998b7a;border-radius:6px;background:#fff9ef;padding:6px 10px;cursor:pointer;color:var(--ink)}
+button:hover,.file:hover{background:#fff3df}
+button:disabled{opacity:.4;cursor:default}
+button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.file input{display:none}
+.stage{min-width:0}
+.surface{position:relative;background:var(--paper);box-shadow:0 2px 16px #0002;border-radius:4px;overflow:hidden}
+.surface.dark{background:#1d1a18}
+canvas#paper{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair}
+#hud{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+#status{margin:8px 0 0;font-size:13px}
+#status.err{color:var(--bad)}
+.lib{list-style:none;margin:0;padding:0}
+.lib li{display:flex;gap:8px;align-items:center;padding:5px 6px;border-radius:6px;cursor:pointer;border:1px solid transparent}
+.lib li[aria-selected=true]{border-color:var(--ink);background:#fff}
+.lib small{color:var(--muted);font-size:11px;display:block}
+.tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.tile{font-size:11px;color:var(--muted)}
+.tile canvas{width:100%;aspect-ratio:1;display:block;border:1px solid var(--line);border-radius:4px;background:#fff}
+.checker{background:conic-gradient(#ddd 25%,#fff 0 50%,#ddd 0 75%,#fff 0) 0 0/12px 12px !important}
+.wide{grid-column:1/-1}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.cmp canvas{width:100%;display:block;background:#1d1a18;border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+td{padding:2px 4px;border-bottom:1px solid #e6dccb;vertical-align:top}
+td.v{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+td.s{font-size:10.5px;white-space:nowrap}
+.HEURISTIC{color:var(--warn)}.IGNORED{color:var(--muted)}.MISSING{color:var(--bad)}
+details summary{cursor:pointer;font-size:12px;color:var(--muted);margin:8px 0 4px}
+.empty{color:var(--muted);font-size:12.5px;margin:4px 0}
+.metrics td:first-child{color:var(--muted)}
+.swatch{display:flex;align-items:center;gap:8px}
+input[type=color]{width:44px;height:30px;padding:0;border:1px solid #998b7a;border-radius:4px;background:none}
 </style>
-<header><h1>Georg Brush Playground <small>· source-isolated study</small></h1><span>Local-only brush import · no upload</span></header>
-<main>
-<div class="controls">
-<label class="file">Import original .brush <input id="file" type="file" accept=".brush" hidden></label>
-<label>Color <input id="color" type="color" value="#382722"></label>
-<label>Size <input id="size" type="range" min="4" max="120" value="34"><output id="sizeOut">34</output></label>
-<label>Opacity <input id="opacity" type="range" min=".1" max="1" step=".05" value=".9"></label>
-<label>Speed sensitivity <input id="speed" type="range" min="-1" max="1" step=".1" value="-.3"></label>
-<label>Scatter <input id="scatter" type="range" min="0" max="1" step=".05" value=".35"></label>
-<button id="undo" disabled>Undo</button><button id="redo" disabled>Redo</button><button id="clear">Clear</button><button id="png">Export PNG</button>
+</head>
+<body>
+<header>
+  <h1>Georg Brush Playground</h1>
+  <span class="note">Local only · brush files stay on this device, nothing is uploaded · <span class="badge">SIMULATION · NOT PROCREATE'S RENDERER</span></span>
+</header>
+
+<div class="app">
+  <aside class="panel" aria-label="Tools">
+    <h2>Brush</h2>
+    <label class="file">Import .brush… <input id="file" type="file" accept=".brush" multiple></label>
+    <ul class="lib" id="lib" role="listbox" aria-label="Imported brushes"></ul>
+    <p class="empty" id="libEmpty">No brush imported. Without a brush you draw with a plain round test tip.</p>
+
+    <h2>Paint</h2>
+    <div class="row swatch"><label for="color">Color</label><input id="color" type="color" value="#2b211d"></div>
+    <div class="row"><label for="size">Size px</label><input id="size" type="range" min="2" max="400" value="70"><output for="size" id="sizeOut">70</output></div>
+    <div class="row"><label for="opacity">Opacity</label><input id="opacity" type="range" min="0.05" max="1" step="0.01" value="1"><output id="opacityOut">1.00</output></div>
+    <div class="btns">
+      <button id="brushMode" aria-pressed="true" title="B">Brush</button>
+      <button id="eraser" aria-pressed="false" title="E">Eraser</button>
+    </div>
+
+    <h2>Mouse / touch without pressure</h2>
+    <div class="row"><label for="mouseP">Simulated pressure</label><input id="mouseP" type="range" min="0.05" max="1" step="0.01" value="0.6"><output id="mousePOut">0.60</output></div>
+
+    <h2>Dynamics <small style="text-transform:none;letter-spacing:0">(decoded → editable)</small></h2>
+    <div id="dyn"></div>
+    <button id="resetDyn" disabled>Reset to decoded values</button>
+
+    <h2>History & export</h2>
+    <div class="btns">
+      <button id="undo" disabled title="⌘Z">Undo</button>
+      <button id="redo" disabled title="⇧⌘Z">Redo</button>
+      <button id="clear">Clear</button>
+    </div>
+    <div class="btns" style="margin-top:6px">
+      <button id="png">Export PNG (transparent)</button>
+      <button id="pngOpaque">PNG on paper</button>
+    </div>
+    <div class="row" style="margin-top:8px"><label for="dark">Dark paper (view only)</label><input id="dark" type="checkbox"></div>
+  </aside>
+
+  <main class="stage">
+    <div class="surface" id="surface"><canvas id="paper" width="1600" height="1000" aria-label="Drawing area"></canvas></div>
+    <div id="hud"><span id="hudInput">input: –</span><span id="hudP">pressure: –</span><span id="hudTilt">tilt: –</span><span id="hudSpeed">speed: –</span><span id="hudStrokes">strokes: 0</span></div>
+    <p id="status" role="status">Import a Procreate .brush file to start. It is read in this browser tab only.</p>
+  </main>
+
+  <aside class="panel inspector" aria-label="Brush inspector">
+    <h2>Source isolation</h2>
+    <p class="empty" id="isoEmpty">Import a brush to see its original shape, the derived stamp and the grain status.</p>
+    <div class="tiles" id="iso" hidden>
+      <div class="tile"><canvas id="isoShape" width="256" height="256"></canvas>Shape.png as stored</div>
+      <div class="tile"><canvas id="isoMask" class="checker" width="256" height="256"></canvas>Stamp (luminance → alpha)</div>
+      <div class="tile"><canvas id="isoGrain" class="checker" width="256" height="256"></canvas><span id="isoGrainLabel">Grain</span></div>
+    </div>
+
+    <h2>Procreate reference</h2>
+    <p class="empty" id="refEmpty">The brush file's own preview stroke (QuickLook/Thumbnail.png, rendered by Procreate) appears here.</p>
+    <div id="refBox" hidden>
+      <div class="cmp">
+        <div class="tile"><canvas id="refCanvas"></canvas>Procreate preview (from file)</div>
+        <div class="tile"><canvas id="simCanvas"></canvas>This simulation, same path</div>
+      </div>
+      <div class="btns" style="margin-top:6px"><button id="compare">Compare</button></div>
+      <table class="metrics" id="metrics"></table>
+    </div>
+
+    <details id="paramsBox">
+      <summary>Decoded Brush.archive fields</summary>
+      <table id="params"></table>
+    </details>
+  </aside>
 </div>
-<div class="surface"><canvas id="paper" width="1100" height="650" aria-label="Drawing area"></canvas></div>
-<p id="status" role="status">Import a private Procreate .brush file. The original stays on this device. Parameters are manual study controls, not decoded Procreate values.</p>
-</main>
-<script type="module">
-const $=id=>document.getElementById(id), canvas=$('paper'), ctx=canvas.getContext('2d'), W=canvas.width,H=canvas.height;
-const undo=[],redo=[];let tip=null,tipName='',drawing=null,activePointer=null;const tintCache=new Map();
-function tintedTip(color){if(!tip)return null;if(tintCache.has(color))return tintCache.get(color);const off=document.createElement('canvas');off.width=tip.width;off.height=tip.height;const c=off.getContext('2d');c.drawImage(tip,0,0);c.globalCompositeOperation='source-in';c.fillStyle=color;c.fillRect(0,0,off.width,off.height);tintCache.set(color,off);return off;}
-const num=id=>Number($(id).value);
-function stateButtons(){ $('undo').disabled=!undo.length; $('redo').disabled=!redo.length;}
-function seedRand(seed){let x=seed|0;return ()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296;};}
-function renderStroke(s){
- const random=seedRand(s.seed), points=s.points;if(!points.length)return;
- const opacity=s.opacity;let prev=points[0],carry=0,prevTime=prev.t;
- for(let i=0;i<points.length;i++){
-  const pt=points[i],dx=pt.x-prev.x,dy=pt.y-prev.y,dist=Math.hypot(dx,dy),dt=Math.max(1,pt.t-prevTime),velocity=dist/dt;
-  const spacing=Math.max(1,s.size*.13);
-  const count=i===0?1:Math.floor((carry+dist)/spacing);
-  for(let j=0;j<count;j++){
-   const f=i===0?0:Math.min(1,((j+1)*spacing-carry)/Math.max(dist,.001));
-   const x=prev.x+dx*f,y=prev.y+dy*f;
-   const pressure=(prev.p+(pt.p-prev.p)*f);
-   const v=Math.max(.2,Math.min(2,1+s.speed*(velocity-.45)));
-   const radius=s.size*(.22+.78*pressure)*v;
-   const angle=Math.atan2(dy,dx)+(random()-.5)*s.scatter*1.5;
-   const offset=s.scatter*radius*.35;
-   const ox=(random()-.5)*offset,oy=(random()-.5)*offset;
-   ctx.save();ctx.translate(x+ox,y+oy);ctx.rotate(angle);ctx.globalAlpha=opacity*(.25+.75*pressure);
-   if(tip){
-    ctx.drawImage(tintedTip(s.color),-radius/2,-radius/2,radius,radius);
-   }else{ctx.fillStyle=s.color;ctx.beginPath();ctx.arc(0,0,radius/2,0,Math.PI*2);ctx.fill();}
-   ctx.restore();
-  }
-  carry=i===0?0:Math.max(0,(carry+dist)-count*spacing);prev=pt;prevTime=pt.t;
- }
+
+<script src="vendor/fflate-0.8.3.umd.js"></script>
+<script src="brush-core.js"></script>
+<script>
+'use strict';
+const C = window.KFBBrushCore;
+const $ = id => document.getElementById(id);
+const paper = $('paper'), W = paper.width, H = paper.height, view = paper.getContext('2d');
+const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+const committed = mk(W, H), cctx = committed.getContext('2d');
+const active = mk(W, H), actx = active.getContext('2d', { willReadFrequently: true });
+const grained = mk(W, H), gctx = grained.getContext('2d');
+
+/* ---------------- brushes ---------------- */
+const brushes = new Map();        // id -> brush
+const overrides = new Map();      // id -> partial params from the UI
+let currentId = null;
+
+const ROUND_ID = 'builtin:round';
+brushes.set(ROUND_ID, makeRoundBrush());
+
+function makeRoundBrush() {
+  const c = mk(256, 256), x = c.getContext('2d');
+  const g = x.createRadialGradient(128, 128, 0, 128, 128, 120);
+  g.addColorStop(0, '#fff'); g.addColorStop(.8, '#fff'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+  return { id: ROUND_ID, name: 'Round test tip (built-in)', builtin: true, mips: buildMips(c), grain: null,
+    params: Object.assign(C.mapSettings({}), { spacing: .08, pressureSize: .6, pressureOpacity: .3 }), settings: {} };
 }
-function redraw(){ctx.clearRect(0,0,W,H);for(const s of undo)renderStroke(s);if(drawing)renderStroke(drawing);stateButtons();}
-function coord(ev){const b=canvas.getBoundingClientRect();return {x:(ev.clientX-b.left)*W/b.width,y:(ev.clientY-b.top)*H/b.height,p:ev.pointerType==='mouse'?.65:(ev.pressure||.65),t:ev.timeStamp};}
-canvas.addEventListener('pointerdown',e=>{if(activePointer!==null)return;activePointer=e.pointerId;canvas.setPointerCapture(e.pointerId);const s={seed:((Date.now()^undo.length)|0),color:$('color').value,size:num('size'),opacity:num('opacity'),speed:num('speed'),scatter:num('scatter'),points:[coord(e)]};drawing=s;redraw();});
-canvas.addEventListener('pointermove',e=>{if(e.pointerId!==activePointer||!drawing)return;const batch=e.getCoalescedEvents?.()||[e];for(const x of batch)drawing.points.push(coord(x));redraw();});
-function finish(e){if(e.pointerId!==activePointer)return;if(drawing){undo.push(drawing);redo.length=0;drawing=null;}activePointer=null;stateButtons();}
-canvas.addEventListener('pointerup',finish);canvas.addEventListener('pointercancel',finish);
-$('undo').onclick=()=>{if(undo.length)redo.push(undo.pop());redraw();};
-$('redo').onclick=()=>{if(redo.length)undo.push(redo.pop());redraw();};
-$('clear').onclick=()=>{undo.length=redo.length=0;redraw();};
-$('png').onclick=()=>{const out=document.createElement('a');out.download='georg-brush-playground.png';out.href=canvas.toDataURL('image/png');out.click();};
-$('size').oninput=()=>{$('sizeOut').value=$('size').value;};
-async function unzipEntry(file,target){
- const buf=await file.arrayBuffer(),view=new DataView(buf);
- if(view.getUint32(0,true)!==0x04034b50)throw Error('Not a ZIP-based .brush');
- let eocd=-1;for(let i=buf.byteLength-22;i>=Math.max(0,buf.byteLength-65557);i--)if(view.getUint32(i,true)===0x06054b50){eocd=i;break;}
- if(eocd<0)throw Error('ZIP directory not found');
- const entries=view.getUint16(eocd+10,true);if(entries>1500)throw Error('Too many entries');
- let off=view.getUint32(eocd+16,true);
- for(let n=0;n<entries;n++){
-  if(view.getUint32(off,true)!==0x02014b50)throw Error('Invalid ZIP central directory');
-  const method=view.getUint16(off+10,true),size=view.getUint32(off+20,true),raw=view.getUint32(off+24,true),len=view.getUint16(off+28,true),extra=view.getUint16(off+30,true),comment=view.getUint16(off+32,true),local=view.getUint32(off+42,true);
-  const name=new TextDecoder().decode(new Uint8Array(buf,off+46,len));
-  if(name===target){if(raw>10000000||size>10000000)throw Error('Texture too large');
-   const start=local+30+view.getUint16(local+26,true)+view.getUint16(local+28,true);
-   const bytes=new Uint8Array(buf,start,size);if(method===0)return new Blob([bytes],{type:'image/png'});
-   if(method!==8)throw Error('Unsupported compression method');
-   const decompressed=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-   const b=await new Response(decompressed).blob();if(b.size!==raw)throw Error('ZIP data size mismatch');return b;
+
+function buildMips(mask) {
+  const mips = [{ size: mask.width, canvas: mask }];
+  let src = mask;
+  while (src.width > 16) {
+    const s = src.width >> 1, c = mk(s, s), x = c.getContext('2d');
+    x.imageSmoothingQuality = 'high'; x.drawImage(src, 0, 0, s, s);
+    mips.unshift({ size: s, canvas: c }); src = c;
   }
-  off+=46+len+extra+comment;
- }
- throw Error('Shape.png absent: not a supported single brush');
+  return mips; // ascending
 }
-$('file').onchange=async e=>{
- const file=e.target.files?.[0];if(!file)return;
- try{if(file.size>32e6)throw Error('Archive exceeds 32 MB private-import limit');
- const blob=await unzipEntry(file,'Shape.png');const bitmap=await createImageBitmap(blob);
- if(bitmap.width>4096||bitmap.height>4096){bitmap.close();throw Error('Tip exceeds 4096px');}
- tip?.close?.();tip=bitmap;tintCache.clear();tipName=file.name;
- $('status').textContent='Loaded '+tipName+' locally ('+bitmap.width+'×'+bitmap.height+'). Stamp dynamics are experimental; Procreate parameters are NOT yet decoded.';
- redraw();
- }catch(err){$('status').textContent='Import error: '+err.message;}
+
+/* luminance -> alpha, white RGB. Procreate shapes: white paints, black is empty (unless inverted). */
+function lumToAlpha(bitmap, invert, side) {
+  const w = side || bitmap.width, h = side || bitmap.height;
+  const c = mk(w, h), x = c.getContext('2d', { willReadFrequently: true });
+  x.drawImage(bitmap, 0, 0, w, h);
+  const im = x.getImageData(0, 0, w, h), d = im.data;
+  for (let i = 0; i < d.length; i += 4) {
+    let l = (d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114) * d[i + 3] / 255;
+    if (invert) l = 255 - l;
+    d[i] = d[i + 1] = d[i + 2] = 255; d[i + 3] = l;
+  }
+  x.putImageData(im, 0, 0);
+  return c;
+}
+
+/* SUBSTITUTE grain: Procreate's bundled grains are not inside .brush files. A seeded fibrous
+   tile stands in and is labelled as such everywhere it is used. */
+function substituteGrain(seed) {
+  const S = 256, c = mk(S, S), x = c.getContext('2d'), r = C.rng(seed);
+  x.fillStyle = '#fff'; x.fillRect(0, 0, S, S);
+  x.globalCompositeOperation = 'destination-out';
+  x.lineCap = 'round';
+  for (let i = 0; i < 1100; i++) {
+    const px = r() * S, py = r() * S, a = r() * Math.PI, len = 2 + r() * 12;
+    x.lineWidth = 0.5 + r() * 1.4; x.strokeStyle = 'rgba(0,0,0,' + (0.25 + r() * 0.7).toFixed(3) + ')';
+    for (const ox of [-S, 0, S]) for (const oy of [-S, 0, S]) {
+      x.beginPath(); x.moveTo(px + ox, py + oy); x.lineTo(px + ox + Math.cos(a) * len, py + oy + Math.sin(a) * len); x.stroke();
+    }
+  }
+  const im = x.getImageData(0, 0, S, S), d = im.data;
+  for (let i = 3; i < d.length; i += 4) if (r() < 0.1) d[i] = Math.min(d[i], r() * 255);
+  x.putImageData(im, 0, 0);
+  return c;
+}
+
+const grainVariants = new Map();
+function grainPattern(ctx, brush, strength, scale) {
+  if (!brush.grain || strength <= 0) return null;
+  const key = brush.id + '|' + strength.toFixed(2);
+  let tile = grainVariants.get(key);
+  if (!tile) {
+    const src = brush.grain.canvas, t = mk(src.width, src.height), x = t.getContext('2d', { willReadFrequently: true });
+    x.drawImage(src, 0, 0);
+    const im = x.getImageData(0, 0, t.width, t.height), d = im.data;
+    for (let i = 3; i < d.length; i += 4) d[i] = 255 * (1 - strength * (1 - d[i] / 255));
+    x.putImageData(im, 0, 0);
+    tile = t; grainVariants.set(key, tile);
+  }
+  const pat = ctx.createPattern(tile, 'repeat');
+  const k = (256 * 0.6 * scale) / tile.width;
+  pat.setTransform(new DOMMatrix().scale(k, k));
+  return pat;
+}
+
+async function hashBytes(bytes) {
+  try {
+    const h = await crypto.subtle.digest('SHA-256', bytes);
+    return Array.from(new Uint8Array(h).slice(0, 8), b => b.toString(16).padStart(2, '0')).join('');
+  } catch (_) {
+    let h = 0x811c9dc5; for (let i = 0; i < bytes.length; i++) { h ^= bytes[i]; h = Math.imul(h, 16777619); }
+    return 'fnv' + (h >>> 0).toString(16);
+  }
+}
+
+async function decodeImage(bytes, label) {
+  const bmp = await createImageBitmap(new Blob([bytes], { type: 'image/png' }));
+  if (bmp.width > C.LIMITS.imageSide || bmp.height > C.LIMITS.imageSide || bmp.width * bmp.height > C.LIMITS.imagePixels) {
+    bmp.close(); throw Error(label + ' exceeds ' + C.LIMITS.imageSide + ' px');
+  }
+  return bmp;
+}
+
+async function importBrushFile(file) {
+  if (file.size > C.LIMITS.archiveBytes) throw Error('Archive exceeds 32 MB private-import limit');
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const id = 'brush:' + await hashBytes(bytes);
+  if (brushes.has(id)) return brushes.get(id);
+  const info = C.inspectBrushZip(bytes, window.fflate);
+  const params = C.mapSettings(info.settings);
+  const shape = await decodeImage(info.shapePng, 'Shape.png');
+  const mask = lumToAlpha(shape, params.shapeInverted, Math.min(1024, Math.max(shape.width, shape.height)));
+  let grain = null;
+  if (info.grainPng) {
+    const g = await decodeImage(info.grainPng, 'Grain.png');
+    grain = { source: 'file', canvas: lumToAlpha(g, params.grainInverted, Math.min(512, g.width)), label: 'Grain.png from file' };
+    g.close();
+  } else if (params.bundledGrain) {
+    grain = { source: 'substitute', canvas: substituteGrain(7), label: 'SUBSTITUTE grain · Procreate built-in “' + params.bundledGrain + '” is not in the file' };
+  }
+  const thumb = info.thumbPng ? await decodeImage(info.thumbPng, 'Thumbnail.png') : null;
+  const brush = { id, name: params.name, fileName: file.name, settings: info.settings, params, shape, mask, mips: buildMips(mask), grain, thumb,
+    entries: info.entries, fields: Object.keys(info.settings).length };
+  brushes.set(id, brush);
+  return brush;
+}
+
+/* ---------------- effective parameters ---------------- */
+const DYN = [
+  ['pressureSize', 'Pressure → size', -1, 1],
+  ['pressureOpacity', 'Pressure → opacity', -1, 1],
+  ['speedSize', 'Speed → size', -1, 1],
+  ['speedOpacity', 'Speed → opacity', -1, 1],
+  ['rotation', 'Rotation (follow)', -1, 1],
+  ['scatter', 'Scatter (random rot.)', 0, 1],
+  ['spacing', 'Spacing', 0.02, 1],
+  ['jitterSize', 'Size jitter', 0, 1],
+  ['flow', 'Flow (glaze)', 0.05, 1],
+  ['grainStrength', 'Grain strength', 0, 1],
+  ['glazeUniform', 'Uniform glaze (no build-up)', 0, 1, 'bool']
+];
+function decodedWithGrain(b) { return Object.assign({ grainStrength: b.grain ? 0.85 : 0 }, b.params); }
+function effectiveParams(id) { const b = brushes.get(id); return Object.assign(decodedWithGrain(b), overrides.get(id) || {}); }
+
+function renderDynControls() {
+  const box = $('dyn'); box.textContent = '';
+  const eff = effectiveParams(currentId || ROUND_ID), dec = decodedWithGrain(brushes.get(currentId || ROUND_ID));
+  for (const [k, label, mn, mx, kind] of DYN) {
+    const row = document.createElement('div'); row.className = 'row';
+    const id = 'dyn_' + k;
+    row.innerHTML = '<label for="' + id + '">' + label + '</label>' + (kind === 'bool' ? '<input id="' + id + '" type="checkbox"><output></output>' :
+      '<input id="' + id + '" type="range" min="' + mn + '" max="' + mx + '" step="0.01"><output></output>');
+    const inp = row.querySelector('input'), out = row.querySelector('output');
+    const read = () => kind === 'bool' ? (inp.checked ? 1 : 0) : Number(inp.value);
+    if (kind === 'bool') { inp.checked = !!eff[k]; out.value = eff[k] ? 'on' : 'off'; } else { inp.value = eff[k]; out.value = Number(eff[k]).toFixed(2); }
+    if (Math.abs(eff[k] - dec[k]) > 1e-6) out.style.color = 'var(--accent)';
+    inp.oninput = inp.onchange = () => {
+      const o = Object.assign({}, overrides.get(currentId || ROUND_ID)); o[k] = read();
+      overrides.set(currentId || ROUND_ID, o); out.value = kind === 'bool' ? (o[k] ? 'on' : 'off') : o[k].toFixed(2); out.style.color = 'var(--accent)';
+      $('resetDyn').disabled = false;
+    };
+    box.appendChild(row);
+  }
+  $('resetDyn').disabled = !overrides.has(currentId || ROUND_ID);
+}
+$('resetDyn').onclick = () => { overrides.delete(currentId || ROUND_ID); renderDynControls(); };
+
+/* ---------------- stamp drawing ---------------- */
+const tintCache = new Map();
+function tinted(brush, color, level) {
+  const key = brush.id + '|' + color + '|' + level;
+  let c = tintCache.get(key);
+  if (!c) {
+    const m = brush.mips[level].canvas; c = mk(m.width, m.height); const x = c.getContext('2d');
+    x.drawImage(m, 0, 0); x.globalCompositeOperation = 'source-in'; x.fillStyle = color; x.fillRect(0, 0, c.width, c.height);
+    tintCache.set(key, c);
+    if (tintCache.size > 400) tintCache.delete(tintCache.keys().next().value);
+  }
+  return c;
+}
+/* Uniform glaze: opaque gray stamps (gray = mask × stamp alpha) combined with 'lighten' = per-pixel maximum. */
+const GRAY_Q = 32, grayCache = new Map();
+function grayStamp(brush, level, q) {
+  const key = brush.id + '|' + level + '|' + q;
+  let c = grayCache.get(key);
+  if (!c) {
+    const m = brush.mips[level].canvas; c = mk(m.width, m.height); const x = c.getContext('2d');
+    x.fillStyle = '#000'; x.fillRect(0, 0, c.width, c.height); x.globalAlpha = q / GRAY_Q; x.drawImage(m, 0, 0);
+    grayCache.set(key, c);
+    if (grayCache.size > 800) grayCache.delete(grayCache.keys().next().value);
+  }
+  return c;
+}
+function prepBuffer(ctx, uniform, r) {
+  const c = ctx.canvas; r = r || { x: 0, y: 0, w: c.width, h: c.height };
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  if (uniform) { ctx.fillStyle = '#000'; ctx.fillRect(r.x, r.y, r.w, r.h); } else ctx.clearRect(r.x, r.y, r.w, r.h);
+}
+/* conservative bounds of a finished stroke: sample bbox + the largest possible stamp radius */
+function strokeBounds(rec, w, h) {
+  const b = newBox(), P = rec.params;
+  const maxSize = rec.size * 2 * 2 * (1 + Math.max(0, P.tiltSize || 0)) + 8;
+  for (const p of rec.points) grow(b, p.x, p.y, maxSize * 0.75 + P.jitter * maxSize * 4);
+  return clip(b, w, h);
+}
+function mipLevel(brush, size) {
+  const m = brush.mips; for (let i = 0; i < m.length; i++) if (m[i].size >= size) return i; return m.length - 1;
+}
+function drawStamps(ctx, brush, color, stamps, box, uniform) {
+  ctx.globalCompositeOperation = uniform ? 'lighten' : 'source-over';
+  for (const s of stamps) {
+    const lv = mipLevel(brush, s.size), h = s.size / 2;
+    let img;
+    if (uniform) { const q = Math.round(s.alpha * GRAY_Q); if (!q) continue; img = grayStamp(brush, lv, q); ctx.globalAlpha = 1; }
+    else { img = tinted(brush, color, lv); ctx.globalAlpha = s.alpha; }
+    ctx.setTransform(Math.cos(s.angle), Math.sin(s.angle), -Math.sin(s.angle), Math.cos(s.angle), s.x, s.y);
+    ctx.drawImage(img, -h, -h, s.size, s.size);
+    if (box) grow(box, s.x, s.y, s.size * 0.71 + 2);
+  }
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+}
+function hexRgb(h) { const n = parseInt(h.slice(1), 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+function newBox() { return { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity }; }
+function grow(b, x, y, r) { b.x0 = Math.min(b.x0, x - r); b.y0 = Math.min(b.y0, y - r); b.x1 = Math.max(b.x1, x + r); b.y1 = Math.max(b.y1, y + r); }
+function clip(b, w, h) {
+  const x0 = Math.max(0, Math.floor(b.x0)), y0 = Math.max(0, Math.floor(b.y0)), x1 = Math.min(w, Math.ceil(b.x1)), y1 = Math.min(h, Math.ceil(b.y1));
+  return x1 > x0 && y1 > y0 ? { x: x0, y: y0, w: x1 - x0, h: y1 - y0 } : null;
+}
+
+/* stroke buffer -> grain -> target (glaze: the stroke never exceeds its own opacity) */
+function compositeStroke(target, src, tmp, r, brush, rec) {
+  const tctx = tmp.getContext('2d', { willReadFrequently: true });
+  if (rec.params.glazeUniform) {
+    const im = src.getContext('2d', { willReadFrequently: true }).getImageData(r.x, r.y, r.w, r.h), d = im.data, [cr, cg, cb] = hexRgb(rec.eraser ? '#000000' : rec.color);
+    for (let i = 0; i < d.length; i += 4) { d[i + 3] = d[i]; d[i] = cr; d[i + 1] = cg; d[i + 2] = cb; }
+    tctx.putImageData(im, r.x, r.y);
+  } else {
+    tctx.clearRect(r.x, r.y, r.w, r.h);
+    tctx.drawImage(src, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+  }
+  const pat = grainPattern(tctx, brush, rec.params.grainStrength || 0, rec.params.grainScale || 1);
+  if (pat) { tctx.save(); tctx.globalCompositeOperation = 'destination-in'; tctx.fillStyle = pat; tctx.fillRect(r.x, r.y, r.w, r.h); tctx.restore(); }
+  target.save();
+  target.globalAlpha = rec.opacity;
+  target.globalCompositeOperation = rec.eraser ? 'destination-out' : 'source-over';
+  target.drawImage(tmp, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+  target.restore();
+}
+
+/* Bake a finished stroke record (full deterministic replay incl. end taper). */
+const bakeA = mk(W, H), bakeG = mk(W, H);
+function bakeStroke(targetCtx, rec, canvases) {
+  const [bufA, bufG] = canvases || [bakeA, bakeG];
+  const brush = brushes.get(rec.brushId) || brushes.get(ROUND_ID);
+  const stamps = C.stampsForStroke(rec), box = newBox(), bctx = bufA.getContext('2d', { willReadFrequently: true });
+  const uniform = !!rec.params.glazeUniform;
+  const area = strokeBounds(rec, bufA.width, bufA.height);
+  if (!area) return { stamps: stamps.length, rect: null };
+  prepBuffer(bctx, uniform, area);
+  bctx.save(); bctx.beginPath(); bctx.rect(area.x, area.y, area.w, area.h); bctx.clip();
+  drawStamps(bctx, brush, rec.eraser ? '#000000' : rec.color, stamps, box, uniform);
+  bctx.restore();
+  const b = clip(box, bufA.width, bufA.height);
+  const r = b && clip({ x0: Math.max(b.x, area.x), y0: Math.max(b.y, area.y), x1: Math.min(b.x + b.w, area.x + area.w), y1: Math.min(b.y + b.h, area.y + area.h) }, bufA.width, bufA.height);
+  if (r) compositeStroke(targetCtx, bufA, bufG, r, brush, rec);
+  return { stamps: stamps.length, rect: r };
+}
+
+/* ---------------- history ---------------- */
+const done = [], undone = [];
+let lastRebuildMs = 0;
+/* checkpoints: a copy of the committed layer every SNAP_EVERY actions, so undo replays at most that many */
+const SNAP_EVERY = 10, SNAP_MAX = 6, snaps = new Map(); // done.length -> canvas
+function snapshotIfDue() {
+  const n = done.length; if (n % SNAP_EVERY) return;
+  const c = mk(W, H); c.getContext('2d').drawImage(committed, 0, 0); snaps.set(n, c);
+  while (snaps.size > SNAP_MAX) snaps.delete(Math.min(...snaps.keys()));
+}
+function dropSnapsAbove(n) { for (const k of [...snaps.keys()]) if (k > n) snaps.delete(k); }
+function rebuildCommitted() {
+  const t0 = performance.now();
+  let from = 0; for (const k of snaps.keys()) if (k <= done.length && k > from) from = k;
+  cctx.clearRect(0, 0, W, H);
+  if (from) cctx.drawImage(snaps.get(from), 0, 0);
+  for (let i = from; i < done.length; i++) { const a = done[i]; if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a); }
+  lastRebuildMs = performance.now() - t0;
+}
+function refreshView(r) {
+  r = r || { x: 0, y: 0, w: W, h: H };
+  view.clearRect(r.x, r.y, r.w, r.h);
+  view.drawImage(committed, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+}
+function syncButtons() {
+  $('undo').disabled = !done.length; $('redo').disabled = !undone.length;
+  $('hudStrokes').textContent = 'strokes: ' + done.filter(a => a.type === 'stroke').length;
+}
+function pushAction(a) { dropSnapsAbove(done.length); done.push(a); undone.length = 0; snapshotIfDue(); syncButtons(); }
+function undo() { if (!done.length || live) return; undone.push(done.pop()); rebuildCommitted(); refreshView(); syncButtons(); }
+function redo() {
+  if (!undone.length || live) return; const a = undone.pop(); done.push(a);
+  if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a);
+  if (!snaps.has(done.length)) snapshotIfDue();
+  refreshView(); syncButtons();
+}
+$('undo').onclick = undo; $('redo').onclick = redo;
+$('clear').onclick = () => { if (!done.length) return; cctx.clearRect(0, 0, W, H); pushAction({ type: 'clear' }); refreshView(); };
+
+/* ---------------- live input ---------------- */
+let live = null; // {rec, stamper, box, dirty, pointerId}
+let seedCounter = 1;
+let mode = 'brush';
+function setMode(m) { mode = m; $('brushMode').setAttribute('aria-pressed', m === 'brush'); $('eraser').setAttribute('aria-pressed', m === 'eraser'); }
+$('brushMode').onclick = () => setMode('brush'); $('eraser').onclick = () => setMode('eraser');
+
+function sampleOf(e) {
+  const b = paper.getBoundingClientRect();
+  const pen = e.pointerType === 'pen';
+  let p = pen ? (e.pressure > 0 ? e.pressure : 0.01) : Number($('mouseP').value);
+  let alt = null;
+  if (pen) {
+    if (typeof e.altitudeAngle === 'number') alt = e.altitudeAngle;
+    else if (e.tiltX || e.tiltY) {
+      const tx = Math.tan(e.tiltX * Math.PI / 180), ty = Math.tan(e.tiltY * Math.PI / 180);
+      alt = Math.atan(1 / Math.hypot(tx, ty));
+    } else alt = Math.PI / 2;
+  }
+  return { x: (e.clientX - b.left) * W / b.width, y: (e.clientY - b.top) * H / b.height, t: e.timeStamp, p: Math.min(1, Math.max(0, p)), alt };
+}
+function hud(e, s) {
+  $('hudInput').textContent = 'input: ' + e.pointerType + (e.pointerType === 'pen' ? '' : ' (simulated pressure)');
+  $('hudP').textContent = 'pressure: ' + s.p.toFixed(2);
+  $('hudTilt').textContent = 'tilt: ' + (s.alt == null ? '–' : Math.round(90 - s.alt * 180 / Math.PI) + '°');
+}
+
+paper.addEventListener('pointerdown', e => {
+  if (live || (e.pointerType === 'mouse' && e.button !== 0)) return;
+  e.preventDefault();
+  paper.setPointerCapture(e.pointerId);
+  const id = currentId || ROUND_ID, s = sampleOf(e), eraser = mode === 'eraser';
+  // Eraser (heuristic): same shape and size dynamics, but full flow without pressure/speed fade or grain,
+  // so it can actually remove paint. Procreate's separate erase presets are not decoded.
+  const params = eraser ? Object.assign(effectiveParams(id), { flow: 1, pressureOpacity: 0, speedOpacity: 0, jitterOpacity: 0, tiltOpacity: 0, grainStrength: 0 }) : effectiveParams(id);
+  const rec = { type: 'stroke', brushId: id, color: $('color').value, size: Number($('size').value), opacity: Number($('opacity').value),
+    eraser, seed: (seedCounter++ * 2654435761) | 0, params, input: e.pointerType,
+    speedScale: paper.getBoundingClientRect().width / W, points: [s] };
+  prepBuffer(actx, !!rec.params.glazeUniform);
+  live = { rec, stamper: C.createStamper({ size: rec.size, seed: rec.seed, params: rec.params, speedScale: rec.speedScale }), box: newBox(), dirty: newBox(), pointerId: e.pointerId, lastT: s.t, lastX: s.x, lastY: s.y };
+  addStamps(live.stamper.add(s));
+  hud(e, s); schedule();
+});
+paper.addEventListener('pointermove', e => {
+  if (!live || e.pointerId !== live.pointerId) return;
+  const list = (e.getCoalescedEvents && e.getCoalescedEvents().length) ? e.getCoalescedEvents() : [e];
+  let s;
+  for (const ev of list) { s = sampleOf(ev); if (s.t < live.rec.points[live.rec.points.length - 1].t) s.t = live.rec.points[live.rec.points.length - 1].t; live.rec.points.push(s); addStamps(live.stamper.add(s)); }
+  if (s) {
+    const dt = Math.max(1, s.t - live.lastT); if (dt > 30) { $('hudSpeed').textContent = 'speed: ' + (Math.hypot(s.x - live.lastX, s.y - live.lastY) * live.rec.speedScale / dt).toFixed(2) + ' screen px/ms'; live.lastT = s.t; live.lastX = s.x; live.lastY = s.y; }
+    hud(e, s);
+  }
+  schedule();
+});
+function addStamps(stamps) {
+  if (!stamps.length) return;
+  const brush = brushes.get(live.rec.brushId);
+  const b = newBox();
+  drawStamps(actx, brush, live.rec.eraser ? '#000000' : live.rec.color, stamps, b, !!live.rec.params.glazeUniform);
+  grow(live.box, b.x0, b.y0, 0); grow(live.box, b.x1, b.y1, 0);
+  grow(live.dirty, b.x0, b.y0, 0); grow(live.dirty, b.x1, b.y1, 0);
+}
+let rafPending = false;
+function schedule() { if (!rafPending) { rafPending = true; requestAnimationFrame(frame); } }
+const perf = { frames: 0, frameMsMax: 0, frameMsSum: 0, commitMsMax: 0 };
+function frame() {
+  const t0 = performance.now();
+  rafPending = false;
+  try { frameBody(); } finally { const dt = performance.now() - t0; perf.frames++; perf.frameMsSum += dt; perf.frameMsMax = Math.max(perf.frameMsMax, dt); }
+}
+function frameBody() {
+  if (!live) return;
+  const r = clip(live.dirty, W, H); live.dirty = newBox();
+  if (!r) return;
+  refreshView(r);
+  const brush = brushes.get(live.rec.brushId);
+  compositeStroke(view, active, grained, r, brush, live.rec);
+}
+function finish(e) {
+  if (!live || e.pointerId !== live.pointerId) return;
+  const rec = live.rec, r = clip(live.box, W, H);
+  live = null;
+  const t0 = performance.now();
+  const res = bakeStroke(cctx, rec);
+  perf.commitMsMax = Math.max(perf.commitMsMax, performance.now() - t0);
+  pushAction(rec);
+  refreshView(unionRect(r, res.rect));
+  $('status').textContent = 'Stroke ' + done.filter(a => a.type === 'stroke').length + ': ' + rec.points.length + ' samples → ' + res.stamps + ' stamps · ' + (brushes.get(rec.brushId).name);
+  $('status').className = '';
+}
+function unionRect(a, b) { if (!a) return b; if (!b) return a; const x = Math.min(a.x, b.x), y = Math.min(a.y, b.y); return { x, y, w: Math.max(a.x + a.w, b.x + b.w) - x, h: Math.max(a.y + a.h, b.y + b.h) - y }; }
+paper.addEventListener('pointerup', finish);
+paper.addEventListener('pointercancel', finish);
+
+/* ---------------- export ---------------- */
+function exportCanvas(opaque) {
+  const out = mk(W, H), x = out.getContext('2d');
+  if (opaque) { x.fillStyle = $('dark').checked ? '#1d1a18' : getComputedStyle(document.documentElement).getPropertyValue('--paper').trim() || '#fffdf8'; x.fillRect(0, 0, W, H); }
+  x.drawImage(committed, 0, 0);
+  return out;
+}
+function download(opaque) {
+  exportCanvas(opaque).toBlob(blob => {
+    const a = document.createElement('a'); a.download = 'georg-brush-playground' + (opaque ? '-paper' : '') + '.png';
+    a.href = URL.createObjectURL(blob); a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }, 'image/png');
+}
+$('png').onclick = () => download(false);
+$('pngOpaque').onclick = () => download(true);
+
+/* ---------------- UI wiring ---------------- */
+$('size').oninput = () => $('sizeOut').value = $('size').value;
+$('opacity').oninput = () => $('opacityOut').value = Number($('opacity').value).toFixed(2);
+$('mouseP').oninput = () => $('mousePOut').value = Number($('mouseP').value).toFixed(2);
+$('dark').onchange = () => $('surface').classList.toggle('dark', $('dark').checked);
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input')) return;
+  const mod = e.metaKey || e.ctrlKey;
+  if (mod && e.key.toLowerCase() === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); }
+  else if (mod && e.key.toLowerCase() === 'y') { e.preventDefault(); redo(); }
+  else if (!mod && e.key === 'e') setMode('eraser');
+  else if (!mod && e.key === 'b') setMode('brush');
+  else if (!mod && (e.key === '[' || e.key === ']')) { const s = $('size'); s.value = Number(s.value) + (e.key === ']' ? 4 : -4); s.oninput(); }
+});
+
+$('file').onchange = async e => {
+  const files = Array.from(e.target.files || []); e.target.value = '';
+  for (const f of files) {
+    try {
+      const b = await importBrushFile(f);
+      select(b.id);
+      $('status').className = '';
+      $('status').textContent = 'Loaded “' + b.name + '” locally from ' + f.name + ' · ' + b.fields + ' archive fields decoded · shape ' + b.shape.width + '×' + b.shape.height +
+        (b.grain ? ' · ' + (b.grain.source === 'file' ? 'grain from file' : 'grain is a labelled substitute') : '') + '. Dynamics are a heuristic simulation.';
+    } catch (err) {
+      $('status').className = 'err'; $('status').textContent = 'Import error (' + f.name + '): ' + err.message;
+    }
+  }
 };
-redraw();
-</script></html>
+
+function renderLibrary() {
+  const ul = $('lib'); ul.textContent = '';
+  const list = [...brushes.values()].filter(b => !b.builtin);
+  $('libEmpty').hidden = list.length > 0;
+  for (const b of list) {
+    const li = document.createElement('li'); li.setAttribute('role', 'option'); li.setAttribute('aria-selected', b.id === currentId);
+    li.dataset.id = b.id;
+    const c = mk(36, 36); c.style.cssText = 'width:36px;height:36px;border-radius:4px;background:#fff;border:1px solid var(--line)';
+    const x = c.getContext('2d'); x.drawImage(tinted(b, '#2b211d', mipLevel(b, 36)), 0, 0, 36, 36);
+    li.appendChild(c);
+    const t = document.createElement('div'); t.innerHTML = '<b></b><small></small>';
+    t.querySelector('b').textContent = b.name; t.querySelector('small').textContent = b.fileName + ' · ' + b.id.slice(6, 14);
+    li.appendChild(t);
+    li.onclick = () => select(b.id);
+    ul.appendChild(li);
+  }
+}
+
+function select(id) {
+  currentId = id; renderLibrary(); renderDynControls(); renderInspector();
+}
+
+function drawContain(ctx, img, bg) {
+  const c = ctx.canvas; ctx.clearRect(0, 0, c.width, c.height);
+  if (bg) { ctx.fillStyle = bg; ctx.fillRect(0, 0, c.width, c.height); }
+  ctx.drawImage(img, 0, 0, c.width, c.height);
+}
+function renderInspector() {
+  const b = brushes.get(currentId);
+  $('iso').hidden = !b; $('isoEmpty').hidden = !!b;
+  $('refBox').hidden = !(b && b.thumb); $('refEmpty').hidden = !!(b && b.thumb);
+  if (!b) return;
+  drawContain($('isoShape').getContext('2d'), b.shape);
+  drawContain($('isoMask').getContext('2d'), tinted(b, $('color').value, b.mips.length - 1));
+  const gc = $('isoGrain').getContext('2d');
+  gc.clearRect(0, 0, 256, 256);
+  if (b.grain) { gc.fillStyle = '#2b211d'; gc.fillRect(0, 0, 256, 256); gc.globalCompositeOperation = 'destination-in'; gc.drawImage(b.grain.canvas, 0, 0, 256, 256); gc.globalCompositeOperation = 'source-over'; }
+  $('isoGrainLabel').textContent = b.grain ? b.grain.label : 'No grain in file or settings';
+  $('isoGrainLabel').style.color = b.grain && b.grain.source === 'substitute' ? 'var(--bad)' : '';
+  if (b.thumb) {
+    const rc = $('refCanvas'); rc.width = b.thumb.width; rc.height = b.thumb.height;
+    const sc = $('simCanvas'); sc.width = b.thumb.width; sc.height = b.thumb.height;
+    drawContain(rc.getContext('2d'), b.thumb, '#1d1a18');
+    sc.getContext('2d').clearRect(0, 0, sc.width, sc.height);
+    $('metrics').textContent = '';
+  }
+  const rows = C.FIELD_STATUS.filter(([k]) => k in b.settings).map(([k, use, st]) => [k, b.settings[k], use, st]);
+  if (b.grain && b.grain.source === 'substitute') rows.unshift(['bundledGrainPath', b.params.bundledGrain, 'grain image', 'MISSING · substitute used']);
+  if (b.params.bundledShape) rows.unshift(['bundledShapePath', b.params.bundledShape, 'shape image', 'MISSING']);
+  const known = new Set(C.FIELD_STATUS.map(r => r[0]).concat(['bundledGrainPath', 'bundledShapePath']));
+  const other = Object.keys(b.settings).filter(k => !known.has(k) && k !== '$class');
+  const tbl = $('params'); tbl.innerHTML = '';
+  for (const [k, v, use, st] of rows) {
+    const tr = tbl.insertRow();
+    tr.insertCell().textContent = k;
+    const vc = tr.insertCell(); vc.className = 'v'; vc.textContent = typeof v === 'number' ? (Number.isInteger(v) ? v : v.toFixed(3)) : String(v);
+    tr.insertCell().textContent = use;
+    const sc = tr.insertCell(); sc.className = 's ' + st.split(' ')[0]; sc.textContent = st;
+  }
+  const tr = tbl.insertRow(); const td = tr.insertCell(); td.colSpan = 4; td.style.color = 'var(--muted)';
+  td.textContent = other.length + ' further fields decoded, not simulated: ' + other.slice(0, 40).join(', ') + (other.length > 40 ? ' …' : '');
+}
+
+/* ---------------- comparison with the Procreate preview stroke ----------------
+   Path and pressure are recovered from the reference silhouette (column centroid + width).
+   The simulation then replays that path with the DECODED parameters (no UI overrides, no fitting). */
+const REF_SPEED = 0.25; // px/ms, slow constant speed (assumption, recorded in the report)
+function alphaOf(canvas) {
+  const d = canvas.getContext('2d', { willReadFrequently: true }).getImageData(0, 0, canvas.width, canvas.height).data;
+  const a = new Uint8ClampedArray(canvas.width * canvas.height); for (let i = 0; i < a.length; i++) a[i] = d[i * 4 + 3]; return a;
+}
+function profile(A, w, h, T) {
+  const cols = [];
+  for (let x = 0; x < w; x++) {
+    let sw = 0, sy = 0, y0 = -1, y1 = -1;
+    for (let y = 0; y < h; y++) { const v = A[y * w + x]; if (v > T) { if (y0 < 0) y0 = y; y1 = y; } sw += v; sy += v * y; }
+    if (y0 >= 0 && y1 - y0 >= 1) cols.push({ x, cy: sy / sw, ext: y1 - y0 + 1 });
+  }
+  const sm = (arr, k, r) => arr.map((c, i) => { let s = 0, n = 0; for (let j = Math.max(0, i - r); j <= Math.min(arr.length - 1, i + r); j++) { s += arr[j][k]; n++; } return s / n; });
+  const cy = sm(cols, 'cy', 6);
+  return cols.map((c, i) => {
+    const slope = (cy[Math.min(cols.length - 1, i + 3)] - cy[Math.max(0, i - 3)]) / Math.max(1, cols[Math.min(cols.length - 1, i + 3)].x - cols[Math.max(0, i - 3)].x);
+    return { x: c.x, y: cy[i], w: c.ext * Math.cos(Math.atan(slope)) };
+  });
+}
+function maskContentFraction(b) {
+  const m = b.mips[b.mips.length - 1].canvas, A = alphaOf(m), n = m.width;
+  let x0 = n, x1 = 0, y0 = n, y1 = 0;
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (A[y * n + x] > 25) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+  return ((x1 - x0 + 1) + (y1 - y0 + 1)) / 2 / n;
+}
+function compareWithReference(id, patch) {
+  const b = brushes.get(id || currentId); if (!b || !b.thumb) throw Error('No reference stroke in this brush file');
+  const w = b.thumb.width, h = b.thumb.height;
+  const rc = mk(w, h); rc.getContext('2d').drawImage(b.thumb, 0, 0);
+  const A = alphaOf(rc), T = 40;
+  const prof = profile(A, w, h, T);
+  const ws = prof.map(c => c.w), wsm = ws.map((v, i) => { let s = 0, n = 0; for (let j = Math.max(0, i - 4); j <= Math.min(ws.length - 1, i + 4); j++) { s += ws[j]; n++; } return s / n; });
+  const maxW = Math.max(...wsm), cf = maskContentFraction(b);
+  const points = []; let t = 0, prev = null;
+  for (let i = 0; i < prof.length; i += 2) {
+    const pt = { x: prof[i].x, y: prof[i].y, p: Math.max(0.02, Math.min(1, wsm[i] / maxW)), alt: null };
+    if (prev) t += Math.hypot(pt.x - prev.x, pt.y - prev.y) / REF_SPEED; pt.t = t; points.push(pt); prev = pt;
+  }
+  const params = Object.assign(decodedWithGrain(b), patch || {});
+  const rec = { type: 'stroke', brushId: b.id, color: '#ffffff', size: maxW / cf, opacity: params.opacity || 1, eraser: false, seed: 1, params, points };
+  const sim = mk(w, h), sctx = sim.getContext('2d');
+  bakeStroke(sctx, rec, [mk(w, h), mk(w, h)]);
+  const B = alphaOf(sim);
+  let inter = 0, uni = 0, nA = 0, nB = 0, sA = 0, sB = 0, qA = 0, qB = 0;
+  for (let i = 0; i < A.length; i++) {
+    const a = A[i] > 32, bb = B[i] > 32;
+    if (a && bb) inter++; if (a || bb) uni++;
+    if (a) { nA++; sA += A[i]; qA += A[i] * A[i]; }
+    if (bb) { nB++; sB += B[i]; qB += B[i] * B[i]; }
+  }
+  const mA = sA / nA, mB = sB / Math.max(1, nB);
+  const pB = profile(B, w, h, T);
+  const byX = new Map(pB.map(c => [c.x, c.w]));
+  let werr = 0, wn = 0; for (const c of prof) if (byX.has(c.x)) { werr += Math.abs(byX.get(c.x) - c.w) / Math.max(1, c.w); wn++; }
+  const out = {
+    brush: b.name, refSize: w + '×' + h, recoveredBaseSize: +(maxW / cf).toFixed(1), samples: points.length, assumedSpeedPxMs: REF_SPEED,
+    silhouetteIoU: +(inter / uni).toFixed(3), areaRatio: +(nB / nA).toFixed(3),
+    meanAlphaRef: +(mA / 255).toFixed(3), meanAlphaSim: +(mB / 255).toFixed(3),
+    alphaStdRef: +(Math.sqrt(qA / nA - mA * mA) / 255).toFixed(3), alphaStdSim: +(Math.sqrt(qB / Math.max(1, nB) - mB * mB) / 255).toFixed(3),
+    widthProfileError: +(werr / Math.max(1, wn)).toFixed(3), columnsCompared: wn,
+    grain: b.grain ? b.grain.source : 'none'
+  };
+  const scv = $('simCanvas'); if (scv.width !== w) { scv.width = w; scv.height = h; }
+  drawContain(scv.getContext('2d'), sim, '#1d1a18');
+  const tbl = $('metrics'); tbl.innerHTML = '';
+  const label = { silhouetteIoU: 'Silhouette overlap (IoU)', areaRatio: 'Area sim / ref', meanAlphaRef: 'Mean alpha · ref', meanAlphaSim: 'Mean alpha · sim',
+    alphaStdRef: 'Texture (alpha σ) · ref', alphaStdSim: 'Texture (alpha σ) · sim', widthProfileError: 'Width profile error', assumedSpeedPxMs: 'Assumed speed px/ms', grain: 'Grain source' };
+  for (const k in label) { const tr = tbl.insertRow(); tr.insertCell().textContent = label[k]; const v = tr.insertCell(); v.className = 'v'; v.textContent = out[k]; }
+  return out;
+}
+$('compare').onclick = () => { try { const r = compareWithReference(); $('status').className = ''; $('status').textContent = 'Compared with the Procreate preview: IoU ' + r.silhouetteIoU + ', width error ' + Math.round(r.widthProfileError * 100) + ' %. Path recovered from the reference, decoded parameters, no fitting.'; } catch (e) { $('status').className = 'err'; $('status').textContent = e.message; } };
+$('color').oninput = () => { if (currentId) drawContain($('isoMask').getContext('2d'), tinted(brushes.get(currentId), $('color').value, brushes.get(currentId).mips.length - 1)); };
+
+/* ---------------- test / replay hooks (local only) ---------------- */
+window.KFB = {
+  core: C,
+  brushes: () => [...brushes.values()].filter(b => !b.builtin).map(b => ({ id: b.id, name: b.name, fields: b.fields, shape: [b.shape.width, b.shape.height], grain: b.grain && b.grain.source, hasReference: !!b.thumb })),
+  select,
+  current: () => currentId,
+  history: () => ({ done: done.length, undone: undone.length, strokes: done.filter(a => a.type === 'stroke').map(a => ({ brushId: a.brushId, points: a.points.length, input: a.input, pmin: Math.min(...a.points.map(p => p.p)), pmax: Math.max(...a.points.map(p => p.p)) })) }),
+  undo, redo, rebuildMs: () => lastRebuildMs,
+  pngDataURL: opaque => exportCanvas(opaque).toDataURL('image/png'),
+  compare: compareWithReference,
+  perf: () => Object.assign({}, perf),
+  resetPerf: () => Object.assign(perf, { frames: 0, frameMsMax: 0, frameMsSum: 0, commitMsMax: 0 }),
+  lastStroke: () => JSON.parse(JSON.stringify(done.filter(a => a.type === 'stroke').slice(-1)[0] || null)),
+  addStroke: rec => { const r = JSON.parse(JSON.stringify(rec)); bakeStroke(cctx, r); pushAction(r); refreshView(); },
+  brushParams: id => decodedWithGrain(brushes.get(id)),
+  setMode
+};
+renderDynControls(); syncButtons();
+</script>
+</body>
+</html>
