@@ -20,12 +20,12 @@
 |---|---|
 | Name | Produktion `dark_fluffer`. Im Spiel sagen die Figuren „Black Fluffer“. Keine siebte Fluff-Art; „tainted“ ist nur Darstellung + Weltzustand. |
 | Figuren | Quaternius MonsterCuteCubes aus dem Arena-Roster (`modules/kfb-monster-roster.js`), nur Bodenläufer. Für R1 **ein** Cube, später 3–4. Flieger und Bosse erst in P4. |
-| Herkunft | Die drei Versionen (Men in Black, Hunkys Experiment, Dorys Käsemond-Omelett) bleiben Gerüchte, die Figuren einander erzählen. Nichts davon ist Kanon, und keine Figurenkarte wird geändert. |
+| Herkunft | Die drei Versionen (Men in Black, Hunkys Experiment, Dorys Käsemond-Omelett) bleiben Gerüchte, die Figuren einander erzählen. Nichts davon ist Kanon, und keine Figurenkarte wird geändert. Passend zu den Dramatis Personae (PERSONAE_PATCH_R1, Caveman-Vorschlag): Lord Hunky will die Fluff-Ernte steuern, und hochschwingender Fluff ist für ihn eine Störung. Heilen ist also auch eine Geste gegen Hunky. |
 | Heilen | Kommt in R1 (P3 vorgezogen), aber nach P1. Auslöser: **ein vorhandenes Werkzeug oder eine vorhandene Aktion aus WS1**, keine neue Waffe. Die Inventur in Schritt 0 listet die Kandidaten; WS0 entscheidet anhand eines Bildes. Ertrag ist endlich: einmal bunten Fluff fallen lassen, danach friedlich (Abklingzeit, kein Farmen). Besiegen bzw. Vertreiben bleibt eine getrennte Option. |
-| Weiße Augen | Erst als isolierter Asset-Nachweis über die Proof-Stage. Die Variante baut WSB (Blender), as-is bis auf die Augen. Fehlt sie, liefert WS-Fluffer die Heilung ohne Augenwechsel und meldet das als Lücke. |
+| Weiße Augen | Erst als isolierter Asset-Nachweis über die Proof-Stage. Die Variante baut WSB (Blender), as-is bis auf die Augen. Fehlt sie, liefert WS-NPC die Heilung ohne Augenwechsel und meldet das als Lücke. |
 | Goo | Spucken nach `spuck.v3.js`: sichtbares Ausholen, 3–5 Tropfen aus dem Maul, kein Zielring. Tinte `#1f1a14`. Der Fleck ist ein begrenzter Patch (Decal/Zellmaske) auf dem Gelände, kein Flood-Shader, keine Änderung an Kollision oder Bäumen. |
 | Bewohner | Eine Figur bemerkt den Fluffer, weicht aus oder warnt und kehrt dann zu ihrer Tätigkeit zurück. Die Figur kommt aus Phase A von WS-NPC. Mob-Chant und Triplets erst in P2, nur Text, keine Stimme. |
-| Ton | Liefert WS0 (ElevenLabs, `40_AUDIO/elevenlabs_r1`). Bis dahin stumm bzw. Platzhalter; WS-Fluffer erzeugt selbst keinen Ton. |
+| Ton | Liefert WS0 (ElevenLabs, `40_AUDIO/elevenlabs_r1`). Bis dahin stumm bzw. Platzhalter; WS-NPC erzeugt selbst keinen Ton. |
 
 **Reihenfolge:**
 1. **Schritt 0, Quell-Audit (laut Web-Chat-Brief):** Arena-Dateien lesen; Cube, Spucken und +Z-Blickrichtung isoliert rendern; `fluff.js`, `interactable.js` und `save.js` aus WS1 lesen; Kandidaten für das Heilwerkzeug auflisten. Ergebnis in die WS-NPC-Inventur. Liegt das Spender-Paket von WSA schon vor (V-584: Maul-Anker, Blickrichtung, Clips und Spuck-Timing je Cube), wird es genutzt statt neu vermessen.

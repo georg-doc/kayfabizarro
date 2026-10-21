@@ -4,7 +4,7 @@
 Georg möchte die **gesamte NPC-Slice aus dem Web-Chat** als eigene, parallele Claude-Code-Sitzung umgesetzt haben: Resident Life R0.6–R1, AI-Town R0.8, das Recherche-Google-Doc und das Dark-Fluffer-Konzept. **Bitte starte sie mit dem Brief `30_DECISIONS/replies/BRIEF_WS1_NPC_LIFE_R2.md`** (V-585) als erster Nachricht.
 - Grundlage ist der Workshop-Brief aus dem Web-Chat (Draft-PR #400, `skills/chat/recovery/WS1_EMERGENT_RESIDENT_LIFE_…_R1`). Der WS0-Brief beantwortet die sieben Intake-Fragen.
 - Reihenfolge A → C → B → D:
-  - A: zwei Bewohner (`farmer_karre`, `witch`) mit Tagesplan und einer echten Begegnung;
+  - A: zwei Bewohner (Farmer B, Lorekeeper; Rollen aus den Dramatis Personae) mit Tagesplan und einer echten Begegnung;
   - C: Dark Fluffer nach `BRIEF_WS1_DARK_FLUFFER_R1.md` (heilen, weiße Augen, einmal bunter Fluff über `fluff.js`, keine Blumen);
   - B: Gedächtnis, erst wenn du den Owner von `kfb.world-save/1` benannt hast;
   - D: später.

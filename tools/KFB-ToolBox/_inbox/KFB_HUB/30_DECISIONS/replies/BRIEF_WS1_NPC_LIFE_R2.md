@@ -13,6 +13,12 @@
   - Card Ink Defense R0.5.
 - **Google-Doc (Recherche-SSOT):** https://docs.google.com/document/d/1Y0oezF8qRhGfB0aeCMbjy3fZYjkalxQAiXSyoR6iOy8/edit. Es enthält die Reiter 01–07, die Deep-Research-Briefs von Perplexity, Gemini und Grok, das TypeScript-Schema von Perplexity und NotebookLM.
 - KFB-Spender: PR #210 `EncounterBeatBus`, PR #272 AIDA/POI-Semantik.
+- **Dramatis Personae und Writer's Room (Georg 20.10., Branch `ws-song/workshop-r1`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/`):**
+  - Figurenbögen `FIGURES_R1/characters/*.character.json` (`kfb.character/1`);
+  - Georgs neue Fakten in `SONGS_WORKSHOP_R1/personae/PERSONAE_PATCH_R1.json` (4GTN, 4GTN Forgotten, Lord Hunky, Norman) und die Vorschläge Goth Girl, Caveman, Combat Mech, FrizzleBob (als Standard-Spielfigur);
+  - `RESIDENT_DP_ALIGNMENT_R1.md`;
+  - der gültige Bewohner-Stand `WRITERS_ROOM_R1/export_2026-10-20c` (Bewohner je Deck mit Rolle, Zuhause und Meta).
+  - Nutzung: Ziele, Tagesablauf und Begegnungen kommen aus Rolle und Bogen. Das „Zuhause“ eines Bewohners ist ein POI-Kandidat. `BESTÄTIGT` ist bindend, `VORSCHLAG` nur Richtung. WS-NPC ändert keinen Bogen; Lücken meldet es an WS0.
 - Im Hub: `replies/SPEC_NPC_PATROL_R1.md` (Fahrplan statt Simulation) und `replies/BRIEF_WS1_DARK_FLUFFER_R1.md`.
 
 **Tier 0**
@@ -28,7 +34,7 @@
 | # | Entscheid |
 |---|---|
 | 1 Kapazität | **ACK** als eigene Sitzung. Die Jobs 1–4 des WS1-Leads (Leistung, AD-Audit, Dioramen) bleiben unberührt und haben Vorrang beim Merge. |
-| 2 Figuren | Nur aus `60_CAST/cast.r1.json` (V-559), `ready`, mit KFB-Augen. **Farmer B = `farmer_karre`** (Feld → Markt → Kreuzung). **Lorekeeper = `witch`** (Hexe: Archiv bzw. Hexenplatz → Buch → Kreuzung). Gibt es einen abgenommenen Lorekeeper als eigenes Modell, kommt er zuerst über WS0 in die Besetzungsliste. Clips nur aus `60_CAST/clips.r1.json` und der Motion Library, Kit-Clips as-is (V-574); jeder Clip wird isoliert nachgewiesen. |
+| 2 Figuren | Nur aus `60_CAST/cast.r1.json` (V-559), `ready`, mit KFB-Augen. Rollen und Charakter kommen aus den Dramatis Personae (siehe unten). **Farmer B** = KayKit Mystery S6 „Farmers“, Textur B (laut Writer's Room die Bäuerin und Theaterdirektorin mit Scheune und Strohballen-Bühne); WSB nennt die passende B44-Figur. **Lorekeeper** = KayKit Mystery S6 „1 – Lorekeeper“ (Guide, Mentor, Questgeber für FrizzleBob bzw. den Spieler; Hüter der Theorien, Bibliothek). Er ist noch nicht in der Besetzungsliste; die Aufnahme mit KFB-Augen macht WSB (K11). Bis dahin baut WS-NPC Inventur, Farmer B und Wege. Clips nur aus `60_CAST/clips.r1.json` und der Motion Library, Kit-Clips as-is (V-574); jeder Clip wird isoliert nachgewiesen. |
 | 3 Spender | **ACK:** #210 `EncounterBeatBus` wiederverwenden und um Abbruch/Neuplanung erweitern. #272 nur die Semantik (AIDA-Zustände, POI-Arten). Keine alten Laufzeiten, kein zweiter ConversationDirector. |
 | 4 Speicher | Den Owner von `kfb.world-save/1` benennt der WS1-Lead. Bis dahin gibt es keine dauerhaften NPC-Schreibvorgänge, nur flüchtigen Zustand. `kfb.save/1` (Spieler) ist nicht der NPC-Speicher. |
 | 5 LLM | Grundlage ohne LLM. M4 (LLM-Vergleich) erst nach A–B, nur mit Georgs Go und ohne Schlüssel im Client. |

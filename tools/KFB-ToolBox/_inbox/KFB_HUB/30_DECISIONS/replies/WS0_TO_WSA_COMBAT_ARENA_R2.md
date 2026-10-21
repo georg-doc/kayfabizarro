@@ -65,7 +65,7 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
    - Hit-Stop (V-567);
    - Monster-Roster.
    Je Modul: Eingang, Ausgang, Test, bekannte Abhängigkeiten. In WS1 wird nichts eingebaut; das entscheidet der WS1-Lead mit Georg.
-4. **Spender-Paket Dark Fluffer (V-583/V-584)** für die neue WS1-Sitzung WS-Fluffer:
+4. **Spender-Paket Dark Fluffer (V-583/V-584)** für die neue WS1-Sitzung WS-NPC (Phase C, V-585):
    - aus `modules/kfb-monster-roster.js` und `combat-arena-v3/spuck.v3.js` je Bodenläufer-Cube: Maul-Anker (lokal), Blickrichtung +Z, Clip-Liste, Spuck-Timing (Ausholen ≈ 0,34 s, 3–5 Tropfen);
    - eine Isolationsseite (je Cube von vorn, Spuck-Bild ohne Zielring).
    - Ablage `dark_fluffer_donor/` auf einem `wsa/*`-Branch; Meldung über WS0.
