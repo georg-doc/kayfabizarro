@@ -11,8 +11,8 @@ const { browser, page, errs } = await openPage('#m1,debug,harvest,look=terrain3,
 await page.waitForFunction(() => (window.__kfbM1?.npc?.()?.status?.status ?? 'LOADING') !== 'LOADING' && window.__kfbM1.status().player?.status === 'OK', null, { timeout: 300000 })
 const A = await page.evaluate(() => window.__kfbM1.npc().status.residents)
 const MOUNTS = { farmer_b: ['Digging', 'Working_C'], lorekeeper: ['Holding_C', 'Holding_B', 'kfb_npc_read_page_turn_a'] }
-// wie band.mjs: Spieler 5 m vor der Figur (Blick auf sie), Spielkamera schräg hinter dem Spieler
-const look = (id) => page.evaluate((id) => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === id), fx = Math.sin(d.yaw), fz = Math.cos(d.yaw), sx = Math.cos(d.yaw), sz = -Math.sin(d.yaw), px = d.x + fx * 3 + sx * 1.6, pz = d.z + fz * 3 + sz * 1.6
+// wie band.mjs: Spieler ~4,5 m vor der Figur (außerhalb des Bemerk-Radius 3,2 m, sonst grüßt sie statt zu arbeiten), Spielkamera schräg hinter dem Spieler
+const look = (id) => page.evaluate((id) => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === id), fx = Math.sin(d.yaw), fz = Math.cos(d.yaw), sx = Math.cos(d.yaw), sz = -Math.sin(d.yaw), px = d.x + fx * 4.2 + sx * 1.6, pz = d.z + fz * 4.2 + sz * 1.6
   M.player().teleport([px, M.terrainH(px, pz) + 1.2, pz], Math.atan2(d.x - px, d.z - pz)) }, id)
 const relook = (id) => page.evaluate((id) => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === id), p = M.feet(), dx = d.x - p[0], dz = d.z - p[2], l = Math.hypot(dx, dz) || 1
   M.player().camera()?.setLookAt(p[0] - dx / l * 2.6 + dz / l * 1.8, p[1] + 1.6, p[2] - dz / l * 2.6 - dx / l * 1.8, d.x, M.terrainH(d.x, d.z) + 0.9, d.z, false) }, id)

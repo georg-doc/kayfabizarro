@@ -26,6 +26,7 @@ process.exit(report('steps (WS-NPC, Schritt- und Hüpf-Ereignisse für den Ton)'
   A_residentSteps: Array.isArray(R.npcSteps),
   B_stepsSeparateBuffer: R.events <= 60 && R.steps.length > 0,
   B_stepsNearFigure: nearFoot,
+  B_rigField: R.steps.length > 0 && R.steps.every((e) => e.rig === 'medium' || e.rig === 'large') && R.steps.filter((e) => e.id.startsWith('skel_')).every((e) => e.rig === 'medium'),
   C_flufferHops: R.hops.length >= 3 && hopGaps.every((g) => g > 0.2 && g < 1.5),
   C_noPageErrors: errs.length === 0,
 }, { counts: Object.fromEntries(Object.entries(byId).map(([k, v]) => [k, v.length])), gaps: gaps.slice(0, 12).map((g) => +g.toFixed(2)), npcSteps: R.npcSteps.length, hops: R.hops.length, hopGaps: hopGaps.slice(0, 8).map((g) => +g.toFixed(2)), flufferClip: R.flufferClip, errs: errs.slice(0, 3) }))

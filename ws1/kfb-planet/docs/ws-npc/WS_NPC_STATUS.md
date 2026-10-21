@@ -2,6 +2,36 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 10 · 22.10. · Fluffer 0,8 m (WS0 V-616), Schritt- und Hüpf-Ereignisse für den Ton, Pushes
+
+**Gepusht** (`ws-npc/phase-a`, Spiegel wie zuvor, jeweils nach voller Reihe):
+| Spiegel | Stand | Inhalt | Volle Reihe |
+|---|---|---|---|
+| 4b78a5b | 4625c6e | echte Figuren K11, Ghost k11c, Gerücht D2, eyeActor eyeAnchors, Bots | 65/67 |
+| 226a5ec | ef2f7b8 | Heilschuss-Vorrang (a), Status 8/9 | 66/67 |
+| 30fda96 | f6e7eed | Schritt- und Hüpf-Ereignisse | 66/68 |
+
+Rot blieben jeweils nur c2 (bekannter Wackler) und s5a `livePoolLoaded` (nur im Gesamtlauf, einzeln PASS).
+
+**Lokal, gemergt vom Lead in `ws1/mvp-r1` @bfa4e09, Remote-Push nach der nächsten vollen Reihe:**
+- **5ae84c8 – Dark Fluffer 0,8 m** (WS0 V-616, vorher 1,1 m; Georg: 30–40 % kleiner).
+  - Größenfaktor heightM/refH (1,1) für Tropfen-Radius, Streuung, Bogenhöhe und Fleck-Radius.
+  - Trefferradius bleibt 0,7.
+  - Vergleichsbilder `test/out/npc/fluffer_size_{1_1,0_8,0_7}.png`.
+  - Einzeln PASS: unit-flufferSim, fluffer, ink, orchard-npc, memory, npc-a.
+- **a5437f1 – `rig: 'medium'|'large'`** in jedem Schritt (WS-Audio V-607, schwere Schritte für Large-Rig).
+
+**Schritt- und Hüpf-Ereignisse** (f6e7eed, Georg 21.10.):
+- `groups.steps()`, `npc.steps()` mit { id, foot, at, base, speed, rig, t }.
+- `fluffer.hops()` mit { id, at, t }.
+- Erkennung aus der echten Sohlenlage: Hysterese 1,2/3,5 cm; gemessen hebt der tiefste Sohlenpunkt nur 6–8 cm ab.
+- Takt: Skelette alle ~0,43 s im Wechsel l/r, Fluffer-Hüpfer alle ~0,54 s (Walk).
+- WS-Audio spielt sie mit den WS0-Tönen `npc_steps_r1`: Schritte haben den niedrigsten Rang, höchstens 8 zugleich. Gemessen 3,5–7,5 Schritte/s, keine Fehler.
+
+**Offen:**
+- WSB: Dark-Fluffer-Cubes K11 (§9), Spielzeugsoldaten-Marsch mit Gewehr, eigener Spielzeug-KO-Clip.
+- Georgs Blick auf die Bot-Augen (PROOF) und auf Gerücht D2 (vor told-of-told).
+
 ## 9 · 21.10. spät · An WS0: WSB-Auftrag „Dark-Fluffer-Cubes K11 für alle Boden-Cubes“ (Georg 21.10.)
 
 **Georg 21.10.:** „wir könnten auch die anderen Enemies aus der Combat-Slice als Dark Fluffer gebrauchen, das war die Idee“ → WSB-Auftrag über WS0.
@@ -44,6 +74,10 @@ Neueste Einträge oben.
 - (c) Eine andere Regel, z. B. das Ziel in der Kegelmitte gewinnt.
 
 Bis dahin bleibt alles, wie es ist.
+
+**Nachtrag 21.10. (Korrektur und Entscheid):**
+- Georg hat **(a)** gewählt; eingebaut in d923b9b. Tests: orchard-npc `e_priorityTargetBeatsTreeBehind`, fluffer `E_healFromSixMetresTreeNearer`.
+- Die Erklärung oben war falsch, was WS-Audios Fehlschüsse angeht. Ursache war die Kamera: Teleport dreht nur die Figur, Schuss B zielt in Kamerarichtung, und die lag 50–120° daneben. Den Fall „Stamm näher als der Ghost“ löst (a) trotzdem; ohne (a) gewann dort der Baum.
 
 ## 7 · 21.10. abends · WS0 V-602 umgesetzt: echte Figuren, Ghost k11c, Gerücht D2, Bots · Push ws-npc/phase-a
 

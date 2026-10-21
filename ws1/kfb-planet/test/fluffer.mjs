@@ -20,7 +20,7 @@ await page.evaluate(() => { const M = window.__kfbM1, R = window.__flRec = { mod
     if (d.mode === 'threat' && th) { const want = Math.atan2(th.x - d.x, th.z - d.z), e = Math.atan2(Math.sin(d.yaw - want), Math.cos(d.yaw - want)); if (Math.abs(e) < 0.15) R.faced = true }
     R.last = { mode: d.mode, lag: d.lag, alerts: d.stats.alerts } } })
 const bInkBefore = (await F()).ink
-await waitT(sp[0].impact - 0.2); const bPre = await F()
+await waitT(sp[0].impact - 0.6); const bPre = await F() // 0,6 s Vorlauf (Abfrage alle 150 ms, unter Last mehr)
 const treeKeys = await page.evaluate(() => window.__kfbM1.mods.orchard.balls().filter((b) => b.key.startsWith('goblin') && /:t4:/.test(b.key) && b.state === 'hanging').map((b) => b.key))
 const others0 = await page.evaluate(() => Object.fromEntries(window.__kfbM1.mods.orchard.balls().filter((b) => b.key.startsWith('goblin') && !/:t4:/.test(b.key)).map((b) => [b.key, b.state]))) // Startzustand (je Baum liegt Fallobst schon am Boden)
 await waitT(sp[0].impact + 0.2); const b1 = await F(); const t1 = await page.evaluate(() => window.__kfbM1.mods.orchard.tainted().length)
@@ -51,7 +51,7 @@ await browser.close()
 const evTypes = e1.debug.events.map((e) => e.type)
 process.exit(report('fluffer (WS-NPC Phase C P1 im Spiel)', {
   A_ghostMouthGun: f0.status.status === 'OK' && f0.status.mouth && f0.status.gun,
-  B_noInkBeforeImpact: bInkBefore === false && bPre.ink === false && bPre.debug.patch === null,
+  B_noInkBeforeImpact: bInkBefore === false && bPre.now < sp[0].impact && bPre.ink === false && bPre.debug.patch === null,
   B_patchGrowsOnImpact: b1.ink === true && Math.abs(b1.debug.patch.amount - 0.4) < 1e-6 && Math.abs(b2.debug.patch.amount - 0.7) < 1e-6 && Math.abs(b3.debug.patch.amount - 1) < 1e-6,
   C_treeDarkAfterFirst: t1 === treeKeys.length && treeKeys.length > 0,
   C_fallsRestsSinks: c.states.every((s) => s === 'sunk'),

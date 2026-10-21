@@ -12,8 +12,9 @@
 import { rngOf } from '../world/fluff.js'
 import { createRoute } from './npcRoute.js'
 
+// patchR ist auf refH (1,1 m) abgestimmt; WS0 V-616 (21.10.): heightM 0,8 für alle Fluffer, Tropfen und Fleck ziehen mit (Faktor heightM / refH)
 export const FLUFFER = Object.freeze({ speed: 0.9, windup: 0.34, flight: [0.42, 0.95], range: 8, spits: 3, firstAfter: 1.2, every: 3.2, amounts: [0.4, 0.7, 1.0],
-  patchR: 1.4, impactJitter: 0.35, fadeS: 4, expireS: 180, loiter: 1.6, loiterSpeed: 0.45, burstN: 6, joyS: 2.6 })
+  patchR: 1.4, refH: 1.1, impactJitter: 0.35, fadeS: 4, expireS: 180, loiter: 1.6, loiterSpeed: 0.45, burstN: 6, joyS: 2.6 })
 
 // def: { id, seed, start: [x, z], stand: [x, z], via?: [[x, z]…], target: [x, z] (Fleck-Mitte), tree: { zone, id }, t0 (Weltsekunden) }
 export function createFlufferSim(def, R = FLUFFER) {
@@ -64,7 +65,7 @@ export function createFlufferSim(def, R = FLUFFER) {
     }
     const flying = spits.filter((s) => live(s) && t >= s.release && t < s.impact).map((s) => ({ k: s.k, u: (t - s.release) / (s.impact - s.release), from: s.release, to: s.at }))
     const gathering = spits.find((s) => live(s) && t >= s.windup && t < s.release) || null
-    return { phase, x, z, yaw, speed, clip, patch: amount > 0 ? { x: def.target[0], z: def.target[1], r: R.patchR, amount, seed: def.seed } : null,
+    return { phase, x, z, yaw, speed, clip, patch: amount > 0 ? { x: def.target[0], z: def.target[1], r: R.patchR * (def.heightM ?? R.refH) / R.refH, amount, seed: def.seed } : null,
       tainted: done.length >= 1 && fade < 1, dropped: done.length >= 2, healed: H !== null && t >= H, spitsDone: done.length, flying, gathering: gathering ? { k: gathering.k, u: (t - gathering.windup) / R.windup } : null,
       hostile: phase === 'anmarsch' || phase === 'spucken' || phase === 'lauern', target: phase !== 'gone' && !(H !== null && t >= H) && t >= def.t0 }
   }

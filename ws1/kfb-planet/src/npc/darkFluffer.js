@@ -22,12 +22,14 @@ import gunTex from '../assets/fluffer/prototypebits_texture.png?url'
 // zeigt in der Ruhehaltung +Z nach oben). Gemessen 21.10. an FrizzleBob v5b in Idle_A (test/out/npc/gun_measure.mjs): Lauf → Körper-Vorwärts, Oberseite → oben,
 // Ergebnis achsenparallel Euler XYZ (−90°, 0°, 180°). Gilt für alle Clips; kein Nachdrehen je Bild.
 export const GUN_SLOT = Object.freeze({ bone: 'handslot.r', rotation: Object.freeze([0, Math.SQRT1_2, Math.SQRT1_2, 0]), reason: 'kit-axis-mismatch' })
-export const SPIT = Object.freeze({ drops: [3, 5], dropR: [0.4, 1.0], ballR: 0.075, trail: 0.13, spread: 0.055, arc: [0.3, 0.14], minRise: 0.42, ink: '#1f1a14', turnRate: 5 })
+// SPIT ist auf refH 1,1 m abgestimmt; Größenwerte (ballR, trail, spread, arc[0], minRise) ziehen mit heightM / refH mit (WS0 V-616). Trefferradius bleibt.
+export const SPIT = Object.freeze({ drops: [3, 5], dropR: [0.4, 1.0], ballR: 0.075, trail: 0.13, spread: 0.055, arc: [0.3, 0.14], minRise: 0.42, ink: '#1f1a14', turnRate: 5, refH: 1.1, targetR: 0.7 })
 export const darkFlufferLog = { create: 0, update: 0, dispose: 0 }
 
 export function createDarkFluffer(options) {
   darkFlufferLog.create++
   const def = options.def, sim = createFlufferSim({ ...def, t0: options.t0 ?? 0 })
+  const sk = (def.heightM || SPIT.refH) / SPIT.refH // Größenfaktor für Tropfen und Bogen (WS0 V-616)
   const root = new THREE.Group(); root.name = 'dark-fluffer:' + def.id
   const holder = new THREE.Group(); holder.name = 'fluffer-holder'; holder.visible = false; root.add(holder)
   const S = { status: 'LOADING', error: null, mixer: null, actions: {}, clip: null, yaw: null, mouth: null, scale: 1, prevT: null, t: 0, events: [], gun: null, gunOn: false, offTarget: null, patchKey: '', heals: 0, hops: [], hop: { body: null, y1: null, y0: null, last: -Infinity } }
@@ -36,7 +38,7 @@ export function createDarkFluffer(options) {
   const pools = sim.spits.map((s) => { let h = (def.seed * 9301 + s.k * 49297) % 233280; const rnd = () => (h = (h * 9301 + 49297) % 233280) / 233280
     const n = SPIT.drops[0] + Math.floor(rnd() * (SPIT.drops[1] - SPIT.drops[0] + 1))
     return Array.from({ length: n }, (_, j) => { const m = new THREE.Mesh(dropGeo, inkMat); m.visible = false; m.castShadow = true; m.frustumCulled = false; root.add(m)
-      return { m, r: SPIT.ballR * (SPIT.dropR[0] + (SPIT.dropR[1] - SPIT.dropR[0]) * rnd() ** 1.6), off: [(rnd() - 0.5) * 2 * SPIT.spread, (rnd() - 0.5) * 2 * SPIT.spread, (rnd() - 0.5) * 2 * SPIT.spread], lag: (j / Math.max(1, n - 1)) * SPIT.trail } }) })
+      return { m, r: SPIT.ballR * sk * (SPIT.dropR[0] + (SPIT.dropR[1] - SPIT.dropR[0]) * rnd() ** 1.6), off: [(rnd() - 0.5) * 2 * SPIT.spread * sk, (rnd() - 0.5) * 2 * SPIT.spread * sk, (rnd() - 0.5) * 2 * SPIT.spread * sk], lag: (j / Math.max(1, n - 1)) * SPIT.trail } }) })
   const release = new Map() // k → Maul-Lage beim Abgang
 
   const loader = new GLTFLoader()
@@ -68,7 +70,8 @@ export function createDarkFluffer(options) {
   function registerTarget() {
     if (S.offTarget || S.status !== 'OK') return
     const O = options.orchard?.(); if (!O?.addTarget) return
-    S.offTarget = O.addTarget({ id: def.id, r: 0.7, pos: () => (sim.at(S.t).target ? [holder.position.x, holder.position.y + (def.heightM || 1.1) * 0.5, holder.position.z] : null),
+    S.offTarget = O.addTarget({ id: def.id, r: SPIT.targetR, // Trefferradius bleibt (WS0 V-616: Heilen nicht schwerer)
+      pos: () => (sim.at(S.t).target ? [holder.position.x, holder.position.y + (def.heightM || 1.1) * 0.5, holder.position.z] : null),
       onHit: () => { if (sim.heal(S.t)) S.heals++ }, priority: () => !!sim.at(S.t).hostile }) // Georg 21.10. (a): feindlich am Stamm → Schuss nimmt den Ghost statt der Krone
   }
   function world(e) {
@@ -113,7 +116,7 @@ export function createDarkFluffer(options) {
         pool.forEach((d) => { d.m.visible = true; d.m.position.set(m.x + d.off[0] * u, m.y + d.off[1] * u, m.z + d.off[2] * u); d.m.scale.setScalar(Math.max(0.001, d.r * (0.3 + 0.7 * u))) }) }
       for (const f of st.flying) { const pool = pools[f.k], a0 = release.get(f.k); if (!a0) continue
         _a.fromArray(a0); _c.set(f.to[0], options.groundAt(f.to[0], f.to[1]), f.to[1])
-        const dist = Math.hypot(_c.x - _a.x, _c.z - _a.z), top = Math.max(_a.y + SPIT.minRise, Math.max(_a.y, _c.y) + SPIT.arc[0] + dist * SPIT.arc[1])
+        const dist = Math.hypot(_c.x - _a.x, _c.z - _a.z), top = Math.max(_a.y + SPIT.minRise * sk, Math.max(_a.y, _c.y) + SPIT.arc[0] * sk + dist * SPIT.arc[1])
         _b.set((_a.x + _c.x) / 2, 2 * top - (_a.y + _c.y) / 2, (_a.z + _c.z) / 2) // Kontrollpunkt: Scheitel der Bézier-Kurve liegt auf „top“
         pool.forEach((d) => { const k = Math.max(0, f.u - d.lag); if (k <= 0) return; const q = 1 - k
           d.m.visible = true; d.m.position.set(q * q * _a.x + 2 * q * k * _b.x + k * k * _c.x + d.off[0], q * q * _a.y + 2 * q * k * _b.y + k * k * _c.y + d.off[1], q * q * _a.z + 2 * q * k * _b.z + k * k * _c.z + d.off[2]); d.m.scale.setScalar(d.r) }) }

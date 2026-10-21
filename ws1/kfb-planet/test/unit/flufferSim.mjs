@@ -36,4 +36,7 @@ C.deterministic = JSON.stringify(collect(createFlufferSim(def), 400, 1 / 60)) ==
 C.otherSeedOtherImpacts = JSON.stringify(createFlufferSim({ ...def, seed: def.seed + 1 }).spits.map((s) => s.at)) !== JSON.stringify(a.spits.map((s) => s.at))
 C.eventsOnceWithCoarseSteps = JSON.stringify(collect(createFlufferSim(def), 400, 0.5).map((e) => [e.type, e.k ?? null])) === JSON.stringify(evA.map((e) => [e.type, e.k ?? null]))
 C.impactsNearTarget = impacts.every((e) => Math.hypot(e.at[0] - def.target[0], e.at[1] - def.target[1]) <= FLUFFER.impactJitter + 1e-9)
+// WS0 V-616: Fleck zieht mit der Größe mit (patchR gilt für refH 1,1 m); Daten heightM 0,8
+const pr = (h) => { const s = createFlufferSim({ ...def, heightM: h }); return s.at(s.spits[0].impact + 0.01).patch.r }
+C.patchScalesWithHeight = def.heightM === 0.8 && Math.abs(pr(0.8) - FLUFFER.patchR * 0.8 / FLUFFER.refH) < 1e-9 && Math.abs(pr(1.1) - FLUFFER.patchR) < 1e-9
 process.exit(report('unit-flufferSim (WS-NPC Phase C P1)', C, { arrive: +a.arrive.toFixed(2), spits: a.spits.map((s) => +s.impact.toFixed(2)), healed, types: types.join(',') }))
