@@ -1,0 +1,112 @@
+<title>Flächen-Katalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4efe9;--card:#fffaf4;--ink:#2b211c;--muted:#7a6a60;--line:#e3d6c8;--acc:#c4572f;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1714;--card:#271f1b;--ink:#f2e7dd;--muted:#b3a194;--line:#3d322b;--acc:#f08a5d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1714;--card:#271f1b;--ink:#f2e7dd;--muted:#b3a194;--line:#3d322b;--acc:#f08a5d;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 "Nunito Sans",system-ui,sans-serif;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:24px 48px}
+h1{font:600 30px/1.1 Fredoka,system-ui,sans-serif;margin:0 0 6px;text-wrap:balance}
+.lead{color:var(--muted);max-width:68ch;margin:0 0 16px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+.bar button{font:600 14px "Nunito Sans",sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.bar button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h2{font:600 19px/1.2 Fredoka,system-ui,sans-serif;margin:0;display:flex;gap:10px;align-items:baseline}
+.card h2 b{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-size:15px;flex:none}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.views{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.views figure{margin:0;display:flex;flex-direction:column;gap:4px}
+.views figcaption{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+canvas{width:100%;height:auto;border-radius:8px;display:block;max-width:100%}
+.persp{border-radius:8px;overflow:hidden;aspect-ratio:16/11;background:linear-gradient(#e9c9a8,#f6d6b8 45%);position:relative;max-width:100%}
+.persp canvas{position:absolute;left:-30%;width:160%;top:28%;transform:perspective(320px) rotateX(64deg);transform-origin:50% 0;border-radius:0}
+.note{margin-top:22px;color:var(--muted);font-size:14px;max-width:70ch}
+</style>
+<div class="wrap">
+  <h1>Flächen-Katalog</h1>
+  <p class="lead">Sechs Arten, die Farbflächen im Gelände zu formen, in unserer Palette. Links von oben, rechts schräg wie aus der Spielkamera. Sag einfach den Buchstaben, oder z. B. „C, aber mit den Kieseln aus F“.</p>
+  <div class="bar" role="group" aria-label="Palette und Zufallswert">
+    <button type="button" data-pal="mesa" aria-pressed="true">Mesa</button>
+    <button type="button" data-pal="moos" aria-pressed="false">Moos</button>
+    <button type="button" id="reseed">Neuer Zufallswert</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="note">Hinweis: Das sind flache Studien ohne Licht und Gelände-Höhe. Sie zeigen nur, wie die Flächen geformt und verteilt sind. Die gewählte Variante baue ich danach im 3D-Gelände ein.</p>
+</div>
+<script>
+const PAL = {
+  mesa: { base:'#cc6c42', low:'#a54d38', light:'#f0c58a', pale:'#f3d9b0', dark:'#8c3f2f', water:'#3fa7a0' },
+  moos: { base:'#7fb35a', low:'#4f8a45', light:'#cfe08a', pale:'#eef2c4', dark:'#3d5e3a', water:'#4aa6c8' },
+};
+const VARS = [
+  { id:'A', name:'Kleckse (v3, bisher)', text:'Runde Blobs, per smooth-min verschmolzen, in drei Größen plus Tupfen. Unabhängig von der Landschaft.' },
+  { id:'B', name:'Landform (v4, bisher)', text:'Farbe folgt Mulden und Rücken: helle Talbänder, dunklerer Unterhang, hellere Kuppen.' },
+  { id:'C', name:'Ruhige Großflächen (Noble)', text:'Zwei bis drei große, ruhige Flächen mit weiten Schwüngen, Grundton überwiegt. In jeder Fläche eine kleinere Insel. Keine Tupfen.' },
+  { id:'D', name:'Pinselstriche', text:'Gestreckte, an den Enden spitz auslaufende Striche entlang der Höhenlinien, leicht überlappend, wie gemalt.' },
+  { id:'E', name:'Verschachtelte Kissen', text:'Inseln mit einer zweiten, versetzten Form darin (Licht-Kissen). Wie gemalte Hügel, Form-in-Form.' },
+  { id:'F', name:'Pfützen und Kiesel', text:'Ruhiger Grund, wenige gegossene dunkle Formen mit runden Lappen, an ihren Rändern kleine unregelmäßige Kiesel in Gruppen.' },
+];
+// --- simplex 2D (kompakt)
+let perm = new Uint8Array(512);
+function seedNoise(s){ const p=new Uint8Array(256); for(let i=0;i<256;i++)p[i]=i; let r=s*16807%2147483647||1; for(let i=255;i>0;i--){ r=r*16807%2147483647; const j=r%(i+1); [p[i],p[j]]=[p[j],p[i]]; } for(let i=0;i<512;i++)perm[i]=p[i&255]; }
+const G=[[1,1],[-1,1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1],[0,-1]];
+function sn(x,y){ const F=0.366025404,Gc=0.211324865; const s=(x+y)*F, i=Math.floor(x+s), j=Math.floor(y+s), t=(i+j)*Gc, x0=x-i+t, y0=y-j+t; const i1=x0>y0?1:0, j1=1-i1;
+  const x1=x0-i1+Gc, y1=y0-j1+Gc, x2=x0-1+2*Gc, y2=y0-1+2*Gc; const ii=i&255, jj=j&255; let n=0;
+  for(const [dx,dy,gi] of [[x0,y0,perm[ii+perm[jj]]],[x1,y1,perm[ii+i1+perm[jj+j1]]],[x2,y2,perm[ii+1+perm[jj+1]]]]){ let tt=0.5-dx*dx-dy*dy; if(tt>0){ tt*=tt; const g=G[gi&7]; n+=tt*tt*(g[0]*dx+g[1]*dy);} }
+  return 70*n; }
+const fbm=(x,y,o=4)=>{ let s=0,a=1,n=0; for(let k=0;k<o;k++){ s+=a*sn(x,y); n+=a; x*=2.03; y*=2.03; a*=0.5; } return s/n };
+const sstep=(a,b,x)=>{ const t=Math.min(1,Math.max(0,(x-a)/(b-a))); return t*t*(3-2*t) };
+const smin=(a,b,k)=>{ const h=Math.max(0,Math.min(1,0.5+0.5*(b-a)/k)); return b+(a-b)*h-k*h*(1-h) };
+const hash=(x,y)=>{ const t=Math.sin(x*127.1+y*311.7)*43758.5453; return t-Math.floor(t) };
+const hex=(h)=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mixc=(a,b,t)=>a.map((v,i)=>v+(b[i]-v)*t);
+// Blob-Feld: Union runder Formen je Zelle (wie v3), d<0 = innen
+function blobs(x,y,cs,pr,r0,r1,sd,lob=0.12,stretch=0.25){ const bx=Math.floor(x/cs), by=Math.floor(y/cs); let d=1e9;
+  for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){ const cx=bx+i, cy=by+j; if(hash(cx+sd,cy)>pr) continue; const h1=hash(cx*1.3+sd,cy*0.7), h2=hash(cx*0.7,cy*1.9+sd);
+    const px=(cx+0.5+(h1-0.5)*0.6)*cs, py=(cy+0.5+(h2-0.5)*0.6)*cs, rad=cs*(r0+(r1-r0)*hash(cx+3.1,cy-sd)); let qx=x-px, qy=y-py; const an=h1*6.283, ca=Math.cos(an), sa=Math.sin(an);
+    let ux=ca*qx-sa*qy, uy=sa*qx+ca*qy; ux*=1-stretch+2*stretch*h2; const l=Math.hypot(ux,uy)||1e-3; const lb=lob*sn(ux/l*1.3+h1*40,uy/l*1.3+h2*40);
+    d=smin(d,l-rad*(1+lb),rad*0.45); } return d; }
+const H=(x,y)=>fbm(x/260+11,y/260-7,3);
+const HL=(x,y)=>fbm(x/260+11,y/260-7,2);   // nur große Formen für Mulden/Rücken                    // Landschaftshöhe für B/D
+function shade(V,x,y,P){ // liefert [r,g,b]
+  const C={}; for(const k in P) C[k]=hex(P[k]);
+  const wx=x+9*sn(x/90+3,y/90-2), wy=y+9*sn(x/90-5,y/90+4);
+  if(V==='A'){ let c=C.base; if(blobs(wx,wy,120,0.6,0.32,0.5,1.7)<0) c=C.low; if(blobs(wx+37,wy-11,64,0.45,0.26,0.46,5.3)<0) c=C.light; if(blobs(wx-9,wy+23,28,0.3,0.22,0.42,8.1)<0) c=mixc(c,C.pale,0.7);
+    const dd=blobs(x,y,7,0.5*sstep(-0.15,0.65,sn(x/90,y/90)),0.12,0.24,2.2,0); if(dd<0) c=mixc(c,C.dark,0.45); return c; }
+  if(V==='B'){ const e=40, h0=HL(x,y), lap=(HL(x+e,y)+HL(x-e,y)+HL(x,y+e)+HL(x,y-e))/4-h0; const cv=lap/0.02+0.35*sn(wx/80,wy/80);
+    let c=C.base; if(cv>0.12) c=C.low; if(cv>0.55) c=mixc(C.light,C.low,0.25); if(cv<-0.7) c=C.pale; return c; }
+  if(V==='C'){ const big=fbm(wx/330+2,wy/330-4,2)+0.25*sn(wx/120,wy/120); let c=C.base;
+    if(big>0.18){ c=C.light; const isl=blobs(wx,wy,150,0.5,0.22,0.36,4.4,0.08,0.15); if(isl<0) c=C.pale; }
+    else if(big<-0.22){ c=C.low; const isl=blobs(wx+40,wy,150,0.5,0.22,0.36,9.9,0.08,0.15); if(isl<0) c=C.dark; }
+    return c; }
+  if(V==='D'){ // Striche entlang der Höhenlinien: Kapseln, ausgerichtet quer zum Gefälle, spitz zulaufend
+    let c=C.base; const cs=46, bx=Math.floor(x/cs), by=Math.floor(y/cs);
+    for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){ const cx=bx+i, cy=by+j, h1=hash(cx,cy), h2=hash(cx*1.7,cy*0.3); if(h1>0.62) continue;
+      const px=(cx+0.5+(h1-0.5)*0.8)*cs, py=(cy+0.5+(h2-0.5)*0.8)*cs; const e=3, gx=H(px+e,py)-H(px-e,py), gy=H(px,py+e)-H(px,py-e); const gl=Math.hypot(gx,gy)||1e-6; const tx=-gy/gl, ty=gx/gl;
+      const L=cs*(0.9+0.9*h2), W=cs*(0.16+0.12*h1); const qx=x-px, qy=y-py, u=qx*tx+qy*ty, v=-qx*ty+qy*tx; const t=Math.min(1,Math.abs(u)/L); const w=W*(1-t*t);
+      if(Math.abs(u)<L && Math.abs(v)<w) c = h2>0.5 ? mixc(c,C.light,0.85) : mixc(c,C.low,0.85); }
+    return c; }
+  if(V==='E'){ let c=C.base; const d1=blobs(wx,wy,190,0.6,0.3,0.46,3.3,0.1,0.2); if(d1<0){ c=C.low; const d2=blobs(wx-16,wy-22,190,0.6,0.3,0.46,3.3,0.1,0.2)+30; if(d2<0) c=C.light; const d3=blobs(wx-28,wy-38,190,0.6,0.3,0.46,3.3,0.1,0.2)+62; if(d3<0) c=C.pale; } return c; }
+  if(V==='F'){ let c=C.base; const pud=blobs(wx,wy,200,0.55,0.24,0.4,6.6,0.18,0.3); if(pud<0) c=mixc(C.dark,C.low,0.35);
+    else if(pud<34){ // Kiesel nur am Rand der Pfützen, in Gruppen, unregelmäßig
+      const cs=9, bx=Math.floor(x/cs), by=Math.floor(y/cs); for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){ const cx=bx+i, cy=by+j; const h=hash(cx+0.3,cy-0.7); if(h>0.55*(1-pud/34)) continue;
+        const px=(cx+0.5+(hash(cx,cy+5)-0.5)*0.7)*cs, py=(cy+0.5+(hash(cx+9,cy)-0.5)*0.7)*cs, r=cs*(0.16+0.22*hash(cx-2,cy+2)); const a=Math.atan2(y-py,x-px), rr=r*(1+0.28*Math.cos(3*a+h*6)+0.12*Math.cos(5*a));
+        if(Math.hypot(x-px,y-py)<rr) c = hash(cx,cy)>0.5 ? C.pale : C.dark; } }
+    else { const lt=blobs(wx+60,wy+30,140,0.35,0.2,0.34,2.8,0.08,0.2); if(lt<0) c=mixc(C.base,C.light,0.55); }
+    return c; }
+  return C.base; }
+function render(seed, pal){
+  seedNoise(seed); const P=PAL[pal], W=330, Hh=230, grid=document.getElementById('grid'); grid.innerHTML='';
+  for(const v of VARS){ const card=document.createElement('article'); card.className='card';
+    card.innerHTML=`<h2><b>${v.id}</b>${v.name}</h2><p>${v.text}</p><div class="views"><figure><canvas width="${W}" height="${Hh}"></canvas><figcaption>von oben</figcaption></figure><figure><div class="persp"><canvas width="${W}" height="${Hh}"></canvas></div><figcaption>schräg, wie im Spiel</figcaption></figure></div>`;
+    grid.appendChild(card); const [c1,c2]=card.querySelectorAll('canvas'); const ctx=c1.getContext('2d'), img=ctx.createImageData(W,Hh);
+    const S=2.2; for(let y=0;y<Hh;y++)for(let x=0;x<W;x++){ const col=shade(v.id,x*S,y*S,P), o=(y*W+x)*4; img.data[o]=col[0]; img.data[o+1]=col[1]; img.data[o+2]=col[2]; img.data[o+3]=255; }
+    ctx.putImageData(img,0,0); c2.getContext('2d').putImageData(img,0,0); } }
+let seed=7, pal='mesa';
+document.querySelectorAll('[data-pal]').forEach(b=>b.addEventListener('click',()=>{ pal=b.dataset.pal; document.querySelectorAll('[data-pal]').forEach(x=>x.setAttribute('aria-pressed', String(x===b))); render(seed,pal); }));
+document.getElementById('reseed').addEventListener('click',()=>{ seed=1+Math.floor(Math.random()*9999); render(seed,pal); });
+render(seed,pal);
+</script>

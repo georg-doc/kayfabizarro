@@ -1,0 +1,456 @@
+{
+ "rustwing_cruiser": [
+  {
+   "id": "turbine_center",
+   "type": "thrust",
+   "known": [
+    -0.002,
+    1.471,
+    -4.18
+   ],
+   "found": [
+    -0.002,
+    1.471,
+    -4.18
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.77
+  }
+ ],
+ "graffiti_jet_cruiser": [
+  {
+   "id": "pod_turbine_L",
+   "type": "thrust",
+   "known": [
+    1.44,
+    2.005,
+    -3.842
+   ],
+   "found": [
+    1.44,
+    2.005,
+    -3.842
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.91
+  },
+  {
+   "id": "pod_turbine_R",
+   "type": "thrust",
+   "known": [
+    -1.446,
+    2.004,
+    -3.842
+   ],
+   "found": [
+    -1.446,
+    2.004,
+    -3.842
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.91
+  },
+  {
+   "id": "exhaust_mid_L",
+   "type": "thrust",
+   "known": [
+    0.5,
+    1.745,
+    -3.538
+   ],
+   "found": [
+    0.5,
+    1.745,
+    -3.538
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.83
+  },
+  {
+   "id": "exhaust_mid_R",
+   "type": "thrust",
+   "known": [
+    -0.51,
+    1.749,
+    -3.537
+   ],
+   "found": [
+    -0.51,
+    1.749,
+    -3.537
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.84
+  }
+ ],
+ "street_racer_hoverbeast": [
+  {
+   "id": "jet_center_L",
+   "type": "thrust",
+   "known": [
+    0.517,
+    1.46,
+    -3.968
+   ],
+   "found": [
+    0.517,
+    1.46,
+    -3.968
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 1
+  },
+  {
+   "id": "jet_center_R",
+   "type": "thrust",
+   "known": [
+    -0.527,
+    1.474,
+    -3.967
+   ],
+   "found": [
+    -0.527,
+    1.474,
+    -3.967
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 1
+  },
+  {
+   "id": "wing_turbine_L",
+   "type": "thrust",
+   "known": [
+    2.384,
+    1.244,
+    -2.361
+   ],
+   "found": [
+    2.384,
+    1.244,
+    -2.361
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.81
+  },
+  {
+   "id": "wing_turbine_R",
+   "type": "thrust",
+   "known": [
+    -2.384,
+    1.243,
+    -2.364
+   ],
+   "found": [
+    -2.384,
+    1.243,
+    -2.364
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.78
+  }
+ ],
+ "crimson_flame_dragster": [
+  {
+   "id": "jet_upper_L",
+   "type": "thrust",
+   "known": [
+    0.813,
+    1.493,
+    -4.182
+   ],
+   "found": [
+    0.813,
+    1.493,
+    -4.182
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.97
+  },
+  {
+   "id": "jet_upper_R",
+   "type": "thrust",
+   "known": [
+    -0.819,
+    1.495,
+    -4.179
+   ],
+   "found": [
+    -0.819,
+    1.495,
+    -4.179
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.97
+  },
+  {
+   "id": "jet_lower_L",
+   "type": "thrust",
+   "known": [
+    1.661,
+    0.946,
+    -4.173
+   ],
+   "found": [
+    1.661,
+    0.946,
+    -4.173
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.97
+  },
+  {
+   "id": "jet_lower_R",
+   "type": "thrust",
+   "known": [
+    -1.668,
+    0.947,
+    -4.172
+   ],
+   "found": [
+    -1.668,
+    0.947,
+    -4.172
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.97
+  },
+  {
+   "id": "jet_center",
+   "type": "thrust",
+   "known": [
+    -0.003,
+    1.716,
+    -3.671
+   ],
+   "found": [
+    -0.003,
+    1.716,
+    -3.671
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.91
+  }
+ ],
+ "crimson_thunderjet": [
+  {
+   "id": "turbine_top_L",
+   "type": "thrust",
+   "known": [
+    0.917,
+    2.215,
+    -3.978
+   ],
+   "found": [
+    0.917,
+    2.215,
+    -3.978
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.96
+  },
+  {
+   "id": "turbine_top_R",
+   "type": "thrust",
+   "known": [
+    -0.927,
+    2.211,
+    -3.975
+   ],
+   "found": [
+    -0.927,
+    2.211,
+    -3.975
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.93
+  },
+  {
+   "id": "jet_lower_L",
+   "type": "thrust",
+   "known": [
+    1.087,
+    1.001,
+    -4.025
+   ],
+   "found": [
+    1.087,
+    1.001,
+    -4.025
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.94
+  },
+  {
+   "id": "jet_lower_R",
+   "type": "thrust",
+   "known": [
+    -1.095,
+    1.003,
+    -4.025
+   ],
+   "found": [
+    -1.095,
+    1.003,
+    -4.025
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.93
+  },
+  {
+   "id": "pipe_side_L1",
+   "type": "thrust",
+   "known": [
+    1.451,
+    1.03,
+    -4.093
+   ],
+   "found": [
+    1.451,
+    1.03,
+    -4.093
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.84
+  },
+  {
+   "id": "pipe_side_R1",
+   "type": "thrust",
+   "known": [
+    -1.464,
+    1.03,
+    -4.089
+   ],
+   "found": [
+    -1.464,
+    1.03,
+    -4.089
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.84
+  },
+  {
+   "id": "pipe_side_L2",
+   "type": "thrust",
+   "known": [
+    1.498,
+    1.358,
+    -4.096
+   ],
+   "found": [
+    1.498,
+    1.358,
+    -4.096
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.47
+  },
+  {
+   "id": "pipe_side_R2",
+   "type": "thrust",
+   "known": [
+    -1.519,
+    1.359,
+    -4.111
+   ],
+   "found": [
+    -1.519,
+    1.359,
+    -4.111
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.54
+  },
+  {
+   "id": "dome_mid_L",
+   "type": "fan",
+   "known": [
+    0.859,
+    1.509,
+    -3.975
+   ],
+   "found": [
+    0.859,
+    1.509,
+    -3.975
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.42
+  },
+  {
+   "id": "dome_mid_R",
+   "type": "fan",
+   "known": [
+    -0.866,
+    1.508,
+    -3.975
+   ],
+   "found": [
+    -0.866,
+    1.508,
+    -3.975
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.42
+  }
+ ],
+ "ironclad_skycruiser": [
+  {
+   "id": "fan_L",
+   "type": "fan",
+   "known": [
+    1.36,
+    1.05,
+    -4.034
+   ],
+   "found": [
+    1.36,
+    1.05,
+    -4.034
+   ],
+   "dist": 0,
+   "dr": 0,
+   "conf": 0.71
+  },
+  {
+   "id": "fan_R",
+   "type": "fan",
+   "known": [
+    -1.364,
+    1.05,
+    -4.028
+   ],
+   "found": [
+    -1.364,
+    1.05,
+    -4.028
+   ],
+   "dist": 0.001,
+   "dr": 0,
+   "conf": 0.72
+  }
+ ]
+}

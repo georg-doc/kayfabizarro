@@ -1,0 +1,257 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "crimson_thunderjet",
+ "decision": "V-321 v3 (Georg 15.10.: a bit smaller than v2, ears may fold/poke through; one size for medium rigs)",
+ "date": "2026-10-16",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "03 Donner-Jet",
+ "meshy_name": "Crimson Thunderjet",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "open",
+ "files": {
+  "browser": "crimson_thunderjet_browser.v3.glb",
+  "check_image": "crimson_thunderjet_anker_pruefbild.jpg (v1 scale; anchor layout identical, all positions x1.50)",
+  "receipt": "crimson_thunderjet_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Crimson_Thunderjet_1015062652_texture.glb (unchanged, sha256 87b855f64f8ad3d27ea11214f382eb5d376b0f0563d773f34408847427064c25)",
+  "browser_v1": "crimson_thunderjet_browser.glb",
+  "browser_v2": "crimson_thunderjet_browser.v2.glb"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 4.425,
+  "note": "V-321 v3 scale: racers 4.4250, haulers 5.7525 rig per Meshy unit (= v1 x 1.50; v2 was x1.92; haulers keep their extra x1.3)"
+ },
+ "dimensions": {
+  "length": [
+   8.399,
+   5.177
+  ],
+  "width": [
+   3.6836,
+   2.27
+  ],
+  "height": [
+   2.7678,
+   1.706
+  ],
+  "belly_clearance_centre": [
+   0.0,
+   0.0
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "crimson_thunderjet": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0.0,
+    1.3933,
+    -1.11
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    2.1233,
+    0.0,
+    -1.11
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    0.9738,
+    0.6288,
+    2.6895
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -0.9738,
+    0.6315,
+    2.6895
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    1.1057,
+    0.4151,
+    -2.6895
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -1.1057,
+    0.4151,
+    -2.6895
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0.0,
+    4.962,
+    -10.506
+   ],
+   "target": [
+    0.0,
+    1.5225,
+    0.0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -1.8456,
+    0.0,
+    -4.2022
+   ],
+   [
+    1.838,
+    2.7678,
+    4.1967
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0.0,
+    1.3839,
+    -0.0027
+   ],
+   "half_extents": [
+    1.5471,
+    1.2454,
+    4.0316
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "OPEN cockpit (roadster): seat + roll hoop visible; hop-in-hidden shows an empty seat; conflicts with Georg 15.10. \"ohne Cabrio-Situation\"",
+  "Front turbine intake fused (spin only via shader/decal)"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    0.9738,
+    0.6288,
+    2.6895
+   ],
+   "underside_clearance": 0.6288
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -0.9738,
+    0.6315,
+    2.6895
+   ],
+   "underside_clearance": 0.6315
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    1.1057,
+    0.4151,
+    -2.6895
+   ],
+   "underside_clearance": 0.4151
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -1.1057,
+    0.4151,
+    -2.6895
+   ],
+   "underside_clearance": 0.4151
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.52-0.90 rig)",
+ "version": "v3",
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.7,
+  "note": "medium = this file (FrizzleBob v5b / Rig_Medium seated in 02: body and head inside, ears poke through the roof - allowed, V-321). large = PROPOSAL only, re-derived vs the v3 base with the v2 method: Orc Brute (Rig_Large) needs the car x1.70 larger again (smallest x2.545 of v1 with head >= 5 cm under the roof in 02, 2.545/1.50 = 1.697, rounded up)"
+ },
+ "seat_fit": {
+  "reference_vehicle": "crimson_flame_dragster",
+  "figure": "FB_TEMPLATE_LOOK_v5b.glb (Rig_Medium, ears included)",
+  "pose": "KayKit Character Animations 1.1 · Rig_Medium_Simulation.glb · Sit_Chair_Idle @1.0 s",
+  "placement": "pelvis x/z on kfb_driver_hidden, facing +Z; lowest foot on the hull floor (raycast down from kfb_driver_hidden)",
+  "method": "three.js Raycaster against the 100k-tri browser hull (same seat.js as v2): inside = first hit upward is an exit face; ears measured separately (height above the outer hull surface, ray down from above)",
+  "criteria": "V-321: body and head (without ears) inside, shoulders inside the side walls, hips above the floor; ears may fold or poke through the roof",
+  "chosen_factor_vs_v1": 1.5,
+  "margins_at_chosen_in_02": {
+   "roof_over_head_without_ears": [
+    0.2211,
+    0.136
+   ],
+   "ears_above_roof_max": [
+    0.5477,
+    0.338
+   ],
+   "ear_length_vertical": [
+    0.8133,
+    0.501
+   ],
+   "ear_vertices_outside_share": 0.659,
+   "shoulder_wall_left": [
+    0.8369,
+    0.516
+   ],
+   "shoulder_wall_right": [
+    0.8531,
+    0.526
+   ],
+   "hips_over_floor": [
+    0.2162,
+    0.133
+   ],
+   "body_samples_outside": "0 of 1873",
+   "pairs": "[rig units, metres]"
+  },
+  "note": "same factor applied to all 11 racers (relative sizes kept); only 02 is measured. Ears: WS1 may bend ear.l/r.1-3 while driving (hop-in-hidden hides the figure anyway)"
+ },
+ "v3_build": {
+  "from": "v1 browser GLB rescaled x1.50 about the ground origin (geometry, UVs, simplification identical to v1; same v2_export code path)",
+  "bytes": 3610448,
+  "sha256": "4757ac0c6cd40a2a69a1b025653aa04df7e91d2bbacb4ac6904f074b96db7adc",
+  "tris": 100000,
+  "v1_sha256": "b13d5bb6f2546da2acb3e1e98b5e46a208bb8697e2385140852e54cab54e245b",
+  "textures_replaced": null
+ }
+}

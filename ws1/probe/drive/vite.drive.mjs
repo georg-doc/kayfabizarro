@@ -1,0 +1,1 @@
+export default { logLevel: 'warn', build: { outDir: '/Users/georgvonwestphalen/kfb-ws1/probe/drive/out', emptyOutDir: true, minify: false, rollupOptions: { external: ['three'], output: { globals: { three: 'THREE' } } }, lib: { entry: '/Users/georgvonwestphalen/kfb-ws1/probe/drive/entry.js', name: 'KFBDrive', formats: ['iife'], fileName: () => 'kfb-drive.k2t.js' } } }

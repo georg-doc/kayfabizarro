@@ -1,0 +1,152 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Rig-Umfrage</title>
+<style>html,body{margin:0;background:#888}</style>
+<script type="importmap">{"imports":{"three":"/kfb-planet-t439/node_modules/three/build/three.module.js","three/addons/":"/kfb-planet-t439/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Düsen-Umfrage im Browser (rig-extra r1): Heck-Höhenbild + Basisfarbe von der GPU, Marker-Prüfbilder, Kontaktbogen, Materialwerte.
+// GLB-Raum: +Z vorn, +X links, +Y oben. Heckansicht: Bild-rechts = -X, Bild-oben = +Y, Höhe h = -z.
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping
+renderer.setPixelRatio(1); document.body.appendChild(renderer.domElement)
+const loader = new GLTFLoader(), cache = new Map()
+
+async function load(id) {
+  if (cache.has(id)) return cache.get(id)
+  const g = await loader.loadAsync('glb/' + id + '.glb')
+  const scn = g.scene; scn.updateMatrixWorld(true)
+  cache.set(id, scn); return scn
+}
+const b64 = (arr) => { const u8 = new Uint8Array(arr.buffer, arr.byteOffset, arr.byteLength); let s = ''; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s) }
+
+// Höhe (-z) und Basisfarbe je Pixel, orthografisch von hinten, px GLB-Einheiten je Pixel
+const HVERT = `varying vec3 vW; varying vec2 vUv; void main(){ vUv = uv; vec4 w = modelMatrix * vec4(position,1.); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`
+const HFRAG = `uniform float uTop; varying vec3 vW; void main(){ gl_FragColor = vec4(uTop > 0.5 ? vW.y : -vW.z, vW.x, vW.y, 1.0); }`
+const CFRAG = `uniform sampler2D map; varying vec2 vUv; void main(){ gl_FragColor = vec4(texture2D(map, vUv).rgb, 1.0); }`
+window.rasterRear = (id, px = 0.01) => window.raster(id, 'rear', px)
+// Draufsicht: Bild-rechts = -X, Bild-oben = +Z, Höhe h = y
+window.raster = async (id, view = 'rear', px = 0.01) => {
+  const top = view === 'top'
+  const scn = await load(id), box = new THREE.Box3().setFromObject(scn), m = 3 * px
+  const umin = -box.max.x - m, umax = -box.min.x + m, wmin = (top ? box.min.z : box.min.y) - m, wmax = (top ? box.max.z : box.max.y) + m
+  const nx = Math.ceil((umax - umin) / px), ny = Math.ceil((wmax - wmin) / px)
+  // Kamera bei -Z, Blick +Z: Bild-rechts = -X (passt zu u = -x)
+  const cam = new THREE.OrthographicCamera(umin, umin + nx * px, wmax, wmax - ny * px, 0.01, 100)
+  if (top) { cam.position.set(0, box.max.y + 10, 0); cam.up.set(0, 0, 1); cam.lookAt(0, box.max.y - 10, 0) }
+  else { cam.position.set(0, 0, box.min.z - 10); cam.up.set(0, 1, 0); cam.lookAt(0, 0, box.min.z + 10) }
+  // Kamera-rechts = -X ⇒ Kamera-x = -x = u
+  cam.left = umin; cam.right = umin + nx * px; cam.top = wmax; cam.bottom = wmax - ny * px; cam.updateProjectionMatrix()
+  const hMat = new THREE.ShaderMaterial({ vertexShader: HVERT, fragmentShader: HFRAG, uniforms: { uTop: { value: top ? 1 : 0 } }, side: THREE.DoubleSide })
+  const scene = new THREE.Scene(); const holder = scn.clone(true); scene.add(holder)
+  const mats = []; holder.traverse((o) => { if (o.isMesh) { mats.push([o, o.material]); o.material = hMat } })
+  const rt = new THREE.WebGLRenderTarget(nx, ny, { type: THREE.FloatType, format: THREE.RGBAFormat, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, samples: 0 })
+  renderer.setClearColor(0x000000, 0); renderer.setRenderTarget(rt); renderer.clear(); renderer.render(scene, cam)
+  const hb = new Float32Array(nx * ny * 4); renderer.readRenderTargetPixels(rt, 0, 0, nx, ny, hb)
+  // Farbe (unbeleuchtet, Textur roh)
+  for (const [o, mt] of mats) o.material = new THREE.ShaderMaterial({ vertexShader: HVERT, fragmentShader: CFRAG, uniforms: { map: { value: mt.map } }, side: THREE.DoubleSide })
+  const rt8 = new THREE.WebGLRenderTarget(nx, ny, { type: THREE.UnsignedByteType, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter })
+  renderer.setRenderTarget(rt8); renderer.clear(); renderer.render(scene, cam)
+  const cb = new Uint8Array(nx * ny * 4); renderer.readRenderTargetPixels(rt8, 0, 0, nx, ny, cb)
+  renderer.setRenderTarget(null); rt.dispose(); rt8.dispose()
+  // Zeilen umdrehen (GL: unten zuerst) → Bildzeile 0 = oben
+  const H = new Float32Array(nx * ny), RGB = new Uint8Array(nx * ny * 3), COV = new Uint8Array(nx * ny)
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
+    const s = (ny - 1 - j) * nx + i, k = j * nx + i
+    COV[k] = hb[4 * s + 3] > 0.5 ? 1 : 0; H[k] = COV[k] ? hb[4 * s] : -1e9
+    RGB[3 * k] = cb[4 * s]; RGB[3 * k + 1] = cb[4 * s + 1]; RGB[3 * k + 2] = cb[4 * s + 2]
+  }
+  return { nx, ny, px, umin, wmax, bbox: { min: box.min.toArray(), max: box.max.toArray() }, H: b64(H), RGB: b64(RGB), COV: b64(COV) }
+}
+
+// Bühne wie render_path: Hemisphäre 0xfff4e0/0x3a3226 1.25 + Sonne 1.8, NoToneMapping, sRGB
+function stage(bg = 0xb9b4aa) {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(bg)
+  scene.add(new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25))
+  const sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(6, 10, -4); scene.add(sun); scene.add(sun.target)
+  return scene
+}
+function markers(anchors, scale = 1) {
+  const g = new THREE.Group()
+  for (const a of anchors) {
+    const col = a.type === 'fan' ? 0x00b4ff : 0x00ff40
+    const dir = new THREE.Vector3(...a.dir).normalize(), q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir)
+    const ring = new THREE.Mesh(new THREE.RingGeometry(a.r * 0.92, a.r * 1.08 + 0.012 * scale, 40), new THREE.MeshBasicMaterial({ color: col, side: THREE.DoubleSide, depthTest: false, transparent: true }))
+    ring.position.set(...a.pos); ring.quaternion.copy(q); ring.renderOrder = 10; g.add(ring)
+    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.03 * scale, 10, 8), new THREE.MeshBasicMaterial({ color: 0xff00ff, depthTest: false, transparent: true }))
+    dot.position.set(...a.pos); dot.renderOrder = 11; g.add(dot)
+    const p0 = new THREE.Vector3(...a.pos), p1 = p0.clone().addScaledVector(dir, 0.9 * scale)
+    const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints([p0, p1]), new THREE.LineBasicMaterial({ color: 0xff00ff, depthTest: false, transparent: true }))
+    ln.renderOrder = 11; g.add(ln)
+  }
+  return g
+}
+// Prüfbild: links Heck (ortho), rechts 3/4 von hinten-oben-links (perspektivisch)
+window.anchorShots = async (id, anchors, W = 900, Hh = 700, zoom = null) => {
+  const scn = await load(id), box = new THREE.Box3().setFromObject(scn), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3())
+  const out = []
+  renderer.setSize(W, Hh)
+  // Heck ortho
+  { const scene = stage(); scene.add(scn); scene.add(markers(anchors))
+    let half = Math.max(size.x / 2 * Hh / W, size.y / 2) * 1.08, cx = c.x, cy = c.y
+    if (zoom) { half = zoom.half; cx = zoom.c[0]; cy = zoom.c[1] }
+    const cam = new THREE.OrthographicCamera(-half * W / Hh, half * W / Hh, half, -half, 0.01, 200)
+    cam.position.set(cx, cy, box.min.z - 20); cam.lookAt(cx, cy, box.min.z + 5)
+    renderer.render(scene, cam); out.push(renderer.domElement.toDataURL('image/png')); scene.remove(scn) }
+  // Seite (von +X), hintere Hälfte, ortho: zeigt die Rohrachsen
+  { const scene = stage(); scene.add(scn); scene.add(markers(anchors))
+    const half = Math.max(size.y * 0.55, size.z * 0.27 * Hh / W), cz = box.min.z + size.z * 0.25
+    const cam = new THREE.OrthographicCamera(-half * W / Hh, half * W / Hh, half, -half, 0.01, 200)
+    cam.position.set(box.max.x + 20, c.y, cz); cam.lookAt(box.max.x - 5, c.y, cz)
+    renderer.render(scene, cam); out.push(renderer.domElement.toDataURL('image/png')); scene.remove(scn) }
+  // 3/4 hinten links oben
+  { const scene = stage(); scene.add(scn); scene.add(markers(anchors))
+    const cam = new THREE.PerspectiveCamera(30, W / Hh, 0.1, 400), d = Math.max(size.x, size.y, size.z) * 1.25
+    const t = new THREE.Vector3(c.x, c.y * 0.9, box.min.z + size.z * 0.3)
+    cam.position.set(t.x + d * 0.55, t.y + d * 0.42, box.min.z - d * 0.75); cam.lookAt(t)
+    renderer.render(scene, cam); out.push(renderer.domElement.toDataURL('image/png')); scene.remove(scn) }
+  return out
+}
+// Kontaktbogen-Kachel: gleiche Kamera für alle (3/4 vorn-links, Abstand fest in Rig-Einheiten), neutrales Licht
+window.sheetTile = async (id, W = 520, Hh = 400, dist = 15.5) => {
+  const scn = await load(id); renderer.setSize(W, Hh)
+  const scene = stage(0x9a968e); scene.add(scn)
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshLambertMaterial({ color: 0x7d786f })); ground.rotation.x = -Math.PI / 2; ground.position.y = -0.002; scene.add(ground)
+  const cam = new THREE.PerspectiveCamera(35, W / Hh, 0.1, 400), t = new THREE.Vector3(0, 1.6, -0.3)
+  cam.position.set(t.x + dist * 0.62, t.y + dist * 0.33, t.z + dist * 0.71); cam.lookAt(t)
+  renderer.render(scene, cam); const url = renderer.domElement.toDataURL('image/png'); scene.remove(scn); return url
+}
+// Material- und Texturwerte
+window.matStats = async (id) => {
+  const scn = await load(id), res = []
+  scn.traverse((o) => { if (!o.isMesh) return; for (const m of [].concat(o.material)) res.push(m) })
+  return res.map((m) => {
+    const img = m.map && m.map.image; let sat = null, lum = null, satW = null
+    if (img) { const cv = document.createElement('canvas'); cv.width = cv.height = 512; const cx = cv.getContext('2d'); cx.drawImage(img, 0, 0, 512, 512)
+      const d = cx.getImageData(0, 0, 512, 512).data; let S = 0, L = 0, n = 0
+      for (let i = 0; i < d.length; i += 4) { const r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b)
+        S += mx > 0 ? (mx - mn) / mx : 0; const lin = (c) => c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+        L += 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b); n++ }
+      sat = S / n; lum = L / n }
+    return { name: m.name, type: m.type, metalness: m.metalness, roughness: m.roughness, hasMetalRoughMap: !!m.metalnessMap, hasNormalMap: !!m.normalMap,
+      emissiveMap: !!m.emissiveMap, emissive: m.emissive && m.emissive.getHexString(), emissiveIntensity: m.emissiveIntensity, color: m.color.getHexString(),
+      mapSize: img ? [img.width, img.height] : null, texSatHSV: sat, texLumLinear: lum }
+  })
+}
+// Mittelwerte der Metall-/Rauheitskarte (G = Rauheit, B = Metall)
+window.mrStats = async (id) => {
+  const scn = await load(id); let m = null; scn.traverse((o) => { if (o.isMesh && !m) m = [].concat(o.material)[0] })
+  const img = m.metalnessMap && m.metalnessMap.image; if (!img) return null
+  const cv = document.createElement('canvas'); cv.width = cv.height = 512; const cx = cv.getContext('2d'); cx.drawImage(img, 0, 0, 512, 512)
+  const d = cx.getImageData(0, 0, 512, 512).data; let R = 0, M = 0, n = 0
+  for (let i = 0; i < d.length; i += 4) { R += d[i + 1] / 255; M += d[i + 2] / 255; n++ }
+  return { roughMean: R / n * m.roughness, metalMean: M / n * m.metalness }
+}
+// Eckpunkte in einer Box (Weltraum), für Rohrachsen
+window.verts = async (id, mn, mx) => { const scn = await load(id), out = [], v = new THREE.Vector3()
+  scn.traverse((o) => { if (!o.isMesh) return; const p = o.geometry.attributes.position; for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld)
+    if (v.x >= mn[0] && v.x <= mx[0] && v.y >= mn[1] && v.y <= mx[1] && v.z >= mn[2] && v.z <= mx[2]) out.push([+v.x.toFixed(4), +v.y.toFixed(4), +v.z.toFixed(4)]) } }); return out }
+window.ready = true
+</script></body></html>

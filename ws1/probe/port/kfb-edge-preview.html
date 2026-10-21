@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>kfb-edge Vorschau</title>
+<style>html,body{margin:0;background:#9cc3dc;overflow:hidden}#info{position:fixed;left:8px;top:6px;font:12px/1.3 system-ui;color:#223;background:#fff8;padding:3px 6px;border-radius:4px;white-space:pre}</style>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="kfb-edge.v1.js"></script>
+</head><body><div id="info"></div>
+<script>
+/* Vorschau kfb-edge.v1: Disco-Kreis (R 9,5) + Band-Box (hx 3,3, hz 3,65, R 0,6), flaches Gelände, Erdfleck aus kfbEdgeEarth, Stücke aus freeEnd. */
+const E = window.KFB_EDGE, W = 1600, H = 1000;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#9cc3dc');
+const PAL = { grass: '#7f9c57', earth: '#8a6646', clay: '#cfae86' };
+const ANCH = [
+  { name: 'disco', x: 0, z: 0, R: 9.5, y: 0, hx: 0, hz: 0, rot: 0, blend: 10, strength: 3.5 },
+  { name: 'band', x: 19.5, z: 4.5, R: 0.6, y: 0, hx: 3.3, hz: 3.65, rot: 0.45, blend: 6, strength: 2.5 },
+];
+/* Gelände: flach, Erdfleck je Anker über kfbEdgeEarth (gleiche Funktion wie später im Terrain-Fragment) */
+const gmat = new THREE.MeshStandardMaterial({ color: PAL.grass, roughness: 1 });
+gmat.onBeforeCompile = (sh) => {
+  sh.uniforms.uA = { value: ANCH.map((a) => new THREE.Vector4(a.x, a.z, a.R, a.y)) }; sh.uniforms.uC = { value: ANCH.map((a) => new THREE.Vector4(a.hx, a.hz, a.rot, a.blend)) };
+  sh.uniforms.uEarth = { value: new THREE.Color(PAL.earth) };
+  sh.vertexShader = 'varying vec3 vWp;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n vWp = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+  sh.fragmentShader = 'varying vec3 vWp; uniform vec4 uA[2]; uniform vec4 uC[2]; uniform vec3 uEarth;\n' + E.glsl + sh.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
+  { float e = max(kfbEdgeEarth(vWp.xz, uA[0], uC[0]), kfbEdgeEarth(vWp.xz, uA[1], uC[1])); float w = fwidth(e) + 1e-4; diffuseColor.rgb = mix(diffuseColor.rgb, uEarth, smoothstep(-w, w, e)); }`);
+};
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), gmat); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+/* Stücke je Anker: eine BufferGeometry */
+const reps = [];
+for (const a of ANCH) {
+  const r = E.freeEnd(a, { seed: 'preview:' + a.name, groundAt: () => a.y }); reps.push(r.report);
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(r.positions, 3)); geo.setAttribute('normal', new THREE.BufferAttribute(r.normals, 3)); geo.setAttribute('color', new THREE.BufferAttribute(r.colors, 3)); geo.setIndex(new THREE.BufferAttribute(r.index, 1));
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: PAL.clay, roughness: 0.92, metalness: 0, vertexColors: true })); m.castShadow = m.receiveShadow = true; scene.add(m);
+}
+scene.add(new THREE.HemisphereLight('#dfeeff', '#6b5a48', 0.45));
+const sun = new THREE.DirectionalLight('#fff4e0', 0.95); sun.position.set(-18, 30, 14); sun.target.position.set(8, 0, 2); sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096);
+Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 30, bottom: -30, near: 1, far: 90 }); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02; scene.add(sun, sun.target);
+/* drei Blicke: Übersicht oben, Nah an Disco- und Band-Kante unten */
+const HT = 560, HB = H - HT;
+const camA = new THREE.PerspectiveCamera(30, W / HT, 0.1, 300); camA.position.set(9.75, 31, 31); camA.lookAt(9.75, 0, 2.5);
+const camB = new THREE.PerspectiveCamera(42, (W / 2) / HB, 0.05, 200); camB.position.set(-2.8, 1.9, 13.0); camB.lookAt(-1.9, 0, 8.9);
+const camC = new THREE.PerspectiveCamera(42, (W / 2) / HB, 0.05, 200); camC.position.set(16.0, 2.3, 13.9); camC.lookAt(18.0, 0, 9.6);
+function render() {
+  renderer.setScissorTest(true);
+  for (const [cam, x, y, w, h] of [[camA, 0, HB, W, HT], [camB, 0, 0, W / 2, HB], [camC, W / 2, 0, W / 2, HB]]) { renderer.setViewport(x, y, w, h); renderer.setScissor(x, y, w, h); renderer.render(scene, cam) }
+}
+render();
+document.getElementById('info').textContent = reps.map((r) => `${r.seed}: Kacheln ${r.tiles_in} (geschnitten ${r.tiles_cut}, heil ${r.intact_tiles}, Rest ${r.intact_rest}) · Stücke ${r.pieces} · fehlend ${r.missing} · Dreiecke ${r.tris}`).join('\n');
+window.__report = reps; window.__ready = true;
+</script></body></html>

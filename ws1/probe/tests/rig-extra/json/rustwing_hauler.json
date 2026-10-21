@@ -1,0 +1,324 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "rustwing_hauler",
+ "decision": "V-321 v3 (Georg 15.10.: a bit smaller than v2, ears may fold/poke through; one size for medium rigs)",
+ "date": "2026-10-16",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "12 Rost-Laster",
+ "meshy_name": "Rustwing Hauler",
+ "class": "hauler",
+ "locomotion": "wheels",
+ "cockpit": "closed",
+ "files": {
+  "browser": "rustwing_hauler_browser.v3.glb",
+  "check_image": "rustwing_hauler_anker_pruefbild.jpg (v1 scale; anchor layout identical, all positions x1.50)",
+  "receipt": "rustwing_hauler_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Rustwing_Hauler_1015144030_texture.glb (unchanged, sha256 d9b9e12cc318a6ed1cee7a295ae2b544b244979ac3e41bea4e1b824f7c387c4d)",
+  "browser_v1": "rustwing_hauler_browser.glb",
+  "browser_v2": "rustwing_hauler_browser.v2.glb"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Wheels are fused into the body (single Meshy island, not cleanly cuttable): use invisible physics wheels at the kfb_wheel_* hub anchors; no wheel meshes to spin/steer."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the midpoint of the two axles",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 5.7525,
+  "note": "V-321 v3 scale: racers 4.4250, haulers 5.7525 rig per Meshy unit (= v1 x 1.50; v2 was x1.92; haulers keep their extra x1.3)"
+ },
+ "dimensions": {
+  "length": [
+   10.9437,
+   6.745
+  ],
+  "width": [
+   6.522,
+   4.02
+  ],
+  "height": [
+   5.1688,
+   3.186
+  ],
+  "belly_clearance_centre": [
+   0.081,
+   0.05
+  ],
+  "pairs": "[rig units, metres]",
+  "wheelbase": [
+   4.7745,
+   2.943
+  ],
+  "track_front": [
+   5.1804,
+   3.193
+  ],
+  "track_rear": [
+   5.15,
+   3.174
+  ],
+  "wheel_radius": [
+   1.4208,
+   0.876
+  ]
+ },
+ "nodes": {
+  "rustwing_hauler": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_wheel_<FL|FR|RL|RR>": "EMPTY hub anchor (no mesh), origin = hub centre, spin axis local +X, steer axis local +Y (front pair); extras kfb_fused=true, kfb_radius"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0.0,
+    2.8581,
+    0.489
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    3.3147,
+    0.0,
+    0.489
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_wheel_FL": {
+   "pos": [
+    2.5903,
+    1.4199,
+    2.3872
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_FR": {
+   "pos": [
+    -2.59,
+    1.4199,
+    2.3872
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RL": {
+   "pos": [
+    2.5752,
+    1.4199,
+    -2.3872
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RR": {
+   "pos": [
+    -2.5747,
+    1.4199,
+    -2.3872
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0.0,
+    7.9605,
+    -13.689
+   ],
+   "target": [
+    0.0,
+    2.8425,
+    0.0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -3.263,
+    0.0002,
+    -5.5547
+   ],
+   [
+    3.259,
+    5.1688,
+    5.389
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0.0,
+    2.5844,
+    -0.0828
+   ],
+   "half_extents": [
+    2.7393,
+    2.326,
+    5.253
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0,
+  "wheel_cylinders": {
+   "FL": {
+    "center": [
+     2.5903,
+     1.4199,
+     2.3872
+    ],
+    "radius": 1.4208,
+    "width": 0.7104,
+    "axis": "X"
+   },
+   "FR": {
+    "center": [
+     -2.59,
+     1.4199,
+     2.3872
+    ],
+    "radius": 1.4208,
+    "width": 0.7104,
+    "axis": "X"
+   },
+   "RL": {
+    "center": [
+     2.5752,
+     1.4199,
+     -2.3872
+    ],
+    "radius": 1.4208,
+    "width": 0.7104,
+    "axis": "X"
+   },
+   "RR": {
+    "center": [
+     -2.5747,
+     1.4199,
+     -2.3872
+    ],
+    "radius": 1.4208,
+    "width": 0.7104,
+    "axis": "X"
+   }
+  }
+ },
+ "known_limits": [
+  "Four big disc wheels half-covered by armour, fused: invisible physics wheels + hub anchors",
+  "Tall (2.12 m); large hauler scale (F_hauler)",
+  "Simplified with meshopt Permissive"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "wheels": {
+  "FL": {
+   "node": "kfb_wheel_FL",
+   "hub_glTF": [
+    2.5903,
+    1.4199,
+    2.3872
+   ],
+   "radius": 1.4208,
+   "fused": true
+  },
+  "FR": {
+   "node": "kfb_wheel_FR",
+   "hub_glTF": [
+    -2.59,
+    1.4199,
+    2.3872
+   ],
+   "radius": 1.4208,
+   "fused": true
+  },
+  "RL": {
+   "node": "kfb_wheel_RL",
+   "hub_glTF": [
+    2.5752,
+    1.4199,
+    -2.3872
+   ],
+   "radius": 1.4208,
+   "fused": true
+  },
+  "RR": {
+   "node": "kfb_wheel_RR",
+   "hub_glTF": [
+    -2.5747,
+    1.4199,
+    -2.3872
+   ],
+   "radius": 1.4208,
+   "fused": true
+  }
+ },
+ "wheel_split": {
+  "attempted": true,
+  "result": "not split",
+  "reason": "source is ONE connected island (3D scan-like Meshy mesh); wheel surfaces merge into arches/skirts/struts, no clean cut boundary. Per V-273 addendum: keep fused, WS1 uses invisible physics wheels + these hub anchors."
+ },
+ "version": "v3",
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.7,
+  "note": "medium = this file (FrizzleBob v5b / Rig_Medium seated in 02: body and head inside, ears poke through the roof - allowed, V-321). large = PROPOSAL only, re-derived vs the v3 base with the v2 method: Orc Brute (Rig_Large) needs the car x1.70 larger again (smallest x2.545 of v1 with head >= 5 cm under the roof in 02, 2.545/1.50 = 1.697, rounded up)"
+ },
+ "seat_fit": {
+  "reference_vehicle": "crimson_flame_dragster",
+  "figure": "FB_TEMPLATE_LOOK_v5b.glb (Rig_Medium, ears included)",
+  "pose": "KayKit Character Animations 1.1 · Rig_Medium_Simulation.glb · Sit_Chair_Idle @1.0 s",
+  "placement": "pelvis x/z on kfb_driver_hidden, facing +Z; lowest foot on the hull floor (raycast down from kfb_driver_hidden)",
+  "method": "three.js Raycaster against the 100k-tri browser hull (same seat.js as v2): inside = first hit upward is an exit face; ears measured separately (height above the outer hull surface, ray down from above)",
+  "criteria": "V-321: body and head (without ears) inside, shoulders inside the side walls, hips above the floor; ears may fold or poke through the roof",
+  "chosen_factor_vs_v1": 1.5,
+  "margins_at_chosen_in_02": {
+   "roof_over_head_without_ears": [
+    0.2211,
+    0.136
+   ],
+   "ears_above_roof_max": [
+    0.5477,
+    0.338
+   ],
+   "ear_length_vertical": [
+    0.8133,
+    0.501
+   ],
+   "ear_vertices_outside_share": 0.659,
+   "shoulder_wall_left": [
+    0.8369,
+    0.516
+   ],
+   "shoulder_wall_right": [
+    0.8531,
+    0.526
+   ],
+   "hips_over_floor": [
+    0.2162,
+    0.133
+   ],
+   "body_samples_outside": "0 of 1873",
+   "pairs": "[rig units, metres]"
+  },
+  "note": "same factor applied to all 11 racers (relative sizes kept); only 02 is measured. Ears: WS1 may bend ear.l/r.1-3 while driving (hop-in-hidden hides the figure anyway)"
+ },
+ "v3_build": {
+  "from": "v1 browser GLB rescaled x1.50 about the ground origin (geometry, UVs, simplification identical to v1; same v2_export code path)",
+  "bytes": 5669396,
+  "sha256": "ccb7fd0ccf1469108ca1af8ecafd43f0b1098345091caa560d2497c3f6efc618",
+  "tris": 119967,
+  "v1_sha256": "8f1849c3a4d83cfed04be119ca8e179e796e93d677d184619c25897e87e69569",
+  "textures_replaced": null
+ }
+}

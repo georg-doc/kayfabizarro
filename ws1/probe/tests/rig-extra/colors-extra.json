@@ -1,0 +1,635 @@
+{
+ "rule": "r1 wie thrust-survey/colors.mjs; r1b für die 8 neuen, wenn r1 im Bernstein-Rückfall landet: kühle Zweitfarbe ≥ 90° vom Karosserie-Hue (s ≥ 0,12, ≥ 0,8 %), sonst Rost/Kupfer → 18°, Messing → 42°. r1 (Kern Fahne-Hue +20°, L 0,88; Fahne = Karosserie-Hue satt; Rost/Messing/grau → kräftigster Akzent, sonst Bernstein 32°; Funken 35° bzw. Karosserie +30°)",
+ "vehicles": {
+  "rustwing_cruiser": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.639,
+   "metalMean": 0.747,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.136,
+   "texLumLin": 0.235,
+   "texLumSrgb": 0.458,
+   "body": "#83a6b2",
+   "bodyHue": 195,
+   "bodyShare": 0.09,
+   "greyBody": false,
+   "accent": null,
+   "glowR1": {
+    "core": "#ceddf3",
+    "plume": "#2ec7fa",
+    "spark": "#3d6eff"
+   },
+   "glow": {
+    "core": "#ceddf3",
+    "plume": "#2ec7fa",
+    "spark": "#3d6eff"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "graffiti_jet_cruiser": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.529,
+   "metalMean": 0.954,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.399,
+   "texLumLin": 0.053,
+   "texLumSrgb": 0.209,
+   "body": "#284875",
+   "bodyHue": 215,
+   "bodyShare": 0.43,
+   "greyBody": false,
+   "accent": "#ad7b36",
+   "glowR1": {
+    "core": "#ced1f3",
+    "plume": "#2e83fa",
+    "spark": "#4d3dff"
+   },
+   "glow": {
+    "core": "#ced1f3",
+    "plume": "#2e83fa",
+    "spark": "#4d3dff"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "street_racer_hoverbeast": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.828,
+   "metalMean": 0.553,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.383,
+   "texLumLin": 0.065,
+   "texLumSrgb": 0.232,
+   "body": "#564234",
+   "bodyHue": 25,
+   "bodyShare": 0.51,
+   "greyBody": true,
+   "accent": "#974891",
+   "glowR1": {
+    "core": "#f3cee3",
+    "plume": "#fa2ee9",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3cee3",
+    "plume": "#fa2ee9",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "crimson_flame_dragster": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.71,
+   "metalMean": 0.505,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.531,
+   "texLumLin": 0.079,
+   "texLumSrgb": 0.248,
+   "body": "#863028",
+   "bodyHue": 5,
+   "bodyShare": 0.63,
+   "greyBody": false,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3ddce",
+    "plume": "#fa3f2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3ddce",
+    "plume": "#fa3f2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "crimson_thunderjet": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.643,
+   "metalMean": 0.649,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.336,
+   "texLumLin": 0.059,
+   "texLumSrgb": 0.215,
+   "body": "#672228",
+   "bodyHue": 355,
+   "bodyShare": 0.35,
+   "greyBody": false,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3d7ce",
+    "plume": "#fa2e3f",
+    "spark": "#ff8e3d"
+   },
+   "glow": {
+    "core": "#f3d7ce",
+    "plume": "#fa2e3f",
+    "spark": "#ff8e3d"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "ironclad_skycruiser": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.541,
+   "metalMean": 0.972,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.221,
+   "texLumLin": 0.133,
+   "texLumSrgb": 0.362,
+   "body": "#5b483a",
+   "bodyHue": 25,
+   "bodyShare": 0.2,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1 (bestehend)",
+   "glowMatchesR1": true
+  },
+  "brasswing_roadster": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.686,
+   "metalMean": 0.915,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.218,
+   "texLumLin": 0.093,
+   "texLumSrgb": 0.296,
+   "body": "#836c4c",
+   "bodyHue": 35,
+   "bodyShare": 0.25,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f2f3ce",
+    "plume": "#fabd2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 35° → 42°",
+   "glowMatchesR1": null
+  },
+  "iron_phantom_hovercar": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.704,
+   "metalMean": 0.783,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.195,
+   "texLumLin": 0.08,
+   "texLumSrgb": 0.267,
+   "body": "#a37667",
+   "bodyHue": 15,
+   "bodyShare": 0.02,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3e5ce",
+    "plume": "#fa6b2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 15° → 18°",
+   "glowMatchesR1": null
+  },
+  "ironclad_wrecker": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.732,
+   "metalMean": 0.744,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.14,
+   "texLumLin": 0.104,
+   "texLumSrgb": 0.297,
+   "body": "#847157",
+   "bodyHue": 35,
+   "bodyShare": 0.02,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#ced6f3",
+    "plume": "#2e9ffa",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Zweitfarbe 207° (1.4 %)",
+   "glowMatchesR1": null
+  },
+  "jetbound_roadster": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.381,
+   "metalMean": 0.553,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.081,
+   "texLumLin": 0.116,
+   "texLumSrgb": 0.332,
+   "body": "#a5865b",
+   "bodyHue": 35,
+   "bodyShare": 0.04,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f2f3ce",
+    "plume": "#fabd2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 35° → 42°",
+   "glowMatchesR1": null
+  },
+  "rust_runner": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.699,
+   "metalMean": 0.712,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.181,
+   "texLumLin": 0.12,
+   "texLumSrgb": 0.33,
+   "body": "#504432",
+   "bodyHue": 35,
+   "bodyShare": 0.09,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f2f3ce",
+    "plume": "#fabd2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 35° → 42°",
+   "glowMatchesR1": null
+  },
+  "rustfire_interceptor": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.771,
+   "metalMean": 0.8,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.122,
+   "texLumLin": 0.072,
+   "texLumSrgb": 0.239,
+   "body": "#5b3e29",
+   "bodyHue": 25,
+   "bodyShare": 0.04,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3e5ce",
+    "plume": "#fa6b2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 25° → 18°",
+   "glowMatchesR1": null
+  },
+  "rustwing_hauler": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.833,
+   "metalMean": 0.776,
+   "emissiveMap": false,
+   "emissiveFactor": [
+    0,
+    0,
+    0
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.228,
+   "texLumLin": 0.081,
+   "texLumSrgb": 0.242,
+   "body": "#5a4537",
+   "bodyHue": 25,
+   "bodyShare": 0.13,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#f3e5ce",
+    "plume": "#fa6b2e",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Karosserie-Hue 25° → 18°",
+   "glowMatchesR1": null
+  },
+  "wasteland_beetle": {
+   "materials": 1,
+   "metallicFactor": 1,
+   "roughnessFactor": 1,
+   "mrMap": true,
+   "roughMean": 0.591,
+   "metalMean": 0.544,
+   "emissiveMap": true,
+   "emissiveFactor": [
+    1,
+    1,
+    1
+   ],
+   "normalMap": true,
+   "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "baseSize": [
+    2048,
+    2048
+   ],
+   "texSat": 0.396,
+   "texLumLin": 0.081,
+   "texLumSrgb": 0.254,
+   "body": "#5d4524",
+   "bodyHue": 35,
+   "bodyShare": 0.51,
+   "greyBody": true,
+   "accent": null,
+   "glowR1": {
+    "core": "#f3eece",
+    "plume": "#fa9b2e",
+    "spark": "#ffae3d"
+   },
+   "glow": {
+    "core": "#ceddf3",
+    "plume": "#2ec6fa",
+    "spark": "#ffae3d"
+   },
+   "glowRule": "r1b Zweitfarbe 195° (6.6 %)",
+   "glowMatchesR1": null
+  }
+ }
+}

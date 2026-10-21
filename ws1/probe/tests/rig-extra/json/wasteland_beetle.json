@@ -1,0 +1,310 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "wasteland_beetle",
+ "version": "v3",
+ "decision": "V-323 (scale V-321 v3)",
+ "date": "2026-10-16",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "Ödland-Käfer",
+ "meshy_name": "Wasteland Ghost Rider",
+ "class": "racer",
+ "locomotion": "wheels",
+ "cockpit": "closed (windows open, interior modelled)",
+ "files": {
+  "browser": "wasteland_beetle_browser.v3.glb",
+  "check_image": "wasteland_beetle_anker_pruefbild.jpg",
+  "image_34": "wasteland_beetle_34.png",
+  "bird_cut_test": "wasteland_beetle_vogel_schnitt_test.png",
+  "receipt": "wasteland_beetle_receipt.v3.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/Meshy Community/Meshy_AI_Wasteland_Ghost_Rider_1015153334_texture.glb (unchanged, CC0 Meshy community, sha256 684ae30619add6c1f943a79649b6e5997ed3c695bf579353d639b886a30d1e1e)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Wheels are fused into the body (not cleanly cuttable): use invisible physics wheels at the kfb_wheel_* hub anchors; no wheel meshes to spin/steer."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the midpoint of the two axles",
+  "source_front": "Meshy -X (rotated +90 deg about Y), checked in views: headlights/hood at -X"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 4.425,
+  "note": "V-321 v3 racer scale 4.425 rig per Meshy unit (= v1 2.95 x 1.5); same length as the v3 racers (Meshy exports normalised to 1.9 units)"
+ },
+ "dimensions": {
+  "length": [
+   8.3963,
+   5.175
+  ],
+  "width": [
+   5.2095,
+   3.211
+  ],
+  "height": [
+   5.4143,
+   3.337
+  ],
+  "height_note": "incl. the bird on the roof; roof surface ≈ 4.19 rig (2.58 m)",
+  "belly_clearance_centre": [
+   0.83,
+   0.512
+  ],
+  "pairs": "[rig units, metres]",
+  "wheelbase": [
+   5.5312,
+   3.409
+  ],
+  "track_front": [
+   4.2474,
+   2.618
+  ],
+  "track_rear": [
+   4.2903,
+   2.644
+  ],
+  "wheel_radius": [
+   1.0399,
+   0.641
+  ]
+ },
+ "nodes": {
+  "wasteland_beetle": "root, body mesh (single fused mesh incl. bird and wheels, 1 material)",
+  "kfb_entry": "empty, ground point beside the door (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_wheel_<FL|FR|RL|RR>": "EMPTY hub anchor (no mesh), origin = hub centre, spin axis local +X, steer axis local +Y (front pair); extras kfb_fused=true, kfb_radius"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    3.1584,
+    -0.1991
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    2.2699,
+    0,
+    -0.1991
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_wheel_FL": {
+   "pos": [
+    2.1186,
+    1.0786,
+    2.7656
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_FR": {
+   "pos": [
+    -2.1288,
+    1.0786,
+    2.7656
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RL": {
+   "pos": [
+    2.1407,
+    1.0388,
+    -2.7656
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RR": {
+   "pos": [
+    -2.1496,
+    1.0388,
+    -2.7656
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    7.777,
+    -10.504
+   ],
+   "target": [
+    0,
+    2.982,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -2.6086,
+    0.0014,
+    -4.0409
+   ],
+   [
+    2.6009,
+    5.4143,
+    4.3554
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    2.7071,
+    0.1573
+   ],
+   "half_extents": [
+    2.188,
+    2.4364,
+    4.0302
+   ],
+   "note": "rough box (gen.py factors; bird on the roof inside H)"
+  },
+  "ground_contact_y": 0.0,
+  "wheel_cylinders": {
+   "FL": {
+    "center": [
+     2.1186,
+     1.0786,
+     2.7656
+    ],
+    "radius": 1.0399,
+    "width": 0.52,
+    "axis": "X"
+   },
+   "FR": {
+    "center": [
+     -2.1288,
+     1.0786,
+     2.7656
+    ],
+    "radius": 1.0399,
+    "width": 0.52,
+    "axis": "X"
+   },
+   "RL": {
+    "center": [
+     2.1407,
+     1.0388,
+     -2.7656
+    ],
+    "radius": 1.0399,
+    "width": 0.52,
+    "axis": "X"
+   },
+   "RR": {
+    "center": [
+     -2.1496,
+     1.0388,
+     -2.7656
+    ],
+    "radius": 1.0399,
+    "width": 0.52,
+    "axis": "X"
+   }
+  }
+ },
+ "known_limits": [
+  "Bird figure on the roof is fused into the roof shell (not cleanly cuttable): stays as a roof passenger / joke rider",
+  "Wheels: big off-road tyres fused via axle/suspension discs (cut at the inner sidewall would open ~0.15-0.2 Meshy-unit discs on wheel and body): invisible physics wheels + hub anchors",
+  "Windows have no glass: interior (seat, steering wheel) visible, hidden driver leaves a visible empty seat",
+  "Interior clear height only ≈ 1.35 rig (0.83 m): FB cannot sit visibly; fine for hop-in-hidden",
+  "Spare wheel / exhaust pack at the rear fused"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.7,
+  "note": "same proposal as the v3 racers (V-321); not measured in this car"
+ },
+ "wheels": {
+  "FL": {
+   "node": "kfb_wheel_FL",
+   "hub_glTF": [
+    2.1186,
+    1.0786,
+    2.7656
+   ],
+   "radius": 1.0399,
+   "fused": true
+  },
+  "FR": {
+   "node": "kfb_wheel_FR",
+   "hub_glTF": [
+    -2.1288,
+    1.0786,
+    2.7656
+   ],
+   "radius": 1.0399,
+   "fused": true
+  },
+  "RL": {
+   "node": "kfb_wheel_RL",
+   "hub_glTF": [
+    2.1407,
+    1.0388,
+    -2.7656
+   ],
+   "radius": 1.0399,
+   "fused": true
+  },
+  "RR": {
+   "node": "kfb_wheel_RR",
+   "hub_glTF": [
+    -2.1496,
+    1.0388,
+    -2.7656
+   ],
+   "radius": 1.0399,
+   "fused": true
+  }
+ },
+ "wheel_split": {
+  "attempted": true,
+  "result": "not split",
+  "reason": "source mesh: main island 1,306,112 of 1,324,446 tris holds body, bird and all four wheels (5 tiny islands = lamp parts). Tyre inner sidewall (|z| 0.32-0.34 Meshy) is joined to axle/suspension geometry over radius < 0.22; no clean boundary. Per V-273 addendum: keep fused, WS1 uses invisible physics wheels + these hub anchors."
+ },
+ "driver_bird": {
+  "cut_clean": false,
+  "result": "not cut, delivered with bird only (no _ohne_fahrer)",
+  "reason": "the bird replaces the roof outer surface over ≈ 0.22 x 0.14 Meshy units (≈ 0.6 x 0.38 m): below the bird body there is no roof face, only the interior ceiling (y 0.27 Meshy). A plane cut (y > 0.345) leaves an open hole in the roof plus loose wing/tail fragments and foot stubs; a fix would need new cap geometry and a texture patch",
+  "proof": "wasteland_beetle_vogel_schnitt_test.png"
+ },
+ "seat_fit": {
+  "method": "seat.js (V-321) is a solid-hull test; this car has a modelled hollow interior with open windows, so the inside test does not apply (1069 of 1873 body samples read as outside)",
+  "interior_clear_height": [
+   1.3496,
+   0.832
+  ],
+  "note": "FB seated would not fit visibly; hop-in-hidden unaffected"
+ },
+ "build": {
+  "pipeline": "build-vehicle.mjs (V-311 pipeline: weld → meshopt simplifyWithAttributes N2/UV2 → WebP 2048, MR 1024, q86 → normalise → kfb_* anchors → dedup → prune)",
+  "target_tris": 120000,
+  "error": 0.02,
+  "tris": 119998,
+  "simplify": [
+   {
+    "trisIn": 1324446,
+    "trisOut": 119998,
+    "error": 0.004878
+   }
+  ],
+  "bytes": 5762948,
+  "sha256": "c746d984b1facc178206bb369e91f52e5130ca15ddcc54d88205aad46b5b83b5",
+  "options": []
+ }
+}
