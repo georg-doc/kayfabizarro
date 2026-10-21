@@ -5,7 +5,7 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 
 ## 116 · 21.10. · Rückblick für WS0 (Pause seit 20.10. abends) · WS1-Stand · Querblick auf alle Stränge · Plan für das Reset-Fenster
 
-**Kurz:** WS1 hat die Gelände-Probe produktreif gemacht (Spiel-Physik und -Kamera, Island-Kit-Wasser, Schatten nach Konzept R1) und terrain3 hinter einem Schalter ins Spiel gebracht. Georg will das Reset-Fenster bis Do. 02:00 für parallele externe Prüfungen nutzen. Dafür braucht es fünf WS0-Entscheidungen (unten).
+**Kurz:** WS1 hat die Gelände-Probe produktreif gemacht (Spiel-Physik und -Kamera, Island-Kit-Wasser, Schatten nach Konzept R1) und terrain3 hinter einem Schalter ins Spiel gebracht. Georg will das Reset-Fenster bis Do. 02:00 für parallele externe Prüfungen nutzen. Dafür braucht es vier WS0-Entscheidungen (unten).
 
 ### WS1 seit §115
 - **Probe** (`ws1/preview` @f677fee, Artefakt v25):
@@ -47,9 +47,9 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
   - Racer-Motor-Raster V-378
   - Gänge, Flug/Crash, Kampf
   - Ambience V-458 (36 CC0)
-  - Bisher in keiner Probe und keinem Spiel-Look angeschlossen. Darum geht es in Prüfer-Brief D.
+  - Bisher in keiner Probe und keinem Spiel-Look angeschlossen; Prüfer-Brief D plant den Einbau.
 - **Marketing:**
-  - `planning/kfb-public-beta-reddit-transmedia-r1` (18.10., Draft PR #422, nichts veröffentlicht).
+  - `planning/kfb-public-beta-reddit-transmedia-r1` (18.10., Draft PR #422).
   - Lokal `~/kfb-ws1/media-studio` (Remotion-Agent und Critic, a8c29a7), läuft als eigene Sitzung („KFB Media Studio“, gerade aktiv). Liefert nur Entwürfe.
 - **Recherche:** NotebookLM-Narrativ-Kritik, Nathal Six Dimensions, Deck-Spender, Fluff-Linguistik, Comic Banter (18./19.10., alle mit Return).
 - **Animation / Blender MCP / Mac mini:**
@@ -77,9 +77,8 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 ### Bitte entscheiden (WS0)
 1. Schattenkonzept R1, die fünf offenen Fragen (§111). Neu dazu: Ist ein vom Sonnenstand getrenntes Schattenlicht ≥ 42° kanonfähig?
 2. `createContactAO` im M1-Standard-Look (Kanon-Verstoß, §111): entfernen oder Ausnahme?
-3. Island-Kit-Wasser als WS1-Standard und Anschluss ans Kit-Register (Credit-Eintrag „KFB Island Kit“ als eigenes Werk).
+3. Island-Kit-Wasser als WS1-Standard.
 4. Starten WS-NPC (V-580) und der Mac-mini-Auftrag R2 jetzt im Reset-Fenster?
-5. Audio: Dürfen WSA-Lieferungen (CC0 und eigene ElevenLabs-Generierungen) in Probe und Spiel? Private Teile bleiben draußen.
 
 ## 115 · 21.10. · Georgs Lizenzregel + Creator Credits (löst die Lizenzfragen aus §114)
 

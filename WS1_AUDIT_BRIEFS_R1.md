@@ -23,9 +23,7 @@ Jede Sitzung arbeitet **allein und lesend**. Sie liefert einen Bericht und keine
   - **Wasser:** Island Kit Fluid F2, „morpht langsamer als das Gelände, das ist sehr KFB“.
 - **Regeln für alle:**
   - Nichts veröffentlichen, posten oder mergen, nichts auf `main` oder `ws1/*` pushen.
-  - Keine privaten oder gekauften Assets (Meshy) in Berichte oder Bilder für die Öffentlichkeit.
   - Keine DocCheck-Interna.
-  - Lizenzregel (Georg 21.10.): von allem lernen, keinen Code kopieren; was sauber ist, direkt übernehmen und jeden Creator ins Register `src/data/credits/kfb-credits.r1.json` eintragen. Keine Lizenz-Schleifen.
   - Prüfen **mit Georgs Einstellungen**: In seinem Tab war z. B. der Sonnenstand 12° und „Erdung“ aus. Testfälle mit Standardwerten und mit seinen Werten fahren.
 - **Lieferung:** ein Bericht `~/kfb-ws1/research/audits/<ROLLE>_R1.md` mit Befunden in Rangfolge. Jeder Befund nennt:
   - die Datei mit Zeile
@@ -90,7 +88,7 @@ Jede Sitzung arbeitet **allein und lesend**. Sie liefert einen Bericht und keine
   - Code-Befunde mit Patch-Vorschlag als Diff im Bericht, nicht angewendet.
 
 ## D · Cartoon-VFX und SFX
-**Frage:** Welche Effekte und Geräusche machen KFB lebendig, im Cartoon-Stil und mit sauberer Lizenz?
+**Frage:** Welche Effekte und Geräusche machen KFB lebendig, im Cartoon-Stil?
 - **VFX:**
   - Grundlage: Effekt-Bildsprache R1 (`CANON_3D/sources`, Entwurf).
   - Vorhanden: Düsenglühen, Speedline-Bänder, Schwebe-Atmen, Wasser/Bubblegum/Säure-Blasen.
@@ -106,7 +104,6 @@ Jede Sitzung arbeitet **allein und lesend**. Sie liefert einen Bericht und keine
     - Audio-Site (V-390)
   - **Prüfen:** Ereignisse → Klang (Fahren über das Tempo, Sprung, Landung, Boost, Drift, Wasser, Blasen, Wind über die Höhe); Mischung; Cartoon-Timing (Vorlauf, Nachhall).
   - **Liefern:**
-    - Klangkarte Ereignis × Datei × Lizenz × Anschluss (Web Audio, Probe und Spiel).
-    - Lücken mit Quelle (CC0/eigene Generierung).
+    - Klangkarte Ereignis × Datei × Anschluss (Web Audio, Probe und Spiel), Cartoon-Timing, Mischung.
+    - Top-10 zum Einbauen, mit Aufwand S/M/L.
     - VFX-Liste mit Skizzen und Kosten.
-  - **Grenze:** Private Audio-Lieferungen (`private`) nur intern nennen, nicht in öffentliche Clips.
