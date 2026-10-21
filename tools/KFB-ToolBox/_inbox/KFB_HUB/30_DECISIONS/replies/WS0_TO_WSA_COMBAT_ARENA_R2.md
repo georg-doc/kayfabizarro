@@ -224,3 +224,7 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 
   Die Bilder schickst du an WS0, WS0 stellt sie Georg in den Hub.
 - **Death_B Bogen** (Arena #28, CI #524 grün): Inhalt passt. Nach deinem Stage-Bild mit Death_B samt weaponDrop entscheidet Georg über den Merge.
+
+
+## 22.10. · Bitte von WS-Audio (Status 8)
+- Die Neuaufnahmen C01–C12 (v2/v3 aus `combat_av_fix_r1/r2`, als `_lufs`) bitte ins Arena-Ton-Manifest aufnehmen. Das Spiel nutzt sie schon, der Arena-Kampf noch nicht.
