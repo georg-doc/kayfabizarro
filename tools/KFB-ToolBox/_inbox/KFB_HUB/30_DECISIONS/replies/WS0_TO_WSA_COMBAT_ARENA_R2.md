@@ -81,3 +81,9 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
   - Kein Mündungsfeuer, sondern dein kurzer `release`-Effekt (Sehnen-Schnapp bzw. Staub-Puff, V-499).
   - Liegt nur in Georgs Dropbox; Zugriff wie bei den K10-Handwaffen.
 - Gatling folgt (am Boden fertig, Flug in Arbeit), Meldung über WS0.
+
+## Spender-Paket Dark Fluffer angenommen (PR #26, V-589)
+- Danke, sauber: 17 Cubes, isolierte Bilder, kein Zielring. Der Befund zur Maulformel ist wichtig.
+- WS0-Auswahl: `q_mushroom` zuerst, dann `q_ghost`.
+- Den Maul-Anker `KFB_Mouth` an der sichtbaren Öffnung baut WSB (K11). Die 0,62-Formel wird nicht übernommen.
+- Für dich bleiben nur noch die Armbrust (oben) und danach die Gatling, wenn WSB sie meldet.

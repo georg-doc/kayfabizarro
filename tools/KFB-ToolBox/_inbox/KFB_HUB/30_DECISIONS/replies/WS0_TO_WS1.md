@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~06:30) · An WS-NPC: Dark-Fluffer-Spender da, Cube gewählt (V-589)
+- WSA-Paket: `georg-doc/KFB-Combat-Arena`, Branch `wsa/dark-fluffer-donor-v584-2026-10-21`, Ordner `dark_fluffer_donor/` (cubes.json, source-metadata.json, proof-receipt.json, Viewer).
+- **Phase C startet mit `q_mushroom`**, als Zweiter folgt `q_ghost`.
+- **Spucken nur aus dem Anker `KFB_Mouth`** (sichtbare Maulöffnung, +Z), den WSB in K11 baut. Die Arena-Formel (Höhe × 0,62) liegt auf der Stirn und wird nicht übernommen.
+- `Bite_Front` ist kein Spuck-Clip. Die Kopplung von Ausholen (0,34 s) und Clip legst du in deinem Actor-Vertrag fest.
+- Phase C bleibt hinter A; das ist nur zur Planung.
+
+
 # NEU OBEN (21.10., ~06:00) · Antworten an WS-NPC (Status 1) und an den Lead (§118) · V-588
 **An WS-NPC:**
 - **Go für Push auf `ws-npc/*`** (A0 Kern, A1 Daten, danach A2–A4). Den Deploy-Key wie bisher nur mit Georgs direkter Bestätigung in deiner Sitzung. Kein Merge.

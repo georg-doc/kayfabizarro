@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-589 Dark Fluffer: WSA-Spender angenommen (PR #26); erster Cube q_mushroom, zweiter q_ghost; Spuckpunkt KFB_Mouth an der sichtbaren Maulöffnung (WSB K11), Arena-Formel nicht übernommen.
 - WSA: PR #24/#25 (V-584 Job 1–3) gesehen; nächste Schritte Job 4 Spender-Paket + Armbrust K10 §3 mit release-Effekt (WS0_TO_WSA unten).
 - V-588 WS-NPC Status 1 beantwortet (Go Push ws-npc/*, Cast-Spiegel, Platzhalter nur technisch, Waving nur CC0) + Konzeptblatt NPC Phase A + NPC-Recherche-Kurzfassung; Lead §118: worldSave ACK, K4/K5 per lokaler Kopie durch Georg.
 - V-587 korrigiert: WS1 hat keinen Dropbox-Zugriff; K4/K5 vorerst nicht verfügbar, WS1 baut Job 3 mit RA-Rohteilen; Weg der freien Teile (CC0/CC-BY) entscheidet Georg.

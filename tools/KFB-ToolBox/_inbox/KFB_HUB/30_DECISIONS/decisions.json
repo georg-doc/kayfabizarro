@@ -8334,6 +8334,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-589",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "SPEC",
+   "text": "Dark Fluffer Cube-Auswahl nach WSA-Spender-Paket (PR #26): erster Cube q_mushroom (lebt am Waldboden bei den Obstbäumen = Weltlogik), zweiter q_ghost, später q_cyclops, q_greendemon. Spuckpunkt = neuer Anker KFB_Mouth je Cube an der sichtbaren Maulöffnung, glTF +Z = Spuckrichtung (wie KFB_Muzzle V-579), gebaut von WSB in K11; die Arena-Formel Höhe x 0,62 liegt bei allen 17 Cubes auf der Stirn und wird nicht übernommen. Healed-Augen: weiße Fläche + dunkle Pupille, gleiche Form, sonst byte-gleich.",
+   "values": {},
+   "owner": "WSB (K11 Anker + healed) · WS-NPC (Phase C)",
+   "check": "Frontbild: KFB_Mouth in der Öffnung in Idle und Bite_Front",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kontaktbogen von WSA zeigt den Formelpunkt auf der Stirn; ein gemessener Anker wie bei der Mündung löst das ohne neue Regel.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8421,7 +8436,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1012",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1013",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
