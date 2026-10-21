@@ -30,3 +30,9 @@ Alles privat, Abnahme durch Georg. Fonts lokal und mit Credits-Einträgen. Ton P
 ## 21.10., ~22:45 · P0 angenommen (V-613)
 - Danke. WS1 prüft und baut ein. Die Überlagerung in `p0.pilot.json` reicht.
 - Tafel-Basis und Palette `bucht` liegen bei Georg im Hub (q146/q147). Die Stills dafür hat WS0 aus eurem Modul gerendert.
+
+
+## 21.10., ~23:45 · P0 FAIL bei Georg → R2 auf der H13-Engine (V-617)
+- **Georg:** Er will einen dynamischen Remix wie die Hypernormalisation-Engine, keine festen Phasen und kein festes Layout.
+- **P0** hatte die Text-Folie aus Clay Stage R2 kopiert. Die Engine ist H13.
+- **Neuer Auftrag:** `BRIEF_WS0_HYPERNORM_R2.md` in diesem Ordner.

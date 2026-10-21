@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-617 Hypernorm R2 auf H13-Engine (Brief an WS-Media); MVP_SITE_STATUS_R1 (was der MVP-Site fehlt, Besitzer); Klänge npc_steps_r1, heavy_steps_r1, combat_av_fix_r3 erzeugt und privat (N01_a verworfen).
 - V-616 Hub-Antworten: Fluffer 0,8 m, Ornament ja, Bots gleiten, Hypernorm P0 FAIL (dynamischer Remix wie die Engine statt fester Phasen), Klänge ja (wartet auf Go im Chat).
 - V-615 Combat-AV R1 Rückmeldung beantwortet: Töne liegen in <set>_lufs/, L14/L15 als combat_av_fix_r3 entworfen (Hub q145), WSB Nachtrag 19 Kreuz-Pupillen + Knet-Wort Blödsinn, Tod-Fenster Prüfer D + Lead.
 - Hub-Fragen q145–q148, q90, q91 mit Bildern (Pilot-Stills Karte/H14/bucht, Fluffer-Größenvergleich, Übersichtskarten); Graveyard-Inhalt ist in main (87 Gräber).

@@ -8739,6 +8739,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-617",
+   "date": "2026-10-21",
+   "area": "Medien",
+   "verdict": "SPEC",
+   "text": "Hypernormalisation R2 (ersetzt den P0-Ansatz aus V-606/V-613, Georg q146/q147 FAIL): Die Engine ist H13 Kaleidoscope (Songform, Ebenen-Stapel, Unähnlichkeits-Auswahl, musikgetriebene Bewegung). WS-Media baut eine H15-Kopie, in der freigegebene Zitate Text-Material der Engine werden (Phrasen, Autor, FrizzleBob-Frage als Bausteine über Shots verteilt), ohne feste Phasen und ohne festes Layout; sequence.js und Collage Engine v0 sind keine Vorlage. Abgabe 3 Clips mit Ton, Kontaktbogen, Vorher/Nachher. Brief MEDIA_HYPERNORM_REMOTION_R1/BRIEF_WS0_HYPERNORM_R2.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Remix existiert schon; P0 hatte nur die Text-Folie darüber kopiert.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8826,7 +8841,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1065",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1066",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
