@@ -2,6 +2,26 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 7 · 21.10. · Ton im gemeinsamen Spiel-Branch ws1/mvp-r1 · private MVP-Site · Fluffer 0,8 m
+
+- **Lead 21.10. (V-618, ein Spiel-Branch):** `ws-audio/r1` ist in `ws1/mvp-r1` zusammengeführt; neue Ton-Arbeit setzt dort auf. `ws-audio/r1` steht jetzt auf `ws1/mvp-r1` @44f55f2.
+- **Abnahme auf @44f55f2** (eigener Scratch-Worktree):
+  - `test:audio` PASS (Einheitstest und Browser).
+  - Hörprobe als MP4 an Georg, alles auf world=probe: Fahrt/Flug mit Untergrund, Drift, Boost und Suno; zu Fuß Skelette hit/aggro/ko/awake/calm, Dark Fluffer (0,8 m) spit/impact/drop/healed/burst/fade, Cozy Tunes.
+  - Keine Fehler; Audio im Mittel 0,25 ms/Bild, p95 ≤ 0,5.
+  - Die NPCs stehen auf dem Probe-Gelände ordentlich.
+- **Private MVP-Site:**
+  - Georg 21.10. direkt an WS-Audio: „ja, alles darf auf die Site“, also Suno, Cozy Tunes und ElevenLabs auf der passwortgeschützten Site.
+  - `AUDIO_ROOT` kommt über `VITE_KFB_AUDIO_ROOT` (Site `/kfb-audio/`).
+  - `scripts/audio/site-copy.mjs` läuft nur mit `SITE=1`: 341 Dateien, 242 MB, keine Datei > 25 MiB.
+  - Die Audio Site kommt zur Bauzeit von GitHub raw (öffentlich, gepinnt); die WSA-ZIP wird mit Node entpackt.
+  - Geprüft mit `build-site.mjs` des Lead und statischer Auslieferung: mode full, alle Module, Musik, Schritte, Wasser; keine 4xx auf `/kfb-audio/`.
+  - Der normale Build bleibt ohne private Töne.
+- **Dark Fluffer 0,8 m** (WS0 V-616): alle 13 Fluffer-Klänge 4 % höher (`FLUFFER_PITCH`).
+- **Befunde an den Lead** (nicht Ton):
+  - `contract-static` oneKeyListener: `startCurtain.js` hat einen eigenen keydown-Listener.
+  - `build-site.mjs`: `path.join` bei absolutem `KFB_SITE_OUT`.
+
 ## 6 · 21.10. · Heil-Video · Schritte und Hüpfer der NPCs · Notiz Fluffer-Größe
 
 - **Heil-Video** (Georg „ja, dreh das Heilen nach“):
@@ -149,7 +169,7 @@ Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Ab
 ## 1 · 21.10. · Tier 0 steht lokal: ein Ton-Pfad, ganzer Ton auf dem Probe-Gelände
 
 **Stand:**
-- Branch `ws-audio/r1` im lokalen Repo `kfb-planet`, Commit 3929575, rebased auf `terrain/probe-world` @ba94c9d (Lead 21.10.: __RIVA behoben, Fahrzeug-Look A).
+- Branch `ws-audio/r1` im lokalen Repo `kfb-planet`; seit Eintrag 7 auf `ws1/mvp-r1` (gemeinsamer Spiel-Branch).
 - Nicht gepusht und nicht nach main gemergt. Push erst nach WS0-Go, Merge nur mit Georg.
 - Georg hat das 2-Minuten-Video mit Ton bekommen, auch als Handy-Fassung (MP4 H.264/AAC, 960×540, 17,7 MB). Die Abnahme durch sein Ohr steht noch aus.
 
