@@ -35,7 +35,7 @@ import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FE
 import { createSky, skyLog } from '../modules/m1-sky'
 import { createSkyR13 } from '../modules/sky-r13'
 import { isTerrain3, TERRAIN3_CFG, applyShadowTone3, applyFootShade, applyFigureShadow } from '../look/terrain3.js'
-import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight } from '../modules/m1-terrain'
+import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog } from '../modules/amphitheater'
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
@@ -108,7 +108,9 @@ export const TERRAIN2 = isTerrain2(hash), T2_WORLD = (/world=(canyon|bucht|otown
 const T2_AMPH_PAL = TERRAIN2 ? stagePaletteFor(null, { override: T2_WORLD, variant: 'b' })?.amph || null : null
 // #439 look=terrain3 (Georg 21.10.): Malweise der Gelände-Probe – Fließfarben, Himmel v2 mit Kuppelwolken; palette=mesa|moos|wueste|schnee|pastell
 export const TERRAIN3 = isTerrain3(hash), T3_PAL = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(hash) || [0, TERRAIN3_CFG.palette])[1]
-const TERR = { biome: BIOME, ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
+// #439 world=probe (Georg 21.10.): Geländeform der Gelände-Probe als zweite Welt, kombinierbar mit look=terrain3 (nicht mit terrain2: dort wählt world die Palette)
+export const PROBE_WORLD = /(^|[#,])world=probe(,|$)/.test(hash)
+const TERR = { biome: BIOME, ...(PROBE_WORLD ? { world: 'probe' } : {}), ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
 const AMPH = { biome: BIOME, groundR: 0.01, worldK: K, ...(TERRAIN2 ? { palette: T2_AMPH_PAL, palAmt: 1, clay: true, castShadow: true } : {}) } // #439: gleiche Palette, Knete v1.1 und echter Schatten wie das Gelände // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
 const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 
@@ -404,8 +406,8 @@ function M1World() {
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
         {M2_ON && <M2Car player={player} />}
         {M2_ON && <StuntField />}
-        {!M2_ON && <ElanRings groundAt={terrainHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}
-        {RACER_FLY && <ElanRings groundAt={terrainHeight} J={K / WORLD_K} scale={RACER_COURSE_SCALE} bestKey="kfb.elan.s2.racer.best" playerPos={() => M2STATE.carPos?.() ?? null} playerObj={() => M2STATE.visualRoot} />}
+        {!M2_ON && <ElanRings groundAt={groundHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}
+        {RACER_FLY && <ElanRings groundAt={groundHeight} J={K / WORLD_K} scale={RACER_COURSE_SCALE} bestKey="kfb.elan.s2.racer.best" playerPos={() => M2STATE.carPos?.() ?? null} playerObj={() => M2STATE.visualRoot} />}
       </Physics>
       </Suspense>
       <StageOrbitCam ref={orbit} view={STAGE_VIEW} active={phase === 'dialog'} />
