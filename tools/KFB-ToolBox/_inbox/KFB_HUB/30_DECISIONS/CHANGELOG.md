@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB K10 §13 weaponDrop für alle 11 K10-Waffen angenommen (Bögen Death_B Endlage wird nachgeprüft); an WSA übergeben.
 - WS-NPC Status 4: Phase C P1 Dark Fluffer (Ghost, Gun_Pistol) im Spiel gebaut (lokal); WS0: Ghost 1,1 m ACK, Mouth-Knochen als Übergang bis KFB_Mouth, weiße Augen via WSB, Ton-Sets genannt (kommen mit Georgs lokaler Kopie).
 - FrizzleBob-Brauen + Schatten-Empfang als ToolBox-Job an WSA (WS1 §110/§111); WSB bis zur Cube-Freigabe: weaponDrop-Nachzug für alle K10-Waffen.
 - WSB K10 §12 Bogen angenommen (eine Halterung je Bogen, shootCycle Draw_Up → Aiming_Idle → Release_Up, Draw/Release ausgeschlossen); K10 komplett, an WSA übergeben.

@@ -156,3 +156,12 @@ Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), n
 1. **Brauen:** Sie ragen an den Schläfen über den Kopfumriss und sind von hinten als schwarze Spitzen an den Ohransätzen sichtbar (Georg-Screenshot). Schmaler bzw. enger an den Kopf, Lage von vorn unverändert.
 2. **Schatten-Empfang:** Haarbüschel, Brauen, Schnurrbart und Mund sind ShaderMaterials ohne Schatten-Chunks und empfangen deshalb keinen Schatten. Entweder die Schatten-Chunks ergänzen oder auf Knet-Material (kfb-clay) umstellen. Das Bild bleibt in der Proof-Stage gleich.
 - **Abgabe:** Proof-Stage-Bilder vorn/hinten/seitlich und mit Schatten, P08-Export, Meldung über WS0. Merge nur mit Georg.
+
+## weaponDrop K10 §13 (WSB 21.10.)
+- **Alle 11 K10-Karten** haben jetzt das Feld `weaponDrop` (Lösen, Liegen, Endlage relativ zur Wurzel, Bahnregel), für Death_A und Death_B. Die Kit-Clips sind unverändert.
+- **Lösen,** wenn die Hüfte 25 % ihres Falls hinter sich hat:
+  - Death_A 0,433 s (Krieger 0,500, Magier 0,100);
+  - Death_B 0,167 s.
+- **Fall** ≤ 0,4 s, Ruhelage flach neben der Figur.
+- Bitte an den Death-Clips anschließen. Bild: `K10/out/K10_weapondrop.png`.
+- Ausnahme: Bei den Bögen in Death_B prüft WSB noch die Endlage nach.
