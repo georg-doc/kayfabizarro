@@ -1,0 +1,29 @@
+# WS0 INTAKE · Dark Fluffer Meta-Plague, Combat-Arena donor + Resident Life R1
+**Date:** 2026-10-21 · **Type:** ADDITIVE DESIGN / TUNE, not canon / runtime approval. Existing `georg-doc/kayfabizarro` Draft PR #400 is source packet; link to [full concept](./KFB_DARK_FLUFFER_META_PLAGUE_RESIDENT_LIFE_CONCEPT_R1_2026-10-21.md) and [WS1 follow-on](./WS1_DARK_FLUFFER_CORRUPTION_HUNT_HEAL_FOLLOWON_R1_2026-10-21.md).
+
+
+**GEORG AUTHOR CLARIFICATION · 2026-10-21 · OVERRIDES any contradictory earlier R1 wording:** Healing rather than killing was *already in Georg's proposal*, potentially via a fitting existing special weapon/tool, strategy or teamwork. Historic Combat Arena flowers are expressly rejected as silly, inperformant and redundant. Cured enemies use **only the existing native six-mode colored Fluff metaphor**, falling/bouncing/collecting through the established modules, subject to finite approved rewards. No flowers, new flower pipeline or second Fluff physics. White eyes remain a source-asset feasibility gate; exact cure action and optional combat defeat WS0 to tune. Do not call this a new cure-vs-kill contradiction.
+
+## Human proposition to adjudicate, not assume
+KFB Quaternius MonsterCuteCubes as recurring **Dark Fluffer** censorship/goo pests, tainting real Terrain vegetation and Fluff without inventing a seventh `FluffKind`. Fearful citizens avoid, courageous/unscrupulous fighters may join temporary anti-plague action, healers heal and opportunists tell absurd heroic stories. Mainstream-propaganda satirical phrase pool and three-mob "Consume! / Believe! / Obey!" chant, source English ChatterBox/Triplets and eventual voiced performance. Hunky experiment + Dory Cheese Moon omelet + Men in Black story options remain disputed narrative, not KFB canon; later Narrative Wastelands and flyers/huge PsyOp bosses explicitly deferred.
+
+## Actual donor reconciliation
+`georg-doc/KFB-Combat-Arena@f6a59ad15b9ffcf3164b0ab013f223962b63f61f`, main:
+- `modules/kfb-monster-roster.js` blob `48586e56e3b43d3e4b608e15cce53059f56c770d`: 21 Quaternius cube sources; 4 native flyers; no native Spit clip, measured forward +Z.
+- `combat-arena-v2/mobs.v2.js` blob `02928eee3c351b1694a1097e17779bbdb2290050`;
+- `combat-arena-v3/spuck.v3.js` blob `26b2bb9b0e1446c592a55a891fb6b43135953dbc`: authored anticipatory mouth spit 3–5 droplets and then impact; previous fake target-ring look explicitly rejected;
+- `combat-arena-v3/zensur.v3.js` blob `d5585b942d08d5d95a370eefb73df44c006445f2` and `flood.v3.js` blob `3a4502973167709a5fea6e19a5e28f8dff1bcec1`: Canvas-local Card coverage vs optional shader-only presentation; neither equals global terrain mask.
+- `docs/ENTWURF_zensur-und-heilung.md` blob `e55bdd2e6e8a9be5e1dee85ee8ef92e085e35edb`: authentic earlier Georg-author HEAL-NOT-KILL idea with white eyes. **Georg clarified 2026-10-21 that healing already belongs to the current concept**, with an appropriate weapon/tool, strategy or teamwork if suitable. **Reject historical flower trails completely** as silly and wasteful; cured Fluffer emits limited *native six-mode colored Fluff*, using existing Fluff motion/collection modules. No separate flower VFX/asset/particle production. WS0 need only author exact cure affordance/valid weapon, yield and neutralization options, not arbitrate whether cure belongs at all.
+Existing Card Ink Defense R0.5 on PR #400 already proposes local Card censorship/healing. New concept should use same threat family as an *optional world-zone extension* rather than build second censor/spit/combat runtime.
+
+## WS0 asks: ACK / TUNE / OBJECT
+1. Name: `Dark Fluffer` production term vs `Black Fluffer` fiction alias; choose a source monster subset and actual target eyes/material visual.
+2. Lore facts: decide which origins can exist as contradictory in-world hearsay, and whether any Hunky/Dory/Men-in-Black origin is canon at all. Don't alter existing character sheets without review.
+3. **Heal-first is already approved as Georg's design direction**, not an open cure-versus-kill canon contradiction. Specify candidate trigger(s): existing suitable weapon/tool, strategy or teamwork; source-verify white cartoon eyes. **Flowers = explicitly REJECTED**. Cured enemies stop Goo and produce six-mode colored Fluff via current physics/Harvest modules; approve bounded duration, cooldown, finite grant and possible restore behavior. Defeat/repel remains a distinct optional Combat outcome subject to WS0 tuning.
+4. WS1 priority: current Resident Life workshop M0–M2 first vs optional P1 corruption visual-only while workshop code capacity is available? **Recommend source-intake / storyboard in parallel; do not auto-add P1 to current MVP.** One WS1 writer.
+5. Source & world contracts: WS1 actual valid terrain/decal path, vegetation tree/bush identity, Fluff falling/collection support, Combat event source, World Save; do not mutate world geometry or PlayerSave based on shader alone.
+6. NPC/social: source-approved brave, fearful, villainous/healer archetypes and legitimate temporary ceasefire conditions. Do not broadcast global knowledge; use PR #272 witnessed/told memory and PR #210 encounter beats.
+7. Chatter/voice: locate real accepted propaganda phrase pool (user samples NOT proof); check three one-word commands as ensemble chant vs semantic Triplet; determine English voice/ElevenLabs and existing KFB Audio/Voice owner, not a new AudioContext.
+8. Respect existing R0.5 Card Ink Defense source decision; source cube, healing eyes, mouth/spit and real landscape must be displayed individually before integration.
+
+**No new P0/HUB route:** The ONE receiving gate remains `WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE` incorporating Plague design and R0.5 source as subissue. WS0 may defer P1+ entirely while preserving concept. WS1 runtime/Stage/Site/Combat/Audio not authorized by this GitHub design write.
