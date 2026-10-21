@@ -1,0 +1,1288 @@
+{
+  "schema": "kfb.npc-world/1",
+  "date": "2026-10-21",
+  "owner": "WS-NPC (V-585), Phase A",
+  "status": "VORSCHLAG: Orte aus vorhandenen Weltobjekten der M1-Welt (#m1,harvest); WS0 bindet sie mit dem Konzeptblatt Phase A neu",
+  "units": "J17-Meter, Welt-xz (WORLD_K-Maßstab, nicht für wscale=legacy)",
+  "dayS": 300,
+  "bubbleR": 60,
+  "residents": [
+    {
+      "residentId": "farmer_b",
+      "castId": "farmer_harke",
+      "stageCastId": "farmer-b",
+      "label": "Farmer B (Bäuerin, Theaterdirektorin)",
+      "figure": "KayKit Mystery S6 Farmers · Farmer_B.glb as-is (eingebettete Textur, Georg 21.10.: „wie ausgeliefert“), kayfabizarro main @29c7500, Augen aus Georgs Batch (farmer-b). Privat, wenn src/private da ist: WSB K11 KFB_Farmer_harke.k11.glb (Punktlagen gleich, Augen gebacken, Werkzeug-Clips) + Gabel KFB_Pitchfork.k11 an handslot.r (je Clip eine Halterung)",
+      "source": "Writers Room export_2026-10-20c · the_bards_barnyard_beatdown · BESTÄTIGT: „Bäuerin als Theaterdirektorin“, Zuhause „Scheune mit Strohballen-Bühne“; WS0-ACK Brief R2 #2"
+    },
+    {
+      "residentId": "lorekeeper",
+      "castId": "lorekeeper",
+      "stageCastId": "lorekeeper",
+      "label": "Lorekeeper · Hüter des Wissens (Guide, Mentor, Questgeber)",
+      "figure": "KayKit Mystery S6 Lorekeeper. Öffentlich: Lorekeeper.glb aus kayfabizarro main mit Georgs Augenprofil (Batch @ac9dbaed, AUTO_CANDIDATE; WS0 V-595 Übergang). Privat, wenn src/private da ist: WSB K11 KFB_Lorekeeper.k11b.glb (Augen gebacken, Lese-Clips) + Buch KFB_Book_Open.k11 (CC0) an handslot.r",
+      "source": "Writers Room export_2026-10-20c · frizzlebob_s_mission_control · VORSCHLAG: Lorekeeper „Guide, Mentor, Questgeber“, Zuhause „Kartenraum mit Questbrett“",
+      "replaces": "lore_ph (PLATZHALTER adventurer-mage, bis 21.10.)"
+    }
+  ],
+  "pois": [
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "fb_home",
+      "kind": "home",
+      "pos": [
+        27.0,
+        40.0
+      ],
+      "faceTo": [
+        20.0,
+        33.0
+      ],
+      "actionR": 1.6,
+      "label": "Hof der Bäuerin (Scheune fehlt als Asset)",
+      "source": "Zuhause-Kandidat Writers Room; Ort östlich hinter dem Atlantis-Garten"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "fb_work",
+      "kind": "work",
+      "pos": [
+        18.25,
+        28.75
+      ],
+      "faceTo": [
+        16.92,
+        29.94
+      ],
+      "actionR": 1.5,
+      "target": {
+        "kind": "tree",
+        "ref": "orchard:atlantis:t0",
+        "reach": [
+          1.0,
+          1.9
+        ]
+      },
+      "label": "Fluff-Baum pflegen (Atlantis t0)",
+      "source": "Obstgarten #m1,harvest (orchard3d, Zone atlantis, Seed 5)"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "fb_stage",
+      "kind": "work",
+      "pos": [
+        2.4,
+        11.6
+      ],
+      "faceTo": [
+        0.0,
+        0.0
+      ],
+      "actionR": 1.5,
+      "label": "Bühne prüfen (Theaterdirektorin)",
+      "source": "Amphitheater V-230, vor dem vorderen Ring, neben der Rampe"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "fb_social",
+      "kind": "social",
+      "pos": [
+        5.4,
+        25.6
+      ],
+      "faceTo": [
+        3.4,
+        25.2
+      ],
+      "actionR": 1.5,
+      "meetSpot": "wiese_rand",
+      "label": "Wiesenrand am Weg (Treffpunkt)",
+      "source": "Demo-Weg C3b, Wiese östlich"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "lk_home",
+      "kind": "home",
+      "pos": [
+        -27.0,
+        40.0
+      ],
+      "faceTo": [
+        -20.0,
+        33.0
+      ],
+      "actionR": 1.6,
+      "label": "Kartenraum (fehlt als Asset)",
+      "source": "Zuhause-Kandidat Writers Room; Ort westlich hinter dem Goblin-Garten"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "lk_work",
+      "kind": "work",
+      "pos": [
+        2.6,
+        40.3
+      ],
+      "faceTo": [
+        3.93,
+        41.54
+      ],
+      "actionR": 1.5,
+      "target": {
+        "kind": "tree",
+        "ref": "orchard:utopia:t3",
+        "reach": [
+          1.0,
+          1.9
+        ]
+      },
+      "label": "Helden-Fluff studieren (Utopia t3)",
+      "source": "Obstgarten #m1,harvest (orchard3d, Zone utopia, Seed 7)"
+    },
+    {
+      "schema": "kfb.npc-poi/1",
+      "id": "lk_social",
+      "kind": "social",
+      "pos": [
+        3.4,
+        25.2
+      ],
+      "faceTo": [
+        5.4,
+        25.6
+      ],
+      "actionR": 1.5,
+      "meetSpot": "wiese_rand",
+      "label": "Wiesenrand am Weg (Treffpunkt)",
+      "source": "Demo-Weg C3b, Wiese östlich"
+    }
+  ],
+  "routes": [
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_home-fb_work_a",
+      "from": "fb_home",
+      "to": "fb_work",
+      "variant": "a",
+      "points": [
+        [
+          27.0,
+          40.0
+        ],
+        [
+          26.0,
+          34.4
+        ],
+        [
+          24.8,
+          27.6
+        ],
+        [
+          20.2,
+          26.6
+        ],
+        [
+          18.25,
+          28.75
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_home-fb_work_b",
+      "from": "fb_home",
+      "to": "fb_work",
+      "variant": "b",
+      "points": [
+        [
+          27.0,
+          40.0
+        ],
+        [
+          24.5,
+          43.5
+        ],
+        [
+          17.0,
+          41.5
+        ],
+        [
+          15.6,
+          36.8
+        ],
+        [
+          19.0,
+          33.6
+        ],
+        [
+          19.4,
+          30.2
+        ],
+        [
+          18.25,
+          28.75
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_work-fb_social_a",
+      "from": "fb_work",
+      "to": "fb_social",
+      "variant": "a",
+      "points": [
+        [
+          18.25,
+          28.75
+        ],
+        [
+          17.2,
+          27.0
+        ],
+        [
+          13.6,
+          28.6
+        ],
+        [
+          9.0,
+          28.6
+        ],
+        [
+          5.4,
+          25.6
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_work-fb_social_b",
+      "from": "fb_work",
+      "to": "fb_social",
+      "variant": "b",
+      "points": [
+        [
+          18.25,
+          28.75
+        ],
+        [
+          17.6,
+          25.6
+        ],
+        [
+          9.6,
+          24.6
+        ],
+        [
+          5.4,
+          25.6
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_social-fb_stage_a",
+      "from": "fb_social",
+      "to": "fb_stage",
+      "variant": "a",
+      "points": [
+        [
+          5.4,
+          25.6
+        ],
+        [
+          4.0,
+          21.2
+        ],
+        [
+          2.4,
+          11.6
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_social-fb_stage_b",
+      "from": "fb_social",
+      "to": "fb_stage",
+      "variant": "b",
+      "points": [
+        [
+          5.4,
+          25.6
+        ],
+        [
+          10.2,
+          24.2
+        ],
+        [
+          10.6,
+          18.6
+        ],
+        [
+          7.6,
+          14.2
+        ],
+        [
+          2.4,
+          11.6
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_stage-fb_work_a",
+      "from": "fb_stage",
+      "to": "fb_work",
+      "variant": "a",
+      "points": [
+        [
+          2.4,
+          11.6
+        ],
+        [
+          9.0,
+          15.6
+        ],
+        [
+          17.4,
+          25.4
+        ],
+        [
+          18.25,
+          28.75
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_stage-fb_work_b",
+      "from": "fb_stage",
+      "to": "fb_work",
+      "variant": "b",
+      "points": [
+        [
+          2.4,
+          11.6
+        ],
+        [
+          8.0,
+          13.2
+        ],
+        [
+          12.4,
+          16.4
+        ],
+        [
+          17.0,
+          16.8
+        ],
+        [
+          19.6,
+          22.0
+        ],
+        [
+          19.4,
+          26.2
+        ],
+        [
+          18.25,
+          28.75
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_work-fb_home_a",
+      "from": "fb_work",
+      "to": "fb_home",
+      "variant": "a",
+      "points": [
+        [
+          18.25,
+          28.75
+        ],
+        [
+          20.2,
+          26.6
+        ],
+        [
+          24.8,
+          27.6
+        ],
+        [
+          26.0,
+          34.4
+        ],
+        [
+          27.0,
+          40.0
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "fb_work-fb_home_b",
+      "from": "fb_work",
+      "to": "fb_home",
+      "variant": "b",
+      "points": [
+        [
+          18.25,
+          28.75
+        ],
+        [
+          19.4,
+          30.2
+        ],
+        [
+          19.0,
+          33.6
+        ],
+        [
+          15.6,
+          36.8
+        ],
+        [
+          17.0,
+          41.5
+        ],
+        [
+          24.5,
+          43.5
+        ],
+        [
+          27.0,
+          40.0
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_home-lk_work_a",
+      "from": "lk_home",
+      "to": "lk_work",
+      "variant": "a",
+      "points": [
+        [
+          -27.0,
+          40.0
+        ],
+        [
+          -20.0,
+          41.0
+        ],
+        [
+          -9.0,
+          39.6
+        ],
+        [
+          2.6,
+          40.3
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_home-lk_work_b",
+      "from": "lk_home",
+      "to": "lk_work",
+      "variant": "b",
+      "points": [
+        [
+          -27.0,
+          40.0
+        ],
+        [
+          -22.0,
+          44.6
+        ],
+        [
+          -8.0,
+          45.4
+        ],
+        [
+          -1.2,
+          42.6
+        ],
+        [
+          2.6,
+          40.3
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_work-lk_social_a",
+      "from": "lk_work",
+      "to": "lk_social",
+      "variant": "a",
+      "points": [
+        [
+          2.6,
+          40.3
+        ],
+        [
+          0.6,
+          34.0
+        ],
+        [
+          0.4,
+          29.4
+        ],
+        [
+          1.4,
+          26.2
+        ],
+        [
+          3.4,
+          25.2
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_work-lk_social_b",
+      "from": "lk_work",
+      "to": "lk_social",
+      "variant": "b",
+      "points": [
+        [
+          2.6,
+          40.3
+        ],
+        [
+          7.2,
+          35.6
+        ],
+        [
+          7.4,
+          31.4
+        ],
+        [
+          5.2,
+          27.6
+        ],
+        [
+          3.4,
+          25.2
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_social-lk_work_a",
+      "from": "lk_social",
+      "to": "lk_work",
+      "variant": "a",
+      "points": [
+        [
+          3.4,
+          25.2
+        ],
+        [
+          1.4,
+          26.2
+        ],
+        [
+          0.4,
+          29.4
+        ],
+        [
+          0.6,
+          34.0
+        ],
+        [
+          2.6,
+          40.3
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_social-lk_work_b",
+      "from": "lk_social",
+      "to": "lk_work",
+      "variant": "b",
+      "points": [
+        [
+          3.4,
+          25.2
+        ],
+        [
+          5.2,
+          27.6
+        ],
+        [
+          7.4,
+          31.4
+        ],
+        [
+          7.2,
+          35.6
+        ],
+        [
+          2.6,
+          40.3
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_work-lk_home_a",
+      "from": "lk_work",
+      "to": "lk_home",
+      "variant": "a",
+      "points": [
+        [
+          2.6,
+          40.3
+        ],
+        [
+          -9.0,
+          39.6
+        ],
+        [
+          -20.0,
+          41.0
+        ],
+        [
+          -27.0,
+          40.0
+        ]
+      ]
+    },
+    {
+      "schema": "kfb.npc-route/1",
+      "id": "lk_work-lk_home_b",
+      "from": "lk_work",
+      "to": "lk_home",
+      "variant": "b",
+      "points": [
+        [
+          2.6,
+          40.3
+        ],
+        [
+          -1.2,
+          42.6
+        ],
+        [
+          -8.0,
+          45.4
+        ],
+        [
+          -22.0,
+          44.6
+        ],
+        [
+          -27.0,
+          40.0
+        ]
+      ]
+    }
+  ],
+  "days": [
+    {
+      "schema": "kfb.npc-day/1",
+      "residentId": "farmer_b",
+      "seed": 11,
+      "speed": 1.15,
+      "entries": [
+        {
+          "at": 0.0,
+          "poi": "fb_home",
+          "activity": "rest"
+        },
+        {
+          "at": 0.06,
+          "poi": "fb_work",
+          "activity": "tend"
+        },
+        {
+          "at": 0.29,
+          "poi": "fb_social",
+          "activity": "social",
+          "meet": "lorekeeper"
+        },
+        {
+          "at": 0.4,
+          "poi": "fb_stage",
+          "activity": "inspect"
+        },
+        {
+          "at": 0.6,
+          "poi": "fb_work",
+          "activity": "tend"
+        },
+        {
+          "at": 0.86,
+          "poi": "fb_home",
+          "activity": "rest"
+        }
+      ]
+    },
+    {
+      "schema": "kfb.npc-day/1",
+      "residentId": "lorekeeper",
+      "seed": 23,
+      "speed": 1.0,
+      "entries": [
+        {
+          "at": 0.0,
+          "poi": "lk_home",
+          "activity": "rest"
+        },
+        {
+          "at": 0.08,
+          "poi": "lk_work",
+          "activity": "study"
+        },
+        {
+          "at": 0.29,
+          "poi": "lk_social",
+          "activity": "social",
+          "meet": "farmer_b"
+        },
+        {
+          "at": 0.41,
+          "poi": "lk_work",
+          "activity": "study"
+        },
+        {
+          "at": 0.84,
+          "poi": "lk_home",
+          "activity": "rest"
+        }
+      ]
+    }
+  ],
+  "activities": {
+    "rest": {
+      "base": "Idle_A",
+      "beats": []
+    },
+    "tend": {
+      "base": "Idle_A",
+      "beats": [
+        [
+          "Digging",
+          "Interact"
+        ],
+        [
+          "Working_C",
+          "PickUp"
+        ]
+      ],
+      "every": [
+        3.5,
+        6.0
+      ],
+      "note": "Wunschlisten: erster vorhandener Clip (K11 privat: Graben/Harken mit Gabel; öffentlich: Interact/PickUp)"
+    },
+    "inspect": {
+      "base": "Idle_A",
+      "beats": [
+        "Idle_B"
+      ],
+      "every": [
+        4.0,
+        7.0
+      ]
+    },
+    "study": {
+      "base": "Idle_A",
+      "beats": [
+        [
+          "Holding_C",
+          "Use_Item"
+        ],
+        [
+          "kfb_npc_read_page_turn_a",
+          "Idle_B"
+        ],
+        [
+          "Holding_B",
+          "Idle_B"
+        ]
+      ],
+      "every": [
+        4.0,
+        7.0
+      ],
+      "note": "Wunschlisten: K11 privat Lesen/Umblättern/Nachschlagen mit Buch (Use_Item mit Buch verboten, V-591); öffentlich Use_Item ohne Buch"
+    },
+    "social": {
+      "base": "Idle_A",
+      "beats": [
+        "Idle_B"
+      ],
+      "every": [
+        5.0,
+        8.0
+      ]
+    }
+  },
+  "fluffers": [
+    {
+      "id": "dark_fluffer_ghost",
+      "model": "WSB K11 cubes/KFB_Ghost_healed.k11c.glb (sha256 521b73a7…, CC0 Quaternius Ghost as-is + KFB_Mouth + KFB_HealedEyes; WS0 V-602)",
+      "modelBefore": "media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/Ghost.gltf",
+      "decision": "Georg 21.10.: Gegner Ghost; Heil-Waffe Gun_Pistol (KayKit Prototype Bits)",
+      "seed": 7,
+      "start": [
+        -25.0,
+        47.0
+      ],
+      "via": [
+        [
+          -19.5,
+          42.6
+        ]
+      ],
+      "stand": [
+        -14.4,
+        37.4
+      ],
+      "target": [
+        -12.4,
+        35.6
+      ],
+      "tree": {
+        "zone": "goblin",
+        "id": "t4"
+      },
+      "heightM": 1.1,
+      "mouth": {
+        "yK": 0.29,
+        "fwdK": 0.5,
+        "note": "gemessen am Ghost (Isolationsbild 21.10.), spuck.v3 schätzt 0,62 × Höhe = Nasenhöhe; Anker je Cube kommt mit V-584"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "schema": "kfb.npc-group/1",
+      "id": "skeleton_patrol",
+      "kind": "patrol",
+      "zone": "m1-west",
+      "decision": "Georg 21.10.: Phase D Go",
+      "speed": 1.0,
+      "t0": 0,
+      "route": {
+        "points": [
+          [
+            -31.0,
+            14.0
+          ],
+          [
+            -30.0,
+            4.0
+          ],
+          [
+            -21.0,
+            -2.5
+          ],
+          [
+            -14.5,
+            7.5
+          ],
+          [
+            -19.0,
+            17.0
+          ],
+          [
+            -27.0,
+            19.5
+          ]
+        ],
+        "stops": [
+          {
+            "i": 2,
+            "wait": 4
+          },
+          {
+            "i": 4,
+            "wait": 3
+          }
+        ],
+        "cornerR": 1.8
+      },
+      "members": [
+        {
+          "id": "skel_warrior",
+          "castId": "skeleton-warrior",
+          "back": 0,
+          "side": 0
+        },
+        {
+          "id": "skel_rogue",
+          "castId": "skeleton-rogue",
+          "back": 1.7,
+          "side": 0.85
+        },
+        {
+          "id": "skel_mage",
+          "castId": "skeleton-mage",
+          "back": 1.7,
+          "side": -0.85
+        }
+      ],
+      "notice": {
+        "r": 7,
+        "holdS": 4.5,
+        "cooldownS": 25,
+        "leaderClip": [
+          "Skeletons_Taunt"
+        ],
+        "othersClip": [
+          "Skeletons_Idle",
+          "Idle_B"
+        ]
+      },
+      "note": "Augen: Batch-Profile AUTO_CANDIDATE, Bereinigung HUMAN_REQUIRED (Original-Augenhöhlen) – Prüfung WS0/WSB offen"
+    },
+    {
+      "schema": "kfb.npc-group/1",
+      "id": "toy_squad",
+      "kind": "patrol",
+      "combat": {
+        "warnClip": [
+          "Interact",
+          "Idle_B"
+        ],
+        "threatClip": [
+          "Interact",
+          "Idle_B"
+        ],
+        "koClip": [
+          "Skeletons_Death",
+          "Death_A"
+        ],
+        "awakeClip": [
+          "Skeletons_Awaken_Floor",
+          "Idle_B"
+        ],
+        "note": "Georg 21.10.: Soldaten treffbar. KO/Aufstehen vorerst mit den Rig_Medium-Clips aus Rig_Medium_Special (as-is); eigener Spielzeug-Aufsteh-Clip über WS0/Blender MCP beauftragt"
+      },
+      "zone": "m1-east",
+      "decision": "Georg 21.10.: Phase D Go; V-464 Trupp Nr. 1–6 (Nr. 1 führt)",
+      "speed": 1.1,
+      "t0": 0,
+      "route": {
+        "points": [
+          [
+            33.0,
+            6.0
+          ],
+          [
+            41.0,
+            14.0
+          ],
+          [
+            42.0,
+            27.0
+          ],
+          [
+            35.0,
+            33.0
+          ],
+          [
+            29.0,
+            21.0
+          ]
+        ],
+        "stops": [
+          {
+            "i": 2,
+            "wait": 3
+          }
+        ],
+        "cornerR": 2.2
+      },
+      "members": [
+        {
+          "id": "toy_1",
+          "castId": "toy-soldier",
+          "back": 0,
+          "side": 0,
+          "nr": 1
+        },
+        {
+          "id": "toy_2",
+          "castId": "toy-soldier",
+          "back": 1.5,
+          "side": 0.65,
+          "nr": 2
+        },
+        {
+          "id": "toy_3",
+          "castId": "toy-soldier",
+          "back": 1.5,
+          "side": -0.65,
+          "nr": 3
+        },
+        {
+          "id": "toy_4",
+          "castId": "toy-soldier",
+          "back": 3.0,
+          "side": 0.65,
+          "nr": 4
+        },
+        {
+          "id": "toy_5",
+          "castId": "toy-soldier",
+          "back": 3.0,
+          "side": -0.65,
+          "nr": 5
+        },
+        {
+          "id": "toy_6",
+          "castId": "toy-soldier",
+          "back": 4.5,
+          "side": 0,
+          "nr": 6,
+          "stumble": {
+            "everyM": 11,
+            "lag": 0.9
+          }
+        }
+      ],
+      "notice": {
+        "r": 7,
+        "holdS": 4,
+        "cooldownS": 25,
+        "leaderClip": [
+          "Interact",
+          "Idle_B"
+        ],
+        "othersClip": [
+          "Idle_B"
+        ]
+      },
+      "note": "Hut-Nummern (V-464, WSB r3) und Gewehr-Halterung (V-582, WSB r3d) fehlen auf diesem Mac → ohne Nummer, ohne Gewehr; Kommando-Triplets (WSA) offen"
+    },
+    {
+      "schema": "kfb.npc-group/1",
+      "id": "bot_crew",
+      "kind": "patrol",
+      "zone": "m1-southeast",
+      "decision": "Georg 21.10.: Bots als Arbeitstrupp (B17 r1, PROOF – WS0 prüft, dann Georg); Augen PROOF (Lead 21.10.: Frontbild an Georg vor main)",
+      "speed": 0.9,
+      "t0": 0,
+      "route": {
+        "points": [
+          [
+            16,
+            -14
+          ],
+          [
+            29,
+            -9
+          ],
+          [
+            28,
+            -6
+          ],
+          [
+            15,
+            -11
+          ]
+        ],
+        "stops": [
+          {
+            "i": 0,
+            "wait": 5
+          },
+          {
+            "i": 1,
+            "wait": 4
+          }
+        ],
+        "cornerR": 1.4
+      },
+      "members": [
+        {
+          "id": "bot_tragic",
+          "castId": "kayfabrick-bot:tragic:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 0,
+          "side": 0
+        },
+        {
+          "id": "bot_comic",
+          "castId": "kayfabrick-bot:comic:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 1.7,
+          "side": 0
+        },
+        {
+          "id": "bot_absurd",
+          "castId": "kayfabrick-bot:absurd:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 3.4,
+          "side": 0
+        }
+      ],
+      "notice": {
+        "r": 7,
+        "holdS": 3.5,
+        "cooldownS": 25,
+        "leaderClip": [
+          "Waving",
+          "Idle_A"
+        ],
+        "othersClip": [
+          "Idle_A"
+        ]
+      },
+      "combat": {
+        "warnClip": [
+          "kfb_bot_angry_a",
+          "Idle_B"
+        ],
+        "threatClip": [
+          "kfb_bot_angry_a",
+          "Idle_B"
+        ],
+        "koClip": [
+          "Death_A"
+        ],
+        "awakeClip": [
+          "Skeletons_Awaken_Floor",
+          "Idle_A"
+        ],
+        "note": "Wut = kfb_bot_angry_a (B17), KO/Aufstehen Rig_Medium-Clips as-is wie beim Trupp"
+      },
+      "statics": [
+        {
+          "key": "station:tragic",
+          "at": [
+            14.2,
+            -15.6
+          ],
+          "yawDeg": 70
+        },
+        {
+          "key": "block:tragic",
+          "at": [
+            30.6,
+            -10.4
+          ]
+        },
+        {
+          "key": "block:comic",
+          "at": [
+            31.2,
+            -9.4
+          ]
+        },
+        {
+          "key": "block:absurd",
+          "at": [
+            30.2,
+            -11.4
+          ]
+        }
+      ],
+      "note": "Ort Platzhalter-POI (Lead-Teil, später Dioramen-Anker); Boden < 1°, frei von Bewohner-Routen, Skelett-Schleife, Trupp-Schleife und Amphitheater (Box x ±11,7, z −11,8…9,1). Eigentempo kfb_bot_carry_a nicht gemessen (aus Walking_A abgeleitet)"
+    }
+  ],
+  "bands": [
+    {
+      "schema": "kfb.npc-band/1",
+      "id": "orc_band_01",
+      "decision": "Lead 21.10.: WS-NPC baut das Modul band; Ort ist Lead-Teil, vorerst POI im M1-Standard, per Parameter verschiebbar (#band,bandat=x,z,Grad)",
+      "at": [
+        -8,
+        30
+      ],
+      "yawDeg": 90,
+      "note": "Wegkreuzung am Amphitheater (Wegbeginn [0,30]), Boden < 1,1° (terrainHeight), 8 m zu Weg und Bewohner-Routen; Blick +z zum Weg",
+      "scenelet": "orc_band_01",
+      "fallback": {
+        "note": "nur Aufstellung und Takt aus dem Scenelet R2 (keine Assets) für den Platzhalter, falls die privaten Dateien fehlen",
+        "timeline": {
+          "clock": {
+            "bpm": 100,
+            "fps": 24,
+            "phaseOffset_s": 0.465,
+            "beatsPerBar": 4
+          }
+        },
+        "actors": [
+          {
+            "id": "leader",
+            "p": [
+              0,
+              0,
+              0
+            ],
+            "ry": 0,
+            "clip": "bounce",
+            "beats": 8
+          },
+          {
+            "id": "guitarist",
+            "p": [
+              -2.7,
+              0,
+              1.2
+            ],
+            "ry": 0,
+            "clip": "strum",
+            "beats": 1
+          },
+          {
+            "id": "drummer",
+            "p": [
+              0,
+              0,
+              -1.3
+            ],
+            "ry": 0,
+            "clip": "drum_v5c",
+            "beats": 2
+          },
+          {
+            "id": "trumpeter",
+            "p": [
+              3.3,
+              0,
+              -1.6
+            ],
+            "ry": -24,
+            "clip": "trumpet_groove",
+            "beats": 8
+          }
+        ]
+      },
+      "placeholderCast": "adventurer-mage"
+    }
+  ],
+  "encounterTables": [
+    {
+      "schema": "kfb.encounter-table/1",
+      "id": "m1-east",
+      "zone": {
+        "center": [
+          34.0,
+          20.0
+        ],
+        "r": 34
+      },
+      "seed": 5,
+      "cooldownS": 60,
+      "entries": [
+        {
+          "group": "toy_squad",
+          "weight": 3
+        },
+        {
+          "group": null,
+          "weight": 1
+        }
+      ],
+      "note": "SPEC_NPC_PATROL_R1 §3: Wurf beim Betreten der Zone; sichtbar wird die Gruppe nur außerhalb des Bildes (kein Pop-in)"
+    }
+  ]
+}

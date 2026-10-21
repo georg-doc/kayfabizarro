@@ -1,0 +1,509 @@
+{
+ "schema": "kfb.ws1.eye-profile-pick/1",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json",
+  "commit": "ac9dbaed2e5966a537a4bb719e8cd847dcc5e099",
+  "note": "Georg-Export 19.09., Profil unverändert"
+ },
+ "profile": {
+  "schema": "kfb.eye-profile/0.1-candidate",
+  "actorId": "lorekeeper",
+  "source": {
+   "repo": "georg-doc/kayfabizarro",
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+   "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c"
+  },
+  "rigClass": "Rig_Medium",
+  "faceHost": {
+   "status": "OK",
+   "headBone": "head",
+   "headSize": [
+    1.426,
+    1.459,
+    1.319
+   ],
+   "facingSource": "Zehen"
+  },
+  "sourceFace": {
+   "headMesh": "Lorekeeper_Head",
+   "expectedConnectedComponents": null,
+   "connectedComponents": 17,
+   "eyeComponents": [],
+   "pairConfidence": 0.7,
+   "femaleOuterLashCandidate": "UNRESOLVED_GENERIC",
+   "removalMode": "mirrored-front-pair",
+   "guard": "head-named skinned mesh + mirrored equal-triangle front pair",
+   "status": "AUTO_CANDIDATE_GENERIC",
+   "faceColor": "#fbdfcb",
+   "faceColorSource": "runtime-head-texture-sample",
+   "schema": "kfb.source-face-report/0.1-candidate",
+   "eyeCandidates": [
+    {
+     "component": "AUTO_PAIR",
+     "triangles": 132,
+     "x": [
+      0.188,
+      -0.189
+     ],
+     "z": 0.402,
+     "size": [
+      0.1,
+      0.126,
+      0.085
+     ]
+    }
+   ],
+   "components": [],
+   "componentDiagnostic": {
+    "status": "OFF",
+    "selected": null
+   },
+   "sourceMeasuredSeed": null,
+   "genericDetector": {
+    "schema": "kfb.donoreyes/0.1",
+    "status": "OK",
+    "islands": 17,
+    "report": {
+     "tris": 132,
+     "z": 0.402,
+     "x": [
+      0.188,
+      -0.189
+     ],
+     "size": [
+      0.1,
+      0.126,
+      0.085
+     ]
+    },
+    "candidates": [
+     {
+      "tris": 66,
+      "z": 0.402
+     },
+     {
+      "tris": 72,
+      "z": 0.36
+     },
+     {
+      "tris": 56,
+      "z": -0.018
+     },
+     {
+      "tris": 56,
+      "z": -0.076
+     },
+     {
+      "tris": 56,
+      "z": -0.113
+     },
+     {
+      "tris": 56,
+      "z": -0.113
+     },
+     {
+      "tris": 56,
+      "z": -0.134
+     },
+     {
+      "tris": 56,
+      "z": -0.134
+     },
+     {
+      "tris": 56,
+      "z": -0.156
+     }
+    ]
+   },
+   "actorId": "lorekeeper",
+   "alternatives": []
+  },
+  "eyeRigSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "expressionSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "eye": {
+   "anchor": {
+    "dx": 0.34617,
+    "dy": 0.105,
+    "ring": 0.125,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 1.13,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "baseColor": "#fbdfcb",
+   "lidColorMode": "face-base-darkened",
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 0.76,
+    "tilt": 0
+   },
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ]
+  },
+  "blink": {
+   "minGap": 2.5,
+   "maxGap": 6.5,
+   "dur": 0.12
+  },
+  "life": {
+   "on": true,
+   "wander": 0.09,
+   "tremor": 0.045
+  },
+  "kinetics": {
+   "enabled": false,
+   "gain": 1,
+   "a": 0,
+   "c": 0,
+   "j": 0
+  },
+  "status": "AUTO_CANDIDATE",
+  "evidence": {
+   "camera": "front",
+   "motionClip": "bind",
+   "sourceEyeCleanupVisuallyAccepted": false,
+   "eyeProfileVisuallyApproved": false,
+   "cleanup02SourceAnchorSeed": {
+    "status": "OK",
+    "source": "cleanup02-root-eye-anchors",
+    "anchor": {
+     "dx": 0.34617,
+     "dy": 0.097996,
+     "ring": 0.110319
+    },
+    "eye": {
+     "inset": 1.028377
+    },
+    "faceHostUnit": 0.729673,
+    "targets": {
+     "left": [
+      0.252606,
+      0.071505,
+      0.496381
+     ],
+     "right": [
+      -0.252577,
+      0.071505,
+      0.496381
+     ]
+    },
+    "surfaceZ": [
+     0.610893,
+     0.610904
+    ],
+    "sourceRadius": [
+     0.080497,
+     0.080497
+    ],
+    "asymmetry": {
+     "x": 3.9e-05,
+     "y": 0,
+     "z": 0
+    },
+    "actorId": "lorekeeper",
+    "cleanupId": "lorekeeper",
+    "autoApply": true
+   },
+   "sourcePlacement": {
+    "status": "OK",
+    "source": "cleanup02-root-eye-anchors",
+    "anchor": {
+     "dx": 0.34617,
+     "dy": 0.097996,
+     "ring": 0.110319
+    },
+    "eye": {
+     "inset": 1.028377
+    },
+    "faceHostUnit": 0.729673,
+    "targets": {
+     "left": [
+      0.252606,
+      0.071505,
+      0.496381
+     ],
+     "right": [
+      -0.252577,
+      0.071505,
+      0.496381
+     ]
+    },
+    "surfaceZ": [
+     0.610893,
+     0.610904
+    ],
+    "sourceRadius": [
+     0.080497,
+     0.080497
+    ],
+    "asymmetry": {
+     "x": 3.9e-05,
+     "y": 0,
+     "z": 0
+    },
+    "actorId": "lorekeeper",
+    "cleanupId": "lorekeeper",
+    "autoApply": true
+   },
+   "faceColorSample": {
+    "schema": "kfb.face-color-sampler/0.1-candidate",
+    "status": "OK",
+    "headMesh": "Lorekeeper_Head",
+    "color": "#fbdfcb",
+    "rgb": [
+     245,
+     189,
+     152
+    ],
+    "sampleCount": 14,
+    "samples": [
+     {
+      "uv": [
+       0.032,
+       0.1374
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.032,
+       0.136
+      ],
+      "rgb": [
+       246,
+       189,
+       153
+      ]
+     },
+     {
+      "uv": [
+       0.032,
+       0.1417
+      ],
+      "rgb": [
+       245,
+       188,
+       151
+      ]
+     },
+     {
+      "uv": [
+       0.029,
+       0.1398
+      ],
+      "rgb": [
+       245,
+       188,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.0349,
+       0.1396
+      ],
+      "rgb": [
+       245,
+       188,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.0301,
+       0.1374
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.0339,
+       0.1375
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.053,
+       0.1374
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.053,
+       0.136
+      ],
+      "rgb": [
+       246,
+       189,
+       153
+      ]
+     },
+     {
+      "uv": [
+       0.053,
+       0.1417
+      ],
+      "rgb": [
+       245,
+       188,
+       151
+      ]
+     },
+     {
+      "uv": [
+       0.0501,
+       0.1396
+      ],
+      "rgb": [
+       245,
+       188,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.056,
+       0.1398
+      ],
+      "rgb": [
+       245,
+       188,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.0512,
+       0.1375
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     },
+     {
+      "uv": [
+       0.055,
+       0.1374
+      ],
+      "rgb": [
+       245,
+       189,
+       152
+      ]
+     }
+    ],
+    "source": "head-texture-around-eye-host"
+   }
+  },
+  "calibration": {
+   "schema": "kfb.eye-medium-calibration/0.1-candidate",
+   "classSeed": "./rig-medium-default.v0.json",
+   "authoringDefaultSource": "Georg screenshot / browser tuning 2026-09-19",
+   "authoringDefault": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15,
+    "pupilSize": 0.34,
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "gloss": 0.1
+   },
+   "sourceMeasuredPlacementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+   "inheritance": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "status": "AUTHORING_DEFAULT_REFERENCE"
+  },
+  "reviewState": "ADJUSTED",
+  "inheritance": {
+   "order": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "rigClass": "Rig_Medium",
+   "classSeed": "data/rig-medium-default.v0.json",
+   "characterId": "lorekeeper",
+   "sessionAdjusted": false,
+   "placementSource": "cleanup02-source-anchors",
+   "placementAutoApplied": true
+  }
+ },
+ "classDefault": {
+  "source": "Georg screenshot / browser tuning 2026-09-19",
+  "eye": {
+   "anchor": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 0.4,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ],
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "lidColorMode": "face-base-darkened"
+  }
+ },
+ "inheritanceOrder": [
+  "rigClass",
+  "character",
+  "session"
+ ]
+}

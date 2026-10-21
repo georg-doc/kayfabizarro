@@ -11,7 +11,7 @@ export const WORLD_SAVE_SCHEMA = 'kfb.world-save/1'
 export const WORLD_SAVE_VERSION = 1
 export const WORLD_SAVE_KEY = 'kfb.world-save'
 export const WORLD_SAVE_LIMITS = Object.freeze({ flags: 256, flagKey: 64, flagText: 256, perResident: 16, receipts: 256, with: 4, eventKey: 128, bytes: 1_000_000 })
-export const RECEIPT_KINDS = Object.freeze(['met', 'greeted', 'silent', 'interrupted_by_player', 'player_greeted', 'plague_seen', 'fluffer_cured'])   // erweiterbar nur mit WS0
+export const RECEIPT_KINDS = Object.freeze(['met', 'greeted', 'silent', 'interrupted_by_player', 'player_greeted', 'plague_seen', 'fluffer_cured', 'hit_warning', 'hostile_response', 'resident_downed', 'respawned'])   // Erweiterung R0.6 Phase D (Georg-Go 21.10.)
 export const RECEIPT_MODES = Object.freeze(['observed', 'participated', 'told'])
 const ID_RE = /^[a-z0-9_-]{1,40}$/
 const fnv1a = (t) => { let h = 0x811c9dc5; for (let i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0 } return h.toString(16).padStart(8, '0') }

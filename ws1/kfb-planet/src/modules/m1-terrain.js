@@ -11,6 +11,7 @@ import { makeClayFamily } from '../vendor/billboard/billboard-clay.js'
 import { K } from '../m1/m1Scale.js'
 import { applyTerrain2, terrain2Berm, TERRAIN2_CFG } from '../look/terrain2.js'
 import { applyTerrain3 } from '../look/terrain3.js'
+import { applyInkPatches } from '../look/inkPatch.js'
 
 // V-345: ganzes Gelände × K (gleiche Form in J17-Metern); Zahlen = alte WS1-Werte
 export const GROUND_Y = -0.125 * K // = Boden des Amphitheater-Moduls (modules/amphitheater.js: (minY − floorY)·s + 0,11)
@@ -54,6 +55,7 @@ export function createTerrain(options = {}) {
   const mat = fam.std(options.biome?.top || '#9aab62', 0.95)
   const t2 = T2 ? applyTerrain2(mat, { world: options.world, ring: options.ring }) : null // #439: Farbflächen + Palettenschatten (Variante, Standard unverändert)
   const t3 = T3 ? applyTerrain3(mat, { palette: options.palette, hMin: GROUND_Y, hMax: GROUND_Y + T.hillAmp * 1.6 }) : null // #439 terrain3: Fließfarben der Gelände-Probe + Palettenschatten
+  const ink = applyInkPatches(mat) // WS-NPC Phase C (V-583): Tusche-Flecken, erst ab dem ersten Patch im Shader (ohne Patch byte-gleich)
   const mesh = new THREE.Mesh(geo, mat); mesh.name = 'm1-terrain-clay'; mesh.receiveShadow = true
   root.add(mesh)
   // Steigung (Grad) bis hillR, für die Prüfung „begehbar“ (Controller slopeMaxAngle)
@@ -69,7 +71,9 @@ export function createTerrain(options = {}) {
     surfaceAt: (x, z) => { const c = (2 * T.R) / T.seg, u0 = (x + T.R) / c, v0 = (z + T.R) / c, ix = Math.min(T.seg - 1, Math.max(0, Math.floor(u0))), iz = Math.min(T.seg - 1, Math.max(0, Math.floor(v0)))
       const x0 = -T.R + ix * c, z0 = -T.R + iz * c, u = u0 - ix, v = v0 - iz, ha = H(x0, z0), hb = H(x0, z0 + c), hc = H(x0 + c, z0 + c), hd = H(x0 + c, z0)
       return u + v <= 1 ? ha + (hd - ha) * u + (hb - ha) * v : hc + (hb - hc) * (1 - u) + (hd - hc) * (1 - v) },
-    info: () => info,
+    info: () => ({ ...info, ink: ink.installed() }),
+    // WS-NPC Phase C (Lead-OK 21.10. a): höchstens 4 Tusche-Flecken [{ x, z, r, amount, seed }]; Kollision und Höhen bleiben unberührt
+    setInkPatches: (patches) => ink.set(patches),
     // Rapier-Trimesh in Weltkoordinaten (das Gelände liegt im Ursprung, ohne Drehung/Skalierung)
     colliderData: () => ({ vertices: new Float32Array(pos.array), indices: new Uint32Array(geo.index.array) }),
     update(dt = 1 / 60) { terrainLog.update++; t3?.update(dt) },
