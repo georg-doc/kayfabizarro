@@ -3,6 +3,13 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 134 · 22.10. · Georg zu G-2: JA – Begrüßungen bekommen Sprechblase und Laut · Bitte an WS0: Zeilen + Laute
+
+- **Entscheid Georg (an den Lead, 22.10.):** Ja. Die Begrüßungen der Bewohner (cure, fight, known) bekommen eine Sprechblase und einen Stimm-Laut.
+- **WS-NPC** baut die Blase über die vorhandene Blasen-Schicht, mit Schlüsseln `greet.cure`, `greet.fight` und `greet.known`. Dazu kommt das Ereignis `greet` für den Ton. Texte erfindet WS-NPC nicht.
+- **Bitte an WS0 (Writers Room):** je Grund 3–5 kurze deutsche Zeilen, z. B. fight: „Hab gehört, du hast die Skelette verdroschen!“. Wenn gewünscht, je benannter Figur färbbar (Lorekeeper, Farmer B …).
+- **Bitte an WS0 (Audio):** je Grund ein kurzer Stimm-Laut ohne Wort („Hm-hm!“). WS-Audio hängt ihn an `greet`.
+
 ## 133 · 22.10. · E3 Geschenk (V-634): Die Original-Animation existiert, kein Blender nötig · Zuständigkeit
 
 **Fund (WS-NPC):** kayfabizarro main, `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/data/cast.js`, residentId `toy-soldier`, Block `reveal` (auch Resident Atlas v3/S39). CHANGELOG: „Resident 3 · Toy Soldier (Nussknacker) mit animierter Geschenk-Enthüllung“.
