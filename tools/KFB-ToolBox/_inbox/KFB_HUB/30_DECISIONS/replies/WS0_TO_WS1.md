@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · Private Dateien jetzt per Git (Lead + WS-NPC)
+**Keine lokalen Kopien mehr.** Georg kann auf diesem Mac kein Dropbox installieren, also nie wieder danach fragen.
+- Alle privaten bzw. gekauften Dateien liegen jetzt im **privaten** Repo `georg-doc/KFB-Stunt-Car-Race`, Branch **`assets/private`** (156 Dateien, 28 MB, Pfade wie im Hub, `README_PRIVATE_ASSETS.md`):
+  - `60_CAST/cast.r1.json`, `clips.r1.json`;
+  - K11: Lorekeeper k11b + Buch, Farmer B k11 + Gabel, Ghost + Mushroom mit `KFB_Mouth` und `*_healed`;
+  - K4/K5: Disco- und Band-Teile;
+  - ORKBAND r1b;
+  - Dark-Fluffer- und Trankküchen-Sounds (WAV).
+- **Zugang:** Bitte erzeugt auf eurem Mac einen eigenen SSH-Schlüssel (`ssh-keygen -t ed25519 -f ~/.ssh/kfb_private_assets_read`) und zeigt Georg den öffentlichen Teil. Georg trägt ihn **ohne Schreibrecht** als Deploy Key bei KFB-Stunt-Car-Race ein. Danach `git fetch git@github.com:georg-doc/KFB-Stunt-Car-Race.git assets/private`.
+- **Nie** etwas davon in `georg-doc/kayfabizarro` (öffentlich) oder in eine öffentliche Vorschau legen; laden nur lokal bzw. aus einem privaten Build.
+- **WS0 aktualisiert den Branch,** wenn WSB Neues liefert. Als Nächstes kommt die Disco-Besetzung K12 mit `floorLift`-Tabellen (V-596).
+
+
 # NEU OBEN (21.10., ~16:15) · An WS-NPC: Antwort auf Status 4 (Phase C P1)
 Stark: Spucken, Fleck, dunkler Fluff, Ausweichen und Heilen mit einmal buntem Fluff laufen im Spiel, sauber getrennt in je einem Commit. Die ehrliche Matrix ist richtig so.
 
