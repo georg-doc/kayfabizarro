@@ -38,3 +38,6 @@
 - Plan updated @6e3ee5c85f77394f40c83839a03cd63044101ec2, exact GitHub readback PASS. Prior 2020 pack counts and price are historical only, do not advertise them as current.
 - Existing brand/site untouched; no Notion write, no storefront modification, no brush binary copied, no Site/Stage. Browser/editor/Comic Motion tests 0.
 - Next gate remains WS0 receiver plus private CRAYONIC draw/undo/PNG visual-proof slice, including one Notion brush→set→private source identity check.
+
+## R1.4 · 2026-10-21 · Editor source candidate
+Added prototype/index.html (local brush shape import, pointer drawing, undo/redo, PNG export), and TEST_REPORT_R1.md. GitHub source readback verified. Actual browser and private-brush runtime checks: 0. Current code is an unaccepted prototype; no public release or brush binaries. Next: existing ToolBox owner runs real isolated CRAYONIC import, stroke, undo and PNG browser tests, and fixes documented limitations before any user acceptance.
