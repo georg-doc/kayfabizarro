@@ -15,7 +15,10 @@ Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Ab
   - Skelette `C06` leise, Spielzeugsoldaten `D04` leise, Bots `C08` leise – Platzhalter, siehe Lücken.
   - Fluffer-Hopser `DF07`.
   - Test `audio`: 4 nachgestellte Schritte/Hüpfer klingen, der alte und der ferne nicht, keine Wiederholung – **PASS**.
-  - Die echte Prüfung kommt nach dem Push von WS-NPC.
+  - **Echt geprüft** mit ws-npc/phase-a f6e7eed (Spiegel 30fda96) in der Vorschau-Kombination:
+    - bei den Skeletten 3,5 Schritte/s, beim Fluffer 5,5/s (Hüpfer + Nachbarn), im Dorf 7,5/s;
+    - höchstens 16 Stimmen der Bank, Audio 0,08 ms/Bild (p95 0,2), keine Fehler.
+    - Schritte haben den niedrigsten Rang und höchstens 8 zugleich; dadurch fielen 3 von 150 aus. Kampf- und Fluffer-Töne verdrängen sie nie.
 - **Lücken für WS0** (Bestandsaufnahme WS-NPC, übernommen):
   1. Schritte der Bewohner in Knete je Boden (Gras, Sand/Weg, Fels);
   2. Skelett-Schritt: kurzes Knochen-Tock, leiser als C06;
