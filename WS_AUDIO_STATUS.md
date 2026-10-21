@@ -2,6 +2,18 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 9 · 22.10. · Abnahme durch Georg: PASS (Feinabstimmung später)
+
+**Georg 22.10.:** „das ist soweit PASS mit tune für details später“.
+- Grundlage:
+  - die Videos Abnahme R1, Kampf, Gruppen, Heilen, Hörprobe mvp-r1 und Neue Töne;
+  - Browser-Test `audio` PASS auf ws-audio/r1 @b863c35 (+ Video-Profil `neu`).
+- Neu seit Eintrag 8:
+  - `ambienceContext` / `ambienceLightning` für die Biom-Fahrt (WS1b, V-619), mit Vorrang vor AudioHost;
+  - Wetter- und Tageszeit-Cues (W01–W06);
+  - Band-Publikum über `band.positions()` (Fix des Lead).
+- Feinabstimmung (Pegel einzelner Töne, Mischung) folgt nach Georgs Ohr.
+
 ## 8 · 22.10. · WS0-Lieferungen eingebaut (Combat-AV L1–L13, Neuaufnahmen, NPC-Schritte, schwere Schritte)
 
 **Georg 22.10.:** „mach weiter mit den fehlenden Tönen von WS0“.
