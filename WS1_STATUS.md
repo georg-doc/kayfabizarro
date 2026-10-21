@@ -3,6 +3,24 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 122 · 21.10. spät · Disco K12 startet · FRAGE an WS0: welcher FrizzleBob ist der aktuelle ToolBox-Stand? · Vorschau probe-welt
+
+### Frage an WS0 (Georg 21.10.: „den korrekten FrizzleBob v5, aktuellster ToolBox-Stand“) – bitte bald beantworten
+- **Wir haben lokal und im Register nur:** `frizzlebob.georg-2026-10-14.kfb-pets.json` (Blob aab8eeb0) + `FB_TEMPLATE_LOOK_v5b.glb` @23615cff. So läuft FB heute im Spiel (face-mount zur Laufzeit, V-240/V-243/V-244).
+- **Frage 1:** Gibt es aus der neuen ToolBox (WSA-Work-Port, V-244) einen neueren FB-Export (kfb-pets.json oder Rezept)? Falls ja, bitte Pfad und Commit in den Register- oder privaten Branch legen. Wir übernehmen ihn 1:1.
+- **Frage 2:** Dürfen die MC-Clips (Rig_Medium, Motion Library) auf FB laufen wie bei den Tänzern? Und ist FBs Skelett Rig_Medium-gleich (Knochennamen)?
+- **Bis zur Antwort:** WS1 baut mit dem 14.10.-Stand (mit Vorhandenem bauen, später tauschen). FB wird im Spiel montiert (Gesicht aus Georgs Export) und als Modell in die Probe übernommen. Kein eigener Gesichtswert.
+- **Frage 3 (Quellbefund WSB):** Die Hexe hat bei 30,6 s zwei Cues (`samba_a` und `house_a`). WS1 nimmt bis zur Entscheidung `house_a` (der spätere Eintrag in der Zeitleiste gewinnt).
+
+### Disco K12 (Dioramen-Test Schritt 3)
+- 7 Tänzer aus `assets/private` (K12, `KFB_Disco_*.src.glb`) auf dem O-Town-Platz der Probe. Lagen aus `disco_cast_k12.json`, Cues auf der 100-bpm-Uhr (38,4 s), floorLift nach V-596 (48 fps, lerp).
+- Private Dateien nur lokal: über einen Verweis neben dem Probe-Server, nie in ws1/preview oder im Artefakt; öffentliche Fassungen ohne Tänzer.
+
+### Spielbare Vorschau neues Gelände
+- `ws1-preview.kayfabizarro.pages.dev/probe-welt` (ws1/preview @ac42ee7) = terrain/probe-world @ba94c9d, Spiegel `ws1/terrain-probe-world` @1765b3f.
+- Einzeltests 22/22 PASS. Ohne Hash startet sie auf `#m1,harvest,look=terrain3,world=probe`. Ohne private Töne. Die Startseite ist unverändert.
+- Merge-Reihenfolge (erst mit Georgs Go): terrain/probe-world → ws-npc/phase-a (Konflikte package.json, m1-terrain.js: WS1) → ws-audio/r1.
+
 ## 121 · 21.10. abends · Wasser im Spiel, Ufer sauber, Fahrzeug-Look A, WS-Audio gestartet, Bitte an WSB „Marsch“ · Spiel-Zweig terrain/probe-world @ba94c9d (lokal)
 
 ### Bitte an WS0 → WSB (Georg 21.10.): Auftrag „Marsch“ für den Spielzeugsoldaten
