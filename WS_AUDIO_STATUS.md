@@ -2,6 +2,33 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 8 · 22.10. · WS0-Lieferungen eingebaut (Combat-AV L1–L13, Neuaufnahmen, NPC-Schritte, schwere Schritte)
+
+**Georg 22.10.:** „mach weiter mit den fehlenden Tönen von WS0“.
+**Stand:** `ws-audio/r1` @7c3cdab, auf `ws1/mvp-r1` @44f55f2, lokal; der Lead merged nach.
+**Quelle:** assets/private @5ddc156, alle Sätze mit `_lufs`-Bericht (−16 LUFS), den prepare bevorzugt.
+
+| Satz | Eingebaut |
+|---|---|
+| combat_av_fix_r1 L01–L13 | Abgang Bogen L01, Armbrust L02, Zauber L04 (+X09), Würfel L06. Treffer: Pfeil L03, Zauber L05, Spieler-Bonk L08, Monster-Biss L07 + L08. Neue K10-Ereignisse `kill` → L09, `windup` → L13, `block` → M04 v3. Waffe fällt L10. Rauch L12 + T08. Gatling: Anlauf L11 up → Dreh-Schleife + X02 → Auslauf L11 down |
+| combat_av_fix_r1/r2 (Neuaufnahmen v2/v3) | X07 v2 (Bolzen-Einschlag), K03 v2 (Metall), R03 v3 (Racer über Fels), DF04 v3 (Goo-Fleck), DF10 v3 (Augen-Plopp), F08 v3 (Früchte fallen nach Baumtreffer), D05 c durch a/b ersetzt |
+| combat_av_fix_r3 | L14 Hüpfer (Spieler und K10 `jump`), L15 Blödsinn-Stinger bereit als `ui.gameOver` (braucht ein Ende-Ereignis) |
+| npc_steps_r1 | Bewohner-Schritte Knete N01/N02/N03 je Boden; Skelett N04, Spielzeugsoldat N05, Bot N07. Präsenz-Schleifen: Aufziehschlüssel N06 (solange der Trupp geht), Goo-Gleiten N08 (zwischen den Hüpfern des feindlichen Fluffers). Geheilter Hüpfer N09. Gruppen: Bot-Wut N10 (+C13), Aufstehen N11 (Soldaten/Bots), Skelett-K.o. N12, Soldaten-Pfiff N13 bei Wut, Bot-Piep N14 beim Beruhigen. Publikum an der Band N15 (leise Schleife, ≤ 30 m) |
+| heavy_steps_r1 | Large-Rig stampft (H01 Gras, H02 Stein, H03 Sand; H04–H06 bereit), sobald der Schritt-Eintrag `rig: 'large'` trägt |
+
+- **Tests:** `audio-mixer` PASS (alle Platzhalter ersetzt, neue Ereignisse, Gruppen), `audio` (Browser) PASS: 8 neue Kampf-Ereignisse klingen, Biss = 2 Ebenen, Schleifen Aufziehschlüssel und Goo-Gleiten laufen.
+- **Site:** `site-copy --dry` ergibt 370 Dateien, 242 MB, keine Datei > 25 MiB.
+- **Nicht im Spiel verwendet** (liegt bereit oder gehört anderen):
+  - O2_backfire v3: Der WSA-Racer schließt O2 im Manifest aus.
+  - C01–C12 v2/v3: Der WSA-Kampf nutzt sein eigenes Manifest; Bitte an WSA, die Neuaufnahmen dort aufzunehmen.
+  - W04 v3, A01, A03: kein Wetter bzw. kein Dschungel-Biom.
+  - D01 arm_beeps v3: kein Scharf-machen-Ereignis.
+  - B11, R03b, R07: keine passende Stelle.
+- **Offen bei WS0:** nichts aus meinen Listen. Offen bei anderen:
+  - WS-NPC: `rig: 'large'` an den Schritt-Einträgen der Large-Rig-Figuren;
+  - Arena: K10-Ereignisse im Spiel inklusive `windup`, `kill`, `block`;
+  - Spiel: ein Ende-Ereignis für den Stinger L15.
+
 ## 7 · 21.10. · Ton im gemeinsamen Spiel-Branch ws1/mvp-r1 · private MVP-Site · Fluffer 0,8 m
 
 - **Lead 21.10. (V-618, ein Spiel-Branch):** `ws-audio/r1` ist in `ws1/mvp-r1` zusammengeführt; neue Ton-Arbeit setzt dort auf. `ws-audio/r1` steht jetzt auf `ws1/mvp-r1` @44f55f2.
