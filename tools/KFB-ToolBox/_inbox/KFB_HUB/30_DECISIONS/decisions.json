@@ -8844,6 +8844,21 @@
    "applies": "nach MVP"
   },
   {
+   "id": "V-624",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "MVP-Site (ändert V-618 Punkt Site, Georg 22.10.): kein Cloudflare-Pages-Projekt fürs Spiel. WSA work baut die spielbare MVP-Fassung wieder als GPT-Site bzw. Stage wie zuvor (chatgpt.site, privater Abruf serverseitig wie WS1-Staging). WS1 hat das eingeplant; der Lead liefert den Spiel-Branch ws1/mvp-r1, WSA die Stage.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bewährter Weg statt neuer Pipeline; Georg zieht die Reißleine bei Cloudflare.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8931,7 +8946,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1067",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1070",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

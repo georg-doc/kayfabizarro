@@ -3,7 +3,7 @@
 
 **Tier 0**
 1. **Ein lauffähiger Spiel-Branch** aus `terrain/probe-world` + `ws-npc/*` + `ws-audio/*`, danach die Arena-Module. Use what works: nichts nachbauen, nur zusammenführen und einhängen.
-2. **Als Site:** Das Cloudflare-Pages-Projekt baut aus dem Branch. Der Build holt `KFB-Stunt-Car-Race/assets/private` mit einem Lese-Token. Zugang vorerst **mit Login** (Cloudflare Access für Georg und Tester), bis Georg „öffentlich“ sagt.
+2. **Als Site (geändert, V-624):** WSA work baut die Stage wieder als GPT-Site wie zuvor, mit privatem Abruf serverseitig wie WS1-Staging. Kein Cloudflare-Pages-Projekt. Der Lead liefert den Spiel-Branch.
 3. **Spielbar auf Georgs Rechner:** 60 fps als Ziel, Qualitätsstufe bzw. dpr-Deckel. Abnahme durch Georg im Browser.
 
 ## Block
@@ -20,10 +20,7 @@
 4. **Kampf:** Arena-Module (PR #24/#25/#27) und die Combat-AV-Prototypen mit Georgs PASS (`ws1/combat-av-r1`).
 5. **Leistung:** Qualitätsregler (dpr 1 / 1,5 / 2), Messung mit `tri-count` und fps aus der Spielkamera.
 6. **Einstieg:** Startseite mit Lade-Balken, Steuerungshilfe, Ton- und Qualitätsregler.
-7. **Site:**
-   - Build-Pipeline wie bei der Arena; WSA hilft, sie hat die Arena-Pipeline gebaut.
-   - Große Dateien (> 25 MB) nach R2.
-   - Keine Laufzeit-Abrufe von `raw.githubusercontent.com`.
+7. **Site:** WSA work baut die GPT-Site bzw. Stage aus `ws1/mvp-r1` (V-624). Der Lead nennt WSA den Stand, der gebaut werden soll.
 8. **Danach** ein blinder Design- und Gameplay-Kritiker auf dem Build: erste 10 Minuten als fremder Spieler, Bericht an WS0.
 
 **Grenzen:** Kein Merge in `main` ohne Georg. Private Dateien nie ins öffentliche Repo. Fehlt ein Teil, meldet ihr es an WS0.

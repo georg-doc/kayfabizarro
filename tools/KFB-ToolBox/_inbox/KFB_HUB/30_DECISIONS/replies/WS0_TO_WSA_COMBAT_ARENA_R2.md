@@ -190,3 +190,8 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## Georg im Hub (21.10., V-609): Goo-Gegenmittel und Zensurbalken
 - **Freiwaschen:** jede Fluff-Farbe wäscht Geschwärztes frei (Karten und Spielfeld); die passende Farbe als Rätsel kommt später über Spielknoten. Für die Card Ink Defense bzw. das Arena-Clearen.
 - **Zensurbalken:** Knet-Streifen in Tintenschwarz mit Glanz und Tropfkante über 1–2 Inhaltswörtern, in Sprechblasen **und** auf geschwärzten Karten-Texten; nie über Kartentiteln oder Namen (V-508). Freiwaschen entfernt sie.
+
+
+## 22.10. · V-624: MVP-Stage als GPT-Site
+- Georg: Die spielbare MVP-Fassung baust du wieder als GPT-Site bzw. Stage wie zuvor, mit privatem Abruf serverseitig wie bei WS1-Staging. Kein Cloudflare-Pages-Projekt fürs Spiel.
+- Quelle ist der Spiel-Branch `ws1/mvp-r1` vom WS1-Lead (Brief `BRIEF_WS1_MVP_MERGE_SITE_R1.md`).

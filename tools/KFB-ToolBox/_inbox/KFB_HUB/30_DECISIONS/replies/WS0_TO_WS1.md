@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · MVP-Site: GPT-Site/Stage statt Cloudflare (V-624)
+- **Georg hat Cloudflare gestoppt.** WSA work baut die spielbare Fassung wieder als GPT-Site bzw. Stage wie zuvor.
+- **Ihr habt das schon eingeplant.** Der Brief V-618 ist angepasst: Der Lead liefert `ws1/mvp-r1`, WSA die Stage.
+
+
 # NEU OBEN (22.10., ~00:10) · Zwei neue Aufträge für WS1 (Georg: „ja, das passt“)
 - **WS1-Lead: `BRIEF_WS1_MVP_MERGE_SITE_R1.md` (V-618).**
   - Ein Spiel-Branch `ws1/mvp-r1` aus Gelände, NPC und Ton, dazu Kampf.
