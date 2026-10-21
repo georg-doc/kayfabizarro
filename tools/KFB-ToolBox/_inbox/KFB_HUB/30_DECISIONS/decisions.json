@@ -8649,6 +8649,66 @@
    "applies": "sofort"
   },
   {
+   "id": "V-610",
+   "date": "2026-10-21",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Heil-Schuss Zielwahl (WS-NPC Status 8, WS0 entscheidet Variante a): Im Zielkegel gewinnt ein feindlicher Dark Fluffer bis etwa 1,5 m hinter dem nächsten Hindernis (Baum, Fels, Haus) vor dem Hindernis; sonst bleibt nächstes Ziel gewinnt. Gilt nur für Heil-Schüsse auf Fluffer, nicht für Waffen. Kamera dreht beim Teleport mit (rotateAzimuthTo, WS-Audio).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Spieler zielt auf den Fluffer, nicht auf den Baum; Vorrang nur im kleinen Fenster hinter dem Hindernis.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-611",
+   "date": "2026-10-21",
+   "area": "3D",
+   "verdict": "RULE",
+   "text": "WSB-Auftrag Nachtrag 18 (WS-NPC Status 9, Georg 21.10.): k11c-Fassung mit KFB_Mouth und KFB_HealedEyes für die übrigen 15 Boden-Cubes (q_alien bis q_yeti, Mushroom liegt schon aus K11). Lieferung in Originalgröße, die Spielgröße setzt das Spiel über heightM (Georg wählt 1,1 / 0,8 / 0,7 m). Nach K13/K14, Reihenfolge Georg. Proof-Stage, Karten q_<name>.figure.json, privat über den privaten Branch.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Satz Gesichter für alle Boden-Cubes, Größe nur an einer Stelle (heightM).",
+   "applies": "nach K13/K14"
+  },
+  {
+   "id": "V-612",
+   "date": "2026-10-21",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "WS-Audio Status 5/6: Schritte und Hüpfer aus echtem Sohlen-Kontakt angenommen. Lückenliste 1-8 plus drei Gruppen-Klänge als Satz npc_steps_r1 (18 Clips, etwa 720 Credits) entworfen, Erzeugung erst nach Georg-Go, zusammen mit heavy_steps_r1 (etwa 320). Fluffer-Klänge ziehen mit der Größe mit (5-8 Prozent höher bei 0,7 m).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schritte im Ton waren Georgs Wunsch; Lücken gesammelt in einem Satz statt einzeln.",
+   "applies": "nach Georg-Go"
+  },
+  {
+   "id": "V-613",
+   "date": "2026-10-21",
+   "area": "Video",
+   "verdict": "RULE",
+   "text": "Hypernorm P0 kfb-quote-sequence (WS-Media, Branch media/kfb-hypernorm-p0-2026-10-21 @edc79c7): angenommen zur Prüfung durch WS1. Die Freigabe als Überlagerung in p0.pilot.json reicht für P0; der Pool-Eintrag APPROVED_PRIVATE kommt beim Zusammenführen durch den Owner. Offen für Georg: Tafel-Basis (Karte neu mit mindestens 2400 px oder H14-Frames wie R2) und Palette Insel bucht (Etikett 2,7:1).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "P0 läuft privat und deterministisch; Georg entscheidet nur Bildbasis und Palette.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8736,7 +8796,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1061",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1062",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

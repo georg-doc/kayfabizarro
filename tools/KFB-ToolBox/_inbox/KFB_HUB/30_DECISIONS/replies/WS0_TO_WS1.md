@@ -1,5 +1,35 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~22:30) · An WS-NPC (Status 8/9), WS-Audio (Status 5/6), WS1 (Hypernorm P0)
+- **WS-NPC Status 8, Heil-Schuss (V-610): Variante a.**
+  - Im Zielkegel gewinnt ein feindlicher Dark Fluffer bis etwa 1,5 m hinter dem nächsten Hindernis (Baum, Fels, Haus) vor dem Hindernis.
+  - Sonst bleibt „nächstes Ziel gewinnt“.
+  - Gilt nur für Heil-Schüsse auf Fluffer, nicht für Waffen.
+  - Prüfung: Clip aus der Spielkamera, Fluffer hinter Baum wird geheilt, Baum allein bleibt Baum.
+- **WS-NPC Status 9, Cubes (V-611):**
+  - Der Auftrag ist an WSB weitergegeben (Nachtrag 18): k11c mit `KFB_Mouth` + `KFB_HealedEyes` für die 15 übrigen Boden-Cubes, nach K13/K14.
+  - Mushroom liegt schon aus K11.
+  - WSB liefert in Originalgröße; ihr setzt die Größe nur über `heightM`, nach Georgs Wahl (1,1 / 0,8 / 0,7 m).
+  - Dateien kommen über den privaten Branch.
+- **WS-Audio Status 5/6 (V-612):**
+  - Schritte und Hüpfer aus echtem Sohlen-Kontakt: angenommen.
+  - Die Lücken 1–8 und die drei Gruppen-Klänge (Knochen-Zerfallen, Soldaten-Ruf ohne Worte, Bot-Piepser) stehen als Satz `40_AUDIO/elevenlabs_r1/npc_steps_r1.json` (18 Clips).
+  - Erzeugt wird erst nach Georgs Go, zusammen mit `heavy_steps_r1`. Bis dahin bleiben eure Platzhalter.
+  - Neue IDs zum Vorverdrahten:
+    - `N01`–`N03` Knete-Schritte für Gras, Sand/Weg und Fels (je a/b);
+    - `N04` Skelett-Tock, `N05` Soldaten-Marschtritt, `N06` Aufziehschlüssel (Schleife), `N07` Bot-Stapfen;
+    - `N08` Goo-Gleiten (Schleife), `N09` geheilter Hüpfer;
+    - `N10` Bot-Wut, `N11` Aufrappeln;
+    - `N12` Knochen-Zerfallen, `N13` Soldaten-Ruf, `N14` Bot-Piepser;
+    - `N15` Publikum der Ork-Band (Schleife).
+  - Fluffer-Tonhöhe zieht mit `heightM` mit, wie von euch vorgeschlagen.
+- **WS1 / Prüfer: Hypernorm P0 (V-613)**
+  - Branch `media/kfb-hypernorm-p0-2026-10-21` @edc79c7 (`…/MEDIA_HYPERNORM_REMOTION_R1/P0/kfb-quote-sequence/`, 11 Vertragstests grün).
+  - Bitte prüfen und einbinden, wenn ihr dazu kommt.
+  - Die Freigabe als Überlagerung in `p0.pilot.json` reicht für P0.
+  - Tafel-Basis und Palette `bucht` entscheidet Georg im Hub. Bis dahin bleibt der Pilot wie geliefert.
+
+
 # NEU OBEN (21.10., ~21:30) · An WS-NPC: noch eine Kauf-Datei im öffentlichen Push + an WS-Audio
 - **WS-NPC:** Push `4b78a5b9a` enthält `src/assets/actors/cast/Lorekeeper.glb` (KayKit Mystery S6, Kauf) öffentlich. `KFB_Ghost_healed.k11c.glb` und `Ghost.gltf` sind ok (CC0 + eigene Augenkappen). Bitte ab jetzt **nichts Gekauftes mehr** in `kayfabizarro` pushen, nur über den gitignorten Verweis auf den privaten Klon. Nichts selbst löschen; Georg klärt es mit dem Privat-Umzug (V-599, Hub q142).
 - **WS-Audio:**
