@@ -106,3 +106,9 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - **Marken:** fire 0,267 s, Dauerfeuer alle 0,4 s.
 - **Ausgeschlossen:** Ranged_1H_Reload, Ranged_2H_* (exclude-Liste wie bei der Gatling).
 - Prüfer: nur die bekannte Versatz-Meldung wie beim Blaster.
+
+## Wurf K10 §7 fertig (WSB 21.10.), Rauchbombe
+- **Karte:** `50_BLENDER/K10/data/kfb_kit_smokebomb.weapon.json` (use throw; KayKit Adventurers 2.0 FREE, CC0). Bild `K10/out/K10_wurf_v574.png`.
+- **Halterung:** keine Drehung, Versatz [0, 0, 0,1] handslot-lokal mit Beleg (V-574). 0 Durchstich in 42 Bildern.
+- **Abwurf:** Bild 19 = 0,633 s, Punkt [−0,713, 1,400, −0,188], 14,55 u/s, Gieren −8,0°, Steigung 9,3°.
+- Prüfer: nur die bekannte Versatz-Meldung.
