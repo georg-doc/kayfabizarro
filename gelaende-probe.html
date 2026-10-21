@@ -168,6 +168,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="crumbs" checked> Kontakt-Brocken an jeder Fuge (V-565)</label>
         <label class="check"><input type="checkbox" id="fgmass" checked> Vordergrund-Tonmasse vor dem Diorama</label>
         <label class="check"><input type="checkbox" id="edges"> Farbige Kanten an Graten (Versuch, noch fleckig)</label>
+        <label class="check"><input type="checkbox" id="shadowdyn"> Schatten nur für bewegte Objekte (Wagen, Figuren): kleine, scharfe Schattenkarte um den Wagen, ruhende Welt erdet sich über Boden-AO</label>
         <label class="check"><input type="checkbox" id="shadows" checked> Echte 3D-Schatten (im Palettenton)</label>
         <div class="bar" style="display:flex;gap:8px"><button type="button" class="btn" id="toDio">Zum Diorama</button><span class="msg" id="dioMsg" role="status" style="font-size:13px;color:var(--muted)"></span></div>
       </fieldset>
@@ -189,7 +190,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken am Himmel (3 Ebenen mit Parallaxe)</label>
         <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="4" selected>nur Kuppel (wie vorher)</option><option value="0">gemischt (3 Ebenen, Versuch)</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
-        <label class="check"><input type="checkbox" id="cards" checked> Wolken zum Vorbeifliegen (einzelne Wolkenkörper, Stufe 1)</label>
+        <label class="check"><input type="checkbox" id="cards"> Wolken zum Vorbeifliegen (einzelne Wolkenkörper, Stufe 1)</label>
         <label class="check"><input type="checkbox" id="puffs"> Wolkenschicht in Flughöhe (Ebene, Versuch)</label>
         <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
         <div class="row"><label for="cstretch">Wolken-Streckung (Flugrichtung)</label><output id="o_cstretch"></output><input type="range" id="cstretch" min="1" max="4" step="0.1" value="1"></div>
@@ -1676,14 +1677,20 @@ window.KFB_CLAYTEX = {"pin": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e", "source
   uniform float uScale, uAmp, uOct, uRidge, uWarp, uMacro, uValley, uPlateau, uSteps, uSharp, uEther, uTanMax;
   uniform vec2 uSeed; uniform float uBankL, uBankD;   /* Uferböschung (Island Kit F1: Becken = Senke mit Böschung): Pegel in m, Tiefe in m (0 = aus) */
   float bankMod(float hm){ return uBankD>0.0 ? hm-uBankD*(1.0-smoothstep(-1.8,0.4,hm-uBankL)) : hm; }   /* monoton: über +0,4 m unverändert, darunter runde Kante, Sohle um uBankD tiefer; Band 2,2 m hoch → Neigung höchstens ~2× (Kit-Ufer sanft, keine Zacken im 2,34-m-Gitter) */
-  uniform vec4 uDio; uniform vec4 uDioB; // uDio: x, z, Fußradius, Sockelhöhe · uDioB: an(0/1), Keilhöhe, Keilbreite, Öffnungsrichtung (rad)
+  /* Diorama-Anker (WS0 Job 3, Plan DIORAMEN_PAINPOINT R1 Schritt 1): bis zu 8 Anker (die nächsten), je Anker
+     A = x, z, Eck-/Fußradius R, Sockelhöhe y · B = an, Keilhöhe, Keilbreite, Öffnungsrichtung · C = Halbachsen hx, hz (0 = Kreis), Drehung, Anschlussbreite.
+     Form = abgerundete Box (hx = hz = 0 ergibt exakt den alten Kreis). Spätere Anker gewinnen in ihrem Inneren. JS: dioModJS mit derselben Liste. */
+  #define DIO_MAX 8
+  uniform vec4 uDioA[DIO_MAX]; uniform vec4 uDioBA[DIO_MAX]; uniform vec4 uDioC[DIO_MAX]; uniform float uDioN;
+  float dioSD(vec2 p, vec4 A, vec4 C){ vec2 q=p-A.xy; float cs=cos(C.z), sn=sin(C.z); q=vec2(cs*q.x+sn*q.y, -sn*q.x+cs*q.y); vec2 e=abs(q)-C.xy; return length(max(e,0.0))+min(max(e.x,e.y),0.0)-A.z; }
   float dioMod(vec2 p, float h){
-    if(uDioB.x<0.5) return h;
-    vec2 d2=p-uDio.xy; float r=length(d2), d=r-uDio.z;
-    h=mix(h, uDio.w, 1.0-smoothstep(0.0, 8.0, d));                       // Sockel: Fußfläche auf Bühnenhöhe, 8 m weicher Anschluss
-    if(d>-0.6 && d<uDioB.z){ float a=atan(d2.y,d2.x), da=abs(mod(a-uDioB.w+3.14159265,6.2831853)-3.14159265);
-      float open=smoothstep(0.38,0.62,da), vary=1.0+0.3*(sin(a*3.0+1.3)*0.6+sin(a*7.0-0.4)*0.4);
-      h+=uDioB.y*vary*(d<0.0?1.0:1.0-smoothstep(0.0,uDioB.z,d))*open; }   // Erdkeil am Sockel, vorne offen
+    for(int i=0;i<DIO_MAX;i++){ if(float(i)>=uDioN) break; vec4 A=uDioA[i], B=uDioBA[i], C=uDioC[i]; if(B.x<0.5) continue;
+      vec2 d2=p-A.xy; float reach=A.z+max(C.x,C.y)+max(C.w,B.z)+1.0; if(dot(d2,d2)>reach*reach) continue;
+      float d=dioSD(p,A,C);
+      h=mix(h, A.w, 1.0-smoothstep(0.0, C.w, d));                       // Sockel: Fußfläche auf Bühnenhöhe, weicher Anschluss (C.w, bisher 8 m)
+      if(d>-0.6 && d<B.z){ float a=atan(d2.y,d2.x), da=abs(mod(a-B.w+3.14159265,6.2831853)-3.14159265);
+        float open=smoothstep(0.38,0.62,da), vary=1.0+0.3*(sin(a*3.0+1.3)*0.6+sin(a*7.0-0.4)*0.4);
+        h+=B.y*vary*(d<0.0?1.0:1.0-smoothstep(0.0,B.z,d))*open; } }   // Erdkeil am Sockel, vorne offen
     return h;
   }
   // Etherington (R2): runde Grate statt Messerkanten (weiches |n|), feinste Grat-Oktaven weg, Detail leiser → keine Zacken-Silhouette
@@ -1753,16 +1760,22 @@ window.KFB_CLAYTEX = {"pin": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e", "source
     return (c(ix, iz) * (1 - tx) + c(ix + 1, iz) * tx) * (1 - tz) + (c(ix, iz + 1) * (1 - tx) + c(ix + 1, iz + 1) * tx) * tz }
   const surfH = (x, z) => (S.vox ? voxTop(x, z) : hgt(x, z)); // Oberfläche für Platzierung (Steine, Brösel, Props)
   // Diorama-Fuß (identisch zum GLSL dioMod): Sockelfläche auf Bühnenhöhe, Erdkeil vorne offen
-  const DIO = { x: 0, z: 70, R: 11, y: 0, on: false, bh: 1.4, bw: 7.5, open: -Math.PI / 2, rawY: 0 };
+  const DIO = { x: 0, z: 70, R: 11, y: 0, on: false, bh: 1.4, bw: 7.5, open: -Math.PI / 2, rawY: 0, hx: 0, hz: 0, rot: 0, blend: 8 };
+  const DIOS = [DIO];   /* alle Diorama-Anker der Welt (Anker 0 = Amphitheater); DIOA = die bis zu 8 nächsten, gleiche Liste für GPU und JS */
+  let DIOA = [DIO];
+  const dioSDJS = (px, pz, A) => { let qx = px - A.x, qz = pz - A.z; const cs = Math.cos(A.rot || 0), sn = Math.sin(A.rot || 0), rx = cs * qx + sn * qz, rz = -sn * qx + cs * qz, ex = Math.abs(rx) - (A.hx || 0), ez = Math.abs(rz) - (A.hz || 0); return Math.hypot(Math.max(ex, 0), Math.max(ez, 0)) + Math.min(Math.max(ex, ez), 0) - A.R }
   function dioModJS(px, pz, h) {
-    if (!DIO.on) return h;
-    const dx = px - DIO.x, dz = pz - DIO.z, r = Math.hypot(dx, dz), d = r - DIO.R;
-    h = h + (DIO.y - h) * (1 - sstep(0, 8, d));
-    if (d > -0.6 && d < DIO.bw && S.berm) { const a = Math.atan2(dz, dx), da = Math.abs(((a - DIO.open + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI);
-      const open = sstep(0.38, 0.62, da), vary = 1 + 0.3 * (Math.sin(a * 3 + 1.3) * 0.6 + Math.sin(a * 7 - 0.4) * 0.4);
-      h += DIO.bh * vary * (d < 0 ? 1 : 1 - sstep(0, DIO.bw, d)) * open }
+    for (const A of DIOA) { if (!A.on) continue
+      const dx = px - A.x, dz = pz - A.z, reach = A.R + Math.max(A.hx || 0, A.hz || 0) + Math.max(A.blend ?? 8, A.bw) + 1; if (dx * dx + dz * dz > reach * reach) continue
+      const d = dioSDJS(px, pz, A); h = h + (A.y - h) * (1 - sstep(0, A.blend ?? 8, d))
+      if (d > -0.6 && d < A.bw && S.berm) { const a = Math.atan2(dz, dx), da = Math.abs(((a - A.open + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI);
+        const open = sstep(0.38, 0.62, da), vary = 1 + 0.3 * (Math.sin(a * 3 + 1.3) * 0.6 + Math.sin(a * 7 - 0.4) * 0.4);
+        h += A.bh * vary * (d < 0 ? 1 : 1 - sstep(0, A.bw, d)) * open } }
     return h;
   }
+  function pushDio(cx = 0, cz = 0) {   /* die 8 nächsten Anker in die Uniforms (Reihenfolge der Welt-Liste bleibt: spätere gewinnen) */
+    DIOA = DIOS.length <= 8 ? DIOS : DIOS.map((A, i) => [A, i, Math.hypot(A.x - cx, A.z - cz)]).sort((a, b) => a[2] - b[2]).slice(0, 8).sort((a, b) => a[1] - b[1]).map((e) => e[0])
+    if (typeof U === 'undefined' || !U.uDioA) return; for (let i = 0; i < 8; i++) { const A = DIOA[i]; if (A) { U.uDioA.value[i].set(A.x, A.z, A.R, A.y); U.uDioBA.value[i].set(A.on ? 1 : 0, A.bh, A.bw, A.open); U.uDioC.value[i].set(A.hx || 0, A.hz || 0, A.rot || 0, A.blend ?? 8) } else U.uDioBA.value[i].set(0, 0, 0, 0) } U.uDioN.value = DIOA.length }
 
   // ---------- three.js ----------
   const cv = document.getElementById('cv'), stage = document.getElementById('stage');
@@ -2225,7 +2238,8 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
   { const D = window.KFB_FLUID.defaults, L = new THREE.TextureLoader(), T = (url, srgb) => { const t = L.load(url); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.encoding = THREE.sRGBEncoding; return t };
     Object.assign(U, { uKFCol: { value: new THREE.Color(...D.col) }, uKFShallow: { value: new THREE.Color(...D.shallow) }, uKFMoat: { value: D.moat }, uKFBand: { value: D.band }, uKFShoreFoam: { value: D.shoreFoam }, uKFV: { value: D.v }, uKFWind: { value: new THREE.Vector2(...D.wind) }, uKFZ: { value: new THREE.Vector2(...D.z) }, uKFDudv: { value: T(window.KFB_FLUID.dudv, false) }, uKFMap: { value: T(window.KFB_FLUID.map, true) }, uKFHasMap: { value: 1 } }) }
   U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uFlowRock = { value: 0.85 }; U.uFlowTree = { value: 0 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uSGrad = { value: 0.6 }; U.uFlowDown = { value: 0 }; U.uTimeR = { value: 0 }; U.uFlKind = { value: 0 }; U.uFlClar = { value: 0.6 }; U.uFlShal = { value: new THREE.Color() }; U.uFlDeep = { value: new THREE.Color() }; U.uFlGlow = { value: new THREE.Color() }; U.uWNE = { value: 4.7 }; U.uKul = { value: 0 }; U.uEdgeSun = { value: new THREE.Color() }; U.uEdgeAnti = { value: new THREE.Color() }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
-  U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
+  U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };   /* nächster Anker für Farbring/Tonmasse im Fragment */
+  U.uDioA = { value: Array.from({ length: 8 }, () => new THREE.Vector4()) }; U.uDioBA = { value: Array.from({ length: 8 }, () => new THREE.Vector4()) }; U.uDioC = { value: Array.from({ length: 8 }, () => new THREE.Vector4(0, 0, 0, 8)) }; U.uDioN = { value: 0 }; pushDio();
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
   const terrain = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: U, vertexShader: vert, fragmentShader: frag }));
@@ -2351,14 +2365,14 @@ ${window.KFB_FLUID.glsl}
   sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -55, right: 55, top: 55, bottom: -55, near: 5, far: 400 }); sun.shadow.bias = -0.0001; sun.shadow.normalBias = 0.08; // V-440: kleiner Bias + Vorderseiten werfen → kein heller Saum am Fuß
   // V-440 / kfb-stage-light v1.1 castFrontFaces: VORDERseiten werfen (three nimmt sonst die Rückseiten → heller Saum zwischen Fuß und Schatten)
   /* Schattenwerfer-Ersatz (Leistung, WS0 Job 1): das Amphitheater (349k Dreiecke) zeichnet nicht mehr selbst in die Schattenkarte, sondern eine grobe
-     Kopie (Eckpunkte auf ein 25-cm-Raster gelegt, entartete Dreiecke weg). Die Kopie liegt auf Ebene 3, die nur die Schattenkamera sieht. */
-  function shadowProxy(root) { sun.shadow.camera.layers.enable(3); root.updateMatrixWorld(true); const ws = new THREE.Vector3(); let before = 0, after = 0
+     Kopie (Eckpunkte auf ein 25-cm-Raster gelegt, entartete Dreiecke weg). Die Kopie ist im Bild unsichtbar und zeichnet nur in die Schattenkarte. */
+  function shadowProxy(root) { root.updateMatrixWorld(true); const ws = new THREE.Vector3(); let before = 0, after = 0
     root.traverse((o) => { if (!o.isMesh || !o.castShadow || o.userData.proxy) return; o.getWorldScale(ws); const cell = 0.25 / Math.max(1e-6, ws.x), g = o.geometry, pos = g.attributes.position, ix = g.index ? g.index.array : null
       const map = new Map(), np = [], rm = new Uint32Array(pos.count)
       for (let i = 0; i < pos.count; i++) { const qx = Math.round(pos.getX(i) / cell), qy = Math.round(pos.getY(i) / cell), qz = Math.round(pos.getZ(i) / cell), k = qx * 73856093 ^ qy * 19349663 ^ qz * 83492791; let key = k + ':' + qx + ',' + qy + ',' + qz, j = map.get(key); if (j === undefined) { j = np.length / 3; map.set(key, j); np.push(qx * cell, qy * cell, qz * cell) } rm[i] = j }
       const n = ix ? ix.length : pos.count, out = []; for (let t = 0; t < n; t += 3) { const a = rm[ix ? ix[t] : t], b = rm[ix ? ix[t + 1] : t + 1], c = rm[ix ? ix[t + 2] : t + 2]; if (a !== b && b !== c && a !== c) out.push(a, b, c) }
       const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.Float32BufferAttribute(np, 3)); pg.setIndex(out); pg.computeVertexNormals()
-      const pm = new THREE.Mesh(pg, new THREE.MeshBasicMaterial({ side: THREE.FrontSide })); pm.material.shadowSide = THREE.FrontSide; pm.castShadow = true; pm.receiveShadow = false; pm.userData.proxy = true; pm.layers.set(3); pm.frustumCulled = false
+      const pm = new THREE.Mesh(pg, new THREE.MeshBasicMaterial({ side: THREE.FrontSide, colorWrite: false, depthWrite: false })); pm.material.shadowSide = THREE.FrontSide; pm.castShadow = true; pm.receiveShadow = false; pm.userData.proxy = true; pm.userData.noAO = true; pm.renderOrder = 99; pm.frustumCulled = false   /* im Bild unsichtbar (keine Farbe, keine Tiefe), zeichnet nur in die Schattenkarte (three r147 prüft dort die Ebenen der Hauptkamera) */
       o.add(pm); o.castShadow = false; before += n / 3; after += out.length / 3 })
     console.info('shadowProxy', Math.round(before), '→', Math.round(after), 'Dreiecke') }
   const castFront = (root) => root.traverse((o) => { if (!o.isMesh || !o.castShadow) return; for (const m of [].concat(o.material)) if (m && m.side !== THREE.DoubleSide && m.shadowSide !== THREE.FrontSide) { m.shadowSide = THREE.FrontSide; m.needsUpdate = true } });
@@ -2619,7 +2633,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'cstretch', 'sunel', 'sgrad', 'gs'];
-  const BOOL = ['retina', 'claytex', 'hero', 'strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
+  const BOOL = ['shadowdyn', 'retina', 'claytex', 'hero', 'strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -2635,7 +2649,13 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.aurora = +$('aurora').value; S.cform = +$('cform').value; S.fluid = +$('fluid').value; S.flow = +$('flow').value; S.flowtree = +$('flowtree').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
+  /* Schatten nur für Bewegtes (Georg 21.10.: „brauchen wir primär für Höhen- und Fahrgefühl“): ruhende Welt wirft nicht, Schattenkarte ±20 m statt ±55 m → schärfer und billiger */
+  const SDYN = { on: null, n: 0 };
+  function applyShadowDyn(force) { const on = !!S.shadowdyn; if (!force && on === SDYN.on) return; SDYN.on = on
+    if (typeof worldRoot !== 'undefined') worldRoot.traverse((o) => { if (!o.isMesh) return; if (o.userData.cs0 === undefined) o.userData.cs0 = o.castShadow; o.castShadow = on ? false : o.userData.cs0 })
+    const e = on ? 20 : 55; Object.assign(sun.shadow.camera, { left: -e, right: e, top: e, bottom: -e }); sun.shadow.camera.updateProjectionMatrix() }
   function pushUniforms() {
+    try { applyShadowDyn() } catch (e) {}
     { const pr = Math.min(window.devicePixelRatio || 1, S.retina ? 2 : 1.25);   /* 1,25 kostet gemessen kaum mehr als 1 */ if (renderer.getPixelRatio() !== pr) { renderer.setPixelRatio(pr); try { resize() } catch (e) {} } }
     try { heroApply() } catch (e) {}   /* beim ersten Aufruf gibt es noch keinen Wagen */
     U.uScale.value = S.scale; U.uAmp.value = S.amp; U.uOct.value = S.oct; U.uRidge.value = S.ridge; U.uWarp.value = S.warp; U.uMacro.value = S.macro; U.uValley.value = S.valley; U.uPlateau.value = S.plateau;
@@ -2681,7 +2701,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1, mig46: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -2765,6 +2785,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
   if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
   if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
+  if (stored && !stored.mig46) { stored.cards = false; stored.mig46 = 1 }   /* einmalig: Wolkenkörper aus – Kuppelwolken reichen (Georg 21.10., Leistung) */
   if (stored && !stored.mig45) { stored.flare = false; stored.mig45 = 1 }   /* einmalig: Blendenflecken aus – Kamera-Optik, nicht gemalt (AD-Audit Befund 6) */
   if (stored && !stored.mig44) { stored.ground = true; stored.mig44 = 1 }   /* einmalig: Erdung (Boden-AO) wieder an (Georg 21.10.) */
   if (stored && !stored.mig43) { stored.fluid = 3; if (!(stored.water > 0.005)) stored.water = 0.06; stored.mig43 = 1 }   /* einmalig: Island-Kit-Wasser als Standard, sichtbar (Georg 21.10.) */
@@ -2872,7 +2893,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   }
   // Erdung (Grounding): unten am Objekt und an nach unten gerichteten Flächen (Kronen-Unterseiten) dunkler im Kontaktton der Palette, nie schwarz;
   // die Bodenhöhe kommt aus derselben Höhenformel wie das Gelände (im Vertex-Shader)
-  const GU = { uGFlatY: { value: 0 }, uBankL: U.uBankL, uBankD: U.uBankD, uKus: U.uKus, uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uTanMax: U.uTanMax, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 1.3 }, uGOn: { value: 1 } };
+  const GU = { uGFlatY: { value: 0 }, uBankL: U.uBankL, uBankD: U.uBankD, uKus: U.uKus, uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uTanMax: U.uTanMax, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uDioA: U.uDioA, uDioBA: U.uDioBA, uDioC: U.uDioC, uDioN: U.uDioN, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 1.3 }, uGOn: { value: 1 } };
   window.__GU = GU;
   function addGrounding(mat, flat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey   /* flat: Bodenhöhe = GU.uGFlatY (Amphitheater auf dem Sockel, 349k Dreiecke: sparte ~19 ms je Bild, Audit C) */
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
@@ -2906,7 +2927,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const A = PALETTES[S.palA]; DIO.on = false;
     let y = 0; for (let k = 0; k < 9; k++) { const a = (k / 8) * Math.PI * 2; y += k === 8 ? hgt(DIO.x, DIO.z) : hgt(DIO.x + Math.cos(a) * DIO.R, DIO.z + Math.sin(a) * DIO.R) } // Sockel = Mittel aus Mitte und Fußkreis
     DIO.y = Math.max(y / 9, S.water * S.amp + 0.4); DIO.on = !!(S.dio && S.berm);
-    U.uDio.value.set(DIO.x, DIO.z, DIO.R, DIO.y); U.uDioB.value.set(DIO.on ? 1 : 0, DIO.bh, DIO.bw, DIO.open);
+    U.uDio.value.set(DIO.x, DIO.z, DIO.R, DIO.y); U.uDioB.value.set(DIO.on ? 1 : 0, DIO.bh, DIO.bw, DIO.open); pushDio(...(() => { try { return [P.x, P.z] } catch (e) { return [0, 0] } })());
     dioGroup.visible = !!S.dio; PALU.uAmt.value = S.dpal ? 1 : 0;
     PALU.uRw.value.set(A.cliff).lerp(new THREE.Color(A.high), 0.4); PALU.uRf.value.set(A.sand); PALU.uRt.value.set(A.cliff).multiplyScalar(0.85);
     if (amph) { const baseY = S.berm ? DIO.y : hgt(DIO.x, DIO.z); const o = amph.userData.off || new THREE.Vector3(); amph.position.set(DIO.x + o.x, baseY - 0.15 + o.y, DIO.z + o.z); PALU.uTop.value = baseY + 4.5; GU.uGFlatY.value = baseY - 0.15 }
@@ -3292,6 +3313,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aLife.needsUpdate = true;
     U.uCam.value.copy(camera.position); GU.uGOff.value.set(P.x, P.z); GU.uGOn.value = S.ground ? 1 : 0;
     if (S.shadows) { sun.updateMatrixWorld(); sun.target.updateMatrixWorld(); sun.shadow.updateMatrices(sun); U.uShadowM.value.copy(sun.shadow.matrix); U.uShadowMap.value = sun.shadow.map ? sun.shadow.map.texture : null }
+    if (S.shadowdyn && ++SDYN.n % 60 === 0) applyShadowDyn(true);   /* neu gebaute Steine/Props auch ohne Wurf */
     updateDisco(now / 1000); renderAO(); renderer.render(scene, camera);
     if (FLARE.update(dt)) { renderer.autoClear = false; renderer.render(FLARE.sc, FLARE.cam); renderer.autoClear = true }
     frames++; if (now - fpsT > 500) { $('hudFps').textContent = `${Math.round(frames * 1000 / (now - fpsT))} fps`; frames = 0; fpsT = now }
