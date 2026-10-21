@@ -5,7 +5,8 @@ import json, subprocess, os, hashlib
 REPO = os.path.expanduser('~/kfb-ws1/kayfabizarro')
 BATCH_COMMIT = 'ac9dbaed2e5966a537a4bb719e8cd847dcc5e099'
 BATCH = 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json'
-CAST = {'adventurer-mage': 'Mage', 'adventurer-barbarian': 'Barbarian', 'gothgirl': 'GothGirl'}
+CAST = {'adventurer-mage': 'Mage', 'adventurer-barbarian': 'Barbarian', 'gothgirl': 'GothGirl', 'farmer-b': 'Farmer_B',  # farmer-b: WS-NPC Phase A (V-585, Farmer B = KayKit S6 Farmers Textur B)
+        'skeleton-warrior': 'Skeleton_Warrior', 'skeleton-rogue': 'Skeleton_Rogue', 'skeleton-mage': 'Skeleton_Mage', 'skeleton-minion': 'Skeleton_Minion', 'toy-soldier': 'ToySoldier'}  # WS-NPC Phase D (Georg 21.10. Go): Skelett-Patrouille, Spielzeugsoldaten
 git = lambda *a: subprocess.run(['git', '-C', REPO, *a], capture_output=True, check=True).stdout
 batch = json.loads(git('show', f'{BATCH_COMMIT}:{BATCH}')); P = {p['actorId']: p for p in batch['profiles']}
 os.makedirs('src/data/eyes/cast', exist_ok=True); os.makedirs('src/data/actors/cast', exist_ok=True); os.makedirs('src/assets/actors/cast', exist_ok=True)

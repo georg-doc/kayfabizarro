@@ -190,6 +190,18 @@ export function release(ball, seed = 0, W = WIND) {
   ball.body = makeBody(ball.anchor, [(dx / l) * o, u, (dz / l) * o]); ball.state = 'falling'
   return ball
 }
+// WS-NPC Phase C (V-583, Lead-OK 21.10. c) · n Kügelchen an einem Punkt freigeben (z. B. ein geheilter Dark Fluffer lässt einmal bunten Fluff fallen):
+// gleiche Physik wie der Baum-Abwurf (makeBody, Startgeschwindigkeit aus WIND, ringsum statt vom Stamm weg), Sorten reihum über alle sechs (keine
+// 7. Sorte; ab n ≥ 6 jede Sorte mindestens einmal), Schlüssel stabil `${tag}:${i}`, Zufall nur aus (seed, tag) → gleicher Seed, gleiche Bahnen.
+export function releaseAt(pos, n, seed = 0, { tag = 'burst', r = FALL.radius, W = WIND } = {}) {
+  const rng = rngOf('release-at', seed, tag), k0 = Math.floor(rng() * FLUFF_KINDS.length), a0 = rng() * Math.PI * 2, out = []
+  for (let i = 0; i < n; i++) {
+    const a = a0 + (i / Math.max(1, n)) * Math.PI * 2 + (rng() - 0.5) * 0.5, o = W.out[0] + (W.out[1] - W.out[0]) * rng(), u = W.up[0] + (W.up[1] - W.up[0]) * rng()
+    const kind = FLUFF_KINDS[(k0 + i) % FLUFF_KINDS.length]
+    out.push({ key: `${tag}:${i}`, kind, r, anchor: pos.slice(), center: pos.slice(), state: 'falling', path: 0, body: Object.assign(makeBody(pos, [Math.cos(a) * o, u, Math.sin(a) * o]), { r }) })
+  }
+  return out
+}
 // Fluff-Böe (V-371): alle hängenden Kügelchen einer Zone fallen gestaffelt; Ergebnis [{ key, at }] in Sekunden ab jetzt
 export function gustSchedule(balls, seed = 0, W = WIND) {
   const rng = rngOf('gust', seed)
