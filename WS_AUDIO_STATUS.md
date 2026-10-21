@@ -2,6 +2,18 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 5 · 21.10. · Video Gruppen-Ton (lokale Vorschau-Kombination)
+
+**Georg 21.10.:** „mach ein Video mit dem Gruppen-Ton“.
+- **Vorschau-Kombination:** terrain/probe-world + ws-npc/phase-a @4625c6e + ws-audio/r1 als Wegwerf-Ordner im Scratch, ohne Branch, ohne Push. Die Konflikte sind nur dort gelöst; offiziell bleibt die Reihenfolge des Lead.
+- **Welt:** M1-Standard (`#m1,harvest,look=terrain3,npc,fluffer,patrol,band`). Die NPC-Orte sind nur dort geprüft (WS-NPC).
+- **Ergebnis** (alles aus echten Spiel-Ereignissen über Taste B):
+  - Skelette, Bots und Spielzeugsoldaten je hit 1–5, aggro, ko, awake, calm, fluff;
+  - Dark Fluffer windup, spit, impact, taint, drop;
+  - keine Seiten- oder Modulfehler, Audio 0,16 ms/Bild (p95 0,3), 26 Stimmen.
+- **Nicht im Video:** das Heilen des Dark Fluffers (healed + Augen-Plopp + bunter Fluff). Der Schuss traf zweimal nicht; der Adapter ist im Test belegt.
+- **Video:** MP4 17 MB an Georg (privat). Profil: `PW_GPU=1 npm run audio:video:gruppen`, nur in der Kombination lauffähig.
+
 ## 4 · 21.10. · Gruppen-Ton für die NPC-Gruppen
 
 **Georg 21.10.:** „mach weiter mit dem Gruppen-Ton“. **Stand:** `ws-audio/r1` @6d4c43c, lokal.
