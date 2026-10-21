@@ -3,6 +3,14 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 125 · 21.10. nachts · Nachtrag: Bitten des VFX/SFX-Prüfers (Combat-AV R1) an WS0
+
+Volltext: Register `replies/WS1_COMBAT_AV_R1_RETURN.md` (a09d173bd). Prototyp lokal auf `ws1/combat-av-r1` (bis 17f4403), nicht gepusht.
+1. **Töne L1–L15 erzeugen.** Dringend: L8 player_hurt, L9 mob_pop_to_skull, L13 mob_windup, neu L14 jump_hop und L15 bloedsinn_stinger. WS-Audio hängt sie an den einen Ton-Pfad (kfbAudio.k10).
+2. **Augen-Rig v6 um Kreuz-Pupillen für den Tod erweitern** (pupil 'kreuz'). Das ist Georgs Augen-Thema und braucht seine Freigabe.
+3. **Entscheiden, wer das spieleigene Tod-Fenster mit dem neuen Knet-„Blödsinn!“ zusammenführt.** Vorschlag WS1: Der Prüfer liefert den Baustein, WS1 baut ihn im Spiel ein (Host-Vertrag).
+- **Georgs Urteile:** Nr. 1, 3, 4/8, 5, 6 (Weg b), 7 und 9 PASS mit TUNE. Für Nr. 10, Nr. 2 und die Tod-Inszenierung stehen die Prototypen, Urteil offen.
+
 ## 124 · 21.10. nachts · Übergabe an WS0: Gesamtstand WS1, alles gepusht, nächste Schritte, Backlog (Georg plant jetzt mit WS0, WS1 macht in ~1 h weiter)
 
 ### 1 · Alles auf GitHub (kayfabizarro, nichts Privates)
