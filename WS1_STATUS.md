@@ -3,6 +3,79 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 121 · 21.10. · Probe: Höhenkarte gebacken, Amphitheater-LOD, Regler schneller · Dioramen Schritte 5 + 6 (kfb_edge, Nachweis, Kritiker R1/R2) · WS-NPC Status 2 · Spiel dpr
+
+### Leistung Probe (ws1/preview @f09fb31, Artefakt v45)
+- **D5 Amphitheater-LOD:**
+  - 59k statt 349k Dreiecke, 2,8 statt 11,7 MB.
+  - Erzeugt mit gltf-transform `weld` + `simplify 0.17`. Liegt als Asset auf ws1/preview @b28d728.
+  - Bild aus 16–75 m gleich (Belege `probe/tests/out/amphO-*`).
+- **Dreiecke je Bild:** 1,82 → 1,21 Mio. (`probe/tests/tri-count.mjs`, unabhängig von der GPU-Last).
+- **Höhenkarte gebacken (BAKE):**
+  - Höhe, Formnormale und Krümmung werden je Gitter in eine 257²-Float-Textur gerechnet. Derselbe Shader-Text wie im Vertex-Zweig, also gleiche Höhe.
+  - Neu gebacken wird nur, wenn sich Offset, Wagenlage oder ein Höhen-Uniform ändert und das Bild 2 Bilder lang ruhig ist. Fahrend rechnet das Gitter wie bisher.
+  - A/B im Wechsel: Übersicht 27 → 21 ms, Fahrt im Stand 18,8 → 16,7 ms.
+  - Rücklesung gegen JS-`hgt`: gleich, bis auf die gewollte gröbere Detailstufe am Rand.
+- **F5:** Diorama und Felsen bauen nur noch bei Reglern neu auf, die Gelände oder Platzierung ändern. Licht-Regler: 7,5 → 0,6 ms je Ereignis.
+- **F6 (Spiel):** `GROUND_Y0` → `GROUND_Y` in M1World (@aaef446).
+
+### Dioramen-Plan (O-Town: Disco + Ork-Band)
+- **Schritt 6, Nachweis:** `probe/tests/dio-painpoint.mjs`.
+  - Kameras 1–4 und 6 in Georgs Werten, HUD ausgeblendet.
+  - Graustufen-Pass: L*, 3 Wertgruppen, Regel R1, Fokus-Box.
+  - Thumbnail 1/8 und Kontaktbogen.
+  - fps aus der Spielkamera: 60 headless.
+  - Shader-Fehler werden als Fehler gemeldet.
+- **Kritiker R1 (blind, CRITIC_3D_R1):** FAIL, Mittelwert 2,9 (`research/dioramen/critic-r1/KRITIK_R1.md`).
+  - Keine Figuren.
+  - Kein Farbskript: gestreiftes Gelände statt Petrol.
+  - Die Spielkamera sah den Platz nicht.
+  - Platz als Platte am Wasser, Lichtpfützen bis in die Band-Zone.
+- **Umgesetzt nach R1:**
+  - Bodenzone nach Farbskript:
+    - Petrol `#3aa596` ringsum, Grasrand `#2f8f83`, vorn eine dunklere Tonfläche, keine Fließbänder in der Zone.
+    - Scharfe organische Kanten, nie auf Steilhängen.
+  - Requisiten nach Palettenrollen: Orange nur am Radio, Boxen im Grasrand-Ton, Gold an Drum Machine und Trommel.
+  - Platzwahl neu (40–220 m): trocken, Hang hinten 2–10 m, vorn eben, freie Sicht.
+  - Neuer Vorplatz-Anker `APRON_A`: offene, ebene Tonfläche zum Spieler.
+  - Graustufen-Regel R1 jetzt in 4 von 5 Kameras erfüllt (vorher 1 von 5).
+- **Schritt 5, kfb_edge:** `probe/port/kfb-edge.v1.js` (Port von `kfb_edge_bpy.py`, Params-SHA `d5bb1d5a…` = Register e77445fde).
+  - Node-Test 7/7 PASS.
+  - Parität GLSL/JS max 6,3e-7 auf 4096 Punkten (Soll 1e-3).
+  - Höchstens 20k Dreiecke je Anker.
+  - Eingebaut: Pflasterkern mit freiem Ende durch Verfall (Disco, Stärke 3,5) und Erdmaske mit Sprenkelrand (Disco + Band-Spielfleck). Die Band hat laut Konzeptblatt keine Platten.
+  - Offen für WS0: Das Sprenkelband ist laut Kanon-Parametern 0,1–0,8 m breit, Plan Schritt 5 nennt 3–8 m bzw. 2–5 m. Welche Zahl gilt?
+- **Kritiker R2** (frischer, blinder Subagent): FAIL, Mittelwert 3,6 (vorher 2,9). Bericht: `research/dioramen/critic-r2/KRITIK_R2.md`.
+  - Einzelwerte: K1 2, K2 3, K3 4, K4 3, K5 5, K6 4, K7 3, K8 4, K9 4.
+  - Top 3:
+    1. Die Besetzung fehlt: 8 Tänzer, FrizzleBob am Pult, 4 Orks mit dem Leader vorn.
+    2. Orange Streifen im Gelände rund um den Platz.
+    3. Der Platz liest sich als ausgebrannte Fliesenplatte, der Band-Fleck als Aufkleber.
+  - Danach umgesetzt: Petrol-Zone weiter (18 m), Platten dunkler, Erdbett näher am Petrol, Lichtpfützen nur noch auf dem Tanzkreis (Neigung begrenzt, Reichweite 12 m; vorher bis in die Band-Zone und auf die Steilwand). Graustufen-Regel R1 jetzt in 4 von 5 Kameras, in k1 liegt der stärkste Kontrast auf dem Fokus.
+  - **Stopp-Regel greift** (K1, K2, K4 und K7 lagen in R2 unter 4): Bericht an WS0, keine weitere Kritiker-Runde ohne Figuren. Ohne Besetzung bleibt K1 bei 2, und der Mittelwert kann die 8 nicht erreichen.
+- **Bleibt blockiert:** Figuren (Cast-Dateien, K4/K5 nicht auf dem Mac).
+
+### Spiel
+- **Prüfer C §7:**
+  - Das Spiel rendert mit dpr [1,2] auf 2880×1800 und braucht 112 ms je Bild.
+  - dpr 2 → 1 spart 25 ms.
+  - Umgesetzt: M1 auf dpr [1,1.25] (@a701da4).
+  - **Volle Testreihe** auf aaef446: Im Gesamtlauf 37/43 grün; er lief rund 3 h unter GPU-Fremdlast (8 Sitzungen).
+    - Die 6 Ausfälle sind einzeln auf a701da4 alle PASS: host, s0, s1, s5a, light, c3g.
+    - orbit war diesmal PASS.
+  - Gespiegelt als `ws1/terrain-439` @41be79f.
+  - VSM-Verkleinerung und MAX_STEPS 4 noch nicht: Sie verändern die Schattenweichheit bzw. das Zeitverhalten. Erst nach Sichtprüfung.
+- **WS-NPC Status 2** (ws-npc/status @d6ecd8e):
+  - Phase A lokal auf ws-npc/phase-a @d29ac58 (aufgesetzt auf 4c6ec5a).
+  - Browser-Test npc-a 18/18 PASS, Testreihe 42/46. Die Ausfälle orbit/c2 treten auch auf dem Basisstand auf.
+  - P-1a ≥ 55 fps: FAIL, Basis-Grenze. P-1b Anteil der Bewohner: PASS.
+  - Phase C Schritt 0 (Inventur) erledigt.
+  - **An WS0:**
+    - Cube wählen (Vorschlag Skull/GreenDemon).
+    - Heil-Auslöser (Vorschlag T Saugarm).
+    - Weiße Augen bei WSB.
+    - Freigabe Phase C P1.
+
 ## 120 · 21.10. · Probe: Leistung −7/−12 ms (Prüfer C, D1–D4), Spawn-Plattform, kurze Speedlines, Handy-Panel · Spiegel terrain/439 @4c6ec5a (Weltstand)
 
 ### Probe (ws1/preview @5c77bcc, Artefakt v41)
