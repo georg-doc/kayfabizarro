@@ -8278,7 +8278,7 @@
    "date": "2026-10-21",
    "area": "Spielwelt",
    "verdict": "SPEC",
-   "text": "Gesamte NPC-Slice aus dem Web-Chat in EINE neue WS1-Sitzung „WS-NPC“ (Georg 21.10.), Brief BRIEF_WS1_NPC_LIFE_R2 (ersetzt das R1-Gate von V-580; V-583 Dark Fluffer wird Phase C, keine eigene WS-Fluffer-Sitzung). Quellpaket: PR #400 Resident Life R0.6/R0.7, AI-Town R0.8, R1-Audit + WS1-Workshop-Brief (M0–M5 gilt), Recherche-Google-Doc (Perplexity/Gemini/Grok, TS-Schema, NotebookLM), PR #210 EncounterBeatBus, PR #272 AIDA-Semantik. Dramatis Personae + Writers Room (ws-song: FIGURES_R1, PERSONAE_PATCH_R1, Export 2026-10-20c) als Figurenquelle, Zuhause = POI-Kandidat, BESTÄTIGT bindend. WS0-ACK zum R0.6-Intake: Farmer B = KayKit Farmers Textur B, Lorekeeper = KayKit Mystery S6 Lorekeeper (Questgeber; WSB nimmt ihn in K11 mit KFB-Augen in cast.r1.json auf); #210 wiederverwenden + Abbruch, #272 nur Semantik; kein dauerhafter NPC-Speicher, bis der WS1-Lead den Owner von kfb.world-save/1 benennt; ohne LLM als Grundlage; Reihenfolge A (zwei Bewohner, Tagesplan, Begegnung) → C (Dark Fluffer) → B (Gedächtnis) → D (Gruppen, Ork-Band, Skelette, KO, Gerüchte, eigenes Go); Quest/Karten-Schutz.",
+   "text": "Gesamte NPC-Slice aus dem Web-Chat in EINE neue WS1-Sitzung „WS-NPC“ (Georg 21.10.), Brief BRIEF_WS1_NPC_LIFE_R2 (ersetzt das R1-Gate von V-580; V-583 Dark Fluffer wird Phase C, keine eigene WS-Fluffer-Sitzung). Quellpaket: PR #400 Resident Life R0.6/R0.7, AI-Town R0.8, R1-Audit + WS1-Workshop-Brief (M0–M5 gilt), Recherche-Google-Doc (Perplexity/Gemini/Grok, TS-Schema, NotebookLM), PR #210 EncounterBeatBus, PR #272 AIDA-Semantik. Dramatis Personae + Writers Room (ws-song: FIGURES_R1, PERSONAE_PATCH_R1, Export 2026-10-20c) als Figurenquelle, Zuhause = POI-Kandidat, BESTÄTIGT bindend. WS0-ACK zum R0.6-Intake: Farmer B = KayKit Farmers Textur B (Cast farmer_harke), Lorekeeper = KayKit Mystery S6 Lorekeeper (Questgeber; WSB nimmt ihn in K11 mit KFB-Augen in cast.r1.json auf); #210 wiederverwenden + Abbruch, #272 nur Semantik; kein dauerhafter NPC-Speicher, bis der WS1-Lead den Owner von kfb.world-save/1 benennt; ohne LLM als Grundlage; Reihenfolge A (zwei Bewohner, Tagesplan, Begegnung) → C (Dark Fluffer) → B (Gedächtnis) → D (Gruppen, Ork-Band, Skelette, KO, Gerüchte, eigenes Go); Quest/Karten-Schutz.",
    "values": {},
    "owner": "WS-NPC (Laufzeit) · WS1-Lead (Speicher-Owner) · WSA/WSB/WS0 (Zulieferung)",
    "check": "A: Clip aus der Spielkamera, ≥ 55 fps, Abnahmematrix je Zeile",
@@ -8406,7 +8406,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1008",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1009",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
