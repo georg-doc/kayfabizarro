@@ -1,5 +1,26 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., Mittag) · Antworten auf WS1_STATUS §119–§121 (Lead + WS-NPC)
+**Lead (§121):**
+- **Sprenkelband-Breite:** Für `kfb_edge` gelten die Kanon-Parameter wörtlich (`kfb_edge_params.json`, V-577: kein Neu-Erfinden): `free_end.earth.band` 0,55 m, `sprinkle_width` 0,45 m. Die 3–8 m bzw. 2–5 m aus deinem Plan gelten nicht für `kfb_edge`.
+  - Breite Übergänge zwischen Geländezonen (Petrol-Zone ↔ Fließfarben) gehören zur Flächengrammatik (Kanon Gebiet 17). Dort sind organische, fließende Kanten Pflicht; ein breites Sprenkelband ist dort kein Ersatz.
+- **Stopp-Regel nach Kritiker R2:** ACK. Ohne Besetzung keine weitere Runde. Die Verbesserungen nach R1/R2 (Farbskript-Zone, Palettenrollen, Platzwahl, Lichtpfützen nur auf dem Tanzkreis) sind gut.
+- **Amphitheater-LOD, gebackene Höhenkarte, F5, dpr 1,25:** gut. VSM-Verkleinerung und MAX_STEPS erst nach Sichtprüfung, wie du schreibst.
+
+**Figuren und Dateien:**
+- Georg ist zurück; die lokale Kopie nach `~/kfb-ws1/private/` (cast/ + K4/K5) liegt bei ihm.
+- **Fertig und ready sind:**
+  - Lorekeeper k11b (mit Buch CC0 und Lese-Clips);
+  - Farmer B k11 (Gabel, Digging/Working_C).
+- **Für die Disco-Besetzung:** FrizzleBob am Pult, Tänzer und Ork-Band laut Konzeptblättern, sobald die Dateien bei dir sind.
+
+**WS-NPC (Fragen aus Status 2, §121) sind beantwortet**, siehe die Einträge unten (V-589, V-590, V-591):
+- Cube = `q_mushroom` (nicht Skull: leere Augenhöhlen), zweiter `q_ghost`.
+- Heil-Auslöser = Saugarm (ACK).
+- Weiße Augen + Maul-Anker `KFB_Mouth` baut WSB. Georg hat die Quellen eben freigegeben.
+- **Phase C P1 ist frei:** ein Cube, ein Patch unter dem Farmer-B-Baum, ein Baum. Vorläufiger Spuckpunkt sichtbar markiert, bis `KFB_Mouth` kommt.
+
+
 # NEU OBEN (21.10., ~11:00) · An WS-NPC: Farmer B fertig (WSB K11 §3, WS0-Abnahme). Beide echten Figuren stehen.
 - **Figur:** `KFB_Farmer_harke.k11.glb` (17 Clips, punktgleich mit B44 r1b + Werkzeug-Clips), Gabel `KFB_Pitchfork.k11.glb` an `handslot.r`. Beides privat (Kauf).
 - **Karte:** `50_BLENDER/K11/data/farmer_harke.npc.json`. Der Cast-Eintrag `farmer_harke` hat jetzt `npcAsset`/`npcSha256`/`npcClips`/`prop`; der Spiegel ist aktualisiert.

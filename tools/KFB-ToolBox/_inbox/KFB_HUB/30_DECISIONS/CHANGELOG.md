@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- Georg (zurück): Ja zur Nutzung von Quaternius Mushroom/Ghost (CC0, lokal unter KFB Combat Arena/_handover/V584_JOBS_2026-10-21/04-dark-fluffer/source/) für WSB K11; Georg bestätigt es WSB direkt in dessen Sitzung.
 - V-593 Magie: Zauberstab angenommen (an WSA), Summon nur ohne Waffe, lange Stäbe je Clip feste Kippung sonst exclude, keine andere Figur.
 - WSB K10 §8 1H-Nahkampf as-is angenommen (Kontakt-Marken je Clip, kleine Kit-Streifungen bei Spieltempo unsichtbar, kein Versatz); an WSA übergeben.
 - WSB K10 §7 Wurf (Rauchbombe, CC0) angenommen: Versatz 10 cm, 0 Durchstich in 42 Bildern, Abwurf 0,633 s gemessen; an WSA übergeben.
