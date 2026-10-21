@@ -2,6 +2,43 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 10 · 22.10. · Optimierung: schneller Start, einheitliche Lautheit, Musik nach Biom, Raumklang
+
+**Georg 22.10.:** „dann gerne 2–5“. Hörpult entfällt, die Audio Site deckt das ab.
+**Stand:** `ws-audio/r1` @609cbef, auf `ws1/mvp-r1`; der Lead merged nach.
+
+1. **Laden in Stufen und Racer nur bei Bedarf** (Brief-Pflicht Lazy-Load):
+   - Stufe 1: Atmo (nur der aktuelle Kontext), zu Fuß die Schritte bzw. im Racer der Motor, Grundstock der Tonbank je Modus.
+   - Stufe 2 im Hintergrund: Kampf, Rest der Tonbank, Motor bzw. Schritte des anderen Modus.
+   - Der Racer lädt nur die gebrauchten Dateien: zu Fuß 8 statt 38, im Racer 25. Zu Fuß ist er nach 3 s angehalten (0 statt 19 stumme Schleifen).
+   - Patches: `kfb-ambience` start lädt zuerst nur den Kontext, `footsteps/audio.mjs` lädt parallel.
+   - Gemessen (headless, Last 14): Ton bereit zu Fuß **2,4 s** (vorher ≈ 10 s), im Racer **4,0 s**; alles nach 7–8 s.
+2. **Einheitliche Lautheit:**
+   - `scripts/audio/loudness.mjs` misst nach BS.1770-4 headless; die Gegenprobe gegen WS0 weicht ±0,05 LU ab.
+   - Einzeltöne: Alle 32 Sätze haben inzwischen den WS0-Bericht (−16 LUFS), der Vorrang behält.
+   - Musik je Titel auf −18 LUFS: Cozy lag bei −37…−19, Suno bei −16…−12; ausgeglichen bis +12 dB bzw. −2…−5 dB, Spitze ≤ −1 dBFS.
+   - Die Werte stehen in `scripts/audio/music-gain.json` (Schlüssel sha1, keine Titel), gelten also auch im Cloudflare-Build.
+3. **Musik nach Biom und Tageszeit:**
+   - Stichworte je Titel stehen in `music-tags.json` (sha1).
+   - Gewichtete Zufallsfolge: Biom +3, Tageszeit +2, Schnee +3, Flug +1; die letzten 3 Titel sind gesperrt.
+   - Kontext ist der Atmo-Kontext, also auch die Biom-Fahrt über `ambienceContext`. Kein Wechsel mitten im Lied.
+4. **Raumklang:**
+   - Hall je Umgebung (offen / Wald / Tal mit Echo) als Faltungshall-Send von SFX und Atmo; die Raumantwort wird gerechnet, es gibt kein neues Klangmaterial.
+   - Die Umgebung kommt aus Biom und Geländeform (Anstieg > 6 m in 25 m = Tal).
+   - Verdeckung: Gelände über der Sichtlinie → Tiefpass und −3…−7 dB.
+- **Tests:**
+  - `audio-mixer` PASS: Gewichte, Verteilung, Umgebung, Verdeckung, Kontext-Vorrang.
+  - `audio` (Browser) PASS: Tal-Ort gefunden → canyon; Ton hinter einem Hügel gedämpft; Lade-Stufen.
+  - `contract-static` PASS.
+  - Audio-Takt im Mittel 0,16–0,21 ms/Bild.
+- **Offen** (nicht Ton):
+  - K10-Arena im Spiel (Lead/WSA);
+  - WSA-Manifeste mit den v2/v3-Neuaufnahmen;
+  - Wetter der Biom-Fahrt (WS1b schließt an);
+  - Ende-Ereignis für L15;
+  - Diorama-Orte, Dschungel-Biom;
+  - Merge nach main mit Georg.
+
 ## 9 · 22.10. · Abnahme durch Georg: PASS (Feinabstimmung später)
 
 **Georg 22.10.:** „das ist soweit PASS mit tune für details später“.
