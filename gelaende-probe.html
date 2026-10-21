@@ -2356,26 +2356,26 @@ ${window.KFB_FLUID.glsl}
     gold:  { k: 0.75, zenith: '#5e6fb3', horizon: '#f5b98c', lit: '#ffe2bd', shade: '#c98b8f', tint: [1.04, 0.86, 0.72], hemi: ['#f6c9a2', 0.8],  sun: ['#ffb877', 1.3],  stars: 0 },
     nacht: { k: 0.9,  zenith: '#121838', horizon: '#3a3e76', lit: '#9aa2d6', shade: '#3b406e', tint: [0.42, 0.48, 0.78], hemi: ['#5a5f9a', 0.5],  sun: ['#a9bcff', 0.45], stars: 1 },
   };
-  const SKY = { uKul: U.uKul, uEdgeSun: U.uEdgeSun, uEdgeAnti: U.uEdgeAnti, uSGrad: U.uSGrad, uAurora: { value: 0 }, uCForm: { value: 0 }, uAirOff: U.uAirOff, uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
+  const SKY = { uPix: { value: 0.001 }, uInvPV: { value: new THREE.Matrix4() }, uRes: { value: new THREE.Vector2(1, 1) }, uKul: U.uKul, uEdgeSun: U.uEdgeSun, uEdgeAnti: U.uEdgeAnti, uSGrad: U.uSGrad, uAurora: { value: 0 }, uCForm: { value: 0 }, uAirOff: U.uAirOff, uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
   const dome = new THREE.Mesh(new THREE.SphereGeometry(900, 48, 24), new THREE.ShaderMaterial({
     uniforms: SKY, side: THREE.BackSide, depthWrite: false,
     vertexShader: `varying vec3 vDir; void main(){ vDir=position; vec4 p=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_Position=p.xyww; }`,
     fragmentShader: `${GLSL_NOISE}
-    uniform vec3 uHorizon, uLit, uShade; uniform float uTime, uCover, uPainted, uStars, uMoon, uAurora, uCForm; uniform vec3 uMoonDir; uniform vec2 uCamXZ; varying vec3 vDir;
+    uniform vec3 uHorizon, uLit, uShade; uniform float uTime, uCover, uPainted, uStars, uMoon, uAurora, uCForm; uniform vec3 uMoonDir; uniform vec2 uCamXZ; varying vec3 vDir; uniform mat4 uInvPV; uniform vec2 uRes; uniform float uPix;
     ${GLSL_SKY}
     float fbm4(vec2 q){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*snoise(q); q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(1.7,9.2); a*=0.5; } return s; }
     /* eine Wolkenebene im Kuppelstil: Rauschen hart geschnitten, Licht-/Schattenton (Seite zur Sonne hell), dunklere Kante */
     vec4 cloudLayer(vec3 d, float ph, float sc, vec2 wind, float par, float th, float sd, float edge, float orig){
       vec2 p=d.xz/(d.y+ph)*sc+wind+uCamXZ*par+vec2(sd*17.0,-sd*9.0);
       th+=0.07*(1.0-smoothstep(0.02,0.12,d.y));   /* zum Horizont dünner statt dichter (AD-Audit Befund 3) */
-      float n=fbm4(p*1.4)+0.5; float fwA=max(fwidth(n)*1.2,1e-4), fw=min(fwA,0.012); if(n<th-max(0.01,fwA)) return vec4(0.0);   /* Kantenbreite in Pixeln (vor dem Ausstieg gemessen): scharf auch bei großen nahen Wolken */
+      float n=fbm4(p*1.4)+0.5; float fwA=clamp(2.1*sc*uPix/max((d.y+ph)*(d.y+ph),1e-3), 0.002, 0.04), fw=min(fwA,0.012);   /* Kantenbreite aus der Pixelgröße am Himmel statt fwidth (fwidth sprang an den Kuppel-Dreieckskanten → Haarlinien, QA P2) */ if(n<th-max(0.01,fwA)) return vec4(0.0);   /* Kantenbreite in Pixeln (vor dem Ausstieg gemessen): scharf auch bei großen nahen Wolken */
       float n2=fbm4(p*1.4+(orig>0.5 ? vec2(0.07,0.05) : normalize(uSunDir.xz+1e-4)*0.086))+0.5;   /* orig: Lichtversatz exakt wie die Kuppel vorher (Georg 21.10.: sah besser aus) */
       float m=orig>0.5 ? smoothstep(th,th+max(0.012,fwA),n) : smoothstep(th,th+max(fw,0.0015),n);   /* Kante nie schmaler als ein Bildpunkt: keine 2-px-Treppen am Horizont */
       vec3 cc=mix(uShade,uLit,smoothstep(n2+0.012-fwA,n2+0.012+fwA,n));   /* Licht/Schatten-Grenze geglättet statt step() */
       cc=mix(cc,uShade*0.82,(m-smoothstep(th+0.012,th+0.03,n))*0.85*edge);   /* nahe Ebenen: schwächere Kante, sonst bleiben kleine Fetzen als Umriss-Geister */
       return vec4(cc,m); }
     void main(){
-      vec3 d=normalize(vDir); float h=max(d.y,0.0);
+      vec3 d=normalize(vDir); { vec4 q=uInvPV*vec4(gl_FragCoord.xy/uRes*2.0-1.0, 1.0, 1.0); d=normalize(q.xyz/q.w-cameraPosition); }   /* Blickrichtung je Bildpunkt aus der Kamera, nicht aus den Kuppel-Dreiecken: sonst Haarlinien an jeder Dreieckskante (QA P2) */ float h=max(d.y,0.0);
       vec3 col=d.y>0.0 ? mix(uHorizon, uZenith, pow(smoothstep(0.0,0.85,h),0.7)) : uHorizon;   // unter dem Horizont exakt die Nebelfarbe (vorher ×0,94 = sichtbarer Balken)
       if(uSky2>0.5){ col=skyColor(d); col=mix(col, uSunCol*1.15, smoothstep(0.9970,0.9978,dot(d,uSunDir))); }   /* Sonnenscheibe (H19) */
       // Surrealer Himmelskörper (R13 H21): Knet-Riesenmond (18°) bzw. Ringplanet, tief am Horizont gegenüber der Sonne, unten im Dunst
@@ -2419,7 +2419,7 @@ ${window.KFB_FLUID.glsl}
       gl_FragColor=vec4(col,1.0);
     }`,
   }));
-  dome.renderOrder = -1; dome.frustumCulled = false; scene.add(dome);
+  dome.renderOrder = -1; dome.frustumCulled = false; scene.add(dome); dome.onBeforeRender = (r, sc, cam) => { SKY.uInvPV.value.multiplyMatrices(cam.matrixWorld, cam.projectionMatrixInverse); r.getDrawingBufferSize(SKY.uRes.value); SKY.uPix.value = 2 * Math.tan(cam.fov * Math.PI / 360) / Math.max(1, SKY.uRes.value.y) };   /* Kamera dieses Bildes für die Blickrichtung je Bildpunkt */
   // Kulissen (R13 H14): drei weltferne Silhouettenringe, Oberkante bei +5° / +3° / +1,5°, je weiter, desto mehr Himmelsfarbe (k 0,45 / 0,65 / 0,82)
   const KUL = [[330, 5, 0.6, 1.3], [450, 3, 0.75, 7.1], [650, 1.5, 0.88, 13.7]].map(([R, deg, k, sd], ix) => {
     const g = new THREE.CylinderGeometry(R, R, 1, 384, 1, true), pa = g.attributes.position, top = R * Math.tan(deg * Math.PI / 180)
