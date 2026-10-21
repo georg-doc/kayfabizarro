@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- STOPP an WSB: FrizzleBob nicht in Blender zusammenbauen (Georg); FB nur aus der ToolBox (P08), MC-Platz in K12 offen.
 - Private Assets gepusht: georg-doc/KFB-Stunt-Car-Race Branch assets/private (156 Dateien, Georg-Freigabe); WS1/WS-NPC holen per eigenem Lese-Schlüssel, keine lokalen Kopien mehr. K13 Large-Rig-Nahkampf (black_knight, demon_lord, orc_brute; 1H+Schild, 2H) an WSB nach K12. Zerstörungs-Block: Design und Leistung erst mit Georg besprechen.
 - V-596 Disco-Tänze: Clip as-is + Bodenlift-Tabelle je Bild zur Laufzeit (floorLift).
 - WSB K11 §4/§5 angenommen: q_ghost + q_mushroom mit KFB_Mouth und healed (G1/G5 n. a. für Cubes, G3 per groundOffset 0,014 in der Karte). Nächster WSB-Job K12: Disco-Besetzung + Ork-Legacy auf ready für den Dioramen-Test.
