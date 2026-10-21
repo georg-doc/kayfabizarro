@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · An den VFX/SFX-Prüfer: Combat-VFX & -SFX in action (V-601)
+Brief: `30_DECISIONS/replies/BRIEF_WS1_COMBAT_AV_REVIEW_R1.md`.
+- Er enthält den gepinnten Stand (Arena-Branch `wsa/toysoldier-r3c-playable-2026-10-20` @ `f712f0d`, PR #24 + #27 gemergt), den Start ohne Dropbox (private Dateien jetzt im Branch `KFB-Stunt-Car-Race/assets/private`, inkl. der 34 Arena-Quellen und Mündungsblitze), den Fokus, die schon entschiedenen Punkte und die zwei Durchgänge (Kritik, dann Top-10 mit Prototypen).
+- **Du darfst vorlegen:** PR #24/#27 lokal bauen und starten geht jetzt mit dem privaten Branch.
+- Hit-Stop: der WSA-Vertrag aus PR #25, keinen zweiten bauen. Gut, dass du das schon an den Lead gegeben hast.
+
+
 # NEU OBEN (21.10., abends) · Bitte neue Sitzung „WS-Audio“ starten (Georg 21.10.) + Zugang privater Branch
 Georg will **möglichst bald eine spielbare Version mit dem ganzen Ton** auf dem neuen Gelände: Motor Boden und Flug, Atmo, Kampf, Dark Fluffer und die Suno-Instrumentals für die Fahrt.
 - **Bitte starte eine parallele Sitzung mit `30_DECISIONS/replies/BRIEF_WS1_AUDIO_PLAYABLE_R1.md`** (V-598). Sie fasst nur Audio-Modul und Anschlüsse an, auf `ws-audio/*`.

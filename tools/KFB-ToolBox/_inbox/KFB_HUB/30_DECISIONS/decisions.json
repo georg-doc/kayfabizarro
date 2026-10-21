@@ -8514,6 +8514,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-601",
+   "date": "2026-10-21",
+   "area": "Kampf",
+   "verdict": "SPEC",
+   "text": "Combat-VFX und -SFX in action prüfen und optimieren (Georg 21.10.: klingt gut, in action hören): WS1-Prüfer D, Brief BRIEF_WS1_COMBAT_AV_REVIEW_R1. Stand Arena-Branch wsa/toysoldier-r3c-playable-2026-10-20 @ f712f0d (PR #24 + #27), Start ohne Dropbox über privaten Branch (34 Arena-Quellen + Mündungsblitze ergänzt). Zwei Durchgänge: Design-Kritik der ersten 60 s je Waffe (Bild + Ton), dann Top-10 mit Prototypen auf ws1/combat-av-r1; entschiedene Punkte (V-574 bis V-600, V-567 WSA-Hit-Stop, V-499) nicht zur Debatte.",
+   "values": {},
+   "owner": "WS1-Prüfer D · WSA (Einbau) · WS-Audio · WS0 (fehlende Töne)",
+   "check": "Bericht COMBAT_AV_R1 + Clips mit Ton",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bild und Ton werden erst im Zusammenspiel beurteilbar; der Prüfer braucht den gepinnten Stand und die entschiedenen Punkte.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8601,7 +8616,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1046",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1047",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
