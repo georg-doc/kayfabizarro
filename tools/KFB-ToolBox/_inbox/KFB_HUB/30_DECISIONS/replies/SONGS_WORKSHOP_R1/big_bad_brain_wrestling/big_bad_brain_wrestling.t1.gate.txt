@@ -1,0 +1,47 @@
+# Gate-Bericht big_bad_brain_wrestling.t1 · 2026-10-21
+gate song_gate.py sha256 0128b003c53a9e58df9995963d957ec31568953790d5b9f44740d643e1213370
+deck pin registry/assets/v1/decks/big_bad_brain_wrestling.json sha256 54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a
+media pin media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json sha256 6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d
+lyrics sha256 5ab42c700880202e59fd9173fa17b2711dd5a1c9736c9e6741e0810f94b842de · 4962 Zeichen (Unicode len)
+style sha256 71e6e16724dbfa9be28ec9522742b3de60b4ea3a44288601a3f43a51c1f27228
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.t1.suno.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.t1.songlines.json --media media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · big_bad_brain_wrestling.t1.suno.txt · 4962 Zeichen · 56/56 Karten · Intro 1 · Brücken 0 · Outro 1 · Performer-Einschübe 0 · R4-Zuordnung
+lyrics sha256 5ab42c700880202e59fd9173fa17b2711dd5a1c9736c9e6741e0810f94b842de
+WARN A4: Karte 8: Kartenteil 76 Zeichen (Richtwert 80-95): 'The Little Giant, smaller wrestler, lifts the huge'
+WARN A4: Karte 13: Kartenteil 79 Zeichen (Richtwert 80-95): "The Thigh Slap didn't hurt, but sounds like it did"
+WARN A4: Karte 15: Kartenteil 76 Zeichen (Richtwert 80-95): 'The Echo Chest, echo chamber of the torso: loud, b'
+WARN A4: Karte 18: Kartenteil 79 Zeichen (Richtwert 80-95): 'The Rudo Ripper maims the mask: instant disqualifi'
+WARN A4: Karte 19: Kartenteil 101 Zeichen (Richtwert 80-95): 'The Strong Style Spirit: the more damage you take,'
+WARN A4: Karte 21: Kartenteil 76 Zeichen (Richtwert 80-95): "The Juice Lover, busting himself open: you can't h"
+WARN A4: Karte 22: Kartenteil 69 Zeichen (Richtwert 80-95): 'The Snake Bag has a live snake: terrify them befor'
+WARN A4: Karte 24: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Exotic attacks dignity rather than the body: p'
+WARN A4: Karte 25: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Hot Tag, fresh partner for payback: the explos'
+WARN A4: Karte 26: Kartenteil 79 Zeichen (Richtwert 80-95): 'The Victim, the Ricky Morton role: isolated and pi'
+WARN A4: Karte 32: Kartenteil 74 Zeichen (Richtwert 80-95): "The Plant: I'm just a fan! Gambling on the outcome"
+WARN A4: Karte 34: Kartenteil 72 Zeichen (Richtwert 80-95): 'The Sandbag refuses to cooperate: dead weight. Ext'
+WARN A4: Karte 39: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Trash Talker, shouting at Michael Cole: hilari'
+WARN A4: Karte 40: Kartenteil 79 Zeichen (Richtwert 80-95): 'The Finger Poke of Doom: instant pin if you consen'
+WARN A4: Karte 41: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Finisher, the Leg Drop: the most important mom'
+WARN A4: Karte 43: Kartenteil 78 Zeichen (Richtwert 80-95): 'The Squash against any jobber: no-selling, sit rig'
+WARN A4: Karte 45: Kartenteil 97 Zeichen (Richtwert 80-95): 'The Booker decides the winner before it starts: th'
+WARN A4: Karte 47: Kartenteil 71 Zeichen (Richtwert 80-95): 'The Rehearsal, Hogan and Warrior: perfect, but lac'
+WARN A4: Karte 55: Kartenteil 74 Zeichen (Richtwert 80-95): 'The Kayfabe Police enforce the lie: keep the secre'
+WARN A4: Karte 56: Kartenteil 79 Zeichen (Richtwert 80-95): 'The Retirement Match loses on purpose: rising and '
+WARN C9: Intro hat 1 eigenen Beat (Richtwert >= 2)
+REVIEW B7b: Outro greift kein Wort/Bild aus dem Intro auf
+REVIEW B6: Performer-Text in 0% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 54f986f67f1f
+INFO S2: media gepinnt 6e84e0c398bb
+INFO C9B: Bewohner verifiziert: ActionFigure (KayKit_Mystery_Series6/6 - December 2023 - Action Figure)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO A2: eigener Text (Rahmen + Performer) 3% aller Wörter (Richtwert <= 30%)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.t1.style.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.t1.songlines.json
+exit 0
+song_gate R4.2 style · big_bad_brain_wrestling.t1.style.txt · Familie A rock · 2 Variante(n) · 377, 305 Zeichen
+PASS
+
