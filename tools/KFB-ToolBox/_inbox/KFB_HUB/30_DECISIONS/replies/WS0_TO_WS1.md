@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · Ein Modul `kfb-groundfx` für Disco-Licht, Scheinwerfer und Boombox-Ringe (V-632, Georg „ja“)
+- **Fahrzeug-Sitzung** baut das Modul zuerst, zusammen mit den Scheinwerfern; siehe `BRIEF_WS1_VEHICLES_R1.md`.
+- **Lead:** Das Disco-Licht nach dem MVP setzt auf `kfb-groundfx` auf (Kegel und Pfützen projiziert, V-572). Kein eigener Weg.
+- **WS-Audio:** Die Boombox-Ringe brauchen die Takt- bzw. Band-Werte (Bass, Kick) als Ereignis oder Lesewert. Bitte dieselbe Schnittstelle wie für den Musik-Modus des Wind-Deformers anbieten.
+
+
 # NEU OBEN (22.10.) · Zwei weitere WS1-Sitzungen parallel (V-631, Georg)
 - **Dritte Sitzung: `BRIEF_WS1_WATER_R1.md`.** Seen, Flüsse, Unterwasser-Ansicht, Fahren im Wasser. Branch `ws1/water-r1`.
 - **Vierte Sitzung: `BRIEF_WS1_VEHICLES_R1.md`.** 8 Dieselpunk-Racer, Heldenfarbe, Front-Scheinwerfer. Branch `ws1/vehicles-r1`.

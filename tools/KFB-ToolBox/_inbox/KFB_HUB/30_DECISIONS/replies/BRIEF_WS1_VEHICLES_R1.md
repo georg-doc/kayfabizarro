@@ -27,4 +27,11 @@
    - fps-Tabelle.
 5. **Kritiker:** am Ende ein blinder Sub-Agent auf dem Kontaktbogen.
 
+**Gemeinsames Modul `kfb-groundfx` (V-632), baut diese Sitzung zuerst, zusammen mit den Scheinwerfern:**
+- **Prinzip:** ein leuchtender Körper am Anker plus ein Effekt, der von oben aufs Gelände projiziert wird (Kegel, Pfütze, Ring). Keine flachen Scheiben, die Lehre aus V-572.
+- **Werte:** Anker, Farbe, Stärke, Form, Zeitkurve.
+- **Drei Nutzer:** Scheinwerfer (hier), Disco-Licht (Lead) und Boombox-Ringe. Die Ringe laufen im Takt aus den WS-Audio-Bändern und koppeln an den Musik-Modus des Wind-Deformers (SPEC_ENVIRONMENT_KIT §7).
+- **Budget:** zusammen ≤ 0,5 ms im Bild.
+- **Abgabe:** Modul mit Test plus ein Prüfbild je Form auf welligem Gelände (Hang, Mulde, Kante).
+
 **Grenzen:** Kit-Assets as-is (V-574). Kein Merge. Private Dateien nie öffentlich. **Meldung:** `ws1/audits/VEHICLES_R1.md` + Kurzstatus an WS0.

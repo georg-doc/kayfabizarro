@@ -8964,6 +8964,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-632",
+   "date": "2026-10-22",
+   "area": "Licht",
+   "verdict": "SPEC",
+   "text": "Ein Modul kfb-groundfx für Licht- und Ring-Effekte ohne echte Lichter (Georg 22.10.): leuchtender Körper am Anker plus auf den Boden projizierter Effekt (Kegel, Pfütze, Ring), Werte Anker, Farbe, Stärke, Form, Zeitkurve; Projektion auf das Gelände statt flacher Scheiben (Lehre V-572). Drei Nutzer: Disco-Licht (Lead), Front-Scheinwerfer (Fahrzeug-Sitzung, baut das Modul zuerst), Boombox-Ringe im Takt aus den WS-Audio-Bändern, gekoppelt an den Musik-Modus des Wind-Deformers (SPEC_ENVIRONMENT_KIT §7). Budget zusammen höchstens 0,5 ms im Bild.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Drei Effekte, ein Prinzip; einmal sauber auf dem Gelände gebaut statt dreimal mit Schnittkanten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9051,7 +9066,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1077",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1078",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

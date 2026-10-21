@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-632 Modul kfb-groundfx (Licht und Ringe projiziert, ohne echte Lichter) für Disco-Licht, Scheinwerfer, Boombox-Ringe; Fahrzeug-Brief ergänzt, Lead und WS-Audio informiert.
 - V-631 WS1 parallel: Lead Leistung + Disco-Licht nach MVP; Wasser (ws1/water-r1) und Fahrzeuge (ws1/vehicles-r1) als eigene Sitzungen, Briefs geschrieben.
 - V-630 WS1-Fragen §122/§124/§126 beantwortet (FB aus P08, Hexe house_a, Augen Ritter/Dämon in den Hub, Build-Prüfung src/private); GPT-Site-Übergabe an WSA.
 - V-629 Goo-Vorstadt Bautypen: Kenney Commercial/Industrial/Suburban = Utopia-Einheitsbau (grau), KayKit = gute NPC-Behausung, Straßen Joyride, ein Knete-Material; Hub q149 und WSB Nachtrag 24 ergänzt.
