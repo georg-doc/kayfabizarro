@@ -8949,6 +8949,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-631",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "WS1-Backlog parallel (Georg 22.10., WS1-Volumen bis 2 Uhr nutzen): Lead nach dem MVP Leistung (Ziel mindestens 55 fps, vorher 40-44) und Disco-Licht; parallel dritte Sitzung Wasser (Seen, Flüsse, Unterwasser, Fahren im Wasser nach V-621) auf ws1/water-r1 und vierte Sitzung Fahrzeuge (8 Dieselpunk-Racer, Heldenfarbe, Front-Scheinwerfer) auf ws1/vehicles-r1, beide auf Basis ws1/mvp-r1, Einbau über den Lead. Briefs BRIEF_WS1_WATER_R1.md und BRIEF_WS1_VEHICLES_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was man beim ersten Spielen sofort merkt, zuerst.",
+   "applies": "nach MVP"
+  },
+  {
+   "id": "V-631",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "WS1-Backlog Reihenfolge nach dem MVP (Georg 22.10.): 1) Leistung (Spiel-fps headless mit terrain3, Ziel mindestens 55, vorher 40-44) und Disco-Licht (Lichtkegel und Lichtpfützen der Probe ins Spiel, Ork-Band daneben, Tänzer schauen zum Spieler, unter 1 ms); 2) Wasser (Seen mit gezacktem Rand, Flüsse, Unterwasser-Ansicht; zusammen mit V-621) und die 8 Dieselpunk-Racer samt Heldenfarbe im Spiel; Werkzeug und Sicherheit laufend. Combat-AV-Backlog (TUNE-Punkte) mit dem Kampf-Einbau.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was man beim ersten Spielen sofort merkt, zuerst.",
+   "applies": "nach MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9036,7 +9066,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1076",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1078",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,23 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · Zwei weitere WS1-Sitzungen parallel (V-631, Georg)
+- **Dritte Sitzung: `BRIEF_WS1_WATER_R1.md`.** Seen, Flüsse, Unterwasser-Ansicht, Fahren im Wasser. Branch `ws1/water-r1`.
+- **Vierte Sitzung: `BRIEF_WS1_VEHICLES_R1.md`.** 8 Dieselpunk-Racer, Heldenfarbe, Front-Scheinwerfer. Branch `ws1/vehicles-r1`.
+- Beide basieren auf `ws1/mvp-r1`, eingebaut wird über den Lead.
+- **Lead:** Nach dem MVP zuerst Leistung (Ziel ≥ 55 fps) und Disco-Licht, Combat-AV-Backlog mit dem Kampf-Einbau.
+
+
+# NEU OBEN (22.10.) · An WS1-Lead: Backlog-Reihenfolge nach dem MVP (V-631, Georg „ja“)
+1. **Leistung + Disco-Licht:**
+   - Spiel-fps headless mit terrain3, Ziel ≥ 55 (WS-NPC maß 40–44).
+   - Lichtkegel und Lichtpfützen der Probe ins Spiel, Ork-Band daneben, Tänzer schauen zum Spieler, ≤ 1 ms.
+2. **Wasser + Racer:**
+   - Seen mit gezacktem Rand und olivem Saum, Flüsse, Unterwasser-Ansicht (zusammen mit Backlog A, V-621).
+   - Die 8 Dieselpunk-Racer und die Heldenfarbe im Spiel.
+- **Laufend:** Werkzeug (Test-Slot, Probe-Quellen spiegeln) und die Build-Prüfung `src/private`.
+- **Combat-AV-Backlog:** Die TUNE-Punkte gehen mit dem Kampf-Einbau mit.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: Antworten auf §122/§124/§126 (V-630). Entschuldigung, WS0 hat bis eben `ws1/r3f-frame` statt `ws1/mvp-r1` gelesen.
 1. **FrizzleBob:**
    - Der aktuelle Stand ist der ToolBox-P08-Kandidat von WSA: `wsa/toolbox-frizzlebob-face-2026-10-21` @20a0123, Datei `dist/data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-21.p08.json` (Rig-Augen, Brauen −0.08 / Pitch 8, `partColors`).
