@@ -2,6 +2,34 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 6 · 21.10. · Heil-Video · Schritte und Hüpfer der NPCs · Notiz Fluffer-Größe
+
+- **Heil-Video** (Georg „ja, dreh das Heilen nach“):
+  - Ablauf im Bild: windup, spit, impact, taint, drop → Schuss B → healed, burst, fade.
+  - MP4 5 MB an Georg, lokale Vorschau-Kombination.
+  - Ursache der Fehlschüsse vorher: Taste B zielt in Kamerarichtung, und der Teleport dreht nur die Figur. Das Profil dreht die Kamera jetzt mit (`rotateAzimuthTo`).
+- **Schritte und Hüpfer** (WS-NPC baut Ereignisse aus dem echten Sohlen-Kontakt; Georg will Schritte im Ton):
+  - Gelesen werden `groups.steps()`, `npc.steps()` und `fluffer.hops()`.
+  - Je Quelle wird beim ersten Lesen nur gemerkt; entdoppelt über `id|foot|t` bzw. `id|t`; über 35 m still.
+  - Bewohner: Audio-Site-Bänke je Boden (Gras `digital_footstep_grass`, Weg `…gravel`, Platz `foley_footstep_concrete`).
+  - Skelette `C06` leise, Spielzeugsoldaten `D04` leise, Bots `C08` leise – Platzhalter, siehe Lücken.
+  - Fluffer-Hopser `DF07`.
+  - Test `audio`: 4 nachgestellte Schritte/Hüpfer klingen, der alte und der ferne nicht, keine Wiederholung – **PASS**.
+  - Die echte Prüfung kommt nach dem Push von WS-NPC.
+- **Lücken für WS0** (Bestandsaufnahme WS-NPC, übernommen):
+  1. Schritte der Bewohner in Knete je Boden (Gras, Sand/Weg, Fels);
+  2. Skelett-Schritt: kurzes Knochen-Tock, leiser als C06;
+  3. Spielzeugsoldat: harter Plastik-Marschtritt, dazu das Ticken des Aufziehschlüssels als leise Schleife beim Gehen;
+  4. Bot-Schritt: metallisches Stapfen, kombinierbar mit C08;
+  5. Dark Fluffer: Goo-Gleiten/Schmatzen als Schleife zwischen den Hüpfern, dazu ein geheilter Hüpfer (heller, ohne Goo);
+  6. Bot-Wut: Zorn-Piepen bzw. Überhitzen;
+  7. Aufstehen nach K.o.: Knete-Rappeln;
+  8. optional: Publikums- und Pausengeräusche für die Ork-Band.
+- **Notiz Georg 21.10. → WS1/WS0:**
+  - Die Fluffer sollen 30–40 % kleiner sein, damit sie besser zu den KayKit-Figuren passen. `heightM` 1,1 → ≈ 0,7 m.
+  - Georg vergleicht gerade 1,1 / 0,8 / 0,7 m; WS-NPC setzt den Wert nach seiner Wahl.
+  - Der Ton zieht mit, die Fluffer-Klänge werden 5–8 % höher.
+
 ## 5 · 21.10. · Video Gruppen-Ton (lokale Vorschau-Kombination)
 
 **Georg 21.10.:** „mach ein Video mit dem Gruppen-Ton“.
