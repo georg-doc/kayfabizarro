@@ -1,0 +1,152 @@
+# WS_AUDIO_STATUS · Sitzung „WS-Audio“ (spielbare Version mit ganzem Ton)
+Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
+Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
+
+## 1 · 21.10. · Tier 0 steht lokal: ein Ton-Pfad, ganzer Ton auf dem Probe-Gelände
+
+**Stand:**
+- Branch `ws-audio/r1` im lokalen Repo `kfb-planet`, Commit 8660a84, aufgebaut auf `terrain/probe-world` @73d7790.
+- Nicht gepusht und nicht nach main gemergt. Push erst nach WS0-Go, Merge nur mit Georg.
+- Georg hat das 2-Minuten-Video mit Ton bekommen. Die Abnahme durch sein Ohr steht noch aus.
+
+**Volle Fassung lokal starten (ein Befehl):**
+```
+cd ~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea && npm run ton
+```
+- Öffnet `#m1,harvest,look=terrain3,world=probe` (zu Fuß).
+- `npm run ton:fahrt` öffnet dasselbe mit `,car,fly` (Fahrt und Flug).
+- Der Ton wird nach der ersten Taste oder dem ersten Klick hörbar.
+- Unten links liegt der Knopf ♪ mit je einem Regler für Gesamt, Musik, Effekte, Atmo und UI, dazu „Ton aus“.
+
+### Was läuft
+- **Ein Ton-Pfad** (`src/audio/kfbAudio.js`):
+  - genau ein AudioContext;
+  - Busse Musik, SFX, Atmo und UI → Master → Sicherheitsbegrenzer → Ausgang;
+  - Ducking: Musik −7 dB unter lauten SFX (Kampf, Crash, Explosion), −9 dB im Dialog, −2 dB beim Boost; die Atmo senkt sich unter Musik und Kampf selbst (kfb-ambience.v1);
+  - Entfernungsdämpfung mit inverse-Abstand plus Tiefpass;
+  - der Hörer sitzt an der Figur bzw. am Racer und schaut in Kamerarichtung.
+- **WSA-Laufzeit-Pakete zuerst und 1:1 übernommen.** Quelle ist Audio Site 0.7.6, `kayfabizarro@945518d3`, `tools/KFB-Audio-Site/dist`; die Töne kommen aus `WSA_AUDIO_FLIGHT_CRASH_R1`.
+  - Racer: Motor-Gitter L1–L5 mit Gängen und Schubabschaltung (V-378), Flug in den Arten jet, turbine und antigrav, Wind nach Tempo.
+  - Kampf: C01–C18.
+  - Atmo kfb-ambience.v1 (V-458, CC0).
+  - Schritte (Foley- und Digital-Bänke).
+  - Zwei kleine Patches, im Dateikopf vermerkt: die Atmo bekommt `moveWaterEmitters` (Quellen gleiten mit dem Hörer, statt neu zu starten); die Schritte bekommen `assetBaseUrl` und `surfaces`.
+- **Tonbank** für die übrigen ElevenLabs-Sätze:
+  - je Clip normalisiert (`normalize_report.json`);
+  - Varianten im Wechsel, ±3 % Tonhöhe;
+  - Pool mit 24 Stimmen.
+- **Jukebox:**
+  - Suno-Jukebox bei Fahrt und Flug, Cozy Tunes zu Fuß (V-129);
+  - Zufallsfolge ohne direkte Wiederholung, 3 s Überblendung;
+  - Wechsel erst nach 2,5 s im neuen Modus;
+  - gestreamt, nicht dekodiert.
+- **Laden:**
+  - Der Ton lädt 2 s nach dem Weltstart still im Hintergrund.
+  - Hörbar wird er erst nach der ersten Eingabe (Browser-Regel).
+  - Zonenweises Lazy-Load gibt es noch nicht: Racer, Kampf, Atmo, Schritte und Bank laden einmal komplett (≈ 18 MB). Die Musik wird gestreamt.
+- **Anschluss** (`src/audio/AudioHost.jsx`, liest nur, verändert keinen Spielzustand):
+  - Modus: zu Fuß, Fahrt oder Flug;
+  - Tempo, Gas, Drehzahl und Gang (vehicleRig);
+  - Gangphase → Schritte, Untergrund Stein (Platz), Sand, nasser Lehm (am Fluss) oder Gras;
+  - `M2EVENTS`: Abheben, Landen, Aufprall, Boost, Drift-Boost, Zwei-Rad, Trick, Respawn;
+  - Obstgarten V/B/N, mit Treffer aus `HARVEST_STATE.last`;
+  - Fluff gesammelt, Fundsache aufgehoben (UI);
+  - Wasser des Probe-Geländes: der nächste Fluss, Fall und Meerpunkt positional; Biom-Teppich meadow/pond/beach nach Nähe zu Bergsee bzw. Meer.
+- **Private Töne nie öffentlich:**
+  - Sie kommen nur über den lokalen Vite-Server (`/@kfb-audio/`, `scripts/audio/vitePrivateAudio.mjs`).
+  - Im Build (`dist`) steckt keine Tondatei.
+  - Ohne den lokalen Server, also in dist und in der Vorschau, klingt das Spiel wie bisher: Motor und Saugarm über die öffentlichen Dateien, jetzt über den SFX-Bus.
+  - Im Repo liegt keine Tondatei; das prüft `test/unit/audioMixer.mjs`.
+- **Geändert in fremdem Code**, jeweils additiv und klein:
+  - `M1World.jsx`: 3 Zeilen, AudioHost eingehängt;
+  - `m1-terrain.js`: `hydro()` lesend;
+  - `engineAudio.js` und `suckAudio.js`: Ausgang auf den SFX-Bus; in der vollen Fassung übernimmt der Racer den Motor;
+  - `vite.config.js`: Ton-Server und `test/out` vom Beobachten ausgenommen.
+
+### Zuordnung Ereignis → Datei
+| Ereignis (Spiel) | Besitzer | Datei(en) |
+|---|---|---|
+| Fahrt: Motor nach Drehzahl/Last | WSA-Racer | L1_idle · L2_low · L3_mid · L4_high · L5_overrun (Gitter, Gänge 1–4 aus vehicleRig 1–5) |
+| Fahrt: Schalten | WSA-Racer | O1_upshift · O4_downshift_blip · O2b/O2c backfire |
+| Fahrt: Gas weg bei hoher Drehzahl | WSA-Racer | crackle-1…4 |
+| Boost, Drift-Boost | WSA-Racer | O5_boost (Boden) · P04_boost_ignite_a/b (Flug) |
+| Abheben (takeoff, launch, fly) | WSA-Racer | F4_takeoff |
+| Flug Racer | WSA-Racer | P01_jet_thrust (Düse) · P02_turbine_fan (Lüfter) · P05_antigrav_hum (Schweben) + P03_exhaust_rumble + F3_wind_rush_loop |
+| Schwebeflug zu Fuß | WSA-Racer | P05_antigrav_hum + P02 + F3_wind_rush_loop nach Tempo |
+| Landung hart / weich, Flug-Landung | Bank | debris_crash_r1 K03_belly_landing / D06_dust_settle / D05_fluff_land |
+| Aufprall hart / weich, Anstupsen | Bank | debris_crash_r1 K01_car_crunch / K06_cartoon_bonk |
+| Zwei-Rad | Bank | debris_crash_r1 K02_wing_scrape |
+| Trick (Fassrolle) | Bank | throwables_r1 T03_throw_whoosh |
+| Respawn | Bank | beam_ufo_r2 B14_teleport_in |
+| Schritte | WSA-Schritte | digital-grass · foley-concrete (Platz) · sand · wet-clay (am Fluss) · foley-gravel (steil) |
+| Sprung / Landung zu Fuß | Bank | creatures_r1 C02_cloth_rustle / C01_clay_body_fall |
+| V Faust (Treffer / leer) | WSA-Kampf | C03 brass_knuckles + C12 tree_shake / C04 swing_whoosh |
+| B Schuss | WSA-Kampf + Bank | C05_blaster_primary + blaster_r1 X07_bolt_impact_clay (Einschlag nach Flugzeit) |
+| N Explosion (Treffer / leer) | WSA-Kampf / Bank | C08_explosion_small + C15_wood_splinter / throwables_r1 T05_cartoon_explosion |
+| K10 fire | WSA-Kampf | C05 blaster · C06 rocket_launch (je Waffe) |
+| K10 cast / release | Bank | throwables_r1 T03_throw_whoosh / T11_brickfish_throw (Bombe: + T02_bomb_fuse_sizzle) |
+| K10 Kontakt | WSA-Kampf / Bank | C01/C02 punch, C03 knuckles, C08/C09 bei explosive, C10 hit_confirm / X07_bolt_impact_clay |
+| K10 weaponDrop | Bank | interactions_r1 I05_tool_drop |
+| Saugarm charge / plop / swallow | suckAudio (wie bisher) | fluff_suction_r1 S01+S02 / S03–S05 / S06 |
+| Dark Fluffer windup · spit · impact · taint | Bank | dark_fluffer_r1 DF01 · DF02 · DF03 · DF04 |
+| Dark Fluffer drop (Fluff-Fall) | Bank | DF05_tainted_fluff_thud + DF06_tainted_fluff_sink |
+| Dark Fluffer healed | Bank | DF09_heal_transform + DF10_eyes_pop_white (Augen-Plopp) + DF11_healed_happy_squeak |
+| Dark Fluffer burst (bunter Fluff) · fade | Bank | DF12_colorful_fluff_release · DF14_patch_cleanse |
+| Fluff gesammelt / Fundsache | Bank (UI-Bus) | reward_r1b R06b_fluff_collect / R01b_card_pickup |
+| Atmo-Teppich | WSA-Atmo | meadow-1/2 (Tag) · wind-1/2 (Nacht) · pond-1/2 (am Bergsee) · Brandung wave-1…4 (am Meer) |
+| Tierstimmen | WSA-Atmo | bird · chirp · cricket · frog (Zufall nach Tageszeit `tod=`) |
+| Wasser positional | WSA-Atmo | river-long (Fluss) · waterfall (Fall) · wave-1…4 (Meer) |
+| Farm an den Obstgärten | Bank (Atmo-Bus) | farm_r1 F01_farm_morning_atmos (Schleife, positional, nicht nachts) |
+| Musik Fahrt/Flug · zu Fuß | Jukebox | music/suno-roadtrip-jukebox-v2 · music/cozy-tunes-classics |
+
+### Was fehlt
+**Töne (Bitte an WS0, nichts selbst synthetisiert):**
+1. Untergrund-Ton der Racer: Rollen/Schweben über Gras, Sand, Fels und Wasser-Gischt, je eine Schleife. Die Racer schweben, der Brief verlangt aber „Reifen je Untergrund“.
+2. Drift: Rutschen bzw. Schleifen als Schleife, dazu Drift-Laden (`driftCharge`).
+3. Bremsen: eine spielbare Schwebe-Bremse bzw. ein Luftzischen. `S2_brake_downshifts` ist nur Referenz. Hörbar ist bisher nur das Runterschalten.
+4. Schritte im Wasser (Waten am Fluss).
+5. Kampf: die Liste der WSA aus `combat/WS0_GAPS.json` (12 Wünsche, u. a. Block, Raketen-Flug als Schleife, Bombenwurf, Metall, Glas, Lehm-Aufprall, Trümmer-Ausklang, Einzel-Domino, Laub, Obstfall).
+6. Atmo: die Liste der WSA aus `ambience/WS0_REQUESTS.md` (Dschungel-Nacht, Küstenvögel, Donner trocken).
+
+**Spiel-Anschlüsse (keine Töne, die Töne liegen bereit):**
+- **Wetter:** Das Spiel hat keinen Wetterzustand. Regen, Gewitter und weather_time W04–W06 werden gekoppelt, sobald es einen gibt. Die Tageszeit ist angeschlossen (`tod=`).
+- **Dioramen** (atmos_dioramas A01–A07): Auf dem Probe-Gelände gibt es noch keine Diorama-Orte.
+- **Bewohner-Tätigkeiten** (farm, alchemy, creatures positional): Die Bewohner kommen mit WS-NPC.
+- **Dark Fluffer:** Der Adapter ist fertig und getestet. Er liest die Ereignisse des Moduls über `mods.fluffer.debug().events`, sobald WS-NPC Phase C mit diesem Branch zusammenkommt; auf `terrain/probe-world` gibt es den Fluffer noch nicht.
+- **K10:** Der Adapter `kfbAudio.k10(e)` ist fertig und getestet. In diesem Repo gibt es noch keine Arena-Module, die die Ereignisse senden. Hit-Stop und Zeit bleiben beim einen Besitzer (V-567); hier entsteht kein eigener.
+- **Lazy-Load je Zone:** fehlt noch, siehe oben.
+- **Schwebeflug zu Fuß:** Im Video ist kein Abheben zu Fuß zu sehen (Doppel-Leertaste im Testskript griff nicht). Der Wechsel Cozy → Suno beim Abheben ist im Browsertest belegt.
+
+### Messwerte (headless Chromium mit GPU, 1280×720, lokaler Server)
+**Hauptthread für den Ton** (je Takt, gemessen in `frame()`):
+- Mittel 0,17–0,22 ms;
+- p95 0,2–0,4 ms;
+- einzelne Spitzen 2,4–5,6 ms, beim Anlegen neuer Wasser- bzw. Farm-Quellen;
+- Ziel ≤ 1 ms je Bild ist eingehalten (Mittel und p95).
+
+**Stimmen gleichzeitig:**
+- Fahrt 22–34;
+- zu Fuß 27–32, im Kampf bis 41;
+- davon 19 Racer-Schleifen, die zu Fuß stumm laufen;
+- Grenzen: Bank 24, Kampf 24, Atmo 24, Racer 16 Einzeltöne.
+
+**Ladezeit:**
+- Index 0,4–0,8 s;
+- Musik hörbar ≤ 1 s nach der ersten Eingabe;
+- Racer, Kampf, Atmo und Schritte 3,5–5,6 s, wenn der Cache warm ist, und bis 16 s, wenn sie parallel zum ersten Laden der Welt kommen;
+- Bank (68 Clips) 0,5–1,7 s.
+
+**Ausgangspegel** (RMS am Master): Fahrt ≈ −29 dBFS, zu Fuß ≈ −41 dBFS (Cozy leiser; Regler im Panel).
+
+**Video:**
+- 2 × 60 s;
+- Ton in 99,9 % bzw. 99,7 % der Bilder messbar;
+- 83 Schritte zu Fuß;
+- 22 Fahrzeug-Ereignisse;
+- keine Seitenfehler, keine Modulfehler.
+
+### Prüfungen
+- `test/unit/audioMixer.mjs` (in `npm test`): **PASS**. Geprüft werden Busse, Ducking, Regler, Musikliste je Modus mit Nachlauf, Zufallsfolge, Varianten, Entfernung, Stimmen-Pool, Zuordnung vollständig, alle 7 Dark-Fluffer-Ereignisse, die 5 K10-Ereignisse, Wasser-Ortung, Untergrund, Pfad-Schutz des Ton-Servers, keine Tondatei im Repo, jede Bank-Zeile findet echte Dateien.
+- `test/audio.mjs` (Browser, `PW_GPU=1 npm run test:audio`): **PASS**. Geprüft werden: still vor der Eingabe, ein AudioContext, alle Module, Cozy zu Fuß, Schritte, Atmo + Wasser, Kampf, die Adapter K10 und Fluffer, Ducking, Stimmen-Grenze, Suno bei Fahrt, Gänge und Drehzahl, ≤ 1 ms.
+- `npm test` (volle Reihe): Die Unit-Tests einschließlich audio-mixer sind **PASS**. Die Reihe bricht danach an `contract-static: debugOnlyKfbGlobals` ab. Ursache ist nicht WS-Audio: Der Basis-Branch `terrain/probe-world` @73d7790 setzt in `src/world/kfb-hydro.v1.js` `window.__RIVA`. Das ist an den Lead gemeldet. Die restlichen Browser-Tests laufen einzeln; das Ergebnis kommt als Nachtrag.
+- Abnahme-Video: `PW_GPU=1 npm run audio:video`, Ausgabe nur lokal in `test/out/audio/`.
