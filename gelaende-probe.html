@@ -189,7 +189,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="aurora">Polarlicht</label><select id="aurora"><option value="1">nachts</option><option value="2">immer</option><option value="0">aus</option></select></div>
         <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
         <label class="check"><input type="checkbox" id="hero" checked> Heldenfarbe: Racer-Lack in KFB-Rot</label>
-        <div class="row"><label for="carlook">Fahrzeug-Look</label><select id="carlook"><option value="0" selected>Original (Meshy-Werte je Modell)</option><option value="1">einheitlich: Lack (Vorschlag A)</option><option value="2">einheitlich: Knete matt (Vorschlag B)</option></select></div>
+        <div class="row"><label for="carlook">Fahrzeug-Look</label><select id="carlook"><option value="0">Original (Meshy-Werte je Modell)</option><option value="1" selected>einheitlich: Lack (A, Georg 21.10.)</option><option value="2">einheitlich: Knete matt (Vorschlag B)</option></select></div>
         <label class="check"><input type="checkbox" id="retina"> Retina-Schärfe (×2, kostet etwa die halbe Bildrate)</label>
         <div class="row"><label for="perfLevel">Leistungsstufe</label><select id="perfLevel"><option value="">– eigene Auswahl –</option><option value="hoch">Hoch: alles an, Retina-Schärfe</option><option value="mittel">Mittel: alles an, normale Schärfe (empfohlen)</option><option value="niedrig">Niedrig: wie Mittel, ohne Brösel und Steinband</option></select></div>
         <div class="row"><button type="button" id="bench">Leistung messen (≈ 2 Min., im Fahrmodus stehen lassen)</button><button type="button" id="benchCopy" disabled>Tabelle kopieren</button></div>
@@ -3161,7 +3161,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1, mig46: 1, mig47: 1, mig48: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1, mig46: 1, mig47: 1, mig48: 1, mig49: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -3248,6 +3248,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
   if (stored && !stored.mig46) { stored.cards = false; stored.mig46 = 1 }
   if (stored && !stored.mig47) { stored.rivers = true; stored.mig47 = 1 }   /* einmalig: Flüsse an (Georg 21.10.) */
+  if (stored && !stored.mig49) { stored.carlook = 1; stored.mig49 = 1 }   /* einmalig: Fahrzeug-Look A (Georg 21.10.) */
   if (stored && !stored.mig48) { stored.fgmass = false; stored.mig48 = 1 }   /* einmalig: Vordergrund-Tonmasse aus (Georg 21.10.: liest sich von oben als großer Schattenfleck) */   /* einmalig: Wolkenkörper aus – Kuppelwolken reichen (Georg 21.10., Leistung) */
   if (stored && !stored.mig45) { stored.flare = false; stored.mig45 = 1 }   /* einmalig: Blendenflecken aus – Kamera-Optik, nicht gemalt (AD-Audit Befund 6) */
   if (stored && !stored.mig44) { stored.ground = true; stored.mig44 = 1 }   /* einmalig: Erdung (Boden-AO) wieder an (Georg 21.10.) */
@@ -3321,12 +3322,17 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function carLookPrep(scn) { scn.traverse((m) => { if (!m.isMesh) return; for (const mt of [].concat(m.material)) { if (mt.userData.cl) continue; const mp = mt.map, mr = mt.metalnessMap || mt.roughnessMap; if (!mp || !mp.image || !mr || !mr.image) continue
     try { const lumOf = (img) => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); x.drawImage(img, 0, 0, 64, 64); const d = x.getImageData(0, 0, 64, 64).data; let s = 0, n = 0; for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 10) continue; s += (d[i] + d[i + 1] + d[i + 2]) / 765; n++ } return n ? s / n : 0.33 }
       const gain = Math.min(1.5, Math.max(0.85, 0.33 / Math.max(0.05, lumOf(mp.image)))), img = mr.image, W = Math.min(1024, img.width), H = Math.round(img.height * W / img.width)
-      const mk = (metal, rough) => { const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d'); x.drawImage(img, 0, 0, W, H); const id = x.getImageData(0, 0, W, H), d = id.data
-        for (let i = 0; i < d.length; i += 4) { d[i + 1] = Math.max(d[i + 1], rough * 255); d[i + 2] = d[i + 2] * metal } x.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(c); t.flipY = mr.flipY; t.wrapS = mr.wrapS; t.wrapT = mr.wrapT; return t }
-      mt.userData.cl = { gain: +gain.toFixed(3), mr, A: mk(0.35, 0.5), B: mk(0, 0.78), mode: 0 }; (window.__carLook = window.__carLook || {})[mt.name || m.name] = mt.userData.cl.gain } catch (e) { console.warn('carLook', e) } } }) }
+      const ca = document.createElement('canvas'); ca.width = W; ca.height = H; const xa = ca.getContext('2d'); xa.drawImage(mp.image, 0, 0, W, H); const al = xa.getImageData(0, 0, W, H).data
+      const mk = (metal, rough, keep) => { const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d'); x.drawImage(img, 0, 0, W, H); const id = x.getImageData(0, 0, W, H), d = id.data
+        for (let i = 0; i < d.length; i += 4) { const lu = (al[i] + al[i + 1] + al[i + 2]) / 765, t = Math.min(1, Math.max(0, (lu - 0.42) / 0.3)), mk2 = metal + keep * t * t * (3 - 2 * t); d[i + 1] = Math.max(d[i + 1], rough * 255); d[i + 2] = d[i + 2] * mk2 } x.putImageData(id, 0, 0);   /* helle Blechflächen (Dächer, Georg 21.10.: „etwas abdimmen“) behalten mehr Metall: gedämpfte Spiegelung statt weißer Streuung */ const t = new THREE.CanvasTexture(c); t.flipY = mr.flipY; t.wrapS = mr.wrapS; t.wrapT = mr.wrapT; return t }
+      mt.userData.cl = { gain: +gain.toFixed(3), mr, A: mk(0.35, 0.5, 0.65), B: mk(0, 0.78, 0), mode: 0 }; (window.__carLook = window.__carLook || {})[mt.name || m.name] = mt.userData.cl.gain } catch (e) { console.warn('carLook', e) } } }) }
+  const carFar = new THREE.Color(), carFarV = new THREE.Vector3()
+  function carDistLift() { if (!carHolder || (S.carlook | 0) !== 1) return; carHolder.getWorldPosition(carFarV); const dd = carFarV.distanceTo(camera.position), k = Math.min(1, Math.max(0, (dd - 20) / 100))
+    /* Ferne (Georg 21.10.: Fahrzeuge aus der Entfernung zu schwarz): Umgebungslicht des Wagens wächst mit dem Abstand (0,8 nah → 1,6 ab 120 m) – hellt in der eigenen Lackfarbe auf, kein grauer Schleier */
+    const ei = 0.8 + 0.8 * k * k * (3 - 2 * k); carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) if (mt.userData.cl) mt.envMapIntensity = ei }) }
   function carLookApply() { if (!carHolder) return; const mode = S.carlook | 0, env = mode === 1 ? carEnvTex() : null
     carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) { const cl = mt.userData.cl; if (!cl) continue; const tex = mode === 1 ? cl.A : mode === 2 ? cl.B : cl.mr
-      mt.metalnessMap = mt.roughnessMap = tex; mt.color.setScalar(mode ? cl.gain : 1); mt.envMapIntensity = 0.55; if (mt.envMap !== env || cl.mode !== mode) { mt.envMap = env; cl.mode = mode; mt.needsUpdate = true } } }) }
+      mt.metalnessMap = mt.roughnessMap = tex; mt.color.setScalar(mode ? cl.gain : 1); mt.envMapIntensity = 0.8; if (mt.envMap !== env || cl.mode !== mode) { mt.envMap = env; cl.mode = mode; mt.needsUpdate = true } } }) }
   function heroApply() { if (!carHolder) return; carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) if (mt.userData.heroDone) { mt.map = S.hero === false ? mt.userData.mapOrig : mt.userData.mapHero; mt.needsUpdate = true } }) }
   async function loadCar(id) {
     const info = RACERS.find((r) => r.id === id) || RACERS[0]; loading = true; loadErr = '';
@@ -3341,7 +3347,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
-      const holder = new THREE.Group(); holder.scale.setScalar(UNIT); holder.add(scn); squash.add(holder); carHolder = holder; holder.position.y = info.wheels ? -RIDE : 0;   /* Räder-Fahrzeuge (5 der neuen): Räder auf den Boden statt in Schwebehöhe */
+      const holder = new THREE.Group(); holder.scale.setScalar(UNIT); holder.add(scn); squash.add(holder); carHolder = holder; holder.position.y = info.wheels ? -RIDE : 0; try { carLookApply() } catch (e) {}   /* Look gleich beim Laden (sonst erst beim Umschalten im Panel) */   /* Räder-Fahrzeuge (5 der neuen): Räder auf den Boden statt in Schwebehöhe */
       plumes = info.anchors.map((a) => {
         const dir = new THREE.Vector3(...a.dir).normalize(), q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), dir), g = new THREE.Group();
         g.position.set(...a.pos); g.quaternion.copy(q); holder.add(g);
@@ -4137,7 +4143,7 @@ ${window.KFB_FLUID.glsl}
     U.uCam.value.copy(camera.position); GU.uGOff.value.set(P.x, P.z); { const e = 1.2, h0 = hgt(P.x, P.z); GU.uGPl.value.set(h0, (hgt(P.x + e, P.z) - hgt(P.x - e, P.z)) / (2 * e), (hgt(P.x, P.z + e) - hgt(P.x, P.z - e)) / (2 * e)) }   /* Wagen: Bodenebene je Bild statt hgt je Vertex (64k Vertices, CODE_PERF_R1 D1) */ GU.uGOn.value = S.ground ? 1 : 0;
     if (S.shadows) { sun.updateMatrixWorld(); sun.target.updateMatrixWorld(); sun.shadow.updateMatrices(sun); U.uShadowM.value.copy(sun.shadow.matrix); U.uShadowMap.value = sun.shadow.map ? sun.shadow.map.texture : null }
     if (S.shadowdyn && ++SDYN.n % 60 === 0) applyShadowDyn(true);   /* neu gebaute Steine/Props auch ohne Wurf */
-    updateDisco(now / 1000); renderAO(); renderer.render(scene, camera);
+    updateDisco(now / 1000); renderAO(); try { carDistLift() } catch (e) {} renderer.render(scene, camera);
     if (FLARE.update(dt)) { renderer.autoClear = false; renderer.render(FLARE.sc, FLARE.cam); renderer.autoClear = true }
     frames++; if (now - fpsT > 500) { $('hudFps').textContent = `${Math.round(frames * 1000 / (now - fpsT))} fps`; frames = 0; fpsT = now }
     $('hudSpeed').textContent = `${Math.round(Math.abs(P.vf) * 3.6)} km/h`;
