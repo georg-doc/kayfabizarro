@@ -1,0 +1,136 @@
+{
+ "schema": "kfb.look-terrain3/1",
+ "source": "probe/gelaende-probe.html (Gelände-Probe, Georg 20./21.10.)",
+ "palette": "mesa",
+ "paletteB": "moos",
+ "mix": false,
+ "flow": {
+  "speed": 1.0,
+  "bands": 4,
+  "tempoCoupling": true,
+  "scale": 2.5,
+  "downhill": true
+ },
+ "palettes": {
+  "moos": {
+   "name": "Moos-Insel",
+   "water": "#4fb3c9",
+   "sand": "#e8d59a",
+   "low": "#86c65c",
+   "mid": "#5ea24c",
+   "high": "#8f9a5c",
+   "peak": "#f4f1e6",
+   "cliff": "#9b7b5e",
+   "sky": "#bfe3ef"
+  },
+  "mesa": {
+   "name": "Mesa",
+   "water": "#3fa7a0",
+   "sand": "#f0c58a",
+   "low": "#e6a061",
+   "mid": "#cc6c42",
+   "high": "#a54d38",
+   "peak": "#f3d9b0",
+   "cliff": "#8c3f2f",
+   "sky": "#f6d6b8"
+  },
+  "wueste": {
+   "name": "Wüste",
+   "water": "#3fb8b0",
+   "sand": "#f4dc9a",
+   "low": "#efc97c",
+   "mid": "#e2ae5f",
+   "high": "#c98d4c",
+   "peak": "#fbe7bf",
+   "cliff": "#b0703d",
+   "sky": "#fbe9c8"
+  },
+  "schnee": {
+   "name": "Schnee",
+   "water": "#3a8fc4",
+   "sand": "#d9d2c0",
+   "low": "#8fb7a3",
+   "mid": "#6c8f88",
+   "high": "#a3afbd",
+   "peak": "#ffffff",
+   "cliff": "#6b6f7d",
+   "sky": "#d6e6f5"
+  },
+  "pastell": {
+   "name": "Pastell",
+   "water": "#8ad3e6",
+   "sand": "#fbe3c2",
+   "low": "#b7e3a8",
+   "mid": "#f3b4c6",
+   "high": "#c6b3ee",
+   "peak": "#fff6fb",
+   "cliff": "#b28fc4",
+   "sky": "#fde7f0"
+  }
+ },
+ "moods": {
+  "tag": {
+   "k": 0,
+   "zenith": "#6fa8dc",
+   "horizon": "#cfe8f2",
+   "lit": "#ffffff",
+   "shade": "#c4d3e6",
+   "tint": [
+    1,
+    1,
+    1
+   ],
+   "hemi": [
+    "#ffffff",
+    0.95
+   ],
+   "sun": [
+    "#fff4e6",
+    1.35
+   ],
+   "stars": 0
+  },
+  "gold": {
+   "k": 0.75,
+   "zenith": "#5e6fb3",
+   "horizon": "#f5b98c",
+   "lit": "#ffe2bd",
+   "shade": "#c98b8f",
+   "tint": [
+    1.04,
+    0.86,
+    0.72
+   ],
+   "hemi": [
+    "#f6c9a2",
+    0.8
+   ],
+   "sun": [
+    "#ffb877",
+    1.3
+   ],
+   "stars": 0
+  },
+  "nacht": {
+   "k": 0.9,
+   "zenith": "#121838",
+   "horizon": "#3a3e76",
+   "lit": "#9aa2d6",
+   "shade": "#3b406e",
+   "tint": [
+    0.42,
+    0.48,
+    0.78
+   ],
+   "hemi": [
+    "#5a5f9a",
+    0.5
+   ],
+   "sun": [
+    "#a9bcff",
+    0.45
+   ],
+   "stars": 1
+  }
+ }
+}

@@ -11,7 +11,7 @@
 // Schatten: Das Theater empfängt Schatten, wirft aber keine (castShadow aus: Bildzeit und keine Eigenschatten-Streifen auf den Rängen).
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { clayFrom } from './clayLook.js'
+import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
 import { createSpeckle } from '../vendor/speckle/kfb-speckle-transition.v1.js'
 import { makeClayFamily } from '../vendor/billboard/billboard-clay.js'
 
@@ -44,7 +44,7 @@ export function createAmphitheater(options = {}) {
   // worldK (V-345): alte WS1-Bühnenmeter → J17-Meter; skaliert Modell, Gelände, Höhenbänder und Knet-Abstände gleich, damit das Bild gleich bleibt
   // palAmt (Look-Slice, Georg 17.10.): Anteil der Umfärbung nach Helligkeit; Standard PAL_AMT (V-286), 1 = volle Umfärbung nach Rollen (Joyride-Look)
   // clay (Look-Slice, Georg 17.10.: „keine Claymation-Bodentextur“): Modell-Materialien auf Knete (Relief/Rauheit, Farbtextur bleibt), Umfärbung darüber
-  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1, palAmt = PAL_AMT, clay = false } = options
+  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1, palAmt = PAL_AMT, clay = false, castShadow = false } = options // castShadow: #439 terrain2 (echter Schatten aufs Gelände)
   const s = AMPH_SCALE * worldK
   const root = new THREE.Group(); root.name = 'amphitheater'
   const fam = makeClayFamily('G', { uClayNear: { value: 30 * worldK }, uClayFar: { value: 90 * worldK }, uClayScale: { value: 1.4 * worldK }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
@@ -82,7 +82,7 @@ export function createAmphitheater(options = {}) {
       ramp = base * mix(0.6, 1.15, L); }
     diffuseColor.rgb = mix(diffuseColor.rgb, ramp, pamt); }`)
     }
-    m.customProgramCacheKey = () => (m.userData?.clay ? prevKey.call(m) + '|' : '') + 'kfb-amph-palette-v270b'; m.needsUpdate = true
+    m.customProgramCacheKey = () => (m.userData?.clay || m.userData?.kfbClay ? prevKey.call(m) + '|' : '') + 'kfb-amph-palette-v270b'; m.needsUpdate = true
   }
   const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone(), ring: spH.uniforms.uSpC0.value.clone() })
   const plain = (pa) => (pa.mode === 'b' ? { mode: 'b', cols: [...pa.cols], ground: pa.ground } : { wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
@@ -107,8 +107,9 @@ export function createAmphitheater(options = {}) {
     if (state.disposed) return null
     const m = g.scene; m.name = 'amphitheater-model'
     m.scale.setScalar(s); m.position.set(-STAGE.center[0] * s, -STAGE.floorY * s, -STAGE.center[1] * s)
-    m.traverse((o) => { if (o.isMesh) { o.receiveShadow = true; o.castShadow = false; if (clay) o.material = Array.isArray(o.material) ? o.material.map((x) => clayFrom(x, 'house')) : clayFrom(o.material, 'house'); [].concat(o.material).forEach(inject) } }) // Palette immer eingehängt (amt 0 = Original)
+    m.traverse((o) => { if (o.isMesh) { o.receiveShadow = true; o.castShadow = castShadow; [].concat(o.material).forEach(inject) } }) // Palette immer eingehängt (amt 0 = Original)
     root.add(m); state.model = m
+    if (clay) { root.updateMatrixWorld(true); applyClay(m, THREE, { profile: 'midground', seed: 'amphitheater', scaleRef: 1.814 * worldK / 0.6508775522703274 }); m.traverse((o) => { if (o.isMesh) [].concat(o.material).forEach(inject) }) } // V-429: Knete aus kfb-clay.v1.1 (midground, Maßstab = FrizzleBob-Höhe), Umfärbung danach eingehängt
     let tris = 0; m.traverse((o) => { if (o.isMesh) tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3 })
     root.updateMatrixWorld(true)
     // Fuß des Bauwerks je 64 Sektoren: größter Radius der Modell-Punkte bis 0,5 m über dem Gelände (wie Lab footRadii); danach Sprenkel-Gewicht neu backen
@@ -126,6 +127,7 @@ export function createAmphitheater(options = {}) {
     ready,
     status: () => ({ status: state.status, error: state.error, info: state.info, palette: state.palette, fading: fade.on }),
     setPalette,
+    footRadii: () => foot.R.slice(), // Fuß des Bauwerks je 64 Sektoren (ab +X gegen den Uhrzeigersinn in xz), nach dem Laden gemessen
     update(dt) { amphLog.update++; stepFade(dt || 0) },
     dispose() {
       amphLog.dispose++; state.disposed = true; speckle.dispose()

@@ -20,6 +20,8 @@ import { STEP, interpTrack, M1CLOCK } from './m1Clock'
 import { TERRAIN, terrainHeight, GROUND_Y } from '../modules/m1-terrain'
 import { isFence } from './m1Host'
 import { K, G, JUMP_K, MASS_K, INERTIA_K } from './m1Scale.js'
+import { WORLD_K } from '../worldScale.js'
+import { createElan, elanStep, elanCamera, elanSpeed, ELAN } from './elan.js'
 
 export const HALF = 0.5 * K, RAD = 0.4 * K, FLOAT = 0.2 * K // V-345: alte Maße × K (m1Scale)
 export const FOOT = HALF + RAD + FLOAT // Körpermitte über den Füßen
@@ -51,6 +53,11 @@ export const M1INPUT = { override: null, mouse: null } // Tests: override = Tast
 // Flug (V-342, Neubau freigegeben): Doppel-Leertaste < 400 ms hebt ab (einzeln nie, länger = zwei Sprünge); W in Blickrichtung der Figur (mit RMB
 // steuert die Kameraneigung das Steigen), A/D drehen, Q/E strafen, Leertaste halten steigt, X halten sinkt, Shift Schub; Bodenkontakt landet.
 export const M1WOW = Object.freeze({ turnRate: 2.0, camFollow: 8, doubleTapSteps: 24, longJump: 1.15, standJumpBelow: 0.4 * K })
+// Elan S1 (Schwungflug, research/DRAGONRIDING_RESEARCH_R1.md §6): Hash flight=elan startet Flüge im Schwungflug (sonst Schwebeflug, G wechselt in der Luft);
+// comfort = Komfortmodus von Anfang an (K schaltet). ELAN_MEM: Ladungen über Flüge hinweg, Ereignisse und Zustand für Anzeige und Tests.
+const _h = typeof location !== 'undefined' ? location.hash : ''
+const ELAN_START = /(^|[#,])flight=elan(,|$)/.test(_h), COMFORT0 = /(^|[#,])comfort(,|$)/.test(_h)
+export const ELAN_MEM = { charges: null, events: [], state: null }
 const NOKEYS = { forward: false, backward: false, leftward: false, rightward: false, jump: false, run: false, walk: false, strafeL: false, strafeR: false, descend: false }
 const _q = new THREE.Quaternion(), _qy = new THREE.Quaternion(), UP = new THREE.Vector3(0, 1, 0)
 // Bild-Handler als eigenes Geschwister: React meldet Effekte von Geschwistern in Reihenfolge an, Kinder vor Eltern – ein useFrame im Körper von
@@ -68,7 +75,8 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
   const [view, setView] = useState({ flying: false }) // nur für den Kamera-Abstand (React); alle Steuerung liest S und wirkt im selben Schritt
   const setViewSoon = (f) => queueMicrotask(() => setView(f)) // React-Zustand nie im Bild-Handler setzen (Vertrag Falle 2)
   const S = useRef({ flying: false, flySteps: 0, lastYaw: null, turnRate: 0, camInit: false, frozen: false, hold: null, lift: 0, ctrl: false, camWant: M1CAM.dist,
-    heading: START_YAW, lastSpace: -999, mouse: { l: false, r: false }, lock: null, jumpKind: null, longBoost: 0, wasGround: true, jumpHeld: false })
+    heading: START_YAW, lastSpace: -999, mouse: { l: false, r: false }, lock: null, jumpKind: null, longBoost: 0, wasGround: true, jumpHeld: false,
+    flyMode: ELAN_START ? 'elan' : 'hover', elan: null, fov: M1CAM.fov, comfort: COMFORT0 })
   const v = useMemo(() => ({ a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3(), gaze: new THREE.Vector3(), q: new THREE.Quaternion() }), [])
   const keys = () => (M1INPUT.override ? { ...NOKEYS, ...M1INPUT.override } : getKeys())
   const mod = useRef(null)
@@ -122,10 +130,18 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
   // Doppel-Leertaste: zweiter Druck höchstens doubleTapSteps (400 ms Spielzeit) nach dem ersten → Abheben; einzeln nie
   const spaceTap = () => { const now = M1CLOCK.steps, S0 = S.current; if (S0.flying) { S0.lastSpace = -999; return }
     if (now - S0.lastSpace <= M1WOW.doubleTapSteps) { setFlying(true); S0.lastSpace = -999 } else S0.lastSpace = now }
+  // Elan S1: Schwungflug-Zustand aus der aktuellen Lage und Bewegung (Tempo mindestens Gleittempo, Ladungen bleiben über Flüge hinweg)
+  // liftOff: vom Boden mit Abriss-Tempo nach vorn und dem Steig-Impuls (§6.3 „Abheben plus Ascent-Impuls“, ohne Ladung); im Flug umgeschaltet: Tempo bleibt
+  const elanOn = (liftOff = false) => { const b = ecctrl.current?.body; if (!b) return; const p = b.translation(), lv = S.current.flyVel || b.linvel(), J = K / WORLD_K
+    const st = createElan({ pos: [p.x, p.y, p.z], yaw: S.current.heading, speed: liftOff ? ELAN.sStall : Math.max(22, Math.hypot(lv.x, lv.y, lv.z) / J), J, g: G })
+    if (liftOff) st.v[1] = ELAN.ascentUp * J
+    if (ELAN_MEM.charges != null) st.charges = ELAN_MEM.charges; S.current.elan = st; S.current.flyVel = null }
+  const elanOff = () => { const st = S.current.elan; if (!st) return; ELAN_MEM.charges = st.charges; ELAN_MEM.state = null; S.current.flyVel = { x: st.v[0], y: st.v[1], z: st.v[2] }; S.current.elan = null; S.current.camWant = M1CAM.distFly; cam.current?.dollyTo(M1CAM.distFly, true) }
   const setFlying = (on) => {
     const b = ecctrl.current?.body; if (!b) return
     if (on && !S.current.flying) { b.setLinvel({ x: 0, y: M1MOVE.flyLift, z: 0 }, true); b.setGravityScale(0, true); S.current.flySteps = 0; S.current.flyVel = { x: 0, y: M1MOVE.flyLift, z: 0 } }
-    if (!on) S.current.flyVel = null
+    if (!on) { if (S.current.elan) ELAN_MEM.charges = S.current.elan.charges; S.current.flyVel = null; S.current.elan = null; ELAN_MEM.state = null }
+    if (on && S.current.flyMode === 'elan' && !S.current.elan) elanOn(true)
     S.current.flying = !!on; setViewSoon((x) => (x.flying === !!on ? x : { ...x, flying: !!on }))
   }
   const teleport = (p, yaw = null) => {
@@ -159,7 +175,9 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
   useHostKeys((e) => {
     if (!active || S.current.frozen || !ecctrl.current || e.repeat) return
     if (e.code === 'Space') spaceTap() // Doppel-Leertaste < 400 ms hebt ab (V-024/V-179 (5)); die erste springt normal (ecctrl über MOVE_MAP)
-    if (e.code === 'KeyG') { S.current.walkToggle = !S.current.walkToggle; e.preventDefault() } // Gehen ein/aus (V-331)
+    // G: am Boden Gehen ein/aus (V-331), in der Luft Schwebeflug ↔ Schwungflug (Elan S1, §6.3: „sofort, nur in der Luft“); K: Komfortmodus
+    if (e.code === 'KeyG') { if (S.current.flying) { S.current.flyMode = S.current.flyMode === 'elan' ? 'hover' : 'elan'; if (S.current.flyMode === 'elan') elanOn(); else elanOff() } else S.current.walkToggle = !S.current.walkToggle; e.preventDefault() }
+    if (e.code === 'KeyK') { S.current.comfort = !S.current.comfort; e.preventDefault() }
     if (e.code === ACTION_KEYS.reset) { setFlying(false); teleport(START, START_YAW); e.preventDefault() }
   }, PRIO.player)
   // Maustasten für das WoW-Schema (Lab main.ts Z. 420–422: Zustand aus der e.buttons-Maske, ein zweiter Knopf feuert kein pointerdown); Kontextmenü aus
@@ -251,6 +269,9 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
     const h = ecctrl.current, cc = cam.current
     if (!h || !cc || !h.body) return
     const body = h.body, p = body.translation(), pos = v.a.set(p.x, p.y, p.z), free = state()
+    if (!S.current.elan && Math.abs(S.current.fov - M1CAM.fov) > 0.01) { S.current.fov += (M1CAM.fov - S.current.fov) * (1 - Math.exp(-STEP / 0.25)); camera.fov = S.current.fov; camera.updateProjectionMatrix() } // nach dem Schwungflug zurück
+    if (free && !S.current.wasFree && !S.current.flying) { body.setGravityScale(1, true); body.wakeUp() } // Freigabe: Schwerkraft zurück, Körper wecken – sonst bleibt er je nach Ladezeit schlafend auf der Starthöhe (+0,3 K) hängen (Georg 21.10.: Figur schwebt)
+    S.current.wasFree = !!free
     if (!free) {
       // eingefroren (Dialog) oder noch nicht geladen: ohne Schwerkraft auf der Stelle halten (ecctrls Impulse dieses Schritts überschrieben)
       body.setGravityScale(0, true); body.setLinvel({ x: 0, y: 0, z: 0 }, true); body.setAngvel({ x: 0, y: 0, z: 0 }, true)
@@ -264,6 +285,32 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       // weiches Aufsetzen nach dem Flug (V-331 Punkt 6, ≈ 0,15 s): das Resttempo der Landung blendet in das Tempo von ecctrl über, statt hart auf 0
       const L = S.current.landDamp
       if (L) { L.t += STEP; const k = Math.min(1, L.t / M1MOVE.landDamp), lv = body.linvel(); body.setLinvel({ x: L.x * (1 - k) + lv.x * k, y: lv.y, z: L.z * (1 - k) + lv.z * k }, true); if (k >= 1) S.current.landDamp = null }
+    } else if (S.current.elan) {
+      // Elan S1 (Schwungflug): elanStep rechnet Tempo, Bahn, Fähigkeiten und Ladungen; Bewegung über die Flug-Sperre flyClip (keine Wand-Durchflüge),
+      // Landung wie im Schwebeflug (Strahl nach unten, Sinken gebremst). W/S Nase runter/hoch, A/D gieren, Leertaste Steigen (dann A/D binnen 150 ms =
+      // Fassrolle), Shift Schub; RMB gehalten: Nase direkt aus der Kameraneigung.
+      const k = keys(), S0 = S.current, st = S0.elan, mb = M1INPUT.mouse || S0.mouse, p0 = body.translation()
+      st.pos = [p0.x, p0.y, p0.z]
+      const cf = camera.getWorldDirection(v.b), camPitch = Math.asin(THREE.MathUtils.clamp(cf.y, -1, 1)) + (Math.PI / 2 - M1CAM.polar0)
+      const env = { ground: (x, z) => terrainHeight(x, z) + FOOT, sweep: (from, d) => { const vel = flyClip(body, { x: d[0] / STEP, y: d[1] / STEP, z: d[2] / STEP }, STEP), c = [vel.x * STEP, vel.y * STEP, vel.z * STEP]
+        const dx = d[0] - c[0], dy = d[1] - c[1], dz = d[2] - c[2], l = Math.hypot(dx, dy, dz); return { delta: c, hit: l > 1e-6, n: l > 1e-6 ? [-dx / l, -dy / l, -dz / l] : null } } }
+      elanStep(st, { noseUp: !!k.backward, noseDown: !!k.forward, left: !!k.leftward, right: !!k.rightward, space: !!k.jump, shift: !!k.run, mousePitch: mb.r ? camPitch : null }, STEP, env)
+      for (const e of st.events) ELAN_MEM.events.push({ ...e, t: M1CLOCK.steps })
+      ELAN_MEM.charges = st.charges; ELAN_MEM.state = st; ELAN_MEM.comfort = S0.comfort
+      const vel = { x: (st.pos[0] - p0.x) / STEP, y: (st.pos[1] - p0.y) / STEP, z: (st.pos[2] - p0.z) / STEP }
+      body.setGravityScale(0, true); body.setLinvel(vel, true); body.setAngvel({ x: 0, y: 0, z: 0 }, true)
+      S0.heading = st.yaw; body.setRotation(_qy.setFromAxisAngle(UP, st.yaw), true)
+      S0.turnRate += (((k.leftward ? 1 : 0) - (k.rightward ? 1 : 0)) * 1.2 - S0.turnRate) * 0.15
+      // Kamera-Kurve §6.6: FOV (Tempo + Stoß, Deckel 75, Komfort 55) über eine Feder von ≈ 0,25 s, Abstand mit dem Tempo
+      const camC = elanCamera(st, { comfort: S0.comfort, fov0: M1CAM.fov, distFly: M1CAM.distFly })
+      S0.fov += (camC.fov - S0.fov) * (1 - Math.exp(-STEP / 0.25)); if (Math.abs(camera.fov - S0.fov) > 0.01) { camera.fov = S0.fov; camera.updateProjectionMatrix() }
+      if (Math.abs(camC.dist - S0.camWant) > 0.05 * K) { S0.camWant = camC.dist; cc.dollyTo(camC.dist, true) }
+      S0.flySteps++
+      if (S0.flySteps > M1MOVE.flyMinSteps && vel.y <= 0.5 * K && elanSpeed(st) < ELAN.sThrill * st.J && Math.hypot(pos.x, pos.z) <= M1BOUNDS.walkR) {
+        const hit = ray(pos, FOOT + M1MOVE.landRay)
+        if (hit) { const hs = Math.hypot(vel.x, vel.z), c = hs > M1MOVE.run ? M1MOVE.run / hs : 1, lx = vel.x * c, lz = vel.z * c
+          body.setLinvel({ x: lx, y: Math.max(vel.y, -3 * K), z: lz }, true); body.setGravityScale(1, true); setFlying(false); S0.landDamp = { t: 0, x: lx, z: lz } }
+      }
     } else {
       // Flug: eigene einfache Steuerung wie im Spike (Kamera-Richtung, Leertaste = hoch, Shift = schnell). Die Standard-Neigung der Folgekamera
       // zählt als waagrecht (sonst zieht W immer abwärts); steiler nach unten schauen = sinken. Überschreibt ecctrls Impulse dieses Schritts.

@@ -7,7 +7,7 @@
 import { openPage, report } from './_page.mjs'
 import { J } from '../src/m3/stuntData.js'
 
-const PLAN = Array.from({ length: 15 }, (_, k) => ({ x: -6 * J, z: (-16 - (k % 5) * 1.4) * J, /* bis −21,6: −24 traf nach dem Stoß ein Hindernis (Rückwärts-Prall, kein Landefehler) */ side: k % 2 ? 'strafeL' : 'strafeR', steer: k % 2 ? 'leftward' : 'rightward', drift: [30, 40, 50][k % 3], kick: (k % 2 ? 1 : -1) * [5, 7, 9][k % 3] }))
+const PLAN = Array.from({ length: 15 }, (_, k) => ({ x: -6 * J, z: (-16 - (k % 5) * 1.1) * J, /* bis −20,4: −24 traf nach dem Stoß ein Hindernis (Rückwärts-Prall, kein Landefehler); seit dem Weitsprung-Schub (JUMP.push, 21.10.) auch −21,6 */ side: k % 2 ? 'strafeL' : 'strafeR', steer: k % 2 ? 'leftward' : 'rightward', drift: [30, 40, 50][k % 3], kick: (k % 2 ? 1 : -1) * [5, 7, 9][k % 3] }))
 async function pass(hz) {
   const { browser, page, errs } = await openPage('#m1,debug,nodraw,car,replay' + (hz === 30 ? '=30' : ''), { viewport: { width: 320, height: 240 }, log: true })
   await page.waitForFunction(() => window.__kfbM1?.status().amphTris > 0 && window.__kfbM2?.car?.(), null, { timeout: 240000 })
