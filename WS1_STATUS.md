@@ -3,6 +3,87 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 121 · 21.10. abends · Wasser im Spiel, Ufer sauber, Fahrzeug-Look A, WS-Audio gestartet, Bitte an WSB „Marsch“ · Spiel-Zweig terrain/probe-world @ba94c9d (lokal)
+
+### Bitte an WS0 → WSB (Georg 21.10.): Auftrag „Marsch“ für den Spielzeugsoldaten
+- **Figur:** Soldat r3d (`KFB_ToySoldier_duel.r3d.v3`). Er braucht für das Patrouillengehen eines von beiden:
+  - (a) eine **gemessene Gewehr-Halterung** für `Walking_A` und `Idle_A`, Gewehr geschultert, je Clip eine Halterung (V-581/V-582);
+  - (b) einen **Marsch-Clip mit geschultertem Gewehr**.
+- **Vorgaben:** Rig_Medium, Sohlen auf y = 0, Gang-Rate 0,8–1,25 bei 1,1 m/s.
+- **Bis dahin** patrouilliert der Trupp bei WS-NPC ohne Gewehr.
+
+### Probe (ws1/preview @677a844, Artefakt v59)
+- **Flüsse F2, Wasserfälle F3, Zusammenflüsse, Bergseen, Unterwasser** (Stand §120 ff.):
+  - Netz zuerst: Das Talprofil ersetzt das Gelände (Génevaux 2013 / Island-Kit-Regel).
+  - Der Fall-Shader läuft auf dem Kit-Fluid.
+  - Die Seen sitzen am echten Rand.
+  - Ruck-Fix: Erzeugung in Scheiben zu 5 ms, Shader vorkompiliert.
+- **Ufer (Georg: „verschmierte Uferfarben, blaugrüne Fläche“):** zwei Ursachen behoben.
+  - Das 6. Fließfarben-Band war eine Mischung aus Wasser- und Wiesenton und las sich als Wasser auf trockenem Land. Es hat jetzt einen Geländeton.
+  - Das Meer schnitt sich mit der eigenen hgt()-Tiefe aus. Wo das gezeichnete Dreiecksnetz tiefer lag, fehlte Wasser, und der dunkle Grund lag offen. Die Uferlinie ist jetzt der Tiefentest gegen das gezeichnete Gelände.
+  - Nachweis: `tests/shore-ab.mjs`.
+- **Fahrzeuge:**
+  - Alle 14 Dieselpunk-Racer sind fahrbar; die 5 Radfahrzeuge stehen mit den Rädern am Boden.
+  - Licht: Der Sonnenstand ist von der 42°-Schattenlampe getrennt.
+  - Schatten: 10 bilineare Proben mit festem Muster.
+  - Heldenfarbe: Flächenmaske, blankes Rost-/Bronzemetall wird nicht umgefärbt (keine roten Flecken mehr).
+- **Fahrzeug-Look A (Georg 21.10.: „A, helle Dächer abdimmen, aus der Ferne nicht so schwarz“):**
+  - Ursache: Meshy legt 45–98 % der Fläche als Metall an. Ohne Spiegelumgebung wird das fast schwarz.
+  - A: Metall × 0,35, helle Bleche behalten bis + 0,65 (Dächer gedimmt), Rauheit ≥ 0,5, Himmel/Boden-Spiegelung, Grundhelligkeit auf 0,33 angeglichen.
+  - Ferne: Das Umgebungslicht wächst mit dem Abstand (0,8 → 1,6), also Aufhellung in der Lackfarbe statt grauem Schleier.
+  - Nachweise: `tests/car-look.mjs`, `tests/car-far.mjs`.
+- **Vordergrund-Tonmasse** ist standardmäßig aus (Georg).
+
+### Spiel (terrain/probe-world, lokal, nicht gepusht)
+- **world=probe mit Wasser** (73d7790):
+  - `kfb-hydro.v1.js` und `kfbWater.js` werden aus der Probe erzeugt (Parität bitgenau).
+  - Inhalt: 4 Flüsse, 1 See, 4 Fälle, Meer in den Talböden.
+  - Test: `test/probeWater.mjs`.
+- **@ba94c9d:**
+  - Fahrzeug-Look A als `src/look/vehicleLook.js`, Abstände × K. Mit `vlook=0` erscheint zum Vergleich das Original. Test `test/vlook.mjs` PASS.
+  - Flussmodul ohne lokales window-Objekt; contract-static PASS (Befund WS-Audio).
+- **Volle Reihe:** abgebrochen, weil sie unter Load 40–80 nicht aussagekräftig war (3–4 Reihen parallel).
+  - 21 Tests werden einzeln wiederholt, sobald WS-Audio fertig ist.
+  - Einzeln schon grün: stage, contract-static.
+  - Spiegel `ws1/terrain-probe-world` und eine spielbare Vorschau folgen erst, wenn alles grün ist.
+- **Offene Port-Fragen:**
+  - Sanfte Hügel sind 1:1 im Spiel steil.
+  - Der Spieler schwebt ab 15° Hang.
+  - Obstbäume stehen am Steilhang.
+  - Schraffur auf Steilflächen.
+  - Farbspanne terrain3.
+
+### Parallele Sitzungen
+- **WS-Audio (V-598), gestartet:**
+  - Tier 0 steht lokal auf `ws-audio/r1` @2c0272f, über terrain/probe-world @ba94c9d.
+  - Ein AudioContext, Busse, Ducking; WSA-Pakete 1:1; Jukebox mit Suno bei Fahrt/Flug und Cozy zu Fuß.
+  - Hauptthread 0,17–0,22 ms je Bild.
+  - Die Kampf-Cue-Tabelle aus Combat-AV R1 steckt im K10-Adapter.
+  - Lücken L1/L2/L4/L8/L9 stehen als Bitte an WS0 in `ws-audio/status`.
+  - Private Töne kommen nur über den lokalen Vite-Server, nie in dist.
+- **WS-NPC:**
+  - `ws-npc/phase-a` @55fff1e ist mit Georgs Go gepusht (kein Merge).
+  - Volle Reihe 63/64; c2 ist der bekannte Wackler.
+  - fps headless mit terrain3: Gruppen und Band ohne messbaren Aufpreis.
+  - Lokal neu:
+    - Dark Fluffer = K11 Ghost_healed mit KFB_Mouth;
+    - Lorekeeper und Farmer B echt;
+    - Gerücht D2 mit einem Schritt.
+  - Als Nächstes Arbeitstrupp aus 3 Kayfabrick-Bots (B17-Proof).
+  - eyeActor wird additiv um einen Augen-Anker erweitert, nur mit Kanon-Werten. Die Bot-Augen sind als Proof markiert; Georg sieht das Frontbild vor main.
+- **VFX/SFX-Prüfer (V-601):**
+  - Combat-AV R1 fertig: `research/audits/COMBAT_AV_R1.md`, RETURN im Register (9e4bfc78c).
+  - Prototyp lokal auf `ws1/combat-av-r1`.
+  - Ton läuft nur über kfbAudio, Hit-Stop bleibt beim WSA-Modul (V-567).
+- **Private Assets:** liegen lokal als flacher Klon `~/kfb-ws1/private-assets` (assets/private @5b361b5, inkl. B17). `~/kfb-ws1/private` ist gelöscht (Georg: ja).
+- **Lastregel ab jetzt:** volle Testreihen nur nacheinander, Absprache per Nachricht.
+
+### Als Nächstes
+1. Die 21 offenen Tests auf terrain/probe-world einzeln wiederholen.
+2. Spiegeln und spielbare Vorschau anlegen (Gelände + Wasser + Look A).
+3. Disco-Besetzung K12 für den Dioramen-Test.
+4. Port-Fragen klären.
+
 ## 120 · 21.10. · Probe: Leistung −7/−12 ms (Prüfer C, D1–D4), Spawn-Plattform, kurze Speedlines, Handy-Panel · Spiegel terrain/439 @4c6ec5a (Weltstand)
 
 ### Probe (ws1/preview @5c77bcc, Artefakt v41)
