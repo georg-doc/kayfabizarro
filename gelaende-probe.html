@@ -138,6 +138,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       <fieldset>
         <legend>Welt und Tempo</legend>
         <label class="check"><input type="checkbox" id="rings"> Ringgitter: Sicht bis ~5 km statt 300 m</label>
+        <label class="check"><input type="checkbox" id="otown"> O-Town-Platz: Disco + Ork-Band (Dioramen-Test, Platzhalter-Teile, ohne Figuren)</label>
         <label class="check"><input type="checkbox" id="disco"> Disco-Probe (V-572): Kugel mit Strahlen auf welligem Gelände</label>
         <div class="row"><label for="discoMode">Strahler-Darstellung</label><select id="discoMode"><option value="1">neu: projiziert (kfb-light-pool.v1)</option><option value="0">alt: Scheiben auf fester Höhe</option></select></div>
         <label class="check"><input type="checkbox" id="vox"> Voxel-Welt (instanziert: ein Klotz je Bodensäule)</label>
@@ -2633,7 +2634,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'cstretch', 'sunel', 'sgrad', 'gs'];
-  const BOOL = ['shadowdyn', 'retina', 'claytex', 'hero', 'strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
+  const BOOL = ['otown', 'shadowdyn', 'retina', 'claytex', 'hero', 'strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -2928,6 +2929,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     let y = 0; for (let k = 0; k < 9; k++) { const a = (k / 8) * Math.PI * 2; y += k === 8 ? hgt(DIO.x, DIO.z) : hgt(DIO.x + Math.cos(a) * DIO.R, DIO.z + Math.sin(a) * DIO.R) } // Sockel = Mittel aus Mitte und Fußkreis
     DIO.y = Math.max(y / 9, S.water * S.amp + 0.4); DIO.on = !!(S.dio && S.berm);
     U.uDio.value.set(DIO.x, DIO.z, DIO.R, DIO.y); U.uDioB.value.set(DIO.on ? 1 : 0, DIO.bh, DIO.bw, DIO.open); pushDio(...(() => { try { return [P.x, P.z] } catch (e) { return [0, 0] } })());
+    try { syncOtown() } catch (e) { if (!(e instanceof ReferenceError)) console.warn('otown', e) }   /* Anker 1–2 (Disco, Band); beim allerersten Aufruf noch nicht definiert */
     dioGroup.visible = !!S.dio; PALU.uAmt.value = S.dpal ? 1 : 0;
     PALU.uRw.value.set(A.cliff).lerp(new THREE.Color(A.high), 0.4); PALU.uRf.value.set(A.sand); PALU.uRt.value.set(A.cliff).multiplyScalar(0.85);
     if (amph) { const baseY = S.berm ? DIO.y : hgt(DIO.x, DIO.z); const o = amph.userData.off || new THREE.Vector3(); amph.position.set(DIO.x + o.x, baseY - 0.15 + o.y, DIO.z + o.z); PALU.uTop.value = baseY + 4.5; GU.uGFlatY.value = baseY - 0.15 }
@@ -2949,6 +2951,50 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     crumbs.instanceMatrix.needsUpdate = true; crumbs.material.color.set(A.sand).lerp(new THREE.Color(A.cliff), 0.45).multiplyScalar(0.85);
     const leaf = new THREE.Color(A.mid), rock = new THREE.Color(A.cliff); stoneGroup.children.forEach((o) => tint(o, rock, S.dpal ? 0.55 : 0)); propGroup.children.forEach((o) => tint(o, leaf, S.dpal ? 0.35 : 0));
   };
+  /* Dioramen-Test (WS0 Job 3, Plan DIORAMEN_PAINPOINT R1 Schritt 2–3): O-Town-Platz mit Disco und Ork-Band als Anker 1 und 2 neben dem Amphitheater (Anker 0).
+     Platzhalter-Teile aus dem öffentlichen Repo (K4/K5 folgen, sobald lokal vorhanden), Lagen aus den RA-Rezepten (resident-disco-01 / resident-band-module-01).
+     Konzeptblatt: kein Sockel, keine Scheibe, keine Stufe, kein eigenes Licht außer der Kugel; Band rechts am Platz, Front zur Platzmitte. Figuren folgen mit der Besetzung. */
+  const OT = { group: new THREE.Group(), site: null, n: 0 }; worldRoot.add(OT.group);
+  const DISCO_A = { kind: 'disco', x: 0, z: 0, R: 9.5, y: 0, on: false, bh: 1.1, bw: 16, open: 0, hx: 0, hz: 0, rot: 0, blend: 10 };
+  const BAND_A = { kind: 'band', x: 0, z: 0, R: 0.6, y: 0, on: false, bh: 0.7, bw: 6, open: 0, hx: 3.3, hz: 3.65, rot: 0, blend: 6 };
+  DIOS.push(DISCO_A, BAND_A);
+  const OT_MAIN = RAW + 'c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/';
+  const OT_PARTS = { radio: 'Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf', speaker: 'KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf', drum: 'KFB/Drum Machine 2 by Peter Simcoe - eflBcV4gcIl.glb', wardrum: 'KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Wardrum.gltf.glb', stick: 'KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb', banner: 'KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/gltf/Orc_Banner_Large.gltf' };
+  const OT_TPL = {}; let otLoading = null;
+  function otLoad() { if (otLoading) return otLoading
+    otLoading = Promise.all(Object.entries(OT_PARTS).map(([k, p]) => loadG(OT_MAIN + p.split('/').map(encodeURIComponent).join('/')).then((m) => { m.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.material = o.material.clone(); addGrounding(o.material) } }); OT_TPL[k] = m }).catch((e) => console.warn('otown', k, e?.message || e))))
+    return otLoading }
+  function otSite() {   /* flache Stelle 40–90 m vom Start, über dem Wasser, ≥ 50 m vom Amphitheater; fester Zufall je Saat */
+    let best = null, rnd = 12345 + Math.round((S.seed || 0) * 977); const wl = S.water * S.amp + 1.2, r2 = () => (rnd = (rnd * 16807) % 2147483647) / 2147483647
+    for (let i = 0; i < 160; i++) { const a = r2() * 6.283, r = 40 + r2() * 50, x = Math.cos(a) * r, z = Math.sin(a) * r; if (Math.hypot(x - DIO.x, z - DIO.z) < 50) continue
+      const h0 = hgt(x, z); if (h0 < wl) continue; let dev = 0; for (let k = 0; k < 8; k++) { const b = k / 8 * 6.283; dev += Math.abs(hgt(x + Math.cos(b) * 15, z + Math.sin(b) * 15) - h0) } if (!best || dev < best.dev) best = { x, z, dev } }
+    return best }
+  const ringY = (A) => { let y = 0; for (let k = 0; k < 9; k++) { const a = (k / 8) * Math.PI * 2, rr0 = A.R + Math.max(A.hx, A.hz); y += k === 8 ? hgt(A.x, A.z) : hgt(A.x + Math.cos(a) * rr0, A.z + Math.sin(a) * rr0) } return Math.max(y / 9, S.water * S.amp + 0.4) }
+  function syncOtown() {
+    DISCO_A.on = BAND_A.on = false; DISCO.ot = null; OT.group.visible = !!S.otown; OT.group.clear()
+    const cxz = (() => { try { return [P.x, P.z] } catch (e) { return [0, 0] } })()
+    if (!S.otown) { pushDio(...cxz); return }
+    const site = otSite(); if (!site) { pushDio(...cxz); return } OT.site = site
+    DISCO_A.x = site.x; DISCO_A.z = site.z; DISCO_A.open = Math.atan2(-site.z, -site.x); DISCO_A.y = ringY(DISCO_A); DISCO_A.on = true
+    const F = [Math.cos(DISCO_A.open), Math.sin(DISCO_A.open)], Rt = [F[1], -F[0]]   /* F = Blick zum Start (Publikum), Rt = rechts vom Betrachter */
+    BAND_A.x = site.x + Rt[0] * 15 - F[0] * 1.5; BAND_A.z = site.z + Rt[1] * 15 - F[1] * 1.5
+    const Fb = [DISCO_A.x - BAND_A.x, DISCO_A.z - BAND_A.z], lb = Math.hypot(...Fb) || 1; Fb[0] /= lb; Fb[1] /= lb
+    BAND_A.rot = Math.atan2(-Fb[0], Fb[1]); BAND_A.open = Math.atan2(Fb[1], Fb[0]); pushDio(...cxz); BAND_A.y = ringY(BAND_A); BAND_A.on = true; pushDio(...cxz)
+    DISCO.ot = { x: site.x + Rt[0] * 0.95 + F[0] * -0.4, z: site.z + Rt[1] * 0.95 + F[1] * -0.4, y: DISCO_A.y + 7.6 }
+    const n = ++OT.n; otLoad().then(() => { if (n === OT.n && S.otown) placeOT(F, Rt, Fb) })
+  }
+  function otPut(key, A, F, lx, lz, ryDeg, { h, w, s: sc, yOff = 0 } = {}) {
+    const T = OT_TPL[key]; if (!T) return; const o = T.clone(true), b = new THREE.Box3().setFromObject(T), sz = b.getSize(new THREE.Vector3())
+    const k = sc ?? (h ? h / Math.max(sz.y, 1e-3) : w ? w / Math.max(sz.x, sz.z, 1e-3) : 1); o.scale.multiplyScalar(k)
+    const Rt = [F[1], -F[0]], x = A.x + lx * Rt[0] + lz * F[0], z = A.z + lx * Rt[1] + lz * F[1]
+    o.position.set(x, A.y + yOff - b.min.y * k, z); o.rotation.y = Math.atan2(F[0], F[1]) + ryDeg * Math.PI / 180; OT.group.add(o) }
+  function placeOT(F, Rt, Fb) {   /* Lagen aus RA S17 (Ensemble ×1,35, lokal +z = Publikum) */
+    otPut('radio', DISCO_A, F, -7.56, 2.03, 48, { h: 1.0 })
+    otPut('speaker', DISCO_A, F, -8.91, -1.22, 42, { h: 1.5 }); otPut('speaker', DISCO_A, F, 8.37, 0.27, -48, { h: 1.5 })
+    otPut('drum', DISCO_A, F, 0.95, -2.9, 0, { w: 2.1, yOff: -1.9 })   /* Drum Machine 1,9 m eingesunken (V-571 prop_buried) */
+    otPut('wardrum', BAND_A, Fb, 0.6, 0.4, 0, { h: 1.1 }); otPut('stick', BAND_A, Fb, 1.3, 0.9, 30, { h: 0.7 }); otPut('stick', BAND_A, Fb, 1.5, 0.6, -20, { h: 0.7 })
+    otPut('banner', BAND_A, Fb, -1.9, -3.8, 0, { h: 5.03, yOff: -0.21 })   /* Banner-Oberkante 4,82, Fuß 0,21 im Boden */
+    const A = PALETTES[S.palA]; OT.group.traverse((o) => { if (o.isMesh && o.material?.color && S.dpal) o.material.color.lerp(new THREE.Color(A.sand), 0.15) }) }
   // Felsgruppen an Steilhängen (Etherington R2): Dreiergruppen 1 : 0,6 : 0,35 (N5 ≤ 3 Hauptformen), 40–50 % eingesunken (S1), Ei auf dem breiten Ende +
   // nach oben schmaler (N2/N3), gemeinsame Neigung ≤ 15° mit Abständen ≥ 5° und genau einer Ausnahme 25–45° je Gruppe (N1), Brösel hangabwärts ≤ 12 % (E3)
   function etherRockGeo(seed) { let z = seed; const r = () => { z = (z * 16807) % 2147483647; return z / 2147483647 }; for (let k = 0; k < 4; k++) r()
@@ -3188,7 +3234,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
-  window.__hgt = (x, z) => hgt(x, z); window.__LIFT = LIFT; window.__AO = AO; window.__renderer = renderer; window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera, OBST, DENV, OB, placeCar }); // Prüfhilfe (feste Kameras für Bildvergleiche)
+  window.__hgt = (x, z) => hgt(x, z); window.__OT = { DISCO_A, BAND_A, OT, DIOS }; window.__LIFT = LIFT; window.__AO = AO; window.__renderer = renderer; window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera, OBST, DENV, OB, placeCar }); // Prüfhilfe (feste Kameras für Bildvergleiche)
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
@@ -3224,8 +3270,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     DISCO.group.traverse((o) => { o.userData.noAO = true }); DISCO.group.visible = false; worldRoot.add(DISCO.group) }
   const _dO = new THREE.Vector3(), _dD = new THREE.Vector3(), _dS = new THREE.Vector3();
   function updateDisco(t) {
-    if (!S.disco) { DISCO.group.visible = false; if (LP.uniforms.uLPn.value) LP.setPools([]); return }
-    DISCO.group.visible = true; const gx = DISCO.x, gz = DISCO.z, gy = surfH(gx, gz) + 14; DISCO.ball.position.set(gx, gy, gz); DISCO.ball.rotation.y = t * 0.6
+    if (!S.disco && !DISCO.ot) { DISCO.group.visible = false; if (LP.uniforms.uLPn.value) LP.setPools([]); return }
+    DISCO.group.visible = true; const gx = DISCO.ot ? DISCO.ot.x : DISCO.x, gz = DISCO.ot ? DISCO.ot.z : DISCO.z, gy = DISCO.ot ? DISCO.ot.y : surfH(gx, gz) + 14;   /* auf dem O-Town-Platz 7,6 m über dem Tanzkreis */ DISCO.ball.position.set(gx, gy, gz); DISCO.ball.rotation.y = t * 0.6
     const pools = [], neu = S.discoMode === 1, floorY = surfH(gx, gz) + 0.006;
     for (let i = 0; i < 8; i++) { const a = t * 0.5 + i * Math.PI / 4, tilt = 0.55 + 0.35 * Math.sin(t * 0.7 + i * 1.3);
       _dD.set(Math.cos(a) * Math.sin(tilt), -Math.cos(tilt), Math.sin(a) * Math.sin(tilt)).normalize(); _dO.set(gx, gy, gz).addScaledVector(_dD, 1.2)
