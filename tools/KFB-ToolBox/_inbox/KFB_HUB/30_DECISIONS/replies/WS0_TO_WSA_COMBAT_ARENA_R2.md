@@ -87,3 +87,13 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - WS0-Auswahl: `q_mushroom` zuerst, dann `q_ghost`.
 - Den Maul-Anker `KFB_Mouth` an der sichtbaren Öffnung baut WSB (K11). Die 0,62-Formel wird nicht übernommen.
 - Für dich bleiben nur noch die Armbrust (oben) und danach die Gatling, wenn WSB sie meldet.
+
+## Gatling K10 §4 fertig (WSB 21.10.), danach anschließen
+- **Karte und Werte:** `50_BLENDER/K10/_privat_kauf_asset/kfb_kit_combatmech_minigun.weapon.json` (privat), Werte `K10/data/combatmech_minigun_mounts.json`, Bild `K10/out/K10_gatling.png`.
+- **Halterung:** eine für Boden und Flug, seitlich am Tragegriff: q (−0.26562, 0.39234, −0.08089, 0.87691) + [0, 0, 0.15], je Clip 1–2 cm mit Beleg (V-574).
+- **Boden:** Oberkörper ruhig aus Running_HoldingRifle @ 0,25 s, Beine aus dem Clip (V-582 geschichtet). 10 Clips, 0 Durchstich.
+- **Flug:** 8 Flight-Family-Clips.
+- **Nicht für die Minigun:** Ranged_2H_*, flight_aim, flight_brake_recover; roll_reaction HOLD.
+- **Feuern:** `rootYawDeg −36` (Ziel-Familie mit Figurdrehung). Dauerfeuer ohne Schuss-Clip, 18/s, Spin-up 0,16 s, Barrel-Spin um lokal +Z. Mündungsblitz as-is am `KFB_Muzzle`.
+- **Prüfer:** nur die bekannte V-581-Feldmeldung. Bitte so erweitern, dass „Clip-Familie ausgeschlossen“ (exclude-Liste je Waffe) zulässig ist.
+- Liegt nur in Georgs Dropbox; Zugriff wie bei den anderen K10-Karten. Merge nur durch Georg.
