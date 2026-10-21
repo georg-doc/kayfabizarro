@@ -3,6 +3,47 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 124 · 21.10. nachts · Übergabe an WS0: Gesamtstand WS1, alles gepusht, nächste Schritte, Backlog (Georg plant jetzt mit WS0, WS1 macht in ~1 h weiter)
+
+### 1 · Alles auf GitHub (kayfabizarro, nichts Privates)
+| Was | Branch @ Commit | Inhalt |
+|---|---|---|
+| Spiel mit neuem Gelände | `ws1/terrain-probe-world` @1765b3f (= kfb-planet `terrain/probe-world` @ba94c9d) | world=probe (Probe-Höhe 1:1, Flüsse, Bergseen, Fälle, Meer), Fahrzeug-Look A, Flussmodul-Fix; Einzeltests 22/22 PASS |
+| Disco K12 | `ws1/disco-k12` @42fbe44 (= `disco/k12` @7f5750f, über ws-npc/phase-a @4625c6e) | Modul `disco`, test/disco.mjs PASS (look=terrain3) |
+| Gelände-Probe Quellen | `ws1/probe-src` @ab1f14f (neu, `ws1/probe/`) | Probe-HTML, Bau-/Port-Skripte (gen_*), 40 Tests; vorher nur als gebaute Seite gesichert |
+| Vorschau (Pages) | `ws1/preview` @ac42ee7 | `/probe-welt` = spielbares neues Gelände (ohne Hash → #m1,harvest,look=terrain3,world=probe), `/gelaende-probe` = Probe mit Look A, saubere Ufer; Startseite unverändert |
+| Artefakt | claude.ai/artifact/5XEWSgg2FGerJqpKEriBhM v59 | Probe mit allen 14 Racern, Look A |
+| Status | `ws1/terrain-439` (diese Datei) | §121–§124 |
+Lokal nicht gepusht und absichtlich: nur Arbeitsstände anderer Sitzungen (ws-audio/r1 wartet auf WS0-Go; ws-npc pusht selbst).
+
+### 2 · Was heute fertig wurde (WS1-Lead)
+- **Probe:** Flüsse F2, Wasserfälle F3, Zusammenflüsse, Bergseen am echten Rand, Unterwasser, Netz zuerst, Ruck-Fix; Ufer sauber (Tiefentest statt eigener Tiefe, 6. Fließfarben-Band ohne Wasserton); Vordergrund-Tonmasse aus.
+- **Fahrzeuge:** 14 Racer, Licht am Sonnenstand, Schatten ruhig, Heldenfarbe ohne Flecken; **Look A** (Georg) in Probe und Spiel: Metall gedämpft, Dächer gedimmt, aus der Ferne nicht mehr schwarz.
+- **Spiel-Port:** world=probe mit Wasser (aus der Probe erzeugt, Parität bitgenau), spielbare Vorschau.
+- **Disco K12:** 7 Tänzer + MC FrizzleBob im Spiel (Details §123).
+- **Koordination:** WS-Audio gestartet (V-598, Tier 0 + Kampf- und Gruppen-Ton lokal), WS-NPC Phase B/D/D2 + Bots + eyeActor eyeAnchors (Lead-OK), VFX/SFX-Prüfer Combat-AV R1; Lastregel „volle Reihen nur nacheinander“.
+
+### 3 · Offene Fragen an WS0 (bitte beantworten)
+1. **FrizzleBob aktueller ToolBox-Stand** (§122): neuerer Export als 14.10.? Pfad/Commit. Skelett = Rig_Medium (Motion-Library-Clips auf FB ok)?
+2. **Hexe 30,6 s:** `samba_a` oder `house_a` (WS1 nimmt `house_a`).
+3. **Augen Ritter und Dämon** (kein Profil in Georgs Batch, Anker-Sitz PROOF): Profil nachziehen (Georg im Studio) oder Anker-Sitz abnehmen?
+4. **Merge-Go** in der Reihenfolge terrain/probe-world → ws-npc/phase-a (WS1 löst package.json/m1-terrain.js) → disco/k12 → ws-audio/r1 (WS-Audio löst M1World).
+5. **Bitten aus §123:** Fluffer 30–40 % kleiner (WS-NPC), Combat-Cubes als Dark Fluffer (WSB-Auftrag, Mushroom zuerst).
+
+### 4 · Nächste Schritte WS1 (in dieser Reihenfolge, sobald Georg zurück ist)
+1. Antworten WS0 einarbeiten (FB-Tausch 1:1, Hexe, Augen).
+2. Merge-Schritte nach Go, danach volle Reihe in einem ruhigen Fenster, Spiegel + Vorschau `/probe-welt` mit Bewohnern, Band, Disco (öffentlich nur Kulisse + MC).
+3. Disco auf dem neuen Gelände platzieren (flache Stelle, Anschluss an O-Town-Logik der Probe), Kritiker-Runde R3 (Dioramen-Plan Schritt 6, look=terrain3, headless).
+4. Port-Fragen world=probe: Sanfte Hügel im Spiel zu steil, Spieler schwebt ab 15° Hang, Obstbäume am Steilhang, Schraffur auf Steilflächen, Farbspanne terrain3.
+
+### 5 · Backlog WS1 (priorisiert, nicht begonnen)
+- **Wasser:** kleine Seen mit gezacktem Rand und olivem Saum (Nahsicht), Ausfransen an Fällen und Mündungen, Seen/Flüsse im Spiel mit Unterwasseransicht.
+- **Fahrzeuge:** die 8 neuen Dieselpunk-Racer auch im Spiel (bisher 6 im Rig), Heldenfarbe im Spiel (gibt es nur in der Probe), Ferne-Aufhellung am echten Spielabstand nachmessen.
+- **Disco:** Lichtkegel und Licht-Pfützen der Probe ins Spiel, Ork-Band daneben (WS-NPC), Blick der Tänzer zum Spieler, Kosten messen (Ziel ≤ 1 ms).
+- **Leistung:** Spiel-fps headless mit terrain3 nach dem Merge (WS-NPC maß 40–44 fps, Ziel ≥ 55 ist Basis-Grenze).
+- **Werkzeug:** gemeinsamer Test-„Slot“ für die Maschine (Reihen-Absprache automatisieren), Probe-Quellen künftig bei jedem Probe-Push nach `ws1/probe-src` spiegeln.
+- **Sicherheit:** Builds mit `src/private` betten private Körper ein (Disco-dist ~63 MB) → nie aus solchen Worktrees veröffentlichen; Vorschlag: Build-Prüfung, die bei src/private im Vorschau-Build abbricht.
+
 ## 123 · 21.10. nachts · Disco K12 läuft im Spiel · Weitergaben an WS0: Fluffer kleiner, Combat-Cubes als Dark Fluffer, Heilschuss-Vorrang
 
 ### Bitten an WS0 (Georg 21.10., über WS-NPC bzw. WS-Audio)
