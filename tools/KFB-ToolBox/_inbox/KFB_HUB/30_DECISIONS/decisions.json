@@ -8724,6 +8724,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-616",
+   "date": "2026-10-21",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Hub-Antworten Georg 21.10. spät: q148 Fluffer-Größe 0,8 m (heightM 0.8 für alle Fluffer und Cubes, Ton etwa 3-5 Prozent höher); q90 Signatur-Ornament für benannte Figuren erlaubt (2-4 Töne ohne Wort am Zeilenanfang oder -ende, zusätzlich zu V-508); q91 Bots gleiten wie alle (keine gestuften Chip-Töne); q146/q147 Hypernorm P0 FAIL: keine festen Phasen und kein festes Layout, sondern dynamischer Remix wie die bestehende Hypernormalisation-Engine, optimiert (weniger layouthaft, weniger repetitiv, bessere Bewegung). P0 wird auf die Engine umgebaut, Brief folgt. q145 Ja, beide Sätze; Erzeugung wartet auf Georgs Go im Chat.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Antworten setzen Größe und Stimmregeln fest; der Pilot hat die vorhandene Engine verfehlt und baut auf ihr neu auf.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8811,7 +8826,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1064",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1065",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

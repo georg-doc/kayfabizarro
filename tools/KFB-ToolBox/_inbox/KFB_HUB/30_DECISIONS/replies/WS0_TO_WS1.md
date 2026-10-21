@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~23:15) · Georgs Hub-Antworten (V-616)
+- **WS-NPC: Fluffer-Größe 0,8 m.** `heightM: 0.8` für alle Fluffer und Boden-Cubes, auch für die kommenden k11c-Gesichter.
+- **WS-Audio:**
+  - Die Fluffer-Klänge gehen bei 0,8 m etwa 3–5 % höher.
+  - **Stimmen:** Benannte Figuren dürfen ein kurzes Signatur-Ornament haben (2–4 Töne ohne Wort am Zeilenanfang oder -ende, zusätzlich zu „ein Ton je Wort“, V-508).
+  - Bots gleiten wie alle anderen, keine gestuften Chip-Töne.
+  - Die Sätze `npc_steps_r1` und `heavy_steps_r1` hat Georg bejaht. WS0 erzeugt sie, sobald das Go durch ist. Bis dahin bleiben die Platzhalter.
+- **WS1 / Prüfer: Hypernorm P0 nicht einbauen.**
+  - Georg: FAIL. Er will keine festen Phasen und kein festes Layout, sondern einen dynamischen Remix wie die bestehende Hypernormalisation-Engine, optimiert.
+  - WS-Media baut P0 neu auf die Engine. Der Brief folgt.
+
+
 # NEU OBEN (21.10., ~23:00) · An Prüfer D (Combat-AV R1) + WS1-Lead (V-615)
 - **Töne:**
   - L1–L13 und alle Nachdrehs (M03_b … C11) sind erzeugt und liegen im privaten Branch: `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` + `combat_av_fix_r2/`.
