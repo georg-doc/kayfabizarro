@@ -1,0 +1,49 @@
+{
+ "deckId": "big_bad_brain_wrestling",
+ "revision": "p2",
+ "performers": [
+  {
+   "model": "ActionFigure",
+   "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure",
+   "role": "Plastik-Kommando in der Spielzeugkiste, hält Wrestling für Fake und sich für den einzigen echten Kämpfer"
+  }
+ ],
+ "residentHome": "Spielzeugkiste als Ring (Georg 21.10.)",
+ "structure": "PROBE nach BBBW_DECKVERSTAENDNIS_R1: Intro (Titel + Cover-These), eine Bewohner-Zeile, Kette Economy of Real Ego 10 -> 33 -> 35 -> 55 (Ego verweigert -> Shooter erzwingt -> es wird echt -> das Geschaeft vertuscht), Outro mit Callback auf das Gewehr aus dem Intro; Georg 21.10. zu p1: keine Wechselköpfe/Asset-Meta, nur was der Spieler sieht und versteht.",
+ "introType": "bold_claim",
+ "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. It is performed by a toy figure in its home, a toy box, for whoever happens to be there.",
+ "bestOfReason": [
+  "PROBE: 10, 33, 35, 55 als eine Kausalkette aus dem Kartensinn (No-Sell verweigert, Shooter 'stiff the no-seller', Real Injury, Kayfabe Police)."
+ ],
+ "omitted": {
+  "Rest": "Probe, kein Vollsong"
+ },
+ "orderReason": "",
+ "songLineChanges": [],
+ "cues": [],
+ "beats": [
+  "Big Bad Brain Wrestling: the physics of fake pain and the economy of real ego.",
+  "Toy box, cardboard ring. Me: commando, the only real gun in here. Everybody else just wrestles.",
+  {
+   "card": 10,
+   "pre": "Respect:",
+   "text": "The No-Sell Monster ignores damage, sits right back up: remove all tension for ego."
+  },
+  {
+   "card": 33,
+   "pre": "Won't sell?",
+   "text": "The Shooter forces opponent to sell; if they refuse, real damage. Stiff the no-seller."
+  },
+  {
+   "card": 35,
+   "pre": "Finally.",
+   "text": "The Real Injury, unplanned: Goldberg's shoulder, ring-post. Crowd goes nuts because it's real."
+  },
+  {
+   "card": 55,
+   "pre": "Bad for business.",
+   "text": "The Kayfabe Police enforce the lie: arrest anyone breaking character. Keep secrets secret."
+  },
+  "The Kayfabe Police never came for me. I call it fake all day. My gun is plastic. Still real to me, dammit."
+ ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "big_bad_brain_wrestling",
+  "deckTitle": "Big Bad Brain Wrestling",
+  "revision": "p2",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/big_bad_brain_wrestling.json",
+      "sha256": "54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+      "sha256": "6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d"
+    }
+  },
+  "performer": null,
+  "performers": [
+    {
+      "model": "ActionFigure",
+      "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure",
+      "role": "Plastik-Kommando in der Spielzeugkiste, hält Wrestling für Fake und sich für den einzigen echten Kämpfer"
+    }
+  ],
+  "residentHome": "Spielzeugkiste als Ring (Georg 21.10.)",
+  "structure": "PROBE nach BBBW_DECKVERSTAENDNIS_R1: Intro (Titel + Cover-These), eine Bewohner-Zeile, Kette Economy of Real Ego 10 -> 33 -> 35 -> 55 (Ego verweigert -> Shooter erzwingt -> es wird echt -> das Geschaeft vertuscht), Outro mit Callback auf das Gewehr aus dem Intro; Georg 21.10. zu p1: keine Wechselköpfe/Asset-Meta, nur was der Spieler sieht und versteht.",
+  "introType": "bold_claim",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    10,
+    33,
+    35,
+    55
+  ],
+  "bestOfReason": [
+    "PROBE: 10, 33, 35, 55 als eine Kausalkette aus dem Kartensinn (No-Sell verweigert, Shooter 'stiff the no-seller', Real Injury, Kayfabe Police)."
+  ],
+  "omitted": {
+    "Rest": "Probe, kein Vollsong"
+  },
+  "orderMode": "deck",
+  "orderReason": "",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 10,
+      "beats": [
+        3
+      ],
+      "cardText": "The No-Sell Monster ignores damage, sits right back up: remove all tension for ego."
+    },
+    {
+      "cardNumber": 33,
+      "beats": [
+        4
+      ],
+      "cardText": "The Shooter forces opponent to sell; if they refuse, real damage. Stiff the no-seller."
+    },
+    {
+      "cardNumber": 35,
+      "beats": [
+        5
+      ],
+      "cardText": "The Real Injury, unplanned: Goldberg's shoulder, ring-post. Crowd goes nuts because it's real."
+    },
+    {
+      "cardNumber": 55,
+      "beats": [
+        6
+      ],
+      "cardText": "The Kayfabe Police enforce the lie: arrest anyone breaking character. Keep secrets secret."
+    }
+  ],
+  "songLineChanges": [],
+  "cues": [],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 10,
+      "motif": "Rhinoceros rising slowly from devastation, opponent terrified",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 33,
+      "motif": "Bear wrestler grabbing opponent's collar with dead-serious eyes",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 35,
+      "motif": "Bull wrestler clutching shoulder, match improvising around him",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 55,
+      "motif": "Cop wrestler handcuffing character-breaker, stern authority",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}

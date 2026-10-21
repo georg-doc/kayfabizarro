@@ -48,15 +48,16 @@ Die Reihenfolge weicht dafür von der Kartennummer ab (R4 C10 erlaubt das als `o
 Hogan unsichtbar viermal: Leg Drop (41), Hogan vs Warrior (47), Michaels vs Hogan (11), Finger Poke of Doom (40). Goldberg's shoulder (35), Ricky Morton (26), Michael Cole (39, 52), Jake the Snake im Snake Bag (22), Undertaker als Geier mit Hut (37), Lucha: Máscara, Rudo (17, 18), Strong Style und 60-Minuten-Draw (19, 44), ECW-Chants „Holy Sh\*t“ und „You F\*cked Up“ (52, 54), Pandemie-Shows ohne Publikum (30, 31), „It's still real to me, dammit!“ (Cover). Begriffe: work, shoot, mark, smark, heat, pop, sell, job, go home.
 
 ## 6 · Der Bewohner: KayKit Action Figure
-**Was er ist (Artwork angesehen, nicht aus dem Namen geraten):** ein kleiner Plastik-Kommando im Rambo/G.I.-Joe-Stil: rotes Stirnband, Zigarre, Hundemarke, Unterhemd, Cargohose, Sturmgewehr mit gelbem Plastik-Mündungsfeuer, Granate, sichtbares Kugelgelenk an der Schulter. Er ist **kein Wrestler**. Die vier Wechselköpfe sind **dasselbe Gesicht** in vier Stimmungen (Zähne-Grinsen, Brüllen, stoisch mit geschlossenen Augen, Lachen), mit derselben Narbe in der Augenbraue auf jedem Kopf.
-→ Korrektur zum Bewohner-Vorschlag vom 20.10. („Wrestling-Actionfigur mit austauschbaren Gimmicks“): die Köpfe sind keine verschiedenen Gimmicks, sondern ein Mann mit vier Gesichtsausdrücken.
+**Was er ist (Artwork angesehen, nicht aus dem Namen geraten):** ein kleiner Plastik-Kommando im Rambo/G.I.-Joe-Stil: rotes Stirnband, Zigarre, Hundemarke, Unterhemd, Cargohose, Sturmgewehr mit gelbem Plastik-Mündungsfeuer, Granate, sichtbares Kugelgelenk an der Schulter. Er ist **kein Wrestler**. (Das Asset hat Wechselköpfe; im Song spielen sie keine Rolle, siehe unten.)
 
-**Warum gerade er:** Er ist das Merchandise der Kayfabe. Sein Feuer ist aus Plastik und brennt immer (ein Thigh Slap zum Anstecken), seine Narbe ist aufgemalt und in Serie gefertigt, seine Granate geht nie los. Der Körper bleibt, nur der Kopf wird getauscht: genau das Brain Wrestling des Covers.
+**Georg 21.10. zu Probe p1:** Wechselköpfe, aufgemalte Narbe und andere Asset-Details sieht, kennt und interessiert keinen Spieler. Sie sind Meta-Humor ohne Kontext und enden in Verwirrung. Für den Song zählt nur, was ein Zuhörer in einem Durchgang versteht: ein Plastik-Kommando in der Spielzeugkiste.
 
-**Weltsicht:** Er hält sich für den einzigen echten Kämpfer. Krieg ist echt, Wrestling ist Theater.
-**Fehlannahme:** Er glaubt, er durchschaut den Schwindel. Tatsächlich ist er das am meisten gespielte Objekt im Raum: ein Smark mit Plastikgewehr. (Das Deck sagt es selbst im Kanon-Material: wer „Fake!“ ruft, ist der Lieblingszug des Schwindels.)
-**Failure-Loop:** Kommt keine Reaktion, wechselt er den Kopf: Grinsen, Brüllen, Stoisch, Lachen. Er wird zum Pop Hunter, obwohl er Pop Hunter verachtet. Jeder Kopf hat dieselbe Narbe; er kann den Ausdruck tauschen, nie das Gesicht.
-**Tragikomik:** Er erklärt jede Karte mit der Verachtung des Profis und erkennt in jeder ein Stück von sich.
+**Warum gerade er:** Ein Spielzeugsoldat, der sich für einen echten Kämpfer hält, ist auf einen Blick verständlich. Er ist selbst Plastik und nennt die Wrestler Fake.
+
+**Weltsicht:** Krieg ist echt, Wrestling ist Theater. Er bewundert alles, was echt aussieht.
+**Fehlannahme:** Er glaubt, er durchschaut den Schwindel. Er ist das am meisten gespielte Ding in der Kiste: ein Smark mit Plastikgewehr.
+**Failure-Loop:** Jede Karte, die er als „endlich echt“ feiert, entpuppt sich als Ego (No-Sell) oder als Geschäft (Kayfabe Police). Er merkt es nicht und ruft weiter „Fake!“.
+**Insider im Bewohner:** „It's still real to me, dammit!“ steht auf dem Cover; der Satz passt zu ihm.
 
 ## 7 · Aussage des Outros (ein Satz)
 Wer „Fake!“ ruft, hat seinen Platz in der Show schon eingenommen: die Schläge sind abgesprochen, nur das Ego tut wirklich weh.
