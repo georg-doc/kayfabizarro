@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WS0-Sounds melee_destruction_r1 (17, Georg-Go): Schwert/Keule-Whoosh, Körper-/Rüstungstreffer, Schildblock, Boss-Bonk + Wegflieg-Pfeife + Landung, Schwindel, Aufrappeln, Goo-Haus reißt/wabbelt/platzt, Trümmer → Fluff, Monster flattert; normalisiert, im privaten Branch für WS-Audio.
 - WSB K13 Boss-Move Zwischenstand angenommen: Brute mit Kit-Axt (Hammer-Space-Puff bei 0,567 s), Treffer 0,60 s, Raider fliegt kinematisch 1,5 s über die 2,5-u-Mauer, fall_flat → getting_up.
 - V-600 Boss-Move Wegkatapultieren in K13 (zuerst einhändig mit Keule, Melee_1H_Slash as-is; 2H-Slam zweite Fassung; launch-Daten, kinematisch).
 - V-599 kayfabizarro wird privat: WSA bereitet die öffentlichen Seiten vor (FrizzleBob, PDF/Deck-Viewer, Pages, Sites → Cloudflare), Georg legt den Schalter um. Hub aktualisiert (Stand, 3 Fragen, 7 Schritte, 5 Briefings).
