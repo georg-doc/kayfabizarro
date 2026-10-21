@@ -12,6 +12,9 @@
 - **`https://kayfabizarro.pages.dev/FrizzleBob/`**: Regeln, Essays bzw. Lesarten (`01-first-reading.md` … `18-the-concept-reader.md`), `LERNEN_MIT_MASCHINE.html`, Ausstellung, Avatar. `FrizzleBob/index.html` hat 2 Raw/jsDelivr-Verweise.
 - **KFB PDF-Viewer bzw. Deck-Viewer**, die PDFs und JSON über GitHub lesen: `KFB Comic Card Deck Viewer v4 (WS0)/` (v3/v4/v5, standalone, `deckviewer/kfb-corpus.js`, `PDF_SOURCES.md`). Laut Inventur liegen alle 135 PDFs schon bei Cloudflare; etwa 4 Adressen ändern und das Bundle neu bauen.
 - **Alle übrigen öffentlich verlinkten Seiten** auf `kayfabizarro.pages.dev`: Liste aus dem Inventar §1, mit Georgs Hub-Links abgleichen.
+- **Slices aus den eigenen KFB-Repos** (Georg 21.10.): `https://kfb-combat-arena.pages.dev/` (Repo `KFB-Combat-Arena`), dazu die Pages von `KFB-Stunt-Car-Race` und `KFB-Travel-Globe`.
+  - Diese Repos sind **schon privat** und ihre Cloudflare-Seiten laufen. Das beweist, dass privat + Cloudflare funktioniert.
+  - Sie laden aber Modelle und Medien **aus `kayfabizarro`** über Raw bzw. jsDelivr (z. B. die Arena-Monster vom gepinnten Asset-Commit c746a95). Diese Abhängigkeiten bitte genauso finden und umstellen: entweder Medien in den eigenen Cloudflare-Build bzw. nach R2, oder gemeinsamer R2-Speicher.
 - **chatgpt.site-Werkzeuge** (Asset Library inkl. Dramatis Personae, Audio, ToolBox, Staging): Sie lesen ohne Token aus Raw/API. Umstellen auf Cloudflare-Daten bzw. den serverseitigen Abruf mit Token-Secret (wie WS1-Staging).
 
 **Technik:**
