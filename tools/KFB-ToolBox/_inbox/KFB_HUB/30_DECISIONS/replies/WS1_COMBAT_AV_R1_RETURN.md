@@ -98,3 +98,9 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
 | 3 Gegner kündigt an | `730c6f6` | `?tele=1` | offen | angekündigte Würfe 0/11 → 9/9 (Regel R6) |
 
 **Zu Nr. 3 (präzisiert):** Das Ausholen (0,42 s) gab es schon, sichtbar war es nur als rotes Abzeichen. Neu sind Stauchen und Strecken, ein Ring, der sich zusammenzieht, und ein Ausholklang. Der Platzhalter ist mit 0,8 s zu lang, deshalb wird **L13 `mob_windup` (0,5 s) dringend**.
+
+## Backlog TUNE später (Georg 21.10.: alle Tune-Punkte übernehmen)
+- **Klang:** K1 „Piu-Piu“ tiefer stimmen · K2 Würfel-Klick statt Schütteln (L6) · K3 Platzhalter Armbrust/Bogen/Magie (L1/L2/L4) · K4 Gatling-Schleife (L11) · K5 Bus-Messung für Regel R3
+- **Treffer/Kill:** T1 Wort und Effekte bei weiter Kamera zu klein (Kamera näher oder Wort ×1,5) · T2 Masse von oben einfarbig (Licht-Schwelle) · T3 Kill-Puff als Klumpen (3 Kuppeln, mehr Abstand)
+- **Ankündigung:** A1 Ausholklang-Platzhalter 0,8 s und ratternd, **L13 0,5 s dringend** · A2 Stauchen bei weiter Kamera kaum sichtbar · A3 Ringe überlagern sich, auf die zwei nächsten Gegner begrenzen
+- **Werkzeug:** W1 Hut verdeckt in der Nahkamera · W2 Neuladen nach dem Tod bricht Prüf-Clips ab · W3 Server-Warteschlange · W4 `soldier` → `soldier-r3d` · W5 Hash-Sperre `gunfight.v2.js`
