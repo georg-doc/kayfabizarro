@@ -8604,6 +8604,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-607",
+   "date": "2026-10-21",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Schritte nach Rig-Größe (Georg 21.10.): Rig_Large klingt schwerer und stampfender als Rig_Medium. Sofort per Faktor in der Schritt-Zuordnung (Tonhöhe x0,8, +3 dB, tiefe Körper-Ebene mit 20-40 ms Versatz, kleiner Kamera-Stoß nur nah und abschaltbar), danach eigener Satz heavy_steps_r1 (Gras, Stein, Sand, Holz, Rüstung, Landung).",
+   "values": {},
+   "owner": "WS-Audio · WS0 (Töne)",
+   "check": "Hörvergleich Medium vs. Large",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gewicht muss man hören; ein Faktor je Rig wirkt sofort, eigene Töne verfeinern.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-608",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "Companions (Georg 21.10.): Bleistift und Radiergummi (B46, Cast pencil/eraser) als protopische Werkzeug-Begleiter mit Pet-Logik (folgen hüpfend, warten, Joy/Scare-Reaktionen, nie im Weg, Teleport mit Puff bei großem Abstand), WS-NPC Phase F1; später F2 mit eigenem Go: Radiergummi radiert Goo-Flecken bzw. kleine Terrain-Stellen weg, Bleistift zeichnet 3D-Baupläne als Linien-Vorschau für Fluff-Bauten (V-533). Clips as-is, Daten kfb.companion/1.",
+   "values": {},
+   "owner": "WS-NPC",
+   "check": "F1-Clip: Begleiter folgen, reagieren, weichen aus",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die B46-Figuren haben schon die passenden Clips; als Begleiter tragen sie die protopische Werkzeug-Idee ins Spiel.",
+   "applies": "nach Phase E"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8691,7 +8721,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1058",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1059",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

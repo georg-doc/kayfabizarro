@@ -1,5 +1,24 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., spät) · Neu von Georg: schwere Schritte für große Figuren (WS-Audio, V-607) + Companions Bleistift und Radiergummi (WS-NPC, V-608)
+**WS-Audio · schwere Schritte für Rig_Large** (Black Knight, Demon Lord, Orc Brute, später Golem usw.):
+- Sie sollen schwerer und stampfender klingen als Rig_Medium.
+- **Sofort ohne neue Töne:** Faktor je Rig in der Schritt-Zuordnung. Large: Tonhöhe ×0,8, +3 dB, dazu eine tiefe Körper-Ebene (`creatures_r1` C01 clay_body_fall bzw. `debris_crash_r1` D06) mit 20–40 ms Versatz. Bei sehr großen Figuren ein kleiner Kamera-Stoß nur in der Nähe, abschaltbar.
+- **Danach:** eigener Satz `heavy_steps_r1` (Gras, Stein, Sand, Holz, Rüstungs-Klirren, Landung); WS0 erzeugt ihn nach Georgs Go.
+- Die Schritte hängen an der Gangphase wie bisher, kein eigener Takt.
+
+**WS-NPC · Phase F Companions** (nach E):
+- Bleistift und Radiergummi (WSB B46, Cast `pencil` bzw. `eraser`, ready; Clips Idle, Hop, Joy, Scare, Write bzw. Erase; Rig KFB_Squash mit Knochen `head`) werden **protopische Werkzeug-Begleiter**.
+- **F1 Pet-Logik:**
+  - folgen dem Spieler hüpfend mit Feder-Abstand (Hop), warten im Idle;
+  - weichen aus, freuen sich bei Fluff bzw. Treffern (Joy), erschrecken bei Gefahr (Scare);
+  - nie im Weg, Teleport hinter den Spieler bei großem Abstand mit Puff (V-499).
+- **F2 später, eigenes Go:**
+  - Radiergummi **radiert Goo-Flecken weg** (passt zum Dark-Fluffer-Reinigen) bzw. kleine Terrain-Stellen.
+  - Bleistift **zeichnet 3D-Baupläne** als Linien-Vorschau für Fluff-Bauten (Kayfabrizieren V-533).
+- Daten `kfb.companion/1` (Abstand, Hüpf-Rhythmus, Reaktionen), Clips as-is, keine neuen Assets.
+
+
 # NEU OBEN (21.10., ~21:00) · An WS-Audio (Status 2) und WS-NPC (Status 7)
 **An den Combat-AV-Prüfer:** L9 `mob_pop_to_skull` und alle anderen L1–L13 sind erzeugt, privater Branch `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` + `_lufs/`. Nr. 6 (b) und Nr. 7 (PASS mit TUNE) sind im Register vermerkt.
 
