@@ -3940,7 +3940,8 @@ ${window.KFB_FLUID.glsl}
           const k = (j * N + ii) * 4, lvH = a.lv + (b.lv - a.lv) * t, dp = a.dp + (b.dp - a.dp) * t, q2 = Math.min(1, d / hw)
           const bw = Math.max(3.2, hw * 0.6), tgt = d < hw ? lvH - 0.5 - (dp - 0.5) * (1 - q2 * q2) : lvH - 0.5 + 1.5 * ss(hw, hw + bw, d)   /* Bett bis zum Bandrand 0,5 m unter Wasser (das Band zeichnet die Kante, nicht die Dreiecke), Böschung über ≥ 3,2 m auf +1 m */, oW = D[k + 1], wet = d < hw + 0.3
           const kk = j * N + ii, dn = d / hw, both = wet && wetT[kk]   /* nächstes Flussstück bestimmt das Profil (relativer Abstand); wo beide Wasser führen, gewinnt das tiefere */
-          if (oW === 0 || (both ? tgt < D[k] / oW : dn < dist[kk])) { D[k] = tgt * w; D[k + 1] = Math.max(w, both ? oW : 0) === w ? w : oW; if (D[k + 1] !== w) D[k] = tgt * D[k + 1]; dist[kk] = dn; own[kk] = id; wetT[kk] = wet ? 1 : 0; D[k + 3] = wet ? lvH : -999 }
+          const oT = oW > 0 ? D[k] / oW : 0, win = oW === 0 || (both ? tgt < oT : wet ? true : wetT[kk] ? false : (w > 0.95 && oW > 0.95 ? tgt > oT : dn < dist[kk]))   /* Wasser schneidet durch Ufer; zwei Ufer: das höhere bleibt (Damm), in der Auslaufzone das nähere */
+          if (win) { D[k] = tgt * w; D[k + 1] = Math.max(w, both ? oW : 0) === w ? w : oW; if (D[k + 1] !== w) D[k] = tgt * D[k + 1]; dist[kk] = dn; own[kk] = id; wetT[kk] = wet ? 1 : 0; D[k + 3] = wet ? lvH : -999 }
           else if (w > oW) { D[k] = (D[k] / oW) * w; D[k + 1] = w } }   /* Gewicht darf wachsen, Profil bleibt beim näheren Stück */ } }
       for (let j = 1; j < N - 1; j++) for (let i = 1; i < N - 1; i++) { let m = 0; for (let b = -1; b <= 1; b++) for (let a = -1; a <= 1; a++) m = Math.max(m, D[((j + b) * N + i + a) * 4 + 1]); D[(j * N + i) * 4 + 2] = m }   /* Maske für den frühen Ausstieg */
       tex.needsUpdate = true; RIV.on = true; U.uRivO.value.set(RIV.ox, RIV.oz, RIV.size, 1); U.uRivV.value = ++RIV.v
