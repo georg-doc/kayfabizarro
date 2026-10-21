@@ -8563,7 +8563,7 @@
    "date": "2026-10-21",
    "area": "Kampf",
    "verdict": "PASS",
-   "text": "Combat-AV R1 (WS1-Prüfer, Georg nach Hörprobe): Klang je Waffe geschichtet PASS mit TUNE später (Anschlag tiefer statt Piu-Piu, kurzer Würfel-Klick als Körper-Ebene statt 1,4-s-Schütteln); Treffer als Knet-Masse und Kill-Puff PASS als Umschalter, der grüne Stern bleibt Standard; Gegner kündigt an PASS mit TUNE (A1-A3). Alle SFX-Sätze zusätzlich lautheitsnormiert auf -16 LUFS (lufs_set.py, m4a). Kamera-Nähe (C8) entscheidet Georg, WS0-Empfehlung: Nähe nur im Kampf.",
+   "text": "Combat-AV R1 (WS1-Prüfer, Georg nach Hörprobe): Klang je Waffe geschichtet PASS mit TUNE später (Anschlag tiefer statt Piu-Piu, kurzer Würfel-Klick als Körper-Ebene statt 1,4-s-Schütteln); Treffer als Knet-Masse und Kill-Puff PASS als Umschalter, der grüne Stern bleibt Standard; Gegner kündigt an PASS mit TUNE (A1-A3). Alle SFX-Sätze zusätzlich lautheitsnormiert auf -16 LUFS (lufs_set.py, m4a). Kamera-Nähe: nur im Kampf (Georg 21.10., Variante b), C8 außerhalb des Kampfs weiter 85 Prozent.",
    "values": {},
    "owner": "WS1-Prüfer · WSA (Einbau) · WS-Audio · WS0 (Töne)",
    "check": "Prototypen ws1/combat-av-r1, Einbau nach Auswahl",
@@ -8571,6 +8571,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Georgs Ohr hat in action entschieden; Lautheit je Klang statt Spitze macht die Mischung erst steuerbar.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-605",
+   "date": "2026-10-21",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Gemeinsamer Wind (Georg 21.10.): ein Windfeld mit Böen-Wellen für Gras-, Pflanzen- und Blumengruppen, Bäume, Staub und Fluff nach SPEC_ENVIRONMENT_KIT_R1 §5-§8 (Deformer, Wind-Gruppen, Büschel) und V-565/V-371/V-449/V-455; Gruppen weichen Figuren und Racern aus; GPU-Vertex-Shader, höchstens 1 ms. Wind als Wegweiser (Ghost of Tsushima, WS1 §97 Nr. 3): Böen laufen Richtung aktuelles Ziel, Schalter, Standard aus bis Georg es gesehen hat. WS-Audio koppelt Wind-Atmo an die Böenstärke. Am Kanon wird nichts geändert (Umsetzung vorhandener Regeln).",
+   "values": {},
+   "owner": "WS1-Lead · WS-Audio",
+   "check": "Video Wiese + Böe + Durchlaufen + Wegweiser an/aus, fps",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Regeln für Wind-Gruppen stehen seit Tagen in Spec und Kanon, gebaut sind sie noch nicht; Wind ist billige Immersion und kann zugleich führen.",
    "applies": "sofort"
   },
   {
@@ -8661,7 +8676,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1053",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1054",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

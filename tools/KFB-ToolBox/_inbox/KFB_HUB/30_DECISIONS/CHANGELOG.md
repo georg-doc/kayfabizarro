@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-605 Gemeinsamer Wind mit wiegenden Gruppen + Wind als Wegweiser (Schalter) an den WS1-Lead; Kamera-Nähe nur im Kampf (Georg, Combat-AV Nr. 6 Variante b). Combat-Sounds combat_av_fix_r1 erzeugt (42, davon 11 weiter fast stumm).
 - V-604 Combat-AV R1: Georgs Urteile (Klang je Waffe PASS/TUNE, Knet-Treffer als Umschalter, Ankündigung PASS/TUNE); alle 28 SFX-Sätze auf -16 LUFS als m4a im privaten Branch (lufs_set.py); Satz combat_av_fix_r1 (L1–L13 + 27 Neuaufnahmen) vorbereitet bis Georg-Go; WSA-Werkzeug-Fixes.
 - Befund: ws-npc/phase-a (öffentlich) enthält Kauf-Dateien (Farmer_B, ToySoldier, Rig_Medium_Simulation/Special); WS-NPC: keine weiteren, nichts selbst löschen, Entscheid Georg mit V-599.
 - WS0-Sounds ws_audio_gaps_r1 (20, Georg-Go): Racer-Schwebe-Schleifen Gras/Sand/Fels/Wasser, Drift + Laden, Luftbremse, Waten, Raketenflug, Bombenwurf, Aufprall Metall/Glas/Lehm, Trümmer-Ausklang, Domino, Laub, Dschungel-Nacht, Küstenvögel, trockener Donner; normalisiert, im privaten Branch.

@@ -1,16 +1,34 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., spät) · An den Lead: Gemeinsamer Wind mit wiegenden Gras-, Pflanzen- und Blumengruppen + Wind als Wegweiser (V-605, Georg 21.10.)
+**Use what works, nichts neu erfinden:** Die Regeln stehen schon in `CANON_3D/sources/SPEC_ENVIRONMENT_KIT_R1.md`:
+- §5 Cartoon-Deformer (Fuß fest, Krone biegt quadratisch, Wobble);
+- §6 Wind-Gruppen (Rule-of-Three-Gruppe mit gleicher Grundphase, Windfeld mit Böen als Wellen, bis 64 Gruppen als Uniform-Array bzw. Daten-Textur, Gruppe einzeln anstoßbar);
+- §7 Musik-Modus;
+- §8 Gras in Büscheln, ein Draw Call je Grasart.
+
+Dazu Kanon-Zeile V-565 (Materialcodes „wiegen in Wind-Gruppen“), V-371 (Fluff-Böe schüttelt eine Zone), V-449 und V-455 (ein gemeinsames Windfeld auch für Ballons und Requisiten) und dein §97 Nr. 3.
+- **Bauen auf terrain3:**
+  - ein Windfeld (Richtung, Stärke, Böen-Wellen) für Gras-, Pflanzen- und Blumengruppen, Bäume, Staub und Fluff;
+  - Gruppen weichen aus, wenn eine Figur durchläuft oder ein Racer vorbeifährt;
+  - alles im Vertex-Shader (GPU), keine CPU-Animation je Instanz.
+- **Wind als Wegweiser** (Ghost of Tsushima): Die Böen laufen sichtbar Richtung aktuelles Ziel (Quest, Scenelet, Diorama), lesbar über Grasbahnen und Blätter. Ein Schalter, Standard aus, bis Georg es gesehen hat.
+- **Ton:** WS-Audio koppelt den Wind-Atmo-Bus an die Böenstärke (V-458; Wind-Clips liegen bereit).
+- **Budget:** ≤ 1 ms je Bild für Wind und Gruppen, keine neuen Draw Calls je Gruppe.
+- **Abgabe:** kurzes Video aus der Spielkamera (Wiese mit Gruppen, eine Böe läuft durch, eine Figur läuft hindurch, Wegweiser an und aus) + fps.
+
+
 # NEU OBEN (21.10., spät) · An den Combat-AV-Prüfer: Antwort auf `WS1_COMBAT_AV_R1_RETURN.md` (V-604)
 Sehr guter Bericht: Einsatz 30–55 → 10–15 ms, Gegner-Bus, Kaskade, Georgs Urteile sauber festgehalten.
 1. **Lautheit statt Spitze erledigt:** Alle 28 Sätze liegen jetzt zusätzlich als `40_AUDIO/elevenlabs_r1/<set>_lufs/*.m4a` (AAC 128k, **−16 LUFS** je Einzelklang nach BS.1770, weicher Begrenzer auf −1 dBFS) mit `lufs_report.json` im privaten Branch. Werkzeug: `lufs_set.py`. Die `_norm/`-Ordner (nur Reports) bitte nicht mehr verwenden.
 2. **Praktisch stumme Clips** (Eingang < −38 LUFS) sind im Report erkennbar (`lufs_in`). Deine Liste stimmt; dazu kommen u. a. DF10, D05_c, K03_metal, R03_rock.
-3. **L1–L13 + Neuaufnahmen** (42 Clips, Satz `combat_av_fix_r1`): vorbereitet. Erzeugt wird nach Georgs Go; Ablage als `*_v2` bzw. `L01…L13`, gleich als `_lufs`. **L13 `mob_windup` ist dabei.**
+3. **L1–L13 + Neuaufnahmen** (42 Clips, Satz `combat_av_fix_r1`): **erzeugt** und im privaten Branch (+ `_lufs`). 11 Neuaufnahmen sind erneut fast stumm (u. a. M04_a, DF10, R03_rock); die gehen mit neuen Prompts in eine zweite Runde. Ablage als `*_v2` bzw. `L01…L13`, gleich als `_lufs`. **L13 `mob_windup` ist dabei.**
 4. **Georgs Urteile übernommen** (V-604):
    - Nr. 1 Klang je Waffe: PASS, TUNE später (K1 tiefer, K2 Würfel-Klick L6).
    - Nr. 4 + 8 Knet-Masse und Kill-Puff: PASS als Umschalter, der grüne Stern bleibt Standard (Georg 06.09.).
    - Nr. 3 Ankündigung: PASS, TUNE A1–A3.
    - Backlog übernehmen.
-5. **Nr. 6 Kamera und C8:** Das entscheidet Georg. WS0-Empfehlung: **(b) Nähe nur im Kampf**, C8 bleibt außerhalb des Kampfs bei 85 %.
+5. **Nr. 6 Kamera und C8: Georg hat entschieden: (b) Nähe nur im Kampf**, C8 bleibt außerhalb des Kampfs bei 85 %.
 6. **Werkzeug-Fixes W3/W4/W5:** gehen an WSA (`request_queue_size=256`, Brief-Korrektur `?actor=soldier-r3d`, Hash-Nachtrag für `gunfight.v2.js` beim Einbau).
 
 
