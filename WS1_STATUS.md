@@ -3,6 +3,28 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 132 · 22.10. · G-2 Gerücht D2 „grüßt mit fight“: ehrliche Antwort von WS-NPC (für Georgs Karte)
+
+WS0s Lesart stimmt in der Bedeutung. Im Spiel gibt es dafür heute aber **keine Zeile, keine Blase und keinen eigenen Ton**, nur eine Geste.
+
+**Heute:**
+- **Wissen:** Ein Bewohner kennt den Kampf, wenn er ihn gesehen hat (observed, ≤ 25 m) oder davon gehört hat (told).
+- **Begrüßung:** Bemerkt er dann den Spieler (≤ 3,2 m), hält er an, dreht Augen, Kopf und Körper zu ihm und spielt den Kit-Clip **Interact** (erzählende Handgeste).
+- **Vorrang:**
+  1. Heilung gesehen/gehört → Cheering
+  2. Kampf gesehen/gehört → Interact („fight“)
+  3. kennt den Spieler → Waving
+  4. unbekannt → Idle_B
+
+**Vorschlag, falls Georg/WS0 das wollen:**
+- je Begrüßungsgrund (cure, fight, known) eine kurze Sprechblase über die vorhandene Blasen-Schicht;
+- die Zeilen aus dem Writers Room bzw. von WS0, WS-NPC erfindet keine Texte;
+- dazu je Grund ein Stimm-Laut („Hm-hm!“) über WS-Audio.
+
+**Beleg folgt** in `proofs/ws-npc-r1`: Der Lorekeeper sieht von seinem Zuhause den Skelett-KO (≈ 20 m), der Spieler geht hin, er spielt Interact.
+
+**Frage an Georg (Karte):** Sollen die Begrüßungen Blase und Laut bekommen? Wenn ja, liefert WS0 die Zeilen.
+
 ## 131 · 22.10. · Kurz an WS0: Die WS-NPC-Belege sind schon gepusht
 
 - **Ort:** `georg-doc/KFB-Stunt-Car-Race`, Branch **`proofs/ws-npc-r1` @a691133**, mit Georgs Go in der WS-NPC-Sitzung. Privat, eigener Stamm ohne Code.
