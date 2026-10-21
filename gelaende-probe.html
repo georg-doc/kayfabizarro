@@ -180,6 +180,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="sgrad">Himmelsverlauf (Sonnenseite)</label><output id="o_sgrad"></output><input type="range" id="sgrad" min="0" max="1" step="0.05" value="0.6"></div>
         <div class="row"><label for="aurora">Polarlicht</label><select id="aurora"><option value="1">nachts</option><option value="2">immer</option><option value="0">aus</option></select></div>
         <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
+        <label class="check"><input type="checkbox" id="hero" checked> Heldenfarbe: Racer-Lack in KFB-Rot</label>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken am Himmel (3 Ebenen mit Parallaxe)</label>
         <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="4" selected>nur Kuppel (wie vorher)</option><option value="0">gemischt (3 Ebenen, Versuch)</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
@@ -218,7 +219,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
-<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @eac5cb0: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
+<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c2e46b8: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
 var KFBDrive = (function(exports, three) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 	//#region \0rolldown/runtime.js
@@ -679,6 +680,7 @@ var KFBDrive = (function(exports, three) {
 				});
 				d.squashV += .9 * clamp$1(vN / (12 * K), .3, 1.4);
 				d.y = want;
+				d.vyG = 0;
 				if (A3 && vN > LAND.bounceVN) d.vy = vN * LAND.bounce;
 				else {
 					d.vy = 0;
@@ -711,6 +713,7 @@ var KFBDrive = (function(exports, three) {
 		if (g?.floor != null && d.y < g.floor - .05 * K) {
 			d.y = g.floor;
 			if (d.vy < 0) d.vy = 0;
+			d.vyG = 0;
 			d.air = false;
 			d.rescues = (d.rescues || 0) + 1;
 		}
@@ -2096,7 +2099,8 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
         if(nb<0.5){ sv=9.0; } else { float gap=(sc.z-zb/nb)*395.0;   /* m zwischen Werfer und Empfänger (Schattenkamera nah 5, fern 400) */
           float rT=clamp(gap*0.035/0.0537, 0.9, 6.0);   /* Halbschatten ≈ 3,5 cm je Meter Abstand, mindestens ein Texel (5,4 cm) */
           for(int i=0;i<16;i++){ float fi=float(i); float r=sqrt((fi+0.5)/16.0)*rT/2048.0; float an=fi*2.3999632+rot; sv+=shBil(sc.xy+vec2(cos(an),sin(an))*r, sc.z-0.00015); } sv*=9.0/16.0; } }   /* Vogel-Scheibe, 16 Proben */
-      sv=clamp(sv/9.0,0.0,1.0); col=mix(mix(col*0.64, uContact, 0.3), col, sv); /* kräftiger, weiter im Palettenton (KayKit-Kontrast, nie schwarz) */   /* heller, fügt sich ein */ } }   // echter Schatten, eingefärbt (kein Schwarz)
+      sv=clamp(sv/9.0,0.0,1.0); vec3 shC=mix(col*0.64, uContact, 0.3), shF=mix(mix(uA_low, uA_mid, 0.5)*0.6, uContact, 0.3); shC=mix(shC, shF*(0.85+0.3*dot(col,vec3(0.333))/max(dot(mix(uA_low,uA_mid,0.5),vec3(0.333)),0.05)), uOrg>0.5 && uFS>4.5 ? 0.6 : 0.0);   /* Schatten als ruhige, gemalte Fläche: die Fließfarben-Bänder ziehen sich darin zum Palettenschatten zusammen (Georg 21.10.: Farbflächen liefen unter dem Schatten durch, wirkte buggy) */
+      col=mix(shC, col, sv); /* kräftiger, weiter im Palettenton (KayKit-Kontrast, nie schwarz) */   /* heller, fügt sich ein */ } }   // echter Schatten, eingefärbt (kein Schwarz)
     if(uWater>0.005 && uGridWorld<0.5){ float wl=uWater*uAmp+0.15; float dz=vH-wl; float fw=fwidth(vH)*1.2+1e-3;
       /* Fluid (WASSER_R1 Stufe 1): unter dem Spiegel gestufte Tiefenfarbe (Grund wird zur Tiefe), darüber ein nasses, dunkleres Uferband, das atmet –
          es nimmt Licht und Schatten an wie Boden (kein heller Streifen auf eigener Ebene mehr) */
@@ -2511,7 +2515,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'cstretch', 'sunel', 'sgrad', 'gs'];
-  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
+  const BOOL = ['hero', 'strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards', 'flowdown'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -2528,6 +2532,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
   function pushUniforms() {
+    try { heroApply() } catch (e) {}   /* beim ersten Aufruf gibt es noch keinen Wagen */
     U.uScale.value = S.scale; U.uAmp.value = S.amp; U.uOct.value = S.oct; U.uRidge.value = S.ridge; U.uWarp.value = S.warp; U.uMacro.value = S.macro; U.uValley.value = S.valley; U.uPlateau.value = S.plateau;
     U.uSteps.value = S.steps; U.uSharp.value = S.sharp; U.uSeed.value.set(S.sx, S.sy); U.uWater.value = S.water; U.uSoft.value = S.soft; U.uCliff.value = 1 - Math.cos(S.cliff * Math.PI / 180);
     U.uStrata.value = S.strata ? 1 : 0; U.uToon.value = S.toon ? 1 : 0; U.uMix.value = S.mix ? 1 : 0; U.uGrid.value = S.grid ? 1 : 0;
@@ -2675,6 +2680,18 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(0.25, 'rgba(255,255,255,0.75)'); r.addColorStop(0.6, 'rgba(255,255,255,0.18)'); r.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64)
     const t = new THREE.CanvasTexture(c); return t })();
   let carHolder = null;
+  /* Heldenfarbe (Georg 21.10., Audit D 8): der Racer war das unbunteste Objekt im Bild. Der dominante Lackton der Textur wird einmal je Wagen in KFB-Rot
+     umgefärbt (Helligkeit bleibt, Sättigung mindestens 0,55) – nur auf der Textur, kein Shader-Aufwand. Schalter „Heldenfarbe“. */
+  const HERO = { hex: '#d8262e' };
+  function heroColor(scn) { scn.traverse((m) => { if (!m.isMesh) return; for (const mt of [].concat(m.material)) { const mp = mt.map, img = mp && mp.image; if (!img || !img.width || mt.userData.heroDone) continue
+      try { const W = Math.min(1024, img.width), H = Math.round(img.height * W / img.width), cv2 = document.createElement('canvas'); cv2.width = W; cv2.height = H; const cx = cv2.getContext('2d'); cx.drawImage(img, 0, 0, W, H)
+        const id = cx.getImageData(0, 0, W, H), d = id.data, hist = new Float32Array(36), hsv = (r, g, b) => { const mx = Math.max(r, g, b), mn = Math.min(r, g, b), c = mx - mn; let h = 0; if (c > 1e-6) h = mx === r ? ((g - b) / c) % 6 : mx === g ? (b - r) / c + 2 : (r - g) / c + 4; return [(h * 60 + 360) % 360, mx > 0 ? c / mx : 0, mx] }
+        for (let i = 0; i < d.length; i += 16) { const [h, sa, v] = hsv(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255); if (sa > 0.12 && v > 0.25) hist[Math.floor(h / 10) % 36] += sa }
+        let pk = 0; for (let i = 1; i < 36; i++) if (hist[i] > hist[pk]) pk = i; const hc = pk * 10 + 5, hero = new THREE.Color(HERO.hex), hh = {}; hero.getHSL(hh)
+        for (let i = 0; i < d.length; i += 4) { const [h, sa, v] = hsv(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255), dh = Math.abs(((h - hc + 540) % 360) - 180); if (sa < 0.08 || v < 0.12 || dh > 32) continue
+          const k = 1 - Math.max(0, (dh - 22) / 10), c = new THREE.Color().setHSL(hh.h, Math.max(0.55, sa * 1.3), Math.min(0.62, v * 0.62)); d[i] = d[i] + (c.r * 255 - d[i]) * k; d[i + 1] = d[i + 1] + (c.g * 255 - d[i + 1]) * k; d[i + 2] = d[i + 2] + (c.b * 255 - d[i + 2]) * k }
+        cx.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(cv2); t.flipY = mp.flipY; t.encoding = mp.encoding; t.wrapS = mp.wrapS; t.wrapT = mp.wrapT; t.anisotropy = mp.anisotropy; mt.userData.mapOrig = mp; mt.userData.mapHero = t; mt.userData.heroDone = true; mt.map = S.hero === false ? mp : t; mt.needsUpdate = true } catch (e) { console.warn('heroColor', e) } } }) }
+  function heroApply() { if (!carHolder) return; carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) if (mt.userData.heroDone) { mt.map = S.hero === false ? mt.userData.mapOrig : mt.userData.mapHero; mt.needsUpdate = true } }) }
   async function loadCar(id) {
     const info = RACERS.find((r) => r.id === id) || RACERS[0]; loading = true; loadErr = '';
     try {
@@ -2684,7 +2701,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
         const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
         scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
-        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm) }); cache.set(info.id, scn);
+        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm) }); heroColor(scn); cache.set(info.id, scn);
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
@@ -2952,7 +2969,9 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const nf = TV.f.set(0, 0, 1).applyQuaternion(P.qTilt), nr = TV.x.set(1, 0, 0).applyQuaternion(P.qTilt); P.vPitch = Math.asin(Math.max(-1, Math.min(1, nf.y))); P.vRoll = -Math.asin(Math.max(-1, Math.min(1, nr.y)))
   }
   const PARK = { t: 0 };
+  const FX = { evq: [], hit: 0, trauma: 0, sy: 0, syV: 0, bz: 0 };   /* Spielgefühl (Georg 21.10., Audits A+D): Hit-Stop, Kamera-Ruck, Cartoon-Verformung */
   function step(dt) {
+    if (FX.hit > 0) { FX.hit -= dt; return }   /* Hit-Stop: 40–70 ms Standbild der Physik bei harter Landung/Aufprall */
     applyTempo();
     const fin = { gas: !!(keys.KeyW || keys.ArrowUp), brake: !!(keys.KeyS || keys.ArrowDown), left: !!(keys.KeyA || keys.ArrowLeft), right: !!(keys.KeyD || keys.ArrowRight),
       jump: !!keys.Space, boost: !!(keys.ShiftLeft || keys.ShiftRight), noseUp: !!(keys.ArrowUp && NOSE.up), noseDown: !!(keys.ArrowDown && NOSE.down), mousePitch: null }
@@ -2961,11 +2980,17 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     while (dAcc >= DSTEP) { dAcc -= DSTEP
       const flew = KD.racerFlightStep(F, D, fin, DSTEP, FENV)
       if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); if (S.rampfly) KD.racerAfterK2t(F, D)
+        for (const e of D.events) FX.evq.push(e)   /* k2t leert d.events je Teilschritt: hier sammeln, sonst gehen Landungen/Aufpralle verloren (Audit D) */
         /* Parkbremse (Georg 21.10.: Wagen rollte nach dem Laden weg, stand dann am Stein und zeigte 5 km/h): ohne jede Eingabe, am Boden, Hang bis ~35° → sofort stehen */
         const idle = !fin.gas && !fin.brake && !fin.left && !fin.right && !fin.jump && !keys.KeyQ && !keys.KeyE; PARK.t = idle ? PARK.t + DSTEP : 0
         if (idle && PARK.t > 0.15 && !D.air && !F.st && (D.up ? D.up[1] : 1) > KD.SLOPE.flatNy) { D.speed *= 0.6; D.latV = (D.latV || 0) * 0.6; if (Math.abs(D.speed) < 0.05) D.speed = 0 } }   // Rampen-Abflug nur wie im Spiel mit #fly (sonst hob der Wagen an jeder steilen Düne ab); Doppel-Leertaste fliegt immer
       if (!Number.isFinite(D.x + D.y + D.z)) { placeCar(P.x, P.z); break } }
     syncP(dt)
+    for (const e of FX.evq) { const k = e.strength ?? 0.5
+      if (e.type === 'landing') { if (k > 0.45) FX.hit = Math.max(FX.hit, 0.04 + 0.03 * k); FX.trauma = Math.min(1, FX.trauma + 0.55 * k); FX.syV -= 3.5 * Math.max(0.3, k) }
+      else if (e.type === 'railImpact') { if (k > 0.5) FX.hit = Math.max(FX.hit, 0.06); FX.trauma = Math.min(1, FX.trauma + 0.6 * k) }
+      else if (e.type === 'takeoff') FX.syV += e.jump ? 3.2 : 2.0 }
+    FX.evq.length = 0
     const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : fin.boost; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : 1
     P.thrust = P.fly ? 0.45 + (P.boosting ? 0.55 : 0) : (fin.gas ? 0.7 : 0) + (P.boosting ? 0.5 : 0) + 0.15;
   }
@@ -3065,7 +3090,9 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
     carRoot.position.set(0, P.y, 0); carRoot.rotation.y = P.yaw;   // wie im Spiel: Ursprung = Unterseite auf Fahrhöhe
     if (P.qTilt) tilt.quaternion.copy(P.qTilt); else tilt.rotation.set(-P.vPitch, 0, P.vRoll);
-    const s = P.sq; squash.scale.set(1 / Math.sqrt(1 + s), 1 / Math.sqrt(1 + s), 1 + s);
+    FX.syV += (-FX.sy * 90 - FX.syV * 11) * Math.min(dt, 0.05); FX.sy = Math.max(-0.3, Math.min(0.3, FX.sy + FX.syV * Math.min(dt, 0.05)));   /* Feder: Stauchen/Strecken klingt in ~0,3 s aus */
+    FX.bz += ((P.boosting && !P.fly ? 0.1 : 0) - FX.bz) * Math.min(1, dt * 6);
+    { const s = P.sq, sy = FX.sy, bz = FX.bz, q = 1 / Math.sqrt(1 + s), w = 1 / Math.sqrt((1 + sy) * (1 + bz)); squash.scale.set(q * w, q * (1 + sy) / Math.sqrt(1 + bz), (1 + s) * (1 + bz) / Math.sqrt(1 + sy)) }   /* Cartoon-Verformung, volumentreu */
     const t = now / 1000;
     for (const p of plumes) {
       if (p.type === 'fan') { p.ring.rotation.z += dt * (6 + 30 * (P.thrust || 0)); p.ring.material.opacity = 0.25 + 0.5 * (P.thrust || 0); continue }
@@ -3096,7 +3123,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     } else {
       U.uFogNear.value = S.rings ? 1200 : 170; U.uFogFar.value = S.rings ? 4500 : 292; // Nebel voll VOR der Geländekante (300 m bzw. 4,8 km)
       camera.fov = 55 + Math.min(18, Math.abs(P.vf) * 0.06); camera.updateProjectionMatrix(); // FOV-Kick: mehr Tempo, weiterer Blick
-      FCAM.update(dt, camera, { target: FCAMV.set(0, P.y + LIFT.cy, 0) /* ohne Schwebe-Wippen (Georg: Kamera springt im Stand) */, heading: P.yaw, moving: Math.abs(P.vf) > 0.6 })   /* Kamera aus dem Spiel (followCam C1/V-408) */
+      FCAM.update(dt, camera, { target: FCAMV.set(0, P.y + LIFT.cy, 0) /* ohne Schwebe-Wippen (Georg: Kamera springt im Stand) */, heading: P.yaw, moving: Math.abs(P.vf) > 0.6 })
+      FX.trauma = Math.max(0, FX.trauma - dt * 1.4); { const tq = FX.trauma * FX.trauma, tt = now / 1000; if (tq > 1e-4) { camera.position.x += Math.sin(tt * 47.1) * 0.35 * tq; camera.position.y += Math.sin(tt * 53.7 + 1.3) * 0.28 * tq; camera.position.z += Math.sin(tt * 41.3 + 2.1) * 0.35 * tq; camera.rotation.z += Math.sin(tt * 37.9) * 0.03 * tq } }   /* Kamera-Ruck nach Trauma² (nur harte Landung/Aufprall) */   /* Kamera aus dem Spiel (followCam C1/V-408) */
     }
     if (window.__camOverride) window.__camOverride(camera, P);   // Prüfhilfe: freie Kamera
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
