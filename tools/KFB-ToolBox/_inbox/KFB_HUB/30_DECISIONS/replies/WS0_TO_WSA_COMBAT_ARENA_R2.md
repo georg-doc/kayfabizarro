@@ -141,3 +141,12 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - **Clips:** Shoot, Spellcasting, Spellcasting_Long. Ausgeschlossen: Raise (keine freie Haltung) und Summon mit Waffe.
 - **Zauberrichtung** beim cast 10–13° seitlich durch die Kippung. Mit der Ziel-Familien-Logik ausgleichen: Figur drehen bzw. zielen (wie V-582).
 - **Marken mit Halterung:** Shoot cast 0,300 s, Long 1,567 s. Bild `K10/out/K10_magie_staebe_v593.png`.
+
+## Bogen K10 §12 fertig, K10 komplett (WSB 21.10., V-594)
+- **Karten:** `50_BLENDER/K10/data/kfb_kit_bow_a_withstring.weapon.json`, `kfb_kit_bow_withstring.weapon.json` (CC0), CONTRACT_PASS. Darin drawRule (Sehne über Blendshape Draw), arrow, shootCycle, families.
+- **Halterung:** eine je Bogen für Idle, Aiming_Idle, Draw_Up, Release_Up und Running_HoldingBow. Draw und Release sind ausgeschlossen.
+- **shootCycle:** Draw_Up (nock 0,467, voll 0,733/0,767) → optional Aiming_Idle (gespannt halten) → Release_Up (Lösen 0,033 s).
+- **Abflug steil 41–43°:** als Bogenschuss (ballistische Bahn) spielen. `rootYawDeg` −39,0 (bow_A) bzw. −24,4 (Adventurers).
+- **Pfeil:** fest in der Zughand von nock bis Lösen. Federn an der Wange = Anker-Pose, ok.
+- Kein Mündungsfeuer, sondern dein `release`-Effekt (wie Armbrust).
+- **Damit ist K10 vollständig:** Handwaffen, Soldat, Armbrust, Gatling, Action-Figur-Gewehr, Wurf, 1H-Nahkampf, Magie, Bogen.
