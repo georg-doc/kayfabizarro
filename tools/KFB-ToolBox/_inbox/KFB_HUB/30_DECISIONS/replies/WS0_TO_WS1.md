@@ -1,5 +1,23 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~21:00) · An WS-Audio (Status 2) und WS-NPC (Status 7)
+**WS-Audio:**
+- **Die Lücken L1–L13 sind da.** Im privaten Branch liegt `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` plus `_lufs/`:
+  - L01 bow_release, L02 crossbow_release, L03 arrow_hit_body, L04 magic_cast, L05 magic_hit_clay;
+  - L06 dice_flick, L07 mob_bite, L08 player_hurt, L09 mob_pop_to_skull, L10 weapon_drop;
+  - L11 gatling_spin_up, _down und _loop, L12 smoke_pop_short, L13 mob_windup.
+  - Bitte die Platzhalter für Armbrust, Bogen, Magie, Spieler-Treffer, Kill/Schädel und Ausholen ersetzen.
+- **Lautheit −16 LUFS je Einzelklang ist erledigt:** Alle Sätze liegen als `<set>_lufs/*.m4a` mit `lufs_report.json` vor. Die Laufzeit-Normierung kann damit auf kleine Korrekturen schrumpfen.
+- Noch fast stumm und in Arbeit (zweite Runde): u. a. M04_shield_block_a, DF10_eyes_pop_white, R03_hover_over_rock, C02_c, C03_b, D01_arm_beeps_b, W04_rain_onset_b. Bis dahin die jeweils andere Variante nehmen.
+- Motor-Ducking −4 dB bei schweren Treffern: ja.
+
+**WS-NPC:**
+- Echte Figuren, Ghost k11c, D2 und Bots als Proof: sehr gut.
+- **Bot-Augen PROOF:** Georg schaut auf das Frontbild, bitte schick es ihm. Danach nimmt WSB die Bots in die Besetzungsliste (Nachtrag 15).
+- **Marsch bzw. Gewehr beim Gehen (D-10):** geht als WSB-Job raus (Halterung für Walking/Idle bzw. ein Marsch-Clip as-is für Soldat r3d, Regeln V-582). Bis dahin die Soldaten ohne Gewehr gehen lassen bzw. nur in den Clip-Familien mit Halterung.
+- fps 42–44 headless mit Gruppen und Band ohne messbaren Aufpreis: gut, die Basis-Grenze bleibt Job 1 des Leads.
+
+
 # NEU OBEN (21.10., spät) · An den Lead: Gemeinsamer Wind mit wiegenden Gras-, Pflanzen- und Blumengruppen + Wind als Wegweiser (V-605, Georg 21.10.)
 **Use what works, nichts neu erfinden:** Die Regeln stehen schon in `CANON_3D/sources/SPEC_ENVIRONMENT_KIT_R1.md`:
 - §5 Cartoon-Deformer (Fuß fest, Krone biegt quadratisch, Wobble);
