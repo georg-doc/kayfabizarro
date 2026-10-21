@@ -3,6 +3,52 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 120 · 21.10. · Probe: Leistung −7/−12 ms (Prüfer C, D1–D4), Spawn-Plattform, kurze Speedlines, Handy-Panel · Spiegel terrain/439 @4c6ec5a (Weltstand)
+
+### Probe (ws1/preview @5c77bcc, Artefakt v41)
+- **Leistung (Job 1), nach `research/audits/CODE_PERF_R1.md`:**
+  - D1: Der Wagen nutzt eine Bodenebene je Bild statt der vollen Höhenfunktion je Vertex (64k Vertices).
+  - D2: Brösel und Felsblöcke sind indiziert (etwa 6× weniger Vertex-Aufrufe, gleiches Bild).
+  - D3: Die Talkrümmung wird nur noch bei Formlogik v4 gerechnet.
+  - D4: Die Ufer-Höhe je Pixel wird nur noch im Umkreis von 140 m gerechnet.
+  - Der verworfene `tip`-Abgleich in der Physik ist entfernt.
+  - **A/B in Georgs Werten** (1440×900, 3× abwechselnd, Median): Fahrt 44,4 → 37,1 ms, Übersicht 61,5 → 48,9 ms. Die anderen Sitzungen teilen sich die GPU, die Absolutwerte streuen also.
+  - Die Wagen-Erdung am 15°-Hang ist im Standbild gleich.
+- **Leistungsstufen neu nach Prüfer C §4:**
+  - Schatten, Etherington, Kulissen und Himmel v2 bleiben in allen Stufen an (zusammen < 2,5 ms).
+  - Hoch = mit Retina-Schärfe. Mittel (empfohlen) = alles an, normale Schärfe. Niedrig = wie Mittel, ohne Brösel und Steinband.
+- **Noch offen aus dem Bericht:**
+  - D5: Amphitheater-LOD auf etwa 60k Dreiecke, ca. −3 ms. Braucht das Asset, eventuell als Job über den Mac mini.
+  - Höhenkarte backen, der große Hebel für die Übersicht.
+  - F4: Standbild beim Umschalten der Schatten.
+  - F5: `__syncDio` bei jedem Regler-Ereignis.
+- **Speedlines (QA P2-4):**
+  - Die Länge folgt jetzt dem Weg (≤ 0,2 × Kameraabstand) statt der Zeit.
+  - Die Linien verjüngen sich zur Spitze.
+  - Im unteren Bildviertel und 2,5 m vor der Kameraebene sind sie ausgeblendet.
+  - Ergebnis: kurze Schlieren an den Heckkanten, keine Drähte mehr bis zum Bildrand. Test `probe/tests/speedlines.mjs` mit Georgs Werten.
+- **Spawn-Plattform (QA P2):** Der Wagen startete bei manchen Rezepten an Hängen über 35° und rutschte weg. Neu ist ein flacher Diorama-Anker `SPAWN_A` (R 5 m, Übergang 7 m) am Startpunkt. Dazu `settleCar()`: Ist der Startpunkt steiler als 35°, setzt die Probe den Wagen an den nächsten Punkt mit höchstens 30°. Spawn-Test über alle 6 Rezepte: PASS.
+- **Tempo-Anzeige:** Die Beschriftung rechnet jetzt aus den echten Spielwerten (Spiel: 96 km/h, Boost 114). Vorher standen dort feste Zahlen.
+- **Handy-Panel (QA P2-6):** Bei 390 px lief das Bedienfeld seitlich aus dem Bild, die Kamera-Knöpfe waren nicht erreichbar. Ursache: Die Browser-Vorgabe `min-width: min-content` bei `fieldset` ließ die Rasterspalte wachsen. Behoben mit `minmax(0,1fr)` und `min-width: 0`. Gemessen bei 390 px: Dokumentbreite 390 = Fensterbreite, Kamera-Knöpfe bei x 302–361. Bei 1100 px ebenso ohne Überlauf.
+- **O-Town-Platz:** Die Terrassen sind flach (Disco 2 cm, Band 0). Die Anker DISCO_A, BAND_A und SPAWN_A laufen über das Diorama-Ankersystem (bis 8 Anker; JS- und Shader-Höhen gleich).
+
+### Spiel (ws1/terrain-439)
+- Gespiegelt ist `terrain/439 @4c6ec5a` (Spiegel `ws1/terrain-439` @f74f375):
+  - `src/world/worldSave.js`: `kfb.world-save/1` mit NPC-Belegen nach dem Schema von WS-NPC. Test `worldSave` mit 12 Prüfungen PASS.
+  - `createContactAO` ist aus M1 entfernt (V-587).
+- **Volle Testreihe `PW_GPU=1 npm test`:** alles PASS bis auf zwei Fälle:
+  - `c2` fiel einmal aus, im Einzellauf PASS (GPU-Last durch die Parallelsitzungen).
+  - `orbit calmAfterRelease` fällt auch auf dem Basisstand eac5cb0 aus. Das ist eine Frage der Umgebung, kein Rückschritt.
+
+### Offen
+- **Bitte an WS0 (unverändert seit §118/§119):**
+  - `60_CAST/cast.r1.json` und `clips.r1.json` sowie Farmer B (GLB, Augenprofil, Figurenkarte) nach `~/kfb-ws1/private/cast/` kopieren.
+  - K4/K5 nach `~/kfb-ws1/private/`.
+  - Nur lokal, nicht in Git. Ohne diese Dateien bleiben bei WS-NPC A2–A5 und die Figuren im Dioramen-Plan liegen.
+- **Leistung:** Georgs Messwerte vom Knopf `#bench` stehen noch aus. Prüfer C trägt die Spiel-Messung in seinem §7 nach.
+- **Als Nächstes:**
+  - Dioramen-Plan Schritte 4–6: Band-Details, Übergänge, Belegbilder mit Grau-/Daumennagel-Prüfung.
+
 ## 119 · 21.10. · WS-NPC (Abschnitt für die parallele Sitzung) · kfb.world-save/1 steht · Spiegel terrain/439
 
 ### WS-NPC
