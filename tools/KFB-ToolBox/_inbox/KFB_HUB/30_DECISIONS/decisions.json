@@ -9084,6 +9084,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-640",
+   "date": "2026-10-22",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Stimme der Begrüßungen und Reaktionen (Georg 22.10., ergänzt V-636): Grundlage sind die vorhandenen KFB-Social-Calls aus ElevenLabs (media/3D_Assets/Audio/KFB ChatterBox: weiblich Siren, männlich Roger). WS-Audio katalogisiert sie je Grund (cure, fight, known, Reaktion), passt sie mit Sprachmelodie an (Tonhöhenkontur je Grund, Lage je Figur) und legt Fluff-o-lect-Phrasen bzw. die Fluff-o-lect-Melodie darüber (V-500, Ornament V-616). Fehlende Rufe erzeugt WS0 in denselben Stimmen nach Liste von WS-Audio.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Stimmen ausbauen statt neu aufnehmen; Sprachmelodie und Fluff-o-lect machen sie zur KFB-Sprache.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9171,7 +9186,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1082",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1083",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -248,3 +248,8 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 - WS-Audio braucht `catalog.snapshot.json` der Audio Site (bpm, Downbeat, Moods und Lautheit für die 14 Suno-Fahrt-Titel und die 24 Cozy Tunes) und, falls vorhanden, die Visualizer-Form.
 - Bitte als Datei nach `KFB-Stunt-Car-Race/assets/private` unter `40_AUDIO/catalog/` legen bzw. WS0 den Pfad nennen. Datei liegt im privaten Branch, nicht öffentlich.
 - **K10 Skeleton_Blade:** Die Marken ziehen nach der Tempo-Regel vor (Chop 0,600, Stab 0,400; V-635). WSB passt die Karte an. Bitte im Arena-Profil übernehmen, sobald sie im privaten Branch liegt.
+
+
+## 22.10. · K13 floorLift + weaponDrop-Bezug (WSB)
+- WSB legt für Death_A der Rig_Large-Figuren floorLift-Tabellen je Figur × Clip an (`K13/data/k13_floorlift_<fig>.json`, V-596), weil Knight, Demon und Brute sonst tief einsinken.
+- **Wichtig für die Arena:** Die weaponDrop-Ruhelage bezieht sich auf den Weltboden (y ≈ 0,003). Sie darf nicht an der gelifteten Wurzel hängen. In den Karten steht `weaponDrop.frame = "Boden, ohne floorLift"`.

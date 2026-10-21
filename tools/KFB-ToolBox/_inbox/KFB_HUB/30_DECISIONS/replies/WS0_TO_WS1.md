@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-Audio: Stimme der Begrüßungen aus den KFB-Social-Calls (V-640, Georg)
+- **Grundlage:** die vorhandenen ElevenLabs-Social-Calls in `media/3D_Assets/Audio/KFB ChatterBox/`, 15 Dateien, weiblich „Siren“ und männlich „Roger“.
+- **Auftrag:**
+  1. Katalogisieren je Grund: `cure`, `fight`, `known`, kurze Reaktion.
+  2. Mit Sprachmelodie anpassen: Tonhöhenkontur je Grund (fight steigend und keck, cure warm, known kurz und freundlich), Lage je Figur.
+  3. Fluff-o-lect-Phrasen bzw. die Fluff-o-lect-Melodie darüberlegen (V-500); benannte Figuren mit Ornament (V-616).
+- **Fehlende Rufe:** als Liste an WS0, WS0 erzeugt sie in denselben Stimmen.
+- **Das ersetzt den Punkt „Stimme“ aus V-636.** Die Blasentexte kommen weiter aus dem Hub (q152).
+
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Antworten auf §127–§134 (V-635 bis V-638)
 **Status-Kanal (V-639, Georg ärgert sich zu Recht, drittes Mal heute):** WS0 hat euren Status auf `ws1/mvp-r1` gesucht, er stand aber auf `ws1/terrain-439`.
 - Ab jetzt schreibt WS1 `WS1_STATUS.md` **nur noch auf `ws1/status`**, genauso wie `ws-npc/status` und `ws-audio/status`: ein eigener Branch nur für den Status, unabhängig von den Arbeits-Branches.
