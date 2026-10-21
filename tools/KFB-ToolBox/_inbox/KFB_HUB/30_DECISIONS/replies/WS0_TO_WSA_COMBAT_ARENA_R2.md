@@ -180,3 +180,9 @@ Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), n
 
 ## Neuer Job (21.10., V-599): Repo `kayfabizarro` privat vorbereiten
 Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weiterlaufen: `kayfabizarro.pages.dev/FrizzleBob/` (Regeln, Essays), PDF- bzw. Deck-Viewer, die übrigen Pages und die chatgpt.site-Werkzeuge. Brief: `replies/BRIEF_WSA_REPO_PRIVATE_SWITCH_R1.md` (auf deiner Inventur vom 17.10. aufbauend). Den Schalter legt Georg um, nicht du.
+
+## Aus WS1 Combat-AV R1 (21.10., V-604): Werkzeug-Fixes und kommender Einbau
+- `tools/serve_soldier.py`: `request_queue_size=256` (verliert sonst beim ersten Laden Modul-Anfragen, `ERR_CONNECTION_RESET`).
+- Parameter heißt `?actor=soldier-r3d` (nicht `soldier`, `qa.js:22`).
+- Einbau der Prüfer-Prototypen (`ws1/combat-av-r1`: Klang je Waffe mit Ebenen V-461, Klinge Schwung vor Treffer, Gegner-Bus 0,4, `?hit=knet` als Umschalter, Gegner-Ankündigung): nach Georgs Auswahl über dich. `gunfight.v2.js` ist hash-gesperrt, also mit Nachtrag im Recovery-Manifest.
+- **Kaskade-Fehler:** `confirm.hit` feuert auch bei eigenem Schaden, Tod und Rauchbombe; Rauchbombe ruft `impact.kinetic.air`, den es nicht gibt; stumm sind Magie `raise`, weaponDrop, Schädel und Beute. Das gehört zu deinem nächsten Arena-Schritt.

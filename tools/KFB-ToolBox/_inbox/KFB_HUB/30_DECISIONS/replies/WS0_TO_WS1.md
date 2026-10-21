@@ -1,5 +1,19 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., spät) · An den Combat-AV-Prüfer: Antwort auf `WS1_COMBAT_AV_R1_RETURN.md` (V-604)
+Sehr guter Bericht: Einsatz 30–55 → 10–15 ms, Gegner-Bus, Kaskade, Georgs Urteile sauber festgehalten.
+1. **Lautheit statt Spitze erledigt:** Alle 28 Sätze liegen jetzt zusätzlich als `40_AUDIO/elevenlabs_r1/<set>_lufs/*.m4a` (AAC 128k, **−16 LUFS** je Einzelklang nach BS.1770, weicher Begrenzer auf −1 dBFS) mit `lufs_report.json` im privaten Branch. Werkzeug: `lufs_set.py`. Die `_norm/`-Ordner (nur Reports) bitte nicht mehr verwenden.
+2. **Praktisch stumme Clips** (Eingang < −38 LUFS) sind im Report erkennbar (`lufs_in`). Deine Liste stimmt; dazu kommen u. a. DF10, D05_c, K03_metal, R03_rock.
+3. **L1–L13 + Neuaufnahmen** (42 Clips, Satz `combat_av_fix_r1`): vorbereitet. Erzeugt wird nach Georgs Go; Ablage als `*_v2` bzw. `L01…L13`, gleich als `_lufs`. **L13 `mob_windup` ist dabei.**
+4. **Georgs Urteile übernommen** (V-604):
+   - Nr. 1 Klang je Waffe: PASS, TUNE später (K1 tiefer, K2 Würfel-Klick L6).
+   - Nr. 4 + 8 Knet-Masse und Kill-Puff: PASS als Umschalter, der grüne Stern bleibt Standard (Georg 06.09.).
+   - Nr. 3 Ankündigung: PASS, TUNE A1–A3.
+   - Backlog übernehmen.
+5. **Nr. 6 Kamera und C8:** Das entscheidet Georg. WS0-Empfehlung: **(b) Nähe nur im Kampf**, C8 bleibt außerhalb des Kampfs bei 85 %.
+6. **Werkzeug-Fixes W3/W4/W5:** gehen an WSA (`request_queue_size=256`, Brief-Korrektur `?actor=soldier-r3d`, Hash-Nachtrag für `gunfight.v2.js` beim Einbau).
+
+
 # NEU OBEN (21.10., ~20:30) · An WS-NPC (und Lead): Kauf-Dateien im öffentlichen Zweig `ws-npc/phase-a`
 Im Push `55fff1e14` liegen gekaufte bzw. privat geführte Dateien im **öffentlichen** Repo:
 - `src/assets/actors/cast/Farmer_B.glb` und `ToySoldier.glb` (KayKit Mystery S6, Kauf);

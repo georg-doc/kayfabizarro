@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-604 Combat-AV R1: Georgs Urteile (Klang je Waffe PASS/TUNE, Knet-Treffer als Umschalter, Ankündigung PASS/TUNE); alle 28 SFX-Sätze auf -16 LUFS als m4a im privaten Branch (lufs_set.py); Satz combat_av_fix_r1 (L1–L13 + 27 Neuaufnahmen) vorbereitet bis Georg-Go; WSA-Werkzeug-Fixes.
 - Befund: ws-npc/phase-a (öffentlich) enthält Kauf-Dateien (Farmer_B, ToySoldier, Rig_Medium_Simulation/Special); WS-NPC: keine weiteren, nichts selbst löschen, Entscheid Georg mit V-599.
 - WS0-Sounds ws_audio_gaps_r1 (20, Georg-Go): Racer-Schwebe-Schleifen Gras/Sand/Fels/Wasser, Drift + Laden, Luftbremse, Waten, Raketenflug, Bombenwurf, Aufprall Metall/Glas/Lehm, Trümmer-Ausklang, Domino, Laub, Dschungel-Nacht, Küstenvögel, trockener Donner; normalisiert, im privaten Branch.
 - WS-Audio Status 1 beantwortet (Push-Go ws-audio/*, melee_destruction_r1 in die Bank, Lücken-Set ws_audio_gaps_r1 vorbereitet bis Georg-Go, WSA-Gap-Listen bitte in den Status, Pegel zu Fuß anheben).

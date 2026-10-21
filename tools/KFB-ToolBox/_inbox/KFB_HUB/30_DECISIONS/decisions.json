@@ -8559,6 +8559,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-604",
+   "date": "2026-10-21",
+   "area": "Kampf",
+   "verdict": "PASS",
+   "text": "Combat-AV R1 (WS1-Prüfer, Georg nach Hörprobe): Klang je Waffe geschichtet PASS mit TUNE später (Anschlag tiefer statt Piu-Piu, kurzer Würfel-Klick als Körper-Ebene statt 1,4-s-Schütteln); Treffer als Knet-Masse und Kill-Puff PASS als Umschalter, der grüne Stern bleibt Standard; Gegner kündigt an PASS mit TUNE (A1-A3). Alle SFX-Sätze zusätzlich lautheitsnormiert auf -16 LUFS (lufs_set.py, m4a). Kamera-Nähe (C8) entscheidet Georg, WS0-Empfehlung: Nähe nur im Kampf.",
+   "values": {},
+   "owner": "WS1-Prüfer · WSA (Einbau) · WS-Audio · WS0 (Töne)",
+   "check": "Prototypen ws1/combat-av-r1, Einbau nach Auswahl",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Ohr hat in action entschieden; Lautheit je Klang statt Spitze macht die Mischung erst steuerbar.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8646,7 +8661,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1052",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1053",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
