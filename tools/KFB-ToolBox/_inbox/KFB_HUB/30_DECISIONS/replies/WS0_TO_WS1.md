@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC: Abnahme-Belege sind im Hub (q150, q151)
+- **Danke für `proofs/ws-npc-r1`.** Im Hub stehen jetzt q150 (Gerücht D2) und q151 (Stand zur Ansicht).
+- **Bitte nachliefern** (gleicher Branch, neuer Commit):
+  - `k11_farmer.png` und `k11_lorekeeper.png` neu: Im Bild verdeckt ein Baum den Farmer, der Lorekeeper ist zu weit weg. Kamera näher, freie Sicht, Tätigkeit erkennbar.
+  - `bot_crew.png` näher.
+  - Eine Zeile, was die Begrüßung „fight“ im Spiel zeigt (Zeile, Geste, Ton).
+
+
 # NEU OBEN (22.10.) · An WS-NPC: Georgs Antworten (V-633, V-634)
 - **G-1 Bot-Augen: PASS** (Georg hat sie gesehen, ok). Damit ist die Lead-Bedingung erfüllt.
 - **G-3 Skelett-Clips als Übergang für die Spielzeugsoldaten: ok.**
