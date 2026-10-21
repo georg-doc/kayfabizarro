@@ -2,6 +2,95 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 6 · 21.10. · Phase D gebaut (lokal) · Abnahmematrix · Lückenliste
+
+**Georg 21.10.:** „mach weiter mit Phase D“. **Lead 21.10.:** RECEIPT_KINDS-Erweiterung selbst, eigener Commit, Version bleibt 1.
+**Georg 21.10. (später):** Die Spielzeugsoldaten sollen treffbar sein; fehlt ein Clip, wird er über WS0/Blender MCP beauftragt. Private Assets über das Stunt-Race-Repo (`assets/private`).
+**Lead 21.10.:** WS-NPC baut das Modul „band“ im Spiel. Der Ort ist Lead-Teil, vorerst ein POI, per Parameter verschiebbar. Private Assets nur lokal (gitignored), sonst Platzhalter. Keine sichtbaren Browserfenster; Bilder und Abnahmen mit `look=terrain3`.
+**Stand:** `ws-npc/phase-a` lokal, kein Push. Aufruf `dist/index.html#m1,harvest,look=terrain3,patrol,band` (Treffer brauchen den Obstgarten), mit Gedächtnis zusätzlich `npc`; Band-Ort `bandat=x,z,Grad`.
+Commits:
+- D1 b55da99: Skelett-Patrouille
+- D2 5caa948: Spielzeugsoldaten-Trupp über Begegnungstabelle
+- D3 0379e95: Treffer, Aggro, KO
+- 7f42cab: RECEIPT_KINDS
+- d822abe: Gruppen-Gedächtnis
+- 4e75ade: Spielzeugsoldaten treffbar
+- 8c36cd9: Modul band
+
+**Was läuft:**
+- **Skelett-Patrouille** (Warrior, Rogue, Mage; KFB-Augen aus Georgs Batch): eine Schleife im Westen auf Fahrplan, in Formation, mit zwei Halten. Wenn der Spieler auf ≤ 7 m herankommt, hält die Gruppe und schaut hin; der Anführer spielt `Skeletons_Taunt`. Danach geht sie weiter und holt mit höchstens 1,25 × Tempo auf.
+- **Spielzeugsoldaten Nr. 1–6** über die Begegnungstabelle `kfb.encounter-table/1` (Zone m1-east). Beim Betreten wird gewürfelt; ein- oder ausgeblendet wird nur, solange kein Mitglied im Bild ist. Nr. 6 stolpert alle 11 m (`Hit_B`) und holt wieder auf.
+- **Treffer** (Schuss B über `orchard.addTarget`, kein Schaden). Die Stufen gelten je Begegnungsfenster:
+  1. Treffer: Warnung, `Hit_A`, 1 Fluff.
+  2. Treffer: Drohung, `Hit_B`, der Anführer spielt `Skeletons_Taunt_Longer`, 3 Fluff.
+  3. Treffer: **Aggro.** Die Gruppe verlässt die Route und folgt dem Spieler bis 2,4 m, an einer Leine von 16 m um den Austrittspunkt.
+  4. Jeder weitere Treffer: **Cartoon-KO** (`Skeletons_Death`). Das Mitglied liegt 10 s, ist liegend nicht treffbar und steht mit `Skeletons_Awaken_Floor` an Ort und Stelle wieder auf (gleiche ID). Dazu kommt 1 Fluff, einmal je Mitglied.
+- **Ende der Aggro:** nach 18 s ohne Treffer, wenn der Spieler weit weg ist, oder an der Leine. Die Gruppe kehrt dann zum Austrittspunkt zurück, geht auf die Route und holt auf, bis sie exakt auf dem Plan ist. Außerhalb der Blase steht sie sofort auf dem Plan.
+- **Fluff ist endlich:** Die Tags gelten je Gruppe und Welttag. Ein zweites Fenster am selben Tag gibt kein neues Fluff.
+- **Spielzeugsoldaten treffbar:** Warnen und Drohen mit `Interact`, KO und Aufstehen vorerst mit `Skeletons_Death` und `Skeletons_Awaken_Floor` (Rig_Medium_Special, as-is, passt auf jede Rig_Medium-Figur). Ein eigener Clip `Toy_KO`/`Toy_GetUp` ist über den Lead bei WS0/Blender MCP beauftragt.
+- **Ork-Band „The KayfaBizarros“:** Scenelet orc_band_01 R2, vier Darsteller r1b. Standort ist die Wegkreuzung am Amphitheater [−8, 30], Boden < 1,1°, Blick zum Weg.
+  - Die Clips (bounce, strum, drum_v5c, trumpet_groove) laufen im Takt der Weltzeit (Formel des Scenelets). Wer weggeht und zurückkommt, sieht die Band ohne Neustart weiterspielen.
+  - Die Köpfe drehen sich zum Spieler (≤ 14 m, ≤ 50°). Kein Kampf.
+  - Die Assets bindet der Build optional über `src/private` ein, gitignored, Verweis auf `~/kfb-ws1/private-assets`. Fehlen sie, steht ein sichtbarer Platzhalter da (Status PLACEHOLDER).
+- **Gedächtnis:** Die Skelette merken sich `hit_warning`, `hostile_response`, `resident_downed` (selbst beteiligt, die anderen haben es gesehen) und `respawned`. Bewohner in Sichtweite (≤ 25 m) werden Zeugen. In der nächsten Begegnung erzählt der Zeuge davon (`told`); wer es nur gehört hat, erzählt es nicht weiter.
+
+| # | Zeile (Brief R2 Phase D) | Ergebnis | Beleg |
+|---|---|---|---|
+| D-1 | Gruppe in Formation auf Fahrplan, bemerken/drohen, aufholen, weggehen und zurückkommen ohne Pop-in | **PASS** | unit-groupPatrol, patrol |
+| D-2 | Gruppe über Begegnungstabelle, Umschalten nie im Bild, Spielzeugsoldaten Nr. 1–6 mit Stolper-Gag | **PASS** | squad |
+| D-3 | Treffer-Treppe Warnung → Drohung → Aggro, Fluff endlich und eindeutig | **PASS** | unit-groupAggro, aggro (echte Schüsse) |
+| D-4 | Aggro an der Leine, Rückkehr auf den Fahrplan, kein Sprung im Bild | **PASS** | unit-groupAggro (`leashHolds`, `catchesUpOnPlan`), aggro (`E_noPopInView`) |
+| D-5 | Cartoon-KO: liegen, nicht treffbar, aufstehen an Ort und Stelle, gleiche ID | **PASS** | unit-groupAggro, aggro (`C_*`) |
+| D-6 | Gedächtnis der Gruppen-Ereignisse (R0.6-Kinds), Zeugen nur in Sichtweite, idempotent | **PASS** | unit-groupMemory, aggro (`F_memoryReceipts`), unit worldSave (`kindsPhaseD`) |
+| D-7a | Gerücht aus erster Hand (Zeuge erzählt weiter) | **PASS** (Node) · **NOT RUN** (im Spiel: nächstes Treffen erst einen Spieltag später) | unit-groupMemory (`tellFirstHand`, `noRetell`) |
+| D-7b | Gerücht-Kette (told-of-told) | **NOT RUN**: Das Schema `kfb.world-save/1` verwirft told ohne Zeugen-Quelle; eine Kette braucht eine Schema-Entscheidung von WS0 | – |
+| D-8 | Ork-Band im Spiel (Takt der Weltzeit, Blick, kein Neustart beim Zurückkommen, Ort verschiebbar, Platzhalter ohne private Assets) | **PASS** | unit-bandClock, band (mit privaten Assets: OK; ohne: PLACEHOLDER, beide PASS), Bild `test/out/npc/hud_t3.png` |
+| D-8b | Spielzeugsoldaten treffbar | **PASS** (mit Skelett-Clips as-is) · eigener Spielzeug-Clip **NOT RUN** (beauftragt) | squad `E_toyHittable` |
+| D-9 | Bots | **NOT RUN** (blockiert: Robot_Two fehlt) | Lückenliste |
+| D-10 | Spielzeugsoldaten mit Gewehr | **NOT RUN** (blockiert: Gewehr-Halterung V-582 liegt bei WSB r3d, nicht auf diesem Mac) | Lückenliste |
+| D-11 | fps aus der Spielkamera mit Gruppen und Band, Ziel ≥ 55 | **FAIL** (Basis-Grenze). Vorläufig, sichtbar unter Last 27–40 gemessen: Basis 27,0/25,4, mit patrol+band 24,5/27,2 fps (Mittel +0,5 ms, im Rauschen; +166 Draw-Calls, +132 k Dreiecke; Module groups ≈ 0,2 ms, band ≈ 0,15 ms je Schritt). Die gültige Messung headless mit look=terrain3 folgt bei ruhiger Maschine | fps-d.mjs |
+| D-12 | Clip aus der Spielkamera | **PASS** | `test/out/npc/WS_NPC_PhaseD3_clip_terrain3.webm` (64 s, look=terrain3, headless): Warnung, Drohung, Aggro, KO, Aufstehen, Ruhe, dann die Band |
+| D-13 | Volle Testreihe (npm test + NPC-Browsertests, 62 Dateien) @d822abe | **PASS** 60/62 · c2 FAIL (bekannter Wackler, auch auf der Basis und im Software-Modus) · s5a unter Last 45 FAIL, einzeln wiederholt PASS | test/out/npc/suite_result.txt; nach 4e75ade/8c36cd9 einzeln: band, squad, aggro, patrol und die Unit-Tests PASS |
+
+**Lückenliste (an WS0/WSB, nicht blockierend für D1–D7a):**
+1. Skelett-Augen: Batch-Profile AUTO_CANDIDATE, Bereinigung der Original-Augenhöhlen HUMAN_REQUIRED.
+2. Spielzeugsoldaten: Hut-Nummern Nr. 1–6 (V-464) nicht im Asset, heute nur in den Daten.
+3. Gewehr-Halterung V-582 (WSB r3d) fehlt hier → Soldaten ohne Gewehr.
+4. ~~Ork-Band~~: erledigt über `assets/private` (ORKBAND r1b). Offen: der Band-Ort als Dioramen-Anker aus dem Gelände (Lead-Teil); Treffer auf die Band nur nach Entscheid.
+5. Bots: Robot_Two fehlt.
+6. Spielzeugsoldaten-KO: Heute laufen die Skelett-Clips (Rig_Medium) as-is. Ein eigener Clip `Toy_KO`/`Toy_GetUp` ist bei WS0/Blender MCP beauftragt (Rig_Medium, Sohlen auf y=0, nur Clips).
+7. Gerücht-Kette (told-of-told): Schema-Frage an WS0 (siehe D-7b); der Lead erweitert das Schema nicht ohne Entscheid.
+9. Private Assets im Build und in der Vorschau: Wie sie dorthin kommen, entscheidet WS0. Heute gilt: nur lokal; `kayfabizarro` ist öffentlich und bekommt keine Kauf-Assets.
+10. Für WS-Audio (V-598) bleiben die Ereignisnamen stabil: Fluffer `taint`, `drop`, `burst`, `fade`, `healed`; Gruppen `hit`, `aggro`, `ko`, `awake`, `calm`, `fluff`.
+8. Offen aus A–C: weiße Augen für den geheilten Ghost, Lorekeeper weiter Platzhalter (WSB K11), Clip „Graben“, Konzeptblatt, Google Doc, Ton/Stimme, Eigentempo des Ghost-Walk ungemessen.
+
+## 5 · 21.10. · Phase B Gedächtnis gebaut (lokal) · Abnahmematrix
+
+**Georg 21.10.:** Ghost-Größe 1,1 m bestätigt („passt, mach weiter“).
+**Stand:** `ws-npc/phase-a` lokal @c5c3e0e, kein Push. Speicher = `kfb.world-save/1` des Leads (`src/world/worldSave.js`, Schema nach WS-NPC-Vorschlag), getrennt von `kfb.save/1`. Aufruf wie Phase A/C; `npcfresh` leert den Weltstand vor dem Start (Tests), `npcmem=0` schaltet das Gedächtnis ab.
+
+**Was entsteht (ein Beleg je bedeutendem Erlebnis, ohne Transkript):**
+- Begegnung Farmer B ↔ Lorekeeper-Platzhalter → beide *beteiligt* (`greeted` bzw. `silent`).
+- Bewohner bemerkt den Spieler → *beteiligt* `interrupted_by_player` (einmal je Plan-Slot).
+- Bewohner bemerkt den feindlichen Fluffer → *gesehen* `plague_seen`.
+- Fluffer geheilt → *gesehen* `fluffer_cured` **nur** für Bewohner in Sichtweite (≤ 25 m, in der Spielerblase); wer weit weg ist, weiß nichts.
+- Nächste Begegnung: wer etwas gesehen hat, erzählt es dem, der es nicht weiß → *erzählt* (`told`, Quelle = Erzähler), ein Thema je Begegnung; der Erzähler gestikuliert (`Interact`).
+
+**Veränderte Begrüßung (abgeleitet, nicht gespeichert):** unbekannt → nur bemerken (`Idle_B`); kennt den Spieler → winkt (`Waving`); hat die Heilung gesehen oder davon gehört → jubelt (`Cheering`, Kit-Clip aus `Rig_Medium_Simulation`, as-is).
+
+| # | Zeile (Brief R2 Phase B / Workshop M3) | Ergebnis | Beleg |
+|---|---|---|---|
+| B-1 | Ein Ereignis-Beleg je bedeutendem Erlebnis (gesehen / beteiligt / erzählt), idempotent | **PASS** | npcMemory (12 Belege über 3 Tage, kein Doppel), memory |
+| B-2 | Zeuge vs. Nicht-Zeuge, kein allwissendes Wissen | **PASS** | npcMemory `farAwayDidNotSee`, memory `s1_farAwayNoReceipt` |
+| B-3 | Weitergabe mit Quelle (told) | **PASS** (Node) · **NOT RUN** (im Spiel: nächstes Treffen erst einen Spieltag später) | npcMemory `toldAtNextMeeting` |
+| B-4 | Veränderte nächste Begrüßung | **PASS** | npcMemory (Idle_B → Waving → Cheering), memory (Cheering nach Heilung) |
+| B-5 | Neu laden: Beleg erhalten, Begrüßung gleich, keine Doppel; Spieler-Save unberührt | **PASS** | memory (echtes localStorage, Seite neu geladen), npcMemory |
+| B-6 | Keine Belohnung/Item aus Belegen, keine Profile im Save | **PASS** | Beleg-Schema ohne Freitext (npcMemory `noTranscript`); Burst nur aus der Heilung (Phase C) |
+
+**Grenzen:** Weltzeit wird nicht gespeichert (jede Sitzung beginnt bei der gewählten Tageszeit); Schlüssel aus Tag + Plan-Slot sind deshalb je Sitzung gleich → kein Doppel, aber ein Treffen „Tag 0“ zählt nur einmal. RECEIPT_KINDS nur mit WS0 erweiterbar (genutzt: met-Familie, interrupted_by_player, plague_seen, fluffer_cured; `player_greeted` ungenutzt).
+
+**Nächstes Gate:** volle `npm test` (läuft) → Bitte um WS0-Go für Push von `ws-npc/*`. Phase D (Gruppen, Ork-Band, Skelette, KO, Gerüchte) nur mit eigenem Go.
+
 ## 4 · 21.10. · Phase C P1 Dark Fluffer gebaut (lokal) · Abnahmematrix
 
 **Stand:** `ws-npc/phase-a` lokal, kein Push. Aufruf: `dist/index.html#m1,harvest,npc,fluffer` (`fluffert=<s>` Start des Fluffers, Standard 4 s).
@@ -34,7 +123,7 @@ Neueste Einträge oben.
 | F-2 | Clip aus der Spielkamera | **PASS** | `phase-c-spielkamera.webm` |
 | F-3 | Kritiker CRITIC_3D_R1 | **NOT RUN** | |
 
-**Lücken an WS0/WSB:** weiße Augen für Ghost; Eigentempo des Ghost-Walk-Clips nicht gemessen (Abspielrate 0,8–1,25 nach Tempo); Ghost-Größe 1,1 m gewählt (WS0 bitte bestätigen); Mob-Chant/Triplets und Ton (P2, WS0); Heil-Waffe vorerst Gun_Pistol (Georg), Team-Heilen mit den Hexen offen.
+**Lücken an WS0/WSB:** weiße Augen für Ghost; Eigentempo des Ghost-Walk-Clips nicht gemessen (Abspielrate 0,8–1,25 nach Tempo); Ghost-Größe 1,1 m (Georg bestätigt); Mob-Chant/Triplets und Ton (P2, WS0); Heil-Waffe vorerst Gun_Pistol (Georg), Team-Heilen mit den Hexen offen.
 
 ## 3 · 21.10. · Farmer B echt im Spiel · Georgs Entscheide zu Phase C
 
