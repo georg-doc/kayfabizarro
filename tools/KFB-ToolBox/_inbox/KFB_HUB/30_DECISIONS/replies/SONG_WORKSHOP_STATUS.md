@@ -524,3 +524,28 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 3. Gate-Hygiene prüfen: Gerüstmuster als REVIEW, A2-Richtwert je Form, Kartenzeilen als Triplets nach Spec R2, Status `gate_pass` umbenennen.
 
 **Was bleibt:** Signatur-Decks R1 (bestätigt), Dramatis-Personae-Patches, Writers' Room mit markierter Ansicht, Gate R4.2 als Hygiene.
+
+
+## §24 · 22.10.2026 · WSA Fresh-Chat Recovery: Batch-1 Triplet-Preflight
+**Executor:** ChatGPT WSA, fresh recovery against current GitHub state. **No song text authored, no Suno/audio, no credits.**
+
+The 18.10. `WSA_SONGS_BESTOF_R1_PLAN.md` remains historical planning input, but the current production owner is this Workshop branch and the current order is **Triplets first → then song composition**. `SONG_SPEC_R4.md`/R4.2 is the song-mode hygiene gate; KFB card lines are governed by `TRIPLET_SET_SPEC_R2.md` and its checker. A stored gate/check PASS is not an artistic quality verdict.
+
+### Exact Batch-1 t1 inventory at branch head `07392e08b9d90ca4c482a5514f688cc44a244224`
+Expected deck set = the same 20 decks from the WSA Batch-1 plan.
+
+- **10/20 have a stored t1 check ending in `0 FAIL`:** `academic_anarchy_intellectual`, `anti_rules_toolkit`, `big_bad_brain_wrestling`, `brain_flipper_image_spots`, `forget_utopia`, `frizzlebob_s_ego_mania_narcissist`, `frizzlebob_s_mission_control`, `kosmik_kayfabizarro_sci_fi_space_opera`, `project_gateway_kayfabe`, `woad_and_warriors`.
+- **6/20 have t1 files but their stored check reports are red (73 FAIL total):**
+  - `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` — 7 FAIL
+  - `bullshit_jobs_uncut` — 1 FAIL
+  - `cinematic_kayfabizarro_2` — 1 FAIL
+  - `kayfabizarro_1_morale_ethics` — 1 FAIL
+  - `kayfabizarro_improv_comedy` — 7 FAIL
+  - `platos_dungeon_raid_hero_set_01` — 56 FAIL
+- **4/20 have no `<deck>.t1.suno.txt` / `<deck>.t1.check.txt` at this head:** `the_biological_metropolis`, `embrace_protopia`, `jung_and_shinn_a_guide_to_cosmic_cringe`, `what_work_was_for`.
+
+The large Plato failure class is explicitly “Titel fehlt” in the stored report; Biology also contains missing-title failures. That matters because current `TRIPLET_SET_SPEC_R2.md` still requires the card title at the front of each triplet and says the checker must end at 0 FAIL. The latest 21.10. t1 commit is therefore a **draft authoring checkpoint**, not a closed Batch-1 Triplet baseline.
+
+**What was actually checked in this recovery:** GitHub path/readback for all 20 expected t1 check locations; 16 stored reports found and their final FAIL counters read. The checkers were **not re-run** in this web session, so these are stored-check results, not fresh execution results.
+
+**Current next gate:** complete the four missing t1 sets and repair the six red t1 sets against the printed-card source until all 20 have a stored `triplet_set_check.py` result of **0 FAIL**. Only then resume Best-of selection / song composition / STYLE / R4 song gate / independent critic. No Hub per-track cards, Suno credits or audio before that baseline exists.
