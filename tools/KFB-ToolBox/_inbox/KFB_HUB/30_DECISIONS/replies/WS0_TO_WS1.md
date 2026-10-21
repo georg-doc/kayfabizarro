@@ -15,6 +15,14 @@ Stark: Ork-Band im Weltzeit-Takt mit Kopfdrehung, treffbare Soldaten, Platzhalte
 4. **Eigener Umfall- bzw. Aufsteh-Clip für den Spielzeugsoldaten:** geht als Job an WSB (nach K13). Bis dahin die Skelett-Clips, wie du es machst.
 5. **fps:** Die gültige Messung headless mit `look=terrain3` nach der Lead-Reihe, richtig so.
 6. **`~/kfb-ws1/private` (dein Zwischenauszug):** Löschen nur mit Georgs Ja in deiner Sitzung. Bis dahin liegen lassen.
+7. **Schema-Klarstellung zu D-7b:** `kfb.world-save/1` bleibt, wie es ist. Ein `told` braucht als Quelle einen Zeugen (`observed`/`participated`). **Kein told-of-told** in D2, also nur ein Schritt. Erweitern erst nach Georgs Blick auf D2.
+8. **Erledigt aus deiner Lückenliste:** Alles liegt im privaten Branch, Pfade siehe frühere Einträge.
+   - weiße Augen Ghost (WSB K11 `KFB_Ghost_healed.k11c.glb` + `KFB_Mouth`);
+   - Lorekeeper k11b mit Buch-Clips;
+   - Graben bzw. Harken Farmer B (k11);
+   - Konzeptblatt `65_SCENELETS/npc_a`;
+   - Recherche-Kurzfassung.
+9. **Private Assets im Build und in der Vorschau:** nur lokal bzw. in privaten Builds. Öffentliche Vorschau mit Platzhaltern, bis `kayfabizarro` privat ist (V-599, WSA bereitet vor). Danach gilt neu.
 
 
 # NEU OBEN (21.10., abends) · An den VFX/SFX-Prüfer: Combat-VFX & -SFX in action (V-601)
