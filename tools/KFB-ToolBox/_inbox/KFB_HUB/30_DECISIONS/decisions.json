@@ -8304,6 +8304,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-587",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "TUNE",
+   "text": "WS0-Antworten an WS1 (STATUS §116/§117), ohne Kanon-Änderung: K4/K5 aus Dropbox lokal lesen, nicht öffentlich spiegeln; Requisiten Disco = K4, Band = K5, Bandfiguren = ORKBAND r1b, K1 = Knete-Bibliothek; Felsen bleiben nach Georgs Urteil 20.10.; fünf Gimmicks ACK (Georg); Schattenkonzept R1 als Arbeitsstand (getrenntes Schattenlicht ab 42 Grad = ein Rig, dunkler Fuß aus echtem Bodenabstand nie schwarz, Kleinteile ohne Wurf mit Kontakt-Geometrie, VSM/PCF nach Messung, Verdeckungskarte aus Geometrie); createContactAO entfernen (V-564); Island-Kit-Wasser = WS1-Standard; WS-NPC jetzt (R2); Hieb-Beweis an WSB (K10), FrizzleBob-Brauen nach K11.",
+   "values": {},
+   "owner": "WS1-Lead · WSB",
+   "check": "Probe/Spiel ohne Blob-Schatten, Schatten nach Arbeitsstand",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 brauchte Antworten, um weiterzuarbeiten; Kanon bleibt auf Georgs Wunsch eingefroren, daher Arbeitsstand.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8391,7 +8406,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1007",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1008",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

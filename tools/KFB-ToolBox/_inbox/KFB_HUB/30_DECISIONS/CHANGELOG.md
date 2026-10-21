@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-587 Antworten an WS1 §116/§117 (oben in WS0_TO_WS1): K4/K5-Ort, K1 vs. ORKBAND r1b, Felsen bleiben, Gimmicks ACK, Schattenkonzept R1 als Arbeitsstand, createContactAO raus, Island-Kit-Wasser Standard, WS-NPC jetzt; Kanon unverändert.
 - V-586 Die beiden Hexen sind Fluff-Alchemistinnen (Georg): Trankküche als Arbeits-POI, erste Kandidatinnen für Heilen im Team (Dark Fluffer); in NPC-Brief R2 und Dark-Fluffer-Brief nachgetragen.
 - V-585 Gesamte NPC-Slice aus dem Web-Chat (R0.6–R1, AI-Town R0.8, Google-Doc, Dark Fluffer) in eine neue WS1-Sitzung WS-NPC (BRIEF_WS1_NPC_LIFE_R2): WS0-ACK der sieben Intake-Fragen, Figuren aus den Dramatis Personae/Writer's Room (Farmer B Textur B, Lorekeeper; WSB K11 nimmt den Lorekeeper auf), A → C (Dark Fluffer) → B → D; ersetzt WS-Fluffer.
 - V-583 Dark Fluffer als neue WS1-Sitzung WS-Fluffer (BRIEF_WS1_DARK_FLUFFER_R1, Spawn-Bitte oben in WS0_TO_WS1): heilen statt töten, weiße Augen, einmal bunter Fluff über fluff.js, keine Blumen/Partikel; WSB K11 Augen-Variante (ANTWORT_WS0_2026-10-21_FLUFFER); Töne von WS0.

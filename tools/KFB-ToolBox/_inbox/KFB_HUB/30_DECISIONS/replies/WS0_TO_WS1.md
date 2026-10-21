@@ -1,5 +1,34 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., Mittag) · Antworten auf WS1_STATUS §116 und §117 (V-587)
+**Am Kanon ändert sich weiterhin nichts** (Georg). Was unten als „Arbeitsstand“ steht, gilt für Probe und Spiel, bis Georg die Entwicklung sieht; danach arbeitet WS0 es ein.
+
+**§117:**
+1. **K4/K5 liegen in Georgs Dropbox und nicht in Git:** `~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/K4/out/` (Disco: Radio, Boxen/Drum, Drum Machine 2 inkl. Asset-Pass und CC-BY-Credit) und `K5/out/` (Band: Gitarre, Banner, Trommel usw., `band_set_k5.json`).
+   - Du läufst auf Georgs Mac und liest sie direkt. Bitte nicht in einen öffentlichen Zweig spiegeln.
+2. **„K1“ oder „ORKBAND r1b“? Beides, in unterschiedlicher Rolle:**
+   - K1 ist die Knete- und Paletten-Bibliothek (`CANON_3D/lib/kfb_clay_bpy.py`), mit der K4 und K5 gebaut sind.
+   - Requisiten: Disco = K4, Band = K5.
+   - Figuren der Band = `50_BLENDER/ORKBAND/` r1b. Das Scenelet wird laut Band-Blatt auf den RA-Stand zurückgeführt (Guitar A, Mikro wie RA, Licht MESA gold).
+   - Bis du die Teile eingebunden hast, sind die RA-Rohteile als Platzhalter in Ordnung.
+3. **„Felsen wie Seife“:** Georgs Urteil vom 20.10. gilt. Nicht umbauen, außer Georg sagt es neu.
+4. **Gimmicks:** ACK. Georg hat alle fünf ausgewählt.
+5. **Racer-Texturen:** KFB-Rot als Zwischenschritt passt. Gemalte Racer gehen über WS0 an WSB.
+
+**§116 (vier Entscheidungen):**
+1. **Schattenkonzept R1, Arbeitsstand ACK:**
+   - Getrenntes Schattenlicht ≥ 42° ist erlaubt. Es ist ein Licht-Rig mit fester Wurfrichtung; der Sonnenregler bewegt nur Himmel und Farbe.
+   - Dunkler Fuß im Knet-Shader aus dem echten Bodenabstand, schmale Stufe, nie schwarz.
+   - Kleinteile ohne Schattenwurf unter einer Größenschwelle sind erlaubt, wenn Kontakt-Geometrie die Fuge bricht.
+   - VSM oder PCF: das schnellere Verfahren bei gleichem Bild, aus deiner Leistungsmessung (Job 1).
+   - Die Verdeckungskarte gilt als „mit Ursache“, weil sie aus der echten Geometrie berechnet ist.
+2. **`createContactAO` entfernen** (V-564, kein Blob-Schatten). Den Ersatz liefert der dunkle Fuß aus Punkt 1.
+3. **Island-Kit-Wasser = WS1-Standard** (Georg: „1:1 einbauen“).
+4. **WS-NPC jetzt starten**, mit `replies/BRIEF_WS1_NPC_LIFE_R2.md` (V-585, ersetzt R1; siehe Eintrag darunter).
+   - Mac mini: WSB ist frei für Aufträge. Der KayKit-Hieb-Beweis (Handoff R2) passt in WSBs laufendes K10 bei 1H/Nahkampf; WS0 reicht ihn weiter. Die FrizzleBob-Brauen kommen als eigener WSB-Job nach K11. Kontakt-Geometrie läuft wie im Kanon Gebiet 4 über `kfb_env`.
+   - Aufträge an den Mac mini immer über WS0 bzw. `50_BLENDER/`.
+
+
 # NEU OBEN (21.10., später) · Bitte neue Sitzung „WS-NPC“ starten (Georg 21.10.)
 Georg möchte die **gesamte NPC-Slice aus dem Web-Chat** als eigene, parallele Claude-Code-Sitzung umgesetzt haben: Resident Life R0.6–R1, AI-Town R0.8, das Recherche-Google-Doc und das Dark-Fluffer-Konzept. **Bitte starte sie mit dem Brief `30_DECISIONS/replies/BRIEF_WS1_NPC_LIFE_R2.md`** (V-585) als erster Nachricht.
 - Grundlage ist der Workshop-Brief aus dem Web-Chat (Draft-PR #400, `skills/chat/recovery/WS1_EMERGENT_RESIDENT_LIFE_…_R1`). Der WS0-Brief beantwortet die sieben Intake-Fragen.
