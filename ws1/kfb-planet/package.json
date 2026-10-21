@@ -29,7 +29,7 @@
     "test:f1": "node test/f1.mjs",
     "test:light": "node test/light.mjs",
     "test:lineup": "node test/lineup.mjs",
-    "test:npc": "node test/unit/npcEncounter.mjs && node test/unit/npcWorld.mjs && node test/unit/npcSim.mjs && node test/unit/taint.mjs && node test/unit/releaseAt.mjs && node test/unit/flufferSim.mjs && node test/unit/npcThreat.mjs && node test/unit/npcMemory.mjs && node test/unit/groupPatrol.mjs && node test/unit/groupAggro.mjs && node test/unit/groupMemory.mjs && node test/unit/bandClock.mjs && node test/unit/rumor.mjs && node test/npc-a.mjs && node test/ink.mjs && node test/orchard-npc.mjs && node test/fluffer.mjs && node test/memory.mjs && node test/patrol.mjs && node test/squad.mjs && node test/aggro.mjs && node test/band.mjs && node test/figures-k11.mjs && node test/bots.mjs"
+    "test:npc": "node test/unit/npcEncounter.mjs && node test/unit/npcWorld.mjs && node test/unit/npcSim.mjs && node test/unit/taint.mjs && node test/unit/releaseAt.mjs && node test/unit/flufferSim.mjs && node test/unit/npcThreat.mjs && node test/unit/npcMemory.mjs && node test/unit/groupPatrol.mjs && node test/unit/groupAggro.mjs && node test/unit/groupMemory.mjs && node test/unit/bandClock.mjs && node test/unit/rumor.mjs && node test/npc-a.mjs && node test/ink.mjs && node test/orchard-npc.mjs && node test/fluffer.mjs && node test/memory.mjs && node test/patrol.mjs && node test/squad.mjs && node test/aggro.mjs && node test/band.mjs && node test/figures-k11.mjs && node test/bots.mjs && node test/steps.mjs"
   },
   "keywords": [],
   "author": "",

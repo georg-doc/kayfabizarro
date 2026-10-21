@@ -424,10 +424,10 @@ function M1World() {
         ready: { pool: isPoolReady(), card: mods.billboard?.info()?.source ?? null, player: mods.player?.status().status, partner: mods.partner?.status().status, partnerShown: mods.partner?.status().shown },
         keysShown: keysUi.current?.shown?.() ?? null }),
       harvest: () => HARVEST_STATE, // C3/C3b: Ernte-Stand, HUD-api, Zähler (nur debug)
-      groups: () => mods.groups ? { status: mods.groups.status(), debug: mods.groups.debug(), tables: mods.groups.tables(), played: mods.groups.played(), events: mods.groups.events(), time: mods.groups.time() } : null,
+      groups: () => mods.groups ? { status: mods.groups.status(), debug: mods.groups.debug(), tables: mods.groups.tables(), played: mods.groups.played(), events: mods.groups.events(), steps: mods.groups.steps(), time: mods.groups.time() } : null,
       band: () => mods.band ? { status: mods.band.status(), debug: mods.band.debug() } : null, // WS-NPC Phase D (nur debug) // WS-NPC Phase D (nur debug)
-      fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld() } : null, // WS-NPC Phase C (nur debug)
-      npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
+      fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld(), hops: mods.fluffer.hops() } : null, // WS-NPC Phase C (nur debug)
+      npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), steps: mods.npc.steps(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
       renderer: () => M1GL.gl, scene: () => M1GL.scene, three: () => THREE, // Bildskripte: eigene Kamera rendern (nur debug)
       feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, k: K, g: G, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
       logs: () => ({ sky: { ...skyLog }, terrain: { ...terrainLog }, amph: { ...amphLog }, billboard: { create: billboardLog.create, update: billboardLog.update, dispose: billboardLog.dispose }, loco: { ...locoActorLog },

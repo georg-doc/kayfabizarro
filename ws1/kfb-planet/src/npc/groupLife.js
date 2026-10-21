@@ -22,11 +22,12 @@ export const groupLifeLog = { create: 0, update: 0, dispose: 0 }
 export function createGroupLife(options) {
   groupLifeLog.create++
   const K = options.worldScale ?? 1, root = new THREE.Group(); root.name = 'group-life'
-  const S = { status: 'LOADING', error: null, near: {}, played: [], t: 0, ms: null, events: [], offs: [], targetsOn: false, statics: [] }
+  const S = { status: 'LOADING', error: null, near: {}, played: [], t: 0, ms: null, events: [], steps: [], offs: [], targetsOn: false, statics: [] }
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 1.2)
   const G = (options.groups || []).map((def) => {
     const sim = createGroupPatrol(def)
-    const figs = def.members.map((m) => { const f = createNpcFigure({ cast: options.cast(m.castId, m), id: m.id, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() } }); root.add(f.holder); return f })
+    const figs = def.members.map((m) => { const f = createNpcFigure({ cast: options.cast(m.castId, m), id: m.id, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() },
+      onStep: (e) => { S.steps.push({ type: 'step', ...e, group: def.id, t: S.t }); if (S.steps.length > 150) S.steps.shift() } }); root.add(f.holder); return f }) // Schritte (WS-Audio) eigener Ringpuffer
     return { def, sim, figs, active: true, shown: true, hits: [] }
   })
   const T = (options.tables || []).map((tb) => ({ tb, inside: false, rolls: 0, coolUntil: -Infinity, chosen: null, log: [] }))
@@ -97,6 +98,7 @@ export function createGroupLife(options) {
     holders: () => G.flatMap((g) => g.figs.map((f) => f.holder)),
     played: () => S.played.slice(),
     events: () => S.events.slice(),
+    steps: () => S.steps.slice(), // { type: 'step', id, foot: 'l'|'r', at: [x, z], speed, group, t } – eigener Ringpuffer (150), damit Schritte keine Treffer verdrängen
     time: () => S.t,
     dispose() { groupLifeLog.dispose++; S.offs.forEach((f) => f()); S.offs = []; for (const g of G) for (const f of g.figs) f.dispose(); root.clear() },
   }

@@ -30,7 +30,7 @@ export function createDarkFluffer(options) {
   const def = options.def, sim = createFlufferSim({ ...def, t0: options.t0 ?? 0 })
   const root = new THREE.Group(); root.name = 'dark-fluffer:' + def.id
   const holder = new THREE.Group(); holder.name = 'fluffer-holder'; holder.visible = false; root.add(holder)
-  const S = { status: 'LOADING', error: null, mixer: null, actions: {}, clip: null, yaw: null, mouth: null, scale: 1, prevT: null, t: 0, events: [], gun: null, gunOn: false, offTarget: null, patchKey: '', heals: 0 }
+  const S = { status: 'LOADING', error: null, mixer: null, actions: {}, clip: null, yaw: null, mouth: null, scale: 1, prevT: null, t: 0, events: [], gun: null, gunOn: false, offTarget: null, patchKey: '', heals: 0, hops: [], hop: { body: null, y1: null, y0: null, last: -Infinity } }
   // Tropfen-Pool: je Spucke bis zu 5 Kugeln, Größen und Versatz aus dem Spuck-Seed (deterministisch)
   const inkMat = new THREE.MeshBasicMaterial({ color: SPIT.ink, toneMapped: false }), dropGeo = new THREE.SphereGeometry(1, 12, 9)
   const pools = sim.spits.map((s) => { let h = (def.seed * 9301 + s.k * 49297) % 233280; const rnd = () => (h = (h * 9301 + 49297) % 233280) / 233280
@@ -58,7 +58,7 @@ export function createDarkFluffer(options) {
 
   const play = (name) => { if (S.clip === name || !S.actions[name]) return; const a = S.actions[name]; a.reset().fadeIn(0.18).play(); if (S.clip && S.actions[S.clip]) S.actions[S.clip].fadeOut(0.18); S.clip = name }
   const mouthWorld = (out) => { if (S.mouth) { S.mouth.updateWorldMatrix(true, false); return S.mouth.getWorldPosition(out) } return out.set(holder.position.x, holder.position.y + (def.heightM || 1.1) * 0.3, holder.position.z) }
-  const _m = new THREE.Vector3(), _a = new THREE.Vector3(), _b = new THREE.Vector3(), _c = new THREE.Vector3()
+  const _m = new THREE.Vector3(), _a = new THREE.Vector3(), _b = new THREE.Vector3(), _c = new THREE.Vector3(), _hb = new THREE.Vector3()
 
   function attachGun() {
     if (S.gunOn || !S.gun) return
@@ -96,6 +96,10 @@ export function createDarkFluffer(options) {
       holder.rotation.set(0, S.yaw, 0); holder.visible = st.phase !== 'gone' && st.phase !== 'wait'; if (S.eyes) S.eyes.visible = !!st.healed
       play(st.clip); if (S.actions.Walk) S.actions.Walk.timeScale = THREE.MathUtils.clamp(st.speed / 0.9, 0.8, 1.25) // Eigentempo Walk nicht gemessen (Lücke)
       S.mixer.update(dt)
+      // Hüpfer (WS-Audio, Georg 21.10.): Tiefpunkt des Knochens „Body“ beim Gehen (Walk) = Aufsetzen → Ereignis hop (eigener Ringpuffer)
+      if (holder.visible && st.clip === 'Walk' && st.speed > 0.1) { const H = S.hop, b = (H.body ||= holder.getObjectByName('Body')); if (b) { b.updateWorldMatrix(true, false); const yb = _hb.setFromMatrixPosition(b.matrixWorld).y - y
+        if (H.y1 !== null && H.y0 !== null && H.y1 < H.y0 && H.y1 <= yb && S.t - H.last > 0.2) { H.last = S.t; S.hops.push({ type: 'hop', id: def.id, at: [holder.position.x, holder.position.z], t: S.t }); if (S.hops.length > 60) S.hops.shift() }
+        H.y0 = H.y1; H.y1 = yb } } else { S.hop.y0 = S.hop.y1 = null }
       // Weltereignisse (genau einmal)
       const from = S.prevT ?? -Infinity // beim ersten fertigen Bild alle schon fälligen Ereignisse nachholen (Welt konsistent mit dem Plan)
       for (const e of sim.events(from, t)) { if (e.type === 'spit') release.set(e.k, mouthWorld(new THREE.Vector3()).toArray()); world(e) }
@@ -118,6 +122,7 @@ export function createDarkFluffer(options) {
     status: () => ({ status: S.status, error: S.error, gun: S.gunOn, target: !!S.offTarget, mouth: S.mouth?.name ?? null, eyes: S.eyes ? (S.eyes.visible ? 'white' : 'hidden') : null, scale: +S.scale.toFixed(4) }),
     debug: () => { const st = sim.at(S.t); return { t: +S.t.toFixed(3), phase: st.phase, clip: S.clip, x: st.x, z: st.z, patch: st.patch, spitsDone: st.spitsDone, healed: st.healed, hostile: st.hostile, heals: S.heals, events: S.events.slice(), arrive: sim.arrive, spits: sim.spits.map((s) => ({ windup: s.windup, release: s.release, impact: s.impact })), drops: pools.flat().filter((d) => d.m.visible).length } },
     mouthWorld: () => mouthWorld(new THREE.Vector3()).toArray(),
+    hops: () => S.hops.slice(), // { type: 'hop', id, at: [x, z], t } (WS-Audio: DF07_fluffer_hop)
     holder: () => holder,
     dispose() { darkFlufferLog.dispose++; S.offTarget?.(); S.gun?.parent?.remove(S.gun); options.terrain?.()?.setInkPatches?.([]); S.mixer?.stopAllAction(); inkMat.dispose(); dropGeo.dispose(); root.clear() },
   }

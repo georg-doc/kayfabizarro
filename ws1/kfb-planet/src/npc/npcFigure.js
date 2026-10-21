@@ -12,6 +12,9 @@ import { createActor } from '../actors/actorSlot'
 import { GaitAnimator } from '../modules/m1-gait'
 import { soleOffsets, solePoints } from '../modules/m1-sole'
 
+// STEP (WS-Audio, Georg 21.10.): Schritt-Ereignis, wenn eine Sohle (foot/toes, m1-sole) beim Gehen den Boden berührt; Hysterese down/up, Mindestabstand je Fuß
+// Schwellen in Weltmetern, gemessen 21.10. (soleprobe): tiefster Sohlenpunkt hebt beim Gehen (Skelette 1 m/s) nur 6–8 cm ab, Kontakt bis −4 cm
+export const STEP = Object.freeze({ downH: 0.012, upH: 0.035, minGapS: 0.18, minSpeed: 0.15 })
 export const FIGURE = Object.freeze({ headDelay: 0.08, headLag: 0.16, headMaxYawDeg: 55, headMaxPitchDeg: 20, eyeMaxDeg: 32, eyeY: 1.55 })
 
 const clipCache = new Map()
@@ -22,7 +25,7 @@ export function loadClips(url) {
 // alle Pakete laden, Namen zusammenführen (erstes Vorkommen gewinnt)
 export async function loadClipSet(urls = []) { const clips = {}; for (const u of urls) { const list = await loadClips(u); for (const c of list) if (!clips[c.name]) clips[c.name] = c } return clips }
 
-export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = null }) {
+export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = null, onStep = null }) {
   const K = worldScale
   const holder = new THREE.Group(); holder.name = 'npc:' + id
   let actor, actorError = null // ein Vertragsfehler (actorSlot wirft) darf nie die Szene abreißen: Figur mit Status ERROR statt Seitenfehler
@@ -30,6 +33,7 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
   catch (e) { actorError = String(e?.message || e); actor = { object3d: new THREE.Group(), ready: Promise.resolve(), status: () => ({ status: 'ERROR', error: actorError }), update() {}, dispose() {}, lookAt() {} } }
   holder.add(actor.object3d); holder.visible = false // erst sichtbar, wenn der Gang-Mischer steht (keine Bindepose im Bild)
   const PB = cast.privateBody || null, _qm = new THREE.Quaternion()
+  const step = { l: { down: true, last: -Infinity }, r: { down: true, last: -Infinity } }, _sp = {}
   const r = { prop: null, propClip: null, anim: null, fig: null, head: null, soles: null, scale: (cast.classScale ?? 1) * K, hist: [], clock: 0, headYaw: 0, headPitch: 0, headBase: null, headOut: null, status: 'LOADING', error: null, gazeOwn: false }
   const _m = new THREE.Matrix4(), _v = new THREE.Vector3(), _q = new THREE.Quaternion(), _qa = new THREE.Quaternion(), _qp = new THREE.Quaternion(), _qf = new THREE.Quaternion(), _e = new THREE.Euler()
 
@@ -69,7 +73,14 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
     const want = o.clip && [].concat(o.clip.name).find((n) => r.anim.has(n)) // erster vorhandener Clip der Wunschliste (Kit-Clips as-is)
     if (want) { r.anim.play(want, { mode: o.clip.mode || 'once', fade: 0.2 }); onPlay?.(id, want) }
     r.anim.update(dt, Math.max(0, o.speed) / r.scale)
-    if (r.prop && PB.prop.whenWalking) { r.prop.visible = !r.anim.current() && (r.anim.last?.w?.walk ?? 0) > 0.5 } // Trage-Requisite am Anker: nur beim Gehen (= Trage-Clip), ohne Overlay
+    if (onStep && r.soles && holder.visible) { // Schritte nur beim Gehen, aus der echten Sohlenlage (nach dem Mixer)
+      const moving = o.speed > STEP.minSpeed; if (moving) solePoints(THREE, r.soles, _sp) // solePoints aktualisiert die Kette bis zum Halter
+      for (const f of ['l', 'r']) { const st = step[f]
+        if (!moving) { st.down = true; continue }
+        const h = Math.min(_sp['foot.' + f].y, _sp['toes.' + f].y) - y
+        if (st.down && h > STEP.upH) st.down = false
+        else if (!st.down && h < STEP.downH) { st.down = true; if (r.clock - st.last >= STEP.minGapS) { st.last = r.clock; onStep({ id, foot: f, at: [_sp['foot.' + f].x, _sp['foot.' + f].z], base: [o.x, o.z], speed: +o.speed.toFixed(2) }) } } } }
+    if (r.prop && PB.prop.whenWalking) { r.prop.visible = !r.anim.current() && (r.anim.last?.w?.walk ?? 0) > 0.05 } // Trage-Requisite am Anker: sobald der Trage-Clip (Gehen) mitläuft, ohne Overlay
     else if (r.prop) { const cur = r.anim.current(), m = cur && PB.prop.mounts[cur] // Requisite nur in Clips mit Halterung, eine feste Halterung je Clip
       if (cur !== r.propClip) { r.propClip = cur; if (m) { r.prop.position.fromArray(m.position); r.prop.quaternion.copy(_qm.fromArray(m.rotation)) } }
       r.prop.visible = !!m }

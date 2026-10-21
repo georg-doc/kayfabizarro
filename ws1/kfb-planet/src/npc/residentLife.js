@@ -31,10 +31,11 @@ export function createResidentLife(options) {
   const sim = createResidentSim({ days: W.days, ctx, activities: W.activities, hooks })
   const root = new THREE.Group(); root.name = 'resident-life'
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 1.2)
-  const S = { t: null, disposed: false, status: 'LOADING', error: null, near: {}, clips: {}, played: [] }
+  const S = { t: null, disposed: false, status: 'LOADING', error: null, near: {}, clips: {}, played: [], steps: [] }
 
   const R = W.residents.map((def) => {
-    const f = createNpcFigure({ cast: options.cast(def.stageCastId), id: def.residentId, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() } })
+    const f = createNpcFigure({ cast: options.cast(def.stageCastId), id: def.residentId, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() },
+      onStep: (e) => { S.steps.push({ type: 'step', ...e, t: S.lastT ?? 0 }); if (S.steps.length > 80) S.steps.shift() } }) // Schritte (WS-Audio)
     root.add(f.holder); return { def, f, holder: f.holder, actor: f.actor }
   })
 
@@ -78,6 +79,7 @@ export function createResidentLife(options) {
     observeGroup: (e) => mem?.onGroupEvent({ ...e, t: e.t ?? S.lastT ?? 0, members: (W.groups || []).find((g) => g.id === e.group)?.members.map((m) => m.id) ?? [], residents: sim.brains.map((b) => ({ id: b.id, x: b.out.x, z: b.out.z, near: !!S.near[b.id] })) }) ?? [],
     memory: () => (mem ? { status: mem.loadStatus, receipts: mem.state().npc.receipts, log: mem.log(), greet: Object.fromEntries(sim.brains.map((b) => [b.id, mem.greetPlayer(b.id).why])) } : null),
     played: () => S.played.slice(),
+    steps: () => S.steps.slice(), // { type: 'step', id, foot, at, speed, t } (Weltzeit wie memory)
     holders: () => R.map((r) => r.holder),
     time: () => S.lastT ?? null,
     figures: () => R.map((r) => r.actor.object3d),
