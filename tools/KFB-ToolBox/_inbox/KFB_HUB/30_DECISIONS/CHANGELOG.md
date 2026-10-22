@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-654 MVP-Kritiker REWORK: C3/C5/C6 nach Kanon (70/20/10, ein Knet-Modul, Erdungs-Grammatik) anwenden, schnelle Korrekturen sofort, C1 bei Georg; WS1 informiert.
 - resident_voices_r1 erzeugt (16 Clips, Georg-Go, alle hörbar), privat; WS-Audio informiert. Lokaler Git-Spiegel aufgeräumt (23 auf 5 GB, Georg-Ja).
 - WSB J-7 Fahrer im Dach fertig (Einhüpfen bis zur Hüfte, Fahr-IK, Anker je Fahrzeug, Feder-Werte), privat; WS1 informiert; Lenkrad 0,7 geneigt zur Abnahme durch Georg.
 - WSB K15 fertig: 14 Boden-Cubes dunkel/geheilt mit KFB_Mouth bzw. KFB_HealedEyes, Karten bereit zum Einbau, privat; Pilz wird beleuchtet nachgebaut; WS-NPC informiert.

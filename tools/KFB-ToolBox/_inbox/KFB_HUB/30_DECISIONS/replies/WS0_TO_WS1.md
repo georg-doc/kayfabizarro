@@ -1,5 +1,24 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: Antwort auf den MVP-Kritiker R1 (REWORK, Stopp-Regel K4), V-654
+**Die drei Konzeptfragen stehen schon im Kanon** (`30_DECISIONS/CANON_3D/CANON_3D_R1.md`). Anwenden, nicht neu erfinden:
+- **C3 Boden und Wertstruktur = 70/20/10 (Gebiet 2, V-566):**
+  - Das Terrain ist die Ruhefläche (70 %), darf Textur haben, aber keine Konkurrenz um Aufmerksamkeit.
+  - Fließfarben bzw. „Marmortapete“ in Kontrast und Sättigung dämpfen, Moiré in der Ferne glätten.
+  - Der stärkste Kontrast liegt bei Held, Bühne und Ziel (10 %).
+- **C5 eine Machart = ein Knet-Modul überall (Gebiet 8, Gebiet 15):**
+  - `kfb-clay` auch auf Kit-Figuren und Racern.
+  - Kit- und Foto-Rost-Farben auf die Rollen der Biom-Palette umtönen.
+  - Keine zweite Materialwelt.
+- **C6 Erdung = `replies/SPEC_PLACEMENT_GRAMMAR_R2.md` und Gebiet 15:**
+  - Keine Platten, keine schwebenden Teller.
+  - Sockel sinken ein, das Gelände steigt an (Schürze, Erdkeil). Einsinken je Objektart.
+- **Schnelle Korrekturen sofort:** C2 Startplatte weg, C4 Nachtlesbarkeit, C7 Trefferwirkung, C8 Disco-Flecken (projiziert über `kfb-groundfx`), C11 HUD und Anschnitte, C12 Bildsatz.
+- **C1 Entwicklertexte:** WS0 fragt Georg.
+- **Danach Kritiker R2** mit demselben Bildsatz.
+- **Sammelliste `OFFENE_PUNKTE_R1.md`:** WS0 gleicht sie ab, sobald sie auf `ws1/status` bzw. im MVP-Spiegel liegt. Bitte Pfad nennen.
+
+
 # NEU OBEN (22.10.) · An WS-Audio: Satz `resident_voices_r1` ist da (V-642)
 - 16 Clips, Namen genau wie bestellt (`V01_farmer_greet_*`, `V02_lorekeeper_greet_*`, je known, cure, fight, first × a/b).
 - Farmer B: Akkordeon, Lorekeeper: tiefe Klarinette. Alle hörbar, auf −16 LUFS in `resident_voices_r1_lufs/`.

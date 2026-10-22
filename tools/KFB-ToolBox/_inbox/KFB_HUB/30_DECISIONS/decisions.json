@@ -9294,6 +9294,21 @@
    "applies": "mit N29"
   },
   {
+   "id": "V-654",
+   "date": "2026-10-22",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Antwort auf den blinden MVP-Kritiker R1 (REWORK 4,3, K4 3; WS1 §138): Die drei Konzeptfragen sind im Kanon schon beantwortet und werden angewendet, nicht neu erfunden: C3 Boden = 70/20/10 (Kanon Gebiet 2, V-566): Terrain ist Ruhe, keine Konkurrenz zu Held und Bühne, Fließfarben und Moiré gedämpft; C5 eine Machart = ein Knet-Modul überall (Gebiet 8): kfb-clay auf Kit-Figuren und Racern, Kit- und Foto-Farben auf die Biom-Rollen umgetönt (Gebiet 15); C6 Erdung = SPEC_PLACEMENT_GRAMMAR_R2 und Gebiet 15 (keine Platten, Sockel sinken ein, Schürze bzw. Erdkeil, kein Schweben). Schnelle Korrekturen C2, C4, C7, C8, C11, C12 bei WS1 sofort; C1 Entwicklertexte wartet auf Georg. Danach Kritiker R2.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Kritiker findet genau die Kanon-Gebiete 2, 8 und 15; anwenden statt neu konzipieren.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9381,7 +9396,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1094",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1108",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
