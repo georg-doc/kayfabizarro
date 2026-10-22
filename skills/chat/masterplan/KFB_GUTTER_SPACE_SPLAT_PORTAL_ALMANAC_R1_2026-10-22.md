@@ -111,3 +111,16 @@ The optional transit may be instantaneous, short, exploratory or spectacular dep
 ## Additive history
 
 - **2026-10-22 · Georg direction captured:** Cluster 1 portals/dungeons, Cluster 2 PDF Cards/Fractal Almanac spatial navigation, Cluster 3 **Gutter Space** surreal rollercoaster/hyperspace, composable as an Infinite Canvas experience. Technical boundaries retained. Documentation only; no runtime/acceptance claim.
+
+## 2026-10-22 · Cluster 4 addendum — Water / Melt-Terrain Splat depth
+
+Georg additionally proposed a **non-destructive Splat Scenic Layer** positioned **beneath, behind, beside or revealed within the current vividly colored melting terrain / water-like surfaces**, first observed during **drive-by or drive-over** play, with partial entry only if later justified. Do not reclassify the actual receiving MVP's water implementation without code inspection: older Travel tinted terrain zones are not proof of a live translucent water plane.
+
+**First trial preference:** A0 unmodified shoreline/basin → A1 cheap mesh/shader depth alternative → A2 genuine source-isolated splat; only then optional bridge/drive-over. Surface support, water/terrain material, Track Core/Joyride, player/camera/world ownership and source-driven styling remain unchanged. **Spark MIT** is a renderer candidate, **SuperSplat MIT** an editor candidate, while sample Splats have their **own licenses** (e.g. candidate synthetic Tornado **CC BY 4.0**, not CC0). No asset was actually imported or runtime tested by this design note.
+
+**Full research, specific source URLs, license classifications, WS0/WSA execution brief, acceptance and research backlog:**
+[`KFB_CLUSTER4_WATER_MELT_TERRAIN_SPLAT_WS0_WSA_BRIEF_R1_2026-10-22.md`](KFB_CLUSTER4_WATER_MELT_TERRAIN_SPLAT_WS0_WSA_BRIEF_R1_2026-10-22.md).
+
+**Single next gate:** WS0 pins the actual current WS1/WS1b MVP water/melt-terrain owner seam and decides whether a tiny **source-isolated Shoreline A0/A1/A2** trial can be delegated, without reopening WB2 R4 or manufacturing a second runtime. Other original Cluster 1–3 open questions and design authority remain unchanged.
+
+**Status:** IDEA / SOURCE RESEARCH / DESIGN BRIEF, no implementation, source-object isolation, human/visual PASS or Stage publication.
