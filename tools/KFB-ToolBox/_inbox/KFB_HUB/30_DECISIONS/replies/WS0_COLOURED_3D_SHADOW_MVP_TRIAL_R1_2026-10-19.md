@@ -82,3 +82,20 @@ Georg hat die zuvor diskutierte Terrain-Farb-/Schattenrichtung **konkretisiert**
 
 ## Additiver Changelog
 - R1.3, 19.10.: vollständige Farbflächen-/Kanten-/Foreground-/Shadow-Designspezifikation und Testbericht als **neue Begleitdateien** hinzugefügt; Parent-Issue #439 bleibt bestehen. Keine alten R1/R1.1-Fehlfassungen reaktiviert.
+
+
+---
+
+## 2026-10-22 · Addendum R1.4 · Particle-First Surface VFX, kein künstliches Wolkenmodell
+
+**Georgs Korrektur / verbindliche Design-Richtung:** Die zuvor vorgeschlagenen größeren, prozedural „gebastelten“ Knetwolken sind **verworfen**. Claude Code soll keine künstlichen Blob-, Kugel-, Ballon- oder Billboard-Staubwolken erstellen. Die Fahne entsteht aus den **vorhandenen kleinen gepoolten Partikeln**, nach echter Racer-Trajektorie, bestehendem `k2t.signals.drift`, Emissionsrate, Dispersion, Lebensdauer und **tatsächlicher Oberflächen-/Biom-Palette**. Wasser/Spray nutzt denselben Emitter mit kurzem ballistischem Profil und den bestehenden Wasser-Owner für Wakes/Ripples – keine Fake-Fluid-Simulation. Keine Ersatzschatten; Geometrie wirft weiterhin reale 3D-Schatten.
+
+**Neue, direkt lesbare KFB-Unterlagen für WS0, Claude Code, WS1b:**
+- `replies/WS0_PARTICLE_FIRST_SURFACE_VFX_R1_2026-10-22.md` (Design/Quellpfade/Grenzen, 160-Punkte-Baseline, `k2t` hat Drift-Signal bereits);
+- `replies/WS0_PARTICLE_FIRST_SURFACE_VFX_TEST_REPORT_R1_2026-10-22.md` (14/14 dokumentierte Source-/Textprüfungen, tatsächliche Browser/Runtime/GPU-Tests 0);
+- `replies/WS0_PARTICLE_FIRST_SURFACE_VFX_RETURN_R1_2026-10-22.md` (exakter Owner/Branch, offene Material-Palette-/Water-Receiver-Nähte, nächster Gate).
+
+**Parent-Auftrag #439 bleibt** das ganze Gelände einschließlich Banden, nicht-stufiger Rampen, organischer Farbflächen und echter Schatten. Dieses VFX-Addendum ist eine *anschließende optionale, reversible same-scene A/B-Verbesserung* des bestehenden WS1b-Racers, **kein neuer Runtime-Owner, kein separater Cloud-Sandbox-Test und keine automatische höhere Priorität**. Beim späteren VFX-Gate zuerst das echte 160-Partikel-Modul im aktuellen WS1b-Stand source-isoliert und sichtbar zeigen.
+
+### Additiver Changelog
+- R1.4, 22.10.: Particle-First anstelle „Knetwolken“ konkretisiert; aktuelle WS1-Mirror-Quelle der Staub-Emitter, Drift-Signal und potenzielle Material-Palette-Naht gepinnt; Testmatrix und Return als Begleitdateien; keine Umsetzung, kein neuer Shader-/Runtime-/Cloudflare-Code.
