@@ -42,3 +42,8 @@ No new SSOT, designer or renderer is formed by these four docs. Main KFB Hub/rou
 
 ## One next gate
 **WS0_HUD_3D_SOURCE_READY_ACK_R1** — WS0 reads the four GitHub documents, locates full live owner APIs and source-safe actual GLB/GLTF/Card/Fluff bodies, shows donor objects in isolation, reconciles N34 image sourcing and rights, and reports `READY_FOR_DESIGN` / `READY_WITH_NAMED_SOURCE_GAPS` / `NOT_READY`. Only after that should Claude Design use the draft for **actual 3D A/B/C compositions** and Georg's PASS/TUNE/FAIL. No automatic Blender MCP or WS1 implementation.
+
+## Planning QA evidence · 2026-10-22
+- Five changed Markdown files read back from the exact HUD planning branch; document text and blob hashes verified after every GitHub write. Four new files in `hud-3d-r1/`, one existing historical concept extended; no binary assets copied or altered.
+- A **35-case static document audit** re-read all five files and tested the §1–§11 continuity, source inventory paths, original 3D donor/state/flyout clauses, WS0 mandatory source-isolation and Blender permission, Claude Design blocking, and single Return gate: **35/35 PASS**. An initial 34/35 was solely an overly literal test-string mismatch for the already-present WS0 isolation instruction; corrected test passed with no source change.
+- These tests are **textual invariants only**, not visual/3D, browser, audio or runtime acceptance. Source object isolation **0**, capture/animation **0**, performance **0**, Site/Stage **0**, merge **0**.
