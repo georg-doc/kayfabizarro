@@ -1,0 +1,671 @@
+{
+  "schema": "kfb.asset-saved-set.v1",
+  "id": "699a0dfc-0fca-467a-96a9-b2fc9dd87ae6",
+  "name": "Town Market Props",
+  "notes": "",
+  "items": [
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KFB/Trash Bag by Quaternius - jYrMKg2Q7C.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KFB/Car Radio - with tape player by Jakers_H - ddkK1h2S4__.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KFB/Cassete Tape by Poly by Google - 5GeV4CitAdY.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KFB/Cassette tape by Poly by Google - aR5ot8Z7_-v.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KFB/Radio by Quaternius - TPqvwkyWdV.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/chest.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/gltf/Cleric_Tome.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Small.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Medium.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Large.gltf",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Club.gltf.glb",
+      "source": "registry"
+    },
+    {
+      "kind": "asset",
+      "id": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf",
+      "source": "registry"
+    }
+  ],
+  "handoff": {
+    "schema": "kfb.asset-handoff.v1",
+    "sourceRepo": "georg-doc/kayfabizarro",
+    "sourceCommit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+    "consumer": "worldbuilder",
+    "selectionStatus": "candidate-only",
+    "suitabilityDecision": "owned-by-receiving-consumer",
+    "assets": [
+      {
+        "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+        "name": "compass_base",
+        "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 9357,
+        "packId": "kaykit-rpgtoolsbits-1-0-free",
+        "collectionPath": "Assets",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "aae3a305e2b3f0bdf3539f0a4e75f3d4694625f9",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "compass_base.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "tools_bits_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+        "name": "drafting_compass",
+        "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 9322,
+        "packId": "kaykit-rpgtoolsbits-1-0-free",
+        "collectionPath": "Assets",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "2786dc237a70c0fd363ed7de193f6e4bb3c246ee",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "drafting_compass.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "tools_bits_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+        "name": "blueprint",
+        "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 5230,
+        "packId": "kaykit-rpgtoolsbits-1-0-free",
+        "collectionPath": "Assets",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "c2ed249e80986d0f5f6155743e07a3c6d0f88775",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "blueprint.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+              "provenance": "file-explicit",
+              "reference": "images[1].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "tools_bits_blueprint.png"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "tools_bits_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KFB/Trash Bag by Quaternius - jYrMKg2Q7C.glb",
+        "name": "Trash Bag by Quaternius - jYrMKg2Q7C",
+        "path": "media/3D_Assets/KFB/Trash Bag by Quaternius - jYrMKg2Q7C.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 42968,
+        "packId": "kfb",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "cca39d97e10da3a48f746a3a6d72190d33907ee8",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Trash%20Bag%20by%20Quaternius%20-%20jYrMKg2Q7C.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KFB/Trash%20Bag%20by%20Quaternius%20-%20jYrMKg2Q7C.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KFB/Car Radio - with tape player by Jakers_H - ddkK1h2S4__.glb",
+        "name": "Car Radio - with tape player by Jakers_H - ddkK1h2S4__",
+        "path": "media/3D_Assets/KFB/Car Radio - with tape player by Jakers_H - ddkK1h2S4__.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 87752,
+        "packId": "kfb",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "e8e06ec98ae6803edd5ca2ce9629f4ec185ee2ed",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Car%20Radio%20-%20with%20tape%20player%20by%20Jakers_H%20-%20ddkK1h2S4__.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KFB/Car%20Radio%20-%20with%20tape%20player%20by%20Jakers_H%20-%20ddkK1h2S4__.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KFB/Cassete Tape by Poly by Google - 5GeV4CitAdY.glb",
+        "name": "Cassete Tape by Poly by Google - 5GeV4CitAdY",
+        "path": "media/3D_Assets/KFB/Cassete Tape by Poly by Google - 5GeV4CitAdY.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 1472100,
+        "packId": "kfb",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "82aadbae53fbfe2182850d681f08c1b1d7ba5472",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Cassete%20Tape%20by%20Poly%20by%20Google%20-%205GeV4CitAdY.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KFB/Cassete%20Tape%20by%20Poly%20by%20Google%20-%205GeV4CitAdY.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KFB/Cassette tape by Poly by Google - aR5ot8Z7_-v.glb",
+        "name": "Cassette tape by Poly by Google - aR5ot8Z7_-v",
+        "path": "media/3D_Assets/KFB/Cassette tape by Poly by Google - aR5ot8Z7_-v.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 117420,
+        "packId": "kfb",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "ee2f1f31b7ebb8ef3f92dba32290b1a070d4f81e",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Cassette%20tape%20by%20Poly%20by%20Google%20-%20aR5ot8Z7_-v.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KFB/Cassette%20tape%20by%20Poly%20by%20Google%20-%20aR5ot8Z7_-v.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+        "name": "radio",
+        "path": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 5627,
+        "packId": "tiny-treats-pleasant-picnic-1-0-free",
+        "collectionPath": "Assets",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "5c5bbc91f5b716beb7c2207c16a74cf6a460b24b",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "radio.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "tiny_treats_texture_1.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KFB/Radio by Quaternius - TPqvwkyWdV.glb",
+        "name": "Radio by Quaternius - TPqvwkyWdV",
+        "path": "media/3D_Assets/KFB/Radio by Quaternius - TPqvwkyWdV.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 28996,
+        "packId": "kfb",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "c88b06e75b8138d0c9ff6969bfe9563973c2b1bc",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Radio%20by%20Quaternius%20-%20TPqvwkyWdV.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KFB/Radio%20by%20Quaternius%20-%20TPqvwkyWdV.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/chest.gltf",
+        "name": "chest",
+        "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/chest.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 5111,
+        "packId": "kaykit-dungeon-pack-1-1-free-2",
+        "collectionPath": "Assets",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "576b4fa8a6b112fd8832251dbf0f86cf631325c5",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/chest.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/chest.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/chest.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "chest.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/dungeon_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "dungeon_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/gltf/Cleric_Tome.gltf",
+        "name": "Cleric_Tome",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/gltf/Cleric_Tome.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 3041,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "3 - September 2025 - Cleric",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "85833933b1d1590199b7a564cf7931d0b09194e3",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/3%20-%20September%202025%20-%20Cleric/gltf/Cleric_Tome.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/3%20-%20September%202025%20-%20Cleric/gltf/Cleric_Tome.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/gltf/Cleric_Tome.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "Cleric_Tome.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/gltf/cleric_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "cleric_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Small.gltf",
+        "name": "Gem_Small",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Small.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 3031,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "4 - October 2024 - Vampire",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "4a9aa3cdaf5d1dc685a5141ef35caaaec830d464",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Small.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Small.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Small.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "Gem_Small.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/vampire_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "vampire_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Medium.gltf",
+        "name": "Gem_Medium",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Medium.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 3035,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "4 - October 2024 - Vampire",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "7c381a4cbbcfb39cae007d1c2e9ec60b71daa57a",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Medium.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Medium.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Medium.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "Gem_Medium.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/vampire_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "vampire_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Large.gltf",
+        "name": "Gem_Large",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Large.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 3028,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "4 - October 2024 - Vampire",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "d171c27c5f85b32ac0136694213e17780ed43fff",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Large.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/4%20-%20October%202024%20-%20Vampire/assets/gltf/Gem_Large.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/Gem_Large.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "Gem_Large.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/assets/gltf/vampire_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "vampire_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+        "name": "Orc_WardrumStick.gltf",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 19416,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "1 - July 2023 - Orc Raider",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "e82030eb5d636de69a4f14914a2332b9c20b4df8",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202023%20-%20Orc%20Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202023%20-%20Orc%20Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Club.gltf.glb",
+        "name": "Orc_Club.gltf",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Club.gltf.glb",
+        "kind": "model-3d",
+        "format": "glb",
+        "sizeBytes": 36352,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "1 - July 2023 - Orc Raider",
+        "dependencyStatus": "embedded",
+        "source": {
+          "blobSha": "c8918dab619f7d996431db3d55ee043a1bdfed92",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202023%20-%20Orc%20Raider/assets/gltf/Orc_Club.gltf.glb",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202023%20-%20Orc%20Raider/assets/gltf/Orc_Club.gltf.glb",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": []
+        },
+        "rigFacts": null
+      },
+      {
+        "assetId": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf",
+        "name": "Caveman_Club",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf",
+        "kind": "model-3d",
+        "format": "gltf",
+        "sizeBytes": 3550,
+        "packId": "kaykit-mystery-series6",
+        "collectionPath": "8 - February 2025 - Caveman",
+        "dependencyStatus": "complete",
+        "source": {
+          "blobSha": "dc0334b9b8d4bee7110f07ccc74cbeb49f594153",
+          "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+          "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Mystery_Series6/8%20-%20February%202025%20-%20Caveman/assets/gltf/Caveman_Club.gltf",
+          "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/KayKit_Mystery_Series6/8%20-%20February%202025%20-%20Caveman/assets/gltf/Caveman_Club.gltf",
+          "repo": "georg-doc/kayfabizarro"
+        },
+        "relations": {
+          "dependencies": [
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.bin",
+              "provenance": "file-explicit",
+              "reference": "buffers[0].uri",
+              "role": "buffer",
+              "status": "ok",
+              "uri": "Caveman_Club.bin"
+            },
+            {
+              "exists": true,
+              "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png",
+              "provenance": "file-explicit",
+              "reference": "images[0].uri",
+              "role": "image",
+              "status": "ok",
+              "uri": "caveman_texture.png"
+            }
+          ]
+        },
+        "rigFacts": null
+      }
+    ]
+  }
+}

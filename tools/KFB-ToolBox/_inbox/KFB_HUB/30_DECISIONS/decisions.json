@@ -9249,6 +9249,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-651",
+   "date": "2026-10-22",
+   "area": "Kampf",
+   "verdict": "RULE",
+   "text": "Boss-Katapult mit großer Orc-Keule (Georg 22.10., Ausnahme zu V-574): Orc_Club (Mystery S4 Orc Raider) wird für den Rig_Large-Boss passend hochskaliert (Proportion wie Orc_Axe_Large zur Figur), sonst as-is; Einpassung nach WEAPON_GRIP_MODELS_R1 Modell 1 (Stiel im Faustring, Kopf über dem Daumen), Einhand-Boss-Slash mit Hammer-Space-Gag. Wird Standard-Boss-Waffe; FrostGolem-Axt und BK-Schwert bleiben Varianten.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will die Keule für den Move; eine passend skalierte Kit-Keule ist ehrlicher als ein Ersatzmodell.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-652",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "SPEC",
+   "text": "Diegetisches Knet-HUD, Props nach Georg (konkretisiert V-645, Set replies/HUD_PROPS_SET_R1.json): Kompass compass_base mit zwei Zuständen (zu = Tacho mit farbigem Halbkreis ohne Nadel, Tempo-Zahl in der Mitte wie bisher; auf = Minimap), Tiny-Treats-Radio für Playlist und Ton an/aus mit dicken Knet-Tasten und Laufschrift für Titel, Truhe (KayKit Dungeon chest) statt Rucksack mit animiertem Deckel, Pickups und Fluff fliegen hinein, Fluff-Score als 3D-Knet-Lettering in Bangers, Almanach-Kartenfächer as-is mit passendem Schatten. WSB baut die Props (GLB mit Zuständen und Ankern, Knete), WS1 baut sie ein; Ziel unter 1 ms.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gegenstände der Welt als HUD lösen den Stilbruch; vorhandene Kit-Props reichen.",
+   "applies": "nach K13"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9336,7 +9366,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1091",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1092",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
