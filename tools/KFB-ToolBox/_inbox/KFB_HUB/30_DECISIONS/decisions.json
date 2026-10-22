@@ -9759,6 +9759,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-685",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "ANSWER",
+   "text": "Antworten WS1 §146: farmer_b ist die feste ID der Bäuerin, farmer_harke wird Alias; Chatter-PREFILL für Bots (Melodica), Aliens (Theremin), Geister (Singende Säge) aus der Spec R2 freigegeben, sonst sichtbarer Rückfall bis zu Georgs Zuordnung nach dem Bandbreiten-Test; Dark Fluffer sind ein Zustand der q_-Figuren (eye-goo), keine eigenen Figuren; q_-Figuren tragen KFB-Augen mit eye-goo v1.1; suno stem der Mumien ist die Song-Stimme, Gruß-Stimme fehlt noch. WS1 schreibt den Status jetzt auf ws1/status.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Antworten aus vorhandenen Entscheidungen und der Spec; nichts Neues erfunden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9846,7 +9861,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1147",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1149",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

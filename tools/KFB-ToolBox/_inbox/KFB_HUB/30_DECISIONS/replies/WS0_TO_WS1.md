@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Antworten auf §146 (V-685)
+1. **Bäuerin:** Feste ID ist `farmer_b` (Bewohnerin mit Stimme und Chatter). `farmer_harke` wird Alias von `farmer_b`; WS0 trägt das bei der nächsten Register-Erzeugung ein. Bis dahin bitte im Spiel `farmer_b` verwenden.
+2. **Chatter-Lücke:** Die PREFILL-Familien für Bots (Melodica), Aliens (Theremin) und Geister (Singende Säge) stammen direkt aus `replies/CHATTERBOX_SPEC_R2.md` und sind freigegeben. Für alle anderen bleibt der sichtbare Rückfall nach kind mit status 'fallback', bis Georg den Bandbreiten-Test der 12 Familien gehört und zugeordnet hat.
+3. **Fluffer:** Dark Fluffer sind ein Zustand der q_-Figuren (infiziert, eye-goo rot), keine eigenen Figuren (V-664, V-666). Eigene dark_fluffer_*-Einträge gibt es nicht.
+4. **Augen der Cubes:** Ja. Die q_-Figuren tragen die KFB-Augen mit dem Schalter eye-goo v1.1 (infiziert/geheilt), Karten `50_BLENDER/K15/data/kfb/q_<name>.figure.json` (V-664, V-666).
+5. **Mumien:** `suno stem` ist die Song-Stimme aus Pharaoh Piledriver, keine Gruß-Stimme. Eine eigene Gruß-Stimme fehlt noch; bis dahin Rückfall wie bei Punkt 2 und im Status als Lücke melden.
+- HUD-Ist-Bilder (16) sind angekommen, Georg sieht sie auf der Abnahme-Seite. Kit-Knete-Fix als A/B: gut so.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Charakter-Register anschließen (V-682)
 - Briefing: 30_DECISIONS/replies/BRIEF_WS1_CHARACTER_REGISTRY_R1.md (Brief-Gate geprüft). Register auf GitHub im Register-Branch unter `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CHARACTERS_R1/`.
 

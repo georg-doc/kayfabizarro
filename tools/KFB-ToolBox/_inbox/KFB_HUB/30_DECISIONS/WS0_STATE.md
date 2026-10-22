@@ -1,5 +1,5 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
-Stand 22.10.2026, Register bis V-683. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
+Stand 22.10.2026, Register bis V-685. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 1. **Bereich bestimmen:** HUD, Figuren, Licht, Welt, Fahren, Kampf, Audio oder Spiel (siehe `tools/brief_domains.json`).
@@ -32,7 +32,8 @@ Stand 22.10.2026, Register bis V-683. Nach jedem /compact und zu Beginn jeder St
 ## 4 · Offen (Stand 22.10.)
 - FrizzleBob: R2 und R3 sind FAIL, WSA ist pausiert, FB gesperrt (`50_BLENDER/FB/data/FB_CANON.json`). Weiter erst mit Referenzbild aus der ToolBox (P08) und Bildvergleich.
 - Charakter-Register: Verbraucher anschließen (Spiel, WS-NPC, WS-Audio, ToolBox, Dramatis Personae nach `CHARACTERS_R1/DRAMATIS_PERSONAE_LINK.md`); Georg entscheidet doppelte Kit-Körper.
-- HUD: WS1 liefert den Ist-Stand `hud=wood` als Einzelbilder (Almanach zu und offen). Georg gestaltet extern. WSB baut am HUD nichts.
+- HUD: 16 Ist-Bilder (A = Spiel, B = R5f) liegen auf der WS1-Abnahme-Seite; Georg gestaltet extern. WSB baut am HUD nichts.
+- Register: farmer_harke als Alias von farmer_b bei der nächsten Erzeugung eintragen (V-685).
 - Hub: q168 beantwortet (V-684, Ink-Flüsse); q169 Ziel-Pfeil zurückgestellt bis WS1-Ist-Bilder hud=wood.
 - WS1: Schattenseiten-Regel A/B (V-683), Bäume und Terrain-Blobs A/B (V-676), Kritiker R4.
 - WSA: Inventur des Arbeitsordners (36 GB), Löschen nur nach Georgs Ja.
