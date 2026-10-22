@@ -6,3 +6,8 @@
 - Erzählung: gemeinsame Plage (wie Horde und Allianz) im Goo-Narrativ mit Hunky, Dory und den Men in Black; satirisch zu Biopolitik, Bio-Warfare, Infektionsangst.
 - Offen für Georg: was der Spieler befallen erlebt (Kontrollverlust, böse spielen, Zeitlimit bis Heilung).
 - Bausteine vorhanden: eye-goo, Dark-Fluffer-Spawn (WS-NPC Phase C), Heilen (Fluff-Kugeln), Kampf.
+
+## Georg 22.10. (Hub q165, V-679)
+- Spieler befallen: **erstmal c**, kurzer Kontrollverlust (Taumeln, Fehlschläge), dann zurück.
+- **Später b** (Seitenwechsel, böse spielen bis geheilt): braucht ein eigenes Konzept für Meta-Erzählung, Technik und Gameplay.
+- Dazu (q159, V-677): Dark Fluffer bespucken auch Gebäude und Terrain mit instanzierten Ink-Splats aus der Combat Arena; so überzieht bzw. zensiert der Goo die Welt, Heilen macht es rückgängig.

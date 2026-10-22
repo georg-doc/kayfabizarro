@@ -9639,6 +9639,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-677",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "DECISION",
+   "text": "Goo-Vorstadt (Georg, Hub q159): Variante b herabfließend; je nach Leistung zusätzlich feinere, dünne schwarze Farbflüsse über den abgedunkelten Flächen. Instanzierte Ink-Splats aus der Combat Arena für von Dark Fluffern bespuckte, also infizierte Gebäude; später auch für Terrain, so überzieht der Goo die Welt (Backlog V-665). Nächster Schritt WSB K14 r4 als Look-Test, Laufzeit-Shader später WS1.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Herabfließendes Goo wirkt am stärksten; Ink-Splats verbinden Kampf und Welt-Infektion mit vorhandenen Bausteinen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-678",
+   "date": "2026-10-22",
+   "area": "Audio",
+   "verdict": "DECISION",
+   "text": "Chatterbox Spec R2 Fragen (Georg, Hub q161-q164): L2-Silbenmotiv für Nahdialog und Hauptfiguren ja; Musikstile als Gruppen-Ebene und Insel-Grundton wie vorgeschlagen (O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch); Beziehung als Harmonie ja; Bandbreiten-Test mit allen 12 Klangfamilien (ca. 5.000 Credits). Erzeugung erst nach Georgs Go im Chat.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat die Spec-Fragen bestätigt; Credits nur mit Go im Chat.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-679",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Black-Fluff-Infektion, Spielererlebnis (Georg, Hub q165): erst kurzer Kontrollverlust (Taumeln, Fehlschläge), dann zurück; später Seitenwechsel (böse spielen bis geheilt) mit eigenem Konzept für Meta-Erzählung, Technik und Gameplay. Weiter nicht MVP.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kurzer Kontrollverlust ist sofort spielbar; der Seitenwechsel braucht Erzählung und Technik.",
+   "applies": "nach MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9726,7 +9771,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1137",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1139",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
