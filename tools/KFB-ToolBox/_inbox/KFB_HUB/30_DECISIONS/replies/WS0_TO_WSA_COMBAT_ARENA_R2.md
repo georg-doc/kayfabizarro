@@ -275,3 +275,9 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · Georgs Antworten (V-647)
 - **Meshy:** kein Enterprise, also nur Weg B (Link-Import in den Librarian).
 - **Öffentliche Spiel-Slices** (Arena, Travel, Race) kommen hinter dasselbe Passwort wie die übrigen privaten Seiten, vorerst nur für Georg. Bitte in der Repo-privat-Umstellung (PR #443) so einplanen, keine Ersatzfiguren.
+
+
+## 22.10. · K13 N28: große Orc-Keule (V-651)
+- `kfb_kit_orc_club_large.weapon.json` (privater Branch, `50_BLENDER/K13/_privat_kauf_asset/`): Orc_Club ×2,0 über einen skalierten Wurzelknoten, Netz byte-gleich.
+- **Bitte im Karten-Check ein Feld `scaleException` mit Verweis auf V-651 zulassen.** Bisher kennt der Prüfer nur kit-original und custom.
+- Boss-Slash mit Hammer-Space (Erscheinen 0,50 s, Treffer 0,60 s, weg 1,033 s), CONTRACT_PASS bei WSB.
