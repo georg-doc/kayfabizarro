@@ -1,13 +1,14 @@
 // Abnahme Scheinwerfer-Tune (Georg 22.10.: zwei getrennte Kegel mit rundem Ende, tagsüber leiser): A = alte Werte, B = Tune, im selben Moment und mit
 // derselben Kamera (HEADLIGHT_TUNE zur Laufzeit + HEADLIGHTS.rebuild, Antrieb eingefroren). Einzelbilder 1600×900 @2, JPG 88, #debug,clean.
-// Ablage ~/kfb-ws1/research/audits/abnahme/scheinwerfer/<racer>-<tag|gold|nacht>-<alt|neu>.jpg + index.json. Nur mit Test-Slot.
+// Ablage ~/kfb-ws1/research/audits/abnahme/scheinwerfer2/ (HL_OUT): <racer>-<tag|gold|nacht>-<alt|neu>.jpg, dazu <racer>-nah-nacht-<alt|neu>.jpg
+// (schräg von vorn-seitlich: Übergang Lampe → Kegel) + index.json. Nur mit Test-Slot.
 // Aufruf: node test/headlight-abnahme.mjs [racer,racer,…]
 import fs from 'fs'
 import os from 'os'
 import path from 'path'
 import { chromium } from 'playwright'
 const sharp = (await import('sharp')).default
-const OUT = path.join(os.homedir(), 'kfb-ws1/research/audits/abnahme/scheinwerfer'); fs.mkdirSync(OUT, { recursive: true })
+const OUT = path.join(os.homedir(), 'kfb-ws1/research/audits/abnahme/' + (process.env.HL_OUT || 'scheinwerfer2')); fs.mkdirSync(OUT, { recursive: true })
 const RAC = (process.argv[2] || 'crimson_flame_dragster,crimson_thunderjet,wasteland_beetle,rust_runner').split(',')
 const BASE = '#m1,car,debug,clean,look=terrain3,world=probe,prefetch=0', VP = { width: 1600, height: 900 }, index = []
 async function open(extra) {
@@ -24,7 +25,10 @@ for (const [tod, th] of [['tag', ''], ['gold', ',tod=gold'], ['nacht', ',tod=nig
     // von hinten oben, Ziel 6 m vor dem Wagen: beide Lichtflecken und der Wagen im Bild
     await page.evaluate(() => { window.__kfbM2.camPose({ dist: 12, yaw: Math.PI, pitch: 0.62, ty: 0.3, ahead: 7 }); window.__kfbM2.freeze('rig') }); await page.waitForTimeout(800)
     for (const [lab, on, h] of [['alt', false, ',hlt=0'], ['neu', true, '']]) { await page.evaluate((on) => { window.__kfbM2.headlightTune.on = on; window.__kfbM2.headlights.rebuild?.() }, on); await page.waitForTimeout(700); await shoot(page, id, `${tod}-${lab}`, th + h) }
+    if (tod === 'nacht') { // Nahbild schräg von vorn-seitlich: Lampe und Ansatz des Kegels
+      await page.evaluate(() => window.__kfbM2.camPose({ dist: 8.5, yaw: 1.3, pitch: 0.32, ty: 0.3, ahead: 3.5 })); await page.waitForTimeout(800)
+      for (const [lab, on, h] of [['alt', false, ',hlt=0'], ['neu', true, '']]) { await page.evaluate((on) => { window.__kfbM2.headlightTune.on = on; window.__kfbM2.headlights.rebuild?.() }, on); await page.waitForTimeout(700); await shoot(page, id, `nah-nacht-${lab}`, th + h) } }
     await page.evaluate(() => { window.__kfbM2.freeze(false); window.__kfbM2.camPose(null) }) }
   if (errs.length) console.log('errs', errs.slice(0, 3)); await browser.close() }
-fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify({ schema: 'kfb.abnahme-bilder/1', date: new Date().toISOString(), size: '1600x900@2', quality: 88, source: 'kfb-planet ws1/vehicles-r1 test/headlight-abnahme.mjs', ab: 'alt = hlt=0 (Werte bis 22.10.), neu = Tune', items: index }, null, 1))
+fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify({ schema: 'kfb.abnahme-bilder/1', date: new Date().toISOString(), size: '1600x900@2', quality: 88, source: 'kfb-planet ws1/vehicles-r1 test/headlight-abnahme.mjs', ab: 'alt = hlt=0 (Form bis 22.10.), neu = Tune v2 (Ansatz an der Lampe, getrennte Flecken, parallel)', items: index }, null, 1))
 console.log('PASS headlight-abnahme', index.length, 'Bilder →', OUT)
