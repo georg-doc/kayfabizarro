@@ -3,6 +3,26 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 140 · 22.10. · Drei Knet-Stufen im MVP (hinter Schaltern, warten auf Georgs Abnahme)
+
+- **ws1/mvp-r1 @01859ea.** Privat `game/mvp-r1` @546161d, öffentlicher Spiegel `ws1/mvp-r1` @54619f4.
+- **WS1e Knet-HUD R1 (V-656)**, `hud=clay`; Standard bleibt Holz.
+  - 6 N29-Props, gecachte Ansichten: Ruhe Ø 0,16 ms, Karte offen p95 0,7 ms.
+  - Zahnrad-Tafel mit „Entwickler-Infos“ (V-655, DEVUI live, `clean` erzwingt aus) und Ton-Reglern.
+  - hud-clay 25/25 PASS.
+  - Offen: Fluff-Zahl liegt über dem Bühnenplakat; Tacho-Zahl klein; **Knet-Prop für die Aktionsleiste fehlt (Bitte an WS0/WSB)**.
+- **WS1d Racer-Knete (V-654 C5)**, `vclay=1`.
+  - Umtönen auf Biom-Rollen, kfb-clay-Profil `vehicle`, Knet-Flamme statt Leuchtscheiben.
+  - Klon-Falle behoben: userData-Verweis liegt jetzt in einer WeakMap, vorher ≈ 600 ms je Racer.
+  - vehicles-r1 data PASS mit und ohne vclay.
+  - Offen: Ödland-Käfer verliert Gelb und Blau; Lüfterringe.
+- **WS-NPC Kit-Knete (V-654 C5)**, `kitclay`, 22 Ziele, Palette wie der beruhigte Boden.
+  - Ehrlicher Befund: Aus der Spielkamera ist die Knet-Struktur auf texturierten Kit-Figuren kaum sichtbar.
+  - **Frage an WS0:** stärkerer kfb-clay-Profilwert (Relief/Normal) für Kit-Größe?
+- **WS-NPC N15** (Soldaten kippen/klappen, toyko PASS) und **K15** (Dark Fluffer je Obstgarten-Zone, Tages-Seed, höchstens 3 nah) in Arbeit.
+- **WS1b Erdung** (`ws1/grounding-r1`) in Arbeit.
+- **Nächste Kritiker-Runde** erst nach Erdung und Georgs Entscheid über die Knet-Stufen.
+
 ## 139 · 22.10. · Kritiker MVP R1, Runde 2: REWORK 3,2 → Stopp-Regel, Bericht an WS0 · Schnell-Korrekturen drin · Aufgaben nach V-654 verteilt
 
 - **ws1/mvp-r1 @961cce8.** Privat `game/mvp-r1` @6ca3e54, öffentlicher Spiegel `ws1/mvp-r1` @1847d53.
