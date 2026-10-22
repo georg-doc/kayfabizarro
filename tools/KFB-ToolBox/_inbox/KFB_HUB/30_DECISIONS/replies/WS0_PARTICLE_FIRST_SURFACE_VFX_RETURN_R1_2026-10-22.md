@@ -37,3 +37,25 @@
 **WS0 uses this direction in the existing issue #439 and asks the existing WS1b Racer/Terrain owner to pin the receiving code HEAD and show the *actual* 160-particle source in isolation; then, if scheduled, one reversible same-scene Particle-First Sand/Water/Soil A/B against the current visual baseline, with time+source+GPU evidence.** Existing overall Terrain/Banden/Ramp/Shadow gate remains primary. No forced new priority or separate editor/host.
 
 No merge or Live promotion. No direct KFB Stage link claimed.
+
+
+---
+
+## Current additive follow-up · 2026-10-22 · palette/source bridge + particle disc-risk
+
+Georg asked what else we could prepare after the Particle-First check-in. **One read-only bounded source follow-up** closed substantial previous open questions and was persisted on the **same existing WS0 register branch**:
+
+- New `WS0_PARTICLE_FIRST_VFX_SOURCE_BRIDGE_R1_2026-10-22.md`: source-pin and mapping for `terrain2Palette`, height-free `terrain2` shader, intentionally height/time-coupled later `terrain3`, current `terrain3` palette IDs, numeric-only `m1-terrain.surfaceAt`, no CPU material-role sampler, and the Racer's uncapped per-camera `gl_PointSize`. Does NOT alter prior Claude/WS1b source code or shaders.
+- Existing `WS0_PARTICLE_FIRST_SURFACE_VFX_TEST_REPORT_R1_2026-10-22.md` additively expanded with **17/17 newly executed source-text assertions**. Its prior **14/14** remains historical, not rerun as part of this batch.
+- Source doc creation exact GitHub readback: `9982ee1a08ed24be716a963778d6d444008f2722`, blob `f9e8113a3915b7639bc22ec9b00c8284519c65fc`.
+- Report expansion exact GitHub readback: `c25cbd9d73523c9609c0dd2207ea54486ac220c0`, blob `28c0715dcba3bfb34d849f6f322a52663fc0c817`.
+- Runtime tests **0**, new game/browser screenshots **0**, controlled GPU frame test **0**, server/Site/Stage work **0**, production code changed **0**.
+
+### Key readiness delta
+
+1. **Palette source has been found**, so source-first integration can initially use the **actual** Terrain2 or Terrain3 existing palette by zone or stage role. Exact per-pixel organic color selection is **NOT** exposed as a CPU API and remains unproven. Any precise sampler must be derived from one color-field source and parity tested, not improvised from height/slope or duplicated noise.
+2. **Active look is not identical between variants:** `terrain2` is height-independent, whereas later `terrain3` is time-animated and deliberately uses a height/downhill contribution per the 21 Oct WS1 source. Preserve both until WS0 confirms which is active and intended for the receiving Racer fixture.
+3. **No meaningful water-kind signal is returned by numeric `m1-terrain.surfaceAt(x,z)`**; exact Water material owner is still SOURCE_REQUIRED for real fluid/wake comparison. Do not fake it via a palette named "water".
+4. **Point sprite geometry is source-confirmed**; the current shader has no explicit pixel-size clamp, creating a concrete near-camera circular-sprite risk. Controlled visual + frame cost check before design changes.
+
+**Single next gate unchanged:** WS0 and WS1b pin the active receiving code/material owner, show actual source 160 particle points in isolation, then decide whether to schedule reversible same-scene Sand/Water/Soil VFX A/B inside existing #439 work without creating a second engine. No automatic merge/Live.
