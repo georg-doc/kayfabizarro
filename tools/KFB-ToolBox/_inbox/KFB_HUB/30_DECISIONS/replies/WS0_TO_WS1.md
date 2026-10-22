@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: HUD_LAYOUT_R3 ersetzt R2 (V-681)
+- Bitte 30_DECISIONS/replies/HUD_LAYOUT_R3.md statt R2: Kompass mit Minimap oben rechts, Almanach-Fächer direkt darunter gerade nach unten (echte Karten), Ziel-Plakette oben links, sechs Fluff-Pips plus Truhe unten links, Aktionsleiste unten Mitte, Interaktion als runde V-501-Blase, Radio unten rechts. Tacho-Ring auf dem geschlossenen Deckel wie J17. Ziel-Pfeil noch offen (Welt oder über dem Kompass).
+
 # NEU OBEN (22.10.) · An WS1e: HUD-Layout R2 (V-680)
 - Spec 30_DECISIONS/replies/HUD_LAYOUT_R2.md: Kompass mit Deckel zu als Tacho (Halbkreis grün bis rot, Booster-Rot, Tempo-Zahl) im Fahrzeug bzw. Flug, Klick öffnet die Minimap; Ziel-Pfeil über dem Kompass mit kurzer Entfernung und Nähe-Farbe (V-333 bis V-335); Radio wird die Kassette (Play/Pause, Nächster Titel, Ton an/aus).
 - Die Logik (Tacho-Halbkreis, Minimap auf Klick, Pfeil, Entfernung, Radio-Tasten) gern schon vorbereiten; Größen und Anordnung kommen aus WSB N34.

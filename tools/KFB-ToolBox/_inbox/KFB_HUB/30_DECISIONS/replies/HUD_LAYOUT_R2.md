@@ -1,3 +1,5 @@
+> **ÜBERHOLT durch HUD_LAYOUT_R3.md (V-681).** R2 wich vom Plan in HUD R4 §3.4b ab.
+
 # HUD-Layout R2 · 2026-10-22 · WS0 (V-680)
 **Tier 0:** Ein HUD aus freien 3D-Props (V-673/V-674), abgeglichen mit V-333–V-335 und V-652. Keine Schwundform: jedes Element behält seine Funktion aus dem bisherigen Konzept, Größe und Anordnung werden in Spielgröße gestaltet.
 

@@ -9699,6 +9699,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-681",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "SPEC",
+   "text": "HUD-Layout R3 ersetzt R2 (Drift: R2 war nicht mit HUD R4 §3.4b abgeglichen, Georg sah Abweichungen in N34): Kompass oben rechts, im Fahrzeug mit geschlossenem undurchsichtigem Deckel und J17-Tacho-Ring mit Punkt am Tempo, Klick öffnet die Minimap; Almanach-Fächer direkt darunter gerade nach unten, letzte 7 plus +N, echte Karten im Querformat (V-043); Modus-Plakette oben Mitte; Ziel-Plakette oben links mit Name und kurzer Entfernung; sechs Fluff-Pips in Story-Farben mit kleiner 3D-Zahl (V-340) und Truhe unten links; Aktionsleiste unten Mitte; Interaktion als runde 2D-Blase aus dem Blasen-SSOT V-501 ohne Outline mit 3D-Prop darin; Radio als Kassette mit Play/Pause-Wechselknopf unten rechts. Ziel-Pfeil Welt (V-334) oder über dem Kompass: offen für Georg. Spec replies/HUD_LAYOUT_R3.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Plan aus HUD R4 gilt; neue 3D-Props und Zustände kommen dazu, ohne die Anordnung neu zu erfinden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9786,7 +9801,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1140",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1142",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
