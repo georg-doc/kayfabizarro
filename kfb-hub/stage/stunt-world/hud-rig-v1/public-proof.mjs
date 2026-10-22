@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
 
-const URL='https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/hud-rig-v1/';
+const URL='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v1/';
 const CLOUDFLARE_URL='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v1/';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const checks=[];const pass=(name,cond,extra='')=>{checks.push({name,pass:!!cond,extra});if(!cond)throw Error('FAIL '+name+' '+extra);console.log('PASS',name)};

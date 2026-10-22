@@ -14,8 +14,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 /* Module host for the graft graph (~20 modules). jsDelivr @main and @a46dbdff1503 both drop single
    modules as dynamic imports in this host (graft-biped.v1.js, pet-mouth.v1.js · measured 2026-09-25);
-   raw.githack serves the same repo files with a JS MIME type and loaded the full graph. Fallback kept. */
-const RIGS_HOSTS = ['https://raw.githack.com/georg-doc/kayfabizarro/main/tools/KFB-ToolBox/kfb-rigs-embed-v3/', 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@a46dbdff1503/tools/KFB-ToolBox/kfb-rigs-embed-v3/'];
+   The current candidate uses the existing Cloudflare module route. Its graph needs the blocked-host proof; the historical fallback is retained as a reported blocker. */
+const RIGS_HOSTS = ['https://kayfabizarro.pages.dev/tools/KFB-ToolBox/kfb-rigs-embed-v3/', 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@a46dbdff1503/tools/KFB-ToolBox/kfb-rigs-embed-v3/'];
 const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
 const RAW = (p, c) => 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/' + c + '/' + enc(p);
 const KAYKIT = { commit: 'aa16a777a970f23d3f11fb3c23dc40718b04fa88', dir: 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/' };

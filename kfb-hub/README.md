@@ -42,7 +42,7 @@ Runtime / Ground Movement Lab:
 `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
 
 GitHub Pages fallback:
-`https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
 
 Parallel authoring-UX POC:
 `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`

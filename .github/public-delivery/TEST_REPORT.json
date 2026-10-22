@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-22",
+  "status": "PARTIAL_CANDIDATE_NOT_READY_FOR_PRIVATE_SWITCH",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "wsa/repo-private-switch-r1-2026-10-22",
+  "pr": 443,
+  "base": "7e1c4ab0f143b2f1c0f33017eb473574f20190c9",
+  "sourceFiles": [
+    {
+      "path": ".github/public-delivery/policy.json",
+      "blob": "ebc8251083f64d9524ee93724f7ca3154615b741"
+    },
+    {
+      "path": ".github/scripts/audit-public-delivery.mjs",
+      "blob": "6ba90410f5674941035992ddc3ab99f430b205de"
+    },
+    {
+      "path": ".github/scripts/build-cloudflare-pages.mjs",
+      "blob": "b7ec304387cd5edc0360ff768be70d1c0001c4e5"
+    },
+    {
+      "path": ".github/scripts/prepare-private-proof.mjs",
+      "blob": "6d72a2a9618ef9980a94994f923aabc301f7db87"
+    },
+    {
+      "path": ".github/scripts/public-delivery.mjs",
+      "blob": "91849416e51436892a45d2a3c525ca18f6d69cb0"
+    },
+    {
+      "path": ".github/scripts/public-delivery.test.mjs",
+      "blob": "b155f70cc00c65e9e8e39b96cc5e1405df757f4c"
+    },
+    {
+      "path": ".github/scripts/rebuild-reader-bundles.mjs",
+      "blob": "517df6a59eef6c5827ee24c8062efdca6d0a1419"
+    },
+    {
+      "path": "FrizzleBob/index.html",
+      "blob": "092978707da948d4b1a4e3634ba2adaf529c7cef"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v3.dc.html",
+      "blob": "1b581f27043981efbae6e5b27297f238af1ec414"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v4 -standalone src-.dc.html",
+      "blob": "14531cac0f5ef5e02d509bf7f0b528e29e116e3c"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v4.dc.html",
+      "blob": "d73e940b6bd865586a99f1860a227ccb99b84a16"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v5.dc.html",
+      "blob": "a7f1e4b63fec131ed87f5f8f3706072026c4619c"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer.dc.html",
+      "blob": "a5dd521990881b406adee0cd9ebb47196bf8abe4"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/deckviewer/kfb-corpus.js",
+      "blob": "c86c7f59ce6fa6b7476a68c7d1fb68f9c6603cfa"
+    },
+    {
+      "path": "KFB Comic Card Deck Viewer v4 (WS0)/exports/KFB Deck Viewer v4 standalone.html",
+      "blob": "e4f43ce11cf0f9a4d71886d9c4f02fe4b6263509"
+    },
+    {
+      "path": "kayfabizarro_browser.html",
+      "blob": "14b3c275333f5464fa645ae6d3e647982d9788f7"
+    },
+    {
+      "path": "kfb-hub/README.md",
+      "blob": "1cdadd316694b40d2b339d3d05e9229463c2a4c2"
+    },
+    {
+      "path": "kfb-hub/current-board.json",
+      "blob": "1eda8042e320d04b06be2098ff3cecf897e90fce"
+    },
+    {
+      "path": "kfb-hub/stage/stunt-world/hud-rig-v1/SOURCE.json",
+      "blob": "574b988fd6868dfbb17c43eb6385485377f3ce38"
+    },
+    {
+      "path": "kfb-hub/stage/stunt-world/hud-rig-v1/public-proof.mjs",
+      "blob": "38cc117186c4528dc15d73f88e3f37db72b183a9"
+    },
+    {
+      "path": "kfb-hub/stage/stunt-world/hud-rig-v2/SOURCE.json",
+      "blob": "217a0eb01115e036d924337145b434aaade0a494"
+    },
+    {
+      "path": "kfb-hub/stage/stunt-world/hud-rig-v2/public-proof.mjs",
+      "blob": "e2ddd9730275d7074ef5563fb4d263c6bd98a0b9"
+    },
+    {
+      "path": "media/kfb/index.html",
+      "blob": "e4f43ce11cf0f9a4d71886d9c4f02fe4b6263509"
+    },
+    {
+      "path": "media/kfb/index.json",
+      "blob": "b16f6f07dd016d8721c8fe29a8047d22afded094"
+    },
+    {
+      "path": "media/kfb/kfb-index.json",
+      "blob": "5a1eefa38a175e97c1ca359f099739998655cd75"
+    },
+    {
+      "path": "skills/chat/RECOVERY_PATH.md",
+      "blob": "17cf483a5b9684fbf8d5ea3a2a1d75f2f89e1dfc"
+    },
+    {
+      "path": "skills/chat/START_HERE.md",
+      "blob": "3483a0b7d277cede0baa44799ed2377347acae0a"
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js",
+      "blob": "9cc28f96825f4f8bd0202d01dd422f46cde0dc59"
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js",
+      "blob": "3b9546d24ee4424675e4453e14d3ea7468b6ea72"
+    }
+  ],
+  "unitTests": {
+    "passed": 9,
+    "failed": 0,
+    "runner": "node --test .github/scripts/public-delivery.test.mjs"
+  },
+  "existingDeckTests": {
+    "passed": 4,
+    "failed": 0,
+    "runner": "python3 -m unittest discover -s tools/asset_registry/tests -p test_ar3.py"
+  },
+  "browserNetwork": {
+    "passed": 283,
+    "failed": 0,
+    "readingTexts": 18,
+    "pdfHeads": 130,
+    "deckJson": 130,
+    "blockedHostControls": 5,
+    "profile": "managed CUA Chrome, terminal.local test copy, canonical Cloudflare origin mapped to candidate; CSP denies Raw, all jsDelivr, github.io, GitHub API, githack"
+  },
+  "localBrowserCases": [
+    {
+      "route": "/",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "Existing rules/home content visible"
+    },
+    {
+      "route": "/FrizzleBob/",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "Essay and reader selection, avatar image loaded; a temporary test-copy Markdown version marker was visibly reread, then restored"
+    },
+    {
+      "route": "/FrizzleBob/LERNEN_MIT_MASCHINE.html",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "Das Werkzeug ist gemietet text visible"
+    },
+    {
+      "route": "/media/kfb/",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "130 comics / 1914 pages / 6985 cards and actual PDF artwork visible"
+    },
+    {
+      "route": "/KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v3.dc.html",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "130 comics / 6985 cards"
+    },
+    {
+      "route": "/KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v4.dc.html",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "130 comics / 6985 cards"
+    },
+    {
+      "route": "/KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v5.dc.html?deck=frizzlebob_s_mission_control&card=56",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "Mission Control, card 56, page 15/15; 130 comics / 1915 pages / 6985 cards"
+    },
+    {
+      "route": "/KFB Comic Card Deck Viewer v4 (WS0)/exports/KFB Deck Viewer v4 standalone.html",
+      "status": "PASS_LOCAL_BLOCKED_HOSTS",
+      "scope": "130 comics / 6985 cards"
+    }
+  ],
+  "publicProjection": {
+    "files": 9967,
+    "publicSourceMediaFiles": 3956,
+    "publicSourceMediaBytes": 202060727,
+    "licensePacks": 24,
+    "sourcePdfFiles": 135,
+    "activeDeckPdfFilesValid": 130,
+    "activeDeckJsonFilesValid": 130,
+    "historicalUnusedEmptyPdf": {
+      "path": "media/kfb/KAYFABIZARRO_FREESTYLE_RULES.pdf",
+      "bytes": 2,
+      "modified": false
+    },
+    "sourceScanBlockedFiles": 249,
+    "sourceScanHtmlEntries": 192,
+    "strictReadinessGate": "FAIL",
+    "note": "A source finding is not a runtime failure count. Other pages are NOT_ACCEPTED until browser-tested."
+  },
+  "privateRepoSourceAudit": {
+    "files": 233,
+    "repos": 3,
+    "runtimeProof": "NOT_RUN"
+  },
+  "siteDeployments": 0,
+  "repositoryVisibilityChanges": 0,
+  "merges": 0,
+  "sourceDeletions": 0,
+  "runtimeCredentialsCreatedOrCopied": 0,
+  "productionBrowserVerification": "NOT_RUN_NEW_REVISION_NOT_DEPLOYED",
+  "actionsAccountQuota": "NOT_VERIFIED_NO_BILLING_TOOL"
+}

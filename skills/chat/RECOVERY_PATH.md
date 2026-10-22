@@ -74,7 +74,7 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 
 - Human recovery page: `https://kayfabizarro.pages.dev/kfb-hub/travel-world.html`
 - Runtime / Ground Movement Lab: `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
-- GitHub Pages fallback: `https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+- GitHub Pages fallback: `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
 - Parallel authoring POC: `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`
 - Router: `skills/chat/START_HERE.md`
 - Lead plan: `skills/chat/LIVING_MASTERPLAN.md`

@@ -19,7 +19,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const RIGS_HOSTS = ['https://raw.githack.com/georg-doc/kayfabizarro/main/tools/KFB-ToolBox/kfb-rigs-embed-v3/', 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@a46dbdff1503/tools/KFB-ToolBox/kfb-rigs-embed-v3/'];
+const RIGS_HOSTS = ['https://kayfabizarro.pages.dev/tools/KFB-ToolBox/kfb-rigs-embed-v3/', 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@a46dbdff1503/tools/KFB-ToolBox/kfb-rigs-embed-v3/'];
 const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
 const RAW = (p, c) => 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/' + c + '/' + enc(p);
 const KAYKIT = { commit: 'aa16a777a970f23d3f11fb3c23dc40718b04fa88', dir: 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/' };

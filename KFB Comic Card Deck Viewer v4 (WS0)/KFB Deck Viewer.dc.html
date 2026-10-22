@@ -281,9 +281,11 @@ class Component extends DCLogic {
     this.setState({ gh: { status: 'loading', decks: [], fallback: false } });
     const norm = (s) => s.toLowerCase().replace(/\.(pdf|json)$/i, '').replace(/[^a-z0-9]+/g, '');
     try {
-      const r = await fetch('https://api.github.com/repos/georg-doc/kayfabizarro/contents/media/kfb');
+      const r = await fetch('https://kayfabizarro.pages.dev/media/kfb/index.json', { cache: 'no-store' });
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      const items = await r.json();
+      const registry = await r.json();
+      const baseUrl = String(registry.baseUrl).replace(/\/$/, '');
+      const items = registry.decks.flatMap((deck) => [deck.pdf, deck.data].filter(Boolean).map((name) => ({ name, download_url: baseUrl + '/' + encodeURIComponent(name) })));
       const pdfs = items.filter((f) => /\.pdf$/i.test(f.name));
       const jsons = items.filter((f) => /\.json$/i.test(f.name));
       const decks = pdfs.map((p) => {
@@ -296,7 +298,7 @@ class Component extends DCLogic {
       });
       this.setState({ gh: { status: 'done', decks, fallback: false } });
     } catch (e) {
-      const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/';
+      const RAW = 'https://kayfabizarro.pages.dev/media/kfb/';
       const decks = [
         'Deck_A_UTOPIA_-_Forget_Utopia web H.pdf',
         'Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf',

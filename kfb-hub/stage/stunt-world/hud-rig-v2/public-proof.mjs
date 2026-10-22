@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
 
-const GH='https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/hud-rig-v2/';
+const GH='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v2/';
 const CF='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v2/';
 const DONOR='5650b6c54d8789b20ea80abe857688173d506d3b';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -20,7 +20,7 @@ async function waitMarker(label,url){
   for(let i=0;i<100;i++){last=await marker(url);if(last.ok){console.log('DEPLOYED',label,url);return last}await sleep(2400)}
   throw Error(label+' deploy marker timeout '+JSON.stringify(last));
 }
-await waitMarker('GitHub Pages',GH);
+await waitMarker('Cloudflare Pages',GH);
 const cloudflareMarker=await marker(CF);
 console.log('CLOUDFLARE_STATUS',JSON.stringify({url:CF,...cloudflareMarker}));
 

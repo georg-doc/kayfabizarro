@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-22",
+  "sites": [
+    {
+      "id": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+      "title": "KFB · WS1 Staging",
+      "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+      "version": 4,
+      "migrationStatus": "SERVER_SOURCE_SNAPSHOT_READ_NO_RUNTIME_SECRET",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac2ba44282881919d1a49287a32054e",
+      "title": "KFB ToolBox",
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site",
+      "version": 11,
+      "migrationStatus": "STATIC_SOURCE_VERIFIED_UNMIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac2795982608191a549bb0373c5dd6c",
+      "title": "KFB FrankenStein Composer",
+      "url": "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
+      "version": 4,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac27631f74c8191b52e4819c1973668",
+      "title": "KFB World Studio · MVP 1",
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+      "version": 2,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac275169d748191814420c28f590b9b",
+      "title": "KFB Hypernormalisation Curator",
+      "url": "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site",
+      "version": 1,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+      "title": "KFB Audio",
+      "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+      "version": 20,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac1b73620f48191ae6e7f101f4b0786",
+      "title": "KFB EyeRig Workbench",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site",
+      "version": 1,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ac1afef08148191b62b95f184bf845e",
+      "title": "KFB Asset Librarian",
+      "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site",
+      "version": 19,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ab82e3950b88191a8ead3c495e21454",
+      "title": "KFB Production Control",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site",
+      "version": 79,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
+      "title": "KFB Production Hub",
+      "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+      "version": 13,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6ab16415c0c08191b47698cef428ecb6",
+      "title": "KFB Combat Arena · CA2-04 Melee Lab",
+      "url": "https://kfb-ca2-04-melee-lab.frizzlebob.chatgpt.site",
+      "version": 1,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    },
+    {
+      "id": "appgprj_6aa0866291008191928ad811a0823413",
+      "title": "KFB Combat Arena v4",
+      "url": "https://kfb-combat-arena-v4.frizzlebob.chatgpt.site",
+      "version": 9,
+      "migrationStatus": "NOT_TESTED_CURRENT_SOURCE_NOT_MIGRATED",
+      "blockedHostBrowserProof": "NOT_RUN"
+    }
+  ],
+  "stagingEnvironment": {
+    "revision": 0,
+    "entries": []
+  },
+  "note": "Existing identities, audience and deployed versions preserved. Native Sites eligibility for visitor GitHub writes remains absent; asset reads may use the explicitly authorized server-secret path, but no provider credential was created/copied. Installed GitHub connection is not a browser credential."
+}
