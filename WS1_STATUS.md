@@ -3,6 +3,26 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 141 · 22.10. · Erdung, K15-Fluffer und Ton im MVP · Entscheid V-450 offen · GitHub-API-Limit (B13)
+
+- **ws1/mvp-r1 @321473f.** Privat `game/mvp-r1` @c9e3b76, öffentlicher Spiegel `ws1/mvp-r1` @c8bf58c.
+- **WS1b Erdung (V-654 C6)**, `ws1/grounding-r1` @419a8a5.
+  - Erdkeile im echten Geländematerial an Kristallen, Bäumen, Fundsachen und am Amphitheater-Fuß.
+  - Kontakt-Steinchen in ungeraden Gruppen (ein InstancedMesh).
+  - Kristalle auf eingesunkenen Knet-Brocken statt Sechseck-Sockel.
+  - Weg-Rand zerfällt über Sprenkel; Kronen-Unterseiten nicht mehr schwarz. `ground=0` schaltet aus.
+  - **Löst V-450 ab:** Fundsachen liegen jetzt statt 0,15 m zu schweben (`found=float` = alt). **Bitte WS0/Georg bestätigen.**
+  - WS1b-Befund fürs Rig: Baumschatten werden am Rand des Schattenkastens (16 m) abgeschnitten → „Schattenrechtecke ohne Werfer“ in Übersichtskameras.
+- **WS-NPC K15:** je Obstgarten-Zone ein Dark Fluffer.
+  - Sorte per Tages-Seed aus 15 Cubes, höchstens 3 gleichzeitig, Culling.
+  - Schnittstelle `spawnAt` / `events` für einen späteren Welt-Ereignis-Host.
+  - Testbuild 69 → 59 MB durch engere private Globs.
+- **WS-Audio:** Ton für bis zu 3 Fluffer, 0,14–0,3 ms/Bild.
+- **WS1e Knet-HUD R2:** Fluff-Zahl neben der Truhe (Plakat frei), Tacho-Zahl größer, fps gleich wie Holz.
+- **Tests:** c3b, c3g, m1-ground, probeWorld, audio, fluffers, steps, combat, hud-clay PASS. orbit PASS bei normaler Last.
+  - **s5a FAIL „HTTP 403“:** Das anonyme GitHub-API-Limit (60/h je IP) ist durch die Testläufe erschöpft.
+  - Daraus folgt **B13** (OFFENE_PUNKTE): Der Pool-Leser muss auf Rohdatei bzw. `/raw` umgestellt werden, sonst trifft das Limit jeden Spieler. Auftrag liegt bei WS-NPC.
+
 ## 140 · 22.10. · Drei Knet-Stufen im MVP (hinter Schaltern, warten auf Georgs Abnahme)
 
 - **ws1/mvp-r1 @01859ea.** Privat `game/mvp-r1` @546161d, öffentlicher Spiegel `ws1/mvp-r1` @54619f4.
