@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-668 N32-Faust verworfen (Eigenbau), Aktionsleiste = Original-Modelle eingefärbt, Ersatz Schlagring V-423 nach Georgs Auswahl; WS1e korrigiert.
 - V-667 Antworten WS1 §141: V-450 bleibt (found=ground ins Abnahme-Menü), Schattenkasten folgt Kamera, B13 nur Rohdateien.
 - WSB N32 Aktionsleisten-Props (Faust, Blaster, Bombe) fertig, privat, Hub q167, an WS1e.
 - V-666 K15 r3 angenommen (Georg direkt an WSB), eye-goo-Schalter auch für Charaktere, 4-Augen-Rig ins Backlog. WSA FB_CANON R1 STOP (P08-Import, kein GLB-Export), Weg an WSA beschrieben.

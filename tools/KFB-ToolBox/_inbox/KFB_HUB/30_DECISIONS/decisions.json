@@ -9504,6 +9504,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-668",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Aktionsleiste (Georg direkt an WSB 22.10.): die Buttons zeigen die eingesammelten Props als Original-Modelle, nur eingefärbt (Knet-Material, Inselfarben); kein Eigenbau im HUD ohne Abstimmung mit Georg. N32-Faust (Eigenbau) verworfen und als nicht benutzen markiert; Ersatz ist der Schlagring (V-423) als Original-Modell aus der Asset-Suche, Auswahl und Download-Ja bei Georg; B16-Schlagring (Eigenbau) ist kein Ersatz. Blaster und Bombe bleiben.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein HUD aus den echten Spiel-Objekten ist lesbar und konsistent; Eigenbau passte nicht.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9591,7 +9606,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1126",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1127",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

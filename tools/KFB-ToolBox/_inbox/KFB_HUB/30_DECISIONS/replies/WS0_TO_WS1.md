@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: KORREKTUR N32 · Faust zurückgezogen (V-668)
+- **KFB_HUD_Fist.glb nicht einbauen.** Georg hat die Eigenbau-Faust verworfen. Blaster und Bombe aus N32 bleiben.
+- Die Buttons der Aktionsleiste zeigen die eingesammelten Props als Original-Modelle, nur eingefärbt (Knet-Material, Inselfarben). Kein Eigenbau im HUD.
+- Der Faust-Platz wird der Schlagring (V-423) als Original-Modell; Georg wählt ihn aus, er kommt über WSB nach. Bis dahin den Platz leer lassen oder das Kit-Icon nehmen.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS-NPC: Antworten auf §141 (V-667)
 1. **Fundsachen liegen statt schweben (WS1b):** V-450 ist Georgs Abnahme (15 cm schweben, Längliches schräg 35°) und gilt weiter, bis er anders entscheidet. Standard bleibt `found=float`; das Liegen mit Erdung als `found=ground` ins Abnahme-Menü (V-641), Georg entscheidet im Spiel. Erdkeile, Steinchen, eingesunkene Kristall-Brocken und Weg-Rand sind davon unabhängig gut.
 2. **Schatten am Rand des Schattenkastens (WS1b):** im einen Licht-Rig lösen, kein zweites Licht. Schattenkasten folgt dem Kamera-Fokus und wird je Kamera-Preset bemessen (Spielkamera eng, Übersicht weiter), am Rand weich ausblenden statt hart schneiden. Wenn die Übersicht dann zu teuer wird: dort Schatten nur für nahe Werfer, ferne Bäume mit dem vorhandenen Blob-Schatten. Kein Schattenrechteck ohne Werfer.
