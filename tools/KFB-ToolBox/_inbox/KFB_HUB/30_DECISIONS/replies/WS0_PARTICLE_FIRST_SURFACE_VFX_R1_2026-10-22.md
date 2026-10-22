@@ -90,3 +90,17 @@ A **surface profile** is a presentation-only lookup from the actual material/bio
 - Real performance threshold comes from **current Owner/target hardware**, not guessed percentage. On lower performance presets reduce emission density/particle size/lifetime first, keeping one active emitter. Need a real target-GPU measure before stating `PASS`.
 
 **Exactly one next gate:** WS0 reconciles this user-approved *particle-first constraint* with existing #439 terrain/WS1b owner priorities and authorizes **one read-only source/visual baseline + bounded same-scene drift/water A/B**, only after actual receiving `kfb-planet` working head and current `VehicleRig` emitter confirmed. No separate runtime owner, no Site/Cloudflare needed for this documentation.
+
+
+## 7. Current-source improvement: drift input ALREADY EXISTS (fresh readback, 2026-10-22)
+
+**Confirmed donor source:** `ws1/kfb-planet/src/m2/k2t.js`, `ws1/terrain-439`, blob `1a09a6d700754f631492a3639919965d26f20efa`:
+- `createK2t` initializes `signals: { speed, longAccel, lateral, bank, drift }`.
+- `stepK2t` sets `S.drift = d.driftDir * d.drift` (approximately -1..+1) and `S.lateral` from lateral speed; Q/E are already the authoritative K2B drift inputs.
+- `M2Car.jsx` `CarVisual` calls `signals?.()` into `sg` before `R1.update` (source blob `0897a3c60290499d5154c51fd918c4641ecee1a0`), **but currently forwards only `speed01`, `brake`, `groundAt`, `groundColorAt` and other non-drift controls**.
+
+**Therefore no approximate yaw-based "drift detector" is needed for K2B.** Proposed smallest later receiving-owner integration is a **read-only parameter pass-through** `drift: sg.drift` (semantic concept, inspect exact live owner code before patch) into `vehicleRig.update`, and a bounded response of its existing `dustStep` emission rate/spread. No extra physics state, listener, input owner or standalone wake system. For frozen `ecctrl` and any flight state with no valid `sg.drift`, gracefully use zero drift and current baseline behavior. A reset/respawn must clear any stale wake state, while already emitted particles finish or reset under the original owner.
+
+**Recommended code-level regression additions:** in `test/unit/vehicleRig.mjs` (existing suite), controlled drift=0 vs ±1 at identical ground and speed; assert same bounded pool size/draw calls and higher emission while drifting, height gate remains intact, zero-drift legacy response remains. Additional palette test should use one real receiver SurfaceRole after its exact lookup API is found. These are future test requirements, **not tests executed by this documentation turn**.
+
+**Confirmed visual scope:** still 160 original small point particles as first candidate. Do not "solve" weak wake visuals by appending the 40 `kfb-flight-vfx.js` sculpted Knet-Puffs to the Racer.
