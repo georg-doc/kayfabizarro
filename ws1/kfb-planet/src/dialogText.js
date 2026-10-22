@@ -1,4 +1,4 @@
-// S5b · Host-Seite: Pool einmal laden (Contents API, Consumer-Vertrag #365) und den Pool-Leser bereitstellen.
+// S5b · Host-Seite: Pool einmal laden (raw.githubusercontent.com am gepinnten Commit, Lead B13; Consumer-Vertrag #365) und den Pool-Leser bereitstellen.
 // Fällt das Laden aus, gibt es keinen Pool: Blasen zeigen dann wörtlichen Kartentext oder „…“ (Vertrag §5).
 import { createPoolReader, loadPool, isIssuedLine, SILENCE } from './poolReader'
 import deckBlobs from './data/deck-blobs.json'

@@ -29,7 +29,7 @@ Für den WS1-Lead. Eine Liste aus allen Sitzungsberichten; doppelte Punkte sind 
 | B10 | WSB-Jobs mit Priorität MVP: J-1 Oberkörper-Schussclips FB, J-2 Waffen-Halterung an FB neu messen, J-3 floorLift-Tabellen FB (Disco), J-4 Augenprofile Ritter/Dämon, J-5 Marsch Spielzeugsoldat mit Gewehr. | WS1S §130; NPC §11 | WS0 → WSB | wartet auf WS0 |
 | B11 | Kampf-Umfang fürs MVP klären: Übergabe §5 nennt Arena-Module PR #24/#27 (nur #25 übernommen), Combat-AV-Prototypen und Tod-Baustein; Georg führt Tod-Baustein unter Kampf R2 (nach MVP). | HANDOFF §5; WS1S §130 J-9; Commit 851e1fd | WS1-Lead + Georg | offen |
 | B12 | Georgs offene Abnahmen bündeln: L-1 Startseite/Vorhang, L-2 Disco-Augen Ritter/Dämon (PROOF), L-4 Fahrzeug-Look A im Spiel; privaten Ablageort festlegen (Vorschlag `review/abnahmen` im Stunt-Race-Repo). | WS1S §129; NPC §11 | WS0 / Georg | wartet auf WS0 |
-| B13 | Karten-Pool lädt über api.github.com (anonym 60 Abfragen/h je IP): bei Spielern/Tests schnell erschöpft (22.10.: s5a livePoolLoaded „HTTP 403“). Auf Rohdatei bzw. `/raw`-Proxy der Site umstellen, Cache behalten. | `src/poolReader.js` POOL_URL | WS1-Lead (Pool-Leser: WS-NPC) | offen |
+| B13 | Karten-Pool lädt über api.github.com (anonym 60 Abfragen/h je IP): bei Spielern/Tests schnell erschöpft (22.10.: s5a livePoolLoaded „HTTP 403“). Auf Rohdatei bzw. `/raw`-Proxy der Site umstellen, Cache behalten. | `src/poolReader.js` POOL_URL | WS1-Lead (Pool-Leser: WS-NPC) | erledigt 22.10. (WS-NPC 79730bd: Rohdatei gepinnt + Blob-Prüfung im Browser; s5a/s5b PASS) |
 
 ---
 

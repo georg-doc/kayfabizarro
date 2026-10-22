@@ -10,10 +10,15 @@
 // registrierte Zeilen (isIssuedLine), alles andere wird zu „…“.
 import { POOL_SCHEMA, validatePool, makePacket, consumePacket } from './vendor/triplet-pool-core.mjs'
 
-// Einziger getesteter Lesepfad laut Consumer-Vertrag: GitHub Contents API auf dem Voice-Branch (#379)
+// Lesepfad (Lead B13, 22.10.): raw.githubusercontent.com an einem gepinnten Commit des Voice-Branch (#379) statt der Contents API
+// (anonym 60 Abrufe je Stunde und IP – im Spiel träfe die Grenze jeden Spieler). Auf der Site geht die Adresse automatisch über den
+// /raw-Proxy (siteRaw.js). Die Blob-SHA steht nicht mehr in der Antwort: sie wird aus dem geladenen Inhalt nachgerechnet (git hash-object)
+// und muss dem gepinnten Blob gleichen. Neuer Pool-Stand = POOL_COMMIT und POOL_BLOB hier nachziehen (git log -1 <ref> -- POOL_PATH).
 export const POOL_PATH = 'skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_TRIPLET_OPENER_POOL_R1_2026-10-13.json'
 export const POOL_REF = 'planning/kfb-chatterbox-voice-layer-v1-2026-10-08'
-export const POOL_URL = `https://api.github.com/repos/georg-doc/kayfabizarro/contents/${POOL_PATH}?ref=${encodeURIComponent(POOL_REF)}`
+export const POOL_COMMIT = 'f4c23f72945dde9bd7449ad6e15d5b61c1ca5def' // letzter Commit auf POOL_REF, der POOL_PATH ändert (13.10., Pool r5 cookie-tune-v11)
+export const POOL_BLOB = 'dfb5435bc0c913ea48f8f5558f801b293962fbc8' // git rev-parse POOL_COMMIT:POOL_PATH
+export const POOL_URL = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${POOL_COMMIT}/${POOL_PATH}`
 export const SILENCE = '…'
 
 const issued = new WeakSet()
@@ -21,24 +26,35 @@ const issued = new WeakSet()
 const issue = (line) => { if (line.parts) Object.freeze(line.parts); Object.freeze(line); issued.add(line); return line }
 export const isIssuedLine = (line) => !!line && typeof line === 'object' && issued.has(line)
 
-// Pool laden: Base64 dekodieren, Schema prüfen, Blob-SHA getrennt von contentRevision festhalten.
-// cache: { get(): {sha, content, t} | null, set(v) } – überbrückt die Abruf-Grenze der Contents API (60/h ohne Anmeldung).
-// Ein frischer Abruf (< maxAgeMs) wird ohne Netz genutzt; scheitert der Abruf, gilt ein älterer Cache-Stand (< 24 h), markiert als cached.
-export async function loadPool({ fetchImpl = fetch, url = POOL_URL, cache = null, maxAgeMs = 10 * 60 * 1000, now = Date.now } = {}) {
+// git-Blob-SHA (wie git hash-object) über die Web-Crypto-API (Browser und Node ≥ 20)
+export async function gitBlobSha(bytes) {
+  const head = new TextEncoder().encode(`blob ${bytes.length}\0`), all = new Uint8Array(head.length + bytes.length); all.set(head); all.set(bytes, head.length)
+  return [...new Uint8Array(await globalThis.crypto.subtle.digest('SHA-1', all))].map((b) => b.toString(16).padStart(2, '0')).join('')
+}
+const toB64 = (bytes) => { let s = ''; for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000)); return btoa(s) }
+
+// Pool laden: Rohinhalt holen, Blob-SHA nachrechnen (expectBlob: gepinnter Blob; null = jede, nur für Tests mit eigenen Fixtures), Schema prüfen,
+// Blob-SHA getrennt von contentRevision festhalten.
+// cache: { get(): {sha, content (Base64), t, rev} | null, set(v) } – spart Abrufe; ein frischer Stand (< maxAgeMs) derselben Revision wird ohne Netz
+// genutzt; scheitert der Abruf, gilt ein älterer Cache-Stand (< 24 h), markiert als cached.
+export async function loadPool({ fetchImpl = fetch, url = POOL_URL, rev = POOL_COMMIT, expectBlob = POOL_BLOB, cache = null, maxAgeMs = 10 * 60 * 1000, now = Date.now } = {}) {
   const decode = (j) => validatePool(JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\s/g, '')), (c) => c.charCodeAt(0)))))
   let hit = null
   try { hit = cache?.get() || null } catch (e) { hit = null }
-  if (hit && now() - hit.t < maxAgeMs) { try { return { pool: decode(hit), blob: hit.sha, error: null, cached: true } } catch (e) { hit = null } }
+  if (hit && hit.rev === rev && now() - hit.t < maxAgeMs) { try { return { pool: decode(hit), blob: hit.sha, error: null, cached: true } } catch (e) { hit = null } }
+  const fallback = (error) => {
+    if (hit && now() - hit.t < 24 * 3600 * 1000) { try { return { pool: decode(hit), blob: hit.sha, error, cached: true } } catch (e) { /* weiter */ } }
+    return { pool: null, blob: null, error }
+  }
   try {
-    const r = await fetchImpl(url, { headers: { Accept: 'application/vnd.github+json' } })
-    if (!r.ok) {
-      if (hit && now() - hit.t < 24 * 3600 * 1000) { try { return { pool: decode(hit), blob: hit.sha, error: 'HTTP ' + r.status, cached: true } } catch (e) { /* weiter */ } }
-      return { pool: null, blob: null, error: 'HTTP ' + r.status }
-    }
-    const j = await r.json()
-    try { cache?.set({ sha: j.sha, content: j.content, t: now() }) } catch (e) { /* ohne Cache weiter */ }
-    return { pool: decode(j), blob: j.sha, error: null, cached: false }
-  } catch (e) { return { pool: null, blob: null, error: String(e.message || e) } }
+    const r = await fetchImpl(url)
+    if (!r.ok) return fallback('HTTP ' + r.status)
+    const bytes = new Uint8Array(await r.arrayBuffer()), sha = await gitBlobSha(bytes)
+    if (expectBlob && sha !== expectBlob) return fallback('BLOB_MISMATCH ' + sha.slice(0, 8))
+    const j = { sha, content: toB64(bytes) }, pool = decode(j)
+    try { cache?.set({ ...j, t: now(), rev }) } catch (e) { /* ohne Cache weiter */ }
+    return { pool, blob: sha, error: null, cached: false }
+  } catch (e) { return fallback(String(e.message || e)) }
 }
 
 // Deck-JSON aus media/kfb: cardNumber steht dort als Zeichenkette, der Pool-Kern erwartet eine Zahl (Anpassung, sonst unverändert).

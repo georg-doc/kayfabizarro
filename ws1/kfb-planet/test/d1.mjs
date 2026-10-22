@@ -12,12 +12,12 @@ const deckBlobs = JSON.parse(fs.readFileSync('src/data/deck-blobs.json', 'utf8')
 const cards = JSON.parse(fs.readFileSync('src/data/cards.json', 'utf8'))
 const cardSource = (deck, n) => { const di = cards.decks.findIndex((d) => d[0] === deck); const c = di < 0 ? null : cards.cards.find((x) => x[0] === di && x[1] === n); return c ? { name: c[2], power: c[3], lore: c[4] } : null }
 const cardOf = (deck, n) => { const di = cards.decks.findIndex((d) => d[0] === deck); const c = cards.cards.find((x) => x[0] === di && x[1] === n); return { deck: { id: deck }, num: n, name: c[2], power: c[3], lore: c[4] } }
-const fakeFetch = (buf) => async () => ({ ok: true, json: async () => ({ sha: blobOf(buf), content: buf.toString('base64') }) })
+const fakeFetch = (buf) => async () => ({ ok: true, arrayBuffer: async () => buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.length) }) // raw.githubusercontent.com (Lead B13)
 const deckJson = async (id) => { if (id !== 'wrinkle_rumble') throw new Error('nur Fixture'); return JSON.parse(deckBuf.toString('utf8')) }
 const fx = JSON.parse(poolBuf.toString('utf8')), ok = { authority: 'Georg', evidence: 'TEST FIXTURE ws1/d1 – keine Freigabe' }
 const op = fx.openers.find((o) => o.openerId === 'ANYONE_HEARD_OF'); Object.assign(op, { status: 'ACCEPTED', reviewer: 'ws1-test', humanApproval: ok, enabled: true })
 Object.assign(fx.beats[0], { status: 'ACCEPTED', reviewer: 'ws1-test', humanApproval: ok, openerId: 'ANYONE_HEARD_OF', openerVersion: op.version })
-const fb = Buffer.from(JSON.stringify(fx)), P = await loadPool({ fetchImpl: fakeFetch(fb) })
+const fb = Buffer.from(JSON.stringify(fx)), P = await loadPool({ expectBlob: null, fetchImpl: fakeFetch(fb) })
 const reader = createPoolReader({ pool: P.pool, poolBlob: P.blob, deckBlobs, deckJson, cardSource })
 const cookie = cardOf('wrinkle_rumble', 10), other = cardOf('wrinkle_rumble', 11)
 
@@ -72,7 +72,7 @@ const X = {}
 { // Opener DIRECT zählt nicht als verbraucht; dieselbe Karte zweimal → Beat nur einmal (V-231), danach wörtlicher Titel
   const f2 = JSON.parse(poolBuf.toString('utf8'))
   Object.assign(f2.openers.find((o) => o.openerId === 'DIRECT'), { status: 'ACCEPTED', reviewer: 'ws1-test', humanApproval: ok }); Object.assign(f2.beats[0], { status: 'ACCEPTED', reviewer: 'ws1-test', humanApproval: ok })
-  const b2 = Buffer.from(JSON.stringify(f2)), P2 = await loadPool({ fetchImpl: fakeFetch(b2) })
+  const b2 = Buffer.from(JSON.stringify(f2)), P2 = await loadPool({ expectBlob: null, fetchImpl: fakeFetch(b2) })
   const r2 = createPoolReader({ pool: P2.pool, poolBlob: P2.blob, deckBlobs, deckJson, cardSource }), lines = []
   const d = createDialog({ cards: [cookie, cookie], reader: r2, billboard: { setCard: () => Promise.resolve() }, actors: {}, say: (a, l) => lines.push(l), openChoice: () => null })
   let n = 0; while (d.state().phase !== 'DONE' && n++ < 20000) { await tick(d, 1); if (d.state().phase === 'CHOICE') d.onChoice({ id: 'bingo' }) }
