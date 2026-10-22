@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-683 Antworten WS1 §145: eine Schattenseiten-Regel für alle Nicht-Gelände-Objekte (Palettenton + Untergrenze, kein Fülllicht), Abnahme-Seite KFB Abnahme.
 - V-682 Charakter-Register CHARACTERS_R1 im Aufbau (Audit: 11 von ~150 Figuren mit Charakter-Datei). Speicher: 59 GB Temp-Packs im Git-Spiegel gelöscht (Georg ja), Privat-Push holt nur noch bei Änderung.
 - V-681 HUD_LAYOUT_R3 (Abgleich mit HUD R4 §3.4b, J17-Tacho, Fluff-Pips, V-501-Blase) ersetzt R2; Ziel-Pfeil-Ort offen für Georg.
 - WSB K14 r4 (Goo b + Ink-Flüsse + Kenney-Splats dünn/dicht, Gelände-Ausblick; 1 Draw-Call je Splat-Satz) fertig, privat; Wahl bei Georg. Chatterbox-Familien-Set (156 Clips, ca. 4.992 Credits) nach Georgs Go gestartet.

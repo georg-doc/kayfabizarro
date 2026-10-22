@@ -9729,6 +9729,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-683",
+   "date": "2026-10-22",
+   "area": "Licht",
+   "verdict": "ANSWER",
+   "text": "Antworten WS1 §145: Schattenseite aller Nicht-Gelände-Objekte (Figuren, Props, Bäume, Racer, Fundsachen) nach einer Regel im einen Rig als Materialantwort, Palettenton mit Untergrenze wie V-564, kein Füll- oder Rim-Licht; WS1b-Untergrenze der Fundsachen (0,34 Tag bis 0,50 Nacht) wird gemeinsam und kommt ins LIGHT_MODEL; A/B auf der Abnahme-Seite, Georg entscheidet. Abnahmen laufen über das private Artefakt KFB Abnahme (Einzelbilder plus index.json); andere Sitzungen liefern über den privaten Branch. Racer Standard ohne Mattierung, Scheinwerfer zwei Kegel mit rundem Ende.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Regel für alle Objekte statt Einzelkorrekturen; die Fundsachen-Werte sind schon erprobt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9816,7 +9831,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1143",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1144",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

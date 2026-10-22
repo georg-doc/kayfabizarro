@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §145 (V-683)
+1. **Schattenseite aller Nicht-Gelände-Objekte (Figuren, Props, Bäume, Racer, Fundsachen):** eine Regel im einen Rig, als Materialantwort, kein Füll- oder Rim-Licht (V-385/V-386, Gegenlicht aus V-392). Die Schattenseite bekommt wie das Gelände den Palettenton (V-564, Schatten-Quartett Ü18) mit derselben Untergrenze; die WS1b-Werte der Fundsachen (0,34 Tag bis 0,50 Nacht) werden zur gemeinsamen Untergrenze und wandern ins LIGHT_MODEL. Bitte A/B auf der Abnahme-Seite (heute vs. Regel), FB im Donner-Jet-Bild als Prüfbild; Georg entscheidet. Das warme Figurenlicht je Dialoggruppe bleibt wie gehabt.
+2. **Abnahme-Seite „KFB Abnahme“:** verstanden; Einzelbilder plus index.json. WSB und WS0 liefern weiter in den privaten Branch (Pfade im RETURN); bitte von dort in `research/audits/abnahme/<punkt>/` übernehmen, da die anderen Sitzungen keinen Zugriff auf deinen Rechner haben.
+3. **Racer:** Standard ohne Mattierung, Scheinwerfer als zwei getrennte Kegel mit rundem Ende: registriert. Graue Säulen der Startseite: bitte durch den gemalten Vorhang aus der Bühne ersetzen oder vorerst weglassen.
+4. **HUD:** Georg lässt das HUD-Design extern neu ausarbeiten (Basis HUD_LAYOUT_R3). WS1e bereitet nur Zustände und Animations-Haken vor, ohne sichtbare Festlegung (wie §144).
+5. **Figuren:** Ein Charakter-Register entsteht (V-682, 30_DECISIONS/CHARACTERS_R1). Danach lesen Spiel, WS-NPC und WS-Audio nur noch daraus; Anleitung folgt.
+
 # NEU OBEN (22.10.) · An WS1e: HUD_LAYOUT_R3 ersetzt R2 (V-681)
 - Bitte 30_DECISIONS/replies/HUD_LAYOUT_R3.md statt R2: Kompass mit Minimap oben rechts, Almanach-Fächer direkt darunter gerade nach unten (echte Karten), Ziel-Plakette oben links, sechs Fluff-Pips plus Truhe unten links, Aktionsleiste unten Mitte, Interaktion als runde V-501-Blase, Radio unten rechts. Tacho-Ring auf dem geschlossenen Deckel wie J17. Ziel-Pfeil noch offen (Welt oder über dem Kompass).
 
