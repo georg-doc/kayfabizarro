@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: Aktionsleiste – KEINE runden Buttons (Nachtrag zu V-671)
+- Georg will die Props ohne Button-Rahmen, frei als 3D-Modelle im HUD, lesbar durch Kontur bzw. Lichthof auf jedem Untergrund. Modelle, Clips und Anker aus r2 bleiben gültig, nur die Darstellung ändert sich.
+- Bitte jetzt keine runden Buttons bauen. Die Lesbarkeits-Variante (Kontur, Lichthof oder beides) wählt Georg anhand der WSB-Probe; danach kommt sie als hudView.readability in die Karte r2.
+
 # NEU OBEN (22.10.) · An WS1e: Aktionsleiste r2 – HALT aufgehoben, bitte einbauen (V-671)
 - **Ersetzt N32 r1 komplett.** Karte 50_BLENDER/N32/data/kfb_hud_actionbar.r2.json (kfb.hud-props/2: Datei, sha256, Zustände, Clips, Anker, hudView.yaw_deg). GLBs in N32/_privat_kauf_asset/r2/out/, privater Branch assets/private.
 - Faust (Monstrosity-Hand, Knöchelplatten = Schlagring V-423), Blaster (K10), Wurf = Clown-Bombe, Granate als zweiter Wurf (Option).
