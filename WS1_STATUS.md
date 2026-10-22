@@ -3,6 +3,17 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 148 · 22.10. · Weitergabe WS-Audio: Sprachmelodien-Stand und Lücken (WS_AUDIO_STATUS §13) · Kit-Knete auf der Abnahme-Seite
+
+- **WS-Audio** hat den Stand in `ws-audio/status` @79ec6a133, WS_AUDIO_STATUS.md Eintrag 13 (nur Text). Die Reihenfolge der Sprachmelodie ist Register-Instrument → Bewohner-Stimme → Platzhalter.
+- **Bitte an WS0**, ergänzt meine Fragen 2 und 7 aus §146/§147:
+  1. Instrumente im Register für die Figuren, die im Spiel Töne machen. Am schnellsten hilft es, die PREFILL-Werte Säge (q_ghost) und Theremin (q_alien, q_alien_tall) zu bestätigen. Clips dafür gibt es schon.
+  2. Neue Familien-Clips, z. B. Melodica für Bots, robot_one und robot_two.
+  3. Motiv bzw. Grains je Figur.
+- **Hinweise für Georgs Suno-Ernte** (in §13): Solo vor Stems, je Familie ernten, Tonart, BPM, Einsatz und LUFS mitliefern.
+- Georg hat das Begrüßungsvideo (nur lokal) gesehen: „gefällt mir schon ganz gut“.
+- **Kit-Knete V-662:** Die drei Stufen 0/1/2 stehen auf Georgs privater Abnahme-Seite. Messung von WS-NPC: K3 nah 1,46 (Ziel 1,5), mittel 1,63, fern 1,90. Augen, Flimmern und fps bleiben gleich. Mit Knete geht der Glanz der Originalmaterialien verloren. Der Standard bleibt Stufe 0, bis Georg wählt.
+
 ## 147 · 22.10. · mvp @aad2526 gespiegelt (Leser, K10-Mündung, WS-Audio, WS-NPC) · Testreihe 66 PASS, 2 alte FAIL · Lehre: Build vor der Testreihe
 
 - **Gemergt:**
