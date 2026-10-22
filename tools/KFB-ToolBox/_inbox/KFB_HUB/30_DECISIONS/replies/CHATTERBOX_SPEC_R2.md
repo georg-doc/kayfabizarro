@@ -1,4 +1,5 @@
 # KFB Chatterbox · Spec R2 · 2026-10-22 · WS0
+> **Nachtrag 22.10. (V-682):** Das `chatter`-Profil je Figur liegt im Charakter-Register `CHARACTERS_R1/characters/<id>/character.json`, nicht in cast.r1.json.
 **Status:** maßgebliche Spec für Stimmen, Sprachmelodie und Chatterbox (V-663). Löst das Konzeptpapier als Arbeitsgrundlage ab; das Papier bleibt als Begründung.
 **Quellen:**
 - `replies/CHATTERBOX_VOICE_KONZEPT_R1.md` (R1.3, KFB-Schichten);

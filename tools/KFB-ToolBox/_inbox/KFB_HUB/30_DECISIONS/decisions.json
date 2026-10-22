@@ -9744,6 +9744,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-684",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "DECISION",
+   "text": "Goo-Vorstadt (Georg, Hub q168): Variante b herabfließend plus die kostenneutralen dünnen schwarzen Ink-Flüsse. Die Splats in r4 waren zu klein und nicht nach dem Verteilungsmuster der Umgebung gesetzt; Splats höchstens später, größer und nach SPEC_PLACEMENT_GRAMMAR_R2. Laufzeit-Shader baut WS1. Hub q169 (Ziel-Pfeil) zurückgestellt: die N34-Bilder zeigten nicht den integrierten HUD-Stand von WS1; neu vorlegen mit den Ist-Bildern hud=wood.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Flüsse kosten nichts und tragen; Splats nur, wenn sie lesbar und nach dem Umgebungsmuster gesetzt sind.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9831,7 +9846,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1144",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1147",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

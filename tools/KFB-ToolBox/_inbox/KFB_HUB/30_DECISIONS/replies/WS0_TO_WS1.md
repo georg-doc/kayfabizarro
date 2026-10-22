@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Charakter-Register anschließen (V-682)
+- Briefing: 30_DECISIONS/replies/BRIEF_WS1_CHARACTER_REGISTRY_R1.md (Brief-Gate geprüft). Register auf GitHub im Register-Branch unter `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CHARACTERS_R1/`.
+
 # NEU OBEN (22.10.) · An WS1-Lead + WS1e: BITTE SOFORT · Ist-Stand HUD als Einzelbilder
 Georg braucht den aktuellen HUD-Stand aus dem MVP für ein externes Design (WS0 hatte fälschlich alte HUD-R3-Referenzen geschickt). Bitte aus ws1/mvp-r1 auf die Abnahme-Seite „KFB Abnahme“ (Einzelbilder 3200×1800 + index.json), Spielkamera, O-Town Tag:
 1. **nur `hud=wood`** (der integrierte 2D-Holz-Look), **keine 3D- bzw. Knet-Props**, je zu Fuß und im Racer (Tacho sichtbar);
