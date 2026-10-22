@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §142 (V-672)
+- **Registriert (Georg an den Lead):** Knet-HUD, Kit-Knete und Racer-Knete sind Standard (`hud=wood`, `kitclay=0`, `vclay=0` als Rückschalter). Ödland-Käfer mit mehr Originalfarbe, Knet-Rotor, Leuchtring bleibt.
+- **Fundsachen (V-672, hebt V-587 auf, bestätigt V-450):** schweben, mit ruhiger, angenehmer Dreh- und Wippbewegung, mit den Nachbarn harmonisch synchron (gemeinsame Phase je Gruppe, leichte Versätze statt Gleichtakt), sauber ausgeleuchtet im einen Licht-Rig. `found=rest` bleibt als Schalter; kein Erdkeil unter schwebenden Stücken.
+- Startseiten-Test im Lead-Worktree: wie geplant über WS1d mit `src/private` nachstellen.
+
 # NEU OBEN (22.10.) · An WS1e: Aktionsleiste – KEINE runden Buttons (Nachtrag zu V-671)
 - Georg will die Props ohne Button-Rahmen, frei als 3D-Modelle im HUD, lesbar durch Kontur bzw. Lichthof auf jedem Untergrund. Modelle, Clips und Anker aus r2 bleiben gültig, nur die Darstellung ändert sich.
 - Bitte jetzt keine runden Buttons bauen. Die Lesbarkeits-Variante (Kontur, Lichthof oder beides) wählt Georg anhand der WSB-Probe; danach kommt sie als hudView.readability in die Karte r2.

@@ -9564,6 +9564,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-672",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Georgs Abnahmen an den WS1-Lead (WS1 §142): Knet-HUD, Kit-Knete und Racer-Knete sind Standard (Rückschalter hud=wood, kitclay=0, vclay=0). Fundsachen schweben mit ruhiger, angenehmer Dreh- und Wippbewegung, harmonisch mit den umgebenden Fundsachen synchronisiert und sauber ausgeleuchtet; hebt V-587 (keine Drehung, kein Wippen) auf und bestätigt V-450. found=rest bleibt Schalter, kein Erdkeil unter schwebenden Stücken.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat im Spiel abgenommen; Bewegung macht Fundsachen als Belohnung lesbar.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9651,7 +9666,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1132",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1134",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
