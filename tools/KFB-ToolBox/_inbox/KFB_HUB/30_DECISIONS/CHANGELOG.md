@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- Charakter-Register R1 gebaut (V-682): 133 Figuren, alle 244 IDs aufgelöst, 28 ohne Figurenkarte; Lücken in GAPS.md, Dramatis-Personae-Anschluss beschrieben.
 - V-683 Antworten WS1 §145: eine Schattenseiten-Regel für alle Nicht-Gelände-Objekte (Palettenton + Untergrenze, kein Fülllicht), Abnahme-Seite KFB Abnahme.
 - V-682 Charakter-Register CHARACTERS_R1 im Aufbau (Audit: 11 von ~150 Figuren mit Charakter-Datei). Speicher: 59 GB Temp-Packs im Git-Spiegel gelöscht (Georg ja), Privat-Push holt nur noch bei Änderung.
 - V-681 HUD_LAYOUT_R3 (Abgleich mit HUD R4 §3.4b, J17-Tacho, Fluff-Pips, V-501-Blase) ersetzt R2; Ziel-Pfeil-Ort offen für Georg.
