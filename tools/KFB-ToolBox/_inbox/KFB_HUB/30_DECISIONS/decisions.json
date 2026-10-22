@@ -9609,6 +9609,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-675",
+   "date": "2026-10-22",
+   "area": "Fahrzeuge",
+   "verdict": "RULE",
+   "text": "Racer behalten die Originalanmutung (Georg an den WS1-Lead nach Kritiker R3, WS1 §144): Originaltexturen inklusive Graffiti und Meshy-UV als bewusster Stilbruch; eigene Zusätze (Flamme, Rotor, Effekte) in Knete bzw. matter; keine Knet-Karosserie. Präzisiert V-654 C5 für Fahrzeuge als Ausnahme von der einen Machart (CANON_3D Gebiete 8 und 15). Der Kritiker wertet die Racer-Textur nicht mehr als Mangel, nur die Schlüssigkeit über Ansichten und Zoom.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will den bewussten Stilbruch; die Racer sind als Fundstücke cool.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-676",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "ANSWER",
+   "text": "Antworten WS1 §143/§144: Korrektur zu V-667 (keine Blob-Schatten für ferne Bäume, V-564; stattdessen gröbere Kaskade im selben Rig oder weiches Ausblenden); Terrain-Blobs und gemalte Wolken bleiben wie V-661; Bäume eine Formfamilie mit gerundeten Knet-Kronen nach smooth-min-Prinzip, Würfelkronen raus aus dem Welt-Mix, A/B für Georg; Knet-Flamme als echtes Volumen. FB_CANON R3 (17e20ab4) von Georg FAIL: Lider zu stark texturiert, Kopf ohne Textur, Mund fehlt; WSA arbeitet am Gesichts-Gate, FB bleibt gesperrt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kanon V-564 gilt auch in der Ferne; eine Baumfamilie beruhigt das Bild wie die Blobs das Terrain.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9696,7 +9726,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1136",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1137",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

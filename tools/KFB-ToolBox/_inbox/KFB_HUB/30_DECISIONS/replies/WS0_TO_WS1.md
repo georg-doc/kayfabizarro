@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d, WS1e: Antworten auf §143/§144 (V-675, V-676)
+1. **KORREKTUR zu V-667 Punkt 2:** Keine Blob-Schatten, auch nicht für ferne Bäume (V-564, CANON_3D Gebiet 7). Wenn die Übersicht zu teuer wird, ferne Werfer über eine zweite, gröbere Schatten-Stufe im selben Rig (Kaskade) oder Schatten ab Distanz weich ausblenden; nie Kontaktfleck oder Scheibe.
+2. **Racer (Georg, V-675):** Originalanmutung bleibt, Originaltexturen inklusive Graffiti und Meshy-UV, bewusster Stilbruch. Eigene Zusätze (Flamme, Rotor, Effekte) in Knete bzw. matter. Keine Knet-Karosserie. Präzisiert V-654 C5 für Fahrzeuge. **Kritiker:** Racer-Textur ist kein Mangel mehr; bewertet wird nur die Schlüssigkeit über Ansichten und Zoom. Knet-Flamme bitte als echtes 3D-Volumen (kein flaches Profil mit Kontur).
+3. **Terrain-Form und Wolken:** sind beantwortet (V-661, Antwort auf §139 weiter unten): geschlossene Blobs mit smooth-min statt Zungen bzw. Domain-Warping, gemalte Kuppelwolken statt Rauschflecken. Bitte so umsetzen, mit A/B-Schalter; Georg urteilt im Spiel.
+4. **Baum-Formfamilie (V-676):** eine Familie in der Welt: gerundete Knet-Kronen aus wenigen weichen Volumen (gleiches smooth-min-Prinzip wie die Blobs), Stämme leicht gebogen, Kronen-Unterseite mit Kontaktton. Würfelkronen fallen aus dem Welt-Mix. A/B-Schalter für Georg.
+5. **HUD:** Die Spezifikation liegt vor (HUD_UX_STATES_R1.md R1.1, V-673/V-674, siehe Einträge oben). WS1e baut hinter `hud=ux1`.
+6. **Bugs aus Runde 3** (schwebender Stein, harte Disco-Scheiben = V-572 Lichtpfützen-Modul, violettes Gold-Licht, Startseiten-Säulen bzw. Horizontlinie, Schuss ohne Mündung und Gegner fällt nicht): wie vorgeschlagen bei den Slices. Danach Runde 4.
+- **FB:** R2 und R3 sind FAIL (Georg). Weiter kein FB außer FB_CANON; der nächste Kandidat kommt von WSA.
+
 # NEU OBEN (22.10.) · An WS1e: Nachtrag HUD-UX R1.1 (V-674)
 - Spec ergänzt (HUD_UX_STATES_R1.md, R1.1): **eigener Interaktions-Platz** rechts neben der Aktionsleiste (Auto, NPCs, Props aufnehmen; Fluff automatisch), Hinweis-Zustand in Reichweite. Das Prop wählt Georg aus N33; bis dahin die vorhandene Sprechblase als Platzhalter.
 - **Fluff-Zahl** als 3D-Ziffern ohne Hintergrund.

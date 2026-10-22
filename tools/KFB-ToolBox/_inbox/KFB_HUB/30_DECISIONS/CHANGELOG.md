@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-675 Racer Originalanmutung (Stilbruch), Kritiker wertet Textur nicht mehr. V-676 Antworten WS1 §143/§144 inkl. Korrektur V-667 (keine Blob-Schatten), eine Baumfamilie; FB_CANON R3 FAIL vermerkt.
 - V-674 HUD-UX R1.1: Interaktions-Platz (Kandidaten in N33), Fluff-Zahl als 3D-Ziffern, Kontur unten rechts stärker.
 - V-673 HUD-UX-Zustände (Kontur Normal, Lichthof für Zustände, Cartoon-Deformation, Abklingzeit von unten); Spec HUD_UX_STATES_R1; WSB N33, WS1e hud=ux1.
 - V-672 Knet-HUD/Kit-Knete/Racer-Knete Standard; Fundsachen schweben mit synchroner Bewegung (hebt V-587 auf).
