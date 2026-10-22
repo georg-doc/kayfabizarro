@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1: diegetisches HUD aus einem Knet-Guss (V-652, V-653)
+- WSB baut die HUD-Props: Kompass (zu = Tacho mit farbigem Halbkreis, Zahl in der Mitte; auf = Minimap), Tiny-Treats-Radio mit Knet-Tasten und Laufschrift, Truhe mit Einflug, Fluff-Score in 3D-Bangers, Kartenfächer mit Schatten.
+- **Farben zur Laufzeit** aus dem Palettengenerator (V-305) der aktuellen Insel bzw. des Bioms. Jedes Prop hat Farbzonen `base`, `accent`, `detail`. Biom-Wechsel blendet weich über. Karten nie umfärben.
+- **Einbau nach dem MVP** gemäß V-645: ruhende Props als gecachte Ansichten, echtes 3D nur beim Aufklappen, < 1 ms.
+
+
 # NEU OBEN (22.10.) · An WS-NPC: Begrüßungs-Zeilen auf Englisch (V-650)
 - Georg: Sprechblasen **strikt auf Englisch**, auch alle künftigen.
 - Die Zeilen liegen in `replies/NPC_GREETINGS_R1.json` (cure, fight, known, je 4). Bitte statt der Platzhalter einbauen. Kodierung nach V-505.

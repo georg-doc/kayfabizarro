@@ -9279,6 +9279,21 @@
    "applies": "nach K13"
   },
   {
+   "id": "V-653",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "HUD-Props aus einem Knet-Guss (Georg 22.10., ergänzt V-652 und V-334): alle HUD-Props (Kompass, Radio, Truhe, Bangers-Score, Kartenfächer-Schatten) im selben kfb-clay-Material, Farben zur Laufzeit aus dem Palettengenerator (V-305) der aktuellen Insel bzw. des Bioms (V-051, V-270): Grundton, Akzent, dunkle Kante, plus Ruf-Farben (V-292) wo nötig. Kit-Texturen werden dafür auf Farbzonen (base, accent, detail) gemappt; Karten-Illustrationen werden nie umgefärbt. Biom-Wechsel blendet die HUD-Farben weich über.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein HUD, das aus derselben Knete und Palette wie die Welt besteht, wirkt aus einem Guss.",
+   "applies": "mit N29"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9366,7 +9381,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1092",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1094",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
