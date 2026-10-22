@@ -15,7 +15,7 @@ import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
 import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues } from './cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -302,9 +302,14 @@ function pulseTick(t) {
 }
 export const musicPulse = () => PULSE
 // Begrüßung eines Bewohners (WS-NPC 'greet'): Stimm-Laut am Kopf der Figur, Musik kurz −4 dB; eigene Stimme, sonst Platzhalter
-export function greet(e, pos = null) {
+export function greet(e, pos = null, chatter = null) { // chatter: Register-Block der Figur (V-682), sonst null
   if (S.mode !== 'full') return null
-  for (const cue of greetCues(e)) { const c = CUES[cue]; if (!bankFiles(c).length) continue; const v = play(cue, { pos, rate: c.rate ?? null }); if (v) { S.voiceUntil = Math.max(S.voiceUntil || 0, v.end); log({ type: 'greet', e: e.reason, cue }); return cue } }
+  // sichtbarer Rückfall (Lead 22.10.): je Figur im Status, ob das Register-Instrument klingt ('set:<Familie>') oder der bisherige Platzhalter ('fallback')
+  //   Rückfall: 'fallback:resident' (Bewohner-Stimme resident_voices_r1) bzw. 'fallback:placeholder'
+  const fam = chatterFamily(chatter)
+  for (const cue of greetCues(e, chatter)) { const c = CUES[cue]; if (!bankFiles(c).length) continue; const v = play(cue, { pos, rate: c.rate ?? null }); if (v) { S.voiceUntil = Math.max(S.voiceUntil || 0, v.end)
+    const chat = cue.startsWith('chatter.') ? 'set:' + fam : cue.startsWith('greet.fallback.') ? 'fallback:placeholder' : 'fallback:resident'; S.greetChatter ||= {}; if (e?.id != null) S.greetChatter[e.id] = chat
+    log({ type: 'greet', e: e.reason, id: e.id ?? null, cue, chatter: chat }); return cue } }
   return null
 }
 export function ui(name) { return play('ui.' + name) }
@@ -447,7 +452,7 @@ export function stats() {
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
-    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

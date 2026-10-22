@@ -13,6 +13,7 @@
 import * as THREE from 'three'
 import { createNpcFigure, loadClipSet } from './npcFigure.js'
 import { createGroupPatrol } from './groupPatrol.js'
+import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 import { rngOf, seedOf } from '../world/fluff.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
@@ -24,10 +25,11 @@ export function createGroupLife(options) {
   const K = options.worldScale ?? 1, root = new THREE.Group(); root.name = 'group-life'
   const S = { status: 'LOADING', error: null, near: {}, played: [], t: 0, ms: null, events: [], steps: [], offs: [], targetsOn: false, statics: [] }
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 1.2)
+  const CID = Object.fromEntries((options.groups || []).flatMap((d) => d.members.map((m) => [m.id, resolveCharacterId(m.castId)]))) // Mitglied → Register-ID (null = löst nicht auf)
   const G = (options.groups || []).map((def) => {
     const sim = createGroupPatrol(def)
     const figs = def.members.map((m) => { const f = createNpcFigure({ cast: options.cast(m.castId, m), id: m.id, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() },
-      onStep: (e) => { S.steps.push({ type: 'step', ...e, group: def.id, t: S.t }); if (S.steps.length > 150) S.steps.shift() } }); root.add(f.holder); return f }) // Schritte (WS-Audio) eigener Ringpuffer
+      onStep: (e) => { S.steps.push({ type: 'step', ...e, characterId: CID[m.id] ?? null, group: def.id, t: S.t }); if (S.steps.length > 150) S.steps.shift() } }); root.add(f.holder); return f }) // Schritte (WS-Audio) eigener Ringpuffer
     return { def, sim, figs, active: true, shown: true, hits: [] }
   })
   const T = (options.tables || []).map((tb) => ({ tb, inside: false, rolls: 0, coolUntil: -Infinity, chosen: null, log: [] }))
@@ -62,7 +64,7 @@ export function createGroupLife(options) {
   }
   function world(g, e) {
     if (e.type === 'fluff') { const O = options.orchard?.(); O?.burst?.([e.at[0], options.groundAt(e.at[0], e.at[1]) + GROUP_LIFE.burstY * K, e.at[1]], e.n, seedOf(e.tag), e.tag) }
-    const ev = { ...e, group: g.def.id }; S.events.push(ev); if (S.events.length > 60) S.events.shift()
+    const ev = { ...e, ...(e.id && e.id in CID ? { characterId: CID[e.id] } : {}), group: g.def.id }; S.events.push(ev); if (S.events.length > 60) S.events.shift()
     if (e.type !== 'fluff') options.onEvent?.(ev)
   }
 
@@ -96,7 +98,7 @@ export function createGroupLife(options) {
       }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },
-    status: () => ({ status: S.status, error: S.error, ms: S.ms, statics: S.statics.slice(), groups: G.map((g) => ({ id: g.def.id, members: g.figs.map((f) => f.status()) })) }),
+    status: () => ({ status: S.status, error: S.error, ms: S.ms, statics: S.statics.slice(), groups: G.map((g) => ({ id: g.def.id, members: g.figs.map((f, k) => ({ ...f.status(), characterId: CID[g.def.members[k].id] ?? null })) })) }),
     tables: () => T.map((x) => ({ id: x.tb.id, inside: x.inside, rolls: x.rolls, chosen: x.chosen, log: x.log.slice() })),
     // E3 (Lead 22.10.): Gruppe aus einem Ereignis erscheinen lassen – sofort sichtbar (die Enthüllung ist das Ereignis), Mitglieder an spots absetzen
     // (warten bis until, dann in die Formation), Zusatz-Lage pose(k, t) bis plan.until. Gilt unabhängig von der Begegnungstabelle.

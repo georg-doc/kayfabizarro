@@ -13,6 +13,7 @@
 import * as THREE from 'three'
 import { createDarkFluffer } from './darkFluffer.js'
 import { appearanceAt, kindsForDay } from './flufferKinds.js'
+import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 
 export const FLUFFER_SET = Object.freeze({ leadS: 8, visibleFar: 140, nearK: 12, events: 60 })
 
@@ -44,9 +45,9 @@ export function createFlufferSet(options) {
     const def = start ? { ...z.def, start, via: [] } : z.def
     z.inst = createDarkFluffer({ def, t0, modelUrl: url, kind, gun: z.def === defs[0], show,
       clock: options.clock, groundAt: options.groundAt, terrain: () => terrainFor(z.def.id), orchard: options.orchard, player: options.player,
-      onEvent: options.onEvent, onWorld: (e) => emit({ ...e, zone: z.def.tree.zone }) })
+      onEvent: options.onEvent, onWorld: (e) => emit({ ...e, characterId: resolveCharacterId(kind), zone: z.def.tree.zone }) })
     root.add(z.inst.object3d); z.off = options.track?.(z.inst.holder()) ?? null
-    emit({ type: 'fluffer_spawn', id: z.def.id, kind, zone: z.def.tree.zone, at: def.start.slice(), n, t0, t: options.clock() })
+    emit({ type: 'fluffer_spawn', id: z.def.id, kind, characterId: resolveCharacterId(kind), zone: z.def.tree.zone, at: def.start.slice(), n, t0, t: options.clock() })
   }
   // feste Spawns: Sorten eines Durchgangs n gemeinsam (verschiedene Sorten am selben Tag), Tages-Seed = Welttag zu Beginn des Durchgangs
   const kindFor = (d, n) => kindsForDay(defs, options.kinds, options.dayOf(options.T0 + n * options.dayS), () => n)[d.id]
@@ -77,12 +78,12 @@ export function createFlufferSet(options) {
       for (const z of Object.values(Z)) { const th = z.inst?.threat(); if (!th) continue; const d = at ? Math.hypot(th.x - at.x, th.z - at.z) : 0; if (d < bd) { bd = d; best = th } }
       return best
     },
-    status: () => { const p = Z[defs[0].id].inst; return { ...(p ? p.status() : { status: 'LOADING' }), fluffers: Object.values(Z).map((z) => ({ id: z.def.id, kind: z.kind, n: z.n, t0: z.t0, status: z.inst?.status().status ?? null, shown: !!z.inst?.status().shown })) } },
+    status: () => { const p = Z[defs[0].id].inst; return { ...(p ? p.status() : { status: 'LOADING' }), fluffers: Object.values(Z).map((z) => ({ id: z.def.id, kind: z.kind, characterId: z.kind ? resolveCharacterId(z.kind) : null, n: z.n, t0: z.t0, status: z.inst?.status().status ?? null, shown: !!z.inst?.status().shown })) } },
     debug: () => Z[defs[0].id].inst?.debug() ?? { events: [], phase: null }, // AudioHost liest debug().events ohne Prüfung
     debugOf: (id) => Z[id]?.inst?.debug() ?? null,
     statusOf: (id) => Z[id]?.inst?.status() ?? null,
     mouthWorld: () => Z[defs[0].id].inst?.mouthWorld() ?? null,
-    hops: () => Object.values(Z).flatMap((z) => z.inst?.hops() ?? []).sort((a, b) => a.t - b.t),
+    hops: () => Object.values(Z).flatMap((z) => (z.inst?.hops() ?? []).map((h) => ({ ...h, characterId: resolveCharacterId(h.kind ?? z.kind) }))).sort((a, b) => a.t - b.t),
     holder: () => Z[defs[0].id].inst?.holder() ?? null,
     dispose() { for (const z of Object.values(Z)) { z.token++; drop(z) } options.terrain?.()?.setInkPatches?.([]); root.clear() },
   }

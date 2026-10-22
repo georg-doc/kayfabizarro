@@ -11,6 +11,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { beatPos, clipTimeAt, placeActor } from './bandClock.js'
 import { createNpcFigure, loadClipSet } from './npcFigure.js'
+import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 
 export const BAND = Object.freeze({ visibleFar: 140, bubbleR: 60, gazeR: 14, headMaxYawDeg: 50, headLag: 0.25, placeholderClip: ['Cheering', 'Idle_A'] })
 export const bandLog = { create: 0, update: 0, dispose: 0 }
@@ -86,7 +87,7 @@ export function createBandLife(options) {
       }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },
-    status: () => ({ status: S.status, mode: S.mode, error: S.error, ms: S.ms, members: M.map((m) => ({ id: m.a.id, clip: m.clip, head: !!m.head, loaded: !!(m.gltf || m.fig) })) }),
+    status: () => ({ status: S.status, mode: S.mode, error: S.error, ms: S.ms, members: M.map((m) => ({ id: m.a.id, characterId: resolveCharacterId('kfb_band_' + m.a.id), clip: m.clip, head: !!m.head, loaded: !!(m.gltf || m.fig) })) }),
     debug: () => ({ near: S.near, beat: S.beat, at: at.slice(), yaw: yaw0, members: M.map((m) => ({ id: m.a.id, x: m.pl.x, z: m.pl.z, yaw: m.pl.yaw, clip: m.clip, t: m.t ?? null, headYaw: m.headYaw })) }),
     positions: () => M.map((m) => ({ id: 'band-' + m.a.id, x: m.pl.x, z: m.pl.z, y: options.groundAt(m.pl.x, m.pl.z) })),
     holders: () => M.map((m) => m.holder),

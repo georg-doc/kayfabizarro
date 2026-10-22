@@ -5,7 +5,21 @@
 // Dark Fluffer 0,8 m statt 1,1 m (WS0 V-616, Georg 21.10.: kleiner, passend zu KayKit) → Klänge 4 % höher (kleinerer Körper)
 export const FLUFFER_PITCH = 1.04
 export const FLUFFER_RANGE = 120 // m: Fluffer-Ereignisse weiter weg bleiben still (K15: Fluffer in drei Obstgarten-Zonen; bei 120 m ohnehin ≈ −30 dB)
+// Chatterbox-Familien (WS0 chatter_families_r1, V-663/V-678): 12 Solo-Instrumente × 9 Gefühle + 4 Rufe, je 0,8 s, −16 LUFS (_lufs-Bericht).
+// Welche Figur welches Instrument spielt, steht NUR im Charakter-Register (CHARACTERS_R1, chatter.instrument, V-682); hier nur Instrument → Dateistamm.
+export const CHATTER_FAMILIES = Object.freeze({ Posaune: 'F01_trombone', Klarinette: 'F02_clarinet', Akkordeon: 'F03_accordion', Okarina: 'F04_ocarina', Fagott: 'F05_bassoon', Theremin: 'F06_theremin',
+  Saxophon: 'F07_saxophone', Talkbox: 'F08_talkbox', 'Singende Säge': 'F09_saw', Oboe: 'F10_oboe', Tuba: 'F11_tuba', Mundharmonika: 'F12_harmonica' })
+export const CHATTER_MOODS = Object.freeze(['neutral', 'froh', 'traurig', 'genervt', 'aengstlich', 'aggressiv', 'staunend', 'zaertlich', 'introspektiv', 'call_bingo', 'call_bloedsinn', 'call_boggle', 'call_bongo'])
+const CHATTER_CUES = Object.fromEntries(Object.values(CHATTER_FAMILIES).flatMap((fam) => CHATTER_MOODS.map((m) => [`chatter.${fam}.${m}`, { owner: 'bank', set: 'chatter_families_r1', files: [`${fam}_${m}`], gain: 0.7 }])))
+// Register-Wert gilt nur mit Status SOURCE/GEORG o. ä.; todo, PREFILL und DESIGN sind Vorschläge → bisheriger Platzhalter (Brief V-682 §6)
+export const REGISTER_UNSET = Object.freeze(['todo', 'PREFILL', 'DESIGN'])
+export function chatterFamily(chatter) {
+  const f = chatter?.instrument, v = f && typeof f === 'object' ? f.v : f, st = f && typeof f === 'object' ? f.status : null
+  if (!v || typeof v !== 'string' || REGISTER_UNSET.some((u) => u.toLowerCase() === String(st).toLowerCase())) return null // auch chatterOf(…, {prefill}) → status 'prefill'
+  const low = v.toLowerCase(); return Object.entries(CHATTER_FAMILIES).find(([k]) => low.startsWith(k.toLowerCase()))?.[1] ?? null // „Posaune mit Dämpfer“ → Posaune
+}
 export const CUES = Object.freeze({
+  ...CHATTER_CUES,
   // ── Boden-Fahrt (M2EVENTS aus k2t / vehicleRig) ─────────────────────────────────────────────────────────────
   'drive.motor': { owner: 'racer', file: 'L1_idle · L2_low · L3_mid · L4_high · L5_overrun (Gitter nach Drehzahl, Schubabschaltung)', note: 'Drehzahl/Gang aus vehicleRig' },
   'drive.shift': { owner: 'racer', file: 'O1_upshift · O4_downshift_blip · O2b/O2c backfire' },
@@ -150,15 +164,15 @@ export const CUES = Object.freeze({
   'npc.stepToy': { owner: 'bank', set: 'npc_steps_r1', files: ['N05_toysoldier_march'], gain: 0.38, note: 'N05 Plastik-Marschtritt' },
   'npc.stepBot': { owner: 'bank', set: 'npc_steps_r1', files: ['N07_bot_step_metal'], gain: 0.4, note: 'N07 Metall-Stapfen' },
   // ── Begrüßung der Bewohner (Gerücht D2 / G-2, Georg 22.10.): Stimm-Laut ohne Wort je Grund – KFB-Stimmen sind Solo-Instrumente (Fluffolect:
-  // FrizzleBob Posaune, Dory Okarina, Hunky Fagott). Eigene Bewohner-Stimmen bestellt bei WS0 (resident_voices_r1, Namen unten); bis dahin neutrale Platzhalter
-  'greet.farmer.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_cure', gain: 0.7, pending: 'WS0' },
-  'greet.farmer.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_known', gain: 0.7, pending: 'WS0' },
-  'greet.farmer.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_fight', gain: 0.7, pending: 'WS0' },
-  'greet.lorekeeper.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_cure', gain: 0.7, pending: 'WS0' },
-  'greet.lorekeeper.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_known', gain: 0.7, pending: 'WS0' },
-  'greet.lorekeeper.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_fight', gain: 0.7, pending: 'WS0' },
-  'greet.farmer.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_first', gain: 0.6, pending: 'WS0' },
-  'greet.lorekeeper.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_first', gain: 0.6, pending: 'WS0' },
+  // FrizzleBob Posaune, Dory Okarina, Hunky Fagott). Reihenfolge: Instrument aus dem Register (chatter.*), sonst Bewohner-Stimme (resident_voices_r1, WS0 geliefert 22.10., Rückfall solange das Register leer ist), sonst Platzhalter
+  'greet.farmer.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_cure', gain: 0.7 },
+  'greet.farmer.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_known', gain: 0.7 },
+  'greet.farmer.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_fight', gain: 0.7 },
+  'greet.lorekeeper.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_cure', gain: 0.7 },
+  'greet.lorekeeper.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_known', gain: 0.7 },
+  'greet.lorekeeper.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_fight', gain: 0.7 },
+  'greet.farmer.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_first', gain: 0.6 },
+  'greet.lorekeeper.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_first', gain: 0.6 },
   'greet.fallback.cure': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F10_leitmotif_sting_name', gain: 0.45, note: 'Platzhalter (Kalimba-Motiv, keiner Figur zugeordnet)' },
   'greet.fallback.known': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F10_leitmotif_sting_name', gain: 0.35, rate: 1.06, note: 'Platzhalter' },
   'greet.fallback.fight': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F08_breath_soft', gain: 0.6, note: 'Platzhalter (leiser Atem, kein Figuren-Instrument)' },
@@ -291,8 +305,11 @@ export const BANK_FIRST = Object.freeze({ car: /^(vehicle|drive|fly|ui|atmo)\./,
 // Begrüßung: Bewohner-Stimme (residentId → Stimme), Grund cure | fight | known | first (WS-NPC: npc.events(), seq); fehlt die Stimme oder ihre Datei → Platzhalter
 export const RESIDENT_VOICE = Object.freeze({ farmer_b: 'farmer', farmer_harke: 'farmer', lorekeeper: 'lorekeeper' })
 export const GREET_REASONS = Object.freeze(['cure', 'fight', 'known', 'first'])
-export function greetCues(e) {
-  const reason = GREET_REASONS.includes(e?.reason) ? e.reason : 'known', voice = RESIDENT_VOICE[e?.id] || Object.entries(RESIDENT_VOICE).find(([k]) => String(e?.id || '').includes(k.split('_')[0]))?.[1]
-  return [voice ? `greet.${voice}.${reason}` : null, `greet.fallback.${reason}`].filter(Boolean)
+// Grund → Gefühl der Chatter-Familie (Bewohner-Begrüßung)
+export const GREET_MOOD = Object.freeze({ cure: 'froh', known: 'neutral', first: 'staunend', fight: 'aengstlich' })
+// chatter = der chatter-Block der Figur aus dem Register (über den zentralen Leser, Aliase aufgelöst); ohne gültiges Instrument: bestellte Bewohner-Stimme, dann Platzhalter
+export function greetCues(e, chatter = null) {
+  const reason = GREET_REASONS.includes(e?.reason) ? e.reason : 'known', fam = chatterFamily(chatter), voice = RESIDENT_VOICE[e?.id] || Object.entries(RESIDENT_VOICE).find(([k]) => String(e?.id || '').includes(k.split('_')[0]))?.[1]
+  return [fam ? `chatter.${fam}.${GREET_MOOD[reason]}` : null, voice ? `greet.${voice}.${reason}` : null, `greet.fallback.${reason}`].filter(Boolean)
 }
 export const greetKey = (e) => (e.seq != null ? 'seq' + e.seq : [e.id, e.reason, e.t].join('|'))

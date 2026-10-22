@@ -12,6 +12,7 @@ import { M2_ON, M2STATE, M2EVENTS, RACER, RACER_FLY } from '../m2/M2Car'
 import { worldPosOf } from '../m1/m1Host'
 import * as A from './kfbAudio.js'
 import { groupKey, stepKey, greetKey } from './cueMap.js'
+import { chatterOf } from '../characters/registry.js'
 import { createWaterIndexAsync, waterNear, stepSurface, hoverSurface } from './waterAudio.js'
 import { mountAudioPanel } from './audioPanel.js'
 
@@ -108,7 +109,7 @@ export default function AudioHost({ host }) {
     // Begrüßung der Bewohner (WS-NPC 'greet' { reason, id, at }): aus npc.greets() bzw. npc.events(), je Eintrag einmal, beim ersten Lesen nur merken
     const Nm = mods.npc, GL = Nm?.greets?.() || Nm?.events?.(); if (GL && H.t - (H.grtAt || 0) > 0.1) { H.grtAt = H.t; H.grtSeen ||= new Set(); const first = !H.grtInit; H.grtInit = true
       for (const e of GL) { if (e?.type !== 'greet') continue; const key = greetKey(e); if (H.grtSeen.has(key)) continue; H.grtSeen.add(key); if (H.grtSeen.size > 300) H.grtSeen.delete(H.grtSeen.values().next().value); if (first) continue
-        const hh = mods.terrain?.height, at = Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 1.6, z: e.at[1] } : null; A.greet(e, at) } }
+        const hh = mods.terrain?.height, at = Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 1.6, z: e.at[1] } : null; A.greet(e, at, chatterOf(e.id)) } } // Instrument nur aus dem Register (V-682); residentId (farmer_b), nicht castId
     // Dark Fluffer (WS-NPC): K15 fluffer.events() – alle Fluffer (bis 3), je seq einmal, Ort = Maul (mouth) bzw. at; beim ersten Lesen nur merken.
     // Auch hinter der Kamera (Culling ruht nur die Animation). Ohne events() der alte Weg über debug().events (nur der Ghost).
     const F = mods.fluffer; if (F?.events && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const list = F.events(), first = H.flSeq == null, last = list.at(-1)?.seq ?? 0; if (!first && last < H.flSeq) H.flSeq = 0 // Modul neu angelegt: seq beginnt von vorn

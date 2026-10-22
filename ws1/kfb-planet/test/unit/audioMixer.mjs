@@ -6,7 +6,7 @@ import path from 'path'
 import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
 import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey } from '../../src/audio/cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
 
@@ -95,8 +95,14 @@ process.exit(report('audio-mixer', {
         return bpms.every((x) => Math.abs(x - 128) < 4) && q.transport.confidence01 > 0.5 })() })(),
   kampfR1Dedupe: k10Plan({ type: 'contact', weapon: 'pistol', target: 'group:skel_rogue', confirmed: true, material: 'clay' }).layers.length === 1 && k10Plan({ type: 'kill', target: 'group:toy_3' }).layers.length === 0
     && k10Plan({ type: 'kill', target: 'mob_1' }).layers[0][0] === 'k10.kill' && k10Plan({ type: 'contact', weapon: 'pistol', target: 'tree:goblin:t4' }).layers.some(([c]) => c === 'tree.leaves') && k10Plan({ type: 'contact', weapon: 'pistol', material: 'metal' }).layers.some(([c]) => c === 'impact.metal'),
+  // Register-Chatter (V-682): Instrument → Familie, nur gültige Werte; Reihenfolge Register → bestellte Stimme → Platzhalter; 12 × 13 Cues
+  registerChatter: chatterFamily({ instrument: { v: 'Posaune mit Dämpfer', status: 'SOURCE' } }) === 'F01_trombone' && chatterFamily({ instrument: { v: 'Akkordeon', status: 'GEORG' } }) === 'F03_accordion'
+    && ['todo', 'PREFILL', 'DESIGN'].every((st) => chatterFamily({ instrument: { v: 'Klarinette', status: st } }) === null) && chatterFamily({ instrument: { v: 'Kazoo', status: 'SOURCE' } }) === null && chatterFamily(null) === null
+    && greetCues({ id: 'farmer_b', reason: 'cure' }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }).join() === 'chatter.F03_accordion.froh,greet.farmer.cure,greet.fallback.cure'
+    && greetCues({ id: 'lorekeeper', reason: 'fight' }, { instrument: { v: 'Klarinette', status: 'PREFILL' } })[0] === 'greet.lorekeeper.fight'
+    && Object.keys(CHATTER_FAMILIES).length === 12 && CHATTER_MOODS.length === 13 && Object.keys(CUES).filter((k) => k.startsWith('chatter.')).length === 156,
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
-    && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -4 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && CUES['greet.farmer.cure'].pending === 'WS0',
+    && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -4 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),
   ws0CombatAvDelivered: LAUNCH.bow[0][0] === 'k10.bowRelease' && LAUNCH.crossbow[0][0] === 'k10.crossbowRelease' && LAUNCH.magic[0][0] === 'k10.magicCast' && LAUNCH.dice[0][0] === 'k10.diceFlick'
     && k10Plan({ type: 'contact', target: 'player' }).layers[0][0] === 'k10.playerHurt' && k10Plan({ type: 'contact', target: 'player', weapon: 'bite' }).layers[0][0] === 'k10.mobBite' && k10Plan({ type: 'kill' }).layers[0][0] === 'k10.kill'

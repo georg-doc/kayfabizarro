@@ -12,6 +12,7 @@ import * as THREE from 'three'
 import { createNpcFigure, loadClipSet, FIGURE } from './npcFigure.js'
 import { buildRoutes } from './npcDay.js'
 import { createResidentSim } from './residentSim.js'
+import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 import { createNpcMemory } from './npcMemory.js'
 import { createWorldSaveStore } from '../world/worldSave.js'
 
@@ -27,7 +28,7 @@ export function createResidentLife(options) {
   if (options.memory) { const store = options.memory.store || createWorldSaveStore(); if (options.memoryFresh) store.clear(); mem = createNpcMemory({ store, dayS: W.dayS }) }
   // Begrüßung (Georg 22.10., G-2): Ereignis greet { reason, id, at, t, seq } im Ringpuffer events() und an options.onGreet (Blase, Stimm-Laut) – auch ohne Gedächtnis
   let seq = 0
-  const greet = (e) => { const ev = { type: 'greet', reason: e.reason || 'first', id: e.id, at: e.at, t: e.t, seq: ++seq }; S.events.push(ev); if (S.events.length > 40) S.events.shift(); options.onGreet?.(ev) }
+  const greet = (e) => { const ev = { type: 'greet', reason: e.reason || 'first', id: e.id, characterId: resolveCharacterId(e.id), at: e.at, t: e.t, seq: ++seq }; S.events.push(ev); if (S.events.length > 40) S.events.shift(); options.onGreet?.(ev) }
   const hooks = mem ? { greetPlayer: (id) => mem.greetPlayer(id), topic: (a, b) => mem.topic(a, b),
     onEvent: (e) => { if (e.type === 'greet') greet(e); else if (e.type === 'playerNotice') mem.onPlayerNotice(e); else if (e.type === 'threatNotice') mem.onThreatNotice(e)
       else if (e.type === 'encounterDone') mem.onEncounterDone(e); else if (e.type === 'told') mem.tell({ speaker: e.speaker, listener: e.listener, topic: e.topic, t: e.t }) } } : { onEvent: (e) => { if (e.type === 'greet') greet(e) } }
@@ -38,7 +39,7 @@ export function createResidentLife(options) {
 
   const R = W.residents.map((def) => {
     const f = createNpcFigure({ cast: options.cast(def.stageCastId), id: def.residentId, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() },
-      onStep: (e) => { S.steps.push({ type: 'step', ...e, t: S.lastT ?? 0 }); if (S.steps.length > 80) S.steps.shift() } }) // Schritte (WS-Audio)
+      onStep: (e) => { S.steps.push({ type: 'step', ...e, characterId: resolveCharacterId(def.residentId), t: S.lastT ?? 0 }); if (S.steps.length > 80) S.steps.shift() } }) // Schritte (WS-Audio)
     root.add(f.holder); return { def, f, holder: f.holder, actor: f.actor }
   })
 
@@ -74,7 +75,7 @@ export function createResidentLife(options) {
       R.forEach((r, i) => { r.f.present(outs[i], dt); r.f.update(dt, hctx, show(outs[i])) })
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05; S.msMax = Math.max(S.msMax || 0, ms) } // Kosten je Schritt (gleitend)
     },
-    status: () => ({ status: S.status, error: S.error, clips: S.clips.length, ms: S.ms ?? null, msMax: S.msMax ?? null, residents: R.map((r) => ({ id: r.def.residentId, cast: r.def.stageCastId, placeholder: r.def.placeholder, ...r.f.status() })) }),
+    status: () => ({ status: S.status, error: S.error, clips: S.clips.length, ms: S.ms ?? null, msMax: S.msMax ?? null, residents: R.map((r) => ({ id: r.def.residentId, characterId: resolveCharacterId(r.def.residentId), cast: r.def.stageCastId, placeholder: r.def.placeholder, ...r.f.status() })) }),
     // Debug-Zeile je Bewohner (R0.6/R0.7: intent / POI / Route / Phase / Grund) und Messwerte für Tests
     debug: () => sim.brains.map((b) => ({ id: b.id, ...b.out, near: S.near[b.id], plan: (({ phase, poi, routeId, slot, activity, x, z }) => ({ phase, poi, routeId, slot, activity, x, z }))(b.plan(S.lastT ?? 0)), stats: b.state().stats, overlay: R.find((r) => r.def.residentId === b.id)?.f.anim()?.current() ?? null, gait: R.find((r) => r.def.residentId === b.id)?.f.anim()?.last ?? null })),
     soles: () => R.map((r) => r.f.soles()),

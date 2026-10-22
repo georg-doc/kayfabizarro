@@ -38,6 +38,7 @@ import { isTerrain3, TERRAIN3_CFG, applyShadowTone3, applyFootShade, applyFigure
 import * as T3LOOK from '../look/terrain3.js' // T3_CALM (Beruhigung, nur im mvp-Stand vorhanden; fehlt sie, gilt 0)
 import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
+import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/shadeFloor' // V-683: Schattenseite aller Nicht-Gelände-Objekte (shade=1, A/B)
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -73,6 +74,7 @@ import { createFoundItems3d } from '../modules/foundItems3d'
 import { createPath3d } from '../modules/path3d'
 import { placeLoot } from '../world/loot.js'
 import { createClaySSOT } from '../modules/claySSOT'
+import { applyKitFigure } from '../look/clayKit'
 import { figureCards } from '../actors/figureCard'
 import { SKIP_DEFAULT, MAX_PULL } from '../vendor/clay/kfb-clay.v1.1.js'
 import { createHarvestState } from '../world/harvest.js'
@@ -230,6 +232,9 @@ const CARDS = figureCards(), CLAY_ON = !/(^|[#,])clay=0(,|$)/.test(hash)
 // (Bewohner, Gruppen, Band); Kit-Farben auf die Rollen der aktiven Biom-Palette (terrain3) gezogen, Augen/Augen-Rig über SKIP_DEFAULT ausgenommen.
 // Schalter #kitclay (Standard an erst nach Georgs Abnahme). Zug vorläufig = Kanon-Obergrenze MAX_PULL (V-340, 18 %), Wert legt WS0/Georg nach A/B fest.
 const KITCLAY = !/(^|[#,])kitclay=0(,|$)/.test(hash) // Georg 22.10.: Kit-Knete ist Standard, kitclay=0 = ohne
+// V-662 (Lead 22.10.): kitclay=1 = character mit kitSkip-Fix, kitclay=2 = kit-figure (clayKit, Vorschlag kfb-clay v1.2) mit Fix. Ohne Schalter bleibt das Bild
+// exakt wie abgenommen (Fix ändert das Bild erst nach Georgs neuer Abnahme): eyeActor-Figuren faktisch ohne Knete, Band wie bisher.
+const KITCLAY2 = /(^|[#,])kitclay=2(,|$)/.test(hash), KITFIX = KITCLAY2 || /(^|[#,])kitclay=1(,|$)/.test(hash)
 // Beruhigung (terrain3 calm, mvp): Rollenfarben genau wie der Gelände-Shader dämpfen – Sättigung −35 %·calm, dann Zug 40 %·calm zum Mittelton
 // t3m = mix(mix(low, mid, 0,5), sand, 0,3) (terrain3.js Z. 127/128), damit die Figuren zum beruhigten Boden passen
 const kitPalette = () => { const P = TERRAIN3 && TERRAIN3_CFG.palettes?.[T3_PAL]; if (!P) return null
@@ -237,8 +242,11 @@ const kitPalette = () => { const P = TERRAIN3 && TERRAIN3_CFG.palettes?.[T3_PAL]
   return ['sand', 'low', 'mid', 'high', 'peak', 'cliff', 'water'].filter((r) => P[r]).map((r) => { const k = c(P[r]); if (calm > 0) { const L = 0.2126 * k.r + 0.7152 * k.g + 0.0722 * k.b
     k.lerp(new THREE.Color(L, L, L), 0.35 * calm); k.lerp(mid, 0.4 * calm) } return '#' + k.getHexString() }) }
 const KIT_PAL = kitPalette()
+// V-662-Befund 22.10.: SKIP_DEFAULT prüft den ganzen Pfad – die Wurzel „eyeActor:<id>“ trifft /eye/, damit blieb jeder Mesh der Kit-Figuren ohne Knete.
+// kitSkip prüft nur die Namen unterhalb der Figurenwurzel (Augen, Lider, Mund des Augen-Rigs werden weiter ausgelassen).
+const kitSkip = (root) => (o) => { for (let n = o; n && n !== root; n = n.parent) if (SKIP_DEFAULT.test(n.name || '')) return true; return false }
 const kitClayTargets = () => [...(mods.npc?.actors?.() || []), ...(mods.groups?.actors?.() || []), ...(mods.band?.clayTargets?.() || [])]
-  .map((a) => ({ module: a, profile: 'character', seed: a.object3d?.name || 'kit', ...(KIT_PAL ? { palette: KIT_PAL, pull: MAX_PULL } : {}) }))
+  .map((a) => ({ module: a, profile: 'character', seed: a.object3d?.name || 'kit', ...(KITFIX ? { skip: kitSkip(a.object3d) } : {}), ...(KIT_PAL ? { palette: KIT_PAL, pull: MAX_PULL } : {}), ...(KITCLAY2 ? { after: applyKitFigure } : {}) }))
 const CLAY_M1 = { targets: () => [{ module: mods.player, card: CARDS.frizzlebob }, { module: mods.partner, card: CARDS.gothgirl }, ...(KITCLAY ? kitClayTargets() : []),
   ...(mods.found ? [{ module: mods.found, profile: 'midground', seed: 'found', scaleRef: 0.9, skip: (o) => o.name === 'contact-blob' || SKIP_DEFAULT.test(o.name || '') }] : []),
   ...(mods.orchard ? [{ module: mods.orchard, profile: 'midground', seed: 'orchard', scaleRef: 2.6, skip: (o) => o.name === 'orchard-fluff' || !/^tree:/.test(o.parent?.name || '') && !/tree:/.test(pathName(o)) || SKIP_DEFAULT.test(o.name || '') }] : [])] }
@@ -355,6 +363,14 @@ export const LIGHT_INFO = () => mods.light?.info?.() || null
 const AUDIO_HOST = (player) => ({ mods, player, harvest: HARVEST ? HARVEST_STATE : null, m1: M1STATE, light: LIGHT_INFO, flatR: TERRAIN.flatR, k: K }) // WS-Audio: nur lesend
 // terrain3: dunkler Fuß wie KayKit an Figuren (Schattenkonzept R1, Georg 21.10.), Bodenhöhe = Wurzel der Figur (steht auf dem Boden, m1-ground);
 // Materialien jede Sekunde nachgezogen (Teile laden nach), applyFootShade hängt sich nur einmal je Material an
+// V-683 (WS0, Georg 22.10.): eine Regel für die Schattenseite aller Nicht-Gelände-Objekte – Boden im Rig-Ton, kein Zusatzlicht. Schalter shade=1 bis zu Georgs Wahl.
+function ShadeFloor() {
+  const { scene } = useThree(), t = useRef(0)
+  useEffect(() => { expose('Shade', SHADE_TEST) }, [])
+  useFrame((_, dt) => { const m = LIGHT_INFO()?.mood; if (m) updateShadeFloor({ color: m.hemiSky, glow: m.glow ?? 0 }); if ((t.current -= dt) <= 0) { t.current = 1; scanShadeFloor(scene) } })
+  return null
+}
+
 function FootShade() {
   const U = useMemo(() => Object.fromEntries(['player', 'partner'].map((k) => [k, { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } }])), [])
   const t = useRef(0), v = useMemo(() => new THREE.Vector3(), []), FS = useMemo(() => ({ uFigShadowK: { value: 0.55 } }), [])   // Selbstschatten auf Figuren gedämpft (Arm-Kante, Georg 21.10.)
@@ -563,6 +579,7 @@ function M1World() {
     <>
       <HostEnv />
       {TERRAIN3 && <FootShade />}
+      {SHADE_ON && <ShadeFloor />}
       <LightPools />
       <ModuleHost create={makeSky} options={SKY} />
       <ModuleHost create={makeTerrain} options={TERR} />

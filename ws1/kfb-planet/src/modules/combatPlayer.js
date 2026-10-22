@@ -56,7 +56,7 @@ export function createCombatPlayer(options = {}) {
   // Geschoss-Pool: längliche Knet-Kugel in der Farbe der Waffe (unbeleuchtet: Leuchten nur am Effekt selbst, V-499)
   const projGeo = new THREE.IcosahedronGeometry(1, 1), projMats = new Map(K10_WEAPONS.map((w) => [w.id, new THREE.MeshBasicMaterial({ color: w.color, toneMapped: false })]))
   const pool = Array.from({ length: COMBAT.cap }, (_, i) => { const m = new THREE.Mesh(projGeo, projMats.get('pistol')); m.visible = false; m.frustumCulled = false; m.name = 'k10-projectile'; root.add(m)
-    return { m, live: false, id: 'p' + i, pos: new THREE.Vector3(), dir: new THREE.Vector3(), travel: 0, w: null, shot: 0, start: new THREE.Vector3() } })
+    return { m, live: false, fresh: false, id: 'p' + i, pos: new THREE.Vector3(), dir: new THREE.Vector3(), travel: 0, w: null, shot: 0, start: new THREE.Vector3() } })
   const trailItems = []
   const _p = new THREE.Vector3(), _d = new THREE.Vector3(), _a = [0, 0, 0], _b = [0, 0, 0], _v = new THREE.Vector3(), _z = new THREE.Vector3(0, 0, 1)
 
@@ -115,13 +115,14 @@ export function createCombatPlayer(options = {}) {
   const clipOf = (w) => w.card.release.clip, markerOf = (w) => w.card.release.seconds
   function release(w) {
     readMuzzlePose(w.muzzle, _p, _d); _d.normalize()
-    const p = pool.find((x) => !x.live) || pool.reduce((m, x) => (x.travel > m.travel ? x : m)); p.live = true; p.w = w; p.shot = S.shot.id; p.travel = 0
+    const p = pool.find((x) => !x.live) || pool.reduce((m, x) => (x.travel > m.travel ? x : m)); p.live = true; p.fresh = true; p.w = w; p.shot = S.shot.id; p.travel = 0
     p.pos.copy(_p); p.start.copy(_p); p.dir.copy(_d); p.m.material = projMats.get(w.id); p.m.visible = true
     p.m.scale.set(COMBAT.projR, COMBAT.projR, COMBAT.projR * COMBAT.projLen); p.m.position.copy(_p); p.m.quaternion.setFromUnitVectors(_z, _d)
     w.fx?.fire({ slot: w.flash })
     S.releases++; S.shot.released = true
     S.lastRelease = { shot: S.shot.id, weapon: w.id, clipTime: +S.shot.clock.toFixed(4), muzzle: _p.toArray().map((n) => +n.toFixed(4)), dir: _d.toArray().map((n) => +n.toFixed(4)), proj: p.pos.toArray().map((n) => +n.toFixed(4)),
       flashOn: w.fx ? w.muzzle.children.filter((c) => c.visible).length : 0, target: S.shot.target }
+    S.relP = p
     emit('fire', { weapon: w.audio, energy: 0.7, position: xyz(_p), id: 'k10:' + S.shot.id })
   }
   function contact(p, hit) {
@@ -141,6 +142,7 @@ export function createCombatPlayer(options = {}) {
   function stepProjectiles(dt) {
     const O = options.orchard?.(), gh = options.groundAt
     for (const p of pool) { if (!p.live) continue
+      if (p.fresh) { p.fresh = false; continue } // Kritiker R3 #23: Abgangsbild zeigt das Geschoss an der Mündung (Spur beginnt dort), erst ab dem nächsten Bild fliegt es
       const s = COMBAT.speed * dt; p.pos.toArray(_a); _b[0] = _a[0] + p.dir.x * s; _b[1] = _a[1] + p.dir.y * s; _b[2] = _a[2] + p.dir.z * s
       let hit = O?.sweep ? O.sweep(_a, _b, COMBAT.projR) : null
       if (!hit && gh) { const g = gh(_b[0], _b[2]); if (_b[1] < g) hit = { kind: 'ground', at: [_b[0], g, _b[2]] } }
@@ -173,6 +175,7 @@ export function createCombatPlayer(options = {}) {
       if (sh && !sh.released) { const at = pl?.actionTime?.(sh.clip); sh.clock = at != null ? Math.max(sh.clock, at) : sh.clock + pdt
         if (S.cur && sh.weapon === S.cur.id && sh.clock >= sh.marker) release(S.cur); else if (!S.cur || sh.weapon !== S.cur.id) S.shot = null }
       stepProjectiles(dt)
+      if (S.relP) { S.lastRelease.drawnGap = +S.relP.m.position.distanceTo(S.relP.start).toFixed(4); S.relP = null } // Abstand Geschoss ↔ Mündung im Abgangsbild
       for (const w of W.values()) if (w.fx) w.fx.update(S.holdFlash > 0 ? 0 : dt)
       S.holdFlash = Math.max(0, S.holdFlash - dt)
       knet.step(dt)

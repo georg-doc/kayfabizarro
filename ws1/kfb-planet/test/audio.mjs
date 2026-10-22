@@ -69,9 +69,10 @@ try {
   // Begrüßung (WS-NPC npc.events(): greet { reason, id, at, t, seq }): erstes Lesen nur merken, dann je Eintrag einmal ein Stimm-Laut, Musik kurz −4 dB
   out.greet = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), L = [{ type: 'greet', reason: 'known', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 1, seq: 1 }], keep = M.mods.npc
     M.mods.npc = { events: () => L }; await new Promise((r) => setTimeout(r, 300)); const n0 = a.stats().events.filter((e) => e.type === 'greet').length
-    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 })
+    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 }, { type: 'greet', reason: 'known', id: 'farmer_harke', at: [p[0] + 3, p[2]], t: 5, seq: 5 })
     await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
-    M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck } })
+    const reg = a.greet({ type: 'greet', reason: 'cure', id: 'farmer_b' }, { x: p[0] + 2, y: p[1] + 1.6, z: p[2] }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }) // Register-Instrument (V-682)
+    M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck, reg, chatter: a.stats().chatter } })
   // K15 (WS-NPC): bis zu 3 Dark Fluffer – fluffer.events() mit seq/id/mouth; altes Ereignis still, ferne Zone (> 120 m) still, Zustand je Fluffer (geheilt/feindlich)
   out.fluffK15 = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), keep = M.mods.fluffer, near = (dx) => [p[0] + dx, p[1] + 1, p[2] + 2]
     const L = [{ type: 'spit', id: 'dark_fluffer_goblin', kind: 'ghost', seq: 1, t: 1, at: [p[0] + 3, p[2]], mouth: near(3) }], hops = []
@@ -129,7 +130,8 @@ try {
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
     reverbAndOcclusion: (!out.space.spot || out.space.env === 'canyon') && (!out.space.hit || out.space.occludedPlayed === 1),
     musicPulse: out.pulse.schema === 'kfb.audio-presentation-pulse/1' && out.pulse.audible01 === 1 && out.pulse.bass > 0 && out.pulse.kicks >= 3 && out.pulse.bpm > 0,
-    greetVoices: out.greet.first === 0 && out.greet.played === 3 && out.greet.again === 0 && out.greet.cues.every((c) => /^greet\./.test(c)),
+    greetVoices: out.greet.first === 0 && out.greet.played === 4 && out.greet.again === 0 && out.greet.cues.join() === 'chatter.F02_clarinet.froh,chatter.F03_accordion.aengstlich,chatter.F03_accordion.staunend,greet.farmer.known'
+      && out.greet.chatter.farmer_b === 'set:F03_accordion' && out.greet.chatter.farmer_harke === 'fallback:resident' && out.greet.reg === 'chatter.F03_accordion.froh',
     duckUnderLoudSfx: f.fight.duckDb < 0,
     voicesBounded: Math.max(w.voices.total, f.fight.voices.total, c.end.voices.total) <= 96 && f.fight.voices.bank <= 24 && f.fight.voices.combat <= 24,
     flyOnFootMusicSuno: f.fly.mode2 !== 'fly' || f.fly.nowPlaying?.list === 'suno' || f.fly.music.changes >= 0,

@@ -111,6 +111,12 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
       const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(36, 1, 0.05, 60); scene.background = null; renderer.setClearColor(0x000000, 0) /* Himmel kommt aus dem CSS-Verlauf */
       const curtain = core.createTheatreCurtain({ material: 'P', hardware: 'none', proscenium: false, floor: false, footlights: true }); scene.add(curtain.group)
       const look = dressClay(curtain, pal); look.setFootlights(1)
+      /* WS0 V-683 (Georg 22.10.): graue Säulen vorerst weglassen. clay-look ist byte-gleich (WS0) → hier nach dem Aufbau: Teilstücke, deren Mitte links/rechts
+         vor den Portalbeinen liegt (Säulen x ≈ ±1,88, z ≈ −0,86: Sockel, Schaft, Kapitell, Deckplatte), auf einen Punkt zusammenfallen lassen */
+      curtain.group.traverse((o) => { const R = o.isMesh && o.userData?.ranges, P = R && o.geometry.attributes.position; if (!P) return; let hit = false
+        for (const r of R) { let cx = 0, cz = 0; for (let i = r.start; i < r.start + r.n; i++) { cx += P.getX(i); cz += P.getZ(i) } cx /= r.n; cz /= r.n
+          if (Math.abs(cx) > 1.5 && Math.abs(cx) < 2.4 && cz > -1.25 && cz < -0.5) { for (let i = r.start; i < r.start + r.n; i++) P.setXYZ(i, 0, -50, 0); hit = true } }
+        if (hit) { P.needsUpdate = true; o.geometry.computeBoundingSphere() } })
       // Licht wie die Vorlage R2 (warmes Führungslicht, kühle Kante, Himmel/Tisch-Fülle)
       const hemi = new THREE.HemisphereLight('#fff3e2', pal.table, 0.75); scene.add(hemi)
       const key = new THREE.SpotLight('#ffe6c8', 60, 16, 0.5, 0.6, 1.5); key.position.set(1.2, 3.6, -4.6); key.target.position.set(0, -0.3, -0.2); key.castShadow = true; key.shadow.mapSize.set(1024, 1024); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; scene.add(key, key.target)

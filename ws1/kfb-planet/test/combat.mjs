@@ -138,6 +138,7 @@ process.exit(report('combat (Kampf R1: K10-Waffen im Spiel)', {
   C_clipOnPlayerMixer: (rec.overlays.Ranged_1H_Shoot || 0) > 5,
   C_releaseAtMarker: !!rel && rel.clipTime >= relCard - 1e-6 && rel.clipTime <= relCard + 1 / 30 + 1e-6,
   C_projectileFromMuzzle: !!rel && d3(rel.proj, rel.muzzle) < 1e-3 && Math.abs(rel.dir[1]) < 0.2,
+  C_drawnAtMuzzle: !!rel && rel.drawnGap != null && rel.drawnGap < 1e-3, // Kritiker R3 #23: im Abgangsbild steht das Geschoss an der Mündung, nicht 34 m/s · dt davor
   C_muzzleFlashVisible: !!rel && rel.flashOn === 1 && rec.flashSteps > 0,
   C_hitSkeleton: !!hitC && /^group:/.test(hitC.target) && hitC.confirmed === true && g1.some((e) => 'group:' + e.id === hitC.target),
   C_hitStop: C1.status.hitStops >= 1 && C1.status.frozenMs > 30 && C1.status.knetHits >= 1,
