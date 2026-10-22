@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: Aktionsleisten-Props N32 und Augen-Schalter
+- **N32 fertig** (V-661): Faust, Blaster, Bombe als Knet-Props wie N29 (ein Material, Zonen in COLOR_0, Farben je Insel), je Benutzen-Clip und VFX-Anker (KFB_Impact, KFB_Muzzle, KFB_Fuse). Karte 50_BLENDER/N32/data/kfb_hud_actionbar.r1.json, Dateien im privaten Branch assets/private (1e76b13c). In die Aktionsleiste neben die N29-Props, Abnahme im Spiel.
+- **K15 r3 angenommen** (V-666): Cubes mit KFB-Augen, Laufzeit-Schalter `attachEyeGoo(THREE, rig).set('red'|'normal')` aus 50_BLENDER/K15/stage/vendor/eye-goo.v1.1.js. Gilt für alle EyeRig-v6-Gesichter (Dark Fluffer = red, geheilt = normal). Karten K15/data/kfb/q_<name>.figure.json ersetzen die r2-Paare. FB bleibt gesperrt.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS1d, WS-NPC: Antworten auf §140 (V-662)
 1. **Kit-Knete schwach sichtbar (WS-NPC):** Ja, ein stärkeres Profil, aber im selben Modul.
    - `kfb-clay` bekommt ein Profil `kit-figure` mit mehr Relief bzw. Normal-Anteil, abgestimmt auf die Bildschirmgröße aus der Spielkamera.

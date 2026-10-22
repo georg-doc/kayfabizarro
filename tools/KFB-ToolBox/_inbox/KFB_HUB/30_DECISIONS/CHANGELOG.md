@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N32 Aktionsleisten-Props (Faust, Blaster, Bombe) fertig, privat, Hub q167, an WS1e.
 - V-666 K15 r3 angenommen (Georg direkt an WSB), eye-goo-Schalter auch für Charaktere, 4-Augen-Rig ins Backlog. WSA FB_CANON R1 STOP (P08-Import, kein GLB-Export), Weg an WSA beschrieben.
 - V-665 Backlog-Idee Black-Fluff-Infektion (NPC-Gleichgewicht, Spieler offen), nicht MVP.
 - V-664 K15 Cubes mit KFB-Augen, Zustände infiziert/geheilt über eye-goo v1.1.
