@@ -196,7 +196,7 @@
 
     <div style="display: flex; align-items: center; gap: 16px; padding: 0 18px; height: 58px;">
       <a href="https://kayfabizarro.pages.dev/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 11px; flex-shrink: 0; text-decoration: none;">
-        <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/FrizzleBob_Avatar_03.png" alt="Uncle FrizzleBob" style="{{ avatarStyle }}" />
+        <img src="https://kayfabizarro.pages.dev/media/FrizzleBob_Avatar_03.png" alt="Uncle FrizzleBob" style="{{ avatarStyle }}" />
         <span style="{{ wordmarkStyle }}">
           <span style="color: var(--ink);">Kayfa</span><span style="{{ markStyle }}">Bizarro</span>
         </span>
@@ -307,7 +307,7 @@
         <span style="{{ cutDoneStyle }}"></span>
       </div>
       <div style="{{ cutPctStyle }}">{{ cutNum }}</div>
-      <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png" alt="" aria-hidden="true" style="{{ cutScissorStyle }}" />
+      <img src="https://kayfabizarro.pages.dev/media/scissors_open.png" alt="" aria-hidden="true" style="{{ cutScissorStyle }}" />
       <span style="{{ cutSnipStyle }}"></span>
       <sc-for list="{{ flowCards }}" as="c" hint-placeholder-count="10">
         <div onClick="{{ c.hit }}" onDoubleClick="{{ c.dbl }}" style="{{ c.style }}">
@@ -322,7 +322,7 @@
             <span style="{{ c.cutStyle }}">
               <span style="{{ c.cutLineStyle }}"></span>
               <span style="{{ c.cutTagStyle }}">
-                <img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png" alt="" aria-hidden="true" style="{{ c.cutIconStyle }}" />
+                <img src="https://kayfabizarro.pages.dev/media/scissors_open.png" alt="" aria-hidden="true" style="{{ c.cutIconStyle }}" />
                 <span style="{{ c.cutTextStyle }}">{{ c.cutLabel }}</span>
               </span>
             </span>
@@ -507,9 +507,9 @@ const READ = "ui-sans-serif, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-s
 // Gegenfaktor fuers Herunterskalieren, nicht eine zweite Feder.
 const INK_GAIN = 1.5;
 // Der Kartenruecken liegt im Repo, nicht hier: eine Zeichnung, kein Nachbau aus Rahmen und Marke.
-const SCISSOR_PNG = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors_open.png';
-const SCISSOR_GIF = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/scissors.gif';
-const BACK_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png';
+const SCISSOR_PNG = 'https://kayfabizarro.pages.dev/media/scissors_open.png';
+const SCISSOR_GIF = 'https://kayfabizarro.pages.dev/media/scissors.gif';
+const BACK_URL = 'https://kayfabizarro.pages.dev/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png';
 
 // v5 keeps the v4 view system and repairs only the data/deep-link seams.
 class Component extends DCLogic {

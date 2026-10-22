@@ -1,11 +1,15 @@
 import { cp, mkdir, readdir, rm, stat } from "node:fs/promises";
 import path from "node:path";
+import { projectPublicDelivery, restrictedPublicCopies } from './public-delivery.mjs';
 
 const repoRoot = process.cwd();
 const outputName = ".cloudflare-pages";
 const outputRoot = path.join(repoRoot, outputName);
 const maxFiles = 18_000;
 const maxAssetBytes = 25 * 1024 * 1024;
+// Public reader texts are deliberate publication inputs, not general repo docs.
+const publicReaderText = /^FrizzleBob\/(?:0[1-9]|1[0-8])-[a-z0-9-]+\.md$/;
+const restrictedCopies = new Set(await restrictedPublicCopies(repoRoot));
 
 const skippedRoots = new Set([
   ".git",
@@ -39,6 +43,8 @@ function normalizedRelative(source) {
 function shouldSkip(source) {
   const rel = normalizedRelative(source);
   if (!rel) return false;
+  if (restrictedCopies.has(rel)) return true;
+  if (publicReaderText.test(rel)) return false;
 
   const [root] = rel.split("/");
   if (skippedRoots.has(root) || root.startsWith(".") || root.startsWith('"')) return true;
@@ -84,8 +90,10 @@ async function countFiles(directory) {
 }
 
 await copyPublicSurface();
+const delivery = await projectPublicDelivery(repoRoot, outputRoot, { maxAssetBytes, excludedRestrictedCopies: [...restrictedCopies].filter(p => !p.startsWith('media/')).sort() });
 const fileCount = await countFiles(outputRoot);
 if (fileCount > maxFiles) {
   throw new Error(`Cloudflare public projection has ${fileCount} files; safety limit is ${maxFiles}.`);
 }
 console.log(`Cloudflare public projection ready: ${fileCount} files in ${outputName}/`);
+console.log(`Allowlisted public media: ${delivery.publicFiles} files; ${delivery.unavailablePinnedRefs.length} historical refs unavailable. This is not private-switch acceptance.`);

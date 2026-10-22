@@ -9,7 +9,7 @@
     'https://unpkg.com/pdfjs-dist@' + PDFJS_VER + '/build/',
     'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' + PDFJS_VER + '/'
   ];
-  var REGISTRY_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json';
+  var REGISTRY_URL = 'https://kayfabizarro.pages.dev/media/kfb/index.json';
   var SHEET_VERSION = 's3';   // v5: PDF truth + normalisierte Kartenschemata
   var TILE_W = 460;           // gespeicherte Kachelbreite in Pixel
   var SHEET_PARALLEL = 2;

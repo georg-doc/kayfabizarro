@@ -1,7 +1,7 @@
 {
   "schema": "kfb-deck-registry/v2",
   "note": "Multi-Deck-Registry für den KFB-Table (06-Integration). Deploy nach media/kfb/index.json. FLACH: Dateien liegen direkt in media/kfb mit ORIGINAL-Namen (nicht umbenennen). URL = baseUrl + '/' + encodeURIComponent(dateiname) (Leerzeichen -> %20). Karten-Mapping siehe cardMapping. Utopia-JSON in v7 per Fetch verifiziert; B/C folgen exakt demselben Muster; Sonic = verifyHosted pruefen. Keys je Karte: cardNumber/cardName/power/lore/grade (+gradeReason/artworkPrompt).",
-  "baseUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb",
+  "baseUrl": "https://kayfabizarro.pages.dev/media/kfb",
   "cardMapping": {
     "gridCols": 2,
     "gridRows": 2,
