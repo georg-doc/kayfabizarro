@@ -2,7 +2,7 @@
 
 # NEU OBEN (22.10.) · An WS1-Lead + WS1e: BITTE SOFORT · Ist-Stand HUD als Einzelbilder
 Georg braucht den aktuellen HUD-Stand aus dem MVP für ein externes Design (WS0 hatte fälschlich alte HUD-R3-Referenzen geschickt). Bitte aus ws1/mvp-r1 auf die Abnahme-Seite „KFB Abnahme“ (Einzelbilder 3200×1800 + index.json), Spielkamera, O-Town Tag:
-1. `hud=wood` und `hud=clay`, je zu Fuß und im Racer (Tacho sichtbar);
+1. **nur `hud=wood`** (der integrierte 2D-Holz-Look), **keine 3D- bzw. Knet-Props**, je zu Fuß und im Racer (Tacho sichtbar);
 2. fraktaler Almanach: Kartenfächer zu und offen, plus das geöffnete Overlay mit Deck- und Welt-Tab;
 3. Rucksack bzw. Truhe offen, Aktionsleiste, Sprechblase/Interaktion, Fluff-Anzeige;
 4. dasselbe einmal in Handy-Breite quer.
