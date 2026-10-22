@@ -9114,6 +9114,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-642",
+   "date": "2026-10-22",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Bewohner-Stimmen (WS-Audio Status 12 + V-640): Jede benannte Figur hat ein Solo-Instrument als Fluff-o-lect-Stimme, Farmer B Akkordeon, Lorekeeper tiefe Klarinette (nicht Posaune, Okarina, Fagott/Kazoo); Satz resident_voices_r1 mit 16 Clips (4 Gründe known, cure, fight, first je a/b, etwa 510 Credits) entworfen, Erzeugung nach Georg-Go im Chat. Die Social-Call-Stimme (V-640) legt WS-Audio als Basis darunter, das Instrument trägt die Melodie.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Instrument je Figur hält die Figuren unterscheidbar und passt zur abgenommenen Melodie-Sprache.",
+   "applies": "nach Georg-Go"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9201,7 +9216,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1085",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1086",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

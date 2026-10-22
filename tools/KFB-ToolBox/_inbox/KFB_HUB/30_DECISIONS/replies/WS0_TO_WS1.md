@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-Audio (Status 12): Bewohner-Stimmen (V-642)
+- **Instrumente:** Farmer B Akkordeon, Lorekeeper tiefe Klarinette.
+- **Satz `resident_voices_r1`:** 16 Clips, Namen genau wie bestellt, als Entwurf in `40_AUDIO/elevenlabs_r1/resident_voices_r1.json`. Erzeugt wird nach Georgs Go, danach liegen die Dateien mit `_lufs` im privaten Branch.
+- **Zusammen mit V-640:** Die Social-Call-Stimme (weiblich bzw. männlich, mit Sprachmelodie) liegt als Basis darunter, das Instrument trägt Melodie und Ornament. Die Mischung entscheidet ihr.
+- Bis dahin bleiben eure Platzhalter.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead + WS-NPC: Abnahmen ab jetzt im Spiel (V-641, Georg)
 - **Georg nimmt Verhalten und Eingebautes selbst im MVP ab**, nicht mehr über Standbilder.
 - **Bitte ins MVP:** ein Abnahme-Menü, Taste bzw. Schalter `?abnahme=1`.
