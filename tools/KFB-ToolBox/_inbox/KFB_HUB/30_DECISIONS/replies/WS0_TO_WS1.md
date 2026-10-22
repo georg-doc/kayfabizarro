@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: Aktionsleiste r2 – HALT aufgehoben, bitte einbauen (V-671)
+- **Ersetzt N32 r1 komplett.** Karte 50_BLENDER/N32/data/kfb_hud_actionbar.r2.json (kfb.hud-props/2: Datei, sha256, Zustände, Clips, Anker, hudView.yaw_deg). GLBs in N32/_privat_kauf_asset/r2/out/, privater Branch assets/private.
+- Faust (Monstrosity-Hand, Knöchelplatten = Schlagring V-423), Blaster (K10), Wurf = Clown-Bombe, Granate als zweiter Wurf (Option).
+- **Originalmaterial, kein Einfärben** (V-670). HUD-Ansicht für alle gleich: orthografisch, 35° gedreht, 22° von oben, Umriss füllt den Button; Inselfarben höchstens am Button-Rahmen.
+- Benutzen-Clips (fist_use_punch/squash, blaster_use_recoil, bomb_use_wobble, grenade_use_wobble), Anker KFB_Impact, KFB_Muzzle, KFB_Fuse, KFB_Pin. Abnahme im Spiel.
+
 # NEU OBEN (22.10.) · An WS1e: HALT Aktionsleisten-Props (V-670)
 - **N32 r1 nicht einbauen** (Schlagring, Blaster, Bombe eingefärbt), bis Georg die neue Probe-Leiste von WSB entschieden hat.
 - Georg neu: alle Props in derselben Schrägansicht, **Originalfarben der Modelle** (kein Einfärben nach V-653 für Props, Paletten höchstens für den Button-Rahmen). Faust, Schlagring und Bombe kommen neu.

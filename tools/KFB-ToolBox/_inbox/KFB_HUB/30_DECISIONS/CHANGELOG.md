@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-671 Aktionsleiste r2 final (Monstrosity-Faust, Blaster, Clown-Bombe, Granate) an WS1e, Halt aufgehoben.
 - N32 r2 Probe: Georg wählt Monstrosity-Hand als Faust (Knöchelplatten = Schlagring V-423); Wurf-Prop noch offen; privat.
 - V-670 Aktionsleiste neu: Schrägansicht, Originalfarben, neue Faust/Schlagring/Bombe als Probe bei WSB; WS1e hält N32 an.
 - V-669 FB_CANON R2 FAIL (Deckel-Lider statt E2, Mund-Schmierfleck), R3 an WSA; FB bleibt gesperrt.

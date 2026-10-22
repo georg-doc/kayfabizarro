@@ -9549,6 +9549,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-671",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Aktionsleiste r2 final (Georgs Wahl direkt an WSB): Faust = Monstrosity-Hand, deren Knöchelplatten als Schlagring (V-423) gelten; Blaster K10; Wurf = Clown-Bombe, Granate als zweite Option; alle Originalmaterial, gleiche HUD-Ansicht (orthografisch, 35° gedreht, 22° von oben). Karte N32/data/kfb_hud_actionbar.r2.json ersetzt r1; WS1e baut ein, Abnahme im Spiel.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat aus Original-Modellen gewählt; eine Ansicht für alle macht die Leiste ruhig und lesbar.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9636,7 +9651,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1130",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1132",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
