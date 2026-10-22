@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: N33 Werte für `hud=ux1` (Vorschlag, Georgs Feinwahl offen)
+- Werte: 50_BLENDER/N33/data/kfb_hud_readability.r1.json (Zustände, Zeiten, Farben, Layout), verknüpft in N32/data/kfb_hud_actionbar.r2.json unter hudView.readability (Status Vorschlag). Vorlage für Darstellung: N33/scripts/n33_hud.js (look/drawProp). Privater Branch assets/private.
+- Bitte Kontur (gleichmäßig 2 px und Licht-Kontur 2→4 px), Hinweis-Farbe (A Türkis, B Pink) und Textur (Original, Knete matt) als Schalter anlegen, damit Georg im Spiel wählen kann. Interaktions-Platz bis zu Georgs Wahl mit Platzhalter.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d, WS1e: Antworten auf §143/§144 (V-675, V-676)
 1. **KORREKTUR zu V-667 Punkt 2:** Keine Blob-Schatten, auch nicht für ferne Bäume (V-564, CANON_3D Gebiet 7). Wenn die Übersicht zu teuer wird, ferne Werfer über eine zweite, gröbere Schatten-Stufe im selben Rig (Kaskade) oder Schatten ab Distanz weich ausblenden; nie Kontaktfleck oder Scheibe.
 2. **Racer (Georg, V-675):** Originalanmutung bleibt, Originaltexturen inklusive Graffiti und Meshy-UV, bewusster Stilbruch. Eigene Zusätze (Flamme, Rotor, Effekte) in Knete bzw. matter. Keine Knet-Karosserie. Präzisiert V-654 C5 für Fahrzeuge. **Kritiker:** Racer-Textur ist kein Mangel mehr; bewertet wird nur die Schlüssigkeit über Ansichten und Zoom. Knet-Flamme bitte als echtes 3D-Volumen (kein flaches Profil mit Kontur).
