@@ -252,3 +252,22 @@ Target selection and actual teleport are distinct actions: destination is a real
 **Actual evidence this chat:** GitHub source reads of Travel `card-flight.js`, `collect-hud.js`, current WS1 `world/fluff.js`, `world/save.js`, old Fluff/alchemy v0.3 and Quaternius `Chest.gltf` node/clip metadata. **No original asset shown in isolation, no new animation, screenshots, runtime test, performance benchmark, Stage/Site or gameplay approval.**
 
 **Next single gate:** **source-isolated collection-motion visual proof** (real yellow Fluff source → top yellow orb; real canonical Card → Almanac in one uninterrupted movement), alongside the A/B/C placement/flyout study. Georg grades **PASS / TUNE / FAIL** before Claude Design handoff. Later recipe/teleport logic remains conceptual.
+
+
+---
+
+## 11. 2026-10-22 · PRODUCTION HANDOFF FREEZE / GitHub-only WS0→Claude Design route
+
+**Georg approved the operating approach, not the current visuals:** keep the entire preceding §1–10 historical/additive concept intact; **stop iterative conceptual rewrites and stop drawing speculative flat SVG/2D HUDs**. Next task is actual source-backed visual composition inside the **existing Claude Design HUD workspace**, using the already-developed layout history. Blender MCP is a **single-source specialist only if needed and explicitly approved**, not the paid bulk asset-prep default. WS1/Claude Code remains the subsequent runtime integrator **after Georg visual acceptance**, not the concept designer.
+
+**The current user-facing actionable documentation now lives next to this full Recovery record, on the same branch and PR #444:**
+- `skills/chat/recovery/hud-3d-r1/HUD_SOURCE_DONOR_INVENTORY_R1.md` — actual GitHub asset paths, verified GLTF sources vs registry-only binary GLBs, texture/rights caveats, historical GitHub R4 refs and unimported newer N34 image gap.
+- `skills/chat/recovery/hud-3d-r1/WS0_HUD_3D_CLAUDE_DESIGN_INTAKE_R1.md` — **FIRST EXECUTOR, WS0**, verifies one HUD owner, actual source images/models/licences/current game API and whether GitHub-only inputs are sufficient; declares SOURCE_REQUIRED instead of allowing substitutes.
+- `skills/chat/recovery/hud-3d-r1/CLAUDE_DESIGN_3D_PROP_HUD_BRIEF_R1_DRAFT.md` — short curatorial visual design prompt **ON HOLD until WS0 explicit source ACK**, no 3D ownership claims without isolation.
+- `skills/chat/recovery/hud-3d-r1/HUD_DESIGN_HANDOFF_RETURN_R1.md` — Return, additive handoff/changelog and acceptance proof status.
+
+**Current visual invariants:** six coloured 3D Fluff collectors + individual clay number **at top**, 0-grey absence; uninterrupted source→receiver cinematic contact (Fluff / original Cards / songs / chest props); independent 3D total score only when source decides score math; full 3D free yaw/pitch target arrow **without** background/compass; map+POI+provisional teleport in **separate flyout**; independent mode-gated speed bar; important 3D radio/cassette and playlist/audio flyout; original-card Almanac fan with top-left candidate (layout A/B/C still open); animated 3D chest compared to Bag, same 20-slot overlay; 3D Primary/Secondary/boot, lower-right reinforced outline, selected/hover/active/hint and bottom-to-top colour cooldown, accessible lightweight motion; consistent clay L3 settings/Bag/card overlays. `Kayfabrizieren` six-Fluff threshold, High/Low split, Witch recipes, score/teleport mechanisms remain **hypotheses**; no gameplay system expansion approved.
+
+**Visual no-go:** woodboard replication, flat compass/minimap permanently visible, invented SVG icon stand-ins, author-created model substituted for checked donor, broken 3–4-phase collection flight, screenshots/URLs used as fake source-isolation evidence, public paid Mystery binary uploads.
+
+**Release decision now:** project state `WS0_SOURCE_AUDIT_PENDING`, **NOT** `CLAUDE_DESIGN_READY`. **Single next gate**: WS0 confirms a GitHub-only, isolated-model/authoritative-consumer set (or named source gaps) and reconciles newer Dropbox N34 references. Then unlock compact Claude Design draft for real 3D composition and Georg A/B/C/TUNE/FAIL. This is planning only — no UI implementation, visual PASS or Stage/Live.
