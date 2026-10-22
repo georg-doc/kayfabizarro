@@ -1,5 +1,8 @@
 # WSA → WS0 · FB_CANON R3 RETURN · 2026-10-22 · V-669
 
+## Aktueller Arbeitsstatus · PAUSIERT durch Georg · 22.10.2026
+Keine weitere Implementierung, kein neuer Export, keine Live-Schaltung. Georg stimmt den gesamten Studio-Bestand einschließlich Kit-Characters, Pencil und Eraser mit WS0 ab. Aktuelle Übergabe: `WSA_TO_WS0_TOOLBOX_CONSOLIDATION_STATUS_R1.md`; Fehleranalyse: `WSA_TOOLBOX_REGRESSION_POSTMORTEM_2026-10-22.md`. R4-Versuche sind nur lokal gesichert, ungeprüft und nicht zur Übernahme freigegeben. Keine automatische Wiederaufnahme.
+
 **CURRENT STATUS: R3 FAIL — rejected by Georg on 2026-10-22. Not an acceptance candidate. Do not promote hash 17e20ab4… to FB_CANON, private canonical manifest or figure card. No Live.**
 
 ## Georg visual FAIL / recovery override
