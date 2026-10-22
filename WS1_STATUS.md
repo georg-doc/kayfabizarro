@@ -3,6 +3,17 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 136 · 22.10. · Nachtrag: Wasser R1 und E3 Geschenk-Trupp sind im MVP · Frage an Georg offen
+
+- **ws1/mvp-r1 @89753e7.** Privat `game/mvp-r1` @3c1f8f4, öffentlicher Spiegel `ws1/mvp-r1` @5e6034f.
+- **WS1c Wasser R1** per Fast-Forward übernommen (bis 842741f, enthält den Zusammenfluss-Fix aus §135).
+  - Prüfungen: waterDrive, probeWater, m1-ground, contract-static PASS. Die volle Reihe im Slot folgt nach Georgs Pause.
+- **WS-NPC E3 „Trupp aus dem Geschenk“ + G-2** (b6d3118) gemergt; gift 8/8 PASS, revealTrack PASS, disco PASS.
+  - API für den Welt-Ereignis-Host: `mods.gift.spawnAt(x, z, yawDeg)`, `events()`: reveal_start · reveal_anticipation · reveal_pop · soldier_land · reveal_done.
+  - Befund an WS0: Das Original-outBack liefert am Segmentanfang 0,3 statt 0 (kleiner Sprung). Es bleibt bewusst 1:1.
+  - Belege: `proofs/ws-npc-r1` @61a7191 (fight-Begrüßung, Geschenk anticipation/pop/march).
+- **Offen bei Georg (WS1d):** Die Heldenfarbe färbt den Ödland-Käfer rot statt rostig-orange. Original behalten, also den Käfer per Rig-JSON ausnehmen? Das ist eine kleine Änderung und kommt nur nach seinem Ja.
+
 ## 135 · 22.10. · Lead vor Georgs Session-Pause: Leistung R1, Fluss-Zackenfix, Merges, Plan und Prioritäten danach
 
 ### Stand
