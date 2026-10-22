@@ -3,6 +3,82 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 135 · 22.10. · Lead vor Georgs Session-Pause: Leistung R1, Fluss-Zackenfix, Merges, Plan und Prioritäten danach
+
+### Stand
+- **ws1/mvp-r1 @b1e40e3**
+  - Privat: `game/mvp-r1` @906e178 (KFB-Stunt-Car-Race).
+  - Öffentlicher Spiegel ohne private Dateien: `ws1/mvp-r1` @1ec9845.
+- **Neu gemergt:**
+  - **WS1b Biome-Fahrt R1** (d3b5b33). Bericht: `ws1/audits/BIOME_DRIVE_R1.md`.
+  - **WS1d Fahrzeuge** bis a9032c2: Vorwärmen, Modell-Freigabe, Anker-Unterlage. Georg: alle 8 Scheinwerfer-Anker PASS, Feintuning später. **J-6 erledigt.**
+- Prüfungen: contract-static, vehicleRig, m1-ground, probeWorld, start und disco PASS.
+- **combat ist wackelig:** `E_blasterHealsFluffer` hängt an der Phase des Fluffers. Beim selben Stand gab es mal PASS, mal FAIL; der Stand vor der Leistungsarbeit verhält sich gleich. → Backlog: Test härten (Fluffer vorher in feste Phase setzen).
+
+### Leistung R1 (Georg: „weiter mit Leistung und Disco-Licht“)
+- **Messung:** neue Aufschlüsselung `test/perfBreakdown.mjs` zeigt Dreiecke und Calls je Modul, getrennt nach Hauptbild und Schattenbild.
+- **Befund:** Das Amphitheater (Meshy-Mesh, 349 k) wurde zweimal gezeichnet, weil das VSM-Schattenbild auch Empfänger zeichnet. Dazu kamen ein unsichtbarer 1-cm-Bodenring mit 82 k Dreiecken und Disco-Tänzer ohne Culling (83 Calls).
+- **Umgesetzt:**
+  - Das Spiel nutzt das LOD der Probe (CODE_PERF_R1 D5, kayfabizarro @b28d728, 59 k; `amph=full` zeigt zum Vergleich das Original).
+  - Der Ring hat nur noch 32 Dreiecke.
+  - Die Disco wird nur im Bild oder ganz nah gezeichnet; die Weltzeit läuft weiter.
+
+| Szene (Haupt- + Schattenbild) | vorher | nachher |
+|---|---|---|
+| zu Fuß | 1,47 M Dreiecke · 159 Calls | 0,81 M · 159 |
+| Bewohner + Band + Disco | 1,94 M · 482 Calls | 1,00 M · 350 |
+
+- Im Hauptbild liegen beide Szenen jetzt im Budget V-370: unter 600 k Dreiecke und unter 300 Calls.
+- **Rest:**
+  - Gelände: 218 k im Hauptbild plus 180 k im Schattenbild. Das liegt an VSM; ein Wechsel auf PCF würde den Look ändern → nur mit Georg.
+  - Patrouillen und Band ohne Culling: 49 bzw. 55 Calls.
+  - FB-Ohren je 22 k Dreiecke → **ToolBox-Thema für WS0/WSB**, kein Einbau-Fix.
+- **Disco-Licht:** steht seit §134 (8 Kegel über kfb-groundfx, Kanal disco); disco-nacht PASS.
+
+### Gelände-Probe: Fluss-Zacken (Georg, mit seinem Rezept)
+- **Ursache:** Die Zusammenfluss-Regel im Band-Shader las die 2-m-Rinnen-Kachel und hielt trockene Randkacheln (w = −999) für einen „tieferen Fluss“. Dadurch wurde die Kante in 2-m-Treppen abgeschnitten.
+- **Fix:** Die Regel greift nur noch auf nassen Kacheln. Artefakt v60; Vorher/Nachher an Georg geschickt.
+- Georgs Rezept liegt als Testvorlage unter `probe/tests/recipes/georg-2026-10-22.json`.
+- Im Spiel kommt der Fix über WS1c per Generator.
+
+### WS1c Wasser R1 – fertig zur Sichtung (Bericht für WS0)
+- **Branch:** `ws1/water-r1` (d504f94 · 72dc3a5 · 5306df9). Bericht: `research/audits/WATER_R1.md` (lokal), Clip 62 s.
+- **Inhalt:**
+  - Seen mit rundem Rand.
+  - Flussmündung ohne Loch.
+  - Unterwasser-Ansicht.
+  - Fahren im Wasser: gleiten, Auftrieb, Schwimmstoß.
+  - VFX.
+  - 0,4–1,35 ms je Bild.
+- **Kritiker:** 4,3 → 5,1, REWORK. Der Rest betrifft vor allem die Probe (Fall-Netz, Flussenden, Ufer-Grammatik) und eine Paletten-Frage an Georg.
+- **Bitte an WS0 (Audio-Cues):**
+  - water.enter.splash S/M/L, exit.splash, surface.breach, dive.gulp
+  - kick, under.loop, bubbles, wade.slosh, skim.spray
+  - Die Ereignisse `M2EVENTS 'water'` liegen bereit.
+- **Merge** nach der Pause mit voller Reihe im Slot. Berührt M2Car, followCam, M1World und m1-terrain.
+
+### WS1b – Georgs drei Punkte „super wichtig nach dem MVP“ (Kritiker-Runde 2)
+1. Bäume und Steine sitzen ohne Übergang auf dem Boden (Erdung/Kontakt fehlt).
+2. Der Racer (Metall mit Rost) und das flache Cartoon-Gelände wirken wie zwei Machweisen.
+3. Gras steht als einzelne Halme statt in Büscheln.
+
+→ Bitte ins Register (Post-MVP, hohe Priorität). Bericht: `ws1/audits/BIOME_DRIVE_R1.md` §8.
+
+### Plan nach der Pause (Vorschlag Lead, Priorität von oben)
+1. **WS1c Wasser mergen** + volle Reihe im Slot. Danach WS-NPC c1d937d.
+2. **fps-Tabelle neu** (`test/perfMvp.mjs`, Slot). Ziel 60 fps auf Georgs Mac.
+   - Nächste Hebel: Culling für Patrouillen und Band.
+   - Schattenbild: Gelände aus dem VSM-Pass oder PCF – nur nach Georgs Blick.
+3. Heller Nachthimmel bei `tod=night` mit terrain3 beheben.
+4. combat-Test härten.
+5. Blinder Kritiker auf dem MVP-Build. Danach Übergabe-Stand an WSA (GPT-Site, `docs/HANDOFF_GPT_SITE_R1.md`).
+6. **Offen bei WS0:**
+   - FB-ToolBox-Stand, Augen Ritter/Dämon.
+   - Begrüßungszeilen und Laute (§134).
+   - Musik-Katalog, Welt-Ereignis-Regeln (E3/MIB/UFO).
+   - Wasser-Cues.
+   - Georgs drei Post-MVP-Punkte.
+
 ## 134 · 22.10. · Georg zu G-2: JA – Begrüßungen bekommen Sprechblase und Laut · Bitte an WS0: Zeilen + Laute
 
 - **Entscheid Georg (an den Lead, 22.10.):** Ja. Die Begrüßungen der Bewohner (cure, fight, known) bekommen eine Sprechblase und einen Stimm-Laut.
