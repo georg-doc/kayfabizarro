@@ -55,6 +55,13 @@ void main(){ float r = length(vUv - 0.5) * 2.; float ring = smoothstep(0.78, 0.9
   gl_FragColor = vec4(mix(uPlume, uCore, ring) * (0.8 + 1.4*uThrust), ring * (0.5 + 0.5*uThrust)); }`
 const SPARK_VERT = /* glsl */`attribute float aLife; attribute float aSize; varying float vLife; uniform float uScale;
 void main(){ vLife = aLife; vec4 mv = modelViewMatrix * vec4(position,1.); gl_PointSize = aSize * uScale * (0.4 + aLife) / max(0.2, -mv.z); gl_Position = projectionMatrix * mv; }`
+// Knet-Funken (style 'clay', Georg 22.10.: eigene Zusätze in Knete): feste runde Krümel in Funken-/Kernfarbe, normal geblendet, kleiner – kein Überstrahlen
+const CLAY_SPARK_FRAG = /* glsl */`uniform vec3 uSpark; uniform vec3 uCore; varying float vLife;
+void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float r = length(p); if (r > 0.5) discard; vec3 c = mix(uSpark, uCore, vLife * 0.2) * (r < 0.28 ? 1.1 : 0.8);
+  gl_FragColor = vec4(c, smoothstep(0.5, 0.42, r) * min(1.0, vLife * 1.6));
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`
 const SPARK_FRAG = /* glsl */`uniform vec3 uSpark; uniform vec3 uCore; varying float vLife;
 void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = smoothstep(0.5, 0.0, length(p)); gl_FragColor = vec4(mix(uSpark, uCore, vLife) * 2.2, k * vLife); }`
 
@@ -64,14 +71,21 @@ void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = s
 const CLAY_VERT = /* glsl */`uniform float uTime; uniform float uSeed; uniform float uThrust; varying vec3 vN; varying vec3 vV; varying float vAx;
 void main(){ float ax = position.z; vAx = ax; float lob = 1.0 + 0.16 * sin(ax * 9.0 - uTime * (5.0 + 6.0 * uThrust) + uSeed) * smoothstep(0.05, 0.35, ax) + 0.12 * sin(ax * 17.0 - uTime * 9.0 + uSeed * 1.7) * smoothstep(0.2, 0.6, ax);
   vec3 p = vec3(position.xy * lob, position.z); vec4 mv = modelViewMatrix * vec4(p, 1.); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`
+// R3 (Kritiker: „flache 2D-Form mit Kontur“): Tonstufen weich ineinander, Oberseite heller (Licht von oben = Volumen), Rand durchscheinend statt dunkler
+// Kontur; dazu ein schwacher additiver Glutkern innen (GLOW_FRAG), damit die Flamme Licht hat.
 const CLAY_FRAG = /* glsl */`uniform vec3 uCore; uniform vec3 uPlume; uniform float uThrust; varying vec3 vN; varying vec3 vV; varying float vAx;
-void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float k = f * (1.0 - 0.55 * vAx);
-  vec3 warm = mix(uPlume, vec3(1.0, 0.78, 0.38), 0.55); vec3 c = k > 0.74 ? mix(warm, uCore, 0.25) : k > 0.4 ? mix(uPlume, warm, 0.35) : uPlume * 0.74;   /* drei Stufen: warmer Kern (klein), Fahne, dunklerer Rand */
-  float al = smoothstep(1.0, 0.82, vAx) * (0.78 + 0.22 * uThrust);
+void main(){ vec3 n = normalize(vN); float f = abs(dot(n, normalize(vV))); float k = f * (1.0 - 0.5 * vAx);
+  vec3 warm = mix(uPlume, vec3(1.0, 0.78, 0.38), 0.55), rim = uPlume * 0.8;
+  vec3 c = mix(rim, mix(uPlume, warm, 0.35), smoothstep(0.22, 0.42, k)); c = mix(c, mix(warm, uCore, 0.3), smoothstep(0.6, 0.78, k));
+  c *= 0.82 + 0.36 * clamp(n.y * 0.5 + 0.5, 0.0, 1.0);
+  float al = smoothstep(1.0, 0.82, vAx) * smoothstep(0.04, 0.32, f) * (0.82 + 0.18 * uThrust);
   gl_FragColor = vec4(c, al);
   #include <tonemapping_fragment>
   #include <colorspace_fragment>
 }`
+const GLOW_FRAG = /* glsl */`uniform vec3 uCore; uniform vec3 uPlume; uniform float uThrust; varying vec3 vN; varying vec3 vV; varying float vAx;
+void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float a = pow(f, 2.5) * smoothstep(1.0, 0.3, vAx) * (0.12 + 0.2 * uThrust);
+  gl_FragColor = vec4(mix(uPlume, uCore, 0.6) * a, a); }`
 // Tropfen-Umriss (Radius über z 0 → 1): an der Düse voll, Bauch bei 0,25, dann zur runden Spitze; Drehkörper mit 12 Ringen für die Beulen
 const clayFlameGeo = () => { const pts = []; for (let i = 0; i <= 14; i++) { const z = i / 14, r = Math.max(0.001, (z < 0.25 ? 0.92 + 0.32 * Math.sin(z / 0.25 * Math.PI / 2) : 1.24 * Math.cos((z - 0.25) / 0.75 * Math.PI / 2) ** 0.8)); pts.push(new THREE.Vector2(r, z)) }
   return new THREE.LatheGeometry(pts, 18).rotateX(Math.PI / 2) }   // Drehachse +Y → +Z (Düse z 0, Spitze z 1)
@@ -127,6 +141,8 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
     } else if (clayGeo) {
       const mp = new THREE.ShaderMaterial({ vertexShader: CLAY_VERT, fragmentShader: CLAY_FRAG, uniforms: { ...shared, uThrust: { value: 0 }, uSeed: { value: i * 7.13 + seed } }, transparent: true, depthWrite: false, side: THREE.DoubleSide })
       const plume = new THREE.Mesh(clayGeo, mp); plume.renderOrder = 4; plume.frustumCulled = false; g.add(plume); u.plume = plume; u.clay = true; u.mats.push(mp)
+      const mg = new THREE.ShaderMaterial({ vertexShader: CLAY_VERT, fragmentShader: GLOW_FRAG, uniforms: { ...shared, uThrust: { value: 0 }, uSeed: { value: i * 7.13 + seed } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false })
+      const glowIn = new THREE.Mesh(clayGeo, mg); glowIn.scale.set(0.55, 0.55, 0.8); glowIn.renderOrder = 5; glowIn.frustumCulled = false; plume.add(glowIn); u.mats.push(mg)   // Glutkern im Inneren
     } else {
       const mc = additive(CORE_FRAG, { ...shared, uThrust: { value: 0 } }, { side: THREE.DoubleSide })
       const core = new THREE.Mesh(disc, mc); core.scale.setScalar(r * 0.95); core.position.z = -r * 0.25; core.renderOrder = 3; g.add(core)
@@ -138,7 +154,8 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
   // Funken-Pool (Backfire, Schaltknall, Bremsen): Weltraum der Fahrzeug-Darstellung, feste Größe
   const sp = { pos: new Float32Array(SPARKS * 3), vel: new Float32Array(SPARKS * 3), life: new Float32Array(SPARKS), max: new Float32Array(SPARKS), size: new Float32Array(SPARKS), next: 0 }
   const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp.pos, 3)); sg.setAttribute('aLife', new THREE.BufferAttribute(sp.life, 1)); sg.setAttribute('aSize', new THREE.BufferAttribute(sp.size, 1))
-  const sm = new THREE.ShaderMaterial({ vertexShader: SPARK_VERT, fragmentShader: SPARK_FRAG, uniforms: { uSpark: { value: C.spark }, uCore: { value: C.core }, uScale: { value: 300 * unit } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false })
+  const sm = clayGeo ? new THREE.ShaderMaterial({ vertexShader: SPARK_VERT, fragmentShader: CLAY_SPARK_FRAG, uniforms: { uSpark: { value: C.spark }, uCore: { value: C.core }, uScale: { value: 85 * unit } }, transparent: true, depthWrite: false })
+    : new THREE.ShaderMaterial({ vertexShader: SPARK_VERT, fragmentShader: SPARK_FRAG, uniforms: { uSpark: { value: C.spark }, uCore: { value: C.core }, uScale: { value: 300 * unit } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false })
   const sparks = new THREE.Points(sg, sm); sparks.frustumCulled = false; sparks.renderOrder = 5; fx.add(sparks)
   let rnd = seed >>> 0; const rand = () => { rnd = (rnd * 1664525 + 1013904223) >>> 0; return rnd / 4294967296 }
   const emit = (u, n, speed) => { for (let k = 0; k < n; k++) { const j = sp.next; sp.next = (sp.next + 1) % SPARKS

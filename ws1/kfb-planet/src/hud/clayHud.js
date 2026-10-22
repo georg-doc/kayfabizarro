@@ -334,6 +334,27 @@ export function createClayHud(opts = {}) {
     if (!balls.length && S.chestFly && !S.chestOpen && slots.chest.closeAt == null) slots.chest.closeAt = 0.35
   }
 
+  // ── Interaktions-Zustände (Vorbereitung Micro-Interactions, Georg/WS0-Spez folgt; noch ohne sichtbare Wirkung) ──────────────────
+  // Ziele: je Prop ('radio', 'score', 'gear', 'compass', 'chest', 'fan') und je Radio-Taste ('radio.prev' …). Der Wirt meldet Flags
+  // (hover, pressed, focus, on); daraus folgt genau ein Zustand: pressed > hover > active (focus oder on) > idle.
+  // Animations-Haken: setAnimator(ziel, fn) – fn({ key, state, prev, t, dt, slot, node, root }) läuft im update; gibt sie true zurück, wird
+  // nur dieser Prop neu in sein Render-Ziel gezeichnet (gecachter Pass bleibt sonst unberührt). Ohne Animator: keine Neuzeichnung, nichts sichtbar.
+  const UI_STATES = ['idle', 'hover', 'active', 'pressed']
+  const UI = new Map(), uiSubs = new Set(), animators = new Map()
+  const uiOf = (key) => { if (!UI.has(key)) UI.set(key, { flags: { hover: false, pressed: false, focus: false, on: false }, state: 'idle', prev: 'idle', t: 0 }); return UI.get(key) }
+  const slotOfKey = (key) => slots[key.split('.')[0]] || null
+  function setUiFlag(key, flag, v) {
+    const u = uiOf(key); if (!(flag in u.flags) || u.flags[flag] === !!v) return u.state; u.flags[flag] = !!v
+    const f = u.flags, st = f.pressed ? 'pressed' : f.hover ? 'hover' : f.focus || f.on ? 'active' : 'idle'
+    if (st !== u.state) { u.prev = u.state; u.state = st; u.t = 0; for (const fn of [...uiSubs]) { try { fn(key, st, u.prev) } catch (e) { console.warn('[clayHud ui]', e) } } }
+    return u.state
+  }
+  function runAnimators(dt) {
+    for (const [key, u] of UI) { u.t += dt; const fn = animators.get(key); if (!fn) continue; const s = slotOfKey(key); if (!s?.root) continue
+      const sub = key.split('.')[1], node = sub && key.startsWith('radio.') ? parts.radio?.btn?.[sub] || null : s.root
+      try { if (fn({ key, state: u.state, prev: u.prev, t: u.t, dt, slot: s.key, node, root: s.root })) s.dirty = true } catch (e) { console.warn('[clayHud animator]', key, e); animators.delete(key) } }
+  }
+
   // ── Palette ──────────────────────────────────────────────────────────────────────────────────────────────────────────
   function syncPalette(dt) {
     const z = hudZones(O.palette?.()), key = z.base + z.accent + z.detail
@@ -351,6 +372,7 @@ export function createClayHud(opts = {}) {
       if (sig) { IN.yawRate = sig.yawRate ?? IN.yawRate; IN.accel = sig.accel ?? IN.accel }
       syncPalette(dt)
       if (S.status !== 'OK') return
+      runAnimators(dt)
       for (const k of ORDER) { const s = slots[k]; if (s.mixer && s.live > 0) { s.mixer.update(dt); s.live -= dt; if (s.live <= 0) s.dirty = true } }
       // Kompass: Rechteck wächst mit, Kamera schwenkt in die Draufsicht
       const c = slots.compass; if (c.root && c.openK !== c.openT) { c.openK = clamp((c.openK ?? 0) + Math.sign(c.openT - c.openK) * dt / 0.3, 0, 1); const o = c.openK * c.openK * (3 - 2 * c.openK)
@@ -387,6 +409,12 @@ export function createClayHud(opts = {}) {
     tapGear: () => playOnce(slots.gear, 'gear_tap_spin'),
     setCards: (canvases) => { if (!parts.fan) return; parts.fan.cards = (canvases || []).filter(Boolean).slice(0, 5); layoutFan() },
     event: (e) => kick(e.type, e),
+    phase: () => S.status, opened: () => ({ compass: S.compassOpen, chest: S.chestOpen }), // billig je Bild (status() rechnet p95)
+    uiStates: UI_STATES,
+    setUiFlag, // (ziel, 'hover'|'pressed'|'focus'|'on', bool) → Zustand
+    uiState: (key) => uiOf(key).state,
+    onUiState: (fn) => { uiSubs.add(fn); return () => uiSubs.delete(fn) },
+    setAnimator: (key, fn) => { if (fn) animators.set(key, fn); else animators.delete(key) },
     rects: () => Object.fromEntries(ORDER.map((k) => [k, { ...slots[k].rect }])), // Trefferflächen (CSS-Pixel, ohne Federweg)
     // Radio-Tasten als Bildschirm-Kreise (Mitte der Knet-Taste durch die Radio-Kamera projiziert), für die Trefferflächen des Wirts
     radioButtons: () => { const P = parts.radio, s = slots.radio, r = s.rect; if (!P) return {}; s.root.updateMatrixWorld(true); const out = {}
@@ -398,6 +426,7 @@ export function createClayHud(opts = {}) {
     status: () => ({ status: S.status, error: S.error, loaded: S.loaded, tris: Math.round(S.tris), rtRenders: S.rtRenders, draws: S.draws, drawMsAvg: S.draws ? +(S.drawMs / S.draws).toFixed(4) : 0, drawMsMax: +S.drawMsMax.toFixed(3),
       drawMsP95: (() => { const n = Math.min(S.draws, S.ring.length); if (!n) return 0; const a = Array.from(S.ring.slice(0, n)).sort((x, y) => x - y); return +a[Math.floor(n * 0.95)].toFixed(4) })(),
       updMsAvg: S.updates ? +(S.updMs / S.updates).toFixed(4) : 0, palette: S.palette, compassOpen: S.compassOpen, chestOpen: S.chestOpen, score: S.score, flights: S.flights, landed: S.landed, speedShown: S.speedShown, ticker: S.ticker,
+      ui: Object.fromEntries([...UI].map(([k, u]) => [k, u.state])),
       live: ORDER.filter((k) => slots[k].live > 0), motion: +ORDER.reduce((m, k) => { const sp = slots[k].sp; return Math.max(m, Math.abs(sp.tilt) * 57.3, Math.abs(sp.dy), Math.abs(sp.dx), Math.abs(sp.sq)) }, 0).toFixed(3), zones: { base: '#' + Z.base.value.getHexString(), accent: '#' + Z.accent.value.getHexString(), detail: '#' + Z.detail.value.getHexString() } }),
     resetStats: () => { S.rtRenders = 0; S.draws = 0; S.drawMs = 0; S.drawMsMax = 0; S.ri = 0; S.updMs = 0; S.updates = 0 },
     dispose() {

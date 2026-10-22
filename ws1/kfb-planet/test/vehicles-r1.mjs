@@ -7,6 +7,7 @@
 //   clip   30-s-Fahrclip je neuer Klasse (Rad-Racer, Laster), nachts, aus der Folgekamera → test/out/vehicles/clip-<klasse>.webm
 //   start  Einzeltest Startseite: Fahrzeug-Wahl (15 Einträge), Racer-Wechsel hinter dem Vorhang, „zu Fuß“ nimmt car aus der Adresse
 //   vclay  A/B für Georg (V-654 C5): 4 Racer × Tag/Gold × Original/Knete aus der Spielkamera bei Gas → test/out/vehicles/vclay-ab.png (nur mit Slot)
+//   look   Kohärenz (Georg 22.10. R3): 4 Racer × Tag/Gold/Nacht × (Spielkamera nah | Fahrt | Übersicht), Standard-Machart; dazu vmatte-A/B und Startseite (Slot)
 //   fps    fps-Tabelle: je Racer nachts fahrend, Scheinwerfer an/aus im Wechsel → test/out/vehicles/fps.md
 import fs from 'fs'
 import path from 'path'
@@ -44,7 +45,7 @@ const swap = (page, id) => page.evaluate(async (id) => {
 }, id)
 const state = (page) => page.evaluate(() => { const M = window.__kfbM2, h = M.headlights, R = M.stats.rig
   return { id: M.racer(), model: M.stats.model, lamps: h.inst?.lamps.length ?? 0, sides: h.inst?.sides.length ?? 0, pools: h.inst?.getPools().length ?? 0, hlMs: h.n ? +(h.ms / h.n).toFixed(3) : null,
-    rigY: R ? +R.object3d.position.y.toFixed(3) : null, hero: M.stats.hero, look: M.stats.look?.applied ?? 0, deform: M.deform.profile.id, spec: { wheels: M.spec.wheels, cls: M.spec.cls } } })
+    rigY: R ? +R.object3d.position.y.toFixed(3) : null, rigStyle: R?.info?.().style, hero: M.stats.hero, clay: M.stats.clay || null, look: M.stats.look?.applied ?? 0, deform: M.deform.profile.id, spec: { wheels: M.spec.wheels, cls: M.spec.cls } } })
 // Kamera schräg von vorn (Folgekamera: Gierung um die Wagenmitte), etwas näher
 const frontView = (page) => page.evaluate(() => { const f = window.__kfbM2.stats.follow; f.orbit(Math.PI - 0.62, 0.05); f.zoomBy(-200) })
 // Nacht: seitlich vorn, höher und weiter weg – Gläser, Kegel und Lichtfleck vor dem Wagen in einem Bild
@@ -83,6 +84,8 @@ if (PART === 'data') {
     heroOffByDefault: C.every((c) => c.hero?.off && c.hero.on === false) && res.heroDefault.tex === 0,
     heroToggleOn: res.heroOn.state?.on === true && res.heroOn.all >= 1 && res.heroOn.tex === res.heroOn.all,
     heroToggleOff: res.heroOff.state?.on === false && res.heroOff.all >= 1 && res.heroOff.orig === res.heroOff.all,
+    // Georg 22.10. (R3): Standard = Originalkarosserie + Knet-Zusätze (Flamme, Lüfter, Funken); vclay=body = Voll-Knete; vclay=0 = alles original
+    rigStylePerMode: C.every((c) => c.rigStyle === (/vclay=0/.test(process.env.VEH_HASH || '') ? 'glow' : 'clay')) && C.every((c) => !!c.clay === /vclay=body/.test(process.env.VEH_HASH || '')),
     deformPerClass: C.every((c) => c.deform === (RIG[c.id].class === 'hauler' ? 'SPACE_HAULER' : 'CAR_CHILL_LIGHT')),
     noShaderRecompileOnCachedSwap: res.back.every((b) => !b.newPrograms),   // Erstladen darf neue Varianten übersetzen (z. B. Leucht-Textur des Ödland-Käfers)
     // Zurückwechseln/Vorgewärmt: Cache getroffen, keine neuen Shader, kein Hänger über der Grundbildzeit (< 100 ms bzw. < 1,5 × langsamstes Bild davor)
@@ -218,5 +221,31 @@ if (PART === 'vclay') {
     comp.push({ input: Buffer.from(`<svg width="${2 * TW}" height="${HD}" xmlns="http://www.w3.org/2000/svg"><text x="8" y="19" font-size="16" font-family="sans-serif" fill="#fff">${RIG[id].name_de} · ${tod}</text><text x="${TW - 80}" y="19" font-size="15" font-family="sans-serif" fill="#ffd400">Original</text><text x="${2 * TW - 70}" y="19" font-size="15" font-family="sans-serif" fill="#ffd400">Knete</text></svg>`), left: 0, top: r * (TH + HD) }); r++ }
   await sharp({ create: { width: 2 * TW, height: r * (TH + HD), channels: 3, background: '#15151b' } }).composite(comp).png().toFile(OUT + 'vclay-ab.png')
   code = report('vehicles-r1 vclay A/B (V-654 C5)', { allShots: Object.values(shots).every((x) => x.Original && x.Knete), noPageErrors: !res.errs.length }, { sheet: OUT + 'vclay-ab.png' })
+}
+if (PART === 'look') {
+  const RAC = ['crimson_flame_dragster', 'crimson_thunderjet', 'wasteland_beetle', 'rust_runner'], TODS = [['Tag', ''], ['Gold', ',tod=gold'], ['Nacht', ',tod=night']], shots = {}
+  const view = async (page, kind) => page.evaluate((kind) => { const f = window.__kfbM2.stats.follow; if (kind === 'near') { f.orbit(0.6, 0.04); f.zoomBy(-250) } if (kind === 'over') { f.orbit(0.3, 0.35); for (let i = 0; i < 8; i++) f.zoomBy(400) } }, kind)
+  for (const [tod, th] of TODS) {
+    const { browser, page, errs } = await open(th + ',prefetch=0', { width: 960, height: 540 }); await page.mouse.click(480, 300)
+    for (const id of RAC) { await swap(page, id); await page.waitForTimeout(600)
+      for (const kind of ['near', 'drive', 'over']) { await page.evaluate(() => window.__kfbM2.setKind('k2b', null)); await page.waitForTimeout(700); await view(page, kind)
+        if (kind !== 'near') await page.keyboard.down('KeyW'); await page.waitForTimeout(kind === 'near' ? 1200 : 1600)
+        const f = `${OUT}shots/look-${id}-${tod}-${kind}.png`; await page.screenshot({ path: f }); await page.keyboard.up('KeyW'); (shots[id + tod] ||= {})[kind] = f } }
+    res.errs = (res.errs || []).concat(errs.slice(0, 2)); await browser.close() }
+  const TW = 480, TH = 270, HD = 24, comp = []; let r = 0
+  for (const id of RAC) for (const [tod] of TODS) { for (const [k, kind] of [[0, 'near'], [1, 'drive'], [2, 'over']]) comp.push({ input: await sharp(shots[id + tod][kind]).extract({ left: 0, top: 60, width: 960, height: 480 }).resize(TW, TH).png().toBuffer(), left: k * TW, top: r * (TH + HD) + HD })
+    comp.push({ input: Buffer.from(`<svg width="${3 * TW}" height="${HD}" xmlns="http://www.w3.org/2000/svg"><text x="8" y="17" font-size="15" font-family="sans-serif" fill="#fff">${RIG[id].name_de} · ${tod}</text><text x="${TW + 8}" y="17" font-size="13" font-family="sans-serif" fill="#ffd400">nah · Fahrt · Übersicht</text></svg>`), left: 0, top: r * (TH + HD) }); r++ }
+  await sharp({ create: { width: 3 * TW, height: r * (TH + HD), channels: 3, background: '#15151b' } }).composite(comp).png().toFile(OUT + 'look-sheet.png')
+  // vmatte A/B (Tag, nah)
+  const mshots = {}
+  for (const [lab, h] of [['Standard', ''], ['matter', ',vmatte=1']]) { const { browser, page } = await open(h + ',prefetch=0', { width: 960, height: 540 })
+    for (const id of RAC) { await swap(page, id); await page.waitForTimeout(600); await view(page, 'near'); await page.waitForTimeout(1200); const f = `${OUT}shots/matte-${id}-${lab}.png`; await page.screenshot({ path: f }); (mshots[id] ||= {})[lab] = f; await page.evaluate(() => window.__kfbM2.setKind('k2b', null)) }
+    await browser.close() }
+  const mc = []; RAC.forEach((id, i) => ['Standard', 'matter'].forEach((lab, k) => mc.push({ id, lab, i, k })))
+  await sharp({ create: { width: 2 * TW, height: RAC.length * (TH + HD), channels: 3, background: '#15151b' } }).composite((await Promise.all(mc.map(async (m) => [{ input: await sharp(mshots[m.id][m.lab]).extract({ left: 0, top: 60, width: 960, height: 480 }).resize(TW, TH).png().toBuffer(), left: m.k * TW, top: m.i * (TH + HD) + HD },
+    { input: Buffer.from(`<svg width="${TW}" height="${HD}" xmlns="http://www.w3.org/2000/svg"><text x="8" y="17" font-size="15" font-family="sans-serif" fill="#fff">${RIG[m.id].name_de} · ${m.lab}</text></svg>`), left: m.k * TW, top: m.i * (TH + HD) }]))).flat()).png().toFile(OUT + 'matte-ab.png')
+  // Startseite mit Fahrzeug-Wahl (Vorhang)
+  { const { browser, page } = await openPage('#m1,debug,look=terrain3,world=probe,start,car,racer=crimson_thunderjet', { viewport: { width: 1280, height: 720 } }); await page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 }); await page.waitForTimeout(1500); await page.screenshot({ path: OUT + 'look-start.png' }); await browser.close() }
+  code = report('vehicles-r1 look (Kohärenz R3)', { allShots: Object.values(shots).every((x) => x.near && x.drive && x.over), noPageErrors: !(res.errs || []).length }, { sheet: OUT + 'look-sheet.png', matte: OUT + 'matte-ab.png' })
 }
 process.exit(code)

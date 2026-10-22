@@ -46,7 +46,20 @@ Alle Bilder mit `look=terrain3`, `world=probe`, headless (Metal-GPU). Hinweis: D
 - **Ferne-Aufhellung nachgemessen:** Am echten Spielabstand steht die Kamera 6,8 m (Standard) bis 18,9 m (ganz herausgezoomt) vom Wagen. Die Aufhellung beginnt erst bei 13 m und ist bei 78 m voll. Im Spiel liegt sie also bei 0,80 bis 0,82 und ist praktisch aus. Sie wirkt nur bei fremden Wagen in der Ferne.
   - Vorschlag: Soll der eigene Wagen herausgezoomt heller werden, Bereich auf 8–40 m setzen (`VEHICLE_LOOK.near/far`). Das braucht Georgs Blick.
 
-## 2b · Knet-Stufe der Racer (V-654 C5 „eine Machart“) · **Standard an (Georg 22.10.)**, `vclay=0` = Original
+## 2a · Machart R3 (Georg 22.10. nach Kritiker R3): Originalanmutung + Knet-Zusätze · **Standard**
+- **Georg:** „Möglichst die Originalanmutung erhalten … Was wir selbst aufsetzen, bekommt Knet-Look oder wird etwas matter. Nicht versuchen, die Racer in Claymation zu setzen.“
+- **Karosserie:** Originaltextur (Look A wie abgenommen) ohne Umtönen und ohne kfb-clay-Relief; die Heldenfarbe bleibt Einstellung (Startseite).
+  - `vmatte=1`: leicht matter (Metall 0,15, Rauheit ≥ 0,68, Spiegelung 0,55), Farbe unangetastet. A/B: [matte-ab.jpg](img/vehicles-r1/matte-ab.jpg).
+  - Mein Urteil: Standard ohne `vmatte`, der Unterschied ist klein und die Originalanmutung ist der Wunsch. Georg entscheidet.
+- **Eigene Zusätze in Knete:**
+  - Knet-Flamme (R3: weiche Tonübergänge, helle Oberseite = Volumen, durchscheinender Rand statt Kontur, schwacher Glutkern als Licht)
+  - Knet-Lüfter (dunkler Rotor) mit Leuchtring
+  - Knet-Funken (kleine feste Krümel)
+- **Schalter:** `vclay=body` = alte Voll-Knete zum Vergleich, `vclay=0` = alles original (Leucht-Fahnen).
+- **Kohärenz:** [look-sheet.jpg](img/vehicles-r1/look-sheet.jpg). 4 Racer (Flammen-Dragster, Donner-Jet mit Lüftern, Ödland-Käfer, Rost-Runner) × Tag/Gold/Nacht × Spielkamera nah | Fahrt | Übersicht. Startseite: [look-start.jpg](img/vehicles-r1/look-start.jpg).
+- **Tests:** data PASS in allen drei Stufen (Standard, `vclay=body`, `vclay=0`; neu rigStylePerMode), start/unit/contract-static PASS.
+
+## 2b · Knet-Stufe der Racer (jetzt nur noch `vclay=body`, Vergleich) (V-654 C5 „eine Machart“) · **Standard an (Georg 22.10.)**, `vclay=0` = Original
 - **Georg 22.10.:**
   - Knete ist Standard.
   - Der Käfer behält mehr Originalfarbe: `clayTone` in seiner Rig-Karte (hueShift 0,15, lShift 0, greySat 0,8, lift 0,1, sat 1,4).

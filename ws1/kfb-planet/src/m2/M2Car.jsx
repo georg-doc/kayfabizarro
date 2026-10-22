@@ -119,11 +119,12 @@ const OnFrame = ({ fn }) => { useFrame(fn); return null }
 // Ohne Ruckler (V-631): Look und Heldenfarbe rechnen in Häppchen (≤ 6 ms je Task), danach lädt warmModel die Texturen einzeln (je Bild eine) auf die GPU
 // und übersetzt die Shader vorab (compileAsync) – erst dann erscheint der Wagen, bis dahin steht der Kasten.
 export const HERO_ON = { on: heroEnabled(), switches: 0 }
-// Knet-Stufe der Racer (V-654 C5 „eine Machart“): Standard an (Georg 22.10.), vclay=0 = Original zum Vergleich.
-// An: Foto-Textur auf die Rollen der Biom-Palette umgetönt (prepVehicleClay), kfb-clay Profil 'vehicle' (= midground) mit Maßstab der Figur (FB-Höhe),
-// Palettenzug 0,12; Düsen als Knet-Flamme (vehicleRig style 'clay'). Ein Programm für alle Racer (kfb-clay: customProgramCacheKey = Version).
-const VCLAY_DEFAULT = true
-export const VCLAY_ON = /(^|[#,])vclay=1(,|$)/.test(H) || (VCLAY_DEFAULT && !/(^|[#,])vclay=0(,|$)/.test(H))
+// Racer-Machart (Georg 22.10. nach Kritiker R3: „Originalanmutung erhalten, bewusste Stilbrüche; was wir selbst aufsetzen, bekommt Knet-Look“):
+//   Standard 'parts' = Originalkarosserie (Look A, Heldenfarbe als Einstellung) + eigene Zusätze in Knete (Knet-Flamme, Knet-Lüfter mit Leuchtring)
+//   vclay=body = alte Voll-Knete (Umtönen auf Biom-Rollen + kfb-clay-Relief) zum Vergleich · vclay=0 = alles original (Leucht-Fahnen)
+//   vmatte=1 (vehicleLook) = Karosserie leicht matter, Farbe unangetastet
+export const VCLAY_MODE = /(^|[#,])vclay=body(,|$)/.test(H) ? 'body' : /(^|[#,])vclay=0(,|$)/.test(H) ? 'off' : 'parts'
+export const VCLAY_ON = VCLAY_MODE === 'body'
 const VCLAY_PAL = (() => { const k = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(H) || [0, TERRAIN3_CFG.palette])[1]; return TERRAIN3_CFG.palettes[k] || TERRAIN3_CFG.palettes.mesa })()
 // Heldenfarbe umschalten (Startseite, Ereignis kfb:hero): fehlt die Umrechnung bei geladenen Racern, rechnet sie in Häppchen nach; dann Texturen tauschen
 async function applyHeroSetting(on, gl) {
@@ -228,7 +229,7 @@ function CarVisual({ squash, signals, lean }) {
   const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree()
   const dustColorAt = useCallback((x, z) => terrainDustColor(groundHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
   useEffect(() => { if (!model || !body.current) return
-    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', style: VCLAY_ON ? 'clay' : 'glow' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', style: VCLAY_MODE === 'off' ? 'glow' : 'clay' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
     if (M2CAR.wheels) R1.object3d.position.y = -M2TUNE.rideHeight // Rad-Fahrzeuge (V-631, wie die Probe): Räder auf den Boden statt in Schwebehöhe
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
     return () => { M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])

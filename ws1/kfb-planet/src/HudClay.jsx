@@ -46,14 +46,14 @@ export default function HudClay(props) {
     host.cards?.().then((cv) => { if (cv?.length) hud.setCards(cv) }, () => {})
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
     dom.current = buildDom(hud, inner, () => clay.current)
-    expose('ClayHud', { status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons(), toggleCompass: (v) => hud.toggleCompass(v), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
+    expose('ClayHud', { status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons(), toggleCompass: (v) => hud.toggleCompass(v), uiState: (k) => hud.uiState(k), setAnimator: (k, fn) => hud.setAnimator(k, fn), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
     return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
   }, [ok])
 
   // Rückfall: Modul meldet fehlende/kaputte Props → Holz-HUD sichtbar
   useFrame((_, dt) => {
     const hud = clay.current; if (!hud) return
-    const st = hud.status(); if (st.status === 'MISSING' || st.status === 'ERROR') { console.warn('[HudClay] Rückfall auf Holz-HUD:', st.status, st.error || ''); setOk(false); return }
+    const ph = hud.phase(); if (ph === 'MISSING' || ph === 'ERROR') { console.warn('[HudClay] Rückfall auf Holz-HUD:', ph, hud.status().error || ''); setOk(false); return }
     // Fahrt-/Laufsignal: Tempo (km/h), Gierrate, Längsbeschleunigung aus der Lage – gefiltert im Modul
     const S = sig.current, p = host.target?.()
     if (p && dt > 0) {
@@ -103,19 +103,25 @@ function buildDom(hud, inner, getHud) {
   const root = document.createElement('div'); root.id = 'kfb-hud-clay'
   const css = document.createElement('style'); css.textContent = '#kfb-audio-panel{display:none!important}'; document.head.appendChild(css) // ♪-Panel (WS-Audio) im Knet-Modus aus; Regler in der Zahnrad-Tafel
   root.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:8991;font-family:Fredoka,system-ui,sans-serif'
-  const btn = (label, onClick) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', label); b.title = label
+  // Trefferflächen bleiben unsichtbar (Georg 22.10.); sie melden nur Zustände an das Modul (hover/pressed/focus), für spätere Micro-Interactions
+  const btn = (label, onClick, key = null) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', label); b.title = label
     b.style.cssText = 'position:absolute;pointer-events:auto;background:transparent;border:0;border-radius:18px;cursor:pointer;padding:0;outline-offset:2px'
-    b.addEventListener('click', (e) => { e.stopPropagation(); onClick(); b.blur() }); root.append(b); return b }
+    b.addEventListener('click', (e) => { e.stopPropagation(); onClick(); b.blur() })
+    if (key) { b.dataset.ui = key; const F = (f, v) => () => hud.setUiFlag(key, f, v)
+      b.addEventListener('pointerenter', F('hover', true)); b.addEventListener('pointerleave', () => { hud.setUiFlag(key, 'hover', false); hud.setUiFlag(key, 'pressed', false) })
+      b.addEventListener('pointerdown', F('pressed', true)); b.addEventListener('pointerup', F('pressed', false)); b.addEventListener('pointercancel', F('pressed', false))
+      b.addEventListener('focus', () => hud.setUiFlag(key, 'focus', b.matches(':focus-visible'))); b.addEventListener('blur', F('focus', false)) } // nur Tastatur-Fokus zählt als active, Mausklick nicht
+    root.append(b); return b }
   const hits = {
-    gear: btn('Einstellungen', () => { hud.tapGear(); settings(!panelOpen) }),
-    compass: btn('Kompass: Karte auf/zu', () => hud.toggleCompass()),
-    chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }),
+    gear: btn('Einstellungen', () => { hud.tapGear(); settings(!panelOpen) }, 'gear'),
+    compass: btn('Kompass: Karte auf/zu', () => hud.toggleCompass(), 'compass'),
+    chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }, 'chest'),
   }
   const radio = {
-    prev: btn('Titel von vorn', () => { hud.press('prev'); A.musicSkip?.(-1) }),
-    play: btn('Musik Pause/Weiter', () => { hud.press('play'); A.musicPause?.(!A.musicPaused?.()) }),
-    next: btn('Nächster Titel', () => { hud.press('next'); A.musicSkip?.(1) }),
-    mute: btn('Ton an/aus', () => { hud.press('mute'); A.setVolume('muted', !A.volumes().muted); refreshPanel() }),
+    prev: btn('Titel von vorn', () => { hud.press('prev'); A.musicSkip?.(-1) }, 'radio.prev'),
+    play: btn('Musik Pause/Weiter', () => { hud.press('play'); A.musicPause?.(!A.musicPaused?.()) }, 'radio.play'),
+    next: btn('Nächster Titel', () => { hud.press('next'); A.musicSkip?.(1) }, 'radio.next'),
+    mute: btn('Ton an/aus', () => { hud.press('mute'); A.setVolume('muted', !A.volumes().muted); refreshPanel() }, 'radio.mute'),
   }
   for (const b of Object.values(radio)) b.style.borderRadius = '50%'
   // Waffen-Anzeige (1,5 s über der Truhe)
@@ -146,13 +152,14 @@ function buildDom(hud, inner, getHud) {
   panel.append(title, row('Entwickler-Infos', dev), row('Ton', snd), ...VOLS.map(([, l], i) => row(l, sliders[i])), row('Bewegung reduzieren', rm), skin)
   const refreshPanel = () => { dev.paint(); snd.paint(); rm.paint(); const v = A.volumes(); VOLS.forEach(([k], i) => { if (v[k] != null) sliders[i].value = v[k] }) }
   const offDev = onDevUi(() => dev.paint())
-  const settings = (v) => { panelOpen = !!v; panel.style.display = panelOpen ? '' : 'none'; if (panelOpen) refreshPanel() }
+  const settings = (v) => { panelOpen = !!v; panel.style.display = panelOpen ? '' : 'none'; hud.setUiFlag('gear', 'on', panelOpen); if (panelOpen) refreshPanel() }
   let last = ''
   document.body.appendChild(root)
   return {
     bagWas: false,
     flash, settings, settingsOpen: () => panelOpen,
     sync() { // Trefferflächen auf die Rechtecke legen (nur bei Änderung)
+      { const o = hud.opened(); hud.setUiFlag('compass', 'on', o.compass); hud.setUiFlag('chest', 'on', o.chest); hud.setUiFlag('radio.mute', 'on', !!A.volumes().muted); hud.setUiFlag('radio.play', 'on', !!A.musicPaused?.()) } // dauerhafte Zustände (auf/zu, stumm, Pause)
       const R = hud.rects(), B = hud.radioButtons(), key = JSON.stringify([R, B]); if (key === last) return; last = key
       for (const [k, b] of Object.entries(hits)) { const r = R[k]; if (!r) continue; const inset = k === 'compass' ? 0.12 : 0.08; Object.assign(b.style, { left: r.x + r.w * inset + 'px', top: r.y + r.h * inset + 'px', width: r.w * (1 - 2 * inset) + 'px', height: r.h * (1 - 2 * inset) + 'px' }) }
       for (const [k, b] of Object.entries(radio)) { const c = B[k]; if (!c) { b.style.display = 'none'; continue } b.style.display = ''; Object.assign(b.style, { left: c.x - c.r + 'px', top: c.y - c.r + 'px', width: 2 * c.r + 'px', height: 2 * c.r + 'px' }) }

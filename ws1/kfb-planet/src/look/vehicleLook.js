@@ -8,6 +8,9 @@ import * as THREE from 'three'
 import { K } from '../m1/m1Scale.js'
 
 export const VEHICLE_LOOK = { metal: 0.35, keep: 0.65, keepFrom: 0.42, keepSpan: 0.3, rough: 0.5, lum: 0.33, gainMin: 0.85, gainMax: 1.5, env: 0.8, envFar: 1.6, near: 8, far: 40,   /* Spielabstand (WS1d-Messung 22.10.: Folgekamera 6,8–18,9 m): ab 8 m aufhellen, voll bei 40 m (vorher Probe-Maß 20–120 × K, griff am Spielabstand kaum) */ sky: '#cfe6ef', ground: '#8a7a62' }
+// vmatte=1 (Georg 22.10.: „etwas matter“ als Schalter): weniger Metall und Spiegelung, Rauheit höher; Farbe und Textur bleiben
+export const VEHICLE_MATTE = typeof location !== 'undefined' && /(^|[#,])vmatte=1(,|$)/.test(location.hash)
+if (VEHICLE_MATTE) Object.assign(VEHICLE_LOOK, { metal: 0.15, keep: 0.4, rough: 0.68, env: 0.55, envFar: 1.1 })
 const L = VEHICLE_LOOK
 let ENV = null
 

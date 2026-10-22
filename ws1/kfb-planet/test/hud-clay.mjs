@@ -72,6 +72,22 @@ const checks = {}, extra = {}
   checks.devuiToggle = dev0 === 'true' && dev1.aria === 'false' && dev1.ls === '0'
   await page.keyboard.press('Escape'); await wait(page, 200)
   checks.settingsEsc = await page.evaluate(() => getComputedStyle(document.getElementById('kfb-hud-settings')).display === 'none')
+  // Interaktions-Zustände (Vorbereitung Micro-Interactions): Zeiger über/gedrückt/weg, ohne Animator keine Neuzeichnung
+  { const r = await page.evaluate(() => window.__kfbClayHud.rects().chest), x = r.x + r.w / 2, y = r.y + r.h / 2
+    await page.evaluate(() => window.__kfbClayHud.resetStats()); await page.mouse.move(x, y); await wait(page, 150)
+    const h = await page.evaluate(() => window.__kfbClayHud.uiState('chest')); await page.mouse.down(); await wait(page, 80)
+    const p = await page.evaluate(() => window.__kfbClayHud.uiState('chest')); await page.mouse.move(5, 450); await page.mouse.up(); await wait(page, 150)
+    const i = await page.evaluate(() => window.__kfbClayHud.uiState('chest')), rr = (await st(page)).rtRenders
+    // Animations-Haken: läuft im update; false = keine Neuzeichnung, true = nur dieser Prop neu ins Render-Ziel
+    const a = await page.evaluate(async () => { const H = window.__kfbClayHud, z = () => H.status().rtRenders, w = (ms) => new Promise((r) => setTimeout(r, ms))
+      let n = 0; H.resetStats(); H.setAnimator('chest', () => { n++; return false }); await w(400); const quiet = { calls: n, rt: z() }
+      H.setAnimator('chest', () => true); H.resetStats(); await w(400); const busy = z(); H.setAnimator('chest', null); return { quiet, busy } })
+    extra.ui = { h, p, i, rr, anim: a }
+    checks.uiStates = h === 'hover' && p === 'pressed' && i === 'idle'
+    await page.keyboard.press('Tab'); await wait(page, 100); extra.ui.tab = await page.evaluate(() => { const b = document.activeElement; return b?.dataset?.ui ? [b.dataset.ui, window.__kfbClayHud.uiState(b.dataset.ui)] : null })
+    checks.uiKeyboardFocus = !extra.ui.tab || extra.ui.tab[1] === 'active' || extra.ui.tab[1] === 'hover'
+    await page.evaluate(() => document.activeElement?.blur())
+    checks.animatorHook = a.quiet.calls > 5 && a.quiet.rt <= 2 && a.busy > 5 }
   // Reaktion: Landung bewegt die Props kurz, danach Ruhe
   await page.evaluate(() => window.__kfbClayHud.event?.({ type: 'landing', strength: 1 }))
   checks.errors0 = errs.length === 0; extra.errs = errs.slice(0, 3)
