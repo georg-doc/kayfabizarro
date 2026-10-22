@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB J-7 Fahrer im Dach fertig (Einhüpfen bis zur Hüfte, Fahr-IK, Anker je Fahrzeug, Feder-Werte), privat; WS1 informiert; Lenkrad 0,7 geneigt zur Abnahme durch Georg.
 - WSB K15 fertig: 14 Boden-Cubes dunkel/geheilt mit KFB_Mouth bzw. KFB_HealedEyes, Karten bereit zum Einbau, privat; Pilz wird beleuchtet nachgebaut; WS-NPC informiert.
 - WSB N15 fertig: Spielzeugsoldat steif umkippen und hochklappen (eigene Wurzel-Clips, Gewehr fällt), privat; WS-NPC informiert.
 - WSB K16 fertig: Kreuz-Pupillen-Aufsatz pupil-kreuz.v1.js und Knet-Lettering Blödsinn (Bangers, Irish Grover fragt Georg), privat; WS1 informiert.

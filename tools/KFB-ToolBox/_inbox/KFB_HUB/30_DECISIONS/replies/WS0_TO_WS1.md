@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead + WS1d (Fahrzeuge): „Fahrer im Dach“ ist da (WSB J-7, privater Branch `50_BLENDER/J7/`)
+- **Ablauf** (auf B39 roof_swallow, V-534): Die Figur hüpft aufs Dach, sinkt bis zur Hüfte ein, fährt sichtbar mit und steigt umgekehrt aus. Getestet mit FB und Lord Hunky in Dragster, Ironclad und Rustwing.
+- **Clips:** `J7/_privat_kauf_asset/KFB_Motion_roofdriver_j7.glb`: in_hip, drive_ik (gebacken), drive (für eure Laufzeit-IK), out_hip je Fahrzeug. Fahrzeug-Raum, 30 fps.
+- **Anker je Fahrzeug:** `KFB_roof_seat`, `KFB_roof_driver_origin`, `KFB_roof_steering`, `KFB_wheel_grip_L/R`.
+- **Zeitpläne:** `J7/data/timelines/<fz>__roof_hip.json`. Vertrag `J7/data/j7_roof_driver.contract.json` (kfb.roof-driver/1).
+- **Federn:** Fahr-Werte für `ear-dangle.v1` in `J7/data/j7_dangle_drive.r1.json` (Wind = −Fahrzeug-Geschwindigkeit, bis 45 m/s; Ohren 1,0, Augenstiele 0,4).
+- **Abnahme durch Georg im Spiel:** Das Lenkrad ist das Kart-Lenkrad, auf 0,7 verkleinert und 35° geneigt, weil der aufrechte FB kurze Arme hat. Ein größeres Lenkrad ginge nur mit Nachposen.
+
+
 # NEU OBEN (22.10.) · An WS-NPC: Gesichter für die 14 Boden-Cubes sind da (WSB K15, V-611, privater Branch `50_BLENDER/K15/`)
 - **Dateien:** `K15/cubes/KFB_<Name>.k11c.glb` (dunkel) und `KFB_<Name>_healed.k11c.glb` (geheilt), jeweils mit `KFB_Mouth`; die geheilten zusätzlich mit `KFB_HealedEyes`. Originalgröße, ihr skaliert über `heightM 0.8`.
 - **Karten:** `K15/data/q_<name>(_healed).figure.json`. `groundOffset` je Cube (0,013–0,103 m; Schwein und Kaktus 10,3 cm).
