@@ -54,3 +54,33 @@ Gizmo visual/source identity, literal versus optical white gutter, collision/nav
 ## Additive history
 
 2026-10-18: Georg's Flatworld panel-zone / white Gutter idea persisted on an isolated design branch. No merge, default-branch write, runtime change, Canon acceptance or product release.
+
+---
+
+## 2026-10-22 · Additive Return R1.1: Gutter Space × Splats × Cards/Almanac × guided ride
+
+**Event / status:** Georg's full three-idea-cluster expansion secured as **DESIGN PROPOSAL / SOURCE-ALIGNED INTAKE**. The corrected name is **Gutter Space**, not “Gatter Space”; an incidental dictation correction is not a feature requirement.
+
+**Unchanged owner and route:** existing KFB Infinite Canvas / Meta-Narration design lane, repo `georg-doc/kayfabizarro`, branch `planning/kfb-flatworld-comic-gutter-r1-2026-10-18`, **same open Draft PR #423** targeting `main`. No runtime, WorldBuilder, Track Core, Audio, Card/Almanac or Museum owner changes. No automatic merge or release.
+
+**Added document:** `skills/chat/masterplan/KFB_GUTTER_SPACE_SPLAT_PORTAL_ALMANAC_R1_2026-10-22.md` (`2926be99277b3f89bc66bba9b3112cc39a2b3852`, exact branch-head and content readback).
+
+**Updated existing design:** `skills/chat/masterplan/KFB_FLATWORLD_COMIC_GUTTER_DESIGN_2026-10-18.md`, only appended a dated extension pointer / original intent summary (`2eafb84a0c3f125c9f50085b98fdd4971804e4a9`, exact branch-head and content readback). All existing 2026-10-18 content retained.
+
+**Three clusters captured without loss:**
+
+1. Gaussian-splat / hybrid portals for distant Deck/Card zones and surreal dungeons/instances; Plato's Dungeon Raid is a **historical proposed** Caveman/goldmine hook, not a built dungeon.
+2. Source-real Card/PDF Viewer + Almanac's collected/discovered Cards as searchable spatial Infinite Canvas and deep-link / **permitted** teleport selection; current Viewer v5 and Card/Almanac facts remain authoritative. No fabricated destinations or duplicated index.
+3. The panel-to-panel **Gutter Space** as an expanded Escher/tesseract-like illusion and optionally guided rollercoaster/cinematic ride over **existing Track Core/Joyride** transport and camera ownership, via already-proposed TransitionRecipe; normal KFB Terra gameplay after exit, recoverable return and fallback. No separate rail engine or claim of genuine 4D geometry.
+
+**Source inspection:** current GitHub files read for Flatworld design/Return, `START_HERE`, Stage Workflow, Fresh Chat Protocol, Infinite Canvas/Meta-Narration, canonical ink, `LIVING_MASTERPLAN` Museum/card-viewer donor, Librarian `Decks` documented 130 tracked decks and v5 links, Four-Island story/vision and R4 constraints, Island Integration Census, TransitionRecipe, Overworld Card Viewer precedent, archived Plato reference. PR #423 open/draft confirmed before writes. Source-historical claims are not fresh browser tests.
+
+**Checks/evidence:** new proposal prewrite editorial invariants **12/12 PASS** (all 3 clusters, terminology, viewer/Almanac, Track/Audio, R4 and next gate). First file **1/1 exact path + 8/8 term presence checks**, 17,045 characters read from branch; second file **1/1 exact branch head + linked original design** and 8,421 characters read. Final Return must be read back after this write and the resulting exact PR head recorded in the chat handoff. **Runtime tests 0, scene render 0, source visual isolation 0, actual Card/PDF browser interaction 0, critic 0, Stage/Site 0.** No public surface required for a design note.
+
+**Unresolved:** can the current World/Almanac owners expose source-backed destination mappings without bypassing progression? Is Gutter Space traversable/persistent or transitional/optical? Splat engine, asset rights/source isolation, lighting/occlusion/performance/mobile support, Track Core ride/control and Escher staging are not tested/accepted. WorldBuilder R4 **STOPPED / NO MVP** and Four-Island A/B/FAIL gate unchanged. Historical old R4 Return lookup gap remains unchanged.
+
+**One next gate:** **WS0 / existing Infinite Canvas design owner** decides whether a *source-isolated Gutter-Space visual storyboard* (two actual deck zones + actual Card + a legible portal threshold + optional guided ride) belongs alongside the existing Four-Island A/B design review. This does not authorize implementation or reopen R4.
+
+### Additive changelog
+
+- **2026-10-22:** Georg's Clusters 1–3 persisted on the existing Flatworld Draft PR #423 with corrected **Gutter Space** terminology; one new detailed proposal, one appended index pointer, Return update. No core-router/Hub/Site/Cloudflare change because this is conceptual intake without a new accepted product route or P0 gate.
