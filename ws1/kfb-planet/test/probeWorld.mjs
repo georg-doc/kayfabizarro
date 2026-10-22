@@ -117,7 +117,7 @@ process.exit(report('probeWorld', {
   slopesGrounded: SPOTS.length === 3 && r.slopes.length === 3 && r.slopes.every(ok),
   treesNotFloating: r.props.orchard.n > 0 && r.props.orchard.max <= 2,
   lanternsNotFloating: r.props.lanterns.n > 0 && r.props.lanterns.max <= 2,
-  foundRestsOnGround: r.props.found.n > 0 && r.props.foundContact.n > 0 && r.props.foundContact.max <= 0.005 && r.props.foundContact.min >= -0.06, // V-654 C6: je Ecke gegen das Gelände darunter – nie schwebend, höchstens 6 cm eingesunken
+  foundHovers: r.props.found.n > 0 && r.props.found.min >= 6 && r.props.found.max <= 42, // Georg 22.10.: Fundsachen schweben ≈ 0,15 m (alte WS1-cm = cm ÷ 0,65: 4–27 cm; Unterkante über dem Gelände; Kippung/Hang eingerechnet), nie eingesunken
   carRestsFlat: car.flat.clear > 0 && car.flat.clear < 1.5 * K && car.flat.drift < 0.05,
   carRestsOnHill: car.hill.clear > 0 && Math.abs(car.hill.clear - car.flat.clear) <= 0.25,
 }, { readyS, info, plaza: r.plaza, spawn: r.spawn, release: r.release, slopes: r.slopes, spots: SPOTS, sweep: r.sweep, props: r.props, car, crossMax, cost, errs: [...errs, ...C.errs].slice(0, 3) }))

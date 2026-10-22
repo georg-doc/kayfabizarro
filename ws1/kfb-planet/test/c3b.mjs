@@ -1,5 +1,5 @@
-// C3b (V-434/V-437, V-654 C6 löst V-450 ab) · WSB-B28-Fundsachen in der Laufwelt (#m1,harvest): LIEGEN auf dem Gelände (Unterkante 1,2 cm eingesunken, still),
-// kein Kontaktfleck (V-587), Erdkeil + Kontakt-Steinchen je Stück (world/grounding), 0 Stücke auf dem Weg, Aufheben mit I in den R5f-Rucksack, Wegwerfen aus dem Rucksack (Stück schwebt
+// C3b (V-434/V-437; Georg 22.10.: schwebend, im Cluster synchron, ausgeleuchtet) · WSB-B28-Fundsachen in der Laufwelt (#m1,harvest): schweben ≈ 0,15 m (je Größe
+// 0,11–0,19 m) mit ruhigem Wippen + Drehung, gemeinsame Phase je Gruppe (Versatz = Rang × Welle), kein Kontaktfleck, kein Erdkeil darunter, 0 Stücke auf dem Weg, Aufheben mit I in den R5f-Rucksack, Wegwerfen aus dem Rucksack (Stück schwebt
 // wieder vor dem Spieler), Ziel-Anzeige „i“ in der Aktionsleiste. Bild: Kontaktschatten 200 % (test/out/c3b/contact-200.png), Übersicht (test/out/c3b/demo.png).
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
@@ -32,8 +32,10 @@ const t2 = await page.evaluate(async (key) => { const st = window.__kfbM1.harves
   const it = h.throwItem(0); await new Promise((r) => setTimeout(r, 400)); const F = window.__kfbM1.mods.found
   return { bagN, throwBtn, thrownKey: it?.key, back: F.items().find((i) => i.key === key)?.here, bagAfter: h.items().length, dropped: F.stats().dropped } }, afterPick.pickedKey)
 const blobs = await page.evaluate(() => { let n = 0; window.__kfbM1.mods.found.object3d.traverse((m) => { if (m.name === 'contact-blob' && m.visible) n++ }); return n })
-const ground = await page.evaluate(() => { const G = window.__kfbM1.mods.ground, F = window.__kfbM1.mods.found, ids = F.anchors().filter((a) => a.visible).map((a) => a.id)
-  return { info: G?.info?.(), rises: ids.map((id) => G?.probe?.(id)?.maxRise ?? null) } })
+const ground = await page.evaluate(() => { const G = window.__kfbM1.mods.ground, F = window.__kfbM1.mods.found, sync = F.sync(), by = {}
+  for (const x of sync) (by[x.group] ||= []).push(x)
+  const groupOk = Object.values(by).every((g) => { const base = g.map((x) => x.phase - x.rank * 0.55); return Math.max(...base) - Math.min(...base) < 1e-3 })
+  return { info: G?.info?.(), itemSkirts: F.anchors().length, groups: Object.keys(by).length, groupOk, gaps: [Math.min(...sync.map((x) => x.gap)), Math.max(...sync.map((x) => x.gap))] } })
 await browser.close()
 const DP = [[0, 30], [0, 44], [-14, 50], [-26, 46]].map(([x, z]) => [x * 0.6508775522703274, z * 0.6508775522703274])
 const dseg = (x, z) => { let b = Infinity; for (let i = 0; i + 1 < DP.length; i++) { const [ax, az] = DP[i], [bx, bz] = DP[i + 1], dx = bx - ax, dz = bz - az, L = dx * dx + dz * dz, t = Math.max(0, Math.min(1, ((x - ax) * dx + (z - az) * dz) / L)); b = Math.min(b, Math.hypot(x - ax - t * dx, z - az - t * dz)) } return b }
@@ -42,15 +44,16 @@ const summary = { ground, items: a.n, clearance: a.hip, tilted: a.tilted, bottom
 fs.writeFileSync('test/out/c3b/c3b.json', JSON.stringify(summary, null, 1))
 process.exit(report('c3b found items demo (V-434/V-437)', {
   itemsLoaded: a.st.status === 'OK' && a.n >= 20,
-  restMode: a.st.mode === 'rest' && a.hip === -0.012, // V-654: liegen statt schweben (V-450 abgelöst)
-  bottomInGround: a.bottomMin > -0.03 && a.bottomMax <= 0.001, // Unterkante knapp im Gelände (kein Schweben, nicht vergraben)
-  still: a.moved === 0, // keine Drehung, kein Wippen
+  floatMode: a.st.mode === 'float' && a.hip === 0.15, // Georg 22.10.: schwebend (V-450-Höhe)
+  hoverHeight: ground.gaps[0] > 0.07 && ground.gaps[1] < 0.24, // Unterkante 0,11–0,19 m je Größe ± Wippen
+  bobAndTurn: a.st.still || a.moved >= a.n * 0.8,
+  groupSync: ground.groups >= 3 && ground.groupOk, // gemeinsame Phase je Gruppe, Versatz nur nach Rang
   zeroOnPath: onPath === 0,
   noBlobs: blobs === 0, // V-587
-  groundContactEach: ground.rises.length >= a.n - 1 && ground.rises.every((r) => r != null && r > 0.01) && ground.info?.pebbles > 0, // Erdkeil steigt an, Kontakt-Steinchen
+  noGroundUnderFloating: ground.itemSkirts === 0, // kein Erdkeil/keine Steinchen unter schwebenden Stücken
   targetShownNearItem: pick.target === true,
   pickUpWithI: afterPick.here === false && afterPick.picked === 1,
   backpackHasItem: t2.bagN === 1 && t2.throwBtn === true,
-  throwAwayLiesAgain: t2.thrownKey === afterPick.pickedKey && t2.back === true && t2.bagAfter === 0 && t2.dropped === 1,
+  throwAwayFloatsAgain: t2.thrownKey === afterPick.pickedKey && t2.back === true && t2.bagAfter === 0 && t2.dropped === 1,
   noPageErrors: errs.length === 0,
 }, { summary, errs: errs.slice(0, 3) }))

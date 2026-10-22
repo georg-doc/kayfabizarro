@@ -1,34 +1,55 @@
 // C3b (V-434/V-437/V-450) · Fundsachen sichtbar: alle mit **gleichem Bodenabstand 0,15 m** (Unterkante über dem Gelände, Georg 18.10.), längliche Stücke und
 // Werkzeuge mit Griff 35° gekippt (floatTilt aus der Beute-Tabelle), drehen sich langsam (≈ 1 Umdrehung / 3 s) mit ±5 % Wippen, Phase je Stück zufällig;
-// weicher Kontaktfleck am Boden (contactBlob, kein Glanz, keine Kontur, ein Licht-Rig). Die Kippung sitzt innen, die Drehung um die Senkrechte außen –
+// (Kontaktfleck entfernt, V-587). Die Kippung sitzt innen, die Drehung um die Senkrechte außen –
 // so bleibt die Höhe der Unterkante beim Drehen gleich.
 // Aufheben (pick) und Wegwerfen (drop: Stück schwebt wieder vor dem Spieler) ruft der Wirt (Taste I / R5f „Interagieren“, Rucksack). Platzierung: world/loot.
 // Modelle: WSB B28 r2 (Ursprung = bbox-Mitte, Maße in Rig-Einheiten, × unit = 0,616 m), je Modell einmal geladen und geklont. Knete über claySSOT (midground).
-// Modul nach Host-Vertrag R1.2. options: { items (placeLoot), terrainH(x, z), clearance = 0,15 m, unit = 0,616381042, url(it) }
+// Modul nach Host-Vertrag R1.2. options: { items (placeLoot), terrainH(x, z), clearance = 0,15 m, unit = 0,616381042, url(it), lightTone: () => { color, glow } (Rig) }
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { LOOT, lootUrl } from '../world/loot.js'
-import { contactBlob } from './contactBlob'
 
-export const FLOAT = Object.freeze({ turnS: 3, bob: 0.05, bobHz: 0.55, pickR: 1.7, clearance: 0.15, tiltDeg: 35 })
-// V-654 C6 (MVP-Kritiker R1 K4, löst V-450 ab): Fundsachen LIEGEN – Unterkante 1,2 cm im Gelände, flach an der Bodenneigung, längliche Stücke umgelegt,
-// keine Drehung, kein Wippen, kein Kontaktfleck (V-587). Erdkeil + Kontakt-Steinchen baut world/grounding (Quelle items()). Hash found=float = alte Schwebe-Fassung.
+// Georg 22.10. (über Lead, hebt V-587 für Fundsachen auf): Fundsachen SCHWEBEN wieder, „mit visually pleasing animation/rotation, harmonisch mit umgebenden
+// Fundsachen gesynct und sauber ausgeleuchtet“. Höhe ≈ 0,15 m je Größe stimmig (V-450), ruhiges Wippen + langsame Drehung, eine gemeinsame Phase je Gruppe
+// (Fundsachen-Gruppe aus world/loot) mit leichtem Versatz je Stück (Welle durch die Gruppe, kein Zufall), prefers-reduced-motion = still. Kein Kontaktfleck,
+// kein Erdkeil darunter – der echte Sonnenschatten fällt auf den Boden. Ausleuchtung: Materialantwort im Ton des Rigs (Untergrenze + leichter Fresnel-Saum),
+// ein gemeinsamer Uniform-Satz für alle Stücke (kein Programm je Stück). Hash found=rest = liegende Fassung (V-654 C6, geerdet über world/grounding).
+export const FLOAT = Object.freeze({ turnS: 7, bob: 0.028, bobHz: 0.32, pickR: 1.7, clearance: 0.15, tiltDeg: 35, wave: 0.55, liftDay: 0.34, liftNight: 0.5, rim: 0.22 })
 export const REST = Object.freeze({ sink: 0.012 })
-const FLOATING = typeof location !== 'undefined' && /(^|[#,])found=float(,|$)/.test(location.hash)
+const HASH = typeof location !== 'undefined' ? location.hash : ''
+const RESTING = /(^|[#,])found=rest(,|$)/.test(HASH), FLOATING = !RESTING
+const STILL = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
+const fract = (v) => v - Math.floor(v), hashStr = (s) => { let h = 2166136261; for (const ch of String(s)) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) >>> 0 } return h / 4294967296 }
+// gemeinsamer Uniform-Satz der Ausleuchtung (Rig-Ton), einmal je Material angehängt
+const LIFT = { uLiftCol: { value: new THREE.Color('#eef0ff') }, uLiftK: { value: FLOAT.liftDay }, uRimK: { value: FLOAT.rim } }
+function liftMaterial(m) {
+  if (!m || m.userData?.foundLift || m.isShaderMaterial || !('roughness' in m || 'shininess' in m)) return false; m.userData.foundLift = true
+  const prev = m.onBeforeCompile, prevKey = m.customProgramCacheKey
+  m.onBeforeCompile = (sh, r) => { prev?.call(m, sh, r); Object.assign(sh.uniforms, LIFT)
+    sh.fragmentShader = 'uniform vec3 uLiftCol; uniform float uLiftK, uRimK;\n' + sh.fragmentShader.replace('#include <opaque_fragment>', `{ float frL = pow(1.0 - clamp(dot(normal, normalize(vViewPosition)), 0.0, 1.0), 3.0);
+    outgoingLight = max(outgoingLight, diffuseColor.rgb * uLiftCol * uLiftK) + diffuseColor.rgb * uLiftCol * frL * uRimK; }
+  #include <opaque_fragment>`) }
+  m.customProgramCacheKey = () => (prevKey ? prevKey.call(m) : '') + '|foundLift'; m.needsUpdate = true; return true
+}
 
-export function createFoundItems3d({ items = [], terrainH, clearance = FLOAT.clearance, unit = 0.616381042, url = lootUrl } = {}) {
+export function createFoundItems3d({ items = [], terrainH, clearance = FLOAT.clearance, unit = 0.616381042, url = lootUrl, lightTone = null } = {}) {
   if (!terrainH) throw new Error('FOUND_NO_TERRAIN')
   const root = new THREE.Group(); root.name = 'found-items'
   const byId = Object.fromEntries(LOOT.map((t) => [t.id, t])), loader = new GLTFLoader(), cache = new Map(), state = { status: 'LOADING', error: null, picked: 0, dropped: 0 }
-  const live = items.map((it) => ({ ...it, obj: null, blob: null, here: true, t: it.phase || 0 }))
+  const live = items.map((it) => ({ ...it, obj: null, blob: null, here: true, t: 0 }))
+  // Gruppe = Schlüssel ohne Stück-Nummer („zone:lootG“); gemeinsame Phase je Gruppe, Versatz = Rang in der Gruppe × wave (Welle, kein Zufall)
+  const groupOf = (L) => String(L.key).replace(/:\d+$/, ''), ranks = new Map()
+  for (const L of live) { const g = groupOf(L), r = ranks.get(g) || 0; ranks.set(g, r + 1); L.group = g; L.gPhase = hashStr(g) * Math.PI * 2; L.rank = r }
+  let clock = 0, liftScan = 0, lifted = 0
   const norm = (src, tilt) => { const o = src.clone(true), inner = new THREE.Group(), g = new THREE.Group(); o.scale.setScalar(unit); inner.add(o)
-    if (FLOATING) { if (tilt) inner.rotation.x = (FLOAT.tiltDeg * Math.PI) / 180 }
+    if (FLOATING) { if (tilt) inner.rotation.x = (FLOAT.tiltDeg * Math.PI) / 180 }   // längliche Stücke schweben leicht gekippt
     else { o.updateMatrixWorld(true); const b0 = new THREE.Box3().setFromObject(o), sz = b0.getSize(new THREE.Vector3()); if (sz.y > 1.3 * Math.max(sz.x, sz.z)) inner.rotation.x = Math.PI / 2 }   // hohe/längliche Stücke liegen
     g.add(inner); g.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true } }); g.updateMatrixWorld(true)
     const b = new THREE.Box3().setFromObject(inner), half = (b.max.y - b.min.y) / 2, foot = Math.max(b.max.x - b.min.x, b.max.z - b.min.z); g.userData.half = half; g.userData.foot = foot; g.userData.box = b.clone(); return g }
   const show = (L) => {
-    if (!L.obj) { L.obj = norm(cache.get(L.id), L.tilt); L.obj.name = 'item:' + L.key; root.add(L.obj); if (FLOATING) { const f = L.obj.userData.foot * 1.1; L.blob = contactBlob(f, f, 0.42); root.add(L.blob) } }
-    L.obj.visible = L.here; if (L.blob) L.blob.visible = L.here
+    if (!L.obj) { L.obj = norm(cache.get(L.id), L.tilt); L.obj.name = 'item:' + L.key; root.add(L.obj) }
+    L.obj.visible = L.here
+    if (FLOATING && L.here) hover(L, 0)
     if (!FLOATING && L.here) rest(L)
   }
   const ready = Promise.all([...new Set(live.map((L) => L.id))].map((id) => loader.loadAsync(url(byId[id])).then((g) => cache.set(id, g.scene))))
@@ -42,6 +63,11 @@ export function createFoundItems3d({ items = [], terrainH, clearance = FLOAT.cle
     const b = L.obj.userData.box, c = new THREE.Vector3(); let worst = -Infinity; L.obj.updateMatrix()
     for (const [cx, cz] of [[b.min.x, b.min.z], [b.max.x, b.min.z], [b.min.x, b.max.z], [b.max.x, b.max.z]]) { c.set(cx, b.min.y, cz).applyMatrix4(L.obj.matrix); worst = Math.max(worst, c.y - h(c.x, c.z)) }
     L.obj.position.y -= worst + REST.sink }
+  // Schweben: Höhe je Größe (0,15 m bei 30 cm Fuß, 0,11–0,19 m), Wippen + Drehung aus Gruppen-Takt und Rang
+  const hoverH = (L) => clearance * Math.min(1.25, Math.max(0.75, 0.75 + (L.obj.userData.foot / 0.3) * 0.25))
+  const hover = (L, t) => { const g = terrainH(L.x, L.z), ph = L.gPhase + L.rank * FLOAT.wave, k = STILL ? 0 : 1
+    L.obj.position.set(L.x, g + hoverH(L) + L.obj.userData.half + k * FLOAT.bob * Math.sin(t * Math.PI * 2 * FLOAT.bobHz + ph), L.z)
+    L.obj.rotation.set(0, (k * t / FLOAT.turnS) * Math.PI * 2 + ph, 0) }
   const nearest = (p, r = FLOAT.pickR) => { let best = null, bd = r; for (const L of live) { if (!L.here) continue; const d = Math.hypot(L.x - p[0], L.z - p[2]); if (d < bd) { bd = d; best = L } } return best }
   return {
     object3d: root,
@@ -56,18 +82,21 @@ export function createFoundItems3d({ items = [], terrainH, clearance = FLOAT.cle
     contact: () => live.filter((L) => L.obj && L.here).map((L) => { const b = L.obj.userData.box, c = new THREE.Vector3(), d = []; L.obj.updateMatrix()
       for (const [cx, cz] of [[b.min.x, b.min.z], [b.max.x, b.min.z], [b.min.x, b.max.z], [b.max.x, b.max.z]]) { c.set(cx, b.min.y, cz).applyMatrix4(L.obj.matrix); d.push(c.y - terrainH(c.x, c.z)) }
       return { key: L.key, max: Math.max(...d), min: Math.min(...d) } }),
-    anchors: () => live.filter((L) => L.obj).map((L) => ({ id: 'item:' + L.key, kind: 'item', x: L.x, z: L.z, r: L.obj.userData.foot * 0.5, visible: L.here })),   // V-654: Fußpunkte für world/grounding
+    anchors: () => FLOATING ? [] : live.filter((L) => L.obj).map((L) => ({ id: 'item:' + L.key, kind: 'item', x: L.x, z: L.z, r: L.obj.userData.foot * 0.5, visible: L.here })),   // V-654: Fußpunkte für world/grounding
     items: () => live.map((L) => ({ key: L.key, id: L.id, type: L.type, tilt: !!L.tilt, x: L.x, z: L.z, here: L.here, y: L.obj?.position.y ?? null, half: L.obj?.userData.half ?? null, ground: terrainH(L.x, L.z) })),
     update(dt) {
-      dt = Math.min(dt || 0, 0.1)
-      for (const L of live) {
-        if (!L.obj || !L.here || !FLOATING) continue
-        L.t += dt; const g = terrainH(L.x, L.z), c = clearance + L.obj.userData.half, y = g + c * (1 + FLOAT.bob * Math.sin(L.t * Math.PI * 2 * FLOAT.bobHz + (L.phase || 0)))
-        L.obj.position.set(L.x, y, L.z); L.obj.rotation.y = (L.t / FLOAT.turnS) * Math.PI * 2 + (L.phase || 0)
-        L.blob.position.set(L.x, g + 0.01, L.z); const k = 1 - 0.25 * (y - g - c) / Math.max(0.01, c * FLOAT.bob * 2); L.blob.material.opacity = L.blob.userData.op0 * Math.max(0.6, Math.min(1, k))
-      }
+      dt = Math.min(dt || 0, 0.1); clock += dt
+      // Ausleuchtung im Rig-Ton (Hemisphären-Himmel), nachts etwas mehr; neue Materialien (Knete lädt nach) jede Sekunde anhängen
+      // nur der FARBTON des Rigs (Himmelsfüllung), Helligkeit fest – sonst würde die Aufhellung nachts mit dem dunklen Himmel selbst dunkel
+      const tone = lightTone?.(); if (tone) { const c = LIFT.uLiftCol.value.set(tone.color || '#eef0ff'), hsl = {}; c.getHSL(hsl); c.setHSL(hsl.h, Math.min(0.45, hsl.s * 0.6), 0.82)
+        LIFT.uLiftK.value = FLOAT.liftDay + (FLOAT.liftNight - FLOAT.liftDay) * Math.min(1, tone.glow || 0) }
+      if ((liftScan -= dt) <= 0) { liftScan = 1; root.traverse((o) => { if (o.isMesh) for (const m of [].concat(o.material)) if (liftMaterial(m)) lifted++ }) }
+      if (!FLOATING) return
+      for (const L of live) if (L.obj && L.here) hover(L, clock)
     },
-    stats: () => ({ ...state, items: live.length, here: live.filter((L) => L.here).length, clearance: FLOATING ? clearance : -REST.sink, mode: FLOATING ? 'float' : 'rest' }),
-    dispose() { root.traverse((m) => { if (m.isMesh && m.name !== 'contact-blob') m.geometry?.dispose?.() }); for (const L of live) L.blob?.material.dispose(); root.clear() },
+    // Prüfhilfe: Takt je Gruppe (Phase je Stück) und Höhe über Grund
+    sync: () => live.filter((L) => L.obj && L.here).map((L) => ({ key: L.key, group: L.group, rank: L.rank, phase: +(L.gPhase + L.rank * FLOAT.wave).toFixed(4), gap: +(L.obj.position.y - L.obj.userData.half - terrainH(L.x, L.z)).toFixed(3) })),
+    stats: () => ({ ...state, items: live.length, here: live.filter((L) => L.here).length, clearance: FLOATING ? clearance : -REST.sink, mode: FLOATING ? 'float' : 'rest', still: STILL, groups: ranks.size, lifted, liftK: +LIFT.uLiftK.value.toFixed(2), liftCol: '#' + LIFT.uLiftCol.value.getHexString() }),
+    dispose() { root.traverse((m) => { if (m.isMesh) m.geometry?.dispose?.() }); root.clear() },
   }
 }

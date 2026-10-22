@@ -52,6 +52,6 @@ process.exit(report('m1-ground', {
   partnerGrounded: r.partner != null && Math.abs(r.partner) <= TOL,
   treesNotFloating: P.orchard.n > 0 && P.orchard.max <= 2,
   lanternsNotFloating: P.lanterns.n > 0 && P.lanterns.max <= 2,
-  foundRestsOnGround: P.found.n > 0 && P.foundContact.n > 0 && P.foundContact.max <= 0.005 && P.foundContact.min >= -0.06, // V-654 C6: je Ecke gegen das Gelände darunter – nie schwebend, höchstens 6 cm eingesunken
+  foundHovers: P.found.n > 0 && P.found.min >= 6 && P.found.max <= 42, // Georg 22.10.: Fundsachen schweben ≈ 0,15 m (alte WS1-cm = cm ÷ 0,65: 4–27 cm; Unterkante über dem Gelände; Kippung/Hang eingerechnet), nie eingesunken
   noPageErrors: errs.length === 0,
 }, { ...r, errs: errs.slice(0, 3) }))

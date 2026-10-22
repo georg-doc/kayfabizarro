@@ -1,5 +1,5 @@
 // V-631 Fahrzeuge R1: alle 14 Dieselpunk-Racer im Spiel (look=terrain3, world=probe), Heldenfarbe, Front-Scheinwerfer über kfb-groundfx.
-// Aufruf: node test/vehicles-r1.mjs <teil>   (PW_GPU=1; sheet, clip und fps nur mit Test-Slot ~/kfb-ws1/bin/kfb-slot)
+// Aufruf: node test/vehicles-r1.mjs <teil>   (GPU ist Standard; sheet, clip, fps und vclay nur mit Test-Slot ~/kfb-ws1/bin/kfb-slot)
 //   data   Einzeltest: 14 Racer nacheinander per Wechsel (V-Taste-Weg setRacer) – Modell, Scheinwerfer, Räder, Heldenfarbe, Verformungsprofil,
 //          Ruckler beim Wechsel (längste Bildzeit, Long Tasks, neu übersetzte Shader), Scheinwerfer-Kosten je Bild.
 //   sheet  Kontaktbogen 14 × (Tag | Nacht) schräg von vorn, Scheinwerfer an → test/out/vehicles/sheet.png; dazu hang-night.png (Scheinwerfer nachts
@@ -11,6 +11,9 @@
 import fs from 'fs'
 import path from 'path'
 import { openPage, report } from './_page.mjs'
+// Ohne GPU rendert Chromium hier in Software (SwiftShader): hinter dem Vorhang lädt die Welt dann nicht in 240 s fertig (Lead 22.10., Zeile 186).
+// Dieser Test braucht die GPU immer; PW_GPU=0 erzwingt bewusst Software.
+if (process.env.PW_GPU == null) process.env.PW_GPU = '1'; else if (process.env.PW_GPU === '0') delete process.env.PW_GPU
 const sharp = (await import('sharp')).default
 const OUT = 'test/out/vehicles/'; fs.mkdirSync(OUT + 'shots', { recursive: true })
 const RIG = JSON.parse(fs.readFileSync('src/data/vehicles/kfb-vehicle-rig.r1.json', 'utf8')).vehicles
