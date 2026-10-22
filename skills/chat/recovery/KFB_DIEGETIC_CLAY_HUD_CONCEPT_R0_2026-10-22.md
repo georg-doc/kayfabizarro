@@ -85,3 +85,70 @@ For each alternative: draw **actual existing source-backed 3D silhouettes and re
 - **Next gate is now preimplementation visual composition**, not ready-for-Claude-Design integration: read earlier R4 §3.1/3.4/3.4b and image donors, verify source props in isolation, produce true-to-source A/B/C comparison of **composition first**, then a separate single-state sheet covering Hover / Active / Click / Hint / Cooldown before handoff.
 
 **Checks here:** textual Dropbox spec intake and 17-entry directory listing only; **0 isolated rendered donor objects, 0 full-resolution reference visual adjudications, 0 3D browser tests, 0 actual performance measurements, 0 site/stage publish.** Continue on existing PR #444 / same HUD owner; WB2 R4 STOP remains untouched.
+
+
+---
+
+## 8. 2026-10-22 · Flyout / overlay / target-navigation / travel-mode architecture R0.2
+
+**Status:** interaction architecture and layout evaluation **proposal**, not Claude Design build approval. Georg requests to reconsider *states and hierarchy before object form*. No position from the WS0 HUD_LAYOUT_R3 is locked. Annotations from §7 supersede preliminary positioning in §2/3. The radio is a **core equal-weight entry point** beside navigation and Almanac, not a tiny settings accessory.
+
+### 8.1 New recovered provenance and precedence
+
+Read original Dropbox `/CLAUDE/KFB_HUB/30_DECISIONS/replies/HUD_R4_DESIGN/BRIEF_CLAUDE_DESIGN_HUD_R4.md` (16 October, 10,256 bytes) as well as Dropbox `/CLAUDE/KFB Hud + UI/HUD_LAYOUT_R3.md` and `HUD_UX_STATES_R1.md`.
+
+- Original R4 §3.1: *world-mounted* arrow above player/vehicle + distant destination ring, mellow ~0.3s heading smoothing, upward/downward flight tilt, goal/distance, proximity moves toward green; actual source-backed candidate arrow D Kenney rounded and A Quaternius Arrow. Current Georg steering: move the persistent direction arrow **into the HUD navigation area**, not centre-of-world/above head; keep destination ring as a possible world-side arrival aid. Do not reintroduce old arrow placement merely because R4 had it.
+- Original R4 §3.4: six fixed story-mode Fluff pips and canonical colours, genuine unchanged card art; §3.4b suggested minimap top-right + seven-card fan directly below. Georg explicitly reopens this composition and sees Almanac **top-left as compelling**.
+- Original R4 allowed incidental wood/cardboard accents as one style variant; **current Georg update rejects the wooden-board look altogether**. Use source identity in original 3D props and accepted clay materials; do not resurrect wood as a UI substrate.
+- Current HUD Flight R3, K7, earlier J17 and HUD Rig are donors, not alternative system owners. In main, `kfb-hub/stage/stunt-world/hud-rig-v1/hud-rig-lab.mjs` provides historical lab `setNavigation({ active,type,bearing,distance })` (bearing/distance), but this is **not evidence** that the current WS1 game exposes authoritative vertical delta, goal priority or flight targeting. Integration must source those from the existing quest/POI/game-state owners rather than invent a parallel navigator.
+
+### 8.2 Interaction depth — one hierarchy across all props
+
+| Layer | Content | Opening / dismissal | Spatial treatment |
+| --- | --- | --- | --- |
+| L0 persistent tiny object | Active destination arrow + distance/up-down cue; Fluff stock; Almanac unopened mini-stack; Radio mini with Play/Stop/Pause toggle, Next and Sound quick control; available primary/secondary quick props; contextual hints | Remains while navigating, with mode-driven compactness. Keyboard/focus equivalent for every object. | Peripheral anchors, centre/character clear. No big translucent HUD background. |
+| L1 contextual state | Combat availability, cooldown, interaction, pickup, mode-specific speed/boost/altitude, new card notification | Appears only when its event/state exists; automatically reduces noise again | Overlay on or next to *the existing prop*, not a new panel system |
+| L2 flyout / expansion | Navigation **minimap + quest/POI target selection**, Radio **track + playlists + audio-bus controls**, Almanac **recent-card browse**, optional compact quick settings | Explicit click/tap/key; Esc/back/click-outside closes; default one L2 at a time, preserve local selection. Radio playback persists when its flyout closes. | Expansion constrained to calculated safe area and screen edge; expands **inward**; no clipping or collision with other anchors. A non-modal flyout leaves movement intact but should not steal keybinds unexpectedly. |
+| L3 common large overlay shell | Settings, existing 20-slot Bag, full Almanac/Deck/PDF viewer, full card moments when already part of game | Explicit entry, consistent close/back and focus return. Opening L3 closes L2; game input policy from existing runtime, no shadow-owner. | Same responsive usable size/safe bounds as existing Bag/Settings, near-full viewport with clay relief and correct source artwork. **One shared presentation family, not wood boards; no second inventory/cards/settings logic.** |
+
+**Rule:** small prop L0 is the entry point, large panel L3 is content. A real 3D object does not imply that a 20-slot inventory, a playlist catalogue or a readable PDF must be folded onto an impossible 3D surface. Use a clay material frame and authentic elements, preserve fixed targets and type legibility.
+
+### 8.3 Navigation split into three independent instruments
+
+**A · Persistent GOAL POINTER (primary)** — compact clay 3D arrow embedded in or adjacent to navigational object/housing, **always meaningful if objective exists**, orientation relative to current player's facing / camera with a documented frame choice. Numeric target distance and short title can be small adjacent labels. **Vertical relation**: arrow model visibly pitches upwards/downwards *and* adjacent ↑ / ↓ + optional signed height separation while flying or when vertical routing matters; don't use colour alone. Bearing smoothing / dead zone according to source R4 until user tests; near arrival cue and optional real-world target ring as own/world-side marker. Unavailable target: neutral navigator, not fictional quest.
+
+**Goal selection/priority truth:** current active quest/delivery destination from quest owner first; user-chosen POI or waypoint only when explicitly selected; contextual recommended POI fallback only if game owners define it. Manual change persists according to existing state; changing target updates pointer + minimap coherently. Distinguish direct-line distance from path distance; until path route exists show direct-line distance, never claim route distance.
+
+**Proximity colour**: movement toward target may shift from more urgent warm / contrasting far to green close following existing V-292/colour-source and current biome contrast; distances for bands are design candidates, not new quests. Keep numeric distance even when colour moves. Flight vertical delta is not encoded by distance tint; direction arrow and elevation cue are separate.
+
+**B · MINIMAP (secondary, open as needed)** — opened compass/map prop is an optional *spatial reveal* experiment, not mandatory layout coupling. Displays terrain/known navigation features, player, active destination, and select-target list/selector. Have a state for zero landmarks and large-map accessibility. Use existing world marker/goal APIs and J17 clay minimap stylistic donor. Map open may coexist with pointer, but pointer/target still readable on return; selection accessible on touch and keyboard.
+
+**C · SPEED/TRAVEL READOUT (situational, do not force round tachometer)** — independently sourced speed telemetry. Test thin clay vertical speed bar with small numeric speed below, versus a broad modest arc/ring attached to navigator. Use one semantics across drive/flight; mode supplies units, scaling, boost and bounds. Walk usually shows no speed gauge; drive shows speed and boost; fly shows speed and altitude/climb (+ energy/thrust only if gameplay truth requires); combat modifies action affordance, not travel physics. No fake readings. If compact pointer + speed ring compete, keep pointer clear and separate speed bar. The KayKit `compass_base` is a **candidate housing object**, not proof of optimal speed/map function.
+
+### 8.4 Cross-mode matrix (functional)
+
+| State | Persistent | Context / extra | L2/L3 remains accessible |
+| --- | --- | --- | --- |
+| Walk / explore | Goal arrow and distance, Almanac entry, six Fluff, Radio mini, collection/inventory, equipment if available | POI hint, context interaction, quest arrival | Mini-map + goal select; radio playlists/audio; Almanac; Bag/Settings |
+| Drive | Same anchors, plus **speed bar/numeric speed**; objective points in steering-relative direction | Boost/drift/impact response, arrival, usable equipment as current game allows | Same menus; safe driving-input and pointer interaction policy |
+| Fly | Same anchors, speed plus height/climb or vertical delta where meaningful | Altitude energy/thrust (only real systems), upward/downward destination cue | Same map and target selector; no center-screen HUD arrow |
+| Combat or encounter | Normal travel/navigation stays visible but visually secondary to actual usable Primary/Secondary, selection and cooldown states | Short hint pulse only on genuinely available weapon actions; no indiscriminate glow | Equipment, Bag/Settings optionally restricted by existing game logic; audio always accessible |
+| No objective / arrival | No fabricated bearing/colour/distance; neutral compass or last-known context if correctly labelled | Soft arrival confirmation and destination ring | Target chooser offers actual selectable targets |
+
+### 8.5 Physical flyout collision tests before designing shell
+
+Evaluate three layout alternatives from §7 on **all panel-open states**, at desktop 16:9 and mobile landscape/portrait, using true bounds for clickable areas and panel size:
+
+- Almanac top-left → expand **down/right**; leaves exact card ratio intact; full viewer uses L3.
+- Navigation top-right → open **left/down** (unless insufficient room); pointer remains readable while map/select is expanded; test hinge and an alternate non-hinged fold. Map-target list must not cover currently selected target nor primary click target.
+- Radio lower-right → flyout **up/left**; mini shows Play/Stop/Pause, Next, Sound button, compact title/track ticker; flyout adds queue, next tracks, playlist selection and volume/bus controls, all wired only to existing audio owner. Closed does not stop music. Track metadata is title-first; no mandatory artist for own productions. Sound control must govern **music, environment/ambience and character speech melody/voice separately** where routed; ChatterBox dialogue bubbles still work muted, audio mix/ducking authoritative elsewhere; distinguish game-owned dialogue concept from external TTS model. Avoid changing playlist/source automatically on travel-mode switching unless current owner says so.
+- Bag/Settings/full cards → one consistent near-full safe viewport L3 template with clay-shaped backing, reused 20 inventory slots, zero wooden panel textures, stable close button and scroll; cards preserve original illustration and landscape ratio; no duplicate data store.
+- Opening L3 dismisses existing flyout; moving between L2 entries dismisses prior L2, unless user explicitly chooses a pinned exception after demonstration. Loading/error states need nonblocking close. Flyouts respect notch/safe areas, scale, pointer/touch, contrast, reduced motion, keyboard/gamepad and popup focus rules.
+
+### 8.6 Visual candidate set to compare (not canonical layout)
+
+Produce same-source **three 16:9 composition keyframes** with L0 only, then **four overlay-pressure frames** (map target select, Radio expanded, Almanac browse, full Bag/Settings) for chosen candidates. A/B/C remain from §7; for each show horizontal action strip and separate interaction prop; don't invent fixed radio bottom-right if another composition tests better. Include one Drive+combat frame with cooldown/active/hint concurrently, plus Fly vertical navigation and speed gauge alternative bar vs round dial. On phone use responsive rearrangement rather than shrinking all 3D hit targets.
+
+Do **not** begin final Clay form/style/Claude Design until **layout × menu geometry × travel-mode matrix** is judged and Georg can select or tune. No test-only placeholder models masquerading as KFB donors. Actual 3D donor isolation, layout frames and physics/browser profiling still **NOT DONE** in this proposal.
+
+**One next gate:** recover authentic donor visuals (R4 reference folder + J17 + original action/radio/bag/compass), then produce an **A/B/C L0+L2/L3 reachability/occlusion comparison** with a proposed default navigation solution (persistent 3D target arrow, optional map, separate vertical speed bar), for Georg **A / B / C / TUNE / FAIL** before Claude Design.
