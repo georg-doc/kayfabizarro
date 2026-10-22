@@ -9429,6 +9429,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-663",
+   "date": "2026-10-22",
+   "area": "Audio",
+   "verdict": "SPEC",
+   "text": "Chatterbox Spec R2 (Georg 22.10. ja): replies/CHATTERBOX_SPEC_R2.md ist die maßgebliche Spec für Stimmen und Sprachmelodie: 8-Genom-Gerüst aus der Perplexity-Recherche (Voice, Language, Nature, Music, Emotion, Context, Social, Interaction) plus KFB-Schichten (Fluff-o-lect-Lexikon und Triplet statt erfundener Sprachen, Story-Mode als Welt-Tonart, vier Social Calls, Musikstile, Beziehung als Harmonie, Arendt-Modi, Viseme-Ausgabe), Klangfarben nach Wirkung, ElevenLabs-Grains immer ab 0,8 s erzeugen und lokal schneiden, Suno als Motiv-Farm, Casting im Sound-Studio (V-390), Engine aus der vorhandenen Melodie-Sprache. Recherche R1-R4 und Master-Konzept als Anhang replies/CHATTERBOX_RESEARCH/.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Gerüst aus der Recherche, gefüllt mit dem, was KFB schon hat und abgenommen ist.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9516,7 +9531,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1119",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1120",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
