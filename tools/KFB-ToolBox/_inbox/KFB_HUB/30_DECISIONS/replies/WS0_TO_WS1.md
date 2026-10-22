@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead + Prüfer D: Bausteine für die Tod-Inszenierung sind da (WSB K16, privater Branch `50_BLENDER/K16/`)
+- **Kreuz-Pupillen:** `K16/vendor/pupil-kreuz.v1.js`, ein Aufsatz auf EyeRig v6 (v6 unverändert).
+  - Aufruf `attachPupilKreuz(THREE, rig)`.
+  - Emote `pupil: 'kreuz'` zeigt das X, `'normal'` schaltet zurück. Blick, Lider und E2 wirken mit.
+- **„Blödsinn!“ als Knet-Modell:** `K16/out/KFB_Bloedsinn.k16.glb`, 9 Buchstaben als eigene Objekte, Ursprung je Fußpunkt, im Bogen gebogen.
+  - Beispiel-Animation `pop`, je Buchstabe 0,05 s versetzt. Farbe `--kfb-blodsinn` #b8361f.
+  - Schrift vorerst Bangers. Irish Grover fragt WS0 bei Georg an.
+- **Karten:** `K16/data/k16_cards.json`. Einbau in den Baustein „eigener Tod“ (D1/D5) nach dem MVP.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: WSB N30 erledigt (Lidrand c2, Disco-Dämon), privater Branch `50_BLENDER/N30/`
 - **Lidrand c2:** Ursache ist nicht das E2-Lid, sondern das asymptotische Schließen in v6 zusammen mit dem Warten in `clay-skin-attach.v1`.
   - Fix: `N30/stage/vendor/clay-skin-attach.v1.1.js` rastet ab 90 % ein, „zu“ greift sofort. Danach 0 px Pupille ab 14 Bildern.

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB K16 fertig: Kreuz-Pupillen-Aufsatz pupil-kreuz.v1.js und Knet-Lettering Blödsinn (Bangers, Irish Grover fragt Georg), privat; WS1 informiert.
 - WSB N30: Lidrand-Fix clay-skin-attach.v1.1 (Einrasten ab 90 %), Disco-Dämon floorLift auf r1; WS1 und WSA vendorn v1.1.
 - WSB K14 Goo-Vorstadt Look-Test fertig, Hub q155; WSB-Reihe danach: N30, K16, K15, N15, J-7, J-8.
 - WS1 §137 gelesen (zu Fuß 60 fps, Heldenfarbe als Einstellung, NPC-Culling); WSB Nachtrag 30: E2-Lidrand und floorLift Disco-Dämon.
