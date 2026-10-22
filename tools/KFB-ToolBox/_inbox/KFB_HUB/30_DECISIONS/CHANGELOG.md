@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSA Repo-privat-Umstellung R1 (Draft-PR #443): Teil-Kandidat, NICHT bereit; Leser und Decks laufen gegen gesperrte Hosts (283/283), offen: 249 Dateien mit Raw-Verweisen, private Tools ohne Server-Abruf, Plattform-Prüfungen; eine Georg-Frage zu öffentlichen Spiel-Slices.
 - WS1 §135/§136 gelesen (Leistung R1: Hauptbild im Budget, Wasser R1 und E3 Geschenk im MVP); V-643 FB-Ohren-Reduktion in der ToolBox (WSA).
 - V-642 Bewohner-Stimmen: Farmer B Akkordeon, Lorekeeper tiefe Klarinette, Satz resident_voices_r1 (16 Clips) entworfen bis Georg-Go.
 - V-641 Abnahme im Spiel: WS1-Lead baut ein Abnahme-Menü (Sprung + Auslöser je Punkt); Hub nur für noch nicht Eingebautes; q150/q151 ins Spiel verschoben.
