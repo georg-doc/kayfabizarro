@@ -1,5 +1,5 @@
 # Chatterbox Voice · Konzeptpapier R1.2 · 2026-10-22 · WS0
-> **R1.2:** Neu sind §15 Suno-Quellen-Pipeline, §16 Schauspiel-Prinzip und Voice-FX, §17 Arbeitsmodus nach Arendt, §18 Anti-Nerv-Regeln, §19 Recherche (Georg 22.10.).
+> **R1.2:** Neu sind §15 Suno-Quellen-Pipeline, §16 Schauspiel-Prinzip und Voice-FX, §17 Arbeitsmodus nach Arendt, §18 Anti-Nerv-Regeln, §19 Recherche, §20 Oper und Programmmusik als Vorbild (Georg 22.10.).
 > **R1.1:** Neu ist §14 „Dimensionen und Kombinatorik“ (Musikstil, Tempo, Dialekt aus Textur-Varianten, Beziehung als Harmonie und weitere Ebenen) nach Georgs Ideen vom 22.10. §13 ist entsprechend angepasst.
 **Status:** Konzept zur Diskussion mit Georg. Noch keine Erzeugung, keine Credits.
 **Bezüge:**
@@ -295,3 +295,14 @@ Diese Modi sind Situationen (Dimension 12). Sie geben jedem NPC beim Tun eine h�
 - **Kreaturen- bzw. Stimmen-Design im Film:** Ork-, Geister- und Dämonenstimmen (Effektketten).
 - **Suno:** Prompt-Muster für Solo-Passagen und Stem-Qualität je Instrument.
 - **Ausführung:** Web-Chat bzw. Perplexity als Recherche-Brief, Ergebnis an WS0.
+
+
+## 20 · Oper und Programmmusik als Vorbild (Georg 22.10.)
+- **Stimmfach statt Zufall:** Die Oper ordnet Charaktere festen Stimmtypen zu. Das ist genau unser Register mit Temperament (Dimension 2 und 4).
+  - Zauberflöte: Königin der Nacht = Koloratursopran (Furor, Spitzentöne); Sarastro = tiefer Bass (Weisheit, Ruhe); Papageno = Bariton mit Panflöte (Volksfigur, komisch, eigenes Instrument als Erkennungszeichen); Monostatos = schneller, gehetzter Bösewicht.
+  - **Übertragen:** Weise sind tief und langsam, Furien hoch und virtuos, Volksfiguren tragen ein eigenes kleines Instrument.
+- **Peter und der Wolf (Prokofjew):** Jede Figur ist ein Instrument (Vogel Flöte, Ente Oboe, Katze Klarinette, Großvater Fagott, Wolf Hörner, Peter Streicher). Das ist das direkteste Vorbild für unsere Familien = Darsteller, und es beweist, dass Kinder und Laien Figuren am Instrument erkennen.
+- **Leitmotiv (Wagner, Filmmusik):** Jede wichtige Figur, Fraktion und jeder Ort bekommt ein kurzes Motiv, das wiederkehrt und sich mit der Lage verwandelt (Dur bzw. Moll, Tempo). Bei uns ist das das Signatur-Ornament plus die Lexikon-Motive. Leitmotive dürfen auch im Soundbed auftauchen, wenn die Figur nah ist.
+- **Ensemble-Nummern:** Duett, Terzett und Finale, in denen Stimmen gegeneinander und miteinander singen. Das ist das Vorbild für Beziehung als Harmonie (Dimension 10) und für Gruppen-Szenen (Markt, Disco, Ork-Band).
+- **Rezitativ und Arie:** Erzählendes Sprechen (Rezitativ: schnell, wenig Melodie, nah am Sprechrhythmus) wechselt mit Gefühls-Momenten (Arie: Melodie, Ornament). Bei uns sind das normale Zeilen auf L1 und Emotions- bzw. Höhepunkt-Momente mit L2 und Ornament. Das hält auch lange Reden angenehm (§18).
+- **In die Recherche (§19)** kommen dazu: Zauberflöte, Peter und der Wolf, Leitmotiv-Technik, Rezitativ und Arie.
