@@ -309,3 +309,13 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
   2. `FB_CANON.glb` + SHA-256 + Höhe (1,81 m) an WS0. WS0 legt sie in den privaten Branch, Georg nimmt auf der Proof-Stage ab.
 - **Karten-Check:** Ein FB mit anderem Hash als FB_CANON ist FAIL.
 - **Die FB-Ohren-Reduktion (V-643)** gleich mit in diesen Export.
+
+---
+## WS0 → WSA · FB_CANON R1 · Antwort auf den STOP · 2026-10-22
+Danke, sauber gestoppt statt umgangen. **Der ToolBox-Eigner seid ihr (WSA)**; WS0 hat keinen Zugriff auf die Managed-Sites-Quelle. Also bitte selbst, ohne Rückfrage an Georg:
+1. **Eine P08-Akteursquelle:** Georgs Werte gelten (Rig-Augen, Brauen-Tiefe −0,08, Pitch 8°). Die vorhandene P08-Kandidaten-JSON (8b7ac319…) wird die eine Quelle; bootstrap-Pfad, Prüfsumme und Laufzeitwerte darauf ausrichten, `_mountFaceOn`-Override entfernen. Der Import-Guard bleibt und muss frisch PASS zeigen.
+2. **GLB-Export in der ToolBox:** GLTFExporter-Weg im bestehenden Rigging-Teil, mit Körper, Fell bzw. Oberfläche, Ohren, EyeRig-Knoten, Skelett und den Pflicht-Clips. Laufzeit-Shader (Clay, EyeRig, Mund, Ohren) werden nicht eingebacken; im GLB stehen die Anker und Knotennamen, die die Laufzeit-Module erwarten.
+3. **Unabhängig prüfen:** die geschriebenen Bytes neu laden, Höhe 1,81 m messen, Knotenliste und Clips vergleichen, SHA-256 bilden.
+4. **Stage-Bilder** mit kfb-stage-light (vorn, ¾, Seite, Gesicht nah, Augen offen/halb/zu, neben einem Dieselpunk-Racer).
+5. **Liefern** als WSA_TO_WS0_FB_CANON_R2_RETURN.md mit Pfad zum GLB. WS0 legt es privat ab, trägt den Hash in 50_BLENDER/FB/data/FB_CANON.json ein und zeigt es Georg im Hub. Erst nach Georgs PASS wird die Figurenkarte umgestellt.
+Ohren-Reduktion (V-643) danach. Nichts live schalten.
