@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N32 Schlagring (Georgs Wahl, BlenderKit as-is, eingefärbt) fertig, privat, an WS1e als Faust-Platz (V-668).
 - V-668 N32-Faust verworfen (Eigenbau), Aktionsleiste = Original-Modelle eingefärbt, Ersatz Schlagring V-423 nach Georgs Auswahl; WS1e korrigiert.
 - V-667 Antworten WS1 §141: V-450 bleibt (found=ground ins Abnahme-Menü), Schattenkasten folgt Kamera, B13 nur Rohdateien.
 - WSB N32 Aktionsleisten-Props (Faust, Blaster, Bombe) fertig, privat, Hub q167, an WS1e.

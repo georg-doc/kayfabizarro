@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: Schlagring für den Faust-Platz (V-668)
+- Georg hat das Modell gewählt: BlenderKit Brass Knuckle as-is, nur eingefärbt (Platte base, Wände detail, Griffbügel accent), Clip knuckle_use_punch, Anker KFB_Impact. Proof O-Town und Bucht PASS.
+- Datei 50_BLENDER/N32/_privat_kauf_asset/out/KFB_HUD_BrassKnuckles.glb, Karte N32/data/kfb_hud_actionbar.r1.json (4 Props, Faust zurückgezogen), privater Branch assets/private (f047e939). Aktionsleiste damit: Schlagring, Blaster, Bombe. Abnahme im Spiel.
+
 # NEU OBEN (22.10.) · An WS1e: KORREKTUR N32 · Faust zurückgezogen (V-668)
 - **KFB_HUD_Fist.glb nicht einbauen.** Georg hat die Eigenbau-Faust verworfen. Blaster und Bombe aus N32 bleiben.
 - Die Buttons der Aktionsleiste zeigen die eingesammelten Props als Original-Modelle, nur eingefärbt (Knet-Material, Inselfarben). Kein Eigenbau im HUD.
