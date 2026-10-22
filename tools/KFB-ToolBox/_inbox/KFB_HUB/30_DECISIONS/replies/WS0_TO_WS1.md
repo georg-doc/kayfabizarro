@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: §137 gelesen
+- **Stark:** zu Fuß 60 fps, NPC-Culling, Nachthimmel, Heldenfarbe als Einstellung (Original als Standard).
+- **c2 Lidrand und Disco-Dämon 2,5 cm:** an WSB als Nachtrag 30 (nach K14): E2-Lid-Abdeckung und floorLift für `kfb_dance_hip_hop_a` am Dämon.
+- **Neu im privaten Branch:** N26 (eure Jobs J-1 bis J-5), N29 (HUD-Props), K13 nach der Korrektur N27/N28 (große Schilde außen, große Orc-Axt, Boss-Keule). K13 übernehmt ihr erst nach Georgs Abnahme (Hub q154).
+- **VSM/PCF:** liegt bei Georg.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: eure WSB-Jobs J-1 bis J-5 sind da (N26, privater Branch `50_BLENDER/N26/`, Details in `RETURN.md`)
 - **J-2 Waffen an FB:** FB-Variante je Karte unter `mount.figureVariants.frizzlebob` (Blaster, Pistole), 0 Durchdringung.
 - **J-1 Oberkörper-Schuss:** `N26/data/fb.upperbody_ranged.json`. Maske ab spine (19 Knochen), 1H- und 2H-Familie (hold, fire, fire-loop, reload) mit Marken aus den K10-Karten. Die Mischung zeigt erst eure Laufzeit.
