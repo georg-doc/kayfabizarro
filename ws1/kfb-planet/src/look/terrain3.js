@@ -8,6 +8,10 @@ import CFG from '../data/looks/kfb-terrain3.r1.json' with { type: 'json' }
 export const TERRAIN3_CFG = CFG
 export const isTerrain3 = (hash = typeof location !== 'undefined' ? location.hash : '') => /(^|[#,])look=terrain3(,|$)/.test(hash)
 const ROLES = ['water', 'sand', 'low', 'mid', 'high', 'peak', 'cliff']
+// Ruhefläche (Kritiker MVP R1 C3, WS0 V-654 = Kanon Gebiet 2 / V-566 70/20/10): Boden darf Textur haben, aber nicht um Aufmerksamkeit konkurrieren –
+// Fließfarben im Kontrast (−40 %) und in der Sättigung (−35 %) zum Palettenmittel gedämpft, in der Ferne (60–160 m) Bänder zum Mischton (gegen Moiré).
+// Hash calm=0 = ungedämpft wie die Probe (Vergleich für Georg), calm=0.5 halb.
+export const T3_CALM = (() => { const m = /(^|[#,])calm=([\d.]+)/.exec(typeof location !== 'undefined' ? location.hash : ''); return m ? Math.min(1, Math.max(0, +m[2])) : 1 })()
 export const NOISE_GLSL = `
   vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
   vec2 mod289(vec2 x){return x-floor(x*(1.0/289.0))*289.0;}
@@ -108,7 +112,7 @@ export function applyTerrain3(mat, { palette = CFG.palette, paletteB = CFG.palet
   const A = CFG.palettes[palette] || CFG.palettes.mesa, B = CFG.palettes[paletteB] || CFG.palettes.moos
   const U = { uSeed: { value: new THREE.Vector2(0, 0) }, uScale: { value: 180 }, uMix: { value: mix ? 1 : 0 }, uTimeT: { value: 0 }, uFlow: { value: CFG.flow.speed }, uBands: { value: CFG.flow.bands }, uFlowDown: { value: CFG.flow.downhill ? 1 : 0 },
     uT3H: { value: new THREE.Vector2(hMin, hMax) }, uT3S: { value: CFG.flow.scale ?? 2.5 }, uT3Shadow: { value: new THREE.Color(A.cliff).lerp(new THREE.Color('#5a6f9a'), 0.45).multiplyScalar(0.7) },   /* kühler Palettenschatten, nur leicht beigemischt (kein Rotsaum am Rand) */
-    uT3Toon: { value: new THREE.Vector2(0.3, 0.7) }, uT3Mix: { value: 0.18 }, uT3Keep: { value: 0.78 } }
+    uT3Toon: { value: new THREE.Vector2(0.3, 0.7) }, uT3Mix: { value: 0.18 }, uT3Keep: { value: 0.78 }, uT3Calm: { value: T3_CALM } }
   for (const r of ROLES) { U['uA_' + r] = { value: new THREE.Color(A[r]) }; U['uB_' + r] = { value: new THREE.Color(B[r]) } }
   if (water) Object.assign(U, { uGround: water.uniforms.uGround, uGroundO: water.uniforms.uGroundO, uRiv: water.uniforms.uRiv, uRivO: water.uniforms.uRivO, uT3Sea: { value: water.seaY ?? -1e6 }, uT3WTime: water.uniforms.uTimeR, uT3UK: water.uniforms.uUnderK, uT3WOn: { value: water.seaY == null ? 0 : 1 } })
   const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey
@@ -117,9 +121,12 @@ export function applyTerrain3(mat, { palette = CFG.palette, paletteB = CFG.palet
     Object.assign(sh.uniforms, U)
     sh.vertexShader = 'varying vec3 vT3W;\n' + sh.vertexShader.replace('#include <project_vertex>', `#include <project_vertex>
   vT3W = (modelMatrix * vec4(transformed, 1.0)).xyz;`)
-    sh.fragmentShader = 'varying vec3 vT3W;\n' + NOISE_GLSL + '\n' + FLOW_GLSL + '\n' + (water ? SHORE_PARS + '\n' : '') + sh.fragmentShader
+    sh.fragmentShader = 'varying vec3 vT3W;\nuniform float uT3Calm;\n' + NOISE_GLSL + '\n' + FLOW_GLSL + '\n' + (water ? SHORE_PARS + '\n' : '') + sh.fragmentShader
       .replace('#include <color_fragment>', `#include <color_fragment>
-  diffuseColor.rgb = flowBands(vT3W.xz * uT3S, clamp((vT3W.y - uT3H.x) / max(1e-3, uT3H.y - uT3H.x), 0.0, 1.0));${water ? SHORE_MAIN : ''}`)
+  diffuseColor.rgb = flowBands(vT3W.xz * uT3S, clamp((vT3W.y - uT3H.x) / max(1e-3, uT3H.y - uT3H.x), 0.0, 1.0));
+  if (uT3Calm > 0.0) { vec3 t3m = mix(mix(uA_low, uA_mid, 0.5), uA_sand, 0.3); float t3L = dot(diffuseColor.rgb, vec3(0.2126, 0.7152, 0.0722));
+    diffuseColor.rgb = mix(vec3(t3L), diffuseColor.rgb, 1.0 - 0.35 * uT3Calm); diffuseColor.rgb = mix(t3m, diffuseColor.rgb, 1.0 - 0.4 * uT3Calm);
+    diffuseColor.rgb = mix(diffuseColor.rgb, mix(t3m, diffuseColor.rgb, 0.45), uT3Calm * smoothstep(60.0, 160.0, length(vT3W - cameraPosition))); }${water ? SHORE_MAIN : ''}`)
       .replace('#include <lights_fragment_begin>', `#include <lights_fragment_begin>
   float t3V = 1.0;
   #if defined( USE_SHADOWMAP ) && NUM_DIR_LIGHT_SHADOWS > 0

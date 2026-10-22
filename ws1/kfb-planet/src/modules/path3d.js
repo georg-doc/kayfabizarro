@@ -9,7 +9,9 @@ export function createPath3d({ path, terrainH, color = '#cdb48c', shade = null }
   const n = Math.max(8, Math.ceil(curve.getLength() / 0.4)), P = curve.getSpacedPoints(n), pos = [], idx = []
   for (let i = 0; i <= n; i++) {
     const a = P[Math.max(0, i - 1)], b = P[Math.min(n, i + 1)], dx = b.x - a.x, dz = b.z - a.z, l = Math.hypot(dx, dz) || 1, nx = -dz / l, nz = dx / l
-    for (const [s, dy] of [[-1, -0.03], [-0.8, 0.004], [0.8, 0.004], [1, -0.03]]) { const x = P[i].x + nx * path.halfW * s, z = P[i].z + nz * path.halfW * s; pos.push(x, terrainH(x, z) + dy, z) }   // Kanten sinken ein: Schnitt statt Flimmern am Rand; Mitte auf Bodenhöhe (+4 mm, Tiefenversatz gewinnt), sonst steckt die Ferse im Weg (Georg 21.10.)
+    /* runde Kappen an beiden Enden (Kritiker MVP R1 C2: „Start auf beiger Rechteck-Platte mit geraden Kanten“) – Breite über 1,4·halfW elliptisch auf ≈ 0 */
+    const sL = (i / n) * curve.getLength(), capL = 1.4 * path.halfW, u = Math.min(sL, curve.getLength() - sL) / capL, cap = u >= 1 ? 1 : Math.max(0.04, Math.sqrt(1 - (1 - u) * (1 - u))), hw = path.halfW * cap
+    for (const [s, dy] of [[-1, -0.03], [-0.8, 0.004], [0.8, 0.004], [1, -0.03]]) { const x = P[i].x + nx * hw * s, z = P[i].z + nz * hw * s; pos.push(x, terrainH(x, z) + dy, z) }   // Kanten sinken ein: Schnitt statt Flimmern am Rand; Mitte auf Bodenhöhe (+4 mm, Tiefenversatz gewinnt), sonst steckt die Ferse im Weg (Georg 21.10.)
     if (i < n) { const k = i * 4; for (let c = 0; c < 3; c++) idx.push(k + c, k + c + 1, k + c + 4, k + c + 1, k + c + 5, k + c + 4) }
   }
   const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setIndex(idx); geo.computeVertexNormals()

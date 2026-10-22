@@ -5,16 +5,38 @@ import path from 'path'
 import { chromium } from 'playwright'
 const sharp = (await import('sharp')).default
 const OUT = process.env.OUT || path.resolve(process.env.HOME, 'kfb-ws1/research/audits/mvp-r1-critic/bilder'); fs.mkdirSync(OUT, { recursive: true })
-const BASE = 'file://' + path.resolve('dist/index.html') + '#m1,debug,harvest,look=terrain3,world=probe'
+const BASE = 'file://' + path.resolve('dist/index.html') + '#m1,debug,clean,harvest,look=terrain3,world=probe'
 const b = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'] })
 const ready = (p) => p.waitForFunction(() => window.__kfbM1?.status?.().player?.status === 'OK', null, { timeout: 300000 }).catch(() => {})
 async function open(extra) { const p = await b.newPage({ viewport: { width: 1440, height: 900 } }); await p.goto(BASE + extra); await ready(p); await p.waitForTimeout(4000); return p }
 const cam = (p, az, polar, d) => p.evaluate(([az, polar, d]) => { const c = window.__kfbM1.player().camera(); c.rotateTo?.(az, polar, false); if (d) c.dollyTo?.(d, false) }, [az, polar, d])
 const shot = async (p, n) => { const f = `${OUT}/${n}.png`; await p.screenshot({ path: f }); return f }
+
+// eigene Kamera rendern (Übersicht/Fuß/Seite/Silhouette): Szene in ein Render-Ziel, Pixel zurück, PNG über sharp (Y gespiegelt)
+async function camShot(p, name, { from, at, fov = 40, silhouette = false }) {
+  const W = 1440, Hh = 900
+  const raw = await p.evaluate(({ from, at, fov, silhouette, W, Hh }) => {
+    const M = window.__kfbM1, gl = M.renderer(), scene = M.scene(), T = M.three()
+    const f = M.feet(), P = (v) => [f[0] + v[0], (M.terrainH(f[0] + v[0], f[2] + v[2]) ?? 0) + v[1], f[2] + v[2]]
+    const c = new T.PerspectiveCamera(fov, W / Hh, 0.1, 2000), a = P(from), b = P(at); c.position.set(...a); c.lookAt(...b); c.updateMatrixWorld()
+    const rt = new T.WebGLRenderTarget(W, Hh, { samples: 4 }), buf = new Uint8Array(W * Hh * 4)
+    const bg = scene.background, fog = scene.fog, ov = scene.overrideMaterial
+    if (silhouette) { scene.background = new T.Color('#9a9a9a'); scene.fog = null; scene.overrideMaterial = new T.MeshBasicMaterial({ color: 0x000000 }) }
+    gl.setRenderTarget(rt); gl.render(scene, c); gl.readRenderTargetPixels(rt, 0, 0, W, Hh, buf); gl.setRenderTarget(null)
+    scene.background = bg; scene.fog = fog; scene.overrideMaterial = ov; rt.dispose()
+    let s = ''; for (let i = 0; i < buf.length; i += 8192) s += String.fromCharCode.apply(null, buf.subarray(i, i + 8192)); return btoa(s)
+  }, { from, at, fov, silhouette, W, Hh })
+  const f = `${OUT}/${name}.png`; await sharp(Buffer.from(raw, 'base64'), { raw: { width: W, height: Hh, channels: 4 } }).flip().png().toFile(f); return f
+}
 const log = []
 // 1 Spawn bei Tag (Spielkamera), 2 Übersicht schräg ~35°, 3 Nacht
 { const p = await open(''); log.push(await shot(p, '01-spawn-tag-spielkamera'))
-  await cam(p, Math.PI * 0.85, Math.PI * 0.31, 38); await p.waitForTimeout(1500); log.push(await shot(p, '02-uebersicht-35grad')); await p.close() }
+  log.push(await camShot(p, '02-kamera1-uebersicht-35grad', { from: [-30, 28, -30], at: [0, 0, 8] }))
+  log.push(await camShot(p, '02b-kamera4-seite-rand', { from: [-60, 4, 20], at: [0, 2, 20], fov: 35 }))
+  log.push(await camShot(p, '02c-pass-silhouette', { from: [0, 1.6, -7], at: [0, 1, 8], silhouette: true }))
+  const tree = await p.evaluate(() => { const t = window.__kfbM1.mods?.orchard?.trees?.()[0]; const f = window.__kfbM1.feet(); return t ? [t.pos[0] - f[0], t.pos[2] - f[2]] : null })
+  if (tree) log.push(await camShot(p, '02d-kamera3-fuss-baum', { from: [tree[0] + 2.2, 0.9, tree[1] + 2.2], at: [tree[0], 0.3, tree[1]], fov: 45 }))
+  await p.close() }
 { const p = await open(',tod=gold'); log.push(await shot(p, '03-spawn-gold')); await p.close() }
 { const p = await open(',tod=night'); log.push(await shot(p, '04-spawn-nacht')); await p.close() }
 // 5 Bewohner/Band/Patrouille: Spieler an die Band

@@ -16,7 +16,7 @@ import { useKeyboardControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { EcctrlVehicle, ShapeCastWheel } from 'ecctrl/vehicle'
 import { useHostKeys } from '../hostKeys'
-import { expose, DEBUG } from '../debug'
+import { expose, DEBUG, DEVUI } from '../debug'
 import { M1INPUT, ELAN_MEM } from '../m1/M1Player'
 import { isFence, inRankFence } from '../m1/m1Host'
 import { STEP, interpTrack, M1INTERP, M1CLOCK } from '../m1/m1Clock'
@@ -102,7 +102,7 @@ if (/(^|[#,])assist=off(,|$)/.test(H)) ASSIST_M3.on = false
 export const M2EVENTS = { subs: new Map(), on(type, fn) { const l = this.subs.get(type) || new Set(); l.add(fn); this.subs.set(type, l); return () => l.delete(fn) }, emit(e) { this.subs.get(e.type)?.forEach((fn) => fn(e)); this.subs.get('*')?.forEach((fn) => fn(e)) } }
 export const M2STATE = { kind: /car=ecctrl/.test(H) ? 'ecctrl' : 'k2b', // Start mit B (Georgs Tendenz 16.10.), A per C als Gegenprobe
   resets: 0, switches: 0, rightStarts: 0, racerSwaps: 0, model: 'LOADING' }
-// Label nach V-367 („Fahrsystem: K2B | ecctrl“, Abnahmepunkt; weg erst beim M2-Merge mit Georgs Zustimmung): aktives System kräftig, das andere blass
+// Label nach V-367 („Fahrsystem: K2B | ecctrl“, Abnahmepunkt; Georg 22.10.: weg für Spieler, nur noch im Testmodus): aktives System kräftig, das andere blass
 const LABEL = (kind) => ['k2b', 'ecctrl'].map((k) => `<span style="opacity:${k === kind ? 1 : 0.35}">${k === 'k2b' ? 'K2B' : 'ecctrl'}</span>`).join(' | ')
 // Fahr-Tasten im Info-Symbol (V-347 (4)), unter der M1-Liste; ecctrl ist eingefroren (V-367), Drift und Wendehilfe nur in K2B
 const CAR_KEYS = '<b>Auto</b> (V · nächster Racer, Umschalt+V · voriger)<br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>im Sprung Leertaste + A/D · Fassrolle &nbsp;·&nbsp; X + A/D · auf zwei Rädern (ab 6 m/s, mit Fahrhilfe)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
@@ -242,7 +242,7 @@ function useKindLabel(kind, assist, racer) {
   useEffect(() => {
     if (typeof document === 'undefined') return
     const el = document.createElement('div'); el.id = 'm2-kind'
-    el.style.cssText = "position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:6;padding:8px 18px;border-radius:12px;background:rgba(255,250,240,.82);color:#1f1a14;font:700 22px/1.2 'Shantell Sans',system-ui,sans-serif;box-shadow:0 3px 8px rgba(42,26,12,.25);pointer-events:none;white-space:nowrap;transition:transform .25s,background .25s"
+    el.style.cssText = "position:fixed;left:50%;top:" + (DEVUI ? 14 : 88) + "px;transform:translateX(-50%);z-index:6;padding:8px 18px;border-radius:12px;background:rgba(255,250,240,.82);color:#1f1a14;font:700 22px/1.2 'Shantell Sans',system-ui,sans-serif;box-shadow:0 3px 8px rgba(42,26,12,.25);pointer-events:none;white-space:nowrap;transition:transform .25s,background .25s"
     document.body.appendChild(el); return () => { el.remove(); document.getElementById('m2-keys')?.remove() }
   }, [])
   useEffect(() => {
@@ -250,6 +250,8 @@ function useKindLabel(kind, assist, racer) {
     // M3 Fühlprobe (V-379): „Fahrsystem: K2B · Assist M3 an/aus“ – M schaltet die Fahrhilfe (Vergleich mit dem Stand vorher), C wechselt das System
     el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ` <span style="font-weight:400;font-size:15px">· M Assist · C wechselt · V Racer: ${M2CAR.name.replace(/^\d+\s/, '')}</span>`
     const list = document.getElementById('m1-keys'); if (list && !document.getElementById('m2-keys')) { const c = document.createElement('div'); c.id = 'm2-keys'; c.style.marginTop = '6px'; c.innerHTML = RACER_FLY ? CAR_KEYS + RACER_KEYS : CAR_KEYS; list.appendChild(c) }
+    /* Georg 22.10. (V-367 freigegeben): Abnahme-Text „Fahrsystem … Assist …“ nur im Testmodus (debug); Spieler sehen kurz den Racer-Namen unter der Holzleiste */
+    if (!DEVUI) { el.textContent = M2CAR.name.replace(/^\d+\s/, ''); el.style.opacity = '1'; el.style.transition = 'opacity .6s'; const tf = setTimeout(() => { el.style.opacity = '0' }, 2600); return () => clearTimeout(tf) }
     el.style.background = 'rgba(255,214,120,.95)'; el.style.transform = 'translateX(-50%) scale(1.12)'
     const t = setTimeout(() => { el.style.background = 'rgba(255,250,240,.82)'; el.style.transform = 'translateX(-50%) scale(1)' }, 900)
     return () => clearTimeout(t)

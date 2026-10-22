@@ -38,7 +38,7 @@ export const K10_WEAPONS = Object.freeze([
 ])
 // range/cone = Schuss des Obstgartens (ORCHARD.shotRange 26 m, Kegel 0,75); speed wie dessen Projektil (34 m/s, Ton-Laufzeit in kfbAudio). Größen in Welt-Metern (J17):
 // Geschoss 4 cm Radius × 2,4 lang, Knet-Treffer 0,16 m, Puff 0,2 m mit Wort 1,2 m über dem Boden (Skelett ≈ 1,2 m hoch)
-export const COMBAT = Object.freeze({ range: 26, cone: 0.75, speed: 34, projR: 0.04, projLen: 2.4, cap: 12, fade: 0.08, hitStrength: 0.7, knetSize: 0.16, popSize: 0.2, popTop: 1.1, popY: 0.1, maxEvents: 64 })
+export const COMBAT = Object.freeze({ range: 26, cone: 0.75, speed: 34, projR: 0.04, projLen: 2.4, cap: 12, fade: 0.08, hitStrength: 0.7, knetSize: 0.32 /* Kritiker MVP R1 C7: 0,16 m war aus der Spielkamera unsichtbar */, popSize: 0.2, popTop: 1.1, popY: 0.1, maxEvents: 64 })
 export const combatLog = { create: 0, update: 0, dispose: 0 }
 
 const sha256 = async (buf) => (globalThis.crypto?.subtle ? Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buf)), (n) => n.toString(16).padStart(2, '0')).join('') : null)

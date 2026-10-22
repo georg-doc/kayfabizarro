@@ -4,7 +4,7 @@ import path from 'path'
 import { report } from './_page.mjs'
 const SRC = 'src'
 const files = []
-const walk = (d) => { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); if (fs.statSync(p).isDirectory()) { if (f !== 'vendor' && f !== 'data' && f !== 'assets') walk(p) } else if (/\.(js|jsx|mjs)$/.test(f)) files.push(p) } }
+const walk = (d) => { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); if (fs.statSync(p).isDirectory()) { if (f !== 'vendor' && f !== 'data' && f !== 'assets' && f !== 'private') walk(p) /* private = Symlink auf private-assets (WSB-Werkzeuge, kein Spielcode) */ } else if (/\.(js|jsx|mjs)$/.test(f)) files.push(p) } }
 walk(SRC)
 const read = (p) => fs.readFileSync(p, 'utf8')
 // Module = Dateien, die create…(options) -> { object3d, update, dispose } liefern

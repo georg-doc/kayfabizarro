@@ -143,7 +143,7 @@ export function createDiscoLife(options) {
       _d.set(Math.cos(a) * Math.sin(tilt), -Math.cos(tilt), Math.sin(a) * Math.sin(tilt)).normalize(); _o.copy(_bw).addScaledVector(_d, 1.2 * s)
       const len = Math.max(0.5, (_o.y - floorY) / Math.max(0.05, -_d.y)) + 0.6 * s, b = S.beams[i]
       GFX.aimBeam(b, _o, _d, len); b.material.uniforms.uFade.value = Math.max(0.6, 1 - (2.2 * s) / len); b.visible = true
-      list.push({ form: 'cone', origin: _o.clone(), dir: _d.clone(), angle: DISCO.beamAngle, soft: 0.45, color: DISCO.pal[i], intensity: DISCO.poolIntensity, range: DISCO.rangeU * s })
+      list.push({ form: 'cone', origin: _o.clone(), dir: _d.clone(), angle: DISCO.beamAngle, soft: 0.85, /* Kritiker MVP R1 C8: Flecken wirkten wie aufgemalte Ellipsen – weicher Rand, Licht statt Scheibe */ color: DISCO.pal[i], intensity: DISCO.poolIntensity, range: DISCO.rangeU * s })
     }
     CH.set(list); S.lightsOn = true
   }

@@ -50,7 +50,7 @@ import { getReader, isPoolReady } from '../dialogText'
 import { useGame } from '../store'
 import { DECKS, cardAt, cardsOfDeck } from '../cards'
 import { useHostKeys, PRIO, ACTION_KEYS } from '../hostKeys'
-import { expose, DEBUG } from '../debug'
+import { expose, DEBUG, DEVUI } from '../debug'
 import { GFX, gfxChannel } from '../look/groundFx.js' // V-632: Boden-Lichteffekte (Kegel, Pfütze, Ring) über kfb-groundfx; löst die Einhängung des Lichtpfützen-Kits V-572 ab
 import clipsGeneral from '../assets/actors/Rig_Medium_General.glb?url'
 import clipsMove from '../assets/actors/Rig_Medium_MovementBasic.glb?url'
@@ -244,7 +244,7 @@ function Orchard() {
   // Waffen in den Rucksack, sobald das Kampfmodul sie geladen hat (ohne src/private: keine Einträge, Status „keine Waffen“); Startwaffe aus weapon=
   const bagDone = useRef(false)
   useFrame(() => { const C = mods.combat; if (bagDone.current || !C || !hud.current || !M1GL.gl || C.status().status === 'LOADING') return; bagDone.current = true
-    const list = C.weapons().filter((w) => w.status === 'OK').map((w) => ({ wid: w.id, id: 'k10.' + w.id, n: w.name, k: 'Waffe · K10', icon: 'blaster', note: w.note, shot: C.thumbnail(w.id, M1GL.gl) })) // Bild = Original-Modell
+    const list = C.weapons().filter((w) => w.status === 'OK').map((w) => ({ wid: w.id, id: 'k10.' + w.id, n: w.name, k: DEVUI ? 'Waffe · K10' : 'Waffe', icon: 'blaster', note: DEVUI ? w.note : 'Einzelschuss', /* Georg 22.10.: keine Entwicklertexte im Spielbild */ shot: C.thumbnail(w.id, M1GL.gl) })) // Bild = Original-Modell
     hud.current.setWeapons?.(list); HARVEST_STATE.bagWeapons = list.map((w) => w.wid); if (WEAPON0 && list.some((w) => w.wid === WEAPON0)) equip(WEAPON0) })
   const lanterns = useMemo(() => ({ items: lanternsAlongPath(DEMO_PATH, { n: 8, terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z) }), renderer: () => M1GL.gl, mood: () => moodAt(TODV, MOOD_SET), ground: BIOME.top }), [])
   const pract = useMemo(() => ({ practicals: () => (mods.lanterns?.practicals() || []).map((p) => ({ ...p, intensity: 1, halo: { size: 0.001 } })), weight: () => moodAt(TODV, MOOD_SET).glow ?? 0 }), []) // Leuchthof bringt kfb-gem selbst mit
@@ -297,7 +297,7 @@ const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Ob
 const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MOOD_SETS[LSET] || undefined, TODV = parseTod(hash)
 const fitTarget = () => { const cp = M2_ON ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
   const p = worldPosOf(mods.player); return p ? { p, half: 0.6 * K, h: 2.79 * K } : null }
-const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : []), figureLight: { distance: 4.6 * K, up: 2.6 * K },
+const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : TODV <= 0.25 && mods.player ? [mods.player] : []), /* Kritiker MVP R1 C4: nachts trägt FB das warme Figurenlicht des Rigs (sonst kaum lesbar) */ figureLight: { distance: 4.6 * K, up: 2.6 * K },
   fit: () => { const t = fitTarget(), M = moodAt(TODV, MOOD_SET); if (!t) return { center: { x: 0, y: 0, z: 0 }, radius: 12 * K }
     // #439 (WS1b-Diagnose): Kasten mind. 16 m, damit Bäume neben der Figur werfen; Sonne um Kronenhöhe ÷ sin(Sonnenhöhe) + Rand zurück (Nah-Ebene schneidet keine Krone)
     const e = Math.max(8, M.elev) * Math.PI / 180; return { center: { x: t.p.x, y: t.p.y, z: t.p.z }, radius: Math.max(t.half + shadowLength(M.elev) * t.h + 1 * K, 16 * K), margin: (14 * K) / Math.sin(e) + 4 * K } },
