@@ -111,13 +111,13 @@ const checks = {}, extra = {}
   checks.cleanForcesOff = !/Fahrsystem/.test(lab)
   await browser.close()
 }
-// 4 · Holz-HUD unverändert (Standard ohne hud=, und hud=wood)
+// 4 · Standard ohne hud= = Knet-HUD (Georg 22.10.), hud=wood = Holz-HUD unverändert
 for (const h of ['#m1,debug,harvest,look=terrain3', '#m1,debug,harvest,look=terrain3,hud=wood']) {
   const { browser, page } = await openPage(h, { viewport: VP })
   await page.waitForFunction(() => document.getElementById('kfb-hud-r5f'), null, { timeout: 120000 }).catch(() => {})
   await wait(page, 2500)
   const w = await page.evaluate(() => ({ clay: !!document.getElementById('kfb-hud-clay') || !!window.__kfbClayHud, wood: [...(document.getElementById('kfb-hud-r5f')?.children || [])].some((c) => c.style.display !== 'none') }))
-  checks[h.endsWith('wood') ? 'woodSwitch' : 'woodDefault'] = !w.clay && w.wood
+  if (h.endsWith('wood')) checks.woodSwitch = !w.clay && w.wood; else checks.clayDefault = w.clay && !w.wood
   if (h.endsWith('wood')) await page.screenshot({ path: `${OUT}/7_holz.png` })
   await browser.close()
 }

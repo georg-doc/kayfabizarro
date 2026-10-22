@@ -214,7 +214,11 @@ function CarVisual({ squash, signals, lean }) {
     // Knet-Squash wie J17 (holder.scale 1 + 0,12·sq, 1 − 0,18·sq, 1 + 0,06·sq) – nur die Optik, um die Unterseite
     const sq = squash?.() ?? 0; g.current?.scale.set(1 + SQUASH_LOOK.x * sq, 1 + SQUASH_LOOK.y * sq, 1 + SQUASH_LOOK.z * sq) })
   const { gl: glR, camera: camW, scene: sceneW } = useThree()
-  useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; const id = M2CAR.id; loadModel().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
+  // Neuversuch (Lead 22.10.: Startseite wartete 240 s, vermutlich GitHub-Abruf gescheitert): ein Fehler ließ bisher dauerhaft den Kasten stehen.
+  // Jetzt bis zu 3 Neuversuche nach 2, 5 und 10 s; M2STATE.modelTries zählt mit, M2STATE.model trägt den letzten Fehler.
+  useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; M2STATE.modelTries = 0; const id = M2CAR.id
+    const tryLoad = () => { M2STATE.modelTries++; return loadModel().then((m) => (m || !alive || M2STATE.modelTries > 3 ? m : new Promise((r) => setTimeout(r, [2000, 5000, 10000][M2STATE.modelTries - 1])).then(() => (alive ? tryLoad() : null)))) }
+    tryLoad().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
     if (!I.look.off) hookVehicleLook(c) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
     const t0 = performance.now(); if (!I.warm) await warmModel(glR, c, camW, sceneW); if (!alive) return   // schon vorgewärmt (Zurückwechseln, Vorladen): sofort zeigen, kein Warten auf Bilder
     M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.clay = I.clay; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)

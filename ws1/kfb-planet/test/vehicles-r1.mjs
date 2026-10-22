@@ -182,7 +182,9 @@ if (PART === 'fps') {
 }
 if (PART === 'start') {
   const { browser, page, errs } = await openPage('#m1,debug,look=terrain3,world=probe,start,car,racer=brasswing_roadster', { viewport: { width: 1280, height: 720 } })
-  await page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 })
+  // auf OK warten, bei Ladefehler (nach den Neuversuchen des Spiels) sofort mit Grund abbrechen statt 240 s zu warten
+  await page.waitForFunction(() => { const S = window.__kfbM2?.stats; return S?.model === 'OK' || (/^ERROR/.test(S?.model || '') && S.modelTries > 3) }, null, { timeout: 240000 })
+  const m0 = await page.evaluate(() => ({ model: window.__kfbM2.stats.model, tries: window.__kfbM2.stats.modelTries })); if (m0.model !== 'OK') { console.log(JSON.stringify(m0)); await browser.close(); process.exit(report('vehicles-r1 start', { modelLoads: false }, m0)) }
   const v0 = await page.$eval('#kfb-car', (e) => e.value), n = await page.$$eval('#kfb-car option', (o) => o.length)
   await page.selectOption('#kfb-car', 'rustwing_hauler')
   const swapped = await page.waitForFunction(() => window.__kfbM2.stats.modelId === 'rustwing_hauler' && window.__kfbM2.stats.model === 'OK', null, { timeout: 120000 }).then(() => true, () => false)

@@ -229,7 +229,7 @@ const CARDS = figureCards(), CLAY_ON = !/(^|[#,])clay=0(,|$)/.test(hash)
 // WS-NPC C5 (MVP-Kritiker R1, WS0 V-654): „eine Machart“ – Knete (kfb-clay v1.1, Profil character wie die Bühnenfiguren) auch auf Kit-Figuren
 // (Bewohner, Gruppen, Band); Kit-Farben auf die Rollen der aktiven Biom-Palette (terrain3) gezogen, Augen/Augen-Rig über SKIP_DEFAULT ausgenommen.
 // Schalter #kitclay (Standard an erst nach Georgs Abnahme). Zug vorläufig = Kanon-Obergrenze MAX_PULL (V-340, 18 %), Wert legt WS0/Georg nach A/B fest.
-const KITCLAY = /(^|[#,])kitclay(,|$)/.test(hash)
+const KITCLAY = !/(^|[#,])kitclay=0(,|$)/.test(hash) // Georg 22.10.: Kit-Knete ist Standard, kitclay=0 = ohne
 // Beruhigung (terrain3 calm, mvp): Rollenfarben genau wie der Gelände-Shader dämpfen – Sättigung −35 %·calm, dann Zug 40 %·calm zum Mittelton
 // t3m = mix(mix(low, mid, 0,5), sand, 0,3) (terrain3.js Z. 127/128), damit die Figuren zum beruhigten Boden passen
 const kitPalette = () => { const P = TERRAIN3 && TERRAIN3_CFG.palettes?.[T3_PAL]; if (!P) return null
@@ -253,8 +253,8 @@ const M1GL = { gl: null, scene: null }
 // springt in die Fluff-Leiste (fl.land je Sorte), V Faust / B Blaster setzen die Waffe der Aktionsleiste, N legt die Cartoon-Bombe in den Kontext-Platz und
 // zündet sie (Klick auf die Bombe zündet ebenso). Rucksack-Taste nur angezeigt (Fundsachen folgen mit C3b).
 const KIND_INDEX = { tragic: 0, comic: 1, absurd: 2, heroic: 3, mystical: 4, forbidden: 5 }
-// Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard wood, bis Georg im Spiel abnimmt). Ohne src/private immer Holz.
-const HUD_SKIN = (/(^|[#,])hud=(clay|wood)(,|$)/.exec(hash) || [0, 0, 'wood'])[2]
+// Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard clay seit Georgs Abnahme 22.10.). Ohne src/private immer Holz.
+const HUD_SKIN = (/(^|[#,])hud=(clay|wood)(,|$)/.exec(hash) || [0, 0, 'clay'])[2] // Georg 22.10.: Knet-HUD ist Standard, hud=wood = Holz-HUD
 const CLAY_HOST = {
   palette: () => (TERRAIN3 ? TERRAIN3_CFG.palettes[T3_PAL] : TERRAIN3_CFG.palettes.moos), // Insel-Palette des Geländes (V-653); ohne terrain3 die Moos-Insel wie BIOME
   target: () => (M2_ON ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
