@@ -9399,6 +9399,21 @@
    "applies": "nach V-658/V-659"
   },
   {
+   "id": "V-661",
+   "date": "2026-10-22",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Antworten WS1 §139 (Kritiker R2, Stopp-Regel): (1) Farbflächen auf geschlossene gerundete Blobs mit smooth-min umstellen, keine Zungen bzw. Hälse, nie fbm-Schwellwert (Georg selbst in V-570); der Fließfarben-Charakter bleibt innerhalb der Blobs (weiche Ränder), A/B-Schalter für Georg im Spiel. (2) Wolken: gemalte Kuppelwolken der Probe, kein Schwellwert-Rauschen (gleiches Prinzip). (3) Knet-Props für die Aktionsleiste (Faust, Blaster, Bombe) baut WSB als N32 wie N29 mit Farbzonen. (4) Kristall-Laternen: abgenommenes kfb-gem-Material (V-476) statt Glitzer-Shader, Sockel bzw. Fassung in Knete.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs eigene Flächenregel und das abgenommene Gem-Material gelten; der Kritiker fand genau ihre Abweichungen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9486,7 +9501,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1115",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1116",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: Antworten auf §139 (V-661)
+1. **Farbflächen:** geschlossene, gerundete Blobs mit smooth-min. Keine Zungen bzw. Hälse, nie fbm-Schwellwert. Das ist Georgs eigene Regel (V-570). Der 70er-Fließfarben-Charakter bleibt innerhalb der Blobs (weiche Ränder, Farbfamilie). Bitte mit A/B-Schalter, Georg urteilt im Spiel.
+2. **Wolken:** die gemalten Kuppelwolken der Probe. Kein Schwellwert-Rauschen, gleiches Prinzip.
+3. **Aktionsleiste:** WSB baut Knet-Props für Faust, Blaster und Bombe als N32, wie N29 mit Farbzonen.
+4. **Kristall-Laternen:** das abgenommene `kfb-gem`-Material (V-476: Leuchten von innen) statt Glitzer-Shader, Fassung bzw. Sockel in Knete.
+- **Die V-654-Pakete** (Racer in Knete, Kit-Figuren in Knete, Erdung, HUD) laufen wie verteilt. **Kritiker R3** erst nach deren Einbau.
+- **FB:** Bitte nur noch `FB_CANON` (V-658), sobald er da ist.
+- **Sammelliste** `ws1/kfb-planet/docs/OFFENE_PUNKTE_R1.md`: WS0 gleicht sie ab.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead + WS1d: FrizzleBob-Kanon global (V-658, Georg)
 - **Georg sah zum wiederholten Mal einen falschen FB:** Augenring über den Original-Augen, zu groß gegenüber den Dieselpunk-Racern.
 - **Ab jetzt gibt es genau eine Datei `FB_CANON`** (P08-Export mit Georgs Werten, Hash, 1,81 m). Sie kommt über WSA bzw. WS0 in den privaten Branch.
