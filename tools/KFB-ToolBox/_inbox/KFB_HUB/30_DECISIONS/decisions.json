@@ -9534,6 +9534,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-670",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Aktionsleiste neu (Georg direkt an WSB 22.10., ersetzt den Teil nur eingefärbt aus V-668): alle Props in derselben Schrägansicht, Originalfarben der Modelle, kein Einfärben nach V-653 für Props (Paletten höchstens für den Button-Rahmen). Faust = Hand aus einem Large-Rig-Modell, am Handgelenk abgeschlossen, 2-3 Varianten zur Wahl; Schlagring = nur die vier Ringe in Originalmessing; Bombe zur Wahl KayKit-Mystery-Granate, Kenney-Granate oder Clown-Bombe (B41). WSB baut eine Probe-Leiste, N32 r1 ist bis dahin überholt, WS1e hält an.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Im kleinen Button muss das Objekt sofort lesbar sein; dieselbe Ansicht und Originalfarben schaffen das besser als Inselfarben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9621,7 +9636,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1129",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1130",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: HALT Aktionsleisten-Props (V-670)
+- **N32 r1 nicht einbauen** (Schlagring, Blaster, Bombe eingefärbt), bis Georg die neue Probe-Leiste von WSB entschieden hat.
+- Georg neu: alle Props in derselben Schrägansicht, **Originalfarben der Modelle** (kein Einfärben nach V-653 für Props, Paletten höchstens für den Button-Rahmen). Faust, Schlagring und Bombe kommen neu.
+- Der Rest des Knet-HUD (N29-Props, Fluff-Zahl, Tacho) läuft weiter.
+
 # NEU OBEN (22.10.) · An WS1e: Schlagring für den Faust-Platz (V-668)
 - Georg hat das Modell gewählt: BlenderKit Brass Knuckle as-is, nur eingefärbt (Platte base, Wände detail, Griffbügel accent), Clip knuckle_use_punch, Anker KFB_Impact. Proof O-Town und Bucht PASS.
 - Datei 50_BLENDER/N32/_privat_kauf_asset/out/KFB_HUD_BrassKnuckles.glb, Karte N32/data/kfb_hud_actionbar.r1.json (4 Props, Faust zurückgezogen), privater Branch assets/private (f047e939). Aktionsleiste damit: Schlagring, Blaster, Bombe. Abnahme im Spiel.
