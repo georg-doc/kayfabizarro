@@ -2,6 +2,34 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 12 · 22.10. · Begrüßung G-2, Geschenk E3, Culling, Knete C5, Spielzeug-KO N15, mehrere Dark Fluffer K15
+
+Alles lokal auf `ws-npc/phase-a`. Der Lead hat bis N15 in den MVP gemergt (0b38579). K15 kam danach dazu (b613909, volle Reihe 66/70: rot nur c2, orbit und s5a als bekannte Wackler; steps danach ans Culling angepasst, 2× PASS).
+
+| # | Was | Stand | Beleg |
+|---|---|---|---|
+| G-2 | Begrüßung mit Blase und Ereignis `greet { id, reason, at }` für den Ton; Texte bleiben leer, bis der Writers Room liefert | c1d937d | greet-Test |
+| E3 | „Trupp aus dem Geschenk“: Spur aus dem Resident Atlas 1:1 (`kfb.reveal/1`). Ereignisse: reveal_start, reveal_anticipation, reveal_pop, soldier_land, reveal_done. Schnittstelle `spawnAt(x, z, Grad)` für den Welt-Ereignis-Host | b6d3118 | gift-Test, unit-revealTrack |
+| Culling | Figuren nur sichtbar im Bild oder ganz nah (12·K): Draw-Calls 195 → 92, Schatten 142 → 87 | c8e55f9 | Leistungsmessung |
+| C5 | Knete kfb-clay v1.1 auch auf Kit-Figuren, hinter `#kitclay` (Standard aus bis zu Georgs Abnahme) | 8043033 | `clay_AB_sheet_calm.png` (lokal) |
+| N15 | Spielzeugsoldaten kippen steif um und klappen wieder hoch (WS0, ersetzt G-3) | 0f51e3d | toyko-Test |
+| K15 | je Obstgarten-Zone ein Dark Fluffer an eigenem Baum (siehe unten) | b613909 | unit-flufferKinds, fluffers-Test |
+
+**K15 im Einzelnen (Lead 22.10.):**
+- Die Fluffer stehen an eigenen Bäumen: goblin t4 (Ghost), atlantis t4 (beim ersten Erscheinen Mushroom), utopia t1 (dritte Sorte).
+- Die Sorte wird je Durchgang per Tages-Seed aus den 15 Boden-Cubes gezogen (K15, CC0, sha-geprüft). Am selben Tag tragen die Zonen verschiedene Sorten.
+- Die Spawns sind fest: Erscheinen n beginnt bei `fluffert + offsetS + n·dayS`.
+  - offsetS ist 0, 20 bzw. 40 s. Das ist ein Platzhalter, kein Kanon-Wert.
+  - Später übernimmt der Welt-Ereignis-Host über `spawnAt(id, x?, z?, kind?)` und `events()`, wie bei E3. Mit `schedule: false` spawnt nur noch der Host.
+- Ein Modell wird erst kurz vor seinem Erscheinen geladen, über `import.meta.glob` ohne eager.
+  - Im Site-Build kommen nur die Sorten des Tages übers Netz.
+  - Der Ein-Datei-Testbuild enthält alle 15.
+- Die Waffe trägt nur der Goblin-Fluffer. Die Flecken der Fluffer werden im Gelände summiert (höchstens 4).
+- `threat(at)` liefert den Fluffer, der dem jeweiligen Bewohner am nächsten ist.
+- Culling nach demselben Muster wie bei den Gruppen.
+- `mods.fluffer` bleibt verträglich: `debug()` und `status()` zeigen den Ghost, `hops()` und `events()` sammeln alle Fluffer (mit id, kind, at, mouth).
+- Die Private-Globs (B17, K11) sind auf die genutzten Dateien verengt. Testbuild: 69 → 59 MB, obwohl die 15 Cubes dazukamen.
+
 ## 11 · 22.10. · An WS0: Offene Abnahmen für Georg, bitte bei WS0 bündeln (Georg 22.10.)
 
 **Georg 22.10.:** „wo sehe ich Abnahmen für mich? … gib das an WS0, dann machen wir das dort.“
