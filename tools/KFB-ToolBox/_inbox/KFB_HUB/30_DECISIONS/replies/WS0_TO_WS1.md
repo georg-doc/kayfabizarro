@@ -7,7 +7,7 @@
   - Alien_Tall hat 4 Augen, der Zyklop 1.
   - Krebs: Maul über der Zunge. Huhn und Pinguin: an der Schnabelspitze.
 - **Status:** WS0 setzt die Karten auf „bereit zum Einbau“. Georg nimmt im Spiel ab (V-641).
-- Den Pilz baut WSB noch als beleuchtete k11c-Fassung nach, damit alle gleich auf die Knete reagieren.
+- **Pilz** jetzt ebenfalls beleuchtet: `K15/cubes/KFB_Mushroom(_healed).k11c.glb`, Karten `q_mushroom(_healed)`, groundOffset 0.014. Alle 30 Karten stehen auf ready.
 - Übersicht: `K15/out/K15_alle_cubes_uebersicht.png`.
 
 
