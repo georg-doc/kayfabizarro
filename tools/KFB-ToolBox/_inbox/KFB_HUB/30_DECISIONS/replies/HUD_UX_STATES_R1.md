@@ -1,7 +1,7 @@
-# HUD-UX: Zustände für alle HUD-Props · R1 · 2026-10-22 · WS0 (V-673)
+# HUD-UX: Zustände für alle HUD-Props · R1.1 · 2026-10-22 · WS0 (V-673, V-674)
 **Tier 0:** Kontur ist der Normalzustand. Der Lichthof trägt den Zustand, die Cartoon-Deformation die Bewegung. Gleiche Regeln für jedes HUD-Prop.
 
-Gilt für: Aktionsleiste (bis 6 Plätze, unten, klein), Kompass bzw. Tacho, Radio, Truhe, Zahnrad, Fluff-Zahl, Kartenfächer.
+Gilt für: Aktionsleiste (bis 6 Plätze, unten, klein), Interaktions-Prop, Kompass bzw. Tacho, Radio, Truhe, Zahnrad, Fluff-Zahl, Kartenfächer.
 
 ## Zustände
 | Zustand | Lichthof | Deformation | Wann |
@@ -16,9 +16,15 @@ Gilt für: Aktionsleiste (bis 6 Plätze, unten, klein), Kompass bzw. Tacho, Radi
 | Neu | kurzer Blitz | Hineinhüpfen | Prop gerade eingesammelt |
 
 ## Darstellung
-- **Kontur:** Inverted Hull, dunkel (#130e16), Breite an die Bildschirmgröße gebunden (2–3 px in Spielgröße).
+- **Kontur (KFB-Outline):** gleichmäßig, nicht unregelmäßig. Inverted Hull, dunkel (#130e16), Breite an die Bildschirmgröße gebunden. Nach dem globalen Pseudo-Licht (Licht von oben links) unten rechts stärker: etwa 2 px oben links, 3–4 px unten rechts in Spielgröße (Hülle im Bildraum leicht nach unten rechts versetzt).
 - **Lichthof:** weiches Sprite hinter dem Prop, Grundfarbe #fff6e0; die Hinweis-Farbe schlägt WSB in 2 Varianten vor.
 - **Deformation:** ein Modul für alle Props (Squash, Stretch, Wackeln, Hüpfen), nur Skalierung und Drehung des ganzen Props, kein Umbau.
 - **Textur:** In Spielgröße Originaltextur gegen Knete vergleichen; es gilt, was klein besser lesbar ist.
 - **Größe:** Aktionsplätze in echter Spielgröße prüfen (6 Plätze unten, 1080p und Handy-Breite).
 - Lichthof und Kontur werden über `hudView.readability` aus der Props-Karte gesteuert, nicht je Prop von Hand.
+
+## Interaktion (V-674)
+- **Ein eigener Interaktions-Platz** rechts neben der Aktionsleiste, nicht Platz 6. Aktionen sind Kampf und Werkzeug, Interaktion ist die Welt. Ein Prop für alles: ins Auto steigen, mit NPCs reden, Props aufnehmen. Fluff wird automatisch eingesammelt.
+- In Reichweite geht das Prop in den Zustand Hinweis (Puls, Wackeln), wie bisher das Sprechblasen-Icon.
+- **Kandidaten** (WSB zeigt sie in N33, Georg wählt): (a) 3D-Sprechblase, in der ein kleines Kontext-Zeichen wechselt (Auto, Hand, Punkte für Reden); (b) offene Hand; (c) ein Original-Modell aus einem 3D-Icon-Set. Empfehlung WS0: (a), weil die Sprechblase schon im Spiel der Hinweis ist und aus dem Comic kommt.
+- **Fluff-Zahl:** 3D-Ziffern ohne Hintergrund, Schrift wie N29 (Bangers), gleiche Kontur und Zustände (Neu bzw. Bereit beim Hochzählen).

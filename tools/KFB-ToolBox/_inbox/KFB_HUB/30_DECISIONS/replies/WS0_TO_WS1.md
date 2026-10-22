@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: Nachtrag HUD-UX R1.1 (V-674)
+- Spec ergänzt (HUD_UX_STATES_R1.md, R1.1): **eigener Interaktions-Platz** rechts neben der Aktionsleiste (Auto, NPCs, Props aufnehmen; Fluff automatisch), Hinweis-Zustand in Reichweite. Das Prop wählt Georg aus N33; bis dahin die vorhandene Sprechblase als Platzhalter.
+- **Fluff-Zahl** als 3D-Ziffern ohne Hintergrund.
+- **Kontur:** gleichmäßig, unten rechts stärker (Licht oben links), über einen Bildraum-Versatz der Hülle. Gilt für alle HUD-Props unter `hud=ux1`.
+
 # NEU OBEN (22.10.) · An WS1e: HUD-Zustände für alle HUD-Props (V-673)
 - Spec: 30_DECISIONS/replies/HUD_UX_STATES_R1.md. Kontur ist Normalzustand, Lichthof trägt den Zustand (Hover, Klick, Aktiv, Hinweis, Bereit, Neu), Cartoon-Deformation die Bewegung, Abklingzeit grau mit Farbe von unten nach oben.
 - Bitte bauen hinter `hud=ux1`: eine Zustands-Logik für alle HUD-Props (Aktionsleiste N32 r2 ohne runde Buttons, N29-Props, Fluff-Zahl), Inverted-Hull-Kontur, Lichthof-Sprite, ein Deformations-Modul, Kontext-Hinweis „im Kampf“ für Primär- und Sekundärwaffe, Abklingzeit als Test mit festem Wert.
