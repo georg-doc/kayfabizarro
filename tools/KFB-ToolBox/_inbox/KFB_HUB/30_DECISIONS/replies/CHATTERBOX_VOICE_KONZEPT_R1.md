@@ -1,4 +1,5 @@
-# Chatterbox Voice · Konzeptpapier R1.1 · 2026-10-22 · WS0
+# Chatterbox Voice · Konzeptpapier R1.2 · 2026-10-22 · WS0
+> **R1.2:** Neu sind §15 Suno-Quellen-Pipeline, §16 Schauspiel-Prinzip und Voice-FX, §17 Arbeitsmodus nach Arendt, §18 Anti-Nerv-Regeln, §19 Recherche (Georg 22.10.).
 > **R1.1:** Neu ist §14 „Dimensionen und Kombinatorik“ (Musikstil, Tempo, Dialekt aus Textur-Varianten, Beziehung als Harmonie und weitere Ebenen) nach Georgs Ideen vom 22.10. §13 ist entsprechend angepasst.
 **Status:** Konzept zur Diskussion mit Georg. Noch keine Erzeugung, keine Credits.
 **Bezüge:**
@@ -224,3 +225,73 @@ Die Dimensionen teilen sich in **Identität** (fest je Figur, macht sie wiederer
 1. Stile: welche aus 14.2, und die Zuordnung zu Inseln ja oder nein?
 2. Beziehung als Harmonie (Freunde in Terzen, Rivalen im Tritonus): ja?
 3. Weitere Ebenen, die dir einfallen, z. B. Beruf bzw. Rolle oder Tageszeit (morgens müde)?
+
+
+## 15 · Suno als Klangquelle (Georg 22.10.)
+**Idee:** Aus Suno-Instrumentals je Stil die Instrumente gewinnen, die Phrasen ernten und denselben Song als Soundbed nutzen. Die Stimmen liegen dann in derselben Tonart, demselben Tempo und derselben Klangwelt wie die Musik darunter, und das Ensemble ergibt sich von selbst.
+
+**Ansatz bei dem, was da ist:**
+- die Suno-Instrumentals zu Dystopia, Protopia und Utopia;
+- die Song-Sätze in `40_AUDIO/*__suno_*` (mit `mix_stemsum`);
+- Roadtrip-Jukebox und Cozy Tunes.
+- Die schon vorhandene Sprachprobe `40_AUDIO/kfb_language_r1` (probe_r10, Melodie-Sprache) ist die Engine-Grundlage.
+
+**Pipeline:**
+1. **Prompten auf Ernte:** je Stil ein Instrumental mit Solo-Passagen der Ziel-Instrumente, sparsamem Arrangement, Ruf und Antwort und klaren Hebungen und Senkungen.
+   - Beispiel Marsch für die Toy Soldiers: Piccolo- und Snare-Solo, Blech-Antworten.
+   - Dazu ein Teil, in dem nur ein Instrument spielt.
+2. **Stems trennen** (Suno-Stems bzw. Trennung), danach je Stem eine Qualitätsprüfung (Übersprechen, Artefakte).
+3. **Phrasen-Ernte automatisch** (numpy/scipy, wie `lufs_set.py`):
+   - Einsätze finden, Tonhöhe verfolgen, einstimmige Stellen ausschneiden;
+   - je Schnipsel Grundton, Länge, Kontur (steigend, fallend, gleitend), Energie und Stil als Etikett;
+   - Ergebnis: eine Bausteinbank je Familie × Stil.
+4. **Soundbed:** dieselben Songs, geschnitten nach Abschnitten (ruhig, Aufbau, Höhepunkt), für Orte und Situationen. Die Stimmen laufen auf deren Tempo und Tonart.
+5. **ElevenLabs bleibt** für das, was Suno nicht liefert: die 4 Calls, cartoonige Gesten, Signatur-Laute.
+
+**Prüfpunkt:** Eine Pilot-Ernte aus einem vorhandenen Song zeigt, ob die Stems sauber genug für einstimmige Bausteine sind. Erst danach werden neue Songs gepromptet.
+
+## 16 · Schauspiel-Prinzip und Voice-FX (Cartoon Voice Acting)
+- **Wie bei den Simpsons**, wo ein Sprecher sieben, acht Figuren spricht: Eine **Instrument-Familie ist ein „Darsteller“**, der über Modulation mehrere Rollen spielt.
+  - Tonlage und Formant (Körpergröße bzw. Alter);
+  - Tempo und Artikulation (Temperament);
+  - Rauheit bzw. Verzerrung (raue Typen);
+  - Vibrato (Alter bzw. Nervosität);
+  - Catchphrase = Signatur-Ornament.
+- **Voice-FX als eigene Dimension 14** (Studio-Kette je Figur bzw. Fraktion, wird in der Audio-Slice live gerechnet):
+
+| Figur bzw. Gruppe | FX-Kette (Vorschlag) |
+|---|---|
+| Demon Lord | Oktave tiefer, leichte Sättigung, langer dunkler Hall („Mordor“) |
+| Skelette | etwas höher, hohl (Bandpass), kurzer Gruft-Hall, leises Klappern als Transient |
+| Magic Girls (jung) | Formant hoch, heller, schnelleres Vibrato, etwas schneller |
+| Geister | Säge bzw. Theremin, Chorus, Echo |
+| Aliens | Ringmodulation leicht, Gleiten, Stereo-Breite |
+| Bots | Melodica mit leichtem Bitcrush nur in den Transienten (kein Chiptune, V-616) |
+| Utopia-Bürokraten | trocken, gerade Lautsprecher-EQ, Marsch-Akzent |
+| FrizzleBob | Posaune mit Dämpfer, warm, nah, trocken (Stand-up-Nähe) |
+
+## 17 · Arbeitsmodus, beschwingte Sisyphus-Arbeit (nach Arendt)
+**Anlass:** Fluff sammeln, herstellen und umwandeln ist Sisyphus-Arbeit, aber mit Begeisterung, so wie die Kayfabe- bzw. Wrestling-Rollen. Hannah Arendts Vita activa gibt drei Klangmodi:
+
+| Modus (Arendt) | Spiel | Klang |
+|---|---|---|
+| **Arbeit** (Labor, zyklisch) | sammeln, ernten, tragen | beschwingtes Arbeitslied: Loop-Motiv im Takt der Tätigkeit, Ruf und Antwort in der Gruppe, nie identisch wiederholt |
+| **Herstellen** (Work, Ergebnis) | Fluff umwandeln, bauen, craften | Aufbau-Motiv, das steigt und mit einer Kadenz beim fertigen Ding abschließt |
+| **Handeln** (Action, Auftritt) | Kayfabe-Rolle, Auftritt, Promo | Bühnenstimme: größer, mehr Vibrato und Ornament, dazu Publikums-Calls |
+
+Diese Modi sind Situationen (Dimension 12). Sie geben jedem NPC beim Tun eine hörbare Haltung.
+
+## 18 · Anti-Nerv-Regeln (Georg: melodiös, auch bei langen Reden nicht nervig)
+1. **Klang:** keine stechenden Höhen (Dauer-Energie über etwa 3 kHz begrenzen), weiche Einsätze. Kazoo, Piccolo und Maultrommel nur sparsam und kurz.
+2. **Melodie:** konsonant zum Soundbed bzw. Story-Mode. Dissonanz nur als Emotion (aggressiv, Ablehnung) und kurz.
+3. **Wiederholung:** nie dieselbe Phrase zweimal hintereinander. Varianten über Seed, Lexikon-Motive mit Transposition.
+4. **Länge:** Lange Reden werden mit jeder Zeile kürzer und leiser (Ermüdungsbudget je Gespräch), Atempausen zwischen Sätzen.
+5. **Dichte:** Höchstens 2–3 Stimmen sprechen gleichzeitig hörbar, der Rest geht ins Ensemble bzw. die Mischung (Audio-Slice).
+6. **Prüfung:** ein Hörtest mit 3 Minuten Dauer-Dialog je Familie. Fällt eine Familie dabei als nervig auf, wird sie gekürzt oder ersetzt.
+
+## 19 · Recherche (vor der Erzeugung)
+- **Cartoon Voice Acting:** Wie variieren Sprecher wie Dan Castellaneta oder Hank Azaria Figuren (Tonlage, Sitz, Rauheit, Tempo, Catchphrase)? Daraus Regeln für die Modulation.
+- **Spiele mit Fantasiesprachen:** Animal Crossing (Animalese), Banjo-Kazooie, Undertale (Text-Blips je Figur), Die Sims (Simlish), Celeste, Okami. Was macht sie angenehm statt nervig?
+- **Kreaturen- bzw. Stimmen-Design im Film:** Ork-, Geister- und Dämonenstimmen (Effektketten).
+- **Suno:** Prompt-Muster für Solo-Passagen und Stem-Qualität je Instrument.
+- **Ausführung:** Web-Chat bzw. Perplexity als Recherche-Brief, Ergebnis an WS0.
