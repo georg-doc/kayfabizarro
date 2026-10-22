@@ -3,6 +3,38 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 143 · 22.10. · Kritiker MVP R1 Runde 3: REWORK 4,2 · Fundsachen schweben (Georg) im MVP
+
+- **ws1/mvp-r1 @1f11f6e.** Privat `game/mvp-r1` @3b90acf, öffentlicher Spiegel `ws1/mvp-r1` @04c2314.
+- **WS1b Fundsachen schwebend** (`ws1/grounding-r1` @1988685, Georg 22.10., hebt V-587 auf):
+  - Unterkante 0,11–0,19 m, Wippen ±2,8 cm, eine Umdrehung in 7 s.
+  - Je Gruppe eine Phase, als Welle durch die Gruppe.
+  - Ausleuchtung im Rig-Ton mit Fresnel-Saum.
+  - `found=rest` = liegend. c3b, m1-ground und probeWorld PASS.
+- **WS1d:** `vehicles-r1` setzt PW_GPU selbst. Der Start-Timeout im Lead-Worktree kam von einem Lauf ohne PW_GPU (Software-Rendering); das Spiel hatte keinen Fehler.
+- **Kritiker Runde 3** (Knet-HUD, Racer- und Kit-Knete, Erdung; Fundsachen noch liegend). Volltext: `docs/critic/MVP_R1_CRITIC_ERGEBNIS_RUNDE3.md`.
+
+  | | K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10 | Mittel |
+  |---|---|---|---|---|---|---|---|---|---|---|---|
+  | R1 | 5 | 4 | 4 | 3 | 5 | 4 | 4 | 5 | 4 | 5 | 4,3 |
+  | R2 | 5 | 3 | 3 | 2 | 3 | 2 | 3 | 3 | 3 | 5 | 3,2 |
+  | R3 | 6 | 4 | 4 | 3 | 4 | 3 | 4 | 4 | 4 | 6 | **4,2** |
+
+  - **Tragende Befunde, alle auf Konzept-/Asset-Ebene:**
+    1. Terrain-Muster: lange Zungen bzw. Marmor, die lauteste Fläche. Die Frage an WS0 aus §139 (Blob-Form statt Domain-Warping) ist offen.
+    2. Racer: Die Meshy-Textur (Schmutz/Metall) dominiert trotz Knete; die Knet-Flamme liest sich als flache 2D-Form mit Kontur.
+    3. Wolken als pixelige Rauschflecken (Gebiet 18).
+    4. Wasser als erhabene Platte bzw. dunkler Ringsaum, Wasserfall-Kugeln (Bilder von WS1c, älterer Stand).
+    5. Bäume aus drei Formfamilien, eine mit Würfelkronen.
+  - **Konkrete Bugs bzw. Bildsatz:**
+    - ein schwebender dunkler Stein in 02d → WS1b prüft;
+    - Disco-Flecken weiter als harte Scheiben;
+    - Gold-Licht färbt das Terrain violett und die Schatten grünlich;
+    - Startseite: graue Säulen, harte Horizontlinie zwischen Beige und Boden;
+    - Kampf: Strich-Schuss ohne Mündung, Gegner fällt im Bild nicht.
+  - **Kein Spieler-Problem:** Die Rucksack-Notiz „K10-Kitwaffe“ (11) kommt aus dem Testbild mit `#debug`.
+- **Stopp-Regel:** Die Konzeptfragen liegen bei WS0 (§139). **Bitte um Antwort**, vor allem zu Terrain-Form, Wolken, Baum-Formfamilie und Stärke der Racer-Knete gegenüber der Meshy-Textur. Danach Runde 4.
+
 ## 142 · 22.10. · Georgs Abnahmen: Knet-HUD, Kit-Knete und Racer-Knete sind Standard · Fundsachen wieder schwebend (hebt V-587 auf) · Kritiker R3 läuft
 
 - **ws1/mvp-r1 @bb510fe** (dazu B13 Pool-Leser über Rohdatei und WS1d-Neuversuch beim Racer-Laden).
