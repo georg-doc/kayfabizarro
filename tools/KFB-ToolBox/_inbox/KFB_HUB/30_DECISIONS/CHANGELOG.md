@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- HUD-Props: Settings-Zahnrad GEAR_ICON.glb (aus Travel Globe/Combat) ergänzt (N29, WS1).
 - V-653 HUD-Props aus einem Knet-Guss, Farben aus dem Palettengenerator je Insel bzw. Biom (Farbzonen base/accent/detail); WSB N29 ergänzt, WS1 informiert. WSB: B48-Altstände nach _veraltet verschoben (Georg direkt).
 - WSB arbeitet die Reihe N27 → N28 → N29 → N26 → K14 ohne Rückfragen ab (Georg), WS1 übernimmt später ins MVP.
 - V-651 Boss mit hochskalierter Orc-Keule (Georg-Ausnahme); V-652 HUD-Props (Kompass/Tacho, Radio, Truhe, Bangers-Score, Kartenfächer) als WSB-Job N29, Einbau WS1.
