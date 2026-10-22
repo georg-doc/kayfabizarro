@@ -90,6 +90,7 @@ export function createResidentLife(options) {
     holders: () => R.map((r) => r.holder),
     time: () => S.lastT ?? null,
     figures: () => R.map((r) => r.actor.object3d),
+    actors: () => R.map((r) => r.actor), // Knete (C5): claySSOT-Ziele
     positions: () => sim.brains.map((b) => ({ id: b.id, x: b.out.x, z: b.out.z, y: options.groundAt(b.out.x, b.out.z) })),
     dispose() { residentLifeLog.dispose++; S.disposed = true; for (const r of R) r.f.dispose() },
   }

@@ -3,8 +3,8 @@
 import { createVehicleRig } from '../modules/vehicleRig.js'
 import { createHeadlights } from '../look/headlights.js'
 
-export function mountRacerRig({ body, model, racer, unit, seed = 1, scene = null, dustColor = null }) {
-  const rig = createVehicleRig({ anchors: racer.anchors, hover: racer.hover, glow: racer.glow, unit, seed })
+export function mountRacerRig({ body, model, racer, unit, seed = 1, scene = null, dustColor = null, style = 'glow' }) {
+  const rig = createVehicleRig({ anchors: racer.anchors, hover: racer.hover, glow: racer.glow, unit, seed, style })   // style 'clay' = Knet-Flamme (V-654)
   model.scale.setScalar(unit); rig.stretch.add(model); body.add(rig.object3d); if (scene) scene.add(rig.world); if (dustColor) rig.setDustColor(dustColor)
   // Entsorgen verzögert (V-631 Racer-Wechsel): three.js gibt die Shader frei, sobald der letzte Nutzer entsorgt ist – der neue Wagen müsste sie dann neu
   // übersetzen (Ruckler). So übernimmt er die fertigen Programme, die alten Materialien gehen 3 s später.
@@ -29,5 +29,5 @@ export function mountHeadlights({ model, racer, scene, pools, ground, unit }) {
 // Geladenes Racer-Modell freigeben (Speicher-Deckel in M2Car: höchstens 5 Racer): Geometrie, Texturen (auch die umgerechneten von Look und Heldenfarbe), Materialien
 export function releaseModel(root) {
   root?.traverse((o) => { if (!o.isMesh) return; o.geometry.dispose()
-    for (const mt of [].concat(o.material)) { for (const v of Object.values(mt)) if (v?.isTexture) v.dispose(); mt.userData.vehicleLook?.tex?.dispose(); mt.userData.hero?.orig?.dispose(); mt.dispose() } })
+    for (const mt of [].concat(o.material)) { const src = mt.userData.kfbClay?.src; for (const m of src ? [mt, src] : [mt]) { for (const v of Object.values(m)) if (v?.isTexture) v.dispose(); m.userData.vehicleLook?.tex?.dispose(); m.userData.hero?.orig?.dispose(); for (const t of Object.values(m.userData.vclay || {})) if (t?.isTexture) t.dispose(); m.dispose() } } })   // Knet-Stufe: auch das Quell-Material und die umgetönten Texturen
 }

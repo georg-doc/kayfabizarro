@@ -202,11 +202,17 @@ function nextTrack(list) {
 }
 function musicTick(mode) {
   const M = S.music; if (!M || !S.unlocked) return
+  if (M.paused) { S.musicAudible = false; return } // Radio-Taste Pause (Knet-HUD V-656): kein Wechsel, kein Weiterschalten
   const want = M.latch.update(mode, CTX.currentTime)
   if (want !== M.list) { if (M.list) M.changes++; nextTrack(want) }
   const d = M.deck[M.cur]; if (d && d.el.duration && isFinite(d.el.duration) && d.el.currentTime > d.el.duration - XF - 0.2 && !d.handoff) { d.handoff = true; nextTrack(M.list); setTimeout(() => { d.handoff = false }, XF * 1000 + 500) }
   S.musicAudible = !!(d && !d.el.paused && S.vol.music > 0.02 && !S.vol.muted)
 }
+// Radio im Knet-HUD (V-656, WS1e, additiv): vor = nächster Titel derselben Liste (Zufallsfolge wie sonst), zurück = aktuellen Titel von vorn
+// (die Zufallsfolge kennt keinen Vorgänger), Pause hält die Jukebox an (kein Weiterschalten, kein Listenwechsel bis zur Fortsetzung).
+export function musicSkip(dir = 1) { const M = S.music; if (!M || !S.unlocked || !CTX) return false; if (dir < 0) { const d = M.deck[M.cur]; if (d?.el) { d.el.currentTime = 0; return true } return false } if (M.paused) musicPause(false); nextTrack(M.list || 'cozy'); return true }
+export function musicPause(on = true) { const M = S.music; if (!M) return false; M.paused = !!on; const d = M.deck[M.cur]; if (on) { for (const x of M.deck) x.el?.pause() } else if (d?.el) d.el.play().catch(() => {}); /* Pause hält auch eine laufende Überblendung an (WS-Audio 22.10.) */ log({ type: 'music', paused: M.paused }); return M.paused }
+export const musicPaused = () => !!S.music?.paused
 export const nowPlaying = () => { const M = S.music, d = M?.deck[M.cur]; return d?.track ? { list: d.list, title: d.track.replace(/\.[^.]+$/, ''), time: +(d.el.currentTime || 0).toFixed(1), gainDb: +(d.gainDb || 0).toFixed(1) } : null }
 
 // ── Ereignisse ─────────────────────────────────────────────────────────────────────────────────────────────────

@@ -129,3 +129,59 @@ export async function applyHeroColor(root, { hex = HERO.hex, tick = NOTICK, appl
   }
   return info
 }
+
+// ── Knet-Stufe für Racer (V-654 C5 „eine Machart“, CANON_3D Gebiet 8/15) ────────────────────────────────────────────────────────────────────────────
+// Foto-Rost und Kit-Farben auf die Rollen der Biom-Palette umtönen: Textur auf höchstens 1024 px (ohne Weichzeichnen: UV-Inseln),
+// 5 Farbgruppen (k-means), jede Gruppe auf die nächste Rolle (OKLab, Buntheit leicht betont; Grau nach Helligkeit), Helligkeitsverlauf je Pixel
+// gedämpft erhalten (^0,6), 85 % Rolle / 15 % geglättetes Original. Heldenfarbe an: die größte bunte Gruppe wird KFB-Rot. Danach applyClay (M2Car).
+export const VCLAY = { roles: ['sand', 'low', 'mid', 'high', 'peak', 'cliff', 'water'], size: 1024, blur: 0, k: 5, mix: 0.85, greySat: 0.35, lShift: 0.15, hueShift: 0.5, bunt: 0.06 }   // blur 0: Meshy-Atlanten bestehen aus winzigen UV-Inseln, Weichzeichnen vermischt Nachbarstücke zu Matsch (Ödland-Käfer 22.10.)
+const srgb2lin = (v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4), lin2srgb = (v) => (v <= 0.0031308 ? v * 12.92 : 1.055 * v ** (1 / 2.4) - 0.055)
+function oklab(r, g, b) { r = srgb2lin(r); g = srgb2lin(g); b = srgb2lin(b)
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b), m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b), s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b)
+  return [0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s, 1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s] }
+function oklabToRgb(L, a, b) { const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3
+  return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s].map((v) => lin2srgb(Math.min(1, Math.max(0, v)))) }
+const hexRgb = (h) => { const c = new THREE.Color(h); c.convertLinearToSRGB(); return [c.r, c.g, c.b] }   // THREE.Color ist linear → sRGB-Zahlen wie in der Textur
+export async function prepVehicleClay(root, { palette, hero = false, tick = NOTICK } = {}) {
+  if (typeof document === 'undefined' || !root || !palette) return { applied: 0 }
+  const roles = VCLAY.roles.filter((k) => palette[k]).map((k) => ({ k, rgb: hexRgb(palette[k]) })).map((r) => ({ ...r, lab: oklab(...r.rgb) }))
+  const info = { applied: 0, mats: [] }, mats = new Set()
+  root.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) mats.add(mt) })
+  for (const mt of mats) {
+    const bm = mt.userData.kfbClay?.src || mt   // nach applyClay: Daten am Quell-Material, Textur an beiden
+    const src = bm.userData.vclay?.orig || bm.map, img = src?.image; if (!img?.width) continue
+    const key = hero ? 'hero' : 'base'; if (bm.userData.vclay?.[key]) { mt.map = bm.map = bm.userData.vclay[key]; info.applied++; continue }
+    try {
+      const W = Math.min(VCLAY.size, img.width), H = Math.round(img.height * W / img.width), cv = document.createElement('canvas'); cv.width = W; cv.height = H
+      const cx = cv.getContext('2d', { willReadFrequently: true }); if (VCLAY.blur) cx.filter = `blur(${VCLAY.blur}px)`; cx.drawImage(img, 0, 0, W, H); cx.filter = 'none'; await tick()
+      const id = cx.getImageData(0, 0, W, H), d = id.data, N = W * H
+      // k-means auf einer Stichprobe (jedes 23. Pixel), Start über die Helligkeits-Quantile
+      const smp = []; for (let q = 0; q < N; q += 23) { const i = q * 4; if (d[i + 3] > 10) smp.push(oklab(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255)) }
+      smp.sort((a, b) => a[0] - b[0]); const K = VCLAY.k, C = Array.from({ length: K }, (_, j) => smp[Math.floor((j + 0.5) / K * smp.length)].slice()), cnt = new Float32Array(K)
+      for (let it = 0; it < 8; it++) { const acc = C.map(() => [0, 0, 0]); cnt.fill(0)
+        for (const p of smp) { let bj = 0, bd = 1e9; for (let j = 0; j < K; j++) { const e = (p[0] - C[j][0]) ** 2 + (p[1] - C[j][1]) ** 2 + (p[2] - C[j][2]) ** 2; if (e < bd) { bd = e; bj = j } } acc[bj][0] += p[0]; acc[bj][1] += p[1]; acc[bj][2] += p[2]; cnt[bj]++ }
+        for (let j = 0; j < K; j++) if (cnt[j]) C[j] = acc[j].map((v) => v / cnt[j]) ; await tick() }
+      // Gruppe → Rolle (OKLab): bunte Gruppen nach Farbton/Buntheit (a, b), graue nach normierter Helligkeit; jede weitere Belegung derselben Rolle
+      // kostet etwas. Umtönen statt Ersetzen: Farbton und Buntheit von der Rolle (grau: Rest greySat), Helligkeit bleibt beim Pixel, die Gruppe rückt
+      // um lShift zur Helligkeit der Rolle – die Hell-Dunkel-Struktur des Wagens bleibt, er hebt sich vom Gelände ab. Heldenfarbe: größte bunte Gruppe → KFB-Rot.
+      const chroma = (c) => Math.hypot(c[1], c[2]); let paint = -1, pc = 0; for (let j = 0; j < K; j++) if (chroma(C[j]) > VCLAY.bunt && cnt[j] > pc) { pc = cnt[j]; paint = j }
+      const span = (arr) => { const lo = Math.min(...arr), hi = Math.max(...arr); return (v) => (hi - lo < 1e-3 ? 0.5 : (v - lo) / (hi - lo)) }
+      const nC = span(C.map((c) => c[0])), nR = span(roles.map((r) => r.lab[0])), used = new Map(), heroLab = oklab(...hexRgb(HERO.hex)), T = new Array(K)
+      for (const j of [...C.keys()].sort((x, y) => cnt[y] - cnt[x])) { const c = C[j], bunt = chroma(c) > VCLAY.bunt
+        let best = roles[0], bd = 1e9; for (const r of roles) { const e = bunt ? (c[1] - r.lab[1]) ** 2 + (c[2] - r.lab[2]) ** 2 + 0.6 * (c[0] - r.lab[0]) ** 2 : (nC(c[0]) - nR(r.lab[0])) ** 2; const ee = e + 0.004 * (used.get(r.k) || 0); if (ee < bd) { bd = ee; best = r } }
+        used.set(best.k, (used.get(best.k) || 0) + 1)
+        const isHero = hero && j === paint, R = isHero ? heroLab : best.lab, k = isHero || bunt ? 1 : VCLAY.greySat, h = isHero ? 1 : VCLAY.hueShift   // leicht tönen (Gebiet 6): nur ein Teil des Wegs zur Rolle
+        T[j] = { dL: (R[0] - c[0]) * VCLAY.lShift, a: c[1] + (R[1] * k - c[1]) * h, b: c[2] + (R[2] * k - c[2]) * h, role: isHero ? 'hero' : best.k } }
+      for (let y = 0, q = 0; y < H; y++) { for (let e = q + W; q < e; q++) { const i = q * 4; if (d[i + 3] <= 10) continue
+          const p = oklab(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255); let bj = 0, bd = 1e9; for (let j = 0; j < K; j++) { const ee = (p[0] - C[j][0]) ** 2 + (p[1] - C[j][1]) ** 2 + (p[2] - C[j][2]) ** 2; if (ee < bd) { bd = ee; bj = j } }
+          const t = T[bj], o = oklabToRgb(p[0] + t.dL, t.a + (p[1] - C[bj][1]) * 0.3, t.b + (p[2] - C[bj][2]) * 0.3)
+          for (let c = 0; c < 3; c++) d[i + c] = Math.round(255 * ((d[i + c] / 255) * (1 - VCLAY.mix) + o[c] * VCLAY.mix)) }
+        if ((y & 15) === 15) await tick() }
+      const target = T
+      cx.putImageData(id, 0, 0); const tex = new THREE.CanvasTexture(cv); tex.flipY = src.flipY; tex.colorSpace = src.colorSpace; tex.wrapS = src.wrapS; tex.wrapT = src.wrapT; tex.channel = src.channel; tex.anisotropy = 4
+      bm.userData.vclay = { ...(bm.userData.vclay || {}), orig: src, [key]: tex, paint, roles: target.map((t) => t.role) }
+      mt.map = bm.map = tex; info.applied++; info.mats.push({ roles: bm.userData.vclay.roles, paint })
+    } catch (e) { console.warn('vehicleClay', e) }
+  }
+  return info
+}

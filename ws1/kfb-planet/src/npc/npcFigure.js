@@ -46,6 +46,7 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
       let fig = null; actor.object3d.traverse((o) => { if (!fig && o.children?.some((c) => c.isSkinnedMesh || c.isBone)) fig = o })
       if (!fig) throw new Error('Figur im Slot nicht gefunden')
       try { r.soles = soleOffsets(THREE, fig) } catch (e) { r.soles = null } // Ferse/Ballen in der Bindepose (Messung Bodenkontakt, wie M1)
+      for (const u of cast.extraClipUrls || []) { const own = await loadClips(u); clips = { ...clips }; for (const c of own) if (!clips[c.name]) clips[c.name] = c } // zusätzliche Clip-Quellen (z. B. N15 Spielzeug-KO)
       if (PB?.clipsUrl) { const own = await loadClips(PB.clipsUrl); clips = { ...clips }; for (const c of own) if (!clips[c.name]) clips[c.name] = c }
       if (cast.clipAlias) { clips = { ...clips }; for (const [to, from] of Object.entries(cast.clipAlias)) if (clips[from]) clips[to] = clips[from] } // Gang-Mischer-Namen → eigene Clips der Figur (as-is, nur umbenannt; z. B. Bots: Gehen = Tragen)
       if (PB?.prop) { let slot = null; const sn = THREE.PropertyBinding.sanitizeNodeName(PB.prop.slot); fig.traverse((o) => { if (!slot && (o.name === PB.prop.slot || o.name === sn)) slot = o }) // GLTFLoader nimmt den Punkt aus Knotennamen (handslot.r → handslotr)

@@ -90,6 +90,7 @@ export function createBandLife(options) {
     debug: () => ({ near: S.near, beat: S.beat, at: at.slice(), yaw: yaw0, members: M.map((m) => ({ id: m.a.id, x: m.pl.x, z: m.pl.z, yaw: m.pl.yaw, clip: m.clip, t: m.t ?? null, headYaw: m.headYaw })) }),
     positions: () => M.map((m) => ({ id: 'band-' + m.a.id, x: m.pl.x, z: m.pl.z, y: options.groundAt(m.pl.x, m.pl.z) })),
     holders: () => M.map((m) => m.holder),
+    clayTargets: () => M.filter((m) => m.gltf).map((m) => (m.clayMod ||= { object3d: m.gltf.scene, status: () => ({ status: 'OK' }) })), // Knete (C5): gebackene Band-Figuren (Augen über SKIP_DEFAULT ausgenommen)
     dispose() { bandLog.dispose++; for (const m of M) { m.mixer?.stopAllAction(); m.fig?.dispose(); m.gltf?.scene.traverse((o) => { if (o.isMesh) { o.geometry?.dispose(); [].concat(o.material).forEach((x) => x?.dispose()) } }) } root.clear() },
   }
 }

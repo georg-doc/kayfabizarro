@@ -16,7 +16,7 @@ import { useKeyboardControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { EcctrlVehicle, ShapeCastWheel } from 'ecctrl/vehicle'
 import { useHostKeys } from '../hostKeys'
-import { expose, DEBUG, DEVUI } from '../debug'
+import { expose, DEBUG, DEVUI, onDevUi } from '../debug'
 import { M1INPUT, ELAN_MEM } from '../m1/M1Player'
 import { isFence, inRankFence } from '../m1/m1Host'
 import { STEP, interpTrack, M1INTERP, M1CLOCK } from '../m1/m1Clock'
@@ -32,7 +32,10 @@ import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
 import { mountRacerRig, mountHeadlights, releaseModel, terrainDustColor } from './racerRig'
 import { createEngineAudio } from '../audio/engineAudio'
-import { prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv } from '../look/vehicleLook.js'
+import { prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv, prepVehicleClay } from '../look/vehicleLook.js'
+import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
+import { TERRAIN3_CFG } from '../look/terrain3.js'
+import { FB_RIG_HEIGHT } from '../worldScale.js'
 import { headlightDaylight, HEADLIGHTS } from '../look/headlights.js'
 import { gfxChannel } from '../look/groundFx.js'
 import { parseTod, moodAt, MOOD_SETS } from '../vendor/light/kfb-stage-light.v1.1.js'
@@ -116,22 +119,37 @@ const OnFrame = ({ fn }) => { useFrame(fn); return null }
 // Ohne Ruckler (V-631): Look und Heldenfarbe rechnen in Häppchen (≤ 6 ms je Task), danach lädt warmModel die Texturen einzeln (je Bild eine) auf die GPU
 // und übersetzt die Shader vorab (compileAsync) – erst dann erscheint der Wagen, bis dahin steht der Kasten.
 export const HERO_ON = { on: heroEnabled(), switches: 0 }
+// Knet-Stufe der Racer (V-654 C5 „eine Machart“): vclay=1 an, vclay=0 aus; Standard aus bis Georgs Abnahme (dann VCLAY_DEFAULT = true).
+// An: Foto-Textur auf die Rollen der Biom-Palette umgetönt (prepVehicleClay), kfb-clay Profil 'vehicle' (= midground) mit Maßstab der Figur (FB-Höhe),
+// Palettenzug 0,12; Düsen als Knet-Flamme (vehicleRig style 'clay'). Ein Programm für alle Racer (kfb-clay: customProgramCacheKey = Version).
+const VCLAY_DEFAULT = false
+export const VCLAY_ON = /(^|[#,])vclay=1(,|$)/.test(H) || (VCLAY_DEFAULT && !/(^|[#,])vclay=0(,|$)/.test(H))
+const VCLAY_PAL = (() => { const k = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(H) || [0, TERRAIN3_CFG.palette])[1]; return TERRAIN3_CFG.palettes[k] || TERRAIN3_CFG.palettes.mesa })()
 // Heldenfarbe umschalten (Startseite, Ereignis kfb:hero): fehlt die Umrechnung bei geladenen Racern, rechnet sie in Häppchen nach; dann Texturen tauschen
 async function applyHeroSetting(on, gl) {
   HERO_ON.on = !!on; HERO_ON.switches++
   for (const [id, p] of [...MODELS]) { const m = await p, I = MODEL_INFO.get(id); if (!m || !I) continue
+    if (I.clay) { await prepVehicleClay(m, { palette: VCLAY_PAL, hero: on, tick: slicer(6) }); I.clay.hero = on; if (HERO_ON.on !== !!on) return; if (id === M2CAR.id) M2STATE.hero = { ...I.hero, on: HERO_ON.on }; continue }   // Knet-Stufe: Heldenfarbe = Lackgruppe in KFB-Rot
     if (on && I.hero.off) I.hero = await applyHeroColor(m, { tick: slicer(6), apply: false })
     if (HERO_ON.on !== !!on) return
     setHeroMaps(m, on); if (on && gl) m.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) if (mt.userData.hero?.tex) gl.initTexture(mt.userData.hero.tex) })
     if (id === M2CAR.id) M2STATE.hero = { ...I.hero, on: HERO_ON.on } }
 }
+const CLAY_ORIG = new WeakMap()
+const VEHICLE_CLAY_ROLES = () => ['sand', 'low', 'mid', 'high', 'peak', 'cliff', 'water'].map((k) => VCLAY_PAL[k]).filter(Boolean)
 const MODELS = new Map(), MODEL_INFO = new Map(), LOADLOG = []   // LOADLOG: Prüfhilfe [Schritt, ms] je Ladevorgang (letzte 60)
 const llog = (k) => { LOADLOG.push([k, +performance.now().toFixed(1)]); if (LOADLOG.length > 60) LOADLOG.shift() }
 const racerUrl = (id) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${VEHICLE_COMMIT}/${VEHICLE_RIG.vehicles[id].path}`
 const loadModel = (id = M2CAR.id, url = racerUrl(id)) => { touchModel(id); if (!MODELS.has(id)) MODELS.set(id, (llog('fetch ' + id), new GLTFLoader().loadAsync(url)).then(async (g) => { llog('parsed'); g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true } })
   const tick = slicer(6), t0 = performance.now(), look = /(^|[#,])vlook=0(,|$)/.test(H) ? { applied: 0, off: true } : await prepVehicleLook(g.scene, tick), t1 = performance.now()
-  const hero = HERO_ON.on ? await applyHeroColor(g.scene, { tick }) : { applied: 0, off: true }
-  llog('prepped'); MODEL_INFO.set(id, { look, hero, prepMs: { look: +(t1 - t0).toFixed(1), hero: +(performance.now() - t1).toFixed(1) } }); return g.scene })
+  const hero = VCLAY_ON ? { applied: 0, off: true, clay: true } : HERO_ON.on ? await applyHeroColor(g.scene, { tick }) : { applied: 0, off: true }
+  let clay = null
+  if (VCLAY_ON) { llog('clay tone'); const t2 = performance.now(), tone = await prepVehicleClay(g.scene, { palette: VCLAY_PAL, hero: HERO_ON.on, tick }); llog('clay apply')
+    const h = applyClay(g.scene, THREE, { profile: 'vehicle', seed: id, scaleRef: FB_RIG_HEIGHT, palette: VEHICLE_CLAY_ROLES(), pull: 0.12 })
+    // kfb-clay legt das Original-Material in mesh.userData ab; Object3D.clone kopiert userData per JSON → Material.toJSON wandelte die 2048er-Textur
+    // bei jedem Klon in einen Daten-Text (≈ 600 ms am Stück). Verweis hier in eine WeakMap (kfb-clay selbst bleibt byte-gleich).
+    g.scene.traverse((o) => { if (o.userData.kfbClayOrig) { CLAY_ORIG.set(o, o.userData.kfbClayOrig); delete o.userData.kfbClayOrig } }); clay = { ...h.info(), tone, ms: +(performance.now() - t2).toFixed(1), hero: HERO_ON.on } }
+  llog('prepped'); MODEL_INFO.set(id, { look, hero, clay, prepMs: { look: +(t1 - t0).toFixed(1), hero: +(performance.now() - t1).toFixed(1) } }); return g.scene })
   .catch((e) => { MODELS.delete(id); M2STATE.model = 'ERROR ' + e.message; return null }))
   return MODELS.get(id) }
 // Vorwärmen (Lead 22.10.: Erstladen des Abschlepp-Kolosses 290 ms, 8 neue Shader-Varianten): steht der Wagen, lädt der Leerlauf den nächsten und den
@@ -199,14 +217,14 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; const id = M2CAR.id; loadModel().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
     if (!I.look.off) hookVehicleLook(c) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
     const t0 = performance.now(); if (!I.warm) await warmModel(glR, c, camW, sceneW); if (!alive) return   // schon vorgewärmt (Zurückwechseln, Vorladen): sofort zeigen, kein Warten auf Bilder
-    M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
+    M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.clay = I.clay; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
     if (PREFETCH) setTimeout(() => alive && prefetchNeighbours(glR, camW, sceneW, () => alive), 1500) }); return () => { alive = false } }, [])
   // R1a: Antriebs-Modul an den Düsen-Ankern des Racers. Modell und Anker hängen gemeinsam in rig.stretch (Stauchen/Strecken bei Boost und Sprung),
   // rig.object3d unter der Deformer-Gruppe – Fahnen bleiben bei jeder Verformung an den Düsen. Gas weich (0,12 s), Tempo aus den K2B-Signalen.
   const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree()
   const dustColorAt = useCallback((x, z) => terrainDustColor(groundHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
   useEffect(() => { if (!model || !body.current) return
-    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', style: VCLAY_ON ? 'clay' : 'glow' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
     if (M2CAR.wheels) R1.object3d.position.y = -M2TUNE.rideHeight // Rad-Fahrzeuge (V-631, wie die Probe): Räder auf den Boden statt in Schwebehöhe
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
     return () => { M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])
@@ -239,6 +257,8 @@ function CarVisual({ squash, signals, lean }) {
 
 // Anzeige der aktiven Fahrphysik: groß oben mittig, beim Wechsel kurz hervorgehoben (Host-DOM, kein HUD-Stil)
 function useKindLabel(kind, assist, racer) {
+  const [devui, setDevui] = useState(DEVUI) // V-655: Schalter „Entwickler-Infos“ im Zahnrad schaltet das Label zur Laufzeit um
+  useEffect(() => onDevUi(setDevui), [])
   useEffect(() => {
     if (typeof document === 'undefined') return
     const el = document.createElement('div'); el.id = 'm2-kind'
@@ -251,11 +271,12 @@ function useKindLabel(kind, assist, racer) {
     el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ` <span style="font-weight:400;font-size:15px">· M Assist · C wechselt · V Racer: ${M2CAR.name.replace(/^\d+\s/, '')}</span>`
     const list = document.getElementById('m1-keys'); if (list && !document.getElementById('m2-keys')) { const c = document.createElement('div'); c.id = 'm2-keys'; c.style.marginTop = '6px'; c.innerHTML = RACER_FLY ? CAR_KEYS + RACER_KEYS : CAR_KEYS; list.appendChild(c) }
     /* Georg 22.10. (V-367 freigegeben): Abnahme-Text „Fahrsystem … Assist …“ nur im Testmodus (debug); Spieler sehen kurz den Racer-Namen unter der Holzleiste */
+    el.style.top = (DEVUI ? 14 : document.body.dataset.kfbHud === 'clay' ? 150 : 88) + 'px'; el.style.opacity = '1' /* Knet-HUD: unter dem Fluff-Score */
     if (!DEVUI) { el.textContent = M2CAR.name.replace(/^\d+\s/, ''); el.style.opacity = '1'; el.style.transition = 'opacity .6s'; const tf = setTimeout(() => { el.style.opacity = '0' }, 2600); return () => clearTimeout(tf) }
     el.style.background = 'rgba(255,214,120,.95)'; el.style.transform = 'translateX(-50%) scale(1.12)'
     const t = setTimeout(() => { el.style.background = 'rgba(255,250,240,.82)'; el.style.transform = 'translateX(-50%) scale(1)' }, 900)
     return () => clearTimeout(t)
-  }, [kind, assist, racer])
+  }, [kind, assist, racer, devui])
 }
 
 const M2Car = forwardRef(function M2Car({ player }, ref) {

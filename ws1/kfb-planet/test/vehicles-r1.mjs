@@ -6,6 +6,7 @@
 //          am Hang), far-near.png / far-out.png (Ferne-Aufhellung am echten Spielabstand) und sheet.json.
 //   clip   30-s-Fahrclip je neuer Klasse (Rad-Racer, Laster), nachts, aus der Folgekamera → test/out/vehicles/clip-<klasse>.webm
 //   start  Einzeltest Startseite: Fahrzeug-Wahl (15 Einträge), Racer-Wechsel hinter dem Vorhang, „zu Fuß“ nimmt car aus der Adresse
+//   vclay  A/B für Georg (V-654 C5): 3 Racer × Tag/Gold × Original/Knete aus der Spielkamera bei Gas → test/out/vehicles/vclay-ab.png (nur mit Slot)
 //   fps    fps-Tabelle: je Racer nachts fahrend, Scheinwerfer an/aus im Wechsel → test/out/vehicles/fps.md
 import fs from 'fs'
 import path from 'path'
@@ -18,7 +19,7 @@ const IDS = Object.keys(RIG).sort((a, b) => RIG[a].name_de.localeCompare(RIG[b].
 const CLASS = (id) => (RIG[id].class === 'hauler' ? 'Laster' : RIG[id].wheels ? 'Rad-Racer' : 'Schwebe-Racer')
 
 async function open(hash, vp = { width: 1280, height: 720 }) {
-  const o = await openPage(BASE + hash, { viewport: vp })
+  const o = await openPage(BASE + hash + (process.env.VEH_HASH || ''), { viewport: vp })   // VEH_HASH=',vclay=1': Knet-Stufe der Racer prüfen
   // VEH_CPU=4: nur diese Seite per CDP bremsen (stellt Volllast nach, ohne die geteilte Maschine zu belasten)
   if (+process.env.VEH_CPU > 1) { const cdp = await o.page.context().newCDPSession(o.page); await cdp.send('Emulation.setCPUThrottlingRate', { rate: +process.env.VEH_CPU }) }
   await o.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK' && window.__kfbM2?.stats?.modelId, null, { timeout: 240000 })
@@ -60,9 +61,11 @@ if (PART === 'data') {
   await page.waitForTimeout(1500); res.warmSwap = await swap(page, 'ironclad_wrecker')
   // Heldenfarbe (Georg 22.10.: Standard Original, Einstellung): im Spiel an- und wieder ausschalten, am Flammen-Dragster (Lack wird umgefärbt)
   await swap(page, 'crimson_flame_dragster')
-  const heroMaps = () => page.evaluate(() => { let tex = 0, orig = 0, all = 0; window.__kfbM2.stats.rig?.stretch?.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) { const h = mt.userData.hero; if (!h?.tex) continue; all++; if (mt.map === h.tex) tex++; if (mt.map === h.orig) orig++ } }); return { all, tex, orig, state: window.__kfbM2.stats.hero } })
+  // Heldenfarbe je Material: normal = umgerechnete Textur (hero.tex) bzw. Original; Knet-Stufe (vclay) = umgetönte Textur mit Lack in KFB-Rot (vclay.hero) bzw. ohne (vclay.base)
+  const heroMaps = () => page.evaluate(() => { let tex = 0, orig = 0, all = 0; window.__kfbM2.stats.rig?.stretch?.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) {
+    const v = mt.userData.kfbClay?.src?.userData.vclay, h = mt.userData.hero, on = v ? v.hero : h?.tex, off = v ? v.base : h?.orig; if (!on) continue; all++; if (mt.map === on) tex++; if (mt.map === off) orig++ } }); return { all, tex, orig, state: window.__kfbM2.stats.hero } })
   res.heroDefault = await heroMaps()
-  await page.evaluate(() => window.__kfbM2.setHero(true)); await page.waitForFunction(() => window.__kfbM2.stats.hero?.on && window.__kfbM2.stats.hero.applied >= 1, null, { timeout: 60000 }).catch(() => {})
+  await page.evaluate(() => window.__kfbM2.setHero(true)); await page.waitForFunction(() => window.__kfbM2.stats.hero?.on && (window.__kfbM2.stats.hero.applied >= 1 || window.__kfbM2.stats.hero.clay), null, { timeout: 60000 }).catch(() => {}); await page.waitForTimeout(1500)
   res.heroOn = await heroMaps(); await page.waitForTimeout(500); await page.screenshot({ path: OUT + 'hero-on.png' })
   await page.evaluate(() => window.__kfbM2.setHero(false)); await page.waitForTimeout(800)
   res.heroOff = await heroMaps(); await page.screenshot({ path: OUT + 'hero-off.png' })
@@ -74,7 +77,7 @@ if (PART === 'data') {
     headlightsOnAll: C.every((c) => c.lamps === RIG[c.id].headlights.lamps.length && c.pools >= 1 && c.sides >= 1),
     headlightsUnder02ms: C.every((c) => c.hlMs != null && c.hlMs < 0.2),
     wheelsOnGround: C.every((c) => (RIG[c.id].wheels ? c.rigY < -0.1 : c.rigY === 0)),
-    heroOffByDefault: C.every((c) => c.hero?.off && c.hero.on === false) && res.heroDefault.all === 0,
+    heroOffByDefault: C.every((c) => c.hero?.off && c.hero.on === false) && res.heroDefault.tex === 0,
     heroToggleOn: res.heroOn.state?.on === true && res.heroOn.all >= 1 && res.heroOn.tex === res.heroOn.all,
     heroToggleOff: res.heroOff.state?.on === false && res.heroOff.all >= 1 && res.heroOff.orig === res.heroOff.all,
     deformPerClass: C.every((c) => c.deform === (RIG[c.id].class === 'hauler' ? 'SPACE_HAULER' : 'CAR_CHILL_LIGHT')),
@@ -196,5 +199,19 @@ if (PART === 'start') {
   await H1.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 }); const hashHero = await H1.page.evaluate(() => window.__kfbM2.stats.hero); await H1.browser.close()
   code = report('vehicles-r1 start (Fahrzeug-Wahl an der Startseite)', { listsFootPlus14: n === 15, preselected: v0 === 'brasswing_roadster', swapBehindCurtain: swapped && /racer=rustwing_hauler/.test(h1), footRemovesCar: !/(^|,)car(,|$)/.test(h2.slice(1)) && !/racer=/.test(h2), noPageErrors: !errs.length && !H1.errs.length,
     heroDefaultOriginal: hero0.pressed === 'true' && hero0.on === false, heroButtonOn: heroUi && stored1 === '1', heroButtonOff: heroOffAgain && stored0 === '0', hashHero1: hashHero?.on === true && hashHero.applied >= 1 }, { h1, h2, hero0, hashHero })
+}
+if (PART === 'vclay') {
+  const RAC = ['crimson_flame_dragster', 'ironclad_skycruiser', 'wasteland_beetle'], TODS = [['Tag', ''], ['Gold', ',tod=gold']], shots = {}
+  for (const [tod, th] of TODS) for (const [lab, vh] of [['Original', ',vclay=0'], ['Knete', ',vclay=1']]) {
+    const { browser, page, errs } = await open(th + vh + ',prefetch=0', { width: 960, height: 540 }); await page.mouse.click(480, 300)
+    for (const id of RAC) { await swap(page, id); await page.waitForTimeout(800); await page.evaluate(() => window.__kfbM2.stats.follow.orbit(0.55, 0.06))
+      await page.keyboard.down('KeyW'); await page.waitForTimeout(1300); const f = `${OUT}shots/vclay-${id}-${tod}-${lab}.png`; await page.screenshot({ path: f }); await page.keyboard.up('KeyW'); await page.waitForTimeout(600)
+      ;(shots[id + tod] ||= {})[lab] = f; await page.evaluate(() => window.__kfbM2.setKind('k2b', null)) }
+    res.errs = (res.errs || []).concat(errs.slice(0, 2)); await browser.close() }
+  const TW = 640, TH = 360, HD = 26, comp = []; let r = 0
+  for (const id of RAC) for (const [tod] of TODS) { for (const [k, lab] of [[0, 'Original'], [1, 'Knete']]) comp.push({ input: await sharp(shots[id + tod][lab]).extract({ left: 0, top: 60, width: 960, height: 480 }).resize(TW, TH).png().toBuffer(), left: k * TW, top: r * (TH + HD) + HD })
+    comp.push({ input: Buffer.from(`<svg width="${2 * TW}" height="${HD}" xmlns="http://www.w3.org/2000/svg"><text x="8" y="19" font-size="16" font-family="sans-serif" fill="#fff">${RIG[id].name_de} · ${tod}</text><text x="${TW - 80}" y="19" font-size="15" font-family="sans-serif" fill="#ffd400">Original</text><text x="${2 * TW - 70}" y="19" font-size="15" font-family="sans-serif" fill="#ffd400">Knete</text></svg>`), left: 0, top: r * (TH + HD) }); r++ }
+  await sharp({ create: { width: 2 * TW, height: r * (TH + HD), channels: 3, background: '#15151b' } }).composite(comp).png().toFile(OUT + 'vclay-ab.png')
+  code = report('vehicles-r1 vclay A/B (V-654 C5)', { allShots: Object.values(shots).every((x) => x.Original && x.Knete), noPageErrors: !res.errs.length }, { sheet: OUT + 'vclay-ab.png' })
 }
 process.exit(code)

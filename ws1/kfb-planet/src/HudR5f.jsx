@@ -15,21 +15,21 @@ import * as H from './vendor/hud/hud-r5/r5f-hud.js'
 import * as TH from './vendor/hud/hud-r4/r4-theme.js'
 import { FONT_HREF } from './vendor/hud/hud-r5/r5-hud.js'
 
-export default function HudR5f({ counts = [0, 0, 0, 0, 0, 0], weapon = 'fist', mode = 'walk', world = 'otown', onApi = null, onCtx = null, onInteract = null, onThrow = null, onEquip = null }) {
+export default function HudR5f({ counts = [0, 0, 0, 0, 0, 0], weapon = 'fist', mode = 'walk', world = 'otown', onApi = null, onCtx = null, onInteract = null, onThrow = null, onEquip = null, hide = false }) {
   useEffect(() => {
     if (!document.querySelector('link[data-kfb-fredoka]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONT_HREF; l.dataset.kfbFredoka = '1'; document.head.appendChild(l) }
     const phone = window.innerWidth < 760, Z = phone ? H.SIZES.phone : H.SIZES.desk, T = TH.hudTheme(TH.stagePalette(world), 'A')
     const root = document.createElement('div'); root.id = 'kfb-hud-r5f'
     root.style.cssText = `position:fixed;left:0;top:0;width:${Z.W}px;height:${Z.H}px;transform-origin:0 0;pointer-events:none;z-index:8990;font-family:Fredoka,system-ui,sans-serif`
     const fit = () => { const k = Math.min(window.innerWidth / Z.W, window.innerHeight / Z.H); root.style.transform = `scale(${k})`; root.style.left = '0px'; root.style.width = `${window.innerWidth / k}px`; root.style.height = `${window.innerHeight / k}px` }   // Ebene = Fenster (Bauteile skaliert): Leiste klebt unten, Fluff oben, Rucksack links unten – auch bei nicht-16:9 (Georg 20.10.: Leiste schwebte mittig)
-    const place = (node, css) => { node.style.position = 'absolute'; node.style.pointerEvents = 'auto'; node.style.cssText += ';' + css; root.append(node); return node }
+    const place = (node, css) => { node.style.position = 'absolute'; node.style.pointerEvents = 'auto'; node.style.cssText += ';' + css; if (hide) node.style.display = 'none'; root.append(node); return node } // hide: Knet-HUD (V-656) zeigt Fluff, Leiste und Truhe selbst; Rucksack-Ansicht und api bleiben von hier
     const fl = H.fluffBar(T, Z, { counts, numbers: !phone })
     place(fl, phone ? `left:${Z.pad}px;top:${Z.pad}px` : `left:50%;top:${Z.pad}px;translate:-50% 0`)
     const bar = H.actionBar(T, Z, { weapon, mode, onCtx: (c) => onCtx?.(c), onInteract: () => onInteract?.() })
     place(bar, `left:50%;bottom:${Z.pad}px;translate:-50% 0`)
     const items = [], weapons = [], bagPos = `left:${Z.pad}px;bottom:${Z.pad + (Z.tray - Z.key) / 2}px`
     let bag = null, ov = null, activeW = null
-    const drawBag = () => { const b = H.bagButton(Z, weapons.length + items.length, () => openBag()); if (bag) bag.replaceWith(b); bag = b; if (!bag.isConnected) place(bag, bagPos); else { bag.style.position = 'absolute'; bag.style.pointerEvents = 'auto'; bag.style.cssText += ';' + bagPos } }
+    const drawBag = () => { const b = H.bagButton(Z, weapons.length + items.length, () => openBag()); if (bag) bag.replaceWith(b); bag = b; if (!bag.isConnected) place(bag, bagPos); else { bag.style.position = 'absolute'; bag.style.pointerEvents = 'auto'; bag.style.cssText += ';' + bagPos; if (hide) bag.style.display = 'none' } }
     const closeBag = () => { ov?.remove(); ov = null }
     const openBag = (sel = null) => {
       const all = [...weapons.map((w) => ({ ...w, fam: undefined, ctx: undefined })), ...items], NW = weapons.length

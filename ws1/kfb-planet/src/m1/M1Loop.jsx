@@ -6,6 +6,7 @@
 import { useEffect } from 'react'
 import { advance, useFrame } from '@react-three/fiber'
 import { M1CLOCK, STEP, resetClock, M1INTERP, interpAfterStep, interpDraw } from './m1Clock'
+import { runHudPass } from '../hud/hudPass' // Knet-HUD (V-656): Overlay-Pass direkt nach dem Weltbild, nur wenn ein HUD angemeldet ist
 
 const R = { gl: null, scene: null, camera: null }
 // höchstens so viele Schritte je Bild (M3 Stufe A, V-379: ≤ 8); der Rest wird verworfen (Spiel läuft unter 7,5 fps langsamer statt zu springen)
@@ -31,7 +32,7 @@ export default function M1Loop() {
       for (let i = 0; i < n; i++) { M1CLOCK.t += STEP; M1CLOCK.draw = false; const t0 = performance.now(); advance(M1CLOCK.t); interpAfterStep(); st.stepMs += performance.now() - t0; st.steps++; M1CLOCK.onStep?.() }
       M1CLOCK.frameDt = M1CLOCK.replay ? STEP * M1CLOCK.stepsPerFrame / M1CLOCK.framesPerStep : Math.min(0.1, Math.max(0, (now - (M1CLOCK.lastDraw ?? now)) / 1000)); M1CLOCK.lastDraw = now // Bildzeit für die Kamera im Bildtakt
       const alpha = M1CLOCK.replay ? (M1CLOCK.framesPerStep > 1 ? (M1CLOCK.frame % M1CLOCK.framesPerStep) / M1CLOCK.framesPerStep : 1) : Math.min(1, acc / STEP)
-      if (R.gl && !(M1CLOCK.nodraw && M1CLOCK.frame > 30)) { const t0 = performance.now(); M1CLOCK.draw = true; interpDraw(alpha, () => { M1CLOCK.onDraw?.(alpha); if (!M1CLOCK.norender) R.gl.render(R.scene, R.camera) }); st.drawMs += performance.now() - t0; st.draws++ }
+      if (R.gl && !(M1CLOCK.nodraw && M1CLOCK.frame > 30)) { const t0 = performance.now(); M1CLOCK.draw = true; interpDraw(alpha, () => { M1CLOCK.onDraw?.(alpha); if (!M1CLOCK.norender) { R.gl.render(R.scene, R.camera); runHudPass(R.gl) } }); st.drawMs += performance.now() - t0; st.draws++ }
       raf = requestAnimationFrame(tick)
     }
     advance(0); interpAfterStep(); if (R.gl) R.gl.render(R.scene, R.camera) // erstes Bild sofort (Laden, Kamera)

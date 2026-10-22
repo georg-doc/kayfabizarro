@@ -46,6 +46,18 @@ Alle Bilder mit `look=terrain3`, `world=probe`, headless (Metal-GPU). Hinweis: D
 - **Ferne-Aufhellung nachgemessen:** Am echten Spielabstand steht die Kamera 6,8 m (Standard) bis 18,9 m (ganz herausgezoomt) vom Wagen. Die Aufhellung beginnt erst bei 13 m und ist bei 78 m voll. Im Spiel liegt sie also bei 0,80 bis 0,82 und ist praktisch aus. Sie wirkt nur bei fremden Wagen in der Ferne.
   - Vorschlag: Soll der eigene Wagen herausgezoomt heller werden, Bereich auf 8–40 m setzen (`VEHICLE_LOOK.near/far`). Das braucht Georgs Blick.
 
+## 2b · Knet-Stufe der Racer (V-654 C5 „eine Machart“) · Schalter `vclay`, Standard aus bis Georgs Abnahme
+- **Was:** `vclay=1` gibt den Racern eine Knet-Machart; `vclay=0` bzw. ohne Schalter bleibt das Original. Nach Abnahme: `VCLAY_DEFAULT = true` in `M2Car.jsx`.
+  1. **Umtönen** (`prepVehicleClay`, in Häppchen beim Laden): Die Textur wird in 5 Farbgruppen zerlegt. Bunte Gruppen rücken in Farbton und Buntheit 50 % zur nächsten Rolle der Biom-Palette, graue nur leicht getönt; die Helligkeit bleibt beim Wagen („Meshy nur leicht tönen“, Gebiet 6). Kein Weichzeichnen: Meshy-Atlanten bestehen aus winzigen UV-Inseln.
+  2. **kfb-clay** (vendor 1:1): Profil `vehicle` (= midground), Maßstab FB-Höhe, Palettenzug 0,12. Ein Programm für alle Racer; nur Racer mit eigenen Leucht- oder Normal-Texturen bringen beim Erstladen Varianten mit, die das Vorwärmen vorher übersetzt.
+  3. **Knet-Flamme** (vehicleRig `style: 'clay'`): eine Tropfen-Masse mit wandernden Beulen, 3 Tonstufen, normal geblendet mit Tonemapping. Keine Schockdiamanten, kein Glühkern (Gebiet 11).
+- **Heldenfarbe** in der Knet-Stufe: Die Lackgruppe wird KFB-Rot (gleicher Schalter auf der Startseite).
+- **Leistung:** Zurückwechseln 56–60 ms ohne neue Shader (Einzeltest unter Last). Gefunden und behoben: Klonen kopierte das von kfb-clay in `userData` abgelegte Original-Material per JSON, samt Textur (≈ 600 ms je Racer). Jetzt liegt der Verweis in einer WeakMap.
+- **A/B für Georg:** [vclay-ab.jpg](img/vehicles-r1/vclay-ab.jpg) (Spielkamera bei Gas, Tag/Gold, Flammen-Dragster, Panzer-Gleiter, Ödland-Käfer).
+- **Offen:**
+  - Der Ödland-Käfer verliert in der Knet-Stufe Gelb und Blau und wird bräunlich, bei Gold dunkel. Stellschraube `VCLAY.hueShift` (jetzt 0,5) bzw. Rolle je Racer.
+  - Die Lüfter-Ringe (Panzer-Gleiter, Donner-Jet) sind noch Leuchtringe.
+
 ## 3 · Front-Scheinwerfer
 - Modul aus der Probe 1:1 (`src/look/kfb-headlights.v1.js`), dazu eine dünne Hülle (`src/look/headlights.js`): Farbraum unter r186 (Kegelfarbe als sRGB ausgegeben, gleiches Bild wie die Probe) und Maße im Spielmaßstab.
 - Lichtfleck über kfb-groundfx, Kanal `headlights`, mit Vorrang vor allen anderen.

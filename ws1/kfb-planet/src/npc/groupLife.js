@@ -107,6 +107,7 @@ export function createGroupLife(options) {
     positions: () => G.flatMap((g) => g.sim.outs.map((o) => ({ id: o.id, x: o.x, z: o.z, y: g.shown ? options.groundAt(o.x, o.z) : -1000 }))), // unsichtbar: Kapsel weit unter die Welt
     soles: () => G.flatMap((g) => g.figs.map((f) => f.soles())),
     holders: () => G.flatMap((g) => g.figs.map((f) => f.holder)),
+    actors: () => G.flatMap((g) => g.figs.map((f) => f.actor)), // Knete (C5): claySSOT-Ziele
     played: () => S.played.slice(),
     events: () => S.events.slice(),
     steps: () => S.steps.slice(), // { type: 'step', id, foot: 'l'|'r', at: [x, z], speed, group, t } – eigener Ringpuffer (150), damit Schritte keine Treffer verdrängen

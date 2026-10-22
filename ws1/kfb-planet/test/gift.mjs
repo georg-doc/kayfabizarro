@@ -15,6 +15,9 @@ const cam = () => page.evaluate(() => { const M = window.__kfbM1, p = M.feet(), 
   M.player().camera()?.setLookAt(p[0] - dx / n * 3.5 + dz / n * 2.0, p[1] + 2.4, p[2] - dz / n * 3.5 - dx / n * 2.0, d.at[0], M.terrainH(d.at[0], d.at[1]) + 1.4, d.at[1], false) })
 await cam(); await page.waitForTimeout(500)
 const before = (await D()).sq.shown // E3: vor dem Geschenk ist der Trupp unsichtbar, auch in der Zone der Begegnungstabelle
+// Aufzeichnung im Spiel je Physik-Schritt (unabhängig von Abfrage-Pausen durch Bildschirmfotos): Box, Papier, Soldaten zur Spurzeit
+await page.evaluate(() => { const M = window.__kfbM1, R = window.__gRec = []
+  M.clock.onStep = () => { const g = M.gift(), d = g.debug; if (d.t == null || d.t > 6) return; const s = M.groups().debug.find((x) => x.id === 'toy_squad'); R.push({ tl: d.t, box: d.box, paper: d.paper, members: s.members.map((m) => [m.x, m.z]) }) } })
 const sp = await page.evaluate(() => window.__kfbM1.gift().spawn())
 const samples = []; const shots = { 0.66: 'gift_0_anticipation', 1.45: 'gift_1_pop', 4.5: 'gift_2_march' }, done = new Set()
 for (let i = 0; i < 120; i++) { await page.waitForTimeout(50); const d = await D(); const tl = d.gift.t; samples.push({ tl, box: d.gift.box, paper: d.gift.paper, members: d.sq.members })
@@ -23,6 +26,7 @@ for (let i = 0; i < 120; i++) { await page.waitForTimeout(50); const d = await D
 const spots = (await D()).gift.spots
 let inForm = null; for (let i = 0; i < 160 && !inForm; i++) { await page.waitForTimeout(200); const d = await D(); const dev = Math.max(...d.sq.members.map((m, k) => Math.hypot(m[0] - d.sq.plan[k][0], m[1] - d.sq.plan[k][1]))); if (d.sq.mode === 'patrol' && dev < 0.6) inForm = { t: d.gift.t, dev } }
 const fin = await D()
+const rec = await page.evaluate(() => { window.__kfbM1.clock.onStep = null; return window.__gRec }); samples.length = 0; samples.push(...rec)
 await browser.close()
 const at = (t) => samples.reduce((a, s) => (Math.abs(s.tl - t) < Math.abs(a.tl - t) ? s : a))
 const s05 = at(0.3), s064 = at(0.64), s12 = at(1.25), s13 = at(1.6)

@@ -1006,35 +1006,50 @@
           "castId": "toy-soldier",
           "back": 0,
           "side": 0,
-          "nr": 1
+          "nr": 1,
+          "clipSources": [
+            "N15"
+          ]
         },
         {
           "id": "toy_2",
           "castId": "toy-soldier",
           "back": 1.5,
           "side": 0.65,
-          "nr": 2
+          "nr": 2,
+          "clipSources": [
+            "N15"
+          ]
         },
         {
           "id": "toy_3",
           "castId": "toy-soldier",
           "back": 1.5,
           "side": -0.65,
-          "nr": 3
+          "nr": 3,
+          "clipSources": [
+            "N15"
+          ]
         },
         {
           "id": "toy_4",
           "castId": "toy-soldier",
           "back": 3.0,
           "side": 0.65,
-          "nr": 4
+          "nr": 4,
+          "clipSources": [
+            "N15"
+          ]
         },
         {
           "id": "toy_5",
           "castId": "toy-soldier",
           "back": 3.0,
           "side": -0.65,
-          "nr": 5
+          "nr": 5,
+          "clipSources": [
+            "N15"
+          ]
         },
         {
           "id": "toy_6",
@@ -1045,7 +1060,10 @@
           "stumble": {
             "everyM": 11,
             "lag": 0.9
-          }
+          },
+          "clipSources": [
+            "N15"
+          ]
         }
       ],
       "notice": {
@@ -1060,7 +1078,21 @@
           "Idle_B"
         ]
       },
-      "note": "Hut-Nummern (V-464, WSB r3) und Gewehr-Halterung (V-582, WSB r3d) fehlen auf diesem Mac → ohne Nummer, ohne Gewehr; Kommando-Triplets (WSA) offen"
+      "note": "Hut-Nummern (V-464, WSB r3) und Gewehr-Halterung (V-582, WSB r3d) fehlen auf diesem Mac → ohne Nummer, ohne Gewehr; Kommando-Triplets (WSA) offen",
+      "combatN15": {
+        "koClip": [
+          "kfb_toy_topple_a",
+          "Skeletons_Death",
+          "Death_A"
+        ],
+        "awakeClip": [
+          "kfb_toy_standup_a",
+          "Skeletons_Awaken_Floor",
+          "Idle_B"
+        ],
+        "awakeS": 1.0,
+        "source": "WSB N15 (WS0 22.10.): KFB_ToySoldier_duel.r3d.n15.glb (privat), kfb_toy_topple_a 1,5 s / kfb_toy_standup_a 1,0 s; ersetzt G-3. Gilt nur, wenn die private Datei im Build ist, sonst bleiben die Skelett-Clips (combat)"
+      }
     },
     {
       "schema": "kfb.npc-group/1",

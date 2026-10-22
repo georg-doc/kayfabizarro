@@ -118,7 +118,7 @@ export function createGroupPatrol(def, R = GROUP) {
       const px = mem.x, pz = mem.z
       if (sense.near && mem.ok && t < mem.holdUntil) { /* abgesetzt (E3 Geschenk): steht still, bis er gelandet ist, dann geht er in die Formation */ }
       else if (sense.near && mem.ok && mem.ko) { // liegt, dann steht er an Ort und Stelle auf
-        if (mem.ko.awakeAt === null && t >= mem.ko.until) { mem.ko.awakeAt = t + R.hit.awakeS; o.clip = { name: CB.awakeClip, mode: 'once' }; emit({ type: 'awake', id: m.id, at: [mem.x, mem.z], t }) }
+        if (mem.ko.awakeAt === null && t >= mem.ko.until) { mem.ko.awakeAt = t + (def.combat?.awakeS ?? R.hit.awakeS); o.clip = { name: CB.awakeClip, mode: 'once' }; emit({ type: 'awake', id: m.id, at: [mem.x, mem.z], t }) }
         if (mem.ko.awakeAt !== null && t >= mem.ko.awakeAt) mem.ko = null
       } else if (sense.near && mem.ok) {
         const d = Math.hypot(q.x - mem.x, q.z - mem.z), vmax = R.memberMax * dt

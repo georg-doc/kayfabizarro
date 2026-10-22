@@ -44,6 +44,23 @@ void main(){ vLife = aLife; vec4 mv = modelViewMatrix * vec4(position,1.); gl_Po
 const SPARK_FRAG = /* glsl */`uniform vec3 uSpark; uniform vec3 uCore; varying float vLife;
 void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = smoothstep(0.5, 0.0, length(p)); gl_FragColor = vec4(mix(uSpark, uCore, vLife) * 2.2, k * vLife); }`
 
+// Knet-Flamme (V-654 C5, CANON Gebiet 11 „eine Masse mit Beulen, nie Kugelstapel … 2–3 Tonstufen, keine Emission“): style 'clay'. Eine tropfenförmige
+// Masse (Drehkörper), deren Umriss zwei bis drei überlappende Beulen trägt, die langsam nach hinten wandern; Farbe in drei Stufen (Kern, Fahne, Rand)
+// nach Blickwinkel, normal geblendet, mit Tonemapping (kein Leuchten). Keine Schockdiamanten, kein Glühkern.
+const CLAY_VERT = /* glsl */`uniform float uTime; uniform float uSeed; uniform float uThrust; varying vec3 vN; varying vec3 vV; varying float vAx;
+void main(){ float ax = position.z; vAx = ax; float lob = 1.0 + 0.16 * sin(ax * 9.0 - uTime * (5.0 + 6.0 * uThrust) + uSeed) * smoothstep(0.05, 0.35, ax) + 0.12 * sin(ax * 17.0 - uTime * 9.0 + uSeed * 1.7) * smoothstep(0.2, 0.6, ax);
+  vec3 p = vec3(position.xy * lob, position.z); vec4 mv = modelViewMatrix * vec4(p, 1.); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`
+const CLAY_FRAG = /* glsl */`uniform vec3 uCore; uniform vec3 uPlume; uniform float uThrust; varying vec3 vN; varying vec3 vV; varying float vAx;
+void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float k = f * (1.0 - 0.55 * vAx);
+  vec3 warm = mix(uPlume, vec3(1.0, 0.78, 0.38), 0.55); vec3 c = k > 0.74 ? mix(warm, uCore, 0.25) : k > 0.4 ? mix(uPlume, warm, 0.35) : uPlume * 0.74;   /* drei Stufen: warmer Kern (klein), Fahne, dunklerer Rand */
+  float al = smoothstep(1.0, 0.82, vAx) * (0.78 + 0.22 * uThrust);
+  gl_FragColor = vec4(c, al);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`
+// Tropfen-Umriss (Radius über z 0 → 1): an der Düse voll, Bauch bei 0,25, dann zur runden Spitze; Drehkörper mit 12 Ringen für die Beulen
+const clayFlameGeo = () => { const pts = []; for (let i = 0; i <= 14; i++) { const z = i / 14, r = Math.max(0.001, (z < 0.25 ? 0.92 + 0.32 * Math.sin(z / 0.25 * Math.PI / 2) : 1.24 * Math.cos((z - 0.25) / 0.75 * Math.PI / 2) ** 0.8)); pts.push(new THREE.Vector2(r, z)) }
+  return new THREE.LatheGeometry(pts, 18).rotateX(Math.PI / 2) }   // Drehachse +Y → +Z (Düse z 0, Spitze z 1)
 const additive = (frag, uniforms, extra = {}) => new THREE.ShaderMaterial({ vertexShader: VERT, fragmentShader: frag, uniforms, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false, ...extra })
 
 // Motormodell: Tempo (0..1) und Gas → Gang, Drehzahl (0..1), Ereignisse shift/backfire. Rein, ohne three (Node-prüfbar über createEngine)
@@ -73,14 +90,14 @@ void main(){ vLife = aLife; vColor = aColor; vec4 mv = modelViewMatrix * vec4(po
 const DUST_FRAG = /* glsl */`varying float vLife; varying vec3 vColor;
 void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = smoothstep(0.5, 0.15, length(p)); gl_FragColor = vec4(vColor * (0.85 + 0.25*vLife), k * vLife * 0.55); }`
 
-export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1, engine = {}, seed = 1 } = {}) {
+export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1, engine = {}, seed = 1, style = 'glow' } = {}) {
   const root = new THREE.Group(); root.name = 'vehicle-rig'
   const stretch = new THREE.Group(); stretch.name = 'vehicle-rig-stretch'; root.add(stretch) // Wirt hängt das Modell hier ein (Modell + Anker verformen gemeinsam)
   const fx = new THREE.Group(); fx.name = 'vehicle-rig-fx'; stretch.add(fx)
   const C = { core: new THREE.Color(glow.core || '#fff1c9'), plume: new THREE.Color(glow.plume || '#ffa97a'), spark: new THREE.Color(glow.spark || '#ffae3d') }
   const shared = { uCore: { value: C.core }, uPlume: { value: C.plume }, uTime: { value: 0 } }
   const Z = new THREE.Vector3(0, 0, 1), cone = new THREE.CylinderGeometry(1, 0.12, 1, 20, 1, true).rotateX(-Math.PI / 2).translate(0, 0, 0.5) // breit an der Düse (z 0), Spitze bei z 1
-  const disc = new THREE.CircleGeometry(1, 24), units = []
+  const disc = new THREE.CircleGeometry(1, 24), units = [], clayGeo = style === 'clay' ? clayFlameGeo() : null
   anchors.forEach((a, i) => {
     const g = new THREE.Group(); g.name = 'anchor:' + a.id; g.position.fromArray(a.pos).multiplyScalar(unit)
     g.quaternion.setFromUnitVectors(Z, new THREE.Vector3(...a.dir).normalize()); fx.add(g)
@@ -88,6 +105,9 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
     if (u.type === 'fan') {
       const m = additive(FAN_FRAG, { ...shared, uThrust: { value: 0 }, uAngle: { value: 0 } }, { side: THREE.DoubleSide })
       const d = new THREE.Mesh(disc, m); d.scale.setScalar(ro * 1.02); d.position.z = r * 0.06; d.renderOrder = 3; g.add(d); u.fan = d; u.mats.push(m)
+    } else if (clayGeo) {
+      const mp = new THREE.ShaderMaterial({ vertexShader: CLAY_VERT, fragmentShader: CLAY_FRAG, uniforms: { ...shared, uThrust: { value: 0 }, uSeed: { value: i * 7.13 + seed } }, transparent: true, depthWrite: false, side: THREE.DoubleSide })
+      const plume = new THREE.Mesh(clayGeo, mp); plume.renderOrder = 4; plume.frustumCulled = false; g.add(plume); u.plume = plume; u.clay = true; u.mats.push(mp)
     } else {
       const mc = additive(CORE_FRAG, { ...shared, uThrust: { value: 0 } }, { side: THREE.DoubleSide })
       const core = new THREE.Mesh(disc, mc); core.scale.setScalar(r * 0.95); core.position.z = -r * 0.25; core.renderOrder = 3; g.add(core)
@@ -170,7 +190,7 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
       for (const u of units) {
         for (const m of u.mats) { m.uniforms.uThrust.value = Math.min(1, t); if (m.uniforms.uAngle) m.uniforms.uAngle.value = state.angle }
         if (u.plume) { const len = u.ro * (PLUME.lenIdle + (PLUME.lenMax - PLUME.lenIdle) * t) * (1 + (PLUME.boostLen - 1) * state.boost) * pulse * Math.max(0.3, st)
-          u.plume.scale.set(u.ro * 0.92, u.ro * 0.92, len); u.core.scale.setScalar(u.r * (0.9 + 0.2 * t) * pulse) }
+          if (u.clay) u.plume.scale.set(u.ro * 0.8, u.ro * 0.8, len * 0.45); else { u.plume.scale.set(u.ro * 0.92, u.ro * 0.92, len); u.core.scale.setScalar(u.r * (0.9 + 0.2 * t) * pulse) } }   /* Knet-Flamme kürzer und dicker: eine Masse statt Strahl */
       }
       for (let j = 0; j < SPARKS; j++) { if (sp.life[j] <= 0) continue; sp.life[j] -= dt / sp.max[j]; if (sp.life[j] < 0) sp.life[j] = 0
         sp.vel[j * 3 + 1] -= 4 * unit * dt; for (let k = 0; k < 3; k++) sp.pos[j * 3 + k] += sp.vel[j * 3 + k] * dt }
@@ -178,8 +198,8 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
       springStep(dt); dustStep(dt, speed01, groundAt, groundColorAt)
       return ev
     },
-    info: () => ({ schema: VEHICLE_RIG_SCHEMA, anchors: units.length, thrust: +state.thrust.toFixed(3), gear: eng.gear, rpm: +eng.rpm.toFixed(3), boost: +state.boost.toFixed(2), events: { ...state.events }, stretch: [+stretch.scale.x.toFixed(3), +stretch.scale.y.toFixed(3), +stretch.scale.z.toFixed(3)], drawCalls: units.reduce((n, u) => n + u.mats.length, 0) + 1 + (hov.length ? 1 : 0), dust: du.life.reduce((n, v) => n + (v > 0 ? 1 : 0), 0) }),
+    info: () => ({ schema: VEHICLE_RIG_SCHEMA, style, anchors: units.length, thrust: +state.thrust.toFixed(3), gear: eng.gear, rpm: +eng.rpm.toFixed(3), boost: +state.boost.toFixed(2), events: { ...state.events }, stretch: [+stretch.scale.x.toFixed(3), +stretch.scale.y.toFixed(3), +stretch.scale.z.toFixed(3)], drawCalls: units.reduce((n, u) => n + u.mats.length, 0) + 1 + (hov.length ? 1 : 0), dust: du.life.reduce((n, v) => n + (v > 0 ? 1 : 0), 0) }),
     anchorWorld: (i, v = new THREE.Vector3()) => units[i]?.g.getWorldPosition(v) ?? null, // Prüfungen: sitzt die Düse am Modell?
-    dispose() { for (const u of units) u.mats.forEach((m) => m.dispose()); cone.dispose(); disc.dispose(); sg.dispose(); sm.dispose(); dg.dispose(); dm.dispose(); world.parent?.remove(world); root.clear() },
+    dispose() { for (const u of units) u.mats.forEach((m) => m.dispose()); cone.dispose(); disc.dispose(); clayGeo?.dispose(); sg.dispose(); sm.dispose(); dg.dispose(); dm.dispose(); world.parent?.remove(world); root.clear() },
   }
 }

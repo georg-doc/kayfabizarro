@@ -35,6 +35,7 @@ import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FE
 import { createSky, skyLog } from '../modules/m1-sky'
 import { createSkyR13 } from '../modules/sky-r13'
 import { isTerrain3, TERRAIN3_CFG, applyShadowTone3, applyFootShade, applyFigureShadow } from '../look/terrain3.js'
+import * as T3LOOK from '../look/terrain3.js' // T3_CALM (Beruhigung, nur im mvp-Stand vorhanden; fehlt sie, gilt 0)
 import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
 import { locoActorLog } from '../modules/m1-locoActor'
@@ -50,7 +51,7 @@ import { getReader, isPoolReady } from '../dialogText'
 import { useGame } from '../store'
 import { DECKS, cardAt, cardsOfDeck } from '../cards'
 import { useHostKeys, PRIO, ACTION_KEYS } from '../hostKeys'
-import { expose, DEBUG, DEVUI } from '../debug'
+import { expose, DEBUG, DEVUI, onDevUi } from '../debug'
 import { GFX, gfxChannel } from '../look/groundFx.js' // V-632: Boden-Lichteffekte (Kegel, Pfütze, Ring) über kfb-groundfx; löst die Einhängung des Lichtpfützen-Kits V-572 ab
 import clipsGeneral from '../assets/actors/Rig_Medium_General.glb?url'
 import clipsMove from '../assets/actors/Rig_Medium_MovementBasic.glb?url'
@@ -65,12 +66,14 @@ import { createGemLanterns, lanternsAlongPath } from '../modules/gemLanterns.js'
 import { isTerrain2, TERRAIN2_CFG } from '../look/terrain2.js'
 import { stagePaletteFor } from '../stagePalette'
 import HudR5f from '../HudR5f'
+import { cardImage } from '../cardImage'
+import HudClay, { clayHudAvailable } from '../HudClay' // Knet-HUD R1 (V-656): hud=clay, Standard Holz bis Georgs Abnahme
 import { createFoundItems3d } from '../modules/foundItems3d'
 import { createPath3d } from '../modules/path3d'
 import { placeLoot } from '../world/loot.js'
 import { createClaySSOT } from '../modules/claySSOT'
 import { figureCards } from '../actors/figureCard'
-import { SKIP_DEFAULT } from '../vendor/clay/kfb-clay.v1.1.js'
+import { SKIP_DEFAULT, MAX_PULL } from '../vendor/clay/kfb-clay.v1.1.js'
 import { createHarvestState } from '../world/harvest.js'
 import { createSaveStore, freshSave } from '../world/save.js'
 import TREE_ANCHORS from '../data/world/kaykit-tree-fluff-anchors.v1.json'
@@ -174,7 +177,10 @@ const DISCO_OPTS = { k12: discoK12(), cast: discoCast, mc: discoMC, createActor,
 const BAND_OPTS = BAND_DEF ? { scenelet: BAND_SCENE || { ...BAND_DEF.fallback, assets: {} }, urls: Object.fromEntries(Object.entries(BAND_PRIV).map(([k, v]) => [k.split('/').pop(), v])), at: BAND_AT.at, yaw: (BAND_AT.yawDeg * Math.PI) / 180,
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => (M1CLOCK.t ?? 0) + NPC_T0, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, worldScale: K, classScale: CLASS_SCALE,
   placeholder: { cast: () => KAYKIT(BAND_DEF.placeholderCast)(0, 0, null), clipUrls: [clipsGeneral, clipsSim] } } : null
-const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, revealOnly: /(^|[#,])gift(,|$)/.test(hash) && NPC_WORLD.gifts?.[0] ? [NPC_WORLD.gifts[0].group] : [], /* E3: Trupp nur aus dem Geschenk */ bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null), worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
+// WS-NPC N15 (WS0 22.10., ersetzt G-3): Spielzeug-KO/Aufstehen aus WSB N15 (privat, optional aus src/private); fehlt die Datei, bleiben die Skelett-Clips
+const N15_URL = Object.values(import.meta.glob('../private/50_BLENDER/N15/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.n15.glb', { eager: true, query: '?url', import: 'default' }))[0] || null
+const GROUP_DEFS = NPC_WORLD.groups.map((g) => (N15_URL && g.combatN15 ? { ...g, combat: { ...(g.combat || {}), ...g.combatN15 } } : g))
+const GROUP_OPTS = { groups: GROUP_DEFS, tables: NPC_WORLD.encounterTables, revealOnly: /(^|[#,])gift(,|$)/.test(hash) && NPC_WORLD.gifts?.[0] ? [NPC_WORLD.gifts[0].group] : [], /* E3: Trupp nur aus dem Geschenk */ bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => { const c = botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null); return N15_URL && m?.clipSources?.includes('N15') ? { ...c, extraClipUrls: [N15_URL] } : c }, worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
   staticUrl: (key) => { const [kind, c] = key.split(':'); return kind === 'station' ? botStationUrl(c) : kind === 'block' ? botBlockUrl(c) : null },
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, orchard: () => mods.orchard, // D3: Ziele, Fluff
   day: () => Math.floor(((M1CLOCK.t ?? 0) + NPC_T0) / NPC_WORLD.dayS), onEvent: (e) => mods.npc?.observeGroup?.({ ...e, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }
@@ -203,7 +209,20 @@ const makePath = mk('path', (o) => createPath3d(o)), makeOrchard = mk('orchard',
 // V-429 · Knete aus kfb-clay.v1.1 auch in der Laufwelt: Spieler und Partnerin nach ihrer Figurenkarte (character), Obstgarten-Bäume midground (Kügelchen und
 // Wirkungen behalten ihr Material: Instanz-Farben je Sorte); clay=0 schaltet aus
 const CARDS = figureCards(), CLAY_ON = !/(^|[#,])clay=0(,|$)/.test(hash)
-const CLAY_M1 = { targets: () => [{ module: mods.player, card: CARDS.frizzlebob }, { module: mods.partner, card: CARDS.gothgirl },
+// WS-NPC C5 (MVP-Kritiker R1, WS0 V-654): „eine Machart“ – Knete (kfb-clay v1.1, Profil character wie die Bühnenfiguren) auch auf Kit-Figuren
+// (Bewohner, Gruppen, Band); Kit-Farben auf die Rollen der aktiven Biom-Palette (terrain3) gezogen, Augen/Augen-Rig über SKIP_DEFAULT ausgenommen.
+// Schalter #kitclay (Standard an erst nach Georgs Abnahme). Zug vorläufig = Kanon-Obergrenze MAX_PULL (V-340, 18 %), Wert legt WS0/Georg nach A/B fest.
+const KITCLAY = /(^|[#,])kitclay(,|$)/.test(hash)
+// Beruhigung (terrain3 calm, mvp): Rollenfarben genau wie der Gelände-Shader dämpfen – Sättigung −35 %·calm, dann Zug 40 %·calm zum Mittelton
+// t3m = mix(mix(low, mid, 0,5), sand, 0,3) (terrain3.js Z. 127/128), damit die Figuren zum beruhigten Boden passen
+const kitPalette = () => { const P = TERRAIN3 && TERRAIN3_CFG.palettes?.[T3_PAL]; if (!P) return null
+  const calm = +(T3LOOK.T3_CALM ?? 0), c = (h) => new THREE.Color(h), mid = c(P.low).lerp(c(P.mid), 0.5).lerp(c(P.sand), 0.3)
+  return ['sand', 'low', 'mid', 'high', 'peak', 'cliff', 'water'].filter((r) => P[r]).map((r) => { const k = c(P[r]); if (calm > 0) { const L = 0.2126 * k.r + 0.7152 * k.g + 0.0722 * k.b
+    k.lerp(new THREE.Color(L, L, L), 0.35 * calm); k.lerp(mid, 0.4 * calm) } return '#' + k.getHexString() }) }
+const KIT_PAL = kitPalette()
+const kitClayTargets = () => [...(mods.npc?.actors?.() || []), ...(mods.groups?.actors?.() || []), ...(mods.band?.clayTargets?.() || [])]
+  .map((a) => ({ module: a, profile: 'character', seed: a.object3d?.name || 'kit', ...(KIT_PAL ? { palette: KIT_PAL, pull: MAX_PULL } : {}) }))
+const CLAY_M1 = { targets: () => [{ module: mods.player, card: CARDS.frizzlebob }, { module: mods.partner, card: CARDS.gothgirl }, ...(KITCLAY ? kitClayTargets() : []),
   ...(mods.found ? [{ module: mods.found, profile: 'midground', seed: 'found', scaleRef: 0.9, skip: (o) => o.name === 'contact-blob' || SKIP_DEFAULT.test(o.name || '') }] : []),
   ...(mods.orchard ? [{ module: mods.orchard, profile: 'midground', seed: 'orchard', scaleRef: 2.6, skip: (o) => o.name === 'orchard-fluff' || !/^tree:/.test(o.parent?.name || '') && !/tree:/.test(pathName(o)) || SKIP_DEFAULT.test(o.name || '') }] : [])] }
 const pathName = (o) => { const a = []; for (let n = o; n; n = n.parent) a.push(n.name || ''); return a.join('/') }
@@ -217,6 +236,16 @@ const M1GL = { gl: null, scene: null }
 // springt in die Fluff-Leiste (fl.land je Sorte), V Faust / B Blaster setzen die Waffe der Aktionsleiste, N legt die Cartoon-Bombe in den Kontext-Platz und
 // zündet sie (Klick auf die Bombe zündet ebenso). Rucksack-Taste nur angezeigt (Fundsachen folgen mit C3b).
 const KIND_INDEX = { tragic: 0, comic: 1, absurd: 2, heroic: 3, mystical: 4, forbidden: 5 }
+// Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard wood, bis Georg im Spiel abnimmt). Ohne src/private immer Holz.
+const HUD_SKIN = (/(^|[#,])hud=(clay|wood)(,|$)/.exec(hash) || [0, 0, 'wood'])[2]
+const CLAY_HOST = {
+  palette: () => (TERRAIN3 ? TERRAIN3_CFG.palettes[T3_PAL] : TERRAIN3_CFG.palettes.moos), // Insel-Palette des Geländes (V-653); ohne terrain3 die Moos-Insel wie BIOME
+  target: () => (M2_ON ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
+  terrain: () => mods.terrain || null, k: K,
+  path: DEMO_PATH.pts.map(([x, z]) => [x, z]),
+  marks: () => [{ x: 0, z: 0, color: '#e9c14a', r: 8 }], // Bühne (Amphitheater im Ursprung)
+  cards: () => Promise.all(DECK.slice(0, 3).map((c) => cardImage(c.deck.id, c.num, 700).then((r) => r?.canvas || null, () => null))),
+}
 function Orchard() {
   const store = useMemo(() => createSaveStore(), [])
   const hud = useRef(null)
@@ -242,10 +271,11 @@ function Orchard() {
     hud.current?.setWeapon(w ? w.hud : 'fist'); hud.current?.setActiveWeapon?.(id ?? null); HARVEST_STATE.weapon = id ?? null; return true }, [])
   useHostKeys((e) => { if (e.repeat || M1STATE.phase !== 'free' || !(e.code in ACTION_KEYS.weapon)) return; if (equip(ACTION_KEYS.weapon[e.code])) e.preventDefault() }, PRIO.player)
   // Waffen in den Rucksack, sobald das Kampfmodul sie geladen hat (ohne src/private: keine Einträge, Status „keine Waffen“); Startwaffe aus weapon=
-  const bagDone = useRef(false)
+  const bagDone = useRef(false), bagEquipped = useRef(false)
+  useEffect(() => onDevUi(() => { bagDone.current = false }), []) // V-655: Schalter „Entwickler-Infos“ → Rucksack-Notizen neu (Kit-Notiz bzw. Spielertext)
   useFrame(() => { const C = mods.combat; if (bagDone.current || !C || !hud.current || !M1GL.gl || C.status().status === 'LOADING') return; bagDone.current = true
     const list = C.weapons().filter((w) => w.status === 'OK').map((w) => ({ wid: w.id, id: 'k10.' + w.id, n: w.name, k: DEVUI ? 'Waffe · K10' : 'Waffe', icon: 'blaster', note: DEVUI ? w.note : 'Einzelschuss', /* Georg 22.10.: keine Entwicklertexte im Spielbild */ shot: C.thumbnail(w.id, M1GL.gl) })) // Bild = Original-Modell
-    hud.current.setWeapons?.(list); HARVEST_STATE.bagWeapons = list.map((w) => w.wid); if (WEAPON0 && list.some((w) => w.wid === WEAPON0)) equip(WEAPON0) })
+    hud.current.setWeapons?.(list); HARVEST_STATE.bagWeapons = list.map((w) => w.wid); if (!bagEquipped.current && WEAPON0 && list.some((w) => w.wid === WEAPON0)) equip(WEAPON0); bagEquipped.current = true })
   const lanterns = useMemo(() => ({ items: lanternsAlongPath(DEMO_PATH, { n: 8, terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z) }), renderer: () => M1GL.gl, mood: () => moodAt(TODV, MOOD_SET), ground: BIOME.top }), [])
   const pract = useMemo(() => ({ practicals: () => (mods.lanterns?.practicals() || []).map((p) => ({ ...p, intensity: 1, halo: { size: 0.001 } })), weight: () => moodAt(TODV, MOOD_SET).glow ?? 0 }), []) // Leuchthof bringt kfb-gem selbst mit
   const found = useMemo(() => ({ items: placeLoot({ zones: LOOT_ZONES, path: DEMO_PATH, seed: 18 }), terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z) }), []) // V-450: gleicher Bodenabstand 0,15 m statt Hüfthöhe
@@ -268,7 +298,8 @@ function Orchard() {
   useFrame(() => { const p = worldPosOf(mods.player); if (!p || !mods.found || !hud.current) return; const t = !!mods.found.near([p.x, p.y, p.z]); if (t !== HARVEST_STATE.target) { HARVEST_STATE.target = t; hud.current.setTarget(t) } })
   return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} /><ModuleHost create={makeCombat} options={COMBAT_OPTS} />
     {LANTERNS_ON && <><ModuleHost create={makeLanterns} options={lanterns} /><ModuleHost create={makePract} options={pract} /></>}
-    <HudR5f counts={counts0} onApi={(a) => { hud.current = a; HARVEST_STATE.hud = a }} onCtx={(c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }} onInteract={pickUp} onThrow={throwAway} onEquip={equip} /></>
+    {(() => { const P = { counts: counts0, onApi: (a) => { hud.current = a; HARVEST_STATE.hud = a }, onCtx: (c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }, onInteract: pickUp, onThrow: throwAway, onEquip: equip }
+      return HUD_SKIN === 'clay' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
 }
 // V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine; Stärke und Farbe 1:1 aus dem Practicals-Angebot
 // von kfb-gem (Stimmung × Puls × Flackern), tagsüber 0. V-632: über kfb-groundfx (gleiche Kegel-Rechnung wie kfb-light-pool.v1), Kanal 'lanterns' –
