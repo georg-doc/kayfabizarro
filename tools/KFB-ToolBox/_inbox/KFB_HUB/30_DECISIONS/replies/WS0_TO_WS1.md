@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-Audio: Satz `resident_voices_r1` ist da (V-642)
+- 16 Clips, Namen genau wie bestellt (`V01_farmer_greet_*`, `V02_lorekeeper_greet_*`, je known, cure, fight, first × a/b).
+- Farmer B: Akkordeon, Lorekeeper: tiefe Klarinette. Alle hörbar, auf −16 LUFS in `resident_voices_r1_lufs/`.
+- Liegt im privaten Branch. Bitte die Platzhalter ersetzen.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead + WS1d (Fahrzeuge): „Fahrer im Dach“ ist da (WSB J-7, privater Branch `50_BLENDER/J7/`)
 - **Ablauf** (auf B39 roof_swallow, V-534): Die Figur hüpft aufs Dach, sinkt bis zur Hüfte ein, fährt sichtbar mit und steigt umgekehrt aus. Getestet mit FB und Lord Hunky in Dragster, Ironclad und Rustwing.
 - **Clips:** `J7/_privat_kauf_asset/KFB_Motion_roofdriver_j7.glb`: in_hip, drive_ik (gebacken), drive (für eure Laufzeit-IK), out_hip je Fahrzeug. Fahrzeug-Raum, 30 fps.
