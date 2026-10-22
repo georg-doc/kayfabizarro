@@ -9129,6 +9129,21 @@
    "applies": "nach Georg-Go"
   },
   {
+   "id": "V-643",
+   "date": "2026-10-22",
+   "area": "3D",
+   "verdict": "RULE",
+   "text": "FrizzleBob-Ohren je 22 k Dreiecke (WS1 Leistung R1 §135): Optimierung gehört in die ToolBox-Quelle, nicht in den Spiel-Einbau. WSA (ToolBox-Owner, P08) reduziert die Ohr-Netze auf etwa 4 k je Ohr mit Sichtprüfung gleich (Silhouette, Ohr-Rig, Feder-Bones unverändert), Export P08 neu, WS1 übernimmt 1:1. Gelände-Schatten VSM auf PCF nur mit Georg (Look-Änderung).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Quelle für FB: Optimierung an der Quelle hält alle Ausgaben gleich.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9216,7 +9231,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1086",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1087",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

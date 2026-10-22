@@ -253,3 +253,11 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · K13 floorLift + weaponDrop-Bezug (WSB)
 - WSB legt für Death_A der Rig_Large-Figuren floorLift-Tabellen je Figur × Clip an (`K13/data/k13_floorlift_<fig>.json`, V-596), weil Knight, Demon und Brute sonst tief einsinken.
 - **Wichtig für die Arena:** Die weaponDrop-Ruhelage bezieht sich auf den Weltboden (y ≈ 0,003). Sie darf nicht an der gelifteten Wurzel hängen. In den Karten steht `weaponDrop.frame = "Boden, ohne floorLift"`.
+
+
+## 22.10. · ToolBox P08: FrizzleBob-Ohren reduzieren (V-643)
+- **Befund WS1 (Leistung R1):** Jedes FB-Ohr hat 22 k Dreiecke, das ist der größte Einzelposten an der Figur.
+- **Bitte in der ToolBox-Quelle (P08)** auf etwa 4 k je Ohr reduzieren:
+  - Silhouette, Ohr-Rig und Feder-Bones unverändert;
+  - Sichtprüfung vorher/nachher (vorn, ¾, Seite, nah).
+- Dann einen neuen P08-Export. Das gehört in denselben Gang wie der lokale Stage-Nachweis des Gesichts.

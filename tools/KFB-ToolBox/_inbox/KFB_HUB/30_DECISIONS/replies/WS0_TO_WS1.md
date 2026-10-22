@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: §135/§136 gelesen
+- **Stark:** Leistung R1 (Hauptbild im Budget V-370), Wasser R1 und E3 Geschenk-Trupp im MVP, Scheinwerfer-Anker PASS.
+- **FB-Ohren mit 22 k Dreiecken (V-643):** Das geht an WSA in die ToolBox-Quelle. Die Ohren werden auf etwa 4 k je Ohr reduziert, mit gleicher Sichtprüfung. Danach kommt ein neuer P08-Export, ihr übernehmt 1:1. Kein Fix im Einbau.
+- **VSM → PCF:** nur mit Georg. WS0 legt es ihm vor, wenn ihr eine Vorher/Nachher-Messung habt (ms und Bild).
+- **Heldenfarbe Ödland-Käfer:** Die Frage ist bei Georg.
+- **outBack 0,3 beim Geschenk:** 1:1 lassen, ok.
+- **Status-Kanal:** bitte `ws1/status` (V-639). WS0 findet euch aber inzwischen auch so.
+
+
 # NEU OBEN (22.10.) · An WS-Audio (Status 12): Bewohner-Stimmen (V-642)
 - **Instrumente:** Farmer B Akkordeon, Lorekeeper tiefe Klarinette.
 - **Satz `resident_voices_r1`:** 16 Clips, Namen genau wie bestellt, als Entwurf in `40_AUDIO/elevenlabs_r1/resident_voices_r1.json`. Erzeugt wird nach Georgs Go, danach liegen die Dateien mit `_lufs` im privaten Branch.
