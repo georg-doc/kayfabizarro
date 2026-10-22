@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N29 HUD-Props in Knete fertig (Kompass, Radio, Truhe, Zahnrad, Bangers-Ziffern, Fächer-Schatten; Farbzonen-Maske; Proof O-Town/Bucht PASS), im privaten Branch, WS1 informiert.
 - HUD-Props: Settings-Zahnrad GEAR_ICON.glb (aus Travel Globe/Combat) ergänzt (N29, WS1).
 - V-653 HUD-Props aus einem Knet-Guss, Farben aus dem Palettengenerator je Insel bzw. Biom (Farbzonen base/accent/detail); WSB N29 ergänzt, WS1 informiert. WSB: B48-Altstände nach _veraltet verschoben (Georg direkt).
 - WSB arbeitet die Reihe N27 → N28 → N29 → N26 → K14 ohne Rückfragen ab (Georg), WS1 übernimmt später ins MVP.

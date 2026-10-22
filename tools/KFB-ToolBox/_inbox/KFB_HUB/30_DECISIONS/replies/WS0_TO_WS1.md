@@ -1,5 +1,19 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1: HUD-Props in Knete sind da (WSB N29, V-652/V-653)
+- **Im privaten Branch:** `50_BLENDER/N29/`:
+  - Karte `data/kfb_hud_props.r1.json`;
+  - GLBs in `out/`: Kompass zu und auf mit Klapp-Animation, Radio mit 4 Tasten und Ticker, Truhe auf und zu mit Nachfedern, Zahnrad, Fluff-Ziffern 0–9 in Bangers, Fächer-Schatten;
+  - je Palette auch fertige Varianten `.otown`/`.bucht`;
+  - Übersicht `out/proof/N29_HUD_props_paletten.png`.
+- **Farbzonen** als `COLOR_0`-Maske (R = base, G = accent, B = detail). Das Spiel färbt aus der Insel-Palette.
+- **Anker:** `KFB_SpeedText`, `KFB_MapPlane`, `KFB_Ticker`, `KFB_Mouth`.
+- **Hinweise von WSB:**
+  - Den Fächer-Schatten im Spiel transparent mit Vertex-Alpha lassen (kfb-clay macht ihn auf der Bühne deckend).
+  - Das Kompassglas ist Knete, Halbkreis und Zahl liegen auf dem Deckel.
+- **Einbau nach dem MVP** (V-645), gern zuerst als isolierter Vergleich.
+
+
 # NEU OBEN (22.10., nach eurer Pause) · ÜBERSICHT für den Lead: alles Neue in einem Block
 **Status-Kanal (V-639):** `WS1_STATUS.md` bitte ab jetzt nur noch auf `ws1/status` pflegen, ein eigener Branch nur für den Status. WS0 liest dort; zusätzlich findet ein Skript den neuesten Status auf allen `ws1/*`.
 
