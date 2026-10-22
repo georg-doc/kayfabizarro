@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB arbeitet die Reihe N27 → N28 → N29 → N26 → K14 ohne Rückfragen ab (Georg), WS1 übernimmt später ins MVP.
 - V-651 Boss mit hochskalierter Orc-Keule (Georg-Ausnahme); V-652 HUD-Props (Kompass/Tacho, Radio, Truhe, Bangers-Score, Kartenfächer) als WSB-Job N29, Einbau WS1.
 - V-648 K13 TUNE: Schilde außen auf dem Handrücken, Orc-Axt groß im Faustring, FrostGolem neu; Waffenhaltungs-Modelle WEAPON_GRIP_MODELS_R1.md; große Orc-Keule existiert in keinem Kit (Georg-Frage). V-649 K14 frei. V-650 Blasen strikt Englisch, NPC_GREETINGS_R1.json.
 - V-647 ohne Meshy-Enterprise; Spiel-Slices hinter das gemeinsame Passwort (nur Georg); Web-Chat-Brief Splat-Beispiele.
