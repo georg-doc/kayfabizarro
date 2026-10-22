@@ -82,6 +82,15 @@ Alle Bilder mit `look=terrain3`, `world=probe`, headless (Metal-GPU). Hinweis: D
   - Schalter `hl=0` schaltet die Scheinwerfer ab.
 - **Anker halbautomatisch:** 8 von 14 stehen auf „im Rig-Studio prüfen“ (01, 03, 04, 05, 06, 08, 11, 13); auf dem Kontaktbogen steht es je Racer dabei. **Georg 22.10.: alle 8 PASS, Tune später** (Unterlage [VEHICLES_R1_ANKER.md](VEHICLES_R1_ANKER.md)).
 
+### 3b · Scheinwerfer-Tune (Georg 22.10. nach der Racer-Abnahme; Mattierung: Standard bleibt, vmatte aus)
+- **Wunsch:** zwei getrennte Kegel mit rundem Ende statt eines verschmolzenen Flecks, tagsüber leiser.
+- **Umsetzung** nur über Werte der Hülle (`HEADLIGHT_TUNE` in `src/look/headlights.js`), das Modul bleibt 1:1:
+  - Fleck 0,16 rad, Zielpunkt 9 m, Reichweite 15 m (rundes, weiches Ende)
+  - Divergenz 0,13 rad je Lampe, sichtbarer Kegel 0,12 rad
+  - Fleck bei Tag × 0,35, weicher Rand
+- **Schalter:** `hlt=0` = alte Werte.
+- **A/B:** im selben Moment aufgenommen (`HEADLIGHTS.rebuild()`, Antrieb eingefroren). 24 Einzelbilder unter `~/kfb-ws1/research/audits/abnahme/scheinwerfer/` (4 Racer × Tag/Gold/Nacht × alt/neu, index.json), Erzeuger `test/headlight-abnahme.mjs`.
+
 ## 4 · kfb-groundfx (V-632)
 - **Datei:** `src/look/kfb-groundfx.v1.js` (THREE injiziert, ohne React), Spiel-Instanz `src/look/groundFx.js`.
 - **Formen:** `cone` (Kegel-Projektion, Rechnung wie kfb-light-pool.v1), `pool` (Pfütze senkrecht von oben), `ring` (Ring von oben).
