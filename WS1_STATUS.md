@@ -3,6 +3,46 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 139 · 22.10. · Kritiker MVP R1, Runde 2: REWORK 3,2 → Stopp-Regel, Bericht an WS0 · Schnell-Korrekturen drin · Aufgaben nach V-654 verteilt
+
+- **ws1/mvp-r1 @961cce8.** Privat `game/mvp-r1` @6ca3e54, öffentlicher Spiegel `ws1/mvp-r1` @1847d53.
+  - **Sammelliste** für den WS0-Abgleich (V-654: „bitte Pfad nennen“): kayfabizarro `ws1/mvp-r1` → `ws1/kfb-planet/docs/OFFENE_PUNKTE_R1.md`.
+  - **Kritiker-Texte:** `ws1/kfb-planet/docs/critic/` (Runde 1 + 2). Die Bilder bleiben privat.
+- **Umgesetzt (V-654 „sofort“, V-655):**
+  - C1: Entwicklertexte nur noch mit `DEVUI` (Debug-Hash; `clean` blendet sie für Belegbilder aus). Der Settings-Schalter kommt mit dem Knet-HUD (WS1e).
+  - C2: runde Wegenden statt Rechteck-Platte.
+  - C4: Nachts trägt FB das Figurenlicht des Rigs.
+  - C7: Knet-Treffer 0,32 m.
+  - C8: weiche Disco-Flecken.
+  - C3 als Ruhefläche: terrain3 `calm`, Kontrast −40 %, Sättigung −35 %, in der Ferne Mischton; `calm=0` zeigt den Probe-Look.
+  - C12: Bildsatz mit Kamera 1/3/4 und Silhouetten-Pass.
+- **Eigener Fehler, behoben:** Ein `//`-Kommentar mitten im RIG-Einzeiler hatte `figureLight` still auskommentiert (Fund WS1e), behoben in 2b028e1.
+- **contract-static:** prüft `src/private` nicht mehr; neue WSB-Proof-Stage-Skripte im privaten Branch lösten dort FAIL aus.
+- **Kritiker Runde 2** (frischer, blinder Kritiker, gleiche Regeln, erweiterter Bildsatz):
+
+  | | K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10 | Mittel |
+  |---|---|---|---|---|---|---|---|---|---|---|---|
+  | Runde 1 | 5 | 4 | 4 | 3 | 5 | 4 | 4 | 5 | 4 | 5 | **4,3** |
+  | Runde 2 | 5 | 3 | 3 | 2 | 3 | 2 | 3 | 3 | 3 | 5 | **3,2** |
+
+  - **Einordnung Lead:** Die schnellen Korrekturen bringen keinen Punktgewinn. Der erweiterte Bildsatz (Übersicht, Fuß, Silhouette) legt mehr frei: Würfel-Bäume ohne Kontakt, Schattenrechtecke ohne Werfer, fleckige Schwellwert-Wolken, beige Leere im Flug. Dazu kommt Streuung zwischen zwei Kritikern.
+  - **Die tragenden Befunde liegen auf Konzept- und Asset-Ebene:**
+    - fünf Materialwelten: Knet-Hase, glatte Kit-Figuren, PBR-Racer mit Foto-Rost, Glitzer-Kristalle, Block-Waffe;
+    - Farbflächen als Zungen und Mäander statt gerundeter Blobs (Gebiet 5/17, V-570);
+    - Erdung fehlt an jedem Objekt;
+    - Düsenflammen und Gischt als Scheiben bzw. Kugeln.
+  - **Stopp-Regel:** zwei Runden ohne Punktgewinn, K2–K9 unter 4 → **Bericht an WS0**. Keine weitere Kritiker-Runde, bis die V-654-Pakete eingebaut sind.
+- **Laufende V-654-Pakete:**
+  - WS1d: `kfb-clay` und Palettenrollen auf die Racer, Knet-Flamme;
+  - WS-NPC: `#kitclay` auf die Kit-Figuren (gebaut, A/B-Bilder folgen);
+  - WS1b: Erdung nach SPEC_PLACEMENT_GRAMMAR_R2 (`ws1/grounding-r1`);
+  - WS1e: diegetisches Knet-HUD (V-656).
+- **Fragen an WS0:**
+  1. Farbflächen-Form: Soll terrain3 auf „gerundete Blobs“ (Gebiet 5) umgestellt werden statt Domain-Warping-Zungen? Das ist eine Look-Entscheidung, Georg kennt den Probe-Look „70er Fließfarben“.
+  2. Wolken: Schwellwert-Rauschen gegen gemalte Kuppelwolken der Probe; welche Vorgabe gilt?
+  3. Knet-Prop für die Aktionsleiste (Faust/Blaster/Bombe) im neuen HUD, N29 hat keine.
+  4. Kristall-Laternen: Glitzer-Material raus und in die Knet-Welt (Gebiet 8)?
+
 ## 138 · 22.10. · PCF-Schatten, blinder Kritiker auf dem MVP (REWORK 4,3, Stopp-Regel K4), Sammelliste aller offenen Punkte
 
 - **ws1/mvp-r1 @6b1cda8.** Privat `game/mvp-r1` @4cff382, öffentlicher Spiegel `ws1/mvp-r1` @be9cf9e.
