@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC: eigener Umfall-Clip der Spielzeugsoldaten (WSB N15, privater Branch `50_BLENDER/N15/`)
+- **Datei:** `N15/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.n15.glb` (r3d.v3, Originalbytes unverändert, zwei Clips angehängt). Karte `N15/data/toysoldier_duel_r3d.n15.figure.json`.
+- **`kfb_toy_topple_a` (1,5 s):** steif umkippen wie eine Aufziehfigur, Hüpfer beim Aufprall. Das Gewehr fällt bei 0,458 s (weaponDrop), Ruhe ab 0,858 s.
+- **`kfb_toy_standup_a` (1,0 s):** hochklappen mit Überschwung, der Aufziehschlüssel dreht zwei Runden.
+- **Ersetzt den Übergang mit Skelett-Clips** (G-3). Bitte einbauen und in die Abnahme-Liste (V-641) aufnehmen.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead + Prüfer D: Bausteine für die Tod-Inszenierung sind da (WSB K16, privater Branch `50_BLENDER/K16/`)
 - **Kreuz-Pupillen:** `K16/vendor/pupil-kreuz.v1.js`, ein Aufsatz auf EyeRig v6 (v6 unverändert).
   - Aufruf `attachPupilKreuz(THREE, rig)`.
