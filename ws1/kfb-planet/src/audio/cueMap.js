@@ -148,6 +148,20 @@ export const CUES = Object.freeze({
   'npc.stepSkel': { owner: 'bank', set: 'npc_steps_r1', files: ['N04_skeleton_step_tock'], gain: 0.4, note: 'N04 Knochen-Tock' },
   'npc.stepToy': { owner: 'bank', set: 'npc_steps_r1', files: ['N05_toysoldier_march'], gain: 0.38, note: 'N05 Plastik-Marschtritt' },
   'npc.stepBot': { owner: 'bank', set: 'npc_steps_r1', files: ['N07_bot_step_metal'], gain: 0.4, note: 'N07 Metall-Stapfen' },
+  // ── Begrüßung der Bewohner (Gerücht D2 / G-2, Georg 22.10.): Stimm-Laut ohne Wort je Grund – KFB-Stimmen sind Solo-Instrumente (Fluffolect:
+  // FrizzleBob Posaune, Dory Okarina, Hunky Fagott). Eigene Bewohner-Stimmen bestellt bei WS0 (resident_voices_r1, Namen unten); bis dahin neutrale Platzhalter
+  'greet.farmer.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_cure', gain: 0.7, pending: 'WS0' },
+  'greet.farmer.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_known', gain: 0.7, pending: 'WS0' },
+  'greet.farmer.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_fight', gain: 0.7, pending: 'WS0' },
+  'greet.lorekeeper.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_cure', gain: 0.7, pending: 'WS0' },
+  'greet.lorekeeper.known': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_known', gain: 0.7, pending: 'WS0' },
+  'greet.lorekeeper.fight': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_fight', gain: 0.7, pending: 'WS0' },
+  'greet.farmer.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_first', gain: 0.6, pending: 'WS0' },
+  'greet.lorekeeper.first': { owner: 'bank', set: 'resident_voices_r1', base: 'V02_lorekeeper_greet_first', gain: 0.6, pending: 'WS0' },
+  'greet.fallback.cure': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F10_leitmotif_sting_name', gain: 0.45, note: 'Platzhalter (Kalimba-Motiv, keiner Figur zugeordnet)' },
+  'greet.fallback.known': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F10_leitmotif_sting_name', gain: 0.35, rate: 1.06, note: 'Platzhalter' },
+  'greet.fallback.fight': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F08_breath_soft', gain: 0.6, note: 'Platzhalter (leiser Atem, kein Figuren-Instrument)' },
+  'greet.fallback.first': { owner: 'bank', set: 'fluffolect_layer_r1', base: 'F10_leitmotif_sting_name', gain: 0.25, rate: 0.94, note: 'Platzhalter (erste Begegnung, leise)' },
   // ── UI / Belohnung ──────────────────────────────────────────────────────────────────────────────────────────
   'ui.collect': { owner: 'bank', set: 'reward_r1b', base: 'R06b_fluff_collect', gain: 0.5, bus: 'ui' },
   'ui.pickup': { owner: 'bank', set: 'reward_r1b', base: 'R01b_card_pickup', gain: 0.55, bus: 'ui' },
@@ -157,6 +171,13 @@ export const CUES = Object.freeze({
   'atmo.water': { owner: 'ambience', file: 'river-long (Fluss) · waterfall (Fall) · wave-1…4 (Meer) – positional am nächsten Wasser' },
   'atmo.farm': { owner: 'bank', set: 'farm_r1', base: 'F01_farm_morning_atmos', gain: 0.35, bus: 'atmo', loop: true, note: 'positional an den drei Obstgärten (Morgen/Tag)' },
   'atmo.coast': { owner: 'bank', set: 'ws_audio_gaps_r1', files: ['A02_coastal_birds_loop'], gain: 0.35, bus: 'atmo', loop: true, note: 'am Meer (Biom beach)' },
+  // Wetter und Tageszeit für die Biom-Fahrt (WS1b V-619): Regen/Donner kommen zuerst aus kfb-ambience (weather, ambienceLightning); diese Töne ergänzen
+  'weather.rain': { owner: 'bank', set: 'weather_time_r1', files: ['W06_rain_loop'], gain: 0.4, bus: 'atmo', loop: true, note: 'nur Ersatz, wenn kfb-ambience keinen Regen spielt' },
+  'weather.rainOnset': { owner: 'bank', set: 'weather_time_r1', files: ['W04_rain_onset_a'], gain: 0.6, bus: 'atmo', note: 'Übergang trocken → Regen' },
+  'weather.thunder': { owner: 'bank', set: 'weather_time_r1', base: 'W05_thunder_soft', gain: 0.7, bus: 'atmo', note: 'ferner Donner ohne sichtbaren Blitz (mit Blitz: ambienceLightning)' },
+  'time.dawn': { owner: 'bank', set: 'weather_time_r1', files: ['W01_dawn_birds'], gain: 0.3, bus: 'atmo', loop: true },
+  'time.dusk': { owner: 'bank', set: 'weather_time_r1', files: ['W02_dusk_crickets'], gain: 0.3, bus: 'atmo', loop: true },
+  'time.night': { owner: 'bank', set: 'weather_time_r1', files: ['W03_night_calm'], gain: 0.3, bus: 'atmo', loop: true },
   'atmo.weather': { owner: 'gap', note: 'Wetter: das Spiel hat (noch) kein Wetter – Regen/Gewitter liegen bereit (rain-1…4, thunder, A03_thunder_dry, W04–W06); A01 Dschungel-Nacht wartet auf ein Dschungel-Biom' },
   'atmo.dioramas': { owner: 'gap', note: 'Dioramen (A01–A07 Friedhof, Hexe, Werkstatt …) – auf dem Probe-Gelände noch keine Diorama-Orte' },
   'atmo.residents': { owner: 'gap', note: 'Bewohner-Tätigkeiten (farm, alchemy, creatures) – Bewohner kommen mit WS-NPC; Töne liegen bereit' },
@@ -208,7 +229,10 @@ export function k10Plan(e) {
     case 'contact': {
       const onPlayer = e.target === 'player' || enemy, confirm = !!e.confirmed && !onPlayer // confirm.hit nur bei eigenen Treffern auf Gegner
       if (/smoke/i.test(String(e.weapon))) return { layers: [['k10.smoke', 0, 1, 1], ['k10.smokeCloud', 0.12, 1, 1]] } // L12 Pop + T08 Wolke
-      const mat = MATERIAL_IMPACT[e.material] ? [[MATERIAL_IMPACT[e.material], 0.01, 1, 1]] : []
+      const ranged = kind && kind !== 'melee' && kind !== 'magic' && kind !== 'bow' && kind !== 'crossbow', tree = /^tree:/.test(String(e.target || ''))
+      // Material-Schicht nur, wenn sie etwas hinzufügt: Bolzen-Einschlag (X07) ist schon „Lehm“ → kein zweiter Lehm-Treffer (Kampf R1, sonst 4 Töne je Treffer)
+      const mat = MATERIAL_IMPACT[e.material] && !(ranged && e.material === 'clay') ? [[MATERIAL_IMPACT[e.material], 0.01, 1, 1]] : []
+      if (tree) mat.push(['tree.leaves', 0.03, 0.6, 1]) // Treffer im Baum: Laub wie am Obstgarten
       if (e.explosive) return { layers: [...mat, ['debris.tail', 0.35, 1, 1]], combat: energy > 0.65 ? 'explosionLarge' : 'explosionSmall', material: e.material, confirm }
       if (onPlayer) return { layers: /bite|chomp|mob/i.test(String(e.weapon)) ? [['k10.mobBite', 0, 1, 1], ['k10.playerHurt', 0.06, 1, 1]] : [['k10.playerHurt', 0, 1, 1]], confirm: false } // L7 Biss · L8 Bonk
       if (kind === 'melee' || !kind) return { layers: mat, combat: energy > 0.6 ? 'punchHeavy' : /knuckle/i.test(String(e.weapon)) ? 'knuckles' : 'punchLight', confirm, swingFirst: kind === 'melee' }
@@ -219,7 +243,7 @@ export function k10Plan(e) {
     case 'weaponDrop': return { layers: [['k10.weaponDrop', 0, 1, 1]] }
     case 'jump': return { layers: [['k10.jump', 0, enemy ? ENEMY_GAIN : 1, 1]] }
     case 'land': return { layers: [['k10.land', 0, enemy ? ENEMY_GAIN : 1, 1]] }
-    case 'kill': return { layers: [['k10.kill', 0, 1, 1]] } // L9 Kill-Pop + Schädel
+    case 'kill': return /^group:/.test(String(e.target || '')) ? { layers: [], dedup: 'group-ko' } : { layers: [['k10.kill', 0, 1, 1]] } // L9 Kill-Pop nur für echte Kills; NPC-K.o. tönt über die Gruppe (steht wieder auf)
     case 'windup': return { layers: [['k10.mobWindup', 0, enemy ? 0.9 : 0.7, 1]] } // L13 Ankündigung vor dem Gegnerwurf
     case 'block': return { layers: [['k10.shieldBlock', 0, 1, 1]] }
     default: return null
@@ -253,3 +277,21 @@ export function npcStepCue(e, surface = 'digital-grass') {
 }
 export const stepKey = (e) => (e.foot ? [e.id, e.foot, e.t].join('|') : [e.id, e.t].join('|'))
 export const NPC_STEP_RANGE = 35 // m: weiter weg unhörbar → nicht spielen (Stimmen sparen)
+
+// Laden in Stufen (Brief V-598: Lazy-Load): welche Racer-Dateien das Spiel braucht – zu Fuß nur der Schwebeflug (antigrav), im Racer Boden-Gitter + Flugart
+export const RACER_FOOT = Object.freeze(['F3_wind_rush_loop', 'F4_takeoff', 'P05_antigrav_hum_loop_a', 'P05_antigrav_hum_loop_b', 'P02_turbine_fan_loop_a', 'P02_turbine_fan_loop_b', 'P04_boost_ignite_a', 'P04_boost_ignite_b'])
+const RACER_DRIVE = ['L1_idle', 'L2_low', 'L3_mid', 'L4_high', 'L5_overrun', 'O1_upshift', 'O2b_backfire_loud', 'O2c_backfire_double', 'O4_downshift_blip', 'O5_boost', 'crackle-1', 'crackle-2', 'crackle-3', 'crackle-4', 'F3_wind_rush_loop', 'F4_takeoff', 'P04_boost_ignite_a', 'P04_boost_ignite_b', 'P06_shift_flame_pop_a', 'P06_shift_flame_pop_b']
+const RACER_FLY = { jet: ['P01_jet_thrust_loop_a', 'P01_jet_thrust_loop_b', 'P03_exhaust_rumble_loop_a', 'P03_exhaust_rumble_loop_b', 'F2_jet_antigrav_loop'], turbine: ['P02_turbine_fan_loop_a', 'P02_turbine_fan_loop_b', 'P03_exhaust_rumble_loop_a', 'P03_exhaust_rumble_loop_b'], antigrav: ['P05_antigrav_hum_loop_a', 'P05_antigrav_hum_loop_b', 'P02_turbine_fan_loop_a', 'P02_turbine_fan_loop_b'] }
+// Racer sind im Spiel wechselbar (WS1d, Taste V): im Racer-Modus alle drei Flugarten laden (+8 kleine Dateien), damit jeder Racer seine Schleifen hat
+export function racerAssets({ car = false } = {}) { return car ? [...new Set([...RACER_DRIVE, ...RACER_FLY.jet, ...RACER_FLY.turbine, ...RACER_FLY.antigrav])] : RACER_FOOT.slice() }
+// Tonbank: zuerst, was sofort hörbar sein kann (Fahrzeug, zu Fuß, UI, Obstgarten-Kampf, Atmo), danach NPC/Arena/Wetter
+export const BANK_FIRST = Object.freeze({ car: /^(vehicle|drive|fly|ui|atmo)\./, foot: /^(foot|ui|combat|tree|debris|atmo)\./ }) // je Modus der Grundstock
+
+// Begrüßung: Bewohner-Stimme (residentId → Stimme), Grund cure | fight | known | first (WS-NPC: npc.events(), seq); fehlt die Stimme oder ihre Datei → Platzhalter
+export const RESIDENT_VOICE = Object.freeze({ farmer_b: 'farmer', farmer_harke: 'farmer', lorekeeper: 'lorekeeper' })
+export const GREET_REASONS = Object.freeze(['cure', 'fight', 'known', 'first'])
+export function greetCues(e) {
+  const reason = GREET_REASONS.includes(e?.reason) ? e.reason : 'known', voice = RESIDENT_VOICE[e?.id] || Object.entries(RESIDENT_VOICE).find(([k]) => String(e?.id || '').includes(k.split('_')[0]))?.[1]
+  return [voice ? `greet.${voice}.${reason}` : null, `greet.fallback.${reason}`].filter(Boolean)
+}
+export const greetKey = (e) => (e.seq != null ? 'seq' + e.seq : [e.id, e.reason, e.t].join('|'))

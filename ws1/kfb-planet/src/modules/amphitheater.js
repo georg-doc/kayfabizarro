@@ -19,6 +19,10 @@ export const AMPH_COMMIT = '829d551d5cf45eb2fe18ce7a532e37ba7282005a'
 export const AMPH_PATH = 'media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb'
 export const AMPH_URL = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${AMPH_COMMIT}/${AMPH_PATH}`
 export const AMPH_SHA256 = '3f79037e51ab3a745243aae6ffb40aba3670226a960199b36a02e45d05051dd4'
+// LOD für das Spiel (MVP-Leistung, Lead 22.10.): dieselbe Vereinfachung wie die Gelände-Probe (CODE_PERF_R1 D5: 59 k statt 349 k Dreiecke, 2,8 statt 11,7 MB,
+// Bild aus 16–75 m gleich). Gemessen im Spiel (test/perfBreakdown.mjs): das Original zeichnete beim Gehen ≈ 350 k Dreiecke im Hauptbild und noch einmal so viele
+// im Schattenbild (VSM zeichnet Empfänger mit), dazu die Physik als Trimesh. Das Original bleibt Quelle (Vermessung, test/stage.mjs, Bühnen-Szene).
+export const AMPH_LOD_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/b28d728ca46ed79cb0a57e10b3500226e5650376/assets/kfb-stage-amphitheater-meshy.browser.v1-lod60k.glb'
 // floorY = Oberfläche der Bühnenfläche (−0,2342): das Höhenprofil hat zwei Stufen (−0,243 Unterkante, −0,234 Oberfläche); der Median −0,2396 ließ
 // Figuren und Billboard 0,10 m im Boden stehen (test/stage.mjs Höhenprobe), daher die obere Stufe.
 export const STAGE = Object.freeze({ center: [-0.0008, 0.1113], floorY: -0.2342, floorR: 0.37, minY: -0.2466, diameterM: 14 })
@@ -95,7 +99,8 @@ export function createAmphitheater(options = {}) {
   function apply(a, b, k) { KEYS.forEach((n, i) => PU[n].value.copy(a.c[i]).lerp(b.c[i], k)); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k); if (a.ring && b.ring) spH.uniforms.uSpC0.value.copy(a.ring).lerp(b.ring, k) }
   function stepFade(dt) { if (!fade.on) return; fade.t = Math.min(fade.dur, fade.t + dt); const u = fade.t / fade.dur; apply(fade.from, fade.to, u * u * (3 - 2 * u)); if (u >= 1) fade.on = false }
   // Ring mit inneren Vertices (≈ 0,28 m radial), damit das gebackene Gewicht ein Band tragen kann; Fuß vorläufig als Kreis, nach dem Laden je Sektor
-  const groundGeo = new THREE.RingGeometry(0, groundR * worldK, 256, 160).rotateX(-Math.PI / 2)
+  const tinyGround = groundR * worldK < 1 // M1: Boden kommt vom Gelände (groundR 0,01) – dann kein 82-k-Dreiecke-Ring für 1 cm (MVP-Leistung, Lead 22.10.)
+  const groundGeo = new THREE.RingGeometry(0, groundR * worldK, tinyGround ? 16 : 256, tinyGround ? 1 : 160).rotateX(-Math.PI / 2)
   const foot = { R: Array(64).fill(10.4 * worldK) }, footAt = (x, z) => { const a = (Math.atan2(z, x) / (2 * Math.PI) + 1) % 1, i = a * 64, i0 = Math.floor(i) % 64, f = i - Math.floor(i); return foot.R[i0] * (1 - f) + foot.R[(i0 + 1) % 64] * f }
   const bakeRing = () => speckle.bake(groundGeo, (x, y, z) => Math.max(0, Math.hypot(x, z) - footAt(x, z)))
   bakeRing()

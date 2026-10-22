@@ -1,0 +1,224 @@
+{
+ "id": "kfb_kit_gun_pistol_prototype",
+ "origin": "kit-original",
+ "use": "target",
+ "source": {
+  "path": "dropbox:KFB_HUB/50_BLENDER/K10/out/KFB_Gun_Pistol.k10.glb",
+  "sha256": "96e8ef219631309cc8a1546866008f3582b4fd048daf89a4fb0c10912a8bd086",
+  "private": true,
+  "kit": {
+   "name": "KayKit Bits Bundle 1 (1.1) · Prototype Bits · Gun_Pistol",
+   "file": "Assets/gltf/Gun_Pistol.gltf",
+   "licence": "CC0 1.0 (Kay Lousberg)",
+   "private": false
+  },
+  "anchorReceipt": "dropbox:KFB_HUB/50_BLENDER/K10/data/Gun_Pistol_anchor_receipt.json",
+  "change": "nur Ankerknoten KFB_Muzzle ergänzt; Geometrie/Material/Textur byte-gleich"
+ },
+ "instances": 1,
+ "axis": "kit",
+ "mount": {
+  "kind": "source-slot",
+  "slot": "handslot.r",
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_Gun_Pistol_ranged_measure.json#mount_rotation_xyzw + clips.*.hold_summary",
+  "slotOffset": {
+   "rotation": [
+    0,
+    0.70710678,
+    0,
+    0.70710678
+   ],
+   "reason": "kit-axis-mismatch",
+   "rule": "V-581",
+   "evidence": "K10/out/K10_armbrust_halterung_vergleich.png (Kit-Achse +Z gegen handslot.r +X der Ranged-Clips) + K10/out/K10_handwaffen_v581.png + DUEL-01 RETURN (Blaster G1 = Ry +90°)"
+  }
+ },
+ "modelUnchanged": true,
+ "nativeClipsUnchanged": true,
+ "perFrameWeaponRotation": false,
+ "perFrameArmPostPose": false,
+ "handCount": "source",
+ "muzzle": {
+  "kind": "source-anchor",
+  "node": "KFB_Muzzle",
+  "forwardLocal": [
+   0,
+   0,
+   1
+  ],
+  "localTranslation": [
+   0.0,
+   0.1197,
+   0.7077
+  ],
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/data/Gun_Pistol_anchor_receipt.json#anchor + dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_Gun_Pistol_ranged_measure.json#clips.Ranged_1H_Shoot.events",
+  "variants": [],
+  "primary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash.gltf",
+   "sha256": "6f772ef7fd26f35abe5cac844e31defdbe12e54c1feca463fee53b5408bc05cd",
+   "private": true,
+   "asIs": true
+  },
+  "secondary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash_Long.gltf",
+   "sha256": "b8232b68245ccc2261f22d8f9172b142bd5fc6b49cec7a1fe1b8396aac0616e8",
+   "private": true,
+   "asIs": true
+  }
+ },
+ "projectileDirection": "muzzle",
+ "release": {
+  "clip": "Ranged_1H_Shoot",
+  "seconds": 0.2667,
+  "clipDuration": 1.0667,
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_Gun_Pistol_ranged_measure.json#clips.Ranged_1H_Shoot.events[0]",
+  "oncePerAction": true
+ },
+ "clipMarkers": {
+  "aim.1h": {
+   "clip": "Ranged_1H_Aiming",
+   "duration_s": 1.0667,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 21,
+    "yaw_deg": [
+     1.32,
+     1.32
+    ],
+    "pitch_deg": [
+     -0.16,
+     0.73
+    ],
+    "gaze_deg_max": 1.95,
+    "hand_l_min_u": 1.1415
+   }
+  },
+  "fire.1h": {
+   "clip": "Ranged_1H_Shoot",
+   "duration_s": 1.0667,
+   "fire_s": [
+    0.2667
+   ],
+   "recoil_peak_s": [
+    0.4
+   ],
+   "ready_s": [
+    null
+   ],
+   "hold": {
+    "frames": 33,
+    "yaw_deg": [
+     -17.98,
+     3.85
+    ],
+    "pitch_deg": [
+     -21.55,
+     17.18
+    ],
+    "gaze_deg_max": 28.64,
+    "hand_l_min_u": 0.9175
+   }
+  },
+  "fire-loop.1h": {
+   "clip": "Ranged_1H_Shooting",
+   "duration_s": 1.6,
+   "fire_s": [
+    0.0,
+    0.4,
+    0.8,
+    1.2
+   ],
+   "recoil_peak_s": [
+    0.1333,
+    0.5333,
+    0.9333,
+    1.3333
+   ],
+   "ready_s": [
+    0.3667,
+    0.7667,
+    1.1667,
+    1.5667
+   ],
+   "hold": {
+    "frames": 49,
+    "yaw_deg": [
+     1.32,
+     3.85
+    ],
+    "pitch_deg": [
+     0.67,
+     17.18
+    ],
+    "gaze_deg_max": 13.96,
+    "hand_l_min_u": 1.0994
+   }
+  },
+  "reload.1h": {
+   "clip": "Ranged_1H_Reload",
+   "duration_s": 1.1667,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 2,
+    "yaw_deg": [
+     28.92,
+     28.96
+    ],
+    "pitch_deg": [
+     -40.14,
+     -39.8
+    ],
+    "gaze_deg_max": 28.59,
+    "hand_l_min_u": 0.1266
+   }
+  },
+  "move.armed": {
+   "clip": "Running_HoldingRifle",
+   "duration_s": 0.8,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 4,
+    "yaw_deg": [
+     72.67,
+     74.88
+    ],
+    "pitch_deg": [
+     -14.17,
+     -6.16
+    ],
+    "gaze_deg_max": 74.38,
+    "hand_l_min_u": 0.1932
+   }
+  }
+ },
+ "measuredAtFire": {
+  "muzzle": [
+   -0.2503,
+   1.1264,
+   1.3986
+  ],
+  "dir": [
+   0.0231,
+   0.0127,
+   0.9997
+  ],
+  "yaw_deg": 1.32,
+  "pitch_deg": 0.73,
+  "gaze_deg": 1.12,
+  "hand_l_to_weapon_u": 1.1413
+ },
+ "notes": [
+  "Prüffigur: B48-Schurkin (KFB-Augen) und Hero Man blau; Durchdringung 0 in Ranged_1H_Aiming/Shoot/Shooting an beiden (k10_clearance.py).",
+  "source.private=true nach WS0 20.10. (CC0-Quelle per Dropbox-Pfad + sha256).",
+  "Ranged_1H_Reload: Pistole berührt die Brust (bis 7 Punkte innen, ≤ 7 mm) beim Nachladen; im Bild nicht sichtbar. Linke Hand am Magazin gewollt."
+ ],
+ "status": "SOURCE_PROFILE_NOT_GAMEPLAY_ACCEPTANCE",
+ "by": "WSB K10",
+ "date": "2026-10-20"
+}

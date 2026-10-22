@@ -1,0 +1,50 @@
+{
+ "schema": "kfb.drive-moods/1",
+ "source": "V-619 (WS1b 21.10.). Ein Licht-Rig (V-385, kfb-stage-light.v1.1): alle Werte sind Einstellungen dieses Rigs (Sonne/Mond, Hemisphäre, Figurenlicht) plus Himmel und Nebel des Hosts. Grundkurve aus MOODS_MESA (Licht, Georg 17.10. Krazy Kat) und den Probe-Stimmungen tag/gold/nacht (Himmel); Morgen neu (WS1b-Vorschlag). Je Biom ein Farbzug auf die Kurve. Status PROPOSED – Georg urteilt am Bild.",
+ "clock": { "sunrise": 6.0, "sunset": 18.0, "sunMaxElev": 56, "moonMaxElev": 42, "azRise": -100, "azSet": 100, "minLightElev": 7, "switchDip": 0.45 },
+ "keys": [[0, "nacht"], [5.0, "nacht"], [6.7, "morgen"], [9.4, "mittag"], [15.6, "mittag"], [17.7, "abend"], [19.2, "nacht"], [24, "nacht"]],
+ "base": {
+  "morgen": { "sun": "#ffcfa8", "sunI": 2.0, "hemiSky": "#c4cdf0", "hemiI": 0.85, "bounce": 0.5, "figI": 0.5, "figColor": "#ffd2a8", "skyL": 0.9, "glow": 0.15,
+   "zenith": "#7d9fd6", "horizon": "#f2cdbf", "lit": "#fff0e4", "shade": "#c9b8cf", "sunCol": "#ffc49a", "stars": 0.0, "fogNear": 110, "fogFar": 520 },
+  "mittag": { "sun": "#ffdcae", "sunI": 2.4, "hemiSky": "#b4bdee", "hemiI": 0.82, "bounce": 0.5, "figI": 0.3, "figColor": "#ffcf9c", "skyL": 1.0, "glow": 0.0,
+   "zenith": "#6fa8dc", "horizon": "#cfe8f2", "lit": "#ffffff", "shade": "#c4d3e6", "sunCol": "#fff4e6", "stars": 0.0, "fogNear": 140, "fogFar": 620 },
+  "abend": { "sun": "#ff9246", "sunI": 2.4, "hemiSky": "#a6a3e6", "hemiI": 0.95, "bounce": 0.48, "figI": 0.7, "figColor": "#ffc28a", "skyL": 0.8, "glow": 0.4,
+   "zenith": "#5e6fb3", "horizon": "#f5b98c", "lit": "#ffe2bd", "shade": "#c98b8f", "sunCol": "#ffb877", "stars": 0.15, "fogNear": 120, "fogFar": 560 },
+  "nacht": { "sun": "#b4bde8", "sunI": 0.6, "hemiSky": "#6a6f96", "hemiI": 0.85, "bounce": 0.4, "figI": 1.7, "figColor": "#ffbf86", "skyL": 0.28, "glow": 1.0,
+   "zenith": "#121838", "horizon": "#3a3e76", "lit": "#9aa2d6", "shade": "#3b406e", "sunCol": "#a9bcff", "stars": 1.0, "fogNear": 90, "fogFar": 460 }
+ },
+ "biomes": {
+  "moos":    { "tint": { "hemiSky": ["#bfe0c8", 0.25], "horizon": ["#bfe3ef", 0.5], "shade": ["#b9d3c4", 0.2] }, "aurora": 0.15 },
+  "mesa":    { "tint": { "hemiSky": ["#b9a8ee", 0.2], "horizon": ["#f6d6b8", 0.5], "sun": ["#ffc690", 0.15] }, "aurora": 0.1 },
+  "wueste":  { "tint": { "sun": ["#ffe4a8", 0.25], "hemiSky": ["#e8d6b8", 0.25], "horizon": ["#fbe9c8", 0.55], "zenith": ["#7fb4e0", 0.25] }, "aurora": 0.0, "fog": 1.15 },
+  "schnee":  { "tint": { "hemiSky": ["#d6e6f5", 0.35], "horizon": ["#d6e6f5", 0.55], "sun": ["#fff2e6", 0.25], "shade": ["#c8d6ea", 0.3] }, "aurora": 1.0, "snow": true },
+  "pastell": { "tint": { "hemiSky": ["#f3c8de", 0.25], "horizon": ["#fde7f0", 0.55], "zenith": ["#a9b8ee", 0.25], "lit": ["#fff4fb", 0.4] }, "aurora": 0.45 },
+  "canyon":  { "tint": { "hemiSky": ["#a582d9", 0.3], "horizon": ["#c9dcec", 0.45], "zenith": ["#6f9ad0", 0.2], "sun": ["#ffd0a0", 0.15] }, "aurora": 0.25 }
+ },
+ "weather": {
+  "klar":   { "label": "Klar",   "cover": 0.28, "overcast": 0.0,  "rain": 0, "fog": 0.0,  "wind": 0.18, "gust": 0.3, "sunK": 1.0,  "fogK": 1.0 },
+  "wolken": { "label": "Wolken", "cover": 0.78, "overcast": 0.28, "rain": 0, "fog": 0.05, "wind": 0.35, "gust": 0.4, "sunK": 0.62, "fogK": 0.85 },
+  "regen":  { "label": "Regen",  "cover": 0.95, "overcast": 0.72, "rain": 1, "fog": 0.25, "wind": 0.55, "gust": 0.6, "sunK": 0.3,  "fogK": 0.45 },
+  "nebel":  { "label": "Nebel",  "cover": 0.6,  "overcast": 0.35, "rain": 0, "fog": 1.0,  "wind": 0.04, "gust": 0.1, "sunK": 0.5,  "fogK": 0.2 },
+  "wind":   { "label": "Wind",   "cover": 0.55, "overcast": 0.12, "rain": 0, "fog": 0.0,  "wind": 0.95, "gust": 0.9, "sunK": 0.85, "fogK": 0.9 }
+ },
+ "weatherCol": "#8f97a6",
+ "fogCol": "#c9d0d6",
+ "presetsCommon": [
+  { "id": "morgentau", "name": "Morgentau", "hour": 6.9, "weather": "nebel", "fogAmt": 0.45 },
+  { "id": "mittag", "name": "Klarer Mittag", "hour": 12.5, "weather": "klar" },
+  { "id": "gold", "name": "Goldene Stunde", "hour": 17.4, "weather": "klar" },
+  { "id": "blau", "name": "Blaue Stunde", "hour": 19.3, "weather": "klar", "tint": ["#5a6fc0", 0.18] }
+ ],
+ "presetsBiome": {
+  "moos":    [{ "id": "gewitter", "name": "Gewitter-Grün", "hour": 15.2, "weather": "regen", "tint": ["#6fbf6a", 0.22], "flash": true }, { "id": "mondwiese", "name": "Mondwiese", "hour": 23.4, "weather": "klar" }],
+  "mesa":    [{ "id": "krazykat", "name": "Krazy-Kat-Abend", "hour": 18.1, "weather": "wolken", "tint": ["#c86bd8", 0.2] }, { "id": "staub", "name": "Staubsturm", "hour": 14, "weather": "wind", "tint": ["#d9a066", 0.3], "fogAmt": 0.35 }],
+  "wueste":  [{ "id": "flimmern", "name": "Hitzeflimmern", "hour": 13.4, "weather": "klar", "tint": ["#ffd38a", 0.2] }, { "id": "sternwueste", "name": "Sternenwüste", "hour": 1.2, "weather": "klar" }],
+  "schnee":  [{ "id": "polarlicht", "name": "Polarlicht", "hour": 0.6, "weather": "klar", "aurora": 1 }, { "id": "treiben", "name": "Schneetreiben", "hour": 11, "weather": "regen", "windAmt": 0.9 }],
+  "pastell": [{ "id": "zuckerwatte", "name": "Zuckerwatte-Morgen", "hour": 7.6, "weather": "wolken", "tint": ["#f4b6d2", 0.25] }, { "id": "schauer", "name": "Regenbogen-Schauer", "hour": 16.2, "weather": "regen", "tint": ["#b8c6ff", 0.15] }],
+  "canyon":  [{ "id": "violett", "name": "Violetter Tisch", "hour": 16.8, "weather": "klar", "tint": ["#a582d9", 0.22] }, { "id": "gewitter", "name": "Gewitter-Grün", "hour": 15.5, "weather": "regen", "tint": ["#5fae7a", 0.25], "flash": true }]
+ },
+ "events": {
+  "mib": { "name": "MIB-Einsatz", "darken": 0.85, "tint": ["#2e2a55", 0.35], "fadeIn": 2.5, "fadeOut": 4 }
+ }
+}

@@ -6,6 +6,10 @@ import { report } from './_report.mjs'
 import { createEngine, createVehicleRig } from '../../src/modules/vehicleRig.js'
 const RIG = JSON.parse(fs.readFileSync('src/data/vehicles/kfb-vehicle-rig.r1.json', 'utf8'))
 const SIX = ['rustwing_cruiser', 'graffiti_jet_cruiser', 'street_racer_hoverbeast', 'crimson_flame_dragster', 'crimson_thunderjet', 'ironclad_skycruiser']
+// V-631: alle 14 Racer im Rig (8 neue aus der Gelände-Probe), je Racer Klasse, Antrieb und Scheinwerfer-Anker (paarig links/rechts, vorn)
+const ALL = Object.keys(RIG.vehicles)
+const allData = ALL.length === 14 && ALL.every((id) => { const v = RIG.vehicles[id]; return v.anchors.length >= 1 && v.anchors.every((a) => a.pos.length === 3 && a.dir.length === 3 && a.radius > 0) && /^#[0-9a-f]{6}$/.test(v.glow.plume) && v.hover.length === 4 && v.hover.every((p) => p[1] < 0.7) && ['racer', 'hauler'].includes(v.class) && typeof v.wheels === 'boolean' && v.path.endsWith(id + '_browser.v3.glb') })
+const lampsOk = ALL.every((id) => { const h = RIG.vehicles[id].headlights; return h && h.lamps.length >= 2 && h.lamps.length % 2 === 0 && h.lamps.every((l) => l.pos[2] > 0 && l.r > 0) && h.lamps.filter((l) => l.pos[0] > 0).length === h.lamps.length / 2 })
 const dataOk = SIX.every((id) => { const v = RIG.vehicles[id]; return v && v.anchors.length >= 1 && v.anchors.every((a) => a.pos.length === 3 && a.dir.length === 3 && a.radius > 0) && /^#[0-9a-f]{6}$/.test(v.glow.plume) && v.hover.length === 4 })
 // Motor: Tempo-Rampe 0 → 1 unter Vollgas, dann Gas weg
 const E = createEngine(); const gears = [], ev = []; for (let i = 0; i <= 600; i++) { const s = i / 600; ev.push(...E.step(1 / 60, { speed01: s, throttle: 1 })); gears.push(E.gear) }
@@ -31,6 +35,9 @@ const pitMax = Math.max(...pit), pitEnd = Math.abs(pit.at(-1))
 const counts = Object.fromEntries(SIX.map((id) => [id, createVehicleRig({ anchors: RIG.vehicles[id].anchors, glow: RIG.vehicles[id].glow }).info().drawCalls]))
 process.exit(report('unit-vehicleRig (R1a V-481)', {
   sixRacersData: dataOk,
+  all14RacersData: allData,
+  headlightAnchors: lampsOk,
+  fiveWheeled: ALL.filter((id) => RIG.vehicles[id].wheels).length === 5,
   shiftsUpThroughGears: ups >= 3 && topGear === 5,
   backfireOnRelease: bf,
   shiftsDownWithSpeed: g0 >= 4 && downs >= 2,

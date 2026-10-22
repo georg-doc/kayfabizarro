@@ -9,6 +9,7 @@ import os from 'os'
 import path from 'path'
 import { execFileSync } from 'child_process'
 import zlib from 'zlib'
+import crypto from 'crypto'
 
 export const AUDIO_SITE_PIN = '945518d382ea0aacf62260325adc9a55a3eda241'
 const HOME = os.homedir()
@@ -83,7 +84,16 @@ export function prepare({ quiet = false } = {}) {
     sets[id] = { files, gainDb: gains, norm }
   }
   out.sets = Object.keys(sets)
-  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), wsa: out.wsa, site: out.site, music: { suno, cozy }, sets }
+  // eigene Lautheits-Messung (scripts/audio/loudness.mjs): Musik je Titel auf −18 LUFS; Einzeltöne nur für Sätze ohne WS0-Bericht
+  const local = fs.existsSync(path.join(CACHE, 'lufs-local.json')) ? JSON.parse(fs.readFileSync(path.join(CACHE, 'lufs-local.json'), 'utf8')) : null, musicGain = {}
+  // ohne eigene Messung (z. B. Cloudflare-Build): die festgehaltenen Werte aus scripts/audio/music-gain.json (Schlüssel sha1(liste/datei)[0:12])
+  const fixed = JSON.parse(fs.readFileSync(new URL('./music-gain.json', import.meta.url), 'utf8')).gainDb, key = (k) => crypto.createHash('sha1').update(k).digest('hex').slice(0, 12)
+  for (const [list, files] of [['suno', suno], ['cozy', cozy]]) for (const f of files) { const g = fixed[key(list + '/' + f)]; if (Number.isFinite(g)) musicGain[list + '/' + f] = g }
+  const tagMap = JSON.parse(fs.readFileSync(new URL('./music-tags.json', import.meta.url), 'utf8')).tags, musicTags = {}
+  for (const [list, files] of [['suno', suno], ['cozy', cozy]]) for (const f of files) { const t = tagMap[key(list + '/' + f)]; if (t) musicTags[list + '/' + f] = t }
+  if (local) { for (const [k, v] of Object.entries(local.music || {})) musicGain[k] = v.gainDb
+    for (const [k, v] of Object.entries(local.clips || {})) { const [set, id] = k.split('/'); if (sets[set] && sets[set].norm !== 'lufs') { sets[set].gainDb[id] = v.gainDb; sets[set].norm = 'lufs-local' } } }
+  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), wsa: out.wsa, site: out.site, music: { suno, cozy, gainDb: musicGain, tags: musicTags }, sets }
   fs.writeFileSync(path.join(CACHE, 'index.json'), JSON.stringify(index))
   say(`privat=${out.private} wsa=${out.wsa} site=${out.site} suno=${suno.length} cozy=${cozy.length} sätze=${out.sets.length} → ${CACHE}`)
   return out

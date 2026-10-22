@@ -169,6 +169,9 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       if (on && !S.current.camUpdate) { S.current.camUpdate = cc.update; cc.update = () => false; cc.enabled = false }
       if (!on && S.current.camUpdate) { cc.update = S.current.camUpdate; S.current.camUpdate = null; cc.enabled = true } },
     freeze: (on) => { S.current.frozen = !!on; S.current.hold = null; if (on) setFlying(false) },
+    // Kampf R1 (K10-Handover: der Controller besitzt Wurzel und Blickrichtung): Figur zum Ziel drehen, nur am Boden und frei (nicht im Flug/Dialog)
+    face: (yaw) => { const b = ecctrl.current?.body; if (!b || S.current.frozen || S.current.flying || !Number.isFinite(yaw)) return false
+      S.current.heading = yaw; b.setRotation(_qy.setFromAxisAngle(UP, yaw), true); ecctrl.current?.setForwardDir?.(v.b.set(Math.sin(yaw), 0, Math.cos(yaw))); return true },
   }))
 
   // F = abheben/landen (ohne Tastenwiederholung), R = zurück zum Start (nur im freien Spiel)

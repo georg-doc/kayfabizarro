@@ -1,4 +1,4 @@
-// Vendored 1:1 aus KFB Audio Site 0.7.6 (kayfabizarro@945518d3 tools/KFB-Audio-Site/dist/footsteps/audio.mjs); KFB-Spiel-Patch: Import ohne ?v, assetBaseUrl, surfaces.
+// Vendored 1:1 aus KFB Audio Site 0.7.6 (kayfabizarro@945518d3 tools/KFB-Audio-Site/dist/footsteps/audio.mjs); KFB-Spiel-Patch: Import ohne ?v, assetBaseUrl, surfaces, paralleles Laden.
 import {chooseIndex} from './contact-core.mjs';
 import {shapePCM} from './sample-shape.mjs'; // KFB-Spiel: ohne ?v=0.7.6 (Vite)
 // Injected host only. No context creation, DOM, timers or music ownership.
@@ -24,11 +24,13 @@ export async function createFootstepAudio({audioContext:ctx,destination,rows,ass
  const capture=ctx.createMediaStreamDestination(),captureDelay=ctx.createDelay(.5);output.connect(captureDelay).connect(capture);
  const meter=ctx.createAnalyser();meter.fftSize=1024;output.connect(meter);const meterPCM=new Float32Array(1024);let armed=false;
  const banks={},metrics=[],last={},live=new Set(),scheduled=[];
- try{for(const [surface,config] of Object.entries(SURFACES).filter(([id])=>!surfaces||surfaces.includes(id))){
+ // KFB-Spiel-Patch: alle Dateien gleichzeitig holen und dekodieren (vorher nacheinander), Formen wie gehabt der Reihe nach
+ const want=Object.entries(SURFACES).filter(([id])=>!surfaces||surfaces.includes(id)),fetched=new Map();
+ await Promise.all(want.flatMap(([,config])=>rows.filter(r=>r.file.startsWith(config.prefix)).map(async row=>{const r=await fetch(new URL('assets/'+(config.imported?'imported/':'')+row.file,assetBaseUrl));if(!r.ok)throw Error('Missing '+row.file);fetched.set(row.file,await ctx.decodeAudioData(await r.arrayBuffer()));})));
+ try{for(const [surface,config] of want){
   banks[surface]=[];
   for(const row of rows.filter(r=>r.file.startsWith(config.prefix))){
-   const r=await fetch(new URL('assets/'+(config.imported?'imported/':'')+row.file,assetBaseUrl));if(!r.ok)throw Error('Missing '+row.file);
-   const b=await ctx.decodeAudioData(await r.arrayBuffer());let peak=0,onset=b.length;
+   const b=fetched.get(row.file);let peak=0,onset=b.length;
    for(let ch=0;ch<b.numberOfChannels;ch++)for(const v of b.getChannelData(ch))peak=Math.max(peak,Math.abs(v));
    for(let ch=0;ch<b.numberOfChannels;ch++){const pcm=b.getChannelData(ch);for(let i=0;i<pcm.length;i++)if(Math.abs(pcm[i])>peak*.035){onset=Math.min(onset,i);break;}}
    const trim=config.imported?Math.max(0,onset/b.sampleRate-.002):0;

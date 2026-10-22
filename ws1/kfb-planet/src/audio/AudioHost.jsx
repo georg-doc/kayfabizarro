@@ -11,23 +11,25 @@ import { expose } from '../debug'
 import { M2_ON, M2STATE, M2EVENTS, RACER, RACER_FLY } from '../m2/M2Car'
 import { worldPosOf } from '../m1/m1Host'
 import * as A from './kfbAudio.js'
-import { groupKey, stepKey } from './cueMap.js'
+import { groupKey, stepKey, greetKey } from './cueMap.js'
 import { createWaterIndexAsync, waterNear, stepSurface, hoverSurface } from './waterAudio.js'
 import { mountAudioPanel } from './audioPanel.js'
 
 const todName = (t) => (t == null ? 'day' : t < 0.18 ? 'night' : t < 0.55 ? 'evening' : 'day')
-const FLY_KIND = (() => { const t = new Set((RACER?.anchors || []).map((a) => a.type)); return t.has('thrust') ? 'jet' : t.has('fan') ? 'turbine' : 'antigrav' })()
+// Flugart aus den Düsen des aktuellen Racers – Racer sind wechselbar (WS1d: RACER lebendige Bindung, M2STATE.racerSwaps zählt Wechsel)
+const FK = { swaps: -1, kind: 'antigrav' }
+const flyKind = () => { const n = M2STATE.racerSwaps ?? 0; if (n !== FK.swaps) { FK.swaps = n; const t = new Set((RACER?.anchors || []).map((a) => a.type)); FK.kind = t.has('thrust') ? 'jet' : t.has('fan') ? 'turbine' : 'antigrav' } return FK.kind }
 const _p = new THREE.Vector3(), _f = new THREE.Vector3(), _u = new THREE.Vector3(), _f2 = new THREE.Vector3(), _q = new THREE.Quaternion(), _b = new THREE.Vector3()
 
 export default function AudioHost({ host }) {
   const { camera } = useThree()
   const R = useRef({ pending: null, counts: -1, picked: 0, air: 'ground', prevCar: null, carV: 0, carVy: 0, prevFig: null, figV: 0, figVy: 0, water: null, waterAt: -9, emitters: [], biome: 'meadow', farm: null, stopWater: null, panel: null, t: 0, fluffSeen: new Set() })
-  const unlock = () => { A.unlock().then(() => { if (A.audioMode() === 'full' && !R.current.panel && typeof document !== 'undefined') R.current.panel = mountAudioPanel(A) }) }
+  const unlock = () => { A.preload({ car: M2_ON }); A.unlock().then(() => { if (A.audioMode() === 'full' && !R.current.panel && typeof document !== 'undefined') R.current.panel = mountAudioPanel(A) }) }
   // erste Eingabe: jede Taste (vor allen anderen, ohne sie zu verbrauchen) und Zeiger; V/B/N merken für den Kampf-Ton
   useHostKeys((e) => {
     unlock()
     if (e.repeat || host.m1?.phase !== 'free') return
-    const w = { KeyV: 'punch', KeyB: 'shoot', KeyN: 'blast' }[e.code]; if (w && host.harvest) R.current.pending = { kind: w, prev: host.harvest.last }
+    const w = { KeyV: 'punch', KeyB: 'shoot', KeyN: 'blast' }[e.code]; if (w && host.harvest && !(w === 'shoot' && host.mods?.combat?.active?.())) R.current.pending = { kind: w, prev: host.harvest.last } // Kampf R1: K10-Schuss tönt über k10()
   }, 1000)
   useEffect(() => { const on = () => unlock(); window.addEventListener('pointerdown', on); return () => window.removeEventListener('pointerdown', on) }, [])
   // Fahrzeug-Ereignisse (k2t, racerFlight) an den Ton
@@ -35,7 +37,7 @@ export default function AudioHost({ host }) {
   useEffect(() => () => { R.current.stopWater?.(); R.current.panel?.dispose() }, [])
   useFrame((_, dt) => {
     const H = R.current, mods = host.mods || {}; H.t += dt
-    if (!H.pre && H.t > 2) { H.pre = true; A.preload() } // Laden 2 s nach dem Start der Welt (vor der ersten Eingabe, noch still)
+    if (!H.pre && H.t > 2) { H.pre = true; A.preload({ car: M2_ON }) } // Laden 2 s nach dem Start der Welt (vor der ersten Eingabe, noch still)
     if (A.audioMode() !== 'full') { if (A.audioMode() === 'public') A.frame({ mode: 'foot' }); return }
     // Lage und Modus
     const car = M2_ON ? M2STATE.carPos?.() : null, fig = car ? null : worldPosOf(mods.player, _p), pos = car || fig
@@ -51,7 +53,7 @@ export default function AudioHost({ host }) {
       if (H.t - (H.csAt || -9) > 0.25) { H.csAt = H.t; const T = mods.terrain, h = T?.height, e = 0.6, sy = T?.hydro?.()?.seaY ?? null
         const slope = h ? Math.hypot(h(car.x + e, car.z) - h(car.x - e, car.z), h(car.x, car.z + e) - h(car.x, car.z - e)) / (2 * e) : 0
         H.carSurface = hoverSurface({ slope, y: h ? h(car.x, car.z) : car.y, flatY: 1.2 * (host.k || 1), nearWater: H.emitters.find((w) => w.kind === 'river')?.d ?? Infinity, seaY: sy }) }
-      Object.assign(st, { surface: H.carSurface, slip, air: !!k.air, mode: RACER_FLY && k.fly ? 'fly' : 'drive', speed: H.carV, throttle: k.gas ? (k.boil ? 0.3 : 1) : 0, brake: k.brake ? 1 : 0, rpm01: eng?.rpm, gear: eng?.gear, gears: 5, flyKind: FLY_KIND, vertical: H.carVy / 12 })
+      Object.assign(st, { surface: H.carSurface, slip, air: !!k.air, mode: RACER_FLY && k.fly ? 'fly' : 'drive', speed: H.carV, throttle: k.gas ? (k.boil ? 0.3 : 1) : 0, brake: k.brake ? 1 : 0, rpm01: eng?.rpm, gear: eng?.gear, gears: 5, flyKind: flyKind(), vertical: H.carVy / 12 })
     } else {
       const ps = mods.player?.status?.(), fly = !!host.player?.current?.flying?.()
       // Tempo aus der Lage (der Schwebeflug bewegt den Körper teils direkt, linvel ist dann 0), geglättet
@@ -67,6 +69,10 @@ export default function AudioHost({ host }) {
         H.surface = stepSurface({ r, flatR: host.flatR || 0, nearWater: H.emitters.find((w) => w.kind === 'river')?.d ?? Infinity, y: pos.y, seaY: sea, slope }) }
       st.foot = { phase: ps?.phase, moving: sp > 0.4, grounded: air === 'ground', surface: H.surface }
     }
+    // Raumklang: Gelände für die Verdeckung; Geländeform um den Hörer (mittlerer Anstieg in 8 Richtungen, 25 m) alle 0,5 s
+    const hgt = mods.terrain?.height; if (hgt && !H.terrSet) { H.terrSet = true; A.setTerrain(hgt) }
+    if (hgt && H.t - (H.riseAt || -9) > 0.5) { H.riseAt = H.t; let s = 0; for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; s += hgt(pos.x + Math.cos(a) * 25, pos.z + Math.sin(a) * 25) - pos.y } H.rise = s / 8 }
+    st.rise = H.rise
     // Wasser (world=probe): Index einmal (Meer zeilenweise), Abfrage alle 0,4 s, Quellen gleiten mit
     if (!H.water && !H.stopWater && mods.terrain?.hydro?.()) H.stopWater = createWaterIndexAsync(mods.terrain.hydro(), (W) => { H.water = W })
     if (H.water && H.t - H.waterAt > 0.4) { H.waterAt = H.t; const q = waterNear(H.water, pos, H.biome); H.emitters = q.emitters; H.biome = q.biome }
@@ -97,11 +103,17 @@ export default function AudioHost({ host }) {
         A.npcStep(e, { x, y: y + 0.05, z }, e.group ? null : stepSurface({ r: Math.hypot(x, z), flatR: host.flatR || 0, y })) } } }
     // Publikum an der Band (WS0 N15): leise Schleife, solange die Figur in 30 m Nähe der Band ist
     const Bp = mods.band?.positions?.(); if (Bp?.length && H.t - (H.bdAt || 0) > 0.5) { H.bdAt = H.t; _b.set(Bp.reduce((s, p) => s + p.x, 0) / Bp.length, Bp.reduce((s, p) => s + p.y, 0) / Bp.length, Bp.reduce((s, p) => s + p.z, 0) / Bp.length);   /* Mitte der Musiker über positions() – der React-Host greift nicht auf Modul-Szenenknoten zu (contract-static) */ if (Math.hypot(_b.x - pos.x, _b.z - pos.z) < 30) A.presence('bandCrowd', 'npc.bandCrowd', { x: _b.x, y: _b.y + 1, z: _b.z }, 1.2) }
+    // Kampf R1 (Kampfmodul combatPlayer): K10-Ereignisse (fire, contact, kill) aus dem Ringpuffer events(), je Ereignis einmal (seq) → k10(); erstes Lesen nur merken
+    const Cb = mods.combat; if (Cb?.events) { const L = Cb.events(); if (H.cbSeq == null) H.cbSeq = L.at(-1)?.seq ?? 0; else for (const e of L) if (e.seq > H.cbSeq) { H.cbSeq = e.seq; A.k10(e) } }
+    // Begrüßung der Bewohner (WS-NPC 'greet' { reason, id, at }): aus npc.greets() bzw. npc.events(), je Eintrag einmal, beim ersten Lesen nur merken
+    const Nm = mods.npc, GL = Nm?.greets?.() || Nm?.events?.(); if (GL && H.t - (H.grtAt || 0) > 0.1) { H.grtAt = H.t; H.grtSeen ||= new Set(); const first = !H.grtInit; H.grtInit = true
+      for (const e of GL) { if (e?.type !== 'greet') continue; const key = greetKey(e); if (H.grtSeen.has(key)) continue; H.grtSeen.add(key); if (H.grtSeen.size > 300) H.grtSeen.delete(H.grtSeen.values().next().value); if (first) continue
+        const hh = mods.terrain?.height, at = Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 1.6, z: e.at[1] } : null; A.greet(e, at) } }
     // Dark Fluffer (WS-NPC): Ereignisse aus dem Modul, sobald es da ist (debug().events, je Ereignis einmal)
     const F = mods.fluffer; if (F?.debug && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const d = F.debug(), m = F.mouthWorld?.()
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, greet: A.greet, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }

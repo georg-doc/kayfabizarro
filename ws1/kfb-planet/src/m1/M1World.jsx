@@ -36,7 +36,7 @@ import { createSky, skyLog } from '../modules/m1-sky'
 import { createSkyR13 } from '../modules/sky-r13'
 import { isTerrain3, TERRAIN3_CFG, applyShadowTone3, applyFootShade, applyFigureShadow } from '../look/terrain3.js'
 import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
-import { createAmphitheater, amphLog } from '../modules/amphitheater'
+import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -51,11 +51,13 @@ import { useGame } from '../store'
 import { DECKS, cardAt, cardsOfDeck } from '../cards'
 import { useHostKeys, PRIO, ACTION_KEYS } from '../hostKeys'
 import { expose, DEBUG } from '../debug'
-import { createLightPoolKit } from '../vendor/light/kfb-light-pool.v1.js' // V-572: Lichtpfützen projiziert statt Scheiben
+import { GFX, gfxChannel } from '../look/groundFx.js' // V-632: Boden-Lichteffekte (Kegel, Pfütze, Ring) über kfb-groundfx; löst die Einhängung des Lichtpfützen-Kits V-572 ab
 import clipsGeneral from '../assets/actors/Rig_Medium_General.glb?url'
 import clipsMove from '../assets/actors/Rig_Medium_MovementBasic.glb?url'
 import clipsSim from '../assets/actors/Rig_Medium_Simulation.glb?url' // WS-NPC: Waving (Gruß), KayKit Character Animations as-is (Lead-OK 21.10.)
 import clipsSpecial from '../assets/actors/Rig_Medium_Special.glb?url' // WS-NPC Phase D: Skeletons_* (KayKit Character Animations 1.1 as-is, Blob 4c2277de)
+import clipsRanged from '../assets/actors/Rig_Medium_CombatRanged.glb?url' // Kampf R1: Ranged_1H_* (KayKit Character Animations 1.1 as-is, kayfabizarro main, Blob df56bad0)
+import { createCombatPlayer } from '../modules/combatPlayer'
 import { createOrchard3d } from '../modules/orchard3d'
 import { createFluffSuck } from '../modules/fluffSuck.js'
 import { createSuckAudio } from '../audio/suckAudio.js'
@@ -84,6 +86,7 @@ import { withPrivateBody } from '../actors/privateCast'
 import { botCast, botStationUrl, botBlockUrl } from '../actors/botCast'
 import { CLASS_SCALE } from '../actors/stageCast'
 import AudioHost from '../audio/AudioHost.jsx' // WS-Audio R1 (V-598): ein Ton-Pfad (Mixer, Motor/Flug, Atmo, Kampf, Musik)
+import { ENDLESS_ON, EndlessDrive, adoptRig, createEndlessTerrainMod, createDriveSkyMod } from '../world/EndlessDrive.jsx' // V-619 world=endless (WS1b): endlose Biom-Fahrt, Licht nur über das Rig
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
 const BIOME = BIOMES[1] // wie #stage (Moos-Insel), bis WS0 Biom/Kartenzone der Bühne festlegt (§14.4)
@@ -115,7 +118,8 @@ const { clipsUrl: _c, motion: _m, position: _p, yaw: _y, ...FB_OPTS } = FB(0, 0,
 const PLAYER_ACTOR = { ...FB_OPTS, worldScale: K } // V-345: Figur in J17-Meter (createActor), Tempo-Abgleich im Loco-Modul
 // Partner (V-269, Georg 15.10.): GothGirl wie in #stage – gleiche Besetzung über actors/stageCast (V-206), Lage = rechte Marke
 const PARTNER = { ...KAYKIT('gothgirl')(MARK.right[0], MARK.right[2], 'stage-right'), position: [MARK.right[0], 0, MARK.right[1]], worldScale: K }
-const CLIP_URLS = [clipsMove, clipsGeneral]
+// Kampf R1: mit harvest (Ziele, Schuss) auch die KayKit-Kampfclips Ranged_* für die K10-Waffen auf dem Mixer der Figur (ein Mixer, Einmal-Clip)
+const CLIP_URLS = HARVEST ? [clipsMove, clipsGeneral, clipsRanged] : [clipsMove, clipsGeneral]
 const SKY = { variant: 'S', mode: 3 }
 // #439 (V-561): look=terrain2 = Cartoon-Terrain-Variante (Farbflächen, Palettenschatten, keine Kontaktflecke); world=canyon|bucht|otown wählt die Palette
 export const TERRAIN2 = isTerrain2(hash), T2_WORLD = (/world=(canyon|bucht|otown)/.exec(hash) || [0, TERRAIN2_CFG.world])[1]
@@ -125,7 +129,8 @@ export const TERRAIN3 = isTerrain3(hash), T3_PAL = (/palette=(mesa|moos|wueste|s
 // #439 world=probe (Georg 21.10.): Geländeform der Gelände-Probe als zweite Welt, kombinierbar mit look=terrain3 (nicht mit terrain2: dort wählt world die Palette)
 export const PROBE_WORLD = /(^|[#,])world=probe(,|$)/.test(hash)
 const TERR = { biome: BIOME, ...(PROBE_WORLD ? { world: 'probe' } : {}), ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
-const AMPH = { biome: BIOME, groundR: 0.01, worldK: K, ...(TERRAIN2 ? { palette: T2_AMPH_PAL, palAmt: 1, clay: true, castShadow: true } : {}) } // #439: gleiche Palette, Knete v1.1 und echter Schatten wie das Gelände // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
+const AMPH_FULL = DEBUG && /(^|[#,])amph=full(,|$)/.test(hash) // Vergleich mit dem Original (349 k Dreiecke)
+const AMPH = { biome: BIOME, groundR: 0.01, worldK: K, ...(AMPH_FULL ? {} : { url: AMPH_LOD_URL }), ...(TERRAIN2 ? { palette: T2_AMPH_PAL, palAmt: 1, clay: true, castShadow: true } : {}) } // #439: gleiche Palette, Knete v1.1 und echter Schatten wie das Gelände // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
 const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 
 const mods = {}
@@ -172,6 +177,11 @@ const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? n
 const LANTERNS_ON = !/(^|[#,])lanterns=0(,|$)/.test(hash)
 const makeLanterns = mk('lanterns', createGemLanterns), makePract = mk('practicals', createPracticals)
 const makeSuck = mk('suck', createFluffSuck), SUCK_OPTS = { maxJobs: 24, onCue: (c, j) => { HARVEST_STATE.cues = (HARVEST_STATE.cues || 0) + 1; HARVEST_STATE.lastCue = c; SUCK_AUDIO.a?.cue(c, j) } }, SUCK_AUDIO = { a: null } // Ton ab dem ersten T (Browser-Regel)
+// Kampf R1 (Georg 22.10.): FrizzleBob mit den K10-Waffen (Pistole, HeroMan-Blaster) aus dem Rucksack; Ziffern 1/2/3 wechseln (ACTION_KEYS.weapon), B feuert mit
+// aktiver K10-Waffe (ohne bleibt der alte Schuss). weapon=pistol|blaster setzt die Startwaffe. Figur dreht über M1Player.face (Controller besitzt die Blickrichtung).
+const PLAYER_CTRL = { ref: null }, WEAPON0 = (/(^|[#,])weapon=(pistol|blaster)(,|$)/.exec(hash) || [])[2] || null
+const makeCombat = mk('combat', createCombatPlayer)
+const COMBAT_OPTS = { player: () => mods.player, orchard: () => mods.orchard, groups: () => mods.groups, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), face: (yaw) => PLAYER_CTRL.ref?.current?.face?.(yaw), worldScale: K }
 const makePath = mk('path', (o) => createPath3d(o)), makeOrchard = mk('orchard', createOrchard3d), makeClay = mk('clay', createClaySSOT), makeFound = mk('found', createFoundItems3d)
 // V-429 · Knete aus kfb-clay.v1.1 auch in der Laufwelt: Spieler und Partnerin nach ihrer Figurenkarte (character), Obstgarten-Bäume midground (Kügelchen und
 // Wirkungen behalten ihr Material: Instanz-Farben je Sorte); clay=0 schaltet aus
@@ -180,7 +190,7 @@ const CLAY_M1 = { targets: () => [{ module: mods.player, card: CARDS.frizzlebob 
   ...(mods.found ? [{ module: mods.found, profile: 'midground', seed: 'found', scaleRef: 0.9, skip: (o) => o.name === 'contact-blob' || SKIP_DEFAULT.test(o.name || '') }] : []),
   ...(mods.orchard ? [{ module: mods.orchard, profile: 'midground', seed: 'orchard', scaleRef: 2.6, skip: (o) => o.name === 'orchard-fluff' || !/^tree:/.test(o.parent?.name || '') && !/tree:/.test(pathName(o)) || SKIP_DEFAULT.test(o.name || '') }] : [])] }
 const pathName = (o) => { const a = []; for (let n = o; n; n = n.parent) a.push(n.name || ''); return a.join('/') }
-const makeSky = mk('sky', TERRAIN3 ? (o) => createSkyR13({ ...o, palette: T3_PAL, sunDir: () => { const m = LIGHT_INFO()?.mood; return m ? sunDirection(m.elev, m.az) : null } }) : createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeAO = mk('blobs', createContactAO), makeRig = mk('light', createStageLight)
+const makeSky = mk('sky', ENDLESS_ON ? createDriveSkyMod : TERRAIN3 ? (o) => createSkyR13({ ...o, palette: T3_PAL, sunDir: () => { const m = LIGHT_INFO()?.mood; return m ? sunDirection(m.elev, m.az) : null } }) : createSky), makeTerrain = mk('terrain', ENDLESS_ON ? createEndlessTerrainMod : createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeAO = mk('blobs', createContactAO), makeRig = mk('light', createStageLight)
 // Kontaktflecke (V-203, L1: für alle Figuren; Georg 16.10.: „FrizzleBob schwebt“): Spieler und Partnerin (in M2 steht FB noch neben dem Auto)
 // Kontaktverdeckung (L3, V-392/V-393 Stufe 0: Licht nur über das Bühnen-Licht-Modul): Spieler, Partnerin und im Fahrmodus das Auto (M2STATE.ao), je an
 // der Boden-Normale ausgerichtet (GROUND_AT: Strahl auf die Kollider, sonst Gelände-Gradient)
@@ -203,9 +213,22 @@ function Orchard() {
   const { camera } = useThree()
   const act = useCallback((w) => { const p = worldPosOf(mods.player); if (!p || !mods.orchard) return null
     const d = camera.getWorldDirection(new THREE.Vector3()); d.y = 0; d.normalize(); return (HARVEST_STATE.last = mods.orchard[w]([p.x, p.y, p.z], [d.x, 0, d.z])) }, [camera])
+  // Kampf R1: mit aktiver K10-Waffe feuert B die Waffe (Zielwahl wie der Schuss, Blick der Kamera), V/N wirken wie bisher und lassen die Aktionsleiste auf der Waffe
+  const fireK10 = useCallback(() => { const p = worldPosOf(mods.player), C = mods.combat; if (!p || !C?.active()) return null
+    const d = camera.getWorldDirection(new THREE.Vector3()); d.y = 0; d.normalize(); return (HARVEST_STATE.lastFire = C.fire({ from: [p.x, p.y, p.z], dir: [d.x, 0, d.z] })) }, [camera])
   useHostKeys((e) => { if (e.repeat || M1STATE.phase !== 'free') return; const w = { KeyV: 'punch', KeyB: 'shoot', KeyN: 'blast' }[e.code]; if (!w) return
-    hud.current?.setWeapon(w === 'shoot' ? 'blaster' : 'fist'); if (w === 'blast') hud.current?.setCtx('bomb')
+    const k10 = !!mods.combat?.active(); if (w === 'shoot' && k10) { fireK10(); e.preventDefault(); return }
+    if (!k10) hud.current?.setWeapon(w === 'shoot' ? 'blaster' : 'fist'); if (w === 'blast') hud.current?.setCtx('bomb')
     act(w); if (w === 'blast') setTimeout(() => hud.current?.setCtx(null), 600); e.preventDefault() }, PRIO.player)
+  // Kampf R1: Waffe aktiv setzen (Rucksack, Ziffern): Kampfmodul, Aktionsleiste (Familie: Pistole/Blaster → 'blaster', keine → 'fist'), Häkchen im Rucksack
+  const equip = useCallback((id) => { const C = mods.combat; if (!C || !C.equip(id ?? null)) return false; const w = id ? C.weapons().find((x) => x.id === id) : null
+    hud.current?.setWeapon(w ? w.hud : 'fist'); hud.current?.setActiveWeapon?.(id ?? null); HARVEST_STATE.weapon = id ?? null; return true }, [])
+  useHostKeys((e) => { if (e.repeat || M1STATE.phase !== 'free' || !(e.code in ACTION_KEYS.weapon)) return; if (equip(ACTION_KEYS.weapon[e.code])) e.preventDefault() }, PRIO.player)
+  // Waffen in den Rucksack, sobald das Kampfmodul sie geladen hat (ohne src/private: keine Einträge, Status „keine Waffen“); Startwaffe aus weapon=
+  const bagDone = useRef(false)
+  useFrame(() => { const C = mods.combat; if (bagDone.current || !C || !hud.current || !M1GL.gl || C.status().status === 'LOADING') return; bagDone.current = true
+    const list = C.weapons().filter((w) => w.status === 'OK').map((w) => ({ wid: w.id, id: 'k10.' + w.id, n: w.name, k: 'Waffe · K10', icon: 'blaster', note: w.note, shot: C.thumbnail(w.id, M1GL.gl) })) // Bild = Original-Modell
+    hud.current.setWeapons?.(list); HARVEST_STATE.bagWeapons = list.map((w) => w.wid); if (WEAPON0 && list.some((w) => w.wid === WEAPON0)) equip(WEAPON0) })
   const lanterns = useMemo(() => ({ items: lanternsAlongPath(DEMO_PATH, { n: 8, terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z) }), renderer: () => M1GL.gl, mood: () => moodAt(TODV, MOOD_SET), ground: BIOME.top }), [])
   const pract = useMemo(() => ({ practicals: () => (mods.lanterns?.practicals() || []).map((p) => ({ ...p, intensity: 1, halo: { size: 0.001 } })), weight: () => moodAt(TODV, MOOD_SET).glow ?? 0 }), []) // Leuchthof bringt kfb-gem selbst mit
   const found = useMemo(() => ({ items: placeLoot({ zones: LOOT_ZONES, path: DEMO_PATH, seed: 18 }), terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z) }), []) // V-450: gleicher Bodenabstand 0,15 m statt Hüfthöhe
@@ -226,20 +249,22 @@ function Orchard() {
   useHostKeys((e) => { if (e.repeat || M1STATE.phase !== 'free' || e.code !== 'KeyT') return; suckNow(); e.preventDefault() }, PRIO.player)
   useFrame((_, dt) => { if (!mods.suck) return; HARVEST_STATE.suck = mods.suck.stats(); SUCK_AUDIO.a?.update(dt, mods.suck.active()); HARVEST_STATE.suckAudio = SUCK_AUDIO.a?.info() })
   useFrame(() => { const p = worldPosOf(mods.player); if (!p || !mods.found || !hud.current) return; const t = !!mods.found.near([p.x, p.y, p.z]); if (t !== HARVEST_STATE.target) { HARVEST_STATE.target = t; hud.current.setTarget(t) } })
-  return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} />
+  return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} /><ModuleHost create={makeCombat} options={COMBAT_OPTS} />
     {LANTERNS_ON && <><ModuleHost create={makeLanterns} options={lanterns} /><ModuleHost create={makePract} options={pract} /></>}
-    <HudR5f counts={counts0} onApi={(a) => { hud.current = a; HARVEST_STATE.hud = a }} onCtx={(c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }} onInteract={pickUp} onThrow={throwAway} /></>
+    <HudR5f counts={counts0} onApi={(a) => { hud.current = a; HARVEST_STATE.hud = a }} onCtx={(c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }} onInteract={pickUp} onThrow={throwAway} onEquip={equip} /></>
 }
-// V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine (kfb-light-pool.v1); Stärke und Farbe 1:1 aus dem
-// Practicals-Angebot von kfb-gem (Stimmung × Puls × Flackern), tagsüber 0. Empfänger werden einmal je Material angeschlossen.
-const LPK = createLightPoolKit(THREE, { max: 16 }), _lpDown = new THREE.Vector3(0, -1, 0)
+// V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine; Stärke und Farbe 1:1 aus dem Practicals-Angebot
+// von kfb-gem (Stimmung × Puls × Flackern), tagsüber 0. V-632: über kfb-groundfx (gleiche Kegel-Rechnung wie kfb-light-pool.v1), Kanal 'lanterns' –
+// die Plätze teilen sich Laternen, Scheinwerfer (M2Car), später Disco und Boombox. Empfänger werden einmal je Material angeschlossen, Fokus = Kamera.
+const _lpDown = new THREE.Vector3(0, -1, 0), LANTERN_CH = gfxChannel('lanterns')
 function LightPools() {
-  const tick = useRef(0)
+  const tick = useRef(0), { camera } = useThree()
   useFrame((_, dt) => {
     tick.current += dt
-    if (tick.current > 1) { tick.current = 0; for (const m of [mods.terrain, mods.path, mods.lanterns, mods.orchard, mods.found]) m?.object3d?.traverse?.((o) => { if (!o.isMesh) return; for (const mt of [].concat(o.material)) if (mt && mt.isMeshStandardMaterial && !mt.userData.kfbLP) { mt.userData.kfbLP = true; LPK.injectStandard(mt) } }) }
+    if (tick.current > 1) { tick.current = 0; for (const m of [mods.terrain, mods.path, mods.lanterns, mods.orchard, mods.found]) GFX.attach(m?.object3d) }
+    GFX.setFocus(camera.position)
     const offers = mods.lanterns?.practicals?.() || []
-    LPK.setPools(offers.slice(0, 16).map((p) => ({ origin: new THREE.Vector3(p.pos[0], p.pos[1] + 0.35 * K, p.pos[2]), dir: _lpDown, angle: 1.05, soft: 0.75, color: p.color, intensity: p.intensity * 1.4, range: Math.max(2.5 * K, (p.range || 1) * 2.2) })))
+    if (offers.length || LANTERN_CH.list.length) LANTERN_CH.set(offers.slice(0, 16).map((p) => ({ origin: new THREE.Vector3(p.pos[0], p.pos[1] + 0.35 * K, p.pos[2]), dir: _lpDown, angle: 1.05, soft: 0.75, color: p.color, intensity: p.intensity * 1.4, range: Math.max(2.5 * K, (p.range || 1) * 2.2) })))
   })
   return null
 }
@@ -260,6 +285,7 @@ const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, fi
     // #439 (WS1b-Diagnose): Kasten mind. 16 m, damit Bäume neben der Figur werfen; Sonne um Kronenhöhe ÷ sin(Sonnenhöhe) + Rand zurück (Nah-Ebene schneidet keine Krone)
     const e = Math.max(8, M.elev) * Math.PI / 180; return { center: { x: t.p.x, y: t.p.y, z: t.p.z }, radius: Math.max(t.half + shadowLength(M.elev) * t.h + 1 * K, 16 * K), margin: (14 * K) / Math.sin(e) + 4 * K } },
   shadowSoft: isTerrain3(hash) ? 5 : 7, shadowBlurSamples: 16, shadowIntensity: isTerrain3(hash) ? 0.62 : 0.82 }   // terrain3: leiser und kontaktnäher (Schattenkonzept R1, KayKit)   // VSM: Weichzeichner-Radius (Texel) und Proben des Blur-Durchgangs
+if (ENDLESS_ON) adoptRig(RIG) // V-619: Stimmung je Bild aus der Atmosphäre der Biom-Fahrt (lebender moods-Satz), Schatten nach Sonnen-/Mondhöhe
 export const LIGHT_INFO = () => mods.light?.info?.() || null
 const AUDIO_HOST = (player) => ({ mods, player, harvest: HARVEST ? HARVEST_STATE : null, m1: M1STATE, light: LIGHT_INFO, flatR: TERRAIN.flatR, k: K }) // WS-Audio: nur lesend
 // terrain3: dunkler Fuß wie KayKit an Figuren (Schattenkonzept R1, Georg 21.10.), Bodenhöhe = Wurzel der Figur (steht auf dem Boden, m1-ground);
@@ -355,6 +381,7 @@ export default function M1Root() {
 
 function M1World() {
   const player = useRef(null)
+  PLAYER_CTRL.ref = player // Kampf R1: Blickrichtung zum Ziel über M1Player.face (Ref bleibt stabil)
   const orbit = useRef(null) // Griff der Bühnenkamera (StageOrbitCam): setActive(on) synchron, target()
   const fovBlend = useRef({ on: false, from: 55, to: 55, t: 0 })
   const [amphReady, setAmphReady] = useState(false)
@@ -440,6 +467,7 @@ function M1World() {
         ready: { pool: isPoolReady(), card: mods.billboard?.info()?.source ?? null, player: mods.player?.status().status, partner: mods.partner?.status().status, partnerShown: mods.partner?.status().shown },
         keysShown: keysUi.current?.shown?.() ?? null }),
       harvest: () => HARVEST_STATE, // C3/C3b: Ernte-Stand, HUD-api, Zähler (nur debug)
+      combat: () => mods.combat ? { status: mods.combat.status(), debug: mods.combat.debug(), events: mods.combat.events(), active: mods.combat.active(), weapons: mods.combat.weapons() } : null, // Kampf R1 (nur debug)
       groups: () => mods.groups ? { status: mods.groups.status(), debug: mods.groups.debug(), tables: mods.groups.tables(), played: mods.groups.played(), events: mods.groups.events(), steps: mods.groups.steps(), time: mods.groups.time() } : null,
       band: () => mods.band ? { status: mods.band.status(), debug: mods.band.debug() } : null, // WS-NPC Phase D (nur debug) // WS-NPC Phase D (nur debug)
       disco: () => mods.disco ? { status: mods.disco.status(), debug: mods.disco.debug() } : null, // Lead: Disco K12 (nur debug)
@@ -485,6 +513,7 @@ function M1World() {
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
         {M2_ON && <M2Car player={player} />}
         {M2_ON && <StuntField />}
+        {ENDLESS_ON && <EndlessDrive mods={mods} />}
         {!M2_ON && <ElanRings groundAt={groundHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}
         {RACER_FLY && <ElanRings groundAt={groundHeight} J={K / WORLD_K} scale={RACER_COURSE_SCALE} bestKey="kfb.elan.s2.racer.best" playerPos={() => M2STATE.carPos?.() ?? null} playerObj={() => M2STATE.visualRoot} />}
       </Physics>

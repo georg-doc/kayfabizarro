@@ -24,6 +24,8 @@ export const ACTION_KEYS = {
   talk: 'KeyE', close: 'Escape', fly: 'KeyF', reset: 'KeyR',
   buildDelete: ['Delete', 'Backspace'], buildDeselect: 'Escape',
   gizmo: { Digit1: 'translate', Digit2: 'rotate', Digit3: 'scale' },
+  // Kampf R1 (Georg 22.10.): schneller Waffenwechsel in der Laufwelt – 1 = Faust/keine, 2 = Pistole, 3 = HeroMan-Blaster (Editor-Gizmo hat Vorrang, PRIO.editor)
+  weapon: { Digit1: null, Digit2: 'pistol', Digit3: 'blaster' },
 }
 
 // Rangfolge: wer zuerst gefragt wird. Wer die Taste nutzt, ruft e.preventDefault(); dann ist Schluss.

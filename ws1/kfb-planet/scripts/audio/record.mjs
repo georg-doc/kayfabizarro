@@ -5,7 +5,7 @@
 //   kampf    1 · Kampf am Obstgarten (V/B/N, Saugarm) · 2 · Hörprobe Arena-Waffen (K10-Adapter, Ereignisse per Prüfskript – die Arena ist noch
 //            nicht im Spiel, das steht im Bild) · 3 · Fahrt am Boden (Untergrund, Drift, Bremse)                → kfb-audio-kampf.mp4 (Handy)
 //   gruppen  NPC-Gruppen (Skelette, Bots, Spielzeugsoldaten) und Dark Fluffer – nur in einer lokalen Vorschau-Kombination mit ws-npc/phase-a → kfb-audio-gruppen.mp4
-// Aufruf: PW_GPU=1 node scripts/audio/record.mjs [abnahme|kampf|gruppen|heilen|mvp] → test/out/audio/ (privat: enthält Musik und gekaufte Töne!)
+// Aufruf: PW_GPU=1 node scripts/audio/record.mjs [abnahme|kampf|gruppen|heilen|mvp|neu] → test/out/audio/ (privat: enthält Musik und gekaufte Töne!)
 import fs from 'fs'
 import path from 'path'
 import { startServer, openAudioPage } from '../../test/_audioServer.mjs'
@@ -154,6 +154,35 @@ const SEGMENTS = {
       await at(29); mark('Dark Fluffer (Hüpfer, Spucken)'); for (let t = 29; t < 40; t += 2) { await at(t); await fl() }
       await at(40); mark('Dark Fluffer heilen'); await fl(); await wait(600); await tap(page, 'KeyB'); await at(46); mark('Fluff einsammeln'); await tap(page, 'KeyT') }],
   ],
+  // Neue WS0-Töne (22.10.): Combat-AV L1–L13 als Hörprobe (K10 per Prüfskript, Arena noch nicht im Spiel) + NPCs echt gespielt (npc_steps_r1)
+  neu: [
+    ['neu-arena', '#m1,harvest,look=terrain3,world=probe', 40, 'Neue Kampf-Töne (WS0 L1–L13) · Hörprobe per Prüfskript – Arena noch nicht im Spiel', async (page, at, mark) => {
+      await toTree(page, 1, -6)
+      const k = (o) => page.evaluate((o) => { const M = window.__kfbM1, p = M.feet(), pos = o.far ? { x: p[0] + 8, y: p[1] + 1, z: p[2] - 6 } : { x: p[0] + 0.6, y: p[1] + 1.3, z: p[2] }; const { far, ...e } = o; return !!window.__kfbAudio.k10({ ...e, position: pos }) }, o)
+      const seq = [['Bogen (L1) → Pfeil-Treffer (L3)', [{ type: 'fire', weapon: 'bow' }, { type: 'contact', weapon: 'bow', confirmed: true, far: true }]], ['Armbrust (L2) → Treffer', [{ type: 'fire', weapon: 'crossbow' }, { type: 'contact', weapon: 'crossbow', confirmed: true, far: true }]],
+        ['Zauber (L4) → Zauber-Treffer (L5)', [{ type: 'fire', weapon: 'wand' }, { type: 'contact', weapon: 'wand', confirmed: true, far: true }]], ['Würfel schnipsen (L6)', [{ type: 'fire', weapon: 'dice' }]],
+        ['Gegner holt aus (L13) → Wurf', [{ type: 'windup', side: 'enemy', far: true }, { type: 'fire', side: 'enemy', far: true }]], ['Du wirst getroffen: Bonk (L8)', [{ type: 'contact', target: 'player' }]],
+        ['Monster-Biss (L7)', [{ type: 'contact', target: 'player', weapon: 'bite' }]], ['Schild-Block', [{ type: 'block' }]], ['Gegner besiegt: Kill-Pop + Schädel (L9)', [{ type: 'kill', far: true }]],
+        ['Rauchbombe (L12)', [{ type: 'contact', weapon: 'smoke', far: true }]], ['Waffe fällt (L10)', [{ type: 'weaponDrop' }]]]
+      let t = 1
+      for (const [label, evs] of seq) { await at(t); mark(label); for (const e of evs) { await k(e); await wait(650) } t += 2.7 }
+      await at(t); mark('Gatling: Anlauf → Drehen → Auslauf (L11)'); for (let i = 0; i < 30; i++) { await k({ type: 'fire', weapon: 'gatling' }); await wait(55) } }],
+    ['neu-npc', '#m1,harvest,look=terrain3,world=probe,npc,fluffer,patrol,band,fluffert=4', 86, 'Neue NPC-Töne (WS0 npc_steps_r1) · echt gespielt auf ws1/mvp-r1', async (page, at, mark) => {
+      const look = (fn, dist) => page.evaluate(({ fn, dist }) => { const M = window.__kfbM1, q = new Function('M', fn)(M); if (!q) return null; const p = M.feet(), dx = q.x - p[0], dz = q.z - p[2], l = Math.hypot(dx, dz) || 1, x = q.x - dx / l * dist, z = q.z - dz / l * dist, w = Math.atan2(q.x - x, q.z - z)
+        M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false); return q }, { fn, dist })
+      const member = (gid) => `const G = M.groups?.()?.debug?.find((g) => g.id === '${gid}'); const m = G?.members?.find((x) => !x.ko) || G?.members?.[0]; return m ? { x: m.x, z: m.z } : null`
+      const shoot = async (gid, n, label) => { for (let i = 0; i < n; i++) { await look(member(gid), 5); await wait(700); await tap(page, 'KeyB'); await wait(1500) } }
+      // Spielzeugsoldaten: Zone betreten, kurz wegschauen, dann hinschauen (Begegnungstabelle), Marschtritt + Aufziehschlüssel, dann Pfiff (Wut) und Rappeln
+      await page.evaluate(() => { const M = window.__kfbM1; M.player().teleport([30, M.terrainH(30, 14) + 1.2, 14], Math.PI) }); await at(2.5)
+      mark('Spielzeugsoldaten: Marschtritt + Aufziehschlüssel'); for (let t = 2.5; t < 9; t += 1.5) { await at(t); await look(member('toy_squad'), 6) }
+      await at(9); mark('Spielzeugsoldaten: Treffer → Pfiff (Wut) → K.o.'); await shoot('toy_squad', 4)
+      await at(25); mark('Bots: Metall-Stapfen, Zorn-Piepen (N10), K.o.'); for (let t = 25; t < 29; t += 1.5) { await at(t); await look(member('bot_crew'), 6) } await shoot('bot_crew', 4)
+      await at(46); mark('Skelette: Knochen-Tock, K.o. = Knochen-Zerfall (N12)'); await shoot('skeleton_patrol', 4)
+      await at(63); mark('Dark Fluffer: Goo-Gleiten zwischen den Hüpfern (N08)'); const fl = 'const g = M.fluffer?.()?.debug; return g ? { x: g.x, z: g.z } : null'
+      for (let t = 63; t < 72; t += 1.5) { await at(t); await look(fl, 3) }
+      await at(72); mark('heilen → heller Hüpfer (N09)'); await look(fl, 2.8); await wait(600); await tap(page, 'KeyB'); for (let t = 74; t < 80; t += 1.5) { await at(t); await look(fl, 3.5) }
+      await at(80); mark('Band mit Publikum (N15)'); await page.evaluate(() => { const M = window.__kfbM1, P = M.mods.band?.positions?.() || [], c = P.length ? { x: P.reduce((s, p) => s + p.x, 0) / P.length, z: P.reduce((s, p) => s + p.z, 0) / P.length } : { x: -8, z: 30 }, x = c.x - 9, z = c.z, w = Math.atan2(c.x - x, c.z - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false) }) }],
+  ],
 }[PROFILE]
 if (!SEGMENTS) throw new Error('Profil unbekannt: ' + PROFILE)
 const segs = []
@@ -161,9 +190,9 @@ for (const [name, hash, seconds, label, script] of SEGMENTS) segs.push({ ...(awa
 
 // Zusammensetzen: Abschnitte nacheinander abspielen, Bild über Canvas mit Einblendungen, Ton über einen MediaStream, Pegel je Abschnitt messen
 fs.writeFileSync(path.join(OUT, 'stitch.html'), '<!doctype html><meta charset=utf-8><title>stitch</title><body style="margin:0;background:#000"></body>') // gleicher Ursprung (sonst stummes MediaElement)
-const small = ['kampf', 'gruppen', 'heilen', 'mvp'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
+const small = ['kampf', 'gruppen', 'heilen', 'mvp', 'neu'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
 const { browser, page, errs } = await openAudioPage(srv.url, 'test/out/audio/stitch.html')
-const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
+const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4', neu: 'kfb-audio-neu.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
 await page.exposeFunction('__kfbRecChunk', (b64) => { fs.writeSync(fd, Buffer.from(b64, 'base64')) })
 const levels = await page.evaluate(async ({ segs, W, H, mime, vbr, SEND }) => {
   document.body.innerHTML = ''; const c = document.createElement('canvas'); c.width = W; c.height = H; document.body.append(c); const g = c.getContext('2d'), u = W / 1280

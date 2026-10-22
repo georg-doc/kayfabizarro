@@ -5,8 +5,8 @@ import os from 'os'
 import path from 'path'
 import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
-import { musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH } from '../../src/audio/cueMap.js'
+import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
 
@@ -42,7 +42,7 @@ const tracked = execSync('git ls-files', { encoding: 'utf8' }).split('\n').filte
 // Mit lokalem Zwischenspeicher: jede bank-Zuordnung hat Dateien
 const idxPath = path.join(process.env.KFB_AUDIO_CACHE || path.join(os.homedir(), 'kfb-ws1/.kfb-audio-cache'), 'index.json')
 let missing = null, cache = false
-if (fs.existsSync(idxPath)) { cache = true; const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8')); const have = (c) => idx.sets?.[c.set]?.files || []; missing = bank.filter(([, c]) => !c.set.startsWith('site:')).filter(([, c]) => c.files ? !c.files.every((f) => have(c).includes(f)) : !variantsOf(c.base, have(c)).length).map(([k]) => k) }
+if (fs.existsSync(idxPath)) { cache = true; const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8')); const have = (c) => idx.sets?.[c.set]?.files || []; missing = bank.filter(([, c]) => !c.set.startsWith('site:') && !c.pending).filter(([, c]) => c.files ? !c.files.every((f) => have(c).includes(f)) : !variantsOf(c.base, have(c)).length).map(([k]) => k) }
 
 // Private MVP-Site (V-618): site-copy nur mit SITE=1; mit Zwischenspeicher: Trockenlauf ohne fehlende Dateien und ohne Datei > 25 MiB
 const siteNo = spawnSync(process.execPath, ['scripts/audio/site-copy.mjs', '--dry'], { env: { ...process.env, SITE: '' }, encoding: 'utf8' })
@@ -75,6 +75,28 @@ process.exit(report('audio-mixer', {
     && stepKey({ id: 'toy_3', foot: 'l', t: 4.2 }) === 'toy_3|l|4.2' && stepKey({ id: 'df', t: 9 }) === 'df|9' && CUES['fluffer.hop']?.owner === 'bank'
     && ['npc.stepGrass', 'npc.stepPath', 'npc.stepStone', 'npc.stepSkel', 'npc.stepToy', 'npc.stepBot'].every((c) => CUES[c].set === 'npc_steps_r1'),
   flufferPitchSmaller: FLUFFER_PITCH > 1.02 && FLUFFER_PITCH < 1.06 && Object.entries(CUES).filter(([k]) => k.startsWith('fluffer.')).every(([, c]) => c.pitch === FLUFFER_PITCH),
+  ambienceOverride: (() => { const a = resolveAmbience({ biome: 'meadow', timeOfDay: 'day' }, { biome: 'forest', weather: 'snow', wind: 2, timeOfDay: 'night' }), b = resolveAmbience({ biome: 'pond', timeOfDay: 'day' }, { biome: 'forest' }), c = resolveAmbience({ biome: 'meadow' }, { biome: 'mars', weather: 'lava' })
+    return a.biome === 'forest' && a.weather === 'snow' && a.wind === 1 && resolveAmbience({}, { wind: 0.337 }).wind === 0.35 && ['weather.rain', 'weather.rainOnset', 'weather.thunder', 'time.dawn', 'time.dusk', 'time.night'].every((c) => CUES[c]?.set === 'weather_time_r1') && a.timeOfDay === 'night' && b.biome === 'pond' && c.biome === 'meadow' && c.weather === 'clear' && c.timeOfDay === 'day' })(),
+  musicByBiome: (() => { const tags = { a: ['forest'], b: ['meadow', 'day'], c: ['night'], d: ['snow'] }, ctx = { biome: 'forest', timeOfDay: 'day' }
+    let st = 12345; const rnd = () => { st = (st + 0x6D2B79F5) | 0; let t = Math.imul(st ^ (st >>> 15), 1 | st); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 }, pick = createWeightedShuffle(['a', 'b', 'c', 'd'], rnd, 1), n = { a: 0, b: 0, c: 0, d: 0 }, seq = [] // rnd = mulberry32
+    for (let i = 0; i < 400; i++) { const x = pick((f) => musicWeight(tags[f], ctx)); n[x]++; seq.push(x) }
+    return musicWeight(['forest', 'night'], { biome: 'forest', timeOfDay: 'night' }) === 6 && musicWeight([], {}) === 1 && musicWeight(['snow'], { weather: 'snow' }) === 4 && musicWeight(['day'], { timeOfDay: 'morning' }) === 3
+      && n.a > n.c && n.b > n.d && n.c > 0 && seq.every((x, i) => i === 0 || x !== seq[i - 1]) })(),
+  spaceAndOcclusion: reverbEnv({ biome: 'meadow', rise: 9 }) === 'canyon' && reverbEnv({ biome: 'forest' }) === 'forest' && reverbEnv({ biome: 'beach', rise: 2 }) === 'open' && REVERB.canyon.seconds > REVERB.forest.seconds
+    && occlusion((x) => (x > 4 && x < 6 ? 10 : 0), { x: 0, y: 1, z: 0 }, { x: 10, y: 1, z: 0 }).occluded && !occlusion(() => 0, { x: 0, y: 1, z: 0 }, { x: 10, y: 1, z: 0 }).occluded
+    && occlusionFilter({ occluded: true, depth: 10 }).hz === 900 && occlusionFilter({ occluded: false }).hz === null,
+  musicPulseTracker: (() => { const tr = createPulseTracker(), d = new Uint8Array(512); let p, kicks = 0, quiet = null
+    for (let f = 0; f < 720; f++) { const t = f / 60, ph = (t * 2) % 1; d.fill(60); for (let i = 1; i <= 3; i++) d[i] = ph < 0.08 ? 230 : 90; p = tr(t, d, 1); if (p.kick) kicks++ } // Testmuster 120 BPM (Zahlen, kein Ton)
+    for (let f = 720; f < 780; f++) quiet = tr(f / 60, d.fill(60), 0)
+    return kicks >= 20 && kicks <= 25 && Math.abs(p.transport.bpm - 120) < 3 && p.transport.confidence01 > 0.5 && p.bass > 0 && p.energy.rhythm01 >= 0 && ['audible01', 'kick', 'bass', 'beat'].every((k) => k in p) && 'beatPulse01' in p.transport
+      && quiet.audible01 === 0 && !quiet.kick && SILENT_PULSE.audible01 === 0
+      && (() => { const t2 = createPulseTracker(), d2 = new Uint8Array(512); let q, bpms = [] // 128 BPM mit Zwischenschlägen auf jedem 3. „und“: Tempo bleibt bei 128
+        for (let f = 0; f < 1500; f++) { const t = f / 60, b = t * 128 / 60, ph = b % 1, n = Math.floor(b), off = n % 3 === 1 && Math.abs(ph - 0.5) < 0.04; d2.fill(60); for (let i = 1; i <= 3; i++) d2[i] = ph < 0.04 || off ? 230 : 90; q = t2(t, d2, 1); if (f > 600 && f % 60 === 0) bpms.push(q.transport.bpm) }
+        return bpms.every((x) => Math.abs(x - 128) < 4) && q.transport.confidence01 > 0.5 })() })(),
+  kampfR1Dedupe: k10Plan({ type: 'contact', weapon: 'pistol', target: 'group:skel_rogue', confirmed: true, material: 'clay' }).layers.length === 1 && k10Plan({ type: 'kill', target: 'group:toy_3' }).layers.length === 0
+    && k10Plan({ type: 'kill', target: 'mob_1' }).layers[0][0] === 'k10.kill' && k10Plan({ type: 'contact', weapon: 'pistol', target: 'tree:goblin:t4' }).layers.some(([c]) => c === 'tree.leaves') && k10Plan({ type: 'contact', weapon: 'pistol', material: 'metal' }).layers.some(([c]) => c === 'impact.metal'),
+  greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
+    && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -4 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && CUES['greet.farmer.cure'].pending === 'WS0',
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),
   ws0CombatAvDelivered: LAUNCH.bow[0][0] === 'k10.bowRelease' && LAUNCH.crossbow[0][0] === 'k10.crossbowRelease' && LAUNCH.magic[0][0] === 'k10.magicCast' && LAUNCH.dice[0][0] === 'k10.diceFlick'
     && k10Plan({ type: 'contact', target: 'player' }).layers[0][0] === 'k10.playerHurt' && k10Plan({ type: 'contact', target: 'player', weapon: 'bite' }).layers[0][0] === 'k10.mobBite' && k10Plan({ type: 'kill' }).layers[0][0] === 'k10.kill'

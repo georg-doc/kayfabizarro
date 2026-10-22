@@ -11,8 +11,11 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { placeActor } from './bandClock.js'
+import { GFX, gfxChannel } from '../look/groundFx.js' // V-632: Disco-Licht über das gemeinsame Bodenlicht-Modul (Kanal 'disco'), keine eigene Lösung
 
-export const DISCO = Object.freeze({ visibleFar: 160, bubbleR: 70, fade: 0.25, bounceU: 0.07, ballU: [0.95, 7.6, -0.4], length: 38.4, bpm: 100 })
+export const DISCO = Object.freeze({ visibleFar: 160, bubbleR: 70, fade: 0.25, bounceU: 0.07, ballU: [0.95, 7.6, -0.4], length: 38.4, bpm: 100,
+  // Licht wie die Gelände-Probe (updateDisco, O-Town): 8 Strahlen von der Kugel, drehen mit 0,5 rad/s, Neigung 0,36 ± 0,28 – Pfützen bleiben auf dem Tanzkreis
+  pal: ['#ff4fa3', '#4fd8ff', '#ffe14f', '#8a5bff', '#5bff9a', '#ff8a3d', '#ff4fa3', '#4fd8ff'], beamAngle: 0.11, beamOpacity: 0.42, poolIntensity: 2.2, rangeU: 12 })
 export const discoLog = { create: 0, update: 0, dispose: 0 }
 // Kulisse in Scenelet-Einheiten (u, +z = Publikum), wie die Gelände-Probe (placeOT): Radio, Boxen, Drum Machine (V-571 prop_buried)
 export const DISCO_PROPS = Object.freeze([
@@ -121,12 +124,29 @@ export function createDiscoLife(options) {
     // Spiegelkugel über dem Tanzkreis (wie die Probe: 7,6 u hoch, flach facettiert, dreht langsam)
     const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3 * s, 1), new THREE.MeshStandardMaterial({ color: '#d9dde8', metalness: 0.35, roughness: 0.3, flatShading: true, emissive: '#5a6070' }))
     const { h } = holderAt([DISCO.ballU[0], 0, DISCO.ballU[2]], 0, 'disco-ball'); ball.position.y = DISCO.ballU[1] * s; h.add(ball); S.ball = ball
+    S.beams = DISCO.pal.map((c) => { const b = GFX.makeBeam({ color: c, opacity: DISCO.beamOpacity, angle: DISCO.beamAngle }); b.visible = false; root.add(b); return b })
   }
   const ready = (async () => {
     await Promise.all([loadProps(), ...M.map((m) => loadMember(m).catch((e) => { m.status = 'ERROR'; m.error = String(e?.message || e); S.error = S.error || m.error }))])
     const dancers = M.filter((m) => !m.sl.mc), okD = dancers.filter((m) => m.status === 'OK').length
     S.status = !k12 ? 'PLACEHOLDER' : okD === dancers.length && M.find((m) => m.sl.mc)?.status === 'OK' ? 'OK' : okD ? 'PARTIAL' : 'ERROR'
   })().catch((e) => { S.status = 'ERROR'; S.error = String(e?.message || e) })
+
+  // Disco-Licht: 8 Kegel von der Kugel bis zum Boden (sichtbarer Strahl) + 8 Pfützen auf dem Tanzkreis, je Bild über den Kanal 'disco' (Vorrang unter den Scheinwerfern)
+  const CH = gfxChannel('disco'), _o = new THREE.Vector3(), _d = new THREE.Vector3(), _bw = new THREE.Vector3()
+  function lights(t) {
+    if (!S.ball || !S.beams) return
+    if (!S.near) { if (S.lightsOn) { CH.set([]); S.beams.forEach((b) => { b.visible = false }); S.lightsOn = false } return }
+    S.ball.getWorldPosition(_bw); const floorY = groundY(), list = []
+    for (let i = 0; i < 8; i++) {
+      const a = t * 0.5 + (i * Math.PI) / 4, tilt = 0.36 + 0.28 * Math.sin(t * 0.7 + i * 1.3)
+      _d.set(Math.cos(a) * Math.sin(tilt), -Math.cos(tilt), Math.sin(a) * Math.sin(tilt)).normalize(); _o.copy(_bw).addScaledVector(_d, 1.2 * s)
+      const len = Math.max(0.5, (_o.y - floorY) / Math.max(0.05, -_d.y)) + 0.6 * s, b = S.beams[i]
+      GFX.aimBeam(b, _o, _d, len); b.material.uniforms.uFade.value = Math.max(0.6, 1 - (2.2 * s) / len); b.visible = true
+      list.push({ form: 'cone', origin: _o.clone(), dir: _d.clone(), angle: DISCO.beamAngle, soft: 0.45, color: DISCO.pal[i], intensity: DISCO.poolIntensity, range: DISCO.rangeU * s })
+    }
+    CH.set(list); S.lightsOn = true
+  }
 
   function drive(m, dt) {
     const hit = S.hold ? { cue: { clip: m.clips.Idle_A ? 'Idle_A' : 'kfb_idle_happy_a' }, local: 0.4 } : discoCueAt(m.cues, S.songT, len)   /* hold: Prüfhilfe (Augen-Bogen), alle in Ruhe */
@@ -155,13 +175,18 @@ export function createDiscoLife(options) {
       const d = pl ? Math.hypot(pl.x - at[0], pl.z - at[1]) : Infinity
       _sphere.center.set(at[0], groundY() + 2 * s, at[1])
       S.near = d < DISCO.bubbleR || (!!cam && d < DISCO.visibleFar && frustum.intersectsSphere(_sphere)) || !pl
+      /* MVP-Leistung (Lead 22.10.): Tänzer sind Skin-Meshes ohne Frustum-Culling (83 Zeichenaufrufe, ≈ 170 k Dreiecke plus Schattenbild) –
+         sichtbar nur im Bild (bis visibleFar) oder ganz nah (Schatten ins Bild), sonst ausgeblendet; die Uhr läuft weiter (Weltzeit) */
+      const show = !pl || d < 12 * s || (!!cam && d < DISCO.visibleFar && frustum.intersectsSphere(_sphere))
+      for (const m of M) if (m.h && m.h.visible !== show) m.h.visible = show
       if (S.ball) S.ball.rotation.y += dt * 0.35
+      lights(t)
       if (!S.near) return
       for (const m of M) { if (m.status !== 'OK') continue; m.h.position.y = options.groundAt(m.pl.x, m.pl.z); drive(m, dt); m.actor.update?.(dt, hctx) }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },
     status: () => ({ status: S.status, mode: S.mode, error: S.error, propErr: S.propErr || null, ms: S.ms, members: M.map((m) => ({ slot: m.sl.slot, status: m.status, error: m.error || null, eyes: m.eyes, proof: m.proof })) }),
-    debug: () => ({ near: S.near, songT: +S.songT.toFixed(3), beat: +S.beat.toFixed(3), at: at.slice(), yawDeg: +((yaw0 * 180) / Math.PI).toFixed(1), siteDev: site.dev,
+    debug: () => ({ near: S.near, lights: S.lightsOn ? CH.list.length : 0, gfx: GFX.stats().owners, songT: +S.songT.toFixed(3), beat: +S.beat.toFixed(3), at: at.slice(), yawDeg: +((yaw0 * 180) / Math.PI).toFixed(1), siteDev: site.dev,
       liftMeasured: M.filter((m) => m.liftTable).map((m) => ({ slot: m.sl.slot, clips: Object.fromEntries(Object.entries(m.liftTable).map(([k, v]) => [k, v.maxLift])) })),
       members: M.map((m) => ({ slot: m.sl.slot, x: +m.pl.x.toFixed(2), z: +m.pl.z.toFixed(2), clip: m.clip, t: m.ct ?? null, lift: +(m.lift || 0).toFixed(4), clips: Object.keys(m.clips).length })) }),
     actors: () => M.map((m) => ({ slot: m.sl.slot, actor: m.actor, figure: m.fig })),
@@ -174,6 +199,7 @@ export function createDiscoLife(options) {
       discoLog.dispose++
       for (const m of M) { m.mixer?.stopAllAction(); m.actor?.dispose?.() }
       root.traverse((o) => { if (o.isMesh && o.parent?.name?.startsWith('disco-')) { o.geometry?.dispose() } })
+      CH.set([]); S.beams?.forEach((b) => b.material.dispose())
       S.ball?.geometry.dispose(); S.ball?.material.dispose(); root.clear()
     },
   }

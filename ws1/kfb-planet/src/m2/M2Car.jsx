@@ -30,9 +30,12 @@ import { rampZone } from '../m3/stuntData.js'
 import { createDeformer } from '../vendor/deformer/vehicle-cartoon-deformer.v2.js'
 import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
-import { mountRacerRig, terrainDustColor } from './racerRig'
+import { mountRacerRig, mountHeadlights, releaseModel, terrainDustColor } from './racerRig'
 import { createEngineAudio } from '../audio/engineAudio'
-import { applyVehicleLook } from '../look/vehicleLook.js'
+import { prepVehicleLook, hookVehicleLook, applyHeroColor, slicer, warmVehicleEnv } from '../look/vehicleLook.js'
+import { headlightDaylight, HEADLIGHTS } from '../look/headlights.js'
+import { gfxChannel } from '../look/groundFx.js'
+import { parseTod, moodAt, MOOD_SETS } from '../vendor/light/kfb-stage-light.v1.1.js'
 import { groundHeight } from '../modules/m1-terrain' // #439 world=probe: Höhe der aktiven Welt
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
@@ -41,18 +44,39 @@ import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from '.
 // ── Fahrzeug (aus <racer>.kfb-vehicle.v3.json über kfb-vehicle-rig.r1.json, Rig-Einheiten × S) ─────────────────────────────────────────────────────────────────
 const S = (fbRecipe.stage?.scale ?? 0.947) * K // V-345: Rig × 0,947 × K = Rig × M_PER_RIG (J17-Meter, wie FB)
 const R = (a) => a.map((v) => +(v * S).toFixed(4))
-// Fahrzeug-Rigging R1a (V-481): Racer-Wahl #m1,car,racer=<id> aus Georgs 6er-Auswahl (kfb-vehicle-rig.r1.json: Maße, Schwebepunkte, Kamera, Düsen-Anker,
-// Antriebsfarben aus dem Fahrzeug); ohne Angabe der Flammen-Dragster wie bisher. Alle sechs schweben (keine Räder), Fahrphysik für alle gleich (Georg 18.10.).
-const RACER_ID = (() => { const m = /(^|[#,])racer=(\w+)/.exec(typeof location !== 'undefined' ? location.hash : ''); return m && VEHICLE_RIG.vehicles[m[2]] ? m[2] : 'crimson_flame_dragster' })()
-export const RACER = VEHICLE_RIG.vehicles[RACER_ID]
-export const M2CAR = {
-  id: RACER_ID,
-  url: `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${VEHICLE_COMMIT}/${RACER.path}`,
-  box: { c: R(RACER.box.c), h: R(RACER.box.h) }, // collision_hints.body_box
-  hover: RACER.hover.map(R), // FL FR RL RR (front = +Z)
-  cam: { pos: R(RACER.cam.pos), target: R(RACER.cam.target) }, // kfb_camera_follow
-  spawn: [8 * K, 3 * K, 34 * K], yaw: Math.PI / 2,
+// Fahrzeug-Rigging R1a (V-481): Racer-Wahl #m1,car,racer=<id>; ohne Angabe der Flammen-Dragster wie bisher. V-631: alle 14 Dieselpunk-Racer
+// (kfb-vehicle-rig.r1.json: Maße, Schwebe- bzw. Radpunkte, Kamera, Düsen- und Scheinwerfer-Anker, Antriebsfarben, Klasse). Wechsel im Spiel mit V / Umschalt+V
+// oder Ereignis 'kfb:racer' (Startseite): applyRacer() schreibt M2CAR/RACER und die abgeleiteten Werte neu, dann setzt das Auto an Ort und Stelle neu auf.
+// Fahrphysik je Klasse aus den vorhandenen Werten (kein Neubau): K2B für alle gleich (V-251, Georg 18.10.); Klasse wählt nur das Verformungsprofil
+// (racer CAR_CHILL_LIGHT, hauler SPACE_HAULER aus deformer-profiles.json) und bei Rad-Fahrzeugen (wheels) sitzt die Darstellung um die Fahrhöhe tiefer.
+const H = typeof location !== 'undefined' ? location.hash : ''
+export const RACER_IDS = Object.keys(VEHICLE_RIG.vehicles).sort((a, b) => VEHICLE_RIG.vehicles[a].name_de.localeCompare(VEHICLE_RIG.vehicles[b].name_de, 'de', { numeric: true }))
+const RACER_ID0 = (() => { const m = /(^|[#,])racer=(\w+)/.exec(H); return m && VEHICLE_RIG.vehicles[m[2]] ? m[2] : 'crimson_flame_dragster' })()
+export let RACER = null
+export const M2CAR = { spawn: [8 * K, 3 * K, 34 * K], yaw: Math.PI / 2 }
+export const DEFORM = { profile: DEFORM_PROFILES.profiles.CAR_CHILL_LIGHT, last: null }
+// Zwei-Rad an der Wand (Stufe F, lab-v7 vehicle-twowheel.v1.js deriveTwoWheel): Umfallwinkel = atan(halbe Breite / Schwerpunkthöhe der Hülle),
+// Haltewinkel wallride = Umfall + (90° − Umfall) × 0,45. Drehpunkt = Aufstandslinie auf der wandfernen Seite: die wandseitigen Räder heben ab, die
+// Unterseite zeigt zur Wand (so ragt die gekippte Hülle nicht in die Wand; das Tempo „trägt“ wie an der Steilwand). Nur Darstellung, der Kollider kippt nicht.
+const TW = {}
+// Stufe G: Fassrolle und Schlingern als eigene Gruppen über der Darstellung (lab-v7, 1:1). Schwebewagen haben keine Räder: die vier Schwebepunkte
+// (M2CAR.hover) stehen für die Radlage (Aufstandslinie, Vorderachse als Drehpunkt des Schlingerns).
+const TRICK_RIG_WHEELS = []
+export function applyRacer(id) {
+  RACER = VEHICLE_RIG.vehicles[id]
+  Object.assign(M2CAR, { id, name: RACER.name_de, cls: RACER.class || 'racer', wheels: !!RACER.wheels, headlights: RACER.headlights || null,
+    url: `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${VEHICLE_COMMIT}/${RACER.path}`,
+    box: { c: R(RACER.box.c), h: R(RACER.box.h) }, // collision_hints.body_box
+    hover: RACER.hover.map(R), // FL FR RL RR (front = +Z)
+    cam: { pos: R(RACER.cam.pos), target: R(RACER.cam.target) } }) // kfb_camera_follow
+  const cx = M2CAR.box.h[0], cg = M2CAR.box.c[1], tip = Math.atan(cx / cg); Object.assign(TW, { contactX: cx, tipDeg: +(tip * 180 / Math.PI).toFixed(1), hold: tip + (Math.PI / 2 - tip) * 0.45 })
+  RIDE.leanRad = TW.hold
+  TRICK.freeLeanRad = (TW.tipDeg * Math.PI / 180) * 0.92 // Zwei-Rad frei: TIP_SAFETY 0,92 des Umfallwinkels (vehicle-twowheel.v1.js)
+  TRICK_RIG_WHEELS.length = 0; M2CAR.hover.forEach(([x, y, z], i) => TRICK_RIG_WHEELS.push({ centre: { x, y, z }, width: 0.3 * S, end: i < 2 ? 'zPlus' : 'zMinus' }))
+  DEFORM.profile = DEFORM_PROFILES.profiles[RACER.deform] || DEFORM_PROFILES.profiles.CAR_CHILL_LIGHT
+  return M2CAR
 }
+applyRacer(RACER_ID0)
 // Fahrhilfe und Fahrwerk als EIN Tuning-Objekt (V-313, V-151; später im God-Mode stellbar)
 export const M2TUNE = {
   rideHeight: 0.7 * S, // m Unterseite über Boden (JSON: Laufzeitwert, Vorschlag 0,52–0,90 Rig)
@@ -65,7 +89,6 @@ export const M2TUNE = {
   antiRoll: 10, antiRollDamp: 3, airYaw: 1.6, airPitch: 1.2, airDamp: 1.5,
   rightAfter: 0.35, rightRate: 4, rightLift: 3 * K,
 }
-const H = typeof location !== 'undefined' ? location.hash : ''
 export const M2_ON = /#m1\b.*\bcar\b/.test(H) // #m1,car[=ecctrl|k2b] · assist=off: Fahrhilfe M3 zu Beginn aus
 // Elan S2: Racer-Flug nur mit Schalter fly (#m1,car,fly) – ohne ihn bleibt K2B unverändert (run-all 18.10.: Rampen-Launch m3-f und Zwei-Rad m3-g
 // gerieten über das takeoff-Ereignis in den Flug)
@@ -74,33 +97,65 @@ if (/(^|[#,])assist=off(,|$)/.test(H)) ASSIST_M3.on = false
 // Ereignis-Abos (railImpact/landing/takeoff, Namen wie vehicle-cartoon-deformer.v2) für Squash, VFX, später Stunts (§55): M2EVENTS.on(type, fn) → abmelden
 export const M2EVENTS = { subs: new Map(), on(type, fn) { const l = this.subs.get(type) || new Set(); l.add(fn); this.subs.set(type, l); return () => l.delete(fn) }, emit(e) { this.subs.get(e.type)?.forEach((fn) => fn(e)); this.subs.get('*')?.forEach((fn) => fn(e)) } }
 export const M2STATE = { kind: /car=ecctrl/.test(H) ? 'ecctrl' : 'k2b', // Start mit B (Georgs Tendenz 16.10.), A per C als Gegenprobe
-  resets: 0, switches: 0, rightStarts: 0, model: 'LOADING' }
+  resets: 0, switches: 0, rightStarts: 0, racerSwaps: 0, model: 'LOADING' }
 // Label nach V-367 („Fahrsystem: K2B | ecctrl“, Abnahmepunkt; weg erst beim M2-Merge mit Georgs Zustimmung): aktives System kräftig, das andere blass
 const LABEL = (kind) => ['k2b', 'ecctrl'].map((k) => `<span style="opacity:${k === kind ? 1 : 0.35}">${k === 'k2b' ? 'K2B' : 'ecctrl'}</span>`).join(' | ')
 // Fahr-Tasten im Info-Symbol (V-347 (4)), unter der M1-Liste; ecctrl ist eingefroren (V-367), Drift und Wendehilfe nur in K2B
-const CAR_KEYS = '<b>Auto</b><br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>im Sprung Leertaste + A/D · Fassrolle &nbsp;·&nbsp; X + A/D · auf zwei Rädern (ab 6 m/s, mit Fahrhilfe)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
+const CAR_KEYS = '<b>Auto</b> (V · nächster Racer, Umschalt+V · voriger)<br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>im Sprung Leertaste + A/D · Fassrolle &nbsp;·&nbsp; X + A/D · auf zwei Rädern (ab 6 m/s, mit Fahrhilfe)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
 const RACER_KEYS = '<br><b>Racer fliegt</b> (K2B): Rampe ab 20 m/s oder in der Luft Leertaste doppelt<br>W · Schub &nbsp;·&nbsp; S · Luftbremse &nbsp;·&nbsp; ↑ ↓ · Nase (oder rechte Maustaste halten) &nbsp;·&nbsp; Leertaste · steigen (+ A/D · Fassrolle)<br>Shift · Boost aus dem Kessel (leer: kocht 1,5 s) &nbsp;·&nbsp; landet von selbst knapp über dem Boden'
 const NOKEYS = { forward: false, backward: false, leftward: false, rightward: false, jump: false, run: false, walk: false }
 const OnFrame = ({ fn }) => { useFrame(fn); return null }
 
-// Modell einmal laden (geteilt), je Auto ein Klon; bis dahin ein Kasten in Rumpfgröße
-let modelPromise = null
-const loadModel = () => (modelPromise ||= new GLTFLoader().loadAsync(M2CAR.url).then((g) => { M2STATE.model = 'OK'; g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true } }); return g.scene }).catch((e) => { M2STATE.model = 'ERROR ' + e.message; return null }))
-// M3 Stufe E (V-379): Deformer v2 (lab-v7 vehicle-cartoon-deformer.v2.js 1:1, kayfabizarro main @904f0e959), Profil CAR_CHILL_LIGHT. Er schreibt nur in
+// Modell je Racer einmal laden (geteilt, im Speicher gehalten: Zurückwechseln ohne Neuladen), je Auto ein Klon; bis dahin ein Kasten in Rumpfgröße.
+// Look A und Heldenfarbe einmal am geladenen Modell (Reihenfolge wie die Probe: Look misst die Grundhelligkeit am Original, dann Heldenfarbe);
+// vlook=0 = Meshy-Original zum Vergleich, hero=0 = ohne Heldenfarbe.
+// Ohne Ruckler (V-631): Look und Heldenfarbe rechnen in Häppchen (≤ 6 ms je Task), danach lädt warmModel die Texturen einzeln (je Bild eine) auf die GPU
+// und übersetzt die Shader vorab (compileAsync) – erst dann erscheint der Wagen, bis dahin steht der Kasten.
+const MODELS = new Map(), MODEL_INFO = new Map(), LOADLOG = []   // LOADLOG: Prüfhilfe [Schritt, ms] je Ladevorgang (letzte 60)
+const llog = (k) => { LOADLOG.push([k, +performance.now().toFixed(1)]); if (LOADLOG.length > 60) LOADLOG.shift() }
+const racerUrl = (id) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${VEHICLE_COMMIT}/${VEHICLE_RIG.vehicles[id].path}`
+const loadModel = (id = M2CAR.id, url = racerUrl(id)) => { touchModel(id); if (!MODELS.has(id)) MODELS.set(id, (llog('fetch ' + id), new GLTFLoader().loadAsync(url)).then(async (g) => { llog('parsed'); g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true } })
+  const tick = slicer(6), t0 = performance.now(), look = /(^|[#,])vlook=0(,|$)/.test(H) ? { applied: 0, off: true } : await prepVehicleLook(g.scene, tick), t1 = performance.now()
+  const hero = /(^|[#,])hero=0(,|$)/.test(H) ? { applied: 0, off: true } : await applyHeroColor(g.scene, { tick })
+  llog('prepped'); MODEL_INFO.set(id, { look, hero, prepMs: { look: +(t1 - t0).toFixed(1), hero: +(performance.now() - t1).toFixed(1) } }); return g.scene })
+  .catch((e) => { MODELS.delete(id); M2STATE.model = 'ERROR ' + e.message; return null }))
+  return MODELS.get(id) }
+// Vorwärmen (Lead 22.10.: Erstladen des Abschlepp-Kolosses 290 ms, 8 neue Shader-Varianten): steht der Wagen, lädt der Leerlauf den nächsten und den
+// vorigen Racer der V-Reihenfolge (Laden, Look/Heldenfarbe in Häppchen, Texturen je Bild eine, Shader vorab) – V wechselt dann ohne Übersetzen.
+// Speicher: höchstens MODEL_KEEP Racer bleiben geladen; ältere (nicht der aktuelle, nicht die Nachbarn) geben Geometrie und Texturen frei. prefetch=0 schaltet ab.
+const MODEL_KEEP = 5, MODEL_ORDER = [], PREFETCH = !/(^|[#,])prefetch=0(,|$)/.test(H)
+const neighbours = (id) => { const n = RACER_IDS.length, i = RACER_IDS.indexOf(id); return [RACER_IDS[(i + 1) % n], RACER_IDS[(i + n - 1) % n]] }
+function touchModel(id) {
+  const k = MODEL_ORDER.indexOf(id); if (k >= 0) MODEL_ORDER.splice(k, 1); MODEL_ORDER.push(id)
+  const keep = new Set([M2CAR.id, id, ...neighbours(M2CAR.id)])
+  for (const old of MODEL_ORDER.slice()) { if (MODEL_ORDER.length <= MODEL_KEEP) break; if (keep.has(old)) continue
+    MODEL_ORDER.splice(MODEL_ORDER.indexOf(old), 1); const p = MODELS.get(old); MODELS.delete(old); MODEL_INFO.delete(old); llog('evict ' + old)
+    p?.then((m) => setTimeout(() => releaseModel(m), 3000)) }
+}
+async function prefetchNeighbours(gl, camera, scene, alive) {
+  for (const id of neighbours(M2CAR.id)) {
+    if (!alive()) return; const fresh = !MODELS.has(id), m = await loadModel(id), I = MODEL_INFO.get(id)
+    if (!m || !I || I.warm || !alive()) continue
+    llog('prefetch ' + id + (fresh ? '' : ' (geladen)')); await warmModel(gl, m, camera, scene); I.warm = true; llog('prefetched ' + id)
+  }
+}
+// Platzhalter-Kasten bis das Modell steht: Geometrie und Material bleiben (sonst übersetzt jeder Racer-Wechsel den Shader des Kastens neu)
+const BOX_GEO = new THREE.BoxGeometry(1, 1, 1), BOX_MAT = new THREE.MeshStandardMaterial({ color: '#c8432f' })
+const nextFrame = () => new Promise((r) => requestAnimationFrame(() => r()))
+async function warmModel(gl, root, camera, scene) {
+  const texs = new Set(); root.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) for (const k of ['map', 'metalnessMap', 'roughnessMap', 'normalMap', 'emissiveMap', 'aoMap']) if (mt[k] && !mt[k].userData.kfbWarm) texs.add(mt[k]) })
+  const env = warmVehicleEnv(gl); await nextFrame()
+  root.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) if (mt.userData.vehicleLook && mt.envMap !== env) { mt.envMap = env; mt.needsUpdate = true } })   // Spiegelumgebung vor dem Übersetzen (sonst wird die Variante ohne envMap vorgewärmt)
+  for (const t of texs) { llog('tex ' + (t.image?.width || 0)); gl.initTexture(t); t.userData.kfbWarm = true; llog('tex ok'); await nextFrame() }
+  llog('compile'); try { await gl.compileAsync(root, camera, scene); llog('compiled') } catch (e) { /* ohne Parallel-Übersetzung: übersetzt beim ersten Zeichnen */ }
+}
+// M3 Stufe E (V-379): Deformer v2 (lab-v7 vehicle-cartoon-deformer.v2.js 1:1, kayfabizarro main @904f0e959), Profil je Klasse (DEFORM.profile). Er schreibt nur in
 // eigene Knoten unter der Darstellung (Shell-Gruppe), nie in den Starrkörper – die Kollider-Lage bleibt unverändert. Eingang: K2B-Signale je Schritt
 // (setSignals) und die Ereignisse railImpact/landing (M2EVENTS). Mit Fahrhilfe aus: Knet-Squash wie M2 (J17 SQUASH_LOOK).
-// Zwei-Rad an der Wand (Stufe F, lab-v7 vehicle-twowheel.v1.js deriveTwoWheel): Umfallwinkel = atan(halbe Breite / Schwerpunkthöhe der Hülle),
-// Haltewinkel wallride = Umfall + (90° − Umfall) × 0,45. Drehpunkt = Aufstandslinie auf der wandfernen Seite: die wandseitigen Räder heben ab, die
-// Unterseite zeigt zur Wand (so ragt die gekippte Hülle nicht in die Wand; das Tempo „trägt“ wie an der Steilwand). Nur Darstellung, der Kollider kippt nicht.
-const TW = (() => { const cx = M2CAR.box.h[0], cg = M2CAR.box.c[1], tip = Math.atan(cx / cg); return { contactX: cx, tipDeg: +(tip * 180 / Math.PI).toFixed(1), hold: tip + (Math.PI / 2 - tip) * 0.45 } })()
-RIDE.leanRad = TW.hold
-TRICK.freeLeanRad = (TW.tipDeg * Math.PI / 180) * 0.92 // Zwei-Rad frei: TIP_SAFETY 0,92 des Umfallwinkels (vehicle-twowheel.v1.js)
-export const DEFORM = { profile: DEFORM_PROFILES.profiles.CAR_CHILL_LIGHT, last: null }
-// Stufe G: Fassrolle und Schlingern als eigene Gruppen über der Darstellung (lab-v7, 1:1). Unser Schwebewagen hat keine Räder: die vier Schwebepunkte
-// (M2CAR.hover) stehen für die Radlage (Aufstandslinie, Vorderachse als Drehpunkt des Schlingerns). Lesewerte für Tests in TRICKS.
 const NOSE = { upArrow: false, downArrow: false, rmb: false } // Elan S2: Nasen-Eingabe des Racers im Flug
 export const TRICKS = { tumble: null, fish: null, touchdowns: 0, recovers: 0, triggered: 0 }
-const TRICK_RIG_WHEELS = M2CAR.hover.map(([x, y, z], i) => ({ centre: { x, y, z }, width: 0.3 * S, end: i < 2 ? 'zPlus' : 'zMinus' }))
+// Scheinwerfer (V-631): Tageslicht aus der Tageszeit des Licht-Rigs (wie M1World: lset, tod), HEADLIGHTS.daylight überschreibt (z. B. Biom-Fahrt)
+const HL_DAY = (() => { const tod = parseTod(H), set = MOOD_SETS[(/lset=(r2|cozy|mesa)/.exec(H) || [0, 'mesa'])[1]]; return headlightDaylight(tod, moodAt(tod, set).elev) })()
 function CarVisual({ squash, signals, lean }) {
   const g = useRef(null), tilt = useRef(null), trick = useRef(null), body = useRef(null), [model, setModel] = useState(null), def = useRef(null)
   useEffect(() => { if (!signals || !g.current || !body.current || !tilt.current) return
@@ -126,15 +181,28 @@ function CarVisual({ squash, signals, lean }) {
     if (D) D.reset?.()
     // Knet-Squash wie J17 (holder.scale 1 + 0,12·sq, 1 − 0,18·sq, 1 + 0,06·sq) – nur die Optik, um die Unterseite
     const sq = squash?.() ?? 0; g.current?.scale.set(1 + SQUASH_LOOK.x * sq, 1 + SQUASH_LOOK.y * sq, 1 + SQUASH_LOOK.z * sq) })
-  useEffect(() => { let alive = true; loadModel().then((m) => { if (alive && m) { const c = m.clone(true); M2STATE.look = /(^|[#,])vlook=0/.test(H) ? { applied: 0, off: true } : applyVehicleLook(c); setModel(c) } })   /* Look A (Georg 21.10.) am Klon: Materialien geteilt, Zeichen-Haken je Klon; vlook=0 = Meshy-Original zum Vergleich */; return () => { alive = false } }, [])
+  const { gl: glR, camera: camW, scene: sceneW } = useThree()
+  useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; const id = M2CAR.id; loadModel().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
+    if (!I.look.off) hookVehicleLook(c) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
+    const t0 = performance.now(); await warmModel(glR, c, camW, sceneW); if (!alive) return
+    M2STATE.look = I.look; M2STATE.hero = I.hero; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
+    if (PREFETCH) setTimeout(() => alive && prefetchNeighbours(glR, camW, sceneW, () => alive), 1500) }); return () => { alive = false } }, [])
   // R1a: Antriebs-Modul an den Düsen-Ankern des Racers. Modell und Anker hängen gemeinsam in rig.stretch (Stauchen/Strecken bei Boost und Sprung),
   // rig.object3d unter der Deformer-Gruppe – Fahnen bleiben bei jeder Verformung an den Düsen. Gas weich (0,12 s), Tempo aus den K2B-Signalen.
   const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree()
   const dustColorAt = useCallback((x, z) => terrainDustColor(groundHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
   useEffect(() => { if (!model || !body.current) return
-    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: RACER_ID.length, scene: sceneR, dustColor: '#c9b48a' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    if (M2CAR.wheels) R1.object3d.position.y = -M2TUNE.rideHeight // Rad-Fahrzeuge (V-631, wie die Probe): Räder auf den Boden statt in Schwebehöhe
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
     return () => { M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])
+  // Front-Scheinwerfer (V-631, Georg 22.10.): Gläser am Modell (Modell-Einheiten), Kegel in der Szene, Lichtfleck über kfb-groundfx (Kanal 'headlights');
+  // Farbe = Antriebsfarbe des Racers; Zielpunkte am Boden über die Geländehöhe. hl=0 schaltet ab. Zeit je Bild in HEADLIGHTS.ms (Mittel).
+  const { camera: camR } = useThree()
+  useEffect(() => { if (!model || !HEADLIGHTS.on) return
+    const X = mountHeadlights({ model, racer: RACER, scene: sceneR, pools: gfxChannel('headlights'), ground: groundHeight, unit: S }); if (!X) return
+    HEADLIGHTS.inst = X.hl; HEADLIGHTS.ms = 0; HEADLIGHTS.n = 0; return () => { X.release(); if (HEADLIGHTS.inst === X.hl) HEADLIGHTS.inst = null } }, [model])
+  useFrame((_, dt) => { const hl = HEADLIGHTS.inst; if (!hl) return; const t0 = performance.now(); hl.update(dt, { daylight: HEADLIGHTS.daylight?.() ?? Math.min(HL_DAY, 1 - HEADLIGHTS.dark), camera: camR }); HEADLIGHTS.ms += performance.now() - t0; HEADLIGHTS.n++ })
   useFrame((_, dt) => { const R1 = rig.current; if (!R1) return; const k = M2STATE.drive || {}, sg = signals?.() || {}, D = drv.current
     D.gas += ((k.gas ? 1 : 0) - D.gas) * Math.min(1, dt / 0.12)
     const A = M2STATE.audio; if (A && (k.gas || k.boost || k.jump)) A.resume() // Browser-Regel: Ton erst nach einer Eingabe
@@ -150,13 +218,13 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { const root = tilt.current?.parent; if (!root) return; M2STATE.visualRoot = root; const off = interpTrack(root); return () => { off(); if (M2STATE.visualRoot === root) M2STATE.visualRoot = null } }, []) // Bild-Interpolation: Wurzel = Starrkörper
   return (
     <group ref={tilt}><group ref={g}>
-      <group ref={body}>{model ? null : <mesh position={M2CAR.box.c}><boxGeometry args={M2CAR.box.h.map((v) => v * 2)} /><meshStandardMaterial color="#c8432f" /></mesh>}</group>
+      <group ref={body}>{model ? null : <mesh position={M2CAR.box.c} scale={M2CAR.box.h.map((v) => v * 2)} geometry={BOX_GEO} material={BOX_MAT} />}</group>
     </group></group>
   )
 }
 
 // Anzeige der aktiven Fahrphysik: groß oben mittig, beim Wechsel kurz hervorgehoben (Host-DOM, kein HUD-Stil)
-function useKindLabel(kind, assist) {
+function useKindLabel(kind, assist, racer) {
   useEffect(() => {
     if (typeof document === 'undefined') return
     const el = document.createElement('div'); el.id = 'm2-kind'
@@ -166,12 +234,12 @@ function useKindLabel(kind, assist) {
   useEffect(() => {
     const el = document.getElementById('m2-kind'); if (!el) return
     // M3 Fühlprobe (V-379): „Fahrsystem: K2B · Assist M3 an/aus“ – M schaltet die Fahrhilfe (Vergleich mit dem Stand vorher), C wechselt das System
-    el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ' <span style="font-weight:400;font-size:15px">· M Assist · C wechselt</span>'
+    el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ` <span style="font-weight:400;font-size:15px">· M Assist · C wechselt · V Racer: ${M2CAR.name.replace(/^\d+\s/, '')}</span>`
     const list = document.getElementById('m1-keys'); if (list && !document.getElementById('m2-keys')) { const c = document.createElement('div'); c.id = 'm2-keys'; c.style.marginTop = '6px'; c.innerHTML = RACER_FLY ? CAR_KEYS + RACER_KEYS : CAR_KEYS; list.appendChild(c) }
     el.style.background = 'rgba(255,214,120,.95)'; el.style.transform = 'translateX(-50%) scale(1.12)'
     const t = setTimeout(() => { el.style.background = 'rgba(255,250,240,.82)'; el.style.transform = 'translateX(-50%) scale(1)' }, 900)
     return () => clearTimeout(t)
-  }, [kind, assist])
+  }, [kind, assist, racer])
 }
 
 const M2Car = forwardRef(function M2Car({ player }, ref) {
@@ -184,16 +252,22 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
   const { camera } = useThree()
   const { world, rapier } = useRapier()
   const [assist, setAssist] = useState(ASSIST_M3.on)
-  useKindLabel(kind, assist)
+  const [racer, setRacerId] = useState(M2CAR.id)
+  useKindLabel(kind, assist, racer)
   useEffect(() => { M2STATE.carPos = () => car.current?.pos() ?? null; return () => { M2STATE.carPos = null } }, [])
   // Kontaktverdeckung (L3): das Licht-Modul (createContactAO in M1World) legt den Fleck an der Boden-Normale unter einen Stellvertreter in Wagengröße,
   // der dem Auto folgt (Grundfläche einmal gemessen, ungedreht). Löst den eigenen, waagrechten Fleck ab (Georg 17.10.: abgeschnittener Zweitschatten am Hang).
-  const proxy = useMemo(() => { const g = new THREE.Group(); g.name = 'm2-car-ao'; const m = new THREE.Mesh(new THREE.BoxGeometry(M2CAR.box.h[0] * 2, 0.01, M2CAR.box.h[2] * 2)); m.visible = false; g.add(m); return g }, [])
+  const proxy = useMemo(() => { const g = new THREE.Group(); g.name = 'm2-car-ao'; const m = new THREE.Mesh(new THREE.BoxGeometry(M2CAR.box.h[0] * 2, 0.01, M2CAR.box.h[2] * 2)); m.visible = false; g.add(m); return g }, [racer])
   useEffect(() => { M2STATE.ao = { object3d: proxy, status: () => ({ status: car.current ? 'OK' : 'LOADING', shown: !!car.current }) }
     M2STATE.carSize = { half: Math.hypot(M2CAR.box.h[0], M2CAR.box.h[2]), h: M2CAR.box.c[1] + M2CAR.box.h[1] }; return () => { M2STATE.ao = null } }, [proxy])
   useEffect(() => interpTrack(proxy), [proxy])
   useFrame(() => { const c = car.current; if (!c) return; const p = c.pos(); proxy.position.set(p.x, p.y, p.z); proxy.rotation.set(0, c.yaw(), 0) })
   useEffect(() => { loadModel(); player.current?.freeze(true); player.current?.yieldCamera(true); return () => { player.current?.yieldCamera(false); player.current?.freeze(false) } }, [player])
+  // V-631: Racer an Ort und Stelle wechseln (Maße, Kamera, Verformungsprofil neu; Modell aus dem Speicher oder nachladen); Adresse merkt sich die Wahl
+  const swapRacer = (id) => { if (!VEHICLE_RIG.vehicles[id] || id === M2CAR.id) return; const p = car.current?.pos(), y = car.current?.yaw() ?? spawn.current.yaw
+    applyRacer(id); M2STATE.racerSwaps++; setRacerId(id); restart(kind, p ? { p: [p.x, p.y + 0.3 * K, p.z], yaw: y } : null)
+    if (typeof history !== 'undefined') { const h = location.hash, nh = /(^|[#,])racer=\w+/.test(h) ? h.replace(/((?:^|[#,])racer=)\w+/, `$1${id}`) : h + ',racer=' + id; history.replaceState(null, '', location.pathname + location.search + nh) } }
+  useEffect(() => { const on = (e) => swapRacer(e.detail?.id); window.addEventListener('kfb:racer', on); return () => window.removeEventListener('kfb:racer', on) })
   const restart = (k, at) => { if (at) spawn.current = at; M2STATE.kind = k; setKind(k); setSession((n) => n + 1); follow.reset() } // Neustart/Wechsel: Kamera setzt neu auf (kein Gleiten über die Karte)
   useHostKeys((e) => {
     // Elan S2: Pfeil hoch/runter sind im Host-Tastenplan W/S (ein keydown-Listener, Vertrag §4) – welche Taste zuletzt gedrückt wurde, entscheidet im Flug
@@ -203,6 +277,7 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     if (e.code === 'KeyM') { ASSIST_M3.on = !ASSIST_M3.on; setAssist(ASSIST_M3.on); e.preventDefault(); return }
     if (e.code === 'KeyC') { const p = car.current?.pos(), y = car.current?.yaw() ?? spawn.current.yaw; M2STATE.switches++; restart(kind === 'ecctrl' ? 'k2b' : 'ecctrl', p ? { p: [p.x, p.y + 0.8 * K, p.z], yaw: y } : null); e.preventDefault() }
     if (e.code === 'KeyR') { M2STATE.resets++; restart(kind, { p: M2CAR.spawn, yaw: M2CAR.yaw }); e.preventDefault() }
+    if (e.code === 'KeyV') { const n = RACER_IDS.length, i = RACER_IDS.indexOf(M2CAR.id); swapRacer(RACER_IDS[(i + (e.shiftKey ? n - 1 : 1)) % n]); e.preventDefault() }
   }, 12)
   // Folgekamera C1 (V-408/V-088): Orbit von allen Seiten, Recenter nur in Bewegung, Zoom bis Ich-Perspektive, Kollisions-Arm – je Bild nach der
   // Interpolation (M1INTERP.frameCam), Ziel = interpolierte Starrkörper-Gruppe. Grundabstand und Höhe aus kfb_camera_follow (nur Gierung folgt).
@@ -211,11 +286,11 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     return createFollowCam({ dom: gl.domElement, base: Math.hypot(ch - M2CAR.cam.target[1], cz), height: M2CAR.cam.target[1], eye: M2CAR.box.c[1] + M2CAR.box.h[1] * 1.05, eyeAhead: M2CAR.box.h[2] * 0.85, onPov: (on) => { const r = M2STATE.visualRoot; if (r) r.traverse((o) => { if (o.isMesh) o.visible = !on }) }, pitch0: Math.atan2(ch - M2CAR.cam.target[1], -cz), maxArm: 7.5 * K,
       collide: (from, dir, dist) => { ray.origin.x = from.x; ray.origin.y = from.y; ray.origin.z = from.z; ray.dir.x = dir.x; ray.dir.y = dir.y; ray.dir.z = dir.z
         const h = world.castRay(ray, dist, true, undefined, undefined, undefined, undefined, (co) => !co.parent()?.userData?.m2Car && !isFence(co)); return h ? h.timeOfImpact : null },
-      ground: (x, z) => groundHeight(x, z) }) }, [gl, world, rapier])
+      ground: (x, z) => groundHeight(x, z) }) }, [gl, world, rapier, racer])
   useEffect(() => { const v = new THREE.Vector3()
     M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K }) }
     M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
-  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how) }) }, [])
+  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, loadLog: LOADLOG, ground: groundHeight }) })
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
   return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>

@@ -9,10 +9,25 @@ import { roles } from '../vendor/palette/palette-roles.js'
 import { QUALITY, qualityKey, setQuality } from './quality.js'
 import * as audio from '../audio/kfbAudio.js'
 import { addHostKeyHandler } from '../hostKeys.js'
+import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
 
 const HELP = [
-  ['W A S D', 'laufen'], ['Shift', 'rennen'], ['Leertaste', 'springen'], ['F', 'fliegen'], ['Maus', 'umsehen'],
+  ['W A S D', 'laufen'], ['Shift', 'rennen'], ['Leertaste', 'springen'], ['F', 'fliegen'], ['Maus', 'umsehen'], ['V', 'im Auto: nächster Racer'],
 ]
+
+// V-631 · Fahrzeug-Wahl: zu Fuß oder einer der 14 Racer. Im Auto wechselt der Racer hinter dem Vorhang an Ort und Stelle (Ereignis 'kfb:racer'),
+// sonst setzt die Wahl car,racer=<id> in die Adresse und lädt neu (der Vorhang bleibt, 'start' steht weiter in der Adresse).
+const RACERS = Object.entries(VEHICLE_RIG.vehicles).sort((a, b) => a[1].name_de.localeCompare(b[1].name_de, 'de', { numeric: true }))
+const hashParts = () => location.hash.replace(/^#/, '').split(',').filter(Boolean)
+const inCar = () => hashParts().includes('car')
+const curRacer = () => (inCar() ? (/(^|[#,])racer=(\w+)/.exec(location.hash)?.[2] || 'crimson_flame_dragster') : '')
+const CAR_OPTS = ['<option value="">zu Fuß</option>', ...RACERS.map(([id, v]) => `<option value="${id}">${v.name_de.replace(/^\d+\s/, '')}${v.class === 'hauler' ? ' (Laster)' : v.wheels ? ' (Räder)' : ''}</option>`)].join('')
+function chooseCar(id) {
+  const was = inCar(), parts = hashParts().filter((p) => p !== 'car' && !p.startsWith('racer='))
+  if (id && was) { window.dispatchEvent(new CustomEvent('kfb:racer', { detail: { id } })); return }
+  const next = id ? [...parts, 'car', 'racer=' + id] : parts
+  history.replaceState(null, '', location.pathname + location.search + '#' + next.join(',')); location.reload()
+}
 
 export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarro', onOpen = () => {} } = {}) {
   const pal = roles()
@@ -36,6 +51,8 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
         background:${pal.bulbOn};color:#2a1a20}
       .kfb-start .go[disabled]{opacity:.55;cursor:wait}
       .kfb-start input[type=range]{width:160px}
+      .kfb-start select{border:0;border-radius:10px;padding:6px 10px;background:rgba(255,255,255,.14);color:inherit;font:inherit}
+      .kfb-start select option{color:#2a1a20}
       .kfb-start .note{font-size:12px;opacity:.7;text-align:center;margin-top:6px}
     </style>
     <div class="panel" role="dialog" aria-label="${title} starten">
@@ -44,6 +61,7 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
       <div class="note" data-k="msg">Die Welt lädt …</div>
       <div class="help">${HELP.map(([k, v]) => `<b>${k}</b><span>${v}</span>`).join('')}</div>
       <div class="row"><label for="kfb-vol">Ton</label><input id="kfb-vol" type="range" min="0" max="100" step="1"><span data-k="vol"></span></div>
+      <div class="row"><label for="kfb-car">Fahrzeug</label><select id="kfb-car">${CAR_OPTS}</select></div>
       <div class="row q" role="group" aria-label="Qualität"><span>Qualität</span>${Object.entries(QUALITY).map(([k, q]) => `<button data-q="${k}">${q.label}</button>`).join('')}</div>
       <button class="go" disabled>Lädt …</button>
     </div>`
@@ -55,6 +73,8 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
   vol.addEventListener('input', () => { audio.setVolume?.('master', +vol.value / 100); volOut.textContent = vol.value + ' %' })
   const markQ = (k) => ui.querySelectorAll('[data-q]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.q === k)))
   markQ(qualityKey()); ui.querySelectorAll('[data-q]').forEach((b) => b.addEventListener('click', () => { setQuality(b.dataset.q); markQ(b.dataset.q) }))
+
+  const car = $('#kfb-car'); car.value = curRacer(); car.addEventListener('change', () => chooseCar(car.value))
 
   // Fortschritt: Lader-Zähler + Bereitschaft des Spiels
   const S = { loaded: 0, total: 0, ready: false, want: false, opened: false, stage: null, mode: 'loading' }

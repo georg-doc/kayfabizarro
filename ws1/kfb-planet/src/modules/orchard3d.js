@@ -79,6 +79,20 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
     for (const it of targets.values()) { const q = it.pos(); if (!q) continue; const dx = q[0] - p[0], dz = q[2] - p[2], d = Math.hypot(dx, dz); if (d > maxD) continue
       if (dir && d > 0.01 && (dx * dir[0] + dz * dir[2]) / d < cosMin) continue; if (!best || d < best.d) best = { it, d } }
     return best }
+  // Zielwahl des Schusses (WS-NPC Phase C, Lead-OK d): näheres Ziel gewinnt; Georg 21.10. (a): ein Ziel mit Vorrang (z. B. feindlicher Dark Fluffer am Stamm)
+  // nimmt der Schuss auch bis priorityBehind m hinter dem Baum. Kampf R1: dieselbe Regel für shoot und aimTarget (eine Stelle)
+  function pick(p, dir, range, cosMin) { const t = nearestTree(p, range, dir, cosMin), g = nearestTarget(p, range, dir, cosMin)
+    const td = t ? Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2]) : Infinity
+    return { t, g, toTarget: !!g && (g.d < td || (!!g.it.priority?.() && g.d <= td + ORCHARD.priorityBehind)) } }
+  // Kampf R1 (K10-Geschoss fliegt gerade aus der Mündung): Abstand Strecke a→b zu einer senkrechten Strecke (x, y0…y1, z), Ergebnis Anteil u auf a→b
+  const _sq = new THREE.Vector3(), _sr = new THREE.Vector3()
+  const segToPole = (a, b, x, y0, y1, z) => { // nächste Punkte zweier Strecken (Ericson 5.1.9), ohne Allokation
+    const d1x = b[0] - a[0], d1y = b[1] - a[1], d1z = b[2] - a[2], d2y = y1 - y0, rx = a[0] - x, ry = a[1] - y0, rz = a[2] - z
+    const A = d1x * d1x + d1y * d1y + d1z * d1z, E = d2y * d2y, F = d2y * ry, c = d1x * rx + d1y * ry + d1z * rz, bb = d1y * d2y, den = A * E - bb * bb
+    let s = den > 1e-12 ? THREE.MathUtils.clamp((bb * F - c * E) / den, 0, 1) : 0, t = E > 1e-12 ? (bb * s + F) / E : 0
+    if (t < 0) { t = 0; s = A > 1e-12 ? THREE.MathUtils.clamp(-c / A, 0, 1) : 0 } else if (t > 1) { t = 1; s = A > 1e-12 ? THREE.MathUtils.clamp((bb - c) / A, 0, 1) : 0 }
+    _sq.set(a[0] + d1x * s, a[1] + d1y * s, a[2] + d1z * s); _sr.set(x, y0 + d2y * t, z); return { u: s, d: _sq.distanceTo(_sr) } }
+  const TREE_HIT = { trunkR: 0.45, crownR: 1.6 } // Kampf R1: Baum als Stamm (senkrechte Kapsel bis zur Krone) + Krone (Kugel um die Mitte der hängenden Kügelchen), in m
   return {
     object3d: root,
     ready,
@@ -86,10 +100,8 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
     // Faust (Platzhalter Schlagring): nächster Baum in Reichweite vor dem Spieler
     punch(p, dir) { const t = nearestTree(p, ORCHARD.reach + 0.6, dir, 0.2); if (!t) return null; const keys = hitTree(t, 'punch'); puff([p[0] + dir[0] * 0.7, p[1] + 1.1, p[2] + dir[2] * 0.7], '#f4e2c8', 0.08, 0.35, 0.22); info.hits.push({ zone: t.zone, id: t.id, w: 'punch' }); return { tree: t.id, zone: t.zone, keys } },
     // Schuss: einfaches Projektil vom Spieler zum nächsten Baum im Blickkegel, Treffer bei Ankunft
-    shoot(p, dir) { const t = nearestTree(p, ORCHARD.shotRange, dir, 0.75), g = nearestTarget(p, ORCHARD.shotRange, dir, 0.75)
+    shoot(p, dir) { const { t, g, toTarget } = pick(p, dir, ORCHARD.shotRange, 0.75)
       if (!t && !g) return null
-      const td = t ? Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2]) : Infinity // WS-NPC Phase C (Lead-OK d): näheres Ziel gewinnt; Georg 21.10. (a): ein Ziel mit Vorrang
-      const toTarget = g && (g.d < td || (!!g.it.priority?.() && g.d <= td + ORCHARD.priorityBehind)) // (z. B. feindlicher Dark Fluffer am Stamm) nimmt der Schuss auch bis priorityBehind m hinter dem Baum
       const m = new THREE.Mesh(fxGeo, new THREE.MeshStandardMaterial({ color: '#ffd46b', roughness: 1, emissive: '#ff9a2e', emissiveIntensity: 0.6 })); m.scale.setScalar(0.12); m.position.set(p[0], p[1] + 1.2, p[2]); root.add(m)
       if (toTarget) { flights.push({ m, g: g.it, v: 34 }); info.shots++; return { target: g.it.id } }
       const [cx, cy, cz] = crown(t)
@@ -98,6 +110,25 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
     // priority() true (Georg 21.10. (a)): Vorrang vor einem höchstens ORCHARD.priorityBehind m näheren Baum im Kegel
     // Kein Schaden, kein Kampfsystem: das Projektil folgt der Mitte und meldet beim Auftreffen onHit; Rückgabe = Abmeldung
     addTarget(it) { if (!it || it.id == null || !(it.r > 0) || typeof it.pos !== 'function') throw new Error('ORCHARD_TARGET_INVALID'); targets.set(it.id, it); return () => targets.delete(it.id) },
+    // Kampf R1 (K10-Waffen, kein zweites Zielsystem): Zielwahl wie shoot (Kegel, Vorrang), nur ohne Projektil – der Wirt dreht damit die Figur (Controller
+    // besitzt die Blickrichtung), das K10-Geschoss fliegt dann gerade aus der Mündung. Rückgabe { kind: 'target', id, pos, d } | { kind: 'tree', zone, id, pos, d } | null
+    aimTarget(p, dir, range = ORCHARD.shotRange, cosMin = 0.75) { const { t, g, toTarget } = pick(p, dir, range, cosMin)
+      if (toTarget) { const q = g.it.pos(); if (q) return { kind: 'target', id: g.it.id, pos: q.slice(), d: g.d } }
+      return t ? { kind: 'tree', zone: t.zone, id: t.id, pos: crown(t), d: Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2]) } : null },
+    // Kampf R1: erster Treffer der Strecke a→b (Geschoss-Radius rad) an einem Ziel (senkrechte Kapsel um pos(), Radius r; pos() null = nicht treffbar) oder
+    // einem Baum (Stamm bis zur Krone + Krone). Rückgabe { kind: 'target', id, u, at } | { kind: 'tree', zone, id, u, at } | null (u = Anteil auf a→b)
+    sweep(a, b, rad = 0) { let best = null; const L = Math.hypot(b[0] - a[0], b[2] - a[2]), mx = (a[0] + b[0]) / 2, mz = (a[2] + b[2]) / 2
+      for (const it of targets.values()) { const q = it.pos(); if (!q) continue; const r = segToPole(a, b, q[0], q[1] - it.r, q[1] + it.r, q[2])
+        if (r.d <= it.r + rad && (!best || r.u < best.u)) best = { kind: 'target', id: it.id, u: r.u, at: _sq.toArray() } }
+      for (const t of trees) { if (Math.hypot(t.pos[0] - mx, t.pos[2] - mz) > L / 2 + TREE_HIT.crownR + 4) continue
+        const c = crown(t), st = segToPole(a, b, t.pos[0], t.pos[1], c[1], t.pos[2])
+        if (st.d <= TREE_HIT.trunkR + rad && (!best || st.u < best.u)) best = { kind: 'tree', zone: t.zone, id: t.id, u: st.u, at: _sq.toArray() }
+        const cr = segToPole(a, b, c[0], c[1], c[1], c[2])
+        if (cr.d <= TREE_HIT.crownR + rad && (!best || cr.u < best.u)) best = { kind: 'tree', zone: t.zone, id: t.id, u: cr.u, at: _sq.toArray() } }
+      return best },
+    // Kampf R1: Auftreffen des K10-Geschosses melden – am Ziel über dessen onHit (wie das Projektil von shoot), am Baum wie ein Schuss (hitTree 'shot')
+    hitTarget(id) { const it = targets.get(id); if (!it) return false; info.targetHits.push(id); it.onHit?.(id); return true },
+    shotTree(zone, id) { const t = treeOf(zone, id); if (!t) return null; const keys = hitTree(t, 'shot'); info.hits.push({ zone, id, w: 'shot' }); return keys },
     // Explosion (Sekundärtreffer): Ball am nächsten Baum, leert ihn auf einmal (gestaffelt zusammengedrückt)
     blast(p, dir) { const t = nearestTree(p, ORCHARD.blastRange, dir, 0.5); if (!t) return null; const keys = hitTree(t, 'explosion'); const [cx, cy, cz] = crown(t); puff([cx, cy, cz], '#ff8a3d', 0.3, 3.2, 0.5); info.blasts++; info.hits.push({ zone: t.zone, id: t.id, w: 'explosion' }); return { tree: t.id, zone: t.zone, keys } },
     collectAt(p, mode = 'walk') { let got = []; for (const o of orchards) got = got.concat(o.collect({ pos: p, mode }).keys); if (got.length) onCollect?.(got, state.counts()); return got }, // Prüfungen und Wirt

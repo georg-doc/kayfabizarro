@@ -1,0 +1,231 @@
+{
+ "id": "kfb_kit_heroman_blaster",
+ "origin": "kit-original",
+ "use": "target",
+ "source": {
+  "path": "dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_HeroMan_Blaster.k10.glb",
+  "sha256": "640924f7c85bdfa0a9428db3ff8639039c2b7f0f36553e8ac047176e212e120c",
+  "private": true,
+  "kit": {
+   "name": "KayKit Mystery Series 6 · Ultra Turbo Hero Man · Blaster (Kauf → privat)",
+   "file": "Netz UltraTurboHeroMan_Blaster unverändert aus BLENDER_DUEL_01/UltraTurboHeroMan_Blaster_KFB.glb (Original-.gltf liegt lokal nicht vor)",
+   "licence": "KayKit Mystery (Kauf) → privat",
+   "private": true
+  },
+  "anchorReceipt": "dropbox:KFB_HUB/50_BLENDER/K10/data/HeroMan_Blaster_anchor_receipt.json",
+  "change": "nur Ankerknoten KFB_Muzzle ergänzt; Geometrie/Material/Textur byte-gleich"
+ },
+ "instances": 1,
+ "axis": "kit",
+ "mount": {
+  "kind": "source-slot",
+  "slot": "handslot.r",
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_HeroMan_Blaster_ranged_measure.json#mount_rotation_xyzw + clips.*.hold_summary",
+  "slotOffset": {
+   "rotation": [
+    0,
+    0.70710678,
+    0,
+    0.70710678
+   ],
+   "reason": "kit-axis-mismatch",
+   "rule": "V-581",
+   "evidence": "K10/out/K10_handwaffen_v581.png + DUEL-01 RETURN (G1 = Ry +90°, gleicher Wert)",
+   "position": [
+    0.0346,
+    -0.0346,
+    0.0346
+   ],
+   "positionReason": "visible-interpenetration",
+   "positionEvidence": "K10/_privat_kauf_asset/HeroMan_Blaster_slot_offset_search.json (kleinster Versatz, 6 cm) + KFB_HeroMan_Blaster_Ranged_1H_{Aiming,Shoot,Shooting}_heroman_offset_clearance.json (0 Punkte innen) + K10/_work/hw/K10_hw_HeroMan_Blaster_heroman_oben.png (Berührung Visier-Horn ohne Versatz)"
+  }
+ },
+ "modelUnchanged": true,
+ "nativeClipsUnchanged": true,
+ "perFrameWeaponRotation": false,
+ "perFrameArmPostPose": false,
+ "handCount": "source",
+ "muzzle": {
+  "kind": "source-anchor",
+  "node": "KFB_Muzzle",
+  "forwardLocal": [
+   0,
+   0,
+   1
+  ],
+  "localTranslation": [
+   0.0,
+   0.1812,
+   0.7592
+  ],
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/data/HeroMan_Blaster_anchor_receipt.json#anchor + dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_HeroMan_Blaster_ranged_measure.json#clips.Ranged_1H_Shoot.events",
+  "variants": [],
+  "primary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash.gltf",
+   "sha256": "6f772ef7fd26f35abe5cac844e31defdbe12e54c1feca463fee53b5408bc05cd",
+   "private": true,
+   "asIs": true
+  },
+  "secondary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash_Long.gltf",
+   "sha256": "b8232b68245ccc2261f22d8f9172b142bd5fc6b49cec7a1fe1b8396aac0616e8",
+   "private": true,
+   "asIs": true
+  }
+ },
+ "projectileDirection": "muzzle",
+ "release": {
+  "clip": "Ranged_1H_Shoot",
+  "seconds": 0.2667,
+  "clipDuration": 1.0667,
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/K10/_privat_kauf_asset/KFB_HeroMan_Blaster_ranged_measure.json#clips.Ranged_1H_Shoot.events[0]",
+  "oncePerAction": true
+ },
+ "clipMarkers": {
+  "aim.1h": {
+   "clip": "Ranged_1H_Aiming",
+   "duration_s": 1.0667,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 21,
+    "yaw_deg": [
+     1.32,
+     1.32
+    ],
+    "pitch_deg": [
+     -0.16,
+     0.73
+    ],
+    "gaze_deg_max": 1.95,
+    "hand_l_min_u": 1.1081
+   }
+  },
+  "fire.1h": {
+   "clip": "Ranged_1H_Shoot",
+   "duration_s": 1.0667,
+   "fire_s": [
+    0.2667
+   ],
+   "recoil_peak_s": [
+    0.4
+   ],
+   "ready_s": [
+    null
+   ],
+   "hold": {
+    "frames": 33,
+    "yaw_deg": [
+     -17.98,
+     3.85
+    ],
+    "pitch_deg": [
+     -21.55,
+     17.18
+    ],
+    "gaze_deg_max": 28.64,
+    "hand_l_min_u": 0.8676
+   }
+  },
+  "fire-loop.1h": {
+   "clip": "Ranged_1H_Shooting",
+   "duration_s": 1.6,
+   "fire_s": [
+    0.0,
+    0.4,
+    0.8,
+    1.2
+   ],
+   "recoil_peak_s": [
+    0.1333,
+    0.5333,
+    0.9333,
+    1.3333
+   ],
+   "ready_s": [
+    0.3667,
+    0.7667,
+    1.1667,
+    1.5667
+   ],
+   "hold": {
+    "frames": 49,
+    "yaw_deg": [
+     1.32,
+     3.85
+    ],
+    "pitch_deg": [
+     0.67,
+     17.18
+    ],
+    "gaze_deg_max": 13.96,
+    "hand_l_min_u": 1.0743
+   }
+  },
+  "reload.1h": {
+   "clip": "Ranged_1H_Reload",
+   "duration_s": 1.1667,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 1,
+    "yaw_deg": [
+     28.92,
+     28.92
+    ],
+    "pitch_deg": [
+     -40.14,
+     -40.14
+    ],
+    "gaze_deg_max": 28.59,
+    "hand_l_min_u": 0.0474
+   }
+  },
+  "move.armed": {
+   "clip": "Running_HoldingRifle",
+   "duration_s": 0.8,
+   "fire_s": [],
+   "recoil_peak_s": [],
+   "ready_s": [],
+   "hold": {
+    "frames": 3,
+    "yaw_deg": [
+     72.65,
+     72.68
+    ],
+    "pitch_deg": [
+     -6.49,
+     -5.74
+    ],
+    "gaze_deg_max": 72.64,
+    "hand_l_min_u": 0.2815
+   }
+  }
+ },
+ "measuredAtFire": {
+  "muzzle": [
+   -0.249,
+   1.1886,
+   1.4493
+  ],
+  "dir": [
+   0.0231,
+   0.0127,
+   0.9997
+  ],
+  "yaw_deg": 1.32,
+  "pitch_deg": 0.73,
+  "gaze_deg": 1.12,
+  "hand_l_to_weapon_u": 1.1212
+ },
+ "notes": [
+  "Original-.gltf des Blasters fehlt lokal; Quelle ist das unveränderte Netz in der DUEL-01-Hülldatei (Accessors byte-gleich übernommen).",
+  "Ohne Versatz streift das Blaster-Heck bei Hero Man das Visier-Horn (bis 18 Punkte innen, Ranged_1H_Shoot 0,23–0,80 s). Versatz handslot-lokal (+X vor, −Y runter, +Z außen) je 3,5 cm = 6 cm. Gilt für Hero Man; an anderen Figuren neu prüfen.",
+  "Ranged_1H_Reload: Waffe berührt Kopf/Brust/linken Arm (Nachlade-Griff); linke Hand am Magazin ist gewollt, Kopf/Brust nur knapp (≤ 7 mm). Nicht als Freigabe gewertet."
+ ],
+ "status": "SOURCE_PROFILE_NOT_GAMEPLAY_ACCEPTANCE",
+ "by": "WSB K10",
+ "date": "2026-10-20"
+}

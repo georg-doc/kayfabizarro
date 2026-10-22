@@ -49,7 +49,7 @@ export function createLocoActor(options) {
   const W = options.actor.worldScale ?? 1, scale = (options.actor.recipe?.stage?.scale ?? 1) * W // V-345: Figur × worldScale → Tempo in Rig-Einheiten bleibt gleich
   const drive = options.drive || (() => ({ speed: 0, grounded: true, vy: 0, y: 0, flying: false }))
   const S = { anim: null, fig: null, head: null, headYaw: 0, headPitch: 0, hist: [], clock: 0, air: 'ground', airT: 0, offT: 0, peakY: 0, fly: false,
-    status: 'LOADING', error: null, disposed: false, eyes: { nx: 0, ny: 0 }, lastSpeed: 0, flyLean: 0, flyBank: 0, inner: null, gazeOwn: false, headBase: null, headOut: null }
+    status: 'LOADING', error: null, disposed: false, eyes: { nx: 0, ny: 0 }, lastSpeed: 0, flyLean: 0, flyBank: 0, inner: null, gazeOwn: false, headBase: null, headOut: null, animK: 1 }
   const _q = new THREE.Quaternion(), _qa = new THREE.Quaternion(), _qp = new THREE.Quaternion(), _qf = new THREE.Quaternion(), _e = new THREE.Euler(), _v = new THREE.Vector3(), _m = new THREE.Matrix4()
 
   const ready = (async () => {
@@ -132,7 +132,7 @@ export function createLocoActor(options) {
         airState(d, dt)
         const sp = d.flying ? 0 : Math.max(0, d.speed) / scale
         S.lastSpeed = sp
-        S.anim.update(dt, sp)
+        S.anim.update(dt * S.animK, sp) // Kampf R1: Hit-Stop (V-567) wirkt nur auf die Animation des Spielers (Zeitfaktor vom Kampfmodul), Kopf/Augen/Luftzustand in Weltzeit
         // Flug: Neigung nach vorn mit dem Tempo, Schräglage in Kurven (am pose-root des Slots, die Kapsel bleibt aufrecht)
         const tl = d.flying ? THREE.MathUtils.clamp((d.speed || 0) / 30, 0, 1) * M1LOCO.flyLeanDeg : 0
         const tb = d.flying ? THREE.MathUtils.clamp(d.turnRate || 0, -1, 1) * M1LOCO.flyBankDeg : 0
@@ -165,6 +165,12 @@ export function createLocoActor(options) {
     // Weltlage von Ferse/Ballen je Fuß ({ 'foot.l': Vector3, 'toes.l', 'foot.r', 'toes.r' }) – für Bodenangleich und Messung
     soles: () => (S.soles ? solePoints(THREE, S.soles) : null),
     figureBones: (names) => { const out = {}, want = new Map(names.map((n) => [THREE.PropertyBinding.sanitizeNodeName(n), n])); actor.object3d.traverse((o) => { if (o.isBone && want.has(o.name)) out[want.get(o.name)] = o }); return out },
+    // Kampf R1 (K10): Einmal-Clips auf DEM Mixer der Figur (Overlay des Gang-Mischers wie Sprung/Landung, keine zweite Mischung); Marker-Uhr = Clip-Zeit ab 0
+    hasClip: (name) => !!S.anim?.has(name),
+    playAction: (name, o = {}) => !!S.anim?.play(name, { mode: 'once', fade: 0.1, ...o }),
+    stopAction: (name, fade = 0.15) => S.anim?.stop(name, fade),
+    actionTime: (name) => { const a = S.anim?.actions.get(name); return a && S.anim.isPlaying(name) ? a.time : null }, // null = Clip läuft nicht (mehr)
+    setAnimTimeScale: (k) => { S.animK = Number.isFinite(k) ? Math.max(0, Math.min(1, k)) : 1 },
     lookAt: (nx, ny) => actor.lookAt(nx, ny),
     say: (t) => actor.say(t),
     speaking: () => actor.speaking?.(),

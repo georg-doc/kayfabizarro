@@ -43,7 +43,7 @@ export async function planSite() {
   const suno = uniqueTracks(idx.music.suno), cozy = uniqueTracks(idx.music.cozy)
   for (const f of suno) files.push([`music/suno/${f}`, path.join(PRIVATE, 'music/suno-roadtrip-jukebox-v2', f)])
   for (const f of cozy) files.push([`music/cozy/${f}`, path.join(PRIVATE, 'music/cozy-tunes-classics/Audio/ogg/Tracks', f)])
-  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), site: true, wsa: true, music: { suno, cozy }, sets: outSets }
+  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), site: true, wsa: true, music: { suno, cozy, gainDb: idx.music.gainDb || {}, tags: idx.music.tags || {} }, sets: outSets }
   return { files, index }
 }
 

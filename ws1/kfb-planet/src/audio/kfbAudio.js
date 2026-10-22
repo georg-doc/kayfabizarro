@@ -13,8 +13,9 @@ import { createRacer } from '../vendor/audio/racer/engine.mjs'
 import { createCombat } from '../vendor/audio/combat/engine.mjs'
 import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
-import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, STEP_SURFACES } from './cueMap.js'
+import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
+import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -39,7 +40,7 @@ const S = {
   bank: { buffers: new Map(), pending: new Map(), voices: new Set(), last: {}, plays: 0, drops: 0, loudUntil: 0 },
   music: null, listener: { x: 0, y: 0, z: 0 }, duckDb: 0, combatActive: false, dialogue: false, musicAudible: false,
   perf: { frames: 0, sum: 0, max: 0, ring: new Float32Array(600), i: 0 }, telemetry: {}, steps0: { last: null, n: 0, surface: null }, events: [],
-  water: { at: -1, ids: [] }, farm: [], mode2: 'foot', boost: false,
+  host: {}, racerOn: false, racerIdle: null, water: { at: -1, ids: [] }, farm: [], mode2: 'foot', boost: false, amb: { biome: 'meadow', timeOfDay: 'day', weather: 'clear', wind: 0.22 },
 }
 function loadVolumes() { try { return sanitizeVolumes(JSON.parse(localStorage.getItem(VOL_KEY) || '{}')) } catch { return sanitizeVolumes({}) } }
 function saveVolumes() { try { localStorage.setItem(VOL_KEY, JSON.stringify(S.vol)) } catch {} }
@@ -55,9 +56,26 @@ function graph() {
   const meter = ac.createAnalyser(); meter.fftSize = 2048; out.connect(meter) // Pegel am Ausgang (nur bei stats() gelesen)
   const buses = {}, ducks = {}
   for (const b of BUSES) { const g = ac.createGain(), d = ac.createGain(); g.connect(d).connect(master); buses[b] = g; ducks[b] = d }
-  S.graph = { ac, master, limiter, out, buses, ducks, meter, pcm: new Float32Array(2048) }
+  // Raumklang: je Umgebung ein Faltungshall (rechnerische Raumantwort, kein Ton) als Send von SFX und Atmo; Wechsel über die Send-Pegel (weich)
+  const rev = {}
+  for (const [env, R] of Object.entries(REVERB)) { const send = ac.createGain(), pre = ac.createDelay(0.5), conv = ac.createConvolver(), tone = ac.createBiquadFilter()
+    send.gain.value = 0; pre.delayTime.value = R.predelay; tone.type = 'lowpass'; tone.frequency.value = R.tone; conv.buffer = impulse(ac, R.seconds, env === 'canyon')
+    buses.sfx.connect(send); buses.atmo.connect(send); send.connect(pre).connect(conv).connect(tone).connect(master); rev[env] = { send, R } }
+  // Musik-Abgriff für den Puls (vor dem Musik-Regler: die Welt pulsiert auch bei leiser Musik)
+  const musicTap = ac.createGain(), pulseAn = ac.createAnalyser(); pulseAn.fftSize = 1024; pulseAn.smoothingTimeConstant = 0.2; musicTap.connect(buses.music); musicTap.connect(pulseAn)
+  S.graph = { ac, master, limiter, out, buses, ducks, meter, pcm: new Float32Array(2048), rev, musicTap, pulseAn, pulseBytes: new Uint8Array(pulseAn.frequencyBinCount), pulse: createPulseTracker({ sampleRate: ac.sampleRate, fftSize: 1024 }) }
   applyVolumes(); return S.graph
 }
+// Raumantwort: abklingendes, leicht gefärbtes Rauschen (Stereo, unkorreliert), Canyon mit einem frühen Echo nach 0,18 s – Verarbeitung, kein Klangmaterial
+function impulse(ac, seconds, echo = false) {
+  const n = Math.max(1, Math.floor(ac.sampleRate * seconds)), b = ac.createBuffer(2, n, ac.sampleRate)
+  for (let c = 0; c < 2; c++) { const d = b.getChannelData(c); let lp = 0
+    for (let i = 0; i < n; i++) { const t = i / ac.sampleRate, env = Math.pow(1 - i / n, 2.2) * Math.exp(-3 * t / seconds); lp += 0.35 * ((Math.random() * 2 - 1) - lp); d[i] = lp * env }
+    if (echo) { const e0 = Math.floor(0.18 * ac.sampleRate); for (let i = 0; i < Math.min(n - e0, ac.sampleRate * 0.25); i++) d[e0 + i] += 0.5 * d[i] } }
+  return b
+}
+let REV_ENV = null
+function setReverb(env) { const G = S.graph; if (!G?.rev || env === REV_ENV) return; REV_ENV = env; const t = G.ac.currentTime; for (const [k, r] of Object.entries(G.rev)) r.send.gain.setTargetAtTime(k === env ? r.R.wet : 0, t, 0.8) }
 function applyVolumes() {
   const G = S.graph; if (!G) return; const t = G.ac.currentTime
   G.master.gain.setTargetAtTime(S.vol.muted || MUTED ? 0 : sliderGain(S.vol.master), t, 0.05)
@@ -71,7 +89,8 @@ export const volumes = () => ({ ...S.vol })
 // preload(): sobald die Welt steht – Index vom lokalen Ton-Server holen (ohne ihn: 'public', kein Kontext), dann Module laden und dekodieren
 // (geht im angehaltenen Kontext). unlock(): erste Eingabe – Kontext fortsetzen, ab jetzt klingt es (Browser-Regel), Musik startet.
 let booting = null
-export function preload() {
+export function preload(host = {}) { // host: { car: Racer-Modus (#…,car), flyKind } – bestimmt, was zuerst lädt
+  if (host && Object.keys(host).length) S.host = { ...S.host, ...host }
   if (MUTED) { S.mode = 'muted'; return Promise.resolve(snapshotLite()) }
   if (!booting) booting = boot().catch((e) => { S.error = String(e?.message || e); S.mode = 'public' })
   return booting
@@ -91,15 +110,26 @@ async function boot() {
   const ac = G.ac, timed = async (key, fn) => { const a = now(); try { const r = await fn(); S.loads[key] = { ms: +(now() - a).toFixed(0), ok: true }; return r } catch (e) { S.loads[key] = { ms: +(now() - a).toFixed(0), ok: false }; S.errors.push(key + ': ' + (e?.message || e)); return null } }
   S.mode = 'full' // Module kommen einzeln dazu, sobald geladen (der Rest spielt schon)
   startMusic()
+  const car = !!S.host.car
+  // Stufe 1 – sofort hörbar: Atmo + (zu Fuß) Schritte bzw. (Racer) Motor; Tonbank-Grundstock
+  const racer = () => S.index.wsa && timed('racer', async () => { const m = await getJson(AUDIO_ROOT + 'wsa/racer/manifest.json'), want = new Set(racerAssets({ car }))
+    const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/racer/', location.href) })
+    await r.prepare(); S.racer = r; S.racerAssets = want.size })
+  const steps = () => S.index.site && timed('steps', async () => { const base = new URL(AUDIO_ROOT + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
+    const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.sfx, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st })
   await Promise.all([
-    S.index.wsa && timed('racer', async () => { const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/racer/', location.href) }); await r.start(); r.setTelemetry({ mode: 'drive', speedKmh: 0, throttle: 0, brake: 0, engineOn: false }); S.racer = r }),
-    S.index.wsa && timed('combat', async () => { const c = await createCombat({ audioContext: ac, destination: G.buses.sfx, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/combat/', location.href), onActivity: (on) => { S.combatActive = on } }); await c.start(); S.combat = c }),
     S.index.site && timed('ambience', async () => { const a = await createAmbience({ audioContext: ac, destinations: { GLOBAL_BED: G.buses.atmo, LOCAL_AMBIENCE: G.buses.atmo }, assetBaseUrl: new URL(AUDIO_ROOT + 'site/ambience/', location.href) })
-      await a.setContext({ biome: S.biome || 'meadow', timeOfDay: S.tod || 'day', weather: 'clear', wind: 0.22 }); await a.start(); S.ambience = a }),
-    S.index.site && timed('steps', async () => { const base = new URL(AUDIO_ROOT + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
-      const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.sfx, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st }),
+      await a.setContext({ ...S.amb }); await a.start(); S.ambience = a }),
+    car ? racer() : steps(),
+    timed('bankFirst', () => preloadBank(true)),
   ].filter(Boolean))
-  await timed('bank', preloadBank)
+  S.loads.ready = { ms: +(now() - t0).toFixed(0), ok: true } // ab hier klingt das Wichtigste
+  // Stufe 2 – im Hintergrund: Kampf, Rest der Tonbank, Motor/Schritte des anderen Modus
+  await Promise.all([
+    S.index.wsa && timed('combat', async () => { const c = await createCombat({ audioContext: ac, destination: G.buses.sfx, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/combat/', location.href), onActivity: (on) => { S.combatActive = on } }); await c.start(); S.combat = c }),
+    car ? steps() : racer(),
+    timed('bank', () => preloadBank(false)),
+  ].filter(Boolean))
   S.loads.total = { ms: +(now() - t0).toFixed(0), ok: true }
   return snapshotLite()
 }
@@ -114,10 +144,10 @@ function loadClip(set, id) {
     .then((b) => graph().ac.decodeAudioData(b)).then((buf) => { B.buffers.set(key, buf); return buf }).finally(() => B.pending.delete(key))
   B.pending.set(key, p); return p
 }
-async function preloadBank() {
-  const jobs = []; for (const c of Object.values(CUES)) if (c.owner === 'bank') for (const id of bankFiles(c)) if (!jobs.some(([a, b]) => a === c.set && b === id)) jobs.push([c.set, id])
+async function preloadBank(first = null) { // first: true = nur Grundstock (BANK_FIRST), false = der Rest, null = alles
+  const re = BANK_FIRST[S.host.car ? 'car' : 'foot'], jobs = []; for (const [k, c] of Object.entries(CUES)) if (c.owner === 'bank' && (first === null || re.test(k) === first)) for (const id of bankFiles(c)) if (!jobs.some(([a, b]) => a === c.set && b === id)) jobs.push([c.set, id])
   let k = 0; const worker = async () => { while (k < jobs.length) { const [s, id] = jobs[k++]; try { await loadClip(s, id) } catch (e) { S.errors.push('bank ' + s + '/' + id + ': ' + e.message) } } }
-  await Promise.all(Array.from({ length: 4 }, worker)); return jobs.length
+  await Promise.all(Array.from({ length: 6 }, worker)); return jobs.length
 }
 const rel = (p) => (p ? { x: p.x - S.listener.x, y: p.y - S.listener.y, z: p.z - S.listener.z } : null)
 // play(cueId, { pos: Weltlage, gain, at: Versatz s, loop }) → Stimme oder null
@@ -131,11 +161,12 @@ export function play(cueId, { pos = null, gain = 1, at = 0, loop = false, rate =
   if (B.voices.size >= VOICE_CAP.bank) { const v = pickVictim(B.voices); if (v) stopVoice(v, true) }
   const norm = dbToGain(Math.max(-12, Math.min(14, S.index.sets?.[c.set]?.gainDb?.[id] ?? 0)))
   const src = ac.createBufferSource(), env = ac.createGain(); src.buffer = buf; src.loop = loop; src.playbackRate.value = (rate ?? 0.97 + Math.random() * 0.06) * (c.pitch || 1)
-  const vol = gain * (c.gain ?? 1) * norm * 0.5 * 10 ** ((Math.random() * 2 - 1) / 20) // 0,5: ElevenLabs-Pegel unter den WSA-Begrenzern einordnen
+  const occ = pos && S.heightAt ? occlusionFilter(occlusion(S.heightAt, S.listener, pos)) : { hz: null, gainDb: 0 }; if (occ.hz) S.occluded = (S.occluded || 0) + 1 // Hügel dazwischen: dumpfer, leiser
+  const vol = gain * (c.gain ?? 1) * norm * 0.5 * dbToGain(occ.gainDb) * 10 ** ((Math.random() * 2 - 1) / 20) // 0,5: ElevenLabs-Pegel unter den WSA-Begrenzern einordnen
   const fin = fadeIn ?? (loop ? 1.5 : 0); env.gain.setValueAtTime(fin > 0 || silent ? 0 : vol, when); if (fin > 0 && !silent) env.gain.linearRampToValueAtTime(vol, when + fin)
   let last = env, pan = null, lp = null
   const r = rel(pos); if (r) { const d = Math.hypot(r.x, r.y, r.z); pan = ac.createPanner(); pan.panningModel = 'equalpower'; pan.distanceModel = 'inverse'; pan.refDistance = 4; pan.maxDistance = 220; pan.rolloffFactor = 1
-    pan.positionX.value = r.x; pan.positionY.value = r.y; pan.positionZ.value = r.z; lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = distanceLowpassHz(d); last.connect(lp).connect(pan); last = pan }
+    pan.positionX.value = r.x; pan.positionY.value = r.y; pan.positionZ.value = r.z; lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = Math.min(distanceLowpassHz(d), occ.hz ?? 20000); last.connect(lp).connect(pan); last = pan }
   src.connect(env); last.connect(G.buses[c.bus || 'sfx'])
   const v = { src, env, pan, lp, vol, cue: cueId, at: when, prio: prio ?? (c.loud ? 2 : loop ? 3 : 1), pos, loop, end: loop ? Infinity : when + buf.duration / src.playbackRate.value }
   B.voices.add(v); src.onended = () => stopVoice(v); src.start(when); if (!loop) src.stop(v.end + 0.02); B.plays++
@@ -154,18 +185,20 @@ const XF = 3.0 // s Überblendung
 function startMusic() {
   if (S.music || typeof Audio === 'undefined') return
   const G = graph(), ac = G.ac, lists = { suno: uniqueTracks(S.index?.music?.suno || []), cozy: uniqueTracks(S.index?.music?.cozy || []) }
-  const deck = [0, 1].map(() => { const el = new Audio(); el.preload = 'auto'; const g = ac.createGain(); g.gain.value = 0; ac.createMediaElementSource(el).connect(g).connect(G.buses.music); return { el, g, track: null, list: null } })
-  S.music = { lists, deck, cur: -1, latch: createModeLatch(2.5), next: { suno: createShuffle(lists.suno), cozy: createShuffle(lists.cozy) }, list: null, changes: 0, errors: 0, started: 0 }
+  const deck = [0, 1].map(() => { const el = new Audio(); el.preload = 'auto'; const g = ac.createGain(); g.gain.value = 0; ac.createMediaElementSource(el).connect(g).connect(G.musicTap); return { el, g, track: null, list: null } })
+  S.music = { lists, deck, cur: -1, latch: createModeLatch(2.5), next: { suno: createWeightedShuffle(lists.suno), cozy: createWeightedShuffle(lists.cozy) }, list: null, changes: 0, errors: 0, started: 0 }
   for (const d of deck) { d.el.addEventListener('ended', () => { if (S.music.deck[S.music.cur] === d) nextTrack(S.music.list) }); d.el.addEventListener('error', () => { S.music.errors++; if (S.music.deck[S.music.cur] === d) setTimeout(() => nextTrack(S.music.list), 400) }) }
 }
 function nextTrack(list) {
-  const M = S.music; if (!M || !list) return; const file = M.next[list](); if (!file) return
+  const M = S.music; if (!M || !list) return; const tags = S.index?.music?.tags || {}, ctx = { ...S.amb, mode: S.mode2 } // Biom/Tageszeit/Wetter wie die Atmo (auch von der Biom-Fahrt)
+  const file = M.next[list]((f) => musicWeight(tags[list + '/' + f], ctx)); if (!file) return
   const ac = CTX, t = ac.currentTime, old = M.deck[M.cur], d = M.deck[(M.cur + 1) % 2]
   d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.track = file; d.list = list
-  d.g.gain.cancelScheduledValues(t); d.g.gain.setValueAtTime(0, t); d.g.gain.linearRampToValueAtTime(1, t + XF)
+  const tg = dbToGain(Math.max(-12, Math.min(12, S.index?.music?.gainDb?.[list + '/' + file] ?? 0))) // Titel auf −18 LUFS ausgeglichen (loudness.mjs)
+  d.g.gain.cancelScheduledValues(t); d.g.gain.setValueAtTime(0, t); d.g.gain.linearRampToValueAtTime(tg, t + XF); d.gainDb = 20 * Math.log10(tg)
   d.el.play().catch(() => {}); M.started++
   if (old && old !== d) { old.g.gain.cancelScheduledValues(t); old.g.gain.setValueAtTime(old.g.gain.value, t); old.g.gain.linearRampToValueAtTime(0, t + XF); const el = old.el; setTimeout(() => { if (M.deck[M.cur] !== old) el.pause() }, XF * 1000 + 100) }
-  M.cur = (M.cur + 1) % 2; M.list = list; log({ type: 'music', list, file })
+  M.cur = (M.cur + 1) % 2; M.list = list; log({ type: 'music', list, file, biome: ctx.biome, tod: ctx.timeOfDay })
 }
 function musicTick(mode) {
   const M = S.music; if (!M || !S.unlocked) return
@@ -174,7 +207,7 @@ function musicTick(mode) {
   const d = M.deck[M.cur]; if (d && d.el.duration && isFinite(d.el.duration) && d.el.currentTime > d.el.duration - XF - 0.2 && !d.handoff) { d.handoff = true; nextTrack(M.list); setTimeout(() => { d.handoff = false }, XF * 1000 + 500) }
   S.musicAudible = !!(d && !d.el.paused && S.vol.music > 0.02 && !S.vol.muted)
 }
-export const nowPlaying = () => { const M = S.music, d = M?.deck[M.cur]; return d?.track ? { list: d.list, title: d.track.replace(/\.[^.]+$/, ''), time: +(d.el.currentTime || 0).toFixed(1) } : null }
+export const nowPlaying = () => { const M = S.music, d = M?.deck[M.cur]; return d?.track ? { list: d.list, title: d.track.replace(/\.[^.]+$/, ''), time: +(d.el.currentTime || 0).toFixed(1), gainDb: +(d.gainDb || 0).toFixed(1) } : null }
 
 // ── Ereignisse ─────────────────────────────────────────────────────────────────────────────────────────────────
 const LAND_HARD = 0.55, IMPACT_HARD = 0.5
@@ -237,6 +270,31 @@ export function fluffer(e, pos = null) {
   const seq = FLUFFER_SEQUENCE[e?.type]; if (!seq || S.mode !== 'full') return 0
   for (const [cue, dt] of seq) play(cue, { pos, at: dt }); log({ type: 'fluffer', e: e.type }); return seq.length
 }
+// Atmo-Vorgaben von außen (WS1b Biom-Fahrt): { biome, weather, wind, timeOfDay } – null/undefined nimmt den Wert wieder zurück; wirkt ab dem nächsten Takt
+const CTXO = {}
+export function ambienceContext(update = {}) { for (const k of ['biome', 'weather', 'wind', 'timeOfDay']) if (k in update) { if (update[k] == null) delete CTXO[k]; else CTXO[k] = update[k] } return resolveAmbience({ biome: S.biome, timeOfDay: S.tod }, CTXO) }
+// Blitz → Donner über kfb-ambience: Verzögerung nach Entfernung (343 m/s), Lage hörerbezogen (azimuth rad, 0 = −Z, positiv Richtung +X), at = Kontextzeit des Blitzes
+let LIGHTNING_N = 0
+export function ambienceLightning({ distanceM = 800, azimuth = 0, at = null, id = null } = {}) {
+  if (S.mode !== 'full' || !S.ambience || !CTX) return null
+  try { return S.ambience.emit({ type: 'lightning', id: id || 'flash-' + ++LIGHTNING_N, at: at ?? CTX.currentTime, distanceM: Math.max(0, +distanceM || 0), azimuth: +azimuth || 0 }) } catch (e) { S.errors.push('lightning: ' + e.message); return null }
+}
+// Gelände für die Verdeckung (Höhe der aktiven Welt); vom AudioHost gesetzt
+export function setTerrain(heightAt) { S.heightAt = typeof heightAt === 'function' ? heightAt : null }
+// Musik-Puls für die Welt (kfb.audio.presentation-pulse.v1; WS1d Boombox-Ringe, musikgesteuertes Gras): einmal je Takt berechnet, musicPulse() liest nur ab
+let PULSE = SILENT_PULSE
+function pulseTick(t) {
+  const G = S.graph, M = S.music, d = M?.deck[M.cur]; if (!G?.pulseAn || !M) { PULSE = SILENT_PULSE; return }
+  const playing = !!(d && !d.el.paused && !S.vol.muted && !MUTED); G.pulseAn.getByteFrequencyData(G.pulseBytes)
+  PULSE = { ...G.pulse(t, G.pulseBytes, playing ? 1 : 0), activeSources: playing ? [{ sourceId: 'JUKEBOX', sourceType: 'music', audibleGain01: +sliderGain(S.vol.music).toFixed(3) }] : [] }
+}
+export const musicPulse = () => PULSE
+// Begrüßung eines Bewohners (WS-NPC 'greet'): Stimm-Laut am Kopf der Figur, Musik kurz −4 dB; eigene Stimme, sonst Platzhalter
+export function greet(e, pos = null) {
+  if (S.mode !== 'full') return null
+  for (const cue of greetCues(e)) { const c = CUES[cue]; if (!bankFiles(c).length) continue; const v = play(cue, { pos, rate: c.rate ?? null }); if (v) { S.voiceUntil = Math.max(S.voiceUntil || 0, v.end); log({ type: 'greet', e: e.reason, cue }); return cue } }
+  return null
+}
 export function ui(name) { return play('ui.' + name) }
 // Präsenz-Schleifen: laufen, solange Ereignisse kommen (hold s), folgen der letzten Lage, blenden danach aus
 const PRES = new Map()
@@ -274,9 +332,11 @@ export function frame(st) {
     else AL.setOrientation?.(L.fx, L.fy, L.fz, L.ux, L.uy, L.uz) }
   const mode = st.mode || 'foot'; S.mode2 = mode; S.dialogue = !!st.dialogue
   const mix = { musicActive: S.musicAudible, dialogueActive: S.dialogue, combatActive: S.combatActive }
-  // Motor / Flug
-  const R = S.racer
-  if (R) {
+  // Motor / Flug: Racer läuft nur bei Fahrt/Flug; zu Fuß nach 3 s angehalten (keine stummen Schleifen im Audio-Faden)
+  const R = S.racer, need = mode === 'drive' || mode === 'fly'
+  if (R && need && !S.racerOn) { S.racerOn = true; S.racerIdle = null; R.start().then(() => { if (!S.racerOn) R.stop() }) }
+  if (R && !need && S.racerOn) { S.racerIdle ??= ac.currentTime; if (ac.currentTime - S.racerIdle > 3) { S.racerOn = false; R.stop() } } else if (need) S.racerIdle = null
+  if (R && S.racerOn) {
     const kmh = Math.max(0, Math.min(240, (st.speed || 0) * 3.6)), thr = clamp01(st.throttle), T = S.telemetry
     if (mode === 'drive') Object.assign(T, { mode: 'drive', speedKmh: kmh, throttle: thr, brake: clamp01(st.brake), engineOn: true, ...gearRpm(st) })
     else if (mode === 'fly') { delete T.gear; delete T.rpm; Object.assign(T, { mode: st.flyKind || 'antigrav', speedKmh: kmh, throttle: thr, brake: 0, bank: clampS(st.bank), vertical: clampS(st.vertical), airbrake: clamp01(st.airbrake), engineOn: true, geared: false }) }
@@ -288,17 +348,21 @@ export function frame(st) {
   const A = S.ambience
   if (A) {
     A.setMix(mix)
-    if (st.tod && st.tod !== S.tod) { S.tod = st.tod; A.setContext({ timeOfDay: st.tod }).catch(() => {}) }
-    if (st.biome && st.biome !== S.biome) { S.biome = st.biome; A.setContext({ biome: st.biome }).catch(() => {}) }
+    // Atmo-Kontext: Vorgaben von außen (ambienceContext, z. B. Biom-Fahrt) vor AudioHost; Wassernähe legt pond/beach drüber; nur Änderungen weitergeben
+    const want = resolveAmbience({ biome: st.biome, timeOfDay: st.tod }, CTXO), diff = {}
+    for (const k of ['biome', 'timeOfDay', 'weather', 'wind']) if (want[k] !== S.amb[k]) diff[k] = want[k]
+    if (Object.keys(diff).length) { Object.assign(S.amb, diff); S.biome = want.biome; S.tod = want.timeOfDay; A.setContext(diff).catch((e) => S.errors.push('ambience: ' + e.message)) }
     if (st.water) waterTick(st.water)
     A.tick()
   }
   if (st.farm) farmTick(st.farm)
+  setReverb(reverbEnv({ biome: S.amb.biome, rise: st.rise ?? 0 })); S.rise = st.rise ?? 0
   driveTick(st, mode, ac.currentTime); coastTick(ac.currentTime)
   if (S.steps && mode === 'foot' && st.foot) stepTick(st.foot)
   musicTick(mode); gatlingTick(ac.currentTime); presenceTick(ac.currentTime)
+  pulseTick(ac.currentTime)
   // Ducking der Musik: laute SFX (Kampf, Crash), Dialog, Boost
-  const db = musicDuckDb({ loud: S.combatActive || ac.currentTime < S.bank.loudUntil, dialogue: S.dialogue, boost: ac.currentTime < (S.boostUntil || 0) })
+  const db = musicDuckDb({ loud: S.combatActive || ac.currentTime < S.bank.loudUntil, dialogue: S.dialogue, voice: ac.currentTime < (S.voiceUntil || 0), boost: ac.currentTime < (S.boostUntil || 0) })
   if (db !== S.duckDb) { const up = db > S.duckDb; S.duckDb = db; S.graph.ducks.music.gain.setTargetAtTime(dbToGain(db), ac.currentTime, up ? DUCK.release / 3 : DUCK.attack / 3) }
   // Bank-Schleifen (Farm) und positionale Einzeltöne folgen dem Hörer nicht (kurz); Messung
   const ms = now() - t0, P = S.perf; P.frames++; P.sum += ms; P.max = Math.max(P.max, ms); P.ring[P.i++ % P.ring.length] = ms
@@ -369,9 +433,9 @@ export function stats() {
   return { ...snapshotLite(), unlocked: S.unlocked, volumes: { ...S.vol }, loads: { ...S.loads }, errors: S.errors.slice(-20), modules: { racer: !!S.racer, combat: !!S.combat, ambience: !!S.ambience, steps: !!S.steps, music: !!S.music },
     voices: { ...v, oneShots, total: oneShots + v.racerLoops + v.music }, perf: perf(), duckDb: S.duckDb, combatActive: S.combatActive, musicAudible: S.musicAudible, nowPlaying: nowPlaying(),
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null,
-    bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, water: S.water.ids || '',
-    racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs) }))(S.racer.snapshot()) : null,
-    presence: [...PRES.keys()], flufferHealed: !!S.flufferHealed, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
+    racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
+    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

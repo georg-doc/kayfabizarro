@@ -50,5 +50,6 @@ process.exit(report('disco K12 (Lead, Dioramen-Test Schritt 3)', {
   B_cuesHit: PRIV ? cueOk(hit) : true,
   C_feetAboveGround: fl ? fl.every((f) => f.minY >= -0.02) : true,
   D_hit1AllChicken: PRIV ? hitAll : true,
+  F_discoLight: (hit?.lights ?? 0) === 8,   // V-632: 8 Kegel über kfb-groundfx, Kanal 'disco'
   E_noPageErrors: errs.length === 0,
-}, { priv: PRIV, A, liftMC, at, yawDeg: d0.yawDeg, siteDev: d0.siteDev, mid: mid && mid.members.map((m) => `${m.slot}:${m.clip}@${m.t?.toFixed?.(2)} lift ${m.lift}`), hit: hit && hit.members.map((m) => `${m.slot}:${m.clip}`), feet: fl, errs: errs.slice(0, 4) }))
+}, { priv: PRIV, lights: hit?.lights, gfx: hit?.gfx, A, liftMC, at, yawDeg: d0.yawDeg, siteDev: d0.siteDev, mid: mid && mid.members.map((m) => `${m.slot}:${m.clip}@${m.t?.toFixed?.(2)} lift ${m.lift}`), hit: hit && hit.members.map((m) => `${m.slot}:${m.clip}`), feet: fl, errs: errs.slice(0, 4) }))

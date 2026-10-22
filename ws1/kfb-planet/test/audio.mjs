@@ -48,6 +48,14 @@ try {
     M.mods.groups = { events: () => ev }; await new Promise((r) => setTimeout(r, 700)); const polled = cnt() - before; await new Promise((r) => setTimeout(r, 500)); const again = cnt() - before; delete M.mods.groups
     return { n, plays: a.stats().bank.plays - b0, polled, again, errors: a.stats().errors } })
   out.groups = groups
+  // Raumklang: eingeschlossenen Ort suchen (Anstieg > 6 m) → Hall „canyon“; Ton hinter einem Hügel → Verdeckung
+  out.space = await A.page.evaluate(async () => { const M = window.__kfbM1, h = M.terrainH, a = window.__kfbAudio, rise = (x, z) => { let s = 0; for (let k = 0; k < 8; k++) { const q = k * Math.PI / 4; s += h(x + Math.cos(q) * 25, z + Math.sin(q) * 25) - h(x, z) } return s / 8 }
+    let spot = null; for (let r = 20; r < 260 && !spot; r += 10) for (let k = 0; k < 24 && !spot; k++) { const q = k * Math.PI / 12, x = Math.cos(q) * r, z = Math.sin(q) * r; if (rise(x, z) > 8) spot = [x, z] }
+    const res = { spot }; if (spot) { M.player().teleport([spot[0], h(spot[0], spot[1]) + 1.2, spot[1]], 0); await new Promise((r) => setTimeout(r, 1800)); res.env = a.stats().reverb; res.rise = a.stats().rise }
+    const p = M.feet(), before = a.stats().occluded; let hit = null
+    for (let k = 0; k < 36 && !hit; k++) { const q = k * Math.PI / 18, b = { x: p[0] + Math.cos(q) * 40, z: p[2] + Math.sin(q) * 40 }; b.y = h(b.x, b.z) + 0.5
+      for (let i = 1; i < 8; i++) { const u = i / 8, x = p[0] + (b.x - p[0]) * u, z = p[2] + (b.z - p[2]) * u, line = p[1] + 1.2 + (b.y - p[1] - 1.2) * u; if (h(x, z) > line + 1.5) { hit = b; break } } }
+    if (hit) a.play('npc.boneCollapse', { pos: hit }); res.occludedPlayed = a.stats().occluded - before; res.hit = !!hit; return res })
   // Schritte/Hüpfer (WS-NPC groups.steps, npc.steps, fluffer.hops): alter Eintrag wird nicht nachgespielt, neue nah = Ton, fern (> 35 m) = still
   out.steps = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), gs = [{ type: 'step', id: 'skel_rogue', foot: 'l', at: [p[0] + 3, p[2]], speed: 1, group: 'skeleton_patrol', t: 1 }], ns = [], fh = []
     const keep = { groups: M.mods.groups, npc: M.mods.npc, fluffer: M.mods.fluffer }
@@ -58,6 +66,12 @@ try {
     ns.push({ type: 'step', id: 'farmer_b', foot: 'l', at: [p[0] + 3, p[2] + 3], speed: 0.9, t: 50 }); fh.push({ type: 'hop', id: 'dark_fluffer_ghost', at: [p[0] - 3, p[2]], t: 3 })
     await new Promise((r) => setTimeout(r, 400)); const n1 = s0(), pres = a.stats().presence; await new Promise((r) => setTimeout(r, 300)); const n2 = s0()
     Object.assign(M.mods, keep); return { old, played: n1 - old, again: n2 - n1, pres, errors: a.stats().errors } })
+  // Begrüßung (WS-NPC npc.events(): greet { reason, id, at, t, seq }): erstes Lesen nur merken, dann je Eintrag einmal ein Stimm-Laut, Musik kurz −4 dB
+  out.greet = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), L = [{ type: 'greet', reason: 'known', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 1, seq: 1 }], keep = M.mods.npc
+    M.mods.npc = { events: () => L }; await new Promise((r) => setTimeout(r, 300)); const n0 = a.stats().events.filter((e) => e.type === 'greet').length
+    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 })
+    await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
+    M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck } })
   // WS0-Lieferung Combat-AV L1–L13: neue Kampf-Ereignisse klingen
   out.av13 = await A.page.evaluate(async () => { const a = window.__kfbAudio, p = window.__kfbM1.feet(), pos = { x: p[0] + 2, y: p[1] + 1, z: p[2] }, r = {}
     for (const [k, e] of Object.entries({ kill: { type: 'kill' }, windup: { type: 'windup', side: 'enemy' }, block: { type: 'block' }, bite: { type: 'contact', target: 'player', weapon: 'bite' }, hurt: { type: 'contact', target: 'player' }, arrow: { type: 'contact', weapon: 'bow', confirmed: true }, magic: { type: 'contact', weapon: 'wand' }, dice: { type: 'fire', weapon: 'dice' } })) { const b = a.stats().bank.plays; a.k10({ ...e, position: pos }); r[k] = a.stats().bank.plays - b; await new Promise((x) => setTimeout(x, 80)) }
@@ -76,6 +90,10 @@ try {
   await B.page.keyboard.up('KeyW'); await B.page.keyboard.down('KeyS'); await B.page.waitForTimeout(900); await B.page.keyboard.up('KeyS') // Bremsen
   await B.page.waitForTimeout(500)
   const car = await stats(B.page)
+  // Musik-Puls (WS1d kfb-groundfx): bei laufender Suno-Musik hörbar, Bänder > 0, Tempo erkannt
+  out.pulse = await B.page.evaluate(() => new Promise((res) => { const a = window.__kfbAudio, seen = { kicks: 0, frames: 0 }, t0 = performance.now(); let p // je Bild abfragen (kick gilt genau ein Bild)
+    const f = () => { p = a.musicPulse(); seen.frames++; if (p.kick) seen.kicks++; if (performance.now() - t0 < 6000) requestAnimationFrame(f); else res({ schema: p.schema, audible01: p.audible01, bass: p.bass, mid: p.mid, rhythm01: p.energy.rhythm01, bpm: p.transport.bpm, conf: p.transport.confidence01, sources: p.activeSources, ...seen }) }
+    requestAnimationFrame(f) }))
   out.car = { errs: B.errs, gears: [...gears], maxRpm, drive: drive && pick(drive), drv: drv.drive, end: pick(car) }
   await B.browser.close()
   const f = out.foot, w = f.walk, c = out.car, av = out.foot.arena
@@ -97,6 +115,9 @@ try {
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
     presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.includes('fluffGlide'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
+    reverbAndOcclusion: (!out.space.spot || out.space.env === 'canyon') && (!out.space.hit || out.space.occludedPlayed === 1),
+    musicPulse: out.pulse.schema === 'kfb.audio-presentation-pulse/1' && out.pulse.audible01 === 1 && out.pulse.bass > 0 && out.pulse.kicks >= 3 && out.pulse.bpm > 0,
+    greetVoices: out.greet.first === 0 && out.greet.played === 3 && out.greet.again === 0 && out.greet.cues.every((c) => /^greet\./.test(c)),
     duckUnderLoudSfx: f.fight.duckDb < 0,
     voicesBounded: Math.max(w.voices.total, f.fight.voices.total, c.end.voices.total) <= 96 && f.fight.voices.bank <= 24 && f.fight.voices.combat <= 24,
     flyOnFootMusicSuno: f.fly.mode2 !== 'fly' || f.fly.nowPlaying?.list === 'suno' || f.fly.music.changes >= 0,
