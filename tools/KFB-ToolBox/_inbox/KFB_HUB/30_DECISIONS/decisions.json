@@ -9144,6 +9144,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-644",
+   "date": "2026-10-22",
+   "area": "Werkzeug",
+   "verdict": "RULE",
+   "text": "Meshy-Community-Suche im Asset Librarian: Weg B zuerst (Georg sucht in Meshy, Modell-Links kommen in die vorhandene Selection- bzw. Importliste des Librarian mit Provenienz und echter Modellprüfung; WSA Work). Weg A (Enterprise-Endpoint showcases, 1 Credit je Suche, kein CORS, serverseitig) nur, wenn Georg Enterprise-Zugang hat und will. Keine undokumentierten Web-Endpunkte.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Enterprise-Kosten sofort nutzbar über die vorhandene Importliste.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-645",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "SPEC",
+   "text": "Diegetisches Knet-HUD R0 (Konzept Draft-PR #444, passt zu HUD R4 V-334): HUD aus Gegenständen der Welt (sechs Fluff-Kugeln mit Zahl, KayKit-Kompass als Tacho und aufgeklappt Minimap, zugleich Ruhestein V-623; Almanach-Kartenstapel; Rucksack mit 20 Fächern aus HUD Flight R3 als Spender; Props reagieren gefiltert auf Kurven, Bremsen, Landung). Ruhende Props als gecachte Ansichten, echtes 3D nur beim Aufklappen; Ziel unter 1 ms. Nach dem MVP zuerst ein isolierter Vergleich (Kugeln, Kompass, Rucksack) außerhalb des MVP, Owner WS1 (HUD im Spiel).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein HUD aus Weltgegenständen beseitigt den Stilbruch; erst isoliert messen, dann ersetzen.",
+   "applies": "nach MVP"
+  },
+  {
+   "id": "V-646",
+   "date": "2026-10-22",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Gaussian-Splat-Wasser bzw. Melt-Terrain (Cluster 4, Draft-PR #423): zurückgestellt bis nach dem MVP. Wasser R1 ist gerade im Spiel. Später Vergleich A0 bestehend, A1 Shader-Tiefenillusion (Kandidat für Wasser R2), A2 Spark-Splat; eigene Splats aus CC0-Modellen statt CC-BY-Community-Splats.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fokus MVP; Splats nur, wenn sie sichtbar mehr bringen als ein Shader.",
+   "applies": "nach MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9231,7 +9276,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1087",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1089",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

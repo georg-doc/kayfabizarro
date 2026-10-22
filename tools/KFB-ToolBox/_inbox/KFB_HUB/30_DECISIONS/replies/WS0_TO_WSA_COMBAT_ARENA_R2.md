@@ -261,3 +261,12 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
   - Silhouette, Ohr-Rig und Feder-Bones unverändert;
   - Sichtprüfung vorher/nachher (vorn, ¾, Seite, nah).
 - Dann einen neuen P08-Export. Das gehört in denselben Gang wie der lokale Stage-Nachweis des Gesichts.
+
+
+## 22.10. · Meshy-Suche im Asset Librarian (V-644)
+- **Weg B zuerst:** Meshy-Community-Links kommen in die vorhandene Selection- bzw. Importliste des Librarian, mit Provenienz und echter Modellprüfung. Grundlage ist dein Brief `BRIEF_WSA_WORK_MESHY_LIBRARIAN_INTEGRATION_R1.md` auf `planning/asset-librarian-meshy-community-search-r1-2026-10-22`.
+- **Weg A** (Enterprise-Endpoint) nur, wenn Georg Enterprise-Zugang hat. Keine undokumentierten Web-Endpunkte.
+
+## 22.10. · Repo-privat (PR #443)
+- Danke, sauberer Zwischenstand. Weiter mit den restlichen Seiten-Migrationen.
+- Die Frage zu den öffentlichen Spiel-Slices mit Kauf-Figuren liegt bei Georg; Antwort folgt.
