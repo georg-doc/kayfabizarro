@@ -5,7 +5,7 @@
 //   cone  Kegel-Projektion von einem Ursprung entlang dir (Scheinwerfer, Disco-Strahler, Laternen). Rechnung 1:1 wie kfb-light-pool.v1.
 //   pool  runde Pfütze senkrecht von oben (Radius, weicher Rand), reicht vom Ursprung `range` nach unten.
 //   ring  Ring senkrecht von oben (Radius, Breite) – Boombox-Ringe, Treffer, Landungen.
-// Werte je Eintrag: { form, origin, dir, angle, soft, color, intensity, range, radius, width }; Kegel optional elliptisch: angleH, angleV (rad). Zeitkurven laufen auf der CPU (curves, createRingEmitter).
+// Werte je Eintrag: { form, origin, dir, angle, soft, color, intensity, range, radius, width }; Kegel optional elliptisch: angleH, angleV (rad), startH (waagrechte Startbreite, Kegelstumpf), lowerOnly (senkrecht nur die Unterkante, Ende über range), flat (gleichmäßig statt Einfallswinkel). Zeitkurven laufen auf der CPU (curves, createRingEmitter).
 // Mischer: mehrere Besitzer (Scheinwerfer, Disco, Boombox, Laternen) teilen sich die Plätze: fx.channel(owner, { priority }).set(list).
 //   Zu viele Einträge: höhere Priorität zuerst, dann näher am Fokus (fx.setFocus, z. B. Kamera). channel.setPools = set (Format kfb-light-pool.v1).
 // Empfänger: fx.injectStandard(material) für MeshStandard/Physical/Lambert/Toon (auch nach fremdem onBeforeCompile, z. B. terrain3);
@@ -44,13 +44,15 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
       vec3 L = wp - A.xyz; float d2 = dot(L, L);
       if (d2 > (A.w < 0.5 ? D.x * D.x : B.x)) continue;                               /* Begrenzungskugel: Pixel außerhalb kosten nur diese Prüfung */
       if (A.w < 0.5) {                                                                /* Kegel: weicher Rand Außen- → Innenwinkel, Reichweite, Flächen zum Licht hin heller */
-        float d = sqrt(d2); vec3 l = L / max(d, 1e-4); if (dot(l, B.xyz) < B.w) continue;
-        float cz = dot(l, B.xyz);
-        if (D.z > 0.0) {                                                              /* elliptischer Kegel (z. B. Scheinwerfer): tan(Winkel) waagrecht D.z, senkrecht D.w, weicher Rand D.y */
+        float d = sqrt(d2); vec3 l = L / max(d, 1e-4); float cz = dot(l, B.xyz);
+        if (D.z > 0.0) {                                                              /* elliptischer Kegelstumpf (Scheinwerfer): waagrecht Startbreite B.w + t·tan D.z, senkrecht t·tan D.w, weicher Rand D.y */
+          float t = dot(L, B.xyz); if (t <= 0.0) continue;
           vec3 rx = normalize(cross(B.xyz, vec3(0.0, 1.0, 0.0))), ry = cross(rx, B.xyz);
-          float e = length(vec2(dot(l, rx) / (cz * D.z), dot(l, ry) / (cz * D.w))); k = 1.0 - smoothstep(1.0 - D.y, 1.0, e);
-        } else k = smoothstep(B.w, D.y, cz);
-        k *= (1.0 - smoothstep(D.x * 0.75, D.x, d)) * (0.35 + 0.65 * max(dot(n, -l), 0.0));
+          float yy = dot(L, ry) * sign(ry.y + 1e-6);                                  /* > 0 = über der Achse */
+          float ey = D.w < 0.0 ? max(0.0, -yy) / (t * -D.w) : yy / (t * D.w);          /* D.w < 0: nur die Unterkante begrenzt, nach oben endet der Fleck über die Reichweite */
+          float e = length(vec2(dot(L, rx) / (B.w + t * D.z), ey)); k = 1.0 - smoothstep(1.0 - D.y, 1.0, e);
+        } else { if (cz < B.w) continue; k = smoothstep(B.w, D.y, cz); }
+        k *= (1.0 - smoothstep(D.x * 0.75, D.x, d)) * (A.w > 0.1 ? 0.85 : 0.35 + 0.65 * max(dot(n, -l), 0.0));   /* flat (A.w 0,25): gleichmäßig, auch bei flachem Einfall */
       } else {                                                                        /* Pfütze / Ring senkrecht von oben: waagrechter Abstand, Höhe unter dem Ursprung */
         float dh = length(wp.xz - A.xz), dy = A.y - wp.y;
         float shape = A.w < 1.5 ? 1.0 - smoothstep(D.z * (1.0 - D.y), D.z, dh) : 1.0 - smoothstep(0.0, D.w, abs(dh - D.z));
@@ -80,7 +82,8 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
   const bound = { x: 0, z: 0, r: 0 }
   function boundOf(i) {
     const A = uniforms.uGFa.value[i], B = uniforms.uGFb.value[i], D = uniforms.uGFd.value[i]
-    if (A.w < 0.5) { const R = D.x, k = Math.sqrt(Math.max(0, 1.25 - B.w))
+    if (A.w < 0.5 && D.z > 0) { bound.x = A.x; bound.z = A.z; bound.r = D.x + B.w }   // elliptischer Kegelstumpf: Kugel um den Ursprung (Reichweite + Startbreite)
+    else if (A.w < 0.5) { const R = D.x, k = Math.sqrt(Math.max(0, 1.25 - B.w))
       if (k < 1) { bound.x = A.x + B.x * R * 0.5; bound.z = A.z + B.z * R * 0.5; bound.r = R * Math.max(0.5, k) } else { bound.x = A.x; bound.z = A.z; bound.r = R } }
     else { bound.x = A.x; bound.z = A.z; bound.r = D.z + (A.w > 1.5 ? D.w : 0) }
     return bound
@@ -107,16 +110,16 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
     buildMask(all.length)
   }
   function write(i, p) {
-    const form = typeof p.form === 'number' ? p.form : FORMS[p.form || 'cone'] ?? 0, o = p.origin
+    const form = typeof p.form === 'number' ? p.form : FORMS[p.form || 'cone'] ?? 0, o = p.origin, fw = form === 0 && p.flat ? 0.25 : form   // flat: Kegel ohne Einfallswinkel-Abschwächung
     const c = p.color && p.color.isColor ? p.color : tmpC.set(p.color ?? '#ffffff')
-    uniforms.uGFa.value[i].set(o.x ?? o[0], o.y ?? o[1], o.z ?? o[2], form)
+    uniforms.uGFa.value[i].set(o.x ?? o[0], o.y ?? o[1], o.z ?? o[2], fw)
     uniforms.uGFc.value[i].set(c.r, c.g, c.b, p.intensity ?? 1)
     if (form === 0) {
       const d = p.dir ? (p.dir.isVector3 ? tmpD.copy(p.dir) : tmpD.set(p.dir[0], p.dir[1], p.dir[2])).normalize() : tmpD.set(0, -1, 0)
       const soft = Math.min(0.95, Math.max(0.02, p.soft ?? 0.35))
-      if (p.angleH != null) {   // elliptischer Kegel: angleH waagrecht, angleV senkrecht (rad); b.w = cos(größerer Winkel) für die Vorprüfung
+      if (p.angleH != null) {   // elliptischer Kegelstumpf: angleH waagrecht, angleV senkrecht (rad), startH = waagrechte Halbbreite am Ursprung (b.w)
         const aH = Math.max(1e-3, p.angleH), aV = Math.max(1e-3, p.angleV ?? p.angle ?? aH)
-        uniforms.uGFb.value[i].set(d.x, d.y, d.z, Math.cos(Math.max(aH, aV))); uniforms.uGFd.value[i].set(p.range ?? 60, soft, Math.tan(aH), Math.tan(aV))
+        uniforms.uGFb.value[i].set(d.x, d.y, d.z, Math.max(0, p.startH || 0)); uniforms.uGFd.value[i].set(p.range ?? 60, soft, Math.tan(aH), Math.tan(aV) * (p.lowerOnly ? -1 : 1))
       } else { const outer = p.angle ?? 0.2, inner = outer * (1 - soft)
         uniforms.uGFb.value[i].set(d.x, d.y, d.z, Math.cos(outer)); uniforms.uGFd.value[i].set(p.range ?? 60, Math.cos(inner), 0, 0) }
     } else {
