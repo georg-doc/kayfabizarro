@@ -9444,6 +9444,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-664",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "K15 Cubes mit KFB-Augen in zwei Zuständen (Georg direkt an WSB: alle 15): EyeRig v6 + E2 1,1-fach über den Kit-Augen, untere Kit-Wimper entfernt, Pupille 0,30; Zustand infiziert = schwarzer Augapfel, rote selbstleuchtende Pupille, kleiner Lichthof mit dem Lid; geheilt = normale KFB-Augen; Umschalten zur Laufzeit über den Aufsatz eye-goo v1.1 (attachEyeGoo(THREE, rig).set), Rig unverändert. Alien groß: KFB-Augen auf dem inneren Paar. Abnahme über die Proof-Stage, Karten pending-ws0.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Aufsatz schaltet die Augen um, das Rig bleibt gleich; so funktioniert es später auf jedem v6-Gesicht.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-665",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Idee Black-Fluff-Infektion (Georg, nicht MVP, kein Bau): NPCs und Spieler können befallen werden (schwarze Augen, rote Pupille per eye-goo), Befallene greifen an und stecken an, NPCs wehren ab und heilen, daraus ein Infektionsgleichgewicht als NPC-Aktivität; gemeinsame Plage im Goo-Narrativ mit Hunky, Dory und Men in Black, satirisch zu Biopolitik. Offen: was der Spieler befallen erlebt. Notiz replies/BACKLOG_BLACKFLUFF_INFECTION_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gute Spielidee, die vorhandene Bausteine nutzt; erst nach dem MVP und mit Georgs Entscheid zum Spielererlebnis.",
+   "applies": "nach MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9531,7 +9561,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1120",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1123",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

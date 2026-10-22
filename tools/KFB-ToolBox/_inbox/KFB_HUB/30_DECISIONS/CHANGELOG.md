@@ -1,6 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-665 Backlog-Idee Black-Fluff-Infektion (NPC-Gleichgewicht, Spieler offen), nicht MVP.
+- V-664 K15 Cubes mit KFB-Augen, Zustände infiziert/geheilt über eye-goo v1.1.
+- Hub: Briefings b169-b179 (3 Suno-Tests zum Kopieren, Spec R2, FB_CANON an WSA u.a.), Fragen q161-q164 zur Spec R2.
 - V-663 Chatterbox Spec R2 (8 Genome + KFB-Schichten), Recherche R1-R4 und Master-Konzept als Anhang.
 - V-662 Antworten WS1 §140: kfb-clay-Profil kit-figure (stärkeres Relief), Racer behalten Identitätsfarben als Akzent, Aktionsleisten-Props = WSB N32; Knet-Stufen nimmt Georg im Spiel ab.
 - WSB K14 r3 (düster, Fensterlicht-Verlauf, Goo a/b/c, Zerstörung ohne Fluff) fertig, privat, Hub q159.
