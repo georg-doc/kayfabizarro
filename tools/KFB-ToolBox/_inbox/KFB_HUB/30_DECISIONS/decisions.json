@@ -9414,6 +9414,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-662",
+   "date": "2026-10-22",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Antworten WS1 §140 (Knet-Stufen hinter Schaltern): (1) kfb-clay bekommt ein Profil kit-figure mit stärkerem Relief bzw. Normal-Anteil, abgestimmt auf die Bildschirmgröße aus der Spielkamera (Kanon Gebiet 8: ein Modul, Profil je Klasse), kein zweites Modul; A/B-Bild Spielkamera. (2) Umtönen der Racer auf Biom-Rollen behält je Fahrzeug 1-2 Identitätsfarben als Akzentrolle (Ödland-Käfer Gelb und Blau), nur Grund- und Nebenfarben werden umgetönt. (3) Knet-Props für die Aktionsleiste kommen als WSB N32. Die drei Knet-Stufen (hud=clay, vclay, kitclay) nimmt Georg im Spiel ab (Abnahme-Menü).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Knete muss aus der Spielkamera lesbar sein, Fahrzeuge behalten ihre Erkennungsfarben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9501,7 +9516,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1116",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1119",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

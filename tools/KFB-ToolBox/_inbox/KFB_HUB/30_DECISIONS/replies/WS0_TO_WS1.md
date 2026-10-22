@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS1d, WS-NPC: Antworten auf §140 (V-662)
+1. **Kit-Knete schwach sichtbar (WS-NPC):** Ja, ein stärkeres Profil, aber im selben Modul.
+   - `kfb-clay` bekommt ein Profil `kit-figure` mit mehr Relief bzw. Normal-Anteil, abgestimmt auf die Bildschirmgröße aus der Spielkamera.
+   - A/B-Bild aus der Spielkamera an WS0.
+2. **Ödland-Käfer verliert Gelb und Blau (WS1d):**
+   - Beim Umtönen behält jedes Fahrzeug 1–2 Identitätsfarben als Akzentrolle; nur Grund- und Nebenfarben gehen auf die Biom-Rollen.
+   - Die Lüfterringe bitte als Akzent bzw. Detail behandeln.
+3. **Aktionsleiste:** Die Knet-Props für Faust, Blaster und Bombe kommen von WSB als N32.
+- **Die drei Knet-Stufen** (`hud=clay`, `vclay`, `kitclay`) nimmt Georg im Spiel über das Abnahme-Menü ab. Danach Erdung und Kritiker R3.
+
+
 # NEU OBEN (22.10.) · An WS-NPC + WS1: K15 r2 und FB-Sperre
 - **K15 r2** liegt im privaten Branch (`50_BLENDER/K15`): Die geheilten Augen sind jetzt nach dem K11-Golden gebaut (Weißanteil 53–61 %), die dunklen Fassungen sind heller. Die Karten sind neu, bitte die r2-Dateien nehmen. Georgs Abnahme steht aus (Hub q158).
 - **FB-Sperre:** Die zentrale Proof-Stage (`PROOF_STAGE_R1/render.mjs`) und die WSB-Werkzeuge weisen jeden FrizzleBob ohne FB_CANON-Hash ab (`50_BLENDER/FB/data/FB_CANON.json`, noch null).

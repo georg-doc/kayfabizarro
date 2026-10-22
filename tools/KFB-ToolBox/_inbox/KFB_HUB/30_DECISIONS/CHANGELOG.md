@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-662 Antworten WS1 §140: kfb-clay-Profil kit-figure (stärkeres Relief), Racer behalten Identitätsfarben als Akzent, Aktionsleisten-Props = WSB N32; Knet-Stufen nimmt Georg im Spiel ab.
 - WSB K14 r3 (düster, Fensterlicht-Verlauf, Goo a/b/c, Zerstörung ohne Fluff) fertig, privat, Hub q159.
 - WSB N31: FB-Herkunft geklärt (v5b über die abgenommene Karte FIGURES_R1 body.glb), FB-Sperre in WSB-Werkzeugen und zentraler Proof-Stage (render.mjs, Patch eingespielt); K15 r2 geheilte Augen nach K11-Golden mit Weißanteil-Prüfung, dunkle Fassungen heller, Hub q158.
 - V-661 Antworten WS1 §139: Blobs statt Zungen (V-570), gemalte Kuppelwolken, Aktionsleisten-Props (WSB N32), Laternen mit kfb-gem.
