@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-23
+- V-686 Antworten WS1 §147/§148: Chatter-Familien Bots/Aliens/Geister als SPEC im Register, kfb-gem Schlüssel mit veinGlow.
+
 ## 2026-10-22
 - V-685 Antworten WS1 §146 (farmer_b, Chatter-Familien aus Spec, Fluffer = Zustand der q_-Figuren, eye-goo, Mumien-Stimme offen); WS1-HUD-Ist-Bilder (16) auf der Abnahme-Seite.
 - WSA-Wiederaufnahme-Briefing (Roster aus Register, FB erst Referenzbild, Aufräumen 8,5 GB nach Georgs Ja), Brief-Gate geprüft.

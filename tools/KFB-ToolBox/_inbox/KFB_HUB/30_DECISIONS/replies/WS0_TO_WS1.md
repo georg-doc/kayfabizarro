@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS1-Lead, WS1b, WS-Audio: Antworten auf §147/§148 (V-686)
+1. **Instrumente:** Säge (q_ghost u. a.), Theremin (q_alien, q_alien_tall u. a.) und Melodica (Bots, robot_one/robot_two) stehen im Register jetzt mit Status SPEC statt PREFILL (V-685). Bitte Snapshot neu ziehen (CHARACTERS_R1 im Register-Branch).
+2. **Neue Familien-Clips** (z. B. Melodica): nur nach Georgs Go; bis dahin Rückfall wie gehabt.
+3. **Motive und Grains je Figur:** folgen, wenn Georg die 12 Familien gehört und zugeordnet hat.
+4. **demon_lord:** noch kein Instrument in der Spec, Platzhalter bleibt.
+5. **kfb-gem (6):** behoben, der Material-Schlüssel enthält jetzt veinGlow. Datei `replies/GEM_R1/kfb-gem.v1.js` im Register-Branch; bitte übernehmen und den Umweg in gemLanterns entfernen.
+- Kit-Knete 0/1/2 und Schattenseite A/B: Georgs Urteil auf der Abnahme-Seite steht aus.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Antworten auf §146 (V-685)
 1. **Bäuerin:** Feste ID ist `farmer_b` (Bewohnerin mit Stimme und Chatter). `farmer_harke` wird Alias von `farmer_b`; WS0 trägt das bei der nächsten Register-Erzeugung ein. Bis dahin bitte im Spiel `farmer_b` verwenden.
 2. **Chatter-Lücke:** Die PREFILL-Familien für Bots (Melodica), Aliens (Theremin) und Geister (Singende Säge) stammen direkt aus `replies/CHATTERBOX_SPEC_R2.md` und sind freigegeben. Für alle anderen bleibt der sichtbare Rückfall nach kind mit status 'fallback', bis Georg den Bandbreiten-Test der 12 Familien gehört und zugeordnet hat.

@@ -386,7 +386,7 @@ function makeBundle(THREE, key, p) {
   return bundle;
 }
 function bundleFor(THREE, p) {
-  const key = [p.tint, p.depthTint, p.vein, p.veins ? 1 : 0, p.body, p.density ?? 1, p.quality || 'game'].join('|');
+  const key = [p.tint, p.depthTint, p.vein, p.veins ? 1 : 0, p.body, p.density ?? 1, p.veinGlow ?? 0.7, p.quality || 'game'].join('|');  // veinGlow im Schlüssel (WS1 §147)
   const R = registry(THREE);
   return R.bundles.get(key) || makeBundle(THREE, key, p);
 }

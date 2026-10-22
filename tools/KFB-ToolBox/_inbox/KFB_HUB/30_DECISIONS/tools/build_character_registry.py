@@ -1078,7 +1078,7 @@ def assign_chatter(who, instrument, family, style, src):
         targets = [cid]
     elif who in FAMILY_RX:
         rx = FAMILY_RX[who]
-        tag = "PREFILL"
+        tag = "SPEC" if who in ("Bots", "Aliens", "Geister") else "PREFILL"  # V-685: Familien aus der Spec R2 freigegeben
         for c, r in REG.chars.items():
             hay = " ".join([c] + r["labels"])
             if rx.search(hay):

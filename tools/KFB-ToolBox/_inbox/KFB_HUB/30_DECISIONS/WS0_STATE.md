@@ -1,5 +1,5 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
-Stand 22.10.2026, Register bis V-685. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
+Stand 22.10.2026, Register bis V-686. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 1. **Bereich bestimmen:** HUD, Figuren, Licht, Welt, Fahren, Kampf, Audio oder Spiel (siehe `tools/brief_domains.json`).

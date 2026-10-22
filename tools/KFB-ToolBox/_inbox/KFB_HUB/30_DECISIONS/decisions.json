@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-22",
+ "updated": "2026-10-23",
  "entries": [
   {
    "id": "V-001",
@@ -9774,6 +9774,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-686",
+   "date": "2026-10-23",
+   "area": "Audio",
+   "verdict": "ANSWER",
+   "text": "Antworten WS1 §147/§148: Chatter-Familien Bots (Melodica), Aliens (Theremin), Geister (Singende Säge) stehen im Register jetzt als SPEC statt PREFILL (q_ghost, q_alien, q_alien_tall u. a.); neue Melodica-Clips für Bots nur nach Georgs Go; Motive und Grains je Figur folgen nach Georgs Familien-Zuordnung; demon_lord hat noch kein Instrument, Platzhalter bleibt. kfb-gem.v1: Material-Schlüssel enthält jetzt veinGlow (GEM_R1 und Vendor-Kopien), WS1 übernimmt die Datei.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Freigabe nach V-685 im Register sichtbar machen; Gem-Fehler an der Quelle beheben statt umgehen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9861,7 +9876,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1149",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1152",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
