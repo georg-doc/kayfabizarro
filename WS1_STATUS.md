@@ -3,6 +3,21 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 144 · 22.10. · Georg: Racer behalten die Originalanmutung (bewusster Stilbruch) · Vorab-Hinweis HUD-Micro-Interactions
+
+- **Racer (Georg an den Lead, 22.10., nach Kritiker R3):**
+  - Möglichst die Originalanmutung erhalten. Die Racer sehen an sich sehr cool aus, bewusste Stilbrüche sind gewollt.
+  - Originaltexturen behalten, auch mit Graffiti und unsauberer Meshy-UV.
+  - Was wir selbst aufsetzen (Flamme, Rotor, Effekte), bekommt Knet-Look oder wird etwas matter. Keine Claymation-Umsetzung der Karosserie.
+  - Zu prüfen bleibt, ob das Gesamtbild über alle Ansichten und Zoomstufen schlüssig ist.
+  - **Bitte an WS0:** ins Register übernehmen; das präzisiert V-654 C5 für Fahrzeuge (Ausnahme vom „eine Machart“-Kanon, Gebiet 8/15). Der Kritiker soll die Racer-Textur künftig nicht mehr als Mangel werten.
+  - Umsetzung bei WS1d: Karosserie im Original, optional leichte Mattierung; Knet-Zusätze; Kohärenz-Bildsatz.
+- **HUD (Vorab-Hinweis Georg):**
+  - Die 3D-Props bleiben ohne sichtbare Buttonflächen.
+  - Es folgt ein Update mit Hover-, Active- und Click-States und cartoonigen Prop-Animationen als Micro-Interactions bzw. Micro-Feedback (Action-Buttons und übrige Buttons). Die Spezifikation kommt von Georg/WS0.
+  - WS1e bereitet nur Zustände und Animations-Haken vor, ohne sichtbare Festlegung.
+- **Die übrigen Konzeptfragen** (Terrain-Form, Wolken, Baum-Formfamilie) beantwortet Georg zusammen mit WS0.
+
 ## 143 · 22.10. · Kritiker MVP R1 Runde 3: REWORK 4,2 · Fundsachen schweben (Georg) im MVP
 
 - **ws1/mvp-r1 @1f11f6e.** Privat `game/mvp-r1` @3b90acf, öffentlicher Spiegel `ws1/mvp-r1` @04c2314.
