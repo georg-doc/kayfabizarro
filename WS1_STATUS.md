@@ -3,6 +3,29 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 137 · 22.10. · Nach Georgs Pause: volle Reihe, fps nach Leistung R1, Nachthimmel, Heldenfarbe als Einstellung, NPC-Culling
+
+- **ws1/mvp-r1 @384fd89.** Privat `game/mvp-r1` @f8e88ae, öffentlicher Spiegel `ws1/mvp-r1` @e79a0b0.
+- **fps (test/perfMvp.mjs, 2880×1800, Slot, Rechner ruhig), vorher → nachher:**
+  - zu Fuß Schnell 24 → **60**, Standard 34 → **60**
+  - Bewohner+Disco Schnell 39 → **60**, Standard 29 → 50
+  - Fahrt 59–60
+  - Eine zweite Messung lief, während Georgs Chrome nebenher GPU-Last machte (−5 bis −15 fps bei gleichen Dreiecken). Sie ist nicht vergleichbar.
+- **Neu im MVP:**
+  - **Nachthimmel terrain3:** Die Kuppel folgt jetzt der Tageszeit; vorher war bei Nachtlicht immer der Taghimmel zu sehen.
+  - **WS1d Heldenfarbe als Einstellung** (Georg: „für alle per default die Originalfarbe, Hero als Setting“): Startseite → „Fahrzeugfarbe“; der Ödland-Käfer ist wieder rostig-orange.
+  - **WS-NPC Culling** für Patrouille, Band und Bewohner (Disco-Muster): main 195 → 92 Calls in der NPC-Szene außer Bild.
+  - **Tests gehärtet:**
+    - combat: Fluffer-Schuss bis zu 3 Versuche.
+    - c2: Pupille wird nur noch an der Figur gemessen.
+- **Reihe:** Bis auf die folgenden Punkte alles PASS (u. a. c3/c3b/c3s/r1a/m1-ground/probe*, npc-a/squad/patrol/aggro/band/gift/bots, combat/start/waterDrive).
+  - **c2:** Am Lidrand bleiben 10–25 px Pupille unter ±40° sichtbar, wechselnd bei Dory und Hunky, auch bei isolierter Figur. Wackelig, Eye-Rig E2 → Backlog (WSB/ToolBox). Kein MVP-Blocker.
+  - **disco C_feetAboveGround:** Der Dämon taucht in `kfb_dance_hip_hop_a` bis 2,5 cm ein (Grenze 2 cm). Ob es auffällt, hängt vom gemessenen Bild ab → Backlog (Clip oder floorLift je Clip). Die Grenze bleibt unverändert.
+  - **c3g:** fiel nur unter Last, allein PASS.
+  - **vehicles-r1 data:** Echte Regression nach dem Hero-Umbau. Gecachte Racer laufen erneut durch Look und Vorwärmen (bis 4,5 s, Bilder bis 1 s). Liegt bei WS1d.
+- **Entscheid offen bei Georg:**
+  - Schatten weich (VSM, wie jetzt) oder PCF (−256 k Dreiecke/Bild, FB-Schatten etwas schärfer). Bildvergleich liegt ihm vor; Schalter `shadow=pcf` liegt vorbereitet im Lead-Worktree.
+
 ## 136 · 22.10. · Nachtrag: Wasser R1 und E3 Geschenk-Trupp sind im MVP · Frage an Georg offen
 
 - **ws1/mvp-r1 @89753e7.** Privat `game/mvp-r1` @3c1f8f4, öffentlicher Spiegel `ws1/mvp-r1` @5e6034f.
