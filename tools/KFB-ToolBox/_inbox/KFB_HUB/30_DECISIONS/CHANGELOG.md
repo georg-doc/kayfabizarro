@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- Chatterbox-Konzept R1.1: Dimensionen und Kombinatorik (Musikstil als Gruppen-Ebene, Tempo-Charakter, Dialekt aus Textur-Varianten, Beziehung als Harmonie, Identität gegen Zustand).
 - V-656 Knet-HUD vorgezogen (WS1 baut N29-Props jetzt ein); Konzeptpapier CHATTERBOX_VOICE_KONZEPT_R1 zur Diskussion mit Georg.
 - V-655 Entwicklertexte aus dem Spielbild, nur über Settings bzw. Debug-Schalter.
 - V-654 MVP-Kritiker REWORK: C3/C5/C6 nach Kanon (70/20/10, ein Knet-Modul, Erdungs-Grammatik) anwenden, schnelle Korrekturen sofort, C1 bei Georg; WS1 informiert.

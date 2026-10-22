@@ -1,4 +1,5 @@
-# Chatterbox Voice · Konzeptpapier R1 · 2026-10-22 · WS0
+# Chatterbox Voice · Konzeptpapier R1.1 · 2026-10-22 · WS0
+> **R1.1:** Neu ist §14 „Dimensionen und Kombinatorik“ (Musikstil, Tempo, Dialekt aus Textur-Varianten, Beziehung als Harmonie und weitere Ebenen) nach Georgs Ideen vom 22.10. §13 ist entsprechend angepasst.
 **Status:** Konzept zur Diskussion mit Georg. Noch keine Erzeugung, keine Credits.
 **Bezüge:**
 - V-486, V-492, V-500: Fluff-o-lect als Melodie-Sprache, Dekodieren in drei Stufen;
@@ -138,7 +139,88 @@ Ein Ereignis-Strom treibt alles gleichzeitig:
 - **WS0** schreibt Profile, Lexikon-Regel und Bausteinbank.
 - **Writers Room** liefert die englischen Zeilen.
 
-## 13 · Erzeugung (erst nach Freigabe dieses Papiers)
+## 13 · Erzeugung (erst nach Freigabe dieses Papiers; Details in §14.6)
 1. **Bandbreiten-Test** der in §6 freigegebenen Familien: je Familie die 6 Stimmungen und 4 Calls, je 1 Variante. Prompts ohne Leise-Wörter. Ergebnis ist eine Matrix: Welche Familie trägt welche Emotion?
 2. **Ausbau der tragenden Familien:** zweite Varianten und Grundtöne.
 3. **Budget gesamt:** innerhalb von 10.000 Credits (Georg 22.10.).
+
+
+## 14 · Dimensionen und Kombinatorik (R1.1)
+**Grundgedanke:** Wenige Dinge werden erzeugt, sehr vieles ergibt sich aus Regeln. Jede Dimension multipliziert die Vielfalt, ohne neue Aufnahmen.
+
+Die Dimensionen teilen sich in **Identität** (fest je Figur, macht sie wiedererkennbar) und **Zustand** (wechselt im Spiel, macht sie lebendig).
+
+### 14.1 Übersicht
+| # | Dimension | Art | Steuert | Erzeugt oder Regel? |
+|---|---|---|---|---|
+| 1 | Instrument-Familie | Identität | Klangfarbe | **erzeugt** (Bausteinbank) |
+| 2 | Register | Identität | Größe bzw. Gewicht, Ensemble-Platz | Regel (Tonhöhe, Formant) |
+| 3 | **Musikstil** | Identität (Gruppe) | Rhythmusmuster, Swing, bevorzugte Skalen, Verzierungs-Vokabular, Ruf-und-Antwort-Form | Regel, dazu wenige stiltypische Spielweisen |
+| 4 | **Tempo-Charakter** | Identität | hektisch ↔ gechillt: Grundtempo, Rubato, Pausenlänge | Regel |
+| 5 | Artikulations-Gewohnheit | Identität | legato, staccato, viel Glissando | Regel bzw. Baustein-Auswahl |
+| 6 | Dynamik-Charakter | Identität | Flüsterer ↔ Polterer (Grundlautheit, Akzentstärke) | Regel; die Mischung macht die Audio-Slice |
+| 7 | **Dialekt** | Identität (Variante) | kleine, feste Abweichungen: Lieblingsintervall, Ornament-Variante, Intonation | Regel aus Seed bzw. Textur-Variante |
+| 8 | Alter bzw. Zustand der Stimme | Identität | jung (klar, schnell) ↔ alt (Vibrato, Wackeln) | Regel |
+| 9 | Emotion | Zustand | Skala, Kontur, Rhythmus (§3) | Regel, dazu die 10 emotionalen Gesten je Familie (erzeugt) |
+| 10 | **Beziehung** | Zustand (Paar bzw. Gruppe) | Harmonie zwischen zwei Stimmen: befreundet in Terzen bzw. Sexten, uneins in Sekunden bzw. Tritonus, verliebt im Einklang, Rivalen im Kanon | Regel |
+| 11 | Story-Mode | Zustand (Welt) | Grundton und Modus (§4) | Regel |
+| 12 | Situation | Zustand | Begrüßung, Gerücht, Handel, Streit, Lied: Form und Länge | Regel |
+| 13 | Raum | Zustand | offen, Wald, Tal mit Echo | Audio-Slice (Hall) |
+
+### 14.2 Musikstil, die Gruppen-Ebene
+- **Ein Stil verbindet Figuren mit verschiedenen Instrumenten:** gleiche Rhythmus-Sprache, gleiche Lieblingsskalen, gleiche Verzierungen.
+- **Gruppen gleichen Stils** kommunizieren auf derselben Ebene: Sie antworten im Stil, harmonieren und können ins Musizieren übergehen. Beispiele sind die Ork-Band, die Disco-Tänzer oder ein Marktplatz.
+- **Figuren verschiedenen Stils** klingen hörbar fremd zueinander. Das ist ein Mittel für Fraktionen und Kulturen.
+- **Kandidaten** (je Stil: Rhythmus · Skala · Verzierung):
+  - **Swing bzw. Jazz:** Triolen-Swing · Blues-Töne · Fall bzw. Shake;
+  - **Polka bzw. Volksmusik:** Zweier, Hüpfer · Dur · Vorschlag;
+  - **Marsch:** gerade Viertel · Dur bzw. Quarten · Akzent;
+  - **Barock:** Achtel-Läufe · Dur bzw. Moll · Triller;
+  - **Blues:** Shuffle · Blues-Skala · Glissando;
+  - **Funk bzw. Disco:** Sechzehntel, synkopiert · dorisch · Ghost-Note;
+  - **Bossa bzw. Lounge:** verschleppt · Dur mit großen Septimen · weich;
+  - **Klezmer:** freie Phrase · phrygisch-dominant · Krechz bzw. Schluchzer;
+  - **Western bzw. Country:** Galopp · Dur-Pentatonik · Twang;
+  - **Surf:** treibend · Moll-Pentatonik · Hall-Twang;
+  - **Space bzw. Ambient:** frei schwebend · Ganzton · Glissando;
+  - **Gospel bzw. Chor:** Ruf und Antwort · Dur mit Blue Notes · Melisma.
+- **Zuordnung** zu Inseln bzw. Biomen als regionaler Grundton (Vorschlag):
+  - O-Town = Funk bzw. Disco;
+  - Bikini-Bucht = Surf;
+  - Canyon = Western;
+  - Dorf bzw. Farm = Polka;
+  - Aliens = Space;
+  - Utopia-Bürokratie = Marsch.
+
+### 14.3 Tempo, eine eigene Achse
+- **Tempo-Charakter (Identität):** hektisch (schnell, kurze Pausen, Rubato nach vorn) ↔ gechillt (langsam, lange Pausen, Rubato nach hinten).
+- **Emotion verändert das Tempo zusätzlich:** Ein gechillter NPC wird bei Aggression schneller, bleibt aber langsamer als ein hektischer.
+- **Ensemble:** Alle bleiben auf der gemeinsamen Musik-Uhr. Hektische Figuren füllen mehr Unterteilungen, gechillte lassen Schläge aus. So bleibt es zusammen, wirkt aber verschieden.
+
+### 14.4 Dialekt aus Textur-Varianten
+- **Figuren mit mehreren Ausprägungen** (Farmer A/B, Fluff-Farben, Helm ja oder nein, Biom-Variante) sprechen denselben **Grund-Dialekt**, mit kleinen festen Abweichungen je Variante:
+  - Lieblingsintervall;
+  - Ornament-Variante;
+  - Intonation etwas hoch bzw. tief;
+  - eine Verzierungs-Gewohnheit.
+- **Abgeleitet** aus Varianten-ID bzw. Seed, also ohne Pflege.
+- **Ergebnis:** Familienähnlichkeit hörbar, Individuen unterscheidbar. Regionale Dialekte entstehen über den Insel-Stil (14.2).
+
+### 14.5 Was das für die Kombinatorik heißt
+- **Rechenbeispiel:** 16 Familien × 4 Register × 12 Stile × 3 Tempo-Charaktere × Dialekt-Varianten ergibt mehrere tausend unterscheidbare Stimmen. Erzeugt werden muss dafür nur die Bausteinbank der Familien (§13).
+- **Zustände** (Emotion, Beziehung, Story-Mode, Situation) kommen zur Laufzeit dazu. Dieselbe Figur klingt froh im Comic-Mode anders als traurig im Tragic-Mode, bleibt aber erkennbar.
+
+### 14.6 Erzeugt wird nur, was Klangfarbe ist
+| Erzeugt (Credits) | Regel (keine Credits) |
+|---|---|
+| Familien-Bausteine: Grundtöne, Spielweisen, 6 Stimmungen und 4 Calls als Gesten | Register, Stil, Tempo, Dialekt, Alter, Beziehung, Story-Mode, Situation, Raum |
+| stiltypische Spielweisen, nur wo eine Familie sie nicht schon kann (z. B. Fall, Shake, Twang, Krechz) | Musik-Uhr, Tonarten, Rhythmusmuster |
+| Signatur-Laute der Hauptbesetzung | Visem-Ereignisse, Mund, Augen, Glyphen |
+
+### 14.7 Profil-Schema, erweitert
+`voice: { family, register, style, tempo, articulation, dynamics, dialect: { base, variantSeed }, age, baseEmotion, ornament, seed }` sowie zur Laufzeit `state: { emotion, relationTo[], storyMode, situation }`.
+
+### 14.8 Fragen an Georg
+1. Stile: welche aus 14.2, und die Zuordnung zu Inseln ja oder nein?
+2. Beziehung als Harmonie (Freunde in Terzen, Rivalen im Tritonus): ja?
+3. Weitere Ebenen, die dir einfallen, z. B. Beruf bzw. Rolle oder Tageszeit (morgens müde)?
