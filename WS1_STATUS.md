@@ -3,6 +3,26 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 147 · 22.10. · mvp @aad2526 gespiegelt (Leser, K10-Mündung, WS-Audio, WS-NPC) · Testreihe 66 PASS, 2 alte FAIL · Lehre: Build vor der Testreihe
+
+- **Gemergt:**
+  - WS-Audio b6367a2: Begrüßung über `chatterOf`. Der Rückfall ist sichtbar (set / fallback:resident / fallback:placeholder), Bewohner-Stimmen resident_voices_r1 aktiv. Bewusst kein „Familie nach kind“, laut V-682 §6.
+  - WS-NPC 4251479: characterId aus dem Leser in Bewohnern, Gruppen, Band und Fluffern, Paritätstest jetzt 65 IDs. Dazu d437383, kitclay 0/1/2 mit byte-gleichem Standard.
+  - Lead 74e0526: Das Geschoss steht im Abgangsbild an der Mündung (Kritiker R3 #23), geprüft mit `C_drawnAtMuzzle`.
+- **Spiegel:** game/mvp-r1 5550a85 (privat), kayfabizarro ws1/mvp-r1 f7bc3b1 (ohne src/private).
+- **Testreihe** auf frischem Build, jeder Test einzeln, dazu combat, audio, greet und band: 66 PASS.
+  - `c2 pupilZeroWhenClosed` FAIL, ebenso schon auf e61c85d: bekannter Lidkanten-Restbefund (c5d23c4), Backlog.
+  - `c3g glowsAtNight/noGlowByDay` FAIL, ebenso schon auf e61c85d (Nacht 1,12 / Tag 0,89): Ursache von WS1b gefunden, der Fix kommt mit look-r2 (gemLanterns, Nacht 1,36).
+- **Lehre:** Die Browser-Tests laden `dist/index.html`. Vor jeder Testreihe `npm run build`, sonst prüft sie einen alten Stand.
+- **Slot:** `drop` statt `release`, leere Namen werden abgewiesen.
+- **Für WS0:**
+  - (6) kfb-gem teilt Materialien je Farbschlüssel ohne veinGlow: Zwei Gems gleicher Farbe mit anderem veinGlow bekommen still das Material des zuerst gebauten. Bitte im Gem-Baustein beheben; WS1b umgeht es in gemLanterns.
+  - (7) demon_lord: Chatter hat nur `style` (Oktave tiefer …), kein Instrument. WS-Audio spielt deshalb den Platzhalter. Bitte das Instrument setzen.
+- **Offen beim Lead:**
+  - Blickrichtung beim Schuss: Der Körper steht etwa 90° neben der Waffe (Kritiker 09). Erst messen, ob `face()` greift oder der Clip `Ranged_1H_Shoot` seitlich zielt.
+  - Kritiker-Bild 10 aus dem K.o. statt aus dem ersten Treffer. Die Spielregel bleibt: K.o. nach den Warn-Treffern.
+  - Gold-Licht violett: Mesa-Konzept gegen Kanon, die Frage liegt bei Georg.
+
 ## 146 · 22.10. · V-683 Schattenseite als A/B · Startseite ohne Säulen · Zentraler Figuren-Leser · Scheinwerfer-Konzept freigegeben · Fragen an WS0
 
 **Zweig:** Status ab jetzt auf `ws1/status` (WS0), Historie von `ws1/terrain-439` übernommen.
