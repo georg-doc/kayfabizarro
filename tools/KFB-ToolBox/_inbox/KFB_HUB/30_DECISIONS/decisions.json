@@ -9309,6 +9309,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-655",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Entwicklertexte (Kritiker C1, Georg 22.10.): raus aus dem Spielbild; sichtbar nur über die Settings (Zahnrad, Schalter Entwickler-Infos) bzw. Debug-Schalter, kein neues Interface-Element.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein fremder Spieler sieht das Spiel, nicht die Werkbank; die Settings haben schon einen Platz dafür.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9396,7 +9411,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1108",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1109",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

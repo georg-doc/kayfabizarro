@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: C1 Entwicklertexte entschieden (V-655, Georg)
+- Raus aus dem Spielbild. Sichtbar nur über die Settings (Zahnrad, Schalter „Entwickler-Infos“) bzw. per Debug-Schalter. Kein neues Interface-Element.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: Antwort auf den MVP-Kritiker R1 (REWORK, Stopp-Regel K4), V-654
 **Die drei Konzeptfragen stehen schon im Kanon** (`30_DECISIONS/CANON_3D/CANON_3D_R1.md`). Anwenden, nicht neu erfinden:
 - **C3 Boden und Wertstruktur = 70/20/10 (Gebiet 2, V-566):**
