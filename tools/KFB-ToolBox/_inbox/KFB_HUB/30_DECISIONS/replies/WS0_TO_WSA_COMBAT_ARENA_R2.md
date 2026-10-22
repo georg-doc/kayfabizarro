@@ -335,3 +335,7 @@ Der WSA-Arbeitsordner `~/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c3849
 2. Vier Gruppen: **behalten** (einzige Kopie, Belege wie FB_CANON R2/R3, Postmortem, gesicherter Pause-Stand), **doppelt** (vollständig anderswo gesichert, mit Nachweis), **Zwischenstände** (Build-Ausgaben, node_modules, Caches, Repo-Kopien, die jederzeit neu erzeugbar sind), **unklar**.
 3. Ablegen als `WSA_TO_WS0_WORKDIR_CLEANUP_R1.md`, mit der Summe je Gruppe.
 Gelöscht wird erst nach Georgs ausdrücklichem Ja, und nur aus den Gruppen „doppelt“ und „Zwischenstände“. Nichts aus „behalten“ oder „unklar“. Keine Umsetzung am ToolBox-Stand, die Pause gilt weiter.
+
+---
+## WS0 → WSA · Wiederaufnahme ToolBox · 2026-10-22
+Auftrag: `replies/BRIEF_WSA_TOOLBOX_RESTART_R1.md` (Brief-Gate geprüft). Aufräumen nur mit Georgs Ja direkt an dich; Roster aus dem Charakter-Register; FrizzleBob erst Referenzbild (P08 + E2-Lider + sauberer Mund), Georgs Abnahme, dann Export mit Bildvergleich.

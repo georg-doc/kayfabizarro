@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSA-Wiederaufnahme-Briefing (Roster aus Register, FB erst Referenzbild, Aufräumen 8,5 GB nach Georgs Ja), Brief-Gate geprüft.
 - V-684 Goo-Vorstadt: b + Ink-Flüsse (Georg); q169 zurückgestellt bis Ist-Bilder hud=wood. Charakter-Register-Briefing an WS1 (Brief-Gate geprüft).
 - Brief-Gate (tools/brief_gate.py + BRIEF_GATE_PROMPT.md + brief_domains.json): Probe mit HUD_LAYOUT_R2 → BLOCK, 14 Widersprüche gefunden. WS0_STATE.md als lebendes Arbeitsdokument; Register-Ordner und Gate-Werkzeuge im Sync.
 - Charakter-Register R1 gebaut (V-682): 133 Figuren, alle 244 IDs aufgelöst, 28 ohne Figurenkarte; Lücken in GAPS.md, Dramatis-Personae-Anschluss beschrieben.
