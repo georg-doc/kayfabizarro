@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB K14 Goo-Vorstadt Look-Test fertig, Hub q155; WSB-Reihe danach: N30, K16, K15, N15, J-7, J-8.
 - WS1 §137 gelesen (zu Fuß 60 fps, Heldenfarbe als Einstellung, NPC-Culling); WSB Nachtrag 30: E2-Lidrand und floorLift Disco-Dämon.
 - WSB N27 fertig (große Schilde außen, große Orc-Axt und FrostGolem im Griffmodell, Knight Idle/Hit ohne Schild), privat; Hub q154 K13 nach Korrektur.
 - WSB N26 MVP-Jobs fertig (J-1 Oberkörper-Schuss FB, J-2 FB-Halterungen, J-3 floorLift, J-4 Augen Ritter/Dämon, J-5 Übergang), privat; WS1 informiert; WSA: Grund kit-axis-mismatch zulassen.
