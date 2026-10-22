@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { gzipSync, gunzipSync } from 'node:zlib';
 import { readFile } from 'node:fs/promises';
-import { publicPack, rewriteMainUrls, projectRecord, restrictedCopies } from './public-delivery.mjs';
+import { publicPack, rewriteMainUrls, rewriteBundledUrls, projectRecord, restrictedCopies } from './public-delivery.mjs';
 const policy = JSON.parse(await readFile(new URL('../public-delivery/policy.json', import.meta.url)));
 const root = policy.allowedPacks[0].root;
 
@@ -52,4 +53,13 @@ test('renaming or copying a purchased model outside the asset root cannot publis
   assert.ok(denied.includes('travel/assets/innocent-name.glb'));
   assert.ok(denied.includes('tools/actor/FB_TEMPLATE_LOOK_v5.glb'));
   assert.ok(!denied.includes(root + '/free.glb'));
+});
+test('gzip-embedded reader modules migrate without changing unrelated bundle bytes', () => {
+  const manifest = { corpus: { mime: 'text/javascript', compressed: true, data: gzipSync(Buffer.from('const url="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json";')).toString('base64') }, image: { mime: 'image/png', compressed: false, data: 'unchanged-image-bytes' } };
+  const html = '<script type="__bundler/manifest">' + JSON.stringify(manifest) + '</script>';
+  const result = rewriteBundledUrls(html, policy.baseUrl);
+  const j = JSON.parse(result.match(/manifest">([\s\S]*)<\/script>/)[1]);
+  assert.ok(gunzipSync(Buffer.from(j.corpus.data, 'base64')).toString().includes(policy.baseUrl + '/media/kfb/index.json'));
+  assert.deepEqual(j.image, manifest.image);
+  assert.equal(rewriteBundledUrls(result, policy.baseUrl), result);
 });

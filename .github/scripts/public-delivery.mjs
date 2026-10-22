@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { readFile, writeFile, readdir, mkdir, copyFile, lstat } from 'node:fs/promises';
 import path from 'node:path';
+import { gzipSync, gunzipSync } from 'node:zlib';
 
 const mediaExtensions = new Set(['.glb', '.gltf', '.bin', '.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg', '.wav', '.ogg', '.mp3']);
 const textExtensions = new Set(['.html', '.js', '.mjs', '.json', '.jsonl', '.css']);
@@ -47,6 +48,25 @@ export function rewriteMainUrls(text, baseUrl, pinnedRefs = []) {
     }
   }
   return text;
+}
+
+export function rewriteBundledUrls(html, baseUrl, pinnedRefs = []) {
+  // Reader exports carry executable modules inside gzip+base64, beyond grep.
+  return html.replace(/(<script type="__bundler\/manifest">\s*)([\s\S]*?)(\s*<\/script>)/g, (all, open, json, close) => {
+    const manifest = JSON.parse(json); let changed = false;
+    for (const entry of Object.values(manifest)) {
+      if (!/^(text\/|application\/(?:javascript|json))/.test(entry.mime)) continue;
+      const binary = Buffer.from(entry.data, 'base64');
+      const before = (entry.compressed ? gunzipSync(binary) : binary).toString('utf8');
+      const after = rewriteMainUrls(before, baseUrl, pinnedRefs);
+      if (after !== before) {
+        const bytes = Buffer.from(after);
+        entry.data = (entry.compressed ? gzipSync(bytes) : bytes).toString('base64');
+        changed = true;
+      }
+    }
+    return changed ? open + JSON.stringify(manifest) + close : all;
+  });
 }
 
 export function projectRecord(value, admitted, baseUrl) {
@@ -99,6 +119,7 @@ export async function projectPublicDelivery(repoRoot, outputRoot, { maxAssetByte
     const sourceTree = treeFor(repoRoot, head, pack.root);
     if (!sourceTree.length || sourceTree.some(e => e.mode !== '100644' && e.mode !== '100755')) throw new Error('Invalid pack tree: ' + pack.root);
     const identity = hash(JSON.stringify(sourceTree.map(e => [e.filename, e.blob]).sort()));
+    if (identity !== pack.inventorySha256) throw new Error('Public pack inventory changed; review required: ' + pack.root);
     const verifiedRefs = new Set([head]);
     for (const ref of policy.pinnedRefs) {
       if (unavailableRefs.has(ref)) continue;
@@ -135,7 +156,10 @@ export async function projectPublicDelivery(repoRoot, outputRoot, { maxAssetByte
     if (rel.startsWith('registry/') && (ext === '.json' || ext === '.jsonl')) {
       const transform = data => projectRecord(data, admitted, policy.baseUrl);
       after = ext === '.jsonl' ? before.split(/\r?\n/).filter(Boolean).map(line => JSON.stringify(transform(JSON.parse(line)))).join('\n') + '\n' : JSON.stringify(transform(JSON.parse(before)), null, 2) + '\n';
-    } else after = rewriteMainUrls(before, policy.baseUrl, policy.pinnedRefs.filter(ref => !unavailableRefs.has(ref)));
+    } else {
+      const refs = policy.pinnedRefs.filter(ref => !unavailableRefs.has(ref));
+      after = rewriteBundledUrls(rewriteMainUrls(before, policy.baseUrl, refs), policy.baseUrl, refs);
+    }
     if (after !== before) await writeFile(file, after);
   }
   const report = { schema: 'kfb.public-delivery-report/1', sourceCommit: head, readyForPrivateSwitch: false, publicFiles: admitted.size, publicBytes: [...admitted.values()].reduce((n, f) => n + f.bytes, 0), unavailablePinnedRefs: [...unavailableRefs].sort(), excludedRestrictedCopies, packs };

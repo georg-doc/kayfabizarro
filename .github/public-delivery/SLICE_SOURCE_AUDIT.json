@@ -1,0 +1,389 @@
+{
+  "date": "2026-10-22",
+  "status": "SOURCE_AUDIT_ONLY_NOT_RUNTIME_PASS",
+  "repos": [
+    {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "head": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+      "filesInspected": 70,
+      "errors": [],
+      "findings": [
+        {
+          "path": "cardbuilder/kfb-card-builder.js",
+          "blob": "1abb631983c9052f91e0796ba3fd56b0682405de",
+          "matches": [
+            "const RAW_INDEX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json';"
+          ]
+        },
+        {
+          "path": "combat-arena-v1/arena-ring.v1.js",
+          "blob": "4a066fa1ead6d771ec3052d57e6f6b40befc414a",
+          "matches": [
+            "        backUrl: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/' + SPEC.backside",
+            "                     'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/' + SPEC.backside];",
+            "    this._backT = tl.load('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/' + SPEC.backside,"
+          ]
+        },
+        {
+          "path": "combat-arena-v1/enemies.v1.js",
+          "blob": "ba6d1399d598cd0bad3ab471937ead70d65f3f8f",
+          "matches": [
+            "const API = 'https://api.github.com/repos/georg-doc/kayfabizarro/contents/media/3D_Assets/';",
+            "  { id: 'orc_brute', label: 'Orc Brute', pack: 'Mystery S6', dir: 'KayKit_Mystery_Series6/2 - August 2025 - Orc Brute', height: 2.1, hp: 4, ranged: false },",
+            "  { id: 'monstrosity', label: 'Monstrosity', pack: 'Mystery S6', dir: 'KayKit_Mystery_Series6/4 - October 2025 - Monstrosity', height: 2.2, hp: 4, ranged: false },",
+            "  { id: 'toy_soldier', label: 'Toy Soldier', pack: 'Mystery S6', dir: 'KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier', height: 1.7, hp: 3, ranged: true },",
+            "  { id: 'avian', label: 'Avian Swordsman', pack: 'Mystery S6', dir: 'KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman', height: 1.8, hp: 3, ranged: false },"
+          ]
+        },
+        {
+          "path": "combat-arena-v1/host.v1.js",
+          "blob": "5ff34cb0d48c987cad91f04c8ab1325edac41d48",
+          "matches": [
+            "export const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v2/gunfight.v2.js",
+          "blob": "3921ad4506db50f4ff40c7dc5ad52f7dfcbd6006",
+          "matches": [
+            "const CDN = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v2/host.v2.js",
+          "blob": "696ecbe489219f03a2604a62737a48f4b046aba1",
+          "matches": [
+            "const CDN = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v2/locomotion.v2.js",
+          "blob": "d6897cb3c6563a47ad918460c5dec975931f2760",
+          "matches": [
+            "const CDN = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v2/mobs.v2.js",
+          "blob": "02928eee3c351b1694a1097e17779bbdb2290050",
+          "matches": [
+            "const CDN = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v3/skydome-shader.js",
+          "blob": "1fc0b8c1efb88794480ecfb2b7c7adcbf56d36fb",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/refs/heads/main/media/3D_Assets/Textures/Skyboxes/';"
+          ]
+        },
+        {
+          "path": "combat-arena-v3/zensur.v3.js",
+          "blob": "d5585b942d08d5d95a370eefb73df44c006445f2",
+          "matches": [
+            "    const raw = (this.assets && this.assets.RAW) || 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';"
+          ]
+        },
+        {
+          "path": "modules/kfb-mech-audio.js",
+          "blob": "fb2605c7bb7f65646d9f771709e04e7d22a21d48",
+          "matches": [
+            "  'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/',    // CDN, ehrliche 404",
+            "  'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/' // Quelle, ehrliche 404"
+          ]
+        },
+        {
+          "path": "modules/kfb-pet-look.js",
+          "blob": "8a51a517fae3e3550e7801ca7f8662233d658c2a",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';"
+          ]
+        },
+        {
+          "path": "podcast-v1/stage.v1.js",
+          "blob": "484c7fa4d64be8727992d29c271df8e2814abc14",
+          "matches": [
+            "const SKY = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/skydome_a.webp';"
+          ]
+        },
+        {
+          "path": "studio-v3/pet-library.v6.js",
+          "blob": "96ccdae5deac1a40b147bcd067d0c919c627b2d1",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';"
+          ]
+        },
+        {
+          "path": "studio-v3/pet-mouth.v1.js",
+          "blob": "d18c95cc5d8f24ee2825e84ef3f8c37f045baffc",
+          "matches": [
+            "export const MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/FrizzelBob-Mouth_01/';",
+            "export const FEMALE_MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/FrizzleBob-FemaleMouth_01/';",
+            "export const RED_MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/FrizzleBob-RedMouth_01/';"
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "head": "df1e35b5692273e8a48eaa219697c927e2c39faa",
+      "filesInspected": 41,
+      "errors": [],
+      "findings": [
+        {
+          "path": "race/dist/index.html",
+          "blob": "e30d558d68a021fa36a2859136b4abb4584b1747",
+          "matches": [
+            "}`;function kM(B,A,I){let g=new cQ,C=new BA,Q=new BA,E=new cI,i=new Li({depthPacking:Gc}),o=new qi,t={},e=I.maxTextureSize,s={[sC]:Gg,[Gg]:sC,[vI]:vI},a=new $g({defines:{VSM_SAMPLES:8},uniforms:{shadow_pass:{value:null},resolution:{value:new BA},radius:{value:4}},vertexShader:wM,fragmentShader:GM}),U=a.clone();U.defines.HORIZONTAL_PASS=1;let D=new xA;D.setAttribute(\"position\",new AI(new Float32Array([-1,-1,.5,3,-1,.5,-1,3,.5]),3));let F=new vA(D,a),h=this;this.enabled=!1,this.autoUpdate=!0,this.needsUpdate=!1,this.type=PD;let n=this.type;this.render=function(N,R,m){if(h.enabled===!1||h.autoUpd",
+            "`;function kR(B){return function(){B|=0,B=B+1831565813|0;let A=Math.imul(B^B>>>15,1|B);return A=A+Math.imul(A^A>>>7,61|A)^A,((A^A>>>14)>>>0)/4294967296}}function tl(B={}){let A=B.THREE||LC,I=B.radius||1400,g=new A.Group,C=B.mode==null?3:B.mode,Q=mh[C]||mh[3],E={uVariant:{value:_o[B.variant]!=null?_o[B.variant]:0},uPhase:{value:0},uEnergy:{value:.4},uBeat:{value:0},uWorldMix:{value:B.worldMix==null?.4:B.worldMix},uExposure:{value:B.exposure==null?.72:B.exposure},uColA:{value:new A.Color(.14,.05,.02)},uColB:{value:new A.Color(.86,.42,.12)},uColC:{value:new A.Color(1,.86,.52)},uSphWarp:{value:Q.w"
+          ]
+        },
+        {
+          "path": "race/src/main.js",
+          "blob": "c758b454991ac6ad73f39a015c35b6b36fbf7387",
+          "matches": [
+            "const RAW=`https://raw.githubusercontent.com/georg-doc/kayfabizarro/${REV}/`;"
+          ]
+        },
+        {
+          "path": "race/vendor/card-registry.js",
+          "blob": "9fd9f2ae6626a30c68776e91bea8e38221403020",
+          "matches": [
+            "const RAW_INDEX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/kfb/index.json';"
+          ]
+        },
+        {
+          "path": "race/vendor/kfb-pets.js",
+          "blob": "25cc6d3a2ca6bf0f4342a5f08a9c8c27d8dcf38f",
+          "matches": [
+            "// Gemessen am 20.07.: raw.githubusercontent.com liefert text/plain, und Browser weigern sich,",
+            "  'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/kfb-pets.json';",
+            "  assets: { glbBase: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/GLB_cube-pets/' },"
+          ]
+        },
+        {
+          "path": "race/vendor/pet-library.v6.js",
+          "blob": "bb4f664f52f71aa03c5aa3b50f37d3699fa18fd9",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/';"
+          ]
+        },
+        {
+          "path": "race/vendor/pet-mouth.v1.js",
+          "blob": "7630a4d152eb664a2ee3d2c69d809f88ea1c5663",
+          "matches": [
+            "export const MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/Textures/FrizzelBob-Mouth_01/';",
+            "export const FEMALE_MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/Textures/FrizzleBob-FemaleMouth_01/';",
+            "export const RED_MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/Textures/FrizzleBob-RedMouth_01/';"
+          ]
+        },
+        {
+          "path": "race/vendor/skydome-shader.js",
+          "blob": "9d67a657ace8e9c1320cfd9f981f2d45e686bc00",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/15e36b915c9bdfd7ff000d398418269e27c6ef9f/media/3D_Assets/Textures/Skyboxes/';"
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+      "filesInspected": 122,
+      "errors": [],
+      "findings": [
+        {
+          "path": "site/town/town-foundation-v2.js",
+          "blob": "a25db77fd4064fcea53b3c12e4d3b5ef78f3480f",
+          "matches": [
+            "const RAW_ROOT = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${ASSET_PIN}/`;",
+            "  player: 'media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb',",
+            "  caveman: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',",
+            "  king: 'media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb',",
+            "  campfireBase: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf',",
+            "  campfireLogs: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf',"
+          ]
+        },
+        {
+          "path": "site/town/town-foundation.js",
+          "blob": "7020828d25239450c88471087c8cfbfb9a8bad73",
+          "matches": [
+            "const RAW_ROOT = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';",
+            "  player: 'media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb',",
+            "  caveman: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',",
+            "  king: 'media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb',",
+            "  campfireBase: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf',",
+            "  campfireLogs: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf',"
+          ]
+        },
+        {
+          "path": "site/world-builder/legacy-warband-profile.js",
+          "blob": "e6c018b4f4980e728b87a9664dcb343fbd69d2d0",
+          "matches": [
+            "      donor: 'KayKit Legacy Character Animations 1.2',"
+          ]
+        },
+        {
+          "path": "site/world-builder/mech-bee-profile.js",
+          "blob": "f951559eeece094974889f91811c7c24d638c4ae",
+          "matches": [
+            "  return `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${pin}/`"
+          ]
+        },
+        {
+          "path": "site/world-builder/movement-lab.js",
+          "blob": "254b1b3f891247b2bdb27bcc74d8e6a838209587",
+          "matches": [
+            "const RAW_ROOT = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${CHARACTER_PIN}/`;",
+            "    body: 'media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb',",
+            "    body: 'media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb',",
+            "    body: 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf',",
+            "    animation: 'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb',"
+          ]
+        },
+        {
+          "path": "site/world-builder/wb0.js",
+          "blob": "a6c08f4d70b80440bcbbb7c18ad24adb6e06d25a",
+          "matches": [
+            "const RAW_ROOT = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${ASSET_PIN}/`;",
+            "    path: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',",
+            "    path: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf',",
+            "      url: raw('media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb'),"
+          ]
+        },
+        {
+          "path": "site/world/composer.html",
+          "blob": "27feebb27a21258460498a82e41ac14a0852fa9e",
+          "matches": [
+            "<div class=\"field\"><label>Paste kfb.asset-handoff / Town candidate / simple asset list</label><textarea id=\"candidate\" placeholder='{\"assets\":[{\"path\":\"media/3D_Assets/.../thing.glb\",\"source\":{\"rawPinned\":\"https://raw.githubusercontent.com/...\"}}]}'></textarea></div>",
+            "<div class=\"field\"><label>GLB / GLTF URL</label><input id=\"directUrl\" placeholder=\"https://raw.githubusercontent.com/.../model.glb\"></div>"
+          ]
+        },
+        {
+          "path": "site/world/composer.js",
+          "blob": "9d0cccf4fd712f3e15d227a54c880b7f462d434e",
+          "matches": [
+            "  return `https://raw.githubusercontent.com/${repo}/${ref}/${encodedPath(path)}`;",
+            "    {name:'Caveman',path:'media/3D_Assets/KayKit_Mystery_Series6/Caveman/characters/Caveman.glb'},",
+            "    {name:'GothGirl',path:'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb'}"
+          ]
+        },
+        {
+          "path": "site/world/prefab-lab.html",
+          "blob": "ea9eefdd925756ea2b63c4d6910be6e0c19af35e",
+          "matches": [
+            "<div class=\"field\"><label>Scene URL</label><input id=\"sceneUrl\" value=\"https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/tools/resident_atlas/scenes/caveman-cave-camp.json\"></div>"
+          ]
+        },
+        {
+          "path": "site/world/prefab-lab.js",
+          "blob": "24d1d875c30dfe096eac020404a1f40a353b5ecb",
+          "matches": [
+            "function rawUrl(path,def=sceneDef){const ref=def?.sourceCommit||'main';return `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${ref}/${enc(path)}`}",
+            "document.querySelector('#loadCaveman').onclick=()=>loadUrl('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/tools/resident_atlas/scenes/caveman-cave-camp.json').catch(showError);"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/asset-inventur.js",
+          "blob": "4b96343174d9ab9835b8918f00e41e84f1810e85",
+          "matches": [
+            "const REPO_API = 'https://api.github.com/repos/georg-doc/kayfabizarro/git/trees/main?recursive=1';",
+            "const RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/gear-icon.js",
+          "blob": "ad8cd921c62a5d3de692d22c94b7a81030ddffef",
+          "matches": [
+            "const GLB_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GEAR_ICON.glb';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/globe-landmarks.js",
+          "blob": "9d0df35722a2a0bc5b42b352cf022ffd28339083",
+          "matches": [
+            "const RAW3D = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/globe-poc.js",
+          "blob": "2b6eb32389c4d19aed95f9fbf5784439cfbaf78f",
+          "matches": [
+            "const SURF_CANON = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/pet-surface.v1.js';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/muenzen.js",
+          "blob": "b413ae4e93a2240c3a0b270c37e7b00322d862b9",
+          "matches": [
+            "const GLB_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB_Coin_01.glb';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/paper-card.js",
+          "blob": "b9dd7742cb3f6ceddc9629604cdc2ce9abaf2d29",
+          "matches": [
+            "const URL_PAPER = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/'"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/sky-cards.js",
+          "blob": "d822abf334831a129e6be935e3ea82fd4bad60ac",
+          "matches": [
+            "const BACKSIDE_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/'"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/sky-dice.js",
+          "blob": "b5637f5cf8e682de90339c6ec6f01f0ba8503336",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';"
+          ]
+        },
+        {
+          "path": "travel/globe-v13/travel-audio.js",
+          "blob": "24cec8afe1014ca39683772687615ec337e30744",
+          "matches": [
+            "const RAW_ALT = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';"
+          ]
+        },
+        {
+          "path": "travel/modules/kfb-mech-combat.js",
+          "blob": "ec7239a3b7ed161ba84bec6af6fa0c23f3ebfaf9",
+          "matches": [
+            "const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/';",
+            "  base: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Skeletons/',"
+          ]
+        },
+        {
+          "path": "travel/terrain-planets-v1/card-carrier.js",
+          "blob": "2eef4db5aa38fffc8e9c23457815e3be12fc3bd8",
+          "matches": [
+            "  const assetBase = opts.assetBase || 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/';"
+          ]
+        },
+        {
+          "path": "travel/terrain-planets-v1/card-registry.js",
+          "blob": "137fc851f81c172a2494579559920a1165f31e04",
+          "matches": [
+            "const RAW_INDEX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json';"
+          ]
+        },
+        {
+          "path": "travel/terrain-planets-v1/kfb-pets.js",
+          "blob": "98128a36017c046b9b17f7aedb7fca8f99cc67f6",
+          "matches": [
+            "// Gemessen am 20.07.: raw.githubusercontent.com liefert text/plain, und Browser weigern sich,",
+            "import { Character } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-library.v6.js';",
+            "import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-eye-rig.v5.js';",
+            "import { PetMotion } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-motion.v2.js';",
+            "import { PetFace } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-face.v1.js';",
+            "import { PetMouth } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-mouth.v1.js';",
+            "  'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json';",
+            "  assets: { glbBase: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/' },"
+          ]
+        }
+      ]
+    }
+  ]
+}

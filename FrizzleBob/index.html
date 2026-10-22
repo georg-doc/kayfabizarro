@@ -1494,7 +1494,7 @@ function setPrompt(){
   if(PROMPT_SRC[v.id]){
     const url=PROMPT_REPO+'/'+PROMPT_SRC[v.id]+'.md';
     const src=v.synced?(S.lang==='de'?'live von ':'live from '):(S.lang==='de'?'mitgeliefert \u00b7 ':'bundled \u00b7 ');
-    pv.innerHTML='Version '+esc(v.version||'1.0')+' \u00b7 '+src+A(url,'GitHub');
+    pv.innerHTML='Version '+esc(v.version||'1.0')+' \u00b7 '+src+A(url,'Cloudflare');
     pv.style.display='';
   }else{pv.style.display='none';}
 }
@@ -1606,7 +1606,7 @@ function fillEssayPrompts(){
     const txt=(v[S.lang]&&v[S.lang].prompt)||'';
     let chip;
     if(PROMPT_SRC[v.id]){
-      const ttl=(v.synced?(S.lang==='de'?'aktuelle Version von GitHub':'current version from GitHub'):(S.lang==='de'?'mitgelieferte Version':'bundled version'))+' \u00b7 '+PROMPT_SRC[v.id]+'.md';
+      const ttl=(v.synced?(S.lang==='de'?'aktuelle Version von Cloudflare':'current version from Cloudflare'):(S.lang==='de'?'mitgelieferte Version':'bundled version'))+' \u00b7 '+PROMPT_SRC[v.id]+'.md';
       chip='<span class="pb-ver'+(v.synced?' is-synced':'')+'" title="'+esc(ttl)+'">v'+esc(v.version||'1.0')+'</span>';
     }else{chip='';}
     pb.innerHTML=chip+'<div class="pb-text">'+highlightPrompt(txt)+'</div>';

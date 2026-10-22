@@ -1,3 +1,9 @@
+## CURRENT CANDIDATE · 2026-10-22 · REPOSITORY PRIVATE SWITCH NOT READY
+
+Georg authorized preparation only in one draft PR: #443, branch `wsa/repo-private-switch-r1-2026-10-22`. Existing public readers/PDFs and explicit CC0 delivery are being migrated; repository visibility and production deployment remain unchanged. Public Arena/Race/Travel still reference purchased Mystery figures; private Sites need authenticated server delivery. Do not switch private from a local reader PASS. Current Return: `.github/public-delivery/RETURN.md`. Georg alone changes visibility and approves merge. Existing game, asset and Site owners remain unchanged.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
