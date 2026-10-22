@@ -9714,6 +9714,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-682",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Charakter-Register als einzige Quelle (Georg 22.10., bekräftigt V-394): Audit ergab 11 Charakter-Dateien bei rund 150 Figuren, parallele Listen (cast.r1, Resident Atlas, voice_casting, 320 Figurenkarten mit Szenen-IDs, ToolBox-Fixliste mit 4 Karten), keine kanonische ID, keine Felder für Lieblingswaffen, Lieblingsbiom, Dioramen. Neu: 30_DECISIONS/CHARACTERS_R1 mit characters/<id>/character.json (kfb.character/1.1 inkl. preferences, dioramas, chatter, variants, figureRefs, provenance), aliases.json, index.json, GAPS.md, erzeugt aus vorhandenen Quellen ohne Erfinden; Paritäts-Check im Code. Alle Verbraucher (Spiel, WS-NPC, WS-Audio, ToolBox, Dramatis Personae) lesen danach nur noch das Register. FB-Export erst mit Referenzbild aus der ToolBox (P08) als Vorlage; WSA bleibt pausiert.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Beschluss vom 17.10. wurde nie migriert; jede Sitzung pflegte ihre eigene Liste, daher die Drift.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9801,7 +9816,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1142",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1143",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
