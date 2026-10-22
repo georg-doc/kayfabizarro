@@ -32,7 +32,7 @@ import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
 import { mountRacerRig, mountHeadlights, releaseModel, terrainDustColor } from './racerRig'
 import { createEngineAudio } from '../audio/engineAudio'
-import { prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv, prepVehicleClay } from '../look/vehicleLook.js'
+import { setVehicleMatte, VEHICLE_MATTE, prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv, prepVehicleClay } from '../look/vehicleLook.js'
 import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
 import { TERRAIN3_CFG } from '../look/terrain3.js'
 import { FB_RIG_HEIGHT } from '../worldScale.js'
@@ -220,7 +220,7 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; M2STATE.modelTries = 0; const id = M2CAR.id
     const tryLoad = () => { M2STATE.modelTries++; return loadModel().then((m) => (m || !alive || M2STATE.modelTries > 3 ? m : new Promise((r) => setTimeout(r, [2000, 5000, 10000][M2STATE.modelTries - 1])).then(() => (alive ? tryLoad() : null)))) }
     tryLoad().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
-    if (!I.look.off) hookVehicleLook(c) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
+    if (!I.look.off) { hookVehicleLook(c); setVehicleMatte(c) }   // vmatte: Material-Faktoren (geteilt mit allen Klonen) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
     const t0 = performance.now(); if (!I.warm) await warmModel(glR, c, camW, sceneW); if (!alive) return   // schon vorgewärmt (Zurückwechseln, Vorladen): sofort zeigen, kein Warten auf Bilder
     M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.clay = I.clay; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
     if (PREFETCH) setTimeout(() => alive && prefetchNeighbours(glR, camW, sceneW, () => alive), 1500) }); return () => { alive = false } }, [])
@@ -239,8 +239,9 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { if (!model || !HEADLIGHTS.on) return
     const X = mountHeadlights({ model, racer: RACER, scene: sceneR, pools: gfxChannel('headlights'), ground: groundHeight, unit: S }); if (!X) return
     HEADLIGHTS.inst = X.hl; HEADLIGHTS.ms = 0; HEADLIGHTS.n = 0; return () => { X.release(); if (HEADLIGHTS.inst === X.hl) HEADLIGHTS.inst = null } }, [model])
-  useFrame((_, dt) => { const hl = HEADLIGHTS.inst; if (!hl) return; const t0 = performance.now(); hl.update(dt, { daylight: HEADLIGHTS.daylight?.() ?? Math.min(HL_DAY, 1 - HEADLIGHTS.dark), camera: camR }); HEADLIGHTS.ms += performance.now() - t0; HEADLIGHTS.n++ })
-  useFrame((_, dt) => { const R1 = rig.current; if (!R1) return; const k = M2STATE.drive || {}, sg = signals?.() || {}, D = drv.current
+  useFrame((_, dt) => { const hl = HEADLIGHTS.inst; if (!hl || M2STATE.freezeFx) return; const t0 = performance.now(); hl.update(dt, { daylight: HEADLIGHTS.daylight?.() ?? Math.min(HL_DAY, 1 - HEADLIGHTS.dark), camera: camR }); HEADLIGHTS.ms += performance.now() - t0; HEADLIGHTS.n++ })
+  // freezeFx (nur Debug-Prüfbilder): Antrieb und Effekte stehen still
+  useFrame((_, dt) => { const R1 = rig.current; if (!R1 || M2STATE.freezeFx) return; const k = M2STATE.drive || {}, sg = signals?.() || {}, D = drv.current
     D.gas += ((k.gas ? 1 : 0) - D.gas) * Math.min(1, dt / 0.12)
     const A = M2STATE.audio; if (A && (k.gas || k.boost || k.jump)) A.resume() // Browser-Regel: Ton erst nach einer Eingabe
     const boostStart = k.fly ? (k.surgeN ?? 0) !== D.surgeN : !!k.boost && !D.boost && D.gas > 0.3
@@ -332,9 +333,11 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
       ground: (x, z) => groundHeight(x, z),
       mod: () => M2STATE.water?.cam || null, clampY: (x, z, y) => (M2STATE.water ? waterCamClamp(M2STATE.water, waterActive.level, x, z, y, groundHeight) : y) }) }, [gl, world, rapier, racer]) // WS1c: Kamera am Wasser
   useEffect(() => { const v = new THREE.Vector3()
-    M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K }) }
+    M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K })
+      // Prüfbilder (nur Debug): Kamera relativ zum Wagen statt Folgekamera – { dist, yaw (0 = vorn, π = hinten), pitch, ty (Zielhöhe) }; die Folgekamera darf nicht so nah
+      const P = DEBUG && M2STATE.camPose; if (P) { const a = c.yaw() + P.yaw; camera.position.set(v.x + Math.sin(a) * Math.cos(P.pitch) * P.dist, v.y + (P.ty || 0) + Math.sin(P.pitch) * P.dist, v.z + Math.cos(a) * Math.cos(P.pitch) * P.dist); camera.lookAt(v.x, v.y + (P.ty || 0), v.z) } }
     M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
-  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, loadLog: LOADLOG, heroSetting: HERO_ON, setHero: (on) => applyHeroSetting(on, gl), ground: groundHeight }) })
+  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, camera: () => camera, setMatte: (on) => { VEHICLE_MATTE.on = !!on; return M2STATE.visualRoot ? setVehicleMatte(M2STATE.visualRoot, !!on) : 0 }, freeze: (on) => { M2STATE.freezeFx = !!on }, camPose: (p) => { M2STATE.camPose = p || null }, loadLog: LOADLOG, heroSetting: HERO_ON, setHero: (on) => applyHeroSetting(on, gl), ground: groundHeight }) })
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
   return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>

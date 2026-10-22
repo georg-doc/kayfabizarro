@@ -33,11 +33,12 @@ function chooseCar(id) {
 export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarro', onOpen = () => {} } = {}) {
   const pal = roles()
   const root = document.createElement('div'); root.className = 'kfb-start'
-  Object.assign(root.style, { position: 'fixed', inset: '0', zIndex: '2147483000', background: pal.studio, transition: 'opacity .7s ease', fontFamily: "'Shantell Sans', system-ui, sans-serif", color: '#fff8ec' })
+  Object.assign(root.style, { position: 'fixed', inset: '0', zIndex: '2147483000', background: `linear-gradient(180deg, ${pal.skyTop} 0%, ${pal.skyBottom} 58%, ${pal.skyBottom} 100%)`, /* gemalter Himmel statt Flachfarbe (Georg/Kritiker 22.10.: harte Horizontlinie) */ transition: 'opacity .7s ease', fontFamily: "'Shantell Sans', system-ui, sans-serif", color: '#fff8ec' })
   const stageEl = document.createElement('div'); Object.assign(stageEl.style, { position: 'absolute', inset: '0' }); root.appendChild(stageEl)
   const ui = document.createElement('div'); root.appendChild(ui)
   ui.innerHTML = `
     <style>
+      @media (min-aspect-ratio: 23/20) and (min-width: 900px){ .kfb-start .panel{left:auto!important;right:24px;top:50%;bottom:auto!important;transform:translateY(-50%)!important;width:380px!important;max-height:calc(100% - 48px);overflow:auto} } /* Georg 22.10.: Tafel neben der Bühne, nicht darüber */
       .kfb-start .panel{position:absolute;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(560px,calc(100% - 32px));
         background:rgba(28,18,30,.78);border-radius:18px;padding:16px 20px;box-shadow:0 10px 40px rgba(0,0,0,.35);backdrop-filter:blur(6px)}
       .kfb-start h1{margin:0 0 6px;font-size:30px;letter-spacing:.02em;text-align:center;font-weight:800;color:${pal.bulbOn}}
@@ -104,10 +105,10 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
       if (!core.isSupported()) throw new Error('kein WebGPU')
       const THREE = await import('three/webgpu')
       const { dressClay } = await import('../vendor/curtain/clay-look.js')
-      const renderer = new THREE.WebGPURenderer({ antialias: true, requiredLimits: { maxStorageBuffersInVertexStage: 1 } }); await renderer.init()
+      const renderer = new THREE.WebGPURenderer({ antialias: true, alpha: true, requiredLimits: { maxStorageBuffersInVertexStage: 1 } }); await renderer.init()
       renderer.setPixelRatio(Math.min(1.5, devicePixelRatio)); renderer.toneMapping = THREE.NeutralToneMapping; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap
       const cv = renderer.domElement; Object.assign(cv.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', display: 'block' }); stageEl.appendChild(cv)
-      const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(36, 1, 0.05, 60); scene.background = new THREE.Color(pal.studio)
+      const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(36, 1, 0.05, 60); scene.background = null; renderer.setClearColor(0x000000, 0) /* Himmel kommt aus dem CSS-Verlauf */
       const curtain = core.createTheatreCurtain({ material: 'P', hardware: 'none', proscenium: false, floor: false, footlights: true }); scene.add(curtain.group)
       const look = dressClay(curtain, pal); look.setFootlights(1)
       // Licht wie die Vorlage R2 (warmes Führungslicht, kühle Kante, Himmel/Tisch-Fülle)
@@ -121,8 +122,10 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
       const table = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.MeshStandardMaterial({ color: pal.table, roughness: 0.95 })); table.rotation.x = -Math.PI / 2; table.position.y = curtain.DIM.floorY - 0.39; table.receiveShadow = true; scene.add(table)
       // Ansicht nach Vorlage „frame“ (6,6 × 4,8 m), etwas weiter und tiefer gezielt: die Bühne sitzt oben, die Start-Tafel unten frei
       const fit = () => { const w = root.clientWidth || 2, h = root.clientHeight || 2; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix()
-        const f = camera.fov * Math.PI / 180, d = Math.max(7.2, 8.6 / camera.aspect) / (2 * Math.tan(f / 2)), dir = new THREE.Vector3(0, 0.08, -1).normalize(), at = new THREE.Vector3(0, 0.45, -0.45)   /* Ansicht „frame“ der Vorlage, Bühne im oberen Teil, Tafel darunter */
-        camera.position.copy(at).addScaledVector(dir, d); camera.lookAt(at); camera.setViewOffset(w, h, 0, Math.round(h * 0.15), w, h) }   /* Bild um 20 % nach oben geschoben (gleiche Perspektive): die Tafel unten verdeckt die Bühne nicht */   /* wie Vorlage: pos = at + dir·d (Publikum auf −z) */
+        const dock = w / h >= 1.15 && w >= 900, P = dock ? 380 + 48 : 0, effA = (w - P) / h   /* Tafel rechts angedockt: Bühne mittig im freien Teil links */
+        const f = camera.fov * Math.PI / 180, d = Math.max(dock ? 6.4 : 7.2, (dock ? 7.4 : 8.6) / Math.min(effA, camera.aspect)) / (2 * Math.tan(f / 2)), dir = new THREE.Vector3(0, 0.08, -1).normalize(), at = new THREE.Vector3(0, 0.45, -0.45)
+        scene.fog = new THREE.Fog(pal.skyBottom, d + 2.5, d + 16)   /* Boden läuft weich in den Horizont-Ton aus (keine harte Kante) */   /* Ansicht „frame“ der Vorlage, Bühne im oberen Teil, Tafel darunter */
+        camera.position.copy(at).addScaledVector(dir, d); camera.lookAt(at); if (dock) camera.setViewOffset(w + P, h, P, 0, w, h); else camera.setViewOffset(w, h, 0, Math.round(h * 0.15), w, h) }   /* Bild um 20 % nach oben geschoben (gleiche Perspektive): die Tafel unten verdeckt die Bühne nicht */   /* wie Vorlage: pos = at + dir·d (Publikum auf −z) */
       const ro = new ResizeObserver(fit); ro.observe(root); fit()
       curtain.warmup(renderer, 900)
       curtain.onState((s) => { if (s === 'open_rest' && S.want) finish() })
