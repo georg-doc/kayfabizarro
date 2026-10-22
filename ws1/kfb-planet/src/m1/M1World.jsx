@@ -321,7 +321,7 @@ function HostEnv() {
   const { scene, gl } = useThree()
   useEffect(() => applyTone(gl, 'aces', 1), [gl]) // ein Tonemapping für alle Schichten (L3 Regel 5)
   // VSM nur in der Laufwelt (Georg 20.10.: Schatten weich ohne Stufen und Körnung): Karte einmal je Bild weichgezeichnet, je Pixel eine Abfrage; Bühne/Prüfungen bleiben PCF
-  useEffect(() => { const prev = gl.shadowMap.type; gl.shadowMap.type = THREE.VSMShadowMap; gl.shadowMap.needsUpdate = true; return () => { gl.shadowMap.type = prev; gl.shadowMap.needsUpdate = true } }, [gl])
+  useEffect(() => { const prev = gl.shadowMap.type; gl.shadowMap.type = SHADOW_VSM ? THREE.VSMShadowMap : THREE.PCFShadowMap; gl.shadowMap.needsUpdate = true; return () => { gl.shadowMap.type = prev; gl.shadowMap.needsUpdate = true } }, [gl])
   // MVP-Startseite (V-618): einmal 'kfb:ready', sobald Spielfigur und Gelände stehen (Vorhang darf aufgehen); kein Debug-Zugang nötig
   useEffect(() => { let done = false; const iv = setInterval(() => { if (done || mods.player?.status?.().status !== 'OK' || !mods.terrain) return; done = true; clearInterval(iv); window.dispatchEvent(new Event('kfb:ready')) }, 250); return () => clearInterval(iv) }, [])
   useEffect(() => { M1GL.gl = gl; M1GL.scene = scene }, [gl, scene]) // Prüfungen/Bildskripte (nur debug über M1.renderer)
@@ -360,6 +360,9 @@ function Stepper() {
   return null
 }
 
+// Schatten (Georg 22.10.: „pcf nehmen“): PCF zeichnet nur Werfer ins Schattenbild – VSM zeichnete alle Empfänger mit (Gelände ≈ 180 k, gesamt −256 k Dreiecke/Bild).
+// shadow=vsm (debug) = der alte weiche Schatten zum Vergleich
+const SHADOW_VSM = DEBUG && /(^|[#,])shadow=vsm(,|$)/.test(hash)
 const NOFENCE = DEBUG && /(^|[#,])nofence(,|$)/.test(hash)
 // Reibung am Zaun: ecctrl-Kapsel hat −0,5; mit „Average“ ergäbe das −0,25 (negative Reibung hebt die Figur an der Wand, Prüfer M1-5 Befund N3) →
 // „Max“ mit 0 = reibungsfrei gleiten
