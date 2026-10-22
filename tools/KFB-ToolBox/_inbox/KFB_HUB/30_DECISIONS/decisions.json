@@ -9684,6 +9684,21 @@
    "applies": "nach MVP"
   },
   {
+   "id": "V-680",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "SPEC",
+   "text": "HUD-Layout R2 (Georg 22.10. nach N33): Kompass mit Deckel zu als Tacho (farbiger Halbkreis unten, grün bis rot, Rot = Booster, Tempo-Zahl) im Fahrzeug und Flug, Klick öffnet die Minimap; 3D-Ziel-Pfeil über dem Kompass mit kurzer, gut lesbarer Entfernung (m, km) und Nähe-Farbe (V-333 bis V-335); Radio als weiße Kassette bzw. Car Radio mit Tape aus HUD_PROPS_SET_R1 statt des kleinteiligen Tiny-Treats-Radios, reduzierte Bedienung Play/Pause, Nächster Titel, Ton an/aus; Almanach-Fächer, Truhe, Zahnrad und Fluff-Zahl bleiben in ihrer Funktion, keine Schwundform. Interaktions-Platzhalter funktioniert nicht, Modell offen. Spec replies/HUD_LAYOUT_R2.md, WSB N34 Layout-Probe.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das neue 3D-HUD muss alle Funktionen des bisherigen Konzepts tragen; erst Layout in Spielgröße, dann Einbau.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9771,7 +9786,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1139",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1140",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

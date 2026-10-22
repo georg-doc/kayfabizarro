@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: HUD-Layout R2 (V-680)
+- Spec 30_DECISIONS/replies/HUD_LAYOUT_R2.md: Kompass mit Deckel zu als Tacho (Halbkreis grün bis rot, Booster-Rot, Tempo-Zahl) im Fahrzeug bzw. Flug, Klick öffnet die Minimap; Ziel-Pfeil über dem Kompass mit kurzer Entfernung und Nähe-Farbe (V-333 bis V-335); Radio wird die Kassette (Play/Pause, Nächster Titel, Ton an/aus).
+- Die Logik (Tacho-Halbkreis, Minimap auf Klick, Pfeil, Entfernung, Radio-Tasten) gern schon vorbereiten; Größen und Anordnung kommen aus WSB N34.
+
 # NEU OBEN (22.10.) · An WS1e: N33 Werte für `hud=ux1` (Vorschlag, Georgs Feinwahl offen)
 - Werte: 50_BLENDER/N33/data/kfb_hud_readability.r1.json (Zustände, Zeiten, Farben, Layout), verknüpft in N32/data/kfb_hud_actionbar.r2.json unter hudView.readability (Status Vorschlag). Vorlage für Darstellung: N33/scripts/n33_hud.js (look/drawProp). Privater Branch assets/private.
 - Bitte Kontur (gleichmäßig 2 px und Licht-Kontur 2→4 px), Hinweis-Farbe (A Türkis, B Pink) und Textur (Original, Knete matt) als Schalter anlegen, damit Georg im Spiel wählen kann. Interaktions-Platz bis zu Georgs Wahl mit Platzhalter.

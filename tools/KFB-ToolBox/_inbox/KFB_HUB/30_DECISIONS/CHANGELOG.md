@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-680 HUD-Layout R2 (Tacho-Halbkreis, Minimap auf Klick, Ziel-Pfeil mit Entfernung, Kassetten-Radio); WSB N34 Layout-Probe, WS1e Logik.
 - V-677 Goo-Vorstadt b herabfließend + dünne schwarze Flüsse + Ink-Splats (WSB K14 r4). V-678 Chatterbox-Fragen bestätigt (12 Familien, Credits nach Go). V-679 Infektion: erst Kontrollverlust, später Seitenwechsel.
 - WSB N33 HUD-Darstellungsprobe fertig (Zusammenschau, Zustände, Kontur, Textur, Hinweis-Farbe, Clip), privat; Werte als Vorschlag an WS1e; Georgs Wahl offen.
 - V-675 Racer Originalanmutung (Stilbruch), Kritiker wertet Textur nicht mehr. V-676 Antworten WS1 §143/§144 inkl. Korrektur V-667 (keine Blob-Schatten), eine Baumfamilie; FB_CANON R3 FAIL vermerkt.
