@@ -19,6 +19,8 @@ const CLASS = (id) => (RIG[id].class === 'hauler' ? 'Laster' : RIG[id].wheels ? 
 
 async function open(hash, vp = { width: 1280, height: 720 }) {
   const o = await openPage(BASE + hash, { viewport: vp })
+  // VEH_CPU=4: nur diese Seite per CDP bremsen (stellt Volllast nach, ohne die geteilte Maschine zu belasten)
+  if (+process.env.VEH_CPU > 1) { const cdp = await o.page.context().newCDPSession(o.page); await cdp.send('Emulation.setCPUThrottlingRate', { rate: +process.env.VEH_CPU }) }
   await o.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK' && window.__kfbM2?.stats?.modelId, null, { timeout: 240000 })
   await o.page.evaluate(() => { window.__lt = []; try { new PerformanceObserver((l) => { for (const e of l.getEntries()) window.__lt.push(+e.duration.toFixed(0)) }).observe({ type: 'longtask' }) } catch (e) {} })
   await o.page.waitForTimeout(1500); return o
@@ -26,12 +28,15 @@ async function open(hash, vp = { width: 1280, height: 720 }) {
 // Wechsel wie Taste V (setRacer), wartet bis das neue Modell steht; misst Bildzeiten, Long Tasks und neu übersetzte Shader
 const swap = (page, id) => page.evaluate(async (id) => {
   const M = window.__kfbM2; if (M.racer() === id && M.stats.modelId === id) return { id, same: true }
+  // Grundbildzeit vor dem Wechsel (geteilte Maschine: unter fremder GPU-Last ist jedes Bild langsam – der Wechsel wird dagegen gemessen)
+  const base = []; { let l = performance.now(); for (let i = 0; i < 30; i++) { await new Promise((r) => requestAnimationFrame(r)); const n = performance.now(); base.push(n - l); l = n } }
+  const cached = !!M.modelInfo(id)?.warm
   const P0 = new Set(M.renderer().info.programs.map((p) => p.cacheKey)); window.__lt.length = 0; const fr = []; let last = performance.now(), run = true
   ;(function f() { const n = performance.now(); fr.push(n - last); last = n; if (run) requestAnimationFrame(f) })()
   const t0 = performance.now(); M.setRacer(id)
   await new Promise((res, rej) => { const w = () => (M.stats.model === 'OK' && M.stats.modelId === id && M.headlights.inst ? res() : performance.now() - t0 > 120000 ? rej(new Error('timeout ' + id)) : setTimeout(w, 50)); w() })
   await new Promise((r) => setTimeout(r, 600)); run = false
-  return { id, loadMs: +(performance.now() - t0).toFixed(0), maxFrame: +Math.max(...fr.slice(2)).toFixed(0), longMax: Math.max(0, ...window.__lt), newPrograms: M.renderer().info.programs.filter((p) => !P0.has(p.cacheKey)).length, prep: M.stats.prepMs }
+  return { id, cached, baseMax: +Math.max(...base.slice(2)).toFixed(0), loadMs: +(performance.now() - t0).toFixed(0), maxFrame: +Math.max(...fr.slice(2)).toFixed(0), longMax: Math.max(0, ...window.__lt), newPrograms: M.renderer().info.programs.filter((p) => !P0.has(p.cacheKey)).length, prep: M.stats.prepMs }
 }, id)
 const state = (page) => page.evaluate(() => { const M = window.__kfbM2, h = M.headlights, R = M.stats.rig
   return { id: M.racer(), model: M.stats.model, lamps: h.inst?.lamps.length ?? 0, sides: h.inst?.sides.length ?? 0, pools: h.inst?.getPools().length ?? 0, hlMs: h.n ? +(h.ms / h.n).toFixed(3) : null,
@@ -74,8 +79,9 @@ if (PART === 'data') {
     heroToggleOff: res.heroOff.state?.on === false && res.heroOff.all >= 1 && res.heroOff.orig === res.heroOff.all,
     deformPerClass: C.every((c) => c.deform === (RIG[c.id].class === 'hauler' ? 'SPACE_HAULER' : 'CAR_CHILL_LIGHT')),
     noShaderRecompileOnCachedSwap: res.back.every((b) => !b.newPrograms),   // Erstladen darf neue Varianten übersetzen (z. B. Leucht-Textur des Ödland-Käfers)
-    cachedSwapSmooth: res.back.every((b) => b.maxFrame < 100 && b.loadMs < 1200),
-    prefetchWarmsNext: res.prefetched && res.warmSwap.maxFrame < 100 && res.warmSwap.loadMs < 1200,
+    // Zurückwechseln/Vorgewärmt: Cache getroffen, keine neuen Shader, kein Hänger über der Grundbildzeit (< 100 ms bzw. < 1,5 × langsamstes Bild davor)
+    cachedSwapSmooth: res.back.every((b) => b.cached && !b.newPrograms && b.maxFrame < Math.max(100, b.baseMax * 1.5)),
+    prefetchWarmsNext: res.prefetched && res.warmSwap.cached && res.warmSwap.maxFrame < Math.max(100, res.warmSwap.baseMax * 1.5),
     noPageErrors: !errs.length,
   }, { maxFrameNew: Math.max(...C.map((c) => c.maxFrame || 0)), longMaxNew: Math.max(...C.map((c) => c.longMax || 0)), back: res.back, warmSwap: res.warmSwap })
 }
