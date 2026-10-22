@@ -39,6 +39,20 @@ void main(){ vec2 p = vUv - 0.5; float r = length(p) * 2.; if (r > 1.) discard; 
   float ring = smoothstep(0.78, 0.92, r) * smoothstep(1.0, 0.94, r); float hub = smoothstep(0.22, 0.12, r);
   vec3 c = mix(uPlume, uCore, ring + hub*0.6); float al = (ring * (0.5 + 0.5*uThrust) + blur * (0.18 + 0.4*uThrust) * smoothstep(0.95, 0.3, r) + hub*0.4);
   gl_FragColor = vec4(c * (0.8 + 1.4*uThrust), clamp(al, 0., 1.)); }`
+// Knet-Lüfter (V-654, Georg 22.10.: Lüfter auch Knete, Leuchtring bleibt als Effekt): matte Scheibe in drei Tonstufen (Nabe hell, Flügel, Spalten dunkel),
+// Flügel verwischen mit dem Schub zu einem Mittelton; normal geblendet mit Tonemapping. Darüber der Leuchtring allein (RING_FRAG, additiv).
+// Erster Versuch mit hellen Tönen wirkte wie Radkappen (Prüfbild 22.10.) → dunkler Rotor, der Ring leuchtet davor.
+const CLAY_FAN_FRAG = /* glsl */`uniform vec3 uCore; uniform vec3 uPlume; uniform float uThrust; uniform float uAngle; varying vec2 vUv;
+void main(){ vec2 p = vUv - 0.5; float r = length(p) * 2.; if (r > 0.97) discard; float a = atan(p.y, p.x) + uAngle;
+  float blades = 0.5 + 0.5 * cos(a * 7.); float v = mix(blades, 0.5, smoothstep(0.25, 0.9, uThrust)); vec3 clay = mix(vec3(0.13, 0.12, 0.115), uPlume, 0.18);   /* dunkler Knet-Rotor: der Leuchtring und die Flügelkanten tragen den Effekt */
+  vec3 c = r < 0.2 ? clay * 1.8 : v > 0.62 ? clay * 1.25 : v > 0.38 ? clay : clay * 0.55;
+  gl_FragColor = vec4(c, 1.0);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`
+const RING_FRAG = /* glsl */`uniform vec3 uCore; uniform vec3 uPlume; uniform float uThrust; varying vec2 vUv;
+void main(){ float r = length(vUv - 0.5) * 2.; float ring = smoothstep(0.78, 0.92, r) * smoothstep(1.0, 0.94, r); if (ring <= 0.001) discard;
+  gl_FragColor = vec4(mix(uPlume, uCore, ring) * (0.8 + 1.4*uThrust), ring * (0.5 + 0.5*uThrust)); }`
 const SPARK_VERT = /* glsl */`attribute float aLife; attribute float aSize; varying float vLife; uniform float uScale;
 void main(){ vLife = aLife; vec4 mv = modelViewMatrix * vec4(position,1.); gl_PointSize = aSize * uScale * (0.4 + aLife) / max(0.2, -mv.z); gl_Position = projectionMatrix * mv; }`
 const SPARK_FRAG = /* glsl */`uniform vec3 uSpark; uniform vec3 uCore; varying float vLife;
@@ -102,7 +116,12 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
     const g = new THREE.Group(); g.name = 'anchor:' + a.id; g.position.fromArray(a.pos).multiplyScalar(unit)
     g.quaternion.setFromUnitVectors(Z, new THREE.Vector3(...a.dir).normalize()); fx.add(g)
     const r = a.radius * unit, ro = (a.outerRadius || a.radius) * unit, u = { a, g, r, ro, type: a.type || 'thrust', mats: [] }
-    if (u.type === 'fan') {
+    if (u.type === 'fan' && clayGeo) {
+      const m = new THREE.ShaderMaterial({ vertexShader: VERT, fragmentShader: CLAY_FAN_FRAG, uniforms: { ...shared, uThrust: { value: 0 }, uAngle: { value: 0 } }, side: THREE.DoubleSide })
+      const d = new THREE.Mesh(disc, m); d.scale.setScalar(ro * 0.98); d.position.z = r * 0.06; d.renderOrder = 2; g.add(d)
+      const mr = additive(RING_FRAG, { ...shared, uThrust: { value: 0 } }, { side: THREE.DoubleSide }), ring = new THREE.Mesh(disc, mr); ring.scale.setScalar(ro * 1.02); ring.position.z = r * 0.08; ring.renderOrder = 3; g.add(ring)
+      u.fan = d; u.mats.push(m, mr)
+    } else if (u.type === 'fan') {
       const m = additive(FAN_FRAG, { ...shared, uThrust: { value: 0 }, uAngle: { value: 0 } }, { side: THREE.DoubleSide })
       const d = new THREE.Mesh(disc, m); d.scale.setScalar(ro * 1.02); d.position.z = r * 0.06; d.renderOrder = 3; g.add(d); u.fan = d; u.mats.push(m)
     } else if (clayGeo) {

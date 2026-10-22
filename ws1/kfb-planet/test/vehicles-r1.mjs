@@ -6,7 +6,7 @@
 //          am Hang), far-near.png / far-out.png (Ferne-Aufhellung am echten Spielabstand) und sheet.json.
 //   clip   30-s-Fahrclip je neuer Klasse (Rad-Racer, Laster), nachts, aus der Folgekamera → test/out/vehicles/clip-<klasse>.webm
 //   start  Einzeltest Startseite: Fahrzeug-Wahl (15 Einträge), Racer-Wechsel hinter dem Vorhang, „zu Fuß“ nimmt car aus der Adresse
-//   vclay  A/B für Georg (V-654 C5): 3 Racer × Tag/Gold × Original/Knete aus der Spielkamera bei Gas → test/out/vehicles/vclay-ab.png (nur mit Slot)
+//   vclay  A/B für Georg (V-654 C5): 4 Racer × Tag/Gold × Original/Knete aus der Spielkamera bei Gas → test/out/vehicles/vclay-ab.png (nur mit Slot)
 //   fps    fps-Tabelle: je Racer nachts fahrend, Scheinwerfer an/aus im Wechsel → test/out/vehicles/fps.md
 import fs from 'fs'
 import path from 'path'
@@ -189,19 +189,19 @@ if (PART === 'start') {
   const h1 = await page.evaluate(() => location.hash); await page.screenshot({ path: OUT + 'start-select.png' })
   // Fahrzeugfarbe: Standard Original, Klick auf Heldenfarbe merkt die Wahl und färbt den geladenen Racer um, Original wieder zurück
   const hero0 = await page.evaluate(() => ({ pressed: document.querySelector('[data-hero="0"]').getAttribute('aria-pressed'), on: window.__kfbM2.stats.hero?.on }))
-  await page.click('[data-hero="1"]'); const heroUi = await page.waitForFunction(() => window.__kfbM2.stats.hero?.on === true && window.__kfbM2.stats.hero.applied + window.__kfbM2.stats.hero.skipped >= 1, null, { timeout: 60000 }).then(() => true, () => false)
+  await page.click('[data-hero="1"]'); const heroUi = await page.waitForFunction(() => { const S = window.__kfbM2.stats; return S.hero?.on === true && (S.clay ? S.clay.hero === true : S.hero.applied + S.hero.skipped >= 1) }, null, { timeout: 60000 }).then(() => true, () => false)   // Knet-Stufe: Lackgruppe in KFB-Rot (clay.hero)
   const stored1 = await page.evaluate(() => { try { return localStorage.getItem('kfb.heroColor') } catch (e) { return null } })
   await page.click('[data-hero="0"]'); await page.waitForTimeout(500); const stored0 = await page.evaluate(() => { try { return localStorage.getItem('kfb.heroColor') } catch (e) { return null } }), heroOffAgain = await page.evaluate(() => window.__kfbM2.stats.hero?.on === false)
   await page.selectOption('#kfb-car', ''); await page.waitForTimeout(3000); const h2 = await page.evaluate(() => location.hash)
   await browser.close()
   // Hash hero=1 (Tests): Heldenfarbe von Anfang an
   const H1 = await openPage('#m1,car,debug,look=terrain3,world=probe,hero=1,racer=crimson_flame_dragster', { viewport: { width: 960, height: 540 } })
-  await H1.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 }); const hashHero = await H1.page.evaluate(() => window.__kfbM2.stats.hero); await H1.browser.close()
+  await H1.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 }); const hashHero = await H1.page.evaluate(() => ({ ...window.__kfbM2.stats.hero, clayHero: window.__kfbM2.stats.clay?.hero })); await H1.browser.close()
   code = report('vehicles-r1 start (Fahrzeug-Wahl an der Startseite)', { listsFootPlus14: n === 15, preselected: v0 === 'brasswing_roadster', swapBehindCurtain: swapped && /racer=rustwing_hauler/.test(h1), footRemovesCar: !/(^|,)car(,|$)/.test(h2.slice(1)) && !/racer=/.test(h2), noPageErrors: !errs.length && !H1.errs.length,
-    heroDefaultOriginal: hero0.pressed === 'true' && hero0.on === false, heroButtonOn: heroUi && stored1 === '1', heroButtonOff: heroOffAgain && stored0 === '0', hashHero1: hashHero?.on === true && hashHero.applied >= 1 }, { h1, h2, hero0, hashHero })
+    heroDefaultOriginal: hero0.pressed === 'true' && hero0.on === false, heroButtonOn: heroUi && stored1 === '1', heroButtonOff: heroOffAgain && stored0 === '0', hashHero1: hashHero?.on === true && (hashHero.clay ? hashHero.clayHero === true : hashHero.applied >= 1) }, { h1, h2, hero0, hashHero })
 }
 if (PART === 'vclay') {
-  const RAC = ['crimson_flame_dragster', 'ironclad_skycruiser', 'wasteland_beetle'], TODS = [['Tag', ''], ['Gold', ',tod=gold']], shots = {}
+  const RAC = ['crimson_flame_dragster', 'crimson_thunderjet', 'ironclad_skycruiser', 'wasteland_beetle'], TODS = [['Tag', ''], ['Gold', ',tod=gold']], shots = {}
   for (const [tod, th] of TODS) for (const [lab, vh] of [['Original', ',vclay=0'], ['Knete', ',vclay=1']]) {
     const { browser, page, errs } = await open(th + vh + ',prefetch=0', { width: 960, height: 540 }); await page.mouse.click(480, 300)
     for (const id of RAC) { await swap(page, id); await page.waitForTimeout(800); await page.evaluate(() => window.__kfbM2.stats.follow.orbit(0.55, 0.06))

@@ -119,17 +119,17 @@ const OnFrame = ({ fn }) => { useFrame(fn); return null }
 // Ohne Ruckler (V-631): Look und Heldenfarbe rechnen in Häppchen (≤ 6 ms je Task), danach lädt warmModel die Texturen einzeln (je Bild eine) auf die GPU
 // und übersetzt die Shader vorab (compileAsync) – erst dann erscheint der Wagen, bis dahin steht der Kasten.
 export const HERO_ON = { on: heroEnabled(), switches: 0 }
-// Knet-Stufe der Racer (V-654 C5 „eine Machart“): vclay=1 an, vclay=0 aus; Standard aus bis Georgs Abnahme (dann VCLAY_DEFAULT = true).
+// Knet-Stufe der Racer (V-654 C5 „eine Machart“): Standard an (Georg 22.10.), vclay=0 = Original zum Vergleich.
 // An: Foto-Textur auf die Rollen der Biom-Palette umgetönt (prepVehicleClay), kfb-clay Profil 'vehicle' (= midground) mit Maßstab der Figur (FB-Höhe),
 // Palettenzug 0,12; Düsen als Knet-Flamme (vehicleRig style 'clay'). Ein Programm für alle Racer (kfb-clay: customProgramCacheKey = Version).
-const VCLAY_DEFAULT = false
+const VCLAY_DEFAULT = true
 export const VCLAY_ON = /(^|[#,])vclay=1(,|$)/.test(H) || (VCLAY_DEFAULT && !/(^|[#,])vclay=0(,|$)/.test(H))
 const VCLAY_PAL = (() => { const k = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(H) || [0, TERRAIN3_CFG.palette])[1]; return TERRAIN3_CFG.palettes[k] || TERRAIN3_CFG.palettes.mesa })()
 // Heldenfarbe umschalten (Startseite, Ereignis kfb:hero): fehlt die Umrechnung bei geladenen Racern, rechnet sie in Häppchen nach; dann Texturen tauschen
 async function applyHeroSetting(on, gl) {
   HERO_ON.on = !!on; HERO_ON.switches++
   for (const [id, p] of [...MODELS]) { const m = await p, I = MODEL_INFO.get(id); if (!m || !I) continue
-    if (I.clay) { await prepVehicleClay(m, { palette: VCLAY_PAL, hero: on, tick: slicer(6) }); I.clay.hero = on; if (HERO_ON.on !== !!on) return; if (id === M2CAR.id) M2STATE.hero = { ...I.hero, on: HERO_ON.on }; continue }   // Knet-Stufe: Heldenfarbe = Lackgruppe in KFB-Rot
+    if (I.clay) { await prepVehicleClay(m, { palette: VCLAY_PAL, hero: on, tick: slicer(6), tune: VEHICLE_RIG.vehicles[id]?.clayTone }); I.clay.hero = on; if (HERO_ON.on !== !!on) return; if (id === M2CAR.id) M2STATE.hero = { ...I.hero, on: HERO_ON.on }; continue }   // Knet-Stufe: Heldenfarbe = Lackgruppe in KFB-Rot
     if (on && I.hero.off) I.hero = await applyHeroColor(m, { tick: slicer(6), apply: false })
     if (HERO_ON.on !== !!on) return
     setHeroMaps(m, on); if (on && gl) m.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) if (mt.userData.hero?.tex) gl.initTexture(mt.userData.hero.tex) })
@@ -144,7 +144,7 @@ const loadModel = (id = M2CAR.id, url = racerUrl(id)) => { touchModel(id); if (!
   const tick = slicer(6), t0 = performance.now(), look = /(^|[#,])vlook=0(,|$)/.test(H) ? { applied: 0, off: true } : await prepVehicleLook(g.scene, tick), t1 = performance.now()
   const hero = VCLAY_ON ? { applied: 0, off: true, clay: true } : HERO_ON.on ? await applyHeroColor(g.scene, { tick }) : { applied: 0, off: true }
   let clay = null
-  if (VCLAY_ON) { llog('clay tone'); const t2 = performance.now(), tone = await prepVehicleClay(g.scene, { palette: VCLAY_PAL, hero: HERO_ON.on, tick }); llog('clay apply')
+  if (VCLAY_ON) { llog('clay tone'); const t2 = performance.now(), tone = await prepVehicleClay(g.scene, { palette: VCLAY_PAL, hero: HERO_ON.on, tick, tune: VEHICLE_RIG.vehicles[id]?.clayTone }); llog('clay apply')
     const h = applyClay(g.scene, THREE, { profile: 'vehicle', seed: id, scaleRef: FB_RIG_HEIGHT, palette: VEHICLE_CLAY_ROLES(), pull: 0.12 })
     // kfb-clay legt das Original-Material in mesh.userData ab; Object3D.clone kopiert userData per JSON → Material.toJSON wandelte die 2048er-Textur
     // bei jedem Klon in einen Daten-Text (≈ 600 ms am Stück). Verweis hier in eine WeakMap (kfb-clay selbst bleibt byte-gleich).
