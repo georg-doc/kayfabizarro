@@ -8,7 +8,7 @@
 import * as THREE from 'three'
 import './kfb-headlights.v1.js'
 
-// Scheinwerfer-Stufen (Georg 22.10.): hlt=0 = ALT (Probe-Werte), hlt=v2 = Ansatz an der Lampe + getrennte Flecken, Standard v3 = geometrisch gekoppelt.
+// Scheinwerfer-Stufen (Georg 22.10.): hlt=0 = ALT (Probe-Werte), Standard v2 = Ansatz an der Lampe + getrennte Flecken, hlt=v3 = geometrisch gekoppelt (ohne sichtbaren Kegel, abgelehnt).
 //   v2: sichtbarer Kegel mit Glasbreite an der Lampe; Bodenfleck elliptisch (senkrecht poolV, waagrecht poolH, um poolH nach außen gedreht: Innenkante
 //       parallel, die Flecken überlagern sich nie), Spitze zurückversetzt (poolStart). Georg: „besser“, aber seitlich nicht glaubwürdig auf den Boden gerichtet.
 //   v3: Kegelachse aus dem Lampen-Anker nach unten geneigt; je Bild 3 Geländeproben (unter der Lampe, nah, fern) bestimmen Neigung und senkrechten Winkel so,
@@ -17,7 +17,7 @@ import './kfb-headlights.v1.js'
 //       Achse und endet am Bodentreffpunkt. Steht die Lampe weit über dem Boden (Sprung, Flug), blendet der Fleck weich aus.
 //   HEADLIGHTS.rebuild() baut die Scheinwerfer des aktuellen Wagens mit HEADLIGHT_TUNE.mode neu (Prüfbilder).
 const HLT = (/(^|[#,])hlt=(0|v2|v3)(,|$)/.exec(typeof location !== 'undefined' ? location.hash : '') || [])[2]
-export const HEADLIGHT_TUNE = { mode: HLT === '0' ? 'alt' : HLT === 'v2' ? 'v2' : 'v3', poolV: 0.5, poolH: 0.15, poolStart: 0.35, beamStartK: 1.1, near: 0.7, far: 16, fadeFrom: 3, fadeTo: 7, beamFade: 0.82, soft3: 0.35 }
+export const HEADLIGHT_TUNE = { mode: HLT === '0' ? 'alt' : HLT === 'v3' ? 'v3' : 'v2', /* Georg 22.10.: v3 verlor den sichtbaren Kegel → Standard zurück auf v2, bis das recherchierte Konzept steht */ poolV: 0.5, poolH: 0.15, poolStart: 0.35, beamStartK: 1.1, near: 0.7, far: 16, fadeFrom: 3, fadeTo: 7, beamFade: 0.82, soft3: 0.35 }
 export const HEADLIGHTS = { on: !/(^|[#,])hl=0(,|$)/.test(typeof location !== 'undefined' ? location.hash : ''), dark: 0, daylight: null, inst: null, ms: 0, n: 0 }
 const PROBE_UNIT = 0.616381042
 
