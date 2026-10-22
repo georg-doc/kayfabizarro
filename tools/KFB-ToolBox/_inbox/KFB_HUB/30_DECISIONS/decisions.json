@@ -9354,6 +9354,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-658",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "FrizzleBob-Kanon, global (Georg 22.10. q157: FB hat schon wieder das falsche Rigging mit Augenring über den Original-Augen und wirkt zu groß; FIXT DAS GLOBAL). Ursache: Es gibt bis heute keine fertige kanonische FB-Datei, der P08-Export aus Georgs ToolBox-Werten (Rig-Augen statt Original-Augen, Brauen-Tiefe minus 0,08, Pitch 8) wartet beim WSA auf den Browser-Roundtrip, deshalb griff WSB in J-7 auf einen älteren ToolBox-Stand v5b zurück (gegen Nachtrag 12). Lösung: (1) genau eine Datei FB_CANON (GLB aus dem P08-Export, Georg-Werte, Höhe 1,81 m wie Proof-Stage) mit Hash im privaten Branch, Georg nimmt sie einmal auf der Proof-Stage ab; (2) Prüfung im Code bei allen Verbrauchern: Proof-Stage (WSB), Besetzungs-Loader (WS1) und Karten-Check (WSA) brechen ab, wenn ein FB nicht den FB_CANON-Hash hat; (3) bis FB_CANON abgenommen ist, wird nichts Neues mit FB gebaut; (4) Größe: FB im Spiel fest 1,81 m (cast.r1.json), Fahrzeuge im Spiel-Maßstab; WS1d prüft FB gegen die Dieselpunk-Racer.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne eine kanonische Datei mit Prüfung im Code kehrt der falsche FB immer wieder.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-659",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "K15 Cubes FAIL (Georg q156): geheilte Augen zeigen nur schwarze Augen mit größerem Glanzlicht statt weißer Augen mit dunkler Pupille wie im abgenommenen K11 (Geist); teilweise zu dunkel zum Lesen. WSB liefert die Ursache (Vergleich K11-Golden gegen K15-Verfahren Kugelanpassung) und baut die geheilten Augen exakt nach K11 neu (weiße Lederhaut sichtbar, dunkle Pupille), Prüfung im Code: Weißanteil der Augenfläche im geheilten Zustand gegen K11-Golden; dunkle Fassungen heller bzw. lesbar (Wertstufen nach Kanon), Proof-Bogen neben K11-Geist als Referenz.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Prüfung maß nur den Sitz der Augen, nicht ihr Aussehen; der Vergleich mit dem Golden fehlte.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-660",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "TUNE",
+   "text": "Goo-Vorstadt K14 TUNE (Georg q155): düsterer, infektiöser, unheimlicher; Fensterlicht als Verlauf blutrot-orange-gelb; Goo als eine der performanten Lösungen: nahtlose Decal-Textur, Waber-Shader wie der Terrain-Shader mit dunklen, unheimlichen Farben, die an den Wänden herabfließen, oder netzartige Struktur, die das Gebäude umschließt (Venom bzw. Spawn); Zerstörung muss erst ohne Fluff-Kugeln sauber funktionieren (Kugeln später); Vorbild Spell-Spill-VFX-Benchmark und Recherche (replies/WS0_SPELLSPILL_LOOK_COHESION_DIAG_R1_2026-10-16.md, BRIEF_WS1_FLIGHT_DESTRUCTION_R1). WSB Look-Test r3, Shader-Lösung später bei WS1.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Richtung für die Goo-Häuser: unheimlich statt nur grau.",
+   "applies": "nach V-658/V-659"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9441,7 +9486,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1114",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1115",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- Georg Hub: q154 K13 PASS; V-658 FB-Kanon global (eine Datei FB_CANON mit Hash, Prüfung im Code bei allen Verbrauchern, Stopp bis Abnahme, 1,81 m); V-659 K15 FAIL geheilte Augen (Ursache + Neubau nach K11-Golden, lesbarer); V-660 K14 TUNE düsterer/infektiös, Fensterlicht-Verlauf, Goo-Decal/Shader/Netz, Zerstörung ohne Fluff.
 - V-657 Schrift Bangers für Ingame-Wörter, Marsch über Georgs Atlas-Haltung (Mixamo entfällt). Recherche-Brief Chatterbox; Pilot-Ernte (5–15 % einstimmig aus vollen Songs → eigene Solo-Prompts nötig). Hub q156 Cubes, q157 Fahrer im Dach.
 - Chatterbox-Konzept R1.3: Oper/Musical, elektronisches Register (Talkbox, Vocoder, 303, Kölner Linie) mit Crossover, Bach-Fuge als formales Rückgrat (Thema, Antwort, Umkehrung = Ablehnung, Krebs = Blödsinn, Engführung = Streit, Variation = Dialekt).
 - Chatterbox-Konzept R1.2: Suno-Quellen-Pipeline (Stems → Phrasen-Ernte → Bausteinbank + Soundbed), Schauspiel-Prinzip und Voice-FX je Figur, Arbeitsmodus nach Arendt, Anti-Nerv-Regeln, Recherche.

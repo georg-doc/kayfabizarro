@@ -300,3 +300,12 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · Augen-Rig: `clay-skin-attach.v1.1.js` vendorn (WSB N30)
 - Der Lidrand-Spalt kam vom Schließen in v6 plus dem Warten in v1. v1.1 rastet ab 90 % ein, „zu“ greift sofort.
 - Datei im privaten Branch: `50_BLENDER/N30/stage/vendor/clay-skin-attach.v1.1.js`. Bitte in ToolBox und Arena übernehmen, wo v1 läuft.
+
+
+## 22.10. · DRINGEND: FB_CANON aus dem P08-Export (V-658, Georg)
+- **Georg hat zum wiederholten Mal einen falschen FrizzleBob gesehen:** Augenring über den Original-Augen, zu groß. Ursache: Es gibt keine fertige kanonische FB-Datei, dein P08-Kandidat (`wsa/toolbox-frizzlebob-face-2026-10-21` @20a0123) wartet auf den Browser-Roundtrip.
+- **Bitte jetzt vorrangig:**
+  1. ToolBox lokal aus dem Branch starten, P08 mit Georgs Werten laden, als GLB exportieren und wieder importieren (Roundtrip), Stage-Bilder machen;
+  2. `FB_CANON.glb` + SHA-256 + Höhe (1,81 m) an WS0. WS0 legt sie in den privaten Branch, Georg nimmt auf der Proof-Stage ab.
+- **Karten-Check:** Ein FB mit anderem Hash als FB_CANON ist FAIL.
+- **Die FB-Ohren-Reduktion (V-643)** gleich mit in diesen Export.

@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead + WS1d: FrizzleBob-Kanon global (V-658, Georg)
+- **Georg sah zum wiederholten Mal einen falschen FB:** Augenring über den Original-Augen, zu groß gegenüber den Dieselpunk-Racern.
+- **Ab jetzt gibt es genau eine Datei `FB_CANON`** (P08-Export mit Georgs Werten, Hash, 1,81 m). Sie kommt über WSA bzw. WS0 in den privaten Branch.
+- **Bitte im Besetzungs-Loader prüfen:** Ein FB mit anderem Hash ist ein Fehler, kein stiller Fallback.
+- **WS1d:** FB in Spielgröße neben die Racer stellen, Maßstab prüfen, Vergleichsbild an WS0.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: diegetisches Knet-HUD jetzt einbauen (V-656, Georg)
 - **Georg:** wichtig für Gesamtdesign, Immersion und Steuerung, deshalb vorgezogen und nicht erst nach dem MVP.
 - **Props aus `50_BLENDER/N29/`** (privater Branch, Karte `data/kfb_hud_props.r1.json`):
