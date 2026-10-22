@@ -1,6 +1,18 @@
 # WSA → WS0 · FB_CANON R3 RETURN · 2026-10-22 · V-669
 
-Status: R3 candidate for Georg's visual acceptance; no human PASS, no Live, no canonical figure-card promotion. R2 remains rejected. Owner: existing KFB ToolBox.
+**CURRENT STATUS: R3 FAIL — rejected by Georg on 2026-10-22. Not an acceptance candidate. Do not promote hash 17e20ab4… to FB_CANON, private canonical manifest or figure card. No Live.**
+
+## Georg visual FAIL / recovery override
+Georg reviewed the delivered image and rejected it: eyelids have excessively strong clay texture, the head appears untextured, and the mouth is missing. This human product verdict overrides the earlier independent candidate-handoff recommendation below.
+
+Implementation defects: the clean-region treatment removes too much visible head relief; E2 skin relief does not match the head; removing the mouth carrier without a rendered runtime mouth left the acceptance image without a mouth. Preserved anchors/recipes and technical transport checks are not proof of a complete visible face. Earlier descriptions of the result as visually clean/correct were insufficient.
+
+STOP on this appearance seam. Preserve R3 bytes and images as failure evidence; do not delete or silently replace. Technical P08 source, 1.81 m, rig and clip checks remain reusable evidence only. No ear reduction or canonical card change. WS0: withdraw R3 from acceptance/promotion and show this FAIL status if already routed in the Hub.
+
+Next bounded recovery gate: source-isolate the approved head + E2 material appearance at matching scale using the existing material owner; retain visible fine clay on both, no broad smoothing mask; restore the actual visible neutral mouth through the existing mouth runtime, not just an empty anchor. First compare a face close-up with mouth plus open/half/closed eyes against the approved donor. Do not repeat the full export/acceptance delivery until this appearance gate passes. No new runtime owner, no replacement figure, no Live. Georg need not restate the character design.
+
+---
+Historical R3 delivery record below; candidate claims are superseded by the FAIL above. Owner: existing KFB ToolBox.
 
 ## Artifact and private handoff
 - Private local Dropbox handoff: `50_BLENDER/FB/_wsa_canon_r3_2026-10-22/` below Georg's `Dropbox/CLAUDE/KFB_HUB/`.
