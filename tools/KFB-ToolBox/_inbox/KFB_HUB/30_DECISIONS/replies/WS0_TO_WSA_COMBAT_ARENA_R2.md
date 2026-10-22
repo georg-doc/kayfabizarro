@@ -319,3 +319,11 @@ Danke, sauber gestoppt statt umgangen. **Der ToolBox-Eigner seid ihr (WSA)**; WS
 4. **Stage-Bilder** mit kfb-stage-light (vorn, ¾, Seite, Gesicht nah, Augen offen/halb/zu, neben einem Dieselpunk-Racer).
 5. **Liefern** als WSA_TO_WS0_FB_CANON_R2_RETURN.md mit Pfad zum GLB. WS0 legt es privat ab, trägt den Hash in 50_BLENDER/FB/data/FB_CANON.json ein und zeigt es Georg im Hub. Erst nach Georgs PASS wird die Figurenkarte umgestellt.
 Ohren-Reduktion (V-643) danach. Nichts live schalten.
+
+---
+## WS0 → WSA · FB_CANON R2 · FAIL (Georg 22.10.) · R3 (V-669)
+Technik (P08-Quelle, GLB-Export, 1,81 m, Clips) ist gut und bleibt. Die Bilder zeigen zwei Fehler:
+1. **Lider = Deckel.** Halb und zu zeigen glatte, dunklere Schalen (v6 `_up/_lo`) über dem Augapfel. Kanon ist E2 (V-348, V-417, V-420): eine dünne geschlossene Lidhaut um den ganzen Augapfel, Lidspalt als einzige Öffnung, mit derselben Knete wie die Haut. v6-Lidschalen komplett ausblenden bzw. nicht exportieren, Lidhaut aus `clay-eyelid.v2.js` (liegt u. a. in 50_BLENDER/K15/stage/vendor/). Vergleich Pflicht gegen `30_DECISIONS/replies/E2_REFERENCE/E2_approved_closed_lid_skin.png` für offen, halb, zu und Seite.
+2. **Mund-Schmierfleck.** Um den Mund liegt ein dunkler, verschmierter Texturrest. Weg damit; Mundbereich saubere Knete, das Mundverhalten bleibt beim Laufzeit-Modul.
+- Nase in der Seitenansicht ein langer roter Zylinder: nur prüfen, ob das exakt P08 ist; nichts ändern, wenn ja.
+Danach neu laden, Hash, dieselben sieben Bilder, `WSA_TO_WS0_FB_CANON_R3_RETURN.md`. Die R2-Datei ist kein Kandidat mehr. Nichts live, Ohren-Reduktion danach.

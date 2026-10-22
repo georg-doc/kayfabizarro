@@ -9519,6 +9519,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-669",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "FB_CANON R2 FAIL (Georg 22.10.): Technik gut (P08-Quelle mit Georgs Werten, GLB-Export, 1,81 m, 38 Clips), aber Lider als Deckel (v6-Schalen) statt E2-Lidhaut und dunkler Mund-Schmierfleck. R3 bei WSA: v6-Lidschalen raus, E2-Lidhaut aus clay-eyelid.v2 mit Knete, Abgleich mit der E2-Referenz für offen/halb/zu/Seite, Mund sauber. FB bleibt gesperrt (FB_CANON.json sha256 null), R2-Hash ist kein Kandidat mehr.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "E2 ist abgenommen; Deckel-Lider und Texturreste dürfen nicht in die kanonische Figur.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9606,7 +9621,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1127",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1129",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
