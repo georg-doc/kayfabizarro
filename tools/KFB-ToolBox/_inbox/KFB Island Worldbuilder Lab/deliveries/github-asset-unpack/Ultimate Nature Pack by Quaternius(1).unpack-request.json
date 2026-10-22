@@ -1,0 +1,17 @@
+{
+  "schema": "kfb.asset-unpack-request/1",
+  "zipPath": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1).zip",
+  "targetPath": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)",
+  "manifestPath": "media/3D_Assets/QUATERNIUS_ULTIMATE_NATURE_UNPACK_2026-10-08.json",
+  "exclude": [],
+  "license": "CC0-1.0 (License.txt in pack)",
+  "candidateConsumers": [
+    "island-worldbuilder-lab",
+    "environment-kit",
+    "world-atlas",
+    "travel",
+    "osm-city",
+    "plant-prop-lab"
+  ],
+  "note": "150 nature models (FBX, OBJ+MTL, BLEND) in summer/autumn/snow/dead variants. FBX are in centimetres; Quaternius FBX store Blender linear diffuse colours. Sizing for KFB: role target heights in H (SCALE_CONTRACT_K2, Environment Kit spec). Index exact source assets only."
+}

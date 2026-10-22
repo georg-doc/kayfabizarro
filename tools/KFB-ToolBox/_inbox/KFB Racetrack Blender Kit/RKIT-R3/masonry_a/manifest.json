@@ -1,0 +1,558 @@
+{
+ "schema": "kfb.masonry-family/1",
+ "family": "A",
+ "owner": "RKIT",
+ "units": "lab (K2: MC 6.4, H 3.64)",
+ "frame": "local +Y = run direction (Track Core T), +Z = up (U), +X = right (R); origin = centre of the bottom face; glTF +Y up on export",
+ "colour": "role `stone`, tone index 0 light / 1 mid / 2 dark of ENV_ROLES[island].stone; object extras kfb_role / kfb_tone; point attribute _ROLE_TONE. Brick-Fish: role `creature` (own triad), optional inheritStone",
+ "rules": [
+  "§01 no hard cut, no visible edge: every free edge ends in a rounded cap",
+  "rubble instanced, denser towards the edge, fixed seeds",
+  "colour never baked"
+ ],
+ "modules": [
+  {
+   "id": "BORD_HOCH",
+   "use": "Hochbord, Stadt",
+   "size_xyz": [
+    0.4655,
+    1.5478,
+    0.4817
+   ],
+   "round": 0.08,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 3,
+   "note": "",
+   "glb": "glb/BORD_HOCH.glb",
+   "sha256": "92530ada52bc73d9f9af096c2e85fdad6ae2120f13d81c42908412e319c5ab8d"
+  },
+  {
+   "id": "BORD_TIEF",
+   "use": "Tiefbord (befahrbar, Zufahrt, Furt, nach dem Übergang)",
+   "size_xyz": [
+    0.453,
+    1.5423,
+    0.2046
+   ],
+   "round": 0.07,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 10,
+   "note": "",
+   "glb": "glb/BORD_TIEF.glb",
+   "sha256": "1ee1f7c08d353fd2215a7f6142414fa721c699f4bccd017f4770800e8ff2c884"
+  },
+  {
+   "id": "BORD_UEBERGANG",
+   "use": "Übergangsstein Hochbord → Tiefbord, genau ein Stein",
+   "size_xyz": [
+    0.4526,
+    1.548,
+    0.4662
+   ],
+   "round": 0.07,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 17,
+   "note": "",
+   "glb": "glb/BORD_UEBERGANG.glb",
+   "sha256": "9a215b0c962ea7829999518e3448b2315d5879f00a3cd182c615bf2d6adc75e6"
+  },
+  {
+   "id": "BORD_KOPF",
+   "use": "Bordsteinkopf: gerundetes Bordende, sitzt im Rubbel",
+   "size_xyz": [
+    0.4578,
+    0.8081,
+    0.4809
+   ],
+   "round": 0.22,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a"
+   ],
+   "seed": 24,
+   "note": "",
+   "glb": "glb/BORD_KOPF.glb",
+   "sha256": "d866b644323d3d397a0433ce13c142cbfd3a77c5f844d1f109973fad6a363e52"
+  },
+  {
+   "id": "BORD_KURVE_R12",
+   "use": "Kurvenstein für Radius 12 (radiale Fugen, kürzer statt gebogen)",
+   "size_xyz": [
+    0.459,
+    0.8301,
+    0.4801
+   ],
+   "round": 0.08,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 31,
+   "note": "",
+   "glb": "glb/BORD_KURVE_R12.glb",
+   "sha256": "94fb79d52c91650c9b205afbd0ba196ea5e0ba16aa8862eef87d3cfc4c084555"
+  },
+  {
+   "id": "PLATTE",
+   "use": "Gehwegplatte ¼ MC, Läuferverband; Zuschnitt per Passstein-Generator",
+   "size_xyz": [
+    1.6011,
+    1.6018,
+    0.2234
+   ],
+   "round": 0.07,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 38,
+   "note": "",
+   "glb": "glb/PLATTE.glb",
+   "sha256": "1984a74378ed0d718ee8aa8eeaafd062f7df49a1f7756d6341fad58d44464a63"
+  },
+  {
+   "id": "KANTENSTEIN",
+   "use": "Kantenstein an jeder Schnittkante, einzeln gerundet, Rubbel davor",
+   "size_xyz": [
+    0.3036,
+    0.6951,
+    0.2636
+   ],
+   "round": 0.12,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 45,
+   "note": "",
+   "glb": "glb/KANTENSTEIN.glb",
+   "sha256": "895c83e1e0fea7ccc63302d61d41f529d32df60ef5cb534e15778db33c117ee9"
+  },
+  {
+   "id": "MAUER_18",
+   "use": "Mauerstein 1/8 MC, Lage 0,75",
+   "size_xyz": [
+    0.8206,
+    0.7257,
+    0.7204
+   ],
+   "round": 0.15,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 52,
+   "note": "",
+   "glb": "glb/MAUER_18.glb",
+   "sha256": "23c3d8cc5efaef59a892b6c2714efbdf4d9ebcb74e17c50d62d636f59b339d31"
+  },
+  {
+   "id": "MAUER_14",
+   "use": "Mauerstein 1/4 MC, Lage 0,75",
+   "size_xyz": [
+    0.8081,
+    1.5321,
+    0.7348
+   ],
+   "round": 0.15,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 59,
+   "note": "",
+   "glb": "glb/MAUER_14.glb",
+   "sha256": "33697f74dbfb71c1bc99045be69c92ebecb21c163e3b4ab6f7f0ca3b51683b3d"
+  },
+  {
+   "id": "MAUER_12",
+   "use": "Mauerstein 1/2 MC, Lage 0,75",
+   "size_xyz": [
+    0.8037,
+    3.1326,
+    0.7395
+   ],
+   "round": 0.15,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 66,
+   "note": "",
+   "glb": "glb/MAUER_12.glb",
+   "sha256": "d4b4f62ecba91725183d4973bcaec2411f7d60572dbf008cab80375568914481"
+  },
+  {
+   "id": "ECKSTEIN",
+   "use": "Eckstein (L), bindet zwei Mauerläufe",
+   "size_xyz": [
+    1.6091,
+    1.6112,
+    0.7209
+   ],
+   "round": 0.15,
+   "tone": 2,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 73,
+   "note": "",
+   "glb": "glb/ECKSTEIN.glb",
+   "sha256": "691468a8aec9dc20155caafb35dffdb59e02a60597526135f6d2ad7a79addcfb"
+  },
+  {
+   "id": "KOPFSTEIN",
+   "use": "Mauerkopf: gerundetes freies Mauerende",
+   "size_xyz": [
+    0.8183,
+    0.7965,
+    0.7383
+   ],
+   "round": 0.36,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a"
+   ],
+   "seed": 80,
+   "note": "",
+   "glb": "glb/KOPFSTEIN.glb",
+   "sha256": "cd0dd5188c2ac993f01aee3fd64bfd39413c507303842796ff6eed0b3a4d9024"
+  },
+  {
+   "id": "DECKSTEIN_RUND",
+   "use": "runder Deckstein für Brüstung und Mauerkrone",
+   "size_xyz": [
+    0.9569,
+    1.0613,
+    0.5584
+   ],
+   "round": 0.26,
+   "tone": 0,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 87,
+   "note": "",
+   "glb": "glb/DECKSTEIN_RUND.glb",
+   "sha256": "a61dee4590a0809072d3bf9febe6b9cf42cc37fdb50edcd83a72eb50010b173e"
+  },
+  {
+   "id": "STUFE_1MC",
+   "use": "Treppenstufe 1 MC breit, Steigung 0,45, Auftritt ⅛ MC",
+   "size_xyz": [
+    6.3487,
+    0.7653,
+    0.4545
+   ],
+   "round": 0.12,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 94,
+   "note": "",
+   "glb": "glb/STUFE_1MC.glb",
+   "sha256": "6df4c83ab8e3feb74acff6b525fbd4bac846521e5a6a07d4197df9ba54d4419b"
+  },
+  {
+   "id": "STUFE_12MC",
+   "use": "Treppenstufe ½ MC breit",
+   "size_xyz": [
+    3.1493,
+    0.7744,
+    0.4557
+   ],
+   "round": 0.12,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a",
+    "SOCKET_b"
+   ],
+   "seed": 101,
+   "note": "",
+   "glb": "glb/STUFE_12MC.glb",
+   "sha256": "28d71d6a8f854bddcb3b334747bfdcee8eb4862987a93e12e697ea4178d34d43"
+  },
+  {
+   "id": "BOGENSTEIN_R12",
+   "use": "Bogenstein (Radius 12, 17 Steine, Ring 2,0), stehend; Breite entlang Y wird beim Setzen auf die Gewölbebreite skaliert",
+   "size_xyz": [
+    2.5451,
+    1.0104,
+    1.9898
+   ],
+   "round": 0.18,
+   "tone": 0,
+   "sockets": [],
+   "seed": 108,
+   "note": "Generator voussoir(R, n, t) für andere Radien",
+   "glb": "glb/BOGENSTEIN_R12.glb",
+   "sha256": "3876b4b1ec96f0ec8c3e3013fb33c6408ea181681a0a01f09f2bcdf9a9896f73"
+  },
+  {
+   "id": "SCHLUSSSTEIN_R12",
+   "use": "Schlussstein, größer und vorstehend, stehend",
+   "size_xyz": [
+    2.6128,
+    1.0154,
+    2.3428
+   ],
+   "round": 0.2,
+   "tone": 2,
+   "sockets": [],
+   "seed": 115,
+   "note": "",
+   "glb": "glb/SCHLUSSSTEIN_R12.glb",
+   "sha256": "67d1c5df43bcec56870314b506a0489170f6460a6ba21404b58b48f76edb402c"
+  },
+  {
+   "id": "ABSCHLUSS_WAND",
+   "use": "Abschlusskappe für Wandenden (halbe Kuppe), weicht beim Anbau",
+   "size_xyz": [
+    0.7989,
+    0.8032,
+    0.7397
+   ],
+   "round": 0.4,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a"
+   ],
+   "seed": 122,
+   "note": "",
+   "glb": "glb/ABSCHLUSS_WAND.glb",
+   "sha256": "5a9724d588684eeceb8c525ef9d5a0ed65b94a76651f4d21a6038a04364e48b5"
+  },
+  {
+   "id": "ABSCHLUSS_BODEN",
+   "use": "Abschlusskappe für Boden- und Plattenkanten (Viertelrund)",
+   "size_xyz": [
+    1.6059,
+    0.5114,
+    0.228
+   ],
+   "round": 0.2,
+   "tone": 1,
+   "sockets": [
+    "SOCKET_a"
+   ],
+   "seed": 129,
+   "note": "",
+   "glb": "glb/ABSCHLUSS_BODEN.glb",
+   "sha256": "47213c71f4b2d531c25d3d8a995ab1b97d865df7fd71ff00f60d80ed88dec58a"
+  },
+  {
+   "id": "RUBBEL_KIESEL_0",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.2651,
+    0.2072,
+    0.19
+   ],
+   "round": 0.12,
+   "tone": 0,
+   "sockets": [],
+   "seed": 136,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_0.glb",
+   "sha256": "dd4ba0ad06009a10d74ea081239a3dbd2208099acabd3dce844c059c9935b1b6"
+  },
+  {
+   "id": "RUBBEL_KIESEL_1",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.3693,
+    0.2947,
+    0.2225
+   ],
+   "round": 0.15,
+   "tone": 1,
+   "sockets": [],
+   "seed": 143,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_1.glb",
+   "sha256": "110308f7d88ec5e470b13d2d3d275882a3845c69683c8bcaf296bb645e0f7c43"
+  },
+  {
+   "id": "RUBBEL_KIESEL_2",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.457,
+    0.3634,
+    0.2948
+   ],
+   "round": 0.18,
+   "tone": 2,
+   "sockets": [],
+   "seed": 150,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_2.glb",
+   "sha256": "6b573bda42ce1660b928cabaa252f28c8c3189dc93cfc3701be8dfb1c9ab56ff"
+  },
+  {
+   "id": "RUBBEL_KIESEL_3",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.5372,
+    0.467,
+    0.3155
+   ],
+   "round": 0.21,
+   "tone": 0,
+   "sockets": [],
+   "seed": 157,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_3.glb",
+   "sha256": "aedf0a1de9b70ba5ff574eb6ca17a9900b01b6aac172a3d790f6c547eb225b9f"
+  },
+  {
+   "id": "RUBBEL_KIESEL_4",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.6202,
+    0.4925,
+    0.3892
+   ],
+   "round": 0.24,
+   "tone": 1,
+   "sockets": [],
+   "seed": 164,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_4.glb",
+   "sha256": "5363516414d42f5824e78a83d6679b1bc3de3fb9524babf5cd7dd2cbcbae3ed6"
+  },
+  {
+   "id": "RUBBEL_KIESEL_5",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.6551,
+    0.5392,
+    0.4065
+   ],
+   "round": 0.27,
+   "tone": 2,
+   "sockets": [],
+   "seed": 171,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_5.glb",
+   "sha256": "66cb266b98b6656f559d666a4a39e3611d0164da5285d03607bc5ac889926c77"
+  },
+  {
+   "id": "RUBBEL_KIESEL_6",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.6959,
+    0.551,
+    0.4896
+   ],
+   "round": 0.3,
+   "tone": 0,
+   "sockets": [],
+   "seed": 178,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_6.glb",
+   "sha256": "68c08af5a9db6832e7881be8cdfc2daed055a367625f3e4885a949449683baf6"
+  },
+  {
+   "id": "RUBBEL_KIESEL_7",
+   "use": "Rubbel (Knetsteinchen), instanziert, Dichte nach Abstand zur Kante",
+   "size_xyz": [
+    0.7976,
+    0.6348,
+    0.4989
+   ],
+   "round": 0.32999999999999996,
+   "tone": 1,
+   "sockets": [],
+   "seed": 185,
+   "note": "",
+   "glb": "glb/RUBBEL_KIESEL_7.glb",
+   "sha256": "0cf446f4d7138b21e18a1ad1fb683f862b8b5144517695661435c66fc9acda99"
+  },
+  {
+   "id": "RUBBEL_SCHERBE_0",
+   "use": "aus einer Platte gebrochenes Stück (Wegende, Ruine)",
+   "size_xyz": [
+    0.5784,
+    0.495,
+    0.1877
+   ],
+   "round": 0.05,
+   "tone": 1,
+   "sockets": [],
+   "seed": 192,
+   "note": "",
+   "glb": "glb/RUBBEL_SCHERBE_0.glb",
+   "sha256": "6978d48fed1bf2b1f2b7bcd67f83285123c5744362563048484c03c361973c1f"
+  },
+  {
+   "id": "RUBBEL_SCHERBE_1",
+   "use": "aus einer Platte gebrochenes Stück (Wegende, Ruine)",
+   "size_xyz": [
+    0.7725,
+    0.6752,
+    0.186
+   ],
+   "round": 0.05,
+   "tone": 2,
+   "sockets": [],
+   "seed": 199,
+   "note": "",
+   "glb": "glb/RUBBEL_SCHERBE_1.glb",
+   "sha256": "39d1b22efb32fbe606426d99401e9eeddb5421b18884f4bb4469166ac2da2de3"
+  },
+  {
+   "id": "RUBBEL_SCHERBE_2",
+   "use": "aus einer Platte gebrochenes Stück (Wegende, Ruine)",
+   "size_xyz": [
+    0.8053,
+    0.6689,
+    0.1858
+   ],
+   "round": 0.05,
+   "tone": 1,
+   "sockets": [],
+   "seed": 206,
+   "note": "",
+   "glb": "glb/RUBBEL_SCHERBE_2.glb",
+   "sha256": "dd0b5727a1770cf7b31c4b30ce1bdb1c81bd2cade500dca80f0517c766294076"
+  },
+  {
+   "id": "RUBBEL_SCHERBE_3",
+   "use": "aus einer Platte gebrochenes Stück (Wegende, Ruine)",
+   "size_xyz": [
+    0.9927,
+    0.9003,
+    0.1848
+   ],
+   "round": 0.05,
+   "tone": 2,
+   "sockets": [],
+   "seed": 213,
+   "note": "",
+   "glb": "glb/RUBBEL_SCHERBE_3.glb",
+   "sha256": "2209fc230eef4e8c5d7a6814461d57248e3e9a2ec67e77b1893688eead97ed1a"
+  }
+ ]
+}

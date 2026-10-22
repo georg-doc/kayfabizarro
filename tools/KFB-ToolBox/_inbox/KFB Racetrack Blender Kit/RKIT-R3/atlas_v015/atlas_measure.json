@@ -1,0 +1,310 @@
+{
+ "A1": {
+  "name": "Spur dazu (Stadt 1+1 -> 2+1)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 32
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "A4": {
+  "name": "Gerade <-> Kurve (Stadt)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T8_bank_max_deg": 4.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "B1": {
+  "name": "Ortseingang Stadt -> Land",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [
+   "B1 family 16.492..28.8"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": -0.05,
+   "walk_w": 1.5,
+   "wall_h": 0,
+   "overall": 12.5
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "B2": {
+  "name": "Stadt -> Fahrschule",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [
+   "B2 family 16.492..28.8"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": 0.25,
+   "walk_w": 1.7,
+   "wall_h": 0,
+   "overall": 12.8
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "B3": {
+  "name": "Land -> Berg",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [
+   "B3 family 16.492..28.8"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": -0.05,
+   "walk_w": 1.5,
+   "wall_h": 0,
+   "overall": 12.5
+  },
+  "T7_end": {
+   "kerb_h": -0.03,
+   "walk_w": 0.8,
+   "wall_h": 0,
+   "overall": 10.1
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "B5": {
+  "name": "Rampenfuss Highway -> Stadt",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": 0.0,
+  "T3_zones": [
+   "B5 family 16.492..28.8"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0,
+   "walk_w": 0.3,
+   "wall_h": 1.3,
+   "overall": 12.3
+  },
+  "T7_end": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 15.2
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {}
+ },
+ "C1": {
+  "name": "Boden -> Bruecke mit Kuppe -> Boden (Stadt)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": null,
+  "T3_zones": [
+   "C1 support 14.1..26.9",
+   "C1 support 78.134..90.934"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {
+   "crest_apex": 0.9,
+   "grade_max_pct": 4.86,
+   "depth_root": 3.2,
+   "depth_mid": 2.118,
+   "piers": 0,
+   "root_into_island": "Ueberlappung (Atlas-Testinsel); echte Naht = Lab kfb.road-bed/1"
+  }
+ },
+ "C1H": {
+  "name": "Boden -> Bruecke -> Boden (Highway)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": null,
+  "T3_zones": [
+   "C1 support 14.1..26.9",
+   "C1 support 78.134..90.934"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0,
+   "walk_w": 0.3,
+   "wall_h": 1.3,
+   "overall": 29.8
+  },
+  "T7_end": {
+   "kerb_h": 0,
+   "walk_w": 0.3,
+   "wall_h": 1.3,
+   "overall": 29.8
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {
+   "crest_apex": 0.9,
+   "grade_max_pct": 4.86,
+   "depth_root": 3.2,
+   "depth_mid": 2.118,
+   "piers": 0,
+   "root_into_island": "Ueberlappung (Atlas-Testinsel); echte Naht = Lab kfb.road-bed/1"
+  }
+ },
+ "C1L": {
+  "name": "Boden -> Bruecke -> Boden (Land)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": null,
+  "T3_zones": [
+   "C1 support 14.1..26.9",
+   "C1 support 78.134..90.934"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": -0.05,
+   "walk_w": 1.5,
+   "wall_h": 0,
+   "overall": 12.5
+  },
+  "T7_end": {
+   "kerb_h": -0.05,
+   "walk_w": 1.5,
+   "wall_h": 0,
+   "overall": 12.5
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {
+   "crest_apex": 0.9,
+   "grade_max_pct": 4.86,
+   "depth_root": 3.2,
+   "depth_mid": 2.118,
+   "piers": 0,
+   "root_into_island": "Ueberlappung (Atlas-Testinsel); echte Naht = Lab kfb.road-bed/1"
+  }
+ },
+ "C2": {
+  "name": "Bruecke waechst aus dem Inselrand (Stadt)",
+  "T1_terrain_above_road": 0,
+  "T1_worst": 0.0,
+  "T2_toe_gap_max": null,
+  "T3_zones": [
+   "C2 support 14.1..26.9",
+   "C2 support 78.134..90.934"
+  ],
+  "T4_ease": "smootherstep (C2), ein Verlauf fuer alle Stuetzpunkte",
+  "T5_role_mismatch": 0,
+  "T5_green_on_kerb_or_wall": 0,
+  "T7_start": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T7_end": {
+   "kerb_h": 0.35,
+   "walk_w": 4.9,
+   "wall_h": 0,
+   "overall": 19.2
+  },
+  "T8_bank_max_deg": 0.0,
+  "T8_inner_raised": 0,
+  "T8_wave_flips": 0,
+  "T10": {
+   "crest_apex": 0.9,
+   "grade_max_pct": 4.86,
+   "depth_root": 4.8,
+   "depth_mid": 2.118,
+   "piers": 0,
+   "root_into_island": "Ueberlappung (Atlas-Testinsel); echte Naht = Lab kfb.road-bed/1"
+  }
+ }
+}
