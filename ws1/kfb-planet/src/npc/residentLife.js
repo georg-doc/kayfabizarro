@@ -68,7 +68,10 @@ export function createResidentLife(options) {
         if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(b.x, options.groundAt(b.x, b.z) + 0.9 * K, b.z); return frustum.intersectsSphere(_sphere) }
       for (const r of R) S.near[r.def.residentId] = near(r.def.residentId)
       const outs = sim.step(t, dt, { player: pl, near: (id) => S.near[id], threat: options.threat ? (id) => options.threat(id) : undefined }) // Phase C: Dark Fluffer
-      R.forEach((r, i) => { r.f.present(outs[i], dt); r.f.update(dt, hctx) })
+      // MVP-Leistung (Lead 22.10., Muster discoLife): Figuren sind Skin-Meshes ohne Frustum-Culling – sichtbar nur im Bild (bis visibleFar) oder
+      // ganz nah (12·K, Schatten ins Bild), sonst ausgeblendet; Plan, Uhr und Gedächtnis laufen weiter
+      const show = (o) => { if (!pl) return true; const d = Math.hypot(o.x - pl.x, o.z - pl.z); if (d < 12 * K) return true; if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(o.x, options.groundAt(o.x, o.z) + 0.9 * K, o.z); return frustum.intersectsSphere(_sphere) }
+      R.forEach((r, i) => { r.f.present(outs[i], dt); r.f.update(dt, hctx, show(outs[i])) })
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05; S.msMax = Math.max(S.msMax || 0, ms) } // Kosten je Schritt (gleitend)
     },
     status: () => ({ status: S.status, error: S.error, clips: S.clips.length, ms: S.ms ?? null, msMax: S.msMax ?? null, residents: R.map((r) => ({ id: r.def.residentId, cast: r.def.stageCastId, placeholder: r.def.placeholder, ...r.f.status() })) }),

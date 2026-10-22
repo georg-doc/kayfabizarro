@@ -83,8 +83,27 @@ export const warmVehicleEnv = (renderer) => envFor(renderer)
 // Lack), dann weichzeichnen – zusammenhängende Lackflächen bleiben voll, einzelne Splitter fallen unter die Schwelle. Lack aus blankem Rost-/Bronzemetall
 // (Farbton 15–50°, Sättigung < 0,3, z. B. Panzer-Gleiter) bleibt unverändert. Vor applyVehicleLook und vor dem Klonen aufrufen (Klone teilen die Textur).
 export const HERO = { hex: '#d8262e' }
+// Georg 22.10.: Standard = Originalfarbe für alle Racer, Heldenfarbe nur als Einstellung (Startseite, gemerkt je Browser). Hash hero=1 / hero=0 überschreibt (Tests).
+const HERO_KEY = 'kfb.heroColor'
+export function heroEnabled() {
+  const h = typeof location !== 'undefined' ? location.hash : ''
+  if (/(^|[#,])hero=1(,|$)/.test(h)) return true
+  if (/(^|[#,])hero=0(,|$)/.test(h)) return false
+  try { return localStorage.getItem(HERO_KEY) === '1' } catch (e) { return false }
+}
+export function setHeroEnabled(on) {
+  try { localStorage.setItem(HERO_KEY, on ? '1' : '0') } catch (e) { /* ohne Speicher gilt die Wahl nur jetzt */ }
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('kfb:hero', { detail: { on: !!on } }))
+}
+// umgerechnete Heldenfarben-Texturen an- bzw. abschalten (Materialien geteilt: gilt für alle Klone des Modells); liefert die Zahl umgeschalteter Materialien
+export function setHeroMaps(root, on) {
+  const mats = new Set(); let n = 0
+  root?.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) mats.add(mt) })
+  for (const mt of mats) { const h = mt.userData.hero; if (!h?.tex) continue; const want = on ? h.tex : h.orig; if (mt.map !== want) { mt.map = want; n++ } }
+  return n
+}
 const hsv = (r, g, b) => { const mx = Math.max(r, g, b), mn = Math.min(r, g, b), c = mx - mn; let h = 0; if (c > 1e-6) h = mx === r ? ((g - b) / c) % 6 : mx === g ? (b - r) / c + 2 : (r - g) / c + 4; return [(h * 60 + 360) % 360, mx > 0 ? c / mx : 0, mx] }
-export async function applyHeroColor(root, { hex = HERO.hex, tick = NOTICK } = {}) {
+export async function applyHeroColor(root, { hex = HERO.hex, tick = NOTICK, apply = true } = {}) {
   if (typeof document === 'undefined' || !root) return { applied: 0 }
   const info = { applied: 0, skipped: 0, mats: [] }, mats = new Set(), hh = {}; new THREE.Color(hex).getHSL(hh, THREE.SRGBColorSpace)   // Farbton der Hex-Farbe wie in der Probe (sRGB-Zahlen)
   root.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) mats.add(mt) })
@@ -105,7 +124,7 @@ export async function applyHeroColor(root, { hex = HERO.hex, tick = NOTICK } = {
       for (let y = 0, q = 0, i = 0; y < H; y++) { for (let e = q + W; q < e; i += 4, q++) { const k = M[q]; if (k <= 0.001) continue; share += k; const [, sa, v] = hsv(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255)
         c.setHSL(hh.h, Math.max(0.55, sa * 1.3), Math.min(0.62, v * 0.62), THREE.SRGBColorSpace); c.convertLinearToSRGB(); d[i] += (c.r * 255 - d[i]) * k; d[i + 1] += (c.g * 255 - d[i + 1]) * k; d[i + 2] += (c.b * 255 - d[i + 2]) * k } if ((y & 31) === 31) await tick() }
       cx.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(cv); t.flipY = mp.flipY; t.colorSpace = mp.colorSpace; t.wrapS = mp.wrapS; t.wrapT = mp.wrapT; t.anisotropy = mp.anisotropy; t.channel = mp.channel
-      mt.userData.hero = { hue: hc, sat: +sp.toFixed(3), share: +(share / (W * H)).toFixed(3), orig: mp, tex: t }; mt.map = t; mt.needsUpdate = true; info.applied++; info.mats.push({ hue: hc, sat: mt.userData.hero.sat, share: mt.userData.hero.share })
+      mt.userData.hero = { hue: hc, sat: +sp.toFixed(3), share: +(share / (W * H)).toFixed(3), orig: mp, tex: t }; if (apply) mt.map = t; info.applied++; info.mats.push({ hue: hc, sat: mt.userData.hero.sat, share: mt.userData.hero.share })
     } catch (e) { console.warn('heroColor', e) }
   }
   return info

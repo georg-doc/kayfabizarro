@@ -18,6 +18,11 @@ const waitT = async (t, max = 120000) => { const t0 = Date.now(); while ((await 
 await page.waitForFunction(() => { const n = window.__kfbM1?.npc?.(); return n && n.status.status !== 'LOADING' && window.__kfbM1.status().player?.status === 'OK' && window.__kfbM1.mods.orchard?.stats().status === 'OK' }, null, { timeout: 300000 })
 // A
 const A = await page.evaluate(() => window.__kfbM1.npc().status)
+// MVP-Leistung (Lead 22.10.): Figuren außerhalb von Bild und Nähe sind ausgeblendet – sichtbar müssen sie sein, wenn der Spieler bei ihnen steht
+const visNear = []
+for (const id of ['farmer_b', 'lorekeeper']) { await page.evaluate((id) => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === id), px = d.x + Math.sin(d.yaw) * 6, pz = d.z + Math.cos(d.yaw) * 6
+    M.player().teleport([px, M.terrainH(px, pz) + 1.2, pz], Math.atan2(d.x - px, d.z - pz)) }, id); await page.waitForTimeout(700)
+  visNear.push(await page.evaluate((id) => window.__kfbM1.npc().status.residents.find((r) => r.id === id).visible, id)) }
 // B: Spiegel gegen Spiel
 const B = await page.evaluate(async () => { const { orchardTreesXZ, npcWorldObstacles } = window.__kfbNpcTest || {}; const M = window.__kfbM1
   return { trees: M.mods.orchard.trees().map((t) => ({ ref: `orchard:${t.zone}:${t.id}`, x: t.pos[0], z: t.pos[2] })), loot: M.mods.found.items().map((l) => ({ key: l.key, x: l.x, z: l.z })) } })
@@ -88,7 +93,8 @@ await browser.close()
 
 const face = faceChecks.length ? Math.max(...faceChecks.flat()) : null
 process.exit(report('npc-a (WS-NPC Phase A im Spiel)', {
-  A_residentsLoadedWithEyes: A.status === 'OK' && A.residents.length === 2 && A.residents.every((r) => r.status === 'OK' && r.actor === 'OK' && r.visible && r.head),
+  A_residentsLoadedWithEyes: A.status === 'OK' && A.residents.length === 2 && A.residents.every((r) => r.status === 'OK' && r.actor === 'OK' && r.head),
+  A_visibleWhenNear: visNear.length === 2 && visNear.every(Boolean),
   A_noUnmarkedPlaceholder: A.residents.every((r) => r.placeholder == null || /PLATZHALTER/.test(r.placeholder)) && A.residents.find((r) => r.id === 'lorekeeper')?.placeholder == null, // Lorekeeper echt (WS0 V-602)
   A_farmerBIsRealFigure: A.residents.find((r) => r.id === 'farmer_b').cast === 'farmer-b' && A.residents.find((r) => r.id === 'farmer_b').placeholder == null,
   B_mirrorMatchesGameTrees: treeDev < 1e-3,

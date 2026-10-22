@@ -89,7 +89,10 @@ export function createGroupLife(options) {
         const outs = g.sim.step(t, dt, { player: g.shown ? pl : null, near: near && g.shown, hits: g.hits.splice(0), day })
         for (const e of g.sim.drainEvents()) world(g, e)
         const rv = g.reveal && t < g.reveal.until ? g.reveal : null; if (!rv && g.reveal) { g.reveal = null; g.figs.forEach((f) => f.setPose(null)) } // E3: Enthüllungs-Lage je Mitglied
-        g.figs.forEach((f, k) => { f.present(outs[k], dt); if (rv) f.setPose(rv.pose(k, t)); f.update(dt, hctx, g.shown) })
+        // MVP-Leistung (Lead 22.10., Muster discoLife): je Mitglied sichtbar nur im Bild (bis visibleFar) oder ganz nah (12·K, Schatten ins Bild);
+        // Plan, Treffer, KO und Enthüllung laufen weiter (im Bild sind sie sichtbar)
+        const show = (o) => !pl || Math.hypot(o.x - pl.x, o.z - pl.z) < 12 * K || inView(o)
+        g.figs.forEach((f, k) => { f.present(outs[k], dt); if (rv) f.setPose(rv.pose(k, t)); f.update(dt, hctx, g.shown && show(outs[k])) })
       }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },

@@ -53,6 +53,14 @@ if (PART === 'data') {
   await swap(page, 'ironclad_skycruiser')
   res.prefetched = await page.waitForFunction(() => window.__kfbM2.modelInfo('ironclad_wrecker')?.warm, null, { timeout: 120000 }).then(() => true, () => false)
   await page.waitForTimeout(1500); res.warmSwap = await swap(page, 'ironclad_wrecker')
+  // Heldenfarbe (Georg 22.10.: Standard Original, Einstellung): im Spiel an- und wieder ausschalten, am Flammen-Dragster (Lack wird umgefärbt)
+  await swap(page, 'crimson_flame_dragster')
+  const heroMaps = () => page.evaluate(() => { let tex = 0, orig = 0, all = 0; window.__kfbM2.stats.rig?.stretch?.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) { const h = mt.userData.hero; if (!h?.tex) continue; all++; if (mt.map === h.tex) tex++; if (mt.map === h.orig) orig++ } }); return { all, tex, orig, state: window.__kfbM2.stats.hero } })
+  res.heroDefault = await heroMaps()
+  await page.evaluate(() => window.__kfbM2.setHero(true)); await page.waitForFunction(() => window.__kfbM2.stats.hero?.on && window.__kfbM2.stats.hero.applied >= 1, null, { timeout: 60000 }).catch(() => {})
+  res.heroOn = await heroMaps(); await page.waitForTimeout(500); await page.screenshot({ path: OUT + 'hero-on.png' })
+  await page.evaluate(() => window.__kfbM2.setHero(false)); await page.waitForTimeout(800)
+  res.heroOff = await heroMaps(); await page.screenshot({ path: OUT + 'hero-off.png' })
   await browser.close(); res.errs = errs.slice(0, 5)
   fs.writeFileSync(OUT + 'data.json', JSON.stringify(res, null, 1))
   const C = Object.values(res.cars)
@@ -61,7 +69,9 @@ if (PART === 'data') {
     headlightsOnAll: C.every((c) => c.lamps === RIG[c.id].headlights.lamps.length && c.pools >= 1 && c.sides >= 1),
     headlightsUnder02ms: C.every((c) => c.hlMs != null && c.hlMs < 0.2),
     wheelsOnGround: C.every((c) => (RIG[c.id].wheels ? c.rigY < -0.1 : c.rigY === 0)),
-    heroOrMetal: C.every((c) => c.hero && (c.hero.applied + c.hero.skipped) >= 1),
+    heroOffByDefault: C.every((c) => c.hero?.off && c.hero.on === false) && res.heroDefault.all === 0,
+    heroToggleOn: res.heroOn.state?.on === true && res.heroOn.all >= 1 && res.heroOn.tex === res.heroOn.all,
+    heroToggleOff: res.heroOff.state?.on === false && res.heroOff.all >= 1 && res.heroOff.orig === res.heroOff.all,
     deformPerClass: C.every((c) => c.deform === (RIG[c.id].class === 'hauler' ? 'SPACE_HAULER' : 'CAR_CHILL_LIGHT')),
     noShaderRecompileOnCachedSwap: res.back.every((b) => !b.newPrograms),   // Erstladen darf neue Varianten übersetzen (z. B. Leucht-Textur des Ödland-Käfers)
     cachedSwapSmooth: res.back.every((b) => b.maxFrame < 100 && b.loadMs < 1200),
@@ -168,8 +178,17 @@ if (PART === 'start') {
   await page.selectOption('#kfb-car', 'rustwing_hauler')
   const swapped = await page.waitForFunction(() => window.__kfbM2.stats.modelId === 'rustwing_hauler' && window.__kfbM2.stats.model === 'OK', null, { timeout: 120000 }).then(() => true, () => false)
   const h1 = await page.evaluate(() => location.hash); await page.screenshot({ path: OUT + 'start-select.png' })
+  // Fahrzeugfarbe: Standard Original, Klick auf Heldenfarbe merkt die Wahl und färbt den geladenen Racer um, Original wieder zurück
+  const hero0 = await page.evaluate(() => ({ pressed: document.querySelector('[data-hero="0"]').getAttribute('aria-pressed'), on: window.__kfbM2.stats.hero?.on }))
+  await page.click('[data-hero="1"]'); const heroUi = await page.waitForFunction(() => window.__kfbM2.stats.hero?.on === true && window.__kfbM2.stats.hero.applied + window.__kfbM2.stats.hero.skipped >= 1, null, { timeout: 60000 }).then(() => true, () => false)
+  const stored1 = await page.evaluate(() => { try { return localStorage.getItem('kfb.heroColor') } catch (e) { return null } })
+  await page.click('[data-hero="0"]'); await page.waitForTimeout(500); const stored0 = await page.evaluate(() => { try { return localStorage.getItem('kfb.heroColor') } catch (e) { return null } }), heroOffAgain = await page.evaluate(() => window.__kfbM2.stats.hero?.on === false)
   await page.selectOption('#kfb-car', ''); await page.waitForTimeout(3000); const h2 = await page.evaluate(() => location.hash)
   await browser.close()
-  code = report('vehicles-r1 start (Fahrzeug-Wahl an der Startseite)', { listsFootPlus14: n === 15, preselected: v0 === 'brasswing_roadster', swapBehindCurtain: swapped && /racer=rustwing_hauler/.test(h1), footRemovesCar: !/(^|,)car(,|$)/.test(h2.slice(1)) && !/racer=/.test(h2), noPageErrors: !errs.length }, { h1, h2 })
+  // Hash hero=1 (Tests): Heldenfarbe von Anfang an
+  const H1 = await openPage('#m1,car,debug,look=terrain3,world=probe,hero=1,racer=crimson_flame_dragster', { viewport: { width: 960, height: 540 } })
+  await H1.page.waitForFunction(() => window.__kfbM2?.stats?.model === 'OK', null, { timeout: 240000 }); const hashHero = await H1.page.evaluate(() => window.__kfbM2.stats.hero); await H1.browser.close()
+  code = report('vehicles-r1 start (Fahrzeug-Wahl an der Startseite)', { listsFootPlus14: n === 15, preselected: v0 === 'brasswing_roadster', swapBehindCurtain: swapped && /racer=rustwing_hauler/.test(h1), footRemovesCar: !/(^|,)car(,|$)/.test(h2.slice(1)) && !/racer=/.test(h2), noPageErrors: !errs.length && !H1.errs.length,
+    heroDefaultOriginal: hero0.pressed === 'true' && hero0.on === false, heroButtonOn: heroUi && stored1 === '1', heroButtonOff: heroOffAgain && stored0 === '0', hashHero1: hashHero?.on === true && hashHero.applied >= 1 }, { h1, h2, hero0, hashHero })
 }
 process.exit(code)

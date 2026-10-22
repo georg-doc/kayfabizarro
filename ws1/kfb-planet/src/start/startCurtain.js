@@ -10,6 +10,7 @@ import { QUALITY, qualityKey, setQuality } from './quality.js'
 import * as audio from '../audio/kfbAudio.js'
 import { addHostKeyHandler } from '../hostKeys.js'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
+import { heroEnabled, setHeroEnabled } from '../look/vehicleLook.js'
 
 const HELP = [
   ['W A S D', 'laufen'], ['Shift', 'rennen'], ['Leertaste', 'springen'], ['F', 'fliegen'], ['Maus', 'umsehen'], ['V', 'im Auto: nächster Racer'],
@@ -62,6 +63,7 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
       <div class="help">${HELP.map(([k, v]) => `<b>${k}</b><span>${v}</span>`).join('')}</div>
       <div class="row"><label for="kfb-vol">Ton</label><input id="kfb-vol" type="range" min="0" max="100" step="1"><span data-k="vol"></span></div>
       <div class="row"><label for="kfb-car">Fahrzeug</label><select id="kfb-car">${CAR_OPTS}</select></div>
+      <div class="row q" role="group" aria-label="Fahrzeugfarbe"><span>Fahrzeugfarbe</span><button data-hero="0">Original</button><button data-hero="1">Heldenfarbe</button></div>
       <div class="row q" role="group" aria-label="Qualität"><span>Qualität</span>${Object.entries(QUALITY).map(([k, q]) => `<button data-q="${k}">${q.label}</button>`).join('')}</div>
       <button class="go" disabled>Lädt …</button>
     </div>`
@@ -74,6 +76,9 @@ export function mountStartCurtain({ parent = document.body, title = 'Kayfabizarr
   const markQ = (k) => ui.querySelectorAll('[data-q]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.q === k)))
   markQ(qualityKey()); ui.querySelectorAll('[data-q]').forEach((b) => b.addEventListener('click', () => { setQuality(b.dataset.q); markQ(b.dataset.q) }))
 
+  // Heldenfarbe (Georg 22.10.: Standard Original, Heldenfarbe als Einstellung): gemerkt je Browser, schaltet geladene Racer sofort um (Ereignis kfb:hero)
+  const markHero = (on) => ui.querySelectorAll('[data-hero]').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.hero === '1') === on)))
+  markHero(heroEnabled()); ui.querySelectorAll('[data-hero]').forEach((b) => b.addEventListener('click', () => { const on = b.dataset.hero === '1'; setHeroEnabled(on); markHero(on) }))
   const car = $('#kfb-car'); car.value = curRacer(); car.addEventListener('change', () => chooseCar(car.value))
 
   // Fortschritt: Lader-Zähler + Bereitschaft des Spiels

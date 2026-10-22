@@ -103,10 +103,15 @@ await page.evaluate(() => { const M = window.__kfbM1, g = M.fluffer().debug, tr 
   const a = Math.atan2(g.x - tr.pos[0], g.z - tr.pos[2]) + 0.35, x = g.x + Math.sin(a) * 6, z = g.z + Math.cos(a) * 6; M.player().teleport([x, M.terrainH(x, z) + 1.2, z], a + Math.PI) })
 await wait(1500)
 const f0 = await page.evaluate(() => window.__kfbM1.fluffer().debug)
-const fr = await page.evaluate(() => { const M = window.__kfbM1, p = M.feet(), g = M.fluffer().debug, dx = g.x - p[0], dz = g.z - p[2], l = Math.hypot(dx, dz); M.player().camera().rotateAzimuthTo(Math.atan2(dx, dz) + Math.PI, false)
-  return M.mods.combat.fire({ from: p, dir: [dx / l, 0, dz / l] }) })
-let fc = null
-for (let i = 0; i < 40 && !fc; i++) { await wait(60); fc = (await C()).events.find((e) => e.type === 'contact' && e.target === 'dark_fluffer_ghost') || null }
+/* Härtung (Lead 22.10.): der Ghost bewegt sich (Spucken/Hüpfen) – ein einzelner Schuss traf nicht immer (E wackelte, auch vor der Leistungsarbeit).
+   Bis zu 3 Versuche, jedes Mal neu auf die aktuelle Lage gezielt, wie ein Spieler nachschießt; geprüft wird weiter: Kontakt mit dem Blaster und genau eine Heilung. */
+let fr = null, fc = null, tries = 0
+for (; tries < 3 && !fc; tries++) {
+  fr = await page.evaluate(() => { const M = window.__kfbM1, p = M.feet(), g = M.fluffer().debug, dx = g.x - p[0], dz = g.z - p[2], l = Math.hypot(dx, dz); M.player().camera().rotateAzimuthTo(Math.atan2(dx, dz) + Math.PI, false)
+    return M.mods.combat.fire({ from: p, dir: [dx / l, 0, dz / l] }) })
+  for (let i = 0; i < 40 && !fc; i++) { await wait(60); fc = (await C()).events.find((e) => e.type === 'contact' && e.target === 'dark_fluffer_ghost') || null }
+  if (!fc) await wait(700) /* Nachladen/Abkühlen der Waffe */
+}
 await wait(60); await page.screenshot({ path: 'test/out/combat/treffer_fluffer.png' })
 await wait(1200)
 const f1 = await page.evaluate(() => window.__kfbM1.fluffer().debug), C3 = await C()
@@ -141,4 +146,4 @@ process.exit(report('combat (Kampf R1: K10-Waffen im Spiel)', {
   F_k10EventsRing: types.has('fire') && types.has('contact') && types.has('kill') && schemaOk && seqUp && C3.events.length <= 64,
   F_costPerFrame: C3.status.ms !== null && C3.status.ms <= 0.3,
   F_noPageErrors: errs.length === 0,
-}, { A: A.status, B: { B2: B2.debug.mount, B3: B3.debug.mount, hud2, hud1, hud3, hand2, hand1, hudBag, bagShots }, aim, fire1, rel, hitC, g1: g1.slice(-3), C1: C1.status, ko, C2: { pops: C2.status.pops, kills: C2.status.kills }, fr, fc, lastContact: C3.debug.lastContact, f0: { healed: f0.healed, phase: f0.phase }, f1: { healed: f1.healed, heals: f1.heals }, rec, evTypes: [...types], nEv: C3.events.length, ms: C3.status.ms, errs: errs.slice(0, 3) }))
+}, { A: A.status, B: { B2: B2.debug.mount, B3: B3.debug.mount, hud2, hud1, hud3, hand2, hand1, hudBag, bagShots }, aim, fire1, rel, hitC, g1: g1.slice(-3), C1: C1.status, ko, C2: { pops: C2.status.pops, kills: C2.status.kills }, fr, fc, tries, lastContact: C3.debug.lastContact, f0: { healed: f0.healed, phase: f0.phase }, f1: { healed: f1.healed, heals: f1.heals }, rec, evTypes: [...types], nEv: C3.events.length, ms: C3.status.ms, errs: errs.slice(0, 3) }))

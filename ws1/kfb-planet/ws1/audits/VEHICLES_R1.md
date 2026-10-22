@@ -35,9 +35,14 @@ Alle Bilder mit `look=terrain3`, `world=probe`, headless (Metal-GPU). Hinweis: D
   - Erstladen: im ruhigeren Lauf meist 21–39 ms, im voll ausgelasteten Lauf 60–116 ms. Ausreißer beim ersten Laden: Ödland-Käfer bis 196 ms (eigene Leucht-Textur, 2 neue Shader-Varianten) und Abschlepp-Koloss 117–290 ms (8 Varianten).
 
 ## 2 · Heldenfarbe
+- **Georg 22.10.: Standard ist für alle 14 die Originalfarbe, die Heldenfarbe ist eine Einstellung.**
+  - Startseite, Zeile „Fahrzeugfarbe“: Original | Heldenfarbe. Gemerkt je Browser (`localStorage kfb.heroColor`).
+  - Der Schalter färbt geladene Racer sofort um (Ereignis `kfb:hero`). Fehlt die Umrechnung, läuft sie in Häppchen nach.
+  - Hash `hero=1` bzw. `hero=0` überschreibt (Tests).
+  - Der Ödland-Käfer ist damit wieder rostig-orange.
+  - Test: `vehicles-r1 data` (Standard aus, an/aus im Spiel) und `start` (Schalter, Speicher, `hero=1`).
 - 1:1 aus der Probe in `src/look/vehicleLook.js` (`applyHeroColor`): Flächenmaske statt Pixel, Rost-/Bronze-/Messing-Lack (Farbton 15–50°, Sättigung < 0,3) bleibt.
 - Umgefärbt: 02, 03, 04, 11, 13, Ödland-Käfer. Metall bleibt: 01, 05, 06, 07, 08, 09, 10, 12.
-- Schalter `hero=0` zum Vergleich.
 - **Ferne-Aufhellung nachgemessen:** Am echten Spielabstand steht die Kamera 6,8 m (Standard) bis 18,9 m (ganz herausgezoomt) vom Wagen. Die Aufhellung beginnt erst bei 13 m und ist bei 78 m voll. Im Spiel liegt sie also bei 0,80 bis 0,82 und ist praktisch aus. Sie wirkt nur bei fremden Wagen in der Ferne.
   - Vorschlag: Soll der eigene Wagen herausgezoomt heller werden, Bereich auf 8–40 m setzen (`VEHICLE_LOOK.near/far`). Das braucht Georgs Blick.
 

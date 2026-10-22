@@ -71,6 +71,10 @@ export function createBandLife(options) {
       _sphere.center.set(at[0], options.groundAt(at[0], at[1]) + s, at[1]); _sphere.radius = 4 * s
       S.near = d < (options.bubbleR ?? BAND.bubbleR) || (!!cam && d < BAND.visibleFar && frustum.intersectsSphere(_sphere))
       S.beat = beatPos(sc.timeline.clock, t)
+      // MVP-Leistung (Lead 22.10., Muster discoLife): Musiker sind Skin-Meshes ohne Frustum-Culling – je Musiker sichtbar nur im Bild (bis visibleFar)
+      // oder ganz nah (12·K, Schatten ins Bild); der Takt läuft weiter (Weltzeit)
+      for (const m of M) { const dm = pl ? Math.hypot(pl.x - m.pl.x, pl.z - m.pl.z) : 0; _sphere.center.set(m.pl.x, options.groundAt(m.pl.x, m.pl.z) + s, m.pl.z); _sphere.radius = 1.5 * s
+        const vis = !pl || dm < 12 * K || (!!cam && dm < BAND.visibleFar && frustum.intersectsSphere(_sphere)); if (m.holder.visible !== vis) m.holder.visible = vis }
       if (!S.near) return
       for (const m of M) {
         place(m)
@@ -78,7 +82,7 @@ export function createBandLife(options) {
         const want = pl && d < BAND.gazeR ? THREE.MathUtils.clamp(Math.atan2(Math.sin(Math.atan2(pl.x - m.pl.x, pl.z - m.pl.z) - m.pl.yaw), Math.cos(Math.atan2(pl.x - m.pl.x, pl.z - m.pl.z) - m.pl.yaw)), -BAND.headMaxYawDeg * Math.PI / 180, BAND.headMaxYawDeg * Math.PI / 180) : 0
         m.headYaw += (want - m.headYaw) * (1 - Math.exp(-dt / BAND.headLag))
         if (m.mixer) { m.action.time = ct; m.mixer.update(0); turnHead(m, m.headYaw) }
-        else if (m.fig) { m.fig.present({ x: m.pl.x, z: m.pl.z, yaw: m.pl.yaw, speed: 0, clip: m._pc ? null : { name: BAND.placeholderClip, mode: 'loop' }, gaze: want ? { x: pl.x, z: pl.z, y: pl.y } : null }, dt); m._pc = true; m.fig.update(dt, hctx, true) }
+        else if (m.fig) { m.fig.present({ x: m.pl.x, z: m.pl.z, yaw: m.pl.yaw, speed: 0, clip: m._pc ? null : { name: BAND.placeholderClip, mode: 'loop' }, gaze: want ? { x: pl.x, z: pl.z, y: pl.y } : null }, dt); m._pc = true; m.fig.update(dt, hctx, m.holder.visible) }
       }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },

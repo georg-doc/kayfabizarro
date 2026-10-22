@@ -32,7 +32,7 @@ import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
 import { mountRacerRig, mountHeadlights, releaseModel, terrainDustColor } from './racerRig'
 import { createEngineAudio } from '../audio/engineAudio'
-import { prepVehicleLook, hookVehicleLook, applyHeroColor, slicer, warmVehicleEnv } from '../look/vehicleLook.js'
+import { prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv } from '../look/vehicleLook.js'
 import { headlightDaylight, HEADLIGHTS } from '../look/headlights.js'
 import { gfxChannel } from '../look/groundFx.js'
 import { parseTod, moodAt, MOOD_SETS } from '../vendor/light/kfb-stage-light.v1.1.js'
@@ -112,15 +112,25 @@ const OnFrame = ({ fn }) => { useFrame(fn); return null }
 
 // Modell je Racer einmal laden (geteilt, im Speicher gehalten: Zurückwechseln ohne Neuladen), je Auto ein Klon; bis dahin ein Kasten in Rumpfgröße.
 // Look A und Heldenfarbe einmal am geladenen Modell (Reihenfolge wie die Probe: Look misst die Grundhelligkeit am Original, dann Heldenfarbe);
-// vlook=0 = Meshy-Original zum Vergleich, hero=0 = ohne Heldenfarbe.
+// vlook=0 = Meshy-Original zum Vergleich. Heldenfarbe (Georg 22.10.): Standard aus = Originalfarbe; Einstellung an der Startseite (kfb:hero), Hash hero=1 für Tests.
 // Ohne Ruckler (V-631): Look und Heldenfarbe rechnen in Häppchen (≤ 6 ms je Task), danach lädt warmModel die Texturen einzeln (je Bild eine) auf die GPU
 // und übersetzt die Shader vorab (compileAsync) – erst dann erscheint der Wagen, bis dahin steht der Kasten.
+export const HERO_ON = { on: heroEnabled(), switches: 0 }
+// Heldenfarbe umschalten (Startseite, Ereignis kfb:hero): fehlt die Umrechnung bei geladenen Racern, rechnet sie in Häppchen nach; dann Texturen tauschen
+async function applyHeroSetting(on, gl) {
+  HERO_ON.on = !!on; HERO_ON.switches++
+  for (const [id, p] of [...MODELS]) { const m = await p, I = MODEL_INFO.get(id); if (!m || !I) continue
+    if (on && I.hero.off) I.hero = await applyHeroColor(m, { tick: slicer(6), apply: false })
+    if (HERO_ON.on !== !!on) return
+    setHeroMaps(m, on); if (on && gl) m.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) if (mt.userData.hero?.tex) gl.initTexture(mt.userData.hero.tex) })
+    if (id === M2CAR.id) M2STATE.hero = { ...I.hero, on: HERO_ON.on } }
+}
 const MODELS = new Map(), MODEL_INFO = new Map(), LOADLOG = []   // LOADLOG: Prüfhilfe [Schritt, ms] je Ladevorgang (letzte 60)
 const llog = (k) => { LOADLOG.push([k, +performance.now().toFixed(1)]); if (LOADLOG.length > 60) LOADLOG.shift() }
 const racerUrl = (id) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${VEHICLE_COMMIT}/${VEHICLE_RIG.vehicles[id].path}`
 const loadModel = (id = M2CAR.id, url = racerUrl(id)) => { touchModel(id); if (!MODELS.has(id)) MODELS.set(id, (llog('fetch ' + id), new GLTFLoader().loadAsync(url)).then(async (g) => { llog('parsed'); g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true } })
   const tick = slicer(6), t0 = performance.now(), look = /(^|[#,])vlook=0(,|$)/.test(H) ? { applied: 0, off: true } : await prepVehicleLook(g.scene, tick), t1 = performance.now()
-  const hero = /(^|[#,])hero=0(,|$)/.test(H) ? { applied: 0, off: true } : await applyHeroColor(g.scene, { tick })
+  const hero = HERO_ON.on ? await applyHeroColor(g.scene, { tick }) : { applied: 0, off: true }
   llog('prepped'); MODEL_INFO.set(id, { look, hero, prepMs: { look: +(t1 - t0).toFixed(1), hero: +(performance.now() - t1).toFixed(1) } }); return g.scene })
   .catch((e) => { MODELS.delete(id); M2STATE.model = 'ERROR ' + e.message; return null }))
   return MODELS.get(id) }
@@ -189,7 +199,7 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; const id = M2CAR.id; loadModel().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
     if (!I.look.off) hookVehicleLook(c) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
     const t0 = performance.now(); await warmModel(glR, c, camW, sceneW); if (!alive) return
-    M2STATE.look = I.look; M2STATE.hero = I.hero; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
+    M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
     if (PREFETCH) setTimeout(() => alive && prefetchNeighbours(glR, camW, sceneW, () => alive), 1500) }); return () => { alive = false } }, [])
   // R1a: Antriebs-Modul an den Düsen-Ankern des Racers. Modell und Anker hängen gemeinsam in rig.stretch (Stauchen/Strecken bei Boost und Sprung),
   // rig.object3d unter der Deformer-Gruppe – Fahnen bleiben bei jeder Verformung an den Düsen. Gas weich (0,12 s), Tempo aus den K2B-Signalen.
@@ -286,6 +296,7 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
   // Folgekamera C1 (V-408/V-088): Orbit von allen Seiten, Recenter nur in Bewegung, Zoom bis Ich-Perspektive, Kollisions-Arm – je Bild nach der
   // Interpolation (M1INTERP.frameCam), Ziel = interpolierte Starrkörper-Gruppe. Grundabstand und Höhe aus kfb_camera_follow (nur Gierung folgt).
   const gl = useThree((s) => s.gl)
+  useEffect(() => { const on = (e) => applyHeroSetting(!!e.detail?.on, gl); window.addEventListener('kfb:hero', on); return () => window.removeEventListener('kfb:hero', on) }, [gl])   // Heldenfarbe live umschalten (Startseite)
   const follow = useMemo(() => { const [, ch, cz] = M2CAR.cam.pos, ray = new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 })
     return createFollowCam({ dom: gl.domElement, base: Math.hypot(ch - M2CAR.cam.target[1], cz), height: M2CAR.cam.target[1], eye: M2CAR.box.c[1] + M2CAR.box.h[1] * 1.05, eyeAhead: M2CAR.box.h[2] * 0.85, onPov: (on) => { const r = M2STATE.visualRoot; if (r) r.traverse((o) => { if (o.isMesh) o.visible = !on }) }, pitch0: Math.atan2(ch - M2CAR.cam.target[1], -cz), maxArm: 7.5 * K,
       collide: (from, dir, dist) => { ray.origin.x = from.x; ray.origin.y = from.y; ray.origin.z = from.z; ray.dir.x = dir.x; ray.dir.y = dir.y; ray.dir.z = dir.z
@@ -295,7 +306,7 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
   useEffect(() => { const v = new THREE.Vector3()
     M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K }) }
     M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
-  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, loadLog: LOADLOG, ground: groundHeight }) })
+  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, loadLog: LOADLOG, heroSetting: HERO_ON, setHero: (on) => applyHeroSetting(on, gl), ground: groundHeight }) })
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
   return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>

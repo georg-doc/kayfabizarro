@@ -29,7 +29,10 @@ const res = await page.evaluate(async () => {
           for (const [n, [az, el]] of Object.entries(views)) {
             const A = az * Math.PI / 180, B = el * Math.PI / 180, dir = new T.Vector3(Math.sin(A) * Math.cos(B), Math.sin(B), Math.cos(A) * Math.cos(B)).applyQuaternion(q)
             cam.position.copy(c).addScaledVector(dir, Math.max(R, 0.05) * 9); cam.up.set(0, 1, 0); cam.lookAt(c); cam.updateMatrixWorld()
+            /* nur die Figur messen: andere Szenenteile (z. B. der rote Platzhalter-Kristall der gemLanterns seit d668dd5) zählten unter 40° als „Pupille“ mit */
+            const hid = []; for (let n = a.object3d; n.parent; n = n.parent) for (const ch of n.parent.children) if (ch !== n && ch.visible && !ch.isLight) { ch.visible = false; hid.push(ch) }
             gl.setRenderTarget(rt); gl.render(scene, cam); gl.readRenderTargetPixels(rt, 0, 0, RT, RT, buf); gl.setRenderTarget(null)
+            hid.forEach((ch) => { ch.visible = true })
             let px = 0; for (let i = 0; i < buf.length; i += 4) if (buf[i] > 200 && buf[i + 1] < 70 && buf[i + 2] > 200) px++
             res[n] = px
           }
