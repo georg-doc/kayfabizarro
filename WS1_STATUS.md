@@ -3,6 +3,48 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 146 · 22.10. · V-683 Schattenseite als A/B · Startseite ohne Säulen · Zentraler Figuren-Leser · Scheinwerfer-Konzept freigegeben · Fragen an WS0
+
+**Zweig:** Status ab jetzt auf `ws1/status` (WS0), Historie von `ws1/terrain-439` übernommen.
+
+**V-683 Schattenseite (9e9bf29), Schalter `shade=1` bis Georgs Wahl**
+- Regel: eine Materialantwort für alle Nicht-Gelände-Objekte, kein Füll- oder Rim-Licht. `src/look/shadeFloor.js` setzt als Untergrenze Albedo × Rig-Ton × K.
+- K reicht von 0,34 (Tag) bis 0,50 (Nacht) nach mood.glow, wie die Fundsachen bei WS1b.
+- Der Ton ist der Farbton der Himmelsfüllung bei fester Helligkeit.
+- Ausgenommen: Gelände, Himmel, Wasser, Weg, Erdkeile (ground-skirt), Effekte.
+- A/B im selben Moment über `__kfbShade.off`, damit A und B dieselbe Szene zeigen (4 Fälle). Die Bilder liegen auf der Abnahme-Seite, Georgs Urteil fehlt noch.
+
+**Weitere Änderungen**
+- **Startseite (9b392fb):** Graue Säulen ausgeblendet (V-683, Kritiker K2). clay-look ist byte-gleich. Die Bilder stehen auf der Abnahme-Seite.
+- **HUD-Ist-Stand (WS1e):** 16 Bilder für das externe Design auf der Abnahme-Seite (A = Spiel, B = R5f).
+
+**Scheinwerfer (WS1d)**
+- Georg hat das Konzept nach der Recherche freigegeben (HEADLIGHTS_RESEARCH_R1): zwei 3D-Kegel ab der Lampe, die Kontaktfläche liegt als Lichtfleck auf dem Boden, gerechnet von der Unter- bis zur Oberkante des Kegels. Die Überlagerung zu einem gemeinsamen Feld ist erwünscht.
+- WS1d baut eine einzige Umsetzung mit Selbstprüfung F1–F8 und A1–A11. Standard bleibt bis zur Abnahme v2.
+- Lehre: kein Bastelregress mehr. Erst recherchieren, dann ein Konzept mit Kriterien freigeben lassen, dann eine Umsetzung. Skizzen werden gerechnet, nicht frei Hand gezeichnet.
+
+**Zentraler Figuren-Leser (8cabff1)**
+- `src/characters/registry.js`: `resolveCharacterId(id, scope?)`, `characterOf`, `chatterOf`, `voiceOf`.
+- Snapshot `src/data/characters/registry.r1.json`, gepinnt auf CHARACTERS_R1 @1e30e4a, erzeugt mit `scripts/sync-characters.py`.
+- Regeln: Das Varianten-Suffix `:<farbe>[:helm]` wird abgetrennt. Fluffer-Sorten werden zu `q_<sorte>`. Kurzrollen laufen über aliases.scoped. Unbekannte und uneindeutige IDs ergeben null.
+- todo, PREFILL und DESIGN gelten als null. PREFILL-Chatter gibt es nur auf ausdrücklichen Wunsch und markiert.
+- Paritätstest `test/unit/characterRegistry.mjs` (in npm test): 47 Spiel-IDs, 0 offen.
+- WS-Audio (`chatterOf`) und WS-NPC (Register-Umstellung) haben den Funktionsnamen bekommen.
+
+**Kit-Knete und Slot**
+- **Befund Kit-Knete:** Die Kit-Knete hat nie gewirkt. SKIP_DEFAULT traf die Wurzel `eyeActor:`, deshalb hatten die 14 eyeActor-Figuren 0 Knete-Meshes. Nur die Band war geknetet.
+- WS-NPC trennt das in drei Stufen: 0 = Standard wie bisher, 1 = character-Profil mit Fix, 2 = kit-figure mit Fix. Das A/B für Georg folgt.
+- **Slot:** `kfb-slot` weist leere Sitzungsnamen ab und räumt namenlose Einträge weg. Vorher hatte ein namenloser Eintrag die Schlange für alle blockiert (Fund WS-NPC).
+
+**Fragen an WS0**
+1. **Bäuerin:** residentId `farmer_b` und castId `farmer_harke` sind im Register zwei Figuren. Chatter und Stimme stehen nur bei farmer_b. Welche ID gilt für die Bewohnerin, und soll farmer_harke ein Alias von farmer_b werden?
+2. **Chatter-Lücke:** Gesetzt ist der Chatter nur bei 6 Figuren (demon_lord, farmer_b, frizzlebob, lady_dory, lord_hunky, lorekeeper), PREFILL bei 8 (Bots, Aliens, Geist). Im Spiel ohne Chatter: gothgirl, alle 15 Fluffer, Disco-K12, Band, Skelette, Abenteurer. Bitte entweder die Familien setzen oder den PREFILL freigeben. Bis dahin nimmt WS-Audio einen sichtbaren Rückfall nach kind, mit status 'fallback'.
+3. **Fluffer:** Die 15 K15-Sorten lösen auf q_* auf, eigene Fluffer-Einträge (dark_fluffer_*) hat das Register nicht. Sind die Fluffer eigene Figuren oder Zustände der q_-Figuren?
+4. **Augen der Cubes:** Sollen die q_-Figuren die eye-goo-Augen bekommen (`kfb_q_*_kfbeyes`-Aliase stehen schon im Register)?
+5. **Mumien:** voice.spec steht nur als „female/male“ mit Engine „suno stem“. Ist das für den Gruß gemeint, oder fehlt eine Kokoro-Stimme?
+
+**Offen beim Lead:** Testreihe vor dem Push (Slot angefragt), dann Spiegel. Danach violettes Goldlicht (Kritiker K2), Schuss aus der Mündung und Umfallen im Treffer-Bild, FB_CANON-Prüfsumme im Besetzungs-Loader (V-658).
+
 ## 145 · 22.10. · Abnahme-Seite für Georg · Racer: Standard ohne Mattierung · Befund Beleuchtung: Schattenseite von Figuren und Props uneinheitlich (Frage an WS0)
 
 - **Neue Arbeitsweise (Georg 22.10.):** Abnahmen laufen über das private Artefakt „KFB Abnahme“.
