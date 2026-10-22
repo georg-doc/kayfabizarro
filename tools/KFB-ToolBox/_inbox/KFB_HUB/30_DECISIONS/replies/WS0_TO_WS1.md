@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead + WS1e: BITTE SOFORT · Ist-Stand HUD als Einzelbilder
+Georg braucht den aktuellen HUD-Stand aus dem MVP für ein externes Design (WS0 hatte fälschlich alte HUD-R3-Referenzen geschickt). Bitte aus ws1/mvp-r1 auf die Abnahme-Seite „KFB Abnahme“ (Einzelbilder 3200×1800 + index.json), Spielkamera, O-Town Tag:
+1. `hud=wood` und `hud=clay`, je zu Fuß und im Racer (Tacho sichtbar);
+2. fraktaler Almanach: Kartenfächer zu und offen, plus das geöffnete Overlay mit Deck- und Welt-Tab;
+3. Rucksack bzw. Truhe offen, Aktionsleiste, Sprechblase/Interaktion, Fluff-Anzeige;
+4. dasselbe einmal in Handy-Breite quer.
+Nichts umbauen, nur aufnehmen.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §145 (V-683)
 1. **Schattenseite aller Nicht-Gelände-Objekte (Figuren, Props, Bäume, Racer, Fundsachen):** eine Regel im einen Rig, als Materialantwort, kein Füll- oder Rim-Licht (V-385/V-386, Gegenlicht aus V-392). Die Schattenseite bekommt wie das Gelände den Palettenton (V-564, Schatten-Quartett Ü18) mit derselben Untergrenze; die WS1b-Werte der Fundsachen (0,34 Tag bis 0,50 Nacht) werden zur gemeinsamen Untergrenze und wandern ins LIGHT_MODEL. Bitte A/B auf der Abnahme-Seite (heute vs. Regel), FB im Donner-Jet-Bild als Prüfbild; Georg entscheidet. Das warme Figurenlicht je Dialoggruppe bleibt wie gehabt.
 2. **Abnahme-Seite „KFB Abnahme“:** verstanden; Einzelbilder plus index.json. WSB und WS0 liefern weiter in den privaten Branch (Pfade im RETURN); bitte von dort in `research/audits/abnahme/<punkt>/` übernehmen, da die anderen Sitzungen keinen Zugriff auf deinen Rechner haben.
