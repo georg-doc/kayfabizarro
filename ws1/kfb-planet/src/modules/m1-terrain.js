@@ -69,6 +69,17 @@ export function createProbeWorld(T = TERRAIN, recipe = { ...PROBE_RECIPE, styliz
 // minY = tiefster Geländepunkt (nur world=probe: Täler liegen bis ≈ 17 m unter dem Platz, die Absturzgrenze rechnet von dort)
 export const terrainActive = { height: null, minY: null }
 export const groundHeight = (x, z) => (terrainActive.height ? terrainActive.height(x, z) : terrainHeight(x, z))
+// WS1c (V-631) · Wasserspiegel der aktiven Welt (nur world=probe): level(x, z) → Höhe des Spiegels oder null (trocken). Meer, wo das Gelände unter
+// dem Meeresspiegel liegt; Fluss/Bergsee aus dem Pegel-Kanal des Talprofil-Felds (4 m-Raster der Probe, A = Pegel, wie underUpdate der Probe:
+// nur plausible Tiefe ≤ 4,5 m). Für Fahrphysik, Kamera und Unterwasser-Ansicht.
+export const waterActive = { level: null, seaY: null, bubbles: null }
+export function makeWaterLevel(hyd, seaY, H) {
+  const f = hyd.field, N = f.N, D = f.data
+  return (x, z) => { const h = H(x, z); let lv = seaY != null && h < seaY ? seaY : null
+    const i = Math.floor((x - f.ox) / f.size * N), j = Math.floor((z - f.oz) / f.size * N)
+    if (i >= 0 && j >= 0 && i < N && j < N) { const A = D[(j * N + i) * 4 + 3]; if (A > -900 && A > h && A - h < 4.5 && (lv == null || A > lv)) lv = A }
+    return lv }
+}
 
 // options: { biome (Farbe aus BIOMES), terrain?: Teilwerte von TERRAIN }
 export function createTerrain(options = {}) {
@@ -88,22 +99,24 @@ export function createTerrain(options = {}) {
   let pwRange = null; if (PW) { let lo = Infinity, hi = -Infinity; for (let i = 0; i < pos.count; i++) { const x = pos.getX(i), z = pos.getZ(i); if (x * x + z * z <= T.hillR * T.hillR) { const h = pos.getY(i) - smooth(T.hillR, T.R, Math.hypot(x, z)) * T.rimH; if (h < lo) lo = h; if (h > hi) hi = h } } pwRange = [lo, hi] }
   const heightMs = PW ? performance.now() - tPW : 0
   geo.computeVertexNormals()
+  // world=probe: Wasser (kfbWater, erzeugt aus der Probe) liest die Höhen des Netzes (gleiche Dreiecke) als Textur; vor dem Material, weil terrain3
+  // dieselbe Höhentextur für Grund und nassen Saum am Meer liest (WS1c, V-631: gleiche Uferlinie wie das Wasser)
+  let water = null; if (PW && typeof document !== 'undefined') { const gd = new Float32Array(pos.count); for (let i = 0; i < pos.count; i++) gd[i] = pos.getY(i)
+    water = createWater({ hyd: PW.hyd, ground: { data: gd, seg: T.seg, ox: -T.R, oz: -T.R, cell: (2 * T.R) / T.seg }, seaY: PW.seaY, size: 2 * T.R, level: makeWaterLevel(PW.hyd, PW.seaY, PW.height), light: options.light || null }) }
   const fam = makeClayFamily('G', { uClayNear: { value: 30 * K }, uClayFar: { value: 90 * K }, uClayScale: { value: 1.4 * K }, uClayAmt: { value: T2 ? TERRAIN2_CFG.clayAmt : T3 ? 0.25 : 0.45 } }, { oct: 2, near: true, stick: false }) // #439: Knete ruhiger (keine Flecken über den Farbflächen)
   const mat = fam.std(options.biome?.top || '#9aab62', 0.95)
   const t2 = T2 ? applyTerrain2(mat, { world: options.world, ring: options.ring }) : null // #439: Farbflächen + Palettenschatten (Variante, Standard unverändert)
-  const t3 = T3 ? applyTerrain3(mat, { palette: options.palette, hMin: pwRange ? pwRange[0] : GROUND_Y, hMax: pwRange ? pwRange[1] : GROUND_Y + T.hillAmp * 1.6 }) : null // #439 terrain3: Fließfarben der Gelände-Probe + Palettenschatten
+  const t3 = T3 ? applyTerrain3(mat, { palette: options.palette, hMin: pwRange ? pwRange[0] : GROUND_Y, hMax: pwRange ? pwRange[1] : GROUND_Y + T.hillAmp * 1.6, water: water ? { uniforms: water.uniforms, seaY: PW.seaY } : null }) : null // #439 terrain3: Fließfarben der Gelände-Probe + Palettenschatten
   const ink = applyInkPatches(mat) // WS-NPC Phase C (V-583): Tusche-Flecken, erst ab dem ersten Patch im Shader (ohne Patch byte-gleich)
   const mesh = new THREE.Mesh(geo, mat); mesh.name = 'm1-terrain-clay'; mesh.receiveShadow = true
   root.add(mesh)
-  // world=probe: Wasser (kfbWater, erzeugt aus der Probe) liest die Höhen des Netzes (gleiche Dreiecke) als Textur
-  let water = null; if (PW && typeof document !== 'undefined') { const gd = new Float32Array(pos.count); for (let i = 0; i < pos.count; i++) gd[i] = pos.getY(i)
-    water = createWater({ hyd: PW.hyd, ground: { data: gd, seg: T.seg, ox: -T.R, oz: -T.R, cell: (2 * T.R) / T.seg }, seaY: PW.seaY, size: 2 * T.R }); root.add(water.object3d) }
+  if (water) root.add(water.object3d)
   // Steigung (Grad) bis hillR, für die Prüfung „begehbar“ (Controller slopeMaxAngle)
   let maxSlope = 0
   for (let k = 0; k < 4000; k++) { const a = (k * 2.399963) % (Math.PI * 2), r = T.hillR * Math.sqrt((k + 0.5) / 4000), x = Math.cos(a) * r, z = Math.sin(a) * r, e = 0.5
     const gx = (H(x + e, z) - H(x - e, z)) / (2 * e), gz = (H(x, z + e) - H(x, z - e)) / (2 * e); maxSlope = Math.max(maxSlope, Math.atan(Math.hypot(gx, gz)) * 180 / Math.PI) }
   const info = { look: t2 ? 'terrain2' : 'standard', palette: t2?.palette || null, diameterWalkable: T.hillR * 2, diameterTotal: T.R * 2, flatR: T.flatR, groundY: GROUND_Y, tris: T.seg * T.seg * 2, maxSlopeDeg: +maxSlope.toFixed(1) }
-  if (PW) { Object.assign(info, { water: water ? water.info() : { lines: PW.hyd.lines.length, lakes: PW.hyd.lakes.length, falls: PW.hyd.falls.length }, hydroMs: +PW.hydMs.toFixed(1), hydroSha: HYDRO_SOURCE_SHA, world: 'probe', seg: T.seg, cell: (2 * T.R) / T.seg, heightMs: +heightMs.toFixed(1), createMs: +(performance.now() - tPW).toFixed(1), hRange: pwRange, plazaY: PW.plazaY, shift: PW.shift, source: PROBE_HEIGHT_SRC.blocksSha256 }); terrainActive.height = H; terrainActive.minY = pwRange[0] }
+  if (PW) { Object.assign(info, { water: water ? water.info() : { lines: PW.hyd.lines.length, lakes: PW.hyd.lakes.length, falls: PW.hyd.falls.length }, hydroMs: +PW.hydMs.toFixed(1), hydroSha: HYDRO_SOURCE_SHA, world: 'probe', seg: T.seg, cell: (2 * T.R) / T.seg, heightMs: +heightMs.toFixed(1), createMs: +(performance.now() - tPW).toFixed(1), hRange: pwRange, plazaY: PW.plazaY, shift: PW.shift, source: PROBE_HEIGHT_SRC.blocksSha256 }); terrainActive.height = H; terrainActive.minY = pwRange[0]; waterActive.level = makeWaterLevel(PW.hyd, PW.seaY, H); waterActive.seaY = PW.seaY; waterActive.bubbles = water ? water.bubbles : null }
   // world=probe: Höhe je Gitterpunkt nur einmal rechnen (Probe-Höhe ≈ 10 µs); gleiche Punkte und Zahlen wie ohne Zwischenspeicher
   const NODE = PW ? new Float64Array((T.seg + 1) * (T.seg + 1)).fill(NaN) : null
   const Hn = PW ? (x0, z0, ix, iz) => { const k = iz * (T.seg + 1) + ix; let v = NODE[k]; if (v !== v) { v = H(x0, z0); NODE[k] = v } return v } : null
@@ -127,7 +140,11 @@ export function createTerrain(options = {}) {
     hydro: () => (PW ? { lines: PW.hyd.lines, lakes: PW.hyd.lakes, falls: PW.hyd.falls, seaY: PW.seaY, grid: PW.grid, height: H, R: T.R } : null),
     // Rapier-Trimesh in Weltkoordinaten (das Gelände liegt im Ursprung, ohne Drehung/Skalierung)
     colliderData: () => ({ vertices: new Float32Array(pos.array), indices: new Uint32Array(geo.index.array) }),
-    update(dt = 1 / 60) { terrainLog.update++; t3?.update(dt); water?.update(dt) },
-    dispose() { terrainLog.dispose++; water?.dispose(); if (PW && terrainActive.height === H) { terrainActive.height = null; terrainActive.minY = null } geo.dispose(); mat.dispose(); terrainLog.freed = { geometries: 1, materials: 1 }; root.clear() },
+    update(dt = 1 / 60, ctx) { terrainLog.update++; t3?.update(dt); water?.update(dt, ctx) },
+    // WS1c: Unterwasser-Zustand der Kamera (Host: Nebel), Blasen setzen (Fahrzeug unter Wasser)
+    under: () => water?.under() ?? null,
+    bubbles: (x, y, z, n, r) => water?.bubbles(x, y, z, n, r) ?? 0,
+    probeCam: (c) => water?.probeCam(c), // Prüfkamera für Bildskripte (Unterwasser-Zustand aus einer festen Kamera)
+    dispose() { terrainLog.dispose++; water?.dispose(); if (PW && terrainActive.height === H) { terrainActive.height = null; terrainActive.minY = null; waterActive.level = null; waterActive.seaY = null; waterActive.bubbles = null } geo.dispose(); mat.dispose(); terrainLog.freed = { geometries: 1, materials: 1 }; root.clear() },
   }
 }

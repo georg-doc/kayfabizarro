@@ -1,0 +1,11 @@
+{
+  "schema": "kfb.npc-greet-lines/1",
+  "decision": "Georg 22.10. (G-2, über den Lead): Begrüßungen bekommen Sprechblase und Laut. Texte liefern WS0/Writers Room (je Grund 3–5 kurze Varianten, Deutsch, pro Figur färbbar); WS-NPC erfindet keine.",
+  "contract": "Blasen nur mit geprüften Zeilen (S5b, isIssuedLine). Bis Zeilen da sind und ein Ausgabe-Weg im Pool-Leser besteht, zeigt die Blase das Schweigen-Symbol (SILENCE „…“, Denkblase).",
+  "keys": {
+    "greet.cure": [],
+    "greet.fight": [],
+    "greet.known": []
+  },
+  "noBubble": ["first"]
+}

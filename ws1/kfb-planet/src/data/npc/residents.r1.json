@@ -1285,5 +1285,22 @@
       ],
       "note": "SPEC_NPC_PATROL_R1 §3: Wurf beim Betreten der Zone; sichtbar wird die Gruppe nur außerhalb des Bildes (kein Pop-in)"
     }
+  ],
+  "gifts": [
+    {
+      "schema": "kfb.npc-gift/1",
+      "id": "E3_toy_gift",
+      "event": "E3",
+      "group": "toy_squad",
+      "decision": "WS0 V-634 / Lead 22.10.: Trupp aus dem Geschenk; Spur 1:1 Resident Atlas (reveal.toy-soldier.json); Ort und Auslöser = Welt-Ereignis-Host (Lead), hier Platzhalter",
+      "at": [
+        24,
+        4
+      ],
+      "yawDeg": 270,
+      "boxScale": 1.6,
+      "stagger": 0.3,
+      "note": "Platzhalter-Ort: Boden flach, 15 m zu Bewohner-Routen, 11 m zur Bot-Schleife, 9 m zum Start der Trupp-Route; Blick −x (Richtung Amphitheater). boxScale 1,6: ein Geschenk für sechs Soldaten (Original 1,99 × 3,48 × 1,99 u für einen)"
+    }
   ]
 }

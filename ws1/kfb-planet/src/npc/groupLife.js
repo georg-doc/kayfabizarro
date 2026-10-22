@@ -8,7 +8,7 @@
 // Treffer gehen als sense.hits in groupPatrol (Warnung → Drohung → Aggro → Cartoon-KO). Fluff-Ereignisse → orchard.burst (Tag je Gruppe und Welttag,
 // gleicher Tag zweimal = kein neues Fluff); übrige Ereignisse (hit, aggro, ko, awake, calm) → options.onEvent (Gedächtnis, Zeugen).
 // options: { groups: residents.r1.json groups, tables?: encounterTables, bubbleR, groundAt(x, z), clipUrls, cast(castId), worldScale, clock(), player(), camera()?,
-//   orchard?(), day?(), onEvent?(e), staticUrl?(key) → URL | null (Kulisse je Gruppe, def.statics; fehlt die Datei, bleibt die Stelle leer), classScale? }
+//   orchard?(), day?(), onEvent?(e), revealOnly?: [Gruppen-IDs, die nur über revealGroup erscheinen (E3)], staticUrl?(key) → URL | null (Kulisse je Gruppe, def.statics; fehlt die Datei, bleibt die Stelle leer), classScale? }
 // cast(castId, member) darf für fehlende private Figuren auf member.placeholderCastId ausweichen (sichtbarer Platzhalter).
 import * as THREE from 'three'
 import { createNpcFigure, loadClipSet } from './npcFigure.js'
@@ -32,10 +32,11 @@ export function createGroupLife(options) {
   })
   const T = (options.tables || []).map((tb) => ({ tb, inside: false, rolls: 0, coolUntil: -Infinity, chosen: null, log: [] }))
   for (const x of T) for (const e of x.tb.entries) { const g = G.find((g) => g.def.id === e.group); if (g) { g.active = false; g.shown = false; g.table = x.tb.id } }
+  for (const id of options.revealOnly || []) { const g = G.find((x) => x.def.id === id); if (g) { g.active = false; g.shown = false; g.revealOnly = true } } // E3: nur aus dem Geschenk, nie über die Tabelle
   function roll(x, t) { const tot = x.tb.entries.reduce((a, e) => a + e.weight, 0), r = rngOf('encounter', x.tb.id, x.tb.seed, x.rolls)() * tot; let acc = 0, pick = null
     for (const e of x.tb.entries) { acc += e.weight; if (r < acc) { pick = e.group; break } }
     x.rolls++; x.chosen = pick; x.coolUntil = t + x.tb.cooldownS; x.log.push({ t: +t.toFixed(2), group: pick }); if (x.log.length > 30) x.log.shift()
-    for (const e of x.tb.entries) { const g = G.find((g) => g.def.id === e.group); if (g) g.active = e.group === pick } }
+    for (const e of x.tb.entries) { const g = G.find((g) => g.def.id === e.group); if (g && !g.revealOnly) g.active = e.group === pick } }
   // Kulisse (z. B. Ladestation, Block-Stapel der Bots): statisch, auf dem Boden, Maßstab wie die Figuren (Klassen-Faktor × Weltmaßstab)
   async function loadStatics() { const loader = new GLTFLoader(), s = (options.classScale ?? 1) * K
     for (const g of G) for (const st of g.def.statics || []) { const url = options.staticUrl?.(st.key); if (!url) { S.statics.push({ group: g.def.id, key: st.key, status: 'MISSING' }); continue }
@@ -76,22 +77,29 @@ export function createGroupLife(options) {
       if (cam) { cam.updateMatrixWorld(); _pv.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); frustum.setFromProjectionMatrix(_pv) }
       for (const x of T) { const c = x.tb.zone.center, inside = !!pl && Math.hypot(pl.x - c[0], pl.z - c[1]) <= x.tb.zone.r
         if (inside && !x.inside && t >= x.coolUntil) roll(x, t)
-        if (!inside && x.inside) for (const e of x.tb.entries) { const g = G.find((g) => g.def.id === e.group); if (g) g.active = false }
+        if (!inside && x.inside) for (const e of x.tb.entries) { const g = G.find((g) => g.def.id === e.group); if (g && !g.gift) g.active = false } // aus dem Geschenk (E3) bleibt der Trupp
         x.inside = inside }
       const inView = (o) => { if (!cam) return false; const d = pl ? Math.hypot(o.x - pl.x, o.z - pl.z) : 0; if (d > GROUP_LIFE.visibleFar) return false; _sphere.center.set(o.x, options.groundAt(o.x, o.z) + 0.9 * K, o.z); return frustum.intersectsSphere(_sphere) }
       for (const g of G) {
         if (g.shown !== g.active && g.sim.outs.every((o) => !o._ok || !inView(o))) { g.shown = g.active; g.swaps = (g.swaps || 0) + 1 } // nur außerhalb des Bildes umschalten
-        const near = !!pl && g.sim.outs.some((o) => { const d = Math.hypot(o.x - pl.x, o.z - pl.z); if (d < (options.bubbleR ?? 60)) return true
+        // während der Enthüllung (E3) gilt die Gruppe immer als in der Blase
+        const near = (!!g.reveal && t < g.reveal.until) || !!pl && g.sim.outs.some((o) => { const d = Math.hypot(o.x - pl.x, o.z - pl.z); if (d < (options.bubbleR ?? 60)) return true
           if (!cam || d > GROUP_LIFE.visibleFar) return false; _sphere.center.set(o.x, options.groundAt(o.x, o.z) + 0.9 * K, o.z); return frustum.intersectsSphere(_sphere) })
         S.near[g.def.id] = near && g.shown
         const outs = g.sim.step(t, dt, { player: g.shown ? pl : null, near: near && g.shown, hits: g.hits.splice(0), day })
         for (const e of g.sim.drainEvents()) world(g, e)
-        g.figs.forEach((f, k) => { f.present(outs[k], dt); f.update(dt, hctx, g.shown) })
+        const rv = g.reveal && t < g.reveal.until ? g.reveal : null; if (!rv && g.reveal) { g.reveal = null; g.figs.forEach((f) => f.setPose(null)) } // E3: Enthüllungs-Lage je Mitglied
+        g.figs.forEach((f, k) => { f.present(outs[k], dt); if (rv) f.setPose(rv.pose(k, t)); f.update(dt, hctx, g.shown) })
       }
       if (tm0) { const ms = performance.now() - tm0; S.ms = S.ms == null ? ms : S.ms * 0.95 + ms * 0.05 }
     },
     status: () => ({ status: S.status, error: S.error, ms: S.ms, statics: S.statics.slice(), groups: G.map((g) => ({ id: g.def.id, members: g.figs.map((f) => f.status()) })) }),
     tables: () => T.map((x) => ({ id: x.tb.id, inside: x.inside, rolls: x.rolls, chosen: x.chosen, log: x.log.slice() })),
+    // E3 (Lead 22.10.): Gruppe aus einem Ereignis erscheinen lassen – sofort sichtbar (die Enthüllung ist das Ereignis), Mitglieder an spots absetzen
+    // (warten bis until, dann in die Formation), Zusatz-Lage pose(k, t) bis plan.until. Gilt unabhängig von der Begegnungstabelle.
+    revealGroup(id, plan) { const g = G.find((x) => x.def.id === id); if (!g) return false; g.gift = true; g.active = g.shown = true; g.reveal = plan; g.sim.place(plan.spots); return true },
+    groupDef: (id) => G.find((x) => x.def.id === id)?.def || null,
+    isNear: (id) => !!S.near[id],
     debug: () => G.map((g) => ({ id: g.def.id, near: S.near[g.def.id], active: g.active, shown: g.shown, swaps: g.swaps || 0, state: g.sim.state(), lag: g.sim.lagAt(S.t), plan: g.sim.plan(S.t), members: g.sim.outs.map((o, k) => ({ id: o.id, x: o.x, z: o.z, yaw: o.yaw, speed: o.speed, mode: o.mode, ko: o.ko, gait: g.figs[k].anim()?.last ?? null, overlay: +(g.figs[k].anim()?.overlays.reduce((w, o) => w + o.w, 0) ?? 0).toFixed(3) })) })),
     positions: () => G.flatMap((g) => g.sim.outs.map((o) => ({ id: o.id, x: o.x, z: o.z, y: g.shown ? options.groundAt(o.x, o.z) : -1000 }))), // unsichtbar: Kapsel weit unter die Welt
     soles: () => G.flatMap((g) => g.figs.map((f) => f.soles())),

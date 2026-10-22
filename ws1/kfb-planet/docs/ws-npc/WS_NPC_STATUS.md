@@ -2,6 +2,36 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 11 · 22.10. · An WS0: Offene Abnahmen für Georg, bitte bei WS0 bündeln (Georg 22.10.)
+
+**Georg 22.10.:** „wo sehe ich Abnahmen für mich? … gib das an WS0, dann machen wir das dort.“
+- Georg möchte die Abnahmen an einer Stelle sehen, bei WS0.
+- Die Bilder liegen lokal auf Georgs Mac unter `~/kfb-ws1/kfb-planet-npc/test/out/npc/`; `test/out` ist gitignored.
+- Einige Bilder zeigen private Kauf-Assets (Bots, K11, Ork-Band). Sie gehören deshalb nicht in eine öffentliche Ablage.
+
+**Wartet auf Georgs Entscheidung:**
+| # | Was | Frage an Georg | Bild / Beleg (lokal) |
+|---|---|---|---|
+| G-1 | Bot-Augen (Kayfabrick-Bots B17, PROOF; Augen-Sitz aus den Karten-Ankern über `deriveSourceAnchorSeed`) | Passen Sitz und Größe der KFB-Augen im Visier-Schlitz? Erst danach geht etwas davon Richtung main (Lead-Bedingung). | `bot_front.png`, `bot_crew.png` |
+| G-2 | Gerücht D2, ein Schritt (V-602): nur Selbsterlebtes, mit Quelle, eine Stufe weniger sicher, einmal je Erzähler und Tag; wer davon gehört hat, grüßt mit „fight“ | Ist das Verhalten so richtig? Danach entscheidet WS0 über Gerücht-Ketten (told-of-told). | `unit-rumor` (9/9); im Spiel erst einen Spieltag später sichtbar |
+| G-3 | Spielzeugsoldaten treffbar, vorerst mit Skelett-Clips für KO und Aufstehen | Ist das als Übergang ok, bis der eigene Spielzeug-Clip von WSB kommt? | `squad.png`; KO wie im Clip |
+
+**Entschieden oder umgesetzt, nur zur Ansicht (bei Bedarf einwenden):**
+| # | Was | Stand | Bild / Beleg (lokal) |
+|---|---|---|---|
+| A-1 | Dark Fluffer 0,8 m (WS0 V-616), Tropfen und Fleck kleiner, Trefferfläche gleich | umgesetzt (5ae84c8) | `fluffer_size_0_8.png` (Vergleich `fluffer_size_1_1.png`, `_0_7`) |
+| A-2 | Heilschuss-Vorrang vor dem Baum (Georg a) | umgesetzt (d923b9b) | fluffer `E_healFromSixMetresTreeNearer` |
+| A-3 | Echte Bewohner K11: Lorekeeper liest mit Buch, Farmer B gräbt/harkt mit Gabel | umgesetzt (ebdbb82) | `k11_lorekeeper.png`, `k11_farmer.png` |
+| A-4 | Dark Fluffer K11 k11c: Spucken aus `KFB_Mouth`, weiße Augen nach dem Heilen | umgesetzt (846e209) | fluffer `E_whiteEyesAfterHeal`; Heil-Video von WS-Audio |
+| A-5 | Ork-Band im Takt der Weltzeit, Ort vorläufig (Lead-Teil) | umgesetzt (8c36cd9) | `hud_t3.png`, `band.png` |
+| A-6 | Skelette: Warnung, Drohung, Aggro, Cartoon-KO, Rückkehr | umgesetzt (D3) | Clip `WS_NPC_PhaseD3_clip_terrain3.webm` (64 s), `aggro.png` |
+| A-7 | Schritte und Hüpfer für den Ton | umgesetzt (f6e7eed, a5437f1) | WS-Audio-Videos |
+
+**Wartet auf WSB (über WS0):**
+- Dark-Fluffer-Cubes K11 (§9).
+- Marsch der Spielzeugsoldaten mit Gewehr.
+- Eigener Spielzeug-KO-Clip.
+
 ## 10 · 22.10. · Fluffer 0,8 m (WS0 V-616), Schritt- und Hüpf-Ereignisse für den Ton, Pushes
 
 **Gepusht** (`ws-npc/phase-a`, Spiegel wie zuvor, jeweils nach voller Reihe):

@@ -31,7 +31,8 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
   let actor, actorError = null // ein Vertragsfehler (actorSlot wirft) darf nie die Szene abreißen: Figur mit Status ERROR statt Seitenfehler
   try { actor = createActor({ ...cast, motion: 'bind', position: [0, 0, 0], yaw: 0, anchorId: 'npc-' + id, worldScale: K }) }
   catch (e) { actorError = String(e?.message || e); actor = { object3d: new THREE.Group(), ready: Promise.resolve(), status: () => ({ status: 'ERROR', error: actorError }), update() {}, dispose() {}, lookAt() {} } }
-  holder.add(actor.object3d); holder.visible = false // erst sichtbar, wenn der Gang-Mischer steht (keine Bindepose im Bild)
+  const pose = new THREE.Group(); pose.name = 'pose:' + id; holder.add(pose) // Zusatz-Lage (E3 Geschenk-Enthüllung: Skala, Höhe, Drehung); sonst Identität
+  pose.add(actor.object3d); holder.visible = false // erst sichtbar, wenn der Gang-Mischer steht (keine Bindepose im Bild)
   const PB = cast.privateBody || null, _qm = new THREE.Quaternion()
   const step = { l: { down: true, last: -Infinity }, r: { down: true, last: -Infinity } }, _sp = {}
   const RIG = /large/i.test(cast.recipe?.source?.rigFamily || cast.profile?.rigClass || '') ? 'large' : 'medium' // WS-Audio V-607: schwere Schritte für Large-Rig
@@ -105,6 +106,8 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
   return {
     holder, actor, load, present,
     update(dt, hctx, show = true) { holder.visible = !!r.anim && show; actor.update(dt, hctx) }, // show = false: unsichtbar (Begegnungstabelle), Plan läuft weiter
+    // Zusatz-Lage über der Figur (Weltmeter, Grad): { scaleAll, y, ry, visible } – null setzt zurück (E3)
+    setPose(p) { pose.scale.setScalar(p?.scaleAll ?? 1); pose.position.set(0, p?.y ?? 0, 0); pose.rotation.set(0, ((p?.ry ?? 0) * Math.PI) / 180, 0); pose.visible = p?.visible ?? true },
     anim: () => r.anim, head: () => r.head,
     soles: () => (r.soles ? Object.fromEntries(Object.entries(solePoints(THREE, r.soles)).map(([k, v]) => [k, v.toArray()])) : null),
     status: () => ({ status: r.status, error: r.error, actor: actor.status?.().status, visible: holder.visible, head: !!r.head, body: PB ? 'private' : 'public', ...(actor.status?.().anchorSeed ? { anchorSeed: actor.status().anchorSeed } : {}), proof: !!cast.proof || undefined, prop: r.prop ? { id: PB.prop.id, visible: r.prop.visible, clip: r.propClip } : null }),

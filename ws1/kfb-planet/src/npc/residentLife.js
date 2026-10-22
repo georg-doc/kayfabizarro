@@ -25,13 +25,16 @@ export function createResidentLife(options) {
   // Phase B: Gedächtnis (Belege im Weltstand), Begrüßung des Spielers daraus, Weitergabe in Begegnungen
   let mem = null
   if (options.memory) { const store = options.memory.store || createWorldSaveStore(); if (options.memoryFresh) store.clear(); mem = createNpcMemory({ store, dayS: W.dayS }) }
+  // Begrüßung (Georg 22.10., G-2): Ereignis greet { reason, id, at, t, seq } im Ringpuffer events() und an options.onGreet (Blase, Stimm-Laut) – auch ohne Gedächtnis
+  let seq = 0
+  const greet = (e) => { const ev = { type: 'greet', reason: e.reason || 'first', id: e.id, at: e.at, t: e.t, seq: ++seq }; S.events.push(ev); if (S.events.length > 40) S.events.shift(); options.onGreet?.(ev) }
   const hooks = mem ? { greetPlayer: (id) => mem.greetPlayer(id), topic: (a, b) => mem.topic(a, b),
-    onEvent: (e) => { if (e.type === 'playerNotice') mem.onPlayerNotice(e); else if (e.type === 'threatNotice') mem.onThreatNotice(e)
-      else if (e.type === 'encounterDone') mem.onEncounterDone(e); else if (e.type === 'told') mem.tell({ speaker: e.speaker, listener: e.listener, topic: e.topic, t: e.t }) } } : {}
+    onEvent: (e) => { if (e.type === 'greet') greet(e); else if (e.type === 'playerNotice') mem.onPlayerNotice(e); else if (e.type === 'threatNotice') mem.onThreatNotice(e)
+      else if (e.type === 'encounterDone') mem.onEncounterDone(e); else if (e.type === 'told') mem.tell({ speaker: e.speaker, listener: e.listener, topic: e.topic, t: e.t }) } } : { onEvent: (e) => { if (e.type === 'greet') greet(e) } }
   const sim = createResidentSim({ days: W.days, ctx, activities: W.activities, hooks })
   const root = new THREE.Group(); root.name = 'resident-life'
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 1.2)
-  const S = { t: null, disposed: false, status: 'LOADING', error: null, near: {}, clips: {}, played: [], steps: [] }
+  const S = { t: null, disposed: false, status: 'LOADING', error: null, near: {}, clips: {}, played: [], steps: [], events: [] }
 
   const R = W.residents.map((def) => {
     const f = createNpcFigure({ cast: options.cast(def.stageCastId), id: def.residentId, worldScale: K, groundAt: options.groundAt, onPlay: (id, c) => { S.played.push([id, c]); if (S.played.length > 60) S.played.shift() },
@@ -79,7 +82,8 @@ export function createResidentLife(options) {
     observeGroup: (e) => mem?.onGroupEvent({ ...e, t: e.t ?? S.lastT ?? 0, members: (W.groups || []).find((g) => g.id === e.group)?.members.map((m) => m.id) ?? [], residents: sim.brains.map((b) => ({ id: b.id, x: b.out.x, z: b.out.z, near: !!S.near[b.id] })) }) ?? [],
     memory: () => (mem ? { status: mem.loadStatus, receipts: mem.state().npc.receipts, log: mem.log(), greet: Object.fromEntries(sim.brains.map((b) => [b.id, mem.greetPlayer(b.id).why])) } : null),
     played: () => S.played.slice(),
-    steps: () => S.steps.slice(), // { type: 'step', id, foot, at, speed, t } (Weltzeit wie memory)
+    steps: () => S.steps.slice(),
+    events: () => S.events.slice(), // { type: 'greet', reason: 'cure'|'fight'|'known'|'first', id, at: [x, z], t, seq } (WS-Audio: Stimm-Laut; Blase über onGreet) // { type: 'step', id, foot, at, speed, t } (Weltzeit wie memory)
     holders: () => R.map((r) => r.holder),
     time: () => S.lastT ?? null,
     figures: () => R.map((r) => r.actor.object3d),

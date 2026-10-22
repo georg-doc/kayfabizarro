@@ -24,7 +24,8 @@ export const FOLLOW = Object.freeze({ omega: 7.5, armIn: 8, armOut: 3, recenter:
 
 // opts: { dom, base: Grundabstand (m), height: Zielhöhe über der Wurzel (m), eye: Augenhöhe (m, Ich-Perspektive), pitch0, maxArm (m/s), minClear (m),
 //         eyeAhead: Auge so weit vor der Wurzel (m, Ich-Perspektive am Fahrzeug), onPov(bool): eigenes Modell aus-/einblenden,
-//         collide(from: Vector3, dir: Vector3, dist) → Treffer-Abstand | null, ground(x, z) → y }
+//         collide(from: Vector3, dir: Vector3, dist) → Treffer-Abstand | null, ground(x, z) → y,
+//         mod() → { lift (m), dist (× Abstand) } | null, clampY(x, z, y) → y (WS1c Wasser: über Wasser etwas höher, darunter näher; Kamera nie in der Wasserhaut) }
 export function createFollowCam(opts) {
   const O = { pitch0: 0.32, maxArm: 7.5, minClear: 0.4, ...opts }
   const st = { yaw: null, pitch: O.pitch0, wantYaw: 0, wantPitch: O.pitch0, zoom: 1, wantZoom: 1, arm: O.base, lastInput: -1e9, t: 0, v: {}, tgt: null, init: false }
@@ -58,18 +59,19 @@ export function createFollowCam(opts) {
       const pov = api.pov(); if (pov !== st.povShown) { st.povShown = pov; O.onPov?.(pov) }
       // Zielpunkt glätten (dieselbe Feder, je Achse)
       for (const a of ['x', 'y', 'z']) st.tgt[a] = smoothDamp(st.tgt[a], target[a], st.v, 't' + a, T * 0.35, dt)
-      const look = tmp.look.copy(st.tgt); look.y += O.height
+      const md = O.mod ? O.mod() : null, look = tmp.look.copy(st.tgt); look.y += O.height + (md?.lift || 0)
       if (pov) { // Ich-Perspektive: Auge vorn über der Wurzel (eyeAhead in Fahrtrichtung), Blick in Fahrtrichtung + Orbit-Abweichung; Modell ausgeblendet (onPov)
         const yaw = st.yaw + Math.PI, c = Math.cos(st.pitch * 0.5), a = O.eyeAhead || 0, ex = st.tgt.x + Math.sin(heading) * a, ez = st.tgt.z + Math.cos(heading) * a
         camera.position.set(ex, st.tgt.y + O.eye, ez); camera.lookAt(ex + Math.sin(yaw) * c, st.tgt.y + O.eye - Math.sin(st.pitch * 0.5) * 0.3, ez + Math.cos(yaw) * c); return }
       // Arm: Wunschlänge aus Zoom, gekürzt durch Kollision (Strahl vom Blickpunkt zur Kamera); rein schnell, raus langsam, Tempo begrenzt
-      const want = O.base * st.zoom, cp = Math.cos(st.pitch)
+      const want = O.base * st.zoom * (md?.dist || 1), cp = Math.cos(st.pitch)
       tmp.dir.set(Math.sin(st.yaw) * cp, Math.sin(st.pitch), Math.cos(st.yaw) * cp).normalize()
       const hit = O.collide ? O.collide(look, tmp.dir, want + FOLLOW.pad) : null, lim = hit != null ? Math.max(0.6, Math.min(want, hit - FOLLOW.pad)) : want
       const rate = lim < st.arm ? FOLLOW.armIn : FOLLOW.armOut, step = (lim - st.arm) * (1 - Math.exp(-rate * dt))
       st.arm += Math.sign(step) * Math.min(Math.abs(step), O.maxArm * dt)
       const p = tmp.p.copy(look).addScaledVector(tmp.dir, st.arm)
       const gy = O.ground ? O.ground(p.x, p.z) : -Infinity; if (p.y < gy + O.minClear) p.y = gy + O.minClear
+      if (O.clampY) p.y = O.clampY(p.x, p.z, p.y)
       camera.position.copy(p); camera.lookAt(look)
     },
     detach() { if (O.dom) { O.dom.removeEventListener('pointerdown', down); window.removeEventListener('pointerup', up); O.dom.removeEventListener('pointermove', move); O.dom.removeEventListener('wheel', wheel) } },

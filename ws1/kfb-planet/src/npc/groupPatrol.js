@@ -58,7 +58,7 @@ export function createGroupPatrol(def, R = GROUP) {
   const CB = { hitClips: ['Hit_A', 'Hit_B'], warnClip: ['Skeletons_Taunt', 'Idle_B'], threatClip: ['Skeletons_Taunt_Longer', 'Skeletons_Taunt', 'Idle_B'], koClip: ['Skeletons_Death', 'Death_A'], awakeClip: ['Skeletons_Awaken_Floor', 'Idle_B'], ...(def.combat || {}) }
   const L0 = { D: null, mode: 'patrol', until: -1, cool: -1, hit: { n: 0, last: -Infinity, win: 0, ko: new Set() }, free: null, anchor: null, lastTaunt: -Infinity, events: [],
     stats: { alerts: 0, maxSpeedK: 0, snaps: 0, hits: 0, kos: 0, aggro: 0, fluff: 0, maxLeash: 0 } }
-  const M = def.members.map(() => ({ x: 0, z: 0, yaw: null, locked: true, ko: null, ok: false }))
+  const M = def.members.map(() => ({ x: 0, z: 0, yaw: null, locked: true, ko: null, ok: false, holdUntil: -Infinity }))
   const outs = def.members.map((m) => ({ id: m.id, x: 0, z: 0, yaw: 0, speed: 0, clip: null, gaze: null, mode: 'patrol', ko: false }))
   const emit = (e) => { L0.events.push(e); if (L0.events.length > 100) L0.events.shift() }
 
@@ -116,7 +116,8 @@ export function createGroupPatrol(def, R = GROUP) {
     def.members.forEach((m, k) => {
       const mem = M[k], o = outs[k], q = free ? (k === 0 ? { x: L0.free.x, z: L0.free.z, yaw: L0.free.yaw } : formAround(L0.free.x, L0.free.z, L0.free.yaw, m)) : memberPlan(L0.D, m, k)
       const px = mem.x, pz = mem.z
-      if (sense.near && mem.ok && mem.ko) { // liegt, dann steht er an Ort und Stelle auf
+      if (sense.near && mem.ok && t < mem.holdUntil) { /* abgesetzt (E3 Geschenk): steht still, bis er gelandet ist, dann geht er in die Formation */ }
+      else if (sense.near && mem.ok && mem.ko) { // liegt, dann steht er an Ort und Stelle auf
         if (mem.ko.awakeAt === null && t >= mem.ko.until) { mem.ko.awakeAt = t + R.hit.awakeS; o.clip = { name: CB.awakeClip, mode: 'once' }; emit({ type: 'awake', id: m.id, at: [mem.x, mem.z], t }) }
         if (mem.ko.awakeAt !== null && t >= mem.ko.awakeAt) mem.ko = null
       } else if (sense.near && mem.ok) {
@@ -137,7 +138,10 @@ export function createGroupPatrol(def, R = GROUP) {
     })
     return outs
   }
-  return { def, route, length: L, lapT, distAt, step, outs, stops,
+  // E3 (Lead 22.10.): Mitglieder an festen Punkten absetzen (z. B. auf dem Geschenkpapier); jedes wartet bis holdUntil und geht dann mit memberMax
+  // in seine Formation. Nur in der Blase wirksam (außerhalb steht die Gruppe wie immer auf dem Plan).
+  function place(list) { list.forEach((p, k) => { if (!p || !M[k]) return; Object.assign(M[k], { x: p.x, z: p.z, yaw: p.yaw ?? M[k].yaw, locked: false, ok: true, ko: null, holdUntil: p.until ?? -Infinity }) }) }
+  return { def, route, length: L, lapT, distAt, step, outs, stops, place,
     plan: (t) => def.members.map((m, k) => memberPlan(distAt(t), m, k)),
     state: () => ({ mode: L0.mode, D: L0.D, hit: { n: L0.hit.n, win: L0.hit.win }, free: L0.free && { ...L0.free }, anchor: L0.anchor && { ...L0.anchor }, ko: M.map((m) => !!m.ko), stats: { ...L0.stats } }),
     lagAt: (t) => distAt(t) - (L0.D ?? 0),

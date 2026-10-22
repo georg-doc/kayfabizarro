@@ -46,6 +46,7 @@ export function createResidentBrain(day, ctx, activities = {}, rules = SIM, hook
     } else if (dP <= rules.playerIn && t >= L.cooldownUntil) { L.mode = 'player'; L.since = t; L.stats.interrupts++
       // Phase B: Begrüßung aus dem Gedächtnis (vor dem neuen Beleg entschieden), dann Beleg
       const g = hooks.greetPlayer?.(day.residentId); out.clip = { name: g?.clip ?? 'Idle_B', mode: 'once' }; L.greetWhy = g?.why ?? 'first'
+      hooks.onEvent?.({ type: 'greet', id: day.residentId, reason: L.greetWhy, at: [L.x + L.ox, L.z + L.oz], t }) // Blase + Stimm-Laut (Georg 22.10., G-2)
       hooks.onEvent?.({ type: 'playerNotice', id: day.residentId, slot: p.slot, t }) }
     // Bedrohung (Phase C): nur ohne Spieler-Halt und ohne Begegnung; einmal je Abklingzeit
     const th = sense.threat || null, dT = th ? Math.hypot(th.x - L.x, th.z - L.z) : Infinity

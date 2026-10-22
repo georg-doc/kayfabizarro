@@ -84,6 +84,14 @@ import { createDiscoLife } from '../npc/discoLife' // Lead: Disco K12 (Dioramen-
 import { discoK12, discoCast, discoMC, MOTION_LIBRARY_URL } from '../actors/discoCast'
 import { withPrivateBody } from '../actors/privateCast'
 import { botCast, botStationUrl, botBlockUrl } from '../actors/botCast'
+import GREET_LINES from '../data/npc/greet.lines.json'
+import { createGiftReveal } from '../npc/giftReveal'
+import REVEAL_TOY from '../data/npc/reveal.toy-soldier.json'
+import giftBaseUrl from '../assets/gift/Present_Base.gltf?url'
+import giftBaseBin from '../assets/gift/Present_Base.bin?url'
+import giftPaperUrl from '../assets/gift/Present_UnwrappedBase.gltf?url'
+import giftPaperBin from '../assets/gift/Present_UnwrappedBase.bin?url'
+import giftTex from '../assets/gift/toy_soldier_texture.png?url'
 import { CLASS_SCALE } from '../actors/stageCast'
 import AudioHost from '../audio/AudioHost.jsx' // WS-Audio R1 (V-598): ein Ton-Pfad (Mixer, Motor/Flug, Atmo, Kampf, Musik)
 import { ENDLESS_ON, EndlessDrive, adoptRig, createEndlessTerrainMod, createDriveSkyMod } from '../world/EndlessDrive.jsx' // V-619 world=endless (WS1b): endlose Biom-Fahrt, Licht nur über das Rig
@@ -128,7 +136,8 @@ const T2_AMPH_PAL = TERRAIN2 ? stagePaletteFor(null, { override: T2_WORLD, varia
 export const TERRAIN3 = isTerrain3(hash), T3_PAL = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(hash) || [0, TERRAIN3_CFG.palette])[1]
 // #439 world=probe (Georg 21.10.): Geländeform der Gelände-Probe als zweite Welt, kombinierbar mit look=terrain3 (nicht mit terrain2: dort wählt world die Palette)
 export const PROBE_WORLD = /(^|[#,])world=probe(,|$)/.test(hash)
-const TERR = { biome: BIOME, ...(PROBE_WORLD ? { world: 'probe' } : {}), ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
+const TERR = { biome: BIOME, ...(PROBE_WORLD ? { world: 'probe', light: () => LIGHT_INFO()?.mood || null } : {}),   // WS1c: Unterwasser-Licht aus dem einen Rig
+  ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
 const AMPH_FULL = DEBUG && /(^|[#,])amph=full(,|$)/.test(hash) // Vergleich mit dem Original (349 k Dreiecke)
 const AMPH = { biome: BIOME, groundR: 0.01, worldK: K, ...(AMPH_FULL ? {} : { url: AMPH_LOD_URL }), ...(TERRAIN2 ? { palette: T2_AMPH_PAL, palAmt: 1, clay: true, castShadow: true } : {}) } // #439: gleiche Palette, Knete v1.1 und echter Schatten wie das Gelände // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
 const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
@@ -165,12 +174,20 @@ const DISCO_OPTS = { k12: discoK12(), cast: discoCast, mc: discoMC, createActor,
 const BAND_OPTS = BAND_DEF ? { scenelet: BAND_SCENE || { ...BAND_DEF.fallback, assets: {} }, urls: Object.fromEntries(Object.entries(BAND_PRIV).map(([k, v]) => [k.split('/').pop(), v])), at: BAND_AT.at, yaw: (BAND_AT.yawDeg * Math.PI) / 180,
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => (M1CLOCK.t ?? 0) + NPC_T0, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, worldScale: K, classScale: CLASS_SCALE,
   placeholder: { cast: () => KAYKIT(BAND_DEF.placeholderCast)(0, 0, null), clipUrls: [clipsGeneral, clipsSim] } } : null
-const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null), worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
+const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, revealOnly: /(^|[#,])gift(,|$)/.test(hash) && NPC_WORLD.gifts?.[0] ? [NPC_WORLD.gifts[0].group] : [], /* E3: Trupp nur aus dem Geschenk */ bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null), worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
   staticUrl: (key) => { const [kind, c] = key.split(':'); return kind === 'station' ? botStationUrl(c) : kind === 'block' ? botBlockUrl(c) : null },
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, orchard: () => mods.orchard, // D3: Ziele, Fluff
   day: () => Math.floor(((M1CLOCK.t ?? 0) + NPC_T0) / NPC_WORLD.dayS), onEvent: (e) => mods.npc?.observeGroup?.({ ...e, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }
 // Phase B: Gedächtnis im Weltstand kfb.world-save/1 (localStorage, getrennt von kfb.save/1); npcfresh leert ihn vorher (Tests); npcmem=0 schaltet ab
+// WS-NPC E3 (WS0 V-634, Lead 22.10.): Trupp aus dem Geschenk. #gift (braucht patrol); Ort #giftat=x,z,Grad; Auslöser debug __kfbM1.gift().spawn() bzw. #giftauto=<s>
+const GIFT_ON = /(^|[#,])gift(,|$)/.test(hash) && PATROL_ON, GIFT_DEF = NPC_WORLD.gifts?.[0]
+const GIFT_AT = (() => { const m = /giftat=(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)(?:,(-?\d+(?:\.\d+)?))?/.exec(hash); return m ? { at: [+m[1], +m[2]], yawDeg: m[3] != null ? +m[3] : GIFT_DEF?.yawDeg ?? 0 } : { at: GIFT_DEF?.at || [0, 0], yawDeg: GIFT_DEF?.yawDeg ?? 0 } })()
+const GIFT_AUTO = /giftauto=(\d+(?:\.\d+)?)/.exec(hash)?.[1]
+const makeGift = mk('gift', (o) => { const m = createGiftReveal(o), own = m.update; let auto = GIFT_AUTO != null; m.update = (dt, c) => { if (auto && (M1CLOCK.t ?? 0) >= +GIFT_AUTO && m.spawnAt()) auto = false; own(dt, c) }; return m })
+const GIFT_OPTS = GIFT_DEF ? { spec: REVEAL_TOY, def: { ...GIFT_DEF, ...GIFT_AT }, urls: { base: giftBaseUrl, baseBin: giftBaseBin, unwrapped: giftPaperUrl, unwrappedBin: giftPaperBin, tex: giftTex },
+  groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => M1CLOCK.t ?? 0, groups: () => mods.groups, worldScale: K, classScale: CLASS_SCALE } : null
 const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
+  onGreet: (e) => { if (!GREET_LINES.noBubble.includes(e.reason)) useGame.getState().say('npc-' + e.id, getReader().silence(), 'thought') }, // G-2: Blase je Grund (greet.<reason>); bis WS0-Zeilen da sind nur „…“ (S5b),
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.
@@ -315,6 +332,12 @@ function HostEnv() {
     scene.background = c.clone(); scene.fog = new THREE.Fog(c.clone(), 140 * K, 620 * K)
     return () => { scene.fog = null; scene.background = null }
   }, [scene])
+  // WS1c (V-631): Nebel unter Wasser – Wasserton im Licht des Rigs (terrain.under().color), nah und dicht, weich über under().k; darüber unverändert
+  const fogW = useRef(null)
+  useFrame(() => { const f = scene.fog, u = mods.terrain?.under?.(); if (!f?.isFog) return; if (!fogW.current) fogW.current = { c: f.color.clone(), near: f.near, far: f.far, on: false }
+    const F = fogW.current, k = u ? u.k : 0; if (k < 0.002) { if (F.on) { f.color.copy(F.c); f.near = F.near; f.far = F.far; F.on = false } return }
+    if (!F.on) { F.c.copy(f.color); F.near = f.near; F.far = f.far; F.on = true }
+    f.color.copy(F.c).lerp(u.color, k); f.near = F.near + (0.5 - F.near) * k; f.far = F.far + (14 + 10 / (1 + u.depth) - F.far) * k })
   return <ModuleHost create={makeRig} options={RIG} />
 }
 
@@ -474,8 +497,9 @@ function M1World() {
       discoFeet: () => mods.disco?.feet?.() ?? null,
       discoActors: () => mods.disco?.actors?.() ?? [],
       discoHold: (on) => mods.disco?.hold?.(on),
+      gift: () => mods.gift ? { status: mods.gift.status(), debug: mods.gift.debug(), events: mods.gift.events(), spawn: (x, z, yawDeg) => mods.gift.spawnAt(x, z, yawDeg) } : null, // WS-NPC E3 (nur debug) // WS-NPC Phase D (nur debug)
       fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld(), hops: mods.fluffer.hops() } : null, // WS-NPC Phase C (nur debug)
-      npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), steps: mods.npc.steps(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
+      npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), steps: mods.npc.steps(), events: mods.npc.events(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
       renderer: () => M1GL.gl, scene: () => M1GL.scene, three: () => THREE, // Bildskripte: eigene Kamera rendern (nur debug)
       feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, k: K, g: G, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
       logs: () => ({ sky: { ...skyLog }, terrain: { ...terrainLog }, amph: { ...amphLog }, billboard: { create: billboardLog.create, update: billboardLog.update, dispose: billboardLog.dispose }, loco: { ...locoActorLog },
@@ -500,6 +524,7 @@ function M1World() {
       {PATROL_ON && <ModuleHost create={makeGroups} options={GROUP_OPTS} />}
       {BAND_ON && BAND_OPTS && <ModuleHost create={makeBand} options={BAND_OPTS} />}
       {DISCO_ON && <ModuleHost create={makeDisco} options={DISCO_OPTS} />}
+      {GIFT_ON && GIFT_OPTS && <ModuleHost create={makeGift} options={GIFT_OPTS} />}
       {HARVEST && <Orchard />}
       {CLAY_ON && <ModuleHost create={makeClay} options={CLAY_M1} />}
       <Suspense fallback={null}>{/* Rapier lädt asynchron: eigene Grenze, damit die Hüllen davor nicht verworfen und doppelt erzeugt werden (Prüfer M1, Befund 3) */}

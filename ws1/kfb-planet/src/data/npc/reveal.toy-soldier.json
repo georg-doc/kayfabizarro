@@ -1,0 +1,324 @@
+{
+ "schema": "kfb.reveal/1",
+ "id": "toy-soldier-present",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/data/cast.js",
+  "commit": "7e1c4ab0f143b2f1c0f33017eb473574f20190c9",
+  "blob": "ba8038f6e5b4305fe97baa4edaed82703c0b207b",
+  "block": "residentId 'toy-soldier' · reveal (lib/studio.js makeReveal)",
+  "note": "1:1 übernommen (Lead 22.10., E3 V-634); Einheiten der Spur: u (glTF), Winkel in Grad, Easing wie studio.js EASE"
+ },
+ "duration": 4.8,
+ "loop": true,
+ "phases": [
+  [
+   0,
+   "Box geschlossen"
+  ],
+  [
+   0.45,
+   "Antizipation"
+  ],
+  [
+   1,
+   "Pop"
+  ],
+  [
+   1.35,
+   "Figur überschwingt"
+  ],
+  [
+   1.85,
+   "Requisiten"
+  ],
+  [
+   2.3,
+   "Idle"
+  ]
+ ],
+ "tracks": [
+  {
+   "node": "present",
+   "prop": "visible",
+   "keys": [
+    [
+     0,
+     true
+    ],
+    [
+     1,
+     false
+    ]
+   ]
+  },
+  {
+   "node": "present",
+   "prop": "scale",
+   "ease": "inOutQuad",
+   "keys": [
+    [
+     0,
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     0.45,
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     0.64,
+     [
+      1.12,
+      0.84,
+      1.12
+     ]
+    ],
+    [
+     0.82,
+     [
+      0.9,
+      1.2,
+      0.9
+     ]
+    ],
+    [
+     1,
+     [
+      1.06,
+      0.94,
+      1.06
+     ]
+    ]
+   ]
+  },
+  {
+   "node": "present",
+   "prop": "rz",
+   "ease": "inOutQuad",
+   "keys": [
+    [
+     0,
+     0
+    ],
+    [
+     0.48,
+     0
+    ],
+    [
+     0.62,
+     -7
+    ],
+    [
+     0.74,
+     7
+    ],
+    [
+     0.86,
+     -4
+    ],
+    [
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "node": "unwrapped",
+   "prop": "visible",
+   "keys": [
+    [
+     0,
+     false
+    ],
+    [
+     1,
+     true
+    ]
+   ]
+  },
+  {
+   "node": "unwrapped",
+   "prop": "scaleAll",
+   "ease": "outBack",
+   "keys": [
+    [
+     1,
+     0.55
+    ],
+    [
+     1.26,
+     1.08
+    ],
+    [
+     1.42,
+     1
+    ]
+   ]
+  },
+  {
+   "node": "soldier",
+   "prop": "scaleAll",
+   "ease": "outBack",
+   "keys": [
+    [
+     0,
+     0.001
+    ],
+    [
+     1,
+     0.001
+    ],
+    [
+     1.3,
+     1.18
+    ],
+    [
+     1.55,
+     0.95
+    ],
+    [
+     1.72,
+     1
+    ]
+   ]
+  },
+  {
+   "node": "soldier",
+   "prop": "y",
+   "ease": "outQuad",
+   "keys": [
+    [
+     0,
+     0.3
+    ],
+    [
+     1,
+     0.3
+    ],
+    [
+     1.34,
+     0.05
+    ],
+    [
+     1.5,
+     0
+    ]
+   ]
+  },
+  {
+   "node": "soldier",
+   "prop": "ry",
+   "ease": "outQuad",
+   "keys": [
+    [
+     1,
+     -40
+    ],
+    [
+     1.7,
+     0
+    ]
+   ]
+  },
+  {
+   "node": "rifle",
+   "prop": "scaleAll",
+   "ease": "outBack",
+   "keys": [
+    [
+     0,
+     0.001
+    ],
+    [
+     1.45,
+     0.001
+    ],
+    [
+     1.72,
+     1.2
+    ],
+    [
+     1.9,
+     1
+    ]
+   ]
+  },
+  {
+   "node": "trumpet",
+   "prop": "scaleAll",
+   "ease": "outBack",
+   "keys": [
+    [
+     0,
+     0.001
+    ],
+    [
+     1.6,
+     0.001
+    ],
+    [
+     1.88,
+     1.2
+    ],
+    [
+     2.05,
+     1
+    ]
+   ]
+  },
+  {
+   "node": "present_side",
+   "prop": "scaleAll",
+   "ease": "outElastic",
+   "keys": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1.05,
+     0.88
+    ],
+    [
+     1.5,
+     1
+    ]
+   ]
+  },
+  {
+   "node": "present_back",
+   "prop": "y",
+   "ease": "outQuad",
+   "keys": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1.1,
+     0.35
+    ],
+    [
+     1.45,
+     0
+    ]
+   ]
+  }
+ ]
+}

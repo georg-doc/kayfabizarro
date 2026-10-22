@@ -1,14 +1,18 @@
-// kfbWater · Flüsse, Bergseen, Wasserfälle und Gischt im Spiel · ERZEUGT von probe/port/gen_water_game.py aus probe/gelaende-probe.html (sha b8b23616bb6d).
+// kfbWater · Flüsse, Bergseen, Wasserfälle und Gischt im Spiel · ERZEUGT von probe/port/gen_water_game.py aus probe/gelaende-probe.html (sha 44fccc020c7d).
 // Nicht von Hand ändern: Shader-Körper (Band/See, Fall, Gischt), Kit-Fluid, rivSample und die Gischt-Bällchen kommen 1:1 aus der Gelände-Probe.
 // Spiel statt Probe: hgt() liest die Höhentextur des Gelände-Netzes (gleiche Dreiecke wie PlaneGeometry a-b-d / b-c-d), Weltkoordinaten ohne
 // schwebenden Ursprung (uCarW = 0), Probe-Schatten und Luftperspektive vorerst neutral, kein Meer (uWater tief).
 // Shader: die drei Fragment-Shader der Probe wörtlich, nur ihre Einschübe ${…} sind durch Spiel-Bausteine ersetzt (Höhentextur statt hgt-Formel, Stubs für Schatten/Luft).
-// createWater({ hyd, ground: { data, seg, ox, oz, cell }, seed }) → { object3d, update(dt), dispose(), info }   hyd = Ergebnis von kfb-hydro.v1 hydro()
+// createWater({ hyd, ground: { data, seg, ox, oz, cell }, seed, seaY, size, level, light }) → { object3d, update(dt, ctx), dispose(), info, under(), bubbles() }
+//   hyd = Ergebnis von kfb-hydro.v1 hydro() · level(x, z) → Wasserspiegel oder null · light() → Stimmung des einen Licht-Rigs (info().mood) oder null
+// Unterwasser (WS1c, V-631): Kamera unter dem Spiegel → Probe-Overlay UNDER (1:1) in Rig-Helligkeit, Blasen (Knete, vom Rig beleuchtet); Nebel setzt der Host über under()
 import * as THREE from 'three'
 import FLUID from '../data/looks/kfb-fluid.r1.json' with { type: 'json' }
 
-export const WATER_SOURCE_SHA = 'b8b23616bb6d'
-const F_RIBBON = `
+export const WATER_SOURCE_SHA = '44fccc020c7d'
+const F_RIBBON = `varying float vLane, vDip;
+uniform mat4 uKfbPV;
+
   vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
   vec2 mod289(vec2 x){return x-floor(x*(1.0/289.0))*289.0;}
   vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
@@ -28,9 +32,11 @@ const F_RIBBON = `
 uniform float uAmp; uniform vec2 uSeed;
 float gNE;
 uniform sampler2D uGround; uniform vec4 uGroundO;
-float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, i=clamp(floor(f), vec2(0.0), vec2(uGroundO.w-1.0)), uv=f-i; ivec2 c=ivec2(i);   /* = surfaceAt des Gelände-Moduls (Spiel) */
-  float ha=texelFetch(uGround,c,0).r, hb=texelFetch(uGround,c+ivec2(0,1),0).r, hc=texelFetch(uGround,c+ivec2(1,1),0).r, hd=texelFetch(uGround,c+ivec2(1,0),0).r;
-  return uv.x+uv.y<=1.0 ? ha+(hd-ha)*uv.x+(hb-ha)*uv.y : hc+(hb-hc)*(1.0-uv.x)+(hd-hc)*(1.0-uv.y); }
+float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, c=clamp(floor(f+0.5), vec2(1.0), vec2(uGroundO.w-1.0)), t=f-c;   /* WS1c (V-631): Netzhöhen glatt gelesen (quadratischer B-Spline über 3×3 Knoten, wie rivSample) –
+     die Uferlinie als Höhenlinie des Dreiecksnetzes knickte an jeder Dreieckskante (gezackter Rand kleiner Seen); terrain3 färbt Grund und Saum mit derselben Höhe */
+  vec2 w0=0.5*(0.5-t)*(0.5-t), w1=0.75-t*t, w2=0.5*(0.5+t)*(0.5+t); ivec2 ci=ivec2(c); float v=0.0;
+  for(int j=0;j<3;j++){ float wy=j==0?w0.y:(j==1?w1.y:w2.y); for(int i=0;i<3;i++){ float wx=i==0?w0.x:(i==1?w1.x:w2.x); v+=wx*wy*texelFetch(uGround,ci+ivec2(i-1,j-1),0).r; } }
+  return v; }
 uniform sampler2D uRiv; uniform vec4 uRivO;
 #define RIV_N 512.0
   vec2 rivSample(vec2 p){ if(uRivO.w<0.5) return vec2(0.0); vec2 t=(p-uRivO.xy)/uRivO.z*RIV_N-0.5, c=floor(t+0.5); if(c.x<1.0||c.y<1.0||c.x>RIV_N-2.0||c.y>RIV_N-2.0) return vec2(0.0);
@@ -91,7 +97,7 @@ vec4 kitFluid(vec3 vW, vec2 vFlow, float vShore, vec2 vSN){
     vec2 tq=(wp-uRivO.xy)/uRivO.z*RIV_N-0.5, cq=floor(tq+0.5); vec4 tx=texture2D(uRiv,(cq+0.5)/RIV_N);
     if(dep<-dw || (hT<uWater*uAmp+0.15 && tx.y<0.3)) discard;   /* außerhalb der Rinne zeichnet dort das Meer */
     if(dep>(length(vFlow)>0.001 ? 3.0 : 4.5)) discard;   /* tiefer als jedes Bett: Wasser hinge über einer Geländekante in der Luft (Georg 21.10.) */
-    if(uRivDbg<-0.5 && tx.y>0.35 && tx.w<vLvl-0.15) discard;   /* hier ist ein tieferer Fluss zuständig: kein Wasserblatt darüber (Zusammenfluss, enge Nachbarläufe) */
+    if(uRivDbg<-0.5 && tx.y>0.35 && tx.w>-900.0 && tx.w<vLvl-0.15) discard;   /* hier ist ein tieferer Fluss zuständig: kein Wasserblatt darüber (Zusammenfluss, enge Nachbarläufe) – nur wo die Kachel nass ist (w > −900): trockene Randkacheln (w = −999) schnitten die Kante in 2-m-Treppen (Georg 22.10.: Zacken) */
     { vec2 gxs=dFdx(vP.xz), gys=dFdy(vP.xz); float exs=dFdx(vP.y), eys=dFdy(vP.y), dts=gxs.x*gys.y-gxs.y*gys.x; vec2 gs=abs(dts)>1e-9 ? vec2(exs*gys.y-gxs.y*eys, gxs.x*eys-exs*gys.x)/dts : vec2(0.0); if(length(gs)>0.45) discard; }   /* Fallstufe zeichnet das Fall-Netz */   /* wo das Meer liegt, zeichnet das Meer (keine Doppelfläche an der Mündung) */
     vec2 gx=dFdx(wp), gy=dFdy(wp); float ex=dFdx(dep), ey=dFdy(dep), det=gx.x*gy.y-gx.y*gy.x; vec2 gw=abs(det)>1e-9 ? vec2(ex*gy.y-gx.y*ey, gx.x*ey-ex*gy.x)/det : vec2(0.0);
     float sdr=max(dep,0.0)/max(length(gw),0.06), wob=0.5+0.5*snoise(wp*0.21+uSeed*0.3), sw=fwidth(sdr)+1e-3, e1=0.6+0.3*wob, e2=1.8+0.5*wob;
@@ -99,8 +105,10 @@ vec4 kitFluid(vec3 vW, vec2 vFlow, float vShore, vec2 vSN){
     vec4 kf=kitFluid(vec3(wp.x, vLvl, wp.y), vFlow, sd, vSN);
     if(below){ vec3 rdU=normalize(vP-cameraPosition); float win=smoothstep(0.55, 0.85, rdU.y); vec3 uc=mix(kf.rgb*0.55, mix(kf.rgb, vec3(0.80,0.90,0.88), 0.5), win); gl_FragColor=vec4(uc, mix(0.92, 0.6, win)); return; }   /* Haut von unten: dunkler Wasserton, steil nach oben das helle Fenster (Snell) */
     vec3 kc=kf.rgb; float wsv=wShadow(vP); kc=mix(mix(kc*0.62, uContact, 0.18), kc, wsv); if(uSky2>0.5) kc=applyAir(kc, vP, 1.0);
-    float ka=max(kf.a, mix(0.8, 0.94, smoothstep(e1-sw, e1+sw, sdr))); gl_FragColor=vec4(kc, ka*smoothstep(-dw,dw,dep)); }
-void main(){ kfbMain(); gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
+    float ka=max(kf.a, mix(0.8, 0.94, smoothstep(e1-sw, e1+sw, sdr)));
+    if(uWater>0.005){ float wlS=uWater*uAmp+0.15; ka*=1.0-(1.0-smoothstep(0.05, 0.25, vLvl-wlS))*smoothstep(0.0, 0.3, wlS-hT); }   /* WS1c: Mündung – wo darunter Meer liegt, geht das Band ins Meer über */
+    gl_FragColor=vec4(kc, ka*smoothstep(-dw,dw,dep)); }
+void main(){ kfbMain(); gl_FragColor.a*=1.0-smoothstep(0.93, 1.0, abs(vLane)); { vec3 vPd=vP-vec3(0.0,vDip,0.0); vec4 cz=uKfbPV*vec4(vPd-normalize(vPd-cameraPosition)*0.15, 1.0); gl_FragDepth=clamp(0.5*cz.z/cz.w+0.5, 0.0, 1.0); } gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
 #include <colorspace_fragment>
 }`
 const F_FALL = `
@@ -196,9 +204,11 @@ const F_FOAM = `
 uniform float uAmp; uniform vec2 uSeed;
 float gNE;
 uniform sampler2D uGround; uniform vec4 uGroundO;
-float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, i=clamp(floor(f), vec2(0.0), vec2(uGroundO.w-1.0)), uv=f-i; ivec2 c=ivec2(i);   /* = surfaceAt des Gelände-Moduls (Spiel) */
-  float ha=texelFetch(uGround,c,0).r, hb=texelFetch(uGround,c+ivec2(0,1),0).r, hc=texelFetch(uGround,c+ivec2(1,1),0).r, hd=texelFetch(uGround,c+ivec2(1,0),0).r;
-  return uv.x+uv.y<=1.0 ? ha+(hd-ha)*uv.x+(hb-ha)*uv.y : hc+(hb-hc)*(1.0-uv.x)+(hd-hc)*(1.0-uv.y); }
+float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, c=clamp(floor(f+0.5), vec2(1.0), vec2(uGroundO.w-1.0)), t=f-c;   /* WS1c (V-631): Netzhöhen glatt gelesen (quadratischer B-Spline über 3×3 Knoten, wie rivSample) –
+     die Uferlinie als Höhenlinie des Dreiecksnetzes knickte an jeder Dreieckskante (gezackter Rand kleiner Seen); terrain3 färbt Grund und Saum mit derselben Höhe */
+  vec2 w0=0.5*(0.5-t)*(0.5-t), w1=0.75-t*t, w2=0.5*(0.5+t)*(0.5+t); ivec2 ci=ivec2(c); float v=0.0;
+  for(int j=0;j<3;j++){ float wy=j==0?w0.y:(j==1?w1.y:w2.y); for(int i=0;i<3;i++){ float wx=i==0?w0.x:(i==1?w1.x:w2.x); v+=wx*wy*texelFetch(uGround,ci+ivec2(i-1,j-1),0).r; } }
+  return v; }
 uniform sampler2D uRiv; uniform vec4 uRivO;
 #define RIV_N 512.0
   vec2 rivSample(vec2 p){ if(uRivO.w<0.5) return vec2(0.0); vec2 t=(p-uRivO.xy)/uRivO.z*RIV_N-0.5, c=floor(t+0.5); if(c.x<1.0||c.y<1.0||c.x>RIV_N-2.0||c.y>RIV_N-2.0) return vec2(0.0);
@@ -256,7 +266,8 @@ vec4 kitFluid(vec3 vW, vec2 vFlow, float vShore, vec2 vSN){
 void main(){ kfbMain(); gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
 #include <colorspace_fragment>
 }`
-const F_SEA = `
+const F_SEA = `uniform mat4 uKfbPV;
+
   vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
   vec2 mod289(vec2 x){return x-floor(x*(1.0/289.0))*289.0;}
   vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
@@ -276,9 +287,11 @@ const F_SEA = `
 uniform float uAmp; uniform vec2 uSeed;
 float gNE;
 uniform sampler2D uGround; uniform vec4 uGroundO;
-float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, i=clamp(floor(f), vec2(0.0), vec2(uGroundO.w-1.0)), uv=f-i; ivec2 c=ivec2(i);   /* = surfaceAt des Gelände-Moduls (Spiel) */
-  float ha=texelFetch(uGround,c,0).r, hb=texelFetch(uGround,c+ivec2(0,1),0).r, hc=texelFetch(uGround,c+ivec2(1,1),0).r, hd=texelFetch(uGround,c+ivec2(1,0),0).r;
-  return uv.x+uv.y<=1.0 ? ha+(hd-ha)*uv.x+(hb-ha)*uv.y : hc+(hb-hc)*(1.0-uv.x)+(hd-hc)*(1.0-uv.y); }
+float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, c=clamp(floor(f+0.5), vec2(1.0), vec2(uGroundO.w-1.0)), t=f-c;   /* WS1c (V-631): Netzhöhen glatt gelesen (quadratischer B-Spline über 3×3 Knoten, wie rivSample) –
+     die Uferlinie als Höhenlinie des Dreiecksnetzes knickte an jeder Dreieckskante (gezackter Rand kleiner Seen); terrain3 färbt Grund und Saum mit derselben Höhe */
+  vec2 w0=0.5*(0.5-t)*(0.5-t), w1=0.75-t*t, w2=0.5*(0.5+t)*(0.5+t); ivec2 ci=ivec2(c); float v=0.0;
+  for(int j=0;j<3;j++){ float wy=j==0?w0.y:(j==1?w1.y:w2.y); for(int i=0;i<3;i++){ float wx=i==0?w0.x:(i==1?w1.x:w2.x); v+=wx*wy*texelFetch(uGround,ci+ivec2(i-1,j-1),0).r; } }
+  return v; }
 uniform sampler2D uRiv; uniform vec4 uRivO;
 #define RIV_N 512.0
   vec2 rivSample(vec2 p){ if(uRivO.w<0.5) return vec2(0.0); vec2 t=(p-uRivO.xy)/uRivO.z*RIV_N-0.5, c=floor(t+0.5); if(c.x<1.0||c.y<1.0||c.x>RIV_N-2.0||c.y>RIV_N-2.0) return vec2(0.0);
@@ -338,12 +351,14 @@ vec4 kitFluid(vec3 vW, vec2 vFlow, float vShore, vec2 vSN){
         vec2 wp=vP.xz+uCarW; float wl=uWater*uAmp+0.15;
         float dep=vDep, dcam=distance(vP, cameraPosition); if(dep<1.6 || dcam<300.0){ gNE=dcam<140.0 ? 0.6 : 8.0; dep=wl-hgt(wp); }   /* nah immer je Pixel: die Übersichts-Wasserhaut hat 75 m Vertex-Abstand, ihre Vertex-Tiefe legte sonst Meer über tiefer gelegtes Land */   /* fern gröber statt gar nicht: nur Vertex-Tiefe schnitt in der Übersicht (Wasser-Gitter 75 m) ganze Polygone aus dem Meer (Fehler aus D4) */                                              /* am Ufer je Pixel: Schaumlinie sitzt genau */
         float dw=fwidth(dep)+1e-3;
-        if(rivSample(wp).y>0.3){ vec2 tq=(wp-uRivO.xy)/uRivO.z*RIV_N-0.5; float rl=texture2D(uRiv,(floor(tq+0.5)+0.5)/RIV_N).w; gNE=0.6; float rh=hgt(wp); if(rl>wl+0.02 && rl-rh<=3.0 && rh<rl) discard; }   /* Rinne gehört dem Fluss – aber nur, wo sein Band auch zeichnet (sonst Loch an der Mündung) */
+        if(rivSample(wp).y>0.6){ vec2 tq=(wp-uRivO.xy)/uRivO.z*RIV_N-0.5; float rl=texture2D(uRiv,(floor(tq+0.5)+0.5)/RIV_N).w; gNE=0.6; float rh=hgt(wp); if(rl>wl+0.25 && rl-rh<=3.0 && rh<rl) discard; }   /* Rinne gehört dem Fluss – aber nur, wo sein Band auch zeichnet (sonst Loch an der Mündung) */
         /* Island Kit (Fluid F2, Georg 21.10.: „1:1 einbauen“): Kit-Shader unverändert, die Probe liefert seine vier Eingänge –
            Weltort, Fließrichtung (Stillwasser: 0), Meter zum Ufer (Tiefe ÷ Geländeneigung, Neigung aus den Bildschirm-Ableitungen), Fließkoordinaten */
         vec2 gx=dFdx(wp), gy=dFdy(wp); float ex=dFdx(dep), ey=dFdy(dep), det=gx.x*gy.y-gx.y*gy.x;
         vec2 gw=abs(det)>1e-9 ? vec2(ex*gy.y-gx.y*ey, gx.x*ey-ex*gy.x)/det : vec2(0.0);
-        if(dep<-dw) discard;
+        /* Uferlinie = Schnitt des GEZEICHNETEN Geländes mit der Wasserfläche (Tiefentest), nicht die eigene Höhenrechnung: das Dreiecksnetz liegt stellenweise tiefer als hgt(),
+           dort fehlte sonst das Wasser und der dunkle Grund lag offen (Georg 21.10.: verschmierte Uferfarben). Tiefe nur noch für Farbe und Schaum, nie zum Ausschneiden */
+        if(dep<-dw) discard;   /* Spiel (WS1c): Ufer = glatte Höhenlinie, Netz-Spalt deckt die Tiefenverschiebung (main) */
         if(uWKit>0.5){ float sdr=max(dep,0.0)/max(length(gw),0.06), wob=0.5+0.5*snoise(wp*0.21+uSeed*0.3), sw=fwidth(sdr)+1e-3, e1=0.9+0.45*wob, e2=2.6+0.6*wob;
           /* Design-Kontext: der Kit rechnet Farbe, Schaum und Deckkraft stetig aus dem Uferabstand; gestuft eingespeist ergibt das drei klare Töne
              (Flachwasser · Kante · Tiefe) mit gemalter, welliger Grenze – dieselbe Kantenlogik wie die Fließfarben-Bänder, Kit-Shader unverändert */
@@ -386,7 +401,7 @@ vec4 kitFluid(vec3 vW, vec2 vFlow, float vShore, vec2 vSN){
         alpha*=smoothstep(-dw,dw,dep);
         if(uSky2>0.5) col=applyAir(col, vP, 1.0);
         gl_FragColor=vec4(col, alpha); }
-void main(){ kfbMain(); gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
+void main(){ kfbMain(); { vec4 cz=uKfbPV*vec4(vP-normalize(vP-cameraPosition)*0.15, 1.0); gl_FragDepth=clamp(0.5*cz.z/cz.w+0.5, 0.0, 1.0); } gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
 #include <colorspace_fragment>
 }`
 const V_SEA = `
@@ -409,9 +424,11 @@ const V_SEA = `
 uniform float uAmp; uniform vec2 uSeed;
 float gNE;
 uniform sampler2D uGround; uniform vec4 uGroundO;
-float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, i=clamp(floor(f), vec2(0.0), vec2(uGroundO.w-1.0)), uv=f-i; ivec2 c=ivec2(i);   /* = surfaceAt des Gelände-Moduls (Spiel) */
-  float ha=texelFetch(uGround,c,0).r, hb=texelFetch(uGround,c+ivec2(0,1),0).r, hc=texelFetch(uGround,c+ivec2(1,1),0).r, hd=texelFetch(uGround,c+ivec2(1,0),0).r;
-  return uv.x+uv.y<=1.0 ? ha+(hd-ha)*uv.x+(hb-ha)*uv.y : hc+(hb-hc)*(1.0-uv.x)+(hd-hc)*(1.0-uv.y); }
+float hgt(vec2 p){ vec2 f=(p-uGroundO.xy)/uGroundO.z, c=clamp(floor(f+0.5), vec2(1.0), vec2(uGroundO.w-1.0)), t=f-c;   /* WS1c (V-631): Netzhöhen glatt gelesen (quadratischer B-Spline über 3×3 Knoten, wie rivSample) –
+     die Uferlinie als Höhenlinie des Dreiecksnetzes knickte an jeder Dreieckskante (gezackter Rand kleiner Seen); terrain3 färbt Grund und Saum mit derselben Höhe */
+  vec2 w0=0.5*(0.5-t)*(0.5-t), w1=0.75-t*t, w2=0.5*(0.5+t)*(0.5+t); ivec2 ci=ivec2(c); float v=0.0;
+  for(int j=0;j<3;j++){ float wy=j==0?w0.y:(j==1?w1.y:w2.y); for(int i=0;i<3;i++){ float wx=i==0?w0.x:(i==1?w1.x:w2.x); v+=wx*wy*texelFetch(uGround,ci+ivec2(i-1,j-1),0).r; } }
+  return v; }
 uniform sampler2D uRiv; uniform vec4 uRivO;
 #define RIV_N 512.0
   vec2 rivSample(vec2 p){ if(uRivO.w<0.5) return vec2(0.0); vec2 t=(p-uRivO.xy)/uRivO.z*RIV_N-0.5, c=floor(t+0.5); if(c.x<1.0||c.y<1.0||c.x>RIV_N-2.0||c.y>RIV_N-2.0) return vec2(0.0);
@@ -422,12 +439,23 @@ uniform sampler2D uRiv; uniform vec4 uRivO;
 
       uniform float uWater, uWNE; uniform vec2 uCarW; varying vec3 vP; varying float vDep;
       void main(){ float wl=uWater*uAmp+0.15; vec4 w=modelMatrix*vec4(position.x, wl, position.z, 1.0); gNE=uWNE; vec2 pa=w.xz+uCarW; vDep=wl-hgt(pa); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`
-const V_RIBBON = `attribute vec2 aFlow; attribute vec2 aSN; attribute float aLvl; varying vec2 vFlow; varying vec2 vSN; varying float vLvl; varying vec3 vP;
-  void main(){ vFlow=aFlow; vSN=aSN; vLvl=aLvl; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`
+const V_RIBBON = `attribute float aLane; varying float vLane, vDip;
+float kfbDip(float l){ float e=abs(l); return 0.12*smoothstep(0.55,0.8,e)+0.48*smoothstep(0.8,1.0,e); }
+attribute vec2 aFlow; attribute vec2 aSN; attribute float aLvl; varying vec2 vFlow; varying vec2 vSN; varying float vLvl; varying vec3 vP;
+  void main(){ vLane=aLane; vDip=kfbDip(aLane); vFlow=aFlow; vSN=aSN; vLvl=aLvl; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*(w-vec4(0.0,vDip,0.0,0.0)); }`
 const V_FALL = `attribute vec4 aF; varying vec4 vF; varying vec3 vP; void main(){ vF=aF; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`
 const V_FOAM = `attribute vec4 aC; varying vec4 vC; varying vec3 vP; void main(){ vC=aC; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`
+const V_UNDER = `varying vec2 vS; void main(){ vS=position.xy; gl_Position=vec4(position.xy,0.0,1.0); }`
+const F_UNDER = `uniform float uUK, uUD, uTimeR; uniform vec3 uKFCol, uKFShallow; varying vec2 vS;
+  void kfbMain(){ float y=vS.y*0.5+0.5; vec3 c=mix(uKFCol*mix(0.55, 0.8, y), uKFShallow*1.1, smoothstep(0.55, 1.0, y)*(1.0-smoothstep(0.5, 3.0, uUD)));
+    float rip=0.5+0.5*sin(vS.x*9.0+uTimeR*1.3+sin(vS.y*7.0-uTimeR)); c+=vec3(0.04,0.06,0.06)*rip*y;   /* Lichtwellen von oben */
+    float vig=1.0-0.35*dot(vS*0.8, vS*0.8); gl_FragColor=vec4(c*vig, uUK*mix(0.62, 0.78, smoothstep(0.0, 3.0, uUD))); }
+uniform vec3 uUnderLit;
+void main(){ kfbMain(); gl_FragColor.rgb*=uUnderLit; gl_FragColor.rgb = sRGBTransferEOTF(gl_FragColor).rgb;
+#include <colorspace_fragment>
+}`
 
-export function createWater({ hyd, ground, seed = [0, 0], seaY = null, size = 0 }) {
+export function createWater({ hyd, ground, seed = [0, 0], seaY = null, size = 0, level = null, light = null }) {
   const root = new THREE.Group(); root.name = 'kfb-water'; const group = root
   const L = new THREE.TextureLoader(), T = (url, srgb) => { const t = L.load(url); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t }
   const D = FLUID.defaults, F = hyd.field
@@ -438,18 +466,22 @@ export function createWater({ hyd, ground, seed = [0, 0], seaY = null, size = 0 
     uContact: { value: new THREE.Color('#3a3a34') }, uGround: { value: gT }, uGroundO: { value: new THREE.Vector4(ground.ox, ground.oz, ground.cell, ground.seg) },
     uRiv: { value: fT }, uRivO: { value: new THREE.Vector4(F.ox, F.oz, F.size, 1) },
     uKFCol: { value: new THREE.Color(...D.col) }, uKFShallow: { value: new THREE.Color(...D.shallow) }, uKFMoat: { value: D.moat }, uKFBand: { value: D.band }, uKFShoreFoam: { value: D.shoreFoam },
+    uKfbPV: { value: new THREE.Matrix4() }, uUnderK: { value: 0 },   /* WS1c: Kamera unter Wasser 0…1 (terrain3 hellt den Grund auf) */   /* WS1c: Projektion × Ansicht der zeichnenden Kamera (Tiefenverschiebung der Wasserhaut) */
     uKFV: { value: D.v }, uKFWind: { value: new THREE.Vector2(...D.wind) }, uKFZ: { value: new THREE.Vector2(...D.z) }, uKFDudv: { value: T(FLUID.dudv, false) }, uKFMap: { value: T(FLUID.map, true) }, uKFHasMap: { value: 1 } }
   const mk = (v, f, extra = {}) => new THREE.ShaderMaterial({ uniforms: U, transparent: true, depthWrite: false, vertexShader: v, fragmentShader: f, ...extra })
-  const seaMat = mk(V_SEA, F_SEA), mat = mk(V_RIBBON, F_RIBBON, { side: THREE.DoubleSide }), fallMat = mk(V_FALL, F_FALL, { side: THREE.DoubleSide }), foamMat = mk(V_FOAM, F_FOAM)
+  const seaMat = mk(V_SEA, F_SEA, { side: THREE.DoubleSide }), mat = mk(V_RIBBON, F_RIBBON, { side: THREE.DoubleSide }), fallMat = mk(V_FALL, F_FALL, { side: THREE.DoubleSide }), foamMat = mk(V_FOAM, F_FOAM)
   const R = hyd.ribbon, geos = [], mats = [seaMat, mat, fallMat, foamMat]
-  const add = (g, m, order) => { const o = new THREE.Mesh(g, m); o.frustumCulled = false; o.renderOrder = order; root.add(o); geos.push(g); return o }
-  if (R.idx.length) { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(R.pos, 3)); g.setAttribute('aFlow', new THREE.Float32BufferAttribute(R.fl, 2)); g.setAttribute('aSN', new THREE.Float32BufferAttribute(R.sn, 2)); g.setAttribute('aLvl', new THREE.Float32BufferAttribute(R.lvA, 1)); g.setIndex(R.idx); add(g, mat, 3) }
+  const PV = (r, s, cam) => { U.uKfbPV.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse) }
+  const add = (g, m, order) => { const o = new THREE.Mesh(g, m); o.frustumCulled = false; o.renderOrder = order; o.onBeforeRender = PV; root.add(o); geos.push(g); return o }
+  if (R.idx.length) { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(R.pos, 3)); g.setAttribute('aFlow', new THREE.Float32BufferAttribute(R.fl, 2)); g.setAttribute('aSN', new THREE.Float32BufferAttribute(R.sn, 2)); g.setAttribute('aLvl', new THREE.Float32BufferAttribute(R.lvA, 1))
+    const LN = [-1, -0.8, -0.55, -0.28, 0, 0.28, 0.55, 0.8, 1], lane = new Float32Array(R.lvA.length); let nv = 0; for (const L of hyd.lines) for (let i = 0; i < L.pts.length; i++) for (const l of LN) lane[nv++] = l   /* Querlage je Band-Ecke (9 Spuren wie kfb-hydro), Seen danach 0 */
+    g.setAttribute('aLane', new THREE.BufferAttribute(lane, 1)); g.setIndex(R.idx); add(g, mat, 3) }
   if (seaY != null) add(new THREE.PlaneGeometry(size, size, 128, 128).rotateX(-Math.PI / 2), seaMat, 3)   /* Meer: Höhe setzt der Vertex-Shader (Pegel) */
   const FA = hyd.fallMesh
   if (FA.fi.length) { const g1 = new THREE.BufferGeometry(); g1.setAttribute('position', new THREE.Float32BufferAttribute(FA.fp, 3)); g1.setAttribute('aF', new THREE.Float32BufferAttribute(FA.fa, 4)); g1.setIndex(FA.fi); add(g1, fallMat, 4)
     const g2 = new THREE.BufferGeometry(); g2.setAttribute('position', new THREE.Float32BufferAttribute(FA.cp, 3)); g2.setAttribute('aC', new THREE.Float32BufferAttribute(FA.ca, 4)); g2.setIndex(FA.ci); add(g2, foamMat, 4) }
   /* Gischt-Bällchen (Knete): 5 je Fall am Fuß – Logik puffs() aus der Probe */
-  const pGeo = new THREE.IcosahedronGeometry(1, 1), pMat = new THREE.MeshStandardMaterial({ color: '#cfe3df', roughness: 0.9, metalness: 0 })
+  const pGeo = new THREE.IcosahedronGeometry(1, 1), pMat = new THREE.MeshStandardMaterial({ color: '#cfe3df', emissive: '#a8d8d2', emissiveIntensity: 0.35, roughness: 0.9, metalness: 0 })   /* Probe-Ton; Eigenleuchten, weil das Spiel-Rig bei tiefer Sonne Grau daraus machte */
   const PUFF = { falls: hyd.falls, mesh: new THREE.InstancedMesh(pGeo, pMat, Math.max(1, hyd.falls.length * 5)), m4: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), sc: new THREE.Vector3() }
   PUFF.mesh.count = 0; PUFF.mesh.frustumCulled = false; root.add(PUFF.mesh)
     function puffs(t) { const F = PUFF.falls, M = PUFF.mesh; if (!F.length || !group.visible) { M.count = 0; return } let n = 0
@@ -458,11 +490,40 @@ export function createWater({ hyd, ground, seed = [0, 0], seaY = null, size = 0 
           PUFF.v.set(A.b.x + ux * (0.4 + ph * 1.6) - uz * side, A.bot + 0.15 + ph * (0.6 + 0.12 * H), A.b.z + uz * (0.4 + ph * 1.6) + ux * side); PUFF.sc.setScalar(sz * (1 - 0.6 * ph * ph))
           M.setMatrixAt(n++, PUFF.m4.compose(PUFF.v, PUFF.q, PUFF.sc)) } }
       M.count = n; M.instanceMatrix.needsUpdate = true }
-  let t = 0
+  /* Unterwasser-Overlay (Probe UNDER) und Blasen */
+  const UW = { k: 0, d: 0, on: false, lv: null, enters: 0 }, uU = { uUK: { value: 0 }, uUD: { value: 0 }, uUnderLit: { value: new THREE.Color(1, 1, 1) } }
+  const underMat = new THREE.ShaderMaterial({ uniforms: Object.assign({}, U, uU), transparent: true, depthTest: false, depthWrite: false, vertexShader: V_UNDER, fragmentShader: F_UNDER })
+  const under = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), underMat); under.frustumCulled = false; under.renderOrder = 999; under.visible = false; root.add(under); geos.push(under.geometry); mats.push(underMat)
+  const BN = 160, bGeo = new THREE.IcosahedronGeometry(1, 1), bMat = new THREE.MeshStandardMaterial({ color: '#ffffff', emissive: '#bfeee8', emissiveIntensity: 0.55, roughness: 0.15, metalness: 0, transparent: true, opacity: 0.45, depthWrite: false })   /* Luft hell: Eigenton, Glanz vom Rig */
+  const BUB = { mesh: new THREE.InstancedMesh(bGeo, bMat, BN), p: new Float32Array(BN * 4), v: new Float32Array(BN * 2), lv: new Float32Array(BN), n: 0, i: 0, m4: new THREE.Matrix4(), q: new THREE.Quaternion(), s: new THREE.Vector3(), o: new THREE.Vector3() }
+  BUB.mesh.count = 0; BUB.mesh.frustumCulled = false; BUB.mesh.renderOrder = 2; root.add(BUB.mesh)   /* vor der Wasserhaut gezeichnet: von oben liegen Blasen unter dem Wasser */
+  let rnd = 7; const R01 = () => ((rnd = (rnd * 16807) % 2147483647) / 2147483647)
+  /* Blasen: n Stück um (x, y, z) im Umkreis r; steigen 0,6–1,3 m/s mit Taumeln, platzen am Spiegel lv */
+  const bubbles = (x, y, z, n = 6, r = 0.4, lv = null) => { const L = lv ?? (level ? level(x, z) : null); if (L == null || y > L) return 0
+    for (let k = 0; k < n; k++) { const i = BUB.i++ % BN, a = R01() * 6.283, rr = r * Math.sqrt(R01()); BUB.p.set([x + Math.cos(a) * rr, y + (R01() - 0.5) * r, z + Math.sin(a) * rr, 0.025 + 0.06 * R01() ** 2], i * 4)
+      BUB.v[i * 2] = 0.6 + 0.7 * R01(); BUB.v[i * 2 + 1] = R01() * 6.283; BUB.lv[i] = L } BUB.n = Math.min(BN, BUB.n + n); return n }
+  const bubStep = (dt) => { let c = 0; const M = BUB.mesh
+    for (let i = 0; i < BN; i++) { const r = BUB.p[i * 4 + 3]; if (r <= 0) continue; const y = BUB.p[i * 4 + 1] + BUB.v[i * 2] * dt; BUB.v[i * 2 + 1] += dt * 5
+      if (y > BUB.lv[i] - r) { BUB.p[i * 4 + 3] = 0; continue } BUB.p[i * 4 + 1] = y; const w = BUB.v[i * 2 + 1]
+      BUB.o.set(BUB.p[i * 4] + Math.sin(w) * 0.05, y, BUB.p[i * 4 + 2] + Math.cos(w * 1.3) * 0.05); BUB.s.set(r, r * (0.85 + 0.15 * Math.sin(w * 2)), r); M.setMatrixAt(c++, BUB.m4.compose(BUB.o, BUB.q, BUB.s)) }
+    M.count = c; M.instanceMatrix.needsUpdate = true; return c }
+  /* Licht des einen Rigs → Helligkeit/Ton unter Wasser (Tag 1, Abend wärmer und dunkler, Nacht dunkel); ohne Rig neutral */
+  const lit = (o) => { const m = light?.(); if (!m) return o.setRGB(1, 1, 1); const sun = new THREE.Color(m.sun || '#ffffff'), k = Math.min(1.15, Math.max(0.22, ((m.sunI || 0) * Math.max(0.25, Math.sin((m.elev || 30) * Math.PI / 180)) * 0.55 + (m.hemiI || 0) * 0.7) / 0.95))   /* tiefe Sonne (12°) ≈ 0,95, Mittag gedeckelt 1,15 */
+    return o.setRGB(1, 1, 1).lerp(sun, 0.3).multiplyScalar(k) }
+  let t = 0, bubT = 0, camO = null   /* camO: Prüfkamera statt der Spielkamera (Bildskripte) */
   return {
     object3d: root,
-    update(dt = 1 / 60) { t += dt; U.uTimeR.value = t; puffs(t) },
-    dispose() { for (const g of geos) g.dispose(); for (const m of mats) m.dispose(); pGeo.dispose(); pMat.dispose(); gT.dispose(); fT.dispose(); U.uKFDudv.value.dispose(); U.uKFMap.value.dispose(); root.clear() },
+    update(dt = 1 / 60, ctx) { t += dt; U.uTimeR.value = t; puffs(t)
+      const cam = camO || ctx?.camera; let lv = null, d = 0; if (cam && level) { lv = level(cam.position.x, cam.position.z); if (lv != null) d = lv - cam.position.y }   /* wie underUpdate der Probe */
+      const on = lv != null && d > 0.05; if (on && !UW.on) UW.enters++; UW.on = on; UW.lv = lv; UW.d = Math.max(0, d)
+      UW.k += ((on ? 1 : 0) - UW.k) * Math.min(1, dt * (on ? 9 : 5)); under.visible = UW.k > 0.01; uU.uUK.value = UW.k; U.uUnderK.value = UW.k; uU.uUD.value = UW.d; if (under.visible) lit(uU.uUnderLit.value)
+      if (on && (bubT -= dt) <= 0) { bubT = 0.35; const p = cam.position, a = R01() * 6.283; bubbles(p.x + Math.cos(a) * 2.5, p.y - 1.2, p.z + Math.sin(a) * 2.5, 3, 1.5, lv) }   /* ruhige Schwebeblasen um die Kamera */
+      bubStep(dt) },
+    /* Unterwasser-Zustand für Host (Nebel) und Kamera: k 0…1 weich, depth m unter dem Spiegel, color = Wasserton im Rig-Licht */
+    under: () => ({ on: UW.on, k: UW.k, depth: UW.d, level: UW.lv, enters: UW.enters, color: new THREE.Color().copy(U.uKFCol.value).lerp(U.uKFShallow.value, 0.45).multiplyScalar(1.2).multiply(lit(new THREE.Color())),   /* Nebel heller als der tiefe Ton: Licht kommt von oben */ bubbles: BUB.mesh.count }),
+    bubbles,
+    probeCam: (c) => { camO = c || null },
+    dispose() { for (const g of geos) g.dispose(); for (const m of mats) m.dispose(); pGeo.dispose(); pMat.dispose(); bGeo.dispose(); bMat.dispose(); gT.dispose(); fT.dispose(); U.uKFDudv.value.dispose(); U.uKFMap.value.dispose(); root.clear() },
     info: () => ({ lines: hyd.lines.length, lakes: hyd.lakes.length, falls: hyd.falls.length, ribbonVerts: R.pos.length / 3, sha: WATER_SOURCE_SHA }),
     uniforms: U,
   }

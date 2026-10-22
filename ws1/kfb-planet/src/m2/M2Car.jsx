@@ -23,7 +23,7 @@ import { STEP, interpTrack, M1INTERP, M1CLOCK } from '../m1/m1Clock'
 import { createFollowCam } from '../camera/followCam'
 import { VEHICLE_COMMIT } from '../modules/vehicleLineup'
 import fbRecipe from '../data/actors/frizzlebob-v5b.recipe.json'
-import { createK2t, stepK2t, SQUASH_LOOK, attitude, ATT, LAND, STUCK, ASSIST_M3, PUSH, RIDE, TRICK } from './k2t'
+import { createK2t, stepK2t, SQUASH_LOOK, attitude, ATT, LAND, STUCK, ASSIST_M3, PUSH, RIDE, TRICK, FLOW, FEEL, ASSIST } from './k2t'
 import { attachTumble } from '../vendor/deformer/vehicle-tumble.v1.js'
 import { attachFishtail } from '../vendor/deformer/vehicle-fishtail.v1.js'
 import { rampZone } from '../m3/stuntData.js'
@@ -36,7 +36,10 @@ import { prepVehicleLook, hookVehicleLook, applyHeroColor, slicer, warmVehicleEn
 import { headlightDaylight, HEADLIGHTS } from '../look/headlights.js'
 import { gfxChannel } from '../look/groundFx.js'
 import { parseTod, moodAt, MOOD_SETS } from '../vendor/light/kfb-stage-light.v1.1.js'
-import { groundHeight } from '../modules/m1-terrain' // #439 world=probe: Höhe der aktiven Welt
+import { groundHeight, waterActive } from '../modules/m1-terrain' // #439 world=probe: Höhe der aktiven Welt · WS1c: Wasserspiegel
+import { createWaterDrive, waterGround, waterAfter, waterCamClamp } from './waterDrive.js' // WS1c (V-631): Fahren im/unter/über Wasser
+import { createWaterFx } from '../modules/waterFx.js'
+import ModuleHost from '../ModuleHost'
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
 import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from './racerFlight.js'
@@ -93,6 +96,7 @@ export const M2_ON = /#m1\b.*\bcar\b/.test(H) // #m1,car[=ecctrl|k2b] · assist=
 // Elan S2: Racer-Flug nur mit Schalter fly (#m1,car,fly) – ohne ihn bleibt K2B unverändert (run-all 18.10.: Rampen-Launch m3-f und Zwei-Rad m3-g
 // gerieten über das takeoff-Ereignis in den Flug)
 export const RACER_FLY = M2_ON && /[#,]fly(,|$)/.test(H)
+const WATER_WORLD = M2_ON && /(^|[#,])world=probe(,|$)/.test(H) // WS1c: Wasser gibt es nur auf dem Probe-Gelände
 if (/(^|[#,])assist=off(,|$)/.test(H)) ASSIST_M3.on = false
 // Ereignis-Abos (railImpact/landing/takeoff, Namen wie vehicle-cartoon-deformer.v2) für Squash, VFX, später Stunts (§55): M2EVENTS.on(type, fn) → abmelden
 export const M2EVENTS = { subs: new Map(), on(type, fn) { const l = this.subs.get(type) || new Set(); l.add(fn); this.subs.set(type, l); return () => l.delete(fn) }, emit(e) { this.subs.get(e.type)?.forEach((fn) => fn(e)); this.subs.get('*')?.forEach((fn) => fn(e)) } }
@@ -286,7 +290,8 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     return createFollowCam({ dom: gl.domElement, base: Math.hypot(ch - M2CAR.cam.target[1], cz), height: M2CAR.cam.target[1], eye: M2CAR.box.c[1] + M2CAR.box.h[1] * 1.05, eyeAhead: M2CAR.box.h[2] * 0.85, onPov: (on) => { const r = M2STATE.visualRoot; if (r) r.traverse((o) => { if (o.isMesh) o.visible = !on }) }, pitch0: Math.atan2(ch - M2CAR.cam.target[1], -cz), maxArm: 7.5 * K,
       collide: (from, dir, dist) => { ray.origin.x = from.x; ray.origin.y = from.y; ray.origin.z = from.z; ray.dir.x = dir.x; ray.dir.y = dir.y; ray.dir.z = dir.z
         const h = world.castRay(ray, dist, true, undefined, undefined, undefined, undefined, (co) => !co.parent()?.userData?.m2Car && !isFence(co)); return h ? h.timeOfImpact : null },
-      ground: (x, z) => groundHeight(x, z) }) }, [gl, world, rapier, racer])
+      ground: (x, z) => groundHeight(x, z),
+      mod: () => M2STATE.water?.cam || null, clampY: (x, z, y) => (M2STATE.water ? waterCamClamp(M2STATE.water, waterActive.level, x, z, y, groundHeight) : y) }) }, [gl, world, rapier, racer]) // WS1c: Kamera am Wasser
   useEffect(() => { const v = new THREE.Vector3()
     M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K }) }
     M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
@@ -388,6 +393,7 @@ function K2tCar({ at, keys, carRef, player }) {
   const isObstacle = (c) => { const u = c.parent()?.userData; return !!(u?.stunt?.kind === 'wall' || u?.obstacle) }
   // weiche Hindernisse = Figuren: FrizzleBob (ecctrl-Kapsel) und GothGirl (userData.soft)
   const isSoft = (c) => { const b = c.parent(); return !!b && (b.userData?.soft === true || b.handle === player?.current?.handle?.()?.body?.handle) }
+  const W = useMemo(() => createWaterDrive(), []) // WS1c (V-631): Wasser-Zustand je Wagen
   const env = useMemo(() => ({
     // Bodenhöhe unter dem Ursprung (= Unterseite) + Fahrhöhe. Georg 16.10.: „fährt durch den Berg und fällt endlos“ – der Strahl begann 1,5 m über dem
     // Auto und verfehlte einen steil ansteigenden Hang. Jetzt: Strahl ab 3 m über dem Auto auf Theater/Gelände, und das Gelände-Höhenfeld ist IMMER
@@ -426,6 +432,7 @@ function K2tCar({ at, keys, carRef, player }) {
       }
       return { delta: dl, hit: !!wall, n: wall, soft, ride } },
   }), [world, rapier])
+  useMemo(() => { const g0 = env.ground; env.ground = (x, z, fromY) => waterGround(W, g0(x, z, fromY), x, z, waterActive.level, M2TUNE.rideHeight) }, [env, W]) // WS1c: gleitend ist der Spiegel der Boden
   // Flug-Umgebung: Boden = K2B-Boden unter dem Wagen (Fahrhöhe eingerechnet), Wände über denselben Rumpf-Schub
   const fenv = useMemo(() => ({ ground: (x, z) => env.ground(x, z, d.y).y, sweep: (from, delta) => env.sweep(from, delta) }), [env, d])
   useEffect(() => {
@@ -438,12 +445,15 @@ function K2tCar({ at, keys, carRef, player }) {
     return () => { if (carRef.current?.kind === 'k2b') carRef.current = null }
   }, [])
   const sig = useCallback(() => d.signals, [d]) // Deformer-Eingang (Stufe E), stabil je Wagen
+  // WS1c: Wasser-VFX (Bugwelle, Kielwasser, Spritzer, Gischt, Blasen) – Eingang Wagen + Wasser-Zustand + 'water'-Ereignisse
+  const fxOpts = useMemo(() => ({ car: () => ({ x: d.x, y: d.y, z: d.z, yaw: d.yaw, speed: d.speed }), water: () => W, on: (t, fn) => M2EVENTS.on(t, fn), bubbles: (...a) => waterActive.bubbles?.(...a) ?? 0, expose: (api, own) => { if (api) M2STATE.waterFx = api; else if (M2STATE.waterFx === own) M2STATE.waterFx = null } }), [d, W])
   const step = () => {
     const k = keys(), px = d.x, pz = d.z, N = NOSE, fs = M2STATE.follow?.state
     // Elan S2: erst der Flug (fliegt der Racer, ruht K2B), sonst K2B und danach die Rampen-Prüfung; Nase per Maus: Kameraneigung gegen die Grundneigung
     const fin = { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, jump: k.jump, boost: k.run, noseUp: (k.forward && N.upArrow) || !!k.noseUp, noseDown: (k.backward && N.downArrow) || !!k.noseDown, mousePitch: N.rmb && fs ? 0.32 - fs.wantPitch : (k.mousePitch ?? null) }
     const flew = RACER_FLY && racerFlightStep(F, d, fin, STEP, fenv)
-    if (!flew) { stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env); if (RACER_FLY) racerAfterK2t(F, d) } // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
+    if (!flew) { stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env); if (RACER_FLY) racerAfterK2t(F, d)
+      if (waterActive.level) { waterAfter(W, d, { jump: k.jump }, STEP, { level: waterActive.level, carH: bc[1] + bh[1], rideH: M2TUNE.rideHeight, maxF: FLOW.maxForward, jumpImpulse: FEEL.jumpImpulse, gravity: ASSIST.flyGravity }); M2STATE.water = W } } // WS1c // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
     M2STATE.drive = racerDrive(F, fin) || { gas: !!k.forward, brake: !!k.backward, boost: !!k.run, jump: !!k.jump, air: !!d.air } // R1a: Eingang fürs Antriebs-Modul (Gas, Boost, Sprung)
     if (RACER_FLY) ELAN_MEM.state = F.st; if (F.st) for (const e of F.st.events) ELAN_MEM.events.push({ ...e, t: M1CLOCK.steps }) // Ringkurs-Anzeige und Kessel (ElanRings)
     for (const e of d.events) M2EVENTS.emit(e)
@@ -457,6 +467,7 @@ function K2tCar({ at, keys, carRef, player }) {
   return (
     <>
       <OnFrame fn={step} />
+      {WATER_WORLD && <ModuleHost create={createWaterFx} options={fxOpts} />}
       <RigidBody ref={body} type="kinematicPosition" colliders={false} position={at.p} name="m2-car" userData={{ m2Car: true }}>
         <CuboidCollider args={bh} position={bc} />
         <CarVisual squash={() => d.squash} signals={sig} lean={() => d.lean || 0} />
