@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1e: HUD-Zustände für alle HUD-Props (V-673)
+- Spec: 30_DECISIONS/replies/HUD_UX_STATES_R1.md. Kontur ist Normalzustand, Lichthof trägt den Zustand (Hover, Klick, Aktiv, Hinweis, Bereit, Neu), Cartoon-Deformation die Bewegung, Abklingzeit grau mit Farbe von unten nach oben.
+- Bitte bauen hinter `hud=ux1`: eine Zustands-Logik für alle HUD-Props (Aktionsleiste N32 r2 ohne runde Buttons, N29-Props, Fluff-Zahl), Inverted-Hull-Kontur, Lichthof-Sprite, ein Deformations-Modul, Kontext-Hinweis „im Kampf“ für Primär- und Sekundärwaffe, Abklingzeit als Test mit festem Wert.
+- Werte aus der Spec als Start; WSB liefert parallel einen Zusammenschau-Bogen (N33) für Georgs Feinwahl. Abnahme im Spiel über das Abnahme-Menü.
+
 # NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §142 (V-672)
 - **Registriert (Georg an den Lead):** Knet-HUD, Kit-Knete und Racer-Knete sind Standard (`hud=wood`, `kitclay=0`, `vclay=0` als Rückschalter). Ödland-Käfer mit mehr Originalfarbe, Knet-Rotor, Leuchtring bleibt.
 - **Fundsachen (V-672, hebt V-587 auf, bestätigt V-450):** schweben, mit ruhiger, angenehmer Dreh- und Wippbewegung, mit den Nachbarn harmonisch synchron (gemeinsame Phase je Gruppe, leichte Versätze statt Gleichtakt), sauber ausgeleuchtet im einen Licht-Rig. `found=rest` bleibt als Schalter; kein Erdkeil unter schwebenden Stücken.

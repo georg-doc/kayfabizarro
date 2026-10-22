@@ -9579,6 +9579,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-673",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "HUD-UX-Ebene (Georg 22.10.): Aktions-Props frei als 3D-Modelle, kleiner (bis 6 Plätze unten); Kontur ist Normalzustand; Lichthof in Varianten für Hover, Klick, Aktiv und Kontext-Hinweise (z. B. im Kampf Primär- und Sekundärwaffe); Cartoon-Deformation für die Zustandswechsel; Abklingzeit als grau mit Farbe, die sich von unten wieder aufbaut. Dieselben Zustände für alle HUD-Props (Kompass, Radio, Truhe usw.). Spec replies/HUD_UX_STATES_R1.md; WSB N33 Zusammenschau in Spielgröße mit Fluff-Bällchen und Knete-Vergleich, WS1e baut hinter hud=ux1.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Zustands-Sprache für das ganze HUD gibt Rückmeldung und Hinweise, ohne Rahmen und Text.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9666,7 +9681,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1134",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1135",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
