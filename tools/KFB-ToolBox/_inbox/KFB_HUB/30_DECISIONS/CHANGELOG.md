@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB K14 r4 (Goo b + Ink-Flüsse + Kenney-Splats dünn/dicht, Gelände-Ausblick; 1 Draw-Call je Splat-Satz) fertig, privat; Wahl bei Georg. Chatterbox-Familien-Set (156 Clips, ca. 4.992 Credits) nach Georgs Go gestartet.
 - V-680 HUD-Layout R2 (Tacho-Halbkreis, Minimap auf Klick, Ziel-Pfeil mit Entfernung, Kassetten-Radio); WSB N34 Layout-Probe, WS1e Logik.
 - V-677 Goo-Vorstadt b herabfließend + dünne schwarze Flüsse + Ink-Splats (WSB K14 r4). V-678 Chatterbox-Fragen bestätigt (12 Familien, Credits nach Go). V-679 Infektion: erst Kontrollverlust, später Seitenwechsel.
 - WSB N33 HUD-Darstellungsprobe fertig (Zusammenschau, Zustände, Kontur, Textur, Hinweis-Farbe, Clip), privat; Werte als Vorschlag an WS1e; Georgs Wahl offen.
