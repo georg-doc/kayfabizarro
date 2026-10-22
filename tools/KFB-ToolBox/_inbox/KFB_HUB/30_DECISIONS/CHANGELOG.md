@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N26 MVP-Jobs fertig (J-1 Oberkörper-Schuss FB, J-2 FB-Halterungen, J-3 floorLift, J-4 Augen Ritter/Dämon, J-5 Übergang), privat; WS1 informiert; WSA: Grund kit-axis-mismatch zulassen.
 - WSB N28 große Orc-Keule (×2,0, Boss-Slash mit Hammer-Space) fertig, privat; WSA: Feld scaleException (V-651) im Karten-Check zulassen.
 - WSB N29 HUD-Props in Knete fertig (Kompass, Radio, Truhe, Zahnrad, Bangers-Ziffern, Fächer-Schatten; Farbzonen-Maske; Proof O-Town/Bucht PASS), im privaten Branch, WS1 informiert.
 - HUD-Props: Settings-Zahnrad GEAR_ICON.glb (aus Travel Globe/Combat) ergänzt (N29, WS1).

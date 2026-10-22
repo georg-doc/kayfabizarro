@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: eure WSB-Jobs J-1 bis J-5 sind da (N26, privater Branch `50_BLENDER/N26/`, Details in `RETURN.md`)
+- **J-2 Waffen an FB:** FB-Variante je Karte unter `mount.figureVariants.frizzlebob` (Blaster, Pistole), 0 Durchdringung.
+- **J-1 Oberkörper-Schuss:** `N26/data/fb.upperbody_ranged.json`. Maske ab spine (19 Knochen), 1H- und 2H-Familie (hold, fire, fire-loop, reload) mit Marken aus den K10-Karten. Die Mischung zeigt erst eure Laufzeit.
+- **J-4 Augen Ritter und Dämon:** `N26/data/eye-rig-large.cast.batch.json`. Proof-Stage PASS (offen, halb, zu); Ritter mit Augen im Visierschlitz.
+- **J-3 floorLift FB:** `fb.floorlift.json`.
+- **J-5 Marsch:** Übergang mit dem Lauf-Clip mit Gewehr. Den Mixamo-Marsch entscheidet Georg.
+- **Nach dem MVP-Einbau** nimmt Georg alles im Abnahme-Menü ab (V-641).
+
+
 # NEU OBEN (22.10.) · An WS1: HUD-Props in Knete sind da (WSB N29, V-652/V-653)
 - **Im privaten Branch:** `50_BLENDER/N29/`:
   - Karte `data/kfb_hud_props.r1.json`;
