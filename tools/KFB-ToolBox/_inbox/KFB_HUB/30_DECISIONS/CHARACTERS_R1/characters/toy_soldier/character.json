@@ -1,0 +1,740 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "toy_soldier",
+  "status": "draft-r1",
+  "kind": "faction_unit",
+  "identity": {
+    "name": {
+      "v": "Toy Soldier",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.toy-soldier.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Zinnsoldaten-Trupp Nr. 1–6",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_disco_soldier",
+        "kfb_disco_soldier_k12",
+        "kfb_toysoldier_carbine",
+        "kfb_toysoldier_carbine_n15",
+        "toy-soldier",
+        "toy_soldier_squad"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_disco_soldier",
+    "kfb_disco_soldier_k12",
+    "kfb_toysoldier_carbine",
+    "kfb_toysoldier_carbine_n15",
+    "toy-soldier",
+    "toy_soldier_squad"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+        "B50 Gunfight r2: Spielzeugsoldat aus B11 r5c (Trage-Gewehr ab), Karabiner einhändig auf der Unterarmachse (Option A, q132)",
+        "B50 Gunfight: Spielzeugsoldat aus B11 r5c mit dem Pack-Gewehr im KayKit-Kit-Slot handslot.r. r3d (Georg 20.10., V-581/V-582): Zielen/Schießen/Nachladen mit beiden Händen am Gewehr, ganze Figur vom Host um die Laufabweichung gedreht; Laufen/seitlich/kleiner Treffer/Ruhe mit natürlicher Haltung je Clip; Ausweichen und großer Treffer mit Oberkörper aus Laufen-mit-Gewehr; Sterbe-Clips lassen das Gewehr fallen (r3b-Fallbahn)",
+        "V-464 (Georg 18.10.): Trupp aus sechs Aufzieh-Zinnsoldaten, Nummer groß am Tschako; Dalton-Gag: Nr. 1 ist der Anführer und der Kleinste, Nr. 6 der Größte. Die r2-Schirmmütze bleibt als eigene Rolle „Verkehrspolizist“ (B11 r2)."
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json#story; KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json#story; KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01/toy_soldier_squad.figure.r4.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Wach-Resident · Parade / Spielzeug",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.townRole",
+      "status": "SOURCE"
+    },
+    "loreStatements": {
+      "v": [
+        {
+          "text": "The KFB universe may be experienced as a **cosmic casting**. A figure may imagine, believe, recall or in individual authored lore actually have chosen *this* role for their immortal soul: the recurring Orc, the restless Graveyard skeleton, the toy soldier, the unsuccessful schemer, the obsessive banker, the hopeful farmer. The cosmic job matters to them precisely because their flaws, hardships, compulsions, embarrassment and minor triumphs constitute *their* part of the ensemble.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 88,
+          "heading": "A. Ontological frame: chosen, assigned, celebrated"
+        },
+        {
+          "text": "**In character / on duty:** the Orc hurls himself into another hopeless battle; the undead skeleton haunts its cemetery; a toy soldier embodies the petty, procedural banality of authority; the banker sincerely worships his ledgers. They act in-world and accept real scene stakes and consequences. Combat, fear, solidarity, injury, coercion and responsibility are not fake merely because the performance has Kayfabe form.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 95,
+          "heading": "B. Two equally true social registers"
+        },
+        {
+          "text": "Their delight derives from **being-in-the-world, doing what they do, embracing or humorously reflecting their own sometimes deeply dysfunctional character mask**. An Orc, Evil Mage, Trickster, Graveyard revenant, Toy Soldier, resident builder or socially awkward authority can find joy and a sense of vocation in inhabiting that part with full Kayfabe conviction. They welcome a returning player as a fellow participant in a game they are already energetically playing. The character can challenge, o",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 225,
+          "heading": "A. Correct ontological relation — existence and joy before the audience"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:88; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:95; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:225",
+      "status": "PREFILL"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Steigt aus der Geschenkbox, Gewehr rechts, Trompete links",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "list",
+        "cues",
+        "runtimeOnly",
+        "floorLift",
+        "floorLiftNote",
+        "floorLiftReport",
+        "kfb_salute_squad_a",
+        "kfb_dance_chicken_a"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01.json#actors.soldier_1.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.soldier.clip",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "A toy soldier embodying the *banality of evil* can self-knowingly enact routine cruelty as an institutionally produced role. In an off-duty scene, he might also show warmth, humour or loyalty; that tension must **increase**, not erase, the player's ability to see that others were hurt. Compassion for the performer does not automatically absolve the action. Victims and other Residents retain independent perspectives, refusal rights, consequence and memory. There is no required redemptive moral en",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 104,
+          "heading": "C. Self-awareness is not rehabilitation, nor absolution"
+        },
+        {
+          "text": "### F. Small scenic test concept: Orc vs toy soldier, then after hours",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 126,
+          "heading": "F. Small scenic test concept: Orc vs toy soldier, then after hours"
+        },
+        {
+          "text": "**Beat 1, public:** the source-true Orc mob re-enacts a losing skirmish in front of a Card/billboard; a toy soldier conscientiously applies a stupid order. Lighting and set may be exaggerated, but physical consequences/other actors still matter.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 127,
+          "heading": "F. Small scenic test concept: Orc vs toy soldier, then after hours"
+        },
+        {
+          "text": "- The Toy Soldier or bureaucratic gatekeeper may sincerely perform power and become a compelling foil; no instant cozy makeover, no claim that coercion has no victims.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 159,
+          "heading": "2. A mutual invitation, not forced friendliness or obedience"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:104; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:126; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:127; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:159",
+      "status": "PREFILL"
+    }
+  },
+  "appearance": {
+    "baseModel": {
+      "v": {
+        "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/toysoldier/ToySoldier_NoEyes.glb",
+        "sha256": "siehe B11/data/b11_r3_sources.sha256.txt"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01/toy_soldier_squad.figure.r4.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json",
+        "sha256": "7b15e954a6158fcbc0f54a7d53bbbcd1f01b88e4568e68245b942bd704ae12a9",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_soldier"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_soldier.figure.json",
+        "sha256": "7b15e954a6158fcbc0f54a7d53bbbcd1f01b88e4568e68245b942bd704ae12a9",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_soldier"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_soldier_pose_dance.figure.json",
+        "sha256": "8345090b55b92ef064124a8f68d98aa69b15b9b5e3a024e5970e620372b597aa",
+        "kind": "pose",
+        "cardId": "kfb_disco_soldier"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/scenelet/disco_soldier.figure.json",
+        "sha256": "7b15e954a6158fcbc0f54a7d53bbbcd1f01b88e4568e68245b942bd704ae12a9",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_soldier"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json",
+        "sha256": "74f46643eec3c6d04921fea437742cb16028d8a9f48670bd2fe5834bf9618860",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_soldier_k12"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json",
+        "sha256": "8c98b4e9b00ee01cafe212c4726e85ee16a9e7bc55c32ac7917d36a9de347112",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel.figure.json",
+        "sha256": "77d69d4348fa28a76b163cd0c089bbd6a3fcb18eb6ac96fe60e434adc65ba507",
+        "kind": "scene_variant",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_pose_idle.figure.json",
+        "sha256": "badb8e4ea9bce3587dd853e0051cd6c779a39e25642cd68d180da6503ebf9fa2",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_pose_shoot.figure.json",
+        "sha256": "e3117c8d37353f85c3cc5ecd0f33895b1665babc2b9640c828df9948be891225",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2b.figure.json",
+        "sha256": "7188181ffb6263da613f8e759cc724f67cbe4e763276fba4b0fa1e3d0e872ad0",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2b_pose_shoot.figure.json",
+        "sha256": "bfae01d3ef2a0984583b704ceaeed0c8b814751032720690f8af17f569b6c871",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2c.figure.json",
+        "sha256": "4cd8581e47c406bed40e5bf522b6d7ec973a746a901b9825cde29e4f967729cc",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2c_pose_shoot.figure.json",
+        "sha256": "f95c75c7d4be5d53d89a53efb91f12a3b221df7fba3dd67a0f7315892f860183",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2d.figure.json",
+        "sha256": "8f4f7f45ee72af8ebb27ea62eeaa0189eeddd47894b5908b9da491a2677a5fc0",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2d_pose_idle.figure.json",
+        "sha256": "5953b323349eee98105303d53a9d273defa2450f916e23dfcd040b189f3fbf0c",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r2d_pose_shoot.figure.json",
+        "sha256": "7970189c7b022f8064eb2b12a9b01ff2345721b6bc40142973733fe0f8ce9fc6",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3.figure.json",
+        "sha256": "b215227f9fc8952f1c20716c9acbe1360908de945a14c86ed77854699f37f735",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3_pose_run.figure.json",
+        "sha256": "85359d99b3b6e82f0aafa28a34810d42ae08271a89e5a5555bedd47fb545898a",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3_pose_shoot.figure.json",
+        "sha256": "4aac65209e6544ec4fe74d915a2e4cf24d9798bcefa0bf5401c737f271e46031",
+        "kind": "pose",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3b.figure.json",
+        "sha256": "e5a4590f782875543ce6015498011ed158d7bfec29225176ccb5126f3b7796ec",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3c.figure.json",
+        "sha256": "054a0220a9ad8a7539cea4bf8be8b70a33770dd5aa20b503add899ac11c52164",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/toysoldier_duel_r3d.figure.json",
+        "sha256": "f8f91be4d3d836d1dfde2528667256992302af391a2d85b290c5c826022caa5d",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/toysoldier_duel.figure.json",
+        "sha256": "77d69d4348fa28a76b163cd0c089bbd6a3fcb18eb6ac96fe60e434adc65ba507",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/toysoldier_duel_r2c.figure.json",
+        "sha256": "4cd8581e47c406bed40e5bf522b6d7ec973a746a901b9825cde29e4f967729cc",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/toysoldier_duel_r3b.figure.json",
+        "sha256": "8c98b4e9b00ee01cafe212c4726e85ee16a9e7bc55c32ac7917d36a9de347112",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/toysoldier_duel_r3c.figure.json",
+        "sha256": "054a0220a9ad8a7539cea4bf8be8b70a33770dd5aa20b503add899ac11c52164",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/toysoldier_duel_r3d.figure.json",
+        "sha256": "f8f91be4d3d836d1dfde2528667256992302af391a2d85b290c5c826022caa5d",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json",
+        "sha256": "281d03e512795ba1d738147bd3dcffa73110ec4dec01cc36c79cc3fc932a6e4a",
+        "kind": "duplicate",
+        "cardId": "kfb_toysoldier_carbine_n15"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01/toy_soldier_squad.figure.r4.json",
+        "sha256": "3b280a0a5b4fa8b7f96f8ed561bff58940fe4755b314e4e807dca96c6720dda9",
+        "kind": "duplicate",
+        "cardId": "toy_soldier_squad"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B11/data/toy_soldier_squad.figure.r3.json",
+        "sha256": "1b2afab88eefbac9cc9c270cd4096019b23029ff188e1cf984a276e994ffe0b7",
+        "kind": "scene_variant",
+        "cardId": "toy_soldier_squad"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B11/data/toy_soldier_squad.figure.r4.json",
+        "sha256": "3b280a0a5b4fa8b7f96f8ed561bff58940fe4755b314e4e807dca96c6720dda9",
+        "kind": "canonical",
+        "cardId": "toy_soldier_squad"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Toy Soldier | am_eric | 1,08 | höchste Männerstimme, zackig |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 36,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:36",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_eric",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.08,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "The Sword, Decisive Action: resolves conflict violently. Use it to cut cord.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Höchste Männerstimme, knapp und zackig.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_08_toy-soldier__am-eric.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": [
+        {
+          "kind": "rifle",
+          "attach": "handslot.r",
+          "asset": "ToySoldier_Rifle (Mystery S6 Toy Soldier, unverändert)",
+          "grip": "2H (KayKit Ranged_2H)"
+        },
+        {
+          "kind": "rifle",
+          "attach": "handslot.r (KayKit-Kit-Slot)",
+          "asset": "ToySoldier_Rifle (Mystery S6 Toy Soldier, Geometrie unverändert)",
+          "grip": "2H, linke Hand am Vorderschaft (Ziel-Familie)",
+          "mount": {
+            "rule": "V-581 + V-582 (drei Clip-Familien)",
+            "aim": {
+              "clips": [
+                "kfb_action_aim_rifle_a",
+                "kfb_action_raise_shoot_rifle_a",
+                "kfb_action_shooting_rifle_a",
+                "kfb_action_shoot_rifle_a",
+                "kfb_action_reload_rifle_a"
+              ],
+              "rotation": [
+                0.18843,
+                0.87268,
+                0.10699,
+                0.43757
+              ],
+              "position": [
+                0,
+                -0.06,
+                0.02
+              ],
+              "positionPerClip": {
+                "kfb_action_raise_shoot_rifle_a": [
+                  0,
+                  -0.1,
+                  0.02
+                ],
+                "kfb_action_reload_rifle_a": [
+                  -0.006,
+                  -0.042,
+                  0.026
+                ]
+              },
+              "rootYawDeg": -37.54,
+              "note": "Host dreht die ganze Figur so, dass der Lauf aufs Ziel zeigt (Scenelet ry = ry_face − 37,54°)"
+            },
+            "natural": "je Clip eine feste Drehung, Gewehr ~waagrecht (B50/_work/r3d_build_v3.json)",
+            "layered": {
+              "clips": [
+                "kfb_action_dodge_left_a",
+                "kfb_action_dodge_right_a",
+                "kfb_action_dodge_forward_a",
+                "kfb_action_dodge_backward_a",
+                "kfb_reaction_hit_front_big_a"
+              ],
+              "upper_from": "kfb_locomotion_running_holding_rifle_a"
+            },
+            "death": "r3b-Fallbahn unverändert"
+          }
+        }
+      ],
+      "src": "KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json#weapon; KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json#weapon",
+      "status": "SOURCE"
+    },
+    "biome": {
+      "v": "Geschenk-Enthüllung: geschlossene Schachtel → aufgerissenes Papier → Figur",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:toy-soldier",
+      "role": "resident",
+      "note": "Wach-Resident · Parade / Spielzeug",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "stiff comic contrast",
+      "localId": "soldier",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.soldier"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "fighter",
+      "localId": "soldier",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json#fighters.soldier"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "soldier (nach V-562)",
+      "src": "KFB_HUB/65_SCENELETS/disco/concept.json#cast"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "toy_soldier duel_carbine (nach V-562)",
+      "src": "KFB_HUB/65_SCENELETS/duel/concept.json#cast"
+    },
+    {
+      "id": "toy_soldier_parade_01",
+      "role": "lead",
+      "localId": "soldier_1",
+      "note": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01.json#actors.soldier_1"
+    },
+    {
+      "id": "disco_street_01",
+      "role": "stiff comic contrast",
+      "localId": "soldier",
+      "note": "Toy Soldier",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.soldier"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #45)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "duel_carbine",
+      "type": "scene_variant",
+      "label": "duel_carbine",
+      "asset": "50_BLENDER/B50/_privat_kauf_asset/KFB_ToySoldier_duel.r2.glb",
+      "card": "50_BLENDER/B50/data/toysoldier_duel.figure.json",
+      "note": "B50 Gunfight r2: Karabiner einhändig (q132 A), 18 Kampf-Clips",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.toy_soldier.variant_assets.duel_carbine"
+    },
+    {
+      "id": "disco",
+      "type": "scene_variant",
+      "label": "disco",
+      "asset": "50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_soldier.r1.glb",
+      "card": "50_BLENDER/B50/disco/data/disco_soldier.figure.json",
+      "note": "ohne Trage-Gewehr, Tanz-Clips",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.toy_soldier.variant_assets.disco"
+    },
+    {
+      "id": "kfb_disco_soldier",
+      "type": "scene_variant",
+      "label": "Spielzeugsoldat Nr. 1 · tanzt Chicken/House",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json#id"
+    },
+    {
+      "id": "kfb_disco_soldier_k12",
+      "type": "scene_variant",
+      "label": "Spielzeugsoldat Nr. 1 · tanzt Chicken/House",
+      "card": "KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json#id"
+    },
+    {
+      "id": "kfb_toysoldier_carbine",
+      "type": "scene_variant",
+      "label": "Spielzeugsoldat Nr. 1 · Karabiner",
+      "card": "KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json",
+      "src": "KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json#id"
+    },
+    {
+      "id": "kfb_toysoldier_carbine_n15",
+      "type": "revision",
+      "label": "Spielzeugsoldat Nr. 1 · Karabiner",
+      "card": "KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json",
+      "src": "KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Birthday/Weihnachts-Set (Santa-Präsente sind Nachbarkandidaten)",
+        "Paradegegenstück zu Clown und Goth Girl"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "personality.quirks",
+    "chatter.instrument"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01/toy_soldier_squad.figure.r4.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:36",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json; KFB_HUB/65_SCENELETS/disco/concept.json; KFB_HUB/65_SCENELETS/duel/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.toy-soldier.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "label names a squad/troop",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:104; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:126; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:127; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:159",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01.json#actors.soldier_1.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.soldier.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json#weapon; KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json#weapon",
+      "tag": "SOURCE"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.toy-soldier.townRole",
+      "tag": "SOURCE"
+    },
+    "story.loreStatements": {
+      "source": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:88; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:95; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:225",
+      "tag": "PREFILL"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json#story; KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json#story; KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/toy_soldier_parade_01/toy_soldier_squad.figure.r4.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_soldier.figure.json; KFB_HUB/50_BLENDER/K12/data/disco_soldier.k12.figure.json; KFB_HUB/50_BLENDER/B50/_work/toysoldier_duel_r3b.figure.vor_r3c.json; KFB_HUB/50_BLENDER/N15/data/toysoldier_duel_r3d.n15.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[toy-soldier].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

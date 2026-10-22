@@ -1,0 +1,258 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "werewolf_wolf",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Werewolf Wolf",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.werewolf-wolf.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "werewolf-wolf"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "werewolf-wolf"
+  ],
+  "story": {},
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Werewolf | am_puck 60 + am_santa 40 | 0,95 | hell mit rauem Unterton |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 57,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:57",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_puck60+am_santa40",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.95,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Belly of the Whale, Digestion: no longer who you were, not yet who you'll become.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Hell mit rauem Unterton: halb Mensch, halb Tier.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_29_werewolf-wolf__am-puck60+am-santa40.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #6)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].goldenLine"
+    }
+  ],
+  "variants": [],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "todo",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "appearance.figureRefs",
+    "variants",
+    "performance.animations"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:57",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.werewolf-wolf.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[werewolf-wolf].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

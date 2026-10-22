@@ -1,0 +1,484 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "hero_man",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Ultra Turbo Hero Man",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.ultra-turbo-hero-man.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_heroman_blue",
+        "kfb_heroman_red",
+        "ultra-turbo-hero-man",
+        "ultra_turbo_hero_man"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_heroman_blue",
+    "kfb_heroman_red",
+    "ultra-turbo-hero-man",
+    "ultra_turbo_hero_man"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Gunfight r1 (ra_duel_01): zwei Hero Men im Blaster-Duell, Rollen-Varianten rot/blau"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Helden-Resident · Sentai-Auftritt in zwei Farben",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Rot mit Schwert und Blaster, Blau mit Schwert; die Promo-Aufstellung der zwei Varianten",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "17 (CombatRanged 1H, Dodge, Hit, Death, Idle, Strafe) mit Marken; Liste in der Karte",
+        "kfb_action_aim_blaster_a"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.A.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.B.clip",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Ultra Turbo Hero Man | am_liam | 1,05 | junger, eifriger Held |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 47,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:47",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_liam",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.05,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Do you know The Hero, Main Character Energy? Ego vehicle. Often confused, usually reluctant.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Junge, eifrige US-Heldenstimme.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_19_ultra-turbo-hero-man__am-liam.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": [
+        "Blaster an lowerarm.r (KFB_Grip/KFB_Muzzle, V-536/V-540)",
+        {
+          "blaster": "kfb_blaster_body an lowerarm.r",
+          "muzzle_off_axis_u": 0.0
+        }
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.weapon; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json#weapon; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json#weapon",
+      "status": "SOURCE"
+    },
+    "biome": {
+      "v": "Keine Kulisse im Pack — die Promo stellt die zwei Farbvarianten gegenüber",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:hero-man",
+      "role": "resident · rote Variante",
+      "note": "Helden-Resident · Sentai-Auftritt in zwei Farben",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man"
+    },
+    {
+      "id": "atlas:hero-man",
+      "role": "Sozial / blaue Farbvariante, zweiter Bewohner",
+      "note": "Helden-Resident · Sentai-Auftritt in zwei Farben",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "fighter",
+      "localId": "hero_red",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json#fighters.hero_red"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "fighter",
+      "localId": "hero_blue",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json#fighters.hero_blue"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "hero_man rot (A, KFB-Augen hinter Visier)",
+      "src": "KFB_HUB/65_SCENELETS/duel/concept.json#cast"
+    },
+    {
+      "id": "resident-gunfight-duel-01",
+      "role": "hero_man blau (B, KFB-Augen hinter Visier)",
+      "src": "KFB_HUB/65_SCENELETS/duel/concept.json#cast"
+    },
+    {
+      "id": "gunfight_duel_01",
+      "role": "duelist_a",
+      "localId": "A",
+      "note": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.A"
+    },
+    {
+      "id": "gunfight_duel_01",
+      "role": "duelist_b",
+      "localId": "B",
+      "note": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.B"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #21)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "rot",
+      "type": "scene_variant",
+      "label": "rot",
+      "asset": "50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_red.r1.glb",
+      "card": "50_BLENDER/B50/data/heroman_red.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.variant_assets.rot"
+    },
+    {
+      "id": "blau",
+      "type": "scene_variant",
+      "label": "blau",
+      "asset": "50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_blue.r1.glb",
+      "card": "50_BLENDER/B50/data/heroman_blue.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.variant_assets.blau"
+    },
+    {
+      "id": "rot",
+      "type": "texture",
+      "label": "rot",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.variants"
+    },
+    {
+      "id": "blau",
+      "type": "texture",
+      "label": "blau",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.variants"
+    },
+    {
+      "id": "kfb_heroman_blue",
+      "type": "scene_variant",
+      "label": "Ultra Turbo Hero Man · blau",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json#id"
+    },
+    {
+      "id": "kfb_heroman_red",
+      "type": "scene_variant",
+      "label": "Ultra Turbo Hero Man · rot",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json#id"
+    },
+    {
+      "id": "hero_red",
+      "type": "look",
+      "label": "resident · rote Variante",
+      "asset": "UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man"
+    },
+    {
+      "id": "hero_blue",
+      "type": "look",
+      "label": "Sozial / blaue Farbvariante, zweiter Bewohner",
+      "asset": "UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man"
+    },
+    {
+      "id": "resident-gunfight-duel-01_hero_red",
+      "type": "scene_variant",
+      "label": "Hero Man · rot",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json#fighters.hero_red"
+    },
+    {
+      "id": "resident-gunfight-duel-01_hero_blue",
+      "type": "scene_variant",
+      "label": "Hero Man · blau",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json#fighters.hero_blue"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Zweiter Resident mit echter Farbvariante nach dem Cleric — hier Rot gegen Blau",
+        "Erster Pack mit EIGENEN Rig_Medium-Clips, die die geteilte Bibliothek nicht hat"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json",
+        "sha256": "e2fc5fb389678bfd802394216c133fcb412062742e73607b409b847e8bddb534",
+        "kind": "duplicate",
+        "cardId": "kfb_heroman_blue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/heroman_blue.figure.json",
+        "sha256": "fba06f0b26e7de4aff7c6100b338f03bff15dbf065c92c1524df8853e892150e",
+        "kind": "scene_variant",
+        "cardId": "kfb_heroman_blue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/heroman_blue_pose_shoot.figure.json",
+        "sha256": "690631c6919bf6e30697df71045aeb6c8f3890b9a89114aa7387aebc0ec1ceec",
+        "kind": "pose",
+        "cardId": "kfb_heroman_blue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/heroman_blue.figure.json",
+        "sha256": "fba06f0b26e7de4aff7c6100b338f03bff15dbf065c92c1524df8853e892150e",
+        "kind": "duplicate",
+        "cardId": "kfb_heroman_blue"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json",
+        "sha256": "96d1e7960741a2ce1e83ecc5aee198d038527ea5e0d8b137565d20291efd18b1",
+        "kind": "duplicate",
+        "cardId": "kfb_heroman_red"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/heroman_red.figure.json",
+        "sha256": "0a921624c8b55805a2f1b3b592c083727a3ccd583b94c137b67ce43ee314499c",
+        "kind": "canonical",
+        "cardId": "kfb_heroman_red"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/data/heroman_red_pose_shoot.figure.json",
+        "sha256": "48c743125a1d4a5de71a395be18cc0a870f6f9df8e3e3cd362f48ffae6022f6e",
+        "kind": "pose",
+        "cardId": "kfb_heroman_red"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scenelet/heroman_red.figure.json",
+        "sha256": "0a921624c8b55805a2f1b3b592c083727a3ccd583b94c137b67ce43ee314499c",
+        "kind": "duplicate",
+        "cardId": "kfb_heroman_red"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:47",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json; KFB_HUB/65_SCENELETS/duel/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.ultra-turbo-hero-man.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.A.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01.json#actors.B.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.hero_man.weapon; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json#weapon; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json#weapon",
+      "tag": "SOURCE"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hero-man.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_blue.figure.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/gunfight_duel_01/heroman_red.figure.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/gunfight-duel-01.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ultra-turbo-hero-man].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

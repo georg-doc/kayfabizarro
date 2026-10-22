@@ -1,0 +1,263 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "q_mushroom",
+  "status": "draft-r1",
+  "kind": "plant",
+  "identity": {
+    "name": {
+      "v": "Dark-Fluffer-Pilz",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Dark-Fluffer-Pilz (dunkel)",
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_q_mushroom",
+        "kfb_q_mushroom_healed",
+        "kfb_q_mushroom_kfbeyes"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_q_mushroom",
+    "kfb_q_mushroom_healed",
+    "kfb_q_mushroom_kfbeyes"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Mushroom (CC0), as-is (V-574); Kit-Augen schwarz",
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Mushroom (CC0), as-is (V-574); *_healed: weiße Augen-Auflage"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#story; KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json#story; KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_q_mushroom_healed",
+      "type": "state",
+      "label": "Pilz geheilt (weiße Augen)",
+      "card": "KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json#id"
+    },
+    {
+      "id": "kfb_q_mushroom_kfbeyes",
+      "type": "state",
+      "label": "Dark-Fluffer-Pilz geheilt (KFB-Augen, Probe)",
+      "card": "KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json",
+        "sha256": "6919b1857191c55898efee4567601ec5684506d11cd096fa1cb5093074996ed0",
+        "kind": "canonical",
+        "cardId": "kfb_q_mushroom"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/kfb/q_mushroom.figure.json",
+        "sha256": "b3147dd24736819b47a72925ff30e0f9ecf1c0fc2e4d27a924212a417df8a323",
+        "kind": "duplicate",
+        "cardId": "kfb_q_mushroom"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_mushroom.figure.json",
+        "sha256": "fba28be0005f7ec12e6c4d2869ff6011dd35d7674d24fb25367d34c7bfb90097",
+        "kind": "duplicate",
+        "cardId": "kfb_q_mushroom"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json",
+        "sha256": "d5b49a40480292698f00c8530804382362e66650f262e6a948ffc939eb3a26bc",
+        "kind": "state",
+        "cardId": "kfb_q_mushroom_healed"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_mushroom_healed.figure.json",
+        "sha256": "ec806f95681ea022d2a2d3d348e58cbb8cd2af0ab859a176cc9df80cb99f7656",
+        "kind": "duplicate",
+        "cardId": "kfb_q_mushroom_healed"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json",
+        "sha256": "21b3cec2f7463164e4d7629e7e3a1b1c3af8af55ba9505876f692d5f6d979597",
+        "kind": "state",
+        "cardId": "kfb_q_mushroom_kfbeyes"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "source": "Quaternius MonsterCuteCubes (Ultimate Platformer Pack) CC0 1.0",
+        "origin": "georg-doc/kayfabizarro @ c746a95, lokal aus der WSA-Übergabe 04-dark-fluffer/source (gelesen, kein Download)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "list"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#clips; KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json#clips; KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "Quaternius MonsterCuteCubes plant species (cactus/tree/mushroom)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#clips; KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json#clips; KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_mushroom.figure.json#story; KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json#story; KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_mushroom_healed.figure.json; KFB_HUB/50_BLENDER/K15/_work/kfbeyes/q_mushroom_kfbeyes.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

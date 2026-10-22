@@ -1,0 +1,46 @@
+{
+ "schema": "kfb.brief-domains/1",
+ "note": "Bereich → Register-Gebiete, Stichwörter, maßgebliche Specs. Pfade relativ zu 30_DECISIONS. Wird vom brief_gate.py gelesen.",
+ "domains": {
+  "HUD": {
+   "areas": ["HUD", "Almanach"],
+   "keywords": ["hud", "kompass", "tacho", "minimap", "almanach", "fächer", "kartenfächer", "radio", "kassette", "aktionsleiste", "truhe", "rucksack", "fluff-pip", "fluff-zahl", "plakette", "ziel-pfeil", "interaktion"],
+   "specs": ["replies/HUD_R4_DESIGN/BRIEF_CLAUDE_DESIGN_HUD_R4.md", "replies/HUD_LAYOUT_R3.md", "replies/HUD_UX_STATES_R1.md"]
+  },
+  "Figuren": {
+   "areas": ["Figuren", "Augen", "Animation"],
+   "keywords": ["figur", "frizzlebob", " fb ", "fb_canon", "augen", "lid", "e2", "eyerig", "mund", "rig", "charakter", "npc", "cube", "toolbox", "figurenkarte", "kit-figur"],
+   "specs": ["CHARACTERS_R1/index.json", "replies/FIGURES_R1/CHARACTER_SCHEMA_R1.md", "replies/WEAPON_GRIP_MODELS_R1.md"]
+  },
+  "Licht": {
+   "areas": ["Licht", "Look", "Farben", "Himmel"],
+   "keywords": ["licht", "schatten", "rig", "tonemapping", "palette", "farbe", "himmel", "nacht", "gold", "bloom"],
+   "specs": ["replies/LIGHT_MODEL_R2.md", "replies/COLOR_CONCEPT_R1.md", "CANON_3D/CANON_3D_R1.md"]
+  },
+  "Welt": {
+   "areas": ["Welt", "Spielwelt", "Insel", "Inseln", "Welten", "Worldbuilder", "3D", "Bühne"],
+   "keywords": ["terrain", "gelände", "insel", "biom", "baum", "bäume", "wolke", "wasser", "diorama", "scenelet", "bühne", "goo", "vorstadt", "gebäude", "erdung"],
+   "specs": ["CANON_3D/CANON_3D_R1.md", "replies/WORLD_CONCEPT_R1.md", "replies/SPEC_PLACEMENT_GRAMMAR_R2.md", "replies/SPEC_SCENELET_R2.md"]
+  },
+  "Fahren": {
+   "areas": ["Fahren", "Auto", "Strecke", "Kamera"],
+   "keywords": ["racer", "fahrzeug", "fahren", "dragster", "scheinwerfer", "flug", "strecke", "kamera"],
+   "specs": ["CANON_3D/CANON_3D_R1.md"]
+  },
+  "Kampf": {
+   "areas": ["Kampf", "VFX"],
+   "keywords": ["kampf", "waffe", "blaster", "schuss", "treffer", "mündung", "nahkampf", "vfx", "splat"],
+   "specs": ["replies/WEAPON_GRIP_MODELS_R1.md", "replies/SPEC_CARTOON_VFX_SHAPES_R1.md"]
+  },
+  "Audio": {
+   "areas": ["Audio", "Klang", "Dialog"],
+   "keywords": ["ton", "sound", "stimme", "chatterbox", "fluff-o-lect", "suno", "song", "elevenlabs", "musik", "triplet"],
+   "specs": ["replies/CHATTERBOX_SPEC_R2.md", "replies/SONG_SPEC_R3.md", "replies/SPEC_FLUFF_O_LECT_R1_DRAFT.md"]
+  },
+  "Spiel": {
+   "areas": ["Spiel", "Steuerung"],
+   "keywords": ["mvp", "spiel", "abnahme", "fundsache", "ernte", "fluff", "quest", "bewohner"],
+   "specs": ["replies/GAME_LOOP_R1.md"]
+  }
+ }
+}

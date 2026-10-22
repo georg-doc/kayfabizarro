@@ -1,0 +1,355 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "clown",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Clown",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.clown.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Clown · jongliert vor dem Zirkuszelt",
+      "src": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_clown"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_clown"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B50 Clown (Backlog P2): J5-Jonglage (Kaskade, Stopp, Reden, Weiter) mit Keulen, Donuts oder Süßigkeiten",
+      "src": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Performer · Zirkus / Jahrmarkt",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Balanciert auf dem Podest, Hammer rechts, Jonglierkeule links",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "J5-Jonglage (cascade3_d, stop, talk, resume) + Idle_A; Requisiten-Spuren pin/donut/candy",
+        "kfb_clown_juggle_cascade3_d",
+        "kfb_clown_juggle_stop_j5",
+        "kfb_clown_juggle_talk_j5",
+        "kfb_clown_juggle_resume_j5",
+        "Idle_A"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.clown.clips; KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Clown | am_puck | 1,10 | hellste, cartoonigste Männerstimme |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 35,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:35",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_puck",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.1,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Mood — Manic zoomies: speak twice as fast. Energy without direction, brilliant disaster.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Hellste, cartoonigste US-Männerstimme, etwas schneller.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_07_clown__am-puck.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": [
+        "Identität / Clownhammer · clown_hammer.gltf",
+        "Aktivität / Jonglierkeule · juggling_pin_blue.gltf"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.signatureProps.hammer; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.signatureProps.pin_blue",
+      "status": "PREFILL"
+    },
+    "biome": {
+      "v": "Zirkus-Podest-Nummer (Promo-Artwork 1:1)",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:clown",
+      "role": "resident",
+      "note": "Performer · Zirkus / Jahrmarkt",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #36)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].goldenLine"
+    }
+  ],
+  "variants": [],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Birthday-Set-Kandidat (Ballons, Torte-Kontext)",
+        "Gegenstück zur Goth-Girl-Bühne"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json",
+        "sha256": "bb3d4dcbead0e72293566ec777daa17246b0fca79ce37f949a1d0f8e5ea2097c",
+        "kind": "canonical",
+        "cardId": "kfb_clown"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/clown/data/clown_pose_juggle.figure.json",
+        "sha256": "f792711f21b27ea13496b9ae7aeef556438836b0ab723f05ccd44db6deb16c21",
+        "kind": "pose",
+        "cardId": "kfb_clown"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/clown/scenelet/clown.figure.json",
+        "sha256": "bb3d4dcbead0e72293566ec777daa17246b0fca79ce37f949a1d0f8e5ea2097c",
+        "kind": "duplicate",
+        "cardId": "kfb_clown"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    },
+    "licences": {
+      "v": {
+        "body": "KayKit Mystery S4 Clown (Kauf) → privat; J5-Clips eigen (Motion Forge #381)"
+      },
+      "src": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "variants"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:35",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.clown.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.clown.clips; KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.signatureProps.hammer; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.signatureProps.pin_blue",
+      "tag": "PREFILL"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.clown.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B50/clown/data/clown.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[clown].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

@@ -1,0 +1,683 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "brain_cyborg",
+  "status": "draft-r1",
+  "date": "2026-10-17",
+  "vRef": [
+    "V-394"
+  ],
+  "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+  "identity": {
+    "name": {
+      "v": "Brain-Cyborg",
+      "src": "V-349; CS-02",
+      "status": "GEORG"
+    },
+    "displayName": {
+      "v": null,
+      "status": "todo"
+    },
+    "aliases": {
+      "v": [
+        "brain-cyborg"
+      ],
+      "src": "CS-02",
+      "status": "SOURCE"
+    },
+    "voiceInputMishearings": {
+      "v": null,
+      "status": "todo"
+    },
+    "tier": {
+      "v": "npc",
+      "src": "CS-02 role",
+      "status": "SOURCE"
+    },
+    "series": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "story": {
+    "background": {
+      "v": null,
+      "status": "todo",
+      "note": "V-349: story question (who is it, why in the suit) to be clarified at build time"
+    },
+    "worldKnowledge": {
+      "v": null,
+      "status": "todo"
+    },
+    "inWorldRole": {
+      "v": "transhumanist alien entity for the Studio / ToolBox",
+      "src": "V-349",
+      "status": "GEORG"
+    },
+    "worldLogicRule": {
+      "v": null,
+      "status": "todo"
+    },
+    "place": {
+      "v": "brain from the brain world (H0) as head",
+      "src": "V-349",
+      "status": "GEORG"
+    },
+    "openQuestions": {
+      "v": [
+        "who is it, why in the suit (V-349)",
+        "thematic donor only: booklet 'menschenbilder' chapters on the brain as computer and transhumanism (CS-58), not character canon"
+      ],
+      "src": "V-349; CS-58",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {
+    "archetype": {
+      "jungDrive": {
+        "v": null,
+        "status": "todo"
+      },
+      "journeyFunction": {
+        "v": null,
+        "status": "todo"
+      },
+      "frictionEngine": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "castRole": {
+      "v": null,
+      "status": "todo"
+    },
+    "personalityType": {
+      "v": null,
+      "status": "todo"
+    },
+    "traits": {
+      "coreWant": {
+        "v": null,
+        "status": "todo"
+      },
+      "coreIrritation": {
+        "v": null,
+        "status": "todo"
+      },
+      "contradiction": {
+        "v": null,
+        "status": "todo"
+      },
+      "failureLoop": {
+        "v": null,
+        "status": "todo"
+      },
+      "fears": {
+        "v": null,
+        "status": "todo"
+      },
+      "hiddenGoal": {
+        "v": null,
+        "status": "todo"
+      },
+      "darkSecret": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "humour": {
+      "v": null,
+      "status": "todo"
+    },
+    "attitudeBaseline": {
+      "v": null,
+      "status": "todo"
+    },
+    "stateMachine": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dialogue": {
+    "languageOwner": {
+      "v": "ChatterBox + shared Triplet pool",
+      "src": "CS-20",
+      "status": "SOURCE"
+    },
+    "signaturePool": {
+      "v": null,
+      "status": "todo"
+    },
+    "tripletVoice": {
+      "rules": {
+        "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+        "src": "CS-11; V-231…V-235, V-266, V-275",
+        "status": "GEORG"
+      },
+      "goldenLine": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "openers": {
+      "placeScenePolicy": {
+        "v": null,
+        "status": "todo",
+        "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+      },
+      "preferred": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "registers": {
+      "v": null,
+      "status": "todo"
+    },
+    "lexicon": {
+      "v": null,
+      "status": "todo"
+    },
+    "interjections": {
+      "v": null,
+      "status": "todo"
+    },
+    "catchphrases": {
+      "v": null,
+      "status": "todo"
+    },
+    "speechAvoid": {
+      "v": null,
+      "status": "todo"
+    },
+    "maxWordsPerLine": {
+      "v": null,
+      "status": "todo"
+    },
+    "knowledgePolicy": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "cards": {
+    "signatureDeck": {
+      "v": null,
+      "status": "todo"
+    },
+    "stance": {
+      "v": null,
+      "status": "todo"
+    },
+    "signatureCardRefs": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckLane": {
+      "v": null,
+      "status": "todo"
+    },
+    "secondaryDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "performanceDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "worldviewTags": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckGoal": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "memory": {
+    "owner": {
+      "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+      "src": "CS-20 memory.owner; CS-26 §10",
+      "status": "SOURCE"
+    },
+    "valuesLiveIn": {
+      "v": [
+        "PLAYER_SAVE",
+        "NPC_MEMORY_VIEW",
+        "SOCIAL_RELATION",
+        "ENCOUNTER_RECEIPT",
+        "MOMENT_RECEIPT",
+        "CARD_COLLECTION_ENTRY",
+        "JOURNEY_ENTRY"
+      ],
+      "src": "CS-26 §11",
+      "status": "SOURCE"
+    },
+    "rememberable": {
+      "v": [
+        "EncounterReceipt refs",
+        "relation refs",
+        "salient MomentReceipts",
+        "unresolved threads",
+        "shared Card/song/world refs",
+        "canonical fact knowledge"
+      ],
+      "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+      "status": "SOURCE"
+    },
+    "beliefSources": {
+      "v": [
+        "signature-deck",
+        "heard-from",
+        "seen",
+        "guessed"
+      ],
+      "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+      "status": "DESIGN"
+    },
+    "rules": {
+      "v": [
+        "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+        "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+        "generated summaries are caches; receipts and canonical facts stay authoritative"
+      ],
+      "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+      "status": "SOURCE"
+    },
+    "relationships": {
+      "v": null,
+      "status": "todo"
+    },
+    "almanacHooks": {
+      "v": null,
+      "status": "todo",
+      "note": "Fractal Almanac D-layer projection: collected cards, provenance, locations, Residents, Journey Entries (CS-26 §10 D); no character-specific hook found"
+    }
+  },
+  "appearance": {
+    "figureRef": {
+      "v": "figures/brain_cyborg.figure.json",
+      "src": "CS-02",
+      "status": "SOURCE"
+    },
+    "figureStatus": {
+      "v": "open-design",
+      "src": "CS-02 brain_cyborg.figure.json#approval.status",
+      "status": "SOURCE",
+      "note": "informational copy; the figure card is authoritative"
+    },
+    "renderStyle": {
+      "default": {
+        "v": "clay",
+        "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+        "status": "GEORG"
+      },
+      "clayProfile": {
+        "v": "figure-fine",
+        "src": "CS-02 material.clayProfile (V-053/V-340)",
+        "status": "GEORG"
+      },
+      "alternatives": {
+        "v": [],
+        "src": "V-394 (other textures allowed only when listed here)",
+        "status": "GEORG"
+      }
+    },
+    "colours": {
+      "v": {
+        "lidSkin": "slightly darker, brain tone",
+        "lid": "E2 lid skin"
+      },
+      "src": "V-349",
+      "status": "GEORG"
+    },
+    "worldVariants": {
+      "v": null,
+      "status": "todo",
+      "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+    },
+    "baseModel": {
+      "v": {
+        "head": "MeshyModels/Meshy Community/bodyparts3d-brain-review.glb (local Dropbox)",
+        "headSha256": "01c5271f3110c09ff97785b3e8e28f9a27bbb2aa054683fd73420b6223b2527c",
+        "licence": "BodyParts3D, CC BY-SA – attribution DBCLS in the asset README (V-349)",
+        "body": "KayKit Space Ranger suit (as Lord Hunky / Lady Dory, collar visible)"
+      },
+      "src": "KFB_HUB/50_BLENDER/B10/data/brain_cyborg.figure.r1.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/brain_cyborg.figure.json",
+        "sha256": "8de8b413abe18f25004c52efcaa24582822ff342b38771a06bd345f90fd629e8",
+        "kind": "canonical",
+        "cardId": "brain_cyborg"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B10/data/brain_cyborg.figure.r1.json",
+        "sha256": "406a78bdfb3b370da397aa982ce40c198e64af339696d81d577910ebc5a8afb6",
+        "kind": "scene_variant",
+        "cardId": "brain_cyborg"
+      }
+    ],
+    "profileRefs": []
+  },
+  "performance": {
+    "idle": {
+      "v": null,
+      "status": "todo"
+    },
+    "defaultPose": {
+      "v": null,
+      "status": "todo"
+    },
+    "preferredClips": {
+      "v": null,
+      "status": "todo"
+    },
+    "danceAuditions": {
+      "v": null,
+      "status": "todo"
+    },
+    "gait": {
+      "v": "Space Ranger suit body (Rig_Medium as aliens, V-267)",
+      "src": "V-349; V-267",
+      "status": "GEORG"
+    },
+    "presentationHints": {
+      "v": null,
+      "status": "todo"
+    },
+    "props": {
+      "v": null,
+      "status": "todo"
+    },
+    "kart": {
+      "v": null,
+      "status": "todo"
+    },
+    "lightByStoryMode": {
+      "table": {
+        "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+        "src": "CS-06 B1, rule 11; V-386, V-387",
+        "status": "GEORG"
+      },
+      "overrides": {
+        "v": null,
+        "status": "todo",
+        "note": "no per-character light preset found in any source; global table applies"
+      }
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": null,
+      "status": "todo"
+    },
+    "spec": {
+      "v": null,
+      "status": "todo",
+      "note": "not cast"
+    },
+    "speed": {
+      "v": null,
+      "status": "todo"
+    },
+    "lang": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "conflicts": [],
+  "todo": [
+    "everything except the V-349 build intent: story, personality, dialogue, voice, cards (V-349 TBD after aliens PASS)"
+  ],
+  "seedSchema": "kfb.character/1",
+  "kind": "custom_rig",
+  "aliases": [
+    "brain-cyborg"
+  ],
+  "lore": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "views": {
+    "dramatis_personae": {
+      "present": true,
+      "cacheId": "brain_cyborg",
+      "characterSheet": true,
+      "figureCard": true,
+      "voiceMatch": false,
+      "cacheCommit": "a95c491f4996bf75428e2083f571abc15dca364d",
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json",
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/brain_cyborg.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "_seedProvenanceCS": [
+      "CS-01",
+      "CS-02",
+      "CS-06",
+      "CS-58"
+    ],
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B10/data/brain_cyborg.figure.r1.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.colours": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.figureRef": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureStatus": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-02 brain_cyborg.figure.json#approval.status)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.renderStyle.clayProfile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-02 material.clayProfile (V-053/V-340))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.default": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.languageOwner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-20)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.tripletVoice.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-11; V-231…V-235, V-266, V-275)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.aliases": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349; CS-02)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.tier": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-02 role)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.beliefSources": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "memory.owner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-20 memory.owner; CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "memory.rememberable": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-26 §10 C (NPC / SOCIAL MEMORY))",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.valuesLiveIn": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-26 §11)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.gait": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349; V-267)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "performance.lightByStoryMode.table": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src CS-06 B1, rule 11; V-386, V-387)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.openQuestions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349; CS-58)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "story.place": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/brain_cyborg.character.json (seed; src V-349)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

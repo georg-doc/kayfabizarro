@@ -1,0 +1,205 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "suit_ct",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Anzug-Figuren",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Anzug-Figuren (CharacterTemplate): Agent / Banker / Politiker / CEO / Smoking",
+      "src": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "aliases": [],
+  "story": {
+    "sceneNotes": {
+      "v": "Agenten der Vertuschung (Man in Black) und Satire-Anzüge (Banker im Monopoly-Klischee, Politiker, CEO, Smoking). V-413/V-414/V-423/V-426/V-428.",
+      "src": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "appearance": {
+    "baseModel": {
+      "v": {
+        "path": "3D ASSETS/CharacterTemplate/gltf/CharacterTemplate.glb (Georg-Wahl 17.10., V-428)"
+      },
+      "src": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json",
+        "sha256": "a547e07c9bd1388340f6fb9ee71a8caed48699ed2bb865e51e16a0f737a39537",
+        "kind": "canonical",
+        "cardId": "suit_ct"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r4.json",
+        "sha256": "df88c16bad6dfe6404bae79e0303a7f9fc8fb4ae785f39e83159938f0c50fbf8",
+        "kind": "duplicate",
+        "cardId": "suit_ct"
+      }
+    ],
+    "profileRefs": []
+  },
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B12/data/suit_ct.figure.r3.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

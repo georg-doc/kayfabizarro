@@ -1,0 +1,213 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "kayfabrick_bot",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Kayfabrick-Bot",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Kayfabrick-Bot (Utopia-Bautrupp)",
+      "src": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "aliases": [],
+  "story": {
+    "sceneNotes": {
+      "v": "Bautrupp von Utopia: je ein Bot pro Fluff-Sorte, rollt wie Sisyphus seine Fluff-Kugel bergauf; wer die Kugel zerplatzen lässt, macht die Bots wütend (Aggro, Arena). Konzept replies/KAYFABRICK_BOTS_R1.md (V-426).",
+      "src": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "appearance": {
+    "baseModel": {
+      "v": [
+        "same kit body as robot_two (robot_two)",
+        {
+          "path": "3D ASSETS/KayKit_Mystery_Monthly_Series_4/12 - June 2024 - Robot/characters/Robot_Two.glb"
+        }
+      ],
+      "src": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json",
+        "sha256": "9d514262745566add89a3e302c97f843f9704132cea6877446a87b9e24bcff00",
+        "kind": "canonical",
+        "cardId": "kayfabrick_bot"
+      }
+    ],
+    "profileRefs": []
+  },
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": "Bots",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:186",
+      "status": "PREFILL"
+    },
+    "instrument": {
+      "v": "Melodica",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:186",
+      "status": "PREFILL"
+    },
+    "style": {
+      "v": "Melodica, Bitcrush nur im Transient (kein Chiptune, V-616)",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:200",
+      "status": "PREFILL",
+      "note": "family row 'Bots'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:186",
+      "tag": "PREFILL"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:186",
+      "tag": "PREFILL"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:200",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B17/data/kayfabrick_bot.figure.r1.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

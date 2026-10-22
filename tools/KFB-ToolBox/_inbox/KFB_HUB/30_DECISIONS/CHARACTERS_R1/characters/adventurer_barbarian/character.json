@@ -1,0 +1,228 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "adventurer_barbarian",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Barbarian",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.adventurer-barbarian.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "adventurer-barbarian",
+        "kfb_camp_barbarian"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "adventurer-barbarian",
+    "kfb_camp_barbarian"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B48 (V-556): RPG-Gruppe im Lager vor dem Dungeon-Portal, Alltag statt Heldentat",
+      "src": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": [
+        "KFB_barbarian_axe_1handed",
+        "KFB_barbarian_shield_round_barbarian"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#props",
+      "status": "PREFILL"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_camp_barbarian",
+      "type": "scene_variant",
+      "label": "Barbar · schleift die Axt",
+      "card": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json",
+        "sha256": "6bfefa6d0140ad117e043b994207c6cc7740e26d69ac853dc69d6a0b159b6d68",
+        "kind": "canonical",
+        "cardId": "kfb_camp_barbarian"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/barbarian_pose_camp.figure.json",
+        "sha256": "77dc19b95d47eed42370ec44d951fc64845de19bcffe70d1e8d3fe0bec486c4d",
+        "kind": "pose",
+        "cardId": "kfb_camp_barbarian"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/scenelet/barbarian.figure.json",
+        "sha256": "6bfefa6d0140ad117e043b994207c6cc7740e26d69ac853dc69d6a0b159b6d68",
+        "kind": "duplicate",
+        "cardId": "kfb_camp_barbarian"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "kfb_camp_sharpen_a",
+        "Idle_A_camp"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.adventurer-barbarian.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#props",
+      "tag": "PREFILL"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/barbarian.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

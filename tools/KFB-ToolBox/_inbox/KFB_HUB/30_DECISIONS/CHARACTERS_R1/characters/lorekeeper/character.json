@@ -1,0 +1,404 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "lorekeeper",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Lorekeeper",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.lorekeeper.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Lorekeeper · Hüter des Wissens",
+      "src": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_lorekeeper",
+        "lorekeeper_b31"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_lorekeeper",
+    "lorekeeper_b31"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "K11 (V-583/V-585): KayKit Mystery S6 „1 – July 2025 – Lorekeeper“ für WS-NPC Phase A; Rolle laut Writer's Room: Guide, Mentor, Questgeber (Bibliothek / Kontrollpult). Basis B31-Arbeitsstand (Pillenaugen entfernt, eye_anchor.l/r), Geometrie sonst gleich dem Original.",
+        "B31 (V-463 Punkt 3): Beispiel, dass jede Rig_Medium-Figur das Arbeits-Set nutzt (Kugel rollen, Fluff-Eimer tragen, Block-Karre). Clips per Knotenname."
+      ],
+      "src": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#story; KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Archiv-Resident · Wissen und Aufzeichnung",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.townRole",
+      "status": "SOURCE"
+    },
+    "loreStatements": {
+      "v": [
+        {
+          "text": "- **Lorekeeper / mentor-mask:** an apparently authoritative librarian can be genuinely helpful yet deliberately offer a *neighboring* contradictory Card instead of the one asked for. The player infers the interpretation; the librarian is not the author's ultimate answer.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 51,
+          "heading": "6. Worked editorial examples — hypotheses only, not newly accepted character canon"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:51",
+      "status": "PREFILL"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Steht am Lesepult, Krummstab in der rechten Hand",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        {
+          "lesen": "Holding_C",
+          "nachschlagen": "Holding_B",
+          "umblaettern": "kfb_npc_read_page_turn_a"
+        },
+        "list",
+        "note"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.lorekeeper.npcClips; KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Lorekeeper | bm_fable | 0,92 | britischer Erzähler |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 40,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        },
+        {
+          "text": "Je Feld 1–2 Kandidaten. Bereits vergeben: FrizzleBob Posaune mit Dämpfer, Dory Okarina, Hunky Fagott bzw. Kazoo, Farmer B Akkordeon, Lorekeeper tiefe Klarinette.",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md",
+          "line": 82,
+          "heading": "6 · Felder besetzen (Kandidaten, zur Diskussion)"
+        },
+        {
+          "text": "- **Persönlichkeit = Ausgangs-Emotion und Melodie-Stil:** Der Lorekeeper ist grundsätzlich introspektiv.",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md",
+          "line": 102,
+          "heading": "7 · Mapping auf Figuren (erst nach §6)"
+        },
+        {
+          "text": "| klar | Klarinette (Lorekeeper), Horn | Oboe, Geige im Flageolett |",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md",
+          "line": 184,
+          "heading": "2 · Klangfarben-Matrix (Kandidaten, nach Wirkung sortiert)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:40; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:102; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "bm_fable",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.92,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-gb",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Fractal Narrative, Zoom In: card inside another card. Every story contains smaller story waiting to get out.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Britischer Erzähler mit hellem Klang.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_12_lorekeeper__bm-fable.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": "klar · warm",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "status": "SOURCE"
+    },
+    "instrument": {
+      "v": "Klarinette",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "status": "SOURCE"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": "dropbox:50_BLENDER/K11/props/KFB_Book_Open.k11.glb (CC0) an handslot.r",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.lorekeeper.prop",
+      "status": "PREFILL"
+    },
+    "biome": {
+      "v": "Lesepult mit aufgeschlagenem Foliant, Kerzen und Schriftrollen — der Pack liefert die Kulisse mit",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:lorekeeper",
+      "role": "resident",
+      "note": "Archiv-Resident · Wissen und Aufzeichnung",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper"
+    },
+    {
+      "id": "npc_a",
+      "role": "lorekeeper (WSB K11, sobald ready)",
+      "src": "KFB_HUB/65_SCENELETS/npc_a/concept.json#cast"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #44)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "lorekeeper_b31",
+      "type": "scene_variant",
+      "label": "Lorekeeper (B31 Arbeits-Set)",
+      "card": "KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Gegenstück zum Librarian-Werkzeug der ToolBox (namentlich, nicht technisch)",
+        "Archiv-Kandidat für Town-Lore"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json",
+        "sha256": "b9af3f2641713f71dc2d0fcbebfd1d5e1df9ea5b6ecd323883bcf57ce882d42f",
+        "kind": "duplicate",
+        "cardId": "kfb_lorekeeper"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/data/lorekeeper.figure.json",
+        "sha256": "71950170c7331197d516d45ba80babf8201087440db3fed10cd839febdc8c780",
+        "kind": "canonical",
+        "cardId": "kfb_lorekeeper"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json",
+        "sha256": "bd5d68692be6f3576f6b72026bc0789d707241481590a86ebef693e555c775ed",
+        "kind": "scene_variant",
+        "cardId": "lorekeeper_b31"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    },
+    "licences": {
+      "v": {
+        "body": "KayKit Mystery Series 6 (Kauf) → privat; Clips KayKit Character Animations 1.1 (Georg 17.10.: wie Kauf-Asset → privat)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "filled",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "personality.quirks"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json",
+      "tag": "SOURCE"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "tag": "SOURCE"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:40; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:102; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:184",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/65_SCENELETS/npc_a/concept.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.lorekeeper.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.lorekeeper.npcClips; KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.lorekeeper.prop",
+      "tag": "PREFILL"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.lorekeeper.townRole",
+      "tag": "SOURCE"
+    },
+    "story.loreStatements": {
+      "source": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:51",
+      "tag": "PREFILL"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K11/_work/lorekeeper.figure.vor_k11b.json#story; KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B31/data/lorekeeper_b31.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lorekeeper].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "farmer_daumen",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Farmer Daumen hoch",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_daumen.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Farmer Daumen hoch (roter Bart)",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_farmer_daumen"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_farmer_daumen"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B44 (V-549) Fluff-Farm: KayKit Mystery S6 „12 – Farmers“, KFB-Augen statt Pillenaugen, Mund aufgemalt (Original).",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": "biom_03_Backyard",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#palette.entry",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "fluff_farm_01",
+      "role": "Cheering",
+      "localId": "farmer_daumen",
+      "note": "Daumen hoch / Jubel neben der Salat-Schubkarre",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmer_daumen"
+    }
+  ],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json",
+        "sha256": "0a3068477cea4c9b2f447afa3c6a6f1dca19632aeda8c11e8f54c654ad96cddb",
+        "kind": "duplicate",
+        "cardId": "kfb_farmer_daumen"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B44/data/farmer_daumen.figure.json",
+        "sha256": "0a3068477cea4c9b2f447afa3c6a6f1dca19632aeda8c11e8f54c654ad96cddb",
+        "kind": "scene_variant",
+        "cardId": "kfb_farmer_daumen"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B44/scenelet/farmer_daumen.figure.json",
+        "sha256": "0a3068477cea4c9b2f447afa3c6a6f1dca19632aeda8c11e8f54c654ad96cddb",
+        "kind": "canonical",
+        "cardId": "kfb_farmer_daumen"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "body": "KayKit Mystery Monthly S6 „12 – June 2026 – Farmers“ (Kauf) → privat"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "Cheering"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmer_daumen.clip",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "memory.relationships",
+    "variants",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_daumen.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmer_daumen.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#palette.entry",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_daumen.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

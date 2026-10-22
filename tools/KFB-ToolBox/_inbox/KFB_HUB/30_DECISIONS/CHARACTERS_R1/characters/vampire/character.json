@@ -1,0 +1,304 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "vampire",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Vampire",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.vampire.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Vampir",
+      "src": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "aliases": [],
+  "story": {
+    "sceneNotes": {
+      "v": "B33 Halloween-Zone: Vampir auf dem Thronturm (V-469)",
+      "src": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "| 52 | 52 | OK | The Yield Vampire, Collapse bond yields; continuous expropriation of citizen. |  |  |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/kayfabizarro_monopolies_manipulation_murder_vol.review.md",
+          "line": 80,
+          "heading": "Zeilen"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/kayfabizarro_monopolies_manipulation_murder_vol.review.md:80",
+      "status": "PREFILL"
+    }
+  },
+  "appearance": {
+    "baseModel": {
+      "v": "KayKit_Mystery_Monthly_Series_5/4 - October 2024 - Vampire/characters/Vampire.glb (NIE direkt laden)",
+      "src": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json",
+        "sha256": "b44b94e2f096e808dd90359c3f4d1a860698cd0544a14ce8b8387e9c8dd74975",
+        "kind": "canonical",
+        "cardId": "vampire"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Vampire | bm_fable 60 + bf_lily 40 | 0,88 | britisch-theatralisch, androgyn |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 59,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:59",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "bm_fable60+bf_lily40",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.88,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-gb",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "The Empty Dance Floor, Nostalgia: music stopped forty years ago, but feet keep moving.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Britisch-theatralisch, androgyn, langsam.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_31_vampire__bm-fable60+bf-lily40.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [
+    {
+      "id": "wrinkle_rumble",
+      "role": "golden line source (card #34)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].goldenLine"
+    }
+  ],
+  "variants": [],
+  "memory": {},
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "variants",
+    "performance.animations"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:59",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.vampire.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/kayfabizarro_monopolies_manipulation_murder_vol.review.md:80",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B33/data/vampire.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[vampire].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

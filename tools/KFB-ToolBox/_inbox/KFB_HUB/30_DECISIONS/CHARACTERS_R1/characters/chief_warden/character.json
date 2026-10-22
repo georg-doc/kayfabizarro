@@ -1,0 +1,227 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "chief_warden",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Chief Warden",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B47/data/warden.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Chief Warden · Zinnsoldat No.1",
+      "src": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_chief_warden"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_chief_warden"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B47 (V-554/V-301): drückt am Schaltpult den roten Knopf → Labyrinth-Umbau",
+      "src": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "appearance": {
+    "baseModel": {
+      "v": [
+        "same kit body as toy_soldier (toysoldier)",
+        {
+          "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/toysoldier/ToySoldier_NoEyes.glb",
+          "sha256": "siehe B11/data/b11_r3_sources.sha256.txt"
+        }
+      ],
+      "src": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json",
+        "sha256": "887844c27d1ce1f81b1aac1d7b507a117e734424976d504690013e391bc2dc47",
+        "kind": "canonical",
+        "cardId": "kfb_chief_warden"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B47/data/warden_pose_press.figure.json",
+        "sha256": "03c61629222c1fff396eed8f3e2080056fabbe9c0f7f07afb56a646bc63164fe",
+        "kind": "pose",
+        "cardId": "kfb_chief_warden"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B47/scenelet/warden.figure.json",
+        "sha256": "887844c27d1ce1f81b1aac1d7b507a117e734424976d504690013e391bc2dc47",
+        "kind": "duplicate",
+        "cardId": "kfb_chief_warden"
+      }
+    ],
+    "profileRefs": []
+  },
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "performance": {
+    "animations": {
+      "v": [
+        "kfb_press_button_a"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B47/data/warden.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "variants",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B47/data/warden.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B47/data/warden.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

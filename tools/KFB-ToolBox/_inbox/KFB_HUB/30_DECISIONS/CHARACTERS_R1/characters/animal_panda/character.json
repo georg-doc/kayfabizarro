@@ -1,0 +1,201 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "animal_panda",
+  "status": "draft-r1",
+  "kind": "pet",
+  "identity": {
+    "name": {
+      "v": "The Panda",
+      "src": "figure card displayName (?)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "The Panda",
+      "src": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "aliases": [],
+  "story": {},
+  "dialogue": {
+    "narratorPromptRef": {
+      "v": "panda_sage.md",
+      "src": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.panda.narratorPromptRef",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {
+    "archetype": {
+      "petArchetype": {
+        "v": "sage",
+        "src": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.panda.archetype",
+        "status": "SOURCE"
+      }
+    }
+  },
+  "lore": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [],
+    "profileRefs": [
+      {
+        "path": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json",
+        "pointer": "pets[id=panda]",
+        "kind": "pet-studio profile",
+        "sha256": "4d3e7df160acba843dd82415290791c0e8035aacf8742fe61a0a59b1348d6073"
+      }
+    ]
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "todo",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "appearance.figureRefs",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.narratorPromptRef": {
+      "source": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.panda.narratorPromptRef",
+      "tag": "SOURCE"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (?)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "S17 kfb-pets.v5 pet",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.archetype.petArchetype": {
+      "source": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.panda.archetype",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

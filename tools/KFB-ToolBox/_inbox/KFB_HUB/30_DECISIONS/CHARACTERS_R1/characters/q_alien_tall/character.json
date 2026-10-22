@@ -1,0 +1,247 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "q_alien_tall",
+  "status": "draft-r1",
+  "kind": "cube_pet",
+  "identity": {
+    "name": {
+      "v": "Dark-Fluffer-Alien groß",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Dark-Fluffer-Alien groß",
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_q_alien_tall",
+        "kfb_q_alien_tall_healed"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_q_alien_tall",
+    "kfb_q_alien_tall_healed"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Alien_Tall (CC0), as-is (V-574); KFB-Augen mit zwei Zuständen: goo (Dark Fluffer) und healed",
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Alien_Tall (CC0), as-is (V-574); *_healed: weiße Augen-Auflage"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": "Aliens",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "PREFILL"
+    },
+    "instrument": {
+      "v": "Theremin",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "PREFILL"
+    },
+    "style": {
+      "v": "leichte Ringmodulation, Gleiten",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:199",
+      "status": "PREFILL",
+      "note": "family row 'Aliens'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_q_alien_tall_healed",
+      "type": "state",
+      "label": "Dark-Fluffer-Alien groß geheilt (weiße Augen)",
+      "card": "KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json",
+        "sha256": "116e36fce55ddf2e2bab5b969e5ba5c73bdfe617b38f26253249454a2b13f90e",
+        "kind": "duplicate",
+        "cardId": "kfb_q_alien_tall"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_alien_tall.figure.json",
+        "sha256": "869d185866dee923342692f4992f770a465d5aafc0083215eb47feccf74a4ad3",
+        "kind": "canonical",
+        "cardId": "kfb_q_alien_tall"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json",
+        "sha256": "96bd8c066beeb33bf0e0ffbdeb1f76eb8d4b4233fae1b23c813b4487203afb3a",
+        "kind": "state",
+        "cardId": "kfb_q_alien_tall_healed"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "source": "Quaternius MonsterCuteCubes (Ultimate Platformer Pack) CC0 1.0",
+        "origin": "georg-doc/kayfabizarro @ c746a95, lokal aus der WSA-Übergabe V584_JOBS 04-dark-fluffer/source (gelesen, kein Download)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "list"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "PREFILL"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "PREFILL"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:199",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "Quaternius MonsterCuteCubes cube species",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_alien_tall.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/q_alien_tall_healed.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

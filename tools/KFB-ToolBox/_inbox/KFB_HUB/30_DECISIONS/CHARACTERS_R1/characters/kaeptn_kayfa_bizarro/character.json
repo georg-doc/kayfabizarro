@@ -1,0 +1,250 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "kaeptn_kayfa_bizarro",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Käpt'n Kayfa Bizarro",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Käpt'n Kayfa Bizarro",
+      "src": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kaeptn_kayfa_bizarro_r2",
+        "kaeptn_kayfa_bizarro_r2b"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kaeptn_kayfa_bizarro_r2",
+    "kaeptn_kayfa_bizarro_r2b"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B42 (V-542): Pirat aus vorhandenen Teilen – Survivalist-Kopf mit Augenklappe (ein KFB-Auge), Piratenhut mit Totenkopf (dunkler), Weste, Schärpe, Gürtel, längs gestreifte Hose.",
+        "B42 r2 (V-545, Georg q111): Körper KayKit Barbarian (ohne Bären-Helm/-Pelz), Survivalist-Kopf mit Augenklappe (ein KFB-Auge), Hände/Hut/Stiefel in einem Braun, rot-weiß längs gestreifte Hose, 3 Gold-Beschläge am Gürtel, großer Hut tief auf dem Kopf.",
+        "B42 r2 (V-545, Georg q111): Körper KayKit Barbarian (ohne Bären-Helm/-Pelz), Survivalist-Kopf mit Augenklappe (ein KFB-Auge), Hände/Hut/Stiefel in einem Braun, rot-weiß längs gestreifte Hose, 3 Gold-Beschläge am Gürtel, Hut tief auf dem Kopf, r2b ≈ 10 % kleiner (V-547)."
+      ],
+      "src": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json#story; KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json#story; KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kaeptn_kayfa_bizarro_r2",
+      "type": "revision",
+      "label": "Käpt'n Kayfa Bizarro",
+      "card": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json#id"
+    },
+    {
+      "id": "kaeptn_kayfa_bizarro_r2b",
+      "type": "revision",
+      "label": "Käpt'n Kayfa Bizarro",
+      "card": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json",
+        "sha256": "67f2f8b6c3326999d43ae947abaa5c0ff820a2939248c0d892ff846b2a3ed464",
+        "kind": "canonical",
+        "cardId": "kaeptn_kayfa_bizarro"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json",
+        "sha256": "6df637837cca921d205899e0d6996c2037ce45cb7636df651f67ca8a6417c881",
+        "kind": "duplicate",
+        "cardId": "kaeptn_kayfa_bizarro_r2"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json",
+        "sha256": "61c5c6baf446b43cc4ce57472fd51d071c6aca3e8c7b42ef3b2c7e41e45683f9",
+        "kind": "duplicate",
+        "cardId": "kaeptn_kayfa_bizarro_r2b"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/data/kaeptn_kingcand.figure.json",
+        "sha256": "cd36b7cfe0af46811d88c6b1214a3a316197f73450d4b3ddca78875366e220c8",
+        "kind": "duplicate",
+        "cardId": "kaeptn_kayfa_bizarro_r2b"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/scenelet/kaeptn_kingcand.figure.json",
+        "sha256": "cd36b7cfe0af46811d88c6b1214a3a316197f73450d4b3ddca78875366e220c8",
+        "kind": "duplicate",
+        "cardId": "kaeptn_kayfa_bizarro_r2b"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "hat": "Pirate Hat by Minh Nguyen Tri (Poly Pizza) – CC-BY 3.0, Namensnennung",
+        "head": "KayKit Mystery S4 Survivalist (Kauf)",
+        "body": "KayKit CharacterTemplate (laut WS0 Mystery-Serie)"
+      },
+      "src": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro.figure.json#story; KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json#story; KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2.figure.json; KFB_HUB/50_BLENDER/B42/data/kaeptn_kayfa_bizarro_r2b.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

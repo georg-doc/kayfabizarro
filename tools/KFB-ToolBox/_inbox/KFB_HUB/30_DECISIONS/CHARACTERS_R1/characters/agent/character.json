@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "agent",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Blob-Corp-Agent",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Blob-Corp-Agent (B40, Anzug + Blaster)",
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "agent_b40",
+        "agent_b40_glasses"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "agent_b40",
+    "agent_b40_glasses"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B40 (V-529/V-530/V-536/V-540): Agenten im Anzug aus B12 r4, AG1 Glatze, schwarzer Kenney-Blaster (CC0) am Unterarm, KayKit-Kampf-Clips mit Marken."
+      ],
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json#story; KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "agent_b40_glasses",
+      "type": "look",
+      "label": "Blob-Corp-Agent (B40) mit Sonnenbrille",
+      "card": "KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json",
+        "sha256": "d7867b97dda22be036fa0978f628222f457534950b7a82c5753b54a05bd71298",
+        "kind": "canonical",
+        "cardId": "agent_b40"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json",
+        "sha256": "7aa3d630baf5b44ef1d37ad1c6ef9f994eb74c94a7257c9eb1bcea3300c25a9e",
+        "kind": "state",
+        "cardId": "agent_b40_glasses"
+      }
+    ],
+    "profileRefs": []
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40.figure.json#story; KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40_glasses.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

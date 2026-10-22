@@ -1,0 +1,1161 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "lady_dory",
+  "status": "draft-r1",
+  "date": "2026-10-17",
+  "vRef": [
+    "V-394"
+  ],
+  "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+  "identity": {
+    "name": {
+      "v": "Lady Dory",
+      "src": "V-295",
+      "status": "GEORG"
+    },
+    "displayName": {
+      "v": "Lady Dory",
+      "src": "V-295",
+      "status": "GEORG"
+    },
+    "aliases": {
+      "v": [
+        "Dory",
+        "The Quantum Housewife",
+        "LadyDory",
+        "Lady Dory · Space Ranger",
+        "ladydory-headpart-r1"
+      ],
+      "src": "CS-40 meta.alias; CS-41 normalization; CS-02",
+      "status": "SOURCE"
+    },
+    "voiceInputMishearings": {
+      "v": [
+        "Lori",
+        "Dori"
+      ],
+      "src": "V-295; CS-04",
+      "status": "GEORG"
+    },
+    "tier": {
+      "v": "main · npc",
+      "src": "CS-03; CS-02",
+      "status": "SOURCE"
+    },
+    "series": {
+      "v": [
+        "Cancel This Planet!",
+        "Hunky & Dory"
+      ],
+      "src": "CS-40; CS-41",
+      "status": "SOURCE"
+    }
+  },
+  "story": {
+    "background": {
+      "v": "Lord Hunky's former high-society partner on the same unattractive post; in orbit around Earth for about 5,000 years since the Fluff Incident",
+      "src": "CS-30 §7.1 (Georg clarification); CS-04 §3, §9",
+      "status": "GEORG"
+    },
+    "worldKnowledge": {
+      "v": [
+        "her own memory of the Fluff Incident (unreliable-witness triangle)",
+        "moral archive: historical parallels, exposure of systemic frauds"
+      ],
+      "src": "CS-04 §6; CS-41 characters.dory",
+      "status": "DESIGN"
+    },
+    "inWorldRole": {
+      "v": "former high-socialite partner on the same post",
+      "src": "CS-30 §7.1 via CS-04 §3",
+      "status": "GEORG"
+    },
+    "worldLogicRule": {
+      "v": "UFO is a TARDIS-like game hub; the player is abducted or connected to Lord Hunky & Lady Dory at first",
+      "src": "V-294; CS-04 §5",
+      "status": "GEORG"
+    },
+    "place": {
+      "v": "UFO; alien garden inside the UFO (proposal)",
+      "src": "CS-04 §3, §5 (V05/CANT proposals)",
+      "status": "DESIGN"
+    },
+    "openQuestions": {
+      "v": [
+        "why Lady Dory is 'banished' (only V05 proposal)",
+        "relationship canon (CS-04 open Q6)"
+      ],
+      "src": "CS-04",
+      "status": "SOURCE"
+    },
+    "loreStatements": {
+      "v": [
+        {
+          "text": "- **Lord Hunky and Lady Dory:** their Academy/Fluff history gives them distinct attitudes toward cosmic duty and self-deception, but the precise source-authorized personality and scene boundaries must come from WS0 `META_NARRATIVE_R1.md` and the current Hunky/Dory authoring source. No new lore or guaranteed redemption.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 52,
+          "heading": "6. Worked editorial examples — hypotheses only, not newly accepted character canon"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:52",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {
+    "archetype": {
+      "jungDrive": {
+        "v": null,
+        "status": "todo"
+      },
+      "journeyFunction": {
+        "v": null,
+        "status": "todo"
+      },
+      "frictionEngine": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "castRole": {
+      "v": "moral_enforcer_archivar",
+      "src": "CS-41 characters.dory.role",
+      "status": "SOURCE"
+    },
+    "personalityType": {
+      "v": [
+        "archivar_moral_enforcer"
+      ],
+      "src": "CS-41 characters.dory.archetypes",
+      "status": "SOURCE"
+    },
+    "traits": {
+      "coreWant": {
+        "v": null,
+        "status": "todo"
+      },
+      "failureLoop": {
+        "v": "auth → snob → isolate → repeat",
+        "src": "CS-40 psychology.failure_loop",
+        "status": "SOURCE"
+      },
+      "triggers": {
+        "v": {
+          "words": [
+            "feelings",
+            "the humans",
+            "interesting",
+            "protocol"
+          ],
+          "states": [
+            "moral_overcompensation",
+            "truth_as_burden",
+            "hypocrisy_exposed"
+          ],
+          "escalation": "hypocrisy_exposed → archive_parallel, moral_indictment, leak_seed"
+        },
+        "src": "CS-40; CS-41",
+        "status": "SOURCE"
+      },
+      "defenseMechanism": {
+        "v": "naive precision — dismantles certainty through innocent questions",
+        "src": "CS-40",
+        "status": "SOURCE"
+      },
+      "psychoTags": {
+        "v": [
+          "passive_aggression",
+          "narcissistic_wound",
+          "empathic_sabotage"
+        ],
+        "src": "CS-40",
+        "status": "SOURCE"
+      },
+      "metaConflictAwareness": {
+        "v": "recognizes_moralism_as_power",
+        "src": "CS-41",
+        "status": "SOURCE"
+      },
+      "ironicVictory": {
+        "v": "becomes_morally_pure_and_totally_isolated",
+        "src": "CS-41",
+        "status": "SOURCE"
+      },
+      "specialAbility": {
+        "v": "Leak-Seed: deploys archive comparison to destabilize",
+        "src": "CS-41 characters.dory.special_abilities",
+        "status": "SOURCE"
+      },
+      "hiddenGoal": {
+        "v": null,
+        "status": "todo"
+      },
+      "darkSecret": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "humour": {
+      "v": "naively poetic; her misreadings ARE the satire; courtly disdain",
+      "src": "CS-52; CS-41 speech_styles",
+      "status": "SOURCE"
+    },
+    "attitudeBaseline": {
+      "v": null,
+      "status": "todo"
+    },
+    "stateMachine": {
+      "v": {
+        "states": [
+          "calm",
+          "stressed",
+          "breakdown",
+          "recovered"
+        ],
+        "transitions": {
+          "calm": {
+            "to_stressed": [
+              "public_humiliation_of_humans",
+              "cruelty_displayed"
+            ]
+          },
+          "stressed": {
+            "to_breakdown": [
+              "betrayal_by_hunky"
+            ],
+            "to_calm": [
+              "shared_poetry_ritual"
+            ]
+          },
+          "breakdown": {
+            "to_recovered": [
+              "human_rescue_success"
+            ]
+          }
+        },
+        "voiceModifiers": {
+          "stressed": {
+            "word_delta": -2,
+            "syntax": "poised",
+            "tone": "cutting"
+          },
+          "breakdown": {
+            "word_delta": -4,
+            "syntax": "clipped",
+            "tone": "cold_fury"
+          }
+        }
+      },
+      "src": "CS-41 character_state_machine.dory",
+      "status": "SOURCE"
+    }
+  },
+  "dialogue": {
+    "languageOwner": {
+      "v": "ChatterBox + shared Triplet pool",
+      "src": "CS-20",
+      "status": "SOURCE"
+    },
+    "signaturePool": {
+      "v": null,
+      "status": "todo"
+    },
+    "tripletVoice": {
+      "rules": {
+        "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+        "src": "CS-11; V-231…V-235, V-266, V-275",
+        "status": "GEORG"
+      },
+      "goldenLine": {
+        "v": "Lady Dory here, darling. I have seen better parties at the end of the world, and I hosted most of them.",
+        "src": "CS-03 (WS0 test line, no card text)",
+        "status": "DESIGN"
+      }
+    },
+    "openers": {
+      "placeScenePolicy": {
+        "v": null,
+        "status": "todo",
+        "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+      },
+      "preferred": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "registers": {
+      "v": [
+        "warm",
+        "questions",
+        "courtly disdain sharpened into moral indictment"
+      ],
+      "src": "CS-40 voice; CS-41 speech_styles",
+      "status": "SOURCE"
+    },
+    "lexicon": {
+      "v": [
+        "they're becoming",
+        "mercy outranks protocol",
+        "but why though",
+        "interesting"
+      ],
+      "src": "CS-40 voice.lexicon",
+      "status": "SOURCE"
+    },
+    "interjections": {
+      "v": [
+        "indeed",
+        "nay",
+        "verily",
+        "yet"
+      ],
+      "src": "CS-41 characters.dory.voice",
+      "status": "SOURCE"
+    },
+    "catchphrases": {
+      "v": null,
+      "status": "todo"
+    },
+    "speechAvoid": {
+      "v": null,
+      "status": "todo"
+    },
+    "maxWordsPerLine": {
+      "v": 18,
+      "src": "CS-40",
+      "status": "SOURCE"
+    },
+    "knowledgePolicy": {
+      "v": null,
+      "status": "todo"
+    },
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Lady Dory | Mischung bf_isabella 60 + af_bella 40 | 0,93 | Hell, flach, vornehm, mit der saubersten Klangqualität: ehemalige High Society |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 26,
+          "heading": "Hauptfiguren"
+        },
+        {
+          "text": "- Zeilen stammen wörtlich aus TRIPLET_SETS_R2 (Quelle je Zeile in index.csv). Für Lord Hunky und Lady Dory gibt es noch keine Kartenzeile; dort stehen zwei neutrale Testzeilen von WS0 (kein Kartentext, nicht für Produktion):",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 67,
+          "heading": "Hörproben: eine Golden-Zeile je Figur"
+        },
+        {
+          "text": "- Lady Dory: „Lady Dory here, darling. I have seen better parties at the end of the world, and I hosted most of them.“",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 69,
+          "heading": "Hörproben: eine Golden-Zeile je Figur"
+        },
+        {
+          "text": "Je Feld 1–2 Kandidaten. Bereits vergeben: FrizzleBob Posaune mit Dämpfer, Dory Okarina, Hunky Fagott bzw. Kazoo, Farmer B Akkordeon, Lorekeeper tiefe Klarinette.",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md",
+          "line": 82,
+          "heading": "6 · Felder besetzen (Kandidaten, zur Diskussion)"
+        },
+        {
+          "text": "| hauchig | Flöte, Okarina (Dory), Panflöte | Glasflöte |",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md",
+          "line": 183,
+          "heading": "2 · Klangfarben-Matrix (Kandidaten, nach Wirkung sortiert)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:26; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:67; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:69; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "status": "PREFILL"
+    }
+  },
+  "cards": {
+    "signatureDeck": {
+      "v": null,
+      "status": "todo"
+    },
+    "stance": {
+      "v": null,
+      "status": "todo"
+    },
+    "signatureCardRefs": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckLane": {
+      "v": null,
+      "status": "todo"
+    },
+    "secondaryDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "performanceDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "worldviewTags": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckGoal": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "memory": {
+    "owner": {
+      "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+      "src": "CS-20 memory.owner; CS-26 §10",
+      "status": "SOURCE"
+    },
+    "valuesLiveIn": {
+      "v": [
+        "PLAYER_SAVE",
+        "NPC_MEMORY_VIEW",
+        "SOCIAL_RELATION",
+        "ENCOUNTER_RECEIPT",
+        "MOMENT_RECEIPT",
+        "CARD_COLLECTION_ENTRY",
+        "JOURNEY_ENTRY"
+      ],
+      "src": "CS-26 §11",
+      "status": "SOURCE"
+    },
+    "rememberable": {
+      "v": [
+        "EncounterReceipt refs",
+        "relation refs",
+        "salient MomentReceipts",
+        "unresolved threads",
+        "shared Card/song/world refs",
+        "canonical fact knowledge"
+      ],
+      "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+      "status": "SOURCE"
+    },
+    "beliefSources": {
+      "v": [
+        "signature-deck",
+        "heard-from",
+        "seen",
+        "guessed"
+      ],
+      "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+      "status": "DESIGN"
+    },
+    "rules": {
+      "v": [
+        "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+        "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+        "generated summaries are caches; receipts and canonical facts stay authoritative"
+      ],
+      "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+      "status": "SOURCE"
+    },
+    "relationships": {
+      "v": [
+        {
+          "with": "lord_hunky",
+          "type": "toxic_marriage",
+          "sharedTrauma": "fluff_incident_guilt",
+          "dynamicAxes": [
+            "containment/disclosure",
+            "control/emergence"
+          ],
+          "baselineHeat": 0.62,
+          "triggers": {
+            "mutual": [
+              "competence_questioned",
+              "past_mistakes_mentioned"
+            ],
+            "dory_to_hunky": [
+              "exposes_control_delusion",
+              "withholds_recognition"
+            ],
+            "hunky_to_dory": [
+              "dismisses_moral_concerns",
+              "ridicules_empathy"
+            ]
+          }
+        },
+        {
+          "with": "GodGPT (not in cast)",
+          "type": "inquisitor_vs_false_god"
+        },
+        {
+          "with": "MephistoBro (not in cast)",
+          "type": "uneasy_moral_coalition"
+        }
+      ],
+      "src": "CS-40 relationship; CS-41 relationship_dynamics",
+      "status": "SOURCE"
+    },
+    "almanacHooks": {
+      "v": [
+        "'appendix: unauthorized commentary' in the Galactic Authority Report"
+      ],
+      "src": "CS-40 authority_report.md",
+      "status": "DESIGN"
+    },
+    "pairMemory": {
+      "v": {
+        "file": "running_memory.json (append-only)",
+        "fields": [
+          "heat",
+          "running_gags",
+          "conflict_patterns",
+          "recurring_topics",
+          "character_drift",
+          "sessions"
+        ]
+      },
+      "src": "CS-40",
+      "status": "DESIGN"
+    }
+  },
+  "appearance": {
+    "figureRef": {
+      "v": "figures/lady_dory.figure.json",
+      "src": "CS-02",
+      "status": "SOURCE"
+    },
+    "figureStatus": {
+      "v": "candidate",
+      "src": "CS-02 lady_dory.figure.json#approval.status",
+      "status": "SOURCE",
+      "note": "informational copy; the figure card is authoritative"
+    },
+    "renderStyle": {
+      "default": {
+        "v": "clay",
+        "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+        "status": "GEORG"
+      },
+      "clayProfile": {
+        "v": "figure-fine",
+        "src": "CS-02 material.clayProfile (V-053/V-340)",
+        "status": "GEORG"
+      },
+      "alternatives": {
+        "v": [],
+        "src": "V-394 (other textures allowed only when listed here)",
+        "status": "GEORG"
+      }
+    },
+    "colours": {
+      "v": {
+        "suitAccent": "orange-red",
+        "hdPrimary": "#c8682a",
+        "hdShadow": "#8a3812",
+        "type": "blob (H&D 2D); now alien head on Space Ranger suit"
+      },
+      "src": "V-261; CS-40 meta.visual",
+      "status": "GEORG"
+    },
+    "worldVariants": {
+      "v": null,
+      "status": "todo",
+      "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/lady_dory.figure.json",
+        "sha256": "8c607fd1c34d6204de6aeda005b6d5316d718d072588f2bcad630f3372ae8455",
+        "kind": "canonical",
+        "cardId": "lady_dory"
+      }
+    ],
+    "profileRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/E2_ATTACH_R1/assets/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json",
+        "kind": "kfb.pets/1 face profile",
+        "sha256": "a698c43b34c696f8b25991836c62189d8c91e483643fb2faeb0c4aeccf9484ad"
+      }
+    ]
+  },
+  "performance": {
+    "idle": {
+      "v": null,
+      "status": "todo"
+    },
+    "defaultPose": {
+      "v": null,
+      "status": "todo"
+    },
+    "preferredClips": {
+      "v": null,
+      "status": "todo"
+    },
+    "danceAuditions": {
+      "v": null,
+      "status": "todo"
+    },
+    "gait": {
+      "v": "Rig_Medium size like FrizzleBob",
+      "src": "V-267",
+      "status": "GEORG"
+    },
+    "presentationHints": {
+      "v": [
+        "eyes/lids first",
+        "named expression poses + appendage actors"
+      ],
+      "src": "CS-02 performance.expression; V-297; V-338 C",
+      "status": "GEORG"
+    },
+    "props": {
+      "v": null,
+      "status": "todo"
+    },
+    "kart": {
+      "v": null,
+      "status": "todo"
+    },
+    "lightByStoryMode": {
+      "table": {
+        "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+        "src": "CS-06 B1, rule 11; V-386, V-387",
+        "status": "GEORG"
+      },
+      "overrides": {
+        "v": null,
+        "status": "todo",
+        "note": "no per-character light preset found in any source; global table applies"
+      }
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "kokoro v1.0",
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "spec": {
+      "v": "bf_isabella60+af_bella40",
+      "src": "CS-03; V-324",
+      "status": "GEORG"
+    },
+    "speed": {
+      "v": 0.93,
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "lang": {
+      "v": "en-gb",
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "goldenLine": {
+      "v": "Lady Dory here, darling. I have seen better parties at the end of the world, and I hosted most of them.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Hell, flach und vornehm (bf_isabella) mit der saubersten Klangqualität (af_bella): ehemalige High-Society-Partnerin.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_04_lady_dory__bf-isabella60+af-bella40.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].file",
+      "status": "SOURCE"
+    }
+  },
+  "conflicts": [
+    "Role: 'Empathic Saboteur — no official job' (CS-40, CS-52) vs 'Moral Inquisitor, archive-wielder' / moral_enforcer_archivar (CS-41) vs 'witness' (CS-57) vs Georg 'former high-socialite partner' (CS-30).",
+    "Colour: #c8682a orange (CS-40) and suit orange-red (V-261) vs CtP palette #8E44AD, random per session (CS-41)."
+  ],
+  "todo": [
+    "archetype",
+    "signature deck / cards",
+    "idle/clips/dance",
+    "relationship canon",
+    "why banished"
+  ],
+  "seedSchema": "kfb.character/1",
+  "kind": "hero",
+  "aliases": [
+    "Dori",
+    "Dory",
+    "Lady Dory · Space Ranger",
+    "LadyDory",
+    "Lori",
+    "The Quantum Housewife",
+    "ladydory-headpart-r1"
+  ],
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "- Ein **sichtbarer Übersetzer** (Pocopoc) macht das Dekodieren zur Figurenhandlung statt zur reinen Menüfunktion. Bei uns könnte das ein Sidekick sein, der „mitliest“, etwa Dory oder ein Bot.",
+          "file": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md",
+          "line": 79,
+          "heading": "1.1 Shadowlands 9.2 · Zereth Mortis · „Cypher of the First Ones“"
+        },
+        {
+          "text": "| 19 | **Sidekick als sichtbarer Übersetzer** (z. B. Bot oder Dory liest mit), wenn Stufen wechseln | D | Pocopoc [B] |",
+          "file": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md",
+          "line": 363,
+          "heading": "8 · Was wir übernehmen sollten (priorisiert)"
+        },
+        {
+          "text": "- WS0 `replies/META_NARRATIVE_R1.md`: Hunky/Dory & Academy Fluff facts classified; global role-awareness **must not** mean everybody has Academy exposition. `replies/BILLBOARD_STANDARD_R2.md` retains original complete physical Card.",
+          "file": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md",
+          "line": 70,
+          "heading": "8. Current KFB reuse / authority map"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:79; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:363; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:70",
+      "status": "PREFILL"
+    }
+  },
+  "additions": {
+    "voice.engine": [
+      {
+        "v": "Kokoro-82M v1.0 ONNX",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+        "status": "SOURCE"
+      }
+    ],
+    "voice.spec": [
+      {
+        "v": "bf_isabella60+af_bella40",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].voiceSpec",
+        "status": "SOURCE"
+      }
+    ],
+    "voice.speed": [
+      {
+        "v": 0.93,
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].speed",
+        "status": "SOURCE"
+      }
+    ],
+    "voice.lang": [
+      {
+        "v": "en-gb",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].lang",
+        "status": "SOURCE"
+      }
+    ]
+  },
+  "chatter": {
+    "family": {
+      "v": "hauchig · warm",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "status": "SOURCE"
+    },
+    "instrument": {
+      "v": "Okarina",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "status": "SOURCE"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [],
+  "views": {
+    "dramatis_personae": {
+      "present": true,
+      "cacheId": "lady_dory",
+      "characterSheet": true,
+      "figureCard": true,
+      "voiceMatch": true,
+      "cacheCommit": "a95c491f4996bf75428e2083f571abc15dca364d",
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json",
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/lady_dory.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "personality.quirks",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "_seedProvenanceCS": [
+      "CS-01",
+      "CS-02",
+      "CS-03",
+      "CS-04",
+      "CS-06",
+      "CS-11",
+      "CS-30",
+      "CS-40",
+      "CS-41",
+      "CS-52",
+      "CS-57"
+    ],
+    "additions.voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "additions.voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].lang",
+      "tag": "SOURCE"
+    },
+    "additions.voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "additions.voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].speed",
+      "tag": "SOURCE"
+    },
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.colours": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-261; CS-40 meta.visual)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.figureRef": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureStatus": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-02 lady_dory.figure.json#approval.status)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.renderStyle.clayProfile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-02 material.clayProfile (V-053/V-340))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.default": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "tag": "SOURCE"
+    },
+    "dialogue.interjections": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41 characters.dory.voice)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.languageOwner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-20)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.lexicon": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 voice.lexicon)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.maxWordsPerLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.registers": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 voice; CS-41 speech_styles)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:26; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:67; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:69; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:183",
+      "tag": "PREFILL"
+    },
+    "dialogue.tripletVoice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03 (WS0 test line, no card text))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "dialogue.tripletVoice.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-11; V-231…V-235, V-266, V-275)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.aliases": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 meta.alias; CS-41 normalization; CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-295)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-295)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.series": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40; CS-41)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.tier": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03; CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.voiceInputMishearings": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-295; CS-04)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "kind": {
+      "source": "S1 tier 'main · npc' / S6 tier main",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:79; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:363; KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:70",
+      "tag": "PREFILL"
+    },
+    "memory.almanacHooks": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 authority_report.md)",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "memory.beliefSources": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "memory.owner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-20 memory.owner; CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.pairMemory": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40)",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 relationship; CS-41 relationship_dynamics)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.rememberable": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-26 §10 C (NPC / SOCIAL MEMORY))",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.valuesLiveIn": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-26 §11)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.gait": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-267)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "performance.lightByStoryMode.table": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-06 B1, rule 11; V-386, V-387)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "performance.presentationHints": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-02 performance.expression; V-297; V-338 C)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.castRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41 characters.dory.role)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.humour": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-52; CS-41 speech_styles)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.personalityType": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41 characters.dory.archetypes)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.stateMachine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41 character_state_machine.dory)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.defenseMechanism": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.failureLoop": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40 psychology.failure_loop)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.ironicVictory": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.metaConflictAwareness": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.psychoTags": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.specialAbility": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-41 characters.dory.special_abilities)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.traits.triggers": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-40; CS-41)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-30 §7.1 (Georg clarification); CS-04 §3, §9)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-30 §7.1 via CS-04 §3)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.loreStatements": {
+      "source": "KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md:52",
+      "tag": "PREFILL"
+    },
+    "story.openQuestions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-04)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "story.place": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-04 §3, §5 (V05/CANT proposals))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "story.worldKnowledge": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-04 §6; CS-41 characters.dory)",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "story.worldLogicRule": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src V-294; CS-04 §5)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[lady_dory].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03; V-324)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    }
+  }
+}

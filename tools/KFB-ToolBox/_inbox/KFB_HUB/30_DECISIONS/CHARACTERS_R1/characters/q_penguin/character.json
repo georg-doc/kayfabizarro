@@ -1,0 +1,236 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "q_penguin",
+  "status": "draft-r1",
+  "kind": "cube_pet",
+  "identity": {
+    "name": {
+      "v": "Dark-Fluffer-Pinguin",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Dark-Fluffer-Pinguin",
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_q_penguin",
+        "kfb_q_penguin_healed"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_q_penguin",
+    "kfb_q_penguin_healed"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Penguin (CC0), as-is (V-574); KFB-Augen mit zwei Zuständen: goo (Dark Fluffer) und healed",
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Penguin (CC0), as-is (V-574); *_healed: weiße Augen-Auflage"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_q_penguin_healed",
+      "type": "state",
+      "label": "Dark-Fluffer-Pinguin geheilt (weiße Augen)",
+      "card": "KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json",
+        "sha256": "d3b98b1d1034f20ffc36df0272309f99d46d582661eed0620fa28fb32fa274d4",
+        "kind": "duplicate",
+        "cardId": "kfb_q_penguin"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_penguin.figure.json",
+        "sha256": "43866b2286a27c05132aa9e44667880f5bcb27fcb6b62dd7927772d7cbc5b36c",
+        "kind": "canonical",
+        "cardId": "kfb_q_penguin"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json",
+        "sha256": "b17acba41810a9755e06b1e36ff9468681f0f763132e5a079db41529d23b43c3",
+        "kind": "state",
+        "cardId": "kfb_q_penguin_healed"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "source": "Quaternius MonsterCuteCubes (Ultimate Platformer Pack) CC0 1.0",
+        "origin": "georg-doc/kayfabizarro @ c746a95, lokal aus der WSA-Übergabe V584_JOBS 04-dark-fluffer/source (gelesen, kein Download)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "list"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "Quaternius MonsterCuteCubes cube species",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_penguin.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/q_penguin_healed.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

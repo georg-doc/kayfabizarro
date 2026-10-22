@@ -1,0 +1,455 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "witch",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Witch",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.witch.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Witch",
+      "src": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/witch.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "Witch_NoEyes",
+        "kfb_disco_witch",
+        "kfb_disco_witch_k12",
+        "witch_a",
+        "witch_b"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "Witch_NoEyes",
+    "kfb_disco_witch",
+    "kfb_disco_witch_k12",
+    "witch_a",
+    "witch_b"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_witch.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Alchemie-Resident · Tränke und Sammeln",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Steht mit dem Besen in der Rechten; das Pilzkörbchen steht abgesetzt am Boden neben ihr",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "Tanz-Clips aus ra_disco_01 (Motion Library v2, privat) + Idle_A",
+        "list",
+        "cues",
+        "runtimeOnly",
+        "floorLift",
+        "floorLiftNote",
+        "floorLiftReport",
+        "kfb_dance_samba_a"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.witch.clips; KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.witch.clip",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "| **Herstellen (Auftragsarbeit)** | Fehlende Karten selbst fertigen: Fluff ernten und aus einer bestimmten Fluff-Kombination in einem einfachen Minispiel die Karte herstellen (Auftrag eines NPC). Erzählt über das Alchemie-/Hexen-Narrativ (Georg): Hexe bzw. Alchemist braut aus Fluff die Karte. | Fluff-Crafting-Almanach (WSA-Planung `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`, V-122), Fluff-Ernte |",
+          "file": "KFB_HUB/30_DECISIONS/replies/GAME_LOOP_R1.md",
+          "line": 13,
+          "heading": "1 · Woher kommen Karten? (Kartenquellen)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/GAME_LOOP_R1.md:13",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Witch | bf_alice | 1,02 | hoch, beweglich, britisch |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 41,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:41",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "bf_alice",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.02,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-gb",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "The Fountain of Old: bathroom breaks double. Drink deep, feel your bones liquefy.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Höchste, beweglichste britische Frauenstimme.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_13_witch__bf-alice.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": "Werkbank mit Mörser, Kessel und dekorierter Trankstation",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:witch",
+      "role": "resident",
+      "note": "Alchemie-Resident · Tränke und Sammeln",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "loose, flowing dancer",
+      "localId": "witch",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.witch"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "witch",
+      "src": "KFB_HUB/65_SCENELETS/disco/concept.json#cast"
+    },
+    {
+      "id": "disco_street_01",
+      "role": "loose, flowing dancer",
+      "localId": "witch",
+      "note": "Witch",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.witch"
+    }
+  ],
+  "songs": [
+    {
+      "id": "wrinkle_rumble",
+      "role": "golden line source (card #41)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "kfb_disco_witch_k12",
+      "type": "scene_variant",
+      "label": "Hexe · tanzt Samba",
+      "card": "KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json#id"
+    },
+    {
+      "id": "witch_a",
+      "type": "scene_variant",
+      "label": "Hexe A (Duo, Textur A)",
+      "card": "KFB_HUB/50_BLENDER/B32/data/witch_a.figure.b32.json",
+      "src": "KFB_HUB/50_BLENDER/B32/data/witch_a.figure.b32.json#id"
+    },
+    {
+      "id": "witch_b",
+      "type": "texture",
+      "label": "Hexe B (Duo, Textur B)",
+      "card": "KFB_HUB/50_BLENDER/B32/data/witch_b.figure.b32.json",
+      "src": "KFB_HUB/50_BLENDER/B32/data/witch_b.figure.b32.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Nachbarin des Lorekeeper-Archivs (beide Wissens-Residents)",
+        "Kessel als Town-Alchemie-Kandidat"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_witch.figure.json",
+        "sha256": "6963b18d34cb48f75514f0e3d0781d7c7fc34ab02695dc081490e964d0e5555d",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_witch"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_witch.figure.json",
+        "sha256": "6963b18d34cb48f75514f0e3d0781d7c7fc34ab02695dc081490e964d0e5555d",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_witch"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_witch_pose_dance.figure.json",
+        "sha256": "d7d4631e67eeb4b2c3f12707ca677df53d8084d439b98515d69ee341208dd7aa",
+        "kind": "pose",
+        "cardId": "kfb_disco_witch"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/scenelet/disco_witch.figure.json",
+        "sha256": "6963b18d34cb48f75514f0e3d0781d7c7fc34ab02695dc081490e964d0e5555d",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_witch"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json",
+        "sha256": "eae25af8fdadc74e4774a1fa82926472e7e913828fc35ebe21f7c4ffd26c55d1",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_witch_k12"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/witch.figure.json",
+        "sha256": "7edbbe007532d6459879c6afb721a810c69568c4bc66112ae7901574c294653b",
+        "kind": "canonical",
+        "cardId": "witch"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B32/data/witch_a.figure.b32.json",
+        "sha256": "db800b8186938bfd8b388a513c52b84c8a4abdfb65c7c966555a08f19a4f4c8d",
+        "kind": "scene_variant",
+        "cardId": "witch_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B32/data/witch_b.figure.b32.json",
+        "sha256": "a3045c809159e00fbd04f688d979356fbd8a2da5c69dfbd92095ddbdfe315324",
+        "kind": "state",
+        "cardId": "witch_b"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    },
+    "licences": {
+      "v": {
+        "body": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_witch.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": true,
+      "cacheId": "witch",
+      "characterSheet": false,
+      "figureCard": true,
+      "voiceMatch": true,
+      "cacheCommit": "a95c491f4996bf75428e2083f571abc15dca364d",
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/witch.figure.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_witch.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:41",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json; KFB_HUB/65_SCENELETS/disco/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/witch.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.witch.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/GAME_LOOP_R1.md:13",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.witch.clips; KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.witch.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.witch.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_witch.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K12/data/disco_witch.k12.figure.json; KFB_HUB/50_BLENDER/B32/data/witch_a.figure.b32.json; KFB_HUB/50_BLENDER/B32/data/witch_b.figure.b32.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[witch].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

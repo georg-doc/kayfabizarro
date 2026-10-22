@@ -1,0 +1,372 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "monstrosity",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Monstrosity",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.monstrosity.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Monstrosity",
+      "src": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/monstrosity.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "monster",
+        "monstrosity_b"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "monster",
+    "monstrosity_b"
+  ],
+  "story": {
+    "inWorldRole": {
+      "v": "Boss-Resident · Zusammengeflicktes Ungeheuer",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Steht in Blockhaltung: Scheunentor-Schild vorn hoch, Mistgabel in der Rechten",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.activity",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "appearance": {
+    "baseModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+        "ref": "main",
+        "blob": "ff8e7d74026b808a3bedeab4bece830df116a4bc",
+        "sha256": "612439d9496d1008abe2abf3b5f609fd3be59c00958def4f1b59adfcabb0d51f",
+        "note": "NEVER load directly"
+      },
+      "src": "KFB_HUB/50_BLENDER/B33/data/monstrosity.figure.b33.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/monstrosity.figure.json",
+        "sha256": "05201305bff09a590e18c36e7425ddf080992912076a4e41f3a0fa8859839ead",
+        "kind": "canonical",
+        "cardId": "monstrosity"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B33/data/monstrosity.figure.b33.json",
+        "sha256": "40a096d85fde8a7d4cb8243e26707094332fafe2e02ae9d6bd31ed18a5abcad4",
+        "kind": "scene_variant",
+        "cardId": "monstrosity"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B33/data/monstrosity_b.figure.b33.json",
+        "sha256": "792ddb669c7af4421bbee02cc49c529a94b283cd8b65d66d98155d8fafb22386",
+        "kind": "state",
+        "cardId": "monstrosity_b"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+        "rigClass": "Rig_Large"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Monstrosity (Large) | am_santa 70 + am_echo 30 | 0,82 | rau und hohl, am langsamsten |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 60,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:60",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_santa70+am_echo30",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.82,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "What if The Glitch-Beast, Chaos, shuffles all discard piles into new deck? It hurts to exist.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Rau und hohl, am langsamsten.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_32_monstrosity__am-santa70+am-echo30.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "ra_disco_01",
+      "role": "Alternative zum Knight",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.monstrosity"
+    },
+    {
+      "id": "Dungeon-Raid",
+      "role": "boss",
+      "note": "wohnt nicht auf dem Friedhof (V-559)",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.monstrosity"
+    },
+    {
+      "id": "atlas:monstrosity",
+      "role": "resident",
+      "note": "Boss-Resident · Zusammengeflicktes Ungeheuer",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "Alternative zu Black Knight · gleicher Platz",
+      "localId": "monstrosity",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.monstrosity"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "knight|monstrosity",
+      "src": "KFB_HUB/65_SCENELETS/disco/concept.json#cast"
+    }
+  ],
+  "songs": [
+    {
+      "id": "wrinkle_rumble",
+      "role": "golden line source (card #45)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "monstrosity_b",
+      "type": "texture",
+      "label": "Monstrosity",
+      "card": "KFB_HUB/50_BLENDER/B33/data/monstrosity_b.figure.b33.json",
+      "src": "KFB_HUB/50_BLENDER/B33/data/monstrosity_b.figure.b33.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Vierter Large-Tier-Resident — Größenklasse Black Knight / Demon Lord / Orc Brute",
+        "Bauernwerkzeug als Waffe — Gegenstück zur Farmers-Vignette"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": true,
+      "cacheId": "monstrosity",
+      "characterSheet": false,
+      "figureCard": true,
+      "voiceMatch": true,
+      "cacheCommit": "a95c491f4996bf75428e2083f571abc15dca364d",
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/monstrosity.figure.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-large-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "performance.animations"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B33/data/monstrosity.figure.b33.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:60",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json; KFB_HUB/65_SCENELETS/disco/concept.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/monstrosity.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.monstrosity.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.monstrosity.townRole",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B33/data/monstrosity_b.figure.b33.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[monstrosity].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

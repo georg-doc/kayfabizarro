@@ -1,0 +1,281 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "orc_legacy_a",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Legacy Orc A",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.orc_legacy_a.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Trompeter · Legacy Orc A",
+      "src": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_band_trumpeter",
+        "kfb_band_trumpeter_pose",
+        "kfb_orc_legacy_a"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_band_trumpeter",
+    "kfb_band_trumpeter_pose",
+    "kfb_orc_legacy_a"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "The KayfaBizarros · Orc Band (RA resident-band-module-01) – Band-Darsteller mit Instrument an der Halterung",
+        "The KayfaBizarros · Orc Band (RA resident-band-module-01) – Trompeter (Erweiterung, optional)"
+      ],
+      "src": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json#story; KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json#story; KFB_HUB/50_BLENDER/ORKBAND/data/orc_legacy_a.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": "Bannerplatz: gepflanztes Kriegsbanner mit Schädeln am Fuß",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.orc-warband.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:orc-warband",
+      "role": "resident",
+      "note": "Kriegs-Residents · zweite Orc-Generation, ältere Bauart",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.orc-warband"
+    },
+    {
+      "id": "resident-band-module-01",
+      "role": "Trompeter · Legacy Orc A",
+      "localId": "trumpeter",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-band-module-01.json#actors.trumpeter"
+    },
+    {
+      "id": "resident-band-module-01",
+      "role": "orc_legacy_a (trumpeter, optional)",
+      "src": "KFB_HUB/65_SCENELETS/band/concept.json#cast"
+    }
+  ],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_band_trumpeter",
+      "type": "scene_variant",
+      "label": "Trompeter · Legacy Orc A",
+      "card": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json",
+      "src": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json#id"
+    },
+    {
+      "id": "kfb_band_trumpeter_pose",
+      "type": "scene_variant",
+      "label": "Trompeter · Legacy Orc A",
+      "card": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json",
+      "src": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json#id"
+    },
+    {
+      "id": "resident-band-module-01_trumpeter",
+      "type": "scene_variant",
+      "label": "Trompeter · Legacy Orc A",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-band-module-01.json#actors.trumpeter"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Dritte Rig-Klasse des Atlas — Rig_Legacy, sechs Bones statt 23",
+        "Vorgänger-Generation von Orc Raider und Orc Brute: gleiche Fraktion, drei Bauarten"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.orc-warband.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json",
+        "sha256": "398488c6149c53fc1165e4c839eb585040a6daf18970c38fc21c3c52492a9461",
+        "kind": "scene_variant",
+        "cardId": "kfb_band_trumpeter"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/ORKBAND/scenelet/band_trumpeter.figure.json",
+        "sha256": "398488c6149c53fc1165e4c839eb585040a6daf18970c38fc21c3c52492a9461",
+        "kind": "duplicate",
+        "cardId": "kfb_band_trumpeter"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json",
+        "sha256": "f167f74e4c356ca70e4c8e5d4e21239be39ec65f802d933b77074b5cab8a2762",
+        "kind": "pose",
+        "cardId": "kfb_band_trumpeter_pose"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/ORKBAND/data/orc_legacy_a.figure.json",
+        "sha256": "872e8d491111a0bef9004f913325021649172eb3dc331c4cf4808cc47ce74556",
+        "kind": "scene_variant",
+        "cardId": "kfb_orc_legacy_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/ORKBAND/scenelet/orc_legacy_a.figure.json",
+        "sha256": "872e8d491111a0bef9004f913325021649172eb3dc331c4cf4808cc47ce74556",
+        "kind": "canonical",
+        "cardId": "kfb_orc_legacy_a"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "body": "KayKit Orc Warband (legacy) – Kay Lousberg; lokal ohne Lizenzdatei → privat behandelt"
+      },
+      "src": "KFB_HUB/50_BLENDER/ORKBAND/data/orc_legacy_a.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/ORKBAND/data/orc_legacy_a.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-band-module-01.json; KFB_HUB/65_SCENELETS/band/concept.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.orc_legacy_a.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.orc-warband.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.orc-warband.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json#story; KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json#story; KFB_HUB/50_BLENDER/ORKBAND/data/orc_legacy_a.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.figure.json; KFB_HUB/50_BLENDER/ORKBAND/data/band_trumpeter.proof.figure.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-band-module-01.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

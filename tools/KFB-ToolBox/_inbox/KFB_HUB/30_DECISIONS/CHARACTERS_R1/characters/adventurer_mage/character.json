@@ -1,0 +1,227 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "adventurer_mage",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Mage",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.adventurer-mage.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "adventurer-mage",
+        "kfb_camp_mage"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "adventurer-mage",
+    "kfb_camp_mage"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B48 (V-556): RPG-Gruppe im Lager vor dem Dungeon-Portal, Alltag statt Heldentat",
+      "src": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": "KFB_mage_staff",
+      "src": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#props",
+      "status": "PREFILL"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_camp_mage",
+      "type": "scene_variant",
+      "label": "Magierin · studiert die Karte",
+      "card": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json",
+        "sha256": "e7b230339ecd34d8fb32bb076c529cdb9ecf1cfe58a782a6c0fc15898d35039e",
+        "kind": "canonical",
+        "cardId": "kfb_camp_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/mage_pose_camp.figure.json",
+        "sha256": "7b245d613f66e4de9c4d6ac409a464b354fb0d56bd63411863e21f23dcf55876",
+        "kind": "pose",
+        "cardId": "kfb_camp_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/scenelet/mage.figure.json",
+        "sha256": "e7b230339ecd34d8fb32bb076c529cdb9ecf1cfe58a782a6c0fc15898d35039e",
+        "kind": "duplicate",
+        "cardId": "kfb_camp_mage"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "kfb_camp_map_a",
+        "kfb_spell_frostbolt_a",
+        "kfb_spell_fireball_a",
+        "Idle_A_camp"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.adventurer-mage.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#props",
+      "tag": "PREFILL"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/mage.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

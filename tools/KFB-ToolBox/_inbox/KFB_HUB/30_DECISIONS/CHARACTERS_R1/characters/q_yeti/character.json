@@ -1,0 +1,236 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "q_yeti",
+  "status": "draft-r1",
+  "kind": "cube_pet",
+  "identity": {
+    "name": {
+      "v": "Dark-Fluffer-Yeti",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Dark-Fluffer-Yeti",
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_q_yeti",
+        "kfb_q_yeti_healed"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_q_yeti",
+    "kfb_q_yeti_healed"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Yeti (CC0), as-is (V-574); KFB-Augen mit zwei Zuständen: goo (Dark Fluffer) und healed",
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Yeti (CC0), as-is (V-574); *_healed: weiße Augen-Auflage"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_q_yeti_healed",
+      "type": "state",
+      "label": "Dark-Fluffer-Yeti geheilt (weiße Augen)",
+      "card": "KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json",
+        "sha256": "3a4caec230ee0e964e4703e8722728d348d584a2c85a8e20d115c47a3e00787c",
+        "kind": "duplicate",
+        "cardId": "kfb_q_yeti"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_yeti.figure.json",
+        "sha256": "a3d4395a5b75bf2b91e2af83cb41feed8fab85339bccd65f74418406df56fd08",
+        "kind": "canonical",
+        "cardId": "kfb_q_yeti"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json",
+        "sha256": "346b399f808ea6942912794e47c20e55d5070a7631c13874d41e8fd941a49d97",
+        "kind": "state",
+        "cardId": "kfb_q_yeti_healed"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "source": "Quaternius MonsterCuteCubes (Ultimate Platformer Pack) CC0 1.0",
+        "origin": "georg-doc/kayfabizarro @ c746a95, lokal aus der WSA-Übergabe V584_JOBS 04-dark-fluffer/source (gelesen, kein Download)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "list"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "Quaternius MonsterCuteCubes cube species",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#clips; KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/kfb/q_yeti.figure.json#story; KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K15/data/q_yeti_healed.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

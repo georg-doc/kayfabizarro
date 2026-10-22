@@ -1,0 +1,259 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "astronaut_finnthefrog",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Astronaut FinnTheFrog",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.astronaut_finnthefrog.label",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Astronaut Finn the Frog",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_astronaut_finnthefrog"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_astronaut_finnthefrog"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B50 Sci-Fi (ra_scifi_01): Alien-Außenposten, Bewohner vor der Station",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "scifi-pack-01",
+      "role": "Finn the Frog",
+      "localId": "finn",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/scifi-pack-01.json#cast.finn"
+    },
+    {
+      "id": "scifi-pack-01",
+      "role": "astronaut_finnthefrog",
+      "src": "KFB_HUB/65_SCENELETS/scifi/concept.json#cast"
+    },
+    {
+      "id": "ra_scifi_01",
+      "role": "resident",
+      "localId": "finn",
+      "note": "Finn the Frog",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01.json#actors.finn"
+    }
+  ],
+  "songs": [],
+  "variants": [],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json",
+        "sha256": "5305600c2eeaf280e0954c6061749dc01390b9765aa188c8b93dd9b5ca65600d",
+        "kind": "duplicate",
+        "cardId": "kfb_astronaut_finnthefrog"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scifi/data/sf_FinnTheFrog.figure.json",
+        "sha256": "5305600c2eeaf280e0954c6061749dc01390b9765aa188c8b93dd9b5ca65600d",
+        "kind": "canonical",
+        "cardId": "kfb_astronaut_finnthefrog"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scifi/data/sf_FinnTheFrog_pose_idle.figure.json",
+        "sha256": "db4ba4a38bf13c1c2556195fcb568b716ed076064688489c6ca9c11562c6265b",
+        "kind": "pose",
+        "cardId": "kfb_astronaut_finnthefrog"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/scifi/scenelet/sf_FinnTheFrog.figure.json",
+        "sha256": "5305600c2eeaf280e0954c6061749dc01390b9765aa188c8b93dd9b5ca65600d",
+        "kind": "duplicate",
+        "cardId": "kfb_astronaut_finnthefrog"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "body": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "Idle",
+        "Wave",
+        "Yes",
+        "No",
+        "Walk",
+        "Run",
+        "Jump",
+        "Jump_Idle",
+        "Jump_Land",
+        "Duck",
+        "Punch",
+        "HitReact",
+        "Death"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.astronaut_finnthefrog.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01.json#actors.finn.clip",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "memory.relationships",
+    "variants",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/scifi-pack-01.json; KFB_HUB/65_SCENELETS/scifi/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.astronaut_finnthefrog.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.astronaut_finnthefrog.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01.json#actors.finn.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

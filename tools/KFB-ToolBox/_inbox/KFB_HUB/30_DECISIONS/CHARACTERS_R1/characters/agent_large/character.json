@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "agent_large",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "Blob-Corp-Türsteher AGL",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Blob-Corp-Türsteher AGL (B40, Large Rig, Ork-Kopf)",
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "agent_b40_large",
+        "agent_b40_large_glasses"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "agent_b40_large",
+    "agent_b40_large_glasses"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B40 (V-529/V-530): Large-Rig-Türsteher im Agenten-Anzug, unbemalter Ork-Kopf in Hautton, KFB-Augen; Kampf-Clips Large kommen aus der Cloud-Lane (Issue #431)."
+      ],
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json#story; KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "agent_b40_large_glasses",
+      "type": "look",
+      "label": "Blob-Corp-Türsteher AGL (B40, Large Rig, Ork-Kopf)",
+      "card": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json",
+        "sha256": "d84e9c1bfa75855f9889e61f8919fc6791bdd88063a337311a4bbbd175afd64c",
+        "kind": "canonical",
+        "cardId": "agent_b40_large"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json",
+        "sha256": "0f6121bea6ef55e78b879a8c605a9891f31f52ef88d696f70e2491141bac868f",
+        "kind": "state",
+        "cardId": "agent_b40_large_glasses"
+      }
+    ],
+    "profileRefs": []
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large.figure.json#story; KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B40/data/agent_b40_large_glasses.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

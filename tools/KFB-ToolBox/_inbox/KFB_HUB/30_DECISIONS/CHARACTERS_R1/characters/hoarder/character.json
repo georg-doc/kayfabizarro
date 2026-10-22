@@ -1,0 +1,308 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "hoarder",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Hoarder",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.hoarder.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_camp_hoarder_a",
+        "kfb_camp_hoarder_b"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_camp_hoarder_a",
+    "kfb_camp_hoarder_b"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B48 (V-556): RPG-Gruppe im Lager vor dem Dungeon-Portal, Alltag statt Heldentat"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json#story; KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Sammler-Resident · trägt alles mit sich, in zwei Ausführungen",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Links die erste Palette mit aufgesetztem Rucksack und verstauter Klinge, rechts die zweite mit gezogener Klinge und abgestelltem Rucksack — die Aufstellung der Pack-Promo",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "kfb_camp_repack_a",
+        "Idle_A_camp",
+        "kfb_camp_wait_a"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json#clips; KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": "Keine Kulisse im Pack — die Promo teilt das Bild in Blau und Orange und stellt die zwei Farbvarianten gegenüber",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:hoarder",
+      "role": "resident · erste Palette, Rucksack auf dem Rücken",
+      "note": "Sammler-Resident · trägt alles mit sich, in zwei Ausführungen",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder"
+    },
+    {
+      "id": "atlas:hoarder",
+      "role": "Sozial / zweite Palette, Rucksack abgesetzt und Klinge gezogen",
+      "note": "Sammler-Resident · trägt alles mit sich, in zwei Ausführungen",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder"
+    }
+  ],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_camp_hoarder_a",
+      "type": "scene_variant",
+      "label": "Horter A · packt den Rucksack um",
+      "card": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json#id"
+    },
+    {
+      "id": "kfb_camp_hoarder_b",
+      "type": "scene_variant",
+      "label": "Horter B · wartet auf dem Hocker und gähnt",
+      "card": "KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json#id"
+    },
+    {
+      "id": "hoarder",
+      "type": "look",
+      "label": "resident · erste Palette, Rucksack auf dem Rücken",
+      "asset": "8 - February 2026 - Hoarder/Hoarder.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder"
+    },
+    {
+      "id": "hoarder_b",
+      "type": "look",
+      "label": "Sozial / zweite Palette, Rucksack abgesetzt und Klinge gezogen",
+      "asset": "8 - February 2026 - Hoarder/Hoarder.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Dritter Resident mit einer echten Textur-FARBVARIANTE (zwei Dateien) nach Cleric und Hero Man",
+        "Dritter Resident, dessen Ausrüstung als Geschwister-Meshes zuschaltbar ist — nach Action Figure (Köpfe als Dateien) und Marksman (Tarnstufen als Sichtbarkeit)",
+        "faction allianz (hoarder)"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.relationships; KFB_HUB/60_CAST/cast.r1.json#factions.allianz",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json",
+        "sha256": "7fd3b4bdf7dc00bc457a1714a5a3ada5d92adc01e3c3a6fb8b4257204545cb33",
+        "kind": "canonical",
+        "cardId": "kfb_camp_hoarder_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/hoarder_a_pose_camp.figure.json",
+        "sha256": "ee84f2d85660d81ac7f07e440d893c55f722774e836601fd33ec6072e20ef3ec",
+        "kind": "pose",
+        "cardId": "kfb_camp_hoarder_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/scenelet/hoarder_a.figure.json",
+        "sha256": "7fd3b4bdf7dc00bc457a1714a5a3ada5d92adc01e3c3a6fb8b4257204545cb33",
+        "kind": "duplicate",
+        "cardId": "kfb_camp_hoarder_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json",
+        "sha256": "3d4a3dfc3871998658a8f6af0755d1d33cd2e019c61dd626e3dd0b2558aae66d",
+        "kind": "scene_variant",
+        "cardId": "kfb_camp_hoarder_b"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/hoarder_b_pose_camp.figure.json",
+        "sha256": "d91d7a8881a0143b1805ea3838ad051727eb0aeb4664984a2695824f16de7118",
+        "kind": "pose",
+        "cardId": "kfb_camp_hoarder_b"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/scenelet/hoarder_b.figure.json",
+        "sha256": "3d4a3dfc3871998658a8f6af0755d1d33cd2e019c61dd626e3dd0b2558aae66d",
+        "kind": "duplicate",
+        "cardId": "kfb_camp_hoarder_b"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/Hoarder.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.hoarder.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.relationships; KFB_HUB/60_CAST/cast.r1.json#factions.allianz",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json#clips; KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.hoarder.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json#story; KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/hoarder_a.figure.json; KFB_HUB/50_BLENDER/B48/data/hoarder_b.figure.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

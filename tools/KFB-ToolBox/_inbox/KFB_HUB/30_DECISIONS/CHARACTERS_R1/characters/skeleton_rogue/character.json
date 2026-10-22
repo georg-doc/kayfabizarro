@@ -1,0 +1,460 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "skeleton_rogue",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Skeleton Rogue",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-rogue.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_brawl_rogue",
+        "kfb_skeleton_rogue",
+        "skeleton-rogue"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_brawl_rogue",
+    "kfb_skeleton_rogue",
+    "skeleton-rogue"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Friedhof (ra_graveyard_01): tanzende Skelette, bpm 120, Zerfall und Zusammensetzen je 16 s"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Untot-Resident · Fernkampf",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Hält die Armbrust schussbereit, Köcher am Rücken, Klinge als Zweitwaffe",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "kfb_dance_chicken_a",
+        "kfb_dance_house_a",
+        "kfb_dance_samba_a",
+        "kfb_dance_hip_hop_a",
+        "Idle_A",
+        "Death_A",
+        "kfb_rise_reverse_a",
+        "Spawn_Ground"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_rogue.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.rogue.clip",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "{\"collapse\": \"Death_A\", \"reassemble\": \"kfb_rise_reverse_a\", \"riseAlt\": \"Spawn_Ground\", \"dances\": [\"kfb_dance_chicken_a\", \"kfb_dance_house_a\", \"kfb_dance_samba_a\", \"kfb_dance_hip_hop_a\"], \"headgearDrop\": \"Kapuze fällt bei drop ab (KFB_*_Dropped), springt im Rückwärts-Clip bei pop_in zurück\"}",
+          "file": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json",
+          "line": null,
+          "heading": "behaviour"
+        },
+        {
+          "text": "{\"collapse\": \"Death_A\", \"reassemble\": \"kfb_rise_reverse_a\", \"riseAlt\": \"Spawn_Ground\", \"dances\": [\"kfb_dance_chicken_a\", \"kfb_dance_house_a\", \"kfb_dance_samba_a\", \"kfb_dance_hip_hop_a\"], \"headgearDrop\": \"Kapuze fällt bei drop ab (KFB_*_Dropped), springt im Rückwärts-Clip bei pop_in zurück\"}",
+          "file": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+          "line": null,
+          "heading": "behaviour"
+        }
+      ],
+      "src": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Skeleton Rogue | am_echo 50 + am_puck 50 | 1,05 | Kern plus Frechheit |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 44,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:44",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_echo50+am_puck50",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.05,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "You with the card in your hand, Thievery, Yoink: steal card. Property is theft. Theft also theft.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Skelett-Kern plus Frechheit von am_puck.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_16_skeleton-rogue__am-echo50+am-puck50.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": "höher, hohl (Bandpass), kurzer Gruft-Hall, Klapper-Transient",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "status": "PREFILL",
+      "note": "family row 'Skelette'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "ra_graveyard_01",
+      "role": "dancer",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.skeleton_rogue"
+    },
+    {
+      "id": "rpg_monster_camp (B49)",
+      "role": "raider",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.skeleton_rogue"
+    },
+    {
+      "id": "atlas:skeleton-rogue",
+      "role": "resident",
+      "note": "Untot-Resident · Fernkampf",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue"
+    },
+    {
+      "id": "resident-graveyard-01",
+      "role": "Skeleton Rogue",
+      "localId": "rogue",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json#cast.rogue"
+    },
+    {
+      "id": "resident-graveyard-01",
+      "role": "skeleton_rogue",
+      "src": "KFB_HUB/65_SCENELETS/graveyard/concept.json#cast"
+    },
+    {
+      "id": "ra_graveyard_01",
+      "role": "dancer",
+      "localId": "rogue",
+      "note": "Skeleton Rogue",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.rogue"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #40)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "friedhof",
+      "type": "scene_variant",
+      "label": "friedhof",
+      "asset": "50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_rogue.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_rogue.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_rogue.variant_assets.friedhof"
+    },
+    {
+      "id": "cc0_ohne_tanz",
+      "type": "scene_variant",
+      "label": "cc0_ohne_tanz",
+      "asset": "50_BLENDER/B50/graveyard/figures/KFB_Skeleton_rogue.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_rogue_cc0.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_rogue.variant_assets.cc0_ohne_tanz"
+    },
+    {
+      "id": "kfb_brawl_rogue",
+      "type": "scene_variant",
+      "label": "Skeleton Rogue · tanzt auf dem Friedhof",
+      "card": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json#id"
+    },
+    {
+      "id": "kfb_skeleton_rogue",
+      "type": "scene_variant",
+      "label": "Skeleton Rogue · tanzt auf dem Friedhof",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Zweiter Skeleton der Welle nach dem Warrior",
+        "Fernkampf-Gegenstück zum Avian Swordsman"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json",
+        "sha256": "464a5dd71d7f624292a1d1df170951c245c9e86bee0ce91573bd7e1f14986037",
+        "kind": "scene_variant",
+        "cardId": "kfb_brawl_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B51/scenelet/brawl_rogue.figure.json",
+        "sha256": "464a5dd71d7f624292a1d1df170951c245c9e86bee0ce91573bd7e1f14986037",
+        "kind": "duplicate",
+        "cardId": "kfb_brawl_rogue"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+        "sha256": "836df4fbc55a57cd6c70b08960e8ecf3c8c63c3910b63b965c72baaba31c27d6",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_rogue.figure.json",
+        "sha256": "61c02cc8466b587836687a00d53c6b51b80750448a740587d782434eab505dc8",
+        "kind": "canonical",
+        "cardId": "kfb_skeleton_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_rogue_cc0.figure.json",
+        "sha256": "4f10742f2daee38d8bb8a29ade3a1a68016daf0dfaaf23d29b891dc12442fee1",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_rogue_pose_dance.figure.json",
+        "sha256": "4c442da8c4a9f12826523746e8a64ba081e54dba464d1eca38c1f2b818778bc1",
+        "kind": "pose",
+        "cardId": "kfb_skeleton_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_rogue_pose_idle.figure.json",
+        "sha256": "4eb0d542ef88f1b14e13e4057d4edbc091c688ee5b5b21dd40792e4be36bcea0",
+        "kind": "pose",
+        "cardId": "kfb_skeleton_rogue"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/scenelet/gy_rogue.figure.json",
+        "sha256": "61c02cc8466b587836687a00d53c6b51b80750448a740587d782434eab505dc8",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_rogue"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:44",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json; KFB_HUB/65_SCENELETS/graveyard/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-rogue.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_rogue.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.rogue.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-rogue.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/50_BLENDER/B51/data/brawl_rogue.figure.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_rogue.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-rogue].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "cleric",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Cleric",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.cleric.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_camp_cleric"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_camp_cleric"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B48 (V-556): RPG-Gruppe im Lager vor dem Dungeon-Portal, Alltag statt Heldentat",
+      "src": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Heil-Resident · Segen, Brunnen und Schriften",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Links die hellhäutige Variante mit Streitkolben und Schild, rechts die dunkelhäutige mit aufgeschlagenem Folianten in der Rechten",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "kfb_camp_pray_a",
+        "Idle_A_camp"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Cleric | af_aoede | 0,95 | ruhig, dunkel |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 48,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:48",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "af_aoede",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.95,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Crossing the Return Threshold, Re-Entry Shock: hardest stage. Gift must be shared to be kept.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Ruhige, dunkle Frauenstimme.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_20_cleric__af-aoede.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": "KFB_cleric_cleric_mace",
+      "src": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#props",
+      "status": "PREFILL"
+    },
+    "biome": {
+      "v": "Weihbrunnen als Mittelpunkt, zwei Kleriker beidseits — die Aufstellung der Pack-Promo",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:cleric",
+      "role": "resident · helle Variante",
+      "note": "Heil-Resident · Segen, Brunnen und Schriften",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric"
+    },
+    {
+      "id": "atlas:cleric",
+      "role": "Sozial / dunkelhäutige Farbvariante, zweiter Bewohner",
+      "note": "Heil-Resident · Segen, Brunnen und Schriften",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #16)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "kfb_camp_cleric",
+      "type": "scene_variant",
+      "label": "Kleriker · betet am Brunnen",
+      "card": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#id"
+    },
+    {
+      "id": "cleric",
+      "type": "look",
+      "label": "resident · helle Variante",
+      "asset": "3 - September 2025 - Cleric/Cleric.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric"
+    },
+    {
+      "id": "cleric_dark",
+      "type": "look",
+      "label": "Sozial / dunkelhäutige Farbvariante, zweiter Bewohner",
+      "asset": "3 - September 2025 - Cleric/Cleric.glb",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Erster Resident mit einer echten FARBVARIANTE — zwei Texturen, eine Geometrie",
+        "Wissens-Nachbar der Witch und des Lorekeeper; Brunnen als Town-Heilkandidat",
+        "faction allianz (cleric)"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.relationships; KFB_HUB/60_CAST/cast.r1.json#factions.allianz",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json",
+        "sha256": "210818024c4b1768852323f52dbbbcda4698ec89686b4c1c2061f04649d11cce",
+        "kind": "canonical",
+        "cardId": "kfb_camp_cleric"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/data/cleric_pose_camp.figure.json",
+        "sha256": "1c2a90750b9390afda58428566997ab966b00699a530039a9162ba7c8efe0875",
+        "kind": "pose",
+        "cardId": "kfb_camp_cleric"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B48/scenelet/cleric.figure.json",
+        "sha256": "210818024c4b1768852323f52dbbbcda4698ec89686b4c1c2061f04649d11cce",
+        "kind": "duplicate",
+        "cardId": "kfb_camp_cleric"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:48",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.cleric.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.relationships; KFB_HUB/60_CAST/cast.r1.json#factions.allianz",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#props",
+      "tag": "PREFILL"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.cleric.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B48/data/cleric.figure.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[cleric].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

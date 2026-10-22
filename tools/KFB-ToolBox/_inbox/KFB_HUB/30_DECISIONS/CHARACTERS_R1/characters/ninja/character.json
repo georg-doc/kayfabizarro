@@ -1,0 +1,395 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "ninja",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Ninja",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.ninja.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_ninja_red_katana",
+        "kfb_ninja_white_dual",
+        "ninja_npc"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_ninja_red_katana",
+    "kfb_ninja_white_dual",
+    "ninja_npc"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Ninja-Schwertkampf (Backlog P3): zwei Ninjas im Duell, KayKit-Nahkampf-Set",
+        "Ninja-Wirte und -Händler rund um das Bento-Diorama (B26, 26. Nachtrag WS0)."
+      ],
+      "src": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#story; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#story; KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Ninja | af_nicole | 1,00 | flachste Stimme, gehaucht |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 54,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:54",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "af_nicole",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.0,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Let me tell you about The Shadow, Projection: dark mirror. Part of you that you locked in basement.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Flachste Stimme im Set, gehaucht: Flüstern im Schatten.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_26_ninja__af-nicole.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": [
+        "kaykit_melee_candidate (q136)",
+        {
+          "kind": "katana",
+          "hold": "KayKit-Haltung am handslot.r (Klinge quer zur Faust, wie die Melee-Clips animiert) – V-536-Ausnahme beantragt (q136)",
+          "anchors": {
+            "KFB_Grip": "hand.r, Faustmitte",
+            "KFB_Tip": "Klingenspitze"
+          },
+          "hidden_in": {
+            "kfb_action_flying_kick_a": "Hammer-Space (pop_out/pop_in)"
+          },
+          "drop_in": {
+            "Death_A": "Marke drop: Hand-Katana aus, KFB_Katana_Dropped liegt am Boden"
+          }
+        },
+        "kaykit_melee_candidate"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.ninja.weaponRule; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#weapon; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#weaponRule; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#weapon; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#weaponRule",
+      "status": "SOURCE"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "golden line source (card #22)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "rot",
+      "type": "scene_variant",
+      "label": "rot",
+      "asset": "50_BLENDER/B50/ninja/_privat_kauf_asset/KFB_Ninja_red_katana.r1.glb",
+      "card": "50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.ninja.variant_assets.rot"
+    },
+    {
+      "id": "weiss",
+      "type": "scene_variant",
+      "label": "weiss",
+      "asset": "50_BLENDER/B50/ninja/_privat_kauf_asset/KFB_Ninja_white_dual.r1.glb",
+      "card": "50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.ninja.variant_assets.weiss"
+    },
+    {
+      "id": "npc_b26",
+      "type": "scene_variant",
+      "label": "npc_b26",
+      "asset": "50_BLENDER/B26/_privat_kauf_asset/",
+      "card": "50_BLENDER/B26/data/ninja_npc.figure.r1.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.ninja.variant_assets.npc_b26"
+    },
+    {
+      "id": "kfb_ninja_red_katana",
+      "type": "scene_variant",
+      "label": "Ninja rot · Katana",
+      "card": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#id"
+    },
+    {
+      "id": "kfb_ninja_white_dual",
+      "type": "scene_variant",
+      "label": "Ninja weiß · Katana + Shuriken",
+      "card": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#id"
+    },
+    {
+      "id": "ninja_npc",
+      "type": "scene_variant",
+      "label": "Ninja-NPCs (KayKit Mystery Series 4 · Ninja): rot/Katana · blau/Shuriken · grün/Stirnband · weiß/beides",
+      "card": "KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json",
+      "src": "KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json",
+        "sha256": "ba2c37d41d2d5940ab12419999d38546fcc3aee0bc000d42e6a53e05fb23427b",
+        "kind": "canonical",
+        "cardId": "kfb_ninja_red_katana"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana_pose_stab.figure.json",
+        "sha256": "22170aae4e6829549adc6d8e837f4760aa26424493ef2154e5fd93e7c80197fc",
+        "kind": "pose",
+        "cardId": "kfb_ninja_red_katana"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/scenelet/ninja_red_katana.figure.json",
+        "sha256": "ba2c37d41d2d5940ab12419999d38546fcc3aee0bc000d42e6a53e05fb23427b",
+        "kind": "duplicate",
+        "cardId": "kfb_ninja_red_katana"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json",
+        "sha256": "9177eb06564544036ed0ac77a8262d44632a2186f43ea3a257244b64defc9862",
+        "kind": "scene_variant",
+        "cardId": "kfb_ninja_white_dual"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual_pose_stab.figure.json",
+        "sha256": "4c795c56278c519ffc65734d78a35921dd1f2bc6bf0ae08f6c429f6df57707cb",
+        "kind": "pose",
+        "cardId": "kfb_ninja_white_dual"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/ninja/scenelet/ninja_white_dual.figure.json",
+        "sha256": "9177eb06564544036ed0ac77a8262d44632a2186f43ea3a257244b64defc9862",
+        "kind": "duplicate",
+        "cardId": "kfb_ninja_white_dual"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json",
+        "sha256": "033249fbe4e32ba504e4bf4607bf7718634eb8ac684a63c695cd17bc9979ec2c",
+        "kind": "scene_variant",
+        "cardId": "ninja_npc"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/character/Ninja.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "kfb_action_flying_kick_a",
+        "Melee_1H_Attack_Stab",
+        "Melee_1H_Attack_Chop",
+        "Melee_1H_Attack_Slice_Horizontal",
+        "Melee_1H_Attack_Slice_Diagonal",
+        "Death_A"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#clips; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "filled",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:54",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.ninja.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#clips; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.ninja.weaponRule; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#weapon; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#weaponRule; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#weapon; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#weaponRule",
+      "tag": "SOURCE"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json#story; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json#story; KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_red_katana.figure.json; KFB_HUB/50_BLENDER/B50/ninja/data/ninja_white_dual.figure.json; KFB_HUB/50_BLENDER/B26/data/ninja_npc.figure.r1.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[ninja].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

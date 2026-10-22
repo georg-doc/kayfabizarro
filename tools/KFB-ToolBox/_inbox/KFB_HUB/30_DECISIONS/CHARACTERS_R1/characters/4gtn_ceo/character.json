@@ -1,0 +1,740 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "4gtn_ceo",
+  "status": "draft-r1",
+  "date": "2026-10-17",
+  "vRef": [
+    "V-394",
+    "V-415"
+  ],
+  "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo",
+  "identity": {
+    "name": {
+      "v": "4GTN",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "displayName": {
+      "v": "4GTN",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "aliases": {
+      "v": [
+        "4GTN",
+        "Utopia CEO",
+        "The CEO"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "voiceInputMishearings": {
+      "v": null,
+      "status": "todo",
+      "note": "e.g. 'for G T N', 'Agatn' – check on first dictation"
+    },
+    "tier": {
+      "v": "npc",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "series": {
+      "v": [
+        "KFB Utopia / Protopia (V-122)"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    }
+  },
+  "story": {
+    "background": {
+      "v": "Built with his twin as a pair in Utopia's founding workshop to make the future together with people. Optimised himself upgrade by upgrade, deleting doubt, boredom and needing help; ended perfect, alone at the top, CEO of Utopia.",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "worldKnowledge": {
+      "v": [
+        "Utopia's optimisation programme",
+        "upgrade catalogue",
+        "press releases"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "inWorldRole": {
+      "v": "CEO of Utopia; face of transhumanist self-optimisation",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "worldLogicRule": {
+      "v": "Built as a pair to make the future together with people; split over transhumanism (self-optimisation) vs. co-creation.",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "place": {
+      "v": "Utopia (island/zone)",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "twin": {
+      "v": "twin: 4gtn_forgotten (banished)",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "openQuestions": {
+      "v": null,
+      "status": "todo"
+    },
+    "sceneNotes": {
+      "v": "4GTN ist der CEO von Utopia: blank poliertes Upgrade, Transhumanismus als Geschäftsmodell. Sein Zwilling 4GTN_Forgotten wurde aus Utopia verbannt und hilft heute im Maker-Space. Allegorie Transhumanismus gegen Ko-Kreation, tragikomisch (Georg 17.10., V-415).",
+      "src": "KFB_HUB/50_BLENDER/B13/data/4gtn_ceo.figure.r1.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "personality": {
+    "archetype": {
+      "jungDrive": {
+        "v": null,
+        "status": "todo"
+      },
+      "journeyFunction": {
+        "v": null,
+        "status": "todo"
+      },
+      "frictionEngine": {
+        "v": "the twin bond neither will name",
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      }
+    },
+    "castRole": {
+      "v": "Utopia CEO (antagonist-tragicomic)",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "personalityType": {
+      "v": [
+        "perfectionist",
+        "polished",
+        "secretly lonely"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "traits": {
+      "coreWant": {
+        "v": "to be flawless",
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      },
+      "hiddenNeed": {
+        "v": "to be repaired, not replaced",
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      },
+      "secret": {
+        "v": "visits his twin's repair café at night in disguise, calls it 'a routine inspection'",
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      },
+      "failureLoop": {
+        "v": "upgrade → something rattles → hide it → upgrade again",
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      }
+    }
+  },
+  "dialogue": {
+    "languageOwner": {
+      "v": "ChatterBox + shared Triplet pool",
+      "src": "CS-20",
+      "status": "SOURCE"
+    },
+    "signaturePool": {
+      "v": null,
+      "status": "todo"
+    },
+    "signatureLines": {
+      "v": [
+        "We optimise people so they don't have to.",
+        "Routine inspection. Nothing personal."
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "tripletVoice": {
+      "rules": {
+        "v": "SONG_SPEC_R3 / TRIPLET_SET_SPEC_R2 (card words only, opener layer)",
+        "src": "V-266, V-411",
+        "status": "SOURCE"
+      },
+      "goldenLine": {
+        "v": null,
+        "status": "todo"
+      }
+    }
+  },
+  "cards": {
+    "signatureDeck": {
+      "v": null,
+      "status": "todo",
+      "note": "candidates: Utopia/Forget Utopia, Ideation & Creation / Creative Disruption decks"
+    },
+    "stance": {
+      "v": null,
+      "status": "todo"
+    },
+    "signatureCardRefs": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckLane": {
+      "v": null,
+      "status": "todo"
+    },
+    "secondaryDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "performanceDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "worldviewTags": {
+      "v": [
+        "transhumanism vs. co-creation",
+        "utopia vs. protopia"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "deckGoal": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "memory": {
+    "owner": {
+      "v": "KFB Town Resident Social Memory inside Lean Memory layers A–F",
+      "src": "CS-20; CS-26 §10",
+      "status": "SOURCE"
+    },
+    "valuesLiveIn": {
+      "v": [
+        "PLAYER_SAVE",
+        "NPC_MEMORY_VIEW",
+        "SOCIAL_RELATION",
+        "ENCOUNTER_RECEIPT",
+        "MOMENT_RECEIPT",
+        "CARD_COLLECTION_ENTRY",
+        "JOURNEY_ENTRY"
+      ],
+      "src": "CS-26 §11",
+      "status": "SOURCE"
+    },
+    "rememberable": {
+      "v": null,
+      "status": "todo"
+    },
+    "relationships": {
+      "v": [
+        {
+          "with": "4gtn_forgotten",
+          "type": "twin, estranged; secret repair visits",
+          "status": "GEORG"
+        }
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    }
+  },
+  "appearance": {
+    "figureRef": {
+      "v": "figures/4gtn_ceo.figure.json (draft by WSB B13)",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "figureStatus": {
+      "v": null,
+      "status": "todo",
+      "note": "WSB B13 pending"
+    },
+    "body": {
+      "v": {
+        "glb": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+        "rig": "Rig_Large"
+      },
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "renderStyle": {
+      "default": {
+        "v": "clay",
+        "src": "V-394; V-346",
+        "status": "GEORG"
+      },
+      "clayProfile": {
+        "v": "figure",
+        "src": "V-340",
+        "status": "GEORG"
+      },
+      "alternatives": {
+        "v": [],
+        "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+        "status": "GEORG"
+      }
+    },
+    "outfit": {
+      "v": "none for now (Georg 17.10.)",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "eyeRig": {
+      "v": "KFB eye rig required (V-391); remove only original eyes",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "styleNote": {
+      "v": "neutral styling, no samurai stereotype",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "baseModel": {
+      "v": {
+        "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/4gtn/4GTN.glb",
+        "note": "Original mit Linsen-Auge (keine NoEyes-Fassung vorhanden)"
+      },
+      "src": "KFB_HUB/50_BLENDER/B13/data/4gtn_ceo.figure.r1.json#body.rawSource",
+      "status": "SOURCE"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B13/data/4gtn_ceo.figure.r1.json",
+        "sha256": "ce96acdbeefaa36d13342928c11280459e4af9bea8583983fbb14ef15813ba52",
+        "kind": "canonical",
+        "cardId": "4gtn_ceo"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+        "rigClass": "Rig_Large"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "idle": {
+      "v": null,
+      "status": "todo"
+    },
+    "defaultPose": {
+      "v": null,
+      "status": "todo"
+    },
+    "preferredClips": {
+      "v": [],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "props": {
+      "v": [],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "gait": {
+      "v": "Rig_Large standard",
+      "src": "KayKit Rig_Large",
+      "status": "SOURCE"
+    },
+    "lightByStoryMode": {
+      "table": {
+        "v": "LIGHT_MODEL_R2.md#B1",
+        "src": "V-387",
+        "status": "SOURCE"
+      },
+      "override": {
+        "v": null,
+        "status": "todo"
+      }
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": null,
+      "status": "todo"
+    },
+    "spec": {
+      "v": null,
+      "status": "todo",
+      "note": "no voice cast yet (voice_casting.r1.json)"
+    },
+    "speed": {
+      "v": null,
+      "status": "todo"
+    },
+    "lang": {
+      "v": "en",
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    }
+  },
+  "conflicts": [],
+  "todo": [
+    "figure card from WSB B13",
+    "voice casting",
+    "signature pool / deck assignment",
+    "clips"
+  ],
+  "seedSchema": "kfb.character/1",
+  "kind": "kit_character",
+  "aliases": [
+    "4GTN",
+    "The CEO",
+    "Utopia CEO",
+    "gtn"
+  ],
+  "lore": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": "Keine Kulisse im Pack — die Promo teilt Schneeplanet gegen Waldbiom",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.gtn.habitatIntent",
+      "status": "PREFILL"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "atlas:gtn",
+      "role": "resident · frische Einheit",
+      "note": "Späh-Resident · Vorausgeschickt, sammelt Daten, geht dann schlafen",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.gtn"
+    }
+  ],
+  "songs": [],
+  "variants": [],
+  "additions": {
+    "memory.relationships": [
+      {
+        "v": [
+          "Erster Resident, dessen zwei Varianten ZWEI MODELLE sind — nicht Textur, nicht Sichtbarkeit",
+          "Vierter Rig_Large-Bewohner nach Black Knight, Demon Lord, Orc Brute und Monstrosity"
+        ],
+        "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.gtn.relationships",
+        "status": "SOURCE"
+      }
+    ]
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-large-actors.v0.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "filled",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "todo",
+    "performance.animations": "todo",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "variants",
+    "performance.animations",
+    "songs"
+  ],
+  "provenance": {
+    "_seedProvenanceCS": {
+      "v": [
+        "V-415",
+        "replies/FIGURES_R1/STORY_4GTN_TWINS_R1.md",
+        "KayKit Mystery Series 6 · 7 - January 2026 - 4GTN"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+    },
+    "additions.memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.gtn.relationships",
+      "tag": "SOURCE"
+    },
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.baseModel": {
+      "source": "KFB_HUB/50_BLENDER/B13/data/4gtn_ceo.figure.r1.json#body.rawSource",
+      "tag": "SOURCE"
+    },
+    "appearance.body": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.eyeRig": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.figureRef": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "appearance.outfit": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.clayProfile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-340)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.default": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-394; V-346)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.styleNote": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "cards.worldviewTags": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.languageOwner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src CS-20)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.signatureLines": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.tripletVoice.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-266, V-411)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "tag": "SOURCE"
+    },
+    "identity.aliases": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.series": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "identity.tier": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "memory.owner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src CS-20; CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "memory.valuesLiveIn": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src CS-26 §11)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.gait": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src KayKit Rig_Large)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.lightByStoryMode.table": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-387)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.archetype.frictionEngine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.castRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.personalityType": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.traits.coreWant": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.traits.failureLoop": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.traits.hiddenNeed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.traits.secret": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "preferences.biome": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.gtn.habitatIntent",
+      "tag": "PREFILL"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.place": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B13/data/4gtn_ceo.figure.r1.json#story",
+      "tag": "SOURCE"
+    },
+    "story.twin": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.worldKnowledge": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.worldLogicRule": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "variants": {
+      "source": null,
+      "tag": "todo"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json (seed; src V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

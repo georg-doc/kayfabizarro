@@ -1,0 +1,241 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "q_ghost",
+  "status": "draft-r1",
+  "kind": "cube_pet",
+  "identity": {
+    "name": {
+      "v": "Dark-Fluffer-Geist",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Dark-Fluffer-Geist (dunkel)",
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_q_ghost",
+        "kfb_q_ghost_healed"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_q_ghost",
+    "kfb_q_ghost_healed"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Ghost (CC0), as-is (V-574); Kit-Augen schwarz",
+        "V-583/V-589/V-595 Dark Fluffer (WS-NPC Phase C): Quaternius MonsterCuteCubes Ghost (CC0), as-is (V-574); *_healed: weiße Augen-Auflage"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#story; KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": "Geister",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "PREFILL"
+    },
+    "instrument": {
+      "v": "Singende Säge",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "PREFILL"
+    },
+    "style": {
+      "v": "Säge bzw. Theremin, Chorus, Echo",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:198",
+      "status": "PREFILL",
+      "note": "family row 'Geister'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [],
+  "variants": [
+    {
+      "id": "kfb_q_ghost_healed",
+      "type": "state",
+      "label": "Geist geheilt (weiße Augen)",
+      "card": "KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json",
+        "sha256": "4142fd0c8ffb59e6d474d7950719e9748ac9531aabe825c1847eef731768e828",
+        "kind": "canonical",
+        "cardId": "kfb_q_ghost"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json",
+        "sha256": "50acbcb8e73c848a9aa207b1f9926a05b4f8a5480b1fa2ed6be4c4102084ecd4",
+        "kind": "state",
+        "cardId": "kfb_q_ghost_healed"
+      }
+    ],
+    "profileRefs": [],
+    "licences": {
+      "v": {
+        "source": "Quaternius MonsterCuteCubes (Ultimate Platformer Pack) CC0 1.0",
+        "origin": "georg-doc/kayfabizarro @ c746a95, lokal aus der WSA-Übergabe 04-dark-fluffer/source (gelesen, kein Download)"
+      },
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "list"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#clips; KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "todo"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "songs"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json",
+      "tag": "SOURCE"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "PREFILL"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "PREFILL"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:198",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "Quaternius MonsterCuteCubes cube species",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#clips; KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json#clips",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_ghost.figure.json#story; KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K11/data/q_ghost_healed.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}

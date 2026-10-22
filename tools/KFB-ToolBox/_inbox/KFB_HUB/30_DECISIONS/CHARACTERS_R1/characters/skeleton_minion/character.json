@@ -1,0 +1,471 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "skeleton_minion",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Skeleton Minion",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-minion.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_disco_minion",
+        "kfb_disco_minion_k12",
+        "kfb_skeleton_minion",
+        "skeleton-minion"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_disco_minion",
+    "kfb_disco_minion_k12",
+    "kfb_skeleton_minion",
+    "skeleton-minion"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+        "B50 Friedhof (ra_graveyard_01): tanzende Skelette, bpm 120, Zerfall und Zusammensetzen je 16 s"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "{\"collapse\": \"Death_A\", \"reassemble\": \"kfb_rise_reverse_a\", \"riseAlt\": \"Spawn_Ground\", \"dances\": [\"kfb_dance_chicken_a\", \"kfb_dance_house_a\", \"kfb_dance_samba_a\", \"kfb_dance_hip_hop_a\"]}",
+          "file": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+          "line": null,
+          "heading": "behaviour"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Skeleton Minion | am_echo | 1,15 | reiner Kern, eilig |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 46,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:46",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "am_echo",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 1.15,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "Before we continue, The Skeleton of Waiter, Hold Music: Madame Foster just finishing up. In craft aisle for three decades.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Reiner Skelett-Kern, eilig.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_18_skeleton-minion__am-echo.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": "höher, hohl (Bandpass), kurzer Gruft-Hall, Klapper-Transient",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "status": "PREFILL",
+      "note": "family row 'Skelette'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "resident-graveyard-01",
+      "role": "Skeleton Minion",
+      "localId": "minion",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json#cast.minion"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "comic hype figure next to the radio",
+      "localId": "minion",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.minion"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "minion",
+      "src": "KFB_HUB/65_SCENELETS/disco/concept.json#cast"
+    },
+    {
+      "id": "resident-graveyard-01",
+      "role": "skeleton_minion (optional)",
+      "src": "KFB_HUB/65_SCENELETS/graveyard/concept.json#cast"
+    },
+    {
+      "id": "disco_street_01",
+      "role": "comic hype figure next to the radio",
+      "localId": "minion",
+      "note": "zwischen den Hits Laufzeit-Hüpfen; bei HIT 1 kfb_dance_chicken_a (im GLB)",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.minion"
+    },
+    {
+      "id": "ra_graveyard_01",
+      "role": "dancer",
+      "localId": "minion",
+      "note": "Skeleton Minion (neu, WSB: vorn am Platz)",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.minion"
+    }
+  ],
+  "songs": [
+    {
+      "id": "wrinkle_rumble",
+      "role": "golden line source (card #17)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "friedhof",
+      "type": "scene_variant",
+      "label": "friedhof",
+      "asset": "50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_minion.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_minion.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_minion.variant_assets.friedhof"
+    },
+    {
+      "id": "cc0_ohne_tanz",
+      "type": "scene_variant",
+      "label": "cc0_ohne_tanz",
+      "asset": "50_BLENDER/B50/graveyard/figures/KFB_Skeleton_minion.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_minion_cc0.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_minion.variant_assets.cc0_ohne_tanz"
+    },
+    {
+      "id": "disco",
+      "type": "scene_variant",
+      "label": "disco",
+      "asset": "50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_minion.r1.glb",
+      "card": "50_BLENDER/B50/disco/data/disco_minion.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_minion.variant_assets.disco"
+    },
+    {
+      "id": "kfb_disco_minion",
+      "type": "scene_variant",
+      "label": "Skeleton Minion · hüpft",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json#id"
+    },
+    {
+      "id": "kfb_disco_minion_k12",
+      "type": "scene_variant",
+      "label": "Skeleton Minion · hüpft",
+      "card": "KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json",
+      "src": "KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json#id"
+    },
+    {
+      "id": "kfb_skeleton_minion",
+      "type": "scene_variant",
+      "label": "Skeleton Minion · tanzt auf dem Friedhof",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json",
+        "sha256": "d43a1c4397675c314231cdc324d62e268ec20b93ce01a41ce6258dcac6ba614e",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_minion.figure.json",
+        "sha256": "d43a1c4397675c314231cdc324d62e268ec20b93ce01a41ce6258dcac6ba614e",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/data/disco_minion_pose_dance.figure.json",
+        "sha256": "19f406081f67dbc3d232770d617268925922400856c78239610026cea8effa27",
+        "kind": "pose",
+        "cardId": "kfb_disco_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/disco/scenelet/disco_minion.figure.json",
+        "sha256": "d43a1c4397675c314231cdc324d62e268ec20b93ce01a41ce6258dcac6ba614e",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json",
+        "sha256": "191ee40e53d9f2c12ccef472078812a137e5a2e6d3b4141310dbbce4cdfd8023",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_minion_k12"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+        "sha256": "0686689aa77f7818f3d07c8edb0d01895cf3ec27d7deb9dcc1e1707ff9c89092",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_minion.figure.json",
+        "sha256": "380d9054da77f31d3b586bf339eb5d98bb8a890d15d992899d9232f2605d1eb8",
+        "kind": "canonical",
+        "cardId": "kfb_skeleton_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_minion_cc0.figure.json",
+        "sha256": "dd9b756fc44365ca81fee737e242ed2eedb2b7d739dbd55e1e6289114674f9b3",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_minion_pose_dance.figure.json",
+        "sha256": "96fca567cefce883519cf2d0c4c7e83e446f1646f3735681014a0f43c2b48a1d",
+        "kind": "pose",
+        "cardId": "kfb_skeleton_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_minion_pose_idle.figure.json",
+        "sha256": "80753a02de29826fa4b6cffda974ed97781abbb213b00d5ca192385f555e7be6",
+        "kind": "pose",
+        "cardId": "kfb_skeleton_minion"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/scenelet/gy_minion.figure.json",
+        "sha256": "380d9054da77f31d3b586bf339eb5d98bb8a890d15d992899d9232f2605d1eb8",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_minion"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Skeletons/Skeleton_Minion.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "animations": {
+      "v": [
+        "kfb_dance_chicken_a",
+        "kfb_dance_house_a",
+        "kfb_dance_samba_a",
+        "kfb_dance_hip_hop_a",
+        "Idle_A",
+        "Death_A",
+        "kfb_rise_reverse_a",
+        "Spawn_Ground",
+        "list",
+        "cues",
+        "runtimeOnly",
+        "floorLift",
+        "floorLiftNote",
+        "floorLiftReport",
+        "bounce"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_minion.clips; KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.minion.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.minion.clip",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "memory.relationships"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:46",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json; KFB_HUB/65_SCENELETS/disco/concept.json; KFB_HUB/65_SCENELETS/graveyard/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-minion.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_minion.clips; KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json#clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01.json#actors.minion.clip; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.minion.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json#story; KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json#story; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/disco_street_01/disco_minion.figure.json; KFB_HUB/50_BLENDER/K12/data/disco_minion.k12.figure.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_minion.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-minion].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

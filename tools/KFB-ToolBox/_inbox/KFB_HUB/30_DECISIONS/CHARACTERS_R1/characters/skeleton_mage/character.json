@@ -1,0 +1,425 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "skeleton_mage",
+  "status": "draft-r1",
+  "kind": "kit_character",
+  "identity": {
+    "name": {
+      "v": "Skeleton Mage",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-mage.label",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_skeleton_mage",
+        "skeleton-mage"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_skeleton_mage",
+    "skeleton-mage"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": "B50 Friedhof (ra_graveyard_01): tanzende Skelette, bpm 120, Zerfall und Zusammensetzen je 16 s",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json#story",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Untot-Resident · Magie",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.townRole",
+      "status": "SOURCE"
+    }
+  },
+  "performance": {
+    "activity": {
+      "v": "Stützt sich auf den Schädelstab",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.activity",
+      "status": "SOURCE"
+    },
+    "animations": {
+      "v": [
+        "kfb_dance_chicken_a",
+        "kfb_dance_house_a",
+        "kfb_dance_samba_a",
+        "kfb_dance_hip_hop_a",
+        "Idle_A",
+        "Death_A",
+        "kfb_rise_reverse_a",
+        "Spawn_Ground"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_mage.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.mage.clip",
+      "status": "SOURCE"
+    }
+  },
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "{\"collapse\": \"Death_A\", \"reassemble\": \"kfb_rise_reverse_a\", \"riseAlt\": \"Spawn_Ground\", \"dances\": [\"kfb_dance_chicken_a\", \"kfb_dance_house_a\", \"kfb_dance_samba_a\", \"kfb_dance_hip_hop_a\"], \"headgearDrop\": \"Hut fällt bei drop ab (KFB_*_Dropped), springt im Rückwärts-Clip bei pop_in zurück\"}",
+          "file": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+          "line": null,
+          "heading": "behaviour"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {},
+  "dialogue": {
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| Skeleton Mage | bm_fable 60 + am_echo 40 | 0,90 | Kern, britisch-gelehrt |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 45,
+          "heading": "KayKit-Figuren aus dem Eye-Rig-Batch (Medium 27, Large 4)"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:45",
+      "status": "PREFILL"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "Kokoro-82M v1.0 ONNX",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "status": "SOURCE"
+    },
+    "spec": {
+      "v": "bm_fable60+am_echo40",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].voiceSpec",
+      "status": "SOURCE"
+    },
+    "speed": {
+      "v": 0.9,
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].speed",
+      "status": "SOURCE"
+    },
+    "lang": {
+      "v": "en-gb",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].lang",
+      "status": "SOURCE"
+    },
+    "goldenLine": {
+      "v": "The Unkillable Consciousness, Subjective Immortality: never perceive death.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Skelett-Kern, britisch-gelehrt.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_17_skeleton-mage__bm-fable60+am-echo40.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].file",
+      "status": "SOURCE"
+    }
+  },
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": "höher, hohl (Bandpass), kurzer Gruft-Hall, Klapper-Transient",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "status": "PREFILL",
+      "note": "family row 'Skelette'"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "ra_graveyard_01",
+      "role": "dancer",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.skeleton_mage"
+    },
+    {
+      "id": "rpg_monster_camp (B49)",
+      "role": "caster",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#roles_by_scene.skeleton_mage"
+    },
+    {
+      "id": "atlas:skeleton-mage",
+      "role": "resident",
+      "note": "Untot-Resident · Magie",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage"
+    },
+    {
+      "id": "resident-graveyard-01",
+      "role": "Skeleton Mage",
+      "localId": "mage",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json#cast.mage"
+    },
+    {
+      "id": "resident-graveyard-01",
+      "role": "skeleton_mage",
+      "src": "KFB_HUB/65_SCENELETS/graveyard/concept.json#cast"
+    },
+    {
+      "id": "ra_graveyard_01",
+      "role": "dancer",
+      "localId": "mage",
+      "note": "Skeleton Mage",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.mage"
+    }
+  ],
+  "songs": [
+    {
+      "id": "kayfabizarro_philosophy",
+      "role": "golden line source (card #39)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_philosophy.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].goldenLine"
+    }
+  ],
+  "variants": [
+    {
+      "id": "friedhof",
+      "type": "scene_variant",
+      "label": "friedhof",
+      "asset": "50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_mage.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_mage.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_mage.variant_assets.friedhof"
+    },
+    {
+      "id": "cc0_ohne_tanz",
+      "type": "scene_variant",
+      "label": "cc0_ohne_tanz",
+      "asset": "50_BLENDER/B50/graveyard/figures/KFB_Skeleton_mage.r1.glb",
+      "card": "50_BLENDER/B50/graveyard/data/gy_mage_cc0.figure.json",
+      "note": null,
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_mage.variant_assets.cc0_ohne_tanz"
+    },
+    {
+      "id": "kfb_skeleton_mage",
+      "type": "scene_variant",
+      "label": "Skeleton Mage · tanzt auf dem Friedhof",
+      "card": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json#id"
+    }
+  ],
+  "memory": {
+    "relationships": {
+      "v": [
+        "Dritter Skeleton der Welle",
+        "Magie-Gegenstück zur Witch und zum Lorekeeper"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.relationships",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+        "sha256": "d380dd8ea3c2b8d2e3229022fa095ea84fa913b74b5652e898fbeab9d7237c82",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_mage.figure.json",
+        "sha256": "cdff178aac5033567de8c0b7ad37b18f1de60f05437ded41e53a9943d84cb6df",
+        "kind": "canonical",
+        "cardId": "kfb_skeleton_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_mage_cc0.figure.json",
+        "sha256": "1211cb701e368e1b9be2fdcedec940971173f27948bbc00317e2f9618651e18c",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/data/gy_mage_pose_dance.figure.json",
+        "sha256": "fe2d2076213bee3233b20df8fb19375823b2e3e6c075d642dbfa7fcc79c445ec",
+        "kind": "pose",
+        "cardId": "kfb_skeleton_mage"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B50/graveyard/scenelet/gy_mage.figure.json",
+        "sha256": "cdff178aac5033567de8c0b7ad37b18f1de60f05437ded41e53a9943d84cb6df",
+        "kind": "duplicate",
+        "cardId": "kfb_skeleton_mage"
+      }
+    ],
+    "profileRefs": [],
+    "kitModel": {
+      "v": {
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+        "rigClass": "Rig_Medium"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "status": "SOURCE"
+    }
+  },
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "todo",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "filled",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "story.background",
+    "personality.quirks",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.kitModel": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:196",
+      "tag": "PREFILL"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:45",
+      "tag": "PREFILL"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/graveyard-01.json; KFB_HUB/65_SCENELETS/graveyard/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json#actors.skeleton-mage.label",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "KayKit/Quaternius kit actor (S8/S4 ra_paths/S7)",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.relationships",
+      "tag": "SOURCE"
+    },
+    "performance.activity": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.activity",
+      "tag": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.skeleton_mage.clips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01.json#actors.mage.clip",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_philosophy.suno.txt",
+      "tag": "SOURCE"
+    },
+    "story.background": {
+      "source": null,
+      "tag": "todo"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.skeleton-mage.townRole",
+      "tag": "SOURCE"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/60_CAST/cast.r1.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/ra_graveyard_01/gy_mage.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].lang",
+      "tag": "SOURCE"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].voiceSpec",
+      "tag": "SOURCE"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[skeleton-mage].speed",
+      "tag": "SOURCE"
+    }
+  }
+}

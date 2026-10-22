@@ -1,0 +1,246 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "king_kayfabian",
+  "status": "draft-r1",
+  "kind": "custom_rig",
+  "identity": {
+    "name": {
+      "v": "King Kayfabian",
+      "src": "figure card displayName (KFB_HUB/50_BLENDER/B45/data/king_a.figure.json)",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "King Kayfabian",
+      "src": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json#displayName",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "kfb_king_a",
+        "kfb_king_b"
+      ],
+      "src": "aliases.json",
+      "status": "SOURCE"
+    }
+  },
+  "aliases": [
+    "kfb_king_a",
+    "kfb_king_b"
+  ],
+  "story": {
+    "sceneNotes": {
+      "v": [
+        "B45 (V-551) KFB-Castle: Verkündigung auf dem Turm, Kronen-Gag"
+      ],
+      "src": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json#story; KFB_HUB/50_BLENDER/B45/data/king_b.figure.json#story",
+      "status": "SOURCE"
+    },
+    "loreStatements": {
+      "v": [
+        {
+          "text": "Authority as performance. Someone has to wear the crown.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+          "line": null,
+          "heading": "deck kayfabizarro_monomyth_mayhem card #51 King Kayfabian"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+      "status": "PREFILL"
+    }
+  },
+  "lore": {},
+  "personality": {},
+  "dialogue": {},
+  "voice": {},
+  "chatter": {
+    "family": {
+      "v": null,
+      "status": "todo"
+    },
+    "instrument": {
+      "v": null,
+      "status": "todo"
+    },
+    "style": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [],
+  "songs": [
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "card #51 'King Kayfabian'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json#cardNumber=51"
+    }
+  ],
+  "variants": [
+    {
+      "id": "kfb_king_a",
+      "type": "look",
+      "label": "King Kayfabian · Krone",
+      "card": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json#id"
+    },
+    {
+      "id": "kfb_king_b",
+      "type": "look",
+      "label": "King Kayfabian · Helm",
+      "card": "KFB_HUB/50_BLENDER/B45/data/king_b.figure.json",
+      "src": "KFB_HUB/50_BLENDER/B45/data/king_b.figure.json#id"
+    }
+  ],
+  "memory": {},
+  "appearance": {
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json",
+        "sha256": "960b3b93d55735c1717ba5d9184ae4007563b5ce0c47c6af9ce15bfd0737f6c6",
+        "kind": "canonical",
+        "cardId": "kfb_king_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/scenelet/king_a.figure.json",
+        "sha256": "960b3b93d55735c1717ba5d9184ae4007563b5ce0c47c6af9ce15bfd0737f6c6",
+        "kind": "duplicate",
+        "cardId": "kfb_king_a"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/data/king_b.figure.json",
+        "sha256": "0383fafde8f42248746e9f725bf5b5e9b8c899de2ec2a26590d0a630deeb8c7b",
+        "kind": "state",
+        "cardId": "kfb_king_b"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B45/scenelet/king_b.figure.json",
+        "sha256": "0383fafde8f42248746e9f725bf5b5e9b8c899de2ec2a26590d0a630deeb8c7b",
+        "kind": "duplicate",
+        "cardId": "kfb_king_b"
+      }
+    ],
+    "profileRefs": []
+  },
+  "performance": {},
+  "views": {
+    "dramatis_personae": {
+      "present": false,
+      "cacheId": null,
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "todo",
+    "voice.spec": "todo",
+    "chatter.instrument": "todo",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "todo",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "todo",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "personality.quirks",
+    "dialogue.speechPatterns",
+    "voice.spec",
+    "chatter.instrument",
+    "preferences.weapons",
+    "preferences.biome",
+    "dioramas",
+    "memory.relationships",
+    "performance.animations"
+  ],
+  "provenance": {
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dialogue.speechPatterns": {
+      "source": null,
+      "tag": "todo"
+    },
+    "dioramas": {
+      "source": null,
+      "tag": "todo"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json#displayName",
+      "tag": "SOURCE"
+    },
+    "identity.name": {
+      "source": "figure card displayName (KFB_HUB/50_BLENDER/B45/data/king_a.figure.json)",
+      "tag": "SOURCE"
+    },
+    "kind": {
+      "source": "own figure card without kit identity",
+      "tag": "PREFILL"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "performance.animations": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+      "tag": "SOURCE"
+    },
+    "story.loreStatements": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+      "tag": "PREFILL"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json#story; KFB_HUB/50_BLENDER/B45/data/king_b.figure.json#story",
+      "tag": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/B45/data/king_a.figure.json; KFB_HUB/50_BLENDER/B45/data/king_b.figure.json",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": null,
+      "tag": "todo"
+    }
+  }
+}
