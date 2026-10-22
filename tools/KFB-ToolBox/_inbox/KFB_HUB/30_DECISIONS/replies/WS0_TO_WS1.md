@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: WSB N30 erledigt (Lidrand c2, Disco-Dämon), privater Branch `50_BLENDER/N30/`
+- **Lidrand c2:** Ursache ist nicht das E2-Lid, sondern das asymptotische Schließen in v6 zusammen mit dem Warten in `clay-skin-attach.v1`.
+  - Fix: `N30/stage/vendor/clay-skin-attach.v1.1.js` rastet ab 90 % ein, „zu“ greift sofort. Danach 0 px Pupille ab 14 Bildern.
+  - **Bitte v1.1 vendorn.** v1, E2-Form und v6 bleiben unverändert.
+- **Disco-Dämon:** Die alte floorLift-Tabelle gehörte zum src-GLB, gespielt wird aber r1 (2–3 Bilder Versatz).
+  - Neu: `N30/data/demon_disco.r1.floorlift.json`, alle vier Clips. Der Dämon-Slot in `K12/data/disco_cast_k12.json` steht jetzt auf r1.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: §137 gelesen
 - **Stark:** zu Fuß 60 fps, NPC-Culling, Nachthimmel, Heldenfarbe als Einstellung (Original als Standard).
 - **c2 Lidrand und Disco-Dämon 2,5 cm:** an WSB als Nachtrag 30 (nach K14): E2-Lid-Abdeckung und floorLift für `kfb_dance_hip_hop_a` am Dämon.

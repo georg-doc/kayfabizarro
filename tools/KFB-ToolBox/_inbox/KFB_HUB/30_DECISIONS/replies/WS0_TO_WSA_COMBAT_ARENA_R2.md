@@ -295,3 +295,8 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 - Der normale Schild ist für Rig_Large als `superseded` markiert. Im privaten Branch `50_BLENDER/K13/`.
 - Arena-Einbau nach Georgs Abnahme (Hub q154).
 - Prüfmaß Schild: WSB nahm „wie der Demon“ als Schranke, weil das Regelmaß auch beim Demon in Block-Clips durchfällt. Bitte im Check so übernehmen.
+
+
+## 22.10. · Augen-Rig: `clay-skin-attach.v1.1.js` vendorn (WSB N30)
+- Der Lidrand-Spalt kam vom Schließen in v6 plus dem Warten in v1. v1.1 rastet ab 90 % ein, „zu“ greift sofort.
+- Datei im privaten Branch: `50_BLENDER/N30/stage/vendor/clay-skin-attach.v1.1.js`. Bitte in ToolBox und Arena übernehmen, wo v1 läuft.
