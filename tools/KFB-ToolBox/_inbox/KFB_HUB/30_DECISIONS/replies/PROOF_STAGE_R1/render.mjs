@@ -70,6 +70,7 @@ if (id && !SOURCES.figures[id] && !glbUrl) die(`id "${id}" not in sources.json a
 if (id && SOURCES.figures[id]) { const s = SOURCES.figures[id]; if (!glbPath) glbPath = expand(s.glb); if (!fs.existsSync(glbPath)) die('GLB from sources.json missing: ' + glbPath); }
 if (id && !cardPath) { const s = SOURCES.figures[id]; const cp = s?.card ? expand(s.card) : path.join(expand(SOURCES.cards), id + '.figure.json'); if (fs.existsSync(cp)) { cardPath = cp; cardUrl = urlFor(cp); } }
 if (glbPath && !glbUrl) glbUrl = urlFor(glbPath);
+{ const { fbCanonGuard } = await import(new URL('../../../50_BLENDER/FB/scripts/fb-canon-guard.mjs', import.meta.url)); try { fbCanonGuard({ glbPath, cardPath, id }); } catch (e) { die(e.message); } }   // V-658 FB nur als FB_CANON
 const sha = (f) => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 
 /* ---------- static server ---------- */

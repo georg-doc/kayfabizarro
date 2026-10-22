@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N31: FB-Herkunft geklärt (v5b über die abgenommene Karte FIGURES_R1 body.glb), FB-Sperre in WSB-Werkzeugen und zentraler Proof-Stage (render.mjs, Patch eingespielt); K15 r2 geheilte Augen nach K11-Golden mit Weißanteil-Prüfung, dunkle Fassungen heller, Hub q158.
 - V-661 Antworten WS1 §139: Blobs statt Zungen (V-570), gemalte Kuppelwolken, Aktionsleisten-Props (WSB N32), Laternen mit kfb-gem.
 - Georg Hub: q154 K13 PASS; V-658 FB-Kanon global (eine Datei FB_CANON mit Hash, Prüfung im Code bei allen Verbrauchern, Stopp bis Abnahme, 1,81 m); V-659 K15 FAIL geheilte Augen (Ursache + Neubau nach K11-Golden, lesbarer); V-660 K14 TUNE düsterer/infektiös, Fensterlicht-Verlauf, Goo-Decal/Shader/Netz, Zerstörung ohne Fluff.
 - V-657 Schrift Bangers für Ingame-Wörter, Marsch über Georgs Atlas-Haltung (Mixamo entfällt). Recherche-Brief Chatterbox; Pilot-Ernte (5–15 % einstimmig aus vollen Songs → eigene Solo-Prompts nötig). Hub q156 Cubes, q157 Fahrer im Dach.

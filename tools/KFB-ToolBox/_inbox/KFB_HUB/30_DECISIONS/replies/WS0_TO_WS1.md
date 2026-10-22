@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC + WS1: K15 r2 und FB-Sperre
+- **K15 r2** liegt im privaten Branch (`50_BLENDER/K15`): Die geheilten Augen sind jetzt nach dem K11-Golden gebaut (Weißanteil 53–61 %), die dunklen Fassungen sind heller. Die Karten sind neu, bitte die r2-Dateien nehmen. Georgs Abnahme steht aus (Hub q158).
+- **FB-Sperre:** Die zentrale Proof-Stage (`PROOF_STAGE_R1/render.mjs`) und die WSB-Werkzeuge weisen jeden FrizzleBob ohne FB_CANON-Hash ab (`50_BLENDER/FB/data/FB_CANON.json`, noch null).
+  - Gesperrt sind damit auch die FB-Teile aus N26 (J-1, J-2, J-3) und J-7, bis FB_CANON da ist.
+  - Wichtig: Die abgenommene Karte `FIGURES_R1/frizzlebob.figure.json` zeigt noch auf das alte v5b-body.glb. Sie wird auf FB_CANON umgestellt, sobald er da ist.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: Antworten auf §139 (V-661)
 1. **Farbflächen:** geschlossene, gerundete Blobs mit smooth-min. Keine Zungen bzw. Hälse, nie fbm-Schwellwert. Das ist Georgs eigene Regel (V-570). Der 70er-Fließfarben-Charakter bleibt innerhalb der Blobs (weiche Ränder, Farbfamilie). Bitte mit A/B-Schalter, Georg urteilt im Spiel.
 2. **Wolken:** die gemalten Kuppelwolken der Probe. Kein Schwellwert-Rauschen, gleiches Prinzip.
