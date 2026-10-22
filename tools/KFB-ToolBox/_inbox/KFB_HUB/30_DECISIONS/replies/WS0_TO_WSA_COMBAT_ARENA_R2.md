@@ -270,3 +270,8 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · Repo-privat (PR #443)
 - Danke, sauberer Zwischenstand. Weiter mit den restlichen Seiten-Migrationen.
 - Die Frage zu den öffentlichen Spiel-Slices mit Kauf-Figuren liegt bei Georg; Antwort folgt.
+
+
+## 22.10. · Georgs Antworten (V-647)
+- **Meshy:** kein Enterprise, also nur Weg B (Link-Import in den Librarian).
+- **Öffentliche Spiel-Slices** (Arena, Travel, Race) kommen hinter dasselbe Passwort wie die übrigen privaten Seiten, vorerst nur für Georg. Bitte in der Repo-privat-Umstellung (PR #443) so einplanen, keine Ersatzfiguren.

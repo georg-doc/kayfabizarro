@@ -9189,6 +9189,21 @@
    "applies": "nach MVP"
   },
   {
+   "id": "V-647",
+   "date": "2026-10-22",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 22.10.: kein Meshy-Enterprise, also nur Weg B (V-644). Öffentliche Spiel-Slices (Arena, Travel, Race) kommen vorerst hinter dasselbe Passwort wie die übrigen privaten Seiten, nur für Georg (WSA bei der Repo-privat-Umstellung V-599). Splat-Schiene: Der Web-Chat sucht Beispiele und rendert sie für Georg (Brief BRIEF_WEBCHAT_SPLAT_EXAMPLES_R1.md), nur Ansicht, kein Einbau.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kauf-Figuren bleiben im Spiel, sind aber nicht öffentlich; Splats erst ansehen, dann entscheiden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9276,7 +9291,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1089",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1090",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
