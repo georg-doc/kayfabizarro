@@ -4,14 +4,15 @@
 // gegen Stapeln. Ein AudioContext mit dem Motor (engineAudio.audioCtx); startet erst nach einer Taste; ohne Ton (Hash mute) still.
 // createSuckAudio({ muted }) → { resume(), cue(name, job), update(dt, active), info() }
 import { PROPULSION_PIN, audioCtx } from './engineAudio.js'
+import { bus, audioMode, AUDIO_ROOT } from './kfbAudio.js' // WS-Audio R1: SFX-Bus; volle Fassung lädt dieselben Dateien vom lokalen Ton-Server
 const BASE = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${PROPULSION_PIN}/media/3D_Assets/Audio/KFB_ElevenLabs_SFX_r1/fluff_suction_r1/`
 const FILES = { start: 'S01_suck_start', loop: 'S02_suck_loop', tree: 'S03_pop_tree', ground: 'S04_pop_ground', water: 'S05_pop_water', slurp: 'S06_slurp_in', full: 'S07_tank_full' }
 export const SUCK_MIX = Object.freeze({ master: 0.5, start: 0.7, loop: 0.45, pop: 0.8, slurp: 0.6, gap: { start: 0.5, pop: 0.06, slurp: 0.08 }, spread: 0.08 })
 
-export function createSuckAudio({ base = BASE, muted = false } = {}) {
+export function createSuckAudio({ base = audioMode() === 'full' ? AUDIO_ROOT + 'el/fluff_suction_r1/' : BASE, muted = false } = {}) {
   const ac = muted ? null : audioCtx(); if (!ac) return { resume() {}, cue() {}, update() {}, info: () => ({ muted: true }) }
   const st = { ok: false, error: null, buffers: {}, plays: 0, flip: 0, last: {}, loop: null }
-  const out = ac.createGain(); out.gain.value = SUCK_MIX.master; out.connect(ac.destination)
+  const out = ac.createGain(); out.gain.value = SUCK_MIX.master; out.connect(bus('sfx'))
   const keys = Object.keys(FILES).flatMap((k) => ['a', 'b'].map((v) => [k + '_' + v, `${FILES[k]}_${v}.mp3`]))
   const ready = Promise.all(keys.map(([k, f]) => fetch(base + f).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() }).then((b) => ac.decodeAudioData(b)).then((buf) => { st.buffers[k] = buf })))
     .then(() => { st.ok = true }).catch((e) => { st.error = String(e?.message || e) })

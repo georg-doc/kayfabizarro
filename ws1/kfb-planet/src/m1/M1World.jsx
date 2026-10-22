@@ -17,7 +17,7 @@
 import * as THREE from 'three'
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Physics, RigidBody, TrimeshCollider, ConvexHullCollider, CuboidCollider, CylinderCollider, CoefficientCombineRule, useRapier } from '@react-three/rapier'
+import { Physics, RigidBody, TrimeshCollider, ConvexHullCollider, CuboidCollider, CylinderCollider, CapsuleCollider, CoefficientCombineRule, useRapier } from '@react-three/rapier'
 import ModuleHost from '../ModuleHost'
 import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
@@ -35,7 +35,7 @@ import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FE
 import { createSky, skyLog } from '../modules/m1-sky'
 import { createSkyR13 } from '../modules/sky-r13'
 import { isTerrain3, TERRAIN3_CFG, applyShadowTone3, applyFootShade, applyFigureShadow } from '../look/terrain3.js'
-import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight } from '../modules/m1-terrain'
+import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog } from '../modules/amphitheater'
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
@@ -54,6 +54,8 @@ import { expose, DEBUG } from '../debug'
 import { createLightPoolKit } from '../vendor/light/kfb-light-pool.v1.js' // V-572: Lichtpfützen projiziert statt Scheiben
 import clipsGeneral from '../assets/actors/Rig_Medium_General.glb?url'
 import clipsMove from '../assets/actors/Rig_Medium_MovementBasic.glb?url'
+import clipsSim from '../assets/actors/Rig_Medium_Simulation.glb?url' // WS-NPC: Waving (Gruß), KayKit Character Animations as-is (Lead-OK 21.10.)
+import clipsSpecial from '../assets/actors/Rig_Medium_Special.glb?url' // WS-NPC Phase D: Skeletons_* (KayKit Character Animations 1.1 as-is, Blob 4c2277de)
 import { createOrchard3d } from '../modules/orchard3d'
 import { createFluffSuck } from '../modules/fluffSuck.js'
 import { createSuckAudio } from '../audio/suckAudio.js'
@@ -70,6 +72,19 @@ import { SKIP_DEFAULT } from '../vendor/clay/kfb-clay.v1.1.js'
 import { createHarvestState } from '../world/harvest.js'
 import { createSaveStore, freshSave } from '../world/save.js'
 import TREE_ANCHORS from '../data/world/kaykit-tree-fluff-anchors.v1.json'
+import { createResidentLife } from '../npc/residentLife'
+import NPC_WORLD from '../data/npc/residents.r1.json'
+import { interpTrack } from './m1Clock'
+import { createDarkFluffer } from '../npc/darkFluffer'
+import { createGroupLife } from '../npc/groupLife'
+import { createBandLife } from '../npc/bandLife'
+import { createDiscoLife } from '../npc/discoLife' // Lead: Disco K12 (Dioramen-Test Schritt 3)
+import { discoK12, discoCast, discoMC, MOTION_LIBRARY_URL } from '../actors/discoCast'
+import { withPrivateBody } from '../actors/privateCast'
+import { botCast, botStationUrl, botBlockUrl } from '../actors/botCast'
+import { CLASS_SCALE } from '../actors/stageCast'
+import AudioHost from '../audio/AudioHost.jsx' // WS-Audio R1 (V-598): ein Ton-Pfad (Mixer, Motor/Flug, Atmo, Kampf, Musik)
+import { ENDLESS_ON, EndlessDrive, adoptRig, createEndlessTerrainMod, createDriveSkyMod } from '../world/EndlessDrive.jsx' // V-619 world=endless (WS1b): endlose Biom-Fahrt, Licht nur über das Rig
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
 const BIOME = BIOMES[1] // wie #stage (Moos-Insel), bis WS0 Biom/Kartenzone der Bühne festlegt (§14.4)
@@ -108,12 +123,51 @@ export const TERRAIN2 = isTerrain2(hash), T2_WORLD = (/world=(canyon|bucht|otown
 const T2_AMPH_PAL = TERRAIN2 ? stagePaletteFor(null, { override: T2_WORLD, variant: 'b' })?.amph || null : null
 // #439 look=terrain3 (Georg 21.10.): Malweise der Gelände-Probe – Fließfarben, Himmel v2 mit Kuppelwolken; palette=mesa|moos|wueste|schnee|pastell
 export const TERRAIN3 = isTerrain3(hash), T3_PAL = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(hash) || [0, TERRAIN3_CFG.palette])[1]
-const TERR = { biome: BIOME, ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
+// #439 world=probe (Georg 21.10.): Geländeform der Gelände-Probe als zweite Welt, kombinierbar mit look=terrain3 (nicht mit terrain2: dort wählt world die Palette)
+export const PROBE_WORLD = /(^|[#,])world=probe(,|$)/.test(hash)
+const TERR = { biome: BIOME, ...(PROBE_WORLD ? { world: 'probe' } : {}), ...(TERRAIN3 ? { look: 'terrain3', palette: T3_PAL } : {}), ...(TERRAIN2 ? { look: 'terrain2', world: T2_WORLD, ring: T2_AMPH_PAL ? { stage: T2_AMPH_PAL.cols[4], rock: T2_AMPH_PAL.cols[3] } : null } : {}) }
 const AMPH = { biome: BIOME, groundR: 0.01, worldK: K, ...(TERRAIN2 ? { palette: T2_AMPH_PAL, palAmt: 1, clay: true, castShadow: true } : {}) } // #439: gleiche Palette, Knete v1.1 und echter Schatten wie das Gelände // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
 const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 
 const mods = {}
 const mk = (k, f) => (o) => { mods[k] = f(o); return mods[k] }
+// WS-NPC Phase A (V-585, BRIEF_WS1_NPC_LIFE_R2): Bewohner mit Tagesplan hinter dem Hash npc (sinnvoll mit harvest: Arbeits-POIs an den Obstgärten).
+// npct=<s> setzt die Startzeit im Tag (Standard 0,27 Tag: das erste Treffen am Wiesenrand folgt nach ≈ 20 s). Nur im J17-Maßstab (nicht wscale=legacy).
+const NPC_ON = /(^|[#,])npc(,|$)/.test(hash) && K !== 1, NPC_T0 = +(/npct=(\d+(?:\.\d+)?)/.exec(hash)?.[1] ?? NPC_WORLD.dayS * 0.27)
+const makeNpc = mk('npc', (o) => { const m = createResidentLife(o), offs = m.holders().map((h) => interpTrack(h)), own = m.dispose; m.dispose = () => { offs.forEach((f) => f()); own() }; return m })
+// WS-NPC Phase C P1 (V-583, Georg 21.10.: Ghost, Heil-Waffe Gun_Pistol) hinter dem Hash fluffer (braucht harvest: Baum, Schuss, Fluff); fluffert=<s> Startzeit
+const FLUFFER_ON = /(^|[#,])fluffer(,|$)/.test(hash) && /(^|[#,])harvest(=\w+)?(,|$)/.test(hash) && K !== 1, FLUFFER_T0 = +(/fluffert=(\d+(?:\.\d+)?)/.exec(hash)?.[1] ?? 4)
+const makeFluffer = mk('fluffer', (o) => { const m = createDarkFluffer(o), off = interpTrack(m.holder()), own = m.dispose; m.dispose = () => { off(); own() }; return m })
+const FLUFFER_OPTS = { def: NPC_WORLD.fluffers[0], t0: FLUFFER_T0, onEvent: (e) => { if (e.type === 'healed') mods.npc?.observeCure?.({ flufferId: e.flufferId, at: e.at, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }, clock: () => M1CLOCK.t, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), terrain: () => mods.terrain, orchard: () => mods.orchard, player: () => mods.player }
+// WS-NPC Phase D (Georg 21.10. Go, SPEC_NPC_PATROL_R1): Gruppen auf Fahrplan hinter dem Hash patrol (heute: Skelett-Patrouille westlich des Theaters)
+const PATROL_ON = /(^|[#,])patrol(,|$)/.test(hash) && K !== 1, GROUP_IDS = NPC_WORLD.groups.flatMap((g) => g.members.map((m) => m.id))
+const makeGroups = mk('groups', (o) => { const m = createGroupLife(o), offs = m.holders().map((h) => interpTrack(h)), own = m.dispose; m.dispose = () => { offs.forEach((f) => f()); own() }; return m })
+// WS-NPC Phase D · Ork-Band (Lead 21.10.): #band; Ort #bandat=x,z,Grad. Private Assets (KayKit-Kauf) nur, wenn src/private beim Bauen da ist (gitignored,
+// Verweis auf ~/kfb-ws1/private-assets, flacher Klon von assets/private); sonst Platzhalter. Nichts davon gehört ins Repo.
+const BAND_ON = /(^|[#,])band(,|$)/.test(hash) && K !== 1, BAND_DEF = NPC_WORLD.bands?.[0]
+const BAND_PRIV = import.meta.glob('../private/50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_*.r1.glb', { query: '?url', import: 'default', eager: true })
+const BAND_SCENE = Object.values(import.meta.glob('../private/50_BLENDER/ORKBAND/scenelet/orc_band_01.scenelet.json', { import: 'default', eager: true }))[0] || null
+const BAND_AT = (() => { const m = /bandat=(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)(?:,(-?\d+(?:\.\d+)?))?/.exec(hash); return m ? { at: [+m[1], +m[2]], yawDeg: m[3] != null ? +m[3] : BAND_DEF?.yawDeg ?? 0 } : { at: BAND_DEF?.at || [0, 0], yawDeg: BAND_DEF?.yawDeg ?? 0 } })()
+const BAND_IDS = (BAND_SCENE?.actors || BAND_DEF?.fallback?.actors || []).map((a) => 'band-' + a.id)
+const makeBand = mk('band', createBandLife)
+// Lead · Disco K12 (#disco, discoat=x,z[,Grad]): 7 Tänzer aus src/private (WSB K12) + MC FrizzleBob; ohne private Dateien Kulisse + MC (PLACEHOLDER).
+// Ort: ohne discoat die flachste freie Stelle 22–70 m um die Band (abseits Band und Platzmitte), Publikum zur Platzmitte.
+const DISCO_ON = /(^|[#,])disco(,|$)/.test(hash) && K !== 1
+const DISCO_AT = (() => { const m = /discoat=(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)(?:,(-?\d+(?:\.\d+)?))?/.exec(hash); return m ? { at: [+m[1], +m[2]], yawDeg: m[3] != null ? +m[3] : null } : { at: null, yawDeg: null } })()
+const makeDisco = mk('disco', createDiscoLife)
+const DISCO_OPTS = { k12: discoK12(), cast: discoCast, mc: discoMC, createActor, at: DISCO_AT.at, yawDeg: DISCO_AT.yawDeg, near: BAND_AT.at, avoid: [{ at: BAND_AT.at, r: 20 }, { at: [0, 0], r: 28 }],
+  groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => (M1CLOCK.t ?? 0) + NPC_T0, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null },
+  worldScale: K, classScale: CLASS_SCALE, motionLibraryUrl: MOTION_LIBRARY_URL, propsBase: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/' }
+const BAND_OPTS = BAND_DEF ? { scenelet: BAND_SCENE || { ...BAND_DEF.fallback, assets: {} }, urls: Object.fromEntries(Object.entries(BAND_PRIV).map(([k, v]) => [k.split('/').pop(), v])), at: BAND_AT.at, yaw: (BAND_AT.yawDeg * Math.PI) / 180,
+  groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => (M1CLOCK.t ?? 0) + NPC_T0, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, worldScale: K, classScale: CLASS_SCALE,
+  placeholder: { cast: () => KAYKIT(BAND_DEF.placeholderCast)(0, 0, null), clipUrls: [clipsGeneral, clipsSim] } } : null
+const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null), worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
+  staticUrl: (key) => { const [kind, c] = key.split(':'); return kind === 'station' ? botStationUrl(c) : kind === 'block' ? botBlockUrl(c) : null },
+  clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, orchard: () => mods.orchard, // D3: Ziele, Fluff
+  day: () => Math.floor(((M1CLOCK.t ?? 0) + NPC_T0) / NPC_WORLD.dayS), onEvent: (e) => mods.npc?.observeGroup?.({ ...e, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }
+// Phase B: Gedächtnis im Weltstand kfb.world-save/1 (localStorage, getrennt von kfb.save/1); npcfresh leert ihn vorher (Tests); npcmem=0 schaltet ab
+const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
+  clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.
 const LANTERNS_ON = !/(^|[#,])lanterns=0(,|$)/.test(hash)
@@ -127,7 +181,7 @@ const CLAY_M1 = { targets: () => [{ module: mods.player, card: CARDS.frizzlebob 
   ...(mods.found ? [{ module: mods.found, profile: 'midground', seed: 'found', scaleRef: 0.9, skip: (o) => o.name === 'contact-blob' || SKIP_DEFAULT.test(o.name || '') }] : []),
   ...(mods.orchard ? [{ module: mods.orchard, profile: 'midground', seed: 'orchard', scaleRef: 2.6, skip: (o) => o.name === 'orchard-fluff' || !/^tree:/.test(o.parent?.name || '') && !/tree:/.test(pathName(o)) || SKIP_DEFAULT.test(o.name || '') }] : [])] }
 const pathName = (o) => { const a = []; for (let n = o; n; n = n.parent) a.push(n.name || ''); return a.join('/') }
-const makeSky = mk('sky', TERRAIN3 ? (o) => createSkyR13({ ...o, palette: T3_PAL, sunDir: () => { const m = LIGHT_INFO()?.mood; return m ? sunDirection(m.elev, m.az) : null } }) : createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeAO = mk('blobs', createContactAO), makeRig = mk('light', createStageLight)
+const makeSky = mk('sky', ENDLESS_ON ? createDriveSkyMod : TERRAIN3 ? (o) => createSkyR13({ ...o, palette: T3_PAL, sunDir: () => { const m = LIGHT_INFO()?.mood; return m ? sunDirection(m.elev, m.az) : null } }) : createSky), makeTerrain = mk('terrain', ENDLESS_ON ? createEndlessTerrainMod : createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeAO = mk('blobs', createContactAO), makeRig = mk('light', createStageLight)
 // Kontaktflecke (V-203, L1: für alle Figuren; Georg 16.10.: „FrizzleBob schwebt“): Spieler und Partnerin (in M2 steht FB noch neben dem Auto)
 // Kontaktverdeckung (L3, V-392/V-393 Stufe 0: Licht nur über das Bühnen-Licht-Modul): Spieler, Partnerin und im Fahrmodus das Auto (M2STATE.ao), je an
 // der Boden-Normale ausgerichtet (GROUND_AT: Strahl auf die Kollider, sonst Gelände-Gradient)
@@ -207,16 +261,19 @@ const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, fi
     // #439 (WS1b-Diagnose): Kasten mind. 16 m, damit Bäume neben der Figur werfen; Sonne um Kronenhöhe ÷ sin(Sonnenhöhe) + Rand zurück (Nah-Ebene schneidet keine Krone)
     const e = Math.max(8, M.elev) * Math.PI / 180; return { center: { x: t.p.x, y: t.p.y, z: t.p.z }, radius: Math.max(t.half + shadowLength(M.elev) * t.h + 1 * K, 16 * K), margin: (14 * K) / Math.sin(e) + 4 * K } },
   shadowSoft: isTerrain3(hash) ? 5 : 7, shadowBlurSamples: 16, shadowIntensity: isTerrain3(hash) ? 0.62 : 0.82 }   // terrain3: leiser und kontaktnäher (Schattenkonzept R1, KayKit)   // VSM: Weichzeichner-Radius (Texel) und Proben des Blur-Durchgangs
+if (ENDLESS_ON) adoptRig(RIG) // V-619: Stimmung je Bild aus der Atmosphäre der Biom-Fahrt (lebender moods-Satz), Schatten nach Sonnen-/Mondhöhe
 export const LIGHT_INFO = () => mods.light?.info?.() || null
+const AUDIO_HOST = (player) => ({ mods, player, harvest: HARVEST ? HARVEST_STATE : null, m1: M1STATE, light: LIGHT_INFO, flatR: TERRAIN.flatR, k: K }) // WS-Audio: nur lesend
 // terrain3: dunkler Fuß wie KayKit an Figuren (Schattenkonzept R1, Georg 21.10.), Bodenhöhe = Wurzel der Figur (steht auf dem Boden, m1-ground);
 // Materialien jede Sekunde nachgezogen (Teile laden nach), applyFootShade hängt sich nur einmal je Material an
 function FootShade() {
   const U = useMemo(() => Object.fromEntries(['player', 'partner'].map((k) => [k, { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } }])), [])
   const t = useRef(0), v = useMemo(() => new THREE.Vector3(), []), FS = useMemo(() => ({ uFigShadowK: { value: 0.55 } }), [])   // Selbstschatten auf Figuren gedämpft (Arm-Kante, Georg 21.10.)
   useFrame((_, dt) => { const scan = (t.current -= dt) <= 0; if (scan) t.current = 1
-    for (const k of ['player', 'partner']) { const o = mods[k]?.object3d; if (!o) continue
-      if (scan) o.traverse((m) => { if (m.isMesh && m.visible) for (const mt of [].concat(m.material)) if (mt && !mt.isShaderMaterial && !mt.isMeshBasicMaterial) { applyFootShade(mt, U[k]); applyFigureShadow(mt, FS) } })
-      o.getWorldPosition(v); U[k].uFootY.value = v.y } })
+    const list = [['player', mods.player?.object3d], ['partner', mods.partner?.object3d], ...[...(mods.npc?.holders?.() || []), ...(mods.groups?.holders?.() || []), ...(mods.band?.holders?.() || [])].map((h) => [h.name, h])]   // WS-NPC: Bewohner wie Spieler und Partnerin
+    for (const [k, o] of list) { if (!o) continue; const u = (U[k] ||= { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } })
+      if (scan) o.traverse((m) => { if (m.isMesh && m.visible) for (const mt of [].concat(m.material)) if (mt && !mt.isShaderMaterial && !mt.isMeshBasicMaterial) { applyFootShade(mt, u); applyFigureShadow(mt, FS) } })
+      o.getWorldPosition(v); u.uFootY.value = v.y } })
   return null
 }
 function HostEnv() {
@@ -224,6 +281,8 @@ function HostEnv() {
   useEffect(() => applyTone(gl, 'aces', 1), [gl]) // ein Tonemapping für alle Schichten (L3 Regel 5)
   // VSM nur in der Laufwelt (Georg 20.10.: Schatten weich ohne Stufen und Körnung): Karte einmal je Bild weichgezeichnet, je Pixel eine Abfrage; Bühne/Prüfungen bleiben PCF
   useEffect(() => { const prev = gl.shadowMap.type; gl.shadowMap.type = THREE.VSMShadowMap; gl.shadowMap.needsUpdate = true; return () => { gl.shadowMap.type = prev; gl.shadowMap.needsUpdate = true } }, [gl])
+  // MVP-Startseite (V-618): einmal 'kfb:ready', sobald Spielfigur und Gelände stehen (Vorhang darf aufgehen); kein Debug-Zugang nötig
+  useEffect(() => { let done = false; const iv = setInterval(() => { if (done || mods.player?.status?.().status !== 'OK' || !mods.terrain) return; done = true; clearInterval(iv); window.dispatchEvent(new Event('kfb:ready')) }, 250); return () => clearInterval(iv) }, [])
   useEffect(() => { M1GL.gl = gl; M1GL.scene = scene }, [gl, scene]) // Prüfungen/Bildskripte (nur debug über M1.renderer)
   const cff = useRef(0)
   useFrame((_, dt) => { if ((cff.current -= dt) <= 0) { cff.current = 1; castFrontFaces(scene) } }) // Licht v1.1 (V-440): Vorderseiten werfen Schatten, nachgeladene Teile jede Sekunde
@@ -279,6 +338,14 @@ function Colliders({ ready }) {
       {!NOFENCE && <RigidBody type="fixed" colliders={false} name={FENCE_TAG} userData={{ tag: FENCE_TAG, ecctrl: { excludeRay: true } }}>{FENCE.map((c, i) => <ConvexHullCollider key={i} args={[c.verts]} friction={0} frictionCombineRule={CoefficientCombineRule.Max} />)}</RigidBody>}
     </>
   )
+}
+
+// WS-NPC: Bewohner sind fest für den Spieler (wie die Partnerin, Prüfer M1-5 N13): je Bewohner eine kinematische Kapsel, Lage aus dem Modul je Schritt
+const RESIDENT_IDS = NPC_WORLD.residents.map((r) => r.residentId)
+function NpcBodies({ source = 'npc', list = RESIDENT_IDS }) {
+  const refs = useRef([])
+  useFrame(() => { const ps = mods[source]?.positions?.() || []; ps.forEach((p, i) => refs.current[i]?.setNextKinematicTranslation({ x: p.x, y: p.y + 0.9 * K, z: p.z })) })
+  return list.map((id, i) => <RigidBody key={id} ref={(b) => { refs.current[i] = b }} type="kinematicPosition" colliders={false} name={'npc-' + id} userData={{ soft: true, npc: id }}><CapsuleCollider args={[0.55 * K, 0.35 * K]} /></RigidBody>)
 }
 
 // Wurzel mit Abbau-Schalter für den Vertragstest (nur mit Debug): window.__kfbM1Root.off() hängt die ganze Szene aus. Die Schleife bleibt.
@@ -375,6 +442,14 @@ function M1World() {
         ready: { pool: isPoolReady(), card: mods.billboard?.info()?.source ?? null, player: mods.player?.status().status, partner: mods.partner?.status().status, partnerShown: mods.partner?.status().shown },
         keysShown: keysUi.current?.shown?.() ?? null }),
       harvest: () => HARVEST_STATE, // C3/C3b: Ernte-Stand, HUD-api, Zähler (nur debug)
+      groups: () => mods.groups ? { status: mods.groups.status(), debug: mods.groups.debug(), tables: mods.groups.tables(), played: mods.groups.played(), events: mods.groups.events(), steps: mods.groups.steps(), time: mods.groups.time() } : null,
+      band: () => mods.band ? { status: mods.band.status(), debug: mods.band.debug() } : null, // WS-NPC Phase D (nur debug) // WS-NPC Phase D (nur debug)
+      disco: () => mods.disco ? { status: mods.disco.status(), debug: mods.disco.debug() } : null, // Lead: Disco K12 (nur debug)
+      discoFeet: () => mods.disco?.feet?.() ?? null,
+      discoActors: () => mods.disco?.actors?.() ?? [],
+      discoHold: (on) => mods.disco?.hold?.(on),
+      fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld(), hops: mods.fluffer.hops() } : null, // WS-NPC Phase C (nur debug)
+      npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), steps: mods.npc.steps(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
       renderer: () => M1GL.gl, scene: () => M1GL.scene, three: () => THREE, // Bildskripte: eigene Kamera rendern (nur debug)
       feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, k: K, g: G, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
       logs: () => ({ sky: { ...skyLog }, terrain: { ...terrainLog }, amph: { ...amphLog }, billboard: { create: billboardLog.create, update: billboardLog.update, dispose: billboardLog.dispose }, loco: { ...locoActorLog },
@@ -394,6 +469,11 @@ function M1World() {
       <ModuleHost create={makeBB} options={BB} />
       <ModuleHost create={makePartner} options={PARTNER} />
       {/* createContactAO entfernt (WS0 V-587 zu §116: kein Blob-Schatten, V-564); Erdung über dunklen Fuß (terrain3) und echten Schatten */}
+      {NPC_ON && <ModuleHost create={makeNpc} options={NPC_OPTS} />}
+      {FLUFFER_ON && HARVEST && <ModuleHost create={makeFluffer} options={FLUFFER_OPTS} />}
+      {PATROL_ON && <ModuleHost create={makeGroups} options={GROUP_OPTS} />}
+      {BAND_ON && BAND_OPTS && <ModuleHost create={makeBand} options={BAND_OPTS} />}
+      {DISCO_ON && <ModuleHost create={makeDisco} options={DISCO_OPTS} />}
       {HARVEST && <Orchard />}
       {CLAY_ON && <ModuleHost create={makeClay} options={CLAY_M1} />}
       <Suspense fallback={null}>{/* Rapier lädt asynchron: eigene Grenze, damit die Hüllen davor nicht verworfen und doppelt erzeugt werden (Prüfer M1, Befund 3) */}
@@ -401,16 +481,21 @@ function M1World() {
         <Stepper />
         <GroundProbe />
         <Colliders ready={amphReady} />
+        {NPC_ON && <NpcBodies />}
+        {PATROL_ON && <NpcBodies source="groups" list={GROUP_IDS} />}
+        {BAND_ON && BAND_OPTS && <NpcBodies source="band" list={BAND_IDS} />}
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
         {M2_ON && <M2Car player={player} />}
         {M2_ON && <StuntField />}
-        {!M2_ON && <ElanRings groundAt={terrainHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}
-        {RACER_FLY && <ElanRings groundAt={terrainHeight} J={K / WORLD_K} scale={RACER_COURSE_SCALE} bestKey="kfb.elan.s2.racer.best" playerPos={() => M2STATE.carPos?.() ?? null} playerObj={() => M2STATE.visualRoot} />}
+        {ENDLESS_ON && <EndlessDrive mods={mods} />}
+        {!M2_ON && <ElanRings groundAt={groundHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}
+        {RACER_FLY && <ElanRings groundAt={groundHeight} J={K / WORLD_K} scale={RACER_COURSE_SCALE} bestKey="kfb.elan.s2.racer.best" playerPos={() => M2STATE.carPos?.() ?? null} playerObj={() => M2STATE.visualRoot} />}
       </Physics>
       </Suspense>
       <StageOrbitCam ref={orbit} view={STAGE_VIEW} active={phase === 'dialog'} />
       {phase === 'dialog' && <ModuleHost key={session} create={makeDialog} options={dialogOpts} />}
       <BubbleHost />
+      <AudioHost host={AUDIO_HOST(player)} />
       <ChoiceHost />
     </>
   )

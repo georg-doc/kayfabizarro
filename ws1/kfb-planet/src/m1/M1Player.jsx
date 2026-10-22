@@ -17,7 +17,7 @@ import { playerState } from '../world'
 import ModuleHost from '../ModuleHost'
 import { createLocoActor } from '../modules/m1-locoActor'
 import { STEP, interpTrack, M1CLOCK } from './m1Clock'
-import { TERRAIN, terrainHeight, GROUND_Y } from '../modules/m1-terrain'
+import { TERRAIN, groundHeight, terrainActive, GROUND_Y } from '../modules/m1-terrain' // #439 world=probe: Höhe und tiefster Punkt der aktiven Welt
 import { isFence } from './m1Host'
 import { K, G, JUMP_K, MASS_K, INERTIA_K } from './m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
@@ -232,10 +232,10 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
     const p = body.translation(), pos = v.a.set(p.x, p.y, p.z), free = state()
     // Welt-Grenzen: Laufen am Fuß des Randwalls, Fliegen am Netzrand/in der Höhe, Absturz → Start; zu Fuß nicht in den Hang setzen
     { const rr = Math.hypot(pos.x, pos.z), R = S.current.flying ? M1BOUNDS.flyR : M1BOUNDS.walkR
-      if (pos.y < M1BOUNDS.fallY) { setFlying(false); teleport(START, START_YAW) }
+      if (pos.y < (terrainActive.minY == null ? M1BOUNDS.fallY : terrainActive.minY + M1BOUNDS.fallY)) { setFlying(false); teleport(START, START_YAW) } // world=probe: ab dem tiefsten Tal
       else if (rr > R || (S.current.flying && pos.y > M1BOUNDS.flyMaxY)) {
         const k = Math.min(1, R / rr), lv = body.linvel(), nx = pos.x / rr, nz = pos.z / rr, out = Math.max(0, lv.x * nx + lv.z * nz), x = pos.x * k, z = pos.z * k
-        const y = S.current.flying ? Math.min(pos.y, M1BOUNDS.flyMaxY) : Math.max(pos.y, terrainHeight(x, z) + FOOT)
+        const y = S.current.flying ? Math.min(pos.y, M1BOUNDS.flyMaxY) : Math.max(pos.y, groundHeight(x, z) + FOOT)
         body.setTranslation({ x, y, z }, true)
         body.setLinvel({ x: lv.x - out * nx, y: S.current.flying && pos.y > M1BOUNDS.flyMaxY ? Math.min(0, lv.y) : lv.y, z: lv.z - out * nz }, true)
       } }
@@ -292,7 +292,7 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       const k = keys(), S0 = S.current, st = S0.elan, mb = M1INPUT.mouse || S0.mouse, p0 = body.translation()
       st.pos = [p0.x, p0.y, p0.z]
       const cf = camera.getWorldDirection(v.b), camPitch = Math.asin(THREE.MathUtils.clamp(cf.y, -1, 1)) + (Math.PI / 2 - M1CAM.polar0)
-      const env = { ground: (x, z) => terrainHeight(x, z) + FOOT, sweep: (from, d) => { const vel = flyClip(body, { x: d[0] / STEP, y: d[1] / STEP, z: d[2] / STEP }, STEP), c = [vel.x * STEP, vel.y * STEP, vel.z * STEP]
+      const env = { ground: (x, z) => groundHeight(x, z) + FOOT, sweep: (from, d) => { const vel = flyClip(body, { x: d[0] / STEP, y: d[1] / STEP, z: d[2] / STEP }, STEP), c = [vel.x * STEP, vel.y * STEP, vel.z * STEP]
         const dx = d[0] - c[0], dy = d[1] - c[1], dz = d[2] - c[2], l = Math.hypot(dx, dy, dz); return { delta: c, hit: l > 1e-6, n: l > 1e-6 ? [-dx / l, -dy / l, -dz / l] : null } } }
       elanStep(st, { noseUp: !!k.backward, noseDown: !!k.forward, left: !!k.leftward, right: !!k.rightward, space: !!k.jump, shift: !!k.run, mousePitch: mb.r ? camPitch : null }, STEP, env)
       for (const e of st.events) ELAN_MEM.events.push({ ...e, t: M1CLOCK.steps })
@@ -348,7 +348,7 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
     // Kamera folgt; nie unter das Gelände, nie hinter eine Theater-Wand (Strahl vom Ziel zur Kamera auf alle Kollider). Im Dialog führt der Host.
     if (free || !active) cc.moveTo(pos.x, pos.y + M1CAM.lookUp, pos.z, true)
     if (free) {
-      const c = camera.position, hmin = terrainHeight(c.x, c.z) + M1CAM.minClear
+      const c = camera.position, hmin = groundHeight(c.x, c.z) + M1CAM.minClear
       if (c.y < hmin) cc.rotatePolarTo(Math.max(0.2, cc.polarAngle - 0.04), false)
       const tgt = cc.getTarget(v.b), dir = v.c.subVectors(c, tgt), d = dir.length()
       if (d > 0.5 * K) {

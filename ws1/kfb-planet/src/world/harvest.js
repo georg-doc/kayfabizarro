@@ -87,9 +87,12 @@ export function createOrchard({ zone = 'zone', seed = 0, trees = [], terrain, fa
     zone, balls, harvest, P, state,
     // Treffer auf einen Baum: Schlüssel der fallenden Kügelchen; sie lösen sich gestaffelt (lastWave) und fallen dann mit Gelände-Physik
     hit(treeId, weapon) { const h = harvest.get(treeId); if (!h) throw new Error('HARVEST_TREE_UNKNOWN: ' + treeId); const keys = h.hit(weapon); for (const e of h.lastWave) pending.push({ key: e.key, at: time + e.at }); pending.sort((a, b) => a.at - b.at); return keys },
+    // WS-NPC Phase C (Lead-OK c): bereits fallende Kügelchen aufnehmen (fluff.releaseAt), gleiche Schritte, Ruhe und Aufsammeln wie Baum-Kügelchen
+    addFalling(list) { for (const b of list) { if (byKey.has(b.key)) continue; balls.push(b); byKey.set(b.key, b) } return list.length },
     advance(dt) { acc += Math.min(dt, 0.25); let n = 0; while (acc >= P.dt - 1e-12) { acc -= P.dt; stepAll(); n++ } return n },
     // Aufsammeln bei Kontakt (fluff.collect: zu Fuß, Fahrzeug, Kapsel, Driften); markiert im Ernte-Stand
-    collect(collector) { const r = collect(balls, collector); for (const k of r.keys) { const b = byKey.get(k); b.state = 'collected'; state.mark(k, b.kind) } return r },
+    // WS-NPC Phase C (V-583): tainted-Kügelchen (Tusche) sind nicht aufsammelbar, sie sinken nach der Ruhezeit ein (orchard3d)
+    collect(collector) { const r = collect(balls.filter((b) => !b.tainted), collector); for (const k of r.keys) { const b = byKey.get(k); b.state = 'collected'; state.mark(k, b.kind) } return r },
     counts: () => state.counts(),
     stats: () => ({
       hanging: balls.filter((b) => b.state === 'hanging').length, falling: balls.filter((b) => b.state === 'falling').length, resting: balls.filter((b) => b.state === 'resting').length,

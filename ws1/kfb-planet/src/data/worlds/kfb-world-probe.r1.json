@@ -1,0 +1,98 @@
+{
+  "schema": "kfb.terrain-recipe/1",
+  "status": "Entwurf (Gelände-Probe)",
+  "seed": 42,
+  "units": "m",
+  "form": {
+    "featureSize": 180,
+    "height": 28,
+    "octaves": 5,
+    "ridge": 0,
+    "warp": 0.2,
+    "calmHillyVariation": 0.5
+  },
+  "stylize": {
+    "flatValleys": 0.3,
+    "plateauAt": null,
+    "terraces": 0,
+    "terraceEdge": 0.5,
+    "maxSlopeDeg": 52,
+    "etheringtonRound": true,
+    "rockClusters": true,
+    "waterLevel": 0
+  },
+  "color": {
+    "polkaDot": "aus",
+    "organicFields": true,
+    "surfaceStage": "70er fliessfarben",
+    "flowSpeed": 1,
+    "flowWithSpeed": true,
+    "flowOverTrees": 0,
+    "bandDensity": 4,
+    "biome": "moos",
+    "biomeTravel": null,
+    "bandSoftness": 0.35,
+    "cliffSlopeDeg": 32,
+    "strata": false,
+    "steppedLight": false,
+    "palette": {
+      "name": "Moos-Insel",
+      "water": "#4fb3c9",
+      "sand": "#e8d59a",
+      "low": "#86c65c",
+      "mid": "#5ea24c",
+      "high": "#8f9a5c",
+      "peak": "#f4f1e6",
+      "cliff": "#9b7b5e",
+      "sky": "#bfe3ef"
+    }
+  },
+  "world": {
+    "voxel": {
+      "on": false,
+      "size": 2,
+      "step": 1,
+      "smoothDrive": true,
+      "edge3": true
+    },
+    "viewRings": false,
+    "gridWorld": false,
+    "gridSpacing": 8,
+    "gridShape": "geschwungen",
+    "gridFill": "linien",
+    "checkerColors": "zwei",
+    "checkerTexture": null,
+    "clayLook": false,
+    "diorama": {
+      "on": true,
+      "palette": true,
+      "plinthAndBerm": true,
+      "colourRingSpeckle": true,
+      "stoneBand": true,
+      "props": true,
+      "grounding": true,
+      "realShadows": true,
+      "contactCrumbs": true,
+      "foregroundMass": true,
+      "colouredEdges": false
+    },
+    "testTempo": "spiel"
+  },
+  "sky": {
+    "timeOfDay": "tag",
+    "paintedClouds": true,
+    "clayClouds": false,
+    "cloudCover": 0.45,
+    "cloudStretch": 1,
+    "sunElevation": 49,
+    "skyGradient": 0.6,
+    "aurora": "nachts",
+    "lensFlare": false,
+    "cloudFormation": "kuppel",
+    "contrails": false,
+    "v2": true,
+    "backdrops": true,
+    "body": "knet-mond"
+  },
+  "noise": "simplex2d (Ashima/Gustavson), fbm mit Drehung je Oktave, Grat = (1-|n|)^2, Wechselzone = snoise(p/(6·featureSize))"
+}
