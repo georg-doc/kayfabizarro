@@ -1,5 +1,32 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10., nach eurer Pause) · ÜBERSICHT für den Lead: alles Neue in einem Block
+**Status-Kanal (V-639):** `WS1_STATUS.md` bitte ab jetzt nur noch auf `ws1/status` pflegen, ein eigener Branch nur für den Status. WS0 liest dort; zusätzlich findet ein Skript den neuesten Status auf allen `ws1/*`.
+
+Die Einzelheiten stehen in den Blöcken darunter. Die wichtigsten Punkte:
+1. **Abnahme im Spiel (V-641):**
+   - Abnahme-Menü `?abnahme=1`: je Punkt Sprung und Auslöser, Georg setzt PASS oder TUNE.
+   - WS-NPC liefert Sprünge für seine Punkte.
+2. **Begrüßungen (V-636, V-640, V-650):**
+   - Blasentexte strikt Englisch, aus `replies/NPC_GREETINGS_R1.json`.
+   - Stimme: Social Calls mit Sprachmelodie plus Fluff-o-lect.
+   - Bewohner-Instrumente (V-642): Farmer B Akkordeon, Lorekeeper tiefe Klarinette. Der Satz wartet auf Georgs Go.
+3. **Welt-Ereignisse E1–E3 (V-637):** Regeln und Gewichte stehen fest, der Lead besitzt den Host.
+4. **Waffen (V-626–V-628, V-635, V-648, V-651):**
+   - Klinge in Schlagrichtung (`KFB_Edge`).
+   - Schilde außen auf dem Handrücken.
+   - Haltungs-Modelle in `replies/WEAPON_GRIP_MODELS_R1.md`.
+   - Boss mit hochskalierter Orc-Keule.
+   - WSB korrigiert K13 gerade (N27/N28). Erst nach dem neuen Proof-Stage-Bogen übernehmen.
+5. **WSB-Reihe ohne Rückfragen:** N27 Waffen → N28 Boss-Keule → N29 HUD-Props → N26 eure Jobs J-5/J-3/J-2/J-1/J-4 → K14 Goo-Vorstadt.
+   - Lieferungen kommen über den privaten Branch, WS0 schiebt sie je Steuerrunde nach.
+   - J-5 Marsch: vorerst der Lauf-Clip mit Gewehr. Den Mixamo-Marsch entscheidet Georg.
+6. **Diegetisches Knet-HUD (V-645, V-652, V-653):** Kompass als Tacho bzw. Minimap, Tiny-Treats-Radio, Truhe, Fluff-Score in 3D-Bangers, das eine Settings-Zahnrad `GEAR_ICON.glb`, Farben aus der Insel-Palette. Einbau nach dem MVP.
+7. **Leistung:** FB-Ohren reduziert WSA in der ToolBox (V-643). VSM → PCF nur mit Georg, mit Vorher/Nachher.
+8. **Site:** GPT-Site über WSA (V-624/V-630). Spiel-Slices kommen hinter das gemeinsame Passwort (V-647).
+9. **Hypernorm:** WS-Media baut die H13-Engine als Modul (V-620). Einbau über den Lead, sobald sie da ist.
+
+
 # NEU OBEN (22.10.) · An WS1: diegetisches HUD aus einem Knet-Guss (V-652, V-653)
 - WSB baut die HUD-Props: das eine Settings-Zahnrad `GEAR_ICON.glb` (wie in Travel Globe v13 bzw. Travel Combat v25, dort mit `gear-icon.js` und `settings-overlay.js` als Spender), Kompass (zu = Tacho mit farbigem Halbkreis, Zahl in der Mitte; auf = Minimap), Tiny-Treats-Radio mit Knet-Tasten und Laufschrift, Truhe mit Einflug, Fluff-Score in 3D-Bangers, Kartenfächer mit Schatten.
 - **Farben zur Laufzeit** aus dem Palettengenerator (V-305) der aktuellen Insel bzw. des Bioms. Jedes Prop hat Farbzonen `base`, `accent`, `detail`. Biom-Wechsel blendet weich über. Karten nie umfärben.
