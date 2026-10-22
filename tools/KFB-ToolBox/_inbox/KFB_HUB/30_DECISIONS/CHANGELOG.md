@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB N27 fertig (große Schilde außen, große Orc-Axt und FrostGolem im Griffmodell, Knight Idle/Hit ohne Schild), privat; Hub q154 K13 nach Korrektur.
 - WSB N26 MVP-Jobs fertig (J-1 Oberkörper-Schuss FB, J-2 FB-Halterungen, J-3 floorLift, J-4 Augen Ritter/Dämon, J-5 Übergang), privat; WS1 informiert; WSA: Grund kit-axis-mismatch zulassen.
 - WSB N28 große Orc-Keule (×2,0, Boss-Slash mit Hammer-Space) fertig, privat; WSA: Feld scaleException (V-651) im Karten-Check zulassen.
 - WSB N29 HUD-Props in Knete fertig (Kompass, Radio, Truhe, Zahnrad, Bangers-Ziffern, Fächer-Schatten; Farbzonen-Maske; Proof O-Town/Bucht PASS), im privaten Branch, WS1 informiert.

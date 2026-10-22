@@ -287,3 +287,11 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 - Laut WSB fallen die K10-Karten für Blaster und Pistole im Prüfer mit `SLOT_OFFSET_NEEDS_VISIBLE_INTERPENETRATION` durch, weil der Prüfer den Grund `kit-axis-mismatch` nach V-581 nicht kennt.
 - **Bitte zulassen**, zusammen mit `edge-forward` (V-628) und `scaleException` (V-651).
 - **Neu:** FB-Varianten je Karte unter `mount.figureVariants.frizzlebob` (WSB N26, privater Branch). Der Prüfer soll sie wie die Basis-Halterung prüfen.
+
+
+## 22.10. · K13 N27 fertig (V-648)
+- Große Schilde außen auf dem Unterarm (Knight: Blocking, Block_Attack, Block_Hit; Brute: alle 5 Clips).
+- Große Orc-Axt und FrostGolem-Axt im Griffmodell, alle sechs Karten CONTRACT_PASS.
+- Der normale Schild ist für Rig_Large als `superseded` markiert. Im privaten Branch `50_BLENDER/K13/`.
+- Arena-Einbau nach Georgs Abnahme (Hub q154).
+- Prüfmaß Schild: WSB nahm „wie der Demon“ als Schranke, weil das Regelmaß auch beim Demon in Block-Clips durchfällt. Bitte im Check so übernehmen.
