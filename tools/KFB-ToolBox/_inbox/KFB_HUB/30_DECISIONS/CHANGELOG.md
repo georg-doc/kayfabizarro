@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-648 K13 TUNE: Schilde außen auf dem Handrücken, Orc-Axt groß im Faustring, FrostGolem neu; Waffenhaltungs-Modelle WEAPON_GRIP_MODELS_R1.md; große Orc-Keule existiert in keinem Kit (Georg-Frage). V-649 K14 frei. V-650 Blasen strikt Englisch, NPC_GREETINGS_R1.json.
 - V-647 ohne Meshy-Enterprise; Spiel-Slices hinter das gemeinsame Passwort (nur Georg); Web-Chat-Brief Splat-Beispiele.
 - V-644 Meshy-Suche Weg B (Link-Import in den Librarian), V-645 diegetisches Knet-HUD R0 nach dem MVP isoliert testen, V-646 Splat-Wasser zurückgestellt.
 - WSA Repo-privat-Umstellung R1 (Draft-PR #443): Teil-Kandidat, NICHT bereit; Leser und Decks laufen gegen gesperrte Hosts (283/283), offen: 249 Dateien mit Raw-Verweisen, private Tools ohne Server-Abruf, Plattform-Prüfungen; eine Georg-Frage zu öffentlichen Spiel-Slices.

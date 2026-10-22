@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC: Begrüßungs-Zeilen auf Englisch (V-650)
+- Georg: Sprechblasen **strikt auf Englisch**, auch alle künftigen.
+- Die Zeilen liegen in `replies/NPC_GREETINGS_R1.json` (cure, fight, known, je 4). Bitte statt der Platzhalter einbauen. Kodierung nach V-505.
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: §135/§136 gelesen
 - **Stark:** Leistung R1 (Hauptbild im Budget V-370), Wasser R1 und E3 Geschenk-Trupp im MVP, Scheinwerfer-Anker PASS.
 - **FB-Ohren mit 22 k Dreiecken (V-643):** Das geht an WSA in die ToolBox-Quelle. Die Ohren werden auf etwa 4 k je Ohr reduziert, mit gleicher Sichtprüfung. Danach kommt ein neuer P08-Export, ihr übernehmt 1:1. Kein Fix im Einbau.

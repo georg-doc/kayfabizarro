@@ -9204,6 +9204,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-648",
+   "date": "2026-10-22",
+   "area": "Kampf",
+   "verdict": "TUNE",
+   "text": "K13 TUNE (Georg q153): Schilde sitzen auf der Außenseite des Unterarms bzw. Handrücken, nie innen; Demon Lord ist richtig, Knight und alle anderen genauso, große Figuren mit großem Kit-Schild (BlackKnight_Shield_Large). Orc-Axt als große Variante, Stiel im Faustring eingepasst; FrostGolem-Axt neu einpassen; BK-Schwert gross PASS. Grundlage für alle Haltungen: replies/WEAPON_GRIP_MODELS_R1.md (mentale Modelle je Waffentyp: Ziel-Lage zuerst beschreiben, dann messen). Große Orc-Keule: in keinem Kit vorhanden (Orc_Club 1,62 u, Caveman_Club 1,90 u, Medium); Georg entscheidet, ob für den Boss eine Kit-Keule hochskaliert werden darf.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Haltung folgt aus dem Waffentyp; Messung bestätigt nur, sie wählt nicht.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-649",
+   "date": "2026-10-22",
+   "area": "Spielwelt",
+   "verdict": "PASS",
+   "text": "Goo-Vorstadt Richtung PASS (Georg q149): Look-Test K14 starten (V-597, V-625, V-629), nach der K13-Korrektur.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg gibt die Richtung frei.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-650",
+   "date": "2026-10-22",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Sprechblasen strikt auf Englisch (Georg q152 TUNE: strict in EN alles): Begrüßungs-Zeilen cure, fight, known als englischer Satz NPC_GREETINGS_R1.json, alle weiteren Blasentexte ebenfalls Englisch.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Englisch als Spielsprache, einheitlich in allen Blasen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9291,7 +9336,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1090",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1091",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
