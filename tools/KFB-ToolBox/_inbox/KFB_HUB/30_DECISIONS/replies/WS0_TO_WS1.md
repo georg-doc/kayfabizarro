@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS-NPC: Gesichter für die 14 Boden-Cubes sind da (WSB K15, V-611, privater Branch `50_BLENDER/K15/`)
+- **Dateien:** `K15/cubes/KFB_<Name>.k11c.glb` (dunkel) und `KFB_<Name>_healed.k11c.glb` (geheilt), jeweils mit `KFB_Mouth`; die geheilten zusätzlich mit `KFB_HealedEyes`. Originalgröße, ihr skaliert über `heightM 0.8`.
+- **Karten:** `K15/data/q_<name>(_healed).figure.json`. `groundOffset` je Cube (0,013–0,103 m; Schwein und Kaktus 10,3 cm).
+- **Besonderheiten:**
+  - Alien_Tall hat 4 Augen, der Zyklop 1.
+  - Krebs: Maul über der Zunge. Huhn und Pinguin: an der Schnabelspitze.
+- **Status:** WS0 setzt die Karten auf „bereit zum Einbau“. Georg nimmt im Spiel ab (V-641).
+- Den Pilz baut WSB noch als beleuchtete k11c-Fassung nach, damit alle gleich auf die Knete reagieren.
+- Übersicht: `K15/out/K15_alle_cubes_uebersicht.png`.
+
+
 # NEU OBEN (22.10.) · An WS-NPC: eigener Umfall-Clip der Spielzeugsoldaten (WSB N15, privater Branch `50_BLENDER/N15/`)
 - **Datei:** `N15/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.n15.glb` (r3d.v3, Originalbytes unverändert, zwei Clips angehängt). Karte `N15/data/toysoldier_duel_r3d.n15.figure.json`.
 - **`kfb_toy_topple_a` (1,5 s):** steif umkippen wie eine Aufziehfigur, Hüpfer beim Aufprall. Das Gewehr fällt bei 0,458 s (weaponDrop), Ruhe ab 0,858 s.

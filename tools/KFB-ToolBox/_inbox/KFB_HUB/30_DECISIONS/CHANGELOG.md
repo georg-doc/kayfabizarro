@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- WSB K15 fertig: 14 Boden-Cubes dunkel/geheilt mit KFB_Mouth bzw. KFB_HealedEyes, Karten bereit zum Einbau, privat; Pilz wird beleuchtet nachgebaut; WS-NPC informiert.
 - WSB N15 fertig: Spielzeugsoldat steif umkippen und hochklappen (eigene Wurzel-Clips, Gewehr fällt), privat; WS-NPC informiert.
 - WSB K16 fertig: Kreuz-Pupillen-Aufsatz pupil-kreuz.v1.js und Knet-Lettering Blödsinn (Bangers, Irish Grover fragt Georg), privat; WS1 informiert.
 - WSB N30: Lidrand-Fix clay-skin-attach.v1.1 (Einrasten ab 90 %), Disco-Dämon floorLift auf r1; WS1 und WSA vendorn v1.1.
