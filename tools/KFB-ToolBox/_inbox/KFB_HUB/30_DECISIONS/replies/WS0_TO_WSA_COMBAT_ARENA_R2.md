@@ -327,3 +327,11 @@ Technik (P08-Quelle, GLB-Export, 1,81 m, Clips) ist gut und bleibt. Die Bilder z
 2. **Mund-Schmierfleck.** Um den Mund liegt ein dunkler, verschmierter Texturrest. Weg damit; Mundbereich saubere Knete, das Mundverhalten bleibt beim Laufzeit-Modul.
 - Nase in der Seitenansicht ein langer roter Zylinder: nur prüfen, ob das exakt P08 ist; nichts ändern, wenn ja.
 Danach neu laden, Hash, dieselben sieben Bilder, `WSA_TO_WS0_FB_CANON_R3_RETURN.md`. Die R2-Datei ist kein Kandidat mehr. Nichts live, Ohren-Reduktion danach.
+
+---
+## WS0 → WSA · Aufräumen des lokalen Arbeitsordners · 2026-10-22
+Der WSA-Arbeitsordner `~/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/work` belegt 36 GB auf Georgs Mac. Bitte nur inventarisieren und vorschlagen, nichts löschen:
+1. Liste je Unterordner: Größe, Inhalt, letzte Änderung, und wo dieselben Daten zusätzlich gesichert sind (GitHub-Branch mit Commit, privater Branch, Dropbox-Pfad).
+2. Vier Gruppen: **behalten** (einzige Kopie, Belege wie FB_CANON R2/R3, Postmortem, gesicherter Pause-Stand), **doppelt** (vollständig anderswo gesichert, mit Nachweis), **Zwischenstände** (Build-Ausgaben, node_modules, Caches, Repo-Kopien, die jederzeit neu erzeugbar sind), **unklar**.
+3. Ablegen als `WSA_TO_WS0_WORKDIR_CLEANUP_R1.md`, mit der Summe je Gruppe.
+Gelöscht wird erst nach Georgs ausdrücklichem Ja, und nur aus den Gruppen „doppelt“ und „Zwischenstände“. Nichts aus „behalten“ oder „unklar“. Keine Umsetzung am ToolBox-Stand, die Pause gilt weiter.
