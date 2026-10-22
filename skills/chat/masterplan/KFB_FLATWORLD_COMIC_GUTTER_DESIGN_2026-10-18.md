@@ -52,3 +52,13 @@ The term **Gizmo** is retained as supplied; its exact visual/source referent is 
 ## Additive history
 
 - **2026-10-18:** Georg-originated Flatworld/Comic: deck zones + black panel frames + white gutter to neighboring world; Warburg × McCloud. Logged additively as **DESIGN PROPOSAL**, with source pointers and anti-R4 constraints. No Canon adoption or runtime change.
+
+## 2026-10-22 · Additive concept extension: Gutter Space / three-cluster portal journey
+
+Georg clarified the intended term **Gutter Space** (comic-panel interval, not “Gatter-Space”) and extended this Flatworld idea with three distinguishable experiences: **(1)** Gaussian-Splat/hybrid scene portals into distant deck zones/dungeons, including proposed Plato's Dungeon Raid; **(2)** a spatial projection of the *existing* Card/PDF Viewer and searchable Fractal Almanac, selecting a real Card/deck and using validated teleport destinations; **(3)** a surreal, optionally Track-Core/Joyride-bound rollercoaster ride through Gutter Space / Infinite Canvas with non-Euclidean-seeming, Escher-like animated scenery and source-verified splat/photographic environments.
+
+Full source-aligned proposal, reuse map, canonical owner protections, risks and one next gate:
+
+[`KFB_GUTTER_SPACE_SPLAT_PORTAL_ALMANAC_R1_2026-10-22.md`](KFB_GUTTER_SPACE_SPLAT_PORTAL_ALMANAC_R1_2026-10-22.md).
+
+**Status remains DESIGN PROPOSAL:** no new world/Almanac/card index/camera/track/physics owner, no R4 restart, no canon/visual acceptance and no implementation authorization.
