@@ -4,7 +4,8 @@
 // Weg wie GothGirl (V-391 Regel 7): gleicher Darsteller (Rezept, Augenprofil aus Georgs Batch, Punktlagen gleich dem Original), Körper = K11-Datei mit
 // entfernten Pillenaugen → originals.method 'baked' (keine Laufzeit-Bereinigung). Die Clips der K11-Datei (Werkzeug-, Lese-Clips) kommen dazu.
 // Requisite je Clip mit EINER festen Halterung im handslot.r-Raum (T(position) · R(rotation), V-581/V-574 + WS0 Nachtrag 4), nie je Bild nachgedreht.
-const FILES = import.meta.glob('../private/50_BLENDER/K11/{_privat_kauf_asset,props}/*.glb', { eager: true, query: '?url', import: 'default' })
+// Nur die genutzten Körper und Requisiten (Lead 22.10.: Build klein; ohne Proof-Dateien und die ältere Lorekeeper-Fassung k11)
+const FILES = import.meta.glob(['../private/50_BLENDER/K11/_privat_kauf_asset/{KFB_Farmer_harke.k11,KFB_Pitchfork.k11,KFB_Lorekeeper.k11b}.glb', '../private/50_BLENDER/K11/props/KFB_Book_Open.k11.glb'], { eager: true, query: '?url', import: 'default' })
 const URL = Object.fromEntries(Object.entries(FILES).map(([k, v]) => [k.split('/').pop(), v]))
 
 // Halterungen aus K11/RETURN.md §2/§3 bzw. K11/data/farmer_harke.npc.json (activities.*.mount)

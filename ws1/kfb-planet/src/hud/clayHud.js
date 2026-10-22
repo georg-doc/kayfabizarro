@@ -24,7 +24,7 @@ export const hasClayHudAssets = () => HUD_PROPS.every((n) => !!urlOf(n))
 export const LAYOUT = {
   pad: 22,
   radio: { corner: 'tl', w: 236, h: 196, el: 16, yaw: -14, fit: 1.04 },
-  score: { corner: 'tc', w: 380, h: 112, el: 8, yaw: 0, fit: 1.0 },
+  score: { corner: 'bl', w: 260, h: 128, dx: 200, dy: 14, el: 8, yaw: 0, fit: 1.0, align: 'left' }, // R2 (Lead/Kritiker C11): nicht über Plakat/Bühne, sondern neben der Truhe, in die der Fluff fliegt
   gear: { corner: 'tr', w: 92, h: 92, el: 24, yaw: 0, fit: 1.08 },
   compass: { corner: 'tr', w: 206, h: 186, dx: 100, el: 58, yaw: 0, fit: 1.0, open: { w: 340, h: 340, el: 74 } },
   chest: { corner: 'bl', w: 196, h: 176, el: 20, yaw: 16, fit: 1.04 },
@@ -142,7 +142,7 @@ export function createClayHud(opts = {}) {
     Compass(g) { const s = slots.compass, o = g.scene; zoneAll(o); s.scene.add(o); s.root = o; Object.assign(s, clipsOf(g, o))
       const lid = o.getObjectByName('compass_lid'), st = o.getObjectByName('KFB_SpeedText'), mp = o.getObjectByName('KFB_MapPlane')
       // Tempo-Zahl: flach auf dem Deckel (Anker zeigt nach oben), Schrift oben = hinten
-      const sp = textCanvas(256, 128), spm = new THREE.Mesh(new THREE.PlaneGeometry(0.2, 0.1), new THREE.MeshBasicMaterial({ map: sp.t, transparent: true, depthWrite: false, toneMapped: true }))
+      const sp = textCanvas(256, 128), spm = new THREE.Mesh(new THREE.PlaneGeometry(0.29, 0.145), /* R2: größer als das Anker-Maß 0,16 × 0,08 (lesbar bei Fahrt), passt noch in den Halbkreis */ new THREE.MeshBasicMaterial({ map: sp.t, transparent: true, depthWrite: false, toneMapped: true }))
       spm.rotation.x = -Math.PI / 2; spm.position.y = 0.004; st?.add(spm)
       // Minimap: Kreisscheibe auf der Kit-Scheibe (r 0,205), darunter liegt sie im geschlossenen Zustand verdeckt
       const mc = textCanvas(256, 256), mm = new THREE.Mesh(new THREE.CircleGeometry(0.192, 48), new THREE.MeshBasicMaterial({ map: mc.t, toneMapped: true }))
@@ -196,8 +196,8 @@ export function createClayHud(opts = {}) {
     const P = parts.score; if (!P) return; const s = slots.score
     P.row.clear(); const str = String(n); let x = 0; const items = []
     for (const ch of str) { const d = P.dig[ch]; if (!d) continue; const m = new THREE.Mesh(d.geo, MAT); m.quaternion.copy(d.q); m.position.x = x; items.push(m); P.row.add(m); x += d.adv }
-    const w = x; for (const m of items) m.position.x -= w / 2
-    const B = sphereOf(P.row); const r = Math.max(B.r, 0.3); const bx = B.box.clone(); const half = Math.max(0.9, (bx.max.x - bx.min.x) / 2); bx.min.x = Math.min(bx.min.x, B.c.x - half); bx.max.x = Math.max(bx.max.x, B.c.x + half); fitCamera(s, s.L.el, s.L.yaw, s.L.fit, B.c, r, bx) // Mindestbreite: eine Ziffer wird nicht riesig
+    const w = x; if (s.L.align !== 'left') for (const m of items) m.position.x -= w / 2
+    const B = sphereOf(P.row); const r = Math.max(B.r, 0.3); const bx = B.box.clone(); const half = Math.max(s.L.align === 'left' ? 0.62 : 0.9, (bx.max.x - bx.min.x) / 2); if (s.L.align === 'left') bx.max.x = Math.max(bx.max.x, bx.min.x + 2 * half); else { bx.min.x = Math.min(bx.min.x, B.c.x - half); bx.max.x = Math.max(bx.max.x, B.c.x + half) } fitCamera(s, s.L.el, s.L.yaw, s.L.fit, B.c, r, bx) // Mindestbreite: eine Ziffer wird nicht riesig
     s.dirty = true; s.sp.vs -= 2.2 // kleiner Hüpfer bei jeder Änderung
   }
   function drawTicker(force = false) {
@@ -261,7 +261,7 @@ export function createClayHud(opts = {}) {
     if (key === 'compass' && L.open) { const o = s.openK ?? 0; w += (L.open.w - L.w) * o; h += (L.open.h - L.h) * o }
     w *= k; h *= k; const dx = (L.dx || 0) * k
     const x = L.corner.endsWith('l') ? pad + dx : L.corner.endsWith('r') ? view.W - pad - dx - w : (view.W - w) / 2
-    const y = L.corner.startsWith('t') ? pad : view.H - pad - h // y von oben (CSS)
+    const y = L.corner.startsWith('t') ? pad + (L.dy || 0) * k : view.H - pad - (L.dy || 0) * k - h // y von oben (CSS)
     return { x, y, w, h }
   }
   function ensureRT(s, gl) {

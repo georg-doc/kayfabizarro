@@ -27,13 +27,16 @@ export function lanternsAlongPath(path, { n = 8, offset = 0.9, terrainH = () => 
 export function createGemLanterns({ items = [], renderer = null, mood = null, ground = '#9a8a78' } = {}) {
   const root = new THREE.Group(); root.name = 'gem-lanterns'
   const crystalGeo = new THREE.LatheGeometry(dense(LANTERN.profile, LANTERN.rows).map(([r, y]) => new THREE.Vector2(r, y)), LANTERN.sides)
-  const stoneGeo = new THREE.DodecahedronGeometry(1, 0), stoneMat = new THREE.MeshStandardMaterial({ color: LANTERN.stone, roughness: 0.95, flatShading: true })
+  const stoneGeo = (() => { const g0 = new THREE.IcosahedronGeometry(1, 1), p = g0.attributes.position, v = new THREE.Vector3(); for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i); v.multiplyScalar(0.85 + 0.3 * Math.abs(Math.sin(v.x * 9.1 + v.y * 5.3 + v.z * 7.7))); p.setXYZ(i, v.x, v.y, v.z) } g0.computeVertexNormals(); return g0 })(), stoneMat = new THREE.MeshStandardMaterial({ color: LANTERN.stone, roughness: 0.95, flatShading: false })
   const gems = [], lanterns = []
   for (const [i, it] of items.entries()) {
     const g = new THREE.Group(); g.name = 'lantern:' + i; g.position.fromArray(it.pos); g.rotation.y = it.yaw || 0; g.scale.setScalar(it.scale || 1)
-    const stone = new THREE.Mesh(stoneGeo, stoneMat); stone.name = 'lantern-stone'; stone.scale.set(0.24, 0.1, 0.24); stone.position.y = 0.02; stone.castShadow = stone.receiveShadow = true; g.add(stone)
+    // V-654 C6: kein Sechseck-Sockel mehr – zwei verbeulte Knet-Brocken, ungleich groß (1 : 0,62), zur Hälfte eingesunken; der Kristall steckt im Boden
+    // (Fuß 6 % der Höhe unter dem Gelände). Erdkeil und Kontakt-Steinchen ringsum baut world/grounding (Quelle anchors()).
+    for (const [k, [sx, sy, sz, ox, oy, oz]] of [[0.17, 0.12, 0.14, 0.02, -0.035, -0.01], [0.105, 0.075, 0.09, -0.12, -0.03, 0.08]].entries()) {
+      const stone = new THREE.Mesh(stoneGeo, stoneMat); stone.name = 'lantern-stone' + (k || ''); stone.scale.set(sx, sy, sz); stone.position.set(ox, oy, oz); stone.rotation.set(0.2 * k, 0.7 + k, 0.15); stone.castShadow = stone.receiveShadow = true; g.add(stone) }
     const cr = new THREE.Group(); cr.name = 'lantern-crystal'; g.add(cr)
-    const main = new THREE.Mesh(crystalGeo, stoneMat); main.name = 'crystal-main'; main.position.y = 0.06; main.castShadow = true; cr.add(main)
+    const main = new THREE.Mesh(crystalGeo, stoneMat); main.name = 'crystal-main'; main.position.y = -0.06 * LANTERN.height; main.castShadow = true; cr.add(main)
     for (const [j, S] of LANTERN.side.entries()) { const holder = new THREE.Group(); holder.rotation.y = S.yaw; cr.add(holder); const side = new THREE.Mesh(crystalGeo, stoneMat); side.name = 'crystal-side' + j; side.scale.setScalar(S.s); side.position.fromArray(S.at); side.rotation.z = -S.tilt; side.castShadow = true; holder.add(side) }
     const gem = createGem({ THREE, preset: it.preset || 'ruby', seed: i + 1, lantern: true, halo: true, pool: false,   /* V-572: Pfütze nicht mehr als flache Scheibe – M1World projiziert sie mit kfb-light-pool.v1 auf Boden und Steine */ veinGlow: LANTERN.veinGlow[it.preset || 'ruby'] }); gem.apply(cr)
     root.add(g); gems.push(gem); lanterns.push({ g, gem, preset: it.preset || 'ruby' })
@@ -45,6 +48,7 @@ export function createGemLanterns({ items = [], renderer = null, mood = null, gr
     update(dt) { dt = Math.min(dt || 0, 0.1); t += dt; syncEnv(); for (const g of gems) g.update(dt) },
     // Practicals-Angebot: je Laterne ein Kristall-Licht (Hauptkristall; Nebenkristalle leuchten mit, ohne eigenes Licht), Stärke = Stimmung × Puls (aus kfb-gem); der Pool wählt die ≤ 6 nächsten
     practicals: () => gems.map((g) => g.getPracticalLight()).filter(Boolean),
+    anchors: () => items.map((it, i) => ({ id: 'lantern:' + i, kind: 'crystal', x: it.pos[0], z: it.pos[2], r: 0.17 * (it.scale || 1) })),   // V-654: Fußpunkte für world/grounding
     info: () => ({ gem: GEM_VERSION, lanterns: lanterns.length, meshes: gems.reduce((s, g) => s + g.info().meshes, 0), env: !!envKey, t: +t.toFixed(2), presets: lanterns.map((l) => l.preset), states: [...new Set(gems.map((g) => g.state))] }),
     dispose() { for (const g of gems) g.dispose(); crystalGeo.dispose(); stoneGeo.dispose(); stoneMat.dispose(); root.clear() },
   }

@@ -1,0 +1,281 @@
+{
+ "schema": "kfb.fluffer-kinds/1",
+ "source": {
+  "repo": "georg-doc/KFB-Stunt-Car-Race",
+  "branch": "assets/private",
+  "commit": "f7675f8a12f0a03fe88d82198f0a3ff31397b004",
+  "dir": "50_BLENDER/K15",
+  "note": "WSB K15 (WS0 22.10.): 15 Boden-Cubes Quaternius MonsterCuteCubes CC0 as-is + KFB_Mouth + KFB_HealedEyes (laut Karten nicht privat; Lead 22.10.: ins Repo wie Ghost k11c)"
+ },
+ "kinds": [
+  {
+   "kind": "alien",
+   "file": "KFB_Alien_healed.k11c.glb",
+   "sha256": "4dfede6c18a5a85a0c9e2ca18e9a0e5a67449d2b0d8071be5bb5711af994f03e",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "alien_tall",
+   "file": "KFB_Alien_Tall_healed.k11c.glb",
+   "sha256": "1b69eb46cbe58199f8975da1280037d93f3afcb173b8b80a87616f6e7ba439eb",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "cactus",
+   "file": "KFB_Cactus_healed.k11c.glb",
+   "sha256": "8afac868ce6d859ddaac529dffd30b5325248070d4192efa63be4bab0d65ab96",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "chicken",
+   "file": "KFB_Chicken_healed.k11c.glb",
+   "sha256": "04f077f5b5fe80718bf9261606511f02dcebb48843b58a068ab7e79f859e883f",
+   "mouth": "V-589 Schnabelspitze (kein offenes Maul), lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "crab",
+   "file": "KFB_Crab_healed.k11c.glb",
+   "sha256": "a5381b8c300a5b78de9decb25bfe18567860e7d51a37da548fa68d9fd02852d6",
+   "mouth": "V-589 Mitte der Öffnung über der Zunge, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "cyclops",
+   "file": "KFB_Cyclops_healed.k11c.glb",
+   "sha256": "f1361d1d234040ec42fd6a527750a07fd373c14bf21a842abbe4eefea5fb91bc",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "deer",
+   "file": "KFB_Deer_healed.k11c.glb",
+   "sha256": "d364cd02d42a4af9d636f04e7f57d1dcd1940e6d121d15381f3aac8a4e8d38ca",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "demon",
+   "file": "KFB_Demon_healed.k11c.glb",
+   "sha256": "0ea6da7b6500cff93413713e00dc95f3f7de736769ebda8ac861289a57caac8c",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "greendemon",
+   "file": "KFB_GreenDemon_healed.k11c.glb",
+   "sha256": "e0038e59146108896b987213e7db90b7745ece432a7d5d512c0f2ab2edcfd817",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "mushroom",
+   "file": "KFB_Mushroom_healed.k11c.glb",
+   "sha256": "ee20ec900e416808919c140ba1536dc6b0c6930d0fe143795c0f9c08ad2e0864",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "panda",
+   "file": "KFB_Panda_healed.k11c.glb",
+   "sha256": "1cbec97dc98aca097d4a22fc968eebff9f6e701eca4e3e3061bd7a46e10e21d8",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "penguin",
+   "file": "KFB_Penguin_healed.k11c.glb",
+   "sha256": "d19fe5b1cfbd0352631323bd54d2f5ca675814b5ae5871d96e525f549c72da89",
+   "mouth": "V-589 Schnabelspitze (kein offenes Maul), lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "pig",
+   "file": "KFB_Pig_healed.k11c.glb",
+   "sha256": "9822b5fca73ddd5f6b8f37627fc663ac1e726247aa633a1f6bfcb4ef87028855",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "tree",
+   "file": "KFB_Tree_healed.k11c.glb",
+   "sha256": "b691777c2979d5b8adb1bf378818dc371685f01855d60fed51ad4c79f0cfea42",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  },
+  {
+   "kind": "yeti",
+   "file": "KFB_Yeti_healed.k11c.glb",
+   "sha256": "0f373e3176d5eae4f5da73b6eb06f4afd31c14eeaed0e5e110ac532dc84e39ce",
+   "mouth": "V-589 Mitte der dunklen Maulöffnung, lokal +Z = Spuckrichtung",
+   "clips": [
+    "Bite_Front",
+    "Bite_InPlace",
+    "Dance",
+    "Death",
+    "HitRecieve",
+    "Idle",
+    "Jump",
+    "No",
+    "Walk",
+    "Yes"
+   ]
+  }
+ ]
+}

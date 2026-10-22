@@ -15,7 +15,7 @@ import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
 import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues } from './cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -271,10 +271,16 @@ export function k10(e) {
 function gatlingTick(t) { if (K10.gatling && t > K10.gatlingUntil) { stopLoop(K10.gatling, 0.12); stopLoop(K10.gatlingSpin, 0.2); K10.gatling = K10.gatlingSpin = null; play('k10.gatlingDown', {}) } } // L11 Auslauf
 const jitter = (p) => 1 + (Math.random() * 2 - 1) * p
 // Dark Fluffer (WS-NPC flufferSim.events): { type, at:[x,z] | pos } → Folge aus dark_fluffer_r1
+// Zustand je Fluffer (K15: bis zu 3 zugleich, Ereignisse mit id); ohne id (alter Weg debug().events) gilt der gemeinsame Zustand
+const FLUFF = new Map()
+const fluffHealed = (id) => (id != null && FLUFF.has(id) ? FLUFF.get(id) : !!S.flufferHealed)
 export function fluffer(e, pos = null) {
-  if (e?.type === 'healed') S.flufferHealed = true; if (e?.type === 'windup' || e?.type === 'spit') S.flufferHealed = false // neuer feindlicher Auftritt
+  const id = e?.id ?? null, set = (v) => { if (id != null) FLUFF.set(id, v); else S.flufferHealed = v }
+  if (e?.type === 'fluffer_spawn') { set(false); return 0 } if (e?.type === 'fluffer_gone' || (e?.type === 'gone' && id != null)) { if (id != null) FLUFF.delete(id); if (e.type === 'fluffer_gone') return 0 } // gone = heimgegangen (Welt), fluffer_gone = Instanz ersetzt; Spawn-Ton gibt es keinen (Auftritt erst bei t0)
+  if (e?.type === 'healed') set(true); if (e?.type === 'windup' || e?.type === 'spit') set(false) // neuer feindlicher Auftritt
   const seq = FLUFFER_SEQUENCE[e?.type]; if (!seq || S.mode !== 'full') return 0
-  for (const [cue, dt] of seq) play(cue, { pos, at: dt }); log({ type: 'fluffer', e: e.type }); return seq.length
+  if (pos && Math.hypot(pos.x - S.listener.x, pos.z - S.listener.z) > FLUFFER_RANGE) return 0 // ferne Obstgarten-Zone: still (spart Stimmen)
+  for (const [cue, dt] of seq) play(cue, { pos, at: dt }); log({ type: 'fluffer', e: e.type, id }); return seq.length
 }
 // Atmo-Vorgaben von außen (WS1b Biom-Fahrt): { biome, weather, wind, timeOfDay } – null/undefined nimmt den Wert wieder zurück; wirkt ab dem nächsten Takt
 const CTXO = {}
@@ -313,8 +319,8 @@ function presenceTick(t) { for (const [k, p] of PRES) { if (t > p.until) { stopL
 // NPC-Schritt (groups.steps / npc.steps) bzw. Fluffer-Hüpfer (fluffer.hops) am Ort; außerhalb NPC_STEP_RANGE still
 export function npcStep(e, pos, surface) {
   if (S.mode !== 'full' || !pos) return null; const d = Math.hypot(pos.x - S.listener.x, pos.z - S.listener.z); if (d > NPC_STEP_RANGE) return null
-  const cue = e.type === 'hop' ? (S.flufferHealed ? 'fluffer.hopHealed' : 'fluffer.hop') : npcStepCue(e, surface); if (!cue) return null
-  if (e.type === 'hop' && !S.flufferHealed) presence('fluffGlide', 'npc.fluffGlide', pos, 0.9) // N08 Goo zwischen den Hüpfern
+  const healed = e.type === 'hop' && fluffHealed(e.id), cue = e.type === 'hop' ? (healed ? 'fluffer.hopHealed' : 'fluffer.hop') : npcStepCue(e, surface); if (!cue) return null
+  if (e.type === 'hop' && !healed) presence(e.id ? 'fluffGlide:' + e.id : 'fluffGlide', 'npc.fluffGlide', pos, 0.9) // N08 Goo zwischen den Hüpfern
   if (e.group === 'toy_squad') presence('toyTick', 'npc.toyTick', pos, 0.8) // N06 Aufziehschlüssel, solange der Trupp geht
   let live = 0; for (const v of S.bank.voices) if (v.prio === 0) live++; if (live >= STEP_VOICES) { S.npcStepDrops = (S.npcStepDrops || 0) + 1; return null } // höchstens 8 Schritte zugleich
   const sp = Number.isFinite(e.speed) ? Math.min(1.3, 0.8 + 0.25 * e.speed) : 1; S.npcSteps = (S.npcSteps || 0) + 1
@@ -441,7 +447,7 @@ export function stats() {
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
-    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

@@ -41,13 +41,13 @@ export default function HudClay(props) {
       mapSample: (x, z) => mapColor(host, x, z), mapMarks: () => host.marks?.() || [], path: host.path || [],
       nowPlaying: () => (A.musicPaused?.() ? { title: 'Pause' } : A.nowPlaying()), audioOn: () => !A.volumes().muted, reducedMotion,
     })
-    clay.current = hud; HUD_PASS.draw = (gl) => hud.draw(gl); document.body.dataset.kfbHud = 'clay' // M2-Label (Racer-Name) rutscht unter den Score
+    clay.current = hud; HUD_PASS.draw = (gl) => hud.draw(gl);
     document.fonts?.load?.('104px Bangers').then(() => hud.refreshTicker?.(), () => {})
     host.cards?.().then((cv) => { if (cv?.length) hud.setCards(cv) }, () => {})
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
     dom.current = buildDom(hud, inner, () => clay.current)
     expose('ClayHud', { status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons(), toggleCompass: (v) => hud.toggleCompass(v), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
-    return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; delete document.body.dataset.kfbHud; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
+    return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
   }, [ok])
 
   // Rückfall: Modul meldet fehlende/kaputte Props → Holz-HUD sichtbar

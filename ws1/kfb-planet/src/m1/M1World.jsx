@@ -63,6 +63,7 @@ import { createOrchard3d } from '../modules/orchard3d'
 import { createFluffSuck } from '../modules/fluffSuck.js'
 import { createSuckAudio } from '../audio/suckAudio.js'
 import { createGemLanterns, lanternsAlongPath } from '../modules/gemLanterns.js'
+import { createGroundContact } from '../world/grounding.js' // V-654 C6: Erdkeil + Kontakt-Steinchen um Kristalle, Bäume, Fundsachen, Amphitheater
 import { isTerrain2, TERRAIN2_CFG } from '../look/terrain2.js'
 import { stagePaletteFor } from '../stagePalette'
 import HudR5f from '../HudR5f'
@@ -80,7 +81,9 @@ import TREE_ANCHORS from '../data/world/kaykit-tree-fluff-anchors.v1.json'
 import { createResidentLife } from '../npc/residentLife'
 import NPC_WORLD from '../data/npc/residents.r1.json'
 import { interpTrack } from './m1Clock'
-import { createDarkFluffer } from '../npc/darkFluffer'
+import { createFlufferSet } from '../npc/flufferSet'
+import FLUFFER_K15 from '../data/npc/fluffer.kinds.k15.json'
+import ghostFluffUrl from '../assets/fluffer/KFB_Ghost_healed.k11c.glb?url'
 import { createGroupLife } from '../npc/groupLife'
 import { createBandLife } from '../npc/bandLife'
 import { createDiscoLife } from '../npc/discoLife' // Lead: Disco K12 (Dioramen-Test Schritt 3)
@@ -153,8 +156,13 @@ const NPC_ON = /(^|[#,])npc(,|$)/.test(hash) && K !== 1, NPC_T0 = +(/npct=(\d+(?
 const makeNpc = mk('npc', (o) => { const m = createResidentLife(o), offs = m.holders().map((h) => interpTrack(h)), own = m.dispose; m.dispose = () => { offs.forEach((f) => f()); own() }; return m })
 // WS-NPC Phase C P1 (V-583, Georg 21.10.: Ghost, Heil-Waffe Gun_Pistol) hinter dem Hash fluffer (braucht harvest: Baum, Schuss, Fluff); fluffert=<s> Startzeit
 const FLUFFER_ON = /(^|[#,])fluffer(,|$)/.test(hash) && /(^|[#,])harvest(=\w+)?(,|$)/.test(hash) && K !== 1, FLUFFER_T0 = +(/fluffert=(\d+(?:\.\d+)?)/.exec(hash)?.[1] ?? 4)
-const makeFluffer = mk('fluffer', (o) => { const m = createDarkFluffer(o), off = interpTrack(m.holder()), own = m.dispose; m.dispose = () => { off(); own() }; return m })
-const FLUFFER_OPTS = { def: NPC_WORLD.fluffers[0], t0: FLUFFER_T0, onEvent: (e) => { if (e.type === 'healed') mods.npc?.observeCure?.({ flufferId: e.flufferId, at: e.at, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }, clock: () => M1CLOCK.t, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), terrain: () => mods.terrain, orchard: () => mods.orchard, player: () => mods.player }
+// K15 (Lead 22.10.): je Obstgarten-Zone ein Dark Fluffer (fluffers[]); Sorte je Erscheinen per Tages-Seed; Modelle erst beim Erscheinen laden (glob ohne eager)
+// fluffern=<n> begrenzt auf die ersten n Zonen (1 = nur der Ghost am Goblin-Baum)
+const FLUFFER_K15_URL = import.meta.glob('../assets/fluffer/k15/*_healed.k11c.glb', { query: '?url', import: 'default' })
+const flufferUrlOf = (kind) => { if (kind === 'ghost') return Promise.resolve(ghostFluffUrl); const k = FLUFFER_K15.kinds.find((x) => x.kind === kind), load = k && FLUFFER_K15_URL['../assets/fluffer/k15/' + k.file]; return load ? load() : Promise.resolve(null) }
+const FLUFFER_N = +(/fluffern=(\d+)/.exec(hash)?.[1] ?? NPC_WORLD.fluffers.length)
+const makeFluffer = mk('fluffer', (o) => createFlufferSet(o))
+const FLUFFER_OPTS = { defs: NPC_WORLD.fluffers.slice(0, FLUFFER_N), kinds: FLUFFER_K15.kinds.map((k) => k.kind), urlOf: flufferUrlOf, T0: FLUFFER_T0, dayS: NPC_WORLD.dayS, dayOf: (t) => Math.floor((t + NPC_T0) / NPC_WORLD.dayS), maxNear: NPC_WORLD.flufferSpawns?.maxNear ?? 3, playerPos: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, z: p.z } : null }, track: (h) => interpTrack(h), worldScale: K, onEvent: (e) => { if (e.type === 'healed') mods.npc?.observeCure?.({ flufferId: e.flufferId, at: e.at, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }, clock: () => M1CLOCK.t, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), terrain: () => mods.terrain, orchard: () => mods.orchard, player: () => mods.player }
 // WS-NPC Phase D (Georg 21.10. Go, SPEC_NPC_PATROL_R1): Gruppen auf Fahrplan hinter dem Hash patrol (heute: Skelett-Patrouille westlich des Theaters)
 const PATROL_ON = /(^|[#,])patrol(,|$)/.test(hash) && K !== 1, GROUP_IDS = NPC_WORLD.groups.flatMap((g) => g.members.map((m) => m.id))
 const makeGroups = mk('groups', (o) => { const m = createGroupLife(o), offs = m.holders().map((h) => interpTrack(h)), own = m.dispose; m.dispose = () => { offs.forEach((f) => f()); own() }; return m })
@@ -192,12 +200,21 @@ const GIFT_AUTO = /giftauto=(\d+(?:\.\d+)?)/.exec(hash)?.[1]
 const makeGift = mk('gift', (o) => { const m = createGiftReveal(o), own = m.update; let auto = GIFT_AUTO != null; m.update = (dt, c) => { if (auto && (M1CLOCK.t ?? 0) >= +GIFT_AUTO && m.spawnAt()) auto = false; own(dt, c) }; return m })
 const GIFT_OPTS = GIFT_DEF ? { spec: REVEAL_TOY, def: { ...GIFT_DEF, ...GIFT_AT }, urls: { base: giftBaseUrl, baseBin: giftBaseBin, unwrapped: giftPaperUrl, unwrappedBin: giftPaperBin, tex: giftTex },
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => M1CLOCK.t ?? 0, groups: () => mods.groups, worldScale: K, classScale: CLASS_SCALE } : null
-const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
+const NPC_OPTS = { world: NPC_WORLD, threat: (id, at) => mods.fluffer?.threat?.(at) ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
   onGreet: (e) => { if (!GREET_LINES.noBubble.includes(e.reason)) useGame.getState().say('npc-' + e.id, getReader().silence(), 'thought') }, // G-2: Blase je Grund (greet.<reason>); bis WS0-Zeilen da sind nur „…“ (S5b),
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.
 const LANTERNS_ON = !/(^|[#,])lanterns=0(,|$)/.test(hash)
+// V-654 C6 (MVP-Kritiker R1 K4, Georg 22.10.): Erdung – Gelände steigt an Kristall-Laternen, Bäumen, Fundsachen und am Amphitheater-Fuß an (Erdkeil im
+// Geländematerial), Kontakt-Steinchen in ungeraden Gruppen; Amphitheater-Eingang (Rampe, +z) bleibt frei. ground=0 schaltet aus (Vorher-Bild).
+const GROUND_ON = !/(^|[#,])ground=0(,|$)/.test(hash)
+const amphGround = () => { const A = mods.amph; if (A?.status?.().status !== 'OK' || !A.footRadii) return null; const R = A.footRadii()
+  return { id: 'amph', kind: 'amph', x: 0, z: 0, r: Math.min(...R), radii: (a) => { const t = (((a / (2 * Math.PI)) % 1 + 1) % 1) * 64, i = Math.floor(t) % 64, f = t - Math.floor(t); return R[i] * (1 - f) + R[(i + 1) % 64] * f }, gaps: [[Math.PI / 2 - 0.36, Math.PI / 2 + 0.36]] } }
+const GROUND_OPTS = { terrain: () => mods.terrain, palette: TERRAIN3 ? (TERRAIN3_CFG.palettes[T3_PAL] || TERRAIN3_CFG.palettes.mesa) : { sand: BIOME.top, low: BIOME.top, mid: BIOME.top, high: BIOME.top, cliff: '#6b5a4a' },
+  neverBlackRoots: () => [mods.orchard?.object3d],   // Kronen-Unterseiten nie schwarz (V-570)
+  sources: () => [amphGround(), ...(mods.lanterns?.anchors?.() || []), ...(mods.orchard?.trees?.() || []).map((t) => ({ id: 'tree:' + t.zone + ':' + t.id, kind: 'tree', x: t.pos[0], z: t.pos[2], r: 0.24 })), ...(mods.found?.anchors?.() || [])] }
+const makeGround = mk('ground', createGroundContact)
 const makeLanterns = mk('lanterns', createGemLanterns), makePract = mk('practicals', createPracticals)
 const makeSuck = mk('suck', createFluffSuck), SUCK_OPTS = { maxJobs: 24, onCue: (c, j) => { HARVEST_STATE.cues = (HARVEST_STATE.cues || 0) + 1; HARVEST_STATE.lastCue = c; SUCK_AUDIO.a?.cue(c, j) } }, SUCK_AUDIO = { a: null } // Ton ab dem ersten T (Browser-Regel)
 // Kampf R1 (Georg 22.10.): FrizzleBob mit den K10-Waffen (Pistole, HeroMan-Blaster) aus dem Rucksack; Ziffern 1/2/3 wechseln (ACTION_KEYS.weapon), B feuert mit
@@ -532,7 +549,7 @@ function M1World() {
       discoActors: () => mods.disco?.actors?.() ?? [],
       discoHold: (on) => mods.disco?.hold?.(on),
       gift: () => mods.gift ? { status: mods.gift.status(), debug: mods.gift.debug(), events: mods.gift.events(), spawn: (x, z, yawDeg) => mods.gift.spawnAt(x, z, yawDeg) } : null, // WS-NPC E3 (nur debug) // WS-NPC Phase D (nur debug)
-      fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld(), hops: mods.fluffer.hops() } : null, // WS-NPC Phase C (nur debug)
+      fluffer: () => mods.fluffer ? { status: mods.fluffer.status(), debug: mods.fluffer.debug(), mouth: mods.fluffer.mouthWorld(), hops: mods.fluffer.hops(), events: mods.fluffer.events() } : null, // WS-NPC Phase C (nur debug)
       npc: () => mods.npc ? { status: mods.npc.status(), debug: mods.npc.debug(), encounter: mods.npc.encounter(), played: mods.npc.played(), steps: mods.npc.steps(), events: mods.npc.events(), time: mods.npc.time(), memory: mods.npc.memory() } : null, // WS-NPC (nur debug)
       renderer: () => M1GL.gl, scene: () => M1GL.scene, three: () => THREE, // Bildskripte: eigene Kamera rendern (nur debug)
       feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, k: K, g: G, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
@@ -550,6 +567,7 @@ function M1World() {
       <ModuleHost create={makeSky} options={SKY} />
       <ModuleHost create={makeTerrain} options={TERR} />
       <ModuleHost create={makeAmph} options={AMPH} />
+      {GROUND_ON && <ModuleHost create={makeGround} options={GROUND_OPTS} />}
       <ModuleHost create={makeBB} options={BB} />
       <ModuleHost create={makePartner} options={PARTNER} />
       {/* createContactAO entfernt (WS0 V-587 zu §116: kein Blob-Schatten, V-564); Erdung über dunklen Fuß (terrain3) und echten Schatten */}

@@ -6,7 +6,7 @@
 // und Partnerin an (M1World FootShade).
 // options: { world: residents.r1.json, groundAt(x, z) → y, clipUrls: [Adressen], cast(stageCastId) → Darsteller-Optionen (stageCast.KAYKIT),
 //            worldScale: K, t0: Startzeit im Tag (s), clock(): Weltzeit (s), player(): { x, y, z } | null, camera(): Kamera | null,
-//            threat?(residentId) → { x, z, id } | null (Phase C: feindlicher Dark Fluffer),
+//            threat?(residentId, at { x, z }) → { x, z, id } | null (Phase C: feindlicher Dark Fluffer; K15: der nächste zu at),
 //            memory?: true | { store } (Phase B: Lean Memory im Weltstand kfb.world-save/1 des Leads; true = localStorage), memoryFresh?: Weltstand vorher leeren }
 import * as THREE from 'three'
 import { createNpcFigure, loadClipSet, FIGURE } from './npcFigure.js'
@@ -67,7 +67,7 @@ export function createResidentLife(options) {
       const near = (id) => { const b = sim.byId.get(id).out; if (!pl) return false; const d = Math.hypot(b.x - pl.x, b.z - pl.z); if (d < W.bubbleR) return true
         if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(b.x, options.groundAt(b.x, b.z) + 0.9 * K, b.z); return frustum.intersectsSphere(_sphere) }
       for (const r of R) S.near[r.def.residentId] = near(r.def.residentId)
-      const outs = sim.step(t, dt, { player: pl, near: (id) => S.near[id], threat: options.threat ? (id) => options.threat(id) : undefined }) // Phase C: Dark Fluffer
+      const outs = sim.step(t, dt, { player: pl, near: (id) => S.near[id], threat: options.threat ? (id, at) => options.threat(id, at) : undefined }) // Phase C: Dark Fluffer
       // MVP-Leistung (Lead 22.10., Muster discoLife): Figuren sind Skin-Meshes ohne Frustum-Culling – sichtbar nur im Bild (bis visibleFar) oder
       // ganz nah (12·K, Schatten ins Bild), sonst ausgeblendet; Plan, Uhr und Gedächtnis laufen weiter
       const show = (o) => { if (!pl) return true; const d = Math.hypot(o.x - pl.x, o.z - pl.z); if (d < 12 * K) return true; if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(o.x, options.groundAt(o.x, o.z) + 0.9 * K, o.z); return frustum.intersectsSphere(_sphere) }

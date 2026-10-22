@@ -109,8 +109,13 @@ export default function AudioHost({ host }) {
     const Nm = mods.npc, GL = Nm?.greets?.() || Nm?.events?.(); if (GL && H.t - (H.grtAt || 0) > 0.1) { H.grtAt = H.t; H.grtSeen ||= new Set(); const first = !H.grtInit; H.grtInit = true
       for (const e of GL) { if (e?.type !== 'greet') continue; const key = greetKey(e); if (H.grtSeen.has(key)) continue; H.grtSeen.add(key); if (H.grtSeen.size > 300) H.grtSeen.delete(H.grtSeen.values().next().value); if (first) continue
         const hh = mods.terrain?.height, at = Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 1.6, z: e.at[1] } : null; A.greet(e, at) } }
-    // Dark Fluffer (WS-NPC): Ereignisse aus dem Modul, sobald es da ist (debug().events, je Ereignis einmal)
-    const F = mods.fluffer; if (F?.debug && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const d = F.debug(), m = F.mouthWorld?.()
+    // Dark Fluffer (WS-NPC): K15 fluffer.events() – alle Fluffer (bis 3), je seq einmal, Ort = Maul (mouth) bzw. at; beim ersten Lesen nur merken.
+    // Auch hinter der Kamera (Culling ruht nur die Animation). Ohne events() der alte Weg über debug().events (nur der Ghost).
+    const F = mods.fluffer; if (F?.events && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const list = F.events(), first = H.flSeq == null, last = list.at(-1)?.seq ?? 0; if (!first && last < H.flSeq) H.flSeq = 0 // Modul neu angelegt: seq beginnt von vorn
+      let top = H.flSeq ?? 0; for (const e of list) { if (first || !(e?.seq > H.flSeq)) { top = Math.max(top, e?.seq || 0); continue } top = Math.max(top, e.seq)
+        const hh = mods.terrain?.height, m = e.mouth, at = Array.isArray(m) ? { x: m[0], y: m[1], z: m[2] } : Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 0.6, z: e.at[1] } : null; A.fluffer(e, at) }
+      H.flSeq = top
+    } else if (F?.debug && !F.events && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const d = F.debug(), m = F.mouthWorld?.()
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })

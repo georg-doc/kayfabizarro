@@ -7,7 +7,7 @@
 //   E  Heilen per Schuss: geheilt, genau ein bunter Fluff (6 Sorten), danach kein Spucken; Fleck verblasst, Tusche-Shader wieder ab
 //   F  Kosten des Moduls je Schritt, keine Seitenfehler
 import { openPage, report } from './_page.mjs'
-const { browser, page, errs } = await openPage('#m1,debug,harvest,npc,fluffer,fluffert=2,npct=509', { viewport: { width: 1280, height: 720 } })
+const { browser, page, errs } = await openPage('#m1,debug,harvest,npc,fluffer,fluffern=1,fluffert=2,npct=509', { viewport: { width: 1280, height: 720 } })
 await page.waitForFunction(() => window.__kfbM1?.fluffer?.()?.status.status === 'OK' && window.__kfbM1.npc?.()?.status.status === 'OK' && window.__kfbM1.status().player?.status === 'OK' && window.__kfbM1.mods.orchard?.stats().status === 'OK', null, { timeout: 300000 })
 const F = () => page.evaluate(() => { const M = window.__kfbM1; return { ...M.fluffer(), ink: M.mods.terrain.info().ink, now: M.clock.t } })
 const waitT = async (t) => { for (let i = 0; i < 2000; i++) { if ((await F()).now >= t) return; await page.waitForTimeout(150) } }

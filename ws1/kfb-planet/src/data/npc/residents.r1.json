@@ -857,7 +857,77 @@
         "yK": 0.29,
         "fwdK": 0.5,
         "note": "gemessen am Ghost (Isolationsbild 21.10.), spuck.v3 schätzt 0,62 × Höhe = Nasenhöhe; Anker je Cube kommt mit V-584"
-      }
+      },
+      "kind": "ghost",
+      "offsetS": 0,
+      "zone": "goblin"
+    },
+    {
+      "id": "dark_fluffer_atlantis",
+      "model": "WSB K15 Boden-Cube je Erscheinen (fluffer.kinds.k15.json, CC0 Quaternius MonsterCuteCubes as-is + KFB_Mouth + KFB_HealedEyes)",
+      "decision": "Lead 22.10. K15: je Obstgarten-Zone ein Dark Fluffer an eigenem Baum",
+      "seed": 11,
+      "start": [
+        39.8,
+        38.9
+      ],
+      "via": [
+        [
+          33.2,
+          36.1
+        ]
+      ],
+      "stand": [
+        26.6,
+        33.4
+      ],
+      "target": [
+        24.1,
+        32.3
+      ],
+      "tree": {
+        "zone": "atlantis",
+        "id": "t4"
+      },
+      "heightM": 0.8,
+      "heightNote": "WS0 V-616 (21.10.): 0,8 m für alle Fluffer und Boden-Cubes (vorher 1,1 m, Georg: 30–40 % kleiner); Tropfen und Fleck ziehen mit, Trefferradius bleibt",
+      "zone": "atlantis",
+      "offsetS": 20,
+      "firstKind": "mushroom",
+      "placeNote": "Baum atlantis t4; Anmarsch gerade von außen (Abstand zum Zonen-Schwerpunkt), stand 3,9 m und target 1,2 m vor dem Stamm wie beim Ghost an goblin t4; Route ≥ 4 m frei laut npcWorldObstacles (Bäume, Loot, Laternen, Demo-Pfad)"
+    },
+    {
+      "id": "dark_fluffer_utopia",
+      "model": "WSB K15 Boden-Cube je Erscheinen (fluffer.kinds.k15.json, CC0 Quaternius MonsterCuteCubes as-is + KFB_Mouth + KFB_HealedEyes)",
+      "decision": "Lead 22.10. K15: je Obstgarten-Zone ein Dark Fluffer an eigenem Baum",
+      "seed": 13,
+      "start": [
+        -13.9,
+        68.8
+      ],
+      "via": [
+        [
+          -10.6,
+          62.4
+        ]
+      ],
+      "stand": [
+        -7.3,
+        56.1
+      ],
+      "target": [
+        -6.1,
+        53.8
+      ],
+      "tree": {
+        "zone": "utopia",
+        "id": "t1"
+      },
+      "heightM": 0.8,
+      "heightNote": "WS0 V-616 (21.10.): 0,8 m für alle Fluffer und Boden-Cubes (vorher 1,1 m, Georg: 30–40 % kleiner); Tropfen und Fleck ziehen mit, Trefferradius bleibt",
+      "zone": "utopia",
+      "offsetS": 40,
+      "placeNote": "Baum utopia t1; Anmarsch gerade von außen (Abstand zum Zonen-Schwerpunkt), stand 3,9 m und target 1,2 m vor dem Stamm wie beim Ghost an goblin t4; Route ≥ 4 m frei laut npcWorldObstacles (Bäume, Loot, Laternen, Demo-Pfad)"
     }
   ],
   "groups": [
@@ -1334,5 +1404,10 @@
       "stagger": 0.3,
       "note": "Platzhalter-Ort: Boden flach, 15 m zu Bewohner-Routen, 11 m zur Bot-Schleife, 9 m zum Start der Trupp-Route; Blick −x (Richtung Amphitheater). boxScale 1,6: ein Geschenk für sechs Soldaten (Original 1,99 × 3,48 × 1,99 u für einen)"
     }
-  ]
+  ],
+  "flufferSpawns": {
+    "decision": "Lead 22.10. (K15): feste Spawns je Obstgarten-Zone, bis der Welt-Ereignis-Host sie übernimmt (spawnAt/events wie E3); Erscheinen n beginnt bei fluffert + offsetS + n·dayS, Sorte je Erscheinen per Tages-Seed (flufferKinds.kindFor). offsetS ist ein Platzhalter-Versatz (kein Kanon-Wert), damit nicht alle drei gleichzeitig anmarschieren",
+    "kinds": "src/data/npc/fluffer.kinds.k15.json",
+    "maxNear": 3
+  }
 }

@@ -271,7 +271,7 @@ function useKindLabel(kind, assist, racer) {
     el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ` <span style="font-weight:400;font-size:15px">· M Assist · C wechselt · V Racer: ${M2CAR.name.replace(/^\d+\s/, '')}</span>`
     const list = document.getElementById('m1-keys'); if (list && !document.getElementById('m2-keys')) { const c = document.createElement('div'); c.id = 'm2-keys'; c.style.marginTop = '6px'; c.innerHTML = RACER_FLY ? CAR_KEYS + RACER_KEYS : CAR_KEYS; list.appendChild(c) }
     /* Georg 22.10. (V-367 freigegeben): Abnahme-Text „Fahrsystem … Assist …“ nur im Testmodus (debug); Spieler sehen kurz den Racer-Namen unter der Holzleiste */
-    el.style.top = (DEVUI ? 14 : document.body.dataset.kfbHud === 'clay' ? 150 : 88) + 'px'; el.style.opacity = '1' /* Knet-HUD: unter dem Fluff-Score */
+    el.style.top = (DEVUI ? 14 : 88) + 'px'; el.style.opacity = '1'
     if (!DEVUI) { el.textContent = M2CAR.name.replace(/^\d+\s/, ''); el.style.opacity = '1'; el.style.transition = 'opacity .6s'; const tf = setTimeout(() => { el.style.opacity = '0' }, 2600); return () => clearTimeout(tf) }
     el.style.background = 'rgba(255,214,120,.95)'; el.style.transform = 'translateX(-50%) scale(1.12)'
     const t = setTimeout(() => { el.style.background = 'rgba(255,250,240,.82)'; el.style.transform = 'translateX(-50%) scale(1)' }, 900)

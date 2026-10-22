@@ -9,7 +9,8 @@
 //   Waffe    Gun_Pistol.gltf (KayKit Prototype Bits, as-is) am Hand-Slot handslot.r des Spielers (V-574) mit EINER festen Halterungsdrehung (V-581, GUN_SLOT).
 //   Bewohner threat() → { x, z } solange feindlich (residentSim: bemerken, zusammenzucken, ausweichen)
 // options: { def: residents.r1.json fluffers[i], t0 (Weltsekunden), clock(): Weltzeit, groundAt(x, z), terrain(), orchard(), player() (Loco-Modul),
-//            onEvent?(e) (Phase B: { type: 'healed', flufferId, at, t } an das Gedächtnis der Bewohner) }
+//            onEvent?(e) (Phase B: { type: 'healed', flufferId, at, t } an das Gedächtnis der Bewohner),
+//            K15 (Lead 22.10.): modelUrl? (Boden-Cube k11c, Standard Ghost), kind?, gun? (false = Waffe trägt ein anderer Fluffer), show?(x, z) (Culling), onWorld?(e) (jedes Weltereignis mit id) }
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createFlufferSim } from './flufferSim.js'
@@ -43,7 +44,7 @@ export function createDarkFluffer(options) {
 
   const loader = new GLTFLoader()
   const ready = (async () => {
-    const g = await loader.loadAsync(ghostUrl), o = g.scene
+    const g = await loader.loadAsync(options.modelUrl || ghostUrl), o = g.scene
     o.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true } })
     const box = new THREE.Box3().setFromObject(o); S.scale = (def.heightM || 1.1) / Math.max(0.01, box.max.y - box.min.y); o.scale.setScalar(S.scale)
     holder.add(o); S.mouth = o.getObjectByName('KFB_Mouth') || o.getObjectByName('Mouth'); S.eyes = o.getObjectByName('KFB_HealedEyes'); if (S.eyes) S.eyes.visible = false // Spucken aus KFB_Mouth (V-589); weiße Augen erst nach dem Heilen
@@ -51,6 +52,7 @@ export function createDarkFluffer(options) {
     for (const c of g.animations) S.actions[c.name] = S.mixer.clipAction(c)
     for (const n of ['Yes', 'Dance', 'Bite_Front']) if (S.actions[n]) { S.actions[n].setLoop(THREE.LoopOnce, 1); S.actions[n].clampWhenFinished = true }
     S.status = 'OK'
+    if (options.gun === false) return
     // Heil-Waffe (as-is): gltf + bin + Textur aus den Spiel-Assets (Adressen über den URL-Abgleich)
     const man = new THREE.LoadingManager(); man.setURLModifier((u) => (u.endsWith('Gun_Pistol.bin') ? gunBin : u.endsWith('prototypebits_texture.png') ? gunTex : u))
     const txt = await (await fetch(gunUrl)).text()
@@ -76,12 +78,14 @@ export function createDarkFluffer(options) {
   }
   function world(e) {
     const O = options.orchard?.(), tr = def.tree
+    if (e.type === 'taint' || e.type === 'fade') S.tainted = e.type === 'taint'
     if (e.type === 'taint') O?.taint?.(tr.zone, tr.id, true)
     else if (e.type === 'drop') O?.hitTree?.(tr.zone, tr.id, 'explosion')
     else if (e.type === 'burst') O?.burst?.([holder.position.x, holder.position.y + (def.heightM || 1.1) * 0.6, holder.position.z], e.n, e.seed, e.tag)
     else if (e.type === 'fade') O?.taint?.(tr.zone, tr.id, false)
     if (e.type === 'healed') options.onEvent?.({ type: 'healed', flufferId: def.id, at: [holder.position.x, holder.position.z], t: e.t }) // Phase B: Zeugen
     S.events.push({ t: +e.t.toFixed(3), type: e.type, k: e.k ?? null }); if (S.events.length > 60) S.events.shift()
+    options.onWorld?.({ type: e.type, k: e.k ?? null, t: +e.t.toFixed(3), id: def.id, kind: options.kind ?? null, at: [holder.position.x, holder.position.z], mouth: mouthWorld(new THREE.Vector3()).toArray() }) // K15: Sammel-Ereignisse der Fluffer-Menge
   }
 
   return {
@@ -96,12 +100,14 @@ export function createDarkFluffer(options) {
       // Lage, Blick (weich), Clip
       const y = options.groundAt(st.x, st.z); holder.position.set(st.x, y, st.z)
       if (S.yaw === null) S.yaw = st.yaw; else { let d = st.yaw - S.yaw; d = Math.atan2(Math.sin(d), Math.cos(d)); S.yaw += Math.sign(d) * Math.min(Math.abs(d), SPIT.turnRate * dt) }
-      holder.rotation.set(0, S.yaw, 0); holder.visible = st.phase !== 'gone' && st.phase !== 'wait'; if (S.eyes) S.eyes.visible = !!st.healed
+      // K15-Culling (Muster groupLife): nur im Bild oder ganz nah sichtbar; verdeckt ruht der Mixer, Plan und Welt laufen weiter
+      S.shown = st.phase !== 'gone' && st.phase !== 'wait' && (options.show ? !!options.show(st.x, st.z) : true)
+      holder.rotation.set(0, S.yaw, 0); holder.visible = S.shown; if (S.eyes) S.eyes.visible = !!st.healed
       play(st.clip); if (S.actions.Walk) S.actions.Walk.timeScale = THREE.MathUtils.clamp(st.speed / 0.9, 0.8, 1.25) // Eigentempo Walk nicht gemessen (Lücke)
-      S.mixer.update(dt)
+      if (S.shown) S.mixer.update(dt)
       // Hüpfer (WS-Audio, Georg 21.10.): Tiefpunkt des Knochens „Body“ beim Gehen (Walk) = Aufsetzen → Ereignis hop (eigener Ringpuffer)
       if (holder.visible && st.clip === 'Walk' && st.speed > 0.1) { const H = S.hop, b = (H.body ||= holder.getObjectByName('Body')); if (b) { b.updateWorldMatrix(true, false); const yb = _hb.setFromMatrixPosition(b.matrixWorld).y - y
-        if (H.y1 !== null && H.y0 !== null && H.y1 < H.y0 && H.y1 <= yb && S.t - H.last > 0.2) { H.last = S.t; S.hops.push({ type: 'hop', id: def.id, at: [holder.position.x, holder.position.z], t: S.t }); if (S.hops.length > 60) S.hops.shift() }
+        if (H.y1 !== null && H.y0 !== null && H.y1 < H.y0 && H.y1 <= yb && S.t - H.last > 0.2) { H.last = S.t; S.hops.push({ type: 'hop', id: def.id, kind: options.kind ?? null, at: [holder.position.x, holder.position.z], t: S.t }); if (S.hops.length > 60) S.hops.shift() }
         H.y0 = H.y1; H.y1 = yb } } else { S.hop.y0 = S.hop.y1 = null }
       // Weltereignisse (genau einmal)
       const from = S.prevT ?? -Infinity // beim ersten fertigen Bild alle schon fälligen Ereignisse nachholen (Welt konsistent mit dem Plan)
@@ -112,6 +118,7 @@ export function createDarkFluffer(options) {
       if (key !== S.patchKey) { S.patchKey = key; options.terrain?.()?.setInkPatches?.(st.patch ? [st.patch] : []) }
       // Tropfen: sammeln am Maul, dann Bogen zum Aufprall
       for (const pool of pools) for (const d of pool) d.m.visible = false
+      if (!S.shown) return
       if (st.gathering) { const pool = pools[st.gathering.k], m = mouthWorld(_m), u = Math.min(1, st.gathering.u)
         pool.forEach((d) => { d.m.visible = true; d.m.position.set(m.x + d.off[0] * u, m.y + d.off[1] * u, m.z + d.off[2] * u); d.m.scale.setScalar(Math.max(0.001, d.r * (0.3 + 0.7 * u))) }) }
       for (const f of st.flying) { const pool = pools[f.k], a0 = release.get(f.k); if (!a0) continue
@@ -122,11 +129,11 @@ export function createDarkFluffer(options) {
           d.m.visible = true; d.m.position.set(q * q * _a.x + 2 * q * k * _b.x + k * k * _c.x + d.off[0], q * q * _a.y + 2 * q * k * _b.y + k * k * _c.y + d.off[1], q * q * _a.z + 2 * q * k * _b.z + k * k * _c.z + d.off[2]); d.m.scale.setScalar(d.r) }) }
     },
     threat: () => { const st = sim.at(S.t); return S.status === 'OK' && st.hostile ? { x: st.x, z: st.z, id: def.id } : null },
-    status: () => ({ status: S.status, error: S.error, gun: S.gunOn, target: !!S.offTarget, mouth: S.mouth?.name ?? null, eyes: S.eyes ? (S.eyes.visible ? 'white' : 'hidden') : null, scale: +S.scale.toFixed(4) }),
+    status: () => ({ status: S.status, error: S.error, kind: options.kind ?? null, shown: !!S.shown, gun: S.gunOn, target: !!S.offTarget, mouth: S.mouth?.name ?? null, eyes: S.eyes ? (S.eyes.visible ? 'white' : 'hidden') : null, scale: +S.scale.toFixed(4) }),
     debug: () => { const st = sim.at(S.t); return { t: +S.t.toFixed(3), phase: st.phase, clip: S.clip, x: st.x, z: st.z, patch: st.patch, spitsDone: st.spitsDone, healed: st.healed, hostile: st.hostile, heals: S.heals, events: S.events.slice(), arrive: sim.arrive, spits: sim.spits.map((s) => ({ windup: s.windup, release: s.release, impact: s.impact })), drops: pools.flat().filter((d) => d.m.visible).length } },
     mouthWorld: () => mouthWorld(new THREE.Vector3()).toArray(),
     hops: () => S.hops.slice(), // { type: 'hop', id, at: [x, z], t } (WS-Audio: DF07_fluffer_hop)
     holder: () => holder,
-    dispose() { darkFlufferLog.dispose++; S.offTarget?.(); S.gun?.parent?.remove(S.gun); options.terrain?.()?.setInkPatches?.([]); S.mixer?.stopAllAction(); inkMat.dispose(); dropGeo.dispose(); root.clear() },
+    dispose() { darkFlufferLog.dispose++; S.offTarget?.(); if (S.tainted) options.orchard?.()?.taint?.(def.tree.zone, def.tree.id, false); S.gun?.parent?.remove(S.gun); options.terrain?.()?.setInkPatches?.([]); S.mixer?.stopAllAction(); inkMat.dispose(); dropGeo.dispose(); root.clear() },
   }
 }

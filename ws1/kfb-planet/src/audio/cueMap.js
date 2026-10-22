@@ -4,6 +4,7 @@
 // bank-Einträge: set = elevenlabs_r1/<set>, base = Dateistamm (Varianten _a/_b/_c werden gewechselt), gain (linear, zusätzlich zur Normalisierung), bus
 // Dark Fluffer 0,8 m statt 1,1 m (WS0 V-616, Georg 21.10.: kleiner, passend zu KayKit) → Klänge 4 % höher (kleinerer Körper)
 export const FLUFFER_PITCH = 1.04
+export const FLUFFER_RANGE = 120 // m: Fluffer-Ereignisse weiter weg bleiben still (K15: Fluffer in drei Obstgarten-Zonen; bei 120 m ohnehin ≈ −30 dB)
 export const CUES = Object.freeze({
   // ── Boden-Fahrt (M2EVENTS aus k2t / vehicleRig) ─────────────────────────────────────────────────────────────
   'drive.motor': { owner: 'racer', file: 'L1_idle · L2_low · L3_mid · L4_high · L5_overrun (Gitter nach Drehzahl, Schubabschaltung)', note: 'Drehzahl/Gang aus vehicleRig' },

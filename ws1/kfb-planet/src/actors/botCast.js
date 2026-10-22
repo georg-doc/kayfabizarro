@@ -11,7 +11,8 @@ import contract from '../data/eyes/kfb-pet-graft-driver.v4.json'
 import { KAYKIT_CLIPS, CLASS_SCALE } from './stageCast'
 import SRC from '../data/actors/cast/kayfabrick-bot.sources.json' // Herkunft (Commit, Blob) der privaten Dateien für den Darsteller-Vertrag
 
-const FILES = import.meta.glob('../private/50_BLENDER/B17/_privat_kauf_asset/*.glb', { eager: true, query: '?url', import: 'default' })
+// Nur die Dateien, die residents.r1.json nutzt (Lead 22.10.: Build klein; bot_crew tragic/comic/absurd mit Helm, ihre Blöcke, Station tragic). Neue Farbe → hier ergänzen.
+const FILES = import.meta.glob(['../private/50_BLENDER/B17/_privat_kauf_asset/KayfabrickBot_{tragic,comic,absurd}_helm.r1.glb', '../private/50_BLENDER/B17/_privat_kauf_asset/KayfabrickBlock_{tragic,comic,absurd}.r1.glb', '../private/50_BLENDER/B17/_privat_kauf_asset/KayfabrickStation_tragic.r1.glb'], { eager: true, query: '?url', import: 'default' })
 const URL = Object.fromEntries(Object.entries(FILES).map(([k, v]) => [k.split('/').pop(), v]))
 // Werte der Figurenkarte B17/data/kayfabrick_bot.figure.r1.json (eyeRig.settings, eyeRig.lid, eyeRig.anchors) und b17_bots.json (eyes.R)
 export const BOT_CARD = Object.freeze({ R: 0.085, pupilStyle: 'matte-cute', pupilSize: 0.4, lid: '#4a5058', anchors: { l: 'KFB_Eye_L_anchor', r: 'KFB_Eye_R_anchor' }, carryAnchor: 'KFB_Carry_anchor',

@@ -48,7 +48,7 @@ const r = await page.evaluate(async ({ SPOTS, CROSS, GY }) => {
   P.handle()?.body?.sleep?.(); const slept = P.handle()?.body?.isSleeping?.() ?? null
   P.freeze(false); await wait(2500); out.release = { ...playerGap(), slept }
   const propGaps = (key) => { const a = []; for (const c of mods[key].object3d.children) { const b = bottomOf(c); if (!b) continue; const g = P.castDown((b.min.x + b.max.x) / 2, (b.min.z + b.max.z) / 2); if (g != null) a.push(cm(b.min.y - g)) } a.sort((p, q) => p - q); return { n: a.length, min: a[0], max: a.at(-1) } }
-  out.props = { orchard: propGaps('orchard'), lanterns: propGaps('lanterns'), found: propGaps('found') }
+  out.props = { orchard: propGaps('orchard'), lanterns: propGaps('lanterns'), found: propGaps('found'), foundContact: (() => { const c = mods.found?.contact?.() || []; return { n: c.length, max: c.length ? Math.max(...c.map((x) => x.max)) : null, min: c.length ? Math.min(...c.map((x) => x.min)) : null } })() }
   out.footH = footH
   return out
 }, { SPOTS, CROSS, GY: GROUND_Y })
@@ -117,7 +117,7 @@ process.exit(report('probeWorld', {
   slopesGrounded: SPOTS.length === 3 && r.slopes.length === 3 && r.slopes.every(ok),
   treesNotFloating: r.props.orchard.n > 0 && r.props.orchard.max <= 2,
   lanternsNotFloating: r.props.lanterns.n > 0 && r.props.lanterns.max <= 2,
-  foundNotSunk: r.props.found.n > 0 && r.props.found.min >= -2,
+  foundRestsOnGround: r.props.found.n > 0 && r.props.foundContact.n > 0 && r.props.foundContact.max <= 0.005 && r.props.foundContact.min >= -0.06, // V-654 C6: je Ecke gegen das Gelände darunter – nie schwebend, höchstens 6 cm eingesunken
   carRestsFlat: car.flat.clear > 0 && car.flat.clear < 1.5 * K && car.flat.drift < 0.05,
   carRestsOnHill: car.hill.clear > 0 && Math.abs(car.hill.clear - car.flat.clear) <= 0.25,
 }, { readyS, info, plaza: r.plaza, spawn: r.spawn, release: r.release, slopes: r.slopes, spots: SPOTS, sweep: r.sweep, props: r.props, car, crossMax, cost, errs: [...errs, ...C.errs].slice(0, 3) }))

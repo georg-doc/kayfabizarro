@@ -21,7 +21,7 @@ const greetLk = async () => { await page.evaluate(() => { const M = window.__kfb
   for (let i = 0; i < 40; i++) { await page.waitForTimeout(150); const d = await page.evaluate(() => window.__kfbM1.npc().debug.find((x) => x.id === 'lorekeeper')); if (d.mode === 'player') { await page.waitForTimeout(400); const pl = await page.evaluate(() => window.__kfbM1.npc().played.filter(([id]) => id === 'lorekeeper').map(([, c]) => c)); return { why: d.greetWhy, last: pl.at(-1) } } }
   return { why: null } }
 // Sitzung 1
-await page.goto(url('#m1,debug,harvest,npc,fluffer,fluffert=2,npct=509,npcfresh')); await ready()
+await page.goto(url('#m1,debug,harvest,npc,fluffer,fluffern=1,fluffert=2,npct=509,npcfresh')); await ready()
 await page.evaluate(() => { const M = window.__kfbM1; M.player().teleport([-4, M.terrainH(-4, 54) + 1.2, 54], Math.PI) }) // in der Spielerblase (Reaktionen nur dort), abseits der Wege
 let healedAt = null
 for (let i = 0; i < 1200 && healedAt === null; i++) { await page.waitForTimeout(120)

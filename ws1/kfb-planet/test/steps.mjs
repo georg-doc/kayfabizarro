@@ -6,19 +6,27 @@ import { openPage, report } from './_page.mjs'
 const { browser, page, errs } = await openPage('#m1,debug,harvest,look=terrain3,npc,fluffer,fluffert=1,patrol', { viewport: { width: 960, height: 540 } })
 await page.waitForFunction(() => (window.__kfbM1?.groups?.()?.status?.status ?? 'LOADING') !== 'LOADING' && window.__kfbM1.npc?.()?.status.status === 'OK' && window.__kfbM1.fluffer?.()?.status.status === 'OK' && window.__kfbM1.status().player?.status === 'OK', null, { timeout: 300000 })
 // Spieler zwischen Skelette und Goblin-Hain (beide in der Blase)
+// K15-Culling: Hüpfer gibt es nur, solange der Fluffer zu sehen ist – zuerst Spieler nördlich des Goblin-Hains (Kamera schaut nach −z), solange der Fluffer anmarschiert (fluffert=1),
+// 6 s Hüpfer zählen; danach Blick zu den Skeletten wie bisher
+await page.evaluate(() => { const M = window.__kfbM1; M.player().teleport([-19, M.terrainH(-19, 52) + 1.2, 52], Math.PI) }) // Kamera schaut nach −z: Spieler nördlich des Hains
+const tTurn = await page.evaluate(() => window.__kfbM1.clock.t + 1)
+await page.waitForTimeout(7000)
+const hopsSeen = await page.evaluate((tt) => window.__kfbM1.fluffer().hops.filter((e) => e.t > tt), tTurn)
 await page.evaluate(() => { const M = window.__kfbM1; M.player().teleport([-22, M.terrainH(-22, 28) + 1.2, 28], Math.PI) })
 await page.waitForTimeout(2000)
 const t0 = await page.evaluate(() => window.__kfbM1.clock.t)
 await page.waitForTimeout(12000)
 const R = await page.evaluate((t0) => { const M = window.__kfbM1, g = M.groups(), n = M.npc(), f = M.fluffer()
-  return { steps: g.steps.filter((e) => e.t > t0), npcSteps: n.steps, hops: f.hops.filter((e) => e.t > 0), events: g.events.length, members: g.debug.flatMap((d) => d.members.map((m) => ({ id: m.id, x: m.x, z: m.z, speed: m.speed }))), flufferClip: f.debug.clip } }, t0)
+  return { steps: g.steps.filter((e) => e.t > t0), npcSteps: n.steps, hops: [], events: g.events.length, members: g.debug.flatMap((d) => d.members.map((m) => ({ id: m.id, x: m.x, z: m.z, speed: m.speed }))), flufferClip: f.debug.clip } }, t0)
 await browser.close()
 const byId = {}; for (const e of R.steps) (byId[e.id] ||= []).push(e)
 const skel = Object.entries(byId).filter(([id]) => id.startsWith('skel_'))
-const alternates = skel.length > 0 && skel.every(([, l]) => l.length >= 6 && l.filter((e, i) => i > 0 && e.foot === l[i - 1].foot).length <= Math.ceil(l.length * 0.2))
-const gaps = skel.flatMap(([, l]) => l.slice(1).map((e, i) => e.t - l[i].t))
+const alternates = skel.length > 0 && skel.every(([, l]) => l.length >= 6 && l.filter((e, i) => i > 0 && e.foot === l[i - 1].foot && e.t - l[i - 1].t <= 1.5).length <= Math.ceil(l.length * 0.2))
+// Stehpausen der Patrouille (Lücke > 1,5 s) sind kein Schritt-Takt: nach einer Pause darf derselbe Fuß wieder anfangen
+const gaps = skel.flatMap(([, l]) => l.slice(1).map((e, i) => e.t - l[i].t)).filter((g) => g <= 1.5)
 const cadence = gaps.length > 5 && gaps.filter((g) => g >= 0.15 && g <= 1.0).length >= gaps.length * 0.85
 const nearFoot = R.steps.length > 0 && R.steps.every((e) => Array.isArray(e.base) && Math.hypot(e.at[0] - e.base[0], e.at[1] - e.base[1]) < 0.6) // Fuß ≤ 0,6 m von der Figur zur Meldezeit
+R.hops = hopsSeen
 const hopGaps = R.hops.slice(1).map((e, i) => e.t - R.hops[i].t)
 process.exit(report('steps (WS-NPC, Schritt- und Hüpf-Ereignisse für den Ton)', {
   A_groupStepsAlternate: alternates,

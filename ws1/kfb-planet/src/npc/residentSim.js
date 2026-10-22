@@ -144,7 +144,7 @@ export function createResidentSim({ days, ctx, activities = {}, rules = SIM, bus
       else if (!anyHeld && c.paused) host.resume()
       host.update(dt)
     }
-    for (const b of brains) b.step(t, dt, { player: sense.player, near: sense.near(b.id), encounter: encounterSense(b.id, t), threat: sense.threat?.(b.id) ?? null })
+    for (const b of brains) b.step(t, dt, { player: sense.player, near: sense.near(b.id), encounter: encounterSense(b.id, t), threat: sense.threat?.(b.id, b.out) ?? null })
     return brains.map((b) => b.out)
   }
   // Clip-Wunsch je Beat (Kit-Clips as-is; Waving aus Rig_Medium_Simulation, Lead-OK 21.10., sonst Interact): einmal beim Eintritt in den Beat

@@ -37,7 +37,7 @@ const r = await page.evaluate(async () => {
     mods.amph.object3d.traverse((o) => { if (o.isMesh && o.visible) { try { const h = ray.intersectObject(o, false)[0]; if (h && (top == null || h.point.y > top)) top = h.point.y } catch (e) {} } })
     out.partner = top == null ? null : cm(b.min.y - top) }
   const propGaps = (key) => { const a = []; for (const c of mods[key].object3d.children) { const b = bottomOf(c); if (!b) continue; const g = P.castDown((b.min.x + b.max.x) / 2, (b.min.z + b.max.z) / 2); if (g != null) a.push(cm(b.min.y - g)) } a.sort((p, q) => p - q); return { n: a.length, min: a[0], max: a.at(-1) } }
-  out.props = { orchard: propGaps('orchard'), lanterns: propGaps('lanterns'), found: propGaps('found') }
+  out.props = { orchard: propGaps('orchard'), lanterns: propGaps('lanterns'), found: propGaps('found'), foundContact: (() => { const c = mods.found?.contact?.() || []; return { n: c.length, max: c.length ? Math.max(...c.map((x) => x.max)) : null, min: c.length ? Math.min(...c.map((x) => x.min)) : null } })() }
   return out
 })
 await browser.close()
@@ -52,6 +52,6 @@ process.exit(report('m1-ground', {
   partnerGrounded: r.partner != null && Math.abs(r.partner) <= TOL,
   treesNotFloating: P.orchard.n > 0 && P.orchard.max <= 2,
   lanternsNotFloating: P.lanterns.n > 0 && P.lanterns.max <= 2,
-  foundNotSunk: P.found.n > 0 && P.found.min >= -2,
+  foundRestsOnGround: P.found.n > 0 && P.foundContact.n > 0 && P.foundContact.max <= 0.005 && P.foundContact.min >= -0.06, // V-654 C6: je Ecke gegen das Gelände darunter – nie schwebend, höchstens 6 cm eingesunken
   noPageErrors: errs.length === 0,
 }, { ...r, errs: errs.slice(0, 3) }))

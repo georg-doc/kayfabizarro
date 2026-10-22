@@ -72,6 +72,17 @@ try {
     L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 })
     await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
     M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck } })
+  // K15 (WS-NPC): bis zu 3 Dark Fluffer – fluffer.events() mit seq/id/mouth; altes Ereignis still, ferne Zone (> 120 m) still, Zustand je Fluffer (geheilt/feindlich)
+  out.fluffK15 = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), keep = M.mods.fluffer, near = (dx) => [p[0] + dx, p[1] + 1, p[2] + 2]
+    const L = [{ type: 'spit', id: 'dark_fluffer_goblin', kind: 'ghost', seq: 1, t: 1, at: [p[0] + 3, p[2]], mouth: near(3) }], hops = []
+    M.mods.fluffer = { events: () => L, hops: () => hops }; const fl = () => a.stats().events.filter((e) => e.type === 'fluffer'); await new Promise((r) => setTimeout(r, 300)); const n0 = fl().length
+    L.push({ type: 'fluffer_spawn', id: 'dark_fluffer_atlantis', kind: 'mushroom', zone: 'atlantis', at: [p[0] - 4, p[2]], n: 0, t0: 2, seq: 2, t: 2 },
+      { type: 'spit', id: 'dark_fluffer_atlantis', kind: 'mushroom', seq: 3, t: 3, at: [p[0] - 4, p[2]], mouth: near(-4) },
+      { type: 'healed', id: 'dark_fluffer_goblin', kind: 'ghost', seq: 4, t: 4, at: [p[0] + 3, p[2]], mouth: near(3) },
+      { type: 'impact', id: 'dark_fluffer_utopia', kind: 'deer', seq: 5, t: 5, at: [p[0] + 200, p[2]], mouth: near(200) })
+    await new Promise((r) => setTimeout(r, 400)); const ev = fl().slice(n0), st = a.stats().fluffers
+    hops.push({ type: 'hop', id: 'dark_fluffer_atlantis', kind: 'mushroom', at: [p[0] - 4, p[2]], t: 6 }); await new Promise((r) => setTimeout(r, 400)); const pres = a.stats().presence
+    M.mods.fluffer = keep; return { base: n0, played: ev.map((e) => e.e + ':' + e.id), st, pres } })
   // WS0-Lieferung Combat-AV L1–L13: neue Kampf-Ereignisse klingen
   out.av13 = await A.page.evaluate(async () => { const a = window.__kfbAudio, p = window.__kfbM1.feet(), pos = { x: p[0] + 2, y: p[1] + 1, z: p[2] }, r = {}
     for (const [k, e] of Object.entries({ kill: { type: 'kill' }, windup: { type: 'windup', side: 'enemy' }, block: { type: 'block' }, bite: { type: 'contact', target: 'player', weapon: 'bite' }, hurt: { type: 'contact', target: 'player' }, arrow: { type: 'contact', weapon: 'bow', confirmed: true }, magic: { type: 'contact', weapon: 'wand' }, dice: { type: 'fire', weapon: 'dice' } })) { const b = a.stats().bank.plays; a.k10({ ...e, position: pos }); r[k] = a.stats().bank.plays - b; await new Promise((x) => setTimeout(x, 80)) }
@@ -113,7 +124,8 @@ try {
     combatAvGatling: av.gatlingLoopDuring === 12 && av.bankVoicesAfter <= 24,
     npcGroups: out.groups.n >= 18 && out.groups.plays >= 15 && out.groups.polled === 3 && out.groups.again === 3 && out.groups.errors.length === 0,
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
-    presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.includes('fluffGlide'),
+    presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.some((k) => k.startsWith('fluffGlide')),
+    flufferK15Multi: out.fluffK15.played.join() === 'spit:dark_fluffer_atlantis,healed:dark_fluffer_goblin' && out.fluffK15.st.dark_fluffer_goblin === true && out.fluffK15.st.dark_fluffer_atlantis === false && out.fluffK15.pres.includes('fluffGlide:dark_fluffer_atlantis'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
     reverbAndOcclusion: (!out.space.spot || out.space.env === 'canyon') && (!out.space.hit || out.space.occludedPlayed === 1),
     musicPulse: out.pulse.schema === 'kfb.audio-presentation-pulse/1' && out.pulse.audible01 === 1 && out.pulse.bass > 0 && out.pulse.kicks >= 3 && out.pulse.bpm > 0,
