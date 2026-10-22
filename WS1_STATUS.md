@@ -3,6 +3,20 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 142 · 22.10. · Georgs Abnahmen: Knet-HUD, Kit-Knete und Racer-Knete sind Standard · Fundsachen wieder schwebend (hebt V-587 auf) · Kritiker R3 läuft
+
+- **ws1/mvp-r1 @bb510fe** (dazu B13 Pool-Leser über Rohdatei und WS1d-Neuversuch beim Racer-Laden).
+- **Georg (an den Lead, 22.10.):**
+  - **Knet-HUD** (`hud=clay`) ist Standard; `hud=wood` zeigt das Holz-HUD.
+  - **Kit-Knete** ist Standard; `kitclay=0` = ohne.
+  - **Racer-Knete** ist Standard (an WS1d direkt); `vclay=0` = Original. Der Ödland-Käfer behält mehr Originalfarbe, die Lüfter bekommen einen Knet-Rotor, der Leuchtring bleibt.
+  - **Fundsachen:** „schwebend und mit visually pleasing animation/rotation, harmonisch mit umgebenden Fundsachen gesynct und sauber ausgeleuchtet“.
+    - **Hebt V-587 auf** („keine Drehung, kein Wippen“) und bestätigt V-450 (Schweben).
+    - **Bitte an WS0:** als neuen Entscheid ins Register.
+    - Umsetzung bei WS1b: `ws1/grounding-r1`, `found=rest` = liegend, kein Erdkeil unter schwebenden Stücken.
+  - Kritiker-Runde 3: ja (läuft gerade mit diesem Stand).
+- **Offen:** Der WS1d-Startseiten-Test (`vehicles-r1 start`) läuft im Lead-Worktree (mit `src/private`) in einen Timeout, weil die Welt hinter dem Vorhang auf LOADING bleibt. Bei WS1d ist er grün. WS1d stellt das mit `src/private` nach.
+
 ## 141 · 22.10. · Erdung, K15-Fluffer und Ton im MVP · Entscheid V-450 offen · GitHub-API-Limit (B13)
 
 - **ws1/mvp-r1 @321473f.** Privat `game/mvp-r1` @c9e3b76, öffentlicher Spiegel `ws1/mvp-r1` @c8bf58c.
