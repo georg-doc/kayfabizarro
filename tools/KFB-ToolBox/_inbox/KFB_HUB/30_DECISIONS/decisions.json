@@ -9324,6 +9324,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-656",
+   "date": "2026-10-22",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "Diegetisches Knet-HUD vorziehen (Georg 22.10.: wichtig für Gesamtdesign, Immersion und Steuerung, ändert V-645 Zeitpunkt): WS1 baut die WSB-Props aus N29 jetzt ein (Kompass als Tacho bzw. Minimap, Radio, Truhe, Zahnrad mit Settings inkl. Entwickler-Infos V-655, Bangers-Score, Kartenfächer), Farben aus der Insel-Palette (V-653), ruhende Props als gecachte Ansichten, unter 1 ms; ersetzt das Holzbrett-HUD nach Georgs Abnahme im Spiel.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das HUD prägt jeden Moment im Spiel; ein Stilbruch dort fällt sofort auf (Kritiker C5, C11).",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9411,7 +9426,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1109",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1110",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

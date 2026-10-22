@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-656 Knet-HUD vorgezogen (WS1 baut N29-Props jetzt ein); Konzeptpapier CHATTERBOX_VOICE_KONZEPT_R1 zur Diskussion mit Georg.
 - V-655 Entwicklertexte aus dem Spielbild, nur über Settings bzw. Debug-Schalter.
 - V-654 MVP-Kritiker REWORK: C3/C5/C6 nach Kanon (70/20/10, ein Knet-Modul, Erdungs-Grammatik) anwenden, schnelle Korrekturen sofort, C1 bei Georg; WS1 informiert.
 - resident_voices_r1 erzeugt (16 Clips, Georg-Go, alle hörbar), privat; WS-Audio informiert. Lokaler Git-Spiegel aufgeräumt (23 auf 5 GB, Georg-Ja).

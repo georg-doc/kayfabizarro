@@ -1,5 +1,19 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: diegetisches Knet-HUD jetzt einbauen (V-656, Georg)
+- **Georg:** wichtig für Gesamtdesign, Immersion und Steuerung, deshalb vorgezogen und nicht erst nach dem MVP.
+- **Props aus `50_BLENDER/N29/`** (privater Branch, Karte `data/kfb_hud_props.r1.json`):
+  - Kompass: zu = Tacho mit Halbkreis und Zahl, auf = Minimap;
+  - Radio mit Tasten und Laufschrift (Playlist, Ton an/aus);
+  - Truhe mit Einflug für Pickups und Fluff;
+  - Zahnrad = Settings, dort auch der Schalter „Entwickler-Infos“ (V-655);
+  - Fluff-Score in 3D-Bangers;
+  - Kartenfächer mit Schatten.
+- **Farben** aus der Insel-Palette über die `COLOR_0`-Maske (V-653).
+- **Leistung:** ruhende Props als gecachte Ansichten, echtes 3D nur beim Aufklappen, < 1 ms. Props reagieren gefiltert auf Kurve, Bremsen und Landung.
+- **Das Holzbrett-HUD bleibt als Rückfall**, bis Georg im Spiel abnimmt (Abnahme-Menü).
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: C1 Entwicklertexte entschieden (V-655, Georg)
 - Raus aus dem Spielbild. Sichtbar nur über die Settings (Zahnrad, Schalter „Entwickler-Infos“) bzw. per Debug-Schalter. Kein neues Interface-Element.
 
