@@ -9474,6 +9474,21 @@
    "applies": "nach MVP"
   },
   {
+   "id": "V-666",
+   "date": "2026-10-22",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "K15 r3 angenommen (Georg direkt an WSB: alles übernehmen): 15 Cubes mit KFB-Augen, Goo- und Geheilt-Zustand; Karten K15/data/kfb/q_<name>.figure.json ersetzen die r2-Paare; Alien groß bleibt mit KFB-Augen auf dem inneren Paar. Schalter eye-goo v1.1 (infiziert/geheilt) gilt auch für die Charaktere mit EyeRig v6 (FB bleibt bis FB_CANON gesperrt). Backlog: mehrere Augenpaare je Figur (4-Augen-Rig), nicht jetzt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Schalter für alle v6-Gesichter statt Sonderfiguren; das vierte Auge lohnt erst später.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9561,7 +9576,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1123",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1124",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
