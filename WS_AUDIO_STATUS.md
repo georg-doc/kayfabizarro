@@ -2,6 +2,45 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 13 · 22.10. · Sprachmelodien: Stand, was fehlt, Suno-Ernte · für WS0 (Georg: „schreib das in den Status für WS0“)
+
+**Georg 22.10. nach dem Begrüßungs-Video:** „gefällt mir schon ganz gut … passt für die Atmosphäre“. Anfangs hielt er die Begrüßung für Umgebungsmusik. Möglicher Schritt bei WS-Audio: Musik bei der Begrüßung stärker absenken (heute −4 dB, z. B. −7 dB); noch nicht gemacht, Georg entscheidet. Nächster Schritt laut Georg: Sprachmelodien für die übrigen Figuren ausbauen. Dazu will er mit WS0 Suno-Songs produzieren und aus den Stems Melodien ernten.
+
+**Stand im Spiel** (`ws-audio/r1` → `ws1/mvp-r1`, Lead hat gemergt):
+- Begrüßung liest das Instrument **nur** aus dem Register: `chatterOf(residentId)` (Lead-Leser `src/characters/registry.js`, V-682).
+- Reihenfolge: Register-Instrument → Bewohner-Stimme `resident_voices_r1` (WS0 geliefert 22.10., 16 Clips) → alter Platzhalter. Werte mit Status todo, PREFILL oder DESIGN zählen als nicht gesetzt (Brief §6). Kein Rückfall „Instrument nach kind“, also kein selbst vergebenes Instrument.
+- Sichtbar je Figur in `__kfbAudio.stats().chatter`: `set:<Familie>` | `fallback:resident` | `fallback:placeholder`.
+- Klangmaterial: `chatter_families_r1` (12 Familien × 9 Gefühle + 4 Rufe, je 0,8 s, Pegel aus dem _lufs-Bericht). Zuordnung Instrument → Familie in `cueMap.js` (`CHATTER_FAMILIES`).
+- Anlass → Gefühl: geheilt → froh, kennt dich → neutral, erste Begegnung → staunend, nach Kampf → ängstlich.
+- Im Spiel klingen damit nur die 2 Bewohner: Bäuerin (farmer_b, Akkordeon) und Lorekeeper (Klarinette). Video: lokal `kfb-audio-begruessung.mp4` (privat, nicht im Repo).
+
+**Register heute (Snapshot des Lead, @1e30e4a):**
+- chatter gesetzt bei 6 Figuren: farmer_b, lorekeeper, lady_dory, lord_hunky, frizzlebob (gesperrt bis FB_CANON), demon_lord.
+  - demon_lord hat nur style („Oktave tiefer, Sättigung, langer dunkler Hall“) und **kein Instrument**, deshalb klingt dort der Platzhalter.
+- PREFILL (gilt im Spiel als leer) bei 8: q_ghost Singende Säge, q_alien/q_alien_tall Theremin, Bots/robot_one/robot_two Melodica.
+- Alle anderen 120 sind todo, darunter farmer_harke (castId der Bäuerin, ID-Frage liegt beim Lead).
+
+### Was fehlt, in dieser Reihenfolge
+
+1. **Instrumente im Register festlegen** (Georg/WS0), zuerst für Figuren, die im Spiel schon Töne machen: Skelette (Patrouille), Spielzeugsoldaten, Bots, Fluffer-Sorten (K15: ghost, atlantis, utopia mit wechselnden Sorten), Orc-Band, Disco (K12), gothgirl.
+   - **Schnellster Gewinn:** PREFILL bestätigen. Für Säge (F09_saw) und Theremin (F06_theremin) gibt es die Clips schon; Geist und Aliens klingen dann sofort.
+2. **Neue Familien-Clips** für gewählte Instrumente ohne Material, im gleichen Raster wie `chatter_families_r1` (9 Gefühle + 4 Rufe, ≥ 0,8 s erzeugen, −16 LUFS, _lufs-Bericht). Bereits vorgeschlagen: **Melodica** (Bots). Weitere Kandidaten aus `CHATTERBOX_SPEC_R2.md` §2: Flöte/Panflöte, Horn, Kazoo, Maultrommel, Trompete, Geige.
+3. **Eigene Sprachmelodie je Figur.** Heute klingen zwei Figuren mit demselben Instrument gleich. Gebraucht werden je Figur ein Motiv bzw. eine Signatur und, für Sprechblasen-Dialoge, kurze Grains (Spec §212: 4–8 Vokal-, 3–6 Klick-, 2–4 Emotions-Grains, 1–2 Signatur-Grains je Familie bzw. Figur).
+
+### Suno-Ernte (Georgs Plan): Hinweise von WS-Audio, damit nichts doppelt entsteht
+
+Der Plan passt zur Spec (§208: „1 Farm = 1 Stil + Instrumentfamilie + Emotionsfeld“, `SUNO_SOLO_TESTS_R1.md`, `harvest_phrases.py`, 3–5 Motive und 10–20 Grains je Farm). Bitte darauf aufsetzen statt neu:
+- **Solo-Prompts vor Song-Stems.** Stems aus vollen Songs tragen oft Reste anderer Spuren. Stems nur dort nehmen, wo Solo nicht trägt.
+- **Je Instrument-Familie ernten, nicht je Figur.** Figuren derselben Familie unterscheiden sich über Motiv und Register (Spec §190: Fagott ↔ Oboe, Tuba ↔ Trompete, Cello ↔ Geige).
+- **Je geerntetem Stück mitliefern:** Tonart bzw. Grundton, BPM, Downbeat bzw. Einsatz, LUFS. Damit spielt die Laufzeit Sprachmelodien passend zur laufenden Jukebox; das gehört zur offenen Katalog-Bitte aus Eintrag 11.
+- Ablage wie bisher: `assets/private/40_AUDIO/…` mit _lufs-Bericht; Zuordnung Figur → Familie/Motiv nur über das Register (`chatter.family`, `chatter.instrument`, ggf. neues Feld für Motiv/Grains, Entscheidung WS0).
+
+**WS-Audio übernimmt, sobald Material da ist:** den Abspieler, der Grains bzw. Motive zu Sprachmelodien setzt (an Sprechblase und Begrüßung, wenn möglich auf der Musik-Uhr). Vorher baut WS-Audio daran nichts.
+
+**Weitere Neuigkeiten seit Eintrag 12:**
+- **K15:** bis zu 3 Dark Fluffer zugleich. Ton aus `fluffer.events()` je seq, am Maul, Zustand geheilt/feindlich je id, Ereignisse über 120 m still; auf mvp nachgetestet, PASS.
+- **Knet-HUD (WS1e):** Radio Vor/Zurück/Pause über `musicSkip`/`musicPause`; die Regler sitzen in der Zahnrad-Tafel.
+
 ## 12 · 22.10. · Begrüßung der Bewohner (Gerücht D2 / G-2) · BESTELLUNG an WS0: Bewohner-Stimmen
 
 **Georg 22.10. (über den Lead):** Die Begrüßungen bekommen Sprechblase und Stimm-Laut, ohne Wort.
