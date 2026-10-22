@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- Chatterbox-Konzept R1.3: Oper/Musical, elektronisches Register (Talkbox, Vocoder, 303, Kölner Linie) mit Crossover, Bach-Fuge als formales Rückgrat (Thema, Antwort, Umkehrung = Ablehnung, Krebs = Blödsinn, Engführung = Streit, Variation = Dialekt).
 - Chatterbox-Konzept R1.2: Suno-Quellen-Pipeline (Stems → Phrasen-Ernte → Bausteinbank + Soundbed), Schauspiel-Prinzip und Voice-FX je Figur, Arbeitsmodus nach Arendt, Anti-Nerv-Regeln, Recherche.
 - Chatterbox-Konzept R1.1: Dimensionen und Kombinatorik (Musikstil als Gruppen-Ebene, Tempo-Charakter, Dialekt aus Textur-Varianten, Beziehung als Harmonie, Identität gegen Zustand).
 - V-656 Knet-HUD vorgezogen (WS1 baut N29-Props jetzt ein); Konzeptpapier CHATTERBOX_VOICE_KONZEPT_R1 zur Diskussion mit Georg.

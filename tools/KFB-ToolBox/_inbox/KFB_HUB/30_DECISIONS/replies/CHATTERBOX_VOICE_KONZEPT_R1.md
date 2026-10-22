@@ -1,4 +1,5 @@
-# Chatterbox Voice · Konzeptpapier R1.2 · 2026-10-22 · WS0
+# Chatterbox Voice · Konzeptpapier R1.3 · 2026-10-22 · WS0
+> **R1.3:** Neu sind §21 Musical, §22 elektronische Musik als zweites Register und Crossover, §23 Bach und die Fuge als formales Rückgrat (Georg 22.10.).
 > **R1.2:** Neu sind §15 Suno-Quellen-Pipeline, §16 Schauspiel-Prinzip und Voice-FX, §17 Arbeitsmodus nach Arendt, §18 Anti-Nerv-Regeln, §19 Recherche, §20 Oper und Programmmusik als Vorbild (Georg 22.10.).
 > **R1.1:** Neu ist §14 „Dimensionen und Kombinatorik“ (Musikstil, Tempo, Dialekt aus Textur-Varianten, Beziehung als Harmonie und weitere Ebenen) nach Georgs Ideen vom 22.10. §13 ist entsprechend angepasst.
 **Status:** Konzept zur Diskussion mit Georg. Noch keine Erzeugung, keine Credits.
@@ -306,3 +307,52 @@ Diese Modi sind Situationen (Dimension 12). Sie geben jedem NPC beim Tun eine h�
 - **Ensemble-Nummern:** Duett, Terzett und Finale, in denen Stimmen gegeneinander und miteinander singen. Das ist das Vorbild für Beziehung als Harmonie (Dimension 10) und für Gruppen-Szenen (Markt, Disco, Ork-Band).
 - **Rezitativ und Arie:** Erzählendes Sprechen (Rezitativ: schnell, wenig Melodie, nah am Sprechrhythmus) wechselt mit Gefühls-Momenten (Arie: Melodie, Ornament). Bei uns sind das normale Zeilen auf L1 und Emotions- bzw. Höhepunkt-Momente mit L2 und Ornament. Das hält auch lange Reden angenehm (§18).
 - **In die Recherche (§19)** kommen dazu: Zauberflöte, Peter und der Wolf, Leitmotiv-Technik, Rezitativ und Arie.
+
+
+## 21 · Musical (Georg 22.10.)
+- **Sprechgesang-Kontinuum:** Musicals bewegen sich fließend zwischen Sprechen, Sprechgesang und Gesang. Beispiele sind der Patter Song bei Gilbert & Sullivan (schnell, rhythmisch, kaum Melodie) und gesprochene Lieder wie in „My Fair Lady“. Bei uns ist das die Achse L1 → L2 → Arie (§8, §20): Je wichtiger der Moment, desto mehr Melodie.
+- **„I want“-Song:** Jede Hauptfigur hat früh ein Motiv, das ihren Wunsch trägt und später wiederkehrt. Das ist unser Leitmotiv bzw. Signatur-Ornament mit Reprise bei Wendepunkten.
+- **Reprise:** Dasselbe Motiv in neuer Lage (Dur → Moll, langsamer) erzählt, was sich verändert hat. Mechanisch ist das Story-Mode bzw. Emotion angewendet auf ein festes Motiv.
+- **Ensemble-Nummer bzw. Show-Stopper:** Gruppen singen ihre eigenen Linien gleichzeitig, die zusammen passen (z. B. „One Day More“). Vorbild für Markt, Disco und Ork-Band.
+
+## 22 · Elektronische Musik als zweites Register und Crossover
+- **Zwei Register, frei kombinierbar:**
+  - **akustisch bzw. klassisch:** Instrument-Familien §6;
+  - **elektronisch:** Synthese und Studiotechnik.
+  - Crossover sind erlaubt und erwünscht, z. B. eine Figur mit Klarinetten-Kern und Synth-Filter, oder ein Ensemble aus Streichern über House-Beat.
+- **Klangquellen mit Sprechcharakter**, die in die Familien-Tabelle als elektronische Spalte kommen:
+  - **Talkbox** (E-Funk, Zapp/Roger Troutman): Synth durch den Mund geformt, buchstäblich „sprechende“ Melodie, ideal für Showmen bzw. Funk-Figuren;
+  - **Vocoder:** für Maschinen bzw. Utopia-Durchsagen. Bots bleiben gleitend, ohne Chiptune (V-616);
+  - **TB-303 bzw. Acid-Filter:** quäkend und biegend, Schelme bzw. Kreaturen;
+  - **Moog bzw. Modular-Lead mit Portamento:** gleitet wie Theremin, wärmer;
+  - **Ondes Martenot und Theremin:** Aliens bzw. Mystisches;
+  - **Clavinet und Wah:** Funk-Gegenstimme;
+  - **Pads, Mellotron:** Soundbed und Chor-Teppich, keine Sprechstimme.
+- **Stile im elektronischen Register:**
+  - House (Four-on-the-floor, Disco-Erbe);
+  - Techno bzw. Minimal (Wiederholung mit kleiner Variation: das Arbeitslied-Prinzip §17);
+  - E-Funk bzw. Electro (Talkbox, Synkopen);
+  - Ambient bzw. Space;
+  - die Kölner Linie: das WDR-Studio für elektronische Musik (Stockhausen, frühe Klangsynthese), Can und Holger Czukay (Tape-Schnitt, Sampling-Vorläufer), Kölner Minimal-Techno.
+  - Welche Kölner Quelle Georg mit „Ken“ meinte, klären wir in der Recherche.
+- **Studiotechnik als Charakter:** Tape-Echo, Bandschleife, Filterfahrt, Bitcrush nur in Transienten, Sidechain zum Beat. Sie gehören in die Voice-FX (§16).
+
+## 23 · Bach und die Fuge als formales Rückgrat
+**Warum:** Die Fuge ist eine streng regelhafte, selbstähnliche Konstruktion. Ein kurzes Thema erzeugt durch wenige Operationen ein ganzes Stück. Das ist genau die fraktale Logik von KFB und lässt sich direkt in Engine-Regeln übersetzen.
+
+| Fugen-Element | Bedeutung bei uns |
+|---|---|
+| **Thema (Subjekt)** | Leitmotiv einer Figur (Signatur bzw. Lexikon-Motiv) |
+| **Antwort** in der Quinte (Dominante) | die zustimmende Antwort im Gespräch, nah verwandt (Bingo-Nähe) |
+| **Kontrasubjekt** | Gegenstimme der zweiten Figur, passt kontrapunktisch dazu |
+| **Umkehrung** (Intervalle gespiegelt) | Widerspruch bzw. Ablehnung: dasselbe Motiv auf den Kopf gestellt (Bongo) |
+| **Krebs** (rückwärts) | Blödsinn bzw. Verwirrung: das Motiv rückwärts |
+| **Augmentation bzw. Diminution** (langsamer bzw. schneller) | Tempo-Charakter und Emotion (gechillt bzw. hektisch) auf dasselbe Motiv |
+| **Engführung** (Stimmen setzen überlappend ein) | Streit bzw. Ins-Wort-Fallen |
+| **Modulation** durch den Quintenzirkel | Szenen- bzw. Story-Fortgang, Wechsel des Story-Modes |
+| **Kanon** | Rivalen bzw. Nachäffen (Beziehung, Dimension 10) |
+| **Variation** (Goldberg: ein Bass, viele Variationen) | Dialekt: ein Grundmuster, Varianten je Textur-Variante (§14.4) |
+
+**Folge für die Engine:** Ein Gespräch wird aus wenigen Operationen auf Motiven gebaut, deterministisch über den Seed. Es klingt dadurch komponiert statt zufällig, und die Harmonik bleibt mit Story-Mode und Soundbed stimmig.
+
+**In die Recherche (§19)** kommen dazu: Musical-Techniken (Patter, Reprise, Ensemble-Nummer), elektronische Instrumente mit Sprechcharakter (Talkbox, Vocoder, 303), die Kölner Linie, Fugenlehre (Kunst der Fuge, Wohltemperiertes Klavier, Goldberg-Variationen) als Regelwerk.
