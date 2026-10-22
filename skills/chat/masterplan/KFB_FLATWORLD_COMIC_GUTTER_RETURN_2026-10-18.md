@@ -84,3 +84,28 @@ Gizmo visual/source identity, literal versus optical white gutter, collision/nav
 ### Additive changelog
 
 - **2026-10-22:** Georg's Clusters 1–3 persisted on the existing Flatworld Draft PR #423 with corrected **Gutter Space** terminology; one new detailed proposal, one appended index pointer, Return update. No core-router/Hub/Site/Cloudflare change because this is conceptual intake without a new accepted product route or P0 gate.
+
+---
+
+## 2026-10-22 · Return R1.2 · Cluster 4 Water / Melt-Terrain Splat POC research and WS0/WSA brief
+
+**Mode/status:** Additive research and planning only; **0 runtime/source-object isolation/asset-import/render/browser/CI/Site/Stage tests**. **No** new MVP authority, no R4 activation, no geometry, no merge/Live promotion.
+
+**Owner/repo/branch/PR:** KFB Infinite Canvas / Meta-Narration Flatworld design lane; `georg-doc/kayfabizarro`; `planning/kfb-flatworld-comic-gutter-r1-2026-10-18`; **open Draft PR #423** (unchanged base `main`). This research document may be **consumed** by the current WS1/WS1b receiving water/terrain/runtime owner only after WS0 pins its actual source/ref and allows a bounded technical test; the Flatworld planning branch is **not** a runtime target. WB2 R4 is still STOPPED / NO MVP and current Four-Island story vision holds.
+
+**Files and phase checkpoints:**
+1. NEW `skills/chat/masterplan/KFB_CLUSTER4_WATER_MELT_TERRAIN_SPLAT_WS0_WSA_BRIEF_R1_2026-10-22.md` — coherent 18,275-char source-aligned WS0/WSA research brief; first commit `68b564ae7f2d97afe574f7f68573d419d8377b16`. Its exact file and PR HEAD were checked; 9/9 listed content markers found.
+2. APPENDED `skills/chat/masterplan/KFB_GUTTER_SPACE_SPLAT_PORTAL_ALMANAC_R1_2026-10-22.md` with Cluster 4 pointer, human intent and the explicit implementation boundary; second commit `47af2129698c552563c2376e74a001ab8643270a`. Exact file and branch head were checked, original Clusters 1/2/3 still present.
+3. APPENDED this existing Return R1.2; after this commit, see **current Draft PR #423 head** for the final precise commit SHA (and the PR metadata/handoff). No unrelated files edited.
+
+**Research/rights findings 2026-10-22:** Spark (MIT, Three.js/WebGL) is preferred renderer **candidate**; SuperSplat (MIT) editor; GaussianSplats3D (MIT) fallback comparison; official Three.js GaussianSplat requires WebGPURenderer; no donor adopted. Exact web pages for SuperSplat **Tornado** (4.95MB, CC BY 4.0), **Cobweb Scope** (75.97MB, CC BY 4.0), **ChatGPT dots - Felipe** (113.59MB, CC BY 4.0) were inspected, none downloaded or source-isolated. **Doors of Perception** remains **REFERENCE ONLY** because full file usage rights/download grant not verified. CC0 donor inputs: Poly Haven, Kenney, Quaternius and two OpenGameArt abstract texture packs; these are **not themselves splats**. Software license never conveys asset file rights; retain CC BY attribution and derivative notice. Source links and research backlog are inside the brief.
+
+**Editorial/source checks:** new brief prewrite **28/28 mandatory text/content assertions PASS**; new file postwrite **9/9 named markers**; Cluster 1–3 and Cluster 4 link retained in parent document, **4/4 structural checks**; all are research integrity checks, not software tests. Third Return readback and full PR files/head to be verified after this write. **Actual source-object isolation 0, payload hashes 0, rendered splats 0, runtime/perf/occlusion 0, browser/Stage 0**. Do not claim product acceptance.
+
+**Risks/unresolved:** exact *current* WS1 MVP water/material/terrain code unpinned; historical Travel water tint != verified modern water plane; any transparent water/splat depth sorting/occlusion/color matching unknown. Spark compatibility, splat image rights/scene transforms, render quality/performance/VRAM and source-asset isolation remain unproven. Purchased/private scene parts must never be posted as public source assets. No second renderer owner/canvas, no changes to Track Core/Joyride/Surface Truth or Audio.
+
+**One next gate:** **WS0 pins the current WS1/WS1b water/melt-terrain owner/ref and chooses whether to authorize one source-isolated Shoreline A0 unchanged / A1 mesh-shader / A2 Spark-splat comparison**. B drive-over and C melt-portal ribbon only after a successful A, not a hidden MVP expansion. WS0 and WSA can begin from the new brief without asking Georg to reconstruct the idea.
+
+### Additive changelog
+
+- **2026-10-22:** Georg's authorized Cluster 4 research/WS0-WSA briefing added as one document, linked from original Clusters 1–3 and incorporated into the same Flatworld owner Return / existing Draft PR #423. Original Gutter-space theory and protected runtime owners unchanged. Hub/router/public URL unchanged because no new canonical product route or human gate was accepted.
