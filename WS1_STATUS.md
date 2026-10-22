@@ -3,6 +3,39 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 138 · 22.10. · PCF-Schatten, blinder Kritiker auf dem MVP (REWORK 4,3, Stopp-Regel K4), Sammelliste aller offenen Punkte
+
+- **ws1/mvp-r1 @6b1cda8.** Privat `game/mvp-r1` @4cff382, öffentlicher Spiegel `ws1/mvp-r1` @be9cf9e.
+- **Schatten PCF statt VSM** (Georg: „pcf nehmen“): −256 k Dreiecke pro Bild, weil VSM alle Empfänger mitgezeichnet hatte. `shadow=vsm` (debug) zeigt zum Vergleich den alten Schatten.
+- **WS1d-Fix** cc35b7e: Vorgewärmte Racer erscheinen jetzt sofort; vehicles-r1 data PASS, auch unter Last.
+- **Sammelliste aller Sitzungen:** `docs/OFFENE_PUNKTE_R1.md` mit MVP-Blockern B1–B12, Kritiker-Befunden C1–C12 und 12 Bereichen mit Zuständigkeit und Priorität. **Bitte an WS0:** abgleichen und ins Register übernehmen.
+- **Blinder Kritiker MVP R1** (CRITIC_3D_R1; Volltext `docs/critic/MVP_R1_CRITIC_ERGEBNIS.md`; die Bilder bleiben privat, weil gekaufte Figuren darauf sind):
+  - Punkte: K1 5 · K2 4 · K3 4 · **K4 3** · K5 5 · K6 4 · K7 4 · K8 5 · K9 4 · K10 5 → **REWORK**.
+  - **Die Stopp-Regel greift (K4 < 4):** zurück zum Konzeptblatt, Bericht an WS0.
+  - Was ein fremder Spieler zuerst sieht:
+    - Entwicklertexte im Bild;
+    - Start auf einer beigen Rechteck-Platte;
+    - der Boden ist lauter als Held und Bühne („Marmortapete“, Moiré in der Ferne);
+    - nachts ist kaum etwas lesbar;
+    - Stilbruch zwischen Foto-Rost-Racer, Kit-Figuren ohne Knete und Knet-Held;
+    - Erdung fehlt (Sockel, schwebende Teller);
+    - Treffer ohne sichtbare Wirkung;
+    - Disco-Flecken als flache Ellipsen;
+    - Wasser wirkt wie eine Folie.
+- **Vorschlag Lead:**
+  - **Schnelle MVP-Korrekturen bei WS1:**
+    - C1 Entwicklertexte (V-367 braucht Georgs Ja);
+    - C2 Startplatte;
+    - C11 HUD und Anschnitte;
+    - C12 Kritiker-Bildsatz vervollständigen;
+    - C4 Nachtlesbarkeit;
+    - C7 Trefferwirkung;
+    - C8 Disco-Flecken.
+  - **Konzeptfragen an WS0 und Georg:**
+    - C3: Boden-Look und Wertstruktur (Fließfarben gegen Ruhefläche 70/20/10);
+    - C5: eine Machart für Racer, Kit-Figuren und Knete (= Georgs Punkt 2);
+    - C6: Erdungs-Grammatik (= Georgs Punkt 1).
+
 ## 137 · 22.10. · Nach Georgs Pause: volle Reihe, fps nach Leistung R1, Nachthimmel, Heldenfarbe als Einstellung, NPC-Culling
 
 - **ws1/mvp-r1 @384fd89.** Privat `game/mvp-r1` @f8e88ae, öffentlicher Spiegel `ws1/mvp-r1` @e79a0b0.
