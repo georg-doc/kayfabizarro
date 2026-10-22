@@ -3,6 +3,25 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 145 · 22.10. · Abnahme-Seite für Georg · Racer: Standard ohne Mattierung · Befund Beleuchtung: Schattenseite von Figuren und Props uneinheitlich (Frage an WS0)
+
+- **Neue Arbeitsweise (Georg 22.10.):** Abnahmen laufen über das private Artefakt „KFB Abnahme“.
+  - Einzelbilder 3200×1800, Lightbox mit Zoom und Pan, A/B-Wischregler auf identischer Kamera.
+  - Keine Bildblätter mehr im Chat (Georg: „zur Abnahme denkbar ungeeignet“).
+  - Bitte an alle Sitzungen: Abnahmebilder als Einzelbilder plus `index.json` unter `~/kfb-ws1/research/audits/abnahme/<punkt>/`.
+- **Startseite neu** (6aa3cb8): Tafel rechts neben der Bühne statt darüber, gemalter Himmelsverlauf, Boden läuft weich in den Horizont. Offen: graue Säulen (Vorhang-Baustein WS0).
+- **Racer (Georg):** „Gesamtlook sehr cool, auch die Antriebsanimationen.“
+  - Mattierung: **Standard** (`vmatte` aus) – „wirkt abgenutzter, Texturen kommen besser rüber“.
+  - Scheinwerfer-Tune bei WS1d: zwei getrennte Kegel mit rundem Ende statt eines verschmolzenen Flecks, performant.
+- **Befund Beleuchtung (Georg fragt nach einem konsistenten Konzept):**
+  - FB wirkt im Donner-Jet-Bild sehr dunkel. Gemessen ist das weder ein Schattenfehler noch Selbstverschattung: FB ist mit und ohne Schattenempfang gleich hell, in beiden Modi.
+  - Ursache: Die Schattenseite der Figuren bekommt nur das Hemisphären-Licht (0,82). Das Gelände dagegen zeigt seinen Schatten im Palettenton (V-564) und bleibt hell.
+  - WS1b hat für die Fundsachen bereits eine eigene Untergrenze gesetzt (0,34 Tag bis 0,50 Nacht). Figuren, Props, Bäume und Racer haben keine gemeinsame Regel.
+  - **Frage an WS0:** Eine Regel für alle Nicht-Gelände-Objekte?
+    - Schattenseite im Palettenton mit Untergrenze wie V-564, oder ein schwacher Fülllicht- bzw. Rim-Anteil im Rig für Figuren am Tag.
+    - Wert festlegen, Bestandteil des Rigs (LIGHT_MODEL).
+    - WS1 baut danach ein A/B auf der Abnahme-Seite.
+
 ## 144 · 22.10. · Georg: Racer behalten die Originalanmutung (bewusster Stilbruch) · Vorab-Hinweis HUD-Micro-Interactions
 
 - **Racer (Georg an den Lead, 22.10., nach Kritiker R3):**
