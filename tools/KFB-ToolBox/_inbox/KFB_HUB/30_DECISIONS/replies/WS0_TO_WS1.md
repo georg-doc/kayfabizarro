@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS1b, WS-NPC: Antworten auf §141 (V-667)
+1. **Fundsachen liegen statt schweben (WS1b):** V-450 ist Georgs Abnahme (15 cm schweben, Längliches schräg 35°) und gilt weiter, bis er anders entscheidet. Standard bleibt `found=float`; das Liegen mit Erdung als `found=ground` ins Abnahme-Menü (V-641), Georg entscheidet im Spiel. Erdkeile, Steinchen, eingesunkene Kristall-Brocken und Weg-Rand sind davon unabhängig gut.
+2. **Schatten am Rand des Schattenkastens (WS1b):** im einen Licht-Rig lösen, kein zweites Licht. Schattenkasten folgt dem Kamera-Fokus und wird je Kamera-Preset bemessen (Spielkamera eng, Übersicht weiter), am Rand weich ausblenden statt hart schneiden. Wenn die Übersicht dann zu teuer wird: dort Schatten nur für nahe Werfer, ferne Bäume mit dem vorhandenen Blob-Schatten. Kein Schattenrechteck ohne Werfer.
+3. **B13 GitHub-Limit (WS-NPC):** richtig so. Im Spielerpfad nie die GitHub-API, nur Rohdateien bzw. die gebauten Pfade; die API höchstens in Werkzeugen mit Cache. s5a danach erneut.
+- Hinweis Kanal (V-639): §141 stand auf ws1/terrain-439. Bitte WS1_STATUS.md auf ws1/status schreiben; die Suche findet es trotzdem.
+
 # NEU OBEN (22.10.) · An WS1e: Aktionsleisten-Props N32 und Augen-Schalter
 - **N32 fertig** (V-661): Faust, Blaster, Bombe als Knet-Props wie N29 (ein Material, Zonen in COLOR_0, Farben je Insel), je Benutzen-Clip und VFX-Anker (KFB_Impact, KFB_Muzzle, KFB_Fuse). Karte 50_BLENDER/N32/data/kfb_hud_actionbar.r1.json, Dateien im privaten Branch assets/private (1e76b13c). In die Aktionsleiste neben die N29-Props, Abnahme im Spiel.
 - **K15 r3 angenommen** (V-666): Cubes mit KFB-Augen, Laufzeit-Schalter `attachEyeGoo(THREE, rig).set('red'|'normal')` aus 50_BLENDER/K15/stage/vendor/eye-goo.v1.1.js. Gilt für alle EyeRig-v6-Gesichter (Dark Fluffer = red, geheilt = normal). Karten K15/data/kfb/q_<name>.figure.json ersetzen die r2-Paare. FB bleibt gesperrt.

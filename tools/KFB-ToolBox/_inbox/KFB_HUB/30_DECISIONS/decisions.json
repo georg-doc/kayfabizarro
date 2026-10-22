@@ -9489,6 +9489,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-667",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "ANSWER",
+   "text": "Antworten WS1 §141: V-450 (Fundsachen 15 cm schwebend) gilt weiter, Standard found=float; Erdungs-Variante found=ground ins Abnahme-Menü, Georg entscheidet im Spiel. Schattenkasten folgt dem Kamera-Fokus, je Kamera-Preset bemessen, weicher Rand statt harter Schnitt, im einen Rig. B13: im Spielerpfad keine GitHub-API, nur Rohdateien.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahme bleibt, bis er im Spiel anders entscheidet; Schatten und Limit sind Technik im bestehenden Rahmen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9576,7 +9591,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1124",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1126",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
