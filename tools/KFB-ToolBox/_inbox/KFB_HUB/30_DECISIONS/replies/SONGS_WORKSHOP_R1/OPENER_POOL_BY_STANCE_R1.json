@@ -10,6 +10,97 @@
  ],
  "openers": [
   {
+   "opener": "Between you and me,",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Don't tell anyone, but",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "I heard",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Legend has it",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Rumor has it",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "They say",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Word is",
+   "stance": "Gerücht",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
    "opener": "A friend told me about",
    "stance": "Gerücht",
    "slot": "into_title",
@@ -83,6 +174,45 @@
    "family": null,
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "A friend swears",
+   "stance": "Begegnung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "My grandmother always said",
+   "stance": "Begegnung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "My neighbour swears",
+   "stance": "Begegnung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
   },
   {
    "opener": "A neighbour told me about",
@@ -160,6 +290,19 @@
    "family": null,
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Fun fact,",
+   "stance": "Fundstück",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
   },
   {
    "opener": "I found a",
@@ -473,7 +616,8 @@
    ],
    "family": "know",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "clause_ok": true
   },
   {
    "opener": "Ever heard of",
@@ -534,7 +678,8 @@
    ],
    "family": "know",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "clause_ok": true
   },
   {
    "opener": "You know the thing with",
@@ -547,6 +692,32 @@
    "family": "thing",
    "status": "POOL",
    "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I wonder if",
+   "stance": "Theorie",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Maybe",
+   "stance": "Theorie",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
   },
   {
    "opener": "I wonder why",
@@ -583,7 +754,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "clause_ok": true
   },
   {
    "opener": "You would think",
@@ -609,6 +781,71 @@
    "family": "official",
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Apparently",
+   "stance": "Behauptung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Believe it or not,",
+   "stance": "Behauptung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Here's the thing,",
+   "stance": "Behauptung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "I'm telling you,",
+   "stance": "Behauptung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Turns out",
+   "stance": "Behauptung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
   },
   {
    "opener": "The thing about",
@@ -763,6 +1000,32 @@
    "status": "P43 UP-05 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
    "note": "Dialog"
+  },
+  {
+   "opener": "Ever notice how",
+   "stance": "Beobachtung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
+  },
+  {
+   "opener": "Funny thing is,",
+   "stance": "Beobachtung",
+   "slot": "into_clause",
+   "class": "",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+   "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+   "clause_ok": true
   },
   {
    "opener": "Did you ever try",
@@ -935,7 +1198,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "clause_ok": true
   },
   {
    "opener": "No wait",
@@ -972,7 +1236,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "clause_ok": true
   },
   {
    "opener": "If only someone had warned",

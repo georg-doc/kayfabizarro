@@ -2,19 +2,26 @@
 
 Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde Theorien, Spekulation, Frage im Wechsel mit Behauptung; Mini-Opener nicht wiederholen. **Nur vorhandenes Material sortiert**, nichts neu erfunden; die große Sammlung (NotebookLM, Docs) stellt WS0 zusammen (siehe SONG_WORKSHOP_STATUS §26).
 
-**Satzbau:** `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte · `interjection` Einwurf mit Komma.
+**Satzbau:** `into_clause` läuft in einen ganzen Satz (tr1-Zeilen: „Rumor has it the Maze has no outside.“) · `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz, dann die Karte · `interjection` Einwurf mit Komma.
 
 **Regeln:**
 - Je Karte ein festes Triplet; Abwechslung nur über den Opener.
-- into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt), dann die Karte. Nie zwei lose Wörter ohne Satz.
+- into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.
 - Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.
 - Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.
 - Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0.
 
-## Gerücht (6)
+## Gerücht (13)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
+| Between you and me, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Don't tell anyone, but | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| I heard | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Legend has it | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Rumor has it | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| They say | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Word is | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | A friend told me about | into_title | GEORG/R2-Kandidat | told |  |
 | Did you hear about | into_title | GEORG 23.10. |  | Familie heard |
 | I heard a rumor about | into_title | SL OPR3_023 |  |  |
@@ -22,10 +29,13 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | Overheard at the bakery | own_clause | GEORG/R2-Kandidat |  |  |
 | Whispered in the attic | own_clause | GEORG/R2-Kandidat |  |  |
 
-## Begegnung (6)
+## Begegnung (9)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
+| A friend swears | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| My grandmother always said | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| My neighbour swears | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | A neighbour told me about | into_title | GEORG/R2-Kandidat | told |  |
 | A stranger on the bus told me about | into_title | GEORG/R2-Kandidat | told |  |
 | I once met | into_title | POOL |  |  |
@@ -33,10 +43,11 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | My neighbour is | into_title | GEORG 23.10. |  | nur vor Personen/Figuren |
 | My aunt used to say | own_clause | GEORG/R2-Kandidat |  |  |
 
-## Fundstück (16)
+## Fundstück (17)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
+| Fun fact, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | I found a | into_title | GEORG 23.10. |  | nur vor Objekt-/Textkarten |
 | I read a book about | into_title | GEORG/R2-Kandidat |  |  |
 | I saw a film about | into_title | SL OPR3_007 |  |  |
@@ -79,20 +90,27 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | You know | into_title | POOL | know |  |
 | You know the thing with | into_title | POOL | thing |  |
 
-## Theorie (5)
+## Theorie (7)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
+| I wonder if | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Maybe | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | I wonder why | into_title | GEORG 23.10. |  | Frage-Form; Kartenzeile wird zur Frage |
 | The stars mention | into_title | GEORG/R2-Kandidat |  |  |
 | What if | into_title | POOL |  |  |
 | You would think | into_title | GEORG/R2-Kandidat |  |  |
 | The official explanation is | own_clause | GEORG/R2-Kandidat | official |  |
 
-## Behauptung (5)
+## Behauptung (10)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
+| Apparently | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Believe it or not, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Here's the thing, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| I'm telling you, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Turns out | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | The thing about | into_title | POOL | thing |  |
 | They wrote songs about | into_title | GEORG/R2-Kandidat |  |  |
 | Everyone agrees | own_clause | POOL | official |  |
@@ -110,6 +128,13 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | You call that | into_title | GEORG/R2-Kandidat | retort | Dialog: greift das Wort des Vorredners auf (P43 UP) |
 | You said | into_title | GEORG/R2-Kandidat |  | Dialog: greift das Wort des Vorredners auf (P43 UP) |
 | Fair. But | own_clause | P43 UP-05 KEEP |  | Dialog |
+
+## Beobachtung (2)
+
+| Opener | Satzbau | Status | Familie | Hinweis |
+|---|---|---|---|---|
+| Ever notice how | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
+| Funny thing is, | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 
 ## Ansprache (11)
 

@@ -77,8 +77,24 @@ for op, st, sl, cl, stt, src, note in EXTRA:
     if op in have: continue
     rows.append({"opener": op, "stance": st, "slot": sl, "class": cl, "modes": ["any"], "family": fam.get(op),
                  "status": stt, "source": src, **({"note": note} if note else {})})
+
+# --- Satz-Opener (into_clause): laufen in einen GANZEN Satz (tr1-Zeilen), Befund WS-NPC 24.10.; Kandidaten bis Georg/WS0 freigibt ---
+CLAUSE_POOL = {"What if", "You know", "Do you know", "I used to believe", "Remember"}   # schon POOL, passen vor ganze Sätze
+CLAUSE_NEW = [  # (opener, stance)
+ ("Rumor has it", "Gerücht"), ("I heard", "Gerücht"), ("They say", "Gerücht"), ("Word is", "Gerücht"), ("Legend has it", "Gerücht"),
+ ("Between you and me,", "Gerücht"), ("A friend swears", "Begegnung"), ("My neighbour swears", "Begegnung"), ("My grandmother always said", "Begegnung"),
+ ("Apparently", "Behauptung"), ("Turns out", "Behauptung"), ("Believe it or not,", "Behauptung"), ("I'm telling you,", "Behauptung"),
+ ("Funny thing is,", "Beobachtung"), ("Ever notice how", "Beobachtung"), ("I wonder if", "Theorie"), ("Maybe", "Theorie"),
+ ("Here's the thing,", "Behauptung"), ("Fun fact,", "Fundstück"), ("Don't tell anyone, but", "Gerücht"),
+]
+for r in rows:
+    if r["opener"] in CLAUSE_POOL: r["clause_ok"] = True
+for op, st in CLAUSE_NEW:
+    if op not in {r["opener"] for r in rows}:
+        rows.append({"opener": op, "stance": st, "slot": "into_clause", "class": "", "modes": ["any"], "family": None,
+                     "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)", "source": "Deck-Songs nach WS-NPC-Befund 24.10.", "clause_ok": True})
 ORDER = ["Gerücht", "Begegnung", "Fundstück", "Anekdote", "Frage", "Theorie", "Behauptung", "Erwiderung",
-         "Ansprache", "Rückruf", "Zweifel/Wende", "Steigerung", "Meta", "Szenenwechsel"]
+         "Beobachtung", "Ansprache", "Rückruf", "Zweifel/Wende", "Steigerung", "Meta", "Szenenwechsel"]
 rows.sort(key=lambda r: (ORDER.index(r["stance"]), r["slot"], r["opener"]))
 out = {"schema": "kfb.opener-pool.stance/1", "date": "2026-10-23",
        "rules": ["Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
@@ -90,7 +106,7 @@ out = {"schema": "kfb.opener-pool.stance/1", "date": "2026-10-23",
 json.dump(out, open(os.path.join(H, "OPENER_POOL_BY_STANCE_R1.json"), "w"), indent=1, ensure_ascii=False)
 md = ["# Opener-Pool nach Haltung und Satzbau · R1 · 23.10.2026", "",
       "Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde Theorien, Spekulation, Frage im Wechsel mit Behauptung; Mini-Opener nicht wiederholen. **Nur vorhandenes Material sortiert**, nichts neu erfunden; die große Sammlung (NotebookLM, Docs) stellt WS0 zusammen (siehe SONG_WORKSHOP_STATUS §26).", "",
-      "**Satzbau:** `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz, dann die Karte · `interjection` Einwurf mit Komma.", "",
+      "**Satzbau:** `into_clause` läuft in einen ganzen Satz (tr1-Zeilen: „Rumor has it the Maze has no outside.“) · `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz, dann die Karte · `interjection` Einwurf mit Komma.", "",
       "**Regeln:**"] + [f"- {r}" for r in out["rules"]] + [""]
 for st in ORDER:
     rs = [r for r in rows if r["stance"] == st]
