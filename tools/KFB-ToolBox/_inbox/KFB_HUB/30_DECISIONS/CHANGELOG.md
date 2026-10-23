@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-24
+- V-695 WSA-Auftrag MVP als Site-Update auf der GPT-Site (leicht, über GitHub) nach Gate und Prüfer (PASS, 3 Klarstellungen); private Proof-Dateien aus dem öffentlichen Register entfernt (Georg 24.10.).
+
 ## 2026-10-23
 - V-694 Claude-Design-Brief 3D-Prop-HUD R1 (replies/HUD_3D_R1/) nach Gate und Prüfer (BLOCK, 8 Punkte eingearbeitet); privates Asset-Paket als Seite mit ZIP (https://claude.ai/artifact/4jUmrT5xbogMx8DPecqtbX), Hub-Karte b187. Webchat-Entwurf PR #444 dadurch ersetzt.
 - V-693 Hub q178 (Familien wie vorgeschlagen) und q179 (Begrüßung -7 dB) an WS1/WS-Audio.

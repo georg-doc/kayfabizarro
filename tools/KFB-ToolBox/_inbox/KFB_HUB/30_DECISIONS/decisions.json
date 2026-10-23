@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "entries": [
   {
    "id": "V-001",
@@ -9909,6 +9909,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-695",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "SPEC",
+   "text": "MVP-Site leicht und über GitHub (Georg 23.10., WS1 154, ändert V-618/V-624 nur in Paketgröße und Herkunft): WSA work veröffentlicht game/mvp-r1 als Update der GPT-Site; im Paket nur Spielcode und gekaufte Figuren (privat), alles andere zur Laufzeit von GitHub über einen festen Commit; Songs (Suno, Cozy Tunes) dürfen ins öffentliche kayfabizarro; Musik kleiner kodiert über den GitHub-Weg von WS-Audio, bis dahin ohne Musik; Passwort für alle Pfade. Brief replies/BRIEF_WSA_MVP_GPT_SITE_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "290 MB Site-Paket war Georg zu schwer; feste Commits sind cachebar und neue Inhalte brauchen keinen Upload.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9996,7 +10011,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1163",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1166",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
