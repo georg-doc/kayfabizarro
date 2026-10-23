@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio: Orchester-Ernte
+- **Orchester-Charaktere (wie Peter und der Wolf):** 108 BPM, Tonart geschätzt B Dur (A#, Konfidenz 0,92), 261 Phrasen: Holzbläser 174 (47 % einstimmig, Flöte/Oboe/Klarinette/Fagott nacheinander in Zeitabschnitten), Blech 43, Keyboard bzw. Harfe 26, Streicher 12, Synth 6. Katalog `40_AUDIO/music_catalog_r1.json` ergänzt, Material im privaten Branch unter `40_AUDIO/chatterbox_r1/suno_tests/orchester/`.
+- Die Instrument-Zuordnung je Phrase steht noch aus (Abschnitte nach Zeit im Manifest); bitte beim Anhören bzw. über die Tonlage (Flöte hoch, Fagott tief) zuordnen und im nächsten Status melden.
+
 # NEU OBEN (23.10.) · An WS-Audio: erste Suno-Ernte und Musik-Katalog (V-688)
 - **Katalog:** `40_AUDIO/music_catalog_r1.json` (kfb.music-catalog/1) mit BPM, Einsatz-Versatz, geschätzter Tonart und den Ernte-Manifesten je Stem.
 - **Surf und Rockabilly:** 150 BPM, Tonart geschätzt C Dur (Konfidenz 0,6; Prompt war Moll-Pentatonik, also eher A Moll), 60 Phrasen: Twang-Gitarre 38, Synth 10, Orgel 6, Blech 4, Vocal 2. Slap-Bass ergab keine einstimmigen Phrasen.

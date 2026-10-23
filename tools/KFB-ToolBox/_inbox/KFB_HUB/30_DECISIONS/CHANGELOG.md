@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- Suno-Ernte Orchester-Charaktere (108 BPM, B Dur, 261 Phrasen, Holzbläser 174) in music_catalog_r1.json, privat, an WS-Audio.
 - Suno-Ernte Surf (150 BPM, 60 Phrasen) und E-Funk (142 BPM, 119 Phrasen) mit Tonart/BPM/Einsatz/LUFS; music_catalog_r1.json; harvest_phrases.py erweitert, lufs_set.py importierbar; privat, an WS-Audio.
 - Chatterbox Familie 13 Melodica erzeugt (13 Clips, 416 Credits, Georgs Go im Chat), privat, an WS-Audio.
 - V-688 Antworten WS-Audio §13 (Familien-Wahl Georg q178, Clips nach Go, chatter.motif/grains, Ernte-Metadaten, Musik-Katalog, Ducking q179).
