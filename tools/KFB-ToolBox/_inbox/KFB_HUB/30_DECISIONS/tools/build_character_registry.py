@@ -1869,6 +1869,9 @@ def gaps_doc(records):
 
 
 # ----------------------------------------------------------------------------- main
+MERGES = [("farmer_harke", "farmer_b", "V-685: farmer_harke ist die Bäuerin farmer_b (WS1 §146)")]
+
+
 def main():
     load_seeds()
     load_cast()
@@ -1895,6 +1898,21 @@ def main():
         if g and g != qc:
             REG.alias_conflicts.append({"id": q, "kept": g, "keptEvidence": (REG.alias.get(q) or (g, "canonical id"))[1],
                                         "rejected": qc, "rejectedEvidence": qev + " (qualified alias, scoped)"})
+    # Georg/WS0-Entscheide: zwei IDs sind dieselbe Figur (V-685)
+    for src_id, dst_id, why in MERGES:
+        if src_id in REG.chars and dst_id in REG.chars:
+            a, b = REG.chars.pop(src_id), REG.chars[dst_id]
+            for k, v in a.items():
+                if isinstance(v, list):
+                    b.setdefault(k, []).extend(x for x in v if x not in b.get(k, []))
+                elif v and not b.get(k):
+                    b[k] = v
+            for al, (tgt, ev) in list(REG.alias.items()):
+                if tgt == src_id:
+                    REG.alias[al] = (dst_id, ev)
+            REG.alias[src_id] = (dst_id, why)
+            if src_id not in b["aliases"]:
+                b["aliases"].append(src_id)
     records = {cid: build_record(cid, r) for cid, r in sorted(REG.chars.items())}
     # output (only under OUT)
     if os.path.isdir(os.path.join(OUT, "characters")):

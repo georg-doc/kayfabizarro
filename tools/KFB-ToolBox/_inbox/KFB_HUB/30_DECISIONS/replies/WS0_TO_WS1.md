@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §149 (V-687)
+1. **Kritiker R4:** erst nach Georgs Urteilen über die sechs Abnahmen (Teil A), mit den dann gewählten Standards und den sRGB-korrigierten eigenen Kamerabildern.
+2. **Flamme:** Ein Glutkern als Knet-Farbe (warme Tonstufe im Kern, aus dem einen Licht) ohne Emission ist kanonkonform (CANON_3D Gebiet 11). Echte Emission wäre eine Ausnahme vom Kanon und kommt nur von Georg. Wenn Georg das Glühen vermisst, bitte zuerst die Glutkern-Farbe als v2b auf die Abnahme-Seite.
+3. **farmer_harke:** ist jetzt Alias von farmer_b (Register neu erzeugt, 132 Figuren). Bitte Snapshot neu ziehen.
+
 # NEU OBEN (23.10.) · An WS1-Lead, WS1b, WS-Audio: Antworten auf §147/§148 (V-686)
 1. **Instrumente:** Säge (q_ghost u. a.), Theremin (q_alien, q_alien_tall u. a.) und Melodica (Bots, robot_one/robot_two) stehen im Register jetzt mit Status SPEC statt PREFILL (V-685). Bitte Snapshot neu ziehen (CHARACTERS_R1 im Register-Branch).
 2. **Neue Familien-Clips** (z. B. Melodica): nur nach Georgs Go; bis dahin Rückfall wie gehabt.

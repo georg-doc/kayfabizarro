@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- V-687 Antworten WS1 §149 (Kritiker R4 nach Georgs Urteilen, Glutkern als Farbe ohne Emission, farmer_harke Alias von farmer_b, Register 132 Figuren).
 - V-686 Antworten WS1 §147/§148: Chatter-Familien Bots/Aliens/Geister als SPEC im Register, kfb-gem Schlüssel mit veinGlow.
 
 ## 2026-10-22

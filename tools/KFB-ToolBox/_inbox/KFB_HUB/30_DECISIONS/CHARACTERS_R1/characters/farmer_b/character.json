@@ -9,18 +9,33 @@
       "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json#actors.farmer-b.label",
       "status": "SOURCE"
     },
+    "displayName": {
+      "v": "Farmerin mit Mistgabel (dunkles Haar)",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json#displayName",
+      "status": "SOURCE"
+    },
     "aliases": {
       "v": [
-        "farmer-b"
+        "farmer-b",
+        "farmer_harke",
+        "kfb_farmer_harke"
       ],
       "src": "aliases.json",
       "status": "SOURCE"
     }
   },
   "aliases": [
-    "farmer-b"
+    "farmer-b",
+    "farmer_harke",
+    "kfb_farmer_harke"
   ],
-  "story": {},
+  "story": {
+    "sceneNotes": {
+      "v": "B44 (V-549) Fluff-Farm: KayKit Mystery S6 „12 – Farmers“, KFB-Augen statt Pillenaugen, Mund aufgemalt (Original).",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json#story",
+      "status": "SOURCE"
+    }
+  },
   "lore": {},
   "personality": {},
   "dialogue": {
@@ -104,12 +119,16 @@
   },
   "preferences": {
     "weapons": {
-      "v": null,
-      "status": "todo"
+      "v": "dropbox:50_BLENDER/K11/_privat_kauf_asset/KFB_Pitchfork.k11.glb (privat) an handslot.r, Halterung je Clip: 50_BLENDER/K11/data/farmer_harke.npc.json",
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_harke.prop",
+      "status": "PREFILL"
     },
     "biome": {
-      "v": "Feldstück mit vier Beeten: Farmer_A grüßt, Farmer_B sticht mit der Forke",
-      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.farmers.habitatIntent",
+      "v": [
+        "Feldstück mit vier Beeten: Farmer_A grüßt, Farmer_B sticht mit der Forke",
+        "biom_03_Backyard"
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.farmers.habitatIntent; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#palette.entry",
       "status": "PREFILL"
     }
   },
@@ -119,6 +138,18 @@
       "role": "Sozial / zweiter Bewohner",
       "note": "Versorgungs-Residents · Feldarbeit",
       "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.farmers"
+    },
+    {
+      "id": "npc_a",
+      "role": "farmer_harke",
+      "src": "KFB_HUB/65_SCENELETS/npc_a/concept.json#cast"
+    },
+    {
+      "id": "fluff_farm_01",
+      "role": "Idle_B",
+      "localId": "farmerin_harke",
+      "note": "auf die Mistgabel gestützt (Gabel senkrecht in der Faust, 0 Durchstich in Idle_B)",
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmerin_harke"
     }
   ],
   "songs": [
@@ -141,7 +172,26 @@
     }
   },
   "appearance": {
-    "figureRefs": [],
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json",
+        "sha256": "32e90664499841c30e1e46a026c068005fcead4c66f25db37ad919dfa954e509",
+        "kind": "duplicate",
+        "cardId": "kfb_farmer_harke"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B44/data/farmer_harke.figure.json",
+        "sha256": "32e90664499841c30e1e46a026c068005fcead4c66f25db37ad919dfa954e509",
+        "kind": "scene_variant",
+        "cardId": "kfb_farmer_harke"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/B44/scenelet/farmer_harke.figure.json",
+        "sha256": "32e90664499841c30e1e46a026c068005fcead4c66f25db37ad919dfa954e509",
+        "kind": "canonical",
+        "cardId": "kfb_farmer_harke"
+      }
+    ],
     "profileRefs": [],
     "kitModel": {
       "v": {
@@ -150,9 +200,28 @@
       },
       "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
       "status": "SOURCE"
+    },
+    "licences": {
+      "v": {
+        "body": "KayKit Mystery Monthly S6 „12 – June 2026 – Farmers“ (Kauf) → privat"
+      },
+      "src": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json",
+      "status": "SOURCE"
     }
   },
-  "performance": {},
+  "performance": {
+    "animations": {
+      "v": [
+        {
+          "graben": "Digging",
+          "harken": "Working_C"
+        },
+        "Idle_B"
+      ],
+      "src": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_harke.npcClips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmerin_harke.clip",
+      "status": "SOURCE"
+    }
+  },
   "views": {
     "dramatis_personae": {
       "present": false,
@@ -163,7 +232,8 @@
   "sourcesRead": [
     "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
     "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
-    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json"
+    "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/rig-medium-actors.v0.json",
+    "KFB_HUB/60_CAST/cast.r1.json"
   ],
   "fieldStatus": {
     "identity.name": "filled",
@@ -172,22 +242,19 @@
     "dialogue.speechPatterns": "filled",
     "voice.spec": "filled",
     "chatter.instrument": "filled",
-    "preferences.weapons": "todo",
+    "preferences.weapons": "filled",
     "preferences.biome": "filled",
     "dioramas": "filled",
     "memory.relationships": "filled",
-    "appearance.figureRefs": "todo",
+    "appearance.figureRefs": "filled",
     "variants": "todo",
-    "performance.animations": "todo",
+    "performance.animations": "filled",
     "songs": "filled"
   },
   "todoFields": [
     "story.background",
     "personality.quirks",
-    "preferences.weapons",
-    "appearance.figureRefs",
-    "variants",
-    "performance.animations"
+    "variants"
   ],
   "provenance": {
     "aliases": {
@@ -195,11 +262,15 @@
       "tag": "SOURCE"
     },
     "appearance.figureRefs": {
-      "source": null,
-      "tag": "todo"
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
     },
     "appearance.kitModel": {
       "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/eye-rig/mystery-monthly-character-coverage.v1.json",
+      "tag": "SOURCE"
+    },
+    "appearance.licences": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json",
       "tag": "SOURCE"
     },
     "chatter.family": {
@@ -215,7 +286,11 @@
       "tag": "PREFILL"
     },
     "dioramas": {
-      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js",
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js; KFB_HUB/65_SCENELETS/npc_a/concept.json; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json",
+      "tag": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json#displayName",
       "tag": "SOURCE"
     },
     "identity.name": {
@@ -231,20 +306,20 @@
       "tag": "SOURCE"
     },
     "performance.animations": {
-      "source": null,
-      "tag": "todo"
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_harke.npcClips; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#actors.farmerin_harke.clip",
+      "tag": "SOURCE"
     },
     "personality.quirks": {
       "source": null,
       "tag": "todo"
     },
     "preferences.biome": {
-      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.farmers.habitatIntent",
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/cast.js#RESIDENTS.farmers.habitatIntent; KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01.json#palette.entry",
       "tag": "PREFILL"
     },
     "preferences.weapons": {
-      "source": null,
-      "tag": "todo"
+      "source": "KFB_HUB/60_CAST/cast.r1.json#actors.farmer_harke.prop",
+      "tag": "PREFILL"
     },
     "songs": {
       "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.suno.txt",
@@ -253,6 +328,10 @@
     "story.background": {
       "source": null,
       "tag": "todo"
+    },
+    "story.sceneNotes": {
+      "source": "KFB_HUB/30_DECISIONS/replies/BUEHNE_R2/scenelets/fluff_farm_01/farmer_harke.figure.json#story",
+      "tag": "SOURCE"
     },
     "variants": {
       "source": null,

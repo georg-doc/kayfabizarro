@@ -61,9 +61,8 @@ Wanted fields (V-394): `identity.name`, `story.background`, `personality.quirks`
 | `driver` | kit_character | 3 | 11 | 0 | background, quirks, speechPatterns, instrument, weapons, biome, dioramas, relationships, figureRefs, variants, animations |
 | `eraser` | prop_character | 4 | 10 | 3 | background, quirks, speechPatterns, spec, instrument, weapons, biome, relationships, variants, songs |
 | `farmer_a` | kit_character | 7 | 7 | 0 | background, quirks, instrument, weapons, figureRefs, variants, animations |
-| `farmer_b` | kit_character | 8 | 6 | 0 | background, quirks, weapons, figureRefs, variants, animations |
+| `farmer_b` | kit_character | 11 | 3 | 3 | background, quirks, variants |
 | `farmer_daumen` | custom_rig | 5 | 9 | 3 | background, quirks, speechPatterns, spec, instrument, weapons, relationships, variants, songs |
-| `farmer_harke` | custom_rig | 6 | 8 | 3 | background, quirks, speechPatterns, spec, instrument, relationships, variants, songs |
 | `farmer_hut` | custom_rig | 5 | 9 | 3 | background, quirks, speechPatterns, spec, instrument, weapons, relationships, variants, songs |
 | `farmer_karre` | custom_rig | 5 | 9 | 3 | background, quirks, speechPatterns, spec, instrument, weapons, relationships, variants, songs |
 | `flyer_bat` | custom_rig | 3 | 11 | 2 | background, quirks, speechPatterns, spec, instrument, weapons, biome, dioramas, relationships, variants, songs |
@@ -142,20 +141,20 @@ Wanted fields (V-394): `identity.name`, `story.background`, `personality.quirks`
 | `witch` | kit_character | 10 | 4 | 8 | background, quirks, instrument, weapons |
 
 ## Todo count per wanted field
-- `identity.name` (identity/name): 0 of 133 todo
-- `story.background` (backstory): 125 of 133 todo
-- `personality.quirks` (quirks): 133 of 133 todo
-- `dialogue.speechPatterns` (speech patterns): 104 of 133 todo
-- `voice.spec` (voice): 98 of 133 todo
-- `chatter.instrument` (chatter instrument): 120 of 133 todo
-- `preferences.weapons` (preferred weapons): 120 of 133 todo
-- `preferences.biome` (preferred biome): 99 of 133 todo
-- `dioramas` (diorama assignments): 82 of 133 todo
-- `memory.relationships` (relationships/memory): 94 of 133 todo
-- `appearance.figureRefs` (appearance (figure cards)): 51 of 133 todo
-- `variants` (variants): 79 of 133 todo
-- `performance.animations` (animations): 76 of 133 todo
-- `songs` (songs): 99 of 133 todo
+- `identity.name` (identity/name): 0 of 132 todo
+- `story.background` (backstory): 124 of 132 todo
+- `personality.quirks` (quirks): 132 of 132 todo
+- `dialogue.speechPatterns` (speech patterns): 103 of 132 todo
+- `voice.spec` (voice): 97 of 132 todo
+- `chatter.instrument` (chatter instrument): 119 of 132 todo
+- `preferences.weapons` (preferred weapons): 119 of 132 todo
+- `preferences.biome` (preferred biome): 99 of 132 todo
+- `dioramas` (diorama assignments): 82 of 132 todo
+- `memory.relationships` (relationships/memory): 93 of 132 todo
+- `appearance.figureRefs` (appearance (figure cards)): 50 of 132 todo
+- `variants` (variants): 78 of 132 todo
+- `performance.animations` (animations): 75 of 132 todo
+- `songs` (songs): 98 of 132 todo
 
 ## Unresolved aliases (not guessed)
 - `KayKit Mummy` → candidates ['mummy_a', 'mummy_b'] · conflicting evidence: S1 identity.aliases KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/mummy_a.character.json | S1 identity.aliases KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/mummy_b.character.json · seen in S1 identity.aliases KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/mummy_b.character.json
@@ -279,7 +278,6 @@ Wanted fields (V-394): `identity.name`, `story.background`, `personality.quirks`
 - `caveman` (kit_character): songs 1
 - `driver` (kit_character): songs 1
 - `farmer_a` (kit_character): songs 1
-- `farmer_b` (kit_character): songs 1
 - `magical_girl` (kit_character): songs 1
 - `monster` (kit_character): songs 1
 - `protagonist_b` (kit_character): songs 1
@@ -303,7 +301,6 @@ Wanted fields (V-394): `identity.name`, `story.background`, `personality.quirks`
 - `combat_mech` (kit_character)
 - `eraser` (prop_character)
 - `farmer_daumen` (custom_rig)
-- `farmer_harke` (custom_rig)
 - `farmer_hut` (custom_rig)
 - `farmer_karre` (custom_rig)
 - `flyer_bat` (custom_rig)
@@ -503,13 +500,10 @@ todo: `story.background`, `personality.quirks`, `dialogue.speechPatterns`, `voic
 todo: `story.background`, `personality.quirks`, `chatter.instrument`, `preferences.weapons`, `appearance.figureRefs`, `variants`, `performance.animations`
 
 ### `farmer_b` · kit_character
-todo: `story.background`, `personality.quirks`, `preferences.weapons`, `appearance.figureRefs`, `variants`, `performance.animations`
+todo: `story.background`, `personality.quirks`, `variants`
 
 ### `farmer_daumen` · custom_rig
 todo: `story.background`, `personality.quirks`, `dialogue.speechPatterns`, `voice.spec`, `chatter.instrument`, `preferences.weapons`, `memory.relationships`, `variants`, `songs`
-
-### `farmer_harke` · custom_rig
-todo: `story.background`, `personality.quirks`, `dialogue.speechPatterns`, `voice.spec`, `chatter.instrument`, `memory.relationships`, `variants`, `songs`
 
 ### `farmer_hut` · custom_rig
 todo: `story.background`, `personality.quirks`, `dialogue.speechPatterns`, `voice.spec`, `chatter.instrument`, `preferences.weapons`, `memory.relationships`, `variants`, `songs`

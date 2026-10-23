@@ -1,10 +1,10 @@
 {
   "schema": "kfb.character-index/1",
   "characterSchema": "kfb.character/1.1",
-  "count": 133,
+  "count": 132,
   "byKind": {
     "cube_pet": 16,
-    "custom_rig": 19,
+    "custom_rig": 18,
     "faction_unit": 1,
     "hero": 5,
     "kit_character": 62,
@@ -613,9 +613,9 @@
       "name": "Farmer B",
       "kind": "kit_character",
       "status": "draft-r1",
-      "filled": 8,
-      "todo": 6,
-      "figureRefs": 0,
+      "filled": 11,
+      "todo": 3,
+      "figureRefs": 3,
       "dramatisPersonae": false,
       "file": "characters/farmer_b/character.json"
     },
@@ -629,17 +629,6 @@
       "figureRefs": 3,
       "dramatisPersonae": false,
       "file": "characters/farmer_daumen/character.json"
-    },
-    {
-      "id": "farmer_harke",
-      "name": "Farmerin mit Mistgabel",
-      "kind": "custom_rig",
-      "status": "draft-r1",
-      "filled": 6,
-      "todo": 8,
-      "figureRefs": 3,
-      "dramatisPersonae": false,
-      "file": "characters/farmer_harke/character.json"
     },
     {
       "id": "farmer_hut",
