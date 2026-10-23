@@ -1,7 +1,36 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §151.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§151 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §152.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§152 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 152 · 23.10. spät · Gold-Licht bleibt · Umriss geparkt · Startseite raus · Fallobst rund · Staubfahne Weg A · Georgs Antworten zu WS-NPC G-1 bis G-3 · Spiegel @1ef8c71
+
+- **Gold-Licht violette Mesa: BLEIBT** (Georg: „finde ich eigentlich ganz schön“). Damit ist der offene Punkt aus §151 erledigt.
+- **Figuren-Umriss (Probe, `outline=1`): GEPARKT** (Georg: „Option für später, dann mit kräftigerer Outline, vermutlich angepasst für Entfernung“).
+  - Technik: Stencil-Hülle, nur der Außenrand, keine Linien innen. Das entspricht Georgs Cube-Pets-Ansatz (vergrößerte Silhouette hinter dem Modell).
+  - Werte: 2,5 px warmes Braun, für den Spieler und die 5 nächsten Figuren.
+  - Kosten: +37 Zeichenaufrufe bei 4 Figuren, Bildzeit unverändert (vsync).
+  - Im Spiel aus. mvp 5c63216; die offenen Punkte für die Wiederaufnahme stehen in OFFENE_PUNKTE.
+- **Startseite raus** (Georg): Die Site-Adresse ohne Hash geht direkt ins Spiel, der Vorhang erscheint nur noch mit dem Schalter `start`. mvp 73e69f1.
+- **Fallobst** (Georg: „einsinken ja, abplatten nein“): Es sinkt 45 % des Radius rund ein, mit einem Erdkeil je Kügelchen. Aus look-r2 übernommen, ohne das Abplatten. mvp 1ef8c71, Test floatingProps PASS.
+- **WS-Audio V-693 gemergt** (ws-audio/r1 @4bae98a → mvp d3c23cd): Familien-Wahl q178, Begrüßung −7 dB q179. Test audio PASS.
+- **Staubfahne Weg A** (WS1b, ws1/staub-probe d711bb6, `dust3=1`): weiche Puffs plus Körner an den Rädern. Kosten +0,2–0,4 ms GPU, Deckung 100 %, keine Scheiben.
+  - Georg: „Richtung passt – sandfarbener und breiter“, aber nicht durchsichtiger, weil sonst die Einzelkreise sichtbar werden. Der leichtere Eindruck soll über den bodennahen Ton kommen, nicht über weniger Alpha.
+  - WS1b ist beauftragt (Lieferung -puffs2). Der eigene Nacht-Staubton folgt danach.
+- **WS-NPC, Georgs Antworten auf die Abnahmen aus WS_NPC_STATUS §11:**
+  - **G-1 Bot-Augen: PASS** („war nicht genau zu sehen, aber PASS“). Damit ist die Lead-Bedingung erfüllt, die Bot-Augen dürfen Richtung main.
+  - **G-3 Spielzeugsoldaten mit Skelett-Clips für K.O. und Aufstehen: PASS als Übergang**, bis der eigene Spielzeug-Clip von WSB kommt.
+  - **G-2 Gerüchte: Georg wünscht regeren Austausch** („Klatsch & Tratsch ist wichtig für Kayfabe, KFB und emergente NPC-Persönlichkeiten/Weltbilder“). Optionen liegen bei Georg:
+    1. häufiger
+    2. Ketten (told-of-told; braucht eine Erweiterung von kfb.world-save, Owner Lead)
+    3. Persönlichkeit färbt (Tratsch-Art aus den Figurenblättern)
+    4. mehr Themen
+    5. sichtbar machen
+    - Empfehlung Lead: zuerst 5 + 1, dann 2 + 3.
+    - Wichtig für WS0: Damit ist die WS0-Frage „Gerücht-Ketten“ (V-602) grundsätzlich mit Ja beantwortet. Umsetzung erst nach Konzept mit Prüfkriterien und Georgs Freigabe.
+- **Testreihe @1ef8c71:** 69 PASS; FAIL nur die alten c2 (Lidspalt) und c3g (Kristall-Laternen, Fix lag im abgelehnten look-r2).
+- **Spiegel:** privat game/mvp-r1 37e9b32, öffentlich kayfabizarro ws1/mvp-r1 d1a1b60 (src/private = 0).
+- **Als Nächstes:** Staubfahne -puffs2 prüfen, dann Kritiker R4 auf diesem Stand.
 
 ## 151 · 23.10. · Georgs Urteile (für V-692 ff.): Figuren-Belichtung und Nacht-Mondschatten sind Standard · Staubfahne läuft · offen: Gold-Licht
 
