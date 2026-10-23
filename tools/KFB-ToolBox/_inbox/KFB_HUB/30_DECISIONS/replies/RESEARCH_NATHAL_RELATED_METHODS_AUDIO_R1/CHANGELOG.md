@@ -10,3 +10,10 @@
 - Three optional future artifact forms: Sound Perception Lab, Inner Image Atlas, Breathwork Comparison Gallery. No EEG-state score, no healing/ESP claims, no copied proprietary NATHAL/Monroe/Grof training.
 - Scope safety guard: holotropic/intense respiratory patterns treated as comparison research only. No high-intensity breath timing, forced holds or unsupervised coached-session functionality.
 - No code, audio output, second engine, Stage/Site, PR merge or canon. **Next gate:** WS0 product/owner route for a small *Sound Perception Lab* informational artifact, only after source & rights review.
+
+
+## 2026-10-23 · R1 Addendum · H13 HyperNormalisation as the actual visual donor
+- User specified **Hypernormalisation Engine**, correcting the earlier ambiguous “Normalization” shorthand.
+- Verified H13 authored source: layered 2D camera/collage, music-triggered motion/typography/fractal/hypno visuals; **private Curator Site is content admin, not the integrated H13 visual runtime**.
+- Added `H13_HYPERNORMALISATION_VOICE_COUNSELOR_OPTION_R1.md` with faithful visual reuse, distinction of music energy/binaural stereo/voice events, low-stimulation option, source-image isolation gate, a potential private counselor (text/voice) with WebRTC, no auto-embedded ChatGPT Voice, and existing KFB Audio owner reuse.
+- No new second runtime, no replacement collage engine; `collage-engine v0` explicitly rejected. H13 unchanged; no Live/Stage/Site. 
