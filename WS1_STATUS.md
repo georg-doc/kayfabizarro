@@ -1,7 +1,39 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§149 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §150.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§150 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 150 · 23.10. · NOTIZ FÜR WS0 UND WEBCHAT (Georg bittet um Übernahme) · Regel „Intent First“ entdoppeln, keine Anti-Knete-Drift, Staubfahne läuft · dazu Stand WS1
+
+**Auftrag von Georg (23.10.):** Georg hatte dem Webchat gesagt, er solle ergebnisoffener arbeiten und nicht mit Knetgummi-Lösungen kommen. Das war als Hinweis für künftige Chats gemeint. Daraus sind heute 17:50–17:54 sieben Commits im Register-Branch entstanden (5cdf2f231, 27061d199, 2c759cb1f, c0a150878, fe5d946da, b769bd78c, 6ea067454). Georg will keine Doppelungen und keine Überkorrektur bzw. Drift. WS1 hat gelesen. Der Inhalt ist im Kern richtig: Georgs Wirkung bzw. Referenz hat Vorrang, Zahlen sind Hypothesen. Drei Punkte bitte übernehmen:
+
+1. **Entdoppeln:** Die Regel steht ausgeschrieben an sechs Stellen: `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`, `KFB_WORKING_RULES_R1.md` (neuer Abschnitt), `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md` (§0D), Override-Kästen in drei Staub-Dokumenten, dazu ein Eintrag im CHANGELOG.
+   - Bitte **eine** maßgebliche Stelle behalten (die neue WEBCHAT_INTENT_FIRST-Datei).
+   - An allen anderen Stellen nur einen Verweis von einer Zeile („siehe …“), keinen eigenen Wortlaut.
+   - Sonst laufen die Fassungen beim nächsten Ändern auseinander.
+2. **Keine Anti-Knete-Drift:** In den Texten stehen „Knetkugeln, Blobs“ als Beispiel für Fehlgriffe. Das darf nicht als „Knete ist verdächtig“ gelesen werden. Bitte einen Satz ergänzen:
+   - „Knete bleibt der gesetzte KFB-Look (Knet-HUD, Kit-Knete, Racer-Zusätze, Figuren).“
+   - „Die Regel betrifft nur ungefragt erfundene Konstruktionen bzw. Methoden für ein Ziel, das Georg mit Wirkung oder Referenz beschrieben hat (Anlass: Knet-Wolken für die Staubfahne).“
+3. **Laufende Arbeit nicht bremsen:** In b769bd78c steht, WS0 solle die Staub-Probe von WS1b „erst nach dem figamb-Test“ und nach V-Vergabe einplanen.
+   - WS1b baut die Staubfahne bereits **mit Georgs Freigabe** (23.10.), hinter `dust3=1` auf ws1/staub-probe, nach Georgs zwei Vorlagen (`~/kfb-ws1/research/audits/abnahme/staubfahne/vorlage/`).
+   - Partikelzahl (Richtwert 1.500–3.000) und Lebensdauer (2–4 s) stehen im Auftrag ausdrücklich als zu messende Testbereiche, nicht als Regel. Das passt zur neuen Regel.
+   - Bitte WS1b nicht umbriefen und nicht anhalten. Eine V-Nummer gern nachtragen.
+
+**Stand WS1 (seit §149)**
+- **Scheinwerfer-Kegel ist Standard** (Georg: „als Standard übernehmen, Feinschliff später“):
+  - Grundlage ist Physik nach UNECE R48/R112, verdichtet über Winkel: Grenze 2°, Unterkante 12°, L = h/tan 2°. Rundes, weiches Ende. Recherche `research/audits/HEADLIGHTS_PHYSIK_R2.md`.
+  - mvp: Merge c240081, Standard 326ebb1; `hlt=v2` zeigt den alten Stand.
+  - Spiegel 693a479 (game/mvp-r1 e294439, kayfabizarro ws1/mvp-r1 e85bceae5). Testreihe 68 PASS, alte FAIL c2/c3g.
+  - Feinschliff offen (Übergang Kegel → Fleck in der Draufsicht).
+- **Knet-Flamme v2 abgelehnt** (Georg: die abgenommene Flamme bleibt). Auf ws1/vehicles-r1 zurückgenommen (8a14577), sie kam nicht nach mvp.
+- **Figuren lesbar:**
+  - Figurenlicht Weg 1 (Zusatzlicht je Figur und Lichtkreis) ist **abgelehnt**: zu flach, Textur weg, Bodenschatten weg.
+  - Neuer Weg nach Recherche `research/audits/FIGUREN_LESBARKEIT_R2.md`: **Belichtung nur für Figuren**, multiplikativ nach mood.glow (Tag 1,0, Nacht 2,6), ohne neues Licht, Boden unberührt. Schalter `figamb=1`, mvp 9048938.
+  - Gemessen: Struktur auf den Figuren ≥ heute, Bodenschatten unverändert, weniger absaufende Flächen.
+  - Georg: „Richtung passt, etwas kräftiger“, umgesetzt. Seine Abnahme der Stärke steht aus.
+  - **Kanon-Hinweis:** V-385 bzw. Regel 11 (Figurenlicht) und R2 Regel 6 bitte zu diesem Weg passend nachziehen. Kein privates Licht, sondern eine Materialantwort nur auf Figuren.
+- **Staub:** r2 (heller Staub statt dunkler Punkte, aber Tupfer statt Fahne) liegt auf ws1/staub-probe, nicht in mvp. Die neue Probe Staubfahne läuft (siehe Punkt 3).
+- **Lehre zu Abnahmebildern:** Eigene Kamerabilder immer in ein Render-Ziel mit sRGB-Farbraum zeichnen. Ohne sRGB waren ältere Bilder zu dunkel (alter Staub, erste Schattenseite, Kritiker-camShot, behoben 7f5f7cc).
 
 ## 149 · 23.10. · GESAMTSTAND WS1 für WS0 (alles seit §148, alle WS1-Sitzungen) · 6 Abnahmen warten auf Georg · V-685/V-686 umgesetzt
 
