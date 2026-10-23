@@ -1,7 +1,50 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §152.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§152 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §153.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§153 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 153 · 23.10. spät · Staubfahne und Leucht-Flamme sind Standard · Karten-Tratsch Stufe 0 bei Georg · Kanon- und Datenfragen · Spiegel @0d2b1ba
+
+- **Staubfahne Weg A: STANDARD.** Georg: „so übernehmen“. `dust3=0` zeigt den alten Staub.
+  - WS1b ws1/staub-probe @283ac7c ist gemergt (mvp ddb8226).
+  - Sandfarben und in der Kurve breiter; die Deckkraft je Puff wurde nicht gesenkt, weil Georg keine Einzelkreise sehen will.
+  - Düsen-Detail: Der Staub wird jetzt nach den Flammen gezeichnet und liegt nicht mehr darunter. Im dichten Drift verschwinden die Flammen fast.
+  - **Offene Frage an Georg:** Staub an den Düsen anglühen lassen (berührt die Regel „Licht nur über das eine Rig“)?
+- **Leucht-Flamme (vehicleRig style 'glow'): STANDARD.** Georg: „Leucht ist besser als Knete“. `flame=clay` zeigt die Knet-Flamme.
+  - Das ist eine bewusste Ausnahme von „eigene Zusätze an Racern in Knete“ (22.10.). Der Lüfter bleibt Knet-Zusatz über vclay.
+  - Nachts gezähmt: farbtreu begrenzt, fast weiße Pixel von bis zu 3,5 % auf ≤ 0,7 %.
+  - Schockdiamanten weich gemacht, nach Georgs Einwand gegen die „einzelnen Kreise“ (= Kritiker-R1-Befund Ring-/Kugelstapel).
+  - WS1b ws1/flamme-glow @86b00ab ist gemergt (mvp 571c386). Georgs Abnahme der Nachtfassung läuft; offen ist auch der Leuchtring des Knet-Lüfters nachts.
+- **Lead-Fixes beim Merge:**
+  - contract-static: Das Ein- und Aushängen des Staubs liegt jetzt im Modul (`mountDustTrail`).
+  - vehicles-r1 cachedSwap: eine Fahne je Szene statt Neuanlage bei jedem Racer-Wechsel. Vorher wurden je Wechsel 2 Shader neu übersetzt, mit Ruckler.
+- **Karten-Tratsch** (Georgs Vision, siehe auch Memory „Karten wandern von Kopf zu Kopf“):
+  - Das Konzept R1 von WS-NPC (docs/ws-npc/KARTEN_TRATSCH_KONZEPT_R1.md) ist von Georg freigegeben.
+  - Georgs Entscheidungen:
+    - Sprechblasen erst als Klartext („decodiert“), Fluff-o-lect und Pottymouth-Glyphen später.
+    - **Kein thematisches Matching**: Der Mismatch ist gewollt („cognitive dissonance als Resonanzraum“, Satire auf Filterblasen).
+    - Calls: BINGO/BOGGLE/BONGO/Blödsinn!/HUMBUG!.
+    - HUMBUG = Blitzdingsen/Löschen (V-530), später auch partiell. Auslöser: zu schnelle Verbreitung.
+    - KafKaBONDO! ist ein Bug/Artefakt.
+    - Rückfall ohne Triplet = Kartentext roh.
+    - Leitprinzip **„Conflict is king!“**: Ein Dramaturg wählt Begegnungen und Karten, die Bewertung bleibt sozial.
+    - Damit ist die WS0-Frage Gerücht-Ketten (V-602) mit Ja beantwortet. kfb.world-save/2 (told-of-told) baut der Lead zu Stufe 1.
+  - **Stufe 0** (headless, ws-npc/phase-a @3160a6f): vier Protokolle über 10 Tage, Leseseite bei Georg.
+    - Befund: Der Dramaturg verdreifacht den Konflikt.
+    - Nach etwa einer Woche gibt es aber fast nur noch BINGO, und die Blasen bleiben schwach (Q 0,15).
+    - Vorschläge an Georg: Figuren mit wachsendem Wissen wählerischer, eigenes Deck als Identität; in der Ruhe-Phase innerhalb der Blase paaren.
+  - **Bitte an WS0:**
+    1. Die Signatur-Deck-Liste (SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.json, 62 Figuren, Georg 20.10.) ins Figuren-Register übernehmen.
+    2. Decks für die Kayfabrick-Bots fehlen.
+    3. the_uruk_rumble (Orc Brute) hat in cards.json 0 Karten.
+    4. Die Tratsch-Art je Figur (Tratschmaul, Skeptiker, Übertreiber, Schweiger, angepasst, rebellisch) gehört in die Figurenblätter (personality meist todo).
+- **Kartendaten (Bitte an WS0 / Kanon-Owner):**
+  - brain_flipper_image_spots #59 „The Voice Over“ steht im Druck-PDF, fehlt aber in cards.json (media/kfb @52adc8f1).
+  - Bei Ego Mania und Mission Control folgt cards.json der Registry, nicht dem PDF im Repo (ab #37 andere Karten). Die Triplets folgen dem PDF. **Welche Fassung Kanon ist, liegt bei Georg** (gefragt).
+  - Die t1-Nummernfehler (BBBW #50/51, anti_rules 52–57) hat Deck-Songs korrigiert (ws-song/workshop-r1 @ed1039da). Die Triplet-Sets gehören der Deck-Songs-Sitzung.
+- **Testreihe @0d2b1ba:** 69 PASS, FAIL nur die alten c2 (Lidspalt) und c3g (Laternen).
+- **Spiegel:** privat game/mvp-r1 20e297b, öffentlich ws1/mvp-r1 ec628ba (src/private = 0).
+- **Als Nächstes:** Georgs Urteile zu Tratsch-Protokoll, Nachtfassung der Leucht-Flamme, Düsen-Anglühen und Kartenfassung. Danach Kritiker R4.
 
 ## 152 · 23.10. spät · Gold-Licht bleibt · Umriss geparkt · Startseite raus · Fallobst rund · Staubfahne Weg A · Georgs Antworten zu WS-NPC G-1 bis G-3 · Spiegel @1ef8c71
 
