@@ -1,5 +1,19 @@
 # RETURN · WS0 Particle-First Surface-Reactive VFX R1 · 2026-10-22
 
+
+---
+
+## CURRENT GEORG CORRECTION · 2026-10-23 · Webchat method failure / no imposed technical budget
+
+Georg explicitly reports that the earlier Webchat prescribed invented **large sculpted clay-cloud objects**, which failed visually and cost considerable Claude-Code tokens. The subsequent **160 particles** proposed as the route to the cinematic dust plume **also failed to reach the intent** in WS1b's assessment. **Do not repeat either prescription.**
+
+**New canonical process bridge for WS0 + future KFB Webchats:** `WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`, linked from the existing Working Rules and Fresh Chat Slice Protocol. It enforces **Intent First · Solution Open · Evidence Before Prescription**. The real result (curved dense persistent dust plume corresponding to the user's images) defines success; technology and numerical ranges are experiments. WS1b's suggestion **10–20× particles / 2–4 seconds lifetime** is an unverified hypothesis, **not** newly accepted magic numbers. Existing code `160` remains a historical, inadequate-for-target baseline, **never a hard cap**. This supersedes earlier fixed-160 guidance in this Return / R1 / Source Bridge; factual read-only donor discoveries and checks are retained.
+
+Issue [#439](https://github.com/georg-doc/kayfabizarro/issues/439) carries this correction. The single next actionable coordination gate is **WS0 to register a unique V-number via `build_decisions.py` and route an outcome-led WS1b dust A/B only after the already running `figamb=1` figure-light tests**, without creating another engine/owner. No auto-commissioning, no interruption, no implementation done by Webchat.
+
+**New execution evidence in this correction turn:** GitHub documentation and issue readback only; shader/gameplay/visual/GPU test count **0**. Prior source-text checks remain historical and cannot prove target look or runtime cost. No public Site/Stage/merge.
+
+
 **Outcome:** USER-APPROVED VISUAL DIRECTION PERSISTED · TECHNICAL SOURCE RESEARCH PERSISTED · NO RUNTIME/ART ASSET EXECUTION. The earlier idea of AI-modeled big "Knet clouds" is expressly rejected for Racer wakes. A coherent dust wake must emerge exclusively from existing small GPU particles, actual movement history, drift and palette, not sculpted silhouettes or synthetic cloud geometry.
 
 **Owner:** WS0 Game Design/Terrain register; **single receiving runtime:** WS1b existing `kfb-planet`. **Parent:** https://github.com/georg-doc/kayfabizarro/issues/439 (whole terrain/Banden/Rampen owner), future optional VFX effect only. No new standalone engine/renderer/writer.
