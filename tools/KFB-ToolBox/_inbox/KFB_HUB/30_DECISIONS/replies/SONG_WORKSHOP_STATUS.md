@@ -576,3 +576,8 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
 - **SSOT-Vorschlag:** `BAUKASTEN_SPOKEN_LINES_SSOT_R1.md` – fünf Schichten (Karte · Triplet · Opener · Verbindung · Rahmen), gilt für Chatterbox/Karten-Tratsch, Triplet-Sets und Deck-Songs. **Aufträge an WS0 in §6** (Spec-Verweise, Titelprüfung im Checker, Opener-Hygiene-Prüfung, großer Pool aus NotebookLM/Docs, Registry-vs-Druck, Batch-1-Überarbeitung).
 - **Post-Mortem R2:** `SONGS_WORKSHOP_R1/POSTMORTEM_OPENER_TRIPLET_R2.md` – Verlauf p1→t4, neun Ursachen, neun Lessons. Georg: dieselben Probleme gab es bei WS0 und im Song-Workshop; deshalb global persistieren.
 - Writers' Room: Lesson l18.
+
+
+## §28 · 23.10.2026 · Deck-Songs: vier Decks nach Baukasten, Songliste neu geordnet
+- **t4 nach Baukasten** (Best-of, eingebettete Stand-up-Opener, Uptake): BBBW (45 Karten, Georg „passt, Tune später“), Embrace Protopia (45), Bullshit Jobs Uncut (51), Jung and Shinn (47). Kartenwörter gegen Druckdaten geprüft. Builder: `SONGS_WORKSHOP_R1/build_baukasten_song.py`.
+- **Writers' Room neu geordnet** (Georg 23.10.: Metropolis ist für jetzt ein schlechtes Deck, es geht um Körper/MED): Welle 0 „Piloten“ = die vier t4-Decks (1 BBBW, 2 Protopia, 3 Bullshit Jobs, 4 Jung and Shinn); Batch 1 folgt ab 5; The Biological Metropolis und die drei MedKayfab-Decks (Hospital Hierarchy, Cardiology, Emergency Medicine) nach Welle 8 „später“ mit Vermerk „MED/Körper – später“.
