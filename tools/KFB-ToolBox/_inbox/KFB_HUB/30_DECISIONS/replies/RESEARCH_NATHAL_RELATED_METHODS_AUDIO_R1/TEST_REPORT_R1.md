@@ -18,3 +18,11 @@
 
 ## Unresolved + one gate
 **WS0 source/design owner** evaluates only the existing audio-owner versus standalone information-demo route for future `Sound Perception Lab`, confirms anti-autoplay / sound routing / opt-out and rights, and explicitly withholds any intense-breathwork timer or facilitated-session simulation pending appropriate independent clinical/human approval. Research can be imported into NotebookLM now as a separate evidence dossier.
+
+
+## 2026-10-23 · H13 HyperNormalisation × Voice Counselor option · additive research check
+- Explicit user clarification: `Hypernormalisation Engine` means **authored H13 Billboard Kaleidoscope**, not a generic procedural effects engine and not merely the deployed Content Curator.
+- Direct H13 source HTML read back at `main` blob `46670cfa5c62c3aea6aa3840d301fc7a35723407` plus `00_ONBOARDING.md`, `DOKU_H5-H13.md`, `SPRINTPLAN.md`, `HANDOVER_WSA.md`, current Site Registry / Active Work Map, World Billboard Clay Handover and donor audit. **H13 actual visual rendered in isolation: NOT TESTED.**
+- Added-only research concept `H13_HYPERNORMALISATION_VOICE_COUNSELOR_OPTION_R1.md`, byte-exact GitHub readback PASS. Editorial invariants **7/7 PASS**: source pin, Curator vs Kaleidoscope, Collage Engine v0 failed, voice not automatic, motion/audio stop, avoid hyperventilation, one next gate.
+- OpenAI current documentation verified: GPT-Live / Realtime voice agents can use browser WebRTC and events, with protected server credential/session; this is *not* an automatic ChatGPT Voice embedding in arbitrary published Sites. https://developers.openai.com/api/docs/guides/voice-webrtc
+- No Site/browser/device/visual proof, no actual Web Audio and no voice session integration; **0 tests** in those classes. No clinical/EEG inference, no current H13-asset license proof. 
