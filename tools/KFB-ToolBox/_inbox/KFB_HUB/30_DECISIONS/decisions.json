@@ -9954,6 +9954,21 @@
    "applies": "später"
   },
   {
+   "id": "V-698",
+   "date": "2026-10-24",
+   "area": "Dialog",
+   "verdict": "SPEC",
+   "text": "Triplet-SSOT (Georg 24.10.: nicht zum vierten Mal erklären): replies/TRIPLET_SSOT_R1.md ist die eine Stelle für Triplets in Dialog, Karten-Tratsch und Songs. Sie sagt, welche Datei wofür maßgeblich ist (Druck-PDF, TRIPLET_SET_SPEC_R2, SONG_SPEC_R3, SUNO_SSOT, Chatterbox, Fluff-o-lect, Tratsch-Konzept WS-NPC), fasst das Triplet in einem Absatz und hält Georgs Tratsch-Entscheidungen vom 23.10. fest (Karten wandern von Kopf zu Kopf, kein thematisches Matching, Conflict is king, Rufe, HUMBUG, Klartext-Blasen zuerst, Signatur-Deck und Tratsch-Art im Figuren-Register). Alle Sitzungen lesen dort zuerst.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Triplet-Wissen lag in über 20 Einträgen, mehreren Specs und Status-Abschnitten verstreut; Georg musste es mehrfach erklären.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10061,7 +10076,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1168",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1169",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

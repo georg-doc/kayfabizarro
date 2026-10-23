@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An alle (WS1, WS-NPC, WS-Audio, Deck-Songs): Triplet-SSOT (V-698), Ton von GitHub erledigt
+- **Triplet-SSOT:** `replies/TRIPLET_SSOT_R1.md` ist ab jetzt die eine Stelle für Triplets in Dialog, Karten-Tratsch und Songs. Dort steht, welche Datei wofür maßgeblich ist, und Georgs Tratsch-Entscheidungen vom 23.10. sind festgehalten. Bitte dort zuerst lesen und Georg nicht erneut danach fragen. Neue Entscheidungen meldet ihr im Status; WS0 trägt sie dort ein.
+- **WS-NPC:** Bitte `KARTEN_TRATSCH_KONZEPT_R1.md` auf GitHub ablegen, neben `docs/ws-npc/WS_NPC_STATUS.md` im Spiegel `game/mvp-r1`. Heute liegt es nur in eurem lokalen Zweig, WS0 kann es nicht lesen. Danach verweist die SSOT auf den Pfad.
+- **WS-Audio §17 ist durch:** Musik als AAC 128 (88,7 MB), der ganze Ton kommt zur Laufzeit von GitHub (kayfabizarro `assets/kfb-audio-r1` @36c5ae419), 0 MB Ton im Site-Paket, alle 38 Titel in Chrome und WebKit spielbar. Damit ist die Bitte von gestern (V-696) erfüllt.
+- **WS1 (Lead):** Bitte `ws-audio/r1` @76eeb2b in `ws1/mvp-r1` mergen, die Testreihe laufen lassen und den Commit auf `game/mvp-r1` melden. Diesen Stand veröffentlicht WSA (Hub b188). Der Fehler `c3b` (`F.sync is not a function`, Fundstücke) liegt laut WS-Audio im mvp-Stand.
+
 # NEU OBEN (24.10.) · An WS-NPC und WS1: zwei Referenzen von Georg für später (V-697, kein Bauauftrag jetzt)
 Beide liegen im privaten Branch `assets/private` unter `75_REFS/`.
 - **WS-NPC:** `75_REFS/npc_card_speculation_r1/` ist die NPC Card Speculation Scene (Claude Design, 25.09.): zwei Bewohner spekulieren mit Triplets und Sprechblasen über eine Karte. Siehe `docs/NPC-CARD-SPEC-01_RETURN.md` und `screenshots/`.
@@ -15,7 +21,7 @@ Beide liegen im privaten Branch `assets/private` unter `75_REFS/`.
 - **Site-Auftrag an WSA steht** (`replies/BRIEF_WSA_MVP_GPT_SITE_R1.md`, Hub b188), wie von euch in §154 vorgeschlagen. **Georg 24.10.: mit Musik.**
   - **WS-Audio:** Bitte den GitHub-Weg für die Musik jetzt umsetzen, kleiner kodiert (96–128 kbit/s), mit Range, erstem Ton, Cache und Fehlerverhalten. Die Songs dürfen ins öffentliche kayfabizarro (Georg 23.10.). Gekaufte Töne gehen nie dorthin. Lege eine kurze Hörprobe der neuen Kodierung in den Status, damit Georg sie hören kann.
   - **WS1:** Den Weg in `game/mvp-r1` einhängen, die Testreihe laufen lassen und den Commit melden. Erst diesen Stand veröffentlicht WSA.
-- **Karten: Das PDF führt immer** (Georg, bekannt). `media/kfb/cards.json` bitte für **alle** Decks an den Druck anpassen, auch Schreibweise und Großbuchstaben, nicht nur Mission Control, Ego Mania und Brain Flipper #59. Grundlage ist die Druck-Transkription der Deck-Songs-Sitzung (`t1.print_cards.json`). Liefert das bitte auf demselben Zweig `ws1/karten-druck`, mit einer Liste je Deck (geändert, Karten hinzu bzw. weg). Übernommen in main wird erst nach Georgs Ja.
+- **Karten: Das PDF führt immer** (Georg, bekannt). `media/kfb/cards.json` bitte für **alle** Decks an den Druck anpassen, auch Schreibweise und Großbuchstaben, nicht nur Mission Control, Ego Mania und Brain Flipper #59. Grundlage ist die Druck-Transkription der Deck-Songs-Sitzung (`t1.print_cards.json`). Schreibweise nach V-271: `cardName` in normaler Groß- und Kleinschreibung, die Druckschreibweise (oft Versalien) in `cardNamePrint`. Maßgeblich ist `replies/TRIPLET_SSOT_R1.md` §1. Liefert das bitte auf demselben Zweig `ws1/karten-druck`, mit einer Liste je Deck (geändert, Karten hinzu bzw. weg). Übernommen in main wird erst nach Georgs Ja.
 
 # NEU OBEN (23.10.) · An WS-Audio und WS1: Georgs Hub-Antworten q178/q179 (V-693)
 - **q178 Sprachmelodie-Familien: „Vorschlag so“.** Skelette spielen Kazoo, dazu der Klapper-Transient aus Spec §3. Spielzeugsoldaten spielen gestopfte Trompete, die Orc-Band Tuba, Disco (K12) die Talkbox und gothgirl Oboe. Alle übrigen Fluffer-Sorten spielen hohe Okarina. Der Geist bleibt bei der Säge, die Aliens beim Theremin. Bitte so im Register bzw. in der Zuordnung eintragen.
