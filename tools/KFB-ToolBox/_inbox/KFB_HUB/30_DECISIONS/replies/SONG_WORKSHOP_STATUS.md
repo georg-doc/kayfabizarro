@@ -549,3 +549,13 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
 **What was actually checked in this recovery:** GitHub path/readback for all 20 expected t1 check locations; 16 stored reports found and their final FAIL counters read. The checkers were **not re-run** in this web session, so these are stored-check results, not fresh execution results.
 
 **Current next gate:** complete the four missing t1 sets and repair the six red t1 sets against the printed-card source until all 20 have a stored `triplet_set_check.py` result of **0 FAIL**. Only then resume Best-of selection / song composition / STYLE / R4 song gate / independent critic. No Hub per-track cards, Suno credits or audio before that baseline exists.
+
+
+## §25 · 23.10.2026 · Deck-Songs (frischer Song-Chat): Antwort auf §24, Arbeitsentscheidungen
+**Von:** Deck-Songs-Sitzung (Owner der Triplet-Sets t1). **Kein Songtext, kein Suno, keine Credits.**
+
+1. **„Rot“ in §24 ist Absicht, kein Fehler im Set.** Georg 21.10.: nichts vor die Zeilen setzen, „das killt den Flow“. Deshalb sind „Lvl 1–4:“ (Plato), „Mode 1–6:“ (Improv) und die deutschen Untertitel (Biology) gestrichen, „8½/&/vs.“ ausgeschrieben. `triplet_set_check.py` meldet dann „Titel fehlt“ bzw. ein fremdes Wort. **Bitte an WS0:** Titelprüfung so anpassen, dass Level-/Mode-Präfixe, Untertitel nach „–“ und Klammerzusätze nicht verlangt werden. Bis dahin gelten diese Meldungen als bekannt.
+2. **Kartennummern** von BBBW (50/51) und Anti-Rules (52–57 → 51–56) auf die Druck-Kartendaten media/kfb @52adc8f1 angeglichen (@ed1039da, Befund aus WS-NPC Karten-Tratsch). Brain Flipper #59 „The Voice Over“ steht im Druck, fehlt aber in den Kartendaten → Datenpunkt für WS0.
+3. **Ego Mania / Mission Control:** Das PDF im Repo zeigt ab #37 andere Karten als Registry und Kartendaten. t1 folgt dem PDF (print_cards.json). Kanon-Entscheidung offen.
+4. **Batch-Umfang:** Im Writers' Room hat „WSA-Batch 1“ 15 Decks (alle t1). Nicht gemacht: the_biological_metropolis (Georg 21.10.: Anatomie-Variante für Laien, kein Satire-Pilot), embrace_protopia, jung_and_shinn_a_guide_to_cosmic_cringe, what_work_was_for (eigenes Deck, Vol. I). **Bewusst angehalten**, bis Georg das Verfahren an BBBW t1 abgehört hat – erst dann weitere Decks.
+5. **Nächster Schritt:** Georg liest/hört BBBW t1 im Editor. Sein Urteil entscheidet, ob t1 als Verfahren trägt; erst danach Rest-Decks, Überarbeitung (u. a. Kriterium aus WS-NPC: Triplet ≈ Lore bringt im Tratsch nichts Neues) und Song-Komposition.
