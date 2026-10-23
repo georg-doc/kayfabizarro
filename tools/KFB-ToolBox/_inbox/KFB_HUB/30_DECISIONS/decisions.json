@@ -9969,6 +9969,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-699",
+   "date": "2026-10-24",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Satzbild in Sprechblasen (Georg 24.10.): Kartentitel in Sprechblasen-Sätzen und angezeigten Triplets immer fett; kursiv kontextuell für Betonung, Umkehrung oder Pointe; Rufe immer fett in genau dieser Schreibweise: Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (ersetzt die Versal-Schreibweise aus WS1 153). Nur für Angezeigtes; Suno-Lyrics und Sprachausgabe ohne Markup. Stelle: TRIPLET_SSOT_R1 Paragraph 2b.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Comic-Sprechblasen-Logik: der Titel ist der Anker der Zeile, Rufe sind feste Comic-Wörter.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10076,7 +10091,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1169",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1170",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

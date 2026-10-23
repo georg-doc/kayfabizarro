@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-699 Satzbild in Sprechblasen: Kartentitel fett, kursiv kontextuell, Rufe fett (Bingo! Boggle...? Bongo. Blödsinn! Humbug?!); Triplet-SSOT 2b.
 - V-698 Triplet-SSOT replies/TRIPLET_SSOT_R1.md (Dialog, Tratsch, Songs, Konnektivität); WS-Audio Ton von GitHub erledigt, Lead merged und meldet den Site-Commit.
 - V-697 Referenzen NPC Card Speculation Scene (WS-NPC, Karten-Tratsch) und KFB Deck Viewer v4 mit Ink Outline (Kartenviewer) privat unter 75_REFS, an WS-NPC/WS1.
 - V-696 Site mit Musik (WS-Audio GitHub-Weg jetzt, WSA veröffentlicht erst diesen Stand); Karten: PDF führt, cards.json aller Decks an Druck anpassen.

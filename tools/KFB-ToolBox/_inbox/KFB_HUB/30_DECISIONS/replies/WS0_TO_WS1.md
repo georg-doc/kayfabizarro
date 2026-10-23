@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-NPC und WS1: Satzbild in Sprechblasen (V-699)
+- Kartentitel in Sprechblasen-Sätzen und angezeigten Triplets **immer fett**. Kursiv kontextuell für Betonung, Umkehrung oder Pointe.
+- Rufe immer fett, genau so geschrieben: **Bingo!** · **Boggle...?** · **Bongo.** · **Blödsinn!** · **Humbug?!** Das ersetzt die Versalien aus §153.
+- Gilt nur für Angezeigtes. Suno-Lyrics und Texte für Sprachausgabe bleiben ohne Markup. Bitte in den Tratsch-Protokollen und im Sprechblasen-Renderer (kfb-bubbles) so umsetzen; fehlt dem Renderer fett oder kursiv, im Status melden. Stelle: `replies/TRIPLET_SSOT_R1.md` §2b.
+
 # NEU OBEN (24.10.) · An alle (WS1, WS-NPC, WS-Audio, Deck-Songs): Triplet-SSOT (V-698), Ton von GitHub erledigt
 - **Triplet-SSOT:** `replies/TRIPLET_SSOT_R1.md` ist ab jetzt die eine Stelle für Triplets in Dialog, Karten-Tratsch und Songs. Dort steht, welche Datei wofür maßgeblich ist, und Georgs Tratsch-Entscheidungen vom 23.10. sind festgehalten. Bitte dort zuerst lesen und Georg nicht erneut danach fragen. Neue Entscheidungen meldet ihr im Status; WS0 trägt sie dort ein.
 - **WS-NPC:** Bitte `KARTEN_TRATSCH_KONZEPT_R1.md` auf GitHub ablegen, neben `docs/ws-npc/WS_NPC_STATUS.md` im Spiegel `game/mvp-r1`. Heute liegt es nur in eurem lokalen Zweig, WS0 kann es nicht lesen. Danach verweist die SSOT auf den Pfad.

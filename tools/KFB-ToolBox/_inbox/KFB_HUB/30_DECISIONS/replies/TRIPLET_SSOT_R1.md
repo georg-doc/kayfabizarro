@@ -18,6 +18,12 @@
 ## 2 · Die Kartenzeile in einem Absatz
 Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266); hier nur der Kern. Die Karte spricht selbst (Show it, Spin it, Sell it). Eine Zeile je Karte, Englisch, in einem Atem (etwa 8–20 Wörter bzw. 80–95 Zeichen). Der Titel steht vorn, verschmolzen mit dem Begriff aus der POWER, danach kurze Telegramm-Fragmente nur aus Wörtern der Karte, verdichtet im Comic-Sprechstil (Spec, V-277). Nichts erfunden, höchstens ein Fluff-o-lect-Wort. Mechanik nur, wenn sie ein Bild ist. Closure statt Erklärung. Golden: „Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.“ Ohne nachweisbare Felder gibt es keine Zeile; dann wird der Kartentext roh benutzt.
 
+## 2b · Satzbild in Sprechblasen und Textausgabe (Georg 24.10., V-699)
+- **Kartentitel immer fett**, in jedem Sprechblasen-Satz und jedem angezeigten Triplet.
+- **Kursiv kontextuell:** Betonung, Umkehrung oder Pointe.
+- **Rufe immer fett, genau in dieser Schreibweise und mit diesen Satzzeichen:** **Bingo!** · **Boggle...?** · **Bongo.** · **Blödsinn!** · **Humbug?!**
+- Das gilt nur für Angezeigtes (Sprechblasen, Hub, Kartenoverlay). In Suno-Lyrics und in Texten für Sprachausgabe steht kein Markup.
+
 ## 3 · Zwei Formen, nicht verwechseln
 - **Dialog-Set** (Gespräch, Tratsch, Kartenspiel): Kartenzeilen nach §2, Sets mit Intro „Welcome to <Deck>.“ und Outro „Stay Fluffy!“, Opener je Set einmal (V-266).
 - **Deck-Song:** dieselben Kartenzeilen; die Power ist nur Seitenhieb, Motiv-Wörter aus dem Bild sind erlaubt, „Seite = Strophe“ heißt Reihenfolge über die Opener, songLine nur bei Unsingbarem (V-410). Ein Deck = ein Suno-Track unter 5000 Zeichen (V-277). Entsteht im Writer's Room: erst das Deck verstehen, nicht nach Mustern arbeiten.
@@ -26,7 +32,7 @@ Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266); hier nur der Kern. Die Karte s
 - **Karten wandern von Kopf zu Kopf.** Bewohner tragen Karten als Wissen und erzählen sie in Begegnungen weiter; erzählt wird mit Quelle (Gerücht D2, V-602). Ketten (told-of-told) sind freigegeben; `kfb.world-save/2` baut der Lead zu Stufe 1.
 - **Kein thematisches Matching.** Der Mismatch zwischen den Karten zweier Figuren ist gewollt: kognitive Dissonanz als Resonanzraum, Satire auf Filterblasen.
 - **„Conflict is king!“** Ein Dramaturg wählt Begegnungen und Karten; die Bewertung bleibt sozial.
-- **Rufe:** BINGO, BOGGLE, BONGO, Blödsinn!, HUMBUG!. HUMBUG = Blitzdingsen bzw. Löschen (V-530), später auch teilweise; Auslöser: zu schnelle Verbreitung. KafKaBONDO! ist ein Bug bzw. Artefakt.
+- **Rufe:** **Bingo!**, **Boggle...?**, **Bongo.**, **Blödsinn!**, **Humbug?!** (Schreibweise §2b). Humbug = Blitzdingsen bzw. Löschen (V-530), später auch teilweise; Auslöser: zu schnelle Verbreitung. KafKaBONDO! ist ein Bug bzw. Artefakt.
 - **Sprechblasen** zuerst als Klartext („decodiert“); Fluff-o-lect und Pottymouth-Glyphen später.
 - **Identität:** Jede Figur hat ein Signatur-Deck (`SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.json`, 62 Figuren, Georg 20.10.) und eine Tratsch-Art (Tratschmaul, Skeptiker, Übertreiber, Schweiger, angepasst, rebellisch). Beides gehört ins Figuren-Register (`CHARACTERS_R1`), nicht in eigene Listen.
 - **Später (V-697):** Bewohner spekulieren als Alltags-Aktivität über neu gefundene Karten in der Welt (Terrain, Billboards). Vorlage: NPC Card Speculation Scene (`75_REFS/npc_card_speculation_r1/` im privaten Branch). Das ist eine weitere Quelle für den Tratsch.
