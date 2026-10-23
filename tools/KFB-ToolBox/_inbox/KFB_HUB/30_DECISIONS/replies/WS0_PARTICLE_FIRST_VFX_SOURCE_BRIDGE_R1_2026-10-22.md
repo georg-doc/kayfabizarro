@@ -1,5 +1,8 @@
 # WS0 Particle-First VFX · closed source gaps and minimal integration seam R1
 
+> **CORRECTION · 2026-10-23:** the 160-point pool and suggested pixel clamp here are *observed source and optional diagnostic*, **not an execution mandate or maximum**. Georg's actual result is a substantial curved dust plume that persists after the car; WS1b reports 160 short-lived particles cannot achieve it. Counts ~10–20× larger and 2–4 s life are candidate variables to A/B and profile, not new rules. Keep the source inventory, but read [Intent First / Solution Open](WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md) first. No sculpted Knet clouds or optimizing the reference out of existence.
+
+
 **2026-10-22 · SOURCE AUDIT / PLANNING ONLY · NOT IMPLEMENTED · no new runtime writer.**
 **Owner/control:** existing WS0 KFB_HUB Register. **Only receiving production owner:** WS1b `kfb-planet` on the current Racer/Terrain slice. **Parent:** [Terrain Issue #439](https://github.com/georg-doc/kayfabizarro/issues/439). Companion to `WS0_PARTICLE_FIRST_SURFACE_VFX_R1_2026-10-22.md`, its `TEST_REPORT` and `RETURN`. This record **closes part of their previous SOURCE_REQUIRED mapping**; it does not redefine their single next gate.
 **Pinned read-only mirror:** `georg-doc/kayfabizarro@ws1/terrain-439:4df9362a156fabb32411a960915e38d3a68ae224`. Inspect actual WS1b private working HEAD before any build; GitHub mirror is a donor snapshot, not proof of local current changes.
