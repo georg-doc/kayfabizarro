@@ -1,4 +1,5 @@
 # Baukasten · gesprochene Kartenzeilen (Chatterbox, Triplets, Songs) · SSOT-Vorschlag R1 · 23.10.2026
+**R1.1 (23.10.):** §2.3 „Telegramm-Takte“ ersetzt durch „ganze Sätze mit Flow, keine Fragmente“ (Georg zu den Tratsch-Triplets).
 **Status:** Vorschlag an WS0 als gemeinsame Quelle für alles, was Karten spricht. Grundlage sind Georgs Urteile vom 21.–23.10. Referenz ist BBBW t4 (Georg 23.10.: „das passt, mit Tune später“).
 **Gilt für:**
 - Chatterbox und Karten-Tratsch (einzelne Beats, Dialog);
@@ -24,7 +25,7 @@ Jede gesprochene Kartenzeile wird aus Schichten gebaut. Jede Schicht hat genau e
 ## 2 · Schicht 2: das Triplet (je Karte eine feste Aussage)
 1. **Ein Satz mit Aussage, nicht vorgelesen.** Den Lore-Text nicht der Reihe nach abschreiben. Die Karte behauptet etwas über sich (show it, spin it, sell it).
 2. **Titel vorn** (normale Schreibweise, eigener Artikel, keine Klammern). Er ist entweder **mit dem Power-Begriff verschmolzen** („The Ordinary World stasis loop“) oder **Subjekt mit Kartenverb** („The Booker decides the winner before the game starts“).
-3. **Telegramm-Takte**, Handlung ; Folge oder Bild. Füllwörter fallen weg, Verneinungen, Namen und tragende Zahlen bleiben.
+3. **Ganze Sätze mit Flow, keine Fragmente** (Georg 23.10. zu den Tratsch-Triplets: „die alten Fragmente, keine Sätze, kein Flow“). Keine Komma-Ketten aus Stichworten („shuffle, redraw, minus one“), keine Partizip-Reste („victory moved back“). Verdichtet wird durch Weglassen ganzer Satzteile, nicht durch Telegrammstil. Bewährte Form: *Titel ist / tut [Power-Begriff]: du [Handlung aus Lore oder Power], und / aber [Pointe].* Beispiel: „The Maze is a cognitive loop: you find an exit to the level, but spoilers, there is no outside.“
 4. **Die Pointe der Karte steht am Ende** und kommt von der Karte („A slave to approval.“, „Strength? No, gullibility.“).
 5. **Nur Kartenwörter plus Grammatik**, höchstens ein Fluff-o-lect-Wort. Mechanik nur als Bild. Spielbegriffe, Würfelwerte, Ziffern und Sonderzeichen fallen weg oder werden ausgeschrieben.
 6. **Muss allein als Satz funktionieren.** Prüffrage: Versteht jemand ohne Karte, wer was tut? Fragmente wie „The Lazy Genius, hands in pockets: the apathy makes them furious.“ funktionieren nicht ohne Einbettung (Schicht 3).
