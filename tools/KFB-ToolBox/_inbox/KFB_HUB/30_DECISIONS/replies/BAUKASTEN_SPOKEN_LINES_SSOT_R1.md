@@ -92,6 +92,8 @@ Frage und Behauptung wechseln sich ab.
 | Kartentext-Anteil | Triplet 100 % Karte | ≥ 90 % | ≈ 70–80 % (Opener kosten Wörter) |
 | Länge | ≤ 140 Zeichen je Blase (WS-NPC T5) | < 5000 Zeichen | < 5000 Zeichen |
 
+**Rückfall im Tratsch (Georg 23.10., Entscheidung b):** Hat eine Karte noch kein abgenommenes Triplet, sagt die Figur **Titel + gedruckte Lore wörtlich**, mit Opener aus dem POOL davor; im Protokoll als „roh“ markiert. **Die Power wird nie gesprochen** (Regelmechanik).
+
 ## 6 · Aufträge an WS0 (Spec- und Gate-Abgleich)
 1. **Diesen Baukasten als SSOT übernehmen.** `TRIPLET_SET_SPEC_R2`, `SONG_SPEC_R4` und `OPENER_ARC_MODEL_R1` darauf verweisen lassen statt Regeln zu duplizieren.
 2. **`triplet_set_check.py`, Titelprüfung:** Level- und Mode-Präfixe („Lvl 1:“, „Mode 3:“), Untertitel nach „–“ und Klammerzusätze nicht verlangen (Georg 21.10.: nichts vor die Zeilen, was den Flow killt). Ausgeschriebene Zahlen und Zeichen („Eight and a Half“, „and“, „versus“) als A7-Schreibweise zulassen.
