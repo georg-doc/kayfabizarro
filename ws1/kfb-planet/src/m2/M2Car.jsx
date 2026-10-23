@@ -35,7 +35,7 @@ import { createEngineAudio } from '../audio/engineAudio'
 import { setVehicleMatte, VEHICLE_MATTE, prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv, prepVehicleClay } from '../look/vehicleLook.js'
 import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
 import { TERRAIN3_CFG } from '../look/terrain3.js'
-import { DUST2 } from '../modules/vehicleRig.js'
+import { DUST2, GLOW_V2 } from '../modules/vehicleRig.js'
 import { createDustColorAt } from '../look/dustColor.js'
 import { mountDustTrail, DUST3, rigNight } from '../modules/dustTrail.js'
 import { BIOME_PALETTES } from '../look/biomeTerrain.js'
@@ -283,7 +283,7 @@ function CarVisual({ squash, signals, lean }) {
     if (k.fly) { if ((k.surgeN ?? 0) !== D.surgeN) R1.surge(1); if ((k.ascentN ?? 0) !== D.ascentN) R1.ascent(1) }
     else { if (k.boost && !D.boost && D.gas > 0.3) R1.surge(1); if (k.jump && !D.jump && !k.air) R1.ascent(0.9); if (k.brake && !D.brake && Math.abs(sg.speed ?? 0) > 0.25) R1.brake(1) } // brake: Nase taucht (V-487 §86)
     D.boost = !!k.boost; D.jump = !!k.jump; D.brake = !!k.brake; D.surgeN = k.surgeN ?? 0; D.ascentN = k.ascentN ?? 0
-    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: groundHeight, groundColorAt: dust2ColorAt || dustColorAt, groundColorAtOld: dust2ColorAt ? dustColorAt : null, drift: k.fly ? 0 : (sg.drift ?? 0), night: rigNight(sceneR, nightCache) })   // drift: nur mit dust2=1 wirksam (Staub-Probe)
+    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: groundHeight, groundColorAt: dust2ColorAt || dustColorAt, groundColorAtOld: dust2ColorAt ? dustColorAt : null, drift: k.fly ? 0 : (sg.drift ?? 0), night: GLOW_V2 ? rigNight(sceneR, nightCache) : 0 })   // drift: nur mit dust2=1 wirksam (Staub-Probe)
     if (A) { if (boostStart) A.event({ type: 'boost' }); for (const x of ev) A.event(x); A.update(dt, { rpm: R1.engine.rpm, thrust: R1.thrust, boost: R1.boostLevel }) } })
   // Bild-Interpolation: Wurzel = Starrkörper-Gruppe über der Kippgruppe (C1 17.10.: seit M3 lag hier die Kippgruppe – der fahrende Körper wurde nicht
   // mehr interpoliert und ruckelte zwischen den Physik-Schritten). Auch Prüfwert für die Jitter-Messung.

@@ -14,6 +14,8 @@ import * as THREE from 'three'
 
 export const VEHICLE_RIG_SCHEMA = 'kfb.vehicle-rig/1'
 export const ENGINE = Object.freeze({ gears: 5, upshift: 0.93, downshift: 0.36, idleRpm: 0.18, shiftDip: 0.14, shiftKick: 0.5, backfireChance: 0.55, rpmHz: [9, 46] })
+// Georg 23.10.: die gezähmte Leucht-Flamme (weiche Diamanten, Nacht-Begrenzung) war schlechter als vorher – Standard ist wieder die Leucht-Flamme wie abgenommen, die Zähmung nur noch hinter glow=v2
+export const GLOW_V2 = typeof location !== 'undefined' && /(^|[#,])glow=v2(,|$)/.test(location.hash)
 export const PLUME = Object.freeze({ idle: 0.12, lenIdle: 1.6, lenMax: 9, boostLen: 1.45, diamonds: 0.62, flicker: 0.18,
   // Schockdiamanten weich (Georg 23.10.: „einzelne Kreise“ / Kritiker R1 „Ring-/Kugelstapel“): Bandform pow(cos, diamondPow) – vorher 6 (abgesetzte Scheiben),
   // jetzt breit ineinander verlaufend; Stärke diamondsSoft statt diamonds (alt bleibt als Wert für A/B)
@@ -181,7 +183,7 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
     } else {
       const mc = additive(CORE_FRAG, { ...shared, uThrust: { value: 0 } }, { side: THREE.DoubleSide })
       const core = new THREE.Mesh(disc, mc); core.scale.setScalar(r * 0.95); core.position.z = -r * 0.25; core.renderOrder = 3; g.add(core)
-      const mp = additive(PLUME_FRAG, { ...shared, uThrust: { value: 0 }, uDiam: { value: PLUME.diamondsSoft }, uDiamPow: { value: PLUME.diamondPow }, uNightDim: { value: PLUME.nightDim }, uNightCore: { value: PLUME.nightCore }, uSeed: { value: i * 7.13 + seed } }, { side: THREE.DoubleSide })
+      const mp = additive(PLUME_FRAG, { ...shared, uThrust: { value: 0 }, uDiam: { value: GLOW_V2 ? PLUME.diamondsSoft : PLUME.diamonds }, uDiamPow: { value: GLOW_V2 ? PLUME.diamondPow : 6 }, uNightDim: { value: PLUME.nightDim }, uNightCore: { value: PLUME.nightCore }, uSeed: { value: i * 7.13 + seed } }, { side: THREE.DoubleSide })
       const plume = new THREE.Mesh(cone, mp); plume.renderOrder = 4; plume.frustumCulled = false; g.add(plume); u.core = core; u.plume = plume; u.mats.push(mc, mp)
     }
     units.push(u)

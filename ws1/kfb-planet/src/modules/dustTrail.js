@@ -227,7 +227,7 @@ export function createDustTrail(opts = {}) {
   // Zeichenreihenfolge (Georg 23.10.): Staub NACH den Düsen/Flammen (dort renderOrder 2–5, alle transparent ohne Tiefe) – Staub zwischen Kamera und Düse
   // deckt die Flammen sichtbar ab, statt dass sie wie aufgeklebt durchscheinen; gilt für beide Flammen-Stile (clay, glow)
   // Körner (klein, nachts dunkel) vor den Flammen (Georg 23.10., glow: sonst dunkle Punkte auf der Fahne), die Puffs danach decken weiter ab
-  const ORDER = { alt: [2, 3], neu: [6, 7], korn: [2, 7] }, order = (k) => { VG.object3d.renderOrder = ORDER[k][0]; VP.object3d.renderOrder = ORDER[k][1] }; order('korn')
+  const ORDER = { alt: [2, 3], neu: [6, 7], korn: [2, 7] }, order = (k) => { VG.object3d.renderOrder = ORDER[k][0]; VP.object3d.renderOrder = ORDER[k][1] }; order(typeof location !== 'undefined' && /(^|[#,])glow=v2(,|$)/.test(location.hash) ? 'korn' : 'neu')   /* Körner vor den Flammen nur mit glow=v2 (Georg 23.10.: Stand wie abgenommen) */
   const cache = { sd: new THREE.Vector3() }, light = new THREE.Color()
   let ratio = 1
   VP.object3d.onBeforeRender = (r, scene) => { VP.uniforms.uTime.value = EP.time; const lum = rigLight(scene, light, cache)
