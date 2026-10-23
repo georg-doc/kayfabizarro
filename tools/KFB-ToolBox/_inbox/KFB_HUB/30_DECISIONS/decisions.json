@@ -9939,6 +9939,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-697",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Georg 24.10., zwei Referenzen im privaten Branch (75_REFS): (1) NPC Card Speculation Scene (Claude Design 25.09., zwei Bewohner spekulieren mit Triplets und Sprechblasen über eine Karte) als Vorlage für spätere Alltags-Aktivität: NPCs spekulieren über neu gefundene Karten in der Welt (Terrain, Billboards) und speisen damit den Karten-Tratsch (WS-NPC, nach Stufe 0/1). (2) KFB Deck Viewer v4 (Reader, Galerie, Stapel, Coverflow, Full View, Deck; KFB Ink Outline ink-frame.js und kfb-ink-canon.js; Korpus live aus main/media/kfb) als Optionen-Vorlage für den PDF-Kartenviewer im Spiel (Overlay nach V-043) und im HUD-Brief (V-694). Keine Bauaufträge jetzt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Design-Arbeit wiederverwenden statt neu erfinden; beide Ordner lagen nur in Dropbox.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9986,6 +10001,11 @@
    "georg": "Status: **DELIVERED · GEORG ACCEPTANCE PENDING**"
   },
   {
+   "source": "NPC Card Speculation Scene/npc-card-spec-01_2026-09-25/CHANGELOG.md:26",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
    "source": "_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:293",
    "part": "",
    "georg": "Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source"
@@ -10011,6 +10031,11 @@
    "georg": "/ GEORG ACCEPTANCE / Ranger PASS mit Tune (R3), Dory PASS · Rig Proof R1 und Meshy Rig R1 offen /"
   },
   {
+   "source": "KFB Deck Viewer v4/deck-viewer-v4_2026-10-24/CHANGELOG.md:26",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
    "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95",
    "part": "",
    "georg": "/ GEORG ACCEPTANCE / R2 „passt so mit TUNE für später\" (09.10.2026) /"
@@ -10026,7 +10051,17 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1167",
+   "source": "KFB_HUB/75_REFS/npc_card_speculation_r1/CHANGELOG.md:26",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
+   "source": "KFB_HUB/75_REFS/deck_viewer_v4/CHANGELOG.md:26",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1168",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

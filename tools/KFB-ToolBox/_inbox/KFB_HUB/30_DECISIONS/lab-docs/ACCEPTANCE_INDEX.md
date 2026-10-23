@@ -7,15 +7,19 @@ Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien 
 | `KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/CHANGELOG.md:11` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
 | `KFB ToolBox Production-05/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r2/TEST_REPORT.md:45` |  | / Georg acceptance / PASS 28.09. (UI/UX tune later) / |
 | `KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/RETURN.md:2` |  | Status: **DELIVERED · GEORG ACCEPTANCE PENDING** |
+| `NPC Card Speculation Scene/npc-card-spec-01_2026-09-25/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:293` |  | Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source |
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:791` |  | - Georg acceptance OPEN |
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:825` |  | Georg acceptance remains OPEN. No merge or consumer integration. |
 | `MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:3` |  | Von Claude Design, 15.10.2026. Claude Design pusht nicht; Integration, Tests, Versionsverwaltung macht WS0 / Web Lead. Behauptungen getrennt nach `SOURCE / DECI |
 | `MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:61` |  | / GEORG ACCEPTANCE / Ranger PASS mit Tune (R3), Dory PASS · Rig Proof R1 und Meshy Rig R1 offen / |
+| `KFB Deck Viewer v4/deck-viewer-v4_2026-10-24/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95` |  | / GEORG ACCEPTANCE / R2 „passt so mit TUNE für später" (09.10.2026) / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R1/RETURN.md:39` |  | / GEORG ACCEPTANCE / OPEN / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/RETURN.md:42` |  | / GEORG ACCEPTANCE / OPEN / |
-| `KFB_HUB/30_DECISIONS/CHANGELOG.md:1167` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
+| `KFB_HUB/75_REFS/npc_card_speculation_r1/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
+| `KFB_HUB/75_REFS/deck_viewer_v4/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
+| `KFB_HUB/30_DECISIONS/CHANGELOG.md:1168` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3` |  | Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:8` | Oberseite, ein Mesh, Farb- und Maskenkarte 1024² | Richtung gut |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:9` | Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung | gut |

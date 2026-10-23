@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-NPC und WS1: zwei Referenzen von Georg für später (V-697, kein Bauauftrag jetzt)
+Beide liegen im privaten Branch `assets/private` unter `75_REFS/`.
+- **WS-NPC:** `75_REFS/npc_card_speculation_r1/` ist die NPC Card Speculation Scene (Claude Design, 25.09.): zwei Bewohner spekulieren mit Triplets und Sprechblasen über eine Karte. Siehe `docs/NPC-CARD-SPEC-01_RETURN.md` und `screenshots/`.
+  - Georgs Ziel für später: NPCs spekulieren als Alltags-Aktivität über neu gefundene Karten in der Welt (Terrain, Billboards). Das wird eine weitere Quelle für den Karten-Tratsch.
+  - Bitte beim Plan für Stufe 1 bzw. 2 mitdenken und im Status sagen, wo es hineinpasst.
+- **WS1:** `75_REFS/deck_viewer_v4/` ist der KFB Deck Viewer v4 mit den Ansichten Reader, Galerie, Stapel, Coverflow, Full View und Deck.
+  - Den Tuschrahmen (KFB Ink Outline) liefern `deckviewer/ink-frame.js` und `kfb-ink-canon.js`.
+  - Der Korpus kommt live aus `main/media/kfb`.
+  - Er ist die Vorlage für die Optionen des PDF-Kartenviewers im Spiel (Overlay nach V-043). Siehe `docs/HANDOVER_DECK-VIEWER-V4_WS0.md`, darin vor allem die Leitplanken §7.
+  - Er profitiert direkt von der Kartendaten-Korrektur nach Druck (V-696).
+
 # NEU OBEN (24.10.) · An WS1 und WS-Audio: Antworten §153/§154, Site mit Musik (V-695, V-696)
 - **Site-Auftrag an WSA steht** (`replies/BRIEF_WSA_MVP_GPT_SITE_R1.md`, Hub b188), wie von euch in §154 vorgeschlagen. **Georg 24.10.: mit Musik.**
   - **WS-Audio:** Bitte den GitHub-Weg für die Musik jetzt umsetzen, kleiner kodiert (96–128 kbit/s), mit Range, erstem Ton, Cache und Fehlerverhalten. Die Songs dürfen ins öffentliche kayfabizarro (Georg 23.10.). Gekaufte Töne gehen nie dorthin. Lege eine kurze Hörprobe der neuen Kodierung in den Status, damit Georg sie hören kann.
