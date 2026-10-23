@@ -3,8 +3,9 @@
 import { createVehicleRig } from '../modules/vehicleRig.js'
 import { createHeadlights } from '../look/headlights.js'
 
-export function mountRacerRig({ body, model, racer, unit, seed = 1, scene = null, dustColor = null, style = 'glow' }) {
-  const rig = createVehicleRig({ anchors: racer.anchors, hover: racer.hover, glow: racer.glow, unit, seed, style })   // style 'clay' = Knet-Flamme (V-654)
+export function mountRacerRig({ body, model, racer, unit, seed = 1, scene = null, dustColor = null, style = 'glow', fanStyle = style, hideDust = false }) {
+  const rig = createVehicleRig({ anchors: racer.anchors, hover: racer.hover, glow: racer.glow, unit, seed, style, fanStyle })   // style 'clay' = Knet-Flamme (V-654)
+  if (hideDust) rig.world.visible = false   // Staubfahne (dust3) ersetzt den alten Pool: von Anfang an verborgen, sonst übersetzt jeder Racer-Wechsel dessen Shader neu (vehicles-r1 cachedSwap)
   model.scale.setScalar(unit); rig.stretch.add(model); body.add(rig.object3d); if (scene) scene.add(rig.world); if (dustColor) rig.setDustColor(dustColor)
   // Entsorgen verzögert (V-631 Racer-Wechsel): three.js gibt die Shader frei, sobald der letzte Nutzer entsorgt ist – der neue Wagen müsste sie dann neu
   // übersetzen (Ruckler). So übernimmt er die fertigen Programme, die alten Materialien gehen 3 s später.

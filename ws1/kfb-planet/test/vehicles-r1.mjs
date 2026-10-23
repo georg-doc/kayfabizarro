@@ -85,7 +85,7 @@ if (PART === 'data') {
     heroToggleOn: res.heroOn.state?.on === true && res.heroOn.all >= 1 && res.heroOn.tex === res.heroOn.all,
     heroToggleOff: res.heroOff.state?.on === false && res.heroOff.all >= 1 && res.heroOff.orig === res.heroOff.all,
     // Georg 22.10. (R3): Standard = Originalkarosserie + Knet-Zusätze (Flamme, Lüfter, Funken); vclay=body = Voll-Knete; vclay=0 = alles original
-    rigStylePerMode: C.every((c) => c.rigStyle === (/vclay=0/.test(process.env.VEH_HASH || '') ? 'glow' : 'clay')) && C.every((c) => !!c.clay === /vclay=body/.test(process.env.VEH_HASH || '')),
+    rigStylePerMode: C.every((c) => c.rigStyle === (/flame=clay/.test(process.env.VEH_HASH || '') ? 'clay' : 'glow'))   /* Georg 23.10.: Leucht-Flamme Standard, flame=clay = Knete (unabhängig von vclay) */ && C.every((c) => !!c.clay === /vclay=body/.test(process.env.VEH_HASH || '')),
     deformPerClass: C.every((c) => c.deform === (RIG[c.id].class === 'hauler' ? 'SPACE_HAULER' : 'CAR_CHILL_LIGHT')),
     noShaderRecompileOnCachedSwap: res.back.every((b) => !b.newPrograms),   // Erstladen darf neue Varianten übersetzen (z. B. Leucht-Textur des Ödland-Käfers)
     // Zurückwechseln/Vorgewärmt: Cache getroffen, keine neuen Shader, kein Hänger über der Grundbildzeit (< 100 ms bzw. < 1,5 × langsamstes Bild davor)

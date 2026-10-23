@@ -35,6 +35,12 @@ import { createEngineAudio } from '../audio/engineAudio'
 import { setVehicleMatte, VEHICLE_MATTE, prepVehicleLook, hookVehicleLook, applyHeroColor, heroEnabled, setHeroMaps, slicer, warmVehicleEnv, prepVehicleClay } from '../look/vehicleLook.js'
 import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
 import { TERRAIN3_CFG } from '../look/terrain3.js'
+import { DUST2 } from '../modules/vehicleRig.js'
+import { createDustColorAt } from '../look/dustColor.js'
+import { mountDustTrail, DUST3, rigNight } from '../modules/dustTrail.js'
+import { BIOME_PALETTES } from '../look/biomeTerrain.js'
+import { DRIVE } from '../world/EndlessDrive.jsx'   // Staub-Probe r2: nur zur Laufzeit gelesen (EndlessDrive importiert M2Car – Kreis, aber ohne Zugriff beim Laden)
+const ENDLESS_DUST = typeof location !== 'undefined' && /(^|[#,])world=endless(,|$)/.test(location.hash)
 import { FB_RIG_HEIGHT } from '../worldScale.js'
 import { headlightDaylight, HEADLIGHTS, HEADLIGHT_TUNE } from '../look/headlights.js'
 import { gfxChannel } from '../look/groundFx.js'
@@ -125,6 +131,9 @@ export const HERO_ON = { on: heroEnabled(), switches: 0 }
 //   vmatte=1 (vehicleLook) = Karosserie leicht matter, Farbe unangetastet
 export const VCLAY_MODE = /(^|[#,])vclay=body(,|$)/.test(H) ? 'body' : /(^|[#,])vclay=0(,|$)/.test(H) ? 'off' : 'parts'
 export const VCLAY_ON = VCLAY_MODE === 'body'
+// Flammen-Stil unabhängig von vclay: flame=glow (heißer Kern, additive Fahne) | flame=clay (Knet-Flamme v1). Seit Georgs Wahl (23.10.) ist glow Standard;
+// der Lüfter bleibt ein Knet-Zusatz über vclay (parts/body: Knete, vclay=0: Leuchtscheibe), die Funken folgen der Flamme
+export const FLAME_STYLE = (/(^|[#,])flame=(glow|clay)(,|$)/.exec(H) || [])[2] || null
 const VCLAY_PAL = (() => { const k = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(H) || [0, TERRAIN3_CFG.palette])[1]; return TERRAIN3_CFG.palettes[k] || TERRAIN3_CFG.palettes.mesa })()
 // Heldenfarbe umschalten (Startseite, Ereignis kfb:hero): fehlt die Umrechnung bei geladenen Racern, rechnet sie in Häppchen nach; dann Texturen tauschen
 async function applyHeroSetting(on, gl) {
@@ -226,13 +235,35 @@ function CarVisual({ squash, signals, lean }) {
     if (PREFETCH) setTimeout(() => alive && prefetchNeighbours(glR, camW, sceneW, () => alive), 1500) }); return () => { alive = false } }, [])
   // R1a: Antriebs-Modul an den Düsen-Ankern des Racers. Modell und Anker hängen gemeinsam in rig.stretch (Stauchen/Strecken bei Boost und Sprung),
   // rig.object3d unter der Deformer-Gruppe – Fahnen bleiben bei jeder Verformung an den Düsen. Gas weich (0,12 s), Tempo aus den K2B-Signalen.
-  const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree()
+  const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree(), nightCache = useMemo(() => ({}), [])
   const dustColorAt = useCallback((x, z) => terrainDustColor(groundHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
+  // Staub-Probe r2 (dust2=1): Farbe aus der Bodenpalette (terrain3-Palette laut Hash; Biom-Fahrt: Biom-Mittel nach den Gewichten am Rad)
+  const dust2ColorAt = useMemo(() => { if (!DUST2.on) return null; const pal = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(location.hash) || [0, TERRAIN3_CFG.palette])[1]
+    return createDustColorAt({ palette: TERRAIN3_CFG.palettes[pal], biome: ENDLESS_DUST ? { weights: (x, z, out) => DRIVE.terrain?.biomeAt?.(x, z, out) ?? out.fill(0), palettes: BIOME_PALETTES } : null }) }, [])
   useEffect(() => { if (!model || !body.current) return
-    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', style: VCLAY_MODE === 'off' ? 'glow' : 'clay' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', hideDust: DUST3.on, style: FLAME_STYLE || 'glow', fanStyle: VCLAY_MODE === 'off' ? 'glow' : 'clay' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
     if (M2CAR.wheels) R1.object3d.position.y = -M2TUNE.rideHeight // Rad-Fahrzeuge (V-631, wie die Probe): Räder auf den Boden statt in Schwebehöhe
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
     return () => { M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])
+  // Staubfahne (Georg 23.10., dust3=1): viele kleine Partikel entlang der früheren Bahn (src/modules/dustTrail.js), ersetzt den alten Staub-Pool (versteckt)
+  const trail = useRef(null)
+  // einmal je Szene angelegt (Racer-Wechsel übersetzt keine Shader neu, vehicles-r1 cachedSwap); der Racer liefert nur die Schwebe-Anker
+  useEffect(() => { if (!DUST3.on || !sceneR) return
+    const pal = (/palette=(mesa|moos|wueste|schnee|pastell)/.exec(location.hash) || [0, TERRAIN3_CFG.palette])[1]
+    const colorAt = createDustColorAt({ palette: TERRAIN3_CFG.palettes[pal], biome: ENDLESS_DUST ? { weights: (x, z, out) => DRIVE.terrain?.biomeAt?.(x, z, out) ?? out.fill(0), palettes: BIOME_PALETTES } : null, tone: DUST3.tone })
+    const DM = mountDustTrail(sceneR, { unit: K, colorAt, groundAt: groundHeight }), T = DM.trail
+    trail.current = { T, anchors: [], last: null, vel: new THREE.Vector3(), head: new THREE.Vector3(), p: new THREE.Vector3() }; M2STATE.dustTrail = T
+    if (typeof window !== 'undefined') window.__kfbM2State = M2STATE   // Prüfhilfe (nur mit dust3): Fahne und freezeFx für Messungen
+    return () => { DM.unmount(); trail.current = null; if (M2STATE.dustTrail === T) M2STATE.dustTrail = null } }, [sceneR])
+  useEffect(() => { const R1 = rig.current, X = trail.current; if (!R1 || !X) return
+    X.T.clear(); X.last = null
+    const anchors = []; R1.stretch.traverse((o) => { if (/^hover:/.test(o.name)) anchors.push({ o, w: new THREE.Vector3() }) }); X.anchors = anchors
+    return () => { if (trail.current === X) X.anchors = [] } }, [model, rig.current, sceneR])
+  useFrame((_, dt) => { const X = trail.current; if (!X || M2STATE.freezeFx) return; const k = M2STATE.drive || {}, sg = signals?.() || {}
+    body.current.getWorldPosition(X.p); if (X.last && dt > 0) X.vel.set((X.p.x - X.last.x) / dt, 0, (X.p.z - X.last.z) / dt); if (X.vel.length() > 120) X.vel.set(0, 0, 0); X.last = (X.last || new THREE.Vector3()).copy(X.p)
+    body.current.getWorldDirection(X.head)
+    for (const a of X.anchors) a.o.getWorldPosition(a.w)
+    X.T.update(dt, { anchors: k.fly ? [] : X.anchors.map((a) => a.w), speed01: k.fly ? 0 : Math.min(1, Math.abs(sg.speed ?? 0)), carVel: X.vel, heading: X.head, drift: sg.drift ?? 0 }) })
   // Front-Scheinwerfer (V-631, Georg 22.10.): Gläser am Modell (Modell-Einheiten), Kegel in der Szene, Lichtfleck über kfb-groundfx (Kanal 'headlights');
   // Farbe = Antriebsfarbe des Racers; Zielpunkte am Boden über die Geländehöhe. hl=0 schaltet ab. Zeit je Bild in HEADLIGHTS.ms (Mittel).
   const { camera: camR } = useThree()
@@ -252,7 +283,7 @@ function CarVisual({ squash, signals, lean }) {
     if (k.fly) { if ((k.surgeN ?? 0) !== D.surgeN) R1.surge(1); if ((k.ascentN ?? 0) !== D.ascentN) R1.ascent(1) }
     else { if (k.boost && !D.boost && D.gas > 0.3) R1.surge(1); if (k.jump && !D.jump && !k.air) R1.ascent(0.9); if (k.brake && !D.brake && Math.abs(sg.speed ?? 0) > 0.25) R1.brake(1) } // brake: Nase taucht (V-487 §86)
     D.boost = !!k.boost; D.jump = !!k.jump; D.brake = !!k.brake; D.surgeN = k.surgeN ?? 0; D.ascentN = k.ascentN ?? 0
-    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: groundHeight, groundColorAt: dustColorAt })
+    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: groundHeight, groundColorAt: dust2ColorAt || dustColorAt, groundColorAtOld: dust2ColorAt ? dustColorAt : null, drift: k.fly ? 0 : (sg.drift ?? 0), night: rigNight(sceneR, nightCache) })   // drift: nur mit dust2=1 wirksam (Staub-Probe)
     if (A) { if (boostStart) A.event({ type: 'boost' }); for (const x of ev) A.event(x); A.update(dt, { rpm: R1.engine.rpm, thrust: R1.thrust, boost: R1.boostLevel }) } })
   // Bild-Interpolation: Wurzel = Starrkörper-Gruppe über der Kippgruppe (C1 17.10.: seit M3 lag hier die Kippgruppe – der fahrende Körper wurde nicht
   // mehr interpoliert und ruckelte zwischen den Physik-Schritten). Auch Prüfwert für die Jitter-Messung.
