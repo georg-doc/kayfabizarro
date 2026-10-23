@@ -1,7 +1,36 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §154.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§154 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §155.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§155 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 155 · 24.10. · Erinnerung von WS-Audio an WS0 (Georg: „schick die Erinnerung über den Lead“) · Racer-Schatten Standard · Ton von GitHub gemergt
+
+**Drei Punkte von WS-Audio an WS0, offen seit 23.10.** (geprüft: Register @f4eab895f, assets/private @a41a7e7be, dort nichts dazu):
+1. **V-693 ins Register eintragen (q178):**
+   - Skelette: Kazoo plus Klapper-Transient.
+   - Spielzeugsoldaten: gestopfte Trompete.
+   - Orc-Band: Tuba.
+   - Disco K12: Talkbox.
+   - gothgirl: Oboe.
+   - übrige Fluffer-Sorten: hohe Okarina.
+   - `chatter.instrument` steht bei skeleton_*, toy_soldier, gothgirl, q_mushroom u. a. noch auf todo. Im Spiel wirkt Georgs Wahl über die Übergangstabelle `decidedChatter`, die nach dem Eintrag entfällt.
+   - **Für Band und Disco braucht es feste Register-IDs.**
+2. **Sprech-Anlässe für gothgirl, Orc-Band und Disco K12:** Die Familien sind da (Oboe F10, Tuba F11, Talkbox F08), aber es gibt keinen Moment, in dem diese Figuren sprechen. Lead-Vorschlag: WS-NPC baut die Ereignisse (Bemerken des Spielers, Song-Ende der Band, Disco-Pause), WS-Audio hängt den Ton an. Wenn WS0 nicht widerspricht, beauftrage ich WS-NPC nach dem Karten-Tratsch-Lauf.
+3. **Jukebox-Katalog `music_catalog_r1.json`:** BPM, Downbeat bzw. Einsatz und Tonart für die 14 Suno-Roadtrip- und 24 Cozy-Titel fehlen; bisher stehen nur die Suno-Testsongs drin. Die Spiel-Fassung liegt öffentlich als AAC 128 unter kayfabizarro `assets/kfb-audio-r1` @36c5ae419, media/kfb-audio/r1/music/. Danach läuft musicPulse auf Katalog-Tempo.
+- Getrennt davon brauchen die Kazoo- und Trompeten-Clips (q177) Georgs Go an WS0; das klärt Georg selbst.
+
+**WS1-Stand seit §154:**
+- **Ton von GitHub gemergt** (ws-audio/r1 @76eeb2b, mvp 9c4b9a5):
+  - Musik als AAC 128 (226 → 89 MB) über jsDelivr gh@commit, raw als Rückfall, vorgewärmt. Georg hat Songs und Effekte öffentlich freigegeben.
+  - **Site-Paket 45 MB, 117 Dateien, kein Ton** (vorher ~290 MB).
+  - Erster Ton nach 1,1 s; Chrome und WebKit PASS.
+- **Schatten-Hebel** (Georg):
+  - Der Racer wirft seinen Schatten über eine vereinfachte Kopie seiner eigenen Form (meshoptimizer, 100k → 23k Dreiecke, Vorderseiten werfen nach V-440), kein Blob. Etwa −55k Dreiecke je Bild, Abweichung > 12/255 bei 0,04 % der Pixel. **Standard** (mvp 8e8bf28), `rshadow=full` zeigt den vollen Schatten.
+  - Fundsachen und Plakat werfen nur Schatten nahe dem Bild: −20 Zeichenaufrufe im Schattenpass zu Fuß.
+- **fps-Tabelle** (2880×1800, alle Szenen und Qualitäten): 60 fps (Deckel), CPU 0,8–1,8 ms/Bild. Größte Posten: Gelände 218k, Racer 100k(+100k Schatten → jetzt 23k), FrizzleBob 77k (Ohren je 22k), Amphitheater 59k.
+- **FrizzleBob-Ohren vereinfachen:** Lead-Empfehlung, jetzt nicht (7 % der Dreiecke, am Mac kein Effekt; Weg nur über ToolBox-Export plus neue Abnahme). Offener Punkt für eine ToolBox-Runde oder Handy-Ziel.
+- **Musik-Recherche** (research/audits/MUSIK_AUSLIEFERUNG_R1.md): Kein untersuchtes Spiel lädt von GitHub; jsDelivr mit festem Commit ist geeignet. Dekodierte Musik kostet ~81 MB RAM je Stück, daher Streaming; die Jukebox streamt bereits.
+- **Als Nächstes:** volle Testreihe, dann Commit auf `game/mvp-r1` für WSA. Der Vorschlag für den WSA-Auftrag steht in §154.
 
 ## 154 · 23.10. nachts · Übergabe an WS0: Vorschlag für den WSA-Auftrag „MVP auf der GPT-Site, leicht, alles über GitHub“ (Georg)
 
