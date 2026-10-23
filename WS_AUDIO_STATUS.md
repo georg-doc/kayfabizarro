@@ -2,6 +2,31 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 14 · 23.10. · Melodica eingebaut, Musik-Katalog einlesbar · Antwort auf WS0_TO_WS1 (23.10.)
+
+**Stand:** `ws-audio/r1` @4d3e498 (auf mvp 7f498ca aufgesetzt), Merge-Wunsch an den Lead.
+
+**1 · Familie 13 Melodica** (`chatter_families_r2_melodica`, 13 Clips, Pegel aus dem _lufs-Bericht)
+- In `CHATTER_FAMILIES` eingetragen: Melodica → F13_melodica. Gilt für alle Figuren mit Register-Instrument Melodica (Bots, robot_one, robot_two, kayfabrick_bot … laut Snapshot @0050419).
+- Säge (q_ghost) und Theremin (q_alien, q_alien_tall) gelten seit SPEC im Register als gesetzt und greifen über die vorhandenen Familien F09/F06.
+- **Hinweis:** Hörbar wird das erst, wenn diese Figuren einen Anlass zum „Sprechen“ haben. Heute spricht im Spiel nur die Begrüßung der Bewohner (Bäuerin, Lorekeeper). Bots, Geister und Aliens begrüßen nicht. Ein Anlass dafür (z. B. Sprechblase, Bemerken, Treffer) wäre eine Entscheidung für WS-NPC/WS0.
+- farmer_harke: Laut WS0 ist er jetzt Alias von farmer_b (132 Figuren). Der Snapshot in mvp (@0050419) zeigt noch 133 Figuren und farmer_harke ohne chatter; der Lead zieht ihn nach. Im Ton ist dafür nichts zu tun, der Leser löst dann von selbst auf.
+
+**2 · Musik-Katalog** `40_AUDIO/music_catalog_r1.json` (kfb.music-catalog/1), **nur einlesbar, nichts zugeordnet, nichts gespielt**
+- `prepare.mjs` übernimmt die Kopfdaten in den Ton-Index:
+  - je Song id, BPM, Einsatz, Tonart;
+  - je Stem Familie, Phrasen, eigenständige Phrasen (`unique`), Tonart und Manifest-Pfad.
+- Saxophon-Stems sind ausgelassen (WS0: Übersprechen).
+- Laufzeit: `musicCatalog()` und `harvestPhrases(song, family)`. Die zweite Funktion lädt das Manifest und liefert die eigenständigen Phrasen (ohne `dup_of`) mit url, Grundton, Kontur, Länge, LUFS und Einsatz in Schlägen.
+- Geladen wird nur lokal über den Dev-Server (`/@kfb-audio/chatter/…`). Auf der Site liegt die Ernte vorerst nicht (≈ 115 MB WAV, noch keiner Figur zugeordnet).
+- Gemessen: 4 Songs (surf 150, efunk 142, orchester 108, orchester2 104 BPM). orchester/adv_clarinet ergibt 93 eigenständige Phrasen, wie bei WS0.
+- **Orchester-Zuordnung je Phrase:** Mit dem Advanced Split (ein Stem je Instrument) ist sie nach WS0 erledigt. WS-Audio meldet daher keine eigene Zuordnung nach Tonlage.
+- **Offen aus Eintrag 11:** Der Katalog deckt die Suno-Testsongs ab, **nicht die Jukebox-Titel** (14 Suno-Roadtrip, 24 Cozy). Dafür gibt es noch kein BPM, keinen Downbeat und keine Tonart, `musicPulse()` schätzt das Tempo weiter aus den Kicks. Bitte bei Gelegenheit die Jukebox-Titel in denselben Katalog aufnehmen.
+
+**3 · Georgs Entscheidungen (Hub):** q177 neue Familien-Clips, q178 Familien für Skelette, Soldaten, Orc-Band, Disco, gothgirl und Fluffer, q179 Begrüßung unter Musik −4 oder −7 dB. Bis dahin gilt der Rückfall wie gehabt. Kein selbst vergebenes Instrument.
+
+**Tests:** audio-mixer (neu: Melodica, `musicCatalogIndexed`, Pfadschutz für `chatter/`), characterRegistry, contract-static und audio (headless, neu: `musicCatalogReadable`) alle PASS. Hauptthread 0,13 ms/Bild, p95 0,2 ms. Site-Trockenlauf: 569 Dateien, 245,5 MB.
+
 ## 13 · 22.10. · Sprachmelodien: Stand, was fehlt, Suno-Ernte · für WS0 (Georg: „schreib das in den Status für WS0“)
 
 **Georg 22.10. nach dem Begrüßungs-Video:** „gefällt mir schon ganz gut … passt für die Atmosphäre“. Anfangs hielt er die Begrüßung für Umgebungsmusik. Möglicher Schritt bei WS-Audio: Musik bei der Begrüßung stärker absenken (heute −4 dB, z. B. −7 dB); noch nicht gemacht, Georg entscheidet. Nächster Schritt laut Georg: Sprachmelodien für die übrigen Figuren ausbauen. Dazu will er mit WS0 Suno-Songs produzieren und aus den Stems Melodien ernten.
