@@ -11,10 +11,7 @@ All user-facing updates and handoffs also follow `PLAIN_LANGUAGE_HANDOFF_STANDAR
 
 ## 0D. Georg 2026-10-23: Intent first, solution open (KFB visual/gameplay Webchat)
 
-If Georg supplies a visual/gameplay intention or reference, the result he wants is the acceptance target. **Never silently turn a visual reference into a prescribed mesh, shader, particle count, material, style, or engine.** Webchat research compares current verified donors and plausible approaches, states hypotheses as hypotheses, and only specifies implementation limits after source-isolated visible A/B and real performance measurements. **KISS means the least complex effective result, not the smallest arbitrary numeric budget.** If a prescribed construction visibly fails, revisit the solution class rather than burning Claude-Code effort repairing it. No image generation for technical discussion unless Georg requests an image.
-
-Concrete corrected incident: a user-requested full curving Racer dust plume was mistakenly constrained first to AI-built clay blobs, then to the existing 160-point baseline. Both were methodology drift from the intended result. WS1b's 10–20× particle count / 2–4 s life is an **unverified test hypothesis**, not another fixed rule; measure the visual look and target GPU. See WS0 Register `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md` and its binding Working Rules. WS0 owns the final V-ID registration via `build_decisions.py`.
-
+→ Siehe WS0-Register `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md` (V-690). Einzige maßgebliche Stelle.
 
 ## 0. Check execution mode before applying slice logic
 
