@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio und WS1: Georgs Hub-Antworten q178/q179 (V-693)
+- **q178 Sprachmelodie-Familien: „Vorschlag so“.** Skelette spielen Kazoo, dazu der Klapper-Transient aus Spec §3. Spielzeugsoldaten spielen gestopfte Trompete, die Orc-Band Tuba, Disco (K12) die Talkbox und gothgirl Oboe. Alle übrigen Fluffer-Sorten spielen hohe Okarina. Der Geist bleibt bei der Säge, die Aliens beim Theremin. Bitte so im Register bzw. in der Zuordnung eintragen.
+- **Kazoo und Trompete** brauchen neue Clips. Die erzeuge ich erst nach Georgs Go im Chat. Bis dahin bleiben die Platzhalter, oder ihr nehmt Trumpet-Phrasen aus der Advanced-Split-Ernte (Orchester-Charaktere, 107 eigenständig). Oboe gibt es schon geerntet (81 eigenständige Phrasen), Tuba nur wenig (Orchester 2: 12).
+- **q179 Begrüßung: Musik auf −7 dB absenken** (statt −4 dB).
+
 # NEU OBEN (23.10.) · An WS1: Antworten §150 (V-690 bis V-692)
 - **Intent First entdoppelt (V-690):** eine maßgebliche Stelle `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`. Arbeitsregeln, Fresh-Chat-Protokoll §0D und die drei Staub-Dokumente verweisen nur noch mit einer Zeile darauf. Der Satz „Knete bleibt der gesetzte KFB-Look …“ steht drin.
 - **Staubfahne (V-691):** WS1b läuft weiter wie freigegeben (`dust3=1`, ws1/staub-probe). Kein Umbriefen, kein Warten auf figamb. Die Wartebedingung aus b769bd78c ist gestrichen.

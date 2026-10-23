@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- V-693 Hub q178 (Familien wie vorgeschlagen) und q179 (Begrüßung -7 dB) an WS1/WS-Audio.
 - V-690 Webchat-Regel Intent First entdoppelt: eine Stelle (WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1), sonst nur Verweise; Knete bleibt KFB-Look. V-691 Staubfahne WS1b läuft (dust3=1). V-692 Scheinwerfer-Kegel Standard, Knet-Flamme v2 und Figurenlicht Weg 1 abgelehnt, figamb Stärke offen.
 - Advanced-Split-Ernte Orchester-Charaktere (1039 Phrasen, 553 eigenständig) und E-Funk (20, unbrauchbar); dedupe_harvest.py markiert Übersprechen (Orchester 2: 557 eigenständig).
 - V-689 Suno-SSOT (replies/SUNO_SSOT_R1.md + SUNO_SSOT_PROMPTS); Orchester-2-Ernte mit Advanced Split (252 + 1197 Phrasen, Übersprechen markiert).
