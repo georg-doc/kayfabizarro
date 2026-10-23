@@ -1,0 +1,1320 @@
+{
+ "schema": "kfb.opener-pool.stance/1",
+ "date": "2026-10-23",
+ "rules": [
+  "Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
+  "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Doppelpunkt/Punkt, dann die Karte. Nie zwei lose Wörter ohne Satz.",
+  "Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.",
+  "Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.",
+  "Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0."
+ ],
+ "openers": [
+  {
+   "opener": "A friend told me about",
+   "stance": "Gerücht",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": "told",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Did you hear about",
+   "stance": "Gerücht",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG 23.10.",
+   "source": "Chat Georg",
+   "note": "Familie heard"
+  },
+  {
+   "opener": "I heard a rumor about",
+   "stance": "Gerücht",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_023",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "The radio kept talking about",
+   "stance": "Gerücht",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "forbidden",
+    "tragic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Overheard at the bakery",
+   "stance": "Gerücht",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "comic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Whispered in the attic",
+   "stance": "Gerücht",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "mystical",
+    "forbidden"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "A neighbour told me about",
+   "stance": "Begegnung",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "comic",
+    "absurd"
+   ],
+   "family": "told",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "A stranger on the bus told me about",
+   "stance": "Begegnung",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "absurd",
+    "forbidden"
+   ],
+   "family": "told",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I once met",
+   "stance": "Begegnung",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "My grandmother swore by",
+   "stance": "Begegnung",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "comic",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "My neighbour is",
+   "stance": "Begegnung",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG 23.10.",
+   "source": "Chat Georg",
+   "note": "nur vor Personen/Figuren"
+  },
+  {
+   "opener": "My aunt used to say",
+   "stance": "Begegnung",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "comic",
+    "tragic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I found a",
+   "stance": "Fundstück",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG 23.10.",
+   "source": "Chat Georg",
+   "note": "nur vor Objekt-/Textkarten"
+  },
+  {
+   "opener": "I read a book about",
+   "stance": "Fundstück",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I saw a film about",
+   "stance": "Fundstück",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_007",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "I saw a painting of",
+   "stance": "Fundstück",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "mystical",
+    "heroic"
+   ],
+   "family": "saw",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "A fortune cookie said",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "absurd",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "A note under my door",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_034",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "A scratched sign read",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_057",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "An unsigned letter said",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "forbidden",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I found a note saying",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": "found",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I found this under my bed",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "absurd",
+    "mystical"
+   ],
+   "family": "found",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "In my old sketchbook",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "mystical",
+    "tragic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "My diary says",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": "diary",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "On the back of a napkin",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "comic",
+    "absurd"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Someone scratched into the wall",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL NEW_049",
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "note": "lang (33 Zeichen)"
+  },
+  {
+   "opener": "Someone wrote in my diary",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": "diary",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Someone wrote in my friendship book",
+   "stance": "Fundstück",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "comic",
+    "tragic"
+   ],
+   "family": "diary",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I dreamed about",
+   "stance": "Anekdote",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_046",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "I went to",
+   "stance": "Anekdote",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-13 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "einzige Orts-Form; nur vor Orts-Karten"
+  },
+  {
+   "opener": "Let me tell you about",
+   "stance": "Anekdote",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Long ago there was",
+   "stance": "Anekdote",
+   "slot": "into_title",
+   "class": "F",
+   "modes": [
+    "tragic",
+    "heroic",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "In a dream last Tuesday",
+   "stance": "Anekdote",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "absurd",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "The other day,",
+   "stance": "Anekdote",
+   "slot": "own_clause",
+   "class": "F",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-12 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Slot = Ereignis"
+  },
+  {
+   "opener": "Did you hear of",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "heard",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Did you see the film about",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "saw",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Do you know",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "know",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Ever heard of",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-02 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+  },
+  {
+   "opener": "Ever tasted",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "try",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Have you ever",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-03 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Slot = Erfahrung, nicht Titel"
+  },
+  {
+   "opener": "Have you heard of",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "heard",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You know",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "know",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You know the thing with",
+   "stance": "Frage",
+   "slot": "into_title",
+   "class": "Q",
+   "modes": [
+    "any"
+   ],
+   "family": "thing",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I wonder why",
+   "stance": "Theorie",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG 23.10.",
+   "source": "Chat Georg",
+   "note": "Frage-Form; Kartenzeile wird zur Frage"
+  },
+  {
+   "opener": "The stars mention",
+   "stance": "Theorie",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "What if",
+   "stance": "Theorie",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You would think",
+   "stance": "Theorie",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "The official explanation is",
+   "stance": "Theorie",
+   "slot": "own_clause",
+   "class": "P",
+   "modes": [
+    "forbidden",
+    "comic"
+   ],
+   "family": "official",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "The thing about",
+   "stance": "Behauptung",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": "thing",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "They wrote songs about",
+   "stance": "Behauptung",
+   "slot": "into_title",
+   "class": "P",
+   "modes": [
+    "heroic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Everyone agrees",
+   "stance": "Behauptung",
+   "slot": "own_clause",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": "official",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "There are two kinds of people",
+   "stance": "Behauptung",
+   "slot": "own_clause",
+   "class": "P",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-18 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Slot A/B"
+  },
+  {
+   "opener": "True story",
+   "stance": "Behauptung",
+   "slot": "own_clause",
+   "class": "P",
+   "modes": [
+    "comic",
+    "absurd"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Exactly. And if",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "E",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py",
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+  },
+  {
+   "opener": "So what you mean is",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 UP-07 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Dialog"
+  },
+  {
+   "opener": "That is not",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": "retort",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py",
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+  },
+  {
+   "opener": "That is not X. That is",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 UP-04 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Dialog; X = Wort des Vorredners"
+  },
+  {
+   "opener": "You call that",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "comic",
+    "absurd"
+   ],
+   "family": "retort",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py",
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+  },
+  {
+   "opener": "You said",
+   "stance": "Erwiderung",
+   "slot": "into_title",
+   "class": "R",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py",
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+  },
+  {
+   "opener": "Fair. But",
+   "stance": "Erwiderung",
+   "slot": "own_clause",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 UP-05 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Dialog"
+  },
+  {
+   "opener": "Did you ever try",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": "try",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Here comes",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "heroic",
+    "comic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Welcome to",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You played",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You wanted",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 FW-02 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Slot = Erwartung"
+  },
+  {
+   "opener": "You'll laugh, but",
+   "stance": "Ansprache",
+   "slot": "into_title",
+   "class": "A",
+   "modes": [
+    "comic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "From the back row",
+   "stance": "Ansprache",
+   "slot": "own_clause",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL NEW_028",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "Picture this",
+   "stance": "Ansprache",
+   "slot": "own_clause",
+   "class": "A",
+   "modes": [
+    "comic",
+    "heroic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "You know something I do not",
+   "stance": "Ansprache",
+   "slot": "own_clause",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 FW-06 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+  },
+  {
+   "opener": "You look like someone who",
+   "stance": "Ansprache",
+   "slot": "own_clause",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-04 TUNE",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Risiko"
+  },
+  {
+   "opener": "You with the card in your hand",
+   "stance": "Ansprache",
+   "slot": "own_clause",
+   "class": "A",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I still think about",
+   "stance": "Rückruf",
+   "slot": "into_title",
+   "class": "R",
+   "modes": [
+    "tragic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I think I remember",
+   "stance": "Rückruf",
+   "slot": "into_title",
+   "class": "R",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_045",
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "note": "Fehlerinnerung erlaubt (V-327)"
+  },
+  {
+   "opener": "Remember",
+   "stance": "Rückruf",
+   "slot": "into_title",
+   "class": "R",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "No wait",
+   "stance": "Zweifel/Wende",
+   "slot": "interjection",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "No, wait",
+   "stance": "Zweifel/Wende",
+   "slot": "interjection",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-24 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "= No wait (POOL)"
+  },
+  {
+   "opener": "I used to believe",
+   "stance": "Zweifel/Wende",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "If only someone had warned",
+   "stance": "Zweifel/Wende",
+   "slot": "into_title",
+   "class": "D",
+   "modes": [
+    "tragic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "But the margin reads",
+   "stance": "Zweifel/Wende",
+   "slot": "own_clause",
+   "class": "D",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "R2 OPR3_074",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "Off the record",
+   "stance": "Zweifel/Wende",
+   "slot": "own_clause",
+   "class": "D",
+   "modes": [
+    "forbidden"
+   ],
+   "family": "secret",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Strictly between us",
+   "stance": "Zweifel/Wende",
+   "slot": "own_clause",
+   "class": "D",
+   "modes": [
+    "forbidden",
+    "comic"
+   ],
+   "family": "secret",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Don't tell anyone about",
+   "stance": "Steigerung",
+   "slot": "into_title",
+   "class": "E",
+   "modes": [
+    "forbidden"
+   ],
+   "family": "secret",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Nobody came back for",
+   "stance": "Steigerung",
+   "slot": "into_title",
+   "class": "E",
+   "modes": [
+    "tragic"
+   ],
+   "family": "nobody",
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Nobody warned us about",
+   "stance": "Steigerung",
+   "slot": "into_title",
+   "class": "E",
+   "modes": [
+    "any"
+   ],
+   "family": "nobody",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Stand back for",
+   "stance": "Steigerung",
+   "slot": "into_title",
+   "class": "E",
+   "modes": [
+    "heroic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Against all odds",
+   "stance": "Steigerung",
+   "slot": "own_clause",
+   "class": "E",
+   "modes": [
+    "heroic"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "And then it gets worse",
+   "stance": "Steigerung",
+   "slot": "own_clause",
+   "class": "E",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 UP-10 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Achtung KayfabeTip 1 ('and then'): nur Song-extern/Tratsch"
+  },
+  {
+   "opener": "Behind the locked door",
+   "stance": "Steigerung",
+   "slot": "own_clause",
+   "class": "E",
+   "modes": [
+    "forbidden",
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Here is something nobody asked for",
+   "stance": "Steigerung",
+   "slot": "own_clause",
+   "class": "E",
+   "modes": [
+    "any"
+   ],
+   "family": "nobody",
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "This one has a rule",
+   "stance": "Steigerung",
+   "slot": "own_clause",
+   "class": "E",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "My goldfish insists on",
+   "stance": "Meta",
+   "slot": "into_title",
+   "class": "M",
+   "modes": [
+    "absurd"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "The deck insists on",
+   "stance": "Meta",
+   "slot": "into_title",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Agree, or tell me why not",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Backstage someone muttered",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "SL OPR3_050",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "Behind the mirror",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "mystical"
+   ],
+   "family": null,
+   "status": "GEORG/R2-Kandidat",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "I am performing a card. The card does not care",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 FW-05 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "lang"
+  },
+  {
+   "opener": "Not a metaphor",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "The deck says",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 FW-08 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+  },
+  {
+   "opener": "This card is doing it whether you like it or not",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 FW-03 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "lang"
+  },
+  {
+   "opener": "This is not a metaphor. Unfortunately",
+   "stance": "Meta",
+   "slot": "own_clause",
+   "class": "M",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "P43 OP-19 KEEP",
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "note": "Familie mit Not a metaphor"
+  },
+  {
+   "opener": "Anyway",
+   "stance": "Szenenwechsel",
+   "slot": "interjection",
+   "class": "X",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Which brings us to",
+   "stance": "Szenenwechsel",
+   "slot": "into_title",
+   "class": "X",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Before we continue",
+   "stance": "Szenenwechsel",
+   "slot": "own_clause",
+   "class": "X",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  },
+  {
+   "opener": "Hold that thought",
+   "stance": "Szenenwechsel",
+   "slot": "own_clause",
+   "class": "X",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "R2 NEW_040",
+   "source": "OPENER_ARC_MODEL_R1 §8.2"
+  },
+  {
+   "opener": "Meanwhile elsewhere",
+   "stance": "Szenenwechsel",
+   "slot": "own_clause",
+   "class": "X",
+   "modes": [
+    "any"
+   ],
+   "family": null,
+   "status": "POOL",
+   "source": "opener_pool_r2.py"
+  }
+ ]
+}
