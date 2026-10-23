@@ -2,6 +2,73 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 16 · 23.10. · KONZEPT: Musik kleiner kodieren, Ton von GitHub statt im Site-Paket · Hörprobe (Auftrag Georg über den Lead)
+
+**Georgs Vorgaben (über den Lead):** „Musik kleiner kodieren: gerne“. Die Site soll leicht sein und alles über GitHub laufen. Die Songs dürfen öffentlich in kayfabizarro, gekaufte Modelle bleiben privat. Die Freigabe gilt nur für die Songs. **Umsetzung erst nach Georgs Okay, Merge über den Lead.**
+
+### Teil 1 · Musik kleiner kodieren
+
+**Ist:** 38 Titel (14 Suno, 24 Cozy), 98 Minuten, 228 MB.
+- Suno: MP3 192 kbit/s, 43 MB.
+- Cozy: Ogg Vorbis mit sehr hoher Qualität, 205–455 kbit/s, 185 MB.
+
+**Vorschlag: AAC-LC in `.m4a`, 128 kbit/s.** Begründung:
+- AAC/MP4 ist Safaris Hausformat, und Chrome dekodiert es (headless gemessen).
+- Ogg Vorbis spielt Safari erst in neueren Versionen zuverlässig, der Umstieg beseitigt also auch ein Safari-Risiko.
+- Werkzeug: `afconvert` (macOS, Apple-AAC-Encoder, höchste Encoder-Qualität). Cozy wird im Browser zu WAV dekodiert, weil afconvert kein Ogg liest; Abtastrate wie die Quelle.
+
+**Hörprobe** (lokal, 40-s-Ausschnitte ab 0:20; A = Original verlustfrei, B = AAC 128, C = AAC 96). Lautheit BS.1770 über den ganzen Titel:
+
+| Titel | Original | AAC 128 | AAC 96 | Lautheit (Original → 128 / 96) |
+|---|---|---|---|---|
+| Suno · Endless Forward Motion A (119 s) | 2,65 MB, 187 kbit/s | 1,81 MB | 1,36 MB | −15,44 → −15,49 / −15,51 LUFS |
+| Cozy · Chickens In The Meadow (124 s) | 6,16 MB, 417 kbit/s | 1,90 MB | 1,46 MB | −21,61 → −21,62 / −21,63 LUFS |
+| Cozy · Gymnopédie No. 1 (133 s, leise Klavier) | 3,45 MB, 218 kbit/s | 1,78 MB | 1,47 MB | −31,04 → −31,04 / −31,05 LUFS |
+
+- **Lautheit bleibt:** Abweichung ≤ 0,07 LU. Die Titel-Ausgleichswerte (`music-gain.json`, Ziel −18 LUFS) gelten weiter; nach der Umkodierung misst `loudness.mjs` gegen.
+- **Gesamtgröße:** 228 MB → **≈ 85 MB bei 128 kbit/s** bzw. **≈ 70 MB bei 96 kbit/s** (hochgerechnet aus 98 min). Je Titel ≈ 1,8 MB statt 6 MB.
+
+### Teil 2 · Ton zur Laufzeit von GitHub
+
+**Ablage:** in kayfabizarro, z. B. `media/kfb-audio/music-r1/{suno,cozy}/*.m4a` plus `music-r1.json` (Titel, Länge, Größe, sha256, gainDb, Stichworte). Der Commit wird im Code fest gepinnt, wie die Audio Site (`site-files.json`).
+- Hinweis: Die Suno-Jukebox liegt mit Stems schon öffentlich unter `media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/` (460 Dateien, 1,36 GB). Die Spiel-Fassung wird trotzdem als kleine eigene Ablage vorgeschlagen.
+
+**Hosts (gemessen 23.10., `curl` mit Range auf eine m4a in kayfabizarro):**
+
+| | raw.githubusercontent | cdn.jsdelivr.net/gh/…@commit |
+|---|---|---|
+| Range (Streaming) | 206, `accept-ranges: bytes` | 206 |
+| CORS | `*` | `*` |
+| Content-Type m4a / mp3 / ogg | audio/mp4 / audio/mpeg / audio/ogg | gleich |
+| Zwischenspeicher | `max-age=300` (5 min) | `max-age=31536000, immutable` (1 Jahr) |
+| erste 128 KB (TTFB) | 0,06–0,41 s | 0,06–0,15 s |
+| ganzer Titel 2,1 MB | 0,26 s | 0,24 s |
+
+- **Vorschlag:** jsDelivr mit festem Commit als erster Host (ein Jahr Browser-Cache, unveränderlich). raw.githubusercontent als Rückfall (gleiche Datei, gleicher Commit).
+- Grenze bei jsDelivr: höchstens 20 MB je Datei. Der längste Titel (Wiener Wald, 597 s) hat bei 128 kbit/s ≈ 9,5 MB.
+
+**Laden und Fehlerverhalten:**
+- Die Jukebox streamt über `HTMLAudio`, die Musik beginnt also vor dem Ende des Downloads. Vorgeladen wird nur der nächste Titel (zweites Deck).
+- Fehler oder kein Ton nach 8 s: gleicher Titel vom Rückfall-Host, dann nächster Titel. Nach 3 Fehlern geht die Musik aus, **das Spiel läuft weiter**; sichtbar in `stats().music` (errors, host).
+- Ist `music-r1.json` nicht ladbar: Jukebox aus, Effekte unberührt.
+
+**Effekte (≈ 17 MB):** Die Freigabe gilt laut Lead nur für die Songs.
+- Vorschlag: Atmo und Schritte (CC0, Audio Site, ohnehin öffentlich gepinnt in kayfabizarro) kommen ebenfalls von GitHub.
+- ElevenLabs-Sätze und WSA Racer/Kampf bleiben im Site-Paket, bis Georg entscheidet.
+- **Site-Paket Ton: 245 MB → ≈ 17 MB, mit Atmo/Schritten von GitHub ≈ 5–7 MB (Schätzung).**
+
+### Prüfkriterien (Abnahme)
+1. Georgs Ohr: B (128) bzw. C (96) gegen A nicht störend schlechter. Danach Wahl 128 oder 96.
+2. Lautheit je Titel: |Δ| ≤ 0,2 LU gegen das Original (`loudness.mjs`), Spitze ≤ −1 dBFS nach Ausgleich.
+3. Chrome und Safari spielen alle 38 Titel. Chrome headless automatisch. **Safari kann hier nicht automatisch geprüft werden** (keine WebKit-Engine installiert): einmal von Hand auf iPhone/Mac, oder WebKit für Playwright installieren (Download, braucht Georgs Okay).
+4. Erster Musik-Ton nach der ersten Eingabe ≤ 1,5 s bei normalem Netz, gemessen headless gegen den echten Host.
+5. Zweiter Start: Musik aus dem Browser-Cache, kein erneuter Download (jsDelivr immutable).
+6. Fehlertest: Host gesperrt (Playwright-Route) → Rückfall-Host. Beide gesperrt → Spiel läuft, Musik still, kein Seitenfehler.
+7. Site-Paket ohne Musik: `site-copy.mjs` kopiert keine Musik mehr; Größe des Ton-Anteils im Bericht.
+8. Hauptthread weiter ≤ 1 ms/Bild für Audio (heute 0,1–0,3 ms).
+
+**Offene Fragen an Georg:** (a) 128 oder 96 kbit/s nach der Hörprobe; (b) Freigabe öffentlich nur für die Musik bestätigt — dürfen auch die ElevenLabs-Effekte öffentlich, oder bleiben sie im Site-Paket?
+
 ## 15 · 23.10. · Georgs Familien-Wahl (q178) und Begrüßung −7 dB (q179) umgesetzt · V-693
 
 **Stand:** `ws-audio/r1` @4bae98a (auf mvp @7835515 aufgesetzt), Merge-Wunsch an den Lead.
