@@ -1,3 +1,4 @@
+# Nummern nach Druck-Kartendaten media/kfb @52adc8f1 (Skill Issue nur einmal): 52–57 der alten Registry = 51–56
 T = {
 1:"The Rules Lawyer: Objection! Cite a non-existent rule. If you hesitate, your action fails.",
 2:"The Optimizer's story is devoid of fun or flavor: nothing breaks faster than trying to weaponize ambiguity.",
@@ -49,12 +50,12 @@ T = {
 48:"The Emergency Handle: please tell me the correct move. Pull it if it gets boring.",
 49:"The Mood Swing forces your mood to anxious.",
 50:"The Skill Issue: incompetence. You forget the trained ability you rely on.",
-52:"The Collapsed Quest: if it tips, the quest collapses.",
-53:"The Story Breaker interrupts a story connection that feels forced.",
-54:"Stay Fluffy: game over when everyone at the table feels relaxed or confused.",
-55:"Kayfabingo! Win the game instantly if you shout bingo for no reason.",
-56:"The Strange Alertness: visibly uncomfortable, irritated, or strangely alert.",
-57:"The End: the group decides when it is done. No winner.",
+51:"The Collapsed Quest: if it tips, the quest collapses.",
+52:"The Story Breaker interrupts a story connection that feels forced.",
+53:"Stay Fluffy: game over when everyone at the table feels relaxed or confused.",
+54:"Kayfabingo! Win the game instantly if you shout bingo for no reason.",
+55:"The Strange Alertness: visibly uncomfortable, irritated, or strangely alert.",
+56:"The End: the group decides when it is done. No winner.",
 }
 INTRO="The Anti-Rules Manifesto, for people who panic when the adults leave the room."
 OUTRO="Kayfabizarro does not break because rules are missing. It breaks because authority sneaks back in."

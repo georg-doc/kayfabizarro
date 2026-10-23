@@ -1,3 +1,4 @@
+# Nummern nach Druck-Kartendaten media/kfb @52adc8f1: 50 = Steel Steps, 51 = Ring Post
 T = {
 1:"The Babyface, high-flying moves because audiences cheer. Cheat, you lose. A slave to approval.",
 2:"The Heel cheats: bear hugs, eye pokes. If they aren't booing, you aren't doing your job.",
@@ -48,8 +49,8 @@ T = {
 47:"The Rehearsal, Hogan and Warrior: perfect, but lacks soul. It paid off.",
 48:"The Rest Hold: slow down, give the audience a chance to catch up. Or go get popcorn.",
 49:"The Hard Cam plays to the crowd at home: if the camera didn't see it, it didn't happen.",
-50:"The Ring Post, unforgiving steel, hardest object in the building: miss a charge, max damage.",
-51:"The Steel Steps, weaponized furniture: counts as environment, not weapon. Usually.",
+51:"The Ring Post, unforgiving steel, hardest object in the building: miss a charge, max damage.",
+50:"The Steel Steps, weaponized furniture: counts as environment, not weapon. Usually.",
 52:"The Announcer's Table: shouting at Michael Cole while destroying his desk. Breakable furniture.",
 53:"The Internet Smark critiques bad psychology without ever taking a bump: keyboard warriors.",
 54:"The Botched Spot, incoherent collection of moves: confusion. It just looks messy.",
