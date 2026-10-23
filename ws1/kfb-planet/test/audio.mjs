@@ -73,6 +73,14 @@ try {
     await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
     const reg = a.greet({ type: 'greet', reason: 'cure', id: 'farmer_b' }, { x: p[0] + 2, y: p[1] + 1.6, z: p[2] }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }) // Register-Instrument (V-682)
     M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck, reg, chatter: a.stats().chatter } })
+  // Sprech-Anlässe (Georg q178, V-693): Register/Wahl → Familie mit Clips; Kazoo und gestopfte Trompete noch ohne Clips → kein Zusatz-Laut; je Anlass 1,5 s Sperre
+  out.chat = await A.page.evaluate(async () => { const a = window.__kfbAudio, p = window.__kfbM1.feet(), pos = { x: p[0] + 3, y: p[1] + 1, z: p[2] }
+    const r = { skel: a.chatter({ type: 'aggro', group: 'skeleton_patrol', characterId: 'skeleton_rogue' }, pos, { instrument: 'Kazoo', status: 'V-693' }),
+      toy: a.chatter({ type: 'aggro', group: 'toy_squad', characterId: 'toy_soldier' }, pos, { instrument: 'gestopfte Trompete', status: 'V-693' }),
+      bot: a.chatter({ type: 'aggro', group: 'bot_crew', characterId: 'robot_one' }, pos, { instrument: 'Melodica', status: 'set' }),
+      botAgain: a.chatter({ type: 'aggro', group: 'bot_crew', characterId: 'robot_one' }, pos, { instrument: 'Melodica', status: 'set' }),
+      heal: a.chatter({ type: 'healed', characterId: 'q_mushroom' }, pos, { instrument: 'hohe Okarina', status: 'V-693' }) }
+    return { ...r, st: a.stats().chatter } })
   // Musik-Katalog der Suno-Ernte (WS0 V-688): einlesbar, Phrasen ohne dup_of, Datei über /@kfb-audio/chatter/ ladbar (nichts zugeordnet, nichts gespielt)
   out.catalog = await A.page.evaluate(async () => { const a = window.__kfbAudio, c = a.musicCatalog(); if (!c) return { none: true }
     const ph = await a.harvestPhrases('orchester', 'adv_clarinet'), r = ph?.[0] ? await fetch(ph[0].url) : null
@@ -87,7 +95,9 @@ try {
       { type: 'impact', id: 'dark_fluffer_utopia', kind: 'deer', seq: 5, t: 5, at: [p[0] + 200, p[2]], mouth: near(200) })
     await new Promise((r) => setTimeout(r, 400)); const ev = fl().slice(n0), st = a.stats().fluffers
     hops.push({ type: 'hop', id: 'dark_fluffer_atlantis', kind: 'mushroom', at: [p[0] - 4, p[2]], t: 6 }); await new Promise((r) => setTimeout(r, 400)); const pres = a.stats().presence
-    M.mods.fluffer = keep; return { base: n0, played: ev.map((e) => e.e + ':' + e.id), st, pres } })
+    // Sprech-Anlass (Georg V-693): übrige Fluffer-Sorte (q_deer) holt aus → hohe Okarina, über AudioHost
+    L.push({ type: 'windup', id: 'dark_fluffer_utopia', kind: 'deer', characterId: 'q_deer', seq: 6, t: 7, at: [p[0] + 3, p[2]], mouth: near(3) }); await new Promise((r) => setTimeout(r, 400)); const chat = a.stats().chatter.q_deer
+    M.mods.fluffer = keep; return { base: n0, played: ev.map((e) => e.e + ':' + e.id), st, pres, chat } })
   // WS0-Lieferung Combat-AV L1–L13: neue Kampf-Ereignisse klingen
   out.av13 = await A.page.evaluate(async () => { const a = window.__kfbAudio, p = window.__kfbM1.feet(), pos = { x: p[0] + 2, y: p[1] + 1, z: p[2] }, r = {}
     for (const [k, e] of Object.entries({ kill: { type: 'kill' }, windup: { type: 'windup', side: 'enemy' }, block: { type: 'block' }, bite: { type: 'contact', target: 'player', weapon: 'bite' }, hurt: { type: 'contact', target: 'player' }, arrow: { type: 'contact', weapon: 'bow', confirmed: true }, magic: { type: 'contact', weapon: 'wand' }, dice: { type: 'fire', weapon: 'dice' } })) { const b = a.stats().bank.plays; a.k10({ ...e, position: pos }); r[k] = a.stats().bank.plays - b; await new Promise((x) => setTimeout(x, 80)) }
@@ -130,6 +140,8 @@ try {
     npcGroups: out.groups.n >= 18 && out.groups.plays >= 15 && out.groups.polled === 3 && out.groups.again === 3 && out.groups.errors.length === 0,
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
     presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.some((k) => k.startsWith('fluffGlide')),
+    chatterOccasions: out.chat.skel === null && out.chat.toy === null && out.chat.bot === 'chatter.F13_melodica.aggressiv' && out.chat.botAgain === null && out.chat.heal === 'chatter.F04_ocarina.froh'
+      && out.chat.st.skeleton_rogue === 'fallback' && out.chat.st.q_mushroom === 'V-693:F04_ocarina' && out.fluffK15.chat === 'V-693:F04_ocarina' && out.greet.duck <= -7,
     musicCatalogReadable: out.catalog.none || (out.catalog.songs.length >= 4 && out.catalog.n > 10 && out.catalog.dup === 0 && out.catalog.ok && ['note', 'beat', 'lufs', 'url'].every((k) => out.catalog.keys.includes(k))),
     flufferK15Multi: out.fluffK15.played.join() === 'spit:dark_fluffer_atlantis,healed:dark_fluffer_goblin' && out.fluffK15.st.dark_fluffer_goblin === true && out.fluffK15.st.dark_fluffer_atlantis === false && out.fluffK15.pres.includes('fluffGlide:dark_fluffer_atlantis'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,

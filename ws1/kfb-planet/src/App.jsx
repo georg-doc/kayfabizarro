@@ -43,7 +43,7 @@ export default function App() {
   return (
     <>
       <KeyboardControls map={MOVE_MAP}>
-        <Canvas frameloop={m1 ? 'never' : 'always'} shadows dpr={m1 ? m1Dpr() : eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
+        <Canvas frameloop={m1 ? 'never' : 'always'} shadows dpr={m1 ? m1Dpr() : eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : /(^|[#,])outline=1(,|$)/.test(location.hash) ? { stencil: true } : undefined /* outline=1: Stencil-Puffer für den Figuren-Umriss (three ≥ r163 ohne Stencil) */} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
           {m1 && <QualityDpr />}
           {m1 ? <Suspense fallback={null}><M1World /></Suspense> : stage ? <Suspense fallback={null}><Stage /></Suspense> : stagetest ? <Suspense fallback={null}><StageTest /></Suspense> : actortest ? <Suspense fallback={null}><ActorTest /></Suspense> : eyetest ? <Suspense fallback={null}><EyeTest /></Suspense> : <>
           {SCENE === 'planets' ? <>

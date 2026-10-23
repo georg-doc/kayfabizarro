@@ -13,6 +13,8 @@ import { worldPosOf } from '../m1/m1Host'
 import * as A from './kfbAudio.js'
 import { groupKey, stepKey, greetKey } from './cueMap.js'
 import { chatterOf } from '../characters/registry.js'
+import { decidedChatter } from './cueMap.js'
+const chatterFor = (e) => (e?.characterId ? chatterOf(e.characterId) : null) ?? decidedChatter(e) // Register zuerst, dann Georgs Wahl V-693
 import { createWaterIndexAsync, waterNear, stepSurface, hoverSurface } from './waterAudio.js'
 import { mountAudioPanel } from './audioPanel.js'
 
@@ -93,7 +95,7 @@ export default function AudioHost({ host }) {
     // NPC-Gruppen (WS-NPC): mods.groups.events() – Ringpuffer der letzten 60, älteste zuerst; je Ereignis einmal (Schlüssel group|type|id|t bzw. tag)
     const Gm = mods.groups; if (Gm?.events && H.t - (H.grAt || 0) > 0.1) { H.grAt = H.t; H.grSeen ||= new Set()
       for (const e of Gm.events() || []) { const key = groupKey(e); if (H.grSeen.has(key)) continue; H.grSeen.add(key); if (H.grSeen.size > 400) H.grSeen.delete(H.grSeen.values().next().value)
-        const h = mods.terrain?.height, p = Array.isArray(e.at) ? { x: e.at[0], y: (h ? h(e.at[0], e.at[1]) : pos.y) + 1, z: e.at[1] } : null; A.groupEvent(e, p) } }
+        const h = mods.terrain?.height, p = Array.isArray(e.at) ? { x: e.at[0], y: (h ? h(e.at[0], e.at[1]) : pos.y) + 1, z: e.at[1] } : null; A.groupEvent(e, p); A.chatter(e, p, chatterFor(e)) } }
     // Schritte und Hüpfer der NPCs (WS-NPC): groups.steps(), npc.steps(), fluffer.hops() – Ringpuffer, je Eintrag einmal (id|foot|t bzw. id|t)
     if (H.t - (H.stAt || 0) > 0.05) { H.stAt = H.t; H.stSeen ||= new Set(); const hh = mods.terrain?.height
       H.stInit ||= {}
@@ -114,12 +116,12 @@ export default function AudioHost({ host }) {
     // Auch hinter der Kamera (Culling ruht nur die Animation). Ohne events() der alte Weg über debug().events (nur der Ghost).
     const F = mods.fluffer; if (F?.events && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const list = F.events(), first = H.flSeq == null, last = list.at(-1)?.seq ?? 0; if (!first && last < H.flSeq) H.flSeq = 0 // Modul neu angelegt: seq beginnt von vorn
       let top = H.flSeq ?? 0; for (const e of list) { if (first || !(e?.seq > H.flSeq)) { top = Math.max(top, e?.seq || 0); continue } top = Math.max(top, e.seq)
-        const hh = mods.terrain?.height, m = e.mouth, at = Array.isArray(m) ? { x: m[0], y: m[1], z: m[2] } : Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 0.6, z: e.at[1] } : null; A.fluffer(e, at) }
+        const hh = mods.terrain?.height, m = e.mouth, at = Array.isArray(m) ? { x: m[0], y: m[1], z: m[2] } : Array.isArray(e.at) ? { x: e.at[0], y: (hh ? hh(e.at[0], e.at[1]) : pos.y) + 0.6, z: e.at[1] } : null; A.fluffer(e, at); A.chatter(e, at, chatterFor(e)) }
       H.flSeq = top
     } else if (F?.debug && !F.events && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const d = F.debug(), m = F.mouthWorld?.()
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, chatter: A.chatter, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }

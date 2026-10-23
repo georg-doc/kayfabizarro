@@ -18,8 +18,22 @@ export const REGISTER_UNSET = Object.freeze(['todo', 'PREFILL', 'DESIGN'])
 export function chatterFamily(chatter) {
   const f = chatter?.instrument, v = f && typeof f === 'object' ? f.v : f, st = f && typeof f === 'object' ? f.status : null
   if (!v || typeof v !== 'string' || REGISTER_UNSET.some((u) => u.toLowerCase() === String(st).toLowerCase())) return null // auch chatterOf(…, {prefill}) → status 'prefill'
-  const low = v.toLowerCase(); return Object.entries(CHATTER_FAMILIES).find(([k]) => low.startsWith(k.toLowerCase()))?.[1] ?? null // „Posaune mit Dämpfer“ → Posaune
+  // Wort im Namen: „Posaune mit Dämpfer“ → Posaune, „hohe Okarina“ → Okarina; „gestopfte Trompete“ hat noch keine Clips → null (Rückfall)
+  const words = v.toLowerCase().split(/[\s,·/()]+/); return Object.entries(CHATTER_FAMILIES).find(([k]) => { const kw = k.toLowerCase().split(' '); return words.some((_, i) => kw.every((w, j) => words[i + j] === w)) })?.[1] ?? null
 }
+// Tonlage aus dem Instrument-Namen: „hohe …“ eine große Sekunde höher, „tiefe …“ tiefer
+export function chatterRate(chatter) { const v = String(chatter?.instrument?.v ?? chatter?.instrument ?? '').toLowerCase(); return /^hohe?\b/.test(v) ? 1.12 : /^tiefe?\b/.test(v) ? 0.89 : 1 }
+// Georgs Familien-Wahl (Hub q178 „Vorschlag so“, WS0 V-693, 23.10.) – gilt nur, bis das Register sie trägt; ein gesetzter Register-Wert geht immer vor.
+// Skelette Kazoo (+ Klapper-Transient), Spielzeugsoldaten gestopfte Trompete, gothgirl Oboe, übrige Fluffer-Sorten hohe Okarina (Geist Säge, Aliens Theremin stehen im Register).
+// Orc-Band (Tuba) und Disco K12 (Talkbox) haben noch keinen Sprech-Anlass im Spiel.
+export function decidedChatter(e) {
+  const id = String(e?.characterId ?? ''), g = e?.group ?? ''
+  const v = g === 'skeleton_patrol' || id.startsWith('skeleton_') ? 'Kazoo' : g === 'toy_squad' || id.startsWith('toy_soldier') ? 'gestopfte Trompete' : id === 'gothgirl' ? 'Oboe'
+    : id.startsWith('q_') && id !== 'q_ghost' && !id.startsWith('q_alien') ? 'hohe Okarina' : null
+  return v ? { instrument: v, status: 'V-693' } : null
+}
+// Sprech-Anlässe außerhalb der Begrüßung: Gruppen (groups.events) und Dark Fluffer (fluffer.events) → Gefühl der Familie
+export const CHATTER_MOOD = Object.freeze({ aggro: 'aggressiv', awake: 'genervt', calm: 'neutral', ko: 'traurig', windup: 'aggressiv', healed: 'froh' })
 export const CUES = Object.freeze({
   ...CHATTER_CUES,
   // ── Boden-Fahrt (M2EVENTS aus k2t / vehicleRig) ─────────────────────────────────────────────────────────────

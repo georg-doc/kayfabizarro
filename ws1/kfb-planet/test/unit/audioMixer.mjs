@@ -6,7 +6,7 @@ import path from 'path'
 import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
 import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS } from '../../src/audio/cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
 
@@ -103,8 +103,13 @@ process.exit(report('audio-mixer', {
     && greetCues({ id: 'lorekeeper', reason: 'fight' }, { instrument: { v: 'Klarinette', status: 'PREFILL' } })[0] === 'greet.lorekeeper.fight'
     && Object.keys(CHATTER_FAMILIES).length === 13 && CHATTER_MOODS.length === 13 && Object.keys(CUES).filter((k) => k.startsWith('chatter.')).length === 169
     && chatterFamily({ instrument: 'Melodica', status: 'set' }) === 'F13_melodica' && CUES['chatter.F13_melodica.froh'].set === 'chatter_families_r2_melodica',
+  // Georgs Familien-Wahl q178 (V-693) bis das Register sie trägt; Wort-Treffer im Instrument-Namen, „hohe“ = höher
+  decidedChatterV693: decidedChatter({ group: 'skeleton_patrol', characterId: 'skeleton_rogue' }).instrument === 'Kazoo' && decidedChatter({ group: 'toy_squad' }).instrument === 'gestopfte Trompete'
+    && decidedChatter({ characterId: 'gothgirl' }).instrument === 'Oboe' && decidedChatter({ characterId: 'q_deer' }).instrument === 'hohe Okarina' && decidedChatter({ characterId: 'q_ghost' }) === null && decidedChatter({ characterId: 'q_alien_tall' }) === null && decidedChatter({ group: 'bot_crew' }) === null
+    && chatterFamily({ instrument: 'hohe Okarina', status: 'V-693' }) === 'F04_ocarina' && chatterFamily({ instrument: 'Kazoo' }) === null && chatterFamily({ instrument: 'gestopfte Trompete' }) === null && chatterFamily({ instrument: 'Singende Säge' }) === 'F09_saw'
+    && chatterRate({ instrument: 'hohe Okarina' }) > 1.1 && chatterRate({ instrument: 'Klarinette' }) === 1,
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
-    && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -4 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
+    && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -7 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),
   ws0CombatAvDelivered: LAUNCH.bow[0][0] === 'k10.bowRelease' && LAUNCH.crossbow[0][0] === 'k10.crossbowRelease' && LAUNCH.magic[0][0] === 'k10.magicCast' && LAUNCH.dice[0][0] === 'k10.diceFlick'
     && k10Plan({ type: 'contact', target: 'player' }).layers[0][0] === 'k10.playerHurt' && k10Plan({ type: 'contact', target: 'player', weapon: 'bite' }).layers[0][0] === 'k10.mobBite' && k10Plan({ type: 'kill' }).layers[0][0] === 'k10.kill'

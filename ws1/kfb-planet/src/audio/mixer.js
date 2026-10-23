@@ -5,7 +5,7 @@ export const DEFAULT_VOLUMES = Object.freeze({ master: 0.9, music: 0.55, sfx: 0.
 // Semantische Ziele der WSA-Module (Audio Site 0.7.6) → Bus des Spiels
 export const SEMANTIC = Object.freeze({ PLAYER_CRITICAL: 'sfx', WORLD_SFX: 'sfx', GLOBAL_BED: 'atmo', LOCAL_AMBIENCE: 'atmo', SCORE: 'music', UI: 'ui' })
 // Ducking (dB, negativ): laute SFX (Kampf, Crash, Explosion) und Dialog senken die Musik; Atmo regelt kfb-ambience.v1 selbst (−5 unter Musik, −6 Kampf)
-export const DUCK = Object.freeze({ loudSfxDb: -7, dialogueDb: -9, voiceDb: -4, boostDb: -2, attack: 0.12, release: 1.2 })
+export const DUCK = Object.freeze({ loudSfxDb: -7, dialogueDb: -9, voiceDb: -7, boostDb: -2, attack: 0.12, release: 1.2 })
 export const dbToGain = (db) => 10 ** (db / 20)
 export function musicDuckDb({ loud = false, dialogue = false, boost = false, voice = false } = {}) {
   return Math.min(0, loud ? DUCK.loudSfxDb : 0, dialogue ? DUCK.dialogueDb : 0, voice ? DUCK.voiceDb : 0, boost ? DUCK.boostDb : 0)

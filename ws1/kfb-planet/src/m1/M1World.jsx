@@ -41,6 +41,7 @@ import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheat
 import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/shadeFloor' // V-683: Schattenseite aller Nicht-Gelände-Objekte (shade=1, A/B)
 import { FIGLIGHT_ON, FIG_LIGHT_TEST, attachFigureLights } from '../look/figureLights' // Figurenlicht R1 (Georg 23.10.): je Figur, die nächsten vier, immer, mit Lichtkreis (figlight=1, A/B)
 import { FIGAMB_ON, FIG_AMB_TEST, applyFigureAmbient, updateFigureAmbient } from '../look/figureAmbient' // Georg 23.10.: Figuren lesbar mit bestehendem Licht (figamb=1, A/B)
+import { OUTLINE_ON, OUTLINE_TEST, createFigureOutline } from '../look/figureOutline' // Probe Georg 23.10.: Umriss nur außen für Figuren (outline=1)
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -217,7 +218,7 @@ const amphGround = () => { const A = mods.amph; if (A?.status?.().status !== 'OK
   return { id: 'amph', kind: 'amph', x: 0, z: 0, r: Math.min(...R), radii: (a) => { const t = (((a / (2 * Math.PI)) % 1 + 1) % 1) * 64, i = Math.floor(t) % 64, f = t - Math.floor(t); return R[i] * (1 - f) + R[(i + 1) % 64] * f }, gaps: [[Math.PI / 2 - 0.36, Math.PI / 2 + 0.36]] } }
 const GROUND_OPTS = { terrain: () => mods.terrain, palette: TERRAIN3 ? (TERRAIN3_CFG.palettes[T3_PAL] || TERRAIN3_CFG.palettes.mesa) : { sand: BIOME.top, low: BIOME.top, mid: BIOME.top, high: BIOME.top, cliff: '#6b5a4a' },
   neverBlackRoots: () => [mods.orchard?.object3d],   // Kronen-Unterseiten nie schwarz (V-570)
-  sources: () => [amphGround(), ...(mods.lanterns?.anchors?.() || []), ...(mods.orchard?.trees?.() || []).map((t) => ({ id: 'tree:' + t.zone + ':' + t.id, kind: 'tree', x: t.pos[0], z: t.pos[2], r: 0.24 })), ...(mods.found?.anchors?.() || [])] }
+  sources: () => [amphGround(), ...(mods.lanterns?.anchors?.() || []), ...(mods.orchard?.trees?.() || []).map((t) => ({ id: 'tree:' + t.zone + ':' + t.id, kind: 'tree', x: t.pos[0], z: t.pos[2], r: 0.24 })), ...(mods.found?.anchors?.() || []), ...(mods.orchard?.balls?.() || []).filter((b) => b.state === 'resting').map((b) => ({ id: 'fall:' + b.key, kind: 'item', x: b.p[0], z: b.p[2], r: (b.r || 0.12) * 0.95 }))] }   // Fallobst: kleiner Erdkeil (eingesunken, Georg 23.10.)
 const makeGround = mk('ground', createGroundContact)
 const makeLanterns = mk('lanterns', createGemLanterns), makePract = mk('practicals', createPracticals)
 const makeSuck = mk('suck', createFluffSuck), SUCK_OPTS = { maxJobs: 24, onCue: (c, j) => { HARVEST_STATE.cues = (HARVEST_STATE.cues || 0) + 1; HARVEST_STATE.lastCue = c; SUCK_AUDIO.a?.cue(c, j) } }, SUCK_AUDIO = { a: null } // Ton ab dem ersten T (Browser-Regel)
@@ -386,6 +387,13 @@ function ShadeFloor() {
 }
 
 // nsh=1: Schattenstärke der Sonne bzw. des Mondes folgt glow (Tag Rig-Wert, Nacht NSH.shadowNight); das Rig setzt seinen festen Wert je Bild, hier wird er als Basis gelesen
+// Probe Umriss nur außen (outline=1): Stencil-Hülle für Spieler + 5 nächste Figuren
+function FigureOutline() {
+  const { scene, gl } = useThree(), ref = useRef(null)
+  useEffect(() => { const F = createFigureOutline({ scene, player: () => mods.player?.object3d || null }); ref.current = F; expose('Outline', { test: OUTLINE_TEST, status: F.status }); return () => { ref.current = null } }, [scene])
+  useFrame((_, dt) => ref.current?.update(dt, gl))
+  return null
+}
 function NightShadow() {
   useFrame(() => { const sh = mods.light?.lights?.sun?.shadow; if (!sh) return
     if (!sh.userData) sh.userData = {}
@@ -603,6 +611,7 @@ function M1World() {
       <HostEnv />
       {TERRAIN3 && <FootShade />}
       {NSH_ON && <NightShadow />}
+      {OUTLINE_ON && <FigureOutline />}
       {SHADE_ON && <ShadeFloor />}
       {FIGLIGHT_ON && <FigureLights />}
       <LightPools />

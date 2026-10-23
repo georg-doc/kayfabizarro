@@ -15,6 +15,7 @@ import { createOrchard } from '../world/harvest.js'
 export const FOREST_PIN = '54b9bb669fda8a5bc3d76a0743884473d04c1f50'
 const FOREST = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${FOREST_PIN}/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/`
 export const CANOPY = ['Tree_1_A_Color1', 'Tree_1_B_Color1', 'Tree_2_B_Color1', 'Tree_2_C_Color1', 'Tree_3_A_Color1', 'Tree_3_B_Color1', 'Tree_3_C_Color1', 'Tree_4_A_Color1', 'Tree_4_B_Color1']
+export const REST_LOOK = { sink: 0.45 }   // Anteil des Radius: ruhende Kügelchen sinken ein (Georg 23.10.: einsinken ja, abplatten nein – bleiben rund); sink 0 = alter Stand
 export const ORCHARD = Object.freeze({ trees: 5, spacing: [5.5, 8.5], reach: 1.9, shotRange: 26, blastRange: 22, wiggle: 0.5, priorityBehind: 1.5 }) // priorityBehind: Georg 21.10. (a)
 // WS-NPC Phase C (V-583 Dark Fluffer, Lead-OK 21.10. b): ein Baum wird „tainted“ – nur Darstellung + Weltzustand, keine 7. Sorte. Die Kügelchen
 // werden dunkel (Instanzfarbe Richtung Tinte #1f1a14), fallen über den vorhandenen Treffer-Weg, bleiben liegen und sinken nach sinkAfter s in sinkDur s ein
@@ -166,6 +167,10 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
         if (b.tainted && b.state === 'resting') { b.sinkT = (b.sinkT ?? 0) + dt; const u = Math.min(1, Math.max(0, (b.sinkT - TAINT.sinkAfter) / TAINT.sinkDur)) // einsinken nach der Ruhezeit
           if (u >= 1) { b.state = 'sunk'; mesh.setMatrixAt(i, zero); return }
           mesh.setMatrixAt(i, m4.compose(p3.set(p[0], p[1] - r * 2 * u, p[2]), q, s3.setScalar(r * (1 - 0.35 * u)))); return }
+        // V-654 C6 / Kritiker R3 („schwebender dunkler Stein“): ruhende Kügelchen berührten den Boden nur in einem Punkt und lasen sich als schwebend –
+        // sie setzen sich: 45 % des Radius eingesunken (Erdkeil ringsum über world/grounding), rund (kein Abplatten, Georg 23.10.), weich über 0,25 s nach dem Landen
+        if (b.state === 'resting') { b.restT = Math.min(1, (b.restT ?? 0) + dt / 0.25); const u = b.restT * b.restT * (3 - 2 * b.restT)
+          mesh.setMatrixAt(i, m4.compose(p3.set(p[0], p[1] - r * REST_LOOK.sink * u, p[2]), q, s3.setScalar(r))); return }
         mesh.setMatrixAt(i, m4.compose(p3.fromArray(p), q, s3.setScalar(r)))
       })
       mesh.instanceMatrix.needsUpdate = true
@@ -180,6 +185,7 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
       for (let i = fx.length - 1; i >= 0; i--) { const e = fx[i]; e.t += dt; const u = Math.min(1, e.t / e.dur); e.m.scale.setScalar(e.r0 + (e.r1 - e.r0) * u); e.m.material.opacity = 0.9 * (1 - u); if (u >= 1) { root.remove(e.m); e.m.material.dispose(); fx.splice(i, 1) } }
     },
     counts: () => state.counts(),
+    restLook: REST_LOOK,
     status: () => ({ status: state0.status, shown: state0.status === 'OK' }), // für das Knet-Modul (wartet auf geladene Bäume)
     balls: () => balls.map((b) => ({ key: b.key, zone: b.key.split(':')[0], kind: b.kind, state: b.state, p: (b.state === 'hanging' ? b.anchor : b.body?.p || b.anchor).slice(), r: b.r })),
     stats: () => ({ status: state0.status, error: state0.error, trees: trees.length, loaded: state0.loaded, balls: balls.length, zones: orchards.map((o) => ({ zone: o.zone, ...o.stats() })), shots: info.shots, blasts: info.blasts, hits: info.hits.length, targetHits: info.targetHits.length }),
