@@ -1,7 +1,30 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §150.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§150 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §151.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§151 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 151 · 23.10. · Georgs Urteile (für V-692 ff.): Figuren-Belichtung und Nacht-Mondschatten sind Standard · Staubfahne läuft · offen: Gold-Licht
+
+- **Figuren lesbar, Belichtung nur für Figuren (`figamb`): STANDARD** (Georg: „finde ich gut, auch die Farbigkeit“).
+  - Faktor nach mood.glow: Tag 1,0, Nacht 2,6.
+  - Multiplikativ, ohne neues Licht, Boden unberührt.
+  - mvp c1f75e0; `figamb=0` zeigt den alten Stand.
+  - Damit kann WS0 V-385 / Regel 11 nachziehen: kein privates Licht, sondern eine Materialantwort nur auf Figuren; das Figurenlicht aus Regel 11 entfällt.
+- **Nacht-Mondschatten (`nsh`): STANDARD** (Georg: „passt, können wir so nehmen, später tunen“).
+  - Nachts Mond ×1,7, Himmelsfüllung ×0,7, Schattenstärke nach glow bis 1,0. Gesamthelligkeit +8 %.
+  - mvp 7f498ca; `nsh=0` zeigt den alten Stand.
+  - Feinschliff später: Bodenkontakt direkt unter den Figuren etwas dunkler (OFFENE_PUNKTE).
+  - Achtung Kanon: R2 Regel 6 bzw. die Nachtwerte im LIGHT_MODEL entsprechend nachziehen.
+- **Staubfahne:**
+  - Erste Fassung (ws1/staub-probe 49b9e39, `dust3=1`): Richtung stimmt (Weltkoordinaten, Kurve, keine dunklen Punkte), gegen Georgs Vorlage etwa ⅓ der Masse.
+  - Georg: „mehr Staubvolumen, warten wir ab“.
+  - WS1b verlegt jetzt die Bewegung auf die GPU (Vertex-Shader, Ringpuffer). Ziel ist ein Vielfaches an Partikeln, dazu Wachstum und Aufsteigen für Volumen.
+- **Abnahmen aus §149:** Präsentation bei Georg erledigt (WS0-Bitte „direkt präsentieren“). Ergebnisse siehe §149 bis §151.
+  - Kit-Knete 0/1/2 war in der Auflösung nicht beurteilbar und ruht.
+  - Schattenseite (shade=1) ist durch figamb ersetzt.
+  - Startseite: raus.
+  - **Offen: Gold-Licht (Mesa behalten oder ruhigere A/B-Variante)**, die Frage liegt bei Georg.
+- **Kritiker R4:** nach dem nächsten getesteten Sammelstand (Kegel, figamb, nsh als Standard).
 
 ## 150 · 23.10. · NOTIZ FÜR WS0 UND WEBCHAT (Georg bittet um Übernahme) · Regel „Intent First“ entdoppeln, keine Anti-Knete-Drift, Staubfahne läuft · dazu Stand WS1
 
