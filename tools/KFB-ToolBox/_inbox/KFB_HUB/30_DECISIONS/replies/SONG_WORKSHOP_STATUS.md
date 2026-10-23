@@ -586,3 +586,9 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
 ## §29 · 24.10.2026 · SSOT-Modul gesprochene Kartenzeilen + Tratsch-Triplets tr1 (11 Decks)
 - **SSOT-Modul** `SSOT_SPOKEN_LINES/` (README, rules.json, spoken_line_lint.py, TR1_INDEX.json, tr1_cards/): verbindlich für Songs, Triplet-Sets, Chatterbox, Karten-Tratsch, Narrator. Georg 24.10.: „ich habe das alles schon zigmal korrigieren müssen, da muss ein SSOT-Modul draus werden.“ **Auftrag an WS0:** Specs (TRIPLET_SET_SPEC_R2, SONG_SPEC_R4, OPENER_ARC_MODEL_R1) auf das Modul verweisen lassen; Änderungen nur hier. **An WS1/WS-NPC:** Tratsch-Laufzeit nach README §4/§5 und TR1_INDEX.json.
 - **tr1** (Georg 24.10.: „ja, mach die 11 Tratsch-Decks so“ nach Probe Mission Control): 11 Decks, 530 Zeilen, Lint 0 FAIL je Deck; Tonfall: 25 Karten in 9/11, Geopolitik, Shadow Politics gesperrt (`*.tr1.blocked.json`, nie sprechen) – Entscheidung Georg/WS0. Entwurf, nicht abgenommen.
+
+
+## §30 · 24.10.2026 · An WS0: SSOT_SPOKEN_LINES als Code und Daten zu TRIPLET_SSOT_R1 (V-698) – Prüfauftrag
+- **Abgleich mit WS0:** `TRIPLET_SSOT_R1.md` (V-698, V-699, V-700) ist maßgeblich. `SSOT_SPOKEN_LINES/` schreibt keine Regeln mehr ab, sondern liefert Code und Daten: `spoken_line_lint.py`, `lore_fallback.py`, `checks.json` (Check → V-Nummer bzw. Vorschlag), `TR1_INDEX.json` + `tr1_cards/`, tr1-Sets und Sperrlisten der 11 Tratsch-Decks.
+- **Was im TRIPLET_SSOT fehlt → `SSOT_SPOKEN_LINES/VORSCHLAG_AN_WS0_R1.md` §0** (8 Punkte): Rückfall = Titel + bereinigte Lore, Power nie (Georg 23./24.10.; TRIPLET_SSOT §2 sagt noch „roh“); Lore-Bereinigung; Bühnen-Dialog A/B; Opener bettet ein (Satzbau, Haltungen, Pool nach Haltung); Sperrliste heikler Karten; „and then“ = FAIL; Hörerwissen/kein Klischee + Song-Form t4; Prüfskript-Lücken.
+- **Bitte an WS0:** übernehmen oder verwerfen, Gate und Prüfer laufen lassen. Bis dahin Status VORSCHLAG.

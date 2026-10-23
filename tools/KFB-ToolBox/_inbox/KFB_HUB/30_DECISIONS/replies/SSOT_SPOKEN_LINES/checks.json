@@ -1,51 +1,51 @@
 {
- "schema": "kfb.ssot.spoken-lines/1",
- "revision": "R1",
+ "schema": "kfb.spoken-lines.checks/1",
+ "revision": "R1.3",
  "date": "2026-10-24",
- "owner": "WS0 (Änderung nur mit Georg)",
- "lint": "spoken_line_lint.py",
- "rules": [
+ "ssot": "replies/TRIPLET_SSOT_R1.md (V-698)",
+ "note": "Zuordnung Check → Quelle. Einträge ohne V-Nummer sind Vorschläge (VORSCHLAG_AN_WS0_R1.md) bis zur Übernahme durch WS0.",
+ "checks": [
   {
    "id": "S1",
    "rule": "Kein Doppelpunkt, nie 'Titel: …'; Titel steht im Satz.",
    "level": "FAIL",
    "check": "lint:colon",
-   "source": "Georg 24.10."
+   "source": "V-700"
   },
   {
    "id": "S2",
    "rule": "Ganze Sätze, kurz, Comic, Flow; keine Fragmente/Telegramm.",
    "level": "FAIL",
    "check": "lint:telegram(WARN)+human",
-   "source": "Georg 23.–24.10."
+   "source": "V-700"
   },
   {
    "id": "S3",
    "rule": "Keine Satzschablone über das Deck.",
    "level": "FAIL",
    "check": "lint:deck-template(WARN)+human",
-   "source": "Georg 24.10."
+   "source": "V-700 (Satzform wechselt)"
   },
   {
    "id": "S4",
    "rule": "Nicht vorlesen; Aussage + Pointe der Karte.",
    "level": "FAIL",
    "check": "human (lint:lore-identity WARN)",
-   "source": "Georg 21./23.10."
+   "source": "V-266/V-373"
   },
   {
    "id": "S5",
    "rule": "Nur Kartenwörter + Grammatik, max. ein Fluff-o-lect-Wort.",
    "level": "FAIL",
    "check": "lint:card-words",
-   "source": "TRIPLET_SET_SPEC_R2"
+   "source": "V-266"
   },
   {
    "id": "S6",
    "rule": "Regelmechanik nie als Regel; Power im Tratsch-Rückfall nie.",
    "level": "FAIL",
    "check": "lint:mechanics(WARN)+human",
-   "source": "V-372, Georg 23.10."
+   "source": "V-372"
   },
   {
    "id": "S7",
@@ -59,98 +59,112 @@
    "rule": "Opener bettet ein: Opener + Zeile = ein Satz; nie lose Wörter, nie Ballast-Satz.",
    "level": "FAIL",
    "check": "human",
-   "source": "Georg 21./23.10."
+   "source": "VORSCHLAG (Georg 21./23.10.)"
   },
   {
    "id": "S9",
    "rule": "Kein Opener doppelt; Familienabstand >= 10; Frage/Behauptung wechseln.",
    "level": "FAIL",
    "check": "runtime/lint(opener)",
-   "source": "V-280, Georg 23.10."
+   "source": "VORSCHLAG (V-280, Georg 23.10.)"
   },
   {
    "id": "S10",
    "rule": "Nur was der Hörer kennt (kein Asset-Wissen, keine Bildbeschreibung ohne Bild).",
    "level": "FAIL",
    "check": "human",
-   "source": "Georg 21.10."
+   "source": "VORSCHLAG (Georg 21.10.)"
   },
   {
    "id": "S11",
    "rule": "Absurd statt Klischee (kein Büro/HR/Sitcom).",
    "level": "FAIL",
    "check": "human",
-   "source": "Georg 23.10."
+   "source": "VORSCHLAG (Georg 23.10.)"
   },
   {
    "id": "S12",
    "rule": "Tonfall heikle Decks (9/11, Verschwörung, Therapie).",
    "level": "FAIL",
    "check": "human",
-   "source": "SONG_SPEC_R3 E16b"
+   "source": "VORSCHLAG (SONG_SPEC_R3 E16b)"
   },
   {
    "id": "S13",
    "rule": "Lint/Gate-PASS ist kein Qualitätsbeweis.",
    "level": "FAIL",
    "check": "process",
-   "source": "POSTMORTEM R1"
+   "source": "VORSCHLAG (POSTMORTEM R1)"
   },
   {
    "id": "W1",
    "rule": "Länge 50–100 Zeichen; Tratsch <=110, Song <=120.",
    "level": "WARN",
    "check": "lint:length",
-   "source": "WS-NPC T5"
+   "source": "VORSCHLAG (WS-NPC T5)"
   },
   {
    "id": "W2",
    "rule": "<=70 % Zeilen mit Titel vorn; kein Folgewort nach Titel >25 %.",
    "level": "WARN",
    "check": "lint:deck-template",
-   "source": "Georg 24.10."
+   "source": "VORSCHLAG (Georg 24.10.)"
   },
   {
    "id": "W3",
    "rule": "Kein Semikolon.",
    "level": "WARN",
    "check": "lint:semicolon",
-   "source": "Georg 24.10."
+   "source": "V-700"
   },
   {
    "id": "W4",
    "rule": "Kartentext: Set >=90 %, Song ~70–80 %.",
    "level": "WARN",
    "check": "make_marked/builder",
-   "source": "Georg 21./23.10."
+   "source": "VORSCHLAG (Georg 21./23.10.)"
   },
   {
    "id": "F1",
    "rule": "PDF führt immer; JSON wird nachgezogen.",
    "level": "FAIL",
    "check": "data",
-   "source": "Georg 23.10."
+   "source": "V-242/V-696"
   },
   {
    "id": "F2",
    "rule": "Tratsch-Rückfall ohne Triplet: Titel + gedruckte Lore + POOL-Opener, Power nie, 'roh' markiert.",
    "level": "FAIL",
    "check": "runtime",
-   "source": "Georg 23.10. (b)"
+   "source": "VORSCHLAG (Georg 23.10. (b))"
   },
   {
    "id": "F3",
    "rule": "Song = Best-of nach Dramaturgie, nie die ersten N.",
    "level": "FAIL",
    "check": "human",
-   "source": "SONG_SPEC_R3 12b, Georg 23.10."
+   "source": "SONG_SPEC_R3 12b"
   },
   {
    "id": "F4",
    "rule": "Erst Probe (8–10 Zeilen) an Georg, dann skalieren.",
    "level": "FAIL",
    "check": "process",
-   "source": "POSTMORTEM R1/R2"
+   "source": "VORSCHLAG (POSTMORTEM R1/R2)"
+  },
+  {
+   "id": "D1",
+   "rule": "Bühnen-Dialog: A = POOL-Opener + Triplet bzw. Titel (ein Satz); B = Social Call/Erwiderung + Nachlegen bzw. bereinigte Lore; Power nie.",
+   "level": "FAIL",
+   "check": "runtime",
+   "source": "VORSCHLAG (Georg 24.10. via WS1-Lead)"
+  },
+  {
+   "id": "D2",
+   "rule": "Lore-Bereinigung im Rückfall: Klammern, Titel-/Versalien-Etiketten, Stat-/Power-Angaben, Doppelpunkte entfernen (lore_fallback.clean_lore).",
+   "level": "FAIL",
+   "check": "lore_fallback.py",
+   "source": "VORSCHLAG (Georg 24.10. via WS1-Lead)"
   }
  ]
 }

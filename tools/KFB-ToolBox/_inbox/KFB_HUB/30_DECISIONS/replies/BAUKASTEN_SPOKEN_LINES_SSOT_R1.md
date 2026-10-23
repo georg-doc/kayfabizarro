@@ -1,4 +1,4 @@
-> **Aufgegangen in `SSOT_SPOKEN_LINES/README.md` (R1, 24.10.2026).** Dieses Dokument bleibt als Herleitung; verbindlich ist das Modul.
+> **Historisch (Herleitung).** Verbindlich ist `TRIPLET_SSOT_R1.md` (WS0, V-698/V-699/V-700). Was dort fehlt, steht als Vorschlag in `SSOT_SPOKEN_LINES/VORSCHLAG_AN_WS0_R1.md`; Code und Daten in `SSOT_SPOKEN_LINES/`.
 
 # Baukasten · gesprochene Kartenzeilen (Chatterbox, Triplets, Songs) · SSOT-Vorschlag R1 · 23.10.2026
 **R1.2 (24.10.):** §2.2 kein Doppelpunkt hinter dem Titel, Titel steht im Satz; §2.2b keine Satzschablone über das Deck (Georg 24.10.). Folge: Die t4-Songs (BBBW, Protopia, Bullshit Jobs, Jung and Shinn) enthalten noch „Titel: …“-Stellen und werden im Tune danach bereinigt.
