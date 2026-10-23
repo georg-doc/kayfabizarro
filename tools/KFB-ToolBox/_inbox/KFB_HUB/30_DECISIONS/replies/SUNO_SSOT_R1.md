@@ -27,7 +27,7 @@ Erfahrungen aus der Community, keine offizielle Suno-Doku. Tags sind Hinweise, k
 ## 4 · Stems
 - **Standard-Split** nach Gruppen: Lead/Backing Vocals, Drums, Bass, Guitar, Keyboard, Percussion, Strings, Synth, Other, Brass, Woodwinds. Instrumente einer Gruppe landen im selben Stem.
 - **Advanced Split (Beta)** nach Einzelinstrumenten, z. B. Violin, Viola, Cello, French Horn, Trumpet, Trombone, Tuba, Harp sowie Saxophon-Varianten. Ausgangsmaterial ist derselbe Track.
-- **Vorsicht beim Advanced Split:** Er liefert auch Stems für Instrumente, die gar nicht spielen (im Orchester 2 vier Saxophon-Varianten). Deren Phrasen überschneiden sich zu 56–58 % mit anderen Stems, das ist Übersprechen. Eigenständig waren dort Geige und Bratsche. Vor der Verwendung anhören und doppelte Phrasen entfernen.
+- **Advanced Split richtig nutzen:** Die Instrumente wählt man beim Export selbst aus. Nur Instrumente anfordern, die im Prompt bzw. im Track wirklich spielen. Ein fehlendes Instrument liefert Übersprechen: Im Orchester 2 deckten sich die probeweise angeforderten Saxophon-Stems zu 56–58 % mit der Trompete. Instrumente mit ähnlichem Register können sich ebenfalls überschneiden (Horn und Posaune 62 %), deshalb vor der Verwendung Doppelte entfernen.
 - **Immer beide** exportieren und ablegen unter `40_AUDIO/chatterbox_r1/suno_tests/<song>/stems/` bzw. `stems_advanced/`.
 
 ## 5 · Bausteine (Prompts)

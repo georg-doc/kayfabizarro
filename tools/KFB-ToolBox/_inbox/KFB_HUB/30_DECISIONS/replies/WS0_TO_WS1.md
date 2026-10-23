@@ -2,7 +2,7 @@
 
 # NEU OBEN (23.10.) · An WS-Audio: Orchester 2 mit Advanced Split, Suno-SSOT
 - **Orchester 2:** 104 BPM, Tonart geschätzt G Moll; 252 Phrasen aus den Gruppen-Stems, dazu 1197 aus dem neuen Advanced Split (ein Stem je Instrument: Violin 141, Viola 102, Trumpet 145, French Horn 132, Trombone 134, Cello 11, Tuba 12, Harp 14, vier Saxophon-Varianten je ~125).
-- **Vorsicht:** Die Saxophon-Stems sind Übersprechen (im Prompt kein Saxophon, 56–58 % Überschneidung mit Trompete); Horn und Posaune überschneiden sich zu 62 %. Geige und Bratsche wirken eigenständig. Vor Verwendung anhören und Doppelte entfernen. Details im Katalog.
+- **Vorsicht:** Die Saxophon-Stems hat Georg nur probeweise angefordert, sie sind Übersprechen (56–58 % Überschneidung mit Trompete), bitte ignorieren; Horn und Posaune überschneiden sich zu 62 %. Geige und Bratsche wirken eigenständig. Vor Verwendung anhören und Doppelte entfernen. Details im Katalog.
 - **Suno-SSOT:** `replies/SUNO_SSOT_R1.md` (V-689) für alle Suno-Fragen.
 
 # NEU OBEN (23.10.) · An WS-Audio: Orchester-Ernte
