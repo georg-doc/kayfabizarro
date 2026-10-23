@@ -2,6 +2,44 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 15 · 23.10. · Georgs Familien-Wahl (q178) und Begrüßung −7 dB (q179) umgesetzt · V-693
+
+**Stand:** `ws-audio/r1` @4bae98a (auf mvp @7835515 aufgesetzt), Merge-Wunsch an den Lead.
+
+**q179:** Die Begrüßung senkt die Musik jetzt um **−7 dB** (vorher −4 dB). Im Test gemessen: −7.
+
+**q178: neue Sprech-Anlässe.** Bisher „sprach“ nur die Begrüßung. Jetzt spielen auch folgende Anlässe die Familie der Figur:
+
+| Quelle | Anlass → Gefühl |
+|---|---|
+| Gruppen (`groups.events`) | aggro → aggressiv, awake → genervt, calm → neutral, ko → traurig |
+| Dark Fluffer (`fluffer.events`) | windup → aggressiv, healed → froh |
+
+- Die bisherigen Gruppen- und Fluffer-Töne bleiben; der Sprechlaut kommt 0,12 s danach.
+- Je Gruppe bzw. Figur und Anlass höchstens alle 1,5 s.
+
+**Woher das Instrument kommt:** zuerst das Register (über `characterId` des Ereignisses), sonst Georgs Wahl V-693 als Übergangstabelle `decidedChatter` in `cueMap.js`, bis WS0 sie ins Register einträgt. Ein gesetzter Register-Wert geht immer vor. Sichtbar je Figur in `__kfbAudio.stats().chatter` als `set:<Familie>`, `V-693:<Familie>` oder `fallback`.
+
+| Figur (im Spiel) | Instrument | Quelle | klingt heute |
+|---|---|---|---|
+| Bots (kayfabrick_bot × 3) | Melodica | Register SPEC | ja, F13 |
+| Geist (q_ghost) | Singende Säge | Register | ja, F09 |
+| Aliens (q_alien, q_alien_tall) | Theremin | Register | ja, F06 |
+| übrige Fluffer-Sorten (q_*) | hohe Okarina | V-693 | ja, F04, etwa eine große Sekunde höher |
+| Skelette (skeleton_warrior/rogue/mage) | Kazoo + Klapper-Transient | V-693 | **nein: keine Kazoo-Clips**, bisherige Gruppen-Töne |
+| Spielzeugsoldaten (toy_soldier × 6) | gestopfte Trompete | V-693 | **nein: keine Clips**, bisherige Gruppen-Töne |
+| gothgirl | Oboe | V-693 | Familie da (F10), aber noch kein Sprech-Anlass im Spiel |
+| Orc-Band | Tuba | V-693 | Familie da (F11), aber kein Sprech-Anlass (Band spielt Musik) |
+| Disco K12 | Talkbox | V-693 | Familie da (F08), aber kein Sprech-Anlass |
+
+**An WS0:**
+1. Bitte V-693 ins Register eintragen (`chatter.instrument`). Danach entfällt die Übergangstabelle; Band und Disco brauchen dafür feste IDs.
+2. **Kazoo und gestopfte Trompete:** neue Clips nach Georgs Go (q177), im Raster wie `chatter_families_r1`. Bis dahin spielt WS-Audio **nichts Zusätzliches**, auch keine Trumpet-Phrasen aus der Ernte. Grund: offene Trompete ≠ gestopfte Trompete, und die Phrasen haben kein Gefühls-Raster. Die bisherigen Gruppen-Töne tragen weiter.
+3. Den **Klapper-Transient** (Spec §3) für Skelette gibt es als Ton noch nicht. Bitte mit den Kazoo-Clips liefern oder einen vorhandenen Clip nennen.
+4. Für gothgirl, Orc-Band und Disco fehlt ein Sprech-Anlass. Das wäre eine Entscheidung für WS-NPC bzw. WS0, z. B. Bemerken des Spielers oder Song-Ende.
+
+**Tests:** audio-mixer (neu: `decidedChatterV693`, Duck −7), characterRegistry, contract-static und audio (headless, neu: `chatterOccasions`) alle PASS. Hauptthread 0,14 ms/Bild, p95 0,3 ms.
+
 ## 14 · 23.10. · Melodica eingebaut, Musik-Katalog einlesbar · Antwort auf WS0_TO_WS1 (23.10.)
 
 **Stand:** `ws-audio/r1` @4d3e498 (auf mvp 7f498ca aufgesetzt), Merge-Wunsch an den Lead.
