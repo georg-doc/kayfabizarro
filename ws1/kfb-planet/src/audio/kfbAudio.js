@@ -301,6 +301,14 @@ function pulseTick(t) {
   PULSE = { ...G.pulse(t, G.pulseBytes, playing ? 1 : 0), activeSources: playing ? [{ sourceId: 'JUKEBOX', sourceType: 'music', audibleGain01: +sliderGain(S.vol.music).toFixed(3) }] : [] }
 }
 export const musicPulse = () => PULSE
+// Musik-Katalog der Suno-Ernte (WS0 V-688): nur lesen. harvestPhrases(song, family) lädt das Manifest und liefert die eigenständigen Phrasen (ohne dup_of)
+// mit url, Grundton, Kontur, Länge, LUFS und Einsatz in Schlägen – Abspielen folgt erst mit der Register-Zuordnung (chatter.motif/grains)
+export const musicCatalog = () => S.index?.catalog ?? null
+export async function harvestPhrases(song, family) {
+  const h = S.index?.catalog?.songs?.find((s) => s.id === song)?.harvest?.find((x) => x.family === family); if (!h?.manifest) return null
+  const m = await getJson(AUDIO_ROOT + 'chatter/' + h.manifest).catch(() => null); if (!m) return null; const dir = h.manifest.replace(/[^/]+$/, '')
+  return (m.items || []).filter((x) => !x.dup_of).map((x) => ({ ...x, url: AUDIO_ROOT + 'chatter/' + dir + x.file }))
+}
 // Begrüßung eines Bewohners (WS-NPC 'greet'): Stimm-Laut am Kopf der Figur, Musik kurz −4 dB; eigene Stimme, sonst Platzhalter
 export function greet(e, pos = null, chatter = null) { // chatter: Register-Block der Figur (V-682), sonst null
   if (S.mode !== 'full') return null

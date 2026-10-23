@@ -5,12 +5,14 @@
 // Dark Fluffer 0,8 m statt 1,1 m (WS0 V-616, Georg 21.10.: kleiner, passend zu KayKit) → Klänge 4 % höher (kleinerer Körper)
 export const FLUFFER_PITCH = 1.04
 export const FLUFFER_RANGE = 120 // m: Fluffer-Ereignisse weiter weg bleiben still (K15: Fluffer in drei Obstgarten-Zonen; bei 120 m ohnehin ≈ −30 dB)
-// Chatterbox-Familien (WS0 chatter_families_r1, V-663/V-678): 12 Solo-Instrumente × 9 Gefühle + 4 Rufe, je 0,8 s, −16 LUFS (_lufs-Bericht).
+// Chatterbox-Familien (WS0 chatter_families_r1 + r2_melodica, V-663/V-678): 13 Solo-Instrumente × 9 Gefühle + 4 Rufe, je 0,8 s, −16 LUFS (_lufs-Bericht).
 // Welche Figur welches Instrument spielt, steht NUR im Charakter-Register (CHARACTERS_R1, chatter.instrument, V-682); hier nur Instrument → Dateistamm.
 export const CHATTER_FAMILIES = Object.freeze({ Posaune: 'F01_trombone', Klarinette: 'F02_clarinet', Akkordeon: 'F03_accordion', Okarina: 'F04_ocarina', Fagott: 'F05_bassoon', Theremin: 'F06_theremin',
-  Saxophon: 'F07_saxophone', Talkbox: 'F08_talkbox', 'Singende Säge': 'F09_saw', Oboe: 'F10_oboe', Tuba: 'F11_tuba', Mundharmonika: 'F12_harmonica' })
+  Saxophon: 'F07_saxophone', Talkbox: 'F08_talkbox', 'Singende Säge': 'F09_saw', Oboe: 'F10_oboe', Tuba: 'F11_tuba', Mundharmonika: 'F12_harmonica',
+  Melodica: 'F13_melodica' }) // F13: WS0 23.10., Satz chatter_families_r2_melodica (Bots, Register SPEC)
+const CHATTER_SET = Object.freeze({ F13_melodica: 'chatter_families_r2_melodica' }) // sonst chatter_families_r1
 export const CHATTER_MOODS = Object.freeze(['neutral', 'froh', 'traurig', 'genervt', 'aengstlich', 'aggressiv', 'staunend', 'zaertlich', 'introspektiv', 'call_bingo', 'call_bloedsinn', 'call_boggle', 'call_bongo'])
-const CHATTER_CUES = Object.fromEntries(Object.values(CHATTER_FAMILIES).flatMap((fam) => CHATTER_MOODS.map((m) => [`chatter.${fam}.${m}`, { owner: 'bank', set: 'chatter_families_r1', files: [`${fam}_${m}`], gain: 0.7 }])))
+const CHATTER_CUES = Object.fromEntries(Object.values(CHATTER_FAMILIES).flatMap((fam) => CHATTER_MOODS.map((m) => [`chatter.${fam}.${m}`, { owner: 'bank', set: CHATTER_SET[fam] || 'chatter_families_r1', files: [`${fam}_${m}`], gain: 0.7 }])))
 // Register-Wert gilt nur mit Status SOURCE/GEORG o. ä.; todo, PREFILL und DESIGN sind Vorschläge → bisheriger Platzhalter (Brief V-682 §6)
 export const REGISTER_UNSET = Object.freeze(['todo', 'PREFILL', 'DESIGN'])
 export function chatterFamily(chatter) {

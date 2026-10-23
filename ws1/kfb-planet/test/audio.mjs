@@ -69,10 +69,14 @@ try {
   // Begrüßung (WS-NPC npc.events(): greet { reason, id, at, t, seq }): erstes Lesen nur merken, dann je Eintrag einmal ein Stimm-Laut, Musik kurz −4 dB
   out.greet = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), L = [{ type: 'greet', reason: 'known', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 1, seq: 1 }], keep = M.mods.npc
     M.mods.npc = { events: () => L }; await new Promise((r) => setTimeout(r, 300)); const n0 = a.stats().events.filter((e) => e.type === 'greet').length
-    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 }, { type: 'greet', reason: 'known', id: 'farmer_harke', at: [p[0] + 3, p[2]], t: 5, seq: 5 })
+    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 }, { type: 'greet', reason: 'known', id: 'farmer_a', at: [p[0] + 3, p[2]], t: 5, seq: 5 })
     await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
     const reg = a.greet({ type: 'greet', reason: 'cure', id: 'farmer_b' }, { x: p[0] + 2, y: p[1] + 1.6, z: p[2] }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }) // Register-Instrument (V-682)
     M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck, reg, chatter: a.stats().chatter } })
+  // Musik-Katalog der Suno-Ernte (WS0 V-688): einlesbar, Phrasen ohne dup_of, Datei über /@kfb-audio/chatter/ ladbar (nichts zugeordnet, nichts gespielt)
+  out.catalog = await A.page.evaluate(async () => { const a = window.__kfbAudio, c = a.musicCatalog(); if (!c) return { none: true }
+    const ph = await a.harvestPhrases('orchester', 'adv_clarinet'), r = ph?.[0] ? await fetch(ph[0].url) : null
+    return { songs: c.songs.map((s) => s.id + ':' + s.bpm), n: ph?.length ?? 0, dup: (ph || []).filter((x) => x.dup_of).length, ok: r?.ok ?? false, keys: ph?.[0] ? Object.keys(ph[0]) : [] } })
   // K15 (WS-NPC): bis zu 3 Dark Fluffer – fluffer.events() mit seq/id/mouth; altes Ereignis still, ferne Zone (> 120 m) still, Zustand je Fluffer (geheilt/feindlich)
   out.fluffK15 = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), keep = M.mods.fluffer, near = (dx) => [p[0] + dx, p[1] + 1, p[2] + 2]
     const L = [{ type: 'spit', id: 'dark_fluffer_goblin', kind: 'ghost', seq: 1, t: 1, at: [p[0] + 3, p[2]], mouth: near(3) }], hops = []
@@ -126,12 +130,13 @@ try {
     npcGroups: out.groups.n >= 18 && out.groups.plays >= 15 && out.groups.polled === 3 && out.groups.again === 3 && out.groups.errors.length === 0,
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
     presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.some((k) => k.startsWith('fluffGlide')),
+    musicCatalogReadable: out.catalog.none || (out.catalog.songs.length >= 4 && out.catalog.n > 10 && out.catalog.dup === 0 && out.catalog.ok && ['note', 'beat', 'lufs', 'url'].every((k) => out.catalog.keys.includes(k))),
     flufferK15Multi: out.fluffK15.played.join() === 'spit:dark_fluffer_atlantis,healed:dark_fluffer_goblin' && out.fluffK15.st.dark_fluffer_goblin === true && out.fluffK15.st.dark_fluffer_atlantis === false && out.fluffK15.pres.includes('fluffGlide:dark_fluffer_atlantis'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
     reverbAndOcclusion: (!out.space.spot || out.space.env === 'canyon') && (!out.space.hit || out.space.occludedPlayed === 1),
     musicPulse: out.pulse.schema === 'kfb.audio-presentation-pulse/1' && out.pulse.audible01 === 1 && out.pulse.bass > 0 && out.pulse.kicks >= 3 && out.pulse.bpm > 0,
     greetVoices: out.greet.first === 0 && out.greet.played === 4 && out.greet.again === 0 && out.greet.cues.join() === 'chatter.F02_clarinet.froh,chatter.F03_accordion.aengstlich,chatter.F03_accordion.staunend,greet.farmer.known'
-      && out.greet.chatter.farmer_b === 'set:F03_accordion' && out.greet.chatter.farmer_harke === 'fallback:resident' && out.greet.reg === 'chatter.F03_accordion.froh',
+      && out.greet.chatter.farmer_b === 'set:F03_accordion' && out.greet.chatter.farmer_a === 'fallback:resident' && out.greet.reg === 'chatter.F03_accordion.froh',
     duckUnderLoudSfx: f.fight.duckDb < 0,
     voicesBounded: Math.max(w.voices.total, f.fight.voices.total, c.end.voices.total) <= 96 && f.fight.voices.bank <= 24 && f.fight.voices.combat <= 24,
     flyOnFootMusicSuno: f.fly.mode2 !== 'fly' || f.fly.nowPlaying?.list === 'suno' || f.fly.music.changes >= 0,

@@ -12,6 +12,7 @@ function roots(siteDir) {
     wsa: path.join(CACHE, 'wsa/dist'),
     site: siteDir,
     el: path.join(PRIVATE, '40_AUDIO/elevenlabs_r1'),
+    chatter: path.join(PRIVATE, '40_AUDIO/chatterbox_r1'), // Suno-Ernte (Musik-Katalog), nur lokal
     'music/suno': path.join(PRIVATE, 'music/suno-roadtrip-jukebox-v2'),
     'music/cozy': path.join(PRIVATE, 'music/cozy-tunes-classics/Audio/ogg/Tracks'),
   }
@@ -20,7 +21,7 @@ function roots(siteDir) {
 export function resolveAudioPath(url, R) {
   let rel; try { rel = decodeURIComponent(url.split('?')[0]) } catch { return null }
   if (rel === 'index.json') return R['index.json']
-  for (const key of ['music/suno', 'music/cozy', 'wsa', 'site', 'el']) {
+  for (const key of ['music/suno', 'music/cozy', 'wsa', 'site', 'el', 'chatter']) {
     if (!rel.startsWith(key + '/')) continue
     const base = path.resolve(R[key]), p = path.resolve(base, rel.slice(key.length + 1))
     return p.startsWith(base + path.sep) ? p : null

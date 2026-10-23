@@ -35,14 +35,15 @@ const W = createWaterIndex({ lines: [{ pts: [{ x: 0, z: 0, lv: 1 }, { x: 20, z: 
 const q1 = waterNear(W, { x: 10, y: 0, z: 30 }), q2 = waterNear(W, { x: 120, y: 0, z: 0 }), q3 = waterNear(W, { x: 90, y: 0, z: 0 }, 'beach'), q4 = waterNear(W, { x: 90, y: 0, z: 0 }, 'meadow')
 const surf = [stepSurface({ r: 1, flatR: 5 }), stepSurface({ r: 50, flatR: 5, y: 0.2, seaY: 0 }), stepSurface({ r: 50, flatR: 5, nearWater: 3 }), stepSurface({ r: 50, flatR: 5 })]
 // Ton-Server: nur unter den Wurzeln, kein ../
-const R = { 'index.json': '/c/index.json', wsa: '/c/wsa', site: '/c/site', el: '/p/el', 'music/suno': '/p/suno', 'music/cozy': '/p/cozy' }
-const paths = [resolveAudioPath('el/dark_fluffer_r1/DF01_windup_gurgle_a.mp3', R), resolveAudioPath('el/../../etc/passwd', R), resolveAudioPath('music/suno/..%2F..%2Fx', R), resolveAudioPath('nope/x', R), resolveAudioPath('index.json', R)]
+const R = { 'index.json': '/c/index.json', wsa: '/c/wsa', site: '/c/site', el: '/p/el', 'music/suno': '/p/suno', 'music/cozy': '/p/cozy', chatter: '/p/chatter' }
+const paths = [resolveAudioPath('el/dark_fluffer_r1/DF01_windup_gurgle_a.mp3', R), resolveAudioPath('el/../../etc/passwd', R), resolveAudioPath('music/suno/..%2F..%2Fx', R), resolveAudioPath('nope/x', R), resolveAudioPath('index.json', R), resolveAudioPath('chatter/suno_tests/orchester/harvest/brass/brass_00.wav', R), resolveAudioPath('chatter/../el/x.mp3', R)]
 // Repo: keine Ton-/Musikdateien unter Versionsverwaltung außer den bisherigen öffentlichen (es gab keine)
 const tracked = execSync('git ls-files', { encoding: 'utf8' }).split('\n').filter((f) => /\.(mp3|ogg|wav|m4a|flac)$/i.test(f))
 // Mit lokalem Zwischenspeicher: jede bank-Zuordnung hat Dateien
 const idxPath = path.join(process.env.KFB_AUDIO_CACHE || path.join(os.homedir(), 'kfb-ws1/.kfb-audio-cache'), 'index.json')
-let missing = null, cache = false
-if (fs.existsSync(idxPath)) { cache = true; const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8')); const have = (c) => idx.sets?.[c.set]?.files || []; missing = bank.filter(([, c]) => !c.set.startsWith('site:') && !c.pending).filter(([, c]) => c.files ? !c.files.every((f) => have(c).includes(f)) : !variantsOf(c.base, have(c)).length).map(([k]) => k) }
+let catalogOk = true, missing = null, cache = false
+if (fs.existsSync(idxPath)) { cache = true; const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8')); const have = (c) => idx.sets?.[c.set]?.files || []; catalogOk = !idx.catalog || (idx.catalog.songs.length >= 1 && idx.catalog.songs.every((s) => Number.isFinite(s.bpm) && s.harvest.every((h) => !/saxophone/i.test(h.family) && h.manifest && !h.manifest.startsWith('chatterbox_r1/'))))
+  missing = bank.filter(([, c]) => !c.set.startsWith('site:') && !c.pending).filter(([, c]) => c.files ? !c.files.every((f) => have(c).includes(f)) : !variantsOf(c.base, have(c)).length).map(([k]) => k) }
 
 // Private MVP-Site (V-618): site-copy nur mit SITE=1; mit Zwischenspeicher: Trockenlauf ohne fehlende Dateien und ohne Datei > 25 MiB
 const siteNo = spawnSync(process.execPath, ['scripts/audio/site-copy.mjs', '--dry'], { env: { ...process.env, SITE: '' }, encoding: 'utf8' })
@@ -100,7 +101,8 @@ process.exit(report('audio-mixer', {
     && ['todo', 'PREFILL', 'DESIGN'].every((st) => chatterFamily({ instrument: { v: 'Klarinette', status: st } }) === null) && chatterFamily({ instrument: { v: 'Kazoo', status: 'SOURCE' } }) === null && chatterFamily(null) === null
     && greetCues({ id: 'farmer_b', reason: 'cure' }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }).join() === 'chatter.F03_accordion.froh,greet.farmer.cure,greet.fallback.cure'
     && greetCues({ id: 'lorekeeper', reason: 'fight' }, { instrument: { v: 'Klarinette', status: 'PREFILL' } })[0] === 'greet.lorekeeper.fight'
-    && Object.keys(CHATTER_FAMILIES).length === 12 && CHATTER_MOODS.length === 13 && Object.keys(CUES).filter((k) => k.startsWith('chatter.')).length === 156,
+    && Object.keys(CHATTER_FAMILIES).length === 13 && CHATTER_MOODS.length === 13 && Object.keys(CUES).filter((k) => k.startsWith('chatter.')).length === 169
+    && chatterFamily({ instrument: 'Melodica', status: 'set' }) === 'F13_melodica' && CUES['chatter.F13_melodica.froh'].set === 'chatter_families_r2_melodica',
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
     && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -4 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),
@@ -114,7 +116,8 @@ process.exit(report('audio-mixer', {
   waterNearest: q1.emitters.some((e) => e.id === 'river' && e.d < 35) && !q1.emitters.some((e) => e.id === 'fall') && q2.emitters.some((e) => e.id === 'sea'),
   biomeHysteresis: q3.biome === 'beach' && q4.biome === 'meadow',
   stepSurfaces: surf.join() === 'foley-concrete,sand,wet-clay,digital-grass',
-  serverPathGuard: paths[0] === path.resolve('/p/el/dark_fluffer_r1/DF01_windup_gurgle_a.mp3') && paths[1] === null && paths[2] === null && paths[3] === null && paths[4] === '/c/index.json',
+  musicCatalogIndexed: catalogOk, // WS0 V-688: Kopfdaten + Manifest-Pfade, ohne Saxophone
+  serverPathGuard: paths[0] === path.resolve('/p/el/dark_fluffer_r1/DF01_windup_gurgle_a.mp3') && paths[1] === null && paths[2] === null && paths[3] === null && paths[4] === '/c/index.json' && paths[5] === path.resolve('/p/chatter/suno_tests/orchester/harvest/brass/brass_00.wav') && paths[6] === null,
   noAudioInRepo: tracked.length === 0,
   siteCopyOnlyWithSite: siteNo.status === 2 && rootDefault && (siteDry === null || (siteJson && siteJson.dry && siteJson.files > 300 && siteJson.mb < 400)),
   bankFilesExist: missing === null || missing.length === 0,

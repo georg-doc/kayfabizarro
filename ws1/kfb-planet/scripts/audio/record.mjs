@@ -5,7 +5,8 @@
 //   kampf    1 · Kampf am Obstgarten (V/B/N, Saugarm) · 2 · Hörprobe Arena-Waffen (K10-Adapter, Ereignisse per Prüfskript – die Arena ist noch
 //            nicht im Spiel, das steht im Bild) · 3 · Fahrt am Boden (Untergrund, Drift, Bremse)                → kfb-audio-kampf.mp4 (Handy)
 //   gruppen  NPC-Gruppen (Skelette, Bots, Spielzeugsoldaten) und Dark Fluffer – nur in einer lokalen Vorschau-Kombination mit ws-npc/phase-a → kfb-audio-gruppen.mp4
-// Aufruf: PW_GPU=1 node scripts/audio/record.mjs [abnahme|kampf|gruppen|heilen|mvp|neu] → test/out/audio/ (privat: enthält Musik und gekaufte Töne!)
+//   gruss    Begrüßung der Bewohner (Register-Instrument, echt gespielt) + Hörprobe aller Anlässe und Rückfall-Stufen → kfb-audio-begruessung.mp4
+// Aufruf: PW_GPU=1 node scripts/audio/record.mjs [abnahme|kampf|gruppen|heilen|mvp|neu|gruss] → test/out/audio/ (privat: enthält Musik und gekaufte Töne!)
 import fs from 'fs'
 import path from 'path'
 import { startServer, openAudioPage } from '../../test/_audioServer.mjs'
@@ -183,6 +184,34 @@ const SEGMENTS = {
       await at(72); mark('heilen → heller Hüpfer (N09)'); await look(fl, 2.8); await wait(600); await tap(page, 'KeyB'); for (let t = 74; t < 80; t += 1.5) { await at(t); await look(fl, 3.5) }
       await at(80); mark('Band mit Publikum (N15)'); await page.evaluate(() => { const M = window.__kfbM1, P = M.mods.band?.positions?.() || [], c = P.length ? { x: P.reduce((s, p) => s + p.x, 0) / P.length, z: P.reduce((s, p) => s + p.z, 0) / P.length } : { x: -8, z: 30 }, x = c.x - 9, z = c.z, w = Math.atan2(c.x - x, c.z - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false) }) }],
   ],
+  // Begrüßung der Bewohner (V-682): Instrument je Figur NUR aus dem Charakter-Register (chatterOf). Teil 1 echt gespielt (hingehen → Begrüßung,
+  // Einblendung = was wirklich klang), Teil 2 Hörprobe per Prüfskript: alle vier Anlässe je Instrument und die beiden Rückfall-Stufen
+  gruss: [
+    ['gruss-live', '#m1,harvest,look=terrain3,world=probe,npc', 52, 'Begrüßung der Bewohner · Instrument aus dem Figuren-Register · echt gespielt', async (page, at, mark) => {
+      const NAME = { farmer_b: 'Bäuerin', lorekeeper: 'Lorekeeper' }, MOOD = { froh: 'froh (geheilt)', neutral: 'neutral (kennt dich)', staunend: 'staunend (erste Begegnung)', aengstlich: 'ängstlich (nach Kampf)' }
+      const INST = { F03_accordion: 'Akkordeon', F02_clarinet: 'Klarinette' }
+      const greets = () => page.evaluate(() => window.__kfbAudio.stats().events.filter((e) => e.type === 'greet').map((e) => e.t + '|' + e.id + '|' + e.cue + '|' + e.chatter))
+      const face = (id, dist) => page.evaluate(({ id, dist }) => { const M = window.__kfbM1, b = M.npc()?.debug?.find((x) => x.id === id); if (!b) return null; const p = M.feet(), dx = b.x - p[0], dz = b.z - p[2], l = Math.hypot(dx, dz) || 1
+        const x = b.x - dx / l * dist, z = b.z - dz / l * dist, w = Math.atan2(b.x - x, b.z - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false); return Math.hypot(b.x - x, b.z - z) }, { id, dist })
+      const dist = (id) => page.evaluate((id) => { const M = window.__kfbM1, b = M.npc()?.debug?.find((x) => x.id === id), p = M.feet(); return b ? Math.hypot(b.x - p[0], b.z - p[2]) : 99 }, id)
+      const meet = async (id, t0, label) => { await at(t0); await face(id, 6); mark(label); await wait(1200); const before = new Set(await greets())
+        await page.keyboard.down('KeyW'); for (let i = 0; i < 40 && (await dist(id)) > 2.6; i++) await wait(80); await page.keyboard.up('KeyW'); await face(id, 2.4)
+        for (let i = 0; i < 20; i++) { const fresh = (await greets()).filter((g) => !before.has(g)); if (fresh.length) { const [, gid, cue, chat] = fresh[0].split('|'), [, fam, mood] = cue.split('.')
+          mark(`${NAME[gid] || gid} · ${chat.startsWith('set') ? INST[fam] || fam : chat} · ${MOOD[mood] || mood}`); return } await wait(150) }
+        mark(label + ' · keine Begrüßung') }
+      await meet('farmer_b', 0.5, 'zur Bäuerin gehen'); for (let t = 4; t < 11; t += 2) { await at(t); await face('farmer_b', 2.6) }
+      await meet('lorekeeper', 12, 'zum Lorekeeper gehen'); for (let t = 16; t < 23; t += 2) { await at(t); await face('lorekeeper', 2.6) }
+      await at(24); await face('farmer_b', 9); await at(27); await meet('farmer_b', 27, 'noch einmal zur Bäuerin'); for (let t = 31; t < 38; t += 2) { await at(t); await face('farmer_b', 2.6) }
+      await at(39); await face('lorekeeper', 9); await meet('lorekeeper', 41, 'noch einmal zum Lorekeeper'); for (let t = 45; t < 51; t += 2) { await at(t); await face('lorekeeper', 2.6) } }],
+    ['gruss-probe', '#m1,harvest,look=terrain3,world=probe,npc', 40, 'Hörprobe per Prüfskript · alle Anlässe und die Rückfall-Stufen', async (page, at, mark) => {
+      await page.evaluate(() => { const M = window.__kfbM1, b = M.npc()?.debug?.find((x) => x.id === 'farmer_b'); if (!b) return; const x = b.x - 3, z = b.z, w = Math.atan2(b.x - x, b.z - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false) })
+      const g = (id, reason, chatter) => page.evaluate(({ id, reason, chatter }) => { const M = window.__kfbM1, p = M.feet(); return window.__kfbAudio.greet({ type: 'greet', id, reason }, { x: p[0] + 2, y: p[1] + 1.6, z: p[2] + 0.5 }, chatter) }, { id, reason, chatter })
+      const R = [['cure', 'geheilt → froh'], ['known', 'kennt dich → neutral'], ['first', 'erste Begegnung → staunend'], ['fight', 'nach Kampf → ängstlich']]
+      let t = 1
+      for (const [inst, who] of [['Akkordeon', 'Bäuerin'], ['Klarinette', 'Lorekeeper']]) for (const [r, txt] of R) { await at(t); mark(`${who} · ${inst} · ${txt}`); await g(who === 'Bäuerin' ? 'farmer_b' : 'lorekeeper', r, { instrument: inst, status: 'set' }); t += 2.3 }
+      t += 0.8; for (const [r, txt] of [['first', 'erste Begegnung'], ['known', 'kennt dich']]) { await at(t); mark('Ohne Register-Instrument → Bewohner-Stimme (WS0) · ' + txt); await g('farmer_harke', r, null); t += 2.6 }
+      t += 0.5; for (const [r, txt] of [['first', 'erste Begegnung'], ['cure', 'geheilt']]) { await at(t); mark('Ohne alles → bisheriger Platzhalter · ' + txt); await g('unbekannt', r, null); t += 2.6 } }],
+  ],
 }[PROFILE]
 if (!SEGMENTS) throw new Error('Profil unbekannt: ' + PROFILE)
 const segs = []
@@ -190,9 +219,9 @@ for (const [name, hash, seconds, label, script] of SEGMENTS) segs.push({ ...(awa
 
 // Zusammensetzen: Abschnitte nacheinander abspielen, Bild über Canvas mit Einblendungen, Ton über einen MediaStream, Pegel je Abschnitt messen
 fs.writeFileSync(path.join(OUT, 'stitch.html'), '<!doctype html><meta charset=utf-8><title>stitch</title><body style="margin:0;background:#000"></body>') // gleicher Ursprung (sonst stummes MediaElement)
-const small = ['kampf', 'gruppen', 'heilen', 'mvp', 'neu'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
+const small = ['kampf', 'gruppen', 'heilen', 'mvp', 'neu', 'gruss'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
 const { browser, page, errs } = await openAudioPage(srv.url, 'test/out/audio/stitch.html')
-const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4', neu: 'kfb-audio-neu.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
+const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4', neu: 'kfb-audio-neu.mp4', gruss: 'kfb-audio-begruessung.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
 await page.exposeFunction('__kfbRecChunk', (b64) => { fs.writeSync(fd, Buffer.from(b64, 'base64')) })
 const levels = await page.evaluate(async ({ segs, W, H, mime, vbr, SEND }) => {
   document.body.innerHTML = ''; const c = document.createElement('canvas'); c.width = W; c.height = H; document.body.append(c); const g = c.getContext('2d'), u = W / 1280

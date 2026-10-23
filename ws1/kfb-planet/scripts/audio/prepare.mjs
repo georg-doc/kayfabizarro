@@ -93,7 +93,14 @@ export function prepare({ quiet = false } = {}) {
   for (const [list, files] of [['suno', suno], ['cozy', cozy]]) for (const f of files) { const t = tagMap[key(list + '/' + f)]; if (t) musicTags[list + '/' + f] = t }
   if (local) { for (const [k, v] of Object.entries(local.music || {})) musicGain[k] = v.gainDb
     for (const [k, v] of Object.entries(local.clips || {})) { const [set, id] = k.split('/'); if (sets[set] && sets[set].norm !== 'lufs') { sets[set].gainDb[id] = v.gainDb; sets[set].norm = 'lufs-local' } } }
-  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), wsa: out.wsa, site: out.site, music: { suno, cozy, gainDb: musicGain, tags: musicTags }, sets }
+  // Musik-Katalog der Suno-Ernte (WS0 V-688, kfb.music-catalog/1): Songs mit BPM, Einsatz, Tonart und je Stem das Ernte-Manifest. Nur einlesbar –
+  // Zuordnung zu Figuren erst über das Register (chatter.motif/grains, Georgs Familien-Wahl q178). Saxophon-Stems ausgelassen (Übersprechen, WS0 23.10.)
+  const catFile = path.join(PRIVATE, '40_AUDIO/music_catalog_r1.json'); let catalog = null
+  if (fs.existsSync(catFile)) { const c = JSON.parse(fs.readFileSync(catFile, 'utf8'))
+    catalog = { schema: c.schema, songs: (c.songs || []).map((s) => ({ id: s.id, title: s.title, style: s.style, bpm: s.bpm, offset_s: s.offset_s, key: s.key?.key ?? null, keyConf: s.key?.confidence ?? null,
+      harvest: (s.harvest || []).filter((h) => !/saxophone/i.test(h.family)).map((h) => ({ family: h.family, stem: h.stem, phrases: h.phrases, unique: h.unique ?? null, key: h.key?.key ?? null, manifest: String(h.manifest || '').replace(/^chatterbox_r1\//, '') })) })) } }
+  out.catalog = catalog ? catalog.songs.length : 0
+  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), wsa: out.wsa, site: out.site, music: { suno, cozy, gainDb: musicGain, tags: musicTags }, sets, catalog }
   fs.writeFileSync(path.join(CACHE, 'index.json'), JSON.stringify(index))
   say(`privat=${out.private} wsa=${out.wsa} site=${out.site} suno=${suno.length} cozy=${cozy.length} sätze=${out.sets.length} → ${CACHE}`)
   return out

@@ -37,7 +37,10 @@ C.excluded = isExcluded('georg_chronicler') && resolveCharacterId('georg_chronic
 const fb = characterOf('FB'), harke = characterOf('farmer_harke'), alien = characterOf('kfb_q_alien')
 C.fbChatter = fb?.id === 'frizzlebob' && fb.chatter?.instrument === 'Posaune mit Dämpfer' && chatterOf('FB')?.status === 'set'
 C.fbVoice = voiceOf('frizzlebob')?.spec === 'am_michael'
-C.todoIsNull = harke?.chatter === null && chatterOf('farmer_harke') === null
+// seit Register @3d847c5 (V-687): farmer_harke ist Alias der Bäuerin farmer_b; todo-Beispiel aus den Daten (Figur ohne Chatter und ohne PREFILL)
+const todoId = characterIds().find((id) => !characterOf(id).chatter && !characterOf(id).chatterPrefill)
+C.harkeIsFarmerB = resolveCharacterId('farmer_harke') === 'farmer_b' && harke?.chatter?.instrument === 'Akkordeon'
+C.todoIsNull = !!todoId && characterOf(todoId).chatter === null && chatterOf(todoId) === null
 // PREFILL-Beispiel aus den Daten (Stand Register: Skelette); Aliens sind seit V-685/V-686 SPEC = gesetzt
 const pf = characterIds().find((id) => characterOf(id).chatterPrefill)
 C.prefillHidden = !!pf && characterOf(pf).chatter === null && chatterOf(pf) === null && chatterOf(pf, { prefill: true })?.status === 'prefill'

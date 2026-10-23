@@ -40,6 +40,7 @@ import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeig
 import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
 import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/shadeFloor' // V-683: Schattenseite aller Nicht-Gelände-Objekte (shade=1, A/B)
 import { FIGLIGHT_ON, FIG_LIGHT_TEST, attachFigureLights } from '../look/figureLights' // Figurenlicht R1 (Georg 23.10.): je Figur, die nächsten vier, immer, mit Lichtkreis (figlight=1, A/B)
+import { FIGAMB_ON, FIG_AMB_TEST, applyFigureAmbient, updateFigureAmbient } from '../look/figureAmbient' // Georg 23.10.: Figuren lesbar mit bestehendem Licht (figamb=1, A/B)
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -351,7 +352,11 @@ const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Ob
 // Licht-Rig L3 wie #stage: Stimmungs-Satz lset=mesa (Standard) | cozy | r2, Tageszeit tod=day|gold|night|0..1. Schattenbereich = Kugel um das, was der
 // Spieler steuert (Auto bzw. FrizzleBob), Radius = halbe Länge + Schattenlänge der Sonnenhöhe × Höhe (+ 1 m Rand) – auch der lange Gold-Schatten liegt
 // ganz darin (Georg 17.10.: „zweiter, abgeschnittener Schatten“ bei ±7,8 m festem Ausschnitt). Bias leitet das Modul ab (fitShadow), keine feste Zahl.
-const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MOOD_SETS[LSET] || undefined, TODV = parseTod(hash)
+// Nacht-Mondschatten (Georg 23.10.: nachts fehlte der Bodenschatten, Figuren wirkten schwebend; abgenommen, Standard): Mond stärker, Himmelsfüllung schwächer (Gesamthelligkeit ähnlich),
+// Schattenstärke nach glow bis 1,0 – Mondschatten unter den Figuren lesbar wie bei Gold. Nur Stimmungswerte und Schattenstärke, kein neues Licht.
+const NSH_ON = !/(^|[#,])nsh=0(,|$)/.test(hash), /* Georg 23.10.: Standard; nsh=0 = alter Stand */ NSH = Object.freeze({ moonK: 1.7, hemiK: 0.7, shadowNight: 1.0 })
+const nshMoods = (S) => (S && NSH_ON ? Object.freeze({ ...S, night: Object.freeze({ ...S.night, sunI: S.night.sunI * NSH.moonK, hemiI: S.night.hemiI * NSH.hemiK }) }) : S)
+const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = nshMoods(MOOD_SETS[LSET]) || undefined, TODV = parseTod(hash)
 const fitTarget = () => { const cp = M2_ON ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
   const p = worldPosOf(mods.player); return p ? { p, half: 0.6 * K, h: 2.79 * K } : null }
 const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (FIGLIGHT_ON && !FIG_LIGHT_TEST.off ? [] : M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : TODV <= 0.25 && mods.player ? [mods.player] : []), /* figlight=1: Figurenlicht je Figur übernimmt (figureLights.js); im Prüfmodus off wieder der heutige Spot = A wie heute */ /* Kritiker MVP R1 C4: nachts trägt FB das warme Figurenlicht des Rigs (sonst kaum lesbar) */ figureLight: { distance: 4.6 * K, up: 2.6 * K },
@@ -380,14 +385,23 @@ function ShadeFloor() {
   return null
 }
 
+// nsh=1: Schattenstärke der Sonne bzw. des Mondes folgt glow (Tag Rig-Wert, Nacht NSH.shadowNight); das Rig setzt seinen festen Wert je Bild, hier wird er als Basis gelesen
+function NightShadow() {
+  useFrame(() => { const sh = mods.light?.lights?.sun?.shadow; if (!sh) return
+    if (!sh.userData) sh.userData = {}
+    if (!sh.userData.nsh) { let base = sh.intensity; Object.defineProperty(sh, 'intensity', { configurable: true, get: () => { const g = Math.min(1, Math.max(0, mods.light?.mood?.()?.glow ?? 0)); return base + (NSH.shadowNight - base) * g }, set: (v) => { base = v } }); sh.userData.nsh = true } })
+  return null
+}
 function FootShade() {
+  useEffect(() => { if (FIGAMB_ON) expose('FigAmb', Object.assign(FIG_AMB_TEST, { refresh: () => updateFigureAmbient(mods.light?.mood?.() || LIGHT_INFO()?.mood) })) }, []) // refresh: Prüfhilfe bei angehaltener Uhr
   const U = useMemo(() => Object.fromEntries(['player', 'partner'].map((k) => [k, { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } }])), [])
   const t = useRef(0), v = useMemo(() => new THREE.Vector3(), []), FS = useMemo(() => ({ uFigShadowK: { value: 0.55 } }), [])   // Selbstschatten auf Figuren gedämpft (Arm-Kante, Georg 21.10.)
   useFrame((_, dt) => { const scan = (t.current -= dt) <= 0; if (scan) t.current = 1
     const list = [['player', mods.player?.object3d], ['partner', mods.partner?.object3d], ...[...(mods.npc?.holders?.() || []), ...(mods.groups?.holders?.() || []), ...(mods.band?.holders?.() || [])].map((h) => [h.name, h])]   // WS-NPC: Bewohner wie Spieler und Partnerin
     for (const [k, o] of list) { if (!o) continue; const u = (U[k] ||= { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } })
-      if (scan) o.traverse((m) => { if (m.isMesh && m.visible) for (const mt of [].concat(m.material)) if (mt && !mt.isShaderMaterial && !mt.isMeshBasicMaterial) { applyFootShade(mt, u); applyFigureShadow(mt, FS) } })
-      o.getWorldPosition(v); u.uFootY.value = v.y } })
+      if (scan) o.traverse((m) => { if (m.isMesh && m.visible) for (const mt of [].concat(m.material)) if (mt && !mt.isShaderMaterial && !mt.isMeshBasicMaterial) { applyFootShade(mt, u); applyFigureShadow(mt, FS); if (FIGAMB_ON) applyFigureAmbient(mt) } })
+      o.getWorldPosition(v); u.uFootY.value = v.y }
+    if (FIGAMB_ON) updateFigureAmbient(mods.light?.mood?.() || LIGHT_INFO()?.mood) })
   return null
 }
 function HostEnv() {
@@ -588,6 +602,7 @@ function M1World() {
     <>
       <HostEnv />
       {TERRAIN3 && <FootShade />}
+      {NSH_ON && <NightShadow />}
       {SHADE_ON && <ShadeFloor />}
       {FIGLIGHT_ON && <FigureLights />}
       <LightPools />

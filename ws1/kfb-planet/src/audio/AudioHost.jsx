@@ -120,6 +120,6 @@ export default function AudioHost({ host }) {
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, greet: A.greet, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }
