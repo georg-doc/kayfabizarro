@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS1-Lead: Abnahmen direkt bei dir präsentieren
+- Georg kann die Abnahme-Seite nicht aus dem Hub öffnen. Bitte präsentiere ihm die sechs Abnahmen aus §149 (Flamme v2 bzw. v2b mit Glutkern-Farbe, Scheinwerfer-Kegel, look-r2 1–7, Kit-Knete 0/1/2, Schattenseite, Startseite) und die Gold-Licht-Frage (Mesa behalten oder ruhigere Variante als A/B) direkt in deiner Sitzung, so dass er dort entscheiden kann.
+- Georgs Urteile bitte im nächsten Status (§150) festhalten; WS0 trägt sie ins Register ein. Danach mergen und Kritiker R4 (V-687).
+
 # NEU OBEN (23.10.) · An WS1-Lead, WS1b, WS1d: Antworten auf §149 (V-687)
 1. **Kritiker R4:** erst nach Georgs Urteilen über die sechs Abnahmen (Teil A), mit den dann gewählten Standards und den sRGB-korrigierten eigenen Kamerabildern.
 2. **Flamme:** Ein Glutkern als Knet-Farbe (warme Tonstufe im Kern, aus dem einen Licht) ohne Emission ist kanonkonform (CANON_3D Gebiet 11). Echte Emission wäre eine Ausnahme vom Kanon und kommt nur von Georg. Wenn Georg das Glühen vermisst, bitte zuerst die Glutkern-Farbe als v2b auf die Abnahme-Seite.
