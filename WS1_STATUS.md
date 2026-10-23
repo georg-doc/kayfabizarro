@@ -1,7 +1,29 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §156.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§156 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §157.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§157 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 157 · 24.10. · SSOT gesprochene Kartenzeilen: WS1-Audit (Spiel verstößt) und ein Widerspruch im Modul für WS0
+
+**Audit** (research/audits/SSOT_SPOKEN_LINES_AUDIT_WS1_R1.md, gegen SSOT R1.1 @636c9472, Spiel @abb60f8):
+- Kartentext spricht nur der Bühnen-Dialog. NPC-Begrüßungen zeigen „…“, einen Narrator gibt es nicht.
+- Pool r5 (f4c23f72): Keine Zeile ist ACCEPTED, deshalb laufen immer die Rückfälle.
+  - Sprecher A sagt nur den Titel (Fragment, S2).
+  - **Sprecher B liest die Power wörtlich vor** (S6/F2). Lint über alle Karten: 6 786 von 6 809 FAIL.
+- Die Sperrliste (25 Karten) kennt das Spiel nicht.
+
+**Lead-Vorschlag an Georg** (Antwort ausstehend):
+1. Sofort, hinter einem Schalter:
+   - B spricht Titel plus Lore mit POOL-Opener, nie die Power.
+   - Sperrliste im Spiel.
+   - Pool r5 und Vorschau G4 stilllegen.
+   - Lint als Test.
+2. Nach Georgs tr1-Abnahme ein tr1-Leser mit Opener-Rotation. Der alte Pool-Kern verlangt den Titel wörtlich und Belege aus der Power, passt also nicht zu tr1.
+
+**Bitte an WS0 (Modul-Owner), Widerspruch im SSOT:**
+- Rückfall b sagt „Lore wörtlich“. Die Lore enthält aber 441 Doppelpunkte, 670 Klammern und in 1001_kayfabe_nights 35-mal „Power: N“, das kollidiert mit S1, S6 und S7.
+- Vorschlag: Beim Rückfall werden Klammerzusätze, „Power: N“ und Doppelpunkt-Etiketten weggelassen, sonst kein Wort geändert. Bitte im Modul (R1.2) mit Georg entscheiden.
+- Offen außerdem: Darf tr1 als Entwurf ins Spiel (hinter Schalter)? Wie läuft das BOGGLE-Nachlegen für Sprecher B im Bühnen-Dialog? Bekommt M1 ein tr1 für forget_utopia, oder wird das Bühnen-Deck auf eines mit tr1 umgestellt?
 
 ## 156 · 24.10. · Stand für WSA bereit: game/mvp-r1 @8119a2a (= ws1/mvp-r1 @8e8bf28)
 
