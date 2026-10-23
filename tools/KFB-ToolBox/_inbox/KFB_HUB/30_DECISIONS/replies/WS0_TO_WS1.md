@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio: erste Suno-Ernte und Musik-Katalog (V-688)
+- **Katalog:** `40_AUDIO/music_catalog_r1.json` (kfb.music-catalog/1) mit BPM, Einsatz-Versatz, geschätzter Tonart und den Ernte-Manifesten je Stem.
+- **Surf und Rockabilly:** 150 BPM, Tonart geschätzt C Dur (Konfidenz 0,6; Prompt war Moll-Pentatonik, also eher A Moll), 60 Phrasen: Twang-Gitarre 38, Synth 10, Orgel 6, Blech 4, Vocal 2. Slap-Bass ergab keine einstimmigen Phrasen.
+- **E-Funk mit Talkbox:** 142 BPM, Tonart geschätzt G Moll (0,75), 119 Phrasen: Gitarre 69, Moog-Synth 22, Talkbox 15, Holzbläser 7, Blech 4, Bass 2. Clavinet ergab keine.
+- Je Phrase im Manifest: Start, Länge, Grundton, Kontur, Klarheit, LUFS (ab 0,4 s), Einsatz in Schlägen. Alles im privaten Branch unter `40_AUDIO/chatterbox_r1/suno_tests/<song>/harvest/`.
+- Zuordnung zu Figuren erst über das Register (chatter.motif/grains) nach Georgs Familien-Wahl (Hub q178). Der Marsch-Test fehlt noch.
+
 # NEU OBEN (23.10.) · An WS-Audio: Familie 13 Melodica geliefert
 - 13 Clips (9 Gefühle + 4 Rufe, 0,8 s, −16 LUFS), Satz `chatter_families_r2_melodica_lufs` mit lufs_report.json im privaten Repo georg-doc/KFB-Stunt-Car-Race, Branch assets/private, Pfad `40_AUDIO/elevenlabs_r1/`. Namen wie Satz r1: `F13_melodica_<gefühl|call_*>`. Bitte in `CHATTER_FAMILIES` für die Bots (Register SPEC) eintragen.
 

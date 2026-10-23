@@ -37,7 +37,7 @@ Stand 22.10.2026, Register bis V-688. WS1-Status jetzt auf ws1/status. Nach jede
 - Hub: q168 beantwortet (V-684, Ink-Flüsse); q169 Ziel-Pfeil zurückgestellt bis WS1-Ist-Bilder hud=wood.
 - WS1 §149: sechs Abnahmen warten auf Georg (Flamme v2, Scheinwerfer-Kegel, look-r2 1–7, Kit-Knete 0/1/2, Schattenseite, Startseite) plus Gold-Licht violett; Kritiker R4 danach.
 - WSA: Inventur des Arbeitsordners (36 GB), Löschen nur nach Georgs Ja.
-- Chatterbox: 156 Familien-Clips fertig; Suno-Solo-Tests erzeugt Georg; offen: Hub q177 (Clips-Go), q178 (Familien je Gruppe), q179 (Ducking); Register-Felder chatter.motif/grains bei nächster Erzeugung ergänzen; harvest_phrases.py um Tonart/BPM/Einsatz/LUFS + music_catalog_r1.json erweitern (V-688).
+- Chatterbox: 156 Familien-Clips fertig; Suno-Solo-Tests erzeugt Georg; offen: Hub q177 (Clips-Go), q178 (Familien je Gruppe), q179 (Ducking); Register-Felder chatter.motif/grains bei nächster Erzeugung ergänzen; Ernte Surf + E-Funk fertig, Katalog 40_AUDIO/music_catalog_r1.json; Marsch-Test fehlt (V-688).
 
 ## 5 · Feste Grenzen
 Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im Chat. Private Assets nie öffentlich. Keine Freigaben an andere Sitzungen weiterreichen. Agenten laden nichts per git fetch in `~/KFB_GitHub_sync`. Cowork-Sitzungen werden nie gelöscht.

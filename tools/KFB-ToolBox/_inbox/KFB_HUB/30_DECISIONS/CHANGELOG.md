@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- Suno-Ernte Surf (150 BPM, 60 Phrasen) und E-Funk (142 BPM, 119 Phrasen) mit Tonart/BPM/Einsatz/LUFS; music_catalog_r1.json; harvest_phrases.py erweitert, lufs_set.py importierbar; privat, an WS-Audio.
 - Chatterbox Familie 13 Melodica erzeugt (13 Clips, 416 Credits, Georgs Go im Chat), privat, an WS-Audio.
 - V-688 Antworten WS-Audio §13 (Familien-Wahl Georg q178, Clips nach Go, chatter.motif/grains, Ernte-Metadaten, Musik-Katalog, Ducking q179).
 - WS1 präsentiert seine Abnahmen direkt in der Sitzung (Georg kann die Abnahme-Seite nicht aus dem Hub öffnen); Hub-Karten q170–q176 dorthin verwiesen.
