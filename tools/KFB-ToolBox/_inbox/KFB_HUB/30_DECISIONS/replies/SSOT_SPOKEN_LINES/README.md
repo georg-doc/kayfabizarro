@@ -13,6 +13,7 @@
 |---|---|
 | `README.md` | Regeln, Formate, Beispiele, Lessons (dieses Dokument) |
 | `rules.json` | dieselben Regeln maschinenlesbar (ID, Stufe, Prüfung, Quelle) |
+| `TR1_INDEX.json`, `tr1_cards/` | Tratsch-Triplets tr1: Index (Pfade, Rückfall-, Sperr- und Opener-Regeln zur Laufzeit) und Druck-Kartenquellen |
 | `spoken_line_lint.py` | Prüfskript für alle automatisch prüfbaren Regeln (Hygiene, kein Qualitätsbeweis) |
 | `../SONGS_WORKSHOP_R1/OPENER_POOL_BY_STANCE_R1.json` | Opener-Pool nach Haltung und Satzbau |
 | `../BAUKASTEN_SPOKEN_LINES_SSOT_R1.md` | Herleitung des Fünf-Schichten-Modells (geht in diesem Modul auf) |
@@ -47,7 +48,7 @@ Kürzel: **L** = vom Lint geprüft, **G** = nur Georgs Ohr bzw. eine Zweitmeinun
 | S9 | **Kein Opener doppelt** pro Song, Dialog bzw. Tag; Familienabstand ≥ 10; Frage und Behauptung wechseln. | L (Opener-Spalte) / Laufzeit |
 | S10 | **Nur was der Hörer kennt.** Keine Witze aus Asset-Wissen (Wechselköpfe, Texturen) und keine Bildbeschreibungen, die man ohne Bild nicht versteht. | G |
 | S11 | **Absurd statt Klischee.** Kein Büro-, HR- oder Sitcom-Register; der Stoff kommt aus dem Deck. | G |
-| S12 | **Tonfall bei heiklen Decks.** 9/11: Satire auf Geld und Institutionen, keine „wer flog“-Hinweise. Verschwörungsdecks: nie eine Behauptung als Tatsache. Personennamen nur wie auf der Karte. Therapie: nie gegen Hilfesuchende. | G |
+| S12 | **Tonfall bei heiklen Decks.** Karten, die sich nicht als Parodie sprechen lassen (antisemitische oder Blutlinien-Mythen, Gesundheits- und Impfbehauptungen, Great Replacement, Opfer von Anschlägen und Missbrauch, reale Personen mit Tatvorwurf), stehen in `<deck>.tr1.blocked.json` und werden **nie** gesprochen, auch nicht als Rückfall roh. 9/11: Satire auf Geld und Institutionen, keine „wer flog“-Hinweise. Verschwörungsdecks: nie eine Behauptung als Tatsache. Personennamen nur wie auf der Karte. Therapie: nie gegen Hilfesuchende. | G |
 | S13 | **Gate-PASS bzw. Lint-0-FAIL ist kein Qualitätsbeweis** und wird nie als „fertig“ oder „gut“ gemeldet. | – |
 
 ## 3 · Richtwerte (WARN)
@@ -121,4 +122,5 @@ Kürzel: **L** = vom Lint geprüft, **G** = nur Georgs Ohr bzw. eine Zweitmeinun
 6. Messwerte (Lint, Gate, Quote) sind Hygiene. Qualität misst nur das Ohr.
 
 ## 9 · Änderungsverlauf
+- **R1.1 (24.10.2026):** Lint: Ziffern und Initialen im Titel nicht verlangt, ausgeschriebene Zahlen erlaubt, „and then“ = FAIL. S12: gesperrte Karten (`blocked.json`) nie sprechen. `TR1_INDEX.json` für Tratsch-Laufzeit, Kartenquellen unter `tr1_cards/`.
 - **R1 (24.10.2026):** Modul angelegt aus Baukasten R1.2, Post-Mortems R1/R2 und Georgs Korrekturen vom 21.–24.10. (Doppelpunkt, Fragmente, Schablone, Rückfall b, PDF führt).

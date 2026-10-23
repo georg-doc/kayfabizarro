@@ -13,7 +13,8 @@ from collections import Counter
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from triplet_set_check import vocab, stems, GRAMMAR, WORD, FLUFF  # gemeinsame Kartenwort-Logik
 
-GRAMMAR_EXTRA = set("why how because until than just only also too very".split())
+GRAMMAR_EXTRA = set("why how because until than just only also too very".split()) | set(
+    "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million half".split())  # ausgeschriebene Zahlen (S7)
 MECH = re.compile(r"\b(damage|dice|die roll|roll|turn|turns|token|tokens|hp|stat|stats|discard|draw|deck|actor|scene|opponent's hand|xp|reroll)\b", re.I)
 SYMBOL = re.compile(r"[0-9&%$#@*/+=<>\[\]{}()]")
 LEN_MAX = {"tratsch": 110, "song": 120, "set": 110}
@@ -26,7 +27,8 @@ def norm_title(name):
     return t.strip()
 
 def title_words(name):
-    return [w.lower() for w in WORD.findall(norm_title(name)) if w.lower() not in ("the", "a", "an", "of", "and")]
+    # Ziffern-Titel (z. B. "8½ Octo-Auteur", "20 Bear Asses"): nur der sprechbare Kern zählt (S7)
+    return [w.lower() for w in WORD.findall(norm_title(name)) if w.lower() not in ("the", "a", "an", "of", "and") and not w.isdigit() and len(w) > 1]  # Initialen (G.F.) nicht verlangen
 
 def main(cards_path, lines_path, mode="tratsch"):
     cards = {int(c["cardNumber"]): c for c in json.load(open(cards_path))["cards"]}
@@ -41,6 +43,7 @@ def main(cards_path, lines_path, mode="tratsch"):
         # 1 Doppelpunkt / Label (Georg 24.10.: nie "Titel: …", Doppelpunkte klingen in Suno nicht)
         if ":" in spoken: msgs.append(("FAIL", "Doppelpunkt im Sprechtext (Etikett/Label-Struktur)"))
         if ";" in spoken: msgs.append(("WARN", "Semikolon – lieber zwei kurze Sätze"))
+        if re.search(r"\band then\b", spoken, re.I): msgs.append(("FAIL", "„and then“ (KayfabeTip 1: therefore/but, nie and-then)"))
         # 2 Klammern / Symbole / Ziffern
         if re.search(r"[()\[\]{}]", spoken): msgs.append(("FAIL", "Klammer im Sprechtext"))
         if SYMBOL.search(re.sub(r"[()\[\]{}]", "", spoken)): msgs.append(("WARN", "Ziffer/Symbol – ausschreiben oder weglassen"))

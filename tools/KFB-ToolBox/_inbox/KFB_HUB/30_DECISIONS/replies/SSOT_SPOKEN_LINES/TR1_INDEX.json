@@ -1,0 +1,102 @@
+{
+ "schema": "kfb.tr1.index/1",
+ "date": "2026-10-24",
+ "status": "Entwurf – nicht von Georg abgenommen; Probe Mission Control #1–11 abgenickt",
+ "rules": "SSOT_SPOKEN_LINES/README.md",
+ "lint": "SSOT_SPOKEN_LINES/spoken_line_lint.py --mode tratsch",
+ "runtime": [
+  "Opener aus OPENER_POOL_BY_STANCE_R1.json, nur status POOL, kein Opener doppelt, Frage/Behauptung wechseln",
+  "Karte ohne Zeile: Rückfall b (Titel + gedruckte Lore + POOL-Opener, Power nie), AUSSER Karte steht in blocked.json – dann nie sprechen",
+  "BOGGLE-Nachlegen: Teil der Karte, den das Triplet nicht enthält; nie denselben Text zweimal"
+ ],
+ "decks": [
+  {
+   "deckId": "frizzlebob_s_mission_control",
+   "lines": "SONGS_WORKSHOP_R1/frizzlebob_s_mission_control/frizzlebob_s_mission_control.tr1.lines.csv",
+   "cards": 56,
+   "withLine": 56,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/frizzlebob_s_mission_control.cards.json"
+  },
+  {
+   "deckId": "the_bards_barnyard_beatdown",
+   "lines": "SONGS_WORKSHOP_R1/the_bards_barnyard_beatdown/the_bards_barnyard_beatdown.tr1.lines.csv",
+   "cards": 49,
+   "withLine": 49,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/the_bards_barnyard_beatdown.cards.json"
+  },
+  {
+   "deckId": "sonic_warfare_music_history_01",
+   "lines": "SONGS_WORKSHOP_R1/sonic_warfare_music_history_01/sonic_warfare_music_history_01.tr1.lines.csv",
+   "cards": 40,
+   "withLine": 40,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/sonic_warfare_music_history_01.cards.json"
+  },
+  {
+   "deckId": "the_kayfabe_money_trail_9_11",
+   "lines": "SONGS_WORKSHOP_R1/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.tr1.lines.csv",
+   "cards": 60,
+   "withLine": 55,
+   "blocked": "SONGS_WORKSHOP_R1/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.tr1.blocked.json",
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/the_kayfabe_money_trail_9_11.cards.json"
+  },
+  {
+   "deckId": "symphonic_savagery",
+   "lines": "SONGS_WORKSHOP_R1/symphonic_savagery/symphonic_savagery.tr1.lines.csv",
+   "cards": 56,
+   "withLine": 56,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/symphonic_savagery.cards.json"
+  },
+  {
+   "deckId": "geopolitical_thrillers_conspiracy_theories",
+   "lines": "SONGS_WORKSHOP_R1/geopolitical_thrillers_conspiracy_theories/geopolitical_thrillers_conspiracy_theories.tr1.lines.csv",
+   "cards": 56,
+   "withLine": 43,
+   "blocked": "SONGS_WORKSHOP_R1/geopolitical_thrillers_conspiracy_theories/geopolitical_thrillers_conspiracy_theories.tr1.blocked.json",
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/geopolitical_thrillers_conspiracy_theories.cards.json"
+  },
+  {
+   "deckId": "frizzlebob_s_ego_mania_narcissist",
+   "lines": "SONGS_WORKSHOP_R1/frizzlebob_s_ego_mania_narcissist/frizzlebob_s_ego_mania_narcissist.tr1.lines.csv",
+   "cards": 48,
+   "withLine": 48,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/frizzlebob_s_ego_mania_narcissist.cards.json"
+  },
+  {
+   "deckId": "anti_rules_toolkit",
+   "lines": "SONGS_WORKSHOP_R1/anti_rules_toolkit/anti_rules_toolkit.tr1.lines.csv",
+   "cards": 56,
+   "withLine": 56,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/anti_rules_toolkit.cards.json"
+  },
+  {
+   "deckId": "shadow_politics",
+   "lines": "SONGS_WORKSHOP_R1/shadow_politics/shadow_politics.tr1.lines.csv",
+   "cards": 48,
+   "withLine": 38,
+   "blocked": "SONGS_WORKSHOP_R1/shadow_politics/shadow_politics.tr1.blocked.json",
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/shadow_politics.cards.json"
+  },
+  {
+   "deckId": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+   "lines": "SONGS_WORKSHOP_R1/the_biology_of_rebellion_hilfe_ich_bin_ein_mensc/the_biology_of_rebellion_hilfe_ich_bin_ein_mensc.tr1.lines.csv",
+   "cards": 36,
+   "withLine": 33,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/the_biology_of_rebellion_hilfe_ich_bin_ein_mensc.cards.json"
+  },
+  {
+   "deckId": "cinematic_kayfabizarro_2",
+   "lines": "SONGS_WORKSHOP_R1/cinematic_kayfabizarro_2/cinematic_kayfabizarro_2.tr1.lines.csv",
+   "cards": 56,
+   "withLine": 56,
+   "blocked": null,
+   "cardSource": "SSOT_SPOKEN_LINES/tr1_cards/cinematic_kayfabizarro_2.cards.json"
+  }
+ ]
+}

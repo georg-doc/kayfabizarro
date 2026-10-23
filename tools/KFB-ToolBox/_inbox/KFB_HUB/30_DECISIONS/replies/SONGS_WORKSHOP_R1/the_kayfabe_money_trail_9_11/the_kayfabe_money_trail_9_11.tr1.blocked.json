@@ -1,0 +1,29 @@
+{
+ "schema": "kfb.tr1.blocked/1",
+ "deckId": "the_kayfabe_money_trail_9_11",
+ "rule": "SSOT S12: gesperrte Karten werden nie gesprochen, auch nicht als Rückfall roh",
+ "date": "2026-10-24",
+ "blocked": [
+  {
+   "cardNumber": 9,
+   "reason": "Einschlagszone/Opfer – jede Pointe zielt auf die Toten"
+  },
+  {
+   "cardNumber": 12,
+   "reason": "unterstellt einer realen Person Vorwissen"
+  },
+  {
+   "cardNumber": 34,
+   "reason": "reale Person mit Terror-Verdacht"
+  },
+  {
+   "cardNumber": 45,
+   "reason": "trägt das 'wer flog'-Motiv (Deck-Note 9/11)"
+  },
+  {
+   "cardNumber": 49,
+   "reason": "Pentagon-Einschlagsort/Opfer"
+  }
+ ],
+ "status": "Vorschlag Deck-Songs, Entscheidung Georg/WS0"
+}

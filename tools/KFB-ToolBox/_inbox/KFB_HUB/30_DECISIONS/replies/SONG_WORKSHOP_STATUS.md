@@ -581,3 +581,8 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
 ## §28 · 23.10.2026 · Deck-Songs: vier Decks nach Baukasten, Songliste neu geordnet
 - **t4 nach Baukasten** (Best-of, eingebettete Stand-up-Opener, Uptake): BBBW (45 Karten, Georg „passt, Tune später“), Embrace Protopia (45), Bullshit Jobs Uncut (51), Jung and Shinn (47). Kartenwörter gegen Druckdaten geprüft. Builder: `SONGS_WORKSHOP_R1/build_baukasten_song.py`.
 - **Writers' Room neu geordnet** (Georg 23.10.: Metropolis ist für jetzt ein schlechtes Deck, es geht um Körper/MED): Welle 0 „Piloten“ = die vier t4-Decks (1 BBBW, 2 Protopia, 3 Bullshit Jobs, 4 Jung and Shinn); Batch 1 folgt ab 5; The Biological Metropolis und die drei MedKayfab-Decks (Hospital Hierarchy, Cardiology, Emergency Medicine) nach Welle 8 „später“ mit Vermerk „MED/Körper – später“.
+
+
+## §29 · 24.10.2026 · SSOT-Modul gesprochene Kartenzeilen + Tratsch-Triplets tr1 (11 Decks)
+- **SSOT-Modul** `SSOT_SPOKEN_LINES/` (README, rules.json, spoken_line_lint.py, TR1_INDEX.json, tr1_cards/): verbindlich für Songs, Triplet-Sets, Chatterbox, Karten-Tratsch, Narrator. Georg 24.10.: „ich habe das alles schon zigmal korrigieren müssen, da muss ein SSOT-Modul draus werden.“ **Auftrag an WS0:** Specs (TRIPLET_SET_SPEC_R2, SONG_SPEC_R4, OPENER_ARC_MODEL_R1) auf das Modul verweisen lassen; Änderungen nur hier. **An WS1/WS-NPC:** Tratsch-Laufzeit nach README §4/§5 und TR1_INDEX.json.
+- **tr1** (Georg 24.10.: „ja, mach die 11 Tratsch-Decks so“ nach Probe Mission Control): 11 Decks, 530 Zeilen, Lint 0 FAIL je Deck; Tonfall: 25 Karten in 9/11, Geopolitik, Shadow Politics gesperrt (`*.tr1.blocked.json`, nie sprechen) – Entscheidung Georg/WS0. Entwurf, nicht abgenommen.
