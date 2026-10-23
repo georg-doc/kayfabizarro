@@ -2,11 +2,11 @@
 
 Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde Theorien, Spekulation, Frage im Wechsel mit Behauptung; Mini-Opener nicht wiederholen. **Nur vorhandenes Material sortiert**, nichts neu erfunden; die große Sammlung (NotebookLM, Docs) stellt WS0 zusammen (siehe SONG_WORKSHOP_STATUS §26).
 
-**Satzbau:** `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz, dann die Karte · `interjection` Einwurf mit Komma.
+**Satzbau:** `into_title` läuft direkt in den Kartentitel · `own_clause` eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte · `interjection` Einwurf mit Komma.
 
 **Regeln:**
 - Je Karte ein festes Triplet; Abwechslung nur über den Opener.
-- into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Doppelpunkt/Punkt, dann die Karte. Nie zwei lose Wörter ohne Satz.
+- into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt), dann die Karte. Nie zwei lose Wörter ohne Satz.
 - Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.
 - Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.
 - Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0.

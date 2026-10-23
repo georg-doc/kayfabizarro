@@ -82,7 +82,7 @@ ORDER = ["Gerücht", "Begegnung", "Fundstück", "Anekdote", "Frage", "Theorie", 
 rows.sort(key=lambda r: (ORDER.index(r["stance"]), r["slot"], r["opener"]))
 out = {"schema": "kfb.opener-pool.stance/1", "date": "2026-10-23",
        "rules": ["Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
-                 "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Doppelpunkt/Punkt, dann die Karte. Nie zwei lose Wörter ohne Satz.",
+                 "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.",
                  "Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.",
                  "Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.",
                  "Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0."],

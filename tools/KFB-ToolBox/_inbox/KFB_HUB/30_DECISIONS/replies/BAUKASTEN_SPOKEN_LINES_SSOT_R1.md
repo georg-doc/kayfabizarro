@@ -1,3 +1,5 @@
+> **Aufgegangen in `SSOT_SPOKEN_LINES/README.md` (R1, 24.10.2026).** Dieses Dokument bleibt als Herleitung; verbindlich ist das Modul.
+
 # Baukasten · gesprochene Kartenzeilen (Chatterbox, Triplets, Songs) · SSOT-Vorschlag R1 · 23.10.2026
 **R1.2 (24.10.):** §2.2 kein Doppelpunkt hinter dem Titel, Titel steht im Satz; §2.2b keine Satzschablone über das Deck (Georg 24.10.). Folge: Die t4-Songs (BBBW, Protopia, Bullshit Jobs, Jung and Shinn) enthalten noch „Titel: …“-Stellen und werden im Tune danach bereinigt.
 **R1.1 (23.10.):** §2.3 „Telegramm-Takte“ ersetzt durch „ganze Sätze mit Flow, keine Fragmente“ (Georg zu den Tratsch-Triplets).
@@ -27,7 +29,7 @@ Jede gesprochene Kartenzeile wird aus Schichten gebaut. Jede Schicht hat genau e
 1. **Ein Satz mit Aussage, nicht vorgelesen.** Den Lore-Text nicht der Reihe nach abschreiben. Die Karte behauptet etwas über sich (show it, spin it, sell it).
 2. **Der Titel steht im Satz, nie als Etikett.** **Kein Doppelpunkt hinter dem Titel** und keine Label-Struktur („Escape Sequence: …“, „Broken Bridge: …“). Das klingt in Suno nicht und führt zu FAILs (Georg 24.10., „schon 100-mal gesagt“). Der Titel ist Subjekt, Objekt oder Ort im Satz: „Escape Sequence runs you away from danger …“, „At the Broken Bridge you cannot pass …“, „Find an exit to The Maze? Spoilers, there is no outside.“ Normale Schreibweise, eigener Artikel, keine Klammern.
 2b. **Keine Satzschablone über das Deck.** Die Satzform kommt aus der Karte: Befehl, Frage, Behauptung, Titel vorn, in der Mitte oder hinten. Über ein Deck wechseln die Formen. Kurz, prägnant, Comic-Stil, Weglassungen erwünscht, aber mit Flow, der auch in Suno trägt.
-3. **Ganze Sätze mit Flow, keine Fragmente** (Georg 23.10. zu den Tratsch-Triplets: „die alten Fragmente, keine Sätze, kein Flow“). Keine Komma-Ketten aus Stichworten („shuffle, redraw, minus one“), keine Partizip-Reste („victory moved back“). Verdichtet wird durch Weglassen ganzer Satzteile, nicht durch Telegrammstil. Bewährte Form: *Titel ist / tut [Power-Begriff]: du [Handlung aus Lore oder Power], und / aber [Pointe].* Beispiel: „The Maze is a cognitive loop: you find an exit to the level, but spoilers, there is no outside.“
+3. **Ganze Sätze mit Flow, keine Fragmente** (Georg 23.10. zu den Tratsch-Triplets: „die alten Fragmente, keine Sätze, kein Flow“). Keine Komma-Ketten aus Stichworten („shuffle, redraw, minus one“), keine Partizip-Reste („victory moved back“). Verdichtet wird durch Weglassen ganzer Satzteile, nicht durch Telegrammstil. (Eine feste Satzform über alle Karten ist wieder eine Schablone, siehe 2b; Beispiel: „Find an exit to The Maze? Spoilers, there is no outside.“)
 4. **Die Pointe der Karte steht am Ende** und kommt von der Karte („A slave to approval.“, „Strength? No, gullibility.“).
 5. **Nur Kartenwörter plus Grammatik**, höchstens ein Fluff-o-lect-Wort. Mechanik nur als Bild. Spielbegriffe, Würfelwerte, Ziffern und Sonderzeichen fallen weg oder werden ausgeschrieben.
 6. **Muss allein als Satz funktionieren.** Prüffrage: Versteht jemand ohne Karte, wer was tut? Fragmente wie „The Lazy Genius, hands in pockets: the apathy makes them furious.“ funktionieren nicht ohne Einbettung (Schicht 3).
@@ -63,7 +65,7 @@ Frage und Behauptung wechseln sich ab.
 
 **Satzbau** je Opener:
 - `into_title` läuft direkt in den Titel: „Did you hear about The …?“
-- `own_clause` ist ein kurzer eigener Satz, dann folgt die Karte: „My diary says: The …“
+- `own_clause` ist ein kurzer eigener Satz mit Punkt oder Komma (nie Doppelpunkt), dann folgt die Karte: „My diary says so. The …“
 - `interjection` ist ein Einwurf: „Anyway, The …“
 
 **Regeln:**
