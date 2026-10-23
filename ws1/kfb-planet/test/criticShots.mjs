@@ -19,7 +19,7 @@ async function camShot(p, name, { from, at, fov = 40, silhouette = false }) {
     const M = window.__kfbM1, gl = M.renderer(), scene = M.scene(), T = M.three()
     const f = M.feet(), P = (v) => [f[0] + v[0], (M.terrainH(f[0] + v[0], f[2] + v[2]) ?? 0) + v[1], f[2] + v[2]]
     const c = new T.PerspectiveCamera(fov, W / Hh, 0.1, 2000), a = P(from), b = P(at); c.position.set(...a); c.lookAt(...b); c.updateMatrixWorld()
-    const rt = new T.WebGLRenderTarget(W, Hh, { samples: 4 }), buf = new Uint8Array(W * Hh * 4)
+    const rt = new T.WebGLRenderTarget(W, Hh, { samples: 4, colorSpace: T.SRGBColorSpace }) /* sRGB wie die Spielausgabe – ohne war das Bild zu dunkel (23.10.) */, buf = new Uint8Array(W * Hh * 4)
     const bg = scene.background, fog = scene.fog, ov = scene.overrideMaterial
     if (silhouette) { scene.background = new T.Color('#9a9a9a'); scene.fog = null; scene.overrideMaterial = new T.MeshBasicMaterial({ color: 0x000000 }) }
     gl.setRenderTarget(rt); gl.render(scene, c); gl.readRenderTargetPixels(rt, 0, 0, W, Hh, buf); gl.setRenderTarget(null)
@@ -52,6 +52,8 @@ const log = []
 // 7 Fahrt im Racer (Spieltempo)
 { const p = await open(',car'); await p.evaluate(() => window.__kfbM1.input?.({ forward: true })); await p.waitForTimeout(3500); log.push(await shot(p, '07-fahrt')); await p.waitForTimeout(1500); log.push(await shot(p, '08-fahrt-2')); await p.close() }
 await b.close()
+// 9/10 Kampf: eigenes Skript (Georg 23.10.: Schützenhaltung bleibt, Bild von der Brustseite, 10 = K.o.)
+{ const { execFileSync } = await import('child_process'); execFileSync(process.execPath, ['test/criticShots-kampf.mjs'], { stdio: 'inherit', env: { ...process.env, OUT } }) }
 // Pflicht-Pässe zur Spielkamera (01): Graustufen + Thumbnail (klein, leicht unscharf)
 await sharp(`${OUT}/01-spawn-tag-spielkamera.png`).grayscale().toFile(`${OUT}/01b-pass-graustufen.png`)
 await sharp(`${OUT}/01-spawn-tag-spielkamera.png`).resize(240).blur(1.2).toFile(`${OUT}/01c-pass-thumbnail.png`)

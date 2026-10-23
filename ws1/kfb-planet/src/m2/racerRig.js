@@ -22,7 +22,8 @@ export function terrainDustColor(H, x, z, { flatY = 0.6 } = {}) {
 // release(): sofort aus (Kegel weg, Pfützen leer), entsorgt 3 s später – die Shader bleiben so für den nächsten Wagen übersetzt.
 export function mountHeadlights({ model, racer, scene, pools, ground, unit }) {
   const a = racer.headlights; if (!a) return null
-  const hl = createHeadlights({ car: model, anchors: a.lamps.map((l) => ({ pos: l.pos, r: l.r, dir: a.dir })), color: racer.glow.plume, core: racer.glow.core, scene, pools, ground, unit })
+  const hl = createHeadlights({ car: model, anchors: a.lamps.map((l) => ({ pos: l.pos, r: l.r, dir: a.dir })), color: racer.glow.plume, core: racer.glow.core, scene, pools, ground, unit,
+    restH: unit * (a.lamps.reduce((s, l) => s + l.pos[1], 0) / a.lamps.length + (racer.locomotion === 'wheels' ? 0 : 0.7)) })   // Lampenhöhe im Stand (Schwebehöhe 0,7 Rig bei Schwebern)
   return { hl, release: () => { hl.setOn(false); setTimeout(() => hl.dispose(), 3000) } }
 }
 

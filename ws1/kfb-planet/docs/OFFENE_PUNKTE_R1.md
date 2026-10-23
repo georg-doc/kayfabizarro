@@ -105,6 +105,9 @@ Volltext: `docs/critic/MVP_R1_CRITIC_ERGEBNIS.md` (Bilder privat in `~/kfb-ws1/r
 |---|---|---|---|---|
 | Regression `vehicles-r1 data` nach Hero-Umbau (= B5); Fix cc35b7e ist da, Bestätigung in der Reihe fehlt. | WS1S §137; Commit cc35b7e | WS1d / Lead | MVP | prüfen |
 | Scheinwerfer-Feinabstimmung der 8 Anker (Georg: PASS, Tune später). | VEHICLES_R1_ANKER; VEHICLES_R1 §3 | WS1d | später | offen |
+| Scheinwerfer-Kegel Feinschliff (Georg 23.10.: Standard, Feinschliff später): Übergang Kegel → Fleck ohne Helligkeits- und Breitensprung (Volumen wirkt schmaler, Fleck läuft zu schnell hell ein); Abnahmeplatz ohne dunkle Kästen. | Abnahme scheinwerfer5 r2; HEADLIGHTS_PHYSIK_R2 | WS1d | später | offen |
+| Figuren nachts lesbar mit bestehendem Licht (Georg 23.10.: Figurenlicht Weg 1 abgelehnt – zu flach, Textur weg, Bodenschatten weg). Erst Recherche + Konzept mit Messkriterien (Struktur ≥ heute, Bodenschatten ≥ heute, Figur vs. Hintergrund), dann eine Umsetzung. | FIGURENLICHT_KONZEPT_R1 (abgelehnt), FIGUREN_LESBARKEIT_R2 | Lead | hoch | Recherche läuft |
+| Staub hinter Racern: helle Tupfer statt Fahne (r2 auf ws1/staub-probe). Georg wählt: (a) so übernehmen oder (b) Konzept Staub-Band entlang der Spur. | Abnahme staub-probe r2/r3 | WS1b | mittel | Georg |
 | Fahr-VFX fehlen im Spiel: Landering, Sprung-Puff, Boost-Stoß, Drift-Spur, Aufprall-Stern (Modul `kfb-vfx`); Spiel-Staub als weiche Sprites ersetzen. | VFX_SFX_R1 §1, Top 10; AD #10 | WS1d | nach MVP hoch | offen |
 | Erstladen mit neuen Shader-Varianten: Ödland-Käfer bis 196 ms, Abschlepp-Koloss bis 290 ms unter Volllast. | VEHICLES_R1 Offen 3 | WS1d | später | offen |
 | kfb-groundfx bei „Scharf“/×2 über 0,5 ms (×2: 0,91 ms); „Scharf“ nicht gemessen. | VEHICLES_R1 §4, Offen 5 | WS1d | später | offen |

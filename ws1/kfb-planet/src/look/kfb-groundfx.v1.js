@@ -5,6 +5,9 @@
 //   cone  Kegel-Projektion von einem Ursprung entlang dir (Scheinwerfer, Disco-Strahler, Laternen). Rechnung 1:1 wie kfb-light-pool.v1.
 //   pool  runde Pfütze senkrecht von oben (Radius, weicher Rand), reicht vom Ursprung `range` nach unten.
 //   ring  Ring senkrecht von oben (Radius, Breite) – Boombox-Ringe, Treffer, Landungen.
+//   beam2 Kontaktlicht eines Scheinwerfer-Paars (Georg 22.10., Lichtbild 23.10.: Einlauf, Maximum ≈ 0,6 L, rundes weiches Ende über die letzten 30 %): Bodenpunkte, die IM Volumen zweier elliptischer Kegelstümpfe liegen (Lampen bei origin ± half·R,
+//         gemeinsame Achse dir, Startradius r0, Spreizung tanH/tanV, Länge len) – derselbe Kegel wie das sichtbare Mesh, Rand weich in Metern, Längenausblendung;
+//         beide Kegel addiert und weich gekappt (Überlappung heller, brennt nicht aus). 1 Platz für beide Lampen.
 // Werte je Eintrag: { form, origin, dir, angle, soft, color, intensity, range, radius, width }; Kegel optional elliptisch: angleH, angleV (rad), startH (waagrechte Startbreite, Kegelstumpf), lowerOnly (senkrecht nur die Unterkante, Ende über range), flat (gleichmäßig statt Einfallswinkel). Zeitkurven laufen auf der CPU (curves, createRingEmitter).
 // Mischer: mehrere Besitzer (Scheinwerfer, Disco, Boombox, Laternen) teilen sich die Plätze: fx.channel(owner, { priority }).set(list).
 //   Zu viele Einträge: höhere Priorität zuerst, dann näher am Fokus (fx.setFocus, z. B. Kamera). channel.setPools = set (Format kfb-light-pool.v1).
@@ -15,7 +18,7 @@
 //   auch ohne Effekt ≈ 3,7 ms bei 1,6 Mpx). Effekte außerhalb des Gitters werden nicht gezeichnet – Fokus (Kamera bzw. Wagen) jedes Bild setzen.
 // Rahmenunabhängig: THREE wird übergeben (r147 global oder r186 als Modul), kein DOM nötig außer für die Glüh-Textur.
 export const VERSION = 'kfb-groundfx.v1'
-export const FORMS = Object.freeze({ cone: 0, pool: 1, ring: 2 })
+export const FORMS = Object.freeze({ cone: 0, pool: 1, ring: 2, beam2: 3 })
 
 export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64 } = {}) {
   const MAX = Math.max(1, Math.min(32, max | 0)), GN = Math.max(4, gridCells | 0), CELL = gridSize / GN
@@ -42,8 +45,24 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
       if (!hit) continue;
       vec4 A = uGFa[i], B = uGFb[i], D = uGFd[i]; float k;
       vec3 L = wp - A.xyz; float d2 = dot(L, L);
-      if (d2 > (A.w < 0.5 ? D.x * D.x : B.x)) continue;                               /* Begrenzungskugel: Pixel außerhalb kosten nur diese Prüfung */
-      if (A.w < 0.5) {                                                                /* Kegel: weicher Rand Außen- → Innenwinkel, Reichweite, Flächen zum Licht hin heller */
+      if (A.w < 2.5 && d2 > (A.w < 0.5 ? D.x * D.x : B.x)) continue;                  /* Begrenzungskugel: Pixel außerhalb kosten nur diese Prüfung (beam2: Zellenmaske genügt) */
+      if (A.w > 2.5) {                                                                /* beam2: Punkt im Volumen zweier Kegelstümpfe (Scheinwerfer-Paar) */
+        vec3 ax = B.xyz, R0 = normalize(cross(ax, vec3(0.0, 1.0, 0.0))), U0 = cross(R0, ax); float rl = (A.w - 3.25) * 12.566371;   /* Rollen des Wagens (Querhang) steckt in A.w */
+        vec3 R = cos(rl) * R0 + sin(rl) * U0, U = cross(R, ax); float t = dot(L, ax);
+        if (t <= 0.0 || t > D.x) continue;
+        float rh = D.y + t * D.z, rv = D.y + t * D.w, v = dot(L, R), y = dot(L, U);
+        /* Lichtbild wie Abblendlicht (Lead 23.10., HEADLIGHTS_PHYSIK_R2): senkrecht u = 0 Unterkante … 1 Oberkante = Hell-Dunkel-Grenze. Weicher Einlauf,
+           ansteigend bis zum Maximum (u 0,87 ≈ 0,6 L auf ebenem Boden), hell bis zur scharfen Grenze (Breite ≈ 0,012 u ≈ 0,06 L); rechts angedeutet länger.
+           Seitlich: Kegel ±tanH, auf dem Boden weich ausgefranst bis ≈ 1,41 × (±14°). */
+        float u = 0.5 * (y / rv + 1.0), yr = y / rv - 0.036 * smoothstep(0.0, 1.0, v / (B.w + rh));                     /* rechts angedeutet länger */
+        float vert = smoothstep(0.0, 0.06, u) * mix(0.3, 1.0, smoothstep(0.0, 0.88, u)) * (1.0 - 0.75 * smoothstep(0.88, 1.0, u));   /* zur Grenze hin schon dunkler: Bodenwellen schneiden nicht hart */
+        /* elliptischer Querschnitt (Georg 23.10.: Ende rund statt gerade Kante), seitlich weich bis ≈ 1,4 × tanH (±14°), senkrecht schmaler Saum */
+        vec2 q1 = vec2((v - B.w) / (1.4 * rh), yr), q2 = vec2((v + B.w) / (1.4 * rh), yr); float e1 = length(q1), e2 = length(q2);
+        float w1 = q1.x * q1.x / max(e1 * e1, 1e-4), w2 = q2.x * q2.x / max(e2 * e2, 1e-4);                             /* Anteil seitlich: seitlich breiter Saum, oben/unten schmaler */
+        float s1 = 1.0 - smoothstep(mix(0.75, 0.6, w1), 1.0, e1), s2 = 1.0 - smoothstep(mix(0.75, 0.6, w2), 1.0, e2);
+        float c = (s1 + s2) * vert; k = (1.0 - exp(-1.6 * c)) / (1.0 - exp(-1.6));                                 /* 1 Kegel = 1, Überlappung ≈ 1,2: heller, weich gekappt */
+        k *= smoothstep(0.0, 0.3, t) * (1.0 - smoothstep(D.x * 0.65, D.x, t)) * (0.75 + 0.25 * max(dot(n, -ax), 0.0));   /* weich über die letzten 35 % aus, mit dem Lichtvolumen */
+      } else if (A.w < 0.5) {                                                         /* Kegel: weicher Rand Außen- → Innenwinkel, Reichweite, Flächen zum Licht hin heller */
         float d = sqrt(d2); vec3 l = L / max(d, 1e-4); float cz = dot(l, B.xyz);
         if (D.z > 0.0) {                                                              /* elliptischer Kegelstumpf (Scheinwerfer): waagrecht Startbreite B.w + t·tan D.z, senkrecht t·tan D.w, weicher Rand D.y */
           float t = dot(L, B.xyz); if (t <= 0.0) continue;
@@ -82,20 +101,31 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
   const bound = { x: 0, z: 0, r: 0 }
   function boundOf(i) {
     const A = uniforms.uGFa.value[i], B = uniforms.uGFb.value[i], D = uniforms.uGFd.value[i]
-    if (A.w < 0.5 && D.z > 0) { bound.x = A.x; bound.z = A.z; bound.r = D.x + B.w }   // elliptischer Kegelstumpf: Kugel um den Ursprung (Reichweite + Startbreite)
+    if (A.w > 2.5) { const R = D.x, w = B.w + D.y + R * Math.max(D.z * 1.45, D.w); bound.x = A.x + B.x * R * 0.5; bound.z = A.z + B.z * R * 0.5; bound.r = R * 0.5 + w }   // beam2: Kugel um die Mitte
+    else if (A.w < 0.5 && D.z > 0) { bound.x = A.x; bound.z = A.z; bound.r = D.x + B.w }   // elliptischer Kegelstumpf: Kugel um den Ursprung (Reichweite + Startbreite)
     else if (A.w < 0.5) { const R = D.x, k = Math.sqrt(Math.max(0, 1.25 - B.w))
       if (k < 1) { bound.x = A.x + B.x * R * 0.5; bound.z = A.z + B.z * R * 0.5; bound.r = R * Math.max(0.5, k) } else { bound.x = A.x; bound.z = A.z; bound.r = R } }
     else { bound.x = A.x; bound.z = A.z; bound.r = D.z + (A.w > 1.5 ? D.w : 0) }
     return bound
+  }
+  // beam2: Grundriss der beiden Kegelstümpfe (Trapez längs der waagrechten Achse) – nur Zellen darin bekommen das Bit (Kreis wäre ≈ 7× zu groß)
+  const fpr = { hx: 0, hz: 1, len: 0, w0: 0, k: 0 }
+  function footprint(i) {
+    const B = uniforms.uGFb.value[i], D = uniforms.uGFd.value[i], l = Math.hypot(B.x, B.z) || 1, cp = Math.max(0.05, l)
+    fpr.hx = B.x / l; fpr.hz = B.z / l; fpr.len = D.x; fpr.w0 = B.w + D.y + 0.2; fpr.k = Math.max(D.z * 1.45, D.w) / cp; return fpr   // seitlicher Saum bis 1,41 × tanH
   }
   function buildMask(n) {
     maskData.fill(0); const g = uniforms.uGFg.value
     for (let i = 0; i < n; i++) { const b = boundOf(i), r2 = b.r * b.r, byte = i >> 3, bit = 1 << (i & 7)
       const c0 = Math.max(0, Math.floor((b.x - b.r - g.x) / CELL)), c1 = Math.min(GN - 1, Math.floor((b.x + b.r - g.x) / CELL))
       const r0 = Math.max(0, Math.floor((b.z - b.r - g.y) / CELL)), r1 = Math.min(GN - 1, Math.floor((b.z + b.r - g.y) / CELL))
+      const A = uniforms.uGFa.value[i], fp = A.w > 2.5 ? footprint(i) : null
       for (let r = r0; r <= r1; r++) for (let c = c0; c <= c1; c++) {
         const cx = g.x + c * CELL, cz = g.y + r * CELL, dx = Math.max(cx - b.x, 0, b.x - cx - CELL), dz = Math.max(cz - b.z, 0, b.z - cz - CELL)
-        if (dx * dx + dz * dz <= r2) maskData[(r * GN + c) * 4 + byte] |= bit } }
+        if (dx * dx + dz * dz > r2) continue
+        if (fp) { const px = cx + CELL / 2 - A.x, pz = cz + CELL / 2 - A.z, u = px * fp.hx + pz * fp.hz, w = Math.abs(px * fp.hz - pz * fp.hx), m = CELL * 0.71
+          if (u < -m || u > fp.len + m || w > fp.w0 + Math.max(0, u) * fp.k + m) continue }
+        maskData[(r * GN + c) * 4 + byte] |= bit } }
     maskTex.needsUpdate = true
   }
   const dist2 = (p) => { const o = p.origin; return hasFocus && o ? (o.x - focus.x) ** 2 + (o.y - focus.y) ** 2 + (o.z - focus.z) ** 2 : 0 }
@@ -112,9 +142,12 @@ export function createGroundFx(THREE, { max = 16, gridSize = 128, gridCells = 64
   function write(i, p) {
     const form = typeof p.form === 'number' ? p.form : FORMS[p.form || 'cone'] ?? 0, o = p.origin, fw = form === 0 && p.flat ? 0.25 : form   // flat: Kegel ohne Einfallswinkel-Abschwächung
     const c = p.color && p.color.isColor ? p.color : tmpC.set(p.color ?? '#ffffff')
-    uniforms.uGFa.value[i].set(o.x ?? o[0], o.y ?? o[1], o.z ?? o[2], fw)
+    uniforms.uGFa.value[i].set(o.x ?? o[0], o.y ?? o[1], o.z ?? o[2], form === 3 ? 3.25 + Math.max(-Math.PI, Math.min(Math.PI, p.roll || 0)) / (4 * Math.PI) : fw)
     uniforms.uGFc.value[i].set(c.r, c.g, c.b, p.intensity ?? 1)
-    if (form === 0) {
+    if (form === 3) {   // beam2: { origin (Mitte zwischen den Lampen), dir (Achse), half, r0, tanH, tanV, len, roll } · Lampen bei origin ± half·R, R = cross(dir, oben) um roll (rad) zur Kegel-Oberseite gedreht
+      const d = p.dir.isVector3 ? tmpD.copy(p.dir).normalize() : tmpD.set(p.dir[0], p.dir[1], p.dir[2]).normalize()
+      uniforms.uGFb.value[i].set(d.x, d.y, d.z, p.half ?? 0.5); uniforms.uGFd.value[i].set(p.len ?? 12, p.r0 ?? 0.1, p.tanH ?? 0.1, p.tanV ?? 0.1)
+    } else if (form === 0) {
       const d = p.dir ? (p.dir.isVector3 ? tmpD.copy(p.dir) : tmpD.set(p.dir[0], p.dir[1], p.dir[2])).normalize() : tmpD.set(0, -1, 0)
       const soft = Math.min(0.95, Math.max(0.02, p.soft ?? 0.35))
       if (p.angleH != null) {   // elliptischer Kegelstumpf: angleH waagrecht, angleV senkrecht (rad), startH = waagrechte Halbbreite am Ursprung (b.w)

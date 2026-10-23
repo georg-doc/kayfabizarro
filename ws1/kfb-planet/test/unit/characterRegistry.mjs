@@ -38,7 +38,10 @@ const fb = characterOf('FB'), harke = characterOf('farmer_harke'), alien = chara
 C.fbChatter = fb?.id === 'frizzlebob' && fb.chatter?.instrument === 'Posaune mit Dämpfer' && chatterOf('FB')?.status === 'set'
 C.fbVoice = voiceOf('frizzlebob')?.spec === 'am_michael'
 C.todoIsNull = harke?.chatter === null && chatterOf('farmer_harke') === null
-C.prefillHidden = alien?.chatter === null && chatterOf('alien') === null && chatterOf('alien', { prefill: true })?.status === 'prefill' && chatterOf('alien', { prefill: true }).instrument === 'Theremin'
+// PREFILL-Beispiel aus den Daten (Stand Register: Skelette); Aliens sind seit V-685/V-686 SPEC = gesetzt
+const pf = characterIds().find((id) => characterOf(id).chatterPrefill)
+C.prefillHidden = !!pf && characterOf(pf).chatter === null && chatterOf(pf) === null && chatterOf(pf, { prefill: true })?.status === 'prefill'
+C.specIsSet = alien?.chatter?.instrument === 'Theremin' && chatterOf('ghost')?.instrument === 'Singende Säge' && chatterOf('kayfabrick_bot')?.instrument === 'Melodica'
 C.frozen = Object.isFrozen(fb)
 
 const withChatter = characterIds().filter((id) => characterOf(id).chatter)

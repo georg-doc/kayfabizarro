@@ -91,6 +91,26 @@ Alle Bilder mit `look=terrain3`, `world=probe`, headless (Metal-GPU). Hinweis: D
 - **Schalter:** `hlt=0` = alte Werte.
 - **A/B:** im selben Moment aufgenommen (`HEADLIGHTS.rebuild()`, Antrieb eingefroren). 24 Einzelbilder unter `~/kfb-ws1/research/audits/abnahme/scheinwerfer/` (4 Racer × Tag/Gold/Nacht × alt/neu, index.json), Erzeuger `test/headlight-abnahme.mjs`.
 
+### 3c · Scheinwerfer-Kegel (Georg 22.10., Konzept nach HEADLIGHTS_RESEARCH_R1) · Schalter `hlt=cone`, **Standard bleibt v2 bis zur Abnahme**
+- **Kegel:** je Lampe ein echter Kegelstumpf (`src/look/kfb-headbeam.v1.js`, beide Lampen in einem Mesh = 1 Draw Call).
+  - An der Lampe so breit wie das Glas.
+  - Achse geradeaus und leicht nach unten, fest am Wagen: nickt und rollt mit.
+  - Lage wird erst beim Zeichnen gerechnet, deshalb kein Nachziehen.
+- **Kontaktfläche:** der Schnitt GENAU dieses Kegels mit dem Gelände (groundfx-Form `beam2`, 1 Platz, dieselben Zahlen).
+  - Beginnt, wo die Unterkante (unterer Glasrand) den Boden trifft.
+  - Endet an der Oberkante bzw. an der Reichweite.
+  - Rand weich in Metern.
+  - Beide Kegel überlagern sich, weich gekappt (Überlappung 1,2 ×).
+- **Neigung und Öffnung:** einmal je Wagen aus der Lampenhöhe im Stand. Käfer 15,7°/±8,8°, Coupé 15,4°/±9,4°, Dragster 15,9°/±9,1°; waagrecht ±14,9°.
+- **Tageslicht:** wie vorgegeben, Kegel 0,04 + 0,36·n^1,5 und Boden 0,15 + 0,95·n^1,2.
+- **Prüfung** (3 Wagen × 9 Lagen, `test/headbeam-abnahme.mjs` + `test/headbeam-criteria.mjs`):
+  - Fleck-Anfang ↔ Treffpunkt der Unterkante: max. 0,074 m (Grenze 0,1 m).
+  - 20 s Fahrt: Versatz Lampe ↔ Kegel 0 m.
+  - Kosten Kontaktfläche + Kegel: 0,12–0,18 ms bei 1600×900, 0,20–0,28 ms bei 3200×1800; CPU 0,02–0,03 ms.
+  - groundfx-Zellenkarte für `beam2` jetzt nach dem Grundriss des Kegels statt eines Kreises (Kosten der Kontaktfläche etwa halbiert).
+- **Hinweis:** Bei Gold ist der Kegel mit den vorgegebenen Werten nur nahe der Lampe zu sehen, bei Tag kaum. Stellschraube `HEADLIGHT_TUNE.cone`.
+- **Abnahmebilder:** 90 Einzelbilder 3200×1800 unter `~/kfb-ws1/research/audits/abnahme/scheinwerfer4/` (alt = v2, neu = cone, im selben Rechenschritt gezeichnet), Tabelle A1–A11 / F1–F8 in `index.json`.
+
 ## 4 · kfb-groundfx (V-632)
 - **Datei:** `src/look/kfb-groundfx.v1.js` (THREE injiziert, ohne React), Spiel-Instanz `src/look/groundFx.js`.
 - **Formen:** `cone` (Kegel-Projektion, Rechnung wie kfb-light-pool.v1), `pool` (Pfütze senkrecht von oben), `ring` (Ring von oben).

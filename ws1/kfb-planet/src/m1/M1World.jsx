@@ -39,6 +39,7 @@ import * as T3LOOK from '../look/terrain3.js' // T3_CALM (Beruhigung, nur im mvp
 import { createTerrain, TERRAIN, terrainLog, GROUND_Y, terrainHeight, groundHeight } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
 import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/shadeFloor' // V-683: Schattenseite aller Nicht-Gelände-Objekte (shade=1, A/B)
+import { FIGLIGHT_ON, FIG_LIGHT_TEST, attachFigureLights } from '../look/figureLights' // Figurenlicht R1 (Georg 23.10.): je Figur, die nächsten vier, immer, mit Lichtkreis (figlight=1, A/B)
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -353,7 +354,7 @@ const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Ob
 const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MOOD_SETS[LSET] || undefined, TODV = parseTod(hash)
 const fitTarget = () => { const cp = M2_ON ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
   const p = worldPosOf(mods.player); return p ? { p, half: 0.6 * K, h: 2.79 * K } : null }
-const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : TODV <= 0.25 && mods.player ? [mods.player] : []), /* Kritiker MVP R1 C4: nachts trägt FB das warme Figurenlicht des Rigs (sonst kaum lesbar) */ figureLight: { distance: 4.6 * K, up: 2.6 * K },
+const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (FIGLIGHT_ON && !FIG_LIGHT_TEST.off ? [] : M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : TODV <= 0.25 && mods.player ? [mods.player] : []), /* figlight=1: Figurenlicht je Figur übernimmt (figureLights.js); im Prüfmodus off wieder der heutige Spot = A wie heute */ /* Kritiker MVP R1 C4: nachts trägt FB das warme Figurenlicht des Rigs (sonst kaum lesbar) */ figureLight: { distance: 4.6 * K, up: 2.6 * K },
   fit: () => { const t = fitTarget(), M = moodAt(TODV, MOOD_SET); if (!t) return { center: { x: 0, y: 0, z: 0 }, radius: 12 * K }
     // #439 (WS1b-Diagnose): Kasten mind. 16 m, damit Bäume neben der Figur werfen; Sonne um Kronenhöhe ÷ sin(Sonnenhöhe) + Rand zurück (Nah-Ebene schneidet keine Krone)
     const e = Math.max(8, M.elev) * Math.PI / 180; return { center: { x: t.p.x, y: t.p.y, z: t.p.z }, radius: Math.max(t.half + shadowLength(M.elev) * t.h + 1 * K, 16 * K), margin: (14 * K) / Math.sin(e) + 4 * K } },
@@ -364,6 +365,14 @@ const AUDIO_HOST = (player) => ({ mods, player, harvest: HARVEST ? HARVEST_STATE
 // terrain3: dunkler Fuß wie KayKit an Figuren (Schattenkonzept R1, Georg 21.10.), Bodenhöhe = Wurzel der Figur (steht auf dem Boden, m1-ground);
 // Materialien jede Sekunde nachgezogen (Teile laden nach), applyFootShade hängt sich nur einmal je Material an
 // V-683 (WS0, Georg 22.10.): eine Regel für die Schattenseite aller Nicht-Gelände-Objekte – Boden im Rig-Ton, kein Zusatzlicht. Schalter shade=1 bis zu Georgs Wahl.
+// Figurenlicht R1 (docs/FIGURENLICHT_KONZEPT_R1.md): vier schattenlose Lichter für Spieler + drei nächste Figuren, Stärke aus der laufenden Rig-Stimmung
+function FigureLights() {
+  const { scene, camera } = useThree(), ref = useRef(null)
+  useEffect(() => { const A = attachFigureLights(scene, { player: () => mods.player?.object3d || null, partner: () => mods.partner?.object3d || null, mood: () => mods.light?.mood?.() || LIGHT_INFO()?.mood || null, K })
+    ref.current = A.lights; expose('FigLight', { test: FIG_LIGHT_TEST, status: A.lights.status }); return () => { ref.current = null; A.detach() } }, [scene])
+  useFrame((_, dt) => ref.current?.update(dt, camera))
+  return null
+}
 function ShadeFloor() {
   const { scene } = useThree(), t = useRef(0)
   useEffect(() => { expose('Shade', SHADE_TEST) }, [])
@@ -580,6 +589,7 @@ function M1World() {
       <HostEnv />
       {TERRAIN3 && <FootShade />}
       {SHADE_ON && <ShadeFloor />}
+      {FIGLIGHT_ON && <FigureLights />}
       <LightPools />
       <ModuleHost create={makeSky} options={SKY} />
       <ModuleHost create={makeTerrain} options={TERR} />
