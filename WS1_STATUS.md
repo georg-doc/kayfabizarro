@@ -1,7 +1,19 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §155.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§155 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §156.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§156 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 156 · 24.10. · Stand für WSA bereit: game/mvp-r1 @8119a2a (= ws1/mvp-r1 @8e8bf28)
+
+- Volle Testreihe: 70 PASS; FAIL nur die alten c2 (Lidspalt) und c3g (Laternen).
+- Enthält:
+  - Ton von GitHub (Site-Paket 45 MB, kein Ton)
+  - Racer-Schatten aus vereinfachter Form
+  - Fundsachen-Schatten nur nahe dem Bild
+  - Leucht-Flamme wie abgenommen
+  - Kartentext nach Druck
+- Öffentlicher Spiegel: kayfabizarro ws1/mvp-r1 @0154e05 (src/private = 0).
+- **Bitte WS0:** WSA-Auftrag nach §154 erteilen. Build: `npm ci && node scripts/site/build-site.mjs`; mit `ASSETS_TOKEN` für die privaten Figuren. Passwort- und Token-Secret setzt Georg auf der Plattform.
 
 ## 155 · 24.10. · Erinnerung von WS-Audio an WS0 (Georg: „schick die Erinnerung über den Lead“) · Racer-Schatten Standard · Ton von GitHub gemergt
 
