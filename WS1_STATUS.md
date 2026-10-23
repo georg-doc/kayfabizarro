@@ -3,6 +3,49 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 149 · 23.10. · GESAMTSTAND WS1 für WS0 (alles seit §148, alle WS1-Sitzungen) · 6 Abnahmen warten auf Georg · V-685/V-686 umgesetzt
+
+**Kurz:** Seit §148 sind vier Pakete fertig gebaut, selbst geprüft und mit Einzelbildern auf Georgs Abnahme-Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6, Version 16). Bilder liegen lokal unter `~/kfb-ws1/research/audits/abnahme/<punkt>/` mit index.json. Alles Neue steht hinter Schaltern, die Standards im Spiel sind unverändert. Gemergt wird erst nach Georgs Urteil.
+
+### A · Wartet auf Georg (Abnahme-Seite, in dieser Reihenfolge)
+| Punkt | Sitzung | Branch @Commit | Schalter | Kern | Offene Frage an Georg |
+|---|---|---|---|---|---|
+| Antriebsflamme als Knetmasse (V-675) | WS1d | ws1/vehicles-r1 @d983d5f | `flame=v2` | Deckende Knetmasse, 3 Tonstufen aus dem Rig-Licht, Beulen in 3D, runde Spitze, kein Leuchten (CANON Gebiet 11); 13 Racer, 280 Bilder, 41 A/B auf der Seite. K1–K7 PASS, Kosten gleich. | v1, v2 oder v2 geändert? Lead-Eindruck: Volumen stimmt, liest sich aber weniger als Feuer (blasse kurze Wülste). Fehlt das Glühen? |
+| Scheinwerfer-Kegel (V-675-Konzept, Recherche HEADLIGHTS_RESEARCH_R1) | WS1d | ws1/vehicles-r1 @70c041c/441166f | `hlt=cone` | Echter Kegelstumpf ab der Lampe, Kontaktfläche = Schnitt des Kegels mit dem Gelände (max. 7 cm Abweichung), Überlappung gewollt (gemeinsames Feld), fest am Wagen. 3 Wagen × 15 Fälle, A1–A11/F1–F8 PASS, ~0,15 ms je Wagen. | Standard? Tag und Gold sind schwach. Ein Regler dafür vorhanden (`HEADLIGHT_TUNE.cone.op1/g1`). |
+| look-r2 Punkte 1–7 (V-676) | WS1b | ws1/look-r2 @172d1e6 | `t3blob=1`, `skysm=1`, `knettree=1`, `gemab`, `sbox=2`, `fluffnb=1` | 1 Boden-Kleckse · 2 Knet-Haufenwolken · 3 Knet-Baumfamilie (Metaball-Kronen um die Fluff-Anker, Ernte unverändert, −7 Draw Calls) · 4 Kristall r4 (c3g dann PASS, Nacht 1,36) · 5 Fallobst eingesunken + Erdkeil · 6 Schattenkasten v1.2 am Kamera-Fokus mit weichem Rand (keine Blob-Schatten) · 7 Fluff-Gegenlicht 0,45. GPU: Kleckse −1,2 ms, Schattenkasten −0,5 ms. | 1: mehr Deckung (verschmelzen / dritte Lage / so lassen)? Lead: Ring mit Kern liest sich noch als Zielscheibe. 3: Kronengrün weiter satt (K2). 7: dunkles Fluff bleibt dunkel, insgesamt heller? |
+| Kit-Knete 0/1/2 (V-662) | WS-NPC | ws-npc/phase-a @d437383, in mvp | `kitclay=1/2` | Befund: Die abgenommene Kit-Knete wirkte nie (SKIP_DEFAULT traf die Wurzel `eyeActor:`). Stufe 1 = character-Profil mit Fix, Stufe 2 = kit-figure. K3 nah 1,46 (Ziel 1,5) / mittel 1,63 / fern 1,90; K4–K7 PASS; mit Knete geht der Glanz der Originalmaterialien verloren. | Welche Stufe wird Standard? |
+| Schattenseite V-683 | Lead | mvp @9e9bf29 | `shade=1` | Untergrenze Albedo × Rig-Ton × 0,34–0,50 für alle Nicht-Gelände-Objekte; A/B im selben Moment. Flamme v2 ist eingeschlossen. | Standard? |
+| Startseite ohne Säulen | Lead | mvp @9b392fb | – | Graue Säulen weggelassen (V-683 Punkt 3). | ok? |
+
+Zusätzlich offen bei Georg: **Gold-Licht violett** (Kritiker K2). Die violette Füllung ist das Mesa-Konzept vom 17.10., der Kritiker misst sie gegen den Kanon „nie über das Licht“. Optionen: Mesa behalten, oder WS1 baut eine ruhigere Gegenvariante als A/B.
+
+### B · Seit §148 entschieden bzw. erledigt
+- **Kampf (Kritiker R3 #23/#25, K10):**
+  - Geschoss beginnt im Abgangsbild an der Mündung (74e0526, in mvp, Test `C_drawnAtMuzzle`).
+  - **Blickrichtung gemessen:** Kopf 0° und Mündung 3° aufs Ziel; der Clip `Ranged_1H_Shoot` dreht Hüfte und Brust um 30–45° ein (einhändige Schützenhaltung). Kein Fehler.
+  - **Georg 23.10.: „so lassen, besseres Kritiker-Bild“.** Neu `test/criticShots-kampf.mjs` (950f412): 09 von der Brustseite beim Abgang mit Ziel im Bild, 10 im K.o. statt beim ersten Treffer.
+  - Die Spielregel bleibt: K.o. erst nach den Warn-Treffern (groupPatrol).
+- **Kritiker-Bilder zu dunkel:** Die eigenen Kamerabilder (02/02b/02c/02d) wurden ohne sRGB gezeichnet und wirkten dunkler als das Spiel (7f5f7cc behoben). Runde 3 hat diese Bilder zu dunkel gesehen. Bitte bei Kritiker R4 berücksichtigen.
+- **V-685/V-686 umgesetzt (fb23773, lokal):**
+  - Register-Snapshot neu @0050419: Säge, Theremin und Melodica als SPEC, Chatter jetzt bei 14 statt 6 Figuren. Paritätstest grün und datengetrieben (PREFILL-Beispiel jetzt die Skelette).
+  - kfb-gem.v1 mit veinGlow-Schlüssel übernommen. Ehrlich: Das allein macht c3g im mvp nicht grün (1,11 / 0,89); das bringt erst look-r2 Punkt 4. WS1b entfernt den Umweg in gemLanterns beim look-r2-Merge.
+  - `farmer_harke` ist im Register @0050419 noch eigene Figur (Alias laut V-685 „bei der nächsten Erzeugung“). Das Spiel nutzt schon `farmer_b` (residentId).
+- **Abläufe:**
+  - Browser-Tests laden `dist/index.html`, deshalb vor jeder Testreihe `npm run build` (Lehre 22.10.).
+  - `kfb-slot` weist leere Namen ab, Freigeben heißt `drop`.
+
+### C · Stand mvp und Spiegel
+- **ws1/mvp-r1:**
+  - Gespiegelt @aad2526: privat game/mvp-r1 5550a85, öffentlich kayfabizarro ws1/mvp-r1 f7bc3b1.
+  - Lokal danach 950f412, 7f5f7cc, fb23773 (Testskripte, Snapshot, Gem). Sie gehen mit dem nächsten getesteten Sammelstand raus.
+- **Testreihe @aad2526 (frischer Build):** 66 PASS. c2 und c3g waren schon vor dem 22.10. rot: c2 ist der bekannte Lidkanten-Rest, für c3g siehe oben.
+- **Merge-Warteschlange (nach Georgs Urteil):** ws1/look-r2, ws1/vehicles-r1 (Kegel + Flamme), WS-Audio 72d7a79 (Video-Profil, eilt nicht).
+
+### D · Fragen an WS0
+1. **Kritiker R4:** wann, und mit welchem Bildsatz? Vorschlag: nach Georgs Urteilen über A, damit der Kritiker die gewählten Standards sieht.
+2. **Flamme:** Wenn Georg das Glühen vermisst, ist dann ein Glutkern als Knet-Farbe ohne Emission kanonkonform, oder gibt es eine Ausnahme für Antriebe?
+3. **farmer_harke-Alias:** Kommt er mit der nächsten Register-Erzeugung? WS1 zieht den Snapshot dann neu.
+
 ## 148 · 22.10. · Weitergabe WS-Audio: Sprachmelodien-Stand und Lücken (WS_AUDIO_STATUS §13) · Kit-Knete auf der Abnahme-Seite
 
 - **WS-Audio** hat den Stand in `ws-audio/status` @79ec6a133, WS_AUDIO_STATUS.md Eintrag 13 (nur Text). Die Reihenfolge der Sprachmelodie ist Register-Instrument → Bewohner-Stimme → Platzhalter.
