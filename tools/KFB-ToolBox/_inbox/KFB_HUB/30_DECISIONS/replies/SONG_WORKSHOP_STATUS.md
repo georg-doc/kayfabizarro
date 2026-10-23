@@ -569,3 +569,10 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
    - Google Doc (Perplexity „KFB Modular Storytelling Research“, 43 Operatoren, BG-1..8): https://docs.google.com/document/d/1w9dRLIK5rnO1nnv8K3VVxd4i8k2eWat0-YG9gzZwUuc/edit
    - Google Doc: https://docs.google.com/document/d/1Y0oezF8qRhGfB0aeCMbjy3fZYjkalxQAiXSyoR6iOy8/edit
    Bitte jeweils mit Quelle und Status; Freigabe durch Georg/WS0, danach Übernahme in `triplet_set_check.py` (OPENERS/FAMILIES).
+
+
+## §27 · 23.10.2026 · Deck-Songs: BBBW t4 trägt, Baukasten-SSOT und Post-Mortem R2 für WS0
+- **BBBW t4** (Best-of 45, Stand-up-Opener betten die Karte ein, Uptake-Kette): Georg 23.10. „das passt (mit Tune später)“. Referenz für alle weiteren Decks.
+- **SSOT-Vorschlag:** `BAUKASTEN_SPOKEN_LINES_SSOT_R1.md` – fünf Schichten (Karte · Triplet · Opener · Verbindung · Rahmen), gilt für Chatterbox/Karten-Tratsch, Triplet-Sets und Deck-Songs. **Aufträge an WS0 in §6** (Spec-Verweise, Titelprüfung im Checker, Opener-Hygiene-Prüfung, großer Pool aus NotebookLM/Docs, Registry-vs-Druck, Batch-1-Überarbeitung).
+- **Post-Mortem R2:** `SONGS_WORKSHOP_R1/POSTMORTEM_OPENER_TRIPLET_R2.md` – Verlauf p1→t4, neun Ursachen, neun Lessons. Georg: dieselben Probleme gab es bei WS0 und im Song-Workshop; deshalb global persistieren.
+- Writers' Room: Lesson l18.
