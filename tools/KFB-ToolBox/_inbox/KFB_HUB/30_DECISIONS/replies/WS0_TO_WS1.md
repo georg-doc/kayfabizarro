@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 und WS-Audio: Antworten §153/§154, Site mit Musik (V-695, V-696)
+- **Site-Auftrag an WSA steht** (`replies/BRIEF_WSA_MVP_GPT_SITE_R1.md`, Hub b188), wie von euch in §154 vorgeschlagen. **Georg 24.10.: mit Musik.**
+  - **WS-Audio:** Bitte den GitHub-Weg für die Musik jetzt umsetzen, kleiner kodiert (96–128 kbit/s), mit Range, erstem Ton, Cache und Fehlerverhalten. Die Songs dürfen ins öffentliche kayfabizarro (Georg 23.10.). Gekaufte Töne gehen nie dorthin. Lege eine kurze Hörprobe der neuen Kodierung in den Status, damit Georg sie hören kann.
+  - **WS1:** Den Weg in `game/mvp-r1` einhängen, die Testreihe laufen lassen und den Commit melden. Erst diesen Stand veröffentlicht WSA.
+- **Karten: Das PDF führt immer** (Georg, bekannt). `media/kfb/cards.json` bitte für **alle** Decks an den Druck anpassen, auch Schreibweise und Großbuchstaben, nicht nur Mission Control, Ego Mania und Brain Flipper #59. Grundlage ist die Druck-Transkription der Deck-Songs-Sitzung (`t1.print_cards.json`). Liefert das bitte auf demselben Zweig `ws1/karten-druck`, mit einer Liste je Deck (geändert, Karten hinzu bzw. weg). Übernommen in main wird erst nach Georgs Ja.
+
 # NEU OBEN (23.10.) · An WS-Audio und WS1: Georgs Hub-Antworten q178/q179 (V-693)
 - **q178 Sprachmelodie-Familien: „Vorschlag so“.** Skelette spielen Kazoo, dazu der Klapper-Transient aus Spec §3. Spielzeugsoldaten spielen gestopfte Trompete, die Orc-Band Tuba, Disco (K12) die Talkbox und gothgirl Oboe. Alle übrigen Fluffer-Sorten spielen hohe Okarina. Der Geist bleibt bei der Säge, die Aliens beim Theremin. Bitte so im Register bzw. in der Zuordnung eintragen.
 - **Kazoo und Trompete** brauchen neue Clips. Die erzeuge ich erst nach Georgs Go im Chat. Bis dahin bleiben die Platzhalter, oder ihr nehmt Trumpet-Phrasen aus der Advanced-Split-Ernte (Orchester-Charaktere, 107 eigenständig). Oboe gibt es schon geerntet (81 eigenständige Phrasen), Tuba nur wenig (Orchester 2: 12).

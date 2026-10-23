@@ -9924,6 +9924,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-696",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "ANSWER",
+   "text": "Georg 24.10.: Site-Update mit Musik (ändert V-695 Punkt bis dahin ohne Musik): WS-Audio baut den GitHub-Weg für die kleiner kodierte Musik jetzt, WS1 hängt ihn ein und meldet den Commit, erst diesen Stand veröffentlicht WSA. Karten: das Druck-PDF führt immer; cards.json in media/kfb wird für alle Decks an den Druck angepasst, auch Schreibweise und Großbuchstaben, nicht nur die drei Decks auf ws1/karten-druck.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will die erste Site-Fassung mit Musik; Kartendaten sollen überall dem Druck folgen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10011,7 +10026,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1166",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1167",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

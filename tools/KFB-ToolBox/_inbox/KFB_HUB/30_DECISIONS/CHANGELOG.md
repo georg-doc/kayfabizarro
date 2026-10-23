@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-696 Site mit Musik (WS-Audio GitHub-Weg jetzt, WSA veröffentlicht erst diesen Stand); Karten: PDF führt, cards.json aller Decks an Druck anpassen.
 - V-695 WSA-Auftrag MVP als Site-Update auf der GPT-Site (leicht, über GitHub) nach Gate und Prüfer (PASS, 3 Klarstellungen); private Proof-Dateien aus dem öffentlichen Register entfernt (Georg 24.10.).
 
 ## 2026-10-23
