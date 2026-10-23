@@ -9894,6 +9894,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-694",
+   "date": "2026-10-23",
+   "area": "HUD",
+   "verdict": "SPEC",
+   "text": "Claude-Design-Brief 3D-Prop-HUD R1 (replies/HUD_3D_R1/BRIEF_CLAUDE_DESIGN_HUD_3D_R1.md) mit privatem Asset-Paket im Hub (KFB-Props N29, Aktionsleiste r2, Original-Kandidaten, Kartenbilder, Referenzbilder, ohne Dropbox). Georgs HUD-Korrekturen vom 22.10. nachmittags (Konzept R0 Paragraph 7 bis 10, PR 444: freier 3D-Ziel-Pfeil ohne Kompass-Sockel, Tempo als eigener Knet-Balken, sechs Fluff-Kugeln oben, ein Flugweg Welt zu HUD) sind jünger als V-681 und gehen dort vor; Layout R3 und Kompass bleiben Vergleichsoption. Ersetzt den Webchat-Entwurf CLAUDE_DESIGN_3D_PROP_HUD_BRIEF_R1_DRAFT. Georg wählt A, B, C, TUNE oder FAIL; WS1 baut erst danach.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Claude Design braucht alle Quellen ohne Dropbox; das Webchat-Inventar übersah die eigenen Knet-Props und Georgs finale Aktionsleiste.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9981,7 +9996,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1162",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1163",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

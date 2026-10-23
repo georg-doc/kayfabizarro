@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- V-694 Claude-Design-Brief 3D-Prop-HUD R1 (replies/HUD_3D_R1/) nach Gate und Prüfer (BLOCK, 8 Punkte eingearbeitet); privates Asset-Paket als Seite mit ZIP (https://claude.ai/artifact/4jUmrT5xbogMx8DPecqtbX), Hub-Karte b187. Webchat-Entwurf PR #444 dadurch ersetzt.
 - V-693 Hub q178 (Familien wie vorgeschlagen) und q179 (Begrüßung -7 dB) an WS1/WS-Audio.
 - V-690 Webchat-Regel Intent First entdoppelt: eine Stelle (WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1), sonst nur Verweise; Knete bleibt KFB-Look. V-691 Staubfahne WS1b läuft (dust3=1). V-692 Scheinwerfer-Kegel Standard, Knet-Flamme v2 und Figurenlicht Weg 1 abgelehnt, figamb Stärke offen.
 - Advanced-Split-Ernte Orchester-Charaktere (1039 Phrasen, 553 eigenständig) und E-Funk (20, unbrauchbar); dedupe_harvest.py markiert Übersprechen (Orchester 2: 557 eigenständig).
