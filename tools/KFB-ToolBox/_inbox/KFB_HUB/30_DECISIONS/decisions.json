@@ -9973,7 +9973,7 @@
    "date": "2026-10-24",
    "area": "Dialog",
    "verdict": "RULE",
-   "text": "Satzbild in Sprechblasen (Georg 24.10.): Kartentitel in Sprechblasen-Sätzen und angezeigten Triplets immer fett; kursiv kontextuell für Betonung, Umkehrung oder Pointe; Rufe immer fett in genau dieser Schreibweise: Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (ersetzt die Versal-Schreibweise aus WS1 153). Nur für Angezeigtes; Suno-Lyrics und Sprachausgabe ohne Markup. Stelle: TRIPLET_SSOT_R1 Paragraph 2b.",
+   "text": "Satzbild in Sprechblasen (Georg 24.10.): Kartentitel in Sprechblasen-Sätzen und angezeigten Triplets immer fett; kursiv kontextuell für Betonung, Umkehrung oder Pointe, höchstens eine kursive Stelle je Sprechblase; Rufe immer fett in genau dieser Schreibweise: Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (ersetzt die Versal-Schreibweise aus WS1 153). Nur für Angezeigtes; Suno-Lyrics und Sprachausgabe ohne Markup. Stelle: TRIPLET_SSOT_R1 Paragraph 2b.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -9981,6 +9981,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Comic-Sprechblasen-Logik: der Titel ist der Anker der Zeile, Rufe sind feste Comic-Wörter.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-700",
+   "date": "2026-10-24",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Kartenzeilen sind ganze Sätze mit Fluss (Georg 24.10., wiederholt: Doppelpunkte führen in Suno immer zu FAILs): kurz, prägnant, Comic-Stil, Weglassungen erwünscht, aber ein Satz, der auch in Suno trägt; kein Titel-Etikett mit Doppelpunkt (Broken Bridge: ...), keine Semikolons, kein Telegramm; Satzform folgt der Karte und wechselt über das Deck. Ändert die Form aus TRIPLET_SET_SPEC_R2 (Goldens mit Doppelpunkt); Wortregeln bleiben. Mechanisch: triplet_set_check.py FAIL bei Doppelpunkt/Semikolon in Kartenzeilen, why/how gelten als Grammatik; song_gate.py C14.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Telegramm-Form mit Doppelpunkt kam aus den eigenen Goldens der Spec und erzeugte immer wieder FAILs; deshalb Wächter im Prüfskript statt neuer Prosa.",
    "applies": "sofort"
   },
   {

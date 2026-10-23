@@ -173,6 +173,8 @@ def gate_lyrics(a):
     for i, b in enumerate(bs):
         if "\n" in b:
             F("C8", f"Beat {i}: mehrere Zeilen ohne Leerzeile: {b.splitlines()[0][:60]!r}")
+        if not b.strip().startswith("[") and (":" in b or ";" in b):  # V-700 (Georg 24.10.): Sätze mit Fluss, kein „Titel:“-Etikett – Doppelpunkte/Semikolons klingen nicht in Suno
+            F("C14", f"Beat {i}: Doppelpunkt/Semikolon statt Satz: {b.strip()[:70]!r}")
         if b != b.strip() or not b:
             F("C8", f"Beat {i}: leer oder Leerraum am Rand (doppelte Leerzeile?)")
     body = bs[1:-1]

@@ -10,7 +10,7 @@ import csv, json, re, sys
 GRAMMAR = set("""a an the and or but so yet nor then than as of to in on at for with by from into onto over under out up off
 is are was were be been being am has have had do does did can could will would shall should may might must
 not no n't you your yours yourself we our us it its they their them he his him she her i me my mine this that these those
-who whom whose which what when where while if""".split())
+who whom whose which what when where while if why how""".split())
 FLUFF = {"fluff", "fluffy", "un-fluff", "fluffed", "fluffs", "fluffier", "fluffiest", "unfluff"}
 OPENERS = ["Welcome to", "Remember", "You know", "Do you know", "Ever tasted", "I once met", "Let me tell you about",
            "You know the thing with", "Did you ever try", "What if", "Have you heard of", "Did you hear of", "Anyway",
@@ -73,6 +73,8 @@ def main(deck_path, set_path):
             seen_openers = {}
         if "(" in line or ")" in line:
             print(f"{row['line_no']:>3} FAIL Klammer im Sprechtext: {line}"); fail += 1
+        if kind == "card" and (":" in line or ";" in line):  # V-700 (Georg 24.10.): ganze Sätze mit Fluss, kein „Titel:“-Etikett, kein Telegramm mit Doppelpunkt/Semikolon – klingt nicht in Suno
+            print(f"{row['line_no']:>3} FAIL Doppelpunkt/Semikolon statt Satz (V-700): {line}"); fail += 1
         op = (row.get("opener") or "").strip()
         if op:
             if op not in OPENERS:

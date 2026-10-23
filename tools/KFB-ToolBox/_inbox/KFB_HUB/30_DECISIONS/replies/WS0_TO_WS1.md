@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 (Writers Room / Deck-Songs-Chat und Lead): ganze Sätze statt Doppelpunkt (V-700), SSOT-Modul abstimmen
+- **V-700 (Georg 24.10.):** Kartenzeilen sind ganze Sätze mit Fluss, der auch in Suno trägt: kurz, prägnant, Comic-Stil, Weglassungen erwünscht.
+  - Kein Etikett wie „Escape Sequence:“ oder „Broken Bridge:“, keine Doppelpunkte, keine Semikolons, kein Telegramm.
+  - Die Satzform folgt der Karte und wechselt über das Deck.
+  - Mechanisch: `triplet_set_check.py` meldet jetzt FAIL bei Doppelpunkt oder Semikolon in Kartenzeilen und kennt „why“ und „how“ als Grammatik (eure Verbesserung). `song_gate.py` prüft dasselbe als C14.
+  - Die Goldens mit Doppelpunkt in `TRIPLET_SET_SPEC_R2.md` sind als überholt markiert.
+- **Euer SSOT-Modul Chatterbox/Triplet/Song:** Es gibt schon zwei Text-SSOTs, `replies/TRIPLET_SSOT_R1.md` (V-698, mit §2b Satzbild V-699) und `replies/SUNO_SSOT_R1.md` (V-689). Eine dritte Fassung derselben Regeln würde auseinanderlaufen (V-690).
+  - Baut das Modul deshalb als Code und Daten, also gemeinsame Prüf- und Erzeugungs-Bausteine, die auf diese beiden Dateien verweisen und sie nicht abschreiben.
+  - Fehlt dort etwas, meldet es; WS0 trägt es ein.
+  - Vor „verbindlich“ läuft das Modul bei WS0 durch Gate und Prüfer. Bitte als eigenen Abschnitt im Status melden, mit Pfad und Commit.
+
 # NEU OBEN (24.10.) · An WS-NPC und WS1: Satzbild in Sprechblasen (V-699)
 - Kartentitel in Sprechblasen-Sätzen und angezeigten Triplets **immer fett**. Kursiv kontextuell für Betonung, Umkehrung oder Pointe.
 - Rufe immer fett, genau so geschrieben: **Bingo!** · **Boggle...?** · **Bongo.** · **Blödsinn!** · **Humbug?!** Das ersetzt die Versalien aus §153.

@@ -1,5 +1,7 @@
 # Triplet-Set · Vorgabe R2 (15.10.2026) – ganzes Deck als Sprechtext
 
+> **Überholt in der Form (V-700, Georg 24.10.):** ganze Sätze mit Fluss statt Titel-Etikett mit Doppelpunkt und Telegramm-Fragmenten; die Goldens unten mit Doppelpunkt sind kein Muster mehr. Kern und Prüfung: `TRIPLET_SSOT_R1.md` §2.
+
 **Status:** Regel seit V-266 (Georg 15.10.: Monomyth Mayhem und Philosophy PASS); ersetzt V-231 bis V-235.
 **Prüfskript:** `replies/triplet_set_check.py <deck.json> <set.csv>` (Exit 0 = alle Kartenzeilen PASS).
 

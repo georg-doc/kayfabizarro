@@ -16,11 +16,11 @@
 | Karten-Tratsch im Spiel | WS-NPC `KARTEN_TRATSCH_KONZEPT_R1.md` (Georg-Freigabe 23.10.) und §4 hier | WS-NPC Stufe 0/1 |
 
 ## 2 · Die Kartenzeile in einem Absatz
-Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266); hier nur der Kern. Die Karte spricht selbst (Show it, Spin it, Sell it). Eine Zeile je Karte, Englisch, in einem Atem (etwa 8–20 Wörter bzw. 80–95 Zeichen). Der Titel steht vorn, verschmolzen mit dem Begriff aus der POWER, danach kurze Telegramm-Fragmente nur aus Wörtern der Karte, verdichtet im Comic-Sprechstil (Spec, V-277). Nichts erfunden, höchstens ein Fluff-o-lect-Wort. Mechanik nur, wenn sie ein Bild ist. Closure statt Erklärung. Golden: „Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.“ Ohne nachweisbare Felder gibt es keine Zeile; dann wird der Kartentext roh benutzt.
+Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier der Kern. Die Karte spricht selbst (Show it, Spin it, Sell it). Eine Zeile je Karte, Englisch, in einem Atem (etwa 8–20 Wörter bzw. 80–95 Zeichen). **Ein ganzer Satz mit Fluss, der auch in Suno trägt:** kurz, prägnant, Comic-Stil, Weglassungen erwünscht. **Kein Etikett wie „Broken Bridge:“, keine Doppelpunkte, keine Semikolons, kein Telegramm** (V-700). Der Titel steht im Satz, die Satzform folgt der Karte und wechselt über das Deck. Nur Wörter der Karte, höchstens ein Fluff-o-lect-Wort, Mechanik nur, wenn sie ein Bild ist, Closure statt Erklärung. Ohne nachweisbare Felder gibt es keine Zeile; dann wird der Kartentext roh benutzt. Prüfung: `triplet_set_check.py` bzw. `song_gate.py` (C14) brechen bei Doppelpunkt oder Semikolon ab.
 
 ## 2b · Satzbild in Sprechblasen und Textausgabe (Georg 24.10., V-699)
 - **Kartentitel immer fett**, in jedem Sprechblasen-Satz und jedem angezeigten Triplet.
-- **Kursiv kontextuell:** Betonung, Umkehrung oder Pointe.
+- **Kursiv kontextuell:** Betonung, Umkehrung oder Pointe, **höchstens eine kursive Stelle je Sprechblase** (Georg 24.10.).
 - **Rufe immer fett, genau in dieser Schreibweise und mit diesen Satzzeichen:** **Bingo!** · **Boggle...?** · **Bongo.** · **Blödsinn!** · **Humbug?!**
 - Das gilt nur für Angezeigtes (Sprechblasen, Hub, Kartenoverlay). In Suno-Lyrics und in Texten für Sprachausgabe steht kein Markup.
 
