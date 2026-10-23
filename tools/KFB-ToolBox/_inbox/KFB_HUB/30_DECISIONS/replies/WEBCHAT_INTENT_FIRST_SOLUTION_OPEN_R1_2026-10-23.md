@@ -2,7 +2,7 @@
 
 **Datum:** 2026-10-23. **Herkunft:** direkte Georg-Korrektur nach Surface-VFX-Staubdiskussion und hohem Claude-Code-Tokenverlust.  
 **Zuständigkeit:** bestehender WS0/30_DECISIONS Steuerungsowner für Briefing- und Webchat-Qualitätsregeln. **Keine neue Runtime-, VFX-, Art- oder Produkt-Ownerinstanz.**  
-**Status:** **GEORG FEEDBACK / PROZESS- UND ZIELKORREKTUR**; nicht als neuer Shader-/Engine-/Implementierungsauftrag auslegen. Als Working-Rule zu berücksichtigen; eine etwaige eindeutige V-Nummer / Aufnahme in das generierte DECISIONS-Register vergibt WS0 beim nächsten kanonischen Register-Build, nicht durch direktes Editieren der generierten DECISIONS.md/decisions.json.
+**Status:** **GEORG FEEDBACK / PROZESS- UND ZIELKORREKTUR**; nicht als neuer Shader-/Engine-/Implementierungsauftrag auslegen. Registriert als V-690. **Einzige maßgebliche Stelle**; alle anderen Dokumente verweisen nur hierher.
 
 ## 1 · Was schiefging
 
@@ -24,6 +24,8 @@
 6. **Brief trennt klar:** `GOAL / MUST PRESERVE / PROHIBITED BY GEORG / OPTIONS-HYPOTHESES / TEST EVIDENCE / OWNER / ONE NEXT GATE`. Nicht nach außen suggerieren, der Webchat habe ein nicht demonstriertes „mentales Modell“ der gewünschten Wolke oder ein laufendes Resultat gebaut.
 7. **Keine unnötigen Folgefragen, Bauaufträge oder Zusatz-Werkzeuge.** Nutzerinitiierte Ideation/Recherchen bleiben Lösungssuche; nur ausdrücklich freigegebene Ausführung bekommt eine Implementierungsspezifikation. Keine Bildgenerierung, wenn der Nutzer technische Diskussion wollte.
 
+**Knete bleibt der gesetzte KFB-Look** (Knet-HUD, Kit-Knete, Racer-Zusätze, Figuren). Die Regel betrifft nur ungefragt erfundene Konstruktionen bzw. Methoden für ein Ziel, das Georg mit Wirkung oder Referenz beschrieben hat (Anlass: Knet-Wolken für die Staubfahne). „Knetkugeln, Blobs“ oben sind Beispiele für solche Fehlgriffe, kein Urteil über Knete.
+
 **Gilt für KFB-Webchats/Brainstorming/WS0-Briefings mit offenem visuellem, bewegungs- oder gameplaybezogenem Outcome.** Nach eindeutiger Georg-Entscheidung und echtem Golden kann ein Owner selbstverständlich eine erwiesene technische Route verbindlich sperren/freigeben. Vorher nicht.
 
 ## 3 · Konkreter Staub- und WS1b-Handoff (ersetzt nur unbewiesene Methodenvorgaben)
@@ -36,11 +38,11 @@
 
 **WS1b-Vorschlag als Hypothese, nicht Produktbeschluss:** Partikeldichte um ca. Faktor 10–20 erhöhen, Lebensdauer testweise 2–4 Sekunden; geringe individuelle Deckkraft, alters-/geschwindigkeitsabhängige Größe und Wind-/Driftverhalten. Möglichst viele kleine Elemente können plausibler sein als wenige große runde Sprites, jedoch könnten transparente Überdeckungen teuer werden. **Nicht ohne A/B behaupten, dass dieser Bereich nötig oder performant ist.**
 
-**Prüfauftrag, falls WS0 die sowieso laufende WS1b-Arbeit explizit entsprechend priorisiert:**
+**Stand 23.10. (WS1 §150):** WS1b baut die Staubfahne bereits mit Georgs Freigabe hinter `dust3=1` auf ws1/staub-probe, nach Georgs zwei Vorlagen. Nicht umbriefen, nicht anhalten (V-691). Partikelzahl und Lebensdauer sind dort Testbereiche. Für diese Probe gilt:
 - Reale referenzgestützte A/B-Bildfolge **gleicher Driftstrecke** (seitlich/chase/top), korrekte World-Space-Trajektorie, länger verbleibender Nachlauf, Übergänge ohne runde Knetklumpen.
 - Der Builder sucht den kleinsten **optisch ausreichenden** Partikel-/Lifetime-Bereich nach wenigen klar unterscheidbaren Varianten; keine Token-intensiven Schönheitsreparaturen eines sichtbar falschen Ansatzes.
 - Zielgeräte-GPU vor/nach, transparenter Overdraw, Rahmenbedingungen/Limits und Reversibilität berichten. Qualität zuerst als visuelles Gate; Performance als messbarer zweiter Gate. **Kein** willkürliches 160-/1600-/3200-PASS-Gate.
-- Aktuelle Figurenlicht-Aufgaben `figamb=1` und laufende Tests bleiben unangetastet. WS0 plant die Staubprobe ohne Konflikt mit laufendem Build und bestehenden Source-Ownern; kein neuer Runner/Stage/Site notwendig allein wegen dieses Dokuments.
+- Figurenlicht `figamb=1` läuft unabhängig davon weiter; kein neuer Runner/Stage/Site.
 
 ## 4 · Dokumentenkonfliktauflösung
 
@@ -49,4 +51,4 @@ Dieses Feedback **SUPERSEDES methodisch** (nicht die faktischen Codefunde):
 - Die alte `TEST_REPORT`-Source-QA bleibt wahr: „Im untersuchten Stand 160“. Sie beweist **nicht**, dass 160 genug oder ein hoher Wert automatisch besser ist.
 - `CANON_3D/CANON_3D_R1.md` und bestehende Golden-Donors bleiben als Ergebnis-/Look-Qualitätskontext gültig, werden durch die neue Webchat-Prozessregel nicht abgelöst.
 
-**Ein nächster Gate:** WS0 übernimmt diese Georg-Korrektur ins aktive Arbeits-/Briefing-Register und stimmt mit der bereits laufenden WS1b-Sitzung eine **referenzbasierte, ergebnisoffene Staubfahnen-A/B-Probe** ab, sobald sie ohne Unterbrechung der laufenden figamb-Build-/Testreihe möglich ist. Der menschliche Lookentscheid bleibt bei Georg. Keine automatische Genehmigung eines zweiten Runtime-Owners, keinen Live-Merge.
+**Ein nächster Gate:** Georgs Lookentscheid über die laufende WS1b-Probe (`dust3=1`). Kein zweiter Runtime-Owner, kein Live-Merge. Register: V-690 (diese Regel), V-691 (Staub-Probe).

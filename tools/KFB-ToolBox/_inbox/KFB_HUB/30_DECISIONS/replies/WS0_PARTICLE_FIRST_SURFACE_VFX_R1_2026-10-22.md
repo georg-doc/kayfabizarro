@@ -1,7 +1,6 @@
 # WS0 / WS1b · Particle-First Surface-Reactive VFX · R1
 
-> **CURRENT GEORG OVERRIDE · 2026-10-23 · INTENT FIRST / SOLUTION OPEN:** The original visual goal (a dense, naturally curving and lingering dust plume like Georg's references) wins over every proposed construction and numerical starting budget in this document. The earlier proposal to *stay at 160 particles* is **SUPERSEDED AS AN ACCEPTANCE LIMIT**: 160 is only the historic source pool of the inspected revision; it already failed to achieve the effect according to WS1b. Try broader counts/lifetimes (WS1b suggests ~10–20× and 2–4 s) as **unverified experiment ranges**, not new required values. Judge candidate by actual moving image, then GPU cost; no hand-built Knet blobs, no AI-improvised silhouette, no mandatory single method. See [Webchat correction 2026-10-23](WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md). This preserves the useful donor inventory but overrules any narrow method prescription below.
-
+> **Überholt in der Methode (23.10.):** 160 Partikel sind keine Grenze. → Webchat-Regel „Intent First · Solution Open“ (V-690): siehe `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`.
 
 **Datum:** 2026-10-22  
 **Status:** GEORG STYLE DECISION / SOURCE-GROUNDED PLAN; **NOT IMPLEMENTED, NOT VISUAL ACCEPTANCE**.  

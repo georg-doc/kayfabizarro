@@ -1,13 +1,6 @@
 # KFB Arbeitsregeln R1 · Was sich bewährt hat (14.10.2026)
 
-## CURRENT GEORG CORRECTION · 2026-10-23 · Webchat Intent First / Solution Open
-
-For ideation and Webchat-to-WS0 briefs: **Georg's requested visible/gameplay outcome and actual reference always take precedence over an assistant-suggested construction.** A reference image is a *target*, not authorization to invent a geometry/mesh/particle/renderer method. Compare plausible methods and verified donors first. Label numeric examples and current source caps as **hypotheses or baselines, never unexplained acceptance limits**. Only prescribe implementation after visual source isolation, small A/B evidence and receiving-owner signoff. KISS = *smallest approach that actually achieves the outcome*, not necessarily smallest particle count or simplest primitives. On visible FAIL, change approach; do not spend Claude-Code tokens repairing an unproven artificial construction. No unsolicited generated images when Georg requests technical discussion.
-
-**Incident/correction:** earlier AI-scaffolding of Knetwolken and the unsupported hardening of the 160-particle Racer pool into a recommended limit both failed the visual intent. WS1b's 10–20× and 2–4 s suggestion is a test hypothesis, not a new compulsory recipe. See `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`. **WS0 allocates the final register V-number via canonical `build_decisions.py` process; no direct patch of generated DECISIONS.md.** Existing WS1b `figamb=1` tests are independent.
-
----
-
+→ Webchat-Regel „Intent First · Solution Open“ (V-690): siehe `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`.
 
 > Struktur, Zuständige und eine Quelle je Teil: `ARCHITECTURE_R1.md` (V-228).
 
