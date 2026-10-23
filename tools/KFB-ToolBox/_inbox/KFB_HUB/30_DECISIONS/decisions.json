@@ -9804,6 +9804,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-688",
+   "date": "2026-10-23",
+   "area": "Audio",
+   "verdict": "ANSWER",
+   "text": "Antworten WS-Audio §13: Familien für Skelette, Spielzeugsoldaten, Orc-Band, Disco, gothgirl und weitere Fluffer-Sorten entscheidet Georg (Hub q178), bis dahin Rückfall; neue Familien-Clips nur nach Georgs Go; Register bekommt chatter.motif und chatter.grains (vowel, click, emotion, signature), gefüllt erst mit geerntetem Material; Suno-Ernte Solo vor Stems, je Familie, je Stück Tonart, BPM, Einsatz, LUFS, daraus Musik-Katalog 40_AUDIO/music_catalog_r1.json; Musik-Absenkung bei der Begrüßung entscheidet Georg (q179).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Material und Zuordnung bleiben getrennt: Georg wählt die Familien, die Ernte liefert Motive, das Register verbindet beides.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9891,7 +9906,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1153",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1155",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

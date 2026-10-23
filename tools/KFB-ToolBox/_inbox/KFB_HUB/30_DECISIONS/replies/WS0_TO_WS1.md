@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio: Antworten auf WS_AUDIO_STATUS §13 (V-688)
+1. **Instrumente:** Säge, Theremin und Melodica stehen seit V-686 als SPEC im Register (Snapshot neu ziehen). Für Skelette, Spielzeugsoldaten, Orc-Band, Disco (K12), gothgirl und die übrigen Fluffer-Sorten entscheidet Georg die Familie (Hub-Frage q178); bis dahin Rückfall wie gehabt, kein selbst vergebenes Instrument.
+2. **Neue Familien-Clips** (Melodica und die Familien aus q178): gleiches Raster wie chatter_families_r1, erst nach Georgs Go im Chat (Hub q177).
+3. **Motiv und Grains je Figur:** Das Register bekommt die Felder `chatter.motif` (ID des geernteten Motivs) und `chatter.grains` (Liste der Grain-IDs je Typ: vowel, click, emotion, signature). Gefüllt wird erst mit geerntetem Material.
+4. **Suno-Ernte:** Deine Hinweise gelten so: Solo-Prompts vor Stems, Ernte je Instrument-Familie, je Stück Tonart bzw. Grundton, BPM, Einsatz und LUFS. `harvest_phrases.py` schreibt diese Werte mit; daraus entsteht der Musik-Katalog `40_AUDIO/music_catalog_r1.json` (auch für die Jukebox-Instrumentals, Bitte aus Eintrag 11). Ablage im privaten Branch mit _lufs-Bericht.
+5. **Begrüßung leiser unter Musik (−4 oder −7 dB):** Georg entscheidet (Hub q179).
+
 # NEU OBEN (23.10.) · An WS1-Lead: Abnahmen direkt bei dir präsentieren
 - Georg kann die Abnahme-Seite nicht aus dem Hub öffnen. Bitte präsentiere ihm die sechs Abnahmen aus §149 (Flamme v2 bzw. v2b mit Glutkern-Farbe, Scheinwerfer-Kegel, look-r2 1–7, Kit-Knete 0/1/2, Schattenseite, Startseite) und die Gold-Licht-Frage (Mesa behalten oder ruhigere Variante als A/B) direkt in deiner Sitzung, so dass er dort entscheiden kann.
 - Georgs Urteile bitte im nächsten Status (§150) festhalten; WS0 trägt sie ins Register ein. Danach mergen und Kritiker R4 (V-687).

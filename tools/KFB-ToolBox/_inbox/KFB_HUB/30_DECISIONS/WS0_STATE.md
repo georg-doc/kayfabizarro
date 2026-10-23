@@ -1,5 +1,5 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
-Stand 22.10.2026, Register bis V-687. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
+Stand 22.10.2026, Register bis V-688. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 0. **Jede Frage an Georg** aus einem Status, RETURN oder Briefing kommt sofort als Karte in den Hub (`decisions`). Ausnahme: Abnahmen mit Bildern auf der WS1-Abnahme-Seite präsentiert WS1 selbst in seiner Sitzung (Georg kann die Seite nicht aus dem Hub öffnen); WS0 trägt die Urteile aus dem WS1-Status ins Register ein.
@@ -37,7 +37,7 @@ Stand 22.10.2026, Register bis V-687. WS1-Status jetzt auf ws1/status. Nach jede
 - Hub: q168 beantwortet (V-684, Ink-Flüsse); q169 Ziel-Pfeil zurückgestellt bis WS1-Ist-Bilder hud=wood.
 - WS1 §149: sechs Abnahmen warten auf Georg (Flamme v2, Scheinwerfer-Kegel, look-r2 1–7, Kit-Knete 0/1/2, Schattenseite, Startseite) plus Gold-Licht violett; Kritiker R4 danach.
 - WSA: Inventur des Arbeitsordners (36 GB), Löschen nur nach Georgs Ja.
-- Chatterbox: 156 Familien-Clips fertig; die Suno-Solo-Tests erzeugt Georg.
+- Chatterbox: 156 Familien-Clips fertig; Suno-Solo-Tests erzeugt Georg; offen: Hub q177 (Clips-Go), q178 (Familien je Gruppe), q179 (Ducking); Register-Felder chatter.motif/grains bei nächster Erzeugung ergänzen; harvest_phrases.py um Tonart/BPM/Einsatz/LUFS + music_catalog_r1.json erweitern (V-688).
 
 ## 5 · Feste Grenzen
 Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im Chat. Private Assets nie öffentlich. Keine Freigaben an andere Sitzungen weiterreichen. Agenten laden nichts per git fetch in `~/KFB_GitHub_sync`. Cowork-Sitzungen werden nie gelöscht.

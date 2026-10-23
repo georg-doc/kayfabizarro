@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- V-688 Antworten WS-Audio §13 (Familien-Wahl Georg q178, Clips nach Go, chatter.motif/grains, Ernte-Metadaten, Musik-Katalog, Ducking q179).
 - WS1 präsentiert seine Abnahmen direkt in der Sitzung (Georg kann die Abnahme-Seite nicht aus dem Hub öffnen); Hub-Karten q170–q176 dorthin verwiesen.
 - V-687 Antworten WS1 §149 (Kritiker R4 nach Georgs Urteilen, Glutkern als Farbe ohne Emission, farmer_harke Alias von farmer_b, Register 132 Figuren).
 - V-686 Antworten WS1 §147/§148: Chatter-Familien Bots/Aliens/Geister als SPEC im Register, kfb-gem Schlüssel mit veinGlow.
