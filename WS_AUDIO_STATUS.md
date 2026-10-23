@@ -2,6 +2,37 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 17 · 24.10. · UMGESETZT: Ton von GitHub, Musik AAC 128 · Georgs Freigabe im Chat („ja, beides“, 23.10.)
+
+**Stand:** `ws-audio/r1` @76eeb2b (auf aktuellem `ws1/mvp-r1`), Merge-Wunsch an den Lead. Ablage: kayfabizarro, Branch `assets/kfb-audio-r1` @36c5ae419, Pfad `media/kfb-audio/r1/` (569 Dateien + README, 108 MB).
+
+**Größen vorher/nachher**
+
+| | vorher | nachher |
+|---|---|---|
+| Musik (38 Titel) | 226 MB (MP3 192 / Ogg bis 450 kbit/s) | **88,7 MB** AAC-LC 128 m4a, größte Datei 8,84 MB, Lautheit \|Δ\| ≤ 0,06 LU |
+| Ton im Site-Paket | 245 MB | **0 MB**, alles zur Laufzeit von GitHub |
+
+**Laden:** jsDelivr `gh@36c5ae419…` als erster Host, raw.githubusercontent als Rückfall (`scripts/audio/remote.json`; build-site setzt `VITE_KFB_AUDIO_ROOT`/`_FALLBACK`).
+- Jukebox streamt über `<audio>` → MediaElementSource (`crossOrigin='anonymous'`), nie `decodeAudioData` für Musik.
+- Der nächste Titel wird ~25 s vor Ende ins freie Deck vorgeladen.
+- Fehlerkette: anderer Host → nächster Titel → nach 3 Fehlern Musik aus, das Spiel läuft weiter.
+- Vorwärmen: `scripts/audio/warm-cdn.mjs`, alle 569 Dateien 200, TTFB kalt p50 276 ms / p95 640 ms.
+
+**Gemessen gegen die echten Hosts (headless):**
+
+| | Chrome | WebKit (Safari-Engine) |
+|---|---|---|
+| erster Musik-Ton nach erster Eingabe | 1,1 s | 1,1 s |
+| Ton bereit (Atmo, Schritte, Tonbank) | 1,4 s | 3,3 s |
+| alle 38 Titel spielbar | 38/38 | 38/38 |
+| Fehlerfälle (nachgestellt: erster Host weg, Musik-Datei weg, beide weg) | PASS | PASS |
+
+- **Repo-Grenze jsDelivr:** Einzelabruf aus kayfabizarro geht, auch bei einer kalten Datei (0,8 s, danach 0,05 s). Die 150-MB-Paketgrenze greift laut Recherche nur beim Tarball-Weg.
+
+**Tests:** volle Reihe `npm test` im Slot: 55 PASS bis `c2`. `c2` FAIL ist der bekannte alte Fehler (pupilZeroWhenClosed), danach einzeln: c3, c3s, c3g, r1a, m1-ground, probeWorld, probeWater PASS. `c3b` FAIL (`F.sync is not a function`, Fundstücke-Modul) ist nicht im Ton-Diff, liegt also im mvp-Stand; Hinweis an den Lead. Nach dem mvp-Merge erneut: audio-mixer, characterRegistry, contract-static, audio, audio-remote PASS.
+- `drift` braucht `test/out/drift/drift-report.json` (lokale Ausgabe). In frischen Worktrees fehlt sie, dann bricht die Reihe dort ab.
+
 ## 16 · 23.10. · KONZEPT: Musik kleiner kodieren, Ton von GitHub statt im Site-Paket · Hörprobe (Auftrag Georg über den Lead)
 
 **Georgs Vorgaben (über den Lead):** „Musik kleiner kodieren: gerne“. Die Site soll leicht sein und alles über GitHub laufen. Die Songs dürfen öffentlich in kayfabizarro, gekaufte Modelle bleiben privat. Die Freigabe gilt nur für die Songs. **Umsetzung erst nach Georgs Okay, Merge über den Lead.**
