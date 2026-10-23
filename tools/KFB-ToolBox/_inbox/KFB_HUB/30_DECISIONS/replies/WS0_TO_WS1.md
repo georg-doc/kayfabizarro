@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio: Orchester 2 mit Advanced Split, Suno-SSOT
+- **Orchester 2:** 104 BPM, Tonart geschätzt G Moll; 252 Phrasen aus den Gruppen-Stems, dazu 1197 aus dem neuen Advanced Split (ein Stem je Instrument: Violin 141, Viola 102, Trumpet 145, French Horn 132, Trombone 134, Cello 11, Tuba 12, Harp 14, vier Saxophon-Varianten je ~125).
+- **Vorsicht:** Die Saxophon-Stems sind Übersprechen (im Prompt kein Saxophon, 56–58 % Überschneidung mit Trompete); Horn und Posaune überschneiden sich zu 62 %. Geige und Bratsche wirken eigenständig. Vor Verwendung anhören und Doppelte entfernen. Details im Katalog.
+- **Suno-SSOT:** `replies/SUNO_SSOT_R1.md` (V-689) für alle Suno-Fragen.
+
 # NEU OBEN (23.10.) · An WS-Audio: Orchester-Ernte
 - **Orchester-Charaktere (wie Peter und der Wolf):** 108 BPM, Tonart geschätzt B Dur (A#, Konfidenz 0,92), 261 Phrasen: Holzbläser 174 (47 % einstimmig, Flöte/Oboe/Klarinette/Fagott nacheinander in Zeitabschnitten), Blech 43, Keyboard bzw. Harfe 26, Streicher 12, Synth 6. Katalog `40_AUDIO/music_catalog_r1.json` ergänzt, Material im privaten Branch unter `40_AUDIO/chatterbox_r1/suno_tests/orchester/`.
 - Die Instrument-Zuordnung je Phrase steht noch aus (Abschnitte nach Zeit im Manifest); bitte beim Anhören bzw. über die Tonlage (Flöte hoch, Fagott tief) zuordnen und im nächsten Status melden.

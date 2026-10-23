@@ -9819,6 +9819,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-689",
+   "date": "2026-10-23",
+   "area": "Audio",
+   "verdict": "SPEC",
+   "text": "Suno-SSOT (Georg 23.10.): replies/SUNO_SSOT_R1.md ist die eine Stelle für Suno-Regeln, LYRICS-Struktur (Abschnitts-Tags, Instrument-Zeile, Leerzeilen als Timing, Break mit silence, Outro/Fade Out/End), Stems (Standard nach Gruppen, Advanced Split nach Instrument mit Übersprechen-Vorsicht), Bausteine (Prompts in replies/SUNO_SSOT_PROMPTS), Ernte-Lehren und Ergebnisse; Deck-Songs zusätzlich nach SONG_SPEC_R3. Neue Erfahrungen werden dort nachgetragen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Suno-Wissen lag verstreut und wurde jedes Mal neu gesucht; eine Stelle für alle Sitzungen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9906,7 +9921,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1155",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1159",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

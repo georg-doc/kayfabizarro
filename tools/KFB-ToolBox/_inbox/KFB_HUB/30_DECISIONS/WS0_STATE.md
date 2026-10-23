@@ -1,5 +1,5 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
-Stand 22.10.2026, Register bis V-688. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
+Stand 22.10.2026, Register bis V-689. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 0. **Jede Frage an Georg** aus einem Status, RETURN oder Briefing kommt sofort als Karte in den Hub (`decisions`). Ausnahme: Abnahmen mit Bildern auf der WS1-Abnahme-Seite präsentiert WS1 selbst in seiner Sitzung (Georg kann die Seite nicht aus dem Hub öffnen); WS0 trägt die Urteile aus dem WS1-Status ins Register ein.
@@ -17,7 +17,7 @@ Stand 22.10.2026, Register bis V-688. WS1-Status jetzt auf ws1/status. Nach jede
 | Licht | `replies/LIGHT_MODEL_R2.md`, Modul kfb-stage-light |
 | HUD | `replies/HUD_R4_DESIGN/BRIEF_CLAUDE_DESIGN_HUD_R4.md` (Plan), `HUD_LAYOUT_R3.md`, `HUD_UX_STATES_R1.md`; Georg arbeitet das Design extern neu aus |
 | Figuren | `CHARACTERS_R1/` (Register, 133 Figuren, `GAPS.md`); Figurenkarten kfb.figure/1; E2-Referenz `replies/E2_REFERENCE/` |
-| Audio | `replies/CHATTERBOX_SPEC_R2.md`, `SONG_SPEC_R3.md`; Sets unter `40_AUDIO/elevenlabs_r1/<set>_lufs` |
+| Audio | `replies/CHATTERBOX_SPEC_R2.md`, `SONG_SPEC_R3.md`, Suno: `replies/SUNO_SSOT_R1.md`; Sets unter `40_AUDIO/elevenlabs_r1/<set>_lufs` |
 | Abnahmen | Bilder über die Abnahme-Seite „KFB Abnahme“ (WS1) bzw. die Proof-Stage (WSB); Fragen im Hub (`decisions`) |
 | Private Assets | Repo KFB-Stunt-Car-Race, Branch assets/private; `tools/push_private_assets.sh` + `private_assets_list.txt` |
 | Hub | https://claude.ai/artifact/WxG16gvt7LNrBXxYkAhr9d (Stand, Fragen, Briefings, Plan); lokale Kopie im Scratchpad, sonst vor dem Publish neu lesen |
