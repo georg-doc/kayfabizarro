@@ -36,3 +36,13 @@
 
 ## Precisely one next gate
 **WS0 source/owner review for research-only Sound Perception Lab A**: decide whether this should be a lightweight standalone educational demonstration or later integration into the **existing** KFB-Audio-/Site-Owner, check speaker/headphone/volume/asset licensing; only after that authorize a bounded actual audio POC. **Holotropic practice stays research/documentary only until a separate qualified human clinical/safety review**, never an automatic breath-speed controller.
+
+## 2026-10-23 · Additive update after Georg clarified H13 HyperNormalisation
+
+**Decision-level clarification:** The intended visual engine is **authored KFB Billboard Kaleidoscope H13** (source `tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/KFB Billboard Kaleidoscope H13.dc.html` on main, blob `46670cfa5c62c3aea6aa3840d301fc7a35723407`), not an invented generic Normalization renderer. The published **Hypernormalisation Curator** is a separate curation/admin tool, not proof of integrated H13 live visuals.
+
+**New verified additive file:** `H13_HYPERNORMALISATION_VOICE_COUNSELOR_OPTION_R1.md`: H13 preservation/visual-isolation requirement, proposed calm canvas/music-reactive variants, optional binaural and monaural modes, separate opt-in Voice Counselor with official GPT-Live/WebRTC transport behind server-side credentials, speaker/microphone ducking, typed fallback, no holotropic self-guided sessions. Existing `TEST_REPORT_R1.md` and `CHANGELOG.md` amended additively.
+
+**Current tests:** H13 exact HTML source read, supporting onboarding/H13 history/active owner docs read, **7/7 editorial source invariants**. No H13 live visual source object shown in isolation, no voice API session, no browser, device, audio latency or Site published (all **NOT TESTED**). `collage-engine v0` remains failed and forbidden as donor.
+
+**One updated next gate:** WS0/owning visual lane should **show actual original H13 source visuals in isolation**, identify rights/real image donors and a viable toned-down variant for an optional sound/voice webpage. Only then select the existing KFB Audio consumer and WebRTC voice transport; no build/site creation or public route authorized by this addendum. No merge / Live promotion.
