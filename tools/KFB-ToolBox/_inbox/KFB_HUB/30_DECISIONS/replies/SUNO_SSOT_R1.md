@@ -51,8 +51,10 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 |---|---|---|---|
 | Surf und Rockabilly | 150 | C Dur bzw. A Moll | 60 |
 | E-Funk mit Talkbox | 142 | G Moll | 119 |
-| Orchester-Charaktere | 108 | B Dur | 261 |
-| Orchester 2 | 104 | G Moll | 252 aus Gruppen-Stems, 1197 aus Advanced Split (mit Übersprechen) |
+| Orchester-Charaktere | 108 | B Dur | 261 aus Gruppen-Stems, 1039 aus Advanced Split (553 eigenständig) |
+| Orchester 2 | 104 | G Moll | 252 aus Gruppen-Stems, 1197 aus Advanced Split (557 eigenständig, Saxophone = Übersprechen) |
+
+**Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
 ## 7 · Quellen (Community, Stand 23.10.)
 - https://jackrighteous.com/en-gb/blogs/guides-using-suno-ai-music-creation/suno-ai-4-5-metatag-tutorial

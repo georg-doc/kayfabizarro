@@ -9834,6 +9834,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-690",
+   "date": "2026-10-23",
+   "area": "Prozess",
+   "verdict": "SPEC",
+   "text": "Webchat-Regel Intent First · Solution Open (Georg 23.10.): Georgs Wirkung bzw. Referenz hat Vorrang vor jeder vorgeschlagenen Konstruktion; Zahlen sind Hypothesen bzw. Testbereiche, keine Grenzen. Einzige maßgebliche Stelle replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md; Arbeitsregeln, Fresh-Chat-Protokoll und die drei Staub-Dokumente verweisen nur noch mit einer Zeile darauf. Knete bleibt der gesetzte KFB-Look (Knet-HUD, Kit-Knete, Racer-Zusätze, Figuren); die Regel betrifft nur ungefragt erfundene Konstruktionen für ein beschriebenes Ziel (Anlass Knet-Wolken für die Staubfahne).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Korrektur stand an sechs Stellen mit eigenem Wortlaut; das läuft beim nächsten Ändern auseinander. Knete ausdrücklich ausgenommen, damit keine Gegen-Drift entsteht.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-691",
+   "date": "2026-10-23",
+   "area": "Fahren",
+   "verdict": "ANSWER",
+   "text": "Staubfahne (WS1 §150): WS1b baut mit Georgs Freigabe hinter dust3=1 auf ws1/staub-probe nach Georgs zwei Vorlagen; Partikelzahl (Richtwert 1500-3000) und Lebensdauer (2-4 s) sind Testbereiche. Nicht umbriefen, nicht anhalten; Lookentscheid Georg. 160 Partikel sind keine Grenze.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Probe läuft mit Georgs Freigabe; eine Wartebedingung aus dem Webchat hätte laufende Arbeit gebremst.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-692",
+   "date": "2026-10-23",
+   "area": "Licht",
+   "verdict": "ANSWER",
+   "text": "Georgs Urteile aus WS1 §150: Scheinwerfer-Kegel nach UNECE R48/R112 (Grenze 2 Grad, Unterkante 12 Grad, weiches Ende) ist Standard, Feinschliff später. Knet-Flamme v2 abgelehnt, die abgenommene Flamme bleibt. Figurenlicht Weg 1 (Zusatzlicht je Figur) abgelehnt; Weg figamb=1 (Belichtung nur für Figuren, ohne neues Licht) Richtung passt, Abnahme der Stärke offen. Kanon V-385 Regel 11 wird erst nach dieser Abnahme nachgezogen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Urteile im Register sichtbar; Kanon erst nach der Abnahme der Stärke ändern.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9921,7 +9966,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1159",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1161",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

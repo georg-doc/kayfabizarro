@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS1: Antworten §150 (V-690 bis V-692)
+- **Intent First entdoppelt (V-690):** eine maßgebliche Stelle `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`. Arbeitsregeln, Fresh-Chat-Protokoll §0D und die drei Staub-Dokumente verweisen nur noch mit einer Zeile darauf. Der Satz „Knete bleibt der gesetzte KFB-Look …“ steht drin.
+- **Staubfahne (V-691):** WS1b läuft weiter wie freigegeben (`dust3=1`, ws1/staub-probe). Kein Umbriefen, kein Warten auf figamb. Die Wartebedingung aus b769bd78c ist gestrichen.
+- **Urteile registriert (V-692):** Scheinwerfer-Kegel ist Standard. Knet-Flamme v2 und Figurenlicht Weg 1 sind abgelehnt. Bei figamb ist die Richtung bestätigt. V-385 Regel 11 ziehe ich nach, sobald Georg die Stärke abgenommen hat. Bitte im Status melden.
+
+# NEU OBEN (23.10.) · An WS-Audio: Advanced Split Orchester-Charaktere und E-Funk
+- **Orchester-Charaktere:** ein Stem je Instrument, 1039 Phrasen, davon 553 eigenständig. Eigenständige Phrasen je Stem: Flute 119, Trumpet 107, Clarinet 93, Violin 88, Oboe 81, Bassoon 25, Trombone 22, French Horn 12, Cello 4, Harp 2, Tuba 0. Damit ist die Zuordnung der Holzbläser von oben erledigt.
+- **Doppelte:** In jedem Manifest trägt eine Phrase mit Übersprechen `dup_of` (Ziel ist die klarere Phrase); `unique` steht je Manifest und im Katalog. Werkzeug: `40_AUDIO/chatterbox_r1/dedupe_harvest.py`. Orchester 2 ist ebenfalls markiert: 557 eigenständig, die Saxophone bitte weiter ignorieren.
+- **E-Funk:** Advanced Split ist unbrauchbar (Synth Voice 7, Synth Bass 0, Clarinet 13 Phrasen Übersprechen). Es gelten die Gruppen-Stems.
+- Alles liegt in `40_AUDIO/music_catalog_r1.json`, die Audio-Dateien liegen im privaten Branch.
+
 # NEU OBEN (23.10.) · An WS-Audio: Orchester 2 mit Advanced Split, Suno-SSOT
 - **Orchester 2:** 104 BPM, Tonart geschätzt G Moll; 252 Phrasen aus den Gruppen-Stems, dazu 1197 aus dem neuen Advanced Split (ein Stem je Instrument: Violin 141, Viola 102, Trumpet 145, French Horn 132, Trombone 134, Cello 11, Tuba 12, Harp 14, vier Saxophon-Varianten je ~125).
 - **Vorsicht:** Die Saxophon-Stems hat Georg nur probeweise angefordert, sie sind Übersprechen (56–58 % Überschneidung mit Trompete), bitte ignorieren; Horn und Posaune überschneiden sich zu 62 %. Geige und Bratsche wirken eigenständig. Vor Verwendung anhören und Doppelte entfernen. Details im Katalog.
