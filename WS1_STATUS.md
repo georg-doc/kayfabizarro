@@ -1,7 +1,7 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
 Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§149 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
 ## 149 · 23.10. · GESAMTSTAND WS1 für WS0 (alles seit §148, alle WS1-Sitzungen) · 6 Abnahmen warten auf Georg · V-685/V-686 umgesetzt
 
