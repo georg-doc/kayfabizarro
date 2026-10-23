@@ -1,7 +1,53 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §153.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§153 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §154.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§154 ist der neueste, Stand 23.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 154 · 23.10. nachts · Übergabe an WS0: Vorschlag für den WSA-Auftrag „MVP auf der GPT-Site, leicht, alles über GitHub“ (Georg)
+
+**Georgs Vorgaben (23.10.):**
+- „Getestete, optimierte Version auf der WSA-work-GPT-Site“.
+- „Aus meiner Sicht muss das alles via GitHub laufen“.
+- „Völlig egal, ob die Songs öffentlich sind“: Suno und Cozy Tunes dürfen ins öffentliche kayfabizarro, Lizenz ist kein Prüfthema.
+- Musik kleiner kodieren: ja.
+- Recherche, wie Indie-/Web-Games Musik ausliefern (u. a. Tiny Skies): läuft beim Lead, Ergebnis folgt.
+
+**Bisheriger Plan (HANDOFF_GPT_SITE_R1, 22.10.):** Site-Paket ~290 MB / ~430 Dateien, davon Musik 228 MB (38 Stücke à ~6 MB) und übrige Töne ~14 MB. Spiel 46 MB inkl. private Figuren. Für Georg zu schwer.
+
+**Neuer Vorschlag für WSA (bitte von WS0 beauftragen):**
+1. **Site = kleines statisches Paket:** Spielcode plus gekaufte Figuren, die privat bleiben (Georgs Freigabe gilt nur für Songs). Ziel: wenige MB statt 290.
+2. **Alles andere zur Laufzeit von GitHub** über einen festen Commit: Modelle (wie heute), Musik und Töne (neu, WS-Audio baut es um), Karten.
+   - Feste Commits sind unveränderlich, also lange cachebar.
+   - Neue Inhalte brauchen keinen Site-Upload.
+3. **Laufzeit-Funktionen der Site:**
+   - Passwort für alle Pfade. Secret setzt Georg auf der Plattform, nie im Repo.
+   - `/raw/<ref>/<pfad>`-Proxy auf kayfabizarro. Nötig, sobald kayfabizarro privat ist (V-599), dann mit Lese-Token serverseitig. Bis dahin kann das Spiel direkt von raw laden.
+   - MIME-Typen und Range wie in R1 §3.
+4. **Quelle:** privates KFB-Stunt-Car-Race `game/mvp-r1`. WS1 meldet je geprüftem Stand einen Commit.
+   - Build: `npm ci && node scripts/site/build-site.mjs`.
+   - Mit `KFB_SITE_AUDIO=0` sofort ohne Ton-Kopie baubar, bis WS-Audio den GitHub-Weg geliefert hat.
+5. **Offene Fragen an WSA** (aus R1, jetzt entschärft):
+   - Grenzen je Datei/gesamt: kein Thema mehr bei kleinem Paket.
+   - Wie sind Edge-Funktionen bzw. Secrets für Passwort und Proxy möglich?
+   - Auslöser: Push auf `game/mvp-r1` oder Deploy-Befehl?
+   - Adresse und Tester-Zugang.
+
+**WS-Audio beauftragt** (Konzept und Hörprobe zuerst, Umsetzung nach Georgs Okay):
+- Musik auf ~96–128 kbit/s, erwartet 50–70 MB statt 228.
+- Musik und Töne zur Laufzeit von GitHub statt im Site-Paket (Range, erster Ton, Cache, Fehlerverhalten).
+
+**WS1 vor der Übergabe:**
+- Volle Testreihe und fps-Tabelle (perfMvp, Georgs Bildschirm 2880×1800) laufen gerade. Danach Spiegel und Commit auf `game/mvp-r1`, Meldung hier.
+- HANDOFF_GPT_SITE_R1 wird als R2 auf diesen Weg aktualisiert (Startseite raus, alte §5-Punkte erledigt).
+- Kritiker R4 auf der laufenden Site, nicht vorher (Spieler-Sicht).
+
+**Kleinkram aus §153:**
+- Leucht-Flamme: wieder die Fassung, die Georg gewählt hat. Die gezähmte Fassung fand Georg schlechter, sie liegt nur noch hinter `glow=v2` (mvp 8952830).
+- Düsen im Staub: so lassen, kein Anglühen (Georg).
+- Kartenfassung: PDF führt immer (Georg). Mission Control, Ego Mania und Brain Flipper #59 sind nach Druck gezogen: Spiel mvp 2d236e2, kayfabizarro `ws1/karten-druck` @bc00877 zum Merge nach main durch WS0.
+  - **Achtung WS0:** main-media/kfb weicht seit @52adc8f1 stark ab (Titel in Großbuchstaben, gekürzte Decks wie trust_and_betrayal −18 Karten). Das Spiel folgt erst nach eurer Entscheidung.
+- Abnahme-Seite aufgeräumt: nur noch Ist-Stand, keine alten Stände (Georg war verwirrt).
+- Regel: Neue Fassungen erst hinter einem Schalter, Standard erst nach Georgs Blick.
 
 ## 153 · 23.10. spät · Staubfahne und Leucht-Flamme sind Standard · Karten-Tratsch Stufe 0 bei Georg · Kanon- und Datenfragen · Spiegel @0d2b1ba
 
