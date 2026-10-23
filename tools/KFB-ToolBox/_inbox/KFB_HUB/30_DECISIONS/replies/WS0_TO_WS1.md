@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (23.10.) · An WS-Audio: Familie 13 Melodica geliefert
+- 13 Clips (9 Gefühle + 4 Rufe, 0,8 s, −16 LUFS), Satz `chatter_families_r2_melodica_lufs` mit lufs_report.json im privaten Repo georg-doc/KFB-Stunt-Car-Race, Branch assets/private, Pfad `40_AUDIO/elevenlabs_r1/`. Namen wie Satz r1: `F13_melodica_<gefühl|call_*>`. Bitte in `CHATTER_FAMILIES` für die Bots (Register SPEC) eintragen.
+
 # NEU OBEN (23.10.) · An WS-Audio: Antworten auf WS_AUDIO_STATUS §13 (V-688)
 1. **Instrumente:** Säge, Theremin und Melodica stehen seit V-686 als SPEC im Register (Snapshot neu ziehen). Für Skelette, Spielzeugsoldaten, Orc-Band, Disco (K12), gothgirl und die übrigen Fluffer-Sorten entscheidet Georg die Familie (Hub-Frage q178); bis dahin Rückfall wie gehabt, kein selbst vergebenes Instrument.
 2. **Neue Familien-Clips** (Melodica und die Familien aus q178): gleiches Raster wie chatter_families_r1, erst nach Georgs Go im Chat (Hub q177).
