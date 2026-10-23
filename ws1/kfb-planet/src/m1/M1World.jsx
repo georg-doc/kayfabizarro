@@ -42,6 +42,7 @@ import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/
 import { FIGLIGHT_ON, FIG_LIGHT_TEST, attachFigureLights } from '../look/figureLights' // Figurenlicht R1 (Georg 23.10.): je Figur, die nächsten vier, immer, mit Lichtkreis (figlight=1, A/B)
 import { FIGAMB_ON, FIG_AMB_TEST, applyFigureAmbient, updateFigureAmbient } from '../look/figureAmbient' // Georg 23.10.: Figuren lesbar mit bestehendem Licht (figamb=1, A/B)
 import { OUTLINE_ON, OUTLINE_TEST, createFigureOutline } from '../look/figureOutline' // Probe Georg 23.10.: Umriss nur außen für Figuren (outline=1)
+import { SHADOW_CULL_ON, createShadowCull } from '../look/shadowCull.js'
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
@@ -388,6 +389,13 @@ function ShadeFloor() {
 
 // nsh=1: Schattenstärke der Sonne bzw. des Mondes folgt glow (Tag Rig-Wert, Nacht NSH.shadowNight); das Rig setzt seinen festen Wert je Bild, hier wird er als Basis gelesen
 // Probe Umriss nur außen (outline=1): Stencil-Hülle für Spieler + 5 nächste Figuren
+// Schatten-Hebel (Georg 24.10.): Fundsachen und Plakat werfen nur Schatten, wenn sie (mit Schattenreichweite) das Bild berühren
+function ShadowCullHost() {
+  const { camera } = useThree(), ref = useRef(null)
+  useEffect(() => { const C = createShadowCull({ camera, reach: 6 * K, roots: () => [mods.found?.object3d, mods.billboard?.object3d] }); ref.current = C; expose('ShadowCull', C); return () => { ref.current = null } }, [camera])
+  useFrame((_, dt) => ref.current?.update(dt))
+  return null
+}
 function FigureOutline() {
   const { scene, gl } = useThree(), ref = useRef(null)
   useEffect(() => { const F = createFigureOutline({ scene, player: () => mods.player?.object3d || null }); ref.current = F; expose('Outline', { test: OUTLINE_TEST, status: F.status }); return () => { ref.current = null } }, [scene])
@@ -612,6 +620,7 @@ function M1World() {
       {TERRAIN3 && <FootShade />}
       {NSH_ON && <NightShadow />}
       {OUTLINE_ON && <FigureOutline />}
+      {SHADOW_CULL_ON && <ShadowCullHost />}
       {SHADE_ON && <ShadeFloor />}
       {FIGLIGHT_ON && <FigureLights />}
       <LightPools />

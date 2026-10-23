@@ -19,7 +19,13 @@ import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStep
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
-export const AUDIO_ROOT = import.meta.env?.VITE_KFB_AUDIO_ROOT || '/@kfb-audio/'
+// Ton von GitHub (Georg 23.10., Status 16): VITE_KFB_AUDIO_ROOT = jsDelivr gh@<commit>/…/ (erster Host, Cache ein Jahr), VITE_KFB_AUDIO_FALLBACK = raw.githubusercontent
+// mit demselben Commit. Der erste Host, dessen index.json lädt, gilt; einzelne Dateien und Module fallen auf den anderen zurück. Lokal: /@kfb-audio/ (Vite).
+const ROOTS = [import.meta.env?.VITE_KFB_AUDIO_ROOT || '/@kfb-audio/', import.meta.env?.VITE_KFB_AUDIO_FALLBACK].filter(Boolean)
+export let AUDIO_ROOT = ROOTS[0]
+const LOCAL_ROOT = (r) => r.startsWith('/@kfb-audio/')
+const altUrl = (url) => { const from = ROOTS.find((r) => String(url).startsWith(r)), to = ROOTS.find((r) => r !== from); return from && to ? to + String(url).slice(from.length) : null }
+async function viaRoots(fn) { let err; for (const r of [AUDIO_ROOT, ...ROOTS.filter((x) => x !== AUDIO_ROOT)]) { try { return await fn(r) } catch (e) { err = e; if (r !== AUDIO_ROOT) break; S.hostFallbacks = (S.hostFallbacks || 0) + 1 } } throw err }
 export const VOICE_CAP = Object.freeze({ bank: 24, music: 2 }) // WSA: Kampf 24, Atmo 24, Racer 16 Einzeltöne (+ Schleifen)
 const STEP_VOICES = 8 // NPC-Schritte/Hüpfer gleichzeitig (Teil der 24 der Bank)
 const MUTED = typeof location !== 'undefined' && /(^|[#,])mute(,|$)/.test(location.hash)
@@ -101,10 +107,12 @@ export function unlock() {
   const ac = audioContext(); if (ac) { graph(); if (ac.state === 'suspended') ac.resume().catch(() => {}) }
   return preload()
 }
-async function getJson(url) { const r = await fetch(url, { cache: 'no-store' }); if (!r.ok) throw new Error(url + ' HTTP ' + r.status); return r.json() }
+async function getJson(url, ms = 6000) { const ab = typeof AbortController !== 'undefined' ? new AbortController() : null, to = ab && setTimeout(() => ab.abort(), ms)
+  try { const r = await fetch(url, { cache: LOCAL_ROOT(String(url)) ? 'no-store' : 'default', signal: ab?.signal }); if (!r.ok) throw new Error(url + ' HTTP ' + r.status); return await r.json() } finally { if (to) clearTimeout(to) } }
 async function boot() {
   S.mode = 'loading'; const t0 = now()
-  try { S.index = await getJson(AUDIO_ROOT + 'index.json') } catch { S.mode = 'public'; S.loads.index = { ms: +(now() - t0).toFixed(1), ok: false }; return snapshotLite() }
+  for (const r of ROOTS) { try { S.index = await getJson(r + 'index.json'); AUDIO_ROOT = r; break } catch (e) { S.errors.push('index ' + r + ': ' + (e?.message || e)) } } // erster erreichbarer Host
+  if (!S.index) { S.mode = 'public'; S.loads.index = { ms: +(now() - t0).toFixed(1), ok: false }; return snapshotLite() }
   S.loads.index = { ms: +(now() - t0).toFixed(1), ok: true }
   const G = graph(); if (!G) { S.mode = 'public'; return snapshotLite() }
   const ac = G.ac, timed = async (key, fn) => { const a = now(); try { const r = await fn(); S.loads[key] = { ms: +(now() - a).toFixed(0), ok: true }; return r } catch (e) { S.loads[key] = { ms: +(now() - a).toFixed(0), ok: false }; S.errors.push(key + ': ' + (e?.message || e)); return null } }
@@ -112,21 +120,21 @@ async function boot() {
   startMusic()
   const car = !!S.host.car
   // Stufe 1 – sofort hörbar: Atmo + (zu Fuß) Schritte bzw. (Racer) Motor; Tonbank-Grundstock
-  const racer = () => S.index.wsa && timed('racer', async () => { const m = await getJson(AUDIO_ROOT + 'wsa/racer/manifest.json'), want = new Set(racerAssets({ car }))
-    const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/racer/', location.href) })
-    await r.prepare(); S.racer = r; S.racerAssets = want.size })
-  const steps = () => S.index.site && timed('steps', async () => { const base = new URL(AUDIO_ROOT + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
-    const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.sfx, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st })
+  const racer = () => S.index.wsa && timed('racer', () => viaRoots(async (root) => { const m = await getJson(root + 'wsa/racer/manifest.json'), want = new Set(racerAssets({ car }))
+    const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(root + 'wsa/racer/', location.href) })
+    await r.prepare(); S.racer = r; S.racerAssets = want.size }))
+  const steps = () => S.index.site && timed('steps', () => viaRoots(async (root) => { const base = new URL(root + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
+    const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.sfx, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st }))
   await Promise.all([
-    S.index.site && timed('ambience', async () => { const a = await createAmbience({ audioContext: ac, destinations: { GLOBAL_BED: G.buses.atmo, LOCAL_AMBIENCE: G.buses.atmo }, assetBaseUrl: new URL(AUDIO_ROOT + 'site/ambience/', location.href) })
-      await a.setContext({ ...S.amb }); await a.start(); S.ambience = a }),
+    S.index.site && timed('ambience', () => viaRoots(async (root) => { const a = await createAmbience({ audioContext: ac, destinations: { GLOBAL_BED: G.buses.atmo, LOCAL_AMBIENCE: G.buses.atmo }, assetBaseUrl: new URL(root + 'site/ambience/', location.href) })
+      await a.setContext({ ...S.amb }); await a.start(); S.ambience = a })),
     car ? racer() : steps(),
     timed('bankFirst', () => preloadBank(true)),
   ].filter(Boolean))
   S.loads.ready = { ms: +(now() - t0).toFixed(0), ok: true } // ab hier klingt das Wichtigste
   // Stufe 2 – im Hintergrund: Kampf, Rest der Tonbank, Motor/Schritte des anderen Modus
   await Promise.all([
-    S.index.wsa && timed('combat', async () => { const c = await createCombat({ audioContext: ac, destination: G.buses.sfx, assetBaseUrl: new URL(AUDIO_ROOT + 'wsa/combat/', location.href), onActivity: (on) => { S.combatActive = on } }); await c.start(); S.combat = c }),
+    S.index.wsa && timed('combat', () => viaRoots(async (root) => { const c = await createCombat({ audioContext: ac, destination: G.buses.sfx, assetBaseUrl: new URL(root + 'wsa/combat/', location.href), onActivity: (on) => { S.combatActive = on } }); await c.start(); S.combat = c })),
     car ? steps() : racer(),
     timed('bank', () => preloadBank(false)),
   ].filter(Boolean))
@@ -140,7 +148,8 @@ function bankFiles(c) { if (c.set?.startsWith('site:')) return S.index?.site ? c
 function loadClip(set, id) {
   const key = set + '/' + id, B = S.bank; if (B.buffers.has(key)) return Promise.resolve(B.buffers.get(key)); if (B.pending.has(key)) return B.pending.get(key)
   const url = set.startsWith('site:') ? AUDIO_ROOT + 'site/' + set.slice(5) + '/assets/' + id.split('/').map(encodeURIComponent).join('/') : AUDIO_ROOT + 'el/' + set + '/' + encodeURIComponent(id) + '.mp3'
-  const p = fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() })
+  const get = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() })
+  const p = get(url).catch((e) => { const alt = altUrl(url); if (!alt) throw e; S.hostFallbacks = (S.hostFallbacks || 0) + 1; return get(alt) }) // anderer Host
     .then((b) => graph().ac.decodeAudioData(b)).then((buf) => { B.buffers.set(key, buf); return buf }).finally(() => B.pending.delete(key))
   B.pending.set(key, p); return p
 }
@@ -185,15 +194,30 @@ const XF = 3.0 // s Überblendung
 function startMusic() {
   if (S.music || typeof Audio === 'undefined') return
   const G = graph(), ac = G.ac, lists = { suno: uniqueTracks(S.index?.music?.suno || []), cozy: uniqueTracks(S.index?.music?.cozy || []) }
-  const deck = [0, 1].map(() => { const el = new Audio(); el.preload = 'auto'; const g = ac.createGain(); g.gain.value = 0; ac.createMediaElementSource(el).connect(g).connect(G.musicTap); return { el, g, track: null, list: null } })
-  S.music = { lists, deck, cur: -1, latch: createModeLatch(2.5), next: { suno: createWeightedShuffle(lists.suno), cozy: createWeightedShuffle(lists.cozy) }, list: null, changes: 0, errors: 0, started: 0 }
-  for (const d of deck) { d.el.addEventListener('ended', () => { if (S.music.deck[S.music.cur] === d) nextTrack(S.music.list) }); d.el.addEventListener('error', () => { S.music.errors++; if (S.music.deck[S.music.cur] === d) setTimeout(() => nextTrack(S.music.list), 400) }) }
+  const deck = [0, 1].map(() => { const el = new Audio(); el.crossOrigin = 'anonymous'; el.preload = 'auto'; /* CORS: sonst liefert MediaElementSource bei fremdem Host nur Stille */ const g = ac.createGain(); g.gain.value = 0; ac.createMediaElementSource(el).connect(g).connect(G.musicTap); return { el, g, track: null, list: null } })
+  S.music = { lists, deck, cur: -1, latch: createModeLatch(2.5), next: { suno: createWeightedShuffle(lists.suno), cozy: createWeightedShuffle(lists.cozy) }, list: null, changes: 0, errors: 0, started: 0, failRun: 0, dead: false, firstAt: null }
+  for (const d of deck) { d.el.addEventListener('ended', () => { if (S.music.deck[S.music.cur] === d) nextTrack(S.music.list) }); d.el.addEventListener('error', () => musicFail(d))
+    d.el.addEventListener('playing', () => { S.music.failRun = 0; d.loadAt = null; if (S.music.firstAt == null) S.music.firstAt = +(now() - (S.music.t0 ?? now())).toFixed(0) }) }
+  S.music.t0 = now()
+}
+// Fehlerkette (Status 16): gleicher Titel vom anderen Host → nächster Titel → nach 3 Fehlern in Folge Musik aus; das Spiel läuft weiter
+function musicFail(d) {
+  const M = S.music; if (!M || M.dead || M.deck[M.cur] !== d) return; M.errors++; d.loadAt = null
+  const alt = !d.altTried && altUrl(d.el.src); if (alt) { d.altTried = true; S.hostFallbacks = (S.hostFallbacks || 0) + 1; d.el.src = alt; d.loadAt = now(); d.el.play().catch(() => {}); return }
+  if (++M.failRun >= 3) { M.dead = true; for (const x of M.deck) x.el.pause(); log({ type: 'music', dead: true }); return }
+  setTimeout(() => nextTrack(M.list), 400)
+}
+const pickTrack = (M, list) => { const tags = S.index?.music?.tags || {}, ctx = { ...S.amb, mode: S.mode2 }; return M.next[list]((f) => musicWeight(tags[list + '/' + f], ctx)) } // Biom/Tageszeit/Wetter wie die Atmo
+// Nächsten Titel ~25 s vor Ende ins freie Deck laden (Streaming, Recherche MUSIK_AUSLIEFERUNG_R1: kein Loch beim Wechsel, auch bei kaltem CDN)
+function prepareNext(list) {
+  const M = S.music, d = M?.deck[(M.cur + 1) % 2]; if (!M || M.dead || !list || !d || M.prep) return; const file = pickTrack(M, list); if (!file) return
+  d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.el.load(); d.altTried = false; M.prep = { list, file, d }
 }
 function nextTrack(list) {
-  const M = S.music; if (!M || !list) return; const tags = S.index?.music?.tags || {}, ctx = { ...S.amb, mode: S.mode2 } // Biom/Tageszeit/Wetter wie die Atmo (auch von der Biom-Fahrt)
-  const file = M.next[list]((f) => musicWeight(tags[list + '/' + f], ctx)); if (!file) return
-  const ac = CTX, t = ac.currentTime, old = M.deck[M.cur], d = M.deck[(M.cur + 1) % 2]
-  d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.track = file; d.list = list
+  const M = S.music; if (!M || !list || M.dead) return; const ctx = { ...S.amb, mode: S.mode2 }
+  const ac = CTX, t = ac.currentTime, old = M.deck[M.cur], d = M.deck[(M.cur + 1) % 2], P = M.prep; M.prep = null
+  const ready = P && P.list === list && P.d === d && !d.el.error, file = ready ? P.file : pickTrack(M, list); if (!file) return
+  if (!ready) { d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.altTried = false } d.track = file; d.list = list; d.loadAt = now(); M.prepared = (M.prepared || 0) + (ready ? 1 : 0)
   const tg = dbToGain(Math.max(-12, Math.min(12, S.index?.music?.gainDb?.[list + '/' + file] ?? 0))) // Titel auf −18 LUFS ausgeglichen (loudness.mjs)
   d.g.gain.cancelScheduledValues(t); d.g.gain.setValueAtTime(0, t); d.g.gain.linearRampToValueAtTime(tg, t + XF); d.gainDb = 20 * Math.log10(tg)
   d.el.play().catch(() => {}); M.started++
@@ -205,7 +229,9 @@ function musicTick(mode) {
   if (M.paused) { S.musicAudible = false; return } // Radio-Taste Pause (Knet-HUD V-656): kein Wechsel, kein Weiterschalten
   const want = M.latch.update(mode, CTX.currentTime)
   if (want !== M.list) { if (M.list) M.changes++; nextTrack(want) }
-  const d = M.deck[M.cur]; if (d && d.el.duration && isFinite(d.el.duration) && d.el.currentTime > d.el.duration - XF - 0.2 && !d.handoff) { d.handoff = true; nextTrack(M.list); setTimeout(() => { d.handoff = false }, XF * 1000 + 500) }
+  const d = M.deck[M.cur]; if (d?.loadAt != null && now() - d.loadAt > 8000 && d.el.readyState < 3) musicFail(d) // kein Ton nach 8 s
+  if (d && d.el.duration && isFinite(d.el.duration) && d.el.duration - d.el.currentTime < 25 && !M.prep && !d.handoff) prepareNext(M.list)
+  if (d && d.el.duration && isFinite(d.el.duration) && d.el.currentTime > d.el.duration - XF - 0.2 && !d.handoff) { d.handoff = true; nextTrack(M.list); setTimeout(() => { d.handoff = false }, XF * 1000 + 500) }
   S.musicAudible = !!(d && !d.el.paused && S.vol.music > 0.02 && !S.vol.muted)
 }
 // Radio im Knet-HUD (V-656, WS1e, additiv): vor = nächster Titel derselben Liste (Zufallsfolge wie sonst), zurück = aktuellen Titel von vorn
@@ -466,7 +492,7 @@ export function stats() {
   const v = voices(), oneShots = v.racerOneShots + v.combat + v.ambience + v.steps + v.bank
   return { ...snapshotLite(), unlocked: S.unlocked, volumes: { ...S.vol }, loads: { ...S.loads }, errors: S.errors.slice(-20), modules: { racer: !!S.racer, combat: !!S.combat, ambience: !!S.ambience, steps: !!S.steps, music: !!S.music },
     voices: { ...v, oneShots, total: oneShots + v.racerLoops + v.music }, perf: perf(), duckDb: S.duckDb, combatActive: S.combatActive, musicAudible: S.musicAudible, nowPlaying: nowPlaying(),
-    music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null,
+    music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, dead: S.music.dead, firstMs: S.music.firstAt, prepared: S.music.prepared || 0, prep: !!S.music.prep, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null, host: AUDIO_ROOT, hostFallbacks: S.hostFallbacks || 0,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
     presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,

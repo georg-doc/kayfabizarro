@@ -122,6 +122,8 @@ process.exit(report('audio-mixer', {
   biomeHysteresis: q3.biome === 'beach' && q4.biome === 'meadow',
   stepSurfaces: surf.join() === 'foley-concrete,sand,wet-clay,digital-grass',
   musicCatalogIndexed: catalogOk, // WS0 V-688: Kopfdaten + Manifest-Pfade, ohne Saxophone
+  // Ton von GitHub (Status 16): Vorlage mit jsDelivr als erstem Host und raw als Rückfall, gleicher Commit und Pfad
+  remoteConfig: (() => { const r = JSON.parse(fs.readFileSync('scripts/audio/remote.json', 'utf8')); return r.schema === 'kfb.audio-remote/1' && r.primary.startsWith('https://cdn.jsdelivr.net/gh/') && r.fallback.startsWith('https://raw.githubusercontent.com/') && ['{repo}', '{commit}', '{path}'].every((k) => r.primary.includes(k) && r.fallback.includes(k)) && (r.commit === null || /^[0-9a-f]{40}$/.test(r.commit)) })(),
   serverPathGuard: paths[0] === path.resolve('/p/el/dark_fluffer_r1/DF01_windup_gurgle_a.mp3') && paths[1] === null && paths[2] === null && paths[3] === null && paths[4] === '/c/index.json' && paths[5] === path.resolve('/p/chatter/suno_tests/orchester/harvest/brass/brass_00.wav') && paths[6] === null,
   noAudioInRepo: tracked.length === 0,
   siteCopyOnlyWithSite: siteNo.status === 2 && rootDefault && (siteDry === null || (siteJson && siteJson.dry && siteJson.files > 300 && siteJson.mb < 400)),

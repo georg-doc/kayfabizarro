@@ -38,6 +38,8 @@ import { TERRAIN3_CFG } from '../look/terrain3.js'
 import { DUST2, GLOW_V2 } from '../modules/vehicleRig.js'
 import { createDustColorAt } from '../look/dustColor.js'
 import { mountDustTrail, DUST3, rigNight } from '../modules/dustTrail.js'
+import { SHADOW_PROXY_ON, buildShadowProxy, attachShadowProxy } from '../look/shadowProxy.js'
+const PROXY_OF = new WeakMap()   // Modell-Klon → Schatten-Kopie (rshadow=lite)
 import { BIOME_PALETTES } from '../look/biomeTerrain.js'
 import { DRIVE } from '../world/EndlessDrive.jsx'   // Staub-Probe r2: nur zur Laufzeit gelesen (EndlessDrive importiert M2Car – Kreis, aber ohne Zugriff beim Laden)
 const ENDLESS_DUST = typeof location !== 'undefined' && /(^|[#,])world=endless(,|$)/.test(location.hash)
@@ -229,6 +231,7 @@ function CarVisual({ squash, signals, lean }) {
   useEffect(() => { let alive = true; M2STATE.model = 'LOADING'; M2STATE.modelTries = 0; const id = M2CAR.id
     const tryLoad = () => { M2STATE.modelTries++; return loadModel().then((m) => (m || !alive || M2STATE.modelTries > 3 ? m : new Promise((r) => setTimeout(r, [2000, 5000, 10000][M2STATE.modelTries - 1])).then(() => (alive ? tryLoad() : null)))) }
     tryLoad().then(async (m) => { if (!alive || !m) return; const c = m.clone(true), I = MODEL_INFO.get(id)
+    if (SHADOW_PROXY_ON) { const px = await buildShadowProxy(m); PROXY_OF.set(c, px ? px.clone() : null); if (!alive) return }   // Schatten-Hebel (Georg 24.10., rshadow=lite): vereinfachte Form wirft den Schatten
     if (!I.look.off) { hookVehicleLook(c); setVehicleMatte(c) }   // vmatte: Material-Faktoren (geteilt mit allen Klonen) // Look A (Georg 21.10.) am Klon: Materialien geteilt (schon umgestellt), Zeichen-Haken je Klon
     const t0 = performance.now(); if (!I.warm) await warmModel(glR, c, camW, sceneW); if (!alive) return   // schon vorgewärmt (Zurückwechseln, Vorladen): sofort zeigen, kein Warten auf Bilder
     M2STATE.look = I.look; M2STATE.hero = { ...I.hero, on: HERO_ON.on }; M2STATE.clay = I.clay; M2STATE.prepMs = { ...I.prepMs, warm: +(performance.now() - t0).toFixed(1) }; M2STATE.model = 'OK'; M2STATE.modelId = id; I.warm = true; setModel(c)
@@ -242,9 +245,10 @@ function CarVisual({ squash, signals, lean }) {
     return createDustColorAt({ palette: TERRAIN3_CFG.palettes[pal], biome: ENDLESS_DUST ? { weights: (x, z, out) => DRIVE.terrain?.biomeAt?.(x, z, out) ?? out.fill(0), palettes: BIOME_PALETTES } : null }) }, [])
   useEffect(() => { if (!model || !body.current) return
     const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: M2CAR.id.length, scene: sceneR, dustColor: '#c9b48a', hideDust: DUST3.on, style: FLAME_STYLE || 'glow', fanStyle: VCLAY_MODE === 'off' ? 'glow' : 'clay' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
+    const unproxy = SHADOW_PROXY_ON ? attachShadowProxy(model, PROXY_OF.get(model)) : null
     if (M2CAR.wheels) R1.object3d.position.y = -M2TUNE.rideHeight // Rad-Fahrzeuge (V-631, wie die Probe): Räder auf den Boden statt in Schwebehöhe
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
-    return () => { M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])
+    return () => { unproxy?.(); M.release(); A.stop(); rig.current = null; if (M2STATE.rig === R1) M2STATE.rig = null; if (M2STATE.audio === A) M2STATE.audio = null } }, [model])
   // Staubfahne (Georg 23.10., dust3=1): viele kleine Partikel entlang der früheren Bahn (src/modules/dustTrail.js), ersetzt den alten Staub-Pool (versteckt)
   const trail = useRef(null)
   // einmal je Szene angelegt (Racer-Wechsel übersetzt keine Shader neu, vehicles-r1 cachedSwap); der Racer liefert nur die Schwebe-Anker

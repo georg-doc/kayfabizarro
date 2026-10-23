@@ -1,0 +1,9 @@
+{
+  "schema": "kfb.audio-remote/1",
+  "note": "Ton zur Laufzeit von GitHub (Georg 23.10., WS_AUDIO_STATUS 16). commit = Commit in georg-doc/kayfabizarro mit der Ablage aus `site-copy.mjs --publish` unter path. Solange commit null ist, baut die Site wie bisher mit Ton im Paket.",
+  "repo": "georg-doc/kayfabizarro",
+  "commit": "36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3",
+  "path": "media/kfb-audio/r1/",
+  "primary": "https://cdn.jsdelivr.net/gh/{repo}@{commit}/{path}",
+  "fallback": "https://raw.githubusercontent.com/{repo}/{commit}/{path}"
+}

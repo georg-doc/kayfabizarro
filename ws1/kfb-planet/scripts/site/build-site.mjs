@@ -30,12 +30,15 @@ const privateDir = fs.existsSync(priv) ? fs.realpathSync(priv) : null
 
 // 2 · Bauen
 fs.rmSync(DIST, { recursive: true, force: true })
-run('npx', ['vite', 'build', '--outDir', DIST], { KFB_SITE: '1', VITE_KFB_AUDIO_ROOT: '/kfb-audio/' }) // Ton-Pfad der Site (WS-Audio: AUDIO_ROOT aus VITE_KFB_AUDIO_ROOT)
+// Ton von GitHub (WS-Audio, Status 16): mit gepinntem Commit in scripts/audio/remote.json lädt die Site Musik und Effekte von jsDelivr (Rückfall raw) und enthält keinen Ton
+const remoteCfg = (() => { try { const r = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/audio/remote.json'), 'utf8')); if (!r.commit) return null; const fill = (u) => u.replace('{repo}', r.repo).replace('{commit}', r.commit).replace('{path}', r.path); return { root: fill(r.primary), fallback: fill(r.fallback), commit: r.commit } } catch { return null } })()
+run('npx', ['vite', 'build', '--outDir', DIST], { KFB_SITE: '1', VITE_KFB_AUDIO_ROOT: remoteCfg ? remoteCfg.root : '/kfb-audio/', ...(remoteCfg ? { VITE_KFB_AUDIO_FALLBACK: remoteCfg.fallback } : {}) }) // Ton-Pfad der Site (WS-Audio: AUDIO_ROOT aus VITE_KFB_AUDIO_ROOT)
 
 // 3 · Ton der Site (WS-Audio liefert scripts/audio/site-copy.mjs)
 const audioCopy = path.join(ROOT, 'scripts/audio/site-copy.mjs')
 let audio = 'missing-script'
-if (fs.existsSync(audioCopy) && privateDir && process.env.KFB_SITE_AUDIO !== '0') { run('node', [audioCopy, path.join(DIST, 'kfb-audio')], { SITE: '1', KFB_PRIVATE_ASSETS: privateDir, KFB_AUDIO_CACHE: process.env.KFB_AUDIO_CACHE || path.join(ROOT, '.kfb-audio-cache') }); audio = 'copied' }   /* KFB_SITE_AUDIO=0: ohne Ton bauen */
+if (remoteCfg) { audio = 'github@' + remoteCfg.commit.slice(0, 9); log('Ton von GitHub: ' + remoteCfg.root) }
+else if (fs.existsSync(audioCopy) && privateDir && process.env.KFB_SITE_AUDIO !== '0') { run('node', [audioCopy, path.join(DIST, 'kfb-audio')], { SITE: '1', KFB_PRIVATE_ASSETS: privateDir, KFB_AUDIO_CACHE: process.env.KFB_AUDIO_CACHE || path.join(ROOT, '.kfb-audio-cache') }); audio = 'copied' }   /* KFB_SITE_AUDIO=0: ohne Ton bauen */
 else if (fs.existsSync(audioCopy)) audio = privateDir ? 'off' : 'no-private'
 else log('Hinweis: scripts/audio/site-copy.mjs fehlt noch – Site ohne private Töne')
 

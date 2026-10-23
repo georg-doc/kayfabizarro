@@ -4,6 +4,8 @@
 //   Quellen: KFB_PRIVATE_ASSETS (Cloudflare: ./.private-assets), Zwischenspeicher KFB_AUDIO_CACHE; Audio Site (öffentlich) aus ~/kfb-ws1/kayfabizarro oder,
 //   wenn der Klon fehlt, zur Bauzeit von GitHub (raw, gepinnter Commit, scripts/audio/site-files.json, kein Token).
 // Aufruf: SITE=1 node scripts/audio/site-copy.mjs [out] [--dry]   (--dry: nur Liste und Größe)
+// --publish [out]: Ablage für GitHub (Georg 23.10., Status 16): gleiche Ordnung, Musik als AAC 128 m4a (encode-music.mjs), Ziel kayfabizarro; Standard-out
+//   ~/kfb-ws1/.kfb-audio-publish/r1. Die Site lädt dann alles von jsDelivr/raw (scripts/audio/remote.json) und enthält keinen Ton mehr.
 import fs from 'fs'
 import path from 'path'
 import { prepare, fetchSite, PRIVATE, CACHE } from './prepare.mjs'
@@ -11,8 +13,8 @@ import { CUES, STEP_SURFACES } from '../../src/audio/cueMap.js'
 import { SURFACES } from '../../src/vendor/audio/footsteps/audio.mjs'
 import { uniqueTracks, variantsOf } from '../../src/audio/mixer.js'
 
-if (process.env.SITE !== '1') { console.error('[audio:site] abgebrochen: nur mit SITE=1 (private MVP-Site). Der normale Build bleibt ohne private Töne.'); process.exit(2) }
-const args = process.argv.slice(2), DRY = args.includes('--dry'), OUT = path.resolve(args.find((a) => !a.startsWith('--')) || 'dist/kfb-audio')
+if (process.env.SITE !== '1' && !process.argv.includes('--publish')) { console.error('[audio:site] abgebrochen: nur mit SITE=1 (private MVP-Site). Der normale Build bleibt ohne private Töne.'); process.exit(2) }
+const args = process.argv.slice(2), DRY = args.includes('--dry'), PUBLISH = args.includes('--publish'), OUT = path.resolve(args.find((a) => !a.startsWith('--')) || (PUBLISH ? path.join(process.env.HOME, 'kfb-ws1/.kfb-audio-publish/r1') : 'dist/kfb-audio'))
 const EL = path.join(PRIVATE, '40_AUDIO/elevenlabs_r1')
 
 export async function planSite() {
@@ -40,10 +42,14 @@ export async function planSite() {
   for (const [set, ids] of Object.entries(sets)) { outSets[set] = { files: [...ids].sort(), gainDb: Object.fromEntries([...ids].filter((i) => i in (idx.sets[set].gainDb || {})).map((i) => [i, idx.sets[set].gainDb[i]])), norm: idx.sets[set].norm }
     for (const id of ids) files.push([`el/${set}/${id}.mp3`, path.join(EL, set, id + '.mp3')]) }
   // Musik: Suno (Fahrt/Flug) und Cozy Tunes (zu Fuß), wie die Laufzeit sie auswählt (ein Format je Titel)
-  const suno = uniqueTracks(idx.music.suno), cozy = uniqueTracks(idx.music.cozy)
-  for (const f of suno) files.push([`music/suno/${f}`, path.join(PRIVATE, 'music/suno-roadtrip-jukebox-v2', f)])
-  for (const f of cozy) files.push([`music/cozy/${f}`, path.join(PRIVATE, 'music/cozy-tunes-classics/Audio/ogg/Tracks', f)])
-  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), site: true, wsa: true, music: { suno, cozy, gainDb: idx.music.gainDb || {}, tags: idx.music.tags || {} }, sets: outSets }
+  let suno = uniqueTracks(idx.music.suno), cozy = uniqueTracks(idx.music.cozy), gainDb = idx.music.gainDb || {}, tags = idx.music.tags || {}, codec = null
+  if (PUBLISH) { // AAC 128 aus encode-music.mjs; Ausgleich und Stichworte vom Quell-Titel übernehmen (Lautheit Δ ≤ 0,2 LU, im Bericht geprüft)
+    const A = path.join(CACHE, 'music-aac128'), rep = JSON.parse(fs.readFileSync(path.join(A, 'music-aac128.json'), 'utf8')), m4a = (f) => f.replace(/\.[^.]+$/, '') + '.m4a', g = {}, t = {}
+    for (const [list, L] of [['suno', suno], ['cozy', cozy]]) for (const f of L) { const k = list + '/' + m4a(f); if (!rep.tracks[k]) throw new Error('nicht kodiert: ' + k); if (Math.abs(rep.tracks[k].dLU) > 0.2) throw new Error('Lautheit weicht ab: ' + k)
+      if ((list + '/' + f) in gainDb) g[k] = gainDb[list + '/' + f]; if ((list + '/' + f) in tags) t[k] = tags[list + '/' + f]; files.push([`music/${k}`, path.join(A, k)]) }
+    suno = suno.map(m4a); cozy = cozy.map(m4a); gainDb = Object.fromEntries(Object.entries(g).map(([k, v]) => [k, v])); tags = t; codec = { codec: 'aac-lc', kbps: rep.kbps } }
+  else { for (const f of suno) files.push([`music/suno/${f}`, path.join(PRIVATE, 'music/suno-roadtrip-jukebox-v2', f)]); for (const f of cozy) files.push([`music/cozy/${f}`, path.join(PRIVATE, 'music/cozy-tunes-classics/Audio/ogg/Tracks', f)]) }
+  const index = { schema: 'kfb.audio-private-index/1', builtAt: new Date().toISOString(), site: true, wsa: true, music: { suno, cozy, gainDb, tags, ...(codec || {}) }, sets: outSets }
   return { files, index }
 }
 
