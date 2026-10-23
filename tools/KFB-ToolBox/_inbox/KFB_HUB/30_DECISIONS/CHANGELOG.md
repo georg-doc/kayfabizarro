@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-23
+- **GEORG PROCESS CORRECTION · intent first, solution open:** KFB-Webchats dürfen aus visuellem Ergebnis/Referenzbild keine willkürliche Konstruktion oder Partikelobergrenze vorschreiben. Das Fehlkonzept „AI-gebastelte Knetwolken“ und anschließend „160 Partikel müssen reichen“ kostete Claude-Code-Tokens und verfehlte den Staubfahnen-Intent. New feedback SSOT: `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`; in `KFB_WORKING_RULES_R1.md` und `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md` (Register-Branch) verlinkt. Existing Particle-First-Briefs/Return korrigiert, Issue #439 additiv aktualisiert. WS1b-Vorschlag 10–20× / 2–4 s **Testhypothese**, nicht Vorgabe. WS0 führt bei nächster regulärer `build_decisions.py`-Synchronisierung V-Nummer und Routing nach, ohne laufende `figamb=1`-Tests zu unterbrechen. **Design-/Prozessarbeit only; Runtime-/Browser-/GPU-Tests 0.**
 - V-689 Suno-SSOT (replies/SUNO_SSOT_R1.md + SUNO_SSOT_PROMPTS); Orchester-2-Ernte mit Advanced Split (252 + 1197 Phrasen, Übersprechen markiert).
 - Suno-Ernte Orchester-Charaktere (108 BPM, B Dur, 261 Phrasen, Holzbläser 174) in music_catalog_r1.json, privat, an WS-Audio.
 - Suno-Ernte Surf (150 BPM, 60 Phrasen) und E-Funk (142 BPM, 119 Phrasen) mit Tonart/BPM/Einsatz/LUFS; music_catalog_r1.json; harvest_phrases.py erweitert, lufs_set.py importierbar; privat, an WS-Audio.
