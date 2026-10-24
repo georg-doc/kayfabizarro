@@ -1,4 +1,7 @@
 # KFB HyperNorm × LHOHQ — Research brief & donor inventory R1
+
+**CURRENT CREATIVE OVERRIDE (Georg, 2026-10-24):** Original R1 overly subordinated experimental visual collage to semantic analysis. See `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`: visual experimental filmmaking is core and independent; semantic and spatial layers complement it.
+
 Date: 2026-10-24 · Mode: RESEARCH · State: PROPOSAL / NOT IMPLEMENTED / NOT APPROVED
 
 ## Bounded question
@@ -35,7 +38,7 @@ What observable design, narrative, and information-architecture mechanisms of ht
 10. **False-familiarity engine:** archive/database conventions suggest public institutional credibility, while content undermines genre stability. Distinguish meaningful uncanny transitions from empty 'glitch' décor.
 
 ## Design interpretation
-The strongest inspiration for KFB is **epistemic montage with navigable consequences**, not copying flashing GIFs, a 'hacker terminal', static CRT overlay, generic redacted files or an unbounded web crawler. Pair directed semiotic sequences with inspectable source seams; keep intentional wrongness legible and distinguish creative fiction from actual archival assertions.
+**CORRECTED BY GEORG 2026-10-24:** LHOHQ's flashing/provocative audiovisual montage is a **core artistic engine plane**, not decorative surface. Experimental film, image collage, code art, remix and generative AI are first-class outcomes, even in a pure visual sequence with no documentary/narrative purpose. The semantic/epistemic rabbit-hole is a separate equally valuable plane, not a gatekeeper for visual art. Reject generic effects only when they dilute the actual visual direction, not flicker, provocation or radical montage as such. See `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`.
 
 ## Boundaries
 - No direct live embedding, hotlinking, mass scraping, mirrored personal data, or arbitrary third-party scripts/HTML. Current site may contain flashing/explicit content; external navigation remains a voluntary source visit.
