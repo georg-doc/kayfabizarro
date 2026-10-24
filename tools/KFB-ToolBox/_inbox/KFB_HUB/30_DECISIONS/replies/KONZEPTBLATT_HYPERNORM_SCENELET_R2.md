@@ -21,7 +21,7 @@ R1 hat Georg missverstanden: Der runde Archivraum mit sieben Ausstellungsstücke
 - **Erste drei Kammern:**
   1. **Sendezentrale:** BNWN-Clips (Nora) auf Röhren, Propaganda als Text-Punch, CRT-Störungen, Curtis-Halte-Shots mit nüchterner Caption.
   2. **Aktenrauschen:** gemeinfreie UFO- und UAP-Dokumente, Schreibmaschinen-Typo, Cut-up wie lhohq (ernst und Unsinn ohne Markierung), Stockfotos mit KFB-Augen statt leerer Pupillen.
-  3. **Dada-Garten:** Dada- und Poesie-Fragmente (Stein, Ball, Schwitters, Blake; nur gemeinfrei) als zerfallende Typografie, deine Substack-Bilder als Collage, eine Karte als atmendes Kugel-Relief (der eine Physik-Effekt aus q197), Klangschalen und Natur.
+  3. **Dada-Garten:** Dada- und Poesie-Fragmente (Stein, Ball, Schwitters, Blake; nur gemeinfrei) als zerfallende Typografie, deine Substack-Bilder als Collage, eine Karte als atmendes Kugel-Relief (der eine Physik-Effekt aus Probe R3, q197), Klangschalen und Natur.
 - **Veränderung:** Beim Wiederbetreten zeigt eine Kammer eine andere Variante (Seed). So entsteht das Verirren, ohne endlos viele Kammern bauen zu müssen.
 
 ## Rabbit-Hole-Modus
@@ -59,7 +59,7 @@ R1 hat Georg missverstanden: Der runde Archivraum mit sieben Ausstellungsstücke
 - **Kritiker:** je Kammer 3 Bilder plus ein 60-s-Video Autopilot und ein 60-s-Video Rabbit-Hole.
 
 ## Material
-- Privater Zweig `KFB-Stunt-Car-Race` `assets/hypernorm-r1` @937cdf1: 69 BNWN-Clips, 10 Klangschichten, Karte „The Moving Launch Date“, Fnord-Gassenbild.
+- Privater Zweig `KFB-Stunt-Car-Race` `assets/hypernorm-r1` @029344a (90 Dateien, 68 MB): 69 BNWN-Clips, 10 Klangschichten, Musikbetten M1, M2 und S2-Stems, Karte „The Moving Launch Date“, Fnord-Gassenbild. Die Ton-Zuordnung je Sphäre steht im Bauauftrag `BRIEF_WSA_HYPERNORM_SCENELET_R2.md`.
 - H13-Engine auf kayfabizarro `main`; Schnitt-Grammatik `replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md`; Text-Pools `replies/MEME_POOL_R1.json` und Poetic Occult Archive (PR #450).
 - Deine 893 Substack-Bilder (`60_VIDEO/hypernorm_images_r1/`) kommen bei Bedarf als zweiter privater Zweig dazu.
 - Referenzen für den Look: `75_REFS/lhohq_r1/` (vier Bilder).
