@@ -100,7 +100,7 @@ Für: Georg (sieht das Blatt im Hub, der Bauauftrag geht erst nach seinem Ja rau
 5. **Harte Gates (als Prüfskript):**
    - Filmmodus läuft 60 s ohne Eingabe und enthält mindestens einen Halte-Shot von ≥ 4 s (Schnitt-Recherche, `edl_check`).
    - Jede Verbindung in `fundstuecke.json` zeigt auf ein vorhandenes Fundstück.
-   - Leak-Scan grün (V-630): nichts Gekauftes ist öffentlich.
+   - Leak-Scan grün (V-071, V-470): nichts Gekauftes ist öffentlich.
    - Jedes gemeinfreie Fundstück hat Quelle und Rechte im Katalog.
    - fps-Messung nach den Zielwerten oben.
 

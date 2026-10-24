@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- Georg q198 ja: Bauauftrag an WSA replies/BRIEF_WSA_HYPERNORM_SCENELET_R1.md (Hub b218), Material als privater Zweig KFB-Stunt-Car-Race assets/hypernorm-r1 @937cdf1 (83 Dateien, 47 MB: 69 BNWN-Clips, 10 Klangschichten, Fundstücke F1/F7, Konzeptblatt, MANIFEST mit Prüfsummen). Falsche Verweise V-630 in Spec und Konzeptblatt auf V-071/V-470 korrigiert.
 - lhohq.info-Stichprobe (120 Seiten, Baum ≥ 1.400 Seiten, Median 5 Links, 355 GIFs) ins Konzeptblatt HyperNorm-Scenelet übernommen.
 - V-738 HyperNorm Experience: Konzeptblatt Scenelet R1 „Das Archiv der lachenden Wahrheiten“ (Videokunst, Collage, Cut-up, Dada; Maßstäbe Curtis, Traumreise, Mindscape-Klang, Musikvideos, lhohq.info), nach Prüfer-BLOCK ergänzt (Kamera und Steuerung, sieben Fundstücke in zwei Ketten, fundstuecke.json, Leistung, Gates als Skript, Registerzitate); Hub q198 mit lhohq-Referenzen (75_REFS/lhohq_r1).
 - Probe R3 Kugel-Physik (V-735): 65.536 Knetkugeln mit GPGPU-Physik in WebGL (Schwerkraft, Abprallen, Rollen am Hang, Kollision mit Spieler und Auto, Rückkehr ins Relief, mittlere Abweichung 9 cm), Live https://claude.ai/artifact/SYzKKT6g33hcHYCm8JWmxx, Hub q197; offen: Auto schleudert zu viel, Kugeln auf Auto-Kapsel.

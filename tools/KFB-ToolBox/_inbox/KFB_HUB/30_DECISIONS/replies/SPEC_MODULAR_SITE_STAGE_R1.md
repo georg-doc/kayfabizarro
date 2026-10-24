@@ -24,10 +24,10 @@ Für: WS1 (Lead, Build), WSA (Plattform), alle Sitzungen, die Module liefern. An
 | Module | Code-Teile (Vite-Chunks), JSON-Daten, Karten, Ton, CC0-Modelle | öffentlich: kayfabizarro auf einem Commit, über jsDelivr `gh@<commit>`; raw als Rückfall | jederzeit | nur der WS1-Lead schreibt `dist-mod` auf den Spiegel und pflegt das Manifest; die Sitzungen liefern an den Lead |
 
 - **Gekaufte Modelle bleiben in der Basis.** So braucht die Laufzeit kein Token, und Georg richtet nichts ein.
-- **Kein privater Inhalt in Modulen (V-630):**
+- **Kein privater Inhalt in Modulen (V-071, V-470):**
   - Module entstehen aus einem Build ohne `src/private` und ohne `assets/private`, also nur aus dem, was auch im öffentlichen Spiegel liegt.
   - Alles, was im Build aus privaten Quellen entsteht (zum Beispiel die HUD-Kassette aus `src/private`), gehört in die Basis.
-  - Vor jedem Schreiben auf den Spiegel läuft der Leak-Scan (V-630).
+  - Vor jedem Schreiben auf den Spiegel läuft der Prüfung auf gekaufte bzw. private Dateien (V-071, V-470).
   - Ein Smoke-Test startet einen frischen Spiegel-Checkout ohne private Teile; er läuft mit Platzhaltern.
 - **Code-Teile:** Der Build teilt das heutige 7,45-MB-Bündel in Teile je Modul (dynamische Importe). Jede Datei bekommt einen Hash im Namen. Ein geändertes Modul ändert nur seine Teile, den Rest hält der Browser im Cache.
 
