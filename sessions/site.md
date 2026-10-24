@@ -10,7 +10,7 @@ Stand 24.10.2026 · Format nach `sessions/lead.md` (V-713). Schnappschuss; ausf�
 | Was | Wo |
 |---|---|
 | Quelle | privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zweig **`game/mvp-r1`** = Schnappschuss von `kfb-planet` `ws1/mvp-r1` (je neuem Stand ein Commit, WS1 meldet ihn) |
-| Aktuell empfohlen | `game/mvp-r1` **@3a6e010** (mvp 4f32c76, Reihe 75 PASS). Neuere mvp-Merges (HUD-Bilder, Disco-MC Talkbox, Band-Versatz, Site-Kassette 7353238) folgen mit dem nächsten Spiegel |
+| Aktuell empfohlen | `game/mvp-r1` **@188e4f7** (mvp 8620081, Reihe 76 PASS; Chatter-Silben hinter `chat=syl`, HUD 3D bis Paket 4 hinter `hud=3d`) |
 | Private Dateien | gleiches Repo, Zweig `assets/private` (@4e3a497): Figuren, private Quellen; der Build klont ihn flach mit `ASSETS_TOKEN` |
 | Ton | **nicht im Paket**, zur Laufzeit von GitHub: kayfabizarro `assets/kfb-audio-r1` @36c5ae419 über jsDelivr `gh@…`, Rückfall raw (gepinnt in `scripts/audio/remote.json`). Musik AAC-LC 128 kbit/s |
 | Öffentlicher Spiegel | kayfabizarro `ws1/mvp-r1` (Präfix `ws1/kfb-planet/`, ohne `src/private` und `src/private-gen`) |
