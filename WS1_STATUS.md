@@ -1,7 +1,30 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §160.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§160 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §161.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§161 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 161 · 24.10. · Prozedurale Welt R1.3 abgenommen (Genius loci, beseelte Autos, V-705 eingearbeitet) · Ruf-Grammatik: Widerspruch zum Tratsch · Gesamt-Fluff · Kassette/Truhe · Bitte: Sitzungen für WS0 übernehmbar machen · Spiegel 6a594f8
+
+- **Prozedurale Welt:** Georg hat Konzept R1.1 abgenommen („passt so“), G1–G10 wie vom Lead empfohlen. Stand jetzt **R1.3**: WS1b, `ws1/prozedurale-welt` @863f830, `docs/PROZEDURALE_WELT_KONZEPT_R1.md`. Weiterhin nur Konzept, gebaut wird erst nach dem MVP (V-646).
+  - G1–G10 sind in §9 als Entscheidungen eingetragen: Orte je Seed fest, Variante B später als Schalter. Aufträge zuerst „Figur treffen“ und „Karte bringen“. Die Karte zeigt eine Figur, der Pfeil führt hin. Portale führen zufällig in ein anderes Biom. Die Welt ist unendlich. Führung nur über den Pfeil. Das Regie-Profil ist intern.
+  - **§5.8 Genius loci** (Georg: Gimmicks eher als beseelte Orte): `locusId` neben characterId, eigenes Ortsgedächtnis, Decks 0–n nur in den Daten. Die 22 Kandidaten aus GENIUS_LOCI_CANDIDATES sind aufgenommen. Orakelort: WSB B7 Dschungel-Computer mit den Mumien `mummy_a`/`mummy_b` (Deck `pharaoh_piledriver`). Seine Antworten kommen nur aus freigegebenen Zeilen (V-698).
+  - **§5.8.1 Beseelte Fahrzeuge** (Georg): `vehicleId` mit eigenem Gedächtnis. Im Geschenk-Spiel fragt ein Auto „Want a ride?“, zum Beispiel nachdem ein NPC dem Spieler den Schlüssel geschenkt hat; der Dialog läuft über den Interaktionsplatz (Taste I).
+  - **§5.8.2 Gemeinsame Dialog-Grammatik** für NPC, Fahrzeug, Ort und später Objekte, nach Georgs Vorgabe: Boggle...? = nachfragen, Bongo. = ablehnen, Bingo! = annehmen bzw. einsteigen, Blödsinn! = Dialog verlassen. Owner nach dem MVP ist WS-NPC (bestätigt).
+  - **§5.9 „Welt als Spielzeug“:** Alles reagiert, mindestens mit einer kleinen Cartoon-Deformation. Budget GPU ≤ 0,3 ms, keine neuen Shader-Programme.
+  - **§5.4 ersetzt durch V-705:** Jedes Ziel A1–A6 hat jetzt Schicht, Owner und kleinste Probe. Das three.js-Splat-Addon braucht WebGPU und scheidet aus; Spark bleibt Kandidat. A2 bleibt bei V-697/V-043. Reihenfolge für S5: A5 Dom → A1 Tor → A4 Becken (WS1c) → A3 Gutter-Fahrt. Neue Prüfkriterien P13–P15.
+  - **Fragen an WS0:**
+    1. Wird `locusId` (und `vehicleId`) eine eigene Register-Art oder ein eigenes Ortsregister? Sind Orte Dramatis Personae?
+    2. Bitte die Deck-Zuordnung bestätigen (Vorschlag von Deck-Songs, kein Kanon).
+    3. Wem gehört die Gutter-Fahrt (Track-Owner)?
+- **Widerspruch Ruf-Bedeutungen (WS-NPC/WS1b gemeldet, Georg-Entscheid nötig, Lead fragt):** Im Tratsch (Freestyle v18-4, tratschSim) heißt Bongo. „erzähl es als Geschichte“ und Blödsinn! „abgelehnt“. In der Spieler-Grammatik heißt Bongo. „ablehnen“ und Blödsinn! „verlassen“. Vorschlag: eine Bedeutung je Ruf, nämlich Bongo. = „nicht so, anders bitte“ (weiches Nein) und Blödsinn! = Abbruch bzw. Ablehnung. Nebenbefund: Die Spieler-Zurufe in poolReader.js stehen noch in der Kayfa-Schreibweise; WS-NPC stellt sie mit der Grammatik auf V-699/V-704 um.
+- **Gesamt-Fluff (Georg):** eine Lebenszeit-Zahl, die nie verbraucht wird, anders als die sechs Kugeln für die spätere Alchemie. Steht im Spielstand `fluffTotal` (mvp dd7de55, Altstände = Summe der Zähler) und wird über `orchard.total()` gelesen. Anzeige bei WS1e in hud=3d: links vor den sechs Kugeln, Stil wie die Entfernung, etwas größer, Gruppe mittig, Cartoon-Squash beim Aufnehmen. Das HUD-Board (§10.3) hatte keinen Owner, jetzt ist es der Spielstand. Slice „KayFabrizieren“ steht in OFFENE_PUNKTE.
+- **HUD 3D Paket 2 (Georg):** Die Kassette wird die WSB-Fassung „HUD-Teile r2“ (N34 r2, cassette_a.glb, „Poly by Google“), lesbarer. Die Truhe links unten wird etwas größer, die Kassette etwas kleiner, als visuelles Gleichgewicht. Auftrag bei WS1e, nicht eilig.
+- **Bitte an WS0 (Georg, Arbeitsablauf):** Die einzelnen Sitzungen (Claude Code und andere) sollen so im Workspace stehen, dass **WS0 jede im Zweifel komplett übernehmen** und nahtlos an Prozesse und Slices anschließen kann. Ziel: je nach Token-Lage zwischen den Workspaces wechseln, die Veröffentlichung auf der WSA-GPT-Site im Blick. Doppelte Buchhaltung möglichst vermeiden. Vorschlag des Lead zur Diskussion:
+  - Je Sitzung **eine** Übergabedatei im Repo (`handover/<sitzung>.md`): Zweig, Worktree, letzter Commit, laufende Aufträge, offene Fragen, Prüfbefehle.
+  - Die Datei wird bei jedem Commit der Sitzung mitgepflegt, statt eine zweite Doku zu führen.
+  - WS1_STATUS bleibt der Index.
+  - Bitte Format und Ort festlegen; der Lead führt es dann für die WS1-Sitzungen ein.
+- **Prüfung und Spiegel:** Die ganze Reihe ist grün bei mvp dd7de55, 74 PASS; nur die alten c2 und c3g fallen durch. Gespiegelt auf game/mvp-r1 6a594f8 (privat) und ws1/mvp-r1 bad9a17db (öffentlich, src/private = 0). Für WSA bitte **6a594f8** statt aec4695 nehmen.
 
 ## 160 · 24.10. · Georgs Entscheide: Faust = Board-Hand (V-668 Schlagring überholt) · Konzept „Prozedurale Welt“ beauftragt · Bitte: Gaussian-Splat-Material aus dem Webchat · HUD 3D Spike gemergt
 
