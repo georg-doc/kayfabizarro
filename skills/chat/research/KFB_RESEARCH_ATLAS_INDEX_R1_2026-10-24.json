@@ -16,6 +16,7 @@
     "readFirst": [
       "BRIEF.md",
       "SOURCE_LEDGER.md",
+      "R2D_OMS_ORIGINAL_COMPARISON_AND_ATLAS_PILOT_2026-10-24.md",
       "R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md",
       "R2B_GUANTANAMO_SERE_BATTLE_LAB_2026-10-16.md",
       "SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md",
@@ -23,10 +24,10 @@
       "TEST_REPORT.md",
       "RETURN.md"
     ],
-    "sourceLeadCountSnapshot": 48,
+    "sourceLeadCountSnapshot": 51,
     "unapprovedResearchCardSeedCountSnapshot": 36,
-    "latestEvidenceAsOf": "2026-10-16",
-    "nextGate": "R2D original BSCT and TIME 063 provenance plus CIA OMS/DOJ/PHR/Senate; West, Cameron, Desmet retained"
+    "latestEvidenceAsOf": "2026-10-24",
+    "nextGate": "R2E source-version comparison: 2003–2004 CIA OMS policies, CIA/SSCI 2014 and unverified BSCT 2002/TIME 84p; West/Cameron/Desmet remain"
   },
   "crossLinks": [
     {
@@ -82,6 +83,36 @@
       "status": "DESIGN_ANALOGY",
       "source": "Gabriel-inspired interpretive field",
       "scope": "legal decision and contested medical duty intersection"
+    },
+    {
+      "id": "edge-07",
+      "from": "cia-oms-guidelines-2004",
+      "to": "doj-olc-2005",
+      "type": "INFORMS_LEGAL_ANALYSIS",
+      "status": "DOCUMENTARY_COMPARISON",
+      "source": "S49 S47",
+      "scope": "CIA medical assessments cited as assumptions in DOJ legal analysis",
+      "causality": false
+    },
+    {
+      "id": "edge-08",
+      "from": "cia-oms-guidelines-2004",
+      "to": "cia-oms-retrospective",
+      "type": "VERSION_CHRONOLOGY",
+      "status": "PARTICIPANT_CLAIM_TO_CHECK",
+      "source": "S49 S50",
+      "scope": "guideline evolution and alleged effect-triggered revisions",
+      "causality": false
+    },
+    {
+      "id": "edge-09",
+      "from": "cia-human-resource-exploitation-1980s",
+      "to": "mkultra-1950s",
+      "type": "WARBURG_NEIGHBOR",
+      "status": "OPEN_HYPOTHESIS_NONCAUSAL",
+      "source": "S51 original CIA IG printed p9",
+      "scope": "Historical interrogation doctrine similarity; no proven direct successor",
+      "causality": false
     }
   ],
   "protection": {
