@@ -1,0 +1,27 @@
+# KFB Mindspace · Source and Planning Test Report R1
+
+**2026-10-24 · Planning evidence only.** No sound/browser/game implementation or real clinical testing.
+
+## Actual source inventory
+- Read current mandatory main GitHub `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `FRESH_CHAT_SLICE_PROTOCOL.md`.
+- Read existing KFB Meta/Fractal research lane, current Site/Audiosurface registry, recent H13 proposal and `KFB Billboard Kaleidoscope H13.dc.html` source; source code read and H13 blob `46670cfa5c62c3aea6aa3840d301fc7a35723407` verified. **NOT visually isolated in a running browser this turn.**
+- Read flatworld master `KFB_SPLAT_PROCEDURAL_WORLD_R1_2026-10-24.md` from **existing branch `planning/kfb-flatworld-comic-gutter-r1-2026-10-18`**, blob `f7b67dcf1341452d352b66eb221826e20cd00c71`; actual Gutter Space / splat / portal plan kept as DESIGN.
+- Read WS1 World/WFC source `KFB_PROCEDURAL_TERRAIN_WFC_OSM_LANDMARK_NPC_COMPOSITION_R1_2026-10-24.md` on **`planning/kfb-procedural-world-composition-wfc-osm-2026-10-24`**, blob `348efe9457d300d352ebccd810950434bdc68478`; current WS1 `WS1_STATUS.md` from `ws1/terrain-439` latest section 145 (2026-10-22), blob `97f293bf9f4441f3fbb7c8a1d965f3ace7d1ac61`. Not proof that a new Mindspace receiver works.
+- Reused research/Return PR #446 (NATHAL related methods, H13/voice/audio), source reviews #429/#430/#433/#436 in conversation/repo citations, without merging them.
+- Retrieved earlier user-specific conversational context: a **user-reported working Lovable PWA-ish coherence-breathing prototype from January 19/20, 2026** with audio, timer, visual guide, selectable frequency/breath flow and Rick Rubin/Huberman inspiration. **Source URL, direct Lovable code, active Host/Audio API and reproducible run have NOT been verified**.
+- Public sources checked: Rick Rubin book publisher `The Creative Act` (Jan 2023), NASA Schumann-resonance animations/research, PLOS ONE 2023 binaural EEG review (14 studies / 5 support / 8 oppose / 1 mixed). External links classified as scientific, publisher, or personal inspiration. No Schumann=brain frequency synchronization claim.
+
+## Actual editorial/tests in this new planning branch
+- Readbacks **5/5 exact** for `KFB_MINDSPACE_VISION_R1.md`, `MINDSPACE_MODULE_ARCHITECTURE_R1.md`, `BRIEF_WS0_MINDSPACE_DESIGN_INTAKE_R1.md`, `BRIEF_WS1_MINDSPACE_POCKET_SCENE_R1.md`, `SOURCE_AND_READINESS_MATRIX_R1.md`, following each actual GitHub write and exact-HEAD readback.
+- **16/16 editorial constraints PASS** after repairing only 3 overly literal checker substring assumptions (real content unchanged): source donor H13 pin, user intent separation, Lovable unpinned donor, forbid old collage v0, Schumann electromagnetic vs binaural analogy, single Audio owner, WS0/WS1 split, actual entry/return scope, source isolation, original Rorschach-only analogue, user agency, procedural-world source references, game non-authorization and first source gate.
+- No PDF/screenshot/real image donor rendering, CSS/3D perf, React build, Web Audio playback, stereo/mono device tests, Mic/Realtime chat, UX, Source-ID license audit or WS1 in-world portal/return checks. Actual tests in those classes: **0**.
+- Not a Stage/Site/Cloudflare deployment, no human acceptance/clinical effect claim, no PR merge, no change to main or to the two active WS1 donor branches.
+
+## Remaining evidence
+1. Locate/run/export actual prior Lovable breathing app without recreating it.
+2. Show authentic unmodified H13 generated visuals in isolation and with license/source.
+3. Pin current KFB Audio receiving API, and current WS1 instance/portal/camera/return APIs before code.
+4. Compare a tiny Garden/Calm source-authentic scene with one abstract/vision alternate before selecting required features.
+5. Only then authorize bounded standalone Mindspace source POC and a later in-world Pocket seam.
+
+**One next gate:** `WS0_MINDSPACE_SOURCE_DESIGN_ARBITRATION_R1` – verify real Lovable+H13 donors **in isolation** and select only one initial beautiful, working experience and its receiving owner.
