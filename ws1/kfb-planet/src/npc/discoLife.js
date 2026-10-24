@@ -9,6 +9,8 @@
 // options: { k12 (discoK12() oder null), cast(slot) → Darsteller-Optionen, mc() → FB-Optionen, createActor, at?: [x, z], yawDeg?, near?: [x, z] (Suchmitte ohne at),
 //   groundAt(x, z), clock(), player(), worldScale, classScale, motionLibraryUrl, propsBase }
 import * as THREE from 'three'
+import { CHATTER, songBoundary, createNotice, createChatterLog, pickSpeakers } from './chatterCues.js' // Sprech-Anlässe (Georg 24.10.)
+import { resolveCharacterId } from '../characters/registry.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { placeActor } from './bandClock.js'
 import { GFX, gfxChannel } from '../look/groundFx.js' // V-632: Disco-Licht über das gemeinsame Bodenlicht-Modul (Kanal 'disco'), keine eigene Lösung
@@ -60,7 +62,11 @@ export function createDiscoLife(options) {
   const site = options.at ? { at: options.at, dev: null } : discoSite(options.groundAt, options.near || [0, 0], { r: 9 * s / 0.616, avoid: options.avoid || [], minY: options.minY ?? -Infinity }) || { at: [0, 0], dev: null }
   const at = site.at, yaw0 = options.yawDeg != null ? (options.yawDeg * Math.PI) / 180 : Math.atan2(-at[0], -at[1]) // Publikum (+z) zur Platzmitte
   const root = new THREE.Group(); root.name = 'disco'
-  const S = { status: 'LOADING', mode: k12 ? 'private' : 'placeholder', error: null, near: false, ms: null, t: 0, songT: 0, beat: 0 }
+  const S = { status: 'LOADING', mode: k12 ? 'private' : 'placeholder', error: null, near: false, ms: null, t: 0, songT: 0, beat: 0, prevT: null, songs: 0 }
+  // Sprech-Anlässe (Georg 24.10.): Pause zwischen Liedern (Schleifenwechsel der K12-Uhr), Bemerken des Spielers; Register-ID aus dem cast des Platzes
+  // (MC = FrizzleBob), vorläufig bis WS0 feste Disco-IDs bestätigt (Status §155)
+  const CHL = createChatterLog({ group: 'disco_k12' }), NOTICE = createNotice()
+  const who = (m) => ({ id: m.sl.slot, characterId: resolveCharacterId(m.sl.mc ? 'frizzlebob' : m.sl.cast || m.sl.actor || ''), idNote: 'vorläufig (WS0 §155)', at: [+m.pl.x.toFixed(2), +m.pl.z.toFixed(2)] })
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 12 * s)
   const loader = new GLTFLoader()
   const groundY = () => options.groundAt(at[0], at[1])
@@ -175,6 +181,11 @@ export function createDiscoLife(options) {
       const d = pl ? Math.hypot(pl.x - at[0], pl.z - at[1]) : Infinity
       _sphere.center.set(at[0], groundY() + 2 * s, at[1])
       S.near = d < DISCO.bubbleR || (!!cam && d < DISCO.visibleFar && frustum.intersectsSphere(_sphere)) || !pl
+      if (pl && d < DISCO.bubbleR) { const live = M.filter((m) => !m.sl.mc), k = songBoundary(S.prevT, t, len) // nur hörbar nah; Tänzer sprechen, der MC bemerkt
+        if (k != null && live.length) { S.songs++; CHL.emit(pickSpeakers(live, S.songs).map((m) => ({ ...who(m), mood: CHATTER.mood.pause, cause: 'pause' })), t) }
+        const nr = NOTICE.step(d, t), mc = M.find((m) => m.sl.mc); if (nr && mc) CHL.emit([{ ...who(mc), mood: CHATTER.mood.notice, cause: 'notice', reason: nr }], t, { force: true })
+      } else NOTICE.step(pl ? d : null, t)
+      S.prevT = t
       /* MVP-Leistung (Lead 22.10.): Tänzer sind Skin-Meshes ohne Frustum-Culling (83 Zeichenaufrufe, ≈ 170 k Dreiecke plus Schattenbild) –
          sichtbar nur im Bild (bis visibleFar) oder ganz nah (Schatten ins Bild), sonst ausgeblendet; die Uhr läuft weiter (Weltzeit) */
       const show = !pl || d < 12 * s || (!!cam && d < DISCO.visibleFar && frustum.intersectsSphere(_sphere))
@@ -190,6 +201,7 @@ export function createDiscoLife(options) {
       liftMeasured: M.filter((m) => m.liftTable).map((m) => ({ slot: m.sl.slot, clips: Object.fromEntries(Object.entries(m.liftTable).map(([k, v]) => [k, v.maxLift])) })),
       members: M.map((m) => ({ slot: m.sl.slot, x: +m.pl.x.toFixed(2), z: +m.pl.z.toFixed(2), clip: m.clip, t: m.ct ?? null, lift: +(m.lift || 0).toFixed(4), clips: Object.keys(m.clips).length })) }),
     actors: () => M.map((m) => ({ slot: m.sl.slot, actor: m.actor, figure: m.fig })),
+    events: () => CHL.events(), // WS-Audio: { type: 'chatter', group: 'disco_k12', mood, cause, id, characterId, at, t, seq }
     hold: (on) => { S.hold = !!on },
     // Prüfhilfe (Test C): tiefster Punkt der gehäuteten Figur über dem Boden je Platz (nur sichtbare Netze, ohne Augen-Rig)
     feet: () => M.filter((m) => m.fig).map((m) => { let lo = Infinity; m.fig.updateMatrixWorld(true)

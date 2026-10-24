@@ -69,7 +69,7 @@ try {
   // Begrüßung (WS-NPC npc.events(): greet { reason, id, at, t, seq }): erstes Lesen nur merken, dann je Eintrag einmal ein Stimm-Laut, Musik kurz −4 dB
   out.greet = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), L = [{ type: 'greet', reason: 'known', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 1, seq: 1 }], keep = M.mods.npc
     M.mods.npc = { events: () => L }; await new Promise((r) => setTimeout(r, 300)); const n0 = a.stats().events.filter((e) => e.type === 'greet').length
-    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 }, { type: 'greet', reason: 'known', id: 'farmer_a', at: [p[0] + 3, p[2]], t: 5, seq: 5 })
+    L.push({ type: 'greet', reason: 'cure', id: 'lorekeeper', at: [p[0] + 2, p[2] + 2], t: 2, seq: 2 }, { type: 'greet', reason: 'fight', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 3, seq: 3 }, { type: 'greet', reason: 'first', id: 'farmer_b', at: [p[0] + 3, p[2]], t: 4, seq: 4 }, { type: 'greet', reason: 'known', id: 'farmer_a', at: [p[0] + 3, p[2]], t: 5, seq: 5 }, { type: 'greet', reason: 'first', id: 'gothgirl', characterId: 'gothgirl', source: 'partner', at: [p[0] + 2, p[2] - 2], t: 6, seq: 6 })
     await new Promise((r) => setTimeout(r, 400)); const ev = a.stats().events.filter((e) => e.type === 'greet'), duck = a.stats().duckDb; await new Promise((r) => setTimeout(r, 300)); const again = a.stats().events.filter((e) => e.type === 'greet').length
     const reg = a.greet({ type: 'greet', reason: 'cure', id: 'farmer_b' }, { x: p[0] + 2, y: p[1] + 1.6, z: p[2] }, { instrument: { v: 'Akkordeon', status: 'SOURCE' } }) // Register-Instrument (V-682)
     M.mods.npc = keep; return { first: n0, played: ev.length - n0, again: again - ev.length, cues: ev.map((e) => e.cue), duck, reg, chatter: a.stats().chatter } })
@@ -80,7 +80,12 @@ try {
       bot: a.chatter({ type: 'aggro', group: 'bot_crew', characterId: 'robot_one' }, pos, { instrument: 'Melodica', status: 'set' }),
       botAgain: a.chatter({ type: 'aggro', group: 'bot_crew', characterId: 'robot_one' }, pos, { instrument: 'Melodica', status: 'set' }),
       heal: a.chatter({ type: 'healed', characterId: 'q_mushroom' }, pos, { instrument: 'hohe Okarina', status: 'V-693' }) }
-    return { ...r, st: a.stats().chatter } })
+    // Band/Disco über AudioHost (WS-NPC events, type 'chatter' mit mood): erstes Lesen nur merken, dann je seq einmal
+    const M = window.__kfbM1, keep = { band: M.mods.band, disco: M.mods.disco }, BL = [{ type: 'chatter', mood: 'froh', characterId: 'orc_brute', group: 'orc_band', at: [p[0] + 3, p[2]], t: 1, seq: 1 }], DL = []
+    M.mods.band = { ...(keep.band || {}), events: () => BL }; M.mods.disco = { ...(keep.disco || {}), events: () => DL }; await new Promise((res) => setTimeout(res, 300)); const n0 = a.stats().events.filter((e) => e.type === 'chatter').length
+    BL.push({ type: 'chatter', mood: 'froh', cause: 'songEnd', id: 'kfb_band_brute', characterId: 'orc_brute', group: 'orc_band', at: [p[0] + 3, p[2]], t: 2, seq: 2 }, { type: 'chatter', mood: 'froh', cause: 'songEnd', id: 'kfb_band_raider', characterId: 'orc_raider', group: 'orc_band', at: [p[0] + 4, p[2]], t: 2, seq: 3 }); DL.push({ type: 'chatter', mood: 'introspektiv', characterId: 'disco_dancer', group: 'disco_k12', at: [p[0] - 3, p[2]], t: 2, seq: 1 })
+    await new Promise((res) => setTimeout(res, 400)); const evs = a.stats().events.filter((e) => e.type === 'chatter').slice(n0).map((e) => e.cue); M.mods.band = keep.band; M.mods.disco = keep.disco
+    return { ...r, st: a.stats().chatter, bandDisco: evs } })
   // Musik-Katalog der Suno-Ernte (WS0 V-688): einlesbar, Phrasen ohne dup_of, Datei über /@kfb-audio/chatter/ ladbar (nichts zugeordnet, nichts gespielt)
   out.catalog = await A.page.evaluate(async () => { const a = window.__kfbAudio, c = a.musicCatalog(); if (!c) return { none: true }
     const ph = await a.harvestPhrases('orchester', 'adv_clarinet'), r = ph?.[0] ? await fetch(ph[0].url) : null
@@ -141,13 +146,13 @@ try {
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
     presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.some((k) => k.startsWith('fluffGlide')),
     chatterOccasions: out.chat.skel === null && out.chat.toy === null && out.chat.bot === 'chatter.F13_melodica.aggressiv' && out.chat.botAgain === null && out.chat.heal === 'chatter.F04_ocarina.froh'
-      && out.chat.st.skeleton_rogue === 'fallback' && out.chat.st.q_mushroom === 'V-693:F04_ocarina' && out.fluffK15.chat === 'V-693:F04_ocarina' && out.greet.duck <= -7,
+      && out.chat.bandDisco.join() === 'chatter.F11_tuba.froh,chatter.F11_tuba.froh,chatter.F08_talkbox.introspektiv' && out.chat.st.skeleton_rogue === 'fallback' && out.chat.st.q_mushroom === 'V-693:F04_ocarina' && out.fluffK15.chat === 'V-693:F04_ocarina' && out.greet.duck <= -7,
     musicCatalogReadable: out.catalog.none || (out.catalog.songs.length >= 4 && out.catalog.n > 10 && out.catalog.dup === 0 && out.catalog.ok && ['note', 'beat', 'lufs', 'url'].every((k) => out.catalog.keys.includes(k))),
     flufferK15Multi: out.fluffK15.played.join() === 'spit:dark_fluffer_atlantis,healed:dark_fluffer_goblin' && out.fluffK15.st.dark_fluffer_goblin === true && out.fluffK15.st.dark_fluffer_atlantis === false && out.fluffK15.pres.includes('fluffGlide:dark_fluffer_atlantis'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
     reverbAndOcclusion: (!out.space.spot || out.space.env === 'canyon') && (!out.space.hit || out.space.occludedPlayed === 1),
     musicPulse: out.pulse.schema === 'kfb.audio-presentation-pulse/1' && out.pulse.audible01 === 1 && out.pulse.bass > 0 && out.pulse.kicks >= 3 && out.pulse.bpm > 0,
-    greetVoices: out.greet.first === 0 && out.greet.played === 4 && out.greet.again === 0 && out.greet.cues.join() === 'chatter.F02_clarinet.froh,chatter.F03_accordion.aengstlich,chatter.F03_accordion.staunend,greet.farmer.known'
+    greetVoices: out.greet.first === 0 && out.greet.played === 5 && out.greet.again === 0 && out.greet.cues.join() === 'chatter.F02_clarinet.froh,chatter.F03_accordion.aengstlich,chatter.F03_accordion.staunend,greet.farmer.known,chatter.F10_oboe.staunend'
       && out.greet.chatter.farmer_b === 'set:F03_accordion' && out.greet.chatter.farmer_a === 'fallback:resident' && out.greet.reg === 'chatter.F03_accordion.froh',
     duckUnderLoudSfx: f.fight.duckDb < 0,
     voicesBounded: Math.max(w.voices.total, f.fight.voices.total, c.end.voices.total) <= 96 && f.fight.voices.bank <= 24 && f.fight.voices.combat <= 24,

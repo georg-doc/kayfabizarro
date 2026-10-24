@@ -26,6 +26,11 @@ export function bubbleBodySvg(M, w, h, hlx, hly, col, kind, seed) {
 }
 
 // host: das Element des Host-Slots #ui-bubbles. Liefert show() / update() / dispose().
+// V-699 (Georg 24.10.): Kartentitel und Rufe fett. Der Kern (chatterbox-core parse/layout) kennt *fett* (ein Sternchen) und misst fette Wörter breiter;
+// die Zeichnung setzt die fetten Token jetzt als <b> (vorher nur Klartext)
+const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+function lineHtml(ln) { let h = '', on = false; for (const t of ln.toks || [{ text: ln.text }]) { const b = !!t.bold; if (b !== on) { h += b ? '<b>' : '</b>'; on = b } h += escHtml(t.text) } return h + (on ? '</b>' : '') }
+
 export function createBubbleLayer({ host }) {
   const C = window.KFB_CB
   if (!document.querySelector('link[data-kfb-shantell]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap'; l.dataset.kfbShantell = '1'; document.head.appendChild(l) }
@@ -38,7 +43,7 @@ export function createBubbleLayer({ host }) {
   const layoutTri = (parts, kind) => {
     const base = Math.round(Math.max(15, Math.min(20, innerHeight / 42))), Ls = parts.map((p) => C.layout(p, kind, { basePx: base, maxPx: Math.min(420, innerWidth * 0.42) })), L0 = Ls[0], fs = L0.fontPx, lh = L0.lh, gap = Math.round(fs * 0.5)
     const inner = Math.max(...Ls.map((l) => l.w - 2 * l.padX)); let n = 0; const lines = []
-    Ls.forEach((l, pi) => l.lines.forEach((toks, li) => { lines.push({ text: toks.map((t) => t.text).join(''), mt: pi > 0 && li === 0 ? gap : 0, part: pi }); n++ }))
+    Ls.forEach((l, pi) => l.lines.forEach((toks, li) => { lines.push({ text: toks.map((t) => t.text).join(''), toks, mt: pi > 0 && li === 0 ? gap : 0, part: pi }); n++ }))
     return { w: Math.round(inner + 2 * L0.padX), h: Math.round(n * fs * lh + gap * (Ls.length - 1) + 2 * L0.padY), padX: L0.padX, padY: L0.padY, fs, lh, lines }
   }
   // ---- 1:1 islands-npc.ts say(), Sprecher = Anker-ID, Farbe vom Aufrufer (Lab: ORIGINAL[npc.id].color)
@@ -54,7 +59,7 @@ export function createBubbleLayer({ host }) {
   const draw = (b, L, M, col, kind, id, hl) => {
     const w = L.w, h = L.h, seed = C.hash(b.el.dataset.text + kind) % 9999, hlx = hl ? hl[0] : M + w / 2, hly = hl ? hl[1] : M + h + 30
     const svg = bubbleBodySvg(M, w, h, hlx, hly, col, kind, seed)
-    const txt = L.lines.map((ln) => `<div data-part="${ln.part}" style="white-space:pre;text-align:center;margin-top:${ln.mt}px;transform-origin:50% 0">${ln.text.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</div>`).join('')
+    const txt = L.lines.map((ln) => `<div data-part="${ln.part}" style="white-space:pre;text-align:center;margin-top:${ln.mt}px;transform-origin:50% 0">${lineHtml(ln)}</div>`).join('')
     if (hl) { b.el.querySelector('svg').innerHTML = svg; b.hl = [hlx, hly]; return }
     b.el.innerHTML = `<div style="position:absolute;inset:0;transform-origin:${Math.round(hlx)}px ${Math.round(hly)}px;filter:drop-shadow(0 3px 5px rgba(42,26,12,.28))"><svg width="${w + 2 * M}" height="${h + 2 * M}" style="position:absolute;left:0;top:0;overflow:visible">${svg}</svg><div style="position:absolute;left:${M}px;top:${M}px;width:${w}px;height:${h}px;padding:${L.padY}px ${L.padX}px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Shantell Sans','Comic Sans MS',cursive;font-size:${L.fs}px;line-height:${L.lh};color:${INK}">${txt}</div></div>`
     b.el.firstElementChild.animate([{ transform: 'scale(.82)', opacity: 0 }, { transform: 'scale(1.04)', opacity: 1, offset: 0.65 }, { transform: 'scale(1)', opacity: 1 }], { duration: 170, easing: 'cubic-bezier(.3,1.3,.5,1)' })

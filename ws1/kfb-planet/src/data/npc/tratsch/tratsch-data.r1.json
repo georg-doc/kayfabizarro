@@ -1,0 +1,2872 @@
+{
+ "schema": "kfb.tratsch-data/1",
+ "note": "Stufe 0 (headless). Triplets tr1 = ENTWURF bis Georgs Abnahme; im Spiel nur hinter Vorschalter (Georg 23.10.).",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "ws-song/workshop-r1",
+  "commit": "a428e0913764e604eeaeff630ea423710323ce60",
+  "revision": "tr1",
+  "index": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SSOT_SPOKEN_LINES/TR1_INDEX.json",
+   "blob": "473506442598e99f5de6f69168df1e3f48935193",
+   "status": "Entwurf – nicht von Georg abgenommen; Probe Mission Control #1–11 abgenickt"
+  }
+ },
+ "triplets": {
+  "frizzlebob_s_mission_control": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/frizzlebob_s_mission_control/frizzlebob_s_mission_control.tr1.lines.csv",
+   "blob": "26135f15a30584c9441d0017fadca0442e297f75",
+   "cards": {
+    "1": "Go everywhere on the map with Cartography Sidequest and prove to the machine you surveyed every inch of your own cage.",
+    "2": "Reach the end of the Level Goal, and your reward is a slightly harder level.",
+    "3": "Find an exit to The Maze? Spoilers, there is no outside.",
+    "4": "It's All Upstairs From Here, so you ascend a tower to fight a guy who could have just met you in the lobby.",
+    "5": "Run or Die, so go that way and don't stop. The illusion of choice, accelerated.",
+    "6": "Escape Sequence runs you away from danger until you reach safety, and safety is a cutscene.",
+    "7": "Rise to the Challenge, climb up until you reach safety, and gravity is now a microtransaction.",
+    "8": "At the Broken Bridge you cannot pass until the developers finish coding the next zone.",
+    "9": "The Boss Battle monster exists solely to gatekeep your dopamine.",
+    "10": "In Kill Enemies to Open you are the janitor of death.",
+    "11": "Mass Monster-Slaughter kills many of the same monster, because repetitive labor is fun when it's violent!",
+    "12": "The pinnacle of heroic fetch quests is 20 Bear Asses for an NPC.",
+    "13": "The hitlist in Gotta Kill Them All is a psychopath's grocery run.",
+    "14": "A Kill Streak without getting hit is perfect for your anxiety!",
+    "15": "In Player Versus Environment the computer is controlling the game against you, and the house always wins.",
+    "16": "Player Versus Player is divide and conquer, so keep the plebs fighting each other.",
+    "17": "An Escort Mission with a suicidal AI is the ultimate test of your patience.",
+    "18": "Gotta Rescue Them All is just a hoarding pathology disguised as altruism.",
+    "19": "Stand in this circle and Hold the Line until we say you can leave.",
+    "20": "Save the Princess, who's been kidnapped again, and try better locks next time.",
+    "21": "On a Fetch Quest for an NPC you are an intern with a sword.",
+    "22": "Chain of Deals is bureaucracy as gameplay, so trade items for items for items.",
+    "23": "The Product Delivery Ordeal is Postmates, but with dragons.",
+    "24": "Collect the Plot Coupons to open the door, the narrative equivalent of a punch card.",
+    "25": "In Gotta Catch Them All, wildlife preservation is a hostage situation.",
+    "26": "On a Herding Mission the AI pathfinding is a joke we play on you.",
+    "27": "In the NPC Round-Up Mission you are wrangling digital toddlers.",
+    "28": "Live Items are living creatures you stuff into your infinite pocket, so don't think about the ethics.",
+    "29": "In a Companion-Specific Sidequest your ally's loyalty is bribed, because friendship is transactional.",
+    "30": "Complete your ally's Loyalty Mission, or they betray you at the finale.",
+    "31": "Love in the Romance Sidequest is simulated, so select dialogue option C to receive affection.",
+    "32": "A shiny hat is the Cosmetic Award that validates your hundred hours of meaningless grinding.",
+    "33": "Solve the Stock Video Game Puzzle, because the ancient architect loved pushing ice blocks around.",
+    "34": "A Mini-Game is a distraction game with its own rules, and pacing is a myth.",
+    "35": "With Variable Player Goals, why save the world when you could take photos of frogs?",
+    "36": "The Instant-Win Condition is a deus ex machina, so press X to end the simulation.",
+    "37": "For 100% Completion your digital grave requires all the shiny trinkets.",
+    "38": "In Gameplay Grading the machine judges your worth.",
+    "39": "Collect all the hidden rocks for the Secret Ending, and the true lore is disappointing.",
+    "40": "Your Bragging Rights Reward is an achievement that literally nobody else cares about.",
+    "41": "Normal misery wasn't enough, so you do a Challenge Run with optional restrictions.",
+    "42": "A Self-Imposed Challenge with your own restrictions is the Expert Edition of Stockholm Syndrome.",
+    "43": "With No Item Use for You, hoard the mega-elixirs until the credits roll.",
+    "44": "The No-Gear Level is a sudden, arbitrary strip search by the developers.",
+    "45": "A Speedrun skips the story and breaks the physics.",
+    "46": "Stepping on a twig in a Stealth-Based Mission is an instant fail.",
+    "47": "Time runs out in a Timed Mission, so the stress is artificial and so are the stakes.",
+    "48": "In a No-Damage Run one microscopic pixel of a hitbox ruins five hours of work.",
+    "49": "The Cake is a Lie and the reward was bait, so destroy the facility.",
+    "50": "Find the Princess in Another Castle, except your reward is a fungal hallucination.",
+    "51": "Players who Collect 12 Logs have tunnel vision and are forgetting how to actually play.",
+    "52": "Set your own goal of 100 Babies, and you are the architect of your own hell.",
+    "53": "Scoring Points does nothing, but you watch a digital integer increase and feel great.",
+    "54": "Repeat the same action until the bar is full, and the Experience Grind welcomes you to middle management.",
+    "55": "A Gold Sink is designed purely to delete the wealth you spent hours accumulating.",
+    "56": "The Hero Must Survive, so good thing you're not the hero."
+   }
+  },
+  "the_bards_barnyard_beatdown": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_bards_barnyard_beatdown/the_bards_barnyard_beatdown.tr1.lines.csv",
+   "blob": "8732d6e51096668846b27b273e4b15fa09b7ae86",
+   "cards": {
+    "1": "Flip a coin for The Rib-Breaker, and if heads, the fall breaks your ribs.",
+    "2": "The Youngest Brother has been losing, so the spirit of his father begins to mutiny against this servitude.",
+    "3": "The Tyrant Brother forces the boy to attack the strongest, and would as lief he break his neck as his finger.",
+    "4": "The Old Servant has lost his teeth in your service, so sacrifice him to fully heal another character.",
+    "5": "Whenever The Exile takes adversity from the environment, he finds books in running brooks.",
+    "6": "As a weasel sucks eggs, The Melancholy Sad-Sack sucks melancholy out of a song to restore his own ego.",
+    "7": "When The Weeping Stag is losing, his velvet friends abandon him, so sweep on, fat and greasy citizens.",
+    "8": "The Motley Fool confuses the enemy, so they must speak in rhymes, and wise men do foolishly.",
+    "9": "Ganymede switches strength and wit at will, a counterfeit man with a swashing and martial outside.",
+    "10": "Aliena is content to share the play with Ganymede, but she cannot go no further.",
+    "11": "The Shepherd earns gold as a true laborer, and he will eat what he earns and wear what he gets.",
+    "12": "The God of Marriage must make conclusion of these strange events, and the most pairs wins.",
+    "13": "Ill met by moonlight, The Fairy King is invisible and will overhear your conference.",
+    "14": "The Fairy Queen cannot attack any character as beautiful as an ass.",
+    "15": "The Hobgoblin will randomize the next attack, and Lord, what fools these targets are.",
+    "16": "The Changeling Boy causes a custody dispute, and she never had a sweeter changeling.",
+    "17": "The Ass-Head has the confidence, not the intelligence, so he is immune to insults.",
+    "18": "Read the prologue of The Carpenter aloud, and if you stumble, you played it like a child on a recorder.",
+    "19": "The Lion is no such thing, just a man with a gentle roar, as other men are.",
+    "20": "The Wall blocks all attacks, but through the chink poor souls are content to whisper.",
+    "21": "The more you spurn The Tall One, the more she buffs you, so use her but as your spaniel.",
+    "22": "The Short One is but little, but against the taller she is a fierce vixen.",
+    "23": "With The Purple Flower on sleeping eye-lids laid, you must defend the next played, regardless of team.",
+    "24": "When The Moon is waning, all magic will end, but the dog is my dog.",
+    "25": "The Bachelor deals paper bullets based on the words in your insult, and will live a bachelor.",
+    "26": "Swear you love The Lady Tongue and suffer the burn, because she had rather hear her dog bark at a crow.",
+    "27": "The Bastard creates a rumor that prevents two from teaming up, because he is a plain-dealing villain.",
+    "28": "The Drunkard will fabricate evidence of a vile encounter, but he has drunk to-day.",
+    "29": "The Constable can only succeed at the wrong task, O that he had been writ down an ass!",
+    "30": "The Headborough is a good old man, sir, who will support Dogberry and add confusion by talking.",
+    "31": "The Slandered Bride died defiled, but she does live, and returns fully healed.",
+    "32": "Let her be secretly kept in, and The Friar's Plan will convert slander into guilt on the attacker.",
+    "33": "With The Masked Ladies, which is which? I am your husband, if you like.",
+    "34": "The Penitent hangs an epitaph to mourn the death by slanderous tongues, and so gains attack.",
+    "35": "Benedick challenges Claudio to The Challenge and does not jest, so the loser loses the weapon.",
+    "36": "Born under The Dancing Star, you resolve the merry war if both players are smiling.",
+    "37": "Peace? The Prince of Cats hates the word, so attack him and he will strike back instantly.",
+    "38": "Kill The Joker and you shall find him a grave man with a plague on all houses.",
+    "39": "The Peacemaker will part fools and their swords, but you know not what you do.",
+    "40": "You bite your thumb at us, sir? Then you must attack The Thumb-Biter in a civil brawl.",
+    "41": "With The Lover it is either double or kill self, because he is fortune's fool!",
+    "42": "It is too rash and too sudden, so The Saint will accelerate the game timer.",
+    "43": "The Nurse will delay delivery of the message, and Lord, how her head aches!",
+    "44": "On The Rope Ladder you sneak into the enemy base without fighting, and the drudge toils in your delight.",
+    "45": "Buy instant death poison from The Apothecary, because his poverty, but not his will, consents.",
+    "46": "With The Sleeping Potion you appear dead, no warmth, no breath, until you wake up.",
+    "47": "The Happy Dagger is happy, because this is its sheath, and there it will rust.",
+    "48": "The Golden Statues end the game in a glooming peace where nobody wins and everyone feels sad.",
+    "55": "The Mask is a mistaken identity, so a targeted attack will redirect to the adjacent."
+   }
+  },
+  "sonic_warfare_music_history_01": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/sonic_warfare_music_history_01/sonic_warfare_music_history_01.tr1.lines.csv",
+   "blob": "1ffff456e44d4e811249ff44d790761abcd87a36",
+   "cards": {
+    "5": "Not for art, The Bone Flute was a remote control for the human heart.",
+    "6": "The War Drum was the state before the state, because when hearts beat together, boundaries dissolve.",
+    "7": "As a musician The Shaman did not entertain, but managed the tribe's reality.",
+    "8": "Control The Echo, and your repetition of truth will define the boundaries of the world.",
+    "9": "Gregorian Chant allowed no harmony, because harmony implies more than one perspective.",
+    "10": "Banned for centuries, The Tritonus is the Devil in music, because tension is dangerous.",
+    "11": "The Pipe Organ was the most expensive machine, with the voice of God and the budget of the State.",
+    "12": "In Hildegard's Vision the only way to break the rules was to claim God wrote them.",
+    "13": "The Fugue is not a song but dialectical logic, a trap where voices invert and combine.",
+    "14": "The Deaf Composer is proof that music lives in mental architecture, not sound.",
+    "15": "Before the character even speaks, The Leitmotif tells you exactly how to feel.",
+    "16": "In Bayreuth they dim the lights and hide the orchestra, so the audience does not observe but is absorbed.",
+    "17": "At The Crossroads the deal is real, even if the Devil is a metaphor.",
+    "18": "For The 27 Club the pattern is the point, and the gifts consume the vessel that carries them.",
+    "19": "The 12-Bar Loop will repeat, not from laziness, but from the insistence that the suffering is real.",
+    "20": "Why does The Blue Note hurt when it should not work? Because it is true.",
+    "21": "The Turned Back played for the music, not them, and if they did not get it, that was their problem.",
+    "22": "Love Supreme is a spiritual practice using the saxophone as a prayer wheel.",
+    "23": "The Improviser has to be ahead of his own understanding, because comfortable is wrong.",
+    "24": "The Session is a collective mind with no rehearsal, and discovery happens in the gaps.",
+    "25": "Payola is illegal when you bribe a DJ, but legal when you buy a playlist.",
+    "26": "The Teen Idol carries the music without carrying the threat, because safe and pretty is profitable.",
+    "27": "The Cover Version will sanitize the raw emotion for a broader market and keep the money.",
+    "28": "Play it on the TOP 40 until they like it, because familiarity breeds purchase.",
+    "29": "The Amen Break built entire genres in an infinite loop, and the drummer died broke.",
+    "30": "Is The Sampler theft? No, it is collage, because the Bronx used the past as a brickyard.",
+    "31": "The Crate Digger will unearth the break that everyone else walked past.",
+    "32": "The law did not evolve to protect artists, so Copyright Bot will protect the owners of the catalog.",
+    "33": "The Algorithm does not care what you like, only what you won't skip, and that leads to sameness.",
+    "34": "In the Loudness War everything is loud, so nothing is urgent.",
+    "35": "Just keep the vibe steady, because on The Playlist the artist is irrelevant.",
+    "36": "The goal of Retention Rate is to keep you here, mildly satisfied, forever.",
+    "37": "Some say 440 Hz creates subtle psychological dissonance, a frequency for workers, not dreamers.",
+    "38": "Maybe 432 Hz is the vibration of the universe, maybe a placebo, but it feels slower.",
+    "39": "Rock stars in Laurel Canyon with fathers in military intelligence? Just a coincidence, surely.",
+    "40": "Backmasking is a hidden command the subconscious hears, or maybe just noise, so do it.",
+    "41": "He worked from The Hospital Bed until the end, ignored by the industry and canonized by the culture.",
+    "42": "She did not change the notes, she changed the subject, and The Respect was suddenly a demand.",
+    "43": "For The Chameleon the mask is the self, so kill the character before they get bored.",
+    "44": "In The Silence the music is the coughing of the audience."
+   }
+  },
+  "the_kayfabe_money_trail_9_11": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.tr1.lines.csv",
+   "blob": "76bd710a063bcb5a4949e2dd746d05eabccd8d60",
+   "cards": {
+    "1": "Follow The Kayfabe-Money to the Trillions, and the Official Narrative is instantly out of play.",
+    "2": "Rule One for detectives is Follow the Money, because it determines how we proceed with our investigation.",
+    "3": "The Coincidence Engine declares any systemic anomaly a random fluke, if it was a coincidence.",
+    "4": "Any investigation has to go through Treasury's Ten Veils before it gets to the real Source.",
+    "5": "With The Privatized Towers you control the highest value asset for a fraction of the cost.",
+    "6": "With The Fourteen Million Bridge of their own money, the investors control a multi-billion dollar empire.",
+    "7": "The Double-Trouble Policy doubles your coverage, and if disaster strikes, you claim it happened twice.",
+    "8": "With The Secret Kickback your initial equity is refunded, and the profit is billions and counting.",
+    "10": "Silver Stream E-Link executes massive paperless transactions unseen by any other entity on Earth.",
+    "11": "Confront The 10M Anomalies and they urge you to mind your own business.",
+    "13": "Convar Data Recovery retrieved the impossible data, then could not give you any additional information.",
+    "14": "During The 40-Minute Window the computers were externally taken over to purge data.",
+    "15": "The illicit mega-trades could just be The Absolute Shopping Binge on a Tuesday morning.",
+    "16": "Before the dust settled, Paul Bremer's NBC Pivot had established the Official Enemy.",
+    "17": "The Put Options bet against the airlines, and in a single day the bet is millions.",
+    "18": "Buy The Raytheon Call right before a war starts and cash in when the military deploys missiles.",
+    "19": "The Global Manhunt launches probes that mysteriously fizzle out when they hit US soil.",
+    "20": "Ask The CBOE Shredder for the documentary evidence and you are told the records were destroyed.",
+    "21": "In The Stratex Spike your stock doubles and the FBI ignores you, because you have no ties to terrorism.",
+    "22": "The Ritz-Carlton Meeting hosts the Carlyle Group for a private equity breakfast on the day of the attack.",
+    "23": "The put order was brokered by Buzzy Krongard's Brokerage, former firm of the CIA's Executive Director.",
+    "24": "In The San Diego Cash-Out a staffer cashed out the day before, and no agency ever investigated him.",
+    "25": "The SEC Investigation examines millions of transactions and concludes nothing happened.",
+    "26": "The Single Institutional Investor places the put options on an airline and gets a free pass.",
+    "27": "Academic Probability proves it beyond a statistical doubt and gets completely ignored by the government.",
+    "28": "The Commission Handwave declares the origin of the money of little practical significance.",
+    "29": "Ptech Enterprise Architecture monitors your entire system, so it can foresee problems or cause them.",
+    "30": "To prevent massive failures, JP Morgan sought The Next Generation Blueprint, which can also execute them.",
+    "31": "Gain The Keys to the Cyber Kingdom and the most protected servers in the world are yours.",
+    "32": "In The FAA Basement Interoperability Ptech finds the exact holes in the defense escalation process.",
+    "33": "In Vulgar Betrayal the agents seize terror funds and get permanently blocked by their own bosses.",
+    "35": "Sarmand Limited provides the seed capital that got Ptech off the ground and into the US government.",
+    "36": "Who provided founding loans for Ptech? BMI Real Estate, run by Ptech's own Chief Scientist.",
+    "37": "The Radical Chief Architect writes government software while mapping the blueprints of the US military.",
+    "38": "The FBI finally raids Ptech, but The Pre-Raid Warning was given weeks in advance.",
+    "39": "The day after a raid, Tom Ridge's Rubber Stamp declares the system perfectly safe.",
+    "40": "Thomas Kean's Wallet had a real estate transaction with BMI, and the Commission never looked into Ptech.",
+    "41": "Rumsfeld's Declaration declares war on the adversary closer to home, the Pentagon bureaucracy.",
+    "42": "The Trillion Cushion could not be properly accounted for, so make the entries up entirely.",
+    "43": "Care about a good job and The Whistleblower's Reward is your director asking why you care.",
+    "44": "Dov Zakheim's Ledger fails to untangle the financial snarl but gets a massive defense budget anyway.",
+    "46": "PNAC's white paper Rebuilding America's Defenses predicts exactly what you need to conquer the world.",
+    "47": "The transformation is likely a long one, absent The New Pearl Harbor.",
+    "48": "Because fear tends to register on people, The Fear Integration bypasses all political opposition.",
+    "50": "Where the missing trillions went is The Unproduceable Report, because the Army was unable to produce it.",
+    "51": "Thomas White's Enron Playbook runs the military's budget, and Enron is the largest accounting fraud.",
+    "52": "The Building Seven SEC Vault collapsed, wiping out the evidence on Enron and others.",
+    "53": "In The Trillion Benchmark the war on bureaucracy is highly successful at losing even more money.",
+    "54": "If money is missing at the end of the day, The Standard Operating Plug inputs a false number.",
+    "55": "Every month the Navy report was missing money, and every month it had Linda Woodford's Eraser.",
+    "56": "The Iraq Pocket Change lost in a war zone is more than most countries spend on defense in a year.",
+    "57": "Combine insurance, insider trading and military fraud, and The Ultimate Heist wins.",
+    "58": "The Suspects' Story asks the perpetrators to investigate themselves.",
+    "59": "From CBOE to Convar, The Destroyed Records always manage to disappear into the ether.",
+    "60": "They told you it changed everything, and in Uncle FrizzleBob's Verdict it made the house infinitely rich."
+   }
+  },
+  "symphonic_savagery": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/symphonic_savagery/symphonic_savagery.tr1.lines.csv",
+   "blob": "b3cac6ce4532581d1b5fa72de70ef5c7834ee0e7",
+   "cards": {
+    "1": "The Monophonic Monastery limits you to one single melodic line, because tonality did not exist yet.",
+    "2": "Gregorian Chant hypnotized the arena until polyphony ruined everything.",
+    "3": "Thomas Tallis overbooked the ring with The 40-Part Motet, and clergymen found it impossibly chaotic.",
+    "4": "The Renaissance Patron will fund a secular madrigal distraction and buy off the referee.",
+    "5": "The Harpsichord was weaponized by the elite to pluck your nerves, until the piano replaced it.",
+    "6": "In Sonata Form you state a theme, develop it in the middle, and lazily restate it at the end.",
+    "7": "In The Concerto Duel spotlight-hungry performers tag in a solo instrument to dominate the orchestra.",
+    "8": "Common Time resets the match rhythm to an inescapable, predictable drudgery.",
+    "9": "Hold your submission lock indefinitely with The Sustaining Pedal and its unrelenting sustain.",
+    "10": "Atonality and Serialism remove the musical key entirely, so attacks cannot be blocked.",
+    "11": "Extended Technique is rule-breaking, so use the instrument as a blunt percussion weapon.",
+    "12": "The Darmstadt School lectures the crowd until they boo, because unlistenable is sheer elitist power.",
+    "13": "Haydn wrote so many good quartets that The String Quartet is an inescapable team assault on later composers.",
+    "14": "The Brass Quintet is built to maximize sheer sonic impact and blow out your eardrums.",
+    "15": "In The Piano Trio a violin, a cello and a piano strike simultaneously as a tightly knit assault unit.",
+    "16": "The Woodwind Cartel chokes you out with reeds, and adding a horn is the deception.",
+    "17": "Summon The Symphony Orchestra and remember, not all orchestral music is classical music!",
+    "18": "From the rafters an Ethereal Choir will elevate the perceived divine importance of a piece.",
+    "19": "The Cartoon Conductor battles the orchestra with frantic baton swings to force them into compliance.",
+    "20": "Dramatic Timpani interrupt any promo, so the audience knows a massive hit is coming.",
+    "21": "A counterpoint hold by Johann Sebastian Bach is relentless, inescapable and mathematically merciless.",
+    "22": "Everyone else was forced to follow the rules Joseph Haydn built, strictly in Sonata Form.",
+    "23": "With a massive chorus of hallelujah, G.F. Handel will prematurely declare your inevitable victory.",
+    "24": "Many musicologists now believe Bach did not compose Toccata and Fugue at all.",
+    "25": "Without looking, Wolfgang Amadeus Mozart counters your finishing move perfectly.",
+    "26": "Trash talk? Ludwig van Beethoven ignores it entirely and attacks with pure Romantic fury.",
+    "27": "Fryderyk Chopin strikes the piano so blisteringly fast that the crowd is dazzled.",
+    "28": "With Impractical Musical Skills you do something incredibly difficult just to flex on the crowd.",
+    "29": "Richard Wagner extends the match for hours until you quit out of sheer exhaustion.",
+    "30": "In crowded concert halls Pyotr Ilyich Tchaikovsky will fire actual live artillery.",
+    "31": "Franz Liszt incites a riot, and his swooning fans trample you.",
+    "32": "Orchestral Bombing drops the entire brass section on your head to underscore a dramatic moment.",
+    "33": "Play The Rite of Spring by Igor Stravinsky, and the furious audience attacks for you.",
+    "34": "John Cage and Minimalism do absolutely nothing for minutes, which is the absolute breaking point.",
+    "35": "George Gershwin tags in a jazz musician, which is highly illegal and highly profitable.",
+    "36": "Wedding music will recycle Pachelbel's Canon Progression infinitely without spending any energy.",
+    "37": "The genre inherently demands Gratuitous Italian and German, so scream your performance instructions.",
+    "38": "Pause the match for The Cadenza and improvise a completely unscripted way to glory.",
+    "39": "Play your Leitmotif and you break them mentally before you even enter the ring.",
+    "40": "Attack in Uncommon Time Signatures and they physically cannot time their counters.",
+    "41": "Ominous Latin Chanting drops the temperature in the arena instantly and signifies impending doom.",
+    "42": "With the Ominous Pipe Organ everyone in the room knows the heel has officially arrived.",
+    "43": "Nobs and snobs fill the front row at The Opera Tonight, solely to look cultured to their peers.",
+    "44": "Opera Means Drama, so with a tragic aria in Italian vibrato you weep uncontrollably.",
+    "45": "Classical Music is Boring, so put the audience to sleep, and the referee doesn't see your chair shot.",
+    "46": "True Art is Ancient, so it is immune to all modern attacks and anything recently composed.",
+    "47": "The copyright expired, so the Public Domain Soundtrack is a free buffet for cheap media producers.",
+    "48": "Historically Informed Performance demands painful, un-upgraded medieval equipment, for authenticity.",
+    "49": "Classical music refuses to compress in The Loudness War, ruining the pop-industry's compression tactics.",
+    "50": "While they debate if Rock is Authentic, Pop is Shallow, you sneak a pinfall.",
+    "51": "Rock me, Amadeus, because classical was just the pop of the past.",
+    "52": "With the Symphonic Metal Transition your electric guitar has an entire orchestra backing track.",
+    "53": "Name your finisher with a Work Info Title of genre, number, and key, and confuse them to death.",
+    "54": "The Recording Era will trap your performance on a wax cylinder and replay your defeat forever.",
+    "55": "The Living Composers prove the genre isn't dead, because John Williams is romantic to his very bones.",
+    "56": "The music is rigged, so declare yourself the winner with Uncle FrizzleBob's Master Score."
+   }
+  },
+  "geopolitical_thrillers_conspiracy_theories": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/geopolitical_thrillers_conspiracy_theories/geopolitical_thrillers_conspiracy_theories.tr1.lines.csv",
+   "blob": "b64ac014f87370a28616ba9650122131857cb7cf",
+   "cards": {
+    "1": "Extract the wealth, rebrand it as a Scholarship, and that is Cecil's Diamond Trust.",
+    "2": "Conquering nations with armies is messy, so Milner's Round Table conquers them with advisory boards.",
+    "4": "Get too uppity about your own oil, and The Imperial New Hitler Cast labels you Worse Than Hitler.",
+    "5": "The Federal Reserve Spider creates assets from thin air, and its web devours all other assets.",
+    "6": "Why would BlackRock's Aladdin AI predict the future when it simply owns the companies that dictate it?",
+    "7": "The Five Star Slush Fund is the deepest, darkest rabbit hole, and it cannot be taxed, tracked or audited.",
+    "8": "Welcome to the algorithmic company store, where your money comes on The CBDC Leash with an expiration date.",
+    "9": "In The 21-Year Gaslight the wars were one massive imperial divorce with a halftime show.",
+    "10": "For the space race Operation Paperclip resurrects the War Criminal as a Valued Scientist.",
+    "11": "The Deep Underground Military Bases are just waiting for the surface world to finally destroy itself.",
+    "12": "The NATO Peacekeepers wear white, and the contractors wear Rolexes.",
+    "13": "Spymaster Reinhard Gehlen lost one war, so he decided to start another one that never ends.",
+    "14": "To keep people afraid of communists, the armies of Operation Gladio do the terrorizing themselves.",
+    "15": "USAID's Infrastructure is building bridges straight to regime changes and data vacuums.",
+    "16": "The Invention Secrecy Act confiscates your Innovation, because it is now a matter of national security.",
+    "17": "With Hoover's Dossier Diplomacy the FBI is a personal gossip column, and everyone in power owes him silence.",
+    "19": "In the digital age truth is optional, and Algorithmic Deepfake Extortion weaponizes your own face against you.",
+    "20": "When attacked, Roy Cohn's Legal Meatgrinder ignores all rules, screams louder and sues for damages.",
+    "23": "The Pharma Mafia ignores all penalties and simply pays a small fraction of its profits as a fine.",
+    "24": "Spraying bacteria over San Francisco, Project Sunshine and Sea-Spray treat citizens as lab rats.",
+    "25": "Gain-of-Function Roulette supercharges a nasty virus with taxpayer money, so what could possibly go wrong?",
+    "29": "In Operation Mockingbird you just recite the lines and declare it was your own idea.",
+    "30": "In AI Cognitive Warfare the battlefield is your neocortex, and independent thought is highly suspicious.",
+    "32": "The Twitter Files Drop reveals all hidden censorship, and chaos ensues, but nothing fundamentally changes.",
+    "33": "With Transhumanist Neuralink billionaires escape death, and the peasantry are cloud-connected meat-routers.",
+    "34": "Smart Dust Panopticon knows everything, always, and reports back to whoever holds the DARPA contract.",
+    "35": "With 5G and Blue Light Grids your TikToks load instantly.",
+    "36": "Under the Social Credit ESG Score your freedom is a revocable privilege.",
+    "37": "Klaus the Sleep Paralysis Demon wants you to own nothing and thank him for the privilege.",
+    "40": "Controlled Opposition absorbs all rebel energy and steers it into a harmless cul-de-sac.",
+    "43": "The Vatican Secret Archives are God's filing cabinet of controversy, from Galileo's trial to dictators.",
+    "45": "The Book of Enoch is a divine soap opera of fallen angels and giants, too edgy for the Bible.",
+    "46": "Long before AI scraped your data, The Akashic Records were Heaven's cloud storage system.",
+    "47": "The Suppressed Wizards generate unlimited free energy, and the Federal Reserve immediately attacks them.",
+    "48": "The CIA Gateway Process is government-approved astral projection, funded by your tax dollars.",
+    "49": "Admiral Byrd went South with Operation Highjump and found more than penguins.",
+    "50": "Mussolini recovered The Magenta UFO, the Vatican hid it, and the OSS stole it.",
+    "51": "Look up, notice Geoengineering and The Dimming in the sky, and you're just a crazy conspiracy theorist.",
+    "52": "The military sees Water-Air UAPs every day, but officially they are just weather balloons in the ocean.",
+    "53": "In this house we don't obey in our underwear, we resist in FrizzleBob's Freedom Bathrobe.",
+    "54": "If they won't declassify history, Deep State Streetwear will accessorize it ironically.",
+    "55": "With The Satire Sanity Shield laughter isn't just a coping mechanism, it's mental armor.",
+    "56": "For The Analog Anarchist real power is tactile, rowdy and unplugged from the algorithm."
+   }
+  },
+  "frizzlebob_s_ego_mania_narcissist": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/frizzlebob_s_ego_mania_narcissist/frizzlebob_s_ego_mania_narcissist.tr1.lines.csv",
+   "blob": "9fc6d87a58b6a1edfc0ff2f6f56006fcf972e4dc",
+   "cards": {
+    "1": "The Pond-Gazing Peacock would help, but he is busy existing as a visual masterpiece.",
+    "2": "No one spits like the Flexing Rooster, nature's special effect.",
+    "3": "The painting ages for the Portrait Poodle, so don't look in the attic.",
+    "4": "If the Selfie-Stick Swan didn't post it, did the forest really burn down?",
+    "5": "The Fog-Weaving Cuttlefish never said that, and if he did, you made him say it.",
+    "6": "The Mockingbird repeats your argument in a whiny voice, and you're just like your mother.",
+    "7": "The Lure-Light Anglerfish offers a gift, then swallows you whole in the dark.",
+    "8": "The Revisionist Owl has always been at war with Eastasia, and has always been the victim.",
+    "9": "To the Caped Eagle you are the real heroes, and he is just a god.",
+    "10": "Fame is fickle, but to the Plagiarist Magpie stolen shiny objects are forever.",
+    "11": "The Smile-Bot Dolphin just wants to be loved. Is that a crime? Yes, it is murder.",
+    "12": "The Medal-Heavy General won battles he wasn't even present for, and that is leadership.",
+    "13": "Sheep sired by the Legacy Lion have opinions, and they do not concern him.",
+    "14": "You'll never leave the Smothering Kangaroo, because it made sure you're too weak.",
+    "15": "The Wire-Hanger Persian gave you life, and you repay her with dirt?",
+    "16": "The Golden Child Ant sparkles, so why can't you be more like your brother?",
+    "17": "Look at the subtle off-white coloring on the Business Wolf's card. It's beautiful.",
+    "18": "To the Tech-Bro Ferret people are things, so he moves fast and breaks them.",
+    "19": "CC the Micromanager Queen on Reply All before you breathe.",
+    "20": "The Brand-Ambassador Cheetah has no pyramid scheme, just a trapezoid of opportunity!",
+    "21": "The Tantrum Hippo ordered the tea iced, so the jungle is ruined!",
+    "22": "Are you saying the Thin-Skinned Balloon Fish is puffy? You're all dead.",
+    "23": "The Spiteful Wasp does not want the honey, but just wants the flower to suffer.",
+    "24": "The Scream-Pillar silences all logic until you pay attention to him.",
+    "25": "Only the Gauntlet Gorilla has the will to act, and also wants a banana.",
+    "26": "The Note-Writing Rat will write a name and become the God of the new sewer.",
+    "27": "Without the Sun-King Scarab the day does not start, so worship the sphere!",
+    "28": "Nature is messy, so the Clockwork Kraken fixed it, and you're welcome.",
+    "29": "The Flying Monkey attacks for the Boss, who is really nice once you get to know him!",
+    "30": "The Doormat Turtle absorbs the abuse, so the Narcissist takes none.",
+    "31": "The Yes-Parrot is an echo chamber, and you're so right, sir!",
+    "32": "The Energy Vampire Bat does not drink blood, it drinks your will to live.",
+    "33": "The Magic Mirror is a validation loop where everyone else is trash.",
+    "34": "The top of The Pedestal is lonely, but the view of you ants is great.",
+    "35": "Feed the Black Hole Smartphone attention, because it is starving.",
+    "36": "The Crown of Thorns is fake, but look how much he suffers for you! Look at it!",
+    "37": "Go have fun, because the Cross-Bearing Donkey will just stay here and rot alone.",
+    "38": "The Bandaged Leech would apologize, but his condition is flaring up.",
+    "39": "The Grudging Camel will forgive, but never ever forget a grievance.",
+    "40": "The music swells for the Emo-Goth Raven, whose darkness is too deep for you to understand.",
+    "41": "For the Naked Mole Rat King it is not a draft, just the chill of pure excellence.",
+    "42": "King of Kings was the Shattered Visage, and the name implies heavy depreciation.",
+    "43": "Fill the hole of The Bottomless Pit, and it's never enough.",
+    "44": "The Ghost of Future Past is immune to the present, because it used to be big.",
+    "45": "Uncle FrizzleBob has scissors, so rules are for people who don't.",
+    "46": "The Grey Rock is so boring and uninteresting that the Narcissist loses interest and wanders off.",
+    "47": "The Truth Bomb is no, and no is a complete sentence.",
+    "48": "You win by not playing, and The Exit Door is the only winning move."
+   }
+  },
+  "anti_rules_toolkit": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/anti_rules_toolkit/anti_rules_toolkit.tr1.lines.csv",
+   "blob": "712119bdea57e3bbaff2d78903afc87d96de0cb5",
+   "cards": {
+    "1": "The Rules Lawyer demands you cite a non-existent rule, and if you hesitate, your action fails.",
+    "2": "The Optimizer is trying to weaponize ambiguity, and nothing breaks faster.",
+    "3": "The Nervous Beginner asks if this is right, and confuses clarity for safety.",
+    "4": "In a helpful voice, the Authority Figure cancels a move that is too fun.",
+    "5": "The Panic is an internal scream, so you freeze until someone tells you it's okay.",
+    "6": "With The Crutch you cannot take an action until another player gives you permission.",
+    "7": "The Sweat cannot handle success without questioning it.",
+    "8": "When the table stalls, The Silence is a moment where players stop asking.",
+    "9": "Whoever asks how to win is The Lost Winner, because they have already lost.",
+    "10": "The Nonsense State defies logic but feels right, because Blödsinn is not a mistake.",
+    "11": "Nobody is right, so The Effective Move ignores a rule if the result is a better story.",
+    "12": "The Amnesia ignores the precedent, but the players do not.",
+    "13": "Esq's Tears instantly win the meta-argument about rules interpretation, so cry harder.",
+    "14": "If the table laughs, The Correct Nonsense may be correct.",
+    "15": "Everyone takes a deep breath at The Pressure Valve, and no game state changes.",
+    "16": "The Less Rules removes one constraint, so if you need more rules, use fewer.",
+    "17": "The Red Pen crosses out one word of the rule lists forever.",
+    "18": "The Final Draft is labeled final, and immediately contradicted.",
+    "19": "The Fake Stamp is fake approval, and that is validation.",
+    "20": "The Disclaimer is a pseudo-legal loophole, so claim you read the fine print.",
+    "21": "An Anti-Rule read aloud at The Table is a declaration, and no discussion is allowed.",
+    "22": "The Controlled Void replaces authority with nothing and narrates the gap.",
+    "23": "Everyone looks at you in The Shared Attention, instead of at correctness.",
+    "24": "If The Safety Rail makes you feel safer, ask yourself, safer from what?",
+    "25": "Nervous Laughter indicates correct operation.",
+    "26": "Bad Design is a critique, so claim this is bad design.",
+    "27": "When the table stalls, The Stall stands in the room like a smell.",
+    "28": "At The Rage Quit you stop trying to win and are now telling stories.",
+    "29": "The Compliance Aid is simple words only, for people who hate improvisation.",
+    "30": "The Safety Blanket protects players who need rules to feel safe from Blödsinn.",
+    "31": "The Ironic Poster does nothing, but it bothers someone.",
+    "32": "Stand up and explain your move like a CEO, because The Slide Deck is marketing.",
+    "33": "Point at the player who is actually leading the table, and the Hidden Power is exposed.",
+    "34": "Challenge a correct move with The Illusion, because there is no correct move.",
+    "35": "The Blame shifts the consequence to the Game Designer.",
+    "36": "In The Interpretation you decide what another player's card really means.",
+    "37": "The Pot Plant does nothing, just observes, and its silence is a valid move.",
+    "38": "The Bureaucrat demands you mime filling out a form before you play.",
+    "39": "The Alien Tourist remembers the current board state, and you may revert to it later.",
+    "40": "Uncle FrizzleBob will rip up this card and rewrite one rule for the rest of the game.",
+    "41": "Wear The Judge's Wig and you are in charge until you laugh.",
+    "42": "Catch someone optimizing with The Police Badge, then default to rule-lawyering.",
+    "43": "Explain the science of your move in The Lab Coat, and the table is encouraged to let you try.",
+    "44": "Ask for a rule clarification, and The Dunce Cap protects you from judgment.",
+    "45": "The Dead Author has no intent, so the rules mean whatever the group decides they mean.",
+    "46": "The Ambiguity is open to interpretation, and games collapse under it.",
+    "47": "Break a promise in The Social Contract for narrative effect.",
+    "48": "Pull The Emergency Handle immediately if it gets boring.",
+    "49": "The Mood Swing changes your mood to anxious.",
+    "50": "With The Skill Issue you forget the trained ability you rely on.",
+    "51": "When it tips, The Collapsed Quest collapses.",
+    "52": "The Story Breaker interrupts a story connection that feels forced.",
+    "53": "The game is over when everyone at the table is relaxed or confused, so Stay Fluffy.",
+    "54": "Shout Kayfabingo for no reason and you win the game instantly.",
+    "55": "The Strange Alertness is awareness, so be visibly uncomfortable.",
+    "56": "The End is when the group decides it is done, with no winner."
+   }
+  },
+  "shadow_politics": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/shadow_politics/shadow_politics.tr1.lines.csv",
+   "blob": "9f1b463e00a70bf32dfbd5fee28964de6b64ee0b",
+   "cards": {
+    "1": "Nietzsche was right, and The Cold Monster only exists to maintain its own power.",
+    "2": "In the Pluralism Simulator you throw the rascals out, and nothing changes.",
+    "3": "Mussolini called The Public-Private Parasite corporatism, and the technocrats call it a Partnership.",
+    "4": "The Bureaucratic Labyrinth cancels any action, citing missing paperwork.",
+    "5": "The Poverty Trap is a Ponzi scheme that works perfectly, while the elite double their fortunes.",
+    "6": "With Cloud Rent-Seeker you own nothing, just subscriptions and licenses for things you used to own.",
+    "7": "Battle rising taxes in The Inflation Incinerator, and your money is worthless now anyway.",
+    "8": "The Sustainability Shakedown records trillions in profits while lecturing you on your carbon footprint.",
+    "9": "The Infantilization Barrage melts traditional thought patterns into compliance.",
+    "10": "If the situation is explosive, any random minor action can be The Trigger Event for a global crisis.",
+    "11": "In the Civilian Proxy-Force the rich take the loot and the poor are sent to the front lines.",
+    "12": "A divided resistance is a defeated resistance, so The Spalt-Pilz sows discord.",
+    "15": "With MK-Mind Melter the CIA fed unsuspecting citizens LSD to break the human mind.",
+    "16": "In Operation Whitecoat the state tested anthrax and yellow fever on its own.",
+    "17": "For years The Syphilis Syringe intentionally withheld therapies for study purposes.",
+    "18": "The Nerve Gas Cloud tested sarin, mustard gas and VX on unwitting soldiers.",
+    "19": "The Fallout Pig had soldiers drive over radioactive barrels, just to see if the trucks offered protection.",
+    "20": "The Space Dose Test blasted sick children with radiation to see how much astronauts could survive.",
+    "21": "From the US to Sweden to Canada, The Eugenics Board legally erased the futures of women.",
+    "25": "The Algorithm Enforcer silences dissent before it can even be spoken.",
+    "26": "Centimeter by centimeter, The Digital ID Collar ends freedom.",
+    "27": "With The Surveillance Car your vehicles now spy on their drivers.",
+    "28": "Individual development is not included in The Numbed Consumer's off-the-rack life plan.",
+    "29": "At The Obedience Parade the masses rally around the flag, and critical questions equal treason.",
+    "30": "With The Burnout Badger the resistance is exactly where the state wants it, ground down and powerless.",
+    "32": "The Illusion of Safety is a fake defense wall that shatters the moment it is attacked.",
+    "34": "Heads are no longer chopped off, but washed, by The Smiling Despot.",
+    "35": "Philanthropy is the ultimate mask, so The Elite Philanthropist gives, then steals.",
+    "36": "The Crisis Architect starts a proxy war and enforces the Pax Americana at all costs.",
+    "37": "At The Tipping Point the grotesque excesses of power eventually choke on the power of the many.",
+    "38": "It is always the same process, first the bureaucracy, then the police state, then The Mistgabel Mob.",
+    "39": "In The Grand Awakening even the most conformist statist realizes the farce has nothing to do with reality.",
+    "40": "The Systemic Rot follows a phase of freedom with institutional decay, corruption and obscenities.",
+    "41": "Laugh at an attack, because The Weapon of Humor is the universal remedy for dark times.",
+    "42": "The Self-Sovereign is immune to Propaganda and can see right through the Ponzi scheme.",
+    "43": "Being against something is easy, but The Utopia Architect needs stories of a freely organized future.",
+    "44": "The Free Will Anomaly cannot be forced, and it fights for human free will against the Monster.",
+    "48": "Uncle FrizzleBob's Blessing ends the game in a tie, and everyone goes outside."
+   }
+  },
+  "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biology_of_rebellion_hilfe_ich_bin_ein_mensc/the_biology_of_rebellion_hilfe_ich_bin_ein_mensc.tr1.lines.csv",
+   "blob": "199695d16fb230040b8ff84f4854dda6ecbe8912",
+   "cards": {
+    "4": "The cosmic joke of Hilfe, ich bin ein Mensch is being wired for love in a society built for spreadsheets.",
+    "5": "Charles Darwin knew that cooperation is not the enemy of evolution but its main engine.",
+    "6": "For Lynn Margulis life conquered the globe not by combat but by microscopic networking.",
+    "7": "Even among pure egoists, Robert Axelrod's Tit for Tat cooperation wins the long game.",
+    "8": "In the Synthesis of The Evolution Matrix the Alpha Male myth is a statistical rounding error.",
+    "9": "For Joachim Bauer we are biologically designed for social resonance, and we literally feel what others feel.",
+    "10": "To Matthew Lieberman rejection activates the exact same brain regions as physical injury.",
+    "11": "To John Cacioppo chronic loneliness is a biological hunger signal for connection that destroys the immune system.",
+    "12": "We are feeling machines that occasionally think, as The Empathy Circuit synthesis reveals.",
+    "13": "Morality isn't trained into us by society, because for Michael Tomasello toddlers help before they can even speak.",
+    "14": "Ernst Fehr would rather burn his own resources than let the unfair walk away unpunished.",
+    "15": "For Frans de Waal empathy, consolation and justice aren't human inventions but ancient evolutionary inheritances.",
+    "16": "The Scales of Fairness synthesis is part nurturing hug, part spiteful rejection of the greedy.",
+    "17": "Adam Smith, the prophet of capitalism, actually believed in empathy, and history conveniently forgot.",
+    "18": "Gary Becker reduced all behavior to a cost-benefit analysis and built a perfect model of a sociopath.",
+    "19": "Rutger Bregman debunks the cynical myths, because deep down humanity is aggressively decent.",
+    "20": "The Egoism Autopsy synthesis disables a global economic system built for a species that does not exist.",
+    "21": "C. Daniel Batson does not just help to feel good, because genuine empathy compels action.",
+    "22": "For Felix Warneken we are born helpers, and toddlers drop everything to assist a stranger.",
+    "23": "Generosity triggers the same pleasure centers as food and sex in the brain of Jorge Moll.",
+    "24": "Selflessness is not a sacrifice but a dopamine hack, and The Generosity Loop synthesis doubles it.",
+    "25": "For Edward Deci, paying someone to do what they love is the fastest way to kill their passion.",
+    "26": "Huge financial bonuses reliably cause performance-destroying panic, so for Dan Ariely the rational market is a joke.",
+    "27": "For Bruno Frey a price tag on a civic duty destroys the moral desire to do it.",
+    "28": "Carrots and sticks are for donkeys, so The Motivation Spectrum synthesis strips all financial rewards.",
+    "29": "Shoshana Zuboff reveals that surveillance capitalism wants to predict your future and sell it.",
+    "30": "For Jean M. Twenge every screen-based artifact actively increases loneliness and anxiety.",
+    "31": "For Byung-Chul Han we are no longer exploited by cruel masters but are the cheerful architects of our own burnout.",
+    "32": "We pay a monthly subscription to stay inside the Skinner box of The Surveillance Cage synthesis.",
+    "33": "To Carol Dweck you are unfinished, and that is infinitely more powerful than being gifted.",
+    "34": "In the Pygmalion Effect of Robert Rosenthal our expectations of others literally alter their reality.",
+    "35": "Helplessness can be learned, but so can optimism, and to Martin Seligman hope is a muscle that must be violently exercised.",
+    "36": "The Reality Redraw synthesis has the reality-bending power of simply paying attention to the present."
+   }
+  },
+  "cinematic_kayfabizarro_2": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/cinematic_kayfabizarro_2/cinematic_kayfabizarro_2.tr1.lines.csv",
+   "blob": "50c4e0003eb0a99742878fc6a6ee2847f2e9470a",
+   "cards": {
+    "1": "Every decade The Decennial Oracle summons itself to remind you that your favorite movie is trash.",
+    "2": "The Director's Cut steals all credit from the writer and crew, because it's about the process.",
+    "3": "The masses in The Herd Consensus demand the same comfortable myth they have already purchased.",
+    "4": "Under The Regional Bias every nation has a proven greatest film that no one outside has ever seen.",
+    "5": "Citizen Sled-Dog is the peak of human art, so for five decades you debate the meaning of a child's toy.",
+    "6": "The critics decided that Spiral Pigeon, a film about male obsession, was the new objective truth.",
+    "7": "Three hours of real-time kitchen chores in Potato-Peeling Poodle obliterate capitalist entertainment.",
+    "8": "In Bicycle-Thief Fox cinematic power comes from making you feel terrible about post-war poverty.",
+    "9": "Monolith Macaque upgrades your intelligence and alienates you from everyone else at the table.",
+    "10": "Tokyo Turtle Story achieves cinematic perfection by placing a camera off the floor and not moving it.",
+    "11": "Sacrifice your own to protect ungrateful peasants, and Seven Macaques grants immortal legendary status.",
+    "12": "Directors love nothing more than Octo-Auteur, a film about how hard it is to be a director.",
+    "13": "Wind-Blown Pig adjusts the past to suit Americans, and the myth is immune to critical re-evaluation.",
+    "14": "Forfeit your hand to Mafia Pug, or wake up with your favorite card destroyed.",
+    "15": "Every time you feel a shred of childhood nostalgia, Galactic Penguin extracts real-world currency.",
+    "16": "You weep over Sinking Hippo, an entirely avoidable tragedy built on teenage emotional labor.",
+    "17": "In Possessed Chihuahua weaponized Catholic guilt is the most effective mechanism for cinematic terror.",
+    "18": "Hard-Dying Hound reclassifies your peaceful holiday as an explosive combat zone. Yippee-ki-yay.",
+    "19": "Hot Saxophone Hyena gains immunity to critical logic by declaring nobody's perfect!",
+    "20": "Wooden Woodpecker tells a beautiful lie, so you believe in wishing stars while turning into a donkey.",
+    "21": "In Rules of the Game Rooster the upper class collapses in a misunderstanding over a romantic affair.",
+    "22": "Nosferatu Bat is an illegal rip-off of Dracula that survives even if a court orders it destroyed.",
+    "23": "Eisenstein invented modern film editing in Potemkin Pelican just to legitimize a state revolution.",
+    "24": "Look at raw, unscripted mechanical reality, because Camera-Eye Chameleon strips all narrative illusions.",
+    "25": "Stagecoach Stallion pushes you out of your territory for a heroic, highly sanitized origin myth.",
+    "26": "With Replicant Raccoon the scientists agreed that our most likely future is corporate dystopian depression.",
+    "27": "In Brokeback Bovine all combat is resolved through repressed longing and societal pressure.",
+    "28": "In Shawshank Seagull patience and a rock hammer conquer all systemic injustice, every Sunday afternoon.",
+    "29": "With Pather Panchali Tiger the West had to admit that cinema existed outside their bubble.",
+    "30": "No player may attack in Spring Town Panda. You can only sigh deeply and reflect on broken marriages.",
+    "31": "Housemaid Cat slowly poisons you from the inside while cleaning your house.",
+    "32": "In Hong Kong Action Dragon true brotherhood requires shooting people in slow motion.",
+    "33": "In Underdevelopment Iguana the bourgeois observe the outcome without ever taking responsibility for it.",
+    "34": "In Red Light Armadillo trash becomes gold and logic becomes an illegal move.",
+    "35": "Prisoner Llama exposes the extraction of labor, then destroys your most expensive capital-generating unit.",
+    "36": "In Pancho Villa Vulture everyone is revealed to be a flawed, violent opportunist.",
+    "37": "Hanging Rock Kangaroo leaves abruptly, because the continent simply eats people.",
+    "38": "The hobbit-filled New Zealand tourism myth is brutally shattered by Once Were Wombats.",
+    "39": "Orson Welles steals Third Man Bulldog with five minutes of screen time and a monologue about the Swiss.",
+    "40": "Destroy Holy Grail Parrot completely and it is only a flesh wound, so it continues to shout insults.",
+    "41": "Marketa Lazarova Lynx confuses you with non-linear poetry until you forfeit out of exhaustion.",
+    "42": "In Teddy Bear Boar you fill out a form in triplicate, and failure results in immediate arrest.",
+    "43": "You have nowhere to move, because Round-Up Wolf extracts power through geometric intimidation.",
+    "44": "Come and See Bear is the total, uncompromised destruction of the glorious war movie.",
+    "45": "Iranian Deer accidentally predicted an actual real-world revolution, and fueled it.",
+    "46": "Night Counting Camel steals artifacts from the ancient dead to sell for immediate, short-term survival.",
+    "47": "Halfon Hill Sloth ignores all combat and avoids authority through pure comedic incompetence.",
+    "48": "Pay a heavy toll to Dry Summer Tortoise, because controlling the water means controlling the myth.",
+    "49": "Phantom Carriage Reindeer extracts morality by threatening you with the Grim Reaper's Uber service.",
+    "50": "Out of stubborn, frozen spite, Unknown Moose refuses to die.",
+    "51": "Nature Puffin escapes sterile aging by merging with the mythological landscape.",
+    "52": "In Flickering Walrus violent gangsters are lovable, quirky neurotics who blow up their own resources.",
+    "53": "The Ballot Box Badger wins any tie-breaker with skewed demographics and self-selection. See? Bias!",
+    "54": "For The Retrospective Rat what was brilliant is boring, because they're erasing the past!",
+    "55": "The elites of The Genre Pigeonhole refuse to let aliens, ghosts, or laughter sit at the adult table.",
+    "56": "The Wikipedia Weasel nullifies any argument with subjective opinions disguised as objective data."
+   }
+  }
+ },
+ "blocked": {
+  "the_kayfabe_money_trail_9_11": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.tr1.blocked.json",
+   "blob": "4fd137071e63c86d66fbde22ed9d7daf8e2ea4a2",
+   "cards": {
+    "9": "Einschlagszone/Opfer – jede Pointe zielt auf die Toten",
+    "12": "unterstellt einer realen Person Vorwissen",
+    "34": "reale Person mit Terror-Verdacht",
+    "45": "trägt das 'wer flog'-Motiv (Deck-Note 9/11)",
+    "49": "Pentagon-Einschlagsort/Opfer"
+   }
+  },
+  "geopolitical_thrillers_conspiracy_theories": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/geopolitical_thrillers_conspiracy_theories/geopolitical_thrillers_conspiracy_theories.tr1.blocked.json",
+   "blob": "238bbe1d845311fb7935fea9971dfa488a1df23d",
+   "cards": {
+    "3": "antisemitischer Mythos (Rothschild)",
+    "18": "Epstein-Kontext, Opfer von Missbrauch",
+    "21": "Gesundheits-/Pharma-Verschwörung",
+    "22": "Gesundheitsbehauptung (SSRI)",
+    "26": "Pandemie-Leugnung",
+    "27": "Pandemie-Verschwörung",
+    "28": "Impf-Gesundheitsbehauptung",
+    "31": "Pandemie-Verschwörung",
+    "38": "Klima-/Lockdown-Verschwörung",
+    "39": "WHO-Verschwörung",
+    "41": "Blutlinien-Kabale",
+    "42": "Religions-Kabale",
+    "44": "Religions-/Blutlinien-Mythos"
+   }
+  },
+  "shadow_politics": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/shadow_politics/shadow_politics.tr1.blocked.json",
+   "blob": "145c187760acd510672d2495d4befbc127fdc88c",
+   "cards": {
+    "13": "Gesundheits-/Biosicherheits-Verschwörung",
+    "14": "NS-Vergleich",
+    "22": "Klima-Verschwörung",
+    "23": "Great-Replacement-Motiv",
+    "24": "Kulturkampf-Gruppenmotiv",
+    "31": "Pharma-Verschwörung",
+    "33": "Banken-Kabale (antisemitisch codiert)"
+   }
+  }
+ },
+ "print": {},
+ "rules": {
+  "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SSOT_SPOKEN_LINES/checks.json",
+  "blob": "1eca857ff818fae1b365e2958eda544aa27d2376",
+  "revision": "R1.3",
+  "rules": [
+   {
+    "id": "S1",
+    "rule": "Kein Doppelpunkt, nie 'Titel: …'; Titel steht im Satz.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S2",
+    "rule": "Ganze Sätze, kurz, Comic, Flow; keine Fragmente/Telegramm.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S3",
+    "rule": "Keine Satzschablone über das Deck.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S4",
+    "rule": "Nicht vorlesen; Aussage + Pointe der Karte.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S5",
+    "rule": "Nur Kartenwörter + Grammatik, max. ein Fluff-o-lect-Wort.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S6",
+    "rule": "Regelmechanik nie als Regel; Power im Tratsch-Rückfall nie.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S7",
+    "rule": "Keine Klammern; Ziffern/Symbole ausschreiben oder weglassen.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S8",
+    "rule": "Opener bettet ein: Opener + Zeile = ein Satz; nie lose Wörter, nie Ballast-Satz.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S9",
+    "rule": "Kein Opener doppelt; Familienabstand >= 10; Frage/Behauptung wechseln.",
+    "level": "FAIL"
+   },
+   {
+    "id": "S10",
+    "rule": "Nur was der Hörer kennt (kein Asset-Wissen, keine Bildbeschreibung ohne Bild).",
+    "level": "FAIL"
+   },
+   {
+    "id": "S11",
+    "rule": "Absurd statt Klischee (kein Büro/HR/Sitcom).",
+    "level": "FAIL"
+   },
+   {
+    "id": "S12",
+    "rule": "Tonfall heikle Decks (9/11, Verschwörung, Therapie).",
+    "level": "FAIL"
+   },
+   {
+    "id": "S13",
+    "rule": "Lint/Gate-PASS ist kein Qualitätsbeweis.",
+    "level": "FAIL"
+   },
+   {
+    "id": "W1",
+    "rule": "Länge 50–100 Zeichen; Tratsch <=110, Song <=120.",
+    "level": "WARN"
+   },
+   {
+    "id": "W2",
+    "rule": "<=70 % Zeilen mit Titel vorn; kein Folgewort nach Titel >25 %.",
+    "level": "WARN"
+   },
+   {
+    "id": "W3",
+    "rule": "Kein Semikolon.",
+    "level": "WARN"
+   },
+   {
+    "id": "W4",
+    "rule": "Kartentext: Set >=90 %, Song ~70–80 %.",
+    "level": "WARN"
+   },
+   {
+    "id": "F1",
+    "rule": "PDF führt immer; JSON wird nachgezogen.",
+    "level": "FAIL"
+   },
+   {
+    "id": "F2",
+    "rule": "Tratsch-Rückfall ohne Triplet: Titel + gedruckte Lore + POOL-Opener, Power nie, 'roh' markiert.",
+    "level": "FAIL"
+   },
+   {
+    "id": "F3",
+    "rule": "Song = Best-of nach Dramaturgie, nie die ersten N.",
+    "level": "FAIL"
+   },
+   {
+    "id": "F4",
+    "rule": "Erst Probe (8–10 Zeilen) an Georg, dann skalieren.",
+    "level": "FAIL"
+   },
+   {
+    "id": "D1",
+    "rule": "Bühnen-Dialog: A = POOL-Opener + Triplet bzw. Titel (ein Satz); B = Social Call/Erwiderung + Nachlegen bzw. bereinigte Lore; Power nie.",
+    "level": "FAIL"
+   },
+   {
+    "id": "D2",
+    "rule": "Lore-Bereinigung im Rückfall: Klammern, Titel-/Versalien-Etiketten, Stat-/Power-Angaben, Doppelpunkte entfernen (lore_fallback.clean_lore).",
+    "level": "FAIL"
+   }
+  ]
+ },
+ "openers": {
+  "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/OPENER_POOL_BY_STANCE_R1.json",
+  "blob": "f46fb2c1ed39d973b9593e941ee29f37b3078705",
+  "rules": [
+   "Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
+   "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.",
+   "Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.",
+   "Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.",
+   "Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0."
+  ],
+  "openers": [
+   {
+    "opener": "Between you and me,",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Don't tell anyone, but",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "I heard",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Legend has it",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Rumor has it",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "They say",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Word is",
+    "stance": "Gerücht",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "A friend told me about",
+    "stance": "Gerücht",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": "told",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Did you hear about",
+    "stance": "Gerücht",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG 23.10.",
+    "source": "Chat Georg",
+    "note": "Familie heard"
+   },
+   {
+    "opener": "I heard a rumor about",
+    "stance": "Gerücht",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_023",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "The radio kept talking about",
+    "stance": "Gerücht",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "forbidden",
+     "tragic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Overheard at the bakery",
+    "stance": "Gerücht",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "comic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Whispered in the attic",
+    "stance": "Gerücht",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "mystical",
+     "forbidden"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "A friend swears",
+    "stance": "Begegnung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "My grandmother always said",
+    "stance": "Begegnung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "My neighbour swears",
+    "stance": "Begegnung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "A neighbour told me about",
+    "stance": "Begegnung",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "comic",
+     "absurd"
+    ],
+    "family": "told",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "A stranger on the bus told me about",
+    "stance": "Begegnung",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "absurd",
+     "forbidden"
+    ],
+    "family": "told",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I once met",
+    "stance": "Begegnung",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "My grandmother swore by",
+    "stance": "Begegnung",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "comic",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "My neighbour is",
+    "stance": "Begegnung",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG 23.10.",
+    "source": "Chat Georg",
+    "note": "nur vor Personen/Figuren"
+   },
+   {
+    "opener": "My aunt used to say",
+    "stance": "Begegnung",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "comic",
+     "tragic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Fun fact,",
+    "stance": "Fundstück",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "I found a",
+    "stance": "Fundstück",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG 23.10.",
+    "source": "Chat Georg",
+    "note": "nur vor Objekt-/Textkarten"
+   },
+   {
+    "opener": "I read a book about",
+    "stance": "Fundstück",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I saw a film about",
+    "stance": "Fundstück",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_007",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "I saw a painting of",
+    "stance": "Fundstück",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "mystical",
+     "heroic"
+    ],
+    "family": "saw",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "A fortune cookie said",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "absurd",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "A note under my door",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_034",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "A scratched sign read",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_057",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "An unsigned letter said",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "forbidden",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I found a note saying",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": "found",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I found this under my bed",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "absurd",
+     "mystical"
+    ],
+    "family": "found",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "In my old sketchbook",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "mystical",
+     "tragic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "My diary says",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": "diary",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "On the back of a napkin",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "comic",
+     "absurd"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Someone scratched into the wall",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL NEW_049",
+    "source": "OPENER_ARC_MODEL_R1 §8.2",
+    "note": "lang (33 Zeichen)"
+   },
+   {
+    "opener": "Someone wrote in my diary",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": "diary",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Someone wrote in my friendship book",
+    "stance": "Fundstück",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "comic",
+     "tragic"
+    ],
+    "family": "diary",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I dreamed about",
+    "stance": "Anekdote",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_046",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "I went to",
+    "stance": "Anekdote",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-13 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "einzige Orts-Form; nur vor Orts-Karten"
+   },
+   {
+    "opener": "Let me tell you about",
+    "stance": "Anekdote",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Long ago there was",
+    "stance": "Anekdote",
+    "slot": "into_title",
+    "class": "F",
+    "modes": [
+     "tragic",
+     "heroic",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "In a dream last Tuesday",
+    "stance": "Anekdote",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "absurd",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "The other day,",
+    "stance": "Anekdote",
+    "slot": "own_clause",
+    "class": "F",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-12 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Slot = Ereignis"
+   },
+   {
+    "opener": "Did you hear of",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "heard",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Did you see the film about",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "saw",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Do you know",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "know",
+    "status": "POOL",
+    "source": "opener_pool_r2.py",
+    "clause_ok": true
+   },
+   {
+    "opener": "Ever heard of",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-02 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   },
+   {
+    "opener": "Ever tasted",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "try",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Have you ever",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-03 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Slot = Erfahrung, nicht Titel"
+   },
+   {
+    "opener": "Have you heard of",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "heard",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "You know",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "know",
+    "status": "POOL",
+    "source": "opener_pool_r2.py",
+    "clause_ok": true
+   },
+   {
+    "opener": "You know the thing with",
+    "stance": "Frage",
+    "slot": "into_title",
+    "class": "Q",
+    "modes": [
+     "any"
+    ],
+    "family": "thing",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I wonder if",
+    "stance": "Theorie",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Maybe",
+    "stance": "Theorie",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "I wonder why",
+    "stance": "Theorie",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG 23.10.",
+    "source": "Chat Georg",
+    "note": "Frage-Form; Kartenzeile wird zur Frage"
+   },
+   {
+    "opener": "The stars mention",
+    "stance": "Theorie",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "What if",
+    "stance": "Theorie",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py",
+    "clause_ok": true
+   },
+   {
+    "opener": "You would think",
+    "stance": "Theorie",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "The official explanation is",
+    "stance": "Theorie",
+    "slot": "own_clause",
+    "class": "P",
+    "modes": [
+     "forbidden",
+     "comic"
+    ],
+    "family": "official",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Apparently",
+    "stance": "Behauptung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Believe it or not,",
+    "stance": "Behauptung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Here's the thing,",
+    "stance": "Behauptung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "I'm telling you,",
+    "stance": "Behauptung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Turns out",
+    "stance": "Behauptung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "The thing about",
+    "stance": "Behauptung",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": "thing",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "They wrote songs about",
+    "stance": "Behauptung",
+    "slot": "into_title",
+    "class": "P",
+    "modes": [
+     "heroic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Everyone agrees",
+    "stance": "Behauptung",
+    "slot": "own_clause",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": "official",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "There are two kinds of people",
+    "stance": "Behauptung",
+    "slot": "own_clause",
+    "class": "P",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-18 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Slot A/B"
+   },
+   {
+    "opener": "True story",
+    "stance": "Behauptung",
+    "slot": "own_clause",
+    "class": "P",
+    "modes": [
+     "comic",
+     "absurd"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Exactly. And if",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "E",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py",
+    "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   },
+   {
+    "opener": "So what you mean is",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 UP-07 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Dialog"
+   },
+   {
+    "opener": "That is not",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": "retort",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py",
+    "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   },
+   {
+    "opener": "That is not X. That is",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 UP-04 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Dialog; X = Wort des Vorredners"
+   },
+   {
+    "opener": "You call that",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "comic",
+     "absurd"
+    ],
+    "family": "retort",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py",
+    "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   },
+   {
+    "opener": "You said",
+    "stance": "Erwiderung",
+    "slot": "into_title",
+    "class": "R",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py",
+    "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   },
+   {
+    "opener": "Fair. But",
+    "stance": "Erwiderung",
+    "slot": "own_clause",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 UP-05 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Dialog"
+   },
+   {
+    "opener": "Ever notice how",
+    "stance": "Beobachtung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Funny thing is,",
+    "stance": "Beobachtung",
+    "slot": "into_clause",
+    "class": "",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
+    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
+    "clause_ok": true
+   },
+   {
+    "opener": "Did you ever try",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": "try",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Here comes",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "heroic",
+     "comic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Welcome to",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "You played",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "You wanted",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 FW-02 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Slot = Erwartung"
+   },
+   {
+    "opener": "You'll laugh, but",
+    "stance": "Ansprache",
+    "slot": "into_title",
+    "class": "A",
+    "modes": [
+     "comic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "From the back row",
+    "stance": "Ansprache",
+    "slot": "own_clause",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL NEW_028",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "Picture this",
+    "stance": "Ansprache",
+    "slot": "own_clause",
+    "class": "A",
+    "modes": [
+     "comic",
+     "heroic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "You know something I do not",
+    "stance": "Ansprache",
+    "slot": "own_clause",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 FW-06 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   },
+   {
+    "opener": "You look like someone who",
+    "stance": "Ansprache",
+    "slot": "own_clause",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-04 TUNE",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Risiko"
+   },
+   {
+    "opener": "You with the card in your hand",
+    "stance": "Ansprache",
+    "slot": "own_clause",
+    "class": "A",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I still think about",
+    "stance": "Rückruf",
+    "slot": "into_title",
+    "class": "R",
+    "modes": [
+     "tragic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I think I remember",
+    "stance": "Rückruf",
+    "slot": "into_title",
+    "class": "R",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_045",
+    "source": "OPENER_ARC_MODEL_R1 §8.2",
+    "note": "Fehlerinnerung erlaubt (V-327)"
+   },
+   {
+    "opener": "Remember",
+    "stance": "Rückruf",
+    "slot": "into_title",
+    "class": "R",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py",
+    "clause_ok": true
+   },
+   {
+    "opener": "No wait",
+    "stance": "Zweifel/Wende",
+    "slot": "interjection",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "No, wait",
+    "stance": "Zweifel/Wende",
+    "slot": "interjection",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-24 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "= No wait (POOL)"
+   },
+   {
+    "opener": "I used to believe",
+    "stance": "Zweifel/Wende",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py",
+    "clause_ok": true
+   },
+   {
+    "opener": "If only someone had warned",
+    "stance": "Zweifel/Wende",
+    "slot": "into_title",
+    "class": "D",
+    "modes": [
+     "tragic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "But the margin reads",
+    "stance": "Zweifel/Wende",
+    "slot": "own_clause",
+    "class": "D",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "R2 OPR3_074",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "Off the record",
+    "stance": "Zweifel/Wende",
+    "slot": "own_clause",
+    "class": "D",
+    "modes": [
+     "forbidden"
+    ],
+    "family": "secret",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Strictly between us",
+    "stance": "Zweifel/Wende",
+    "slot": "own_clause",
+    "class": "D",
+    "modes": [
+     "forbidden",
+     "comic"
+    ],
+    "family": "secret",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Don't tell anyone about",
+    "stance": "Steigerung",
+    "slot": "into_title",
+    "class": "E",
+    "modes": [
+     "forbidden"
+    ],
+    "family": "secret",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Nobody came back for",
+    "stance": "Steigerung",
+    "slot": "into_title",
+    "class": "E",
+    "modes": [
+     "tragic"
+    ],
+    "family": "nobody",
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Nobody warned us about",
+    "stance": "Steigerung",
+    "slot": "into_title",
+    "class": "E",
+    "modes": [
+     "any"
+    ],
+    "family": "nobody",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Stand back for",
+    "stance": "Steigerung",
+    "slot": "into_title",
+    "class": "E",
+    "modes": [
+     "heroic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Against all odds",
+    "stance": "Steigerung",
+    "slot": "own_clause",
+    "class": "E",
+    "modes": [
+     "heroic"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "And then it gets worse",
+    "stance": "Steigerung",
+    "slot": "own_clause",
+    "class": "E",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 UP-10 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Achtung KayfabeTip 1 ('and then'): nur Song-extern/Tratsch"
+   },
+   {
+    "opener": "Behind the locked door",
+    "stance": "Steigerung",
+    "slot": "own_clause",
+    "class": "E",
+    "modes": [
+     "forbidden",
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Here is something nobody asked for",
+    "stance": "Steigerung",
+    "slot": "own_clause",
+    "class": "E",
+    "modes": [
+     "any"
+    ],
+    "family": "nobody",
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "This one has a rule",
+    "stance": "Steigerung",
+    "slot": "own_clause",
+    "class": "E",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "My goldfish insists on",
+    "stance": "Meta",
+    "slot": "into_title",
+    "class": "M",
+    "modes": [
+     "absurd"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "The deck insists on",
+    "stance": "Meta",
+    "slot": "into_title",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Agree, or tell me why not",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Backstage someone muttered",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "SL OPR3_050",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "Behind the mirror",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "mystical"
+    ],
+    "family": null,
+    "status": "GEORG/R2-Kandidat",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "I am performing a card. The card does not care",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 FW-05 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "lang"
+   },
+   {
+    "opener": "Not a metaphor",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "The deck says",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 FW-08 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   },
+   {
+    "opener": "This card is doing it whether you like it or not",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 FW-03 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "lang"
+   },
+   {
+    "opener": "This is not a metaphor. Unfortunately",
+    "stance": "Meta",
+    "slot": "own_clause",
+    "class": "M",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "P43 OP-19 KEEP",
+    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+    "note": "Familie mit Not a metaphor"
+   },
+   {
+    "opener": "Anyway",
+    "stance": "Szenenwechsel",
+    "slot": "interjection",
+    "class": "X",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Which brings us to",
+    "stance": "Szenenwechsel",
+    "slot": "into_title",
+    "class": "X",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Before we continue",
+    "stance": "Szenenwechsel",
+    "slot": "own_clause",
+    "class": "X",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   },
+   {
+    "opener": "Hold that thought",
+    "stance": "Szenenwechsel",
+    "slot": "own_clause",
+    "class": "X",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "R2 NEW_040",
+    "source": "OPENER_ARC_MODEL_R1 §8.2"
+   },
+   {
+    "opener": "Meanwhile elsewhere",
+    "stance": "Szenenwechsel",
+    "slot": "own_clause",
+    "class": "X",
+    "modes": [
+     "any"
+    ],
+    "family": null,
+    "status": "POOL",
+    "source": "opener_pool_r2.py"
+   }
+  ]
+ },
+ "signature": {
+  "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.json",
+  "blob": "0b8b4b90299c0a93679386f1a2695cf499063dd3",
+  "status": "BESTÄTIGT",
+  "confirmedBy": "Georg 2026-10-20: „ja, gefällt mir – können wir so machen“",
+  "figures": [
+   {
+    "figure": "Norman",
+    "models": [
+     "Norman (DP)"
+    ],
+    "deck": "bullshit_jobs_uncut",
+    "basis": "GEORG"
+   },
+   {
+    "figure": "Combat Mech",
+    "models": [
+     "CombatMech"
+    ],
+    "deck": "the_biological_metropolis",
+    "basis": "GEORG"
+   },
+   {
+    "figure": "4GTN",
+    "models": [
+     "4GTN"
+    ],
+    "deck": "forget_utopia",
+    "basis": "GEORG-KANON"
+   },
+   {
+    "figure": "4GTN Forgotten",
+    "models": [
+     "4GTN_Forgotten"
+    ],
+    "deck": "embrace_protopia",
+    "basis": "GEORG-KANON"
+   },
+   {
+    "figure": "Lorekeeper",
+    "models": [
+     "Lorekeeper"
+    ],
+    "deck": "frizzlebob_s_mission_control",
+    "basis": "GEORG-IDEE"
+   },
+   {
+    "figure": "Mumien (Duo)",
+    "models": [
+     "Mummy_A",
+     "Mummy_B"
+    ],
+    "deck": "pharaoh_piledriver",
+    "basis": "GEORG"
+   },
+   {
+    "figure": "Orc Brute",
+    "models": [
+     "OrcBrute"
+    ],
+    "deck": "the_uruk_rumble",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Caveman",
+    "models": [
+     "Caveman"
+    ],
+    "deck": "philosopher_dungeon_raid",
+    "basis": "GEORG-IDEE"
+   },
+   {
+    "figure": "Toy Soldier",
+    "models": [
+     "ToySoldier"
+    ],
+    "deck": "geopolitical_thrillers_conspiracy_theories",
+    "basis": "GEORG-IDEE"
+   },
+   {
+    "figure": "Goth Girl",
+    "models": [
+     "GothGirl"
+    ],
+    "deck": "project_gateway_kayfabe",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Lord Hunky",
+    "models": [
+     "Lord Hunky (DP, Space-Ranger-Körper)"
+    ],
+    "deck": "cosmic_grift_dark_journalism",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Lady Dory",
+    "models": [
+     "Lady Dory (DP, Space-Ranger-Körper)"
+    ],
+    "deck": "the_kayfabizarro_manifesto_cover_up",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Brain-Cyborg",
+    "models": [
+     "Brain-Cyborg (DP)"
+    ],
+    "deck": "kayfabizarro_philosophy",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Barbarian",
+    "models": [
+     "Barbarian"
+    ],
+    "deck": "woad_and_warriors",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Knight",
+    "models": [
+     "Knight"
+    ],
+    "deck": "platos_dungeon_raid_hero_set_01",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Ranger",
+    "models": [
+     "Ranger"
+    ],
+    "deck": "observation_underground",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Mage",
+    "models": [
+     "Mage"
+    ],
+    "deck": "academic_anarchy_intellectual",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Rogue",
+    "models": [
+     "Rogue"
+    ],
+    "deck": "kayfabizarro_monopolies_manipulation_murder_vol",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Rogue (Hooded)",
+    "models": [
+     "Rogue_Hooded"
+    ],
+    "deck": "trust_and_betrayal",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Orc Raider",
+    "models": [
+     "OrcRaider"
+    ],
+    "deck": "shadow_politics",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Paladin",
+    "models": [
+     "Paladin"
+    ],
+    "deck": "kayfabizarro_1_morale_ethics",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Black Knight",
+    "models": [
+     "BlackKnight"
+    ],
+    "deck": "nibelungen_booster_pack_design",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Protagonist A",
+    "models": [
+     "Protagonist_A"
+    ],
+    "deck": "kayfabizarro_improv_comedy",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Protagonist B",
+    "models": [
+     "Protagonist_B"
+    ],
+    "deck": "kreative_kayfab_creative_hero_journey",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Marksman",
+    "models": [
+     "Marksman"
+    ],
+    "deck": "secret_spy_suplexes",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Clown",
+    "models": [
+     "Clown"
+    ],
+    "deck": "the_carnival_of_unsolved_problems_therapy",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Hiker",
+    "models": [
+     "Hiker"
+    ],
+    "deck": "kayfabizarro_monomyth_mayhem",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Magical Girl",
+    "models": [
+     "MagicalGirl"
+    ],
+    "deck": "the_kayfabe_crucible_coming_of_age",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Robot One",
+    "models": [
+     "Robot_One"
+    ],
+    "deck": "medkayfab_cardiology",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Robot Two",
+    "models": [
+     "Robot_Two"
+    ],
+    "deck": "ignore_dystopia",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Tiefling",
+    "models": [
+     "Tiefling"
+    ],
+    "deck": "plot_pusher_posse",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Farmer A",
+    "models": [
+     "Farmer_A"
+    ],
+    "deck": "reality_redrawn",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Farmer B",
+    "models": [
+     "Farmer_B"
+    ],
+    "deck": "the_bards_barnyard_beatdown",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Driver",
+    "models": [
+     "Driver"
+    ],
+    "deck": "programming_the_whole_child",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Superhero",
+    "models": [
+     "Superhero"
+    ],
+    "deck": "cinematic_kayfabizarro_2",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Monster",
+    "models": [
+     "Monster"
+    ],
+    "deck": "the_move_1",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Monster Costume",
+    "models": [
+     "MonsterCostume"
+    ],
+    "deck": "brain_flipper_image_spots",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Cleric",
+    "models": [
+     "Cleric"
+    ],
+    "deck": "medkayfab_hospital_hierarchy",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Werewolf (Mann/Wolf)",
+    "models": [
+     "Werewolf_Man",
+     "Werewolf_Wolf"
+    ],
+    "deck": "dream_wrestling_with_kayfabe_freud",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Vampire",
+    "models": [
+     "Vampire"
+    ],
+    "deck": "frizzlebob_s_ego_mania_narcissist",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Monstrosity",
+    "models": [
+     "Monstrosity"
+    ],
+    "deck": "kayfabizarro_siege_tower_wall_siege_kampaigns",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Animatronic (creepy)",
+    "models": [
+     "Animatronic_Creepy"
+    ],
+    "deck": "sonic_slaughterhouse",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Animatronic (normal)",
+    "models": [
+     "Animatronic_Normal"
+    ],
+    "deck": "unspoken_systems_kayfabizarro_meta_deck_01",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Witch",
+    "models": [
+     "Witch"
+    ],
+    "deck": "grimms_kayfabe_legends_expansion_set_02",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Plant Warrior",
+    "models": [
+     "PlantWarrior"
+    ],
+    "deck": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Action Figure",
+    "models": [
+     "ActionFigure"
+    ],
+    "deck": "big_bad_brain_wrestling",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Helper A",
+    "models": [
+     "Helper_A"
+    ],
+    "deck": "epistemic_sabotage",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Helper B",
+    "models": [
+     "Helper_B"
+    ],
+    "deck": "shadow_monopoly_blackrock_vanguard_co",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Space Ranger",
+    "models": [
+     "SpaceRanger"
+    ],
+    "deck": "kosmik_kayfabizarro_sci_fi_space_opera",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Frost Golem",
+    "models": [
+     "FrostGolem"
+    ],
+    "deck": "kayfabizzaro_politics",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Ninja",
+    "models": [
+     "Ninja"
+    ],
+    "deck": "mind_traps",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Hoarder",
+    "models": [
+     "Hoarder"
+    ],
+    "deck": "museum_of_modern_mess",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Survivalist",
+    "models": [
+     "Survivalist"
+    ],
+    "deck": "medkayfab_emergency_medicine",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Clanker",
+    "models": [
+     "Clanker"
+    ],
+    "deck": "ai_kayfabe",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Avian Swordsman",
+    "models": [
+     "AvianSwordsman"
+    ],
+    "deck": "kayfabizarro_pulitzer_punk",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Demon Lord",
+    "models": [
+     "DemonLord"
+    ],
+    "deck": "ideology_wrestling",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Santa",
+    "models": [
+     "Santa"
+    ],
+    "deck": "federal_kayfabe",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "UltraTurboHeroMan",
+    "models": [
+     "UltraTurboHeroMan"
+    ],
+    "deck": "anti_rules_toolkit",
+    "basis": "BESTÄTIGT"
+   },
+   {
+    "figure": "Skeleton Mage",
+    "models": [
+     "Skeleton_Mage"
+    ],
+    "deck": "symphonic_savagery",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Skeleton Minion",
+    "models": [
+     "Skeleton_Minion"
+    ],
+    "deck": "uncle_frizzlebob_s_tragic_flaws_id",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Skeleton Warrior",
+    "models": [
+     "Skeleton_Warrior"
+    ],
+    "deck": "sonic_warfare_music_history_01",
+    "basis": "VORSCHLAG"
+   },
+   {
+    "figure": "Skeleton Rogue",
+    "models": [
+     "Skeleton_Rogue"
+    ],
+    "deck": "the_kayfabe_money_trail_9_11",
+    "basis": "VORSCHLAG"
+   }
+  ]
+ }
+}

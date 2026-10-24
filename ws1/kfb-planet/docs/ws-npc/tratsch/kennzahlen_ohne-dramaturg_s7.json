@@ -1,0 +1,376 @@
+{
+ "label": "ohne-dramaturg",
+ "opts": {
+  "drama": false,
+  "fallback": "roh",
+  "mib": false
+ },
+ "seed": 7,
+ "days": 10,
+ "aufstellung": [
+  {
+   "id": "lorekeeper",
+   "group": "bewohner",
+   "deck": "frizzlebob_s_mission_control",
+   "basis": "GEORG-IDEE",
+   "note": null,
+   "art": "Tratschmaul",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "farmer_b",
+   "group": "bewohner",
+   "deck": "the_bards_barnyard_beatdown",
+   "basis": "BESTÄTIGT",
+   "note": null,
+   "art": "Skeptiker",
+   "haltung": "angepasst"
+  },
+  {
+   "id": "skeleton_warrior",
+   "group": "skelette",
+   "deck": "sonic_warfare_music_history_01",
+   "basis": "VORSCHLAG",
+   "note": null,
+   "art": "Übertreiber",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "skeleton_rogue",
+   "group": "skelette",
+   "deck": "the_kayfabe_money_trail_9_11",
+   "basis": "VORSCHLAG",
+   "note": null,
+   "art": "Schweiger",
+   "haltung": "angepasst"
+  },
+  {
+   "id": "skeleton_mage",
+   "group": "skelette",
+   "deck": "symphonic_savagery",
+   "basis": "VORSCHLAG",
+   "note": null,
+   "art": "Übertreiber",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "toy_soldier",
+   "group": "soldaten",
+   "deck": "geopolitical_thrillers_conspiracy_theories",
+   "basis": "GEORG-IDEE",
+   "note": null,
+   "art": "Übertreiber",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "kayfabrick_bot",
+   "group": "bots",
+   "deck": "frizzlebob_s_ego_mania_narcissist",
+   "basis": "SIM-Seed",
+   "note": "keine Signatur-Zeile → SIM-Seed",
+   "art": "Tratschmaul",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "orc_legacy_b",
+   "group": "band",
+   "deck": "anti_rules_toolkit",
+   "basis": "SIM-Seed",
+   "note": "keine Signatur-Zeile → SIM-Seed",
+   "art": "Tratschmaul",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "orc_raider",
+   "group": "band",
+   "deck": "shadow_politics",
+   "basis": "BESTÄTIGT",
+   "note": null,
+   "art": "Tratschmaul",
+   "haltung": "angepasst"
+  },
+  {
+   "id": "orc_brute",
+   "group": "band",
+   "deck": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+   "basis": "SIM-Seed",
+   "note": "Signatur-Deck the_uruk_rumble hat 0 Karten → SIM-Seed",
+   "art": "Schweiger",
+   "haltung": "rebellisch"
+  },
+  {
+   "id": "orc_legacy_a",
+   "group": "band",
+   "deck": "cinematic_kayfabizarro_2",
+   "basis": "SIM-Seed",
+   "note": "keine Signatur-Zeile → SIM-Seed",
+   "art": "Skeptiker",
+   "haltung": "rebellisch"
+  }
+ ],
+ "tage": [
+  {
+   "day": 1,
+   "ex": 14,
+   "bingo": 6,
+   "boggle": 7,
+   "bongo": 0,
+   "bloedsinn": 8,
+   "debates": 2,
+   "mib": 0,
+   "adopted": 6,
+   "conflictCross": 8
+  },
+  {
+   "day": 2,
+   "ex": 14,
+   "bingo": 1,
+   "boggle": 4,
+   "bongo": 0,
+   "bloedsinn": 13,
+   "debates": 2,
+   "mib": 0,
+   "adopted": 1,
+   "conflictCross": 11
+  },
+  {
+   "day": 3,
+   "ex": 13,
+   "bingo": 4,
+   "boggle": 7,
+   "bongo": 0,
+   "bloedsinn": 9,
+   "debates": 1,
+   "mib": 0,
+   "adopted": 4,
+   "conflictCross": 6
+  },
+  {
+   "day": 4,
+   "ex": 14,
+   "bingo": 6,
+   "boggle": 4,
+   "bongo": 1,
+   "bloedsinn": 7,
+   "debates": 2,
+   "mib": 0,
+   "adopted": 6,
+   "conflictCross": 8
+  },
+  {
+   "day": 5,
+   "ex": 18,
+   "bingo": 4,
+   "boggle": 3,
+   "bongo": 0,
+   "bloedsinn": 14,
+   "debates": 6,
+   "mib": 0,
+   "adopted": 4,
+   "conflictCross": 21
+  },
+  {
+   "day": 6,
+   "ex": 16,
+   "bingo": 6,
+   "boggle": 4,
+   "bongo": 1,
+   "bloedsinn": 9,
+   "debates": 4,
+   "mib": 0,
+   "adopted": 6,
+   "conflictCross": 7
+  },
+  {
+   "day": 7,
+   "ex": 14,
+   "bingo": 3,
+   "boggle": 6,
+   "bongo": 0,
+   "bloedsinn": 11,
+   "debates": 2,
+   "mib": 0,
+   "adopted": 3,
+   "conflictCross": 11
+  },
+  {
+   "day": 8,
+   "ex": 13,
+   "bingo": 3,
+   "boggle": 4,
+   "bongo": 0,
+   "bloedsinn": 10,
+   "debates": 1,
+   "mib": 0,
+   "adopted": 3,
+   "conflictCross": 3
+  },
+  {
+   "day": 9,
+   "ex": 14,
+   "bingo": 0,
+   "boggle": 4,
+   "bongo": 0,
+   "bloedsinn": 14,
+   "debates": 3,
+   "mib": 0,
+   "adopted": 0,
+   "conflictCross": 12
+  },
+  {
+   "day": 10,
+   "ex": 16,
+   "bingo": 5,
+   "boggle": 7,
+   "bongo": 0,
+   "bloedsinn": 11,
+   "debates": 5,
+   "mib": 0,
+   "adopted": 5,
+   "conflictCross": 8
+  }
+ ],
+ "kriterien": {
+  "T1_determinismus": {
+   "gleich": true,
+   "sha256": "18f44e3f8b2f4390d110e0194d3b6d3be9ccf230f64a8d41b979065a3f4a3d72"
+  },
+  "T2_tempo": {
+   "kartenJeFigurUndTag": 0.34,
+   "ziel": "0,5–2"
+  },
+  "T3_blasen": {
+   "Q": 0.401,
+   "quer": 0.211,
+   "blasen": [
+    [
+     "lorekeeper",
+     "toy_soldier"
+    ],
+    [
+     "farmer_b",
+     "orc_legacy_b",
+     "orc_raider",
+     "orc_brute",
+     "orc_legacy_a"
+    ],
+    [
+     "skeleton_warrior",
+     "skeleton_rogue",
+     "skeleton_mage",
+     "kayfabrick_bot"
+    ]
+   ],
+   "ziel": "Q ≥ 0,3 und quer ≥ 0,05"
+  },
+  "T4_spam": {
+   "maxJeBegegnung": 1,
+   "nachAblehnungWiederholt": 0,
+   "maxGleicheKarteJeErzaehlerTag": 2,
+   "ziel": "≤ 1 (+ Nachlegen/Debatte) · 0 · ≤ 2"
+  },
+  "T5b_satzbild": {
+   "titelFettGefunden": {
+    "gefunden": 142,
+    "von": 146
+   },
+   "rufe": "Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (fett, V-699)",
+   "kursiv": "nicht gesetzt (Pointe nicht maschinell erkennbar)"
+  },
+  "T5_lesbarkeit": {
+   "maxZeichen": 137,
+   "maxWoerter": 26,
+   "anteilBis140": 1,
+   "ziel": "≤ 140 Zeichen bzw. ≤ 24 Wörter"
+  },
+  "T6_kartentreue": {
+   "alleTexteAusQuelle": true,
+   "ziel": "100 %"
+  },
+  "T7_herkunft": {
+   "vollstaendig": true,
+   "ziel": "100 %"
+  },
+  "T8_muster": {
+   "ohneZufallGleich": 0.806,
+   "ziel": "≥ 0,7"
+  },
+  "T9_callMischung": {
+   "BINGO": 0.194,
+   "BOGGLE": 0.255,
+   "BONGO": 0.01,
+   "Bloedsinn": 0.541,
+   "ziel": "jeder Call kommt vor, keiner > 0,6"
+  },
+  "T10_kosten": {
+   "usJeAustausch": 12.39,
+   "spielstandBytes": 21264,
+   "ziel": "≤ 200 µs; ≤ 64 KB"
+  },
+  "T11_georg": "Georgs Urteil nach dem Lesen",
+  "T12_konflikt": {
+   "jeTag": [
+    8,
+    11,
+    6,
+    8,
+    21,
+    7,
+    11,
+    3,
+    12,
+    8
+   ],
+   "mittel": 9.5,
+   "debatten": 28
+  },
+  "T14_bingoSpaet": {
+   "jeTag": [
+    0.43,
+    0.07,
+    0.31,
+    0.43,
+    0.22,
+    0.38,
+    0.21,
+    0.23,
+    0,
+    0.31
+   ],
+   "tag8bis10max": 0.313,
+   "blödsinnUndBoggleTag8bis10": [
+    14,
+    18,
+    18
+   ],
+   "ziel": "BINGO-Anteil je Tag 8–10 ≤ 0,6; Blödsinn!/BOGGLE bleiben im Mix"
+  },
+  "T15_identitaet": {
+   "mittel": 0.686,
+   "min": 0.429,
+   "je": {
+    "lorekeeper": 0.5,
+    "farmer_b": 1,
+    "skeleton_warrior": 0.6,
+    "skeleton_rogue": 0.75,
+    "skeleton_mage": 0.5,
+    "toy_soldier": 0.67,
+    "kayfabrick_bot": 0.75,
+    "orc_legacy_b": 0.6,
+    "orc_raider": 0.43,
+    "orc_brute": 0.75,
+    "orc_legacy_a": 1
+   }
+  },
+  "T13_spannung": {
+   "kontrastKonfliktMinusRuhe": 0.033,
+   "mittel": {
+    "Aufbau": 0.809,
+    "Konflikt": 0.819,
+    "Ruhe": 0.786
+   },
+   "amplitudeP90P10": 0.513,
+   "ziel": "Kontrast Konflikt − Ruhe ≥ 0,2 (ohne Dramaturg: dieselben Uhrzeiten, Erwartung ≈ 0)"
+  }
+ }
+}

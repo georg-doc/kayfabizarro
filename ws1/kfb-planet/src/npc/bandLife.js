@@ -11,6 +11,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { beatPos, clipTimeAt, placeActor } from './bandClock.js'
 import { createNpcFigure, loadClipSet } from './npcFigure.js'
+import { CHATTER, songBoundary, bandSongLength, createNotice, createChatterLog, pickSpeakers } from './chatterCues.js' // Sprech-Anlässe (Georg 24.10.)
 import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 
 export const BAND = Object.freeze({ visibleFar: 140, bubbleR: 60, gazeR: 14, headMaxYawDeg: 50, headLag: 0.25, placeholderClip: ['Cheering', 'Idle_A'] })
@@ -21,7 +22,11 @@ export function createBandLife(options) {
   bandLog.create++
   const sc = options.scenelet, K = options.worldScale ?? 1, s = (options.classScale ?? 1) * K, yaw0 = options.yaw ?? 0, at = options.at || [0, 0]
   const root = new THREE.Group(); root.name = 'band'
-  const S = { status: 'LOADING', mode: null, error: null, near: false, ms: null, t: 0, beat: 0 }
+  const S = { status: 'LOADING', mode: null, error: null, near: false, ms: null, t: 0, beat: 0, prevSongT: null, songs: 0 }
+  // Sprech-Anlässe (Georg 24.10.): Liedende (16 Takte, Platzhalter) = Applaus-Moment, Bemerken des Spielers; Register-IDs über kfb_band_<rolle>,
+  // vorläufig bis WS0 feste Band-IDs bestätigt (Status §155)
+  const CH = createChatterLog({ group: 'orc_band' }), NOTICE = createNotice()
+  const who = (m) => ({ id: m.a.id, characterId: resolveCharacterId('kfb_band_' + m.a.id), idNote: 'vorläufig (WS0 §155)', at: [+m.pl.x.toFixed(2), +m.pl.z.toFixed(2)] })
   const frustum = new THREE.Frustum(), _pv = new THREE.Matrix4(), _sphere = new THREE.Sphere(new THREE.Vector3(), 1.5 * s)
   const _qp = new THREE.Quaternion(), _q = new THREE.Quaternion(), _y = new THREE.Vector3(0, 1, 0)
   const M = (sc?.actors || []).map((a) => {
@@ -72,6 +77,12 @@ export function createBandLife(options) {
       _sphere.center.set(at[0], options.groundAt(at[0], at[1]) + s, at[1]); _sphere.radius = 4 * s
       S.near = d < (options.bubbleR ?? BAND.bubbleR) || (!!cam && d < BAND.visibleFar && frustum.intersectsSphere(_sphere))
       S.beat = beatPos(sc.timeline.clock, t)
+      if (d < (options.bubbleR ?? BAND.bubbleR) && M.length) { // nur hörbar nah; kein Text, nur Anlass für den Ton
+        const songT = t - (sc.timeline.clock.phaseOffset_s || 0), k = songBoundary(S.prevSongT, songT, bandSongLength(sc.timeline.clock))
+        if (k != null) { S.songs++; CH.emit(pickSpeakers(M, S.songs).map((m) => ({ ...who(m), mood: CHATTER.mood.songEnd, cause: 'songEnd' })), t) }
+        const nr = NOTICE.step(d, t); if (nr) { const m = M.slice().sort((a, b) => Math.hypot(pl.x - a.pl.x, pl.z - a.pl.z) - Math.hypot(pl.x - b.pl.x, pl.z - b.pl.z))[0]; CH.emit([{ ...who(m), mood: CHATTER.mood.notice, cause: 'notice', reason: nr }], t, { force: true }) }
+      } else NOTICE.step(d, t)
+      S.prevSongT = t - (sc.timeline.clock.phaseOffset_s || 0)
       // MVP-Leistung (Lead 22.10., Muster discoLife): Musiker sind Skin-Meshes ohne Frustum-Culling – je Musiker sichtbar nur im Bild (bis visibleFar)
       // oder ganz nah (12·K, Schatten ins Bild); der Takt läuft weiter (Weltzeit)
       for (const m of M) { const dm = pl ? Math.hypot(pl.x - m.pl.x, pl.z - m.pl.z) : 0; _sphere.center.set(m.pl.x, options.groundAt(m.pl.x, m.pl.z) + s, m.pl.z); _sphere.radius = 1.5 * s
@@ -91,6 +102,7 @@ export function createBandLife(options) {
     debug: () => ({ near: S.near, beat: S.beat, at: at.slice(), yaw: yaw0, members: M.map((m) => ({ id: m.a.id, x: m.pl.x, z: m.pl.z, yaw: m.pl.yaw, clip: m.clip, t: m.t ?? null, headYaw: m.headYaw })) }),
     positions: () => M.map((m) => ({ id: 'band-' + m.a.id, x: m.pl.x, z: m.pl.z, y: options.groundAt(m.pl.x, m.pl.z) })),
     holders: () => M.map((m) => m.holder),
+    events: () => CH.events(), // WS-Audio: { type: 'chatter', group: 'orc_band', mood, cause, id, characterId, at, t, seq }
     clayTargets: () => M.filter((m) => m.gltf).map((m) => (m.clayMod ||= { object3d: m.gltf.scene, status: () => ({ status: 'OK' }) })), // Knete (C5): gebackene Band-Figuren (Augen über SKIP_DEFAULT ausgenommen)
     dispose() { bandLog.dispose++; for (const m of M) { m.mixer?.stopAllAction(); m.fig?.dispose(); m.gltf?.scene.traverse((o) => { if (o.isMesh) { o.geometry?.dispose(); [].concat(o.material).forEach((x) => x?.dispose()) } }) } root.clear() },
   }

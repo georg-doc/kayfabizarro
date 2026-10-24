@@ -11,7 +11,8 @@
 import * as THREE from 'three'
 import { createNpcFigure, loadClipSet, FIGURE } from './npcFigure.js'
 import { buildRoutes } from './npcDay.js'
-import { createResidentSim } from './residentSim.js'
+import { createResidentSim, SIM } from './residentSim.js'
+import { CHATTER, createNotice } from './chatterCues.js' // Sprech-Anlässe (Georg 24.10.)
 import { resolveCharacterId } from '../characters/registry.js' // Register CHARACTERS_R1 (V-682): feste Figuren-ID je Darsteller
 import { createNpcMemory } from './npcMemory.js'
 import { createWorldSaveStore } from '../world/worldSave.js'
@@ -28,7 +29,10 @@ export function createResidentLife(options) {
   if (options.memory) { const store = options.memory.store || createWorldSaveStore(); if (options.memoryFresh) store.clear(); mem = createNpcMemory({ store, dayS: W.dayS }) }
   // Begrüßung (Georg 22.10., G-2): Ereignis greet { reason, id, at, t, seq } im Ringpuffer events() und an options.onGreet (Blase, Stimm-Laut) – auch ohne Gedächtnis
   let seq = 0
-  const greet = (e) => { const ev = { type: 'greet', reason: e.reason || 'first', id: e.id, characterId: resolveCharacterId(e.id), at: e.at, t: e.t, seq: ++seq }; S.events.push(ev); if (S.events.length > 40) S.events.shift(); options.onGreet?.(ev) }
+  const greet = (e, { bubble = true } = {}) => { const ev = { type: 'greet', reason: e.reason || 'first', id: e.id, characterId: e.characterId ?? resolveCharacterId(e.id), at: e.at, t: e.t, seq: ++seq, ...(e.source ? { source: e.source } : {}) }; S.events.push(ev); if (S.events.length > 40) S.events.shift(); if (bubble) options.onGreet?.(ev) }
+  // Sprech-Anlass gothgirl (Georg 24.10.): Bemerken des Spielers als greet (first/known) mit Hysterese wie die Bewohner (SIM.playerIn/playerOut) und
+  // Sperrzeit; ohne Blase (gothgirl hat ihre Dialog-Blase), nie während eines Dialogs. options.partners?() → [{ id, x, z }], options.partnerBlocked?()
+  const PN = new Map()
   const hooks = mem ? { greetPlayer: (id) => mem.greetPlayer(id), topic: (a, b) => mem.topic(a, b),
     onEvent: (e) => { if (e.type === 'greet') greet(e); else if (e.type === 'playerNotice') mem.onPlayerNotice(e); else if (e.type === 'threatNotice') mem.onThreatNotice(e)
       else if (e.type === 'encounterDone') mem.onEncounterDone(e); else if (e.type === 'told') mem.tell({ speaker: e.speaker, listener: e.listener, topic: e.topic, t: e.t }) } } : { onEvent: (e) => { if (e.type === 'greet') greet(e) } }
@@ -69,6 +73,8 @@ export function createResidentLife(options) {
         if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(b.x, options.groundAt(b.x, b.z) + 0.9 * K, b.z); return frustum.intersectsSphere(_sphere) }
       for (const r of R) S.near[r.def.residentId] = near(r.def.residentId)
       const outs = sim.step(t, dt, { player: pl, near: (id) => S.near[id], threat: options.threat ? (id, at) => options.threat(id, at) : undefined }) // Phase C: Dark Fluffer
+      for (const p of options.partners?.() || []) { if (!PN.has(p.id)) PN.set(p.id, createNotice({ inR: SIM.playerIn, outR: SIM.playerOut, cooldownS: CHATTER.noticeCooldownS }))
+        const r = PN.get(p.id).step(pl ? Math.hypot(pl.x - p.x, pl.z - p.z) : null, t); if (r && !options.partnerBlocked?.()) greet({ id: p.id, reason: r, at: [+p.x.toFixed(2), +p.z.toFixed(2)], t, source: 'partner' }, { bubble: false }) }
       // MVP-Leistung (Lead 22.10., Muster discoLife): Figuren sind Skin-Meshes ohne Frustum-Culling – sichtbar nur im Bild (bis visibleFar) oder
       // ganz nah (12·K, Schatten ins Bild), sonst ausgeblendet; Plan, Uhr und Gedächtnis laufen weiter
       const show = (o) => { if (!pl) return true; const d = Math.hypot(o.x - pl.x, o.z - pl.z); if (d < 12 * K) return true; if (!cam || d > LIFE.visibleFar) return false; _sphere.center.set(o.x, options.groundAt(o.x, o.z) + 0.9 * K, o.z); return frustum.intersectsSphere(_sphere) }

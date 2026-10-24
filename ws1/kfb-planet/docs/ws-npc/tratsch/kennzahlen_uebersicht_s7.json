@@ -1,0 +1,591 @@
+{
+ "schema": "kfb.tratsch-stage0/1",
+ "seed": 7,
+ "days": 10,
+ "quelle": {
+  "daten": {
+   "repo": "georg-doc/kayfabizarro",
+   "branch": "ws-song/workshop-r1",
+   "commit": "a428e0913764e604eeaeff630ea423710323ce60",
+   "revision": "tr1",
+   "index": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SSOT_SPOKEN_LINES/TR1_INDEX.json",
+    "blob": "473506442598e99f5de6f69168df1e3f48935193",
+    "status": "Entwurf – nicht von Georg abgenommen; Probe Mission Control #1–11 abgenickt"
+   }
+  },
+  "kartenJson": "georg-doc/kayfabizarro media/kfb @0c20db9149926789b08321b447b3a70c3480df60 (V-242 Kartentext = Druck)"
+ },
+ "tripletDatenbefund": [],
+ "laeufe": {
+  "haupt": {
+   "T1_determinismus": {
+    "gleich": true,
+    "sha256": "163d7a54a6f48d27d979911c8dbb80edd25c523265f5704460d9a28ec931ccb8"
+   },
+   "T2_tempo": {
+    "kartenJeFigurUndTag": 0.6,
+    "ziel": "0,5–2"
+   },
+   "T3_blasen": {
+    "Q": 0.266,
+    "quer": 0.257,
+    "blasen": [
+     [
+      "lorekeeper",
+      "skeleton_warrior"
+     ],
+     [
+      "skeleton_rogue",
+      "skeleton_mage"
+     ],
+     [
+      "kayfabrick_bot",
+      "orc_legacy_b",
+      "orc_raider",
+      "orc_brute",
+      "orc_legacy_a"
+     ]
+    ],
+    "ziel": "Q ≥ 0,3 und quer ≥ 0,05"
+   },
+   "T4_spam": {
+    "maxJeBegegnung": 1,
+    "nachAblehnungWiederholt": 0,
+    "maxGleicheKarteJeErzaehlerTag": 2,
+    "ziel": "≤ 1 (+ Nachlegen/Debatte) · 0 · ≤ 2"
+   },
+   "T5b_satzbild": {
+    "titelFettGefunden": {
+     "gefunden": 170,
+     "von": 174
+    },
+    "rufe": "Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (fett, V-699)",
+    "kursiv": "nicht gesetzt (Pointe nicht maschinell erkennbar)"
+   },
+   "T5_lesbarkeit": {
+    "maxZeichen": 138,
+    "maxWoerter": 25,
+    "anteilBis140": 1,
+    "ziel": "≤ 140 Zeichen bzw. ≤ 24 Wörter"
+   },
+   "T6_kartentreue": {
+    "alleTexteAusQuelle": true,
+    "ziel": "100 %"
+   },
+   "T7_herkunft": {
+    "vollstaendig": true,
+    "ziel": "100 %"
+   },
+   "T8_muster": {
+    "ohneZufallGleich": 0.813,
+    "ziel": "≥ 0,7"
+   },
+   "T9_callMischung": {
+    "BINGO": 0.32,
+    "BOGGLE": 0.205,
+    "BONGO": 0.009,
+    "Bloedsinn": 0.466,
+    "ziel": "jeder Call kommt vor, keiner > 0,6"
+   },
+   "T10_kosten": {
+    "usJeAustausch": 27.74,
+    "spielstandBytes": 25820,
+    "ziel": "≤ 200 µs; ≤ 64 KB"
+   },
+   "T11_georg": "Georgs Urteil nach dem Lesen",
+   "T12_konflikt": {
+    "jeTag": [
+     18,
+     14,
+     16,
+     11,
+     6,
+     14,
+     16,
+     17,
+     9,
+     7
+    ],
+    "mittel": 12.8,
+    "debatten": 55
+   },
+   "T14_bingoSpaet": {
+    "jeTag": [
+     0.42,
+     0.44,
+     0.26,
+     0.43,
+     0.43,
+     0.47,
+     0.35,
+     0.35,
+     0.44,
+     0.46
+    ],
+    "tag8bis10max": 0.462,
+    "blödsinnUndBoggleTag8bis10": [
+     17,
+     11,
+     9
+    ],
+    "ziel": "BINGO-Anteil je Tag 8–10 ≤ 0,6; Blödsinn!/BOGGLE bleiben im Mix"
+   },
+   "T15_identitaet": {
+    "mittel": 0.585,
+    "min": 0.261,
+    "je": {
+     "lorekeeper": 0.46,
+     "farmer_b": 1,
+     "skeleton_warrior": 0.43,
+     "skeleton_rogue": 0.5,
+     "skeleton_mage": 0.5,
+     "toy_soldier": 1,
+     "kayfabrick_bot": 0.6,
+     "orc_legacy_b": 0.43,
+     "orc_raider": 0.26,
+     "orc_brute": 0.4,
+     "orc_legacy_a": 0.86
+    }
+   },
+   "T13_spannung": {
+    "kontrastKonfliktMinusRuhe": 0.142,
+    "mittel": {
+     "Aufbau": 0.554,
+     "Konflikt": 0.759,
+     "Ruhe": 0.617
+    },
+    "amplitudeP90P10": 0.654,
+    "ziel": "Kontrast Konflikt − Ruhe ≥ 0,2 (ohne Dramaturg: dieselben Uhrzeiten, Erwartung ≈ 0)"
+   }
+  },
+  "ohne-dramaturg": {
+   "T1_determinismus": {
+    "gleich": true,
+    "sha256": "18f44e3f8b2f4390d110e0194d3b6d3be9ccf230f64a8d41b979065a3f4a3d72"
+   },
+   "T2_tempo": {
+    "kartenJeFigurUndTag": 0.34,
+    "ziel": "0,5–2"
+   },
+   "T3_blasen": {
+    "Q": 0.401,
+    "quer": 0.211,
+    "blasen": [
+     [
+      "lorekeeper",
+      "toy_soldier"
+     ],
+     [
+      "farmer_b",
+      "orc_legacy_b",
+      "orc_raider",
+      "orc_brute",
+      "orc_legacy_a"
+     ],
+     [
+      "skeleton_warrior",
+      "skeleton_rogue",
+      "skeleton_mage",
+      "kayfabrick_bot"
+     ]
+    ],
+    "ziel": "Q ≥ 0,3 und quer ≥ 0,05"
+   },
+   "T4_spam": {
+    "maxJeBegegnung": 1,
+    "nachAblehnungWiederholt": 0,
+    "maxGleicheKarteJeErzaehlerTag": 2,
+    "ziel": "≤ 1 (+ Nachlegen/Debatte) · 0 · ≤ 2"
+   },
+   "T5b_satzbild": {
+    "titelFettGefunden": {
+     "gefunden": 142,
+     "von": 146
+    },
+    "rufe": "Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (fett, V-699)",
+    "kursiv": "nicht gesetzt (Pointe nicht maschinell erkennbar)"
+   },
+   "T5_lesbarkeit": {
+    "maxZeichen": 137,
+    "maxWoerter": 26,
+    "anteilBis140": 1,
+    "ziel": "≤ 140 Zeichen bzw. ≤ 24 Wörter"
+   },
+   "T6_kartentreue": {
+    "alleTexteAusQuelle": true,
+    "ziel": "100 %"
+   },
+   "T7_herkunft": {
+    "vollstaendig": true,
+    "ziel": "100 %"
+   },
+   "T8_muster": {
+    "ohneZufallGleich": 0.806,
+    "ziel": "≥ 0,7"
+   },
+   "T9_callMischung": {
+    "BINGO": 0.194,
+    "BOGGLE": 0.255,
+    "BONGO": 0.01,
+    "Bloedsinn": 0.541,
+    "ziel": "jeder Call kommt vor, keiner > 0,6"
+   },
+   "T10_kosten": {
+    "usJeAustausch": 12.39,
+    "spielstandBytes": 21264,
+    "ziel": "≤ 200 µs; ≤ 64 KB"
+   },
+   "T11_georg": "Georgs Urteil nach dem Lesen",
+   "T12_konflikt": {
+    "jeTag": [
+     8,
+     11,
+     6,
+     8,
+     21,
+     7,
+     11,
+     3,
+     12,
+     8
+    ],
+    "mittel": 9.5,
+    "debatten": 28
+   },
+   "T14_bingoSpaet": {
+    "jeTag": [
+     0.43,
+     0.07,
+     0.31,
+     0.43,
+     0.22,
+     0.38,
+     0.21,
+     0.23,
+     0,
+     0.31
+    ],
+    "tag8bis10max": 0.313,
+    "blödsinnUndBoggleTag8bis10": [
+     14,
+     18,
+     18
+    ],
+    "ziel": "BINGO-Anteil je Tag 8–10 ≤ 0,6; Blödsinn!/BOGGLE bleiben im Mix"
+   },
+   "T15_identitaet": {
+    "mittel": 0.686,
+    "min": 0.429,
+    "je": {
+     "lorekeeper": 0.5,
+     "farmer_b": 1,
+     "skeleton_warrior": 0.6,
+     "skeleton_rogue": 0.75,
+     "skeleton_mage": 0.5,
+     "toy_soldier": 0.67,
+     "kayfabrick_bot": 0.75,
+     "orc_legacy_b": 0.6,
+     "orc_raider": 0.43,
+     "orc_brute": 0.75,
+     "orc_legacy_a": 1
+    }
+   },
+   "T13_spannung": {
+    "kontrastKonfliktMinusRuhe": 0.033,
+    "mittel": {
+     "Aufbau": 0.809,
+     "Konflikt": 0.819,
+     "Ruhe": 0.786
+    },
+    "amplitudeP90P10": 0.513,
+    "ziel": "Kontrast Konflikt − Ruhe ≥ 0,2 (ohne Dramaturg: dieselben Uhrzeiten, Erwartung ≈ 0)"
+   }
+  },
+  "ohne-roh": {
+   "T1_determinismus": {
+    "gleich": true,
+    "sha256": "8dba11f920b41699eb7a9ada11e1f02b0698f593c0e9bd51ec134f5f3c469102"
+   },
+   "T2_tempo": {
+    "kartenJeFigurUndTag": 0.72,
+    "ziel": "0,5–2"
+   },
+   "T3_blasen": {
+    "Q": 0.238,
+    "quer": 0.344,
+    "blasen": [
+     [
+      "lorekeeper",
+      "skeleton_warrior",
+      "toy_soldier",
+      "orc_raider"
+     ],
+     [
+      "skeleton_rogue",
+      "skeleton_mage"
+     ],
+     [
+      "kayfabrick_bot",
+      "orc_legacy_b",
+      "orc_brute",
+      "orc_legacy_a"
+     ]
+    ],
+    "ziel": "Q ≥ 0,3 und quer ≥ 0,05"
+   },
+   "T4_spam": {
+    "maxJeBegegnung": 1,
+    "nachAblehnungWiederholt": 0,
+    "maxGleicheKarteJeErzaehlerTag": 2,
+    "ziel": "≤ 1 (+ Nachlegen/Debatte) · 0 · ≤ 2"
+   },
+   "T5b_satzbild": {
+    "titelFettGefunden": {
+     "gefunden": 179,
+     "von": 182
+    },
+    "rufe": "Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (fett, V-699)",
+    "kursiv": "nicht gesetzt (Pointe nicht maschinell erkennbar)"
+   },
+   "T5_lesbarkeit": {
+    "maxZeichen": 138,
+    "maxWoerter": 26,
+    "anteilBis140": 1,
+    "ziel": "≤ 140 Zeichen bzw. ≤ 24 Wörter"
+   },
+   "T6_kartentreue": {
+    "alleTexteAusQuelle": true,
+    "ziel": "100 %"
+   },
+   "T7_herkunft": {
+    "vollstaendig": true,
+    "ziel": "100 %"
+   },
+   "T8_muster": {
+    "ohneZufallGleich": 0.777,
+    "ziel": "≥ 0,7"
+   },
+   "T9_callMischung": {
+    "BINGO": 0.409,
+    "BOGGLE": 0.173,
+    "BONGO": 0,
+    "Bloedsinn": 0.418,
+    "ziel": "jeder Call kommt vor, keiner > 0,6"
+   },
+   "T10_kosten": {
+    "usJeAustausch": 9.61,
+    "spielstandBytes": 27249,
+    "ziel": "≤ 200 µs; ≤ 64 KB"
+   },
+   "T11_georg": "Georgs Urteil nach dem Lesen",
+   "T12_konflikt": {
+    "jeTag": [
+     18,
+     15,
+     17,
+     12,
+     8,
+     13,
+     13,
+     11,
+     10,
+     9
+    ],
+    "mittel": 12.6,
+    "debatten": 63
+   },
+   "T14_bingoSpaet": {
+    "jeTag": [
+     0.42,
+     0.58,
+     0.57,
+     0.56,
+     0.5,
+     0.53,
+     0.41,
+     0.5,
+     0.44,
+     0.41
+    ],
+    "tag8bis10max": 0.5,
+    "blödsinnUndBoggleTag8bis10": [
+     11,
+     12,
+     12
+    ],
+    "ziel": "BINGO-Anteil je Tag 8–10 ≤ 0,6; Blödsinn!/BOGGLE bleiben im Mix"
+   },
+   "T15_identitaet": {
+    "mittel": 0.523,
+    "min": 0.3,
+    "je": {
+     "lorekeeper": 0.43,
+     "farmer_b": 1,
+     "skeleton_warrior": 0.38,
+     "skeleton_rogue": 0.43,
+     "skeleton_mage": 0.75,
+     "toy_soldier": 0.75,
+     "kayfabrick_bot": 0.43,
+     "orc_legacy_b": 0.32,
+     "orc_raider": 0.3,
+     "orc_brute": 0.38,
+     "orc_legacy_a": 0.6
+    }
+   },
+   "T13_spannung": {
+    "kontrastKonfliktMinusRuhe": 0.253,
+    "mittel": {
+     "Aufbau": 0.526,
+     "Konflikt": 0.731,
+     "Ruhe": 0.478
+    },
+    "amplitudeP90P10": 0.644,
+    "ziel": "Kontrast Konflikt − Ruhe ≥ 0,2 (ohne Dramaturg: dieselben Uhrzeiten, Erwartung ≈ 0)"
+   }
+  },
+  "mit-mib": {
+   "T1_determinismus": {
+    "gleich": true,
+    "sha256": "cb4b676f398d8167c8c454373bad061cdea50cd3f98fdb3a68723446b61de6cd"
+   },
+   "T2_tempo": {
+    "kartenJeFigurUndTag": 0.52,
+    "ziel": "0,5–2"
+   },
+   "T3_blasen": {
+    "Q": 0.223,
+    "quer": 0.381,
+    "blasen": [
+     [
+      "lorekeeper",
+      "orc_legacy_b",
+      "orc_raider"
+     ],
+     [
+      "farmer_b",
+      "kayfabrick_bot",
+      "orc_brute",
+      "orc_legacy_a"
+     ],
+     [
+      "skeleton_warrior",
+      "skeleton_rogue",
+      "skeleton_mage",
+      "toy_soldier"
+     ]
+    ],
+    "ziel": "Q ≥ 0,3 und quer ≥ 0,05"
+   },
+   "T4_spam": {
+    "maxJeBegegnung": 1,
+    "nachAblehnungWiederholt": 0,
+    "maxGleicheKarteJeErzaehlerTag": 2,
+    "ziel": "≤ 1 (+ Nachlegen/Debatte) · 0 · ≤ 2"
+   },
+   "T5b_satzbild": {
+    "titelFettGefunden": {
+     "gefunden": 179,
+     "von": 182
+    },
+    "rufe": "Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (fett, V-699)",
+    "kursiv": "nicht gesetzt (Pointe nicht maschinell erkennbar)"
+   },
+   "T5_lesbarkeit": {
+    "maxZeichen": 134,
+    "maxWoerter": 23,
+    "anteilBis140": 1,
+    "ziel": "≤ 140 Zeichen bzw. ≤ 24 Wörter"
+   },
+   "T6_kartentreue": {
+    "alleTexteAusQuelle": true,
+    "ziel": "100 %"
+   },
+   "T7_herkunft": {
+    "vollstaendig": true,
+    "ziel": "100 %"
+   },
+   "T8_muster": {
+    "ohneZufallGleich": 0.776,
+    "ziel": "≥ 0,7"
+   },
+   "T9_callMischung": {
+    "BINGO": 0.362,
+    "BOGGLE": 0.216,
+    "BONGO": 0.004,
+    "Bloedsinn": 0.418,
+    "ziel": "jeder Call kommt vor, keiner > 0,6"
+   },
+   "T10_kosten": {
+    "usJeAustausch": 12.83,
+    "spielstandBytes": 26123,
+    "ziel": "≤ 200 µs; ≤ 64 KB"
+   },
+   "T11_georg": "Georgs Urteil nach dem Lesen",
+   "T12_konflikt": {
+    "jeTag": [
+     18,
+     15,
+     15,
+     14,
+     8,
+     10,
+     15,
+     12,
+     15,
+     14
+    ],
+    "mittel": 13.6,
+    "debatten": 66
+   },
+   "T14_bingoSpaet": {
+    "jeTag": [
+     0.42,
+     0.44,
+     0.42,
+     0.55,
+     0.53,
+     0.56,
+     0.44,
+     0.35,
+     0.28,
+     0.61
+    ],
+    "tag8bis10max": 0.611,
+    "blödsinnUndBoggleTag8bis10": [
+     13,
+     14,
+     10
+    ],
+    "ziel": "BINGO-Anteil je Tag 8–10 ≤ 0,6; Blödsinn!/BOGGLE bleiben im Mix"
+   },
+   "T15_identitaet": {
+    "mittel": 0.607,
+    "min": 0.316,
+    "je": {
+     "lorekeeper": 0.6,
+     "farmer_b": 1,
+     "skeleton_warrior": 0.75,
+     "skeleton_rogue": 0.46,
+     "skeleton_mage": 0.5,
+     "toy_soldier": 0.75,
+     "kayfabrick_bot": 0.86,
+     "orc_legacy_b": 0.4,
+     "orc_raider": 0.32,
+     "orc_brute": 0.38,
+     "orc_legacy_a": 0.67
+    }
+   },
+   "T13_spannung": {
+    "kontrastKonfliktMinusRuhe": 0.237,
+    "mittel": {
+     "Aufbau": 0.569,
+     "Konflikt": 0.801,
+     "Ruhe": 0.564
+    },
+    "amplitudeP90P10": 0.635,
+    "ziel": "Kontrast Konflikt − Ruhe ≥ 0,2 (ohne Dramaturg: dieselben Uhrzeiten, Erwartung ≈ 0)"
+   }
+  }
+ }
+}

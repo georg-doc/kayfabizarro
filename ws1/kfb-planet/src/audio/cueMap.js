@@ -25,10 +25,10 @@ export function chatterFamily(chatter) {
 export function chatterRate(chatter) { const v = String(chatter?.instrument?.v ?? chatter?.instrument ?? '').toLowerCase(); return /^hohe?\b/.test(v) ? 1.12 : /^tiefe?\b/.test(v) ? 0.89 : 1 }
 // Georgs Familien-Wahl (Hub q178 „Vorschlag so“, WS0 V-693, 23.10.) – gilt nur, bis das Register sie trägt; ein gesetzter Register-Wert geht immer vor.
 // Skelette Kazoo (+ Klapper-Transient), Spielzeugsoldaten gestopfte Trompete, gothgirl Oboe, übrige Fluffer-Sorten hohe Okarina (Geist Säge, Aliens Theremin stehen im Register).
-// Orc-Band (Tuba) und Disco K12 (Talkbox) haben noch keinen Sprech-Anlass im Spiel.
+// Orc-Band (group orc_band) Tuba, Disco K12 (group disco_k12) Talkbox – Sprech-Anlässe baut WS-NPC (Lead/Georg 24.10.): events() mit type 'chatter' und mood.
 export function decidedChatter(e) {
   const id = String(e?.characterId ?? ''), g = e?.group ?? ''
-  const v = g === 'skeleton_patrol' || id.startsWith('skeleton_') ? 'Kazoo' : g === 'toy_squad' || id.startsWith('toy_soldier') ? 'gestopfte Trompete' : id === 'gothgirl' ? 'Oboe'
+  const v = g === 'orc_band' ? 'Tuba' : g === 'disco_k12' ? 'Talkbox' : g === 'skeleton_patrol' || id.startsWith('skeleton_') ? 'Kazoo' : g === 'toy_squad' || id.startsWith('toy_soldier') ? 'gestopfte Trompete' : id === 'gothgirl' ? 'Oboe'
     : id.startsWith('q_') && id !== 'q_ghost' && !id.startsWith('q_alien') ? 'hohe Okarina' : null
   return v ? { instrument: v, status: 'V-693' } : null
 }

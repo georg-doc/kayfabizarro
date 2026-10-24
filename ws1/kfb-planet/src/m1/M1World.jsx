@@ -206,7 +206,7 @@ const GIFT_AUTO = /giftauto=(\d+(?:\.\d+)?)/.exec(hash)?.[1]
 const makeGift = mk('gift', (o) => { const m = createGiftReveal(o), own = m.update; let auto = GIFT_AUTO != null; m.update = (dt, c) => { if (auto && (M1CLOCK.t ?? 0) >= +GIFT_AUTO && m.spawnAt()) auto = false; own(dt, c) }; return m })
 const GIFT_OPTS = GIFT_DEF ? { spec: REVEAL_TOY, def: { ...GIFT_DEF, ...GIFT_AT }, urls: { base: giftBaseUrl, baseBin: giftBaseBin, unwrapped: giftPaperUrl, unwrappedBin: giftPaperBin, tex: giftTex },
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => M1CLOCK.t ?? 0, groups: () => mods.groups, worldScale: K, classScale: CLASS_SCALE } : null
-const NPC_OPTS = { world: NPC_WORLD, threat: (id, at) => mods.fluffer?.threat?.(at) ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
+const NPC_OPTS = { world: NPC_WORLD, partners: () => { const st = mods.partner?.status?.(), p = st?.status === 'OK' && st.shown !== false ? worldPosOf(mods.partner) : null; return p ? [{ id: 'gothgirl', x: p.x, z: p.z }] : [] }, partnerBlocked: () => M1STATE.phase === 'dialog', /* Sprech-Anlass gothgirl (Georg 24.10.): Bemerken als greet ohne Blase */ threat: (id, at) => mods.fluffer?.threat?.(at) ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
   onGreet: (e) => { if (!GREET_LINES.noBubble.includes(e.reason)) useGame.getState().say('npc-' + e.id, getReader().silence(), 'thought') }, // G-2: Blase je Grund (greet.<reason>); bis WS0-Zeilen da sind nur „…“ (S5b),
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
@@ -585,7 +585,7 @@ function M1World() {
     isReady: () => isPoolReady() && mods.amph?.status().status === 'OK' && ['CARD', 'PLACEHOLDER'].includes(mods.billboard?.info()?.source) && mods.player?.status().status === 'OK' && mods.partner?.status().status === 'OK' && mods.partner?.status().shown !== false, // wie Stage.jsx isReady (beide Darsteller-Arten melden shown; false = noch unsichtbar)
     _session: session,
   }), [session])
-  const makeDialog = useCallback((o) => trackDialog(createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }), mods), [])
+  const makeDialog = useCallback((o) => trackDialog(createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), ssotLine: (...a) => o.reader.ssotLine(...a), silence: () => o.reader.silence() } }), mods), [])
 
   useEffect(() => {
     if (!DEBUG) return

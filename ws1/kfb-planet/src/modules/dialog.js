@@ -13,6 +13,7 @@
 // und gleicher Antwortzeit der Ports (Test d1); im Browser schwanken beide. Asynchrone Schritte (Karte, Zeile) sperren den Übergang, höchstens
 // cardWaitMs bzw. lineWaitMs lang; danach geht es mit Platzhalter bzw. „…“ weiter (Prüfer 8, Befund 1).
 import { Group } from 'three'
+import { SSOT_LINES_ON, createOpenerRotation, isBlocked } from '../dialog/ssotLines.js'   // lines=ssot (Georg 24.10.): TRIPLET_SSOT_R1-Rückfall, Sperrliste
 
 export const D1 = Object.freeze({ cardWaitMs: 12000, lineWaitMs: 8000, gapMs: 600, pauseMs: 900, choiceMs: 20000, wordMs: 380, minLineMs: 1400 })
 export const dialogLog = { create: 0, update: 0, dispose: 0 }
@@ -23,6 +24,7 @@ export function createDialog(options) {
   dialogLog.create++
   const { cards = [], reader, billboard, actors = {}, say, openChoice = () => {}, closeChoice = () => {}, anchors = { left: 'stage-left', right: 'stage-right' }, onEvent = () => {}, isReady = () => true } = options
   const T = { ...D1, ...(options.timing || {}) }
+  const ssot = options.ssot ?? SSOT_LINES_ON, rot = ssot ? createOpenerRotation() : null
   const S = { i: -1, phase: 'IDLE', t: 0, wait: null, busy: false, usedOpeners: new Set(), usedBeats: new Set(), log: [], disposed: false, choice: null, choiceId: null }
   S.clock = 0
   const emit = (type, data = {}) => { const e = { type, beat: S.i, t: +S.clock.toFixed(3), ...data }; S.log.push(e); onEvent(e) }
@@ -51,6 +53,7 @@ export function createDialog(options) {
 
   function next() {
     S.i++
+    while (ssot && cards[S.i] && isBlocked(cards[S.i].deck.id, cards[S.i].num)) { emit('blocked', { card: cards[S.i].deck.id + '#' + cards[S.i].num }); S.i++ }   // SSOT S12: nie sprechen
     if (S.i >= cards.length) { S.phase = 'DONE'; emit('done', { beats: cards.length }); return }
     const card = cards[S.i]
     S.phase = 'CARD'; emit('card', { card: card ? card.deck.id + '#' + card.num : null })
@@ -66,7 +69,7 @@ export function createDialog(options) {
         if (S.busy && S.t < T.cardWaitMs) return
         if (S.busy) emit('card-timeout')
         S.phase = 'A_LOAD'; S.t = 0
-        gate(() => reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats }))
+        gate(() => (ssot ? reader.ssotLine(card, 'A', rot.next()) : reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats })))
         return
       case 'A_LOAD':
         if (S.busy && S.t < T.lineWaitMs) return
@@ -77,7 +80,7 @@ export function createDialog(options) {
         if (S.t < S.lineMs + T.gapMs) return
         free(side('left') === 'left' ? 'right' : 'left')
         S.phase = 'B_LOAD'; S.t -= S.lineMs + T.gapMs
-        gate(() => reader.lineFor(card, { field: 'power', pool: false })) // Antwort: nie Pool, nur wörtlich (ein Triplet je Karte, V-231)
+        gate(() => (ssot ? reader.ssotLine(card, 'B') : reader.lineFor(card, { field: 'power', pool: false }))) // Antwort: nie Pool, nur wörtlich (ein Triplet je Karte, V-231); mit lines=ssot bereinigte Lore statt Power
         return
       case 'B_LOAD':
         if (S.busy && S.t < T.lineWaitMs) return

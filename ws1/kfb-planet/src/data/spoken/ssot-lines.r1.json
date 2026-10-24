@@ -1,0 +1,89 @@
+{
+ "schema": "kfb.spoken-lines/1",
+ "source": "georg-doc/kayfabizarro ws-song/workshop-r1 @93c4bd65 (TRIPLET_SSOT_R1, V-698–700)",
+ "openersA": [
+  {
+   "id": "op34",
+   "text": "Did you hear of",
+   "stance": "Frage",
+   "q": true,
+   "family": "heard"
+  },
+  {
+   "id": "op36",
+   "text": "Do you know",
+   "stance": "Frage",
+   "q": true,
+   "family": "know"
+  },
+  {
+   "id": "op40",
+   "text": "Have you heard of",
+   "stance": "Frage",
+   "q": true,
+   "family": "heard"
+  },
+  {
+   "id": "op41",
+   "text": "You know",
+   "stance": "Frage",
+   "q": true,
+   "family": "know"
+  },
+  {
+   "id": "op42",
+   "text": "You know the thing with",
+   "stance": "Frage",
+   "q": true,
+   "family": "thing"
+  },
+  {
+   "id": "op45",
+   "text": "What if",
+   "stance": "Theorie",
+   "q": false,
+   "family": null
+  },
+  {
+   "id": "op48",
+   "text": "The thing about",
+   "stance": "Behauptung",
+   "q": false,
+   "family": "thing"
+  }
+ ],
+ "retortsB": [],
+ "blocked": {
+  "geopolitical_thrillers_conspiracy_theories": [
+   3,
+   18,
+   21,
+   22,
+   26,
+   27,
+   28,
+   31,
+   38,
+   39,
+   41,
+   42,
+   44
+  ],
+  "shadow_politics": [
+   13,
+   14,
+   22,
+   23,
+   24,
+   31,
+   33
+  ],
+  "the_kayfabe_money_trail_9_11": [
+   9,
+   12,
+   34,
+   45,
+   49
+  ]
+ }
+}

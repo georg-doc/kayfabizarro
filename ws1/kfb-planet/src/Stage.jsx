@@ -159,7 +159,7 @@ const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return 
 // Meshy-Bühne: Bühnen-Modul mit Bildflächen-Inhalt auf ihrem Slot (meshyStage.createMeshyScene); `amph` = Bühne, `billboard` = Bildfläche wie beim Billboard
 const makeMeshy = (o) => { const { stage, screen } = createMeshyScene({ ...o, card: CARD }); mods.amph = stage; mods.billboard = screen; expose('StageMods', mods); return stage }
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', (o) => (o.refused ? createRefusedFigure(o) : createActor(o))), makeR = mk('right', (o) => (o.refused ? createRefusedFigure(o) : createActor(o)))
-const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
+const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), ssotLine: (...a) => o.reader.ssotLine(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
 
 // Himmel (V-245, färbt mit): Kuppel mit Verlauf skyBottom → skyTop aus den Rollen; Nebel = skyBottom. Wechsel weich (V-011).
 const sky = (() => {

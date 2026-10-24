@@ -15,7 +15,7 @@ import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
 import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD } from './cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -349,11 +349,13 @@ export function greet(e, pos = null, chatter = null) { // chatter: Register-Bloc
 // Sprechlaut einer Figur zu einem Anlass (Gruppe: aggro/awake/calm/ko; Fluffer: windup/healed), Instrument aus dem Register bzw. Georgs Wahl V-693;
 // ohne Familie mit Clips kein zusätzlicher Laut (die bisherigen Gruppen-/Fluffer-Töne bleiben). Je Gruppe bzw. Figur und Anlass höchstens alle 1,5 s.
 export function chatter(e, pos = null, ch = null) {
-  const mood = CHATTER_MOOD[e?.type]; if (!mood || S.mode !== 'full' || !CTX) return null
+  const mood = e?.type === 'chatter' && CHATTER_MOODS.includes(e.mood) ? e.mood : CHATTER_MOOD[e?.type]; if (!mood || S.mode !== 'full' || !CTX) return null // type 'chatter' mit eigenem mood (WS-NPC: Band, Disco)
   const who = e.characterId ?? e.id ?? '?', fam = chatterFamily(ch); S.greetChatter ||= {}
   S.greetChatter[who] = fam ? (ch?.status === 'V-693' ? 'V-693:' : 'set:') + fam : 'fallback'; if (!fam) return null
-  const key = (e.group || who) + '|' + e.type, t = CTX.currentTime; S.chatAt ||= {}; if (t - (S.chatAt[key] ?? -9) < 1.5) return null; S.chatAt[key] = t
-  const cue = `chatter.${fam}.${mood}`, v = play(cue, { pos, at: 0.12, gain: 0.85, rate: chatterRate(ch) }); if (v) log({ type: 'chatter', e: e.type, id: who, cue }); return v ? cue : null
+  // Sperre: Gruppen-Ereignisse (aggro … für alle Mitglieder zugleich) einmal je Gruppe; WS-NPC 'chatter' je Sprecher, mehrere Sprecher desselben Anlasses (gleiches t) reihum versetzt
+  const key = (e.group || who) + '|' + e.type + (e.type === 'chatter' ? '|' + (e.id ?? who) : ''), t = CTX.currentTime; S.chatAt ||= {}; if (t - (S.chatAt[key] ?? -9) < 1.5) return null; S.chatAt[key] = t
+  let at = 0.12; if (e.type === 'chatter' && e.t != null) { const turn = (e.group || '') + '|' + e.t; S.chatTurn ||= {}; at += 0.7 * (S.chatTurn[turn] = (S.chatTurn[turn] ?? -1) + 1); if (Object.keys(S.chatTurn).length > 40) S.chatTurn = {} }
+  const cue = `chatter.${fam}.${mood}`, v = play(cue, { pos, at, gain: 0.85, rate: chatterRate(ch) }); if (v) log({ type: 'chatter', e: e.type, id: who, cue }); return v ? cue : null
 }
 export function ui(name) { return play('ui.' + name) }
 // Präsenz-Schleifen: laufen, solange Ereignisse kommen (hold s), folgen der letzten Lage, blenden danach aus

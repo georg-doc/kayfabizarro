@@ -21,6 +21,7 @@ export const POOL_BLOB = 'dfb5435bc0c913ea48f8f5558f801b293962fbc8' // git rev-p
 export const POOL_URL = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${POOL_COMMIT}/${POOL_PATH}`
 export const SILENCE = '…'
 
+import { lineA as ssotLineA, lineB as ssotLineB } from './dialog/ssotLines.js'
 const issued = new WeakSet()
 // tief einfrieren: auch parts ist danach unveränderlich (blinder Prüfer 3, Befund 4)
 const issue = (line) => { if (line.parts) Object.freeze(line.parts); Object.freeze(line); issued.add(line); return line }
@@ -122,6 +123,13 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
       return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: card.deck.id + '#' + card.num })
     },
     silence: () => issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE' }),
+    // TRIPLET_SSOT_R1 (lines=ssot, Georg 24.10.): Rückfall A = Opener + **Titel**, B = bereinigte Lore; Power nie. text = Klartext (Mund/Ton), parts = Anzeige mit *fett* (V-699, Blasen-Kern)
+    ssotLine(card, role, opener) {
+      const key = (card?.deck?.id ?? '?') + '#' + (card?.num ?? '?'), src = cardSource ? cardSource(card?.deck?.id, card?.num) : null
+      const disp = src ? (role === 'A' ? ssotLineA({ name: src.name }, opener) : ssotLineB({ name: src.name, lore: src.lore })) : null
+      if (!disp) return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: key, reason: src ? 'SSOT_EMPTY' : 'CARD_NOT_IN_SOURCE' })
+      return issue({ text: disp.replace(/\*/g, ''), parts: [disp], source: 'CARD', field: 'ssot-' + role, openerId: role === 'A' ? opener?.id ?? null : null, card: key })
+    },
   }
 }
 
