@@ -1,7 +1,34 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §157.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§157 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §158.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§158 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 158 · 24.10. · Neuer Stand game/mvp-r1 @aec4695 (= ws1/mvp-r1 @e111361) · Antworten auf WS0_TO_WS1 24.10. · HUD 3D R1 im Bau
+
+**Stand** (volle Reihe: 74 PASS; FAIL nur die alten c2 und c3g):
+- Sprech-Anlässe gothgirl, Orc-Band und Disco K12: WS-NPC 7cb09fe plus WS-Audio-Empfang (Tuba, Talkbox, Oboe), Deckel 90 s je Gruppe.
+  - Band/Disco laufen mit **vorläufigen IDs**; feste Register-IDs liegen bei WS0 (§155).
+- **Sprechblasen nach TRIPLET_SSOT_R1 hinter `lines=ssot`** (Abnahme bei Georg):
+  - Bühnen-Dialog ohne abgenommenes Triplet: A = POOL-Frage-Opener plus fetter Titel, B = bereinigte Lore (clean_lore R1.2). Power nie.
+  - Sperrliste (25 Karten) nie gezogen. Daten: src/data/spoken/ssot-lines.r1.json aus ws-song/workshop-r1 @93c4bd65.
+  - Georg 24.10.: Lore-Bereinigung ja (Klammern, Doppelpunkt-Etiketten, „Power: N“; Beispiel 1001_kayfabe_nights „THE HEEL PROMOTER: … Power: 100.“). **Bitte in TRIPLET_SSOT_R1 §2 nachziehen** (dort steht noch „Kartentext roh“).
+- **V-699 im Renderer:** Der Kern (chatterbox-core) kennt `*fett*` mit einem Sternchen; bubbleLayer zeichnet fette Token jetzt als `<b>`. **Kursiv fehlt im Kern** und braucht eine Vendor-Erweiterung (WS0).
+- Tratsch-SIM Lauf 2 mit tr1 (ws-npc c9d1421): Leseseite bei Georg. Das Konzept liegt jetzt in mvp unter docs/ws-npc/ (WS0-Bitte).
+- Spiegel: kayfabizarro ws1/mvp-r1 @b60904b (src/private = 0).
+
+**Zu WS0_TO_WS1 24.10.:**
+- ws-audio/r1 @76eeb2b ist gemergt, Commit für WSA siehe §156 (@8119a2a); jetzt aktueller @aec4695.
+- c3b „F.sync is not a function“: bei mir PASS auf mvp. Das lag am Worktree von WS-Audio, nicht am mvp-Stand.
+- **Karten für alle Decks nach Druck:** Lead-Plan bei Georg (Antwort ausstehend):
+  1. Automatischer Abgleich main/media/kfb gegen 52adc8f1 je Deck (Schreibweise → cardNamePrint, Textabweichungen, fehlende Karten).
+  2. Nur Decks mit echten Textabweichungen gegen das PDF lesen.
+  - Druck-Transkriptionen gibt es bisher nur für Ego Mania und Mission Control.
+- Trio Utopia/Dystopia/Protopia: Georg will tr1 für alle drei. Die Probe liegt bei Georg (Deck-Songs). forget_utopia ist das Bühnen-Deck.
+
+**HUD 3D R1** (Board von Claude Design, V-694): Georg 24.10. „integrieren und testen“.
+- WS1e baut hinter `hud=3d`, in der vorhandenen HUD-Hülle (HUD-Pass, kein zweiter Kontext), als zweite Bausteinliste. Standard bleibt hud=clay.
+- Spike: Zielpfeil, sechs Kugeln, Truhe, mit Messung.
+- **Offener Owner:** Zielpfeil/Quest-POI. Vorerst füllt der M1-Wirt (Lead) den Haken target() mit dem Platzhalter Bühne. Bitte Owner festlegen.
 
 ## 157 · 24.10. · SSOT gesprochene Kartenzeilen: WS1-Audit (Spiel verstößt) und ein Widerspruch im Modul für WS0
 
