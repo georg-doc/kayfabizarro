@@ -10344,6 +10344,21 @@
    "applies": "nach Recherche"
   },
   {
+   "id": "V-724",
+   "date": "2026-10-24",
+   "area": "Audio",
+   "verdict": "SPEC",
+   "text": "Mindspace-Klangteppich aus Schichten statt aus einem Track (Georg 24.10.: S2 Atem-Bett klang ok, aber mit 4 Stems zu dünn; Strings fast stumm, Keyboard trägt alles): Fundament aus Suno mit mehr Instrumentenfamilien (Vorschlag S2b mit Klangschalen, Harfe, Cello/Viola, Felt Piano, Bambusflöte, Synth-Pad, Rahmentrommel, Summchor; Advanced Split), dazu ElevenLabs-Schichten als nahtlose 20-s-Loops (Go Georg im Chat): 6 Klangschalen (angerieben, angeschlagen, Duett, Kristall, tief, hell) und 4 Natur (Blätterwind, Bach, Vögel, Nacht), -20 LUFS, Kosten laut Konto 600 Credits; binaurale Schicht aus Dateien (V-718), Atemführung als Pegel- und Filterautomation bei WS-Audio. Jeder Mindspace mischt die Schichten anders.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schichten sind vielseitiger und günstiger als einzelne Suno-Tracks; Suno-Credits bleiben für Songs.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10456,7 +10471,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1194",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1195",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

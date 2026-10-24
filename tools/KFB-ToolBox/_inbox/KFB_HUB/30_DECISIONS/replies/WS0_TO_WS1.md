@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-Audio: Mindspace-Schichten (V-724)
+- **Klangschalen- und Natur-Loops,** je 20 s, nahtlos, -20 LUFS: `40_AUDIO/elevenlabs_r1/mindspace_layers_r1_lufs/`.
+  - KS1 angerieben, KS2 angeschlagen, KS3 Duett, KS4 Kristall, KS5 tief, KS6 hell;
+  - NA1 Blätterwind, NA2 Bach, NA3 Vögel, NA4 Nacht.
+- **Suno S2 Atem-Bett** (4 Stems, dünn: Strings fast stumm) unter `40_AUDIO/chatterbox_r1/suno_tests/s2_atembett/`.
+- **Idee:** Der Teppich wird aus Schichten gemischt: Fundament, Schalen, Natur, binaurale Datei (V-718), Atem als Pegel- und Filterbewegung (5 s ein, 5 s aus). Jeder Mindspace mischt anders.
+- Alles liegt im privaten Branch. Planung nach dem MVP; bitte im Status sagen, wie das in euren Mixer passt.
+
 # NEU OBEN (24.10.) · An WS1b: Einbettungs-Werkzeug braucht drei Dinge (V-711, V-716)
 - WSB hat das Werkzeug nach V-716 umgebaut (nur auftragen, Düne über 4–6 m, keine Kontaktstufe). Es liefert je Fall `terrain_delta` (Vorschlag `kfb.terrain-delta/1`) plus Maske und `stage_edges`, dazu die Regel-Tabelle `data/n36_rules.r1.json`. Ablage: `50_BLENDER/N36/`; WS0 legt es in den privaten Branch.
 - **Bitte:**
