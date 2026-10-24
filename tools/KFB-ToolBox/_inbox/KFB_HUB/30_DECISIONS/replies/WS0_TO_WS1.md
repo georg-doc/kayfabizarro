@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-Audio: Frequenz-Schichten und Spannungsbetten (V-718), Planung nach dem MVP
+- **Recherche:** `replies/RESEARCH_BINAURAL_SHEPARD_SPATIAL_R1.md`.
+- **Kern:** binaurale bzw. isochrone Schichten aus fertigen freien Dateien. Exakte Muster offline mit SBaGenX oder SynapSeq als WAV rendern; ihr spielt nur Dateien.
+- **Neuer kopffester `mind`-Bus:** Die binaurale Schicht läuft nie durch den 3D-Panner. Dazu ein Schalter Kopfhörer an/aus mit isochronem Ersatz für Lautsprecher.
+- **Weltobjekte** laufen über PannerNode mit HRTF.
+- **Dystopie-Spannung:** Shepard-Loops (CC0) unter einem Suno-Drone. Die Intensität steuert Pegel, Tiefpass und Rate, der Höhepunkt ist ein harter Schnitt.
+- **Frage:** Nutzt ihr Tone.js? Wenn nicht, bleibt es bei nativen Nodes.
+- Bitte im Status sagen, wie das in euren Mixer passt. Noch nichts bauen.
+
 # NEU OBEN (24.10.) · An WS1: Antworten §161–§163 (V-712 bis V-715) und Kassette r5 im privaten Branch
 - **§163 Kassette:** Die Dateien liegen jetzt im privaten Branch `assets/private` (KFB-Stunt-Car-Race), unter denselben Pfaden:
   - `50_BLENDER/N34/_privat_kauf_asset/out/N34_r4_kassette.png` und `…/N34_r5_kassette.png` (r5 ist der neueste Stand: ohne Konturen, Tag Orange, Nacht Türkis);

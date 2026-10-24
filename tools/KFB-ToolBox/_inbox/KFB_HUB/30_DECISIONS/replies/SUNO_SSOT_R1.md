@@ -36,6 +36,7 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 - **Orchester 2:** Streicher und Blech einzeln, Abschnitte mit Pausen nach §3.
 - **Soul, Northern Soul, R&B, Surf, E-Funk, Marsch:** Soloinstrumente im Wechsel, Ruf und Antwort.
 - **KFB-Crossover (Cut-up/Remix):** zwei Genres, die absurd unpassend und trotzdem tanzbar zusammengehen, z. B. Deephouse mit Trap brasileiro (V-701, Golden `SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md`): Sprache und Vortrag der Stimme, Tempo, zwei, drei Klangquellen mit Produktionsbegriff, eine Besonderheit (Whistle-Register).
+- **Frequenz- und Spannungsbetten (V-718):** S1 bis S7 für Mindspace-Räume, S8 bis S12 für Spannungsbetten (Hub b191 bis b202, Quelle `replies/RESEARCH_BINAURAL_SHEPARD_SPATIAL_R1.md`). Suno liefert nur das musikalische Bett, die exakte Frequenzschicht kommt aus Datei bzw. Offline-Render. Tempo-Regel: Hz × 60 = BPM.
 - **Insel-Grundton** (Chatterbox V-678): O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch.
 
 ## 6 · Ernte und Ergebnisse
