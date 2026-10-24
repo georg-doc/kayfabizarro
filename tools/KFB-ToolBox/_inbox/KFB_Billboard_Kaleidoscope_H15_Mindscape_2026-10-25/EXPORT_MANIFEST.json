@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.export-manifest/1",
+  "name": "KFB Billboard Kaleidoscope H15 Mindscape",
+  "date": "2026-10-25",
+  "from": "Claude Design (Projekt Hex Assets Worldbuilding)",
+  "basis": "H14 (export/kfb-h14-static-bake-2026-09-30), unverändert",
+  "entry": "KFB Billboard Kaleidoscope H15 Mindscape.dc.html",
+  "files": [
+    "00_START_HERE.md", "DOKU.md", "HANDOVER_WS0.md", "OFFEN_UND_FRAGEN.md", "TOP5_WS0.md", "CHANGELOG_ADDITIVE.md", "EXPORT_MANIFEST.json",
+    "KFB Billboard Kaleidoscope H15 Mindscape.dc.html", "support.js",
+    "KFB_H15_Mindscape/poems.js", "KFB_H15_Mindscape/soundbed.js",
+    "KFB_H15_Mindscape/RETURN_M1.md", "KFB_H15_Mindscape/RETURN_M2.md", "KFB_H15_Mindscape/RETURN_M3_NAHT.md",
+    "data/h6-card-crops.json",
+    "hypernorm_r3/texte/poetic_occult_archive_seed.json", "hypernorm_r3/texte/quote_index_full.json",
+    "hypernorm_r3/pd_audio/manifest.json", "hypernorm_r3/pd_pool/manifest.json"
+  ],
+  "excluded": {
+    "hypernorm_r3/pd_pool/*.jpg|png (481)": "georg-doc/KFB-Stunt-Car-Race @ design/claude-design-r3, hypernorm_r3/pd_pool/ (privat)",
+    "three.js": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "fonts": "Google Fonts zur Laufzeit",
+    "audio": "archive.org zur Laufzeit, keine Tondatei im Paket"
+  },
+  "pins": {
+    "public_domain": "f3acaaeb98530dd9ffb7d200d61956891e738336",
+    "three": "0.160.0"
+  },
+  "runtime_sources": ["commons.wikimedia.org/w/api.php", "en.wikisource.org", "de.wikisource.org", "archive.org/metadata", "tile.loc.gov", "fonts.googleapis.com"],
+  "status": { "tested": "Preview Claude Design", "hardware": "NOT_TESTED", "m3_seam": "NOT_TESTED", "georg_acceptance": "offen" }
+}
