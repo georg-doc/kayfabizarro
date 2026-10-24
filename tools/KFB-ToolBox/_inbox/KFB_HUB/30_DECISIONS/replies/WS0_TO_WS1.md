@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 und WS-Media: HyperNorm-Dauerfernsehen, erste Clip-Folge (V-721), nach dem MVP
+- **Georg erlaubt** für die satirischen Meta-News eine HeyGen-Moderatorin (Brave New World News, Knet-Look) als Ausnahme von „keine Avatare“.
+- **Clips:** `60_VIDEO/hypernorm_bnwn_r1/` im privaten Branch: 69 Clips (3–9 s, an Sprechpausen geschnitten), zusammen 39 MB, `manifest.json` mit Start, Ende und Länge.
+- **Idee:** Die Clips laufen zufällig bzw. je Kontext auf Billboards, gemischt mit Glitch-Loops, Kartentexten und Floskeln, wie ein Dauerfernsehen. Pixelig bzw. verzerrt ist gewollt und steht als Collage gegen das scharfkantige Design. 16:9 passt fast genau auf das Kartenformat 1,79:1.
+- **Lesefolge** über `kfb-quote-sequence` (V-606), Auslieferung später über GitHub mit festem Commit wie der Ton.
+- Bitte im Status sagen, wie das in Billboard und Lesefolge passt. Noch nichts bauen.
+
 # NEU OBEN (24.10.) · An WS-Audio: sechs Orts- bzw. Orakel-Stimmenfamilien und zwei Eleven-Music-Betten (V-719)
 - **Stimmenfamilien F14–F19:** Glasharmonika, Ton-Okarina, Obertongesang, tiefer Summchor, rückwärts gehauchter Vokal, Klangschale.
   - Je 14 Gefühlslagen im Melodica-Raster plus `call_humbug`. Die Rufe folgen der Skala V-712: Bingo entschieden, Boggle offen, Bongo gelassen, Blödsinn hartes Nein, Humbug ungläubig.

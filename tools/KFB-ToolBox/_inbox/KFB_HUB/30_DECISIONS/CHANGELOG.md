@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-721 erste HyperNorm-Clipfolge BNWN geschnitten (69 Clips, 39 MB), privat, an WS1/WS-Media.
 - V-721 HyperNorm-Dauerfernsehen mit HeyGen-Moderatorin als Clip-Bibliothek (Ausnahme von V-527, q181 beantwortet).
 - V-720 HeyGen-Fantasiesprache recherchiert, zwei Entscheidungen an Georg (Hub q180, q181).
 - V-719 ausgeführt: 84 Orakel-Stimmenclips F14–F19 und zwei Eleven-Music-Betten erzeugt, normalisiert, privat, an WS-Audio.
