@@ -1,0 +1,47 @@
+name: KFB Seed World real-source planar debris & smoke hybrid
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kfb-seedworld-source-fx-ab.yml'
+      - 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-fx-ab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld
+            media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png
+            .github/workflows/kfb-seedworld-source-fx-ab.yml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install renderer and Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.51.1 three@0.170.0
+          npx playwright install --with-deps chromium
+      - name: JS syntax and exact source-mask integrity
+        run: |
+          node --check 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/comparison.mjs'
+          node --check 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/shard-proof.mjs'
+          test "$(git hash-object media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png)" = 7cbc81b89d58671748e819f5f9756d5fbe53a477
+      - name: Verify actual source shard isolation and planar wood under same smoke
+        env:
+          KFB_PROOF_DIR: kfb-seedworld-planar-shard-evidence
+        run: |
+          python3 -m http.server 8768 --bind 127.0.0.1 > /tmp/kfb-spellspill-fx-ab.log 2>&1 &
+          sleep 2
+          node 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/shard-proof.mjs'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-seedworld-planar-shard-evidence
+          path: kfb-seedworld-planar-shard-evidence/
+          if-no-files-found: warn
+          retention-days: 21

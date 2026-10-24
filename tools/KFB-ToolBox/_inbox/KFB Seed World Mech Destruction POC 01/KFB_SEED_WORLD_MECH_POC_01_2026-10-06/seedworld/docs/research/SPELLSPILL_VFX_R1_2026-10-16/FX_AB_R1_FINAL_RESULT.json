@@ -1,0 +1,146 @@
+{
+  "schema": "kfb.seedworld.spellspill-fx-ab/1",
+  "date": "2026-10-16",
+  "status": "TECHNICAL_CI_PASS_VISUAL_STYLE_AND_TARGET_GPU_OPEN",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-seedworld-spellspill-vfx-audit-2026-10-16",
+  "testedHead": "6c2214da5844b50fb9a1f952fd339040a332e2f9",
+  "ci": {
+    "runId": 38926541781,
+    "jobId": 117059410671,
+    "conclusion": "success",
+    "checksPassed": 50,
+    "checksTotal": 50,
+    "screenshots": 14,
+    "measurementRows": 12,
+    "artifactId": 12058220353,
+    "artifactSha256": "412d691d9ed99c7b389c11d39444f2e35b3aef245ccc1e2a6e32622aedaffcd4"
+  },
+  "source": {
+    "realWorld": "seedworld/sw-world.js",
+    "realDestruct": "seedworld/sw-destruct.js",
+    "original3D": "seedworld/sw-destruct.js mDust original Icosahedron geometry/material",
+    "realMask": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+    "maskBlob": "7cbc81b89d58671748e819f5f9756d5fbe53a477",
+    "sourceIsolationShots": [
+      "isolated-source-3d.png",
+      "isolated-source-2d.png"
+    ],
+    "noProductionCodeModified": true
+  },
+  "tests": {
+    "single": {
+      "explosions": 1,
+      "cellsLost": 8,
+      "cascades": 0,
+      "dust": 17,
+      "vfxPeak": 135,
+      "pixelsChanged": {
+        "a": 2.147,
+        "b": 0.071,
+        "c": 2.034
+      },
+      "triangles": {
+        "none": 673834,
+        "a": 675194,
+        "b": 673902,
+        "c": 674586
+      },
+      "p95CpuSubmitMs": {
+        "none": 9.4,
+        "a": 6.8,
+        "b": 9.9,
+        "c": 7.5
+      }
+    },
+    "four": {
+      "explosions": 4,
+      "cellsLost": 48,
+      "cascades": 0,
+      "dust": 113,
+      "vfxPeak": 482,
+      "pixelsChanged": {
+        "a": 12.67,
+        "b": 0.833,
+        "c": 1.031
+      },
+      "triangles": {
+        "none": 739468,
+        "a": 748508,
+        "b": 739920,
+        "c": 740604
+      },
+      "p95CpuSubmitMs": {
+        "none": 6.8,
+        "a": 7.4,
+        "b": 8.5,
+        "c": 7.2
+      }
+    },
+    "block": {
+      "explosions": 12,
+      "buildingsRepeated": 4,
+      "cellsLost": 90,
+      "actualSupportCascades": 2,
+      "dust": 195,
+      "dustCapacity": 200,
+      "debris": 178,
+      "debrisCapacity": 256,
+      "vfxPeak": 584,
+      "vfxCapacity": 584,
+      "pixelsChanged": {
+        "a": 9.147,
+        "b": 1.272,
+        "c": 4.222
+      },
+      "triangles": {
+        "none": 796942,
+        "a": 812542,
+        "b": 797722,
+        "c": 798406
+      },
+      "p95CpuSubmitMs": {
+        "none": 8.4,
+        "a": 7.4,
+        "b": 7.5,
+        "c": 8.3
+      },
+      "p95RafMs": {
+        "none": 2437.7,
+        "a": 3674,
+        "b": 2520.6,
+        "c": 1705.6
+      },
+      "sourceSmokeTriangles": {
+        "a": 15600,
+        "b": 780,
+        "c": 1464
+      }
+    }
+  },
+  "judgment": {
+    "sourceIdentity": "PASS",
+    "gameplayDamageImmutableAcrossVariants": "PASS",
+    "actualSupportCollapse": "PASS_BLOCK_2_CASCADES",
+    "visualPixelGate": "PASS_MINIMUM_PIXEL_DIFFERENCE_ONLY",
+    "clayGolden": "NOT_ACCEPTED",
+    "humanLook": "NOT_RUN",
+    "targetGpuFps": "NOT_RUN",
+    "dynamicTimeReadability": "NOT_RUN",
+    "fullWorldRuntimeIntegration": "NOT_RUN",
+    "ranking": "NO_SPEED_WINNER__RENDER_SUBMIT_AND_RAF_CI_NOT_GPU_FPS",
+    "visualCritic": "A_TOO_SMOOTH_OPAQUE_B_WEAK_AND_DULL_C_DOMINATED_BY_OVERSIZE_3D_LOBE"
+  },
+  "lastFailedVisualEvidence": {
+    "firstRunId": 38924108695,
+    "firstTechnical": "39/39 but VISUAL_FAIL",
+    "secondRunId": 38925577044,
+    "secondTechnical": "13/14 pixel FAIL",
+    "preserved": true
+  },
+  "nextGate": "KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW",
+  "merged": false,
+  "site": null,
+  "stage": null,
+  "live": false
+}

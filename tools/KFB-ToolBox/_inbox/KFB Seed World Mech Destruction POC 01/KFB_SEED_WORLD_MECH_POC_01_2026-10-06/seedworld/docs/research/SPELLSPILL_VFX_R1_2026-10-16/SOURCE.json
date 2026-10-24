@@ -1,0 +1,434 @@
+{
+  "schema": "kfb.seedworld.spellspill-vfx-reference/0.1",
+  "date": "2026-10-16",
+  "scope": "RESEARCH_ONLY",
+  "owner": "KFB Seed World Mech Destruction POC 01 (research playground)",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-seedworld-spellspill-vfx-audit-2026-10-16",
+  "dropbox": {
+    "folderName": "SpellSpill VFX Study",
+    "folderId": "id:KeQLaY5-IIAAAAAAAAp9Uw",
+    "sharedUrl": "https://www.dropbox.com/scl/fo/khq2ourkr6ihtkvsofo3b/AF6uLp4fDDyuWr_5iGNl7_s?rlkey=75r24euxt8e6ybfo3d1y9j2pe&dl=0",
+    "items": [
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.52.47.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Sg",
+        "dropboxContentHash": "5dd8c313139ed66d9927305c67e312cdbad3eb745cb90f61c4770e7521eec329"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.52.57.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Sw",
+        "dropboxContentHash": "64c45ba4f6d3755b6d497ee2adfdeb6935a5fb9d62ce93270914d63d18f303cb"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.53.09.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9TA",
+        "dropboxContentHash": "3d6008600074841eab6cee6348739eb961e40ba976c759d36f553ba2c61ef4ae"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.53.30.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9TQ",
+        "dropboxContentHash": "1c20cd66e5f55a411123cacb3bf7393835cb1cf28ca06481118a5774e65552d7"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.03.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Tg",
+        "dropboxContentHash": "23e494f4762d58a4d9620881143ca80d45fdb38297701ca56d9e386aa9f87ea5"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.20.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Tw",
+        "dropboxContentHash": "d96d7a57af16d7611118fda46f1ac2dcb66a801044f955d421d70169aa0ebdf1"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.36.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9UA",
+        "dropboxContentHash": "31bc7b2d93f136ee8a6e7ed3c2a84178e255e3bd3577724759dbd97dad256f03"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.50.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9UQ",
+        "dropboxContentHash": "9f8539845130b5b9b659d65aa9b5ae001147b04b832afff9bac530fcd94eec86"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.58.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Ug",
+        "dropboxContentHash": "487acba781d5cfc15d7d1b2851b0d55221c6722945ed41969e41c7deabe6e4d5"
+      }
+    ],
+    "originalPngsMirroredToGitHub": false,
+    "sourceMediaLookDirectlyInspected": true,
+    "contactSheetOnly": true,
+    "eachOriginalFullResViewed": false
+  },
+  "reddit": {
+    "shortUrl": "https://www.reddit.com/r/threejs/s/rVGHVxDEdT",
+    "exactPostVerified": false
+  },
+  "relatedPublicProject": {
+    "name": "Spellspill: Magic Destruction Sandbox",
+    "developer": "TCPB Arts",
+    "steamAppId": 5273530,
+    "identityMatchesScreenshots": "UNVERIFIED",
+    "confirmedAlgorithmOrSourceRepo": false
+  },
+  "proposedComparisons": [
+    {
+      "variant": "A",
+      "name": "near hero 3D clay lobes",
+      "effectOwner": "existing POC VFX",
+      "risk": "geometry/material/shadow cost, transparent fill"
+    },
+    {
+      "variant": "B",
+      "name": "2D real-source flipbook/sprite atlas",
+      "effectOwner": "existing POC VFX",
+      "risk": "alpha overdraw, billboard repetition"
+    },
+    {
+      "variant": "C",
+      "name": "HYBRID 3D hero core + 2D smoke + opaque instanced angular debris",
+      "effectOwner": "existing POC VFX",
+      "risk": "needs visual/palette gate"
+    }
+  ],
+  "preservedSource": {
+    "seedworld/sw-fx.js": "292dab6b3fa52b7b2d4e5f6263638851cbbfd565",
+    "seedworld/sw-destruct.js": "29f044b25f74633548f44a62b9506a8e42bdf6da",
+    "seedworld/sw-mech.js": "a2008d2546a58cdaaaa0d5a5e52e1e32e3b856d2"
+  },
+  "realCodeFacts": {
+    "rocketAOERadius": 5.5,
+    "rocketAOEPower": 16,
+    "damageFormula": "power * (1 - distance / radius)^0.7",
+    "debrisPoolCap": 256,
+    "rubbleCap": 1000,
+    "dustCap": 200,
+    "fireCap": 64,
+    "chipsCap": 320,
+    "tracerCap": 128,
+    "spikeOldMs": 353,
+    "vfxPeakOld": 584,
+    "oldPoolCapacity": 584,
+    "oldPerfType": "preview iframe, pumped simulated steps, not GPU vsync"
+  },
+  "requestedBench": {
+    "scenarios": [
+      "single blast",
+      "four simultaneous/overlapping blasts",
+      "whole city block support/cascade demolition + optional flame/water"
+    ],
+    "variants": [
+      "no FX",
+      "3D clay",
+      "2D sprite",
+      "hybrid"
+    ],
+    "metrics": [
+      "p50/p95/p99 frame ms",
+      "CPU FX update",
+      "GPU frame time if supported",
+      "active / evicted slots",
+      "instancing/draw calls/triangles",
+      "transparent pixel coverage",
+      "shader compile hitch",
+      "memory",
+      "cleanup / reconstruct consistency",
+      "visual read"
+    ]
+  },
+  "currentResult": {
+    "referenceFilesListed": true,
+    "originalPixelsVerified": true,
+    "visualLookAccepted": false,
+    "benchExecuted": false,
+    "projectCodeChanged": false,
+    "sitePublished": false,
+    "merged": false,
+    "contactSheetVisuallyInspected": true,
+    "originalShaderSourceFound": false
+  },
+  "nextGate": "KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW",
+  "existingVfxCatalog": {
+    "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
+    "originalHandoff": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Style References/VFX + KEYS + ASSETS - kfb-asset-handoff-animation-lab (9).json",
+      "gitBlob": "55c2ad6cf37dc906381949f2c0e56cc2ff3888c4",
+      "assetsTotal": 132,
+      "fxVisualAssetsInHandoff": 91,
+      "candidateOnly": true
+    },
+    "canonicalRegistry": {
+      "indexPath": "registry/assets/v1/packs/index.json",
+      "gitBlob": "647412d12277a59732aaf6278318a0ab9e28d51e",
+      "packId": "fx-visual",
+      "shard": "packs/fx-visual.json"
+    },
+    "sourceFolders": {
+      "alpha": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/",
+      "alphaFilesCurrent": 93,
+      "predrawn": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/",
+      "predrawnFilesCurrent": 14
+    },
+    "muzzleAlphaBlobPins": [
+      {
+        "name": "muzzle_01_a.png",
+        "gitBlob": "23984b9721140611363f1fed02f3538e12b752e6"
+      },
+      {
+        "name": "muzzle_02_a.png",
+        "gitBlob": "0f26ac88a73080119e0bbfe5e464040b20ebd653"
+      },
+      {
+        "name": "muzzle_03_a.png",
+        "gitBlob": "6cb99deb7783b0eb0d87ec6d217ece01917a8c29"
+      },
+      {
+        "name": "muzzle_04_a.png",
+        "gitBlob": "5b3f13c6790e00a8e447a92397c1aaa45314a1da"
+      },
+      {
+        "name": "muzzle_05_a.png",
+        "gitBlob": "78b99209f90cbe0c93132b8b38580e61e460401c"
+      }
+    ],
+    "runtimeDonor": {
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/modules/kfb-vfx.js",
+      "blob": "62bb08843942c7040e452f1a4873fdf317dec6eb",
+      "atlas": "4x4, 256px each",
+      "roles": 16,
+      "method": "single atlas + shared quad pool + four alignments + tint, consume authoritative game events only"
+    },
+    "designSSOT": {
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/docs/VFX_DESIGN_v10.md",
+      "blob": "5d716c2020561accb1d486f959622c34ce0ef61a"
+    },
+    "upstreamLicense": {
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/LICENSE & CREDITS.txt",
+      "blob": "2a10782d8761c121e6d0bc23add8b8d453777ff1",
+      "classification": "CC0, with origin credits (Picster, Kenney, Thomas Iché, CodeManu)"
+    },
+    "review": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_VFX_01_REVIEW/RETURN_VFX_01.md",
+      "blob": "836ecd1edf83ef3930bcf7dc8ab86f7d44cf0e0c",
+      "status": "previous source-isolated review evidence; no fresh Golden approval"
+    },
+    "followUp": "EXISTING_ALPHA_MASK_ATLAS_CATALOG.md"
+  },
+  "visualEvidence": {
+    "status": "NINE_PNG_HASHES_VERIFIED_CONTACT_SHEET_VIEWED",
+    "runId": 38922347665,
+    "jobId": 117045170526,
+    "ciConclusion": "SUCCESS",
+    "artifactId": 12054229885,
+    "zipSha256": "d175d3e3d4331c4823b24abe5f25247b4f61c08f99aed278ff73961e86bb38b8",
+    "contactSheet": "contact-sheet.jpg",
+    "manifest": "manifest.json",
+    "originalImagesVendored": false,
+    "summary": "Warm parchment diorama, gray smoke, orange blast, angular brown shards, teal waterfall/foam, pale cream vortex; shader origin still unknown",
+    "sourceDocument": "VISUAL_SOURCE_PROOF.md"
+  },
+  "fxAbImplementation": {
+    "state": "TECHNICAL_CI_PASS_50_OF_50__STYLE_AND_TARGET_GPU_OPEN",
+    "mode": "DEVELOPER_FIXTURE_ONLY__NO_PRODUCTION_INTEGRATION",
+    "sourceDir": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/",
+    "workflow": ".github/workflows/kfb-seedworld-source-fx-ab.yml",
+    "variant": [
+      "no-smoke",
+      "original-POC-3D",
+      "Brackeys-original-alpha-2D",
+      "hybrid-original-3D-and-2D"
+    ],
+    "scenarios": [
+      "single",
+      "four",
+      "block"
+    ],
+    "sourceMaskPath": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+    "sourceMaskGitBlob": "7cbc81b89d58671748e819f5f9756d5fbe53a477",
+    "earliestCI": {
+      "runId": 38924108695,
+      "status": "SUCCESS",
+      "technicalChecks": "39/39",
+      "screenshotCount": 12,
+      "artifactId": 12056735381,
+      "visualReadability": "FAIL_LOW_VISIBLE_PIXEL_DELTA",
+      "block": {
+        "cellsLost": 137,
+        "smokePoolActive": 200,
+        "vfxPeak": 584,
+        "sourceVfxCapacity": 584,
+        "cascades": 0,
+        "baseTriangles": 1008164,
+        "original3dTriangles": 1024164,
+        "original2dTriangles": 1008964,
+        "hybridTriangles": 1009648
+      },
+      "sourceOnlyRenderer": "CI SwiftShader, huge rAF gaps, no valid GPU performance ranking"
+    },
+    "visualGate": {
+      "runId": 38925577044,
+      "status": "FAIL",
+      "technicalChecks": "13/14",
+      "reason": "single 2D alpha visible changed pixels 0.008% vs minimum 0.04%",
+      "artifactId": 12056821556
+    },
+    "finalBoundedRepair": {
+      "runId": 38926541781,
+      "status": "completed",
+      "conclusion": "success",
+      "changes": "Actual smoke-centered camera; 5x original 3D and 6.5x 2D source-scale display adapters, original 3D+2D isolation screenshots, accurate hybrid offsets; same damage",
+      "budgetGuard": "No further optional VFX repairs until one latest run checked",
+      "artifactId": 12058220353,
+      "checks": "50/50",
+      "screenshots": 14,
+      "sourceHead": "6c2214da5844b50fb9a1f952fd339040a332e2f9",
+      "result": "FX_AB_R1_FINAL_RESULT.json"
+    },
+    "targetGpuMeasured": false,
+    "kfbGoldenAccepted": false,
+    "gameplayCodeModified": false,
+    "worldR5Authorised": false,
+    "evidenceFile": "FX_AB_R1_EVIDENCE.md",
+    "clayGoldenAccepted": false
+  },
+  "fxBudgetR2": {
+    "schema": "kfb.seedworld.saturated-fx-budget/0.1",
+    "status": "TECHNICAL_PASS_VISUAL_TUNE_TARGET_GPU_OPEN",
+    "sourceRevision": "e847450a567c0e08d3842053a934d61b7b1c063a",
+    "ci": {
+      "runId": 38945532821,
+      "jobId": 117123575926,
+      "conclusion": "SUCCESS",
+      "passed": 16,
+      "total": 16,
+      "artifactId": 12066121184,
+      "zipSha256": "1370cebfbb31ee887e72a1e77183eb02585b140b4409b50809582ed4e3fefb41"
+    },
+    "source": {
+      "rockets": 12,
+      "cellsLost": 90,
+      "cascades": 2,
+      "debris": 178,
+      "dust": 195,
+      "vfxPeak": 584,
+      "vfxCap": 584
+    },
+    "legacyHybrid": {
+      "clay": 9,
+      "alpha": 186,
+      "smokeTriangles": 1464,
+      "sceneTriangles": 798406,
+      "pixelDiffPct": 4.222
+    },
+    "cappedHybrid": {
+      "clay": 3,
+      "alpha": 11,
+      "maxClay": 3,
+      "maxAlpha": 28,
+      "tilePx": 110,
+      "unrepresented": 181,
+      "smokeTriangles": 284,
+      "sceneTriangles": 797226,
+      "pixelDiffPct": 0.415
+    },
+    "drawCalls": {
+      "baseline": 142,
+      "hybridC": 145,
+      "cappedD": 145
+    },
+    "verdict": "TUNE_TOO_LITTLE_SMOKE_BUT_BIG_BALLOON_REMOVED",
+    "caveats": [
+      "single frozen POC source scene",
+      "not target Mac GPU",
+      "not KFB Clay Golden",
+      "no new physics/FX/damage writer"
+    ],
+    "evidence": "FX_BUDGET_R2_EVIDENCE_2026-10-16.md"
+  },
+  "fxShardsR3": {
+    "schema": "kfb.seedworld.real-source-angular-planar-shards/0.1",
+    "status": "TECHNICAL_CI_PASS_24_OF_24__VISUAL_TUNE_TARGET_GPU_NOT_RUN",
+    "sourceRevision": "e5a1ab8065d0bda9affedf4aef1b5ef5352b63aa",
+    "ci": {
+      "runId": 38947639843,
+      "jobId": 117130707892,
+      "conclusion": "SUCCESS",
+      "passed": 24,
+      "total": 24,
+      "artifactId": 12067137321,
+      "zipSha256": "710f969add9985e4c3261c952930bf6a8da1eebf6410fdfd3f13537fb43d7c52",
+      "screenshots": 6,
+      "rows": 4
+    },
+    "precedingFalseGreen": {
+      "runId": 38947275597,
+      "meaning": "ran stale R2 budget-proof.mjs: 16/16 NOT new shard evidence",
+      "repaired": true
+    },
+    "source": {
+      "rockets": 12,
+      "cellsLost": 90,
+      "cascades": 2,
+      "dynamicDebris": 178,
+      "sourceChips": 320,
+      "dust": 195,
+      "sourceVfxPeak": 584
+    },
+    "readability": {
+      "D": {
+        "clay3D": 3,
+        "alpha2D": 11,
+        "pixelPct": 0.415
+      },
+      "E": {
+        "clay3D": 2,
+        "alpha2D": 48,
+        "pixelPct": 1.078
+      },
+      "F": {
+        "clay3D": 2,
+        "alpha2D": 48,
+        "pixelPct": 11.066
+      }
+    },
+    "debrisCompare": {
+      "E": {
+        "original3D": 178,
+        "original3DChips": 320,
+        "sceneTriangles": 797294,
+        "drawCalls": 145,
+        "softwareRenderSubmitP95Ms": 3.9
+      },
+      "F": {
+        "originalNear3D": 12,
+        "planarLargeShards": 166,
+        "planarSmallChips": 320,
+        "planarTrianglesPerInstance": 3,
+        "sceneTriangles": 748800,
+        "drawCalls": 143,
+        "softwareRenderSubmitP95Ms": 4.7
+      },
+      "absoluteSceneTrianglesSaved": 48494,
+      "sceneTrianglesSavedPercent": 6.08,
+      "hardwareGpuFpsWinClaimed": false
+    },
+    "qa": {
+      "actualSourceIsolationScreenshots": true,
+      "sourceInstancingUnchanged": true,
+      "damageImmutable": true,
+      "visualStyleApproved": false,
+      "animationReviewed": false,
+      "targetMacGpuMeasured": false,
+      "priorR2BaselineRetained": true
+    },
+    "sourcePaths": [
+      "seedworld/sw-destruct.js",
+      "seedworld/fx-ab/comparison.mjs",
+      "seedworld/fx-ab/shard-proof.mjs",
+      ".github/workflows/kfb-seedworld-source-fx-ab.yml"
+    ],
+    "evidenceFile": "FX_SHARDS_R3_EVIDENCE_2026-10-16.md",
+    "nextGate": "KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW"
+  }
+}
