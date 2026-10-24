@@ -2,7 +2,9 @@
 Date 2026-10-24 · Executor: ChatGPT Web Chat + KFB Deep Research source method + GitHub connector
 
 ## Outcome
-A **source-scoped, creative research packet** supporting LHOHQ-inspired epistemic montage in the existing H13 / KFB Billboard Hypernormalisation lane. No implementation, no site modification, no shipped quote, no license grant, no editorial Human PASS.
+**GEORG CREATIVE CORRECTION (2026-10-24) — CURRENT:** LHOHQ's flashing imagery, aggressive collage, provocative montage, experimental filmmaking, code art, remix and generative AI are a **core independent HyperNorm engine plane**, not superficial decoration. This correction supersedes the R1 epistemic-only prioritization. Documentary/semantic associations and interactive rabbit-holes are complementary **equal**, not gatekeepers. Standalone 10-s visual studies and 30–90-s experimental music films are legitimate deliverables without required quote, Card or FrizzleQuestion. Full binding decision: `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`.
+
+A **source-scoped, creative research packet** supporting LHOHQ-inspired autonomous audiovisual and semantic montage in the existing H13 / KFB Billboard Hypernormalisation lane. No implementation, no site modification, no shipped quote, no license grant, no editorial Human PASS.
 
 ## Owner and exact refs
 - Repo: `georg-doc/kayfabizarro`
@@ -13,6 +15,7 @@ A **source-scoped, creative research packet** supporting LHOHQ-inspired epistemi
 - Existing production owner unchanged: KFB ToolBox / Billboard Media Residency, planning PR #354 `planning/billboard-quote-hypernorm-curator-2026-10-04`. This research branch is not that runtime/curator branch.
 
 ## Files
+- `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md` — binding Georg correction: film/collage/code/remix/AI first-class visual engine
 - `BRIEF.md` — existing-owner recovery, scope, observable design signals, boundaries
 - `SOURCES_AND_CLAIMS.md` — 16 source/lead records, 15 atomic proposition checks
 - `HYPERNORM_DESIGN_CONCEPTS.md` — 14 unapproved concepts, illustrative story, future integration/acceptance
@@ -23,7 +26,7 @@ A **source-scoped, creative research packet** supporting LHOHQ-inspired epistemi
 - `RETURN.md` — this handoff
 
 ## Actual tests & evidence
-- GitHub 12/12 document assertions PASS on four principal research docs; each file read back from the exact branch after commit.
+- GitHub R1 **12/12** document assertions PASS; subsequent R1B correction **16/16** structural/readback assertions PASS. Neither is visual or runtime acceptance; all changed files read back after writes.
 - 4 LHOHQ-hosted pages + 1 related blog + 1 UWM official page inspected as direct text. Source ledger also contains community/external secondary/index-only leads; **not all 16 are directly fully inspected originals**.
 - LHOHQ root: timeout. Source-page screenshots: **0**; film playback: 0; PDF image pages: **0**; performance/CI/runnable program tests: **0**; rights clearances: **0**.
 - Retained evidence is source URL + claim/page designation; browser screenshots not obtained. No stage acceptance route required.
@@ -41,7 +44,7 @@ A **source-scoped, creative research packet** supporting LHOHQ-inspired epistemi
 - Film creator attribution and licensing.
 - LHOHQ sole ownership and hosting relationships.
 - Rights of media and any future KFB source excerpt.
-- Separate source-isolated H13 and current clay billboard visual acceptance; proposed mechanics not yet critiqued by Georg.
+- Separate source-isolated H13 and current clay billboard visual acceptance; proposed mechanics not yet critiqued by Georg. **Georg accepted the creative priority correction only, NOT any implemented visual result.**
 
 ## Exactly one next gate
-**VISUAL SOURCE-ISOLATION GATE:** safely compare actual isolated H13 + physical clay Billboard to 4–6 directly captured LHOHQ page-form exemplars (avoid sensitive data/copying), then have Georg select one authored M01–M04 semantic montage storyboard before any runtime integration.
+**VISUAL EXPERIMENTAL FILM SOURCE-ISOLATION GATE:** compare *actual moving* isolated H13 (and existing physical billboard as relevant) to 4–6 verified LHOHQ image/motion donors, avoiding copying personal data; then compare V1 autonomous 10s collage montage, V2 10s optical/generative loop and V3 30–90s music-film as stand-alone aesthetic candidates **before** any optional M01–M04 semantic/research addon. Research proposal only: no actual visual gate performed or build authorized.
