@@ -20,7 +20,8 @@ Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien 
 | `KFB_HUB/75_REFS/npc_card_speculation_r1/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
 | `KFB_HUB/75_REFS/deck_viewer_v4/CHANGELOG.md:26` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
 | `KFB_HUB/75_REFS/story_table_kayfabulieren_r1/CHANGELOG.md:30` |  | - **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat. |
-| `KFB_HUB/30_DECISIONS/CHANGELOG.md:1201` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
+| `KFB_HUB/30_DECISIONS/CHANGELOG.md:1203` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
+| `KFB_HUB/30_DECISIONS/replies/WSA_TO_WS0_TOOLBOX_RESTART_R1_RETURN.md:56` |  | Siehe `WSA_TO_WS0_FB_CANON_R4_RETURN.md`: tatsächlicher P08-Akteur in bestehender Proof-Stage, Rig-Augen, Originalbrauen −0,08/Pitch 8, sechs saubere Diagnosean |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3` |  | Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:8` | Oberseite, ein Mesh, Farb- und Maskenkarte 1024² | Richtung gut |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:9` | Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung | gut |
