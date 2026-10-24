@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- HyperNorm-Welt R2: jede Kammer als 360°-HyperNorm-Sphäre (Georg): Collage auf der Kugel-Innenseite, durchscheinende Schalen für Tiefe, Betreten aus der Welt durch Umstülpen der Kugel, Übergänge als Blasen in Blasen.
 - HyperNorm-Scenelet R1 missverstanden (Georg: keine Fundstücke und Ketten), b218 angehalten. Konzeptblatt R2: eine Welt aus Collage-Kammern mit zwei Modi, Rabbit-Hole (Labyrinth wie lhohq, versteckte Übergänge) und Autopilot (fließender Trip, Schnitt-Grammatik, Abbiegen per Lenkimpuls); erste drei Kammern Sendezentrale, Aktenrauschen, Dada-Garten; Hub q199.
 - Georg q198 ja: Bauauftrag an WSA replies/BRIEF_WSA_HYPERNORM_SCENELET_R1.md (Hub b218), Material als privater Zweig KFB-Stunt-Car-Race assets/hypernorm-r1 @937cdf1 (83 Dateien, 47 MB: 69 BNWN-Clips, 10 Klangschichten, Fundstücke F1/F7, Konzeptblatt, MANIFEST mit Prüfsummen). Falsche Verweise V-630 in Spec und Konzeptblatt auf V-071/V-470 korrigiert.
 - lhohq.info-Stichprobe (120 Seiten, Baum ≥ 1.400 Seiten, Median 5 Links, 355 GIFs) ins Konzeptblatt HyperNorm-Scenelet übernommen.

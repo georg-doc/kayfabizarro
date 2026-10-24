@@ -11,7 +11,13 @@ R1 hat Georg missverstanden: Der runde Archivraum mit sieben Ausstellungsstücke
 
 ## Kammern
 - **Rezept je Kammer:** Thema, Look-Preset (CRT, Halftone, Gilliam-Papier, Datamosh-Nähe, Traum-Weichzeichner), Bild- und Videoquellen, Textquelle (Meme-Pool, BNWN-Phrasen, gemeinfreie Poesie), Klangschichten und die versteckten Übergänge. Das Format ist eine kleine JSON-Datei je Kammer. Georg kann sie später im Curator bearbeiten.
-- **Raumform:** keine Architektur mit Wänden und Möbeln. Eine Kammer ist ein Bildraum aus schwebenden, gekachelten oder gestaffelten Collage-Flächen in der Tiefe, wie begehbare Ebenen eines Musikvideos. Dazu wenige räumliche Dinge (ein Röhrenfernseher, eine Tür im Bild, ein KFB-Auge).
+- **Raumform: jede Kammer ist eine 360°-HyperNorm-Sphäre (Georg 25.10.).**
+  - Man steht im Inneren einer Kugel, deren Innenwand die laufende Collage zeigt (H13 auf der Kugel-Innenseite).
+  - Davor liegen zwei bis drei durchscheinende Schalen in verschiedenen Abständen (Text, Bildfetzen, Störungen). Beim Umsehen entsteht so Tiefe und Parallaxe, wie begehbare Ebenen eines Musikvideos.
+  - Dazu wenige schwebende Dinge: ein Röhrenfernseher, eine gemalte Tür, ein KFB-Auge.
+  - Keine Architektur mit Wänden und Möbeln.
+- **Betreten aus der Welt:** Im Spiel schwebt die Sphäre als leuchtende Kugel in der Landschaft bzw. im Gutter. Man geht hinein, die Kugel stülpt sich um, und man steht innen. Im Curator ist sie der Startpunkt der Experience.
+- **Sphäre in der Sphäre:** Übergänge zur nächsten Kammer können kleine Kugeln in der Sphäre sein, in die man hineinfällt, wie Blasen in Blasen. Dazu kommen die anderen versteckten Übergänge.
 - **Erste drei Kammern:**
   1. **Sendezentrale:** BNWN-Clips (Nora) auf Röhren, Propaganda als Text-Punch, CRT-Störungen, Curtis-Halte-Shots mit nüchterner Caption.
   2. **Aktenrauschen:** gemeinfreie UFO- und UAP-Dokumente, Schreibmaschinen-Typo, Cut-up wie lhohq (ernst und Unsinn ohne Markierung), Stockfotos mit KFB-Augen statt leerer Pupillen.
