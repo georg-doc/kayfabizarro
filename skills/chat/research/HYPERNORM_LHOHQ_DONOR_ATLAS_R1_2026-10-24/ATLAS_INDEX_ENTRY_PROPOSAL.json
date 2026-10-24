@@ -14,6 +14,8 @@
   "readFirst": [
     "BRIEF.md",
     "GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md",
+    "VIDEO_ALT_SOURCE_AUDIT_R2_2026-10-24.md",
+    "SPATIAL_INTERACTIVE_HYPERNORM_WORLD_LAYER_R2_2026-10-24.md",
     "SOURCES_AND_CLAIMS.md",
     "HYPERNORM_DESIGN_CONCEPTS.md",
     "RELATIONS_AND_FIELDS.md",
@@ -21,8 +23,8 @@
     "RETURN.md"
   ],
   "counts": {
-    "heterogeneousSources": 16,
-    "atomicClaims": 15,
+    "heterogeneousSources": 19,
+    "atomicClaims": 19,
     "documentaryEdges": 7,
     "noncausalConceptEdges": 8,
     "unapprovedDesignMechanics": 14,
@@ -30,15 +32,22 @@
     "pdfImages": 0,
     "documentChecksPassed": 12,
     "documentChecksTotal": 12,
-    "implementedVisualEffects": 0
+    "implementedVisualEffects": 0,
+    "videoTranscriptRead": 0,
+    "observedLongAltCharacterCount": 21114,
+    "observedLongAltLineCount": 311,
+    "r2DocumentAssertionsPassed": 21,
+    "r2DocumentAssertionsTotal": 21
   },
   "existingDonor": "H13 Kaleidoscope, billboard/quote curator/audio owner",
-  "nextGate": "isolated original H13 and 4–6 real LHOHQ visual/motion examples; independently compare V1 10s montage, V2 10s optical/generative loop, V3 30–90s music film; semantic addon optional",
+  "nextGate": "source-isolate original H13 moving donor + real physical clay billboard + verified LHOHQ HTML/image/video examples; compare three spatial treatment designs before any WB2/portal integration",
   "exclusions": [
     "no new runtime",
     "no copied personal information",
     "no auto merge",
     "no Stage"
   ],
-  "creativePriorityOverride": "GEORG_2026_10_24_VISUAL_EXPERIMENTAL_FILM_FIRST_CLASS"
+  "creativePriorityOverride": "GEORG_2026_10_24_VISUAL_EXPERIMENTAL_FILM_FIRST_CLASS",
+  "spacialWorldLayerStatus": "RESEARCH_PROPOSAL_ONLY",
+  "mindscapeOwnerResolved": false
 }
