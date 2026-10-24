@@ -174,9 +174,10 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
   rig.setLife({ on: false, wander: 0, tremor: 0 }); rig.setKinetics({ enabled: false });
   rig.rig.traverse((m) => { if (m.isMesh) { m.castShadow = false; m.receiveShadow = false; m.userData.eyeRig = true; } });
   /* v1.2.7: per-eye lid colour (card eyeRig.lid.colourL / colourR) for asymmetric faces (Monstrosity skin patches); falls back to lid.colour */
-  if (er.lid && (er.lid.colourL || er.lid.colourR)) for (const e of rig.eyes) {
+  /* v1.2.8 (WS0 24.10., aus B40): colourC für ein Mittel-Auge (KFB_Eye_C_anchor, z. B. Orb-Auge) in Dateien mit mehreren Figuren */
+  if (er.lid && (er.lid.colourL || er.lid.colourR || er.lid.colourC)) for (const e of rig.eyes) {
     const side = e.userData.kfbSide || (Math.sign(e._sx || 0) >= 0 ? 'L' : 'R');   // KayKit: figure left = +X
-    const hexS = side === 'L' ? (er.lid.colourL || lidHex) : (er.lid.colourR || lidHex);
+    const hexS = side === 'C' ? (er.lid.colourC || lidHex) : side === 'L' ? (er.lid.colourL || lidHex) : (er.lid.colourR || lidHex);
     if (hexS && e._up && e._up.material) { e._up.material = e._up.material.clone(); e._up.material.color = new THREE.Color(hexS); }
   }
   /* lid clay: convert the (hidden) v6 upper shell material; the E2 skin shares it via skin.sync() */
