@@ -10269,6 +10269,21 @@
    "applies": "nach dem MVP"
   },
   {
+   "id": "V-719",
+   "date": "2026-10-24",
+   "area": "Audio",
+   "verdict": "TBD",
+   "text": "Credits-Plan (Georg 24.10.: Suno-Credits für Songs schonen, ElevenLabs-Credits nutzen): Suno nur drei Betten (S2 Atem-Bett für den Living Garden, S8 Dystopie-Drone, S3 Erd-Resonanz für Orakel bzw. Threshold), die übrigen neun Karten geparkt. ElevenLabs zuerst: (A) sechs Orts-Stimmenfamilien für Genius loci bzw. Orakel nach replies/RESEARCH_COUNSELOR_ORACLE_R1.md §4 (Glasharmonika, Ton-Okarina, Obertongesang, tiefer Summchor, rückwärts gehauchter Vokal, Klangschale) im Melodica-Raster je 13 Clips, etwa 2.800 Credits; (B) Probe Eleven Music für zwei Betten statt Suno, je etwa 1 Minute, laut Fremdquellen etwa 900 Credits pro Minute; exakte Frequenzschichten bleiben Offline-Render (V-718). Erzeugung erst nach Georgs Go im Chat.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Suno ist monatlich knapp und für Songs reserviert; ElevenLabs hat Spielraum und eine Pipeline (sfx_gen.py) existiert.",
+   "applies": "nach Go"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10381,7 +10396,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1186",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1187",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

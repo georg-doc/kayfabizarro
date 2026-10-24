@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-719 Credits-Plan: Suno nur S2/S8/S3, neun Karten geparkt; ElevenLabs Orts-Stimmenfamilien und Eleven-Music-Probe, wartet auf Go.
 - V-718 Frequenz-Schichten und Spannungsbetten nach Recherche (Dateien + Offline-Render, mind-Bus, Shepard-Spannung); 12 Suno-Karten S1–S12 im Hub (b191–b202).
 - V-717 Backlog Counselor/Orakel-Persona, Orts- und Fahrzeug-Stimmenmelodien, Klang als Wegweiser, meditatives Labyrinth; zwei Recherchen laufen.
 - V-716 Terrain-Profil beim Einbetten (nur auftragen, Hügel statt Graben, keine Kante) an WSB; Atem-App-Quelle privat unter 75_REFS/breath_sync_r1 (V-715).
