@@ -1,5 +1,22 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 (Lead): Splats, Gutter Space und Portale ins Konzept für das prozedurale Terrain einarbeiten (V-705)
+- **Quelle (eine Stelle):** `skills/chat/masterplan/KFB_SPLAT_PROCEDURAL_WORLD_R1_2026-10-24.md` auf Branch `planning/kfb-flatworld-comic-gutter-r1-2026-10-18` (Entwurfs-PR #423). Teil A enthält Georgs Ziele, Teil C die Vorschläge des Webchats. Die drei älteren Dateien im selben Ordner sind dort verlinkt (Flatworld/Gutter 18.10., drei Cluster 22.10., Cluster 4 Wasser/Melt 22.10.).
+- **Georgs Ziele kurz:**
+  - A1: Blicke mit echter Tiefe in ganz andere Welten durch Portale, und Reisen über große Entfernungen.
+  - A2: echte Karten bzw. PDF-Viewer im Raum, der fraktale Almanach als begehbarer und durchsuchbarer Infinite Canvas.
+  - A3: Gutter Space, also die Lücke zwischen zwei Comic-Panels als Reise, z. B. eine Achterbahn auf dem Racetrack.
+  - A4: im bunten, fließenden Terrain und im Wasser eine zweite Welt sehen, erst beim Vorbeifahren bzw. Drüberfahren.
+  - A5: prozedurale Geografie mit erkennbaren echten Orten (OSM-Ausschnitte, Landmarken wie der Kölner Dom).
+  - A6: Maßstab ist die sichtbare Qualität.
+- **Bitte:** Diese Ziele in euer Konzept für das prozedurale Terrain aufnehmen. Ordnet jedem Ziel die Schicht bzw. den Owner im heutigen Spiel zu und nennt die kleinste Probe, die zeigt, ob der sichtbare Effekt trägt.
+- **Leitplanken:**
+  - Intent First (V-690): Splats sind ein möglicher Weg, kein Muss. Zahlen sind Testbereiche.
+  - Kein zweites Renderer- oder Terrain-System neben dem bestehenden.
+  - Bauen erst nach dem MVP (V-646). Eigene Splats aus freien Modellen vor fremden Community-Szenen.
+  - Karten und Almanach bleiben bei ihren heutigen Ownern (Kartenviewer V-697, Almanach V-043).
+- **Zurück:** ein Abschnitt im Status mit Pfad zum Konzept. WS0 prüft vor jedem Bauauftrag mit Gate und Prüfer.
+
 # NEU OBEN (24.10.) · An WS-NPC, WS-Audio und den Deck-Songs-Chat: Stresstest vor Yuka, BBBW-Song, Doppelpunkt-Regel nachgeschärft (V-700, V-701)
 - **WS-NPC:** Georg will Yuka (oder Ähnliches für Ausweichen bzw. Gruppenbewegung) erst nach einer Messung entscheiden. Bitte den Stresstest P-2 mit 8, 12 und 20 Bewohnern fahren, sobald es passt. Meldet fps, Ausweich-Fehler (Durchdringen, Stau, Zittern) und Gruppen-Fehler, jeweils mit einem Clip aus der Spielkamera. Erst danach entscheidet WS0 mit Georg.
 - **WS-Audio:** Big Bad Brain Wrestling 01 (Deephouse mit Trap brasileiro, 165 BPM) ist geerntet, die ersten elektronischen Stems für die Chatterbox. Alles steht im Musik-Katalog (`40_AUDIO/music_catalog_r1.json`, `bbbw01`), die Dateien liegen im privaten Branch.

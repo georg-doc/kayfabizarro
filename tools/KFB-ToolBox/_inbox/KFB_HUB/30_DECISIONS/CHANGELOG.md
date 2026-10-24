@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-705 Splat/Gutter/Portal/prozedurale Welt: Webchat-Atlas (PR 423) an WS1 fürs Terrain-Konzept.
 - V-704 KayfaBINGO usw. nur am realen Spieltisch, im Spiel V-699; Comic-Motion/Remotion geparkt.
 - V-703 Backlog Kayfabulieren im Spiel (Story-Zug vor King Kayfabian, NPC-Vorführung, Almanach-Replay); Story Table privat unter 75_REFS.
 - V-701 Big Bad Brain Wrestling 01 geerntet (193 Phrasen, 165 BPM), Golden-Prompt Deephouse × Trap brasileiro, Baustein KFB-Crossover; V-700 nachgeschärft (nur Etikett am Zeilenanfang); V-702 Backlog Karten-Spekulation.

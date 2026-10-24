@@ -10059,6 +10059,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-705",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Splats, Gutter Space, Portale und prozedurale Welt (Georg 24.10.): Der Webchat hat alles in skills/chat/masterplan/KFB_SPLAT_PROCEDURAL_WORLD_R1_2026-10-24.md (PR 423) zusammengeführt, Georgs Ziele A1 bis A6 getrennt von Vorschlägen. WS1 arbeitet die Ziele ins Konzept für das prozedurale Terrain ein (Schicht und Owner je Ziel, kleinste Probe für den sichtbaren Effekt); Intent First, kein zweites Renderer- oder Terrain-System, Bau erst nach dem MVP (V-646), eigene Splats aus freien Modellen vor Community-Szenen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Splat- und Gutter-Ideen lagen verteilt in Webchats und drei PR-Dateien; jetzt eine Quelle, eingeordnet ins Terrain-Konzept statt neuer Baustelle.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10171,7 +10186,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1174",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1175",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
