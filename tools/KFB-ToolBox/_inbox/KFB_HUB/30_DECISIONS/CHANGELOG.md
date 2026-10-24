@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-716 Terrain-Profil beim Einbetten (nur auftragen, Hügel statt Graben, keine Kante) an WSB; Atem-App-Quelle privat unter 75_REFS/breath_sync_r1 (V-715).
 - V-715 ergänzt: Mindspace R2 sechs Rezepte, erste Probe Living Garden; Sichtung Atem-App (keine binauralen Töne) und SPHR.
 - V-712 Ruf-Skala, V-713 Übernahmekarten, V-714 locusId/vehicleId im Figuren-Register, V-715 Backlog KFB Mindspace; Kassette r4/r5 und controlTheme im privaten Branch für WS1.
 - V-711 WSB Einbettungs-Werkzeug R1 mit Auto-Plan N35/N36 (Prüfer BLOCK, 11 Punkte eingearbeitet: Kanon-Werkzeuge, Konzeptblatt von WS0, Asset-Pass, Eingänge, V-512-Gates, Maße V-446); WS1 um Höhenfeld-Export gebeten; Hub b190.

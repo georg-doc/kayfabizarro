@@ -10213,7 +10213,7 @@
    "date": "2026-10-24",
    "area": "Spiel",
    "verdict": "BACKLOG",
-   "text": "KFB Mindspace (Georg 24.10., Webchat, Branch planning/kfb-mindspace-modular-world-r1-2026-10-24, replies/KFB_MINDSPACE_MODULAR_R1/): immersiver Kreativ- bzw. Meditationsraum mit Atemführung, Klangbett, optional binauralen Tönen bzw. Schumann-Thema, HyperNormalisation-Bildern (H13) als Raum statt Billboard, optionaler Gesprächsstimme; zuerst als eigenständige Probe für Georg, später als Pocket World bzw. Ort in der prozeduralen Welt (V-705, V-708). Wiederverwenden: Georgs Lovable-Atem-App (breath-sync.lovable.app, Quelle noch nicht auf GitHub), H13 Kaleidoskop, Mixer von WS-Audio (ein Mixer). Keine Heil- oder Wirkversprechen. R2 (PR 448, SIX_MINDSPACES_APPLICATION_AUDIO_SPLAT_MAPPING_R2): sechs Erlebnis-Rezepte auf einer Grundlage (Living Garden, Creative Atelier, Mirror Chamber, Dream Passage, Fractal Vision, Threshold Observatory), unabhängig von den sechs Story-Modes; erste Probe nur der Living Garden mit echtem Splat-Spender, Atemführung und KFB-Klangbett. WS0-Sichtung 24.10.: breath-sync bietet vier Atemmuster (Coherent 5/5, Extended Exhale, Box, 4-7-8) und Töne 174/432/528 Hz, aber keine binauralen Töne und kein Schumann-Thema, das ist die Lücke für WS-Audio; SPHR (MIT, nutzt Spark wie die Splat-Liste) taugt als Vergleich, Szenenrechte offen; die itch.io-Demo sperrt automatische Ansicht (Georg sieht selbst).",
+   "text": "KFB Mindspace (Georg 24.10., Webchat, Branch planning/kfb-mindspace-modular-world-r1-2026-10-24, replies/KFB_MINDSPACE_MODULAR_R1/): immersiver Kreativ- bzw. Meditationsraum mit Atemführung, Klangbett, optional binauralen Tönen bzw. Schumann-Thema, HyperNormalisation-Bildern (H13) als Raum statt Billboard, optionaler Gesprächsstimme; zuerst als eigenständige Probe für Georg, später als Pocket World bzw. Ort in der prozeduralen Welt (V-705, V-708). Wiederverwenden: Georgs Lovable-Atem-App (breath-sync.lovable.app, Quelle noch nicht auf GitHub), H13 Kaleidoskop, Mixer von WS-Audio (ein Mixer). Keine Heil- oder Wirkversprechen. R2 (PR 448, SIX_MINDSPACES_APPLICATION_AUDIO_SPLAT_MAPPING_R2): sechs Erlebnis-Rezepte auf einer Grundlage (Living Garden, Creative Atelier, Mirror Chamber, Dream Passage, Fractal Vision, Threshold Observatory), unabhängig von den sechs Story-Modes; erste Probe nur der Living Garden mit echtem Splat-Spender, Atemführung und KFB-Klangbett. WS0-Sichtung 24.10.: breath-sync bietet vier Atemmuster (Coherent 5/5, Extended Exhale, Box, 4-7-8) und Töne 174/432/528 Hz, aber keine binauralen Töne und kein Schumann-Thema, das ist die Lücke für WS-Audio; SPHR (MIT, nutzt Spark wie die Splat-Liste) taugt als Vergleich, Szenenrechte offen; die itch.io-Demo sperrt automatische Ansicht (Georg sieht selbst). Quelle der Atem-App von Georg (24.10.) privat unter 75_REFS/breath_sync_r1: wiederverwendbar sind lib/breathing-patterns.ts (vier Muster als Daten), hooks/use-breath-audio.ts (ein Sinus, der der Atemphase folgt) und use-breathing-session.ts; Design und Lovable-Hinweise werden nicht übernommen.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -10222,6 +10222,21 @@
    "superseded_by": [],
    "why": "Vorhandene Prototypen (Atem-App, H13, Audio) bündeln statt neu bauen.",
    "applies": "später"
+  },
+  {
+   "id": "V-716",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Terrain-Profil beim Einbetten (Georg-Befund an WSB N36: geplättet, umlaufender Graben, Kante vorne): nur auftragen, nie abtragen (Höhen-Änderung außerhalb des Fußabdrucks ≥ 0); das Modell sinkt in einen weichen Hügel, das Gelände bedeckt die Unterkante (15–25 % Sockelhöhe, V-396); Änderung addiert auf das wellige Terrain, nie plätten; stetiger Abfall über 4–6 m ohne Knick; an der Kontaktlinie keine Stufe über 2 cm, auch vorne; Eingänge als Rampe ≤ etwa 15°. Automatische Prüfungen dafür. Präzisiert V-711 und die Schürze aus V-396.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Brief ließ Schürze und Geländeanschluss als geplättete Fläche lesen; das Profil braucht eindeutige Zahlen und Prüfungen.",
+   "applies": "sofort"
   },
   {
    "id": "V-427",
@@ -10336,7 +10351,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1183",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1184",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
