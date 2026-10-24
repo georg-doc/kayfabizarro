@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- B40 r6 (WSB): TARDIS-Pulse, echte Tür mit Gleißen, Agenten aus dem Licht, Orb A/B, gemessene Gates grün, Kritiker 5,8/6,0. WS0: Nachrunde r6b mit allen offenen Punkten plus Türblatt-Innenseite (kein Schwarz), Weitbilder näher, Orb-Wabern im Puls; erst danach Hub.
+- V-736 Hub-Antworten: ebene Stadtzonen nur nahtlos (WSB-Einbettungslogik), q191 neu als Einzelkarten mit Klartext und Bild, HeyGen Fantasie beides testen, Splats HyperNorm-Stil zuerst; Auftrag WS1 replies/WS0_TO_WS1_HUB_ANTWORTEN_R1.md (Hub b217).
 - Probe R2 Karten-Relief (V-735): Depth Pro lokal (~/kfb-tools, 27 s je Bild), Karte als Relief im Boden mit Welt-Tönung, Heben als Schwarm, Einsammeln als Fluff, nachgebender Kügelchen-Boden, 120 fps; Befund: gezeichnete Karten fast flach, Tiefe umgedreht und hochpassgefiltert; Fotos liefern echte Tiefe. Live https://claude.ai/artifact/CjHJf8TJmBYRQ42Zs7e88J, Hub q196.
 - V-735 Punktwolken weiter: Konzept Karten als Punktwolke und Relief im Terrain (replies/CONCEPT_CARD_POINTCLOUD_TERRAIN_R1.md), Probe R2 bei WS0.
 - V-734 Georgs Urteile per Audio: Chatter-Silben TUNE (quieken, Schritte zu laut), tr1 TUNE (Blasen-Randabstand, Abnahme-Form), Splats ganz nach unten; Auftrag an WS1 replies/WS0_TO_WS1_ABNAHME_CHATTER_TR1_R1.md (Hub b216). Hub v21: Antwort-Entwürfe bleiben bei Seiten-Updates erhalten.
