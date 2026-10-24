@@ -29,7 +29,7 @@
   - a click opens an overlay with deck and world tabs and a grid of card quarters, then the viewer.
 
   V-043 places it on the right, under the compass in R3. Layout A tests top left (Georg's concept §7).
-- **Radio:** the white cassette (V-680; design in `N34_r2_2_teile`; 3D source `poly_cassette`) with play/pause on one button, next and sound on/off. The title shows only briefly when the track changes (R3). The older radio `KFB_HUD_Radio` is a comparison only. Georg likes the cassette as player (24.10., `N34_r4_kassette`): sculpted buttons (cap, base, shadow, pressed in when clicked), gloss only as a thin rim, cream-white symbols with a dark outline. Button colour follows the time of day, orange by day and teal by night, and stays adjustable like the other HUD colours (`controlTheme` in `kfb/kfb_hud_readability.r1.json`) (V-707).
+- **Radio:** the white cassette (V-680; design in `N34_r2_2_teile`; 3D source `poly_cassette`) with play/pause on one button, next and sound on/off. The title shows only briefly when the track changes (R3). The older radio `KFB_HUD_Radio` is a comparison only. Georg likes the cassette as player (24.10., latest `N34_r5_kassette`): sculpted buttons (cap, base, shadow, pressed in when clicked), gloss only as a thin rim, cream-white symbols with a dark outline. Button colour follows the time of day, orange by day and teal by night, and stays adjustable like the other HUD colours (`controlTheme` in `kfb/kfb_hud_readability.r1.json`) (V-707).
 - **Chest:** `KFB_HUD_Chest` (open / closed). The alternative `quaternius_chest` has real open and close clips.
 - **Settings:** `KFB_HUD_Gear`, bottom right next to the cassette (R3). Developer info appears only through its settings switch, never on the boards (V-655).
 - **Mode plaque** (walk / drive / fly · game / God) stays at the top centre (V-040, V-681).
@@ -78,7 +78,7 @@ Deliver in the existing Claude Design HUD workspace. Georg decides; WS1 integrat
 | `actionbar/` | Final action bar r2: Fist, Blaster, Bomb, Grenade (`.r2.glb`), sheet `N32r2_aktionsleiste_final.jpg`, map `kfb_hud_actionbar.r2.json` |
 | `donor/` | Original candidates (self-contained GLB): `kenney_arrow-rounded`, `quaternius_arrow`, `quaternius_chest`, `poly_cassette`, `tinytreats_boots` |
 | `cards/` | Original card faces `card_face_p2_*`, `card_face_p3_*` (deck 1001 Kayfabe Nights) plus the two sheets they come from |
-| `ref/` | `wood_hud_ist_01–06` (today's game HUD), `N34_r4_kassette` (cassette player r4, Georg 24.10.), `N34_r2_1_layout`, `N34_r2_2_teile`, `r2_hud_1_otown_1080p*`, `hud_r3_01–04`, `j17_hud_clay_minimap`, `arrow_donors_contact_sheet`, `ws1_preview_now_*` |
+| `ref/` | `wood_hud_ist_01–06` (today's game HUD), `N34_r4_kassette` and `N34_r5_kassette` (cassette player, r5 = latest: no outlines, day orange, night teal), `N34_r2_1_layout`, `N34_r2_2_teile`, `r2_hud_1_otown_1080p*`, `hud_r3_01–04`, `j17_hud_clay_minimap`, `arrow_donors_contact_sheet`, `ws1_preview_now_*` |
 | root | `models_overview.jpg` (all models rendered plainly, not the clay look), this brief |
 
 ## 6 · Docs on GitHub (public, read-only)

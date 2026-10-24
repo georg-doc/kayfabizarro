@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-709 WSB N35 Schritt A fertig, Go für Schritt B (Intake 12 Clips, 3 Lücken, Kopf-Beat-Clips zur Abnahme).
 - V-708 Welt-Komposition mit echten Stadtvierteln (PR 447) als zweite Quelle fürs WS1-Terrain-Konzept; kein Engine-Wechsel.
 - V-707 Kassette als Player (WSB N34 r4): Tasten plastisch, Farbe nach Tageszeit über controlTheme; ins Claude-Design-Paket und an WS1.
 - V-706 WSB Nachtrag 33 Gesprächs-Choreografie R1 (Inventur vor Neubau, Lücken als kfb_talk-Clips, Rufe als Knet-Lettering); HUD bei WSB abgeschlossen; Gate + Prüfer PASS; Hub b189.
