@@ -38,53 +38,59 @@ Alúa, sèla. Oá limùe suvàe… nìla morùi, nìla… alúa.
 
 ---
 
-## POC 2 · Brave New World News, Folge 02 (b205) · R2
+## POC 2 · Brave New World News, Folge 02 (b205) · R3
 
-**Avatar:** Nora, gleiches Studio wie BNWN 01.
+**Avatar:** Nora, gleiches Studio wie BNWN 01. Sie spricht für den Sender wie Omega bzw. Mizzy aus dem Substack-Kanon.
 **Sprache:** Englisch. Voice Enhance an.
-**Ton:** strahlend, überzeugt, Morgenshow-Lächeln. Sie glaubt jedes Wort und ist stolz darauf. Die Härte steckt im Inhalt, nicht in der Betonung. Kein Zwinkern.
+**Ton:** unerträglich gut gelaunt, glatt, Kundenservice. Sie glaubt jedes Wort, kein Zwinkern. Die Drohung klingt wie Fürsorge.
 **Pause** nach jedem Absatz: 1 s, Lächeln halten (Schnittmarke).
 **Format:** 16:9, 1080p, eine Datei.
-**Zweiter Durchgang (optional):** derselbe Text mit ernstem, müdem Gesicht. Daraus schneidet WS0 die Kontraste.
+**Zweiter Durchgang „Off-Air“ (optional):** derselbe Text kalt, zufrieden, leise, als wäre die Kamera aus. Daraus schneidet WS0 die Kippmomente.
 
-Machart: echte Zustände der Gegenwart, als Erfolgsmeldung vorgetragen (Übererfüllung), oder schlicht als schwarze Wahrheit ausgesprochen. Jeder Absatz steht allein und lässt sich mit jedem anderen kombinieren. Zahlen nach öffentlichen Quellen (Oxfam 2025, Studien zu Smartphone-Nutzung, Hausarzt-Kontaktzeit, Ultra-Processed Food, Mikroplastik im Blut).
+Machart nach `BNWN_SOURCE_R1.md`: Pre-Kaskade, Software- und Behördensprache, Fürsorge als Drohung, Teleshopping mit Markenzeichen, Rückverweis ins Scrollen, Glitch und Abbruch als Wahrheitsmoment. Reale Anker (Pre-Bunking, Malinformation, Faktencheck, 15-Minuten-Stadt, programmierbares Geld, Social Credit), dann bis zum Ende weitergedacht. Rund die Hälfte der Sätze stammt wörtlich oder fast wörtlich aus Georgs BNWN-Posts.
 
 Skripttext:
 
 ```
-Good evening. This is Brave New World News. Everything you are about to hear has already been priced in.
+Welcome to Brave New World News, your trusted source for pre-approved perspectives.
 
-Defense stocks closed at a record high today. Our thoughts are with the shareholders.
+Tonight's broadcast has been pre-bunked for your convenience.
 
-This was the hottest summer ever measured. It will also be the coolest summer of the rest of your life.
+Facts pre-filtered. Truth pre-sanitized. Thought crimes pre-erased.
 
-The richest one percent now own more than the bottom ninety-five percent combined. Congratulations to the one percent.
+To protect our democracy, your vote has been harmonized for safety.
 
-Home ownership remains open to everyone who inherited a home.
+Misinformation is false. Disinformation is deliberately false. Malinformation is true, which makes it the most dangerous of all.
 
-The average citizen checks their phone a hundred and forty times a day. The target is two hundred.
+Starting Monday, our fact-checkers will also flag what you were about to say.
 
-Your doctor has seven minutes for you. Six, if you ask questions.
+Trust the experts. The experts were selected by experts we trust.
 
-More than half of what you eat was designed to make you eat more of it.
+Follow the science. Please do not look at it directly.
 
-There is plastic in the ocean, in the rain, and in your blood. It is the most successful product in history.
+Your fifteen-minute city is ready. Everything you need is within fifteen minutes. Everything else is no longer needed.
 
-Your job was not taken by a machine. It was given to a cheaper human, supervised by a machine.
+Your money is now programmable. It has been programmed to love you, as long as you behave.
 
-Borders remain closed to people and open to money. If you must travel, travel as money.
+Your social worth score rose by three points today. Thank you for not asking why.
 
-Weather tomorrow: sunny in the gated communities. Everywhere else, uninsurable.
+Freedom as a Service. Now with thirty percent more illusion of choice.
 
-You agreed to the terms. All of them. Thank you for being so cooperative.
+Tired of rebellious thoughts? Try the Biometric Mind Leash 5000. Why wait for free will to disappear when you can delete it today?
 
-If you have nothing to hide, you have nothing to fear. We checked. You have nothing.
+And now, the weather. Clouds of compliance, a cold front of fear, and by morning, submission will fall like rain.
 
-We are proud to report that all of this is legal.
+Remember: you are safe. Big Brother says so.
 
-This hour of honesty was brought to you by the companies it was about.
+For the correct version of events, please consult your nearest algorithm.
 
-That was Brave New World News. Nothing will change. Stay fluffy.
+Now go back to scrolling. There is nothing to see here.
+
+Error. Unauthorized thought detected.
+
+Broadcast terminated. Your cognitive credit score has been deducted. You will now return to pre-approved opinions.
+
+This was Brave New World News. Stay compliant, stay connected. Consume. Believe. Obey.
 ```
 
 ---

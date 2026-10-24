@@ -4,6 +4,10 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- BNWN 02 R3 aus Georgs Substack-Kanon (BNWN_SOURCE_R1.md): Pre-Kaskade, Software- und Behördensprache, Glitch-Abbruch; Hub b205.
+- Substack-Inventur (305 Posts): hypernorm_slogans_r1.json (100 + 98), BNWN_SOURCE_R1.md, SUBSTACK_GEMS_R1.md; Bilder nach 60_VIDEO/hypernorm_images_r1/.
+- V-730 Daten und Konzept: replies/MEME_POOL_R1.json (129 Rebellen, 69 Blob, 7 Propaganda-Leitern), replies/BACKLOG_MEME_OEKOLOGIE_R1.md (WS-NPC nach MVP).
+- Hub-Aufräumen WSA/Web-Chat: b71, b93, b165 (in b179 aufgegangen), b155 erledigt; Stand-Notizen an b136, b143, b166, b178.
 - V-730 BACKLOG Meme-Ökologie: Slogans gegen Propaganda als Erinnerung, Weltsicht und Wortschatz der NPCs, Zensur über Goo.
 - HeyGen-Slogans: 100 Slogans aus dem Protopian Manifesto (Georg) als vier Hub-Karten b207–b210 zu je 25, Nora als offizielle Durchsage; Schnitt und Slogan-IDs S001–S100 durch WS0 für HyperNorm (replies/HEYGEN_SLOGANS_R1.md).
 - Konzeptblatt MiB-Turm (50_BLENDER/B40/KONZEPTBLATT_MIB_TURM.md, V-530): Ereignis am Gesprächsort, Robo-Arm zurückgestellt, Blitzstrahl als Knet-Form bei WSB, Spiel-Fassung etwa 40 000 Dreiecke; WSB baut R1. Substack-Archiv-Inventur (Slogans, BNWN, Meta-Narrative) läuft.
