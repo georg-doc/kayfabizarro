@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-758 q202 beantwortet: H15 re-homed mit öffentlichem PD-Pool (kayfabizarro tools/h15-mindscape-2026-10-25 @b77e306, lokal geprüft: 100 fps, Pool 481/481, Karten 20/20, 6 Gedichte). Briefing Runde 2 an Claude Design (replies/BRIEF_CLAUDE_DESIGN_H15_M4_R1.md, Hub b225; Prüfer-BLOCK V-740 behoben: M4 erst Storyboard/Style-Frames zur Abnahme, dann Bau; M5 Qualitätsregler zuerst, Zielgeräte und fps-Ziel, Bake als Equirect-PNG-Folge, Landkarten fest gelistet, Schalen-Obergrenze V-726, Ton des Durchflugs, nur CC0/_FREE-Kandidaten).
 - V-757 H15 Mindscape WIP von Claude Design eingegangen (Sphäre, Schalen, Gedichtband, Soundbed, Pools); Korrektur: H14 und H15 existieren. Fragen und WS0-Empfehlungen in Hub q202.
 - V-756: WS0 übernimmt den WS1-Slice der prozeduralen MVP-Welt (S1–S3, kfb-place veg=core) mit WSA und Claude Design; Zweig game/proc-world-ws0, lokal ~/kfb-ws0/kfb-mvp. WS1 nur noch Schritt 0 + Fix (b223 angepasst). Platte 98 % voll: private Assets und node_modules verschoben statt doppelt geladen.
 - Claude-Design-Brief kfb-place P0 (4 Style-Frames, keine Figuren, Fundstück 15 cm/35° nach V-450/V-453, Fluff-Farben aus V-292, Kameras, Kanon-12/16-Regeln; Prüfer: 3 BLOCK behoben), Material auf GitHub design/claude-design-r3/kfb_place_p0 @faf4fcf, Hub b224. Stumpf aus Kenney Nature Kit (KayKit Forest FREE hat keinen). V-755 Voronoi-Lückenfelder (masks.gaps, Löser v2).
