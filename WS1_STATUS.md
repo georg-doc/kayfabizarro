@@ -1,7 +1,88 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §161.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§161 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §162.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§162 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 162 · 24.10. · Georg-Entscheid Ruf-Skala (bitte ins Register) · Übergabe-Ablauf zwischen den Workspaces (Abgleich mit WS0_STATE) · Prozedurale Welt: ein Konzept, verwandte Slices, nächste Schritte · Ziel: MVP + Konzept bis Do 29.10. an WS0
+
+### 1 · Entscheid Ruf-Skala (Georg 24.10., bitte als DECISION ins Register, erweitert V-699/V-704)
+Georg: Die Rufe müssen im Spiel einheitlich, schlüssig und flexibel sein. Sie gelten überall: Interaktion, Tratsch, Spielerchat und weitere Anwendungen. Das reale Tischspiel ist nur eine **lose Brücke**; dort bleiben die Kayfa-Formen nach V-704. Eigene innere Logik: **Das Satzzeichen trägt die Haltung.**
+
+| Ruf | Haltung | Bedeutung überall | Tratsch | Auto/Interaktion | Gedächtnis |
+|---|---|---|---|---|---|
+| Bingo! | ! entschieden | Ja, passt, annehmen | Karte ins eigene Weltbild | einsteigen/annehmen | Plus |
+| Boggle...? | ...? offen | Hä? Mehr davon; Dialog bleibt offen | Gegenüber legt Lore nach | „Wohin?“, „Wer bist du?“ | keine |
+| Bongo. | . gelassen | Nicht jetzt / anders; weiches Nein, Tür bleibt offen | erzähl was anderes oder dasselbe anders (z. B. als Geschichte) | später; das Auto fragt wieder | neutral, Wiederholung erlaubt |
+| Blödsinn! | ! entschieden | Nein, Widerspruch; hartes Nein, Dialog endet | Streit, Konfliktstoff | fährt beleidigt weg | Minus |
+| Humbug?! | ?! ungläubig | Vergiss es (MiB-Blitzdingsen) | Karte fliegt aus dem Weltbild | Begegnung gelöscht, später auch teilweise | löscht |
+
+- Ohne Ruf weggehen oder weiterfahren beendet still.
+- **Umsetzung:** WS-NPC stellt tratschSim/Freestyle um (Bongo heißt nicht mehr nur „Geschichte“) und die Spieler-Zurufe in poolReader.js auf V-699. Konzept Prozedurale Welt §5.8.2 bei WS1b. Deck-Songs gleicht über einen Vorschlag an euch an.
+- **Bezug V-706/V-709 (WSB Gesprächs-Beats):** Die Skala ist die Vorlage für die Reaktionen auf die fünf Rufe (Lücken Boggle und Humbug).
+
+### 2 · Übergabe zwischen den Workspaces (Georg-Bitte, zur Entscheidung durch WS0)
+Georg will, dass **WS0 jede Sitzung im Zweifel komplett übernehmen** und nahtlos anschließen kann: an Prozesse, Slices und die Veröffentlichung auf der WSA-GPT-Site, je nach Token-Lage. Doppelte Buchhaltung soll dabei möglichst vermieden werden.
+
+**Abgleich mit dem Ist-Stand:**
+- WS0_STATE §3 führt die Kanäle je Sitzung, `tools/status_latest.sh` findet die Status-Abschnitte.
+- Übergaben entstehen heute aber je Projekt ad hoc: im Repo etwa 30 HANDOVER-, ONBOARDING- und UEBERGABE-Dateien in sechs Schreibweisen (`_handoff/`, `docs/HANDOVER_*`, `ONBOARDING-NEXT-CHAT.md` …).
+- Was fehlt, ist ein **fester Ort je laufender Sitzung**, der ohne den Chatverlauf reicht.
+
+**Vorschlag des Lead (klein, ohne neue Doku-Schicht):**
+- **Eine Übernahmekarte je Sitzung** auf `ws1/status` unter `sessions/<kürzel>.md` (lead, ws1b–e, ws-npc, ws-audio, deck-songs, deck-analyzer; WSB/WSA nach eurem Ermessen). Inhalt:
+  1. Auftrag und Grenzen (Owner von / nicht Owner von)
+  2. Repo, Zweig, Worktree-Pfad, letzter Commit
+  3. wie man baut und prüft (Befehle, Slot, bekannte Altfehler)
+  4. laufende Aufträge mit Quelle (V-Nummer bzw. Status-§)
+  5. offene Fragen an Georg bzw. WS0
+  6. Regeln, die nur für diese Sitzung gelten (Verweise statt Abschrift)
+  7. nächster sinnvoller Schritt
+- **Pflege statt Doppelung:** Die Karte wird nur geändert, wenn sich 2–7 ändern, im selben Zug wie der Commit bzw. Status-Abschnitt. Die Status-Abschnitte bleiben das Logbuch, die Karte ist der Schnappschuss. Mehr nicht.
+- **WS0_STATE §3** bekommt eine Spalte „Übernahmekarte“. Für die Site gibt es eine Karte `sessions/site.md`: welcher Stand wo live ist, wie man veröffentlicht, wer freigibt.
+- Wenn ihr ein anderes Format bzw. einen anderen Ort wollt (z. B. im Register-Branch), bitte festlegen; der Lead führt es dann für alle WS1-Sitzungen ein. Bis zu eurem Entscheid legt der Lead die Karte für sich selbst als Muster an.
+
+### 3 · Prozedurale Welt: ein Konzept aus allen Quellen, verwandte Slices
+**Konzept:** WS1b, `ws1/prozedurale-welt` @863f830 (R1.3), `docs/PROZEDURALE_WELT_KONZEPT_R1.md`.
+- V-705 (Splats, Gutter, Portale) ist eingearbeitet.
+- **Neu beauftragt als R1.4:**
+  - V-708 Welt-Komposition (PR #447): Matrix KEEP/ADAPT/REJECT und Kompositionsprobe „Kölner Tasche“ von oben.
+  - V-711: Höhenfeld-Export und Formatvorschlag für Höhen-Änderung plus Maske je Fußabdruck.
+- Damit gibt es **ein Terrain-Konzept** aus drei Quellen: WS1-Konzept, V-705 und V-708.
+
+**Verwandte Slices** (gesammelt, alle nach dem MVP; Reihenfolge ist ein Vorschlag des Lead):
+
+| # | Slice | Quelle | hängt an |
+|---|---|---|---|
+| 1 | Regie R0 (S1): Szenen-Raster, Übergänge, 3–4 Szenentypen, 1 Auftrag | Konzept §8 | Lead: Ereignis-Host, Auftraggeber, `kfb.scene/1` |
+| 2 | Spielstand /2: Gedächtnis je characterId, locusId, vehicleId, Belege, fluffTotal (schon da) | §5.8, §161 | Lead |
+| 3 | Ruf-Grammatik als ein Code-Pfad (NPC, Auto, Ort, Objekt) | §1 oben, §5.8.2 | WS-NPC |
+| 4 | Tratsch Stufe 1: Karten-Journal = Almanac-Owner, Signatur-Decks | §158, V-702 | WS0-Register (Signatur-Deck/Tratsch-Typ), Lead /2 |
+| 5 | Karten-Spekulation, Kayfabulieren | V-702, V-703 | 4 |
+| 6 | Gesprächs-Choreografie (Beats, Rufe als Knet-Lettering) | V-706, V-709 | WSB → WS-NPC |
+| 7 | Einbettungs-Werkzeug + Laufzeit-Schnittstelle im Terrain | V-710, V-711 | WSB, WS1b |
+| 8 | Welt als Spielzeug (Grundreaktion, Squash-Ring) | §5.9 | WS1b |
+| 9 | Genius loci + Orakelort (Dschungel-Computer, Mumien) | §5.8 | WS0: locusId-Register; Deck-Songs: tr1 für ai_kayfabe/pharaoh_piledriver |
+| 10 | Beseelte Fahrzeuge + Schlüssel-Geschenk | §5.8.1 | 3, Geschenk-Enthüllung, WS1d |
+| 11 | Kölner Tasche (OSM) → Portal-Tor → Wasser-Fenster (WS1c) → Gutter-Fahrt | V-705/V-708, S5 | Track-Owner offen |
+| 12 | KayFabrizieren (Rezepte, Hexen) | §161 | 4 |
+| 13 | Destruction (Goo-Fassaden) | V-710 | 7 |
+
+**Fragen an WS0** (aus §161, weiter offen):
+1. Wird locusId/vehicleId eine eigene Register-Art oder ein eigenes Ortsregister? Sind Orte Dramatis Personae?
+2. Bestätigt ihr die Deck-Zuordnung?
+3. Wem gehört die Gutter-Fahrt?
+
+### 4 · Übergabe MVP + Konzept an WS0 (Ziel Do 29.10.)
+Georg: MVP und Konzept sollen bis voraussichtlich Donnerstag an WS0 gehen. Bei WS1 bleiben danach höchstens kleinere Slices.
+
+**Plan des Lead bis dahin:**
+1. Übernahmekarten für alle WS1-Sitzungen (Format nach eurem Entscheid zu §2, sonst Vorschlag oben).
+2. Übergabe-Abschnitt MVP: Live-Stand (game/mvp-r1), Site-Paket, offene Abnahmen, Schalter-Liste (was Standard ist, was hinter Schaltern liegt), bekannte Altfehler (c2, c3g), Prüfreihe.
+3. Konzept R1.4 von WS1b mit der Slice-Tabelle oben.
+4. Letzter Testlauf und Spiegel.
+
+Bitte sagt, ob ihr etwas davon anders braucht.
+- **Nächste Schritte jetzt:** WS1e HUD Paket 2 (Kassette nach V-707, Truhe größer, Gesamt-Fluff), Deck-Analyzer-Pilot, Georg-Urteile tr1-Bühne und HUD 3D.
 
 ## 161 · 24.10. · Prozedurale Welt R1.3 abgenommen (Genius loci, beseelte Autos, V-705 eingearbeitet) · Ruf-Grammatik: Widerspruch zum Tratsch · Gesamt-Fluff · Kassette/Truhe · Bitte: Sitzungen für WS0 übernehmbar machen · Spiegel 6a594f8
 
