@@ -8,7 +8,7 @@ Georg requests an **English-language or historical English-translated world-poet
 **Artistic override:** These are autonomous artistic source materials for the HyperNorm EXPERIENCE plane. A poem can stand alone as film, voice, text-sculpture, a moment of silence or a playful sonic event. No mandatory FrizzleQuestion, Card mapping, data lecture, truth-verdict, quest or moral takeaway. CURATOR editorial fields and existing Quote Pool stay intact.
 
 ## What the seed actually contains
-- File: `POETIC_OCCULT_ARCHIVE_SEED_R1.json`, 89 unique IDs, 9 research regions/families plus multiple subtraditions, each with title, creator/tradition, mood tags, rights flag and optional individually located historical edition URL.
+- File: `POETIC_OCCULT_ARCHIVE_SEED_R1.json`, 89 unique IDs, 12 research regions/families plus multiple subtraditions, each with title, creator/tradition, mood tags, rights flag and optional individually located historical edition URL.
 - **38 records** point to **historical edition/catalog URLs** (some records share an edition); these are not 38 rights-cleared full poems, nor 38 poem-specific verified excerpts.
 - No full text, audio sample, popular-song lyric, current translation, confidential material or KFB Card mapping is imported. Rights remain `publicUseApproved:false` for every entry.
 - Works include poetic dialogue, ritual, philosophical argument and prose; those are marked as **poetic-adjacent**, not misrepresented as poems.
