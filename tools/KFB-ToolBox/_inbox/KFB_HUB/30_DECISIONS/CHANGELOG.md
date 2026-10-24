@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-723 Recherche Schnitt-Grammatik fertig (replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md); N36-Daten und BNWN-Clips im privaten Branch.
 - V-723 Backlog HyperNorm-Schnittbaukasten (Recherche läuft, Remotion bleibt geparkt bis zum Test).
 - V-722 Antworten an WSB zu N35/N36 (Konzeptblatt angepasst), neue Jobs N37 Farbfluss-Look und N38 UFO-Landung; Hub q182/q183; WS1b um Höhenfeld, Delta-Format und Kontaktton gebeten.
 - V-721 erste HyperNorm-Clipfolge BNWN geschnitten (69 Clips, 39 MB), privat, an WS1/WS-Media.

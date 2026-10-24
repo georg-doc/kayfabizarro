@@ -10333,7 +10333,7 @@
    "date": "2026-10-24",
    "area": "Video",
    "verdict": "BACKLOG",
-   "text": "HyperNorm-Schnittbaukasten (Georg 24.10., ändert V-704 nur bedingt): Wenn ein tragfähiges Konzept für Collage- und Musikvideo-Schnittlogik steht (immer frische Schnitte und Übergänge, nach Recherche moderner Musikvideo-Methoden und Adam-Curtis-Montage), übernimmt WSV bzw. Remotion mit Baukasten und SSOT die Aufbereitung modularer Video-Assets, die die HyperNorm-Engine zufällig, kontextuell oder prozedural nutzt. Erst Recherche replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md und ein Test mit den 69 BNWN-Clips; Remotion bleibt geparkt, bis der Test trägt.",
+   "text": "HyperNorm-Schnittbaukasten (Georg 24.10., ändert V-704 nur bedingt): Wenn ein tragfähiges Konzept für Collage- und Musikvideo-Schnittlogik steht (immer frische Schnitte und Übergänge, nach Recherche moderner Musikvideo-Methoden und Adam-Curtis-Montage), übernimmt WSV bzw. Remotion mit Baukasten und SSOT die Aufbereitung modularer Video-Assets, die die HyperNorm-Engine zufällig, kontextuell oder prozedural nutzt. Erst Recherche replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md und ein Test mit den 69 BNWN-Clips; Remotion bleibt geparkt, bis der Test trägt. Recherche fertig (24.10.): Regeln statt Effekte (Beat-Raster 25 fps bei 125 BPM = 12 Bilder je Beat, Schnitt 1–2 Bilder vor dem Beat, Clip-Tags, Verbots-Regeln, Überraschungs-Budget 3 Punkte je 8 Takte, Wechsel Hacken und Halten mit mindestens einem Halte-Shot von 2 Takten je 16), live im Spiel Schnitt, Shader-Übergänge (gl-transitions), Look und Schrift; Remotion rendert nur zeitverbiegende Module (Ramp, Stotter, Datamosh, Gilliam). Fünf Look-Presets (Dreck innen, Kante außen), Schemas kfb.hypernorm-clips/1 erweitert und kfb.hypernorm-recipe/1, Prüftor edl_check. V-721 geht vor der älteren Regel keine Video-Clips. Nächster Schritt: Test mit den 69 BNWN-Clips (60 s, zwei Modi, je 3 Seeds), wenn Georg ihn startet.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -10456,7 +10456,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1193",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1194",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
