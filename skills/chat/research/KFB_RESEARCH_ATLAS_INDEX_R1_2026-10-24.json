@@ -1,0 +1,94 @@
+{
+  "schema": "kfb-research-atlas-index/0.1",
+  "updated": "2026-10-24",
+  "status": "PROPOSAL_BRANCH_LOCAL_NONCANON",
+  "purpose": "Pointers, relations and discovery only; topic files own actual evidence and editorial notes. GitHub commit/branch must be fetched live.",
+  "contract": "skills/chat/research/KFB_RESEARCH_ATLAS_PROTOCOL_R1_2026-10-24.md",
+  "prompts": "skills/chat/research/KFB_DEEP_RESEARCH_MASTER_PROMPT_R1_2026-10-24.md",
+  "metaIndex": "skills/chat/meta/KFB_META_COMPENDIUM_v1.md",
+  "entry": {
+    "id": "mkultra-monarch-social-control-2026",
+    "title": "CIA MKUltra, alleged Monarch, Guantanamo, Mass Formation",
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "research/kfb-mkultra-monarch-cardway-r1-2026-10-16",
+    "pr": 408,
+    "sourceRoot": "skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16",
+    "readFirst": [
+      "BRIEF.md",
+      "SOURCE_LEDGER.md",
+      "R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md",
+      "R2B_GUANTANAMO_SERE_BATTLE_LAB_2026-10-16.md",
+      "SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md",
+      "CARDWAY_IDEAS.md",
+      "TEST_REPORT.md",
+      "RETURN.md"
+    ],
+    "sourceLeadCountSnapshot": 48,
+    "unapprovedResearchCardSeedCountSnapshot": 36,
+    "latestEvidenceAsOf": "2026-10-16",
+    "nextGate": "R2D original BSCT and TIME 063 provenance plus CIA OMS/DOJ/PHR/Senate; West, Cameron, Desmet retained"
+  },
+  "crossLinks": [
+    {
+      "id": "edge-01",
+      "from": "cia-mkultra-historic",
+      "to": "cia-mkdelta",
+      "type": "DOCUMENTED_DISTINCT_PROGRAM_USE",
+      "status": "SOURCE_BACKED",
+      "source": "1963 CIA IG R2A report",
+      "scope": "R&D versus policy for operational use"
+    },
+    {
+      "id": "edge-02",
+      "from": "sere-jpra",
+      "to": "gitmo-2002",
+      "type": "DOCUMENTS_TRANSFER",
+      "status": "SOURCE_BACKED",
+      "source": "2008 Senate SASC plus 2002-03 SERE originals",
+      "scope": "2002-2003, DoD"
+    },
+    {
+      "id": "edge-03",
+      "from": "mkultra-historic",
+      "to": "gitmo-2002",
+      "type": "MECHANISM_SIMILARITY",
+      "status": "INTERPRETIVE_NONCAUSAL",
+      "source": "R2A/R2B comparisons",
+      "scope": "coercive psychological practices; no proven institutional successor"
+    },
+    {
+      "id": "edge-04",
+      "from": "desmet-mass-formation",
+      "to": "social-identity-fear-research",
+      "type": "WARBURG_NEIGHBOR",
+      "status": "COMPARATIVE_HYPOTHESIS",
+      "source": "S10–S15",
+      "scope": "different levels of theory; requires empirical comparison"
+    },
+    {
+      "id": "edge-05",
+      "from": "doj-olc-2005",
+      "to": "phr-experiments-in-torture-2010",
+      "type": "INTERPRETS",
+      "status": "SOURCE_BACKED_INTERPRETATION",
+      "source": "S46–S47",
+      "scope": "PHR derives research hypothesis from legal/medical observations; no formal research protocol established"
+    },
+    {
+      "id": "edge-06",
+      "from": "doj-olc-2005",
+      "to": "field-medical-ethics",
+      "type": "APPEARS_IN_FIELD",
+      "status": "DESIGN_ANALOGY",
+      "source": "Gabriel-inspired interpretive field",
+      "scope": "legal decision and contested medical duty intersection"
+    }
+  ],
+  "protection": {
+    "doNotMoveExistingMasters": true,
+    "doNotCreateSecondRuntime": true,
+    "doNotActivateCards": true,
+    "noAutoMerge": true,
+    "noLiveWithoutPublicVerification": true
+  }
+}
