@@ -19,6 +19,9 @@ import { useHostKeys, ACTION_KEYS, PRIO } from './hostKeys'
 import { M2EVENTS } from './m2/M2Car'
 import * as A from './audio/kfbAudio'
 import { cardImage } from './cardImage'
+import { createL3 } from './hud/hudL3' // Paket 5: Overlays L3 (fraktaler Almanach, Truhe 20)
+import { ic as r5Icon } from './vendor/hud/hud-r5/r5f-hud.js'
+import { DECKS, cardsOfDeck, cardAt } from './cards'
 
 // Tastenfarben der Kassette (V-707): N33 controlTheme, sobald vorhanden (privates JSON, Schlüssel controlTheme.day/night mit hi/mid/lo/symbol/outline/gloss);
 // bis dahin vorläufig: Tag Orange, Nacht Türkis.
@@ -51,7 +54,7 @@ export default function HudClay(props) {
     if (!ok) return undefined
     if (!document.querySelector('link[data-kfb-bangers]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = BANGERS_HREF; l.dataset.kfbBangers = '1'; document.head.appendChild(l) }
     const S = sig.current
-    const hud = K3 ? createHud3d({ reducedMotion, cassette: (/(^|[#,])cas=(old|new)(,|$)/.exec(location.hash) || [])[2] || 'new' }) : /* cas=old = Kassette und Größen vor Georgs 24.10.-Wunsch (A/B) */ createClayHud({
+    const hud = K3 ? createHud3d({ reducedMotion, cassette: (/(^|[#,])cas=(old|new)(,|$)/.exec(location.hash) || [])[2] || 'new', boost: (/(^|[#,])boost=(a|b)(,|$)/.exec(location.hash) || [])[2] || 'a' }) : /* cas=old = Kassette und Größen vor Georgs 24.10.-Wunsch (A/B) */ createClayHud({
       palette: () => host.palette?.(), speed: () => S.kmh, heading: () => S.heading, mapPos: () => S.prev,
       mapSample: (x, z) => mapColor(host, x, z), mapMarks: () => host.marks?.() || [], path: host.path || [],
       nowPlaying: () => (A.musicPaused?.() ? { title: 'Pause' } : A.nowPlaying()), audioOn: () => !A.volumes().muted, reducedMotion,
@@ -60,11 +63,11 @@ export default function HudClay(props) {
     document.fonts?.load?.('104px Bangers').then(() => hud.refreshTicker?.(), () => {})
     if (!K3) host.cards?.().then((cv) => { if (cv?.length) hud.setCards(cv) }, () => {})
     // HUD 3D Almanac: Karten vom Haken host.almanac() (Owner vorerst M1-Wirt, später Karten-Journal), Bilder über cardImage, Original nie umgefärbt
-    if (K3) { const al = host.almanac?.(); if (al?.cards?.length) Promise.all(al.cards.slice(-7).map((c) => cardImage(c.deckId, c.num, 560).then((r) => r?.canvas?.toDataURL('image/jpeg', 0.9) || null, () => null)))
-      .then((srcs) => { const ok = srcs.filter(Boolean); if (ok.length) dom.current?.setFan?.({ srcs: ok, total: al.total ?? al.cards.length, decks: al.decks ?? 1 }) }) }
+    if (K3) { const al = host.almanac?.(), last7 = al?.cards?.slice(-7) || []; if (last7.length) Promise.all(last7.map((c) => cardImage(c.deckId, c.num, 560).then((r) => r?.canvas?.toDataURL('image/jpeg', 0.9) || null, () => null)))
+      .then((srcs) => { const keys = last7.filter((c, i) => srcs[i]), ok = srcs.filter(Boolean); if (ok.length) dom.current?.setFan?.({ srcs: ok, keys, total: al.total ?? al.cards.length, decks: al.decks ?? 1 }) }) }
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
     dom.current = K3 ? buildDom3d(hud, inner, { host, onInteract: props.onInteract, pos: () => sig.current.prev, heading: () => sig.current.heading }) : buildDom(hud, inner, () => clay.current)
-    expose('ClayHud', { kit, speed: () => hud.speedState?.() || null, layout: () => hud.layout?.() || null, cassetteButtons: () => hud.cassetteButtons?.() || {}, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
+    expose('ClayHud', { kit, l3: () => dom.current?.l3?.state() || null, openAlmanac: (at) => dom.current?.openAlmanac?.(at || null), openSettings: (tab) => dom.current?.openSettings?.(tab || null), openChest: (sel) => dom.current?.openChest?.(sel), l3Back: () => dom.current?.l3Back?.(), lid: () => hud.lidState?.() || null, speed: () => hud.speedState?.() || null, speedFeed: (f) => { SPEED_FEED.fn = typeof f === 'function' ? f : f ? () => f : null; return !!SPEED_FEED.fn }, /* Prüfhilfe: Telemetrie-Werte einspeisen (ms, zones, fly, boosting) */ layout: () => hud.layout?.() || null, cassetteButtons: () => hud.cassetteButtons?.() || {}, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
       goalRel: (bDeg, pDeg = 0, dist = 300, name = 'Testziel') => { const pp = host.target?.(); if (!pp) return null; camera.getWorldDirection(_f); _f.y = 0; _f.normalize(); _r.crossVectors(_f, _up).normalize()
         const b = bDeg * DEG, p = pDeg * DEG, hz = Math.cos(p) * dist; GOAL.dbg = { name, pos: { x: pp.x + (_f.x * Math.cos(b) + _r.x * Math.sin(b)) * hz, y: (pp.y ?? 0) + Math.sin(p) * dist, z: pp.z + (_f.z * Math.cos(b) + _r.z * Math.sin(b)) * hz } }; return GOAL.dbg }, toggleCompass: (v) => hud.toggleCompass(v), uiState: (k) => hud.uiState(k), setAnimator: (k, fn) => hud.setAnimator(k, fn), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
     return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
@@ -88,16 +91,18 @@ export default function HudClay(props) {
         _v.set(g.pos.x - pp.x, (g.pos.y ?? pp.y) - (pp.y ?? 0), g.pos.z - pp.z); const hz = Math.hypot(_v.x, _v.z)
         hud.setTarget({ name: g.name, b: Math.atan2(_v.x * _r.x + _v.z * _r.z, _v.x * _f.x + _v.z * _f.z) / DEG, p: Math.atan2(_v.y, Math.max(hz, 1e-3)) / DEG, d: Math.hypot(hz, _v.y), dv: _v.y }) }
       else hud.setTarget(null) }
-    // HUD 3D Tempo-Leiste: nur Fahren/Fliegen; Tempo und Boost vom Fahrzeug (M2STATE.telemetry, nur lesend), zu Fuß im Flug Tempo aus der Lage
-    if (K3) { const md = host.mode?.() || 'walk', tel = host.telemetry?.(), fly = md === 'fly' || !!tel?.fly, kmh = tel ? tel.speed * 3.6 : S.kmh
-      hud.setSpeed({ visible: md !== 'walk' || fly, kmh, frac: tel?.fly && tel.speed01 != null ? tel.speed01 : kmh / 160, boost: tel ? !!(tel.boosting || tel.freeBoost) : false }) } // Board: 160 km/h = voll
+    // HUD 3D Tempo-Säule: nur Fahren/Fliegen. Tempo, Zonen und Boost vom Fahrzeug (M2STATE.telemetry, nur lesend; ms/zones in J17-m/s, kmh = ms × 3,6
+    // in beiden Modi gleich). Zu Fuß im Flug: Tempo aus der Lage auf die Fahrzonen-Vorgabe (160 km/h = voll).
+    if (K3) { const md = host.mode?.() || 'walk', tel0 = host.telemetry?.(), fd = SPEED_FEED.fn?.(tel0), tel = fd ? { ...tel0, ...fd } : tel0
+      const fly = md === 'fly' || !!tel?.fly, ms = tel ? tel.ms ?? tel.speed : null, kmh = ms != null ? ms * 3.6 : S.kmh
+      hud.setSpeed({ visible: (md !== 'walk' || fly) && !(FOOT_OFF && !tel0), kmh, speed: ms, zones: tel?.zones || null, frac: kmh / 160, boost: tel ? !!(tel.boosting || tel.freeBoost) : false, fly, stall: !!(fly && tel?.stall != null && ms != null && ms < tel.stall) }) }
     hud.update(dt, { yawRate: S.yawRate, accel: S.accel })
     dom.current?.sync()
     const I = inner.current; if (I) { const open = I.bagOpen(); if (open !== dom.current?.bagWas) { dom.current.bagWas = open; hud.setChestOpen(open) } }
   })
 
   // Esc schließt die Settings-Tafel (Tastatur nur über hostKeys)
-  useHostKeys((e) => { if (e.code !== ACTION_KEYS.close) return; if (dom.current?.closeFly?.()) { e.preventDefault(); return } if (dom.current?.settingsOpen()) { dom.current.settings(false); e.preventDefault() } }, PRIO.choice + 1)
+  useHostKeys((e) => { if (e.code !== ACTION_KEYS.close) return; if (dom.current?.l3Back?.()) { e.preventDefault(); return } if (dom.current?.closeFly?.()) { e.preventDefault(); return } if (dom.current?.settingsOpen()) { dom.current.settings(false); e.preventDefault() } }, PRIO.choice + 1)
 
   const wrap = (a) => {
     inner.current = a
@@ -110,8 +115,9 @@ export default function HudClay(props) {
       setCtx: (c) => { a.setCtx(c); if (K3 && c === 'bomb') clay.current?.pulse('act2') },
       setTarget: (b) => { a.setTarget(b); a.__target = !!b }, // Interaktion in Reichweite (HUD 3D: Hinweis-Lichthof an der Blase)
       setActiveWeapon: (wid) => { const was = a.activeWeapon?.(); a.setActiveWeapon(wid); if (K3) clay.current?.setWeapon(wid ? 'blaster' : 'fist'); if (wid !== was) flash(wid ? (a.weapons?.().find((x) => x.wid === wid)?.n || wid) : 'Faust') },
-      openBag: (...x) => { a.openBag(...x); clay.current?.setChestOpen(a.bagOpen()) },
-      closeBag: () => { a.closeBag(); clay.current?.setChestOpen(false) },
+      openBag: (...x) => { if (K3 && dom.current?.openChest) { dom.current.openChest(x[0]); return } a.openBag(...x); clay.current?.setChestOpen(a.bagOpen()) }, // HUD 3D: Truhe 20 (L3) statt Holz-Rucksack
+      closeBag: () => { if (K3 && dom.current?.closeL3) { dom.current.closeL3('chest'); return } a.closeBag(); clay.current?.setChestOpen(false) },
+      bagOpen: () => (K3 && dom.current?.l3 ? dom.current.l3.kind() === 'chest' : a.bagOpen()),
       skin: 'clay', clay: () => clay.current })
     if (K3) clay.current?.setCounts(a.counts()); else clay.current?.setScore(a.counts().reduce((s, x) => s + x, 0))
   }
@@ -180,6 +186,8 @@ function buildDom(hud, inner, getHud) {
 }
 
 // ── DOM für HUD 3D (Spike-Paket 1): Trefferflächen Truhe und Pfeil, Name und Entfernung unter dem Pfeil (Bangers mit Kontur, ohne Schild), Waffen-Anzeige ──
+const FOOT_OFF = typeof location !== 'undefined' && /(^|[#,])fusstempo=aus(,|$)/.test(location.hash) // Prüf-Schalter V-736: Säule beim Fliegen zu Fuß aus (Bildvergleich für Georg)
+const SPEED_FEED = { fn: null } // nur debug (expose): eingespeiste Telemetrie für Prüfbilder (Flug-Start braucht eine Rampe)
 const inkText = (size, color = '#fff6e0') => { const o = Math.max(1, Math.round(size / 13)), o2 = o + Math.max(1, Math.round(size / 18)), I = INK3
   const sh = [`${o2}px ${o2}px 0 ${I}`, `${o}px ${o2}px 0 ${I}`, `${o2}px ${o}px 0 ${I}`, `-${o}px -${o}px 0 ${I}`, `${o}px -${o}px 0 ${I}`, `-${o}px ${o}px 0 ${I}`, `0 ${o}px 0 ${I}`, `${o}px 0 0 ${I}`, `-${o}px 0 0 ${I}`, `0 -${o}px 0 ${I}`].join(',')
   return `font:400 ${size}px/1 Bangers,Fredoka,system-ui,sans-serif;letter-spacing:.04em;color:${color};text-shadow:${sh};white-space:nowrap` } // Werte aus h3d-hud inkText
@@ -198,7 +206,7 @@ function buildDom3d(hud, inner, P = {}) {
   // Klick = gleiche Wirkung wie die Spieltaste (Lead 24.10.): Taste über den einen Tastatur-Weg (hostKeys) auslösen, keine zweite Logik
   const key = (code) => window.dispatchEvent(new KeyboardEvent('keydown', { code, bubbles: true }))
   const hits = {
-    chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }, 'chest'),
+    chest: btn('Truhe öffnen', () => { if (l3.kind() === 'chest') l3.close(); else openChest() }, 'chest'), // Paket 5: Truhe 20 (L3), Deckel klappt cartoonig auf
     arrow: btn('Ziel', () => openFly(fly === 'map' ? null : 'map'), 'arrow'), // Paket 4: Karte und Zielwahl (Flyout L2)
     gear: btn('Einstellungen', () => { hud.tapGear(); openFly(null); SP.settings(!SP.isOpen()) }, 'gear'),
     act0: btn('Faust (V)', () => key('KeyV'), 'act0'), act1: btn('Blaster (B)', () => key('KeyB'), 'act1'), act2: btn('Clown-Bombe (N)', () => key('KeyN'), 'act2'),
@@ -206,6 +214,34 @@ function buildDom3d(hud, inner, P = {}) {
   // Knöpfe der N34-Kassette nach „Kassette als Player“ r5 (V-707): plastische Taste (Sockel, Kuppe, Schatten; beim Drücken eingesunken), Glanz nur als dünner
   // Rand, Symbol cremeweiß mit dunkler Kontur, kein Umriss um die Taste. Farbe nach Tageszeit (Tag Orange, Nacht Türkis), Schalter ctl=auto|day|night.
   // Werte aus N33 controlTheme, sobald es im privaten JSON steht; bis dahin CTL_FALLBACK (vorläufig, Lead 24.10.). Symbole wie n34r2_page icon().
+  // ── Overlays L3 (Paket 5): fraktaler Almanach und Truhe 20 in einer Hülle (src/hud/hudL3.js); Inhalte von den Ownern ───────────────────────────
+  // Almanach: host.almanac() (Owner M1-Wirt/Karten-Journal) + Deck-Titel/-Größe aus cards.js; Bilder über cardImage (Original). Truhe: R5f-api (Inventar 20),
+  // Ausrüsten = Zifferntaste der Waffe (hostKeys), Wegwerfen = throwItem wie im Holz-Rucksack. Übergang alm=zoom (Standard, fraktal) | alm=page (Seitenwechsel)
+  const ALM = (/(^|[#,])alm=(zoom|page)(,|$)/.exec(location.hash) || [])[2] || 'zoom'
+  const l3 = createL3({ root, inkText, reduced: reducedMotion, transition: ALM, onState: (st) => { hud.setChestOpen(st.kind === 'chest'); hud.setUiFlag('chest', 'on', st.kind === 'chest'); hud.setUiFlag('gear', 'on', st.kind === 'settings') } })
+  const deckMeta = new Map()
+  const metaOf = (id) => { if (!deckMeta.has(id)) { const di = DECKS.findIndex((d) => d.id === id), all = di < 0 ? [] : cardsOfDeck(di).map(cardAt).filter((c) => c.num >= 1)
+    deckMeta.set(id, { title: DECKS[di]?.title || id, total: all.length, name: new Map(all.map((c) => [c.num, c.name])) }) } return deckMeta.get(id) }
+  const almProv = {
+    decks: () => { const al = host.almanac?.() || { cards: [] }, by = new Map(); for (const c of al.cards) { if (!by.has(c.deckId)) by.set(c.deckId, []); by.get(c.deckId).push(c.num) }
+      return [...by].map(([id, nums]) => { const m = metaOf(id); return { id, title: m.title, total: m.total, cards: nums.map((n) => ({ num: n, name: m.name.get(n) || '' })) } }) },
+    img: (deckId, num, res) => cardImage(deckId, num, res).then((r) => r?.canvas?.toDataURL('image/jpeg', 0.9) || null),
+  }
+  const WKEY = Object.fromEntries(Object.entries(ACTION_KEYS.weapon).map(([code, wid]) => [wid ?? '', code]))
+  const chestProv = { cap: 20,
+    list: () => { const I = inner.current; if (!I) return []; const aw = I.activeWeapon?.() ?? null
+      return [...(I.weapons?.() || []).map((w) => ({ ...w, weapon: true, active: w.wid === aw })), ...(I.items?.() || [])] },
+    equip: (wid) => { const code = WKEY[wid ?? '']; if (code) key(code) }, // gleiche Wirkung wie die Zifferntaste
+    drop: (i) => inner.current?.throwItem?.(i),
+    icon: (name, sz) => r5Icon(name, sz, '#8a7258'),
+  }
+  // Erst klappt der Deckel auf (Feder, Überschwingen sichtbar), dann wächst die Tafel aus der Truhe (220 ms); zu: Tafel weg, Deckel fällt mit Rückprall zu
+  let chestT = 0
+  const openChest = (sel = null) => { openFly(null); SP.settings(false); clearTimeout(chestT); hud.setChestOpen(true)
+    const go = () => { const r = hud.rects().chest; l3.open('chest', chestProv, { at: { sel: sel ?? 0 }, from: r ? new DOMRect(r.x, r.y, r.w, r.h) : null }) }
+    if (reducedMotion()) go(); else chestT = setTimeout(go, 220) }
+  const openAlmanac = (at = null, from = null) => { openFly(null); SP.settings(false); l3.open('almanac', almProv, { at, from }) }
+  let l3Key = ''
   const j17 = {}; for (const k of ['play', 'next', 'mute']) { const d = document.createElement('div'); d.style.cssText = 'position:absolute;pointer-events:none;display:none'; d.dataset.j17 = k; j17[k] = d; root.append(d) }
   const ctlMode = (/(^|[#,])ctl=(auto|day|night)(,|$)/.exec(location.hash) || [])[2] || 'auto'
   const theme = () => { const night = ctlMode === 'night' || (ctlMode === 'auto' && !!host.isNight?.()); return { ...CTL_THEME[night ? 'night' : 'day'], id: night ? 'night' : 'day' } }
@@ -268,8 +304,8 @@ function buildDom3d(hud, inner, P = {}) {
     return w }
   // Titel der Kassette nur beim Wechsel, 2,4 s, über der Kassette
   const ttl = document.createElement('div'); ttl.style.cssText = 'position:absolute;pointer-events:none;opacity:0;transition:opacity .25s'; root.append(ttl); let ttlT = 0, lastTitle = null
-  // Tempo-Zahl und „KM/H“ links neben der Leiste (h3d-hud: rechtsbündig 8 px vor der Leiste, Zahl fs + 4, Einheit 0,7 fs)
-  const spd = document.createElement('div'); spd.id = 'kfb-hud3d-speed'; spd.style.cssText = 'position:absolute;display:none;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none'
+  // Tempo-Zahl und „KM/H“ mittig unter der Säule, Schrift wie Entfernung und Name unter dem Pfeil (Georg 24.10.)
+  const spd = document.createElement('div'); spd.id = 'kfb-hud3d-speed'; spd.style.cssText = 'position:absolute;display:none;flex-direction:column;align-items:center;gap:2px;pointer-events:none;transform:translateX(50%)'
   const spN = document.createElement('div'), spU = document.createElement('div'); spU.textContent = 'KM/H'; spd.append(spN, spU); root.append(spd); let spKey = ''
   // Name und Entfernung unter dem Pfeil
   const lab = document.createElement('div'); lab.id = 'kfb-hud3d-label'; lab.style.cssText = 'position:absolute;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none'
@@ -311,30 +347,43 @@ function buildDom3d(hud, inner, P = {}) {
       fanFly.style.cssText = PANEL(k) + `;left:${36 * k}px;top:${(A2.y + A2.ch + 6 * A2.step + A2.cap + 48) * k}px;width:${w}px;padding:${24 * k}px;display:flex;flex-direction:column;gap:${20 * k}px`
       const head = document.createElement('div'); head.textContent = 'LETZTE KARTEN'; head.style.cssText = `font:400 ${30 * k}px/1 Bangers,Fredoka,sans-serif;letter-spacing:.05em`
       const grid = document.createElement('div'); grid.style.cssText = `display:grid;grid-template-columns:repeat(${cols},${cw}px);gap:${gap}px`
-      fanData.srcs.slice(-7).reverse().forEach((src) => { const im = document.createElement('img'); im.src = src; im.alt = 'Karte'; im.style.cssText = `width:${cw}px;height:${chh}px;border-radius:${8 * k}px;box-shadow:0 0 0 ${2 * k}px ${INK3},${2 * k}px ${4 * k}px 0 ${2 * k}px ${INK3};display:block`; grid.append(im) })
-      const all = document.createElement('button'); all.type = 'button'; all.disabled = true; all.title = 'Almanac-Overlay folgt (L3)'; all.textContent = `Alle Karten · ${fanData.total} · folgt`
-      all.style.cssText = `align-self:flex-start;padding:${12 * k}px ${24 * k}px;border-radius:${28 * k}px;border:0;background:#2b2236;color:#fff6e0;opacity:.55;font:600 ${24 * k}px/1 Fredoka,sans-serif`
+      const n7 = fanData.srcs.length; fanData.srcs.slice(-7).reverse().forEach((src, j) => { const c = fanData.keys?.[n7 - 1 - j], im = document.createElement('img'); im.src = src; im.alt = 'Karte'; im.style.cssText = `width:${cw}px;height:${chh}px;border-radius:${8 * k}px;box-shadow:0 0 0 ${2 * k}px ${INK3},${2 * k}px ${4 * k}px 0 ${2 * k}px ${INK3};display:block;cursor:pointer`
+        if (c) { im.setAttribute('role', 'button'); im.setAttribute('aria-label', `Karte ${c.num} im Almanach`); im.addEventListener('click', (e) => { e.stopPropagation(); openAlmanac({ level: 3, deck: c.deckId, num: c.num }, im.getBoundingClientRect()) }) } grid.append(im) }) /* Karte → Detail (fraktal) */
+      const all = document.createElement('button'); all.type = 'button'; all.dataset.l3 = 'almanac'; all.textContent = `Alle Karten · ${fanData.total}`
+      all.addEventListener('click', (e) => { e.stopPropagation(); openAlmanac(null, fanFly.getBoundingClientRect()) })
+      all.style.cssText = `align-self:flex-start;padding:${12 * k}px ${24 * k}px;border-radius:${28 * k}px;border:0;background:#2b2236;color:#fff6e0;cursor:pointer;font:600 ${24 * k}px/1 Fredoka,sans-serif`
       fanFly.replaceChildren(head, grid, all)
     }
   }
-  // Zahnrad-Tafel: Mode (Walk/Drive/Fly) und Game/God (God folgt, kein Owner) vor den bestehenden Zeilen
-  const seg = (items, cur, onPick) => { const w = document.createElement('div'); w.style.cssText = `display:flex;gap:2px;padding:3px;border-radius:16px;background:#2b2236;border:1.5px solid ${INK3}`
-    items.forEach(([id, t, dis]) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.mode = id; b.textContent = t; b.disabled = !!dis; b.title = dis ? 'folgt' : t
-      b.style.cssText = `padding:3px 10px;border:0;border-radius:12px;font:400 16px/1.2 Bangers,Fredoka,sans-serif;letter-spacing:.06em;cursor:${dis ? 'default' : 'pointer'};color:${id === cur() ? '#fff6e0' : dis ? '#6e6478' : '#bfb3c7'};background:${id === cur() ? '#d97c3a' : 'transparent'}`
-      b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (!dis) onPick(id) }); w.append(b) }); return w }
-  let modeBox = null, godBox = null
-  const modeRow = ({ row: r }) => { const box = document.createElement('div'); modeBox = box; const paint = () => box.replaceChildren(seg([['walk', 'WALK'], ['drive', 'DRIVE'], ['fly', 'FLY']], () => host.mode?.() || 'walk', (m) => { host.setMode?.(m); paint() })); paint(); box.paint = paint; return r('Mode', box) }
-  const godRow = ({ row: r }) => { const box = document.createElement('div'); godBox = box; box.append(seg([['game', 'GAME'], ['god', 'GOD · FOLGT', true]], () => 'game', () => {})); return r('Spiel', box) }
-  const keysRow = ({ row: r }) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.setting = 'keys'; b.textContent = 'zeigen'
-    b.style.cssText = `padding:4px 14px;border-radius:12px;border:0;background:#2b2236;color:#fff6e0;font:600 15px/1.2 Fredoka,sans-serif;cursor:pointer`
-    b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); document.getElementById('m1-keys-info')?.click() }); return r('Tastenliste', b) } // ersetzt das freie „i“ (m1Host keyList)
-  const SP = settingsPanel(root, hud, () => null, { top: [modeRow, godRow, keysRow], accent: '#d97c3a', refresh: () => modeBox?.paint?.() })
+  // ── Einstellungen L3 (Paket 6, Board 08): eine Hülle wie Almanach und Truhe; die Zeilen rufen die bestehenden Owner (nur die Hülle ist neu) ──────
+  // Spiel: Modus WALK/DRIVE/FLY (host.setMode), GAME/GOD (God folgt, kein Owner), Entwickler-Infos = DEVUI-Schalter (V-655), Holz-HUD-Vergleich.
+  // Ton: Ton an/aus + Lautstärken (kfbAudio, wie das ♪-Panel von WS-Audio). Steuerung: Tastenliste aus m1Host (#m1-keys). Barrierefreiheit: Bewegung
+  // reduzieren. Board-Zeilen ohne Owner (Sprache, HUD-Größe, Zielentfernung) bleiben weg, bis es sie gibt.
+  const VOLS = [['master', 'Gesamt'], ['music', 'Musik'], ['sfx', 'Effekte'], ['atmo', 'Atmo']]
+  const setProv = { tabs: () => [
+    { id: 'game', label: 'Spiel', rows: () => [
+      { label: 'Modus', kind: 'seg', name: 'mode', items: [['walk', 'WALK'], ['drive', 'DRIVE'], ['fly', 'FLY']], get: () => host.mode?.() || 'walk', set: (m) => host.setMode?.(m) },
+      { label: 'Spiel', kind: 'seg', name: 'god', items: [['game', 'GAME'], ['god', 'GOD · FOLGT', true]], get: () => 'game', set: () => {} },
+      { label: 'Entwickler-Infos', kind: 'toggle', name: 'devui', get: () => DEVUI, set: (v) => setDevUi(v), disabled: devUiLocked(), title: devUiLocked() ? 'aus (clean)' : null },
+      { label: 'Holz-HUD zum Vergleich', kind: 'button', name: 'hudWood', text: 'Umschalten', onClick: () => { const h = location.hash.replace(/(^#|,)hud=\w+/g, '$1').replace(/,,+/g, ',').replace(/^#,/, '#'); location.hash = (h.length > 1 ? h + ',' : '#') + 'hud=wood'; location.reload() } }] },
+    { id: 'audio', label: 'Ton', rows: () => [
+      { label: 'Ton', kind: 'toggle', name: 'sound', get: () => !A.volumes().muted, set: (v) => A.setVolume('muted', !v) },
+      ...VOLS.map(([k, l]) => ({ label: l, kind: 'slider', name: k, get: () => A.volumes()[k] ?? 0.7, set: (v) => A.setVolume(k, v) }))] },
+    { id: 'controls', label: 'Steuerung', rows: () => [{ kind: 'html', name: 'keys', html: () => document.getElementById('m1-keys')?.innerHTML || 'Die Tastenliste kommt vom Spiel, sobald es geladen ist.' }] },
+    { id: 'access', label: 'Barrierefreiheit', rows: () => [{ label: 'Bewegung reduzieren', kind: 'toggle', name: 'reducedMotion', get: () => lsGet(RM_KEY) === '1', set: (v) => lsSet(RM_KEY, v ? '1' : '0') }] },
+  ] }
+  const openSettings = (tab = null) => { openFly(null); const r = hud.rects().gear; l3.open('settings', setProv, { at: tab ? { tab } : null, from: r ? new DOMRect(r.x, r.y, r.w, r.h) : null }) }
+  const offDevL3 = onDevUi(() => { if (l3.kind() === 'settings') l3.refresh() })
+  const SP = { panel: document.createElement('div'), isOpen: () => l3.kind() === 'settings', refresh: () => { if (l3.kind() === 'settings') l3.refresh() }, off: offDevL3,
+    settings: (v) => { if (v) openSettings(); else if (l3.kind() === 'settings') l3.close() } } // gleiche Schnittstelle wie die alte Zahnrad-Tafel
   document.body.appendChild(root)
   let last = '', lastLab = '', lastMusic = ''
   return {
     bagWas: false, flash, settings: (v) => SP.settings(v), settingsOpen: () => SP.isOpen(), setFan,
     closeFly: () => { if (!fly) return false; openFly(null); return true }, flyOpen: () => fly,
+    l3, l3Back: () => l3.back(), openChest, openAlmanac, openSettings, closeL3: (kind = null) => (!kind || l3.kind() === kind ? l3.close() : false),
     sync() {
+      { const v0 = hud.view(), lk = v0.W + 'x' + v0.H + '@' + v0.k; if (lk !== l3Key) { l3Key = lk; l3.layout(v0) } }
       hud.setUiFlag('chest', 'on', hud.opened().chest)
       if ((P.deadT = (P.deadT || 0) + 1) % 30 === 0) P.dead = !!A.stats?.()?.music?.dead // WS-Audio: Jukebox aufgegeben (kein Netz) → Kassette nicht als „läuft“
       const np = A.musicPaused?.() ? null : A.nowPlaying?.(), mu = !!A.volumes().muted, pl = !A.musicPaused?.() && !P.dead; hud.setMusic({ playing: pl, muted: mu })
@@ -376,8 +425,8 @@ function buildDom3d(hud, inner, P = {}) {
           if (up && !reducedMotion() && tot.animate) tot.animate([{ transform: 'translateY(0) scale(1,1)' }, { transform: `translateY(${-10 * k}px) scale(1.14,0.86)` }, { transform: 'translateY(0) scale(0.94,1.06)' }, { transform: 'none' }], { duration: 320, easing: 'ease-out' }) }
         const o = R.orb0; if (o && T != null) { const fill = hud.layout().orb0.fill, coreL = o.x + o.w * (1 - fill) / 2; Object.assign(tot.style, { left: (coreL - 18 * k - parseFloat(tot.style.width || 0)) + 'px', top: (o.y + o.h / 2 - parseFloat(tot.style.height || 0) / 2) + 'px', right: '' }) } }
       { const sp = hud.speedState(), key3 = sp.visible ? sp.kmh + '|' + k : '' // Zahl nur bei Wechsel neu
-        if (key3 !== spKey) { spKey = key3; spd.style.display = sp.visible ? 'flex' : 'none'; if (sp.visible) { const T = L.speedText; spN.style.cssText = inkText(Math.round((T.fs + 8) * k)); spN.textContent = String(sp.kmh); spU.style.cssText = inkText(Math.round(T.fs * 0.7 * k))
-          Object.assign(spd.style, { right: T.right * k + 'px', top: T.top * k + 'px' }) } } }
+        if (key3 !== spKey) { spKey = key3; spd.style.display = sp.visible ? 'flex' : 'none'; if (sp.visible) { const T = L.speedText
+          spN.style.cssText = inkText(Math.round(T.fd * k)); spU.style.cssText = inkText(Math.round(T.fs * k)); spN.textContent = String(sp.kmh); Object.assign(spd.style, { right: T.right * k + 'px', top: T.top * k + 'px' }) } } }
       if (fly === 'map' && (flyT = (flyT + 1) % 6) === 0) buildFly(false) // Minimap ~10 Hz, solange offen
       // Interaktions-Hinweis (in Reichweite: Hinweis-Lichthof B)
       const hint = !!inner.current?.__target; if (hint !== bubHint) { bubHint = hint; const I = L.inter; drawBubble(I.w * k, I.h * k, hint) }

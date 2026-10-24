@@ -16,3 +16,10 @@ export function anchorAt(id, out) {
   return out.set(out.x + a.offset[0], out.y + a.offset[1], out.z + a.offset[2])
 }
 export const anchorIds = () => [...anchors.keys()]
+// WS-NPC chat=syl (Lead 24.10., additiv): Fußpunkt des Ankers (object3d-Weltposition bzw. position ohne Versatz) – Figurenfläche, die Blasen meiden
+export function anchorBaseAt(id, out) {
+  const a = anchors.get(id)
+  if (!a) return null
+  if (a.object3d) { if (!a.object3d.parent) return null; return a.object3d.getWorldPosition(out) }
+  return a.position ? out.copy(a.position) : null
+}

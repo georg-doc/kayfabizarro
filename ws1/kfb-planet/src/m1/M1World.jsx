@@ -53,6 +53,11 @@ import { createDialog } from '../modules/dialog'
 import BubbleHost from '../BubbleHost'
 import ChoiceHost from '../ChoiceHost'
 import { getReader, isPoolReady } from '../dialogText'
+import { callLine } from '../poolReader' // WS-NPC chat=syl: Rufe V-712 der Figuren
+import { anchorAt, registerAnchor } from '../bubbleAnchors'
+import { CHAT_SYL, setHudRects } from '../bubbleAvoid' // WS-NPC chat=syl: Blasen meiden HUD und Figuren
+import { createTalkDirector } from '../npc/talkDirector' // WS-NPC chat=syl: Wechselrede (Lead 24.10.)
+import * as kfbAudio from '../audio/kfbAudio.js' // WS-Audio speak() (chat=syl), fehlt es, gilt die Lesezeit
 import { useGame } from '../store'
 import { DECKS, cardAt, cardsOfDeck } from '../cards'
 import { useHostKeys, PRIO, ACTION_KEYS } from '../hostKeys'
@@ -207,8 +212,15 @@ const makeGift = mk('gift', (o) => { const m = createGiftReveal(o), own = m.upda
 const GIFT_OPTS = GIFT_DEF ? { spec: REVEAL_TOY, def: { ...GIFT_DEF, ...GIFT_AT }, urls: { base: giftBaseUrl, baseBin: giftBaseBin, unwrapped: giftPaperUrl, unwrappedBin: giftPaperBin, tex: giftTex },
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => M1CLOCK.t ?? 0, groups: () => mods.groups, worldScale: K, classScale: CLASS_SCALE } : null
 const NPC_OPTS = { world: NPC_WORLD, partners: () => { const st = mods.partner?.status?.(), p = st?.status === 'OK' && st.shown !== false ? worldPosOf(mods.partner) : null; return p ? [{ id: 'gothgirl', x: p.x, z: p.z }] : [] }, partnerBlocked: () => M1STATE.phase === 'dialog', /* Sprech-Anlass gothgirl (Georg 24.10.): Bemerken als greet ohne Blase */ threat: (id, at) => mods.fluffer?.threat?.(at) ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
-  onGreet: (e) => { if (!GREET_LINES.noBubble.includes(e.reason)) useGame.getState().say('npc-' + e.id, getReader().silence(), 'thought') }, // G-2: Blase je Grund (greet.<reason>); bis WS0-Zeilen da sind nur „…“ (S5b),
+  onGreet: (e) => { if (CHAT_SYL) return; if (!GREET_LINES.noBubble.includes(e.reason)) useGame.getState().say('npc-' + e.id, getReader().silence(), 'thought') }, // G-2: Blase je Grund (greet.<reason>); bis WS0-Zeilen da sind nur „…“ (S5b),
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
+// WS-NPC chat=syl (Lead 24.10., Georg-GO): Sprech-Anlässe werden Wechselrede mit Blase und Laut (talkDirector; Laut WS-Audio speak). Standard bleibt bis Georgs Urteil.
+// Begrüßungen zeigen dann die Ruf-Blase statt „…“ (onGreet oben schweigt); der Disco-MC bleibt ruhig, bis er ruft (mcWaitsForCall)
+const makeTalk = mk('talk', createTalkDirector)
+const TALK_OPTS = { sources: () => ({ band: mods.band, disco: mods.disco, npc: mods.npc }), reader: { ssotLine: (...a) => getReader().ssotLine(...a) }, callLine, anchorAt, registerAnchor,
+  say: (anchor, line, life) => useGame.getState().say(anchor, line, 'speech', undefined, life), speak: (a) => kfbAudio.speak?.(a) ?? null,
+  busy: () => M1STATE.phase === 'dialog', onCall: (b) => { if (b.bt.mc) mods.disco?.mcCall?.() }, player: () => worldPosOf(mods.player) }
+if (CHAT_SYL) DISCO_OPTS.mcWaitsForCall = true
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.
 const LANTERNS_ON = !/(^|[#,])lanterns=0(,|$)/.test(hash)
@@ -346,7 +358,7 @@ function Orchard() {
   useFrame(() => { const p = worldPosOf(mods.player); if (!p || !mods.found || !hud.current) return; const t = !!mods.found.near([p.x, p.y, p.z]); if (t !== HARVEST_STATE.target) { HARVEST_STATE.target = t; hud.current.setTarget(t) } })
   return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} /><ModuleHost create={makeCombat} options={COMBAT_OPTS} />
     {LANTERNS_ON && <><ModuleHost create={makeLanterns} options={lanterns} /><ModuleHost create={makePract} options={pract} /></>}
-    {(() => { const P = { counts: counts0, onApi: (a) => { hud.current = a; HARVEST_STATE.hud = a }, onCtx: (c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }, onInteract: pickUp, onThrow: throwAway, onEquip: equip }
+    {(() => { const P = { counts: counts0, onApi: (a) => { hud.current = a; HARVEST_STATE.hud = a; if (CHAT_SYL) setHudRects(a?.clay ? () => a.clay()?.rects?.() : null) }, onCtx: (c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }, onInteract: pickUp, onThrow: throwAway, onEquip: equip }
       return HUD_SKIN === '3d' && hud3dAvailable() ? <HudClay {...P} host={CLAY_HOST} kit="3d" /> : HUD_SKIN === 'clay' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
 }
 // V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine; Stärke und Farbe 1:1 aus dem Practicals-Angebot
@@ -655,6 +667,7 @@ function M1World() {
       {PATROL_ON && <ModuleHost create={makeGroups} options={GROUP_OPTS} />}
       {BAND_ON && BAND_OPTS && <ModuleHost create={makeBand} options={BAND_OPTS} />}
       {DISCO_ON && <ModuleHost create={makeDisco} options={DISCO_OPTS} />}
+      {CHAT_SYL && <ModuleHost create={makeTalk} options={TALK_OPTS} />}
       {GIFT_ON && GIFT_OPTS && <ModuleHost create={makeGift} options={GIFT_OPTS} />}
       {HARVEST && <Orchard />}
       {CLAY_ON && <ModuleHost create={makeClay} options={CLAY_M1} />}

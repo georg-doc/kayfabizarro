@@ -54,7 +54,7 @@ import ModuleHost from '../ModuleHost'
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
 import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from './racerFlight.js'
-import { elanSpeed } from '../m1/elan.js' // HUD-Telemetrie im Racer-Flug (nur lesend)
+import { elanSpeed, ELAN } from '../m1/elan.js' // HUD-Telemetrie im Racer-Flug (nur lesend)
 
 // ── Fahrzeug (aus <racer>.kfb-vehicle.v3.json über kfb-vehicle-rig.r1.json, Rig-Einheiten × S) ─────────────────────────────────────────────────────────────────
 const S = (fbRecipe.stage?.scale ?? 0.947) * K // V-345: Rig × 0,947 × K = Rig × M_PER_RIG (J17-Meter, wie FB)
@@ -464,7 +464,15 @@ function K2tCar({ at, keys, carRef, player }) {
   // Elan S2: Racer-Flug (racerFlight.js). Pfeil hoch/runter = Nase (NOSE, aus dem Host-Tasten-Router), RMB gehalten = Nase aus der Kamera
   const F = useMemo(() => createRacerFlight(K / WORLD_K, G), [d]), { gl } = useThree()
   // HUD-Tempo-Leiste (WS1e, additiv, nur lesend): Tempo und Boost aus dem vorhandenen Fahr-/Flugzustand – das HUD rechnet nichts selbst
-  useEffect(() => { M2STATE.telemetry = () => ({ speed: F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), fly: !!F.st, boosting: F.st ? !!F.st.boosting : !!d.boosting, freeBoost: (d.driftBoostT || 0) > 0 || (d.landBoostT || 0) > 0, boostMeter: d.boostMeter ?? null, speed01: F.st ? racerDrive(F, {}).speed01 : null })
+  // Tempo für die HUD-Säule (Georg 25.10.: gleicher Maßstab; R3: klassische Tacho-Logik grün → gelb → rot, Rot = Ende der Skala). Beide Physiken rechnen in
+  // Welt-Einheiten; eine Welt-Einheit = WORLD_K / K J17-Meter (Standard 1, wscale=legacy 0,65). ms, Zonen und stall in J17-m/s, kmh = ms × 3,6.
+  // Skalen-Ende = Höchsttempo ohne Boost (Boost läuft darüber hinaus und ist ein Effekt, keine Zone): Fahren FLOW.maxForward, Fliegen ELAN.sDive × J
+  // (bis dahin trägt die Schwerkraft). Grün bis 50 % (Fahren) bzw. bis sThrill (Fliegen, ab da laden die Fähigkeiten), Rot ab 85 % = am Limit.
+  // stall (nur Fliegen): unter sStall reißt die Strömung ab – das HUD zeigt das als eigenes Signal, nicht als Farbe.
+  const speedScale = (v, fly, J) => { const m = WORLD_K / K, top = fly ? ELAN.sDive * J : FLOW.maxForward
+    const z = [['norm', fly ? ELAN.sThrill * J : 0.5 * top], ['fast', 0.85 * top], ['red', top]]
+    return { ms: v * m, kmh: v * m * 3.6, zones: z.map(([n, x]) => [n, x * m]), stall: fly ? ELAN.sStall * J * m : null } }
+  useEffect(() => { M2STATE.telemetry = () => ({ speed: F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), fly: !!F.st, boosting: F.st ? !!F.st.boosting : !!d.boosting, freeBoost: (d.driftBoostT || 0) > 0 || (d.landBoostT || 0) > 0, boostMeter: d.boostMeter ?? null, speed01: F.st ? racerDrive(F, {}).speed01 : null, ...speedScale(F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), !!F.st, F.J) })
     return () => { if (M2STATE.telemetry) M2STATE.telemetry = null } }, [d, F])
   useEffect(() => { const pd = (e) => { NOSE.rmb = (e.buttons & 2) !== 0 }, cm = (e) => { if (F.st) e.preventDefault() }
     gl.domElement.addEventListener('pointerdown', pd); window.addEventListener('pointerup', pd); gl.domElement.addEventListener('contextmenu', cm)

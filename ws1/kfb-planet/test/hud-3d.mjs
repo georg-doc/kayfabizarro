@@ -55,7 +55,7 @@ extra.fan = fan; checks.almanacFan = fan.imgs >= 1 && fan.imgs <= 7 && /\d+ CARD
   checks.sizeRatios = Math.abs(g.actRatio - 1.18) < 0.06 && Math.abs(g.chestRatio - 1.95) < 0.1
   checks.noTangents = g.muteGapEdge > 0.05 && g.muteGapSpool > 4 && g.keyIdx > 0 && g.keyVdx > 0
   checks.keysLikeI = !!g.keyFsSame
-  checks.infoInGear = g.infoHidden && await page.evaluate(() => !!document.querySelector('#kfb-hud-settings [data-setting=keys]')) }
+  checks.infoInGear = g.infoHidden /* Tastenliste in den Einstellungen: unten bei settingsL3 geprüft */ }
 // aktive Waffe: Familie vom Owner → Platz aktiv mit Lichthof
 await page.evaluate(() => window.__kfbM1.harvest().hud.setWeapon('blaster')); await wait(page, 500)
 const wb = await page.evaluate(() => ({ s1: window.__kfbClayHud.uiState('act1'), s0: window.__kfbClayHud.uiState('act0'), fx: window.__kfbClayHud.fxState('act1') }))
@@ -90,16 +90,27 @@ const m1 = await page.evaluate(() => ({ muted: window.__kfbClayHud.muted(), rt: 
 await page.screenshot({ path: `${OUT}/5_kassette_stumm.png` })
 await page.click('button[aria-label="Ton an/aus"]'); await wait(page, 300)
 extra.cassette = m1; checks.cassetteMute = m1.muted && m1.icon === 'mute' && !(await page.evaluate(() => window.__kfbClayHud.muted())) // NEU: Knopf zeigt durchgestrichenen Lautsprecher (DOM), die 3D-Ansicht bleibt
-// Zahnrad: Tafel mit Mode und Game/God (God ausgegraut), Fly schaltet den Flug, Walk zurück
-await page.click('button[aria-label="Einstellungen"]'); await wait(page, 400)
-const sp = await page.evaluate(() => ({ open: getComputedStyle(document.getElementById('kfb-hud-settings')).display !== 'none', modes: [...document.querySelectorAll('#kfb-hud-settings [data-mode]')].map((b) => b.dataset.mode + (b.disabled ? ':off' : '')) }))
-await page.screenshot({ path: `${OUT}/6_zahnrad.png` })
-await page.click('#kfb-hud-settings [data-mode=fly]'); await wait(page, 700)
+// Zahnrad → Einstellungen L3 (Paket 6, Board 08): Reiter Spiel/Ton/Steuerung/Barrierefreiheit; Mode und Game/God (God ausgegraut), Fly schaltet den Flug, Walk zurück
+await page.click('button[aria-label="Einstellungen"]'); await wait(page, 500)
+const sp = await page.evaluate(() => ({ open: getComputedStyle(document.getElementById('kfb-l3')).display !== 'none', L: window.__kfbClayHud.l3(), title: document.getElementById('kfb-l3-title')?.textContent, tabs: [...document.querySelectorAll('#kfb-l3-tabs [data-tab]')].map((b) => b.dataset.tab),
+  modes: [...document.querySelectorAll('#kfb-l3-rows [data-mode]')].map((b) => b.dataset.mode + (b.disabled ? ':off' : '')), dev: !!document.querySelector('#kfb-l3-rows [data-setting=devui]'), gearOn: window.__kfbClayHud.status().ui?.gear }))
+await page.screenshot({ path: `${OUT}/6_einstellungen.png` })
+await page.click('#kfb-l3-rows [data-mode=fly]'); await wait(page, 700)
 const fly = await page.evaluate(() => window.__kfbClayHud.mode())
-await page.click('#kfb-hud-settings [data-mode=walk]'); await wait(page, 700)
+await page.click('#kfb-l3-rows [data-mode=walk]'); await wait(page, 700)
 const walk = await page.evaluate(() => window.__kfbClayHud.mode())
-extra.settings = { ...sp, fly, walk }
-checks.gearSettings = sp.open && ['walk', 'drive', 'fly', 'game', 'god:off'].every((m) => sp.modes.includes(m))
+await page.click('#kfb-l3-tabs [data-tab=audio]'); await wait(page, 200)
+const au = await page.evaluate(() => ({ sliders: document.querySelectorAll('#kfb-l3-rows input[type=range]').length, sound: !!document.querySelector('#kfb-l3-rows [data-setting=sound]') }))
+await page.click('#kfb-l3-tabs [data-tab=controls]'); await wait(page, 200)
+const ky = await page.evaluate(() => document.querySelector('#kfb-l3-rows [data-setting=keys]')?.textContent || '')
+await page.click('#kfb-l3-tabs [data-tab=access]'); await wait(page, 200)
+const rm0 = await page.evaluate(() => localStorage.getItem('kfb.hud.reducedMotion.v1')); await page.click('#kfb-l3-rows [data-setting=reducedMotion]'); await wait(page, 150)
+const rm1 = await page.evaluate(() => localStorage.getItem('kfb.hud.reducedMotion.v1')); await page.click('#kfb-l3-rows [data-setting=reducedMotion]'); await wait(page, 150)
+await page.keyboard.press('Escape'); await wait(page, 300); const closed = await page.evaluate(() => window.__kfbClayHud.l3()?.kind ?? null)
+extra.settings = { ...sp, fly, walk, au, ky: ky.slice(0, 60), rm0, rm1, closed }
+checks.gearSettings = sp.open && sp.L?.kind === 'settings' && ['walk', 'drive', 'fly', 'game', 'god:off'].every((m) => sp.modes.includes(m))
+checks.settingsL3 = sp.title === 'EINSTELLUNGEN' && sp.tabs.join() === 'game,audio,controls,access' && sp.dev && au.sliders === 4 && au.sound && rm0 !== rm1 && closed === null
+checks.infoInGear = checks.infoInGear && /vorwärts/.test(ky)
 checks.modeFly = fly === 'fly' && walk === 'walk'
 await page.keyboard.press('Escape'); await wait(page, 200)
 // ── Paket 4: Flyouts L2 ─────────────────────────────────────────────────────────────────────────────────────────────
@@ -122,11 +133,11 @@ extra.returnStart = rk; checks.returnToStart = rk.keys.includes('KeyR') && rk.cl
 await page.evaluate(() => window.__kfbClayHud.goal(undefined)); await page.evaluate(() => document.querySelector('#kfb-hud3d-map [data-goal="stage"]')?.click())
 // Fächer → letzte Karten
 await page.click('[data-ui=fan]'); await wait(page, 400)
-const ff = await page.evaluate(() => { const el = document.getElementById('kfb-hud3d-fan'); return { open: el && getComputedStyle(el).display !== 'none', imgs: el.querySelectorAll('img').length, fanImgs: document.querySelectorAll('[data-ui=fan] img').length, allDisabled: el.querySelector('button')?.disabled } })
+const ff = await page.evaluate(() => { const el = document.getElementById('kfb-hud3d-fan'); return { open: el && getComputedStyle(el).display !== 'none', imgs: el.querySelectorAll('img').length, fanImgs: document.querySelectorAll('[data-ui=fan] img').length, allEnabled: !!el.querySelector('button[data-l3=almanac]') && !el.querySelector('button[data-l3=almanac]').disabled } })
 await page.screenshot({ path: `${OUT}/11_letzte_karten.png` })
 await page.click('[data-ui=fan]'); await wait(page, 300)
 const ffClosed = await page.evaluate(() => getComputedStyle(document.getElementById('kfb-hud3d-fan')).display === 'none')
-extra.fanFly = { ...ff, ffClosed }; checks.fanFlyout = ff.open && ff.imgs === ff.fanImgs && ff.imgs >= 1 && ff.allDisabled && ffClosed
+extra.fanFly = { ...ff, ffClosed }; checks.fanFlyout = ff.open && ff.imgs === ff.fanImgs && ff.imgs >= 1 && ff.allEnabled && ffClosed
 // Pfeil: Standard-Ziel Bühne sichtbar mit Name
 s = await st(page); const lab0 = await page.evaluate(() => document.getElementById('kfb-hud3d-label')?.innerText || '')
 checks.goalStage = s.arrow.visible && /BÜHNE/.test(lab0); extra.lab0 = lab0.replace(/\n/g, ' ')
@@ -161,6 +172,31 @@ checks.noGoalNoArrow = !s.arrow.visible && await page.evaluate(() => getComputed
 await page.screenshot({ path: `${OUT}/4_kein_ziel.png` })
 await page.evaluate(() => window.__kfbClayHud.goal(undefined))
 checks.errors0 = errs.length === 0; extra.errs = errs.slice(0, 3)
+// ── Paket 5 (Georg 25.10.): Truhe klappt cartoonig auf (Deckel-Feder mit Überschwingen, Rückprall beim Zuklappen), Truhe 20 als L3; fraktaler Almanach
+{ await page.click('button[aria-label="Truhe öffnen"]'); const lid = []; for (let i = 0; i < 14; i++) { lid.push((await page.evaluate(() => window.__kfbClayHud.lid()))?.angle); await wait(page, 30) }
+  await wait(page, 500)
+  const op = await page.evaluate(() => { const L = window.__kfbClayHud.l3(), t = document.getElementById('kfb-l3-title')?.textContent || ''; return { L, t, slots: document.querySelectorAll('#kfb-l3-chest [data-slot]').length, filled: document.querySelectorAll('#kfb-l3-chest [data-slot]:not([disabled])').length, lid: window.__kfbClayHud.lid(), vis: getComputedStyle(document.getElementById('kfb-l3')).display } })
+  await page.screenshot({ path: `${OUT}/p5_truhe20.png` })
+  await page.click('#kfb-l3 [data-l3=close]'); const lz = []; for (let i = 0; i < 16; i++) { lz.push((await page.evaluate(() => window.__kfbClayHud.lid()))?.angle); await wait(page, 30) }
+  await wait(page, 400); const cl = await page.evaluate(() => ({ L: window.__kfbClayHud.l3(), lid: window.__kfbClayHud.lid() }))
+  extra.p5chest = { op, cl, lid, lz }
+  checks.chestL3 = op.vis === 'block' && op.L?.kind === 'chest' && op.slots === 20 && op.filled >= 1 && /^TRUHE · \d+ \/ 20$/.test(op.t)
+  checks.chestLidCartoon = Math.min(...lid.filter((x) => x != null)) < -105 && Math.abs(op.lid.angle + 100) < 2 && cl.L.kind === null && Math.abs(cl.lid.angle) < 1 && Math.max(...lz.filter((x) => x != null)) <= 0.01 }
+{ await page.click('[data-ui=fan]'); await wait(page, 400); await page.click('#kfb-hud3d-fan button[data-l3=almanac]'); await wait(page, 700)
+  const l1 = await page.evaluate(() => ({ L: window.__kfbClayHud.l3(), decks: document.querySelectorAll('#kfb-l3-decks [data-deck]').length }))
+  await page.screenshot({ path: `${OUT}/p5_almanach_1_decks.png` })
+  await page.click('#kfb-l3-decks [data-deck]'); await wait(page, 800)
+  const l2 = await page.evaluate(() => ({ L: window.__kfbClayHud.l3(), cards: document.querySelectorAll('#kfb-l3-cards [data-card]').length, n: window.__kfbM1?.harvest ? null : null }))
+  await page.screenshot({ path: `${OUT}/p5_almanach_2_karten.png` })
+  await page.click('#kfb-l3-cards [data-card]'); await wait(page, 900)
+  const l3 = await page.evaluate(() => { const b = document.getElementById('kfb-l3-big'); return { L: window.__kfbClayHud.l3(), big: !!b && b.naturalWidth > 0, strip: document.querySelectorAll('#kfb-l3-strip button').length } })
+  await page.screenshot({ path: `${OUT}/p5_almanach_3_detail.png` })
+  const esc = []; for (let i = 0; i < 3; i++) { await page.keyboard.press('Escape'); await wait(page, 450); esc.push(await page.evaluate(() => window.__kfbClayHud.l3()?.level)) }
+  await page.click('[data-ui=fan]'); await wait(page, 400); await page.click('#kfb-hud3d-fan img[role=button]'); await wait(page, 700)
+  const direct = await page.evaluate(() => window.__kfbClayHud.l3()); await page.keyboard.press('Escape'); await wait(page, 300); await page.keyboard.press('Escape'); await page.keyboard.press('Escape'); await wait(page, 300)
+  extra.p5alm = { l1, l2, l3, esc, direct }
+  checks.almanacFractal = l1.L?.level === 1 && l1.decks >= 1 && l2.L?.level === 2 && l2.cards >= 1 && l3.L?.level === 3 && l3.big && l3.strip === l2.cards && esc.join() === '2,1,0'
+  checks.almanacFromFan = direct?.kind === 'almanac' && direct.level === 3 }
 await browser.close()
 // Rückfall-Schalter unverändert: hud=clay = Knet-HUD R1, hud=wood = Holz
 // Telefon quer (844 × 390, Emulator): Aktionsplätze gleichmäßig unten Mitte, Taste je Platz rechts unten, Gesamt-Zähler im Maßstab
@@ -179,13 +215,18 @@ await browser.close()
   const { browser: b7, page: p7 } = await openPage('#m1,car,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP })
   await p7.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p7.waitForTimeout(3000)
   const S0 = await p7.evaluate(() => window.__kfbClayHud.speed())
-  await p7.keyboard.down('KeyW'); await p7.waitForTimeout(3500); const S1 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), txt: document.getElementById('kfb-hud3d-speed')?.innerText || '', col: Math.abs((window.__kfbClayHud.rects().speed.x + window.__kfbClayHud.rects().speed.w / 2) - (window.__kfbClayHud.rects().gear.x + window.__kfbClayHud.rects().gear.w / 2)) }))
-  await p7.keyboard.down('ShiftLeft'); await p7.waitForTimeout(700); const S2 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), fx: window.__kfbClayHud.fxState('speed') })); await p7.screenshot({ path: `${OUT}/12_tempo_boost.png` })
+  await p7.keyboard.down('KeyW'); await p7.waitForTimeout(3500); const S1 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), txt: document.getElementById('kfb-hud3d-speed')?.innerText || '', num: (() => { const n = document.getElementById('kfb-hud3d-speed'), r = n.getBoundingClientRect(), R = window.__kfbClayHud.rects().speed, d = document.querySelector('#kfb-hud3d-label span:last-child'); return { dx: Math.abs(r.x + r.width / 2 - (R.x + R.w / 2)), below: r.top >= R.y + R.h * (1 + window.__kfbClayHud.layout().speed.fill) / 2 - 2, fs: parseFloat(getComputedStyle(n.firstChild).fontSize), fd: d ? parseFloat(getComputedStyle(d).fontSize) : null } })(), alt: !!document.getElementById('kfb-hud3d-alt'), col: Math.abs((window.__kfbClayHud.rects().speed.x + window.__kfbClayHud.rects().speed.w / 2) - (window.__kfbClayHud.rects().gear.x + window.__kfbClayHud.rects().gear.w / 2)) }))
+  await p7.keyboard.down('ShiftLeft'); await p7.waitForTimeout(700); const S2 = await p7.evaluate(() => { const H = window.__kfbClayHud, R = H.rects().speed, L = H.layout(), inner = R.h * L.speed.fill, tubeBottom = R.y + (R.h + inner) / 2, k = R.h / L.speed.h, n = document.getElementById('kfb-hud3d-speed').getBoundingClientRect()
+    return { s: H.speed(), fx: H.fxState('speed'), airGlow: n.top - (tubeBottom + L.speedCol.halo * k), airHard: n.top - (R.y + R.h / 2 + R.h / 2 * 1.12) } }); await p7.screenshot({ path: `${OUT}/12_tempo_boost.png` })
   await p7.keyboard.up('ShiftLeft'); await p7.waitForTimeout(1500); const S3 = await p7.evaluate(() => window.__kfbClayHud.speed()); await p7.keyboard.up('KeyW'); await b7.close()
   extra.speedBar = { walk, S0, S1, S2, S3 }
   checks.speedHiddenWalking = walk && !walk.visible
   checks.speedFollows = S0.visible && S1.s.visible && S1.s.shown > 0.15 && Math.abs(S1.s.shown - S1.s.target) < 0.08 && S1.txt.startsWith(String(S1.s.kmh)) && /KM\/H/.test(S1.txt) && S1.col <= 2
-  checks.speedBoost = S2.s.boost && S2.s.glow > 0.05 && S2.fx?.hint && !S3.boost }
+  // Säule R2 (Georg 25.10.): Zahl mittig unter der Säule in der Schrift der Entfernung, Zonen aus der Telemetrie, keine Höhen-Attrappe
+  checks.speedColumnR2 = S1.num.dx <= 2 && S1.num.below && S1.num.fd != null && Math.abs(S1.num.fs - S1.num.fd) < 0.5 && Array.isArray(S1.s.zones) && S1.s.zones.length === 3 && !S1.alt
+  checks.speedBoost = S2.s.boost && S2.s.glow > 0.05 && S2.fx?.hint && !S3.boost
+  // R3 (Georg 25.10.): drei Zonen grün → gelb → rot (Rot = Ende), Boost als Effekt (A: Füllung über der Kappe), Lichthof berührt die Zahl nie (mit Luft)
+  checks.speedR3 = S1.s.zones?.map((z) => z[0]).join() === 'norm,fast,red' && S2.s.boostKind === 'a' && S2.s.over > 0.05 && S2.airGlow > 8 && S2.airHard > 2 }
 // Ausrichtung bei 16:10 (1440 × 900): Tastenbuchstaben, leere Ringe und Blase auf derselben Höhe wie die 3D-Aktionen (Fenster ≠ 16:9)
 { const { browser: b5, page: p5 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: { width: 1440, height: 900 } })
   await p5.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p5.waitForTimeout(3000)

@@ -11,6 +11,9 @@ export const CHATTER_FAMILIES = Object.freeze({ Posaune: 'F01_trombone', Klarine
   Saxophon: 'F07_saxophone', Talkbox: 'F08_talkbox', 'Singende Säge': 'F09_saw', Oboe: 'F10_oboe', Tuba: 'F11_tuba', Mundharmonika: 'F12_harmonica',
   Melodica: 'F13_melodica' }) // F13: WS0 23.10., Satz chatter_families_r2_melodica (Bots, Register SPEC)
 const CHATTER_SET = Object.freeze({ F13_melodica: 'chatter_families_r2_melodica' }) // sonst chatter_families_r1
+// Lage der Silben (Georg 25.10., V-734: hohe Stimmen quieken): hohe Familien sprechen eine Oktave tiefer; keine Silbe über der Lage des Clips
+// (Grundton ≤ Original), Stimmlage je Figur −5 … 0 Halbtöne (SUNO_SSOT §6: verschieben ≤ ±5, tief/hoch über Instrumentenpaare)
+export const CHATTER_LOW_OCTAVE = Object.freeze(['F04_ocarina', 'F06_theremin', 'F09_saw', 'F10_oboe', 'F12_harmonica', 'F13_melodica'])
 export const CHATTER_MOODS = Object.freeze(['neutral', 'froh', 'traurig', 'genervt', 'aengstlich', 'aggressiv', 'staunend', 'zaertlich', 'introspektiv', 'call_bingo', 'call_bloedsinn', 'call_boggle', 'call_bongo'])
 const CHATTER_CUES = Object.fromEntries(Object.values(CHATTER_FAMILIES).flatMap((fam) => CHATTER_MOODS.map((m) => [`chatter.${fam}.${m}`, { owner: 'bank', set: CHATTER_SET[fam] || 'chatter_families_r1', files: [`${fam}_${m}`], gain: 0.7 }])))
 // Register-Wert gilt nur mit Status SOURCE/GEORG o. ä.; todo, PREFILL und DESIGN sind Vorschläge → bisheriger Platzhalter (Brief V-682 §6)
@@ -73,8 +76,8 @@ export const CUES = Object.freeze({
   // ── Zu Fuß ─────────────────────────────────────────────────────────────────────────────────────────────────
   'foot.step': { owner: 'steps', file: 'digital-grass · foley-concrete (Platz) · sand · wet-clay (am Wasser) – Audio Site 0.7.6' },
   'foot.wade': { owner: 'bank', set: 'ws_audio_gaps_r1', base: 'S01_wading_steps', gain: 0.6, note: 'Schritte im Wasser (Fluss/Ufer)' },
-  'foot.jump': { owner: 'bank', set: 'combat_av_fix_r3', base: 'L14_jump_hop', gain: 0.55, note: 'L14 Hüpfer (V-615)' },
-  'foot.land': { owner: 'bank', set: 'creatures_r1', base: 'C01_clay_body_fall', gain: 0.5 },
+  'foot.jump': { owner: 'bank', bus: 'steps', set: 'combat_av_fix_r3', base: 'L14_jump_hop', gain: 0.55, note: 'L14 Hüpfer (V-615)' },
+  'foot.land': { owner: 'bank', bus: 'steps', set: 'creatures_r1', base: 'C01_clay_body_fall', gain: 0.5 },
   // ── Kampf (Obstgarten-Aktionen V/B/N; K10-Adapter für Arena-Module) ───────────────────────────────────────
   'combat.punch': { owner: 'combat', file: 'C03 brass_knuckles (Treffer) + C04 swing_whoosh · C12 tree_shake' },
   'combat.swing': { owner: 'combat', file: 'C04_swing_whoosh (kein Ziel)' },
@@ -159,12 +162,12 @@ export const CUES = Object.freeze({
   'npc.toyCall': { owner: 'bank', set: 'npc_steps_r1', files: ['N13_toysoldier_call'], gain: 0.6 },
   'npc.botBeep': { owner: 'bank', set: 'npc_steps_r1', files: ['N14_bot_beep_plain'], gain: 0.5 },
   'npc.bandCrowd': { owner: 'bank', set: 'npc_steps_r1', files: ['N15_orc_band_crowd_murmur_loop'], gain: 0.25, loop: true, bus: 'atmo', note: 'N15 Publikum an der Band (leise Schleife in Hörweite)' },
-  'npc.heavyGrass': { owner: 'bank', set: 'heavy_steps_r1', base: 'H01_stomp_grass', gain: 0.45, note: 'Large-Rig (V-607)' },
-  'npc.heavyStone': { owner: 'bank', set: 'heavy_steps_r1', base: 'H02_stomp_stone', gain: 0.45 },
-  'npc.heavySand': { owner: 'bank', set: 'heavy_steps_r1', files: ['H03_stomp_sand_a'], gain: 0.45 },
-  'npc.heavyWood': { owner: 'bank', set: 'heavy_steps_r1', files: ['H04_stomp_wood_a'], gain: 0.45 },
-  'npc.heavyArmor': { owner: 'bank', set: 'heavy_steps_r1', files: ['H05_armor_clank_step'], gain: 0.35 },
-  'npc.heavyLand': { owner: 'bank', set: 'heavy_steps_r1', files: ['H06_dust_puff_landing'], gain: 0.7 },
+  'npc.heavyGrass': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', base: 'H01_stomp_grass', gain: 0.45, note: 'Large-Rig (V-607)' },
+  'npc.heavyStone': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', base: 'H02_stomp_stone', gain: 0.45 },
+  'npc.heavySand': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', files: ['H03_stomp_sand_a'], gain: 0.45 },
+  'npc.heavyWood': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', files: ['H04_stomp_wood_a'], gain: 0.45 },
+  'npc.heavyArmor': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', files: ['H05_armor_clank_step'], gain: 0.35 },
+  'npc.heavyLand': { owner: 'bank', bus: 'steps', set: 'heavy_steps_r1', files: ['H06_dust_puff_landing'], gain: 0.7 },
   'npc.skelClatter': { owner: 'bank', set: 'creatures_r1', base: 'C06_skeleton_clatter', gain: 0.7 },
   'npc.clubWindup': { owner: 'bank', set: 'melee_destruction_r1', files: ['M02_club_whoosh_heavy'], gain: 0.5 },
   'npc.bodyFall': { owner: 'bank', set: 'creatures_r1', base: 'C01_clay_body_fall', gain: 0.6 },
@@ -177,12 +180,12 @@ export const CUES = Object.freeze({
   'npc.fluff': { owner: 'bank', set: 'fluff_economy_r1', base: 'E05_fluff_scatter', gain: 0.55 },
   // ── Schritte und Hüpfer der NPCs (WS-NPC: groups.steps(), npc.steps(), fluffer.hops() – Sohlen-Kontakt aus der Animation) ──────────────────
   // set 'site:footsteps' = Audio-Site-Bänke (Kenney CC0 / Chequered Ink, LICENCES.md) unter /@kfb-audio/site/footsteps/assets/, Dateien mit Endung
-  'npc.stepGrass': { owner: 'bank', set: 'npc_steps_r1', base: 'N01_clay_step_grass', gain: 0.4, note: 'N01 Knete auf Gras' },
-  'npc.stepPath': { owner: 'bank', set: 'npc_steps_r1', base: 'N02_clay_step_sand', gain: 0.4, note: 'N02 Sand/Weg' },
-  'npc.stepStone': { owner: 'bank', set: 'npc_steps_r1', base: 'N03_clay_step_rock', gain: 0.4, note: 'N03 Fels/Platz' },
-  'npc.stepSkel': { owner: 'bank', set: 'npc_steps_r1', files: ['N04_skeleton_step_tock'], gain: 0.4, note: 'N04 Knochen-Tock' },
-  'npc.stepToy': { owner: 'bank', set: 'npc_steps_r1', files: ['N05_toysoldier_march'], gain: 0.38, note: 'N05 Plastik-Marschtritt' },
-  'npc.stepBot': { owner: 'bank', set: 'npc_steps_r1', files: ['N07_bot_step_metal'], gain: 0.4, note: 'N07 Metall-Stapfen' },
+  'npc.stepGrass': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', base: 'N01_clay_step_grass', gain: 0.4, note: 'N01 Knete auf Gras' },
+  'npc.stepPath': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', base: 'N02_clay_step_sand', gain: 0.4, note: 'N02 Sand/Weg' },
+  'npc.stepStone': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', base: 'N03_clay_step_rock', gain: 0.4, note: 'N03 Fels/Platz' },
+  'npc.stepSkel': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', files: ['N04_skeleton_step_tock'], gain: 0.4, note: 'N04 Knochen-Tock' },
+  'npc.stepToy': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', files: ['N05_toysoldier_march'], gain: 0.38, note: 'N05 Plastik-Marschtritt' },
+  'npc.stepBot': { owner: 'bank', bus: 'steps', set: 'npc_steps_r1', files: ['N07_bot_step_metal'], gain: 0.4, note: 'N07 Metall-Stapfen' },
   // ── Begrüßung der Bewohner (Gerücht D2 / G-2, Georg 22.10.): Stimm-Laut ohne Wort je Grund – KFB-Stimmen sind Solo-Instrumente (Fluffolect:
   // FrizzleBob Posaune, Dory Okarina, Hunky Fagott). Reihenfolge: Instrument aus dem Register (chatter.*), sonst Bewohner-Stimme (resident_voices_r1, WS0 geliefert 22.10., Rückfall solange das Register leer ist), sonst Platzhalter
   'greet.farmer.cure': { owner: 'bank', set: 'resident_voices_r1', base: 'V01_farmer_greet_cure', gain: 0.7 },

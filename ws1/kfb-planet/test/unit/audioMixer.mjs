@@ -6,7 +6,8 @@ import path from 'path'
 import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
 import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
-import { syllabify, melody, planDuration, grainsFrom, voiceBase, SYL } from '../../src/audio/syllables.js'
+import { syllabify, melody, planDuration, grainsFrom, voiceBase, fitRegister, SYL } from '../../src/audio/syllables.js'
+import { STEP_BUS, stepBusDb } from '../../src/audio/mixer.js'
 import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter, pickChatter } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
@@ -116,7 +117,10 @@ process.exit(report('audio-mixer', {
     const long = melody(syllabify('Dies ist ein sehr langer Satz mit vielen Wörtern, der einfach nicht aufhören will und immer weiter geht bis zum Ende der Zeile. Und noch einer!'), { seed: 9 })
     return q.length === 3 && q[0].end === '?' && d.at(-1).end === '.' && b[0].end === '...?' && h[0].end === '?!' && e[0].emph && !e.at(-1).emph && hm.length === 1 && hm[0].end === '…'
       && mq.at(-1).semi - mq[0].semi > 3 && md.at(-1).semi < md[0].semi && mh.at(-1).semi > 5 && planDuration(long) <= SYL.maxTotal + 1e-6 && long.length <= SYL.maxSyl && long.at(-1).end === '!'
-      && mq.every((p) => p.dur >= SYL.minDur * 0.9 && p.dur <= 0.4) && voiceBase('farmer_b') === voiceBase('farmer_b') && Math.abs(voiceBase('orc_brute')) <= 3 })(),
+      && mq.every((p) => p.dur >= SYL.minDur * 0.9 && p.dur <= 0.4) && voiceBase('farmer_b') === voiceBase('farmer_b') && ['orc_brute', 'gothgirl', 'farmer_b', 'lorekeeper', 'frizzlebob'].every((id) => voiceBase(id) <= 0 && voiceBase(id) >= -5) })(),
+  // V-734 (Georg 25.10.): keine Silbe über der Lage der Familie, hohe Familien eine Oktave tiefer; Schritte auf eigenem Bus −9 dB, beim Sprechen −15 dB
+  chatterRegisterAndSteps: (() => { const f = fitRegister([-2, 3, 7, 1]); return Math.max(...f) === 0 && f[0] === -9 && fitRegister([-3, -1]).join() === '-3,-1' && Math.min(...fitRegister([5, -20])) === -12
+    && STEP_BUS.db === -9 && stepBusDb({ speech: true }) === -15 && stepBusDb({ speech: true, loud: true }) === -19 && CUES['npc.heavyGrass'].bus === 'steps' && CUES['foot.land'].bus === 'steps' })(),
   chatterGrains: (() => { const sr = 8000, x = new Float32Array(sr); for (const c of [0.1, 0.4, 0.7]) for (let i = 0; i < 400; i++) x[Math.round(c * sr) + i] = Math.sin(i / 3) * (1 - i / 400)
     const g = grainsFrom(x, sr); return g.length === 3 && g.every((k) => k.dur === 0.16 && k.t0 >= 0 && k.t0 + k.dur <= 1) && grainsFrom(new Float32Array(800), sr).length === 0 })(),
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'

@@ -13,7 +13,7 @@
 // und gleicher Antwortzeit der Ports (Test d1); im Browser schwanken beide. Asynchrone Schritte (Karte, Zeile) sperren den Übergang, höchstens
 // cardWaitMs bzw. lineWaitMs lang; danach geht es mit Platzhalter bzw. „…“ weiter (Prüfer 8, Befund 1).
 import { Group } from 'three'
-import { SSOT_LINES_ON, TR1_ON, createOpenerRotation, createSentenceOpenerRotation, isBlocked, tr1Line, boggleLore } from '../dialog/ssotLines.js'   // lines=ssot (Georg 24.10.): TRIPLET_SSOT_R1-Rückfall, Sperrliste
+import { SSOT_LINES_ON, TR1_ON, createOpenerRotation, createSentenceOpenerRotation, isBlocked, tr1Line, tr1Start, boggleLore } from '../dialog/ssotLines.js'   // lines=ssot (Georg 24.10.): TRIPLET_SSOT_R1-Rückfall, Sperrliste
 
 export const D1 = Object.freeze({ cardWaitMs: 12000, lineWaitMs: 8000, gapMs: 600, pauseMs: 900, choiceMs: 20000, wordMs: 380, minLineMs: 1400 })
 export const dialogLog = { create: 0, update: 0, dispose: 0 }
@@ -70,7 +70,7 @@ export function createDialog(options) {
         if (S.busy && S.t < T.cardWaitMs) return
         if (S.busy) emit('card-timeout')
         S.phase = 'A_LOAD'; S.t = 0
-        gate(() => (hasTr1(card) ? reader.ssotLine(card, 'T', rotT.next()) : ssot ? reader.ssotLine(card, 'A', rot.next()) : reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats })))
+        gate(() => (hasTr1(card) ? reader.ssotLine(card, 'T', rotT.next(tr1Start(card))) : ssot ? reader.ssotLine(card, 'A', rot.next()) : reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats })))
         return
       case 'A_LOAD':
         if (S.busy && S.t < T.lineWaitMs) return

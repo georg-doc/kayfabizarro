@@ -54,7 +54,7 @@ export const useGame = create((set, get) => ({
   closeChoice: () => set({ choice: null }),
   // result: { id: 'bingo'|'boggle'|'bongo'|'bloedsinn', label } oder { id: 'own', text }
   choose: (result) => set({ lastChoice: { ...result, choiceId: get().choice?.id ?? 0 }, choice: null }),
-  say: (anchor, line, kind = 'speech', color) => set({ speech: { id: (get().speech?.id || 0) + 1, anchor, line, kind, color } }),
+  say: (anchor, line, kind = 'speech', color, life) => set({ speech: { id: (get().speech?.id || 0) + 1, anchor, line, kind, color, life } }), // life: s je Blase (WS-NPC chat=syl), sonst BUBBLE_LIFE
   playEmote: (name, ms = 1600) => { const e = { name, t: performance.now() }; set({ emote: e }); setTimeout(() => get().emote === e && set({ emote: null }), ms) },
 
   mode: 'play', // 'play' | 'build'

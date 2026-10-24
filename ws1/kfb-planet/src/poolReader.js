@@ -142,6 +142,8 @@ export const ZURUF_LABELS = ['Bingo!', 'Boggle...?', 'Bongo.', 'Blödsinn!']
 // speaker 'player': der Host zeigt diese Zeilen nur am Anker der Spielfigur (Befund 6)
 // Blase: Ruf fett über die Fett-Syntax des Blasen-Kerns (*…*, chatterbox-core parse); text bleibt der Ruf selbst
 export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [`*${label}*`], source: 'ZURUF', speaker: 'player' }) : null }
+// WS-NPC chat=syl (Lead 24.10.): Rufe der Figuren in der Wechselrede, alle fünf V-712-Formen genau so (CALLS aus ssotLines), am Anker des Sprechers
+export function callLine(key, speaker) { const label = CALLS[key]; return label && speaker ? issue({ text: label, parts: [`*${label}*`], source: 'CALL', call: key, speaker }) : null }
 export function playerLine(text) {
   const t = String(text || '').replace(/\s+/g, ' ').trim(); const n = t ? t.split(' ').length : 0
   return n >= 1 && n <= 8 ? issue({ text: t, parts: [t], source: 'PLAYER', speaker: 'player' }) : null

@@ -104,6 +104,7 @@ export function createBandLife(options) {
     positions: () => M.map((m) => ({ id: 'band-' + m.a.id, x: m.pl.x, z: m.pl.z, y: options.groundAt(m.pl.x, m.pl.z) })),
     holders: () => M.map((m) => m.holder),
     events: () => CH.events(), // WS-Audio: { type: 'chatter', group: 'orc_band', mood, cause, id, characterId, at, t, seq }
+    anchors: () => M.filter((m) => m.gltf || m.fig).map((m) => ({ id: 'band-' + m.a.id, object3d: m.gltf ? m.holder : m.fig.holder })), // chat=syl: Blasen-Anker (talkDirector misst die Kopfhöhe)
     clayTargets: () => M.filter((m) => m.gltf).map((m) => (m.clayMod ||= { object3d: m.gltf.scene, status: () => ({ status: 'OK' }) })), // Knete (C5): gebackene Band-Figuren (Augen über SKIP_DEFAULT ausgenommen)
     dispose() { bandLog.dispose++; for (const m of M) { m.mixer?.stopAllAction(); m.fig?.dispose(); m.gltf?.scene.traverse((o) => { if (o.isMesh) { o.geometry?.dispose(); [].concat(o.material).forEach((x) => x?.dispose()) } }) } root.clear() },
   }

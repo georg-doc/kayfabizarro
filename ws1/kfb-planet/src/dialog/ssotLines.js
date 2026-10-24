@@ -4,6 +4,7 @@
 //   Gesperrte Karten (SSOT S12) werden nie gezogen. Fett nur in der Anzeige (V-699; Blasen-Kern-Syntax *…*), die Daten bleiben Klartext.
 // Rein, ohne three/DOM – Node-geprüft (test/unit/ssotLines.mjs). Daten: src/data/spoken/ssot-lines.r1.json (scripts/sync-spoken-lines.py).
 import DATA from '../data/spoken/ssot-lines.r1.json' with { type: 'json' }
+import { lineStart, composeLine } from '../npc/tratschSim.js'   // tr1-Satzbau wie die Tratsch-SIM (SSOT S8): eine Quelle
 
 export const SSOT_LINES_ON = typeof location !== 'undefined' && !/(^|[#,])lines=alt(,|$)/.test(location.hash)   // Georg 24.10.: Standard („schön so“); lines=alt = alte Blasen (Titel/Power, nur für die Alt-Tests d1stage/preview); ohne Browser (Node-Tests) alter Weg
 export const SSOT_SOURCE = DATA.source
@@ -50,18 +51,22 @@ export function lineB(card) { const l = cleanLore(card.name, card.lore); return 
 export const TR1_ON = typeof location !== 'undefined' && /(^|[#,])lines=tr1(,|$)/.test(location.hash)
 export const TR1_STATUS = DATA.tr1Status
 export const tr1Line = (deckId, num) => DATA.tr1?.[deckId]?.[String(+num)] || null
+// Satzanfang einer tr1-Zeile: 'title' (beginnt mit dem Kartentitel), 'func' (Artikel, Präposition …), 'other' (z. B. Imperativ „Collect …“)
+export const tr1Start = (card) => { const t = tr1Line(card?.deck?.id, card?.num); return t ? lineStart(spokenTitle(card.name), t) : 'other' }
+// Satz-Opener (into_title mit clause_ok) nur vor Titel oder Funktionswort; own_clause immer (SSOT S8). next(start) wählt passend, ohne start wie bisher
+const fitsStart = (o, start) => start == null || o.slot === 'own_clause' || start !== 'other'
 export function createSentenceOpenerRotation(openers = DATA.openersT) {
   const used = new Set(); let k = 0, lastQ = null
-  return { next() { if (used.size >= openers.length) used.clear(); const pick = (wantQ) => { for (let i = 0; i < openers.length; i++) { const o = openers[(k + i) % openers.length]; if (!used.has(o.id) && (wantQ == null || o.q === wantQ)) { used.add(o.id); k = (k + i + 1) % openers.length; return o } } return null }
-    const o = pick(lastQ == null ? null : !lastQ) || pick(null) || openers[0]; lastQ = o.q; return o } }
+  return { next(start = null) { const fit = openers.filter((o) => fitsStart(o, start)); if (fit.every((o) => used.has(o.id))) for (const o of fit) used.delete(o.id)
+    const pick = (wantQ) => { for (let i = 0; i < openers.length; i++) { const o = openers[(k + i) % openers.length]; if (!used.has(o.id) && fitsStart(o, start) && (wantQ == null || o.q === wantQ)) { used.add(o.id); k = (k + i + 1) % openers.length; return o } } return null }
+    const o = pick(lastQ == null ? null : !lastQ) || pick(null) || fit[0] || openers[0]; lastQ = o.q; return o } }
 }
-const lcStart = (t, title) => (title && t.startsWith(title)) || /^I\b/.test(t) ? t : t[0].toLowerCase() + t.slice(1)
 const boldTitle = (t, title) => (title && t.includes(title) ? t.replace(title, `*${title}*`) : t)
+// Opener + Triplet als ein Satz, gebaut wie in der Tratsch-SIM (composeLine): Satz-Opener + Zeile (klein nur nach Funktionswort), own_clause mit Punkt
+// (Komma nur beim Szenenwechsel), Frage-Opener und „What if“ → „?“
 export function lineT(card, opener, triplet) {
-  const title = spokenTitle(card.name); let t = triplet.trim()
-  if (opener.slot === 'own_clause') t = `${opener.text}, ${lcStart(t, title)}`; else t = `${opener.text} ${lcStart(t, title)}`
-  if (opener.q) t = t.replace(/[.!]+$/, '') + '?'
-  return boldTitle(t, title)
+  const title = spokenTitle(card.name), t = triplet.trim(), start = lineStart(title, t)
+  return boldTitle(composeLine({ opener: opener.text, slot: opener.slot, class: opener.q ? 'Q' : 'S', stance: opener.stance }, t, start), title)
 }
 const words = (s) => new Set(String(s).toLowerCase().match(/[a-z']{4,}/g) || [])
 // Lore-Satz, der im Triplet noch nicht steckt (weniger als die Hälfte seiner Wörter schon gesagt); sonst null

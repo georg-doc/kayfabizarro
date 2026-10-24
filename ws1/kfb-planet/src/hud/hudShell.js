@@ -252,7 +252,7 @@ export function createHudShell(opts = {}) {
       f.flash = Math.max(0, f.flash - dt / 0.3)
       let rot = -3 * DEG * f.h, ha = 0.4 * f.h, hc = HALO_C
       if (active) ha = Math.max(ha, 0.55 + 0.3 * (0.5 + 0.5 * Math.cos(2 * Math.PI * f.t / 2.4)))
-      if (f.hint) { ha = Math.max(ha, 0.35 + 0.6 * (0.5 + 0.5 * Math.cos(2 * Math.PI * f.t / 1.3))); hc = f.hintC; const w = f.t % 2.6; if (w < 0.5) rot += 7 * DEG * Math.sin(w / 0.5 * Math.PI * 3) * (1 - w / 0.5) }
+      if (f.hint) { ha = Math.max(ha, 0.35 + 0.6 * (0.5 + 0.5 * Math.cos(2 * Math.PI * f.t / 1.3))); hc = f.hintC; const w = f.t % 2.6; if (w < 0.5) rot += (f.hintWob ?? 7) * DEG * Math.sin(w / 0.5 * Math.PI * 3) * (1 - w / 0.5) }
       ha = Math.max(ha, f.flash); if (f.flash > 0.01) hc = HALO_C
       const sc = 1 + 0.08 * f.h
       f.sx = rm ? 1 : sq[0] * sc; f.sy = rm ? 1 : sq[1] * sc; f.rot = rm ? 0 : rot; f.haloA = clamp(ha, 0, 1); f.haloC.copy(hc)
@@ -287,7 +287,7 @@ export function createHudShell(opts = {}) {
       const ms = performance.now() - t0; S.draws++; S.drawMs += ms; S.drawMsMax = Math.max(S.drawMsMax, ms); S.ring[S.ri++ % S.ring.length] = ms
     },
     pressFx: (key, flash = false) => { if (!O.fx) return; const f = fxOf(key); f.press = 0; if (flash) f.flash = 1 }, // Squash/Stretch wie Klick, ohne UI-Zustand (Kontakt, Hochzählen)
-    setHint: (key, on, color = '#ffc23d') => { const f = fxOf(key); f.hint = !!on; f.hintC.set(color) }, fxState: (key) => { const f = FXS.get(key); return f ? { haloA: +f.haloA.toFixed(2), sx: +f.sx.toFixed(3), rot: +(f.rot / DEG).toFixed(1), hint: f.hint } : null },
+    setHint: (key, on, color = '#ffc23d', o = null) => { const f = fxOf(key); f.hint = !!on; f.hintC.set(color); f.hintWob = o?.wob ?? 7 }, /* o.wob: Wackel-Ausschlag in Grad (Standard 7) */ fxState: (key) => { const f = FXS.get(key); return f ? { haloA: +f.haloA.toFixed(2), sx: +f.sx.toFixed(3), rot: +(f.rot / DEG).toFixed(1), hint: f.hint } : null },
     uiStates: UI_STATES, uiState: (key) => uiOf(key).state, uiAll: () => Object.fromEntries([...UI].map(([k, u]) => [k, u.state])),
     onUiState: (fn) => { uiSubs.add(fn); return () => uiSubs.delete(fn) },
     setAnimator: (key, fn) => { if (fn) animators.set(key, fn); else animators.delete(key) },

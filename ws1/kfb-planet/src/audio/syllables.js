@@ -10,8 +10,10 @@ const VOWELS = /[aeiouäöüyáàâéèêíìîóòôúùû]+/gi
 export function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } }
 export function hashStr(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619) } return h >>> 0 }
 
-// Stimmlage je Figur: fester Grundton aus dem Seed der characterId (−3 … +3 Halbtöne), bleibt über alle Sätze gleich
-export function voiceBase(characterId) { return Math.round(((hashStr(characterId || 'x') % 1000) / 1000) * 6 - 3) }
+// Stimmlage je Figur: fester Grundton aus dem Seed der characterId (−5 … 0 Halbtöne, nie über der Lage der Familie – Georg 25.10.), bleibt gleich
+export function voiceBase(characterId) { return -Math.round(((hashStr(characterId || 'x') % 1000) / 1000) * 5) }
+// Satzmelodie in die Lage legen: höchste Silbe genau auf der Lage des Clips (0), Kontur bleibt; nach unten höchstens −12
+export function fitRegister(semis) { const top = Math.max(...semis); const off = top > 0 ? top : 0; return semis.map((s) => Math.max(-12, +(s - off).toFixed(2))) }
 
 // Text → Sätze → Wörter → Silben. Silbenzahl je Wort = Vokalgruppen (mind. 1, Zahlen/Kürzel je Zeichen grob). Satzende-Zeichen bestimmt die Melodie.
 export function syllabify(text) {

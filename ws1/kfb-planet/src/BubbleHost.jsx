@@ -10,6 +10,7 @@ import { useGame } from './store'
 import { DEBUG, expose } from './debug'
 import { isIssuedLine, SILENCE } from './dialogText'
 import { testLine, zurufLine } from './poolReader'
+import { avoidRects } from './bubbleAvoid' // WS-NPC chat=syl (Lead 24.10., additiv): Blasen meiden HUD und Figuren
 import { CHAT_SYL, speak, speakerOf } from './audio/kfbAudio.js' // WS-Audio Chatter-Silben R1: jede Sprech-Blase mit Laut (nur #chat=syl)
 
 // Kopf-Oberkante der Spielfigur: playerState.pos ist die Körpermitte; +1,05 m liegt knapp über dem Kopf (gemessen am Bildschirm)
@@ -28,15 +29,17 @@ export default function BubbleHost() {
     // Vertrag §5: nur Zeilen aus dem Pool-Leser (POOL, CARD, SILENCE; TEST nur mit Debug-Schalter). Alles andere -> „…“
     const unsub = useGame.subscribe((s, prev) => {
       if (!s.speech || s.speech === prev.speech) return
-      const { anchor, line, kind, color } = s.speech
+      const { anchor, line, kind, color, life } = s.speech
       const ok = isIssuedLine(line) && (line.source !== 'TEST' || DEBUG) && (!line.speaker || line.speaker === anchor)
       if (!ok) { console.warn('[bubble] Zeile ohne geprüfte Quelle verworfen'); L.show(anchor, [SILENCE], 'thought', color); return }
-      L.show(anchor, line.parts, line.source === 'SILENCE' ? 'thought' : kind, color)
-      if (CHAT_SYL) { const sp = speakerOf(anchor), p = anchorAt(anchor, new THREE.Vector3()); speak({ text: line.parts.join(' '), characterId: sp.characterId, group: sp.group, pos: p ? { x: p.x, y: p.y, z: p.z } : null, kind: line.source === 'ZURUF' ? 'call' : 'line' }) } // WS-Audio: Laut zur Blase (doppelt gerufen = einmal)
+      L.show(anchor, line.parts, line.source === 'SILENCE' ? 'thought' : kind, color, life)
+      // Blasen mit eigener Lebenszeit kommen aus der Wechselrede (talkDirector) und sind dort schon vertont
+      if (CHAT_SYL && life == null) { const sp = speakerOf(anchor), p = anchorAt(anchor, new THREE.Vector3()); speak({ text: line.parts.join(' '), characterId: sp.characterId, group: sp.group, pos: p ? { x: p.x, y: p.y, z: p.z } : null, kind: line.source === 'ZURUF' ? 'call' : 'line' }) } // WS-Audio: Laut zur Blase (doppelt gerufen = einmal)
     })
     const test = { set: new Map() }
     expose('Bubbles', () => L.list())
     expose('BubbleRenders', () => renders.current)
+    if (CHAT_SYL) expose('BubbleAvoid', () => avoidRects(camera))
     expose('SayTest', (anchor, parts, kind, color) => useGame.getState().say(anchor, testLine(parts), kind, color))
     expose('SayZuruf', (anchor, label) => useGame.getState().say(anchor, zurufLine(label)))
     expose('SayForged', (anchor, text) => useGame.getState().say(anchor, { text, parts: [text], source: 'POOL' }))
@@ -48,6 +51,6 @@ export default function BubbleHost() {
     })
     return () => { unsub(); offPlayer(); for (const off of test.set.values()) off(); L.dispose(); layer.current = null }
   }, [camera])
-  useFrame((_, dt) => { layer.current?.update(Math.min(dt, 0.1), camera, anchorAt) })
+  useFrame((_, dt) => { layer.current?.update(Math.min(dt, 0.1), camera, anchorAt, CHAT_SYL ? avoidRects(camera) : null) })
   return null
 }

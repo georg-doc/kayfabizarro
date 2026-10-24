@@ -155,7 +155,9 @@ export function createDiscoLife(options) {
   }
 
   function drive(m, dt) {
-    const hit = S.hold ? { cue: { clip: m.clips.Idle_A ? 'Idle_A' : 'kfb_idle_happy_a' }, local: 0.4 } : discoCueAt(m.cues, S.songT, len)   /* hold: Prüfhilfe (Augen-Bogen), alle in Ruhe */
+    // WS-NPC chat=syl (Lead 24.10., additiv): der MC bleibt ruhig, bis er ruft (Georg: Hochspringen beim Bemerken wirkt ohne Kontext irritierend); dann tanzt er
+    const quiet = m.sl.mc && options.mcWaitsForCall && !S.mcCalled
+    const hit = S.hold || quiet ? { cue: { clip: m.clips.Idle_A ? 'Idle_A' : 'kfb_idle_happy_a' }, local: 0.4 } : discoCueAt(m.cues, S.songT, len)   /* hold: Prüfhilfe (Augen-Bogen), alle in Ruhe */
     let name = hit?.cue?.clip || null, bounce = false
     if (name === 'bounce' || hit?.cue?.runtime) { bounce = true; name = m.clips.Idle_A ? 'Idle_A' : Object.keys(m.clips)[0] }
     const clip = name && m.clips[name]
@@ -185,6 +187,7 @@ export function createDiscoLife(options) {
         if (k != null && live.length) { S.songs++; CHL.emit(pickSpeakers(live, S.songs).map((m) => ({ ...who(m), mood: CHATTER.mood.pause, cause: 'pause' })), t) }
         const nr = NOTICE.step(d, t), mc = M.find((m) => m.sl.mc); if (nr && mc) CHL.emit([{ ...who(mc), mood: CHATTER.mood.notice, cause: 'notice', reason: nr }], t, { force: true })
       } else NOTICE.step(pl ? d : null, t)
+      if (options.mcWaitsForCall && (!pl || d >= DISCO.bubbleR) && t >= NOTICE.state().until) S.mcCalled = false   // außer Hörweite und Bemerken wieder möglich: beim nächsten Kommen erst rufen
       S.prevT = t
       /* MVP-Leistung (Lead 22.10.): Tänzer sind Skin-Meshes ohne Frustum-Culling (83 Zeichenaufrufe, ≈ 170 k Dreiecke plus Schattenbild) –
          sichtbar nur im Bild (bis visibleFar) oder ganz nah (Schatten ins Bild), sonst ausgeblendet; die Uhr läuft weiter (Weltzeit) */
@@ -202,6 +205,8 @@ export function createDiscoLife(options) {
       members: M.map((m) => ({ slot: m.sl.slot, x: +m.pl.x.toFixed(2), z: +m.pl.z.toFixed(2), clip: m.clip, t: m.ct ?? null, lift: +(m.lift || 0).toFixed(4), clips: Object.keys(m.clips).length })) }),
     actors: () => M.map((m) => ({ slot: m.sl.slot, actor: m.actor, figure: m.fig })),
     events: () => CHL.events(), // WS-Audio: { type: 'chatter', group: 'disco_k12', mood, cause, id, characterId, at, t, seq }
+    anchors: () => M.filter((m) => m.status === 'OK' && m.h).map((m) => ({ id: 'disco-' + m.sl.slot, object3d: m.h })), // chat=syl: Blasen-Anker (talkDirector misst die Kopfhöhe)
+    mcCall: () => { S.mcCalled = true }, // chat=syl: der MC hat gerufen → er tanzt
     hold: (on) => { S.hold = !!on },
     // Prüfhilfe (Test C): tiefster Punkt der gehäuteten Figur über dem Boden je Platz (nur sichtbare Netze, ohne Augen-Rig)
     feet: () => M.filter((m) => m.fig).map((m) => { let lo = Infinity; m.fig.updateMatrixWorld(true)

@@ -13,11 +13,11 @@ import { createRacer } from '../vendor/audio/racer/engine.mjs'
 import { createCombat } from '../vendor/audio/combat/engine.mjs'
 import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
-import { syllabify, melody, planDuration, grainsFrom, voiceBase, MOOD_FOR_END, hashStr, rng as seedRng } from './syllables.js'
+import { syllabify, melody, planDuration, grainsFrom, voiceBase, fitRegister, MOOD_FOR_END, hashStr, rng as seedRng } from './syllables.js'
 import { chatterOf, resolveCharacterId } from '../characters/registry.js'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
-import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS, pickChatter } from './cueMap.js'
+import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim, STEP_BUS, stepBusDb } from './mixer.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS, pickChatter, CHATTER_LOW_OCTAVE } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -64,6 +64,7 @@ function graph() {
   const meter = ac.createAnalyser(); meter.fftSize = 2048; out.connect(meter) // Pegel am Ausgang (nur bei stats() gelesen)
   const buses = {}, ducks = {}
   for (const b of BUSES) { const g = ac.createGain(), d = ac.createGain(); g.connect(d).connect(master); buses[b] = g; ducks[b] = d }
+  { const st = ac.createGain(); st.gain.value = dbToGain(STEP_BUS.db); st.connect(buses.sfx); buses.steps = st } // Schritt-Bus (Spieler + NPC), unter SFX-Regler und -Hall
   // Raumklang: je Umgebung ein Faltungshall (rechnerische Raumantwort, kein Ton) als Send von SFX und Atmo; Wechsel über die Send-Pegel (weich)
   const rev = {}
   for (const [env, R] of Object.entries(REVERB)) { const send = ac.createGain(), pre = ac.createDelay(0.5), conv = ac.createConvolver(), tone = ac.createBiquadFilter()
@@ -127,7 +128,7 @@ async function boot() {
     const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(root + 'wsa/racer/', location.href) })
     await r.prepare(); S.racer = r; S.racerAssets = want.size }))
   const steps = () => S.index.site && timed('steps', () => viaRoots(async (root) => { const base = new URL(root + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
-    const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.sfx, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st }))
+    const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.steps, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st }))
   await Promise.all([
     S.index.site && timed('ambience', () => viaRoots(async (root) => { const a = await createAmbience({ audioContext: ac, destinations: { GLOBAL_BED: G.buses.atmo, LOCAL_AMBIENCE: G.buses.atmo }, assetBaseUrl: new URL(root + 'site/ambience/', location.href) })
       await a.setContext({ ...S.amb }); await a.start(); S.ambience = a })),
@@ -182,6 +183,7 @@ export function play(cueId, { pos = null, gain = 1, at = 0, loop = false, rate =
   src.connect(env); last.connect(G.buses[c.bus || 'sfx'])
   const v = { src, env, pan, lp, vol, cue: cueId, at: when, prio: prio ?? (c.loud ? 2 : loop ? 3 : 1), pos, loop, end: loop ? Infinity : when + buf.duration / src.playbackRate.value }
   B.voices.add(v); src.onended = () => stopVoice(v); src.start(when); if (!loop) src.stop(v.end + 0.02); B.plays++
+  (S.cueLog ||= []).push([+when.toFixed(2), cueId, +(20 * Math.log10(vol + 1e-9)).toFixed(1), c.bus || 'sfx']); if (S.cueLog.length > 120) S.cueLog.shift() // welche Töne wann (Fehlersuche, z. B. Stampfen)
   if (c.loud) B.loudUntil = Math.max(B.loudUntil, v.end)
   return v
 }
@@ -364,6 +366,9 @@ export function chatter(e, pos = null, ch = null) {
 // speak({ text, characterId, chatter?, group?, pos?, kind? }) → { dur, start } | null. Blasentext → Silben → Satzmelodie (syllables.js); je Silbe ein Grain
 // (0,1–0,2 s) aus den einmal dekodierten Familien-Clips des Instruments (pickChatter: Register → Georgs Wahl → Gruppe). Stimmlage je Figur fest (Seed),
 // Wechselrede: anderer Sprecher beginnt 0,3–0,5 s nach dem Ende des vorigen, Registerwechsel bei ähnlicher Lage. Musik −7 dB solange gesprochen wird.
+// Pegel und Klang der Silben (Georg 25.10.: „plappern, nicht quieken“, unter der Musik): −6 dB gegenüber R1 (0,25 statt 0,5, also −12 dB unter dem Clip-Pegel der Familie),
+// Tiefpass 2,4 kHz, Einschwingen 25 ms, Ausklang 50 ms. Musik wird beim Sprechen weiter −7 dB geduckt (q179).
+export const SPEAK_GAIN = 0.25, SPEAK_LP_HZ = 2400, SPEAK_ATTACK = 0.025, SPEAK_RELEASE = 0.05
 export const CHAT_SYL = typeof location !== 'undefined' && /(^|[#,])chat=syl(,|$)/.test(location.hash)
 const SPEAKERS = new Map() // Anker-ID → { characterId, group } (Bühne: stage-left/right; Welt: npc-<id>)
 export function setSpeaker(anchorId, characterId, group = null) { if (anchorId) SPEAKERS.set(anchorId, { characterId: characterId ? resolveCharacterId(characterId) ?? characterId : null, group }) }
@@ -395,15 +400,18 @@ export function speak({ text, characterId = null, chatter = null, group = null, 
   let base = voiceBase(who) + (kind === 'call' ? 1 : 0), start = 0; const T = S.talk
   if (T && T.end > now) start = T.who === who ? T.end - now + 0.15 : T.end - now + 0.3 + seedRng(seed)() * 0.2
   if (T && T.who !== who && T.end > now - 1.5 && Math.abs(base - T.base) < 2) base += base >= T.base ? 3 : -3
-  const G = graph(), r = seedRng(seed ^ 0x9e37), t0 = now + start + 0.01, out = ac.createGain(); out.gain.value = 0.5 * (kind === 'call' ? 1.1 : 1)
-  let last = out; const rp = rel(pos); if (rp) { const d = Math.hypot(rp.x, rp.y, rp.z), pan = ac.createPanner(); pan.panningModel = 'equalpower'; pan.distanceModel = 'inverse'; pan.refDistance = 4; pan.maxDistance = 220; pan.rolloffFactor = 1
-    pan.positionX.value = rp.x; pan.positionY.value = rp.y; pan.positionZ.value = rp.z; const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = distanceLowpassHz(d); out.connect(lp).connect(pan); last = pan }
+  const G = graph(), r = seedRng(seed ^ 0x9e37), t0 = now + start + 0.01, out = ac.createGain(); out.gain.value = SPEAK_GAIN * (kind === 'call' ? 1.12 : 1)
+  const soft = ac.createBiquadFilter(); soft.type = 'lowpass'; soft.frequency.value = SPEAK_LP_HZ; soft.Q.value = 0.5; out.connect(soft) // weich: Höhen gedämpft (Georg 25.10.)
+  let last = soft; const rp = rel(pos); if (rp) { const d = Math.hypot(rp.x, rp.y, rp.z), pan = ac.createPanner(); pan.panningModel = 'equalpower'; pan.distanceModel = 'inverse'; pan.refDistance = 4; pan.maxDistance = 220; pan.rolloffFactor = 1
+    pan.positionX.value = rp.x; pan.positionY.value = rp.y; pan.positionZ.value = rp.z; const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = distanceLowpassHz(d); soft.connect(lp).connect(pan); last = pan }
   last.connect(G.buses.sfx)
-  const pitch = chatterRate(ch) * (CUES['chatter.' + fam + '.neutral']?.pitch || 1)
-  for (const p of P) {
-    const pool = pools[p.end === '!' || p.emph ? 0 : Math.floor(r() * pools.length)], g = pool[Math.floor(r() * pool.length)], rate = pitch * 2 ** ((base + p.semi) / 12)
+  const pitch = (CHATTER_LOW_OCTAVE.includes(fam) ? 0.5 : 1) * (CUES['chatter.' + fam + '.neutral']?.pitch || 1) // hohe Familien eine Oktave tiefer; „hohe …“ hebt Silben nicht
+  const semis = fitRegister(P.map((p) => base + p.semi)) // keine Silbe über der Lage der Familie
+  for (const [pi, p] of P.entries()) {
+    const pool = pools[p.end === '!' || p.emph ? 0 : Math.floor(r() * pools.length)], g = pool[Math.floor(r() * pool.length)], rate = pitch * 2 ** (semis[pi] / 12)
     const len = Math.min(g.dur, p.dur * rate), when = t0 + p.at, src = ac.createBufferSource(), env = ac.createGain(); src.buffer = g.buf; src.playbackRate.value = rate
-    const v = g.norm * p.gain, outDur = len / rate; env.gain.setValueAtTime(0, when); env.gain.linearRampToValueAtTime(v, when + 0.008); env.gain.setValueAtTime(v, when + Math.max(0.01, outDur - 0.03)); env.gain.linearRampToValueAtTime(0, when + outDur)
+    const v = g.norm * p.gain, outDur = len / rate; const atk = Math.min(SPEAK_ATTACK, outDur * 0.3), rel = Math.min(SPEAK_RELEASE, outDur * 0.4) // weiche Einschwinger
+    env.gain.setValueAtTime(0, when); env.gain.linearRampToValueAtTime(v, when + atk); env.gain.setValueAtTime(v, when + Math.max(atk, outDur - rel)); env.gain.linearRampToValueAtTime(0, when + outDur)
     src.connect(env).connect(out); src.start(when, g.t0, len); src.stop(when + outDur + 0.02)
   }
   const dur = planDuration(P), fin = t0 + dur; setTimeout(() => { try { out.disconnect() } catch {} }, (start + dur + 1) * 1000)
@@ -482,6 +490,8 @@ export function frame(st) {
   // Ducking der Musik: laute SFX (Kampf, Crash), Dialog, Boost
   const db = musicDuckDb({ loud: S.combatActive || ac.currentTime < S.bank.loudUntil, dialogue: S.dialogue, voice: ac.currentTime < (S.voiceUntil || 0), boost: ac.currentTime < (S.boostUntil || 0) })
   if (db !== S.duckDb) { const up = db > S.duckDb; S.duckDb = db; S.graph.ducks.music.gain.setTargetAtTime(dbToGain(db), ac.currentTime, up ? DUCK.release / 3 : DUCK.attack / 3) }
+  const sdb = stepBusDb({ speech: ac.currentTime < (S.talk?.end || 0), loud: S.combatActive || ac.currentTime < S.bank.loudUntil }) // Schritte unter Sprache/Kampf
+  if (sdb !== S.stepDb) { const up = sdb > (S.stepDb ?? -99); S.stepDb = sdb; S.graph.buses.steps.gain.setTargetAtTime(dbToGain(sdb), ac.currentTime, up ? DUCK.release / 3 : DUCK.attack / 3) }
   // Bank-Schleifen (Farm) und positionale Einzeltöne folgen dem Hörer nicht (kurz); Messung
   const ms = now() - t0, P = S.perf; P.frames++; P.sum += ms; P.max = Math.max(P.max, ms); P.ring[P.i++ % P.ring.length] = ms
 }
@@ -553,7 +563,7 @@ export function stats() {
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, dead: S.music.dead, firstMs: S.music.firstAt, prepared: S.music.prepared || 0, prep: !!S.music.prep, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null, host: AUDIO_ROOT, hostFallbacks: S.hostFallbacks || 0,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
-    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), speak: { on: CHAT_SYL, log: (S.speakLog || []).slice(-8) }, chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), speak: { on: CHAT_SYL, log: (S.speakLog || []).slice(-8) }, stepDb: S.stepDb ?? STEP_BUS.db, cues: (S.cueLog || []).slice(-60), ownSteps: typeof S.steps?.metrics === "function" ? S.steps.metrics() : null, chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

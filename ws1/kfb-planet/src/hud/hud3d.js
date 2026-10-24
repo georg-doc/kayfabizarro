@@ -13,6 +13,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createHudShell, zoneSet, zoneMaterial, boardClay, clamp, DEG } from './hudShell.js'
 import { PROOF_PALETTES } from './hudPalette.js'
+import { createTempoColumn, COLUMN } from './tempoColumn.js'
 import arrowUrl from '../assets/hud3d/kenney_arrow-rounded.glb?url'
 import cassetteUrl from '../assets/hud3d/poly_cassette.glb?url' // „Cassette tape“ by Poly by Google (Paket HUD 3D R1, auch in kayfabizarro media/3D_Assets/KFB)
 
@@ -56,7 +57,7 @@ function boardRect(x, y, w, h, padK = 0.12, force = null) { // force: Ecke fest 
   return { corner, w: W, h: H, dx, dy, fill: w / (w + 2 * p) }
 }
 const GEO_A = { arrow: { x: 860, y: 10, s: 64 }, label: { cx: 892, y: 78, fs: 15, fd: 22 }, chest: { x: 18, y: 464, s: 60 }, orbs: { cx: 480, y: 14, s: 34, gap: 9 },
-  gear: { x: 875, y: 138, s: 34 }, speed: { x: 883, y: 194, w: 18, h: 62, fs: 18 }, radio: { x: 790, y: 426, w: 152, h: 98 }, actions: { y: 480, s: 44, gap: 12, cx: 480, n: 6 }, inter: { s: 44 }, almanac: { x: 18, y: 16, cw: 128, step: 12, cap: 17, ar: 1.79 }, keys: 13 }
+  gear: { x: 875, y: 138, s: 34 }, radio: { x: 790, y: 426, w: 152, h: 98 }, actions: { y: 480, s: 44, gap: 12, cx: 480, n: 6 }, inter: { s: 44 }, almanac: { x: 18, y: 16, cw: 128, step: 12, cap: 17, ar: 1.79 }, keys: 13 }
 // Aktionsplätze (Lead 24.10.): echte Spieltasten V/B/N, keine Granate (das Spiel hat keine), 4–6 leer angedeutet. hudYaw 35° + hudView.yaw_deg (N32 r2)
 export const ACTIONS = [{ id: 'fist', file: FIST_FILE, yaw: 90, key: 'V', t: 'Faust' }, { id: 'blaster', file: 'KFB_HUD_Blaster.r2', yaw: 270, key: 'B', t: 'Blaster' }, { id: 'bomb', file: 'KFB_HUD_Bomb.r2', yaw: 0, key: 'N', t: 'Clown-Bombe' }]
 // cas=new (Standard, Georg 24.10.): Truhe größer als Gegengewicht, Kassette etwas kleiner; Ecken bleiben (Truhe unten links, Kassette unten rechts)
@@ -66,13 +67,22 @@ export const RATIO = { bubble: 44, action: 1.18, actionGap: 0.36, chest: 1.95, c
 const RB = RATIO.bubble, AS = Math.round(RB * RATIO.action), CS = Math.round(RB * RATIO.chest), BOT = 524 // gemeinsame Unterkante der unteren Reihe (Board-px)
 const GEO_NEW = { chest: { x: 18, y: BOT - CS, s: CS }, radio: { x: 812, y: BOT - Math.round(RB * RATIO.cassetteH), w: 130, h: Math.round(RB * RATIO.cassetteH) },
   actions: { y: BOT - AS, s: AS, gap: Math.round(RB * RATIO.actionGap), cx: 480, n: 6 } }
+// Tempo-Säule (R2/R3 Georg 25.10.): Höhe als Verhältnis zur Blase, Breite aus dem Seitenverhältnis der Röhre; Mitte = Spalte von Pfeil und Zahnrad (x 892).
+// Zahl darunter wie die Entfernung unter dem Pfeil (Schrift fd 22 / Einheit fs 15). R3: Spalte gleichmäßig verteilt – Entfernung → Zahnrad, Zahnrad →
+// Lichthof der Säule und Lichthof → Zahl haben denselben Abstand GAP (= Entfernung → Zahnrad); der Lichthof (HALO, haloR 20 Bezugs-px) zählt mit,
+// damit auch im Boost nichts tangiert. Rand der Säule PAD ≥ HALO, sonst schneidet die Hülle den Lichthof ab. Kopfraum über der Kappe für den Boost-Effekt.
+export const TEMPO = { cx: 892, h: 2.4, halo: 10, pad: 14, alt: { w: 12, gap: 14 } }
 export function layoutA(casNew = true) {
   const G = casNew ? { ...GEO_A, ...GEO_NEW } : GEO_A, L = {}
   L.arrow = { ...boardRect(G.arrow.x, G.arrow.y, G.arrow.s, G.arrow.s, 0.3), el: 38 }
   L.chest = { ...boardRect(G.chest.x, G.chest.y, G.chest.s, G.chest.s, 0.3), el: 22, yaw: 35 }
   L.gear = { ...boardRect(G.gear.x, G.gear.y, G.gear.s, G.gear.s, 0.3), el: 22, yaw: -112 + 35 }
-  L.speed = { ...boardRect(G.speed.x, G.speed.y, G.speed.w, G.speed.h, 0.45, 'tr'), el: 10, hidden: true } // Tempo-Leiste in der Spalte von Zahnrad und Pfeil
-  L.speedText = { right: (BW - G.speed.x + 8) * F, top: (G.speed.y + G.speed.h - G.speed.fs * 2.2) * F, fs: G.speed.fs * F }
+  { const T = TEMPO, C = COLUMN, U = C.FULL + 2 * C.R, labBot = G.label.y + G.label.fs + 4 + G.label.fd, GAP = G.gear.y - labBot
+    const tubeH = Math.round(RB * T.h), head = Math.round(tubeH * C.HEAD / U), ty = G.gear.y + G.gear.s + GAP + T.halo, h = tubeH + head, w = Math.ceil(h * 2 * C.R / (U + C.HEAD)), x = T.cx - w / 2
+    L.speed = { ...boardRect(x, ty - head, w, h, T.pad / h, 'tr'), el: 8, hidden: true, fill: h / (h + 2 * T.pad) } // höhenbegrenzt: Füllgrad aus der Höhe
+    L.speedText = { right: (BW - T.cx) * F, top: (ty + tubeH + T.halo + GAP) * F, fs: G.label.fs * F, fd: G.label.fd * F }
+    L.speedCol = { tubeTop: ty * F, tubeBottom: (ty + tubeH) * F, halo: T.halo * F, gap: GAP * F } // für Prüfungen
+    L.altRoom = { right: (BW - (x - T.alt.gap)) * F, top: ty * F, w: T.alt.w * F, h: tubeH * F } } // nur Platz (Flughöhe später)
   L.cassette = { ...boardRect(G.radio.x, G.radio.y, G.radio.w, G.radio.h, 0.2), el: 16, yaw: -14 }
   // Aktionen: sechs Plätze + Interaktion in einer Reihe (h3d-hud buildFrame); Interaktion ist DOM (Blase) beim Wirt
   const A = G.actions, iw = Math.round(G.inter.s * 1.24), igap = A.gap + 8, rowW = A.n * A.s + (A.n - 1) * A.gap + igap + iw, ax0 = Math.round(A.cx - rowW / 2)
@@ -130,7 +140,7 @@ export function createHud3d(opts = {}) {
   ACTIONS.forEach((a, i) => SH.addSlot('act' + i, L['act' + i], { lights: 'board', ortho: true, toneMapped: false, rim: 1 }))
   SH.addSlot('gear', L.gear, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
   SH.addSlot('cassette', L.cassette, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
-  SH.addSlot('speed', L.speed, { lights: 'board', ortho: true, toneMapped: false, rim: 1, ol: [1.5, 2.6] })
+  SH.addSlot('speed', L.speed, { lights: 'board', ortho: true, toneMapped: false, rim: 1 }) // Kontur wie Pfeil/Zahnrad
   SH.slots.fanShadow.mat.uniforms.opacity.value = 0.55
   const { slots } = SH
   const ZCHEST = zoneSet(PROOF_PALETTES.otown), ZDIG = zoneSet({ base: HALO, accent: HALO, detail: INK }), ZDIG0 = zoneSet({ base: '#f3efe6', accent: '#f3efe6', detail: '#77726b' })
@@ -177,28 +187,44 @@ export function createHud3d(opts = {}) {
   load()
 
   // ── Tempo-Leiste (Georg 24.10.; h3d-core barProp): Knet-Röhre in Creme, Füllung über die volle Skala #4fb648 → #9cc83a → #f2c230 → #ec8a2c → #d9453a.
-  // Füllung federt nach (ω 9, ζ 0,45), im Boost glüht und wackelt sie (Hinweis-Lichthof Orange), am Anschlag ein Squash. Nur Fahren und Fliegen.
-  const RAMP = ['#4fb648', '#9cc83a', '#f2c230', '#ec8a2c', '#d9453a'].map((c) => new THREE.Color(c))
-  const rampAt = (t) => { const n = RAMP.length - 1, i = Math.min(n - 1, Math.floor(t * n)), f = t * n - i; return RAMP[i].clone().lerp(RAMP[i + 1], f) }
-  const SPD = { shown: 0, v: 0, target: 0, built: -1, boost: false, visible: false, maxHit: false, t: 0, kmh: 0 }
-  const FULL = 1.4
-  MAT.tube = boardClay('#efe5d2'); MAT.fill = boardClay('#ffffff', { vertexColors: true, emissive: '#ff9a3c', emissiveIntensity: 0 })
-  function buildBarBase() { const s = slots.speed, g = new THREE.Group(); g.add(new THREE.Mesh(new THREE.CapsuleGeometry(0.16, FULL, 8, 24), MAT.tube))
-    const fill = new THREE.Mesh(new THREE.BufferGeometry(), MAT.fill); fill.position.z = 0.012; g.add(fill); parts.bar = { g, fill }
-    s.scene.add(g); s.root = g; s.fitMode = 'box'; s.root.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(g.children[0]); SH.fitCamera(s, s.L.el, 0, 1 / s.L.fill / 0.94, new THREE.Vector3(), 1, b) }
-  function buildFill(frac) { const P = parts.bar; if (!P) return; const L0 = FULL * Math.max(0.02, Math.min(1, frac)), geo = new THREE.CapsuleGeometry(0.17, L0, 8, 24), pos = geo.getAttribute('position'), col = new Float32Array(pos.count * 3)
-    for (let i = 0; i < pos.count; i++) { const y = pos.getY(i) + L0 / 2; rampAt(Math.max(0, Math.min(1, y / FULL))).toArray(col, i * 3) }
-    geo.setAttribute('color', new THREE.BufferAttribute(col, 3)); P.fill.geometry.dispose(); P.fill.geometry = geo; P.fill.position.y = -FULL / 2 + L0 / 2; SPD.built = frac; slots.speed.dirty = true }
+  // Füllung federt nach (ω 9, ζ 0,45). Boost = Effekt über dem Roten (A Überkochen / B Hitze, Schalter boost=a|b), Lichthof Orange, Wackeln gedämpft (3°),
+  // Squash beim Zünden und am Anschlag. Stall im Flug: Säule blinkt kühl, Lichthof Blaugrau ohne Wackeln. Nur Fahren und Fliegen.
+  const SPD = { shown: 0, v: 0, target: 0, boost: false, visible: false, maxHit: false, t: 0, kmh: 0, glow: 0, zones: null, fly: false }
+  function buildColumn() { const s = slots.speed, C = createTempoColumn(boardClay, { boost: O.boost === 'b' ? 'b' : 'a' }); parts.column = C
+    s.scene.add(C.group); s.root = C.group; s.fitMode = 'box'; C.setZones([['norm', 0.5], ['fast', 0.85], ['red', 1]]); C.setFrac(0) // Fahrzonen als Vorgabe bis zur ersten Telemetrie
+    SH.fitCamera(s, s.L.el, 0, 1 / s.L.fill / 0.97, new THREE.Vector3(), 1, C.box()) }
+  // Truhe auf/zu (Paket 5, Georg 25.10. „cartoonig“): Deckel chest_lid an einer unterdämpften Feder (ω 15, ζ 0,42 → ~20 % Überschwingen beim Öffnen),
+  // beim Zuklappen prallt er am Rand ab (Rückprall 0,3) und die Truhe federt (chest_bounce + Squash). Statt der starren Clips chest_open/close (0,33 s).
+  // Reduzierte Bewegung: Deckel springt in die Endlage. Offen = −100° um X wie KFB_HUD_Chest.otown.auf.glb.
+  const LID = { node: null, a: 0, v: 0, target: 0, OPEN: -100 * DEG, moving: false, bounced: false, q0: null }
+  function stepChest(dt) {
+    const s = slots.chest; if (!s.root) return
+    if (!LID.node) { LID.node = s.root.getObjectByName('chest_lid'); if (!LID.node) return; s.clips?.chest_open?.stop(); s.clips?.chest_close?.stop(); LID.q0 = LID.node.quaternion.clone() } /* Clips für den Deckel aus, sonst überschreibt der Mixer die Feder */
+    if (RM()) { if (LID.a !== LID.target) { LID.a = LID.target; LID.v = 0 } } else {
+      const w = 15, z = 0.42, n = Math.max(1, Math.ceil(dt / (1 / 120))), h = dt / n
+      for (let i = 0; i < n; i++) { LID.v += (w * w * (LID.target - LID.a) - 2 * z * w * LID.v) * h; LID.a += LID.v * h
+        if (LID.target === 0 && LID.a > 0) { LID.a = 0; LID.v = -LID.v * 0.3; if (!LID.bounced) { LID.bounced = true; SH.playOnce(s, 'chest_bounce'); SH.squash('chest', 5) } } } }
+    const moving = Math.abs(LID.target - LID.a) > 0.002 || Math.abs(LID.v) > 0.01
+    if (moving || LID.moving) { LID.node.quaternion.copy(LID.q0).multiply(_qx.setFromAxisAngle(_X, LID.a)); s.dirty = true }
+    LID.moving = moving
+  }
+  const _qx = new THREE.Quaternion(), _X = new THREE.Vector3(1, 0, 0)
   function stepSpeed(dt) {
-    const s = slots.speed; if (!parts.bar) return
+    const s = slots.speed, C = parts.column; if (!C) return
     if (s.L.hidden === SPD.visible) { s.L.hidden = !SPD.visible; s.dirty = true }
     if (!SPD.visible) return
+    if (SPD.zones && C.setZones(SPD.zones)) s.dirty = true
     const w = 9, z = 0.45; if (RM()) { SPD.shown = SPD.target; SPD.v = 0 } else { SPD.v += (w * w * (SPD.target - SPD.shown) - 2 * z * w * SPD.v) * dt; SPD.shown += SPD.v * dt }
-    const f = Math.max(0, Math.min(1, SPD.shown)); if (Math.abs(f - SPD.built) > 0.006) buildFill(f)
-    SPD.t += dt; const glow = SPD.boost ? 0.35 + 0.25 * Math.sin(SPD.t * 14) : 0; if (Math.abs(MAT.fill.emissiveIntensity - glow) > 0.02) { MAT.fill.emissiveIntensity = glow; s.dirty = true }
-    SH.setHint('speed', SPD.boost && !RM(), '#ff9a3c')
+    SPD.t += dt; if (C.stepBoost(dt, SPD.boost, RM())) s.dirty = true
+    if (C.setStall(SPD.stall, SPD.t, RM())) s.dirty = true
+    if (C.setFrac(SPD.shown)) s.dirty = true
+    SPD.glow = C.fx()
+    SH.setHint('speed', (SPD.boost || SPD.stall) && !RM(), SPD.stall && !SPD.boost ? '#9fb8d8' : '#ff7a2a', { wob: SPD.stall ? 0 : 3 })
+    if (SPD.boost && !SPD.boostWas) SH.pressFx('speed'); SPD.boostWas = SPD.boost // Squash beim Zünden
     if (SPD.target >= 0.98 && !SPD.maxHit) { SPD.maxHit = true; SH.pressFx('speed') } else if (SPD.target < 0.9) SPD.maxHit = false
   }
+
+
 
   // ── Paket 2 laden: Aktionen (N32 r2, Originalmaterial), Zahnrad (N29, otown-Zonen), Kassette (Poly + Tasten aus N29 Radio), Fächer-Schatten ───────
   async function loadPack2() {
@@ -211,7 +237,7 @@ export function createHud3d(opts = {}) {
     if (shadow) { const s = slots.fanShadow, o = shadow.scene; o.traverse((n) => { if (n.isMesh) { n.material = MAT.shadow; n.frustumCulled = false } })
       const w = wrap(o); s.scene.add(w); s.root = w; fit(s, s.L.el, 0); s.L.hidden = true; S.loaded++ }
     if (cas && CASNEW) { buildCassetteNew(cas); S.loaded++ } else if (cas && radio) { parts.cassette = { cas, radio }; buildCassette(); S.loaded++ }
-    buildBarBase(); buildFill(0)
+    buildColumn()
   }
   // Weiße Kassette (h3d-core cassetteProp): Körper poly_cassette mit Creme-Shader, drei Tasten aus KFB_HUD_Radio (Oberseite #4b3f63, Flanke #1f1829;
   // Ton aus #c9c2cc / #8d8492), Symbole als Relief in Creme, 25 % der Kassettenbreite, Abstand 29 %. Neu gebaut nur bei Zustandswechsel (Play/Pause, Ton).
@@ -323,7 +349,7 @@ export function createHud3d(opts = {}) {
       if (!alive) return
       const u0 = performance.now(); SH.signal(sig)
       if (S.status !== 'OK') return
-      stepArrow(dt); flyBalls(dt); stepSpeed(dt)
+      stepArrow(dt); flyBalls(dt); stepSpeed(dt); stepChest(dt)
       for (let i = 0; i < 6; i++) if (!balls.some((b) => b.i === i) && S.shown[i] !== S.counts[i]) buildOrb(i, S.counts[i])
       SH.step(dt)
       S.updMs += performance.now() - u0; S.updates++
@@ -341,13 +367,17 @@ export function createHud3d(opts = {}) {
     inFlight: () => balls.length,
     setMusic: (m) => { const pl = m.playing !== false, mu = !!m.muted; if (pl !== S.music.playing || mu !== S.music.muted) { S.music = { playing: pl, muted: mu }; if (!CASNEW) buildCassette() } },
     cassetteKind: () => (CASNEW ? 'new' : 'old'),
-    setSpeed: (o) => { SPD.visible = !!o?.visible; SPD.target = Math.max(0, Math.min(1.08, o?.frac ?? 0)); SPD.boost = !!o?.boost; SPD.kmh = o?.kmh ?? 0 }, speedState: () => ({ visible: SPD.visible, shown: +SPD.shown.toFixed(3), target: +SPD.target.toFixed(3), boost: SPD.boost, glow: +MAT.fill.emissiveIntensity.toFixed(2), kmh: Math.round(SPD.kmh) }),
+    // setSpeed({ visible, kmh, speed (m/s), zones [[Zone, Obergrenze m/s]], boost, fly }) – ohne Zonen: frac (0…1) auf die Fahrzonen-Vorgabe
+    setSpeed: (o) => { SPD.visible = !!o?.visible; SPD.boost = !!o?.boost; SPD.kmh = o?.kmh ?? 0; SPD.fly = !!o?.fly; SPD.stall = !!o?.stall
+      if (o?.zones?.length) { SPD.zones = o.zones; SPD.target = Math.max(0, Math.min(1, (o.speed ?? 0) / o.zones[o.zones.length - 1][1])) } else SPD.target = Math.max(0, Math.min(1, o?.frac ?? 0)) },
+    speedState: () => ({ visible: SPD.visible, shown: +SPD.shown.toFixed(3), target: +SPD.target.toFixed(3), boost: SPD.boost, glow: +SPD.glow.toFixed(2), kmh: Math.round(SPD.kmh), fly: SPD.fly, stall: !!SPD.stall, boostKind: parts.column?.boost || null, over: +(parts.column?.over() || 0).toFixed(3), zone: parts.column?.zoneAt(SPD.shown) || null, zones: parts.column?.zones().map((z) => [z.z, +z.t1.toFixed(3)]) || null }),
     setWeapon: (fam) => { S.weapon = fam; for (let i = 0; i < ACTIONS.length; i++) SH.setUiFlag('act' + i, 'on', ACTIONS[i].id === fam) },
     pulse: (key) => { SH.setUiFlag(key, 'pressed', true); setTimeout(() => SH.setUiFlag(key, 'pressed', false), 120) },
     tapGear: () => { const s = slots.gear; if (s.root) SH.playOnce(s, 'gear_tap_spin') },
     setAlmanacCount: (n) => { n = Math.max(0, Math.min(7, n | 0)); if (n === S.almanacN) return; S.almanacN = n; const s = slots.fanShadow; Object.assign(s.L, fanShadowRect(n || 1)); s.L.hidden = n === 0; s.dirty = true },
     cassetteButtons, layout: () => L, setHint: SH.setHint, fxState: SH.fxState,
-    setChestOpen: (v) => { const s = slots.chest; if (!!v === S.chestOpen || !s.root) return; S.chestOpen = !!v; SH.playOnce(s, v ? 'chest_open' : 'chest_close'); SH.squash('chest', 5) },
+    setChestOpen: (v) => { const s = slots.chest; if (!!v === S.chestOpen || !s.root) return; S.chestOpen = !!v; LID.target = v ? LID.OPEN : 0; LID.bounced = false; SH.squash('chest', v ? 6 : 4) },
+    lidState: () => ({ angle: +(LID.a / DEG).toFixed(1), target: +(LID.target / DEG).toFixed(1), moving: LID.moving }),
     event: (e) => SH.kick(e.type, e),
     phase: () => S.status, opened: () => ({ compass: false, chest: S.chestOpen }),
     uiStates: SH.uiStates, setUiFlag: SH.setUiFlag, uiState: SH.uiState, onUiState: SH.onUiState, setAnimator: SH.setAnimator,
@@ -357,6 +387,7 @@ export function createHud3d(opts = {}) {
       ui: SH.uiAll(), live: SH.live(), motion: SH.motion() }),
     resetStats: () => { SH.resetStats(); S.updMs = 0; S.updates = 0; S.arrowRenders = 0 },
     dispose() {
+      parts.column?.dispose()
       alive = false; for (const b of balls) SH.overlay.remove(b.m); balls.length = 0
       SH.dispose(new Set(Object.values(MAT).flat())); Object.values(MAT).flat().forEach((m) => m.dispose()); ballMats.forEach((m) => m.dispose()); ballGeo.dispose(); sphereGeo.dispose()
       if (parts.digits) Object.values(parts.digits).forEach((d) => d.geo.dispose()); root.clear()

@@ -51,12 +51,13 @@ export function createBubbleLayer({ host }) {
     return { w: Math.round(inner + 2 * padX), h: Math.round(n * fs * lh2 + gap * (Ls.length - 1) + 2 * padY), padX, padY, fs, lh: lh2, lines }
   }
   // ---- 1:1 islands-npc.ts say(), Sprecher = Anker-ID, Farbe vom Aufrufer (Lab: ORIGINAL[npc.id].color)
-  const say = (anchor, parts, kind, col) => {
-    for (const b of bubbles) if (b.anchor === anchor) b.t = Math.max(b.t, BUBBLE_LIFE - 0.2)
+  // life: Lebenszeit dieser Blase in s (WS-NPC chat=syl: max(Laut, Lesezeit), additiv); ohne Angabe BUBBLE_LIFE wie bisher
+  const say = (anchor, parts, kind, col, life = BUBBLE_LIFE) => {
+    for (const b of bubbles) if (b.anchor === anchor) b.t = Math.max(b.t, b.life - 0.2)
     const L = layoutTri(parts, kind), M = 34, el = document.createElement('div')
     el.style.cssText = `position:absolute;left:0;top:0;width:${L.w + 2 * M}px;height:${L.h + 2 * M}px;transition:opacity .18s;will-change:transform`
     el.dataset.kind = kind; el.dataset.speaker = anchor; el.dataset.text = parts.join(' / ')
-    root.appendChild(el); const b = { el, anchor, w: L.w, h: L.h, t: 0, tri: kind === 'speech' }; bubbles.push(b); draw(b, L, M, col, kind, ++uid)
+    root.appendChild(el); const b = { el, anchor, w: L.w, h: L.h, t: 0, tri: kind === 'speech', life: life > 0 ? life : BUBBLE_LIFE }; bubbles.push(b); draw(b, L, M, col, kind, ++uid)
     return b
   }
   // ---- 1:1 islands-npc.ts draw()
@@ -73,11 +74,12 @@ export function createBubbleLayer({ host }) {
 
   const V = new THREE.Vector3()
   // anchorAt(id, out) -> out (Weltposition) oder null; vom Host je Frame gerufen
-  const update = (dt, camera, anchorAt) => {
+  // avoid (WS-NPC chat=syl, additiv): Bildschirm-Rechtecke { x, y, w, h } (HUD, Figuren), die als schon belegt gelten; ohne Angabe wie bisher
+  const update = (dt, camera, anchorAt, avoid = null) => {
     // ---- 1:1 islands-npc.ts update(), Abschnitt „bubbles“
-    const W = innerWidth, H = innerHeight, placed = []
+    const W = innerWidth, H = innerHeight, placed = avoid ? avoid.map((r) => ({ x: r.x, y: r.y, w: r.w, h: r.h, hx: r.x + r.w / 2 })) : []
     for (let i = bubbles.length - 1; i >= 0; i--) {
-      const b = bubbles[i]; b.t += dt; if (b.t > BUBBLE_LIFE) { b.el.style.opacity = '0'; if (b.t > BUBBLE_LIFE + 0.25) { b.el.remove(); bubbles.splice(i, 1) } continue }
+      const b = bubbles[i]; b.t += dt; if (b.t > b.life) { b.el.style.opacity = '0'; if (b.t > b.life + 0.25) { b.el.remove(); bubbles.splice(i, 1) } continue }
       const p = anchorAt(b.anchor, V)
       const a = p ? p.project(camera) : null
       // Vertrag §4: Anker hinter der Kamera ODER außerhalb des Bildes -> ausblenden (Lab: nur hinter der Kamera)
@@ -96,9 +98,9 @@ export function createBubbleLayer({ host }) {
 
   return {
     // parts: 1–3 Teile (Triplet: subject · connector · reframe), kind 'speech' | 'thought'. Textquelle prüft der Host (Vertrag §5).
-    show: (anchor, parts, kind = 'speech', color = '#fbf2df') => { say(anchor, parts, kind, color) },
+    show: (anchor, parts, kind = 'speech', color = '#fbf2df', life) => { say(anchor, parts, kind, color, life) },
     update,
-    list: () => bubbles.map((b) => ({ anchor: b.anchor, text: b.el.dataset.text, kind: b.el.dataset.kind, t: +b.t.toFixed(2), shown: b.el.style.display !== 'none', rect: b.el.getBoundingClientRect().toJSON() })),
+    list: () => bubbles.map((b) => ({ anchor: b.anchor, text: b.el.dataset.text, kind: b.el.dataset.kind, t: +b.t.toFixed(2), life: +b.life.toFixed(2), shown: b.el.style.display !== 'none', rect: b.el.getBoundingClientRect().toJSON() })),
     dispose() { root.remove(); bubbles.length = 0 },
   }
 }
