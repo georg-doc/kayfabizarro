@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- Probe R3 Kugel-Physik (V-735): 65.536 Knetkugeln mit GPGPU-Physik in WebGL (Schwerkraft, Abprallen, Rollen am Hang, Kollision mit Spieler und Auto, Rückkehr ins Relief, mittlere Abweichung 9 cm), Live https://claude.ai/artifact/SYzKKT6g33hcHYCm8JWmxx, Hub q197; offen: Auto schleudert zu viel, Kugeln auf Auto-Kapsel.
 - V-737 MiB-Turm-Auge: KFB-Auge mit drei Zuständen (Glühkugel, Scannen, Alarm rot mit Zielstrahl), drehbare Halterung; Konzeptblatt R2 Orb-Abschnitt ersetzt, an WSB für r6b.
 - B40 r6 (WSB): TARDIS-Pulse, echte Tür mit Gleißen, Agenten aus dem Licht, Orb A/B, gemessene Gates grün, Kritiker 5,8/6,0. WS0: Nachrunde r6b mit allen offenen Punkten plus Türblatt-Innenseite (kein Schwarz), Weitbilder näher, Orb-Wabern im Puls; erst danach Hub.
 - V-736 Hub-Antworten: ebene Stadtzonen nur nahtlos (WSB-Einbettungslogik), q191 neu als Einzelkarten mit Klartext und Bild, HeyGen Fantasie beides testen, Splats HyperNorm-Stil zuerst; Auftrag WS1 replies/WS0_TO_WS1_HUB_ANTWORTEN_R1.md (Hub b217).
