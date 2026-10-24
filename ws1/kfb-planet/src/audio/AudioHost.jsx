@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useHostKeys } from '../hostKeys'
 import { expose } from '../debug'
-import { M2_ON, M2STATE, M2EVENTS, RACER, RACER_FLY } from '../m2/M2Car'
+import { M2STATE, M2EVENTS, RACER, RACER_FLY, carLive } from '../m2/M2Car' // carLive(): Auto zur Laufzeit ein-/ausgehängt (S1 travel=1); ohne Schalter === M2_ON
 import { worldPosOf } from '../m1/m1Host'
 import * as A from './kfbAudio.js'
 import { groupKey, stepKey, greetKey } from './cueMap.js'
@@ -28,7 +28,7 @@ const _p = new THREE.Vector3(), _f = new THREE.Vector3(), _u = new THREE.Vector3
 export default function AudioHost({ host }) {
   const { camera } = useThree()
   const R = useRef({ pending: null, counts: -1, picked: 0, air: 'ground', prevCar: null, carV: 0, carVy: 0, prevFig: null, figV: 0, figVy: 0, water: null, waterAt: -9, emitters: [], biome: 'meadow', farm: null, stopWater: null, panel: null, t: 0, fluffSeen: new Set() })
-  const unlock = () => { A.preload({ car: M2_ON }); A.unlock().then(() => { if (A.audioMode() === 'full' && !R.current.panel && typeof document !== 'undefined') R.current.panel = mountAudioPanel(A) }) }
+  const unlock = () => { A.preload({ car: carLive() }); A.unlock().then(() => { if (A.audioMode() === 'full' && !R.current.panel && typeof document !== 'undefined') R.current.panel = mountAudioPanel(A) }) }
   // erste Eingabe: jede Taste (vor allen anderen, ohne sie zu verbrauchen) und Zeiger; V/B/N merken für den Kampf-Ton
   useHostKeys((e) => {
     unlock()
@@ -37,14 +37,15 @@ export default function AudioHost({ host }) {
   }, 1000)
   useEffect(() => { const on = () => unlock(); window.addEventListener('pointerdown', on); return () => window.removeEventListener('pointerdown', on) }, [])
   // Fahrzeug-Ereignisse (k2t, racerFlight) an den Ton
-  useEffect(() => { if (!M2_ON) return; return M2EVENTS.on('*', (e) => { const p = M2STATE.carPos?.(); A.vehicleEvent(e, p ? { x: p.x, y: p.y, z: p.z } : null) }) }, [])
+  // Fahrzeug-Ereignisse immer abonnieren: ohne Auto kommen keine (S1 travel=1: Auto kann später eingehängt werden)
+  useEffect(() => { return M2EVENTS.on('*', (e) => { const p = M2STATE.carPos?.(); A.vehicleEvent(e, p ? { x: p.x, y: p.y, z: p.z } : null) }) }, [])
   useEffect(() => () => { R.current.stopWater?.(); R.current.panel?.dispose() }, [])
   useFrame((_, dt) => {
     const H = R.current, mods = host.mods || {}; H.t += dt
-    if (!H.pre && H.t > 2) { H.pre = true; A.preload({ car: M2_ON }) } // Laden 2 s nach dem Start der Welt (vor der ersten Eingabe, noch still)
+    if (!H.pre && H.t > 2) { H.pre = true; A.preload({ car: carLive() }) } // Laden 2 s nach dem Start der Welt (vor der ersten Eingabe, noch still)
     if (A.audioMode() !== 'full') { if (A.audioMode() === 'public') A.frame({ mode: 'foot' }); return }
     // Lage und Modus
-    const car = M2_ON ? M2STATE.carPos?.() : null, fig = car ? null : worldPosOf(mods.player, _p), pos = car || fig
+    const car = carLive() ? M2STATE.carPos?.() : null, fig = car ? null : worldPosOf(mods.player, _p), pos = car || fig
     if (!pos) return
     camera.getWorldDirection(_f); _u.set(0, 1, 0).applyQuaternion(camera.quaternion)
     const st = { listener: { x: pos.x, y: pos.y + (car ? 0.8 : 1.2), z: pos.z, fx: _f.x, fy: _f.y, fz: _f.z, ux: _u.x, uy: _u.y, uz: _u.z }, dialogue: host.m1?.phase === 'dialog', tod: todName(host.light?.()?.mood?.tod) }
@@ -129,6 +130,6 @@ export default function AudioHost({ host }) {
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, chatter: A.chatter, speak: A.speak, speakPlan: A.speakPlan, setSpeaker: A.setSpeaker, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, worldBiome: A.worldBiome, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, chatter: A.chatter, speak: A.speak, speakPlan: A.speakPlan, setSpeaker: A.setSpeaker, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }

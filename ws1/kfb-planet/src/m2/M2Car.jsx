@@ -109,6 +109,11 @@ export const M2_ON = /#m1\b.*\bcar\b/.test(H) // #m1,car[=ecctrl|k2b] · assist=
 // gerieten über das takeoff-Ereignis in den Flug)
 export const RACER_FLY = M2_ON && /[#,]fly(,|$)/.test(H)
 const WATER_WORLD = M2_ON && /(^|[#,])world=probe(,|$)/.test(H) // WS1c: Wasser gibt es nur auf dem Probe-Gelände
+// S1 Fortbewegung (V-746) · travel=1 (ohne car): der M1-Wirt hängt M2Car zur Laufzeit ein und aus (Zustandsmaschine src/m1/travelState.js).
+// carLive() ersetzt M2_ON dort, wo zur Laufzeit gefragt wird; ohne Schalter ist carLive() === M2_ON.
+export const TRAVEL_ON = !M2_ON && /#m1\b/.test(H) && /(^|[#,])travel=1(,|$)/.test(H)
+export const TRAVEL = { car: false }
+export const carLive = () => M2_ON || TRAVEL.car
 if (/(^|[#,])assist=off(,|$)/.test(H)) ASSIST_M3.on = false
 // Ereignis-Abos (railImpact/landing/takeoff, Namen wie vehicle-cartoon-deformer.v2) für Squash, VFX, später Stunts (§55): M2EVENTS.on(type, fn) → abmelden
 export const M2EVENTS = { subs: new Map(), on(type, fn) { const l = this.subs.get(type) || new Set(); l.add(fn); this.subs.set(type, l); return () => l.delete(fn) }, emit(e) { this.subs.get(e.type)?.forEach((fn) => fn(e)); this.subs.get('*')?.forEach((fn) => fn(e)) } }
@@ -324,19 +329,21 @@ function useKindLabel(kind, assist, racer) {
   }, [kind, assist, racer, devui])
 }
 
-const M2Car = forwardRef(function M2Car({ player }, ref) {
+// travel (nur travel=1): { at: {p, yaw}, drives(), camOnCar(), progress(), state() } – Wagen steht neben der Figur, Tasten und Kamera erst ab der Fahrt,
+// Figur einfrieren/Kamera abgeben macht der Wirt; Entstehen/Einsaugen bis zur Richtung build/suck als Maßstab (Platzhalter, nur hinter dem Schalter)
+const M2Car = forwardRef(function M2Car({ player, travel = null }, ref) {
   const [kind, setKind] = useState(M2STATE.kind)
   const [session, setSession] = useState(0)
-  const spawn = useRef({ p: M2CAR.spawn, yaw: M2CAR.yaw })
+  const spawn = useRef(travel?.at || { p: M2CAR.spawn, yaw: M2CAR.yaw })
   const [, getKeys] = useKeyboardControls()
-  const keys = () => (M1INPUT.override ? { ...NOKEYS, ...M1INPUT.override } : getKeys())
+  const keys = () => (travel && !travel.drives() ? NOKEYS : M1INPUT.override ? { ...NOKEYS, ...M1INPUT.override } : getKeys())
   const car = useRef(null)
   const { camera } = useThree()
   const { world, rapier } = useRapier()
   const [assist, setAssist] = useState(ASSIST_M3.on)
   const [racer, setRacerId] = useState(M2CAR.id)
   useKindLabel(kind, assist, racer)
-  useEffect(() => { M2STATE.carPos = () => car.current?.pos() ?? null; return () => { M2STATE.carPos = null } }, [])
+  useEffect(() => { M2STATE.carPos = () => car.current?.pos() ?? null; M2STATE.carYaw = () => car.current?.yaw() ?? null; return () => { M2STATE.carPos = null; M2STATE.carYaw = null } }, [])
   // Kontaktverdeckung (L3): das Licht-Modul (createContactAO in M1World) legt den Fleck an der Boden-Normale unter einen Stellvertreter in Wagengröße,
   // der dem Auto folgt (Grundfläche einmal gemessen, ungedreht). Löst den eigenen, waagrechten Fleck ab (Georg 17.10.: abgeschnittener Zweitschatten am Hang).
   const proxy = useMemo(() => { const g = new THREE.Group(); g.name = 'm2-car-ao'; const m = new THREE.Mesh(new THREE.BoxGeometry(M2CAR.box.h[0] * 2, 0.01, M2CAR.box.h[2] * 2)); m.visible = false; g.add(m); return g }, [racer])
@@ -344,7 +351,8 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     M2STATE.carSize = { half: Math.hypot(M2CAR.box.h[0], M2CAR.box.h[2]), h: M2CAR.box.c[1] + M2CAR.box.h[1] }; return () => { M2STATE.ao = null } }, [proxy])
   useEffect(() => interpTrack(proxy), [proxy])
   useFrame(() => { const c = car.current; if (!c) return; const p = c.pos(); proxy.position.set(p.x, p.y, p.z); proxy.rotation.set(0, c.yaw(), 0) })
-  useEffect(() => { loadModel(); player.current?.freeze(true); player.current?.yieldCamera(true); return () => { player.current?.yieldCamera(false); player.current?.freeze(false) } }, [player])
+  useEffect(() => { loadModel(); if (!travel) { player.current?.freeze(true); player.current?.yieldCamera(true) } return () => { player.current?.yieldCamera(false); player.current?.freeze(false) } }, [player])
+  useFrame(() => { const o = travel && M2STATE.rig?.object3d; if (!o) return; const st = travel.state(), u = travel.progress(), e = u * u * (3 - 2 * u); o.scale.setScalar(st === 'summon' ? Math.max(0.001, e) : st === 'vanish' ? Math.max(0.001, 1 - e) : 1) })
   // V-631: Racer an Ort und Stelle wechseln (Maße, Kamera, Verformungsprofil neu; Modell aus dem Speicher oder nachladen); Adresse merkt sich die Wahl
   const swapRacer = (id) => { if (!VEHICLE_RIG.vehicles[id] || id === M2CAR.id) return; const p = car.current?.pos(), y = car.current?.yaw() ?? spawn.current.yaw
     applyRacer(id); M2STATE.racerSwaps++; setRacerId(id); restart(kind, p ? { p: [p.x, p.y + 0.3 * K, p.z], yaw: y } : null)
@@ -372,11 +380,15 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
       ground: (x, z) => groundHeight(x, z),
       mod: () => M2STATE.water?.cam || null, clampY: (x, z, y) => (M2STATE.water ? waterCamClamp(M2STATE.water, waterActive.level, x, z, y, groundHeight) : y) }) }, [gl, world, rapier, racer]) // WS1c: Kamera am Wasser
   useEffect(() => { const v = new THREE.Vector3()
-    M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K })
+    const fn = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K })
       // Prüfbilder (nur Debug): Kamera relativ zum Wagen statt Folgekamera – { dist, yaw (0 = vorn, π = hinten), pitch, ty (Zielhöhe), ahead (Ziel vor dem Wagen) }; die Folgekamera darf nicht so nah
       const P = DEBUG && M2STATE.camPose; if (P) { const a = c.yaw() + P.yaw, fw = P.ahead || 0; v.x += Math.sin(c.yaw()) * fw; v.z += Math.cos(c.yaw()) * fw;   // ahead: Ziel so weit vor dem Wagen (Lichtflecken im Bild)
         camera.position.set(v.x + Math.sin(a) * Math.cos(P.pitch) * P.dist, v.y + (P.ty || 0) + Math.sin(P.pitch) * P.dist, v.z + Math.cos(a) * Math.cos(P.pitch) * P.dist); camera.lookAt(v.x, v.y + (P.ty || 0), v.z) } }
-    M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
+    // travel=1: Kamera erst ab der Fahrt an den Wagen (solange frameCam gesetzt ist, interpoliert die Schleife die Spieler-Kamera nicht)
+    if (travel) camFn.current = fn; else M1INTERP.frameCam = fn
+    M2STATE.follow = follow; return () => { if (!travel || M1INTERP.frameCam === fn) M1INTERP.frameCam = null; camFn.current = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
+  const camFn = useRef(null)
+  useFrame(() => { if (!travel || !camFn.current) return; const on = travel.camOnCar(); if (on && M1INTERP.frameCam !== camFn.current) { follow.reset(); M1INTERP.frameCam = camFn.current } else if (!on && M1INTERP.frameCam === camFn.current) M1INTERP.frameCam = null })
   useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, camera: () => camera, setMatte: (on) => { VEHICLE_MATTE.on = !!on; return M2STATE.visualRoot ? setVehicleMatte(M2STATE.visualRoot, !!on) : 0 }, freeze: (on) => { M2STATE.freezeFx = on === 'rig' ? 'rig' : !!on }, camPose: (p) => { M2STATE.camPose = p || null }, headlightTune: HEADLIGHT_TUNE, loadLog: LOADLOG, heroSetting: HERO_ON, setHero: (on) => applyHeroSetting(on, gl), ground: groundHeight }) })
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }

@@ -7,8 +7,9 @@ import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
 import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
 import { syllabify, melody, planDuration, grainsFrom, voiceBase, fitRegister, SYL } from '../../src/audio/syllables.js'
-import { STEP_BUS, stepBusDb } from '../../src/audio/mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter, pickChatter } from '../../src/audio/cueMap.js'
+import { STEP_BUS, stepBusDb, BIOME_MUSIC, biomeMusicSwitch } from '../../src/audio/mixer.js'
+import BIOME_DRIVE from '../../src/data/worlds/kfb-biome-drive.r1.json' with { type: 'json' }
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter, pickChatter, BIOME_SOUND } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
 
@@ -123,6 +124,13 @@ process.exit(report('audio-mixer', {
     && STEP_BUS.db === -9 && stepBusDb({ speech: true }) === -15 && stepBusDb({ speech: true, loud: true }) === -19 && CUES['npc.heavyGrass'].bus === 'steps' && CUES['foot.land'].bus === 'steps' })(),
   chatterGrains: (() => { const sr = 8000, x = new Float32Array(sr); for (const c of [0.1, 0.4, 0.7]) for (let i = 0; i < 400; i++) x[Math.round(c * sr) + i] = Math.sin(i / 3) * (1 - i / 400)
     const g = grainsFrom(x, sr); return g.length === 3 && g.every((k) => k.dur === 0.16 && k.t0 >= 0 && k.t0 + k.dur <= 1) && grainsFrom(new Float32Array(800), sr).length === 0 })(),
+  // S2 Endlose Welt (V-746): jedes Welt-Biom hat einen Klang; Musik blendet erst nach 12 s stabilem Biom über, nur wenn der Titel nicht passt und ein passender da ist
+  biomeSound: BIOME_DRIVE.order.every((b) => ['meadow', 'jungle', 'beach', 'forest', 'pond'].includes(BIOME_SOUND[b]?.amb))
+    && biomeMusicSwitch({ biome: 'forest', tags: ['meadow'], stableS: 13, leftS: 60, candidates: [['forest'], ['day']] })
+    && !biomeMusicSwitch({ biome: 'forest', tags: ['forest'], stableS: 13, leftS: 60, candidates: [['forest']] })
+    && !biomeMusicSwitch({ biome: 'forest', tags: ['meadow'], stableS: 5, leftS: 60, candidates: [['forest']] })
+    && !biomeMusicSwitch({ biome: 'forest', tags: ['meadow'], stableS: 13, leftS: 20, candidates: [['forest']] })
+    && !biomeMusicSwitch({ biome: 'beach', tags: ['meadow'], stableS: 13, leftS: 60, candidates: [['meadow'], ['day']] }) && BIOME_MUSIC.xf === 6,
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
     && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -7 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),

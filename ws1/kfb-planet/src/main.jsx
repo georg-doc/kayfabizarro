@@ -3,7 +3,9 @@ import './siteRaw' // MVP-Site: Repo-Abrufe über /raw (nur im Site-Build aktiv)
 // (neues Gelände), der Vorhang bleibt nur hinter dem Schalter 'start' (die nackte Adresse bleibt für die bestehenden Tests unverändert).
 if (typeof location !== 'undefined') {
   const bare = !location.hash || location.hash === '#'
-  if (bare && import.meta.env.VITE_KFB_SITE) history.replaceState(null, '', location.pathname + location.search + SITE_HASH)
+  // Neu laden statt nur umschreiben (WS0 25.10.): die Importe oben laufen vor diesem Block und lesen ihre Schalter (look, hud, calm …) schon beim Laden –
+  // ohne Neuladen startete die nackte Site-Adresse mit grüner Wiese und ohne HUD.
+  if (bare && import.meta.env.VITE_KFB_SITE) { history.replaceState(null, '', location.pathname + location.search + SITE_HASH); location.reload() }
   if (/(^|[#,])start(,|$)/.test(location.hash)) import('./start/startCurtain.js').then((m) => expose('Start', m.mountStartCurtain())).catch((e) => console.warn('[start]', e))
 }
 import { createRoot } from 'react-dom/client'

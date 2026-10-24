@@ -11,7 +11,7 @@ import { startServer, openAudioPage } from './_audioServer.mjs'
 const cache = path.join(process.env.KFB_AUDIO_CACHE || path.join(os.homedir(), 'kfb-ws1/.kfb-audio-cache'), 'index.json')
 const priv = path.join(process.env.KFB_PRIVATE_ASSETS || path.join(os.homedir(), 'kfb-ws1/private-assets'), '40_AUDIO/elevenlabs_r1')
 if (!fs.existsSync(priv)) { console.log('SKIP audio: keine privaten Töne (~/kfb-ws1/private-assets)'); console.log('PASS audio (skip)'); process.exit(0) }
-const HASH = '#m1,harvest,look=terrain3,world=probe,debug'
+const HASH = '#m1,harvest,look=terrain3,world=probe,debug' + (process.env.KFB_TEST_BGM ? ',bgm=' + process.env.KFB_TEST_BGM : '') // KFB_TEST_BGM=biome: S2-Schalter
 const srv = await startServer()
 const stats = (page) => page.evaluate(() => window.__kfbAudio?.stats?.() ?? null)
 const ready = (page) => page.waitForFunction(() => { const m = window.__kfbAudio?.stats?.().modules; return m && m.racer && m.combat && m.ambience && m.steps && m.music }, null, { timeout: 180000 })
@@ -90,6 +90,12 @@ try {
   out.catalog = await A.page.evaluate(async () => { const a = window.__kfbAudio, c = a.musicCatalog(); if (!c) return { none: true }
     const ph = await a.harvestPhrases('orchester', 'adv_clarinet'), r = ph?.[0] ? await fetch(ph[0].url) : null
     return { songs: c.songs.map((s) => s.id + ':' + s.bpm), n: ph?.length ?? 0, dup: (ph || []).filter((x) => x.dup_of).length, ok: r?.ok ?? false, keys: ph?.[0] ? Object.keys(ph[0]) : [] } })
+  // S2 Endlose Welt (V-746): Biom wechselt → nach 12 s weiche Überblendung (6 s) auf einen passenden Titel, wenn der laufende nicht passt
+  out.biome = await A.page.evaluate(async () => { const a = window.__kfbAudio, idx = await (await fetch('/@kfb-audio/index.json')).json(), np = a.stats().nowPlaying; if (!np) return { none: true }
+    const T = idx.music.tags || {}, file = idx.music[np.list].find((f) => f.replace(/\.[^.]+$/, '') === np.title), cur = T[np.list + '/' + file] || []
+    const bio = ['forest', 'meadow', 'pond', 'beach', 'jungle'].find((b) => !cur.includes(b) && idx.music[np.list].some((f) => (T[np.list + '/' + f] || []).includes(b))); if (!bio) return { none: true, cur }
+    const on = a.stats().music.bgmBiome, b0 = a.stats().music.bioSwitches; a.ambienceContext({ biome: bio }); await new Promise((r) => setTimeout(r, 13500)); const st = a.stats(), ev = st.events.filter((e) => e.type === 'music').slice(-1)[0]
+    a.ambienceContext({ biome: null }); return { on, bio, cur, switched: st.music.bioSwitches - b0, ev, now: st.nowPlaying?.title, newTags: ev ? T[ev.list + '/' + ev.file] || [] : [] } })
   // K15 (WS-NPC): bis zu 3 Dark Fluffer – fluffer.events() mit seq/id/mouth; altes Ereignis still, ferne Zone (> 120 m) still, Zustand je Fluffer (geheilt/feindlich)
   out.fluffK15 = await A.page.evaluate(async () => { const a = window.__kfbAudio, M = window.__kfbM1, p = M.feet(), keep = M.mods.fluffer, near = (dx) => [p[0] + dx, p[1] + 1, p[2] + 2]
     const L = [{ type: 'spit', id: 'dark_fluffer_goblin', kind: 'ghost', seq: 1, t: 1, at: [p[0] + 3, p[2]], mouth: near(3) }], hops = []
@@ -147,6 +153,7 @@ try {
     presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.some((k) => k.startsWith('fluffGlide')),
     chatterOccasions: out.chat.skel === null && out.chat.toy === null && out.chat.bot === 'chatter.F13_melodica.aggressiv' && out.chat.botAgain === null && out.chat.heal === 'chatter.F04_ocarina.froh'
       && out.chat.bandDisco.join() === 'chatter.F11_tuba.froh,chatter.F11_tuba.froh,chatter.F08_talkbox.introspektiv' && out.chat.st.skeleton_rogue === 'fallback' && out.chat.st.q_mushroom === 'V-693:F04_ocarina' && out.fluffK15.chat === 'V-693:F04_ocarina' && out.greet.duck <= -7,
+    biomeMusicCrossfade: out.biome.none || (out.biome.on ? out.biome.switched >= 1 && out.biome.ev?.xf === 6 && out.biome.newTags.includes(out.biome.ev.biome) : out.biome.switched === 0), // ohne bgm=biome: Standard unverändert (kein Wechsel) // Biom kann im Probe-Gelände auch von selbst wechseln (Meer → beach)
     musicCatalogReadable: out.catalog.none || (out.catalog.songs.length >= 4 && out.catalog.n > 10 && out.catalog.dup === 0 && out.catalog.ok && ['note', 'beat', 'lufs', 'url'].every((k) => out.catalog.keys.includes(k))),
     flufferK15Multi: out.fluffK15.played.join() === 'spit:dark_fluffer_atlantis,healed:dark_fluffer_goblin' && out.fluffK15.st.dark_fluffer_goblin === true && out.fluffK15.st.dark_fluffer_atlantis === false && out.fluffK15.pres.includes('fluffGlide:dark_fluffer_atlantis'),
     combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,

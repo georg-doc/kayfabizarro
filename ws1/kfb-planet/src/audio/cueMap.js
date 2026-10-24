@@ -13,6 +13,9 @@ export const CHATTER_FAMILIES = Object.freeze({ Posaune: 'F01_trombone', Klarine
 const CHATTER_SET = Object.freeze({ F13_melodica: 'chatter_families_r2_melodica' }) // sonst chatter_families_r1
 // Lage der Silben (Georg 25.10., V-734: hohe Stimmen quieken): hohe Familien sprechen eine Oktave tiefer; keine Silbe über der Lage des Clips
 // (Grundton ≤ Original), Stimmlage je Figur −5 … 0 Halbtöne (SUNO_SSOT §6: verschieben ≤ ±5, tief/hoch über Instrumentenpaare)
+// S2 Endlose Welt: Biome der endlosen Fahrt (WS1b, kfb-biome-drive.r1.json) → Atmo-Preset (kfb-ambience) und Musik-Stichworte. Vorläufig wie
+// WS1bs AMB_BIOME; Wüste/Mesa/Canyon, Schnee und Pastell haben noch keinen eigenen Teppich (Lücke an WS0, Status 21).
+export const BIOME_SOUND = Object.freeze({ moos: { amb: 'meadow' }, mesa: { amb: 'beach' }, wueste: { amb: 'beach' }, canyon: { amb: 'beach' }, schnee: { amb: 'forest', snow: true }, pastell: { amb: 'pond' } })
 export const CHATTER_LOW_OCTAVE = Object.freeze(['F04_ocarina', 'F06_theremin', 'F09_saw', 'F10_oboe', 'F12_harmonica', 'F13_melodica'])
 export const CHATTER_MOODS = Object.freeze(['neutral', 'froh', 'traurig', 'genervt', 'aengstlich', 'aggressiv', 'staunend', 'zaertlich', 'introspektiv', 'call_bingo', 'call_bloedsinn', 'call_boggle', 'call_bongo'])
 const CHATTER_CUES = Object.fromEntries(Object.values(CHATTER_FAMILIES).flatMap((fam) => CHATTER_MOODS.map((m) => [`chatter.${fam}.${m}`, { owner: 'bank', set: CHATTER_SET[fam] || 'chatter_families_r1', files: [`${fam}_${m}`], gain: 0.7 }])))

@@ -22,7 +22,8 @@ import ModuleHost from '../ModuleHost'
 import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
-import M2Car, { M2_ON, M2STATE, RACER_FLY } from '../m2/M2Car'
+import M2Car, { M2_ON, M2STATE, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
+import { createTravelState } from './travelState'
 import StuntField from '../m3/stuntField'
 import ElanRings, { ELAN_RUN } from './ElanRings'
 import { RACER_COURSE_SCALE } from './elanCourse'
@@ -284,9 +285,13 @@ const goalAt = (x, z) => () => ({ x, y: (mods.terrain?.surfaceAt || terrainHeigh
 const ORCHARD_NAME = { goblin: 'Goblin-Garten', atlantis: 'Atlantis-Garten', utopia: 'Utopia-Garten' }
 const HUD_GOALS = [{ id: 'stage', name: 'Bühne', world: 'Amphitheater', pos: goalAt(0, 0) }, ...HARVEST_ZONES.map((z) => ({ id: 'orchard:' + z.zone, name: ORCHARD_NAME[z.zone] || z.zone, world: 'Obstgarten', pos: goalAt(z.center[0], z.center[1]) }))]
 const HUD_GOAL = { id: 'stage' }
+// S1 Fortbewegung (V-746) · travel=1: Auto rufen und verlassen zur Laufzeit wie ein Reittier, EINE Zustandsmaschine (travelState.js) für zu Fuß, Auto
+// und Flug. Auslöser: HUD Settings › Mode (später das Fahrzeug-Symbol, WS1e). Ohne Schalter nicht vorhanden; carLive() === M2_ON.
+const TRAVEL_SM = TRAVEL_ON ? createTravelState() : null, TRAVEL_FX = []
+const travelClick = () => { if (TRAVEL_SM) TRAVEL_FX.push(...TRAVEL_SM.send('click', { canSummon: !PLAYER_CTRL.ref?.current?.flying?.() })) }
 const CLAY_HOST = {
   palette: () => (TERRAIN3 ? TERRAIN3_CFG.palettes[T3_PAL] : TERRAIN3_CFG.palettes.moos), // Insel-Palette des Geländes (V-653); ohne terrain3 die Moos-Insel wie BIOME
-  target: () => (M2_ON ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
+  target: () => (carLive() ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
   terrain: () => mods.terrain || null, k: K,
   path: DEMO_PATH.pts.map(([x, z]) => [x, z]),
   marks: () => [{ x: 0, z: 0, color: '#e9c14a', r: 8 }], // Bühne (Amphitheater im Ursprung)
@@ -295,14 +300,15 @@ const CLAY_HOST = {
   // HUD 3D Paket 4 (Lead 24.10., additiv): Zielliste für das Karten-Flyout; Auswahl setzt das Ziel des Pfeils. Owner vorerst der M1-Wirt, später Quest/POI.
   goals: () => HUD_GOALS.map((g) => ({ id: g.id, name: g.name, world: g.world, pos: g.pos() })),
   setGoal: (id) => { if (HUD_GOALS.some((g) => g.id === id)) HUD_GOAL.id = id; return HUD_GOAL.id },
-  telemetry: () => (M2_ON ? M2STATE.telemetry?.() ?? null : null), // HUD-Tempo-Leiste: Tempo/Boost vom Fahrzeug (nur lesend)
+  telemetry: () => (carLive() ? M2STATE.telemetry?.() ?? null : null), // HUD-Tempo-Leiste: Tempo/Boost vom Fahrzeug (nur lesend)
   isNight: () => TODV <= 0.25, // Kassetten-Tasten Tag/Nacht (V-707), gleiche Grenze wie das Nacht-Figurenlicht
   fluffTotal: () => mods.orchard?.total?.() ?? null, // Gesamt-Fluff (kfb.save fluffTotal, dd7de55): je gesammelt, nie verbraucht – HUD liest nur
   // HUD 3D Almanac (Lead 24.10.: Haken beim M1-Wirt, Startinhalt = Bühnen-Deck; echter Owner später das Karten-Journal kfb.world-save/2)
   almanac: () => ({ cards: DECK.map((c) => ({ deckId: c.deck.id, num: c.num })), total: DECK.length, decks: new Set(DECK.map((c) => c.deck.id)).size }),
-  // HUD 3D Settings › Mode: Fly über den Spieler (wie Taste F), Drive nur über „car“ in der Adresse (neu laden), God hat keinen Owner (folgt)
-  mode: () => (M2_ON ? 'drive' : PLAYER_CTRL.ref?.current?.flying?.() ? 'fly' : 'walk'),
-  setMode: (m) => { const car = m === 'drive'; if (car !== M2_ON) { const h = location.hash.replace(/(^#|,)car(=\w+)?(?=,|$)/g, '$1').replace(/,,+/g, ',').replace(/,$/, ''); location.hash = car ? h.replace(/^#m1/, '#m1,car') : h; location.reload(); return }
+  // HUD 3D Settings › Mode: Fly über den Spieler (wie Taste F), Drive nur über „car“ in der Adresse (neu laden; mit travel=1 ohne Neuladen über die Zustandsmaschine), God hat keinen Owner (folgt)
+  mode: () => (carLive() ? 'drive' : PLAYER_CTRL.ref?.current?.flying?.() ? 'fly' : 'walk'),
+  setMode: (m) => { const car = m === 'drive'; if (TRAVEL_SM) { if (car !== carLive()) travelClick(); else if (!car) PLAYER_CTRL.ref?.current?.setFlying?.(m === 'fly'); return }
+    if (car !== M2_ON) { const h = location.hash.replace(/(^#|,)car(=\w+)?(?=,|$)/g, '$1').replace(/,,+/g, ',').replace(/,$/, ''); location.hash = car ? h.replace(/^#m1/, '#m1,car') : h; location.reload(); return }
     PLAYER_CTRL.ref?.current?.setFlying?.(m === 'fly') },
   cards: () => Promise.all(DECK.slice(0, 3).map((c) => cardImage(c.deck.id, c.num, 700).then((r) => r?.canvas || null, () => null))),
 }
@@ -311,7 +317,7 @@ function Orchard() {
   const hud = useRef(null)
   const opts = useMemo(() => { const r = store.load(), st = createHarvestState(r.state || freshSave())
     return { zones: HARVEST_ZONES, terrainH: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), anchors: TREE_ANCHORS, state: st,
-      collector: () => { const cp = M2_ON ? M2STATE.carPos?.() : null, p = cp || worldPosOf(mods.player); return p ? { pos: [p.x, p.y, p.z], mode: cp ? 'vehicle' : 'walk' } : null },
+      collector: () => { const cp = carLive() ? M2STATE.carPos?.() : null, p = cp || worldPosOf(mods.player); return p ? { pos: [p.x, p.y, p.z], mode: cp ? 'vehicle' : 'walk' } : null },
       onCollect: (keys, counts) => { HARVEST_STATE.counts = counts; HARVEST_STATE.saved = store.save(st.toSave())
         const by = {}; for (const k of keys) { const b = mods.orchard?.balls().find((x) => x.key === k); if (b) by[b.kind] = (by[b.kind] || 0) + 1 }
         for (const [kind, n] of Object.entries(by)) hud.current?.land(KIND_INDEX[kind], n) } } }, [store])
@@ -390,7 +396,7 @@ const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Ob
 const NSH_ON = !/(^|[#,])nsh=0(,|$)/.test(hash), /* Georg 23.10.: Standard; nsh=0 = alter Stand */ NSH = Object.freeze({ moonK: 1.7, hemiK: 0.7, shadowNight: 1.0 })
 const nshMoods = (S) => (S && NSH_ON ? Object.freeze({ ...S, night: Object.freeze({ ...S.night, sunI: S.night.sunI * NSH.moonK, hemiI: S.night.hemiI * NSH.hemiK }) }) : S)
 const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = nshMoods(MOOD_SETS[LSET]) || undefined, TODV = parseTod(hash)
-const fitTarget = () => { const cp = M2_ON ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
+const fitTarget = () => { const cp = carLive() ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
   const p = worldPosOf(mods.player); return p ? { p, half: 0.6 * K, h: 2.79 * K } : null }
 const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (FIGLIGHT_ON && !FIG_LIGHT_TEST.off ? [] : M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : TODV <= 0.25 && mods.player ? [mods.player] : []), /* figlight=1: Figurenlicht je Figur übernimmt (figureLights.js); im Prüfmodus off wieder der heutige Spot = A wie heute */ /* Kritiker MVP R1 C4: nachts trägt FB das warme Figurenlicht des Rigs (sonst kaum lesbar) */ figureLight: { distance: 4.6 * K, up: 2.6 * K },
   fit: () => { const t = fitTarget(), M = moodAt(TODV, MOOD_SET); if (!t) return { center: { x: 0, y: 0, z: 0 }, radius: 12 * K }
@@ -539,6 +545,31 @@ export default function M1Root() {
   return <>{on ? <M1World /> : null}<M1Loop /></>
 }
 
+// travel=1: führt die Aufträge der Zustandsmaschine aus – Wagen neben der Figur ein- und aushängen, Figur einfrieren und verbergen, Kamera abgeben.
+// Figur im Dach (J-7) und Entstehen/Einsaugen (kfb-fluff-suck build/suck) kommen erst nach Georgs Bild-Abnahme; bis dahin Platzhalter.
+const CAR_STATES = ['drive', 'flyRacer', 'exit']
+function TravelHost({ player }) {
+  const [at, setAt] = useState(null)
+  const travel = useMemo(() => at && { at, state: () => TRAVEL_SM.state, progress: () => TRAVEL_SM.progress(), drives: () => TRAVEL_SM.state === 'drive' || TRAVEL_SM.state === 'flyRacer', camOnCar: () => CAR_STATES.includes(TRAVEL_SM.state) }, [at])
+  const side = (yaw, d) => [Math.cos(yaw) * d, -Math.sin(yaw) * d]
+  const gh = (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z)   // Oberfläche wie Pfad/NPC (world=probe: Probe-Gelände)
+  const apply = (fx) => { const P = player.current, fig = mods.player?.object3d
+    for (const e of fx) {
+      if (e.type === 'car' && e.on) { const p = worldPosOf(mods.player); if (!p || !fig) continue; const q = fig.getWorldQuaternion(new THREE.Quaternion()), yaw = new THREE.Euler().setFromQuaternion(q, 'YXZ').y, [dx, dz] = side(yaw, 3.5 * K)
+        TRAVEL.car = true; setAt({ p: [p.x + dx, gh(p.x + dx, p.z + dz) + 1.2 * K, p.z + dz], yaw }) }
+      if (e.type === 'car' && !e.on) { TRAVEL.car = false; setAt(null) }
+      if (e.type === 'player') P?.freeze(e.freeze)
+      if (e.type === 'camera' && e.to === 'car') { P?.yieldCamera(true); if (fig) fig.visible = false }
+      if (e.type === 'camera' && e.to === 'player') { const cp = M2STATE.carPos?.(); if (cp) { const yaw = M2STATE.carYaw?.() ?? 0, [dx, dz] = side(yaw, -2.6 * K); P?.teleport([cp.x + dx, gh(cp.x + dx, cp.z + dz) + FOOT + 0.3 * K, cp.z + dz], yaw) /* teleport setzt die Kapselmitte (wie START) */ }
+        if (fig) fig.visible = true; P?.yieldCamera(false) }
+    } }
+  useFrame((_, dt) => { const fl = !!player.current?.flying?.(), st = TRAVEL_SM.state
+    if (fl && st === 'foot') TRAVEL_FX.push(...TRAVEL_SM.send('flyStart')); else if (!fl && st === 'flyFigure') TRAVEL_FX.push(...TRAVEL_SM.send('flyEnd'))
+    TRAVEL_FX.push(...TRAVEL_SM.update(dt)); if (TRAVEL_FX.length) apply(TRAVEL_FX.splice(0)) })
+  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car }); return () => { TRAVEL.car = false; if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
+  return travel ? <M2Car player={player} travel={travel} /> : null
+}
+
 function M1World() {
   const player = useRef(null)
   PLAYER_CTRL.ref = player // Kampf R1: Blickrichtung zum Ziel über M1Player.face (Ref bleibt stabil)
@@ -681,6 +712,7 @@ function M1World() {
         {BAND_ON && BAND_OPTS && <NpcBodies source="band" list={BAND_IDS} />}
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
         {M2_ON && <M2Car player={player} />}
+        {TRAVEL_SM && <TravelHost player={player} />}
         {M2_ON && <StuntField />}
         {ENDLESS_ON && <EndlessDrive mods={mods} />}
         {!M2_ON && <ElanRings groundAt={groundHeight} J={K / WORLD_K} playerPos={() => worldPosOf(mods.player)} playerObj={() => mods.player?.object3d} />}

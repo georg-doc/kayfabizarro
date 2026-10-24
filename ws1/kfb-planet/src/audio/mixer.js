@@ -87,6 +87,12 @@ export function musicWeight(tags = [], ctx = {}) {
   const tod = ctx.timeOfDay === 'morning' ? 'day' : ctx.timeOfDay
   return 1 + (tags.includes(ctx.biome) ? 3 : 0) + (tod && tags.includes(tod) ? 2 : 0) + (ctx.weather === 'snow' && tags.includes('snow') ? 3 : 0) + (ctx.mode === 'fly' && tags.includes('fly') ? 1 : 0)
 }
+// S2 Endlose Welt (Lead/Georg V-746): Musik folgt dem Biom weich. Ist das Klang-Biom ≥ dwell s stabil, passt der laufende Titel nicht (kein Biom-
+// Stichwort), bleiben noch > minLeft s und gibt es in der Liste einen passenden Titel, wird mit xf s übergeblendet (statt erst am Titelende).
+export const BIOME_MUSIC = Object.freeze({ dwell: 12, xf: 6, minLeft: 25 })
+export function biomeMusicSwitch({ biome, tags = [], stableS = 0, leftS = 0, candidates = [] }) {
+  return !!biome && stableS >= BIOME_MUSIC.dwell && !tags.includes(biome) && Number.isFinite(leftS) && leftS > BIOME_MUSIC.minLeft && candidates.some((t) => (t || []).includes(biome))
+}
 // gewichtete Zufallswahl ohne die letzten `avoid` Titel (sofern genug übrig)
 export function createWeightedShuffle(items, random = Math.random, avoid = 3) {
   const recent = []

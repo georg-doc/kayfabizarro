@@ -16,8 +16,8 @@ import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
 import { syllabify, melody, planDuration, grainsFrom, voiceBase, fitRegister, MOOD_FOR_END, hashStr, rng as seedRng } from './syllables.js'
 import { chatterOf, resolveCharacterId } from '../characters/registry.js'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
-import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim, STEP_BUS, stepBusDb } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS, pickChatter, CHATTER_LOW_OCTAVE } from './cueMap.js'
+import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim, STEP_BUS, stepBusDb, BIOME_MUSIC, biomeMusicSwitch } from './mixer.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS, pickChatter, CHATTER_LOW_OCTAVE, BIOME_SOUND } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -65,6 +65,7 @@ function graph() {
   const buses = {}, ducks = {}
   for (const b of BUSES) { const g = ac.createGain(), d = ac.createGain(); g.connect(d).connect(master); buses[b] = g; ducks[b] = d }
   { const st = ac.createGain(); st.gain.value = dbToGain(STEP_BUS.db); st.connect(buses.sfx); buses.steps = st } // Schritt-Bus (Spieler + NPC), unter SFX-Regler und -Hall
+  { const rg = ac.createGain(); rg.gain.value = 1; rg.connect(buses.sfx); buses.racer = rg } // Motor-Regler (S1: Auto aushängen → weich aus statt hart)
   // Raumklang: je Umgebung ein Faltungshall (rechnerische Raumantwort, kein Ton) als Send von SFX und Atmo; Wechsel über die Send-Pegel (weich)
   const rev = {}
   for (const [env, R] of Object.entries(REVERB)) { const send = ac.createGain(), pre = ac.createDelay(0.5), conv = ac.createConvolver(), tone = ac.createBiquadFilter()
@@ -125,7 +126,7 @@ async function boot() {
   const car = !!S.host.car
   // Stufe 1 – sofort hörbar: Atmo + (zu Fuß) Schritte bzw. (Racer) Motor; Tonbank-Grundstock
   const racer = () => S.index.wsa && timed('racer', () => viaRoots(async (root) => { const m = await getJson(root + 'wsa/racer/manifest.json'), want = new Set(racerAssets({ car }))
-    const r = await createRacer({ audioContext: ac, destination: G.buses.sfx, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(root + 'wsa/racer/', location.href) })
+    const r = await createRacer({ audioContext: ac, destination: G.buses.racer, manifest: { ...m, assets: m.assets.filter((x) => want.has(x.id)) }, assetBaseUrl: new URL(root + 'wsa/racer/', location.href) })
     await r.prepare(); S.racer = r; S.racerAssets = want.size }))
   const steps = () => S.index.site && timed('steps', () => viaRoots(async (root) => { const base = new URL(root + 'site/footsteps/', location.href), [s, i] = await Promise.all([getJson(new URL('sources.json', base)), getJson(new URL('imported-sources.json', base))])
     const st = await createFootstepAudio({ audioContext: ac, destination: G.buses.steps, rows: [...s.rows, ...(s.r2Rows || []), ...i.rows], assetBaseUrl: base, surfaces: STEP_SURFACES }); st.arm(); S.steps = st }))
@@ -212,22 +213,25 @@ function musicFail(d) {
   if (++M.failRun >= 3) { M.dead = true; for (const x of M.deck) x.el.pause(); log({ type: 'music', dead: true }); return }
   setTimeout(() => nextTrack(M.list), 400)
 }
-const pickTrack = (M, list) => { const tags = S.index?.music?.tags || {}, ctx = { ...S.amb, mode: S.mode2 }; return M.next[list]((f) => musicWeight(tags[list + '/' + f], ctx)) } // Biom/Tageszeit/Wetter wie die Atmo
+// Biom/Tageszeit/Wetter wie die Atmo; need = Biom, das der Titel tragen MUSS (Biom-Überblendung) – sonst nur bevorzugt
+const pickTrack = (M, list, need = null) => { const tags = S.index?.music?.tags || {}, ctx = { ...S.amb, mode: S.mode2 }, has = (f) => (tags[list + '/' + f] || []).includes(need)
+  const f = M.next[list]((x) => (need && !has(x) ? 0 : musicWeight(tags[list + '/' + x], ctx))); if (!need || has(f)) return f
+  const ok = M.lists[list].filter(has); return ok.length ? ok[Math.floor(Math.random() * ok.length)] : f } // alle passenden kürzlich gespielt: trotzdem passend
 // Nächsten Titel ~25 s vor Ende ins freie Deck laden (Streaming, Recherche MUSIK_AUSLIEFERUNG_R1: kein Loch beim Wechsel, auch bei kaltem CDN)
 function prepareNext(list) {
   const M = S.music, d = M?.deck[(M.cur + 1) % 2]; if (!M || M.dead || !list || !d || M.prep) return; const file = pickTrack(M, list); if (!file) return
   d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.el.load(); d.altTried = false; M.prep = { list, file, d }
 }
-function nextTrack(list) {
+function nextTrack(list, xf = XF, need = null) {
   const M = S.music; if (!M || !list || M.dead) return; const ctx = { ...S.amb, mode: S.mode2 }
   const ac = CTX, t = ac.currentTime, old = M.deck[M.cur], d = M.deck[(M.cur + 1) % 2], P = M.prep; M.prep = null
-  const ready = P && P.list === list && P.d === d && !d.el.error, file = ready ? P.file : pickTrack(M, list); if (!file) return
+  const ready = P && P.list === list && P.d === d && !d.el.error, file = ready ? P.file : pickTrack(M, list, need); if (!file) return
   if (!ready) { d.el.src = AUDIO_ROOT + 'music/' + list + '/' + encodeURIComponent(file); d.altTried = false } d.track = file; d.list = list; d.loadAt = now(); M.prepared = (M.prepared || 0) + (ready ? 1 : 0)
   const tg = dbToGain(Math.max(-12, Math.min(12, S.index?.music?.gainDb?.[list + '/' + file] ?? 0))) // Titel auf −18 LUFS ausgeglichen (loudness.mjs)
-  d.g.gain.cancelScheduledValues(t); d.g.gain.setValueAtTime(0, t); d.g.gain.linearRampToValueAtTime(tg, t + XF); d.gainDb = 20 * Math.log10(tg)
+  d.g.gain.cancelScheduledValues(t); d.g.gain.setValueAtTime(0, t); d.g.gain.linearRampToValueAtTime(tg, t + xf); d.gainDb = 20 * Math.log10(tg)
   d.el.play().catch(() => {}); M.started++
-  if (old && old !== d) { old.g.gain.cancelScheduledValues(t); old.g.gain.setValueAtTime(old.g.gain.value, t); old.g.gain.linearRampToValueAtTime(0, t + XF); const el = old.el; setTimeout(() => { if (M.deck[M.cur] !== old) el.pause() }, XF * 1000 + 100) }
-  M.cur = (M.cur + 1) % 2; M.list = list; log({ type: 'music', list, file, biome: ctx.biome, tod: ctx.timeOfDay })
+  if (old && old !== d) { old.g.gain.cancelScheduledValues(t); old.g.gain.setValueAtTime(old.g.gain.value, t); old.g.gain.linearRampToValueAtTime(0, t + xf); const el = old.el; setTimeout(() => { if (M.deck[M.cur] !== old) el.pause() }, xf * 1000 + 100) }
+  M.cur = (M.cur + 1) % 2; M.list = list; log({ type: 'music', list, file, biome: ctx.biome, tod: ctx.timeOfDay, ...(xf !== XF ? { xf } : {}) })
 }
 function musicTick(mode) {
   const M = S.music; if (!M || !S.unlocked) return
@@ -235,6 +239,10 @@ function musicTick(mode) {
   const want = M.latch.update(mode, CTX.currentTime)
   if (want !== M.list) { if (M.list) M.changes++; nextTrack(want) }
   const d = M.deck[M.cur]; if (d?.loadAt != null && now() - d.loadAt > 8000 && d.el.readyState < 3) musicFail(d) // kein Ton nach 8 s
+  // S2 Endlose Welt: Klang-Biom wechselt → nach dwell s Stabilität weich (xf s) auf einen passenden Titel, statt erst am Titelende
+  const bio = BGM_BIOME ? S.amb?.biome : null; if (BGM_BIOME && bio !== M.bio) { M.bio = bio; M.bioSince = CTX.currentTime; M.bioDone = false }
+  if (BGM_BIOME && !M.bioDone && d?.track && M.list && CTX.currentTime - M.bioSince >= BIOME_MUSIC.dwell) { M.bioDone = true; const T = S.index?.music?.tags || {}
+    if (biomeMusicSwitch({ biome: bio, tags: T[M.list + '/' + d.track] || [], stableS: CTX.currentTime - M.bioSince, leftS: (d.el.duration || 0) - d.el.currentTime, candidates: M.lists[M.list].map((f) => T[M.list + '/' + f]) })) { M.prep = null; M.bioSwitches = (M.bioSwitches || 0) + 1; nextTrack(M.list, BIOME_MUSIC.xf, bio) } }
   if (d && d.el.duration && isFinite(d.el.duration) && d.el.duration - d.el.currentTime < 25 && !M.prep && !d.handoff) prepareNext(M.list)
   if (d && d.el.duration && isFinite(d.el.duration) && d.el.currentTime > d.el.duration - XF - 0.2 && !d.handoff) { d.handoff = true; nextTrack(M.list); setTimeout(() => { d.handoff = false }, XF * 1000 + 500) }
   S.musicAudible = !!(d && !d.el.paused && S.vol.music > 0.02 && !S.vol.muted)
@@ -315,6 +323,12 @@ export function fluffer(e, pos = null) {
 }
 // Atmo-Vorgaben von außen (WS1b Biom-Fahrt): { biome, weather, wind, timeOfDay } – null/undefined nimmt den Wert wieder zurück; wirkt ab dem nächsten Takt
 const CTXO = {}
+// Welt-Biom der endlosen Fahrt (WS1b): { dominant, weights } – rohe Biom-IDs; die Zuordnung zum Klang liegt hier (BIOME_SOUND). Wechsel erst, wenn das
+// neue Biom klar führt (Gewicht ≥ 0,55) – dazwischen bleibt der Klang beim alten (kein Flattern an der Grenze).
+export function worldBiome({ dominant, weights = null } = {}) {
+  const w = weights?.[dominant] ?? 1, cur = S.worldBiome?.dominant; if (!BIOME_SOUND[dominant] || (cur && dominant !== cur && w < 0.55)) return S.worldBiome ?? null
+  S.worldBiome = { dominant, weights: weights ? { ...weights } : null }; return ambienceContext({ biome: BIOME_SOUND[dominant].amb })
+}
 export function ambienceContext(update = {}) { for (const k of ['biome', 'weather', 'wind', 'timeOfDay']) if (k in update) { if (update[k] == null) delete CTXO[k]; else CTXO[k] = update[k] } return resolveAmbience({ biome: S.biome, timeOfDay: S.tod }, CTXO) }
 // Blitz → Donner über kfb-ambience: Verzögerung nach Entfernung (343 m/s), Lage hörerbezogen (azimuth rad, 0 = −Z, positiv Richtung +X), at = Kontextzeit des Blitzes
 let LIGHTNING_N = 0
@@ -369,6 +383,8 @@ export function chatter(e, pos = null, ch = null) {
 // Pegel und Klang der Silben (Georg 25.10.: „plappern, nicht quieken“, unter der Musik): −6 dB gegenüber R1 (0,25 statt 0,5, also −12 dB unter dem Clip-Pegel der Familie),
 // Tiefpass 2,4 kHz, Einschwingen 25 ms, Ausklang 50 ms. Musik wird beim Sprechen weiter −7 dB geduckt (q179).
 export const SPEAK_GAIN = 0.25, SPEAK_LP_HZ = 2400, SPEAK_ATTACK = 0.025, SPEAK_RELEASE = 0.05
+// S2 Endlose Welt (V-746: Standard bytegleich bis Georgs PASS): vorgezogener Musikwechsel beim Biom nur mit #bgm=biome
+export const BGM_BIOME = typeof location !== 'undefined' && /(^|[#,])bgm=biome(,|$)/.test(location.hash)
 export const CHAT_SYL = typeof location !== 'undefined' && /(^|[#,])chat=syl(,|$)/.test(location.hash)
 const SPEAKERS = new Map() // Anker-ID → { characterId, group } (Bühne: stage-left/right; Welt: npc-<id>)
 export function setSpeaker(anchorId, characterId, group = null) { if (anchorId) SPEAKERS.set(anchorId, { characterId: characterId ? resolveCharacterId(characterId) ?? characterId : null, group }) }
@@ -460,8 +476,10 @@ export function frame(st) {
   const mix = { musicActive: S.musicAudible, dialogueActive: S.dialogue, combatActive: S.combatActive }
   // Motor / Flug: Racer läuft nur bei Fahrt/Flug; zu Fuß nach 3 s angehalten (keine stummen Schleifen im Audio-Faden)
   const R = S.racer, need = mode === 'drive' || mode === 'fly'
-  if (R && need && !S.racerOn) { S.racerOn = true; S.racerIdle = null; R.start().then(() => { if (!S.racerOn) R.stop() }) }
-  if (R && !need && S.racerOn) { S.racerIdle ??= ac.currentTime; if (ac.currentTime - S.racerIdle > 3) { S.racerOn = false; R.stop() } } else if (need) S.racerIdle = null
+  // Motor an/aus: beim Einhängen sofort (Regler in 0,15 s auf 1), beim Aushängen bzw. Aussteigen weich (Regler in ~1 s auf 0, nach 3 s stoppen)
+  const RG = S.graph.buses.racer.gain
+  if (R && need && !S.racerOn) { S.racerOn = true; S.racerIdle = null; RG.cancelScheduledValues(ac.currentTime); RG.setTargetAtTime(1, ac.currentTime, 0.05); R.start().then(() => { if (!S.racerOn) R.stop() }) }
+  if (R && !need && S.racerOn) { if (S.racerIdle == null) { S.racerIdle = ac.currentTime; RG.setTargetAtTime(0, ac.currentTime, 0.3) } if (ac.currentTime - S.racerIdle > 3) { S.racerOn = false; R.stop() } } else if (need && S.racerIdle != null) { S.racerIdle = null; RG.cancelScheduledValues(ac.currentTime); RG.setTargetAtTime(1, ac.currentTime, 0.05) }
   if (R && S.racerOn) {
     const kmh = Math.max(0, Math.min(240, (st.speed || 0) * 3.6)), thr = clamp01(st.throttle), T = S.telemetry
     if (mode === 'drive') Object.assign(T, { mode: 'drive', speedKmh: kmh, throttle: thr, brake: clamp01(st.brake), engineOn: true, ...gearRpm(st) })
@@ -560,9 +578,9 @@ export function stats() {
   const v = voices(), oneShots = v.racerOneShots + v.combat + v.ambience + v.steps + v.bank
   return { ...snapshotLite(), unlocked: S.unlocked, volumes: { ...S.vol }, loads: { ...S.loads }, errors: S.errors.slice(-20), modules: { racer: !!S.racer, combat: !!S.combat, ambience: !!S.ambience, steps: !!S.steps, music: !!S.music },
     voices: { ...v, oneShots, total: oneShots + v.racerLoops + v.music }, perf: perf(), duckDb: S.duckDb, combatActive: S.combatActive, musicAudible: S.musicAudible, nowPlaying: nowPlaying(),
-    music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, dead: S.music.dead, firstMs: S.music.firstAt, prepared: S.music.prepared || 0, prep: !!S.music.prep, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null, host: AUDIO_ROOT, hostFallbacks: S.hostFallbacks || 0,
+    music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, dead: S.music.dead, firstMs: S.music.firstAt, prepared: S.music.prepared || 0, prep: !!S.music.prep, bioSwitches: S.music.bioSwitches || 0, bgmBiome: BGM_BIOME, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null, host: AUDIO_ROOT, hostFallbacks: S.hostFallbacks || 0,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
-    racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
+    racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, gain: +(S.graph?.buses.racer.gain.value ?? 1).toFixed(2), loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
     presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), speak: { on: CHAT_SYL, log: (S.speakLog || []).slice(-8) }, stepDb: S.stepDb ?? STEP_BUS.db, cues: (S.cueLog || []).slice(-60), ownSteps: typeof S.steps?.metrics === "function" ? S.steps.metrics() : null, chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
