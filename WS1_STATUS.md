@@ -1,7 +1,26 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §169.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§169 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §170.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§170 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 170 · 25.10. · Alles zur Abnahme gebündelt (`abnahme/ws1` @d6aab30) · gemergt: Chatter-TUNE, tr1-Satzbau, Säule R3, HUD Pakete 5 und 6 · Spiegel game/mvp-r1 @2b96e8a
+
+- **Gemergt** (alles hinter Schaltern, Standard unverändert):
+  - Chatter-Silben TUNE nach V-734 (ws-audio/r1 @c6aac4e → mvp cc1481d): tiefer, weicher, −6 dB, Schritte-Bus (−9 dB, beim Sprechen −15 dB).
+  - **tr1-Satzbau korrigiert** (ws-npc/phase-a @f2ae420 → mvp 0d57d83). Fehler: Satz-Opener vor jede Zeile, Anfang klein („You know collect …“). Jetzt Bau über `tratschSim.composeLine` wie die SIM (SSOT S8). Der Randabstand wurde nie umgangen; die alten Bilder waren alt.
+  - Tempo-Säule R3 (mvp d21fbba): klassischer Tacho grün → gelb → rot, Boost A/B, Abstand mit Lichthof gemessen.
+  - HUD Paket 6 Einstellungen L3 (mvp 5e26048).
+  - Reihe bei 0d57d83: 77 PASS, rot nur c2 und c3g. hud-3d lieferte dort einmal kein Ergebnis; nach dem Merge einzeln PASS (hud-clay ebenso).
+- **Spiegel:** game/mvp-r1 **@2b96e8a** (privat), ws1/mvp-r1 a1cae3c53 (öffentlich, private Pfade = 0).
+  - Das Site-Paket `site/mvp-r1-dist` @6a03920 bleibt der Stand für WSA; die neuen Inhalte liegen alle hinter Schaltern.
+  - Ein neues Paket baue ich auf Zuruf.
+- **Zentrale Abnahme für den Hub:** `KFB-Stunt-Car-Race` `abnahme/ws1` @d6aab30, `OFFENE_PUNKTE_GEORG.md`. Je Punkt ein Satz Klartext, Bilder und Videos, Empfehlung:
+  - A: Paket 5 (Truhe, Almanach A/B) und Paket 6 (Einstellungen).
+  - B: Tempo-Säule R3 (Boost A/B) mit Karte Fuß-Tempo und Flughöhe · Chatter-Silben TUNE (Video 58 s) · Tratsch-Trio (Live-Welt, drei Figuren).
+  - Karten nach V-736: Satz-Opener und Sperrliste (Deck-Songs), Wasser (WS1c), Käfer 35/40 % (WS1d), Kit-Knete (WS-NPC).
+  - **Bitte in den Hub einpflegen.** Die WS1-Abnahme-Seite (v52) spiegelt dasselbe.
+- **orbit (calmAfterRelease):** fällt unter Last auch auf reinem mvp durch (WS1e: 2 von 2 auf cc1481d, WS-NPC: 2 von 3 auf 192bbb7). Bitte als bekannten Wackler führen; den Test unter Last stabiler zu machen ist ein Fall für den Kamera-Owner (C1).
+- **Hängt weiter:** WS1b und Deck-Analyzer auf „wartet“ (Freigabe in ihrem Fenster).
 
 ## 169 · 25.10. · Gegencheck „Modulare Site mit Stage-Kanal“ R1 (WS1-Teil) · HUD Paket 5 + Säule R2 gemergt · Georgs Urteile verteilt · Abnahmekarten
 
