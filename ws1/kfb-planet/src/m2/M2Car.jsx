@@ -54,7 +54,8 @@ import ModuleHost from '../ModuleHost'
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
 import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from './racerFlight.js'
-import { elanSpeed, ELAN } from '../m1/elan.js' // HUD-Telemetrie im Racer-Flug (nur lesend)
+import { elanSpeed } from '../m1/elan.js' // HUD-Telemetrie im Racer-Flug (nur lesend)
+import { speedScale, aglOf } from '../m1/hudTelemetry.js'
 
 // ── Fahrzeug (aus <racer>.kfb-vehicle.v3.json über kfb-vehicle-rig.r1.json, Rig-Einheiten × S) ─────────────────────────────────────────────────────────────────
 const S = (fbRecipe.stage?.scale ?? 0.947) * K // V-345: Rig × 0,947 × K = Rig × M_PER_RIG (J17-Meter, wie FB)
@@ -391,7 +392,7 @@ const M2Car = forwardRef(function M2Car({ player, travel = null }, ref) {
   useFrame(() => { if (!travel || !camFn.current) return; const on = travel.camOnCar(); if (on && M1INTERP.frameCam !== camFn.current) { follow.reset(); M1INTERP.frameCam = camFn.current } else if (!on && M1INTERP.frameCam === camFn.current) M1INTERP.frameCam = null })
   useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how), racers: RACER_IDS, racer: () => M2CAR.id, setRacer: (id) => swapRacer(id), headlights: HEADLIGHTS, models: () => [...MODEL_INFO.keys()], modelInfo: (id) => MODEL_INFO.get(id), renderer: () => gl, camera: () => camera, setMatte: (on) => { VEHICLE_MATTE.on = !!on; return M2STATE.visualRoot ? setVehicleMatte(M2STATE.visualRoot, !!on) : 0 }, freeze: (on) => { M2STATE.freezeFx = on === 'rig' ? 'rig' : !!on }, camPose: (p) => { M2STATE.camPose = p || null }, headlightTune: HEADLIGHT_TUNE, loadLog: LOADLOG, heroSetting: HERO_ON, setHero: (on) => applyHeroSetting(on, gl), ground: groundHeight }) })
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
-  const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
+  const props = { key: kind + session, at: spawn.current, keys, carRef: car, player, fly: RACER_FLY || !!travel } // travel=1: Racer-Flug ohne Schalter fly (Übergang Fahrt ↔ Flug über die Zustandsmaschine)
   return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>
 })
 export default M2Car
@@ -470,21 +471,14 @@ function EcctrlCar({ at, keys, carRef }) {
 }
 
 // ── B · k2b (kinematisch) ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-function K2tCar({ at, keys, carRef, player }) {
+function K2tCar({ at, keys, carRef, player, fly = RACER_FLY }) {
   const { world, rapier } = useRapier()
   const body = useRef(null), d = useMemo(() => createK2t(at.p[0], at.p[1], at.p[2], at.yaw), [at])
   // Elan S2: Racer-Flug (racerFlight.js). Pfeil hoch/runter = Nase (NOSE, aus dem Host-Tasten-Router), RMB gehalten = Nase aus der Kamera
   const F = useMemo(() => createRacerFlight(K / WORLD_K, G), [d]), { gl } = useThree()
   // HUD-Tempo-Leiste (WS1e, additiv, nur lesend): Tempo und Boost aus dem vorhandenen Fahr-/Flugzustand – das HUD rechnet nichts selbst
-  // Tempo für die HUD-Säule (Georg 25.10.: gleicher Maßstab; R3: klassische Tacho-Logik grün → gelb → rot, Rot = Ende der Skala). Beide Physiken rechnen in
-  // Welt-Einheiten; eine Welt-Einheit = WORLD_K / K J17-Meter (Standard 1, wscale=legacy 0,65). ms, Zonen und stall in J17-m/s, kmh = ms × 3,6.
-  // Skalen-Ende = Höchsttempo ohne Boost (Boost läuft darüber hinaus und ist ein Effekt, keine Zone): Fahren FLOW.maxForward, Fliegen ELAN.sDive × J
-  // (bis dahin trägt die Schwerkraft). Grün bis 50 % (Fahren) bzw. bis sThrill (Fliegen, ab da laden die Fähigkeiten), Rot ab 85 % = am Limit.
-  // stall (nur Fliegen): unter sStall reißt die Strömung ab – das HUD zeigt das als eigenes Signal, nicht als Farbe.
-  const speedScale = (v, fly, J) => { const m = WORLD_K / K, top = fly ? ELAN.sDive * J : FLOW.maxForward
-    const z = [['norm', fly ? ELAN.sThrill * J : 0.5 * top], ['fast', 0.85 * top], ['red', top]]
-    return { ms: v * m, kmh: v * m * 3.6, zones: z.map(([n, x]) => [n, x * m]), stall: fly ? ELAN.sStall * J * m : null } }
-  useEffect(() => { M2STATE.telemetry = () => ({ speed: F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), fly: !!F.st, boosting: F.st ? !!F.st.boosting : !!d.boosting, freeBoost: (d.driftBoostT || 0) > 0 || (d.landBoostT || 0) > 0, boostMeter: d.boostMeter ?? null, speed01: F.st ? racerDrive(F, {}).speed01 : null, ...speedScale(F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), !!F.st, F.J) })
+  // Tempo und Flughöhe für die HUD-Säule: eine Umrechnung für Racer und Fuß-Flug (src/m1/hudTelemetry.js, nur lesend)
+  useEffect(() => { M2STATE.telemetry = () => ({ speed: F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), fly: !!F.st, boosting: F.st ? !!F.st.boosting : !!d.boosting, freeBoost: (d.driftBoostT || 0) > 0 || (d.landBoostT || 0) > 0, boostMeter: d.boostMeter ?? null, speed01: F.st ? racerDrive(F, {}).speed01 : null, ...speedScale(F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), !!F.st, F.J), agl: F.st ? aglOf(d.y, groundHeight(d.x, d.z)) : null })
     return () => { if (M2STATE.telemetry) M2STATE.telemetry = null } }, [d, F])
   useEffect(() => { const pd = (e) => { NOSE.rmb = (e.buttons & 2) !== 0 }, cm = (e) => { if (F.st) e.preventDefault() }
     gl.domElement.addEventListener('pointerdown', pd); window.addEventListener('pointerup', pd); gl.domElement.addEventListener('contextmenu', cm)
@@ -556,11 +550,11 @@ function K2tCar({ at, keys, carRef, player }) {
     const k = keys(), px = d.x, pz = d.z, N = NOSE, fs = M2STATE.follow?.state
     // Elan S2: erst der Flug (fliegt der Racer, ruht K2B), sonst K2B und danach die Rampen-Prüfung; Nase per Maus: Kameraneigung gegen die Grundneigung
     const fin = { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, jump: k.jump, boost: k.run, noseUp: (k.forward && N.upArrow) || !!k.noseUp, noseDown: (k.backward && N.downArrow) || !!k.noseDown, mousePitch: N.rmb && fs ? 0.32 - fs.wantPitch : (k.mousePitch ?? null) }
-    const flew = RACER_FLY && racerFlightStep(F, d, fin, STEP, fenv)
-    if (!flew) { stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env); if (RACER_FLY) racerAfterK2t(F, d)
+    const flew = fly && racerFlightStep(F, d, fin, STEP, fenv)
+    if (!flew) { stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env); if (fly) racerAfterK2t(F, d)
       if (waterActive.level) { waterAfter(W, d, { jump: k.jump }, STEP, { level: waterActive.level, carH: bc[1] + bh[1], rideH: M2TUNE.rideHeight, maxF: FLOW.maxForward, jumpImpulse: FEEL.jumpImpulse, gravity: ASSIST.flyGravity }); M2STATE.water = W } } // WS1c // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
     M2STATE.drive = racerDrive(F, fin) || { gas: !!k.forward, brake: !!k.backward, boost: !!k.run, jump: !!k.jump, air: !!d.air } // R1a: Eingang fürs Antriebs-Modul (Gas, Boost, Sprung)
-    if (RACER_FLY) ELAN_MEM.state = F.st; if (F.st) for (const e of F.st.events) ELAN_MEM.events.push({ ...e, t: M1CLOCK.steps }) // Ringkurs-Anzeige und Kessel (ElanRings)
+    if (fly) ELAN_MEM.state = F.st; if (F.st) for (const e of F.st.events) ELAN_MEM.events.push({ ...e, t: M1CLOCK.steps }) // Ringkurs-Anzeige und Kessel (ElanRings)
     for (const e of d.events) M2EVENTS.emit(e)
     for (const e of F.events) M2EVENTS.emit(e) // fly { why: ramp | double } · land
     // Sicherung Ränge (V-283): landet die Automitte im Zaun-Grundriss, zurück auf den letzten Stand und abprallen (wie die Bodensicherung)

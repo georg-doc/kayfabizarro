@@ -86,6 +86,18 @@ export function createBubbleLayer({ host }) {
       if (!a || a.z > 1 || a.z < -1 || a.x < -1 || a.x > 1 || a.y < -1 || a.y > 1) { b.el.style.display = 'none'; continue } b.el.style.display = ''
       const hx = (a.x * 0.5 + 0.5) * W, hy = (-a.y * 0.5 + 0.5) * H, M = b.M, pad = 12, gap = 26
       let bx = Math.max(pad, Math.min(W - pad - b.w, hx - b.w / 2)), by = hy - gap - b.h; if (by < pad) by = pad
+      if (avoid) {
+        // WS-NPC chat=syl (additiv): Kandidatensuche statt Ausweichen in einem Durchgang (das schob die Blase hin und her bzw. weit vom Sprecher weg,
+        // Abnahme S3 0b): Stellen um den Wunschplatz über dem Kopf, seitlich in halben Blasenbreiten und tiefer in halben Blasenhöhen; gewählt wird die
+        // mit der kleinsten Überdeckung (Figuren, HUD, schon gesetzte Blasen), bei Gleichstand die nächste am Wunschplatz
+        const x0 = bx, y0 = by, cl = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
+        const ov = (x, y) => { let a = 0; for (const o of placed) a += Math.max(0, Math.min(x + b.w + 8, o.x + o.w + 8) - Math.max(x, o.x)) * Math.max(0, Math.min(y + b.h + 8, o.y + o.h + 8) - Math.max(y, o.y)); return a }
+        let best = null
+        for (const dy of [0, -0.6, 0.6, 1.2, 1.8]) for (const dx of [0, -0.5, 0.5, -1, 1, -1.5, 1.5, -2, 2]) {
+          const x = cl(x0 + dx * b.w, pad, W - pad - b.w), y = cl(y0 + dy * (b.h + 8), pad, H - pad - b.h), sc = ov(x, y) * 10 + Math.abs(x - x0) + 2 * Math.abs(y - y0) - (b.at && Math.abs(x - b.at[0]) < 3 && Math.abs(y - b.at[1]) < 3 ? 40 : 0)   /* Bonus für die letzte Stelle: kein Springen zwischen gleich guten Stellen */
+          if (!best || sc < best.sc) best = { x, y, sc } }
+        bx = best.x; by = best.y
+      } else
       for (const o2 of placed) { const hit = () => bx < o2.x + o2.w + 8 && bx + b.w + 8 > o2.x && by < o2.y + o2.h + 8 && by + b.h + 8 > o2.y; if (!hit()) continue
         const nx = hx < o2.hx ? o2.x - b.w - 8 : o2.x + o2.w + 8; if (nx >= pad && nx + b.w <= W - pad) bx = nx; else by = Math.max(pad, o2.y - b.h - 8); if (hit()) by = o2.y + o2.h + 8 }
       placed.push({ x: bx, y: by, w: b.w, h: b.h, hx })

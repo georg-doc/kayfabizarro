@@ -49,10 +49,11 @@ const B3 = await C(), hud3 = await page.evaluate(() => window.__kfbM1.harvest().
 await closeUp('test/out/combat/waffe_blaster.png')
 // Rucksack: Fach „Pistole“ anklicken, dann „Ausrüsten“
 await page.evaluate(() => window.__kfbM1.harvest().hud.openBag()); await wait(300)
-await page.click('#kfb-hud-r5f [title="Pistole"]'); await wait(300)
+const L3 = await page.evaluate(() => !!document.getElementById('kfb-l3')) // HUD 3D (Standard seit V-743): Truhe 20 statt Holz-Rucksack, gleiche Wirkung
+await page.click(L3 ? '#kfb-l3-chest [aria-label="Pistole"]' : '#kfb-hud-r5f [title="Pistole"]'); await wait(300)
 await page.screenshot({ path: 'test/out/combat/rucksack.png' })
 const bagShots = await page.evaluate(() => window.__kfbM1.harvest().hud.weapons().map((w) => ({ wid: w.wid, shot: /^data:image\/png;base64,/.test(w.shot || '') && w.shot.length > 2000 })))
-await page.click('#kfb-hud-r5f [data-kfb-equip] [title="Ausrüsten"]'); await wait(400)
+await page.click(L3 ? '#kfb-l3 [data-l3=equip]' : '#kfb-hud-r5f [data-kfb-equip] [title="Ausrüsten"]'); await wait(400)
 const Bbag = await C(), hudBag = await page.evaluate(() => ({ bar: window.__kfbM1.harvest().hud.weapon(), bag: window.__kfbM1.harvest().hud.activeWeapon(), open: window.__kfbM1.harvest().hud.bagOpen() }))
 await page.evaluate(() => window.__kfbM1.harvest().hud.closeBag())
 

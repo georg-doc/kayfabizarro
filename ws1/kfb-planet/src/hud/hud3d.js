@@ -13,7 +13,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createHudShell, zoneSet, zoneMaterial, boardClay, clamp, DEG } from './hudShell.js'
 import { PROOF_PALETTES } from './hudPalette.js'
-import { createTempoColumn, COLUMN } from './tempoColumn.js'
+import { createTempoColumn, createAltBand, COLUMN, ALT } from './tempoColumn.js'
 import arrowUrl from '../assets/hud3d/kenney_arrow-rounded.glb?url'
 import cassetteUrl from '../assets/hud3d/poly_cassette.glb?url' // „Cassette tape“ by Poly by Google (Paket HUD 3D R1, auch in kayfabizarro media/3D_Assets/KFB)
 
@@ -71,7 +71,8 @@ const GEO_NEW = { chest: { x: 18, y: BOT - CS, s: CS }, radio: { x: 812, y: BOT 
 // Zahl darunter wie die Entfernung unter dem Pfeil (Schrift fd 22 / Einheit fs 15). R3: Spalte gleichmäßig verteilt – Entfernung → Zahnrad, Zahnrad →
 // Lichthof der Säule und Lichthof → Zahl haben denselben Abstand GAP (= Entfernung → Zahnrad); der Lichthof (HALO, haloR 20 Bezugs-px) zählt mit,
 // damit auch im Boost nichts tangiert. Rand der Säule PAD ≥ HALO, sonst schneidet die Hülle den Lichthof ab. Kopfraum über der Kappe für den Boost-Effekt.
-export const TEMPO = { cx: 892, h: 2.4, halo: 10, pad: 14, alt: { w: 12, gap: 14 } }
+// Flughöhe links daneben: Mitte 56 Bezugs-px links der Säulenmitte, damit die Zahlen (bis „281“ und „118“) mit Luft nebeneinander stehen; gleiche Ober-/Unterkante.
+export const TEMPO = { cx: 892, h: 2.4, halo: 10, pad: 14, alt: { dx: 56 } }
 export function layoutA(casNew = true) {
   const G = casNew ? { ...GEO_A, ...GEO_NEW } : GEO_A, L = {}
   L.arrow = { ...boardRect(G.arrow.x, G.arrow.y, G.arrow.s, G.arrow.s, 0.3), el: 38 }
@@ -82,7 +83,9 @@ export function layoutA(casNew = true) {
     L.speed = { ...boardRect(x, ty - head, w, h, T.pad / h, 'tr'), el: 8, hidden: true, fill: h / (h + 2 * T.pad) } // höhenbegrenzt: Füllgrad aus der Höhe
     L.speedText = { right: (BW - T.cx) * F, top: (ty + tubeH + T.halo + GAP) * F, fs: G.label.fs * F, fd: G.label.fd * F }
     L.speedCol = { tubeTop: ty * F, tubeBottom: (ty + tubeH) * F, halo: T.halo * F, gap: GAP * F } // für Prüfungen
-    L.altRoom = { right: (BW - (x - T.alt.gap)) * F, top: ty * F, w: T.alt.w * F, h: tubeH * F } } // nur Platz (Flughöhe später)
+    const ax = T.cx - T.alt.dx, aw = Math.ceil(tubeH * 2 * ALT.R * 1.12 / (ALT.FULL + 2 * ALT.R))
+    L.alt = { ...boardRect(ax - aw / 2, ty, aw, tubeH, 4 / tubeH, 'tr'), el: 8, hidden: true, fill: tubeH / (tubeH + 8) } // Flughöhe: gleiche Höhe wie die Röhre
+    L.altText = { right: (BW - ax) * F, top: (ty + tubeH + T.halo + GAP) * F, fs: G.label.fs * F, fd: G.label.fd * F } }
   L.cassette = { ...boardRect(G.radio.x, G.radio.y, G.radio.w, G.radio.h, 0.2), el: 16, yaw: -14 }
   // Aktionen: sechs Plätze + Interaktion in einer Reihe (h3d-hud buildFrame); Interaktion ist DOM (Blase) beim Wirt
   const A = G.actions, iw = Math.round(G.inter.s * 1.24), igap = A.gap + 8, rowW = A.n * A.s + (A.n - 1) * A.gap + igap + iw, ax0 = Math.round(A.cx - rowW / 2)
@@ -141,6 +144,7 @@ export function createHud3d(opts = {}) {
   SH.addSlot('gear', L.gear, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
   SH.addSlot('cassette', L.cassette, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
   SH.addSlot('speed', L.speed, { lights: 'board', ortho: true, toneMapped: false, rim: 1 }) // Kontur wie Pfeil/Zahnrad
+  SH.addSlot('alt', L.alt, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
   SH.slots.fanShadow.mat.uniforms.opacity.value = 0.55
   const { slots } = SH
   const ZCHEST = zoneSet(PROOF_PALETTES.otown), ZDIG = zoneSet({ base: HALO, accent: HALO, detail: INK }), ZDIG0 = zoneSet({ base: '#f3efe6', accent: '#f3efe6', detail: '#77726b' })
@@ -190,7 +194,15 @@ export function createHud3d(opts = {}) {
   // Füllung federt nach (ω 9, ζ 0,45). Boost = Effekt über dem Roten (A Überkochen / B Hitze, Schalter boost=a|b), Lichthof Orange, Wackeln gedämpft (3°),
   // Squash beim Zünden und am Anschlag. Stall im Flug: Säule blinkt kühl, Lichthof Blaugrau ohne Wackeln. Nur Fahren und Fliegen.
   const SPD = { shown: 0, v: 0, target: 0, boost: false, visible: false, maxHit: false, t: 0, kmh: 0, glow: 0, zones: null, fly: false }
-  function buildColumn() { const s = slots.speed, C = createTempoColumn(boardClay, { boost: O.boost === 'b' ? 'b' : 'a' }); parts.column = C
+  const ALTS = { visible: false, m: 0, shown: 0, v: 0, target: 0 }
+  function buildAlt() { const s = slots.alt, B = createAltBand(boardClay); parts.alt = B; s.scene.add(B.group); s.root = B.group; s.fitMode = 'box'; B.setFrac(0)
+    SH.fitCamera(s, s.L.el, 0, 1 / s.L.fill / 0.97, new THREE.Vector3(), 1, B.box()) }
+  function stepAlt(dt) { const s = slots.alt, B = parts.alt; if (!B) return
+    if (s.L.hidden === ALTS.visible) { s.L.hidden = !ALTS.visible; s.dirty = true }
+    if (!ALTS.visible) return
+    const w = 7, z = 0.7; if (RM()) { ALTS.shown = ALTS.target; ALTS.v = 0 } else { ALTS.v += (w * w * (ALTS.target - ALTS.shown) - 2 * z * w * ALTS.v) * dt; ALTS.shown += ALTS.v * dt }
+    if (B.setFrac(ALTS.shown)) s.dirty = true }
+  function buildColumn() { const s = slots.speed, C = createTempoColumn(boardClay); parts.column = C
     s.scene.add(C.group); s.root = C.group; s.fitMode = 'box'; C.setZones([['norm', 0.5], ['fast', 0.85], ['red', 1]]); C.setFrac(0) // Fahrzonen als Vorgabe bis zur ersten Telemetrie
     SH.fitCamera(s, s.L.el, 0, 1 / s.L.fill / 0.97, new THREE.Vector3(), 1, C.box()) }
   // Truhe auf/zu (Paket 5, Georg 25.10. „cartoonig“): Deckel chest_lid an einer unterdämpften Feder (ω 15, ζ 0,42 → ~20 % Überschwingen beim Öffnen),
@@ -237,7 +249,7 @@ export function createHud3d(opts = {}) {
     if (shadow) { const s = slots.fanShadow, o = shadow.scene; o.traverse((n) => { if (n.isMesh) { n.material = MAT.shadow; n.frustumCulled = false } })
       const w = wrap(o); s.scene.add(w); s.root = w; fit(s, s.L.el, 0); s.L.hidden = true; S.loaded++ }
     if (cas && CASNEW) { buildCassetteNew(cas); S.loaded++ } else if (cas && radio) { parts.cassette = { cas, radio }; buildCassette(); S.loaded++ }
-    buildColumn()
+    buildColumn(); buildAlt()
   }
   // Weiße Kassette (h3d-core cassetteProp): Körper poly_cassette mit Creme-Shader, drei Tasten aus KFB_HUD_Radio (Oberseite #4b3f63, Flanke #1f1829;
   // Ton aus #c9c2cc / #8d8492), Symbole als Relief in Creme, 25 % der Kassettenbreite, Abstand 29 %. Neu gebaut nur bei Zustandswechsel (Play/Pause, Ton).
@@ -349,7 +361,7 @@ export function createHud3d(opts = {}) {
       if (!alive) return
       const u0 = performance.now(); SH.signal(sig)
       if (S.status !== 'OK') return
-      stepArrow(dt); flyBalls(dt); stepSpeed(dt); stepChest(dt)
+      stepArrow(dt); flyBalls(dt); stepSpeed(dt); stepAlt(dt); stepChest(dt)
       for (let i = 0; i < 6; i++) if (!balls.some((b) => b.i === i) && S.shown[i] !== S.counts[i]) buildOrb(i, S.counts[i])
       SH.step(dt)
       S.updMs += performance.now() - u0; S.updates++
@@ -368,9 +380,12 @@ export function createHud3d(opts = {}) {
     setMusic: (m) => { const pl = m.playing !== false, mu = !!m.muted; if (pl !== S.music.playing || mu !== S.music.muted) { S.music = { playing: pl, muted: mu }; if (!CASNEW) buildCassette() } },
     cassetteKind: () => (CASNEW ? 'new' : 'old'),
     // setSpeed({ visible, kmh, speed (m/s), zones [[Zone, Obergrenze m/s]], boost, fly }) – ohne Zonen: frac (0…1) auf die Fahrzonen-Vorgabe
+    // setAlt({ visible, m }) – Höhe über Grund in J17-Metern (Telemetrie), nur im Flug sichtbar
+    setAlt: (o) => { ALTS.visible = !!o?.visible && o?.m != null; ALTS.m = o?.m ?? 0; if (parts.alt) ALTS.target = parts.alt.fracOf(ALTS.m) },
+    altState: () => ({ visible: ALTS.visible, m: Math.round(ALTS.m), shown: +ALTS.shown.toFixed(3), target: +ALTS.target.toFixed(3) }),
     setSpeed: (o) => { SPD.visible = !!o?.visible; SPD.boost = !!o?.boost; SPD.kmh = o?.kmh ?? 0; SPD.fly = !!o?.fly; SPD.stall = !!o?.stall
       if (o?.zones?.length) { SPD.zones = o.zones; SPD.target = Math.max(0, Math.min(1, (o.speed ?? 0) / o.zones[o.zones.length - 1][1])) } else SPD.target = Math.max(0, Math.min(1, o?.frac ?? 0)) },
-    speedState: () => ({ visible: SPD.visible, shown: +SPD.shown.toFixed(3), target: +SPD.target.toFixed(3), boost: SPD.boost, glow: +SPD.glow.toFixed(2), kmh: Math.round(SPD.kmh), fly: SPD.fly, stall: !!SPD.stall, boostKind: parts.column?.boost || null, over: +(parts.column?.over() || 0).toFixed(3), zone: parts.column?.zoneAt(SPD.shown) || null, zones: parts.column?.zones().map((z) => [z.z, +z.t1.toFixed(3)]) || null }),
+    speedState: () => ({ visible: SPD.visible, shown: +SPD.shown.toFixed(3), target: +SPD.target.toFixed(3), boost: SPD.boost, glow: +SPD.glow.toFixed(2), kmh: Math.round(SPD.kmh), fly: SPD.fly, stall: !!SPD.stall, over: +(parts.column?.over() || 0).toFixed(3), zone: parts.column?.zoneAt(SPD.shown) || null, zones: parts.column?.zones().map((z) => [z.z, +z.t1.toFixed(3)]) || null }),
     setWeapon: (fam) => { S.weapon = fam; for (let i = 0; i < ACTIONS.length; i++) SH.setUiFlag('act' + i, 'on', ACTIONS[i].id === fam) },
     pulse: (key) => { SH.setUiFlag(key, 'pressed', true); setTimeout(() => SH.setUiFlag(key, 'pressed', false), 120) },
     tapGear: () => { const s = slots.gear; if (s.root) SH.playOnce(s, 'gear_tap_spin') },
@@ -387,7 +402,7 @@ export function createHud3d(opts = {}) {
       ui: SH.uiAll(), live: SH.live(), motion: SH.motion() }),
     resetStats: () => { SH.resetStats(); S.updMs = 0; S.updates = 0; S.arrowRenders = 0 },
     dispose() {
-      parts.column?.dispose()
+      parts.column?.dispose(); parts.alt?.dispose()
       alive = false; for (const b of balls) SH.overlay.remove(b.m); balls.length = 0
       SH.dispose(new Set(Object.values(MAT).flat())); Object.values(MAT).flat().forEach((m) => m.dispose()); ballMats.forEach((m) => m.dispose()); ballGeo.dispose(); sphereGeo.dispose()
       if (parts.digits) Object.values(parts.digits).forEach((d) => d.geo.dispose()); root.clear()

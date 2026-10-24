@@ -28,7 +28,7 @@ const shotDemo = await page.screenshot(); fs.writeFileSync('test/out/c3b/demo.pn
 await sharp(shotDemo).extract({ left: 440, top: 260, width: 400, height: 240 }).resize(800, 480, { kernel: 'nearest' }).png().toFile('test/out/c3b/contact-200.png')
 // Wegwerfen über den Rucksack (api throwItem), Stück schwebt wieder
 const t2 = await page.evaluate(async (key) => { const st = window.__kfbM1.harvest?.(); const h = st?.hud; if (!h) return { err: 'no hud' }
-  const bagN = h.items().length; h.openBag(); await new Promise((r) => setTimeout(r, 400)); const throwBtn = !!document.querySelector('[data-kfb-throw]')
+  const bagN = h.items().length; h.openBag(); await new Promise((r) => setTimeout(r, 400)); const throwBtn = !!document.querySelector('[data-kfb-throw], #kfb-l3 [data-l3=drop]') /* Holz-Rucksack oder Truhe 20 im HUD 3D (Standard seit V-743) */
   const it = h.throwItem(0); await new Promise((r) => setTimeout(r, 400)); const F = window.__kfbM1.mods.found
   return { bagN, throwBtn, thrownKey: it?.key, back: F.items().find((i) => i.key === key)?.here, bagAfter: h.items().length, dropped: F.stats().dropped } }, afterPick.pickedKey)
 const blobs = await page.evaluate(() => { let n = 0; window.__kfbM1.mods.found.object3d.traverse((m) => { if (m.name === 'contact-blob' && m.visible) n++ }); return n })

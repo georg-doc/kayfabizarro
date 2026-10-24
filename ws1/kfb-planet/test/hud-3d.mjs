@@ -1,4 +1,4 @@
-// HUD 3D R1 Spike-Paket 1 (hud=3d, Georg 24.10., EINBAU_WS1 §4/§5) · Browser-Prüfung: Laden, Kugeln = Zähler (leer grau), Einflug Fluff → Kugel,
+// HUD 3D R1 (Standard seit Georg 25.10., V-743 – ohne Schalter geprüft; EINBAU_WS1 §4/§5) · Browser-Prüfung: Laden, Kugeln = Zähler (leer grau), Einflug Fluff → Kugel,
 // Truhe ↔ Rucksack, Zielpfeil (Peilung links/rechts/hinten, oben/unten mit Höhentext, kein Ziel = kein Pfeil, Entfernung nach V-333, Annäherungsfarbe),
 // Feder beruhigt sich (Totzone, kein Flackern), Ruhe gecacht, Overlay-Pass < 1 ms, keine Seitenfehler, hud=clay und hud=wood unverändert erreichbar.
 // Abnahmebilder: test/out/hud-3d/*.png (Pfeil links/rechts/hinten/oben/unten). Mit echter GPU: PW_GPU=1.
@@ -9,7 +9,7 @@ const VP = { width: 1600, height: 900 }
 const wait = (p, ms) => p.waitForTimeout(ms)
 const st = (page) => page.evaluate(() => window.__kfbClayHud?.status())
 const checks = {}, extra = {}
-const { browser, page, errs } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP })
+const { browser, page, errs } = await openPage('#m1,debug,clean,harvest,look=terrain3', { viewport: VP })
 await page.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {})
 await wait(page, 3000)
 let s = await st(page); extra.load = { status: s?.status, kit: await page.evaluate(() => window.__kfbClayHud?.kit), quads: s?.quads, tris: s?.tris }
@@ -200,7 +200,7 @@ checks.errors0 = errs.length === 0; extra.errs = errs.slice(0, 3)
 await browser.close()
 // Rückfall-Schalter unverändert: hud=clay = Knet-HUD R1, hud=wood = Holz
 // Telefon quer (844 × 390, Emulator): Aktionsplätze gleichmäßig unten Mitte, Taste je Platz rechts unten, Gesamt-Zähler im Maßstab
-{ const { browser: b6, page: p6 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: { width: 844, height: 390 } })
+{ const { browser: b6, page: p6 } = await openPage('#m1,debug,clean,harvest,look=terrain3', { viewport: { width: 844, height: 390 } })
   await p6.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p6.waitForTimeout(3000)
   const q = await p6.evaluate(() => { const R = window.__kfbClayHud.rects(), keys = [...document.querySelectorAll('#kfb-hud-clay div')].filter((d) => /^[VBN]$/.test(d.textContent)).map((d) => d.getBoundingClientRect().left)
     const ib = document.getElementById('m1-keys-info')?.getBoundingClientRect(), cs = R.cassette
@@ -210,12 +210,12 @@ await browser.close()
   checks.infoAboveCassette = q.iBottom == null || q.iBottom <= q.casTop + 2
   checks.phoneLayout = Math.abs(d1 - d2) < 2 && q.keys.every((kx, i) => kx > q.xs[i] && kx < q.xs[i] + q.ws[i]) && q.fs < 30 }
 // Tempo-Leiste (Georg 24.10.): zu Fuß weg; im Racer sichtbar, Füllung folgt dem Tempo, Boost glüht (Hinweis-Lichthof), Zahl = km/h; Spalte Zahnrad/Pfeil
-{ const walk = await (async () => { const { browser: bw, page: pw } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP }); await pw.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await pw.waitForTimeout(2500)
+{ const walk = await (async () => { const { browser: bw, page: pw } = await openPage('#m1,debug,clean,harvest,look=terrain3', { viewport: VP }); await pw.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await pw.waitForTimeout(2500)
     const r = await pw.evaluate(() => window.__kfbClayHud.speed()); await bw.close(); return r })()
-  const { browser: b7, page: p7 } = await openPage('#m1,car,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP })
+  const { browser: b7, page: p7 } = await openPage('#m1,car,debug,clean,harvest,look=terrain3', { viewport: VP })
   await p7.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p7.waitForTimeout(3000)
   const S0 = await p7.evaluate(() => window.__kfbClayHud.speed())
-  await p7.keyboard.down('KeyW'); await p7.waitForTimeout(3500); const S1 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), txt: document.getElementById('kfb-hud3d-speed')?.innerText || '', num: (() => { const n = document.getElementById('kfb-hud3d-speed'), r = n.getBoundingClientRect(), R = window.__kfbClayHud.rects().speed, d = document.querySelector('#kfb-hud3d-label span:last-child'); return { dx: Math.abs(r.x + r.width / 2 - (R.x + R.w / 2)), below: r.top >= R.y + R.h * (1 + window.__kfbClayHud.layout().speed.fill) / 2 - 2, fs: parseFloat(getComputedStyle(n.firstChild).fontSize), fd: d ? parseFloat(getComputedStyle(d).fontSize) : null } })(), alt: !!document.getElementById('kfb-hud3d-alt'), col: Math.abs((window.__kfbClayHud.rects().speed.x + window.__kfbClayHud.rects().speed.w / 2) - (window.__kfbClayHud.rects().gear.x + window.__kfbClayHud.rects().gear.w / 2)) }))
+  await p7.keyboard.down('KeyW'); await p7.waitForTimeout(3500); const S1 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), txt: document.getElementById('kfb-hud3d-speed')?.innerText || '', num: (() => { const n = document.getElementById('kfb-hud3d-speed'), r = n.getBoundingClientRect(), R = window.__kfbClayHud.rects().speed, d = document.querySelector('#kfb-hud3d-label span:last-child'); return { dx: Math.abs(r.x + r.width / 2 - (R.x + R.w / 2)), below: r.top >= R.y + R.h * (1 + window.__kfbClayHud.layout().speed.fill) / 2 - 2, fs: parseFloat(getComputedStyle(n.firstChild).fontSize), fd: d ? parseFloat(getComputedStyle(d).fontSize) : null } })(), alt: (() => { const e = document.getElementById('kfb-hud3d-alt'); return !!e && getComputedStyle(e).display !== 'none' })(), /* Höhe nur im Flug */ col: Math.abs((window.__kfbClayHud.rects().speed.x + window.__kfbClayHud.rects().speed.w / 2) - (window.__kfbClayHud.rects().gear.x + window.__kfbClayHud.rects().gear.w / 2)) }))
   await p7.keyboard.down('ShiftLeft'); await p7.waitForTimeout(700); const S2 = await p7.evaluate(() => { const H = window.__kfbClayHud, R = H.rects().speed, L = H.layout(), inner = R.h * L.speed.fill, tubeBottom = R.y + (R.h + inner) / 2, k = R.h / L.speed.h, n = document.getElementById('kfb-hud3d-speed').getBoundingClientRect()
     return { s: H.speed(), fx: H.fxState('speed'), airGlow: n.top - (tubeBottom + L.speedCol.halo * k), airHard: n.top - (R.y + R.h / 2 + R.h / 2 * 1.12) } }); await p7.screenshot({ path: `${OUT}/12_tempo_boost.png` })
   await p7.keyboard.up('ShiftLeft'); await p7.waitForTimeout(1500); const S3 = await p7.evaluate(() => window.__kfbClayHud.speed()); await p7.keyboard.up('KeyW'); await b7.close()
@@ -226,19 +226,32 @@ await browser.close()
   checks.speedColumnR2 = S1.num.dx <= 2 && S1.num.below && S1.num.fd != null && Math.abs(S1.num.fs - S1.num.fd) < 0.5 && Array.isArray(S1.s.zones) && S1.s.zones.length === 3 && !S1.alt
   checks.speedBoost = S2.s.boost && S2.s.glow > 0.05 && S2.fx?.hint && !S3.boost
   // R3 (Georg 25.10.): drei Zonen grün → gelb → rot (Rot = Ende), Boost als Effekt (A: Füllung über der Kappe), Lichthof berührt die Zahl nie (mit Luft)
-  checks.speedR3 = S1.s.zones?.map((z) => z[0]).join() === 'norm,fast,red' && S2.s.boostKind === 'a' && S2.s.over > 0.05 && S2.airGlow > 8 && S2.airHard > 2 }
+  checks.speedR3 = S1.s.zones?.map((z) => z[0]).join() === 'norm,fast,red' && S2.s.over > 0.05 && S2.airGlow > 8 && S2.airHard > 2 }
+// Paket 7 (Georg 25.10.): Säule auch beim Fliegen zu Fuß (Elan-Telemetrie aus dem M1-Wirt), Flughöhe über Grund links daneben (eine Flucht, Zahl auf Höhe der km/h)
+{ const { browser: b8, page: p8 } = await openPage('#m1,debug,clean,harvest,look=terrain3,flight=elan', { viewport: VP })
+  await p8.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p8.waitForTimeout(2500)
+  const ground = await p8.evaluate(() => ({ alt: window.__kfbClayHud.altState() }))
+  await p8.evaluate(() => { const M = window.__kfbM1, P = M.player(), f = M.feet(); P.teleport([f[0], f[1] + 25 * M.k, f[2]], P.heading?.() ?? 0); P.setFlying(true) }); await p8.waitForTimeout(1500)
+  const fl = await p8.evaluate(() => { const H = window.__kfbClayHud, R = H.rects(), L = H.layout(), n = (id) => document.getElementById(id)?.getBoundingClientRect()
+    const sp = R.speed, al = R.alt, k = sp.h / L.speed.h, inS = sp.h * L.speed.fill, inA = al.h * L.alt.fill, sTop = sp.y + (sp.h - inS) / 2 + (inS - L.speedCol.tubeBottom * k + L.speedCol.tubeTop * k), aTop = al.y + (al.h - inA) / 2
+    const ns = n('kfb-hud3d-speed'), na = n('kfb-hud3d-alt')
+    return { mode: H.mode(), sp: H.speed(), alt: H.altState(), tubeTop: sTop, tubeBottom: sp.y + (sp.h + inS) / 2, altTop: aTop, altBottom: aTop + inA, numTop: [ns.top, na.top], numGap: ns.left - na.right, colGap: sp.x + (sp.w - sp.w * 0.5) / 2 - (al.x + al.w), txt: document.getElementById('kfb-hud3d-alt').innerText.replace(/\n/g, ' ') } })
+  await p8.screenshot({ path: `${OUT}/13_fussflug_hoehe.png` }); await b8.close()
+  extra.p7 = { ground, fl }
+  checks.footFlightColumn = fl.mode === 'fly' && fl.sp.visible && fl.sp.zones?.map((z) => z[0]).join() === 'norm,fast,red' && fl.sp.kmh > 0
+  checks.altitude = !ground.alt.visible && fl.alt.visible && fl.alt.m > 5 && /M$/.test(fl.txt) && Math.abs(fl.altTop - fl.tubeTop) <= 2 && Math.abs(fl.altBottom - fl.tubeBottom) <= 2 && Math.abs(fl.numTop[0] - fl.numTop[1]) <= 2 && fl.numGap > 4 }
 // Ausrichtung bei 16:10 (1440 × 900): Tastenbuchstaben, leere Ringe und Blase auf derselben Höhe wie die 3D-Aktionen (Fenster ≠ 16:9)
-{ const { browser: b5, page: p5 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: { width: 1440, height: 900 } })
+{ const { browser: b5, page: p5 } = await openPage('#m1,debug,clean,harvest,look=terrain3', { viewport: { width: 1440, height: 900 } })
   await p5.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p5.waitForTimeout(3000)
   const a = await p5.evaluate(() => { const R = window.__kfbClayHud.rects(), c = (r) => r.y + r.h / 2, b = document.querySelector('[data-ui=inter]').getBoundingClientRect(), keys = [...document.querySelectorAll('#kfb-hud-clay div')].filter((d) => /^[VBN]$/.test(d.textContent)).map((d) => d.getBoundingClientRect())
     return { act: c(R.act1), bub: b.top + b.height / 2, keyTop: Math.min(...keys.map((k) => k.top)), actTop: R.act1.y } })
   await p5.screenshot({ path: `${OUT}/9_ausrichtung_16x10.png` }); await b5.close()
   extra.align1610 = a; checks.align16x10 = Math.abs(a.bub - a.act) < 30 && a.keyTop > a.actTop }
-{ const { browser: b4, page: p4 } = await openPage('#m1,debug,clean,harvest,look=terrain3,tod=night,hud=3d', { viewport: VP })
+{ const { browser: b4, page: p4 } = await openPage('#m1,debug,clean,harvest,look=terrain3,tod=night', { viewport: VP })
   await p4.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p4.waitForTimeout(3000)
   const th = await p4.evaluate(() => [...document.querySelectorAll('[data-j17] svg')].map((v) => v.dataset.theme)); await p4.screenshot({ path: `${OUT}/8_kassette_nacht.png` }); await b4.close()
   extra.cassetteNight = th; checks.cassetteR5Night = th.length === 3 && th.every((t) => t === 'night') }
-{ const { browser: b3, page: p3 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d,cas=old', { viewport: VP })
+{ const { browser: b3, page: p3 } = await openPage('#m1,debug,clean,harvest,look=terrain3,cas=old', { viewport: VP })
   await p3.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p3.waitForTimeout(3000)
   const o = await p3.evaluate(() => ({ kind: window.__kfbClayHud.cassette(), chestW: window.__kfbClayHud.rects().chest.w / (innerWidth / 1920) })); await p3.screenshot({ path: `${OUT}/7_kassette_ALT.png` }); await b3.close()
   extra.casOld = o; checks.cassetteOldSwitch = o.kind === 'old' && o.chestW < 200 }

@@ -1,4 +1,4 @@
-// HUD 3D Tempo-Säule R3 (Georg 25.10.): Bilder im Live-Stand + Clip. Zustände leer · langsam · mittel · rot · Boost A · Boost B · Flug · Flug-Boost, Desktop 2880×1800 und Telefon quer.
+// HUD 3D Tempo-Säule R3 (Georg 25.10.): Bilder im Live-Stand + Clip. Zustände leer · langsam · mittel · rot · Boost (Überkochen) · Flug · Flug-Boost, Desktop 2880×1800 und Telefon quer.
 // Messung „Lichthof → Zahl“: Wagen steht, Bild ohne und mit Boost; die Differenz unter der Säule ist der Lichthof, seine Unterkante muss mit Luft über der Zahl liegen.
 // Fahren: Wagen fährt (W), Zonen echt aus der Telemetrie; Tempo eingespeist, damit jeder Zustand genau sitzt. Fliegen: Flug-Start braucht eine Rampe,
 // deshalb Flug-Telemetrie eingespeist (Zonen = ELAN in J17-m/s). Clip: echte Fahrt ohne Einspeisung (anfahren, Boost, ausrollen).
@@ -17,17 +17,16 @@ const STATES = {
   '2_langsam': { gas: true, feed: (t) => ({ ms: t.zones[0][1] * 0.6 }) },
   '3_mittel': { gas: true, feed: (t) => ({ ms: (t.zones[0][1] + t.zones[1][1]) / 2 }) },
   '4_rot': { gas: true, feed: (t) => ({ ms: t.zones[2][1] * 0.96 }) },
-  '5_boost_A': { gas: true, hash: ',boost=a', feed: (t) => ({ ms: t.zones[2][1] * 1.15, boosting: true }) },
-  '6_boost_B': { gas: true, hash: ',boost=b', feed: (t) => ({ ms: t.zones[2][1] * 1.15, boosting: true }) },
-  '7_flug': { gas: true, feed: (t, F) => ({ fly: true, ms: 46, boosting: false, zones: F, stall: 12 }) },
-  '8_flug_boost': { gas: true, feed: (t, F) => ({ fly: true, ms: 78, boosting: true, zones: F, stall: 12 }) },
+  '5_boost': { gas: true, feed: (t) => ({ ms: t.zones[2][1] * 1.15, boosting: true }) },
+  '6_flug': { gas: true, feed: (t, F) => ({ fly: true, ms: 46, boosting: false, zones: F, stall: 12 }) },
+  '7_flug_boost': { gas: true, feed: (t, F) => ({ fly: true, ms: 78, boosting: true, zones: F, stall: 12 }) },
 }
 const log = []
 async function open(form, extra = {}, hash = '') {
   const ctx = await browser.newContext({ ...FORMS[form], ...extra })
   await ctx.addInitScript((save) => { try { localStorage.setItem('kfb.save', JSON.stringify(save)) } catch {} }, SAVE)
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', (e) => errs.push(e.message))
-  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,hud=3d,car' + hash)
+  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,car' + hash)
   await page.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }); await page.waitForTimeout(5000)
   await page.waitForFunction(() => window.__kfbM1.status?.().ready?.card === 'CARD', null, { timeout: 45000 }).catch(() => errs.push('Plakat nicht geladen'))
   return { ctx, page, errs }
@@ -52,7 +51,7 @@ if (ONLY) { const [f, n] = ONLY.split(','); await shot(f, n, STATES[n]); await b
 // 1) theoretische Lichthof-Unterkante = Röhren-Unterkante + haloR, 2) harte Grenze = Hüllen-Unterkante bei größtem Squash (+12 %). Beide müssen mit Luft über der Zahl liegen.
 // (Eine Bild-Differenz taugt nicht: die Welt hinter dem HUD bewegt sich auch bei stehendem Wagen.)
 async function glowGap(form, kind) {
-  const { ctx, page } = await open(form, {}, ',boost=' + kind)
+  const { ctx, page } = await open(form, {}, '')
   await page.evaluate(() => window.__kfbClayHud.speedFeed((t) => ({ ms: t.zones[2][1] * 0.98, boosting: true }))); await page.waitForTimeout(1500)
   const g = await page.evaluate(() => { const H = window.__kfbClayHud, R = H.rects().speed, L = H.layout(), k = R.h / (L.speed.h), n = document.getElementById('kfb-hud3d-speed').getBoundingClientRect()
     return { R, k, fill: L.speed.fill, col: L.speedCol, numTop: n.top, fx: H.fxState('speed'), sp: H.speed() } })
@@ -62,7 +61,7 @@ async function glowGap(form, kind) {
   console.log('lichthof', JSON.stringify(r)); return r
 }
 const GLOW = []
-for (const form of ['desk', 'phoneL']) for (const kind of ['a', 'b']) GLOW.push(await glowGap(form, kind))
+for (const form of ['desk', 'phoneL']) GLOW.push(await glowGap(form, 'a'))
 if (process.env.GLOW_ONLY) { await browser.close(); process.exit(0) }
 for (const form of ['desk', 'phoneL']) {
   const files = []; for (const [name, S] of Object.entries(STATES)) files.push(await shot(form, name, S))

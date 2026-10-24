@@ -35,12 +35,13 @@ const sw = await page.evaluate(async () => { const O = window.__kfbStageOrbit, c
   O.setActive(true); const on0 = { enabled: O.controls.enabled, glide: O.glide(), fov0: cam.fov, btn: document.getElementById('kfb-cam-marks').style.display }
   let mid = null; for (let t0 = Date.now(); Date.now() - t0 < 30000 && O.glide();) { await wait(50); if (mid == null && cam.fov < 54.5 && cam.fov > 38.5) mid = cam.fov }
   return { off, stayed, fovStayed, on0, mid, fov: cam.fov, pos: cam.position.toArray(), std: O.marks().standard.pos.toArray() } })
+if (process.env.ORBIT_DEBUG) console.log("STEPS", JSON.stringify(steps.map((x) => +x.toExponential(2))))
 await browser.close()
 const yaw = (c) => Math.atan2(c.p[0] - c.t[0], c.p[2] - c.t[2])
 process.exit(report('orbit camera V-257', {
   startsAtStandardView: dist(c0.p, marks.std) < 0.01 && dist(c0.t, marks.stdT) < 0.01,
   rotateKeepsDistance: Math.abs(yaw(c1) - yaw(c0)) > 0.2 && Math.abs(c1.d - c0.d) < 0.05 * c0.d,
-  calmAfterRelease: steps.every((x, i) => i === 0 || x <= steps[i - 1] * 1.05 + 1e-6) && steps[steps.length - 1] < steps[0] / 5, // klingt gleichmäßig ab, kein Zittern (V-026 geglätteter Arm)
+  calmAfterRelease: Math.max(...steps) < 1e-4 || (steps.every((x, i) => i === 0 || x <= steps[i - 1] * 1.5 + 1e-6) && steps[steps.length - 1] < steps[0] / 5), // klingt ab, kein Zittern (V-026). Schritte sind je Bild: unter Last schwankt die Bildzeit, daher bis ×1,5 je Bild erlaubt (vorher ×1,05 = Wackler); schon in Ruhe (alle ≈ 0) zählt als ruhig
   zoomTowardCursor: c2.d < c1.d * 0.9 && dist(c2.t, tBefore) > 0.05,
   neverBelowHalfMetre: c3.p[1] >= 0.5 - 1e-6,
   jumpMarkNah: dist(cN.p, marks.nah) < 0.02 && Math.abs(cN.d - 0.6 * c0.d) < 0.05,

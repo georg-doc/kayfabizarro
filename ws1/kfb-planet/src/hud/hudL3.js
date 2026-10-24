@@ -1,7 +1,7 @@
 // HUD 3D Paket 5/6 · Overlays L3 in einer Hülle (Board h3d-hud l3Shell): fraktaler Almanach (Decks → Karten → Detail), Truhe 20 und Einstellungen (Board 08).
 // Reines DOM, keine Fenster-Listener, keine React-/Store-Imports: Tasten (Esc = eine Ebene zurück) und Größe kommen vom Wirt (HudClay).
 // Inhalte gehören den Ownern: Almanach-Daten und Kartenbilder (Original, nie umgefärbt) über provider.almanac, Inventar über provider.chest.
-// Übergänge: 'zoom' (fraktal: das Angeklickte wächst zur nächsten Ebene, zurück schrumpft es an seinen Platz) oder 'page' (Seitenwechsel wie das Board-Bild).
+// Übergang fraktal (Georg 25.10. Variante A): das Angeklickte wächst zur nächsten Ebene, zurück schrumpft es an seinen Platz.
 
 const INK = '#130e16', TXT = '#2a2024', CREAM = '#f4ecdc', BTN = '#2b2236', WELL = '#e7dcc6', HI = '#fff6e0'
 const CARD_AR = 1.79
@@ -9,7 +9,7 @@ const CARD_AR = 1.79
 const FORMS = { desk: { ins: [24, 24, 24, 24], pad: 18, title: 24 }, phoneL: { ins: [10, 50, 20, 50], pad: 12, title: 20 } }
 const EASE_POP = 'cubic-bezier(.2,.9,.25,1.12)' // leichter Überschwinger (Cartoon), nie mehr als 12 %
 
-export function createL3({ root, inkText, reduced = () => false, transition = 'zoom', onState = null }) {
+export function createL3({ root, inkText, reduced = () => false, onState = null }) {
   const back0 = el('div', 'kfb-l3'); back0.style.cssText = 'position:absolute;inset:0;display:none;pointer-events:auto;background:rgba(24,14,28,.42);z-index:40'
   const panel = el('div', 'kfb-l3-panel'); panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true')
   back0.append(panel); root.append(back0)
@@ -50,7 +50,7 @@ export function createL3({ root, inkText, reduced = () => false, transition = 'z
     h.append(button('✕', close, { round: true, size: 34 * V.s, aria: 'Schließen', data: 'close' })); return h
   }
   function flip(node, from, { dur = 360, delay = 0, fade = false } = {}) { // FLIP: vom Ursprungs-Rechteck an den neuen Platz (fraktaler Zoom)
-    if (!from || transition !== 'zoom') return
+    if (!from) return
     const to = node.getBoundingClientRect(); if (!to.width || !to.height) return
     const dx = from.left - to.left, dy = from.top - to.top, sx = from.width / to.width, sy = from.height / to.height
     node.style.transformOrigin = '0 0'
@@ -190,11 +190,11 @@ export function createL3({ root, inkText, reduced = () => false, transition = 'z
 
   // ── Ablauf ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   function render(anim0) { S._after = null; const parts = S.kind === 'almanac' ? almanac(anim0) : S.kind === 'settings' ? settings() : chest(); panel.replaceChildren(...parts); S._after?.(); S.from = null; onState?.(state()) }
-  function go(to, from = null, quiet = false) { Object.assign(S, to); S.from = from; render(!quiet); if (quiet && transition === 'zoom') anim(panel.querySelector('#kfb-l3-big'), [{ opacity: 0.4 }, { opacity: 1 }], { duration: 140 }) }
+  function go(to, from = null, quiet = false) { Object.assign(S, to); S.from = from; render(!quiet); if (quiet) anim(panel.querySelector('#kfb-l3-big'), [{ opacity: 0.4 }, { opacity: 1 }], { duration: 140 }) }
   function open(kind, provider, { at = null, from = null } = {}) {
     S.kind = kind; S.provider = provider; S.level = kind === 'almanac' ? (at?.level || 1) : 0; S.deck = at?.deck ?? null; S.num = at?.num ?? null; S.sel = at?.sel ?? 0; S.tab = at?.tab ?? S.tab; S.from = null
     back0.style.display = 'block'; render(true)
-    if (from && transition === 'zoom') flip(panel, from, { dur: 300, fade: true }); else anim(back0, [{ opacity: 0 }, { opacity: 1 }], { duration: 140 })
+    if (from) flip(panel, from, { dur: 300, fade: true }); else anim(back0, [{ opacity: 0 }, { opacity: 1 }], { duration: 140 })
   }
   function close() { if (!S.kind) return false; const k = S.kind; S.kind = null; S.level = 0; back0.style.display = 'none'; panel.replaceChildren(); onState?.(state(), k); return true }
   function back() { // Esc / ‹: eine Ebene zurück, auf Ebene 1 (bzw. in der Truhe) schließen
@@ -207,6 +207,6 @@ export function createL3({ root, inkText, reduced = () => false, transition = 'z
       return true }
     return close()
   }
-  const state = () => ({ kind: S.kind, level: S.level, deck: S.deck, num: S.num, sel: S.sel, tab: S.tab, crumbs: S.crumbs.slice(), form: V.form, transition })
+  const state = () => ({ kind: S.kind, level: S.level, deck: S.deck, num: S.num, sel: S.sel, tab: S.tab, crumbs: S.crumbs.slice(), form: V.form })
   return { layout, open, close, back, isOpen: () => !!S.kind, kind: () => S.kind, state, refresh: () => S.kind && render(false), el: back0, panel }
 }

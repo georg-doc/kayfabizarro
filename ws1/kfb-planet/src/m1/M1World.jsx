@@ -22,13 +22,14 @@ import ModuleHost from '../ModuleHost'
 import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
-import M2Car, { M2_ON, M2STATE, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
+import M2Car, { M2_ON, M2STATE, M2EVENTS, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
 import { createTravelState } from './travelState'
 import StuntField from '../m3/stuntField'
 import ElanRings, { ELAN_RUN } from './ElanRings'
 import { RACER_COURSE_SCALE } from './elanCourse'
 import { WORLD_K } from '../worldScale.js'
 import M1Player, { FOOT, START, M1INPUT, M1MOVE, M1BOUNDS, M1CAM, ELAN_MEM } from './M1Player'
+import { footFlightTelemetry } from './hudTelemetry.js' // WS1e: HUD-Säule beim Fliegen zu Fuß (nur lesend)
 import { STAGE_CAMS, STAGE_MARKS } from '../Stage'
 import { M1CLOCK, STEP } from './m1Clock'
 import { K, G } from './m1Scale.js'
@@ -79,7 +80,7 @@ import { isTerrain2, TERRAIN2_CFG } from '../look/terrain2.js'
 import { stagePaletteFor } from '../stagePalette'
 import HudR5f from '../HudR5f'
 import { cardImage } from '../cardImage'
-import HudClay, { clayHudAvailable, hud3dAvailable } from '../HudClay' // Knet-HUD R1 (V-656): hud=clay, Standard Holz bis Georgs Abnahme
+import HudClay, { clayHudAvailable, hud3dAvailable } from '../HudClay' // HUD 3D (Standard, V-743) und Knet-HUD R1 (hud=clay) über einen Wirt
 import { createFoundItems3d } from '../modules/foundItems3d'
 import { createPath3d } from '../modules/path3d'
 import { placeLoot } from '../world/loot.js'
@@ -278,8 +279,8 @@ const M1GL = { gl: null, scene: null }
 // springt in die Fluff-Leiste (fl.land je Sorte), V Faust / B Blaster setzen die Waffe der Aktionsleiste, N legt die Cartoon-Bombe in den Kontext-Platz und
 // zündet sie (Klick auf die Bombe zündet ebenso). Rucksack-Taste nur angezeigt (Fundsachen folgen mit C3b).
 const KIND_INDEX = { tragic: 0, comic: 1, absurd: 2, heroic: 3, mystical: 4, forbidden: 5 }
-// Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard clay seit Georgs Abnahme 22.10.). Ohne src/private immer Holz.
-const HUD_SKIN = (/(^|[#,])hud=(clay|wood|3d)(,|$)/.exec(hash) || [0, 0, 'clay'])[2] /* hud=3d: HUD 3D R1 Spike (Georg 24.10.), nur per Schalter */ // Georg 22.10.: Knet-HUD ist Standard, hud=wood = Holz-HUD
+// HUD: Standard HUD 3D (Georg 25.10., V-743), hud=clay (Knet-HUD R1) und hud=wood (Holz R5f) nur zum Vergleich. Rückfall 3D → Knet → Holz, wenn die privaten Modelle fehlen.
+const HUD_SKIN = (/(^|[#,])hud=(clay|wood|3d)(,|$)/.exec(hash) || [0, 0, '3d'])[2]
 // Ziele für den HUD-Pfeil (vorerst): Bühne und die drei Obstgarten-Mitten (HARVEST_ZONES); Höhe = Gelände + 2 m
 const goalAt = (x, z) => () => ({ x, y: (mods.terrain?.surfaceAt || terrainHeight)(x, z) + 2, z })
 const ORCHARD_NAME = { goblin: 'Goblin-Garten', atlantis: 'Atlantis-Garten', utopia: 'Utopia-Garten' }
@@ -300,7 +301,9 @@ const CLAY_HOST = {
   // HUD 3D Paket 4 (Lead 24.10., additiv): Zielliste für das Karten-Flyout; Auswahl setzt das Ziel des Pfeils. Owner vorerst der M1-Wirt, später Quest/POI.
   goals: () => HUD_GOALS.map((g) => ({ id: g.id, name: g.name, world: g.world, pos: g.pos() })),
   setGoal: (id) => { if (HUD_GOALS.some((g) => g.id === id)) HUD_GOAL.id = id; return HUD_GOAL.id },
-  telemetry: () => (carLive() ? M2STATE.telemetry?.() ?? null : null), // HUD-Tempo-Leiste: Tempo/Boost vom Fahrzeug (nur lesend)
+  // HUD-Säule und Flughöhe (nur lesend): im Racer vom Fahrzeug (M2STATE.telemetry), zu Fuß im Schwungflug aus dem Elan-Zustand (ELAN_MEM.state) – gleiches
+  // Format und gleiche km/h-Umrechnung (src/m1/hudTelemetry.js); Höhe über Grund aus groundHeight der aktiven Welt
+  telemetry: () => (carLive() ? M2STATE.telemetry?.() ?? null : PLAYER_CTRL.ref?.current?.flying?.() && ELAN_MEM.state ? footFlightTelemetry(ELAN_MEM.state, worldPosOf(mods.player)?.toArray() || null, groundHeight) : null),
   isNight: () => TODV <= 0.25, // Kassetten-Tasten Tag/Nacht (V-707), gleiche Grenze wie das Nacht-Figurenlicht
   fluffTotal: () => mods.orchard?.total?.() ?? null, // Gesamt-Fluff (kfb.save fluffTotal, dd7de55): je gesammelt, nie verbraucht – HUD liest nur
   // HUD 3D Almanac (Lead 24.10.: Haken beim M1-Wirt, Startinhalt = Bühnen-Deck; echter Owner später das Karten-Journal kfb.world-save/2)
@@ -365,7 +368,7 @@ function Orchard() {
   return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} /><ModuleHost create={makeCombat} options={COMBAT_OPTS} />
     {LANTERNS_ON && <><ModuleHost create={makeLanterns} options={lanterns} /><ModuleHost create={makePract} options={pract} /></>}
     {(() => { const P = { counts: counts0, onApi: (a) => { hud.current = a; HARVEST_STATE.hud = a; if (CHAT_SYL) setHudRects(a?.clay ? () => a.clay()?.rects?.() : null) }, onCtx: (c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }, onInteract: pickUp, onThrow: throwAway, onEquip: equip }
-      return HUD_SKIN === '3d' && hud3dAvailable() ? <HudClay {...P} host={CLAY_HOST} kit="3d" /> : HUD_SKIN === 'clay' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
+      return HUD_SKIN === '3d' && hud3dAvailable() ? <HudClay {...P} host={CLAY_HOST} kit="3d" /> : HUD_SKIN !== 'wood' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
 }
 // V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine; Stärke und Farbe 1:1 aus dem Practicals-Angebot
 // von kfb-gem (Stimmung × Puls × Flackern), tagsüber 0. V-632: über kfb-groundfx (gleiche Kegel-Rechnung wie kfb-light-pool.v1), Kanal 'lanterns' –
@@ -548,6 +551,10 @@ export default function M1Root() {
 // travel=1: führt die Aufträge der Zustandsmaschine aus – Wagen neben der Figur ein- und aushängen, Figur einfrieren und verbergen, Kamera abgeben.
 // Figur im Dach (J-7) und Entstehen/Einsaugen (kfb-fluff-suck build/suck) kommen erst nach Georgs Bild-Abnahme; bis dahin Platzhalter.
 const CAR_STATES = ['drive', 'flyRacer', 'exit']
+// Im Wagen: Kapsel der Figur ohne Kollider (stößt den Wagen nicht, bleibt nicht als unsichtbares Hindernis zurück)
+const RIDE = { on: false }
+const rideOn = (P) => { RIDE.on = true; P?.handle?.()?.body?.setEnabled?.(false) }
+const rideOff = (P) => { if (!RIDE.on) return; RIDE.on = false; P?.handle?.()?.body?.setEnabled?.(true) }
 function TravelHost({ player }) {
   const [at, setAt] = useState(null)
   const travel = useMemo(() => at && { at, state: () => TRAVEL_SM.state, progress: () => TRAVEL_SM.progress(), drives: () => TRAVEL_SM.state === 'drive' || TRAVEL_SM.state === 'flyRacer', camOnCar: () => CAR_STATES.includes(TRAVEL_SM.state) }, [at])
@@ -559,14 +566,18 @@ function TravelHost({ player }) {
         TRAVEL.car = true; setAt({ p: [p.x + dx, gh(p.x + dx, p.z + dz) + 1.2 * K, p.z + dz], yaw }) }
       if (e.type === 'car' && !e.on) { TRAVEL.car = false; setAt(null) }
       if (e.type === 'player') P?.freeze(e.freeze)
-      if (e.type === 'camera' && e.to === 'car') { P?.yieldCamera(true); if (fig) fig.visible = false }
-      if (e.type === 'camera' && e.to === 'player') { const cp = M2STATE.carPos?.(); if (cp) { const yaw = M2STATE.carYaw?.() ?? 0, [dx, dz] = side(yaw, -2.6 * K); P?.teleport([cp.x + dx, gh(cp.x + dx, cp.z + dz) + FOOT + 0.3 * K, cp.z + dz], yaw) /* teleport setzt die Kapselmitte (wie START) */ }
+      if (e.type === 'camera' && e.to === 'car') { P?.yieldCamera(true); if (fig) fig.visible = false; rideOn(P) }
+      if (e.type === 'camera' && e.to === 'player') { rideOff(P); const cp = M2STATE.carPos?.(); if (cp) { const yaw = M2STATE.carYaw?.() ?? 0, [dx, dz] = side(yaw, -2.6 * K); const x = cp.x + dx, z = cp.z + dz, y = P?.castDown?.(x, z, cp.y + 3 * K) ?? gh(x, z); P?.teleport([x, y + FOOT + 0.3 * K, z], yaw) /* Strahl auf alle Kollider (Theater, Gelände); teleport setzt die Kapselmitte (wie START) */ }
         if (fig) fig.visible = true; P?.yieldCamera(false) }
     } }
   useFrame((_, dt) => { const fl = !!player.current?.flying?.(), st = TRAVEL_SM.state
     if (fl && st === 'foot') TRAVEL_FX.push(...TRAVEL_SM.send('flyStart')); else if (!fl && st === 'flyFigure') TRAVEL_FX.push(...TRAVEL_SM.send('flyEnd'))
-    TRAVEL_FX.push(...TRAVEL_SM.update(dt)); if (TRAVEL_FX.length) apply(TRAVEL_FX.splice(0)) })
-  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car }); return () => { TRAVEL.car = false; if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
+    TRAVEL_FX.push(...TRAVEL_SM.update(dt)); if (TRAVEL_FX.length) apply(TRAVEL_FX.splice(0))
+    // Kapsel der verborgenen Figur fährt mit (Kollider aus): worldPosOf(mods.player) = Wagen für Ernte, NPC, Ton, Ziele
+    const cp = RIDE.on && M2STATE.carPos?.(); if (cp) player.current?.teleport([cp.x, cp.y + FOOT + 0.3 * K, cp.z]) })
+  // Racer-Flug: Abflug (Rampe / zweimal Leertaste) und Landung von racerFlight (M2EVENTS fly/land) → Zustandsmaschine drive ↔ flyRacer
+  useEffect(() => { const a = M2EVENTS.on('fly', () => TRAVEL_FX.push(...TRAVEL_SM.send('takeoff'))), b = M2EVENTS.on('land', () => TRAVEL_FX.push(...TRAVEL_SM.send('land'))); return () => { a(); b() } }, [])
+  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car, ride: () => RIDE.on }); return () => { TRAVEL.car = false; rideOff(player.current); if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
   return travel ? <M2Car player={player} travel={travel} /> : null
 }
 

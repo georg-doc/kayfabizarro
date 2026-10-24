@@ -13,7 +13,7 @@ async function open(form, ctxExtra = {}) {
   const ctx = await browser.newContext({ ...FORMS[form], ...ctxExtra })
   await ctx.addInitScript((save) => { try { localStorage.setItem('kfb.save', JSON.stringify(save)) } catch {} }, SAVE)
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', (e) => errs.push(e.message))
-  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,hud=3d')
+  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean')
   await page.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }); await wait(page, 5000)
   await page.waitForFunction(() => window.__kfbM1.status?.().ready?.card === 'CARD', null, { timeout: 45000 }).catch(() => errs.push('Plakat nicht geladen'))
   return { ctx, page, errs }

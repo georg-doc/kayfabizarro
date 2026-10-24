@@ -1,6 +1,6 @@
 // HUD 3D Paket 5 (Georg 25.10.): Abnahmebilder + Clips im Live-Stand (Site-Hash, Spielstand 97). Truhe klappt auf + Truhe 20, fraktaler Almanach (Decks → Karten → Detail).
 // Almanach mit cards=12 (Owner-Schalter des M1-Wirts, sonst nur 2 Karten); Truhe mit echten Waffen (weapon=blaster ausgerüstet) und drei Fundsachen aus der Beute-Tabelle
-// (gleiche Form wie das Aufheben im Spiel). Ausgabe test/out/hud-3d/p5/: <form>_<n>_*.png, clip_truhe.webm, clip_almanach_zoom.webm, clip_almanach_page.webm (B: Seitenwechsel)
+// (gleiche Form wie das Aufheben im Spiel). Ausgabe test/out/hud-3d/p5/: <form>_<n>_*.png, clip_truhe.webm, clip_almanach.webm
 import { chromium } from 'playwright'
 import { SITE_HASH } from '../src/siteHash.js'
 import fs from 'fs'; import path from 'path'
@@ -15,7 +15,7 @@ async function open(form, extra = '', ctxExtra = {}) {
   const ctx = await browser.newContext({ ...FORMS[form], ...ctxExtra })
   await ctx.addInitScript((save) => { try { localStorage.setItem('kfb.save', JSON.stringify(save)) } catch {} }, SAVE)
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', (e) => errs.push(e.message))
-  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,hud=3d,cards=12,weapon=blaster' + extra)
+  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,cards=12,weapon=blaster' + extra)
   await page.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }); await wait(page, 5000)
   await page.waitForFunction(() => window.__kfbM1.status?.().ready?.card === 'CARD', null, { timeout: 45000 }).catch(() => errs.push('Plakat nicht geladen'))
   await page.waitForFunction(() => (window.__kfbM1.harvest().hud.weapons?.() || []).length > 0, null, { timeout: 30000 }).catch(() => errs.push('keine Waffen geladen'))
@@ -39,7 +39,7 @@ for (const form of ['desk', 'phoneL']) {
     await page.click('#kfb-l3-cards [data-card="3"]').catch(() => page.click('#kfb-l3-cards [data-card]')); await wait(page, 1500); await snap(page, form, '6_almanach_detail', errs)
     await ctx.close() }
 }
-// Clips (Desktop 1440×900): Truhe auf/zu; Almanach öffnen, fächern, Detail, blättern, mit Esc zurück – A zoom (fraktal), B page (Seitenwechsel)
+// Clips (Desktop 1440×900): Truhe auf/zu; Almanach öffnen, fächern, Detail, blättern, mit Esc zurück (Zoom, fraktal)
 async function clip(name, extra, fn) {
   const { ctx, page } = await open('desk', extra, { deviceScaleFactor: 1, recordVideo: { dir: OUT + '/_v', size: { width: 1440, height: 900 } } })
   await fn(page); const v = page.video(); await ctx.close(); fs.renameSync(await v.path(), `${OUT}/${name}.webm`); fs.rmSync(OUT + '/_v', { recursive: true, force: true }); console.log('clip', name)
@@ -48,7 +48,6 @@ await clip('clip_truhe', '', async (p) => { await wait(p, 600); await p.click('b
 const almanachRun = async (p) => { await wait(p, 600); await p.click('[data-ui=fan]'); await wait(p, 900); await p.click('#kfb-hud3d-fan button[data-l3=almanac]'); await wait(p, 1300); await p.click('#kfb-l3-decks [data-deck]'); await wait(p, 1600)
   await p.click('#kfb-l3-cards [data-card="3"]').catch(() => p.click('#kfb-l3-cards [data-card]')); await wait(p, 1500); await p.click('#kfb-l3 [data-l3=next]'); await wait(p, 900); await p.click('#kfb-l3 [data-l3=next]'); await wait(p, 900)
   for (let i = 0; i < 3; i++) { await p.keyboard.press('Escape'); await wait(p, 1000) } }
-await clip('clip_almanach_zoom', ',alm=zoom', almanachRun)
-await clip('clip_almanach_page', ',alm=page', almanachRun)
+await clip('clip_almanach', '', almanachRun)
 fs.writeFileSync(`${OUT}/messung.json`, JSON.stringify(log, null, 1))
 await browser.close()

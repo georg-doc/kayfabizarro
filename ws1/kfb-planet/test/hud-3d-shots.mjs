@@ -11,7 +11,7 @@ async function shot(form, name, extraHash, fn) {
   // Echter Spielstand statt nur HUD-Anzeige (Lead 24.10.): Kugeln 5/12/2/7/0/26 (tragic, comic, absurd, heroic, mystical, forbidden), Gesamt 97 > Summe 52 = Lebenszeit-Zahl
   await ctx.addInitScript((save) => { try { localStorage.setItem('kfb.save', JSON.stringify(save)) } catch {} }, { schema: 'kfb.save/1', version: 1, savedAt: new Date().toISOString(), flags: {}, fluff: { tragic: 5, comic: 12, absurd: 2, heroic: 7, mystical: 0, forbidden: 26 }, fluffTotal: 97, collected: [], player: { pos: [0, 0, 0], zone: null } })
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', (e) => errs.push(e.message))
-  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean,hud=3d' + extraHash)
+  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + ',debug,clean' + extraHash)
   await page.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }); await page.waitForTimeout(6000)
   // Bühnenplakat: warten, bis das Kartenbild geladen ist (sonst Textfassung im Bild, Lead 24.10.)
   await page.waitForFunction(() => window.__kfbM1.status?.().ready?.card === 'CARD', null, { timeout: 45000 }).catch(() => errs.push('Plakat-Bild nicht geladen: ' + 'Quelle ≠ CARD'))

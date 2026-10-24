@@ -3,7 +3,7 @@
 // die sichtbaren Teile des Holz-HUD (#kfb-hud-r5f) aus dem DOM. Figuren: je Anker im Bild die Fläche zwischen Kopf (Anker) und Fuß (anchorBaseAt).
 // Der Blasen-Layer (bubbleLayer update(…, avoid)) behandelt diese Flächen wie schon gesetzte Blasen.
 import { Vector3 } from 'three'
-import { anchorAt, anchorBaseAt, anchorIds } from './bubbleAnchors'
+import { anchorAt, anchorBaseAt, anchorIds } from './bubbleAnchors.js'
 
 export const CHAT_SYL = typeof location !== 'undefined' && /(^|[#,])chat=syl(,|$)/.test(location.hash)
 // Breite einer Figur im Bild als Anteil ihrer Höhe – PLATZHALTER (Schätzwert für Kit-Figuren mit großem Kopf), bis gemessen
@@ -39,5 +39,15 @@ function figureRects(camera) {
   }
   return out
 }
+// Benachbarte HUD-Flächen (Abstand ≤ gap px) zu einer zusammenfassen: der Blasen-Layer weicht in einem Durchgang jedem Rechteck einzeln aus und
+// sprang bei einer Reihe (HUD 3D: sechs Münzen nebeneinander) an der vierten Münze nach links zurück über die ersten (Abnahme S3 0b, 25.10.)
+export function mergeRects(rects, gap = 12) {
+  const R = rects.map((r) => ({ ...r }))
+  for (let changed = true; changed;) { changed = false
+    for (let i = 0; i < R.length && !changed; i++) for (let j = i + 1; j < R.length; j++) { const a = R[i], b = R[j]
+      if (a.x - gap < b.x + b.w && a.x + a.w + gap > b.x && a.y - gap < b.y + b.h && a.y + a.h + gap > b.y) {
+        const x = Math.min(a.x, b.x), y = Math.min(a.y, b.y); R[i] = { ...a, x, y, w: Math.max(a.x + a.w, b.x + b.w) - x, h: Math.max(a.y + a.h, b.y + b.h) - y }; R.splice(j, 1); changed = true; break } } }
+  return R
+}
 // Reihenfolge = Vorrang: der Blasen-Layer weicht in einem Durchgang nacheinander aus, das letzte Rechteck gewinnt – HUD zuletzt (nie überdecken)
-export const avoidRects = (camera) => [...figureRects(camera), ...hudRects()]
+export const avoidRects = (camera) => [...figureRects(camera), ...mergeRects(hudRects())]

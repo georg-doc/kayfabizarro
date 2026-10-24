@@ -1,4 +1,4 @@
-// Knet-HUD R1 · Wirt im Spiel (V-656, Schalter hud=clay; Standard bleibt das Holz-HUD R5f, bis Georg im Spiel abnimmt). Gleiche api wie HudR5f, damit
+// HUD-Wirt im Spiel: HUD 3D (kit '3d', Standard seit Georg 25.10. V-743) und Knet-HUD R1 (V-656, hud=clay, nur zum Vergleich). Gleiche api wie HudR5f, damit
 // M1World nur den Wirt tauscht. Das Holz-HUD läuft unsichtbar mit (hide): es hält Zähler, Rucksack-Ansicht mit 20 Fächern, Waffen und Wegwerfen –
 // kein zweites Inventar. Sichtbar ist das Knet-Modul (src/hud/clayHud.js) im Overlay-Pass; hier nur, was DOM sein muss:
 //   · Trefferflächen über den Props (Buttons mit aria-label, Tab-Fokus; die Feder-Bewegung der Props verschiebt sie nicht)
@@ -23,12 +23,13 @@ import { createL3 } from './hud/hudL3' // Paket 5: Overlays L3 (fraktaler Almana
 import { ic as r5Icon } from './vendor/hud/hud-r5/r5f-hud.js'
 import { DECKS, cardsOfDeck, cardAt } from './cards'
 
-// Tastenfarben der Kassette (V-707): N33 controlTheme, sobald vorhanden (privates JSON, Schlüssel controlTheme.day/night mit hi/mid/lo/symbol/outline/gloss);
-// bis dahin vorläufig: Tag Orange, Nacht Türkis.
+// Tastenfarben der Kassette (V-707): N33 controlTheme (privates JSON, WSB 25.10.): byTimeOfDay.day/night → themes[name] = { hi, mid, lo }; Symbol glyph.fill
+// ohne Kontur (glyph.outline null) mit weichem Schatten leicht nach unten; Glanz nur als schmaler Randbogen, Deckkraft 0,45. Fehlt controlTheme, bleiben die
+// Knöpfe neutral grau und status meldet es (keine vorläufigen Farben mehr).
 const N33 = Object.values(import.meta.glob('./private/50_BLENDER/N33/data/kfb_hud_readability.r1.json', { eager: true, import: 'default' }))[0] || null
-const CTL_FALLBACK = { day: { hi: '#ffc07a', mid: '#f08a4b', lo: '#b4582c', symbol: '#fff4dc', outline: '#130e16', gloss: 'rgba(255,248,232,.55)' },
-  night: { hi: '#8de6dc', mid: '#2fa8a1', lo: '#1b6a67', symbol: '#fff4dc', outline: '#130e16', gloss: 'rgba(235,255,252,.5)' } }
-export const CTL_THEME = { day: { ...CTL_FALLBACK.day, ...(N33?.controlTheme?.day || {}) }, night: { ...CTL_FALLBACK.night, ...(N33?.controlTheme?.night || {}) }, source: N33?.controlTheme ? 'N33 controlTheme' : 'vorläufig' }
+const CT = N33?.controlTheme || null, CT_GREY = { hi: '#c9c6cc', mid: '#9a96a0', lo: '#5c5862' }
+const ctlOf = (when) => ({ ...(CT?.themes?.[CT?.byTimeOfDay?.[when]] || CT_GREY), symbol: CT?.glyph?.fill || '#fff8e8', outline: CT?.glyph?.outline ?? null, shadow: 'rgba(30,14,6,.45)', gloss: 'rgba(255,248,232,.45)' })
+export const CTL_THEME = { day: ctlOf('day'), night: ctlOf('night'), source: CT ? 'N33 controlTheme (' + CT.byTimeOfDay?.day + '/' + CT.byTimeOfDay?.night + ')' : 'fehlt (neutral grau)' }
 const BANGERS_HREF = 'https://fonts.googleapis.com/css2?family=Bangers&display=swap'
 const RM_KEY = 'kfb.hud.reducedMotion.v1'
 const lsGet = (k) => { try { return localStorage.getItem(k) } catch { return null } }
@@ -54,7 +55,7 @@ export default function HudClay(props) {
     if (!ok) return undefined
     if (!document.querySelector('link[data-kfb-bangers]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = BANGERS_HREF; l.dataset.kfbBangers = '1'; document.head.appendChild(l) }
     const S = sig.current
-    const hud = K3 ? createHud3d({ reducedMotion, cassette: (/(^|[#,])cas=(old|new)(,|$)/.exec(location.hash) || [])[2] || 'new', boost: (/(^|[#,])boost=(a|b)(,|$)/.exec(location.hash) || [])[2] || 'a' }) : /* cas=old = Kassette und Größen vor Georgs 24.10.-Wunsch (A/B) */ createClayHud({
+    const hud = K3 ? createHud3d({ reducedMotion, cassette: (/(^|[#,])cas=(old|new)(,|$)/.exec(location.hash) || [])[2] || 'new' }) : /* cas=old = Kassette und Größen vor Georgs 24.10.-Wunsch (A/B) */ createClayHud({
       palette: () => host.palette?.(), speed: () => S.kmh, heading: () => S.heading, mapPos: () => S.prev,
       mapSample: (x, z) => mapColor(host, x, z), mapMarks: () => host.marks?.() || [], path: host.path || [],
       nowPlaying: () => (A.musicPaused?.() ? { title: 'Pause' } : A.nowPlaying()), audioOn: () => !A.volumes().muted, reducedMotion,
@@ -67,7 +68,7 @@ export default function HudClay(props) {
       .then((srcs) => { const keys = last7.filter((c, i) => srcs[i]), ok = srcs.filter(Boolean); if (ok.length) dom.current?.setFan?.({ srcs: ok, keys, total: al.total ?? al.cards.length, decks: al.decks ?? 1 }) }) }
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
     dom.current = K3 ? buildDom3d(hud, inner, { host, onInteract: props.onInteract, pos: () => sig.current.prev, heading: () => sig.current.heading }) : buildDom(hud, inner, () => clay.current)
-    expose('ClayHud', { kit, l3: () => dom.current?.l3?.state() || null, openAlmanac: (at) => dom.current?.openAlmanac?.(at || null), openSettings: (tab) => dom.current?.openSettings?.(tab || null), openChest: (sel) => dom.current?.openChest?.(sel), l3Back: () => dom.current?.l3Back?.(), lid: () => hud.lidState?.() || null, speed: () => hud.speedState?.() || null, speedFeed: (f) => { SPEED_FEED.fn = typeof f === 'function' ? f : f ? () => f : null; return !!SPEED_FEED.fn }, /* Prüfhilfe: Telemetrie-Werte einspeisen (ms, zones, fly, boosting) */ layout: () => hud.layout?.() || null, cassetteButtons: () => hud.cassetteButtons?.() || {}, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
+    expose('ClayHud', { kit, l3: () => dom.current?.l3?.state() || null, openAlmanac: (at) => dom.current?.openAlmanac?.(at || null), openSettings: (tab) => dom.current?.openSettings?.(tab || null), openChest: (sel) => dom.current?.openChest?.(sel), l3Back: () => dom.current?.l3Back?.(), lid: () => hud.lidState?.() || null, speed: () => hud.speedState?.() || null, altState: () => hud.altState?.() || null, speedFeed: (f) => { SPEED_FEED.fn = typeof f === 'function' ? f : f ? () => f : null; return !!SPEED_FEED.fn }, /* Prüfhilfe: Telemetrie-Werte einspeisen (ms, zones, fly, boosting) */ layout: () => hud.layout?.() || null, cassetteButtons: () => hud.cassetteButtons?.() || {}, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
       goalRel: (bDeg, pDeg = 0, dist = 300, name = 'Testziel') => { const pp = host.target?.(); if (!pp) return null; camera.getWorldDirection(_f); _f.y = 0; _f.normalize(); _r.crossVectors(_f, _up).normalize()
         const b = bDeg * DEG, p = pDeg * DEG, hz = Math.cos(p) * dist; GOAL.dbg = { name, pos: { x: pp.x + (_f.x * Math.cos(b) + _r.x * Math.sin(b)) * hz, y: (pp.y ?? 0) + Math.sin(p) * dist, z: pp.z + (_f.z * Math.cos(b) + _r.z * Math.sin(b)) * hz } }; return GOAL.dbg }, toggleCompass: (v) => hud.toggleCompass(v), uiState: (k) => hud.uiState(k), setAnimator: (k, fn) => hud.setAnimator(k, fn), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
     return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
@@ -95,7 +96,8 @@ export default function HudClay(props) {
     // in beiden Modi gleich). Zu Fuß im Flug: Tempo aus der Lage auf die Fahrzonen-Vorgabe (160 km/h = voll).
     if (K3) { const md = host.mode?.() || 'walk', tel0 = host.telemetry?.(), fd = SPEED_FEED.fn?.(tel0), tel = fd ? { ...tel0, ...fd } : tel0
       const fly = md === 'fly' || !!tel?.fly, ms = tel ? tel.ms ?? tel.speed : null, kmh = ms != null ? ms * 3.6 : S.kmh
-      hud.setSpeed({ visible: (md !== 'walk' || fly) && !(FOOT_OFF && !tel0), kmh, speed: ms, zones: tel?.zones || null, frac: kmh / 160, boost: tel ? !!(tel.boosting || tel.freeBoost) : false, fly, stall: !!(fly && tel?.stall != null && ms != null && ms < tel.stall) }) }
+      hud.setSpeed({ visible: md !== 'walk' || fly, kmh, speed: ms, zones: tel?.zones || null, frac: kmh / 160, boost: tel ? !!(tel.boosting || tel.freeBoost) : false, fly, stall: !!(fly && tel?.stall != null && ms != null && ms < tel.stall) })
+      hud.setAlt({ visible: fly && tel?.agl != null, m: tel?.agl ?? null }) } // Flughöhe über Grund (Georg 25.10.), Racer-Flug und Fuß-Flug
     hud.update(dt, { yawRate: S.yawRate, accel: S.accel })
     dom.current?.sync()
     const I = inner.current; if (I) { const open = I.bagOpen(); if (open !== dom.current?.bagWas) { dom.current.bagWas = open; hud.setChestOpen(open) } }
@@ -186,7 +188,6 @@ function buildDom(hud, inner, getHud) {
 }
 
 // ── DOM für HUD 3D (Spike-Paket 1): Trefferflächen Truhe und Pfeil, Name und Entfernung unter dem Pfeil (Bangers mit Kontur, ohne Schild), Waffen-Anzeige ──
-const FOOT_OFF = typeof location !== 'undefined' && /(^|[#,])fusstempo=aus(,|$)/.test(location.hash) // Prüf-Schalter V-736: Säule beim Fliegen zu Fuß aus (Bildvergleich für Georg)
 const SPEED_FEED = { fn: null } // nur debug (expose): eingespeiste Telemetrie für Prüfbilder (Flug-Start braucht eine Rampe)
 const inkText = (size, color = '#fff6e0') => { const o = Math.max(1, Math.round(size / 13)), o2 = o + Math.max(1, Math.round(size / 18)), I = INK3
   const sh = [`${o2}px ${o2}px 0 ${I}`, `${o}px ${o2}px 0 ${I}`, `${o2}px ${o}px 0 ${I}`, `-${o}px -${o}px 0 ${I}`, `${o}px -${o}px 0 ${I}`, `-${o}px ${o}px 0 ${I}`, `0 ${o}px 0 ${I}`, `${o}px 0 0 ${I}`, `-${o}px 0 0 ${I}`, `0 -${o}px 0 ${I}`].join(',')
@@ -213,12 +214,11 @@ function buildDom3d(hud, inner, P = {}) {
   }
   // Knöpfe der N34-Kassette nach „Kassette als Player“ r5 (V-707): plastische Taste (Sockel, Kuppe, Schatten; beim Drücken eingesunken), Glanz nur als dünner
   // Rand, Symbol cremeweiß mit dunkler Kontur, kein Umriss um die Taste. Farbe nach Tageszeit (Tag Orange, Nacht Türkis), Schalter ctl=auto|day|night.
-  // Werte aus N33 controlTheme, sobald es im privaten JSON steht; bis dahin CTL_FALLBACK (vorläufig, Lead 24.10.). Symbole wie n34r2_page icon().
+  // Werte aus N33 controlTheme (siehe CTL_THEME oben). Symbole wie n34r2_page icon().
   // ── Overlays L3 (Paket 5): fraktaler Almanach und Truhe 20 in einer Hülle (src/hud/hudL3.js); Inhalte von den Ownern ───────────────────────────
   // Almanach: host.almanac() (Owner M1-Wirt/Karten-Journal) + Deck-Titel/-Größe aus cards.js; Bilder über cardImage (Original). Truhe: R5f-api (Inventar 20),
-  // Ausrüsten = Zifferntaste der Waffe (hostKeys), Wegwerfen = throwItem wie im Holz-Rucksack. Übergang alm=zoom (Standard, fraktal) | alm=page (Seitenwechsel)
-  const ALM = (/(^|[#,])alm=(zoom|page)(,|$)/.exec(location.hash) || [])[2] || 'zoom'
-  const l3 = createL3({ root, inkText, reduced: reducedMotion, transition: ALM, onState: (st) => { hud.setChestOpen(st.kind === 'chest'); hud.setUiFlag('chest', 'on', st.kind === 'chest'); hud.setUiFlag('gear', 'on', st.kind === 'settings') } })
+  // Ausrüsten = Zifferntaste der Waffe (hostKeys), Wegwerfen = throwItem wie im Holz-Rucksack. Almanach-Übergang: Zoom (fraktal, Georg 25.10. Variante A)
+  const l3 = createL3({ root, inkText, reduced: reducedMotion, onState: (st) => { hud.setChestOpen(st.kind === 'chest'); hud.setUiFlag('chest', 'on', st.kind === 'chest'); hud.setUiFlag('gear', 'on', st.kind === 'settings') } })
   const deckMeta = new Map()
   const metaOf = (id) => { if (!deckMeta.has(id)) { const di = DECKS.findIndex((d) => d.id === id), all = di < 0 ? [] : cardsOfDeck(di).map(cardAt).filter((c) => c.num >= 1)
     deckMeta.set(id, { title: DECKS[di]?.title || id, total: all.length, name: new Map(all.map((c) => [c.num, c.name])) }) } return deckMeta.get(id) }
@@ -238,14 +238,15 @@ function buildDom3d(hud, inner, P = {}) {
   // Erst klappt der Deckel auf (Feder, Überschwingen sichtbar), dann wächst die Tafel aus der Truhe (220 ms); zu: Tafel weg, Deckel fällt mit Rückprall zu
   let chestT = 0
   const openChest = (sel = null) => { openFly(null); SP.settings(false); clearTimeout(chestT); hud.setChestOpen(true)
-    const go = () => { const r = hud.rects().chest; l3.open('chest', chestProv, { at: { sel: sel ?? 0 }, from: r ? new DOMRect(r.x, r.y, r.w, r.h) : null }) }
+    const I0 = inner.current, nw = I0?.weapons?.().length || 0, sel0 = sel ?? ((I0?.items?.().length || 0) ? nw : 0) // ohne Angabe wie der Holz-Rucksack: erste Fundsache
+    const go = () => { const r = hud.rects().chest; l3.open('chest', chestProv, { at: { sel: sel0 }, from: r ? new DOMRect(r.x, r.y, r.w, r.h) : null }) }
     if (reducedMotion()) go(); else chestT = setTimeout(go, 220) }
   const openAlmanac = (at = null, from = null) => { openFly(null); SP.settings(false); l3.open('almanac', almProv, { at, from }) }
   let l3Key = ''
   const j17 = {}; for (const k of ['play', 'next', 'mute']) { const d = document.createElement('div'); d.style.cssText = 'position:absolute;pointer-events:none;display:none'; d.dataset.j17 = k; j17[k] = d; root.append(d) }
   const ctlMode = (/(^|[#,])ctl=(auto|day|night)(,|$)/.exec(location.hash) || [])[2] || 'auto'
   const theme = () => { const night = ctlMode === 'night' || (ctlMode === 'auto' && !!host.isNight?.()); return { ...CTL_THEME[night ? 'night' : 'day'], id: night ? 'night' : 'day' } }
-  const j17svg = (kind, T, pressed = false) => { const s = 0.4, C = T.symbol, K = T.outline, sw = 0.1
+  const j17svg = (kind, T, pressed = false) => { const s = 0.4, C = T.symbol, K = T.outline, sw = 0.1, fid = 'b' + kind + T.id
     const ico = kind === 'play' ? `<path d="M${-0.55 * s} ${-s} L${0.9 * s} 0 L${-0.55 * s} ${s} Z"/>` : kind === 'pause' ? `<rect x="${-0.6 * s}" y="${-s}" width="${0.42 * s}" height="${2 * s}" rx="0.03"/><rect x="${0.18 * s}" y="${-s}" width="${0.42 * s}" height="${2 * s}" rx="0.03"/>`
       : kind === 'next' ? [-0.85, -0.05].map((o) => `<path d="M${s * o} ${-0.8 * s} L${s * (o + 0.75)} 0 L${s * o} ${0.8 * s} Z"/>`).join('') + `<rect x="${0.72 * s}" y="${-0.8 * s}" width="${0.2 * s}" height="${1.6 * s}"/>`
       : `<path d="M${-s} ${-0.35 * s} L${-0.45 * s} ${-0.35 * s} L0 ${-0.85 * s} L0 ${0.85 * s} L${-0.45 * s} ${0.35 * s} L${-s} ${0.35 * s} Z"/>`
@@ -253,11 +254,11 @@ function buildDom3d(hud, inner, P = {}) {
       : kind === 'mute' ? `<path d="M${0.3 * s} ${-0.45 * s} L${s} ${0.45 * s} M${s} ${-0.45 * s} L${0.3 * s} ${0.45 * s}" fill="none" stroke-linecap="round"/>` : ''
     const sym = (stroke, w, fill) => `<g fill="${fill}" stroke="${stroke}" stroke-width="${w}" stroke-linejoin="round">${ico}</g><g stroke="${stroke}" stroke-width="${w + 0.11}">${waves}</g>`
     const dy = pressed ? 0.12 : 0, id = 'k' + kind + T.id
-    return `<svg data-kind="${kind}" data-theme="${T.id}" viewBox="-1.2 -1.2 2.4 2.5" width="100%" height="100%" style="overflow:visible"><defs><radialGradient id="${id}" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="${T.hi}"/><stop offset=".55" stop-color="${T.mid}"/><stop offset="1" stop-color="${T.lo}"/></radialGradient></defs>`
+    return `<svg data-kind="${kind}" data-theme="${T.id}" viewBox="-1.2 -1.2 2.4 2.5" width="100%" height="100%" style="overflow:visible"><defs><filter id="${fid}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.045"/></filter><radialGradient id="${id}" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="${T.hi}"/><stop offset=".55" stop-color="${T.mid}"/><stop offset="1" stop-color="${T.lo}"/></radialGradient></defs>`
       + `<ellipse cx="0.06" cy="0.3" rx="${pressed ? 0.95 : 1.02}" ry="${pressed ? 0.86 : 0.92}" fill="rgba(19,14,22,${pressed ? 0.28 : 0.38})"/>`  // Schatten
       + `<circle cx="0" cy="0.16" r="1" fill="${T.lo}"/>`  // Sockel
       + `<g transform="translate(0 ${dy})"><circle r="0.92" fill="url(#${id})"/><path d="M${-0.72} ${-0.3} A0.8 0.8 0 0 1 ${0.18} ${-0.8}" fill="none" stroke="${T.gloss}" stroke-width="0.07" stroke-linecap="round"/>`  // Kuppe + Glanzrand
-      + sym(K, sw * 2.2, K) + sym(C, 0.06, C) + `</g></svg>` }
+      + (K ? sym(K, sw * 2.2, K) : `<g transform="translate(0 0.06)" filter="url(#${fid})">${sym(T.shadow, 0.06, T.shadow)}</g>`) + sym(C, 0.06, C) + `</g></svg>` } /* N33: ohne Kontur, weicher Schatten nach unten */
   let j17Key = ''
   const cas = {
     play: btn('Musik Pause/Weiter', () => { A.musicPause?.(!A.musicPaused?.()) }, 'cassette.play'),
@@ -307,6 +308,7 @@ function buildDom3d(hud, inner, P = {}) {
   // Tempo-Zahl und „KM/H“ mittig unter der Säule, Schrift wie Entfernung und Name unter dem Pfeil (Georg 24.10.)
   const spd = document.createElement('div'); spd.id = 'kfb-hud3d-speed'; spd.style.cssText = 'position:absolute;display:none;flex-direction:column;align-items:center;gap:2px;pointer-events:none;transform:translateX(50%)'
   const spN = document.createElement('div'), spU = document.createElement('div'); spU.textContent = 'KM/H'; spd.append(spN, spU); root.append(spd); let spKey = ''
+  const alt = document.createElement('div'); alt.id = 'kfb-hud3d-alt'; alt.style.cssText = spd.style.cssText; const alN = document.createElement('div'), alU = document.createElement('div'); alU.textContent = 'M'; alt.append(alN, alU); root.append(alt); let alKey = '' // Flughöhe: Zahl wie km/h
   // Name und Entfernung unter dem Pfeil
   const lab = document.createElement('div'); lab.id = 'kfb-hud3d-label'; lab.style.cssText = 'position:absolute;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none'
   const nm = document.createElement('div'), row = document.createElement('div'), dv = document.createElement('span'), ds = document.createElement('span')
@@ -365,7 +367,7 @@ function buildDom3d(hud, inner, P = {}) {
       { label: 'Modus', kind: 'seg', name: 'mode', items: [['walk', 'WALK'], ['drive', 'DRIVE'], ['fly', 'FLY']], get: () => host.mode?.() || 'walk', set: (m) => host.setMode?.(m) },
       { label: 'Spiel', kind: 'seg', name: 'god', items: [['game', 'GAME'], ['god', 'GOD · FOLGT', true]], get: () => 'game', set: () => {} },
       { label: 'Entwickler-Infos', kind: 'toggle', name: 'devui', get: () => DEVUI, set: (v) => setDevUi(v), disabled: devUiLocked(), title: devUiLocked() ? 'aus (clean)' : null },
-      { label: 'Holz-HUD zum Vergleich', kind: 'button', name: 'hudWood', text: 'Umschalten', onClick: () => { const h = location.hash.replace(/(^#|,)hud=\w+/g, '$1').replace(/,,+/g, ',').replace(/^#,/, '#'); location.hash = (h.length > 1 ? h + ',' : '#') + 'hud=wood'; location.reload() } }] },
+      { label: 'HUD zum Vergleich', kind: 'seg', name: 'hudSkin', items: [['3d', '3D'], ['clay', 'KNET'], ['wood', 'HOLZ']], get: () => '3d', set: (v) => { if (v === '3d') return; const h = location.hash.replace(/(^#|,)hud=\w+/g, '$1').replace(/,,+/g, ',').replace(/^#,/, '#'); location.hash = (h.length > 1 ? h + ',' : '#') + 'hud=' + v; location.reload() } }] }, /* V-743: 3D ist Standard, Knet und Holz nur zum Vergleich */
     { id: 'audio', label: 'Ton', rows: () => [
       { label: 'Ton', kind: 'toggle', name: 'sound', get: () => !A.volumes().muted, set: (v) => A.setVolume('muted', !v) },
       ...VOLS.map(([k, l]) => ({ label: l, kind: 'slider', name: k, get: () => A.volumes()[k] ?? 0.7, set: (v) => A.setVolume(k, v) }))] },
@@ -427,6 +429,9 @@ function buildDom3d(hud, inner, P = {}) {
       { const sp = hud.speedState(), key3 = sp.visible ? sp.kmh + '|' + k : '' // Zahl nur bei Wechsel neu
         if (key3 !== spKey) { spKey = key3; spd.style.display = sp.visible ? 'flex' : 'none'; if (sp.visible) { const T = L.speedText
           spN.style.cssText = inkText(Math.round(T.fd * k)); spU.style.cssText = inkText(Math.round(T.fs * k)); spN.textContent = String(sp.kmh); Object.assign(spd.style, { right: T.right * k + 'px', top: T.top * k + 'px' }) } } }
+      { const al = hud.altState(), ak = al.visible ? al.m + '|' + k : '' // Höhenzahl nur bei Wechsel neu, gleiche Oberkante wie km/h
+        if (ak !== alKey) { alKey = ak; alt.style.display = al.visible ? 'flex' : 'none'; if (al.visible) { const T = L.altText
+          alN.style.cssText = inkText(Math.round(T.fd * k)); alU.style.cssText = inkText(Math.round(T.fs * k)); alN.textContent = String(al.m); Object.assign(alt.style, { right: T.right * k + 'px', top: T.top * k + 'px' }) } } }
       if (fly === 'map' && (flyT = (flyT + 1) % 6) === 0) buildFly(false) // Minimap ~10 Hz, solange offen
       // Interaktions-Hinweis (in Reichweite: Hinweis-Lichthof B)
       const hint = !!inner.current?.__target; if (hint !== bubHint) { bubHint = hint; const I = L.inter; drawBubble(I.w * k, I.h * k, hint) }
