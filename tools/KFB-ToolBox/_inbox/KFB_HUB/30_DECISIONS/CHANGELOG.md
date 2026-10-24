@@ -7,6 +7,7 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- Splats R2 (V-733): 15 Arbeiten nach Bildwirkung (replies/SPLAT_EXAMPLES_R2.md, Bilder 75_REFS/splats_r2), Spark Splat Transitions live im eingebauten Browser gerendert; Hub q187 mit drei Richtungen (Portale/Gutter, Mindspace aus Bildern, HyperNorm-Stil).
 - V-733: Splats nicht parken, Suche R2 nach Bildwirkung läuft; MiB-Türlampe als registrierte Licht-Ausnahme, Orb in zwei Varianten. Konzeptblatt B40 R2 nach Prüfer-BLOCK korrigiert (gemessene Animations-Gates, Lieferliste WSB/WS1, V-533) und an WSB. Antwort an WS1 §165–167 (Kassette r5 und controlTheme liegen in assets/private 0e630a3).
 - V-732 FAIL B40 MiB-Turm (q186): Konzeptblatt R1 ungültig, R2 (TARDIS-Materialisieren, saftiges Aufsetzen, echte Tür mit gleißendem Licht, Türhöhe = AGL / 0,87, Abnahme mit Emission und Bloom) in Prüfung.
 - V-731 FAIL Splat-Beispiele R1 (q185): ruhen bis nach dem MVP; Hub b212 FAIL-Notiz an den Web-Chat.
