@@ -11,6 +11,7 @@
   - davor zwei bis drei durchscheinende Schalen für Tiefe;
   - wenige schwebende Dinge (Röhrenfernseher, gemalte Tür, KFB-Auge);
   - Look-Presets aus der Schnitt-Recherche (`replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md`).
+- **Boden der Sphäre (Georg 25.10.):** Der Boden jeder Sphäre ist eine Karte als Kugel-Relief (Punktwolke aus Probe R2/R3), kreisrund eng auf die Sphäre zugeschnitten, als begehbares Terrain. Partikel-VFX: Die Kugeln stieben beim Gehen und bei Übergängen auf und finden zurück (GPU-Physik aus Probe R3). SFX: weiche Knet- bzw. Murmel-Klänge bei Schritten und Aufstieben über den Atmo-Bus. Je Sphäre eine passende Karte.
 - **Erste drei Sphären:** Sendezentrale, Aktenrauschen, Dada-Garten, Inhalt wie im Konzeptblatt.
 - **Rezept je Sphäre** als kleine JSON-Datei: Thema, Look, Quellen, Text, Klangschichten, Musik, Übergänge.
 - **Varianten:** Beim Wiederbetreten zeigt eine Sphäre eine andere Variante (Seed).
@@ -52,7 +53,7 @@
   - `music/`: M1, M2 und die Stems von S2.
   - `fundstuecke/`: Karte „The Moving Launch Date“ für das Kugel-Relief im Dada-Garten, Fnord-Gassenbild.
   - das Konzeptblatt R2.
-- **Kugel-Relief im Dada-Garten:** der eine Physik-Effekt nach Probe R3 (https://claude.ai/artifact/SYzKKT6g33hcHYCm8JWmxx, vollständiger Code in einer Datei), mit der Karte aus `fundstuecke/`.
+- **Kugel-Relief:** Boden aller Sphären nach Probe R2/R3 (https://claude.ai/artifact/SYzKKT6g33hcHYCm8JWmxx, vollständiger Code in einer Datei), mit der Karte aus `fundstuecke/`.
 - **Text:**
   - Propaganda und Slogans aus `replies/MEME_POOL_R1.json`.
   - Gemeinfreie Poesie und Dada (Stein „Tender Buttons“, Gutenberg #15396; Blake, Gutenberg #1934) und Akten aus dem UAP-Archiv der US National Archives. Diese holst du selbst und vermerkst Quelle und Rechte im Rezept.

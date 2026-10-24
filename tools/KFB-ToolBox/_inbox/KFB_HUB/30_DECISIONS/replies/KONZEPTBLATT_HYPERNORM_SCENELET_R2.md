@@ -16,6 +16,7 @@ R1 hat Georg missverstanden: Der runde Archivraum mit sieben Ausstellungsstücke
   - Davor liegen zwei bis drei durchscheinende Schalen in verschiedenen Abständen (Text, Bildfetzen, Störungen). Beim Umsehen entsteht so Tiefe und Parallaxe, wie begehbare Ebenen eines Musikvideos.
   - Dazu wenige schwebende Dinge: ein Röhrenfernseher, eine gemalte Tür, ein KFB-Auge.
   - Keine Architektur mit Wänden und Möbeln.
+- **Boden der Sphäre (Georg 25.10.):** Der Boden jeder Sphäre ist eine Karte als Kugel-Relief (Punktwolke aus Probe R2/R3), kreisrund eng auf die Sphäre zugeschnitten, als begehbares Terrain. Partikel-VFX: Die Kugeln stieben beim Gehen und bei Übergängen auf und finden zurück (GPU-Physik aus Probe R3). SFX: weiche Knet- bzw. Murmel-Klänge bei Schritten und Aufstieben über den Atmo-Bus. Je Sphäre eine passende Karte.
 - **Betreten aus der Welt:** Im Spiel schwebt die Sphäre als leuchtende Kugel in der Landschaft bzw. im Gutter. Man geht hinein, die Kugel stülpt sich um, und man steht innen. Im Curator ist sie der Startpunkt der Experience.
 - **Sphäre in der Sphäre:** Übergänge zur nächsten Kammer können kleine Kugeln in der Sphäre sein, in die man hineinfällt, wie Blasen in Blasen. Dazu kommen die anderen versteckten Übergänge.
 - **Erste drei Kammern:**

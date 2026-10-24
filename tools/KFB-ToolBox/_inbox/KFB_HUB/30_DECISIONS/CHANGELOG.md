@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- HyperNorm-Welt R2: Boden jeder Sphäre = Karte als Kugel-Relief (Probe R2/R3), rund eng zugeschnitten, mit Partikel-VFX (Aufstieben, Rückkehr) und Knet-SFX (Georg); in Konzeptblatt R2, Brief R2 und Hub b219 ergänzt.
 - Georg 25.10. zu B40: Scharnier und Türgriff minimalistisch und sauber in Modell, Textur und Farbe integriert. WSB braucht Georgs Ja direkt in seinem Fenster (WS0 gibt keine Freigaben weiter).
 - B40 r6b (WSB, V-737 Auge mit drei Zuständen, Halterung, Zielstrahl; Kritiker 5,9): WS0-Antworten (Rot #e8180e vorläufig, 70-%-Gate für die Glühkugel entfällt, Bild 6 geteilt in 6a/6b, Türgriff und Scharnier frei). Nach V-740 keine weitere Kritiker-Runde, WSB wartet auf Style-Frames.
 - V-740 FAIL Prozess: kein Design-Konzept in HyperNorm b219 und generell (nicht visuell gedacht). Neu: Design-Paket (Moodboard, Style-Frames, Gestaltungssprache, Storyboard) vor jedem gestaltungsrelevanten Bauauftrag, Abnahme als Bild, Bildvergleich als Haupt-Gate.
