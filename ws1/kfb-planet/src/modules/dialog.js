@@ -13,7 +13,7 @@
 // und gleicher Antwortzeit der Ports (Test d1); im Browser schwanken beide. Asynchrone Schritte (Karte, Zeile) sperren den Übergang, höchstens
 // cardWaitMs bzw. lineWaitMs lang; danach geht es mit Platzhalter bzw. „…“ weiter (Prüfer 8, Befund 1).
 import { Group } from 'three'
-import { SSOT_LINES_ON, createOpenerRotation, isBlocked } from '../dialog/ssotLines.js'   // lines=ssot (Georg 24.10.): TRIPLET_SSOT_R1-Rückfall, Sperrliste
+import { SSOT_LINES_ON, TR1_ON, createOpenerRotation, createSentenceOpenerRotation, isBlocked, tr1Line, boggleLore } from '../dialog/ssotLines.js'   // lines=ssot (Georg 24.10.): TRIPLET_SSOT_R1-Rückfall, Sperrliste
 
 export const D1 = Object.freeze({ cardWaitMs: 12000, lineWaitMs: 8000, gapMs: 600, pauseMs: 900, choiceMs: 20000, wordMs: 380, minLineMs: 1400 })
 export const dialogLog = { create: 0, update: 0, dispose: 0 }
@@ -24,7 +24,8 @@ export function createDialog(options) {
   dialogLog.create++
   const { cards = [], reader, billboard, actors = {}, say, openChoice = () => {}, closeChoice = () => {}, anchors = { left: 'stage-left', right: 'stage-right' }, onEvent = () => {}, isReady = () => true } = options
   const T = { ...D1, ...(options.timing || {}) }
-  const ssot = options.ssot ?? SSOT_LINES_ON, rot = ssot ? createOpenerRotation() : null
+  const ssot = options.ssot ?? SSOT_LINES_ON, rot = ssot ? createOpenerRotation() : null, tr1 = ssot && (options.tr1 ?? TR1_ON), rotT = tr1 ? createSentenceOpenerRotation() : null
+  const hasTr1 = (card) => tr1 && !!tr1Line(card?.deck?.id, card?.num)
   const S = { i: -1, phase: 'IDLE', t: 0, wait: null, busy: false, usedOpeners: new Set(), usedBeats: new Set(), log: [], disposed: false, choice: null, choiceId: null }
   S.clock = 0
   const emit = (type, data = {}) => { const e = { type, beat: S.i, t: +S.clock.toFixed(3), ...data }; S.log.push(e); onEvent(e) }
@@ -69,7 +70,7 @@ export function createDialog(options) {
         if (S.busy && S.t < T.cardWaitMs) return
         if (S.busy) emit('card-timeout')
         S.phase = 'A_LOAD'; S.t = 0
-        gate(() => (ssot ? reader.ssotLine(card, 'A', rot.next()) : reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats })))
+        gate(() => (hasTr1(card) ? reader.ssotLine(card, 'T', rotT.next()) : ssot ? reader.ssotLine(card, 'A', rot.next()) : reader.lineFor(card, { field: 'cardName', excludeOpeners: S.usedOpeners, excludeBeats: S.usedBeats })))
         return
       case 'A_LOAD':
         if (S.busy && S.t < T.lineWaitMs) return
@@ -80,7 +81,8 @@ export function createDialog(options) {
         if (S.t < S.lineMs + T.gapMs) return
         free(side('left') === 'left' ? 'right' : 'left')
         S.phase = 'B_LOAD'; S.t -= S.lineMs + T.gapMs
-        gate(() => (ssot ? reader.ssotLine(card, 'B') : reader.lineFor(card, { field: 'power', pool: false }))) // Antwort: nie Pool, nur wörtlich (ein Triplet je Karte, V-231); mit lines=ssot bereinigte Lore statt Power
+        S.follow = null; if (hasTr1(card)) S.follow = 'boggle'   // tr1: B ruft; Boggle, wenn die Lore noch etwas Ungesagtes hat, sonst Bingo
+        gate(() => (hasTr1(card) ? reader.ssotLine(card, 'BOGGLE').source === 'SILENCE' ? (S.follow = null, reader.ssotLine(card, 'CALL', 'bingo')) : reader.ssotLine(card, 'CALL', 'boggle') : ssot ? reader.ssotLine(card, 'B') : reader.lineFor(card, { field: 'power', pool: false }))) // Antwort: nie Pool, nur wörtlich (ein Triplet je Karte, V-231); mit lines=ssot bereinigte Lore statt Power
         return
       case 'B_LOAD':
         if (S.busy && S.t < T.lineWaitMs) return
@@ -90,11 +92,15 @@ export function createDialog(options) {
         return
       case 'B':
         if (S.t < S.lineMs + T.gapMs) return
+        if (S.follow === 'boggle') { S.follow = null; S.phase = 'A2'; S.t -= S.lineMs + T.gapMs; S.lineMs = speak(side('left'), reader.ssotLine(card, 'BOGGLE')); return }   // Boggle...? → A legt die ungesagte Lore nach
         free('left'); free('right')
         S.phase = 'CHOICE'; S.t -= S.lineMs + T.gapMs; S.choice = null
         try { S.choiceId = openChoice() ?? null } catch (e) { S.choiceId = null; emit('port-error', { port: 'openChoice', error: String(e?.message || e) }) }
         emit('choice-open', { choiceId: S.choiceId })
         return
+      case 'A2':
+        if (S.t < S.lineMs + T.gapMs) return
+        S.phase = 'B'; S.t = S.lineMs + T.gapMs; return   // weiter wie nach B (Wahl öffnen)
       case 'CHOICE':
         if (!S.choice && S.t < T.choiceMs) return
         if (!S.choice) { closeChoice(); emit('choice-timeout') } else emit('choice', { id: S.choice.id, label: S.choice.label ?? null })

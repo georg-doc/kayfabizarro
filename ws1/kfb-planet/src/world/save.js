@@ -1,6 +1,6 @@
 // Slice 1 · Spielstand kfb.save/1 (F1-Kern, V-370; WS1_STATUS §62.1 F1a, §62.3 Punkt 1). Rein: ohne three, ohne DOM-Pflicht, Node-geprüft
 // (test/unit/save.mjs). Nur der Spieler: Welt-Änderungen bleiben in kfb.world-save/1 (WORLD_CONTRACT_R1: „Nie Spielstand in der Welt“).
-// Ein Objekt: { schema, version, savedAt, flags, fluff (Zähler je Sorte), collected (Schlüssel gesammelter Kügelchen), player { pos, zone } }.
+// Ein Objekt: { schema, version, savedAt, flags, fluff (Zähler je Sorte), fluffTotal (je gesammelt, wird nie verbraucht – Gesamt-Score, Georg 24.10.), collected (Schlüssel gesammelter Kügelchen), player { pos, zone } }.
 // Laden prüft und repariert: kaputt → frischer Stand (Rohtext bleibt unter <key>.bak), unbekannte neuere Version → frischer Stand im Speicher,
 // die Datei wird NICHT überschrieben (ein älterer Client zerstört keinen neueren Stand). Speicher: localStorage (alles in try/catch), sonst Speicher-Ersatz.
 import { FLUFF_KINDS } from './fluff.js'
@@ -14,7 +14,7 @@ const isObj = (o) => !!o && typeof o === 'object' && !Array.isArray(o)
 const nowIso = (now) => new Date(now ?? Date.now()).toISOString()
 
 export function freshSave(now) {
-  return { schema: SAVE_SCHEMA, version: SAVE_VERSION, savedAt: nowIso(now), flags: {}, fluff: Object.fromEntries(FLUFF_KINDS.map((k) => [k, 0])), collected: [], player: { pos: [0, 0, 0], zone: null } }
+  return { schema: SAVE_SCHEMA, version: SAVE_VERSION, savedAt: nowIso(now), flags: {}, fluff: Object.fromEntries(FLUFF_KINDS.map((k) => [k, 0])), fluffTotal: 0, collected: [], player: { pos: [0, 0, 0], zone: null } }
 }
 
 // Prüfen und in die Normalform bringen. Ergebnis { state, errors[] } (errors = was repariert wurde; leer = sauber)
@@ -33,6 +33,8 @@ export function validateSave(o) {
   } else if (o.flags !== undefined) errors.push('flags')
   if (isObj(o.fluff)) for (const k of FLUFF_KINDS) { const v = o.fluff[k]; if (v === undefined) continue; if (Number.isFinite(v) && v >= 0) s.fluff[k] = Math.floor(v); else errors.push('fluff:' + k) }
   else errors.push('fluff')
+  // Gesamt-Score: fehlt er (ältere Stände), gilt die Summe der Zähler (bisher wurde nichts verbraucht)
+  if (Number.isFinite(o.fluffTotal) && o.fluffTotal >= 0) s.fluffTotal = Math.floor(o.fluffTotal); else { s.fluffTotal = Object.values(s.fluff).reduce((a, b) => a + b, 0); if (o.fluffTotal !== undefined) errors.push('fluffTotal') }
   if (Array.isArray(o.collected)) { const set = new Set(o.collected.filter((x) => typeof x === 'string' && x.length <= 128)); if (set.size !== o.collected.length) errors.push('collected-dedupe'); s.collected = [...set].slice(-SAVE_LIMITS.collected) }
   else if (o.collected !== undefined) errors.push('collected')
   const p = o.player
@@ -114,7 +116,7 @@ export function createSaveStore({ key = SAVE_KEY, backend = defaultBackend(), no
 
 // Ernte in den Stand übernehmen (Zähler addieren, Schlüssel anhängen) – rein, gibt einen neuen Stand zurück
 export function withHarvest(state, keys = [], kindsOfKeys = {}) {
-  const s = { ...state, fluff: { ...state.fluff }, collected: state.collected.slice() }, have = new Set(s.collected)
-  for (const k of keys) { if (have.has(k)) continue; have.add(k); s.collected.push(k); const kind = kindsOfKeys[k]; if (kind && kind in s.fluff) s.fluff[kind]++ }
+  const s = { ...state, fluff: { ...state.fluff }, fluffTotal: state.fluffTotal ?? Object.values(state.fluff || {}).reduce((a, b) => a + b, 0), collected: state.collected.slice() }, have = new Set(s.collected)
+  for (const k of keys) { if (have.has(k)) continue; have.add(k); s.collected.push(k); const kind = kindsOfKeys[k]; if (kind && kind in s.fluff) { s.fluff[kind]++; s.fluffTotal++ } }
   return s
 }

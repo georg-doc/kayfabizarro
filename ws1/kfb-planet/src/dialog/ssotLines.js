@@ -5,7 +5,7 @@
 // Rein, ohne three/DOM – Node-geprüft (test/unit/ssotLines.mjs). Daten: src/data/spoken/ssot-lines.r1.json (scripts/sync-spoken-lines.py).
 import DATA from '../data/spoken/ssot-lines.r1.json' with { type: 'json' }
 
-export const SSOT_LINES_ON = typeof location !== 'undefined' && /(^|[#,])lines=ssot(,|$)/.test(location.hash)   // Probe bis Georgs Blick
+export const SSOT_LINES_ON = typeof location !== 'undefined' && !/(^|[#,])lines=alt(,|$)/.test(location.hash)   // Georg 24.10.: Standard („schön so“); lines=alt = alte Blasen (Titel/Power, nur für die Alt-Tests d1stage/preview); ohne Browser (Node-Tests) alter Weg
 export const SSOT_SOURCE = DATA.source
 export const CALLS = Object.freeze({ bingo: 'Bingo!', boggle: 'Boggle...?', bongo: 'Bongo.', bloedsinn: 'Blödsinn!', humbug: 'Humbug?!' })   // V-699, genau so
 
@@ -44,3 +44,29 @@ export function createOpenerRotation(openers = DATA.openersA.filter((o) => o.q))
 // A: „Have you heard of *The Heel Promoter*?“ (*…* = fett im Blasen-Kern) · B: bereinigte Lore (leer → null, dann schweigt B)
 export function lineA(card, opener) { const t = spokenTitle(card.name); return t ? `${opener.text} *${t}*${opener.q ? '?' : '.'}` : null }
 export function lineB(card) { const l = cleanLore(card.name, card.lore); return l || null }
+
+// ---- tr1 (Tratsch-Triplets, Entwurf; Probe hinter lines=tr1): A = Satz-Opener + Triplet als ein Satz · B = Ruf (V-699) · bei Boggle legt A die Lore nach,
+// die das Triplet nicht enthält (TRIPLET_SSOT: nie derselbe Text zweimal). Opener vor ganzen Sätzen nur clause_ok bzw. own_clause (S8).
+export const TR1_ON = typeof location !== 'undefined' && /(^|[#,])lines=tr1(,|$)/.test(location.hash)
+export const TR1_STATUS = DATA.tr1Status
+export const tr1Line = (deckId, num) => DATA.tr1?.[deckId]?.[String(+num)] || null
+export function createSentenceOpenerRotation(openers = DATA.openersT) {
+  const used = new Set(); let k = 0, lastQ = null
+  return { next() { if (used.size >= openers.length) used.clear(); const pick = (wantQ) => { for (let i = 0; i < openers.length; i++) { const o = openers[(k + i) % openers.length]; if (!used.has(o.id) && (wantQ == null || o.q === wantQ)) { used.add(o.id); k = (k + i + 1) % openers.length; return o } } return null }
+    const o = pick(lastQ == null ? null : !lastQ) || pick(null) || openers[0]; lastQ = o.q; return o } }
+}
+const lcStart = (t, title) => (title && t.startsWith(title)) || /^I\b/.test(t) ? t : t[0].toLowerCase() + t.slice(1)
+const boldTitle = (t, title) => (title && t.includes(title) ? t.replace(title, `*${title}*`) : t)
+export function lineT(card, opener, triplet) {
+  const title = spokenTitle(card.name); let t = triplet.trim()
+  if (opener.slot === 'own_clause') t = `${opener.text}, ${lcStart(t, title)}`; else t = `${opener.text} ${lcStart(t, title)}`
+  if (opener.q) t = t.replace(/[.!]+$/, '') + '?'
+  return boldTitle(t, title)
+}
+const words = (s) => new Set(String(s).toLowerCase().match(/[a-z']{4,}/g) || [])
+// Lore-Satz, der im Triplet noch nicht steckt (weniger als die Hälfte seiner Wörter schon gesagt); sonst null
+export function boggleLore(card, triplet) {
+  const said = words(triplet), sentences = cleanLore(card.name, card.lore).split(/(?<=[.!?])\s+/).filter(Boolean)
+  for (const sn of sentences) { const w = [...words(sn)]; if (w.length && w.filter((x) => said.has(x)).length / w.length < 0.5) return sn }
+  return null
+}

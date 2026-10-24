@@ -28,6 +28,8 @@ export function bubbleBodySvg(M, w, h, hlx, hly, col, kind, seed) {
 // host: das Element des Host-Slots #ui-bubbles. Liefert show() / update() / dispose().
 // V-699 (Georg 24.10.): Kartentitel und Rufe fett. Der Kern (chatterbox-core parse/layout) kennt *fett* (ein Sternchen) und misst fette Wörter breiter;
 // die Zeichnung setzt die fetten Token jetzt als <b> (vorher nur Klartext)
+export const AIR = Object.freeze({ x: 0.6, y: 0.45, lh: 0.12 })   // in em zusätzlich zum Kern (speech: padX .6, padY .45, Zeilenabstand 1,25)
+const AIR_OLD = typeof location !== 'undefined' && /(^|[#,])bubblepad=old(,|$)/.test(location.hash)
 const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;')
 function lineHtml(ln) { let h = '', on = false; for (const t of ln.toks || [{ text: ln.text }]) { const b = !!t.bold; if (b !== on) { h += b ? '<b>' : '</b>'; on = b } h += escHtml(t.text) } return h + (on ? '</b>' : '') }
 
@@ -44,7 +46,9 @@ export function createBubbleLayer({ host }) {
     const base = Math.round(Math.max(15, Math.min(20, innerHeight / 42))), Ls = parts.map((p) => C.layout(p, kind, { basePx: base, maxPx: Math.min(420, innerWidth * 0.42) })), L0 = Ls[0], fs = L0.fontPx, lh = L0.lh, gap = Math.round(fs * 0.5)
     const inner = Math.max(...Ls.map((l) => l.w - 2 * l.padX)); let n = 0; const lines = []
     Ls.forEach((l, pi) => l.lines.forEach((toks, li) => { lines.push({ text: toks.map((t) => t.text).join(''), toks, mt: pi > 0 && li === 0 ? gap : 0, part: pi }); n++ }))
-    return { w: Math.round(inner + 2 * L0.padX), h: Math.round(n * fs * lh + gap * (Ls.length - 1) + 2 * L0.padY), padX: L0.padX, padY: L0.padY, fs, lh, lines }
+    // Georg 24.10.: „mehr Luft am Rand, sitzt extrem eng“ – zusätzlicher Innenabstand und etwas mehr Zeilenabstand (bubblepad=old = vorher)
+    const A = AIR_OLD ? { x: 0, y: 0, lh: 0 } : AIR, padX = L0.padX + Math.round(fs * A.x), padY = L0.padY + Math.round(fs * A.y), lh2 = lh + A.lh
+    return { w: Math.round(inner + 2 * padX), h: Math.round(n * fs * lh2 + gap * (Ls.length - 1) + 2 * padY), padX, padY, fs, lh: lh2, lines }
   }
   // ---- 1:1 islands-npc.ts say(), Sprecher = Anker-ID, Farbe vom Aufrufer (Lab: ORIGINAL[npc.id].color)
   const say = (anchor, parts, kind, col) => {

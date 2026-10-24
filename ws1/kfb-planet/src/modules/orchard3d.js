@@ -185,6 +185,7 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
       for (let i = fx.length - 1; i >= 0; i--) { const e = fx[i]; e.t += dt; const u = Math.min(1, e.t / e.dur); e.m.scale.setScalar(e.r0 + (e.r1 - e.r0) * u); e.m.material.opacity = 0.9 * (1 - u); if (u >= 1) { root.remove(e.m); e.m.material.dispose(); fx.splice(i, 1) } }
     },
     counts: () => state.counts(),
+    total: () => state.total?.() ?? null,   // Gesamt-Score für das HUD
     restLook: REST_LOOK,
     status: () => ({ status: state0.status, shown: state0.status === 'OK' }), // für das Knet-Modul (wartet auf geladene Bäume)
     balls: () => balls.map((b) => ({ key: b.key, zone: b.key.split(':')[0], kind: b.kind, state: b.state, p: (b.state === 'hanging' ? b.anchor : b.body?.p || b.anchor).slice(), r: b.r })),

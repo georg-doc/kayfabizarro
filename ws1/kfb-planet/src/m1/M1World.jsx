@@ -73,7 +73,7 @@ import { isTerrain2, TERRAIN2_CFG } from '../look/terrain2.js'
 import { stagePaletteFor } from '../stagePalette'
 import HudR5f from '../HudR5f'
 import { cardImage } from '../cardImage'
-import HudClay, { clayHudAvailable } from '../HudClay' // Knet-HUD R1 (V-656): hud=clay, Standard Holz bis Georgs Abnahme
+import HudClay, { clayHudAvailable, hud3dAvailable } from '../HudClay' // Knet-HUD R1 (V-656): hud=clay, Standard Holz bis Georgs Abnahme
 import { createFoundItems3d } from '../modules/foundItems3d'
 import { createPath3d } from '../modules/path3d'
 import { placeLoot } from '../world/loot.js'
@@ -266,13 +266,15 @@ const M1GL = { gl: null, scene: null }
 // zündet sie (Klick auf die Bombe zündet ebenso). Rucksack-Taste nur angezeigt (Fundsachen folgen mit C3b).
 const KIND_INDEX = { tragic: 0, comic: 1, absurd: 2, heroic: 3, mystical: 4, forbidden: 5 }
 // Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard clay seit Georgs Abnahme 22.10.). Ohne src/private immer Holz.
-const HUD_SKIN = (/(^|[#,])hud=(clay|wood)(,|$)/.exec(hash) || [0, 0, 'clay'])[2] // Georg 22.10.: Knet-HUD ist Standard, hud=wood = Holz-HUD
+const HUD_SKIN = (/(^|[#,])hud=(clay|wood|3d)(,|$)/.exec(hash) || [0, 0, 'clay'])[2] /* hud=3d: HUD 3D R1 Spike (Georg 24.10.), nur per Schalter */ // Georg 22.10.: Knet-HUD ist Standard, hud=wood = Holz-HUD
 const CLAY_HOST = {
   palette: () => (TERRAIN3 ? TERRAIN3_CFG.palettes[T3_PAL] : TERRAIN3_CFG.palettes.moos), // Insel-Palette des Geländes (V-653); ohne terrain3 die Moos-Insel wie BIOME
   target: () => (M2_ON ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
   terrain: () => mods.terrain || null, k: K,
   path: DEMO_PATH.pts.map(([x, z]) => [x, z]),
   marks: () => [{ x: 0, z: 0, color: '#e9c14a', r: 8 }], // Bühne (Amphitheater im Ursprung)
+  // HUD 3D Zielpfeil (Lead 24.10.: der M1-Wirt besitzt den Ziel-Haken, bis es einen Quest-/POI-Owner gibt): vorerst die Bühne als Ziel
+  goal: () => ({ name: 'Bühne', pos: { x: 0, y: (mods.terrain?.surfaceAt || terrainHeight)(0, 0) + 2, z: 0 } }),
   cards: () => Promise.all(DECK.slice(0, 3).map((c) => cardImage(c.deck.id, c.num, 700).then((r) => r?.canvas || null, () => null))),
 }
 function Orchard() {
@@ -328,7 +330,7 @@ function Orchard() {
   return <><ModuleHost create={makeOrchard} options={opts} /><ModuleHost create={makeFound} options={found} /><ModuleHost create={makePath} options={PATH_OPTS} /><ModuleHost create={makeSuck} options={SUCK_OPTS} /><ModuleHost create={makeCombat} options={COMBAT_OPTS} />
     {LANTERNS_ON && <><ModuleHost create={makeLanterns} options={lanterns} /><ModuleHost create={makePract} options={pract} /></>}
     {(() => { const P = { counts: counts0, onApi: (a) => { hud.current = a; HARVEST_STATE.hud = a }, onCtx: (c) => { if (c === 'bomb') { act('blast'); hud.current?.setCtx(null) } }, onInteract: pickUp, onThrow: throwAway, onEquip: equip }
-      return HUD_SKIN === 'clay' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
+      return HUD_SKIN === '3d' && hud3dAvailable() ? <HudClay {...P} host={CLAY_HOST} kit="3d" /> : HUD_SKIN === 'clay' && clayHudAvailable() ? <HudClay {...P} host={CLAY_HOST} /> : <HudR5f {...P} /> })()}</>
 }
 // V-572 (Strahler-Bug global): Laternen-Pfützen als Kegel-Projektion auf Gelände, Weg und Steine; Stärke und Farbe 1:1 aus dem Practicals-Angebot
 // von kfb-gem (Stimmung × Puls × Flackern), tagsüber 0. V-632: über kfb-groundfx (gleiche Kegel-Rechnung wie kfb-light-pool.v1), Kanal 'lanterns' –

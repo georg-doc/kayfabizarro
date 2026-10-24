@@ -3,7 +3,7 @@
 // Kennzeichnung „Vorschau-Text“ im Bild; ohne Schalter keine Vorschau.
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
-const { browser, page, errs } = await openPage('#stage,debug,actors=fb,preview=g4', { viewport: { width: 1920, height: 1080 } })
+const { browser, page, errs } = await openPage('#stage,debug,actors=fb,preview=g4,lines=alt', { viewport: { width: 1920, height: 1080 } })
 const st = () => page.evaluate(() => window.__kfbStageMods?.dialog?.state())
 const until = async (f, ms = 300000) => { const t0 = Date.now(); while (Date.now() - t0 < ms) { const s = await st(); if (s && f(s)) return s; await page.waitForTimeout(150) } throw new Error('timeout ' + JSON.stringify(await st())) }
 const bubbles = () => page.evaluate(() => (window.__kfbBubbles?.() || []).filter((b) => b.shown).map((b) => ({ anchor: b.anchor, text: b.text })))
@@ -24,7 +24,7 @@ const badge = await page.evaluate(() => document.getElementById('kfb-preview-bad
 const deck = await page.evaluate(() => window.__kfbStageCtl.deck.map((c) => ({ id: c.deck.id + '#' + c.num, name: c.name, power: c.power })))
 await browser.close()
 // Gegenprobe: ohne Schalter keine Vorschau-Zeile
-const o = await openPage('#stage,debug,actors=fb,card=kayfabizarro_monomyth_mayhem:1,dialog=1', { viewport: { width: 1280, height: 720 } })
+const o = await openPage('#stage,debug,actors=fb,card=kayfabizarro_monomyth_mayhem:1,dialog=1,lines=alt', { viewport: { width: 1280, height: 720 } })
 const s2 = async (f) => { const t0 = Date.now(); while (Date.now() - t0 < 300000) { const s = await o.page.evaluate(() => window.__kfbStageMods?.dialog?.state()); if (s && f(s)) return; await o.page.waitForTimeout(150) } }
 await s2((s) => s.phase === 'A'); const plainLog = await o.page.evaluate(() => window.__kfbStageMods.dialog.log()); const plainBadge = await o.page.evaluate(() => !!document.getElementById('kfb-preview-badge')); await o.browser.close()
 

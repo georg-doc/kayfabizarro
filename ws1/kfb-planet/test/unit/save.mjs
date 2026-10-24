@@ -51,4 +51,5 @@ process.exit(report('unit-save', {
   localStorageGuarded: localStorageBackend(throwing) === null && localStorageBackend(null) === null && !sq.ok && sq.reason === 'QuotaExceededError',
   nodeFallsBackToMemory: defaultBackend().kind === (typeof globalThis.localStorage?.setItem === 'function' ? 'localStorage' : 'memory'),
   harvestMerge: h.fluff.comic === 1 && h.fluff.mystical === 1 && h.collected.join() === 'k1,k2' && s0.collected.length === 0,
+  fluffTotalCountsAndRepairs: h.fluffTotal === 2 && validateSave({ ...h, fluffTotal: undefined }).state.fluffTotal === 2 && validateSave(h).errors.length === 0,   // Gesamt-Score (Georg 24.10.)
 }, { half: half.errors, bytes: text.length }))

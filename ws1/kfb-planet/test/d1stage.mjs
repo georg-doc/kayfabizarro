@@ -2,7 +2,7 @@
 // Spielerwahl öffnet sich, Taste 1 → Zuruf-Blase am Publikums-Anker, der Dialog geht weiter. Mechanik, kein Look (FrizzleBob gestoppt).
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
-const { browser, page, errs } = await openPage('#stage,debug,cam=two,actors=rogue,dialog=2', { viewport: { width: 1280, height: 720 } })
+const { browser, page, errs } = await openPage('#stage,debug,cam=two,actors=rogue,dialog=2,lines=alt', { viewport: { width: 1280, height: 720 } })
 const st = () => page.evaluate(() => window.__kfbStageMods?.dialog?.state())
 const until = async (f, ms = 240000) => { const t0 = Date.now(); while (Date.now() - t0 < ms) { const s = await st(); if (s && f(s)) return s; await page.waitForTimeout(100) } throw new Error('timeout ' + JSON.stringify(await st())) }
 const bubbles = () => page.evaluate(() => window.__kfbBubbles())

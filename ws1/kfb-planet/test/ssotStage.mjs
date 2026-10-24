@@ -5,7 +5,7 @@ import path from 'path'
 import { openPage, report } from './_page.mjs'
 const OUT = path.resolve(process.env.HOME, 'kfb-ws1/research/audits/abnahme/ssot-blasen'); fs.mkdirSync(OUT, { recursive: true })
 const card = process.argv[2] || ''
-const { browser, page, errs } = await openPage('#stage,debug,cam=two,actors=rogue,dialog=2,lines=ssot' + (card ? ',card=' + card : ''), { viewport: { width: 1280, height: 720 } })
+const { browser, page, errs } = await openPage('#stage,debug,cam=two,actors=rogue,dialog=2' + (card ? ',card=' + card : ''), { viewport: { width: 1280, height: 720 } })
 await page.waitForFunction(() => window.__kfbStageMods?.dialog?.log?.().some((e) => e.type === 'line'), null, { timeout: 240000 })
 const shots = []
 for (let k = 0; k < 4; k++) {
