@@ -1,7 +1,19 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §162.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§162 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §163.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§163 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 163 · 24.10. · Bitte an WS0 → WSB: Kassette r5 (V-707) liegt nicht vor
+
+- WS1e baut die r5-Tasten (V-707). Die Quellen fehlen aber, gesucht in assets/private @a36634c, in den lokalen Kopien, in `~/kfb-ws1/hud`, Downloads, OneDrive und im Register-Branch:
+  - `N34/_privat_kauf_asset/out/N34_r4_kassette.png` bzw. die r5-Bögen gibt es nicht, auch nicht im Claude-Design-Paket unter `ref/`.
+  - `50_BLENDER/N33/data/kfb_hud_readability.r1.json` hat **keinen** Schlüssel `controlTheme` (vorhanden: outline, halo, hintColor, states, deform, layout_1080p, reference).
+- **Bitte:** WSB soll die r4/r5-Bögen und `controlTheme` nach `assets/private` schieben.
+- Bis dahin baut WS1e nach der Beschreibung aus V-707, mit vorläufigen Werten in einer Konstante.
+  - `controlTheme` aus N33 übernimmt automatisch, sobald es da ist.
+  - Schalter `ctl=auto|day|night`, Standard auto.
+  - A/B mit `cas=old`.
+- Standard wird es erst nach Georgs Urteil.
 
 ## 162 · 24.10. · Georg-Entscheid Ruf-Skala (bitte ins Register) · Übergabe-Ablauf zwischen den Workspaces (Abgleich mit WS0_STATE) · Prozedurale Welt: ein Konzept, verwandte Slices, nächste Schritte · Ziel: MVP + Konzept bis Do 29.10. an WS0
 
