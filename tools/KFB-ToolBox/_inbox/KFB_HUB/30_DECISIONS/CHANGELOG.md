@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-703 Backlog Kayfabulieren im Spiel (Story-Zug vor King Kayfabian, NPC-Vorführung, Almanach-Replay); Story Table privat unter 75_REFS.
 - V-701 Big Bad Brain Wrestling 01 geerntet (193 Phrasen, 165 BPM), Golden-Prompt Deephouse × Trap brasileiro, Baustein KFB-Crossover; V-700 nachgeschärft (nur Etikett am Zeilenanfang); V-702 Backlog Karten-Spekulation.
 - V-700 Kartenzeilen = ganze Sätze mit Fluss, kein Doppelpunkt-Etikett (Wächter in triplet_set_check.py und song_gate.py C14, why/how als Grammatik); V-699 ergänzt: höchstens eine kursive Stelle je Blase; WS1-SSOT-Modul als Code auf die Text-SSOTs abstimmen.
 - V-699 Satzbild in Sprechblasen: Kartentitel fett, kursiv kontextuell, Rufe fett (Bingo! Boggle...? Bongo. Blödsinn! Humbug?!); Triplet-SSOT 2b.

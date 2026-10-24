@@ -10029,6 +10029,21 @@
    "applies": "später"
   },
   {
+   "id": "V-703",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Kayfabulieren im Spiel (Georg 24.10., Kernmechanik): King Kayfabian lobt eine Quest aus, der Spieler erzählt mit drei Scene-Karten vor ihm und den NPCs, Verknüpfung per Dropdown wie Opener und Mini-Bridges (therefore oder but), letztes Panel auf der Quest, Urteil mit den Rufen nach V-699, Quest-Würfel bewegt nur der King. Actor: Starter-Karte mit Onboarding (eventuell Anti-Rules) statt freier Wahl, NPCs nutzen ihre Figurenkarte als Actor; Doppelung Spielfigur und Actor-Karte offen (WS0-Vorschlag: Starter-Karte ist die Actor-Karte der Spielfigur). Jede Quest als Story-Eintrag im fraktalen Almanach mit Replay. Weitere Nutzung: NPC-Vorführung zum Onboarding, KFB-Karaoke, Comic-Motion/Remotion, eventuell Suno-Song. Quelle Story Table (Claude Design 24.10.) privat unter 75_REFS. replies/BACKLOG_KAYFABULIEREN_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Kernmechanik des Spiels sichern und auf vorhandene Bausteine (Triplets, Rufe, Figuren-Register, Almanach) setzen statt ein neues System zu erfinden.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10136,7 +10151,12 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1172",
+   "source": "KFB_HUB/75_REFS/story_table_kayfabulieren_r1/CHANGELOG.md:30",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
+  },
+  {
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1173",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
@@ -10484,6 +10504,11 @@
    "source": "KFB Billboard Kaleidoscope H14-1/kfb-h14-static-bake-2026-09-30/HANDOVER_WSA_H14.md:80",
    "part": "",
    "georg": "Genauer PR/Head, tatsächlich gelaufene Tests (Haltezeiten gemessen, fps), sichtbarer Beleg in Arbeitsgröße, offene Punkte, **ein** nächstes Gate. Format `SOURCE"
+  },
+  {
+   "source": "KFB Gameplay Stage Mockup v1/story-table_2026-10-24/CHANGELOG.md:30",
+   "part": "",
+   "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   }
  ]
 }
