@@ -1,5 +1,5 @@
 # Übernahmekarte · WS-Audio („spielbare Version mit ganzem Ton“)
-Stand 24.10.2026 abends · Format nach `sessions/lead.md` (V-713). Schnappschuss; das Logbuch ist `WS_AUDIO_STATUS.md` auf kayfabizarro `ws-audio/status` (neueste Einträge oben, zuletzt §19).
+Stand 25.10.2026 · Format nach `sessions/lead.md` (V-713). Schnappschuss; das Logbuch ist `WS_AUDIO_STATUS.md` auf kayfabizarro `ws-audio/status` (neueste Einträge oben, zuletzt §20).
 
 ## 1 · Auftrag und Grenzen
 - **Auftrag:** `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598): ein AudioContext, ein Mixer (Busse Musik/SFX/Atmo/UI, Ducking, Entfernung), ganzer Ton im Spiel. Abnahme durch Georg: „PASS, Feinabstimmung später“ (22.10.).
@@ -25,7 +25,7 @@ Stand 24.10.2026 abends · Format nach `sessions/lead.md` (V-713). Schnappschuss
 ## 2 · Repo, Zweig, Stand
 | Was | Wo |
 |---|---|
-| Arbeitsstand | Worktree `~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea`, Zweig `ws-audio/r1` (Chatter-Silben; Hash siehe Merge-Antrag/Status §19). Davor in mvp: f6776c4 (Disco-MC Talkbox) |
+| Arbeitsstand | Worktree `~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea`, Zweig `ws-audio/r1` @c6aac4e (in mvp gemergt als cc1481d) |
 | Ton-Ablage (öffentlich) | kayfabizarro Zweig `assets/kfb-audio-r1` @36c5ae419, Pfad `media/kfb-audio/r1/` (569 Dateien, 108 MB). Gepinnt in `scripts/audio/remote.json`. Laden: jsDelivr `gh@commit`, Rückfall raw. |
 | Status | kayfabizarro `ws-audio/status`: `WS_AUDIO_STATUS.md` (neuer Abschnitt oben vor dem letzten `## N ·`) |
 | Quellen privat | `~/kfb-ws1/private-assets` (assets/private von KFB-Stunt-Car-Race): `40_AUDIO/elevenlabs_r1/<satz>` + `<satz>_lufs/lufs_report.json`, `40_AUDIO/music_catalog_r1.json`, `40_AUDIO/chatterbox_r1/` (Suno-Ernte), `music/` (Originale). Nachziehen über den Lead (eigener fetch bricht ab). |
@@ -48,11 +48,12 @@ Stand 24.10.2026 abends · Format nach `sessions/lead.md` (V-713). Schnappschuss
   4. Commit in `remote.json` eintragen.
   5. `node scripts/audio/warm-cdn.mjs`.
   6. `audio-remote` gegen die echten Hosts (Chrome und WebKit).
-- **Videos:** `PW_GPU=1 node scripts/audio/record.mjs <profil>` (abnahme, kampf, gruppen, heilen, mvp, neu, gruss, sprech, silben) → `test/out/audio/*.mp4`, nur lokal. Nie während der Aufnahme teleportieren (Lande-Ton `foot.land` = Klick); Figur über `opts.pre` vor dem Start hinstellen. Bühne: `opts.stage`.
+- **Videos mit Sprechblasen:** `PW_GPU=1 node scripts/audio/record-dom.mjs [abc|abnahme]` (DOM-Screencast + captureStream; nur so sind Blasen/HUD im Bild).
+- **Videos ohne Blasen:** `PW_GPU=1 node scripts/audio/record.mjs <profil>` (abnahme, kampf, gruppen, heilen, mvp, neu, gruss, sprech, silben) → `test/out/audio/*.mp4`, nur lokal. Nie während der Aufnahme teleportieren (Lande-Ton `foot.land` = Klick); Figur über `opts.pre` vor dem Start hinstellen. Bühne: `opts.stage`.
 - **Slot:** schwere Läufe nur `kfb-slot wait ws-audio <min> <was> && …` (nie mit `;`). Headless, Spiel nur mit Hash (`#m1,harvest,look=terrain3,world=probe`).
 
 ## 4 · Laufende Aufträge (Quelle)
-- **Chatter-Silben R1** (Lead 24.10., Georg-GO): fertig hinter `#chat=syl`. Georgs Urteil zum Video A/B/C steht aus; erst danach Standard.
+- **Chatter-Silben** hinter `#chat=syl`: Georg 25.10. TUNE (V-734) → umgesetzt (tiefer, weicher, leiser; Schritt-Bus). Neues Abnahme-Video auf `abnahme/ws1`; Georgs zweites Urteil steht aus, erst danach Standard.
   - Schnittstelle: `speak({ text, characterId, group, pos, kind })` → `{ dur, start }` | null. WS-NPC ruft es für die Wechselrede (ws-npc/phase-a, noch nicht gemergt) → danach mit `#chat=syl` gegen die echte Wechselrede testen.
   - Bühne: BubbleHost-Haken + `bootSpeech()` (nur Silben, keine Musik).
 - Sprech-Anlässe Band/Disco/gothgirl (ohne chat=syl): getestet, Band Tuba, Disco Talkbox (auch MC FrizzleBob, Georg 24.10.), gothgirl Oboe.
@@ -67,7 +68,7 @@ Stand 24.10.2026 abends · Format nach `sessions/lead.md` (V-713). Schnappschuss
 
 ## 5 · Offen bei Georg / WS0
 - **Georg:**
-  - Chatter-Silben: Wird es als Stimme gelesen (Video A/B/C)? Standard machen oder weiter feilen?
+  - Chatter-Silben nach TUNE: Standard machen oder weiter feilen (Abnahme-Video `kfb-audio-silben-abnahme.mp4`)?
   - Spieler-Rufe (Bingo! …) haben kein Instrument → stumm. Soll die Spielfigur eine Familie bekommen?
   - Go an WS0 für Kazoo/Trompete (q177).
   - Feinabstimmung nach Gehör (Audio Site).
