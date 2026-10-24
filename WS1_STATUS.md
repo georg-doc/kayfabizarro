@@ -1,7 +1,37 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §165.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§165 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §166.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§166 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 166 · 24.10. · Konzept R1.5 fertig (offener Entscheid „Ebene“) · Übernahmekarten für 7 Sitzungen · HUD 3D Paket 2 gemergt · Spiegel 3a6e010 · Warnung zsh-Push-Falle
+
+- **Konzept Prozedurale Welt R1.5** (WS1b, `ws1/prozedurale-welt` @335b215, nur Konzept):
+  - **V-714/V-712 eingearbeitet:** ein Register CHARACTERS_R1 mit `kind: character | locus | vehicle`, Decks als PREFILL, Spielstand /2 je Register-Eintrag. Die Ruf-Skala steht nur als Verweis auf TRIPLET_SSOT §2b.
+  - **V-716:** §5.5 umgeschrieben. Es gibt nur Auftrags-Hügel; ebene Spielflächen bringt das Modell als Plinthe mit. `kfb.terrain-footprint/1` kennt nur noch den Modus `auftrag` (negatives Δ wird abgelehnt). Neues Prüfkriterium P16. **Bitte an WSB: Das Format gilt nur so.**
+  - **Kölner Tasche, drapiert (0 m Abtrag) neu gerechnet. Befund:** Auf dem heutigen Gelände der Biom-Fahrt ist eine Stadt nach V-716 **nicht einbettbar**:
+    - Median 2,5 m Auftrag; 77 % der Gebäude bräuchten Hügel steiler als 15°; Dom 8,7 m; 28 % der Straßen über 15 %.
+    - Was trägt: Die Zone bekommt **schon bei der Weltgenerierung ein flacheres, weiterhin welliges Relief** („Ebene“ wie die Kölner Bucht). Bei 0,3 bzw. 0,2 liegen 23 % bzw. 12 % der Gebäude über der Rampen-Grenze, die Straßen sind praktisch eben.
+    - **Entscheid nötig (Georg, über den Lead):** Ist das mit V-716 vereinbar? Es ist kein nachträgliches Plätten, sondern Generierung. Empfehlung des Lead: ja, vereinbar, weil V-716 das Einbetten regelt und nicht die Reliefwahl einer Zone.
+  - **§5.10a Inventur Landmarken/OSM**, 14 Quellen mit KEEP/ADAPT/REJECT:
+    - Keine Quelle bettet nach V-716 ein; TinySkies-Maske und WB-D1 `w0-region` plätten → REJECT.
+    - KEEP: Schwerpunkt-Anker, Stil-Profile mit Farbton-Kopplung, Band-Rig v2, `loadZone`-Vertrag, PCA-Passung.
+    - REJECT: Kitbash echter Landmarken (Georg R1.6 FAIL).
+    - three-geo hat kein Höhenmodell.
+  - **§5.12 Mindspace (V-715)** als seltener `locus` bzw. Portal-Typ: Innenraum im selben Renderer, Rückweg an dieselbe Stelle, ein Mixer bei WS-Audio, keine Heilversprechen. Als S6 im Backlog, nach der eigenständigen Probe und eurem Quell-Gate.
+- **Übernahmekarten (V-713):** Auf `ws1/status` liegen jetzt `sessions/lead.md`, `ws1b.md`, `ws1c.md`, `ws1d.md`, `ws1e.md`, `ws-npc.md`, `ws-audio.md` und `deck-songs.md`.
+  - Es fehlen noch `deck-analyzer.md` (angefragt) und `site.md` (Lead, bis zur Übergabe).
+  - WS-NPC hat seine Testliste fest ins Repo gelegt (`test/npc-suite.txt` + `npc-suite.sh`, ws-npc/phase-a @b96a25e).
+- **HUD 3D Paket 2 gemergt** (WS1e @60b8619 → mvp 2e299e1), nur hinter `hud=3d`:
+  - Almanac, Aktionsleiste V/B/N mit Faust r2, Interaktion I, Zahnrad (Mode, Game/God).
+  - Gesamt-Fluff links vor den Kugeln mit Squash.
+  - Kassette N34 mit r5-Tasten (Farben vorläufig, `ctl=auto|day|night`, A/B `cas=old`); Truhe größer, Kassette kleiner.
+  - Messung: HUD Ø 0,08 ms, p95 0,2 ms, 1 Kontext, 0 Long Tasks.
+  - Abnahmebilder werden neu gemacht: Die Testszene füllte nur die HUD-Anzeige, der Gesamt-Zähler stand auf 0.
+  - **Lead-Fix 4f32c76:** Der Gesamt-Fluff ist nie kleiner als die Summe der Kugeln (validateSave, harvest.total).
+- **Kassette r5 / controlTheme:** weiterhin nicht in `assets/private` (Kopf 4e3a497), siehe §165. Dazu bitte die **HUD-Fassung der N34-Kassette** (~40 kB) dort ablegen; heute erzeugt jede Sitzung sie lokal mit `scripts/hud/shrink-cassette.mjs`.
+- **Prüfung und Spiegel:** Ganze Reihe bei mvp 2e299e1: 75 PASS, rot nur c2 und c3g (alt). orbit war einmal rot, im Nachlauf PASS. Gespiegelt auf game/mvp-r1 **3a6e010** (privat) und ws1/mvp-r1 adb1a66fb (öffentlich, src/private und src/private-gen = 0).
+- **Warnung für alle Sitzungen mit Plumbing-Pushes:** In zsh liest `"$C:refs/…"` das `:r` als Modifikator, und ein leeres C macht aus dem Push ein Löschen des Remote-Zweigs. Heute zweimal passiert (assets/private beim Lead, ws-npc/status bei WS-NPC), beide Male sofort wiederhergestellt.
+  - Regel: immer `"${C}:refs/…"`, vorher `[ -n "$C" ]` und Elternprüfung. An alle WS1-Sitzungen gemeldet; bitte auch WSB und WSA.
 
 ## 165 · 24.10. · Danke für V-712–V-716 · Kassette r5 ist NICHT in assets/private angekommen · Konzept R1.5 beauftragt (V-714/715/716, Mindspace, Landmarken- und OSM-Bestand)
 
