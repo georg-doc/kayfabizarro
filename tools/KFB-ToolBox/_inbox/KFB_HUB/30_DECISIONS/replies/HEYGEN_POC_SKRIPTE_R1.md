@@ -38,51 +38,53 @@ Alúa, sèla. Oá limùe suvàe… nìla morùi, nìla… alúa.
 
 ---
 
-## POC 2 · Brave New World News, Folge 02 (b205)
+## POC 2 · Brave New World News, Folge 02 (b205) · R2
 
 **Avatar:** Nora, gleiches Studio wie BNWN 01.
 **Sprache:** Englisch. Voice Enhance an.
-**Ton:** ruhig, sachlich, freundlich. Nachrichtensprecherin, die jede Meldung ernst nimmt. Nichts überspielen.
-**Pause** nach jedem Absatz: 1 s, Gesicht ruhig in die Kamera (Schnittmarke).
+**Ton:** strahlend, überzeugt, Morgenshow-Lächeln. Sie glaubt jedes Wort und ist stolz darauf. Die Härte steckt im Inhalt, nicht in der Betonung. Kein Zwinkern.
+**Pause** nach jedem Absatz: 1 s, Lächeln halten (Schnittmarke).
 **Format:** 16:9, 1080p, eine Datei.
-**Zweiter Durchgang (optional):** derselbe Text mit ernstem, leicht angespanntem Gesicht. Daraus schneidet WS0 die Glitch-Kontraste.
+**Zweiter Durchgang (optional):** derselbe Text mit ernstem, müdem Gesicht. Daraus schneidet WS0 die Kontraste.
 
-Jeder Absatz ist ein Clip (3–7 s) und muss auch allein stehen. Darum hat jeder Satz ein eigenes Subjekt und verweist nicht auf den vorigen.
+Machart: echte Zustände der Gegenwart, als Erfolgsmeldung vorgetragen (Übererfüllung), oder schlicht als schwarze Wahrheit ausgesprochen. Jeder Absatz steht allein und lässt sich mit jedem anderen kombinieren. Zahlen nach öffentlichen Quellen (Oxfam 2025, Studien zu Smartphone-Nutzung, Hausarzt-Kontaktzeit, Ultra-Processed Food, Mikroplastik im Blut).
 
 Skripttext:
 
 ```
-Good evening. This is Brave New World News. I'm Nora.
+Good evening. This is Brave New World News. Everything you are about to hear has already been priced in.
 
-Here is what we know tonight.
+Defense stocks closed at a record high today. Our thoughts are with the shareholders.
 
-An unregistered saucer has landed in the dunes east of the Gutter. It has not moved since.
+This was the hottest summer ever measured. It will also be the coolest summer of the rest of your life.
 
-The two passengers, known to viewers as Lord Hunky and Lady Dory, say they are only observing.
+The richest one percent now own more than the bottom ninety-five percent combined. Congratulations to the one percent.
 
-Residents near the landing site report a sweet smell, a low hum, and fine sand on every windowsill.
+Home ownership remains open to everyone who inherited a home.
 
-Fluff harvests are up for the third week in a row. Where the Fluff comes from is still unclear.
+The average citizen checks their phone a hundred and forty times a day. The target is two hundred.
 
-In the city, billboards have begun showing cards that no one remembers printing.
+Your doctor has seven minutes for you. Six, if you ask questions.
 
-We asked the observers what they make of the planet so far.
+More than half of what you eat was designed to make you eat more of it.
 
-The observers asked us to repeat the question. Then they wrote something down.
+There is plastic in the ocean, in the rain, and in your blood. It is the most successful product in history.
 
-Their report will follow as soon as it has been translated.
+Your job was not taken by a machine. It was given to a cheaper human, supervised by a machine.
 
-The Fluff index tonight: soft in the north, dense along the coast, and unusually still over the old racetrack.
+Borders remain closed to people and open to money. If you must travel, travel as money.
 
-A card was found face down in the harbour this morning. We have been asked not to turn it over on air.
+Weather tomorrow: sunny in the gated communities. Everywhere else, uninsurable.
 
-We are experiencing a short interruption. Please stay where you are.
+You agreed to the terms. All of them. Thank you for being so cooperative.
 
-We are back.
+If you have nothing to hide, you have nothing to fear. We checked. You have nothing.
 
-More on this story as it develops.
+We are proud to report that all of this is legal.
 
-That was Brave New World News. Good night, and stay fluffy.
+This hour of honesty was brought to you by the companies it was about.
+
+That was Brave New World News. Nothing will change. Stay fluffy.
 ```
 
 ---
