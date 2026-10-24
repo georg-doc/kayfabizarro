@@ -31,12 +31,13 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 | WSA (ToolBox, Arena) | `replies/WSA_TO_WS0_*.md`, PRs KFB-Combat-Arena | unten in `replies/WS0_TO_WSA_COMBAT_ARENA_R2.md`; Georg reicht weiter |
 
 ## 4 · Offen (Stand 24.10.)
-- Site: Georg testet morgen KFB · WS1 Staging (WS1 Commit, WSA Build und Veröffentlichung, V-727). Danach führt WS0 die Stränge zusammen; Übergabe bis Do 29.10.
+- Übergabe-Tag ist heute (Georg zurück): WS1-Unterlagen auf ws1/status (UEBERGABE_MVP_R1.md, sessions/*.md), empfohlener Site-Stand game/mvp-r1 @188e4f7 (76 PASS). Site KFB · WS1 Staging steht hinter ChatGPT-Login; ob WSA den Stand veröffentlicht hat, ist unbestätigt (kein WSA-Return seit b203). Danach führt WS0 die Stränge zusammen.
 - HeyGen: Georg produziert drei POCs von Hand (Hub b204–b206, Skripte replies/HEYGEN_POC_SKRIPTE_R1.md). Freier API-Test erst, wenn der Schlüssel im Anmelde-Schlüsselbund liegt. Offen q180 (Fantasiesprache, Ausnahme zu V-492).
 - WSB: N38 Landung fertig (V-729), N36 ruht bis zum WS1-Terrain-Export, MiB-Turm (V-530) als Vorschlag ohne Bau. Konzeptblatt schreibt WS0 vor jedem Szenen-Bau.
 - Figuren-Register, nächste Erzeugung: kind locus bzw. vehicle (V-714), Signatur-Deck und Tratsch-Typ (V-698), Weltwissen und Haltung (V-702), chatter.motif und chatter.grains (V-688).
 - Audio: SUNO_SSOT §8 (ElevenLabs-Weg). Mindspace-Schichten liegen bereit, Mischung bei WS-Audio. S2b-Fundament nur mit Georgs Suno-Go.
 - Wiedervorlage Georg: Skill kfb-deep-research installieren (Hub b211, Datei KFB_HUB/80_SKILLS/kfb-deep-research.skill). Hub q185 Splats offen (nach MVP messen?). HeyGen b204–b210 bei Georg.
+- Für die Übergabe 25.10. (Georg-Backlog 24.10., zur Diskussion): Boids für HyperNorm und Mindspaces (Text aus Schwärmen, Knetkugel-Boids, Basis three.js GPGPU-Birds); Claybound-Lücken-Liste (Recherche liegt, kaum umgesetzt); prozedurale Landschaft (Erosion, Straßen mit Steigungskosten, SDF-Kreuzungen als Knet-Bänder, Voronoi-Felder, Hecken, L-System-Wälder) als Vorlage für WS1b.
 - WSV: Test mit 69 BNWN-Clips, wenn Georg startet (V-723).
 - Karten-JSON für den Druck: ws1/karten-druck erst nach Anpassung aller Decks durch WS1 und Georgs Ja.
 - FrizzleBob: weiter gesperrt (FB_CANON), erst mit Referenzbild aus der ToolBox.
