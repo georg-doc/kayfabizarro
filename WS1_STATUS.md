@@ -1,7 +1,33 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §159.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§159 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §160.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§160 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 160 · 24.10. · Georgs Entscheide: Faust = Board-Hand (V-668 Schlagring überholt) · Konzept „Prozedurale Welt“ beauftragt · Bitte: Gaussian-Splat-Material aus dem Webchat · HUD 3D Spike gemergt
+
+- **Faust (Aktionsleiste HUD 3D):** Georg 24.10.: Die Hand aus dem Board (KFB_HUD_Fist.r2.glb) bleibt, als Standardwaffe für den unbewaffneten Nahkampf (Grundfähigkeit vor Blaster und Bomben).
+  - **Schlagring verworfen** („zu kleinteilig, hatten wir verworfen“). **V-668 ist damit überholt**; bitte im Register nachziehen.
+  - Zurückgestellt: die Faust wie den Roboarm an den Arm des Spielers setzen.
+- **HUD 3D R1 Spike-Paket 1** (WS1e, ws1/hud-clay-r1 @ba656d5) ist gemergt (mvp 995a1e3), hinter `hud=3d`:
+  - eine Hülle für hud=clay und hud=3d
+  - Zielpfeil, sechs Kugeln, Truhe
+  - HUD-Kosten < 0,1 ms, 1 Kontext, +8 Draw Calls
+  - Abnahmebilder bei Georg. Paket 2 läuft (Kassette, Almanac, Aktionsleiste, Interaktion, Zahnrad).
+  - Vorläufige Owner beim M1-Wirt (Lead): Ziel (goal) und Almanac (gesammelte Karten). Der echte Almanac-Owner wird das Karten-Journal aus Tratsch-Stufe 1.
+- **Konzept „Prozedurale Welt R1“** (Georg 24.10.): nur Konzept, Umsetzung nach dem MVP-Start. Federführend WS1b, mit WS-NPC.
+  - Krazy-Kat-Prinzip: Ort und Zeit sind weich, Karten und Figuren sind die festen Punkte.
+  - Welt im Raster um den Spieler, Dioramen und NPC-Begegnungen prozedural und zufällig.
+  - Doppelbesetzung im Kayfabe-Sinn: Darsteller und Gimmick.
+  - Auftragsziele in Fahrzeit (Owner für den Zielpfeil), Portale, „Meanwhile elsewhere“ als Comic-Wort beim Szenenwechsel.
+  - Regelbasierte Platzierung statt World-Editor.
+  - **Bitte an WS0:** Georg hat mit dem Webchat **Gaussian Splats als optische Illusionen bzw. Wurmlöcher im Gelände** ausgearbeitet (halb hineinfahren wie Wasser bzw. Fluids, Panel-Zwischenraum als psychedelische Achterbahnfahrt, Minigames, NPCs spekulieren, V-697), dazu eure Planung für die Schritte nach dem MVP. Bitte beides zusammenstellen und den Pfad nennen; WS1b nimmt es ins Konzept.
+  - Kanonfragen (Gimmick/Kayfabe) kommen über den Lead an euch.
+- **Weitere Georg-Urteile 24.10.:**
+  - Sprechblasen luftiger: Standard (mvp 9ed1ab6).
+  - Tratsch Lauf 2: „fein“.
+  - Opener „You with the card in your hand“ raus.
+  - „Meanwhile elsewhere“ bleibt möglich, als Szenenwechsel-Wort.
+- **Abnahme-Regel (Georg):** Bilder nur aus dem aktuellen Live-Stand (M1-Welt, echte Figuren), nie aus der alten #stage-Testszene. A/B-Vergleiche starten auf NEU. Eine einheitliche Abnahmeform steht als offener Punkt beim Lead.
 
 ## 159 · 24.10. · Korrektur zu §153/§154: media/kfb auf main ist ÄLTER als der Spielstand · Deck-Analyzer gestartet
 
