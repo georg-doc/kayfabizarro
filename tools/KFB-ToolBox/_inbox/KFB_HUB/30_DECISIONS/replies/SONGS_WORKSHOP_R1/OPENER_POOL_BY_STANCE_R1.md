@@ -25,9 +25,9 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | A friend told me about | into_title | GEORG/R2-Kandidat | told |  |
 | Did you hear about | into_title | GEORG 23.10. |  | Familie heard |
 | I heard a rumor about | into_title | SL OPR3_023 |  |  |
-| The radio kept talking about | into_title | GEORG/R2-Kandidat |  |  |
-| Overheard at the bakery | own_clause | GEORG/R2-Kandidat |  |  |
-| Whispered in the attic | own_clause | GEORG/R2-Kandidat |  |  |
+| The radio kept talking about | into_title | GEORG/R2-Kandidat |  | PRÜFEN: Situationsbehauptung |
+| Overheard at the bakery | own_clause | GEORG/R2-Kandidat |  | PRÜFEN: Ortsbehauptung |
+| Whispered in the attic | own_clause | GEORG/R2-Kandidat |  | STREICHEN-Vorschlag: erfundener Ort |
 
 ## Begegnung (9)
 
@@ -37,7 +37,7 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | My grandmother always said | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | My neighbour swears | into_clause | KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0) |  |  |
 | A neighbour told me about | into_title | GEORG/R2-Kandidat | told |  |
-| A stranger on the bus told me about | into_title | GEORG/R2-Kandidat | told |  |
+| A stranger on the bus told me about | into_title | GEORG/R2-Kandidat | told | STREICHEN-Vorschlag: erfundene Situation, lang |
 | I once met | into_title | POOL |  |  |
 | My grandmother swore by | into_title | GEORG/R2-Kandidat |  |  |
 | My neighbour is | into_title | GEORG 23.10. |  | nur vor Personen/Figuren |
@@ -57,10 +57,10 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | A scratched sign read | own_clause | SL OPR3_057 |  |  |
 | An unsigned letter said | own_clause | GEORG/R2-Kandidat |  |  |
 | I found a note saying | own_clause | GEORG/R2-Kandidat | found |  |
-| I found this under my bed | own_clause | GEORG/R2-Kandidat | found |  |
+| I found this under my bed | own_clause | GEORG/R2-Kandidat | found | STREICHEN-Vorschlag: erfundene Situation, lenkt ab |
 | In my old sketchbook | own_clause | GEORG/R2-Kandidat |  |  |
 | My diary says | own_clause | GEORG/R2-Kandidat | diary |  |
-| On the back of a napkin | own_clause | GEORG/R2-Kandidat |  |  |
+| On the back of a napkin | own_clause | GEORG/R2-Kandidat |  | PRÜFEN: Ortsbehauptung |
 | Someone scratched into the wall | own_clause | SL NEW_049 |  | lang (33 Zeichen) |
 | Someone wrote in my diary | own_clause | GEORG/R2-Kandidat | diary |  |
 | Someone wrote in my friendship book | own_clause | GEORG/R2-Kandidat | diary |  |
@@ -73,7 +73,7 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | I went to | into_title | P43 OP-13 TUNE |  | einzige Orts-Form; nur vor Orts-Karten |
 | Let me tell you about | into_title | POOL |  |  |
 | Long ago there was | into_title | GEORG/R2-Kandidat |  |  |
-| In a dream last Tuesday | own_clause | GEORG/R2-Kandidat |  |  |
+| In a dream last Tuesday | own_clause | GEORG/R2-Kandidat |  | STREICHEN-Vorschlag: erfundene Situation, überspezifisch |
 | The other day, | own_clause | P43 OP-12 TUNE |  | Slot = Ereignis |
 
 ## Frage (9)
@@ -84,7 +84,7 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | Did you see the film about | into_title | GEORG/R2-Kandidat | saw |  |
 | Do you know | into_title | POOL | know |  |
 | Ever heard of | into_title | P43 OP-02 KEEP |  |  |
-| Ever tasted | into_title | POOL | try |  |
+| Ever tasted | into_title | POOL | try | STREICHEN-Vorschlag: überspezifisch (nur Essbares), behauptet Sinneserfahrung |
 | Have you ever | into_title | P43 OP-03 TUNE |  | Slot = Erfahrung, nicht Titel |
 | Have you heard of | into_title | POOL | heard |  |
 | You know | into_title | POOL | know |  |
@@ -140,17 +140,17 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
-| Did you ever try | into_title | POOL | try |  |
+| Did you ever try | into_title | POOL | try | PRÜFEN: unterstellt Handlung; nur vor Handlungskarten |
 | Here comes | into_title | GEORG/R2-Kandidat |  |  |
-| Welcome to | into_title | POOL |  |  |
-| You played | into_title | POOL |  |  |
+| Welcome to | into_title | POOL |  | STREICHEN-Vorschlag: Bühnen-/Ansageformel (R4 C9), behauptet Ort und Publikum |
+| You played | into_title | POOL |  | STREICHEN-Vorschlag: behauptet eine Spielsituation; im Tratsch/Song meist falsch |
 | You wanted | into_title | P43 FW-02 KEEP |  | Slot = Erwartung |
 | You'll laugh, but | into_title | GEORG/R2-Kandidat |  |  |
 | From the back row | own_clause | SL NEW_028 |  |  |
 | Picture this | own_clause | GEORG/R2-Kandidat |  |  |
 | You know something I do not | own_clause | P43 FW-06 TUNE |  |  |
-| You look like someone who | own_clause | P43 OP-04 TUNE |  | Risiko |
-| You with the card in your hand | own_clause | POOL |  |  |
+| You look like someone who | own_clause | P43 OP-04 TUNE |  | STREICHEN-Vorschlag: Unterstellung ans Gegenüber, lenkt ab |
+| You with the card in your hand | own_clause | GESTRICHEN (Georg 24.10.) |  | GESTRICHEN: Georg 24.10.: überspezifisch, lenkt von der Karte ab |
 
 ## Rückruf (3)
 
@@ -182,23 +182,23 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | Stand back for | into_title | GEORG/R2-Kandidat |  |  |
 | Against all odds | own_clause | GEORG/R2-Kandidat |  |  |
 | And then it gets worse | own_clause | P43 UP-10 KEEP |  | Achtung KayfabeTip 1 ('and then'): nur Song-extern/Tratsch |
-| Behind the locked door | own_clause | GEORG/R2-Kandidat |  |  |
-| Here is something nobody asked for | own_clause | POOL | nobody |  |
-| This one has a rule | own_clause | POOL |  |  |
+| Behind the locked door | own_clause | GEORG/R2-Kandidat |  | STREICHEN-Vorschlag: erfundener Ort |
+| Here is something nobody asked for | own_clause | POOL | nobody | STREICHEN-Vorschlag: Selbstkommentar, lang, lenkt ab |
+| This one has a rule | own_clause | POOL |  | STREICHEN-Vorschlag: lenkt auf Regel/Mechanik (S6) |
 
 ## Meta (10)
 
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
-| My goldfish insists on | into_title | GEORG/R2-Kandidat |  |  |
-| The deck insists on | into_title | POOL |  |  |
+| My goldfish insists on | into_title | GEORG/R2-Kandidat |  | STREICHEN-Vorschlag: erfundene Situation, lenkt ab |
+| The deck insists on | into_title | POOL |  | STREICHEN-Vorschlag: Meta-Situation Deck, lenkt von der Karte ab |
 | Agree, or tell me why not | own_clause | GEORG/R2-Kandidat |  |  |
 | Backstage someone muttered | own_clause | SL OPR3_050 |  |  |
-| Behind the mirror | own_clause | GEORG/R2-Kandidat |  |  |
-| I am performing a card. The card does not care | own_clause | P43 FW-05 KEEP |  | lang |
+| Behind the mirror | own_clause | GEORG/R2-Kandidat |  | STREICHEN-Vorschlag: erfundener Ort |
+| I am performing a card. The card does not care | own_clause | P43 FW-05 KEEP |  | STREICHEN-Vorschlag: Meta, lang |
 | Not a metaphor | own_clause | POOL |  |  |
 | The deck says | own_clause | P43 FW-08 KEEP |  |  |
-| This card is doing it whether you like it or not | own_clause | P43 FW-03 KEEP |  | lang |
+| This card is doing it whether you like it or not | own_clause | P43 FW-03 KEEP |  | STREICHEN-Vorschlag: Meta, lang, Regelbezug |
 | This is not a metaphor. Unfortunately | own_clause | P43 OP-19 KEEP |  | Familie mit Not a metaphor |
 
 ## Szenenwechsel (5)
@@ -206,10 +206,10 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 | Opener | Satzbau | Status | Familie | Hinweis |
 |---|---|---|---|---|
 | Anyway | interjection | POOL |  |  |
-| Which brings us to | into_title | POOL |  |  |
-| Before we continue | own_clause | POOL |  |  |
+| Which brings us to | into_title | POOL |  | PRÜFEN: Moderationsbrücke; nur Song-Uptake, nicht Tratsch |
+| Before we continue | own_clause | POOL |  | STREICHEN-Vorschlag: Moderationssituation |
 | Hold that thought | own_clause | R2 NEW_040 |  |  |
-| Meanwhile elsewhere | own_clause | POOL |  |  |
+| Meanwhile elsewhere | own_clause | POOL |  | PRÜFEN: behauptet Ortswechsel; nur Song |
 
 ## Beispiele (BBBW-Triplets, nur Hörprobe)
 

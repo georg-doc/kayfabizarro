@@ -592,3 +592,13 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
 - **Abgleich mit WS0:** `TRIPLET_SSOT_R1.md` (V-698, V-699, V-700) ist maßgeblich. `SSOT_SPOKEN_LINES/` schreibt keine Regeln mehr ab, sondern liefert Code und Daten: `spoken_line_lint.py`, `lore_fallback.py`, `checks.json` (Check → V-Nummer bzw. Vorschlag), `TR1_INDEX.json` + `tr1_cards/`, tr1-Sets und Sperrlisten der 11 Tratsch-Decks.
 - **Was im TRIPLET_SSOT fehlt → `SSOT_SPOKEN_LINES/VORSCHLAG_AN_WS0_R1.md` §0** (8 Punkte): Rückfall = Titel + bereinigte Lore, Power nie (Georg 23./24.10.; TRIPLET_SSOT §2 sagt noch „roh“); Lore-Bereinigung; Bühnen-Dialog A/B; Opener bettet ein (Satzbau, Haltungen, Pool nach Haltung); Sperrliste heikler Karten; „and then“ = FAIL; Hörerwissen/kein Klischee + Song-Form t4; Prüfskript-Lücken.
 - **Bitte an WS0:** übernehmen oder verwerfen, Gate und Prüfer laufen lassen. Bis dahin Status VORSCHLAG.
+
+
+## §31 · 24.10.2026 · An WS0: Opener-Pool – Streichung und Audit (Pool-Änderung)
+- **Georg 24.10. (via WS1-Lead): „You with the card in your hand“ aus dem POOL streichen** – überspezifisch, lenkt von der Karte ab. Bitte in `OPENER_ARC_R2/opener_pool_r2.py` bzw. `triplet_set_check.py` (OPENERS) entfernen. Im Stance-Pool bereits als GESTRICHEN markiert.
+- **Audit der übrigen Opener** nach demselben Maßstab (Situationsbehauptungen, die von der Karte ablenken), Ergebnis in `SONGS_WORKSHOP_R1/OPENER_POOL_BY_STANCE_R1.{json,md}` (Felder `audit_2026_10_24`, `audit_reason`):
+  - **Streichen-Vorschlag aus dem POOL:** You played (behauptet Spielsituation) · Welcome to (Bühnenformel, R4 C9) · Ever tasted (überspezifisch) · This one has a rule (lenkt auf Mechanik) · The deck insists on (Meta) · Here is something nobody asked for (Selbstkommentar) · Before we continue (Moderation).
+  - **Prüfen:** Did you ever try (nur vor Handlungskarten) · Which brings us to / Meanwhile elsewhere (nur Song, nicht Tratsch).
+  - **Ohne Befund (16):** I once met · Let me tell you about · Did you hear of · Do you know · Have you heard of · You know · You know the thing with · What if · The thing about · Everyone agrees · Remember · No wait · I used to believe · Nobody warned us about · Not a metaphor · Anyway.
+  - Außerhalb des POOL: erfundene Orte und Situationen (under my bed, goldfish, last Tuesday, bus, attic, locked door, mirror) als Streichen-Vorschlag.
+- **Engpass Tratsch (WS-NPC):** Vor tr1-Zeilen (ganze Sätze) passen nur Satz-Opener (`into_clause`); aus dem POOL nur 5. 20 Satz-Opener-Kandidaten und 4 Erwiderungen liegen im Stance-Pool zur Freigabe (Georg gefragt).

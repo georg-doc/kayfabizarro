@@ -93,6 +93,39 @@ for op, st in CLAUSE_NEW:
     if op not in {r["opener"] for r in rows}:
         rows.append({"opener": op, "stance": st, "slot": "into_clause", "class": "", "modes": ["any"], "family": None,
                      "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)", "source": "Deck-Songs nach WS-NPC-Befund 24.10.", "clause_ok": True})
+
+# --- Opener-Audit 24.10. (Georg: „You with the card in your hand“ streichen – überspezifisch, lenkt von der Karte ab;
+#     übrige auf Situationsbehauptungen prüfen, die von der Karte ablenken). Pool-Änderung über WS0. ---
+AUDIT = {
+ "You with the card in your hand": ("GESTRICHEN", "Georg 24.10.: überspezifisch, lenkt von der Karte ab"),
+ "You played": ("STREICHEN-Vorschlag", "behauptet eine Spielsituation; im Tratsch/Song meist falsch"),
+ "Welcome to": ("STREICHEN-Vorschlag", "Bühnen-/Ansageformel (R4 C9), behauptet Ort und Publikum"),
+ "Ever tasted": ("STREICHEN-Vorschlag", "überspezifisch (nur Essbares), behauptet Sinneserfahrung"),
+ "This one has a rule": ("STREICHEN-Vorschlag", "lenkt auf Regel/Mechanik (S6)"),
+ "The deck insists on": ("STREICHEN-Vorschlag", "Meta-Situation Deck, lenkt von der Karte ab"),
+ "Here is something nobody asked for": ("STREICHEN-Vorschlag", "Selbstkommentar, lang, lenkt ab"),
+ "Before we continue": ("STREICHEN-Vorschlag", "Moderationssituation"),
+ "Did you ever try": ("PRÜFEN", "unterstellt Handlung; nur vor Handlungskarten"),
+ "Which brings us to": ("PRÜFEN", "Moderationsbrücke; nur Song-Uptake, nicht Tratsch"),
+ "Meanwhile elsewhere": ("PRÜFEN", "behauptet Ortswechsel; nur Song"),
+ "I found this under my bed": ("STREICHEN-Vorschlag", "erfundene Situation, lenkt ab"),
+ "My goldfish insists on": ("STREICHEN-Vorschlag", "erfundene Situation, lenkt ab"),
+ "In a dream last Tuesday": ("STREICHEN-Vorschlag", "erfundene Situation, überspezifisch"),
+ "A stranger on the bus told me about": ("STREICHEN-Vorschlag", "erfundene Situation, lang"),
+ "Overheard at the bakery": ("PRÜFEN", "Ortsbehauptung"),
+ "On the back of a napkin": ("PRÜFEN", "Ortsbehauptung"),
+ "The radio kept talking about": ("PRÜFEN", "Situationsbehauptung"),
+ "Whispered in the attic": ("STREICHEN-Vorschlag", "erfundener Ort"),
+ "Behind the locked door": ("STREICHEN-Vorschlag", "erfundener Ort"),
+ "Behind the mirror": ("STREICHEN-Vorschlag", "erfundener Ort"),
+ "You look like someone who": ("STREICHEN-Vorschlag", "Unterstellung ans Gegenüber, lenkt ab"),
+ "I am performing a card. The card does not care": ("STREICHEN-Vorschlag", "Meta, lang"),
+ "This card is doing it whether you like it or not": ("STREICHEN-Vorschlag", "Meta, lang, Regelbezug"),
+}
+for r in rows:
+    if r["opener"] in AUDIT:
+        v, why = AUDIT[r["opener"]]; r["audit_2026_10_24"] = v; r["audit_reason"] = why
+        if v == "GESTRICHEN": r["status"] = "GESTRICHEN (Georg 24.10.)"
 ORDER = ["Gerücht", "Begegnung", "Fundstück", "Anekdote", "Frage", "Theorie", "Behauptung", "Erwiderung",
          "Beobachtung", "Ansprache", "Rückruf", "Zweifel/Wende", "Steigerung", "Meta", "Szenenwechsel"]
 rows.sort(key=lambda r: (ORDER.index(r["stance"]), r["slot"], r["opener"]))
@@ -112,7 +145,7 @@ for st in ORDER:
     rs = [r for r in rows if r["stance"] == st]
     if not rs: continue
     md += [f"## {st} ({len(rs)})", "", "| Opener | Satzbau | Status | Familie | Hinweis |", "|---|---|---|---|---|"]
-    md += [f"| {r['opener']} | {r['slot']} | {r['status']} | {r.get('family') or ''} | {r.get('note','')} |" for r in rs] + [""]
+    md += [f"| {r['opener']} | {r['slot']} | {r['status']} | {r.get('family') or ''} | {(r.get('audit_2026_10_24','') + ': ' + r.get('audit_reason','')) if r.get('audit_2026_10_24') else r.get('note','')} |" for r in rs] + [""]
 md += ["## Beispiele (BBBW-Triplets, nur Hörprobe)", "",
        "- Gerücht · into_title: *Did you hear about The Finger Poke of Doom? Instant pin if you consent. Strength? No, gullibility.*",
        "- Theorie · into_title: *I wonder why The Booker decides the winner before it starts: the ending is pre-planned. You are just a puppet.*",
