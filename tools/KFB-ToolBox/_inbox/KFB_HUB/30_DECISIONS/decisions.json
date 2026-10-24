@@ -10614,6 +10614,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-742",
+   "date": "2026-10-25",
+   "area": "Prozess",
+   "verdict": "FAIL",
+   "text": "Georg 25.10. zum Claude-Design-Brief HyperNorm R3 (b220): redaktioneller Content mit Bastel-Auftrag statt seines Wunsches nach prozeduralem Design, dadaistischer KI-Kunst mit semantischen Seeds (Karte, Farbe) und der HyperNorm-Engine v15+. Georg brieft Claude Design selbst nach; Material liegt auf GitHub (design/claude-design-r3).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Design-Brief folgt Georgs Bild der Sache (prozedural, generativ, seed-getrieben), nicht einem Redaktionsplan.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-743",
+   "date": "2026-10-25",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: HUD 3D ist Standard (nicht mehr hinter hud=3d); Knet-HUD nur noch als Vergleich. Gilt ab dem neuen Site-Paket aus game/mvp-r1 @2b96e8a (WS0 baut, WSA veröffentlicht).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat Richtung und Nacharbeit gesehen; der Schalter hält nur noch den Test auf.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10726,7 +10756,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1260",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1262",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
