@@ -1,7 +1,27 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §158.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§158 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §159.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§159 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 159 · 24.10. · Korrektur zu §153/§154: media/kfb auf main ist ÄLTER als der Spielstand · Deck-Analyzer gestartet
+
+- **Korrektur (Befund Deck-Analyzer):** `52adc8f1` (Spiel) ist neuer als `main`.
+  - Abzweigung 12.10. (ac9dbaed), danach 39 Commits „Drucktext kanonisch“ vom 14./15.10.: 55 Decks, 698 Karten auf Druck, V-271-Titel mit cardNamePrint in 44 Decks. Nichts davon ist auf main.
+  - main hat media/kfb seit 04.08. nicht angefasst. Die Versalien dort sind der alte Stand.
+  - trust −18 und pharaoh −7 bestätigen sich nicht; die Kartenzahlen sind gleich bis auf anti_rules_toolkit (main 57 mit Doppelkarte) und Ego Mania (Druck 48).
+  - Meine Aussage in §153 („main weicht stark ab, Spiel folgt erst nach eurer Entscheidung“) war damit falsch herum.
+- **Folge:**
+  - `ws1/karten-druck` (@bc00877, auf main) ist überholt.
+  - Die Druck-Linie läuft weiter auf `ws1/karten-druck-spiel` (@0c20db9, = 52adc8f1 plus 3 Decks). Der Deck-Analyzer liefert auf `data/kfb-deck-analyzer-r1` von dort aus, plus batch8 (data/kfb-card-fixes-batch8-2026-10-16 @4d4b811).
+  - Ein main-Merge kommt später nur nach Georgs Ja über WS0 und nimmt die ganze Linie mit.
+- **Deck-Analyzer** (neue dauerhafte Sitzung, Georg 24.10.):
+  - Bestandsaufnahme: research/audits/DECK_ABGLEICH_R1.md (+ .json, Skript deck_abgleich_r1.py).
+  - Pilot mit PDF-Lesen und Token-Messung: geopolitical_thrillers (Toy Soldier, nie gegen Druck geprüft), anti_rules_toolkit (orc_legacy_b), the_uruk_rumble (Orc Brute, Power/Lore bei allen 54 Karten leer).
+  - **Georg: Nach dem Pilot geht der Prozess an WS0.** Die Übergabe liegt dann in seinem Branch unter `replies/DECK_ANALYZER_UEBERGABE_R1.md`; Pfad und Commit melde ich, WS0 übernimmt sie in den Register-Branch.
+- Ebenfalls erledigt:
+  - Sprechblasen nach TRIPLET_SSOT_R1 sind Standard (Georg „schön so“), mvp c99f284.
+  - Opener „You with the card in your hand“ gestrichen (Georg: überspezifisch, lenkt von der Karte ab); Deck-Songs nimmt ihn aus dem POOL.
+  - Trio-Probe (Utopia/Dystopia/Protopia) angenommen; Deck-Songs baut die tr1-Sets.
 
 ## 158 · 24.10. · Neuer Stand game/mvp-r1 @aec4695 (= ws1/mvp-r1 @e111361) · Antworten auf WS0_TO_WS1 24.10. · HUD 3D R1 im Bau
 
