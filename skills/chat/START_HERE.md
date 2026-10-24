@@ -1,3 +1,13 @@
+## ADDITIVE RESEARCH METHOD · 2026-10-24 · KFB DEEP RESEARCH ATLAS (PROPOSAL, PRIVATE PLUGIN)
+
+Georg authorized **cross-topic Wiki-like research and a reusable private ChatGPT plugin**, as an additive layer over actual existing source owners, not a second KFB canon, KFB game runtime or live research site. Research-method concept: `skills/chat/research/KFB_RESEARCH_ATLAS_PROTOCOL_R1_2026-10-24.md`. Portable prompt: `skills/chat/research/KFB_DEEP_RESEARCH_MASTER_PROMPT_R1_2026-10-24.md`. Atlas pilot pointer: `skills/chat/research/KFB_RESEARCH_ATLAS_INDEX_R1_2026-10-24.json` (**branch-local PROPOSAL, 9 typed source/Warburg/Sinnfeld edges**). The existing `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` and `skills/chat/meta/CANON_HOME_MAP.json` retain their boundaries.
+
+Private plugin created: **KFB Deep Research** v0.1.0, https://chatgpt.com/plugins/plugins_6adc1c4d1f64819192061fa7a60d16d2 ; source release metadata `skills/chat/research/KFB_DEEP_RESEARCH_PLUGIN_R1_2026-10-24.md` (Plugin Creator source-readback 7 files). Existing KFB WorldView remains installed/unmodified. Plugin has no autonomous backend or unconditional GitHub write permission, only currently connected ChatGPT tools and authorized actions.
+
+Current topic pilot and same Draft PR #408: `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/R2D_OMS_ORIGINAL_COMPARISON_AND_ATLAS_PILOT_2026-10-24.md`. New R2D original CIA OMS / Inspector General sources S49–S51, total 51 heterogeneous sources, 36 unapproved card ideas, **5 additional original PDF image pages** and **10/10 static crossfile checks**; no user-facing Wiki/Stage, merge or Live. Read its expanded `RETURN.md` before continuing. Exactly one next research gate **R2E original-source version comparison / plugin fresh-chat pilot**, keeping West/Cameron/Desmet open and using the same existing research owner.
+
+---
+
 ## ADDITIVE RESEARCH ROUTE · 2026-10-16 · MKULTRA / MONARCH / KFB CARDS (NO RUNTIME)
 
 Georg requested a source-focused GitHub research slice and later KFB cards ideation for the documented MKUltra experiments, claimed Project Monarch, and Cathy O'Brien / Mark Phillips' *TranceFormation of America*. **This is not a new canon, implementation or runtime owner; none of the world/MVP gates below change.**
