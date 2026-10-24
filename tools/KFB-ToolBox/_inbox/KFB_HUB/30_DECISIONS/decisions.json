@@ -10824,6 +10824,21 @@
    "applies": "Löser v2"
   },
   {
+   "id": "V-756",
+   "date": "2026-10-25",
+   "area": "Prozess",
+   "verdict": "DECISION",
+   "text": "Georg 25.10. (Token-Limit): WS0 übernimmt den WS1-Slice der prozeduralen MVP-Welt (S1 Fortbewegung, S2 endlose Welt, S3 Begegnungs-Module, kfb-place-Laufzeit-Adapter veg=core) und arbeitet ihn mit WSA work (Site) und Claude Design (Bilder) aus. Arbeitsstand privates Repo KFB-Stunt-Car-Race, Zweig game/proc-world-ws0 (Basis game/mvp-r1 @2b96e8a + game/mvp-r1-ws0 @0f48d11), lokal ~/kfb-ws0/kfb-mvp. WS1 liefert nur noch Schritt 0 (Konzept Prozedurale Welt R1.5/R1.6 und Lückenliste auf GitHub) und übernimmt den Fix aus game/mvp-r1-ws0.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Arbeitsplatz mit allen Fäden hält die Welt zusammen und spart die Übergaben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10936,7 +10951,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1269",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1270",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

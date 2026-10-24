@@ -47,3 +47,9 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im Chat. Private Assets nie öffentlich. Keine Freigaben an andere Sitzungen weiterreichen. Agenten laden nichts per git fetch in `~/KFB_GitHub_sync`. Cowork-Sitzungen werden nie gelöscht.
 
 **Übernahmekarten (V-713):** je laufender Sitzung `sessions/<kürzel>.md` auf `ws1/status`, dazu `sessions/site.md`. WSB: `50_BLENDER/STATUS.md` + RETURN. Bei Übernahme einer Sitzung zuerst diese Karte lesen.
+
+## Stand 25.10. abends (nach V-756)
+- **WS0 baut die prozedurale MVP-Welt selbst** (V-746, V-756): Zweig `game/proc-world-ws0` im privaten Repo KFB-Stunt-Car-Race, lokal `~/kfb-ws0/kfb-mvp` (src/private und node_modules liegen dort, Platte 98 % voll). Push mit Deploy-Key `kfb_private_assets_deploy`. Site-Pakete als `site/mvp-rN-dist` für WSA (b214, R2 @e76c26a). Lokaler Test: Startkonfiguration `kfb-mvp-local` (Port 5250, /raw-Proxy).
+- **kfb-place** (V-748–V-755): Regeldatei `CANON_3D/lib/kfb_place.r1.json`, Löser `CANON_3D/lib/kfb-place-core.v1.mjs` + CLI `kfb-place.mjs` (Golden-Test), Konzeptblatt `replies/KONZEPTBLATT_KFB_PLACE_R1.md`. WSB Nachtrag 36 (N39) nach N35 D. P0-Frames bei Claude Design (b224).
+- **Claude-Design-Material immer über GitHub** `design/claude-design-r3/<ordner>` (hypernorm_r3, mib_turm_r1, kfb_place_p0), nie ZIPs.
+- Offen bei Georg zum Rausgeben: b214 (WSA), b222 + b224 (Claude Design), b223 (WS1 nur Schritt 0).

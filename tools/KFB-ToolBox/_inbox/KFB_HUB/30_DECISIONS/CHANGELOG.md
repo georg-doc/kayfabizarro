@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-756: WS0 übernimmt den WS1-Slice der prozeduralen MVP-Welt (S1–S3, kfb-place veg=core) mit WSA und Claude Design; Zweig game/proc-world-ws0, lokal ~/kfb-ws0/kfb-mvp. WS1 nur noch Schritt 0 + Fix (b223 angepasst). Platte 98 % voll: private Assets und node_modules verschoben statt doppelt geladen.
 - Claude-Design-Brief kfb-place P0 (4 Style-Frames, keine Figuren, Fundstück 15 cm/35° nach V-450/V-453, Fluff-Farben aus V-292, Kameras, Kanon-12/16-Regeln; Prüfer: 3 BLOCK behoben), Material auf GitHub design/claude-design-r3/kfb_place_p0 @faf4fcf, Hub b224. Stumpf aus Kenney Nature Kit (KayKit Forest FREE hat keinen). V-755 Voronoi-Lückenfelder (masks.gaps, Löser v2).
 - q201 ja mit TUNE (V-752: Steinspur organisch nach V-578, kein Holz). V-753 Einbettungs-SOP (Dünen-Logik, Steinbänder, Abschlüsse, Kontakt, Sprenkel) in kfb_place embed.sop; V-754 harte Kanten organisch runden + Rubble/Staub. Löser CANON_3D/lib/kfb-place-core.v1.mjs + CLI kfb-place.mjs (WS0, deterministisch, Golden-Test PASS, P0-Rezept mit vier Biografie-Schichten, Nester eng, Steinspur dicht → locker). WSB Nachtrag 36 (50_BLENDER/ANTWORT_WS0_2026-10-25_KFB_PLACE.md, Gate + Prüfer PASS) gesendet; b223: WS1b nur Laufzeit-Adapter veg=core.
 - V-751 Karten-Relief als Begegnungs-Modul: Karte aus dem Haupt-Deck als Knetkugel-Gelände mit GPU-Partikeln; eine Runde darauf sammelt die Karte in den Almanach (Georg). In b223 (S3) und Masterplan.

@@ -1,5 +1,14 @@
 # WS0 → WS1 Lead (+ WS1b, WS1d, WS-NPC, WS-Audio) · 25.10. · Prozedurale Welt hat Vorrang: endloser Cartoon-Roadtrip (V-746)
 
+**Stand 25.10. abends (V-756):** Georg hat entschieden, dass WS0 die Slices S1–S3 und den kfb-place-Laufzeit-Adapter selbst baut (Zweig `game/proc-world-ws0` im privaten Repo KFB-Stunt-Car-Race), zusammen mit WSA und Claude Design. **Von WS1 bitte nur noch:**
+1. Schritt 0: das Konzept `docs/PROZEDURALE_WELT_KONZEPT_R1.md` (R1.5 bzw. R1.6) und `PROZEDURALE_WELT_LUECKEN_R1.md` auf `ws1/status`, damit WS0 darauf aufbaut.
+2. Den Fix aus `game/mvp-r1-ws0` @0f48d11 nach `kfb-planet` übernehmen (HUD 3D Standard, Neuladen bei nackter Adresse).
+3. Neue Spielstände wie bisher nach `game/mvp-r1` spiegeln und melden; WS0 zieht sie in `game/proc-world-ws0`.
+
+Der Rest dieses Briefings bleibt als Plan für WS0 stehen.
+
+---
+
 **Tier 0**
 1. **Georg 25.10.:** Die prozedurale Welt kommt jetzt vor Chatterbox-Feinschliff und Details. Chatterbox läuft vorerst nur mit Sprechblasen; die Silben-Stimmen bleiben hinter `chat=syl` und werden nicht weiter getunt.
    - Freigegeben ist auch die „Ebene“: Stadtzonen bekommen schon bei der Weltgenerierung ein flacheres, welliges Relief (V-747, Konzept §5.10). Bedingung nach V-736: nur nahtlos über die WSB-Einbettung (N36, V-711, V-716). Keine eingestampften, ungestalteten oder platt aufliegenden OSM-Zonen und kein Kitbash echter Landmarken (REJECT §5.10a, V-708). Die Kölner Tasche geht erst mit einem Vorher-nachher-Bild an Georg.
