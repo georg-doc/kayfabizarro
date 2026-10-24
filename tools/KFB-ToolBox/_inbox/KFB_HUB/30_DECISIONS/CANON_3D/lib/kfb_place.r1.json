@@ -71,6 +71,22 @@
    "vehicle": [
     0.0,
     0.03
+   ],
+   "path_stone": [
+    0.3,
+    0.5
+   ],
+   "water_plant": [
+    0.0,
+    1.0
+   ],
+   "rubble": [
+    0.3,
+    0.5
+   ],
+   "dust": [
+    0.0,
+    1.0
    ]
   },
   "sink_cap": 0.5,
@@ -274,7 +290,28 @@
   "ref": "50_BLENDER/N36/data/n36_rules.r1.json",
   "schema": "kfb.embed-rules/1",
   "only_add": true,
-  "rule": "V-716"
+  "rule": "V-716",
+  "sop": {
+   "note": "Georg 25.10. (V-753): Dünen-Logik und alles aus den Blender-Dioramen (Steine, Übergänge, Abschlüsse, Kontakt) ist Pflicht-SOP für jedes Prop, Diorama, jede Landmarke und jede andere Terrain-Einbettung",
+   "steps": [
+    "1 Fußabdruck und Maske aus der Kachel (hull, Eingänge)",
+    "2 Düne/Schürze: nur auftragen, Profil Anschluss → Düne → Auslauf, Lee länger (Wind), Auslauf L = max(4–6 m, 3,75 × Auftragshöhe), Flanke ≤ 22° (n36 apron)",
+    "3 Sockel 15–25 % vom Gelände bedeckt (V-396), keine Stufe > 2 cm an der Kontaktlinie (V-716)",
+    "4 Eingänge frei: Rampe ≤ 15°, Breite ≥ 1,2 m (n36 entrance)",
+    "5 Steinbänder in drei Ringen (n36 bands, Dichte nach V-749 Nr. 8), Steinkit v4, gerundet, Einsinken nach rules.sink",
+    "6 Abschluss je Kante: freies Ende durch Verfall (V-578) oder gebautes Ende (kfb_edge); harte Kanten (Dungeon-Generator, Kachelfelder, Mauern, Plinthen) organisch abrunden (Knet-Rundung am Modell), dazu kleine Rubble- bzw. Ruinensteine mit Knet-Rundung wie Pfadsteine und Staub als sauberer Übergang, nur wo nötig (V-754)",
+    "7 Kontakt-Geometrie mit Ursache (rules.contact), Moos/Kiesel/Erdkeil",
+    "8 Bodenübergang als Sprenkel (V-403), nie Verlauf oder Linie",
+    "9 Gate ENV-* auf dem Rezept"
+   ],
+   "sources": [
+    "50_BLENDER/N36/data/n36_rules.r1.json",
+    "CANON_3D/lib/kfb_edge_params.json",
+    "50_BLENDER/STEINKIT",
+    "50_BLENDER/K8",
+    "50_BLENDER/B29"
+   ]
+  }
  },
  "edge": {
   "ref": "CANON_3D/lib/kfb_edge_params.json",
@@ -283,7 +320,13 @@
    "built_end",
    "ruin_end"
   ],
-  "rule": "V-577"
+  "rule": "V-577",
+  "rounding": {
+   "note": "V-754: harte Kanten organisch abrunden, Rubble/Ruinensteine klein und gerundet, Staub als Übergang, nur wo nötig",
+   "rubble_kind": "rubble",
+   "dust_kind": "dust",
+   "ref": "K8 offen: Ruinen-Brocken mit Knet-Rundung wie Pfadsteine"
+  }
  },
  "wfc": {
   "allowed": [
@@ -339,7 +382,7 @@
    "bare_tree": null
   },
   "color": {
-   "source": "Biom-Palette, Fluff-Akzentfarben (V-426)",
+   "source": "sechs Story-Mode-Farben, satte Variante (V-292): Tragic #3e6a83, Comic #7a8d4a, Absurd #e9c14a, Heroic #d97c3a, Mystical #6b4e7d, Forbidden #a64670; auf grünem Laub nie Comic oder Tragic",
    "rule": "eine Farbe je Nest, Kontrast zum Träger, keine Zufallsfarbe je Kugel",
    "contrast_on_green": "Fluff aus dem Candy-Band gegenüber dem Laub (V-305), nie Oliv auf Grün",
    "zone_mix": {
@@ -358,11 +401,11 @@
  },
  "finds": {
   "optional": true,
-  "display": "Hüfthöhe Medium-Rig, langsam drehend, sanftes Auf-und-ab (V-437)",
+  "display": "15 cm über dem Boden, langsam drehend, sanftes Auf-und-ab; längliche Teile und Werkzeuge mit Stiel schräg 35° (V-450, V-453)",
   "pickup": "bei Kontakt",
   "placement": "nur mit Ursache aus der Ortsbiografie (Nutzen oder Vergehen), z. B. am Stumpf, unter dem Baum, am Wegrand",
   "per_cell_max": 1,
-  "source": "foundItems3d (found=rest), Fundsachen-Katalog"
+  "source": "Paket-Varianten, keine Eigenbauten (V-434, V-450): KayKit Restaurant/Resource Bits, Tiny Treats, KayKit RPG Tools; P0-Kandidat Axt (RPG Tools) oder Brotzeit (Tiny Treats Picnic)"
  },
  "recipes": [
   {
@@ -497,7 +540,7 @@
    "story_template": "gefällter Stamm wird zum Stumpf, Fluff und ein Fundstück daran",
    "layer": 3,
    "finds": true,
-   "kit": "KayKit Forest",
+   "kit": "Kenney Nature Kit (stump_old, log) – KayKit Forest FREE hat keinen Stumpf",
    "echoes": "2 Holzstücke desselben Stamms in Wurfweite",
    "wear_marks": [
     "Sägeschnitt",
@@ -506,25 +549,26 @@
    ]
   },
   {
-   "id": "wood_path",
+   "id": "path_trace",
    "biomes": [
     "moos"
    ],
-   "kit": "Steinkit v4 (Wegsteine, lose am Rand)",
+   "kit": "Steinkit v4 + KayKit path_A–path_D",
    "slots": [
     {
      "role": "path",
      "kinds": [
-      "stone_S",
-      "stone_M"
+      "path_stone"
      ],
      "layout": "Spur vom Rand zum Stumpf"
     }
    ],
-   "story_template": "Holzweg: hier wurde der Stamm abgefahren",
+   "story_template": "Abfuhrweg: hier wurde der Stamm weggezogen, die Steine liegen verstreut",
    "layer": 2,
    "contact": true,
-   "transition": "Sprenkel"
+   "transition": "Sprenkel",
+   "distribution": "V-578: heiler Kern bis zu einer geschwungenen Isolinie, dann verwittert gerundete Stücke dicht → locker (≈ 1,0 → 0,4 u, Fuge 3 → 31 cm), einzelne fehlen, Erde in der Lücke; organisch, keine Reihe",
+   "tune": "Georg q201: Steine und organischer verteilte Kacheln bzw. Fragmente, kein Holz"
   }
  ],
  "biomes": {
@@ -533,14 +577,14 @@
     "tree_group": 1.0,
     "bush_nest": 0.8,
     "stone_nest_slope": 0.6,
-    "wood_path": 1.0
+    "path_trace": 1.0
    },
    "kit": {
     "tree_group": "KayKit Forest",
     "bush_nest": "KayKit Forest",
     "stone_nest_slope": "Steinkit v4",
-    "wood_path": "Steinkit v4",
-    "stump_stamp": "KayKit Forest"
+    "stump_stamp": "Kenney Nature Kit",
+    "path_trace": "Steinkit v4 + KayKit path_A–path_D"
    },
    "note": "P0; weitere Biome aus der Biom-Fahrt folgen mit P1",
    "fluid": "water"
@@ -590,5 +634,26 @@
   "owner": "WS1c",
   "shader": "ein Fluid-Shader, Art als Parameter, Licht aus dem einen Rig"
  },
- "gate_map_note": "Zuordnung alter kfb_env-Codes (G1, E2, C1, S4 …) zu ENV-* liefert WSB mit der Gate-Erweiterung (V-749 Nr. 9)"
+ "gate_map_note": "Zuordnung alter kfb_env-Codes (G1, E2, C1, S4 …) zu ENV-* liefert WSB mit der Gate-Erweiterung (V-749 Nr. 9)",
+ "terrain_dunes": {
+  "note": "Sand-Dünen als Geländeform in Wüsten-Biomen gehören dem einen Höhen-Owner (WS1b, Biom-Fahrt); kfb-place liefert nur Rezepte und Einbettung darauf",
+  "owner": "WS1b"
+ },
+ "masks": {
+  "gaps": {
+   "note": "Georg 25.10. (V-755): Lücken zwischen Straßen, Modellen und Gelände werden über Voronoi-Felder gefüllt",
+   "method": "Voronoi über die Kanten von Straßen, Fußabdrücken und Stamps als Keime → Zellen = Lückenflächen mit Abstand zum nächsten Objekt (Distanzfeld/Mittelachse)",
+   "use": [
+    "je Zelle ein Füll-Rezept nach Ursache (Schatten → Moos, Abfluss → Kies, Sonne → Blüten/Gras, Hangfuß → Rubble)",
+    "Dichte fällt zur Zellmitte bzw. steigt zur Kante je nach Ursache",
+    "Platz für Kontakt-Geometrie und Kiesel"
+   ],
+   "never": [
+    "sichtbares Zellmuster oder Linien an den Zellgrenzen",
+    "Kachelmuster"
+   ],
+   "borders": "Sprenkel (V-403)",
+   "status": "Konzept; Löser v2"
+  }
+ }
 }

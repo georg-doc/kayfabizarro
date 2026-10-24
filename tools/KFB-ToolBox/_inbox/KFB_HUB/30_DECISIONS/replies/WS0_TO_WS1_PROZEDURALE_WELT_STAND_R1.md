@@ -45,7 +45,7 @@
 **S2 · Endlose Welt**
 - Die Biom-Fahrt wird zur Hauptwelt: ständig wechselnde Biome, Geländeformen, Paletten (`look=terrain3`), Himmel nach Biom und Musik bzw. Klangbetten je Biom (WS-Audio).
 - Übergänge nach Kanon, ohne harte Schnitte.
-- Umgebung, Props und Natur nur über das kommende Kern-Modul (V-748: ein Regelwerk mit Kachel-Datei, Laufzeit-Adapter bei WS1b, WFC nur lokal). Keine eigene Platzierungslogik; bis zum Modul läuft S2 mit dem vorhandenen `endlessVeg.js`. Der Prüfbericht `replies/AUDIT_PLACEMENT_CORE_R1.md` im Register-Zweig ist die Grundlage.
+- Umgebung, Props, Natur, Fluff, Fundstücke und Einbettung nur über das Kern-Modul `kfb-place` (V-748 bis V-754, Georg q201). Regeldatei `CANON_3D/lib/kfb_place.r1.json` und Löser `CANON_3D/lib/kfb-place-core.v1.mjs` (rein, deterministisch, Golden-Test PASS) baut WS0 und liegt im Register-Zweig. **WS1b baut nur den Laufzeit-Adapter:** `placeCell` in `src/world/endlessVeg.js` ruft `placeChunk` und instanziiert das Rezept (BatchedMesh, 64-m-Zellen, Wind je Gruppe) hinter `veg=core`, Standard bytegleich. Konzept: `replies/KONZEPTBLATT_KFB_PLACE_R1.md`. Die P0-Bildrunde startet nach Georgs Abnahme der Style-Frames.
 - Stadtzonen mit „Ebene“ als erste Zonenart (Kölner Tasche), nur nahtlos über die WSB-Einbettung (siehe Tier 0).
 
 **S3 · Begegnungen als Module (Regie R0)**

@@ -49,7 +49,7 @@ Landmarken und Dioramen sind feste Stamps, um sie herum läuft nur die Einbettun
 - „Kein Fluff ohne Herkunft.“
 
 **Fundstücke** (optional, höchstens eins je Zelle):
-- Darstellung wie V-437: auf Hüfthöhe, langsam drehend, sanft auf und ab, Aufnehmen bei Kontakt.
+- Darstellung nach V-450/V-453: 15 cm über dem Boden, langsam drehend, sanft auf und ab, längliche Teile schräg 35°. Aufnehmen bei Kontakt. Nur Paket-Varianten (V-434), für P0 eine Axt oder eine Brotzeit.
 - Platz nur mit Ursache aus der Ortsbiografie, also am Stumpf, unter dem Baum oder am Wegrand.
 
 Beides steht im Regelwerk und im Rezept. Jede Instanz trägt ihre Rolle (`fluff_nest`, `find`), damit Blender und Spiel sie gleich zeigen.
@@ -62,9 +62,29 @@ Beides steht im Regelwerk und im Rezept. Jede Instanz trägt ihre Rolle (`fluff_
   - blubbernde Säure im Gegenton zum Boden: Ufer verätzt.
 - Es gibt einen Fluid-Shader, die Art ist ein Parameter. Owner ist WS1c, das Licht kommt aus dem einen Rig.
 
+## 2d · Einbettung als Pflicht-SOP (Georg 25.10., V-753)
+Jedes Prop, Diorama, jede Landmarke und jede andere Terrain-Einbettung läuft durch dieselben Schritte, so wie wir sie in den Blender-Dioramen erarbeitet haben (N36, Steinkit, K8, B29):
+1. Fußabdruck und Maske aus der Kachel.
+2. Düne bzw. Schürze nur auftragen, Profil Anschluss → Düne → Auslauf, Lee-Seite länger. Flanke ≤ 22°.
+3. Sockel zu 15–25 % vom Gelände bedeckt, keine Stufe über 2 cm an der Kontaktlinie.
+4. Eingänge frei, Rampe ≤ 15°.
+5. Steinbänder in drei Ringen aus dem Steinkit, gerundet und eingesunken.
+6. Abschluss je Kante: freies Ende durch Verfall oder gebautes Ende. Harte Kanten (Dungeon-Generator, Kachelfelder, Mauern, Plinthen) werden organisch abgerundet, dazu kleine gerundete Rubble- bzw. Ruinensteine und Staub als sauberer Übergang, nur wo nötig (V-754).
+7. Kontakt-Geometrie mit Ursache.
+8. Bodenübergang als Sprenkel.
+9. Gate auf dem Rezept.
+
+Sand-Dünen als Geländeform in Wüsten-Biomen gehören dem einen Höhen-Owner (WS1b). kfb-place setzt Rezepte und Einbettung darauf.
+
+## 2e · Lückenfelder (Georg 25.10., V-755)
+- Die Lücken zwischen Straßen, Modellen und Gelände werden über Voronoi-Felder gefüllt. Straßenkanten, Fußabdrücke und Stamps sind die Keime, die Zellen sind die Lückenflächen.
+- Jede Zelle bekommt ein Füll-Rezept nach Ursache: Schatten gibt Moos, Abfluss gibt Kies, Sonne gibt Blüten und Gras, der Hangfuß gibt Rubble.
+- Das Zellmuster ist nie sichtbar: keine Linien an den Grenzen, die Grenzen sind Sprenkel. Voronoi ordnet nur, was wohin gehört.
+- Stand: Konzept, im Löser ab v2.
+
 ## 3 · Erste Probe P0 (eine Zelle)
 - **In einem Satz:** „Diese Lichtung zeigt einen alten Waldrand am Hang, weil der Wind das Laub hangabwärts treibt, und der Spieler sieht zuerst den Baumstumpf mit Fluff.“
-- **Ort:** 64-m-Zelle im Biom `moos`, fester Seed. Ein Kit je Gruppe: Bäume, Büsche, Stumpf aus KayKit Forest; Steinnest und Wegspur aus Steinkit v4.
+- **Ort:** 64-m-Zelle im Biom `moos`, fester Seed. Ein Kit je Gruppe: Bäume und Büsche aus KayKit Forest, Stumpf und Holzstücke aus dem Kenney Nature Kit (KayKit Forest FREE hat keinen Stumpf); Steinnest und Wegspur aus Steinkit v4.
 - **Gruppen:**
   - Baumgruppe (1 Baum, 3 Büsche, 1 Akzentstein);
   - Busch-Nest;
@@ -73,7 +93,7 @@ Beides steht im Regelwerk und im Rezept. Jede Instanz trägt ihre Rolle (`fluff_
 - **Fluff:** Baumgruppe und Busch-Nest tragen farbige Fluff-Nester, ein Schlag löst Fallobst, das sich aufsammeln lässt.
 - **Ortsbiografie (alle vier Schichten als Instanz):**
   - Entstehen: der alte Waldrand-Baum (Anker der Baumgruppe);
-  - Nutzen: Holzweg als Wegspur aus Steinkit-Steinen vom Rand zum Stumpf, Übergang als Sprenkel;
+  - Nutzen: Abfuhrweg als Steinspur vom Rand zum Stumpf. Steine und Fragmente sind organisch verteilt nach V-578: heiler Kern, dann verwittert gerundete Stücke dicht → locker, einzelne fehlen, Erde in der Lücke, keine Reihe (Georg-TUNE q201). Übergang als Sprenkel;
   - Vergehen: der gefällte Stamm wird zum Stumpf. Er ist die Signatur, dazu zwei Echos (Holzstücke desselben Stamms). Am Stumpf mindestens zwei Gebrauchsspuren: Sägeschnitt, Axtkerbe, Moos auf der Schnittfläche;
   - Bewachsen: Moos und Büsche in den Fugen, Busch-Nest.
 - **Bilder:** Blender-Proof und Spiel hinter `veg=core`, gleiche Kamera, A/B gegen die heutige Vegetation. Echtes Terrain, sobald der Höhenfeld-Export greift, sonst als Platzhalter markiert.
@@ -84,7 +104,7 @@ Beides steht im Regelwerk und im Rezept. Jede Instanz trägt ihre Rolle (`fluff_
 ### P0 · Konzeptfelder (Vorlage KONZEPTBLATT_R1)
 | Feld | P0 |
 |---|---|
-| `focal` | Stumpf mit Fluff und Fundstück; gewinnt über Form (einziger Schnitt im Bild) und Akzentfarbe des Fluffs. Leserichtung: Wegspur → Stumpf → alter Baum |
+| `focal` | Stumpf mit Fluff und Fundstück; gewinnt über Form (einziger Schnitt im Bild) und Akzentfarbe des Fluffs. Leserichtung: Steinspur → Stumpf → alter Baum |
 | `space` | Vorne Wegspur und Kiesel, Mitte Stumpf und Busch-Nest, hinten Baumgruppe und Steinnest am Hang. Negativraum ist die freie Lichtung. Ruhe/Struktur/Bedeutung 70/20/10, stärkster Kontrast am Stumpf |
 | `palette_roles` | Boden-Grundton Biom `moos` nach COLOR_HARMONY_R1; Laub natürlich; Stein und Rinde aus der Insel-Palette; Fluff und Fundstück im Candy-Band als Akzent |
 | `color_script` | ruhige Mittagsstimmung, ein Licht-Rig; verboten: Neon-Flächen, zweite Lampe, Zufallsfarben |
@@ -107,7 +127,7 @@ Beides steht im Regelwerk und im Rezept. Jede Instanz trägt ihre Rolle (`fluff_
 
 ## 5 · Referenzbilder (Bild-Paket, Hub)
 - Georg-getunte KayKit-Baumgruppen aus B2 (organische Grüppchen, nichts piekt durch);
-- Steinkit v4, Weg dicht mit losem Übergang;
+- Steinkit v4 (Steine) und das freie Ende nach V-578 als Verteilung; Georg-TUNE q201: Steine und organischer verteilte Fragmente, kein Holz;
 - B29-Mauer r4 (abgenommen q32).
 
 Das Zielbild ist ein einziges handgemachtes Objekt (Kanon Gebiet 16), keine Streuung.
