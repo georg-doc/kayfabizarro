@@ -1,0 +1,560 @@
+{
+  "schema": "kfb.comic-banter/1",
+  "status": "DESIGN",
+  "sourceRef": "docs/kfb-decisions-register-2026-10-11",
+  "ship": "C.O.M.I.C.",
+  "sourceSpec": "SPEC_HD_SHIP_DIORAMA_R1.md §1,§4",
+  "tripletSpec": "TRIPLET_SET_SPEC_R2.md",
+  "decks": {
+    "monomyth": "media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json",
+    "cosmic": "media/kfb/Cosmic_Grift_-_Dark_Journalism_-_ADD_web_ID.pdf.json",
+    "philosophy": "media/kfb/Kayfabizarro_Philosophy_-_ADD_web.pdf.json"
+  },
+  "turnOrder": [
+    "Lady Dory jab",
+    "Lord Hunky justification",
+    "Lady Dory punch"
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "deck": "monomyth",
+      "deckTitle": "Monomyth Mayhem",
+      "cardNumber": 1,
+      "cardName": "The Ordinary World",
+      "poi": "stove",
+      "cardRole": "dish/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Ordinary World: Dysfunction isn't just a state; it's a habit. Nothing can change.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Ordinary World: Stasis Loop. Cancel any Quest progression this turn.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Ordinary World: Normalize the abnormal until the extraordinary seems impossible.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 2,
+      "deck": "monomyth",
+      "deckTitle": "Monomyth Mayhem",
+      "cardNumber": 3,
+      "cardName": "Refusal of the Call",
+      "poi": "navigation",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "Refusal of the Call: The familiar self is terrible at math.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "Refusal of the Call: Fear is realistic self-preservation. Change means death.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "Refusal of the Call: Rational Panic. Why can't you possibly go on the adventure?",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 3,
+      "deck": "monomyth",
+      "deckTitle": "Monomyth Mayhem",
+      "cardNumber": 9,
+      "cardName": "Woman as Temptress",
+      "poi": "table",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "Woman as Temptress: The familiar cage feels safer than the unknown field.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "Woman as Temptress: Regression Pull. Tempt another player to discard a Safety card.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "Woman as Temptress: The siren song of comfort. The familiar cage.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 4,
+      "deck": "monomyth",
+      "deckTitle": "Monomyth Mayhem",
+      "cardNumber": 10,
+      "cardName": "Atonement with the Father",
+      "poi": "easel",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "Atonement with the Father: Confront the source of authority. Kill the internal should.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "Atonement with the Father: Identify an Authority Card on the Stage. Destroy it.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "Atonement with the Father: The authentic want. Both options work differently.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 5,
+      "deck": "cosmic",
+      "deckTitle": "Cosmic Grift – Dark Journalism",
+      "cardNumber": 2,
+      "cardName": "The UFO File",
+      "poi": "monitor",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The UFO File: Higher classification than the atomic bomb. Proprietary tech.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The UFO File: He who holds the File commands the military-industrial complex.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The UFO File: It's not about little green men. It's about proprietary tech.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 6,
+      "deck": "cosmic",
+      "deckTitle": "Cosmic Grift – Dark Journalism",
+      "cardNumber": 3,
+      "cardName": "COG: The Shadow Rules",
+      "poi": "stove",
+      "cardRole": "dish/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "COG: The Shadow Rules: Democracy is just the weather. COG is the climate.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "COG: The Shadow Rules: Ignore the rules and keep their wealth tokens.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "COG: The Shadow Rules: They survive the floods and the assassinations.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 7,
+      "deck": "cosmic",
+      "deckTitle": "Cosmic Grift – Dark Journalism",
+      "cardNumber": 5,
+      "cardName": "The Amelius Group",
+      "poi": "garden",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Amelius Group: Wanted to commune with the saintly realms.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Amelius Group: Harmony. Reveal the top card; turn weapon into flower.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Amelius Group: Original spiritual seekers got infiltrated by defense contractors instead.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 8,
+      "deck": "cosmic",
+      "deckTitle": "Cosmic Grift – Dark Journalism",
+      "cardNumber": 8,
+      "cardName": "Atlantean Automatons",
+      "poi": "norman-tank",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "Atlantean Automatons: The original AI threat. Human souls for free labor.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "Atlantean Automatons: Generates free work tokens, but slowly drains Empathy.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "Atlantean Automatons: Flesh mixed with machine. Human souls for free labor.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 9,
+      "deck": "philosophy",
+      "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+      "cardNumber": 15,
+      "cardName": "The Delegating Boss-Hog",
+      "poi": "repair-bench",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Delegating Boss-Hog: An absolute control-freak burns out.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Delegating Boss-Hog: True power isn't doing everything yourself. Passive income multiplier.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Delegating Boss-Hog: Giving up control actually makes your power stronger.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 10,
+      "deck": "philosophy",
+      "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+      "cardNumber": 8,
+      "cardName": "The Empathy Choice",
+      "poi": "table",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Empathy Choice: Believing other people exist requires blind faith.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Empathy Choice: Leap of Faith. Pretend other players made it a solo campaign.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Empathy Choice: We choose to act like others are real.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 11,
+      "deck": "philosophy",
+      "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+      "cardNumber": 13,
+      "cardName": "The Unliftable Rock",
+      "poi": "workbench",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Unliftable Rock: Can an all-powerful being create a rock so heavy they cannot lift it?",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Unliftable Rock: Logical Booby-Trap. Permanently stall any All-Powerful boss card.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Unliftable Rock: If yes, they lack power. If no, they lack power. Gotcha.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    },
+    {
+      "round": 12,
+      "deck": "philosophy",
+      "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+      "cardNumber": 4,
+      "cardName": "The Fake Memory Implant",
+      "poi": "console",
+      "cardRole": "monitor/report",
+      "moves": [
+        {
+          "move": 1,
+          "speaker": "Lady Dory",
+          "function": "jab",
+          "spoken": "The Fake Memory Implant: You trust your opponents, but every memory of your childhood is just data compression.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 2,
+          "speaker": "Lord Hunky",
+          "function": "excuse",
+          "spoken": "The Fake Memory Implant: Gaslight. Rewrite one rule of the game.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        },
+        {
+          "move": 3,
+          "speaker": "Lady Dory",
+          "function": "punch",
+          "spoken": "The Fake Memory Implant: It has been that way since their birth.",
+          "sourceFields": [
+            "cardName",
+            "power",
+            "lore"
+          ]
+        }
+      ],
+      "reviewStatus": "DESIGN_NOT_ACCEPTED"
+    }
+  ]
+}
