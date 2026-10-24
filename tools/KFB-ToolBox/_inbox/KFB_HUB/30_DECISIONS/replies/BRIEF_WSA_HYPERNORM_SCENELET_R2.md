@@ -73,3 +73,9 @@
 - Keine neue Site, kein Merge, nichts löschen, keine Tokens von Georg.
 - Gekauftes und Privates bleibt privat.
 - Das MVP-Paket (b214) und das Audit (b215) gehen vor, falls sie noch laufen.
+
+## Nachtrag 25.10. abends · neues Material und Design-Vorrang (V-740)
+- **Material-Zweig neu @2893a06** (597 Dateien, 171 MB). Zusätzlich:
+  - `pd_pool/`: 506 gemeinfreie bzw. CC0-Medien aus 36 Kulturen, Motive, Filme, Regierungsakten, mit Manifest und Übersichtsbögen. Das ist das Collage-Material der Sphären, frei nutzbar.
+  - `pd_audio/`: 18 gemeinfreie Schellack-Aufnahmen vor 1925 aus aller Welt plus Musopen, mit Manifest. Als Klang-Collage bzw. Cut-up in den Sphären nutzen, zum Beispiel Marsch und Rezitation in der Sendezentrale, Lachplatte und Kunstpfeifen im Aktenrauschen, Wiegenlied und Xylofon im Dada-Garten. Über den Bus `music` bzw. `voice`, im Takt geschnitten.
+- **Design hat Vorrang:** Claude Design erstellt gerade Moodboard, Style-Frames und Storyboard (Hub b220). Baue bis dahin am technischen Gerüst (Sphäre, Modi, Ton, Rezepte), aber lege keinen eigenen Look fest. Der Look wird nach den abgenommenen Frames gebaut, und das Gate ist dann der Bildvergleich.
