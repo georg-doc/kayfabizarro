@@ -10434,6 +10434,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-730",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Meme-Ökologie (Georg 24.10.): Die 100 Protopian-Slogans sind Gegen-Meme, die die Gehirnwäsche der NPCs aufheben (kritisches Denken, kognitive Dissonanz, ontologischer Schock); Hunky bzw. Utopia-CEO, MiB und BNWN zensieren sie mit Goo bzw. Black Fluff (V-531). Slogans und BNWN-Propagandaphrasen (bis zum Ende weitergedacht) gehen als Erinnerung, Weltsicht und Wortschatz in die Triplet- und Tratsch-Pools (V-698, V-702) und werden in Chatterbox-Logik weitergegeben. WS0-Vorschlag: ein Datenformat für beide Seiten, feste handgeschriebene Texte statt Laufzeit-Generierung, Umsetzung über WS-NPC nach dem MVP.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Kern-Konflikt des Spiels als ein Datensatz statt zweier Systeme.",
+   "applies": "nach MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10546,7 +10561,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1207",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1211",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

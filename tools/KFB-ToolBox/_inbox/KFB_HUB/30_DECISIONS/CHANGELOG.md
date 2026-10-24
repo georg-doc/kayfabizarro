@@ -4,6 +4,7 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- V-730 BACKLOG Meme-Ökologie: Slogans gegen Propaganda als Erinnerung, Weltsicht und Wortschatz der NPCs, Zensur über Goo.
 - HeyGen-Slogans: 100 Slogans aus dem Protopian Manifesto (Georg) als vier Hub-Karten b207–b210 zu je 25, Nora als offizielle Durchsage; Schnitt und Slogan-IDs S001–S100 durch WS0 für HyperNorm (replies/HEYGEN_SLOGANS_R1.md).
 - Konzeptblatt MiB-Turm (50_BLENDER/B40/KONZEPTBLATT_MIB_TURM.md, V-530): Ereignis am Gesprächsort, Robo-Arm zurückgestellt, Blitzstrahl als Knet-Form bei WSB, Spiel-Fassung etwa 40 000 Dreiecke; WSB baut R1. Substack-Archiv-Inventur (Slogans, BNWN, Meta-Narrative) läuft.
 - BNWN 02 R1 FAIL (Georg: nichtssagend, AI-Slop); R2 neu als Propaganda-Satire mit realen Gegenwartsbezügen, Übererfüllung und schwarzen Wahrheiten (Hub b205, replies/HEYGEN_POC_SKRIPTE_R1.md).
