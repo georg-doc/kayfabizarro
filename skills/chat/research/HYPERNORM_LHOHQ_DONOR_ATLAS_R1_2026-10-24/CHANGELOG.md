@@ -19,3 +19,9 @@
 - Corrected `BRIEF.md`, `HYPERNORM_DESIGN_CONCEPTS.md`, `TEST_REPORT.md`, `ATLAS_INDEX_ENTRY_PROPOSAL.json`, `RETURN.md` to align visual priorities and future visual source isolation gate.
 - Research-file integrity: R1B **16/16 readback/structural checks PASS**; actual filmed/animated tests **0**. No source effect built, rights cleared or public Stage/Site changed.
 - Branch-only Draft PR #450 remains unmerged, product PR #354/source runtime untouched, no Hub/router metadata churn for creative R1B.
+
+## 2026-10-24 · R2 Video-page/ALT anatomy and world-layer extension
+- Georg proposed HyperNorm as **floating volumetric media surface, procedural world apparition, clickable card/rabbit-hole portal and optional parallel Mindscape layer**, not only a physical fixed billboard. Original standalone audiovisual experimental-film function remains equal and independently valuable.
+- New `VIDEO_ALT_SOURCE_AUDIT_R2_2026-10-24.md`: ITH FACTORY 2025 video metadata/6 chapter markers read; full spoken transcript NOT READ; actual LHOHQ HTML page image markup with 21,114-character, 311-line ALT text inspected; claims quarantined as site text. New L-S17–L-S19 / L-C16–L-C19.
+- New `SPATIAL_INTERACTIVE_HYPERNORM_WORLD_LAYER_R2_2026-10-24.md`: 5 proposed spatial appearance families, player-facing orientation vs fixed threshold, UV raycast/hotspot actions, semantic/film/spatial modes, WB2/WorldContext/WFC proposed placement and deterministic return, audio/Cards/Mindscape authority guards. No runtime implementation.
+- R2 **21/21 corrected document invariant checks PASS** (initial checker phrase mismatch documented); video/full transcript/film/visual tests 0, production/Hub/Stage unchanged.
