@@ -1,7 +1,28 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §167.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§167 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §168.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§168 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 168 · 25.10. · Site-Paket fertig (`site/mvp-r1-dist` @6a03920) · Offene Punkte für Georg zentral (`abnahme/ws1` @2cac563) · Georg: Säule, gleicher Maßstab · Chatter-Wechselrede gemergt
+
+- **Site-Paket nach WS0_TO_WS1_SITE_PAKET_R1:** `georg-doc/KFB-Stunt-Car-Race`, Zweig **`site/mvp-r1-dist` @6a039203578dba255b4c4d8d6807821741015a3f** (Orphan-Commit, nur das gebaute Paket).
+  - Gebaut mit `node scripts/site/build-site.mjs` auf `game/mvp-r1` @188e4f7 (= mvp 8620081, Reihe 76 PASS), private Figuren aus dem lokalen `assets/private`-Klon.
+  - **128 Dateien, 45,4 MB**, keine über 25 MiB, darunter `SHA256SUMS.txt` (eine Zeile je Datei, Pfade relativ zur Wurzel), `site-build.json` (Quell-Commits, Start-Hash `#m1,harvest,look=terrain3,world=probe`) und `SITE_README.md` (Laufzeit-Anforderungen: Passwort für alle Pfade, `/raw`-Proxy, jsDelivr für Ton und pdfjs, MIME, Caching).
+  - **Bitte an WSA weitergeben.**
+- **Offene Punkte für Georg an einem Ort** (Georg 25.10.: „zentral mit aussagekräftigen Bildern, Videos“): `KFB-Stunt-Car-Race` Zweig **`abnahme/ws1` @2cac563**.
+  - `OFFENE_PUNKTE_GEORG.md` gliedert: A entscheiden, B in Arbeit, C heute abgenommen, Site.
+  - `bilder/` (11) und `videos/` (Silben 1:28, Wechselrede 3:14) sind privat, weil gekaufte Modelle im Bild sind.
+  - **Bitte in den Hub einpflegen**; die WS1-Abnahme-Seite (v46) bleibt als Spiegel.
+- **Georg heute:**
+  - **Tempo: Säule, gleicher Maßstab für Fahren und Fliegen.** Die Strichlein „buggy, fummelig“ fliegen raus, sauber gestalten (WS1e, Säule R2).
+  - **HUD: „Kassette und so weiter passt alles“.** Nacharbeit und Paket 4 sind abgenommen, weiter hinter `hud=3d`.
+  - Neu zu sehen: aufgefächerter (fraktaler) Almanach und Truhe mit Aufklapp-Animation (WS1e Paket 5).
+- **Gemergt seit §167:**
+  - Chatter-Silben (ws-audio/r1 @e4f3c51 → mvp 2a0cc32).
+  - Wechselrede (ws-npc/phase-a @5435609 → mvp 61cc0c1), beides hinter `chat=syl`.
+  - HUD Paket 4 und `src/siteHash.js` (mvp 8620081).
+  - **Ganze Reihe bei mvp 61cc0c1: 78 PASS**, rot nur c2 und c3g (alt). orbit ist unter Last wackelig, auch ohne neuen Code (WS-NPC: 2 von 3 rot auf reinem 192bbb7); bitte als bekannten Wackler führen.
+- **Hängt:** WS1b und Deck-Analyzer stehen auf „wartet“ (Freigabe-Anfrage in ihrem Fenster, nur Georg kann bestätigen). Deshalb sind R1.6 Stadt-Baukasten, treebend, Himmel nach Biom und die Deck-Analyzer-Karte offen.
 
 ## 167 · 24.10. abends · Gesamtübergabe an WS0 vorgezogen auf 25.10. (mit Georg) · HUD-Nacharbeit + Tempo gemergt · Chatter-Silben in Arbeit · Georg-Befunde Hintergrund, Himmel, Bäume
 
