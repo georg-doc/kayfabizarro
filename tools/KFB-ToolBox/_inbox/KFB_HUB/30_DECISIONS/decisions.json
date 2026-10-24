@@ -10044,6 +10044,21 @@
    "applies": "später"
   },
   {
+   "id": "V-704",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Georg 24.10.: Die Rufe KayfaBINGO!, KayfaBOGGLE?, KayfaBONGO!, BLÖDSINN! bleiben für das reale Kartenspiel am Tisch (Improvisation); im Computerspiel gilt die Schreibweise aus V-699, weil die Kayfa-Formen in den ohnehin kryptischen Triplets verwirren. Comic-Motion bzw. Remotion (WSV) wird geparkt, um Tokens zu sparen, bis ein Mehrwert erkennbar ist (letzte Ergebnisse ungeschnitten, ohne Übergänge, KI-Slop).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Kontexte, zwei Schreibweisen; Remotion lieferte bisher keinen Mehrwert.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10156,7 +10171,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1173",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1174",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

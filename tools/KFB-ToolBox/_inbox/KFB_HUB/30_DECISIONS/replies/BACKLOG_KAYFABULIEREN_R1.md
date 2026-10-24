@@ -32,7 +32,7 @@
 ## 3 · Weitere Nutzungen derselben Mechanik
 - **NPC-Vorführung** als Onboarding: Figuren spielen einen Zug vor (verwandt mit der Karten-Spekulation, V-702).
 - **KFB-Karaoke:** Figuren performen die Geschichte.
-- **Comic-Motion bzw. Remotion** außerhalb des Spiels.
+- **Comic-Motion bzw. Remotion:** geparkt (V-704), bis der Mehrwert klar ist.
 - **Suno-Song** aus einer gelungenen Geschichte, nach SUNO_SSOT und SONG_SPEC. Prüfen, ob das trägt.
 
 ## 4 · Offene Fragen an Georg (gesammelt, nicht jetzt)
@@ -44,4 +44,4 @@
 1. **Jetzt:** nur sichern (diese Datei, V-703) und in der Triplet-SSOT verlinken.
 2. **Nach MVP-Site, Tratsch Stufe 1 und Karten-Spekulation Stufe A:** NPC-Vorführung ohne Bild als Protokoll. Zwei Figuren, eine Quest, je drei Scene-Karten; Georg liest.
 3. **Danach im Spiel:** der Zug vor King Kayfabian als Minispiel (King-Figur V-551, Castle) mit Dropdown-Verknüpfung und Almanach-Eintrag.
-4. **Parallel möglich, außerhalb des Spiels:** Comic-Motion bzw. Remotion einer gespielten Geschichte (WSV) und ein Suno-Song daraus.
+4. **Parallel möglich, außerhalb des Spiels:** ein Suno-Song aus einer gespielten Geschichte. Comic-Motion bzw. Remotion ist geparkt (V-704).

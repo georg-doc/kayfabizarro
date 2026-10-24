@@ -36,7 +36,7 @@ Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier d
 - **Sprechblasen** zuerst als Klartext („decodiert“); Fluff-o-lect und Pottymouth-Glyphen später.
 - **Identität:** Jede Figur hat ein Signatur-Deck (`SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.json`, 62 Figuren, Georg 20.10.) und eine Tratsch-Art (Tratschmaul, Skeptiker, Übertreiber, Schweiger, angepasst, rebellisch). Beides gehört ins Figuren-Register (`CHARACTERS_R1`), nicht in eigene Listen.
 - **Karten-Spekulation (V-697, V-702):** Bewohner erschließen fremde Karten in der Welt mit ihrem Weltwissen. Konzept und Reihenfolge: `replies/BACKLOG_CARD_SPECULATION_R1.md`. Das ist eine weitere Quelle für den Tratsch.
-- **Kayfabulieren (V-703):** Story-Zug vor King Kayfabian mit drei Scene-Karten, Verknüpfung wie Opener und Mini-Bridges, auch als NPC-Vorführung, Karaoke, Comic-Motion und Song. Konzept: `replies/BACKLOG_KAYFABULIEREN_R1.md`. Die Ruf-Schreibweise im alten Konzeptpapier (KayfaBINGO! usw.) ist durch §2b ersetzt.
+- **Kayfabulieren (V-703):** Story-Zug vor King Kayfabian mit drei Scene-Karten, Verknüpfung wie Opener und Mini-Bridges, auch als NPC-Vorführung, Karaoke und Song (Comic-Motion geparkt, V-704). Konzept: `replies/BACKLOG_KAYFABULIEREN_R1.md`. KayfaBINGO! usw. bleibt die Schreibweise am realen Spieltisch (Improvisation); im Spiel gilt §2b (V-704).
 - **Stimme im Spiel:** Sprachmelodie über die Chatterbox-Familie der Figur. Gesprochene Triplets als Einzeldateien nur dort, wo Georg sie freigibt (V-285).
 
 ## 5 · Offen (wird hier nachgetragen, nicht neu erfragt)
