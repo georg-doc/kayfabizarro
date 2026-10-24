@@ -1,3 +1,9 @@
+## RESEARCH-ONLY DISCOVERY POINTER · 2026-10-24 · CHATHAM HOUSE / CFR (BRANCH-LOCAL, NONCANON)
+
+Draft PR #449: `research/kfb-chatham-house-cfr-power-networks-r1-2026-10-24`. Source/claim owner dossier: `skills/chat/research/CHATHAM_HOUSE_CFR_POWER_NETWORKS_R1_2026-10-24/RETURN.md`. It contains 20 source/lead identities, 15 atomic claims, 19 historical links, 7 noncausal conceptual neighbors and real evidence/readback limits. This **does not** override World/Travel/other KFB routing below. Proposed Research Atlas protocol lives on separate MKUltra research Draft PR #408, not main; no accepted research canon, deck rewrite, runtime or public Hub route. **Next gate:** check Camps 1965 CHA 9/69b against TNA T312/1015 originals. This entry is a branch-only proposed discovery pointer until human-reviewed merge.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
