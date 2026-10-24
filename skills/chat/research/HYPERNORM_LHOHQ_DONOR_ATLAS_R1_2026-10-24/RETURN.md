@@ -71,3 +71,22 @@ A **source-scoped, creative research packet** supporting LHOHQ-inspired autonomo
 
 **R3 documentation checks:** 24/24 PASS; 0 integrated browser/scene, physics/GPU/render, Site publish, donor video, CI or human visual tests. Original PR #354, Mindspace #448, WS1, Audio, Main and Hub unchanged. No merge.
 **Single next gate:** WS0 isolates *actual unmodified H13 art/motion*, current Curator Site UX, q197 physics source/output and one licensed/approved Splat/mesh visual donor separately; select **one authored first room** inside the existing Site before initiating a Site-capable implementation. WS1 game embedding remains optional later.
+
+## R4 Return · 2026-10-24 · Poetic Occult Archive (bibliographic seed only)
+**Bounded outcome:** A usable **research-first seed** of 89 English originals / historical English editions / translation-seeking global poetry, religious vision texts, philosophical poetic-adjacent passages, Dada/sound-poetry and modern lyric reference metadata, for Georg's new standalone HyperNorm Curator + Experience product intent. This is no runtime/editor modification and not a second poetry database owner.
+
+**Owner / ref:** `georg-doc/kayfabizarro`; existing research branch `research/kfb-hypernorm-lhohq-atlas-r1-2026-10-24`; existing Draft PR **#450**. Existing product owner is still KFB ToolBox / Billboard Media Residency, Draft PR **#354** `planning/billboard-quote-hypernorm-curator-2026-10-04`. No other producer authorized.
+
+**Files added:** `POETIC_OCCULT_ARCHIVE_SEED_R1.json`, `POETIC_OCCULT_ARCHIVE_EDITORIAL_R1.md`, `POETIC_OCCULT_ARCHIVE_TEST_REPORT_R1.md`. **Files extended:** existing `CHANGELOG.md` and this additive `RETURN.md`. All changes under this research folder. Source/edition URLs located in public catalogs; **38 references to 27 distinct edition/catalog URLs**. All 89 `publicUseApproved:false` and `curationStatus:RESEARCH_CANDIDATE_UNMAPPED`.
+
+**Actual tests/evidence:** `17/17` JSON structural/editorial assertions PASS on exact branch-readback file (ID uniqueness, required metadata, source URL shape, rights codes, 12 family coverage, lyric-free payload, no Card assignments or false public approval). 0 full poem-level edition/line verifications, 0 EU+US individual rights clearances, 0 Curator data imports, 0 source-isolated H13/visual outputs, 0 Site/browser/audio/GPU/CI tests, 0 human editorial PASS. All GitHub file writes individually read back against their new branch head.
+
+**Correctness notes:** Historic Project Gutenberg editions are US public-domain assessments only, not global legal clearance. English translations are independently protectable, especially Arthur Waley/Cyril Scott/Eliot/Pound cases. Spence `Popol Vuh` is a 1908 retelling/study, not the definitive translation. Indigenous narratives and ritual sources require named teller and edition verification; a literary composition must not be mistaken for evidence of historical causation. Tzara, Brion Gysin and recent pop song lyrics appear as reference metadata only; no copyrightable lyrics/audio copied.
+
+**No changes:** PR #354 Quote Pool with 415 researched quote/question candidates (not public-approved); existing Curator GPT Site; H13 motion/film; KFB Audio; Cards/Deck registry; Mindspaces PR #448; WS0 q197; WB2/WS1; Stage, main, Hub, Live, merge. No Stage/public URL required or asserted for this research-only slice.
+
+**Unresolved:** Individual exact edition/passages and jurisdictions; translations for 26 translation-needed leads; priority poetry shortlist editorial/human selection; balanced global depth and source-speaker attribution. The newly researched corpus is not itself a ready-made public-domain full-text library.
+
+**Exactly one existing product next gate (unchanged from R3):** WS0 visibly isolate actual original moving H13, current existing HyperNorm Curator Site, q197 GPU particle motion and one licensed scenic donor separately, then select ONE source-authentic first playable room for existing Site. Poetry shortlist/rights clearance can feed that design later, without delaying or duplicating this product gate.
+
+**Technical final verified head:** to be read from GitHub after this Return commit (a file cannot contain its own resulting commit SHA).
