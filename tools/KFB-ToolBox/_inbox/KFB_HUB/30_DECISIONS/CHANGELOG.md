@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- Georg 25.10. zu B40: Scharnier und Türgriff minimalistisch und sauber in Modell, Textur und Farbe integriert. WSB braucht Georgs Ja direkt in seinem Fenster (WS0 gibt keine Freigaben weiter).
 - B40 r6b (WSB, V-737 Auge mit drei Zuständen, Halterung, Zielstrahl; Kritiker 5,9): WS0-Antworten (Rot #e8180e vorläufig, 70-%-Gate für die Glühkugel entfällt, Bild 6 geteilt in 6a/6b, Türgriff und Scharnier frei). Nach V-740 keine weitere Kritiker-Runde, WSB wartet auf Style-Frames.
 - V-740 FAIL Prozess: kein Design-Konzept in HyperNorm b219 und generell (nicht visuell gedacht). Neu: Design-Paket (Moodboard, Style-Frames, Gestaltungssprache, Storyboard) vor jedem gestaltungsrelevanten Bauauftrag, Abnahme als Bild, Bildvergleich als Haupt-Gate.
 - V-739 HyperNorm-Welt R2 (q199 ja): Bauauftrag WSA mit Ton von Anfang an (replies/BRIEF_WSA_HYPERNORM_SCENELET_R2.md, Hub b219, ersetzt b218). Nach Prüfer-BLOCK ergänzt: Ladeweg privater Medien nur über die Site-Auslieferung hinter dem Zugang (401-Gate), Ton-Tabelle je Sphäre mit Dateien, Bussen und dB, Ducking −8 dB, messbare Ton-Gates (−16 LUFS ± 2, True Peak ≤ −1 dBTP, Sprung < 3 dB). Material-Zweig assets/hypernorm-r1 @029344a (90 Dateien, 68 MB, mit Musikbetten).
