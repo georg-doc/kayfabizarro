@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1: Kassette als Player (V-707)
+- Georg mag die Kassette als Player (WSB N34 r4): plastische Tasten, die beim Drücken einsinken, Glanz nur am Rand, Symbole cremeweiß mit dunkler Kontur.
+- Die Tastenfarbe folgt der Tageszeit, am Tag Orange, nachts Türkis, und ist einstellbar wie die übrigen HUD-Farben. Werte: `50_BLENDER/N33/data/kfb_hud_readability.r1.json` → `controlTheme` (Themes mit hi, mid und lo, Symbol, Kontur, Glanz). Bogen: `N34/_privat_kauf_asset/out/N34_r4_kassette.png` (privat).
+- Das ist eine Vorlage. Das HUD-Design kommt von Claude Design (V-694); baut es erst ein, wenn Georg das Design abgenommen hat.
+
 # NEU OBEN (24.10.) · An WS1 (Lead): Splats, Gutter Space und Portale ins Konzept für das prozedurale Terrain einarbeiten (V-705)
 - **Quelle (eine Stelle):** `skills/chat/masterplan/KFB_SPLAT_PROCEDURAL_WORLD_R1_2026-10-24.md` auf Branch `planning/kfb-flatworld-comic-gutter-r1-2026-10-18` (Entwurfs-PR #423). Teil A enthält Georgs Ziele, Teil C die Vorschläge des Webchats. Die drei älteren Dateien im selben Ordner sind dort verlinkt (Flatworld/Gutter 18.10., drei Cluster 22.10., Cluster 4 Wasser/Melt 22.10.).
 - **Georgs Ziele kurz:**

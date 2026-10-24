@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-707 Kassette als Player (WSB N34 r4): Tasten plastisch, Farbe nach Tageszeit über controlTheme; ins Claude-Design-Paket und an WS1.
 - V-706 WSB Nachtrag 33 Gesprächs-Choreografie R1 (Inventur vor Neubau, Lücken als kfb_talk-Clips, Rufe als Knet-Lettering); HUD bei WSB abgeschlossen; Gate + Prüfer PASS; Hub b189.
 - V-705 Splat/Gutter/Portal/prozedurale Welt: Webchat-Atlas (PR 423) an WS1 fürs Terrain-Konzept.
 - V-704 KayfaBINGO usw. nur am realen Spieltisch, im Spiel V-699; Comic-Motion/Remotion geparkt.
