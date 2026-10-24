@@ -12,3 +12,10 @@
 - Draft PR #450 opened; Atlas discovery entry is branch-only PROPOSAL, not added to Research Atlas pilot in separate PR #408.
 - Preserved H13 frozen source, explicitly rejected FAILED Engine v0, existing QuotePool (415 researched ≠ approved), Card registry, KFB Audio, world, billboard renderer and private Curator Site.
 - No merge, no public Stage, no KFB Hub/central router change, no Live changes.
+
+## 2026-10-24 · R1B Georg design correction — current priority
+- Georg explicitly rejects the previous claim that LHOHQ's flashing, provocative montages are mere surface or subordinate to epistemic meaning. **Experimental film, collage, code art, remix and generative AI are an independent core HyperNorm engine plane**, as are optional semantic/interactive layers.
+- Added `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`: first-class autonomous visual output, H13 donor reuse, optical/hypno/feedback/hard-cut/flicker/typographic cinema vocabulary, 10s loops and 30–90s music-film proposals. No 'semantics required for every cut' gate; failed Engine v0 ≠ ban on visually radical generation.
+- Corrected `BRIEF.md`, `HYPERNORM_DESIGN_CONCEPTS.md`, `TEST_REPORT.md`, `ATLAS_INDEX_ENTRY_PROPOSAL.json`, `RETURN.md` to align visual priorities and future visual source isolation gate.
+- Research-file integrity: R1B **16/16 readback/structural checks PASS**; actual filmed/animated tests **0**. No source effect built, rights cleared or public Stage/Site changed.
+- Branch-only Draft PR #450 remains unmerged, product PR #354/source runtime untouched, no Hub/router metadata churn for creative R1B.
