@@ -10869,6 +10869,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-759",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: Tageszeiten, Wetter, Regen, Lichtstimmungen, Himmelskuppel, Planeten und Wolken gehören ins prozedurale Design (S2). Bestand: world=endless hat schon Uhr, Wetter (klar, Wolken, Regen, Nebel, Wind, auto), Stimmungen über das eine Licht-Rig, Kuppel mit Sonne, Knet-Riesenmond, Sternen, Polarlicht und gemalten Wolken. Neu: ein Atmosphären-Dirigent je Biom und Seed, Himmel nach der Farbharmonie (Himmel = Laub +90°, skypal=biome), Planeten und Monde als Himmels-Requisiten je Biom, Wolken prozedural; alles ohne zweites Licht.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Fahrt wird erst mit wechselndem Himmel und Wetter zum endlosen Roadtrip.",
+   "applies": "S2"
+  },
+  {
+   "id": "V-760",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "WS0 baut im Slice (V-756): S1 Schritt 1 Auto live rufen und verlassen ohne Neuladen (Schalter mount=live, Taste X bzw. HUD-Mode; game/proc-world-ws0 @73824dc) und H15 Mindscape (Claude Design WIP) als leuchtende Sphäre in der Welt (Schalter h15=1, @0cac142): Hineingehen öffnet die Sphäre bildschirmfüllend, Esc zurück. Site-Paket R3 site/mvp-r3-dist @52643de für WSA nach R2. Claude-Design-Runde 2 (b225) auf Donnerstag verschoben (Georg, Session-Reset). WSB N35 D fertig, Video in Hub q203.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst Fortbewegung und eine echte Begegnung im Spiel, dann Feinschliff.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10981,7 +11011,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1272",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1273",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
