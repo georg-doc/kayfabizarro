@@ -1,4 +1,4 @@
-# Briefing für Claude Design · HyperNorm-Welt · Design-Paket R2 · WS0 · 25.10.2026 (V-739, V-740)
+# Briefing für Claude Design · HyperNorm-Welt · Design-Paket R3 · WS0 · 25.10.2026 (V-739, V-740)
 
 Du bist Art Director für KFB (Kayfabizarro). Du gestaltest die visuelle Welt; gebaut wird später von anderen nach deinen Bildern. Es geht um Design, nicht um Technik.
 
@@ -34,7 +34,7 @@ A braucht weder Zitat noch These noch Karte. Harte Kollisionen und Provokation s
   - **Rabbit-Hole:** ein Labyrinth wie lhohq.info. Viele Sphären, verbunden über versteckte, unscheinbare Übergänge (ein Wort, eine Pupille, ein Fernsehbild, eine gemalte Tür, eine kleine Kugel in der Kugel). Man verirrt sich absichtlich.
   - **Autopilot:** ein fließender audiovisueller Trip. Man gleitet durch die sich verwandelnde Collage-Welt, wie durch ein begehbares Curtis- bzw. Musikvideo. Interaktion heißt treiben lassen und abbiegen, nicht klicken.
 - **Erste drei Sphären:**
-  1. **Sendezentrale:** BNWN-Nachrichten auf Röhren, Propaganda als Typo, CRT. Auf den Röhren laufen die echten HeyGen-Clips (siehe `slogans/`): Alpha, Kafkas Affe, Lord Quantumund und Georgs Claymation-Avatar im Hasenkostüm sprechen je einen Protopian-Slogan.
+  1. **Sendezentrale:** BNWN-Nachrichten auf Röhren, Propaganda als Typo, CRT. Auf den Röhren laufen die echten HeyGen-Clips (siehe `slogans/`): Alpha, Kafkas Affe, Lord Quantumund und Georgs Claymation-Avatar im Hasenkostüm sprechen je einen Protopian-Slogan (Georgs eigenes Material, ausdrücklich für HyperNorm, Hub q200, Ausnahme wie V-721).
   2. **Aktenrauschen:** UFO- und FOIA-Akten (H13-Modul DOSSIER), Cut-up wie lhohq, Stockfotos mit KFB-Augen statt leerer Pupillen.
   3. **Dada-Garten:** zerfallende Dada-Typografie (Stein, Ball, Schwitters, Blake), Georgs Bilder als Collage, Klangschalen.
 
@@ -43,7 +43,8 @@ A braucht weder Zitat noch These noch Karte. Harte Kollisionen und Provokation s
 2. **Gestaltungssprache** (eine Tafel):
    - Formensprache, Farbe (welche H13-Paletten bzw. Looks je Sphäre), Typografie (welche H13-Typo-Module);
    - Bewegung (Kamera- und Übergangsmodule, Wechsel aus Hacken und Curtis-Halten nach `konzept/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md`);
-   - Licht im Inneren der Kugel, Verhältnis von Collage-Wand, Schalen, schwebenden Dingen und Kugel-Boden.
+   - Licht im Inneren der Kugel, Verhältnis von Collage-Wand, Schalen, schwebenden Dingen und Kugel-Boden;
+   - Ton: Klangraum je Sphäre, Umgang mit der Sprechstimme der Slogan-Clips (laut im harten Schnitt, leise unter der Musik oder nur Bild), Bezug zu `pd_audio`.
 3. **Style-Frames:** je Sphäre 3 Frames, 16:9, aus der Ich-Perspektive in der Kugel, in Endqualität des Looks, nicht als Skizze. Zusätzlich:
    - ein Frame „Betreten“: die Kugel von außen in der Landschaft und der Moment des Umstülpens;
    - ein Frame „Übergang“: das Hineinfallen in eine Pupille bzw. eine kleine Kugel.
@@ -60,16 +61,16 @@ A braucht weder Zitat noch These noch Karte. Harte Kollisionen und Provokation s
 - `referenzen_lhohq/`: vier Bilder von lhohq.info (Störtapete, Cut-up-Textkästen, Schaufensterpuppen, Stockfotos mit leeren Pupillen, Röhrenfernseher).
 - `georg_bilder/`: 30 von Georgs eigenen Substack-Bildern (Midjourney, alle Rechte bei Georg). Sie sind ein Teil des Materials, nicht das Ganze.
 - `proben/`: Karte als Knetkugel-Relief, Morph, Zerstieben, Flug, Boden.
-- `slogans/`: 100 HeyGen-Slogan-Clips von Georg (S001–S100), vier wiederkehrende KFB-Figuren als Avatare: Kafkas Affe (S001–025), Lord Quantumund (S026–050), Georgs Claymation-Avatar im Hasenkostüm (S051–075), Alpha, der BNWN-Moderator (S076–100). Dabei sind ein Kontaktbogen mit allen 100, je ein Standbild, vier Beispiel-Clips mit Ton und `manifest.json` mit allen Texten. Die Clips sind fertiges Bildmaterial für die Röhren und für harte Schnitte im Autopilot.
+- `slogans/`: 100 HeyGen-Slogan-Clips von Georg (S001–S100), vier wiederkehrende KFB-Figuren als Avatare: Kafkas Affe (S001–025), Lord Quantumund (S026–050), Georgs Claymation-Avatar im Hasenkostüm (S051–075), Alpha, der BNWN-Moderator (S076–100). Dabei sind ein Kontaktbogen mit allen 100, je ein Standbild, vier Beispiel-Clips mit Ton (`beispiele/`) und `manifest.json` mit allen Texten (die Pfade darin zeigen auf die Voll-Clips im Hub; im Paket liegen nur `standbilder/` und `beispiele/`). Die Clips sind fertiges Bildmaterial für die Röhren und für harte Schnitte im Autopilot.
 - `texte/`:
   - `MEME_POOL_R1.json` (Protopian-Slogans und BNWN-Propaganda);
   - `quote_index_full.json` (415 recherchierte Zitate, davon 349 als gemeinfrei bestätigt);
   - `poetic_occult_archive_seed.json` (89 Werke).
 
   Nutze Zitate und Gedichte frei als Typo-Material in den Frames.
-- `pd_pool/`: 506 gemeinfreie bzw. CC0-Medien, breit über die Kulturen und Medien der Menschheit: 216 aus 36 Kulturen (Ägypten bis Polynesien, Ikonen bis Jugendstil), 162 Motive und Medien (Karten, Himmelsatlanten, Anatomie, Alchemie, Tarot, Plakate, Masken, Automaten, Monster, Kalligrafie usw.), 35 NASA-Kosmos, 50 Filme (Prelinger-Archiv, Stummfilme bis 1928: Caligari, Phantom der Oper, Chaplin, Keaton) als Standbild mit Link, 23 Regierungsakten (Project Blue Book, CIA/Stargate/Sun Streak, MKUltra, Northwoods, Mockingbird), 20 alte Naturbücher. Quellen: Cleveland Museum of Art, Europeana (Public Domain), Smithsonian, NASA, Internet Archive. Je Gruppe ein Übersichtsbogen in `pd_pool/uebersicht/`, alle Angaben in `pd_pool/manifest.json`. Frei nutzbar, keine weitere Prüfung nötig.
+- `pd_pool/`: 506 gemeinfreie bzw. CC0-Medien, breit über die Kulturen und Medien der Menschheit: 216 aus 35 Kulturen (Ägypten bis Polynesien, Ikonen bis Jugendstil), 162 Motive und Medien (Karten, Himmelsatlanten, Anatomie, Alchemie, Tarot, Plakate, Masken, Automaten, Monster, Kalligrafie usw.), 35 NASA-Kosmos, 50 Filme (Prelinger-Archiv, Stummfilme bis 1928: Caligari, Phantom der Oper, Chaplin, Keaton) als Standbild mit Link, 23 Regierungsakten (Project Blue Book, CIA/Stargate/Sun Streak, MKUltra, Northwoods, Mockingbird), 20 alte Naturbücher. Quellen: Cleveland Museum of Art, Europeana (Public Domain), Smithsonian, NASA, Internet Archive. Je Gruppe ein Übersichtsbogen in `pd_pool/uebersicht/`, alle Angaben in `pd_pool/manifest.json`. Frei nutzbar, keine weitere Prüfung nötig.
 
-- `pd_audio/manifest.json`: Liste von 85 gemeinfreien Tonaufnahmen (Schellack vor 1925 aus aller Welt, Musopen), als Anregung für die Ton-Notizen im Storyboard.
+- `pd_audio/manifest.json`: nur die Liste (keine Tondateien im Paket) von 85 gemeinfreien Tonaufnahmen (Schellack vor 1925 aus aller Welt, Musopen), als Anregung für die Ton-Notizen im Storyboard.
 
 ## Grenzen
 - Keine Splat-Optik als Hauptsache, keine Hologramm- bzw. Sci-Fi-Kitsch-Panels, keine glatte Stock-UI. Kein Effekt ohne Bildidee.
