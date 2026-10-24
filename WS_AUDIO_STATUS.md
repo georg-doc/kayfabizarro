@@ -2,6 +2,42 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 19 · 24.10. · Chatter-Silben R1 hinter `#chat=syl` (Lead-Auftrag, Georg-GO) · MERGE-ANTRAG e4f3c51
+
+**Stand:** `ws-audio/r1` @e4f3c51 (c286c64 + e4f3c51, auf mvp 192bbb7). Video: `test/out/audio/kfb-audio-silben.mp4` (lokal, 14,7 MB, an Georg geschickt).
+
+**Was es tut:**
+- Blasentext → Silben (Vokalgruppen je Wort) → Satzmelodie aus dem Satzzeichen (Ruf-Skala V-712):
+  - „?“ steigt, „.“ fällt, „!“ kurz und kräftig, „...?“ zögert vor dem letzten Wort, „?!“ hoch und ungläubig.
+  - `*Fett*` wird betont. „…“ allein = leises „hm“.
+  - Deckel 4,5 s bzw. 28 Silben, die letzten 3 Silben bleiben immer.
+- Je Silbe ein Grain von 0,1–0,2 s, **geschnitten aus den vorhandenen Familien-Clips**: Spitzen der Hüllkurve, einmal dekodiert. Kein neues Material, keine Synthese.
+  - Instrument über `pickChatter`: Register → Georgs Wahl V-693 → Gruppe; Disco immer Talkbox.
+  - Stimmlage je Figur fest (Seed aus characterId, ±3 Halbtöne), Streuung ±0,7 Halbton je Silbe.
+- **Wechselrede:** Ein anderer Sprecher beginnt 0,3–0,5 s nach dem Ende des vorigen. Registerwechsel um 3 Halbtöne, wenn die Lagen näher als 2 liegen. Nie mehr als ein Sprecher zugleich.
+- **Laut nur mit Blase:** Bei `chat=syl` schweigen die Ereignis-Laute (greet, chatter, Band, Disco). Jede Sprech-Blase spricht über den Haken in `BubbleHost` (additiv). Musik −7 dB, solange gesprochen wird.
+- **Doppel-Schutz:** Dieselbe Zeile spielt nur einmal, solange der erste Aufruf geplant ist oder klingt. Dadurch können WS-NPC (direkt) und der BubbleHost-Haken beide rufen.
+- **Bühne:** `bootSpeech()` lädt ohne AudioHost nur die Silben-Clips, ohne Musik und Atmo. Anker → Figur über `setSpeaker('stage-left'|'stage-right', id)` in `Stage.jsx` (additiv).
+
+**Schnittstelle** (mit WS-NPC abgestimmt): `kfbAudio.speak({ text, characterId, group?, pos?, kind: 'call'|'line'|'lore' })` → `{ dur, start, syllables, family }` | null. Dazu `speakPlan(text)` → `{ dur }` ohne Ton. WS-NPC zeigt die Blase um `start` verzögert, Lebenszeit max(start + dur, Lesezeit).
+
+**Video A/B/C** (Bühnen-Dialog mit echten Kartenzeilen, Figur steht, kein Teleport):
+- A heute: stumm.
+- B Silben ohne Blase: FrizzleBob Posaune 10 Silben, gothgirl Oboe 24 Silben.
+- C Silben mit Blase.
+- Dann Bewohner-Tratsch in der Welt (`world=probe`, Figur vor der Aufnahme hingestellt) mit tr1-Zeilen und Rufen per Prüfskript:
+  - Lorekeeper (Klarinette) erzählt, Bäuerin (Akkordeon) „Boggle...?“.
+  - Lorekeeper legt nach, Bäuerin „Bingo!“, Lorekeeper „Humbug?!“.
+
+**Tests:**
+- audio-mixer (neu `chatterSyllables`, `chatterGrains`), contract-static, audio und chatter (WS-NPC, gegen frisches dist): PASS.
+- **neu `test/audio-syl.mjs`** (Welt und Bühne): PASS.
+- Ton 0,08–0,11 ms/Bild, Silben werden beim Aufruf geplant und kosten im Bild nichts.
+
+**Grenzen / offen:**
+- Ohne Instrument kein Laut, sichtbar als `fallback` in `stats().chatter`. Betrifft die Spielfigur (Rufe Bingo! …), Skelette und Soldaten bis Kazoo/Trompete da sind, sowie demon_lord außerhalb der Disco.
+- **Georgs Urteil zu A/B/C steht aus. Erst danach `chat=syl` als Standard.**
+
 ## 18 · 24.10. · Sprech-Anlässe echt im Spiel · Georgs Urteil · Disco-MC Talkbox · MERGE-WUNSCH f6776c4
 
 **Merge-Wunsch an den Lead:** `ws-audio/r1` @f6776c4. Der Lead war per Nachricht nicht erreichbar, deshalb steht der Wunsch hier.
