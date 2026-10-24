@@ -1,0 +1,21 @@
+{
+  "schema":"kfb.mvp-site-v727-attempt/1",
+  "date":"2026-10-24",
+  "status":"BLOCKED_PRIVATE_BUILD_INPUT_TRANSPORT / NOT_PUBLISHED",
+  "authorization":{"go":"Georg directly authorized execution after reviewing V-725/V-727","audioSeparationGate":"CLOSED / superseded by q184 and V-725; no separation requested","source":"replies/WS0_TO_WSA_MVP_GPT_SITE_R1_ANSWER.md"},
+  "game":{"repo":"georg-doc/KFB-Stunt-Car-Race","branch":"game/mvp-r1","head":"188e4f709f1301f6574f06631b750c6adf2e44f8","ws1Source":"8620081","reportedTests":76,"reportedTestsRerun":false,"tree":"a5d9b90c3ca376fec20c66af47a2adc4fd73302c","treeEntries":977,"blobBytes":47440576,"remoteAudioCommit":"36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3","remoteAudioPath":"media/kfb-audio/r1/"},
+  "site":{"project":"appgprj_6ad2ac305b788191af0bdfc68823a300","url":"https://kfb-ws1-staging.frizzlebob.chatgpt.site","savedVersion":4,"source":"fbabbad7b8efa98c9071fccb358e4fb4788ec826","audience":"existing custom owner-only unchanged","changed":false,"audioSiteChanged":false},
+  "transportChecks":[
+    {"route":"supported GitHub connector fetch_file","result":"Private text and small binary files readable. Actual src/assets/hero.glb is3613268bytes, blob66d312ab6dc02b35fb648e7585bfdddb4e02eeef, but requestedbase64contentempty. Metadata is NOT binary transfer proof."},
+    {"route":"supported GitHub connector fetch_blob","result":"Large actual GLB fails UTF-8 decoding; no complete binary received."},
+    {"route":"supported general GitHub blob fetch","result":"Rejected as non-UTF-8; no complete binary received."},
+    {"route":"ordinary private Git read, including existing V-538 credential-helper scope","result":"No configured usable authentication; terminal prompts disabled. Not a repository permission-denial claim. No new GitHub token created."},
+    {"route":"authenticated Chrome private exact-commit repository page","result":"Private source and exact188e4f7commit visible. ZIP navigation blocked ERR_BLOCKED_BY_CLIENT; no browser protection changed."},
+    {"route":"documented Chrome file-download API","result":"Timed out without a completed archive. Observed tool stall materially exceeded requested timeout; no further archive retry loop. No complete archive found in actual Downloads directory."}
+  ],
+  "independentProgress":{"node":"v22.23.4, provisioned from regular npm registry","command":"npm exec --yes --package=node@22 -- node tests/mvp-delivery.mjs","unitTests":{"passed":24,"failed":0},"scope":"existing unwired auth/raw module only; no game or hosted integration claim"},
+  "notCompleted":["complete private source and figure intake","npm ci + actual Node22 game build","private figure hashes/completeness","real SITE_USER/SITE_PASS configuration","all-path hosted password/static/raw validation","walk/drive/HUD/combat/fps browser tests","site-build.json count/size","new version/deployment"],
+  "secrets":{"realPasswordGenerated":false,"platformSecretMutation":false,"tokenRequestedFromGeorg":false,"sensitiveDownloadLinksPersisted":false},
+  "missingPart":"A complete readable private build input for the pinned game commit and required assets/private figures, or the verified finished private dist with site-build.json, supplied through an authorized supported transport.",
+  "nextGate":"WS0/WS1 provides that one private build handoff at the existing shared project location; no new Site or secret setup by Georg. Do not substitute a mockup, omit private figures, or widen Site audience."
+}
