@@ -102,7 +102,7 @@ Die Power wird **nie** gesprochen. Eine Blase enthält genau einen Satz bzw. Spr
 
 | Fall | A (Erzähler/Tratschmaul) | B (Gegenüber) |
 |---|---|---|
-| **Karte mit tr1-Triplet** | POOL-Opener + Triplet als **ein** Satz („Rumor has it The Maze …“) | Reaktion: Social Call (BINGO/BOGGLE/Blödsinn!), optional mit Erwiderungs-Opener. **Bei BOGGLE legt B nach:** den Teil der Karte, den das Triplet nicht enthält (bereinigte Lore, §5c). Nie denselben Text wie A. Wenn das Triplet die Lore schon ganz enthält, kein Nachlegen, nur der Call. |
+| **Karte mit tr1-Triplet** | POOL-Opener + Triplet als **ein** Satz („Rumor has it The Maze …“) | Reaktion: ein Ruf (Bedeutung Georg 24.10., WS1 §162, Schreibweise V-699): **Bingo!** = ja, annehmen · **Boggle...?** = mehr davon, Dialog bleibt offen · **Bongo.** = nicht jetzt/anders, weiches Nein (Spielart: „erzähl es als Geschichte“) · **Blödsinn!** = Widerspruch, Dialog endet · **Humbug?!** = vergiss es (blitzdingsen). Optional mit Erwiderungs-Opener. **Bei BOGGLE legt B nach:** den Teil der Karte, den das Triplet nicht enthält (bereinigte Lore, §5c). Nie denselben Text wie A. Wenn das Triplet die Lore schon ganz enthält, kein Nachlegen, nur der Call. |
 | **Karte ohne tr1 (Rückfall b)** | POOL-Opener + **Titel** als ein Satz, meist als Frage oder Gerücht: „Did you hear about The Heel Promoter?“ · „I once met The Heel Promoter.“ | **Bereinigte gedruckte Lore wörtlich** (§5c): „He thinks the roster is disposable. He's wrong.“ |
 | **Karte in `blocked.json`** | wird nicht gezogen | – |
 
