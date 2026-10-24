@@ -25,3 +25,12 @@
 5. Only then authorize bounded standalone Mindspace source POC and a later in-world Pocket seam.
 
 **One next gate:** `WS0_MINDSPACE_SOURCE_DESIGN_ARBITRATION_R1` – verify real Lovable+H13 donors **in isolation** and select only one initial beautiful, working experience and its receiving owner.
+
+## R2 · 2026-10-24 · Six Mindspaces mapping and Splat/Suno research
+
+- Read current GitHub mandatory `START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `FRESH_CHAT_SLICE_PROTOCOL.md`, existing R1 `KFB_MINDSPACE_VISION_R1.md`, `MINDSPACE_MODULE_ARCHITECTURE_R1.md`, `RETURN.md`, source H13 `DOKU_H5-H13.md`, current Fluff D6 mode reference. Current open Draft PR #448 checked before write, branch+PR HEAD matching `788c154cc1e2848916c05a707da722803470c816`.
+- Created `SIX_MINDSPACES_APPLICATION_AUDIO_SPLAT_MAPPING_R2.md`: 6 source-compatible independent-use-case visual/music/guide recipes; 6 detailed scene/interaction profiles; 6 original Suno-style direction texts, including choir exception; Splat/mesh/H13 fallback matrix; documentary research claims and caution re DMT-laser hidden code; 6 envisioned work slices.
+- **15/15 editorial invariants PASS** after correcting only two over-literal checker phrases; no document changes needed. Tests include mode count, music style rows, independent D6, Splat≠collision, music≠binaural visual beat, researched claims, external donor provenance, one first source gate, future runtime status.
+- New external donor leads inspected on public websites: `ViewerStudio Forest Demo` (browser Splat forest with spatial audio, collision, voiced info points), `SPHR` (open-source browser splat/garden viewer, source/version/license audit not performed), and a garden demo that warns about 3DGS performance. **External live source-object visual isolation and licensing NOT TESTED; none imported.**
+- Prior core research sources remain SIGGRAPH 2023 Kerbl et al., CVPR 2024 dynamic 4DGS, PLOS ONE 2023 binaural EEG review, Monroe support text, DMT EEG paper. These do **not** validate a specific mindspace health outcome.
+- No browser screenshot/device playback, no code build/CI, no Lovable export, no H13 actual scene isolation, no audio/voice generation, no original musical recordings or license proof, no pocket-world runtime test, no public Site/Stage. All **NOT RUN**; editorial/source checks only.
