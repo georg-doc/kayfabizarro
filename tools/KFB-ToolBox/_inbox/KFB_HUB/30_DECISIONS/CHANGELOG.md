@@ -4,6 +4,7 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- PR #449 (Chatham House/CFR) und #446 (Methoden, Binaural, Atem) gelesen: #449 als Quelle für ein späteres Deck-Dossier (V-363), keine Archiv-Runde jetzt; #446 Sound Perception Lab kein eigenes Werkzeug (V-390), Bausteine nur als Mindspace-Schicht im Ton-Studio bei WS-Audio (V-724). Narrative Nora = HeyGen-Stimme von Mizzy bzw. Omega.
 - BNWN 02 R3 aus Georgs Substack-Kanon (BNWN_SOURCE_R1.md): Pre-Kaskade, Software- und Behördensprache, Glitch-Abbruch; Hub b205.
 - Substack-Inventur (305 Posts): hypernorm_slogans_r1.json (100 + 98), BNWN_SOURCE_R1.md, SUBSTACK_GEMS_R1.md; Bilder nach 60_VIDEO/hypernorm_images_r1/.
 - V-730 Daten und Konzept: replies/MEME_POOL_R1.json (129 Rebellen, 69 Blob, 7 Propaganda-Leitern), replies/BACKLOG_MEME_OEKOLOGIE_R1.md (WS-NPC nach MVP).

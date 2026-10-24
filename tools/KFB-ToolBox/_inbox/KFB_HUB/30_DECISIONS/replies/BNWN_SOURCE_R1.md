@@ -3,7 +3,7 @@
 Vorlage für das HeyGen-Skript Folge 02. Quelle: komplettes Archiv cancelthiscomic.substack.com (305 Posts, alle frei lesbar, keine Paywall). Zitate wörtlich, Originalsprache.
 
 Wichtig vorab:
-- Auf dem Substack heißt die Moderation nicht Nora. Die Sendung wird von **Alpha** (männlich, der Beschwichtiger) und **Omega** (weiblich, die Schwärmerin) moderiert. Im Post vom 31.05.2025 heißt Omega zusätzlich **Mizzy** ("Omega/Mizzy – robotic female"). Nora ist nur der HeyGen-Avatar (BNWN 01).
+- Auf dem Substack heißt die Moderation nicht Nora (Georg 24.10.: „Narrative Nora“ ist die HeyGen-Standardstimme von Mizzy bzw. Omega). Die Sendung wird von **Alpha** (männlich, der Beschwichtiger) und **Omega** (weiblich, die Schwärmerin) moderiert. Im Post vom 31.05.2025 heißt Omega zusätzlich **Mizzy** ("Omega/Mizzy – robotic female"). Nora ist nur der HeyGen-Avatar (BNWN 01).
 - Auftraggeber im Hintergrund: **Roko's Basilisk** (der KI-Overlord, "CEO, Board of Directors, and tech overlord rolled into one"). Studio: **Brave New World News HQ** unter dem Davos-Kongresszentrum bzw. **Brave New World News Studio**, ein gläserner Turm mit Lampe "SIRIUS. Fear the Basilisk."
 - Gegenspieler ist immer FrizzleBob, der die Sendung abhört, hackt oder kapert.
 - Einige Posts tragen fiktive Rückdatierungen (1979, 2020, 2022). Die Daten unten sind die Substack-Daten.

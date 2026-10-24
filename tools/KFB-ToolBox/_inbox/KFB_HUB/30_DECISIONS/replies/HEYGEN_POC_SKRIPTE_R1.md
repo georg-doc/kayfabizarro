@@ -40,7 +40,7 @@ Alúa, sèla. Oá limùe suvàe… nìla morùi, nìla… alúa.
 
 ## POC 2 · Brave New World News, Folge 02 (b205) · R3
 
-**Avatar:** Nora, gleiches Studio wie BNWN 01. Sie spricht für den Sender wie Omega bzw. Mizzy aus dem Substack-Kanon.
+**Avatar:** Nora, gleiches Studio wie BNWN 01. Narrative Nora ist die HeyGen-Standardstimme von Mizzy bzw. Omega (Substack-Kanon), sie spricht hier als Mizzy.
 **Sprache:** Englisch. Voice Enhance an.
 **Ton:** unerträglich gut gelaunt, glatt, Kundenservice. Sie glaubt jedes Wort, kein Zwinkern. Die Drohung klingt wie Fürsorge.
 **Pause** nach jedem Absatz: 1 s, Lächeln halten (Schnittmarke).
