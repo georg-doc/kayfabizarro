@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- HyperNorm-Scenelet R1 missverstanden (Georg: keine Fundstücke und Ketten), b218 angehalten. Konzeptblatt R2: eine Welt aus Collage-Kammern mit zwei Modi, Rabbit-Hole (Labyrinth wie lhohq, versteckte Übergänge) und Autopilot (fließender Trip, Schnitt-Grammatik, Abbiegen per Lenkimpuls); erste drei Kammern Sendezentrale, Aktenrauschen, Dada-Garten; Hub q199.
 - Georg q198 ja: Bauauftrag an WSA replies/BRIEF_WSA_HYPERNORM_SCENELET_R1.md (Hub b218), Material als privater Zweig KFB-Stunt-Car-Race assets/hypernorm-r1 @937cdf1 (83 Dateien, 47 MB: 69 BNWN-Clips, 10 Klangschichten, Fundstücke F1/F7, Konzeptblatt, MANIFEST mit Prüfsummen). Falsche Verweise V-630 in Spec und Konzeptblatt auf V-071/V-470 korrigiert.
 - lhohq.info-Stichprobe (120 Seiten, Baum ≥ 1.400 Seiten, Median 5 Links, 355 GIFs) ins Konzeptblatt HyperNorm-Scenelet übernommen.
 - V-738 HyperNorm Experience: Konzeptblatt Scenelet R1 „Das Archiv der lachenden Wahrheiten“ (Videokunst, Collage, Cut-up, Dada; Maßstäbe Curtis, Traumreise, Mindscape-Klang, Musikvideos, lhohq.info), nach Prüfer-BLOCK ergänzt (Kamera und Steuerung, sieben Fundstücke in zwei Ketten, fundstuecke.json, Leistung, Gates als Skript, Registerzitate); Hub q198 mit lhohq-Referenzen (75_REFS/lhohq_r1).

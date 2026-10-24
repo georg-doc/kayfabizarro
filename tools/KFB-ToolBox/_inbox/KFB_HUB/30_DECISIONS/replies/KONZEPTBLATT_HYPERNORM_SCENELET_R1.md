@@ -1,4 +1,4 @@
-# Konzeptblatt · HyperNorm-Scenelet R1 „Das Archiv der lachenden Wahrheiten“ · WS0 · 25.10.2026 (V-738, Vorlage CANON_3D/KONZEPTBLATT_R1.md, Design-Gate V-561)
+# UNGÜLTIG (ersetzt durch KONZEPTBLATT_HYPERNORM_SCENELET_R2.md, Georg 25.10.: missverstanden) · Konzeptblatt · HyperNorm-Scenelet R1 „Das Archiv der lachenden Wahrheiten“ · WS0 · 25.10.2026 (V-738, Vorlage CANON_3D/KONZEPTBLATT_R1.md, Design-Gate V-561)
 
 Für: Georg (sieht das Blatt im Hub, der Bauauftrag geht erst nach seinem Ja raus), danach WSA (Bau als Modul in der Curator-Site), später WS1 (Pocket World im Spiel). Rollen nach V-561: WS0 schreibt das Blatt und lässt den Kritiker die Bilder des Baus prüfen, bevor sie in den Hub kommen. Bezug H13-Engine V-617, HyperNorm-Clips V-721, Schnitt-Baukasten V-723. Quellen: Web-Chat-Konzept PR #450 (HyperNorm Experience, Poetic Occult Archive), Mindspace-Plan PR #448, `RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md`, `BNWN_SOURCE_R1.md`, `MEME_POOL_R1.json`, Probe q197.
 
