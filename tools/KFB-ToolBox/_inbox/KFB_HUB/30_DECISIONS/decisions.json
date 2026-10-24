@@ -10539,6 +10539,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-737",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "MiB-Turm-Auge (Georg 25.10. zu B40 r6): das reguläre KFB-Auge mit dunklen Claymation-Lidern in drei Zuständen, ersetzt die Orb-Varianten: Glühkugel orange-gelb (Original, Licht von innen wie die Tür) beim Ausschwärmen der Agenten, dann weißer Augapfel mit kleiner schwarzer Pupille zum Scannen, bei POI, Alarm oder Chatterbox-Auslöser schwarzer Augapfel mit roter glühender Pupille (wie Dark Fluffer), ausgerichtet aufs Ziel, mit schmalem rotem Leuchtkegel von der Pupille zum Ziel wie Laser bzw. Zielfernrohr (im Spiel über das vorhandene Kegel-Modul). Auge und Halterung drehen sich gemeinsam für freie Sicht in alle Richtungen. Dazu wie geplant Blitzdings-Strahl bzw. AOE mit VFX, SFX, MiB-Animationen, Wegen und Reaktionen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Auge erzählt den Alarm: Glühen, Scannen, Zielen.",
+   "applies": "mit B40 r6b"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10651,7 +10666,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1239",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1241",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
