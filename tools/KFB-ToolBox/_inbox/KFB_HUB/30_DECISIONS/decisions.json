@@ -10134,6 +10134,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-710",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "BACKLOG",
+   "text": "Georg 24.10. (Baukastenlogik statt Einzelabnahmen): Einbettung von Dioramen, Genii Loci und Kulissen soll automatisch nach den vorhandenen Kanon-Regeln laufen (CANON_3D Gebiet 2 und 15, Abschlussgrammatik V-577, SPEC_PLACEMENT_GRAMMAR_R2): Terrain hebt sich um den Fußabdruck wie Dünen an und fließt hinein (ein Höhen-Owner), Übergangs-Knete aus Struktur, Textur und Geometrie des jeweiligen Modells statt hingeworfener Eier, automatische Gates statt Freigabe je Diorama. OSM-Städte KISS: prozedural aus OSM mit Stil-Bausatz je Stadt, in der Ferne Pop-up-Skylines als Aufsteller, Landmarken aus vorhandenen Modellen bzw. img2threejs. NPCs ohne feste Diorama-Bindung: Rolle aus Biom, Deck, Karte und Aktivität (erweitert V-559), sie bekommen die Szenario-Karte dazu und erweitern so ihr Weltwissen (V-702). Vorschlag: WSB baut ein Einbettungs-Werkzeug mit drei Testfällen, WS1 die Laufzeit-Schnittstelle im Terrain; Brief nach Georgs Go.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Regeln sind recherchiert, aber jedes Diorama wurde einzeln nachgebessert (Regresse wie beim Friedhof); ein Werkzeug wendet sie einheitlich an.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10246,7 +10261,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1179",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1180",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
