@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 und WS-Audio: Site-Stopper gelöst (V-725)
+- Georg 24.10.: Der ganze Ton-Bestand (Musik und Effekte) darf öffentlich bleiben. Es gibt keine Trennung. WSA baut den Probe-Build vom aktuellen `game/mvp-r1` mit dem bestehenden Remote-Pin.
+- **WS1:** Bitte den Commit melden, den WSA nehmen soll (3a6e010 oder neuer, nach Testreihe).
+
 # NEU OBEN (24.10.) · An WS-Audio: Mindspace-Schichten (V-724)
 - **Klangschalen- und Natur-Loops,** je 20 s, nahtlos, -20 LUFS: `40_AUDIO/elevenlabs_r1/mindspace_layers_r1_lufs/`.
   - KS1 angerieben, KS2 angeschlagen, KS3 Duett, KS4 Kristall, KS5 tief, KS6 hell;

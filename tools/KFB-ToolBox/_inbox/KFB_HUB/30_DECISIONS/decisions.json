@@ -10362,8 +10362,8 @@
    "id": "V-725",
    "date": "2026-10-24",
    "area": "Spiel",
-   "verdict": "TBD",
-   "text": "MVP-Site (WSA-Zwischenbericht 24.10., Ziel KFB WS1 Staging): Passwort- und Proxy-Baustein vorbereitet (24 Tests), noch nicht veröffentlicht. Stopper laut WSA: das Spiel lädt Musik und Effekte aus dem öffentlichen Bestand (assets/kfb-audio-r1 @36c5ae419), V-695 nannte nur Songs öffentlich. WS-Audio hat mit Georgs Freigabe vom 23.10. (ja, beides) Musik und Effekte öffentlich gestellt; damit entfällt die Trennung, sofern keine gekauften Effekt-Pakete darin liegen (Georg bestätigt, Hub q184). Danach baut WSA den Probe-Build vom aktuellen game/mvp-r1-Commit.",
+   "verdict": "DECISION",
+   "text": "MVP-Site (WSA-Zwischenbericht 24.10., Ziel KFB WS1 Staging): Passwort- und Proxy-Baustein vorbereitet (24 Tests), noch nicht veröffentlicht. Stopper laut WSA: das Spiel lädt Musik und Effekte aus dem öffentlichen Bestand (assets/kfb-audio-r1 @36c5ae419), V-695 nannte nur Songs öffentlich. WS-Audio hat mit Georgs Freigabe vom 23.10. (ja, beides) Musik und Effekte öffentlich gestellt; damit entfällt die Trennung, sofern keine gekauften Effekt-Pakete darin liegen Georg 24.10. im Chat (q184): passt so, alles darf öffentlich bleiben. Keine Trennung; WSA baut den Probe-Build vom aktuellen game/mvp-r1-Commit mit dem bestehenden Remote-Pin und veröffentlicht nach Passwortprüfung aller Pfade sowie Spiel- und fps-Test.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -10501,7 +10501,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1199",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1200",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
