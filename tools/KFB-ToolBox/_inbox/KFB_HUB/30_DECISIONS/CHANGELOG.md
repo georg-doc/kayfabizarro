@@ -4,6 +4,7 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- Konzeptblatt MiB-Turm (50_BLENDER/B40/KONZEPTBLATT_MIB_TURM.md, V-530): Ereignis am Gesprächsort, Robo-Arm zurückgestellt, Blitzstrahl als Knet-Form bei WSB, Spiel-Fassung etwa 40 000 Dreiecke; WSB baut R1. Substack-Archiv-Inventur (Slogans, BNWN, Meta-Narrative) läuft.
 - BNWN 02 R1 FAIL (Georg: nichtssagend, AI-Slop); R2 neu als Propaganda-Satire mit realen Gegenwartsbezügen, Übererfüllung und schwarzen Wahrheiten (Hub b205, replies/HEYGEN_POC_SKRIPTE_R1.md).
 - V-729 N38 UFO-Landung A Standard, B auf harten Böden; Ruf-Farbsatz C2 nur für Rufe, K16 bleibt; Gestenhand nach V-574.
 - HeyGen-Skripte b204–b206 vollständig und sprechfertig neu (replies/HEYGEN_POC_SKRIPTE_R1.md): Einstellungen und Skripttext im Hub getrennt kopierbar; BNWN 02 als ganze Sendung, Fantasie-Zeilen ohne echte Wörter der Wirtssprache.
