@@ -602,3 +602,8 @@ The large Plato failure class is explicitly “Titel fehlt” in the stored repo
   - **Ohne Befund (16):** I once met · Let me tell you about · Did you hear of · Do you know · Have you heard of · You know · You know the thing with · What if · The thing about · Everyone agrees · Remember · No wait · I used to believe · Nobody warned us about · Not a metaphor · Anyway.
   - Außerhalb des POOL: erfundene Orte und Situationen (under my bed, goldfish, last Tuesday, bus, attic, locked door, mirror) als Streichen-Vorschlag.
 - **Engpass Tratsch (WS-NPC):** Vor tr1-Zeilen (ganze Sätze) passen nur Satz-Opener (`into_clause`); aus dem POOL nur 5. 20 Satz-Opener-Kandidaten und 4 Erwiderungen liegen im Stance-Pool zur Freigabe (Georg gefragt).
+
+
+## §32 · 24.10.2026 · Tratsch-Triplets tr1 für das Trio Utopia · Dystopia · Protopia
+- Georg 24.10. (via WS1-Lead): Probe angenommen („gerne die Proben aufnehmen“). Gebaut: forget_utopia 56/56, ignore_dystopia 55/55 (Quelle ohne #9), embrace_protopia 56/56 Zeilen; Lint 0 FAIL je Deck; keine Sperrungen nötig. `SSOT_SPOKEN_LINES/TR1_INDEX.json` jetzt 14 Decks.
+- Bühnen-Dialog A/B ist laut WS1-Lead Standard im Spiel (Georg „schön so“).
