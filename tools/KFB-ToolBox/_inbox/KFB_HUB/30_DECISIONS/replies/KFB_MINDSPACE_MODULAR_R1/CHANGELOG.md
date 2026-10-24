@@ -12,3 +12,11 @@
 - Scientific distinctions and art-world openness both preserved. No clinical/ESP/reliable EEG claims, no mandatory trance or intense breathing, no new Site/Stage/Cloudflare route, no code, no authorized Merge/Live.
 - Editorial source checks 16/16 green after fixing only over-literal test expressions. All planned files read back exactly.
 - **Next gate:** WS0 authentic donor isolation + real first Garden/Creative Mindspace source choice and owner.
+
+## 2026-10-24 · R2 · Six Mindspaces, applications first
+- User endorsed an expanded unique KFB Mindspace game-feature direction after discussion of splat ambient landscapes/screensavers and six use-cases. Added `SIX_MINDSPACES_APPLICATION_AUDIO_SPLAT_MAPPING_R2.md` on the **same existing R1 planning branch / PR #448**, no second owner.
+- Proposed six names/uses: Living Garden (calm/breath), Creative Atelier (idea-making), Mirror Chamber (Counselor/open association), Dream Passage (imaginative travel), Fractal Vision (artistic psychedelic immersion), Threshold Observatory (curious Gateway/occult/cosmology). Story-D6 associations are **optional suggestions**, not fixed 1:1 rules or a six-stage consciousness ladder.
+- Mapped each to actual prospective Splat roles, H13 collage layer, mesh/scene/WS1 owner seam, new **original Suno-style prompts** (instrumental default; wordless choral alternate labelled vocal), optionally binaural and first reusable screensaver mode.
+- Located fresh external 2026 forest Splat demo claiming spatial audio+voiced points, SPHR browser Splat/garden source and a Three.js performance-warning comparison. These are **unverified integration leads**, not licensed donors or accepted performance.
+- Maintained Rick Rubin/Monroe/NATHAL/Grof/DMT code narrative boundaries, Schumann as EM vs acoustic analogy, no made-up EEG or laser-code empirical validation.
+- **First gate remains unchanged:** WS0 source-isolates original Lovable breathing app, original H13 visual and one genuine garden Splat/mesh reference; show beautiful source-faithful before adopting implementation. WS1 remains downstream.
