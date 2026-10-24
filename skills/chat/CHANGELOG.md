@@ -1,3 +1,13 @@
+## 2026-10-24 · RESEARCH PROPOSAL ONLY · Chatham House / CFR source and relation atlas R1
+
+- Draft PR **#449**, `research/kfb-chatham-house-cfr-power-networks-r1-2026-10-24`, adds a source-backed R1 research dossier in `skills/chat/research/CHATHAM_HOUSE_CFR_POWER_NETWORKS_R1_2026-10-24/` with 20 source leads, 15 atomic claims, 19 historical and 7 explicitly non-causal conceptual edges.
+- Source protocol reused from MKUltra PR #408 research branch, not main. Existing Milner/CFR/Quigley card donors unmodified.
+- Static/provenance checks 6/6; 4 unique PDF pages image-verified; no whole source corpus reviewed. 1919 formal branch relationship and 670/682 CFR memo tally remain unresolved; Camps archives still original-unseen.
+- This pointer is **branch-local until Georg/WS0 merges it**; not adopted KFB research canon and not a website/Hub deployment. No game/card/runtime/Stage changes.
+- One next gate: archive-original check for CHA 9/69b and TNA T312/1015.
+
+---
+
 ## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
 
 - Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.
