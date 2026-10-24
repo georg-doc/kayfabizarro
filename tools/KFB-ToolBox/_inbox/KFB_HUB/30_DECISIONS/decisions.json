@@ -10599,6 +10599,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-741",
+   "date": "2026-10-25",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 25.10. (WSB händisch neu gestartet): keine Zwangspausen wegen Detailfragen. Ein Ja von Georg, das WS0 weitergibt, gilt in den Arbeitsplätzen als sein Ja; der Arbeitsplatz baut es als eigene, umkehrbare Fassung und vermerkt Freigabe über WS0 im RETURN. Grundsatzfragen, Kanon und Kosten (Credits, Käufe, Löschen) bleiben bei Georg direkt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Detailfreigaben dürfen die Arbeit nicht anhalten; Umkehrbarkeit ersetzt die Rückfrage.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10711,7 +10726,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1256",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1257",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
