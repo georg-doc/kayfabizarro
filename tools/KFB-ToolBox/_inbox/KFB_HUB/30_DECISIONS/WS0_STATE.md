@@ -36,6 +36,7 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 - WSB: N38 Landung fertig (V-729), N36 ruht bis zum WS1-Terrain-Export, MiB-Turm (V-530) als Vorschlag ohne Bau. Konzeptblatt schreibt WS0 vor jedem Szenen-Bau.
 - Figuren-Register, nächste Erzeugung: kind locus bzw. vehicle (V-714), Signatur-Deck und Tratsch-Typ (V-698), Weltwissen und Haltung (V-702), chatter.motif und chatter.grains (V-688).
 - Audio: SUNO_SSOT §8 (ElevenLabs-Weg). Mindspace-Schichten liegen bereit, Mischung bei WS-Audio. S2b-Fundament nur mit Georgs Suno-Go.
+- Wiedervorlage Georg: Skill kfb-deep-research installieren (Hub b211, Datei KFB_HUB/80_SKILLS/kfb-deep-research.skill). Hub q185 Splats offen (nach MVP messen?). HeyGen b204–b210 bei Georg.
 - WSV: Test mit 69 BNWN-Clips, wenn Georg startet (V-723).
 - Karten-JSON für den Druck: ws1/karten-druck erst nach Anpassung aller Decks durch WS1 und Georgs Ja.
 - FrizzleBob: weiter gesperrt (FB_CANON), erst mit Referenzbild aus der ToolBox.
