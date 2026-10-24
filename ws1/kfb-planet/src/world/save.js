@@ -34,7 +34,8 @@ export function validateSave(o) {
   if (isObj(o.fluff)) for (const k of FLUFF_KINDS) { const v = o.fluff[k]; if (v === undefined) continue; if (Number.isFinite(v) && v >= 0) s.fluff[k] = Math.floor(v); else errors.push('fluff:' + k) }
   else errors.push('fluff')
   // Gesamt-Score: fehlt er (ältere Stände), gilt die Summe der Zähler (bisher wurde nichts verbraucht)
-  if (Number.isFinite(o.fluffTotal) && o.fluffTotal >= 0) s.fluffTotal = Math.floor(o.fluffTotal); else { s.fluffTotal = Object.values(s.fluff).reduce((a, b) => a + b, 0); if (o.fluffTotal !== undefined) errors.push('fluffTotal') }
+  { const sum = Object.values(s.fluff).reduce((a, b) => a + b, 0)   // Gesamt ist nie kleiner als die Kugeln (verbraucht wird nur aus den Kugeln)
+    if (Number.isFinite(o.fluffTotal) && o.fluffTotal >= 0) s.fluffTotal = Math.max(Math.floor(o.fluffTotal), sum); else { s.fluffTotal = sum; if (o.fluffTotal !== undefined) errors.push('fluffTotal') } }
   if (Array.isArray(o.collected)) { const set = new Set(o.collected.filter((x) => typeof x === 'string' && x.length <= 128)); if (set.size !== o.collected.length) errors.push('collected-dedupe'); s.collected = [...set].slice(-SAVE_LIMITS.collected) }
   else if (o.collected !== undefined) errors.push('collected')
   const p = o.player

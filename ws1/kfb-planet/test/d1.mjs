@@ -32,7 +32,7 @@ function run({ deck, mouth = true, choose = true, choiceAfterMs = 500, maxS = 12
     const dt = 1 / 60; let t = 0, choiceAt = null
     while (d.state().phase !== 'DONE' && t < maxS) {
       d.update(dt); t += dt
-      if (d.state().phase === 'CHOICE') { choiceAt ??= t; if (choose && (t - choiceAt) * 1000 >= choiceAfterMs) { d.onChoice({ id: 'bingo', label: 'KayfaBINGO!' }); choiceAt = null } }
+      if (d.state().phase === 'CHOICE') { choiceAt ??= t; if (choose && (t - choiceAt) * 1000 >= choiceAfterMs) { d.onChoice({ id: 'bingo', label: 'Bingo!' }); choiceAt = null } }
       await new Promise((r) => setImmediate(r)) // asynchrone Schritte (Karte, Zeile) dürfen fertig werden
     }
     return { d, said, bb, actors, open, closed, log: d.log(), t }

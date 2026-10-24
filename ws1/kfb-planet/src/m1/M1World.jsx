@@ -275,6 +275,14 @@ const CLAY_HOST = {
   marks: () => [{ x: 0, z: 0, color: '#e9c14a', r: 8 }], // Bühne (Amphitheater im Ursprung)
   // HUD 3D Zielpfeil (Lead 24.10.: der M1-Wirt besitzt den Ziel-Haken, bis es einen Quest-/POI-Owner gibt): vorerst die Bühne als Ziel
   goal: () => ({ name: 'Bühne', pos: { x: 0, y: (mods.terrain?.surfaceAt || terrainHeight)(0, 0) + 2, z: 0 } }),
+  isNight: () => TODV <= 0.25, // Kassetten-Tasten Tag/Nacht (V-707), gleiche Grenze wie das Nacht-Figurenlicht
+  fluffTotal: () => mods.orchard?.total?.() ?? null, // Gesamt-Fluff (kfb.save fluffTotal, dd7de55): je gesammelt, nie verbraucht – HUD liest nur
+  // HUD 3D Almanac (Lead 24.10.: Haken beim M1-Wirt, Startinhalt = Bühnen-Deck; echter Owner später das Karten-Journal kfb.world-save/2)
+  almanac: () => ({ cards: DECK.map((c) => ({ deckId: c.deck.id, num: c.num })), total: DECK.length, decks: new Set(DECK.map((c) => c.deck.id)).size }),
+  // HUD 3D Settings › Mode: Fly über den Spieler (wie Taste F), Drive nur über „car“ in der Adresse (neu laden), God hat keinen Owner (folgt)
+  mode: () => (M2_ON ? 'drive' : PLAYER_CTRL.ref?.current?.flying?.() ? 'fly' : 'walk'),
+  setMode: (m) => { const car = m === 'drive'; if (car !== M2_ON) { const h = location.hash.replace(/(^#|,)car(=\w+)?(?=,|$)/g, '$1').replace(/,,+/g, ',').replace(/,$/, ''); location.hash = car ? h.replace(/^#m1/, '#m1,car') : h; location.reload(); return }
+    PLAYER_CTRL.ref?.current?.setFlying?.(m === 'fly') },
   cards: () => Promise.all(DECK.slice(0, 3).map((c) => cardImage(c.deck.id, c.num, 700).then((r) => r?.canvas || null, () => null))),
 }
 function Orchard() {

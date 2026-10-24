@@ -137,9 +137,11 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
 
 // Spielerwahl (S5c): feste Zurufe aus dem Studio-Vertrag oder bis zu 8 eigene Wörter des Spielers. Beides ist
 // kein vom Spiel erzeugter Text; der Host zeigt es als Sprechblase der Spielfigur.
-export const ZURUF_LABELS = ['KayfaBINGO!', 'KayfaBOGGLE?', 'KayfaBONGO!', 'BLÖDSINN!']
+// Schreibweise V-699 (Georg 24.10.): Rufe fett, genau so; eine Bedeutung je Ruf überall (Interaktion, Tratsch, Spielerchat). Humbug?! ruft der Spieler nicht.
+export const ZURUF_LABELS = ['Bingo!', 'Boggle...?', 'Bongo.', 'Blödsinn!']
 // speaker 'player': der Host zeigt diese Zeilen nur am Anker der Spielfigur (Befund 6)
-export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [label], source: 'ZURUF', speaker: 'player' }) : null }
+// Blase: Ruf fett über die Fett-Syntax des Blasen-Kerns (*…*, chatterbox-core parse); text bleibt der Ruf selbst
+export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [`*${label}*`], source: 'ZURUF', speaker: 'player' }) : null }
 export function playerLine(text) {
   const t = String(text || '').replace(/\s+/g, ' ').trim(); const n = t ? t.split(' ').length : 0
   return n >= 1 && n <= 8 ? issue({ text: t, parts: [t], source: 'PLAYER', speaker: 'player' }) : null

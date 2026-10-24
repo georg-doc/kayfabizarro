@@ -21,7 +21,7 @@ process.exit(report('d1 stage', {
   aBubbleOnLeftActor: shown(bA, 'stage-left', deck[0].name) && lines[0].source === 'CARD',
   bBubbleOnRightActor: shown(bB, 'stage-right', deck[0].power),
   choiceOpensAfterB: open === true,
-  zurufOnPlayerAnchor: last?.label === 'KayfaBINGO!' && shown(bZ, 'player', 'KayfaBINGO!'),
+  zurufOnPlayerAnchor: last?.label === 'Bingo!' && shown(bZ, 'player', '*Bingo!*'), // Blase zeigt den Ruf fett (V-699, Fett-Syntax *…*)
   choiceReachedDialog: log.some((e) => e.type === 'choice' && e.id === 'bingo') && !log.some((e) => e.type === 'choice-timeout'), // Verdrahtung lastChoice → Dialog, kein Zeitablauf
   nextCardOnBillboard: card2 === deck[1].id && shown(bA2, 'stage-right', deck[1].name),
   noPageErrors: errs.length === 0,

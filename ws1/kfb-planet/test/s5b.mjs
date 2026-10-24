@@ -59,7 +59,7 @@ const k1 = await loadPool({ fetchImpl: countingFetch, cache, now: () => 1000 })
 const k2 = await loadPool({ fetchImpl: countingFetch, cache, now: () => 1000 + 60 * 1000 })
 const k3 = await loadPool({ fetchImpl: async () => ({ ok: false, status: 403 }), cache, now: () => 1000 + 3600 * 1000 })
 // Zurufe/eigene Wörter: nur feste Labels bzw. ≤ 8 Wörter, an die Spielfigur gebunden
-const z1 = zurufLine('KayfaBINGO!'), z2 = zurufLine('Erfunden!'), p1 = playerLine('one two three'), p2 = playerLine('a b c d e f g h i')
+const z1 = zurufLine('Bingo!'), z2 = zurufLine('Erfunden!'), p1 = playerLine('one two three'), p2 = playerLine('a b c d e f g h i')
 // B13 · gepinnter Rohpfad: Blob aus dem Inhalt nachgerechnet; fremder Inhalt am gepinnten Pfad abgewiesen (Cache als Rückfall); Cache einer anderen Revision nicht als frisch
 const mm = await loadPool({ fetchImpl: fakeFetch(accBuf) })
 let store2 = { ...store, rev: 'alt' }; const cache2 = { get: () => store2, set: (v) => { store2 = v } }; let calls2 = 0

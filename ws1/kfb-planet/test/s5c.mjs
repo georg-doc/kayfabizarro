@@ -57,7 +57,7 @@ await page.waitForFunction(() => (window.__kfbBubbles?.() || []).some((x) => x.t
 const ownBubble = await bubbleTexts()
 await browser.close()
 
-const want = [['1', 'KayfaBINGO!'], ['2', 'KayfaBOGGLE?'], ['3', 'KayfaBONGO!'], ['4', 'BLÖDSINN!']]
+const want = [['1', 'Bingo!'], ['2', 'Boggle...?'], ['3', 'Bongo.'], ['4', 'Blödsinn!']] // V-699
 process.exit(report('s5c choice', {
   inHostSlot: ui.inSlot,
   labelsAndKeysExact: JSON.stringify(ui.btns.map((b) => [b.key, b.label])) === JSON.stringify(want),
@@ -71,7 +71,7 @@ process.exit(report('s5c choice', {
   controllerOffWhileOpen: ui.ctrl === false && moveWithChoice < 0.05,
   stampBeforeClose: mid.open === true && /scale\(1\.03\)/.test(mid.pickedScale || '') && mid.otherOpacity === '0.15',
   closesAfterStamp: after.open === false && after.last?.id === 'bongo' && after.ctrl === true,
-  zurufBecomesPlayerBubble: zurufBubble.includes('KayfaBONGO!'),
+  zurufBecomesPlayerBubble: zurufBubble.includes('*Bongo.*'), // Ruf fett in der Blase (V-699, Fett-Syntax *…*)
   moreThan8WordsRejected: nineRejected === true,
   ownWordsAccepted: own.open === false && own.last?.id === 'own' && own.last?.text === 'I want my cookie back',
   ownWordsBecomePlayerBubble: ownBubble.includes('I want my cookie back'),

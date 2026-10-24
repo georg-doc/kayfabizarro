@@ -31,13 +31,17 @@ Figuren erzählen einander und dem Spieler Triplets aus ihren Karten. Das passie
 
 Der Hörer antwortet mit einem **Social Call**. Jeder Call hat eine eigene Folge für das Weltbild (Herleitung in §2.4):
 
-| Call | Folge im Tratsch | Kurz |
-|---|---|---|
-| **KayfaBINGO!** | Der Hörer übernimmt die Karte mit Herkunft. | übernommen |
-| **KayfaBOGGLE!** | Eine Nachfrage, keine Wertung. Der Erzähler antwortet in 1–2 Sätzen, danach wird neu entschieden. | vertieft |
-| **KayfaBONGO!** | Der Erzähler hat die Karte „roh“ gebracht (Power wie eine Regel). Er muss als Geschichte nachlegen. | nacherzählt |
-| **Blödsinn!** | Abgelehnt, weil es nicht in das Weltbild des Hörers passt. Die Karte wandert nicht. | abgelehnt |
-| **HUMBUG!** | Eingriff der Kayfabe Men in Black (V-530): Blitzdingsen. Die Karte wird aus dem Kopf gelöscht. | gelöscht |
+**Ruf-Grammatik (Georg 24.10., ersetzt die Tabelle aus R1):** eine Bedeutung je Ruf überall – Interaktion, Tratsch, Spielerchat. Das Satzzeichen trägt die Haltung (V-699); die Kayfa-Formen bleiben dem Tischspiel (V-704).
+
+| Ruf | Haltung | Bedeutung im Tratsch | Gedächtnis-Spur |
+|---|---|---|---|
+| **Bingo!** | entschieden | Ja: Der Hörer übernimmt die Karte mit Herkunft. | Plus |
+| **Boggle...?** | offen | Hä? Mehr davon: Der Erzähler legt die Lore-Sätze nach, die er noch nicht gesagt hat. | keine |
+| **Bongo.** | gelassen | Nicht jetzt / anders, ein weiches Nein: Der Erzähler erzählt dieselbe Karte anders (Triplet statt roh) oder eine andere. Endet es wieder mit Bongo., heißt das „später“. | neutral, Wiederholung erlaubt |
+| **Blödsinn!** | entschieden | Nein, Widerspruch, Streit: Die Karte wandert nicht. | Minus |
+| **Humbug?!** | ungläubig | Vergiss es: Einsatz der Kayfabe Men in Black (V-530), die Karte wird gelöscht. | löscht |
+
+Ohne Ruf weggehen beendet still.
 
 Ob eine Karte „zündet“, hängt bewusst **nicht** am Inhalt, sondern an der sozialen Dynamik (§4). Der Spieler sieht zu, ruft selbst Calls, bringt Karten ein und komplettiert die Decks der Figuren.
 

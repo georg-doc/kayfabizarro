@@ -44,9 +44,9 @@ function run(label, opts) {
     const c = lib.card(e.card)
     L.push(`- ${fmtT(e.slot)} ${e.tag ? '↳ ' + e.tag + ' · ' : ''}**${e.E} → ${e.H}** · [${e.phase}]${e.cross ? ' · über Blasengrenze' : ''} · ${deckTitle(e.card)} #${e.card.split('#')[1]} „${c.name}“ (${e.raw ? 'roh' : 'Triplet'}${e.opener ? ' · Opener „' + e.opener + '“' : ''})`)
     L.push(`  > ${boldTitle(e.text, c.name)}`)
-    for (const st of e.steps) { if (st.add) { L.push(st.add === 'verstummt' ? '  → kein Triplet: verstummt' : st.add === 'ohne Antwort' ? '  → Nachfrage bleibt offen (kein Lore-Satz passt in die Blase): „…“' : `  → legt nach (${st.add}): „${st.add === 'Lore' ? st.text : boldTitle(st.text, c.name)}“`); continue } L.push(`  ${CALL[st.call] ?? st.call}  (${factors(st)})`) }
-    const k = K[e.H].get(e.card)
-    L.push(`  → **${e.out}**${e.out === 'übernommen' && k ? ` · Kette: ${k.chain.join(' ← ')} · Überzeugung ${k.k}` : ''}`)
+    for (const st of e.steps) { if (st.add) { const cc = lib.card(st.card ?? e.card); L.push(st.add === 'nichts anderes' ? '  → hat nichts anderes zu erzählen' : st.add === 'ohne Antwort' ? '  → Nachfrage bleibt offen (kein Lore-Satz passt in die Blase): „…“' : st.add === 'andere Karte' ? `  → erzählt etwas anderes: ${deckTitle(st.card)} #${st.card.split('#')[1]} „${cc.name}“ (${st.raw ? 'roh' : 'Triplet'}${st.opener ? ' · Opener „' + st.opener + '“' : ''})\n    „${boldTitle(st.text, cc.name)}“` : `  → legt nach (${st.add}): „${st.add === 'Lore' ? st.text : boldTitle(st.text, cc.name)}“`); continue } L.push(`  ${CALL[st.call] ?? st.call}  (${factors(st)})`) }
+    const k = K[e.H].get(e.card2 ?? e.card)
+    L.push(`  → **${e.out}**${e.out === 'übernommen' && k ? ` · Kette: ${k.chain.join(' ← ')} · Überzeugung ${k.k}` : ''}${e.out === 'später' ? ' (Bongo.: weiches Nein, Tür bleibt offen)' : ''}`)
   }
   if (day) L.push(...daySummary(day))
   function daySummary(d) {
@@ -75,7 +75,8 @@ function metrics(r, label, opts) {
   const fidelity = tells.every((e) => { const c = sim.lib.card(e.card), src = (b) => b === sim.lib.trip.get(e.card) || b === rawText(c, TRATSCH.bubbleMax)
     const lineOk = (t, b, o, st) => src(b) && t === composeLine(o ? opOf(o) : null, b, st, b === sim.lib.trip.get(e.card) ? null : c.name) && (!o || !!opOf(o))
     const loreOk = (t) => t != null && (t === loreRest(c, null, TRATSCH.bubbleMax) || t === loreRest(c, sim.lib.trip.get(e.card), TRATSCH.bubbleMax))
-    return lineOk(e.text, e.base, e.opener, e.start) && e.steps.filter((x) => x.text).every((x) => (x.add === 'Lore' ? loreOk(x.text) : lineOk(x.text, x.base, x.opener, x.start))) })
+    const lineOkK = (k, t, b, o, st) => { const ck = sim.lib.card(k); return (b === sim.lib.trip.get(k) || b === rawText(ck, TRATSCH.bubbleMax)) && t === composeLine(o ? opOf(o) : null, b, st, b === sim.lib.trip.get(k) ? null : ck.name) }
+    return lineOk(e.text, e.base, e.opener, e.start) && e.steps.filter((x) => x.text).every((x) => (x.add === 'Lore' ? loreOk(x.text) : lineOkK(x.card ?? e.card, x.text, x.base, x.opener, x.start))) })
   const adopted = ids.flatMap((i) => [...K[i].entries()].filter(([, v]) => v.from !== 'start').map(([k, v]) => ({ i, k, v })))
   const cross = edges.filter(([a, b]) => B.label[a] !== B.label[b]).length
   const perEnc = {}; for (const e of tells) { const key = e.day + '|' + e.slot + '|' + [e.E, e.H].sort().join('|'); perEnc[key] = (perEnc[key] ?? 0) + (e.tag ? 0 : 1) }

@@ -14,6 +14,8 @@ async function shot(form, name, extraHash, fn) {
   await page.screenshot({ path: `${OUT}/${form}_${name}.png` }); console.log(form, name, errs.length ? errs.slice(0, 2) : 'ok'); await ctx.close()
 }
 for (const form of ['desk', 'phoneL']) {
+  await shot(form, '0_AB_kassette_ALT', ',cas=old') // A/B Georg 24.10.: alt (Poly-Kassette, alte Größen) gegen neu (Standard)
+  await shot(form, '0_kassette_nacht', ',tod=night') // r5-Tasten nachts türkis (V-707, Werte vorläufig)
   await shot(form, '1_gehen', '')
   await shot(form, '2_fahren', ',car', async (p) => { await p.keyboard.down('KeyW'); await p.waitForTimeout(2500) })
   await shot(form, '3_kampf', ',weapon=blaster', async (p) => { await p.keyboard.press('Digit3'); await p.waitForTimeout(600) })

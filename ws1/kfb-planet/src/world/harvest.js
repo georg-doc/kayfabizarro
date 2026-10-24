@@ -58,7 +58,7 @@ export function createHarvestState(save = freshSave()) {
     keys: all,
     byZone() { const z = {}; for (const k of all()) { const id = k.split(':')[0]; (z[id] ||= []).push(k) } return z },
     counts() { const c = { ...save.fluff }; for (const kind of fresh.values()) c[kind] = (c[kind] || 0) + 1; return c },
-    total: () => (save.fluffTotal ?? Object.values(save.fluff).reduce((a, b) => a + b, 0)) + fresh.size,   // Gesamt-Score (Georg 24.10.): je gesammelt, nie verbraucht
+    total: () => Math.max(save.fluffTotal ?? 0, Object.values(save.fluff).reduce((a, b) => a + b, 0)) + fresh.size,   // Gesamt-Score (Georg 24.10.): je gesammelt, nie verbraucht
     toSave: () => withHarvest(save, [...fresh.keys()], Object.fromEntries(fresh)),
   }
 }

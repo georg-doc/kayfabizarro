@@ -17,7 +17,14 @@ import { DEVUI, setDevUi, onDevUi, devUiLocked, expose } from './debug'
 import { useHostKeys, ACTION_KEYS, PRIO } from './hostKeys'
 import { M2EVENTS } from './m2/M2Car'
 import * as A from './audio/kfbAudio'
+import { cardImage } from './cardImage'
 
+// Tastenfarben der Kassette (V-707): N33 controlTheme, sobald vorhanden (privates JSON, Schlüssel controlTheme.day/night mit hi/mid/lo/symbol/outline/gloss);
+// bis dahin vorläufig: Tag Orange, Nacht Türkis.
+const N33 = Object.values(import.meta.glob('./private/50_BLENDER/N33/data/kfb_hud_readability.r1.json', { eager: true, import: 'default' }))[0] || null
+const CTL_FALLBACK = { day: { hi: '#ffc07a', mid: '#f08a4b', lo: '#b4582c', symbol: '#fff4dc', outline: '#130e16', gloss: 'rgba(255,248,232,.55)' },
+  night: { hi: '#8de6dc', mid: '#2fa8a1', lo: '#1b6a67', symbol: '#fff4dc', outline: '#130e16', gloss: 'rgba(235,255,252,.5)' } }
+export const CTL_THEME = { day: { ...CTL_FALLBACK.day, ...(N33?.controlTheme?.day || {}) }, night: { ...CTL_FALLBACK.night, ...(N33?.controlTheme?.night || {}) }, source: N33?.controlTheme ? 'N33 controlTheme' : 'vorläufig' }
 const BANGERS_HREF = 'https://fonts.googleapis.com/css2?family=Bangers&display=swap'
 const RM_KEY = 'kfb.hud.reducedMotion.v1'
 const lsGet = (k) => { try { return localStorage.getItem(k) } catch { return null } }
@@ -43,7 +50,7 @@ export default function HudClay(props) {
     if (!ok) return undefined
     if (!document.querySelector('link[data-kfb-bangers]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = BANGERS_HREF; l.dataset.kfbBangers = '1'; document.head.appendChild(l) }
     const S = sig.current
-    const hud = K3 ? createHud3d({ reducedMotion }) : createClayHud({
+    const hud = K3 ? createHud3d({ reducedMotion, cassette: (/(^|[#,])cas=(old|new)(,|$)/.exec(location.hash) || [])[2] || 'new' }) : /* cas=old = Kassette und Größen vor Georgs 24.10.-Wunsch (A/B) */ createClayHud({
       palette: () => host.palette?.(), speed: () => S.kmh, heading: () => S.heading, mapPos: () => S.prev,
       mapSample: (x, z) => mapColor(host, x, z), mapMarks: () => host.marks?.() || [], path: host.path || [],
       nowPlaying: () => (A.musicPaused?.() ? { title: 'Pause' } : A.nowPlaying()), audioOn: () => !A.volumes().muted, reducedMotion,
@@ -51,9 +58,12 @@ export default function HudClay(props) {
     clay.current = hud; HUD_PASS.draw = (gl) => hud.draw(gl);
     document.fonts?.load?.('104px Bangers').then(() => hud.refreshTicker?.(), () => {})
     if (!K3) host.cards?.().then((cv) => { if (cv?.length) hud.setCards(cv) }, () => {})
+    // HUD 3D Almanac: Karten vom Haken host.almanac() (Owner vorerst M1-Wirt, später Karten-Journal), Bilder über cardImage, Original nie umgefärbt
+    if (K3) { const al = host.almanac?.(); if (al?.cards?.length) Promise.all(al.cards.slice(-7).map((c) => cardImage(c.deckId, c.num, 560).then((r) => r?.canvas?.toDataURL('image/jpeg', 0.9) || null, () => null)))
+      .then((srcs) => { const ok = srcs.filter(Boolean); if (ok.length) dom.current?.setFan?.({ srcs: ok, total: al.total ?? al.cards.length, decks: al.decks ?? 1 }) }) }
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
-    dom.current = K3 ? buildDom3d(hud, inner) : buildDom(hud, inner, () => clay.current)
-    expose('ClayHud', { kit, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
+    dom.current = K3 ? buildDom3d(hud, inner, { host, onInteract: props.onInteract }) : buildDom(hud, inner, () => clay.current)
+    expose('ClayHud', { kit, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
       goalRel: (bDeg, pDeg = 0, dist = 300, name = 'Testziel') => { const pp = host.target?.(); if (!pp) return null; camera.getWorldDirection(_f); _f.y = 0; _f.normalize(); _r.crossVectors(_f, _up).normalize()
         const b = bDeg * DEG, p = pDeg * DEG, hz = Math.cos(p) * dist; GOAL.dbg = { name, pos: { x: pp.x + (_f.x * Math.cos(b) + _r.x * Math.sin(b)) * hz, y: (pp.y ?? 0) + Math.sin(p) * dist, z: pp.z + (_f.z * Math.cos(b) + _r.z * Math.sin(b)) * hz } }; return GOAL.dbg }, toggleCompass: (v) => hud.toggleCompass(v), uiState: (k) => hud.uiState(k), setAnimator: (k, fn) => hud.setAnimator(k, fn), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
     return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
@@ -92,8 +102,10 @@ export default function HudClay(props) {
     const flash = (txt) => dom.current?.flash(txt)
     onApi?.({ ...a,
       land: (i, n = 1) => { a.land(i, n); const hud = clay.current; if (hud) { hud.land(i, n); if (K3) hud.setCounts(a.counts()); else hud.setScore(a.counts().reduce((s, x) => s + x, 0)) } },
-      setWeapon: (w) => { a.setWeapon(w); if (w !== fam.w) { fam.w = w; if (!a.activeWeapon?.()) flash(FAM_NAME[w] || w) } },
-      setActiveWeapon: (wid) => { const was = a.activeWeapon?.(); a.setActiveWeapon(wid); if (wid !== was) flash(wid ? (a.weapons?.().find((x) => x.wid === wid)?.n || wid) : 'Faust') },
+      setWeapon: (w) => { a.setWeapon(w); if (K3) clay.current?.setWeapon(w); if (w !== fam.w) { fam.w = w; if (!a.activeWeapon?.()) flash(FAM_NAME[w] || w) } },
+      setCtx: (c) => { a.setCtx(c); if (K3 && c === 'bomb') clay.current?.pulse('act2') },
+      setTarget: (b) => { a.setTarget(b); a.__target = !!b }, // Interaktion in Reichweite (HUD 3D: Hinweis-Lichthof an der Blase)
+      setActiveWeapon: (wid) => { const was = a.activeWeapon?.(); a.setActiveWeapon(wid); if (K3) clay.current?.setWeapon(wid ? 'blaster' : 'fist'); if (wid !== was) flash(wid ? (a.weapons?.().find((x) => x.wid === wid)?.n || wid) : 'Faust') },
       openBag: (...x) => { a.openBag(...x); clay.current?.setChestOpen(a.bagOpen()) },
       closeBag: () => { a.closeBag(); clay.current?.setChestOpen(false) },
       skin: 'clay', clay: () => clay.current })
@@ -128,7 +140,7 @@ function buildDom(hud, inner, getHud) {
       b.addEventListener('focus', () => hud.setUiFlag(key, 'focus', b.matches(':focus-visible'))); b.addEventListener('blur', F('focus', false)) } // nur Tastatur-Fokus zählt als active, Mausklick nicht
     root.append(b); return b }
   const hits = {
-    gear: btn('Einstellungen', () => { hud.tapGear(); settings(!panelOpen) }, 'gear'),
+    gear: btn('Einstellungen', () => { hud.tapGear(); SP.settings(!SP.isOpen()) }, 'gear'),
     compass: btn('Kompass: Karte auf/zu', () => hud.toggleCompass(), 'compass'),
     chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }, 'chest'),
   }
@@ -144,35 +156,12 @@ function buildDom(hud, inner, getHud) {
   fl.style.cssText = `position:absolute;padding:6px 14px;border-radius:14px;background:${PAPER};color:${INK};font:600 20px/1.1 Fredoka,sans-serif;box-shadow:0 3px 0 rgba(31,26,20,.25),0 6px 14px rgba(31,26,20,.18);opacity:0;transform:translate(-50%,6px);transition:opacity .2s,transform .2s;white-space:nowrap`
   root.append(fl); let flT = 0
   const flash = (txt) => { fl.textContent = txt; fl.style.opacity = '1'; fl.style.transform = 'translate(-50%,0)'; clearTimeout(flT); flT = setTimeout(() => { fl.style.opacity = '0'; fl.style.transform = 'translate(-50%,6px)' }, 1500) }
-  // Settings-Tafel (Papier, Knet-Akzent über die Palette des HUD)
-  const panel = document.createElement('div'); panel.id = 'kfb-hud-settings'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Einstellungen')
-  panel.style.cssText = `position:absolute;display:none;pointer-events:auto;min-width:300px;padding:16px 18px 14px;border-radius:20px;background:${PAPER};color:${INK};box-shadow:0 5px 0 rgba(31,26,20,.28),0 12px 28px rgba(31,26,20,.22);font:500 18px/1.3 Fredoka,sans-serif`
-  root.append(panel)
-  let panelOpen = false
-  const row = (label, ctl) => { const r = document.createElement('label'); r.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 0;cursor:pointer'; const s = document.createElement('span'); s.textContent = label; r.append(s, ctl); return r }
-  const toggle = (get, set, name) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.setting = name; b.setAttribute('role', 'switch')
-    const paint = () => { const on = get(); b.setAttribute('aria-checked', on ? 'true' : 'false'); const acc = getHud()?.status().zones?.accent || '#c9508f'; b.style.cssText = `width:54px;height:30px;border-radius:15px;border:0;cursor:pointer;position:relative;background:${on ? acc : '#cbbfa6'};box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);transition:background .2s`; b.innerHTML = `<span style="position:absolute;top:3px;left:${on ? 27 : 3}px;width:24px;height:24px;border-radius:50%;background:#fff8e8;box-shadow:0 2px 0 rgba(0,0,0,.2);transition:left .2s"></span>` }
-    b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); set(!get()); paint() }); b.paint = paint; paint(); return b }
-  const dev = toggle(() => DEVUI, (v) => setDevUi(v), 'devui'); if (devUiLocked()) { dev.disabled = true; dev.title = 'aus (clean)' }
-  const snd = toggle(() => !A.volumes().muted, (v) => A.setVolume('muted', !v), 'sound')
-  const rm = toggle(() => lsGet(RM_KEY) === '1', (v) => lsSet(RM_KEY, v ? '1' : '0'), 'reducedMotion')
-  // Lautstärken wie das ♪-Panel von WS-Audio (audioPanel.js LABELS); das Panel selbst ist im Knet-Modus ausgeblendet (lag unter der Truhe), kein Doppel
-  const VOLS = [['master', 'Gesamt'], ['music', 'Musik'], ['sfx', 'Effekte'], ['atmo', 'Atmo']]
-  const sliders = VOLS.map(([k]) => { const r = document.createElement('input'); r.type = 'range'; r.min = 0; r.max = 1; r.step = 0.05; r.dataset.setting = k; r.style.cssText = 'width:130px;accent-color:#8c3f2f'
-    r.value = A.volumes()[k] ?? 0.7; r.addEventListener('input', () => A.setVolume(k, +r.value)); r.addEventListener('change', () => r.blur()); return r })
-  const title = document.createElement('div'); title.textContent = 'Einstellungen'; title.style.cssText = 'font:400 30px/1 Bangers,Fredoka,sans-serif;letter-spacing:1px;margin-bottom:6px'
-  const skin = document.createElement('button'); skin.type = 'button'; skin.dataset.setting = 'hudWood'; skin.textContent = 'Holz-HUD zum Vergleich'
-  skin.style.cssText = `margin-top:8px;width:100%;padding:8px 10px;border-radius:12px;border:0;background:#e8d9b8;color:${INK};font:600 16px Fredoka,sans-serif;cursor:pointer;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)`
-  skin.addEventListener('click', () => { const h = location.hash.replace(/(^#|,)hud=\w+/g, '$1').replace(/,,+/g, ',').replace(/^#,/, '#'); location.hash = (h.length > 1 ? h + ',' : '#') + 'hud=wood'; location.reload() })
-  panel.append(title, row('Entwickler-Infos', dev), row('Ton', snd), ...VOLS.map(([, l], i) => row(l, sliders[i])), row('Bewegung reduzieren', rm), skin)
-  const refreshPanel = () => { dev.paint(); snd.paint(); rm.paint(); const v = A.volumes(); VOLS.forEach(([k], i) => { if (v[k] != null) sliders[i].value = v[k] }) }
-  const offDev = onDevUi(() => dev.paint())
-  const settings = (v) => { panelOpen = !!v; panel.style.display = panelOpen ? '' : 'none'; hud.setUiFlag('gear', 'on', panelOpen); if (panelOpen) refreshPanel() }
+  const SP = settingsPanel(root, hud, getHud), settings = SP.settings, refreshPanel = SP.refresh, offDev = SP.off, panel = SP.panel
   let last = ''
   document.body.appendChild(root)
   return {
     bagWas: false,
-    flash, settings, settingsOpen: () => panelOpen,
+    flash, settings, settingsOpen: () => SP.isOpen(),
     sync() { // Trefferflächen auf die Rechtecke legen (nur bei Änderung)
       { const o = hud.opened(); hud.setUiFlag('compass', 'on', o.compass); hud.setUiFlag('chest', 'on', o.chest); hud.setUiFlag('radio.mute', 'on', !!A.volumes().muted); hud.setUiFlag('radio.play', 'on', !!A.musicPaused?.()) } // dauerhafte Zustände (auf/zu, stumm, Pause)
       const R = hud.rects(), B = hud.radioButtons(), key = JSON.stringify([R, B]); if (key === last) return; last = key
@@ -190,21 +179,80 @@ function buildDom(hud, inner, getHud) {
 const inkText = (size, color = '#fff6e0') => { const o = Math.max(1, Math.round(size / 13)), o2 = o + Math.max(1, Math.round(size / 18)), I = INK3
   const sh = [`${o2}px ${o2}px 0 ${I}`, `${o}px ${o2}px 0 ${I}`, `${o2}px ${o}px 0 ${I}`, `-${o}px -${o}px 0 ${I}`, `${o}px -${o}px 0 ${I}`, `-${o}px ${o}px 0 ${I}`, `0 ${o}px 0 ${I}`, `${o}px 0 0 ${I}`, `-${o}px 0 0 ${I}`, `0 -${o}px 0 ${I}`].join(',')
   return `font:400 ${size}px/1 Bangers,Fredoka,system-ui,sans-serif;letter-spacing:.04em;color:${color};text-shadow:${sh};white-space:nowrap` } // Werte aus h3d-hud inkText
-function buildDom3d(hud, inner) {
+function buildDom3d(hud, inner, P = {}) {
+  const host = P.host || {}, L = hud.layout(), F = 1
   const root = document.createElement('div'); root.id = 'kfb-hud-clay'; root.dataset.kit = '3d'
   root.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:8991;font-family:Fredoka,system-ui,sans-serif'
-  const css = document.createElement('style'); css.textContent = '#kfb-audio-panel{display:none!important}'; document.head.appendChild(css) // ♪-Panel lag unter der Truhe; Kassette folgt im nächsten Paket
-  const btn = (label, onClick, key) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', label); b.title = label; b.dataset.ui = key
-    b.style.cssText = 'position:absolute;pointer-events:auto;background:transparent;border:0;border-radius:50%;cursor:pointer;padding:0;outline-offset:2px'
-    b.addEventListener('click', (e) => { e.stopPropagation(); onClick(); b.blur() }); const F = (f, v) => () => hud.setUiFlag(key, f, v)
-    b.addEventListener('pointerenter', F('hover', true)); b.addEventListener('pointerleave', () => { hud.setUiFlag(key, 'hover', false); hud.setUiFlag(key, 'pressed', false) })
-    b.addEventListener('pointerdown', F('pressed', true)); b.addEventListener('pointerup', F('pressed', false)); b.addEventListener('pointercancel', F('pressed', false))
-    b.addEventListener('focus', () => hud.setUiFlag(key, 'focus', b.matches(':focus-visible'))); b.addEventListener('blur', F('focus', false))
+  const css = document.createElement('style'); css.textContent = '#kfb-audio-panel{display:none!important}'; document.head.appendChild(css) // ♪-Panel aus; Lautstärken in der Zahnrad-Tafel, Ton an der Kassette
+  const btn = (label, onClick, key, round = true) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', label); b.title = label; b.dataset.ui = key
+    b.style.cssText = `position:absolute;pointer-events:auto;background:transparent;border:0;border-radius:${round ? '50%' : '18px'};cursor:pointer;padding:0;outline-offset:2px`
+    b.addEventListener('click', (e) => { e.stopPropagation(); onClick(); b.blur() }); const Fl = (f, v) => () => hud.setUiFlag(key, f, v)
+    b.addEventListener('pointerenter', Fl('hover', true)); b.addEventListener('pointerleave', () => { hud.setUiFlag(key, 'hover', false); hud.setUiFlag(key, 'pressed', false) })
+    b.addEventListener('pointerdown', Fl('pressed', true)); b.addEventListener('pointerup', Fl('pressed', false)); b.addEventListener('pointercancel', Fl('pressed', false))
+    b.addEventListener('focus', () => hud.setUiFlag(key, 'focus', b.matches(':focus-visible'))); b.addEventListener('blur', Fl('focus', false))
     root.append(b); return b }
+  // Klick = gleiche Wirkung wie die Spieltaste (Lead 24.10.): Taste über den einen Tastatur-Weg (hostKeys) auslösen, keine zweite Logik
+  const key = (code) => window.dispatchEvent(new KeyboardEvent('keydown', { code, bubbles: true }))
   const hits = {
     chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }, 'chest'),
-    arrow: btn('Ziel', () => {}, 'arrow'), // Karte und Zielwahl (Flyout L2) folgen im nächsten Paket
+    arrow: btn('Ziel', () => {}, 'arrow'), // Karte und Zielwahl (Flyout L2) folgen mit Paket 4
+    gear: btn('Einstellungen', () => { hud.tapGear(); SP.settings(!SP.isOpen()) }, 'gear'),
+    act0: btn('Faust (V)', () => key('KeyV'), 'act0'), act1: btn('Blaster (B)', () => key('KeyB'), 'act1'), act2: btn('Clown-Bombe (N)', () => key('KeyN'), 'act2'),
   }
+  // Knöpfe der N34-Kassette nach „Kassette als Player“ r5 (V-707): plastische Taste (Sockel, Kuppe, Schatten; beim Drücken eingesunken), Glanz nur als dünner
+  // Rand, Symbol cremeweiß mit dunkler Kontur, kein Umriss um die Taste. Farbe nach Tageszeit (Tag Orange, Nacht Türkis), Schalter ctl=auto|day|night.
+  // Werte aus N33 controlTheme, sobald es im privaten JSON steht; bis dahin CTL_FALLBACK (vorläufig, Lead 24.10.). Symbole wie n34r2_page icon().
+  const j17 = {}; for (const k of ['play', 'next', 'mute']) { const d = document.createElement('div'); d.style.cssText = 'position:absolute;pointer-events:none;display:none'; d.dataset.j17 = k; j17[k] = d; root.append(d) }
+  const ctlMode = (/(^|[#,])ctl=(auto|day|night)(,|$)/.exec(location.hash) || [])[2] || 'auto'
+  const theme = () => { const night = ctlMode === 'night' || (ctlMode === 'auto' && !!host.isNight?.()); return { ...CTL_THEME[night ? 'night' : 'day'], id: night ? 'night' : 'day' } }
+  const j17svg = (kind, T, pressed = false) => { const s = 0.4, C = T.symbol, K = T.outline, sw = 0.1
+    const ico = kind === 'play' ? `<path d="M${-0.55 * s} ${-s} L${0.9 * s} 0 L${-0.55 * s} ${s} Z"/>` : kind === 'pause' ? `<rect x="${-0.6 * s}" y="${-s}" width="${0.42 * s}" height="${2 * s}" rx="0.03"/><rect x="${0.18 * s}" y="${-s}" width="${0.42 * s}" height="${2 * s}" rx="0.03"/>`
+      : kind === 'next' ? [-0.85, -0.05].map((o) => `<path d="M${s * o} ${-0.8 * s} L${s * (o + 0.75)} 0 L${s * o} ${0.8 * s} Z"/>`).join('') + `<rect x="${0.72 * s}" y="${-0.8 * s}" width="${0.2 * s}" height="${1.6 * s}"/>`
+      : `<path d="M${-s} ${-0.35 * s} L${-0.45 * s} ${-0.35 * s} L0 ${-0.85 * s} L0 ${0.85 * s} L${-0.45 * s} ${0.35 * s} L${-s} ${0.35 * s} Z"/>`
+    const waves = kind === 'sound' ? `<path d="M${0.15 * s + 0.55 * s * Math.cos(-0.9)} ${0.55 * s * Math.sin(-0.9)} A${0.55 * s} ${0.55 * s} 0 0 1 ${0.15 * s + 0.55 * s * Math.cos(0.9)} ${0.55 * s * Math.sin(0.9)} M${0.15 * s + 0.95 * s * Math.cos(-0.8)} ${0.95 * s * Math.sin(-0.8)} A${0.95 * s} ${0.95 * s} 0 0 1 ${0.15 * s + 0.95 * s * Math.cos(0.8)} ${0.95 * s * Math.sin(0.8)}" fill="none" stroke-linecap="round"/>`
+      : kind === 'mute' ? `<path d="M${0.3 * s} ${-0.45 * s} L${s} ${0.45 * s} M${s} ${-0.45 * s} L${0.3 * s} ${0.45 * s}" fill="none" stroke-linecap="round"/>` : ''
+    const sym = (stroke, w, fill) => `<g fill="${fill}" stroke="${stroke}" stroke-width="${w}" stroke-linejoin="round">${ico}</g><g stroke="${stroke}" stroke-width="${w + 0.11}">${waves}</g>`
+    const dy = pressed ? 0.12 : 0, id = 'k' + kind + T.id
+    return `<svg data-kind="${kind}" data-theme="${T.id}" viewBox="-1.2 -1.2 2.4 2.5" width="100%" height="100%" style="overflow:visible"><defs><radialGradient id="${id}" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="${T.hi}"/><stop offset=".55" stop-color="${T.mid}"/><stop offset="1" stop-color="${T.lo}"/></radialGradient></defs>`
+      + `<ellipse cx="0.06" cy="0.3" rx="${pressed ? 0.95 : 1.02}" ry="${pressed ? 0.86 : 0.92}" fill="rgba(19,14,22,${pressed ? 0.28 : 0.38})"/>`  // Schatten
+      + `<circle cx="0" cy="0.16" r="1" fill="${T.lo}"/>`  // Sockel
+      + `<g transform="translate(0 ${dy})"><circle r="0.92" fill="url(#${id})"/><path d="M${-0.72} ${-0.3} A0.8 0.8 0 0 1 ${0.18} ${-0.8}" fill="none" stroke="${T.gloss}" stroke-width="0.07" stroke-linecap="round"/>`  // Kuppe + Glanzrand
+      + sym(K, sw * 2.2, K) + sym(C, 0.06, C) + `</g></svg>` }
+  let j17Key = ''
+  const cas = {
+    play: btn('Musik Pause/Weiter', () => { A.musicPause?.(!A.musicPaused?.()) }, 'cassette.play'),
+    next: btn('Nächster Titel', () => { A.musicSkip?.(1) }, 'cassette.next'),
+    mute: btn('Ton an/aus', () => { A.setVolume('muted', !A.volumes().muted); SP.refresh() }, 'cassette.mute'),
+  }
+  // Tastenbeschriftung (V/B/N) und leere Plätze 4–6 (gestrichelter Ring, 50 %), Board buildFrame
+  const keyEls = [], ring = []
+  L.slots.forEach((sl, i) => { const k = document.createElement('div'); keyEls.push(k); root.append(k)
+    if (i >= 3) { const r = document.createElement('div'); ring.push([r, sl]); root.append(r) } })
+  // Interaktion: ovale Blase (h3d-hud bubble), Taste I, Hinweis-Lichthof B in Reichweite
+  const bub = document.createElement('div'); bub.style.cssText = 'position:absolute;pointer-events:auto;cursor:pointer'; bub.setAttribute('role', 'button'); bub.tabIndex = 0; bub.dataset.ui = 'inter'
+  bub.addEventListener('click', (e) => { e.stopPropagation(); P.onInteract?.() }); root.append(bub)
+  const bubKey = document.createElement('div'); root.append(bubKey)
+  const BPATH = 'M62 6 C96 6 118 22 118 44 C118 62 104 75 84 80 C88 88 95 94 104 97 C90 98 76 93 68 83 C65 83 64 83 62 83 C28 83 6 67 6 44 C6 22 28 6 62 6 Z'
+  let bubHint = null, glowAnim = null
+  const drawBubble = (w, hh, hint) => { const dot = `<span style="width:${hh * 0.15}px;height:${hh * 0.15}px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#5a4a5e 0%,#2b2236 55%,${INK3} 100%)"></span>`
+    bub.innerHTML = `<div data-glow style="position:absolute;left:${-hh * 0.25}px;top:${-hh * 0.25}px;width:${w + hh * 0.5}px;height:${hh * 1.5}px;border-radius:50%;background:radial-gradient(closest-side,#7fe3ffdd 0%,#7fe3ff66 50%,transparent 100%);opacity:${hint ? 1 : 0}"></div>`
+      + `<svg viewBox="0 0 124 100" width="${w}" height="${hh}" style="position:absolute;inset:0;overflow:visible"><defs><radialGradient id="kb3d" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fffdf6"/><stop offset=".5" stop-color="#f8eedb"/><stop offset="1" stop-color="#e4d4b6"/></radialGradient></defs><path d="${BPATH}" fill="${INK3}" transform="translate(2.6 3)"/><path d="${BPATH}" fill="url(#kb3d)" stroke="${INK3}" stroke-width="3.2"/></svg>`
+      + `<div style="position:absolute;left:0;top:0;width:${w}px;height:${hh * 0.86}px;display:flex;align-items:center;justify-content:center;gap:${hh * 0.07}px;opacity:${hint ? 1 : 0.35}">${dot}${dot}${dot}</div>`
+    bub.title = hint ? 'Interagieren (I, in Reichweite)' : 'Interagieren (I, nichts in Reichweite)'; bub.setAttribute('aria-label', bub.title)
+    glowAnim?.cancel(); glowAnim = null; const g = bub.querySelector('[data-glow]'); if (hint && !reducedMotion() && g.animate) glowAnim = g.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0.4, transform: 'scale(.9)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 1300, iterations: Infinity }) }
+  // Almanac: letzte 7 Karten als Fächer (Original-Kartenbilder, nie umgefärbt), „N CARDS | M DECKS“ (h3d-hud fanEl)
+  const fan = document.createElement('div'); fan.style.cssText = 'position:absolute;pointer-events:auto;cursor:pointer'; fan.setAttribute('role', 'button'); fan.tabIndex = 0; fan.dataset.ui = 'fan'; root.append(fan)
+  const cap = document.createElement('div'); root.append(cap)
+  let fanImgs = [], fanData = { srcs: [], total: 0, decks: 0 }
+  fan.addEventListener('mouseenter', () => { if (!reducedMotion()) fanImgs.forEach((im, i) => (im.style.transform = `translateY(${i * 1.5}px)`)) })
+  fan.addEventListener('mouseleave', () => fanImgs.forEach((im) => (im.style.transform = '')))
+  const ROT = [-2.2, 1.6, -0.8, 2.4, -1.7, 1.1, -0.5], DX = [3, -4, 5, -2, 4, -3, 0]
+  const setFan = (d) => { fanData = d; last = ''; hud.setAlmanacCount(d.srcs.length) }
+  // Gesamt-Fluff-Zähler (Georg 24.10.): Schrift wie die Entfernung am Pfeil, etwas größer; links vor den Kugeln, beide mittig; Hüpfer beim Hochzählen
+  const tot = document.createElement('div'); tot.id = 'kfb-hud3d-total'; tot.style.cssText = 'position:absolute;pointer-events:none;display:none'; root.append(tot); let totShown = null, totW = 0, totK = 0
+  // Titel der Kassette nur beim Wechsel, 2,4 s, über der Kassette
+  const ttl = document.createElement('div'); ttl.style.cssText = 'position:absolute;pointer-events:none;opacity:0;transition:opacity .25s'; root.append(ttl); let ttlT = 0, lastTitle = null
+  // Name und Entfernung unter dem Pfeil
   const lab = document.createElement('div'); lab.id = 'kfb-hud3d-label'; lab.style.cssText = 'position:absolute;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none'
   const nm = document.createElement('div'), row = document.createElement('div'), dv = document.createElement('span'), ds = document.createElement('span')
   row.style.cssText = 'display:flex;gap:8px;align-items:baseline'; row.append(dv, ds); lab.append(nm, row); root.append(lab)
@@ -212,23 +260,96 @@ function buildDom3d(hud, inner) {
   fl.style.cssText = `position:absolute;padding:6px 14px;border-radius:14px;background:${PAPER};color:${INK};font:600 20px/1.1 Fredoka,sans-serif;box-shadow:0 3px 0 rgba(31,26,20,.25),0 6px 14px rgba(31,26,20,.18);opacity:0;transform:translate(-50%,6px);transition:opacity .2s,transform .2s;white-space:nowrap`
   root.append(fl); let flT = 0
   const flash = (txt) => { fl.textContent = txt; fl.style.opacity = '1'; fl.style.transform = 'translate(-50%,0)'; clearTimeout(flT); flT = setTimeout(() => { fl.style.opacity = '0'; fl.style.transform = 'translate(-50%,6px)' }, 1500) }
+  // Zahnrad-Tafel: Mode (Walk/Drive/Fly) und Game/God (God folgt, kein Owner) vor den bestehenden Zeilen
+  const seg = (items, cur, onPick) => { const w = document.createElement('div'); w.style.cssText = `display:flex;gap:2px;padding:3px;border-radius:16px;background:#2b2236;border:1.5px solid ${INK3}`
+    items.forEach(([id, t, dis]) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.mode = id; b.textContent = t; b.disabled = !!dis; b.title = dis ? 'folgt' : t
+      b.style.cssText = `padding:3px 10px;border:0;border-radius:12px;font:400 16px/1.2 Bangers,Fredoka,sans-serif;letter-spacing:.06em;cursor:${dis ? 'default' : 'pointer'};color:${id === cur() ? '#fff6e0' : dis ? '#6e6478' : '#bfb3c7'};background:${id === cur() ? '#d97c3a' : 'transparent'}`
+      b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (!dis) onPick(id) }); w.append(b) }); return w }
+  let modeBox = null, godBox = null
+  const modeRow = ({ row: r }) => { const box = document.createElement('div'); modeBox = box; const paint = () => box.replaceChildren(seg([['walk', 'WALK'], ['drive', 'DRIVE'], ['fly', 'FLY']], () => host.mode?.() || 'walk', (m) => { host.setMode?.(m); paint() })); paint(); box.paint = paint; return r('Mode', box) }
+  const godRow = ({ row: r }) => { const box = document.createElement('div'); godBox = box; box.append(seg([['game', 'GAME'], ['god', 'GOD · FOLGT', true]], () => 'game', () => {})); return r('Spiel', box) }
+  const SP = settingsPanel(root, hud, () => null, { top: [modeRow, godRow], accent: '#d97c3a', refresh: () => modeBox?.paint?.() })
   document.body.appendChild(root)
-  let last = '', lastLab = ''
+  let last = '', lastLab = '', lastMusic = ''
   return {
-    bagWas: false, flash, settings() {}, settingsOpen: () => false,
+    bagWas: false, flash, settings: (v) => SP.settings(v), settingsOpen: () => SP.isOpen(), setFan,
     sync() {
       hud.setUiFlag('chest', 'on', hud.opened().chest)
-      const R = hud.rects(), v = hud.view(), L = hud.labelLayout(), t = hud.label(), key = JSON.stringify([R, v.W, v.H]) 
-      if (key !== last) { last = key
-        for (const [k, b] of Object.entries(hits)) { const r = R[k]; if (!r) continue; const ins = 0.14; Object.assign(b.style, { left: r.x + r.w * ins + 'px', top: r.y + r.h * ins + 'px', width: r.w * (1 - 2 * ins) + 'px', height: r.h * (1 - 2 * ins) + 'px' }) }
-        Object.assign(lab.style, { right: L.right * v.k + 'px', top: L.top * v.k + 'px' })
-        const c = R.chest; if (c) Object.assign(fl.style, { left: c.x + c.w / 2 + 'px', top: Math.max(8, c.y - 40) + 'px' }) }
-      const lk = t ? [t.name, t.dist, t.dv, v.k].join('|') : ''
+      if ((P.deadT = (P.deadT || 0) + 1) % 30 === 0) P.dead = !!A.stats?.()?.music?.dead // WS-Audio: Jukebox aufgegeben (kein Netz) → Kassette nicht als „läuft“
+      const np = A.musicPaused?.() ? null : A.nowPlaying?.(), mu = !!A.volumes().muted, pl = !A.musicPaused?.() && !P.dead; hud.setMusic({ playing: pl, muted: mu })
+      const mk = (pl ? 1 : 0) + '|' + (mu ? 1 : 0); if (mk !== lastMusic) { lastMusic = mk; hud.setUiFlag('cassette.play', 'on', !pl); hud.setUiFlag('cassette.mute', 'on', mu) }
+      { const T = theme(), pr = (k) => hud.uiState('cassette.' + k) === 'pressed', jk = [mk, T.id, pr('play'), pr('next'), pr('mute')].join('|') // ein Wechsel-Knopf: läuft Musik → Pause, sonst Play; Ton aus = durchgestrichen
+        if (jk !== j17Key) { j17Key = jk; j17.play.innerHTML = j17svg(pl ? 'pause' : 'play', T, pr('play')); j17.next.innerHTML = j17svg('next', T, pr('next')); j17.mute.innerHTML = j17svg(mu ? 'mute' : 'sound', T, pr('mute')) } }
+      for (const k of ['play', 'next', 'mute']) { const st = hud.uiState('cassette.' + k), t = reducedMotion() ? '' : st === 'hover' ? 'scale(1.06)' : ''; if (j17[k].style.transform !== t) j17[k].style.transform = t }
+      const R = hud.rects(), v = hud.view(), k = v.k, t = hud.label(), CB = hud.cassetteButtons(), key2 = JSON.stringify([R, v.W, v.H, CB, fanData.srcs.length, fanData.total])
+      if (key2 !== last) { last = key2
+        const core = (r, fill) => { const ins = (1 - fill) / 2; return { left: r.x + r.w * ins + 'px', top: r.y + r.h * ins + 'px', width: r.w * fill + 'px', height: r.h * fill + 'px' } }
+        for (const [nk, b] of Object.entries(hits)) { const r = R[nk]; if (!r) continue; Object.assign(b.style, core(r, (hud.layout()[nk]?.fill ?? 0.8) * 0.94)) }
+        for (const [nk, b] of Object.entries(cas)) { const c = CB[nk]; if (!c) { b.style.display = 'none'; continue } b.style.display = ''; Object.assign(b.style, { left: c.x - c.r + 'px', top: c.y - c.r + 'px', width: 2 * c.r + 'px', height: 2 * c.r + 'px' })
+          const d = j17[nk]; if (c.j17) Object.assign(d.style, { display: 'block', left: c.x - c.r * 1.15 + 'px', top: c.y - c.r * 1.15 + 'px', width: 2.3 * c.r + 'px', height: 2.3 * c.r + 'px' }); else d.style.display = 'none' }
+        Object.assign(lab.style, { right: L.label.right * k + 'px', top: L.label.top * k + 'px' })
+        // Aktions-Tasten und leere Plätze
+        const ks = Math.round(L.keys * k), BX = (x) => v.W / 2 + (x - 960) * k, BY = (y) => v.H - (1080 - y) * k // unten Mitte verankert wie die Hülle (Fenster ≠ 16:9)
+        L.slots.forEach((sl, i) => { const el = keyEls[i]; el.style.cssText = inkText(ks, i < 3 ? '#fff6e0' : '#bdb6ab') + `;position:absolute;left:${BX(sl.x + sl.s - 14)}px;top:${BY(sl.y + sl.s - 18)}px;pointer-events:none;opacity:${i < 3 ? 1 : 0.7}`; el.textContent = i < 3 ? ['V', 'B', 'N'][i] : '' })
+        ring.forEach(([r, sl]) => { r.style.cssText = `position:absolute;left:${BX(sl.x + sl.s * 0.14)}px;top:${BY(sl.y + sl.s * 0.14)}px;width:${sl.s * 0.72 * k}px;height:${sl.s * 0.72 * k}px;border-radius:50%;border:${Math.max(1, 3 * k)}px dashed rgba(255,246,224,.5);box-shadow:0 0 0 1px rgba(19,14,22,.14),inset 0 0 0 1px rgba(19,14,22,.14);box-sizing:border-box;pointer-events:none` })
+        const I = L.inter; Object.assign(bub.style, { left: BX(I.x) + 'px', top: BY(I.y) + 'px', width: I.w * k + 'px', height: I.h * k + 'px' }); bubHint = null
+        bubKey.style.cssText = inkText(ks) + `;position:absolute;left:${BX(I.x + I.w + 6)}px;top:${BY(I.y + I.h - 26)}px;pointer-events:none`; bubKey.textContent = 'I'
+        // Fächer
+        const A2 = L.almanac, cw = A2.cw * k, chh = A2.ch * k, n = fanData.srcs.length
+        Object.assign(fan.style, { left: A2.x * k + 'px', top: A2.y * k + 'px', width: cw + 'px', height: (n ? chh + (n - 1) * A2.step * k : 0) + 'px' })
+        fan.replaceChildren(); fanImgs = fanData.srcs.map((src, i) => { const j = ROT.length - n + i, im = document.createElement('img'); im.src = src; im.alt = 'Karte'; im.draggable = false
+          im.style.cssText = `position:absolute;left:${Math.round(DX[j] * cw / 256)}px;top:${i * A2.step * k}px;width:${cw}px;height:${chh}px;border-radius:${Math.max(3, cw * 0.03)}px;box-shadow:0 ${1.5 * k * 2}px 0 0 #e8ddc6,0 0 0 ${k * 2}px ${INK3},${k * 2}px ${2 * k * 2}px 0 ${k * 2}px ${INK3};z-index:${i + 1};transform-origin:50% 0;rotate:${ROT[j]}deg;transition:transform .18s`; fan.append(im); return im })
+        fan.setAttribute('aria-label', `Almanac: ${fanData.total} Karten`)
+        const cs = Math.round(A2.cap * k); cap.style.cssText = inkText(cs) + `;position:absolute;left:${A2.x * k + cw / 2}px;top:${A2.y * k + (n - 1) * A2.step * k + chh + 16 * k}px;transform:translateX(-50%);pointer-events:none;display:${n ? 'flex' : 'none'};align-items:center;gap:${5 * k * 2}px`
+        cap.innerHTML = `<span>${fanData.total} CARDS</span><span style="width:${Math.max(2, cs * 0.16)}px;height:${cs * 0.95}px;border-radius:2px;background:#fff6e0;box-shadow:0 0 0 1px ${INK3}"></span><span>${fanData.decks} ${fanData.decks === 1 ? 'DECK' : 'DECKS'}</span>`
+        const c = R.chest; if (c) Object.assign(fl.style, { left: c.x + c.w / 2 + 'px', top: Math.max(8, c.y - 40) + 'px' })
+        const g = R.gear, cp = R.cassette; if (g) Object.assign(SP.panel.style, { right: Math.max(8, innerWidth - (g.x + g.w)) + 'px', top: g.y + g.h + 8 + 'px' })
+        if (cp) ttl.style.cssText = inkText(Math.round(32 * k)) + `;position:absolute;right:${innerWidth - cp.x - cp.w * 0.9}px;top:${cp.y - 30 * k}px;pointer-events:none;opacity:${ttl.style.opacity || 0};transition:opacity .25s` }
+      // Gesamt-Fluff: Wert vom Owner, angezeigt erst wenn keine Kugel mehr fliegt (zählt mit dem Kontakt hoch)
+      { const T = host.fluffTotal?.(); if (T == null) tot.style.display = 'none'
+        else if ((T !== totShown || k !== totK) && hud.inFlight() === 0) { const up = totShown != null && T > totShown; totShown = T; totK = k; const fs = Math.round(52 * k); tot.textContent = String(T) // auch bei Maßstabswechsel neu (erstes Bild kennt die Fenstergröße noch nicht)
+          tot.style.cssText = inkText(fs) + ';position:absolute;pointer-events:none;display:block;transform-origin:50% 100%'
+          const wRef = String(T).length * 52 * 0.6 + 24; if (Math.abs(wRef - totW) > 1) { totW = wRef; hud.setOrbShift(wRef / 2) }
+          if (up && !reducedMotion() && tot.animate) tot.animate([{ transform: 'translateY(0) scale(1,1)' }, { transform: `translateY(${-10 * k}px) scale(1.14,0.86)` }, { transform: 'translateY(0) scale(0.94,1.06)' }, { transform: 'none' }], { duration: 320, easing: 'ease-out' }) }
+        const o = R.orb0; if (o && T != null) { const fill = hud.layout().orb0.fill, coreL = o.x + o.w * (1 - fill) / 2; Object.assign(tot.style, { right: (innerWidth - coreL + 14 * k) + 'px', top: (o.y + o.h / 2) + 'px', transform: 'translateY(-50%)' }) } }
+      // Interaktions-Hinweis (in Reichweite: Hinweis-Lichthof B)
+      const hint = !!inner.current?.__target; if (hint !== bubHint) { bubHint = hint; const I = L.inter; drawBubble(I.w * k, I.h * k, hint) }
+      // Titel nur beim Wechsel
+      const title = np?.title || null; if (title !== lastTitle) { const show = lastTitle !== null && title; lastTitle = title; if (show) { ttl.textContent = title.replace(/[_-]+/g, ' ').toUpperCase(); ttl.style.opacity = '1'; clearTimeout(ttlT); ttlT = setTimeout(() => { ttl.style.opacity = '0' }, 2400) } }
+      const lk = t ? [t.name, t.dist, t.dv, k].join('|') : ''
       if (lk !== lastLab) { lastLab = lk; lab.style.display = t ? 'flex' : 'none'; hits.arrow.style.display = t ? '' : 'none'
-        if (t) { nm.style.cssText = inkText(Math.round(L.fs * v.k)); nm.textContent = (t.name || '').toUpperCase(); dv.style.cssText = inkText(Math.round(L.fs * v.k), '#bfe8ff'); dv.textContent = t.dv || ''
-          ds.style.cssText = inkText(Math.round(L.fd * v.k)); ds.textContent = t.dist || ''; hits.arrow.setAttribute('aria-label', 'Ziel ' + t.name + ', ' + (t.dist || 'angekommen')) } }
+        if (t) { nm.style.cssText = inkText(Math.round(L.label.fs * k)); nm.textContent = (t.name || '').toUpperCase(); dv.style.cssText = inkText(Math.round(L.label.fs * k), '#bfe8ff'); dv.textContent = t.dv || ''
+          ds.style.cssText = inkText(Math.round(L.label.fd * k)); ds.textContent = t.dist || ''; hits.arrow.setAttribute('aria-label', 'Ziel ' + t.name + ', ' + (t.dist || 'angekommen')) } }
     },
-    remove() { clearTimeout(flT); root.remove(); css.remove() },
+    remove() { clearTimeout(flT); clearTimeout(ttlT); glowAnim?.cancel(); SP.off(); root.remove(); css.remove() },
     el: root,
   }
+}
+
+// Zahnrad-Tafel (eine für beide Kits): Entwickler-Infos (V-655), Ton, Lautstärken, Bewegung reduzieren, Holz-HUD zum Vergleich; extra.top = Zeilen davor (HUD 3D: Mode, Game/God)
+function settingsPanel(root, hud, getHud, extra = {}) {
+  const panel = document.createElement('div'); panel.id = 'kfb-hud-settings'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Einstellungen')
+  panel.style.cssText = `position:absolute;display:none;pointer-events:auto;min-width:300px;padding:16px 18px 14px;border-radius:20px;background:${PAPER};color:${INK};box-shadow:0 5px 0 rgba(31,26,20,.28),0 12px 28px rgba(31,26,20,.22);font:500 18px/1.3 Fredoka,sans-serif`
+  root.append(panel)
+  let panelOpen = false
+  const row = (label, ctl) => { const r = document.createElement('label'); r.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 0;cursor:pointer'; const s = document.createElement('span'); s.textContent = label; r.append(s, ctl); return r }
+  const toggle = (get, set, name) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.setting = name; b.setAttribute('role', 'switch')
+    const paint = () => { const on = get(); b.setAttribute('aria-checked', on ? 'true' : 'false'); const acc = getHud()?.status().zones?.accent || extra.accent || '#c9508f'; b.style.cssText = `width:54px;height:30px;border-radius:15px;border:0;cursor:pointer;position:relative;background:${on ? acc : '#cbbfa6'};box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);transition:background .2s`; b.innerHTML = `<span style="position:absolute;top:3px;left:${on ? 27 : 3}px;width:24px;height:24px;border-radius:50%;background:#fff8e8;box-shadow:0 2px 0 rgba(0,0,0,.2);transition:left .2s"></span>` }
+    b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); set(!get()); paint() }); b.paint = paint; paint(); return b }
+  const dev = toggle(() => DEVUI, (v) => setDevUi(v), 'devui'); if (devUiLocked()) { dev.disabled = true; dev.title = 'aus (clean)' }
+  const snd = toggle(() => !A.volumes().muted, (v) => A.setVolume('muted', !v), 'sound')
+  const rm = toggle(() => lsGet(RM_KEY) === '1', (v) => lsSet(RM_KEY, v ? '1' : '0'), 'reducedMotion')
+  // Lautstärken wie das ♪-Panel von WS-Audio (audioPanel.js LABELS); das Panel selbst ist im Knet-Modus ausgeblendet (lag unter der Truhe), kein Doppel
+  const VOLS = [['master', 'Gesamt'], ['music', 'Musik'], ['sfx', 'Effekte'], ['atmo', 'Atmo']]
+  const sliders = VOLS.map(([k]) => { const r = document.createElement('input'); r.type = 'range'; r.min = 0; r.max = 1; r.step = 0.05; r.dataset.setting = k; r.style.cssText = 'width:130px;accent-color:#8c3f2f'
+    r.value = A.volumes()[k] ?? 0.7; r.addEventListener('input', () => A.setVolume(k, +r.value)); r.addEventListener('change', () => r.blur()); return r })
+  const title = document.createElement('div'); title.textContent = 'Einstellungen'; title.style.cssText = 'font:400 30px/1 Bangers,Fredoka,sans-serif;letter-spacing:1px;margin-bottom:6px'
+  const skin = document.createElement('button'); skin.type = 'button'; skin.dataset.setting = 'hudWood'; skin.textContent = 'Holz-HUD zum Vergleich'
+  skin.style.cssText = `margin-top:8px;width:100%;padding:8px 10px;border-radius:12px;border:0;background:#e8d9b8;color:${INK};font:600 16px Fredoka,sans-serif;cursor:pointer;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)`
+  skin.addEventListener('click', () => { const h = location.hash.replace(/(^#|,)hud=\w+/g, '$1').replace(/,,+/g, ',').replace(/^#,/, '#'); location.hash = (h.length > 1 ? h + ',' : '#') + 'hud=wood'; location.reload() })
+  panel.append(title, ...(extra.top || []).map((r) => r({ row, INK, PAPER })), row('Entwickler-Infos', dev), row('Ton', snd), ...VOLS.map(([, l], i) => row(l, sliders[i])), row('Bewegung reduzieren', rm), skin)
+  const refreshPanel = () => { extra.refresh?.(); dev.paint(); snd.paint(); rm.paint(); const v = A.volumes(); VOLS.forEach(([k], i) => { if (v[k] != null) sliders[i].value = v[k] }) }
+  const offDev = onDevUi(() => dev.paint())
+  const settings = (v) => { panelOpen = !!v; panel.style.display = panelOpen ? '' : 'none'; hud.setUiFlag('gear', 'on', panelOpen); if (panelOpen) refreshPanel() }
+  return { panel, settings, refresh: refreshPanel, off: offDev, isOpen: () => panelOpen }
 }

@@ -43,7 +43,7 @@ await page.waitForTimeout(600)
 const L3 = await list()
 const thought = await page.evaluate(() => { const el = [...document.querySelectorAll('#ui-bubbles [data-kind]')].find((e) => e.dataset.speaker === 'behind'); return { flips: [...el.querySelectorAll('[data-part]')].reduce((n, d) => n + d.getAnimations().length, 0) } })
 // 3b · Vertrag §5 im Host: eine nicht vom Pool-Leser ausgegebene Zeile wird zu „…“ (Denkblase); Pool-Status geladen
-await page.evaluate(() => { window.__kfbAnchors.ahead('forged', 9, -2.5, 0); window.__kfbSayForged('forged', 'Erfundener Satz'); window.__kfbAnchors.ahead('npc', 9, 2.5, 1.5); window.__kfbSayZuruf('npc', 'KayfaBINGO!') })
+await page.evaluate(() => { window.__kfbAnchors.ahead('forged', 9, -2.5, 0); window.__kfbSayForged('forged', 'Erfundener Satz'); window.__kfbAnchors.ahead('npc', 9, 2.5, 1.5); window.__kfbSayZuruf('npc', 'Bingo!') })
 await page.waitForTimeout(300)
 const forged = (await list()).find((b) => b.anchor === 'forged')
 const zurufAtNpc = (await list()).find((b) => b.anchor === 'npc')

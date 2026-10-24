@@ -35,22 +35,22 @@ const NOISE = `float kh3(vec3 p){ p = fract(p*0.3183099+.1); p *= 17.0; return f
 float kn3(vec3 x){ vec3 i=floor(x), f=fract(x); f=f*f*(3.-2.*f);
  return mix(mix(mix(kh3(i),kh3(i+vec3(1,0,0)),f.x),mix(kh3(i+vec3(0,1,0)),kh3(i+vec3(1,1,0)),f.x),f.y),
             mix(mix(kh3(i+vec3(0,0,1)),kh3(i+vec3(1,0,1)),f.x),mix(kh3(i+vec3(0,1,1)),kh3(i+vec3(1,1,1)),f.x),f.y),f.z); }`
-export function boardClay(color, { amp = 0.5, scale = 9, zones = null, emissive = null, emissiveIntensity = 0.38 } = {}) {
-  const m = new THREE.MeshStandardMaterial({ color: new THREE.Color(color || '#ffffff'), roughness: 0.92, metalness: 0, vertexColors: !!zones })
+export function boardClay(color, { amp = 0.5, scale = 9, zones = null, emissive = null, emissiveIntensity = 0.38, map = null, cream = null, vertexColors = false } = {}) { // cream: dunkle Flächen auf Creme ziehen (weiße Kassette, h3d-core)
+  const m = new THREE.MeshStandardMaterial({ color: new THREE.Color(color || '#ffffff'), roughness: 0.92, metalness: 0, vertexColors: !!zones || vertexColors, map })
   if (emissive) { m.emissive.set(emissive); m.emissiveIntensity = emissiveIntensity }
-  const u = { clayAmp: { value: amp }, clayS: { value: scale } }
+  const u = { clayAmp: { value: amp }, clayS: { value: scale }, cream: { value: new THREE.Color(cream || '#f6efe0') } }
   m.onBeforeCompile = (sh) => {
     Object.assign(sh.uniforms, u); if (zones) { sh.uniforms.uZoneB = zones.base; sh.uniforms.uZoneA = zones.accent; sh.uniforms.uZoneD = zones.detail }
     sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nvarying vec3 vClayP;\nuniform float clayS;').replace('#include <begin_vertex>', '#include <begin_vertex>\nvClayP = position * clayS;')
-    sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vClayP;\nuniform float clayAmp;\n' + (zones ? 'uniform vec3 uZoneB, uZoneA, uZoneD;\n' : '') + NOISE)
-      .replace('#include <color_fragment>', '#include <color_fragment>\n' + (zones ? '  { vec3 w = max(vColor.rgb, vec3(0.0)); float s = max(w.r + w.g + w.b, 1e-4); diffuseColor.rgb = (uZoneB * w.r + uZoneA * w.g + uZoneD * w.b) / s; }\n' : '') + '  diffuseColor.rgb *= 0.95 + 0.1*kn3(vClayP*0.35);')
+    sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vClayP;\nuniform float clayAmp;\n' + (zones ? 'uniform vec3 uZoneB, uZoneA, uZoneD;\n' : '') + (cream ? 'uniform vec3 cream;\n' : '') + NOISE)
+      .replace('#include <color_fragment>', '#include <color_fragment>\n' + (zones ? '  { vec3 w = max(vColor.rgb, vec3(0.0)); float s = max(w.r + w.g + w.b, 1e-4); diffuseColor.rgb = (uZoneB * w.r + uZoneA * w.g + uZoneD * w.b) / s; }\n' : '') + (cream ? '  { float l = dot(diffuseColor.rgb, vec3(.299,.587,.114)); diffuseColor.rgb = mix(cream, diffuseColor.rgb, smoothstep(.10,.30,l)); }\n' : '') + '  diffuseColor.rgb *= 0.95 + 0.1*kn3(vClayP*0.35);')
       .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>
   { vec3 cp = vClayP; float e = .2;
     vec3 g = vec3(kn3(cp+vec3(e,0,0))-kn3(cp-vec3(e,0,0)), kn3(cp+vec3(0,e,0))-kn3(cp-vec3(0,e,0)), kn3(cp+vec3(0,0,e))-kn3(cp-vec3(0,0,e)));
     g += .5*vec3(kn3(cp*2.3+vec3(e,0,0))-kn3(cp*2.3-vec3(e,0,0)), kn3(cp*2.3+vec3(0,e,0))-kn3(cp*2.3-vec3(0,e,0)), kn3(cp*2.3+vec3(0,0,e))-kn3(cp*2.3-vec3(0,0,e)));
     normal = normalize(normal - clayAmp * g); }`)
   }
-  m.customProgramCacheKey = () => 'kfb-hud-boardclay' + (zones ? '-z' : '')
+  m.customProgramCacheKey = () => 'kfb-hud-boardclay' + (zones ? '-z' : '') + (cream ? '-c' : '') + (map ? '-m' : '')
   m.userData.u = u
   return m
 }
@@ -59,9 +59,10 @@ export function boardClay(color, { amp = 0.5, scale = 9, zones = null, emissive 
 // (R1), 2 → 3,5 = HUD 3D R1 (Licht oben links). 16 Richtungen, Radius stetig über den Winkel; dazu ein 1-px-Innenring gegen Löcher.
 export function quadMaterial({ toneMapped = true, rim = 0.9 } = {}) {
   return new THREE.ShaderMaterial({
-    uniforms: { map: { value: null }, uvScale: { value: new THREE.Vector2(1, 1) }, texel: { value: new THREE.Vector2(1 / 256, 1 / 256) }, ink: { value: new THREE.Color('#2a1a10') }, ol: { value: new THREE.Vector2(2, 2) }, inner: { value: 1 }, rim: { value: rim }, opacity: { value: 1 } },
+    uniforms: { map: { value: null }, uvScale: { value: new THREE.Vector2(1, 1) }, texel: { value: new THREE.Vector2(1 / 256, 1 / 256) }, ink: { value: new THREE.Color('#2a1a10') }, ol: { value: new THREE.Vector2(2, 2) }, inner: { value: 1 }, rim: { value: rim }, opacity: { value: 1 },
+      haloA: { value: 0 }, haloC: { value: new THREE.Color('#fff6e0') }, haloR: { value: 10 } },
     vertexShader: 'varying vec2 vUv; uniform vec2 uvScale; void main() { vUv = uv * uvScale; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
-    fragmentShader: `uniform sampler2D map; uniform vec2 texel, ol; uniform vec3 ink; uniform float inner, rim, opacity; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D map; uniform vec2 texel, ol; uniform vec3 ink, haloC; uniform float inner, rim, opacity, haloA, haloR; varying vec2 vUv;
       void main() {
         vec4 c = texture2D(map, vUv); float a = c.a, n = 0.0;
         for (int i = 0; i < 16; i++) { float ang = float(i) * 0.3926991; vec2 d = vec2(cos(ang), sin(ang));
@@ -69,8 +70,13 @@ export function quadMaterial({ toneMapped = true, rim = 0.9 } = {}) {
           n = max(n, texture2D(map, vUv - vec2(d.x, -d.y) * texel * r).a); }
         for (int i = 0; i < 8; i++) { float ang = float(i) * 0.7853982; n = max(n, texture2D(map, vUv + vec2(cos(ang), sin(ang)) * texel * inner).a); }
         float k = clamp(n - a, 0.0, 1.0) * rim;
-        vec3 rgb = c.rgb + ink * k; float al = a + k * (1.0 - a);
-        gl_FragColor = vec4(rgb, al) * opacity;
+        // Lichthof (Zustand, HUD_UX_STATES): weicher Saum aus der Silhouette, nur wenn haloA > 0 (Ruhe = kein Lichthof)
+        float g = 0.0;
+        if (haloA > 0.001) { for (int j = 1; j <= 3; j++) { float rr = haloR * float(j) / 3.0; for (int i = 0; i < 12; i++) { float ang = float(i) * 0.5235988 + float(j);
+          g += texture2D(map, vUv + vec2(cos(ang), sin(ang)) * texel * rr).a * (1.15 - float(j) * 0.25); } } g = clamp(g / 18.0, 0.0, 1.0); g = smoothstep(0.0, 0.7, g) * haloA; }
+        vec4 halo = vec4(haloC * g, g), line = vec4(ink * k, k);
+        vec4 under = line + (1.0 - k) * halo; vec4 o = c + (1.0 - a) * under;
+        gl_FragColor = o * opacity;
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }`,
@@ -97,7 +103,7 @@ function addLights(scene, preset) {
 
 // opts: { ref: { W, H } Bezugsfläche, pad (Bezugs-px), phoneK, reducedMotion: bool|fn, gain: { key: Stärke }, ink: () => Color (je Bild), ol: [a, b] }
 export function createHudShell(opts = {}) {
-  const O = { ref: { W: 1920, H: 1080 }, pad: 22, phoneK: 1.55, reducedMotion: false, gain: {}, ink: null, ol: [2, 2], sqX: 0.6, sqMax: 0.12, ...opts } // sqX/sqMax: Stauchung (R1 0,6/0,12; Board 1/0,25)
+  const O = { ref: { W: 1920, H: 1080 }, pad: 22, phoneK: 1.55, reducedMotion: false, gain: {}, ink: null, ol: [2, 2], sqX: 0.6, sqMax: 0.12, fx: false, haloR: 20, ...opts } // fx: Zustände sichtbar machen (HUD 3D, SPEC_WERTE „Zustände“); haloR in Bezugs-px // sqX/sqMax: Stauchung (R1 0,6/0,12; Board 1/0,25)
   const REF = O.ref
   const S = { rtRenders: 0, draws: 0, drawMs: 0, drawMsMax: 0, ring: new Float32Array(240), ri: 0, updMs: 0, updates: 0, tris: 0 }
   const slots = {}, ORDER = []
@@ -219,12 +225,44 @@ export function createHudShell(opts = {}) {
   function setUiFlag(key, flag, v) {
     const u = uiOf(key); if (!(flag in u.flags) || u.flags[flag] === !!v) return u.state; u.flags[flag] = !!v
     const f = u.flags, st = f.pressed ? 'pressed' : f.hover ? 'hover' : f.focus || f.on ? 'active' : 'idle'
-    if (st !== u.state) { u.prev = u.state; u.state = st; u.t = 0; for (const fn of [...uiSubs]) { try { fn(key, st, u.prev) } catch (e) { console.warn('[hud ui]', e) } } }
+    if (st !== u.state) { u.prev = u.state; u.state = st; u.t = 0; if (st === 'pressed' && O.fx) { const f = fxOf(key.split('.')[0]); f.press = 0; f.flash = 1 } for (const fn of [...uiSubs]) { try { fn(key, st, u.prev) } catch (e) { console.warn('[hud ui]', e) } } }
     return u.state
   }
   function runAnimators(dt, nodeOf) {
     for (const [key, u] of UI) { u.t += dt; const fn = animators.get(key); if (!fn) continue; const s = slotOfKey(key); if (!s?.root) continue
       try { if (fn({ key, state: u.state, prev: u.prev, t: u.t, dt, slot: s.key, node: nodeOf?.(key) || s.root, root: s.root })) s.dirty = true } catch (e) { console.warn('[hud animator]', key, e); animators.delete(key) } }
+  }
+
+  // ── Zustands-Darstellung (nur mit fx, HUD 3D R1 SPEC_WERTE): Hover/Fokus Lichthof 0,4 + 1,08 und −3° in 160 ms · Klick Blitz 1,0 + Squash
+  // 1,16 × 0,80 → 0,94 × 1,08 → 1 in 300 ms · Aktiv Lichthof 0,85 ↔ 0,55 in 2,4 s · Hinweis Hinweisfarbe 0,95 ↔ 0,35 in 1,3 s + Wackeln ±7° alle 2,6 s.
+  // Reduzierte Bewegung: nur Lichthof und Farbe. Alles wirkt auf das Overlay-Rechteck, nie auf die gecachte Ansicht.
+  const FXS = new Map(), HALO_C = new THREE.Color('#fff6e0')
+  const fxOf = (k) => { if (!FXS.has(k)) FXS.set(k, { h: 0, press: -1, flash: 0, hint: false, hintC: new THREE.Color('#ffc23d'), t: 0, sx: 1, sy: 1, rot: 0, haloA: 0, haloC: new THREE.Color() }); return FXS.get(k) }
+  const lerp2 = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]
+  function stepFx(dt) {
+    if (!O.fx) return
+    const rm = RM()
+    for (const k of ORDER) {
+      const f = fxOf(k); f.t += dt
+      let hover = false, active = false
+      for (const [key, u] of UI) { if (key !== k && !key.startsWith(k + '.')) continue; if (u.state === 'hover' || u.state === 'pressed') hover = true; if (u.state === 'active') active = true }
+      f.h += ((hover ? 1 : 0) - f.h) * Math.min(1, dt / 0.16 * 3)
+      let sq = [1, 1]
+      if (f.press >= 0) { f.press += dt; const t = f.press; sq = t < 0.1 ? lerp2([1, 1], [1.16, 0.8], t / 0.1) : t < 0.2 ? lerp2([1.16, 0.8], [0.94, 1.08], (t - 0.1) / 0.1) : t < 0.3 ? lerp2([0.94, 1.08], [1, 1], (t - 0.2) / 0.1) : [1, 1]; if (t >= 0.3) f.press = -1 }
+      f.flash = Math.max(0, f.flash - dt / 0.3)
+      let rot = -3 * DEG * f.h, ha = 0.4 * f.h, hc = HALO_C
+      if (active) ha = Math.max(ha, 0.55 + 0.3 * (0.5 + 0.5 * Math.cos(2 * Math.PI * f.t / 2.4)))
+      if (f.hint) { ha = Math.max(ha, 0.35 + 0.6 * (0.5 + 0.5 * Math.cos(2 * Math.PI * f.t / 1.3))); hc = f.hintC; const w = f.t % 2.6; if (w < 0.5) rot += 7 * DEG * Math.sin(w / 0.5 * Math.PI * 3) * (1 - w / 0.5) }
+      ha = Math.max(ha, f.flash); if (f.flash > 0.01) hc = HALO_C
+      const sc = 1 + 0.08 * f.h
+      f.sx = rm ? 1 : sq[0] * sc; f.sy = rm ? 1 : sq[1] * sc; f.rot = rm ? 0 : rot; f.haloA = clamp(ha, 0, 1); f.haloC.copy(hc)
+    }
+  }
+  function applyFx() {
+    if (!O.fx) return
+    for (const k of ORDER) { const s = slots[k], f = FXS.get(k); if (!f) continue
+      s.pivot.scale.x *= f.sx; s.pivot.scale.y *= f.sy; s.pivot.rotation.z += f.rot
+      const U = s.mat.uniforms; U.haloA.value = f.haloA; U.haloC.value.copy(f.haloC); U.haloR.value = O.haloR * view.k * view.dpr }
   }
 
   return {
@@ -234,7 +272,7 @@ export function createHudShell(opts = {}) {
     // je Spielschritt: Mixer der lebenden Props, Animatoren, Federn, Rechtecke
     step(dt, nodeOf) {
       for (const k of ORDER) { const s = slots[k]; if (s.mixer && s.live > 0) { s.mixer.update(dt); s.live -= dt; if (s.live <= 0) s.dirty = true } }
-      runAnimators(dt, nodeOf); springs(dt); placeQuads()
+      runAnimators(dt, nodeOf); springs(dt); stepFx(dt); placeQuads(); applyFx()
     },
     // Overlay-Pass: gecachte Ansichten nachziehen, dann die Rechtecke über das fertige Bild legen
     draw(gl) {
@@ -248,6 +286,8 @@ export function createHudShell(opts = {}) {
       gl.setRenderTarget(null); gl.clearDepth(); gl.render(overlay, ocam)
       const ms = performance.now() - t0; S.draws++; S.drawMs += ms; S.drawMsMax = Math.max(S.drawMsMax, ms); S.ring[S.ri++ % S.ring.length] = ms
     },
+    pressFx: (key, flash = false) => { if (!O.fx) return; const f = fxOf(key); f.press = 0; if (flash) f.flash = 1 }, // Squash/Stretch wie Klick, ohne UI-Zustand (Kontakt, Hochzählen)
+    setHint: (key, on, color = '#ffc23d') => { const f = fxOf(key); f.hint = !!on; f.hintC.set(color) }, fxState: (key) => { const f = FXS.get(key); return f ? { haloA: +f.haloA.toFixed(2), sx: +f.sx.toFixed(3), rot: +(f.rot / DEG).toFixed(1), hint: f.hint } : null },
     uiStates: UI_STATES, uiState: (key) => uiOf(key).state, uiAll: () => Object.fromEntries([...UI].map(([k, u]) => [k, u.state])),
     onUiState: (fn) => { uiSubs.add(fn); return () => uiSubs.delete(fn) },
     setAnimator: (key, fn) => { if (fn) animators.set(key, fn); else animators.delete(key) },

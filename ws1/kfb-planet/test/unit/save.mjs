@@ -5,7 +5,7 @@ import { FLUFF_KINDS } from '../../src/world/fluff.js'
 
 const NOW = Date.parse('2026-10-17T12:00:00Z')
 const s0 = freshSave(NOW)
-const s1 = { ...s0, flags: { metUfo: true, deckSeen: 3, lastCard: 'goblin_01' }, fluff: { ...s0.fluff, heroic: 7, absurd: 2 }, collected: ['goblin:f1', 'goblin:f7#1'], player: { pos: [12.5, 0.3, -4], zone: 'goblin' } }
+const s1 = { ...s0, flags: { metUfo: true, deckSeen: 3, lastCard: 'goblin_01' }, fluff: { ...s0.fluff, heroic: 7, absurd: 2 }, fluffTotal: 9, collected: ['goblin:f1', 'goblin:f7#1'], player: { pos: [12.5, 0.3, -4], zone: 'goblin' } }
 const text = serializeSave(s1, { now: NOW }), back = parseSave(text)
 const roundTrip = back.status === 'ok' && JSON.stringify(back.state) === JSON.stringify({ ...s1, savedAt: new Date(NOW).toISOString() })
 
@@ -51,5 +51,5 @@ process.exit(report('unit-save', {
   localStorageGuarded: localStorageBackend(throwing) === null && localStorageBackend(null) === null && !sq.ok && sq.reason === 'QuotaExceededError',
   nodeFallsBackToMemory: defaultBackend().kind === (typeof globalThis.localStorage?.setItem === 'function' ? 'localStorage' : 'memory'),
   harvestMerge: h.fluff.comic === 1 && h.fluff.mystical === 1 && h.collected.join() === 'k1,k2' && s0.collected.length === 0,
-  fluffTotalCountsAndRepairs: h.fluffTotal === 2 && validateSave({ ...h, fluffTotal: undefined }).state.fluffTotal === 2 && validateSave(h).errors.length === 0,   // Gesamt-Score (Georg 24.10.)
+  fluffTotalCountsAndRepairs: h.fluffTotal === 2 && validateSave({ ...h, fluffTotal: undefined }).state.fluffTotal === 2 && validateSave(h).errors.length === 0 && validateSave({ ...h, fluffTotal: 0 }).state.fluffTotal === 2,   // Gesamt-Score (Georg 24.10.)
 }, { half: half.errors, bytes: text.length }))

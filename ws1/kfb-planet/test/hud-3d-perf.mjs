@@ -28,12 +28,12 @@ for (const form of Object.keys(FORMS)) for (let r = 0; r < REPS; r++) for (const
       longTasks: long.length, longMs: +long.reduce((a, b) => a + b, 0).toFixed(0),
       hud: hs ? { kit: H.kit, drawAvg: hs.drawMsAvg, drawP95: hs.drawMsP95, upd: hs.updMsAvg, rtRenders: hs.rtRenders, quads: hs.quads, rtMB: +(hs.rtBytes / 1048576).toFixed(2) } : null }
   }, MEAS_MS)
-  res.push({ ...m, form, hud, rep: r, errs: errs.length }) /* hud = Schalter (m.hud sind die HUD-Messwerte) */; console.log(JSON.stringify(res[res.length - 1])); await ctx.close()
+  res.push({ ...m, hudStats: m.hud, form, hud, rep: r, errs: errs.length }) /* hud = Schalter (m.hud sind die HUD-Messwerte) */; console.log(JSON.stringify(res[res.length - 1])); await ctx.close()
 }
 await browser.close()
 // Zusammenfassung je Form × HUD: Mittel der Wiederholungen
 const sum = {}
 for (const r of res) { const k = r.form + '/' + r.hud; (sum[k] ||= []).push(r) }
-const S = Object.fromEntries(Object.entries(sum).map(([k, a]) => [k, { fps: +(a.reduce((s, x) => s + x.fps, 0) / a.length).toFixed(1), p95: Math.max(...a.map((x) => x.p95)), calls: +(a.reduce((s, x) => s + x.calls, 0) / a.length).toFixed(1), textures: a[0].textures, canvases: a[0].canvases, longTasks: a.reduce((s, x) => s + x.longTasks, 0), hudDrawP95: a[0].hud ? Math.max(...a.map((x) => x.hud.drawP95)) : 0, hudUpd: a[0].hud ? a[0].hud.upd : 0, rtMB: a[0].hud?.rtMB ?? 0, quads: a[0].hud?.quads ?? 0 }]))
+const S = Object.fromEntries(Object.entries(sum).map(([k, a]) => [k, { fps: +(a.reduce((s, x) => s + x.fps, 0) / a.length).toFixed(1), p95: Math.max(...a.map((x) => x.p95)), calls: +(a.reduce((s, x) => s + x.calls, 0) / a.length).toFixed(1), textures: a[0].textures, canvases: a[0].canvases, longTasks: a.reduce((s, x) => s + x.longTasks, 0), hudDrawAvg: a[0].hudStats ? +(a.reduce((s, x) => s + x.hudStats.drawAvg, 0) / a.length).toFixed(3) : 0, hudDrawP95: a[0].hudStats ? Math.max(...a.map((x) => x.hudStats.drawP95)) : 0, hudUpd: a[0].hudStats ? a[0].hudStats.upd : 0, rtMB: a[0].hudStats?.rtMB ?? 0, quads: a[0].hudStats?.quads ?? 0 }]))
 fs.writeFileSync(`${OUT}/perf.json`, JSON.stringify({ date: new Date().toISOString(), note: 'Telefon = Emulator (844×390 @3, Mac-GPU), kein echtes Gerät', runs: res, summary: S }, null, 1))
 console.log(JSON.stringify(S))

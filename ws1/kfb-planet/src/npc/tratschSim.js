@@ -1,7 +1,9 @@
 // WS-NPC Karten-Tratsch · Stufe 0 (Konzept docs/ws-npc/KARTEN_TRATSCH_KONZEPT_R1.md, Georg-Freigabe 23.10.): Text-Simulation, rein, ohne three/DOM,
 // deterministisch über den Seed (Node-geprüft: test/unit/tratschSim.mjs). Keine Spieländerung – das Spiel liest dieses Modul (noch) nicht.
 // Figuren erzählen einander Karten (Triplet t1, sonst Kartentext roh „Name: Power“ bzw. Schweigen), der Hörer antwortet mit einem Call
-// (BINGO übernimmt · BOGGLE vertieft mit dem Lore · BONGO verlangt Erzählung · Blödsinn! lehnt ab); HUMBUG = Einsatz der Kayfabe Men in Black (V-530).
+// Ruf-Grammatik (Georg 24.10., eine Bedeutung je Ruf überall): Bingo! ja/annehmen (+) · Boggle...? hä, mehr davon (offen, Gegenüber legt nach) ·
+// Bongo. nicht jetzt/anders – weiches Nein, Tür bleibt offen (Erzähler legt dieselbe Karte anders oder eine andere nach; neutral, Wiederholung erlaubt) ·
+// Blödsinn! hartes Nein, Dialog endet (−, Streit) · Humbug?! vergiss es (MiB-Blitzdingsen, V-530).
 // Ob eine Karte zündet, hängt nie am Inhalt (Georg 23.10.), nur an Beziehung, Status, Wiederholung, Blasen-Nähe, roh/erzählt, Art und gedeckeltem Zufall.
 // Dramaturg (Georg „Conflict is king!“, Lead §4b): greift nur in die AUSWAHL ein (wer wem begegnet, welche Karte), nie in die Bewertung.
 import { rngOf } from '../world/fluff.js'
@@ -11,7 +13,8 @@ export const TRATSCH = Object.freeze({
   // Stellwerte Stufe 0 (kalibriert 23.10. auf die Zielbänder T2/T9; Georg stellt sie am Protokoll ein). bubC = typische Nähe (Mitte der Blasen-Nähe)
   // raw 0,35 (vorher 0,6): roh heißt jetzt Titel + Lore erzählt, nicht mehr Regeltext vorgelesen (Lead 23.10.)
   w: Object.freeze({ rel: 0.35, sta: 0.3, rep: 0.35, bub: 1.4, bubC: 0.15, raw: 0.35, rnd: 0.55 }),
-  theta: Object.freeze({ hi: 0.45, lo: -0.3, bongo: -0.1, boggle: 0.45 }),
+  // Bänder des Werts s: Bingo! ≥ hi · Boggle...? ≥ lo · Bongo. ≥ soft · sonst Blödsinn! (nach dem Nachlegen nur noch Bingo!/Bongo./Blödsinn!)
+  theta: Object.freeze({ hi: 0.45, lo: -0.1, soft: -0.6, boggle: 0.45 }),
   art: Object.freeze({ Tratschmaul: 0.4, Skeptiker: -0.6, 'Übertreiber': 0.25, Schweiger: 0 }),
   talk: Object.freeze({ Tratschmaul: 1.6, Skeptiker: 1, 'Übertreiber': 1.3, Schweiger: 0.4 }),
   meet: Object.freeze({ same: 3, resident: 1.4, cross: 0.5 }),
@@ -63,6 +66,11 @@ export function loreText(c, max = 140) { const S = String(c.lore).match(/[^.!?]+
 // into_title: „Opener Titel …“ (Frage-Opener → „?“ am Ende) · own_clause: „Opener: …“ · interjection: „Opener, …“ (nur in Debatten)
 // Kartenpassung („I once met“ nur Personen, „Ever tasted“ nur Essbares, „I found a“ nur Objekte, „You played“ nur Spielbares): Kartenart fehlt → weglassen
 export const OPENER_FIT_ONLY = Object.freeze(['I once met', 'My neighbour is', 'Ever tasted', 'I found a', 'You played'])
+// Georg 24.10. (Urteil Lauf 2): überspezifisch, lenkt von der Karte ab – nie verwenden, auch wenn der Pool ihn noch als POOL führt (Deck-Songs streicht ihn)
+export const OPENER_BANNED = Object.freeze(['You with the card in your hand'])
+// Streichvorschläge bei WS0 (Status §31, Deck-Songs 24.10.): meiden, bis WS0 entscheidet – fällt die Entscheidung, hier nachziehen
+export const OPENER_AVOID_PENDING = Object.freeze(['You played', 'Welcome to', 'Ever tasted', 'This one has a rule', 'The deck insists on', 'Here is something nobody asked for', 'Before we continue',
+  'Meanwhile elsewhere']) // Audit PRÜFEN „nur Song, nicht Tratsch“ (behauptet Ortswechsel), Deck-Songs 24.10.
 // tr1-Zeilen sind ganze Sätze (SSOT S2): davor passen nur Opener, die einen Satz einleiten (S8 „Opener + Zeile = ein Satz“). Opener, die ein Substantiv
 // verlangen („Let me tell you about“, „Welcome to“, „Did you hear of“ …), ergäben „… about The Happy Dagger is happy“ – sie bleiben für tr1 aus.
 export const CLAUSE_OPENERS = Object.freeze(['What if', 'You know', 'Do you know', 'I used to believe', 'Remember'])
@@ -101,7 +109,7 @@ export function buildLibrary(cards, data) {
     const c = decks.get(dk)?.get(+n), fits = data.source?.revision === 'tr1' ? lineFits : tripletFits; if (c && fits(c.name, t)) trip.set(dk + '#' + n, t); else misfit.push({ card: dk + '#' + n, name: c?.name ?? null, triplet: t.slice(0, 60) }) }
   // SSOT S12: gesperrte Karten werden nie gesprochen, auch nicht roh – sie kommen weder ins Starter-Set noch in Erzählungen
   const blocked = new Set(Object.entries(data.blocked || {}).flatMap(([dk, B]) => Object.keys(B.cards).map((n) => dk + '#' + n)))
-  const openers = (data.openers?.openers || []).filter((o) => o.status === 'POOL' && !OPENER_FIT_ONLY.includes(o.opener))
+  const openers = (data.openers?.openers || []).filter((o) => o.status === 'POOL' && !OPENER_FIT_ONLY.includes(o.opener) && !OPENER_BANNED.includes(o.opener) && !OPENER_AVOID_PENDING.includes(o.opener))
   return { decks, title, trip, misfit, openers, blocked, tr1: data.source?.revision === 'tr1', card: (k) => { const [d, n] = k.split('#'); return decks.get(d)?.get(+n) ?? null }, deckOf: (k) => k.split('#')[0] }
 }
 
@@ -149,7 +157,7 @@ export function createTratschSim({ lib, cast, seed = 7, drama = true, fallback =
     const ov = overlap(H, E), f = { rel: R.w.rel * relOf(H, E), sta: R.w.sta * status(E), rep: R.w.rep * Math.min(3, heard[H].get(card)?.size ?? 0), bub: R.w.bub * (ov - R.w.bubC), raw: raw ? -R.w.raw : 0, art: R.art[byId[H].art] ?? 0, sat: -R.sat * Math.log2(1 + foreignDecks(H)), ident: identPenalty(H, card), rnd: R.w.rnd * (rng() * 2 - 1) }
     const s = Object.values(f).reduce((a, b) => a + b, 0); return { s, f, ov }
   }
-  const callOf = (s, raw, second) => (raw && !second && s < R.theta.bongo ? 'BONGO' : s >= R.theta.hi ? 'BINGO' : !second && s >= R.theta.lo ? 'BOGGLE' : 'Blödsinn')
+  const callOf = (s, raw, second) => (s >= R.theta.hi ? 'BINGO' : !second && s >= R.theta.lo ? 'BOGGLE' : s >= R.theta.soft ? 'BONGO' : 'Blödsinn')
 
   function cardsFor(E, H) {
     const today = S.day
@@ -163,6 +171,7 @@ export function createTratschSim({ lib, cast, seed = 7, drama = true, fallback =
       return w })?.[0] ?? null
   }
 
+  function chooseCardExcept(E, H, not) { const C = cardsFor(E, H).filter(([k]) => k !== not); if (!C.length) return null; return wpick(C, ([k, v]) => v.k + (lib.deckOf(k) === byId[E].deck ? 1 : 0))?.[0] ?? null }
   function adopt(H, E, card, via) {
     const src = K[E].get(card), kE = byId[E].art === 'Übertreiber' ? 3 : src.k, old = K[H].get(card)
     if (old) old.k = Math.min(3, old.k + 1); else K[H].set(card, { from: E, chain: [E, ...src.chain].slice(0, R.chainMax), day: S.day, via, k: Math.max(1, kE - 1), orig: src.from === 'start' ? E : (src.orig ?? src.chain.at(-1) ?? E) })
@@ -178,17 +187,25 @@ export function createTratschSim({ lib, cast, seed = 7, drama = true, fallback =
     if (!heard[H].has(card)) heard[H].set(card, new Set()); heard[H].get(card).add(E) // erst nach der Bewertung: „gehört“ zählt frühere Erzähler
     e.steps.push({ call, s: j.s, f: j.f, ov: j.ov, noRnd: callOf(j0, raw, false) })
     if (call === 'BONGO') {
-      if (lib.trip.has(card)) { const b2 = textOf(card, false), s2t = lineStart(lib.card(card).name, b2), o2 = pickOpener(E, b2, false, true, s2t); e.steps.push({ add: 'Triplet', text: composeLine(o2, b2, s2t), base: b2, start: s2t, opener: o2 ? o2.opener : null }); j = judge(H, E, card, false); call = callOf(j.s, false, true); e.steps.push({ call, s: j.s, f: j.f, ov: j.ov, noRnd: callOf(j.s - j.f.rnd, false, true) }) }
-      else { e.steps.push({ add: 'verstummt' }); call = 'verstummt' }
+      // Bongo. = anders bitte: rohe Karte → dieselbe als Triplet; sonst eine andere Karte (einmal nachlegen)
+      if (raw && lib.trip.has(card)) { const b2 = textOf(card, false), s2t = lineStart(lib.card(card).name, b2), o2 = pickOpener(E, b2, false, true, s2t); e.steps.push({ add: 'Triplet', card, text: composeLine(o2, b2, s2t), base: b2, start: s2t, opener: o2 ? o2.opener : null }); j = judge(H, E, card, false); call = callOf(j.s, false, true); e.steps.push({ call, s: j.s, f: j.f, ov: j.ov, noRnd: callOf(j.s - j.f.rnd, false, true) }) }
+      else { const k2 = (cardsFor(E, H).map(([k]) => k).filter((k) => k !== card))[0] ? chooseCardExcept(E, H, card) : null
+        if (!k2) { e.steps.push({ add: 'nichts anderes' }); call = 'BONGO' }
+        else { const r2 = !lib.trip.has(k2), b2 = textOf(k2, r2), s2t = lineStart(lib.card(k2).name, b2), o2 = pickOpener(E, b2, r2, true, s2t, r2 ? lib.card(k2).name : null)
+          e.steps.push({ add: 'andere Karte', card: k2, raw: r2, text: composeLine(o2, b2, s2t, r2 ? lib.card(k2).name : null), base: b2, start: s2t, opener: o2 ? o2.opener : null }); e.card2 = k2
+          told.add(E + '>' + H + '>' + k2); S.perCard.set(E + '|' + k2 + '|' + S.day, (S.perCard.get(E + '|' + k2 + '|' + S.day) ?? 0) + 1)
+          j = judge(H, E, k2, r2); if (!heard[H].has(k2)) heard[H].set(k2, new Set()); heard[H].get(k2).add(E)
+          call = callOf(j.s, r2, true); e.steps.push({ call, s: j.s, f: j.f, ov: j.ov, noRnd: callOf(j.s - j.f.rnd, r2, true) }) } }
     } else if (call === 'BOGGLE') {
       const lore = loreRest(lib.card(card), raw ? e.base : lib.trip.get(card), R.bubbleMax), boost = lore ? R.theta.boggle : 0 // Lore-Satz, der im Triplet nicht steckt; sonst keine Antwort, kein Bonus
-      e.steps.push(lore ? { add: 'Lore', text: lore } : { add: 'ohne Antwort' }); const s2 = j.s + boost; call = s2 >= R.theta.hi ? 'BINGO' : 'Blödsinn'
-      e.steps.push({ call, s: s2, noRnd: (j.s - j.f.rnd + boost) >= R.theta.hi ? 'BINGO' : 'Blödsinn' })
+      e.steps.push(lore ? { add: 'Lore', text: lore } : { add: 'ohne Antwort' }); const s2 = j.s + boost; call = callOf(s2, raw, true)
+      e.steps.push({ call, s: s2, noRnd: callOf(j.s - j.f.rnd + boost, raw, true) })
     }
     const first = e.steps[0].call
-    if (call === 'BINGO') { adopt(H, E, card, first === 'BOGGLE' ? 'boggle-bingo' : first === 'BONGO' ? 'bongo-bingo' : 'bingo'); e.out = 'übernommen' }
-    else if (call === 'Blödsinn') { addRel(H, E, -1); rejected[H].add(card + '<' + E); e.out = 'abgelehnt' }
-    else e.out = 'nicht gewandert'
+    const target = e.card2 ?? card // nach Bongo. mit anderer Karte gilt der Ausgang für die zweite Karte
+    if (call === 'BINGO') { adopt(H, E, target, first === 'BOGGLE' ? 'boggle-bingo' : first === 'BONGO' ? 'bongo-bingo' : 'bingo'); e.out = 'übernommen' }
+    else if (call === 'Blödsinn') { addRel(H, E, -1); rejected[H].add(target + '<' + E); e.out = 'abgelehnt' }
+    else { for (const k of [card, e.card2].filter(Boolean)) told.delete(E + '>' + H + '>' + k); e.out = 'später' } // Bongo.: neutral, Tür offen, Wiederholung erlaubt
     // über Blasengrenze: andere Gruppe und kaum geteilte Karten
     e.cross = S.bub[E] !== S.bub[H] && j.ov < R.drama.crossOverlap; S.stats.ex++; S.stats.ms += performance.now() - t0
     const C = R.conflict; let c = e.steps.reduce((a, x) => a + (x.call === 'Blödsinn' ? C.bloedsinn : x.call === 'BOGGLE' ? C.boggle : x.call === 'BONGO' ? C.bongo : x.call === 'BINGO' ? C.bingo : 0), 0); if (e.cross) c *= 1.2

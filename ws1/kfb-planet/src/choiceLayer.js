@@ -1,6 +1,7 @@
 // S5c · Spielerwahl „choice“ 2 × 2 (Host-Vertrag R1.2 §4, Host-Slot #ui-choice).
 // Vorlage: ChatterBox Studio v2 (Cut r2, 05.10.) – Vertrag HANDOVER_WSA_CHATTERBOX_TRIPLET §3 „Zurufe (Player)“:
-//   bubbleKind 'choice', 2 Spalten × 2, Reihenfolge und Tasten fix: 1 KayfaBINGO! · 2 KayfaBOGGLE? · 3 KayfaBONGO! · 4 BLÖDSINN!,
+//   bubbleKind 'choice', 2 Spalten × 2, Reihenfolge und Tasten fix: 1 Bingo! · 2 Boggle...? · 3 Bongo. · 4 Blödsinn! (Schreibweise V-699, Georg 24.10.:
+//   eine Bedeutung je Ruf überall – ja · mehr davon · nicht jetzt/anders · nein; vorher KayfaBINGO!/KayfaBOGGLE?/KayfaBONGO!/BLÖDSINN!),
 //   Labels exakt, Ziele ≥ 44 px, nach Auswahl Stempel 420 ms → Choice tritt ab → Antwort.
 // Übernommen aus Studio v2: choiceGeo() (Zweig cols = 2, inkl. Mobil-Zweig W < 560), place() vollständig, die Antwortzeile im
 // Rim-Modus „clayonly“ (Clay pur) samt Wand-Schatten, Stempel (scale 1,03 + Tonfarbe, Rest Opacity 0,15 / +6 px), Hover-Anhebung −2 px,
@@ -16,10 +17,10 @@ import './vendor/chatterbox-core.js'
 import { bubbleBodySvg } from './bubbleLayer'
 
 export const ZURUFE = [
-  { id: 'bingo', key: '1', label: 'KayfaBINGO!', color: '#e2b33c' },
-  { id: 'boggle', key: '2', label: 'KayfaBOGGLE?', color: '#59c3e6' },
-  { id: 'bongo', key: '3', label: 'KayfaBONGO!', color: '#7fc46a' },
-  { id: 'bloedsinn', key: '4', label: 'BLÖDSINN!', color: '#e5563d' },
+  { id: 'bingo', key: '1', label: 'Bingo!', color: '#e2b33c' },
+  { id: 'boggle', key: '2', label: 'Boggle...?', color: '#59c3e6' },
+  { id: 'bongo', key: '3', label: 'Bongo.', color: '#7fc46a' },
+  { id: 'bloedsinn', key: '4', label: 'Blödsinn!', color: '#e5563d' },
 ]
 export const STAMP_MS = 420
 export const MAX_OWN_WORDS = 8
