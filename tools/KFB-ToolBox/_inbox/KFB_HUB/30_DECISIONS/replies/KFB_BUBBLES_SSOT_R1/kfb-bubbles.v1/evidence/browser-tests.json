@@ -1,0 +1,97 @@
+{
+  "count": 13,
+  "results": [
+    {
+      "detail": "loading",
+      "name": "local OFL fonts",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "height": 108,
+        "keys": 2
+      },
+      "name": "initial R10.1 roles and glyph fit",
+      "status": "PASS"
+    },
+    {
+      "detail": 108,
+      "name": "two encounters -> Fluff, stable line height",
+      "status": "PASS"
+    },
+    {
+      "name": "owned card -> plaintext",
+      "status": "PASS"
+    },
+    {
+      "name": "three other cards -> plaintext",
+      "status": "PASS"
+    },
+    {
+      "name": "assist view keeps host encounter progress",
+      "status": "PASS"
+    },
+    {
+      "detail": "#f8f7f5 · Kontrast 16.1:1",
+      "name": "pastel/night/dark contrast",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "clientWidth": 375,
+        "scrollWidth": 375
+      },
+      "name": "single-file viewport 375",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "clientWidth": 768,
+        "scrollWidth": 768
+      },
+      "name": "single-file viewport 768",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280
+      },
+      "name": "single-file viewport 1280",
+      "status": "PASS"
+    },
+    {
+      "detail": 0,
+      "name": "single-file zero external requests",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "contrast": 12.454779813201782,
+        "height": 110,
+        "paper": "#dad8f7",
+        "rect": {
+          "h": 110,
+          "w": 160,
+          "x": 240,
+          "y": 84
+        },
+        "rows": 5,
+        "shiftedRect": {
+          "h": 110,
+          "w": 160,
+          "x": 294.04157439684093,
+          "y": 84
+        }
+      },
+      "name": "original Wireface host with Three 186",
+      "status": "PASS"
+    },
+    {
+      "detail": "\"Shantell Sans\", \"Comic Neue\", system-ui, sans-serif",
+      "name": "fonts unavailable -> readable safe fallback",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
