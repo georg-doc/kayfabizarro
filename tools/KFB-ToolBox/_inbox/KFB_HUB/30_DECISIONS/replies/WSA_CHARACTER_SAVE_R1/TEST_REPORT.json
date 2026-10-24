@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "sourceCommit": "70d9ebbedb3ac58ceb1060e754c4f2924c473ae3",
+  "runner": "node --test character-proposals.test.mjs",
+  "passed": 39,
+  "failed": 0,
+  "originalTestsRerun": 36,
+  "newTests": 3,
+  "scope": "Existing adapter-neutral proposal core; immutable base readback, exact requested edit reconstruction, confirmed diff, fixed GitHub URLs and replay",
+  "hostedReadsTested": false,
+  "hostedWritesTested": false,
+  "realFigureTestProposals": 0,
+  "canonicalCardWrites": 0,
+  "siteSourceWrites": 0,
+  "siteVersionsChanged": 0,
+  "site": {
+    "projectId": "appgprj_6ac2ba44282881919d1a49287a32054e",
+    "version": 11,
+    "sourceHead": "53028aa47de97cf1c5791cdc72501212a5785094",
+    "staticOnly": true,
+    "ownerPrivate": true,
+    "requiresByop": false
+  },
+  "blocker": "SITES_PLUGIN_ELIGIBILITY_UNAVAILABLE: documented native sites_list_plugin_eligibility is absent (0 inventory matches, callable undefined). Hosted GitHub mapping/consent/write cannot be verified or enabled.",
+  "limitations": [
+    "All 39 tests use deterministic fake adapters, no real GitHub write via Site",
+    "No hosted route or save UI integration",
+    "No browser QA or screenshots",
+    "Existing native webchat create-only proof on 18 October is not hosted-adapter proof"
+  ]
+}
