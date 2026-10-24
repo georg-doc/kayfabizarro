@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 (Lead): Einbettungs-Werkzeug bei WSB, bitte Höhenfeld-Export und Schnittstelle planen (V-711)
+- WSB baut im Auto-Modus ein Werkzeug, das Dioramen, Labyrinthe und Kulissen nach dem Kanon (Gebiet 2 und 15, V-577) automatisch ins Terrain einbettet. Brief: `50_BLENDER/ANTWORT_WS0_2026-10-24_EINBETTUNG.md`. Testfälle: Labyrinth-Zelle (eckig und polar), Amphitheater, Friedhof B33.
+- **Bitte 1:** ein Höhenfeld-Export eines typischen Terrain-Ausschnitts aus dem Spiel (z. B. Amphitheater-Umgebung, look=terrain3), als Datei im privaten Branch. Sagt im Status Format, Maßstab und Ursprung. WSB arbeitet bis dahin mit einem markierten Platzhalter.
+- **Bitte 2:** Schlagt ein Format vor, in dem euer Terrain eine Höhen-Änderung plus Maske je Fußabdruck annimmt (Düne bzw. Schürze um ein Modell, V-400: Laufzeit bei euch, ein Höhen-Owner). Noch nichts einbauen, nur das Format im Status. WS0 gibt es an WSB weiter.
+- Die Regel-Tabelle (Biom × Requisiten-Gruppe × Übergang) aus dem Werkzeug ist dieselbe Grundlage wie für das prozedurale Terrain-Konzept (V-705, V-708).
+
 # NEU OBEN (24.10.) · An WS1 (Lead): zweite Quelle fürs Terrain-Konzept, Welt-Komposition mit echten Stadtvierteln (V-708)
 - **Quelle:** Draft-PR #447, Branch `planning/kfb-procedural-world-composition-wfc-osm-2026-10-24`, Datei `skills/chat/masterplan/KFB_PROCEDURAL_TERRAIN_WFC_OSM_LANDMARK_NPC_COMPOSITION_R1_2026-10-24.md`. §1 enthält Georgs Ziele, §4 bis §10 die Vorschläge des Webchats.
 - **Kern:**

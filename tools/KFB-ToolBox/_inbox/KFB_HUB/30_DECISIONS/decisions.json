@@ -10149,6 +10149,21 @@
    "applies": "später"
   },
   {
+   "id": "V-711",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "WSB Nachtrag 34 Einbettungs-Werkzeug R1 (Georg-Go 24.10., aus V-710): Werkzeug bettet Modelle automatisch nach Kanon ein (Terrain-Düne bzw. Schürze als Höhen-Änderung und Maske für das eine Terrain-System von WS1, Übergänge aus Form und Material des Modells mit einheitlicher Ziegelgröße aus B29 r4 und Steinkit, Platzierung nach Kanon-Zahlen, automatische Gates, Regel-Tabelle Biom × Gruppe × Übergang). Konzeptblatt je Testfall von WS0 vor dem Bau (50_BLENDER/N36/KONZEPTBLATT.md), Bau nur mit Kanon-Werkzeugen (kfb_env_bpy, kfb_edge_bpy, kfb_clay_bpy, Asset-Pass), Gate plus blinder Kritiker, Georg sieht nur Bestandenes (V-561); Auto-Modus ohne Rückfragen mit fester Reihenfolge N35 dann N36. Testfälle: Amphitheater, Friedhof B33, Labyrinth-Zelle eckig und polar aus kfb_prison_maze_graph.py und B29 r4. Splats nicht Teil. Datei 50_BLENDER/ANTWORT_WS0_2026-10-24_EINBETTUNG.md, Start nach N35 Schritt B.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Werkzeug, einmal abgenommen, ersetzt die Einzelabnahme jedes Dioramas und macht Worldbuilder-Integration weitgehend unnötig.",
+   "applies": "nach N35"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10261,7 +10276,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1180",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1181",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

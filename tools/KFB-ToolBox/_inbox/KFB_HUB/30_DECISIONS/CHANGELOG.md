@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-711 WSB Einbettungs-Werkzeug R1 mit Auto-Plan N35/N36 (Prüfer BLOCK, 11 Punkte eingearbeitet: Kanon-Werkzeuge, Konzeptblatt von WS0, Asset-Pass, Eingänge, V-512-Gates, Maße V-446); WS1 um Höhenfeld-Export gebeten; Hub b190.
 - V-710 Backlog Baukasten-Einbettung (automatisch nach Kanon), OSM KISS, NPC-Rollen nach Kontext; Kassette r5 im Claude-Design-Paket.
 - V-709 WSB N35 Schritt A fertig, Go für Schritt B (Intake 12 Clips, 3 Lücken, Kopf-Beat-Clips zur Abnahme).
 - V-708 Welt-Komposition mit echten Stadtvierteln (PR 447) als zweite Quelle fürs WS1-Terrain-Konzept; kein Engine-Wechsel.
