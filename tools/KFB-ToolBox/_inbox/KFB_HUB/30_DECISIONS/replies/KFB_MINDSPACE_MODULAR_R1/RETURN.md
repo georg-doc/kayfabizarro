@@ -36,3 +36,15 @@
 **WS0`MINDSPACE_SOURCE_DESIGN_ARBITRATION_R1`:** verify and show **actual user Lovable app** and **original unchanged H13 visual source** individually on the proper acceptance surface, pin the real assets and existing owner interfaces, then have Georg select **one** appealing first-room / source-faithful creative Garden experience. After this accepted donor proof, WS1 may **plan** the receiving POI/entrance/return seam; no authorization to build/launch is conferred by this R1.
 
 **WS1 must not invent receiving scene or source/asset identifiers.** Return exact file/ref/API proof when actual source becomes available; keep macro continuous terrain/support, POI/scene identity, camera and collision with the current WS1 owners, optional splat treatment as presentation only.
+
+## R2 Addendum · 2026-10-24 · Six Mindspaces application/audio/Splat mapping
+
+**Outcome:** Full six-profile creative concept now available **additively** as `SIX_MINDSPACES_APPLICATION_AUDIO_SPLAT_MAPPING_R2.md`. Six application-first presets, individual scenes, screensaver/guided/explorable/creative presentation formats, 6 music-style prompt directions, Splat-vs-mesh visualization options, optional Story-Mode dramaturgical tints, historic/esoteric provider-vs-empirical evidence labels and future work slices.
+
+**Source grounding:** GitHub H13 actual authoring documentation and former R1 source pins; no new H13 or Lovable source/render acceptance. Additional external leads ViewerStudio Forest Demo (interactive splat forest with voice information points), SPHR garden viewer and Three.js garden negative/performance example are **source leads only**.
+
+**Testing:** R2 15/15 editorial QA after refining checker wording (no content changes); GitHub original mapping byte-exact readback. No actual visual/3D/Web Audio/Suno/Counselor/clinical/WS1/Stage/Site tests, user acceptance pending. Original R1 records preserved.
+
+**Unresolved:** User's working prior Lovable app source/code still unpinned; source-isolated H13 and a licensable garden Splat not demonstrated; Current WS1 world-port seam and existing KFB Audio mixer/voice transport unchanged, requires receiver-specific checks.
+
+**One unchanged next gate:** WS0 isolates true existing Lovable + H13 + candidate garden scene visually and with rights/actual source, then Georg selects first visually accepted Mindspace as sole first proof. Do not prebuild six runtimes, auto-merge, promote Live or create a second Site merely because a concept has six presets.
