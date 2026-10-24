@@ -10239,6 +10239,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-717",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Counselor bzw. Orakel und Mindspace-Klang (Georg 24.10.): eine spiegelnde Persona (keine Ratschläge, eigene Bilder fokussieren, blinde Flecken, nicht pushy, meist Chill-and-Fun, optional leicht spooky), gerahmt als Orakel-Kayfabe; Orte und Fahrzeuge können diese Persona sein (V-714, kind locus bzw. vehicle im Figuren-Register mit eigener JSON-Karte); zu den sechs Mindspace-Rezepten gedacht, leicht anpassbar, als Text und als Live-Sprachdialog. Stimmenmelodie für mystische Orte vergessener Zivilisationen über die Chatterbox-Familien, erste ElevenLabs-Läufe für Orts- und Fahrzeug-Melodien einplanen (Credits erst nach Georgs Go im Chat). Räumlicher Klang als Wegweiser: Soundbed eines Mindspace samt binauraler Schicht führt aus der Ferne hin. Kombination meditatives, erkundbares Labyrinth mit Maze-Generator und Mindspace als Ausbaustufe. Recherchen: replies/RESEARCH_BINAURAL_SHEPARD_SPATIAL_R1.md, replies/RESEARCH_COUNSELOR_ORACLE_R1.md; was fehlt, erzeugt Georg mit Suno. Erste Probe nach dem Living Garden: Mirror Chamber mit Text-Orakel, danach Stimme.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mindspaces, Seelen-Orte, Fahrzeuge und Labyrinth teilen dieselben Bausteine (Persona, Stimmenmelodie, Klangbett); einmal planen, modular kombinieren.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10351,7 +10366,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1184",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1185",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
