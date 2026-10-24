@@ -22,6 +22,7 @@ Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier d
 - **Kartentitel immer fett**, in jedem Sprechblasen-Satz und jedem angezeigten Triplet.
 - **Kursiv kontextuell:** Betonung, Umkehrung oder Pointe, **höchstens eine kursive Stelle je Sprechblase** (Georg 24.10.).
 - **Rufe immer fett, genau in dieser Schreibweise und mit diesen Satzzeichen:** **Bingo!** · **Boggle...?** · **Bongo.** · **Blödsinn!** · **Humbug?!**
+- **Bedeutung der Rufe (V-712):** Das Satzzeichen trägt die Haltung. **Bingo!** annehmen · **Boggle...?** mehr davon, offen · **Bongo.** weiches Nein, später · **Blödsinn!** hartes Nein, Dialog endet · **Humbug?!** vergessen bzw. löschen. Gilt für NPC, Fahrzeug, Ort und Objekt gleich.
 - Das gilt nur für Angezeigtes (Sprechblasen, Hub, Kartenoverlay). In Suno-Lyrics und in Texten für Sprachausgabe steht kein Markup.
 
 ## 3 · Zwei Formen, nicht verwechseln

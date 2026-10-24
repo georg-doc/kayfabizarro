@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-712 Ruf-Skala, V-713 Übernahmekarten, V-714 locusId/vehicleId im Figuren-Register, V-715 Backlog KFB Mindspace; Kassette r4/r5 und controlTheme im privaten Branch für WS1.
 - V-711 WSB Einbettungs-Werkzeug R1 mit Auto-Plan N35/N36 (Prüfer BLOCK, 11 Punkte eingearbeitet: Kanon-Werkzeuge, Konzeptblatt von WS0, Asset-Pass, Eingänge, V-512-Gates, Maße V-446); WS1 um Höhenfeld-Export gebeten; Hub b190.
 - V-710 Backlog Baukasten-Einbettung (automatisch nach Kanon), OSM KISS, NPC-Rollen nach Kontext; Kassette r5 im Claude-Design-Paket.
 - V-709 WSB N35 Schritt A fertig, Go für Schritt B (Intake 12 Clips, 3 Lücken, Kopf-Beat-Clips zur Abnahme).

@@ -10164,6 +10164,66 @@
    "applies": "nach N35"
   },
   {
+   "id": "V-712",
+   "date": "2026-10-24",
+   "area": "Dialog",
+   "verdict": "DECISION",
+   "text": "Ruf-Skala (Georg 24.10., WS1 162, erweitert V-699/V-704): die Rufe gelten überall gleich (Interaktion, Tratsch, Spielerchat, Fahrzeuge, Orte), das Satzzeichen trägt die Haltung. Bingo! entschieden: ja, annehmen, Karte ins Weltbild, Gedächtnis plus. Boggle...? offen: mehr davon, Dialog bleibt offen, Gegenüber legt Lore nach. Bongo. gelassen: nicht jetzt bzw. anders, weiches Nein, Wiederholung erlaubt. Blödsinn! entschieden: nein, Widerspruch, Dialog endet, Gedächtnis minus. Humbug?! ungläubig: vergiss es (Blitzdingsen), Karte bzw. Begegnung gelöscht, später auch teilweise. Ohne Ruf weggehen endet still. Eine Dialog-Grammatik für NPC, Fahrzeug, Ort, Objekt (Owner WS-NPC nach dem MVP).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Logik für alle Rufe; das Satzzeichen macht die Haltung lesbar.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-713",
+   "date": "2026-10-24",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Übernahmekarten (WS1 162, Georg: WS0 muss jede Sitzung übernehmen können, ohne doppelte Buchhaltung): je laufender Sitzung eine Karte sessions/<kürzel>.md auf ws1/status (Auftrag und Grenzen, Repo/Zweig/Worktree/letzter Commit, bauen und prüfen, laufende Aufträge mit Quelle, offene Fragen, nur hier geltende Regeln als Verweise, nächster Schritt); geändert nur, wenn sich das ändert, im selben Zug wie Commit bzw. Status. Status-Abschnitte bleiben das Logbuch. Dazu sessions/site.md (was wo live ist, wie veröffentlicht wird, wer freigibt). WSB nutzt 50_BLENDER/STATUS.md plus RETURN, WSA seine Returns. WS0_STATE bekommt die Spalte Übernahmekarte.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Übernahme ohne Chatverlauf; Status bleibt Logbuch, Karte ist Schnappschuss.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-714",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Antworten WS1 161/162: Genius loci (locusId) und beseelte Fahrzeuge (vehicleId) kommen ins bestehende Figuren-Register CHARACTERS_R1 als eigene Art (kind: character, locus, vehicle) mit eigenem Gedächtnis, kein zweites Register; wer eine Rolle in der Geschichte hat, steht damit auch in den Dramatis Personae. Die Deck-Zuordnung von Deck-Songs gilt als Arbeitsvorschlag (PREFILL, kein Kanon, Georg kann ändern). Die Gutter-Fahrt plant WS1b im Terrain-Konzept; der Bau-Owner wird beim Bauauftrag nach dem MVP bestimmt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Orte und Fahrzeuge verhalten sich wie Figuren; ein Register verhindert Doppelungen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-715",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "KFB Mindspace (Georg 24.10., Webchat, Branch planning/kfb-mindspace-modular-world-r1-2026-10-24, replies/KFB_MINDSPACE_MODULAR_R1/): immersiver Kreativ- bzw. Meditationsraum mit Atemführung, Klangbett, optional binauralen Tönen bzw. Schumann-Thema, HyperNormalisation-Bildern (H13) als Raum statt Billboard, optionaler Gesprächsstimme; zuerst als eigenständige Probe für Georg, später als Pocket World bzw. Ort in der prozeduralen Welt (V-705, V-708). Wiederverwenden: Georgs Lovable-Atem-App (breath-sync.lovable.app, Quelle noch nicht auf GitHub), H13 Kaleidoskop, Mixer von WS-Audio (ein Mixer). Keine Heil- oder Wirkversprechen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Prototypen (Atem-App, H13, Audio) bündeln statt neu bauen.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10276,7 +10336,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1181",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1182",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

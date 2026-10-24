@@ -1,5 +1,5 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
-Stand 22.10.2026, Register bis V-711. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
+Stand 22.10.2026, Register bis V-715. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 0. **Jede Frage an Georg** aus einem Status, RETURN oder Briefing kommt sofort als Karte in den Hub (`decisions`). Ausnahme: Abnahmen mit Bildern auf der WS1-Abnahme-Seite präsentiert WS1 selbst in seiner Sitzung (Georg kann die Seite nicht aus dem Hub öffnen); WS0 trägt die Urteile aus dem WS1-Status ins Register ein.
@@ -41,3 +41,5 @@ Stand 22.10.2026, Register bis V-711. WS1-Status jetzt auf ws1/status. Nach jede
 
 ## 5 · Feste Grenzen
 Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im Chat. Private Assets nie öffentlich. Keine Freigaben an andere Sitzungen weiterreichen. Agenten laden nichts per git fetch in `~/KFB_GitHub_sync`. Cowork-Sitzungen werden nie gelöscht.
+
+**Übernahmekarten (V-713):** je laufender Sitzung `sessions/<kürzel>.md` auf `ws1/status`, dazu `sessions/site.md`. WSB: `50_BLENDER/STATUS.md` + RETURN. Bei Übernahme einer Sitzung zuerst diese Karte lesen.

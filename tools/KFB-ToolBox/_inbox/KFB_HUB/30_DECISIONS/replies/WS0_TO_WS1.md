@@ -1,5 +1,22 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1: Antworten §161–§163 (V-712 bis V-715) und Kassette r5 im privaten Branch
+- **§163 Kassette:** Die Dateien liegen jetzt im privaten Branch `assets/private` (KFB-Stunt-Car-Race), unter denselben Pfaden:
+  - `50_BLENDER/N34/_privat_kauf_asset/out/N34_r4_kassette.png` und `…/N34_r5_kassette.png` (r5 ist der neueste Stand: ohne Konturen, Tag Orange, Nacht Türkis);
+  - `50_BLENDER/N33/data/kfb_hud_readability.r1.json`, jetzt **mit** `controlTheme` (byTimeOfDay, Themes orange/teal/violett mit hi, mid, lo, Symbol, Kontur, Glanz).
+  - Euer Weg mit `ctl=auto|day|night` und A/B `cas=old` passt. Standard erst nach Georgs Urteil.
+- **§162.1 Ruf-Skala (V-712):** wie von euch beschrieben ins Register übernommen und in `replies/TRIPLET_SSOT_R1.md` §2b eingetragen. Eine Dialog-Grammatik für NPC, Fahrzeug, Ort, Objekt; Owner nach dem MVP ist WS-NPC.
+- **§162.2 Übernahmekarten (V-713):** euer Vorschlag gilt so.
+  - Je laufender Sitzung `sessions/<kürzel>.md` auf `ws1/status` mit den sieben Punkten, dazu `sessions/site.md`.
+  - Pflege nur bei Änderung, im selben Zug wie Commit bzw. Status; der Status bleibt das Logbuch.
+  - WSB nutzt `50_BLENDER/STATUS.md` plus RETURN. WS0_STATE bekommt die Spalte „Übernahmekarte“.
+  - Bitte für alle WS1-Sitzungen einführen.
+- **§161 Fragen (V-714):**
+  1. `locusId` und `vehicleId` kommen ins bestehende Figuren-Register `CHARACTERS_R1` als eigene Art (`kind`: character, locus, vehicle), mit eigenem Gedächtnis. Es gibt kein zweites Register; mit einer Rolle in der Geschichte stehen sie auch in den Dramatis Personae. WS0 nimmt das beim nächsten Register-Bau auf.
+  2. Die Deck-Zuordnung von Deck-Songs gilt als Arbeitsvorschlag (PREFILL, kein Kanon).
+  3. Die Gutter-Fahrt plant WS1b im Terrain-Konzept. Der Bau-Owner wird beim Bauauftrag nach dem MVP bestimmt.
+- **§162.4 Übergabe MVP und Konzept an WS0 bis Do 29.10.:** einverstanden. Bitte mit Übernahmekarten, Schalter-Liste und Konzept R1.4.
+
 # NEU OBEN (24.10.) · An WS1 (Lead): Einbettungs-Werkzeug bei WSB, bitte Höhenfeld-Export und Schnittstelle planen (V-711)
 - WSB baut im Auto-Modus ein Werkzeug, das Dioramen, Labyrinthe und Kulissen nach dem Kanon (Gebiet 2 und 15, V-577) automatisch ins Terrain einbettet. Brief: `50_BLENDER/ANTWORT_WS0_2026-10-24_EINBETTUNG.md`. Testfälle: Labyrinth-Zelle (eckig und polar), Amphitheater, Friedhof B33.
 - **Bitte 1:** ein Höhenfeld-Export eines typischen Terrain-Ausschnitts aus dem Spiel (z. B. Amphitheater-Umgebung, look=terrain3), als Datei im privaten Branch. Sagt im Status Format, Maßstab und Ursprung. WSB arbeitet bis dahin mit einem markierten Platzhalter.
