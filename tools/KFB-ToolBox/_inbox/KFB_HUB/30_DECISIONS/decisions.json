@@ -10359,6 +10359,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-725",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "MVP-Site (WSA-Zwischenbericht 24.10., Ziel KFB WS1 Staging): Passwort- und Proxy-Baustein vorbereitet (24 Tests), noch nicht veröffentlicht. Stopper laut WSA: das Spiel lädt Musik und Effekte aus dem öffentlichen Bestand (assets/kfb-audio-r1 @36c5ae419), V-695 nannte nur Songs öffentlich. WS-Audio hat mit Georgs Freigabe vom 23.10. (ja, beides) Musik und Effekte öffentlich gestellt; damit entfällt die Trennung, sofern keine gekauften Effekt-Pakete darin liegen (Georg bestätigt, Hub q184). Danach baut WSA den Probe-Build vom aktuellen game/mvp-r1-Commit.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Trennung öffentlich/privat folgt Georgs Freigabe, nicht einer älteren Brief-Formulierung.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-726",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "BACKLOG",
+   "text": "Optische Illusionen (Recherche replies/RESEARCH_OPTICAL_ILLUSIONS_R1.md): Top 3 Droste-Shader, Impossible Box per Stencil, Teleport-Treppe; danach Splat-Tür per Render-Texture, Anamorphose im Terrain, atmende Parkettierung, Hybrid-Images, Ames-Raum, Drift-Muster, Forced Perspective. Budget höchstens 2 Portale live, 1 Stufe Rekursion; Ink-Outline im Portal als Inverted Hull; Escher, Dalí, Magritte, Riley nur als Prinzip. Dazu Georgs Kipp-Würfel-Illusion aus einer frühen Claude-Design-Slice (Würfel kippen endlos in eine Lücke, die sich nie füllt, Kamera-Zoom macht es endlos, ohne Figur am Rand) als Bildschirmschoner- bzw. Mindspace- und HyperNorm-Baustein. Erster billiger Test: Sandbox mit Droste-Billboard und Impossible Box, fps auf dem WS1-MacBook.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Illusionen tragen KFB (Kayfabe, Lücke zwischen den Panels) und sind billig; zuerst die drei S-Effekte.",
+   "applies": "nach dem MVP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10471,7 +10501,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1195",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1199",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

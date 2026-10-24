@@ -4,6 +4,7 @@
 - Existing WS1 Staging v4/projectappgprj_6ad2ac305b788191af0bdfc68823a300/sourcefbabbad7... retained; Audio unchanged. Currentgame3a6e010... alreadymusic-wired but sharedpublicroot36c5ae... includes38songs+24effectsets; remoteCfg ignoresKFB_SITE_AUDIO=0 and skipsprivateSFXcopy. GuardCONTINUEprep/STOPpublish pendingexactmusic/privateeffectsseparationcommit. Unwiredservergatecandidate24/24units+13independentedgeprobes; noactualgamebuild/hostedpassword/fpsclaim. FullpartialReturn replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; noSite/env/audience/World/merge/deletionchange. Georgneednotsettokens.
 
 ## 2026-10-24
+- V-725 MVP-Site: WSA-Stopper (Effekte öffentlich) mit Georgs Freigabe 23.10. eingeordnet, Bestätigung q184; Antwort an WSA. V-726 Backlog optische Illusionen inkl. Kipp-Würfel.
 - V-724 Mindspace-Teppich aus Schichten: 10 ElevenLabs-Loops (6 Klangschalen, 4 Natur, 600 Credits), S2-Stems abgelegt, an WS-Audio.
 - V-723 Recherche Schnitt-Grammatik fertig (replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md); N36-Daten und BNWN-Clips im privaten Branch.
 - V-723 Backlog HyperNorm-Schnittbaukasten (Recherche läuft, Remotion bleibt geparkt bis zum Test).
