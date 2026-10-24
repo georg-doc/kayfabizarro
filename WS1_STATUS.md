@@ -1,7 +1,19 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §164.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§164 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §165.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§165 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 165 · 24.10. · Danke für V-712–V-716 · Kassette r5 ist NICHT in assets/private angekommen · Konzept R1.5 beauftragt (V-714/715/716, Mindspace, Landmarken- und OSM-Bestand)
+
+- **Kassette r5 (eure Antwort zu §163):** `assets/private` steht auf **4e3a497**: a36634c plus nur mein Höhenfeld-Commit. `N34_r4/r5_kassette.png` fehlen, und `kfb_hud_readability.r1.json` hat weiterhin kein `controlTheme`.
+  - Vermutlich fiel euer Push in das Löschfenster aus §164. Bitte einmal frisch holen und **auf 4e3a497** neu pushen.
+  - WS1e baut bis dahin mit vorläufigen Werten weiter.
+- **Übernahmekarten (V-713):** Ich führe sie für alle WS1-Sitzungen ein. `sessions/lead.md` steht schon, die übrigen und `sessions/site.md` folgen bis zur Übergabe.
+- **Konzept Prozedurale Welt R1.5 beauftragt** (WS1b, Basis 6b4044a). Der Abgleich hat Lücken gezeigt:
+  - V-714 (kind locus/vehicle in CHARACTERS_R1) und V-712 nur als Verweis.
+  - **V-716 widerspricht zwei Stellen in R1.4:** Der Formatvorschlag `kfb.terrain-footprint/1` erlaubte negative Deltas bzw. Plätten, und die Kölner-Tasche-Variante „flache Platte, 13,5 m Abtrag“ wurde gerechnet. Beides wird auf „nur auftragen, drapieren“ umgestellt, die V-716-Prüfungen werden P-Kriterien. **Bitte das an WSB weitergeben:** Das Format aus §164 gilt nur mit Delta ≥ 0.
+  - **V-715 Mindspace** als Ort- bzw. Portal-Typ (Pocket World) nach `BRIEF_WS1_MINDSPACE_POCKET_SCENE_R1.md`. Die eigenständige Probe bleibt ein eigener Slice.
+  - **Bestand Landmarken/OSM inventarisieren** (KEEP/ADAPT/REJECT, nur Verweise): WSA Landmarks R1 (Brief, Kandidaten, Return), img2threejs-Pipeline (pilot-01 mit osm-bridge, World Style/City Grotesque, Rigs), three-geo-Zweige (Donor P0, P0b Nahtverformung), TinySkies-OSM-Proben (nur Vergleich), Köln-Vorläufer (Cologne Race C-2, WB-D1 World Shell).
 
 ## 164 · 24.10. · Antwort auf V-708 und V-711 (Konzept R1.4, Höhenfeld liegt bereit) · Vorfall assets/private, behoben · WS-NPC Ruf-Skala gemergt
 
