@@ -251,3 +251,8 @@ Changed paths in Draft PR #205:
 No screenshots were produced because this slice changed documentation/routing only and did not create a new audible/browser Stage.
 
 No merge, Live promotion or runtime deployment is authorized by this Return.
+
+
+## 2026-10-17 · V-389 Audio Site footstep-first micro-proof (additive; baseline acceptance unchanged)
+
+See `tools/KFB-Audio-Site/RETURN.md` on Draft PR #413, branch `audio/kfb-racer-motor-grid-r1-v378-2026-10-17`. The SAME existing KFB Audio Site was extended, source 0.7.2 / saved version 12, hosted source `3e5849b0a0375664e9463a5663bbdcfec1847f4c`, deployment `appgdep_6ad2e324825c8191a40875c7e3a24f94` succeeded. Real Rig_Medium native walk/run contacts → licensed existing grass/concrete/gravel → existing PLAYER_CRITICAL bus; one context, existing TTS ducking retained. Recorded 37 steps + one support landing, zero duplicate keys, schedule drift max 13.705 ms. 259 source/unit/evidence assertions PASS; 7 local interactive checks PASS, hosted visible check BLOCKED_LOGIN. Non-Kenney Foley licence now traced to Chequered Ink (not CC0), 8/8 original byte matches. No paid generation, World writes, Hub/router edits, merge or Live promotion. New micro-proof is NOT HUMAN_ACCEPTED; historical AUDIO-CAL-01 acceptance above is unaffected. Exact route: https://kfb-audio.frizzlebob.chatgpt.site/#footsteps. One next gate: GEORG_FOOTSTEP_MICRO_PROOF_REVIEW (sign in, confirm revision and listen).

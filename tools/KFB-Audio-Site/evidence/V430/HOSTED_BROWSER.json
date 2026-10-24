@@ -1,0 +1,1451 @@
+{
+  "url": "https://kfb-audio.frizzlebob.chatgpt.site/#footsteps",
+  "checks": [
+    {
+      "control": "exact revision + playback",
+      "pass": true
+    },
+    {
+      "control": "surface sand",
+      "pass": true
+    },
+    {
+      "control": "surface stone",
+      "pass": true
+    },
+    {
+      "control": "surface wood",
+      "pass": true
+    },
+    {
+      "control": "surface wet-clay",
+      "pass": true
+    },
+    {
+      "control": "Large + Run + relaxed tempo",
+      "pass": true
+    },
+    {
+      "control": "Idle holds step count",
+      "pass": true
+    },
+    {
+      "control": "Stop",
+      "pass": true
+    }
+  ],
+  "snapshot": {
+    "revision": "0.7.3-footsteps-r2-v430",
+    "playing": false,
+    "mode": "idle",
+    "figure": "Medium",
+    "rate": 1,
+    "surface": "wet-clay",
+    "hostContexts": 1,
+    "clock": "injected AudioContext.currentTime → AnimationMixer action.time + loop count",
+    "bus": "PLAYER_CRITICAL",
+    "profiles": {
+      "Walking_A": {
+        "clip": "Walking_A",
+        "duration": 1.0666667222976685,
+        "frames": 65,
+        "fps": 60,
+        "legLen": 0.214,
+        "contacts": {
+          "foot.l": {
+            "planted": [
+              [
+                1,
+                3
+              ],
+              [
+                13,
+                29
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "lift": 0.2075,
+            "minY": 0.1604
+          },
+          "foot.r": {
+            "planted": [
+              [
+                33,
+                34
+              ],
+              [
+                45,
+                59
+              ]
+            ],
+            "lift": 0.2084,
+            "minY": 0.1595
+          }
+        },
+        "events": {
+          "takeoff": 4,
+          "touchdown": 13,
+          "firstPlant": 1
+        },
+        "rootMotion": {
+          "policy": "in-place",
+          "hipDrift": 0
+        },
+        "stepsPerCycle": 4,
+        "cadenceSpm": 225,
+        "stanceSpeed": 0.6098,
+        "travelDir": {
+          "fwd": 1,
+          "side": 0
+        },
+        "strideLength": 0.3252,
+        "hipRange": 0,
+        "entries": [
+          {
+            "foot": "l",
+            "phase": 0.1875
+          },
+          {
+            "foot": "r",
+            "phase": 0.6875
+          }
+        ],
+        "qualifiedCadenceSpm": 112.49999413266809
+      },
+      "Running_A": {
+        "clip": "Running_A",
+        "duration": 0.800000011920929,
+        "frames": 49,
+        "fps": 60,
+        "legLen": 0.2148,
+        "contacts": {
+          "foot.l": {
+            "planted": [
+              [
+                1,
+                10
+              ],
+              [
+                48,
+                49
+              ]
+            ],
+            "lift": 0.238,
+            "minY": 0.155
+          },
+          "foot.r": {
+            "planted": [
+              [
+                23,
+                34
+              ]
+            ],
+            "lift": 0.2386,
+            "minY": 0.1551
+          }
+        },
+        "events": {
+          "takeoff": 11,
+          "touchdown": 23,
+          "firstPlant": 1
+        },
+        "rootMotion": {
+          "policy": "in-place",
+          "hipDrift": 0
+        },
+        "stepsPerCycle": 2,
+        "cadenceSpm": 150,
+        "stanceSpeed": 2.4555,
+        "travelDir": {
+          "fwd": 1,
+          "side": 0
+        },
+        "strideLength": 1.9644,
+        "hipRange": 0,
+        "entries": [
+          {
+            "foot": "r",
+            "phase": 0.4583333333333333
+          },
+          {
+            "foot": "l",
+            "phase": 0.9791666666666666
+          }
+        ],
+        "qualifiedCadenceSpm": 149.99999776482585
+      }
+    },
+    "decode": [
+      {
+        "surface": "sand",
+        "file": "footstep_snow_000.ogg",
+        "duration": 0.3713151927437642,
+        "sampleRate": 44100,
+        "peak": 0.9035521745681763,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.47619047619047616
+      },
+      {
+        "surface": "sand",
+        "file": "footstep_snow_001.ogg",
+        "duration": 0.3713151927437642,
+        "sampleRate": 44100,
+        "peak": 0.8902740478515625,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 1.1337868480725624
+      },
+      {
+        "surface": "sand",
+        "file": "footstep_snow_002.ogg",
+        "duration": 0.3713151927437642,
+        "sampleRate": 44100,
+        "peak": 0.8951587080955505,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 1.1564625850340136
+      },
+      {
+        "surface": "sand",
+        "file": "footstep_snow_003.ogg",
+        "duration": 0.3713151927437642,
+        "sampleRate": 44100,
+        "peak": 0.9001206755638123,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.5668934240362812
+      },
+      {
+        "surface": "sand",
+        "file": "footstep_snow_004.ogg",
+        "duration": 0.3713151927437642,
+        "sampleRate": 44100,
+        "peak": 0.8856485486030579,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.5668934240362812
+      },
+      {
+        "surface": "stone",
+        "file": "footstep_concrete_000.ogg",
+        "duration": 0.10301587301587302,
+        "sampleRate": 44100,
+        "peak": 0.8989541530609131,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.11337868480725624
+      },
+      {
+        "surface": "stone",
+        "file": "footstep_concrete_001.ogg",
+        "duration": 0.10473922902494331,
+        "sampleRate": 44100,
+        "peak": 0.8699673414230347,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.09070294784580499
+      },
+      {
+        "surface": "stone",
+        "file": "footstep_concrete_002.ogg",
+        "duration": 0.10988662131519275,
+        "sampleRate": 44100,
+        "peak": 0.8919062614440918,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.09070294784580499
+      },
+      {
+        "surface": "stone",
+        "file": "footstep_concrete_003.ogg",
+        "duration": 0.10759637188208616,
+        "sampleRate": 44100,
+        "peak": 0.8825890421867371,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.13605442176870747
+      },
+      {
+        "surface": "stone",
+        "file": "footstep_concrete_004.ogg",
+        "duration": 0.11145124716553288,
+        "sampleRate": 44100,
+        "peak": 0.8914851546287537,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.09070294784580499
+      },
+      {
+        "surface": "wood",
+        "file": "footstep_wood_000.ogg",
+        "duration": 0.24816326530612245,
+        "sampleRate": 44100,
+        "peak": 0.8990111947059631,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.15873015873015872
+      },
+      {
+        "surface": "wood",
+        "file": "footstep_wood_001.ogg",
+        "duration": 0.24866213151927438,
+        "sampleRate": 44100,
+        "peak": 0.8915148973464966,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.11337868480725624
+      },
+      {
+        "surface": "wood",
+        "file": "footstep_wood_002.ogg",
+        "duration": 0.24848072562358275,
+        "sampleRate": 44100,
+        "peak": 0.9011072516441345,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.13605442176870747
+      },
+      {
+        "surface": "wood",
+        "file": "footstep_wood_003.ogg",
+        "duration": 0.24861678004535148,
+        "sampleRate": 44100,
+        "peak": 0.8829923868179321,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.13605442176870747
+      },
+      {
+        "surface": "wood",
+        "file": "footstep_wood_004.ogg",
+        "duration": 0.24501133786848073,
+        "sampleRate": 44100,
+        "peak": 0.8953576683998108,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.13605442176870747
+      },
+      {
+        "surface": "wet-clay",
+        "file": "grass-0.ogg",
+        "duration": 0.7746712018140589,
+        "sampleRate": 44100,
+        "peak": 0.8853434920310974,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.06802721088435373
+      },
+      {
+        "surface": "wet-clay",
+        "file": "grass-1.ogg",
+        "duration": 0.670702947845805,
+        "sampleRate": 44100,
+        "peak": 0.8723464012145996,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.09070294784580499
+      },
+      {
+        "surface": "wet-clay",
+        "file": "grass-2.ogg",
+        "duration": 0.689546485260771,
+        "sampleRate": 44100,
+        "peak": 0.8857079744338989,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.045351473922902494
+      },
+      {
+        "surface": "wet-clay",
+        "file": "grass-3.ogg",
+        "duration": 0.6664172335600907,
+        "sampleRate": 44100,
+        "peak": 0.8987743854522705,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.06802721088435373
+      },
+      {
+        "surface": "wet-clay",
+        "file": "grass-4.ogg",
+        "duration": 0.5873242630385488,
+        "sampleRate": 44100,
+        "peak": 0.88177490234375,
+        "trimSeconds": 0,
+        "onsetAfterTrimMs": 0.09070294784580499
+      }
+    ],
+    "counts": {
+      "events": 37,
+      "steps": 37,
+      "landings": 0,
+      "duplicateKeys": 0,
+      "suppressed": 0
+    },
+    "cadenceStepsPerSecond": 0,
+    "contactToScheduleMs": {
+      "max": 10.838976190541416,
+      "p95": 10.43077294045247
+    },
+    "visibleContactToAttackEndMs": {
+      "max": 15.804988662131194,
+      "p95": 10
+    },
+    "frameGapMsMax": 17.414965986397135,
+    "musicFocus": {
+      "state": "C",
+      "slug": "staying-cozy-exploration",
+      "voiceActive": false,
+      "audioContextCount": 1,
+      "audioContextState": "running",
+      "targets": {
+        "energy": 0.38,
+        "density": 0.34,
+        "musicGainDb": -5.5,
+        "transientRestraint": 0.72,
+        "percussionRestraint": 0.78,
+        "speechSpaceBias": 0.45,
+        "speechDuckingBiasDb": -0.5,
+        "crossfadeSeconds": 8
+      },
+      "tempo": {
+        "bpmMin": 72,
+        "bpmMax": 82,
+        "preferredBpm": 80,
+        "subdivision": "loose-straight-or-light-swing",
+        "tripletFriendly": false
+      },
+      "effectiveBusGainDb": {
+        "SCORE": -5.5,
+        "DIEGETIC_MUSIC": -6,
+        "LOCAL_AMBIENCE": -4.5,
+        "GLOBAL_BED": -7
+      },
+      "stemAvailability": "FUTURE_NOT_AVAILABLE",
+      "adaptiveMusic": {
+        "build": "KFB-ADAPTIVE-MUSIC-STEM-PROOF-01",
+        "hostMode": "INJECTED_EXISTING_CONTEXT",
+        "moduleCreatedAudioContexts": 0,
+        "contextState": "running",
+        "deckId": null,
+        "loadingDeckId": null,
+        "boundary": "NEXT_BAR",
+        "speechFocus": false,
+        "pending": null,
+        "decoded": null,
+        "clock": null,
+        "stemLabels": [],
+        "timelineContinuesDuringSpeechFocus": false,
+        "error": null
+      }
+    },
+    "events": [
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 6.823492073922877,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:0:l:0.1875",
+        "renderedAt": 6.832471655328798,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506702376167,
+          0.18777175244870267,
+          -0.0921943801239882
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 0.9807697457688035,
+        "scheduled": 6.832471655328798,
+        "driftMs": 8.9795814059217,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.052489879497911465
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 7.356825435071711,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:0:r:0.6875",
+        "renderedAt": 7.366530612244898,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506703816986,
+          0.18732602113468266,
+          -0.09422930835548704
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 0.9849918800733621,
+        "scheduled": 7.366530612244898,
+        "driftMs": 9.70517717318753,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.050737633036426526
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 7.890158796220545,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:1:l:0.1875",
+        "renderedAt": 7.894784580498866,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450670132086,
+          0.1904581657531478,
+          -0.08920182153982914
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 1.0081232568656748,
+        "scheduled": 7.9005895691609975,
+        "driftMs": 10.43077294045247,
+        "renderToScheduleMs": 5.804988662131194,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.051436236304979864
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 8.42349215736938,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:1:r:0.6875",
+        "renderedAt": 8.428843537414966,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506702413123,
+          0.18999818755963543,
+          -0.09124352189596871
+        ],
+        "grounded": true,
+        "file": "grass-0.ogg",
+        "pitchRate": 0.9759035902409586,
+        "scheduled": 8.428843537414966,
+        "driftMs": 5.351380045587106,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.0497930922037504
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 8.956825518518214,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:2:l:0.1875",
+        "renderedAt": 8.957097505668933,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450669962072,
+          0.19324670103543767,
+          -0.08618210776765209
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 0.9968765050868533,
+        "scheduled": 8.957097505668933,
+        "driftMs": 0.2719871507199656,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05200846521683349
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 9.490158879667048,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:2:r:0.6875",
+        "renderedAt": 9.491156462585034,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506700131945,
+          0.19277390223663105,
+          -0.08822904570270484
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 0.9913773458813192,
+        "scheduled": 9.491156462585034,
+        "driftMs": 0.9975829179857953,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.049540151192255265
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 10.023492240815882,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:3:l:0.1875",
+        "renderedAt": 10.025215419501134,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450670026318,
+          0.19230593438342963,
+          -0.08719158878363681
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 0.993125299783428,
+        "scheduled": 10.025215419501134,
+        "driftMs": 1.723178685251625,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04715434574963662
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 10.556825601964716,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:3:r:0.6875",
+        "renderedAt": 10.565079365079365,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506703441634,
+          0.18820528416744514,
+          -0.09323718797225874
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0286238355214683,
+        "scheduled": 10.565079365079365,
+        "driftMs": 8.253763114648649,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.0477181519033698
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 11.09015896311355,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:4:l:0.1875",
+        "renderedAt": 11.099138321995465,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506702376128,
+          0.1877718871305974,
+          -0.09219422788264159
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0030809523056234,
+        "scheduled": 11.099138321995465,
+        "driftMs": 8.979358881914479,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.048067792210548195
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 11.623492324262385,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:4:r:0.6875",
+        "renderedAt": 11.633197278911565,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506703816933,
+          0.1873261550517798,
+          -0.09422915649942015
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 0.9890804381043041,
+        "scheduled": 11.633197278911565,
+        "driftMs": 9.704954649180308,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05265993215163879
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 12.156825685411219,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:5:l:0.1875",
+        "renderedAt": 12.161451247165532,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450670132079,
+          0.1904583056725485,
+          -0.0892016678874696
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0240650817864634,
+        "scheduled": 12.161451247165532,
+        "driftMs": 4.625561754313168,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05014921269045382
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 12.690159046560053,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:5:r:0.6875",
+        "renderedAt": 12.695510204081632,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506702413031,
+          0.1899983267874199,
+          -0.09124336855054518
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 0.97862907203443,
+        "scheduled": 12.695510204081632,
+        "driftMs": 5.3511575215789975,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05101159083640706
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 13.223492407708887,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:6:l:0.1875",
+        "renderedAt": 13.223764172335601,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506699620618,
+          0.19324684615602633,
+          -0.08618195275055224
+        ],
+        "grounded": true,
+        "file": "grass-0.ogg",
+        "pitchRate": 1.0215052471435582,
+        "scheduled": 13.223764172335601,
+        "driftMs": 0.2717646267136331,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05250891850380266
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 13.756825768857722,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:6:r:0.6875",
+        "renderedAt": 13.757823129251701,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506700131806,
+          0.1927740467382101,
+          -0.08822889091402854
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 0.9777082750045216,
+        "scheduled": 13.757823129251701,
+        "driftMs": 0.9973603939794629,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04642710464751437
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 14.290159130006556,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:7:l:0.1875",
+        "renderedAt": 14.297687074829932,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506702091802,
+          0.1886560605268986,
+          -0.09119967911596241
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0166474382455037,
+        "scheduled": 14.297687074829932,
+        "driftMs": 7.527944823376487,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04882016994961919
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 14.82349249115539,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:7:r:0.6875",
+        "renderedAt": 14.831746031746032,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506703441567,
+          0.18820541985894484,
+          -0.09323703561459355
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 0.9776355536203213,
+        "scheduled": 14.831746031746032,
+        "driftMs": 8.253540590642316,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05280097055665401
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 15.356825852304224,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:8:l:0.1875",
+        "renderedAt": 15.365804988662132,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450670237609,
+          0.18777202181276026,
+          -0.09219407564122221
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 0.9733345018025669,
+        "scheduled": 15.365804988662132,
+        "driftMs": 8.979136357908146,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05263871584919674
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 15.890159213453058,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:8:r:0.6875",
+        "renderedAt": 15.89986394557823,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506703816884,
+          0.18732628896915013,
+          -0.09422900464327524
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0045299933015115,
+        "scheduled": 15.89986394557823,
+        "driftMs": 9.7047321251722,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04671852860768602
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 16.42349257460189,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:9:l:0.1875",
+        "renderedAt": 16.43392290249433,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506702596268,
+          0.18689940620362433,
+          -0.0931853550269451
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0090574148313542,
+        "scheduled": 16.43392290249433,
+        "driftMs": 10.430327892439806,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.051251298329092594
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 16.95682593575073,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:9:r:0.6875",
+        "renderedAt": 16.962176870748298,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506702412937,
+          0.18999846601547463,
+          -0.09124321520504686
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0249246542078863,
+        "scheduled": 16.962176870748298,
+        "driftMs": 5.350934997569112,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04963568222545246
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 17.490159296899563,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:10:l:0.1875",
+        "renderedAt": 17.49043083900227,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.17094506699620513,
+          0.19324699127688033,
+          -0.08618179773338364
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0215975745600692,
+        "scheduled": 17.49043083900227,
+        "driftMs": 0.27154210270552426,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.051239912806462264
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 18.023492658048394,
+        "phase": 0.6875,
+        "surface": "wet-clay",
+        "key": "Walking_A:2:10:r:0.6875",
+        "renderedAt": 18.024489795918367,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          -0.17094506700131665,
+          0.19277419124005868,
+          -0.08822873612527851
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 0.9936268997428668,
+        "scheduled": 18.024489795918367,
+        "driftMs": 0.9971378699731304,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.048837114058289374
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 18.896009096371817,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:0:r:0.421875",
+        "renderedAt": 18.906848072562358,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.3418899361292322,
+          0.46192269223902727,
+          0.6199228991270788
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0107720632433075,
+        "scheduled": 18.906848072562358,
+        "driftMs": 10.838976190541416,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.052218196555823194
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 19.488601719870523,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:0:l:0.921875",
+        "renderedAt": 19.49895691609977,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.3418901220931453,
+          0.4798817382256834,
+          0.6175933315273348
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 1.0148559035563014,
+        "scheduled": 19.49895691609977,
+        "driftMs": 10.35519622924852,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05103352083806147
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 20.081194343369226,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:1:r:0.421875",
+        "renderedAt": 20.085260770975058,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.3418899416063342,
+          0.4725969880162203,
+          0.6130520803724229
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0217007896081587,
+        "scheduled": 20.085260770975058,
+        "driftMs": 4.066427605831535,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04941412693897651
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 20.673786966867937,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:1:l:0.921875",
+        "renderedAt": 20.67736961451247,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.3418901331104962,
+          0.4890180810523896,
+          0.6109467224463787
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 0.9942045743962586,
+        "scheduled": 20.67736961451247,
+        "driftMs": 3.5826476445350863,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.052823580829728045
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 21.26637959036664,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:2:r:0.421875",
+        "renderedAt": 21.275283446712017,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.34188993769724607,
+          0.4649254002274776,
+          0.6179702118789991
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 1.002101844863339,
+        "scheduled": 21.275283446712017,
+        "driftMs": 8.903856345376937,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.050341422771635336
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 21.858972213865346,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:2:l:0.921875",
+        "renderedAt": 21.867392290249434,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.3418901252508067,
+          0.4824605200772555,
+          0.6156994991247887
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 0.993135723974849,
+        "scheduled": 21.867392290249434,
+        "driftMs": 8.420076384087594,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.052095502960237176
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 22.45156483736405,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:3:r:0.421875",
+        "renderedAt": 22.453696145124717,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.3418899431659739,
+          0.4757317737498569,
+          0.6110704725016246
+        ],
+        "grounded": true,
+        "file": "grass-0.ogg",
+        "pitchRate": 1.0283798412467977,
+        "scheduled": 22.453696145124717,
+        "driftMs": 2.131307760667056,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.0473025223783305
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 23.044157460862756,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:3:l:0.921875",
+        "renderedAt": 23.04580498866213,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.3418901362403858,
+          0.491685607887367,
+          0.609038371870624
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 0.9940002108498812,
+        "scheduled": 23.04580498866213,
+        "driftMs": 1.64752779937416,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04740957144684363
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 23.636750084361463,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:4:r:0.421875",
+        "renderedAt": 23.637913832199548,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.341889943944939,
+          0.4773132436205504,
+          0.6100767220846631
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 0.9781406299114919,
+        "scheduled": 23.637913832199548,
+        "driftMs": 1.1637478380848165,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.04930736065602635
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 24.22934270786017,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:4:l:0.921875",
+        "renderedAt": 24.23002267573696,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.34189013780215166,
+          0.49302883716238016,
+          0.6080827391188168
+        ],
+        "grounded": true,
+        "file": "grass-4.ogg",
+        "pitchRate": 1.0257785364273637,
+        "scheduled": 24.23002267573696,
+        "driftMs": 0.6799678767919204,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05046801874633897
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 24.821935331358873,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:5:r:0.421875",
+        "renderedAt": 24.822131519274375,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.34188994472334344,
+          0.4789040815684666,
+          0.6090810398480387
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0033389676810776,
+        "scheduled": 24.822131519274375,
+        "driftMs": 0.19618791550257697,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.0488863780581625
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 25.41452795485758,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:5:l:0.921875",
+        "renderedAt": 25.420045351473924,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.34189012997294854,
+          0.48637634717207934,
+          0.6128507172231588
+        ],
+        "grounded": true,
+        "file": "grass-0.ogg",
+        "pitchRate": 1.0144980656538818,
+        "scheduled": 25.420045351473924,
+        "driftMs": 5.517396616344428,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.0478293671027432
+      },
+      {
+        "kind": "footstep",
+        "foot": "r",
+        "time": 26.007120578356286,
+        "phase": 0.421875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:6:r:0.421875",
+        "renderedAt": 26.012154195011338,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          -0.3418899408259454,
+          0.4710442902699473,
+          0.6140395108269125
+        ],
+        "grounded": true,
+        "file": "grass-3.ogg",
+        "pitchRate": 1.0196000706846686,
+        "scheduled": 26.012154195011338,
+        "driftMs": 5.0336166550515316,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.046730585495658644
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 26.599713201854993,
+        "phase": 0.921875,
+        "surface": "wet-clay",
+        "key": "Running_A:4:6:l:0.921875",
+        "renderedAt": 26.60426303854875,
+        "gait": "run",
+        "figure": "Large",
+        "footPosition": [
+          0.34189013154303904,
+          0.48769430393344076,
+          0.611899043901236
+        ],
+        "grounded": true,
+        "file": "grass-2.ogg",
+        "pitchRate": 0.9820151959096957,
+        "scheduled": 26.60426303854875,
+        "driftMs": 4.549836693758635,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.047340944584334806
+      },
+      {
+        "kind": "footstep",
+        "foot": "l",
+        "time": 36.4237097609977,
+        "phase": 0.1875,
+        "surface": "wet-clay",
+        "key": "Walking_A:7:0:l:0.1875",
+        "renderedAt": 36.426303854875286,
+        "gait": "walk",
+        "figure": "Medium",
+        "footPosition": [
+          0.1709450670061181,
+          0.19174676497212245,
+          -0.08779600253337884
+        ],
+        "grounded": true,
+        "file": "grass-1.ogg",
+        "pitchRate": 1.0211476409621438,
+        "scheduled": 36.426303854875286,
+        "driftMs": 2.594093877583248,
+        "renderToScheduleMs": 0,
+        "attackMs": 10,
+        "outputPeakCeiling": 0.05297725090189509
+      }
+    ],
+    "actions": [
+      {
+        "action": "play",
+        "time": 6.623492063492064,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 1
+      },
+      {
+        "action": "change:footSurface",
+        "time": 18.22766439909297,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "sand",
+        "rate": 1
+      },
+      {
+        "action": "change:footSurface",
+        "time": 18.245079365079366,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "stone",
+        "rate": 1
+      },
+      {
+        "action": "change:footSurface",
+        "time": 18.279909297052154,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wood",
+        "rate": 1
+      },
+      {
+        "action": "change:footSurface",
+        "time": 18.320544217687075,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 1
+      },
+      {
+        "action": "change:footTempo",
+        "time": 18.3437641723356,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footFigure",
+        "time": 18.36698412698413,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Large",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footGait",
+        "time": 18.396009070294784,
+        "playing": true,
+        "mode": "run",
+        "figure": "Large",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footGait",
+        "time": 27.17895691609977,
+        "playing": true,
+        "mode": "idle",
+        "figure": "Large",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footFigure",
+        "time": 36.18829931972789,
+        "playing": true,
+        "mode": "idle",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footGait",
+        "time": 36.21732426303855,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 0.9
+      },
+      {
+        "action": "change:footTempo",
+        "time": 36.22893424036281,
+        "playing": true,
+        "mode": "walk",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 1
+      },
+      {
+        "action": "stop",
+        "time": 36.664308390022676,
+        "playing": false,
+        "mode": "idle",
+        "figure": "Medium",
+        "surface": "wet-clay",
+        "rate": 1
+      }
+    ],
+    "cues": {
+      "schema": "kfb.performance/1",
+      "sfx": [
+        {
+          "at": 36.4237097609977,
+          "type": "footstep",
+          "surface": "wet-clay",
+          "foot": "l"
+        }
+      ],
+      "vfx": [],
+      "lights": []
+    },
+    "limits": "Visible contact = sampled plant rendered this frame; 10 ms fade-end estimate, not physical speaker/output latency. Synthetic support only. No human acceptance."
+  }
+}

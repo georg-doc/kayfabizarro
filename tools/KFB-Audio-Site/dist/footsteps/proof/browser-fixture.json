@@ -1,0 +1,990 @@
+{
+  "revision": "0.7.2-footstep-v389",
+  "hostContexts": 1,
+  "clock": "injected AudioContext.currentTime",
+  "bus": "PLAYER_CRITICAL",
+  "mode": "idle",
+  "surface": "grass",
+  "profiles": {
+    "Walking_A": {
+      "clip": "Walking_A",
+      "duration": 1.0666667222976685,
+      "frames": 65,
+      "fps": 60,
+      "legLen": 0.214,
+      "contacts": {
+        "foot.l": {
+          "planted": [
+            [
+              1,
+              3
+            ],
+            [
+              13,
+              29
+            ],
+            [
+              65,
+              65
+            ]
+          ],
+          "lift": 0.2075,
+          "minY": 0.1604
+        },
+        "foot.r": {
+          "planted": [
+            [
+              33,
+              34
+            ],
+            [
+              45,
+              59
+            ]
+          ],
+          "lift": 0.2084,
+          "minY": 0.1595
+        }
+      },
+      "events": {
+        "takeoff": 4,
+        "touchdown": 13,
+        "firstPlant": 1
+      },
+      "rootMotion": {
+        "policy": "in-place",
+        "hipDrift": 0
+      },
+      "stepsPerCycle": 4,
+      "cadenceSpm": 225,
+      "stanceSpeed": 0.6098,
+      "travelDir": {
+        "fwd": 1,
+        "side": 0
+      },
+      "strideLength": 0.3252,
+      "hipRange": 0,
+      "entries": [
+        {
+          "foot": "l",
+          "phase": 0.1875
+        },
+        {
+          "foot": "r",
+          "phase": 0.6875
+        }
+      ],
+      "qualification": "Stable plant >=70 ms; wrapped intervals joined; raw measurement retained",
+      "qualifiedCadenceSpm": 112.49999413266809
+    },
+    "Running_A": {
+      "clip": "Running_A",
+      "duration": 0.800000011920929,
+      "frames": 49,
+      "fps": 60,
+      "legLen": 0.2148,
+      "contacts": {
+        "foot.l": {
+          "planted": [
+            [
+              1,
+              10
+            ],
+            [
+              48,
+              49
+            ]
+          ],
+          "lift": 0.238,
+          "minY": 0.155
+        },
+        "foot.r": {
+          "planted": [
+            [
+              23,
+              34
+            ]
+          ],
+          "lift": 0.2386,
+          "minY": 0.1551
+        }
+      },
+      "events": {
+        "takeoff": 11,
+        "touchdown": 23,
+        "firstPlant": 1
+      },
+      "rootMotion": {
+        "policy": "in-place",
+        "hipDrift": 0
+      },
+      "stepsPerCycle": 2,
+      "cadenceSpm": 150,
+      "stanceSpeed": 2.4555,
+      "travelDir": {
+        "fwd": 1,
+        "side": 0
+      },
+      "strideLength": 1.9644,
+      "hipRange": 0,
+      "entries": [
+        {
+          "foot": "r",
+          "phase": 0.4583333333333333
+        },
+        {
+          "foot": "l",
+          "phase": 0.9791666666666666
+        }
+      ],
+      "qualification": "Stable plant >=70 ms; wrapped intervals joined; raw measurement retained",
+      "qualifiedCadenceSpm": 149.99999776482585
+    }
+  },
+  "decode": [
+    {
+      "file": "grass-0.ogg",
+      "duration": 0.7746712018140589,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8853434920310974,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.06802721088435373
+    },
+    {
+      "file": "grass-1.ogg",
+      "duration": 0.670702947845805,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8723464608192444,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.09070294784580499
+    },
+    {
+      "file": "grass-2.ogg",
+      "duration": 0.689546485260771,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8857080340385437,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.045351473922902494
+    },
+    {
+      "file": "grass-3.ogg",
+      "duration": 0.6664172335600907,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8987743854522705,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.06802721088435373
+    },
+    {
+      "file": "grass-4.ogg",
+      "duration": 0.5873242630385488,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.88177490234375,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.09070294784580499
+    },
+    {
+      "file": "concrete-1.wav",
+      "duration": 0.2873469387755102,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.33097323775291443,
+      "trimSeconds": 0.006952380952380953,
+      "onsetAfterTrimMs": 4
+    },
+    {
+      "file": "concrete-2.wav",
+      "duration": 0.2815419501133787,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.783355712890625,
+      "trimSeconds": 0.01618140589569161,
+      "onsetAfterTrimMs": 4
+    },
+    {
+      "file": "concrete-3.wav",
+      "duration": 0.2438095238095238,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.35953855514526367,
+      "trimSeconds": 0.0014648526077097506,
+      "onsetAfterTrimMs": 4
+    },
+    {
+      "file": "concrete-4.wav",
+      "duration": 0.2612244897959184,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.519500732421875,
+      "trimSeconds": 0.00021768707482993158,
+      "onsetAfterTrimMs": 4
+    },
+    {
+      "file": "gravel-1.wav",
+      "duration": 0.47891156462585033,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.32757568359375,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0
+    },
+    {
+      "file": "gravel-2.wav",
+      "duration": 0.5253514739229025,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.283843994140625,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0
+    },
+    {
+      "file": "gravel-3.wav",
+      "duration": 0.3453968253968254,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.20855712890625,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.24943310657596374
+    },
+    {
+      "file": "gravel-4.wav",
+      "duration": 0.6124263038548753,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.975006103515625,
+      "trimSeconds": 0.03711111111111111,
+      "onsetAfterTrimMs": 4.0000000000000036
+    },
+    {
+      "file": "land-0.ogg",
+      "duration": 0.5035827664399093,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8998407125473022,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.22675736961451248
+    },
+    {
+      "file": "land-1.ogg",
+      "duration": 0.5691383219954649,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.8944048881530762,
+      "trimSeconds": 0,
+      "onsetAfterTrimMs": 0.20408163265306123
+    }
+  ],
+  "counts": {
+    "events": 38,
+    "steps": 37,
+    "landings": 1,
+    "duplicateKeys": 0,
+    "suppressed": 0
+  },
+  "contactToScheduleMs": {
+    "max": 13.704954649150558,
+    "p95": 13.704732125130903
+  },
+  "contactToSourceOnsetMs": {
+    "max": 17.704732125130903,
+    "p95": 16.97913635786685
+  },
+  "frameGapMsMax": 17.41496598639003,
+  "events": [
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 5.0116102380946135,
+      "phase": 0.6875,
+      "surface": "grass",
+      "key": "Walking_A:2:0:r:0.6875",
+      "file": "grass-4.ogg",
+      "scheduled": 5.025315192743764,
+      "driftMs": 13.704954649150558,
+      "onsetDriftMs": 13.795657596996364
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 5.544943599243448,
+      "phase": 0.1875,
+      "surface": "grass",
+      "key": "Walking_A:2:1:l:0.1875",
+      "file": "grass-0.ogg",
+      "scheduled": 5.553569160997732,
+      "driftMs": 8.625561754284305,
+      "onsetDriftMs": 8.69358896516866
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 6.07827696039228,
+      "phase": 0.6875,
+      "surface": "grass",
+      "key": "Walking_A:2:1:r:0.6875",
+      "file": "grass-1.ogg",
+      "scheduled": 6.087628117913832,
+      "driftMs": 9.351157521551912,
+      "onsetDriftMs": 9.441860469397717
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 6.611610321541115,
+      "phase": 0.1875,
+      "surface": "grass",
+      "key": "Walking_A:2:2:l:0.1875",
+      "file": "grass-0.ogg",
+      "scheduled": 6.6158820861678,
+      "driftMs": 4.271764626684771,
+      "onsetDriftMs": 4.339791837569124
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 7.144943682689956,
+      "phase": 0.6875,
+      "surface": "grass",
+      "key": "Walking_A:2:2:r:0.6875",
+      "file": "grass-4.ogg",
+      "scheduled": 7.1499410430839,
+      "driftMs": 4.997360393944383,
+      "onsetDriftMs": 5.088063341790188
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 7.678277043838795,
+      "phase": 0.1875,
+      "surface": "concrete",
+      "key": "Walking_A:3:0:l:0.1875",
+      "file": "concrete-4.wav",
+      "scheduled": 7.689804988662131,
+      "driftMs": 11.527944823336078,
+      "onsetDriftMs": 15.527944823336078
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 8.21161040498763,
+      "phase": 0.6875,
+      "surface": "concrete",
+      "key": "Walking_A:3:0:r:0.6875",
+      "file": "concrete-3.wav",
+      "scheduled": 8.22386394557823,
+      "driftMs": 12.25354059060102,
+      "onsetDriftMs": 16.25354059060102
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 8.744943766136464,
+      "phase": 0.1875,
+      "surface": "concrete",
+      "key": "Walking_A:3:1:l:0.1875",
+      "file": "concrete-4.wav",
+      "scheduled": 8.75792290249433,
+      "driftMs": 12.97913635786685,
+      "onsetDriftMs": 16.97913635786685
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 9.2782771272853,
+      "phase": 0.6875,
+      "surface": "concrete",
+      "key": "Walking_A:3:1:r:0.6875",
+      "file": "concrete-1.wav",
+      "scheduled": 9.29198185941043,
+      "driftMs": 13.704732125130903,
+      "onsetDriftMs": 17.704732125130903
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 9.811610488434138,
+      "phase": 0.1875,
+      "surface": "concrete",
+      "key": "Walking_A:3:2:l:0.1875",
+      "file": "concrete-2.wav",
+      "scheduled": 9.8202358276644,
+      "driftMs": 8.625339230261986,
+      "onsetDriftMs": 12.625339230261986
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 10.344943849582979,
+      "phase": 0.6875,
+      "surface": "concrete",
+      "key": "Walking_A:3:2:r:0.6875",
+      "file": "concrete-3.wav",
+      "scheduled": 10.354294784580498,
+      "driftMs": 9.350934997518934,
+      "onsetDriftMs": 13.350934997518934
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 10.878277210731817,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:4:1:l:0.1875",
+      "file": "gravel-3.wav",
+      "scheduled": 10.882548752834467,
+      "driftMs": 4.271542102650017,
+      "onsetDriftMs": 4.5209752092259805
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 11.411610571880653,
+      "phase": 0.6875,
+      "surface": "gravel",
+      "key": "Walking_A:4:1:r:0.6875",
+      "file": "gravel-2.wav",
+      "scheduled": 11.416607709750567,
+      "driftMs": 4.99713786991407,
+      "onsetDriftMs": 4.99713786991407
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 11.94494393302949,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:4:2:l:0.1875",
+      "file": "gravel-3.wav",
+      "scheduled": 11.956471655328798,
+      "driftMs": 11.527722299307541,
+      "onsetDriftMs": 11.777155405883505
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 12.47827729417833,
+      "phase": 0.6875,
+      "surface": "gravel",
+      "key": "Walking_A:4:2:r:0.6875",
+      "file": "gravel-1.wav",
+      "scheduled": 12.490530612244898,
+      "driftMs": 12.253318066568042,
+      "onsetDriftMs": 12.253318066568042
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 13.01161065532717,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:4:3:l:0.1875",
+      "file": "gravel-3.wav",
+      "scheduled": 13.024589569160998,
+      "driftMs": 12.978913833828543,
+      "onsetDriftMs": 13.228346940404506
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 13.54494401647601,
+      "phase": 0.6875,
+      "surface": "gravel",
+      "key": "Walking_A:4:3:r:0.6875",
+      "file": "gravel-1.wav",
+      "scheduled": 13.558648526077096,
+      "driftMs": 13.70450960108549,
+      "onsetDriftMs": 13.70450960108549
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 13.782154728285416,
+      "phase": 0.9791666666666666,
+      "surface": "grass",
+      "key": "Running_A:5:0:l:0.9791666666666666",
+      "file": "grass-2.ogg",
+      "scheduled": 13.790848072562358,
+      "driftMs": 8.693344276942128,
+      "onsetDriftMs": 8.73869575086503
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 14.16548806733086,
+      "phase": 0.4583333333333333,
+      "surface": "grass",
+      "key": "Running_A:5:1:r:0.4583333333333333",
+      "file": "grass-1.ogg",
+      "scheduled": 14.173977324263038,
+      "driftMs": 8.489256932177724,
+      "onsetDriftMs": 8.57995988002353
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 14.582154740206343,
+      "phase": 0.9791666666666666,
+      "surface": "grass",
+      "key": "Running_A:5:1:l:0.9791666666666666",
+      "file": "grass-0.ogg",
+      "scheduled": 14.591936507936508,
+      "driftMs": 9.781767730164148,
+      "onsetDriftMs": 9.849794941048502
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 14.965488079251793,
+      "phase": 0.4583333333333333,
+      "surface": "grass",
+      "key": "Running_A:5:2:r:0.4583333333333333",
+      "file": "grass-1.ogg",
+      "scheduled": 14.975065759637188,
+      "driftMs": 9.577680385394416,
+      "onsetDriftMs": 9.668383333240222
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 15.38215475212728,
+      "phase": 0.9791666666666666,
+      "surface": "grass",
+      "key": "Running_A:5:2:l:0.9791666666666666",
+      "file": "grass-4.ogg",
+      "scheduled": 15.387219954648526,
+      "driftMs": 5.065202521246093,
+      "onsetDriftMs": 5.1559054690918975
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 15.765488091172728,
+      "phase": 0.4583333333333333,
+      "surface": "grass",
+      "key": "Running_A:5:3:r:0.4583333333333333",
+      "file": "grass-2.ogg",
+      "scheduled": 15.770349206349206,
+      "driftMs": 4.861115176478137,
+      "onsetDriftMs": 4.90646665040104
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 16.182154764048214,
+      "phase": 0.9791666666666666,
+      "surface": "grass",
+      "key": "Running_A:5:3:l:0.9791666666666666",
+      "file": "grass-0.ogg",
+      "scheduled": 16.188308390022677,
+      "driftMs": 6.153625974462784,
+      "onsetDriftMs": 6.2216531853471375
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 16.565488103093653,
+      "phase": 0.4583333333333333,
+      "surface": "gravel",
+      "key": "Running_A:6:0:r:0.4583333333333333",
+      "file": "gravel-3.wav",
+      "scheduled": 16.571437641723357,
+      "driftMs": 5.94953862970371,
+      "onsetDriftMs": 6.198971736279674
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 16.982154775969136,
+      "phase": 0.9791666666666666,
+      "surface": "gravel",
+      "key": "Running_A:6:0:l:0.9791666666666666",
+      "file": "gravel-4.wav",
+      "scheduled": 16.989396825396827,
+      "driftMs": 7.24204942769191,
+      "onsetDriftMs": 11.242049427691914
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 17.365488115014582,
+      "phase": 0.4583333333333333,
+      "surface": "gravel",
+      "key": "Running_A:6:1:r:0.4583333333333333",
+      "file": "gravel-1.wav",
+      "scheduled": 17.372526077097508,
+      "driftMs": 7.0379620829257306,
+      "onsetDriftMs": 7.0379620829257306
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 17.782154787890065,
+      "phase": 0.9791666666666666,
+      "surface": "gravel",
+      "key": "Running_A:6:1:l:0.9791666666666666",
+      "file": "gravel-4.wav",
+      "scheduled": 17.790485260770975,
+      "driftMs": 8.330472880910378,
+      "onsetDriftMs": 12.330472880910381
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 18.165488126935514,
+      "phase": 0.4583333333333333,
+      "surface": "gravel",
+      "key": "Running_A:6:2:r:0.4583333333333333",
+      "file": "gravel-1.wav",
+      "scheduled": 18.173614512471655,
+      "driftMs": 8.126385536140646,
+      "onsetDriftMs": 8.126385536140646
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 18.582154799811,
+      "phase": 0.9791666666666666,
+      "surface": "gravel",
+      "key": "Running_A:6:2:l:0.9791666666666666",
+      "file": "gravel-2.wav",
+      "scheduled": 18.591573696145126,
+      "driftMs": 9.418896334125293,
+      "onsetDriftMs": 9.418896334125293
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 18.96548813885645,
+      "phase": 0.4583333333333333,
+      "surface": "gravel",
+      "key": "Running_A:6:3:r:0.4583333333333333",
+      "file": "gravel-1.wav",
+      "scheduled": 18.974702947845806,
+      "driftMs": 9.21480898935556,
+      "onsetDriftMs": 9.21480898935556
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 19.382154811731937,
+      "phase": 0.9791666666666666,
+      "surface": "gravel",
+      "key": "Running_A:6:3:l:0.9791666666666666",
+      "file": "gravel-4.wav",
+      "scheduled": 19.386857142857146,
+      "driftMs": 4.702331125209014,
+      "onsetDriftMs": 8.702331125209017
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 22.95700698004492,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:8:1:l:0.1875",
+      "file": "gravel-2.wav",
+      "scheduled": 22.96273015873016,
+      "driftMs": 5.723178685240526,
+      "onsetDriftMs": 5.723178685240526
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 23.490340341193754,
+      "phase": 0.6875,
+      "surface": "grass",
+      "key": "Walking_A:8:1:r:0.6875",
+      "file": "grass-1.ogg",
+      "scheduled": 23.49678911564626,
+      "driftMs": 6.44877445250458,
+      "onsetDriftMs": 6.539477400350385
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 24.02367370234259,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:8:2:l:0.1875",
+      "file": "gravel-3.wav",
+      "scheduled": 24.03084807256236,
+      "driftMs": 7.174370219768633,
+      "onsetDriftMs": 7.423803326344597
+    },
+    {
+      "kind": "footstep",
+      "foot": "r",
+      "time": 24.557007063491433,
+      "phase": 0.6875,
+      "surface": "grass",
+      "key": "Walking_A:8:2:r:0.6875",
+      "file": "grass-3.ogg",
+      "scheduled": 24.56490702947846,
+      "driftMs": 7.899965987025581,
+      "onsetDriftMs": 7.9679931979099345
+    },
+    {
+      "kind": "footstep",
+      "foot": "l",
+      "time": 25.090340424640278,
+      "phase": 0.1875,
+      "surface": "gravel",
+      "key": "Walking_A:8:3:l:0.1875",
+      "file": "gravel-2.wav",
+      "scheduled": 25.09896598639456,
+      "driftMs": 8.62556175428253,
+      "onsetDriftMs": 8.62556175428253
+    },
+    {
+      "kind": "land",
+      "foot": "both",
+      "time": 26.47097505668934,
+      "surface": "grass",
+      "key": "land:26.47097505668934",
+      "file": "land-1.ogg",
+      "scheduled": 26.48055328798186,
+      "driftMs": 9.57823129251878,
+      "onsetDriftMs": 9.78231292517184
+    }
+  ],
+  "cues": {
+    "schema": "kfb.performance/1",
+    "sfx": [
+      {
+        "at": 5.0116102380946135,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 5.544943599243448,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 6.07827696039228,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 6.611610321541115,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 7.144943682689956,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 7.678277043838795,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "l"
+      },
+      {
+        "at": 8.21161040498763,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "r"
+      },
+      {
+        "at": 8.744943766136464,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "l"
+      },
+      {
+        "at": 9.2782771272853,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "r"
+      },
+      {
+        "at": 9.811610488434138,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "l"
+      },
+      {
+        "at": 10.344943849582979,
+        "type": "footstep",
+        "surface": "concrete",
+        "foot": "r"
+      },
+      {
+        "at": 10.878277210731817,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 11.411610571880653,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 11.94494393302949,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 12.47827729417833,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 13.01161065532717,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 13.54494401647601,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 13.782154728285416,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 14.16548806733086,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 14.582154740206343,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 14.965488079251793,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 15.38215475212728,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 15.765488091172728,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 16.182154764048214,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "l"
+      },
+      {
+        "at": 16.565488103093653,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 16.982154775969136,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 17.365488115014582,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 17.782154787890065,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 18.165488126935514,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 18.582154799811,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 18.96548813885645,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "r"
+      },
+      {
+        "at": 19.382154811731937,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 22.95700698004492,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 23.490340341193754,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 24.02367370234259,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 24.557007063491433,
+        "type": "footstep",
+        "surface": "grass",
+        "foot": "r"
+      },
+      {
+        "at": 25.090340424640278,
+        "type": "footstep",
+        "surface": "gravel",
+        "foot": "l"
+      },
+      {
+        "at": 26.47097505668934,
+        "type": "land",
+        "surface": "grass",
+        "foot": "both"
+      }
+    ],
+    "vfx": [],
+    "lights": []
+  },
+  "scope": "Synthetic support fixture; no World writes; landing from support, not clip. No human acceptance."
+}

@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-10-09.1",
-  "updatedAt": "2026-10-09T14:37:00+02:00",
+  "revision": "2026-10-17.2",
+  "updatedAt": "2026-10-17T02:31:00+02:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -175,6 +175,24 @@
   ],
   "briefings": [
     {
+      "id": "brief-v378-r2-donor-first-audio",
+      "title": "V-378 · Locomotion Footstep-first pilot",
+      "badge": "SOURCE READY · CONTACT TEST NEXT",
+      "status": "ready",
+      "provider": "KFB Audio existing owner / Motion Lab measured foot-contact donor",
+      "desc": "First proof: Rig_Medium stance-entry event → source-backed grass/concrete/gravel → existing SFX bus; 28/28 file paths and 26/26 static tests PASS. New Clay signature only as optional 4 steps + 2 landings, estimate 280 credits, no spend approval. R1 48 file bulk on HOLD; SciFi/Racer R2 retained. This update is on unmerged branch, NOT public Hub.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/audio/kfb-racer-motor-grid-r1-v378-2026-10-17/tools/KFB-ToolBox/audio/racer_grid_r1/FOOTSTEP_PILOT_R1.md",
+      "tags": [
+        "v-378",
+        "footsteps",
+        "locomotion",
+        "audio",
+        "source-audit",
+        "next-gate"
+      ],
+      "prompt": "WS0: implement no new owner; prove foot-contact marker events on existing Rig_Medium against actual support surface with three real donor banks through the existing AudioContext. No ElevenLabs requests until specific approval."
+    },
+    {
       "id": "brief-island-hud-flight-r4-sources",
       "title": "Island Lab · HUD Sprint R4-0 sources",
       "badge": "READY · SOURCE HANDOFF",
@@ -182,7 +200,15 @@
       "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
       "desc": "ENV_ROLES, kfbBlend source path and masonry-family-A inputs for the next HUD/Flight refinement.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/HANDOVER_HUD_FLIGHT_R4_0_SOURCES_2026-10-09.md",
-      "tags": ["island lab", "hud", "flight vfx", "r4-0", "env roles", "kfbblend", "masonry"],
+      "tags": [
+        "island lab",
+        "hud",
+        "flight vfx",
+        "r4-0",
+        "env roles",
+        "kfbblend",
+        "masonry"
+      ],
       "prompt": "Read the linked source handoff and retain the one-HUD owner: K7 clay material plus the accepted HUD R3 components. Do not create a second HUD or runtime owner."
     },
     {
@@ -193,7 +219,12 @@
       "provider": "Island Worldbuilder Lab → HUD/Flight Claude Design session",
       "desc": "Original HUD and flight-VFX design briefing; retained as source context for the accepted-with-TUNE R3 direction.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_HUD_FLIGHT_R1.md",
-      "tags": ["island lab", "hud", "flight vfx", "claude design"],
+      "tags": [
+        "island lab",
+        "hud",
+        "flight vfx",
+        "claude design"
+      ],
       "prompt": "Use as origin context only. Current owner rule and R4-0 source handoff override any conflicting older detail."
     },
     {
@@ -204,7 +235,12 @@
       "provider": "Island Worldbuilder Lab → Stage Claude Design session",
       "desc": "Claymation curtain briefing for the accepted-with-TUNE Clay Stage R2 donor.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_CLAUDE_DESIGN_CURTAIN_CLAY_R1.md",
-      "tags": ["island lab", "curtain", "clay stage", "claude design"],
+      "tags": [
+        "island lab",
+        "curtain",
+        "clay stage",
+        "claude design"
+      ],
       "prompt": "Keep the existing Clay Stage / Curtain owner. Use this as source context; no second simulation or stage runtime."
     },
     {
@@ -215,7 +251,14 @@
       "provider": "RKIT → HUD, Stage and Blender coworker",
       "desc": "Canonical masonry-family-A package for curb, wall, stair, plateau, bridge, pyramid and Brick-Fish work.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/README.md",
-      "tags": ["rkit", "masonry", "31 modules", "blender", "hud", "stage"],
+      "tags": [
+        "rkit",
+        "masonry",
+        "31 modules",
+        "blender",
+        "hud",
+        "stage"
+      ],
       "prompt": "Reuse the checked-in masonry family as the source object; do not rebuild or substitute it."
     },
     {
@@ -226,7 +269,13 @@
       "provider": "RKIT → Blender coworker",
       "desc": "Brick-Fish handoff derived from masonry family A; explicitly later than the MVP core.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Racetrack%20Blender%20Kit/RKIT-R3/masonry_a/HANDOVER_BRICK_FISH.md",
-      "tags": ["rkit", "brick fish", "masonry", "blender", "later"],
+      "tags": [
+        "rkit",
+        "brick fish",
+        "masonry",
+        "blender",
+        "later"
+      ],
       "prompt": "Read the masonry-family source first. Treat Brick-Fish as later work; do not expand MVP scope."
     },
     {
@@ -237,7 +286,13 @@
       "provider": "Island Worldbuilder Lab → RKIT / Blender coworker",
       "desc": "Landmark brief for the crooked King Tower, intended as the later Golden Sample for KFB Town landmarks.",
       "url": "https://github.com/georg-doc/kayfabizarro/blob/sync/lab-rkit-2026-10-09/tools/KFB-ToolBox/_inbox/KFB%20Island%20Worldbuilder%20Lab/deliveries/BRIEF_LANDMARK_KFB_TOWN_TURM_R1.md",
-      "tags": ["island lab", "kfb town", "king tower", "landmark", "golden sample"],
+      "tags": [
+        "island lab",
+        "kfb town",
+        "king tower",
+        "landmark",
+        "golden sample"
+      ],
       "prompt": "Run only when the Lab/RKIT owner opens the landmark seam. Preserve the source-backed Town story and masonry owner."
     },
     {

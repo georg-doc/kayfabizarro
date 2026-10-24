@@ -1,0 +1,245 @@
+{
+  "checks": [
+    {
+      "control": "silent inspect",
+      "pass": true,
+      "note": "0 contexts observed before Play"
+    },
+    {
+      "control": "Play",
+      "pass": true,
+      "steps": 13
+    },
+    {
+      "control": "tempo relaxed",
+      "pass": true,
+      "actual": 1.6874999119900214
+    },
+    {
+      "control": "figure Large",
+      "pass": true
+    },
+    {
+      "control": "Idle",
+      "pass": true,
+      "before": 73,
+      "after": 73
+    },
+    {
+      "control": "Run",
+      "pass": true
+    },
+    {
+      "control": "Stone",
+      "pass": true
+    },
+    {
+      "control": "tempo brisk",
+      "pass": true,
+      "actual": 2.156249887542805
+    },
+    {
+      "control": "Hop Medium",
+      "pass": true,
+      "landings": 1
+    },
+    {
+      "control": "Stop",
+      "pass": true,
+      "before": 64,
+      "after": 64
+    },
+    {
+      "control": "fixture surface sand",
+      "pass": true
+    },
+    {
+      "control": "fixture surface stone",
+      "pass": true
+    },
+    {
+      "control": "fixture surface wood",
+      "pass": true
+    },
+    {
+      "control": "fixture surface wet-clay",
+      "pass": true
+    },
+    {
+      "control": "16s demo + recording",
+      "pass": true
+    },
+    {
+      "control": "20 audio decodes",
+      "pass": true
+    },
+    {
+      "control": "duplicate guard",
+      "pass": true
+    },
+    {
+      "control": "render-contact envelope ≤ 1/60s",
+      "pass": true,
+      "note": "10 ms envelope end estimate; physical output latency unmeasured"
+    },
+    {
+      "control": "measurements download",
+      "pass": true,
+      "note": "Downloaded JSON exists on disk and matches exported fixture"
+    },
+    {
+      "control": "Reset",
+      "pass": true
+    },
+    {
+      "control": "Large unsupported hop safely disabled",
+      "pass": true
+    },
+    {
+      "control": "manual record start/finish",
+      "pass": true
+    },
+    {
+      "control": "TTS coexistence",
+      "pass": true,
+      "note": "D focus uses existing ducking; footsteps keep the existing PLAYER_CRITICAL bus"
+    }
+  ],
+  "ttsObservation": {
+    "state": "D",
+    "slug": "talking-social-interaction",
+    "voiceActive": true,
+    "audioContextCount": 1,
+    "audioContextState": "running",
+    "targets": {
+      "energy": 0.46,
+      "density": 0.28,
+      "musicGainDb": -7,
+      "transientRestraint": 0.82,
+      "percussionRestraint": 0.8,
+      "speechSpaceBias": 0.92,
+      "speechDuckingBiasDb": -2,
+      "crossfadeSeconds": 6
+    },
+    "tempo": {
+      "bpmMin": 88,
+      "bpmMax": 96,
+      "preferredBpm": 94,
+      "subdivision": "soft-triplet-shuffle",
+      "tripletFriendly": true,
+      "dialogueFit": "statement / response / reframe"
+    },
+    "effectiveBusGainDb": {
+      "SCORE": -17,
+      "DIEGETIC_MUSIC": -18,
+      "LOCAL_AMBIENCE": -11,
+      "GLOBAL_BED": -13
+    },
+    "stemAvailability": "FUTURE_NOT_AVAILABLE",
+    "adaptiveMusic": {
+      "build": "KFB-ADAPTIVE-MUSIC-STEM-PROOF-01",
+      "hostMode": "INJECTED_EXISTING_CONTEXT",
+      "moduleCreatedAudioContexts": 0,
+      "contextState": "running",
+      "deckId": "D",
+      "loadingDeckId": null,
+      "boundary": "NEXT_BAR",
+      "speechFocus": true,
+      "pending": null,
+      "decoded": {
+        "count": 10,
+        "minDuration": 179.51997732426304,
+        "maxDuration": 179.51997732426304,
+        "deltaMs": 0,
+        "loopEnd": 179.51997732426304,
+        "sampleRates": [
+          44100
+        ],
+        "channelCounts": [
+          2
+        ]
+      },
+      "clock": {
+        "bpm": 94,
+        "beatsPerBar": 4,
+        "phraseBars": 8,
+        "epoch": 2739.826984126984,
+        "beatSeconds": 0.6382978723404256,
+        "barSeconds": 2.5531914893617023,
+        "phraseSeconds": 20.425531914893618,
+        "elapsed": 17.182721088435756,
+        "beatFloat": 26.919596371882683,
+        "beatIndex": 26,
+        "beatInBar": 2,
+        "barIndex": 6,
+        "barInPhrase": 6,
+        "phraseIndex": 0
+      },
+      "stemLabels": [
+        {
+          "sourceLabel": "Lead Vocals",
+          "role": "UNCLASSIFIED_VOX_LABEL",
+          "classification": "MUTED_PENDING_HUMAN_LISTEN",
+          "gain": 0.0001
+        },
+        {
+          "sourceLabel": "Backing Vocals",
+          "role": "UNCLASSIFIED_BACKING_VOX_LABEL",
+          "classification": "MUTED_PENDING_HUMAN_LISTEN",
+          "gain": 0.0001
+        },
+        {
+          "sourceLabel": "Drums",
+          "role": "DRUMS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.2108
+        },
+        {
+          "sourceLabel": "Bass",
+          "role": "BASS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.504
+        },
+        {
+          "sourceLabel": "Guitar",
+          "role": "GUITARS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.2448
+        },
+        {
+          "sourceLabel": "Keyboard",
+          "role": "KEYS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.4576
+        },
+        {
+          "sourceLabel": "Percussion",
+          "role": "PERCUSSION",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.12
+        },
+        {
+          "sourceLabel": "Strings",
+          "role": "ORCHESTRA_STRINGS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.2028
+        },
+        {
+          "sourceLabel": "Synth",
+          "role": "TEXTURE",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.3116
+        },
+        {
+          "sourceLabel": "Brass",
+          "role": "ORCHESTRA_BRASS",
+          "classification": "ROLE_ACCEPTED",
+          "gain": 0.072
+        }
+      ],
+      "timelineContinuesDuringSpeechFocus": true,
+      "error": null
+    }
+  },
+  "contexts": 1
+}
