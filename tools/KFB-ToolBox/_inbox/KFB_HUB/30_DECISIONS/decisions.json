@@ -10509,6 +10509,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-735",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Punktwolken-Probe weiterverfolgen (Georg 25.10., Hub q194: sehr, sehr gut): Bilder und Karten als Punktwolke aus Knetkügelchen; aus Karten Höhenreliefs ableiten; Karten im Terrain verbergen, flach als Relief (aus der Luft lesbar) und animiert als aufsteigender Kügelchen-Schwarm; wabernder Kügelchen-Boden mit einfacher Höhenphysik. Konzept replies/CONCEPT_CARD_POINTCLOUD_TERRAIN_R1.md, nächster Schritt Probe R2 bei WS0 (echtes Tiefenmodell, Relief im Gelände, Aufsteigen, nachgebender Boden), Integration nach dem MVP über WS1b und den Stage-Kanal; ein Modul für Entstehen und Vergehen (V-533).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Datensatz je Karte trägt Bild, Relief und Schwarm; Entdecken wird Spielmechanik.",
+   "applies": "nach Probe R2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10621,7 +10636,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1236",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1237",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-735 Punktwolken weiter: Konzept Karten als Punktwolke und Relief im Terrain (replies/CONCEPT_CARD_POINTCLOUD_TERRAIN_R1.md), Probe R2 bei WS0.
 - V-734 Georgs Urteile per Audio: Chatter-Silben TUNE (quieken, Schritte zu laut), tr1 TUNE (Blasen-Randabstand, Abnahme-Form), Splats ganz nach unten; Auftrag an WS1 replies/WS0_TO_WS1_ABNAHME_CHATTER_TR1_R1.md (Hub b216). Hub v21: Antwort-Entwürfe bleiben bei Seiten-Updates erhalten.
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
