@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-738 HyperNorm Experience: Konzeptblatt Scenelet R1 „Das Archiv der lachenden Wahrheiten“ (Videokunst, Collage, Cut-up, Dada; Maßstäbe Curtis, Traumreise, Mindscape-Klang, Musikvideos, lhohq.info), nach Prüfer-BLOCK ergänzt (Kamera und Steuerung, sieben Fundstücke in zwei Ketten, fundstuecke.json, Leistung, Gates als Skript, Registerzitate); Hub q198 mit lhohq-Referenzen (75_REFS/lhohq_r1).
 - Probe R3 Kugel-Physik (V-735): 65.536 Knetkugeln mit GPGPU-Physik in WebGL (Schwerkraft, Abprallen, Rollen am Hang, Kollision mit Spieler und Auto, Rückkehr ins Relief, mittlere Abweichung 9 cm), Live https://claude.ai/artifact/SYzKKT6g33hcHYCm8JWmxx, Hub q197; offen: Auto schleudert zu viel, Kugeln auf Auto-Kapsel.
 - V-737 MiB-Turm-Auge: KFB-Auge mit drei Zuständen (Glühkugel, Scannen, Alarm rot mit Zielstrahl), drehbare Halterung; Konzeptblatt R2 Orb-Abschnitt ersetzt, an WSB für r6b.
 - B40 r6 (WSB): TARDIS-Pulse, echte Tür mit Gleißen, Agenten aus dem Licht, Orb A/B, gemessene Gates grün, Kritiker 5,8/6,0. WS0: Nachrunde r6b mit allen offenen Punkten plus Türblatt-Innenseite (kein Schwarz), Weitbilder näher, Orb-Wabern im Puls; erst danach Hub.
