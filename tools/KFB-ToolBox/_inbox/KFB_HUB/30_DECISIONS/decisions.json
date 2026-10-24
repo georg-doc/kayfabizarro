@@ -10314,6 +10314,21 @@
    "applies": "nach dem MVP"
   },
   {
+   "id": "V-722",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "WSB N35/N36 Antworten (WS0): Tor-Akzent ja, aus der Biom-Palette, gedämpft; Höhenstaffel nur aus vorhandenen B29-Modulen statt Verformung (V-573); Amphitheater als aufgeschütteter Hang (V-716 gilt); Moos, Pfützen, Gras entfallen ohne Kanon-Asset; Friedhof B33 neu angeordnet in ungeraden Gruppen, Teile unverändert; Rubble als Bruchstücke aus den Teilen des Modells statt Scheiben; Requisiten in Gesprächs-Clips abgelegt, sichtbar nur in Arbeits-Clips. Neue WSB-Jobs nach N36: N37 Farbfluss-Look auf Modellen (Comic-Zeichner-Atelier zuerst, Laufzeit-Shader später WS1), N38 UFO-Landeanimation mit Landestützen-Prüfung, später MiB-Turm. Georg wählt Converge 0,5 oder 0,8 und Farbsatz der Rufe (Hub q182, q183).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSB im Auto-Modus nicht blockieren; Design-Fragen innerhalb des Kanons entscheidet WS0, Geschmack Georg.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10426,7 +10441,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1191",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1192",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

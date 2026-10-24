@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1b: Einbettungs-Werkzeug braucht drei Dinge (V-711, V-716)
+- WSB hat das Werkzeug nach V-716 umgebaut (nur auftragen, Düne über 4–6 m, keine Kontaktstufe). Es liefert je Fall `terrain_delta` (Vorschlag `kfb.terrain-delta/1`) plus Maske und `stage_edges`, dazu die Regel-Tabelle `data/n36_rules.r1.json`. Ablage: `50_BLENDER/N36/`; WS0 legt es in den privaten Branch.
+- **Bitte:**
+  1. Höhenfeld-Export eines typischen Ausschnitts;
+  2. das Delta-Format bestätigen oder ändern;
+  3. ein Kontaktton im Terrain-Shader, also die Farbe am Übergang zum Modell.
+
+  Alles als Abschnitt im Status. Noch nicht einbauen.
+
 # NEU OBEN (24.10.) · An WS1 und WS-Media: HyperNorm-Dauerfernsehen, erste Clip-Folge (V-721), nach dem MVP
 - **Georg erlaubt** für die satirischen Meta-News eine HeyGen-Moderatorin (Brave New World News, Knet-Look) als Ausnahme von „keine Avatare“.
 - **Clips:** `60_VIDEO/hypernorm_bnwn_r1/` im privaten Branch: 69 Clips (3–9 s, an Sprechpausen geschnitten), zusammen 39 MB, `manifest.json` mit Start, Ende und Länge.
