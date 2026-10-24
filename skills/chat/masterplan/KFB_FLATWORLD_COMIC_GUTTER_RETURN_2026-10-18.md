@@ -109,3 +109,23 @@ Gizmo visual/source identity, literal versus optical white gutter, collision/nav
 ### Additive changelog
 
 - **2026-10-22:** Georg's authorized Cluster 4 research/WS0-WSA briefing added as one document, linked from original Clusters 1–3 and incorporated into the same Flatworld owner Return / existing Draft PR #423. Original Gutter-space theory and protected runtime owners unchanged. Hub/router/public URL unchanged because no new canonical product route or human gate was accepted.
+
+---
+
+## 2026-10-24 · R1.3 · Webchat Splat Examples R1 (V-646/647) — PRIVATE LOOKBOOK / PARTIAL SOURCE REVIEW
+
+**Brief source:** `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/BRIEF_WEBCHAT_SPLAT_EXAMPLES_R1.md` on `docs/kfb-decisions-register-2026-10-11`, explicitly *only visual view, no game installation or merge*.
+
+**New file on this unchanged draft PR #423:** [`SPLAT_EXAMPLES_R1.md`](SPLAT_EXAMPLES_R1.md), committed at `39a1b6a04a87c2423e23aa5ac807b3da0dcf4741` and verified by exact branch-head/file readback. It indexes **10 authentic SuperSplat external scene pages** (creator, published size, page license where present) covering water, lake/underwater inspiration, tornado, fog, cloud, mineral/crystal, stylized cartoon, architecture/portal, melty optical illusion and Gutter/perception. Only **8/10** showed downloadable CC BY 4.0 at inspection; mineral and Doors of Perception remain view-only unknown-license. **0 external source payloads downloaded or source-isolated.**
+
+**Private-to-Georg outputs created in this chat:** `KFB_SPLAT_EXAMPLES_R1_PRIVATE.zip`, 10 individually rendered original synthetic **1600×900** two-up PNGs (A1 2D gradient shader-style versus A2 *procedural* Gaussian-primitive projection), a contact sheet, offline HTML index and JSON of measured **local CPU still-render timings**. Not on public GitHub; this chat attachment is a private handoff and should not be treated as a persistent KFB asset URL. **Synthetic comparisons are NOT screenshots of the linked real SuperSplat scenes or Spark GPU / trained 3DGS renders and do not share camera/scene geometry.**
+
+**Actual verification:** 10/10 external scene text entries and published sizes; 10/10 local PNG 1600px stills generated; 10/10 CPU A1/A2 wall-clock timings recorded; 1/1 new GitHub evidence index read back; **browser WebGL2/Spark/SuperSplat captures 0**, **real browser FPS 0**, **actual source load time benchmarks 0**, **real 10-s viewer flights 0**, **KFB runtime visuals 0**, **Stage/Site 0**. In this execution environment Chromium reported WebGL2 unavailable and navigation blocked by administrator; no invented GPU numbers. The original rendering/performance comparison requested by WS0 therefore remains **UNVERIFIED** and the delivered study is explicitly **PARTIAL**, not a 3DGS PASS.
+
+**Current owners remain unchanged:** Flatworld/Infinite Canvas planning only; the real WS1 world/terrain/portal/Track/Audiovisual owners are not touched. This file and PR evidence are **VIEW ONLY**. No game code, source asset imports, new host/site, cloud mirror, merge or Live.
+
+**One next gate:** WS0 may review the authentic source links and private preview lookbook. If a true visual/performance A/B becomes product-critical, a separately authorized current browser-capable source viewer/owner would need to show and measure the **same real licensed 3DGS object and matching shader/mesh comparator**. No extra human gate or implementation authority is created by this research.
+
+### Additive changelog
+
+- **2026-10-24:** Splat Examples source shortlist (10 examples), private 1600px synthetic comparative stills and measured CPU render timings captured; limits to authentic source screenshots and WebGL benchmarking recorded as OPEN. No merge or runtime write.
