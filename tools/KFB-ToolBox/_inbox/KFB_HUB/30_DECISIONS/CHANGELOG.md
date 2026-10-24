@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-740 angewandt: Briefing Claude Design für das HyperNorm-Design-Paket (replies/BRIEF_CLAUDE_DESIGN_HYPERNORM_R1.md, Hub b220), ZIP 30_PACKAGES/KFB_HyperNorm_Design_Paket_R1.zip (14,5 MB: Konzept, H13-Layer und -Module, 41 Engine-Bilder, lhohq-Referenzen, 30 Georg-Bilder, Proben, Meme-Pool, 415 Zitate, 89 Gedichte). Bestandsbefund: H13 ist die neueste Engine (H15 gibt es nicht); der PD-Grafik-Pool auf GitHub ist klein (4 Objekte auf main, 26 in PR #281, die ~300 aus V-620 nie gebaut); Zitate 349 als gemeinfrei bestätigt, aber keines im Pool freigegeben; WSA hat b219 schon als Draft-PR #451 begonnen.
 - HyperNorm-Welt R2: Boden jeder Sphäre = Karte als Kugel-Relief (Probe R2/R3), rund eng zugeschnitten, mit Partikel-VFX (Aufstieben, Rückkehr) und Knet-SFX (Georg); in Konzeptblatt R2, Brief R2 und Hub b219 ergänzt.
 - Georg 25.10. zu B40: Scharnier und Türgriff minimalistisch und sauber in Modell, Textur und Farbe integriert. WSB braucht Georgs Ja direkt in seinem Fenster (WS0 gibt keine Freigaben weiter).
 - B40 r6b (WSB, V-737 Auge mit drei Zuständen, Halterung, Zielstrahl; Kritiker 5,9): WS0-Antworten (Rot #e8180e vorläufig, 70-%-Gate für die Glühkugel entfällt, Bild 6 geteilt in 6a/6b, Türgriff und Scharnier frei). Nach V-740 keine weitere Kritiker-Runde, WSB wartet auf Style-Frames.
