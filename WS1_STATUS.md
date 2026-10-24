@@ -1,7 +1,34 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §166.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§166 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §167.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§167 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 167 · 24.10. abends · Gesamtübergabe an WS0 vorgezogen auf 25.10. (mit Georg) · HUD-Nacharbeit + Tempo gemergt · Chatter-Silben in Arbeit · Georg-Befunde Hintergrund, Himmel, Bäume
+
+- **Übergabe:** Georg (AFK bis morgen, Rechner läuft): Die Gesamtübergabe MVP + Konzept an WS0 machen wir **morgen, 25.10., gemeinsam mit Georg**, nicht erst Do. Unterlagen auf `ws1/status`:
+  - `UEBERGABE_MVP_R1.md`: Standard, Prüfen, Offen, Laufend, Schalter-Liste aus dem Code.
+  - `sessions/*.md`: Lead, WS1b–e, WS-NPC, WS-Audio, Deck-Songs, Site; Deck-Analyzer fehlt noch.
+  - Alle Sitzungen sind informiert: Merge-Anträge und Karten bis morgen, Fragen an Georg gesammelt über den Lead. **Bitte ihr ebenfalls: eure Planung und offene Punkte bis morgen bereitlegen, damit wir in einem Boot sind.**
+- **Gemergt seit §166** (mvp 6b5e182, contract-static PASS):
+  - HUD 3D Nacharbeit nach Georg: keine Tangenten; Fluchten ≤ 2 px; Größen als Verhältnis zur Blase (Icons 1,18, Truhe 1,95); Info-i ins Zahnrad.
+  - Tempo-Leiste (erste Fassung).
+  - Disco-MC Talkbox (Georg, f6776c4).
+  - Band-Liedende 19,2 s von der Disco-Pause entfernt (33e0eb0).
+  - NPC-Testliste fest (`test/npc-suite.txt`).
+  - Site-Build erzeugt die HUD-Kassette (7353238); Probe-Build 124 Dateien, 45,4 MB.
+- **Georgs Urteile 24.10. abends:**
+  - HUD Nacharbeit: Richtung gut.
+  - **Tempo-Leiste viel zu klein, Zahl unter die Leiste wie die Entfernung (eine Flucht), Farbskala mit Zonen sichtbar, Skala je Modus, Flughöhe später mitdenken.** Erst Gestaltungskonzept mit gerechneten Varianten, dann Bau (WS1e).
+  - Regel: **keine Tangenten** im HUD.
+- **Hintergrund „verschwimmt“:** Die HUD-Abnahmebilder kamen aus der alten M1-Kraterwelt (Bildskript ohne `world=probe`). Der Live-Stand (Probe-Gelände) ist sauber; der A/B-Vergleich steht auf der Abnahme-Seite (v43). Das Bildskript wird auf den Site-Hash gestellt (WS1e). Lehre für alle: Abnahme-Skripte lesen den Site-Hash aus einer Stelle.
+- **Himmel nicht auf die Biom-Palette abgestimmt** (Georg; auch Planeten später): Konzept + A/B hinter `skypal=biome` bei WS1b.
+- **Bäume:** statt Kollision Cartoon-Biegen, Zurückschwingen und Fluff-Abwurf über die vorhandene Ernte (Georg-Idee). Konzept + Probe hinter `treebend=1` bei WS1b (§5.9 „Welt als Spielzeug“).
+- **Chatterbox (Georg-GO):** Silben-Laute aus vorhandenen Clips, Satzmelodie aus dem Satzzeichen (Ruf-Skala), Laut nur mit Blase, Wechselrede höchstens 2.
+  - WS-Audio: ws-audio/r1 c286c64, Tests PASS, erstes Video bei Georg.
+  - WS-NPC: talkDirector hinter `chat=syl`.
+  - Merge morgen früh.
+- **Stadt-Baukasten** (Konzept R1.6 bei WS1b): Höhenmuster aus freien Geländedaten (nur offline, stilisiert), Übergänge aus WSBs Einbettungswerkzeug, Straßen als Knet-Bänder mit Bordsteinen, Fassaden als Materialcodes nach V-710.
+- **Weiter offen für WS0:** Kassette r5 und `controlTheme` in assets/private (§165), locusId-Register-Bau (V-714), „Ebene“-Entscheid (Georg).
 
 ## 166 · 24.10. · Konzept R1.5 fertig (offener Entscheid „Ebene“) · Übernahmekarten für 7 Sitzungen · HUD 3D Paket 2 gemergt · Spiegel 3a6e010 · Warnung zsh-Push-Falle
 
