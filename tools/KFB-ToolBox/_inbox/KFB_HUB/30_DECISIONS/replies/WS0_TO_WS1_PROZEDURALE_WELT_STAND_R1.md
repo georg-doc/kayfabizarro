@@ -52,7 +52,7 @@
 - Ein Szenen-Raster um den Spieler.
 - Ein Begegnungs-Vertrag (`kfb.scene/1`) mit drei Angaben: Auslöser (zufällig oder kontextuell), Platz im Gelände (Einbettung nur auftragen, V-716), Freigabe-Status.
 - Nur freigegebene Module kommen in den Pool.
-- Erste Module aus dem Bestand: Bewohner-Begegnung, ein Diorama, später MiB-Turm und UFO (V-744). Danach Mindspaces, HyperNorm-Sphären und Splats, jedes als eigenes Modul, einzeln optimierbar.
+- Erste Module aus dem Bestand: Bewohner-Begegnung, ein Diorama, später MiB-Turm und UFO (V-744). Dazu das **Karten-Relief** (V-751): eine Karte aus dem Haupt-Deck des Spielers als Knetkugel-Gelände mit GPU-Partikeln (Proben R2/R3), groß genug für ein paar Runden; eine Runde auf ihr sammelt die Karte in den Almanach (Georg: eine Runde), sie fliegt sichtbar ins HUD. Danach Mindspaces, HyperNorm-Sphären und Splats, jedes als eigenes Modul, einzeln optimierbar.
 
 ## Für jede Slice
 - Kriterien zuerst, dann messen. Ein kurzes Video aus dem Live-Stand zu Georg, A/B mit gleicher Kamera.

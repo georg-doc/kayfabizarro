@@ -10719,6 +10719,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-749",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "WS0 als Art Direction (Georg-Go 25.10.) zu den Widersprüchen aus replies/AUDIT_PLACEMENT_CORE_R1.md §4; Quelle der Zahlen ist künftig allein kfb_place.r1.json (V-748), ältere Quellen gelten wo abweichend als abgelöst: (1) Größentoleranz 0,20 überall (V-570), auch zur Laufzeit. (2) Einsinken Fels 40–50 %, Kappe 50 % (V-570); 25–45 / 45–60 / 5–15 / 12–20 % abgelöst. (3) Kontakt am Fuß: Kontakt-Geometrie mit Ursache Pflicht (V-565), Umfang 40–50 % in ungleichen Gruppen, Lücke ≥ 25 %, keine Zählregel, keine Kränze. (4) Kontaktton als harte schmale Stufe (Gebiet 7, V-570, V-403), kein Verlauf. (5) WFC nur für Slot-Belegung, Raster-Module mit Sockets und Übergangs-Familien; Bodenübergänge bleiben Sprenkel, nie Bodenkachel-Sätze in der Natur. (6) Gebaute Ordnung (Gräber, Zäune, Beete, Mauern) ist eine eigene Klasse: Reihen erlaubt nach abgenommener Vorlage (V-512), geprüft werden Durchdringung, Kontakt, Einsinken, Lücken ≥ 1,2 m und keine gleichen Nachbarn, nicht odd/collinear. (7) Nester: relax ≤ 0,85 × oder ≥ 1,25 ×, 0,92 entfällt; Abstände benachbart paarweise ≥ 30 % verschieden. (8) Dichte-Bänder aus N36 (0,6 / 0,15 Gruppen je 10 m) sind der kalibrierte Startwert (V-568). (9) Gate-Präfixe ENV- (kfb_env) und PS- (Proof-Stage). (10) Eine Einheit: Meter, Umrechnung H und 0,616381 m je KayKit-u in der Datei. (11) Blender-Proofs zeigen Bodenübergänge bis zum Blender-Gegenstück des Sprenkel-Moduls als markierten Platzhalter.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Register vor Quelle (Kanon-Rangfolge); eine Zahlenquelle beendet die Drift zwischen Code, Kanon und Studien.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-750",
+   "date": "2026-10-25",
+   "area": "Look",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: Wasser bzw. Fluids, Gelände und Shader-Logik folgen derselben Farbharmonie (COLOR_HARMONY_R1, V-305) wie Fluff und Props; die vorhandenen Fluid-Arten des Gelände-Shaders (Wasser, Kaugummi, Säure; als TUNE-Design schon da) werden Rezepte je Biom in kfb_place (Kaugummi-See im Candy-Band, blubbernde Säure im Gegenton). Ein Fluid-Shader mit Art als Parameter, Owner WS1c.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Farbregel für Boden, Laub, Fluff und Fluids hält jedes Biom als ein Bild zusammen.",
+   "applies": "mit kfb-place"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10831,7 +10861,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1265",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1266",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

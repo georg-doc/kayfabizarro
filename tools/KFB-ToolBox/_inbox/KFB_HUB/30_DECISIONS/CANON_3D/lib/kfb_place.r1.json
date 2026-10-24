@@ -1,0 +1,594 @@
+{
+ "schema": "kfb.place/1",
+ "version": "r1",
+ "by": "WS0",
+ "date": "2026-10-25",
+ "note": "Einzige Zahlenquelle für Umgebung, Props, Natur, Fluff und Fundstücke (V-748, Entscheide V-749). Aus kfb_env.py (RULES, SINK, NEST), n36_rules.r1.json, kfb_edge_params.json, grammar.js GRAMMAR und B2-R2 Fluff-Grammatik zusammengeführt. Werte mit tune sind Startwerte nach V-568 und werden an P0 kalibriert. kfb_env liest künftig RULES, NEST, SINK aus dieser Datei (WSB-Auftrag).",
+ "units": {
+  "base": "m",
+  "m_per_kaykit_u": 0.616381,
+  "m_per_H": 2.24362684,
+  "note": "H = Lab-Einheit K2 (3,64 u)"
+ },
+ "rules": {
+  "sink": {
+   "rock": [
+    0.4,
+    0.5
+   ],
+   "rockgroup": [
+    0.2,
+    0.35
+   ],
+   "tree": [
+    0.05,
+    0.1
+   ],
+   "bush": [
+    0.05,
+    0.12
+   ],
+   "building": [
+    0.0,
+    0.15
+   ],
+   "prop": [
+    0.02,
+    0.05
+   ],
+   "prop_buried": [
+    0.4,
+    0.95
+   ],
+   "stone_L": [
+    0.4,
+    0.5
+   ],
+   "stone_M": [
+    0.35,
+    0.5
+   ],
+   "stone_S": [
+    0.3,
+    0.4
+   ],
+   "grass": [
+    0.0,
+    1.0
+   ],
+   "fluff": [
+    0.0,
+    1.0
+   ],
+   "contact": [
+    0.25,
+    1.0
+   ],
+   "character": [
+    0.0,
+    0.03
+   ],
+   "vehicle": [
+    0.0,
+    0.03
+   ]
+  },
+  "sink_cap": 0.5,
+  "group": {
+   "odd": true,
+   "sizes": [
+    1.0,
+    0.62,
+    0.38
+   ],
+   "size_tol": 0.2,
+   "spread_pair_min": 0.3,
+   "line_max": 2,
+   "line_tol": 0.05,
+   "overlap_max": 0.85,
+   "air_min": 1.25,
+   "repeat_max": 3,
+   "no_clones": true,
+   "one_kit_per_group": true,
+   "spread_tune": 0.45,
+   "spread_target": 0.5,
+   "neighbour_r": 4.5,
+   "clone_dist_H": 1.6484,
+   "float_tol_H": 0.003
+  },
+  "nest": {
+   "sizes": [
+    1.0,
+    0.62,
+    0.38
+   ],
+   "counts": [
+    1,
+    3,
+    [
+     1,
+     5
+    ]
+   ],
+   "relax_out": [
+    0.85,
+    1.25
+   ],
+   "note": "V-749: 0,92 entfällt",
+   "med": [
+    -1.2,
+    0.1,
+    1.3
+   ],
+   "small": [
+    -0.6,
+    0.7,
+    -2.0,
+    2.05,
+    3.1
+   ],
+   "k": 0.86,
+   "spread": 1.75
+  },
+  "zone": {
+   "groups": [
+    2,
+    4
+   ],
+   "neg_space_min": 0.3,
+   "ratio_LMS": [
+    1,
+    3,
+    9
+   ],
+   "landmark_front": 0.6,
+   "rest_struct_meaning": [
+    0.7,
+    0.2,
+    0.1
+   ]
+  },
+  "contact": {
+   "required": true,
+   "cause_required": true,
+   "perimeter": [
+    0.4,
+    0.5
+   ],
+   "gap_min": 0.25,
+   "count_rule": null,
+   "wreath": false,
+   "tone": "hard_step",
+   "tone_step_Lstar": [
+    8,
+    12
+   ]
+  },
+  "ordered": {
+   "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
+   "checks": [
+    "penetration_0",
+    "contact",
+    "sink",
+    "gap_min_m",
+    "no_equal_neighbours"
+   ],
+   "gap_min_m": 1.2,
+   "skip": [
+    "odd",
+    "collinear"
+   ]
+  },
+  "gates_prefix": {
+   "env": "ENV-",
+   "proof_stage": "PS-"
+  },
+  "lean": {
+   "lean_tol": 15,
+   "lean_exc": [
+    25,
+    45
+   ],
+   "pebble_tilt": [
+    15,
+    0.2
+   ],
+   "grass_gap": 0.25,
+   "primary_max": 3,
+   "height_tol": 0.1,
+   "focal_ring": 0.5,
+   "interact_free_H": 1.0,
+   "tree_lean": [
+    0.2,
+    0.4
+   ],
+   "ref": "CANON_3D/EINARBEITUNG_WS1_R1.md Ü1–Ü7"
+  },
+  "biography": {
+   "layers_required": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "signature": "1 Hero + 2 Echos",
+   "wear_marks_min": 2
+  }
+ },
+ "bands": [
+  {
+   "band": 0,
+   "s_m": [
+    -0.1,
+    0.7
+   ],
+   "groups_per_10m": 2.0,
+   "anchor_size_m": [
+    0.5,
+    0.9
+   ],
+   "count": [
+    5,
+    7
+   ],
+   "terrain_stone_prob": 0.1
+  },
+  {
+   "band": 1,
+   "s_m": [
+    0.9,
+    3.0
+   ],
+   "groups_per_10m": 0.6,
+   "anchor_size_m": [
+    0.25,
+    0.45
+   ],
+   "count": [
+    3,
+    5
+   ],
+   "terrain_stone_prob": 0.35
+  },
+  {
+   "band": 2,
+   "s_m": [
+    3.0,
+    6.0
+   ],
+   "groups_per_10m": 0.15,
+   "anchor_size_m": [
+    0.1,
+    0.2
+   ],
+   "count": [
+    3,
+    3
+   ],
+   "terrain_stone_prob": 0.65,
+   "downhill_only": true
+  }
+ ],
+ "bands_tune_note": "N36-Startwerte (V-749 Nr. 8)",
+ "embed": {
+  "ref": "50_BLENDER/N36/data/n36_rules.r1.json",
+  "schema": "kfb.embed-rules/1",
+  "only_add": true,
+  "rule": "V-716"
+ },
+ "edge": {
+  "ref": "CANON_3D/lib/kfb_edge_params.json",
+  "forms": [
+   "free_end",
+   "built_end",
+   "ruin_end"
+  ],
+  "rule": "V-577"
+ },
+ "wfc": {
+  "allowed": [
+   "slot_fill",
+   "socket_modules",
+   "transition_families",
+   "corridor_gaps"
+  ],
+  "never": [
+   "landmarks",
+   "osm_buildings",
+   "road_graph",
+   "terrain_height",
+   "global_nature_grid",
+   "deform_kit_parts"
+  ],
+  "ground_transitions": "speckle (V-403)",
+  "tries": 16,
+  "fallback": "authored"
+ },
+ "fluff": {
+  "ref": "50_BLENDER/B2/R2/CONCEPT_B2R2_FLUFF_GRAMMAR.md",
+  "anchors_ref": "50_BLENDER/B2/kaykit-tree-fluff-anchors.v1.json",
+  "levels": {
+   "plant": {
+    "hero_nest": 1,
+    "side_nests": [
+     0,
+     2
+    ],
+    "side": "light_or_camera",
+    "min_crown_h": 0.4
+   },
+   "nest": {
+    "sizes": [
+     1.0,
+     0.62,
+     0.38
+    ],
+    "counts": [
+     1,
+     3,
+     [
+      1,
+      3
+     ]
+    ]
+   }
+  },
+  "carriers": {
+   "tree": "Krone, Lichtseite: 1 Hero-Nest + 0–2 Neben-Nester; je Nest 5–7 Kugeln (1 groß, 3 mittel, 1–3 klein; Bauweise 3–6 je Anker als Untergrenze)",
+   "bush": "1–2 Nester, greifen unter den Rand",
+   "bare_tree": null
+  },
+  "color": {
+   "source": "Biom-Palette, Fluff-Akzentfarben (V-426)",
+   "rule": "eine Farbe je Nest, Kontrast zum Träger, keine Zufallsfarbe je Kugel",
+   "contrast_on_green": "Fluff aus dem Candy-Band gegenüber dem Laub (V-305), nie Oliv auf Grün",
+   "zone_mix": {
+    "main": 0.4,
+    "other_min": 0.08,
+    "status": "V-368 TBD, nicht P0"
+   }
+  },
+  "harvest": {
+   "basic": "gestaffelt nach V-423: im Schnitt 3 Schläge, 2 Schüsse oder 1 Explosion leeren einen Baum; Abwurf 1–2, dann 3–4, dann alle",
+   "fall": "springt 2–3-mal, rollt hangabwärts (rollToRest)",
+   "pickup": "bei Kontakt, Gesamt-Fluff im Spielstand",
+   "cause_required": true
+  },
+  "variant": "B2-R2 Variante A als Startwert (TUNE an P0; Georg wählt am Bild)"
+ },
+ "finds": {
+  "optional": true,
+  "display": "Hüfthöhe Medium-Rig, langsam drehend, sanftes Auf-und-ab (V-437)",
+  "pickup": "bei Kontakt",
+  "placement": "nur mit Ursache aus der Ortsbiografie (Nutzen oder Vergehen), z. B. am Stumpf, unter dem Baum, am Wegrand",
+  "per_cell_max": 1,
+  "source": "foundItems3d (found=rest), Fundsachen-Katalog"
+ },
+ "recipes": [
+  {
+   "id": "tree_group",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "tree"
+     ],
+     "h_rel": [
+      1.2,
+      1.4
+     ],
+     "layer": 1,
+     "note": "alter Waldrand-Baum (Entstehen)"
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "bush"
+     ],
+     "count": 3,
+     "h_rel": [
+      0.7,
+      0.9
+     ]
+    },
+    {
+     "role": "accent",
+     "kinds": [
+      "stone_M"
+     ],
+     "kit": "KayKit Forest (Stein aus dem Pack)"
+    }
+   ],
+   "story_template": "Waldrand: der älteste Baum steht, die Büsche drängen ins Licht",
+   "layer": 4,
+   "fluff": true,
+   "kit": "KayKit Forest"
+  },
+  {
+   "id": "bush_nest",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "bush"
+     ]
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "bush",
+      "grass"
+     ],
+     "count": 3
+    },
+    {
+     "role": "pebble",
+     "kinds": [
+      "stone_S"
+     ],
+     "count": [
+      1,
+      3,
+      5
+     ]
+    }
+   ],
+   "story_template": "Busch-Nest im Windschatten",
+   "layer": 4,
+   "fluff": true,
+   "kit": "KayKit Forest",
+   "odd_total": true
+  },
+  {
+   "id": "stone_nest_slope",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "stone_L"
+     ]
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "stone_M"
+     ],
+     "count": 3
+    },
+    {
+     "role": "pebble",
+     "kinds": [
+      "stone_S"
+     ],
+     "count": [
+      1,
+      5
+     ]
+    }
+   ],
+   "story_template": "Steine vom Hang gerollt, Moos in den Fugen",
+   "layer": 3,
+   "fluff": false,
+   "kit": "Steinkit v4"
+  },
+  {
+   "id": "stump_stamp",
+   "biomes": [
+    "moos"
+   ],
+   "fixed": true,
+   "slots": [
+    {
+     "role": "landmark",
+     "kinds": [
+      "prop"
+     ]
+    }
+   ],
+   "story_template": "gefällter Stamm wird zum Stumpf, Fluff und ein Fundstück daran",
+   "layer": 3,
+   "finds": true,
+   "kit": "KayKit Forest",
+   "echoes": "2 Holzstücke desselben Stamms in Wurfweite",
+   "wear_marks": [
+    "Sägeschnitt",
+    "Axtkerbe",
+    "Moos auf der Schnittfläche"
+   ]
+  },
+  {
+   "id": "wood_path",
+   "biomes": [
+    "moos"
+   ],
+   "kit": "Steinkit v4 (Wegsteine, lose am Rand)",
+   "slots": [
+    {
+     "role": "path",
+     "kinds": [
+      "stone_S",
+      "stone_M"
+     ],
+     "layout": "Spur vom Rand zum Stumpf"
+    }
+   ],
+   "story_template": "Holzweg: hier wurde der Stamm abgefahren",
+   "layer": 2,
+   "contact": true,
+   "transition": "Sprenkel"
+  }
+ ],
+ "biomes": {
+  "moos": {
+   "recipes": {
+    "tree_group": 1.0,
+    "bush_nest": 0.8,
+    "stone_nest_slope": 0.6,
+    "wood_path": 1.0
+   },
+   "kit": {
+    "tree_group": "KayKit Forest",
+    "bush_nest": "KayKit Forest",
+    "stone_nest_slope": "Steinkit v4",
+    "wood_path": "Steinkit v4",
+    "stump_stamp": "KayKit Forest"
+   },
+   "note": "P0; weitere Biome aus der Biom-Fahrt folgen mit P1",
+   "fluid": "water"
+  }
+ },
+ "adjacency": [],
+ "tiles": [],
+ "tiles_note": "WSB misst KayKit Forest (84), Steinkit v4 (82), B29 (28): Hülle, Höhe, Ruhelage, Einsinken, Anker, Sockets, Asset-Pass",
+ "palette": {
+  "rule": "COLOR_HARMONY_R1 (V-305): eine OKLCH-Regel, der Boden trägt den Grundton; Strecke +90° warm, Blickfang gegenüber im Candy-Band, Laub natürlich bzw. herbstlich, Himmel = Laub +90°",
+  "ref": "replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js",
+  "input": "Boden-Farbton je Biom",
+  "roles": [
+   "ground",
+   "track",
+   "focus",
+   "foliage",
+   "sky",
+   "stone",
+   "fluff",
+   "fluid",
+   "fluid_foam"
+  ],
+  "applies_to": [
+   "terrain (look=terrain3)",
+   "fluff",
+   "fluid",
+   "props tint"
+  ]
+ },
+ "fluids": {
+  "note": "Georg 25.10. (V-750): Wasser bzw. Fluids gehören mit Gelände und Shader in dieselbe Farbharmonie; vorhandene Arten im Gelände-Shader (terrain3: Wasser, Kaugummi, Säure) als Rezepte",
+  "kinds": {
+   "water": {
+    "tone": "fluid aus der Harmonie",
+    "behaviour": "nasser Saum, Tiefenstufen"
+   },
+   "bubblegum": {
+    "tone": "Candy-Band (rosa Schlieren)",
+    "behaviour": "zähe Wellen, Blasen platzen langsam"
+   },
+   "acid": {
+    "tone": "Gegenton zum Boden, giftig",
+    "behaviour": "blubbert, Ufer verätzt"
+   }
+  },
+  "owner": "WS1c",
+  "shader": "ein Fluid-Shader, Art als Parameter, Licht aus dem einen Rig"
+ },
+ "gate_map_note": "Zuordnung alter kfb_env-Codes (G1, E2, C1, S4 …) zu ENV-* liefert WSB mit der Gate-Erweiterung (V-749 Nr. 9)"
+}
