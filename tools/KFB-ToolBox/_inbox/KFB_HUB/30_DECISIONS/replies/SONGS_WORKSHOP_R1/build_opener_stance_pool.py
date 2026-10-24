@@ -126,6 +126,12 @@ for r in rows:
     if r["opener"] in AUDIT:
         v, why = AUDIT[r["opener"]]; r["audit_2026_10_24"] = v; r["audit_reason"] = why
         if v == "GESTRICHEN": r["status"] = "GESTRICHEN (Georg 24.10.)"
+
+# --- Satzende (WS1-Lead 24.10.: „What if …“ braucht „?“): Frage-Opener machen die ganze Zeile zur Frage ---
+QUESTION_END = {"What if", "Do you know", "Have you heard of", "Did you hear of", "Did you hear about", "Ever heard of",
+                "Ever notice how", "Did you ever try", "You call that", "Have you ever", "Ever tasted", "Did you see the film about"}
+for r in rows:
+    r["ending"] = "?" if r["opener"] in QUESTION_END else "."
 ORDER = ["Gerücht", "Begegnung", "Fundstück", "Anekdote", "Frage", "Theorie", "Behauptung", "Erwiderung",
          "Beobachtung", "Ansprache", "Rückruf", "Zweifel/Wende", "Steigerung", "Meta", "Szenenwechsel"]
 rows.sort(key=lambda r: (ORDER.index(r["stance"]), r["slot"], r["opener"]))
@@ -133,6 +139,7 @@ out = {"schema": "kfb.opener-pool.stance/1", "date": "2026-10-23",
        "rules": ["Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
                  "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.",
                  "Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.",
+                 "Satzende: Feld ending. Bei ending=\"?\" endet die ganze Zeile mit Fragezeichen (letztes Satzzeichen der Kartenzeile wird ersetzt), z. B. What if The Finished City is already built …?",
                  "Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.",
                  "Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0."],
        "openers": rows}

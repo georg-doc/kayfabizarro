@@ -5,6 +5,7 @@
   "Je Karte ein festes Triplet; Abwechslung nur über den Opener.",
   "into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.",
   "Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.",
+  "Satzende: Feld ending. Bei ending=\"?\" endet die ganze Zeile mit Fragezeichen (letztes Satzzeichen der Kartenzeile wird ersetzt), z. B. What if The Finished City is already built …?",
   "Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.",
   "Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0."
  ],
@@ -20,7 +21,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Don't tell anyone, but",
@@ -33,7 +35,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "I heard",
@@ -46,7 +49,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Legend has it",
@@ -59,7 +63,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Rumor has it",
@@ -72,7 +77,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "They say",
@@ -85,7 +91,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Word is",
@@ -98,7 +105,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "A friend told me about",
@@ -110,7 +118,8 @@
    ],
    "family": "told",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Did you hear about",
@@ -123,7 +132,8 @@
    "family": null,
    "status": "GEORG 23.10.",
    "source": "Chat Georg",
-   "note": "Familie heard"
+   "note": "Familie heard",
+   "ending": "?"
   },
   {
    "opener": "I heard a rumor about",
@@ -135,7 +145,8 @@
    ],
    "family": null,
    "status": "SL OPR3_023",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "The radio kept talking about",
@@ -150,7 +161,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "Situationsbehauptung"
+   "audit_reason": "Situationsbehauptung",
+   "ending": "."
   },
   {
    "opener": "Overheard at the bakery",
@@ -164,7 +176,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "Ortsbehauptung"
+   "audit_reason": "Ortsbehauptung",
+   "ending": "."
   },
   {
    "opener": "Whispered in the attic",
@@ -179,7 +192,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundener Ort"
+   "audit_reason": "erfundener Ort",
+   "ending": "."
   },
   {
    "opener": "A friend swears",
@@ -192,7 +206,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "My grandmother always said",
@@ -205,7 +220,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "My neighbour swears",
@@ -218,7 +234,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "A neighbour told me about",
@@ -231,7 +248,8 @@
    ],
    "family": "told",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "A stranger on the bus told me about",
@@ -246,7 +264,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundene Situation, lang"
+   "audit_reason": "erfundene Situation, lang",
+   "ending": "."
   },
   {
    "opener": "I once met",
@@ -258,7 +277,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "My grandmother swore by",
@@ -271,7 +291,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "My neighbour is",
@@ -284,7 +305,8 @@
    "family": null,
    "status": "GEORG 23.10.",
    "source": "Chat Georg",
-   "note": "nur vor Personen/Figuren"
+   "note": "nur vor Personen/Figuren",
+   "ending": "."
   },
   {
    "opener": "My aunt used to say",
@@ -297,7 +319,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Fun fact,",
@@ -310,7 +333,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "I found a",
@@ -323,7 +347,8 @@
    "family": null,
    "status": "GEORG 23.10.",
    "source": "Chat Georg",
-   "note": "nur vor Objekt-/Textkarten"
+   "note": "nur vor Objekt-/Textkarten",
+   "ending": "."
   },
   {
    "opener": "I read a book about",
@@ -335,7 +360,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I saw a film about",
@@ -347,7 +373,8 @@
    ],
    "family": null,
    "status": "SL OPR3_007",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "I saw a painting of",
@@ -360,7 +387,8 @@
    ],
    "family": "saw",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "A fortune cookie said",
@@ -373,7 +401,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "A note under my door",
@@ -385,7 +414,8 @@
    ],
    "family": null,
    "status": "SL OPR3_034",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "A scratched sign read",
@@ -397,7 +427,8 @@
    ],
    "family": null,
    "status": "SL OPR3_057",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "An unsigned letter said",
@@ -410,7 +441,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I found a note saying",
@@ -422,7 +454,8 @@
    ],
    "family": "found",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I found this under my bed",
@@ -437,7 +470,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundene Situation, lenkt ab"
+   "audit_reason": "erfundene Situation, lenkt ab",
+   "ending": "."
   },
   {
    "opener": "In my old sketchbook",
@@ -450,7 +484,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "My diary says",
@@ -462,7 +497,8 @@
    ],
    "family": "diary",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "On the back of a napkin",
@@ -477,7 +513,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "Ortsbehauptung"
+   "audit_reason": "Ortsbehauptung",
+   "ending": "."
   },
   {
    "opener": "Someone scratched into the wall",
@@ -490,7 +527,8 @@
    "family": null,
    "status": "SL NEW_049",
    "source": "OPENER_ARC_MODEL_R1 §8.2",
-   "note": "lang (33 Zeichen)"
+   "note": "lang (33 Zeichen)",
+   "ending": "."
   },
   {
    "opener": "Someone wrote in my diary",
@@ -502,7 +540,8 @@
    ],
    "family": "diary",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Someone wrote in my friendship book",
@@ -515,7 +554,8 @@
    ],
    "family": "diary",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I dreamed about",
@@ -527,7 +567,8 @@
    ],
    "family": null,
    "status": "SL OPR3_046",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "I went to",
@@ -540,7 +581,8 @@
    "family": null,
    "status": "P43 OP-13 TUNE",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "einzige Orts-Form; nur vor Orts-Karten"
+   "note": "einzige Orts-Form; nur vor Orts-Karten",
+   "ending": "."
   },
   {
    "opener": "Let me tell you about",
@@ -552,7 +594,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Long ago there was",
@@ -566,7 +609,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "In a dream last Tuesday",
@@ -581,7 +625,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundene Situation, überspezifisch"
+   "audit_reason": "erfundene Situation, überspezifisch",
+   "ending": "."
   },
   {
    "opener": "The other day,",
@@ -594,7 +639,8 @@
    "family": null,
    "status": "P43 OP-12 TUNE",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Slot = Ereignis"
+   "note": "Slot = Ereignis",
+   "ending": "."
   },
   {
    "opener": "Did you hear of",
@@ -606,7 +652,8 @@
    ],
    "family": "heard",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "?"
   },
   {
    "opener": "Did you see the film about",
@@ -618,7 +665,8 @@
    ],
    "family": "saw",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "?"
   },
   {
    "opener": "Do you know",
@@ -631,7 +679,8 @@
    "family": "know",
    "status": "POOL",
    "source": "opener_pool_r2.py",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "?"
   },
   {
    "opener": "Ever heard of",
@@ -643,7 +692,8 @@
    ],
    "family": null,
    "status": "P43 OP-02 KEEP",
-   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "ending": "?"
   },
   {
    "opener": "Ever tasted",
@@ -657,7 +707,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "überspezifisch (nur Essbares), behauptet Sinneserfahrung"
+   "audit_reason": "überspezifisch (nur Essbares), behauptet Sinneserfahrung",
+   "ending": "?"
   },
   {
    "opener": "Have you ever",
@@ -670,7 +721,8 @@
    "family": null,
    "status": "P43 OP-03 TUNE",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Slot = Erfahrung, nicht Titel"
+   "note": "Slot = Erfahrung, nicht Titel",
+   "ending": "?"
   },
   {
    "opener": "Have you heard of",
@@ -682,7 +734,8 @@
    ],
    "family": "heard",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "?"
   },
   {
    "opener": "You know",
@@ -695,7 +748,8 @@
    "family": "know",
    "status": "POOL",
    "source": "opener_pool_r2.py",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "You know the thing with",
@@ -707,7 +761,8 @@
    ],
    "family": "thing",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I wonder if",
@@ -720,7 +775,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Maybe",
@@ -733,7 +789,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "I wonder why",
@@ -746,7 +803,8 @@
    "family": null,
    "status": "GEORG 23.10.",
    "source": "Chat Georg",
-   "note": "Frage-Form; Kartenzeile wird zur Frage"
+   "note": "Frage-Form; Kartenzeile wird zur Frage",
+   "ending": "."
   },
   {
    "opener": "The stars mention",
@@ -758,7 +816,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "What if",
@@ -771,7 +830,8 @@
    "family": null,
    "status": "POOL",
    "source": "opener_pool_r2.py",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "?"
   },
   {
    "opener": "You would think",
@@ -783,7 +843,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "The official explanation is",
@@ -796,7 +857,8 @@
    ],
    "family": "official",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Apparently",
@@ -809,7 +871,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Believe it or not,",
@@ -822,7 +885,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Here's the thing,",
@@ -835,7 +899,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "I'm telling you,",
@@ -848,7 +913,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Turns out",
@@ -861,7 +927,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "The thing about",
@@ -873,7 +940,8 @@
    ],
    "family": "thing",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "They wrote songs about",
@@ -885,7 +953,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Everyone agrees",
@@ -897,7 +966,8 @@
    ],
    "family": "official",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "There are two kinds of people",
@@ -910,7 +980,8 @@
    "family": null,
    "status": "P43 OP-18 TUNE",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Slot A/B"
+   "note": "Slot A/B",
+   "ending": "."
   },
   {
    "opener": "True story",
@@ -923,7 +994,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Exactly. And if",
@@ -936,7 +1008,8 @@
    "family": null,
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
-   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)",
+   "ending": "."
   },
   {
    "opener": "So what you mean is",
@@ -949,7 +1022,8 @@
    "family": null,
    "status": "P43 UP-07 TUNE",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Dialog"
+   "note": "Dialog",
+   "ending": "."
   },
   {
    "opener": "That is not",
@@ -962,7 +1036,8 @@
    "family": "retort",
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
-   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)",
+   "ending": "."
   },
   {
    "opener": "That is not X. That is",
@@ -975,7 +1050,8 @@
    "family": null,
    "status": "P43 UP-04 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Dialog; X = Wort des Vorredners"
+   "note": "Dialog; X = Wort des Vorredners",
+   "ending": "."
   },
   {
    "opener": "You call that",
@@ -989,7 +1065,8 @@
    "family": "retort",
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
-   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)",
+   "ending": "?"
   },
   {
    "opener": "You said",
@@ -1002,7 +1079,8 @@
    "family": null,
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
-   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)"
+   "note": "Dialog: greift das Wort des Vorredners auf (P43 UP)",
+   "ending": "."
   },
   {
    "opener": "Fair. But",
@@ -1015,7 +1093,8 @@
    "family": null,
    "status": "P43 UP-05 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Dialog"
+   "note": "Dialog",
+   "ending": "."
   },
   {
    "opener": "Ever notice how",
@@ -1028,7 +1107,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "?"
   },
   {
    "opener": "Funny thing is,",
@@ -1041,7 +1121,8 @@
    "family": null,
    "status": "KANDIDAT 24.10. (Satz-Opener, Freigabe Georg/WS0)",
    "source": "Deck-Songs nach WS-NPC-Befund 24.10.",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "Did you ever try",
@@ -1055,7 +1136,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "unterstellt Handlung; nur vor Handlungskarten"
+   "audit_reason": "unterstellt Handlung; nur vor Handlungskarten",
+   "ending": "?"
   },
   {
    "opener": "Here comes",
@@ -1068,7 +1150,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Welcome to",
@@ -1082,7 +1165,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Bühnen-/Ansageformel (R4 C9), behauptet Ort und Publikum"
+   "audit_reason": "Bühnen-/Ansageformel (R4 C9), behauptet Ort und Publikum",
+   "ending": "."
   },
   {
    "opener": "You played",
@@ -1096,7 +1180,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "behauptet eine Spielsituation; im Tratsch/Song meist falsch"
+   "audit_reason": "behauptet eine Spielsituation; im Tratsch/Song meist falsch",
+   "ending": "."
   },
   {
    "opener": "You wanted",
@@ -1109,7 +1194,8 @@
    "family": null,
    "status": "P43 FW-02 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Slot = Erwartung"
+   "note": "Slot = Erwartung",
+   "ending": "."
   },
   {
    "opener": "You'll laugh, but",
@@ -1121,7 +1207,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "From the back row",
@@ -1133,7 +1220,8 @@
    ],
    "family": null,
    "status": "SL NEW_028",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "Picture this",
@@ -1146,7 +1234,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "You know something I do not",
@@ -1158,7 +1247,8 @@
    ],
    "family": null,
    "status": "P43 FW-06 TUNE",
-   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "ending": "."
   },
   {
    "opener": "You look like someone who",
@@ -1173,7 +1263,8 @@
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
    "note": "Risiko",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Unterstellung ans Gegenüber, lenkt ab"
+   "audit_reason": "Unterstellung ans Gegenüber, lenkt ab",
+   "ending": "."
   },
   {
    "opener": "You with the card in your hand",
@@ -1187,7 +1278,8 @@
    "status": "GESTRICHEN (Georg 24.10.)",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "GESTRICHEN",
-   "audit_reason": "Georg 24.10.: überspezifisch, lenkt von der Karte ab"
+   "audit_reason": "Georg 24.10.: überspezifisch, lenkt von der Karte ab",
+   "ending": "."
   },
   {
    "opener": "I still think about",
@@ -1199,7 +1291,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "I think I remember",
@@ -1212,7 +1305,8 @@
    "family": null,
    "status": "SL OPR3_045",
    "source": "OPENER_ARC_MODEL_R1 §8.2",
-   "note": "Fehlerinnerung erlaubt (V-327)"
+   "note": "Fehlerinnerung erlaubt (V-327)",
+   "ending": "."
   },
   {
    "opener": "Remember",
@@ -1225,7 +1319,8 @@
    "family": null,
    "status": "POOL",
    "source": "opener_pool_r2.py",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "No wait",
@@ -1237,7 +1332,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "No, wait",
@@ -1250,7 +1346,8 @@
    "family": null,
    "status": "P43 OP-24 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "= No wait (POOL)"
+   "note": "= No wait (POOL)",
+   "ending": "."
   },
   {
    "opener": "I used to believe",
@@ -1263,7 +1360,8 @@
    "family": null,
    "status": "POOL",
    "source": "opener_pool_r2.py",
-   "clause_ok": true
+   "clause_ok": true,
+   "ending": "."
   },
   {
    "opener": "If only someone had warned",
@@ -1275,7 +1373,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "But the margin reads",
@@ -1287,7 +1386,8 @@
    ],
    "family": null,
    "status": "R2 OPR3_074",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "Off the record",
@@ -1299,7 +1399,8 @@
    ],
    "family": "secret",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Strictly between us",
@@ -1312,7 +1413,8 @@
    ],
    "family": "secret",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Don't tell anyone about",
@@ -1324,7 +1426,8 @@
    ],
    "family": "secret",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Nobody came back for",
@@ -1336,7 +1439,8 @@
    ],
    "family": "nobody",
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Nobody warned us about",
@@ -1348,7 +1452,8 @@
    ],
    "family": "nobody",
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Stand back for",
@@ -1360,7 +1465,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Against all odds",
@@ -1372,7 +1478,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "And then it gets worse",
@@ -1385,7 +1492,8 @@
    "family": null,
    "status": "P43 UP-10 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Achtung KayfabeTip 1 ('and then'): nur Song-extern/Tratsch"
+   "note": "Achtung KayfabeTip 1 ('and then'): nur Song-extern/Tratsch",
+   "ending": "."
   },
   {
    "opener": "Behind the locked door",
@@ -1400,7 +1508,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundener Ort"
+   "audit_reason": "erfundener Ort",
+   "ending": "."
   },
   {
    "opener": "Here is something nobody asked for",
@@ -1414,7 +1523,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Selbstkommentar, lang, lenkt ab"
+   "audit_reason": "Selbstkommentar, lang, lenkt ab",
+   "ending": "."
   },
   {
    "opener": "This one has a rule",
@@ -1428,7 +1538,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "lenkt auf Regel/Mechanik (S6)"
+   "audit_reason": "lenkt auf Regel/Mechanik (S6)",
+   "ending": "."
   },
   {
    "opener": "My goldfish insists on",
@@ -1442,7 +1553,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundene Situation, lenkt ab"
+   "audit_reason": "erfundene Situation, lenkt ab",
+   "ending": "."
   },
   {
    "opener": "The deck insists on",
@@ -1456,7 +1568,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Meta-Situation Deck, lenkt von der Karte ab"
+   "audit_reason": "Meta-Situation Deck, lenkt von der Karte ab",
+   "ending": "."
   },
   {
    "opener": "Agree, or tell me why not",
@@ -1468,7 +1581,8 @@
    ],
    "family": null,
    "status": "GEORG/R2-Kandidat",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Backstage someone muttered",
@@ -1480,7 +1594,8 @@
    ],
    "family": null,
    "status": "SL OPR3_050",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "Behind the mirror",
@@ -1494,7 +1609,8 @@
    "status": "GEORG/R2-Kandidat",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "erfundener Ort"
+   "audit_reason": "erfundener Ort",
+   "ending": "."
   },
   {
    "opener": "I am performing a card. The card does not care",
@@ -1509,7 +1625,8 @@
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
    "note": "lang",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Meta, lang"
+   "audit_reason": "Meta, lang",
+   "ending": "."
   },
   {
    "opener": "Not a metaphor",
@@ -1521,7 +1638,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "The deck says",
@@ -1533,7 +1651,8 @@
    ],
    "family": null,
    "status": "P43 FW-08 KEEP",
-   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1"
+   "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
+   "ending": "."
   },
   {
    "opener": "This card is doing it whether you like it or not",
@@ -1548,7 +1667,8 @@
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
    "note": "lang",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Meta, lang, Regelbezug"
+   "audit_reason": "Meta, lang, Regelbezug",
+   "ending": "."
   },
   {
    "opener": "This is not a metaphor. Unfortunately",
@@ -1561,7 +1681,8 @@
    "family": null,
    "status": "P43 OP-19 KEEP",
    "source": "OPENER_RESEARCH_INVENTORY_R1 §2.1",
-   "note": "Familie mit Not a metaphor"
+   "note": "Familie mit Not a metaphor",
+   "ending": "."
   },
   {
    "opener": "Anyway",
@@ -1573,7 +1694,8 @@
    ],
    "family": null,
    "status": "POOL",
-   "source": "opener_pool_r2.py"
+   "source": "opener_pool_r2.py",
+   "ending": "."
   },
   {
    "opener": "Which brings us to",
@@ -1587,7 +1709,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "Moderationsbrücke; nur Song-Uptake, nicht Tratsch"
+   "audit_reason": "Moderationsbrücke; nur Song-Uptake, nicht Tratsch",
+   "ending": "."
   },
   {
    "opener": "Before we continue",
@@ -1601,7 +1724,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "STREICHEN-Vorschlag",
-   "audit_reason": "Moderationssituation"
+   "audit_reason": "Moderationssituation",
+   "ending": "."
   },
   {
    "opener": "Hold that thought",
@@ -1613,7 +1737,8 @@
    ],
    "family": null,
    "status": "R2 NEW_040",
-   "source": "OPENER_ARC_MODEL_R1 §8.2"
+   "source": "OPENER_ARC_MODEL_R1 §8.2",
+   "ending": "."
   },
   {
    "opener": "Meanwhile elsewhere",
@@ -1627,7 +1752,8 @@
    "status": "POOL",
    "source": "opener_pool_r2.py",
    "audit_2026_10_24": "PRÜFEN",
-   "audit_reason": "behauptet Ortswechsel; nur Song"
+   "audit_reason": "behauptet Ortswechsel; nur Song",
+   "ending": "."
   }
  ]
 }

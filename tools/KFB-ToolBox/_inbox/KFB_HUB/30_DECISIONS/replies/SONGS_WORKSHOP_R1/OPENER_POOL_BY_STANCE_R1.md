@@ -8,6 +8,7 @@ Georg 23.10.: Chatterbox und Tratsch wie Stand-up: Gerüchte, Klatsch, wilde The
 - Je Karte ein festes Triplet; Abwechslung nur über den Opener.
 - into_title: Opener + Kartentitel bilden einen Satz. own_clause: eigener Satz mit Punkt oder Komma (nie Doppelpunkt, SSOT S1), dann die Karte. Nie zwei lose Wörter ohne Satz.
 - Kein Opener zweimal in einem Song/Dialog; Familienabstand >= 10 (V-280). Frage und Behauptung abwechseln.
+- Satzende: Feld ending. Bei ending="?" endet die ganze Zeile mit Fragezeichen (letztes Satzzeichen der Kartenzeile wird ersetzt), z. B. What if The Finished City is already built …?
 - Kartenpassung: 'I once met'/'My neighbour is' nur vor Personen/Figuren, 'Ever tasted' nur vor Essbarem, 'I found a' nur vor Objekt-/Textkarten, 'You played' nur vor spielbaren Karten.
 - Status: POOL = im Prüfskript freigegeben; alles andere sind Kandidaten bis zur Freigabe durch Georg/WS0.
 
