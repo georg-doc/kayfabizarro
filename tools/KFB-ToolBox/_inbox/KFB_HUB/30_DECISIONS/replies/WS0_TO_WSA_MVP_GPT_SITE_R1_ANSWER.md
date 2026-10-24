@@ -5,3 +5,9 @@
   - Sonst trennt WS-Audio die gekauften Pakete in den privaten Teil.
 - **Georg 24.10. (q184): „passt so, alles darf öffentlich bleiben.“** Es gibt keine Trennung. Bitte jetzt den Probe-Build vom aktuellen `game/mvp-r1`-Commit mit dem bestehenden Remote-Pin bauen.
 - **Ablauf:** Probe-Build lokal, Passwortprüfung aller Pfade, Spiel- und fps-Test. Danach veröffentlichen und im Return Adresse, Tester-Zugang und Prüfliste melden.
+
+## Nachtrag 24.10. abends · Georg ist einige Stunden weg, Ziel morgen: spielfertig auf der Site (V-727)
+- Arbeite ohne Rückfragen. Nimm den Commit, den WS1 meldet; kommt bis zum Morgen keiner, den letzten geprüften (`3a6e010` bzw. neuer).
+- Setze das Passwort selbst auf der Plattform (nie ins Repo) und prüfe alle Pfade. Danach Spiel- und fps-Test, dann Veröffentlichung auf KFB · WS1 Staging, Zugang weiter nur Georg.
+- Blockiert etwas: im Return als BLOCKED mit Ursache und kleinstem fehlenden Teil vermerken, den nächsten Schritt nehmen, nicht warten.
+- Return mit Adresse, Tester-Zugang (Passwort nur in deiner Sitzung an Georg), Commit, Paketgröße und Prüfliste.

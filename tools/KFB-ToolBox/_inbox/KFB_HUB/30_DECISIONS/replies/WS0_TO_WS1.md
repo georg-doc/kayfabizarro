@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10. abends) · An ALLE (WS1 Lead und WS1b–e, WS-NPC, WS-Audio, Deck-Songs; WSA, WSB): Georg ist einige Stunden weg, Ziel morgen: spielfertige Version auf der GPT-Site (V-727)
+- **Arbeitet selbstständig und ohne Rückfragen.** Bei Unklarheit nehmt die vorsichtigere Lösung, haltet den Grund im Status fest und macht weiter. Wo Georg wählen soll, Varianten A/B nebeneinander liefern und den Standard unverändert lassen. Georg stimmt morgen mit WS0 ab.
+- **Blockiert etwas:** im Status als BLOCKED mit Ursache und kleinstem fehlenden Teil markieren und den nächsten Schritt nehmen. Nie warten.
+- **Reihenfolge zur Site (wichtigster Strang):**
+  1. WS1-Lead: ws-audio/r1 (V-696) und die laufenden Merges in `ws1/mvp-r1`, volle Testreihe, Spiegel auf `game/mvp-r1`, den Commit im Status melden.
+  2. WSA: Probe-Build von genau diesem Commit mit dem bestehenden Remote-Pin (der Ton bleibt öffentlich, Georg q184). Passwort selbst auf der Plattform setzen, Passwortprüfung aller Pfade, Spiel- und fps-Test, dann auf **KFB · WS1 Staging** veröffentlichen (Zugang weiter nur Georg). Im Return stehen Adresse, Tester-Zugang (Passwort nicht ins Repo) und Prüfliste.
+  3. Gibt es bis zum Morgen keinen neueren geprüften Commit, nimmt WSA den letzten geprüften (`3a6e010` bzw. den zuletzt gemeldeten).
+- **Daneben produktiv weiter**, ohne die Site zu gefährden: neue Fassungen nur hinter Schaltern, Standard erst nach Georgs Blick. Übernahmekarten (V-713) für alle WS1-Sitzungen anlegen, Übergabe-Abschnitt MVP und Konzept R1.4 vorbereiten (Ziel Do 29.10.).
+- **Grenzen wie immer:** nichts löschen, nicht nach main mergen, keine Credits bei ElevenLabs oder Suno, gekaufte Figuren bleiben privat.
+- **WSB:** Auto-Plan N36 Überarbeitung → N37 Farbfluss-Look → N38 UFO-Landung (V-722), schwere Läufe nur bei ≥ 40 GB frei.
+
 # NEU OBEN (24.10.) · An WS1 und WS-Audio: Site-Stopper gelöst (V-725)
 - Georg 24.10.: Der ganze Ton-Bestand (Musik und Effekte) darf öffentlich bleiben. Es gibt keine Trennung. WSA baut den Probe-Build vom aktuellen `game/mvp-r1` mit dem bestehenden Remote-Pin.
 - **WS1:** Bitte den Commit melden, den WSA nehmen soll (3a6e010 oder neuer, nach Testreihe).
