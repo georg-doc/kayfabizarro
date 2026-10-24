@@ -10104,6 +10104,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-708",
+   "date": "2026-10-24",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Prozedurale Welt-Komposition (Georg 24.10., Webchat, Draft-PR 447, skills/chat/masterplan/KFB_PROCEDURAL_TERRAIN_WFC_OSM_LANDMARK_NPC_COMPOSITION_R1_2026-10-24.md): echte Stadtviertel (zuerst Köln Dom/Zentrum aus dem vorhandenen OSM City Lab, Paris/Eiffel erst danach) erscheinen als vorbereitete, georeferenzierte Zonen in der prozeduralen KFB-Welt, innen bleiben Straßen, Landmarken und Skyline stimmig; WFC und andere Constraint-Verfahren nur lokal für Auswahl, Übergänge und Ergänzungen, nie als Umordnung echter Gebäude oder als zweiter Höhen- bzw. Straßen-Owner; Biome, Genii Loci, NPC-Szenen mit Props und Aktivitäten, Goo-Zustände, LOD. Kein Engine-Wechsel (Godot höchstens später als Vergleich). WS1 nimmt es zusammen mit V-705 in das Terrain-Konzept auf: Matrix KEEP/ADAPT/REJECT je Owner und eine billige Kompositionsprobe (Route und POIs von oben), Bau erst nach dem MVP und Georgs Freigabe.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Baut auf vorhandenen KFB-Werkzeugen auf (OSM City Lab, Landmark Overrides, Resident Atlas) statt neu; eine Terrain-Planung mit zwei Quellen statt zwei Baustellen.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

@@ -1,5 +1,23 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS1 (Lead): zweite Quelle fürs Terrain-Konzept, Welt-Komposition mit echten Stadtvierteln (V-708)
+- **Quelle:** Draft-PR #447, Branch `planning/kfb-procedural-world-composition-wfc-osm-2026-10-24`, Datei `skills/chat/masterplan/KFB_PROCEDURAL_TERRAIN_WFC_OSM_LANDMARK_NPC_COMPOSITION_R1_2026-10-24.md`. §1 enthält Georgs Ziele, §4 bis §10 die Vorschläge des Webchats.
+- **Kern:**
+  - Echte Stadtviertel erscheinen als vorbereitete, georeferenzierte Zonen in der prozeduralen Welt. Innen bleiben Straßen, Landmarken und Skyline stimmig.
+  - Zuerst Köln Dom/Zentrum aus dem vorhandenen OSM City Lab (`tools/osm-city-lab/`, Landmark Overrides). Paris mit Eiffelturm erst danach; dafür gibt es noch keinen Datensatz.
+  - WFC bzw. andere Constraint-Verfahren nur lokal: Auswahl, Übergänge, Ergänzungen. Nie eine Umordnung echter Gebäude, nie ein zweiter Höhen- oder Straßen-Owner.
+  - Dazu Biome, Genii Loci, NPC-Szenen mit echten Props und Aktivitäten, Goo-Zustände und LOD.
+- **Zusammen mit V-705** (Splats, Gutter, Portale) ist das **ein** Terrain-Konzept aus zwei Quellen, nicht zwei Baustellen.
+- **Bitte:**
+  1. Eine Matrix KEEP/ADAPT/REJECT je Owner gegen euren aktuellen Terrain-Code (Doc §2 und §10).
+  2. Eine billige Kompositionsprobe ohne Laufzeit-Bau: Route und POIs von oben für eine „Kölner Tasche“ in der KFB-Landschaft, mit mindestens einer erreichbaren Arbeits- oder Begegnungs-Schleife eines Bewohners.
+  3. Beides als Abschnitt im Status.
+- **Leitplanken:**
+  - Kein Engine-Wechsel. Godot höchstens später als Vergleich.
+  - Ein Owner für Höhe und Kontakt, Track Core für Straßen.
+  - Intent First (V-690). Gebaut wird erst nach dem MVP und nach Georgs Freigabe.
+  - Die laufende Terrain-Form-Arbeit nicht unterbrechen.
+
 # NEU OBEN (24.10.) · An WS1: Kassette als Player (V-707)
 - Georg mag die Kassette als Player (WSB N34 r4): plastische Tasten, die beim Drücken einsinken, Glanz nur am Rand, Symbole cremeweiß mit dunkler Kontur.
 - Die Tastenfarbe folgt der Tageszeit, am Tag Orange, nachts Türkis, und ist einstellbar wie die übrigen HUD-Farben. Werte: `50_BLENDER/N33/data/kfb_hud_readability.r1.json` → `controlTheme` (Themes mit hi, mid und lo, Symbol, Kontur, Glanz). Bogen: `N34/_privat_kauf_asset/out/N34_r4_kassette.png` (privat).
