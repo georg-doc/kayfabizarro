@@ -2,7 +2,7 @@
 
 Stand 24.10.2026 · Format nach `sessions/lead.md` (V-713).
 
-Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfabizarro `ws-npc/status` (neueste Abschnitte oben, zuletzt §12); neuere Stände stehen im Lead-Status `WS1_STATUS.md`.
+Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfabizarro `ws-npc/status` (neueste Abschnitte oben, zuletzt §13 @731cd14); neuere Stände stehen im Lead-Status `WS1_STATUS.md`.
 
 ## 1 · Auftrag und Grenzen
 
@@ -49,8 +49,9 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 - **NPC-Tests:**
   - `npm run test:npc` (Unit und Browser)
   - Unit einzeln: `node test/unit/<name>.mjs`, u. a. tratschSim, chatterCues, clayKit, flufferKinds, characterRegistry
-- **Volle Reihe:** `npm test` plus greet, chatter, band, fluffer, fluffers, steps, squad, toyko, gift.
-  - Lokale Liste: `test/out/npc/suite.txt` mit `suite.sh` (gitignored).
+- **Volle Reihe:** `bash test/npc-suite.sh > test/out/npc/suite_result.txt`.
+  - Die Liste steht in `test/npc-suite.txt` (75 Tests: `npm test` plus die NPC-, S5- und D1-Browser-Tests).
+  - Je Test eine Zeile `Exit Dauer Datei Ergebnis`; rot zeigt `grep -v "^0 " test/out/npc/suite_result.txt`.
   - Letzter Lauf: 73/75.
 - **Tratsch Stufe 0:**
   - `python3 scripts/tratsch/sync-tratsch-data.py [<commit>]`
@@ -107,6 +108,7 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
   - Satzbild V-699.
 - **Ablauf:**
   - Vor jedem Commit `ListAgents`.
+  - In zsh beim Push `${C}:refs/…` schreiben, nie `$C:refs`; vorher prüfen, dass `C` gesetzt ist. Ein leerer Quell-Ref löscht den Zielzweig.
   - Kein Merge nach main bzw. auf Lead-Zweige; der Lead merged.
   - Pushes nur mit Georgs Bestätigung.
   - Fragen an Georg über den Lead.
@@ -114,4 +116,11 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 
 ## 7 · Nächster sinnvoller Schritt
 
-Auf das Startzeichen des Leads warten: Tratsch-Lauf 3 mit den Trio-Decks oder den Fahrplan für Stufe 1. Bis dahin den Status §13 (24.10.) auf `ws-npc/status` nachtragen. Er soll Sprech-Anlässe, Tratsch-Lauf 2, Ruf-Grammatik und V-662 enthalten.
+Auf das Startzeichen des Leads warten: Tratsch-Lauf 3 mit den Trio-Decks oder den Fahrplan für Stufe 1.
+
+Der Lauf 3 geht so:
+1. `sync-tratsch-data.py <commit>` mit dem Trio-Stand ab @b2a38438.
+2. `stage0.mjs` laufen lassen.
+3. README mit T1–T15 neu schreiben.
+
+Die Protokolle im Repo stammen noch aus Lauf 2. Der Code ist inzwischen weiter (Bongo. als weiches Nein, Opener-Sperren).
