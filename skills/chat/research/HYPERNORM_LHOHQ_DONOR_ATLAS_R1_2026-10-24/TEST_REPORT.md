@@ -46,3 +46,11 @@ No software build, unit tests, browser integration tests, deploy/CI run or human
 
 ## Additive research integrity update · 2026-10-24
 The original **12/12** document checks refer to R1 before this Georg decision, not a new visual test. The visual priority correction supersedes the wrong earlier R1 hierarchy; no runnable effects, new screenshots, timing measurements or audiovisual QA claimed.
+
+## R1B design-direction audit after Georg's explicit correction · 2026-10-24
+- Updated **7 research files verified from actual GitHub branch** (new correction file, revised brief, revised concepts, this test report, revised index proposal, plus unchanged source/relations records checked; final Return/changelog follow).
+- **16/16 targeted readback and document-invariant checks PASS**: pure visual art independent of source claims; PURE_VISUAL; one Audio owner; actual visual donor isolation requirement; 10-second loops + 30–90-second film treatments; H13 Engine v0 compositional-failure nuance; permitted authored flicker; old hierarchy removed; three equal planes; stroboscopic wording corrected; semantic gate optional; index priority; retained 16 sources/15 claims, 7+8 edges, 14 original research proposals; no claimed implementation.
+- Scope of PASS: structural/textual assertions, **not a motion/visual/performance/product acceptance**.
+- Count from R1: 12/12 unchanged original structure checks; count for R1B correction: **16/16**. They are separate test runs, not evidence of 28 browser/product tests.
+- Original main LHOHQ page, image frames, actual H13 live donor, exported motion, audio latency and rights remain NOT_TESTED.
+- Binding research addendum: `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`. It supersedes R1's downgrade of provocative audiovisual montage to mere surface.
