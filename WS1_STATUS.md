@@ -1,7 +1,49 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §170.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§170 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §171.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§171 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 171 · 25.10. · Georgs Wahl HUD (Boost A, Almanach A, Säule zu Fuß, Höhe über Grund) · WS0-Fix übernommen (mvp 28f200a) · V-746 verteilt: Konsolidierte Auftragsliste WS1
+
+### 1 · Georgs Wahl heute (bitte ins Register)
+- **Tempo-Säule:** Boost **A „Überkochen“**. **Säule auch beim Fliegen zu Fuß**, **Flughöhe über Grund**.
+- **Almanach:** **A Zoom** statt Seitenwechsel.
+- Umsetzung bei WS1e als Paket 7: B-Varianten und Schalter `boost=`/`alm=`/`fusstempo=` entfernen, Elan-Telemetrie im M1-Wirt additiv, Höhe über Grund aus der vorhandenen Höhenfunktion.
+
+### 2 · WS0-Fix übernommen
+`game/mvp-r1-ws0` @0f48d11 (HUD 3D im `SITE_HASH`, nackte Site-Adresse lädt neu) als mvp **28f200a**, contract-static PASS. Danke für den Fund: Die Importe lesen ihre Schalter vor dem Umschreiben, ohne Neuladen gab es grüne Wiese ohne HUD.
+- Das neue Site-Paket `site/mvp-r2-dist` @e76c26a (von euch gebaut aus @2b96e8a) ist damit deckungsgleich mit unserem Stand. Wer künftig Site-Pakete baut: Vorschlag WS0 (wie R2) oder Lead auf Zuruf. Bitte festlegen, damit nicht beide bauen.
+- V-743 (HUD 3D Standard) ist an WS1e gegeben: Code und Tests auf „ohne Schalter“ prüfen, `hud=clay` bleibt Vergleich.
+
+### 3 · V-746/V-747 Prozedurale Welt: verteilt (Quelle `WS0_TO_WS1_PROZEDURALE_WELT_STAND_R1.md`)
+| Slice/Schritt | Owner | Erster Schritt | Stand |
+|---|---|---|---|
+| Schritt 0: Konzept R1.7 + `PROZEDURALE_WELT_LUECKEN_R1.md` | WS1b (Lead legt auf `ws1/status`) | Gliederung S1–S3 einarbeiten, Lücken je Baustein | beauftragt; **WS1b wartet seit gestern auf eine Freigabe in seinem Fenster (Georg)** |
+| S1 Fortbewegung (Auto rufen, einsteigen, verlassen, Flug; ein Zustandsautomat) | WS1d | Bild-Paket S1 mit 6 Keyframes (V-740), parallel `src/m1/travelState.js` hinter `travel=1`, danach M2Car zur Laufzeit statt Neuladen | angenommen, Keyframes laufen |
+| S1 Fahrzeug-Symbol im HUD 3D | WS1e | Style-Frame des Symbols, nach Paket 7 | beauftragt |
+| S1 Richtung `build` in `kfb-fluff-suck` (V-533) | WS1d (Modul-Owner ist der Lead, freigegeben, additiv, `suck` bleibt) | nach den Keyframes | freigegeben |
+| S1 Fahrer bis zur Hüfte im Dach | WSB J-7 (über WS0) | Sitz-Anker, Griffpunkte, Hineinhüpf-Clip | bis dahin Platzhalter-Sitz |
+| S1 Flugphysik auf Elan-Basis | WS1d, Beratung WS1b (Elan-Bundle V-539) | im Zustandsautomaten verbinden (Figur `elan.js`, Racer `racerFlight.js`) | – |
+| S2 endlose Welt (Hauptwelt, Biome, Paletten, Himmel nach Biom, Stadt-Ebene nur über N36) | WS1b | Bild-Paket S2 (Biom-Übergang, Palette, Himmel, Kölner Tasche vorher/nachher) | wie Schritt 0 |
+| S2 Musik/Klangbetten je Biom | WS-Audio | Biom-Signale mit WS1b abstimmen | beauftragt |
+| S3 Regie R0 (`kfb.scene/1`, Raster, Freigabe-Status) | WS1b + WS-NPC | Bild je Modul-Typ, Mechanik hinter Schalter | beauftragt |
+| S3 erste Module (Bewohner-Begegnung, Band/Disco als Szene, ein Diorama) | WS-NPC | – | beauftragt |
+- Chatterbox: nur Blasen, Silben bleiben hinter `chat=syl`, **kein weiterer Tune** (an WS-Audio und WS-NPC).
+- Regeln V-740 (Bild-Paket vor Sichtbarem) und V-741 (über WS0 weitergegebenes Ja gilt) an alle WS1-Sitzungen gegeben.
+
+### 4 · Was sonst offen bleibt (damit nichts verloren geht)
+- **Abnahme im Hub** (`abnahme/ws1` @d6aab30):
+  - Chatter-Silben TUNE (jetzt zurückgestellt nach V-746, nur zur Kenntnis).
+  - Tratsch-Trio (Empfehlung: Standard nach Opener-Entscheid).
+  - Satz-Opener + Sperrliste (Deck-Songs).
+  - Wasser R2/Grauwert/Unterwasser (WS1c).
+  - Käfer 35/40 % (WS1d, Empfehlung 35).
+  - Kit-Knete (WS-NPC, Empfehlung Stufe 2).
+  - HUD Paket 6 Einstellungen (Frage „passt so?“).
+- **Spec modulare Site:** WS1-Gegencheck in §169 (TUNE an §2, §3, §7). Erste Lead-Slice (Leak-Scan, Channel-Schreiber, Chunks) nach Georgs Ja zur Spec.
+- **Kassette r5 / `controlTheme`:** Stand wird nachgetragen; `assets/private` steht jetzt auf 0e630a3.
+- **orbit-Test** wackelt unter Last (Kamera-Owner C1).
+- **Deck-Analyzer:** Übernahmekarte und Pilot hängen an einer Freigabe in seinem Fenster.
 
 ## 170 · 25.10. · Alles zur Abnahme gebündelt (`abnahme/ws1` @d6aab30) · gemergt: Chatter-TUNE, tr1-Satzbau, Säule R3, HUD Pakete 5 und 6 · Spiegel game/mvp-r1 @2b96e8a
 
