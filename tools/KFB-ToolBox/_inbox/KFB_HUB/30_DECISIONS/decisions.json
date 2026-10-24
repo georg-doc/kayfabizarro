@@ -9658,7 +9658,7 @@
    "date": "2026-10-22",
    "area": "Audio",
    "verdict": "DECISION",
-   "text": "Chatterbox Spec R2 Fragen (Georg, Hub q161-q164): L2-Silbenmotiv für Nahdialog und Hauptfiguren ja; Musikstile als Gruppen-Ebene und Insel-Grundton wie vorgeschlagen (O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch); Beziehung als Harmonie ja; Bandbreiten-Test mit allen 12 Klangfamilien (ca. 5.000 Credits). Erzeugung erst nach Georgs Go im Chat.",
+   "text": "Chatterbox Spec R2 Fragen (Georg, Hub q161-q164): L2-Silbenmotiv für Nahdialog und Hauptfiguren ja; Musikstile als Gruppen-Ebene und Insel-Grundton wie vorgeschlagen (O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch); Beziehung als Harmonie ja; Bandbreiten-Test mit allen 12 Klangfamilien (ca. 5.000 Credits). Go A+B von Georg im Chat 24.10., erzeugt: chatter_families_r3_orakel (F14 Glasharmonika, F15 Okarina, F16 Oberton, F17 Summchor, F18 rückwärts, F19 Klangschale, je 14 Gefühlslagen inkl. Rufe nach V-712, 84 Clips, -16 LUFS, laut API 10 Credits je Clip) und music_probe_r1 (M1 Brainwave-Fläche, M2 Endlose Steigung, je 60 s, music_v2_5, -18 LUFS); Kontostand danach 21.131 von 90.000. Werkzeug music_gen.py.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -10272,7 +10272,7 @@
    "id": "V-719",
    "date": "2026-10-24",
    "area": "Audio",
-   "verdict": "TBD",
+   "verdict": "DECISION",
    "text": "Credits-Plan (Georg 24.10.: Suno-Credits für Songs schonen, ElevenLabs-Credits nutzen): Suno nur drei Betten (S2 Atem-Bett für den Living Garden, S8 Dystopie-Drone, S3 Erd-Resonanz für Orakel bzw. Threshold), die übrigen neun Karten geparkt. ElevenLabs zuerst: (A) sechs Orts-Stimmenfamilien für Genius loci bzw. Orakel nach replies/RESEARCH_COUNSELOR_ORACLE_R1.md §4 (Glasharmonika, Ton-Okarina, Obertongesang, tiefer Summchor, rückwärts gehauchter Vokal, Klangschale) im Melodica-Raster je 13 Clips, etwa 2.800 Credits; (B) Probe Eleven Music für zwei Betten statt Suno, je etwa 1 Minute, laut Fremdquellen etwa 900 Credits pro Minute; exakte Frequenzschichten bleiben Offline-Render (V-718). Erzeugung erst nach Georgs Go im Chat.",
    "values": {},
    "owner": "Lab",
@@ -10396,7 +10396,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1187",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1188",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

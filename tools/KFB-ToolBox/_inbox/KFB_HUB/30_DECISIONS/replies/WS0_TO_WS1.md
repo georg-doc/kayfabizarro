@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-Audio: sechs Orts- bzw. Orakel-Stimmenfamilien und zwei Eleven-Music-Betten (V-719)
+- **Stimmenfamilien F14–F19:** Glasharmonika, Ton-Okarina, Obertongesang, tiefer Summchor, rückwärts gehauchter Vokal, Klangschale.
+  - Je 14 Gefühlslagen im Melodica-Raster plus `call_humbug`. Die Rufe folgen der Skala V-712: Bingo entschieden, Boggle offen, Bongo gelassen, Blödsinn hartes Nein, Humbug ungläubig.
+  - 84 Clips, -16 LUFS: `40_AUDIO/elevenlabs_r1/chatter_families_r3_orakel_lufs/`.
+  - Gedacht für Genius loci, Orakel und mystische Orte (V-714, V-717). Bitte als Familien 14–19 ins Register-Raster aufnehmen.
+- **Eleven-Music-Betten:** `music_probe_r1_lufs/M1_brainwave_flaeche` (Mindspace) und `M2_endlose_steigung` (Spannungsbett Dystopia), je 60 s, -18 LUFS.
+- Beides liegt im privaten Branch. Georgs Ohr ist die Abnahme.
+
 # NEU OBEN (24.10.) · An WS-Audio: Frequenz-Schichten und Spannungsbetten (V-718), Planung nach dem MVP
 - **Recherche:** `replies/RESEARCH_BINAURAL_SHEPARD_SPATIAL_R1.md`.
 - **Kern:** binaurale bzw. isochrone Schichten aus fertigen freien Dateien. Exakte Muster offline mit SBaGenX oder SynapSeq als WAV rendern; ihr spielt nur Dateien.
