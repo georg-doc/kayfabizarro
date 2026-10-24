@@ -51,6 +51,12 @@ OPENER_WINDOW = 15   # B6 (R3.3): gleicher Opener frühestens nach 15 Songs
 INTRO_COOLDOWN = 3   # C9 (R3.3): gleicher Intro-Typ nicht zweimal in 3 aufeinanderfolgenden Songs
 
 
+def label_colon(s):  # V-700: FAIL nur für ein Etikett am Zeilenanfang („Broken Bridge: …“, „Escape Sequence:“) – vor dem Doppelpunkt stehen nur großgeschriebene Wörter bzw. #Nummern; ein Doppelpunkt mitten im Satz nach einer Hinführung bleibt erlaubt (Georgs BBBW-Text 24.10.)
+    if ";" in s: return True
+    if ":" not in s: return False
+    words = re.findall(r"[#\w'’-]+", s.split(":", 1)[0])
+    return bool(words) and all(w[0].isupper() or w[0].isdigit() or w[0] == "#" for w in words)
+
 def beats_of(text):
     return [b for b in text.strip().split("\n\n")]
 
@@ -173,8 +179,9 @@ def gate_lyrics(a):
     for i, b in enumerate(bs):
         if "\n" in b:
             F("C8", f"Beat {i}: mehrere Zeilen ohne Leerzeile: {b.splitlines()[0][:60]!r}")
-        if not b.strip().startswith("[") and (":" in b or ";" in b):  # V-700 (Georg 24.10.): Sätze mit Fluss, kein „Titel:“-Etikett – Doppelpunkte/Semikolons klingen nicht in Suno
-            F("C14", f"Beat {i}: Doppelpunkt/Semikolon statt Satz: {b.strip()[:70]!r}")
+        _pre = b.strip().split(":", 1)[0].strip().casefold()
+        if not b.strip().startswith("[") and label_colon(b.strip()) and _pre != str(deck.get("deckTitle") or deck.get("title") or "").strip().casefold():  # Intro „<Decktitel>: <Slogan>“ bleibt erlaubt (V-358)  # V-700 (Georg 24.10.): Sätze mit Fluss, kein „Titel:“-Etikett am Zeilenanfang, kein Semikolon – klingt nicht in Suno
+            F("C14", f"Beat {i}: Etikett mit Doppelpunkt bzw. Semikolon statt Satz: {b.strip()[:70]!r}")
         if b != b.strip() or not b:
             F("C8", f"Beat {i}: leer oder Leerraum am Rand (doppelte Leerzeile?)")
     body = bs[1:-1]

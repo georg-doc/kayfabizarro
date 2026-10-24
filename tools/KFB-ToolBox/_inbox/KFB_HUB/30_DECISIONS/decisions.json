@@ -9988,7 +9988,7 @@
    "date": "2026-10-24",
    "area": "Dialog",
    "verdict": "RULE",
-   "text": "Kartenzeilen sind ganze Sätze mit Fluss (Georg 24.10., wiederholt: Doppelpunkte führen in Suno immer zu FAILs): kurz, prägnant, Comic-Stil, Weglassungen erwünscht, aber ein Satz, der auch in Suno trägt; kein Titel-Etikett mit Doppelpunkt (Broken Bridge: ...), keine Semikolons, kein Telegramm; Satzform folgt der Karte und wechselt über das Deck. Ändert die Form aus TRIPLET_SET_SPEC_R2 (Goldens mit Doppelpunkt); Wortregeln bleiben. Mechanisch: triplet_set_check.py FAIL bei Doppelpunkt/Semikolon in Kartenzeilen, why/how gelten als Grammatik; song_gate.py C14.",
+   "text": "Kartenzeilen sind ganze Sätze mit Fluss (Georg 24.10., wiederholt: Doppelpunkte führen in Suno immer zu FAILs): kurz, prägnant, Comic-Stil, Weglassungen erwünscht, aber ein Satz, der auch in Suno trägt; kein Titel-Etikett mit Doppelpunkt am Zeilenanfang (Broken Bridge: ...), keine Semikolons, kein Telegramm; ein Doppelpunkt mitten im Satz nach einer Hinführung bleibt erlaubt (Georgs BBBW-Text 24.10.), ebenso das Intro Decktitel: Slogan; Satzform folgt der Karte und wechselt über das Deck. Ändert die Form aus TRIPLET_SET_SPEC_R2 (Goldens mit Doppelpunkt); Wortregeln bleiben. Mechanisch: triplet_set_check.py FAIL bei Etikett-Doppelpunkt bzw. Semikolon in Kartenzeilen, why/how gelten als Grammatik; song_gate.py C14.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -9997,6 +9997,36 @@
    "superseded_by": [],
    "why": "Die Telegramm-Form mit Doppelpunkt kam aus den eigenen Goldens der Spec und erzeugte immer wieder FAILs; deshalb Wächter im Prüfskript statt neuer Prosa.",
    "applies": "sofort"
+  },
+  {
+   "id": "V-701",
+   "date": "2026-10-24",
+   "area": "Audio",
+   "verdict": "SPEC",
+   "text": "Big Bad Brain Wrestling 01 (Georg 24.10.): Deephouse mit Trap brasileiro, 165 BPM, Georgs eigener Text als Golden für KFB-Crossover (Cut-up, absurd unpassend, aber plausibel und tanzbar) und für Satzfluss nach V-700; Kartennummern im Text nur hier als Wrestling-Ausnahme. Stems geerntet für die Chatterbox (erste elektronische Stems), STYLE und LYRICS in replies/SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md, Baustein in SUNO_SSOT. Dazu Georg: Yuka erst nach dem NPC-Stresstest 8/12/20 entscheiden (erst messen).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Repertoire um elektronische Stems erweitern und die KFB-Remix-Logik erneuern; Navigation nicht ohne gemessene Lücke erweitern.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-702",
+   "date": "2026-10-24",
+   "area": "Spiel",
+   "verdict": "BACKLOG",
+   "text": "Karten-Spekulation (Georg 24.10.): Figuren erschließen eine fremde Karte (schwebend, Billboard, später auf dem Terrain) mit ihrem Weltwissen und ihren Triplets, jede mit Pitch, Bedenken und Deutung, ohne Auflösung; Paarung nach Spannung (Conflict is king, z. B. Caveman Philosophie gegen Demon Lord Dystopia), Zuschauer, später Spieler-Deutung im Monkey-Island-Stil und Wächter-Mobs. Weltwissen und Weltsicht als Felder im Figuren-Register. Reihenfolge: Felder jetzt, Stufe A ohne Bild nach MVP-Site und Tratsch Stufe 1, dann im Spiel. replies/BACKLOG_CARD_SPECULATION_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Grundmechanik aus der Vorstufe sichern, bevor sie untergeht; baut auf Tratsch, Triplets und Begegnungs-Grammatik auf statt neuer Systeme.",
+   "applies": "später"
   },
   {
    "id": "V-427",
@@ -10106,7 +10136,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1170",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1172",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

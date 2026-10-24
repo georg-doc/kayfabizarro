@@ -38,6 +38,12 @@ except ImportError:
 SUFFIXES = ("'s", "s'", "ies", "es", "s", "ed", "d", "ing", "ly", "er", "est", "n't")
 WORD = re.compile(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*")
 
+def label_colon(s):  # V-700: FAIL nur für ein Etikett am Zeilenanfang („Broken Bridge: …“, „Escape Sequence:“) – vor dem Doppelpunkt stehen nur großgeschriebene Wörter bzw. #Nummern; ein Doppelpunkt mitten im Satz nach einer Hinführung bleibt erlaubt (Georgs BBBW-Text 24.10.)
+    if ";" in s: return True
+    if ":" not in s: return False
+    words = re.findall(r"[#\w'’-]+", s.split(":", 1)[0])
+    return bool(words) and all(w[0].isupper() or w[0].isdigit() or w[0] == "#" for w in words)
+
 def stems(w):
     w = w.lower().strip("'")
     out = {w}
@@ -73,8 +79,8 @@ def main(deck_path, set_path):
             seen_openers = {}
         if "(" in line or ")" in line:
             print(f"{row['line_no']:>3} FAIL Klammer im Sprechtext: {line}"); fail += 1
-        if kind == "card" and (":" in line or ";" in line):  # V-700 (Georg 24.10.): ganze Sätze mit Fluss, kein „Titel:“-Etikett, kein Telegramm mit Doppelpunkt/Semikolon – klingt nicht in Suno
-            print(f"{row['line_no']:>3} FAIL Doppelpunkt/Semikolon statt Satz (V-700): {line}"); fail += 1
+        if kind == "card" and label_colon(line):  # V-700 (Georg 24.10.): ganze Sätze mit Fluss, kein „Titel:“-Etikett, kein Semikolon-Telegramm – klingt nicht in Suno
+            print(f"{row['line_no']:>3} FAIL Etikett mit Doppelpunkt bzw. Semikolon statt Satz (V-700): {line}"); fail += 1
         op = (row.get("opener") or "").strip()
         if op:
             if op not in OPENERS:

@@ -35,6 +35,7 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 - **Orchester-Charaktere** (wie Peter und der Wolf): jedes Instrument allein mit eigenem Thema und eigener Stimmung.
 - **Orchester 2:** Streicher und Blech einzeln, Abschnitte mit Pausen nach §3.
 - **Soul, Northern Soul, R&B, Surf, E-Funk, Marsch:** Soloinstrumente im Wechsel, Ruf und Antwort.
+- **KFB-Crossover (Cut-up/Remix):** zwei Genres, die absurd unpassend und trotzdem tanzbar zusammengehen, z. B. Deephouse mit Trap brasileiro (V-701, Golden `SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md`): Sprache und Vortrag der Stimme, Tempo, zwei, drei Klangquellen mit Produktionsbegriff, eine Besonderheit (Whistle-Register).
 - **Insel-Grundton** (Chatterbox V-678): O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch.
 
 ## 6 · Ernte und Ergebnisse

@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (24.10.) · An WS-NPC, WS-Audio und den Deck-Songs-Chat: Stresstest vor Yuka, BBBW-Song, Doppelpunkt-Regel nachgeschärft (V-700, V-701)
+- **WS-NPC:** Georg will Yuka (oder Ähnliches für Ausweichen bzw. Gruppenbewegung) erst nach einer Messung entscheiden. Bitte den Stresstest P-2 mit 8, 12 und 20 Bewohnern fahren, sobald es passt. Meldet fps, Ausweich-Fehler (Durchdringen, Stau, Zittern) und Gruppen-Fehler, jeweils mit einem Clip aus der Spielkamera. Erst danach entscheidet WS0 mit Georg.
+- **WS-Audio:** Big Bad Brain Wrestling 01 (Deephouse mit Trap brasileiro, 165 BPM) ist geerntet, die ersten elektronischen Stems für die Chatterbox. Alles steht im Musik-Katalog (`40_AUDIO/music_catalog_r1.json`, `bbbw01`), die Dateien liegen im privaten Branch.
+- **Deck-Songs-Chat:** Die Doppelpunkt-Regel (V-700) ist nachgeschärft.
+  - FAIL ist nur das Etikett am Zeilenanfang („Broken Bridge: …“, „Escape Sequence:“) und das Semikolon.
+  - Ein Doppelpunkt mitten im Satz nach einer Hinführung trägt dagegen. Georgs Golden: `replies/SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md`, z. B. „Approval? Not for The Heel: bear hugs and eye pokes.“
+  - Das Intro „<Decktitel>: <Slogan>“ bleibt erlaubt.
+  - Beide Prüfskripte prüfen jetzt genau das.
+
 # NEU OBEN (24.10.) · An WS1 (Writers Room / Deck-Songs-Chat und Lead): ganze Sätze statt Doppelpunkt (V-700), SSOT-Modul abstimmen
 - **V-700 (Georg 24.10.):** Kartenzeilen sind ganze Sätze mit Fluss, der auch in Suno trägt: kurz, prägnant, Comic-Stil, Weglassungen erwünscht.
   - Kein Etikett wie „Escape Sequence:“ oder „Broken Bridge:“, keine Doppelpunkte, keine Semikolons, kein Telegramm.
