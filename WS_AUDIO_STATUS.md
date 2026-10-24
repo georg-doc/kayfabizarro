@@ -2,6 +2,35 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 18 · 24.10. · Sprech-Anlässe echt im Spiel · Georgs Urteil · Disco-MC Talkbox · MERGE-WUNSCH f6776c4
+
+**Merge-Wunsch an den Lead:** `ws-audio/r1` @f6776c4. Der Lead war per Nachricht nicht erreichbar, deshalb steht der Wunsch hier.
+- Georg hat entschieden: **Der Disco-MC FrizzleBob spielt Talkbox wie die Tänzer**, nicht seine Register-Posaune.
+- `pickChatter` in `cueMap.js`: In der Disco K12 zählt immer das Gruppen-Instrument, sonst wie bisher Register (mit Instrument) → Georgs Wahl V-693.
+- Tests: audio-mixer (neu `pickChatter`) und contract-static PASS. Kurztest auf mvp 2a18e5a: MC Talkbox/staunend.
+
+**Echter Test der WS-NPC-Anlässe** (mvp 4f32c76, Video `kfb-audio-sprech.mp4` nur lokal, an Georg):
+- Band: Tuba, Bemerken staunend, Liedende froh mit 2 Sprechern reihum.
+- Disco: Talkbox in der Pause, nachdenklich.
+- gothgirl: Oboe, staunend.
+- Keine Fehler, Ton 0,07 ms/Bild.
+- Der gemeinsame 38,4-s-Takt von Band und Disco ist von WS-NPC behoben (Versatz 19,2 s, mvp 2a18e5a).
+
+**Georgs Urteil (24.10.):**
+- „Niedlich, aber man hat nicht das Gefühl, dass sie miteinander sprechen – eher musikalisch kreativ orchestriert, durchaus gefällig.“
+- Ohne Sprechblasen ist nicht beurteilbar, ob die Sprachmelodien als Stimmen gelesen werden. Für Unbedarfte erschließt es sich noch nicht.
+- **Jetzt nicht ausbauen.**
+
+**Einschätzung WS-Audio, für später (Chatterbox, WS0):**
+- Die heutigen Familien-Clips sind 0,8-s-Musikphrasen, das Ohr liest sie als Musik.
+- Für Sprache braucht es Silben-Grains (0,1–0,2 s) zu Mini-Sätzen mit Satzmelodie: Frage steigt, Aussage fällt.
+- Dazu Frage-Antwort mit Pause und Registerwechsel, und vor allem gleichzeitig die Sprechblase (bubbleLayer gibt es schon).
+- Danach ein 20-s-Hörtest mit und ohne Blase. Das passt zu `chatter.motif/grains` und zur Suno-Ernte.
+
+**Klick im Video:** Das war ein Fehler der Aufnahme, nicht des Spiels. Jeder Teleport der Figur (alle 6 s) löste `foot.land` aus (C01 Lehm-Fall). Nachgewiesen: 1 Teleport = 1 zusätzliche Wiedergabe. Künftige Aufnahmen sollten nicht teleportieren bzw. ohne Fallhöhe.
+
+**FrizzleBobs Hochspringen** beim Bemerken (WS-NPC-Animation) wirkt laut Georg „ohne Kontext irritierend“. Nur zur Info an WS-NPC, kein Auftrag.
+
 ## 17 · 24.10. · UMGESETZT: Ton von GitHub, Musik AAC 128 · Georgs Freigabe im Chat („ja, beides“, 23.10.)
 
 **Stand:** `ws-audio/r1` @76eeb2b (auf aktuellem `ws1/mvp-r1`), Merge-Wunsch an den Lead. Ablage: kayfabizarro, Branch `assets/kfb-audio-r1` @36c5ae419, Pfad `media/kfb-audio/r1/` (569 Dateien + README, 108 MB).
