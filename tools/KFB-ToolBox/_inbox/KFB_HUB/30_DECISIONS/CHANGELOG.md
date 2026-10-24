@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-720 HeyGen-Fantasiesprache recherchiert, zwei Entscheidungen an Georg (Hub q180, q181).
 - V-719 ausgeführt: 84 Orakel-Stimmenclips F14–F19 und zwei Eleven-Music-Betten erzeugt, normalisiert, privat, an WS-Audio.
 - V-719 Credits-Plan: Suno nur S2/S8/S3, neun Karten geparkt; ElevenLabs Orts-Stimmenfamilien und Eleven-Music-Probe, wartet auf Go.
 - V-718 Frequenz-Schichten und Spannungsbetten nach Recherche (Dateien + Offline-Render, mind-Bus, Shepard-Spannung); 12 Suno-Karten S1–S12 im Hub (b191–b202).

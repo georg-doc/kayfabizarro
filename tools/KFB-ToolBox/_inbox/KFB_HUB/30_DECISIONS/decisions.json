@@ -10284,6 +10284,21 @@
    "applies": "nach Go"
   },
   {
+   "id": "V-720",
+   "date": "2026-10-24",
+   "area": "Audio",
+   "verdict": "TBD",
+   "text": "HeyGen-Fantasiesprache (Recherche replies/RESEARCH_HEYGEN_FANTASY_VOICE_R1.md): HeyGen liefert reines Audio (TTS-Endpunkt, WAV, Wort-Zeitstempel), das Modell heygen-voice-1-turbo-free ist laut Doku bis 30.11.2026 kostenlos; Gefühlssteuerung über die API schwach, Sprache muss fest gesetzt werden (it, es, pt, fi gut). Konflikt mit V-492 (keine Fantasie-Wörter, keine Sprachaufnahmen): Vorschlag eigene Schicht nur für Orte, Orakel, Fahrzeuge und HyperNorm aus ganzen, hörbar verfremdeten Phrasen oder Talkbox-Hybrid (Phrase formt Vokale, Chatterbox-Instrument trägt Melodie). HyperNorm-Avatar mit Fantasie-Audio und englischem Ticker widerspricht V-527 (keine Avatare). Beides entscheidet Georg (Hub q180, q181).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Freie HeyGen-Credits nutzbar machen, ohne die Melodie-Regel V-492 aufzuweichen.",
+   "applies": "nach Georgs Entscheid"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10396,7 +10411,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1188",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1189",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
