@@ -22,6 +22,7 @@ Für: Georg (sieht das Blatt im Hub, der Bauauftrag geht erst nach seinem Ja rau
 - **Bild:** animierte GIF-Kacheln als Tapete (grüne Störstreifen), tanzende Skelett- bzw. Figuren-GIFs, Haeckel-artige Tentakel-Illustration, Stockfotos von Managern mit ausgetauschten, leeren Pupillen, Schaufensterpuppen-Köpfe, alter Röhrenfernseher mit glitchendem Bild.
 - **Layout:** gepunktet umrandete Textkästen, die frei auf der Tapete stehen, kein Raster, Web-1.0-Typografie, falsche Behörden- und Rentenhinweise als Kopfzeile.
 - **Wirkung:** Man weiß nie, ob man in einer Verschwörungsseite, einem Kunstwerk oder einem kaputten Archiv steht. Genau diese Unsicherheit ist die Form.
+- **Umfang (Stichprobe WS0, 120 Seiten gelesen):** Der Link-Baum reicht mindestens 1.400 Seiten tief (1.294 weitere in der Warteschlange). Im Median hat eine Seite 5 Links. Bilder: 355 GIFs, 247 JPGs, 54 PNGs; einzelne Seiten mit Video. Die Seitentitel sind selbst Cut-up: Fernseh-Teaser, Akten- und Funkkennungen, falsche Wahlplakate, „New World Order Pubic Library Circulation Desk“. Viele Seiten haben gar keinen Titel.
 - **Für KFB:** die Seite als Raum denken. Statt Seiten gibt es Kammern, statt Links Fundstücke, statt GIF-Tapete Wandflächen mit laufender H13-Collage, statt leerer Pupillen KFB-Augen, die zurückschauen.
 
 ## Szene
