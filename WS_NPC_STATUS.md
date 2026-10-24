@@ -2,6 +2,62 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 13 · 23.–24.10. · Register, Kit-Knete V-662, Karten-Tratsch Stufe 0 (Lauf 1–2), Sprech-Anlässe, Ruf-Grammatik, Übernahmekarte
+
+Alles ist in mvp gemergt (Lead, zuletzt 9db8cfe). Die Übernahmekarte liegt auf `ws1/status` unter `sessions/ws-npc.md` (V-713).
+
+| Was | Stand | Beleg |
+|---|---|---|
+| Register V-682: `characterId` aus dem zentralen Leser für Bewohner, Gruppen, Band und Fluffer (65 IDs lösen auf) | 4251479 | characterRegistry |
+| Kit-Knete V-662 | d437383 | Abnahme `research/audits/abnahme/kitclay2` |
+| Karten-Tratsch: Konzept mit Georgs Entscheidungen, Stufe 0 headless | 8729552 … c9d1421 | `docs/ws-npc/tratsch/README.md`, unit-tratschSim |
+| Sprech-Anlässe | 7cb09fe | chatter 9/9, unit-chatterCues |
+| Ruf-Grammatik (Georg 24.10., eine Bedeutung je Ruf überall) | 09c3049, a9bb3d1 | s5a, s5b, s5c, d1, d1stage PASS |
+| Opener: „You with the card in your hand“ gesperrt (Georg); 8 weitere gemieden bis WS0 (§31) | 42cc9ca … 70ab88c | unit-tratschSim |
+| Feste Testliste der vollen Reihe | `test/npc-suite.txt`, `test/npc-suite.sh` | letzte Reihe 73/75 |
+
+**Kit-Knete V-662:**
+- Befund: Die abgenommene Kit-Knete lag auf keinem eyeActor-Mesh, weil SKIP_DEFAULT `/eye/` die Wurzel „eyeActor:<id>“ traf.
+- Fix `kitSkip` hinter `#kitclay=1`. Werte `kit-figure` hinter `#kitclay=2`. Standard unverändert.
+- K3 nah 1,46 (knapp unter 1,5), sonst bestanden.
+
+**Karten-Tratsch Stufe 0:**
+- Lauf 1 mit t1. Georg: „Tratsch okay, Triplets falsch“.
+- Lauf 2 mit tr1 (Deck-Songs; 25 gesperrte Karten nie):
+  - Rückfall Titel + bereinigte Lore, Power nie.
+  - Opener nach SSOT: Satz-Opener vor ganzen Sätzen, Substantiv-Opener nur vor dem Titel im Rückfall.
+  - Satzbild V-699.
+  - Wählerischkeit und Identität.
+  - Dramaturg 3/5/4 Slots, α 0,5, Ziele 0,8 bzw. 0,1.
+- Mittel über Seeds 1–10: T2 0,53 · Q 0,35 · T8 0,80 · T13 0,201 · T14 0,44. Georg: „alles ganz gut, fein soweit“.
+
+**Sprech-Anlässe:**
+- gothgirl: Bemerken als greet ohne Blase.
+- Ork-Band: Liedende (16 Takte, Platzhalter) und Bemerken, als `events()` chatter.
+- Disco K12: Pause am Schleifenwechsel und Bemerken durch den MC, als `events()` chatter.
+- Deckel 90 s je Gruppe. Band- und Disco-IDs vorläufig (WS0 §155). WS-Audio hängt den Ton an.
+
+**Ruf-Grammatik:**
+- **Bingo!** ja (+) · **Boggle...?** mehr davon · **Bongo.** weiches Nein, anders bitte (neutral, Wiederholung erlaubt) · **Blödsinn!** hartes Nein (−) · **Humbug?!** vergiss es (MiB).
+- Spieler-Zurufe in der Schreibweise V-699.
+
+**Offen:**
+- Georg:
+  - Kit-Knete-Stufe
+  - Disco-MC-Instrument
+  - Satz-Opener und Erwiderungen
+  - G2/G3/G5 (Prozedurale Welt)
+- WS0:
+  - Signatur-Liste ins Register (Bots ohne Deck, the_uruk_rumble 0 Karten)
+  - §155-IDs
+  - farmer_b gegen farmer_harke
+  - q_ghost_healed
+  - Gimmick-Feld
+  - Kursiv im Blasen-Kern
+- Lead: `kfb.world-save/2`
+
+**Nächster Schritt:** Tratsch-Lauf 3 mit den Trio-Decks bzw. Stufe 1 nach dem Fahrplan des Leads.
+
 ## 12 · 22.10. · Begrüßung G-2, Geschenk E3, Culling, Knete C5, Spielzeug-KO N15, mehrere Dark Fluffer K15
 
 Alles lokal auf `ws-npc/phase-a`. Der Lead hat bis N15 in den MVP gemergt (0b38579). K15 kam danach dazu (b613909, volle Reihe 66/70: rot nur c2, orbit und s5a als bekannte Wackler; steps danach ans Culling angepasst, 2× PASS).
