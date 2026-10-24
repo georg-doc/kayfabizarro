@@ -45,6 +45,7 @@
 **S2 · Endlose Welt**
 - Die Biom-Fahrt wird zur Hauptwelt: ständig wechselnde Biome, Geländeformen, Paletten (`look=terrain3`), Himmel nach Biom und Musik bzw. Klangbetten je Biom (WS-Audio).
 - Übergänge nach Kanon, ohne harte Schnitte.
+- Umgebung, Props und Natur nur über das kommende Kern-Modul (V-748: ein Regelwerk mit Kachel-Datei, Laufzeit-Adapter bei WS1b, WFC nur lokal). Keine eigene Platzierungslogik; bis zum Modul läuft S2 mit dem vorhandenen `endlessVeg.js`. Der Prüfbericht `replies/AUDIT_PLACEMENT_CORE_R1.md` im Register-Zweig ist die Grundlage.
 - Stadtzonen mit „Ebene“ als erste Zonenart (Kölner Tasche), nur nahtlos über die WSB-Einbettung (siehe Tier 0).
 
 **S3 · Begegnungen als Module (Regie R0)**

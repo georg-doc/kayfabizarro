@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "entries": [
   {
    "id": "V-001",
@@ -10704,6 +10704,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-748",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Georg 25.10.: Für die prozedurale Welt braucht es prozedurale Baukästen für Umgebung, Props-Platzierung und Natur nach unseren Regeln (Dreier-Regel, Etherington Brothers u. a., Kanon Gebiet 2/3/17) mit WFC über alle KayKit-Nature-Assets, Pflanzen und Landmarken. Die gesamte Blender-MCP-Vorarbeit (kfb_env, kfb_edge, B2-Verteilung, N36-Einbettung u. a.) wird gegen die Recherche geprüft (replies/AUDIT_PLACEMENT_CORE_R1.md) und zu einem Kern-Modul zusammengeführt: ein Regelwerk mit Kachel-Datei, zwei Adapter (Blender für Proofs bei WSB, Laufzeit im Spiel bei WS1b); WFC nur lokal für Auswahl, Übergänge, Ergänzungen (V-708); Einbettung nur auftragen (V-716). Keine eigene Platzierungslogik je Szene oder Sitzung.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Regelwerk für Proof und Spiel verhindert, dass Blender-Bilder und Laufzeit-Welt auseinanderlaufen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10816,7 +10831,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1264",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1265",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
