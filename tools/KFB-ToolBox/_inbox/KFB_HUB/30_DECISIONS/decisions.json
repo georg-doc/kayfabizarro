@@ -10419,6 +10419,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-729",
+   "date": "2026-10-24",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "WSB-Rückgabe N38 und Ruf-Lettering (WS0 24.10.): UFO-Landung Variante A aufsetzen (Triebwerkskuppeln als Füße, Restspalt mit verwehtem Sand nur als Auftrag) ist Standard, Variante B schweben 0,6 m gilt auf harten Böden; echte Landebeine nur mit neuem Asset nach Georgs Ja. Ruf-Farbsatz C2 nach V-728 gilt nur für die Rufe, K16 bleibt unverändert. Gestenhand nach V-574: Kit-Prop bleibt unverändert im eigenen Slot, Geste nur mit freier Hand, sonst entfällt die Handgeste. HeyGen-POC-Skripte b204 bis b206 sprechfertig ohne Regie im Text.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Standard ohne neues Asset; bestehende Regeln reichen, keine neue Meta-Regel.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10531,7 +10546,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1203",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1207",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

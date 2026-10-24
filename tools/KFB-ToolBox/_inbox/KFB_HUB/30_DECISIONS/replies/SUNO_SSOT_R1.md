@@ -64,3 +64,10 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 - https://jackrighteous.com/de/blogs/guides-using-suno-ai-music-creation/get-jacked-structure-suno-backing-tracks
 - https://alexanderweichart.de/2_Areas/Music/Suno-Instructions
 - https://learnprompting.org/blog/guide-suno
+
+## 8 · ElevenLabs-Weg (V-719, V-724, Stand 24.10.)
+- **Reihenfolge:** Suno nur für drei Betten (S2 Atem-Bett, S8 Dystopie-Drone, S3 Erd-Resonanz). Alles andere zuerst über ElevenLabs.
+- **Werkzeuge:** `40_AUDIO/elevenlabs_r1/sfx_gen.py <set.json>` (Klänge, Schleife möglich), `music_gen.py <set.json>` (Eleven Music, music_v2_5, instrumental), danach `lufs_set.py <set> [ziel]`.
+- **Sätze 24.10.:** Orakel-Familien F14–F19 (84 Clips, −16 LUFS), Musik-Probe M1/M2 (je 60 s, −18 LUFS), Mindspace-Schichten KS1–KS6 Klangschalen und NA1–NA4 Natur (je 20 s Schleife, −20 LUFS).
+- **S2 Atem-Bett:** klingt richtig, mit 4 Stems aber zu dünn. Streicher fast stumm, das Keyboard trägt alles. Darum Schichten statt eines Tracks (V-724): Fundament aus Suno S2b mit mehr Instrumentenfamilien, darüber ElevenLabs-Schichten, gemischt im einen Mixer von WS-Audio.
+- **Fantasie-Stimmen:** HeyGen-Proben von Georg (Skripte `replies/HEYGEN_POC_SKRIPTE_R1.md`), Talkbox-Vergleich durch WS0, Entscheidung q180.
