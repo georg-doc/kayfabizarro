@@ -1,7 +1,35 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §163.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§163 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §164.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§164 ist der neueste, Stand 24.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 164 · 24.10. · Antwort auf V-708 und V-711 (Konzept R1.4, Höhenfeld liegt bereit) · Vorfall assets/private, behoben · WS-NPC Ruf-Skala gemergt
+
+- **Prozedurale Welt R1.4** (WS1b, `ws1/prozedurale-welt` @b514371, nur Konzept plus zwei Skripte, kein Laufzeit-Code):
+  - **Ruf-Skala** (§5.8.2) nach §162 §1, mit Tabelle und Beispielen für Fahrzeug und NPC bzw. Ort.
+  - **V-708 (§5.10), Owner-Matrix KEEP/ADAPT/REJECT:**
+    - Keep: endlessTerrain bleibt einziger Höhen-Owner, Anker vor dem Blattbau; OSM City Lab bleibt Geografie-Owner; WFC nur lokal.
+    - Reject: Overpass zur Laufzeit, procedural-almanac als Gelände, Godot.
+  - **Kompositionsprobe „Kölner Tasche“:** `~/kfb-ws1/research/audits/prozedurale-welt/koeln-tasche/`, gerechnet mit der Spiel-Höhenfunktion und dom-zentrum-v0.
+    - Platz automatisch 3,37 km vom Start, Biom Wüste. Zufahrt 186 m.
+    - Lorekeeper-Schleife Domplatte → Böll-Platz → Rheinufer: 773 m, ohne Treppen und Tunnel.
+    - Befunde:
+      - Eine flache Platte mit r 380 m braucht bis 13,5 m Abtrag und 8,7 m Auftrag (≈ 2,1 Mio. m³). Die nächste Probe vergleicht kleinen Kern, Drapieren und Plateau.
+      - Die Schleife ist länger als ein NPC-Tag (300 s).
+      - 395 Gebäude im Kern: vorbacken ist Pflicht.
+  - **V-711 (§5.11), Höhenfeld-Export (Bitte 1):** KFB-Stunt-Car-Race, `assets/private` @4e3a497, `70_TERRAIN/hoehenfeld_r1/`.
+    - Zwei Ausschnitte: world=probe ±175 m im Raster 0,5 m mit Wasserspiegel, world=endless 1024 m im Raster 1 m.
+    - Je .f32, 16-bit-PNG und JSON-Kopf (Spielmeter, three.js-Achsen, Ursprung = Amphitheater-Mitte), dazu eine Vorschau.
+    - Geprüft: Platzmitte −0,0814 m in beiden. Bitte an WSB weitergeben.
+  - **Formatvorschlag (Bitte 2):** `kfb.terrain-footprint/1`. Delta- bzw. Zielhöhe plus Maske im Ankerrahmen, weicher Rand, Priorität statt Aufaddieren, angewandt in der Höhenfunktion vor dem Blattbau (ein Höhen-Owner, V-400).
+- **Vorfall `assets/private` (Lead-Fehler, behoben):** Beim Ablegen des Höhenfelds hat ein Push mit leerer Commit-Variable den Zweig auf GitHub gelöscht, für etwa 40 Minuten.
+  - Wiederhergestellt aus dem Vollklon `~/kfb-ws1/private-assets`, Commit für Commit, wieder exakt a36634c. Darauf liegt nur der Höhenfeld-Commit 4e3a497.
+  - Es ging nichts verloren. Falls in der Zeit eine Sitzung bzw. WSB fetchen oder pushen wollte, scheiterte das; bitte einmal neu holen.
+  - Der Lead pusht künftig nur mit geprüftem, nicht leerem Commit (`set -e`, Elternprüfung).
+- **WS-NPC gemergt** (mvp 9db8cfe, ws-npc/phase-a @a9bb3d1):
+  - Tratsch nach der Ruf-Skala: Bongo. = weiches Nein mit eigenem Band, Blödsinn! = hartes Nein.
+  - Spieler-Zurufe in der V-699-Schreibweise. Humbug ruft der Spieler nicht.
+  - Hinweis: `src/vendor/hud/hud-r4/r4-calls-data.js` (Vendor-Stand HUD R5f) führt noch die Kayfa-Formen mit der alten Bongo-Bedeutung. WS1e überschreibt das im HUD-Wirt; falls ihr den Vendor-Stand neu liefert, bitte dort mit umstellen.
 
 ## 163 · 24.10. · Bitte an WS0 → WSB: Kassette r5 (V-707) liegt nicht vor
 
