@@ -42,4 +42,7 @@ No software build, unit tests, browser integration tests, deploy/CI run or human
 - Exact isolated H13 visual reference and current billboard physical source not executed in this research-only task.
 
 ## One next gate
-**H13 + selected LHOHQ page-forms source-isolation comparison:** have the authorized visual/source executor capture actual H13 and 4–6 named LHOHQ page-form examples safely (no personal-record capture or auto-scripts), then choose one M01–M04 semantic montage storyboard for *human design selection* before requesting any engine code.
+**VISUAL EXPERIMENTAL FILM SOURCE-ISOLATION GATE (Georg 2026-10-24 correction):** first capture isolated actual H13 audiovisual movement plus 4–6 verified LHOHQ page-form/motion exemplars, observing privacy/rights. Compare V1 (10-s radical montage), V2 (10-s optical/generative loop), V3 (30–90-s music film) as **independently valuable** creative forms. Document visual source proof before authoring any new effect/semantic integration. The M01–M04 semantic storyboard is OPTIONAL / parallel, not a prerequisite.
+
+## Additive research integrity update · 2026-10-24
+The original **12/12** document checks refer to R1 before this Georg decision, not a new visual test. The visual priority correction supersedes the wrong earlier R1 hierarchy; no runnable effects, new screenshots, timing measurements or audiovisual QA claimed.
