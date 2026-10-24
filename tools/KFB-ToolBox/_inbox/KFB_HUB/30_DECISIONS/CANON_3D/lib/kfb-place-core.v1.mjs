@@ -43,8 +43,8 @@ export function solveLocal(slots, R, rules, tries = 16) {
       out[i] = { tile: d, s: +scale.toFixed(3) }
     }
     if (ok) { const ht = rules.lean?.height_tol ?? 0.1, H = (f) => f.tile.h * f.s   // Ü3: benachbarte Höhen um ≥ height_tol verschieden (nur Gleichmaß ±15 %)
-      const idx = out.map((f, i) => i).filter((i) => slots[i].role === 'support').sort((a, b) => H(out[a]) - H(out[b]))
-      for (let k = 1; k < idx.length; k++) { const lo = out[idx[k - 1]], hi = out[idx[k]]; if (H(hi) < H(lo) * (1 + ht)) hi.s = +Math.min(1.15, (H(lo) * (1 + ht) / hi.tile.h) + 0.001).toFixed(3) }
+      const idx = out.map((f, i) => i).filter((i) => slots[i].role === 'support' || slots[i].role === 'accent').sort((a, b) => H(out[a]) - H(out[b]))
+      for (let k = 1; k < idx.length; k++) { const lo = out[idx[k - 1]], hi = out[idx[k]], need = H(lo) / (1 - ht) * 1.01; if (H(hi) < need) hi.s = +Math.min(1.15, need / hi.tile.h).toFixed(3) }   /* V-763: Maß wie das Gate */
       return { fill: out, tries: t + 1, fallback: false } }
   }
   return { fill: slots.map((s) => ({ tile: s.domain[0], s: 1 })), tries, fallback: true }
@@ -64,6 +64,7 @@ function nestPositions(R, radii, rules, slopeDir) {
       let ok = true
       for (let j = 0; j < out.length; j++) { const dd = Math.hypot(p[0] - out[j][0], p[1] - out[j][1]), s = radii[j] + radii[i]; if (dd > ov * s && dd < air * s) { ok = false; break } if (dd < 0.5 * s) { ok = false; break } }
       const dists = out.map((q) => Math.hypot(p[0] - q[0], p[1] - q[1])).sort((a, b) => a - b), score = dists.length > 1 ? (dists[1] - dists[0]) / dists[1] : 1
+      if (ok) { for (let a = 0; a < out.length && ok; a++) for (let b = a + 1; b < out.length; b++) { const [ax, az] = out[a], [bx, bz] = out[b], cr = Math.abs((bx - ax) * (p[1] - az) - (bz - az) * (p[0] - ax)), L = Math.hypot(bx - ax, bz - az) || 1; if (cr / L < (rules.group.line_tol ?? 0.05) * Math.max(L, 1) * 3) { ok = false; break } } }   /* V-763: nie drei auf einer Geraden */
       if (ok && score >= rules.group.spread_pair_min) { best = p; break }
       if (ok && score > bestScore) { best = p; bestScore = score }
     }
@@ -97,7 +98,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 1 · feste Stamps (Landmarken, Dioramen, Stumpf): nicht umordnen, nur einbetten (V-716, embed.sop)
   const stampOut = stamps.map((s, i) => {
     const rec = recipes[s.recipe] || {}, tile = tilesFor(cfg, rec.slots?.[0]?.kinds?.[0] || 'prop', B.kit?.[s.recipe])[0]
-    const o = put(tile, s.x, s.z, { group: `stamp${i}`, role: 'landmark', layer: rec.layer, fixed: true, story: rec.story_template })
+    const o = put(tile, s.x, s.z, { group: `stamp${i}`, role: rec.slots?.[0]?.role || 'landmark', layer: rec.layer, fixed: true, story: rec.story_template })
     for (const sl of (rec.slots || []).slice(1)) { const cnt = sl.count ?? 1, tl = tilesFor(cfg, sl.kinds[0], B.kit?.[s.recipe])
       for (let k = 0; k < cnt; k++) { const a = R.range(0, Math.PI * 2), d = tile.r * R.range(1.8, 3.2); put(tl[k % tl.length], s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, { group: `stamp${i}`, role: sl.role, layer: rec.layer, story: 'Holzstück desselben Stamms' }) } }
     if (rec.finds && cfg.finds) push({ tile: 'find:catalog', kind: 'find', p: [o.p[0] + 0.6, o.p[1] + 1.0, o.p[2]], rotY: 0, sink: 0, group: o.group, role: 'find', layer: 2, story: 'Fundstück am Stumpf (V-437)' })
@@ -110,13 +111,13 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const rid = recipeList?.[gi] ?? R.weighted(Object.fromEntries(Object.entries(B.recipes).filter(([k]) => recipes[k] && !recipes[k].fixed && k !== 'path_trace')))
     const rec = recipes[rid], kit = B.kit?.[rid], slots = []
     rec.slots.forEach((sl, si) => { const cnt = Array.isArray(sl.count) ? R.pick(sl.count) : sl.count ?? 1
-      for (let k = 0; k < cnt; k++) { const kind = R.pick(sl.kinds); const dom = tilesFor(cfg, kind, kit); slots.push({ role: sl.role, kind, tier: Math.min(si, 2), domain: dom, baseH: dom[0].h, layer: sl.layer ?? rec.layer }) } })
+      for (let k = 0; k < cnt; k++) { const kind = R.pick(sl.kinds); let dom = tilesFor(cfg, kind, kit); if (sl.role === 'pebble' && dom[0]?.placeholder) dom = tilesFor(cfg, kind, 'Steinkit v4');   /* V-763: Kiesel sind Mikro-Ebene, Steinkit erlaubt */ slots.push({ role: sl.role, kind, tier: Math.min(si, 2), domain: dom, baseH: dom[0].h, layer: sl.layer ?? rec.layer }) } })
     if (rec.odd_total && slots.length % 2 === 0) slots.pop()
     const sol = solveLocal(slots, R, rules, cfg.wfc?.tries ?? 16)
     const [gx, gz] = grad(terrain, c[0], c[1]), down = Math.atan2(-gz, -gx)
     const anchorR = (sol.fill[0].tile.r * sol.fill[0].s) || 1
     const pos = nestPositions(R, sol.fill.map((f) => f.tile.r * f.s), rules, down)
-    const [tiltDeg, tiltShare] = rules.lean?.pebble_tilt ?? [15, 0.2], pebIdx = slots.map((s, i) => (s.role === 'pebble' ? i : -1)).filter((i) => i >= 0), nTilt = Math.ceil(pebIdx.length * tiltShare)
+    const tiltShare = (rules.lean?.pebble_tilt ?? [15, 0.2])[1], tiltDeg = 18   /* V-763: > 15° auch nach rotZ */, pebIdx = slots.map((s, i) => (s.role === 'pebble' ? i : -1)).filter((i) => i >= 0), nTilt = Math.ceil(pebIdx.length * tiltShare)
     const tilted = new Set(pebIdx.slice(0, nTilt))
     slots.forEach((s, i) => { const f = sol.fill[i]; const tilt = tilted.has(i) ? { rotX: +((tiltDeg * Math.PI) / 180 * (R.next() < 0.5 ? 1 : -1)).toFixed(3), rotZ: +R.range(-0.08, 0.08).toFixed(3) } : {}
       const o = put(f.tile, c[0] + pos[i][0], c[1] + pos[i][1], { s: f.s, group: `g${gi}`, role: s.role, layer: s.layer, story: rec.story_template, ...tilt })
@@ -131,7 +132,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     // Kontakt-Geometrie mit Ursache am Anker (V-749 Nr. 3): Bögen auf 40–50 % des Umfangs, Lücke ≥ 25 %, Stücke so gesetzt, dass ihre Winkelbreiten
     // zusammen genau die gewählte Abdeckung ergeben (das Gate misst die Abdeckung über die Winkelbreiten); keine Zählregel, kein Kranz.
     { const [p0, p1] = rules.contact.perimeter, cov = R.range(p0 + 0.01, p1 - 0.01), anc = inst.find((x) => x.group === `g${gi}` && x.role === 'anchor')
-      const Rr = anchorR * 1.02, arcs = R.int(2, 3), w = Math.min(2 * Math.asin(Math.min(0.99, Math.min(0.18, Rr * 0.18) / Rr)), (0.04 * Math.PI * 2) / arcs)   // Stückbreite fein genug fürs Fenster
+      const Rr = anchorR * 1.02, arcs = 2,   /* zwei Bögen: größte Lücke (1 − Abdeckung)/2 ≥ 25 % (V-763) */ w = Math.min(2 * Math.asin(Math.min(0.99, Math.min(0.18, Rr * 0.18) / Rr)), (0.04 * Math.PI * 2) / arcs)   // Stückbreite fein genug fürs Fenster
       const rc = Rr * Math.sin(w / 2), per = Math.max(1, Math.round((cov * Math.PI * 2) / arcs / w))
       let n = per; const covOf = (k) => (arcs * k * w) / (Math.PI * 2); while (covOf(n) < p0 && n < 999) n++; while (covOf(n) > p1 && n > 1) n--   // in das Fenster einrasten
       const span = (Math.PI * 2) / arcs

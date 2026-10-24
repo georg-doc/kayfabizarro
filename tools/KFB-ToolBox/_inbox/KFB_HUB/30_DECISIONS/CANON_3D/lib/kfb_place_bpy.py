@@ -2,7 +2,7 @@
 #   Liest ein Rezept kfb.place-recipe/1 (Löser kfb-place-core.v1.mjs) und die Kacheln (kfb_place.r1.json → tiles) und baut es nach:
 #   Import → kfb_clay_bpy.apply → kfb_env_bpy.place (Einsinken aus dem Rezept) → Stamps durch embed.sop (N36-Werkzeug, Regeln aus der einen Datei) → kfb_env_bpy.run().
 #   Keine eigene Platzierung und kein eigenes nest() (V-748): Positionen, Drehung, Maßstab und Einsinken kommen aus dem Rezept, das Aufsetzen aus place().
-#   Achsen: Rezept three.js (x, y oben, z) → Blender (x, −z, y); rotY (Bogenmaß um y) → rz (Grad um z), gleiche Drehrichtung.
+#   Achsen: Rezept three.js (x, y oben, z) → Blender (x, −z, y); rotY (Bogenmaß um y) → rz (Grad um z), gleiche Drehrichtung; r2: rotX → x, rotZ → −y (Reihenfolge YZX).
 #   Platzhalter (nicht gemessene Kacheln, Fluff-Nester, Fundstücke, Bodenübergänge) werden als markierte Empties gesetzt, nie als eigene Geometrie.
 # Usage (in Blender):
 #   import sys; sys.path.insert(0, '<KFB_HUB>/30_DECISIONS/CANON_3D/lib'); import kfb_place_bpy as kp
@@ -13,11 +13,11 @@ HERE = os.path.dirname(os.path.abspath(__file__)); HUB = os.path.abspath(os.path
 for p in (HERE, os.path.join(HUB, '30_DECISIONS', 'CANON_3D', 'lib')):
     if p not in sys.path: sys.path.append(p)
 import kfb_env, kfb_env_bpy, kfb_clay_bpy as clay
-VERSION = 'kfb_place_bpy.r1'
+VERSION = 'kfb_place_bpy.r2'   # r2 (V-761): rotX/rotZ aus dem Rezept
 # Slot-Rolle bzw. Art → Material-Rolle (Hinweis WS0): anchor/support → bark/leaf bzw. stone; path, pebble, rubble → stone; fluff_hero/fluff_side → Fluff; find → prop
 MAT_ROLE = {'tree': 'leaf', 'bush': 'leaf', 'grass': 'grass', 'water_plant': 'leaf', 'rock': 'stone', 'rockgroup': 'stone', 'stone_L': 'stone', 'stone_M': 'stone', 'stone_S': 'stone',
-            'rubble': 'stone', 'path_stone': 'stone', 'contact': 'stone', 'building': 'stone', 'prop': 'prop', 'fluff': 'accent', 'find': 'prop', 'dust': 'ground'}
-PROFILE = {'tree': 'midground', 'bush': 'midground', 'grass': 'midground', 'building': 'midground', 'prop': 'midground'}
+            'rubble': 'stone', 'path_stone': 'stone', 'stump': 'bark', 'log': 'bark', 'contact': 'stone', 'building': 'stone', 'prop': 'prop', 'fluff': 'accent', 'find': 'prop', 'dust': 'ground'}
+PROFILE = {'stump': 'midground', 'log': 'midground', 'tree': 'midground', 'bush': 'midground', 'grass': 'midground', 'building': 'midground', 'prop': 'midground'}
 CONTACT_TILE = {'moss_pebble': ('stone_S', 'Kiesel'), 'pebble': ('stone_S', 'Kiesel'), 'moss': ('stone_S', 'Kiesel')}   # Kontakt-Geometrie aus dem Steinkit (kleine Steine)
 
 
@@ -137,13 +137,17 @@ def build(recipe, tiles=None, media=None, ground=None, island='08_Forest', out_j
         if not f or not os.path.exists(f): rep['errors'].append({'i': i, 'tile': tid, 'error': f'Datei fehlt: {f}'}); continue
         ob = lib.instance(f, node, name)
         if ob is None: rep['errors'].append({'i': i, 'tile': tid, 'error': 'Knoten fehlt'}); continue
-        base = sum(t['scale_m']) / 2 if t.get('scale_m') else cfg['units']['m_per_kaykit_u']   # Steinkit normiert → Klassenmitte in m; KayKit, K6, B29 in u → m
-        s = inst.get('s', 1.0) * base; ob.scale = (s, s, s)   # s vor place() (Hinweis WS0)
-        role = MAT_ROLE.get(kind, 'prop'); clay.apply(ob, role, PAL, source='kit', profile=PROFILE.get(kind), seed=f'kp:{tid}:{i}')
+        base = sum(t['scale_m']) / 2 if t.get('scale_m') else t['import_scale'] if t.get('import_scale') else cfg['units']['m_per_kaykit_u']   # Steinkit normiert → Klassenmitte in m; r2: Kenney gleichmäßig × import_scale (Kachel, WS0); KayKit, K6, B29 in u → m
+        s = inst.get('s', 1.0) * base
+        if kind == 'contact' and inst.get('r') and t.get('hull_r_m'): s = base * inst['r'] / t['hull_r_m']   # r2: Kontaktstück auf den Radius des Lösers (inst.r), gleichmäßig
+        ob.scale = (s, s, s)   # s vor place() (Hinweis WS0)
+        role = MAT_ROLE.get(kind, 'prop'); role = role if role in PAL else 'prop'; clay.apply(ob, role, PAL, source='kit', profile=PROFILE.get(kind), seed=f'kp:{tid}:{i}')
         lo, hi = kfb_env.SINK.get(kind if kind != 'contact' else 'contact', (0.0, 0.05)); sk = inst.get('sink')
         hi_eff = min(hi, kfb_env.SINK_CAP) if kind in kfb_env_bpy.STONE_KINDS else hi
         if hi_eff - lo >= 0.99: hi_eff = lo + 0.2 * (hi_eff - lo)
         if sk is not None and not (lo <= sk <= hi_eff): rep['sink_clamped'].append({'i': i, 'kind': kind, 'sink': sk, 'band': [lo, hi_eff]}); sk = min(max(sk, lo), hi_eff)
+        if inst.get('rotX') or inst.get('rotZ'):   # V-761: schräge Kiesel. three.js Euler XYZ → Blender: rotX → x, rotY → z, rotZ → −y; Matrix Rx·Rz·Ry = Blender-Reihenfolge 'YZX' (z setzt place())
+            ob.rotation_mode = 'YZX'; ob.rotation_euler.x = inst.get('rotX', 0.0); ob.rotation_euler.y = -inst.get('rotZ', 0.0); rep['tilted'] = rep.get('tilted', 0) + 1
         try:
             pr = kfb_env_bpy.place(ob, x, y, kind, ground=ground, rz=rz, sink=sk, role=role, layer=inst.get('layer'), group=inst.get('group'), story=inst.get('story'), kit=t.get('kit'),
                                    signature={'landmark': 'hero'}.get(inst.get('role')))

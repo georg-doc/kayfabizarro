@@ -10914,6 +10914,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-762",
+   "date": "2026-10-25",
+   "area": "Video",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: drei HeyGen-Clips mit Avatar (BNWN 02 mit brennender Skyline; Orakel-Ort und Beseeltes Fahrzeug als FrizzleBob The Fixer kontextuell für Ort bzw. Racer-Outfit) im Material-Zweig assets/hypernorm-r1/heygen_r1 @8bd3f2a; Nutzungsvorschlag in Hub q204. Dazu die alten FrizzleBob-The-Fixer-YouTube-Videos mit den Suno-Songs und die FrizzleTunes vom Substack (Tag frizzletunes, ~109 Beiträge) als Pool für HyperNorm und Jukebox, kontextuell und zufällig; Verzeichnis replies/FRIZZLETUNES_INDEX_R1 im Bau. Herunterladen der Videos nur nach Georgs Ja im Chat.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs eigene Clips und Songs werden zum Inhalt der Welt: Orte, Fahrzeuge und Sphären sprechen mit seiner Stimme.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-763",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "WS0 zu WSB V-761-Nachlauf (Adapter r2 übernommen nach CANON_3D/lib): Kontakt in zwei Bögen (größte Lücke ≥ 25 %); Kontaktfenster gilt für Anker und frei stehende Objekte, Stützen im Nest teilen den Kontakt des Ankers (Gate entsprechend); Höhenstaffel über Stützen und Akzent mit dem Gate-Maß |b−a|/b ≥ 10 %; Kiesel 18° schräg; Kiesel sind Mikro-Ebene und dürfen aus dem Steinkit kommen, auch wenn das Gruppen-Kit keine hat; der P0-Stumpf ist Fokus, nicht Landmarke (H5 gilt für Landmarken); nie drei Gruppenglieder auf einer Geraden; Wegsteine sinken 10–25 % (schließt talseitige Lücken). Friedhof: Reihen nur aus gleichartigen Grabsteinen, Requisiten (inkl. Laterne in grab1) sind frei stehende Objekte mit eigenem Kontaktfenster. P0-Rezept 5d034f71 ohne Platzhalter.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gate und Löser messen dasselbe; Befunde werden an der Regel entschieden, nicht am Einzelfall.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-764",
+   "date": "2026-10-25",
+   "area": "Video",
+   "verdict": "ANSWER",
+   "text": "Georg 25.10. im Chat zu q204: gute Ideen, ausprobieren. Gebaut auf game/proc-world-ws0: beseeltes Fahrzeug als Bild-im-Bild beim Auto-Rufen (mount=live), Orakel-Ort als Genius-loci-Ring (loci=1), clips=0 schaltet ab; lokal getestet (Clip läuft mit Ton). Site-Paket R3 neu @98c4029. YouTube-Download der Fixer-Videos später, wenn mehr Speicher frei ist (Georg).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Stimme kommt dorthin, wo der Spieler handelt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11026,7 +11071,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1274",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1276",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
