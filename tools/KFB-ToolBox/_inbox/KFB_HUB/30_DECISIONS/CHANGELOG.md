@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-24
+- V-706 WSB Nachtrag 33 Gesprächs-Choreografie R1 (Inventur vor Neubau, Lücken als kfb_talk-Clips, Rufe als Knet-Lettering); HUD bei WSB abgeschlossen; Gate + Prüfer PASS; Hub b189.
 - V-705 Splat/Gutter/Portal/prozedurale Welt: Webchat-Atlas (PR 423) an WS1 fürs Terrain-Konzept.
 - V-704 KayfaBINGO usw. nur am realen Spieltisch, im Spiel V-699; Comic-Motion/Remotion geparkt.
 - V-703 Backlog Kayfabulieren im Spiel (Story-Zug vor King Kayfabian, NPC-Vorführung, Almanach-Replay); Story Table privat unter 75_REFS.
