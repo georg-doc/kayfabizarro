@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- Site-Paket R2 (WS0): site/mvp-r2-dist @e76c26a aus game/mvp-r1 @2b96e8a + Zweig game/mvp-r1-ws0 @0f48d11 (HUD 3D Standard V-743; nackte Adresse lädt mit Start-Hash neu – vorher grüne Wiese ohne HUD, weil die Importe die Schalter vor dem Umschreiben lasen). Lokal geprüft (Gelände R3, HUD 3D, Ton, keine Fehler). Hub b214 auf R2 (replies/WS0_TO_WSA_SITE_PAKET_R2.md). V-744 UFO Hunky & Dory (Backlog WSB), V-745 q200 PASS.
 - V-743: HUD 3D Standard (Georg). Masterplan im Hub kompakt aktualisiert (Stränge WS0, WS1, WSA, WSB, Claude Design, WSV; Schritte proc-world, mvp-r1, mvp-3-publish, hypernorm-tv). Auftrag an WS1 (Hub b223, replies/WS0_TO_WS1_PROZEDURALE_WELT_STAND_R1.md): Konzept Prozedurale Welt auf GitHub, Lücken für Design und Gameplay, Slice-Folge, offene Entscheide mit Bild.
 - V-742 FAIL: Claude-Design-Brief HyperNorm R3 redaktionell statt prozedural/dadaistisch mit semantischen Seeds und Engine v15+; Georg brieft selbst nach. MVP lokal testbar (Startkonfiguration kfb-mvp-local, Port 5250, /raw-Proxy wie die GPT-Site): Paket @6a03920 ist veraltet (Knet-HUD Standard, HUD 3D nur bis Paket 4); WS0 baut ein neues Site-Paket aus game/mvp-r1 @2b96e8a.
 - Claude-Design-Pakete über GitHub statt ZIP (Georg 25.10.): privates Repo georg-doc/KFB-Stunt-Car-Race, Branch design/claude-design-r3 @b8b1b17, Ordner hypernorm_r3/ und mib_turm_r1/; Hub b220 und b222 verweisen auf die Ordner-URLs. Die ZIPs in 30_PACKAGES bleiben nur als Kopie.

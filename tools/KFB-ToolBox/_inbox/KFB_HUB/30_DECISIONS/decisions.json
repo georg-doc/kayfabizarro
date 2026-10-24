@@ -10644,6 +10644,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-744",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "BACKLOG",
+   "text": "Georg 25.10.: WSB baut das UFO mit Hunky und Dory nach unseren Konzepten, mit dem KFB-UFO-Lab als Vorlage für den Strahl (Verschwinden und Erschaffen, V-484/V-533) und für die Flug-Animation. Danach wird es wie der MiB-Turm eine prozedurale Zufallsbegegnung bzw. kontextuell ausgelöstes Welt-Ereignis (Schritt npc-e). Design-Paket nach V-740 vor dem Bau.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Welt-Ereignisse (MiB-Turm, UFO) teilen eine Logik: Vorlage aus dem Lab, dann prozedural ausgelöst.",
+   "applies": "nach B40"
+  },
+  {
+   "id": "V-745",
+   "date": "2026-10-25",
+   "area": "Video",
+   "verdict": "ANSWER",
+   "text": "Georg 25.10. Hub q200: passt so. Die 100 HeyGen-Slogan-Clips S001–S100 (Kafkas Affe, Lord Quantumund, Georgs Claymation-Avatar, Alpha) sind abgenommen und gehen ins HyperNorm-Material (assets/hypernorm-r1).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Abnahme der Clips; Weiterverwendung in Sendezentrale und Autopilot.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10756,7 +10786,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1262",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1263",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
