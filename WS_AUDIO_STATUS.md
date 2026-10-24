@@ -2,6 +2,29 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 20 · 25.10. · Chatter-Silben TUNE (V-734) umgesetzt · Schritte auf eigenem Bus · in mvp (cc1481d)
+
+**Stand:** `ws-audio/r1` @c6aac4e, gemergt als mvp cc1481d. Abnahme-Video liegt auf `abnahme/ws1` (Lead).
+
+**Silben (Georg: „quieken, tut fast in den Ohren weh“):**
+- Keine Silbe über der Lage der Familie (`fitRegister`: höchste Silbe = Clip-Lage), Stimmlage je Figur −5 … 0.
+- Hohe Familien eine Oktave tiefer: F04 Okarina, F06 Theremin, F09 Säge, F10 Oboe, F12 Mundharmonika, F13 Melodica.
+- Tiefpass 2,4 kHz, Einschwingen 25 ms, Ausklang 50 ms, Pegel 0,25 (−6 dB gegenüber R1). Musik beim Sprechen −7 dB.
+
+**Schritte (Pegel):**
+- Bus `steps` unter SFX: −9 dB, beim Sprechen −15 dB, unter Kampf/Explosion weitere −4 dB.
+- Darüber laufen Spieler-, NPC- und schwere Schritte sowie `foot.jump`/`foot.land`.
+- Das „Stampfen“ im Wechselrede-Video war `foot.land` beim Absetzen der Figur (vorher −6,9 dB, jetzt ≈ −16 dB). NPC-Schritte gab es dort keine.
+
+**Video** (`scripts/audio/record-dom.mjs abnahme`, DOM-Screencast mit Blasen):
+- 58 s, Live-Welt mit Site-Hash, echt hingegangen.
+- Ort 1 Disco (Talkbox), Ort 2 Orc-Band (Tuba).
+- Hinweise: je Ort dieselbe Familie; Wechselrede sparsam (WS-NPC-Deckel 90 s).
+
+**Neu in `stats()`:** `cues` (letzte 60 Bank-Töne mit Pegel/Bus), `stepDb`.
+
+**Tests:** audio-mixer, contract-static, audio-syl, audio; beim Lead zusätzlich talk und chatter: PASS.
+
 ## 19 · 24.10. · Chatter-Silben R1 hinter `#chat=syl` (Lead-Auftrag, Georg-GO) · MERGE-ANTRAG e4f3c51
 
 **Stand:** `ws-audio/r1` @e4f3c51 (c286c64 + e4f3c51, auf mvp 192bbb7). Video: `test/out/audio/kfb-audio-silben.mp4` (lokal, 14,7 MB, an Georg geschickt).
