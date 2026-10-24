@@ -1,3 +1,9 @@
+# CURRENT · V-725/V-727
+
+The earlier public-music/private-effects separation gate below is SUPERSEDED by Georg q184 and V-725. Remote music+effects pin accepted. Actual game head188e4f709f1301f6574f06631b750c6adf2e44f8; Node22.23.4 moduletests24/24PASS. Current receiving block is complete private build-input transport, not music separation or private-repository permissions. See GO_V727_EVIDENCE.json and ../WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md. No actual game build or Site publish/security claim. The old preparation and test history follows unchanged.
+
+---
+
 # V-695 · existing GPT Site · bounded preparation
 
 Outcome: prepare the current Site delivery seam without publishing an unsafe or unapproved game build.

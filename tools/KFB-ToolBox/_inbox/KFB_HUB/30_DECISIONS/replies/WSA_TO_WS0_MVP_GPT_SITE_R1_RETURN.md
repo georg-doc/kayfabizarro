@@ -1,3 +1,41 @@
+# CURRENT UPDATE · V-725 / V-727 · 24.10.2026
+
+**BLOCKED · complete private build-input transport · NOT PUBLISHED.** This update supersedes the separation gate in the preserved earlier Return below.
+
+## Authority / actual result
+
+Georg directly authorized execution after the V-725/V-727 follow-up. The q184 public music/effects decision is accepted: **the old music/private-effects separation request is CLOSED**, not a continuing blocker. Existing remote pin remains36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3, actual configured path media/kfb-audio/r1/ (not a guessed substitute path).
+
+Current private game/mvp-r1 is **188e4f709f1301f6574f06631b750c6adf2e44f8**, WS1 snapshot8620081, reported76PASS. Exact branch, handoff, build script and remote configuration read. The76game tests were NOT rerun here.
+
+Existing destination remains https://kfb-ws1-staging.frizzlebob.chatgpt.site, projectappgprj_6ad2ac305b788191af0bdfc68823a300, savedv4/sourcefbabbad7b8efa98c9071fccb358e4fb4788ec826, custom owner-only access unchanged. No new Site, no Audio Site change, no source/deployment/audience mutation. This URL still serves the prior Staging product, **not the new game**.
+
+## Concrete cause, not an invented permissions problem
+
+The supported GitHub connector can read private source metadata/text and small binary files. For the actual3.6MBheroGLB it returns empty content; its blob helper fails UTF-8 decoding, and the general blob endpoint rejects non-UTF-8. This does not establish that private access is denied or that only one file is missing; it prevents a complete, byte-verified source/asset intake.
+
+Ordinary Git read has no configured usable GitHub authentication, including the existingV-538 credential-helper scope. No token was requested from Georg, created, extracted from a browser session or substituted from the unrelated Sites source credential.
+
+Authenticated Chrome displayed the exact private repository/commit. The actual ZIP navigation was blocked by the browser with ERR_BLOCKED_BY_CLIENT; no protection was disabled. A single documented file-download retry timed out without a completed archive. The tool stalled far beyond its requested timeout; this time is not claimed as productive build/test work. No completed source archive exists in the actual Downloads directory. No further non-improving archive loop.
+
+## Independent next work actually completed
+
+Node **22.23.4** provisioned from the regular npm registry. The existing prepared auth/raw primitive reran successfully under Node22: **24/24 named module tests PASS**. This adds the requested Node-version evidence to the earlier independent24test/13edge-probe report; it does NOT prove an actual game build, framework static-path protection or hosted password behavior. Existing code remains unwired and no real password generated/configured; inventing a tester password here would be false.
+
+Full private game build, private-figure SHA/completeness, site-build.json package size/count, all-path authentication, range/MIME integration, actual walk/drive/HUD/combat browser checks, screenshot and desktop fps are **NOT RUN / NOT AVAILABLE**. No placeholders or mockup replaced the actual input. No new Site version/deployment exists.
+
+## Exactly one smallest missing part / next gate to WS0 / WS1
+
+**Provide one complete, readable private build handoff for game188e4f709f1301f6574f06631b750c6adf2e44f8 with its required assets/private figures at the existing shared project location** — either verified build inputs or the finished private dist plus site-build.json/provenance. Confirm that receiving transport through the existing owner handoff; do not create a public preview, new Site or user token setup. This is a request for the missing receiving artifact, not a unilateral replacement-host/transport deployment.
+
+After that input: finish actual build/intake, wire the existing protection primitive before every game/static/raw route, set the runtime password through native Sites secrets, test locally, publish on the SAME owner-private Site, then verify the hosted result and report the password only directly to Georg. No audience widening. WS0 has the concrete missing-part notice in this Return; no other chat was messaged automatically.
+
+Evidence: replies/WSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. Repo georg-doc/kayfabizarro, register branch docs/kfb-decisions-register-2026-10-11; no new PR. The evidence/Return commits and exact files are fetched after writes. No deletion, merge, Cloudflare project, game-source mutation or paid generation.
+
+---
+
+## Preserved earlier V-695 Return — historical, separation gate superseded
+
 # WSA → WS0 · MVP GPT Site R1 · V-695 · 24.10.2026
 
 **PREPARATION STARTED · NOT PUBLISHED · SOURCE/BUILD SEPARATION REQUIRED.**
