@@ -32,3 +32,11 @@
 - Added `HYPERNORM_GPT_SITE_SCENELET_GPU_HYBRID_R3_2026-10-24.md`. Proposes existing Site Curator/Experience views, a single authored Threshold Observatory-like pocket, canonical Card/archive actions, optional binaural/Audio, 3 physical effects regimes (H13 textures, 3DGS scenic, WebGL GPU particles), optional later WS1 portal.
 - WS0 q197 particle relief mechanics are **reported by Georg**, not run/verified or conflated with Gaussian radiance splats. Browser-limited 30fps is NOT performance proof. Licensing and audiovisual source isolation remain gates.
 - R3 **24/24 structural/editorial checks**; code/Site/browser/audio/physics/visual/GPU testing **0**. No existing product files modified, no new Stage, no Site publication or Live/merge. Only Draft PR #450 research notes changed.
+
+## 2026-10-24 · R4 research-only poetic/occult world-literature seed
+- Georg requested an English-language/public-domain-oriented, global archive of deeply layered, provocative, visionary poetry, sacred and metaphysical texts, Dada/cut-up experiments and modern pop/postmodern lyric *references* for the existing HyperNorm Curator → Experience vision.
+- Added `POETIC_OCCULT_ARCHIVE_SEED_R1.json`: **89 deliberately unmapped research candidates, 12 cultural/genre families; 38 records pointing to 27 distinct historical edition/catalog sources**. Bibliographic records/tags only; ZERO full poem or lyric payloads and ZERO text public approvals. H=32 / T=26 / E=12 / U=7 / R=12.
+- Added `POETIC_OCCULT_ARCHIVE_EDITORIAL_R1.md`: source/evidence links, 12 promising reading lanes, conservative German/EU-vs-US translation/edition rights, culturally specific contributor credit and 8 optional aesthetic translations into H13/Site experiences.
+- Added `POETIC_OCCULT_ARCHIVE_TEST_REPORT_R1.md`: **17/17 local JSON corpus assertions PASS**, no runtime/visual/GPU/Site or clearance tests. Fixed reported family count in editorial guide by readback.
+- Existing Curator Quote Pool and 415 candidate research corpus PR #354, H13, Curator Site, Mindspaces, Audio, World, PR #448, KFB Hub and main UNCHANGED. No runtime, new Site, public Stage, merge or Live.
+- This new research surface extends PR #450 concept material; the project R3 **WS0 true H13/Curator/q197/visual donor-isolation gate remains the single next product gate**, not a separate poetry runtime demand.
