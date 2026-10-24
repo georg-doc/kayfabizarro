@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- Probe R2 Karten-Relief (V-735): Depth Pro lokal (~/kfb-tools, 27 s je Bild), Karte als Relief im Boden mit Welt-Tönung, Heben als Schwarm, Einsammeln als Fluff, nachgebender Kügelchen-Boden, 120 fps; Befund: gezeichnete Karten fast flach, Tiefe umgedreht und hochpassgefiltert; Fotos liefern echte Tiefe. Live https://claude.ai/artifact/CjHJf8TJmBYRQ42Zs7e88J, Hub q196.
 - V-735 Punktwolken weiter: Konzept Karten als Punktwolke und Relief im Terrain (replies/CONCEPT_CARD_POINTCLOUD_TERRAIN_R1.md), Probe R2 bei WS0.
 - V-734 Georgs Urteile per Audio: Chatter-Silben TUNE (quieken, Schritte zu laut), tr1 TUNE (Blasen-Randabstand, Abnahme-Form), Splats ganz nach unten; Auftrag an WS1 replies/WS0_TO_WS1_ABNAHME_CHATTER_TR1_R1.md (Hub b216). Hub v21: Antwort-Entwürfe bleiben bei Seiten-Updates erhalten.
 
