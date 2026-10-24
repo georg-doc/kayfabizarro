@@ -1,0 +1,48 @@
+{
+  "schema": "kfb-research-atlas-topic-pointer/0.1",
+  "status": "PROPOSAL_BRANCH_LOCAL_NONCANON",
+  "updated": "2026-10-24",
+  "owner": "KFB editorial/research",
+  "title": "RIIA / Chatham House, CFR and Rhodes–Milner genealogy",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-chatham-house-cfr-power-networks-r1-2026-10-24",
+  "pr": 449,
+  "canonicalProtocolNotOnMain": "skills/chat/research/KFB_RESEARCH_ATLAS_PROTOCOL_R1_2026-10-24.md",
+  "protocolOwnerBranch": "research/kfb-mkultra-monarch-cardway-r1-2026-10-16",
+  "protocolDraftPR": 408,
+  "sourceRoot": "skills/chat/research/CHATHAM_HOUSE_CFR_POWER_NETWORKS_R1_2026-10-24",
+  "readFirst": [
+    "BRIEF.md",
+    "SOURCES_AND_CLAIMS.md",
+    "RELATIONS.md",
+    "TEST_REPORT.md",
+    "RETURN.md"
+  ],
+  "ids": {
+    "sources": "CH-S01..CH-S20",
+    "claims": "CH-C01..CH-C15",
+    "historicalEdges": "H01..H19",
+    "noncausalEdges": "W01..W07"
+  },
+  "statusCounts": {
+    "sourceLeads": 20,
+    "atomicClaims": 15,
+    "historicalEdges": 19,
+    "noncausalEdges": 7,
+    "uniquePdfImagePages": 4,
+    "staticChecksPassed": 6,
+    "staticChecksTotal": 6
+  },
+  "existingKfbDonors": [
+    "registry/assets/v1/decks/geopolitical_thrillers_conspiracy_theories.json",
+    "registry/assets/v1/decks/federal_kayfabe.json",
+    "registry/assets/v1/decks/deep_state_plumbing.json"
+  ],
+  "unresolved": "Original 1919 meeting, Quigley primary passages, CFR 1939 correspondence/memo count, Camps CHA/TNA archive originals, donor amounts and government policy adoption",
+  "nextGate": "CAMPS_ARCHIVE_ORIGINAL_01: inspect CHA 9/69b and TNA T312/1015",
+  "noRuntime": true,
+  "noCardActivation": true,
+  "noNewCanon": true,
+  "noAutoMerge": true,
+  "noStageOrHubPublication": true
+}
