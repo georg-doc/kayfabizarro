@@ -5,7 +5,8 @@
 #   kfb_kind (siehe kfb_env.SINK), kfb_role (Palettenrolle), kfb_layer (1–4), kfb_story (Satz), kfb_group, optional kfb_signature (hero|echo), kfb_kit,
 #   kfb_support (Name des gebauten Objekts, auf dem es steht, z. B. Bühne; das Gebaute selbst ist kfb_kind 'building' und steht im Terrain)
 # Boden: genau ein Objekt mit kfb_ground = 'terrain' | 'island' (Scheibe/Platte = FAIL).
-import json, bpy
+# r2 (WSB N39): zusätzlich optional kfb_wear (Liste), kfb_form, kfb_keystone, kfb_ordered, kfb_trunk_r, kfb_slope_deg; Neigung/Lehnrichtung aus der Rotation (ENV-LEHNE).
+import json, math, bpy
 from mathutils import Vector
 import kfb_env
 
@@ -51,6 +52,11 @@ def export(concept=None, scene_kind='diorama', landmark=None, units_per_H=1.0):
                      'group': ob.get('kfb_group'), 'signature': ob.get('kfb_signature'), 'kit': ob.get('kfb_kit'), 'asset': ob.data.name if ob.data else ob.name,
                      'c': [cx, cy, (z0 + z1) / 2], 'r': max(x1 - x0, y1 - y0) / 2, 'h': z1 - z0, 'bottom_z': z0, 'ground_z': g,
                      'rot_z': round(ob.matrix_world.to_euler().z * 57.2958, 1), 'color': ob.get('kfb_color'), 'meaning': ob.get('kfb_meaning'), 'asset_pass': ob.get('kfb_asset_pass')})
+        # r2 (N39): Messwerte für ENV-LEHNE Ü1–Ü4, ENV-ORDNUNG und ENV-BIOGRAFIE
+        up = ob.matrix_world.to_3x3() @ Vector((0, 0, 1)); tilt = math.degrees(math.acos(max(-1.0, min(1.0, up.normalized().z))))
+        objs[-1].update({'tilt': round(tilt, 1), 'lean_az': round(math.degrees(math.atan2(up.y, up.x)), 1) if tilt > 1.0 else None, 'form': ob.get('kfb_form'), 'keystone': bool(ob.get('kfb_keystone')),
+                         'ordered': bool(ob.get('kfb_ordered')), 'trunk_r': ob.get('kfb_trunk_r'), 'slope_deg': ob.get('kfb_slope_deg'), 'lean_deg': round(tilt, 1) if ob.get('kfb_kind') == 'tree' else None})
+        if ob.get('kfb_wear') is not None: objs[-1]['wear'] = list(ob['kfb_wear'])
         objs[-1]['material'], objs[-1]['baked_light'] = _material_info(ob)
     for ob in bpy.context.scene.objects:   # unmarkierte flache Scheiben/Platten (Georg 20.10.: Props auf eine Scheibe)
         if ob.type != 'MESH' or ob is ground or ob.get('kfb_kind') or ob.parent: continue

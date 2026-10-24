@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-761 WSB N39 kfb-place übernommen: 289 Kacheln in kfb_place.r1.json, Gate r2 + kfb_place_bpy.py in CANON_3D/lib; Löser-Fixes (Kontaktfenster 0,44, Kiesel schräg, Höhenstaffel, Echos, P0-Gruppenfolge), Golden PASS b65d698a. Wegsteine Einsinken 5–20 %. WSB: Gate auf neuem P0-Rezept, rotX/rotZ im Adapter, Friedhof-Fugen.
 - V-759 Atmosphäre ins prozedurale Design (Tageszeit, Wetter, Himmel, Planeten, Wolken; Bestand world=endless). V-760: S1 Schritt 1 (mount=live) und H15-Sphäre im Spiel (h15=1) auf game/proc-world-ws0, lokal getestet (Rufen, Fahren, Aussteigen; Sphäre öffnen und Esc zurück, keine Fehler); Site-Paket R3 site/mvp-r3-dist @52643de. b225 auf Donnerstag. WSB N35 D (Gesprächsvideo, clips.talk.r1.json, Bibliotheken je Rig) → Hub q203.
 - V-758 q202 beantwortet: H15 re-homed mit öffentlichem PD-Pool (kayfabizarro tools/h15-mindscape-2026-10-25 @b77e306, lokal geprüft: 100 fps, Pool 481/481, Karten 20/20, 6 Gedichte). Briefing Runde 2 an Claude Design (replies/BRIEF_CLAUDE_DESIGN_H15_M4_R1.md, Hub b225; Prüfer-BLOCK V-740 behoben: M4 erst Storyboard/Style-Frames zur Abnahme, dann Bau; M5 Qualitätsregler zuerst, Zielgeräte und fps-Ziel, Bake als Equirect-PNG-Folge, Landkarten fest gelistet, Schalen-Obergrenze V-726, Ton des Durchflugs, nur CC0/_FREE-Kandidaten).
 - V-757 H15 Mindscape WIP von Claude Design eingegangen (Sphäre, Schalen, Gedichtband, Soundbed, Pools); Korrektur: H14 und H15 existieren. Fragen und WS0-Empfehlungen in Hub q202.

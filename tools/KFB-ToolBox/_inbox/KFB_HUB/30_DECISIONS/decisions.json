@@ -10899,6 +10899,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-761",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "WSB N39 kfb-place übernommen (Freigabe über WS0, Georg q201): 286 vermessene Kacheln in kfb_place.r1.json (KayKit Forest 84, Steinkit v4 170, B29 28 mit abgeleiteten Sockets, path_A–D 4) plus Kenney-Stumpf/-Holzstück (WS0 gemessen, Gleichmaß × 3); Gate r2 und Blender-Adapter nach CANON_3D/lib (Vorstände als *.r1_kanon.py bei N39). WS0-Entscheide zu den Befunden: Wegsteine sinken 5–20 % ein (flache Pflaster; K6-Pass [0,0] und 30–50 % abgelöst); tree_group-Akzent als Gras-Büschel aus KayKit Forest (ein Kit je Gruppe, Forest hat keinen mittleren Stein); Löser: Kontaktfenster eingerastet (40–50 %), ≥ 20 % Kiesel schräg (rotX/rotZ), Nachbarhöhen ≥ 10 % verschieden, Echos am Stumpf, P0 mit fester Gruppenfolge. N36-Friedhof: Kontakt-Geometrie an den Fugen der Reihen nachrüsten (WSB).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gemessene Kacheln und ein Gate für Proof und Spiel; Befunde werden an der Quelle (Löser, Regeldatei) behoben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11011,7 +11026,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1273",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1274",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
