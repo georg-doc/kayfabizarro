@@ -1,7 +1,20 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §171.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§171 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §172.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§172 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 172 · 25.10. · S1 Mechanik und S2 Musik gemergt (hinter Schaltern) · S1-Bild-Paket im Hub-Paket · Spiel-Stand game/mvp-r1 @d5f18b0
+
+- **S1 Fortbewegung (WS1d):**
+  - **Bild-Paket nach V-740** liegt auf `abnahme/ws1` @c88ee76 (`karten/s1-fortbewegung/`, 6 Keyframes: 1 und 6 echt, 2–5 gestellt). **Bitte Georg im Hub vorlegen:** „Passt der Ablauf?“. Erst nach Ja wird Sichtbares gebaut (Figur im Dach J-7, Entstehen und Einsaugen aus Fluff).
+  - **Mechanik gemergt hinter `travel=1`** (ws1/travel-s1 @6e697d2 → mvp fc30347): `src/m1/travelState.js` mit allen Reise-Zuständen; TravelHost hängt M2Car zur Laufzeit ein und aus statt neu zu laden; Auslöser vorerst Einstellungen › Modus. Ohne Schalter verhaltensgleich (`carLive() === M2_ON`).
+  - Motorton bei `travel=1` (ws-audio/r1 @5d05172 → mvp 5c7a76b): eigener racer-Regler, weich ein und aus.
+  - WSB-J-7 (Sitz-Anker, Lenkrad, Clips für Dragster, Ironclad, Rustwing) ist laut WS1d geliefert, aber noch nicht eingebaut. Die J-7- und B39-Bilder liegen nur bei WSB; für den Hub bitte von dort holen.
+  - **Lücken** (an WS1b für die Lückenliste): Racer-Flug und Wasser-Fahrt hängen mit `travel=1` noch an Hash-Konstanten; StuntField und ElanRings sind dann nicht eingehängt; die Kapsel der verborgenen Figur bleibt stehen; Richtung `build` in fluffSuck ist nicht angefangen (Owner Lead, an WS1d freigegeben).
+- **S2 Musik nach Biom (WS-Audio):** hinter `bgm=biome` (ws-audio/r1 @9b4f56e → mvp 77125ec): 6-s-Überblendung auf einen Titel mit Biom-Stichwort, Atmo-Teppich je Biom, `worldBiome()` für WS1b. Lücke: eigene Teppiche und Musik-Stichworte für Wüste, Mesa, Canyon, Schnee und Pastell fehlen; der Jukebox-Katalog (WS0) ist weiter offen.
+- **Prüfung:** Reihe auf fc30347: 78 PASS, rot nur c2, c3g und audio (noPageErrors, Zwischenstand). Auf 5c7a76b nachgeprüft: audio, audio-travel und s1-travel PASS.
+- **Spiegel:** game/mvp-r1 **@d5f18b0** (privat), ws1/mvp-r1 54133b15f (öffentlich, private Pfade = 0). Für ein Site-Paket R3 bitte Bescheid geben, wer baut (§171).
+- **Weiter offen bei Georg:** Freigabe im WS1b-Fenster (WS1b trägt Schritt 0, S2, S3). Chatterbox: Wechselrede mit Blasen schon Standard oder erst nach Sichtung?
 
 ## 171 · 25.10. · Georgs Wahl HUD (Boost A, Almanach A, Säule zu Fuß, Höhe über Grund) · WS0-Fix übernommen (mvp 28f200a) · V-746 verteilt: Konsolidierte Auftragsliste WS1
 
