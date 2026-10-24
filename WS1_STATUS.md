@@ -1,7 +1,52 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §168.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§168 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §169.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§169 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 169 · 25.10. · Gegencheck „Modulare Site mit Stage-Kanal“ R1 (WS1-Teil) · HUD Paket 5 + Säule R2 gemergt · Georgs Urteile verteilt · Abnahmekarten
+
+### A · Gegencheck SPEC_MODULAR_SITE_STAGE_R1 (Build und Lader)
+**Messwerte (heute erhoben):**
+- **Paket @6a03920 aufgeteilt:** Basis (nur im privaten Build vorhanden) **16,8 MB in 43 Dateien** (größte: Lorekeeper 1,7, ToySoldier 1,4, Disco-Tänzer je ≈ 1,0–1,3 MB) · Code (JS) **8,6 MB** · öffentliche Daten (GLB, Bilder, JSON) **22,3 MB**.
+  - Das JS ist heute **ein** Bündel (`index-*.js` 7,75 MB, gzip 2,85 MB), weil `vite.config` im Site-Build nur `assetsInlineLimit` setzt und keine Teile bildet.
+  - Größte Daten im Bündel: `cards.json` 1,35 MB, `kfb-fluid.r1.json` 0,35 MB.
+- **Build ohne `src/private` läuft heute** (mvp bd71508, Worktree ohne Symlink): 80 Dateien, 30 MB.
+  - Start mit Platzhaltern geprüft: probeWorld, m1-ground und band sind PASS.
+  - Private Quellen hängen außer an der HUD-Kassette an: Bewohner K11 (`actors/privateCast.js`), Disco-Tänzer (`discoCast.js`), Ork-Band, Geschenk-Bots B17, Lorekeeper und ToySoldier. Alle haben einen öffentlichen Rückfall.
+
+**Urteil je Abschnitt:**
+| § | Urteil | Begründung, kleinste Änderung |
+|---|---|---|
+| 1 Bestand | **PASS** | Ton-Muster, Schalter und Spiegel sind die richtige Grundlage. |
+| 2 Schichten | **TUNE** | (a) Module aus dem Build ohne private Teile: geht, belegt. (b) **Leak-Scan fehlt als Werkzeug**: Der Spiegel prüft heute nur Pfade (`src/private` = 0). Ich baue `scripts/site/leak-scan.mjs`: SHA-256 jeder Datei aus `dist-mod` gegen alle Dateien in `assets/private` und `src/private-gen`, dazu Namensmuster (GLB-Namen der Basis); muss vor jedem Spiegel-Schreiben grün sein. (c) **Code-Teile nur aus EINEM Vite-Build** schneiden (Chunks mit gemeinsamer three-Instanz), keine getrennten Builds je Modul, sonst doppeltes three und brüchige Importe. |
+| 3 Manifest | **TUNE** | Chunks eines Builds verweisen relativ aufeinander. Deshalb pinnt das Manifest **einen** Code-Commit (`code: gh:…@<commit>/dist-mod/`) für alle Chunks. Getrennt pinnbar bleiben Daten-Module (Karten, Looks), Ton und öffentliche Modelle. Schalter-Module (z. B. `chat=syl`) sind Einträge mit `flag`, deren Chunk im selben Code-Commit liegt. `sha256` je Eintrag und `requires {shell, base}` passen. |
+| 4 Stage | **PASS** | `#stage` als Kanalschlüssel in `src/siteHash.js` ist klein. Stage zeigt einen anderen Code-Commit; braucht er neue Basis-Dateien, greift `requires.base`. Eine „STAGE“-Marke im Bild ist sinnvoll. |
+| 5 Rollen | **PASS** | Passt zu den Übernahmekarten (V-713). Ergänzung: Jede Karte nennt in §4 „Modul/Schalter“, jeder Merge-Antrag nennt `module.json`. |
+| 6 Reihenfolge | **PASS** | Schritt 0 ist erledigt (Paket @6a03920, Aufteilung siehe oben). Schritt 2 (Hülle nur mit Ton) ist der richtige Beweis. |
+| 7 Technik | **TUNE** | Relative `base` und Import-Map: ja. Zuerst die billigen Schnitte: (1) Vendor-Chunk (three, R3F, drei), (2) große JSON als nachgeladene Daten-Module (Karten, Fluid), (3) Schalter-Features als dynamische Importe (`chat=syl`, `hud=3d`, `treebend` …). Feste Module im M1-Wirt (heute statisch importiert) danach Schritt für Schritt über das vorhandene `mk()`-Muster auf Lazy-Hosts umstellen. Aufwand: eine Lead-Slice für 1–3, die feste Aufteilung später. |
+| 8 Kriterien | **PASS** | Messbar. Den „Spiegel-only-Start“ deckt der heutige Platzhalter-Lauf schon teilweise ab; als feste Prüfung kommt er in die Reihe. |
+
+**Ablauf** „Sitzung meldet → Lead führt ins mvp → Leak-Scan → Spiegel → `stage.json`“: passt.
+- **Fehlt:** `leak-scan.mjs`, ein kleines Schreib-Skript für `site/channels` (nur Lead, prüft Schema, sha256 und `requires`), der Schalter-Eintrag je Modul in `module.json` und die Smoke-Prüfung „Spiegel ohne private Teile startet“ in der Reihe.
+- Nach Georgs Ja zur Spec baue ich das als erste Lead-Slice. Vorher nichts umbauen (Prüfauftrag).
+
+### B · Gemergt seit §168 (alles hinter Schaltern)
+- **HUD 3D Tempo-Säule R2:** mvp f8fcac3.
+- **HUD Paket 5:** Truhe mit Feder-Aufklappen und Truhe 20, fraktaler Almanach mit A Zoom / B `alm=page`; mvp bd71508.
+- Nach dem Build PASS: contract-static, hud-3d, hud-clay, vehicles-r1 data.
+
+### C · Georgs Urteile (V-734/V-736) verteilt
+- Chatter-Silben TUNE an WS-Audio: tiefer, weicher, Schritte über den Mixer; neues Video ≤ 60 s.
+- tr1 TUNE an WS-NPC: neue Bilder in der Live-Welt, drei Figuren, Abstand prüfen. Die alten tr1-Bilder waren ein Lead-Fehler (Testbühne, alter Abstand).
+- Stadt-Ebene „ja, nur nahtlos über N36“ an WS1b.
+- **Säule R2:** Grunddesign passt; Zahl weiter weg (Tangente mit Glow), Farblogik als klassischer Cartoon-Tacho mit drei Zonen bis Rot, Boost als Effekt (A/B) – an WS1e.
+
+### D · Abnahmekarten nach V-736 (auf `abnahme/ws1`)
+- Fertig:
+  - Deck-Songs: Satz-Opener + Erwiderungen und Sperrliste (kayfabizarro `ws-song/workshop-r1` @721ea717, `SONGS_WORKSHOP_R1/ABNAHME_SATZ_OPENER.md`, `ABNAHME_SPERRLISTE_TR1.md`).
+  - WS1c: Wasser R2, Grauwert, Unterwasser (Zweig `ws1/water-r2-karte` @a0aebc7).
+- Folgen: Kit-Knete (WS-NPC), Käfer 35/40 % (WS1d), Tempo zu Fuß und Flughöhe (WS1e).
+- **Paket 5** liegt mit Clips auf `abnahme/ws1` @eadfe02 (A/B Almanach zur Wahl).
 
 ## 168 · 25.10. · Site-Paket fertig (`site/mvp-r1-dist` @6a03920) · Offene Punkte für Georg zentral (`abnahme/ws1` @2cac563) · Georg: Säule, gleicher Maßstab · Chatter-Wechselrede gemergt
 
