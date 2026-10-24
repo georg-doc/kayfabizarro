@@ -225,7 +225,7 @@ This is a **link census**, not a claim that all content has been downloaded, leg
 ## F · TIMELINE / PROVENANCE OF THIS CONSOLIDATION
 
 - **2026-10-18:** user's Flatworld/Comic panel-boundary/white Gutter conception; related visual discussions of inked 2D/3D interiors and folded horizons.
-- **2026-10-20:** user forwarded Hacktoberfest procedural-island library; tool is the independent **BlaiseLabs/procedural-almanac**, not KFB's Fractal Almanac.
+- **2026-10-20:** the external Hacktoberfest procedural-island Reddit post was published. **2026-10-22:** Georg brought the library into the KFB discussion; it is the independent **BlaiseLabs/procedural-almanac**, not KFB's Fractal Almanac.
 - **2026-10-21 / 22:** TopologyAI real-time splat portals linked and discussed; distinction between splat spatial appearance, shader/transitions, and physical mesh clarified; clusters **1 Portal/Dungeon**, **2 PDF Cards/Fractal Almanac**, **3 Gutter Space ride** articulated by Georg.
 - **2026-10-22:** user explicitly added **4 Water/Melt-Terrain scenic-depth** drive-by/overworld; requested synthetic/CC0/MIT scene/tools research. Parallel city/OSM/WFC/NPC/Goo and Godot exploratory thread.
 - **2026-10-23:** Georg corrected webchat over-prescription; WS0 register V-690 **Intent First / Solution Open / Evidence Before Prescription** supersedes unvalidated construction mandates.
