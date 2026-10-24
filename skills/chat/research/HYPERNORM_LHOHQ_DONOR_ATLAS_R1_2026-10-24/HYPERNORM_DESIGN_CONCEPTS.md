@@ -2,9 +2,9 @@
 Date: 2026-10-24. Every item: **ART DIRECTION PROPOSAL, NOT IMPLEMENTED**. Existing Billboard Media Residency/H13/Curator/Card/Audio owners retained.
 
 ## Guiding thesis
-**Epistemic montage** = the audience discovers that a fragment's meaning depends on documented origin, framing, juxtaposition, repetition and the path taken through the material. A bewildering surface without a meaningful second read is decorative noise; a scripted propaganda-tunnel without room for player discovery is a linear slideshow.
+**Three equal design planes (Georg correction, 2026-10-24):** (A) autonomous audiovisual experimental film / collage / code / remix / generative AI; (B) semantic-documentary juxtaposition; (C) interactive/spatial rabbit-holes. The first plane stands artistically alone: mesmerizing, provocative, disorienting, flashing and hard-cut audiovisual work can be complete without documentary justification. **Epistemic montage** remains a valid optional reading of the second plane. See `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`.
 
-The creative aim is NOT visual generic 'hacker mode' / infinite random links / imitation LHOHQ assets. Aim for curated strangeness that makes the player's interpretive choices consequential.
+The creative aim is NOT generic prepackaged filters or literal copying of LHOHQ assets. Aim for **visually arresting, artist-directed experimental filmmaking** with genuine generative risk, optional remixed documentary meaning, and optional meaningful player decisions. Its value is not conditional on interactivity.
 
 ## Four experience registers
 - **DIEGETIC_BILLBOARD**: an existing KFB physical clay billboard/screen hosts a short sequence within a world/biome, with its existing face and global single scheduler.
@@ -12,7 +12,11 @@ The creative aim is NOT visual generic 'hacker mode' / infinite random links / i
 - **RESEARCH_INSPECTOR**: Curator private provenance & rights review, no fiction represented as original source.
 - **NARRATIVE_RABBIT_HOLE**: optional exploratory pathways authored from canonical Cards / approved quotes / provenanced media, separate layer on same timeline.
 
-## Mechanic proposals, prioritized
+## Experimental audiovisual design plane — **P0 independently of semantics**
+
+Prioritize the artistically complete V1/V2/V3 experiments in `GEORG_VISUAL_EXPERIMENTAL_FILM_CORRECTION_2026-10-24.md`: 10-second montage cinema loop, 10-second optical/generative loop, and 30–90-second music-reactive experimental film. Build on source-isolated original H13 montage/fractals/hypno, music analysis, typography, flashes, film layers and optical processing. Don't gate on documentary quotes or required FrizzleQuestions. Editorially constrain the **composition** rather than banning random/chaotic/noisy/flicker-driven art.
+
+## Semantic and rabbit-hole mechanic proposals (M01–M14; priorities LOCAL TO THIS PLANE)
 | ID | Name | Visual-narrative mechanism | Data/output | First proof |
 |---|---|---|---|---|
 | M01 P0 | **Document / Performance Split** | A bureaucratically exact-looking source card overlays an authored satirical translation; player can flip to original metadata. No invented CIA/agency seal presented as actual document. | `sourceRef + displayType + annotationType + fictionalFrame` | one same-seed original/interpretation alternating 2×, provenance label visible |
@@ -75,7 +79,7 @@ Timing design: editorial rhythm anchored to KFB Audio's real beat/timeline; opti
 2. **Select M01–M04** for one manually art-directed finite sequence, with authored storyboard and a fixed seeded path. Only approved existing media and quotes.
 3. **Implementation seam (future executor):** add *semantic shot plan input* to existing H13/Curator pipeline; return shot descriptors to existing billboard scheduler and CanvasTexture. Avoid direct third-party live embeds and new WebGL contexts.
 4. **Tests (future):** same-seed two-run exact shot order; 3 provenance/copyright/fiction flags; 3 meaningful transitions; one real FrizzleQuestion; no duplicate audio/render loops; no accidental source-personal-data export.
-5. **Visible gate:** side-by-side baseline H13 vs H13 + semantic-context sequence, with same duration, same Card/quote/audio source. Judge: narrative legibility, originality, visual composition, source distinction, replay consistency and player curiosity.
+5. **Visible gate (CORRECTED):** first, isolated original H13 versus two different 10-second experimental visual studies and one longer music film; do not impose a Card/quote/FrizzleQuestion as admission ticket. Judge audiovisual inventiveness, real motion design, compositional intensity, material transformation and reuse of H13. An optional **separate** semantic-context comparison follows if Georg selects that mode.
 
 ## Measures that matter
 - Independent critic can explain why every neighbor exists. 0 untyped causal associations.
@@ -84,7 +88,7 @@ Timing design: editorial rhythm anchored to KFB Audio's real beat/timeline; opti
 - Exact same seed reproduces shot order and content/source selection.
 - No increase in runtime owners. Frame-time/fps left UNKNOWN until target-device test.
 - Rights checked per actual image/font/film/media, not blanket per domain.
-- Contrast and read time are compositional requirements; strobing is not a design objective.
+- In **quote read-along only**, legibility/read time and sourcing must hold. In **pure visual cinema**, aggressive contrast, flicker, temporal interference and stroboscopic montage **may themselves be deliberate artistic tools**, under intentional author controls and optional reduced-motion presentation; no blanket ban or euphemistic substitution.
 
 ## Integration destinations only after acceptance
 Curator data: references/metadata; existing QuotePool provenance + rights.
