@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.site-module/1",
+  "id": "kfb-hypernorm-experience",
+  "version": "2.0.0-candidate",
+  "entry": "./main.js",
+  "requires": {
+    "shell": "1",
+    "base": "hypernorm-private-r1"
+  },
+  "privateBase": "./private/",
+  "channels": [
+    "stage"
+  ],
+  "dependencies": [
+    "H13 blob 46670cfa5c62c3aea6aa3840d301fc7a35723407"
+  ],
+  "spheres": [
+    "sendezentrale",
+    "aktenrauschen",
+    "dada-garten"
+  ]
+}
