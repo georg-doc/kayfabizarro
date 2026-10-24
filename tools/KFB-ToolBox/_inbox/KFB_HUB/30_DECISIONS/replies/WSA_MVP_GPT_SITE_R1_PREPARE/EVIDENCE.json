@@ -1,0 +1,14 @@
+{
+  "schema":"kfb.mvp-site-preflight/1",
+  "date":"2026-10-24",
+  "status":"PREPARATION_ONLY / PUBLICATION_BLOCKED_SOURCE_BUILD_MISMATCH",
+  "site":{"project":"appgprj_6ad2ac305b788191af0bdfc68823a300","url":"https://kfb-ws1-staging.frizzlebob.chatgpt.site","savedVersion":4,"source":"fbabbad7b8efa98c9071fccb358e4fb4788ec826","audience":"owner-only custom, one user, zero groups","runtimeEnvironmentEntries":0,"changed":false},
+  "game":{"repo":"georg-doc/KFB-Stunt-Car-Race","branch":"game/mvp-r1","head":"3a6e010400a5bf2c0a64297db2d6a1778d159373","reportedTests":75,"reportedTestsRerun":false},
+  "sourceMismatch":{"remoteCommit":"36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3","remotePath":"media/kfb-audio/r1/","musicTracks":38,"effectSets":24,"publicImportedFootstepWavs":12,"privateAudioPolicyMismatch":true,"remoteConfigDisablesLocalCopy":true,"audioZeroDoesNotDisableRemoteEffects":true,"sourceCleanupPerformed":false},
+  "privateAccess":{"nativeGithubPrivateFileRead":"PASS base64 retrieval of actual B17 GLB","directGitCloneAuthentication":"NOT_CONFIGURED; not a repository permission denial","existingStageAssetsToken":"NOT_PROVEN: previous code uses public snapshot reads only","georgAskedForToken":false},
+  "unitEvidence":{"runtime":"Node v24.21.0; not Node22 game build","providedTests":{"passed":24,"failed":0},"independentTesterExtraEdgeProbes":{"passed":13,"failed":0},"libSha256":"7dfb79c6dd5802de96d0665ad5f2c941d97747ba08013f8416ba14847c9d1729","testSha256":"6d65cab36cef191cc66cbd1be54cfce15cf2e331b6493a86602a36ec146a1dcf","critic":"CONTINUE after cache/Vary repair, bounded source review","guard":"CONTINUE preparation / STOP publication pending source separation"},
+  "notRun":["npm ci + actual Node22 game probe build","private figure completeness/sha roster audit","framework static bypass and hosted password testing","hosted raw proxy/range/MIME integration","game locomotion/drive/HUD/combat/model checks","desktop FPS","site-build.json package count/bytes","actual tester login"],
+  "candidateScope":"unwired server primitive only; no current production all-path security claim; no real password created or written",
+  "nextGate":"WS1/WS-Audio returns exact game commit separating approved public music from private SFX packaging, or a verified remote-config effects-disable path. Then finish platform integration/probe and hosted checks before any publication.",
+  "protectedBoundaries":["Audio Site unchanged","existing Staging audience/source/live unchanged","no new Site","no World source edits","no Cloudflare Pages","no deletion/merge","no secrets in source"]
+}
