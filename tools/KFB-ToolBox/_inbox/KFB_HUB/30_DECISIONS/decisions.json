@@ -10674,6 +10674,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-746",
+   "date": "2026-10-25",
+   "area": "Prozess",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: Prozedurale Welt hat Vorrang vor Chatterbox-Feinschliff und Details. Ziel: endloser surrealer Cartoon-Roadtrip mit drei Slices – S1 Fortbewegung (Auto über HUD-Symbol rufen, hineinhüpfen bzw. bis zur Hüfte mit Lenkrad im Dach, zweiter Klick verlässt wie ein Reittier mit Verschwinden; Flugmodus mit überarbeiteter Physik, Zerstörung bzw. Goo als eigene Schicht), S2 endlose Welt (wechselnde Biome, Gelände, Paletten, Himmel, Musik bzw. Klangbetten), S3 Begegnungen als freigegebene Module aus allen Pools (Bewohner, Dioramen, MiB, UFO, Mindspaces, HyperNorm-Sphären, Splats). Chatterbox vorerst nur mit Sprechblasen, Silben-Stimmen hinter chat=syl ruhen. Auftrag WS1 Hub b223.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Welt ist der Rahmen, in den sich alle Module hängen; ohne sie entstehen Einzelteile ohne Ort.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-747",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg 25.10. (bestätigt frühere Freigabe): Stadtzonen bekommen schon bei der Weltgenerierung ein flacheres, weiterhin welliges Relief (Ebene, Konzept §5.10); vereinbar mit V-716, weil es die Reliefwahl der Zone ist und kein nachträgliches Plätten.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Ebene ist nach V-716 keine Stadt einbettbar (WS1-Rechnung Kölner Tasche).",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10786,7 +10816,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1263",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1264",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
