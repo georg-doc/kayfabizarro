@@ -10,6 +10,7 @@ import { useGame } from './store'
 import { DEBUG, expose } from './debug'
 import { isIssuedLine, SILENCE } from './dialogText'
 import { testLine, zurufLine } from './poolReader'
+import { CHAT_SYL, speak, speakerOf } from './audio/kfbAudio.js' // WS-Audio Chatter-Silben R1: jede Sprech-Blase mit Laut (nur #chat=syl)
 
 // Kopf-Oberkante der Spielfigur: playerState.pos ist die Körpermitte; +1,05 m liegt knapp über dem Kopf (gemessen am Bildschirm)
 const PLAYER_ANCHOR = { id: 'player', position: playerState.pos, offset: [0, 1.05, 0] }
@@ -31,6 +32,7 @@ export default function BubbleHost() {
       const ok = isIssuedLine(line) && (line.source !== 'TEST' || DEBUG) && (!line.speaker || line.speaker === anchor)
       if (!ok) { console.warn('[bubble] Zeile ohne geprüfte Quelle verworfen'); L.show(anchor, [SILENCE], 'thought', color); return }
       L.show(anchor, line.parts, line.source === 'SILENCE' ? 'thought' : kind, color)
+      if (CHAT_SYL) { const sp = speakerOf(anchor), p = anchorAt(anchor, new THREE.Vector3()); speak({ text: line.parts.join(' '), characterId: sp.characterId, group: sp.group, pos: p ? { x: p.x, y: p.y, z: p.z } : null, kind: line.source === 'ZURUF' ? 'call' : 'line' }) } // WS-Audio: Laut zur Blase (doppelt gerufen = einmal)
     })
     const test = { set: new Map() }
     expose('Bubbles', () => L.list())

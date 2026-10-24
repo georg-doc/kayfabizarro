@@ -56,22 +56,29 @@ function boardRect(x, y, w, h, padK = 0.12, force = null) { // force: Ecke fest 
   return { corner, w: W, h: H, dx, dy, fill: w / (w + 2 * p) }
 }
 const GEO_A = { arrow: { x: 860, y: 10, s: 64 }, label: { cx: 892, y: 78, fs: 15, fd: 22 }, chest: { x: 18, y: 464, s: 60 }, orbs: { cx: 480, y: 14, s: 34, gap: 9 },
-  gear: { x: 875, y: 138, s: 34 }, radio: { x: 790, y: 426, w: 152, h: 98 }, actions: { y: 480, s: 44, gap: 12, cx: 480, n: 6 }, inter: { s: 44 }, almanac: { x: 18, y: 16, cw: 128, step: 12, cap: 17, ar: 1.79 }, keys: 13 }
+  gear: { x: 875, y: 138, s: 34 }, speed: { x: 883, y: 194, w: 18, h: 62, fs: 18 }, radio: { x: 790, y: 426, w: 152, h: 98 }, actions: { y: 480, s: 44, gap: 12, cx: 480, n: 6 }, inter: { s: 44 }, almanac: { x: 18, y: 16, cw: 128, step: 12, cap: 17, ar: 1.79 }, keys: 13 }
 // Aktionsplätze (Lead 24.10.): echte Spieltasten V/B/N, keine Granate (das Spiel hat keine), 4–6 leer angedeutet. hudYaw 35° + hudView.yaw_deg (N32 r2)
 export const ACTIONS = [{ id: 'fist', file: FIST_FILE, yaw: 90, key: 'V', t: 'Faust' }, { id: 'blaster', file: 'KFB_HUD_Blaster.r2', yaw: 270, key: 'B', t: 'Blaster' }, { id: 'bomb', file: 'KFB_HUD_Bomb.r2', yaw: 0, key: 'N', t: 'Clown-Bombe' }]
 // cas=new (Standard, Georg 24.10.): Truhe größer als Gegengewicht, Kassette etwas kleiner; Ecken bleiben (Truhe unten links, Kassette unten rechts)
-const GEO_NEW = { chest: { x: 18, y: 450, s: 74 }, radio: { x: 812, y: 440, w: 130, h: 84 } }
+// Größen als Verhältnis zur Interaktions-Blase (Georg 24.10.: die Blase ist der Maßstab; Aktions-Icons ähnliche Größe und ähnliches Volumen,
+// Truhe als Gegengewicht zu Leiste und Kassette). Blase: Höhe 44 Board-px (Breite × 1,24).
+export const RATIO = { bubble: 44, action: 1.18, actionGap: 0.36, chest: 1.95, cassetteH: 1.91 }
+const RB = RATIO.bubble, AS = Math.round(RB * RATIO.action), CS = Math.round(RB * RATIO.chest), BOT = 524 // gemeinsame Unterkante der unteren Reihe (Board-px)
+const GEO_NEW = { chest: { x: 18, y: BOT - CS, s: CS }, radio: { x: 812, y: BOT - Math.round(RB * RATIO.cassetteH), w: 130, h: Math.round(RB * RATIO.cassetteH) },
+  actions: { y: BOT - AS, s: AS, gap: Math.round(RB * RATIO.actionGap), cx: 480, n: 6 } }
 export function layoutA(casNew = true) {
   const G = casNew ? { ...GEO_A, ...GEO_NEW } : GEO_A, L = {}
   L.arrow = { ...boardRect(G.arrow.x, G.arrow.y, G.arrow.s, G.arrow.s, 0.3), el: 38 }
   L.chest = { ...boardRect(G.chest.x, G.chest.y, G.chest.s, G.chest.s, 0.3), el: 22, yaw: 35 }
   L.gear = { ...boardRect(G.gear.x, G.gear.y, G.gear.s, G.gear.s, 0.3), el: 22, yaw: -112 + 35 }
+  L.speed = { ...boardRect(G.speed.x, G.speed.y, G.speed.w, G.speed.h, 0.45, 'tr'), el: 10, hidden: true } // Tempo-Leiste in der Spalte von Zahnrad und Pfeil
+  L.speedText = { right: (BW - G.speed.x + 8) * F, top: (G.speed.y + G.speed.h - G.speed.fs * 2.2) * F, fs: G.speed.fs * F }
   L.cassette = { ...boardRect(G.radio.x, G.radio.y, G.radio.w, G.radio.h, 0.2), el: 16, yaw: -14 }
   // Aktionen: sechs Plätze + Interaktion in einer Reihe (h3d-hud buildFrame); Interaktion ist DOM (Blase) beim Wirt
   const A = G.actions, iw = Math.round(G.inter.s * 1.24), igap = A.gap + 8, rowW = A.n * A.s + (A.n - 1) * A.gap + igap + iw, ax0 = Math.round(A.cx - rowW / 2)
   L.slots = []; for (let i = 0; i < A.n; i++) L.slots.push({ x: (ax0 + i * (A.s + A.gap)) * F, y: A.y * F, s: A.s * F })
   ACTIONS.forEach((a, i) => { L['act' + i] = { ...boardRect(ax0 + i * (A.s + A.gap), A.y, A.s, A.s, 0.3, 'bc'), el: 22, yaw: 35 + a.yaw } })
-  L.inter = { x: (ax0 + A.n * (A.s + A.gap) - A.gap + igap) * F, y: A.y * F, w: iw * F, h: G.inter.s * F }
+  L.inter = { x: (ax0 + A.n * (A.s + A.gap) - A.gap + igap) * F, y: (A.y + (A.s - G.inter.s) / 2) * F, w: iw * F, h: G.inter.s * F } // Blase auf der Mittellinie der Aktionen
   L.keys = G.keys * F
   L.almanac = { x: G.almanac.x * F, y: G.almanac.y * F, cw: G.almanac.cw * F, step: G.almanac.step * F, cap: G.almanac.cap * F, ch: Math.round(G.almanac.cw / G.almanac.ar) * F }
   L.fanShadow = fanShadowRect(7)
@@ -123,6 +130,7 @@ export function createHud3d(opts = {}) {
   ACTIONS.forEach((a, i) => SH.addSlot('act' + i, L['act' + i], { lights: 'board', ortho: true, toneMapped: false, rim: 1 }))
   SH.addSlot('gear', L.gear, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
   SH.addSlot('cassette', L.cassette, { lights: 'board', ortho: true, toneMapped: false, rim: 1 })
+  SH.addSlot('speed', L.speed, { lights: 'board', ortho: true, toneMapped: false, rim: 1, ol: [1.5, 2.6] })
   SH.slots.fanShadow.mat.uniforms.opacity.value = 0.55
   const { slots } = SH
   const ZCHEST = zoneSet(PROOF_PALETTES.otown), ZDIG = zoneSet({ base: HALO, accent: HALO, detail: INK }), ZDIG0 = zoneSet({ base: '#f3efe6', accent: '#f3efe6', detail: '#77726b' })
@@ -168,6 +176,30 @@ export function createHud3d(opts = {}) {
   }
   load()
 
+  // ── Tempo-Leiste (Georg 24.10.; h3d-core barProp): Knet-Röhre in Creme, Füllung über die volle Skala #4fb648 → #9cc83a → #f2c230 → #ec8a2c → #d9453a.
+  // Füllung federt nach (ω 9, ζ 0,45), im Boost glüht und wackelt sie (Hinweis-Lichthof Orange), am Anschlag ein Squash. Nur Fahren und Fliegen.
+  const RAMP = ['#4fb648', '#9cc83a', '#f2c230', '#ec8a2c', '#d9453a'].map((c) => new THREE.Color(c))
+  const rampAt = (t) => { const n = RAMP.length - 1, i = Math.min(n - 1, Math.floor(t * n)), f = t * n - i; return RAMP[i].clone().lerp(RAMP[i + 1], f) }
+  const SPD = { shown: 0, v: 0, target: 0, built: -1, boost: false, visible: false, maxHit: false, t: 0, kmh: 0 }
+  const FULL = 1.4
+  MAT.tube = boardClay('#efe5d2'); MAT.fill = boardClay('#ffffff', { vertexColors: true, emissive: '#ff9a3c', emissiveIntensity: 0 })
+  function buildBarBase() { const s = slots.speed, g = new THREE.Group(); g.add(new THREE.Mesh(new THREE.CapsuleGeometry(0.16, FULL, 8, 24), MAT.tube))
+    const fill = new THREE.Mesh(new THREE.BufferGeometry(), MAT.fill); fill.position.z = 0.012; g.add(fill); parts.bar = { g, fill }
+    s.scene.add(g); s.root = g; s.fitMode = 'box'; s.root.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(g.children[0]); SH.fitCamera(s, s.L.el, 0, 1 / s.L.fill / 0.94, new THREE.Vector3(), 1, b) }
+  function buildFill(frac) { const P = parts.bar; if (!P) return; const L0 = FULL * Math.max(0.02, Math.min(1, frac)), geo = new THREE.CapsuleGeometry(0.17, L0, 8, 24), pos = geo.getAttribute('position'), col = new Float32Array(pos.count * 3)
+    for (let i = 0; i < pos.count; i++) { const y = pos.getY(i) + L0 / 2; rampAt(Math.max(0, Math.min(1, y / FULL))).toArray(col, i * 3) }
+    geo.setAttribute('color', new THREE.BufferAttribute(col, 3)); P.fill.geometry.dispose(); P.fill.geometry = geo; P.fill.position.y = -FULL / 2 + L0 / 2; SPD.built = frac; slots.speed.dirty = true }
+  function stepSpeed(dt) {
+    const s = slots.speed; if (!parts.bar) return
+    if (s.L.hidden === SPD.visible) { s.L.hidden = !SPD.visible; s.dirty = true }
+    if (!SPD.visible) return
+    const w = 9, z = 0.45; if (RM()) { SPD.shown = SPD.target; SPD.v = 0 } else { SPD.v += (w * w * (SPD.target - SPD.shown) - 2 * z * w * SPD.v) * dt; SPD.shown += SPD.v * dt }
+    const f = Math.max(0, Math.min(1, SPD.shown)); if (Math.abs(f - SPD.built) > 0.006) buildFill(f)
+    SPD.t += dt; const glow = SPD.boost ? 0.35 + 0.25 * Math.sin(SPD.t * 14) : 0; if (Math.abs(MAT.fill.emissiveIntensity - glow) > 0.02) { MAT.fill.emissiveIntensity = glow; s.dirty = true }
+    SH.setHint('speed', SPD.boost && !RM(), '#ff9a3c')
+    if (SPD.target >= 0.98 && !SPD.maxHit) { SPD.maxHit = true; SH.pressFx('speed') } else if (SPD.target < 0.9) SPD.maxHit = false
+  }
+
   // ── Paket 2 laden: Aktionen (N32 r2, Originalmaterial), Zahnrad (N29, otown-Zonen), Kassette (Poly + Tasten aus N29 Radio), Fächer-Schatten ───────
   async function loadPack2() {
     const ld = (u) => (u ? loader.loadAsync(u) : Promise.resolve(null))
@@ -179,6 +211,7 @@ export function createHud3d(opts = {}) {
     if (shadow) { const s = slots.fanShadow, o = shadow.scene; o.traverse((n) => { if (n.isMesh) { n.material = MAT.shadow; n.frustumCulled = false } })
       const w = wrap(o); s.scene.add(w); s.root = w; fit(s, s.L.el, 0); s.L.hidden = true; S.loaded++ }
     if (cas && CASNEW) { buildCassetteNew(cas); S.loaded++ } else if (cas && radio) { parts.cassette = { cas, radio }; buildCassette(); S.loaded++ }
+    buildBarBase(); buildFill(0)
   }
   // Weiße Kassette (h3d-core cassetteProp): Körper poly_cassette mit Creme-Shader, drei Tasten aus KFB_HUD_Radio (Oberseite #4b3f63, Flanke #1f1829;
   // Ton aus #c9c2cc / #8d8492), Symbole als Relief in Creme, 25 % der Kassettenbreite, Abstand 29 %. Neu gebaut nur bei Zustandswechsel (Play/Pause, Ton).
@@ -211,7 +244,7 @@ export function createHud3d(opts = {}) {
   }
   // N34-Kassette (n34_special MODE cassette): fast frontal, 12° Gieren, 8° Neigen; Originaltextur in Knete. Knöpfe sind Bildschirm-Anzeigen (Wirt, DOM)
   // auf den Spulen (links Play/Pause, rechts Weiter) und klein mittig darunter (Ton) – Lage als Anteil der Silhouette, gemessen im N34-Render (SPOOLS).
-  const SPOT = { play: [0.276, 0.46, 1], next: [0.706, 0.468, 1], mute: [0.49, 0.83, 0.72] }
+  const SPOT = { play: [0.276, 0.46, 1], next: [0.706, 0.468, 1], mute: [0.49, 0.75, 0.72] } // Ton höher: klar innerhalb der Kassette, keine Tangente am Rand (Georg 24.10.)
   function buildCassetteNew(g) {
     const s = slots.cassette, o = g.scene; o.traverse((n) => { if (n.isMesh) { n.material = boardClay('#ffffff', { map: n.material.map, amp: 0.18 }); n.frustumCulled = false } }); SH.countTris(o)
     const w = wrap(o); w.rotation.set(0, -12 * DEG, 0); /* Neigen 8° über die Kamera (Höhenwinkel) */ s.scene.add(w); s.root = w; fit(s, 8, 0); parts.casNew = { verts: [] }
@@ -223,7 +256,7 @@ export function createHud3d(opts = {}) {
     if (parts.casNew) { const s = slots.cassette, r = s.rect; if (!s.root) return {}; let x0 = 1, x1 = -1, y0 = 1, y1 = -1
       for (const v of parts.casNew.verts) { _p.copy(v).project(s.cam); x0 = Math.min(x0, _p.x); x1 = Math.max(x1, _p.x); y0 = Math.min(y0, _p.y); y1 = Math.max(y1, _p.y) }
       const X0 = r.x + (x0 + 1) / 2 * r.w, X1 = r.x + (x1 + 1) / 2 * r.w, Y0 = r.y + (1 - y1) / 2 * r.h, Y1 = r.y + (1 - y0) / 2 * r.h, rad = (Y1 - Y0) * 0.2
-      return Object.fromEntries(Object.entries(SPOT).map(([k, [u, v, f]]) => [k, { x: X0 + u * (X1 - X0), y: Y0 + v * (Y1 - Y0), r: rad * f, j17: true }])) } const P = parts.cassette, s = slots.cassette, r = s.rect; if (!P?.btns || !s.root) return {}; s.root.updateMatrixWorld(true); const out = {}
+      return { ...Object.fromEntries(Object.entries(SPOT).map(([k, [u, v, f]]) => [k, { x: X0 + u * (X1 - X0), y: Y0 + v * (Y1 - Y0), r: rad * f, j17: true }])), box: { x0: X0, x1: X1, y0: Y0, y1: Y1 } } } const P = parts.cassette, s = slots.cassette, r = s.rect; if (!P?.btns || !s.root) return {}; s.root.updateMatrixWorld(true); const out = {}
     P.btns.forEach((b, i) => { b.getWorldPosition(_p); const c = _p.clone().project(s.cam), e = new THREE.Box3().setFromObject(b), ex = e.max.clone().project(s.cam), en = e.min.clone().project(s.cam)
       out[['play', 'next', 'mute'][i]] = { x: r.x + (c.x + 1) / 2 * r.w, y: r.y + (1 - c.y) / 2 * r.h, r: Math.max(12, Math.abs(ex.x - en.x) / 4 * r.w) } })
     return out }
@@ -290,7 +323,7 @@ export function createHud3d(opts = {}) {
       if (!alive) return
       const u0 = performance.now(); SH.signal(sig)
       if (S.status !== 'OK') return
-      stepArrow(dt); flyBalls(dt)
+      stepArrow(dt); flyBalls(dt); stepSpeed(dt)
       for (let i = 0; i < 6; i++) if (!balls.some((b) => b.i === i) && S.shown[i] !== S.counts[i]) buildOrb(i, S.counts[i])
       SH.step(dt)
       S.updMs += performance.now() - u0; S.updates++
@@ -308,6 +341,7 @@ export function createHud3d(opts = {}) {
     inFlight: () => balls.length,
     setMusic: (m) => { const pl = m.playing !== false, mu = !!m.muted; if (pl !== S.music.playing || mu !== S.music.muted) { S.music = { playing: pl, muted: mu }; if (!CASNEW) buildCassette() } },
     cassetteKind: () => (CASNEW ? 'new' : 'old'),
+    setSpeed: (o) => { SPD.visible = !!o?.visible; SPD.target = Math.max(0, Math.min(1.08, o?.frac ?? 0)); SPD.boost = !!o?.boost; SPD.kmh = o?.kmh ?? 0 }, speedState: () => ({ visible: SPD.visible, shown: +SPD.shown.toFixed(3), target: +SPD.target.toFixed(3), boost: SPD.boost, glow: +MAT.fill.emissiveIntensity.toFixed(2), kmh: Math.round(SPD.kmh) }),
     setWeapon: (fam) => { S.weapon = fam; for (let i = 0; i < ACTIONS.length; i++) SH.setUiFlag('act' + i, 'on', ACTIONS[i].id === fam) },
     pulse: (key) => { SH.setUiFlag(key, 'pressed', true); setTimeout(() => SH.setUiFlag(key, 'pressed', false), 120) },
     tapGear: () => { const s = slots.gear; if (s.root) SH.playOnce(s, 'gear_tap_spin') },

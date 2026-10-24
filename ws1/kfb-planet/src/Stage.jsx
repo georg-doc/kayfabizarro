@@ -37,6 +37,7 @@ import { createClaySSOT } from './modules/claySSOT'
 import { createVehicleLineup } from './modules/vehicleLineup'
 import { mountCompareBar, toggleClean } from './compareBar'
 import { worldKFor } from './worldScale'
+import { setSpeaker, bootSpeech } from './audio/kfbAudio.js'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -110,6 +111,7 @@ const CAST_ARG = /cast=([\w-]+)/.exec(hash)?.[1] || null
 const CAST_ID = CAST_ARG === 'fb' ? null : CAST_IDS.includes(CAST_ARG) ? CAST_ARG : /actors=fb/.test(hash) ? 'gothgirl' : null
 const FIG_R = ALIENS ? pick('lady_dory') : CAST_ID ? pick(CAST_ID) : FIG_L
 export const FIGURES = { left: FIG_L && { ok: FIG_L.ok, id: FIG_L.id, status: FIG_L.status, reason: FIG_L.reason }, right: FIG_R && { ok: FIG_R.ok, id: FIG_R.id || CAST_ID, status: FIG_R.status, reason: FIG_R.reason } }
+setSpeaker('stage-left', FIGURES.left?.id); setSpeaker('stage-right', FIGURES.right?.id) // WS-Audio Chatter-Silben: Stimme der Bühnen-Blasen (Anker → Figur)
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
 // Marken je Meshy-Bühne in Modell-Einheiten u (skalieren mit dem Bühnen-Maßstab mit): freie Fläche vor der Kartenwand laut Kamera-Notiz der Slot-Datei
 export const SCENE_MARKS = Object.freeze({
@@ -257,6 +259,7 @@ export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
+  useEffect(() => { bootSpeech() }, []) // WS-Audio Chatter-Silben: nur mit #chat=syl – lädt allein die Silben-Clips (keine Musik/Atmo auf der Bühne)
   // V-391 Regel 5 · Kandidaten-Vermerk außerhalb des Motivs (V-383: unten rechts am Rand, mit „Sauberes Bild“ ausblendbar)
   useEffect(() => { const c = [FIGURES.left, FIGURES.right].filter((f) => f?.ok && f.status === 'candidate'); if (!c.length) return undefined
     const d = document.createElement('div'); d.id = 'kfb-figure-status'; d.style.cssText = 'position:fixed;right:10px;bottom:10px;padding:4px 9px;border-radius:8px;background:rgba(40,28,16,.6);color:#ffe9b8;font:500 11px/1.2 system-ui,sans-serif;z-index:8999;pointer-events:none'

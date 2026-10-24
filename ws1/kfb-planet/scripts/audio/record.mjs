@@ -5,6 +5,7 @@
 //   kampf    1 · Kampf am Obstgarten (V/B/N, Saugarm) · 2 · Hörprobe Arena-Waffen (K10-Adapter, Ereignisse per Prüfskript – die Arena ist noch
 //            nicht im Spiel, das steht im Bild) · 3 · Fahrt am Boden (Untergrund, Drift, Bremse)                → kfb-audio-kampf.mp4 (Handy)
 //   gruppen  NPC-Gruppen (Skelette, Bots, Spielzeugsoldaten) und Dark Fluffer – nur in einer lokalen Vorschau-Kombination mit ws-npc/phase-a → kfb-audio-gruppen.mp4
+//   sprech   Sprech-Anlässe echt im Spiel: Orc-Band, Disco K12, gothgirl (WS-NPC 24.10.) → kfb-audio-sprech.mp4
 //   gruss    Begrüßung der Bewohner (Register-Instrument, echt gespielt) + Hörprobe aller Anlässe und Rückfall-Stufen → kfb-audio-begruessung.mp4
 // Aufruf: PW_GPU=1 node scripts/audio/record.mjs [abnahme|kampf|gruppen|heilen|mvp|neu|gruss] → test/out/audio/ (privat: enthält Musik und gekaufte Töne!)
 import fs from 'fs'
@@ -20,17 +21,27 @@ const hold = async (page, k, ms) => { await page.keyboard.down(k); await wait(ms
 // Datenstück → base64 (nach „base64,“; der MIME-Typ enthält selbst ein Komma)
 const SEND = "(e) => { if (!e.data.size) return; chain = chain.then(() => new Promise((res) => { const fr = new FileReader(); fr.onload = () => { window.__kfbRecChunk(fr.result.slice(fr.result.indexOf('base64,') + 7)).then(res) }; fr.readAsDataURL(e.data) })) }"
 
-async function recordSegment(name, hash, seconds, script) {
+async function recordSegment(name, hash, seconds, script, opts = {}) { // opts: { stage (Bühne ohne AudioHost), hideBubbles, pre(page) vor der Aufnahme }
   const { browser, page, errs } = await openAudioPage(srv.url, hash + ',debug')
   const file = path.join(OUT, `seg-${name}.webm`); const fd = fs.openSync(file, 'w')
   await page.exposeFunction('__kfbRecChunk', (b64) => { fs.writeSync(fd, Buffer.from(b64, 'base64')) })
+  // Ton-Modul direkt (Bühne hat keinen AudioHost): window.__kfbA = kfbAudio.js
+  const bindA = () => page.evaluate(async () => { if (!window.__kfbA) window.__kfbA = await import('/src/audio/kfbAudio.js') })
+  if (opts.stage) {
+    await page.waitForFunction(() => window.__kfbStageCtl?.deck, null, { timeout: 180000 }).catch(() => {})
+    if (opts.hideBubbles) await page.addStyleTag({ content: '#ui-bubbles{visibility:hidden!important}' })
+    await wait(1500); await page.mouse.click(8, 8); await bindA()
+    if (/chat=syl/.test(hash)) await page.waitForFunction(() => window.__kfbA.stats().loads?.total, null, { timeout: 120000 }).catch(() => {})
+    await wait(800)
+  } else {
   await page.waitForFunction(() => window.__kfbM1?.status?.().amphTris > 0 && window.__kfbM1?.status?.().ready?.player === 'OK', null, { timeout: 180000 }).catch(() => {})
   await wait(2500)
+  if (opts.pre) { await opts.pre(page); await wait(2500) } // z. B. Figur hinstellen – vor der Aufnahme (Lande-Ton fällt nicht ins Video)
   await page.keyboard.press('KeyM'); await page.keyboard.press('KeyM') // erste Eingabe (M = Fahrhilfe an/aus, zweimal = unverändert); zu Fuß ohne Wirkung
   await page.waitForFunction(() => { const s = window.__kfbAudio?.stats?.(), m = s?.modules; return m && m.racer && m.combat && m.ambience && m.steps && m.music && s.loads.bank }, null, { timeout: 180000 })
-  await wait(1500)
+  await wait(1500); await bindA() }
   await page.evaluate((SEND) => {
-    const c = document.querySelector('canvas'), v = c.captureStream(30), a = window.__kfbAudio.capture()
+    const c = document.querySelector('canvas'), v = c.captureStream(30), a = window.__kfbA.captureStream?.() || (() => { const x = new AudioContext(); return x.createMediaStreamDestination().stream })() // Bühne ohne Ton: stille Spur
     const st = new MediaStream([...v.getVideoTracks(), ...a.getAudioTracks()])
     const mime = ['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm'].find((m) => MediaRecorder.isTypeSupported(m))
     const r = new MediaRecorder(st, { mimeType: mime, videoBitsPerSecond: 3_000_000, audioBitsPerSecond: 160_000 }); let chain = Promise.resolve()
@@ -38,12 +49,12 @@ async function recordSegment(name, hash, seconds, script) {
     window.__kfbRec = { stop: () => new Promise((res) => { r.onstop = () => chain.then(res); r.stop() }) }; r.start(1000) }, SEND)
   const t0 = Date.now(), at = (s) => wait(Math.max(0, t0 + s * 1000 - Date.now())), samples = [], marks = []
   const mark = (text) => marks.push({ t: +((Date.now() - t0) / 1000).toFixed(2), text })
-  const sample = async () => { const s = await page.evaluate(() => { const a = window.__kfbAudio.stats(); return { mode: a.mode2, list: a.nowPlaying?.list, outDb: a.outDb, voices: a.voices.total, avgMs: a.perf.avgMs, p95Ms: a.perf.p95Ms, racer: a.racer, duck: a.duckDb, steps: a.steps, biome: a.biome, drive: a.drive } }); samples.push({ s: +((Date.now() - t0) / 1000).toFixed(1), ...s }) }
+  const sample = async () => { const s = await page.evaluate(() => { const a = window.__kfbA.stats(); return { mode: a.mode2, list: a.nowPlaying?.list, outDb: a.outDb, voices: a.voices.total, avgMs: a.perf.avgMs, p95Ms: a.perf.p95Ms, racer: a.racer, duck: a.duckDb, steps: a.steps, biome: a.biome, drive: a.drive } }); samples.push({ s: +((Date.now() - t0) / 1000).toFixed(1), ...s }) }
   const ticker = setInterval(() => sample().catch(() => {}), 2000)
   try { await script(page, at, mark) } finally { clearInterval(ticker) }
   await at(seconds); await sample()
   await page.evaluate(() => window.__kfbRec.stop()); fs.closeSync(fd)
-  const final = await page.evaluate(() => { const a = window.__kfbAudio.stats(); return { perf: a.perf, voices: a.voices, loads: a.loads, errors: a.errors, music: a.music, bank: a.bank, steps: a.steps, drive: a.drive, events: a.events.map((e) => e.type + ':' + (e.e || e.kind || e.list || '') + (e.w ? '/' + e.w : '') + (e.hit ? '+' : '')) } })
+  const final = await page.evaluate(() => { const a = window.__kfbA.stats(); return { perf: a.perf, voices: a.voices, loads: a.loads, errors: a.errors, music: a.music, bank: a.bank, steps: a.steps, drive: a.drive, events: a.events.map((e) => e.type + ':' + (e.e || e.kind || e.list || '') + (e.w ? '/' + e.w : '') + (e.hit ? '+' : '')) } })
   await browser.close()
   return { name, file, url: '/' + file, bytes: fs.statSync(file).size, errs, marks, samples, final }
 }
@@ -190,7 +201,7 @@ const SEGMENTS = {
     ['gruss-live', '#m1,harvest,look=terrain3,world=probe,npc', 52, 'Begrüßung der Bewohner · Instrument aus dem Figuren-Register · echt gespielt', async (page, at, mark) => {
       const NAME = { farmer_b: 'Bäuerin', lorekeeper: 'Lorekeeper' }, MOOD = { froh: 'froh (geheilt)', neutral: 'neutral (kennt dich)', staunend: 'staunend (erste Begegnung)', aengstlich: 'ängstlich (nach Kampf)' }
       const INST = { F03_accordion: 'Akkordeon', F02_clarinet: 'Klarinette' }
-      const greets = () => page.evaluate(() => window.__kfbAudio.stats().events.filter((e) => e.type === 'greet').map((e) => e.t + '|' + e.id + '|' + e.cue + '|' + e.chatter))
+      const greets = () => page.evaluate(() => window.__kfbA.stats().events.filter((e) => e.type === 'greet').map((e) => e.t + '|' + e.id + '|' + e.cue + '|' + e.chatter))
       const face = (id, dist) => page.evaluate(({ id, dist }) => { const M = window.__kfbM1, b = M.npc()?.debug?.find((x) => x.id === id); if (!b) return null; const p = M.feet(), dx = b.x - p[0], dz = b.z - p[2], l = Math.hypot(dx, dz) || 1
         const x = b.x - dx / l * dist, z = b.z - dz / l * dist, w = Math.atan2(b.x - x, b.z - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false); return Math.hypot(b.x - x, b.z - z) }, { id, dist })
       const dist = (id) => page.evaluate((id) => { const M = window.__kfbM1, b = M.npc()?.debug?.find((x) => x.id === id), p = M.feet(); return b ? Math.hypot(b.x - p[0], b.z - p[2]) : 99 }, id)
@@ -212,16 +223,46 @@ const SEGMENTS = {
       t += 0.8; for (const [r, txt] of [['first', 'erste Begegnung'], ['known', 'kennt dich']]) { await at(t); mark('Ohne Register-Instrument → Bewohner-Stimme (WS0) · ' + txt); await g('farmer_harke', r, null); t += 2.6 }
       t += 0.5; for (const [r, txt] of [['first', 'erste Begegnung'], ['cure', 'geheilt']]) { await at(t); mark('Ohne alles → bisheriger Platzhalter · ' + txt); await g('unbekannt', r, null); t += 2.6 } }],
   ],
+  // Sprech-Anlässe (WS-NPC 24.10., echt im Spiel): Orc-Band (Bemerken, Liedende), Disco K12 (MC bemerkt, Pause), gothgirl (Begrüßung). Einblendung = was wirklich klang
+  sprech: (() => {
+    const INST = { F11_tuba: 'Tuba', F08_talkbox: 'Talkbox', F01_trombone: 'Posaune', F10_oboe: 'Oboe' }, WHO = { F11_tuba: 'Orc-Band', F08_talkbox: 'Disco-Tänzer', F01_trombone: 'Disco-MC FrizzleBob', F10_oboe: 'gothgirl' }, MOOD = { staunend: 'staunend', froh: 'froh', introspektiv: 'nachdenklich', neutral: 'neutral' }
+    const watch = (page, mark, who) => { let seen = 0; const iv = setInterval(async () => { try { const ev = await page.evaluate(() => window.__kfbA.stats().events.filter((e) => e.type === 'chatter' || e.type === 'greet').map((e) => e.cue)); for (const c of ev.slice(seen)) { const [, fam, mood] = c.split('.'); mark(`${WHO[fam] || who} · ${INST[fam] || fam} · ${MOOD[mood] || mood}`) } seen = ev.length } catch {} }, 400); return () => clearInterval(iv) }
+    const face = (page, fn, d) => page.evaluate(({ fn, d }) => { const M = window.__kfbM1, q = new Function('M', fn)(M); if (!q) return; const p = M.feet(), dx = q[0] - p[0], dz = q[1] - p[2], l = Math.hypot(dx, dz) || 1, x = q[0] - dx / l * d, z = q[1] - dz / l * d, w = Math.atan2(q[0] - x, q[1] - z)
+      M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false) }, { fn, d })
+    const H = '#m1,harvest,look=terrain3,npc,band,disco,npct=200'
+    return [
+      ['sprech-band', H, 75, 'Sprech-Anlässe · Orc-Band (Tuba) · echt im Spiel', async (page, at, mark) => { const stop = watch(page, mark, 'Orc-Band'); await at(1); mark('zur Band gehen'); await face(page, 'return M.mods.band.debug().at', 3.5); for (let t = 4; t < 74; t += 6) { await at(t); await face(page, 'return M.mods.band.debug().at', 3.5) } stop() }],
+      ['sprech-disco', H, 65, 'Sprech-Anlässe · Disco K12 (Talkbox, MC Posaune) · echt im Spiel', async (page, at, mark) => { const stop = watch(page, mark, 'Disco'); await at(1); mark('zur Disco gehen'); await face(page, 'return M.mods.disco.debug().at', 5); for (let t = 4; t < 64; t += 6) { await at(t); await face(page, 'return M.mods.disco.debug().at', 5) } stop() }],
+      ['sprech-goth', H, 16, 'Sprech-Anlässe · gothgirl (Oboe) · echt im Spiel', async (page, at, mark) => { const stop = watch(page, mark, 'gothgirl'); await at(1); mark('zu gothgirl gehen'); const g = 'const o = M.mods.partner.object3d, p = o.getWorldPosition(new (o.position.constructor)()); return [p.x, p.z]'; await face(page, g, 6); await at(3); await face(page, g, 1.8); for (let t = 6; t < 15; t += 3) { await at(t); await face(page, g, 2.2) } stop() }],
+    ] })(),
+  // Chatter-Silben R1 (Lead 24.10., Georg-GO): Bühnen-Dialog mit echten Kartenzeilen (SSOT) – A heute (stumm), B Silben ohne Blase, C Silben mit Blase;
+  // dann Bewohner-Tratsch in der Welt (Zeilen aus tr1 und Rufe V-699 per Prüfskript, Figur VOR der Aufnahme hingestellt – kein Teleport im Bild)
+  silben: (() => {
+    const INST = { F01_trombone: 'Posaune', F10_oboe: 'Oboe', F03_accordion: 'Akkordeon', F02_clarinet: 'Klarinette', F08_talkbox: 'Talkbox', F11_tuba: 'Tuba' }, NAME = { frizzlebob: 'FrizzleBob', gothgirl: 'gothgirl', farmer_b: 'Bäuerin', lorekeeper: 'Lorekeeper' }
+    const watch = (page, mark) => { let seen = 0; const iv = setInterval(async () => { try { const L = await page.evaluate(() => window.__kfbA.stats().speak?.log || []); for (const l of L.slice(seen)) mark(`${NAME[l.who] || l.who} · ${INST[l.fam] || l.fam} · ${l.n} Silben`); seen = L.length } catch {} }, 300); return () => clearInterval(iv) }
+    const S = '#stage,actors=fb,dialog=6'
+    const stage = (tag) => async (page, at, mark) => { const stop = watch(page, mark); await at(1); mark(tag); await at(21); stop() }
+    return [
+      ['silben-a', S, 22, 'Chatter-Silben · A · heute: Bühnen-Dialog ohne Laut', stage('A · heute'), { stage: true }],
+      ['silben-b', S + ',chat=syl', 22, 'Chatter-Silben · B · Silben ohne Blase', stage('B · nur Silben'), { stage: true, hideBubbles: true }],
+      ['silben-c', S + ',chat=syl', 22, 'Chatter-Silben · C · Silben mit Blase', stage('C · Silben + Blase'), { stage: true }],
+      ['silben-tratsch', '#m1,harvest,look=terrain3,world=probe,npc,chat=syl', 22, 'Bewohner-Tratsch · Zeilen tr1 + Rufe V-699 · per Prüfskript', async (page, at, mark) => {
+        const stop = watch(page, mark), say = (id, t) => page.evaluate(({ id, t }) => window.__kfbSayTest('npc-' + id, [t]), { id, t })
+        const seq = [[1, 'lorekeeper', 'Run or Die, so go that way and don’t stop.'], [5, 'farmer_b', 'Boggle...?'], [8, 'lorekeeper', 'Escape Sequence runs you away from danger until you reach safety, and safety is a cutscene.'], [14, 'farmer_b', 'Bingo!'], [17, 'lorekeeper', 'Humbug?!']]
+        for (const [t, id, text] of seq) { await at(t); await say(id, text) } await at(21); stop() },
+        { pre: (page) => page.evaluate(() => { const M = window.__kfbM1, D = M.npc().debug, a = D.find((b) => b.id === 'farmer_b'), b = D.find((x) => x.id === 'lorekeeper'); if (!a || !b) return
+          const cx = (a.x + b.x) / 2, cz = (a.z + b.z) / 2, x = cx - 7, z = cz - 7, w = Math.atan2(cx - x, cz - z); M.player().teleport([x, M.terrainH(x, z) + 1.2, z], w); M.player().camera()?.rotateAzimuthTo?.(w + Math.PI, false) }) }],
+    ] })(),
 }[PROFILE]
 if (!SEGMENTS) throw new Error('Profil unbekannt: ' + PROFILE)
 const segs = []
-for (const [name, hash, seconds, label, script] of SEGMENTS) segs.push({ ...(await recordSegment(name, hash, seconds, script)), label })
+for (const [name, hash, seconds, label, script, opts] of SEGMENTS) segs.push({ ...(await recordSegment(name, hash, seconds, script, opts)), label })
 
 // Zusammensetzen: Abschnitte nacheinander abspielen, Bild über Canvas mit Einblendungen, Ton über einen MediaStream, Pegel je Abschnitt messen
 fs.writeFileSync(path.join(OUT, 'stitch.html'), '<!doctype html><meta charset=utf-8><title>stitch</title><body style="margin:0;background:#000"></body>') // gleicher Ursprung (sonst stummes MediaElement)
-const small = ['kampf', 'gruppen', 'heilen', 'mvp', 'neu', 'gruss'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
+const small = ['kampf', 'gruppen', 'heilen', 'mvp', 'neu', 'gruss', 'sprech', 'silben'].includes(PROFILE), W = small ? 960 : 1280, H = small ? 540 : 720
 const { browser, page, errs } = await openAudioPage(srv.url, 'test/out/audio/stitch.html')
-const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4', neu: 'kfb-audio-neu.mp4', gruss: 'kfb-audio-begruessung.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
+const outFile = path.join(OUT, { kampf: 'kfb-audio-kampf.mp4', gruppen: 'kfb-audio-gruppen.mp4', heilen: 'kfb-audio-heilen.mp4', mvp: 'kfb-audio-mvp.mp4', neu: 'kfb-audio-neu.mp4', gruss: 'kfb-audio-begruessung.mp4', sprech: 'kfb-audio-sprech.mp4', silben: 'kfb-audio-silben.mp4' }[PROFILE] || 'kfb-audio-r1.webm'), fd = fs.openSync(outFile, 'w')
 await page.exposeFunction('__kfbRecChunk', (b64) => { fs.writeSync(fd, Buffer.from(b64, 'base64')) })
 const levels = await page.evaluate(async ({ segs, W, H, mime, vbr, SEND }) => {
   document.body.innerHTML = ''; const c = document.createElement('canvas'); c.width = W; c.height = H; document.body.append(c); const g = c.getContext('2d'), u = W / 1280

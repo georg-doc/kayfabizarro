@@ -6,7 +6,8 @@ import path from 'path'
 import { execSync, spawnSync } from 'child_process'
 import { report } from '../_page.mjs'
 import { resolveAmbience, createPulseTracker, SILENT_PULSE, musicWeight, createWeightedShuffle, reverbEnv, occlusion, occlusionFilter, REVERB, musicDuckDb, sanitizeVolumes, createModeLatch, createShuffle, uniqueTracks, variantsOf, distanceGain, distanceLowpassHz, pickVictim, PLAYLIST_FOR_MODE, SEMANTIC, BUSES } from '../../src/audio/mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter } from '../../src/audio/cueMap.js'
+import { syllabify, melody, planDuration, grainsFrom, voiceBase, SYL } from '../../src/audio/syllables.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, ENEMY_GAIN, k10Plan, weaponKind, GROUP_SOUNDS, GROUP_TYPES, groupPlan, groupKey, npcStepCue, stepKey, FLUFFER_PITCH, greetCues, greetKey, chatterFamily, CHATTER_FAMILIES, CHATTER_MOODS, chatterRate, decidedChatter, pickChatter } from '../../src/audio/cueMap.js'
 import { createWaterIndex, waterNear, stepSurface, hoverSurface } from '../../src/audio/waterAudio.js'
 import { resolveAudioPath } from '../../scripts/audio/vitePrivateAudio.mjs'
 
@@ -107,7 +108,17 @@ process.exit(report('audio-mixer', {
   decidedChatterV693: decidedChatter({ group: 'skeleton_patrol', characterId: 'skeleton_rogue' }).instrument === 'Kazoo' && decidedChatter({ group: 'toy_squad' }).instrument === 'gestopfte Trompete'
     && decidedChatter({ characterId: 'gothgirl' }).instrument === 'Oboe' && decidedChatter({ characterId: 'q_deer' }).instrument === 'hohe Okarina' && decidedChatter({ characterId: 'q_ghost' }) === null && decidedChatter({ characterId: 'q_alien_tall' }) === null && decidedChatter({ group: 'bot_crew' }) === null && decidedChatter({ group: 'orc_band', characterId: 'orc_brute' }).instrument === 'Tuba' && decidedChatter({ group: 'disco_k12' }).instrument === 'Talkbox'
     && chatterFamily({ instrument: 'hohe Okarina', status: 'V-693' }) === 'F04_ocarina' && chatterFamily({ instrument: 'Kazoo' }) === null && chatterFamily({ instrument: 'gestopfte Trompete' }) === null && chatterFamily({ instrument: 'Singende Säge' }) === 'F09_saw'
+    && pickChatter({ group: 'disco_k12', characterId: 'frizzlebob' }, { instrument: 'Posaune mit Dämpfer', status: 'set' }).instrument === 'Talkbox' && pickChatter({ characterId: 'lorekeeper' }, { instrument: 'Klarinette', status: 'set' }).instrument === 'Klarinette' && pickChatter({ characterId: 'demon_lord' }, { instrument: null, style: 'x', status: 'set' }) === null
     && chatterRate({ instrument: 'hohe Okarina' }) > 1.1 && chatterRate({ instrument: 'Klarinette' }) === 1,
+  // Chatter-Silben R1 (Lead 24.10.): Silben je Vokalgruppe, Satzende → Melodie (? steigt, . fällt, ...? zögert, ?! hoch), Deckel, Grains aus Clip-Spitzen
+  chatterSyllables: (() => { const q = syllabify('Was ist das?'), d = syllabify('Das ist gut.'), b = syllabify('Boggle...?'), h = syllabify('Humbug?!'), e = syllabify('*Feuerball* heute!'), hm = syllabify('…')
+    const mq = melody(q, { seed: 3 }), md = melody(d, { seed: 3 }), mb = melody(syllabify('Na und ... dann?'), { seed: 5 }), mh = melody(h, { seed: 2 })
+    const long = melody(syllabify('Dies ist ein sehr langer Satz mit vielen Wörtern, der einfach nicht aufhören will und immer weiter geht bis zum Ende der Zeile. Und noch einer!'), { seed: 9 })
+    return q.length === 3 && q[0].end === '?' && d.at(-1).end === '.' && b[0].end === '...?' && h[0].end === '?!' && e[0].emph && !e.at(-1).emph && hm.length === 1 && hm[0].end === '…'
+      && mq.at(-1).semi - mq[0].semi > 3 && md.at(-1).semi < md[0].semi && mh.at(-1).semi > 5 && planDuration(long) <= SYL.maxTotal + 1e-6 && long.length <= SYL.maxSyl && long.at(-1).end === '!'
+      && mq.every((p) => p.dur >= SYL.minDur * 0.9 && p.dur <= 0.4) && voiceBase('farmer_b') === voiceBase('farmer_b') && Math.abs(voiceBase('orc_brute')) <= 3 })(),
+  chatterGrains: (() => { const sr = 8000, x = new Float32Array(sr); for (const c of [0.1, 0.4, 0.7]) for (let i = 0; i < 400; i++) x[Math.round(c * sr) + i] = Math.sin(i / 3) * (1 - i / 400)
+    const g = grainsFrom(x, sr); return g.length === 3 && g.every((k) => k.dur === 0.16 && k.t0 >= 0 && k.t0 + k.dur <= 1) && grainsFrom(new Float32Array(800), sr).length === 0 })(),
   greetVoices: greetCues({ id: 'farmer_b', reason: 'cure' }).join() === 'greet.farmer.cure,greet.fallback.cure' && greetCues({ id: 'lorekeeper', reason: 'fight' })[0] === 'greet.lorekeeper.fight' && greetCues({ id: 'unbekannt', reason: 'x' }).join() === 'greet.fallback.known'
     && greetKey({ seq: 7 }) === 'seq7' && greetKey({ id: 'lorekeeper', reason: 'known', t: 3 }) === 'lorekeeper|known|3' && musicDuckDb({ voice: true }) === -7 && ['cure', 'known', 'fight', 'first'].every((r) => CUES['greet.fallback.' + r]?.owner === 'bank') && greetCues({ id: 'farmer_b', reason: 'first' })[1] === 'greet.fallback.first' && !CUES['greet.farmer.cure'].pending && CUES['greet.lorekeeper.first'].set === 'resident_voices_r1', // WS0 geliefert (22.10.)
   gapsListed: gaps.includes('atmo.weather') && !gaps.includes('k10.kill') && !gaps.includes('k10.playerHurt') && !gaps.includes('vehicle.tyres'),

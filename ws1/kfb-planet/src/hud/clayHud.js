@@ -14,6 +14,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { clayFrom } from '../modules/clayLook.js'
 import { hudZones } from './hudPalette.js'
 import { createHudShell, zoneMaterial, textCanvas, clamp, DEG } from './hudShell.js'
+import { createMiniMap } from './miniMap.js'
 
 const GLB = import.meta.glob(['../private/50_BLENDER/N29/out/KFB_HUD_Compass.glb', '../private/50_BLENDER/N29/out/KFB_HUD_Radio.glb', '../private/50_BLENDER/N29/out/KFB_HUD_Chest.glb',
   '../private/50_BLENDER/N29/out/KFB_HUD_Gear.glb', '../private/50_BLENDER/N29/out/KFB_HUD_FluffDigits.glb', '../private/50_BLENDER/N29/out/KFB_HUD_CardFanShadow.glb'], { query: '?url', import: 'default', eager: true })
@@ -134,25 +135,11 @@ export function createClayHud(opts = {}) {
     g.lineWidth = 10; g.strokeStyle = 'rgba(31,26,20,.85)'; g.strokeText(String(n), c.width / 2, c.height / 2 + 6)
     g.fillStyle = '#fff6df'; g.fillText(String(n), c.width / 2, c.height / 2 + 6); t.needsUpdate = true; slots.compass.dirty = true
   }
-  // Minimap: Norden oben, Gelände aus mapSample (64 × 64 je Kachel, neu bei > ¼ Radius Versatz), Weg, Marken, Pfeil in Fahrtrichtung
-  const MAPR = 140, MAP = { cx: NaN, cz: NaN, base: null }
+  // Minimap: gemeinsamer Zeichner (miniMap.js, auch im HUD-3D-Karten-Flyout); Kachel neu bei > ¼ Radius Versatz
+  const MM = createMiniMap({ radius: 140, sample: (x, z) => O.mapSample?.(x, z), path: O.path, marks: () => O.mapMarks?.() || [] })
   function drawMap(force = false) {
     const P = parts.compass; if (!P) return; const p = O.mapPos?.(); if (!p) return
-    const { c, g, t } = P.mc, N = c.width
-    if (force || !MAP.base || Math.hypot(p.x - MAP.cx, p.z - MAP.cz) > MAPR / 4) {
-      MAP.cx = p.x; MAP.cz = p.z; const n = 64, b = MAP.base || (MAP.base = document.createElement('canvas')); b.width = b.height = n; const bg = b.getContext('2d'), img = bg.createImageData(n, n)
-      for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) { const x = p.x + ((i + 0.5) / n * 2 - 1) * MAPR, z = p.z + ((j + 0.5) / n * 2 - 1) * MAPR, col = O.mapSample?.(x, z) || '#cdbb92'; const k = (j * n + i) * 4; const cc = tmpCol.set(col); img.data[k] = cc.r * 255; img.data[k + 1] = cc.g * 255; img.data[k + 2] = cc.b * 255; img.data[k + 3] = 255 }
-      bg.putImageData(img, 0, 0)
-    }
-    const toPx = (x, z) => [((x - MAP.cx) / MAPR * 0.5 + 0.5) * N, ((z - MAP.cz) / MAPR * 0.5 + 0.5) * N]
-    g.save(); g.imageSmoothingEnabled = true; g.drawImage(MAP.base, 0, 0, N, N)
-    if (O.path?.length > 1) { g.lineWidth = 7; g.lineCap = g.lineJoin = 'round'; g.strokeStyle = 'rgba(70,46,30,.55)'; g.beginPath(); O.path.forEach(([x, z], i) => { const [u, v] = toPx(x, z); i ? g.lineTo(u, v) : g.moveTo(u, v) }); g.stroke(); g.lineWidth = 3.5; g.strokeStyle = '#f6e3b8'; g.stroke() }
-    for (const m of O.mapMarks?.() || []) { const [u, v] = toPx(m.x, m.z); if (u < -8 || v < -8 || u > N + 8 || v > N + 8) continue; g.fillStyle = m.color || '#c9508f'; g.strokeStyle = '#1f1a14'; g.lineWidth = 2.5; g.beginPath(); g.arc(u, v, m.r || 7, 0, Math.PI * 2); g.fill(); g.stroke() }
-    const [u, v] = toPx(p.x, p.z), h = O.heading?.() || 0; g.translate(u, v); g.rotate(-h + Math.PI); g.fillStyle = '#fff6df'; g.strokeStyle = '#1f1a14'; g.lineWidth = 3
-    g.beginPath(); g.moveTo(0, -15); g.lineTo(10, 11); g.lineTo(0, 5); g.lineTo(-10, 11); g.closePath(); g.fill(); g.stroke(); g.restore()
-    // Rand weich abdunkeln (Knet-Rand liegt darüber)
-    const gr = g.createRadialGradient(N / 2, N / 2, N * 0.36, N / 2, N / 2, N * 0.5); gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(40,24,12,.35)'); g.fillStyle = gr; g.fillRect(0, 0, N, N)
-    t.needsUpdate = true; slots.compass.dirty = true
+    if (MM.draw(P.mc.c, { pos: p, heading: O.heading?.() || 0, force })) { P.mc.t.needsUpdate = true; slots.compass.dirty = true }
   }
   const tmpCol = new THREE.Color()
   function layoutFan() {

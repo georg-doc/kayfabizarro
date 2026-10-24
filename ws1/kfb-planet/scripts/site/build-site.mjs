@@ -27,6 +27,8 @@ if (privateMode === 'none' && process.env.ASSETS_TOKEN) {
 }
 if (privateMode === 'none') log('WARNUNG: keine privaten Dateien (ASSETS_TOKEN fehlt) – Platzhalter-Build')
 const privateDir = fs.existsSync(priv) ? fs.realpathSync(priv) : null
+// 1b · abgeleitete private HUD-Dateien (WS1e: N34-Kassette ~40 kB statt 1,4 MB) – braucht src/private, sonst bleibt die Poly-Kassette
+if (privateDir && fs.existsSync(path.join(ROOT, 'scripts/hud/shrink-cassette.mjs'))) { try { run('node', ['scripts/hud/shrink-cassette.mjs']) } catch (e) { log('Hinweis: shrink-cassette fehlgeschlagen – hud=3d zeigt die Poly-Kassette') } }
 
 // 2 · Bauen
 fs.rmSync(DIST, { recursive: true, force: true })

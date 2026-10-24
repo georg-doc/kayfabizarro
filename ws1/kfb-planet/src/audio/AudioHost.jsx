@@ -13,9 +13,9 @@ import { worldPosOf } from '../m1/m1Host'
 import * as A from './kfbAudio.js'
 import { groupKey, stepKey, greetKey } from './cueMap.js'
 import { chatterOf } from '../characters/registry.js'
-import { decidedChatter } from './cueMap.js'
-// Register zuerst (nur mit Instrument – demon_lord hat dort nur style), dann Georgs Wahl V-693
-const chatterFor = (e) => { const r = e?.characterId ? chatterOf(e.characterId) : null; return (r?.instrument ? r : null) ?? decidedChatter(e) }
+import { pickChatter } from './cueMap.js'
+// Register zuerst (nur mit Instrument – demon_lord hat dort nur style), dann Georgs Wahl V-693; Disco K12 immer Talkbox (pickChatter)
+const chatterFor = (e) => pickChatter(e, e?.characterId ? chatterOf(e.characterId) : null)
 import { createWaterIndexAsync, waterNear, stepSurface, hoverSurface } from './waterAudio.js'
 import { mountAudioPanel } from './audioPanel.js'
 
@@ -129,6 +129,6 @@ export default function AudioHost({ host }) {
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, chatter: A.chatter, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, ambienceContext: A.ambienceContext, ambienceLightning: A.ambienceLightning, musicPulse: A.musicPulse, musicCatalog: A.musicCatalog, harvestPhrases: A.harvestPhrases, greet: A.greet, chatter: A.chatter, speak: A.speak, speakPlan: A.speakPlan, setSpeaker: A.setSpeaker, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }

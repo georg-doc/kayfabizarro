@@ -2,6 +2,7 @@
 // HUD-eigene Zeit (Overlay-Pass und Update) – je hud=wood (0 Props), hud=clay (Knet-HUD R1) und hud=3d (Spike), im Wechsel, Desktop 1600×900 @2 und
 // Telefon quer 844×390 @3 (nur Emulator, kein echtes Gerät). Schwere GPU-Arbeit: nur im Test-Slot. Ausgabe: test/out/hud-3d/perf.json
 import { chromium } from 'playwright'
+import { SITE_HASH } from '../src/siteHash.js' // Live-Stand wie die Site (world=probe), nur Prüf-Schalter dazu
 import fs from 'fs'; import path from 'path'
 const OUT = 'test/out/hud-3d'; fs.mkdirSync(OUT, { recursive: true })
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'] })
@@ -10,7 +11,7 @@ const MEAS_MS = +(process.env.MS || 8000), REPS = +(process.env.REPS || 2)
 const res = [] // Achtung: Messwerte m.hud nicht über den Schalter-Namen legen (Fehler im ersten Lauf 24.10., Zusammenfassung nachgerechnet)
 for (const form of Object.keys(FORMS)) for (let r = 0; r < REPS; r++) for (const hud of ['wood', 'clay', '3d']) {
   const ctx = await browser.newContext(FORMS[form]); const page = await ctx.newPage(); const errs = []; page.on('pageerror', (e) => errs.push(e.message))
-  await page.goto('file://' + path.resolve('dist/index.html') + `#m1,debug,clean,harvest,look=terrain3,hud=${hud}`)
+  await page.goto('file://' + path.resolve('dist/index.html') + SITE_HASH + `,debug,clean,hud=${hud}`)
   await page.waitForFunction(() => window.__kfbM1?.harvest?.()?.hud && window.__kfbM1.renderer?.(), null, { timeout: 120000 }); await page.waitForTimeout(7000)
   const m = await page.evaluate(async (MS) => {
     const gl = window.__kfbM1.renderer(), H = window.__kfbClayHud; H?.resetStats?.()

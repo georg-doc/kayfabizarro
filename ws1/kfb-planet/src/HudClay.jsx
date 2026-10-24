@@ -11,7 +11,8 @@ import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import HudR5f from './HudR5f'
 import { createClayHud, hasClayHudAssets } from './hud/clayHud'
-import { createHud3d, hasHud3dAssets, INK as INK3 } from './hud/hud3d' // HUD 3D R1 (hud=3d, Spike-Paket 1): gleiche Hülle, andere Bausteine
+import { createHud3d, hasHud3dAssets, INK as INK3, fmtDist, arrowColor } from './hud/hud3d'
+import { createMiniMap } from './hud/miniMap' // HUD 3D R1 (hud=3d, Spike-Paket 1): gleiche Hülle, andere Bausteine
 import { HUD_PASS } from './hud/hudPass'
 import { DEVUI, setDevUi, onDevUi, devUiLocked, expose } from './debug'
 import { useHostKeys, ACTION_KEYS, PRIO } from './hostKeys'
@@ -62,8 +63,8 @@ export default function HudClay(props) {
     if (K3) { const al = host.almanac?.(); if (al?.cards?.length) Promise.all(al.cards.slice(-7).map((c) => cardImage(c.deckId, c.num, 560).then((r) => r?.canvas?.toDataURL('image/jpeg', 0.9) || null, () => null)))
       .then((srcs) => { const ok = srcs.filter(Boolean); if (ok.length) dom.current?.setFan?.({ srcs: ok, total: al.total ?? al.cards.length, decks: al.decks ?? 1 }) }) }
     const offs = ['landing', 'railImpact', 'takeoff', 'boost'].map((t) => M2EVENTS.on(t, (e) => hud.event(e)))
-    dom.current = K3 ? buildDom3d(hud, inner, { host, onInteract: props.onInteract }) : buildDom(hud, inner, () => clay.current)
-    expose('ClayHud', { kit, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
+    dom.current = K3 ? buildDom3d(hud, inner, { host, onInteract: props.onInteract, pos: () => sig.current.prev, heading: () => sig.current.heading }) : buildDom(hud, inner, () => clay.current)
+    expose('ClayHud', { kit, speed: () => hud.speedState?.() || null, layout: () => hud.layout?.() || null, cassetteButtons: () => hud.cassetteButtons?.() || {}, cassette: () => hud.cassetteKind?.() || null, mode: () => host.mode?.() || null, fluffTotal: () => host.fluffTotal?.() ?? null, fxState: (k) => hud.fxState?.(k) || null, status: () => hud.status(), rects: () => hud.rects(), radioButtons: () => hud.radioButtons?.() || {}, goal: (g) => { GOAL.dbg = g === undefined ? GOAL.dbg : g; return GOAL.dbg },
       goalRel: (bDeg, pDeg = 0, dist = 300, name = 'Testziel') => { const pp = host.target?.(); if (!pp) return null; camera.getWorldDirection(_f); _f.y = 0; _f.normalize(); _r.crossVectors(_f, _up).normalize()
         const b = bDeg * DEG, p = pDeg * DEG, hz = Math.cos(p) * dist; GOAL.dbg = { name, pos: { x: pp.x + (_f.x * Math.cos(b) + _r.x * Math.sin(b)) * hz, y: (pp.y ?? 0) + Math.sin(p) * dist, z: pp.z + (_f.z * Math.cos(b) + _r.z * Math.sin(b)) * hz } }; return GOAL.dbg }, toggleCompass: (v) => hud.toggleCompass(v), uiState: (k) => hud.uiState(k), setAnimator: (k, fn) => hud.setAnimator(k, fn), kick: (e) => hud.event(e), event: (e) => hud.event(e), dom: () => dom.current, resetStats: () => hud.resetStats(), settings: (v) => dom.current?.settings(v), muted: () => !!A.volumes().muted, musicPaused: () => !!A.musicPaused?.() })
     return () => { offs.forEach((f) => f()); if (HUD_PASS.draw) HUD_PASS.draw = null; dom.current?.remove(); dom.current = null; hud.dispose(); clay.current = null }
@@ -87,13 +88,16 @@ export default function HudClay(props) {
         _v.set(g.pos.x - pp.x, (g.pos.y ?? pp.y) - (pp.y ?? 0), g.pos.z - pp.z); const hz = Math.hypot(_v.x, _v.z)
         hud.setTarget({ name: g.name, b: Math.atan2(_v.x * _r.x + _v.z * _r.z, _v.x * _f.x + _v.z * _f.z) / DEG, p: Math.atan2(_v.y, Math.max(hz, 1e-3)) / DEG, d: Math.hypot(hz, _v.y), dv: _v.y }) }
       else hud.setTarget(null) }
+    // HUD 3D Tempo-Leiste: nur Fahren/Fliegen; Tempo und Boost vom Fahrzeug (M2STATE.telemetry, nur lesend), zu Fuß im Flug Tempo aus der Lage
+    if (K3) { const md = host.mode?.() || 'walk', tel = host.telemetry?.(), fly = md === 'fly' || !!tel?.fly, kmh = tel ? tel.speed * 3.6 : S.kmh
+      hud.setSpeed({ visible: md !== 'walk' || fly, kmh, frac: tel?.fly && tel.speed01 != null ? tel.speed01 : kmh / 160, boost: tel ? !!(tel.boosting || tel.freeBoost) : false }) } // Board: 160 km/h = voll
     hud.update(dt, { yawRate: S.yawRate, accel: S.accel })
     dom.current?.sync()
     const I = inner.current; if (I) { const open = I.bagOpen(); if (open !== dom.current?.bagWas) { dom.current.bagWas = open; hud.setChestOpen(open) } }
   })
 
   // Esc schließt die Settings-Tafel (Tastatur nur über hostKeys)
-  useHostKeys((e) => { if (e.code === ACTION_KEYS.close && dom.current?.settingsOpen()) { dom.current.settings(false); e.preventDefault() } }, PRIO.choice + 1)
+  useHostKeys((e) => { if (e.code !== ACTION_KEYS.close) return; if (dom.current?.closeFly?.()) { e.preventDefault(); return } if (dom.current?.settingsOpen()) { dom.current.settings(false); e.preventDefault() } }, PRIO.choice + 1)
 
   const wrap = (a) => {
     inner.current = a
@@ -183,7 +187,7 @@ function buildDom3d(hud, inner, P = {}) {
   const host = P.host || {}, L = hud.layout(), F = 1
   const root = document.createElement('div'); root.id = 'kfb-hud-clay'; root.dataset.kit = '3d'
   root.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:8991;font-family:Fredoka,system-ui,sans-serif'
-  const css = document.createElement('style'); css.textContent = '#kfb-audio-panel{display:none!important}'; document.head.appendChild(css) // ♪-Panel aus; Lautstärken in der Zahnrad-Tafel, Ton an der Kassette
+  const css = document.createElement('style'); css.textContent = '#kfb-audio-panel{display:none!important}#m1-keys-info{display:none!important}'; document.head.appendChild(css) // ♪-Panel aus (Lautstärken in der Zahnrad-Tafel, Ton an der Kassette); freies „i“ aus (Tastenliste über das Zahnrad, Georg 24.10.)
   const btn = (label, onClick, key, round = true) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', label); b.title = label; b.dataset.ui = key
     b.style.cssText = `position:absolute;pointer-events:auto;background:transparent;border:0;border-radius:${round ? '50%' : '18px'};cursor:pointer;padding:0;outline-offset:2px`
     b.addEventListener('click', (e) => { e.stopPropagation(); onClick(); b.blur() }); const Fl = (f, v) => () => hud.setUiFlag(key, f, v)
@@ -195,8 +199,8 @@ function buildDom3d(hud, inner, P = {}) {
   const key = (code) => window.dispatchEvent(new KeyboardEvent('keydown', { code, bubbles: true }))
   const hits = {
     chest: btn('Truhe öffnen', () => { const I = inner.current; if (!I) return; if (I.bagOpen()) I.closeBag(); else { I.openBag(); if (!I.bagOpen()) hud.event({ type: 'landing', strength: 0.25 }) } hud.setChestOpen(I.bagOpen()) }, 'chest'),
-    arrow: btn('Ziel', () => {}, 'arrow'), // Karte und Zielwahl (Flyout L2) folgen mit Paket 4
-    gear: btn('Einstellungen', () => { hud.tapGear(); SP.settings(!SP.isOpen()) }, 'gear'),
+    arrow: btn('Ziel', () => openFly(fly === 'map' ? null : 'map'), 'arrow'), // Paket 4: Karte und Zielwahl (Flyout L2)
+    gear: btn('Einstellungen', () => { hud.tapGear(); openFly(null); SP.settings(!SP.isOpen()) }, 'gear'),
     act0: btn('Faust (V)', () => key('KeyV'), 'act0'), act1: btn('Blaster (B)', () => key('KeyB'), 'act1'), act2: btn('Clown-Bombe (N)', () => key('KeyN'), 'act2'),
   }
   // Knöpfe der N34-Kassette nach „Kassette als Player“ r5 (V-707): plastische Taste (Sockel, Kuppe, Schatten; beim Drücken eingesunken), Glanz nur als dünner
@@ -244,14 +248,29 @@ function buildDom3d(hud, inner, P = {}) {
   const fan = document.createElement('div'); fan.style.cssText = 'position:absolute;pointer-events:auto;cursor:pointer'; fan.setAttribute('role', 'button'); fan.tabIndex = 0; fan.dataset.ui = 'fan'; root.append(fan)
   const cap = document.createElement('div'); root.append(cap)
   let fanImgs = [], fanData = { srcs: [], total: 0, decks: 0 }
+  fan.addEventListener('click', (e) => { e.stopPropagation(); openFly(fly === 'fan' ? null : 'fan') })
   fan.addEventListener('mouseenter', () => { if (!reducedMotion()) fanImgs.forEach((im, i) => (im.style.transform = `translateY(${i * 1.5}px)`)) })
   fan.addEventListener('mouseleave', () => fanImgs.forEach((im) => (im.style.transform = '')))
   const ROT = [-2.2, 1.6, -0.8, 2.4, -1.7, 1.1, -0.5], DX = [3, -4, 5, -2, 4, -3, 0]
   const setFan = (d) => { fanData = d; last = ''; hud.setAlmanacCount(d.srcs.length) }
   // Gesamt-Fluff-Zähler (Georg 24.10.): Schrift wie die Entfernung am Pfeil, etwas größer; links vor den Kugeln, beide mittig; Hüpfer beim Hochzählen
-  const tot = document.createElement('div'); tot.id = 'kfb-hud3d-total'; tot.style.cssText = 'position:absolute;pointer-events:none;display:none'; root.append(tot); let totShown = null, totW = 0, totK = 0
+  // Als Canvas gezeichnet, damit die Glyphenmitte exakt auf der Mittellinie der Kugeln liegt (Georg 24.10.: „97“ hing zu tief); Ziffernhöhe = 0,6 × Kugel
+  const tot = document.createElement('canvas'); tot.id = 'kfb-hud3d-total'; tot.style.cssText = 'position:absolute;pointer-events:none;display:none'; root.append(tot); let totShown = null, totW = 0, totK = 0
+  const drawTotal = (T, k, orbPx) => { const dpr = window.devicePixelRatio || 1, str = String(T), g = tot.getContext('2d'), F0 = 100
+    g.font = `400 ${F0}px Bangers, Fredoka, sans-serif`; const m0 = g.measureText('0123456789'), gh0 = m0.actualBoundingBoxAscent + m0.actualBoundingBoxDescent
+    const fs = F0 * (orbPx * 0.6) / gh0; g.font = `400 ${fs}px Bangers, Fredoka, sans-serif`; const m = g.measureText(str), asc = m.actualBoundingBoxAscent, desc = m.actualBoundingBoxDescent, ow = Math.max(2, fs * 0.09), pad = ow * 2.2
+    const w = m.actualBoundingBoxLeft + m.actualBoundingBoxRight + 2 * pad, h = asc + desc + 2 * pad
+    tot.width = Math.ceil(w * dpr); tot.height = Math.ceil(h * dpr); tot.style.width = w + 'px'; tot.style.height = h + 'px'
+    const c = tot.getContext('2d'); c.scale(dpr, dpr); c.font = `400 ${fs}px Bangers, Fredoka, sans-serif`; c.textBaseline = 'alphabetic'; c.lineJoin = 'round'
+    const x = pad + m.actualBoundingBoxLeft, y = pad + asc
+    c.fillStyle = INK3; c.fillText(str, x + ow * 0.9, y + ow * 1.1) // Schatten unten rechts (Kontur wie inkText: unten rechts schwerer)
+    c.strokeStyle = INK3; c.lineWidth = ow * 2; c.strokeText(str, x, y); c.fillStyle = '#fff6e0'; c.fillText(str, x, y)
+    return w }
   // Titel der Kassette nur beim Wechsel, 2,4 s, über der Kassette
   const ttl = document.createElement('div'); ttl.style.cssText = 'position:absolute;pointer-events:none;opacity:0;transition:opacity .25s'; root.append(ttl); let ttlT = 0, lastTitle = null
+  // Tempo-Zahl und „KM/H“ links neben der Leiste (h3d-hud: rechtsbündig 8 px vor der Leiste, Zahl fs + 4, Einheit 0,7 fs)
+  const spd = document.createElement('div'); spd.id = 'kfb-hud3d-speed'; spd.style.cssText = 'position:absolute;display:none;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none'
+  const spN = document.createElement('div'), spU = document.createElement('div'); spU.textContent = 'KM/H'; spd.append(spN, spU); root.append(spd); let spKey = ''
   // Name und Entfernung unter dem Pfeil
   const lab = document.createElement('div'); lab.id = 'kfb-hud3d-label'; lab.style.cssText = 'position:absolute;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none'
   const nm = document.createElement('div'), row = document.createElement('div'), dv = document.createElement('span'), ds = document.createElement('span')
@@ -260,6 +279,44 @@ function buildDom3d(hud, inner, P = {}) {
   fl.style.cssText = `position:absolute;padding:6px 14px;border-radius:14px;background:${PAPER};color:${INK};font:600 20px/1.1 Fredoka,sans-serif;box-shadow:0 3px 0 rgba(31,26,20,.25),0 6px 14px rgba(31,26,20,.18);opacity:0;transform:translate(-50%,6px);transition:opacity .2s,transform .2s;white-space:nowrap`
   root.append(fl); let flT = 0
   const flash = (txt) => { fl.textContent = txt; fl.style.opacity = '1'; fl.style.transform = 'translate(-50%,0)'; clearTimeout(flT); flT = setTimeout(() => { fl.style.opacity = '0'; fl.style.transform = 'translate(-50%,6px)' }, 1500) }
+  // ── Flyouts L2 (HUD 3D Paket 4, h3d-hud mapFlyout/fanFlyout): eine Hülle, öffnet nach innen, immer nur eines; Esc oder erneuter Klick schließt ─────
+  // Karte + Zielwahl links neben dem Pfeil (Board 390 × 206 an x = Pfeil − 22 − w, y = unter den Kugeln); Fächer: „RECENT CARDS“ unter dem Fächer (452 breit, 4 Spalten).
+  const PANEL = (k) => `position:absolute;box-sizing:border-box;pointer-events:auto;background:#f4ecdc;border:${Math.max(1, 4 * k)}px solid ${INK3};border-radius:${28 * k}px;box-shadow:${4 * k}px ${6 * k}px 0 ${INK3},0 ${24 * k}px ${52 * k}px rgba(20,12,24,.28),inset 0 ${-8 * k}px 0 rgba(80,60,40,.08),inset 0 ${6 * k}px 0 rgba(255,255,255,.6);color:#2a2024;font-family:Fredoka,system-ui,sans-serif`
+  const mapFly = document.createElement('div'); mapFly.id = 'kfb-hud3d-map'; mapFly.setAttribute('role', 'dialog'); mapFly.setAttribute('aria-label', 'Karte und Ziele'); mapFly.style.display = 'none'; root.append(mapFly)
+  const fanFly = document.createElement('div'); fanFly.id = 'kfb-hud3d-fan'; fanFly.setAttribute('role', 'dialog'); fanFly.setAttribute('aria-label', 'Letzte Karten'); fanFly.style.display = 'none'; root.append(fanFly)
+  ;[mapFly, fanFly].forEach((el) => el.addEventListener('click', (e) => e.stopPropagation()))
+  const mm = createMiniMap({ radius: 140, sample: (x, z) => mapColor(host, x, z), path: host.path || [], marks: () => host.marks?.() || [] })
+  const mapCv = document.createElement('canvas'); let fly = null, flyT = 0
+  const openFly = (which) => { fly = which; mapFly.style.display = fly === 'map' ? '' : 'none'; fanFly.style.display = fly === 'fan' ? '' : 'none'; hud.setUiFlag('arrow', 'on', fly === 'map'); if (fly) { SP.settings(false); buildFly(true) } }
+  const buildFly = (force) => {
+    const v = hud.view(), k = v.k, me = P.pos?.()
+    if (fly === 'map') {
+      const goals = host.goals?.() || [], cur = host.goal?.()?.id, ms = 340 * k
+      if (force) { mapFly.style.cssText = PANEL(k) + `;right:${244 * k}px;top:${124 * k}px;width:${780 * k}px;min-height:${412 * k}px;padding:${24 * k}px;display:flex;align-items:stretch;gap:${24 * k}px` // Höhe wächst mit dem Inhalt (sonst ragte „Return to start“ heraus)
+        mapCv.width = mapCv.height = Math.round(ms * (window.devicePixelRatio || 1)); mapCv.style.cssText = `flex:none;width:${ms}px;height:${ms}px;border-radius:${ms * 0.16}px;box-shadow:inset 0 0 0 ${2 * k}px rgba(0,0,0,.15),0 0 0 ${3 * k}px ${INK3}`
+        const list = document.createElement('div'); list.style.cssText = `flex:1;min-width:0;display:flex;flex-direction:column;gap:${4 * k}px`
+        const head = document.createElement('div'); head.textContent = 'ZIELE'; head.style.cssText = `font:400 ${30 * k}px/1 Bangers,Fredoka,sans-serif;letter-spacing:.05em;margin:0 0 ${8 * k}px ${4 * k}px`; list.append(head)
+        goals.slice(0, 4).forEach((g) => { const on = g.id === cur, d = me ? Math.hypot(g.pos.x - me.x, g.pos.z - me.z) : null, r = document.createElement('button'); r.type = 'button'; r.dataset.goal = g.id
+          r.style.cssText = `display:flex;align-items:center;gap:${16 * k}px;padding:${12 * k}px ${16 * k}px;border-radius:${18 * k}px;border:0;text-align:left;cursor:pointer;color:inherit;font:inherit;background:${on ? '#fff6e0' : 'transparent'};box-shadow:${on ? `0 0 0 ${3 * k}px ${INK3}` : 'none'}`
+          r.innerHTML = `<span style="width:${16 * k}px;height:${16 * k}px;border-radius:50%;flex:none;background:${on ? arrowColor(d) : '#b9ad99'};box-shadow:0 0 0 ${2 * k}px ${INK3}"></span><span style="flex:1;min-width:0"><span style="display:block;font:600 ${26 * k}px/1.1 Fredoka,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g.name}</span><span style="display:block;font:500 ${20 * k}px/1.2 Fredoka,sans-serif;color:#7a6d5e">${g.world || ''}</span></span><span style="font:400 ${28 * k}px/1 Bangers,Fredoka,sans-serif;letter-spacing:.04em">${fmtDist(d) || ''}</span>`
+          r.addEventListener('click', (e) => { e.stopPropagation(); host.setGoal?.(g.id); buildFly(true) }); list.append(r) })
+        const back = document.createElement('button'); back.type = 'button'; back.dataset.goal = 'return'; back.textContent = 'Return to start' // ehrlich (Lead 24.10.): Ruhestein V-623 gibt es noch nicht; Klick = Taste R
+        back.style.cssText = `margin-top:auto;display:flex;align-items:center;gap:${16 * k}px;padding:${14 * k}px ${16 * k}px;border-radius:${18 * k}px;border:0;background:#2b2236;color:#fff6e0;font:600 ${24 * k}px/1 Fredoka,sans-serif;cursor:pointer`
+        back.addEventListener('click', (e) => { e.stopPropagation(); window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyR', bubbles: true })); openFly(null) }); list.append(back)
+        mapFly.replaceChildren(mapCv, list) }
+      const g0 = host.goal?.(); mm.draw(mapCv, { pos: me, heading: P.heading?.() || 0, target: g0 ? { x: g0.pos.x, z: g0.pos.z, color: arrowColor(me ? Math.hypot(g0.pos.x - me.x, g0.pos.z - me.z) : null) } : null, force })
+    }
+    if (fly === 'fan' && force) {
+      const A2 = L.almanac, w = 904 * k, cols = 4, gap = 16 * k, cw = (w - 48 * k - (cols - 1) * gap) / cols, chh = cw / 1.79
+      fanFly.style.cssText = PANEL(k) + `;left:${36 * k}px;top:${(A2.y + A2.ch + 6 * A2.step + A2.cap + 48) * k}px;width:${w}px;padding:${24 * k}px;display:flex;flex-direction:column;gap:${20 * k}px`
+      const head = document.createElement('div'); head.textContent = 'LETZTE KARTEN'; head.style.cssText = `font:400 ${30 * k}px/1 Bangers,Fredoka,sans-serif;letter-spacing:.05em`
+      const grid = document.createElement('div'); grid.style.cssText = `display:grid;grid-template-columns:repeat(${cols},${cw}px);gap:${gap}px`
+      fanData.srcs.slice(-7).reverse().forEach((src) => { const im = document.createElement('img'); im.src = src; im.alt = 'Karte'; im.style.cssText = `width:${cw}px;height:${chh}px;border-radius:${8 * k}px;box-shadow:0 0 0 ${2 * k}px ${INK3},${2 * k}px ${4 * k}px 0 ${2 * k}px ${INK3};display:block`; grid.append(im) })
+      const all = document.createElement('button'); all.type = 'button'; all.disabled = true; all.title = 'Almanac-Overlay folgt (L3)'; all.textContent = `Alle Karten · ${fanData.total} · folgt`
+      all.style.cssText = `align-self:flex-start;padding:${12 * k}px ${24 * k}px;border-radius:${28 * k}px;border:0;background:#2b2236;color:#fff6e0;opacity:.55;font:600 ${24 * k}px/1 Fredoka,sans-serif`
+      fanFly.replaceChildren(head, grid, all)
+    }
+  }
   // Zahnrad-Tafel: Mode (Walk/Drive/Fly) und Game/God (God folgt, kein Owner) vor den bestehenden Zeilen
   const seg = (items, cur, onPick) => { const w = document.createElement('div'); w.style.cssText = `display:flex;gap:2px;padding:3px;border-radius:16px;background:#2b2236;border:1.5px solid ${INK3}`
     items.forEach(([id, t, dis]) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.mode = id; b.textContent = t; b.disabled = !!dis; b.title = dis ? 'folgt' : t
@@ -268,11 +325,15 @@ function buildDom3d(hud, inner, P = {}) {
   let modeBox = null, godBox = null
   const modeRow = ({ row: r }) => { const box = document.createElement('div'); modeBox = box; const paint = () => box.replaceChildren(seg([['walk', 'WALK'], ['drive', 'DRIVE'], ['fly', 'FLY']], () => host.mode?.() || 'walk', (m) => { host.setMode?.(m); paint() })); paint(); box.paint = paint; return r('Mode', box) }
   const godRow = ({ row: r }) => { const box = document.createElement('div'); godBox = box; box.append(seg([['game', 'GAME'], ['god', 'GOD · FOLGT', true]], () => 'game', () => {})); return r('Spiel', box) }
-  const SP = settingsPanel(root, hud, () => null, { top: [modeRow, godRow], accent: '#d97c3a', refresh: () => modeBox?.paint?.() })
+  const keysRow = ({ row: r }) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.setting = 'keys'; b.textContent = 'zeigen'
+    b.style.cssText = `padding:4px 14px;border-radius:12px;border:0;background:#2b2236;color:#fff6e0;font:600 15px/1.2 Fredoka,sans-serif;cursor:pointer`
+    b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); document.getElementById('m1-keys-info')?.click() }); return r('Tastenliste', b) } // ersetzt das freie „i“ (m1Host keyList)
+  const SP = settingsPanel(root, hud, () => null, { top: [modeRow, godRow, keysRow], accent: '#d97c3a', refresh: () => modeBox?.paint?.() })
   document.body.appendChild(root)
   let last = '', lastLab = '', lastMusic = ''
   return {
     bagWas: false, flash, settings: (v) => SP.settings(v), settingsOpen: () => SP.isOpen(), setFan,
+    closeFly: () => { if (!fly) return false; openFly(null); return true }, flyOpen: () => fly,
     sync() {
       hud.setUiFlag('chest', 'on', hud.opened().chest)
       if ((P.deadT = (P.deadT || 0) + 1) % 30 === 0) P.dead = !!A.stats?.()?.music?.dead // WS-Audio: Jukebox aufgegeben (kein Netz) → Kassette nicht als „läuft“
@@ -290,7 +351,7 @@ function buildDom3d(hud, inner, P = {}) {
         Object.assign(lab.style, { right: L.label.right * k + 'px', top: L.label.top * k + 'px' })
         // Aktions-Tasten und leere Plätze
         const ks = Math.round(L.keys * k), BX = (x) => v.W / 2 + (x - 960) * k, BY = (y) => v.H - (1080 - y) * k // unten Mitte verankert wie die Hülle (Fenster ≠ 16:9)
-        L.slots.forEach((sl, i) => { const el = keyEls[i]; el.style.cssText = inkText(ks, i < 3 ? '#fff6e0' : '#bdb6ab') + `;position:absolute;left:${BX(sl.x + sl.s - 14)}px;top:${BY(sl.y + sl.s - 18)}px;pointer-events:none;opacity:${i < 3 ? 1 : 0.7}`; el.textContent = i < 3 ? ['V', 'B', 'N'][i] : '' })
+        L.slots.forEach((sl, i) => { const el = keyEls[i]; el.style.cssText = inkText(ks, i < 3 ? '#fff6e0' : '#bdb6ab') + `;position:absolute;left:${BX(sl.x + sl.s + 6)}px;top:${BY(sl.y + sl.s - 26)}px;pointer-events:none;opacity:${i < 3 ? 1 : 0.7}`; /* gleiche Regel wie das „I“ an der Blase: rechts unten, mit Abstand, ohne Tangente */ el.textContent = i < 3 ? ['V', 'B', 'N'][i] : '' })
         ring.forEach(([r, sl]) => { r.style.cssText = `position:absolute;left:${BX(sl.x + sl.s * 0.14)}px;top:${BY(sl.y + sl.s * 0.14)}px;width:${sl.s * 0.72 * k}px;height:${sl.s * 0.72 * k}px;border-radius:50%;border:${Math.max(1, 3 * k)}px dashed rgba(255,246,224,.5);box-shadow:0 0 0 1px rgba(19,14,22,.14),inset 0 0 0 1px rgba(19,14,22,.14);box-sizing:border-box;pointer-events:none` })
         const I = L.inter; Object.assign(bub.style, { left: BX(I.x) + 'px', top: BY(I.y) + 'px', width: I.w * k + 'px', height: I.h * k + 'px' }); bubHint = null
         bubKey.style.cssText = inkText(ks) + `;position:absolute;left:${BX(I.x + I.w + 6)}px;top:${BY(I.y + I.h - 26)}px;pointer-events:none`; bubKey.textContent = 'I'
@@ -303,15 +364,21 @@ function buildDom3d(hud, inner, P = {}) {
         const cs = Math.round(A2.cap * k); cap.style.cssText = inkText(cs) + `;position:absolute;left:${A2.x * k + cw / 2}px;top:${A2.y * k + (n - 1) * A2.step * k + chh + 16 * k}px;transform:translateX(-50%);pointer-events:none;display:${n ? 'flex' : 'none'};align-items:center;gap:${5 * k * 2}px`
         cap.innerHTML = `<span>${fanData.total} CARDS</span><span style="width:${Math.max(2, cs * 0.16)}px;height:${cs * 0.95}px;border-radius:2px;background:#fff6e0;box-shadow:0 0 0 1px ${INK3}"></span><span>${fanData.decks} ${fanData.decks === 1 ? 'DECK' : 'DECKS'}</span>`
         const c = R.chest; if (c) Object.assign(fl.style, { left: c.x + c.w / 2 + 'px', top: Math.max(8, c.y - 40) + 'px' })
+        // „i“ der Tastenliste (m1Host, rechts unten) lag über der Kassette: im 3D-Modus über die Kassette setzen (Lead 24.10.; hud=clay unverändert)
+        { const ib = document.getElementById('m1-keys-box'), cr = R.cassette; if (ib && cr) { ib.dataset.kfbHud3d ??= ib.style.bottom; ib.style.bottom = Math.round(v.H - cr.y + 4 * k) + 'px' } } // Liste über der Kassette; das „i“ selbst blendet die CSS-Regel aus
         const g = R.gear, cp = R.cassette; if (g) Object.assign(SP.panel.style, { right: Math.max(8, innerWidth - (g.x + g.w)) + 'px', top: g.y + g.h + 8 + 'px' })
         if (cp) ttl.style.cssText = inkText(Math.round(32 * k)) + `;position:absolute;right:${innerWidth - cp.x - cp.w * 0.9}px;top:${cp.y - 30 * k}px;pointer-events:none;opacity:${ttl.style.opacity || 0};transition:opacity .25s` }
       // Gesamt-Fluff: Wert vom Owner, angezeigt erst wenn keine Kugel mehr fliegt (zählt mit dem Kontakt hoch)
       { const T = host.fluffTotal?.(); if (T == null) tot.style.display = 'none'
-        else if ((T !== totShown || k !== totK) && hud.inFlight() === 0) { const up = totShown != null && T > totShown; totShown = T; totK = k; const fs = Math.round(52 * k); tot.textContent = String(T) // auch bei Maßstabswechsel neu (erstes Bild kennt die Fenstergröße noch nicht)
-          tot.style.cssText = inkText(fs) + ';position:absolute;pointer-events:none;display:block;transform-origin:50% 100%'
-          const wRef = String(T).length * 52 * 0.6 + 24; if (Math.abs(wRef - totW) > 1) { totW = wRef; hud.setOrbShift(wRef / 2) }
+        else if ((T !== totShown || k !== totK) && hud.inFlight() === 0) { const up = totShown != null && T > totShown; totShown = T; totK = k; tot.dataset.value = String(T) // auch bei Maßstabswechsel neu (erstes Bild kennt die Fenstergröße noch nicht)
+          const o0 = R.orb0, orbPx = o0 ? o0.h * hud.layout().orb0.fill : 68 * k, wPx = drawTotal(T, k, orbPx); tot.style.display = 'block'; tot.style.transformOrigin = '50% 100%'
+          const wRef = (wPx + 18 * k) / k; if (Math.abs(wRef - totW) > 1) { totW = wRef; hud.setOrbShift(wRef / 2) } // Gruppe Zahl + Kugeln mittig; Abstand Zahl–Kugel = Kugelabstand (18 Bezugs-px)
           if (up && !reducedMotion() && tot.animate) tot.animate([{ transform: 'translateY(0) scale(1,1)' }, { transform: `translateY(${-10 * k}px) scale(1.14,0.86)` }, { transform: 'translateY(0) scale(0.94,1.06)' }, { transform: 'none' }], { duration: 320, easing: 'ease-out' }) }
-        const o = R.orb0; if (o && T != null) { const fill = hud.layout().orb0.fill, coreL = o.x + o.w * (1 - fill) / 2; Object.assign(tot.style, { right: (innerWidth - coreL + 14 * k) + 'px', top: (o.y + o.h / 2) + 'px', transform: 'translateY(-50%)' }) } }
+        const o = R.orb0; if (o && T != null) { const fill = hud.layout().orb0.fill, coreL = o.x + o.w * (1 - fill) / 2; Object.assign(tot.style, { left: (coreL - 18 * k - parseFloat(tot.style.width || 0)) + 'px', top: (o.y + o.h / 2 - parseFloat(tot.style.height || 0) / 2) + 'px', right: '' }) } }
+      { const sp = hud.speedState(), key3 = sp.visible ? sp.kmh + '|' + k : '' // Zahl nur bei Wechsel neu
+        if (key3 !== spKey) { spKey = key3; spd.style.display = sp.visible ? 'flex' : 'none'; if (sp.visible) { const T = L.speedText; spN.style.cssText = inkText(Math.round((T.fs + 8) * k)); spN.textContent = String(sp.kmh); spU.style.cssText = inkText(Math.round(T.fs * 0.7 * k))
+          Object.assign(spd.style, { right: T.right * k + 'px', top: T.top * k + 'px' }) } } }
+      if (fly === 'map' && (flyT = (flyT + 1) % 6) === 0) buildFly(false) // Minimap ~10 Hz, solange offen
       // Interaktions-Hinweis (in Reichweite: Hinweis-Lichthof B)
       const hint = !!inner.current?.__target; if (hint !== bubHint) { bubHint = hint; const I = L.inter; drawBubble(I.w * k, I.h * k, hint) }
       // Titel nur beim Wechsel
@@ -321,7 +388,7 @@ function buildDom3d(hud, inner, P = {}) {
         if (t) { nm.style.cssText = inkText(Math.round(L.label.fs * k)); nm.textContent = (t.name || '').toUpperCase(); dv.style.cssText = inkText(Math.round(L.label.fs * k), '#bfe8ff'); dv.textContent = t.dv || ''
           ds.style.cssText = inkText(Math.round(L.label.fd * k)); ds.textContent = t.dist || ''; hits.arrow.setAttribute('aria-label', 'Ziel ' + t.name + ', ' + (t.dist || 'angekommen')) } }
     },
-    remove() { clearTimeout(flT); clearTimeout(ttlT); glowAnim?.cancel(); SP.off(); root.remove(); css.remove() },
+    remove() { clearTimeout(flT); clearTimeout(ttlT); glowAnim?.cancel(); SP.off(); root.remove(); css.remove(); const ib = document.getElementById('m1-keys-box'); if (ib && ib.dataset.kfbHud3d != null) { ib.style.bottom = ib.dataset.kfbHud3d; delete ib.dataset.kfbHud3d } },
     el: root,
   }
 }

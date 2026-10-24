@@ -13,9 +13,11 @@ import { createRacer } from '../vendor/audio/racer/engine.mjs'
 import { createCombat } from '../vendor/audio/combat/engine.mjs'
 import { createAmbience } from '../vendor/audio/ambience/kfb-ambience.v1.mjs'
 import { createFootstepAudio } from '../vendor/audio/footsteps/audio.mjs'
+import { syllabify, melody, planDuration, grainsFrom, voiceBase, MOOD_FOR_END, hashStr, rng as seedRng } from './syllables.js'
+import { chatterOf, resolveCharacterId } from '../characters/registry.js'
 import { resolveAmbience, REVERB, reverbEnv, occlusion, occlusionFilter, createPulseTracker, SILENT_PULSE } from './mixer.js'
 import { BUSES, SEMANTIC, DUCK, dbToGain, musicDuckDb, sanitizeVolumes, sliderGain, createModeLatch, createWeightedShuffle, musicWeight, uniqueTracks, variantsOf, distanceLowpassHz, pickVictim } from './mixer.js'
-import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS } from './cueMap.js'
+import { CUES, FLUFFER_SEQUENCE, LAUNCH, k10Plan, weaponKind, groupPlan, npcStepCue, NPC_STEP_RANGE, FLUFFER_RANGE, STEP_SURFACES, racerAssets, BANK_FIRST, greetCues, chatterFamily, chatterRate, CHATTER_MOOD, CHATTER_MOODS, pickChatter } from './cueMap.js'
 
 // Ton-Wurzel: Dev-/Preview-Server '/@kfb-audio/' (scripts/audio/vitePrivateAudio.mjs); private MVP-Site (V-618, passwortgeschützt) '/kfb-audio/' über
 // VITE_KFB_AUDIO_ROOT beim SITE-Build (scripts/audio/site-copy.mjs legt die Dateien dort ab). Normaler Build: nichts Privates in dist.
@@ -117,6 +119,7 @@ async function boot() {
   const G = graph(); if (!G) { S.mode = 'public'; return snapshotLite() }
   const ac = G.ac, timed = async (key, fn) => { const a = now(); try { const r = await fn(); S.loads[key] = { ms: +(now() - a).toFixed(0), ok: true }; return r } catch (e) { S.loads[key] = { ms: +(now() - a).toFixed(0), ok: false }; S.errors.push(key + ': ' + (e?.message || e)); return null } }
   S.mode = 'full' // Module kommen einzeln dazu, sobald geladen (der Rest spielt schon)
+  if (S.speechOnly) { await timed('bank', () => preloadBank(null, /^chatter\./)); S.loads.ready = S.loads.total = { ms: +(now() - t0).toFixed(0), ok: true }; return snapshotLite() } // Bühne: nur Silben
   startMusic()
   const car = !!S.host.car
   // Stufe 1 – sofort hörbar: Atmo + (zu Fuß) Schritte bzw. (Racer) Motor; Tonbank-Grundstock
@@ -153,8 +156,8 @@ function loadClip(set, id) {
     .then((b) => graph().ac.decodeAudioData(b)).then((buf) => { B.buffers.set(key, buf); return buf }).finally(() => B.pending.delete(key))
   B.pending.set(key, p); return p
 }
-async function preloadBank(first = null) { // first: true = nur Grundstock (BANK_FIRST), false = der Rest, null = alles
-  const re = BANK_FIRST[S.host.car ? 'car' : 'foot'], jobs = []; for (const [k, c] of Object.entries(CUES)) if (c.owner === 'bank' && (first === null || re.test(k) === first)) for (const id of bankFiles(c)) if (!jobs.some(([a, b]) => a === c.set && b === id)) jobs.push([c.set, id])
+async function preloadBank(first = null, only = null) { // first: true = nur Grundstock (BANK_FIRST), false = der Rest, null = alles; only: Regex auf Cue-Namen
+  const re = BANK_FIRST[S.host.car ? 'car' : 'foot'], jobs = []; for (const [k, c] of Object.entries(CUES)) if (c.owner === 'bank' && (first === null || re.test(k) === first) && (!only || only.test(k))) for (const id of bankFiles(c)) if (!jobs.some(([a, b]) => a === c.set && b === id)) jobs.push([c.set, id])
   let k = 0; const worker = async () => { while (k < jobs.length) { const [s, id] = jobs[k++]; try { await loadClip(s, id) } catch (e) { S.errors.push('bank ' + s + '/' + id + ': ' + e.message) } } }
   await Promise.all(Array.from({ length: 6 }, worker)); return jobs.length
 }
@@ -337,7 +340,7 @@ export async function harvestPhrases(song, family) {
 }
 // Begrüßung eines Bewohners (WS-NPC 'greet'): Stimm-Laut am Kopf der Figur, Musik kurz −7 dB (Georg q179, V-693); Instrument aus dem Register, sonst Bewohner-Stimme, sonst Platzhalter
 export function greet(e, pos = null, chatter = null) { // chatter: Register-Block der Figur (V-682), sonst null
-  if (S.mode !== 'full') return null
+  if (S.mode !== 'full' || CHAT_SYL) return null // chat=syl: Laut nur mit Blase (speak)
   // sichtbarer Rückfall (Lead 22.10.): je Figur im Status, ob das Register-Instrument klingt ('set:<Familie>') oder der bisherige Platzhalter ('fallback')
   //   Rückfall: 'fallback:resident' (Bewohner-Stimme resident_voices_r1) bzw. 'fallback:placeholder'
   const fam = chatterFamily(chatter)
@@ -349,13 +352,66 @@ export function greet(e, pos = null, chatter = null) { // chatter: Register-Bloc
 // Sprechlaut einer Figur zu einem Anlass (Gruppe: aggro/awake/calm/ko; Fluffer: windup/healed), Instrument aus dem Register bzw. Georgs Wahl V-693;
 // ohne Familie mit Clips kein zusätzlicher Laut (die bisherigen Gruppen-/Fluffer-Töne bleiben). Je Gruppe bzw. Figur und Anlass höchstens alle 1,5 s.
 export function chatter(e, pos = null, ch = null) {
-  const mood = e?.type === 'chatter' && CHATTER_MOODS.includes(e.mood) ? e.mood : CHATTER_MOOD[e?.type]; if (!mood || S.mode !== 'full' || !CTX) return null // type 'chatter' mit eigenem mood (WS-NPC: Band, Disco)
+  const mood = e?.type === 'chatter' && CHATTER_MOODS.includes(e.mood) ? e.mood : CHATTER_MOOD[e?.type]; if (!mood || S.mode !== 'full' || !CTX || CHAT_SYL) return null // chat=syl: nur speak // type 'chatter' mit eigenem mood (WS-NPC: Band, Disco)
   const who = e.characterId ?? e.id ?? '?', fam = chatterFamily(ch); S.greetChatter ||= {}
   S.greetChatter[who] = fam ? (ch?.status === 'V-693' ? 'V-693:' : 'set:') + fam : 'fallback'; if (!fam) return null
   // Sperre: Gruppen-Ereignisse (aggro … für alle Mitglieder zugleich) einmal je Gruppe; WS-NPC 'chatter' je Sprecher, mehrere Sprecher desselben Anlasses (gleiches t) reihum versetzt
   const key = (e.group || who) + '|' + e.type + (e.type === 'chatter' ? '|' + (e.id ?? who) : ''), t = CTX.currentTime; S.chatAt ||= {}; if (t - (S.chatAt[key] ?? -9) < 1.5) return null; S.chatAt[key] = t
   let at = 0.12; if (e.type === 'chatter' && e.t != null) { const turn = (e.group || '') + '|' + e.t; S.chatTurn ||= {}; at += 0.7 * (S.chatTurn[turn] = (S.chatTurn[turn] ?? -1) + 1); if (Object.keys(S.chatTurn).length > 40) S.chatTurn = {} }
   const cue = `chatter.${fam}.${mood}`, v = play(cue, { pos, at, gain: 0.85, rate: chatterRate(ch) }); if (v) log({ type: 'chatter', e: e.type, id: who, cue }); return v ? cue : null
+}
+// ── Chatter-Silben R1 (Lead 24.10., Georg-GO; Schalter #chat=syl) ────────────────────────────────────────────────────────────────
+// speak({ text, characterId, chatter?, group?, pos?, kind? }) → { dur, start } | null. Blasentext → Silben → Satzmelodie (syllables.js); je Silbe ein Grain
+// (0,1–0,2 s) aus den einmal dekodierten Familien-Clips des Instruments (pickChatter: Register → Georgs Wahl → Gruppe). Stimmlage je Figur fest (Seed),
+// Wechselrede: anderer Sprecher beginnt 0,3–0,5 s nach dem Ende des vorigen, Registerwechsel bei ähnlicher Lage. Musik −7 dB solange gesprochen wird.
+export const CHAT_SYL = typeof location !== 'undefined' && /(^|[#,])chat=syl(,|$)/.test(location.hash)
+const SPEAKERS = new Map() // Anker-ID → { characterId, group } (Bühne: stage-left/right; Welt: npc-<id>)
+export function setSpeaker(anchorId, characterId, group = null) { if (anchorId) SPEAKERS.set(anchorId, { characterId: characterId ? resolveCharacterId(characterId) ?? characterId : null, group }) }
+export function speakerOf(anchorId) { const s = SPEAKERS.get(anchorId); if (s) return s; const id = String(anchorId || '').replace(/^npc-/, ''); return { characterId: resolveCharacterId(id) ?? (id || null), group: null } }
+const GRAINS = new Map() // Familie|Gefühl → [{ buf, t0, dur, norm }]
+function grainPool(fam, mood) {
+  const key = fam + '|' + mood; if (GRAINS.has(key)) return GRAINS.get(key)
+  const c = CUES['chatter.' + fam + '.' + mood], id = c?.files?.[0], buf = id && S.bank.buffers.get(c.set + '/' + id); if (!buf) { if (id) loadClip(c.set, id).catch(() => {}); return null }
+  const norm = dbToGain(Math.max(-12, Math.min(14, S.index.sets?.[c.set]?.gainDb?.[id] ?? 0))) * (c.gain ?? 1)
+  const L = grainsFrom(buf.getChannelData(0), buf.sampleRate).map((g) => ({ buf, t0: g.t0, dur: g.dur, norm })); GRAINS.set(key, L); return L
+}
+// Bühne ohne AudioHost (#stage …, chat=syl): nur die Silben laden – keine Musik, keine Atmo, kein Motor. Klingt nach der ersten Berührung (Browser-Regel).
+export function bootSpeech() {
+  if (!CHAT_SYL || MUTED || booting || typeof document === 'undefined') return; S.speechOnly = true; S.host = { car: false, ...S.host }; preload()
+  const go = () => { document.removeEventListener('pointerdown', go, true); unlock() }; document.addEventListener('pointerdown', go, true); if (navigator.userActivation?.hasBeenActive) unlock()
+}
+export function speakPlan(text, characterId = 'x') { const P = melody(syllabify(text), { seed: hashStr(characterId + '|' + text) }); return { syllables: P.length, dur: planDuration(P) } }
+export function speak({ text, characterId = null, chatter = null, group = null, pos = null, kind = 'line' } = {}) {
+  if (S.mode !== 'full' || !CTX || !text) return null
+  // Doppel-Schutz: gleicher Text, solange der erste Aufruf noch geplant ist oder klingt (+0,5 s) – z. B. WS-NPC ruft speak und zeigt die Blase um start
+  // verzögert, worauf der BubbleHost-Haken dieselbe Zeile noch einmal meldet (Anker-ID ≠ characterId, deshalb ohne Sprecher im Schlüssel)
+  const ac = CTX, now = ac.currentTime, dk = String(text).replace(/\*/g, '').trim(); S.spoke ||= new Map(); const prev = S.spoke.get(dk); if (prev && now < prev.t + prev.res.start + prev.res.dur + 0.5) return prev.res
+  const ch = chatter ?? pickChatter({ characterId, group }, characterId ? chatterOf(characterId) : null), fam = chatterFamily(ch), who = characterId || '?'
+  S.speakLog ||= []; if (!fam) { S.greetChatter ||= {}; S.greetChatter[who] = 'fallback'; S.speakLog.push({ who, text: String(text).slice(0, 40), fam: null }); return null }
+  const sylls = syllabify(text), seed = hashStr(who + '|' + text), P = melody(sylls, { seed }); if (!P.length) return null
+  const end = P.at(-1).end, moods = MOOD_FOR_END[end] || ['neutral'], pools = moods.map((m) => grainPool(fam, m)).filter((L) => L?.length)
+  if (!pools.length) return null // Clips noch nicht dekodiert (Ladevorgang angestoßen)
+  // Wechselrede und Stimmlage
+  let base = voiceBase(who) + (kind === 'call' ? 1 : 0), start = 0; const T = S.talk
+  if (T && T.end > now) start = T.who === who ? T.end - now + 0.15 : T.end - now + 0.3 + seedRng(seed)() * 0.2
+  if (T && T.who !== who && T.end > now - 1.5 && Math.abs(base - T.base) < 2) base += base >= T.base ? 3 : -3
+  const G = graph(), r = seedRng(seed ^ 0x9e37), t0 = now + start + 0.01, out = ac.createGain(); out.gain.value = 0.5 * (kind === 'call' ? 1.1 : 1)
+  let last = out; const rp = rel(pos); if (rp) { const d = Math.hypot(rp.x, rp.y, rp.z), pan = ac.createPanner(); pan.panningModel = 'equalpower'; pan.distanceModel = 'inverse'; pan.refDistance = 4; pan.maxDistance = 220; pan.rolloffFactor = 1
+    pan.positionX.value = rp.x; pan.positionY.value = rp.y; pan.positionZ.value = rp.z; const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = distanceLowpassHz(d); out.connect(lp).connect(pan); last = pan }
+  last.connect(G.buses.sfx)
+  const pitch = chatterRate(ch) * (CUES['chatter.' + fam + '.neutral']?.pitch || 1)
+  for (const p of P) {
+    const pool = pools[p.end === '!' || p.emph ? 0 : Math.floor(r() * pools.length)], g = pool[Math.floor(r() * pool.length)], rate = pitch * 2 ** ((base + p.semi) / 12)
+    const len = Math.min(g.dur, p.dur * rate), when = t0 + p.at, src = ac.createBufferSource(), env = ac.createGain(); src.buffer = g.buf; src.playbackRate.value = rate
+    const v = g.norm * p.gain, outDur = len / rate; env.gain.setValueAtTime(0, when); env.gain.linearRampToValueAtTime(v, when + 0.008); env.gain.setValueAtTime(v, when + Math.max(0.01, outDur - 0.03)); env.gain.linearRampToValueAtTime(0, when + outDur)
+    src.connect(env).connect(out); src.start(when, g.t0, len); src.stop(when + outDur + 0.02)
+  }
+  const dur = planDuration(P), fin = t0 + dur; setTimeout(() => { try { out.disconnect() } catch {} }, (start + dur + 1) * 1000)
+  S.talk = { who, end: fin, base }; S.voiceUntil = Math.max(S.voiceUntil || 0, fin) // Musik −7 dB (q179) während gesprochen wird
+  const res = { dur: +dur.toFixed(2), start: +start.toFixed(2), syllables: P.length, family: fam }
+  S.spoke.set(dk, { t: now, res }); if (S.spoke.size > 60) S.spoke.delete(S.spoke.keys().next().value)
+  S.speakLog.push({ who, text: String(text).slice(0, 40), fam, n: P.length, dur: res.dur, start: res.start, end }); if (S.speakLog.length > 30) S.speakLog.shift()
+  log({ type: 'speak', id: who, fam, n: P.length, dur: res.dur, start: res.start }); return res
 }
 export function ui(name) { return play('ui.' + name) }
 // Präsenz-Schleifen: laufen, solange Ereignisse kommen (hold s), folgen der letzten Lage, blenden danach aus
@@ -497,7 +553,7 @@ export function stats() {
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, dead: S.music.dead, firstMs: S.music.firstAt, prepared: S.music.prepared || 0, prep: !!S.music.prep, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null, host: AUDIO_ROOT, hostFallbacks: S.hostFallbacks || 0,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, ambience: { ...S.amb }, ambienceOverride: { ...CTXO }, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs, activeLoops }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs), on: S.racerOn, loops: activeLoops, assets: S.racerAssets }))(S.racer.snapshot()) : null,
-    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    presence: [...PRES.keys()], pulse: { bpm: PULSE.transport.bpm, conf: PULSE.transport.confidence01, audible: PULSE.audible01, bass: PULSE.bass }, reverb: REV_ENV, rise: S.rise ?? null, occluded: S.occluded || 0, flufferHealed: !!S.flufferHealed, fluffers: Object.fromEntries(FLUFF), speak: { on: CHAT_SYL, log: (S.speakLog || []).slice(-8) }, chatter: { ...(S.greetChatter || {}) }, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

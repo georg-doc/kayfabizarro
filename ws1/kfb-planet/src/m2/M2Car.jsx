@@ -54,6 +54,7 @@ import ModuleHost from '../ModuleHost'
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
 import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from './racerFlight.js'
+import { elanSpeed } from '../m1/elan.js' // HUD-Telemetrie im Racer-Flug (nur lesend)
 
 // ── Fahrzeug (aus <racer>.kfb-vehicle.v3.json über kfb-vehicle-rig.r1.json, Rig-Einheiten × S) ─────────────────────────────────────────────────────────────────
 const S = (fbRecipe.stage?.scale ?? 0.947) * K // V-345: Rig × 0,947 × K = Rig × M_PER_RIG (J17-Meter, wie FB)
@@ -462,6 +463,9 @@ function K2tCar({ at, keys, carRef, player }) {
   const body = useRef(null), d = useMemo(() => createK2t(at.p[0], at.p[1], at.p[2], at.yaw), [at])
   // Elan S2: Racer-Flug (racerFlight.js). Pfeil hoch/runter = Nase (NOSE, aus dem Host-Tasten-Router), RMB gehalten = Nase aus der Kamera
   const F = useMemo(() => createRacerFlight(K / WORLD_K, G), [d]), { gl } = useThree()
+  // HUD-Tempo-Leiste (WS1e, additiv, nur lesend): Tempo und Boost aus dem vorhandenen Fahr-/Flugzustand – das HUD rechnet nichts selbst
+  useEffect(() => { M2STATE.telemetry = () => ({ speed: F.st ? elanSpeed(F.st) : Math.abs(d.speed || 0), fly: !!F.st, boosting: F.st ? !!F.st.boosting : !!d.boosting, freeBoost: (d.driftBoostT || 0) > 0 || (d.landBoostT || 0) > 0, boostMeter: d.boostMeter ?? null, speed01: F.st ? racerDrive(F, {}).speed01 : null })
+    return () => { if (M2STATE.telemetry) M2STATE.telemetry = null } }, [d, F])
   useEffect(() => { const pd = (e) => { NOSE.rmb = (e.buttons & 2) !== 0 }, cm = (e) => { if (F.st) e.preventDefault() }
     gl.domElement.addEventListener('pointerdown', pd); window.addEventListener('pointerup', pd); gl.domElement.addEventListener('contextmenu', cm)
     return () => { gl.domElement.removeEventListener('pointerdown', pd); window.removeEventListener('pointerup', pd); gl.domElement.removeEventListener('contextmenu', cm); NOSE.rmb = false; if (ELAN_MEM.state === F.st) ELAN_MEM.state = null } }, [F, gl])

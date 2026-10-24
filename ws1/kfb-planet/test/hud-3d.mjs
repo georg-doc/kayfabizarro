@@ -34,12 +34,28 @@ checks.chestBag = op.bag && op.chest && !cl.bag && !cl.chest
 // ── Paket 2: Almanac, Aktionsleiste, Interaktion, Kassette, Zahnrad ─────────────────────────────────────────────────
 s = await st(page); extra.p2 = { loaded: s.loaded, quads: s.quads }
 checks.p2Loaded = s.loaded >= 9 && s.quads >= 13
+await page.waitForFunction(() => document.querySelectorAll('[data-ui=fan] img').length > 0, null, { timeout: 45000 }).catch(() => {}) // Kartenbilder kommen aus dem Netz (cardImage)
 const fan = await page.evaluate(() => ({ imgs: document.querySelectorAll('[data-ui=fan] img').length, cap: [...document.querySelectorAll('#kfb-hud-clay div')].map((d) => d.innerText).find((t) => /CARDS/.test(t)) || '' }))
 extra.fan = fan; checks.almanacFan = fan.imgs >= 1 && fan.imgs <= 7 && /\d+ CARDS\s*\|?\s*\d+ DECKS?/.test(fan.cap.replace(/\n/g, ' '))
 // Gesamt-Fluff (Owner orchard.total, kfb.save fluffTotal): Zahl links vor den Kugeln, gleiche Höhe, Gruppe mittig
 { const t = await page.evaluate(() => { const el = document.getElementById('kfb-hud3d-total'), r = el?.getBoundingClientRect(), o = window.__kfbClayHud.rects(), L = o.orb0, R5 = o.orb5
-    return { own: window.__kfbClayHud.fluffTotal(), txt: el?.textContent, shown: el && getComputedStyle(el).display !== 'none', right: r?.right, cy: r ? r.top + r.height / 2 : 0, orbL: L.x + L.w * 0.1, orbCy: L.y + L.h / 2, groupMid: r ? (r.left + R5.x + R5.w * 0.9) / 2 : 0, W: innerWidth } })
-  extra.total = t; checks.fluffTotal = t.own != null && t.shown && +t.txt === t.own && t.right <= t.orbL && Math.abs(t.cy - t.orbCy) < 12 && Math.abs(t.groupMid - t.W / 2) < 40 }
+    return { own: window.__kfbClayHud.fluffTotal(), txt: el?.dataset.value, shown: el && getComputedStyle(el).display !== 'none', right: r?.right, cy: r ? r.top + r.height / 2 : 0, orbL: L.x + L.w * 0.1, orbCy: L.y + L.h / 2, groupMid: r ? (r.left + R5.x + R5.w * 0.9) / 2 : 0, W: innerWidth } })
+  extra.total = t; checks.fluffTotal = t.own != null && t.shown && +t.txt === t.own && t.right <= t.orbL && Math.abs(t.cy - t.orbCy) <= 2 && Math.abs(t.groupMid - t.W / 2) < 40 } // Flucht ≤ 2 px (Georg 24.10.)
+// Fluchten und Größen (Georg 24.10.): Blase = Maßstab; Aktionen/Truhe als Verhältnis; Blase auf der Mittellinie der Aktionen; Zahnrad und Pfeil eine Spalte;
+// keine Tangenten: Ton-Knopf klar innerhalb der Kassette und mit Abstand zu den Spulen-Knöpfen; Tasten wie das „I“ (gleiche Schrift, Lage, Abstand)
+{ const g = await page.evaluate(() => { const H = window.__kfbClayHud, R = H.rects(), L = H.layout(), core = (k) => R[k].h * L[k].fill, cy = (r) => r.y + r.h / 2, cx = (r) => r.x + r.w / 2
+    const bub = document.querySelector('[data-ui=inter]').getBoundingClientRect(), CB = H.cassetteButtons(), keys = [...document.querySelectorAll('#kfb-hud-clay div')].filter((d) => /^[VBNI]$/.test(d.textContent)).map((d) => ({ t: d.textContent, fs: getComputedStyle(d).fontSize, x: d.getBoundingClientRect().left, y: d.getBoundingClientRect().top }))
+    const keyI = keys.find((k) => k.t === 'I'), keyV = keys.find((k) => k.t === 'V')
+    return { actRatio: core('act0') / bub.height, chestRatio: core('chest') / bub.height, bubDy: Math.abs(cy(R.act0) - (bub.top + bub.height / 2)), colDx: Math.abs(cx(R.gear) - cx(R.arrow)),
+      muteGapEdge: (CB.box.y1 - (CB.mute.y + CB.mute.r)) / (CB.box.y1 - CB.box.y0), muteGapSpool: Math.hypot(CB.mute.x - CB.play.x, CB.mute.y - CB.play.y) - CB.mute.r - CB.play.r,
+      keyFsSame: keyI && keyV && keyI.fs === keyV.fs, keyIdx: keyI && (keyI.x - (bub.right)), keyVdx: keyV && (keyV.x - (R.act0.x + R.act0.w / 2 + core('act0') / 2)),
+      infoHidden: getComputedStyle(document.getElementById('m1-keys-info') || document.body).display === 'none' || !document.getElementById('m1-keys-info'), RATIO: L.ratio || null } })
+  extra.geometry = g
+  checks.flightLines = g.bubDy <= 2 && g.colDx <= 2
+  checks.sizeRatios = Math.abs(g.actRatio - 1.18) < 0.06 && Math.abs(g.chestRatio - 1.95) < 0.1
+  checks.noTangents = g.muteGapEdge > 0.05 && g.muteGapSpool > 4 && g.keyIdx > 0 && g.keyVdx > 0
+  checks.keysLikeI = !!g.keyFsSame
+  checks.infoInGear = g.infoHidden && await page.evaluate(() => !!document.querySelector('#kfb-hud-settings [data-setting=keys]')) }
 // aktive Waffe: Familie vom Owner → Platz aktiv mit Lichthof
 await page.evaluate(() => window.__kfbM1.harvest().hud.setWeapon('blaster')); await wait(page, 500)
 const wb = await page.evaluate(() => ({ s1: window.__kfbClayHud.uiState('act1'), s0: window.__kfbClayHud.uiState('act0'), fx: window.__kfbClayHud.fxState('act1') }))
@@ -86,6 +102,31 @@ extra.settings = { ...sp, fly, walk }
 checks.gearSettings = sp.open && ['walk', 'drive', 'fly', 'game', 'god:off'].every((m) => sp.modes.includes(m))
 checks.modeFly = fly === 'fly' && walk === 'walk'
 await page.keyboard.press('Escape'); await wait(page, 200)
+// ── Paket 4: Flyouts L2 ─────────────────────────────────────────────────────────────────────────────────────────────
+await page.click('button[aria-label^="Ziel"]'); await wait(page, 500)
+const mf = await page.evaluate(() => { const el = document.getElementById('kfb-hud3d-map'), cv = el?.querySelector('canvas'), px = cv?.getContext('2d').getImageData(cv.width >> 1, cv.height >> 1, 1, 1).data
+  const pr = el.getBoundingClientRect(), br = el.querySelector('[data-goal=return]').getBoundingClientRect()
+  return { inside: br.bottom <= pr.bottom - 2 && br.right <= pr.right - 2, open: el && getComputedStyle(el).display !== 'none', goals: [...el.querySelectorAll('[data-goal]')].map((b) => b.dataset.goal), drawn: !!px && px[3] > 0, arrowUi: window.__kfbClayHud.uiState('arrow') } })
+await page.screenshot({ path: `${OUT}/10_karte_ziele.png` })
+await page.click('#kfb-hud3d-map [data-goal="orchard:goblin"]'); await wait(page, 1200)
+const lab1 = await page.evaluate(() => document.getElementById('kfb-hud3d-label')?.innerText || '')
+await page.keyboard.press('Escape'); await wait(page, 300)
+const mfClosed = await page.evaluate(() => getComputedStyle(document.getElementById('kfb-hud3d-map')).display === 'none')
+extra.mapFly = { ...mf, lab1: lab1.replace(/\n/g, ' '), mfClosed }
+checks.mapFlyout = mf.open && mf.inside && mf.drawn && ['active', 'hover'].includes(mf.arrowUi) && ['stage', 'orchard:goblin', 'orchard:atlantis', 'orchard:utopia', 'return'].every((g) => mf.goals.includes(g)) && mfClosed
+checks.goalSelect = /GOBLIN-GARTEN/.test(lab1)
+// Return to start = Taste R
+await page.evaluate(() => { window.__keys = [] }); await page.click('button[aria-label^="Ziel"]'); await wait(page, 300); await page.click('#kfb-hud3d-map [data-goal="return"]'); await wait(page, 300)
+const rk = await page.evaluate(() => ({ keys: window.__keys, closed: getComputedStyle(document.getElementById('kfb-hud3d-map')).display === 'none', label: document.querySelector('#kfb-hud3d-map [data-goal="return"]')?.textContent }))
+extra.returnStart = rk; checks.returnToStart = rk.keys.includes('KeyR') && rk.closed && rk.label === 'Return to start'
+await page.evaluate(() => window.__kfbClayHud.goal(undefined)); await page.evaluate(() => document.querySelector('#kfb-hud3d-map [data-goal="stage"]')?.click())
+// Fächer → letzte Karten
+await page.click('[data-ui=fan]'); await wait(page, 400)
+const ff = await page.evaluate(() => { const el = document.getElementById('kfb-hud3d-fan'); return { open: el && getComputedStyle(el).display !== 'none', imgs: el.querySelectorAll('img').length, fanImgs: document.querySelectorAll('[data-ui=fan] img').length, allDisabled: el.querySelector('button')?.disabled } })
+await page.screenshot({ path: `${OUT}/11_letzte_karten.png` })
+await page.click('[data-ui=fan]'); await wait(page, 300)
+const ffClosed = await page.evaluate(() => getComputedStyle(document.getElementById('kfb-hud3d-fan')).display === 'none')
+extra.fanFly = { ...ff, ffClosed }; checks.fanFlyout = ff.open && ff.imgs === ff.fanImgs && ff.imgs >= 1 && ff.allDisabled && ffClosed
 // Pfeil: Standard-Ziel Bühne sichtbar mit Name
 s = await st(page); const lab0 = await page.evaluate(() => document.getElementById('kfb-hud3d-label')?.innerText || '')
 checks.goalStage = s.arrow.visible && /BÜHNE/.test(lab0); extra.lab0 = lab0.replace(/\n/g, ' ')
@@ -126,10 +167,25 @@ await browser.close()
 { const { browser: b6, page: p6 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: { width: 844, height: 390 } })
   await p6.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p6.waitForTimeout(3000)
   const q = await p6.evaluate(() => { const R = window.__kfbClayHud.rects(), keys = [...document.querySelectorAll('#kfb-hud-clay div')].filter((d) => /^[VBN]$/.test(d.textContent)).map((d) => d.getBoundingClientRect().left)
-    return { xs: [0, 1, 2].map((i) => R['act' + i].x + R['act' + i].w / 2), ws: [0, 1, 2].map((i) => R['act' + i].w), keys, fs: parseFloat(getComputedStyle(document.getElementById('kfb-hud3d-total')).fontSize) } })
+    const ib = document.getElementById('m1-keys-info')?.getBoundingClientRect(), cs = R.cassette
+    return { iBottom: ib ? ib.bottom : null, casTop: cs.y, xs: [0, 1, 2].map((i) => R['act' + i].x + R['act' + i].w / 2), ws: [0, 1, 2].map((i) => R['act' + i].w), keys, fs: parseFloat(getComputedStyle(document.getElementById('kfb-hud3d-total')).fontSize) } })
   await b6.close(); extra.phone = q
   const d1 = q.xs[1] - q.xs[0], d2 = q.xs[2] - q.xs[1]
+  checks.infoAboveCassette = q.iBottom == null || q.iBottom <= q.casTop + 2
   checks.phoneLayout = Math.abs(d1 - d2) < 2 && q.keys.every((kx, i) => kx > q.xs[i] && kx < q.xs[i] + q.ws[i]) && q.fs < 30 }
+// Tempo-Leiste (Georg 24.10.): zu Fuß weg; im Racer sichtbar, Füllung folgt dem Tempo, Boost glüht (Hinweis-Lichthof), Zahl = km/h; Spalte Zahnrad/Pfeil
+{ const walk = await (async () => { const { browser: bw, page: pw } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP }); await pw.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await pw.waitForTimeout(2500)
+    const r = await pw.evaluate(() => window.__kfbClayHud.speed()); await bw.close(); return r })()
+  const { browser: b7, page: p7 } = await openPage('#m1,car,debug,clean,harvest,look=terrain3,hud=3d', { viewport: VP })
+  await p7.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p7.waitForTimeout(3000)
+  const S0 = await p7.evaluate(() => window.__kfbClayHud.speed())
+  await p7.keyboard.down('KeyW'); await p7.waitForTimeout(3500); const S1 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), txt: document.getElementById('kfb-hud3d-speed')?.innerText || '', col: Math.abs((window.__kfbClayHud.rects().speed.x + window.__kfbClayHud.rects().speed.w / 2) - (window.__kfbClayHud.rects().gear.x + window.__kfbClayHud.rects().gear.w / 2)) }))
+  await p7.keyboard.down('ShiftLeft'); await p7.waitForTimeout(700); const S2 = await p7.evaluate(() => ({ s: window.__kfbClayHud.speed(), fx: window.__kfbClayHud.fxState('speed') })); await p7.screenshot({ path: `${OUT}/12_tempo_boost.png` })
+  await p7.keyboard.up('ShiftLeft'); await p7.waitForTimeout(1500); const S3 = await p7.evaluate(() => window.__kfbClayHud.speed()); await p7.keyboard.up('KeyW'); await b7.close()
+  extra.speedBar = { walk, S0, S1, S2, S3 }
+  checks.speedHiddenWalking = walk && !walk.visible
+  checks.speedFollows = S0.visible && S1.s.visible && S1.s.shown > 0.15 && Math.abs(S1.s.shown - S1.s.target) < 0.08 && S1.txt.startsWith(String(S1.s.kmh)) && /KM\/H/.test(S1.txt) && S1.col <= 2
+  checks.speedBoost = S2.s.boost && S2.s.glow > 0.05 && S2.fx?.hint && !S3.boost }
 // Ausrichtung bei 16:10 (1440 × 900): Tastenbuchstaben, leere Ringe und Blase auf derselben Höhe wie die 3D-Aktionen (Fenster ≠ 16:9)
 { const { browser: b5, page: p5 } = await openPage('#m1,debug,clean,harvest,look=terrain3,hud=3d', { viewport: { width: 1440, height: 900 } })
   await p5.waitForFunction(() => window.__kfbClayHud?.status().status === 'OK', null, { timeout: 120000 }).catch(() => {}); await p5.waitForTimeout(3000)

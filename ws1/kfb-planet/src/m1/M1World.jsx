@@ -267,6 +267,11 @@ const M1GL = { gl: null, scene: null }
 const KIND_INDEX = { tragic: 0, comic: 1, absurd: 2, heroic: 3, mystical: 4, forbidden: 5 }
 // Knet-HUD (V-656): Schalter hud=clay | hud=wood (Standard clay seit Georgs Abnahme 22.10.). Ohne src/private immer Holz.
 const HUD_SKIN = (/(^|[#,])hud=(clay|wood|3d)(,|$)/.exec(hash) || [0, 0, 'clay'])[2] /* hud=3d: HUD 3D R1 Spike (Georg 24.10.), nur per Schalter */ // Georg 22.10.: Knet-HUD ist Standard, hud=wood = Holz-HUD
+// Ziele für den HUD-Pfeil (vorerst): Bühne und die drei Obstgarten-Mitten (HARVEST_ZONES); Höhe = Gelände + 2 m
+const goalAt = (x, z) => () => ({ x, y: (mods.terrain?.surfaceAt || terrainHeight)(x, z) + 2, z })
+const ORCHARD_NAME = { goblin: 'Goblin-Garten', atlantis: 'Atlantis-Garten', utopia: 'Utopia-Garten' }
+const HUD_GOALS = [{ id: 'stage', name: 'Bühne', world: 'Amphitheater', pos: goalAt(0, 0) }, ...HARVEST_ZONES.map((z) => ({ id: 'orchard:' + z.zone, name: ORCHARD_NAME[z.zone] || z.zone, world: 'Obstgarten', pos: goalAt(z.center[0], z.center[1]) }))]
+const HUD_GOAL = { id: 'stage' }
 const CLAY_HOST = {
   palette: () => (TERRAIN3 ? TERRAIN3_CFG.palettes[T3_PAL] : TERRAIN3_CFG.palettes.moos), // Insel-Palette des Geländes (V-653); ohne terrain3 die Moos-Insel wie BIOME
   target: () => (M2_ON ? M2STATE.carPos?.() : null) || worldPosOf(mods.player),
@@ -274,7 +279,11 @@ const CLAY_HOST = {
   path: DEMO_PATH.pts.map(([x, z]) => [x, z]),
   marks: () => [{ x: 0, z: 0, color: '#e9c14a', r: 8 }], // Bühne (Amphitheater im Ursprung)
   // HUD 3D Zielpfeil (Lead 24.10.: der M1-Wirt besitzt den Ziel-Haken, bis es einen Quest-/POI-Owner gibt): vorerst die Bühne als Ziel
-  goal: () => ({ name: 'Bühne', pos: { x: 0, y: (mods.terrain?.surfaceAt || terrainHeight)(0, 0) + 2, z: 0 } }),
+  goal: () => { const g = HUD_GOALS.find((x) => x.id === HUD_GOAL.id) || HUD_GOALS[0]; return { id: g.id, name: g.name, pos: g.pos() } },
+  // HUD 3D Paket 4 (Lead 24.10., additiv): Zielliste für das Karten-Flyout; Auswahl setzt das Ziel des Pfeils. Owner vorerst der M1-Wirt, später Quest/POI.
+  goals: () => HUD_GOALS.map((g) => ({ id: g.id, name: g.name, world: g.world, pos: g.pos() })),
+  setGoal: (id) => { if (HUD_GOALS.some((g) => g.id === id)) HUD_GOAL.id = id; return HUD_GOAL.id },
+  telemetry: () => (M2_ON ? M2STATE.telemetry?.() ?? null : null), // HUD-Tempo-Leiste: Tempo/Boost vom Fahrzeug (nur lesend)
   isNight: () => TODV <= 0.25, // Kassetten-Tasten Tag/Nacht (V-707), gleiche Grenze wie das Nacht-Figurenlicht
   fluffTotal: () => mods.orchard?.total?.() ?? null, // Gesamt-Fluff (kfb.save fluffTotal, dd7de55): je gesammelt, nie verbraucht – HUD liest nur
   // HUD 3D Almanac (Lead 24.10.: Haken beim M1-Wirt, Startinhalt = Bühnen-Deck; echter Owner später das Karten-Journal kfb.world-save/2)

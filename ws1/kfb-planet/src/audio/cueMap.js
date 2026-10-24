@@ -32,6 +32,10 @@ export function decidedChatter(e) {
     : id.startsWith('q_') && id !== 'q_ghost' && !id.startsWith('q_alien') ? 'hohe Okarina' : null
   return v ? { instrument: v, status: 'V-693' } : null
 }
+// Welches Instrument klingt: Register (nur mit Instrument) vor Georgs Wahl – außer in der Disco K12: dort spielen alle Talkbox, auch der MC FrizzleBob
+// (Georg 24.10.: „eher eine Talkbox auch für Frizzlebob“), obwohl das Register für ihn die Posaune führt.
+export const GROUP_INSTRUMENT_FIRST = Object.freeze(['disco_k12'])
+export function pickChatter(e, reg) { if (GROUP_INSTRUMENT_FIRST.includes(e?.group)) return decidedChatter(e); return (reg?.instrument ? reg : null) ?? decidedChatter(e) }
 // Sprech-Anlässe außerhalb der Begrüßung: Gruppen (groups.events) und Dark Fluffer (fluffer.events) → Gefühl der Familie
 export const CHATTER_MOOD = Object.freeze({ aggro: 'aggressiv', awake: 'genervt', calm: 'neutral', ko: 'traurig', windup: 'aggressiv', healed: 'froh' })
 export const CUES = Object.freeze({

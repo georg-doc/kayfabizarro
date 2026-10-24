@@ -78,11 +78,12 @@ export function createBandLife(options) {
       S.near = d < (options.bubbleR ?? BAND.bubbleR) || (!!cam && d < BAND.visibleFar && frustum.intersectsSphere(_sphere))
       S.beat = beatPos(sc.timeline.clock, t)
       if (d < (options.bubbleR ?? BAND.bubbleR) && M.length) { // nur hörbar nah; kein Text, nur Anlass für den Ton
-        const songT = t - (sc.timeline.clock.phaseOffset_s || 0), k = songBoundary(S.prevSongT, songT, bandSongLength(sc.timeline.clock))
+        // Liedgrenze um einen halben Zyklus versetzt (WS-Audio 24.10.): sonst fällt sie auf die Disco-Pause (gleicher 38,4-s-Takt), und vier Figuren sprechen zugleich
+        const songT = t - (sc.timeline.clock.phaseOffset_s || 0) - bandSongLength(sc.timeline.clock) / 2, k = songBoundary(S.prevSongT, songT, bandSongLength(sc.timeline.clock))
         if (k != null) { S.songs++; CH.emit(pickSpeakers(M, S.songs).map((m) => ({ ...who(m), mood: CHATTER.mood.songEnd, cause: 'songEnd' })), t) }
         const nr = NOTICE.step(d, t); if (nr) { const m = M.slice().sort((a, b) => Math.hypot(pl.x - a.pl.x, pl.z - a.pl.z) - Math.hypot(pl.x - b.pl.x, pl.z - b.pl.z))[0]; CH.emit([{ ...who(m), mood: CHATTER.mood.notice, cause: 'notice', reason: nr }], t, { force: true }) }
       } else NOTICE.step(d, t)
-      S.prevSongT = t - (sc.timeline.clock.phaseOffset_s || 0)
+      S.prevSongT = t - (sc.timeline.clock.phaseOffset_s || 0) - bandSongLength(sc.timeline.clock) / 2
       // MVP-Leistung (Lead 22.10., Muster discoLife): Musiker sind Skin-Meshes ohne Frustum-Culling – je Musiker sichtbar nur im Bild (bis visibleFar)
       // oder ganz nah (12·K, Schatten ins Bild); der Takt läuft weiter (Weltzeit)
       for (const m of M) { const dm = pl ? Math.hypot(pl.x - m.pl.x, pl.z - m.pl.z) : 0; _sphere.center.set(m.pl.x, options.groundAt(m.pl.x, m.pl.z) + s, m.pl.z); _sphere.radius = 1.5 * s
