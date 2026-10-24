@@ -1,6 +1,6 @@
 # Übernahmekarte · WS-NPC („Bewohner-Leben, Begegnung, Dark Fluffer“)
 
-Stand 24.10.2026 · Format nach `sessions/lead.md` (V-713).
+Stand 24.10.2026 abends · Format nach `sessions/lead.md` (V-713).
 
 Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfabizarro `ws-npc/status` (neueste Abschnitte oben, zuletzt §13 @731cd14); neuere Stände stehen im Lead-Status `WS1_STATUS.md`.
 
@@ -15,6 +15,7 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 - **Geschenk-Enthüllung E3:** `giftReveal.js`, `revealTrack.js`.
 - **Dark Fluffer K15:** `darkFluffer.js`, `flufferSim.js`, `flufferSet.js`, `flufferKinds.js`.
 - **Sprech-Anlässe:** `chatterCues.js`; Ereignisse in Band, Disco und gothgirl.
+- **Wechselrede hinter `#chat=syl`** (Lead 24.10., Georg-GO; Owner des Blasen-Timings): `src/npc/talkDirector.js` (Anlass → Beats → Blase + Laut), `src/bubbleAvoid.js` (Blasen meiden HUD und Figuren). Laute: WS-Audio `speak()`.
 - **Karten-Tratsch:** Konzept `docs/ws-npc/KARTEN_TRATSCH_KONZEPT_R1.md`; Stufe 0 headless in `src/npc/tratschSim.js` und `scripts/tratsch/`.
 - **Ruf-Grammatik:** Bingo! · Boggle...? · Bongo. · Blödsinn! · Humbug?! (Georg 24.10.). Dazu die Spieler-Zurufe in `poolReader.js` und `choiceLayer.js`.
 - **Kit-Knete V-662:** `src/look/clayKit.js`, `kitSkip` in M1World (hinter `#kitclay=1|2`).
@@ -34,12 +35,14 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 
 | Was | Wo |
 |---|---|
-| Arbeitsstand | `~/kfb-ws1/kfb-planet-npc` (Worktree von `~/kfb-ws1/kfb-planet`), Zweig `ws-npc/phase-a` @a9bb3d1, in mvp gemergt (9db8cfe) |
+| Arbeitsstand | `~/kfb-ws1/kfb-planet-npc` (Worktree von `~/kfb-ws1/kfb-planet`), Zweig `ws-npc/phase-a`; bis @33e0eb0 in mvp gemergt (2a18e5a); chat=syl @3e30f92 und Folgecommits als Merge-Antrag beim Lead (nach ws-audio/r1) |
 | Private Assets | `src/private` → `~/kfb-ws1/private-assets` (gitignored, Klon von KFB-Stunt-Car-Race `assets/private`) |
 | Status | kayfabizarro `ws-npc/status`: `WS_NPC_STATUS.md` (Plumbing-Commit, kein Arbeitsbaum) |
 | Abnahme-Belege | KFB-Stunt-Car-Race `proofs/ws-npc-r1` (privat, eigener Stamm) |
 | Tratsch-Daten | `src/data/npc/tratsch/tratsch-data.r1.json` aus kayfabizarro `ws-song/workshop-r1` @a428e091 (tr1, Sperrliste, SSOT-Checks, Opener-Pool, Signatur-Liste) |
 | Tratsch-Leseseite | `docs/ws-npc/tratsch/README.md` + Protokolle (Lauf 2; Artefakt „KFB Tratsch-Protokoll“ v3 beim Lead) |
+| Probe-Merge chat=syl | `~/kfb-ws1/tmp-syl-probe`, Zweig `tmp/syl-probe` = phase-a + ws-audio/r1 (nur lokal, zum Prüfen und für das Video; nach dem Lead-Merge löschen) |
+| Video Wechselrede | `scripts/npc/record-talk.mjs` → `test/out/npc/talkrec/kfb-npc-wechselrede.mp4` (privat; CDP-Screencast mit DOM + Mixer-Ton) |
 | Kit-Knete-Abnahme | `~/kfb-ws1/research/audits/abnahme/kitclay2/` (Stufen 0/1/2, index.json) |
 
 ## 3 · Bauen und prüfen
@@ -48,19 +51,22 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 - **Test-Slot:** `~/kfb-ws1/bin/kfb-slot wait|take|drop WS-NPC <min> <was>`. Pflicht für volle Reihen, fps und Aufnahmen. Einzeltests < 3 min ohne Slot.
 - **NPC-Tests:**
   - `npm run test:npc` (Unit und Browser)
-  - Unit einzeln: `node test/unit/<name>.mjs`, u. a. tratschSim, chatterCues, clayKit, flufferKinds, characterRegistry
+  - Unit einzeln: `node test/unit/<name>.mjs`, u. a. tratschSim, chatterCues, talkDirector, clayKit, flufferKinds, characterRegistry
+  - Wechselrede im Spiel: `PW_GPU=1 node test/talk.mjs` (≈ 80 s, ohne Slot)
 - **Volle Reihe:** `bash test/npc-suite.sh > test/out/npc/suite_result.txt`.
-  - Die Liste steht in `test/npc-suite.txt` (75 Tests: `npm test` plus die NPC-, S5- und D1-Browser-Tests).
+  - Die Liste steht in `test/npc-suite.txt` (77 Tests: `npm test` plus die NPC-, S5- und D1-Browser-Tests).
   - Je Test eine Zeile `Exit Dauer Datei Ergebnis`; rot zeigt `grep -v "^0 " test/out/npc/suite_result.txt`.
   - Letzter Lauf: 73/75.
 - **Tratsch Stufe 0:**
   - `python3 scripts/tratsch/sync-tratsch-data.py [<commit>]`
   - `node scripts/tratsch/stage0.mjs 7 10` → `docs/ws-npc/tratsch/`
 - **Bekannte Altfehler:** `test/c2.mjs` (pupilZeroWhenClosed), `test/c3g.mjs` (glowsAtNight/noGlowByDay; auch auf reinem mvp rot).
+- **Falle Bühne:** Teleports in Tests nie auf die Bühne (0, 0); dort startet der Bühnen-Dialog, friert die Figur ein und sperrt die Wechselrede (`busy`).
 - **Falle:** Ein `//`-Kommentar mitten in einer langen Code-Zeile hat mehrfach Code abgeschaltet. Kommentare in eine eigene Zeile setzen; neue Zeilen vor dem Commit prüfen.
 
 ## 4 · Laufende Aufträge (mit Quelle)
 
+- **Wechselrede `#chat=syl`** (Lead 24.10., Georg-GO): fertig als Merge-Antrag; Standard bleibt bis Georgs Urteil. Tratsch ist noch kein Anlass im Spiel (Stufe 1 fehlt). Video: `scripts/npc/record-talk.mjs` (braucht ws-audio/r1: speak, captureStream; WS-Audio übernimmt den Weg als scripts/audio/record-dom.mjs).
 - **Tratsch-Lauf 3 mit den Trio-Sets:**
   - Quelle: Lead 24.10., Deck-Songs TR1_INDEX @b2a38438, 14 Decks bzw. 697 Zeilen.
   - Ablauf: sync, Lauf, README. Erst wenn der Lead das Startzeichen gibt.
@@ -79,7 +85,10 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 
 **Georg:**
 - Kit-Knete: Stufe 0, 1 oder 2? (Abnahme kitclay2, K3 nah 1,46 knapp unter 1,5)
-- Disco-MC-Instrument: Posaune oder Talkbox?
+- Wechselrede `#chat=syl` (Video A/B/C): Standard machen? Dazu:
+  - Begrüßung „first“ zeigt mit chat=syl eine Ruf-Blase (**Boggle...?**); bisher galt noBubble für first (G-2).
+  - Kartenzeilen in der Wechselrede: ohne tr1 „Have you heard of **Titel**?“ und die bereinigte Lore. tr1-Entwürfe nur mit `lines=tr1`. tr1 hier freigeben?
+  - Disco-MC: ruhig bis zum ersten Ruf, danach tanzt er (statt Hochspringen ohne Kontext).
 - Doppelbesetzung G2/G3/G5 (Konzept Prozedurale Welt).
 
 **WS0:**
@@ -90,7 +99,7 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 - Gimmick- bzw. Rollen-Feld im Register.
 - Kursiv im Blasen-Kern.
 
-**Lead:** Schema `kfb.world-save/2` (Kartenwissen mit Kette, gelöscht, gehört).
+**Lead:** Schema `kfb.world-save/2` (Kartenwissen mit Kette, gelöscht, gehört). Merge chat=syl nach ws-audio/r1 (Konflikt BubbleHost.jsx, Auflösung im Merge-Antrag).
 
 ## 6 · Sonderregeln (Verweise)
 
@@ -116,7 +125,7 @@ Diese Karte ist ein Schnappschuss. Das Logbuch ist `WS_NPC_STATUS.md` auf kayfab
 
 ## 7 · Nächster sinnvoller Schritt
 
-Auf das Startzeichen des Leads warten: Tratsch-Lauf 3 mit den Trio-Decks oder den Fahrplan für Stufe 1.
+Georgs Urteil zu `#chat=syl` (Video A/B/C) abwarten; danach Standard umstellen oder nachsteuern. Sonst auf das Startzeichen des Leads warten: Tratsch-Lauf 3 mit den Trio-Decks oder den Fahrplan für Stufe 1.
 
 Der Lauf 3 geht so:
 1. `sync-tratsch-data.py <commit>` mit dem Trio-Stand ab @b2a38438.
