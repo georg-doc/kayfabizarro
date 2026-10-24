@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-25
+- V-734 Georgs Urteile per Audio: Chatter-Silben TUNE (quieken, Schritte zu laut), tr1 TUNE (Blasen-Randabstand, Abnahme-Form), Splats ganz nach unten; Auftrag an WS1 replies/WS0_TO_WS1_ABNAHME_CHATTER_TR1_R1.md (Hub b216). Hub v21: Antwort-Entwürfe bleiben bei Seiten-Updates erhalten.
+
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
 - q184 accepted: earlier audio-separation gate CLOSED. Current checked game188e4f709f1301f6574f06631b750c6adf2e44f8, remote36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3. Node22.23.4 ready;24/24preparedmodulechecksPASS underNode22. Fullprivatebuildinputcouldnotbetransferred: connectorlargerbinaryempty/nonUTF8;ordinaryGitnocredential;authenticatedChromeZIPblocked,documenteddownloadretrytimedoutwithoutarchive. BLOCKEDreceivinginput;notpublished,noGeorgtokenrequest,nonewSite/audience/secret/gamechanges. Return replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidenceWSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. NextWS0/WS1:onecompleteprivatesource+figuresorfinsheddist/site-build/provenancehandoffatsameprivateprojectlocation;nohostsubstitution.
 
