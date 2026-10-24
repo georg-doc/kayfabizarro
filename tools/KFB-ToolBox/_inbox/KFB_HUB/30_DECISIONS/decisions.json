@@ -10329,6 +10329,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-723",
+   "date": "2026-10-24",
+   "area": "Video",
+   "verdict": "BACKLOG",
+   "text": "HyperNorm-Schnittbaukasten (Georg 24.10., ändert V-704 nur bedingt): Wenn ein tragfähiges Konzept für Collage- und Musikvideo-Schnittlogik steht (immer frische Schnitte und Übergänge, nach Recherche moderner Musikvideo-Methoden und Adam-Curtis-Montage), übernimmt WSV bzw. Remotion mit Baukasten und SSOT die Aufbereitung modularer Video-Assets, die die HyperNorm-Engine zufällig, kontextuell oder prozedural nutzt. Erst Recherche replies/RESEARCH_HYPERNORM_EDIT_GRAMMAR_R1.md und ein Test mit den 69 BNWN-Clips; Remotion bleibt geparkt, bis der Test trägt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die letzten Remotion-Ergebnisse waren ungeschnitten; erst Schnitt-Grammatik als Regeln, dann Produktion.",
+   "applies": "nach Recherche"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -10441,7 +10456,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1192",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1193",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
