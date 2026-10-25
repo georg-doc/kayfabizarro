@@ -11679,6 +11679,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-813",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "IDEA",
+   "text": "Genius Loci und Buch-Meta-Hub (Georg 25.10.): Das Beseelungs-Konzept (KnuckleBob per HeyGen, je Ort leicht verkleidet) gilt später auch für Orte; erster Ort Café der Existentialisten (Baskenmütze, französischer Akzent, Aprikosen-Cocktail, French Jazz mit Ducking, Kayfabe-Philosophie; Zeilen replies/GENIUS_LOCI_CAFE_R1.md). Buch „Hilfe, ich bin ein Mensch!“ als großes rotierendes 3D-Wahrzeichen, später Meta-Hub mit Kapitel-Viewer (8 Kapitel) und Karten-Missionen (replies/BACKLOG_BUCH_META_HUB_R1.md). Erst nach dem Fahrzeug-Piloten.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Baustein (beseelter Avatar mit Pool) trägt Fahrzeuge, Orte und die Buch-Promotion; erst prüfen, ob er beim Auto trägt.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11791,7 +11806,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1346",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1347",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
