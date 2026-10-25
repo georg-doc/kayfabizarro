@@ -11589,6 +11589,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-807",
+   "date": "2026-10-25",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Fahrgefühl-SFX (Georg 25.10.: Motor, Turbo, Flug, Fassrolle, Bremsen, Drift, Banking, Kollisionen, Bumps, Abheben/Landen, Rauch, Fahrtwind per ElevenLabs): Audit replies/AUDIT_VEHICLE_AUDIO_R1.md, Satz 40_AUDIO/elevenlabs_r1/vehicle_feel_r1 (23 Clips, Critic R1 FAIL→6 Korrekturen eingearbeitet, −16 LUFS). Im Spiel: Motor ohne Last L2–L4_off nach Gas überblendet (4 dB unter Last), Fahrtwind tief+hoch nach Tempo², Knet-Bums auf der Landung, Fassrolle mit eigenem Dreh-Whoosh und Rad-Landung, Boost-Ausholen 120 ms vor der Zündung, Kurvenluft, Bodenwellen, Staub-Puff, Vorbeifahren an Baum/Busch/Fels; Jetpack- und Mech-Clips liegen bereit. Fix: live gerufenes Auto (ohne ,car) hatte keine Ereignis-Töne; Banden-Prall und Staub mit Sperrzeit. Ton-Ablage kayfabizarro assets/kfb-audio-r1 @d32b5f7.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Tempo, Sprung und Treffer sollen sich anfühlen: realer Kern plus Cartoon-Übertreibung, Ausholen–Aktion–Nachhall (RESEARCH_VEHICLE_AUDIO_R1).",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11701,7 +11716,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1340",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1341",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
