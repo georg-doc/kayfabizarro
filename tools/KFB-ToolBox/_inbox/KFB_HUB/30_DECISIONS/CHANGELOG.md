@@ -17,6 +17,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-773 Pop-up-Golden: alle 16 Kandidaten; umklappbar mit Nachschwingen, Cel-Destruction, später Goo-Überzug.
 - V-771 MVP-Site v6 live unter Owner-Private (4× verweigert ohne Anmeldung); Basic-Passwort vor Testern; R3 als v7 nur Vorschau.
 - V-772 Web-Chat-Collage-Paket eingeordnet: Voronoi = kfb-place Schicht 2, Köln-Tasche S3, ein POC Paper Racer nach Golden, Fleurs nur Mindscape/Stimmung.
 - V-770 Karten-Seed (world-context 1:1 aus dem Card Zone Lab), Fibonacci-Gras auf Vogel-Spiralen, ein Regelbruch je Zelle aus surrealism; 200-Zellen-Test sauber; P0 19b47897.

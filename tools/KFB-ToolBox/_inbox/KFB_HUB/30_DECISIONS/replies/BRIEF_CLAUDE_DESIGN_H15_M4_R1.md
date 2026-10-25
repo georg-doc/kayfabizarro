@@ -1,5 +1,7 @@
 # Briefing für Claude Design · H15 Mindscape · Runde 2 (M4 Boden + Übergänge, M5 Leistung) · WS0 · 25.10.2026 (V-757, V-758, Georg q202)
 
+**Stand 25.10. nachts (WS0):** WS0 hat in H15 eine Zeile behoben (soundbed.js: Hall-Impuls in der Kontext-Rate statt 24 kHz, sonst bricht der Browser ab; öffentlicher Pin 5eb6aeb). Bitte diese Zeile in deine H15-Datei übernehmen bzw. auf diesem Stand weiterarbeiten.
+
 **Tier 0**
 1. **Georg hat Runde 1 gesehen** (M1 „top“) und deine Empfehlungen in q202 angenommen. Diese Runde hat zwei Teile:
    - **M5 Qualitätsregler:** zuerst abgeben, reine Technik;
