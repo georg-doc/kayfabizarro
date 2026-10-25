@@ -11799,6 +11799,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-821",
+   "date": "2026-10-25",
+   "area": "HUD",
+   "verdict": "BRIEF",
+   "text": "Trick-Knöpfe im HUD (Georg 25.10.: Tricks als Action-Buttons bzw. 3D-Icons im HUD statt versteckter Tasten): Bildpaket bei Claude Design zuerst (V-740), replies/BRIEF_CLAUDE_DESIGN_TRICK_BUTTONS_R1.md. Fassrolle, Zwei-Rad, Turbo, Drift, Abheben, Luftbremse als 3D-Knet-Icons der HUD-3D-Familie (V-694), Zustände verfügbar/gedimmt/aktiv/ladend, klick- und tippbar, Tasten bleiben; Plakette der Fahrzeug-Seele (V-818) und Radio nicht verdecken. Georg wählt A/B/C, dann baut WS0.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Tricks, die man nicht sieht, spielt niemand; erst das Bild, dann der Bau.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-822",
+   "date": "2026-10-25",
+   "area": "Fahren",
+   "verdict": "BUILD",
+   "text": "Racer-Flug (Elan S2, racerFlight.js) ist Standard statt Schalter fly (Georg V-783: Dieselpunk-Flug): Abheben per Doppel-Leertaste in der Luft oder von der Rampe, fly=0 schaltet ab; Ring-Kurs des Racers nur im Wagen. Messung: Steigen bis ~33 m, 7 s Flug, Gieren sauber, weiche Landung; Düse, Düse+Turbine, Turbine und Radfahrzeug fliegen. Was am Dieselpunk-Look fehlt, entscheidet Georg am Flugvideo. Spiel @da2d9de.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Flug war gebaut, aber versteckt; erst sichtbar machen, dann am Bild entscheiden, was ihn dieselpunkig macht.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-823",
+   "date": "2026-10-25",
+   "area": "Fahren",
+   "verdict": "BUILD",
+   "text": "Combat-Mech als Jetpack-Dummy (Georg V-783): Flugpose aus KFB_CombatMech_duel.r2 in Blender gebacken (statisch, ×1,6, Rückenflügel als Jetpack), als Fahrzeug „15 Combat-Mech (Jetpack-Dummy)“ in der V-Reihe, zwei Schubdüsen nach hinten unten, Jetpack-Ton im Flug; nur mit privatem Ordner (Kauf-Asset). Platzhalter, bis es eine eigene Mech-Fortbewegung (Gehen mit Clips, Jetpack-Stoß) gibt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein spielbarer Platzhalter zeigt, wie sich Jetpack-Flug anfühlt, bevor eine eigene Mech-Fortbewegung gebaut wird.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11911,7 +11956,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1354",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1357",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
