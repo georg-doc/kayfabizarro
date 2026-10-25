@@ -1,4 +1,9 @@
 
+## 2026-10-25 · WSA Drive404 sourcefix · savedv6 NOTDEPLOYED
+
+Canonicalentry/sourcefix44tests+12independentprobesPASS; exactfailinglinklocallyloadsDrivehashinstead404. Activev4unchanged; allpathpasswordblockstillholds. WS0handoff: replies/WSA_TO_WS0_DRIVE_PATH_FIX_2026-10-25.md. CandidateSitesource8241ddf14d1ad0cd9c20de8724703bc4b0388b9b; publicimplementation640a8ebee60da9af33daddea6a1ab7810eaee8c6. No newSite/merge/deletion.
+
+
 ## 2026-10-25 · WSA MVP GPT Site R2/R3 · hosted password gate FAIL / v4 restored
 
 R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, but actualinternalstaticfiles bypass additionalBasicpassword; GuardSTOPacceptance/R3. Exactv4 restored andvisible; owner-private unchanged. R3queued, no newSite/Cloudflare/merge/deletion. Next: Sitesall-pathstaticrouting beforeR2retrythenR3. Return: replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidence127c261025c7a15b42f258ace4d2e2b3434b557c.

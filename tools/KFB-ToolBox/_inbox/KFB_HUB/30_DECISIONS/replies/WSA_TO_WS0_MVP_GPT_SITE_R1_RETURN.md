@@ -1,3 +1,15 @@
+# CURRENT FOLLOW-UP · Drive 404 · 25.10.2026
+
+**Drive path SOURCE FIXED / LOCAL BROWSER VERIFIED; saved Site v6, NOT DEPLOYED.** Active v4 unchanged; live404 not claimed resolved. WSA implemented canonical-root entry recovery and strict internal ASSETS index-redirect handling, preserving Drive hash without altering game source.44/44 unit tests plus12/12 independent edge probesPASS, framework buildPASS, exact failing path reaches game locally instead404. Full vehicle/gameplay/audio acceptance remains unproven.
+
+Candidate private Site source `8241ddf14d1ad0cd9c20de8724703bc4b0388b9b`; savedv6 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5c4323ba3830819183279ebd56700d3e`, deployment_id=null. Public code/evidence receipt `640a8ebee60da9af33daddea6a1ab7810eaee8c6` fetched exactly. Report: `replies/WSA_TO_WS0_DRIVE_PATH_FIX_2026-10-25.md`.
+
+**One next gate:** WS0 coordinates native Sites all-path static password enforcement on the existing project; WSA/receiving executor then deploys savedv6 and verifies hosted Walk↔Drive/no404 before R3. No newSite/host, no merge/deletion/audiencechange; no request for usertokens.
+
+---
+
+## Preserved R2/R3 Return
+
 # CURRENT UPDATE · R2 / R3 · 25.10.2026
 
 **BLOCKED at hosted all-path password gate · prior Site v4 RESTORED · R3 queued.** Supersedes the earlier input-transport blocker below: the complete R2 artifact is now received and byte-verified.
