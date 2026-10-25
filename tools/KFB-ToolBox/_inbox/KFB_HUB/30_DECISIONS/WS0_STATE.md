@@ -75,6 +75,7 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 | 6 | Splat-Probe | kleinster Test nach SPLAT_EXAMPLES_R2 (V-733) | Bilder im Hub |
 | danach | Combat, Destruction | V-782, V-767 | |
 
+- 25.10. spät nachts: V-830 externe Prüfung R2 umgesetzt (V-831 Zellgrenzen q240), V-832 Rollentabellen (WSB Schritt 2 läuft), V-833 Zoom Ich-Sicht↔Drohne, V-834 Karten über die Welt (q241: welche Karten?), V-835 Mindscape-Sphäre in der Welt (q242). Als Nächstes: Café; offen KB-Clip „Nope…“, Schwimm-Clips, Claude-Design-Feinschliff Sphäre.
 - 25.10. nachts: Critic-Fixes V-826 Bänder gröber, V-827 Durchblick-Portal, V-828 Geländeschatten kräftiger (q238). V-829 Bühnenfarben: 7/21 fertig (q239), WSB Runde 2 r829 als letzte Farbrunde für 12, Grüne Ruinen wie geliefert. Offen: Café ins Spiel, Critic R2, Trick-Knöpfe (b240), Café-Zeile ankunft 4 „mon ami“.
 - 25.10. spät abends: V-818 Fahrzeug-Seele im Spiel (q234 A Plakette unten rechts, KB-Knopf); V-817 Georg Utopia r814 PASS → Ausrollen bei WSB; V-815 Fahrplan 5b; Prüfpaket R2 (b234).
 - 25.10. abends: V-807 Fahrgefühl-SFX eingebaut (q228 PASS); Teaser v1 passt, Tuning vor dem Posten (q229); V-809 Meshy-Bühnen voll (q230); V-810 Fahrzeug-Seele Pilot freigegeben, Sprüche PASS (q231), HeyGen-Skript b238 bei Georg; V-811 Mindscape-Betten für Fahrt/Flug im Spiel.

@@ -12009,6 +12009,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-835",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Mindscape-Sphäre als Zone in der Welt (Georg 25.10., WoW-Eco-Dome-Vorbild): Kuppel r 24 K halb im Gelände, Gelände bildet innen eine Mulde nach dem Kugelboden (domeSites.js, endlessTerrain domeHeight), außen Haut mit HyperNorm-Engine (H15 unverändert im versteckten Rahmen, 2:1-Fläche je zweites Bild als Textur, nur in der Nähe geladen) und Goldrand, innen Wand rundum; zu Fuß hinein (auch über den Muldenrand), innen Schweben mit Schwimm-Tempo (M1Player setSwim), Mindscape-Bett (kfbAudio setMusicZone), Zonen-Einblendung; hinaus nur durch die Tür (Plopp neben der Kuppel, Wagen rufen); Wagen prallt ab (M2STATE.carKick, Text „Nope.“ bis zum KB-Clip). Bildzeit p50 8 ms / p95 15 ms nah an der Kuppel. Hub q242. mindsphere=0 bzw. h15=page = alt @03a4584.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Mindscape wird ein Ort, den man betritt, statt einer Seite, die lädt; das Auto bleibt draußen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12121,7 +12136,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1368",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1369",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
