@@ -190,7 +190,15 @@
    "applies_to": "Anker und frei stehende Objekte; Stützen im Nest teilen den Kontakt des Ankers (V-763)",
    "tree_foot_ratio": 0.12,
    "tree_foot_min": 0.22,
-   "note_v784": "Baum: Kontakt am Stammfuß (Kronen-Hüllradius × 0,12, mindestens 0,22 m); Stücke paarweise ungleich groß, radial ±12 % versetzt"
+   "note_v784": "Baum: Kontakt am Stammfuß (Kronen-Hüllradius × 0,12, mindestens 0,22 m); Stücke paarweise ungleich groß, radial ±12 % versetzt",
+   "staffel": [
+    1,
+    0.62,
+    0.38
+   ],
+   "piece_max_m": 0.22,
+   "piece_ratio": 0.32,
+   "note_v787": "Staffel L/M/S, Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 %, großes Stück in der Mitte (WSB N40 r7)"
   },
   "ordered": {
    "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
@@ -340,6 +348,38 @@
     "cairn": "Steinmännchen aus 3 Steinkit-Steinen in der Leiter 1 : 0,62 : 0,38"
    },
    "path_clear_m": 3
+  },
+  "grove": {
+   "mask_m": 110,
+   "threshold": 0.53,
+   "grove": {
+    "groups": 3,
+    "span": [
+     0.3,
+     0.7
+    ],
+    "minD": 0.2,
+    "recipes": [
+     [
+      "tree_group"
+     ],
+     [
+      "tree_group"
+     ],
+     [
+      "tree_group",
+      "bush_nest"
+     ]
+    ]
+   },
+   "meadow": {
+    "group_p": 0.2,
+    "recipes": [
+     "stone_nest_slope",
+     "bush_nest"
+    ]
+   },
+   "note": "V-788 (Critic R1 Welt): Haine statt Konfetti. Zone 32 m: über der Schwelle ein Hain aus 3 Gruppen in der Zonenmitte (≈ 10–15 Bäume auf 15–20 m, Haine 30–40 m auseinander), sonst Wiese mit 20 % Chance auf ein Nest. Anteil Hain ≈ 35 %."
   }
  },
  "bands": [
@@ -13536,8 +13576,9 @@
  },
  "p0": {
   "bush_next_to_stamp": 4.5,
-  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778)",
-  "tree_uphill": 18
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab",
+  "tree_uphill": 9,
+  "stone_nest_downhill": 10
  },
  "light": {
   "sun_az": 2.498,

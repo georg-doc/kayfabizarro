@@ -11289,6 +11289,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-787",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Löser-Antwort auf WSB N40 r7 (WS0): 1a) kahle Bäume ohne gemessene Anker tragen kein Fluff-Nest, Bäume höchstens so viele Nester wie Anker; Büsche erst ab fluff.levels.plant.min_crown_h (0,4 m). 1b) Nest trägt ring_r_max = 0,5 × Trägerradius, Adapter nimmt min(Busch-Regel, ring_r_max). 2) G1: beim Setzen ist der nächste Nachbar nie gleich groß, bis 8 Würfe. 3) Ü3 als Nachlauf je Gruppe (Gras frei, Kit-Teile ±15 %). 4) Stein-Fußbogen 0,25–0,4 π. A) Holzstücke über einen Goldwinkel-Zähler, Mitten ≥ Summe der Halblängen. B) Kontakt als Staffel L/M/S (rules.contact.staffel, piece_max_m 0,22), Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 % (stamp0 70 → 20 Stücke). D) P0 kompakter: Baumgruppe 9 m hangauf (Hintergrund im Spielbild), Steinnest 10 m hangab auf der Gegenseite des Buschs; Frame 1 = Stumpf, Busch-Nest, Baumgruppe dahinter. P0 golden d2ce0923.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gate-Befunde werden im Löser gelöst, nicht von Hand; P0 muss im Spielbild als ein Ort lesbar sein.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11401,7 +11416,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1312",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1319",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

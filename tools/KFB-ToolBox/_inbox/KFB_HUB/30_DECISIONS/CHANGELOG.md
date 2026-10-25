@@ -24,6 +24,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 
 ## 2026-10-25
 - V-786 N40-Entscheide: Fluff auf Trägerhaut (Löser), Ü5-Fuß frei, Laub grün, Stein warm, moss_cut am Rand. P0 bfa2b2f1.
+- V-787 Löser zu WSB N40 r7: kein Nest an kahlen Bäumen, Ring ≤ 0,5 cr, G1/Ü3/Ü5, Holz ohne X, Kontakt-Staffel L/M/S, P0 kompakt (9 m/10 m). P0 d2ce0923.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
 - V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
 - V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.
