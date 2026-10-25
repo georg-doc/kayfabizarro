@@ -11964,6 +11964,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-832",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "WSB r829 geliefert: Gate 12/12, Kritiker 1/12 (Kayfabrick 8, fertig), sechs schlechter als r824 (Ursachen: Zweitfarbe under[1] orange-rot auf Grau, Glättung im Texturraum bildet Blöcke, Stein-Erkennungen erben Stein-Grenzen). Kanon-Vorschlag r829 nicht übernommen. Rollentabellen-Stufe nach V-830 für 11 Bühnen: Tabellen Stein-ID → Rolle nach Bedeutung, Ausgang die bessere Fassung, WS0 bestätigt, einmal färben, K2 ≥ 7, sonst wie geliefert mit sanfter Tönung. Brief replies/WSB_V832_ROLLENTABELLE_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bedeutung statt Farbcluster; die bessere Fassung ist Ausgang, nichts wird schlechter.",
+   "applies": "zwei Schritte WSB"
+  },
+  {
+   "id": "V-833",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Kamera-Zoom stufenlos wie WoW (Georg 25.10., Fahrplan nach V-830): zu Fuß wirkt das Rad jetzt (vorher stellte die Kollisionsprüfung den Abstand jedes Bild zurück), Bereich min bis 40 K, eine Raste unter min = Ich-Sicht (eigene Figur aus), heraus zurück auf min; im Wagen eigene Fahrzeug-Kamera (0,55–7 × Grundabstand, ab 2,8 × neigt sich der Blick als Drohne, darunter Ich-Sicht wie bisher). Grundlage für das Erleben der Mindscape-Sphäre @ddd6881.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Zoom für alles: nah, Fahrersicht, Drohne – ohne Moduswechsel.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-834",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Terrain-Karten über die Endlos-Welt (Georg 25.10. „vor dem Café terrain cards“, WSA R2 Frage 11 und Kartenbudget): je 256-m-Feld höchstens ein fester Kartenplatz (Feld-Schlüssel, ruhigste von sechs Proben, Spannweite < 4,5 m, Chance 0,4, Rand ≥ Karte + Saum), Startkarte bleibt; etwa eine Karte je 450 m. Eine gemeinsame GPU-Rechnung für die aktive Karte (Boden als Uniform), alle anderen ruhen in ihrer Lage; Aufbau je Karte zeitgeteilt, ferne Karten werden abgebaut; Bewuchs hält alle Kartenplätze frei (KEEPOUT_FNS); der Wagen schiebt die Kugeln (breiter als die Figur). Noch überall card_r3; weitere Karten-Reliefs nach Georgs Wahl (q241). cardgrid=0 = nur Startkarte @178604f.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Karten als wiederkehrende Orte in der ganzen Welt, ohne dass jede Karte Rechenzeit kostet.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12076,7 +12121,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1365",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1368",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
