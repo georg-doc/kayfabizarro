@@ -1,4 +1,9 @@
 
+## 2026-10-25 · WSA v6 LIVE / correctedR3 LOCALPREVIEW
+
+Georg/WS0V647clarificationclosesGeorg-onlygate:fouranonymous401+incognitoSign-in,ownerprivateunchanged. v6deployedappgdep_6add6493ff288191b9f91afd31fa9dbd;hostedWalk→Drive→Walkroot/no404. R3c41dc9…629hashes/45units/639localHTTP/4mockratesPASS,savedv7NOTDEPLOYED. GeorgLOCALpreviewbeforeR3publish; Basicallpathsdeferredbeforetesters. Report replies/WSA_TO_WS0_V6_LIVE_R3_PREVIEW_2026-10-25.md; evidence31bf26f9dd95fb9b701e70de981ded909fae7b6b. No newSite/merge/deletion.
+
+
 ## 2026-10-25 · WSA Drive404 sourcefix · savedv6 NOTDEPLOYED
 
 Canonicalentry/sourcefix44tests+12independentprobesPASS; exactfailinglinklocallyloadsDrivehashinstead404. Activev4unchanged; allpathpasswordblockstillholds. WS0handoff: replies/WSA_TO_WS0_DRIVE_PATH_FIX_2026-10-25.md. CandidateSitesource8241ddf14d1ad0cd9c20de8724703bc4b0388b9b; publicimplementation640a8ebee60da9af33daddea6a1ab7810eaee8c6. No newSite/merge/deletion.

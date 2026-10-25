@@ -1,3 +1,19 @@
+# CURRENT UPDATE · v6 LIVE / R3 LOCAL PREVIEW · 25.10.2026
+
+**Georg-only platform privacy gatePASS;v6publishedandhostedWalk→Drive→WalkPASS/no404. CorrectedR3savedv7NOTDEPLOYED.** Georg/WS0clarifiedV647=onlyGeorg; additionalBasicallpaths isdeferredbeforetesters,notcurrentblocker. FouranonymousHTTP401pathsandactualChromeincognitoSign-inconfirmed;custom1user0groupsunchanged.
+
+Currentlivev6source `8241ddf14d1ad0cd9c20de8724703bc4b0388b9b`, deployment `appgdep_6add6493ff288191b9f91afd31fa9dbd`SUCCEEDED; realSettingsWalk→Drive→Walkstaysroot/no404.
+
+CorrectedR3 `site/mvp-r3-dist@c41dc9aeff608571dc8d411dfbcc23a8637723dd`:629/629SHA,45units,639localHTTP,4mockratesPASS. PrivateSitesource `ce97b8e38e19d5ed3b65a683622b7a9917837346`, savedv7 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_ffa5e84f73f08191b8ad14cd3d5c906f`, deployment_id=null. LocalpreviewonGeorg'sMacport8794; H15SoundbedstartandXmount/unmountcheckedwithlistedlimits,notfullacceptance.
+
+Report: `replies/WSA_TO_WS0_V6_LIVE_R3_PREVIEW_2026-10-25.md`. Evidence `31bf26f9dd95fb9b701e70de981ded909fae7b6b`fetched.
+
+**One next gate: GeorgviewsLOCALR3previewbeforeANYR3publish.** Livev6retained; no newSite/host/merge/deletion/testerinvite. Basiccurrentblockerstatementsbelow arehistoricalandsupersededbyexplicitnewauthority.
+
+---
+
+## Preserved earlier Return — historical gates
+
 # CURRENT FOLLOW-UP · Drive 404 · 25.10.2026
 
 **Drive path SOURCE FIXED / LOCAL BROWSER VERIFIED; saved Site v6, NOT DEPLOYED.** Active v4 unchanged; live404 not claimed resolved. WSA implemented canonical-root entry recovery and strict internal ASSETS index-redirect handling, preserving Drive hash without altering game source.44/44 unit tests plus12/12 independent edge probesPASS, framework buildPASS, exact failing path reaches game locally instead404. Full vehicle/gameplay/audio acceptance remains unproven.
