@@ -24,6 +24,7 @@ import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
 import M2Car, { M2_ON, M2STATE, M2EVENTS, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
 import { createTravelState } from './travelState'
+import { createTravelFluff } from './travelFluff'
 import StuntField from '../m3/stuntField'
 import ElanRings, { ELAN_RUN } from './ElanRings'
 import { RACER_COURSE_SCALE } from './elanCourse'
@@ -309,6 +310,8 @@ const CLAY_HOST = {
   // HUD 3D Almanac (Lead 24.10.: Haken beim M1-Wirt, Startinhalt = Bühnen-Deck; echter Owner später das Karten-Journal kfb.world-save/2)
   almanac: () => ({ cards: DECK.map((c) => ({ deckId: c.deck.id, num: c.num })), total: DECK.length, decks: new Set(DECK.map((c) => c.deck.id)).size }),
   // HUD 3D Settings › Mode: Fly über den Spieler (wie Taste F), Drive nur über „car“ in der Adresse (neu laden; mit travel=1 ohne Neuladen über die Zustandsmaschine), God hat keinen Owner (folgt)
+  // S1 (V-746, WS1e 25.10.): Lese-Haken fürs Fahrzeug-Symbol – Zustand und Fortschritt 0…1 der Zeit-Zustände; ohne travel=1 null (später cooldown in s)
+  travelState: () => (TRAVEL_SM ? { state: TRAVEL_SM.state, progress: TRAVEL_SM.progress() } : null),
   mode: () => (carLive() ? 'drive' : PLAYER_CTRL.ref?.current?.flying?.() ? 'fly' : 'walk'),
   setMode: (m) => { const car = m === 'drive'; if (TRAVEL_SM) { if (car !== carLive()) travelClick(); else if (!car) PLAYER_CTRL.ref?.current?.setFlying?.(m === 'fly'); return }
     if (car !== M2_ON) { const h = location.hash.replace(/(^#|,)car(=\w+)?(?=,|$)/g, '$1').replace(/,,+/g, ',').replace(/,$/, ''); location.hash = car ? h.replace(/^#m1/, '#m1,car') : h; location.reload(); return }
@@ -551,20 +554,28 @@ export default function M1Root() {
 // travel=1: führt die Aufträge der Zustandsmaschine aus – Wagen neben der Figur ein- und aushängen, Figur einfrieren und verbergen, Kamera abgeben.
 // Figur im Dach (J-7) und Entstehen/Einsaugen (kfb-fluff-suck build/suck) kommen erst nach Georgs Bild-Abnahme; bis dahin Platzhalter.
 const CAR_STATES = ['drive', 'flyRacer', 'exit']
+// Entstehen/Verschwinden als Mechanik (V-533): FLUFF_N Kugeln je Wagen über kfb-fluff-suck – build von der Figur auf die Wagen-Hülle (Wagen wächst mit
+// jeder gelandeten Kugel), suck von der Hülle zur Figur (Wagen schrumpft mit jeder abgelösten Kugel). Kugeln erst sichtbar nach Georgs Bild-Ja (S1-Storyboard).
+const FLUFF_N = 16, FLUFF_STAGGER = 0.3, FLUFF_SHOW = /(^|[#,])travelfx=1(,|$)/.test(hash) // travelfx=1: Kugeln zeigen (nur Prüfbilder, bis Georg das Storyboard abnimmt)
 // Im Wagen: Kapsel der Figur ohne Kollider (stößt den Wagen nicht, bleibt nicht als unsichtbares Hindernis zurück)
 const RIDE = { on: false }
 const rideOn = (P) => { RIDE.on = true; P?.handle?.()?.body?.setEnabled?.(false) }
 const rideOff = (P) => { if (!RIDE.on) return; RIDE.on = false; P?.handle?.()?.body?.setEnabled?.(true) }
 function TravelHost({ player }) {
   const [at, setAt] = useState(null)
-  const travel = useMemo(() => at && { at, state: () => TRAVEL_SM.state, progress: () => TRAVEL_SM.progress(), drives: () => TRAVEL_SM.state === 'drive' || TRAVEL_SM.state === 'flyRacer', camOnCar: () => CAR_STATES.includes(TRAVEL_SM.state) }, [at])
+  const fluff = useMemo(() => createTravelFluff({ n: FLUFF_N, stagger: FLUFF_STAGGER, r: 0.14 * K }), [])
+  useEffect(() => fluff.dispose, [fluff]) // Freigabe beim Aushängen (dispose ohne this)
+  const nozzle = () => { const f = worldPosOf(mods.player); return { pos: f ? f.add(new THREE.Vector3(0, 1.2 * K, 0)) : new THREE.Vector3(), dir: new THREE.Vector3(0, 1, 0) } }
+  const size = () => ({ half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K })
+  const travel = useMemo(() => at && { at, grow: () => fluff.grow(), state: () => TRAVEL_SM.state, progress: () => TRAVEL_SM.progress(), drives: () => TRAVEL_SM.state === 'drive' || TRAVEL_SM.state === 'flyRacer', camOnCar: () => CAR_STATES.includes(TRAVEL_SM.state) }, [at])
   const side = (yaw, d) => [Math.cos(yaw) * d, -Math.sin(yaw) * d]
   const gh = (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z)   // Oberfläche wie Pfad/NPC (world=probe: Probe-Gelände)
   const apply = (fx) => { const P = player.current, fig = mods.player?.object3d
     for (const e of fx) {
       if (e.type === 'car' && e.on) { const p = worldPosOf(mods.player); if (!p || !fig) continue; const q = fig.getWorldQuaternion(new THREE.Quaternion()), yaw = new THREE.Euler().setFromQuaternion(q, 'YXZ').y, [dx, dz] = side(yaw, 3.5 * K)
-        TRAVEL.car = true; setAt({ p: [p.x + dx, gh(p.x + dx, p.z + dz) + 1.2 * K, p.z + dz], yaw }) }
-      if (e.type === 'car' && !e.on) { TRAVEL.car = false; setAt(null) }
+        const cp = [p.x + dx, gh(p.x + dx, p.z + dz) + 1.2 * K, p.z + dz]; TRAVEL.car = true; setAt({ p: cp, yaw }); fluff.start('build', { x: cp[0], y: cp[1] - 1.2 * K, z: cp[2] }, yaw, size(), nozzle) } // Hülle ab Bodenhöhe
+      if (e.type === 'car' && !e.on) { TRAVEL.car = false; setAt(null); fluff.stop() }
+      if (e.type === 'fx' && e.dir === 'suck') { const cp = M2STATE.carPos?.(); if (cp) fluff.start('suck', { x: cp.x, y: cp.y - 0.6 * K, z: cp.z }, M2STATE.carYaw?.() ?? 0, size(), nozzle) }
       if (e.type === 'player') P?.freeze(e.freeze)
       if (e.type === 'camera' && e.to === 'car') { P?.yieldCamera(true); if (fig) fig.visible = false; rideOn(P) }
       if (e.type === 'camera' && e.to === 'player') { rideOff(P); const cp = M2STATE.carPos?.(); if (cp) { const yaw = M2STATE.carYaw?.() ?? 0, [dx, dz] = side(yaw, -2.6 * K); const x = cp.x + dx, z = cp.z + dz, y = P?.castDown?.(x, z, cp.y + 3 * K) ?? gh(x, z); P?.teleport([x, y + FOOT + 0.3 * K, z], yaw) /* Strahl auf alle Kollider (Theater, Gelände); teleport setzt die Kapselmitte (wie START) */ }
@@ -573,12 +584,13 @@ function TravelHost({ player }) {
   useFrame((_, dt) => { const fl = !!player.current?.flying?.(), st = TRAVEL_SM.state
     if (fl && st === 'foot') TRAVEL_FX.push(...TRAVEL_SM.send('flyStart')); else if (!fl && st === 'flyFigure') TRAVEL_FX.push(...TRAVEL_SM.send('flyEnd'))
     TRAVEL_FX.push(...TRAVEL_SM.update(dt)); if (TRAVEL_FX.length) apply(TRAVEL_FX.splice(0))
+    fluff.update(dt)
     // Kapsel der verborgenen Figur fährt mit (Kollider aus): worldPosOf(mods.player) = Wagen für Ernte, NPC, Ton, Ziele
     const cp = RIDE.on && M2STATE.carPos?.(); if (cp) player.current?.teleport([cp.x, cp.y + FOOT + 0.3 * K, cp.z]) })
   // Racer-Flug: Abflug (Rampe / zweimal Leertaste) und Landung von racerFlight (M2EVENTS fly/land) → Zustandsmaschine drive ↔ flyRacer
   useEffect(() => { const a = M2EVENTS.on('fly', () => TRAVEL_FX.push(...TRAVEL_SM.send('takeoff'))), b = M2EVENTS.on('land', () => TRAVEL_FX.push(...TRAVEL_SM.send('land'))); return () => { a(); b() } }, [])
-  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car, ride: () => RIDE.on }); return () => { TRAVEL.car = false; rideOff(player.current); if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
-  return travel ? <M2Car player={player} travel={travel} /> : null
+  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car, ride: () => RIDE.on, fluff: () => fluff.info() }); return () => { TRAVEL.car = false; rideOff(player.current); if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
+  return <>{FLUFF_SHOW && <primitive object={fluff.object3d} />}{travel ? <M2Car player={player} travel={travel} /> : null}</>
 }
 
 function M1World() {

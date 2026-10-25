@@ -40,7 +40,7 @@
     "audio:site": "node scripts/audio/site-copy.mjs",
     "audio:loudness": "node scripts/audio/loudness.mjs",
     "test:groundfx": "node test/groundfx.mjs",
-    "test:vehicles": "node test/unit/vehicleRig.mjs && node test/unit/travelState.mjs && node test/groundfx.mjs && node test/vehicles-r1.mjs data && node test/vehicles-r1.mjs start",
+    "test:vehicles": "node test/unit/vehicleRig.mjs && node test/unit/travelState.mjs && node test/unit/fluffBuild.mjs && node test/unit/travelFluff.mjs && node test/groundfx.mjs && node test/vehicles-r1.mjs data && node test/vehicles-r1.mjs start",
     "test:biome": "node test/unit/paletteGen.mjs && node test/unit/endlessSeams.mjs && node test/biomeDrive.mjs",
     "test:biome-clip": "node test/biomeDriveClip.mjs",
     "test:biome-km": "node test/biomeDriveKm.mjs"

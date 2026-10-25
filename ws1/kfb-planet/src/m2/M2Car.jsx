@@ -353,7 +353,7 @@ const M2Car = forwardRef(function M2Car({ player, travel = null }, ref) {
   useEffect(() => interpTrack(proxy), [proxy])
   useFrame(() => { const c = car.current; if (!c) return; const p = c.pos(); proxy.position.set(p.x, p.y, p.z); proxy.rotation.set(0, c.yaw(), 0) })
   useEffect(() => { loadModel(); if (!travel) { player.current?.freeze(true); player.current?.yieldCamera(true) } return () => { player.current?.yieldCamera(false); player.current?.freeze(false) } }, [player])
-  useFrame(() => { const o = travel && M2STATE.rig?.object3d; if (!o) return; const st = travel.state(), u = travel.progress(), e = u * u * (3 - 2 * u); o.scale.setScalar(st === 'summon' ? Math.max(0.001, e) : st === 'vanish' ? Math.max(0.001, 1 - e) : 1) })
+  useFrame(() => { const o = travel && M2STATE.rig?.object3d; if (!o) return; const st = travel.state(), u = travel.progress(), e = u * u * (3 - 2 * u), g = travel.grow?.(); o.scale.setScalar(g != null ? Math.max(0.001, g) : st === 'summon' ? Math.max(0.001, e) : st === 'vanish' ? Math.max(0.001, 1 - e) : 1) }) // grow: Anteil gelandeter/abgesaugter Fluff-Kugeln (build/suck)
   // V-631: Racer an Ort und Stelle wechseln (Maße, Kamera, Verformungsprofil neu; Modell aus dem Speicher oder nachladen); Adresse merkt sich die Wahl
   const swapRacer = (id) => { if (!VEHICLE_RIG.vehicles[id] || id === M2CAR.id) return; const p = car.current?.pos(), y = car.current?.yaw() ?? spawn.current.yaw
     applyRacer(id); M2STATE.racerSwaps++; setRacerId(id); restart(kind, p ? { p: [p.x, p.y + 0.3 * K, p.z], yaw: y } : null)

@@ -8,9 +8,14 @@
 // fliegenden Kugeln (nicht-uniforme Skalierung entlang Kugel → Düse, Volumen erhalten), ein Punkt-Pool für Ursprungs-Effekte; feste Obergrenzen
 // (V-357). Über maxJobs werden weitere Kugeln zu einer Wolke zusammengefasst (zählen sofort, nur ein Wolken-Puff) – Gebiete mit vielen Kugeln bleiben
 // flüssig. Modul nach Host-Vertrag R1.2. options: { maxJobs = 24, onCue?(cue, job) }
+// Richtung build (V-533, S1 Fortbewegung V-746, additiv): build(ball, nozzle, kind, { onLand }) ist die Umkehrung – die Kugel quillt aus der Düse
+// (0,2 s), fliegt langsamer werdend zum Ziel ball.pos (0,5 s), ploppt dort auf (0,1 s, Ursprungs-Effekt kind) und zieht den Hals ein (0,3 s), Ereignis
+// „build-land“ (z. B. Wagen wächst). Eigene Cues build-emit/-fly/-plop/-land, damit Saug-Ton und Zähler unberührt bleiben; active() zählt weiter nur
+// Saug-Aufträge, building() die Bau-Aufträge. Gleiche Kugeln (InstancedMesh) und Punkte, kein neuer Shader. suck bleibt unverändert.
 import * as THREE from 'three'
 
 export const SUCK = Object.freeze({ charge: 0.3, stretch: 0.4, plop: 0.1, fly: 0.4, swallow: 0.2, stretchMax: 1.9, flyStretch: 1.6, jitter: 0.06, curve: 0.25 })
+export const BUILD = Object.freeze({ emit: 0.2, fly: 0.5, plop: 0.1, settle: 0.3 })
 export const ORIGIN_FX = Object.freeze({ tree: { color: '#7fae4a', n: 8, up: 1.2 }, ground: { color: '#8a6a4a', n: 10, up: 1.6 }, water: { color: '#e8f4ff', n: 12, up: 2.2 } })
 const POOL = 160
 
@@ -31,7 +36,7 @@ export function createFluffSuck({ maxJobs = 24, onCue = null } = {}) {
     for (let k = 0; k < (n ?? F.n); k++) { const j = P.next; P.next = (P.next + 1) % POOL; const a = rand() * Math.PI * 2, s = 0.6 + rand() * 0.9
       P.pos[j * 3] = at.x; P.pos[j * 3 + 1] = at.y; P.pos[j * 3 + 2] = at.z; P.vel[j * 3] = Math.cos(a) * s; P.vel[j * 3 + 1] = F.up * (0.6 + rand() * 0.6); P.vel[j * 3 + 2] = Math.sin(a) * s
       P.life[j] = 1; P.col[j * 3] = c.r; P.col[j * 3 + 1] = c.g; P.col[j * 3 + 2] = c.b } }
-  const jobs = [], stats = { started: 0, swallowed: 0, clouded: 0, plops: { tree: 0, ground: 0, water: 0 } }
+  const jobs = [], building = () => { let n = 0; for (const J of jobs) if (J.build) n++; return n }, stats = { started: 0, swallowed: 0, clouded: 0, plops: { tree: 0, ground: 0, water: 0 } }
   const D = SUCK.charge + SUCK.stretch + SUCK.plop + SUCK.fly + SUCK.swallow
   const cue = (name, J) => { J.cues.push(name); onCue?.(name, J) }
   // nozzle: () => ({ pos: Vector3, dir: Vector3 }) bzw. beam: () => ({ pos: Mündung, dir: nach oben, radius })
@@ -41,14 +46,38 @@ export function createFluffSuck({ maxJobs = 24, onCue = null } = {}) {
     jobs.push(J); stats.started++; cue('charge', J); return J
   }
   const tmpA = new THREE.Vector3(), tmpB = new THREE.Vector3(), dir = new THREE.Vector3()
+  const DB = BUILD.emit + BUILD.fly + BUILD.plop + BUILD.settle, bstats = { started: 0, landed: 0, clouded: 0 }
+  // nozzle wie bei suck: Startpunkt; ball.pos = Ziel (z. B. Punkt auf der Wagen-Hülle)
+  function build(ball, nozzle, kind = 'ground', { onLand = null } = {}) {
+    if (jobs.length >= maxJobs) { bstats.clouded++; burst(new THREE.Vector3(...ball.pos), kind, 3); onLand?.(ball); onCue?.('build-cloud', { ball }); return { clouded: true } }
+    const J = { build: true, ball, from: new THREE.Vector3(...ball.pos), r: ball.r || 0.12, color: new THREE.Color(ball.color || '#ffd21f'), nozzle, origin: kind, t: 0, cues: [], onLand, side: (rand() - 0.5) * 2 }
+    jobs.push(J); bstats.started++; cue('build-emit', J); return J
+  }
+  const stepBuild = (J, t0, t) => {
+    const np = J.nozzle().pos, T1 = BUILD.emit, T2 = T1 + BUILD.fly, T3 = T2 + BUILD.plop
+    if (t0 < T1 && t >= T1) cue('build-fly', J)
+    if (t0 < T2 && t >= T2) { cue('build-plop', J); burst(J.from, J.origin) }
+    let p = tmpA, sAlong = 1, sSide = 1
+    dir.subVectors(J.from, np).normalize()
+    if (t < T1) { const u = t / BUILD.emit; p.copy(np); sAlong = u * 1.3; sSide = u } // quillt aus der Düse (Umkehrung von Einsaugen)
+    else if (t < T2) { const u = (t - T1) / BUILD.fly, e = 1 - (1 - u) * (1 - u); tmpB.lerpVectors(np, J.from, e); const off = Math.sin(u * Math.PI) * SUCK.curve * J.from.distanceTo(np) * J.side
+      p.copy(tmpB).add(new THREE.Vector3().crossVectors(dir, Y).normalize().multiplyScalar(off)); sAlong = 1 + (SUCK.flyStretch - 1) * Math.sin(u * Math.PI * 0.9) } // Flug, langsamer werdend
+    else if (t < T3) { const u = (t - T2) / BUILD.plop; sAlong = 0.7 + (SUCK.stretchMax - 0.7) * (1 - u) * 0.5; p.copy(J.from).addScaledVector(dir, -J.r * 0.4) } // Aufploppen: Squash
+    else { const u = Math.min(1, (t - T3) / BUILD.settle), e = u * u * (3 - 2 * u); sAlong = 1 + (1 - e) * 0.3; p.copy(J.from) } // Hals zieht ein, Kugel sitzt
+    J.render = { p: p.clone(), sAlong, sSide: sSide / Math.sqrt(Math.max(0.05, sAlong)), dir: dir.clone() }
+    return t >= DB
+  }
   return {
     object3d: root,
-    suck,
-    active: () => jobs.length,
-    stats: () => ({ ...stats, active: jobs.length, plops: { ...stats.plops } }),
+    suck, build,
+    active: () => jobs.length - building(),
+    building: () => building(),
+    stats: () => ({ ...stats, active: jobs.length - building(), plops: { ...stats.plops } }),
+    buildStats: () => ({ ...bstats, active: building() }),
     update(dt) {
       dt = Math.min(dt || 0, 0.1)
       for (let i = jobs.length - 1; i >= 0; i--) {
+        if (jobs[i].build) { const J = jobs[i], t0 = J.t; J.t += dt; if (stepBuild(J, t0, J.t)) { bstats.landed++; cue('build-land', J); J.onLand?.(J.ball); jobs.splice(i, 1) } continue }
         const J = jobs[i], t0 = J.t; J.t += dt; const t = J.t, N = J.nozzle(), np = N.pos
         const T1 = SUCK.charge, T2 = T1 + SUCK.stretch, T3 = T2 + SUCK.plop, T4 = T3 + SUCK.fly
         if (t0 < T1 && t >= T1) cue('stretch', J)
