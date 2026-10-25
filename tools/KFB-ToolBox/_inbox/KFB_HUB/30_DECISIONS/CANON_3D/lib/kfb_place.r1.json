@@ -357,12 +357,12 @@
    "mask_m": 110,
    "threshold": 0.53,
    "grove": {
-    "groups": 3,
+    "groups": 4,
     "span": [
-     0.3,
-     0.7
+     0.33,
+     0.67
     ],
-    "minD": 0.2,
+    "minD": 0.16,
     "recipes": [
      [
       "tree_group"
@@ -372,6 +372,9 @@
      ],
      [
       "tree_group",
+      "bush_nest"
+     ],
+     [
       "bush_nest"
      ]
     ]
@@ -383,7 +386,7 @@
      "bush_nest"
     ]
    },
-   "note": "V-788 (Critic R1 Welt): Haine statt Konfetti. Zone 32 m: über der Schwelle ein Hain aus 3 Gruppen in der Zonenmitte (≈ 10–15 Bäume auf 15–20 m, Haine 30–40 m auseinander), sonst Wiese mit 20 % Chance auf ein Nest. Anteil Hain ≈ 35 %."
+   "note": "V-788 (Critic R1 Welt): Haine statt Konfetti. Zone 32 m: über der Schwelle ein Hain aus 3 Gruppen in der Zonenmitte (≈ 10–15 Bäume auf 15–20 m, Haine 30–40 m auseinander), sonst Wiese mit 20 % Chance auf ein Nest. Anteil Hain ≈ 35 %. V-791 (Critic R2): 4 Gruppen enger (Kronen überlappen), eine davon Busch-Nest als Unterwuchs; Fluff nur an ≈ 35 % der Gruppen."
   }
  },
  "bands": [
@@ -560,7 +563,8 @@
    "only": "Hero-Nest des ersten Baums",
    "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)"
   },
-  "ring_tree": 0.25
+  "ring_tree": 0.25,
+  "group_share": 0.35
  },
  "finds": {
   "optional": true,
