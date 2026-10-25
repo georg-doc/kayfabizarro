@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.drive-entry-fix/1",
+  "date": "2026-10-25",
+  "status": "SOURCE_FIXED_LOCAL_BROWSER_VERIFIED_SAVED_NOT_DEPLOYED",
+  "site": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+  "project_id": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+  "input": "/game-package#m1,car,harvest,look=terrain3,world=probe,hud=3d",
+  "rootCause": "Game mode change preserves pathname and reloads; leaked internal /game-package address has no route on restored v4. Hosting integration defect, no WS1 game hash rewrite needed.",
+  "fix": "Canonicalize internal entry aliases after authorization; consume exact same-origin ASSETS index redirect inside provider; preservequery and inheritedfragment.",
+  "candidate": {
+    "source": "8241ddf14d1ad0cd9c20de8724703bc4b0388b9b",
+    "version": 6,
+    "version_id": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5c4323ba3830819183279ebd56700d3e",
+    "deployment_id": null
+  },
+  "tests": {
+    "routing": 14,
+    "existingDelivery": 30,
+    "independentExtraProbes": 12,
+    "failed": 0,
+    "frameworkBuild": "PASS",
+    "actualLocalBrowser": "Reportedlink redirectedto/#m1,car,harvest,look=terrain3,world=probe,hud=3d; gameandterrainloaded,no404. Vehiclevisualnotaccepted(large redgeometryinviewport);notfullgameplay/audio/Drivephysicsacceptance.",
+    "hostedFix": "NOT RUN: NO deployment authorized whileallpathpasswordgatefails"
+  },
+  "independent": {
+    "tester": "audio_tester reran44+12edgeprobes",
+    "guard": "audio_guard CONTINUE save/report; NOdeployment"
+  },
+  "active": {
+    "version": 4,
+    "source": "fbabbad7b8efa98c9071fccb358e4fb4788ec826",
+    "deployment": "appgdep_6add5ad182f48191aff724c719771ff0",
+    "changedThisTurn": false
+  },
+  "nextGate": "WS0 coordinates native Sites all-path static password gate; receiving executor verifies direct /game-package/assets/* denial without Basic before deploying savedv6, hostedDrivecheck and thenR3.",
+  "boundaries": "No new Site, no game/repo source mutation, no R3 publishing, no paidgeneration, no merge/deletion/accesschange; no privateassetpayload/credentials inpublicreport."
+}
