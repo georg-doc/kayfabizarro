@@ -194,10 +194,10 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const rL = Math.max(rules.contact.piece_min_m ?? 0.06, Math.min(rules.contact.piece_max_m ?? 0.22, Rr * (rules.contact.piece_ratio ?? 0.32))),   /* V-795: am dünnen Stamm sichtbar */ wOf = (r) => 2 * Math.asin(Math.min(0.99, r / Rr))
     const side = down + (R.next() < 0.5 ? 1 : -1) * R.range(1.9, 2.4), bows = [[0.65, down + R.range(-0.2, 0.2), []], [0.35, side, []]]
     for (const [share, , list] of bows) { const target = cov * Math.PI * 2 * share; let acc = 0
-      for (let k = 0; acc < target * 0.97; k++) { const r = rL * ST[k === 0 ? 0 : k < 3 ? 1 : 2] * R.range(0.9, 1.1); if (list.length && acc + wOf(r) > target * 1.06) break; list.push(r); acc += wOf(r) } }
+      for (let k = 0; acc < target * 0.97; k++) { const r = Math.max((rules.contact.piece_min_m ?? 0.06) * 0.7, rL * ST[k === 0 ? 0 : k < 3 ? 1 : 2] * R.range(0.9, 1.1)); if (list.length && acc + wOf(r) > target * 1.06) break; list.push(r); acc += wOf(r) } }   // V-796b: Stückgröße nach unten begrenzt
     const covNow = () => bows.reduce((t, b) => t + b[2].reduce((u, r) => u + wOf(r), 0), 0) / (Math.PI * 2)
     while (covNow() > p1 && bows[1][2].length > 1) bows[1][2].pop()
-    while (covNow() < p0) bows[0][2].push(rL * ST[2] * R.range(0.9, 1.1))
+    while (covNow() < p0) bows[0][2].push(Math.max((rules.contact.piece_min_m ?? 0.06) * 0.7, rL * ST[2] * R.range(0.9, 1.1)))
     for (const [, centre, list] of bows) { const ws = list.map(wOf), total = ws.reduce((a, b) => a + b, 0), order = []
       list.forEach((r, k) => (k % 2 ? order.push(k) : order.unshift(k)))   // groß in der Mitte, abwechselnd links/rechts kleiner
       let ang = centre - total / 2
@@ -216,10 +216,10 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     contactArcs(o, tile.r, `stamp${i}`, sdown, 'Erde und Moos am Fuß, hangabwärts')
     let la0 = R.range(0, Math.PI * 2), lj = 0; const logs = []   /* V-787 (WSB N40 r7 A): ein Goldwinkel-Zähler über alle Slots, Mitten ≥ Summe der Halblängen → nie ein X */
     for (const sl of (rec.slots || []).slice(1)) { const cnt = sl.count ?? 1, tl = tilesFor(cfg, sl.kinds[0], B.kit?.[s.recipe])
-      for (let k = 0; k < cnt; k++) { const lr = tl[k % tl.length].r; let a = 0, d = 0
+      for (let k = 0; k < cnt; k++) { const ls = sl.s ?? 1, lr = tl[k % tl.length].r * ls; let a = 0, d = 0   /* V-796: Echo-Holz kürzer als der Stumpf (Slot s) */
         for (let t = 0; t < 24; t++) { a = la0 + (lj++) * 2.39996; d = tile.r + lr * R.range(1.05, 1.4); const lx = s.x + Math.cos(a) * d, lz = s.z + Math.sin(a) * d; const bushA = cfg.p0 ? (cfg.light?.sun_az ?? -0.6) + (cfg.p0.triangle_turn ?? 0) : null, dA = bushA == null ? 9 : Math.abs(Math.atan2(Math.sin(a - bushA), Math.cos(a - bushA)))   /* V-795: Holz nie auf der Busch-Seite (Busch-Nest steht 1,8 m am Stumpf) */
           if (dA > 1.5 && !logs.some((q) => Math.hypot(q[0] - lx, q[1] - lz) < q[2] + lr)) break }
-        logs.push([s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, lr]);   /* V-778: Abstand Stumpf-Radius + halbe Holzlänge, keine Durchdringung bei jeder Drehung */ put(tl[k % tl.length], s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, { group: `stamp${i}`, role: sl.role, layer: rec.layer, story: 'Holzstück desselben Stamms' }); contactArcs(inst[inst.length - 1], tl[k % tl.length].r, `stamp${i}`, sdown, 'liegt im Laub, hangabwärts angespült') } }
+        logs.push([s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, lr]);   /* V-778: Abstand Stumpf-Radius + halbe Holzlänge, keine Durchdringung bei jeder Drehung */ put(tl[k % tl.length], s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, { s: ls, group: `stamp${i}`, role: sl.role, layer: rec.layer, story: 'Holzstück desselben Stamms' }); contactArcs(inst[inst.length - 1], lr, `stamp${i}`, sdown, 'liegt im Laub, hangabwärts angespült') } }
     if (rec.finds && cfg.finds) push({ tile: 'find:catalog', kind: 'find', p: [o.p[0] + 0.6, o.p[1] + 1.0, o.p[2]], rotY: 0, sink: 0, group: o.group, role: 'find', layer: 2, story: 'Fundstück am Stumpf (V-437)' })
     return { id: s.id || `stamp${i}`, footprint_r: tile.r * 1.4, fixed: true, embed: { only_add: true, sop: 'embed.sop' } }
   })
@@ -417,6 +417,14 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     if (logs.length) { const under = (q) => logs.some((L) => { const t = TL.get(L.tile), hl = ((t?.gate_r_m ?? t?.hull_r_m) || 1.3) * (L.s ?? 1), w = ((t?.h_m) || 0.5) * 0.6 * (L.s ?? 1), ry = L.rotY || 0, ax = t?.long_axis === 'z' ? [Math.sin(ry), Math.cos(ry)] : [Math.cos(ry), -Math.sin(ry)]
         const vx = q.p[0] - L.p[0], vz = q.p[2] - L.p[2], al = vx * ax[0] + vz * ax[1], pr = Math.abs(vx * -ax[1] + vz * ax[0]); return Math.abs(al) < hl && pr < w + (q.r || 0) })
       for (let k = inst.length - 1; k >= 0; k--) { const q = inst[k]; if ((q.role === 'contact' && !logs.includes(q)) || q.role === 'path') { if (under(q)) inst.splice(k, 1) } } } }
+  // V-796 · Fuß-Steinchen an allen frei stehenden Gliedern ohne eigenen Kontakt (Stützen, Echos; Kritiker K4 Erdung): 2–3 Stück L/M/S hangab am Fuß,
+  // role foot (Mikro-Ebene, zählt nicht zum Kontaktfenster des Ankers)
+  { const TF = new Map(cfg.tiles.map((t) => [t.id, t])), ST = rules.contact.staffel ?? [1, 0.62, 0.38]
+    for (const o of inst.filter((q) => ['support', 'echo'].includes(q.role) && /tree|bush|stone|rock/.test(q.kind) && TF.get(q.tile))) { const t = TF.get(o.tile), sc = o.s ?? 1
+      const fr = (o.kind === 'tree' && t.foot_r_m ? t.foot_r_m : ((t.gate_r_m ?? t.hull_r_m) || 0.3) * (o.kind === 'bush' ? 0.85 : 1)) * sc, [gx, gz] = grad(terrain, o.p[0], o.p[2]), dn = Math.hypot(gx, gz) > 0.02 ? Math.atan2(-gz, -gx) : (cfg.light?.sun_az ?? -0.6)
+      const n = 2 + (R.next() < 0.5 ? 1 : 0), pm = rules.contact.piece_min_m ?? 0.06, rL = Math.max(pm / ST[2] * 0.85, Math.min(0.2, fr * 0.5))   // V-796b: auch das S-Stück ≥ ≈ 0,05 m (WSB r29: 13 von 26 zu klein)
+      for (let k = 0; k < n; k++) { const a = dn + (k - (n - 1) / 2) * 0.55 + R.range(-0.15, 0.15), d = fr + rL * ST[k] * 0.6
+        push({ tile: 'contact:moss_pebble', kind: 'contact', r: +(rL * ST[k] * R.range(0.9, 1.1)).toFixed(3), p: [+(o.p[0] + Math.cos(a) * d).toFixed(3), o.p[1], +(o.p[2] + Math.sin(a) * d).toFixed(3)], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: o.group, role: 'foot', cause: 'Erde und Kiesel am Fuß, hangab', layer: 4 }) } } }
   // V-794 · Moos in den Fugen (material_codes): wo zwei Steine bzw. Stein/Holz einer Gruppe überlappen, ein Moos-Lappen in der Fuge, hangab versetzt
   { const TJ = new Map(cfg.tiles.map((t) => [t.id, t])), rJ = (o) => (((TJ.get(o.tile)?.gate_r_m ?? TJ.get(o.tile)?.hull_r_m) || 0) * (o.s ?? 1)), hard = inst.filter((o) => o.group && /stone|log|stump/.test(o.kind) && ['anchor', 'support', 'pebble', 'focus', 'echo'].includes(o.role) && rJ(o))
     for (let i = 0; i < hard.length; i++) for (let j = i + 1; j < hard.length; j++) { const A = hard[i], Bq = hard[j]; if (A.group !== Bq.group) continue; const d = Math.hypot(A.p[0] - Bq.p[0], A.p[2] - Bq.p[2]), ra = rJ(A), rb = rJ(Bq)
