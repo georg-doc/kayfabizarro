@@ -238,6 +238,82 @@
    ],
    "signature": "1 Hero + 2 Echos",
    "wear_marks_min": 2
+  },
+  "grass": {
+   "source": "SPEC_ENVIRONMENT_KIT_R1 §5/§6/§8; KayKit Forest Samples (Büschel zu 1–3 am Fuß von Stein, Baum, Busch)",
+   "tiles": "kaykit_forest:Grass_*_Singlesided (Büschel, nie Einzelhalme)",
+   "foot": {
+    "count": [
+     3,
+     5,
+     7
+    ],
+    "ratio": [
+     1,
+     0.62,
+     0.38
+    ],
+    "ring_r": [
+     0.8,
+     1.1
+    ],
+    "side": "Licht- bzw. Hangfußseite, ein Bogen ≤ 50 %",
+    "roles": [
+     "anchor",
+     "support",
+     "landmark",
+     "focus"
+    ]
+   },
+   "field": {
+    "grid_m": 1.8,
+    "noise_m": 16,
+    "thresh": 0.6,
+    "cluster": [
+     3,
+     5,
+     7
+    ],
+    "spread_m": [
+     0.35,
+     0.9
+    ],
+    "hollow_bonus": 0.15,
+    "path_clear_m": 1.0,
+    "neg_space_short": 0.6,
+    "cause": "Sonne gibt Gras, Schatten gibt Moos (Konzeptblatt 2d)",
+    "edge_soft": 0.12,
+    "note": "Felder = zusammenhängende Flecken (Rauschen grob), innen dicht, zum Rand hin Sprenkel (V-403), außerhalb kein Gras"
+   },
+   "wind": {
+    "grid_m": 8,
+    "max_groups": 64,
+    "bend": {
+     "grass": 1.0,
+     "fluff": 0.5,
+     "bush": 0.15,
+     "tree": 0.35
+    },
+    "phase_jitter": 0.12,
+    "note": "eine Gruppe = gleiche Grundphase, kleiner Versatz; Phase folgt der Position im Feld; Gruppe einzeln anstoßbar (Auto, Figur)"
+   },
+   "color": {
+    "role": "grass",
+    "steps": 3,
+    "note": "Grundton aus dem Biom (Harmonie-Modell), je Büschel-Gruppe eine Stufe, je Büschel ±1 Stufe; flach cartoonig, kein Rausch-Verlauf"
+   },
+   "lean_max_deg": 14,
+   "bauweise": {
+    "source": "KFB Island Worldbuilder Lab/docs/biome-sheets/Bauweise_Erdung.jpg (Regel 3) + R2_etherington.jpg",
+    "foot_side": {
+     "stone": "Kehle bergauf, Bogen 30–50 %",
+     "bush": "Sonnenseite unter der Kante",
+     "tree": "Tropfkante 1,6–2,2 Kronenradien, unter der Krone dünn (75 % ausgelassen)",
+     "other": "hangabwärts"
+    },
+    "lean": "vom Objekt weg und hangabwärts, 6–14°",
+    "length": "Senke/Kehle lang (bis 1,3×), Kuppe kurz (bis 0,7×)"
+   }
   }
  },
  "bands": [

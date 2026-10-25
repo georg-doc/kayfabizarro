@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-769 Gras-Büschel im Löser nach Bauweise-Tafel; wind_group/wind_bend/tint_step je Instanz; P0 f3598f37.
 - V-768 Gate r3 + Adapter r3 in CANON_3D/lib; Löser mit Gate-Prüfer, Radien-Leiter, gelehnten Kieseln: P0 und 7 Seeds G1 ok.
 - V-766 Lade-Chip statt rotem Klotz (R3 @18ad81d, b226). V-767 Zerstörung: Cel-Splitter + GPU-Partikel (Staub, Fluff, Goo, Fassaden-Krümel) + Fahrzeug-Rauch als Kombination (Backlog Destruction-Slice).
 - V-765 runde Kopf-Clips (klein, oben), Clips im Mixer mit Ducking; R3 @ac620a4; WSA: b226 aktualisiert, b227 HyperNorm neu (H15 statt b220), b219/b221 abgelöst. FrizzleTunes-Index (207 Einträge, 164 Videos).

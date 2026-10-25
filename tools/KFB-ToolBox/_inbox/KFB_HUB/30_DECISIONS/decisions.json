@@ -11019,6 +11019,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-769",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Gras-Büschel im Löser (Georg 25.10.: gruppierte, nicht einzelne Grasblätter, cartoonig gefärbt, später gruppiert im Wind): KayKit Grass_1/2 Singlesided als Büschel, nie Einzelhalme (SPEC_ENVIRONMENT_KIT_R1 §8). Fuß-Büschel 3/5/7 nach Bauweise-Tafel (Lab Bauweise_Erdung.jpg Regel 3): Fels in der Kehle bergauf, Strauch Sonnenseite, Baum Tropfkante, sonst hangabwärts; lehnen vom Objekt weg und hangabwärts, lang in Senken, kurz auf Kuppen. Felder als zusammenhängende Flecken nach Rauschen mit Sprenkelrand, Wege frei, Lichtungsmitte kurz, unter Kronen dünn. Je Instanz wind_group (8-m-Raster, ≤ 64 je Zelle, gleiche Grundphase je Gruppe), wind_bend je Art, tint_step (3 flache Stufen aus dem Biom-Grundton). P0 golden f3598f37, 0 Büschel auf dem Weg, G1 aller Gruppen ok.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gras gehört zur Bauweise jeder Gruppe; die Wind-Gruppe muss der Löser vergeben, sonst kann die Laufzeit keine Gruppe einzeln anstoßen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11131,7 +11146,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1279",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1280",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

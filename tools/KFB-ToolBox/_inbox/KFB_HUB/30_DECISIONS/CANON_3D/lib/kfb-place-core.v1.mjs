@@ -191,10 +191,57 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     }
   }
 
-  // 4 · Regel-Bericht für das Gate (Zone und Biografie)
+  // 4 · Gras-Büschel (SPEC_ENVIRONMENT_KIT_R1 §8, V-769): nie Einzelhalme. a) Fuß-Büschel 3/5/7 an Ankern und Stützen auf einem Bogen der Licht- bzw.
+  // Hangfußseite, Größen 1 : 0,62 : 0,38; b) Felder nach Rauschen und Ursache (Sonne → Gras), dichter in Senken, Wege frei, Freifläche nur kurz.
+  const G = rules.grass, grass = { foot: 0, field: 0, clusters: 0 }
+  if (G) {
+    const gt = cfg.tiles.filter((t) => t.kind === 'grass' && /Singlesided$/i.test(t.id)).map((t) => ({ id: t.id, kind: 'grass', h: t.h_m, r: t.hull_r_m }))
+    const tuftTiles = gt.length ? gt : [{ id: 'placeholder:grass', kind: 'grass', placeholder: true, ...PLACEHOLDER.grass }]
+    const vn = (x, z) => { const s = G.field.noise_m, ix = Math.floor(x / s), iz = Math.floor(z / s), fx = x / s - ix, fz = z / s - iz, sm = (t) => t * t * (3 - 2 * t)
+      const v = (a, b) => (hash32(`${seed}|gn|${a}|${b}`) % 1000) / 1000, a = v(ix, iz), b = v(ix + 1, iz), c = v(ix, iz + 1), e = v(ix + 1, iz + 1)
+      return a + (b - a) * sm(fx) + (c - a) * sm(fz) + (a - b - c + e) * sm(fx) * sm(fz) }
+    const hollow = (x, z) => (terrain.h(x + 2, z) + terrain.h(x - 2, z) + terrain.h(x, z + 2) + terrain.h(x, z - 2)) / 4 - terrain.h(x, z)
+    const pathPts = inst.filter((x) => x.role === 'path').map((x) => x.p), solid = inst.filter((x) => ['anchor', 'support', 'landmark', 'focus'].includes(x.role))
+    const nearPath = (x, z) => pathPts.some((p) => (p[0] - x) ** 2 + (p[2] - z) ** 2 < G.field.path_clear_m ** 2)
+    const inSolid = (x, z) => solid.some((o) => (o.p[0] - x) ** 2 + (o.p[2] - z) ** 2 < (0.6 * (o.s || 1) + 0.3) ** 2)
+    // Bauweise-Tafel Regel 3 (Lab biome-sheets/Bauweise_Erdung.jpg): Büschel lehnen vom Objekt weg und hangabwärts, lang in der Kehle bzw. Senke, kurz auf der Kuppe
+    const crowns = inst.filter((o) => o.kind === 'tree').map((o) => [o.p[0], o.p[2], (o.s || 1) * (tilesFor(cfg, 'tree')[0]?.r || 1.6)])
+    const tuft = (x, z, sc, grp, src, step, from = null) => { if (masks?.blocked?.(x, z)) return
+      const [gx, gz] = grad(terrain, x, z), hv = hollow(x, z), len = Math.max(0.7, Math.min(1.3, 1 + hv * 3))
+      let lx = -gx * 4, lz = -gz * 4; if (from) { const dx = x - from[0], dz = z - from[1], l = Math.hypot(dx, dz) || 1; lx += dx / l; lz += dz / l }
+      const ll = Math.hypot(lx, lz), lean = ll > 0.05 ? Math.min(G.lean_max_deg ?? 14, 6 + ll * 6) : 0, la = Math.atan2(lz, lx)
+      put(R.pick(tuftTiles), x, z, { s: +(sc * len).toFixed(3), group: grp, role: 'grass', layer: 4, src, tint_step: Math.max(0, Math.min(G.color.steps - 1, step + R.int(-1, 1))), color_role: G.color.role,
+        ...(lean ? { rotX: +((Math.sin(la) * lean * Math.PI) / 180).toFixed(3), rotZ: +((-Math.cos(la) * lean * Math.PI) / 180).toFixed(3) } : {}) }); grass[src]++ }
+    // a) Fuß-Büschel
+    for (const o of solid) { const n = R.pick(G.foot.count), ro = (o.s || 1) * (tilesFor(cfg, o.kind)[0]?.r || 0.6), [gx, gz] = grad(terrain, o.p[0], o.p[2])
+      const downA = Math.hypot(gx, gz) > 0.02 ? Math.atan2(-gz, -gx) : (cfg.light?.sun_az ?? -0.6), sun = cfg.light?.sun_az ?? -0.6
+      /* Bauweise: Fels → Grasnest in der Kehle bergauf; Strauch → Sonnenseite unter der Kante; Baum → an der Tropfkante; sonst hangabwärts */
+      const isStone = /stone|rock|boulder/.test(o.kind), side = isStone ? downA + Math.PI : o.kind === 'bush' ? sun : downA, arc = Math.PI * (isStone ? R.range(0.3, 0.5) : R.range(0.45, 0.95)), step = R.int(0, G.color.steps - 1)
+      const ring = o.kind === 'tree' ? [1.6, 2.2] : G.foot.ring_r
+      for (let k = 0; k < n; k++) { const a = side - arc / 2 + arc * ((k + R.range(0.2, 0.8)) / n), d = ro * R.range(...ring)
+        tuft(o.p[0] + Math.cos(a) * d, o.p[2] + Math.sin(a) * d, G.foot.ratio[Math.min(2, k === 0 ? 0 : k < 4 ? 1 : 2)] * R.range(0.9, 1.1), o.group, 'foot', step, [o.p[0], o.p[2]]) } }
+    // b) Felder: je Rasterpunkt ein Kandidat; über der Schwelle eine Büschel-Gruppe 3/5/7
+    const gs = G.field.grid_m, negC = [chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size / 2]
+    for (let gx0 = chunk.x0 + gs / 2; gx0 < chunk.x0 + chunk.size; gx0 += gs) for (let gz0 = chunk.z0 + gs / 2; gz0 < chunk.z0 + chunk.size; gz0 += gs) {
+      const x = gx0 + R.range(-0.35, 0.35) * gs, z = gz0 + R.range(-0.35, 0.35) * gs, score = vn(x, z) + Math.max(0, Math.min(G.field.hollow_bonus, hollow(x, z) * 2))
+      const underCrown = crowns.some((c) => (c[0] - x) ** 2 + (c[1] - z) ** 2 < (c[2] * 1.3) ** 2); if (underCrown && R.next() < 0.75) continue
+      if (score < G.field.thresh || R.next() > Math.min(1, (score - G.field.thresh) / (G.field.edge_soft || 0.1)) || nearPath(x, z) || inSolid(x, z)) continue   /* Rand: Dichte läuft als Sprenkel aus */
+      const n = R.pick(G.field.cluster), short = Math.hypot(x - negC[0], z - negC[1]) < chunk.size * 0.18 ? G.field.neg_space_short : 1, step = R.int(0, G.color.steps - 1), grp = `gr${grass.clusters++}`
+      for (let k = 0; k < n; k++) { const a = k * 2.399 + R.range(-0.4, 0.4), d = k === 0 ? 0 : R.range(...G.field.spread_m) * Math.sqrt(k / n) * 1.4, tx = x + Math.cos(a) * d, tz = z + Math.sin(a) * d
+        if (nearPath(tx, tz) || inSolid(tx, tz)) continue
+        tuft(tx, tz, G.foot.ratio[k === 0 ? 0 : k < 4 ? 1 : 2] * short * R.range(0.9, 1.1), grp, 'field', step) } }
+    // Wind-Gruppen (§6): eine Gruppe teilt Grundphase; Gruppen-ID nach Position des Gruppen-Mittels im 8-m-Raster (≤ 64 je Zelle), Biegung je Art
+    const W = G.wind, cen = {}
+    for (const o of inst) { const c = (cen[o.group] ||= [0, 0, 0]); c[0] += o.p[0]; c[1] += o.p[2]; c[2]++ }
+    const nW = Math.max(1, Math.round(chunk.size / W.grid_m))
+    for (const o of inst) { const c = cen[o.group], wx = Math.min(nW - 1, Math.max(0, Math.floor((c[0] / c[2] - chunk.x0) / W.grid_m))), wz = Math.min(nW - 1, Math.max(0, Math.floor((c[1] / c[2] - chunk.z0) / W.grid_m)))
+      o.wind_group = Math.min(W.max_groups - 1, wz * nW + wx); o.wind_bend = W.bend[o.kind] ?? 0; o.wind_phase = +((hash32(`${seed}|wp|${o.group}`) % 628) / 100 + R.range(-W.phase_jitter, W.phase_jitter)).toFixed(3) }
+  }
+
+  // 5 · Regel-Bericht für das Gate (Zone und Biografie)
   const occ = inst.filter((x) => x.role === 'anchor' || x.role === 'support').reduce((s, x) => s + Math.PI * 2.2 ** 2, 0)
   const zoneReport = { groups: report.length, neg_space_est: +(1 - Math.min(1, occ / chunk.size ** 2)).toFixed(3), layers: [...layers].sort(), layers_ok: (rules.biography?.layers_required || []).every((l) => layers.has(l)),
-    placeholders: inst.some((x) => x.placeholder) }
+    placeholders: inst.some((x) => x.placeholder), grass: { ...grass, on_path: inst.filter((g) => g.src === 'field' && inst.some((p) => p.role === 'path' && (p.p[0] - g.p[0]) ** 2 + (p.p[2] - g.p[2]) ** 2 < (rules.grass?.field.path_clear_m ?? 1) ** 2)).length, wind_groups: new Set(inst.map((x) => x.wind_group)).size } }
   return { schema: 'kfb.place-recipe/1', seed, biome, chunk, instances: inst, stamps: stampOut, deltas: stampOut.map((s) => ({ stamp: s.id, schema: 'kfb.terrain-delta/1', only_add: true })), report: { groups: report, zone: zoneReport } }
 }
 
