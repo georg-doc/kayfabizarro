@@ -11874,6 +11874,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-826",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Georg q238/Chat: Fließbänder aus der Höhe gröber – benachbarte Bänder verschmelzen mit der Entfernung bis zum Vierfachen (Zweierpotenzen, weich überblendet), Farben unverändert (terrain3 t3Band, bands=fine = alt) @d41a502. Rauch/Staub bleibt wie er ist (Georg: verfliegt sich gut). Genius Loci Café: 30 HeyGen-Clips geschnitten und Whisper-geprüft (kayfabizarro @640d710 soul/genius_loci_cafe_r1); Georg hat den Opener geschlechtsneutral eingesprochen („Ah, a fluffy human, or a wandering soul pretending to be one.“) – Ansprache künftig geschlechtsneutral (kid, fluffhead, visitor; kein man/mon ami).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Aus der Höhe flirrten die feinen Bänder; breitere Bänder in der Ferne behalten die Farben und beruhigen das Bild.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-827",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Durchblick-Portal (Georg 25.10., Critic R1 Punkt 2, Idee nach einem Reddit-Beispiel): steht etwas zwischen Kamera und Figur bzw. Wagen, schneidet ein ovales Loch mit wanderndem, krisseligem Rand hinein – global für eingebaute Materialien (Bäume, Props, Bühnen, Kulissen), nicht Gelände/Himmel/Wasser/Partikel; nur Fragmente deutlich vor dem Ziel (kein Loch im Boden). src/look/seeThrough.js, seethrough=0 schaltet ab @(siehe Spiel-Commit V-827).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Portal statt einer springenden Kamera hält den Blick frei, ohne die Welt umzubauen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-828",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Geländeschatten kräftiger (Georg 25.10., Critic R1 Punkt 8: „ja, wenn es nicht zu stark auf die performanz geht oder folge-fehler verursachen kann“): im Paletten-Schattenton des Geländes (terrain3) wird der Schattenanteil zusätzlich auf 72 % abgedunkelt; Licht-Rig, Schattenkarte und beleuchtete Flächen bleiben unverändert, keine Zusatzkosten (nutzt den schon berechneten Schattenwert). Gemessen: Schatten unter dem Wagen ~20 % dunkler, Licht gleich. shadow=soft = alt @1583dba.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein klarer Kontaktschatten liest Höhe und Landung; die Abdunklung sitzt im Material, damit das eine Licht-Rig bleibt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11986,7 +12031,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1359",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1362",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
