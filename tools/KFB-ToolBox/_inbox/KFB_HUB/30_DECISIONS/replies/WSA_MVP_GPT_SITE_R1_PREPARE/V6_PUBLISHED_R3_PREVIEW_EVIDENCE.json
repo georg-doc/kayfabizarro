@@ -1,0 +1,134 @@
+{
+  "schema": "kfb.v6-published-r3-preview/1",
+  "date": "2026-10-25",
+  "authority": "Georg relayed WS0: V647 onlyGeorg; nativeownerprivate suffices. AdditionalBasicallpaths is separate beforetesters, notcurrentblocker.",
+  "project": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+  "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+  "privacy": {
+    "audience": "custom owneronly1user0groups unchanged",
+    "paths": [
+      "/game-package/assets/hero-Cg69yYuF.glb",
+      "/game-package/",
+      "/h15/",
+      "/heygen/"
+    ],
+    "noCredentialsHttp": [
+      401,
+      401,
+      401,
+      401
+    ],
+    "actualChromeIncognito": "Allfour displayed Anmelden, um Zugriff zu erhalten; no Georglogin performed",
+    "basicCoverage": "DEFERRED_NOT_FIXED; noadditionaltesters"
+  },
+  "v6": {
+    "source": "8241ddf14d1ad0cd9c20de8724703bc4b0388b9b",
+    "version_id": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5c4323ba3830819183279ebd56700d3e",
+    "version": 6,
+    "deployment": "appgdep_6add6493ff288191b9f91afd31fa9dbd",
+    "status": "succeeded",
+    "hostedModeTransitions": [
+      {
+        "from": "Walk",
+        "to": "Drive",
+        "pathname": "/",
+        "hash": "#m1,car,harvest,look=terrain3,world=probe,hud=3d",
+        "result": "gameHUD andKM/H loaded; no404"
+      },
+      {
+        "from": "Drive",
+        "to": "Walk",
+        "pathname": "/",
+        "hash": "#m1,harvest,look=terrain3,world=probe,hud=3d",
+        "result": "gameHUD reloaded; no404"
+      }
+    ],
+    "acceptanceScope": "navigation only; no fullphysics,vehiclevisual or clean-consoleclaim"
+  },
+  "r3": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "site/mvp-r3-dist",
+    "commit": "c41dc9aeff608571dc8d411dfbcc23a8637723dd",
+    "gameSource": "da7b08402b6f91eac16781860eae8d96cfc5d76b",
+    "files": 629,
+    "bytes": 78928470,
+    "manifestSha256": "469f7d19643bcdca2881aefb8f40320f8a3a78847bbd437b139ab4e1d71a52f0",
+    "localPreview": "http://127.0.0.1:8794/#m1,harvest,look=terrain3,world=probe,hud=3d,mount=live,h15=1,loci=1",
+    "h15Preview": "http://127.0.0.1:8794/h15/",
+    "siteSource": "ce97b8e38e19d5ed3b65a683622b7a9917837346",
+    "savedVersion": 7,
+    "savedVersionId": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_ffa5e84f73f08191b8ad14cd3d5c906f",
+    "deployment": null,
+    "archiveBytes": 89866240,
+    "archiveFileCount": 703,
+    "publicH15Fix": "5eb6aeb38748327e86de7d2903202baadc1f7059",
+    "publicH15SoundbedBlob": "3f2c7f26e8c568d8e45c5d1b3e0eead6ee8825b1"
+  },
+  "tests": {
+    "r3SourceHashes": {
+      "passed": 629,
+      "failed": 0
+    },
+    "routingUnit": {
+      "passed": 15,
+      "failed": 0
+    },
+    "deliveryUnit": {
+      "passed": 30,
+      "failed": 0
+    },
+    "actualLocalWorker": {
+      "passed": 639,
+      "failed": 0
+    },
+    "mockAudioContextRates": {
+      "passed": 4,
+      "rates": [
+        24000,
+        44100,
+        48000,
+        96000
+      ],
+      "scope": "independentinjectedmock, notaudiohearing"
+    },
+    "localMp4Range": {
+      "status": 206,
+      "mime": "video/mp4",
+      "contentRange": "bytes 0-15/4021925",
+      "bytes": 16
+    },
+    "h15Html": {
+      "status": 200,
+      "mime": "text/html; charset=utf-8"
+    },
+    "browser": {
+      "r3Game": "loaded actualgame/terrain",
+      "mount": "X triggered vehicleoverlay/Flammen-Dragster; secondX unmounted; no capturedObject3D.addnullmessage; notfullvisualacceptance",
+      "h15": "page mounted;3Dandpoolloaded;SoundbedUI changed toan; Convolverfilterederrorlogempty; resetSoundbedaus andclosedextraH15tab",
+      "unresolved": [
+        "Captured actionfigure_texture.png loaderror inR3preview",
+        "unclassified Objectconsoleentries mixedwithMonicaextension",
+        "externalWikisource somepoemsnotfound",
+        "variablelowFPSwithparallel3Dpreviews; no60FPSclaim",
+        "fullinworldH15entry/EscandOrakelcontactnotyetaccepted"
+      ]
+    }
+  },
+  "independent": {
+    "tester": "audio_tester629sourcehashes,45unitchecks,4injectedrateprobes,capturedreferenceexitfixsourceconfirmed",
+    "guard": "audio_guard CONTINUEv6underchangedauthority;R3PREVIEWONLY"
+  },
+  "nextGate": "Georg views localR3preview before anyR3publication. Currentlivev6 remains.",
+  "changedHostingFiles": [
+    "build/sites-worker.ts",
+    "lib/game-entry-routing.mjs",
+    "lib/mvp-delivery.mjs",
+    "lib/game-package.json",
+    "tests/game-entry-routing.mjs",
+    "tests/mvp-delivery.mjs",
+    "tests/worker-smoke.mjs",
+    "R3_PREVIEW_CHECKPOINT.md",
+    "public/game-package/* exactprivateR3delivery"
+  ],
+  "boundaries": "No R3deploy,newSite,Cloudflare,merge,deletion,audiencewidening,testerinvite,privatepayloadpublicupload,paidgeneration. Localsyntheticaccessisforpreviewonly."
+}
