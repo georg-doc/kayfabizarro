@@ -11184,6 +11184,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-780",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "Gesprächs-Blicke (Georg q206, q207): Bei direkter Ansprache schaut der NPC kurz in die Kamera (Variante B, etwa 0,8 s, dann zurück zur Spielfigur); die Gesprächs-Stellung bleibt bei ±40° (keine Drehung auf ±55°, keine neue Shot-9-Kamera). WSB N35 Schritt E damit abgeschlossen; Spiel-Daten gaze.talk.r1.json gelten mit Lesart B.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der kurze Kamerablick macht den Spieler zum Gesprächspartner; die offene Stellung hält die Gesichter frontal.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11296,7 +11311,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1306",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1307",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

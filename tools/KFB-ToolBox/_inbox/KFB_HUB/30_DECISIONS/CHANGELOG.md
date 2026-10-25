@@ -17,6 +17,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-780 Blick bei Ansprache kurz in die Kamera (B), Stellung bleibt ±40°.
 - V-779 Suno-Mindscapes: Georgs S2/S3/S8 Golden; neu S13 Traumreise, S14 Kreativ-Atelier, S15 Spiegelkammer (b231–b233); Claude Design nur gekapselte Module.
 - V-778 Sonne im Regelwerk = Blender-Rig, P0-Hang gedreht, Steinspur vom Hangfuß, Baumgruppe hangauf, Holzstücke ohne Durchdringung. P0 8414ec47.
 - V-777 Löser: Kontakt an Stamps, Spuren, P0-Busch am Stumpf, Fallobst im Löser, eine Fluff-Farbe; FB-Guard-Proof-Durchlass. P0 5511b72c.
