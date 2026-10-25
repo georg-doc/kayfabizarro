@@ -1,0 +1,38 @@
+{
+  "source": "Dropbox /CLAUDE/KFB_HUB/40_AUDIO/kfb_language_r1/probe_r10_1.html",
+  "sourceSha256": "108314866754b5a253f4afcac74462360416a6ccde4a9e93e072c4efa4b5a2bf",
+  "sourceBytes": 131310,
+  "privateFontEmbeddedInSource": "NOT COPIED",
+  "parts": {
+    "helpers": {
+      "firstLine": 396,
+      "lastLine": 398,
+      "sha256": "df33e73d9fe0941e0837480f95b6ede267a39f7437b3611a5d1cdafc0456e789"
+    },
+    "roles_and_morphology": {
+      "firstLine": 401,
+      "lastLine": 432,
+      "sha256": "299a65556db3e786d7e4e80680e999046bdd837ea21c9cb1fcc78333790ef32b"
+    },
+    "unlock_and_keys": {
+      "firstLine": 441,
+      "lastLine": 443,
+      "sha256": "4697a3a5c46a04ed1b3b2b8a8c5ae89422171f589493d842069bd27ad592e899"
+    },
+    "stageAt": {
+      "firstLine": 446,
+      "lastLine": 446,
+      "sha256": "4fc3836d61ffaeaf930ce3a7f0257c5a384ce043efbadd785b65f5adbaa88c58"
+    },
+    "fitCoded": {
+      "firstLine": 464,
+      "lastLine": 470,
+      "sha256": "5740da04370ec2bc4abd114a7bdf913eac7fbea08354afb8fbb95ff89f7bb0ab"
+    }
+  },
+  "seams": [
+    "Probe sample card/deck state is replaced with caller-supplied cards, decks and read-only progression snapshot. No localStorage or encounter counting in the presentation package.",
+    "Glyph alphabet is host-selectable; existing Unicode fallback is used, no private PottyMouth binary is copied.",
+    "After original fitCoded, reserve original word width in an inline box; glyph enlargement remains transform-only and source clamps remain intact."
+  ]
+}
