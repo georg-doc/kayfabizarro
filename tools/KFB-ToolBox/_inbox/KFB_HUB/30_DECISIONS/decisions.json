@@ -11844,6 +11844,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-824",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Georg q237: Weg B – die Farben der Bemalung werden gegen Farben der Gegend getauscht (Textur-Farbcluster nach Flächenrang, V-816), nicht Bauteile gefärbt (A, V-817). cluster_map (r816, WSB) in kfb_clay_bpy übernommen (Sicherung vor_V824). Golden: Theater und Utopia r816. Ausrollen auf die 13 Bühnen aus V-817, Probe auf den acht bisher nicht einfärbbaren; Kritiker-K2 nach V-816. Dazu q235 (Fahrzeug-Seele im Spiel) und q236 (Flug Standard, Mech-Dummy) So weiter, Feinschliff später.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Bemalung zieht die Grenzen selbst: keine Flecken, die Bühne bleibt vielfarbig und gehört trotzdem zum Biom.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11956,7 +11971,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1357",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1358",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

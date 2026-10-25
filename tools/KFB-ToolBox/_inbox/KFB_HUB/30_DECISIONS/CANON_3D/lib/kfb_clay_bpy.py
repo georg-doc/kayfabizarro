@@ -1,4 +1,4 @@
-# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0). · r809 (V-809, WS0 25.10.): optionale gradient_map (Verlaufs-Abbildung für wenig gesättigte Teile, Albedo-Buntheit C* < 15; Standard aus).
+# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0). · r809 (V-809, WS0 25.10.): optionale gradient_map (Verlaufs-Abbildung für wenig gesättigte Teile, Albedo-Buntheit C* < 15; Standard aus). · r816 (V-824, Georg q237 B, WS0 25.10.): optionale cluster_map (Farbcluster der Textur nach Flächenrang auf die Palette, Helligkeit und Zeichnung bleiben; Textur-Kopie nur im Speicher; Standard aus).
 #
 # EIN Material-Baustein für alles, was in Blender gebaut wird, mit den Profilen 1:1 aus
 #   replies/CLAY_SSOT_R1/kfb-clay.v1.1.js (Quellzeilen unten je Wert) und den Rollenfarben aus
@@ -214,7 +214,38 @@ def _facet_height(nt, P, size, slope, seed_off, loc):
     return _math(nt, 'MULTIPLY', h, slope * size, (x0 + 1160, y0))
 
 
-def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None, pull_value=0.0, gradient_map=False):
+def _oklab(lin):
+    import numpy as np
+    M1 = np.array([[0.4122214708, 0.5363325363, 0.0514459929], [0.2119034982, 0.6806995451, 0.1073969566], [0.0883024619, 0.2817188376, 0.6299787005]])
+    M2 = np.array([[0.2104542553, 0.7936177850, -0.0040720468], [1.9779984951, -2.4285922050, 0.4505937099], [0.0259040371, 0.7827717662, -0.8086757660]])
+    return np.cbrt(np.clip(lin, 0, None) @ M1.T) @ M2.T
+def _oklab_inv(lab):
+    import numpy as np
+    M2i = np.array([[1.0, 0.3963377774, 0.2158037573], [1.0, -0.1055613458, -0.0638541728], [1.0, -0.0894841775, -1.2914855480]])
+    M1i = np.array([[4.0767416621, -3.3077115913, 0.2309699292], [-1.2684380046, 2.6097574011, -0.3413193965], [-0.0041960863, -0.7034186147, 1.7076147010]])
+    return np.clip((lab @ M2i.T) ** 3 @ M1i.T, 0, 1)
+_CLUSTER_IMG = {}
+def cluster_image(image, cmap):
+    """r816 (V-816, Vorschlag WSB): Kopie der Textur nur im Speicher (nicht gespeichert, nicht ins Asset gebacken): jedes Texel bekommt Farbton und Buntheit (OKLab a, b)
+    der Rollenfarbe seines Clusters, die Helligkeit (OKLab L) und damit die gemalte Zeichnung bleibt. cmap: {'ab': [[a, b], ...] Cluster-Mitten, 'hex': [Rollenfarbe je Cluster],
+    'grau_c': OKLab-Buntheit, darunter grau/dunkel → 'grau_hex' (Verlaufs-Abbildung)}."""
+    import numpy as np
+    key = (image.name, json.dumps(cmap, sort_keys=True))
+    if key in _CLUSTER_IMG: return _CLUSTER_IMG[key]
+    w, h = image.size; px = np.zeros(w * h * 4, np.float32); image.pixels.foreach_get(px); px = px.reshape(-1, 4)
+    srgb = image.colorspace_settings.name == 'sRGB'; c = px[:, :3].astype(float)
+    if srgb: c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    lab = _oklab(c); C = np.hypot(lab[:, 1], lab[:, 2]); AB = np.array(cmap['ab'], float)
+    tgt = _oklab(np.array([_lin(x) for x in cmap['hex']], float))[:, 1:]; tg = _oklab(np.array([_lin(cmap['grau_hex'])], float))[0, 1:]
+    near = np.argmin(((lab[:, None, 1:] - AB[None]) ** 2).sum(2), 1); ab = np.where((C < cmap['grau_c'])[:, None], tg[None], tgt[near])
+    out = _oklab_inv(np.c_[lab[:, :1], ab])
+    if srgb: out = np.where(out <= 0.0031308, 12.92 * out, 1.055 * np.power(out, 1 / 2.4) - 0.055)
+    im2 = bpy.data.images.new(f'{image.name}:r816:{hashlib.md5(key[1].encode()).hexdigest()[:8]}', w, h, alpha=True); im2.colorspace_settings.name = image.colorspace_settings.name
+    im2.pixels.foreach_set(np.c_[out, px[:, 3:]].astype(np.float32).ravel()); im2.pack(); _CLUSTER_IMG[key] = im2
+    return im2
+
+
+def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None, pull_value=0.0, gradient_map=False, cluster_map=None):
     """Ein Knet-Material. ref_world = Bezugslänge in Welt-Einheiten; k = Welt-Länge je Objekt-Einheit / Bezugslänge (wie uClayK)."""
     pid = resolve_profile(profile); Pp = PROFILES[pid]; sd = seed_from(seed); so = (sd % 9973) / 9973 * 50.0
     m = bpy.data.materials.new(f'kfb-clay:{pid}:{name}'); m.use_nodes = True; nt = m.node_tree; nt.nodes.clear()
@@ -232,6 +263,8 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
     bump = _n(nt, 'ShaderNodeBump', (1700, -300)); bump.inputs['Strength'].default_value = 1.0; bump.inputs['Distance'].default_value = 1.0; nt.links.new(Hw, bump.inputs['Height'])
     nt.links.new(bump.outputs['Normal'], bs.inputs['Normal'])
     # Farbe: Quelle (Bild/Vertexfarbe/Wert) → zur Rolle gezogen (Farbton + Sättigung, Helligkeit bleibt) → Fleckung (mottle)
+    if image is not None and cluster_map:   # r816 (V-816): Farbcluster der Textur → Rollenfarben (Zug schon im Bild, kein weiterer Rollenzug)
+        image = cluster_image(image, cluster_map); pull = 0.0; gradient_map = False
     if image is not None:
         ti = _n(nt, 'ShaderNodeTexImage', (800, 900)); ti.image = image; col = ti.outputs['Color']
     elif vcol:
@@ -267,7 +300,7 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
     if Pp['emissive'] and emission and (emission.get('image') or any(c > 0 for c in emission['color'][:3])) and emission['strength'] > 0:   # Z. 324: P.emissive && src.emissive → kopieren
         bs.inputs['Emission Color'].default_value = tuple(emission['color'][:3]) + (1,); bs.inputs['Emission Strength'].default_value = emission['strength']
         if emission.get('image'): et = _n(nt, 'ShaderNodeTexImage', (1500, 300)); et.image = emission['image']; nt.links.new(et.outputs['Color'], bs.inputs['Emission Color'])
-    m['kfb_material'] = f'{VERSION}/{pid}'; m['kfb_clay'] = json.dumps({'schema': SCHEMA, 'module': MODULE, 'profile': pid, 'seed': sd, 'k': round(k, 6), 'ref_world': round(ref_world, 4), 'role_hex': role_hex, 'pull': round(pull, 3), 'pull_value': round(pull_value, 3), 'gradient_map': bool(gradient_map)})
+    m['kfb_material'] = f'{VERSION}/{pid}'; m['kfb_clay'] = json.dumps({'schema': SCHEMA, 'module': MODULE, 'profile': pid, 'seed': sd, 'k': round(k, 6), 'ref_world': round(ref_world, 4), 'role_hex': role_hex, 'pull': round(pull, 3), 'pull_value': round(pull_value, 3), 'gradient_map': bool(gradient_map), 'cluster_map': bool(cluster_map)})
     return m
 
 
@@ -321,7 +354,7 @@ def _world_height(objs):
     return (max(zs) - min(zs)) if zs else 1.0
 
 
-def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull=None, scale_ref=None, set_props=True, skip=SKIP, pull_value=0.0, gradient_map=False):
+def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull=None, scale_ref=None, set_props=True, skip=SKIP, pull_value=0.0, gradient_map=False, cluster_map=None):
     """Eingangsprüfung (V-565): alle Meshes unter ob → kfb-clay mit Rollenfarbe. source: 'own' (Rollenton direkt), 'kit' (Kit-Textur umgetönt),
     'meshy' (leicht getönt, ≤ MAX_PULL). scale_ref: Bezugslänge in Welt-Einheiten (Standard: Figur = Objekthöhe, sonst FrizzleBob-Höhe wie Proof Stage).
     Rückgabe: Bericht (dict). Setzt auf ob: kfb_role, kfb_color (Rollenton), kfb_clay_profile."""
@@ -336,12 +369,12 @@ def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull
     for o in meshes:
         wscale = (abs(o.matrix_world.to_3x3().determinant())) ** (1 / 3); k = wscale / ref
         for slot in o.material_slots:
-            src = slot.material; key = (src.name if src else None, round(k, 5), round(pull_value, 3), bool(gradient_map))
+            src = slot.material; key = (src.name if src else None, round(k, 5), round(pull_value, 3), bool(gradient_map), json.dumps(cluster_map, sort_keys=True) if cluster_map else None)
             if key not in cache:
                 si = _src_info(src); own = source == 'own' or (si['image'] is None and si['vcol'] is None and si['base_hex'] is None)   # r2 (K4): Kit mit reiner Grundfarbe wird angezogen (pull), nicht ersetzt
                 cache[key] = build_material(f'{ob.name}:{src.name if src else "none"}', pid, seed if seed is not None else ob.name, ref, k,
                                             base_hex=rhex if own else si['base_hex'], image=None if own else si['image'], vcol=None if own else si['vcol'],
-                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'], pull_value=0.0 if own else pull_value, gradient_map=False if own else gradient_map)
+                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'], pull_value=0.0 if own else pull_value, gradient_map=False if own else gradient_map, cluster_map=None if own else cluster_map)
             slot.material = cache[key]; rep['replaced'] += 1
         if not o.material_slots:
             m = build_material(f'{ob.name}:none', pid, seed if seed is not None else ob.name, ref, k, base_hex=rhex); o.data.materials.append(m); rep['replaced'] += 1

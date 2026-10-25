@@ -123,6 +123,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-821 Trick-Knöpfe: Claude-Design-Paket (b240, Gate PASS).
 - V-822 Racer-Flug Standard (Doppel-Leertaste/Rampe, fly=0 aus).
 - V-823 Combat-Mech als Jetpack-Dummy in der V-Reihe (privat).
+- V-824 Georg q237 B: Bemalung tauschen (cluster_map im Kanon), Ausrollen auf alle Bühnen; q235/q236 So weiter.
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
 - q184 accepted: earlier audio-separation gate CLOSED. Current checked game188e4f709f1301f6574f06631b750c6adf2e44f8, remote36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3. Node22.23.4 ready;24/24preparedmodulechecksPASS underNode22. Fullprivatebuildinputcouldnotbetransferred: connectorlargerbinaryempty/nonUTF8;ordinaryGitnocredential;authenticatedChromeZIPblocked,documenteddownloadretrytimedoutwithoutarchive. BLOCKEDreceivinginput;notpublished,noGeorgtokenrequest,nonewSite/audience/secret/gamechanges. Return replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidenceWSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. NextWS0/WS1:onecompleteprivatesource+figuresorfinsheddist/site-build/provenancehandoffatsameprivateprojectlocation;nohostsubstitution.
