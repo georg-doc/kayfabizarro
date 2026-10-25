@@ -32,6 +32,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-792 Löser N40 r13: Ü4 in Dicken-Reihenfolge (solveLocal), Kontakt auf dem Messkreis, Holz-Zweig nur für Holz, Ü5 echte Kachel, Ü3 ganze Gruppe. P0 1f60e1ac.
 - V-793 Ü4 im Gate-Maß (b−a)/b, Baum- und Busch-Slots gemeinsam, Anker-Baum mit Nest (Fallobst). P0 7929923a.
 - V-794 Kritiker N40 R1: Form-DNA, Waldrand überlappt, Licht-Nester, Fokus/Echo-Fluff, Fallobst kurz, Moos-Fugen, Weg-Kern am Stumpf, Lesesteine; Boden #7e984d, bark 0,7, Kontaktton in Blender. P0 6965f6fa.
+- V-795 Kritiker N40 R2: ein Fokus am Stumpf, Fallobst daraus, Echo dunkler/kleiner, Holz/Kiesel getrennt, Weg-Kern länger, Lesesteine am Hang; Kontaktton Licht halb/Schatten voll, Quaternius glatt. P0 44879a71.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
 - V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
 - V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.

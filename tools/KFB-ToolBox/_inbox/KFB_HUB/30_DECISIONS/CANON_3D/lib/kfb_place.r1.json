@@ -203,7 +203,8 @@
    "piece_max_m": 0.22,
    "piece_ratio": 0.32,
    "note_v787": "Staffel L/M/S, Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 %, großes Stück in der Mitte (WSB N40 r7)",
-   "note_v790": "Bäume: Kontakt um den gemessenen Stammfuß (Kachel foot_r_m, foot_off_m aus WSB gate_hull_p0, N40); Formel tree_foot_ratio/min nur ohne Messung"
+   "note_v790": "Bäume: Kontakt um den gemessenen Stammfuß (Kachel foot_r_m, foot_off_m aus WSB gate_hull_p0, N40); Formel tree_foot_ratio/min nur ohne Messung",
+   "piece_min_m": 0.06
   },
   "ordered": {
    "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
@@ -575,12 +576,13 @@
    "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)",
    "roll_steps": 8
   },
-  "ring_tree": 0.25,
+  "ring_tree": 0.35,
   "group_share": 0.35,
   "echo_dim": {
-   "chroma": 0.55,
-   "L": 0.06,
-   "note": "V-794: nur das Fokus-Nest (P0: Busch-Nest am Stumpf) in vollem fluff_mode-Ton, alle anderen Nester (accent echo) gedämpft"
+   "chroma": 0.9,
+   "L": -0.1,
+   "size": 0.75,
+   "note": "V-795: Echo = gleicher Ton, dunkler und kleiner (kein zweiter Pfirsich-Ton); in P0 tragen nur die Anker Fluff"
   }
  },
  "finds": {
@@ -14000,8 +14002,8 @@
   }
  },
  "p0": {
-  "bush_next_to_stamp": 4.5,
-  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei; V-794: Steinnest = Lesesteine 2,4 m neben der Spur bei 45 % vom Stumpf",
+  "bush_next_to_stamp": 1.8,
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei; V-794: Steinnest = Lesesteine 2,4 m neben der Spur bei 45 % vom Stumpf; V-795: Busch-Nest 1,8 m am Stumpf (ein Fokus), Fallobst aus dem Fokus-Nest, Lesesteine am steilsten Spurrand",
   "tree_uphill": 9,
   "triangle_turn": 0.9,
   "stone_nest_path": {
