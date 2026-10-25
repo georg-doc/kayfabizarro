@@ -120,3 +120,7 @@ Cloudflare remains deliberately excluded.
 - unresolved by design: no stems, no World consumer integration, no public Site audience change;
 - do not reconstruct B/C/D in World; consume `music-interaction-states.json` and the exposed adapter;
 - exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01`.
+
+
+## 2026-10-26 · Additive recovery pointer · Nature Orchestra R1
+Do not recreate the entire audio story from chat. Read Draft PR [#453](https://github.com/georg-doc/kayfabizarro/pull/453), branch `research/kfb-nature-orchestra-vs0-2026-10-26`, files under `skills/chat/workflows/KFB_JUKEBOX_CATALOG_01_AUDIO_SITE_2026-10-04/nature-orchestra/`: source list JSON (13 per-file CC0 declaration candidates; 0 downloaded, 0 hashed), research/architecture, VS0 brief, static test report 17/17, additive changelog and owning side-lane Return. Existing B/C/D source/owner/site remain untouched; current #352 frozen source-binding fault remains separately owned. VS0 intake must verify real donor source in isolation and individual file licensing before mixing, using the existing Registry/Inbox. This does **not** override the parent Audio Site's primary WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01 product gate. Nature side lane next: VS0 AUDIO NATURE SOURCE-ISOLATION + FOREST ADAPTER INTAKE.
