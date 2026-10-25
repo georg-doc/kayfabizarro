@@ -11304,6 +11304,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-788",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Welt-Laufzeit nach Critic R1 (CRITIC_3D_R1 Mittel 3,1 REWORK, zwei Blind-Juroren: B in allen Paaren besser): 1) Boden-Ruhefläche als Standard: die terrain3-Fließbänder bleiben, aber nur als Helligkeitsstufe der Biom-Grundfarbe (Hub 0,35; Hash ground=flow zeigt die vollen Fließfarben). 2) Hain-Ebene im Löser (grovePlan, rules.grove): je 32-m-Zone Hain (3 Gruppen eng in der Zonenmitte, ≈ 10–15 Bäume, Haine 30–40 m auseinander, Anteil ≈ 31 %) oder Wiese (20 % Chance auf ein Nest). 3) Moos-Palette Gras-Oliv statt Mint (Grundton 138 → 128, Abstand 8, Chroma 1,1), Mesa Chroma 1,1 → 0,9. 4) Steinkit-Vertex-Farben bleiben beim Batchen (schwarze Steine), KayKit-Material immer von einer Kachel mit Atlas-Textur (weiße Bäume je nach Ladereihenfolge). Offen für Georg: Relief der Fahrwelt gegen Baumgröße (Kritiker: Baum < 1/10 Hügelhöhe).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Welt muss gegen die KayKit-Vorlage als Ort lesbar sein: ruhiger Boden, Haine statt Konfetti, Farben trennen Boden und Laub.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-789",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Löser zu WSB N40 r8: Baum-Nester ring_r_max 0,25 × cr plus Adapter-Rückfall find_nearest; G1 mit ±8 % Rand (band_margin); Ü3-Nachlauf auch für Bäume und Büsche; Fuß-Büschel nie im Ü5-Kreis eines anderen Steins/Baums; Weg vom Hangfuß mit größtem Abstand zu den Gruppen, kein Wegstein in einem Objektfuß; P0 als Dreieck (triangle_turn 0,9). P0 golden 6368a2eb.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gate-Befunde im Löser lösen, Bildkomposition nicht als Diagonale.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-790",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Eine Hüllen-Wahrheit Löser/Gate (WSB N40 r9): Kacheln tragen die gemessene Gate-Hülle gate_r_m (größtes r über alle Drehungen) und bei Bäumen foot_r_m/foot_off_m (Stammfuß); der Löser misst G1 damit und legt den Baum-Kontakt um den gemessenen Stammfuß. Gate r5 freigegeben: G1 mit gate_r_m am Rezept-Ursprung, Kontaktfenster bei Bäumen um den Stammfuß (foot_centre, foot_r). P0 golden ca4f2ab7.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Löser und Gate messen dieselbe Hülle, sonst kreisen Befunde zwischen beiden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11416,7 +11461,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1319",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1322",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

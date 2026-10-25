@@ -25,6 +25,9 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 ## 2026-10-25
 - V-786 N40-Entscheide: Fluff auf Trägerhaut (Löser), Ü5-Fuß frei, Laub grün, Stein warm, moss_cut am Rand. P0 bfa2b2f1.
 - V-787 Löser zu WSB N40 r7: kein Nest an kahlen Bäumen, Ring ≤ 0,5 cr, G1/Ü3/Ü5, Holz ohne X, Kontakt-Staffel L/M/S, P0 kompakt (9 m/10 m). P0 d2ce0923.
+- V-788 Welt nach Critic R1: Boden-Ruhefläche Standard, Hain-Ebene (grovePlan), Moos Gras-Oliv, Mesa leiser, Stein-/Baum-Materialfehler behoben.
+- V-789 Löser N40 r8: Baum-Ring 0,25 cr, G1-Rand 8 %, Ü3 Bäume, Ü5 Stützen-Gras, Weg an Gruppen vorbei, P0-Dreieck. P0 6368a2eb.
+- V-790 Gate-Hülle als Kachel-Wahrheit (gate_r_m, foot_r_m), Gate r5 freigegeben. P0 ca4f2ab7.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
 - V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
 - V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.

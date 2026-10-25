@@ -118,7 +118,10 @@
    "spread_target": 0.5,
    "neighbour_r": 4.5,
    "clone_dist_H": 1.6484,
-   "float_tol_H": 0.003
+   "float_tol_H": 0.003,
+   "band_margin": 0.08,
+   "note_v790": "G1 misst mit Kachel gate_r_m (größte Gate-Hülle über alle Drehungen, WSB N40) am Rezept-Ursprung; Gate r5 misst gleich",
+   "note_v791": "gate_r_m für alle Kacheln aus WSB gate_hull_all.json (292 gemessen); Nachlauf Ü4/Ü3 prüft G1 nach jeder Änderung"
   },
   "nest": {
    "sizes": [
@@ -189,7 +192,7 @@
    ],
    "applies_to": "Anker und frei stehende Objekte; Stützen im Nest teilen den Kontakt des Ankers (V-763)",
    "tree_foot_ratio": 0.12,
-   "tree_foot_min": 0.22,
+   "tree_foot_min": 0.34,
    "note_v784": "Baum: Kontakt am Stammfuß (Kronen-Hüllradius × 0,12, mindestens 0,22 m); Stücke paarweise ungleich groß, radial ±12 % versetzt",
    "staffel": [
     1,
@@ -198,7 +201,8 @@
    ],
    "piece_max_m": 0.22,
    "piece_ratio": 0.32,
-   "note_v787": "Staffel L/M/S, Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 %, großes Stück in der Mitte (WSB N40 r7)"
+   "note_v787": "Staffel L/M/S, Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 %, großes Stück in der Mitte (WSB N40 r7)",
+   "note_v790": "Bäume: Kontakt um den gemessenen Stammfuß (Kachel foot_r_m, foot_off_m aus WSB gate_hull_p0, N40); Formel tree_foot_ratio/min nur ohne Messung"
   },
   "ordered": {
    "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
@@ -555,7 +559,8 @@
    "balls": 2,
    "only": "Hero-Nest des ersten Baums",
    "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)"
-  }
+  },
+  "ring_tree": 0.25
  },
  "finds": {
   "optional": true,
@@ -795,7 +800,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 72,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.082
   },
   {
    "id": "kaykit_forest:Bush_1_B",
@@ -828,7 +834,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.223
   },
   {
    "id": "kaykit_forest:Bush_1_C",
@@ -861,7 +868,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.371
   },
   {
    "id": "kaykit_forest:Bush_1_D",
@@ -894,7 +902,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.483
   },
   {
    "id": "kaykit_forest:Bush_1_E",
@@ -927,7 +936,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 552,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.495
   },
   {
    "id": "kaykit_forest:Bush_1_F",
@@ -960,7 +970,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 576,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.722
   },
   {
    "id": "kaykit_forest:Bush_1_G",
@@ -993,7 +1004,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 984,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.961
   },
   {
    "id": "kaykit_forest:Bush_2_A",
@@ -1026,7 +1038,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.191
   },
   {
    "id": "kaykit_forest:Bush_2_B",
@@ -1059,7 +1072,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 108,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.326
   },
   {
    "id": "kaykit_forest:Bush_2_C",
@@ -1092,7 +1106,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 108,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.52
   },
   {
    "id": "kaykit_forest:Bush_2_D",
@@ -1125,7 +1140,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 196,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.489
   },
   {
    "id": "kaykit_forest:Bush_2_E",
@@ -1158,7 +1174,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 476,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.744
   },
   {
    "id": "kaykit_forest:Bush_2_F",
@@ -1191,7 +1208,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 368,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.638
   },
   {
    "id": "kaykit_forest:Bush_3_A",
@@ -1224,7 +1242,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 208,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.325
   },
   {
    "id": "kaykit_forest:Bush_3_B",
@@ -1257,7 +1276,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 240,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.529
   },
   {
    "id": "kaykit_forest:Bush_3_C",
@@ -1290,7 +1310,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 272,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.782
   },
   {
    "id": "kaykit_forest:Bush_4_A",
@@ -1323,7 +1344,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.23
   },
   {
    "id": "kaykit_forest:Bush_4_B",
@@ -1356,7 +1378,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.397
   },
   {
    "id": "kaykit_forest:Bush_4_C",
@@ -1389,7 +1412,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 108,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.657
   },
   {
    "id": "kaykit_forest:Bush_4_D",
@@ -1422,7 +1446,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 132,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.562
   },
   {
    "id": "kaykit_forest:Bush_4_E",
@@ -1455,7 +1480,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 284,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.877
   },
   {
    "id": "kaykit_forest:Bush_4_F",
@@ -1488,7 +1514,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 284,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.052
   },
   {
    "id": "kaykit_forest:Grass_1_A",
@@ -1521,7 +1548,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.105
   },
   {
    "id": "kaykit_forest:Grass_1_A_Singlesided",
@@ -1554,7 +1582,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 14,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.088
   },
   {
    "id": "kaykit_forest:Grass_1_B",
@@ -1587,7 +1616,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 132,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.176
   },
   {
    "id": "kaykit_forest:Grass_1_B_Singlesided",
@@ -1620,7 +1650,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 42,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.175
   },
   {
    "id": "kaykit_forest:Grass_1_C",
@@ -1653,7 +1684,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 396,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.244
   },
   {
    "id": "kaykit_forest:Grass_1_C_Singlesided",
@@ -1686,7 +1718,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 126,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.245
   },
   {
    "id": "kaykit_forest:Grass_1_D",
@@ -1719,7 +1752,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 528,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.447
   },
   {
    "id": "kaykit_forest:Grass_1_D_Singlesided",
@@ -1752,7 +1786,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.443
   },
   {
    "id": "kaykit_forest:Grass_1_Mesh",
@@ -1785,7 +1820,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": "reine Mesh-Variante ohne Farbe"
+   "variant_note": "reine Mesh-Variante ohne Farbe",
+   "gate_r_m": 0.105
   },
   {
    "id": "kaykit_forest:Grass_1_SingleSided_Mesh",
@@ -1818,7 +1854,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 14,
-   "variant_note": "reine Mesh-Variante ohne Farbe"
+   "variant_note": "reine Mesh-Variante ohne Farbe",
+   "gate_r_m": 0.088
   },
   {
    "id": "kaykit_forest:Grass_2_A",
@@ -1851,7 +1888,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.08
   },
   {
    "id": "kaykit_forest:Grass_2_A_Singlesided",
@@ -1884,7 +1922,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 14,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.072
   },
   {
    "id": "kaykit_forest:Grass_2_B",
@@ -1917,7 +1956,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 132,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.139
   },
   {
    "id": "kaykit_forest:Grass_2_B_Singlesided",
@@ -1950,7 +1990,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 42,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.132
   },
   {
    "id": "kaykit_forest:Grass_2_C",
@@ -1983,7 +2024,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 528,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.276
   },
   {
    "id": "kaykit_forest:Grass_2_C_Singlesided",
@@ -2016,7 +2058,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.269
   },
   {
    "id": "kaykit_forest:Grass_2_D",
@@ -2049,7 +2092,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 528,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.495
   },
   {
    "id": "kaykit_forest:Grass_2_D_Singlesided",
@@ -2082,7 +2126,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.488
   },
   {
    "id": "kaykit_forest:Grass_2_Mesh",
@@ -2115,7 +2160,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 44,
-   "variant_note": "reine Mesh-Variante ohne Farbe"
+   "variant_note": "reine Mesh-Variante ohne Farbe",
+   "gate_r_m": 0.08
   },
   {
    "id": "kaykit_forest:Grass_2_SingleSided_Mesh",
@@ -2148,7 +2194,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 14,
-   "variant_note": "reine Mesh-Variante ohne Farbe"
+   "variant_note": "reine Mesh-Variante ohne Farbe",
+   "gate_r_m": 0.072
   },
   {
    "id": "kaykit_forest:Rock_2_E",
@@ -2181,7 +2228,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 438,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.141
   },
   {
    "id": "kaykit_forest:Rock_2_F",
@@ -2214,7 +2262,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 428,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.291
   },
   {
    "id": "kaykit_forest:Rock_2_G",
@@ -2247,7 +2296,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 488,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.15
   },
   {
    "id": "kaykit_forest:Rock_2_H",
@@ -2280,7 +2330,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 312,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.153
   },
   {
    "id": "kaykit_forest:Rock_3_A",
@@ -2313,7 +2364,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.298
   },
   {
    "id": "kaykit_forest:Rock_3_B",
@@ -2346,7 +2398,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.272
   },
   {
    "id": "kaykit_forest:Rock_3_C",
@@ -2379,7 +2432,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.301
   },
   {
    "id": "kaykit_forest:Rock_3_D",
@@ -2412,7 +2466,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.293
   },
   {
    "id": "kaykit_forest:Rock_3_E",
@@ -2445,7 +2500,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.366
   },
   {
    "id": "kaykit_forest:Rock_3_F",
@@ -2478,7 +2534,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 84,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.372
   },
   {
    "id": "kaykit_forest:Rock_3_G",
@@ -2511,7 +2568,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.605
   },
   {
    "id": "kaykit_forest:Rock_3_H",
@@ -2544,7 +2602,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.634
   },
   {
    "id": "kaykit_forest:Rock_3_I",
@@ -2577,7 +2636,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.6
   },
   {
    "id": "kaykit_forest:Rock_3_J",
@@ -2610,7 +2670,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.645
   },
   {
    "id": "kaykit_forest:Rock_3_K",
@@ -2643,7 +2704,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.819
   },
   {
    "id": "kaykit_forest:Rock_3_L",
@@ -2676,7 +2738,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 168,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.9
   },
   {
    "id": "kaykit_forest:Rock_3_M",
@@ -2709,7 +2772,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.066
   },
   {
    "id": "kaykit_forest:Rock_3_N",
@@ -2742,7 +2806,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.077
   },
   {
    "id": "kaykit_forest:Rock_3_O",
@@ -2775,7 +2840,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.085
   },
   {
    "id": "kaykit_forest:Rock_3_P",
@@ -2808,7 +2874,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.021
   },
   {
    "id": "kaykit_forest:Rock_3_Q",
@@ -2841,7 +2908,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.484
   },
   {
    "id": "kaykit_forest:Rock_3_R",
@@ -2874,7 +2942,8 @@
     "deform": "nein (V-574)"
    },
    "tris": 320,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.624
   },
   {
    "id": "kaykit_forest:Tree_1_A",
@@ -2992,7 +3061,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 530,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.002,
+   "foot_r_m": 0.274,
+   "foot_off_m": [
+    0.004,
+    0.004
+   ]
   },
   {
    "id": "kaykit_forest:Tree_1_B",
@@ -3124,7 +3199,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 636,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.268,
+   "foot_r_m": 0.295,
+   "foot_off_m": [
+    0.01,
+    0.01
+   ]
   },
   {
    "id": "kaykit_forest:Tree_1_C",
@@ -3298,7 +3379,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 1364,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 2.083,
+   "foot_r_m": 0.284,
+   "foot_off_m": [
+    0.022,
+    -0.006
+   ]
   },
   {
    "id": "kaykit_forest:Tree_2_A",
@@ -3416,7 +3503,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 336,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.924,
+   "foot_r_m": 0.09,
+   "foot_off_m": [
+    0.004,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_2_B",
@@ -3548,7 +3641,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 492,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.215,
+   "foot_r_m": 0.098,
+   "foot_off_m": [
+    0.006,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_2_C",
@@ -3680,7 +3779,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 648,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.526,
+   "foot_r_m": 0.129,
+   "foot_off_m": [
+    0.022,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_2_D",
@@ -3854,7 +3959,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 1428,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.627,
+   "foot_r_m": 0.129,
+   "foot_off_m": [
+    0.022,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_2_E",
@@ -4056,7 +4167,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 1560,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 2.171,
+   "foot_r_m": 0.15,
+   "foot_off_m": [
+    0.023,
+    -0.013
+   ]
   },
   {
    "id": "kaykit_forest:Tree_3_A",
@@ -4174,7 +4291,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 978,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.953,
+   "foot_r_m": 0.274,
+   "foot_off_m": [
+    -0.004,
+    -0.004
+   ]
   },
   {
    "id": "kaykit_forest:Tree_3_B",
@@ -4306,7 +4429,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 988,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.347,
+   "foot_r_m": 0.295,
+   "foot_off_m": [
+    -0.01,
+    -0.01
+   ]
   },
   {
    "id": "kaykit_forest:Tree_3_C",
@@ -4452,7 +4581,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 2228,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.815,
+   "foot_r_m": 0.284,
+   "foot_off_m": [
+    -0.015,
+    0.017
+   ]
   },
   {
    "id": "kaykit_forest:Tree_4_A",
@@ -4570,7 +4705,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 404,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.837,
+   "foot_r_m": 0.092,
+   "foot_off_m": [
+    -0.004,
+    0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_4_B",
@@ -4688,7 +4829,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 522,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.838,
+   "foot_r_m": 0.115,
+   "foot_off_m": [
+    -0.006,
+    0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_4_C",
@@ -4834,7 +4981,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 982,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.2,
+   "foot_r_m": 0.124,
+   "foot_off_m": [
+    -0.0,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_1_A",
@@ -4867,7 +5020,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 324,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.395,
+   "foot_r_m": 0.274,
+   "foot_off_m": [
+    0.004,
+    0.004
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_1_B",
@@ -4900,7 +5059,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 332,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.702,
+   "foot_r_m": 0.295,
+   "foot_off_m": [
+    0.01,
+    0.01
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_1_C",
@@ -4933,7 +5098,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 936,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 1.18,
+   "foot_r_m": 0.284,
+   "foot_off_m": [
+    0.022,
+    -0.006
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_2_A",
@@ -4966,7 +5137,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 404,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.387,
+   "foot_r_m": 0.089,
+   "foot_off_m": [
+    0.004,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_2_B",
@@ -4999,7 +5176,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 448,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.552,
+   "foot_r_m": 0.1,
+   "foot_off_m": [
+    0.006,
+    -0.0
+   ]
   },
   {
    "id": "kaykit_forest:Tree_Bare_2_C",
@@ -5032,7 +5215,13 @@
     "deform": "nein (V-574)"
    },
    "tris": 634,
-   "variant_note": null
+   "variant_note": null,
+   "gate_r_m": 0.504,
+   "foot_r_m": 0.099,
+   "foot_off_m": [
+    -0.0,
+    0.0
+   ]
   },
   {
    "id": "steinkit_v4:platte_a:L",
@@ -5071,7 +5260,8 @@
     "deform": "nein"
    },
    "tris": 900,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.37
   },
   {
    "id": "steinkit_v4:platte_a:M",
@@ -5110,7 +5300,8 @@
     "deform": "nein"
    },
    "tris": 900,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.185
   },
   {
    "id": "steinkit_v4:platte_b:L",
@@ -5149,7 +5340,8 @@
     "deform": "nein"
    },
    "tris": 900,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.367
   },
   {
    "id": "steinkit_v4:platte_b:M",
@@ -5188,7 +5380,8 @@
     "deform": "nein"
    },
    "tris": 900,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.184
   },
   {
    "id": "steinkit_v4:platte_c:M",
@@ -5227,7 +5420,8 @@
     "deform": "nein"
    },
    "tris": 600,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.199
   },
   {
    "id": "steinkit_v4:platte_c:S",
@@ -5266,7 +5460,8 @@
     "deform": "nein"
    },
    "tris": 600,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.085
   },
   {
    "id": "steinkit_v4:brocken_a:L",
@@ -5305,7 +5500,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.398
   },
   {
    "id": "steinkit_v4:brocken_a:M",
@@ -5344,7 +5540,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.199
   },
   {
    "id": "steinkit_v4:brocken_a:S",
@@ -5383,7 +5580,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.085
   },
   {
    "id": "steinkit_v4:brocken_b:L",
@@ -5422,7 +5620,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.439
   },
   {
    "id": "steinkit_v4:brocken_b:M",
@@ -5461,7 +5660,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.219
   },
   {
    "id": "steinkit_v4:brocken_c:M",
@@ -5500,7 +5700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.218
   },
   {
    "id": "steinkit_v4:brocken_c:S",
@@ -5539,7 +5740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.093
   },
   {
    "id": "steinkit_v4:brocken_d:M",
@@ -5578,7 +5780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.208
   },
   {
    "id": "steinkit_v4:brocken_d:S",
@@ -5617,7 +5820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.089
   },
   {
    "id": "steinkit_v4:mauer_a:L",
@@ -5656,7 +5860,8 @@
     "deform": "nein"
    },
    "tris": 1398,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.359
   },
   {
    "id": "steinkit_v4:mauer_a:M",
@@ -5695,7 +5900,8 @@
     "deform": "nein"
    },
    "tris": 1398,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.179
   },
   {
    "id": "steinkit_v4:mauer_b:L",
@@ -5734,7 +5940,8 @@
     "deform": "nein"
    },
    "tris": 1600,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.359
   },
   {
    "id": "steinkit_v4:trommel_a:L",
@@ -5773,7 +5980,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.351
   },
   {
    "id": "steinkit_v4:trommel_a:M",
@@ -5812,7 +6020,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:trommel_b:L",
@@ -5851,7 +6060,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0012
+   "glb_check_dev": 0.0012,
+   "gate_r_m": 0.462
   },
   {
    "id": "steinkit_v4:trommel_b:M",
@@ -5890,7 +6100,8 @@
     "deform": "nein"
    },
    "tris": 1200,
-   "glb_check_dev": 0.0012
+   "glb_check_dev": 0.0012,
+   "gate_r_m": 0.231
   },
   {
    "id": "steinkit_v4:keil_a:M",
@@ -5929,7 +6140,8 @@
     "deform": "nein"
    },
    "tris": 700,
-   "glb_check_dev": 0.007
+   "glb_check_dev": 0.007,
+   "gate_r_m": 0.201
   },
   {
    "id": "steinkit_v4:keil_a:S",
@@ -5968,7 +6180,8 @@
     "deform": "nein"
    },
    "tris": 700,
-   "glb_check_dev": 0.007
+   "glb_check_dev": 0.007,
+   "gate_r_m": 0.086
   },
   {
    "id": "steinkit_v4:kiesel_a:S",
@@ -6007,7 +6220,8 @@
     "deform": "nein"
    },
    "tris": 900,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.079
   },
   {
    "id": "steinkit_v4:kiesel_b:S",
@@ -6046,7 +6260,8 @@
     "deform": "nein"
    },
    "tris": 1100,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_1_a:L",
@@ -6085,7 +6300,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.351
   },
   {
    "id": "steinkit_v4:kk_rock_1_a:M",
@@ -6124,7 +6340,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:kk_rock_1_b:L",
@@ -6163,7 +6380,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0009
+   "glb_check_dev": 0.0009,
+   "gate_r_m": 0.372
   },
   {
    "id": "steinkit_v4:kk_rock_1_b:M",
@@ -6202,7 +6420,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0009
+   "glb_check_dev": 0.0009,
+   "gate_r_m": 0.186
   },
   {
    "id": "steinkit_v4:kk_rock_1_c:L",
@@ -6241,7 +6460,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.391
   },
   {
    "id": "steinkit_v4:kk_rock_1_c:M",
@@ -6280,7 +6500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.195
   },
   {
    "id": "steinkit_v4:kk_rock_1_d:L",
@@ -6319,7 +6540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_1_d:M",
@@ -6358,7 +6580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_1_e:L",
@@ -6397,7 +6620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.381
   },
   {
    "id": "steinkit_v4:kk_rock_1_e:M",
@@ -6436,7 +6660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.191
   },
   {
    "id": "steinkit_v4:kk_rock_1_f:L",
@@ -6475,7 +6700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.35
   },
   {
    "id": "steinkit_v4:kk_rock_1_f:M",
@@ -6514,7 +6740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.175
   },
   {
    "id": "steinkit_v4:kk_rock_1_g:L",
@@ -6553,7 +6780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.415
   },
   {
    "id": "steinkit_v4:kk_rock_1_g:M",
@@ -6592,7 +6820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.208
   },
   {
    "id": "steinkit_v4:kk_rock_1_h:L",
@@ -6631,7 +6860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.373
   },
   {
    "id": "steinkit_v4:kk_rock_1_h:M",
@@ -6670,7 +6900,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.187
   },
   {
    "id": "steinkit_v4:kk_rock_1_i:L",
@@ -6709,7 +6940,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.369
   },
   {
    "id": "steinkit_v4:kk_rock_1_i:M",
@@ -6748,7 +6980,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.184
   },
   {
    "id": "steinkit_v4:kk_rock_1_j:L",
@@ -6787,7 +7020,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_1_j:M",
@@ -6826,7 +7060,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_1_k:L",
@@ -6865,7 +7100,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0042
+   "glb_check_dev": 0.0042,
+   "gate_r_m": 0.352
   },
   {
    "id": "steinkit_v4:kk_rock_1_k:M",
@@ -6904,7 +7140,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0042
+   "glb_check_dev": 0.0042,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:kk_rock_1_l:L",
@@ -6943,7 +7180,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.353
   },
   {
    "id": "steinkit_v4:kk_rock_1_l:M",
@@ -6982,7 +7220,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.177
   },
   {
    "id": "steinkit_v4:kk_rock_1_m:L",
@@ -7021,7 +7260,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.381
   },
   {
    "id": "steinkit_v4:kk_rock_1_m:M",
@@ -7060,7 +7300,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.19
   },
   {
    "id": "steinkit_v4:kk_rock_1_n:L",
@@ -7099,7 +7340,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.374
   },
   {
    "id": "steinkit_v4:kk_rock_1_n:M",
@@ -7138,7 +7380,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.187
   },
   {
    "id": "steinkit_v4:kk_rock_1_o:L",
@@ -7177,7 +7420,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.002
+   "glb_check_dev": 0.002,
+   "gate_r_m": 0.37
   },
   {
    "id": "steinkit_v4:kk_rock_1_o:M",
@@ -7216,7 +7460,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.002
+   "glb_check_dev": 0.002,
+   "gate_r_m": 0.185
   },
   {
    "id": "steinkit_v4:kk_rock_1_p:L",
@@ -7255,7 +7500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0067
+   "glb_check_dev": 0.0067,
+   "gate_r_m": 0.356
   },
   {
    "id": "steinkit_v4:kk_rock_1_p:M",
@@ -7294,7 +7540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0067
+   "glb_check_dev": 0.0067,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_1_q:L",
@@ -7333,7 +7580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.396
   },
   {
    "id": "steinkit_v4:kk_rock_1_q:M",
@@ -7372,7 +7620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.198
   },
   {
    "id": "steinkit_v4:kk_rock_2_a:L",
@@ -7411,7 +7660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0018
+   "glb_check_dev": 0.0018,
+   "gate_r_m": 0.487
   },
   {
    "id": "steinkit_v4:kk_rock_2_b:L",
@@ -7450,7 +7700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.448
   },
   {
    "id": "steinkit_v4:kk_rock_2_c:L",
@@ -7489,7 +7740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.466
   },
   {
    "id": "steinkit_v4:kk_rock_2_d:L",
@@ -7528,7 +7780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.471
   },
   {
    "id": "steinkit_v4:kk_rock_2_e:L",
@@ -7567,7 +7820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.391
   },
   {
    "id": "steinkit_v4:kk_rock_2_f:L",
@@ -7606,7 +7860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_2_g:L",
@@ -7645,7 +7900,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.006
+   "glb_check_dev": 0.006,
+   "gate_r_m": 0.348
   },
   {
    "id": "steinkit_v4:kk_rock_2_h:L",
@@ -7684,7 +7940,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.354
   },
   {
    "id": "steinkit_v4:kk_rock_3_a:L",
@@ -7723,7 +7980,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_3_a:M",
@@ -7762,7 +8020,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.177
   },
   {
    "id": "steinkit_v4:kk_rock_3_a:S",
@@ -7801,7 +8060,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_b:L",
@@ -7840,7 +8100,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0017
+   "glb_check_dev": 0.0017,
+   "gate_r_m": 0.365
   },
   {
    "id": "steinkit_v4:kk_rock_3_b:M",
@@ -7879,7 +8140,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0017
+   "glb_check_dev": 0.0017,
+   "gate_r_m": 0.183
   },
   {
    "id": "steinkit_v4:kk_rock_3_c:L",
@@ -7918,7 +8180,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.399
   },
   {
    "id": "steinkit_v4:kk_rock_3_c:M",
@@ -7957,7 +8220,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.2
   },
   {
    "id": "steinkit_v4:kk_rock_3_c:S",
@@ -7996,7 +8260,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.086
   },
   {
    "id": "steinkit_v4:kk_rock_3_d:L",
@@ -8035,7 +8300,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.357
   },
   {
    "id": "steinkit_v4:kk_rock_3_d:M",
@@ -8074,7 +8340,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_3_d:S",
@@ -8113,7 +8380,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_e:L",
@@ -8152,7 +8420,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.352
   },
   {
    "id": "steinkit_v4:kk_rock_3_e:M",
@@ -8191,7 +8460,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:kk_rock_3_e:S",
@@ -8230,7 +8500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.075
   },
   {
    "id": "steinkit_v4:kk_rock_3_f:L",
@@ -8269,7 +8540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0018
+   "glb_check_dev": 0.0018,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_3_f:M",
@@ -8308,7 +8580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0018
+   "glb_check_dev": 0.0018,
+   "gate_r_m": 0.177
   },
   {
    "id": "steinkit_v4:kk_rock_3_f:S",
@@ -8347,7 +8620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0018
+   "glb_check_dev": 0.0018,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_g:L",
@@ -8386,7 +8660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.369
   },
   {
    "id": "steinkit_v4:kk_rock_3_g:M",
@@ -8425,7 +8700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.184
   },
   {
    "id": "steinkit_v4:kk_rock_3_g:S",
@@ -8464,7 +8740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.079
   },
   {
    "id": "steinkit_v4:kk_rock_3_h:L",
@@ -8503,7 +8780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0022
+   "glb_check_dev": 0.0022,
+   "gate_r_m": 0.369
   },
   {
    "id": "steinkit_v4:kk_rock_3_h:M",
@@ -8542,7 +8820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0022
+   "glb_check_dev": 0.0022,
+   "gate_r_m": 0.184
   },
   {
    "id": "steinkit_v4:kk_rock_3_h:S",
@@ -8581,7 +8860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0022
+   "glb_check_dev": 0.0022,
+   "gate_r_m": 0.079
   },
   {
    "id": "steinkit_v4:kk_rock_3_i:L",
@@ -8620,7 +8900,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:kk_rock_3_i:M",
@@ -8659,7 +8940,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_3_i:S",
@@ -8698,7 +8980,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_j:L",
@@ -8737,7 +9020,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0026
+   "glb_check_dev": 0.0026,
+   "gate_r_m": 0.371
   },
   {
    "id": "steinkit_v4:kk_rock_3_j:M",
@@ -8776,7 +9060,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0026
+   "glb_check_dev": 0.0026,
+   "gate_r_m": 0.186
   },
   {
    "id": "steinkit_v4:kk_rock_3_j:S",
@@ -8815,7 +9100,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0026
+   "glb_check_dev": 0.0026,
+   "gate_r_m": 0.08
   },
   {
    "id": "steinkit_v4:kk_rock_3_k:L",
@@ -8854,7 +9140,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.357
   },
   {
    "id": "steinkit_v4:kk_rock_3_k:M",
@@ -8893,7 +9180,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_3_k:S",
@@ -8932,7 +9220,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_l:L",
@@ -8971,7 +9260,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.39
   },
   {
    "id": "steinkit_v4:kk_rock_3_l:M",
@@ -9010,7 +9300,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.195
   },
   {
    "id": "steinkit_v4:kk_rock_3_l:S",
@@ -9049,7 +9340,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.084
   },
   {
    "id": "steinkit_v4:kk_rock_3_m:L",
@@ -9088,7 +9380,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.353
   },
   {
    "id": "steinkit_v4:kk_rock_3_m:M",
@@ -9127,7 +9420,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:kk_rock_3_m:S",
@@ -9166,7 +9460,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0011
+   "glb_check_dev": 0.0011,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_n:L",
@@ -9205,7 +9500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.356
   },
   {
    "id": "steinkit_v4:kk_rock_3_n:M",
@@ -9244,7 +9540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_3_n:S",
@@ -9283,7 +9580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_o:L",
@@ -9322,7 +9620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.351
   },
   {
    "id": "steinkit_v4:kk_rock_3_o:M",
@@ -9361,7 +9660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.176
   },
   {
    "id": "steinkit_v4:kk_rock_3_o:S",
@@ -9400,7 +9700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.075
   },
   {
    "id": "steinkit_v4:kk_rock_3_p:L",
@@ -9439,7 +9740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.354
   },
   {
    "id": "steinkit_v4:kk_rock_3_p:M",
@@ -9478,7 +9780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.177
   },
   {
    "id": "steinkit_v4:kk_rock_3_p:S",
@@ -9517,7 +9820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:kk_rock_3_q:L",
@@ -9556,7 +9860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.362
   },
   {
    "id": "steinkit_v4:kk_rock_3_q:M",
@@ -9595,7 +9900,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.181
   },
   {
    "id": "steinkit_v4:kk_rock_3_q:S",
@@ -9634,7 +9940,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.078
   },
   {
    "id": "steinkit_v4:kk_rock_3_r:L",
@@ -9673,7 +9980,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.357
   },
   {
    "id": "steinkit_v4:kk_rock_3_r:M",
@@ -9712,7 +10020,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:kk_rock_3_r:S",
@@ -9751,7 +10060,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:qn_rock_1:L",
@@ -9790,7 +10100,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.408
   },
   {
    "id": "steinkit_v4:qn_rock_1:M",
@@ -9829,7 +10140,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0007
+   "glb_check_dev": 0.0007,
+   "gate_r_m": 0.204
   },
   {
    "id": "steinkit_v4:qn_rock_2:L",
@@ -9868,7 +10180,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.444
   },
   {
    "id": "steinkit_v4:qn_rock_2:M",
@@ -9907,7 +10220,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.222
   },
   {
    "id": "steinkit_v4:qn_rock_2:S",
@@ -9946,7 +10260,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0006
+   "glb_check_dev": 0.0006,
+   "gate_r_m": 0.095
   },
   {
    "id": "steinkit_v4:qn_rock_3:L",
@@ -9985,7 +10300,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.436
   },
   {
    "id": "steinkit_v4:qn_rock_3:M",
@@ -10024,7 +10340,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.218
   },
   {
    "id": "steinkit_v4:qn_rock_3:S",
@@ -10063,7 +10380,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.093
   },
   {
    "id": "steinkit_v4:qn_rock_4:L",
@@ -10102,7 +10420,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.35
   },
   {
    "id": "steinkit_v4:qn_rock_4:M",
@@ -10141,7 +10460,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.175
   },
   {
    "id": "steinkit_v4:qn_rock_4:S",
@@ -10180,7 +10500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.075
   },
   {
    "id": "steinkit_v4:qn_rock_5:L",
@@ -10219,7 +10540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.359
   },
   {
    "id": "steinkit_v4:qn_rock_5:M",
@@ -10258,7 +10580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.179
   },
   {
    "id": "steinkit_v4:qn_rock_5:S",
@@ -10297,7 +10620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.077
   },
   {
    "id": "steinkit_v4:qn_rock_6:L",
@@ -10336,7 +10660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.371
   },
   {
    "id": "steinkit_v4:qn_rock_6:M",
@@ -10375,7 +10700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.186
   },
   {
    "id": "steinkit_v4:qn_rock_6:S",
@@ -10414,7 +10740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.08
   },
   {
    "id": "steinkit_v4:qn_rock_7:L",
@@ -10453,7 +10780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.35
   },
   {
    "id": "steinkit_v4:qn_rock_7:M",
@@ -10492,7 +10820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.175
   },
   {
    "id": "steinkit_v4:qn_rock_7:S",
@@ -10531,7 +10860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.075
   },
   {
    "id": "steinkit_v4:qm_rockpath_round_small_1:S",
@@ -10570,7 +10900,8 @@
     "deform": "nein"
    },
    "tris": 1280,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.077
   },
   {
    "id": "steinkit_v4:qm_rockpath_round_small_2:S",
@@ -10609,7 +10940,8 @@
     "deform": "nein"
    },
    "tris": 1440,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.082
   },
   {
    "id": "steinkit_v4:qm_rockpath_round_small_3:S",
@@ -10648,7 +10980,8 @@
     "deform": "nein"
    },
    "tris": 1280,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.087
   },
   {
    "id": "steinkit_v4:qm_rockpath_round_thin:S",
@@ -10687,7 +11020,8 @@
     "deform": "nein"
    },
    "tris": 2880,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.082
   },
   {
    "id": "steinkit_v4:qm_rockpath_round_wide:S",
@@ -10726,7 +11060,8 @@
     "deform": "nein"
    },
    "tris": 4480,
-   "glb_check_dev": 0.0002
+   "glb_check_dev": 0.0002,
+   "gate_r_m": 0.095
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_1:M",
@@ -10765,7 +11100,8 @@
     "deform": "nein"
    },
    "tris": 1600,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.233
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_1:S",
@@ -10804,7 +11140,8 @@
     "deform": "nein"
    },
    "tris": 1600,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.1
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_2:M",
@@ -10843,7 +11180,8 @@
     "deform": "nein"
    },
    "tris": 1120,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.232
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_2:S",
@@ -10882,7 +11220,8 @@
     "deform": "nein"
    },
    "tris": 1120,
-   "glb_check_dev": 0.0001
+   "glb_check_dev": 0.0001,
+   "gate_r_m": 0.099
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_3:M",
@@ -10921,7 +11260,8 @@
     "deform": "nein"
    },
    "tris": 1280,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.214
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_small_3:S",
@@ -10960,7 +11300,8 @@
     "deform": "nein"
    },
    "tris": 1280,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.092
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_thin:L",
@@ -10999,7 +11340,8 @@
     "deform": "nein"
    },
    "tris": 3840,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.427
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_thin:M",
@@ -11038,7 +11380,8 @@
     "deform": "nein"
    },
    "tris": 3840,
-   "glb_check_dev": 0.0003
+   "glb_check_dev": 0.0003,
+   "gate_r_m": 0.214
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_wide:L",
@@ -11077,7 +11420,8 @@
     "deform": "nein"
    },
    "tris": 4800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.47
   },
   {
    "id": "steinkit_v4:qm_rockpath_square_wide:M",
@@ -11116,7 +11460,8 @@
     "deform": "nein"
    },
    "tris": 4800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.235
   },
   {
    "id": "steinkit_v4:qm_rock_medium_1:L",
@@ -11155,7 +11500,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.35
   },
   {
    "id": "steinkit_v4:qm_rock_medium_1:M",
@@ -11194,7 +11540,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.175
   },
   {
    "id": "steinkit_v4:qm_rock_medium_1:S",
@@ -11233,7 +11580,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0015
+   "glb_check_dev": 0.0015,
+   "gate_r_m": 0.075
   },
   {
    "id": "steinkit_v4:qm_rock_medium_2:L",
@@ -11272,7 +11620,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.001
+   "glb_check_dev": 0.001,
+   "gate_r_m": 0.372
   },
   {
    "id": "steinkit_v4:qm_rock_medium_2:M",
@@ -11311,7 +11660,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.001
+   "glb_check_dev": 0.001,
+   "gate_r_m": 0.186
   },
   {
    "id": "steinkit_v4:qm_rock_medium_2:S",
@@ -11350,7 +11700,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.001
+   "glb_check_dev": 0.001,
+   "gate_r_m": 0.08
   },
   {
    "id": "steinkit_v4:qm_rock_medium_3:L",
@@ -11389,7 +11740,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.355
   },
   {
    "id": "steinkit_v4:qm_rock_medium_3:M",
@@ -11428,7 +11780,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.178
   },
   {
    "id": "steinkit_v4:qm_rock_medium_3:S",
@@ -11467,7 +11820,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0
+   "glb_check_dev": 0.0,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:qp_pebble_round_icvsn3lmvy:S",
@@ -11506,7 +11860,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.076
   },
   {
    "id": "steinkit_v4:qp_pebble_square_2ytlzwgswp:S",
@@ -11545,7 +11900,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0004
+   "glb_check_dev": 0.0004,
+   "gate_r_m": 0.097
   },
   {
    "id": "steinkit_v4:qp_pebble_square_6jux57slhe:S",
@@ -11584,7 +11940,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0008
+   "glb_check_dev": 0.0008,
+   "gate_r_m": 0.099
   },
   {
    "id": "steinkit_v4:qp_pebble_square_mm4rmgwno8:S",
@@ -11623,7 +11980,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0005
+   "glb_check_dev": 0.0005,
+   "gate_r_m": 0.091
   },
   {
    "id": "steinkit_v4:qp_pebble_square_iwxxjmtxrf:S",
@@ -11662,7 +12020,8 @@
     "deform": "nein"
    },
    "tris": 800,
-   "glb_check_dev": 0.0023
+   "glb_check_dev": 0.0023,
+   "gate_r_m": 0.094
   },
   {
    "id": "b29_wall_r4:straight",
@@ -11725,7 +12084,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1400
+   "tris": 1400,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:straight_long",
@@ -11788,7 +12148,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2800
+   "tris": 2800,
+   "gate_r_m": 2.5
   },
   {
    "id": "b29_wall_r4:corner",
@@ -11851,7 +12212,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1260
+   "tris": 1260,
+   "gate_r_m": 1.166
   },
   {
    "id": "b29_wall_r4:tee",
@@ -11921,7 +12283,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2133
+   "tris": 2133,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:cross",
@@ -11998,7 +12361,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2800
+   "tris": 2800,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:end",
@@ -12054,7 +12418,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 971
+   "tris": 971,
+   "gate_r_m": 0.858
   },
   {
    "id": "b29_wall_r4:gate",
@@ -12117,7 +12482,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2046
+   "tris": 2046,
+   "gate_r_m": 1.321
   },
   {
    "id": "b29_wall_r4:broken",
@@ -12180,7 +12546,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1400
+   "tris": 1400,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:curved_quarter",
@@ -12243,7 +12610,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1120
+   "tris": 1120,
+   "gate_r_m": 1.166
   },
   {
    "id": "b29_wall_r4:straight_b",
@@ -12306,7 +12674,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1400
+   "tris": 1400,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:straight_c",
@@ -12369,7 +12738,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1400
+   "tris": 1400,
+   "gate_r_m": 1.301
   },
   {
    "id": "b29_wall_r4:straight_capped",
@@ -12417,7 +12787,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1942
+   "tris": 1942,
+   "gate_r_m": 1.649
   },
   {
    "id": "b29_wall_r4:curved_ring_r2",
@@ -12470,7 +12841,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1470
+   "tris": 1470,
+   "gate_r_m": 1.384
   },
   {
    "id": "b29_wall_r4:curved_ring_r2_capA",
@@ -12523,7 +12895,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1741
+   "tris": 1741,
+   "gate_r_m": 1.552
   },
   {
    "id": "b29_wall_r4:curved_ring_r2_capB",
@@ -12576,7 +12949,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1741
+   "tris": 1741,
+   "gate_r_m": 1.552
   },
   {
    "id": "b29_wall_r4:curved_ring_r2_capAB",
@@ -12621,7 +12995,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2012
+   "tris": 2012,
+   "gate_r_m": 1.689
   },
   {
    "id": "b29_wall_r4:curved_ring_r3",
@@ -12674,7 +13049,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1680
+   "tris": 1680,
+   "gate_r_m": 1.524
   },
   {
    "id": "b29_wall_r4:curved_ring_r3_capA",
@@ -12727,7 +13103,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1951
+   "tris": 1951,
+   "gate_r_m": 1.704
   },
   {
    "id": "b29_wall_r4:curved_ring_r3_capB",
@@ -12780,7 +13157,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1951
+   "tris": 1951,
+   "gate_r_m": 1.704
   },
   {
    "id": "b29_wall_r4:curved_ring_r3_capAB",
@@ -12825,7 +13203,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2222
+   "tris": 2222,
+   "gate_r_m": 1.851
   },
   {
    "id": "b29_wall_r4:curved_ring_r4",
@@ -12878,7 +13257,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1750
+   "tris": 1750,
+   "gate_r_m": 1.608
   },
   {
    "id": "b29_wall_r4:curved_ring_r4_capA",
@@ -12931,7 +13311,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2021
+   "tris": 2021,
+   "gate_r_m": 1.795
   },
   {
    "id": "b29_wall_r4:curved_ring_r4_capB",
@@ -12984,7 +13365,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2021
+   "tris": 2021,
+   "gate_r_m": 1.795
   },
   {
    "id": "b29_wall_r4:curved_ring_r4_capAB",
@@ -13029,7 +13411,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2292
+   "tris": 2292,
+   "gate_r_m": 1.954
   },
   {
    "id": "b29_wall_r4:curved_ring_r5",
@@ -13082,7 +13465,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1540
+   "tris": 1540,
+   "gate_r_m": 1.44
   },
   {
    "id": "b29_wall_r4:curved_ring_r5_capA",
@@ -13135,7 +13519,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1811
+   "tris": 1811,
+   "gate_r_m": 1.626
   },
   {
    "id": "b29_wall_r4:curved_ring_r5_capB",
@@ -13188,7 +13573,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 1811
+   "tris": 1811,
+   "gate_r_m": 1.626
   },
   {
    "id": "b29_wall_r4:curved_ring_r5_capAB",
@@ -13233,7 +13619,8 @@
     "eyes": "keine",
     "deform": "nein"
    },
-   "tris": 2082
+   "tris": 2082,
+   "gate_r_m": 1.794
   },
   {
    "id": "kaykit_path:A",
@@ -13263,7 +13650,8 @@
     "clay": "midground",
     "eyes": "keine"
    },
-   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0"
+   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0",
+   "gate_r_m": 0.756
   },
   {
    "id": "kaykit_path:B",
@@ -13293,7 +13681,8 @@
     "clay": "midground",
     "eyes": "keine"
    },
-   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0"
+   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0",
+   "gate_r_m": 0.756
   },
   {
    "id": "kaykit_path:C",
@@ -13323,7 +13712,8 @@
     "clay": "midground",
     "eyes": "keine"
    },
-   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0"
+   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0",
+   "gate_r_m": 0.69
   },
   {
    "id": "kaykit_path:D",
@@ -13353,7 +13743,8 @@
     "clay": "midground",
     "eyes": "keine"
    },
-   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0"
+   "note": "asset_pass K6 sagt sink [0, 0] (Spielterrain-Kachel); rules.sink path_stone ist [0,3, 0,5] – Widerspruch an WS0",
+   "gate_r_m": 0.612
   },
   {
    "id": "kenney:stump_old",
@@ -13376,7 +13767,13 @@
     "clay": "kfb-clay.v1.1/midground",
     "deform": "nein, nur Gleichmaß (V-574)"
    },
-   "measured_by": "WS0 (GLB-Grenzen, 25.10.)"
+   "measured_by": "WS0 (GLB-Grenzen, 25.10.)",
+   "gate_r_m": 0.565,
+   "foot_r_m": 0.556,
+   "foot_off_m": [
+    0.0,
+    -0.0
+   ]
   },
   {
    "id": "kenney:stump_round",
@@ -13399,7 +13796,13 @@
     "clay": "kfb-clay.v1.1/midground",
     "deform": "nein, nur Gleichmaß (V-574)"
    },
-   "measured_by": "WS0 (GLB-Grenzen, 25.10.)"
+   "measured_by": "WS0 (GLB-Grenzen, 25.10.)",
+   "gate_r_m": 0.556,
+   "foot_r_m": 0.556,
+   "foot_off_m": [
+    0.0,
+    -0.0
+   ]
   },
   {
    "id": "kenney:log",
@@ -13422,7 +13825,8 @@
     "clay": "kfb-clay.v1.1/midground",
     "deform": "nein, nur Gleichmaß (V-574)"
    },
-   "measured_by": "WS0 (GLB-Grenzen, 25.10.)"
+   "measured_by": "WS0 (GLB-Grenzen, 25.10.)",
+   "gate_r_m": 1.106
   }
  ],
  "palette": {
@@ -13576,9 +13980,10 @@
  },
  "p0": {
   "bush_next_to_stamp": 4.5,
-  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab",
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei",
   "tree_uphill": 9,
-  "stone_nest_downhill": 10
+  "stone_nest_downhill": 10,
+  "triangle_turn": 0.9
  },
  "light": {
   "sun_az": 2.498,

@@ -19,7 +19,7 @@ const PLACEHOLDER = { tree: { h: 4.2, r: 1.6 }, bush: { h: 1.1, r: 0.8 }, grass:
   stone_S: { h: 0.22, r: 0.2 }, path_stone: { h: 0.12, r: 0.45 }, prop: { h: 0.8, r: 0.7 }, contact: { h: 0.15, r: 0.15 } }
 function tilesFor(cfg, kind, kit) {
   const t = (cfg.tiles || []).filter((x) => x.kind === kind && (!kit || !x.kit || kit.startsWith(x.kit)))
-  if (t.length) return t.map((x) => ({ id: x.id, kind, h: x.h_m ?? x.h_H * cfg.units.m_per_H, r: x.hull_r_m ?? x.hull_r_H * cfg.units.m_per_H, anchors: x.anchors || [], placeholder: false }))
+  if (t.length) return t.map((x) => ({ id: x.id, kind, h: x.h_m ?? x.h_H * cfg.units.m_per_H, r: x.gate_r_m ?? x.hull_r_m ?? x.hull_r_H * cfg.units.m_per_H, footR: x.foot_r_m, footOff: x.foot_off_m, anchors: x.anchors || [],   /* V-790: gemessene Gate-Hülle zuerst */ placeholder: false }))
   const p = PLACEHOLDER[kind] || PLACEHOLDER.prop
   return [0, 1, 2].map((i) => ({ id: `placeholder:${kind}:${i}`, kind, h: p.h * (1 - 0.12 * i), r: p.r * (1 - 0.1 * i), anchors: kind === 'tree' ? [{ p: [0, 0.8, 0], n: [0, 1, 0] }] : [], placeholder: true }))
 }
@@ -63,10 +63,10 @@ export function solveLocal(slots, R, rules, tries = 16) {
 // ── Nest: Stützen und Kiesel eng um den Anker (V-749 Nr. 7): Abstand je Paar entweder überlappt (≤ 0,85 × Radiensumme) oder mit Luft (≥ 1,25 ×),
 // nie dazwischen; Stützen im Fächer, Kiesel hangabwärts; Nachbarabstände paarweise ≥ 30 % verschieden. Positionen relativ zum Anker.
 function nestPositions(R, radii, rules, slopeDir) {
-  const { overlap_max: ov, air_min: air } = rules.group, out = [[0, 0]], hosted = new Set()
+  const mg = rules.group.band_margin ?? 0, ov = rules.group.overlap_max * (1 - mg), air = rules.group.air_min * (1 + mg), out = [[0, 0]], hosted = new Set()   // V-789: Rand gegen ±8 % Hüllen-Unterschied Löser/Gate
   const okAt = (p, i) => { let nj = -1, nd = Infinity
     for (let j = 0; j < out.length; j++) { const dd = Math.hypot(p[0] - out[j][0], p[1] - out[j][1]), s = radii[j] + radii[i]; if (dd < 0.5 * s || (dd > ov * s && dd < air * s)) return false; if (dd < nd) { nd = dd; nj = j } }
-    return nj < 0 || Math.abs(radii[nj] - radii[i]) / Math.max(radii[nj], radii[i]) >= (rules.group.size_tol ?? 0.2) * 1.1 }   /* V-787 (WSB N40 r7 2): nächster Nachbar nie gleich groß */
+    return nj < 0 || Math.abs(radii[nj] - radii[i]) / Math.max(radii[nj], radii[i]) >= (rules.group.size_tol ?? 0.2) * (1 + 2 * mg) }   /* V-787 (WSB N40 r7 2): nächster Nachbar nie gleich groß */
   const colinear = (p) => { for (let a = 0; a < out.length; a++) for (let b = a + 1; b < out.length; b++) { const [ax, az] = out[a], [bx, bz] = out[b], acx = bx - ax, acz = bz - az, L2 = acx * acx + acz * acz; if (!L2) continue
       for (const [m, c, d] of [[p, out[a], out[b]], [out[a], p, out[b]], [out[b], p, out[a]]]) { const ux = d[0] - c[0], uz = d[1] - c[1], l2 = ux * ux + uz * uz; if (!l2) continue; const vx = m[0] - c[0], vz = m[1] - c[1], tt = (vx * ux + vz * uz) / l2
         if (tt > 0 && tt < 1 && Math.hypot(vx - ux * tt, vz - uz * tt) <= (rules.group.line_tol ?? 0.05) * Math.sqrt(l2) * 1.5) return true } } return false }
@@ -158,7 +158,18 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
 
   // Kontakt-Bögen mit Ursache an einem Objekt (V-749 Nr. 3, V-763): zwei Bögen auf 40–50 % des Umfangs, Lücke ≥ 25 %; gilt für Anker und frei stehende Objekte (auch Stamps, V-777)
   const contactArcs = (anc, objR, grp, down, cause) => { if (!anc) return 0
-    if (anc.kind === 'tree') objR = Math.max(rules.contact.tree_foot_min ?? 0.22, objR * (rules.contact.tree_foot_ratio ?? 0.12))   /* V-784: am Baum sitzt der Kontakt am Stammfuß, nicht am Kronenrand */
+    // V-791 (WSB N40 r11): längliche Kacheln (Holz, h < 0,6 r) bekommen den Kontakt als zwei kleine Häufchen L/M/S an den Stirnenden, hangab versetzt –
+    // ein Bogen um die runde Hülle läge entlang der Längskante als Perlenschnur. Längsachse = lokales x, gedreht wie die Instanz.
+    { const tt = (cfg.tiles || []).find((t) => t.id === anc.tile), hh = tt?.h_m ?? 0, ST = rules.contact.staffel ?? [1, 0.62, 0.38]
+      if (anc.kind === 'log' || (hh && hh < 0.6 * objR)) { const ry = anc.rotY || 0, ax = [Math.cos(ry), -Math.sin(ry)], hl = objR * 0.85, rL = Math.min(rules.contact.piece_max_m ?? 0.22, Math.max(0.06, (hh || 0.4) * 0.3)), dv = [Math.cos(down), Math.sin(down)]
+        for (const e of [1, -1]) { const ex = anc.p[0] + ax[0] * hl * e, ez = anc.p[2] + ax[1] * hl * e
+          ST.forEach((f, k) => { const a = down + (k - 1) * 0.9 + R.range(-0.2, 0.2), d = (hh || 0.4) * 0.45 + rL * f
+            push({ tile: 'contact:moss_pebble', kind: 'contact', r: +(rL * f * R.range(0.9, 1.1)).toFixed(3), p: [ex + Math.cos(a) * d + dv[0] * 0.05, anc.p[1], ez + Math.sin(a) * d + dv[1] * 0.05], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: grp, role: 'contact', cause, layer: 4 }) }) }
+        return 0 } }
+    let cx = anc.p[0], cz = anc.p[2]
+    if (anc.kind === 'tree') { const ft = (cfg.tiles || []).find((t) => t.id === anc.tile), sc = anc.s ?? 1
+      if (ft?.foot_r_m) { objR = ft.foot_r_m * sc; const [ox, oz] = ft.foot_off_m || [0, 0], ry = anc.rotY || 0; cx += (ox * Math.cos(ry) + oz * Math.sin(ry)) * sc; cz += (-ox * Math.sin(ry) + oz * Math.cos(ry)) * sc }   /* V-790: gemessener Stammfuß (WSB-Tabelle), Bogen um dessen Mitte */
+      else objR = Math.max(rules.contact.tree_foot_min ?? 0.22, objR * (rules.contact.tree_foot_ratio ?? 0.12)) }   /* V-784: ohne Messung Formel am Stammfuß */
     // V-787 (WSB N40 r7 B): Staffel L/M/S statt Perlen, Häufung hangab (≈ 65 %) plus kleiner Nebenbogen seitlich (≈ 35 %); je Bogen das große Stück
     // in der Mitte, zu den Enden kleiner. Abdeckung = Summe der Winkelbreiten (Gate-Maß) in rules.contact.perimeter, größte Lücke ≥ gap_min.
     const [p0, p1] = rules.contact.perimeter, cov = R.range(p0 + 0.01, p1 - 0.01), Rr = objR * 1.02, ST = rules.contact.staffel ?? [1, 0.62, 0.38]
@@ -173,7 +184,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       list.forEach((r, k) => (k % 2 ? order.push(k) : order.unshift(k)))   // groß in der Mitte, abwechselnd links/rechts kleiner
       let ang = centre - total / 2
       for (const k of order) { const a = ang + ws[k] / 2; ang += ws[k]; const rj = Rr * (1 + (list[k] / rL - 0.6) * 0.18 + R.range(-0.06, 0.06))
-        push({ tile: 'contact:moss_pebble', kind: 'contact', r: +list[k].toFixed(3), p: [anc.p[0] + Math.cos(a) * rj, anc.p[1], anc.p[2] + Math.sin(a) * rj], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: grp, role: 'contact', cause, layer: 4 }) } }
+        push({ tile: 'contact:moss_pebble', kind: 'contact', r: +list[k].toFixed(3), p: [cx + Math.cos(a) * rj, anc.p[1], cz + Math.sin(a) * rj], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: grp, role: 'contact', cause, layer: 4 }) } }
     return Math.min(1, covNow()) }
 
   // 1 · feste Stamps (Landmarken, Dioramen, Stumpf): nicht umordnen, nur einbetten (V-716, embed.sop)
@@ -197,9 +208,10 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 2 · Gruppen: Rezept je Keim, Slots über solveLocal, Nest-Positionen, Einsinken nach Art und Hang
   const seeds = zoneSeeds(R, chunk, rules, recipeList ? { ...masks, groups: recipeList.length } : masks)
   if (recipeList && stamps[0] && cfg.p0?.bush_next_to_stamp) { const bi = recipeList.indexOf('bush_nest'), sun = cfg.light?.sun_az ?? -0.6, d = cfg.p0.bush_next_to_stamp   /* P0-Konzept: Stumpf und Busch-Nest in der Mitte, Fokus-Fluff im Busch direkt am Stumpf */
-    if (bi >= 0) seeds[bi] = [stamps[0].x + Math.cos(sun) * d, stamps[0].z + Math.sin(sun) * d]
+    const turn = cfg.p0.triangle_turn ?? 0, ba = sun + turn   /* V-789: Busch seitlich zur Sonne gedreht, Baumgruppe gegengedreht → Dreieck statt Diagonale (WSB r8 f1) */
+    if (bi >= 0) seeds[bi] = [stamps[0].x + Math.cos(ba) * d, stamps[0].z + Math.sin(ba) * d]
     const ti = recipeList.indexOf('tree_group'), tu = cfg.p0.tree_uphill   /* P0-Konzept: Baumgruppe mit dem alten Baum hinten, hangaufwärts vom Stumpf (V-778) */
-    if (ti >= 0 && tu) { const [ux, uz] = grad(terrain, stamps[0].x, stamps[0].z), ul = Math.hypot(ux, uz) || 1; seeds[ti] = [Math.min(chunk.x0 + chunk.size - 6, Math.max(chunk.x0 + 6, stamps[0].x + (ux / ul) * tu)), Math.min(chunk.z0 + chunk.size - 6, Math.max(chunk.z0 + 6, stamps[0].z + (uz / ul) * tu))] }
+    if (ti >= 0 && tu) { const [ux, uz] = grad(terrain, stamps[0].x, stamps[0].z), ua = Math.atan2(uz, ux) - turn * 0.6, cx = Math.cos(ua), cz = Math.sin(ua); seeds[ti] = [Math.min(chunk.x0 + chunk.size - 6, Math.max(chunk.x0 + 6, stamps[0].x + cx * tu)), Math.min(chunk.z0 + chunk.size - 6, Math.max(chunk.z0 + 6, stamps[0].z + cz * tu))] }
     const si = recipeList.indexOf('stone_nest_slope'), sd = cfg.p0.stone_nest_downhill   /* V-787: Steinnest hangab vom Stumpf, auf der Gegenseite des Buschs (alles im Spielbild) */
     if (si >= 0 && sd) { const [ux, uz] = grad(terrain, stamps[0].x, stamps[0].z), ul = Math.hypot(ux, uz) || 1, side = Math.cos(sun) * (-uz / ul) + Math.sin(sun) * (ux / ul) > 0 ? -1 : 1, a = Math.atan2(-uz, -ux) + side * 0.6
       seeds[si] = [Math.min(chunk.x0 + chunk.size - 6, Math.max(chunk.x0 + 6, stamps[0].x + Math.cos(a) * sd)), Math.min(chunk.z0 + chunk.size - 6, Math.max(chunk.z0 + 6, stamps[0].z + Math.sin(a) * sd))] } }
@@ -236,7 +248,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
           if (s.kind === 'tree' && anc[n]) { const pp = rot(anc[n].q.p); np = [o.p[0] + pp[0] * f.s, o.p[1] + pp[1] * f.s, o.p[2] + pp[2] * f.s]; nn = anc[n].n.map((v) => +v.toFixed(3)) }
           else { const d = 0.7 * f.tile.r * f.s; np = [o.p[0] + Math.cos(a) * d, o.p[1] + f.tile.h * f.s * 0.71, o.p[2] + Math.sin(a) * d]; nn = [+(Math.cos(a) * 0.7).toFixed(3), 0.71, +(Math.sin(a) * 0.7).toFixed(3)] }
           push({ tile: 'fluff:nest', kind: 'fluff', p: np.map((v) => +v.toFixed(3)), n: nn, support: o.tile,
-            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, cr: +(f.tile.r * f.s).toFixed(3), ring_r_max: +(0.5 * f.tile.r * f.s).toFixed(3), color_role: 'fluff', fluff_mode: card ? card.fluffMode : (cfg.fluff?.default_mode || 'heroic'), harvest: true, layer: 4 })
+            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, cr: +(f.tile.r * f.s).toFixed(3), ring_r_max: +((s.kind === 'tree' ? (cfg.fluff?.ring_tree ?? 0.5) : 0.5) * f.tile.r * f.s).toFixed(3), color_role: 'fluff', fluff_mode: card ? card.fluffMode : (cfg.fluff?.default_mode || 'heroic'), harvest: true, layer: 4 })
           if (n === 0 && s.kind === 'tree' && s.role === 'anchor' && !fallen) { fallen = true; const nest = inst[inst.length - 1]
             for (let fb = 0; fb < (cfg.fluff?.fallobst?.balls ?? 2); fb++) { let x = nest.p[0] + R.range(-0.4, 0.4), z = nest.p[2] + R.range(-0.4, 0.4)   /* rollToRest: hangabwärts bis Mulde oder Hindernis (B2-R2) */
               for (let st = 0; st < 40; st++) { const [fx, fz] = grad(terrain, x, z), sl = Math.hypot(fx, fz); if (sl < 0.015) break
@@ -253,7 +265,8 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 3 · Steinspur (path_trace, V-752/V-578): Band 1,6 m breit vom Zellrand zum ersten Stamp. Heiler Kern bis zu einer geschwungenen Isolinie, dann
   // verwittert gerundete Fragmente dicht → locker (≈ 1,0 → 0,4 u), Fugen wachsen, einzelne fehlen (Erde), keine Reihe.
   if (B.recipes.path_trace && stamps[0]) {
-    const s = stamps[0], zLow = terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + 1) <= terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size - 1) ? chunk.z0 + 1 : chunk.z0 + chunk.size - 1, from = [chunk.x0 + R.range(0.15, 0.35) * chunk.size, zLow],   /* Steinspur kommt vom Hangfuß (V-778) */ tile = tilesFor(cfg, 'path_stone', B.kit?.path_trace), u = cfg.units.m_per_kaykit_u
+    const s = stamps[0], zLow = terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + 1) <= terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size - 1) ? chunk.z0 + 1 : chunk.z0 + chunk.size - 1, from = (() => { const sol = inst.filter((q) => ['anchor', 'support'].includes(q.role)), segD = (fx, q) => { const ax = s.x - fx, az = s.z - zLow, L2 = ax * ax + az * az, t = Math.max(0, Math.min(1, ((q.p[0] - fx) * ax + (q.p[2] - zLow) * az) / L2)); return Math.hypot(q.p[0] - fx - ax * t, q.p[2] - zLow - az * t) }   /* V-789: Hangfuß-Start mit dem größten Abstand der Spur zu Ankern und Stützen (WSB r8: Weg lief durch das Busch-Nest) */
+      let best = null; for (let k = 0; k < 9; k++) { const fx = chunk.x0 + (0.1 + 0.1 * k) * chunk.size, m = sol.length ? Math.min(...sol.map((q) => segD(fx, q))) : 99; if (!best || m > best[1]) best = [fx, m] } return [best[0], zLow] })(),   /* Steinspur kommt vom Hangfuß (V-778) */ tile = tilesFor(cfg, 'path_stone', B.kit?.path_trace), u = cfg.units.m_per_kaykit_u
     const L = Math.hypot(s.x - from[0], s.z - from[1]), dir = [(s.x - from[0]) / L, (s.z - from[1]) / L], nrm = [-dir[1], dir[0]], iso = R.range(0.4, 0.55), bend = R.range(1.5, 3)
     let along = 0
     while (along < L - 1.2) {
@@ -263,6 +276,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
         if (decay > 0 && R.next() < decay * 0.5) continue
         const jitter = (0.15 + decay * 0.6), off = w + R.range(-jitter, jitter) * size, adv = R.range(-0.4, 0.4) * step
         const x = from[0] + dir[0] * (along + adv) + nrm[0] * (off + wob), z = from[1] + dir[1] * (along + adv) + nrm[1] * (off + wob)
+        if (inst.some((q) => ['anchor', 'support', 'pebble', 'focus'].includes(q.role) && Math.hypot(q.p[0] - x, q.p[2] - z) < (tilesFor(cfg, q.kind)[0]?.r || 0.5) * (q.s || 1) + size)) continue   /* V-789 */
         const tl = R.pick(tile); put(tl, x, z, { s: +((size * 2) / (tl.r * 2)).toFixed(3), group: 'path', role: 'path', layer: 2, decay: +decay.toFixed(2), story: recipes.path_trace.story_template })
       }
       along += step * R.range(0.85, 1.15)
@@ -298,7 +312,8 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       /* Bauweise: Fels → Grasnest in der Kehle bergauf; Strauch → Sonnenseite unter der Kante; Baum → an der Tropfkante; sonst hangabwärts */
       const isStone = /stone|rock|boulder/.test(o.kind), side = isStone ? downA + Math.PI : o.kind === 'bush' ? sun : downA, arc = Math.PI * (isStone ? R.range(0.25, 0.4) : R.range(0.4, 0.6))   /* Ü5: ≤ 50 % des Fußes inkl. Büschelbreite */, step = R.int(0, G.color.steps - 1)
       const ring = o.kind === 'tree' ? [1.6, 2.2] : G.foot.ring_r
-      for (let k = 0; k < n; k++) { const a = side - arc / 2 + arc * ((k + R.range(0.2, 0.8)) / n), d = ro * R.range(...ring)
+      for (let k = 0; k < n; k++) { const a = side - arc / 2 + arc * ((k + R.range(0.2, 0.8)) / n), d = ro * R.range(...ring), tx = o.p[0] + Math.cos(a) * d, tz = o.p[2] + Math.sin(a) * d
+        if (solid.some((q) => q !== o && /stone|rock|tree/.test(q.kind) && (q.p[0] - tx) ** 2 + (q.p[2] - tz) ** 2 < footR(q) ** 2)) continue   /* V-789 (WSB r8 Ü5 94 %): Stützen-Büschel nicht in den Fuß des Ankers */
         tuft(o.p[0] + Math.cos(a) * d, o.p[2] + Math.sin(a) * d, G.foot.ratio[Math.min(2, k === 0 ? 0 : k < 4 ? 1 : 2)] * R.range(0.9, 1.1), o.group, 'foot', step, [o.p[0], o.p[2]]) } }
     // b) Felder als Flecken (V-770): Fleck-Keime im 8-m-Raster nach Rauschen und Senke; je Fleck 3 oder 5 Büschel-Gruppen auf einer Vogel-Spirale
     //    (5+5+3 = 13 bzw. 5+5+5+3+3 = 21, Fibonacci), je Gruppe 5 Kern- bzw. 3 Rand-Büschel wieder als Vogel-Spirale; Randgruppen lockerer und kürzer (Sprenkel).
@@ -348,17 +363,26 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   const occ = inst.filter((x) => x.role === 'anchor' || x.role === 'support').reduce((s, x) => s + Math.PI * 2.2 ** 2, 0)
   const zoneReport = { groups: report.length, neg_space_est: +(1 - Math.min(1, occ / chunk.size ** 2)).toFixed(3), layers: [...layers].sort(), layers_ok: (rules.biography?.layers_required || []).every((l) => layers.has(l)),
     placeholders: inst.some((x) => x.placeholder), grass: { ...grass, fib_ok: (grass.patches || []).every((p) => [13, 21].includes(p.planned)), on_path: inst.filter((g) => g.src === 'field' && inst.some((p) => p.role === 'path' && (p.p[0] - g.p[0]) ** 2 + (p.p[2] - g.p[2]) ** 2 < (rules.grass?.field.path_clear_m ?? 1) ** 2)).length, wind_groups: new Set(inst.map((x) => x.wind_group)).size } }
-  // V-787 (WSB N40 r7 3) · Ü3 nach allem Setzen: benachbarte gleichartige Elemente einer Gruppe nie gleich hoch (±height_tol). Gras frei skaliert,
-  // Kit-Teile nur gleichmäßig in ±15 % (kein Stauchen, V-574); der kleinere Partner wird kürzer, sonst der größere länger.
-  { const TH = new Map(cfg.tiles.map((t) => [t.id, t.h_m ?? t.h])), ht = rules.lean?.height_tol ?? 0.1, nr = rules.group.neighbour_r ?? 4.5
-    const hOf = (o) => (TH.get(o.tile) ?? 0) * (o.s ?? 1), cls = (o) => (o.kind === 'grass' ? 'grass' : /stone|rock/.test(o.kind) ? 'stone' : null)
-    const byG = new Map(); for (const o of inst) { if (!o.group || !cls(o) || !TH.get(o.tile)) continue; const k = o.group + '|' + cls(o); if (!byG.has(k)) byG.set(k, []); byG.get(k).push(o) }
-    for (const list of byG.values()) for (let pass = 0; pass < 3; pass++) { let fixed = 0
-      for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) { const A = list[i], Bq = list[j], ha = hOf(A), hb = hOf(Bq), lo = ha <= hb ? A : Bq, hi = lo === A ? Bq : A
-        const rr = (TH.get(A.tile) + TH.get(Bq.tile)) / 2; if (Math.hypot(A.p[0] - Bq.p[0], A.p[2] - Bq.p[2]) > nr * rr) continue
-        if (hOf(lo) < hOf(hi) * (1 - ht)) continue; fixed++
-        if (lo.kind === 'grass') lo.s = +(hOf(hi) * (1 - ht) * 0.97 / TH.get(lo.tile)).toFixed(3)
-        else { const s0 = lo.s ?? 1, want = hOf(hi) * (1 - ht) * 0.97 / TH.get(lo.tile); if (want >= s0 * 0.85) lo.s = +want.toFixed(3); else hi.s = +Math.min((hi.s ?? 1) * 1.15, hOf(lo) / (1 - ht) * 1.03 / TH.get(hi.tile)).toFixed(3) } }
+  // V-787/V-791 · Nachlauf je Gruppe im Gate-Maß: Ü4 Nachbarstämme ≥ 22 % verschieden dick (foot_r_m × s), Ü3 benachbarte gleichartige Höhen ≥ height_tol
+  // verschieden. Jede Änderung gilt nur, wenn G1 (Überlappung/Luft mit band_margin, gate_r_m × s) zu allen Gruppen-Gliedern hält, sonst die andere Richtung,
+  // sonst bleibt es (WSB N40 r11: Gras-Kürzung schob ein Paar ins nearTouch-Band). Gras frei, Kit-Teile gleichmäßig ±15 % vom Ausgangsmaß (V-574).
+  { const TB = new Map(cfg.tiles.map((t) => [t.id, t])), ht = rules.lean?.height_tol ?? 0.1, nr = rules.group.neighbour_r ?? 4.5, mg = rules.group.band_margin ?? 0
+    const ov = rules.group.overlap_max * (1 - mg), air = rules.group.air_min * (1 + mg), S0 = new Map(inst.map((o) => [o, o.s ?? 1]))
+    const hOf = (o) => (TB.get(o.tile)?.h_m ?? TB.get(o.tile)?.h ?? 0) * (o.s ?? 1), rOf = (o) => { const t = TB.get(o.tile); return ((t?.gate_r_m ?? t?.hull_r_m) || 0) * (o.s ?? 1) }, fOf = (o) => (TB.get(o.tile)?.foot_r_m ?? 0) * (o.s ?? 1)
+    const G1R = ['anchor', 'support', 'accent', 'pebble'], members = new Map()
+    for (const o of inst) if (o.group && G1R.includes(o.role) && TB.get(o.tile)) { if (!members.has(o.group)) members.set(o.group, []); members.get(o.group).push(o) }
+    const okG1 = (o) => !G1R.includes(o.role) || (members.get(o.group) || []).every((q) => { if (q === o) return true; const v = Math.hypot(o.p[0] - q.p[0], o.p[2] - q.p[2]) / (rOf(o) + rOf(q) || 1); return !(v > ov && v < air) })
+    const lim = (o, sc) => (o.kind === 'grass' ? sc : Math.min(S0.get(o) * 1.15, Math.max(S0.get(o) * 0.85, sc)))
+    const trySet = (o, sc) => { const old = o.s; o.s = +lim(o, sc).toFixed(3); if (okG1(o)) return true; o.s = old; return false }
+    const near = (A, Bq) => Math.hypot(A.p[0] - Bq.p[0], A.p[2] - Bq.p[2]) <= nr * ((rOf(A) + rOf(Bq)) / 2 || 1)
+    const cls = (o) => (o.kind === 'grass' ? 'grass' : /stone|rock/.test(o.kind) ? 'stone' : o.kind === 'tree' || o.kind === 'bush' ? 'plant' : null)
+    const byG = new Map(); for (const o of inst) { if (!o.group || !cls(o) || !hOf(o)) continue; const k = o.group + '|' + cls(o); if (!byG.has(k)) byG.set(k, []); byG.get(k).push(o) }
+    for (const list of byG.values()) for (let pass = 0; pass < 4; pass++) { let fixed = 0
+      for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) { const A = list[i], Bq = list[j]; if (!near(A, Bq)) continue
+        if (A.kind === 'tree' && Bq.kind === 'tree' && fOf(A) && fOf(Bq)) { const lo = fOf(A) <= fOf(Bq) ? A : Bq, hi = lo === A ? Bq : A   // Ü4 Stämme
+          if (fOf(hi) < fOf(lo) * 1.22) { fixed++; trySet(lo, (lo.s ?? 1) * fOf(hi) / 1.24 / fOf(lo)) || trySet(hi, (hi.s ?? 1) * fOf(lo) * 1.24 / fOf(hi)) } }
+        const lo = hOf(A) <= hOf(Bq) ? A : Bq, hi = lo === A ? Bq : A   // Ü3 Höhen
+        if (hOf(lo) >= hOf(hi) * (1 - ht)) { fixed++; trySet(lo, (lo.s ?? 1) * hOf(hi) * (1 - ht) * 0.97 / hOf(lo)) || trySet(hi, (hi.s ?? 1) * hOf(lo) / (1 - ht) * 1.03 / hOf(hi)) } }
       if (!fixed) break } }
   return { schema: 'kfb.place-recipe/1', seed, biome, chunk, instances: inst, stamps: stampOut, deltas: stampOut.map((s) => ({ stamp: s.id, schema: 'kfb.terrain-delta/1', only_add: true })), report: { groups: report, zone: zoneReport, ...(card ? { card: { biome_card: card.wc.biome, biome, story_mode: card.mode, fluff_mode: card.fluffMode, surrealism: +card.wc.params.surrealism.toFixed(3), grass_density: +card.grassDensity.toFixed(3) } } : {}) } }
 }
