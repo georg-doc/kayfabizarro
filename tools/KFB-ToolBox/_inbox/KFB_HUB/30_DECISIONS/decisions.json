@@ -11769,6 +11769,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-819",
+   "date": "2026-10-25",
+   "area": "Inseln",
+   "verdict": "IDEA",
+   "text": "Georg 25.10. (für später, knüpft an V-091 an): die 8 gekauften Unity-Inseln (StreakByte) wie die Meshy-Bühnen im Stil anpassen (Farben nach V-817, Knete, Ufer) und als modulare, prozedurale Optionen nutzen: (1) ins Terrain eingebettet wie Dioramen/Meshy (V-341, V-711, V-716, Übergänge V-577); (2) schwebende Inseln, im Flugmodus erreichbar, ggf. Cartoon-Seil oder Aufzug, später Tracks; (3) in Wasser/Fluids schwimmende Inseln, ggf. mit Landbrücke. Reihenfolge nach Fahrplan 3 (Wasser), 5b (Endlos-Welt) und dem Farb-Ausroll V-817.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Insel-Baustein mit drei Einsatzarten (Land, Luft, Wasser) vervielfacht die Orte der endlosen Welt mit vorhandenen Assets.",
+   "applies": "später"
+  },
+  {
+   "id": "V-820",
+   "date": "2026-10-25",
+   "area": "Marke",
+   "verdict": "DECISION",
+   "text": "KFB-Logo-Slam von Claude Design angenommen, Tuning später (Georg 25.10.): Modul kfb-logo-slam.v1 (Behandlung A, Irish Grover extrudiert, Knete kfb-clay v1.1, Licht kfb-stage-light v1.1), Profile hero (Kayfabe → be füllt sich apricot → Bizarro Top-Rope-Power-Slam auf be → KayfaBizarro, ≈ 6,3 s, dann Idle), header (still, transparent), poster (Standbild); zwei Definitionen schaltbar. Ablage privat design/kfb-logo-slam-r1 @bc7fc3b, Dropbox KFB_LOGO_SLAM_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1. Offen: Kamera folgt dem Sprung (Georg), Messung p95 auf Zielgeräten vor dem Einbau in die Website; Einsatz im Teaser-Abspann beim Teaser-Tuning (q229).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Wortmarke erzählt KayfaBizarro selbst: Bizarro slammt das be aus Kayfabe.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11881,7 +11911,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1352",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1354",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

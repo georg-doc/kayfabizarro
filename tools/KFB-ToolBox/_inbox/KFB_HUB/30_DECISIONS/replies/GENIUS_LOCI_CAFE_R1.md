@@ -8,14 +8,14 @@
 ## Anlässe und Zeilen (Englisch, Akzent macht HeyGen)
 
 ### ankunft (Ort betreten)
-1. Ah, a customer. Or a free man pretending to be one.
-2. Sit, sit. The chairs are absurd, but they hold.
+1. Ah, a visitor. Or a free man pretending to be one.
+2. Stay a while. The view is absurd, but it holds.
 3. Welcome. Here we discuss nothing, very seriously.
 4. You look thrown into the world, mon ami. Like a body slam.
 5. Existence precedes the entrance music. Come in.
 6. Ah, the hero arrives. Or the heel. We decide later.
-7. Please, take a table. Nobody else has chosen it yet.
-8. Bonsoir. Sit near the jazz. Despair sounds better with brushes.
+7. Look around. Nobody else has chosen this moment yet.
+8. Bonsoir. Stay near the jazz. Despair sounds better with brushes.
 
 ### cocktail (Angebot)
 1. Raymond Aron pointed at this glass. Sartre turned pale.
@@ -40,12 +40,14 @@
 ### abschied (Ort verlassen)
 1. Go. Your freedom is waiting outside, double parked.
 2. Au revoir. Choose well. Then choose again.
-3. Leave if you must. The absurd will save your seat.
+3. Leave if you must. The absurd will keep your place.
 4. Go. Bracket the world. Unbracket it at the door.
 5. Sartre refused a Nobel. You can refuse a refill.
 6. Adieu. Remember, the script is blank. Write a good finish.
 
 Stimm-Critic R1: FAIL → 11 Zeilen ersetzt (Aron statt Sartre beim Cocktail, nur noch eine Sisyphos-Pointe, weniger „mon ami“, kein Nietzsche, mehr echte Philosophen-Fakten).
+
+Georg q233 (TUNE): weniger an ein Café gebunden, damit KnuckleBob als Genius Loci auch an einem Ort wie dem Eiffelturm stehen kann, ggf. mit einer unbeseelten Popup-Kulisse (Café). Fünf Zeilen ohne Kellner- und Platz-Bezug ersetzt.
 
 ## Produktion später (wie b238)
 HeyGen, KnuckleBob mit Baskenmütze, Englisch mit leichtem französischem Akzent, ruhig und amüsiert, grüner Hintergrund, eine Datei je Anlass, Pausen zwischen den Zeilen. Musik: French Jazz aus dem Pool oder ein Suno-Track, der unter der Stimme leiser wird.
