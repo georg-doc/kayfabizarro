@@ -205,7 +205,7 @@ This document **does not** supersede the already-committed Flatworld research. T
 
 ### 13.4 Optional cheap WS1 comparison, only after current intake is authorized
 
-**One authentic current WS1 valley/ridge scene and camera path.** A/B/C: (A) existing colored material/shape, (B) same mesh with ink/stipple screen/world-space style, (C) same mesh with valley-fog + stylistically restrained directional dither. Show the terrain/actor/road **source in isolation**, then same camera path; capture still, short traversal, seam/collision state, frame-time/overdraw only on a focused target GPU and full device context. Vary *one** feature at a time; after visual comparison, choose keep/adapt/reject without displacing existing surface owner. A connected settlement/OSM/WFC check remains a **separate** semantic-composition experiment, not an automatic dependency of the style trial.
+**One authentic current WS1 valley/ridge scene and camera path.** A/B/C: (A) existing colored material/shape, (B) same mesh with ink/stipple screen/world-space style, (C) same mesh with valley-fog + stylistically restrained directional dither. Show the terrain/actor/road **source in isolation**, then same camera path; capture still, short traversal, seam/collision state, frame-time/overdraw only on a focused target GPU and full device context. Vary **one** feature at a time; after visual comparison, choose keep/adapt/reject without displacing existing surface owner. A connected settlement/OSM/WFC check remains a **separate** semantic-composition experiment, not an automatic dependency of the style trial.
 
 ### 13.5 Return delta / unchanged next gate
 
