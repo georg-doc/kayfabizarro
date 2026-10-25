@@ -6,7 +6,7 @@
 3. **Deine Rolle bei HyperNorm ist jetzt Einbindung, nicht eigene Optik.** Kein eigenes Scenelet-Design, keine eigenen Frames. H15 ist die Gestaltungsquelle.
 
 ## Was du tust
-- **H15 liegt öffentlich**, mit Bildpool: Repo `georg-doc/kayfabizarro`, Zweig `tools/h15-mindscape-2026-10-25` @`b77e30661ab2a3b3e40c3c08854a98289f77c49b`, Ordner `tools/KFB-ToolBox/_inbox/KFB_Billboard_Kaleidoscope_H15_Mindscape_2026-10-25/`. Manifest und Bilder liefert jsDelivr an diesem Pin. Damit sind die fehlenden gepinnten Bilddateien gelöst; nimm sie von dort und nutze keine Ersatzbilder.
+- **H15 liegt öffentlich**, mit Bildpool: Repo `georg-doc/kayfabizarro`, Zweig `tools/h15-mindscape-2026-10-25` @`5eb6aeb38748327e86de7d2903202baadc1f7059`, Ordner `tools/KFB-ToolBox/_inbox/KFB_Billboard_Kaleidoscope_H15_Mindscape_2026-10-25/`. Manifest und Bilder liefert jsDelivr an diesem Pin. Damit sind die fehlenden gepinnten Bilddateien gelöst; nimm sie von dort und nutze keine Ersatzbilder.
 - **Binde H15 als Bereich „Experience“** in die bestehende HyperNorm-Curator-Site ein: 1:1, Datei unverändert, `support.js` daneben, `hypernorm_r3/` relativ. Erst als Vorschau ohne Veröffentlichung. Prüfliste wie im H15-Handover (`HANDOVER_WS0.md` im Ordner): lädt ohne Konsolenfehler, Pool 481/481, Gedichte, Soundbed, Naht.
 - **Deine getakteten Audio-Schnitte und den Materialkatalog** dokumentierst du kurz als Zulieferung für Claude Designs Clip-Runde, mit Pfad und Format. Nichts davon in H15 einbauen.
 - **Veröffentlichen erst nach Georgs Ja** zur Vorschau.

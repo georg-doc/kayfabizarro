@@ -11049,6 +11049,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-771",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "MVP-Site (Georg 25.10., WSA work): V-647 „nur für Georg“ ist mit der plattformseitigen Owner-Private-Sperre erfüllt, solange keine Tester dazukommen; Gegenprobe ohne Anmeldung auf /game-package/assets/hero-…glb, /game-package/, /h15/, /heygen/ = 4× verweigert (401). Damit v6 live (Drive-Pfadfix: Walk → Drive → Walk ohne 404). Das zusätzliche Basic-Passwort auf allen Pfaden ist eine eigene Aufgabe vor dem ersten Tester, kein Blocker jetzt. R3 (site/mvp-r3-dist @c41dc9ae, mit Aussteige- und H15-Hall-Fix) als Site-v7 gespeichert, nur lokale Vorschau, Veröffentlichung erst nach Georgs Blick. Nur ein WSA-Lauf veröffentlicht auf der Site (v5 kam aus einem parallelen Lauf).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Owner-private ist die Sperre für „nur Georg“; der Tester-Schutz ist eine eigene Aufgabe.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-772",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Web-Chat-Paket Prozedurale Collage-Welt (PR georg-doc/kayfabizarro#447, Georg 25.10.: „so einordnen“): kein eigenes Review-Projekt, sondern Einordnung in den Masterplan. 1) Voronoi als unsichtbarer Verteiler = kfb-place Schicht 2 über den Zellen (Regionen dicht an Straßen und Orten, je Region Rezept und Karten-Dreier, geschützte Stadt-Taschen als Ganzes), nach den P0-Frames. 2) Köln-OSM-Tasche (Dom, HBF, Rhein) als Begegnungs-Modul in S3. 3) Genau ein erster POC: Paper Racer (Pop-ups am Straßenrand; gleiches Auto, gleiche Strecke, gleiche Kamera; echte 3D-Teile vs. dünne Ausschnitte mit weißem Rand vs. Papierbühne), erst nach Georgs Golden aus 4–8 Einzelobjekten (V-740). 4) Gepunktetes Terrain mit Talnebel (Fleurs) nur als Option für Mindscapes/H15 bzw. die Stimmungssteuerung (V-759), nicht für die normale Welt. 5) Popup-Bögen Paris/Hollywood sind Stimmungsvorlage (0/4 als Sprite brauchbar); für das Spiel je Objekt ein eigenes Bild mit Rand. Brecht-Fassade und Bücher-Canyon bleiben Kandidaten nach dem ersten POC.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Collage-Ideen passen zur kfb-place-Logik eine Ebene größer; ein POC statt fünf hält P0 und den WS1-Slice frei.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11161,7 +11191,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1281",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1283",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

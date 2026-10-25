@@ -2,7 +2,7 @@
 
 ## Tier 0
 1. **Erst R2 fertig einbinden, prüfen und veröffentlichen** wie im letzten Auftrag (b214). Danach dieses R3, auf dieselbe Weise.
-2. **Paket R3:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zweig `site/mvp-r3-dist` @18ad81d25e8f560124f5104c5aa1832f3a445c68, 626 Dateien plus `SHA256SUMS.txt`, `site-build.json`, `SITE_README.md`, etwa 68 MB, keine Datei über 25 MiB.
+2. **Paket R3:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zweig `site/mvp-r3-dist` @c41dc9aeff608571dc8d411dfbcc23a8637723dd, 626 Dateien plus `SHA256SUMS.txt`, `site-build.json`, `SITE_README.md`, etwa 68 MB, keine Datei über 25 MiB.
 3. **Neu, alles hinter Schaltern:** Auto live rufen und verlassen (`mount=live`, Taste X) und die HyperNorm-Sphäre H15 (`h15=1`, eigene Seite unter `h15/`) und Georgs HeyGen-Clips (Fahrzeug beim Rufen, Orakel-Ort mit `loci=1`, Ordner `heygen/`). Der Standard ohne Schalter bleibt wie in R2.
 
 ## Ablauf
