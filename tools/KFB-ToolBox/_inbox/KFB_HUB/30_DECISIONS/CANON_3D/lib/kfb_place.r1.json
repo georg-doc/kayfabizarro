@@ -243,11 +243,12 @@
    "source": "SPEC_ENVIRONMENT_KIT_R1 §5/§6/§8; KayKit Forest Samples (Büschel zu 1–3 am Fuß von Stein, Baum, Busch)",
    "tiles": "kaykit_forest:Grass_*_Singlesided (Büschel, nie Einzelhalme)",
    "foot": {
-    "count": [
-     3,
-     5,
-     7
-    ],
+    "count": {
+     "anchor": 5,
+     "landmark": 5,
+     "focus": 5,
+     "support": 3
+    },
     "ratio": [
      1,
      0.62,
@@ -266,24 +267,34 @@
     ]
    },
    "field": {
-    "grid_m": 1.8,
     "noise_m": 16,
     "thresh": 0.6,
-    "cluster": [
-     3,
-     5,
-     7
-    ],
-    "spread_m": [
-     0.35,
-     0.9
-    ],
     "hollow_bonus": 0.15,
     "path_clear_m": 1.0,
     "neg_space_short": 0.6,
     "cause": "Sonne gibt Gras, Schatten gibt Moos (Konzeptblatt 2d)",
     "edge_soft": 0.12,
-    "note": "Felder = zusammenhängende Flecken (Rauschen grob), innen dicht, zum Rand hin Sprenkel (V-403), außerhalb kein Gras"
+    "note": "Felder = zusammenhängende Flecken (Rauschen grob), innen dicht, zum Rand hin Sprenkel (V-403), außerhalb kein Gras",
+    "patch_clusters": [
+     3,
+     5
+    ],
+    "cluster_tufts": {
+     "core": 5,
+     "edge": 3
+    },
+    "cluster_spacing_m": 0.9,
+    "tuft_spacing_m": 0.22,
+    "edge_spread": 1.6,
+    "edge_short": 0.8,
+    "fibonacci": "Feld 3 oder 5 Flecken; Fleck 3 Gruppen (5+5+3 = 13) oder 5 Gruppen (5+5+5+3+3 = 21); Gruppe 5 Kern bzw. 3 Rand; Fuß 5 am Anker, 3 an der Stütze. Alle Zahlen ungerade und Fibonacci (V-770)",
+    "layout": "Vogel-Spirale (137,5°, Abstand ∝ √k) auf drei Ebenen: Flecken im Feld, Gruppen im Fleck, Büschel in der Gruppe",
+    "field_grid_m": 16,
+    "field_patches": [
+     3,
+     5
+    ],
+    "patch_spacing_m": 2.4
    },
    "wind": {
     "grid_m": 8,
@@ -314,6 +325,18 @@
     "lean": "vom Objekt weg und hangabwärts, 6–14°",
     "length": "Senke/Kehle lang (bis 1,3×), Kuppe kurz (bis 0,7×)"
    }
+  },
+  "oddity": {
+   "source": "Etherington 70/20/10: die eine Bedeutung je Zelle; Georg 25.10. (V-770)",
+   "max_per_cell": 1,
+   "p_from": "params.surrealism (nur mit Karten-Dreier)",
+   "place": "Rand des Negativraums (0,2–0,3 Zellgrößen von der Mitte, weg von den Gruppen), nie auf Weg oder in einer Gruppe",
+   "kinds": {
+    "stone_on_tip": "ein Stein balanciert auf der Spitze (rotX ≈ 1,1 rad), Kiesel am Fuß: wer hat den hingestellt?",
+    "witch_ring": "13 Gras-Büschel als genauer Kreis (r 1,6 m), innen kahl: Hexenring",
+    "cairn": "Steinmännchen aus 3 Steinkit-Steinen in der Leiter 1 : 0,62 : 0,38"
+   },
+   "path_clear_m": 3
   }
  },
  "bands": [
@@ -13406,6 +13429,92 @@
    ],
    "borders": "Sprenkel (V-403)",
    "status": "Konzept; Löser v2"
+  }
+ },
+ "cards": {
+  "source": "kfb-world-context.v1.mjs (1:1 aus Card Zone Lab terrain-v10/world-context.js): Karten-Dreier → 8-Achsen-Vektor (60/28/12) → Biom, Story-Mode, params.surrealism (V-770)",
+  "biome_map": {
+   "meadow": "moos",
+   "plateau": "moos",
+   "luminous": "moos",
+   "tidal": "moos",
+   "fractured": "moos",
+   "scorched": "moos",
+   "note": "bis weitere kfb-place-Biome existieren, landet alles auf moos; card_biome steht im Bericht"
+  },
+  "mode_from_dim": {
+   "melancholy": "tragic",
+   "humor": "comic",
+   "chaos": "absurd",
+   "power": "heroic",
+   "wonder": "mystical",
+   "threat": "forbidden"
+  },
+  "fluff_modes_on_green": [
+   "forbidden",
+   "heroic",
+   "mystical",
+   "absurd"
+  ],
+  "recipe_bias": {
+   "tree_group": {
+    "lore": 0.6,
+    "melancholy": 0.4
+   },
+   "bush_nest": {
+    "humor": 0.6,
+    "wonder": 0.4
+   },
+   "stone_nest_slope": {
+    "power": 0.5,
+    "threat": 0.5
+   }
+  },
+  "grass_density": {
+   "base": 0.6,
+   "wonder": 0.5,
+   "humor": 0.5,
+   "melancholy": 0.3,
+   "threat": -0.4,
+   "clamp": [
+    0.4,
+    1.6
+   ]
+  },
+  "mode_rank": {
+   "note": "Story-Mode kommt im Spiel aus dem Spielstand (Würfel bzw. Einstellung). Nur ohne Vorgabe wird er abgeleitet: Rang nach dem Wort-Anteil je Achse (Grundanteile aus cardSemanticVector abgezogen), sonst gewinnt Heroic fast immer über die Kartenstufe.",
+   "lex": {
+    "chaos": [
+     0.08,
+     0.82
+    ],
+    "wonder": [
+     0.08,
+     0.82
+    ],
+    "threat": [
+     0.06,
+     0.84
+    ],
+    "humor": [
+     0.06,
+     0.84
+    ],
+    "melancholy": [
+     0.08,
+     0.8
+    ]
+   },
+   "power": {
+    "base": 0.15,
+    "grade": 0.55,
+    "coef": 0.3
+   },
+   "triplet_w": [
+    0.6,
+    0.28,
+    0.12
+   ]
   }
  }
 }

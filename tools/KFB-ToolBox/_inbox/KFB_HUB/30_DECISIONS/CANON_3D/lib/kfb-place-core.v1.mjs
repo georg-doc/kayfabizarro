@@ -4,6 +4,8 @@
 // Grenzen (V-708, V-749 Nr. 5): WFC nur lokal für die Slot-Belegung (solveLocal); nie Landmarken, Gelände oder ein globales Natur-Raster.
 
 // ── Zufall: mulberry32 über einen Hash aus Seed + Zelle (gleicher Seed = gleiches Rezept) ──
+import { makeWorldContext } from './kfb-world-context.v1.mjs'
+
 const hash32 = (s) => { let h = 2166136261 >>> 0; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0 } return h }
 export function rng(seed) {
   let a = hash32(seed)
@@ -114,9 +116,26 @@ function zoneSeeds(R, chunk, rules, masks) {
 
 const sinkFor = (rules, kind, slope = 0) => { const s = rules.sink[kind] || [0, 0.05]; return Math.min(rules.sink_cap, s[0] + (s[1] - s[0]) * Math.min(1, slope * 2)) }
 
+// Karten-Kontext (V-770): Vektor aus kfb-world-context; Story-Mode aus der stärksten Achse, falls nicht gesetzt; Fluff auf grünem Laub nie Comic/Tragic
+function cardContext(C, cardTriplet, storyMode, seed) {
+  const pre = makeWorldContext({ cardTriplet, seeds: [seed] }), v = pre.vector
+  const MR = C.mode_rank, tri = [cardTriplet.current, cardTriplet.next || cardTriplet.current, cardTriplet.nextNext || cardTriplet.next || cardTriplet.current]
+  const gp = tri.reduce((s, c, k) => s + MR.triplet_w[k] * (1 - (Math.max(1, Math.min(3, +(c?.grade) || 2)) - 1) / 2), 0)
+  const share = (d) => (d === 'power' ? (v.power - MR.power.base - MR.power.grade * gp) / MR.power.coef : (v[d] - MR.lex[d][0]) / MR.lex[d][1])   // Wort-Anteil je Achse
+  const ranked = Object.entries(C.mode_from_dim).map(([dim, m]) => [m, share(dim)]).sort((a, b) => b[1] - a[1])
+  const mode = storyMode || ranked[0][0], wc = makeWorldContext({ cardTriplet, storyMode: mode, seeds: [seed] })
+  const fluffMode = C.fluff_modes_on_green.includes(mode) ? mode : ranked.find(([m]) => C.fluff_modes_on_green.includes(m))[0]
+  const gd = C.grass_density, grassDensity = Math.min(gd.clamp[1], Math.max(gd.clamp[0], gd.base + Object.entries(gd).filter(([k]) => k in v).reduce((s, [k, c]) => s + c * v[k], 0)))
+  const bias = (rid) => 0.5 + Object.entries(C.recipe_bias[rid] || {}).reduce((s, [k, c]) => s + c * (v[k] ?? 0), 0)
+  return { wc, mode, fluffMode, grassDensity, bias }
+}
+
 // ── Hauptfunktion: eine Zelle ──
-export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = {}, stamps = [], recipeList = null }) {   // recipeList: feste Gruppenfolge (P0), sonst nach Biom-Gewicht
-  const rules = cfg.rules, B = cfg.biomes[biome], R = rng(`${seed}|${chunk.x0}|${chunk.z0}|${biome}`)
+export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = {}, stamps = [], recipeList = null, cardTriplet = null, storyMode = null }) {   // recipeList: feste Gruppenfolge (P0), sonst nach Biom-Gewicht
+  // Karten-Seed (V-770): Dreier → Vektor → Biom, Story-Mode, Dichte, Regelbruch (kfb-world-context 1:1 aus dem Card Zone Lab)
+  const C = cfg.cards, card = cardTriplet && C ? cardContext(C, cardTriplet, storyMode, seed) : null
+  if (card) biome = C.biome_map[card.wc.biome] || biome
+  const rules = cfg.rules, B = cfg.biomes[biome], R = rng(`${seed}|${chunk.x0}|${chunk.z0}|${biome}${card ? '|' + card.wc.seed : ''}`)
   const recipes = Object.fromEntries(cfg.recipes.map((r) => [r.id, r])), inst = [], report = [], layers = new Set()
   const push = (o) => { inst.push(o); if (o.layer) layers.add(o.layer); return o }
   const put = (tile, x, z, extra) => { const [gx, gz] = grad(terrain, x, z); const slope = Math.hypot(gx, gz)
@@ -135,17 +154,18 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 2 · Gruppen: Rezept je Keim, Slots über solveLocal, Nest-Positionen, Einsinken nach Art und Hang
   for (const [gi, c] of zoneSeeds(R, chunk, rules, recipeList ? { ...masks, groups: recipeList.length } : masks).entries()) {
     let contactCov = 0
-    const rid = recipeList?.[gi] ?? R.weighted(Object.fromEntries(Object.entries(B.recipes).filter(([k]) => recipes[k] && !recipes[k].fixed && k !== 'path_trace')))
+    const rid = recipeList?.[gi] ?? R.weighted(Object.fromEntries(Object.entries(B.recipes).filter(([k]) => recipes[k] && !recipes[k].fixed && k !== 'path_trace').map(([k, w]) => [k, card ? w * card.bias(k) : w])))
     const rec = recipes[rid], kit = B.kit?.[rid], slots = []
     rec.slots.forEach((sl, si) => { const cnt = Array.isArray(sl.count) ? R.pick(sl.count) : sl.count ?? 1
       for (let k = 0; k < cnt; k++) { const kind = R.pick(sl.kinds); let dom = tilesFor(cfg, kind, kit); if (sl.role === 'pebble' && dom[0]?.placeholder) dom = tilesFor(cfg, kind, 'Steinkit v4');   /* V-763: Kiesel sind Mikro-Ebene, Steinkit erlaubt */ slots.push({ role: sl.role, kind, tier: Math.min(si, 2), domain: dom, baseH: dom[0].h, layer: sl.layer ?? rec.layer }) } })
     if (rec.odd_total && slots.length % 2 === 0) slots.pop()
-    const sol = solveLocal(slots, R, rules, cfg.wfc?.tries ?? 16)
     const [gx, gz] = grad(terrain, c[0], c[1]), down = Math.atan2(-gz, -gx)
+    let sol = null, radii = null, pos = null, rep = null
+    for (let roll = 0; roll < 4 && !rep?.ok; roll++) {   /* V-770: findet das Layout keine Lösung, neu würfeln statt den Rest-Befund durchzureichen */
+      const s2 = solveLocal(slots, R, rules, cfg.wfc?.tries ?? 16), r2 = s2.fill.map((f) => f.tile.r * f.s)
+      for (let tries = 0; tries < 160; tries++) { const cand = nestPositions(R, r2, rules, down), rr = ruleReport(cand, r2, rules.group)   /* V-763/V-768: Abnahme mit dem Gate-Maß */
+        if (!rep || rr.score < rep.score) { sol = s2; radii = r2; pos = cand; rep = rr } if (rr.ok) break } }
     const anchorR = (sol.fill[0].tile.r * sol.fill[0].s) || 1
-    const radii = sol.fill.map((f) => f.tile.r * f.s); let pos = null, rep = null
-    for (let tries = 0; tries < 160; tries++) { const cand = nestPositions(R, radii, rules, down), rr = ruleReport(cand, radii, rules.group)   /* V-763/V-768: Abnahme mit dem Gate-Maß */
-      if (!rep || rr.score < rep.score) { pos = cand; rep = rr } if (rr.ok) break }
     const tiltShare = (rules.lean?.pebble_tilt ?? [15, 0.2])[1], tiltDeg = 18   /* V-763: > 15° auch nach rotZ */, pebIdx = slots.map((s, i) => (s.role === 'pebble' ? i : -1)).filter((i) => i >= 0), nTilt = Math.ceil(pebIdx.length * tiltShare)
     const tilted = new Set(pebIdx.slice(0, nTilt))
     slots.forEach((s, i) => { const f = sol.fill[i]; const tilt = tilted.has(i) ? { rotX: +((tiltDeg * Math.PI) / 180 * (R.next() < 0.5 ? 1 : -1)).toFixed(3), rotZ: +R.range(-0.08, 0.08).toFixed(3) } : {}
@@ -155,7 +175,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
         const nests = s.kind === 'tree' ? 1 + R.int(0, 2) : R.int(1, 2), sun = cfg.light?.sun_az ?? -0.6
         for (let n = 0; n < nests; n++) { const balls = 1 + 3 + R.int(1, 3), a = sun + R.range(-0.5, 0.5) + n * 1.1
           push({ tile: 'fluff:nest', kind: 'fluff', p: [o.p[0] + Math.cos(a) * f.tile.r * f.s * 0.8, o.p[1] + f.tile.h * f.s * (s.kind === 'tree' ? R.range(0.55, 0.8) : 0.5), o.p[2] + Math.sin(a) * f.tile.r * f.s * 0.8],
-            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, color_role: 'fluff', harvest: true, layer: 4 }) }
+            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, color_role: 'fluff', ...(card ? { fluff_mode: card.fluffMode } : {}), harvest: true, layer: 4 }) }
       }
     })
     // Kontakt-Geometrie mit Ursache am Anker (V-749 Nr. 3): Bögen auf 40–50 % des Umfangs, Lücke ≥ 25 %, Stücke so gesetzt, dass ihre Winkelbreiten
@@ -213,23 +233,49 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       put(R.pick(tuftTiles), x, z, { s: +(sc * len).toFixed(3), group: grp, role: 'grass', layer: 4, src, tint_step: Math.max(0, Math.min(G.color.steps - 1, step + R.int(-1, 1))), color_role: G.color.role,
         ...(lean ? { rotX: +((Math.sin(la) * lean * Math.PI) / 180).toFixed(3), rotZ: +((-Math.cos(la) * lean * Math.PI) / 180).toFixed(3) } : {}) }); grass[src]++ }
     // a) Fuß-Büschel
-    for (const o of solid) { const n = R.pick(G.foot.count), ro = (o.s || 1) * (tilesFor(cfg, o.kind)[0]?.r || 0.6), [gx, gz] = grad(terrain, o.p[0], o.p[2])
+    for (const o of solid) { const n = typeof G.foot.count === 'object' && !Array.isArray(G.foot.count) ? (G.foot.count[o.role] ?? 3) : R.pick(G.foot.count),   /* V-770: 5 am Anker, 3 an der Stütze */ ro = (o.s || 1) * (tilesFor(cfg, o.kind)[0]?.r || 0.6), [gx, gz] = grad(terrain, o.p[0], o.p[2])
       const downA = Math.hypot(gx, gz) > 0.02 ? Math.atan2(-gz, -gx) : (cfg.light?.sun_az ?? -0.6), sun = cfg.light?.sun_az ?? -0.6
       /* Bauweise: Fels → Grasnest in der Kehle bergauf; Strauch → Sonnenseite unter der Kante; Baum → an der Tropfkante; sonst hangabwärts */
       const isStone = /stone|rock|boulder/.test(o.kind), side = isStone ? downA + Math.PI : o.kind === 'bush' ? sun : downA, arc = Math.PI * (isStone ? R.range(0.3, 0.5) : R.range(0.45, 0.95)), step = R.int(0, G.color.steps - 1)
       const ring = o.kind === 'tree' ? [1.6, 2.2] : G.foot.ring_r
       for (let k = 0; k < n; k++) { const a = side - arc / 2 + arc * ((k + R.range(0.2, 0.8)) / n), d = ro * R.range(...ring)
         tuft(o.p[0] + Math.cos(a) * d, o.p[2] + Math.sin(a) * d, G.foot.ratio[Math.min(2, k === 0 ? 0 : k < 4 ? 1 : 2)] * R.range(0.9, 1.1), o.group, 'foot', step, [o.p[0], o.p[2]]) } }
-    // b) Felder: je Rasterpunkt ein Kandidat; über der Schwelle eine Büschel-Gruppe 3/5/7
-    const gs = G.field.grid_m, negC = [chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size / 2]
+    // b) Felder als Flecken (V-770): Fleck-Keime im 8-m-Raster nach Rauschen und Senke; je Fleck 3 oder 5 Büschel-Gruppen auf einer Vogel-Spirale
+    //    (5+5+3 = 13 bzw. 5+5+5+3+3 = 21, Fibonacci), je Gruppe 5 Kern- bzw. 3 Rand-Büschel wieder als Vogel-Spirale; Randgruppen lockerer und kürzer (Sprenkel).
+    const F = G.field, gs = F.field_grid_m, negC = [chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size / 2], dens = card ? card.grassDensity : 1, GA = 2.39996
+    grass.patches = []; grass.fields = 0
     for (let gx0 = chunk.x0 + gs / 2; gx0 < chunk.x0 + chunk.size; gx0 += gs) for (let gz0 = chunk.z0 + gs / 2; gz0 < chunk.z0 + chunk.size; gz0 += gs) {
-      const x = gx0 + R.range(-0.35, 0.35) * gs, z = gz0 + R.range(-0.35, 0.35) * gs, score = vn(x, z) + Math.max(0, Math.min(G.field.hollow_bonus, hollow(x, z) * 2))
+      // Feld-Ebene: je 16-m-Feld ein Keim; über der Schwelle 3 oder 5 Flecken auf einer Vogel-Spirale um den Keim
+      const fx = gx0 + R.range(-0.3, 0.3) * gs, fz = gz0 + R.range(-0.3, 0.3) * gs, fscore = vn(fx, fz) + Math.max(0, Math.min(F.hollow_bonus, hollow(fx, fz) * 2))
+      if (fscore < F.thresh || R.next() > Math.min(1, dens * (fscore - F.thresh) / (F.edge_soft || 0.1))) continue
+      const np = R.pick(F.field_patches), frot = R.range(0, Math.PI * 2); grass.fields++
+      for (let pi = 0; pi < np; pi++) {
+      const pd = F.patch_spacing_m * Math.sqrt(pi + (pi ? 0.5 : 0)) * R.range(0.85, 1.15), x = fx + Math.cos(frot + pi * GA) * pd, z = fz + Math.sin(frot + pi * GA) * pd
       const underCrown = crowns.some((c) => (c[0] - x) ** 2 + (c[1] - z) ** 2 < (c[2] * 1.3) ** 2); if (underCrown && R.next() < 0.75) continue
-      if (score < G.field.thresh || R.next() > Math.min(1, (score - G.field.thresh) / (G.field.edge_soft || 0.1)) || nearPath(x, z) || inSolid(x, z)) continue   /* Rand: Dichte läuft als Sprenkel aus */
-      const n = R.pick(G.field.cluster), short = Math.hypot(x - negC[0], z - negC[1]) < chunk.size * 0.18 ? G.field.neg_space_short : 1, step = R.int(0, G.color.steps - 1), grp = `gr${grass.clusters++}`
-      for (let k = 0; k < n; k++) { const a = k * 2.399 + R.range(-0.4, 0.4), d = k === 0 ? 0 : R.range(...G.field.spread_m) * Math.sqrt(k / n) * 1.4, tx = x + Math.cos(a) * d, tz = z + Math.sin(a) * d
-        if (nearPath(tx, tz) || inSolid(tx, tz)) continue
-        tuft(tx, tz, G.foot.ratio[k === 0 ? 0 : k < 4 ? 1 : 2] * short * R.range(0.9, 1.1), grp, 'field', step) } }
+      if (nearPath(x, z) || inSolid(x, z) || x < chunk.x0 || z < chunk.z0 || x > chunk.x0 + chunk.size || z > chunk.z0 + chunk.size) continue
+      const nc = R.pick(F.patch_clusters), nCore = Math.ceil(nc / 2), short = Math.hypot(x - negC[0], z - negC[1]) < chunk.size * 0.18 ? F.neg_space_short : 1
+      const grp = `gp${grass.patches.length}`, rot = R.range(0, Math.PI * 2), plan = []; let placed = 0
+      for (let c = 0; c < nc; c++) { const edge = c >= nCore, nt = edge ? F.cluster_tufts.edge : F.cluster_tufts.core, step = R.int(0, G.color.steps - 1); plan.push(nt)
+        const ca = rot + c * GA, cd = F.cluster_spacing_m * Math.sqrt(c + (c ? 0.5 : 0)) * R.range(0.9, 1.1), cx = x + Math.cos(ca) * cd, cz = z + Math.sin(ca) * cd
+        for (let k = 0; k < nt; k++) { const ta = R.range(0, 6.28) + k * GA, td = F.tuft_spacing_m * Math.sqrt(k) * (edge ? F.edge_spread : 1), tx = cx + Math.cos(ta) * td, tz = cz + Math.sin(ta) * td
+          if (nearPath(tx, tz) || inSolid(tx, tz)) continue
+          const before = grass.field; tuft(tx, tz, G.foot.ratio[k === 0 ? 0 : k < 4 ? 1 : 2] * short * (edge ? F.edge_short : 1) * R.range(0.9, 1.1), grp, 'field', step); placed += grass.field - before } }
+      grass.clusters += nc; grass.patches.push({ id: grp, clusters: nc, planned: plan.reduce((a, b) => a + b, 0), placed }) } }
+    // c) Die eine Bedeutung je Zelle (V-770, Etherington 70/20/10): höchstens ein bewusster Regelbruch, Wahrscheinlichkeit = surrealism des Karten-Dreiers
+    if (card && rules.oddity && R.next() < card.wc.params.surrealism) {
+      const cen = solid.length ? solid.reduce((m, o) => [m[0] + o.p[0] / solid.length, m[1] + o.p[2] / solid.length], [0, 0]) : negC, away = Math.atan2(negC[1] - cen[1], negC[0] - cen[0]) + R.range(-0.6, 0.6)
+      let ox = 0, oz = 0, ok = false
+      for (let t = 0; t < 24 && !ok; t++) { const d = chunk.size * R.range(0.2, 0.3), a2 = away + t * GA; ox = negC[0] + Math.cos(a2) * d; oz = negC[1] + Math.sin(a2) * d
+        ok = !pathPts.some((p) => (p[0] - ox) ** 2 + (p[2] - oz) ** 2 < (rules.oddity.path_clear_m ?? 3) ** 2) && !solid.some((o) => (o.p[0] - ox) ** 2 + (o.p[2] - oz) ** 2 < 9) && !masks?.blocked?.(ox, oz) }
+      if (ok) { const kind = R.pick(Object.keys(rules.oddity.kinds)), story = rules.oddity.kinds[kind], st = tilesFor(cfg, 'stone_M', 'Steinkit v4'), od = { group: 'oddity', layer: 3, oddity: kind, story }
+        if (kind === 'stone_on_tip') { put(R.pick(st), ox, oz, { ...od, role: 'oddity', s: 1, rotX: 1.1, rotZ: +R.range(-0.2, 0.2).toFixed(3), sink: 0.05 })
+          for (let k = 0; k < 3; k++) { const a3 = k * GA; put(R.pick(tilesFor(cfg, 'stone_S', 'Steinkit v4')), ox + Math.cos(a3) * 0.7, oz + Math.sin(a3) * 0.7, { ...od, role: 'pebble' }) } }
+        else if (kind === 'cairn') { let top = 0; [1, 0.62, 0.38].forEach((sc, k) => { const t0 = R.pick(st), h = (t0.h || 0.5) * sc, o2 = put(t0, ox, oz, { ...od, role: 'oddity', s: sc, sink: k ? 0 : 0.15 })   /* Fuß 15 % im Boden, jeder Stein sitzt 10 % in der Mulde des unteren: nichts schwebt */
+          const y = k ? top - 0.1 * h : -0.15 * h; o2.p[1] = +(o2.p[1] + y + (k ? 0 : 0.15 * h)).toFixed(3); top = (k ? top - 0.1 * h : 0) + h * (k ? 1 : 0.85) }) }
+        else { for (let k = 0; k < 13; k++) { const a3 = (k / 13) * Math.PI * 2; tuft(ox + Math.cos(a3) * 1.6, oz + Math.sin(a3) * 1.6, G.foot.ratio[1], 'oddity', 'foot', 1) }
+          inst.filter((o) => o.group === 'oddity').forEach((o) => Object.assign(o, od, { role: 'oddity' })) }
+        grass.oddity = kind }
+    }
     // Wind-Gruppen (§6): eine Gruppe teilt Grundphase; Gruppen-ID nach Position des Gruppen-Mittels im 8-m-Raster (≤ 64 je Zelle), Biegung je Art
     const W = G.wind, cen = {}
     for (const o of inst) { const c = (cen[o.group] ||= [0, 0, 0]); c[0] += o.p[0]; c[1] += o.p[2]; c[2]++ }
@@ -241,8 +287,8 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 5 · Regel-Bericht für das Gate (Zone und Biografie)
   const occ = inst.filter((x) => x.role === 'anchor' || x.role === 'support').reduce((s, x) => s + Math.PI * 2.2 ** 2, 0)
   const zoneReport = { groups: report.length, neg_space_est: +(1 - Math.min(1, occ / chunk.size ** 2)).toFixed(3), layers: [...layers].sort(), layers_ok: (rules.biography?.layers_required || []).every((l) => layers.has(l)),
-    placeholders: inst.some((x) => x.placeholder), grass: { ...grass, on_path: inst.filter((g) => g.src === 'field' && inst.some((p) => p.role === 'path' && (p.p[0] - g.p[0]) ** 2 + (p.p[2] - g.p[2]) ** 2 < (rules.grass?.field.path_clear_m ?? 1) ** 2)).length, wind_groups: new Set(inst.map((x) => x.wind_group)).size } }
-  return { schema: 'kfb.place-recipe/1', seed, biome, chunk, instances: inst, stamps: stampOut, deltas: stampOut.map((s) => ({ stamp: s.id, schema: 'kfb.terrain-delta/1', only_add: true })), report: { groups: report, zone: zoneReport } }
+    placeholders: inst.some((x) => x.placeholder), grass: { ...grass, fib_ok: (grass.patches || []).every((p) => [13, 21].includes(p.planned)), on_path: inst.filter((g) => g.src === 'field' && inst.some((p) => p.role === 'path' && (p.p[0] - g.p[0]) ** 2 + (p.p[2] - g.p[2]) ** 2 < (rules.grass?.field.path_clear_m ?? 1) ** 2)).length, wind_groups: new Set(inst.map((x) => x.wind_group)).size } }
+  return { schema: 'kfb.place-recipe/1', seed, biome, chunk, instances: inst, stamps: stampOut, deltas: stampOut.map((s) => ({ stamp: s.id, schema: 'kfb.terrain-delta/1', only_add: true })), report: { groups: report, zone: zoneReport, ...(card ? { card: { biome_card: card.wc.biome, biome, story_mode: card.mode, fluff_mode: card.fluffMode, surrealism: +card.wc.params.surrealism.toFixed(3), grass_density: +card.grassDensity.toFixed(3) } } : {}) } }
 }
 
 // Rezept-Hash für den Golden-Test (gleicher Seed = gleicher Hash)

@@ -11034,6 +11034,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-770",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Karten-Seed, Fibonacci und der eine Regelbruch im Löser (Georg 25.10.: „bau 1–3 so“). 1) placeChunk nimmt optional einen Karten-Dreier: kfb-world-context.v1.mjs 1:1 aus dem Card Zone Lab (terrain-v10/world-context.js) → 8-Achsen-Vektor (60/28/12) → Biom (bis weitere Biome existieren auf moos abgebildet), Rezept-Gewichte, Gras-Dichte, Story-Mode; Story-Mode kommt im Spiel aus dem Spielstand, nur ohne Vorgabe abgeleitet nach Wort-Anteil je Achse; Fluff auf grünem Laub nie Comic/Tragic, dann der nächste erlaubte Mode. 2) Höchstens ein bewusster Regelbruch je Zelle mit Wahrscheinlichkeit = surrealism: Stein auf der Spitze, Hexenring aus 13 Büscheln oder Steinmännchen 1 : 0,62 : 0,38; am Rand des Negativraums, ≥ 3 m vom Weg, nie in einer Gruppe. 3) Gras als Fibonacci-Fraktal auf drei Vogel-Spiralen: Feld 3 bzw. 5 Flecken, Fleck 13 bzw. 21 Büschel (5+5+3, 5+5+5+3+3), Fuß 5 am Anker, 3 an der Stütze. Dazu: Layout ohne Lösung wird bis zu 4× neu gewürfelt. Test 200 Zellen (100 mit Karten): G1 0 Befunde in 589 Gruppen, Fibonacci 0 Abweichungen, 0 Büschel auf dem Weg; P0 golden 19b47897.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiche Karten ergeben die gleiche Zelle; die Karte färbt Ort, Dichte und Bedeutung, ohne die Bauweise zu brechen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11146,7 +11161,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1280",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1281",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
