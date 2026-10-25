@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "entries": [
   {
    "id": "V-001",
@@ -12069,6 +12069,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-839",
+   "date": "2026-10-26",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Georg q243/q244: KFB-Sprechblase (Chatterbox, ohne Umriss, Zipfel zum Kopf der KB-Vignette), schmaler Plakettenrahmen, alle neuen Spieltexte EN, kein Knet-Ring am Genius-Loci-Ort, Popups und Werbetafeln drehen sich zur Kamera (Kayfabe-Illusion), je Werbetafel ein eigenes warmes Licht (Stärke wie Figurenlicht, nachts kräftiger), Bildflächen nachts selbstleuchtend @9cdcdd1.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Stil-Vorgaben für Blasen, Sprache und Kayfabe-Popups gelten überall gleich.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-840",
+   "date": "2026-10-26",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Werbetafeln am Straßenrand (Georg q244): feste Plätze je 256-m-Feld (Gelände boardsAround, kleiner ebener Stand, Abstand zu Karten/Kuppel/Café/Start), Pariser Werbetafeln (Querformat) als Popups zur Kamera; Hälfte blättert Karten aus allen Decks, Hälfte zeigt KnuckleBob-Clips als TV-Spots (stumm fern, Ton nah); die nächsten drei mit eigenem Licht. Baustein popupBoards.js. boards=0 = aus.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Werbetafeln machen die Welt zur Bühne für Karten und Clips, ohne Rechenzeit fern der Spielerin.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-841",
+   "date": "2026-10-26",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Audio-Routing R1 (Georg 26.10.: „alle neuen Songs, Videos, Audio, Mindscape und sonstigen Sounds mit Audio-Site/Soundbed abstimmen und sauber registrieren“): ein Besitzer kfbAudio, alle Quellen über seinen Graphen (Song-Videos Musik-Bus, Clips Stimm-Bus); Vorrang Song-Video > Zonen-Bett > globales Bett, KB-Stimme duckt; H15-Engine stumm in der Kuppel. Café-Bett = Georgs S16 Café Absurde (kfb-audio @78be8f5, Liste cafe). SSOT replies/AUDIO_ROUTING_R1.md; Katalog-Eintrag cafe_absurde.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Audio-Besitzer, klare Vorrangregeln: nie zwei Musiken, Stimme immer verständlich.",
+   "applies": "Regel"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12181,7 +12226,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1372",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1375",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
