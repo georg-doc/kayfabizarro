@@ -12024,6 +12024,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-836",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Genius Loci Café der Existentialisten im Spiel (V-813, Georg 25.10. „weiter mit dem café“): KnuckleBob mit Baskenmütze in der Plakette der Fahrzeug-Seele (showSoulPlaque, gleiche Stummschaltung), Anlässe ankunft/cocktail/gedanken/abschied je ohne Wiederholung, ankunft_04 („mon ami“) aus dem Pool; Café-Musikzone (S16 Café Absurde b242, bis dahin cozy); ebener Platz (lociHeight) mit Paris-Popup-Kulisse (V-773, 14 Aufsteller, Licht aus dem einen Rig) und Plakatwand mit Georgs Video „Absinthe & Apricot Sunsets“ (YouTube-Download auf Georgs Freigabe, privat @ff905e6): startet direkt davor, pausiert Café-Musik und KnuckleBob, pausiert beim Weggehen. Gemeinsame Zonen-Einblendung (zoneBanner.js). Sphäre: Nähte kaschiert (versetzte Kopie, Pole, Sprenkelband). Kartenkugeln feiner (q241). Hub q243. loci=0 = aus @8ceab4e.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Orte bekommen eine Seele und eine Kulisse aus vorhandenen Bausteinen; Musik und Stimme überlagern sich nie.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-837",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Abschluss Farbrollen Meshy-Bühnen (WSB V-832 Schritt 2: 1/11, Amphitheater 7): bestanden Theater, Utopia-Bühne, Comic-Sender, Alien-Werkstatt, Mesa, Schnee, Utopia-Bibliothek (r824), Kayfabrick (r829), Amphitheater (r832); Gefängnis r824 dunkel, Imbiss-Ruine r806; zwölf Bühnen mit Original-Bemalung und sanfter Tönung (V-286). Keine weitere Runde. Kanon-Vorschlag emission_hex (r832) nicht übernommen. Dazu Georgs Hub-Antworten: q240 PASS (größere Rahmenbäume als Varianten = Haupt-Asset spawnt kleinere Ableger, V-799), q241 Karten gemischt aus allen Decks + Kugeln feiner, q242 Claude-Design-Feinschliff der Sphäre später. Nächster WSB-Auftrag: Einbettung (Fahrplan 5b).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Farbschleife ist beendet; Bestandenes zählt, der Rest bleibt original und dezent.",
+   "applies": "abgeschlossen"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12136,7 +12166,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1369",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1371",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

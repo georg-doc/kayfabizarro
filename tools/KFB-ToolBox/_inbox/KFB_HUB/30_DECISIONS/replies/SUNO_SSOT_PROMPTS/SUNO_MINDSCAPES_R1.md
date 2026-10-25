@@ -84,3 +84,31 @@ LYRICS:
 [long reverb tail into silence]
 
 [End]
+
+**S16 Café Absurde** (Genius Loci Café der Existentialisten, V-813; Georg 25.10.: „mindscape style, aber french jazz, cosmic existentialist, multi-layered – und absurd“; Hub b242)
+STYLE: Cosmic gypsy-jazz ambient, instrumental; lazy drifting swing around 84 BPM in D minor with sudden Lydian lifts; slowed manouche guitar pompe, accordion musette swells, brushed snare, half-time walking upright bass, muted cornet phrases from far away, clarinet glissandi like a dry laugh; underneath a deep cosmic drone, shimmering synth pad, tape-warped piano, reversed vibraphone; off-kilter 7/8 bars, phrases that stop mid-sentence, a lone toy piano note in the silence; 1930s shellac crackle on a dry mono swing layer against a wide hi-fi space layer, tape wow and flutter, lots of breathing room, never resolves, ends on an open chord
+LYRICS:
+[Intro]
+[shellac crackle, solo accordion musette, cosmic drone fades in]
+
+[Verse 1]
+[slowed manouche guitar pompe, brushed snare, upright bass]
+
+[Interlude]
+[everything stops, one toy piano note]
+
+[Verse 2]
+[muted cornet from far away, clarinet laughing glissando, reversed vibraphone]
+
+[Break]
+[off-kilter 7/8 bar, accordion stops mid-phrase]
+
+
+[Verse 3]
+[all layers together, shimmering pad swells, swing drifting]
+
+[Outro]
+[swing dissolves into the cosmic drone, crackle remains]
+
+[Fade Out]
+[End]
