@@ -210,3 +210,62 @@ This document **does not** supersede the already-committed Flatworld research. T
 ### 13.5 Return delta / unchanged next gate
 
 **Changes in this research slice:** additive section 13 in this existing dossier only. No production code, media, real Fleurs image isolation, renderer, library import, live site/Stage, generated screenshot, CI or GPU execution. **Checks:** direct GitHub readback of exact file/head and editorial/source-link assertions; do not count literature reads as software tests. **Unresolved:** original interactive/moving reference cannot be declared visually reviewed; code/license unknown; KFB source objects and WS1 current runtime head must be isolated by current owner before use. **Single unchanged next gate:** WS1 TERRAIN/WORLD INTAKE of §12 (exact receiver head and KEEP/ADAPT/REJECT + cheap coherent POI/route composition proof); include this optional *art-direction comparator* in the intake, not as a new blocker or mandatory implementation.
+
+---
+
+## 14 · ADDITIVE RESEARCH NOTE R3 — DYNAMIC VORONOI × OSM POCKET-CITY SEAMS (2026-10-25)
+
+**Status:** user-triggered method assessment, not an implementation order, new renderer/world writer, chosen algorithm, borrowed source asset or accepted Stage. **Existing planning owner, branch and PR #447 unchanged.** Preserve KFB as collage and cross-style composition: procedural zoning must not impose one art style. This note complements §4–§6, §10 and §13, not replacing WS1 terrain work.
+
+### 14.1 Exact user reference and evidence level
+
+- [ToastilyBreaded, “Bonus: showcasing the dynamic voronoi graph”, r/proceduralgeneration, 2026-01-08](https://www.reddit.com/r/proceduralgeneration/comments/1q7joho/bonus_showcasing_the_dynamic_voronoi_graph/) ([prior city prototype](https://www.reddit.com/r/godot/comments/1plamb9/im_prototyping_a_procedurally_generated_city/)).
+- User-provided screenshot in this 2026-10-25 chat at approx. **0:05/0:15 of source clip**: color-coded river/land with blue Voronoi edges; small irregular cells at white built-up urban cluster, larger/quasi-grid cells in surrounding landscape. **Observed screenshot only**, not inspected moving clip or a KFB render; the screenshot is not added to GitHub/media and does not confer redistribution rights. Visible blue lines are a **debug representation**, not proposed KFB surface design.
+- The Reddit author describes *regenerating the Voronoi from varying point patterns/densities without changing already “claimed” cells*: generate new points → reject new points inside **circumcircles associated with claimed cells** → add the claimed-cell centroids back to the point set → recompute Voronoi. **This is the author's reported algorithm/behavior**, not a mathematically or code-verified KFB exact-preservation guarantee; the publicly visible discussion is not a verified released code package or license. Verify under cell adjacency, degeneracies, site moves and boundary clipping before adopting.
+- Broader **reference donors**, not imported: [Red Blob Games Voronoi maps tutorial](https://www.redblobgames.com/x/2022-voronoi-maps-tutorial/) (Delaunay/Voronoi, elevation/moisture, rivers/graph) and [Red Blob Mapgen4](https://www.redblobgames.com/maps/mapgen4/) (interactive artistic terrain/biomes/weather); [redblobgames/mapgen2](https://github.com/redblobgames/mapgen2) (JavaScript graph/biome generator). These are technique and API ideas; inspect exact source revision/license and isolate actual output before code reuse. No claimed reuse of ToastilyBreaded implementation.
+
+### 14.2 KFB-specific concept — Voronoi as *invisible adaptive regional allocator*
+
+**Desired player-facing outcome:** driving through continuous, distinctly KFB-colored terrain, naturally discover a source-true **Cologne OSM pocket city** (Dom/HBF/Rhein/bridge/street network) with stable silhouette, sensible approaches, actual collision, NPC/POI activity and a believable blend into surrounding hills/forest/villages. World seed or new encounters can adapt **outside** the fixed urban footprint without changing the existing city's geographic geometry, coordinates or internal semantic graph. Paris, fantastic city fragments, micro-dioramas and Goo-altered scenes remain later alternative packages, not automatic requirements.
+
+| Scale / authority | Voronoi / WFC / OSM role | Must remain stable |
+| --- | --- | --- |
+| **Macro KFB surface** (WS1 terrain/support owner) | actual continuous terrain/water/geological fields; optional coarse biome/place-suitability Voronoi **labels** | single height/mesh/support/physics truth; no global visible Voronoi grid |
+| **Adaptive regional layer** (proposed *data only*, not a second world engine) | nonuniform Voronoi seeds: dense near settlements/roads/rivers/points of interest, sparse at quiet distance; named protective “claimed” pockets | deterministic seed/revision, persistent zone identity and retained player-discovered packages; no sudden reflow near a player |
+| **OSM city packages** (existing City Lab + landmark authors) | source-true local metric frame, urban extents and protected skyline/road anchors; **one whole fixed scene/pocket**, potentially overlapping several allocator cells rather than forcing its boundaries to equal one Voronoi polygon | exact local streets/building footprints/landmark coordinates inside the package; no Voronoi remix of authentic OSM geometry |
+| **Boundary negotiation** (existing WS1 + Track Core) | terrain suitability/grade/cut-fill, coast/river contact, distance-to-pocket seam blend, road/bridge entry alignment, vegetation masks, portal or scenic edge options | passable approach; collision mesh equals support terrain; no detached city slab or fake drivable splat |
+| **Micro-world authoring** (WFC / scene recipes / Resident Atlas) | WFC *inside eligible non-OSM plots* and adapted authored parcel variants; real POI graph first, compatible local geometry next; contrasting KFB cartoon/ink/clay/painterly looks allowed per district | scene provenance, actor actions/props, POI reachability and road/nav connectivity |
+
+**Core separation:** Voronoi allocates opportunities / influence *over the world*, WFC selects legal local composition, OSM preserves authored geographic relationships, WS1/Track retain geometry and movement, KFB art-direction controls per-scene style. Voronoi cells are **not mandatory physical mesh patches**, and hard cell borders do not imply hard transitions.
+
+### 14.3 Edge integration — not just a polygon with a city pasted inside
+
+1. Choose a source-verified **Cologne Dom/Zentrum subset** already normalized in OSM City Lab; isolate actual landmark and built block visually. Determine pocket bounding polygon and approach constraints from genuine roads/rail/Rhine (not an invented circle).
+2. Find candidate KFB world position(s) by landmass/slope/river/access/visibility and story/Genii Loci relevance. A real OSM city can be rotated/translated as a whole with its documented provenance and local-metre transform; never distort individual streets for nearest Voronoi cell adjacency.
+3. Claim the pocket as a **stable protected footprint** plus an intentionally bounded transition apron. Regenerate surrounding regional seeds with a constrained-site strategy such as the author's claimed-cell approach, or a simpler fixed buffer/partition comparator. Reserve coastline, bridge and through-route anchors.
+4. Smooth **visual/geological influence fields** across the apron (distance mask / blend / signed-distance alternatives); vary terrain/foliage/material/atmosphere intentionally. Do **not** blur or numerically smooth the *OSM road graph* or move Dom/HBF. Continuous geometry and collision must agree.
+5. Connect actual outside routes through existing **Track Core**; validate at least one fully drivable/walkable approach and one semantic Resident/POI loop. If no valid approach, reject candidate placement deterministically and choose another seed/site rather than teleport/patch-in a fake road.
+6. WFC may fill suitable nearby hamlets, gardens, ruins or seasonal/Goo scene variants in unclaimed parcels. The player's already discovered city package and state remain stable on regeneration/reload. World-affecting Goo/Fluff state stays with existing runtime authority.
+
+**Important architecture risk:** forcing the OSM pocket boundary to match a single irregular Voronoi cell could crop buildings, rivers and roads. Use **protected package polygons + local influence zones / polygon overlays**, or multiple cells attached to one semantic district. City identity is not identical to a tessellation primitive.
+
+### 14.4 Candidate A/B acceptance question for WS1 after existing intake
+
+**Cheap paper/graph proof FIRST**, without new live generator: same Cologne OSM donor and KFB terrain crop, one seed, one top-down annotated POI/route and protected footprint map. Compare:
+- **A — Baseline:** direct prevalidated city insertion + straightforward falloff/terrain apron, **no Voronoi**.
+- **B — Dynamic-adaptive:** sparse regional Voronoi, local density around pocket; preserve protected city and route anchors on new seed addition, use **identical** original source scene + terrain/Track owners.
+
+Only select B when it demonstrably improves nearby landscape/settlement layouts, organic seam logic or future controlled expansion over A. Run source-isolated images first; then matching aerial camera and drive-in video, baseline vs variant, with real KFB models/materials, not colored debug cells or placeholder cardboard.
+
+**Future assertions / not executed here:**
+- deterministic rerun and persistent IDs for claimed city/POIs after adding adjacent cells; polygon/geographic identity and boundary/topology remain stable or explicitly logged if not;
+- no protected buildings/street/Rhein/rail/bridge source geometry cropped/warped; road endpoints match Track Core and physical ground;
+- protected city retains player state and same landmark visibility despite outer land regeneration; NPC/prop nav loop and one playable access route work;
+- no obvious hard seam, fake grid or discontinuous slope/contact; preserve collage style autonomy; count graph solve cost, generated triangles, memory, frame time on source-correct focused target device;
+- if algorithm cannot preserve claimed cells under actual seeds/edge cases, fall back to **fixed protected buffer** rather than rebuilding the owner or fudging source city.
+
+**Rights/evidence:** user screenshot/reference link only, external author code/art license not established, no screenshot uploaded to GitHub, no downloaded sample, no visual browser isolation, no source implementation, no runtime, no unit/integration/browser/GPU tests, no public Stage and no merge.
+
+### 14.5 Return / unchanged single next gate
+
+**This addendum modifies only this existing planning dossier**; the current WS1 R3F implementation and WB2 R4 STOP status are unchanged. No KFB Hub/router/public URL changes because this is an additive planning lead. **One next gate remains §12: WS1 TERRAIN/WORLD INTAKE** — owner confirms the exact current receiving branch and APIs, supplies KEEP/ADAPT/REJECT and one cheap meaningful Cologne geo/route/POI composition proof. Include *fixed-pocket baseline vs dynamic adaptive Voronoi* as an **optional nonblocking comparison**, not as a requirement to replace WS1 terrain, adopt WFC globally, or create a second world owner.
