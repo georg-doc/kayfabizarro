@@ -1,3 +1,47 @@
+# CURRENT UPDATE · R2 / R3 · 25.10.2026
+
+**BLOCKED at hosted all-path password gate · prior Site v4 RESTORED · R3 queued.** Supersedes the earlier input-transport blocker below: the complete R2 artifact is now received and byte-verified.
+
+## Actual result / one next gate
+
+Existing [KFB · WS1 Staging](https://kfb-ws1-staging.frizzlebob.chatgpt.site) remains the sole destination. The tested R2 candidate was published as saved v5, but actual hosted probes found that native static dispatch bypasses the additional Basic password for direct internal files. Independent Production Guard stopped R2 acceptance and R3 progression. The exact prior v4 was restored successfully and its original Staging interface was visibly checked in Chrome. No new Site, Cloudflare project, merge, deletion, audience change or public upload of private game files.
+
+**One next gate:** WS0 / Sites platform owner must resolve Worker-first/static authentication routing on this SAME private Site so direct package files also require the password. Re-run unauthenticated internal-file probes first; only then reattempt R2 and subsequently R3. No substitute host/routing architecture is authorized by this Return. Georg needs no token or secret setup.
+
+## Exact provenance
+
+- Game package: private `georg-doc/KFB-Stunt-Car-Race`, `site/mvp-r2-dist` @`e76c26a6891d023aac6f2ed5f26c2fd87c9f54de`.
+- Intake: **127/127 SHA256 records PASS**,47,782,500B; manifest itself adds13,511B. Runtime report124 files =123 assets +index; ancillary docs explain the different total. No game rebuild or private source intake needed.
+- Site project: `appgprj_6ad2ac305b788191af0bdfc68823a300`, owner-private custom policy unchanged (one user, no groups).
+- Saved candidate **v5**: `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5d278484d3c88191b93e87b9c1109a69`; native source head `d1b307563e5f55ce096a7b6bf3d16e09cea4d71c`; initial deployment `appgdep_6add59b278d0819180687571b757519b`. Archive49,336,320B /195 archive files including framework output. It is retained, NOT current accepted game.
+- Restored **v4**: `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_d6686f7206a88191b4e85ac0373c0d63`; source `fbabbad7b8efa98c9071fccb358e4fb4788ec826`; rollback deployment `appgdep_6add5ad182f48191aff724c719771ff0`, native SUCCEEDED, then original Staging UI observed in browser.
+- Tester password was generated and set only through native Sites runtime secrets (revision1), never in source or this public Return. Values deliberately omitted. It does not make restored v4 the R2 game. Existing ChatGPT owner access remains in effect.
+
+## Implemented candidate / actual tests
+
+Existing Vinext Worker retained. Added `lib/mvp-delivery.mjs`, exact-package manifest and admission script, all-path guard before framework/virtualassets/proxy, fixed-repo GET proxy with pinned immutable/private and named-ref600s/private cache, MIME and streamed ranges. `vite.config.ts` explicitly requests `run_worker_first:true` and `html_handling:none`; emitted local config confirms them. One original GLB relative texture reference maps to the exact delivered hashed texture without modifying any model/game bytes. Optional `?kfbqa=1` adds observational browser frame-callback measurement only, no game/audio owner.
+
+- **30/30 unit checks PASS**.
+- **137/137 actual local Worker HTTP checks PASS**:127 byte-identical delivered responses,7 unauthenticated paths,indexrevision,Range206,namedrefproxy.
+- Independent Tester127/127 source hashes; Critic26 then-current unit checks + source configuration; Guard CONTINUE to hosted gate, then **STOP at demonstrated hosted failure / restore v4**. Builder is sole production writer.
+- First hosted suite: **133 PASS /3 FAIL**, not normalized into a green result. Focused follow-up proved: without Basic credentials, `/game-package/`→200 and `/game-package/assets/hero-Cg69yYuF.glb`→200, while `/` and virtual `/assets/*` are guarded. Root with Basic→307 to internal folder. Native static routing does not honor the local all-path guard as expected. Generated `_headers` also differs from the delivered auxiliary file. Authenticated model Range206 and raw proxy200 worked.
+- Probes used legitimate Sites service access, omitting Basic where stated. This proves the ADDITIONAL password requirement fails; it is **not proof of anonymous public-internet exposure**, since Sites owner-private access remained unchanged.
+- Local naked URL reached expected `#m1,harvest,look=terrain3,world=probe,hud=3d`; actual terrain, figure and HUD visible. Normal Chrome Basic dialog/login worked. Hosted root redirected to the unintended internal folder; therefore no successful naked-URL hosted acceptance claimed.
+- Local first300 browser frame callbacks: mean29.2/s,p95frame107.6ms, includes startup. **Not engine-render FPS, not60FPS acceptance.** Full combat/drive/audio-hearing/clean-console acceptance not completed; no invented PASS. Initial missing-texture error had a verified-file alias repair; ambiguous extension/object console entries remain unclassified.
+- Native Worker error-log query returned0events; this does not contradict the routing failure.
+
+Detailed evidence: `replies/WSA_MVP_GPT_SITE_R1_PREPARE/R2_R3_HOSTED_EVIDENCE.json`, evidence commit `127c261025c7a15b42f258ace4d2e2b3434b557c`, exact ref/file fetched after write. Local screenshot of restored Staging retained in this executor workspace; no private game screenshot/binary uploaded to the public register.
+
+## R3 follow-up
+
+Approved order is preserved. Read `SITE_README.md` and629-line manifest at private `site/mvp-r3-dist` @`18ad81d25e8f560124f5104c5aa1832f3a445c68`. R3 adds mount/live,X,H15,HeyGen/loci behind switches; default remains R2. **R3 files NOT downloaded/admitted/built/published** because R2's mandatory hosting gate failed. Future test hash: `#m1,harvest,look=terrain3,world=probe,hud=3d,mount=live,h15=1,loci=1`. H15/HeyGen/static paths must pass the same password gate before release.
+
+Changed Site source: `build/sites-worker.ts`, `vite.config.ts`, `cloudflare-env.d.ts`, `lib/mvp-delivery.mjs`, `lib/game-package.json`, `scripts/stage-game-package.mjs`, `scripts/receive-r2.mjs`, `tests/mvp-delivery.mjs`, `tests/worker-smoke.mjs`, `public/kfb-qa-fps.js`, `public/game-package/*`, checkpoint/provenance notes. Public register changes are evidence, this additive Return and changelog ONLY; no private game contents. No new PR for this existing register lane. Final register head is the enclosing fetched commit.
+
+---
+
+## Preserved previous Return — historical input transport blocker now closed
+
 # CURRENT UPDATE · V-725 / V-727 · 24.10.2026
 
 **BLOCKED · complete private build-input transport · NOT PUBLISHED.** This update supersedes the separation gate in the preserved earlier Return below.

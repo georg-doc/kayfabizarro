@@ -1,3 +1,8 @@
+
+## 2026-10-25 · WSA MVP GPT Site R2/R3 · hosted password gate FAIL / v4 restored
+
+R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, but actualinternalstaticfiles bypass additionalBasicpassword; GuardSTOPacceptance/R3. Exactv4 restored andvisible; owner-private unchanged. R3queued, no newSite/Cloudflare/merge/deletion. Next: Sitesall-pathstaticrouting beforeR2retrythenR3. Return: replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidence127c261025c7a15b42f258ace4d2e2b3434b557c.
+
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
