@@ -11158,7 +11158,7 @@
    "date": "2026-10-25",
    "area": "Welt",
    "verdict": "DECISION",
-   "text": "Sonne und Hang im kfb-place-Regelwerk passen zum Blender-Rig (aus dem N40-Review): light.sun_az = Richtung von kfb_light_bpy mood day (−0,80 | +0,60), damit Busch-Sonnenseite, Fluff-Lichtseite und Gras dieselbe Sonne sehen wie das Bild. P0-Platzhalter-Hang steigt nach −z an, Steinspur kommt vom Hangfuß (Löser wählt die tiefere Kante), Baumgruppe 18 m hangaufwärts vom Stumpf; Frame 1 blickt vom Hangfuß hangaufwärts, Licht von links vorn. Fallobst bleibt in der Zelle. P0 golden 7334bf3a.",
+   "text": "Sonne und Hang im kfb-place-Regelwerk passen zum Blender-Rig (aus dem N40-Review): light.sun_az = Richtung von kfb_light_bpy mood day (−0,80 | +0,60), damit Busch-Sonnenseite, Fluff-Lichtseite und Gras dieselbe Sonne sehen wie das Bild. P0-Platzhalter-Hang steigt nach −z an, Steinspur kommt vom Hangfuß (Löser wählt die tiefere Kante), Baumgruppe 18 m hangaufwärts vom Stumpf; Frame 1 blickt vom Hangfuß hangaufwärts, Licht von links vorn. Fallobst bleibt in der Zelle. Holzstücke mit Abstand Stumpf-Radius + halbe Länge (keine Durchdringung). P0 golden 8414ec47.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -11166,6 +11166,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Löser und Rig hatten entgegengesetzte Sonnen; eine Richtung für beide verhindert Gegenlicht und falsche Lichtseiten.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-779",
+   "date": "2026-10-25",
+   "area": "Audio",
+   "verdict": "DECISION",
+   "text": "Mind- und Soundscapes (Georg 25.10.): Georgs eigene Suno-Fassungen für S8 Dystopie, S3 Erde und S2 Atem (neu) sind Golden und ersetzen die WS0-Stile in b192, b193, b198. Bei Mind- und Soundscapes ist das Tempo Gefühl, keine Pflicht (kein Hz × 60 = BPM wie V-718). Nächste drei nach diesem Muster: S13 Traumreise / Soul Journey (Raum Dream Passage), S14 Kreativ-Atelier (Creative Atelier, Rubin-Haltung), S15 Spiegelkammer / Counselor (Mirror Chamber, bildbasierte Wahrnehmungsarbeit) als Hub b231–b233; Quelle replies/SUNO_SSOT_PROMPTS/SUNO_MINDSCAPES_R1.md. Dazu Georg: Claude Design raus aus Umgebungen, aber gekapselte Module wie die Mindscape (H15) darf es zusammenbauen und polishen (ergänzt V-775).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Fassungen klingen besser als die WS0-Vorlagen; das Muster aus Produktion, Instrumenten und Besonderheit wird zur Vorlage für alle Räume.",
    "applies": "sofort"
   },
   {
@@ -11281,7 +11296,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1305",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1306",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
