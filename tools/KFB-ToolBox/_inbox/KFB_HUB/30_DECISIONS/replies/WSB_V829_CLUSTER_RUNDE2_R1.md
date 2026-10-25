@@ -18,8 +18,13 @@
 6. **Teile ohne Rolle:** Das Türkis der Portale zählt beim Clustern mit.
 7. **Amphitheater:** Außenfels und Mauerwerk bekommen verschiedene Rollen (Bögen nach Rolle, V-402).
 
-**Prüfung:** Farbrollen-Gate grün wie V-824 (für reines Umfärben abgenommener Bühnen gilt dieses Gate statt `kfb_env_bpy.run()`/G1–G7, WS0-Entscheid seit V-806). Dann blinder Kritiker nur K2 nach V-816, Golden Theater und Utopia r816, bestanden ab 7. **Das ist die letzte Farbrunde für diese Bühnen.** Was danach unter 7 liegt, geht wie geliefert mit sanfter Meshy-Tönung ins Spiel (wie Grüne Ruinen). Danach kein weiterer Umbau.
+**Prüfung:** Farbrollen-Gate grün wie V-824 (für reines Umfärben abgenommener Bühnen gilt dieses Gate statt `kfb_env_bpy.run()`/G1–G7, WS0-Entscheid seit V-806). Dann blinder Kritiker nur K2 nach V-816, Golden Theater und Utopia r816, bestanden ab 7. **Das ist die letzte heuristische Farbrunde.** Was danach unter 7 liegt, geht in die Rollentabellen-Stufe aus Nachtrag A (ersetzt das frühere „wie geliefert“).
 
 **Rückgabe:** je Bühne ein Blatt vorher/nachher (Canyon) ohne Fachbegriffe; Kritiker-Urteil; kurzer Abschnitt in RETURN.md, was je Korrektur 1–7 geändert wurde und wo.
 
 **Danach, eigener Auftrag (nicht jetzt):** Einbettung ins Terrain (Fahrplan 5b).
+
+## Nachtrag A (V-830, WS0, 25.10., nach externer Prüfung WSA R2, Georg „ja, machen wir so“)
+- **Stein-Konflikt melden, nicht raten:** Bräuchte ein unteilbarer Stein (Stein-ID, R+G bleiben byte-gleich) zwei Rollen, wähle keine weitere Winkel- oder Farbheuristik. Gib ihm die passendere Rolle und liste ihn in RETURN.md (Bühne, Stein-ID, die zwei Rollen, Fläche).
+- **Statt „wie geliefert“:** Bühnen, die nach r829 unter K2 7 liegen, bekommen einmalig eine geprüfte Rollentabelle je Bühne (Stein-ID → Rolle, nach Bedeutung: Wand, Fels, Statue, Wasser, Fokus …). Du schlägst sie vor (gern mit Mehransichten-Masken), WS0 bestätigt, dann einmal färben und Kritiker. Das ist die letzte Stufe: Was auch danach unter 7 liegt, geht wie geliefert mit sanfter Tönung ins Spiel, ohne Schleife. Diese Stufe startet erst nach r829 mit eigenem kurzen Auftrag.
+- Grüne Ruinen bleiben wie geliefert mit sanfter Tönung.

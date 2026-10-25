@@ -11934,6 +11934,36 @@
    "applies": "eine WSB-Runde"
   },
   {
+   "id": "V-830",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Externe Prüfung WSA R2 (research/procedural-world-paket-r2 @c7e2665, Georg „ja, perfekt. machen wir so“): 1) V-829 Nachtrag A: unteilbare Stein-Konflikte melden statt raten; Bühnen unter K2 7 nach r829 bekommen einmalig eine bestätigte Rollentabelle je Bühne statt „wie geliefert“ (letzte Stufe). 2) WS0 baut die Zellgrenzen-Probe im Platzierungskern: Höhenhalo, Abstände über Zellgrenzen, Gruppen mit Heimatzelle, Biom/Palette je Gruppe statt Zellmitte (moos-Fehler), Bewuchs unabhängig von der Gelände-Detailstufe, Freifläche gegen Footprint; eine zusammenhängende Kante mit freiem Fahrkorridor, vorher/nachher gleiche Kameras. 3) Architektur (feste IDs, Wasser vor Orten, mitwandernder Ursprung, Save-Deltas, Kartenbudget) als Spec-Eingang für 5b. 4) Backlog-Ideen: Pausen nach dichten Momenten, rückwärts erzählte Fundorte, Bewohner erinnern Fahrstil. Danach Reihenfolge (Georg): Kamera-Zoom Ich-Sicht↔Drohne global, Terrain-Karten (eine aktiv, Rest statisch), Mindscape-Sphäre im selben Renderer als Zone nach WoW-Eco-Dome-Vorbild (Membran mit Portal-Rand, Auto bleibt draußen mit KB-Spruch, innen schwerelos schwimmen, Tür hinaus und Wagen rufen, Raumklang mit Mindscape-Beds, Zonen-Einblendung; Claude Design liefert nur den Mindscape-Inhalt als Baustein), dann Café.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bedeutung statt Heuristik bei Meshy; zuerst die Ladegrenzen reparieren, auf denen die Endlos-Welt steht.",
+   "applies": "Probe + Nachtrag"
+  },
+  {
+   "id": "V-831",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Zellgrenzen-Probe aus V-830 gebaut (veg=cartoon): Höhensaum 30 m statt Klemmen am Zellrand (0 Fehlzugriffe), Kandidaten der Nachbarn im Saum zählen beim Abstand, eigener Zufallsschlüssel je Kandidat, feste Entscheidungsreihenfolge (gleiches Ergebnis bei jeder Ladefolge, geprüft an einer Zellecke), Gruppen ganz in ihrer Heimatzelle, Biom/Palette am Gruppenanker, Freifläche gegen Fußabdruck, Gratbäume nur als Linie (≥ 2 Grat-Nachbarn) mit Lücken in 9-m-Fenstern. Befund: die alte Fassung erfand an der Zellgrenze x=128 eine Baumreihe (Klemm-Artefakt). Baumabstand-Verstöße 1 → 0, Bildzeit unverändert. Hub q240. vegseam=0 = alt @22dae6c.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Endlos-Welt darf nicht von Ladegrenzen und Ladefolge abhängen; erst dann tragen Orte, Wasser und Karten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12046,7 +12076,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1363",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1365",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

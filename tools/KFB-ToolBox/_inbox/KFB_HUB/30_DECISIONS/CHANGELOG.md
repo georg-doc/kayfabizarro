@@ -129,6 +129,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-827 Durchblick-Portal gegen verdeckende Kulissen.
 - V-828 Geländeschatten kräftiger (Kontaktton im Material, Licht-Rig unverändert).
 - V-829 Bühnenfarben: 7 fertig, Runde 2 (letzte) für 12, Grüne Ruinen wie geliefert.
+- V-830 Externe Prüfung R2: Rollentabelle statt Heuristik, Zellgrenzen-Probe, Fahrplan bis Sphäre und Café.
+- V-831 Bewuchs über Zellgrenzen repariert (Höhensaum, Nachbar-Abstand, Ladefolge egal, Gratlinien).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
 - q184 accepted: earlier audio-separation gate CLOSED. Current checked game188e4f709f1301f6574f06631b750c6adf2e44f8, remote36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3. Node22.23.4 ready;24/24preparedmodulechecksPASS underNode22. Fullprivatebuildinputcouldnotbetransferred: connectorlargerbinaryempty/nonUTF8;ordinaryGitnocredential;authenticatedChromeZIPblocked,documenteddownloadretrytimedoutwithoutarchive. BLOCKEDreceivinginput;notpublished,noGeorgtokenrequest,nonewSite/audience/secret/gamechanges. Return replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidenceWSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. NextWS0/WS1:onecompleteprivatesource+figuresorfinsheddist/site-build/provenancehandoffatsameprivateprojectlocation;nohostsubstitution.
