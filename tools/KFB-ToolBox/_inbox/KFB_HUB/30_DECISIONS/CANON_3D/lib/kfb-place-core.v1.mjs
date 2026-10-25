@@ -190,14 +190,15 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       else objR = Math.max(rules.contact.tree_foot_min ?? 0.22, objR * (rules.contact.tree_foot_ratio ?? 0.12)) }   /* V-784: ohne Messung Formel am Stammfuß */
     // V-787 (WSB N40 r7 B): Staffel L/M/S statt Perlen, Häufung hangab (≈ 65 %) plus kleiner Nebenbogen seitlich (≈ 35 %); je Bogen das große Stück
     // in der Mitte, zu den Enden kleiner. Abdeckung = Summe der Winkelbreiten (Gate-Maß) in rules.contact.perimeter, größte Lücke ≥ gap_min.
-    const [p0, p1] = rules.contact.perimeter, cov = R.range(p0 + 0.045, p1 - 0.02), Rr = objR * 1.02, ST = rules.contact.staffel ?? [1, 0.62, 0.38]   // V-792: Rand zur Gate-Grenze
+    const [p0, p1] = rules.contact.perimeter, cov = R.range(p0 + 0.025, p1 - 0.035), Rr = objR * 1.02, ST = rules.contact.staffel ?? [1, 0.62, 0.38]   // V-792: Rand zur Gate-Grenze
     const rL = Math.max(rules.contact.piece_min_m ?? 0.06, Math.min(rules.contact.piece_max_m ?? 0.22, Rr * (rules.contact.piece_ratio ?? 0.32))),   /* V-795: am dünnen Stamm sichtbar */ wOf = (r) => 2 * Math.asin(Math.min(0.99, r / Rr))
     const side = down + (R.next() < 0.5 ? 1 : -1) * R.range(1.9, 2.4), bows = [[0.65, down + R.range(-0.2, 0.2), []], [0.35, side, []]]
     for (const [share, , list] of bows) { const target = cov * Math.PI * 2 * share; let acc = 0
       for (let k = 0; acc < target * 0.97; k++) { const r = Math.max((rules.contact.piece_min_m ?? 0.06) * 0.7, rL * ST[k === 0 ? 0 : k < 3 ? 1 : 2] * R.range(0.9, 1.1)); if (list.length && acc + wOf(r) > target * 1.06) break; list.push(r); acc += wOf(r) } }   // V-796b: Stückgröße nach unten begrenzt
     const covNow = () => bows.reduce((t, b) => t + b[2].reduce((u, r) => u + wOf(r), 0), 0) / (Math.PI * 2)
-    while (covNow() > p1 && bows[1][2].length > 1) bows[1][2].pop()
-    while (covNow() < p0) bows[0][2].push(Math.max((rules.contact.piece_min_m ?? 0.06) * 0.7, rL * ST[2] * R.range(0.9, 1.1)))
+    const cap = p1 - 0.02; while (covNow() > cap) { const b = bows[1][2].length > 1 ? bows[1][2] : bows[0][2].length > 1 ? bows[0][2] : null; if (!b) break; b.splice(b.indexOf(Math.min(...b)), 1) }   // V-796c: nie über p1 − 0,02 (Mindeststücke am dünnen Stamm, WSB r30: 53 %)
+    for (let it = 0; covNow() > cap && it < 30; it++) for (const b of bows) b[2].forEach((r, k, arr) => { arr[k] = r * 0.95 })   // bleibt es darüber (nur je ein Stück pro Bogen), Stücke gleichmäßig verkleinern
+    for (let it = 0; covNow() < p0 && it < 6; it++) { const need = (p0 + 0.01 - covNow()) * Math.PI * 2, room = (cap - covNow()) * Math.PI * 2, w = Math.min(room, Math.max(need, Math.min(room, wOf((rules.contact.piece_min_m ?? 0.06) * 0.7)))); bows[0][2].push(Rr * Math.sin(Math.max(0.02, w) / 2)) }   // V-796c: Auffüllen nur so groß, dass die Obergrenze hält
     for (const [, centre, list] of bows) { const ws = list.map(wOf), total = ws.reduce((a, b) => a + b, 0), order = []
       list.forEach((r, k) => (k % 2 ? order.push(k) : order.unshift(k)))   // groß in der Mitte, abwechselnd links/rechts kleiner
       let ang = centre - total / 2
