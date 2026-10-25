@@ -11664,6 +11664,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-812",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Bauteile statt Texturflecken (WSB-Vorschlag nach r808b/r809, WS0 übernommen): Codes auf Meshy-Bühnen je Bauteil des Spiel-Meshes (verschweißt, Knickkanten über 40°, Bauteile über 15 % nach Richtung geteilt, an Stein-IDs gerastet, V-406 R+G byte-gleich); Code aus der Geometrie (Oberseite top, steil hill[0], schlank tower), B9-Mehrheit nur als Rest; Ausnahmen V-806, ein Fokus (V-808), Bildschirm 255. Ersetzt in V-808 die 35°-Zeile. gradient_map (r809, C* < 15) in kfb_clay_bpy übernommen (Sicherung vor_V809). Bau alle REWORK-Bühnen außer Giza, dann Kritiker Runde 4.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die B9-Teile sind Texturflecken; erst echte Bauteile ergeben ruhige Flächen, wie Theater und Mesa in der Probe zeigen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11776,7 +11791,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1345",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1346",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

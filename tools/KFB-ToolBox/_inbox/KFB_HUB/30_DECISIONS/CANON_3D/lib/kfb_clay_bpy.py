@@ -1,4 +1,4 @@
-# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0).
+# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0). · r809 (V-809, WS0 25.10.): optionale gradient_map (Verlaufs-Abbildung für wenig gesättigte Teile, Albedo-Buntheit C* < 15; Standard aus).
 #
 # EIN Material-Baustein für alles, was in Blender gebaut wird, mit den Profilen 1:1 aus
 #   replies/CLAY_SSOT_R1/kfb-clay.v1.1.js (Quellzeilen unten je Wert) und den Rollenfarben aus
@@ -214,7 +214,7 @@ def _facet_height(nt, P, size, slope, seed_off, loc):
     return _math(nt, 'MULTIPLY', h, slope * size, (x0 + 1160, y0))
 
 
-def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None, pull_value=0.0):
+def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None, pull_value=0.0, gradient_map=False):
     """Ein Knet-Material. ref_world = Bezugslänge in Welt-Einheiten; k = Welt-Länge je Objekt-Einheit / Bezugslänge (wie uClayK)."""
     pid = resolve_profile(profile); Pp = PROFILES[pid]; sd = seed_from(seed); so = (sd % 9973) / 9973 * 50.0
     m = bpy.data.materials.new(f'kfb-clay:{pid}:{name}'); m.use_nodes = True; nt = m.node_tree; nt.nodes.clear()
@@ -242,7 +242,11 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
         fk = _n(nt, 'ShaderNodeRGB', (800, 1050)); fk.outputs[0].default_value = tuple(_lin(base_hex)) + (1,)
         fm = _n(nt, 'ShaderNodeMix', (950, 950), data_type='RGBA', blend_type='MULTIPLY'); fm.inputs['Factor'].default_value = 1.0
         nt.links.new(col, fm.inputs[6]); nt.links.new(fk.outputs[0], fm.inputs[7]); col = fm.outputs[2]
-    if role_hex and pull > 0:
+    if role_hex and pull > 0 and gradient_map:   # r809 (V-809): Verlaufs-Abbildung für wenig gesättigte Teile: Farbton und Sättigung der Rolle, Helligkeit der Textur (Zeichnung bleibt)
+        rg = _n(nt, 'ShaderNodeRGB', (800, 700)); rg.outputs[0].default_value = tuple(_lin(role_hex)) + (1,)
+        mg = _n(nt, 'ShaderNodeMix', (1000, 850), data_type='RGBA', blend_type='COLOR'); mg.inputs['Factor'].default_value = pull
+        nt.links.new(col, mg.inputs[6]); nt.links.new(rg.outputs[0], mg.inputs[7]); col = mg.outputs[2]
+    elif role_hex and pull > 0:
         rc = _n(nt, 'ShaderNodeRGB', (800, 700)); rc.outputs[0].default_value = tuple(_lin(role_hex)) + (1,)
         for j, mode in enumerate(('HUE', 'SATURATION')):
             mx = _n(nt, 'ShaderNodeMix', (1000 + 180 * j, 850), data_type='RGBA', blend_type=mode); mx.inputs['Factor'].default_value = pull
@@ -263,7 +267,7 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
     if Pp['emissive'] and emission and (emission.get('image') or any(c > 0 for c in emission['color'][:3])) and emission['strength'] > 0:   # Z. 324: P.emissive && src.emissive → kopieren
         bs.inputs['Emission Color'].default_value = tuple(emission['color'][:3]) + (1,); bs.inputs['Emission Strength'].default_value = emission['strength']
         if emission.get('image'): et = _n(nt, 'ShaderNodeTexImage', (1500, 300)); et.image = emission['image']; nt.links.new(et.outputs['Color'], bs.inputs['Emission Color'])
-    m['kfb_material'] = f'{VERSION}/{pid}'; m['kfb_clay'] = json.dumps({'schema': SCHEMA, 'module': MODULE, 'profile': pid, 'seed': sd, 'k': round(k, 6), 'ref_world': round(ref_world, 4), 'role_hex': role_hex, 'pull': round(pull, 3), 'pull_value': round(pull_value, 3)})
+    m['kfb_material'] = f'{VERSION}/{pid}'; m['kfb_clay'] = json.dumps({'schema': SCHEMA, 'module': MODULE, 'profile': pid, 'seed': sd, 'k': round(k, 6), 'ref_world': round(ref_world, 4), 'role_hex': role_hex, 'pull': round(pull, 3), 'pull_value': round(pull_value, 3), 'gradient_map': bool(gradient_map)})
     return m
 
 
@@ -317,7 +321,7 @@ def _world_height(objs):
     return (max(zs) - min(zs)) if zs else 1.0
 
 
-def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull=None, scale_ref=None, set_props=True, skip=SKIP, pull_value=0.0):
+def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull=None, scale_ref=None, set_props=True, skip=SKIP, pull_value=0.0, gradient_map=False):
     """Eingangsprüfung (V-565): alle Meshes unter ob → kfb-clay mit Rollenfarbe. source: 'own' (Rollenton direkt), 'kit' (Kit-Textur umgetönt),
     'meshy' (leicht getönt, ≤ MAX_PULL). scale_ref: Bezugslänge in Welt-Einheiten (Standard: Figur = Objekthöhe, sonst FrizzleBob-Höhe wie Proof Stage).
     Rückgabe: Bericht (dict). Setzt auf ob: kfb_role, kfb_color (Rollenton), kfb_clay_profile."""
@@ -327,17 +331,17 @@ def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull
     ref = scale_ref or (_world_height(meshes) if pid == 'character' else FB_HEIGHT_U)
     p = SOURCE_PULL.get(source, 0.85) if pull is None else min(1.0, max(0.0, pull))
     if source == 'meshy': p = min(p, MAX_PULL)
-    rep = {'object': ob.name, 'role': role, 'tone': tone, 'color': rhex, 'profile': pid, 'source': source, 'pull': round(p, 3), 'pull_value': round(pull_value, 3), 'ref_world': round(ref, 4), 'meshes': [], 'replaced': 0}
+    rep = {'object': ob.name, 'role': role, 'tone': tone, 'color': rhex, 'profile': pid, 'source': source, 'pull': round(p, 3), 'pull_value': round(pull_value, 3), 'gradient_map': bool(gradient_map), 'ref_world': round(ref, 4), 'meshes': [], 'replaced': 0}
     cache = {}
     for o in meshes:
         wscale = (abs(o.matrix_world.to_3x3().determinant())) ** (1 / 3); k = wscale / ref
         for slot in o.material_slots:
-            src = slot.material; key = (src.name if src else None, round(k, 5), round(pull_value, 3))
+            src = slot.material; key = (src.name if src else None, round(k, 5), round(pull_value, 3), bool(gradient_map))
             if key not in cache:
                 si = _src_info(src); own = source == 'own' or (si['image'] is None and si['vcol'] is None and si['base_hex'] is None)   # r2 (K4): Kit mit reiner Grundfarbe wird angezogen (pull), nicht ersetzt
                 cache[key] = build_material(f'{ob.name}:{src.name if src else "none"}', pid, seed if seed is not None else ob.name, ref, k,
                                             base_hex=rhex if own else si['base_hex'], image=None if own else si['image'], vcol=None if own else si['vcol'],
-                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'], pull_value=0.0 if own else pull_value)
+                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'], pull_value=0.0 if own else pull_value, gradient_map=False if own else gradient_map)
             slot.material = cache[key]; rep['replaced'] += 1
         if not o.material_slots:
             m = build_material(f'{ob.name}:none', pid, seed if seed is not None else ob.name, ref, k, base_hex=rhex); o.data.materials.append(m); rep['replaced'] += 1
