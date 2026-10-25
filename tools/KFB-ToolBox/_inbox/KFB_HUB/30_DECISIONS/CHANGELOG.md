@@ -36,6 +36,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-796 Stopp-Bericht P0: Fuß-Steinchen an Stützen/Echos, Erdkeil-Platzhalter Blender, Echo-Holz 0,6, kein Moos-Hohlstamm; Formsprache als q211 an Georg; Stückgrößen ≥ 0,04–0,05 m, Erdkeil-Maß Kanon; Kontaktfenster ≤ 0,48. P0 479e6a60.
 - V-797 Georg-FAIL Welt/P0: Fließbänder zurück, Clutter raus, P0 pausiert; Modell R2 (Zonen, Massen, Formationen) als q213; FB-Ohr als q212.
 - V-798 Stilbild veg=mass: Zonen + Waldmassen + Waldboden-Zone + Wiese mit Fließbändern (q214); FB-Ohr Meshy-Original (q215).
+- V-799 Modell R3 frei, Stilbild veg=cartoon, alle Nature-Assets für WFC, Prüfpaket b234.
+- V-800 Biom-Paletten aus V-305-Generator (6 Leitfarben, zufällig harmonisch nach Joyride/Canyon/O-Town), calm aus; dieselben Farben für Fluids, Bewuchs, Steine, Gebäude, OSM, Dioramen, Mindscapes, Billboards.
 - Georg: Fließbänder und Cartoon-Paletten (Moos/Mesa) zurück, Props in Rollenfarben (plateTint wie MVP). Referenzstudie Krazy Kat / Noble / Lozzi → replies/MENTALES_MODELL_WELT_R3.md, q217. FB-Ohr Probe (Meshy 1:1, gespiegelt, Biss gesäubert) q216.
 - Vormerkung: zwei Meshy-Landmarken (surreale Gebäude, Retro-Computer-Dschungel) in replies/LANDMARK_VORMERKUNGEN_R1.md.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.

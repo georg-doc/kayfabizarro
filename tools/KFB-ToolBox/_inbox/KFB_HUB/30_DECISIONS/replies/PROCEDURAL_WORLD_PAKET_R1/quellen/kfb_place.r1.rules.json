@@ -1,0 +1,1167 @@
+{
+ "schema": "kfb.place/1",
+ "version": "r1",
+ "by": "WS0",
+ "date": "2026-10-25",
+ "note": "Einzige Zahlenquelle für Umgebung, Props, Natur, Fluff und Fundstücke (V-748, Entscheide V-749). Aus kfb_env.py (RULES, SINK, NEST), n36_rules.r1.json, kfb_edge_params.json, grammar.js GRAMMAR und B2-R2 Fluff-Grammatik zusammengeführt. Werte mit tune sind Startwerte nach V-568 und werden an P0 kalibriert. kfb_env liest künftig RULES, NEST, SINK aus dieser Datei (WSB-Auftrag).",
+ "units": {
+  "base": "m",
+  "m_per_kaykit_u": 0.616381,
+  "m_per_H": 2.24362684,
+  "note": "H = Lab-Einheit K2 (3,64 u)"
+ },
+ "rules": {
+  "sink": {
+   "rock": [
+    0.4,
+    0.5
+   ],
+   "rockgroup": [
+    0.2,
+    0.35
+   ],
+   "tree": [
+    0.05,
+    0.1
+   ],
+   "bush": [
+    0.05,
+    0.12
+   ],
+   "building": [
+    0.0,
+    0.15
+   ],
+   "prop": [
+    0.02,
+    0.05
+   ],
+   "prop_buried": [
+    0.4,
+    0.95
+   ],
+   "stone_L": [
+    0.4,
+    0.5
+   ],
+   "stone_M": [
+    0.35,
+    0.5
+   ],
+   "stone_S": [
+    0.3,
+    0.4
+   ],
+   "grass": [
+    0.0,
+    1.0
+   ],
+   "fluff": [
+    0.0,
+    1.0
+   ],
+   "contact": [
+    0.25,
+    1.0
+   ],
+   "character": [
+    0.0,
+    0.03
+   ],
+   "vehicle": [
+    0.0,
+    0.03
+   ],
+   "path_stone": [
+    0.1,
+    0.25
+   ],
+   "water_plant": [
+    0.0,
+    1.0
+   ],
+   "rubble": [
+    0.3,
+    0.5
+   ],
+   "dust": [
+    0.0,
+    1.0
+   ],
+   "stump": [
+    0.05,
+    0.15
+   ],
+   "log": [
+    0.1,
+    0.25
+   ]
+  },
+  "sink_cap": 0.5,
+  "group": {
+   "odd": true,
+   "sizes": [
+    1.0,
+    0.62,
+    0.38
+   ],
+   "size_tol": 0.2,
+   "spread_pair_min": 0.3,
+   "line_max": 2,
+   "line_tol": 0.05,
+   "overlap_max": 0.85,
+   "air_min": 1.25,
+   "repeat_max": 3,
+   "no_clones": true,
+   "one_kit_per_group": true,
+   "spread_tune": 0.45,
+   "spread_target": 0.5,
+   "neighbour_r": 4.5,
+   "clone_dist_H": 1.6484,
+   "float_tol_H": 0.003,
+   "band_margin": 0.08,
+   "note_v790": "G1 misst mit Kachel gate_r_m (größte Gate-Hülle über alle Drehungen, WSB N40) am Rezept-Ursprung; Gate r5 misst gleich",
+   "note_v791": "gate_r_m für alle Kacheln aus WSB gate_hull_all.json (292 gemessen); Nachlauf Ü4/Ü3 prüft G1 nach jeder Änderung",
+   "tree_overlap_p": 0.85
+  },
+  "nest": {
+   "sizes": [
+    1.0,
+    0.62,
+    0.38
+   ],
+   "counts": [
+    1,
+    3,
+    [
+     1,
+     5
+    ]
+   ],
+   "relax_out": [
+    0.85,
+    1.25
+   ],
+   "note": "V-749: 0,92 entfällt",
+   "med": [
+    -1.2,
+    0.1,
+    1.3
+   ],
+   "small": [
+    -0.6,
+    0.7,
+    -2.0,
+    2.05,
+    3.1
+   ],
+   "k": 0.86,
+   "spread": 1.75
+  },
+  "zone": {
+   "groups": [
+    2,
+    4
+   ],
+   "neg_space_min": 0.3,
+   "ratio_LMS": [
+    1,
+    3,
+    9
+   ],
+   "landmark_front": 0.6,
+   "rest_struct_meaning": [
+    0.7,
+    0.2,
+    0.1
+   ]
+  },
+  "contact": {
+   "required": true,
+   "cause_required": true,
+   "perimeter": [
+    0.4,
+    0.5
+   ],
+   "gap_min": 0.25,
+   "count_rule": null,
+   "wreath": false,
+   "tone": "hard_step",
+   "tone_step_Lstar": [
+    8,
+    12
+   ],
+   "applies_to": "Anker und frei stehende Objekte; Stützen im Nest teilen den Kontakt des Ankers (V-763)",
+   "tree_foot_ratio": 0.12,
+   "tree_foot_min": 0.34,
+   "note_v784": "Baum: Kontakt am Stammfuß (Kronen-Hüllradius × 0,12, mindestens 0,22 m); Stücke paarweise ungleich groß, radial ±12 % versetzt",
+   "staffel": [
+    1,
+    0.62,
+    0.38
+   ],
+   "piece_max_m": 0.22,
+   "piece_ratio": 0.32,
+   "note_v787": "Staffel L/M/S, Häufung hangab ≈ 65 % plus Nebenbogen ≈ 35 %, großes Stück in der Mitte (WSB N40 r7)",
+   "note_v790": "Bäume: Kontakt um den gemessenen Stammfuß (Kachel foot_r_m, foot_off_m aus WSB gate_hull_p0, N40); Formel tree_foot_ratio/min nur ohne Messung",
+   "piece_min_m": 0.06
+  },
+  "ordered": {
+   "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
+   "checks": [
+    "penetration_0",
+    "contact",
+    "sink",
+    "gap_min_m",
+    "no_equal_neighbours"
+   ],
+   "gap_min_m": 1.2,
+   "skip": [
+    "odd",
+    "collinear"
+   ]
+  },
+  "gates_prefix": {
+   "env": "ENV-",
+   "proof_stage": "PS-"
+  },
+  "lean": {
+   "lean_tol": 15,
+   "lean_exc": [
+    25,
+    45
+   ],
+   "pebble_tilt": [
+    15,
+    0.2
+   ],
+   "grass_gap": 0.25,
+   "primary_max": 3,
+   "height_tol": 0.1,
+   "focal_ring": 0.5,
+   "interact_free_H": 1.0,
+   "tree_lean": [
+    0.2,
+    0.4
+   ],
+   "ref": "CANON_3D/EINARBEITUNG_WS1_R1.md Ü1–Ü7"
+  },
+  "biography": {
+   "layers_required": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "signature": "1 Hero + 2 Echos",
+   "wear_marks_min": 2
+  },
+  "grass": {
+   "source": "SPEC_ENVIRONMENT_KIT_R1 §5/§6/§8; KayKit Forest Samples (Büschel zu 1–3 am Fuß von Stein, Baum, Busch)",
+   "tiles": "kaykit_forest:Grass_*_Singlesided (Büschel, nie Einzelhalme)",
+   "foot": {
+    "count": {
+     "anchor": 5,
+     "landmark": 5,
+     "focus": 5,
+     "support": 3
+    },
+    "ratio": [
+     1,
+     0.62,
+     0.38
+    ],
+    "ring_r": [
+     0.8,
+     1.1
+    ],
+    "side": "Licht- bzw. Hangfußseite, ein Bogen ≤ 50 %",
+    "roles": [
+     "anchor",
+     "support",
+     "landmark",
+     "focus"
+    ]
+   },
+   "field": {
+    "noise_m": 16,
+    "thresh": 0.6,
+    "hollow_bonus": 0.15,
+    "path_clear_m": 1.0,
+    "neg_space_short": 0.6,
+    "cause": "Sonne gibt Gras, Schatten gibt Moos (Konzeptblatt 2d)",
+    "edge_soft": 0.12,
+    "note": "Felder = zusammenhängende Flecken (Rauschen grob), innen dicht, zum Rand hin Sprenkel (V-403), außerhalb kein Gras",
+    "patch_clusters": [
+     3,
+     5
+    ],
+    "cluster_tufts": {
+     "core": 5,
+     "edge": 3
+    },
+    "cluster_spacing_m": 0.9,
+    "tuft_spacing_m": 0.22,
+    "edge_spread": 1.6,
+    "edge_short": 0.8,
+    "fibonacci": "Feld 3 oder 5 Flecken; Fleck 3 Gruppen (5+5+3 = 13) oder 5 Gruppen (5+5+5+3+3 = 21); Gruppe 5 Kern bzw. 3 Rand; Fuß 5 am Anker, 3 an der Stütze. Alle Zahlen ungerade und Fibonacci (V-770)",
+    "layout": "Vogel-Spirale (137,5°, Abstand ∝ √k) auf drei Ebenen: Flecken im Feld, Gruppen im Fleck, Büschel in der Gruppe",
+    "field_grid_m": 16,
+    "field_patches": [
+     3,
+     5
+    ],
+    "patch_spacing_m": 2.4
+   },
+   "wind": {
+    "grid_m": 8,
+    "max_groups": 64,
+    "bend": {
+     "grass": 1.0,
+     "fluff": 0.5,
+     "bush": 0.15,
+     "tree": 0.35
+    },
+    "phase_jitter": 0.12,
+    "note": "eine Gruppe = gleiche Grundphase, kleiner Versatz; Phase folgt der Position im Feld; Gruppe einzeln anstoßbar (Auto, Figur)"
+   },
+   "color": {
+    "role": "grass",
+    "steps": 3,
+    "note": "Grundton aus dem Biom (Harmonie-Modell), je Büschel-Gruppe eine Stufe, je Büschel ±1 Stufe; flach cartoonig, kein Rausch-Verlauf"
+   },
+   "lean_max_deg": 14,
+   "bauweise": {
+    "source": "KFB Island Worldbuilder Lab/docs/biome-sheets/Bauweise_Erdung.jpg (Regel 3) + R2_etherington.jpg",
+    "foot_side": {
+     "stone": "Kehle bergauf, Bogen 30–50 %",
+     "bush": "Sonnenseite unter der Kante",
+     "tree": "Tropfkante 1,6–2,2 Kronenradien, unter der Krone dünn (75 % ausgelassen)",
+     "other": "hangabwärts"
+    },
+    "lean": "vom Objekt weg und hangabwärts, 6–14°",
+    "length": "Senke/Kehle lang (bis 1,3×), Kuppe kurz (bis 0,7×)"
+   }
+  },
+  "oddity": {
+   "source": "Etherington 70/20/10: die eine Bedeutung je Zelle; Georg 25.10. (V-770)",
+   "max_per_cell": 1,
+   "p_from": "params.surrealism (nur mit Karten-Dreier)",
+   "place": "Rand des Negativraums (0,2–0,3 Zellgrößen von der Mitte, weg von den Gruppen), nie auf Weg oder in einer Gruppe",
+   "kinds": {
+    "stone_on_tip": "ein Stein balanciert auf der Spitze (rotX ≈ 1,1 rad), Kiesel am Fuß: wer hat den hingestellt?",
+    "witch_ring": "13 Gras-Büschel als genauer Kreis (r 1,6 m), innen kahl: Hexenring",
+    "cairn": "Steinmännchen aus 3 Steinkit-Steinen in der Leiter 1 : 0,62 : 0,38"
+   },
+   "path_clear_m": 3
+  },
+  "grove": {
+   "mask_m": 110,
+   "threshold": 0.53,
+   "grove": {
+    "groups": 4,
+    "span": [
+     0.33,
+     0.67
+    ],
+    "minD": 0.16,
+    "recipes": [
+     [
+      "tree_group"
+     ],
+     [
+      "tree_group"
+     ],
+     [
+      "tree_group",
+      "bush_nest"
+     ],
+     [
+      "bush_nest"
+     ]
+    ]
+   },
+   "meadow": {
+    "group_p": 0.2,
+    "recipes": [
+     "stone_nest_slope",
+     "bush_nest"
+    ]
+   },
+   "note": "V-788 (Critic R1 Welt): Haine statt Konfetti. Zone 32 m: über der Schwelle ein Hain aus 3 Gruppen in der Zonenmitte (≈ 10–15 Bäume auf 15–20 m, Haine 30–40 m auseinander), sonst Wiese mit 20 % Chance auf ein Nest. Anteil Hain ≈ 35 %. V-791 (Critic R2): 4 Gruppen enger (Kronen überlappen), eine davon Busch-Nest als Unterwuchs; Fluff nur an ≈ 35 % der Gruppen."
+  },
+  "form_dna": {
+   "exclude": [
+    "Tree_3_",
+    "Tree_4_",
+    "Bush_4_",
+    "rockpath_square",
+    "pebble_square",
+    "WoodLog_Moss"
+   ],
+   "note": "V-794 (WSB-Kritiker N40 Nr. 24/6): Konzeptblatt form_dna verbietet harte Kanten – keine Prismen-Nadelbäume, Würfelkronen, Würfelbüsche, eckigen Wegplatten"
+  }
+ },
+ "bands": [
+  {
+   "band": 0,
+   "s_m": [
+    -0.1,
+    0.7
+   ],
+   "groups_per_10m": 2.0,
+   "anchor_size_m": [
+    0.5,
+    0.9
+   ],
+   "count": [
+    5,
+    7
+   ],
+   "terrain_stone_prob": 0.1
+  },
+  {
+   "band": 1,
+   "s_m": [
+    0.9,
+    3.0
+   ],
+   "groups_per_10m": 0.6,
+   "anchor_size_m": [
+    0.25,
+    0.45
+   ],
+   "count": [
+    3,
+    5
+   ],
+   "terrain_stone_prob": 0.35
+  },
+  {
+   "band": 2,
+   "s_m": [
+    3.0,
+    6.0
+   ],
+   "groups_per_10m": 0.15,
+   "anchor_size_m": [
+    0.1,
+    0.2
+   ],
+   "count": [
+    3,
+    3
+   ],
+   "terrain_stone_prob": 0.65,
+   "downhill_only": true
+  }
+ ],
+ "bands_tune_note": "N36-Startwerte (V-749 Nr. 8)",
+ "embed": {
+  "ref": "50_BLENDER/N36/data/n36_rules.r1.json",
+  "schema": "kfb.embed-rules/1",
+  "only_add": true,
+  "rule": "V-716",
+  "sop": {
+   "note": "Georg 25.10. (V-753): Dünen-Logik und alles aus den Blender-Dioramen (Steine, Übergänge, Abschlüsse, Kontakt) ist Pflicht-SOP für jedes Prop, Diorama, jede Landmarke und jede andere Terrain-Einbettung",
+   "steps": [
+    "1 Fußabdruck und Maske aus der Kachel (hull, Eingänge)",
+    "2 Düne/Schürze: nur auftragen, Profil Anschluss → Düne → Auslauf, Lee länger (Wind), Auslauf L = max(4–6 m, 3,75 × Auftragshöhe), Flanke ≤ 22° (n36 apron)",
+    "3 Sockel 15–25 % vom Gelände bedeckt (V-396), keine Stufe > 2 cm an der Kontaktlinie (V-716)",
+    "4 Eingänge frei: Rampe ≤ 15°, Breite ≥ 1,2 m (n36 entrance)",
+    "5 Steinbänder in drei Ringen (n36 bands, Dichte nach V-749 Nr. 8), Steinkit v4, gerundet, Einsinken nach rules.sink",
+    "6 Abschluss je Kante: freies Ende durch Verfall (V-578) oder gebautes Ende (kfb_edge); harte Kanten (Dungeon-Generator, Kachelfelder, Mauern, Plinthen) organisch abrunden (Knet-Rundung am Modell), dazu kleine Rubble- bzw. Ruinensteine mit Knet-Rundung wie Pfadsteine und Staub als sauberer Übergang, nur wo nötig (V-754)",
+    "7 Kontakt-Geometrie mit Ursache (rules.contact), Moos/Kiesel/Erdkeil",
+    "8 Bodenübergang als Sprenkel (V-403), nie Verlauf oder Linie",
+    "9 Gate ENV-* auf dem Rezept"
+   ],
+   "sources": [
+    "50_BLENDER/N36/data/n36_rules.r1.json",
+    "CANON_3D/lib/kfb_edge_params.json",
+    "50_BLENDER/STEINKIT",
+    "50_BLENDER/K8",
+    "50_BLENDER/B29"
+   ]
+  }
+ },
+ "edge": {
+  "ref": "CANON_3D/lib/kfb_edge_params.json",
+  "forms": [
+   "free_end",
+   "built_end",
+   "ruin_end"
+  ],
+  "rule": "V-577",
+  "rounding": {
+   "note": "V-754: harte Kanten organisch abrunden, Rubble/Ruinensteine klein und gerundet, Staub als Übergang, nur wo nötig",
+   "rubble_kind": "rubble",
+   "dust_kind": "dust",
+   "ref": "K8 offen: Ruinen-Brocken mit Knet-Rundung wie Pfadsteine"
+  }
+ },
+ "wfc": {
+  "allowed": [
+   "slot_fill",
+   "socket_modules",
+   "transition_families",
+   "corridor_gaps"
+  ],
+  "never": [
+   "landmarks",
+   "osm_buildings",
+   "road_graph",
+   "terrain_height",
+   "global_nature_grid",
+   "deform_kit_parts"
+  ],
+  "ground_transitions": "speckle (V-403)",
+  "tries": 16,
+  "fallback": "authored"
+ },
+ "fluff": {
+  "ref": "50_BLENDER/B2/R2/CONCEPT_B2R2_FLUFF_GRAMMAR.md",
+  "anchors_ref": "50_BLENDER/B2/kaykit-tree-fluff-anchors.v1.json",
+  "levels": {
+   "plant": {
+    "hero_nest": 1,
+    "side_nests": [
+     0,
+     2
+    ],
+    "side": "light_or_camera",
+    "min_crown_h": 0.4
+   },
+   "nest": {
+    "sizes": [
+     1.0,
+     0.62,
+     0.38
+    ],
+    "counts": [
+     1,
+     3,
+     [
+      1,
+      3
+     ]
+    ]
+   }
+  },
+  "carriers": {
+   "tree": "Krone, Lichtseite: 1 Hero-Nest + 0–2 Neben-Nester; je Nest 5–7 Kugeln (1 groß, 3 mittel, 1–3 klein; Bauweise 3–6 je Anker als Untergrenze)",
+   "bush": "1–2 Nester, greifen unter den Rand",
+   "bare_tree": null
+  },
+  "color": {
+   "source": "sechs Story-Mode-Farben, satte Variante (V-292): Tragic #3e6a83, Comic #7a8d4a, Absurd #e9c14a, Heroic #d97c3a, Mystical #6b4e7d, Forbidden #a64670; auf grünem Laub nie Comic oder Tragic",
+   "rule": "eine Farbe je Nest, Kontrast zum Träger, keine Zufallsfarbe je Kugel",
+   "contrast_on_green": "Fluff aus dem Candy-Band gegenüber dem Laub (V-305), nie Oliv auf Grün",
+   "zone_mix": {
+    "main": 0.4,
+    "other_min": 0.08,
+    "status": "V-368 TBD, nicht P0"
+   }
+  },
+  "harvest": {
+   "basic": "gestaffelt nach V-423: im Schnitt 3 Schläge, 2 Schüsse oder 1 Explosion leeren einen Baum; Abwurf 1–2, dann 3–4, dann alle",
+   "fall": "springt 2–3-mal, rollt hangabwärts (rollToRest)",
+   "pickup": "bei Kontakt, Gesamt-Fluff im Spielstand",
+   "cause_required": true
+  },
+  "variant": "B2-R2 Variante A als Startwert (TUNE an P0; Georg wählt am Bild)",
+  "default_mode": "heroic",
+  "default_mode_note": "ohne Karten-Dreier eine Farbe für alle Nester (P0-Brief: Heroic #d97c3a satt); eine Farbe je Nest, keine Zufallsfarbe je Kugel",
+  "fallobst": {
+   "balls": 2,
+   "only": "Hero-Nest des ersten Baums",
+   "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)",
+   "roll_steps": 8
+  },
+  "ring_tree": 0.35,
+  "group_share": 0.35,
+  "echo_dim": {
+   "chroma": 0.9,
+   "L": -0.1,
+   "size": 0.75,
+   "note": "V-795: Echo = gleicher Ton, dunkler und kleiner (kein zweiter Pfirsich-Ton); in P0 tragen nur die Anker Fluff"
+  }
+ },
+ "finds": {
+  "optional": true,
+  "display": "15 cm über dem Boden, langsam drehend, sanftes Auf-und-ab; längliche Teile und Werkzeuge mit Stiel schräg 35° (V-450, V-453)",
+  "pickup": "bei Kontakt",
+  "placement": "nur mit Ursache aus der Ortsbiografie (Nutzen oder Vergehen), z. B. am Stumpf, unter dem Baum, am Wegrand",
+  "per_cell_max": 1,
+  "source": "Paket-Varianten, keine Eigenbauten (V-434, V-450): KayKit Restaurant/Resource Bits, Tiny Treats, KayKit RPG Tools; P0-Kandidat Axt (RPG Tools) oder Brotzeit (Tiny Treats Picnic)"
+ },
+ "recipes": [
+  {
+   "id": "tree_group",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "tree"
+     ],
+     "h_rel": [
+      1.2,
+      1.4
+     ],
+     "layer": 1,
+     "note": "alter Waldrand-Baum (Entstehen)"
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "tree",
+      "tree",
+      "bush"
+     ],
+     "count": 3,
+     "h_rel": [
+      0.7,
+      0.9
+     ],
+     "note": "V-784: Stützen meist kleinere Bäume derselben Familie (Leiter 1 : 0,62 : 0,38), ein Busch; sonst liest sich der Waldrand als Einzelbaum"
+    },
+    {
+     "role": "accent",
+     "kinds": [
+      "grass"
+     ],
+     "note": "KayKit Forest hat keinen mittleren Stein; Akzent als Gras-Büschel (ein Kit je Gruppe)"
+    }
+   ],
+   "story_template": "Waldrand: der älteste Baum steht, die Büsche drängen ins Licht",
+   "layer": 4,
+   "fluff": true,
+   "kit": "KayKit Forest"
+  },
+  {
+   "id": "bush_nest",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "bush"
+     ]
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "bush"
+     ],
+     "count": 3,
+     "note_v794": "kein Gras im Busch-Nest (piekt durch, B2)"
+    },
+    {
+     "role": "pebble",
+     "kinds": [
+      "stone_S"
+     ],
+     "count": [
+      1,
+      3,
+      5
+     ]
+    }
+   ],
+   "story_template": "Busch-Nest im Windschatten",
+   "layer": 4,
+   "fluff": true,
+   "kit": "KayKit Forest",
+   "odd_total": true
+  },
+  {
+   "id": "stone_nest_slope",
+   "biomes": [
+    "moos"
+   ],
+   "slots": [
+    {
+     "role": "anchor",
+     "kinds": [
+      "stone_L"
+     ]
+    },
+    {
+     "role": "support",
+     "kinds": [
+      "stone_M"
+     ],
+     "count": 3
+    },
+    {
+     "role": "pebble",
+     "kinds": [
+      "stone_S"
+     ],
+     "count": [
+      1,
+      5
+     ]
+    }
+   ],
+   "story_template": "Steine vom Hang gerollt, Moos in den Fugen",
+   "layer": 3,
+   "fluff": false,
+   "kit": "Steinkit v4"
+  },
+  {
+   "id": "stump_stamp",
+   "biomes": [
+    "moos"
+   ],
+   "fixed": true,
+   "slots": [
+    {
+     "role": "focus",
+     "kinds": [
+      "stump"
+     ]
+    },
+    {
+     "role": "echo",
+     "kinds": [
+      "log"
+     ],
+     "count": 2,
+     "s": 0.6,
+     "note_v796": "Echo-Holz ≤ 60 % (Signatur: Stumpf ist Hero), kein bemooster Hohlstamm"
+    }
+   ],
+   "story_template": "gefällter Stamm wird zum Stumpf, Moos wächst auf dem Schnitt, Fluff im Busch daneben",
+   "layer": 3,
+   "finds": false,
+   "kit": "Quaternius Ultimate Nature (TreeStump, WoodLog, WoodLog_Moss; V-775) – Kenney nicht mehr",
+   "echoes": "2 Holzstücke desselben Stamms in Wurfweite",
+   "wear_marks": [
+    "Sägeschnitt (flache Schnittfläche des Kits)",
+    "Moos auf der Schnittfläche (Knet-Element)",
+    "zwei Holzstücke desselben Stamms in Wurfweite"
+   ],
+   "cut_moss": true,
+   "note_finds": "Fundstück entfällt in P0 (keine Kachel, kein eigener Slot außerhalb der Stumpf-Gruppe; V-775)"
+  },
+  {
+   "id": "path_trace",
+   "biomes": [
+    "moos"
+   ],
+   "kit": "Steinkit v4 + KayKit path_A–path_D",
+   "slots": [
+    {
+     "role": "path",
+     "kinds": [
+      "path_stone"
+     ],
+     "layout": "Spur vom Rand zum Stumpf"
+    }
+   ],
+   "story_template": "Abfuhrweg: hier wurde der Stamm weggezogen, die Steine liegen verstreut",
+   "layer": 2,
+   "contact": true,
+   "transition": "Sprenkel",
+   "distribution": "V-578: heiler Kern bis zu einer geschwungenen Isolinie, dann verwittert gerundete Stücke dicht → locker (≈ 1,0 → 0,4 u, Fuge 3 → 31 cm), einzelne fehlen, Erde in der Lücke; organisch, keine Reihe",
+   "tune": "Georg q201: Steine und organischer verteilte Kacheln bzw. Fragmente, kein Holz"
+  }
+ ],
+ "biomes": {
+  "moos": {
+   "recipes": {
+    "tree_group": 1.0,
+    "bush_nest": 0.8,
+    "stone_nest_slope": 0.6,
+    "path_trace": 1.0
+   },
+   "kit": {
+    "tree_group": "KayKit Forest",
+    "bush_nest": "KayKit Forest",
+    "stone_nest_slope": "Steinkit v4",
+    "stump_stamp": "Quaternius Ultimate Nature",
+    "path_trace": "Steinkit v4 + KayKit path_A–path_D"
+   },
+   "note": "P0; weitere Biome aus der Biom-Fahrt folgen mit P1",
+   "fluid": "water",
+   "zone_m": 32,
+   "zone_note": "Laufzeit: eine Zone (2–4 Gruppen, rules.zone) misst 32 m; vier Zonen je 64-m-Zelle (V-784). P0 im CLI bleibt eine 64-m-Zelle."
+  }
+ },
+ "adjacency": [],
+ "palette": {
+  "rule": "COLOR_HARMONY_R1 (V-305): eine OKLCH-Regel, der Boden trägt den Grundton; Strecke +90° warm, Blickfang gegenüber im Candy-Band, Laub natürlich bzw. herbstlich, Himmel = Laub +90°",
+  "ref": "replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js",
+  "input": "Boden-Farbton je Biom",
+  "roles": [
+   "ground",
+   "track",
+   "focus",
+   "foliage",
+   "sky",
+   "stone",
+   "fluff",
+   "fluid",
+   "fluid_foam"
+  ],
+  "applies_to": [
+   "terrain (look=terrain3)",
+   "fluff",
+   "fluid",
+   "props tint"
+  ]
+ },
+ "fluids": {
+  "note": "Georg 25.10. (V-750): Wasser bzw. Fluids gehören mit Gelände und Shader in dieselbe Farbharmonie; vorhandene Arten im Gelände-Shader (terrain3: Wasser, Kaugummi, Säure) als Rezepte",
+  "kinds": {
+   "water": {
+    "tone": "fluid aus der Harmonie",
+    "behaviour": "nasser Saum, Tiefenstufen"
+   },
+   "bubblegum": {
+    "tone": "Candy-Band (rosa Schlieren)",
+    "behaviour": "zähe Wellen, Blasen platzen langsam"
+   },
+   "acid": {
+    "tone": "Gegenton zum Boden, giftig",
+    "behaviour": "blubbert, Ufer verätzt"
+   }
+  },
+  "owner": "WS1c",
+  "shader": "ein Fluid-Shader, Art als Parameter, Licht aus dem einen Rig"
+ },
+ "gate_map_note": "Zuordnung alter kfb_env-Codes (G1, E2, C1, S4 …) zu ENV-* liefert WSB mit der Gate-Erweiterung (V-749 Nr. 9)",
+ "terrain_dunes": {
+  "note": "Sand-Dünen als Geländeform in Wüsten-Biomen gehören dem einen Höhen-Owner (WS1b, Biom-Fahrt); kfb-place liefert nur Rezepte und Einbettung darauf",
+  "owner": "WS1b"
+ },
+ "masks": {
+  "gaps": {
+   "note": "Georg 25.10. (V-755): Lücken zwischen Straßen, Modellen und Gelände werden über Voronoi-Felder gefüllt",
+   "method": "Voronoi über die Kanten von Straßen, Fußabdrücken und Stamps als Keime → Zellen = Lückenflächen mit Abstand zum nächsten Objekt (Distanzfeld/Mittelachse)",
+   "use": [
+    "je Zelle ein Füll-Rezept nach Ursache (Schatten → Moos, Abfluss → Kies, Sonne → Blüten/Gras, Hangfuß → Rubble)",
+    "Dichte fällt zur Zellmitte bzw. steigt zur Kante je nach Ursache",
+    "Platz für Kontakt-Geometrie und Kiesel"
+   ],
+   "never": [
+    "sichtbares Zellmuster oder Linien an den Zellgrenzen",
+    "Kachelmuster"
+   ],
+   "borders": "Sprenkel (V-403)",
+   "status": "Konzept; Löser v2"
+  }
+ },
+ "cards": {
+  "source": "kfb-world-context.v1.mjs (1:1 aus Card Zone Lab terrain-v10/world-context.js): Karten-Dreier → 8-Achsen-Vektor (60/28/12) → Biom, Story-Mode, params.surrealism (V-770)",
+  "biome_map": {
+   "meadow": "moos",
+   "plateau": "moos",
+   "luminous": "moos",
+   "tidal": "moos",
+   "fractured": "moos",
+   "scorched": "moos",
+   "note": "bis weitere kfb-place-Biome existieren, landet alles auf moos; card_biome steht im Bericht"
+  },
+  "mode_from_dim": {
+   "melancholy": "tragic",
+   "humor": "comic",
+   "chaos": "absurd",
+   "power": "heroic",
+   "wonder": "mystical",
+   "threat": "forbidden"
+  },
+  "fluff_modes_on_green": [
+   "forbidden",
+   "heroic",
+   "mystical",
+   "absurd"
+  ],
+  "recipe_bias": {
+   "tree_group": {
+    "lore": 0.6,
+    "melancholy": 0.4
+   },
+   "bush_nest": {
+    "humor": 0.6,
+    "wonder": 0.4
+   },
+   "stone_nest_slope": {
+    "power": 0.5,
+    "threat": 0.5
+   }
+  },
+  "grass_density": {
+   "base": 0.6,
+   "wonder": 0.5,
+   "humor": 0.5,
+   "melancholy": 0.3,
+   "threat": -0.4,
+   "clamp": [
+    0.4,
+    1.6
+   ]
+  },
+  "mode_rank": {
+   "note": "Story-Mode kommt im Spiel aus dem Spielstand (Würfel bzw. Einstellung). Nur ohne Vorgabe wird er abgeleitet: Rang nach dem Wort-Anteil je Achse (Grundanteile aus cardSemanticVector abgezogen), sonst gewinnt Heroic fast immer über die Kartenstufe.",
+   "lex": {
+    "chaos": [
+     0.08,
+     0.82
+    ],
+    "wonder": [
+     0.08,
+     0.82
+    ],
+    "threat": [
+     0.06,
+     0.84
+    ],
+    "humor": [
+     0.06,
+     0.84
+    ],
+    "melancholy": [
+     0.08,
+     0.8
+    ]
+   },
+   "power": {
+    "base": 0.15,
+    "grade": 0.55,
+    "coef": 0.3
+   },
+   "triplet_w": [
+    0.6,
+    0.28,
+    0.12
+   ]
+  }
+ },
+ "p0": {
+  "bush_next_to_stamp": 1.8,
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei; V-794: Steinnest = Lesesteine 2,4 m neben der Spur bei 45 % vom Stumpf; V-795: Busch-Nest 1,8 m am Stumpf (ein Fokus), Fallobst aus dem Fokus-Nest, Lesesteine am steilsten Spurrand",
+  "tree_uphill": 9,
+  "triangle_turn": 0.9,
+  "stone_nest_path": {
+   "t": 0.45,
+   "side_m": 2.4
+  }
+ },
+ "light": {
+  "sun_az": 2.498,
+  "note": "Richtung zur Sonne in Rezept-Koordinaten (x,z), passend zu kfb_light_bpy mood day (az −53,13°): (−0,80 | +0,60). Löser (Busch-Sonnenseite, Fluff-Lichtseite, Gras) und Blender-Rig nutzen dieselbe Sonne (V-778)."
+ },
+ "_tiles_note": "289 Kacheln weggelassen (Liste im Repo); Beispiel siehe tiles_sample",
+ "tiles_sample": [
+  {
+   "id": "kaykit_forest:Bush_1_A",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_A_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.1397,
+   "h_H": 0.0623,
+   "hull_r_m": 0.0823,
+   "hull_r_H": 0.0367,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 72,
+   "variant_note": null,
+   "gate_r_m": 0.082
+  },
+  {
+   "id": "kaykit_forest:Bush_1_B",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_B_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.2984,
+   "h_H": 0.133,
+   "hull_r_m": 0.2226,
+   "hull_r_H": 0.0992,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 168,
+   "variant_note": null,
+   "gate_r_m": 0.223
+  },
+  {
+   "id": "kaykit_forest:Bush_1_C",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_C_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.4977,
+   "h_H": 0.2218,
+   "hull_r_m": 0.3711,
+   "hull_r_H": 0.1654,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 168,
+   "variant_note": null,
+   "gate_r_m": 0.371
+  },
+  {
+   "id": "kaykit_forest:Bush_1_D",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_D_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.6125,
+   "h_H": 0.273,
+   "hull_r_m": 0.4829,
+   "hull_r_H": 0.2152,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 168,
+   "variant_note": null,
+   "gate_r_m": 0.483
+  },
+  {
+   "id": "kaykit_forest:Bush_1_E",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_E_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.4983,
+   "h_H": 0.2221,
+   "hull_r_m": 0.5642,
+   "hull_r_H": 0.2515,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 552,
+   "variant_note": null,
+   "gate_r_m": 0.495
+  },
+  {
+   "id": "kaykit_forest:Bush_1_F",
+   "pack": "KayKit Forest Nature Pack 1.0 FREE",
+   "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_F_Color1.gltf",
+   "kit": "KayKit Forest",
+   "kind": "bush",
+   "role": "support",
+   "size_class": "M",
+   "h_m": 0.6125,
+   "h_H": 0.273,
+   "hull_r_m": 0.8167,
+   "hull_r_H": 0.364,
+   "rest": "flat",
+   "up": "+Y",
+   "sink": [
+    0.05,
+    0.12
+   ],
+   "anchors": [],
+   "fluff": "unter den Rand",
+   "contact_family": "moss_grass",
+   "biomes": [
+    "moos"
+   ],
+   "asset_pass": {
+    "clay": "kfb-clay.v1.1/midground",
+    "eyes": "keine (keine Figur)",
+    "licence": "CC0 (KayKit)",
+    "deform": "nein (V-574)"
+   },
+   "tris": 576,
+   "variant_note": null,
+   "gate_r_m": 0.722
+  }
+ ]
+}

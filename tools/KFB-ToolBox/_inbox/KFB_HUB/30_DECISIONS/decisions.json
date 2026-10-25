@@ -11469,6 +11469,36 @@
    "applies": "Stilbild 25.10."
   },
   {
+   "id": "V-799",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Modell R3 freigegeben (q217): Verteilungslogik und Materialcodes nach Herriman, Noble, Lozzi und Ortsbiografie; Ebenen statt Streuung, Dinge an Ebenenkanten, Materialcode als festes Zeichen je Material, wenig und groß (≥ 50 % Ruhe), Verfall am Fuß hangab, Bewuchs als Zeichen (Solitäre mit Ablegern, Gratreihen), Etherington-Zahlen und Georgs Technik-Hinweise (Stufenfunktion, Poisson-Disc, Eltern-Kind). Stilbild veg=cartoon gebaut, noch nicht abgenommen. Varianz: alle passenden Nature-/Environment-Assets (KayKit, Tiny Treats, Quaternius Ultimate Nature und Stylized Nature MegaKit, Kenney) sollen für WFC bzw. Platzierung registriert und genutzt werden. Prüfpaket für externe LLM-Prüfung: replies/PROCEDURAL_WORLD_PAKET_R1 (b234).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Cartoon-Logik aus den Vorbildern und dem eigenen Kanon statt Mikro-Grammatik.",
+   "applies": "Stilbild 25.10."
+  },
+  {
+   "id": "V-800",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Cartoon-Paletten je Biom (Georg 25.10.): Joyride/Bucht, Canyon und O-Town sind nur die Basis; nach ihrer Logik erzeugt der eingelockte V-305-Generator (kfb-cartoon-palette.js random(seed)) je Biom eine zufällige, harmonische, bunte Palette mit sechs Leitfarben (Boden, Strang, Wahrzeichen, Laub, Himmel, Rinde) plus Leitern; die Gesamtanmutung entspricht den drei Golden Samples. Im Spiel Standard (Terrain-Bänder aus Boden-Leiter, Sand, Creme, Stein; Props: Laub, Gras, Stein), Kontrast-/Sättigungsdämpfung calm aus (Standard 0). Dieselben Farben färben passend und auch surreal (R8: jede Rolle darf eine andere Farbe derselben Palette nehmen): Fluids, Bäume, Sträucher, Steine, Grasblatt-Gruppen, Pflanzen, Gebäude, OSM, Dioramen, Mindscapes, Billboards. Owner WS1 (Laufzeit), WSB (Blender), WSA (Mindscapes/Billboards).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Welt muss in Georgs Cartoon-Farben erscheinen; ein Generator, eine Palette je Biom, für alles.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11581,7 +11611,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1331",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1334",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
