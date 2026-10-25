@@ -13,7 +13,8 @@
   - `leaf` nur für Teile, die Pflanzen sind;
   - graue und dunkle Grundfarben (C* < 15) bekommen kein `rock`, sondern die Wand-Rolle `hill[0]` mit `gradient_map`;
   - die Wand-Regel aus V-806 nimmt als Mehrheit die Codes der Bauteile in der Wand, ohne B9.
-  Die fertige Zuordnungstabelle steht in RETURN.md.
+  - bunte Grundfarben (C* ≥ 15) bekommen die Rolle, deren Farbton aus `COLOR_CONCEPT_R1` am nächsten liegt (`top`, `hill[0]`, `tower`, `strang`, `rock`, `sand`, `under[1]`).
+  Die fertige Zuordnungstabelle steht in RETURN.md; WS0 prüft sie zusammen mit dem Ergebnis.
 - Ausnahmen V-806 gehen vor; Bildschirm 255; Farbe nach V-809 mit dem Kanon-Modul (`gradient_map` bei C* < 15).
 - **Fokus, von WS0 benannt:** auf allen drei Bühnen der gemalte Ornamentrahmen oben, unten und seitlich samt der Bildschirmkante, also alle Teile des Rahmens, nicht nur `kfb_screen_frame` (Runde-4-Mangel: `pad` nur an der Innenkante). Das Gate prüft, dass diese Teile Code 5 tragen.
 - **Mesa (ohne Bau):** ein Blatt mit bis zu drei Kandidaten für das Wahrzeichen, je ein zusammenhängendes Bauteil, das man von weitem liest. WS0 benennt danach den Fokus im Konzeptblatt; erst dann wird Mesa gebaut.
@@ -23,4 +24,4 @@
 
 **Einfärbbarkeit:** Die neun Bühnen, die sich nicht sauber einfärben lassen, bleiben nach V-809 vorerst aus dem Spiel. Ausnahme Gefängnis: Georg hat es dunkel-violett freigegeben (q232).
 
-**Rückgabe:** Kritiker-Urteil; je Probe-Bühne ein Blatt vorher/nachher (Canyon) ohne Fachbegriffe; das Mesa-Kandidaten-Blatt; RETURN.md mit Zuordnung Grundfarbe → Rolle und Gate-Ergebnis.
+**Rückgabe:** Kritiker-Urteil; je Probe-Bühne ein Blatt vorher/nachher (Canyon) ohne Fachbegriffe; das Mesa-Kandidaten-Blatt; RETURN.md mit Zuordnung Grundfarbe → Rolle, Gate-Ergebnis und je Bühne der Angabe, ob durchgehende Flächen über eine Teilnaht hinweg denselben Code tragen (Runde-4-Befund Bühnenschürze).
