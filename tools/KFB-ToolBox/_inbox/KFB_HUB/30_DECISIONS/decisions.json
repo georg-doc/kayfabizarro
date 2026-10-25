@@ -11619,6 +11619,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-809",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Georg q230 (TUNE, Notiz: „Rolle voll“ scheint besser; braun-graue Meshy-Modelle müssen einfärbbar sein, sonst vorerst raus, bis Farbe und Diorama-Übergänge integriert sind): Meshy-Bühnen in Richtung voll – Rollen-Teile Zug 1,0 auf Farbton und Sättigung, Helligkeit und gemalte Zeichnung bleiben; ersetzt für Meshy-Rollen-Teile sanft aus V-286 (Deckel ΔE00 ≤ 18 und Maß 8–18 entfallen für sie); aus V-806 bleiben Teile ohne Rolle 0,18, pad am Fokus mit Helligkeit, Amphitheater-Bögen voll, Kit 0,85, Wand-/Turm-Regel; V-808 gilt weiter. Teile mit wenig Sättigung (braun-grau) per Verlaufs-Abbildung Helligkeit → Rollen-Farbton; was sich nicht sauber einfärben lässt, bleibt bis dahin aus dem Spiel. Vergleichsblätter für Georg: vorher/nachher je Bühne, eine Palette, ohne Fachbegriffe.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sanft blieb auf Meshy-Texturen unlesbar; die Bühnen sollen klar zum Biom gehören, auch die braun-grauen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-810",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "Fahrzeug-Seele (Georg 25.10., Pilot freigegeben): KnuckleBob ist die Seele aller beseelten Fahrzeuge und kommentiert Fahrt und Manöver selten mit kurzen englischen Sätzen, sarkastisch-schwarzhumorig im Kayfabe-Ton, ohne Auto-Pseudosprache (Beispiele: „Whoa, kid! Take it easy!“, „Yeah! This old beast was built for maximum Kayfabe speed!“). HeyGen-Clips 2–4 s in einer abschaltbaren Vignette, Rahmen in der Grundfarbe des aktiven Fahrzeugs; großer Pool ohne Wiederholung, höchstens ein Spruch pro Minute, Pausen und Überraschungen. Unbeseelte Fahrzeuge (2D-Popup-Autos) ohne Seele und ohne Racer-Funktion. Löst für Fahrzeuge die Fantasiesprache aus POC 3 (b206, V-712) ab. Später POI-/Karten-Hinweise, Onboarding, weitere Avatare. Pilot: replies/VEHICLE_SOUL_PILOT_R1.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine erzählerisch saubere Stimme für alles, was fährt, macht die Fahrt lebendig, ohne zu nerven; die Seele erklärt zugleich, warum nur beseelte Fahrzeuge Racer sind.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11731,7 +11761,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1342",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1344",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

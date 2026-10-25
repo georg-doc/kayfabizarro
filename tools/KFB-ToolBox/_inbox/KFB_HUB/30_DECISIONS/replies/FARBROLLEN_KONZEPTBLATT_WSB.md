@@ -27,3 +27,5 @@ Vorlage `CANON_3D/KONZEPTBLATT_R1.md`; bei diesem Job geht es um Farbrollen stat
 - Bleiben STEINKIT, Figuren (auch Figuren-Akzente, eigener späterer Job), Waffen und Fluff unberührt?
 
 **Nachtrag V-808 (WS0, 25.10.):** Codes gelten je zusammenhängender Fläche (Mehrheit der Textur-Codes; Ausnahmen aus V-806 gehen vor). Genau ein Fokus-Teil je Bühne trägt `pad`: der ganze Rahmen samt Bildschirmkante, ohne Rahmen das zentrale Wahrzeichen. Der Rahmen ist damit nicht mehr `strang` (Code 4).
+
+**Nachtrag V-809 (WS0, 25.10., Georg q230):** Auf Meshy-Bühnen gilt für Rollen-Teile „voll“: Zug 1,0 auf Farbton und Sättigung, Helligkeit und gemalte Zeichnung bleiben. Der Satz „die Laufzeit tönt dort nur sanft“ gilt für Meshy-Rollen-Teile nicht mehr; Deckel ΔE00 ≤ 18 und das Maß sanft 8–18 entfallen für sie. Teile mit wenig Sättigung (braun-grau) bekommen eine Verlaufs-Abbildung Helligkeit → Rollen-Farbton als Option in `kfb_clay_bpy` (Kanon-Vorschlag r809, nicht in COLOR_0 oder in die Textur gebacken). Vergleichsblätter: je Bühne vorher/nachher, eine Palette (Canyon), Beschriftung ohne Fachbegriffe.
