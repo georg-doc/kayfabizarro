@@ -11109,6 +11109,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-775",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "P0-Style-Frames aus der erprobten Kette statt Claude Design (Georg 25.10. zum v4-FAIL: „keine AI-Slop-Basteleien wie diesen Kenney (second choice) mit Bastel-Deckel … USE WHAT WORKS“): WSB baut die vier P0-Frames aus dem kfb-place-Rezept mit Adapter r3/r4 und Gate r3, Kit-Teile unverändert, blinder Kritiker vor dem Hub (Auftrag N40). Stumpf-Gruppe aus Quaternius Ultimate Nature (TreeStump, WoodLog/WoodLog_Moss) statt Kenney. Claude Design bekommt keinen P0- bzw. Umgebungs-Auftrag mehr; es bleibt für Grafik, HUD und Mindscapes. Das kritische Review der Claude-Design-Session und dessen Post-Mortem sind Teil von N40.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vier Runden Bastelei in eigenen Szenen; die Blender-Kette mit Löser, Adapter und Gate ist erprobt (Friedhof r24 0 FAIL).",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-776",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "FB_CANON R5 bei WSB statt WSA (Georg 25.10.: „gerne WSB auftrag“): Kandidat = WSA-R3-GLB (17e20ab4) plus Original-Mundträger FB_Mouth_Smile aus R2, R3-Glättung entfernt, Kopf- und Lid-Knete angeglichen; Mund zuerst als drei Varianten am Bild (Hub), dann Abnahme der exportierten Kandidaten-Datei auf der Proof-Stage gegen die R3-GLB als Vorlage (gleiche Bühne) und die E2-Referenz. Ersetzt den getrennten ToolBox-P08-Referenzbild-Schritt aus V-682 und den „P08-Export über WSA“ aus V-658; die Prüfung im Code und „genau eine Datei, Georg nimmt sie ab“ bleiben. WSA bleibt bei FB pausiert. Auftrag 50_BLENDER/ANTWORT_WS0_2026-10-25_FB_CANON_R5.md.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vier WSA-Runden scheiterten am Gesicht; die Proof-Stage von WSB ist die Abnahme-Bühne, und Georg sieht genau die Datei, die kanonisch wird.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-777",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "kfb-place-Löser für P0 (WS0, aus dem N40-Review): Kontakt-Bögen gelten auch für Stamps (Stumpf und Holzstücke, eine Funktion contactArcs für alle); Gebrauchsspuren am Fokus als Daten (wear) plus Knet-Element Moos auf der Schnittfläche; Fundstück entfällt in P0; P0-Busch-Nest 4,5 m neben dem Stumpf zur Sonnenseite (Konzept: Stumpf und Busch-Nest in der Mitte); Fallobst im Löser (rollToRest: zwei Kugeln aus dem Hero-Nest, hangab bis Mulde oder Hindernis), damit Blender und Spiel dasselbe zeigen; ohne Karten-Dreier eine Fluff-Farbe für alle Nester (Heroic). Stumpf-Kit im Regelwerk auf Quaternius umgestellt (V-775), Konzeptblatt angepasst. FB-Guards: Proof-Durchlass für FB_CANON R5 (Ordner R5/ und R3-Vorlage, WARN nicht kanonisch), Kanon-Hash bleibt allein maßgeblich (V-776). P0 golden 5511b72c.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was der Reviewer als Lücke fand, gehört in den Löser bzw. die Prüfung, nicht in Handarbeit je Szene.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11221,7 +11266,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1301",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1304",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
@@ -11294,6 +11339,31 @@
    "source": "KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/RETURN.md:9",
    "part": "",
    "georg": "GEORG ACCEPTANCE / OPEN"
+  },
+  {
+   "source": "KFB_Place_P0_StyleFrames_v4 (FAIL)/KFB_PLACE_P0_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1/TEST_REPORT.md:10",
+   "part": "Secret-Scan",
+   "georg": "Secret-Scan"
+  },
+  {
+   "source": "KFB_Place_P0_StyleFrames_v4 (FAIL)/KFB_PLACE_P0_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1/TEST_REPORT.md:11",
+   "part": "Größe",
+   "georg": "Größe"
+  },
+  {
+   "source": "KFB_Place_P0_StyleFrames_v4 (FAIL)/KFB_PLACE_P0_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1/TEST_REPORT.md:12",
+   "part": "zipcheck (JS-Port derselben Prüfungen)",
+   "georg": "zipcheck (JS-Port derselben Prüfungen)"
+  },
+  {
+   "source": "KFB_Place_P0_StyleFrames_v4 (FAIL)/KFB_PLACE_P0_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1/TEST_REPORT.md:13",
+   "part": "`zipcheck.py`",
+   "georg": "`zipcheck.py`"
+  },
+  {
+   "source": "KFB_Place_P0_StyleFrames_v4 (FAIL)/KFB_PLACE_P0_CLAUDE_DESIGN_SESSION_CUT_2026-10-25_r1/TEST_REPORT.md:14",
+   "part": "Clean-Run aus dem entpackten ZIP",
+   "georg": "Clean-Run aus dem entpackten ZIP"
   },
   {
    "source": "KFB ToolBox Studio Rig Anim/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/RETURN_STAGE_FIRST_P0_2026-09-16.md:145",

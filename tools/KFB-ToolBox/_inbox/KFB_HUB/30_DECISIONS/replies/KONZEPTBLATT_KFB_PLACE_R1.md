@@ -84,36 +84,36 @@ Sand-Dünen als Geländeform in Wüsten-Biomen gehören dem einen Höhen-Owner (
 
 ## 3 · Erste Probe P0 (eine Zelle)
 - **In einem Satz:** „Diese Lichtung zeigt einen alten Waldrand am Hang, weil der Wind das Laub hangabwärts treibt, und der Spieler sieht zuerst den Baumstumpf mit Fluff.“
-- **Ort:** 64-m-Zelle im Biom `moos`, fester Seed. Ein Kit je Gruppe: Bäume und Büsche aus KayKit Forest, Stumpf und Holzstücke aus dem Kenney Nature Kit (KayKit Forest FREE hat keinen Stumpf); Steinnest und Wegspur aus Steinkit v4.
+- **Ort:** 64-m-Zelle im Biom `moos`, fester Seed. Ein Kit je Gruppe: Bäume und Büsche aus KayKit Forest, Stumpf und Holzstücke aus Quaternius Ultimate Nature (`TreeStump` mit heller Schnittfläche, `WoodLog`/`WoodLog_Moss`; V-775, Kenney nicht mehr); Steinnest und Wegspur aus Steinkit v4. Das Busch-Nest liegt 4,5 m neben dem Stumpf zur Sonnenseite.
 - **Gruppen:**
   - Baumgruppe (1 Baum, 3 Büsche, 1 Akzentstein);
   - Busch-Nest;
   - Steinkit-Nest am Hang.
-- **Fester Stamp:** ein Baumstumpf als Mini-Landmarke; er darf nicht umgeordnet werden. Daran ein Fundstück.
+- **Fester Stamp:** ein Baumstumpf als Mini-Landmarke; er darf nicht umgeordnet werden. Das Fundstück entfällt in P0 (keine Kachel, V-775).
 - **Fluff:** Baumgruppe und Busch-Nest tragen farbige Fluff-Nester, ein Schlag löst Fallobst, das sich aufsammeln lässt.
 - **Ortsbiografie (alle vier Schichten als Instanz):**
   - Entstehen: der alte Waldrand-Baum (Anker der Baumgruppe);
   - Nutzen: Abfuhrweg als Steinspur vom Rand zum Stumpf. Steine und Fragmente sind organisch verteilt nach V-578: heiler Kern, dann verwittert gerundete Stücke dicht → locker, einzelne fehlen, Erde in der Lücke, keine Reihe (Georg-TUNE q201). Übergang als Sprenkel;
-  - Vergehen: der gefällte Stamm wird zum Stumpf. Er ist die Signatur, dazu zwei Echos (Holzstücke desselben Stamms). Am Stumpf mindestens zwei Gebrauchsspuren: Sägeschnitt, Axtkerbe, Moos auf der Schnittfläche;
+  - Vergehen: der gefällte Stamm wird zum Stumpf. Er ist die Signatur, dazu zwei Echos (Holzstücke desselben Stamms). Am Stumpf mindestens zwei Gebrauchsspuren: Sägeschnitt (die flache Schnittfläche des Kits), Moos auf der Schnittfläche (Knet-Element aus dem Löser), dazu die zwei Holzstücke; eine Axtkerbe bringt das Kit nicht mit und wird nicht modelliert;
   - Bewachsen: Moos und Büsche in den Fugen, Busch-Nest.
 - **Bilder:** Blender-Proof und Spiel hinter `veg=core`, gleiche Kamera, A/B gegen die heutige Vegetation. Echtes Terrain, sobald der Höhenfeld-Export greift, sonst als Platzhalter markiert.
-- **Zielbild-Paket vor dem Bau (V-740):** Claude Design liefert vier Style-Frames: Lichtung am Hang, Stumpf mit Fluff und Fundstück, Fallobst rollt hangabwärts, Steinnest. Material und Referenzen kommen über GitHub. Georg nimmt die Frames ab, bevor P0-Proof und `veg=core` gebaut werden. Löser, Regeldatei und Kachelmessung dürfen vorher laufen.
-- **Gate:** Das Rezept läuft durch `kfb_env.gate`, dann urteilt der blinde Kritiker gegen die Style-Frames. Danach gehen die P0-Bilder an Georg; mit seiner Abnahme ist P0 die Vorlage.
+- **Style-Frames (V-740, V-752, V-775):** WSB baut die vier Frames aus dem Rezept mit Adapter und Gate (N40): Lichtung am Hang, Stumpf mit Fluff im Busch daneben, Fallobst rollt hangabwärts, Steinnest. Georg nimmt sie ab; danach folgt der Laufzeit-Einbau. Bodenübergänge fehlen in diesen Frames bewusst, bis es ein Blender-Gegenstück zum Sprenkel-Modul gibt (V-403, V-749 Nr. 11); der Kritiker wertet K4 dafür als offen, nicht als FAIL.
+- **Gate:** Das Rezept läuft durch `kfb_env.gate`, dann urteilt der blinde Kritiker nach CRITIC_3D_R1 gegen dieses Konzeptblatt und die Bild-Vorlagen (Bauweise-Tafel, Etherington-Probe, B2-Bäume, Friedhof r24). Danach gehen die Frames an Georg; mit seiner Abnahme ist P0 die Vorlage.
 - **P1:** dieselbe Zelle mit Biom-Rand `moos` → `wueste` und einem B29-Mauerstück mit freiem Ende.
 
 ### P0 · Konzeptfelder (Vorlage KONZEPTBLATT_R1)
 | Feld | P0 |
 |---|---|
-| `focal` | Stumpf mit Fluff und Fundstück; gewinnt über Form (einziger Schnitt im Bild) und Akzentfarbe des Fluffs. Leserichtung: Steinspur → Stumpf → alter Baum |
+| `focal` | Stumpf mit Moos auf dem Schnitt, daneben das Busch-Nest mit dem Fokus-Fluff; gewinnt über Form (einziger Schnitt im Bild, hellster Wert) und Akzentfarbe des Fluffs (eine Farbe, Heroic). Leserichtung: Steinspur → Stumpf → alter Baum |
 | `space` | Vorne Wegspur und Kiesel, Mitte Stumpf und Busch-Nest, hinten Baumgruppe und Steinnest am Hang. Negativraum ist die freie Lichtung. Ruhe/Struktur/Bedeutung 70/20/10, stärkster Kontrast am Stumpf |
-| `palette_roles` | Boden-Grundton Biom `moos` nach COLOR_HARMONY_R1; Laub natürlich; Stein und Rinde aus der Insel-Palette; Fluff und Fundstück im Candy-Band als Akzent |
+| `palette_roles` | Boden-Grundton Biom `moos` nach COLOR_HARMONY_R1; Laub natürlich; Stein und Rinde aus der Insel-Palette; Fluff im Candy-Band als Akzent (eine Farbe je Nest, ohne Karten-Dreier Heroic) |
 | `color_script` | ruhige Mittagsstimmung, ein Licht-Rig; verboten: Neon-Flächen, zweite Lampe, Zufallsfarben |
 | `form_dna` | runde Kronen, gerundete Steine, Kugel-Fluff; sekundär Schnittfläche und Wegspur; verboten: harte Kanten, Kachelmuster |
-| `life_anchor` | Fluff wiegt im Wind je Gruppe; Fallobst hüpft und rollt nach einem Schlag; Fundstück dreht sich |
+| `life_anchor` | Fluff wiegt im Wind je Gruppe; zwei Fallobst-Kugeln aus dem Hero-Nest sind hangab gerollt und liegen in der Mulde bzw. am Stein |
 | `material_codes` | Moos in Fugen (Dreiergruppen), Steinkit-Kiesel hangabwärts, KayKit-Rinde mit Knete |
 | `story_beat` | eingefrorener Moment kurz nach dem Holzfällen: Stamm weg, Fluff wächst nach |
 | `cameras` | die vier festen Kritiker-Kameras plus Spielkamera |
-| `reference` | die vier Style-Frames (nach Abnahme), dazu B2-Bäume und Steinkit v4 |
+| `reference` | Bauweise-Tafel, Etherington-Probe, Farbgrammatik (Prinzip), B2-Bäume (Georg-getunt), Steinkit v4, Friedhof r24 |
 
 ## 4 · Wer was macht
 | Teil | Owner | Erste Lieferung |

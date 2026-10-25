@@ -505,7 +505,14 @@
    "pickup": "bei Kontakt, Gesamt-Fluff im Spielstand",
    "cause_required": true
   },
-  "variant": "B2-R2 Variante A als Startwert (TUNE an P0; Georg wählt am Bild)"
+  "variant": "B2-R2 Variante A als Startwert (TUNE an P0; Georg wählt am Bild)",
+  "default_mode": "heroic",
+  "default_mode_note": "ohne Karten-Dreier eine Farbe für alle Nester (P0-Brief: Heroic #d97c3a satt); eine Farbe je Nest, keine Zufallsfarbe je Kugel",
+  "fallobst": {
+   "balls": 2,
+   "only": "Hero-Nest des ersten Baums",
+   "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)"
+  }
  },
  "finds": {
   "optional": true,
@@ -652,16 +659,18 @@
      "count": 2
     }
    ],
-   "story_template": "gefällter Stamm wird zum Stumpf, Fluff und ein Fundstück daran",
+   "story_template": "gefällter Stamm wird zum Stumpf, Moos wächst auf dem Schnitt, Fluff im Busch daneben",
    "layer": 3,
-   "finds": true,
-   "kit": "Kenney Nature Kit (stump_old, log) – KayKit Forest FREE hat keinen Stumpf",
+   "finds": false,
+   "kit": "Quaternius Ultimate Nature (TreeStump, WoodLog, WoodLog_Moss; V-775) – Kenney nicht mehr",
    "echoes": "2 Holzstücke desselben Stamms in Wurfweite",
    "wear_marks": [
-    "Sägeschnitt",
-    "Axtkerbe",
-    "Moos auf der Schnittfläche"
-   ]
+    "Sägeschnitt (flache Schnittfläche des Kits)",
+    "Moos auf der Schnittfläche (Knet-Element)",
+    "zwei Holzstücke desselben Stamms in Wurfweite"
+   ],
+   "cut_moss": true,
+   "note_finds": "Fundstück entfällt in P0 (keine Kachel, kein eigener Slot außerhalb der Stumpf-Gruppe; V-775)"
   },
   {
    "id": "path_trace",
@@ -698,7 +707,7 @@
     "tree_group": "KayKit Forest",
     "bush_nest": "KayKit Forest",
     "stone_nest_slope": "Steinkit v4",
-    "stump_stamp": "Kenney Nature Kit",
+    "stump_stamp": "Quaternius Ultimate Nature",
     "path_trace": "Steinkit v4 + KayKit path_A–path_D"
    },
    "note": "P0; weitere Biome aus der Biom-Fahrt folgen mit P1",
@@ -13516,5 +13525,9 @@
     0.12
    ]
   }
+ },
+ "p0": {
+  "bush_next_to_stamp": 4.5,
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777)"
  }
 }
