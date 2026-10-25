@@ -29,6 +29,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-789 Löser N40 r8: Baum-Ring 0,25 cr, G1-Rand 8 %, Ü3 Bäume, Ü5 Stützen-Gras, Weg an Gruppen vorbei, P0-Dreieck. P0 6368a2eb.
 - V-790 Gate-Hülle als Kachel-Wahrheit (gate_r_m, foot_r_m), Gate r5 freigegeben. P0 ca4f2ab7.
 - V-791 Gate-Hülle alle Kacheln, Nachlauf Ü4/Ü3 mit G1-Prüfung, Holz-Kontakt an den Enden, Fluff 35 %, Haine dichter, Boden-Hub 0,2. q210 Maßstab an Georg. P0 2081f004.
+- V-792 Löser N40 r13: Ü4 in Dicken-Reihenfolge (solveLocal), Kontakt auf dem Messkreis, Holz-Zweig nur für Holz, Ü5 echte Kachel, Ü3 ganze Gruppe. P0 1f60e1ac.
+- V-793 Ü4 im Gate-Maß (b−a)/b, Baum- und Busch-Slots gemeinsam, Anker-Baum mit Nest (Fallobst). P0 7929923a.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
 - V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
 - V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.

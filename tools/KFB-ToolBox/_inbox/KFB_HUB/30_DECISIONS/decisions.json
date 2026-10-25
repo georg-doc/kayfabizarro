@@ -11364,6 +11364,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-792",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Löser zu WSB N40 r13 (6 FAIL, Rückschritt): Ü4 gilt wie im Gate in Dicken-Reihenfolge (jede Stufe ≥ 20 %, Löser ≥ 22 %), umgesetzt in solveLocal wie die Radien-Leiter, im Nachlauf nur als Wache; Gate bleibt. Kontaktstücke liegen genau auf dem Messkreis, Abdeckung mit Rand 0,445–0,48. Holz-Zweig nur für kind log bzw. Kachel long_axis (flache Steine liefen dort hinein: g2-Kontakt 0). Ü5-Kreis mit der echten Kachel (gate_r_m), Stein-Fußbogen 0,2–0,32 π. Ü3 im Nachlauf über alle Slot-Glieder der Gruppe, mehrere Stufen vor der G1-Wache. Selbstprüfung mit Mini-Gate über 7 Seeds. Kachel-Feld long_axis (x|z). P0 golden 1f60e1ac.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Löser misst jede Regel genau so wie das Gate, sonst kreisen die Befunde.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-793",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Ü4 im Gate-Maß (b − a) / b ≥ 0,2 (Löser 0,22) statt relativ zum dünneren Stamm (WSB N40 r14: 3 × 18–19,5 %). Baum-Slots einer Gruppe werden gemeinsam gelöst: Stämme in Dicken-Reihenfolge, Höhen paarweise ≥ 11 % verschieden, Anker der höchste; passt es nicht, Kachel und Gleichmaß neu würfeln. Anker von tree_group ist immer ein Baum mit gemessenen Ankern (Hero-Nest + Fallobst für Frame 3), Anker von bush_nest groß genug fürs Nest; Büsche einer Gruppe ebenfalls gemeinsam (Höhen, Anker der höchste). Mini-Gate über 7 Seeds: Ü4 0, G1 ok, Fallobst 2. P0 golden 7929923a.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiche Bezugsgröße wie das Gate.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11476,7 +11506,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1323",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1325",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

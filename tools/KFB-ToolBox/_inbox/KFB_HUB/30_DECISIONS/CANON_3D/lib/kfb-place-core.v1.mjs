@@ -55,13 +55,24 @@ export function solveLocal(slots, R, rules, tries = 16) {
           if (hi.tile.r * 1.15 >= need) { hi.s = +Math.max(hi.s, need / hi.tile.r).toFixed(3); continue }
           const big = slots[ix[k]].domain.filter((d) => d.r * 0.85 >= need).sort((x, y) => x.r - y.r)[0]; if (big) { hi.tile = big; hi.s = +Math.max(0.85, need / big.r).toFixed(3); continue }
           lo.s = +Math.max(0.85, (hi.tile.r * hi.s) / 1.22 / lo.tile.r).toFixed(3) } }
-      // V-792 · Ü4 wie das Gate: Stämme der Gruppe in Dicken-Reihenfolge, jede Stufe ≥ 22 % (foot_r × s); erst Gleichmaß, dann eine dickere Kachel derselben Domäne
+      // V-792 · Ü4 wie das Gate: Stämme der Gruppe in Dicken-Reihenfolge, (b − a) / b ≥ 0,22 wie das Gate (foot_r × s); erst Gleichmaß, dann eine dickere Kachel derselben Domäne
       const tr = out.map((f, i) => i).filter((i) => slots[i].kind === 'tree' && out[i].tile.footR).sort((a, b) => out[a].tile.footR * out[a].s - out[b].tile.footR * out[b].s)
-      for (let k = 1; k < tr.length; k++) { const lo = out[tr[k - 1]], hi = out[tr[k]], need = lo.tile.footR * lo.s * 1.22
+      for (let k = 1; k < tr.length; k++) { const lo = out[tr[k - 1]], hi = out[tr[k]], need = lo.tile.footR * lo.s * 1.28   // Gate-Maß (b − a) / b ≥ 0,2, Rand 0,22 → b ≥ a / 0,78
         if (hi.tile.footR * hi.s >= need) continue
         if (hi.tile.footR * 1.15 >= need) { hi.s = +Math.max(hi.s, need / hi.tile.footR).toFixed(3); continue }
         const big = slots[tr[k]].domain.filter((d) => d.footR && d.footR * 0.85 >= need).sort((x, y) => x.footR - y.footR)[0]; if (big) { hi.tile = big; hi.s = +Math.max(0.85, need / big.footR).toFixed(3); continue }
-        lo.s = +Math.max(0.85, (hi.tile.footR * hi.s) / 1.22 / lo.tile.footR).toFixed(3) }
+        lo.s = +Math.max(0.85, (hi.tile.footR * hi.s) / 1.28 / lo.tile.footR).toFixed(3) }
+      // V-793 · Ü4 und Ü3 der Bäume (und Ü3 der Büsche) gemeinsam (die Leiter allein schob Höhen gleich bzw. stieß an ±15 %): passt die Gruppe nicht, Kachel und Gleichmaß der
+      // Baum-Slots neu würfeln, bis Stämme in Dicken-Reihenfolge (b − a) / b ≥ 0,22, Höhen paarweise ≥ 11 % verschieden und der Anker der höchste ist
+      for (const pk of ['tree', 'bush']) {   // V-793: Bäume (mit Stamm-Leiter) und Büsche (nur Höhen) je für sich
+        const ti = out.map((f, i) => i).filter((i) => slots[i].kind === pk && (pk !== 'tree' || out[i].tile.footR))
+        const plantsOk = () => { const hs = ti.map((i) => out[i].tile.h * out[i].s)
+          if (pk === 'tree') { const fr = ti.map((i) => out[i].tile.footR * out[i].s).sort((a, b) => a - b); for (let k = 1; k < fr.length; k++) if ((fr[k] - fr[k - 1]) / fr[k] < 0.22) return false }
+          for (let a = 0; a < hs.length; a++) for (let b = a + 1; b < hs.length; b++) if (Math.min(hs[a], hs[b]) / Math.max(hs[a], hs[b]) > 0.89) return false
+          const ai = ti.find((i) => slots[i].role === 'anchor'); return ai == null || ti.every((i) => i === ai || out[i].tile.h * out[i].s < out[ai].tile.h * out[ai].s) }
+        if (ti.length > 1 && !plantsOk()) { const keep = ti.map((i) => out[i]); let found = false
+          for (let a = 0; a < 400 && !found; a++) { for (const i of ti) { const dom = slots[i].domain.filter((d) => pk !== 'tree' || d.footR); if (dom.length) out[i] = { tile: R.pick(dom), s: +R.range(0.85, 1.15).toFixed(3) } } found = plantsOk() }
+          if (!found) ti.forEach((i, k) => { out[i] = keep[k] }) } }
       return { fill: out, tries: t + 1, fallback: false } }
   }
   return { fill: slots.map((s) => ({ tile: s.domain[0], s: 1 })), tries, fallback: true }
@@ -227,7 +238,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const rid = recipeList?.[gi] ?? R.weighted(Object.fromEntries(Object.entries(B.recipes).filter(([k]) => recipes[k] && !recipes[k].fixed && k !== 'path_trace').map(([k, w]) => [k, card ? w * card.bias(k) : w])))
     const rec = recipes[rid], kit = B.kit?.[rid], slots = [], fluffOn = stamps.length > 0 || rng(`${seed}|fluff|${gi}|${chunk.x0}|${chunk.z0}`).next() < (cfg.fluff?.group_share ?? 1)   // V-791: Fluff als Akzent, nicht an jeder Gruppe (Critic R2: ≤ 1 von 3); P0 behält es
     rec.slots.forEach((sl, si) => { const cnt = Array.isArray(sl.count) ? R.pick(sl.count) : sl.count ?? 1
-      for (let k = 0; k < cnt; k++) { const kind = R.pick(sl.kinds); let dom = tilesFor(cfg, kind, kit); if (sl.role === 'pebble' && dom[0]?.placeholder) dom = tilesFor(cfg, kind, 'Steinkit v4');   /* V-763: Kiesel sind Mikro-Ebene, Steinkit erlaubt */ slots.push({ role: sl.role, kind, tier: Math.min(si, 2), domain: dom, baseH: dom[0].h, layer: sl.layer ?? rec.layer }) } })
+      for (let k = 0; k < cnt; k++) { const kind = R.pick(sl.kinds); let dom = tilesFor(cfg, kind, kit); if (sl.role === 'pebble' && dom[0]?.placeholder) dom = tilesFor(cfg, kind, 'Steinkit v4');   /* V-763: Kiesel sind Mikro-Ebene, Steinkit erlaubt */ if (sl.role === 'anchor' && kind === 'tree') { const wa = dom.filter((d) => d.anchors?.length); if (wa.length) dom = wa } if (sl.role === 'anchor' && kind === 'bush') { const wb = dom.filter((d) => d.h >= (cfg.fluff?.levels?.plant?.min_crown_h ?? 0.4)); if (wb.length) dom = wb }   /* Anker-Busch groß genug fürs Nest */   /* V-793: Anker-Baum trägt das Hero-Nest und das Fallobst, nie ein kahler Baum ohne gemessene Anker (WSB N40 r14 Frame 3) */ slots.push({ role: sl.role, kind, tier: Math.min(si, 2), domain: dom, baseH: dom[0].h, layer: sl.layer ?? rec.layer }) } })
     if (rec.odd_total && slots.length % 2 === 0) slots.pop()
     const [gx, gz] = grad(terrain, c[0], c[1]), down = Math.atan2(-gz, -gx)
     let sol = null, radii = null, pos = null, rep = null
@@ -380,7 +391,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     for (const o of inst) if (o.group && G1R.includes(o.role) && TB.get(o.tile)) { if (!members.has(o.group)) members.set(o.group, []); members.get(o.group).push(o) }
     const okG1 = (o) => !G1R.includes(o.role) || (members.get(o.group) || []).every((q) => { if (q === o) return true; const v = Math.hypot(o.p[0] - q.p[0], o.p[2] - q.p[2]) / (rOf(o) + rOf(q) || 1); return !(v > ov && v < air) })
     const lim = (o, sc) => (o.kind === 'grass' ? sc : Math.min(S0.get(o) * 1.15, Math.max(S0.get(o) * 0.85, sc)))
-    const u4Bad = (g) => { const t = inst.filter((q) => q.group === g && q.kind === 'tree' && fOf(q)).map(fOf).sort((a, b) => a - b); let n = 0; for (let k = 1; k < t.length; k++) if (t[k] < t[k - 1] * 1.2) n++; return n }   // Ü4 wie das Gate: Dicken-Reihenfolge
+    const u4Bad = (g) => { const t = inst.filter((q) => q.group === g && q.kind === 'tree' && fOf(q)).map(fOf).sort((a, b) => a - b); let n = 0; for (let k = 1; k < t.length; k++) if ((t[k] - t[k - 1]) / t[k] < 0.2) n++; return n }   // Ü4 wie das Gate: Dicken-Reihenfolge
     const trySet = (o, sc) => { const old = o.s, u0 = o.kind === 'tree' ? u4Bad(o.group) : 0; o.s = +lim(o, sc).toFixed(3); if (okG1(o) && (o.kind !== 'tree' || u4Bad(o.group) <= u0)) return true; o.s = old; return false }
     const tryAny = (lo, hi, h0, h1) => [0.97, 0.88, 0.76, 0.64].some((f) => trySet(lo, (lo.s ?? 1) * h1 * (1 - ht) * f / h0)) || [1.03, 1.12, 1.25].some((f) => trySet(hi, (hi.s ?? 1) * h0 / (1 - ht) * f / h1))   // V-792: mehrere Stufen, bevor die G1-Wache aufgibt
     const near = (A, Bq) => Math.hypot(A.p[0] - Bq.p[0], A.p[2] - Bq.p[2]) <= nr * ((rOf(A) + rOf(Bq)) / 2 || 1)
