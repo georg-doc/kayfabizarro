@@ -10959,6 +10959,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-765",
+   "date": "2026-10-25",
+   "area": "Video",
+   "verdict": "TUNE",
+   "text": "Georg 25.10.: Fahrzeug- und Orts-Clips als runder Kopf-Ausschnitt (keine Hände), klein, frei stehend unter dem Almanach, ganz oben; Mizzy/BNWN bleibt eckig (Billboard, HyperNorm als Crop/Collage). Clips laufen über den Ton-Pfad des Spiels (UI-Bus, Lautstärke, Begrenzer) mit Musik-Ducking wie beim Sprechen (q179). WSA-Briefings aktualisiert: b214 (R2) → b226 (R3) → b227 HyperNorm (b220 entfällt, H15 Mindscape als Experience einbinden); b219/b221 abgelöst. FrizzleTunes-Verzeichnis replies/FRIZZLETUNES_INDEX_R1 (207 Einträge, Playlist 164 Videos).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kleiner runder Kopf über dem Spiel stört nicht und spricht im selben Klangraum.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11071,7 +11086,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1276",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1277",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

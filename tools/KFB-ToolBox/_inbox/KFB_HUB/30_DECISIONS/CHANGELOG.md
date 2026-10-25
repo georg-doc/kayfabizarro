@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-765 runde Kopf-Clips (klein, oben), Clips im Mixer mit Ducking; R3 @ac620a4; WSA: b226 aktualisiert, b227 HyperNorm neu (H15 statt b220), b219/b221 abgelöst. FrizzleTunes-Index (207 Einträge, 164 Videos).
 - V-763 Gate-Befunde entschieden + Löser angepasst (2 Bögen, Kontakt für Anker/frei, Höhenstaffel wie Gate, Kiesel 18° und aus Steinkit, Stumpf Fokus, keine Geraden, Wegsteine 10–25 %), Adapter r2 in CANON_3D/lib, P0 5d034f71 ohne Platzhalter. V-764 HeyGen-Clips im Spiel (Fahrzeug beim Rufen, Orakel-Ring loci=1), R3 neu @98c4029 (b226 aktualisiert); YouTube-Download später.
 - V-762 HeyGen-Clips (BNWN 02, Orakel-Ort, Beseeltes Fahrzeug) im Material-Zweig @8bd3f2a, Hub q204 mit Nutzungsvorschlag; FrizzleTunes-Verzeichnis (Substack + YouTube-Playlist) im Bau.
 - V-761 WSB N39 kfb-place übernommen: 289 Kacheln in kfb_place.r1.json, Gate r2 + kfb_place_bpy.py in CANON_3D/lib; Löser-Fixes (Kontaktfenster 0,44, Kiesel schräg, Höhenstaffel, Echos, P0-Gruppenfolge), Golden PASS b65d698a. Wegsteine Einsinken 5–20 %. WSB: Gate auf neuem P0-Rezept, rotX/rotZ im Adapter, Friedhof-Fugen.
