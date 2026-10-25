@@ -10974,6 +10974,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-766",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Georg 25.10.: kein roter Platzhalter-Klotz beim Laden; Platzhalter unsichtbar, statt dessen ein Lade-Chip mit KFB-Zeilen (Wrestling data, Brewing fluff, Kayfabricating the chassis …), erst nach 250 ms sichtbar. Gilt für Fahrzeuge, später für alle nachgeladenen Modelle.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Laden ist Teil der Inszenierung, nicht ein roter Kasten.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-767",
+   "date": "2026-10-25",
+   "area": "Kampf",
+   "verdict": "BACKLOG",
+   "text": "Georg 25.10. Frage GPU-Partikel für Zerstörung: Kombination statt Ersatz. Lesbarkeit und Treffer tragen die eckigen Cel-Splitter (Spell-Spill-Benchmark, wenige starre Teile mit Physik); die GPU-Partikel aus Probe R3 übernehmen Masse und Nachklang: Knet-Staubwolken, Fluff und Goo-Spritzer, Krümel von Kenney-/OSM-Fassaden, die auf dem Gelände liegen bleiben bzw. zurückfließen; dazu die Staubfahne des Fahrzeugs als gemeinsamer Rauch. GPU-Partikel kollidieren nur mit Höhenfeld und einfachen Formen, nicht mit Rapier. Probe im Destruction/Mech-Slice.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wenige lesbare Splitter plus viele billige Partikel ergeben Wucht ohne Leistungsverlust.",
+   "applies": "Destruction-Slice"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11086,7 +11116,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1277",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1278",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
