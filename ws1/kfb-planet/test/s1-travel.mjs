@@ -18,6 +18,7 @@ const D = await open(BASE); const def = await D.page.evaluate(() => ({ travel: t
 
 // travel=1
 const { page, errs } = await open(BASE + ',travel=1')
+await page.waitForFunction(() => window.__kfbTravel?.prewarm?.(), null, { timeout: 60000 }).catch(() => {}); const warm = await page.evaluate(() => window.__kfbTravel.prewarm())
 const s0 = await st(page)
 await page.evaluate(() => window.__kfbTravel.click()); await page.waitForTimeout(300); const s1 = await st(page)
 // Entstehen über build (V-533): Maßstab des Wagens folgt den gelandeten Kugeln; Kugeln ohne travelfx=1 nicht in der Szene
@@ -48,6 +49,8 @@ process.exit(report('s1-travel', {
   capsuleRidesAlong: dist(s3.fig, s3.carPos) < 1 && s3.ride === true,
   racerFlyWithoutFlySwitch: flew && fClick === 'flyRacer' && landed && s3b.state === 'drive',
   secondClickExits: s4.state === 'exit',
+  prewarmedBeforeCall: !!warm?.id && !warm.off,
+  modelReadyAtFirstBall: mid.grow != null && s1.model === 'OK', // vorgewärmt: 0,3 s nach dem Rufen steht das Modell
   buildGrowsCar: mid.fluff.done >= 3 && mid.fluff.done <= 13 && mid.grow != null && Math.abs(mid.grow - mid.fluff.done / 16) < 0.07 && fl2.f.done === 16 && fl2.s === 1,
   suckShrinksCar: vmid.state === 'vanish' && vmid.f.done >= 3 && vmid.f.done <= 13 && Math.abs(vmid.s - (1 - vmid.f.done / 16)) < 0.07,
   noFluffLookByDefault: mid.suckRoots === 1,
@@ -56,4 +59,4 @@ process.exit(report('s1-travel', {
   wMovesFigureAgain: dist(s6.fig, s5.fig) > 1,
   cycle: log.join() === (flew ? 'summon,enter,drive,flyRacer,drive,exit,vanish,foot' : 'summon,enter,drive,exit,vanish,foot'),
   noPageErrors: errs.length === 0,
-}, { mid, fl2, vmid, flew, fClick, landed, s3b, def, s0, s1, s2, s3, s4, s5, s6, log, errs: errs.slice(0, 5) }))
+}, { warm, mid, fl2, vmid, flew, fClick, landed, s3b, def, s0, s1, s2, s3, s4, s5, s6, log, errs: errs.slice(0, 5) }))

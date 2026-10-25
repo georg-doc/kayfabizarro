@@ -190,6 +190,14 @@ async function prefetchNeighbours(gl, camera, scene, alive) {
     llog('prefetch ' + id + (fresh ? '' : ' (geladen)')); await warmModel(gl, m, camera, scene); I.warm = true; llog('prefetched ' + id)
   }
 }
+// S1 (V-746) · travel=1: den gewählten Racer schon zu Fuß laden und vorwärmen (Modell-Cache wie V), damit er beim ersten Rufen fertig ist und das
+// Wachsen über die Fluff-Kugeln nicht verpasst. Nur vom M1-Wirt hinter travel=1 aufgerufen; prefetch=0 schaltet ab.
+export async function prewarmRacer(gl, camera, scene, id = M2CAR.id) {
+  if (!PREFETCH) return null
+  const t0 = performance.now(), m = await loadModel(id), I = MODEL_INFO.get(id); if (!m || !I) return null
+  if (!I.warm) { llog('prewarm ' + id); await warmModel(gl, m, camera, scene); I.warm = true; llog('prewarmed ' + id) }
+  return { id, ms: +(performance.now() - t0).toFixed(0) }
+}
 // Platzhalter-Kasten bis das Modell steht: Geometrie und Material bleiben (sonst übersetzt jeder Racer-Wechsel den Shader des Kastens neu)
 const BOX_GEO = new THREE.BoxGeometry(1, 1, 1), BOX_MAT = new THREE.MeshStandardMaterial({ color: '#c8432f' })
 const nextFrame = () => new Promise((r) => requestAnimationFrame(() => r()))

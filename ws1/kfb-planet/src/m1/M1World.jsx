@@ -22,7 +22,7 @@ import ModuleHost from '../ModuleHost'
 import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
-import M2Car, { M2_ON, M2STATE, M2EVENTS, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
+import M2Car, { prewarmRacer, M2_ON, M2STATE, M2EVENTS, RACER_FLY, TRAVEL_ON, TRAVEL, carLive } from '../m2/M2Car'
 import { createTravelState } from './travelState'
 import { createTravelFluff } from './travelFluff'
 import StuntField from '../m3/stuntField'
@@ -59,7 +59,11 @@ import { getReader, isPoolReady } from '../dialogText'
 import { callLine } from '../poolReader' // WS-NPC chat=syl: Rufe V-712 der Figuren
 import { anchorAt, registerAnchor } from '../bubbleAnchors'
 import { CHAT_SYL, setHudRects } from '../bubbleAvoid' // WS-NPC chat=syl: Blasen meiden HUD und Figuren
-import { createTalkDirector } from '../npc/talkDirector' // WS-NPC chat=syl: Wechselrede (Lead 24.10.)
+import { createTalkDirector, sceneCard, parseCard } from '../npc/talkDirector' // WS-NPC chat=syl: Wechselrede (Lead 24.10.); S3: Karte je Szene
+import { createSceneHost } from '../npc/sceneHost' // WS-NPC S3 (Lead 25.10.): Begegnungs-Module hinter #scenes
+import { createSceneGrid } from '../npc/sceneGrid'
+import { createSceneDirector } from '../npc/sceneDirector'
+import { createResidentScene } from '../npc/residentScene'
 import * as kfbAudio from '../audio/kfbAudio.js' // WS-Audio speak() (chat=syl), fehlt es, gilt die Lesezeit
 import { useGame } from '../store'
 import { DECKS, cardAt, cardsOfDeck } from '../cards'
@@ -220,10 +224,36 @@ const NPC_OPTS = { world: NPC_WORLD, partners: () => { const st = mods.partner?.
 // WS-NPC chat=syl (Lead 24.10., Georg-GO): Sprech-Anlässe werden Wechselrede mit Blase und Laut (talkDirector; Laut WS-Audio speak). Standard bleibt bis Georgs Urteil.
 // Begrüßungen zeigen dann die Ruf-Blase statt „…“ (onGreet oben schweigt); der Disco-MC bleibt ruhig, bis er ruft (mcWaitsForCall)
 const makeTalk = mk('talk', createTalkDirector)
-const TALK_OPTS = { sources: () => ({ band: mods.band, disco: mods.disco, npc: mods.npc }), reader: { ssotLine: (...a) => getReader().ssotLine(...a) }, callLine, anchorAt, registerAnchor,
+const TALK_OPTS = { sources: () => ({ band: mods.band, disco: mods.disco, npc: mods.npc, ...(mods.scenes?.sources?.() || {}) }), reader: { ssotLine: (...a) => getReader().ssotLine(...a) }, callLine, anchorAt, registerAnchor,
   say: (anchor, line, life) => useGame.getState().say(anchor, line, 'speech', undefined, life), speak: (a) => kfbAudio.speak?.(a) ?? null,
-  busy: () => M1STATE.phase === 'dialog', onCall: (b) => { if (b.bt.mc) mods.disco?.mcCall?.() }, player: () => worldPosOf(mods.player) }
+  busy: () => M1STATE.phase === 'dialog', onCall: (b) => { if (b.bt.mc) mods.disco?.mcCall?.() }, player: () => worldPosOf(mods.player),
+  cardHint: (cid) => parseCard(mods.scenes?.cardOf?.(cid)) }   // S3: Figur in einer Szene erzählt die Karte der Szene
 if (CHAT_SYL) DISCO_OPTS.mcWaitsForCall = true
+// WS-NPC S3 (Lead 25.10., WS0 V-740/V-746): Begegnungen als Module hinter #scenes (Entwürfe nur mit #scenes=entwurf: heute ist kein Typ freigegeben).
+// Raster = PLATZHALTER bis WS1bs Raster (austauschbar, gleiche Schnittstelle); M1-Maße gegenüber dem Konzept (Zelle 192 m, Takt 0,9–2 km, Plätze 250–600 m
+// voraus, Abbau ab 300 m) auf die kleine M1-Welt (Laufradius ≈ 150 m) verkleinert – Platzhalter. Nicht zusammen mit #band/#disco (gleiche Anker-IDs).
+const SCENES_ON = /(^|[#,])scenes(=entwurf)?(,|$)/.test(hash) && K !== 1, SCENES_DRAFT = /(^|[#,])scenes=entwurf(,|$)/.test(hash)
+const SCENES_M1 = Object.freeze({ cell: 48, tries: 25, maxSlope: 0.6, taktM: [60, 140], ahead: [25, 60], despawnR: 45, stageR: 30 })   // Platzhalter (M1; die Probe-Welt ist hügelig, Neigung bei r 90 m meist 0,27–1,2)
+const makeScenes = mk('scenes', createSceneHost)
+const SCENES_OPTS = SCENES_ON ? (() => {
+  const groundAt = (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), player = () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }
+  const grid = createSceneGrid({ seed: TERRAIN.seed, cell: SCENES_M1.cell, tries: SCENES_M1.tries, maxSlope: SCENES_M1.maxSlope, groundAt, isWater: (x, z) => !!mods.water?.isWater?.(x, z),   // Wasser-Abfrage: offen (WS1c), sonst kein Ausschluss
+    inWorld: (x, z) => { const r = Math.hypot(x, z); return r < M1BOUNDS.walkR - 12 && r > SCENES_M1.stageR } })   // nicht auf die Bühne (Amphitheater r ≈ 28 m wie DISCO avoid)
+  const castOf = (cid) => NPC_WORLD.residents.find((r) => r.residentId === cid)?.stageCastId || cid   // Darsteller wie residentLife (stageCastId, z. B. farmer-b)
+  const factories = {
+    bewohner: (sc) => createResidentScene({ scene: sc, activities: NPC_WORLD.activities, cast: (cid) => withPrivateBody(castOf(cid), KAYKIT(castOf(cid))(0, 0, null)), clipUrls: [clipsMove, clipsGeneral, clipsSim], groundAt, player, clock: () => M1CLOCK.t ?? 0, worldScale: K }),
+    ...(BAND_OPTS ? { band: (sc) => createBandLife({ ...BAND_OPTS, at: [sc.anker.x, sc.anker.z], yaw: sc.anker.yaw }) } : {}),
+    disco: (sc) => createDiscoLife({ ...DISCO_OPTS, at: [sc.anker.x, sc.anker.z], yawDeg: (sc.anker.yaw * 180) / Math.PI }),
+    // Konflikt (Lead 25.10.): Skelett-Patrouille mit ihrer Route, auf den Anker verschoben; Dark Fluffer am Baum seiner Definition (flufferSet ohne Plan, spawnAt mit Sorte)
+    patrouille: (sc) => { const def = NPC_WORLD.groups.find((g) => g.id === 'skeleton_patrol'), P = def.route.points, cx = P.reduce((a, p) => a + p[0], 0) / P.length, cz = P.reduce((a, p) => a + p[1], 0) / P.length
+      return createGroupLife({ ...GROUP_OPTS, groups: [{ ...def, route: { ...def.route, points: P.map(([x, z]) => [+(x - cx + sc.anker.x).toFixed(2), +(z - cz + sc.anker.z).toFixed(2)]) } }], revealOnly: [] }) },
+    fluffer: (sc) => { const def = NPC_WORLD.fluffers.find((f) => f.id === sc.anker.ort), m = createFlufferSet({ ...FLUFFER_OPTS, defs: [def], schedule: false }); m.spawnAt?.(def.id, undefined, undefined, sc.besetzung[0].sorte); return m },
+  }
+  // Platzquelle Fluffer: die Obstbäume der Fluffer-Definitionen (Konzept §5.1 Typ 7: „4 m am Baum“), nicht das Raster
+  const treeSpots = (x, z, r) => NPC_WORLD.fluffers.map((def) => { const t = (mods.orchard?.trees?.() || []).find((tr) => tr.zone === def.tree?.zone && tr.id === def.tree?.id); if (!t) return null
+    return { cell: ['baum', def.id], x: t.pos[0], z: t.pos[2], y: t.pos[1], R: 6, slope: 0, ref: def.id, d: +Math.hypot(t.pos[0] - x, t.pos[2] - z).toFixed(2) } }).filter((sp) => sp && sp.d <= r).sort((a, b) => a.d - b.d)
+  return { grid, director: createSceneDirector({ seed: TERRAIN.seed, grid, includeDraft: SCENES_DRAFT, taktM: SCENES_M1.taktM, ahead: SCENES_M1.ahead, spotSources: { fluffer: treeSpots }, cardFor: sceneCard }), factories, player, clock: () => M1CLOCK.t ?? 0, despawnR: SCENES_M1.despawnR }
+})() : null
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.
 const LANTERNS_ON = !/(^|[#,])lanterns=0(,|$)/.test(hash)
@@ -563,6 +593,9 @@ const rideOn = (P) => { RIDE.on = true; P?.handle?.()?.body?.setEnabled?.(false)
 const rideOff = (P) => { if (!RIDE.on) return; RIDE.on = false; P?.handle?.()?.body?.setEnabled?.(true) }
 function TravelHost({ player }) {
   const [at, setAt] = useState(null)
+  const { gl, camera: cam3, scene } = useThree(), warm = useRef(null)
+  // gewählten Racer 2,5 s nach dem Einhängen vorwärmen (Welt steht schon), damit das erste Rufen nicht auf das Modell wartet
+  useEffect(() => { let alive = true; const t = setTimeout(() => { prewarmRacer(gl, cam3, scene).then((r) => { if (alive) warm.current = r ?? { off: true } }) }, 2500); return () => { alive = false; clearTimeout(t) } }, [gl, cam3, scene])
   const fluff = useMemo(() => createTravelFluff({ n: FLUFF_N, stagger: FLUFF_STAGGER, r: 0.14 * K }), [])
   useEffect(() => fluff.dispose, [fluff]) // Freigabe beim Aushängen (dispose ohne this)
   const nozzle = () => { const f = worldPosOf(mods.player); return { pos: f ? f.add(new THREE.Vector3(0, 1.2 * K, 0)) : new THREE.Vector3(), dir: new THREE.Vector3(0, 1, 0) } }
@@ -589,7 +622,7 @@ function TravelHost({ player }) {
     const cp = RIDE.on && M2STATE.carPos?.(); if (cp) player.current?.teleport([cp.x, cp.y + FOOT + 0.3 * K, cp.z]) })
   // Racer-Flug: Abflug (Rampe / zweimal Leertaste) und Landung von racerFlight (M2EVENTS fly/land) → Zustandsmaschine drive ↔ flyRacer
   useEffect(() => { const a = M2EVENTS.on('fly', () => TRAVEL_FX.push(...TRAVEL_SM.send('takeoff'))), b = M2EVENTS.on('land', () => TRAVEL_FX.push(...TRAVEL_SM.send('land'))); return () => { a(); b() } }, [])
-  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car, ride: () => RIDE.on, fluff: () => fluff.info() }); return () => { TRAVEL.car = false; rideOff(player.current); if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
+  useEffect(() => { expose('Travel', { sm: TRAVEL_SM, click: travelClick, car: () => TRAVEL.car, ride: () => RIDE.on, fluff: () => fluff.info(), prewarm: () => warm.current }); return () => { TRAVEL.car = false; rideOff(player.current); if (mods.player?.object3d) mods.player.object3d.visible = true } }, [])
   return <>{FLUFF_SHOW && <primitive object={fluff.object3d} />}{travel ? <M2Car player={player} travel={travel} /> : null}</>
 }
 
@@ -722,6 +755,7 @@ function M1World() {
       {BAND_ON && BAND_OPTS && <ModuleHost create={makeBand} options={BAND_OPTS} />}
       {DISCO_ON && <ModuleHost create={makeDisco} options={DISCO_OPTS} />}
       {CHAT_SYL && <ModuleHost create={makeTalk} options={TALK_OPTS} />}
+      {SCENES_ON && <ModuleHost create={makeScenes} options={SCENES_OPTS} />}
       {GIFT_ON && GIFT_OPTS && <ModuleHost create={makeGift} options={GIFT_OPTS} />}
       {HARVEST && <Orchard />}
       {CLAY_ON && <ModuleHost create={makeClay} options={CLAY_M1} />}

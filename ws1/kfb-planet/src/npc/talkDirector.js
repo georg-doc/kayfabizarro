@@ -34,6 +34,13 @@ const BY_DECK = new Map()
 CARDS.cards.forEach(([d, num]) => { const id = CARDS.decks[d][0]; if (isBlocked(id, num)) return; if (!BY_DECK.has(id)) BY_DECK.set(id, []); BY_DECK.get(id).push(+num) })
 export const deckCards = (deckId) => BY_DECK.get(deckId) || []
 
+// S3 (Lead 25.10.): Signatur-Karte einer Szene – erstes Mitglied der Besetzung mit Signatur-Deck, Karte je Szenen-Nummer reihum (gesperrte nie) → 'deck:num' | null
+export function sceneCard(besetzung, n = 0) {
+  for (const b of besetzung) { const deck = signatureDeck(b.characterId), all = deck ? deckCards(deck) : []; if (all.length) return deck + ':' + all[(hash(b.characterId) + n) % all.length] }
+  return null
+}
+export const parseCard = (k) => { const m = /^(.+):(\d+)$/.exec(k || ''); return m ? { deck: { id: m[1] }, num: +m[2] } : null }
+
 // Anlass → Beats. occ: { group, cause: 'songEnd'|'pause'|'notice'|'greet', reason?, speakers: [{ anchor, characterId, … }] }
 // card(characterId) → { deck: { id }, num } | null. Beat: { sp, call } oder { sp, card, role: 'line'|'lore' }
 export function planOccasion(occ, card) {
@@ -67,6 +74,7 @@ export function createTalkDirector(options) {
   const gap = () => TALK.replyGap[0] + (TALK.replyGap[1] - TALK.replyGap[0]) * rnd()
   // Karte einer Figur: reihum durch ihr Signatur-Deck, mit tr1 bevorzugt Karten mit tr1-Zeile; keine Karte zweimal, bevor das Deck durch ist
   function cardFor(characterId) {
+    const hint = options.cardHint?.(characterId); if (hint && !isBlocked(hint.deck.id, hint.num)) return hint   // S3: Karte der Szene, in der die Figur steht
     const deck = signatureDeck(characterId), all = deck ? deckCards(deck) : []
     if (!all.length) return null
     const pref = tr1 ? all.filter((n) => tr1Line(deck, n)) : all, list = pref.length ? pref : all
@@ -148,7 +156,7 @@ export function createTalkDirector(options) {
       if (registerAnchor && (S.anchorT -= dt) <= 0) {
         S.anchorT = TALK.anchorPollS
         const src = options.sources?.() || {}
-        for (const a of [...(src.band?.anchors?.() || []), ...(src.disco?.anchors?.() || [])]) {
+        for (const a of Object.values(src).flatMap((m) => m?.anchors?.() || [])) {   // Band, Disco und Szenen-Module (S3)
           const had = S.anchors.get(a.id); if (had && had.object3d === a.object3d) continue
           const top = a.top ?? topOf(a.object3d); if (!(top > 0)) continue   // Kopfhöhe über dem Fußpunkt, einmal gemessen (Box der Figur)
           had?.off?.(); S.anchors.set(a.id, { object3d: a.object3d, top, off: registerAnchor({ id: a.id, object3d: a.object3d, offset: [0, top, 0] }) })
