@@ -11694,6 +11694,36 @@
    "applies": "später"
   },
   {
+   "id": "V-814",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Kritiker Runde 4 REWORK 22/22 (K2 Mittel 5,8 nach 5,5 und 6,5), Stopp-Regel: keine weitere Reparatur am Weg B9-Mehrheit. Probe einer neuen Richtung auf Theater, Mesa, Utopia Stage: Code je Bauteil nur aus Geometrie und Textur-Grundfarbe, Fokus von WS0 benannt; Gewinn, wenn das K2-Mittel der drei über 6,5 liegt. Nicht sauber einfärbbar und vorerst nicht im Spiel (V-809): Akasha-Bibliothek, Comic-Sender, Dystopie-Gasse, Goblin-Bank, Kayfabrick-Baustelle, Abenteuer-Lager, Retro-Spielhalle, UFO-Cockpit; das Gefängnis darf dunkel-violett ins Spiel (Georg q232).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Reparaturen ohne Gewinn: Der Hebel liegt in den heuristischen B9-Codes, nicht im Zug; erst die Richtung an drei Bühnen beweisen, dann ausrollen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-815",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Fahrplan-Stufe 5b „Endlos-Welt komplett“ (Georg 25.10., hinter Wasser 3 und Karten-Verteilung 5): world=endless als Standard; Wasser im Endlos-Gelände; Orte, Bühnen, Dioramen, Karten je Zone prozedural und reproduzierbar verteilt; Bewohner, Fluffer, Obstgärten, Fluff je Zelle mit festem Seed; Gedächtnis je Zelle; mitwandernder Weltursprung; Orientierung (Kompass/Minikarte, POI-Hinweise, Fahrzeug-Seele). Die Standard-Welt (Insel/Probe) hat heute noch den Nebelrand, world=endless keinen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Welt soll nie enden und trotzdem voll mit unseren Baukästen sein; Wasser und Zonen-Verteilung sind die Grundlage.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11806,7 +11836,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1347",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1349",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

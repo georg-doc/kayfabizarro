@@ -71,6 +71,7 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 | 3 | Wasser | Seen und Ufer (kfbWater), Flüsse (kfb-hydro) in der endlosen Welt, Fluid-Farben aus dem Biom-Schema (V-750) | Bilder im Hub |
 | 4 | Amphitheater | einpassen und farblich ins Biom integrieren (q225) | Bilder im Hub |
 | 5 | Karten-Gelände | Verteilung nach Modell R3 (eine je Zone, Ortsbezug), Auto stößt Kugeln (q226) | Bilder im Hub |
+| 5b | Endlos-Welt komplett (Georg 25.10., V-815) | world=endless als Standard; Wasser im Endlos-Gelände (aus 3); Orte, Bühnen, Dioramen und Karten je Zone prozedural und reproduzierbar verteilt (aus 5, auf alle Baukästen); Bewohner, Fluffer, Obstgärten, Fluff je Zelle mit festem Seed; Gedächtnis je Zelle (eingesammelt, gesprengt, erledigt); mitwandernder Weltursprung für große Entfernungen; Orientierung (Kompass/Minikarte, POI-Hinweise, später Fahrzeug-Seele) | Video einer langen Fahrt ohne Rand, mit Orten und Bewohnern, im Hub |
 | 6 | Splat-Probe | kleinster Test nach SPLAT_EXAMPLES_R2 (V-733) | Bilder im Hub |
 | danach | Combat, Destruction | V-782, V-767 | |
 
