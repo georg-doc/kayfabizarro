@@ -11859,6 +11859,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-825",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Gameplay-Critic R1 (Fahrplan Stufe 2, blind, 39-s-Runde): 4/10 – Handschrift stark, Lesbarkeit schwach. Fix-Liste replies/GAMEPLAY_CRITIC_R1.md: 1 Kamera-Rahmen je Modus, 2 Kamera gegen Kulissen, 3 Rauch dezenter, 4 Herbeirufen inszenieren, 5 Boost lesbar (ohne Speedlines), 6 Fassrolle sichtbar, 7 Wechsel Auto↔Mech, 8 Kontaktschatten; 9 Boden aus der Höhe vergröbern nur als Option für Georg (V-800/V-802). WS0 baut 1–8 der Reihe nach hinter Schaltern mit Vorher-nachher-Video, dann Critic R2. Stand 25.10. spät: 1 Flugkamera (flycam=0), 3 Schwaden nah vor der Kamera ausblenden, 4 Herbeirufen mit Fall ins Bild (summon=classic), 5 Boost-Flammen und Bildweitung (plume=old, boostfov=0), 6 Rollkamera (rollcam=0), 7 Wechsel mit Fall (swap=classic) gebaut @bdbd23c; offen 2 Kulissen-Verdeckung, 8 Schatten blass (Licht-Rig, Georg q239).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein unbefangener Blick zeigt, wo das Spiel unlesbar wird; erst die Kamera, dann der Feinschliff.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11971,7 +11986,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1358",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1359",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
