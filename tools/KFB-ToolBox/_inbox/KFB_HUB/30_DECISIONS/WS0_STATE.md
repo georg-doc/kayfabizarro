@@ -74,5 +74,5 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 | 6 | Splat-Probe | kleinster Test nach SPLAT_EXAMPLES_R2 (V-733) | Bilder im Hub |
 | danach | Combat, Destruction | V-782, V-767 | |
 
-- 25.10. abends: V-807 Fahrgefühl-SFX eingebaut (q228 PASS); Teaser v1 passt, Tuning vor dem Posten (q229); V-809 Meshy-Bühnen voll (q230); V-810 Fahrzeug-Seele Pilot freigegeben.
+- 25.10. abends: V-807 Fahrgefühl-SFX eingebaut (q228 PASS); Teaser v1 passt, Tuning vor dem Posten (q229); V-809 Meshy-Bühnen voll (q230); V-810 Fahrzeug-Seele Pilot freigegeben, Sprüche PASS (q231), HeyGen-Skript b238 bei Georg; V-811 Mindscape-Betten für Fahrt/Flug im Spiel.
 - 25.10. spät: Stufe 1 Fahren erledigt (V-783 Fixes, Kameras, Fassrolle länger/höher, Motor-Audio ±28 %/Last/Live-Auto/langer 5. Gang). Hero-Run: 22 Clips in 60_VIDEO/hero_run_r1/raw (Flammen-Dragster, Parade 14 Racer, Bullet-Time S05, Spiel-Ton), Schnitt läuft in WSV-Agent nach BRIEF_WSV_HERO_RUN_CUT_R1. Offen in Stufe 1: Tricks als HUD-Knöpfe, Dieselpunk-Flug, Mech, Drehung beim Gehen; dann Gameplay-Critic.

@@ -11649,6 +11649,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-811",
+   "date": "2026-10-25",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Fahrt und Flug mit Mindscape-Klangteppich statt der Radio-Titel aus R3 (Georg 25.10.): S2 Atem-Bett, S3 Erd-Resonanz, S13 Traumreise, S14 Kreativ-Atelier, S15 Spiegelkammer, instrumental (S3/S13 aus den Stems ohne Gesang), AAC 128, Ausgleich auf −20 LUFS; S8 Dystopie-Drone bleibt für Spannung/Kampf zurück. Zu Fuß weiter Cozy Tunes. Schalter radio=suno für die alte Jukebox. Ton-Ablage kayfabizarro @d31535c, Spiel @39a88fa.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ruhige Betten tragen Fahrt und Flug angenehmer als Radio-Songs und lassen Motor und Effekten Raum.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11761,7 +11776,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1344",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1345",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
