@@ -169,7 +169,9 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 2 · Gruppen: Rezept je Keim, Slots über solveLocal, Nest-Positionen, Einsinken nach Art und Hang
   const seeds = zoneSeeds(R, chunk, rules, recipeList ? { ...masks, groups: recipeList.length } : masks)
   if (recipeList && stamps[0] && cfg.p0?.bush_next_to_stamp) { const bi = recipeList.indexOf('bush_nest'), sun = cfg.light?.sun_az ?? -0.6, d = cfg.p0.bush_next_to_stamp   /* P0-Konzept: Stumpf und Busch-Nest in der Mitte, Fokus-Fluff im Busch direkt am Stumpf */
-    if (bi >= 0) seeds[bi] = [stamps[0].x + Math.cos(sun) * d, stamps[0].z + Math.sin(sun) * d] }
+    if (bi >= 0) seeds[bi] = [stamps[0].x + Math.cos(sun) * d, stamps[0].z + Math.sin(sun) * d]
+    const ti = recipeList.indexOf('tree_group'), tu = cfg.p0.tree_uphill   /* P0-Konzept: Baumgruppe mit dem alten Baum hinten, hangaufwärts vom Stumpf (V-778) */
+    if (ti >= 0 && tu) { const [ux, uz] = grad(terrain, stamps[0].x, stamps[0].z), ul = Math.hypot(ux, uz) || 1; seeds[ti] = [Math.min(chunk.x0 + chunk.size - 6, Math.max(chunk.x0 + 6, stamps[0].x + (ux / ul) * tu)), Math.min(chunk.z0 + chunk.size - 6, Math.max(chunk.z0 + 6, stamps[0].z + (uz / ul) * tu))] } }
   for (const [gi, c] of seeds.entries()) {
     let contactCov = 0
     const rid = recipeList?.[gi] ?? R.weighted(Object.fromEntries(Object.entries(B.recipes).filter(([k]) => recipes[k] && !recipes[k].fixed && k !== 'path_trace').map(([k, w]) => [k, card ? w * card.bias(k) : w])))
@@ -197,7 +199,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
           if (n === 0 && s.kind === 'tree' && s.role === 'anchor' && !fallen) { fallen = true; const nest = inst[inst.length - 1]
             for (let fb = 0; fb < (cfg.fluff?.fallobst?.balls ?? 2); fb++) { let x = nest.p[0] + R.range(-0.4, 0.4), z = nest.p[2] + R.range(-0.4, 0.4)   /* rollToRest: hangabwärts bis Mulde oder Hindernis (B2-R2) */
               for (let st = 0; st < 40; st++) { const [fx, fz] = grad(terrain, x, z), sl = Math.hypot(fx, fz); if (sl < 0.015) break
-                const nx = x - (fx / sl) * 0.3, nz = z - (fz / sl) * 0.3; if (inst.some((q) => (q.role === 'anchor' || q.role === 'support' || q.role === 'pebble') && q.group !== nest.group && Math.hypot(q.p[0] - nx, q.p[2] - nz) < 0.5)) break; x = nx; z = nz }
+                const nx = x - (fx / sl) * 0.3, nz = z - (fz / sl) * 0.3; if (nx < chunk.x0 + 1 || nz < chunk.z0 + 1 || nx > chunk.x0 + chunk.size - 1 || nz > chunk.z0 + chunk.size - 1) break; if (inst.some((q) => (q.role === 'anchor' || q.role === 'support' || q.role === 'pebble') && q.group !== nest.group && Math.hypot(q.p[0] - nx, q.p[2] - nz) < 0.5)) break; x = nx; z = nz }
               push({ tile: 'fluff:fallen', kind: 'fluff', p: [+x.toFixed(3), +terrain.h(x, z).toFixed(3), +z.toFixed(3)], rotY: 0, sink: 0.15, group: o.group, role: 'fallobst', balls: 1, color_role: 'fluff', fluff_mode: nest.fluff_mode, harvest: true, layer: 4, story: 'Fallobst aus dem Hero-Nest, hangab gerollt' }) } } }
       }
     })
@@ -210,7 +212,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
   // 3 · Steinspur (path_trace, V-752/V-578): Band 1,6 m breit vom Zellrand zum ersten Stamp. Heiler Kern bis zu einer geschwungenen Isolinie, dann
   // verwittert gerundete Fragmente dicht → locker (≈ 1,0 → 0,4 u), Fugen wachsen, einzelne fehlen (Erde), keine Reihe.
   if (B.recipes.path_trace && stamps[0]) {
-    const s = stamps[0], from = [chunk.x0 + R.range(0.15, 0.35) * chunk.size, chunk.z0 + 1], tile = tilesFor(cfg, 'path_stone', B.kit?.path_trace), u = cfg.units.m_per_kaykit_u
+    const s = stamps[0], zLow = terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + 1) <= terrain.h(chunk.x0 + chunk.size / 2, chunk.z0 + chunk.size - 1) ? chunk.z0 + 1 : chunk.z0 + chunk.size - 1, from = [chunk.x0 + R.range(0.15, 0.35) * chunk.size, zLow],   /* Steinspur kommt vom Hangfuß (V-778) */ tile = tilesFor(cfg, 'path_stone', B.kit?.path_trace), u = cfg.units.m_per_kaykit_u
     const L = Math.hypot(s.x - from[0], s.z - from[1]), dir = [(s.x - from[0]) / L, (s.z - from[1]) / L], nrm = [-dir[1], dir[0]], iso = R.range(0.4, 0.55), bend = R.range(1.5, 3)
     let along = 0
     while (along < L - 1.2) {

@@ -13528,6 +13528,11 @@
  },
  "p0": {
   "bush_next_to_stamp": 4.5,
-  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777)"
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778)",
+  "tree_uphill": 18
+ },
+ "light": {
+  "sun_az": 2.498,
+  "note": "Richtung zur Sonne in Rezept-Koordinaten (x,z), passend zu kfb_light_bpy mood day (az −53,13°): (−0,80 | +0,60). Löser (Busch-Sonnenseite, Fluff-Lichtseite, Gras) und Blender-Rig nutzen dieselbe Sonne (V-778)."
  }
 }

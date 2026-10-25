@@ -17,6 +17,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-778 Sonne im Regelwerk = Blender-Rig, P0-Hang gedreht, Steinspur vom Hangfuß, Baumgruppe hangauf. P0 7334bf3a.
 - V-777 Löser: Kontakt an Stamps, Spuren, P0-Busch am Stumpf, Fallobst im Löser, eine Fluff-Farbe; FB-Guard-Proof-Durchlass. P0 5511b72c.
 - V-776 FB_CANON R5 bei WSB: R3 + R2-Mundträger, Mund am Bild zuerst, Abnahme der exportierten Datei.
 - V-775 P0-Style-Frames von WSB aus der erprobten Kette (N40), Quaternius-Stumpf statt Kenney; Claude Design raus aus Umgebungen.

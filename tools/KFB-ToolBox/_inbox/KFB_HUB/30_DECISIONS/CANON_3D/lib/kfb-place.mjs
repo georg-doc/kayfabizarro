@@ -13,7 +13,7 @@ const opt = (k) => args.find((a) => a.startsWith(`--${k}=`))?.slice(k.length + 3
 let cardTriplet = null   // V-770: Karten-Dreier aus einem Deck-JSON (aktuell, nächste, übernächste)
 if (opt('deck')) { const deck = JSON.parse(readFileSync(opt('deck'), 'utf8')), cards = deck.cards || deck, nums = (opt('cards') || '1,2,3').split(',')
   const pick = (n) => cards.find((c) => String(c.cardNumber) === n); cardTriplet = { current: pick(nums[0]), next: pick(nums[1]), nextNext: pick(nums[2]) } }
-const terrain = { h: (x, z) => 0.06 * z + 0.6 * Math.sin(x / 9) * Math.cos(z / 11) }   // Platzhalter: sanfter Hang nach +z
+const terrain = { h: (x, z) => 0.06 * (64 - z) + 0.6 * Math.sin(x / 9) * Math.cos(z / 11) }   // Platzhalter: sanfter Hang, steigt nach −z an; Hangfuß bei +z liegt zur Sonne (kfb_light_bpy day), V-778
 const run = () => placeChunk({ cfg, seed, chunk: { x0: 0, z0: 0, size: 64 }, terrain, biome, stamps: [{ id: 'stumpf', recipe: 'stump_stamp', x: 30, z: 34 }], recipeList: seed.startsWith('p0') ? ['tree_group', 'bush_nest', 'stone_nest_slope'] : null, cardTriplet, storyMode: opt('mode') || null })   // P0: feste Gruppen laut Konzeptblatt
 const r = run()
 if (golden) { const a = recipeHash(r), b = recipeHash(run()); console.log(a === b ? `GOLDEN PASS ${a}` : `GOLDEN FAIL ${a} ≠ ${b}`); process.exit(a === b ? 0 : 1) }
