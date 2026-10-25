@@ -36,3 +36,10 @@ Project Return: [KFB Procedural World Research Return](KFB_PROCEDURAL_WORLD_RESE
 - Evidence-only phase: GitHub readbacks/head checks, canonical refs and editorial review. New code 0; KFB unit 0, integration 0, browser 0, GPU 0, exact-source visual isolation 0, public Stage 0; no actual performance claims.
 - Outcome: **RESEARCH PACKET READY FOR WS0 REVIEW**, **NOT** a production-ready POC or accepted visual donor.
 - Single next gate: **WS0 → WS1 TERRAIN/WORLD INTAKE** (current receiving source/owner and KEEP/ADAPT/REJECT/SOURCE_REQUIRED matrix + authentic Cologne route/POI composition proof + one candidate POC for later authorization).
+
+## 2026-10-25 · R6 · Paris / Hollywood generated cutout sheets + plugin planning
+- Georg requested four most recent generated art sheets preserved for WS0 and planned `KFB Popup Assets` GPT plugin as a fast transparent PNG game-asset generation workflow. Sources: two Paris 1950s and two Hollywood/Los Angeles generated sheets, with no source-conditioned KayKit/Meshy mesh claim.
+- New `skills/chat/masterplan/KFB_POPUP_ASSETS_R1_2026-10-25/` documentation: `BRIEF_WS0_KFB_POPUP_ASSETS_PARIS_LA_R1.md`, `ASSET_SHEETS_QA_MANIFEST_R1.json`, `WORKFLOW_AND_GPT_PLUGIN_PLAN_R1.md`, `TEST_REPORT_R1.md`. Original PNG names/hashes are frozen in textual QA manifest.
+- Actual local image QA: 4/4 PNG decode RGBA 1448×1086 PASS, 4/4 unique SHA256 PASS, 1/1 original-images+QA ZIP integrity PASS, 0/4 accepted as separated game-ready sprites. Connected areas @ alpha128: 8/9/5/15 (diagnostic only). No browser/in-game/GPU or source-conditioned donor proof.
+- **BINARY_UPLOAD_PENDING:** 4 original PNGs not added as Github binary files; only a verified local zip can be downloaded in this chat. Do not conflate manifest/filenames with assets present in repo; binary-capable WS0/Work transfer, original SHA readback required.
+- Future GPT/plugin `KFB Popup Assets` is a proposal extending existing Asset Scene Composer/Librarian; plugin **not created or installed**, no provider or public hosting implementation, no Golden. Current one WS0→WS1 intake gate unchanged.

@@ -82,3 +82,14 @@ No action from Georg is necessary to read/review this planning packet. Separate 
 ### WS0 cold-start message
 
 "Review existing KFB World Composition planning Draft PR #447 in georg-doc/kayfabizarro. Start with skills/chat/START_HERE.md, skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md, skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md, then skills/chat/masterplan/BRIEF_WS0_KFB_PROCEDURAL_COLLAGE_OPEN_WORLD_REVIEW_R1_2026-10-25.md and the linked dossier §§1–15. Recover current WS1 receiver/owner without writes. Check the authentic popupV Dom Joyride recipe, SMA1 pivots, Cell Paper/Facade grammar, real book assets, Seed World donor, OSM City Lab. Return source/owner KEEP/ADAPT/REJECT/SOURCE_REQUIRED matrix, one meaningful Köln route/POI composition proof, and only one recommended isolated visual/performance POC with actual owner. Do not invent an engine, renderer, generic props, site, new canon, automatic code build or merge. Persist review result in owner Return and one next gate."
+
+
+---
+
+## 6 · Additive visual asset slice R6 — KFB Popup Assets Paris / Hollywood · 2026-10-25
+
+**Read next:** [WS0 Popup Assets four-image, QA and plugin intake](KFB_POPUP_ASSETS_R1_2026-10-25/BRIEF_WS0_KFB_POPUP_ASSETS_PARIS_LA_R1.md); [image SHA256 manifest](KFB_POPUP_ASSETS_R1_2026-10-25/ASSET_SHEETS_QA_MANIFEST_R1.json); [actual image tests](KFB_POPUP_ASSETS_R1_2026-10-25/TEST_REPORT_R1.md); [workflow + planned private GPT plugin](KFB_POPUP_ASSETS_R1_2026-10-25/WORKFLOW_AND_GPT_PLUGIN_PLAN_R1.md).
+
+Georg authorized preserving four generated popup image sheets (Paris landmarks, Paris street props, Hollywood landmarks, Hollywood street props) and planning a future **KFB Popup Assets** GPT/plugin workflow using the **existing** KFB Asset Scene Composer and Asset Librarian owners. The images are generated MOOD_ONLY, no actual KayKit source-mesh conditioning or approved Golden. Local file test: four RGBA PNGs 1448×1086 decoded and hashed (4/4), but no clean isolated game sprite sheet accepted (0/4) because connected white borders, alpha residue and composite pieces; no runtime/browser/GPU tests.
+
+**Transfer truth:** 4 exact source PNGs are present in the conversation local QA ZIP, but are **NOT COMMITTED as binary files to GitHub** in this session. GitHub stores descriptive names, exact SHA256s, planning and QA. The current connector cannot ingest local binary attachment bytes by path; WS0/authorized binary-capable WSA should transfer original unchanged PNGs to the named candidate media path, read back/hash them, then source-isolate one sample. **Do not claim a working import, deployed plugin or Golden.** No new world owner, Studio, Stage, Hub router or Live state. The same one next gate remains **WS0 → WS1 TERRAIN/WORLD INTAKE**; include Popup assets as an optional first POC candidate, not a competing mandatory gate.

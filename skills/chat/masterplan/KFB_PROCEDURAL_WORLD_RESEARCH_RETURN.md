@@ -51,3 +51,17 @@ Verified parent checkpoint before final Return write: 54ccc73734632b5adc0a014190
 **What Georg has to do now:** nothing. **What WS0 does:** review/plan only and hand back one small candidate with actual sources, no new runtime. **What appears after authorization:** one comparable source-authentic artwork/performance proof, not a generic scene.
 
 No new Stage/public route required for this research handoff. Hub/router unchanged: no material public URL or owner change. No auto-merge or promotion.
+
+---
+
+## Additive R6 Return — KFB Popup Assets Paris 1950s × Hollywood LA (2026-10-25)
+
+**Result:** user-directed new candidate image family documented in existing planning PR #447, along with reproducible local PNG alpha/integrity QA and planned `KFB Popup Assets` GPT-plugin workflow. Four generated source PNGs exist in this conversation as a verified 12,030,358-byte source-original ZIP (SHA256 `7efd549a9de6daccdfa1e570ed0a33f174613669a12886a2c9492fad78c59414`). Four original filenames/individual SHA256 in `KFB_POPUP_ASSETS_R1_2026-10-25/ASSET_SHEETS_QA_MANIFEST_R1.json`.
+
+**New files:** `KFB_POPUP_ASSETS_R1_2026-10-25/{BRIEF_WS0_KFB_POPUP_ASSETS_PARIS_LA_R1.md,ASSET_SHEETS_QA_MANIFEST_R1.json,WORKFLOW_AND_GPT_PLUGIN_PLAN_R1.md,TEST_REPORT_R1.md}`. Existing parent WS0 brief, additive research changelog and this Return addended. No production code, new Source Registry or site owner changed.
+
+**Proven:** 4/4 exact PNG RGBA/image integrity; 4/4 unique local SHA256; 1/1 ZIP CRC; source files QA checked on local Pillow/OpenCV. **Not proven:** no independently clean semantic sprites (0/4 accepted as ready), no original sheet binary committed to GitHub (0/4), no target Browser/Stage/GPU test, no KFB source-mesh fidelity; no plugin created/released, no user-selected Golden. Existing KFB Clay/Asset Librarian/Composer and WS1 runtime remain authoritative.
+
+**Critical transfer state = BINARY_UPLOAD_PENDING**, not a Github write success; the current GitHub action cannot read local PNG bytes. WS0 or authorized binary-capable Work must import *actual unchanged bytes* to the named candidate media directory, then verify original SHA256 GitHub blob retrieval. Do not substitute an image preview or local ZIP URL for Github source. Keep a retained copy of current source ZIP until transfer works; no auto-merge.
+
+**One next gate unchanged:** WS0 → WS1 TERRAIN/WORLD INTAKE, with source/owner KEEP/ADAPT/REJECT, meaningful Cologne POI/route composition check and *at most one* source-isolated POC recommendation. Popup image QA/transfer is an evidence-prep seam, not justification to interrupt WS1 or create a second mandatory product gate. No Stage/Site/Live or Hub router updates.
