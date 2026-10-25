@@ -11919,6 +11919,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-829",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Nach Kritik V-824 (7/21 bestanden): Theater, Utopia-Bühne, Comic-Sender, Alien-Werkstatt, Mesa, Schnee, Utopia-Bibliothek r824 fertig fürs Spiel, Gefängnis r824 dunkel (q232). Grüne Ruinen aus der Farbrunde (Stopp-Regel), wie geliefert mit sanfter Tönung. Runde 2 r829 als letzte Farbrunde für die übrigen 12 mit sieben gezielten Korrekturen (Glättung je Texel, Wasser-Rolle, Bewuchs, Zweitfarbe bei grauen Bühnen, Fokus vollständig, Portal-Türkis, Amphitheater Fels/Mauerwerk); was danach unter K2 7 liegt, geht wie geliefert mit sanfter Tönung ins Spiel. Brief replies/WSB_V829_CLUSTER_RUNDE2_R1.md, Konzeptblatt-Nachtrag V-829.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine begrenzte letzte Runde mit benannten Fehlern statt endloser Schleifen; Bestandenes wird nicht mehr angefasst.",
+   "applies": "eine WSB-Runde"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12031,7 +12046,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1362",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1363",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
