@@ -11499,6 +11499,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-801",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Gelände und Props nach J17-Logik (q219/q220 TUNE → umgesetzt, Georg PASS mit q222): Die sechs Fließbänder kommen aus Boden, Boden hell, Hügel dunkel, Hügel-Mitte, Erde 1 (under[1], Gegenfarbe) und Sand, wie die Inselseite der Golden Samples (Canyon: Lila, Orange, Creme). Props zweifarbig aus der Palette: Krone = Laub, Laub dunkel oder Blüte (leaf[0..2]), Stamm = Laub-Rolle eine Vierteldrehung (−105°) und dunkler (J17-Regel). Technik: Batch-Instanzfarbe über USE_COLOR ins Fragment (three r186), Spiel game/proc-world-ws0 @dff9c08.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg: Paletten fast monochrom, Props nicht eingefärbt; J17 trägt Gegenfarbe in Erde und Props.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-802",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Biom-Übergang im Gelände über die Fließbänder (Georg q222 PASS): An der Biomgrenze wechselt jedes Band als Ganzes die Palette, je näher am Nachbarbiom desto mehr Bänder; keine Sprenkel, keine Tropfen, kein dunkler Saum, keine zweite Schicht über den Bändern (Georg q220: „farbsprenkel sind eher eine alte übergangslogik“). Ersetzt fürs Gelände das Sprenkel-Modul aus V-403/V-619 (nur noch zum Vergleich mit biot=speckle). @3512531.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sprenkel und Flecken machten das Gelände kleinteilig und unruhig; die Fließbänder sind das Übergangswerkzeug.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-803",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Farb-Logik ausrollen (Georg 25.10. nach q222 PASS): Dieselbe Biom-Palette (V-800/V-801, Rollen aus kfb-cartoon-palette.js) färbt (Teile von) Props wie Baumkrone und/oder Stamm, dazu unsere Gebäude, Dioramen, Mindscapes, Billboards usw., passend und auch surreal. VFX wie Rauch und Partikel nutzen die Gelände-, Fluid- und Prop-Farben des Ortes angepasst bzw. darauf abgestimmt, keine eigenen Fremdfarben. Owner: WS0 Spiel-Welt, WS1 Laufzeit/Gebäude/Dioramen/VFX, WSB Blender, WSA Mindscapes/Billboards.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Farbsystem für alles, was im Bild steht, auch Effekte.",
+   "applies": "ab sofort, je Owner"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11611,7 +11656,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1334",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1337",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
