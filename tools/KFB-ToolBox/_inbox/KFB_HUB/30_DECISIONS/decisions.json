@@ -11394,6 +11394,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-794",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Antworten auf den WSB-Kritiker N40 P0 Runde 1 (5,2 REWORK, Gate grün). Löser: Form-DNA-Ausschluss (rules.form_dna: keine Tree_3/Tree_4/Bush_4, keine eckigen Wegplatten), Baumgruppen überlappen meist (tree_overlap_p 0,85, Waldrand liest sich), Nester nur auf der Lichtseite, nur das Fokus-Nest am Stumpf in vollem Ton (accent focus/echo, fluff.echo_dim), Fallobst rollt höchstens 2,4 m bis zum nächsten Hindernis, kein Gras im Busch-Nest, Moos in den Fugen von Stein/Holz (role joint), Weg mit heilem Kern am Stumpf und S-Schwung, Steinnest als Lesesteine neben der Spur. Kanon: Boden moos #7fa134 → #7e984d (gleicher Ton 125°, Chroma × 0,75); Rinde zieht stärker (bark pull 0,7); Kontaktton V-570 baut WSB für die Style-Frames in Blender nach Kanon-Maß (8–12 L*), der Terrain-Shader bleibt WS1. P0 golden 6965f6fa.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gate grün heißt noch nicht schön: Kritiker-Befunde im Löser und im Kanon schließen, nicht in Bildtricks.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11506,7 +11521,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1325",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1326",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

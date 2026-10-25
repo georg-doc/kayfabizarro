@@ -121,7 +121,8 @@
    "float_tol_H": 0.003,
    "band_margin": 0.08,
    "note_v790": "G1 misst mit Kachel gate_r_m (größte Gate-Hülle über alle Drehungen, WSB N40) am Rezept-Ursprung; Gate r5 misst gleich",
-   "note_v791": "gate_r_m für alle Kacheln aus WSB gate_hull_all.json (292 gemessen); Nachlauf Ü4/Ü3 prüft G1 nach jeder Änderung"
+   "note_v791": "gate_r_m für alle Kacheln aus WSB gate_hull_all.json (292 gemessen); Nachlauf Ü4/Ü3 prüft G1 nach jeder Änderung",
+   "tree_overlap_p": 0.85
   },
   "nest": {
    "sizes": [
@@ -387,6 +388,16 @@
     ]
    },
    "note": "V-788 (Critic R1 Welt): Haine statt Konfetti. Zone 32 m: über der Schwelle ein Hain aus 3 Gruppen in der Zonenmitte (≈ 10–15 Bäume auf 15–20 m, Haine 30–40 m auseinander), sonst Wiese mit 20 % Chance auf ein Nest. Anteil Hain ≈ 35 %. V-791 (Critic R2): 4 Gruppen enger (Kronen überlappen), eine davon Busch-Nest als Unterwuchs; Fluff nur an ≈ 35 % der Gruppen."
+  },
+  "form_dna": {
+   "exclude": [
+    "Tree_3_",
+    "Tree_4_",
+    "Bush_4_",
+    "rockpath_square",
+    "pebble_square"
+   ],
+   "note": "V-794 (WSB-Kritiker N40 Nr. 24/6): Konzeptblatt form_dna verbietet harte Kanten – keine Prismen-Nadelbäume, Würfelkronen, Würfelbüsche, eckigen Wegplatten"
   }
  },
  "bands": [
@@ -561,10 +572,16 @@
   "fallobst": {
    "balls": 2,
    "only": "Hero-Nest des ersten Baums",
-   "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)"
+   "rule": "rollToRest: hangabwärts in 0,3-m-Schritten bis Steigung < 1,5 % oder Hindernis (B2-R2-Grammatik)",
+   "roll_steps": 8
   },
   "ring_tree": 0.25,
-  "group_share": 0.35
+  "group_share": 0.35,
+  "echo_dim": {
+   "chroma": 0.55,
+   "L": 0.06,
+   "note": "V-794: nur das Fokus-Nest (P0: Busch-Nest am Stumpf) in vollem fluff_mode-Ton, alle anderen Nester (accent echo) gedämpft"
+  }
  },
  "finds": {
   "optional": true,
@@ -635,10 +652,10 @@
     {
      "role": "support",
      "kinds": [
-      "bush",
-      "grass"
+      "bush"
      ],
-     "count": 3
+     "count": 3,
+     "note_v794": "kein Gras im Busch-Nest (piekt durch, B2)"
     },
     {
      "role": "pebble",
@@ -13984,10 +14001,13 @@
  },
  "p0": {
   "bush_next_to_stamp": 4.5,
-  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei",
+  "note": "P0-Konzept: Stumpf und Busch-Nest in der Mitte; Busch-Gruppe 4,5 m zur Sonnenseite des Stumpfs (V-777); Baumgruppe 18 m hangaufwärts vom Stumpf (V-778); V-787: Baumgruppe 9 m hangaufwärts (Hintergrund im Spielbild 35°/9,5 m), Steinnest 10 m hangab; V-789: Busch 0,9 rad seitlich zur Sonne, Baumgruppe gegengedreht (Dreieck), Weg vom Hangfuß an den Gruppen vorbei; V-794: Steinnest = Lesesteine 2,4 m neben der Spur bei 45 % vom Stumpf",
   "tree_uphill": 9,
-  "stone_nest_downhill": 10,
-  "triangle_turn": 0.9
+  "triangle_turn": 0.9,
+  "stone_nest_path": {
+   "t": 0.45,
+   "side_m": 2.4
+  }
  },
  "light": {
   "sun_az": 2.498,
