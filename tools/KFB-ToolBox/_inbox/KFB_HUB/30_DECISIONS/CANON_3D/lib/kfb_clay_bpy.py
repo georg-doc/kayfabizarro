@@ -1,4 +1,4 @@
-# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20.
+# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.).
 #
 # EIN Material-Baustein für alles, was in Blender gebaut wird, mit den Profilen 1:1 aus
 #   replies/CLAY_SSOT_R1/kfb-clay.v1.1.js (Quellzeilen unten je Wert) und den Rollenfarben aus
@@ -21,7 +21,7 @@
 #   Emission wie das Web-Modul (WS0 20.10., SSOT kfb-clay.v1.1 Z. 324, V-429/V-431): Profile mit emissive=true (midground, background) übernehmen die
 #   Emission des Quellmaterials (Farbe, Textur, Stärke) unverändert; character setzt sie auf 0. Es wird nie Emission hinzugefügt. Gate M2 lässt Emission
 #   nur an kfb-clay-Profilen zu. Keine AO-/Licht-Texturen (werden entfernt).
-import bpy, json, math, os, hashlib, colorsys
+import bpy, json, math, os, hashlib, colorsys, re
 
 VERSION = 'kfb-clay.v1.1'; SCHEMA = 'kfb.clay/1'; MODULE = 'kfb_clay_bpy/1'
 MAX_PULL = 0.18          # kfb-clay.v1.1.js Z. 28 (V-340)
@@ -238,6 +238,10 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
         va = _n(nt, 'ShaderNodeVertexColor', (800, 900)); va.layer_name = vcol; col = va.outputs['Color']
     else:
         rgb = _n(nt, 'ShaderNodeRGB', (800, 900)); rgb.outputs[0].default_value = tuple(_lin(base_hex or role_hex or '#bdb3a6')) + (1,); col = rgb.outputs[0]
+    if (image is not None or vcol) and base_hex and base_hex.lower() != '#ffffff':   # r803b: wie glTF Grundfarbe = Faktor × Textur × COLOR_0
+        fk = _n(nt, 'ShaderNodeRGB', (800, 1050)); fk.outputs[0].default_value = tuple(_lin(base_hex)) + (1,)
+        fm = _n(nt, 'ShaderNodeMix', (950, 950), data_type='RGBA', blend_type='MULTIPLY'); fm.inputs['Factor'].default_value = 1.0
+        nt.links.new(col, fm.inputs[6]); nt.links.new(fk.outputs[0], fm.inputs[7]); col = fm.outputs[2]
     if role_hex and pull > 0:
         rc = _n(nt, 'ShaderNodeRGB', (800, 700)); rc.outputs[0].default_value = tuple(_lin(role_hex)) + (1,)
         for j, mode in enumerate(('HUE', 'SATURATION')):
@@ -260,6 +264,17 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
 
 
 # ------------------------------------------------------------------ Anwenden
+NON_ALBEDO = ('ao', 'lightmap', 'shadow')   # r803: nur diese Bildarten verwerfen; „bake“ und „light“ trafen auch echte Albedo (baked_color_*)
+
+
+def _non_albedo(name):   # „ao“ nur als eigenes Namensteil (ao, _ao_, -ao.), sonst trifft es z. B. „chaos“
+    t = re.split(r'[^a-z0-9]+', name.lower()); return 'ao' in t or any(k in name.lower() for k in NON_ALBEDO if k != 'ao')
+
+
+def _hex_of(c):   # linear RGB(A) → sRGB-Hex
+    return '#' + ''.join('%02x' % int(round(255 * (x * 12.92 if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))) for x in c[:3])
+
+
 def _src_info(mat):
     """Grundfarbe/Bild/Vertexfarbe/Rauheit aus einem importierten Material (glTF-Principled)."""
     if mat is None or not mat.use_nodes: return dict(base_hex=None, image=None, vcol=None, rough=1.0, emission=None)
@@ -270,14 +285,26 @@ def _src_info(mat):
         em = {'color': list(ec.default_value), 'strength': bs.inputs['Emission Strength'].default_value, 'image': eimg}
         bc = bs.inputs['Base Color']
         if bc.is_linked:
-            stack = [bc.links[0].from_node]
+            # r803 (WSB V-803): den ganzen Zweig vor Base Color absuchen statt am ersten Vertexfarben-Knoten abzubrechen. Der glTF-Import setzt bei
+            #   jeder GLB mit COLOR_0 ein Mix aus Textur × Vertexfarbe davor; die Textur hat Vorrang, die Vertexfarbe zählt nur ohne Textur.
+            stack = [bc.links[0].from_node]; seen = set()
             while stack:
                 n = stack.pop()
-                if n.type == 'TEX_IMAGE' and n.image and not any(k in n.image.name.lower() for k in ('ao', 'bake', 'light', 'shadow')): img = n.image; break
-                if n.type in ('VERTEX_COLOR', 'ATTRIBUTE'): vcol = getattr(n, 'layer_name', None) or getattr(n, 'attribute_name', None); break
+                if n.name in seen: continue
+                seen.add(n.name)
+                if n.type == 'TEX_IMAGE' and n.image and not _non_albedo(n.image.name):
+                    if img is None: img = n.image
+                    continue
+                if n.type in ('VERTEX_COLOR', 'ATTRIBUTE'):
+                    if vcol is None: vcol = getattr(n, 'layer_name', None) or getattr(n, 'attribute_name', None) or 'Color'
+                    continue
+                if n.type == 'MIX' and getattr(n, 'data_type', '') == 'RGBA' and getattr(n, 'blend_type', '') == 'MULTIPLY' and base is None:   # r803b: glTF-Faktor (baseColorFactor) als festen Mix-Wert mitnehmen
+                    fx = next((i.default_value for i in n.inputs if i.enabled and i.type == 'RGBA' and not i.is_linked), None)
+                    if fx is not None: base = _hex_of(fx)
                 stack += [l.from_node for i in n.inputs for l in i.links]
+            if img is not None: vcol = None
         else:
-            c = bc.default_value; base = '#' + ''.join('%02x' % int(round(255 * (x * 12.92 if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))) for x in c[:3])
+            base = _hex_of(bc.default_value)
     return dict(base_hex=base, image=img, vcol=vcol, rough=rough, emission=em)
 
 

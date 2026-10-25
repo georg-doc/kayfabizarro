@@ -59,3 +59,15 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **V-803 Ausrollen:** Rollentabelle in `replies/COLOR_CONCEPT_R1.md` → „Nachtrag 25.10. · Ausroll-Rollen“; Brief `replies/BRIEF_FARBROLLEN_AUSROLL_R1.md` an WS1, WSA, WSB.
 - **FrizzleBob:** R7 abgelehnt (q221: zwei Bisse, Ohren klobiger als v5). WSB baut R8 mit Probe A (v5-Ohren + Biss links) und Probe B (Meshy unangebissen gespiegelt + Biss links), Brief `replies/BRIEF_WSB_FB_R8_OHREN_R1.md`. Vor dem Weitergeben: Biss je Ansicht zählen. FB-Lock bleibt.
 - **Offen im Stilbild:** Wiese zu gleichmäßig gefüllt (Modell R3: Ebenen und Kanten, wenig und groß); Asset-Register aller Nature-Kits für WFC.
+
+## Fahrplan (V-805, verbindlich, Stand 25.10. spät)
+| # | Stufe | Inhalt | Abschluss |
+|---|---|---|---|
+| 1 | Fahrphysik S1 (V-783) | Messfahrt: Landestoß, Festfahren, Kippen, Drehrate, Sprungbogen, Stand am Hang (Parkbremse). Fixes hinter Schalter in `src/m2/k2t.js`. Danach Kamera (Georg 25.10.): Folgekamera bei Drift, harten Kurven und Fassrollen träger nachziehen, sodass man den Wagen auch von der Seite sieht; zweite Spielkamera von weiter oben als Umschalter für Fahren, Flug und Gehen (Vorbild Dust-Racer-Demo, Reddit). Dann Fahrzeug-Tricks (Georg 25.10.): Fassrolle länger und mit größerem Drehradius, passende SFX; Tricks zusätzlich als Aktions-Knöpfe bzw. 3D-Icons im HUD (Interaktions-Platz V-674); Speedlines aus kfb-flight-vfx (Port Tiny Skies, heute nur im Flug) sauber ans Fahren anbinden, wenn die Bildrate es trägt. Dann Dieselpunk-Flug, Combat-Mech als Jetpack-Dummy, Drehung beim Gehen. Stand 25.10.: Fahrphysik-Fixes @baf786f, Messung alt gegen neu siehe Hub. | Vorher-nachher-Video + Messtabelle im Hub |
+| 2 | Gameplay-Critic | blinder externer Prüf-Agent auf dem Stand nach Stufe 1 (Fahren, Gehen, Flug, Welt) | Bericht + Fix-Liste im Hub |
+| 2b | Audio (Georg 25.10.) | Musik: Mindscape-Stems (S2, S3, S8, S13, S14, S15 in `KFB MusicalChatterbox/`) als ruhige Soundbeds statt der Radio-Tracks aus R3; Fahr-/Flug-Sound visceraler (Motor nach Drehzahl/Last, Schalten, V8-Blubbern, Boost, Wind) nach Recherche `replies/RESEARCH_VEHICLE_AUDIO_R1.md` | Hörprobe im Hub |
+| 3 | Wasser | Seen und Ufer (kfbWater), Flüsse (kfb-hydro) in der endlosen Welt, Fluid-Farben aus dem Biom-Schema (V-750) | Bilder im Hub |
+| 4 | Amphitheater | einpassen und farblich ins Biom integrieren (q225) | Bilder im Hub |
+| 5 | Karten-Gelände | Verteilung nach Modell R3 (eine je Zone, Ortsbezug), Auto stößt Kugeln (q226) | Bilder im Hub |
+| 6 | Splat-Probe | kleinster Test nach SPLAT_EXAMPLES_R2 (V-733) | Bilder im Hub |
+| danach | Combat, Destruction | V-782, V-767 | |

@@ -11559,6 +11559,36 @@
    "applies": "sofort, Biss-TUNE später"
   },
   {
+   "id": "V-805",
+   "date": "2026-10-25",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Fahrplan WS0 verbindlich (Georg 25.10.: „fahrphysik zuerst. und plant das endlich sauber ein! auch der gameplay critic dann nach den eindeutigen fixes und integrationen.“): 1) Fortbewegungs-Durchgang S1 (V-783): Messfahrt (Landestoß, Festfahren, Kippen, Drehrate, Sprungbogen, Stand am Hang), Fixes hinter Schalter in k2t, Vorher-nachher-Video; dann Dieselpunk-Flug, Combat-Mech als Jetpack-Dummy, Drehung beim Gehen. 2) Gameplay-Critic (blind, externer Prüf-Agent) erst nach den eindeutigen Fixes und Integrationen. 3) Wasser in der endlosen Welt: Seen und Ufer aus kfbWater, Flüsse aus kfb-hydro, Fluid-Farben aus dem Biom-Schema (V-750). 4) Amphitheater einpassen und farblich integrieren (q225). 5) Karten-Gelände verteilen nach Modell R3, Auto stößt Kugeln (q226). 6) Gaussian-Splat-Probe (V-733). Danach Combat und Destruction (V-782). Jede Stufe endet mit Bildern bzw. Video für Georg; offene Punkte stehen in WS0_STATE.md unter „Fahrplan“.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Spieltest-Anmerkungen lagen liegen; eine feste Reihenfolge mit Critic nach den Fixes verhindert das.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-806",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Farbrollen auf Meshy-Bühnen nach Kritiker-Runde 1 (WSB B9, REWORK 21/21, Tönung nicht ablesbar): Teile mit Rollen-Code (COLOR_1 0–16) werden mit Zug 0,35 in Farbton und Sättigung getönt, Helligkeit bleibt; Teile ohne Rolle (255) bleiben bei 0,18 (V-286/V-340); Amphitheater-Bögen voll nach Rolle (V-402). Kritiker-Maß sanft = ΔE00 8–18 gegen ungetönt auf Rollen-Teilen. pad (Code 5) nur am Fokus-Teil je Bühne (Bühnen- bzw. Billboard-Rahmen, sonst zentrales Wahrzeichen); steile Mauern hill[0], Oberseiten top, grüner Bewuchs leaf (6/7, keine fremde Farbe). Steinkit-Teile in Dioramen: echte Farbe in COLOR_0 (byte-gleich), Rolle in COLOR_1 Code 3; B51 Brawl-Effekte gestrichen (Figuren-Effekte später); Kayfabrick-Steine Identitätsfarbe 255. Kanon-Modul kfb_clay_bpy r803 (Textur im Mix-Zweig, NON_ALBEDO) und r803b (glTF-Faktor × Textur × COLOR_0) übernommen. Vorschau-Bildpaare: Bühne zur Sonne gedreht, Licht bleibt Kanon. Nachtrag nach Kalibrierung (WSB de00_r806c): Meshy-Rollen-Teile Zug 0,8 (Farbton/Sättigung, Helligkeit bleibt), Kit-Teile 0,5; sanft = ΔE00 8–18, dunkle Rollen-Flächen (L* < 35) ΔE00 ≥ 5; kn_bark → trunk, yard_stone → rock.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Rollen müssen auf den Bühnen sichtbar sein, ohne die gemalten Texturen zu übertönen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11671,7 +11701,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1338",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1340",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
