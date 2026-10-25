@@ -10,47 +10,22 @@
  "role": "protagonist",
  "body": {
   "glb": {
-   "repo": "georg-doc/kayfabizarro",
-   "ref": "georg-doc-patch-3",
-   "commit": "b7f6013bf00d0661ae943e69e7c3dfde38abcebd",
-   "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb",
-   "blob": "24134a51793fef0dd8cab59bbf50b6b7c5960a45",
-   "sha256": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
-   "bytes": 1790024,
-   "onMain": false
+   "path": "50_BLENDER/FB/R5/R8/FB_R8_probe_A11.glb",
+   "sha256": "91092623d2103a712d9ce55f3fe3648698e896fe3e134492bcbab65bdd448c35",
+   "bytes": 7672652,
+   "repo": "georg-doc/KFB-Stunt-Car-Race",
+   "note": "kanonisch (FB_CANON, V-804)",
+   "ref": "assets/fb-canon"
   },
-  "glbPinnedCommit": "23615cffb515d03d2b6a0164b896dd08e3bc1bed (contained in georg-doc-patch-3; mirror ws1/kfb-planet/src/assets/actors/FB_TEMPLATE_LOOK_v5b.glb on ws1/r3f-frame)",
-  "rawSource": null,
   "rig": "Rig_Medium (23 joints) + ear chains ear.l.1-3 / ear.r.1-3",
   "scale": {
-   "value": 0.947368,
-   "basis": "WS1 stage scale, P08 CLASS_K = 2.2 / 2.3222826966",
-   "world": "FB = 1.81 m (2.94 rig units x 0.616 m/rig, V-345)",
-   "source": "ws1/kfb-planet/src/data/actors/frizzlebob-v5b.recipe.json#stage"
-  },
-  "variants": [
-   {
-    "id": "v5c_meshyears",
-    "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5c_meshyears.glb",
-    "ref": "assets/kfb-blender-run-r1-2026-10-16",
-    "status": "candidate (V-338)"
-   },
-   {
-    "id": "v5d_meshyears",
-    "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5d_meshyears.glb",
-    "ref": "assets/kfb-blender-run-r1-2026-10-16",
-    "sha256": "093ac6360ae5bd9f44fc4ec457813f41d04203e97b00564f4aa5c3826b411467",
-    "status": "candidate (V-346.7, Hub fb-ears-v5d); v5b stays standard until Georg picks (V-338)"
-   }
-  ]
+   "world": "FB = 1,81 m (kfbCanon.heightTargetM)",
+   "value": 1.81
+  }
  },
  "originals": {
-  "remove": [
-   "FB_Eye_L",
-   "FB_Eye_R"
-  ],
+  "remove": [],
   "keep": [
-   "FB_Mouth_Smile",
    "Carl_Brow_L",
    "Carl_Brow_R",
    "Carl_Nose",
@@ -58,156 +33,71 @@
    "FB_Ear_R_v5",
    "CharacterTemplate_* body parts"
   ],
-  "method": "switchable-node",
-  "note": "Georg's export: parts {eyes: rig, brows: original, nose: original, mouth: original}. The model eyes are separate nodes and are hidden by face-mount.v1, never cut out.",
-  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].parts"
+  "note": "R3/R5-Basis: keine Original-Augen in der GLB (Rig-Augen eingebacken), nichts auszublenden"
  },
  "eyeRig": {
   "required": true,
-  "none": null,
   "version": "pet-eye-rig.v6",
-  "module": {
-   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
-   "ref": "main",
-   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
-  },
-  "seat": "facehost",
-  "seatReader": "kfb-lib/face-mount.v1.js#mountFace (head bone \"head\")",
+  "seat": "baked-rig",
+  "seatReader": "N35/stage/kfb-proof-eyes.v2.js (bindet den eingebackenen Rig, montiert nichts)",
   "anchors": null,
   "lid": {
-   "type": "skin",
+   "type": "E2",
+   "owner": "clay-skin-attach.v1.1 + clay-eyelid.v3 (E2-Lidhaut KFB_LidSkin_L/R in der GLB)",
    "colour": null,
-   "colourMode": "base-darkened (figure colour #f2c93c)",
-   "fit": 0.9,
-   "tuning": {
-    "u": -0.07,
-    "l": -0.4,
-    "s": 0,
-    "du": 0,
-    "dl": 0,
-    "ds": 0,
-    "sd": 0
-   },
-   "clayLids": {
-    "on": false,
-    "note": "V-240: clay lids off; Georg settles the clay-lid construction separately. Future: E2 closed lid skin for all figures (V-348)."
-   },
-   "futureE2": {
-    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
-    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
-    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
-    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
-   }
+   "colourMode": "Material der GLB-Lidhaut + kfb-clay v1.1 character",
+   "fit": 0.9
   },
-  "irisColour": null,
   "pupil": {
    "style": "matte-cute",
-   "size": 0.27,
+   "size": 0.4,
    "gloss": 0.85,
    "form": "googly"
   },
   "settings": {
    "anchor": {
-    "dx": 0.455,
-    "dy": 0.21,
-    "ring": 0.255,
+    "dx": 0.345,
+    "dy": -0.1,
+    "ring": 0.3,
     "track": 0.1
    },
    "lidFit": 0.9,
    "inset": 0,
    "converge": 0,
-   "splay": 0,
-   "socket": "surface",
-   "turn": 0,
-   "turnFine": {
-    "l": 0,
-    "r": 0
-   },
-   "lashes": {
-    "length": 0,
-    "density": 6,
-    "width": 1
-   },
-   "oval": {
-    "w": 1.06,
-    "h": 1.04,
-    "d": 0.98,
-    "tilt": -25
-   },
-   "life": {
-    "wander": 0.27,
-    "tremor": 0.2
-   },
    "blink": {
     "minGap": 2.5,
     "maxGap": 6.5,
     "dur": 0.12
-   },
-   "emotes": "see source face.emotes (neutral, happy, angry, sad, surprised, thinking)",
-   "drift": {
-    "speed": 0.09,
-    "tremor": 0.045,
-    "tremorHz": 5
-   },
-   "react": {
-    "smoothTime": 0.16,
-    "hardTime": 0.03,
-    "hold": 1.5
    }
   },
-  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].eye (KFB ToolBox Production-02 · Rigging, exported 2026-10-14T16:00:13Z; sha256 07a316cbdca5e3cc46c2d6b3eb5ead6bf182236edb4649abfc7e826f7b53b3b2) · V-240",
-  "alternatives": [],
-  "todo": []
+  "source": "GLB root extras kfbCanon.recipe.face.eye (P08, sourceCommit 20a01232)"
  },
  "brows": {
-  "owner": "original-mesh",
   "nodes": [
    "Carl_Brow_L",
    "Carl_Brow_R"
   ],
   "colour": "#17130f",
-  "transform": {
-   "scale": 0.99,
-   "spread": -0.028,
-   "lift": 0.242,
-   "depth": -0.056,
-   "tilt": -8,
-   "yaw": 16,
-   "sx": 1.21
-  },
   "browRigValues": "present in export (pets[0].brow, enabled true) but parts.brows = \"original\" → BrowRig not active",
-  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].original.brows / .brow"
+  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].original.brows / .brow",
+  "owner": "glb-baked",
+  "note": "in der GLB platziert (P08-Werte); keine Karten-Transformation auf der Bühne"
  },
  "nose": {
-  "owner": "original-mesh",
   "node": "Carl_Nose",
   "colour": "#e96049",
-  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].nose/.original.nose"
+  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].nose/.original.nose",
+  "owner": "glb-baked",
+  "note": "in der GLB platziert (P08-Werte); keine Karten-Transformation auf der Bühne"
  },
  "mouth": {
   "owner": "original-mesh",
   "node": "FB_Mouth_Smile",
-  "set": "fb_male_decal_01",
-  "setPath": "media/3D_Assets/Textures/FrizzelBob-Mouth_01",
+  "conform": true,
   "rest": "closed",
-  "restNote": "V-243/V-245: rest = closed lips (recipe field mouth.rest \"closed\"); the model mouth \"smile\" shows teeth at rest",
-  "placement": {
-   "size": 0.44,
-   "dy": -0.681,
-   "dx": -0.032,
-   "sx": 1,
-   "lift": 0.03,
-   "wrap": 1
-  },
-  "visemeMap": {
-   "closed": "neutral",
-   "open": "ah",
-   "wide": "ee",
-   "round": "oh",
-   "smile": "smile"
-  },
-  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json",
-  "source": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json#pets[0].mouth · V-245"
+  "material": "FB_Mouth (Bild aus R2 = Decal Neutral des Sets FrizzelBob-Mouth_01)",
+  "note": "Original-Mundträger aus R2 (P08-Auswahl parts.mouth = original), in der GLB; auf der Bühne an die Haut geschmiegt wie face-mount conformOriginalMouth (P08: conform an)",
+  "choice": "Georg q208 = b (25.10.)"
  },
  "appendages": [
   {
@@ -251,12 +141,13 @@
   "rough": 0.62
  },
  "material": {
-  "clayProfile": "figure-fine",
+  "clayProfile": "character",
   "sheenMax": 0.05,
   "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
   "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
   "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)",
-  "note": "V-346.3: FB gets clay (decided 16.10.); the image with clay is still to be accepted. V-382: halo around FB was a light failure, not a figure failure."
+  "note": "R5: Kopf und Lidhaut kfb-clay v1.1 character, gleicher clayRef (V-776)",
+  "claySeed": "frizzlebob_r5"
  },
  "voice": {
   "engine": "kokoro v1.0",
@@ -277,84 +168,53 @@
  "approval": {
   "status": "approved",
   "by": "Georg",
-  "date": "2026-10-14/15",
+  "date": "2026-10-25",
   "vRef": [
-   "V-240",
-   "V-245",
-   "V-263"
+   "V-776",
+   "V-804"
   ],
   "parts": {
    "body": {
     "status": "approved",
     "by": "Georg",
-    "date": "2026-10-14",
-    "vRef": "V-240",
-    "evidence": "V-240: FB = Georg's own export, figure v5b @23615cff"
+    "date": "2026-10-25",
+    "vRef": "V-804"
    },
    "originals": {
     "status": "approved",
     "by": "Georg",
-    "date": "2026-10-14",
-    "vRef": "V-240",
-    "evidence": "export parts{} (eyes rig, rest original)"
+    "date": "2026-10-25",
+    "vRef": "V-804"
    },
    "eyeRig": {
     "status": "approved",
     "by": "Georg",
-    "date": "2026-10-15",
-    "vRef": "V-245",
-    "evidence": "export pets[0].eye; WS1 built 1:1, Georg: \"fb passt so\""
+    "date": "2026-10-25",
+    "vRef": "V-804"
    },
    "mouth": {
     "status": "approved",
     "by": "Georg",
-    "date": "2026-10-15",
-    "vRef": "V-245",
-    "evidence": "rest closed; ToolBox v8 saves and exports it (V-263)"
+    "date": "2026-10-25",
+    "vRef": "V-804"
    },
    "material": {
-    "status": "decided-image-open",
+    "status": "approved",
     "by": "Georg",
-    "date": "2026-10-16",
-    "vRef": "V-346",
-    "evidence": "V-346.3 FB gets clay; clay proof pair (front/3/4/side) not yet accepted"
+    "date": "2026-10-25",
+    "vRef": "V-804"
    }
-  },
-  "missing": [
-   "clay proof pair front/3/4/side under the R2 stage-light module (V-346.6, V-392)"
-  ]
- },
- "provenance": [
-  {
-   "what": "Georg export (kfb.pets/1)",
-   "path": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json",
-   "sha256": "07a316cbdca5e3cc46c2d6b3eb5ead6bf182236edb4649abfc7e826f7b53b3b2"
-  },
-  {
-   "what": "WS1 recipe",
-   "path": "ws1/kfb-planet/src/data/actors/frizzlebob-v5b.recipe.json",
-   "ref": "ws1/r3f-frame @2d2cae13"
-  },
-  {
-   "what": "older Georg exports (superseded by 10-14)",
-   "path": "tools/KFB-ToolBox/_handover/CLAY_B1_FB_V5_2026-09-26/kfb-pet-frizzlebob-earrig-v5.georg-2026-09-26_2.json; tools/KFB-ToolBox/_handover/TOOLBOX_FACE_EDITOR_NOTES_2026-09-26/kfb-pet-frizzlebob-earrig-v5.georg-2026-09-26.json"
-  },
-  {
-   "what": "decisions",
-   "path": "KFB_HUB/30_DECISIONS/DECISIONS.md",
-   "vRef": [
-    "V-236",
-    "V-240",
-    "V-243",
-    "V-245",
-    "V-263",
-    "V-338",
-    "V-346"
-   ]
   }
- ],
- "todo": [
-  "Put the FB v5b GLB on main, or name a fixed asset branch (today only on georg-doc-patch-3 / ws1).",
-  "Export field gaps noted by WS1 (clayLids fields of a newer ToolBox, export label): resolve in the Figure Workshop (V-241/V-244)."
- ]
+ },
+ "provenance": {
+  "derivedFrom": "30_DECISIONS/replies/FIGURES_R1/figures/frizzlebob.figure.json",
+  "derivedFromSha256": "5abdeac38835a91679ab79615928475a264079abe2e177d03b652327bfd3370a",
+  "by": "WSB FB_CANON R5 + Ohren R8 A11; Kanon-Eintrag WS0 25.10. (V-804)",
+  "reset": [
+   "body.glb",
+   "approval (+ parts)",
+   "provenance",
+   "originals"
+  ]
+ }
 }

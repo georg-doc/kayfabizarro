@@ -103,6 +103,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-801 J17-Bänder (Boden + Erde 1 + Sand), Props zweifarbig aus der Palette (Krone Laub/Blüte, Stamm −105° dunkler). @dff9c08.
 - V-802 Biom-Übergang über die Fließbänder statt Sprenkel (q222 PASS). @3512531.
 - V-803 Farb-Logik ausrollen: Props-Teile, Gebäude, Dioramen, Mindscapes, Billboards; VFX (Rauch, Partikel) aus Gelände-/Fluid-/Prop-Farben.
+- V-804 FB-Ohren: Probe A (v5-Ohren, Meshy-Biss links) gewählt; Biss-TUNE später (seitlich, rund, drei Rundungen).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
 - q184 accepted: earlier audio-separation gate CLOSED. Current checked game188e4f709f1301f6574f06631b750c6adf2e44f8, remote36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3. Node22.23.4 ready;24/24preparedmodulechecksPASS underNode22. Fullprivatebuildinputcouldnotbetransferred: connectorlargerbinaryempty/nonUTF8;ordinaryGitnocredential;authenticatedChromeZIPblocked,documenteddownloadretrytimedoutwithoutarchive. BLOCKEDreceivinginput;notpublished,noGeorgtokenrequest,nonewSite/audience/secret/gamechanges. Return replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidenceWSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. NextWS0/WS1:onecompleteprivatesource+figuresorfinsheddist/site-build/provenancehandoffatsameprivateprojectlocation;nohostsubstitution.

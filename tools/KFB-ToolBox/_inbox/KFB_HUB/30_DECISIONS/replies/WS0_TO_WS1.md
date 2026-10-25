@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (25.10. spät) · FrizzleBob kanonisch (V-804)
+FB_CANON: `50_BLENDER/FB/R5/R8/FB_R8_probe_A11.glb`, sha256 `91092623d2103a712d9ce55f3fe3648698e896fe3e134492bcbab65bdd448c35`, im privaten Branch `assets/fb-canon` (KFB-Stunt-Car-Race) samt Karten und Guard. Figurenkarte `FIGURES_R1/figures/frizzlebob.figure.json` zeigt darauf. Nur diese Datei ist FB; jede andere wird abgewiesen. COLOR_1-Rollen-Codes flach lesen (nächster Code, nie interpolieren).
+
 # NEU OBEN (25.10. spät) · Farb-Logik ausrollen (V-803)
 Auftrag: `replies/BRIEF_FARBROLLEN_AUSROLL_R1.md` (Brief-Gate PASS). Rollentabelle: `replies/COLOR_CONCEPT_R1.md` → „Nachtrag 25.10. · Ausroll-Rollen“. WS1-Teil: Gebäude, Amphitheater/Dioramen, VFX (Rauch, Staub, Spritzer, Blätter, Funken), Fluids (WS1c). Vor dem Bau nur Teile-Liste; Konzeptblatt reicht WS0 nach.
 

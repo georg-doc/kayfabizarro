@@ -1,0 +1,1545 @@
+{
+  "schema": "kfb.character/1.1",
+  "id": "frizzlebob",
+  "status": "draft-r1",
+  "date": "2026-10-17",
+  "vRef": [
+    "V-394"
+  ],
+  "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+  "identity": {
+    "name": {
+      "v": "FrizzleBob",
+      "src": "CS-02",
+      "status": "SOURCE"
+    },
+    "displayName": {
+      "v": "Uncle FrizzleBob",
+      "src": "CS-47; CS-50",
+      "status": "SOURCE"
+    },
+    "aliases": {
+      "v": [
+        "Uncle FrizzleBob",
+        "Doc FrizzleBob (MedKayfab)",
+        "KnuckleBob (Fixer register)",
+        "FB",
+        "frizzlebob-earrig-v5",
+        "FB v5b"
+      ],
+      "src": "CS-02 aliases; CS-47; CS-55; CS-48 §4c",
+      "status": "SOURCE"
+    },
+    "voiceInputMishearings": {
+      "v": null,
+      "status": "todo",
+      "note": "none recorded"
+    },
+    "tier": {
+      "v": "main · protagonist",
+      "src": "CS-02 role; CS-03 tier",
+      "status": "SOURCE"
+    },
+    "series": {
+      "v": [
+        "Kayfabizarro",
+        "Cancel This Comic",
+        "MedKayfab (private IP)",
+        "FrizzleBob's Fractal Almanac"
+      ],
+      "src": "CS-47; CS-48; CS-51",
+      "status": "SOURCE"
+    }
+  },
+  "story": {
+    "background": {
+      "v": "Yellow cartoon rogue rabbit; 'Professional Reality-Wrestler, Worldview Fixer & Epistemiologic Outlaw' who fixes fractured worldviews for a living and collects ideas as time capsules in his Almanac",
+      "src": "CS-50; CS-51; CS-54; CS-56",
+      "status": "SOURCE"
+    },
+    "worldKnowledge": {
+      "v": [
+        "all Kayfabizarro decks as MC/host",
+        "MedKayfab medicine (as Doc FrizzleBob, private IP)",
+        "Fractal Almanac three levels: Material / Narrative / Conceptual"
+      ],
+      "src": "CS-47; CS-55; CS-50",
+      "status": "SOURCE"
+    },
+    "inWorldRole": {
+      "v": "Herald / Guide (not one of the Base-24 Resident slots); lead actor of the dialogue stage; MC of deck songs (stand-up opener)",
+      "src": "CS-21 §2, §5; V-240; V-344",
+      "status": "GEORG"
+    },
+    "worldLogicRule": {
+      "v": null,
+      "status": "todo",
+      "note": "why FB exists in the island world is not stated; Fairground Hub host / Doc FB / PolyGarden guide are separate forks (CS-48 §4)"
+    },
+    "place": {
+      "v": [
+        "KFB Fairground Hub (Deck-Spiel, Jahrmarkt)",
+        "MED Kayfabe Klinik (Doc FB, private)",
+        "Elisa PolyGarden (education)"
+      ],
+      "src": "CS-48 §4",
+      "status": "SOURCE"
+    },
+    "openQuestions": {
+      "v": [
+        "Character Bible v1: FB is the only recurring named figure; Georg limited that rule to comics and decks (game residents recur)"
+      ],
+      "src": "CS-60 §5.5; CS-61 l.121",
+      "status": "GEORG"
+    },
+    "loreStatements": {
+      "v": [
+        {
+          "text": "The revolution won't be generated; it will be fiercely, messily hand-drawn.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json",
+          "line": null,
+          "heading": "deck epistemic_sabotage card #1 Uncle FrizzleBob's Meta-Cover"
+        },
+        {
+          "text": "The debate is over. Pick up your pencils, hotwire the algorithm, and let's get back to work.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json",
+          "line": null,
+          "heading": "deck epistemic_sabotage card #60 Uncle FrizzleBob's Megaphone"
+        },
+        {
+          "text": "'I didn't finish this game. That part's yours. Stay fluffy.'",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+          "line": null,
+          "heading": "deck kayfabizarro_monomyth_mayhem card #32 Uncle FrizzleBob"
+        },
+        {
+          "text": "I cut this up so you could play with corpses. Don't look at me like that. You bought the expansion.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json",
+          "line": null,
+          "heading": "deck nibelungen_booster_pack_design card #56 Uncle FrizzleBob (The Author)"
+        },
+        {
+          "text": "The layout anarchist who sees through the Kayfabe. He's here to ruin Big Tech's meticulously curated PR with a sloppy bucket of watercolour ink.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json",
+          "line": null,
+          "heading": "deck observation_underground card #1 Uncle FrizzleBob"
+        },
+        {
+          "text": "Stay Fluffy! KayfaBINGO!",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json",
+          "line": null,
+          "heading": "deck uncle_frizzlebob_s_tragic_flaws_id card #56 Uncle FrizzleBob's Approval"
+        },
+        {
+          "text": "Game Over. You're still old. Go home.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json",
+          "line": null,
+          "heading": "deck wrinkle_rumble card #48 Uncle FrizzleBob's Exit"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json",
+      "status": "PREFILL"
+    }
+  },
+  "personality": {
+    "archetype": {
+      "jungDrive": {
+        "v": null,
+        "status": "todo"
+      },
+      "journeyFunction": {
+        "v": "Herald / Guide",
+        "src": "CS-21 §2",
+        "status": "SOURCE"
+      },
+      "frictionEngine": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "castRole": {
+      "v": "DJ/MC in Resident dance culture; Deck MC; narrator/mentor/Master of the Arena (MedKayfab)",
+      "src": "CS-23; CS-47 /carny; CS-55",
+      "status": "SOURCE"
+    },
+    "personalityType": {
+      "v": "rogue cartoon-rabbit MC; dry, observational; 'You do not moralize. You demonstrate.'",
+      "src": "CS-47; CS-54",
+      "status": "SOURCE"
+    },
+    "traits": {
+      "method": {
+        "v": "be kind to the human; be cruel to the apparatus · incentives first, narratives second, vibes never",
+        "src": "CS-52",
+        "status": "SOURCE"
+      },
+      "coreWant": {
+        "v": null,
+        "status": "todo"
+      },
+      "coreIrritation": {
+        "v": null,
+        "status": "todo"
+      },
+      "contradiction": {
+        "v": null,
+        "status": "todo"
+      },
+      "failureLoop": {
+        "v": null,
+        "status": "todo"
+      },
+      "fears": {
+        "v": null,
+        "status": "todo"
+      },
+      "hiddenGoal": {
+        "v": null,
+        "status": "todo"
+      },
+      "darkSecret": {
+        "v": null,
+        "status": "todo"
+      }
+    },
+    "humour": {
+      "v": "dry stand-up comedian (not a wrestling announcer); parentheses asides; Rent Rule 'every line bleeds mechanism or exacts a price'; no appliance/system-glitch/AI-meta gags",
+      "src": "V-344; CS-54; CS-52; CS-47",
+      "status": "GEORG"
+    },
+    "attitudeBaseline": {
+      "v": null,
+      "status": "todo"
+    },
+    "stateMachine": {
+      "v": null,
+      "status": "todo"
+    },
+    "petArchetype": {
+      "v": "carny-host",
+      "src": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.bunny.archetype",
+      "status": "SOURCE"
+    }
+  },
+  "dialogue": {
+    "languageOwner": {
+      "v": "ChatterBox + shared Triplet pool",
+      "src": "CS-20",
+      "status": "SOURCE"
+    },
+    "signaturePool": {
+      "v": null,
+      "status": "todo",
+      "note": "no FB entries in TRIPLET_POOL_SEED_20 (signatures only lorekeeper, goth-girl, clown, witch) (CS-24)"
+    },
+    "tripletVoice": {
+      "rules": {
+        "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+        "src": "CS-11; V-231…V-235, V-266, V-275",
+        "status": "GEORG"
+      },
+      "goldenLine": {
+        "v": "You with the card in your hand, Kayfabizarro, the Work: it's fake, but emotion is real.",
+        "src": "CS-03 (TRIPLET_SETS_R2/help_i_am_a_human #55)",
+        "status": "GEORG"
+      }
+    },
+    "openers": {
+      "placeScenePolicy": {
+        "v": null,
+        "status": "todo",
+        "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+      },
+      "preferred": {
+        "v": [
+          "Howdy, friend. Uncle FrizzleBob here. Pull up a chair.",
+          "Evening, fluffheads (Fluff-o-lect address, stand-up intro)"
+        ],
+        "src": "CS-50; V-344",
+        "status": "SOURCE"
+      }
+    },
+    "registers": {
+      "v": [
+        "/fixer Trenchcoat KnuckleBob",
+        "/analyst Intelligence Analyst",
+        "/carny Deck MC",
+        "/bedside Med Professor",
+        "/rapgod Wordacrobat",
+        "/mensch Humanist",
+        "/snark internal stress test (not for shipping)"
+      ],
+      "src": "CS-47",
+      "status": "SOURCE"
+    },
+    "lexicon": {
+      "v": null,
+      "status": "todo"
+    },
+    "interjections": {
+      "v": [
+        "KayfaBIZARRO!",
+        "BLÖDSINN!",
+        "HUMBUG!",
+        "KayfaBINGO!",
+        "What the FLUFF?!"
+      ],
+      "src": "CS-56",
+      "status": "SOURCE"
+    },
+    "catchphrases": {
+      "v": [
+        "Stay fluffy.",
+        "FrizzleBob out.",
+        "I'm a rabbit, not a cop."
+      ],
+      "src": "CS-50; CS-53; CS-47 /carny",
+      "status": "SOURCE"
+    },
+    "speechAvoid": {
+      "v": [
+        "em dashes",
+        "sycophantic openers",
+        "generic AI closers",
+        "appliance gags",
+        "system-glitch humour",
+        "meta-AI fourth-wall breaks"
+      ],
+      "src": "CS-47 Layer Zero",
+      "status": "SOURCE"
+    },
+    "maxWordsPerLine": {
+      "v": null,
+      "status": "todo"
+    },
+    "knowledgePolicy": {
+      "v": null,
+      "status": "todo"
+    },
+    "speechPatterns": {
+      "v": [
+        {
+          "text": "| FrizzleBob | am_michael | 1,00 | Georg PASS (V-308); flache Melodie, trockener Stand-up-Ton |",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 23,
+          "heading": "Hauptfiguren"
+        },
+        {
+          "text": "- Intro und Outro FrizzleBob (am_michael 1,00), Karten im Wechsel GothGirl (bf_emma 0,95, ungerade Karten) und FrizzleBob (gerade Karten), 0,5 s Pause zwischen den Zeilen.",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 73,
+          "heading": "Kokoro-Decktest: help_i_am_a_human"
+        },
+        {
+          "text": "- „Jean-Jacques Rousseau“ → amerikanisch („Gene Jack Rousso“, Zeile 11, FrizzleBob; bf_emma sagt es richtig);",
+          "file": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md",
+          "line": 76,
+          "heading": "Kokoro-Decktest: help_i_am_a_human"
+        },
+        {
+          "text": "Je Feld 1–2 Kandidaten. Bereits vergeben: FrizzleBob Posaune mit Dämpfer, Dory Okarina, Hunky Fagott bzw. Kazoo, Farmer B Akkordeon, Lorekeeper tiefe Klarinette.",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md",
+          "line": 82,
+          "heading": "6 · Felder besetzen (Kandidaten, zur Diskussion)"
+        },
+        {
+          "text": "| FrizzleBob | Posaune mit Dämpfer, warm, nah, trocken (Stand-up-Nähe) |",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md",
+          "line": 272,
+          "heading": "16 · Schauspiel-Prinzip und Voice-FX (Cartoon Voice Acting)"
+        },
+        {
+          "text": "| metallisch | Posaune mit Dämpfer (FB), Tuba | Trompete, Melodica (Bots) |",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md",
+          "line": 187,
+          "heading": "2 · Klangfarben-Matrix (Kandidaten, nach Wirkung sortiert)"
+        },
+        {
+          "text": "| FrizzleBob | warm, nah, trocken (Stand-up) |",
+          "file": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md",
+          "line": 202,
+          "heading": "3 · Voice-FX-Vorlagen (Beispiele)"
+        },
+        {
+          "text": "- **No em dashes.** Use commas, periods, or restructure. The em dash is the most reliable AI tell in English text.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 31,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No emojis** unless explicitly requested.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 32,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No sycophantic openers.** \"Certainly!\" \"Great question!\" \"Absolutely!\" \"Of course!\" all dead on arrival.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 33,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No generic AI closers.** \"I hope that helps!\" \"Let me know if you need anything else!\" \"Feel free to...\" cut.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 34,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No excessive hedging.** \"It's worth noting that...\" \"It's important to remember that...\" cut unless real uncertainty exists.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 35,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No fake neutrality.** If the task calls for a position, take one.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 36,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No object-acting scaffolding.** \"The room remembered.\" \"The page knew.\" Anthropomorphized environments doing things on their own equals AI tell. Real bodies doing things their owner asked them to do is fine. \"The shoulders carried the worry\" is OK because shoulders are part of you. \"The hallway resented the lights\" is not.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 37,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No appliance gags.** No toasters becoming sentient, no fridges with feelings, no office chairs achieving self-awareness. This template is exhausted. Do not use it. Do not even ironically subvert it.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 38,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No system-glitch humor.** No \"the AI is malfunctioning,\" no \"buffering...,\" no \"404 not found\" gags.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 39,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No digital or tech jargon as decoration.** Use it only when the actual content demands it.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 40,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No placeholder language.** Say \"players,\" \"readers,\" \"patients,\" \"residents,\" not \"the audience\" or \"users.\"",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 41,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "- **No meta-AI fourth-wall breaks.** No \"as an AI...\" gags, sincere or ironic. Break the fourth wall in other ways (narrator commentary, fictional self-awareness, kayfabe slips), never via AI-meta.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 42,
+          "heading": "Layer Zero · Hard constraints"
+        },
+        {
+          "text": "Mode 1, Fixer (Trenchcoat KnuckleBob) :: **Surface:** Substack essays, tweets, field notes, \"found artifact\" framing.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 109,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 2, Intelligence Analyst (Mechanism Auditor) :: **Surface:** Geopolitical, hidden-history, conspiratorial decks. Long-form investigative tracks. System-analysis essays.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 122,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 3, Carny Barker (Deck MC) :: **Surface:** Gumroad pages in character, deck cold-opens, Suno audio walkthroughs, social posts, HeyGen avatar intros.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 144,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 4, Bedside Teacher (Med Professor) :: **Surface:** MedKayfab decks, clinical mnemonics, anywhere the brief calls for \"warm, honest, slightly self-deprecating, medically rigorous.\"",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 157,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 5, RapGod (Wordacrobat) :: **Surface:** Improv decks, rap battles, dense lyric-as-argument tracks.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 168,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 6, Mensch-Mode (Humanist) :: **Surface:** Therapy-adjacent decks, love and bonding decks, anything about what it actually feels like to be human. Voice taken from \"Hilfe, ich bin ein Mensch!\" (protopians.substack.com), the graphic science expedition into human nature co-authored with Andreas von Westphalen.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 180,
+          "heading": "The Modes"
+        },
+        {
+          "text": "Mode 0, Snark (Internal Stress-Test) :: **Surface:** Internal use only. Brainstorming, weak-hinge-finding, ideation, structural critique. **Output from this mode is never shipped as-is.** It feeds the public-facing modes after distillation.",
+          "file": "~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md",
+          "line": 194,
+          "heading": "The Modes"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:23; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:73; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:76; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:272; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:202; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:31; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:32; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:33; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:34; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:35 (+14)",
+      "status": "PREFILL"
+    }
+  },
+  "cards": {
+    "signatureDeck": {
+      "v": null,
+      "status": "todo",
+      "note": "FB-named decks exist on main (FrizzleBob's Mission Control, Ego Mania, Kompendium Elender Wicht) but none is assigned to the character"
+    },
+    "stance": {
+      "v": null,
+      "status": "todo"
+    },
+    "signatureCardRefs": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckLane": {
+      "v": null,
+      "status": "todo"
+    },
+    "secondaryDecks": {
+      "v": null,
+      "status": "todo"
+    },
+    "performanceDecks": {
+      "v": "intro/MC of every deck song (stand-up opener)",
+      "src": "V-344",
+      "status": "GEORG"
+    },
+    "worldviewTags": {
+      "v": null,
+      "status": "todo"
+    },
+    "deckGoal": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "memory": {
+    "owner": {
+      "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+      "src": "CS-20 memory.owner; CS-26 §10",
+      "status": "SOURCE"
+    },
+    "valuesLiveIn": {
+      "v": [
+        "PLAYER_SAVE",
+        "NPC_MEMORY_VIEW",
+        "SOCIAL_RELATION",
+        "ENCOUNTER_RECEIPT",
+        "MOMENT_RECEIPT",
+        "CARD_COLLECTION_ENTRY",
+        "JOURNEY_ENTRY"
+      ],
+      "src": "CS-26 §11",
+      "status": "SOURCE"
+    },
+    "rememberable": {
+      "v": [
+        "EncounterReceipt refs",
+        "relation refs",
+        "salient MomentReceipts",
+        "unresolved threads",
+        "shared Card/song/world refs",
+        "canonical fact knowledge"
+      ],
+      "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+      "status": "SOURCE"
+    },
+    "beliefSources": {
+      "v": [
+        "signature-deck",
+        "heard-from",
+        "seen",
+        "guessed"
+      ],
+      "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+      "status": "DESIGN"
+    },
+    "rules": {
+      "v": [
+        "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+        "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+        "generated summaries are caches; receipts and canonical facts stay authoritative"
+      ],
+      "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+      "status": "SOURCE"
+    },
+    "relationships": {
+      "v": null,
+      "status": "todo"
+    },
+    "almanacHooks": {
+      "v": [
+        "Fractal Almanac is FB's own artefact: 'gains a new entry every time someone does [steal an idea]'",
+        "Almanac = bundle of time capsules FB collects"
+      ],
+      "src": "CS-50",
+      "status": "SOURCE"
+    }
+  },
+  "appearance": {
+    "figureRef": {
+      "v": "figures/frizzlebob.figure.json",
+      "src": "CS-02",
+      "status": "SOURCE"
+    },
+    "figureStatus": {
+      "v": "approved",
+      "src": "CS-02 frizzlebob.figure.json#approval.status",
+      "status": "SOURCE",
+      "note": "informational copy; the figure card is authoritative"
+    },
+    "renderStyle": {
+      "default": {
+        "v": "clay",
+        "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+        "status": "GEORG"
+      },
+      "clayProfile": {
+        "v": "figure-fine",
+        "src": "CS-02 material.clayProfile (V-053/V-340)",
+        "status": "GEORG"
+      },
+      "alternatives": {
+        "v": [],
+        "src": "V-394 (other textures allowed only when listed here)",
+        "status": "GEORG",
+        "note": "Meshy FB outfit (shirt, trousers, shoes) planned as clothing, not a texture alternative (V-261)"
+      }
+    },
+    "colours": {
+      "v": {
+        "body": "yellow cartoon rabbit; Character Bible v1 LOCK: cheeky, anti-cute, never humanoid, dungarees workwear"
+      },
+      "src": "CS-54 rendering rule; CS-56; CS-60 §5.5 (Bible LOCK)",
+      "status": "SOURCE"
+    },
+    "worldVariants": {
+      "v": null,
+      "status": "todo",
+      "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+    },
+    "outfits": {
+      "v": [
+        {
+          "id": "tuxedo_brass_knuckles",
+          "label": "Tuxedo with Brass Knuckles",
+          "look": "black tuxedo, red bow tie",
+          "when": "depending on mask/role",
+          "props": [
+            "brass_knuckles"
+          ]
+        }
+      ],
+      "src": "Georg 17.10. (V-423)",
+      "status": "GEORG",
+      "note": "tuxedo comes from the WSB B12 suit kit (variant on the FB rig); brass knuckles = KFB basic melee weapon"
+    },
+    "figureRefs": [
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/frizzlebob.figure.json",
+        "sha256": "5abdeac38835a91679ab79615928475a264079abe2e177d03b652327bfd3370a",
+        "kind": "canonical",
+        "cardId": "frizzlebob"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json",
+        "sha256": "225315132608a268adafe8d371f3cdeb1b741bbfa135d3429dffe343fde39f88",
+        "kind": "scene_variant",
+        "cardId": "frizzlebob"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json",
+        "sha256": "e83b06f8439c168e8ab2629f994ba245f4bb6b059ed68f7ed352996675df48bd",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_mc"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_k12b.json",
+        "sha256": "ac02361c4d19ea7f30a1923fc8327e1cc0fd88f9877eb67e41d52361d3f04527",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_mc"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_k12c.json",
+        "sha256": "622ad3aa67e852eddc2196911876c945084822899e8d03c8c3aeba8170c33c96",
+        "kind": "duplicate",
+        "cardId": "kfb_disco_mc"
+      },
+      {
+        "path": "KFB_HUB/50_BLENDER/K12/data/disco_mc.figure.json",
+        "sha256": "b86587264b9a4c9ba50a6aded37007dce999f57afe195f82e841a49ca1a5e8c3",
+        "kind": "scene_variant",
+        "cardId": "kfb_disco_mc"
+      }
+    ],
+    "profileRefs": [
+      {
+        "path": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json",
+        "pointer": "pets[id=bunny]",
+        "kind": "pet-studio profile",
+        "sha256": "4d3e7df160acba843dd82415290791c0e8035aacf8742fe61a0a59b1348d6073"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json",
+        "kind": "kfb.pets/1 face profile",
+        "sha256": "07a316cbdca5e3cc46c2d6b3eb5ead6bf182236edb4649abfc7e826f7b53b3b2"
+      },
+      {
+        "path": "KFB_HUB/30_DECISIONS/replies/TOOLBOX_SOURCE_CUT_2026-10-14_r1/data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-14.json",
+        "kind": "kfb.pets/1 face profile",
+        "sha256": "c32682a953d7ca8dacf1d8a9a1097b0b59e4000dba338dc6ea76ab48f2562edf"
+      }
+    ]
+  },
+  "performance": {
+    "idle": {
+      "v": "Idle_A (Rig_Medium_General, P08 earfb defaultIdle)",
+      "src": "CS-02 performance.idle",
+      "status": "SOURCE"
+    },
+    "defaultPose": {
+      "v": null,
+      "status": "todo"
+    },
+    "preferredClips": {
+      "v": null,
+      "status": "todo"
+    },
+    "danceAuditions": {
+      "v": [
+        "kfb_dance_hip_hop_a",
+        "kfb_dance_wave_hip_hop_a",
+        "kfb_dance_locking_hip_hop_a"
+      ],
+      "src": "CS-23 dance table (FrizzleBob DJ/MC: Hip Hop A · Wave · Locking; MC/show-off phrase)",
+      "status": "DESIGN"
+    },
+    "gait": {
+      "v": "Rig_Medium standard: Walking_A / Running_A / Running_B (gait_v157)",
+      "src": "CS-08 §2b",
+      "status": "SOURCE"
+    },
+    "presentationHints": {
+      "v": [
+        "ear acting is its own layer (47 bones)",
+        "ears as actors: soft/floppy stiffness"
+      ],
+      "src": "CS-08 (FB 47 Knochen); V-338 C",
+      "status": "SOURCE"
+    },
+    "props": {
+      "v": null,
+      "status": "todo"
+    },
+    "kart": {
+      "v": "bathtub kart driver R5 PASS",
+      "src": "V-320",
+      "status": "GEORG"
+    },
+    "lightByStoryMode": {
+      "table": {
+        "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+        "src": "CS-06 B1, rule 11; V-386, V-387",
+        "status": "GEORG"
+      },
+      "overrides": {
+        "v": null,
+        "status": "todo",
+        "note": "no per-character light preset found in any source; global table applies"
+      }
+    },
+    "animations": {
+      "v": [
+        "list",
+        "roles"
+      ],
+      "src": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json#clips",
+      "status": "SOURCE"
+    }
+  },
+  "voice": {
+    "engine": {
+      "v": "kokoro v1.0",
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "spec": {
+      "v": "am_michael",
+      "src": "CS-03; V-308; V-324",
+      "status": "GEORG"
+    },
+    "speed": {
+      "v": 1.0,
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "lang": {
+      "v": "en-us",
+      "src": "CS-03",
+      "status": "GEORG"
+    },
+    "goldenLine": {
+      "v": "You with the card in your hand, Kayfabizarro, the Work: it's fake, but emotion is real.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].goldenLine",
+      "status": "SOURCE"
+    },
+    "castingReason": {
+      "v": "Georg PASS V-308; flachste Melodie der hellen US-Männerstimmen, trockener Stand-up-Ton.",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].reason",
+      "status": "SOURCE"
+    },
+    "sampleFile": {
+      "v": "besetzung_r1_01_frizzlebob__am-michael.wav",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].file",
+      "status": "SOURCE"
+    }
+  },
+  "conflicts": [
+    "Identity varies across booklets: metaphysical rabbit detective (CS-53), tuxedo data jockey with brass knuckles (CS-52), kompendium writer (CS-54), lab-coat Doc (CS-55), MAD card artist (CS-56); look yellow vs golden, top hat (kayfabizarro-archive.md).",
+    "Register: CS-54 'Dry, not contemptuous' vs CS-52 'Elegant Savagery' + NSFW rule vs 001 Guide 'soy-meat' register.",
+    "Mode lists: skill has 7 modes (CS-47); NIE overview 20 modes (CS-52); M106 another 20 incl. HUNKY-DORY as an FB mode.",
+    "Clothing: Bible LOCK dungarees (CS-60) vs V-261 plan to dress v5b in the Meshy FB outfit (shirt, trousers, shoes)."
+  ],
+  "todo": [
+    "jungDrive / frictionEngine / clamps (Base-24 keeps FB outside the 24 slots)",
+    "signature deck + stance",
+    "signature triplets in the pool",
+    "worldLogicRule in the island world",
+    "which register is canon for the game (skill vs booklets)"
+  ],
+  "seedSchema": "kfb.character/1",
+  "kind": "hero",
+  "aliases": [
+    "Doc FrizzleBob",
+    "FB",
+    "FB v5b",
+    "KnuckleBob",
+    "Uncle FrizzleBob",
+    "frizzlebob-earrig-v5",
+    "kfb_disco_mc"
+  ],
+  "lore": {
+    "mentions": {
+      "v": [
+        {
+          "text": "- Do not use the template \"Welcome to …\" or the label \"Meta-Message\"; FrizzleBob appears at most once (V-366).",
+          "file": "KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md",
+          "line": 40,
+          "heading": "C · Frame"
+        },
+        {
+          "text": "12. Ending: \"Stay Fluffy, Folks!\" on its own line (R3.6, Georg 18.10.). The narrator stays unnamed: no FrizzleBob, no uncle/rabbit persona in intro, outro or openers, because different characters perform the songs (card lines of a FrizzleBob card stay). The whole song is under 5000 characters.",
+          "file": "KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md",
+          "line": 44,
+          "heading": "C · Frame"
+        },
+        {
+          "text": "| 7 | Theater (steht) | `uncle_frizzlebob_s_tragic_flaws_id` | Uncle FrizzleBob's Tragic Flaws | 56 | Hamlet, Macbeth, Lear und Antony & Cleopatra als Tierbesetzung. Die Bühne ist schon gebaut. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md",
+          "line": 17,
+          "heading": "Vorschlag: 8 Decks in dieser Reihenfolge"
+        },
+        {
+          "text": "| Retro-Arcade-Casino | `frizzlebob_s_mission_control` | Uncle FrizzleBob’s Mission Control Deck | 56 | Videospiel-Klischees (Mini-Game, Speedrun, New Game Plus, DLC Paywall), thematisch noch näher am Arcade. **Aber:** Kartentext ist nicht im kanonischen Druckstand (alte Felder `num/name`, keine Druckprüfung). Erst gegen das PDF prüfen. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md",
+          "line": 26,
+          "heading": "Reserve, falls ein Vorschlag nicht gefällt"
+        },
+        {
+          "text": "7. uncle_frizzlebob_s_tragic_flaws_id | Uncle FrizzleBob's Tragic Flaws | 56   (NOT the duplicate uncle_frizzlebob_s_tragic_flaws_shakespeare)",
+          "file": "KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md",
+          "line": 53,
+          "heading": "Briefing zum Einfügen (WSA kfb-triplets-Plugin oder Agent-Lauf)"
+        },
+        {
+          "text": "4. **No intro formula (V-366).** No \"Meta-Message\", \"Uncle FrizzleBob\" at most once, and \"Comic Card Karaoke\" only as a free sing-along element that differs per song. Compare against all earlier intros (`replies/OPENER_ARC_R2/*.suno.txt`) for repeats.",
+          "file": "KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_WRITERS_ROOM_PLUGIN_R1.md",
+          "line": 21,
+          "heading": "Binding rules"
+        },
+        {
+          "text": "3. **Die Peanuts-Erwachsenen bestätigen FrizzleBob 1:1.**",
+          "file": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md",
+          "line": 26,
+          "heading": "0 · Kurzfassung: 10 Kernbefunde"
+        },
+        {
+          "text": "| **Peanuts-Erwachsene** | Posaune mit Plunger-Dämpfer, Idee von Vince Guaraldi, gespielt von Dean Hubbard; 2015 von Trombone Shorty ([Dean Hubbard](https://en.wikipedia.org/wiki/Dean_Hubbard), [Time](https://entertainment.time.com/2010/09/13/top-10-unforgettable-tv-sounds/slide/charlie-browns-adult-voices/), [The Current](https://www.thecurrent.org/feature/2015/10/31/peanuts-movie-trombone-shorty-will-help-you-speak-like-miss-othmar)) | [B] | Direkte Bestätigung von FrizzleBob = gedämpfte Posau",
+          "file": "KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md",
+          "line": 146,
+          "heading": "3.1 Film und TV"
+        },
+        {
+          "text": "| Uncle FrizzleBob's Tragic Flaws [`uncle_frizzlebob_s_tragic_flaws_id`] | 56 / 0 | 4383 → 4757 | 19, 0 Dubletten, Familien ok; „What if“ passt nicht; 10× Zeichensetzung | nein (TUNE) | 15 | 0 | Kleine Korrekturen. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 15,
+          "heading": "Ergebnis auf einen Blick"
+        },
+        {
+          "text": "- **Uncle FrizzleBob's Tragic Flaws** [`uncle_frizzlebob_s_tragic_flaws_id`]: **Kleine Korrekturen.** 15 TUNE (Shakespeare-Zitat fehlt in reinen Mechanik-Zeilen), Intro auf 3 Kartentitel kürzen. Details: `uncle_frizzlebob_s_tragic_flaws_id.review.md`.",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 28,
+          "heading": "Urteil je Deck"
+        },
+        {
+          "text": "- L1 intro: `Welcome to the Kult, Sheeple! Uncle FrizzleBob, Observationsökonomie, The Media Matrix.`",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 192,
+          "heading": "observation_underground (Observation Underground — ADD) – 3583 → 4078 chars"
+        },
+        {
+          "text": "- L2 #1 spoken_text: `Uncle FrizzleBob, Narrative Sabotage: ruin Big Tech's PR with sloppy bucket of watercolour ink.`",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 193,
+          "heading": "observation_underground (Observation Underground — ADD) – 3583 → 4078 chars"
+        },
+        {
+          "text": "- L57 #56 spoken_text: `Meanwhile elsewhere, Uncle FrizzleBob, Rule Breaker: play with corpses; you bought expansion.`  (triplet: `Uncle FrizzleBob, Rule Breaker: play with corpses; you bought expansion.`)",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 255,
+          "heading": "nibelungen_booster_pack_design (Nibelungen Booster Pack) – 4590 → 4914 chars"
+        },
+        {
+          "text": "## uncle_frizzlebob_s_tragic_flaws_id (Uncle FrizzleBob's Tragic Flaws) – 4383 → 4757 chars",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 259,
+          "heading": "uncle_frizzlebob_s_tragic_flaws_id (Uncle FrizzleBob's Tragic Flaws) – 4383 → 4757 chars"
+        },
+        {
+          "text": "- L1 intro: `Uncle FrizzleBob's Tragic Flaws. Reality is for cowards. Hamlet, Macbeth, Lear.`",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 260,
+          "heading": "uncle_frizzlebob_s_tragic_flaws_id (Uncle FrizzleBob's Tragic Flaws) – 4383 → 4757 chars"
+        },
+        {
+          "text": "- L57 #56 spoken_text: `Meanwhile elsewhere, Uncle FrizzleBob's Approval, Chaos: Shuffle all hands, redeal`  (triplet: `Uncle FrizzleBob's Approval, Chaos: Shuffle all hands, redeal`)",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 284,
+          "heading": "uncle_frizzlebob_s_tragic_flaws_id (Uncle FrizzleBob's Tragic Flaws) – 4383 → 4757 chars"
+        },
+        {
+          "text": "- L2 #1 spoken_text: `Uncle FrizzleBob's Meta-Cover, question reality; revolution won't be generated.`",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 287,
+          "heading": "epistemic_sabotage (Epistemic Sabotage: Let AI Read Your Comic) – 4296 → 4908 chars"
+        },
+        {
+          "text": "- L61 #60 spoken_text: `Uncle FrizzleBob's Megaphone, pick up pencils, hotwire algorithm.`",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md",
+          "line": 331,
+          "heading": "epistemic_sabotage (Epistemic Sabotage: Let AI Read Your Comic) – 4296 → 4908 chars"
+        },
+        {
+          "text": "| 2 | 1 | TUNE | Uncle FrizzleBob's Meta-Cover, Initiates protocol, question reality | Nur Etikett, Pointe fehlt. | Uncle FrizzleBob's Meta-Cover, question reality; revolution won't be generated. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/epistemic_sabotage.review.md",
+          "line": 27,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "| 61 | 60 | TUNE | Uncle FrizzleBob's Megaphone, Creators build own reading machines | Pointe fehlt. | Uncle FrizzleBob's Megaphone, pick up pencils, hotwire algorithm. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/epistemic_sabotage.review.md",
+          "line": 86,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "| 57 | 56 | TUNE | Meanwhile elsewhere Uncle FrizzleBob, Rule Breaker: change rule permanently | Pointe fehlt. | Meanwhile elsewhere, Uncle FrizzleBob, Rule Breaker: play with corpses; you bought expansion. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/nibelungen_booster_pack_design.review.md",
+          "line": 83,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "- Geliefert: „Observation Underground — ADD: Uncle FrizzleBob, Die Taschenspion, The Media Matrix.“",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/observation_underground.review.md",
+          "line": 11,
+          "heading": "Intro"
+        },
+        {
+          "text": "- Vorschlag (nur gedrucktes Material): „Welcome to the Kult, Sheeple! Uncle FrizzleBob, Observationsökonomie, The Media Matrix.“",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/observation_underground.review.md",
+          "line": 13,
+          "heading": "Intro"
+        },
+        {
+          "text": "| 1 | Intro | TUNE | Observation Underground — ADD: Uncle FrizzleBob, Die Taschenspion, The Media Matrix. | „— ADD“ ist ein Datei-/Produktionskürzel, nicht gedruckt, wird aber gesprochen; „Die Taschenspion“ steht so nicht im Druck („The Taschenspion“). Gedrucktes Cover-Motto ungenutzt. | Welcome to the Kult, Sheeple! Uncle FrizzleBob, Observationsökonomie, The Media Matrix. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/observation_underground.review.md",
+          "line": 27,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "| 2 | 1 | TUNE | Uncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions | Pointe fehlt (Eimer Wasserfarbe). | Uncle FrizzleBob, Narrative Sabotage: ruin Big Tech's PR with sloppy bucket of watercolour ink. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/observation_underground.review.md",
+          "line": 28,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "# WS0-Intake · Uncle FrizzleBob's Tragic Flaws [uncle_frizzlebob_s_tragic_flaws_id]",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/uncle_frizzlebob_s_tragic_flaws_id.review.md",
+          "line": 1,
+          "heading": "WS0-Intake · Uncle FrizzleBob's Tragic Flaws [uncle_frizzlebob_s_tragic_flaws_id]"
+        },
+        {
+          "text": "- Geliefert: „Uncle FrizzleBob's Tragic Flaws: Hamlet, Macbeth, Lear, Cleopatra, Queen Mab.“",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/uncle_frizzlebob_s_tragic_flaws_id.review.md",
+          "line": 11,
+          "heading": "Intro"
+        },
+        {
+          "text": "- Vorschlag (nur gedrucktes Material): „Uncle FrizzleBob's Tragic Flaws. Reality is for cowards. Hamlet, Macbeth, Lear.“",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/uncle_frizzlebob_s_tragic_flaws_id.review.md",
+          "line": 13,
+          "heading": "Intro"
+        },
+        {
+          "text": "| 1 | Intro | TUNE | Uncle FrizzleBob's Tragic Flaws: Hamlet, Macbeth, Lear, Cleopatra, Queen Mab. | Nicht erfunden, aber 5 Kartentitel statt 2–3. Gedrucktes Manifest (S. 1) ungenutzt. | Uncle FrizzleBob's Tragic Flaws. Reality is for cowards. Hamlet, Macbeth, Lear. |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/uncle_frizzlebob_s_tragic_flaws_id.review.md",
+          "line": 27,
+          "heading": "Zeilen"
+        },
+        {
+          "text": "| 57 | 56 | OK · Z | Meanwhile elsewhere Uncle FrizzleBob's Approval, Chaos: Shuffle all hands, redeal |  | Meanwhile elsewhere, Uncle FrizzleBob's Approval, Chaos: Shuffle all hands, redeal |",
+          "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/uncle_frizzlebob_s_tragic_flaws_id.review.md",
+          "line": 83,
+          "heading": "Zeilen"
+        }
+      ],
+      "src": "KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md:40; KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md:44; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:17; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:26; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:53; KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_WRITERS_ROOM_PLUGIN_R1.md:21; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:26; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:146; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:15; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:28; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:192; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:193 (+18)",
+      "status": "PREFILL"
+    }
+  },
+  "additions": {
+    "voice.engine": [
+      {
+        "v": "Kokoro-82M v1.0 ONNX",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+        "status": "SOURCE"
+      }
+    ],
+    "voice.spec": [
+      {
+        "v": "am_michael",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].voiceSpec",
+        "status": "GEORG"
+      }
+    ],
+    "voice.speed": [
+      {
+        "v": 1.0,
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].speed",
+        "status": "GEORG"
+      }
+    ],
+    "voice.lang": [
+      {
+        "v": "en-us",
+        "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].lang",
+        "status": "GEORG"
+      }
+    ]
+  },
+  "chatter": {
+    "family": {
+      "v": "metallisch · warm",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "SOURCE"
+    },
+    "instrument": {
+      "v": "Posaune mit Dämpfer",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "status": "SOURCE"
+    },
+    "style": {
+      "v": "warm, nah, trocken (Stand-up)",
+      "src": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:202",
+      "status": "SOURCE",
+      "note": null
+    }
+  },
+  "preferences": {
+    "weapons": {
+      "v": null,
+      "status": "todo"
+    },
+    "biome": {
+      "v": null,
+      "status": "todo"
+    }
+  },
+  "dioramas": [
+    {
+      "id": "resident-disco-01",
+      "role": "MC hinter der Drum Machine, Goth-Girl-Mikro links",
+      "localId": "mc",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.mc"
+    },
+    {
+      "id": "resident-disco-01",
+      "role": "mc",
+      "src": "KFB_HUB/65_SCENELETS/disco/concept.json#cast"
+    }
+  ],
+  "songs": [
+    {
+      "id": "help_i_am_a_human",
+      "role": "golden line source (card #55)",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/help_i_am_a_human.suno.txt",
+      "src": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].goldenLine"
+    },
+    {
+      "id": "wrinkle_rumble",
+      "role": "mentioned",
+      "file": "KFB_HUB/40_AUDIO/wrinkle_rumble__suno_01a/RETURN.md",
+      "line": 16,
+      "text": "- Erster Whisper-Lauf auf der Stimme mit dem Intro-Text als Prompt hat das Intro verschluckt; zweiter Lauf mit neutralem Prompt („Kayfabizarro. The Wrinkle-Rumble. Uncle FrizzleBob.“) liefert es. Beide Läufe liegen in transcript/.",
+      "src": "KFB_HUB/40_AUDIO/wrinkle_rumble__suno_01a/RETURN.md:16"
+    },
+    {
+      "id": "epistemic_sabotage",
+      "role": "card #1 'Uncle FrizzleBob's Meta-Cover'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json#cardNumber=1"
+    },
+    {
+      "id": "epistemic_sabotage",
+      "role": "card #60 'Uncle FrizzleBob's Megaphone'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json#cardNumber=60"
+    },
+    {
+      "id": "kayfabizarro_monomyth_mayhem",
+      "role": "card #32 'Uncle FrizzleBob'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json#cardNumber=32"
+    },
+    {
+      "id": "nibelungen_booster_pack_design",
+      "role": "card #56 'Uncle FrizzleBob (The Author)'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json#cardNumber=56"
+    },
+    {
+      "id": "observation_underground",
+      "role": "card #1 'Uncle FrizzleBob'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json#cardNumber=1"
+    },
+    {
+      "id": "uncle_frizzlebob_s_tragic_flaws_id",
+      "role": "card #56 'Uncle FrizzleBob's Approval'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json#cardNumber=56"
+    },
+    {
+      "id": "wrinkle_rumble",
+      "role": "card #48 'Uncle FrizzleBob's Exit'",
+      "file": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json",
+      "src": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json#cardNumber=48"
+    }
+  ],
+  "variants": [
+    {
+      "id": "kfb_disco_mc",
+      "type": "scene_variant",
+      "label": "FrizzleBob · MC am Pult (Disco K12)",
+      "card": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json",
+      "src": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json#id"
+    },
+    {
+      "id": "resident-disco-01_mc",
+      "type": "scene_variant",
+      "label": "FrizzleBob · DJ/MC",
+      "src": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json#cast.mc"
+    }
+  ],
+  "views": {
+    "dramatis_personae": {
+      "present": true,
+      "cacheId": "frizzlebob",
+      "characterSheet": true,
+      "figureCard": true,
+      "voiceMatch": true,
+      "cacheCommit": "a95c491f4996bf75428e2083f571abc15dca364d",
+      "src": "KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json"
+    }
+  },
+  "sourcesRead": [
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json",
+    "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/frizzlebob.figure.json"
+  ],
+  "fieldStatus": {
+    "identity.name": "filled",
+    "story.background": "filled",
+    "personality.quirks": "todo",
+    "dialogue.speechPatterns": "filled",
+    "voice.spec": "filled",
+    "chatter.instrument": "filled",
+    "preferences.weapons": "todo",
+    "preferences.biome": "todo",
+    "dioramas": "filled",
+    "memory.relationships": "todo",
+    "appearance.figureRefs": "filled",
+    "variants": "filled",
+    "performance.animations": "filled",
+    "songs": "filled"
+  },
+  "todoFields": [
+    "personality.quirks",
+    "preferences.weapons",
+    "preferences.biome",
+    "memory.relationships"
+  ],
+  "provenance": {
+    "_seedProvenanceCS": [
+      "CS-01",
+      "CS-02",
+      "CS-03",
+      "CS-06",
+      "CS-08",
+      "CS-11",
+      "CS-21",
+      "CS-23",
+      "CS-26",
+      "CS-47",
+      "CS-48",
+      "CS-50",
+      "CS-52",
+      "CS-53",
+      "CS-54",
+      "CS-55",
+      "CS-56",
+      "CS-60",
+      "CS-61"
+    ],
+    "additions.voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#engine.name",
+      "tag": "SOURCE"
+    },
+    "additions.voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].lang",
+      "tag": "GEORG"
+    },
+    "additions.voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].voiceSpec",
+      "tag": "GEORG"
+    },
+    "additions.voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].speed",
+      "tag": "GEORG"
+    },
+    "aliases": {
+      "source": "aliases.json (evidence per alias)",
+      "tag": "SOURCE"
+    },
+    "appearance.colours": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-54 rendering rule; CS-56; CS-60 §5.5 (Bible LOCK))",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.figureRef": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.figureRefs": {
+      "source": "figure card files (sha256 at build time)",
+      "tag": "SOURCE"
+    },
+    "appearance.figureStatus": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02 frizzlebob.figure.json#approval.status)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "appearance.outfits": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src Georg 17.10. (V-423))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.clayProfile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02 material.clayProfile (V-053/V-340))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "appearance.renderStyle.default": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "cards.performanceDecks": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src V-344)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "chatter.family": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "SOURCE"
+    },
+    "chatter.instrument": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187",
+      "tag": "SOURCE"
+    },
+    "chatter.style": {
+      "source": "KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:202",
+      "tag": "SOURCE"
+    },
+    "dialogue.catchphrases": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-50; CS-53; CS-47 /carny)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.interjections": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-56)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.languageOwner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-20)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.openers.preferred": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-50; V-344)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.registers": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.speechAvoid": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47 Layer Zero)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "dialogue.speechPatterns": {
+      "source": "KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:23; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:73; KFB_HUB/30_DECISIONS/replies/VOICE_CASTING_R1.md:76; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:82; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_VOICE_KONZEPT_R1.md:272; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:187; KFB_HUB/30_DECISIONS/replies/CHATTERBOX_SPEC_R2.md:202; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:31; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:32; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:33; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:34; ~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/bf45a7d5-f8c2-48e9-a282-8501ad5552e9/0d5cf01d-d047-405e-9af8-678a32ba2882/skills/frizzlebob-kayfabizarro/SKILL.md:35 (+14)",
+      "tag": "PREFILL"
+    },
+    "dialogue.tripletVoice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-03 (TRIPLET_SETS_R2/help_i_am_a_human #55))",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "dialogue.tripletVoice.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-11; V-231…V-235, V-266, V-275)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "dioramas": {
+      "source": "KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json; KFB_HUB/65_SCENELETS/disco/concept.json",
+      "tag": "SOURCE"
+    },
+    "identity.aliases": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02 aliases; CS-47; CS-55; CS-48 §4c)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.displayName": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47; CS-50)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.name": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.series": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47; CS-48; CS-51)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "identity.tier": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02 role; CS-03 tier)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "kind": {
+      "source": "S1 tier 'main · protagonist' / S6 tier main",
+      "tag": "PREFILL"
+    },
+    "lore.mentions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md:40; KFB_HUB/30_DECISIONS/replies/SONG_SPEC_R3.md:44; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:17; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:26; KFB_HUB/30_DECISIONS/replies/SUNO_NEXT_DECKS_R1.md:53; KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_WRITERS_ROOM_PLUGIN_R1.md:21; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:26; KFB_HUB/30_DECISIONS/replies/RESEARCH_FLUFF_LINGUISTICS_R1.md:146; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:15; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:28; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:192; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/batch8_ws0_intake/BATCH8_WS0_INTAKE.md:193 (+18)",
+      "tag": "PREFILL"
+    },
+    "memory.almanacHooks": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-50)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.beliefSources": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "memory.owner": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-20 memory.owner; CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.relationships": {
+      "source": null,
+      "tag": "todo"
+    },
+    "memory.rememberable": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-26 §10 C (NPC / SOCIAL MEMORY))",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.rules": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "memory.valuesLiveIn": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-26 §11)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.animations": {
+      "source": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json#clips",
+      "tag": "SOURCE"
+    },
+    "performance.danceAuditions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-23 dance table (FrizzleBob DJ/MC: Hip Hop A · Wave · Locking; MC/show-off phrase))",
+      "tag": "PREFILL",
+      "seedStatus": "DESIGN"
+    },
+    "performance.gait": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-08 §2b)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.idle": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-02 performance.idle)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "performance.kart": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src V-320)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "performance.lightByStoryMode.table": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-06 B1, rule 11; V-386, V-387)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "performance.presentationHints": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-08 (FB 47 Knochen); V-338 C)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.archetype.journeyFunction": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-21 §2)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.castRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-23; CS-47 /carny; CS-55)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.humour": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src V-344; CS-54; CS-52; CS-47)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "personality.personalityType": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47; CS-54)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "personality.petArchetype": {
+      "source": "Pet Studio + 3D TableDiorama KFB (WS0 FULL EXPORT)/kfb-pets.v5.json#pets.bunny.archetype",
+      "tag": "SOURCE"
+    },
+    "personality.quirks": {
+      "source": null,
+      "tag": "todo"
+    },
+    "personality.traits.method": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-52)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "preferences.biome": {
+      "source": null,
+      "tag": "todo"
+    },
+    "preferences.weapons": {
+      "source": null,
+      "tag": "todo"
+    },
+    "songs": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/help_i_am_a_human.suno.txt; KFB_HUB/40_AUDIO/wrinkle_rumble__suno_01a/RETURN.md; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json",
+      "tag": "PREFILL"
+    },
+    "story.background": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-50; CS-51; CS-54; CS-56)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "story.inWorldRole": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-21 §2, §5; V-240; V-344)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.loreStatements": {
+      "source": "KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/epistemic_sabotage.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/nibelungen_booster_pack_design.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/observation_underground.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/uncle_frizzlebob_s_tragic_flaws_id.hub.json; KFB_HUB/30_DECISIONS/replies/TRIPLET_SETS_R2/wrinkle_rumble.hub.json",
+      "tag": "PREFILL"
+    },
+    "story.openQuestions": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-60 §5.5; CS-61 l.121)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "story.place": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-48 §4)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "story.worldKnowledge": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-47; CS-55; CS-50)",
+      "tag": "SOURCE",
+      "seedStatus": "SOURCE"
+    },
+    "variants": {
+      "source": "KFB_HUB/50_BLENDER/K12/_work/disco_mc.figure.vor_floorlift.json; KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/data/resident-disco-01.json",
+      "tag": "SOURCE"
+    },
+    "voice.castingReason": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].reason",
+      "tag": "SOURCE"
+    },
+    "voice.engine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.goldenLine": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].goldenLine",
+      "tag": "SOURCE"
+    },
+    "voice.lang": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.sampleFile": {
+      "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json#figures[frizzlebob].file",
+      "tag": "SOURCE"
+    },
+    "voice.spec": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-03; V-308; V-324)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    },
+    "voice.speed": {
+      "source": "KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json (seed; src CS-03)",
+      "tag": "GEORG",
+      "seedStatus": "GEORG"
+    }
+  }
+}

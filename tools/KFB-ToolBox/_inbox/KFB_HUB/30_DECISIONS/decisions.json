@@ -11544,6 +11544,21 @@
    "applies": "ab sofort, je Owner"
   },
   {
+   "id": "V-804",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "DECISION",
+   "text": "FrizzleBob-Ohren (Georg q223, Bild im Anhang): Probe A gewählt, FB/R5/R8/FB_R8_probe_A11.glb (sha256 91092623…): die alten v5-Ohren unverändert, nur FBs linkes Ohr mit Meshys Biss; Maßstab der Figur bleibt. Parität gegen R5 und Biegeprobe (WSB) ohne Befund; Kanon eingetragen 25.10.: FB_CANON.json sha256 91092623…, Figurenkarten FIGURES_R1 und kfbanchors umgestellt (alte als *.vor_V804.json), GLB im privaten Branch assets/fb-canon (KFB-Stunt-Car-Race @3b6392de), FB-Sperre aufgehoben für genau diese Datei. Später TUNE am Biss: leicht seitlicher, runder Biss mit drei Bissrundungen, die äußeren kleiner. R7 (zwei Bisse, klobige Meshy-Ohren) verworfen (q221). Georg: keine Höhen-, Zahlen- oder Messfragen, nur Bild-Auswahl.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Biss, die vertraute Ohrform; Georg wählt nach Bild.",
+   "applies": "sofort, Biss-TUNE später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11656,7 +11671,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1337",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1338",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

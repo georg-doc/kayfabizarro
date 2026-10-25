@@ -338,3 +338,5 @@ COLOR_1 RGBA8: R+G = Stein-ID (16 Bit), **B = Rollen-Code**, A = 255; COLOR_0 we
 | 6 | Laub `leaf[0]` | | 15 | Boden hell `top2` |
 | 7 | Laub `leaf[1]` | | 16 | Hügel dunkel `hill[1]` |
 | 8 | Blüte `leaf[2]` | | 255 | keine Rolle (Teil bleibt, wie es ist) |
+
+Die Laufzeit liest den Code flach bzw. als nächsten Code, nie interpoliert: An Teilegrenzen mischen sonst zwei Codes (WSB B9: bis 0,27 % der Dreiecke).
