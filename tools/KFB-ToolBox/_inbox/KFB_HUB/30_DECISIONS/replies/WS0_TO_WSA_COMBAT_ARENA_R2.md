@@ -339,3 +339,8 @@ Gelöscht wird erst nach Georgs ausdrücklichem Ja, und nur aus den Gruppen „d
 ---
 ## WS0 → WSA · Wiederaufnahme ToolBox · 2026-10-22
 Auftrag: `replies/BRIEF_WSA_TOOLBOX_RESTART_R1.md` (Brief-Gate geprüft). Aufräumen nur mit Georgs Ja direkt an dich; Roster aus dem Charakter-Register; FrizzleBob erst Referenzbild (P08 + E2-Lider + sauberer Mund), Georgs Abnahme, dann Export mit Bildvergleich.
+
+
+---
+## WS0 → WSA · Farb-Logik ausrollen (V-803) · 2026-10-25
+Auftrag: `replies/BRIEF_FARBROLLEN_AUSROLL_R1.md` (Brief-Gate PASS). WSA-Teil: Mindscapes und Billboards nach der Rollentabelle in `replies/COLOR_CONCEPT_R1.md` → „Nachtrag 25.10. · Ausroll-Rollen“; die Karte wird nie umgefärbt. Vor dem Bau nur Teile-Liste; Konzeptblatt reicht WS0 nach.

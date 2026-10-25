@@ -293,3 +293,33 @@ Quelle: https://kayfabizarro.pages.dev/#kfb, CSS-Variablen der Seite. Je Modus g
 - Website: `#34576b`, `#b8901c` bzw. Ziffer `#8a6a16`, `#5b4470`.
 
 Die Website-Satt-Werte entsprechen teils den Druck-Tinten (zum Beispiel Tragic `#3e6a83`). WS0-Vorschlag: Website als Referenz (V-292), Druck v4 als Panel-Ton.
+
+## Nachtrag 25.10. · Ausroll-Rollen für alles im Bild (V-801, V-802, V-803)
+
+**Quelle der Farben:** die Biom-Palette des Ortes aus dem eingelockten Generator `kfb-cartoon-palette.js` (V-305/V-800). Im Spiel liefert `harmonyPalettes(seed)` in `src/look/biomeTerrain.js` je Biom die Rollen; `roles` sind die J17-Rollen, `envRoles` je Rolle drei Töne (hell, mitte, dunkel). Jedes Teil nimmt die Palette des Bioms, in dem es steht. Wo zwei Biome sich treffen, nimmt ein Teil die Palette des stärkeren.
+
+**Passend und surreal:** Jede Zeile nennt die Standardrolle. Surreal heißt: Ein Teil darf eine andere Rolle derselben Palette nehmen, etwa einen Stamm in Wahrzeichenfarbe. Eine Farbe außerhalb der Palette ist dagegen nie erlaubt. Gemalte Meshy-Texturen werden weiter nur sanft getönt (V-286).
+
+| Teil | Standardrolle (J17) | Hinweis |
+|---|---|---|
+| Gelände, sechs Fließbänder | `top`, `top2`, `hill[1]`, Mitte `hill`, `under[1]` (Erde 1), `sand` | V-801; Biom-Übergang Band für Band, keine Sprenkel (V-802) |
+| Baumkrone | `leaf[0]`, `leaf[1]`, Blüte `leaf[2]` | je Baum eine; Blüte selten |
+| Baumstamm | Laub-Rolle −105° und dunkler (J17-Regel) oder `trunk` | zwei Farben je Baum |
+| Busch | Blüte `leaf[2]` oder `leaf[0]` | |
+| Grasblatt-Gruppe, Pflanze | `leaf[0]`, Akzent `leaf[2]` | |
+| Stein, Fels, Formation | `rock`; Schichtlinie dunkler Ton der Rolle | Materialcode V-799 |
+| Wasser, Fluids | `water`; Kaugummi im Candy-Band, Säure im Gegenton (V-750) | ein Fluid-Shader, Rezepte je Biom in kfb_place, Owner WS1c |
+| Gebäude | Wand `hill[0]` oder `sand`, Dach `tower[0]`, Rahmen/Fenster `strang`, Sockel `under[1]`, Leiste `rock` | gemalte Meshy-Texturen nur sanft getönt (V-286) |
+| Diorama, Amphitheater | Boden `top`/`sand`, Ränge `hill`, Torbögen/Krone `tower`, Rahmen `strang`, Pfosten `trunk` | Amphitheater: Bögen nach Rollen umgefärbt (V-402, Ausnahme von V-286); Sprengsel steinweise über COLOR_1-Stein-IDs (V-406) |
+| Billboard | Rahmen `strang`, Pfosten `trunk`, Fläche `cloud`, Akzent `pad` | die Karte selbst wird nie umgefärbt (V-329) |
+| Mindscape | dieselben Rollen wie die Welt; Himmel `sky`, Wolken `cloud`, Wahrzeichen `tower` | Palette aus demselben Generator wie das Biom (V-800) |
+| OSM-Gebäude und Straßen | Gebäude wie oben; Straße `path` bzw. Fahrbahn fest (V-102) | |
+| Rauch, Dampf | hellster Ton der Rolle `cloud`, unten getönt mit der Quelle (Sud, Fluid, Boden darunter) | Form nach SPEC_CARTOON_VFX_SHAPES_R1 §2.1 |
+| Staub, Erdbrocken | `sand` bzw. `under[1]` des Bodens an der Stelle | |
+| Spritzer, Tropfen | `water` bzw. Fluid-Rolle der Quelle | |
+| Blätter, Blüten im Wind | Laub- und Blütenrollen der Bäume am Ort | |
+| Funken, Treffer, Pickup-Glanz | `pad`, `strang` | kein Emissive-Glühen (V-385) |
+
+**Ausnahmen (bleiben wie sie sind):** Fluff in den Story-Mode-Farben (V-305), Racer: Grund- und Nebenfarben auf die Biom-Rollen umgetönt, 1–2 Identitätsfarben bleiben (V-662), Schachfiguren in Edelstein-Material (V-460), die Karte (V-329), von Black Fluffern übernommene Häuser grau, bis sie befreit sind (V-625, V-629).
+
+**Owner:** WS0 Spiel-Welt (Gelände, Bewuchs, Steine); WS1 Laufzeit, Gebäude, Dioramen, VFX; WSB Blender-Bauteile (Vertex-Farbe nur als Rollen-Maske, Ton zur Laufzeit); WSA Mindscapes, Billboards.

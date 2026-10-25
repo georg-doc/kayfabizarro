@@ -53,3 +53,9 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **kfb-place** (V-748–V-755): Regeldatei `CANON_3D/lib/kfb_place.r1.json`, Löser `CANON_3D/lib/kfb-place-core.v1.mjs` + CLI `kfb-place.mjs` (Golden-Test), Konzeptblatt `replies/KONZEPTBLATT_KFB_PLACE_R1.md`. WSB Nachtrag 36 (N39) nach N35 D. P0-Frames bei Claude Design (b224).
 - **Claude-Design-Material immer über GitHub** `design/claude-design-r3/<ordner>` (hypernorm_r3, mib_turm_r1, kfb_place_p0), nie ZIPs.
 - Offen bei Georg zum Rausgeben: b214 (WSA), b222 + b224 (Claude Design), b223 (WS1 nur Schritt 0).
+
+## Stand 25.10. spät (V-797 … V-803)
+- **Welt-Farben:** V-800 Biom-Paletten aus dem Generator; V-801 J17-Bänder (Boden + Erde 1 + Sand) und zweifarbige Props; V-802 Biom-Übergang Band für Band, Sprenkel nur noch mit `biot=speckle`. Spiel @3512531, Standard `veg=cartoon`.
+- **V-803 Ausrollen:** Rollentabelle in `replies/COLOR_CONCEPT_R1.md` → „Nachtrag 25.10. · Ausroll-Rollen“; Brief `replies/BRIEF_FARBROLLEN_AUSROLL_R1.md` an WS1, WSA, WSB.
+- **FrizzleBob:** R7 abgelehnt (q221: zwei Bisse, Ohren klobiger als v5). WSB baut R8 mit Probe A (v5-Ohren + Biss links) und Probe B (Meshy unangebissen gespiegelt + Biss links), Brief `replies/BRIEF_WSB_FB_R8_OHREN_R1.md`. Vor dem Weitergeben: Biss je Ansicht zählen. FB-Lock bleibt.
+- **Offen im Stilbild:** Wiese zu gleichmäßig gefüllt (Modell R3: Ebenen und Kanten, wenig und groß); Asset-Register aller Nature-Kits für WFC.

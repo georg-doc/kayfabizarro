@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (25.10. spät) · Farb-Logik ausrollen (V-803)
+Auftrag: `replies/BRIEF_FARBROLLEN_AUSROLL_R1.md` (Brief-Gate PASS). Rollentabelle: `replies/COLOR_CONCEPT_R1.md` → „Nachtrag 25.10. · Ausroll-Rollen“. WS1-Teil: Gebäude, Amphitheater/Dioramen, VFX (Rauch, Staub, Spritzer, Blätter, Funken), Fluids (WS1c). Vor dem Bau nur Teile-Liste; Konzeptblatt reicht WS0 nach.
+
 # NEU OBEN (24.10. abends) · An ALLE (WS1 Lead und WS1b–e, WS-NPC, WS-Audio, Deck-Songs; WSA, WSB): Georg ist einige Stunden weg, Ziel morgen: spielfertige Version auf der GPT-Site (V-727)
 - **Arbeitet selbstständig und ohne Rückfragen.** Bei Unklarheit nehmt die vorsichtigere Lösung, haltet den Grund im Status fest und macht weiter. Wo Georg wählen soll, Varianten A/B nebeneinander liefern und den Standard unverändert lassen. Georg stimmt morgen mit WS0 ab.
 - **Blockiert etwas:** im Status als BLOCKED mit Ursache und kleinstem fehlenden Teil markieren und den nächsten Schritt nehmen. Nie warten.
