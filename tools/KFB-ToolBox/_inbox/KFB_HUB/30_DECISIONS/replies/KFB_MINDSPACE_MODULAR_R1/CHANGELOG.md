@@ -20,3 +20,11 @@
 - Located fresh external 2026 forest Splat demo claiming spatial audio+voiced points, SPHR browser Splat/garden source and a Three.js performance-warning comparison. These are **unverified integration leads**, not licensed donors or accepted performance.
 - Maintained Rick Rubin/Monroe/NATHAL/Grof/DMT code narrative boundaries, Schumann as EM vs acoustic analogy, no made-up EEG or laser-code empirical validation.
 - **First gate remains unchanged:** WS0 source-isolates original Lovable breathing app, original H13 visual and one genuine garden Splat/mesh reference; show beautiful source-faithful before adopting implementation. WS1 remains downstream.
+
+
+## 2026-10-25 · R3 · Embedded Globe.GL / three-globe as surreal Mindspace Meta-Worlds
+- Georg proposed Globe.GL **inside a Mindspace Sphere embedded in current KFB terrain**. Added [GLOBEGL_INNER_SPHERE_META_WORLDS_R3_2026-10-25.md](GLOBEGL_INNER_SPHERE_META_WORLDS_R3_2026-10-25.md) in the **same existing Mindspace research branch and PR #448**, retaining all current source/runtime owners.
+- Confirmed from official upstream documentation: standalone `globe.gl` wraps `three-globe` with own camera/renderer, while `three-globe` is a reusable Three.Object3D and `r3f-globe` an R3F child. For current WS1's R3F use the latter two only *as optional candidates* under the existing Canvas and world owner, not another running globe app.
+- Kept 4 open alternatives: small outer-view globe in the shell, custom inward-facing map dome, host-owned nested/meta scene transitions, or cheap hand-built procedural sphere with no globe library. Globe lat/lng coordinates may be editorial/semantic instead of real-world lat/lng. No second physics, audio, camera, quest, Card registry, runtime or Site.
+- **Evidence:** GitHub Mindspace architecture/Return/WS1 intake read, official library README/Globe.GL API verified. No actual sphere/object source isolation, code/build/running 3D view/compatibility profiling, browser/GPU/Stage/Site tests; all 0.
+- **Single next gate unchanged:** WS0 source-isolates existing Lovable, H13 and one beautiful authentic Garden/Creative Mindspace; Georg chooses first artistic direction, WS1 receiver API inquiry later. No auto merge/Live.
