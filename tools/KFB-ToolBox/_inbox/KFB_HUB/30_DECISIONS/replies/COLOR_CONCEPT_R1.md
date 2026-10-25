@@ -340,3 +340,5 @@ COLOR_1 RGBA8: R+G = Stein-ID (16 Bit), **B = Rollen-Code**, A = 255; COLOR_0 we
 | 8 | Blüte `leaf[2]` | | 255 | keine Rolle (Teil bleibt, wie es ist) |
 
 Die Laufzeit liest den Code flach bzw. als nächsten Code, nie interpoliert: An Teilegrenzen mischen sonst zwei Codes (WSB B9: bis 0,27 % der Dreiecke).
+
+**Nachtrag V-808 (WS0, 25.10.):** Auf Meshy-Bühnen trägt genau ein Fokus-Teil `pad`: der ganze Bühnen- bzw. Billboard-Rahmen mit Einfassung der Bildschirmkante (Bildfläche selbst ohne Rolle, V-329), ohne Rahmen das zentrale Wahrzeichen. Dort ist der Rahmen nicht `strang`. Für selbst gebaute Rahmen außerhalb der Meshy-Bühnen gelten die Tabellen oben unverändert.

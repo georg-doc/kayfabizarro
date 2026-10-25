@@ -11604,6 +11604,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-808",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Nachtrag zu V-806 nach Kritiker-Runde 3 (REWORK 23/24, kein Gewinn): Codes gelten je zusammenhängender Fläche (über Kanten verbunden, Normalen ≤ 35° vom Flächenmittel, Code = Mehrheit der Textur-Codes), auch für Sockel, Treppen, Felskörper und Kappen, nicht nur steile Wände. Fokus bleibt genau ein Teil je Bühne: ganzer Rahmen samt Bildschirmkante als eine Fläche, ohne Rahmen das zentrale Wahrzeichen; nur er trägt pad. Kritiker-Runde 4 erst nach Georgs Wahl zwischen (a) sanft (V-286, Deckel 18) und (b) Rolle voll (Zug 1,0) auf Meshy-Bühnen. Giza zurück aufs Konzeptblatt (WS0).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Codes folgten Texturflecken statt ganzen Flächen; sanft und Rolle erkennbar widersprechen sich auf Meshy-Texturen, das entscheidet Georg anhand der Bilder.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11716,7 +11731,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1341",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1342",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

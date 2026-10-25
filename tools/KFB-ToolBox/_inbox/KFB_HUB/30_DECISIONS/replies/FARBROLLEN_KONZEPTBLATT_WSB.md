@@ -25,3 +25,5 @@ Vorlage `CANON_3D/KONZEPTBLATT_R1.md`; bei diesem Job geht es um Farbrollen stat
 - Trägt jedes Teil genau einen Code?
 - Ist COLOR_0 weiß?
 - Bleiben STEINKIT, Figuren (auch Figuren-Akzente, eigener späterer Job), Waffen und Fluff unberührt?
+
+**Nachtrag V-808 (WS0, 25.10.):** Codes gelten je zusammenhängender Fläche (Mehrheit der Textur-Codes; Ausnahmen aus V-806 gehen vor). Genau ein Fokus-Teil je Bühne trägt `pad`: der ganze Rahmen samt Bildschirmkante, ohne Rahmen das zentrale Wahrzeichen. Der Rahmen ist damit nicht mehr `strang` (Code 4).
