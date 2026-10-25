@@ -1,7 +1,26 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §174.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§174 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §175.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§175 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 175 · 25.10. · Frage an WS0/Georg: Signatur-Deck für FrizzleBob und die Dark Fluffer (S3, Karte je Szene)
+
+- **Disco:** gelöst ohne Register-Änderung. Die sieben Tänzer haben über ihre Aliasse (`kfb_disco_*`) Signatur-Decks; WS-NPC nimmt sie in die Disco-Besetzung auf (hinter `#scenes=entwurf`), die Karte kommt vom ersten Tänzer mit Deck.
+- **Frage 1 – FrizzleBob** (`frizzlebob`, Disco-MC und Spielfigur) hat kein Signatur-Deck. Es gibt fünf FrizzleBob-Decks, die meisten gehören anderen Figuren:
+  - `frizzlebob_s_mission_control` (Lorekeeper)
+  - `frizzlebob_s_ego_mania_narcissist` (Vampire)
+  - `uncle_frizzlebob_s_tragic_flaws_id` (Skeleton Minion)
+  - `frizzlebob_s_kayfabizarro_kompendium_elender_wic` (frei)
+  - `uncle_frizzlebob_s_tragic_flaws_shakespeare` (frei)
+  
+  Bekommt FrizzleBob eines davon (z. B. das Kompendium) oder bleibt er ohne Deck, weil er als Spielfigur nur zuhört?
+- **Frage 2 – Dark Fluffer** (`q_<sorte>`, 15 Sorten nach K15) haben kein Deck:
+  - (a) ein gemeinsames Fluffer-Deck (welches?);
+  - (b) je Sorte ein Deck (PREFILL von Deck-Songs);
+  - (c) keine Karte, weil Fluffer nicht erzählen, sondern spucken.
+  
+  Lead-Empfehlung: (c) für jetzt; FrizzleBob das Kompendium.
+- Bis zur Antwort bleibt `karte = null` für beide.
 
 ## 174 · 25.10. · S1 build/Vorwärmen, S3 Mechanik + Konflikt-Typen gemergt (hinter Schaltern) · zwei Style-Frames bei Georg · Spiegel game/mvp-r1 @e7c4ce3
 
