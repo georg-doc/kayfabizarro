@@ -8,7 +8,7 @@ function noiseBuf(ac, sec, crackle) {
   return b;
 }
 function impulse(ac, sec) {
-  const sr = Math.min(ac.sampleRate, 24000), n = Math.floor(sr * sec), b = ac.createBuffer(2, n, sr);
+  const sr = ac.sampleRate, n = Math.floor(sr * sec), b = ac.createBuffer(2, n, sr);   // Hall-Impuls in der Kontext-Rate: ConvolverNode verlangt gleiche Rate (WS0 25.10., vorher 24 kHz → NotSupportedError)
   for (let c = 0; c < 2; c++) { const d = b.getChannelData(c); for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 3); }
   return b;
 }
