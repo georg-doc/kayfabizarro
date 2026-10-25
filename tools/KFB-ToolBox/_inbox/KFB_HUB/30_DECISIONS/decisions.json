@@ -11724,6 +11724,51 @@
    "applies": "später"
   },
   {
+   "id": "V-816",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "(nach V-817 nur Verbesserungs-Probe an Utopia und Theater, Georg wählt im Bild) V-814-Probe ohne Gewinn (K2 5,3 gegen 6,5). Grundsatzwechsel auf Meshy-Bühnen: keine Codes je Mesh-Teil mehr, sondern Textur-Farbcluster (4–6, OKLab) nach Flächenrang auf die Biom-Palette (60/30/10: Boden-Familie, strang, tower; weitere rock/sand/under[1]; grüner Bewuchs-Cluster leaf ohne Rang; pad nur am Fokus = ganzer Ornamentrahmen, V-808); grau/dunkel Boden-Familie mit gradient_map; Helligkeit und Zeichnung bleiben; Material-Option r816 im Kanon-Modul (Vorschlag). Grund: Meshy-Meshes ohne saubere Bauteile, top und hill[0] im selben Farbton → Monochrom-Violett, das Georg vermeiden will. Probe Theater, Utopia Stage, Nature, Gefängnis; K2 neu: gehört zum Biom, mehrere Palettenfarben, kein Monochrom; Gewinn ≥ 7. Mesa-Fokus = Kappe ≤ 10 %.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Code-Wege ohne Gewinn; die Farben der gemalten Textur tragen die Unterscheidung, die das Mesh nicht hat.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-817",
+   "date": "2026-10-25",
+   "area": "Farben",
+   "verdict": "DECISION",
+   "text": "Georg 25.10.: Utopia-Bühne aus der V-814-Probe (r814) PASS – Georgs Bildurteil vor dem Kritiker-Wert (K2 6). V-814-Weg bleibt und wird auf alle sauber einfärbbaren Bühnen und das Gefängnis ausgerollt; V-816 nur noch als Verbesserungs-Probe danach (Georg: „wenn ihr das noch verbessern könnt: gerne“). Golden Utopia r814; klare Fehler beheben (leaf nur Pflanzen, tower nur stehende Turm-/Säulenteile, ein Code über Komponenten auf durchgehenden Flächen, Theater-Fokus mit Kartuschen und Pfeilerfeldern), Mesa-Fokus Kappe ≤ 10 %. Bedingung (Georg): Bühnen müssen mit Terrain-Einbettung (V-341, V-711, V-716), modellierten Übergängen aus Steinen und Fragmenten (V-577/V-578) und Dünen-Logik prozedural in die endlose Welt integrierbar sein (Fahrplan 5b).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg nimmt Bilder ab; der Utopia-Stand trägt, also ausrollen statt den Ansatz zu wechseln.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-818",
+   "date": "2026-10-25",
+   "area": "Figuren",
+   "verdict": "BUILD",
+   "text": "Fahrzeug-Seele im Spiel (Georg q234: A Plakette, unten rechts über dem Radio; KB stumm = Plakette aus; auch im Fahrzeug-Dialog beim Rufen; gilt später für Genii Loci und alle Avatar-Vignetten): src/audio/vehicleSoul.js. 48 Clips (HeyGen, Whisper-geprüft) aus kayfabizarro assets/kfb-audio-r1 @e91cd27 soul/vehicle_soul_r1. Anlässe Ruf (beim Rufen statt des alten Clips, höchstens alle 5 min), Sprung (harte Landung nach Sprung), Rolle (Landung nach Fassrolle), Crash (harter Bandentreffer), Drift (≥ 1,5 s), Stille (75 s ohne Ereignis); je Anlass ohne Wiederholung bis alle gelaufen sind; höchstens ein Spruch pro Minute, 65 % der Ereignisse sprechen. Rahmen in der Grundfarbe des Wagens (bunteste häufige Texturfarbe), Sprechblase mit dem Spruch, Musik und Motor treten zurück. KB-Knopf neben dem Radio, Schalter soul=0. Spiel @031c61d.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Pilot muss im Spiel tragen, bevor Genii Loci und weitere Avatare dazukommen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11836,7 +11881,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1349",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1352",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
