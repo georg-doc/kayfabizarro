@@ -1,3 +1,8 @@
+
+## 2026-10-25 · V771 CLOSED · v8 platform-only login, exactv6content
+
+DisabledsecondaryBasicinWorkeronly;privateplatformpolicy1user0groupsunchanged,noenv/passwordmutation. Source2b7b91e2078ad43094437841a0534693738e25b0,v8deploymentappgdep_6add7f8c86108191885e69cba8b9b98aSUCCEEDED.52units+127byte-identicalnoBasiclocalresponsesPASS; actualGeorgbrowserloadswithoutsecondlogin; service-onlyroot200/nochallenge;4anonymous401/noBasicchallenge. SavedR3v7retainedNOTDEPLOYED. Return replies/WSA_TO_WS0_V771_PLATFORM_ONLY_RETURN_2026-10-25.md; nextGeorgR3preview. No newSite/merge/unrelatedchange.
+
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25 · WSA v6 LIVE / correctedR3 LOCALPREVIEW

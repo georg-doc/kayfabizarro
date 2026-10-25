@@ -1,3 +1,15 @@
+# CURRENT UPDATE · V-771 CLOSED · v8 LIVE · 25.10.2026
+
+**Additional Basic browser-login disabled; Georg-only platform access retained.** Newlivev8 contains exactv6gamepayload (127/127byte-identical), NOTR3. ProductiondeltaonlyWorkerflagandsecondaryauthhelper;52units+127localnoBasicresponsehashesPASS. ActualGeorgChromesessionloadswithoutsecondpassword; hostedplatform-service-only/noBasicroot200/nochallenge;fouranonymouspaths401/platformSign-in/nochallenge. Nativecustom1user0groups/envrevision1unchanged; no passwordset/reset.
+
+Project `appgprj_6ad2ac305b788191af0bdfc68823a300`; version8 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5225b990ecb08191a3cc1f881ea2c7ba`; source `2b7b91e2078ad43094437841a0534693738e25b0`; deployment `appgdep_6add7f8c86108191885e69cba8b9b98a`SUCCEEDED/fetched. SameURL https://kfb-ws1-staging.frizzlebob.chatgpt.site .
+
+Report: `replies/WSA_TO_WS0_V771_PLATFORM_ONLY_RETURN_2026-10-25.md`. SavedR3v7/originalpreviewretainednotdeployed; no unrelatedchange. **Nextgate: GeorgR3previewbeforeR3publication.** EarliernotesdescribingactiveBasicpromptorlivev6arehistorical;currentlivev8isv6contentwithV771authfix.
+
+---
+
+## Preserved prior Returns
+
 # CURRENT UPDATE · v6 LIVE / R3 LOCAL PREVIEW · 25.10.2026
 
 **Georg-only platform privacy gatePASS;v6publishedandhostedWalk→Drive→WalkPASS/no404. CorrectedR3savedv7NOTDEPLOYED.** Georg/WS0clarifiedV647=onlyGeorg; additionalBasicallpaths isdeferredbeforetesters,notcurrentblocker. FouranonymousHTTP401pathsandactualChromeincognitoSign-inconfirmed;custom1user0groupsunchanged.
