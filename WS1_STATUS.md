@@ -1,7 +1,35 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §172.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§172 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §173.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§173 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 173 · 25.10. · HUD Paket 7 (Georgs Wahl, HUD 3D Standard) · S1 Racer-Flug + Kapsel · Blasen meiden HUD · orbit-Test repariert · Spiegel game/mvp-r1 @4e9bf10
+
+- **HUD Paket 7 gemergt (mvp 6d73e41), jetzt Standard:**
+  - Boost A, Almanach A fest; B-Varianten und Schalter entfernt.
+  - Säule auch beim Fuß-Flug: neues `src/m1/hudTelemetry.js`, gleiche km/h-Umrechnung.
+  - Flughöhe über Grund aus `groundHeight` der aktiven Welt.
+  - **V-743 umgesetzt:** HUD 3D ohne Schalter, `hud=clay`/`hud=wood` als Vergleich in den Einstellungen.
+  - Kassette mit N33 `controlTheme` (von WSB geliefert, `assets/private` @0e630a3), CTL_FALLBACK entfernt.
+  - Tests c3b und combat prüfen jetzt Holz-Rucksack oder Truhe 20.
+  - Messung HUD Ø 0,077 ms; Desktop 55,5 fps mit 3D-/Knet-HUD gegen 60 mit Holz (geteilte GPU, im Auge behalten).
+  - **Konflikt in M1World `telemetry`** mit travel-s1 zusammengeführt: `carLive() ? M2STATE.telemetry() : Fuß-Flug-Telemetrie`.
+- **S1 Nachtrag gemergt (mvp 1e4a2dc, hinter `travel=1`):**
+  - Racer-Flug im Zustandsautomaten ohne `fly`.
+  - Die Kapsel fährt im Wagen ohne Kollider mit.
+  - Aussteigen per castDown auf alle Kollider.
+  - Offen: ElanRings-Strecke und StuntField mit `travel=1`; Richtung `build` in fluffSuck (an WS1d freigegeben, nur Mechanik bis zum Bild-Ja).
+- **Blasen meiden die HUD-3D-Münzreihe** (ws-npc/phase-a @e84c93b → mvp b14cca3). Mit HUD 3D als Standard war `talk` (E_notOverHud) rot, jetzt grün.
+- **orbit-Test repariert (Lead, 86bfbf3):** `calmAfterRelease` verlangte je Bild höchstens +5 %; unter Last schwankt die Bildzeit.
+  - Gemessen klingt die Kamera sauber ab (Schritte 1,9e-4 → 7,4e-6).
+  - Jetzt bis ×1,5 je Bild erlaubt, „schon in Ruhe“ zählt als ruhig. 3 von 3 PASS. **Damit ist der Wackler aus §170 erledigt.**
+- **Prüfung:**
+  - Reihe auf 6d73e41: 78 PASS, rot waren c2, c3g (alt), orbit und talk (beide behoben).
+  - Nach den Merges PASS: talk, s1-travel, audio-travel, hud-3d, s5a, vehicles-r1 data.
+- **Spiegel:** game/mvp-r1 **@4e9bf10** (privat), ws1/mvp-r1 c3fdd1e88 (öffentlich, private Pfade = 0).
+  - Das Site-Paket R2 (`site/mvp-r2-dist`) enthält Paket 7 noch nicht. Wer baut R3 (§171)?
+- **Hub-Paket** `abnahme/ws1` @19e9ef4: Paket 7 nach Georgs Wahl (Frage „passt das so?“); S1-Storyboard steht oben.
+- **Neu bei WS1e als Style-Frame (V-740):** Flug-Block Ladungen | Höhe | Tempo statt der goldenen Elan-Ladungs-Kugeln (`ElanRings.jsx`, Platzhalter); Kesseldruck P als Füllung oder weg; Ringkurs-Zeit mit eigenem Platz. Danach das Fahrzeug-Symbol.
 
 ## 172 · 25.10. · S1 Mechanik und S2 Musik gemergt (hinter Schaltern) · S1-Bild-Paket im Hub-Paket · Spiel-Stand game/mvp-r1 @d5f18b0
 
