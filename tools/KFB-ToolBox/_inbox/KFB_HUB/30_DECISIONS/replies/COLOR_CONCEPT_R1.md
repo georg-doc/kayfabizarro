@@ -323,3 +323,18 @@ Die Website-Satt-Werte entsprechen teils den Druck-Tinten (zum Beispiel Tragic `
 **Ausnahmen (bleiben wie sie sind):** Fluff in den Story-Mode-Farben (V-305), Racer: Grund- und Nebenfarben auf die Biom-Rollen umgetönt, 1–2 Identitätsfarben bleiben (V-662), Schachfiguren in Edelstein-Material (V-460), die Karte (V-329), von Black Fluffern übernommene Häuser grau, bis sie befreit sind (V-625, V-629).
 
 **Owner:** WS0 Spiel-Welt (Gelände, Bewuchs, Steine); WS1 Laufzeit, Gebäude, Dioramen, VFX; WSB Blender-Bauteile (Vertex-Farbe nur als Rollen-Maske, Ton zur Laufzeit); WSA Mindscapes, Billboards.
+
+### Rollen-Codes im COLOR_1-Kanal (V-406-Format, Erweiterung 25.10.)
+COLOR_1 RGBA8: R+G = Stein-ID (16 Bit), **B = Rollen-Code**, A = 255; COLOR_0 weiß. Die Codes 0–5 sind die von B9 und bleiben unverändert.
+
+| Code | Rolle | | Code | Rolle |
+|---|---|---|---|---|
+| 0 | Boden `top` | | 9 | Stamm `trunk` (Laufzeit darf die J17-Stammregel nehmen) |
+| 1 | Türme/Bögen `tower` | | 10 | Sand `sand` |
+| 2 | Ränge/Stufen/Wand `hill[0]` | | 11 | Erde/Sockel `under[1]` |
+| 3 | Fels `rock` | | 12 | Wolke/Fläche `cloud` |
+| 4 | Rahmen `strang` | | 13 | Wasser/Fluid `water` |
+| 5 | Akzent `pad` | | 14 | Weg `path` |
+| 6 | Laub `leaf[0]` | | 15 | Boden hell `top2` |
+| 7 | Laub `leaf[1]` | | 16 | Hügel dunkel `hill[1]` |
+| 8 | Blüte `leaf[2]` | | 255 | keine Rolle (Teil bleibt, wie es ist) |
