@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (25.10. spät) · Farbrollen: feste Deckel-Regel für die Laufzeit (V-806)
+Tönung der Rollen-Teile: Meshy Zug 0,8, Kit 0,85, Helligkeit bleibt (nur Fokus-Teil Code 5 zieht auch die Helligkeit). Zug je Teil senken, bis das geschätzte ΔE00 ≤ 18 ist: Bild-ΔE00 ≈ (0,0090·L*_Albedo + 0,385) × Albedo-ΔE00, linear gerechnet (8-Bit-Texturen sind sRGB-kodiert). Herleitung und Werte: `50_BLENDER/V803_FARBROLLEN/DECKEL_REGEL_WS1.md`. Codes flach lesen (siehe COLOR_CONCEPT_R1).
+
 # NEU OBEN (25.10. spät) · FrizzleBob kanonisch (V-804)
 FB_CANON: `50_BLENDER/FB/R5/R8/FB_R8_probe_A11.glb`, sha256 `91092623d2103a712d9ce55f3fe3648698e896fe3e134492bcbab65bdd448c35`, im privaten Branch `assets/fb-canon` (KFB-Stunt-Car-Race) samt Karten und Guard. Figurenkarte `FIGURES_R1/figures/frizzlebob.figure.json` zeigt darauf. Nur diese Datei ist FB; jede andere wird abgewiesen. COLOR_1-Rollen-Codes flach lesen (nächster Code, nie interpolieren).
 
