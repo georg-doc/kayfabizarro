@@ -34,6 +34,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-794 Kritiker N40 R1: Form-DNA, Waldrand überlappt, Licht-Nester, Fokus/Echo-Fluff, Fallobst kurz, Moos-Fugen, Weg-Kern am Stumpf, Lesesteine; Boden #7e984d, bark 0,7, Kontaktton in Blender. P0 6965f6fa.
 - V-795 Kritiker N40 R2: ein Fokus am Stumpf, Fallobst daraus, Echo dunkler/kleiner, Holz/Kiesel getrennt, Weg-Kern länger, Lesesteine am Hang; Kontaktton Licht halb/Schatten voll, Quaternius glatt. P0 44879a71.
 - V-796 Stopp-Bericht P0: Fuß-Steinchen an Stützen/Echos, Erdkeil-Platzhalter Blender, Echo-Holz 0,6, kein Moos-Hohlstamm; Formsprache als q211 an Georg; Stückgrößen ≥ 0,04–0,05 m, Erdkeil-Maß Kanon; Kontaktfenster ≤ 0,48. P0 479e6a60.
+- V-797 Georg-FAIL Welt/P0: Fließbänder zurück, Clutter raus, P0 pausiert; Modell R2 (Zonen, Massen, Formationen) als q213; FB-Ohr als q212.
 - V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
 - V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
 - V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.

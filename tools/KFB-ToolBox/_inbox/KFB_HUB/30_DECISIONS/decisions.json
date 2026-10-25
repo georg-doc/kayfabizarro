@@ -11439,6 +11439,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-797",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg q210/q211 FAIL („Farbbänder fast weg“, „keine natürlichen Verteilungsmuster“, „schlampig gebastelt, unzählige kleine Steine → Materialcodes, kein Clutter“, „falsche mentale Modelle“, „schaut euch die Creator-Videos an“). Sofort: terrain3-Fließbänder wieder Standard (ground=tone nur Vergleich). Kontaktsteinchen, Fußsteinchen und Moosfugen als Objekte sind gestrichen, Kontakt wird Materialcode. P0/N40 pausiert. Neues Modell nach Kays Video und den Pack-Samples (replies/MENTALES_MODELL_WELT_R2.md): Materialzonen im Boden, Waldmassen mit Saum, Fels nur als Formation an Geländekanten, wenige Story-Akzente; liegt Georg als q213 vor, erst danach ein Stilbild.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wir haben KayKit nie angesehen und Mikro-Grammatik poliert; das Bild der Vorlage ist Zonen und Massen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11551,7 +11566,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1328",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1329",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
