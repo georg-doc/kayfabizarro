@@ -1,7 +1,32 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §173.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§173 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §174.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§174 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 174 · 25.10. · S1 build/Vorwärmen, S3 Mechanik + Konflikt-Typen gemergt (hinter Schaltern) · zwei Style-Frames bei Georg · Spiegel game/mvp-r1 @e7c4ce3
+
+- **S1 (WS1d, hinter `travel=1`):**
+  - `fluffSuck` Richtung `build` (V-533; Lead-Modul, additiv, `suck` nachweislich bytegleich: 10 Kugeln × 150 Bilder identisch, c3s PASS).
+  - `travelFluff.js`: Das Auto wächst und schrumpft mit den Kugeln; die Kugeln selbst sind nur mit `travelfx=1` sichtbar.
+  - Vorwärmen des gewählten Racers (mvp 15ac174).
+  - `CLAY_HOST.travelState()` als Lese-Haken fürs Fahrzeug-Symbol.
+  - **WS1d pausiert bis Georgs Bild-Ja zum S1-Storyboard.**
+- **S3 (WS-NPC, hinter `#scenes` bzw. `#scenes=entwurf`):**
+  - Platzhalter-Raster `sceneGrid` mit der Schnittstelle für WS1bs Raster.
+  - Typen in `kfb.scene/1` (Entwurf): Bewohner, Band, Disco, **Patrouille, Fluffer**; Freigabe-Status überall „entwurf“.
+  - Regie R0 `sceneDirector` (Takt, Phasen, Kegel voraus, τ in der Konflikt-Phase ≈ 0,8).
+  - `sceneHost` mit Abbau nur hinter dem Spieler und Protokoll je Szene (Beleg fürs Gedächtnis).
+  - Signatur-Karte je Szene. **Disco und Fluffer haben kein Signatur-Deck im Register (Karte = null). Bitte im Register ergänzen oder bestätigen, dass sie keins bekommen.**
+  - Ehrlich: Die Plätze aus dem Platzhalter-Raster liegen in der hügeligen Probe-Welt oft am Hang, die Band kommt gar nicht (< 1,1°). Vorzeigbar erst mit WS1bs Auftrags-Hügeln (V-716), daher noch keine Bilder an Georg.
+- **Zwei Style-Frames bei Georg** (V-740, nicht gebaut; Abnahme-Seite v56, `abnahme/ws1` @98c782b):
+  - Fahrzeug-Symbol A Aktionsplatz / B neben der Truhe (Empfehlung B, Taste J).
+  - Flug-Block Ladungen | Höhe | Tempo statt der Elan-Platzhalter-Kugeln, Kesseldruck Füllung oder weg (Empfehlung weg).
+  - Lese-Haken Elan (charges, thrill, P, boil, Ringzeit) für WS1e freigegeben, nur lesend.
+- **Prüfung:** Reihe auf 15ac174: 79 PASS.
+  - Rot waren c2 und c3g (alt), dazu `scenes` (alter Build mit neuer Testdatei, nach Neubau PASS) und `audio-remote` (normalFirstHost, Netz; zweimal nachgeprüft PASS).
+  - Nach den Merges PASS: scenes, talk, patrol, fluffers, s1-travel, vehicles-r1 data, c3s, audio-travel, hud-3d.
+- **Spiegel:** game/mvp-r1 **@e7c4ce3**, ws1/mvp-r1 40dfc11d9 (private Pfade = 0).
+- **Engpass:** WS1b hängt weiter an einer Freigabe in seinem Fenster. Schritt 0 (R1.7 + Lückenliste), S2 und das echte S3-Raster sind dadurch offen.
 
 ## 173 · 25.10. · HUD Paket 7 (Georgs Wahl, HUD 3D Standard) · S1 Racer-Flug + Kapsel · Blasen meiden HUD · orbit-Test repariert · Spiegel game/mvp-r1 @4e9bf10
 
