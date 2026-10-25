@@ -1,0 +1,115 @@
+{
+  "schema": "kfb.mvp-site-r2-hosted-evidence/1",
+  "date": "2026-10-25",
+  "status": "BLOCKED_ALL_PATH_PASSWORD_SITE_V4_RESTORED",
+  "owner": "KFB · WS1 Staging",
+  "project_id": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+  "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+  "r2": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "site/mvp-r2-dist",
+    "commit": "e76c26a6891d023aac6f2ed5f26c2fd87c9f54de",
+    "verifiedFiles": 127,
+    "verifiedBytes": 47782500,
+    "manifestSha256": "23287570225fff54c99b52accd00ce4b3f8c185e625f578411107d8e8558ee93"
+  },
+  "candidate": {
+    "source": "d1b307563e5f55ce096a7b6bf3d16e09cea4d71c",
+    "version": 5,
+    "version_id": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_5d278484d3c88191b93e87b9c1109a69",
+    "deployment": "appgdep_6add59b278d0819180687571b757519b",
+    "archiveBytes": 49336320,
+    "archiveFiles": 195
+  },
+  "tests": {
+    "sourceHashes": {
+      "passed": 127,
+      "failed": 0
+    },
+    "unit": {
+      "passed": 30,
+      "failed": 0
+    },
+    "localHttp": {
+      "passed": 137,
+      "failed": 0
+    },
+    "hostedFirstSmoke": {
+      "passed": 133,
+      "failed": 3,
+      "notes": "Full worker-smoke recorded3failures: internalindexunauthredirect, exposedgenerated_headers differsfromdelivered_headers,indexredirect. Focusedprobes thenprovedactualTier0staticbypass."
+    },
+    "hostedFocused": [
+      {
+        "path": "/",
+        "basic": false,
+        "status": 401
+      },
+      {
+        "path": "/",
+        "basic": true,
+        "status": 307,
+        "location": "/game-package/"
+      },
+      {
+        "path": "/game-package/",
+        "basic": false,
+        "status": 200,
+        "cache": "public, max-age=0, must-revalidate"
+      },
+      {
+        "path": "/game-package/index.html",
+        "basic": false,
+        "status": 307,
+        "location": "/game-package/"
+      },
+      {
+        "path": "/game-package/assets/hero-Cg69yYuF.glb",
+        "basic": false,
+        "status": 200,
+        "cache": "public, max-age=0, must-revalidate"
+      },
+      {
+        "path": "/assets/hero-Cg69yYuF.glb",
+        "basic": true,
+        "status": 206,
+        "range": "bytes 0-15/3613268"
+      }
+    ],
+    "scope": "Hosted probes used legitimate Sites service access but omitted Basic credentials where noted. Owner-private platform policy unchanged; NOT proof of public-internet exposure."
+  },
+  "browser": {
+    "localNakedUrl": "PASS expected #m1,harvest,look=terrain3,world=probe,hud=3d; actual terrain/character/HUD visible",
+    "hostedNativePassword": "PASS normalChrome nativeBasicdialog; authenticatedrootredirectedtointernalfolder",
+    "fps": {
+      "frames": 300,
+      "meanCallbackFps": 29.2,
+      "p95FrameMs": 107.6,
+      "scope": "local first300 browserrAFcallbacks includingstartup; notengine-renderFPS nor60FPSacceptance"
+    },
+    "fullGameplayAudio": "NOT ACCEPTED: no fabricated audio hearing, combat, drive or clean-console pass; stopped at mandatoryprotectiongate."
+  },
+  "rollback": {
+    "version": 4,
+    "source": "fbabbad7b8efa98c9071fccb358e4fb4788ec826",
+    "version_id": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_d6686f7206a88191b4e85ac0373c0d63",
+    "deployment": "appgdep_6add5ad182f48191aff724c719771ff0",
+    "status": "succeeded",
+    "visibleProof": "Browser shows original WS1Staging interface after reload"
+  },
+  "r3": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "site/mvp-r3-dist",
+    "commit": "18ad81d25e8f560124f5104c5aa1832f3a445c68",
+    "readme": "READ",
+    "manifestLines": 629,
+    "status": "QUEUED_NOT_DOWNLOADED_BUILT_OR_PUBLISHED_R2_FIRST"
+  },
+  "independent": {
+    "tester": "127/127sourcehashes andrequirements",
+    "critic": "26unitchecks/sourceprotectionconfiguration",
+    "guard": "STOP acceptance/R3; restorev4 duehostedpasswordbypass"
+  },
+  "secrets": "Native SITE_USER/SITE_PASS secret revision1, values omitted. No token requested or persisted.",
+  "nextGate": "Sites runtime must honor all-path Worker-first/static-gating for this SAME owner-private project; reverify no-Basic denial of direct internal assets before reattempting R2 then R3."
+}
