@@ -78,3 +78,11 @@
 - Site version `appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_77727ba7f7248191bf12eb7e13cad587`, deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500`: SUCCEEDED;
 - World/Billboard integration is prepared but not performed; no Cloudflare, merge or Live promotion;
 - next gate `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01`.
+
+
+## 2026-10-26 · Nature Orchestra additive source-research + VS0 brief
+- Added sibling `nature-orchestra/` research packet via Draft PR #453 (stacked on existing Audio Site PR #350), without Audio Site/runtime/catalog/source mutation.
+- 13 per-file CC0-page candidates, 0 downloads/hash/audio acceptance; NPS public-domain gallery and non-CC0 archive license distinctions.
+- Proposed ecological non-repetitive Nature Conductor using existing `GLOBAL_BED` / `LOCAL_AMBIENCE` / spatial `WORLD_SFX`, controlled by real biome/weather/day-night state; optional Web Audio AudioWorklet and Tone.js/Three.js pad/spatial helpers alongside existing Sonus/Suno/Stems.
+- VS0 source-isolated forest intake, ElevenLabs prompts only as candidates, static checks 17/17 PASS, browser/audio QA 0, Site/Stage/Live 0.
+- No primary parent product gate change; side-lane next gate in `nature-orchestra/RETURN_R1.md`.
