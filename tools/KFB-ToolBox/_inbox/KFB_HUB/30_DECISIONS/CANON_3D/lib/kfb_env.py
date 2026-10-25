@@ -16,6 +16,8 @@
 #                 "material": "kfb-clay.v1.1/<profil>", "baked_light": false, "color": "#rrggbb" (Rollenton),
 #                 "meaning": "ziel|gefahr|interaktion|figur|erzählkern" (Pflicht bei role accent), "asset_pass": "<pfad>.asset_pass.json" (Pflicht bei Kit/Meshy) }] }
 import json, math, random, os
+# r3 (WSB, V-763, Freigabe über WS0): ENV-KONTAKTFENSTER nur für Anker und frei stehende Objekte (Slots in CONTACT_SHARED teilen den Kontakt des Ankers); H5 nur für Landmarken,
+#   ein Fokus (scene.focus oder Slot focus) erfüllt die Benennung ohne Höhenregel, Ü6-Ring auch um den Fokus; Ü3 mit Slots nur über Stützen und Akzent; H9 ohne Mikro-Ebene (Kiesel, Kontakt); neighbourSpread erst ab n = 3. Stand davor: kfb_env.r2_vor_V763.py
 # r2 (WSB N39, Nachtrag 36, Freigabe über WS0, Georg q201): Zahlen kommen aus der einen Regeldatei CANON_3D/lib/kfb_place.r1.json (rules.sink, sink_cap,
 #   group, nest, zone, contact, ordered, lean, biography, gates_prefix). Die Konstanten unten bleiben nur als Rückfall (mit Warnung, V-749 Nr. 9).
 #   Gate-Codes tragen das Präfix ENV- (alter Code in Klammern), neu: ENV-ORDNUNG, ENV-KONTAKTFENSTER, ENV-LEHNE-Ü1…Ü7, ENV-BIOGRAFIE (Schichten, Signatur, Spuren).
@@ -35,7 +37,7 @@ LAYERS = {1: 'Entstehen', 2: 'Nutzen', 3: 'Vergehen', 4: 'Bewachsen'}
 ROLES = {'ground', 'stone', 'bark', 'leaf', 'grass', 'bloom', 'accent', 'prop', 'figure', 'water'}
 CONCEPT_FIELDS = ('one_sentence', 'story', 'image_idea', 'focal', 'space', 'color_script', 'form_dna', 'life_anchor', 'palette_roles', 'material_codes', 'biography', 'story_beat')
 ENV_KINDS = {'rock', 'rockgroup', 'tree', 'bush', 'grass', 'prop', 'building', 'stone_L', 'stone_M', 'stone_S', 'fluff', 'water_plant', 'path_stone', 'rubble', 'dust'}   # r2: + path_stone, rubble, dust (rules.sink)
-CONTACT = dict(perimeter=(0.40, 0.50), gap_min=0.25); ORDERED = dict(gap_min_m=1.2, skip=['odd', 'collinear']); LEAN = dict(lean_tol=15, lean_exc=(25, 45), pebble_tilt=(15, 0.20), grass_gap=0.25,
+CONTACT = dict(perimeter=(0.40, 0.50), gap_min=0.25); CONTACT_SHARED = ('support', 'accent', 'pebble', 'echo', 'path', 'contact', 'fluff_hero', 'fluff_side', 'find'); ORDERED = dict(gap_min_m=1.2, skip=['odd', 'collinear']); LEAN = dict(lean_tol=15, lean_exc=(25, 45), pebble_tilt=(15, 0.20), grass_gap=0.25,
     primary_max=3, height_tol=0.10, focal_ring=0.5, interact_free_H=1.0, tree_lean=(0.2, 0.4)); BIO = dict(layers_required=[1, 2, 3, 4], signature='1 Hero + 2 Echos', wear_marks_min=2); PREFIX = 'ENV-'
 WARN = []
 KEY_MAP = {'overlap': 'rules.group.overlap_max', 'air': 'rules.group.air_min', 'spread': 'rules.group.spread_pair_min', 'size_tol': 'rules.group.size_tol', 'spread_tune': 'rules.group.spread_tune',
@@ -135,7 +137,7 @@ def rule_report(items, R=RULES):
         seen.add(key)
         if abs(r[i] - r[j]) / max(r[i], r[j]) < R['size_tol']: same += 1
     fin = [d for d in nnd if math.isfinite(d)]; mx = max(fin) if fin else 0
-    spread = (mx - min(fin)) / mx if len(fin) >= 2 and mx > 0 else 1.0
+    spread = (mx - min(fin)) / mx if len(fin) >= 3 and mx > 0 else 1.0   # r3: bei n = 2 sind beide Nachbarabstände gleich (Spread immer 0) – nicht messbar, kein FAIL
     near = lambda a, b: _d2(P[a], P[b]) <= R['neighbour_r'] * (r[a] + r[b]) / 2
     lines = 0
     for m in range(n):
@@ -233,7 +235,8 @@ def gate(scene, R=RULES):
     if ns is not None and ns < R['neg_space']: F('H3', f'Negativraum {ns:.0%} < 30 %')
     # H5 Landmarke höchstes Element, nichts davor > 60 %
     lm = next((o for o in objs if o.get('id') == scene.get('landmark')), None)
-    if env and not lm: F('H5', 'keine Landmarke/Fokus benannt')
+    fo = next((o for o in objs if o.get('id') == scene.get('focus') or o.get('slot') == 'focus'), None)   # r3 (V-763): Fokus ohne Höhenregel; H5 gilt nur für Landmarken
+    if env and not lm and not fo: F('H5', 'keine Landmarke/Fokus benannt')
     elif lm:
         top = lambda o: (o.get('ground_z', 0) + o.get('h', 0) - max(0, o.get('ground_z', 0) - o.get('bottom_z', o.get('ground_z', 0))))
         higher = [o['id'] for o in env if o is not lm and top(o) > top(lm)]
@@ -250,7 +253,7 @@ def gate(scene, R=RULES):
     if len(echo) > 2: F('S5', f'{len(echo)} Echos (max 2)')
     # H9 ein Kit je Gruppe, H11 keine geklonten Nachbarn, Formwiederholung ≤ 3
     for k, v in groups.items():
-        kits = {o.get('kit') for o in v if o.get('kit')}
+        kits = {o.get('kit') for o in v if o.get('kit') and o.get('slot') not in ('pebble', 'contact') and o.get('kind') != 'contact'}   # r3 (V-763 e): Kiesel/Kontakt = Mikro-Ebene, Steinkit erlaubt
         if k != '_ohne' and len(kits) > 1: F('H9', f"Gruppe {k}: Kit-Mix {sorted(kits)}")
     for i, a in enumerate(env):
         for b in env[i + 1:]:
@@ -297,9 +300,10 @@ def _extended(scene, objs, env, groups, ordered_groups, F, find, H):
             if a.get('asset') and a.get('asset') == b.get('asset') and abs((a.get('rot_z', 0) - b.get('rot_z', 0) + 180) % 360 - 180) < 5 and mem.index(b) > i: F('ENV-ORDNUNG', f"gleiche Nachbarn {a['id']} / {b['id']}")
         if a.get('h') and not [q for q in objs if q is not a and q.get('h', 0) < 0.35 * a['h'] and _d2(q['c'], a['c']) <= a.get('r', 0) * 1.5 + 0.5 * H]: F('ENV-ORDNUNG', f"{a['id']}: keine Kontakt-Geometrie an der Fuge")
     # ENV-KONTAKTFENSTER · Kontakt auf 40–50 % des Umfangs, größte Lücke ≥ 25 % (kein Kranz)
+    #   r3 (V-763, rules.contact.applies_to): gilt für Anker und frei stehende Objekte; Stützen, Akzente, Kiesel und Echos im Nest teilen den Kontakt des Ankers (Slot aus dem Rezept, kfb_role_slot)
     for o in env:
         cs = [q for q in objs if q.get('kind') == 'contact' and q.get('group') == o.get('group') and _d2(q['c'], o['c']) <= o.get('r', 0) * 1.6 + 0.3 * H]
-        if len(cs) < 2 or o.get('kind') in ('fluff', 'grass', 'path_stone', 'dust'): continue
+        if len(cs) < 2 or o.get('kind') in ('fluff', 'grass', 'path_stone', 'dust') or o.get('slot') in CONTACT_SHARED: continue
         cov, gap = _arc_cover(o['c'], o.get('r', 1.0), cs); lo, hi = CONTACT['perimeter']
         if not (lo - 0.02 <= cov <= hi + 0.02) or gap < CONTACT['gap_min']: F('ENV-KONTAKTFENSTER', f"{o['id']}: Kontakt deckt {cov:.0%} des Umfangs (Soll {lo:.0%}–{hi:.0%}), größte Lücke {gap:.0%} (Soll ≥ {CONTACT['gap_min']:.0%})")
     # ENV-LEHNE · Ü1–Ü7 (CANON_3D/EINARBEITUNG_WS1_R1.md); fehlen die Messwerte im Export, ist es ein Befund (nicht messbar), kein FAIL
@@ -320,7 +324,8 @@ def _extended(scene, objs, env, groups, ordered_groups, F, find, H):
         if sum(1 for o in v if o.get('keystone')) > 1: F('ENV-LEHNE-Ü2', f"Gruppe {k}: mehr als 1 Schlüsselstein")
         forms = {o.get('form') for o in v if o.get('form')}
         if len(forms) > LEAN['primary_max']: F('ENV-LEHNE-Ü3', f"Gruppe {k}: {len(forms)} Primärformen (≤ {LEAN['primary_max']})")
-        hs = sorted((o.get('h', 0), o['id']) for o in v if o.get('h') and o.get('kind') not in ('fluff', 'contact'))   # Ü3 keine zwei Elemente innerhalb ±10 % Höhe
+        st3 = [o for o in v if o.get('slot') in ('support', 'accent')] if any(o.get('slot') for o in v) else v   # r3 (V-763): mit Rezept-Slots über Stützen und Akzent, sonst über alle
+        hs = sorted((o.get('h', 0), o['id']) for o in st3 if o.get('h') and o.get('kind') not in ('fluff', 'contact'))   # Ü3 keine zwei Elemente innerhalb ±10 % Höhe
         same = [(a[1], b[1]) for a, b in zip(hs, hs[1:]) if b[0] > 0 and abs(b[0] - a[0]) / b[0] < LEAN['height_tol']]
         if same and k not in ordered_groups and not all(o.get('kind') in ('path_stone', 'dust') for o in v): F('ENV-LEHNE-Ü3', f"Gruppe {k}: gleich hohe Elemente ±10 % ({', '.join(f'{a}/{b}' for a, b in same[:3])})")
         trees = [o for o in v if o.get('kind') == 'tree']
@@ -336,7 +341,7 @@ def _extended(scene, objs, env, groups, ordered_groups, F, find, H):
         if len(gr) >= 2:
             cov, gap = _arc_cover(o['c'], o.get('r', 1.0), gr)
             if cov > 0.5 + 0.02 or gap < LEAN['grass_gap']: F('ENV-LEHNE-Ü5', f"{o['id']}: Gras deckt {cov:.0%} des Fußes, größte Lücke {gap:.0%} (Soll ≤ 50 %, ≥ 25 %)")
-    lm = next((o for o in objs if o.get('id') == scene.get('landmark')), None)
+    lm = next((o for o in objs if o.get('id') == scene.get('landmark')), None) or next((o for o in objs if o.get('id') == scene.get('focus') or o.get('slot') == 'focus'), None)   # r3: Fokus-Ring auch um den Fokus
     if lm:   # Ü6 im Ring 0,5 × r(Landmarke) höchstens 1 Objekt der Klasse M oder größer; Interaktionspunkte 1 H frei
         top = max((o.get('h', 0) for o in env), default=1) or 1
         ring = [o['id'] for o in env if o is not lm and _d2(o['c'], lm['c']) <= lm.get('r', 0) * (1 + LEAN['focal_ring']) and o.get('h', 0) >= 0.35 * top]

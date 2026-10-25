@@ -11004,6 +11004,21 @@
    "applies": "Destruction-Slice"
   },
   {
+   "id": "V-768",
+   "date": "2026-10-25",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "WSB Gate r3 übernommen nach CANON_3D/lib (Kontaktfenster nur Anker und frei stehende Objekte, H5 nur Landmarken, Ü3 über Stützen und Akzent, Kiesel Mikro-Ebene, neighbourSpread ab n = 3; Adapter r3); Friedhof r24 0 FAIL. Löser: Gruppen-Prüfer des Gates (rule_report) als JS-Port, Layout mit bis zu 160 Versuchen nach Gate-Maß, Radien-Leiter je Rolle (≥ 22 %), Kiesel an einen größeren Wirt gelehnt (hangabwärts), Rückfall spiralförmig statt fester Punkt. P0 und 7 weitere Seeds: alle Gruppen G1 ok.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Löser prüft sich mit derselben Formel wie das Gate; Befunde kommen nicht mehr aus der Kachelwahl.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -11116,7 +11131,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1278",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1279",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

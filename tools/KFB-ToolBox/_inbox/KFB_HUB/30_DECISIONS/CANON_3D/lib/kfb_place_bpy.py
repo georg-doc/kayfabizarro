@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); HUB = os.path.abspath(os.path
 for p in (HERE, os.path.join(HUB, '30_DECISIONS', 'CANON_3D', 'lib')):
     if p not in sys.path: sys.path.append(p)
 import kfb_env, kfb_env_bpy, kfb_clay_bpy as clay
-VERSION = 'kfb_place_bpy.r2'   # r2 (V-761): rotX/rotZ aus dem Rezept
+VERSION = 'kfb_place_bpy.r3'   # r2 (V-761): rotX/rotZ aus dem Rezept; r3 (V-763): focus/echo → Signatur
 # Slot-Rolle bzw. Art → Material-Rolle (Hinweis WS0): anchor/support → bark/leaf bzw. stone; path, pebble, rubble → stone; fluff_hero/fluff_side → Fluff; find → prop
 MAT_ROLE = {'tree': 'leaf', 'bush': 'leaf', 'grass': 'grass', 'water_plant': 'leaf', 'rock': 'stone', 'rockgroup': 'stone', 'stone_L': 'stone', 'stone_M': 'stone', 'stone_S': 'stone',
             'rubble': 'stone', 'path_stone': 'stone', 'stump': 'bark', 'log': 'bark', 'contact': 'stone', 'building': 'stone', 'prop': 'prop', 'fluff': 'accent', 'find': 'prop', 'dust': 'ground'}
@@ -150,7 +150,7 @@ def build(recipe, tiles=None, media=None, ground=None, island='08_Forest', out_j
             ob.rotation_mode = 'YZX'; ob.rotation_euler.x = inst.get('rotX', 0.0); ob.rotation_euler.y = -inst.get('rotZ', 0.0); rep['tilted'] = rep.get('tilted', 0) + 1
         try:
             pr = kfb_env_bpy.place(ob, x, y, kind, ground=ground, rz=rz, sink=sk, role=role, layer=inst.get('layer'), group=inst.get('group'), story=inst.get('story'), kit=t.get('kit'),
-                                   signature={'landmark': 'hero'}.get(inst.get('role')))
+                                   signature={'landmark': 'hero', 'focus': 'hero', 'echo': 'echo'}.get(inst.get('role')))   # r3: Fokus = Signatur-Hero, Echos aus dem Rezept
             ob['kfb_tile'] = tid; ob['kfb_role_slot'] = inst.get('role'); ob['kfb_ordered'] = bool(t.get('ordered'))
             rep['placed'] += 1; rep['by_kind'][kind] = rep['by_kind'].get(kind, 0) + 1
             if pr.get('downhill_gap'): rep['errors'].append({'i': i, 'tile': tid, 'downhill_gap_m': pr['downhill_gap']})

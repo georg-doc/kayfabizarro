@@ -45,6 +45,14 @@ export function solveLocal(slots, R, rules, tries = 16) {
     if (ok) { const ht = rules.lean?.height_tol ?? 0.1, H = (f) => f.tile.h * f.s   // Ü3: benachbarte Höhen um ≥ height_tol verschieden (nur Gleichmaß ±15 %)
       const idx = out.map((f, i) => i).filter((i) => slots[i].role === 'support' || slots[i].role === 'accent').sort((a, b) => H(out[a]) - H(out[b]))
       for (let k = 1; k < idx.length; k++) { const lo = out[idx[k - 1]], hi = out[idx[k]], need = H(lo) / (1 - ht) * 1.01; if (H(hi) < need) hi.s = +Math.min(1.15, need / hi.tile.h).toFixed(3) }   /* V-763: Maß wie das Gate */
+      // V-768: Radien-Leiter je Rolle (Stützen, Kiesel): Nachbarn im Nest um ≥ 22 % verschieden (Gate sameSizeAdjacent < 20 %); erst Gleichmaß (±15 %),
+      // dann eine größere Kachel derselben Domäne, zuletzt die kleinere verkleinern
+      for (const role of ['support', 'pebble']) { const ix = out.map((f, i) => i).filter((i) => slots[i].role === role).sort((a, b) => out[a].tile.r * out[a].s - out[b].tile.r * out[b].s)
+        for (let k = 1; k < ix.length; k++) { const lo = out[ix[k - 1]], hi = out[ix[k]], need = lo.tile.r * lo.s * 1.22
+          if (hi.tile.r * hi.s >= need) continue
+          if (hi.tile.r * 1.15 >= need) { hi.s = +Math.max(hi.s, need / hi.tile.r).toFixed(3); continue }
+          const big = slots[ix[k]].domain.filter((d) => d.r * 0.85 >= need).sort((x, y) => x.r - y.r)[0]; if (big) { hi.tile = big; hi.s = +Math.max(0.85, need / big.r).toFixed(3); continue }
+          lo.s = +Math.max(0.85, (hi.tile.r * hi.s) / 1.22 / lo.tile.r).toFixed(3) } }
       return { fill: out, tries: t + 1, fallback: false } }
   }
   return { fill: slots.map((s) => ({ tile: s.domain[0], s: 1 })), tries, fallback: true }
@@ -53,24 +61,43 @@ export function solveLocal(slots, R, rules, tries = 16) {
 // ── Nest: Stützen und Kiesel eng um den Anker (V-749 Nr. 7): Abstand je Paar entweder überlappt (≤ 0,85 × Radiensumme) oder mit Luft (≥ 1,25 ×),
 // nie dazwischen; Stützen im Fächer, Kiesel hangabwärts; Nachbarabstände paarweise ≥ 30 % verschieden. Positionen relativ zum Anker.
 function nestPositions(R, radii, rules, slopeDir) {
-  const { overlap_max: ov, air_min: air } = rules.group, out = [[0, 0]]
+  const { overlap_max: ov, air_min: air } = rules.group, out = [[0, 0]], hosted = new Set()
+  const okAt = (p, i) => { for (let j = 0; j < out.length; j++) { const dd = Math.hypot(p[0] - out[j][0], p[1] - out[j][1]), s = radii[j] + radii[i]; if (dd < 0.5 * s || (dd > ov * s && dd < air * s)) return false } return true }
+  const colinear = (p) => { for (let a = 0; a < out.length; a++) for (let b = a + 1; b < out.length; b++) { const [ax, az] = out[a], [bx, bz] = out[b], acx = bx - ax, acz = bz - az, L2 = acx * acx + acz * acz; if (!L2) continue
+      for (const [m, c, d] of [[p, out[a], out[b]], [out[a], p, out[b]], [out[b], p, out[a]]]) { const ux = d[0] - c[0], uz = d[1] - c[1], l2 = ux * ux + uz * uz; if (!l2) continue; const vx = m[0] - c[0], vz = m[1] - c[1], tt = (vx * ux + vz * uz) / l2
+        if (tt > 0 && tt < 1 && Math.hypot(vx - ux * tt, vz - uz * tt) <= (rules.group.line_tol ?? 0.05) * Math.sqrt(l2) * 1.5) return true } } return false }
   for (let i = 1; i < radii.length; i++) {
-    let best = null, bestScore = -1
-    for (let k = 0; k < 40; k++) {
-      const host = R.next() < 0.7 ? 0 : R.int(0, out.length - 1), rs = radii[host] + radii[i]
-      const f = R.next() < 0.55 ? R.range(0.62, ov) : R.range(air, air + 0.35)
-      const fan = radii[i] < radii[0] * 0.3 ? slopeDir + R.range(-0.9, 0.9) : R.range(0, Math.PI * 2)   // Kiesel hangabwärts
-      const p = [out[host][0] + Math.cos(fan) * f * rs, out[host][1] + Math.sin(fan) * f * rs]
-      let ok = true
-      for (let j = 0; j < out.length; j++) { const dd = Math.hypot(p[0] - out[j][0], p[1] - out[j][1]), s = radii[j] + radii[i]; if (dd > ov * s && dd < air * s) { ok = false; break } if (dd < 0.5 * s) { ok = false; break } }
-      const dists = out.map((q) => Math.hypot(p[0] - q[0], p[1] - q[1])).sort((a, b) => a - b), score = dists.length > 1 ? (dists[1] - dists[0]) / dists[1] : 1
-      if (ok) { for (let a = 0; a < out.length && ok; a++) for (let b = a + 1; b < out.length; b++) { const [ax, az] = out[a], [bx, bz] = out[b], cr = Math.abs((bx - ax) * (p[1] - az) - (bz - az) * (p[0] - ax)), L = Math.hypot(bx - ax, bz - az) || 1; if (cr / L < (rules.group.line_tol ?? 0.05) * Math.max(L, 1) * 3) { ok = false; break } } }   /* V-763: nie drei auf einer Geraden */
-      if (ok && score >= rules.group.spread_pair_min) { best = p; break }
-      if (ok && score > bestScore) { best = p; bestScore = score }
+    const pebble = radii[i] < radii[0] * 0.3
+    // Kiesel (V-768): an einen größeren, noch freien Wirt gelehnt (überlappt ≤ 0,85), hangabwärts – so ist der nächste Nachbar nie ein gleich großer Kiesel
+    const hosts = out.map((q, j) => j).filter((j) => radii[j] > radii[i] * 1.6), freeHosts = hosts.filter((j) => !hosted.has(j))
+    let best = null
+    for (let k = 0; k < 80 && !best; k++) {
+      const host = pebble ? R.pick(freeHosts.length ? freeHosts : hosts.length ? hosts : [0]) : (R.next() < 0.7 ? 0 : R.int(0, out.length - 1))
+      const rs = radii[host] + radii[i], f = pebble ? R.range(0.62, ov) : (R.next() < 0.55 ? R.range(0.62, ov) : R.range(air, air + 0.35))
+      const a = pebble ? slopeDir + R.range(-1.1, 1.1) : R.range(0, Math.PI * 2), p = [out[host][0] + Math.cos(a) * f * rs, out[host][1] + Math.sin(a) * f * rs]
+      if (okAt(p, i) && !colinear(p)) { best = p; if (pebble) hosted.add(host) }
     }
-    out.push(best || [radii[0] * 1.5, 0])
+    // Rückfall: spiralförmig nach außen, bis Abstand und Gerade stimmen (nie zwei Glieder auf denselben Punkt)
+    for (let k = 0; !best && k < 400; k++) { const a = k * 2.399 + R.next() * 0.3, dist = (radii[0] + radii[i]) * (air + 0.02 * k), p = [Math.cos(a) * dist, Math.sin(a) * dist]; if (okAt(p, i) && !colinear(p)) best = p }
+    out.push(best || [(radii[0] + radii[i]) * (air + 2), i])
   }
   return out
+}
+
+// ── Gruppen-Prüfer wie das Gate (kfb_env.rule_report r3): odd, sameSizeAdjacent, neighbourSpread (ab n = 3), collinear, nearTouch ──
+export function ruleReport(P, r, R) {
+  const n = P.length, d = (a, b) => Math.hypot(P[a][0] - P[b][0], P[a][1] - P[b][1]), nn = [], nnd = []
+  for (let i = 0; i < n; i++) { let bj = -1, bd = Infinity; for (let j = 0; j < n; j++) if (j !== i && d(i, j) < bd) { bd = d(i, j); bj = j } nn.push(bj); nnd.push(bd) }
+  let same = 0; const seen = new Set()
+  for (let i = 0; i < n; i++) { const j = nn[i]; if (j < 0) continue; const k = Math.min(i, j) + ':' + Math.max(i, j); if (seen.has(k)) continue; seen.add(k); if (Math.abs(r[i] - r[j]) / Math.max(r[i], r[j]) < R.size_tol) same++ }
+  const fin = nnd.filter(Number.isFinite), mx = fin.length ? Math.max(...fin) : 0, spread = fin.length >= 3 && mx > 0 ? (mx - Math.min(...fin)) / mx : 1
+  const near = (a, b) => d(a, b) <= (R.neighbour_r ?? 4.5) * (r[a] + r[b]) / 2; let lines = 0
+  for (let m = 0; m < n; m++) for (let a = 0; a < n; a++) { if (a === m || !near(a, m)) continue; for (let c = a + 1; c < n; c++) { if (c === m || !near(c, m)) continue
+    const acx = P[c][0] - P[a][0], acy = P[c][1] - P[a][1], L2 = acx * acx + acy * acy; if (L2 <= 0) continue; const amx = P[m][0] - P[a][0], amy = P[m][1] - P[a][1], t = (amx * acx + amy * acy) / L2
+    if (t > 0 && t < 1 && Math.hypot(amx - acx * t, amy - acy * t) <= (R.line_tol ?? 0.05) * Math.sqrt(L2)) lines++ } }
+  let touch = 0; for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const q = d(i, j) / (r[i] + r[j]); if (q > R.overlap_max && q < R.air_min) touch++ }
+  const failed = [['odd', n % 2 === 0], ['sameSizeAdjacent', same > 0], ['neighbourSpread', spread < (R.spread_pair_min ?? 0.3)], ['collinear', lines > 0], ['nearTouch', touch > 0]].filter((x) => x[1]).map((x) => x[0])
+  return { n, same, spread: +spread.toFixed(3), lines, touch, ok: !failed.length, failed, score: same + lines + touch + (spread < (R.spread_pair_min ?? 0.3) ? 1 : 0) + (n % 2 === 0 ? 5 : 0) }
 }
 
 // ── Zone: 2–4 Gruppenkeime auf der Maske, Mindestabstand, Negativraum bleibt frei ──
@@ -116,7 +143,9 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const sol = solveLocal(slots, R, rules, cfg.wfc?.tries ?? 16)
     const [gx, gz] = grad(terrain, c[0], c[1]), down = Math.atan2(-gz, -gx)
     const anchorR = (sol.fill[0].tile.r * sol.fill[0].s) || 1
-    const pos = nestPositions(R, sol.fill.map((f) => f.tile.r * f.s), rules, down)
+    const radii = sol.fill.map((f) => f.tile.r * f.s); let pos = null, rep = null
+    for (let tries = 0; tries < 160; tries++) { const cand = nestPositions(R, radii, rules, down), rr = ruleReport(cand, radii, rules.group)   /* V-763/V-768: Abnahme mit dem Gate-Maß */
+      if (!rep || rr.score < rep.score) { pos = cand; rep = rr } if (rr.ok) break }
     const tiltShare = (rules.lean?.pebble_tilt ?? [15, 0.2])[1], tiltDeg = 18   /* V-763: > 15° auch nach rotZ */, pebIdx = slots.map((s, i) => (s.role === 'pebble' ? i : -1)).filter((i) => i >= 0), nTilt = Math.ceil(pebIdx.length * tiltShare)
     const tilted = new Set(pebIdx.slice(0, nTilt))
     slots.forEach((s, i) => { const f = sol.fill[i]; const tilt = tilted.has(i) ? { rotX: +((tiltDeg * Math.PI) / 180 * (R.next() < 0.5 ? 1 : -1)).toFixed(3), rotZ: +R.range(-0.08, 0.08).toFixed(3) } : {}
@@ -140,7 +169,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
         for (let t = 0; t < n; t++) { const ang = start + (t + 0.5) * w
           push({ tile: 'contact:moss_pebble', kind: 'contact', r: +rc.toFixed(3), p: [anc.p[0] + Math.cos(ang) * Rr, anc.p[1], anc.p[2] + Math.sin(ang) * Rr], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: `g${gi}`, role: 'contact', cause: 'hangabwärts gespült', layer: 4 }) } }
       contactCov = Math.min(1, covOf(n)) }
-    report.push({ group: `g${gi}`, recipe: rid, slots: slots.length, odd: slots.length % 2 === 1, wfc_tries: sol.tries, fallback: sol.fallback, contact_cov: +contactCov.toFixed(3) })
+    report.push({ group: `g${gi}`, recipe: rid, slots: slots.length, odd: slots.length % 2 === 1, wfc_tries: sol.tries, fallback: sol.fallback, contact_cov: +contactCov.toFixed(3), g1: rep.ok ? 'ok' : rep.failed.join(',') })
   }
 
   // 3 · Steinspur (path_trace, V-752/V-578): Band 1,6 m breit vom Zellrand zum ersten Stamp. Heiler Kern bis zu einer geschwungenen Isolinie, dann

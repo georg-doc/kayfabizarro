@@ -5,6 +5,7 @@
 #   kfb_kind (siehe kfb_env.SINK), kfb_role (Palettenrolle), kfb_layer (1–4), kfb_story (Satz), kfb_group, optional kfb_signature (hero|echo), kfb_kit,
 #   kfb_support (Name des gebauten Objekts, auf dem es steht, z. B. Bühne; das Gebaute selbst ist kfb_kind 'building' und steht im Terrain)
 # Boden: genau ein Objekt mit kfb_ground = 'terrain' | 'island' (Scheibe/Platte = FAIL).
+# r3 (WSB, V-763): Export 'slot' = kfb_role_slot (Rolle im Rezept: anchor, support, focus …) für ENV-KONTAKTFENSTER und Fokus.
 # r2 (WSB N39): zusätzlich optional kfb_wear (Liste), kfb_form, kfb_keystone, kfb_ordered, kfb_trunk_r, kfb_slope_deg; Neigung/Lehnrichtung aus der Rotation (ENV-LEHNE).
 import json, math, bpy
 from mathutils import Vector
@@ -49,7 +50,7 @@ def export(concept=None, scene_kind='diorama', landmark=None, units_per_H=1.0):
         sup = bpy.context.scene.objects.get(ob.get('kfb_support')) if ob.get('kfb_support') else None  # steht auf Gebautem (Bühne, Tisch): dessen Oberfläche ist der Grund
         g = _ground_z(sup or ground, cx, cy, z1)
         objs.append({'id': ob.name, 'kind': ob['kfb_kind'], 'role': ob.get('kfb_role'), 'layer': ob.get('kfb_layer'), 'story': ob.get('kfb_story'),
-                     'group': ob.get('kfb_group'), 'signature': ob.get('kfb_signature'), 'kit': ob.get('kfb_kit'), 'asset': ob.data.name if ob.data else ob.name,
+                     'group': ob.get('kfb_group'), 'slot': ob.get('kfb_role_slot'), 'signature': ob.get('kfb_signature'), 'kit': ob.get('kfb_kit'), 'asset': ob.data.name if ob.data else ob.name,
                      'c': [cx, cy, (z0 + z1) / 2], 'r': max(x1 - x0, y1 - y0) / 2, 'h': z1 - z0, 'bottom_z': z0, 'ground_z': g,
                      'rot_z': round(ob.matrix_world.to_euler().z * 57.2958, 1), 'color': ob.get('kfb_color'), 'meaning': ob.get('kfb_meaning'), 'asset_pass': ob.get('kfb_asset_pass')})
         # r2 (N39): Messwerte für ENV-LEHNE Ü1–Ü4, ENV-ORDNUNG und ENV-BIOGRAFIE

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-768 Gate r3 + Adapter r3 in CANON_3D/lib; Löser mit Gate-Prüfer, Radien-Leiter, gelehnten Kieseln: P0 und 7 Seeds G1 ok.
 - V-766 Lade-Chip statt rotem Klotz (R3 @18ad81d, b226). V-767 Zerstörung: Cel-Splitter + GPU-Partikel (Staub, Fluff, Goo, Fassaden-Krümel) + Fahrzeug-Rauch als Kombination (Backlog Destruction-Slice).
 - V-765 runde Kopf-Clips (klein, oben), Clips im Mixer mit Ducking; R3 @ac620a4; WSA: b226 aktualisiert, b227 HyperNorm neu (H15 statt b220), b219/b221 abgelöst. FrizzleTunes-Index (207 Einträge, 164 Videos).
 - V-763 Gate-Befunde entschieden + Löser angepasst (2 Bögen, Kontakt für Anker/frei, Höhenstaffel wie Gate, Kiesel 18° und aus Steinkit, Stumpf Fokus, keine Geraden, Wegsteine 10–25 %), Adapter r2 in CANON_3D/lib, P0 5d034f71 ohne Platzhalter. V-764 HeyGen-Clips im Spiel (Fahrzeug beim Rufen, Orakel-Ring loci=1), R3 neu @98c4029 (b226 aktualisiert); YouTube-Download später.
