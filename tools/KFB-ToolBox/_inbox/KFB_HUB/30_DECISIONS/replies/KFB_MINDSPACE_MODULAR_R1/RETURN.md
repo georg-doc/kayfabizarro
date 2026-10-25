@@ -48,3 +48,18 @@
 **Unresolved:** User's working prior Lovable app source/code still unpinned; source-isolated H13 and a licensable garden Splat not demonstrated; Current WS1 world-port seam and existing KFB Audio mixer/voice transport unchanged, requires receiver-specific checks.
 
 **One unchanged next gate:** WS0 isolates true existing Lovable + H13 + candidate garden scene visually and with rights/actual source, then Georg selects first visually accepted Mindspace as sole first proof. Do not prebuild six runtimes, auto-merge, promote Live or create a second Site merely because a concept has six presets.
+
+
+## R3 Addendum · 2026-10-25 · Globe.GL within existing Mindspace Sphere — TECHNIQUE RESEARCH, NO BUILD
+
+**Outcome:** Georg's idea of a surreal meta-globe *inside the already planned terrain-embedded Mindspace Sphere* captured as an intent-first, source-grounded optional technique research note: [GLOBEGL_INNER_SPHERE_META_WORLDS_R3_2026-10-25.md](GLOBEGL_INNER_SPHERE_META_WORLDS_R3_2026-10-25.md). Same existing Mindspace owner/branch and Draft PR #448; existing World/WS1/Portal, H13, KFB Audio and Card/Almanac owners unchanged.
+
+**Source truth:** globe.gl is a standalone DOM-hosted wrapper with own scene/camera/renderer, therefore *not* a desirable concurrent game host inside WS1. Three-globe supplies reusable Three.Object3D layers, and r3f-globe is the upstream React Three Fiber binding, making either possible scene-embedded candidates subject to exact active WS1 compatibility proof. Globe-based meta map may use **semantic nongeographic spherical coordinates** but does not grant source-true geo, tesseract geometry, collisions or traversable worlds. The actual proposed Mindspace Sphere is **still a design**, not proven gameplay. Inside-out views require custom inward-facing materials/objects; this is not an automatic globe.gl capability.
+
+**Options rather than architecture lock:** small globe visible through existing sphere shell, custom inside-out dome, host-owned bounded nested scene/page/card transitions, or simpler custom Three sphere+curated lines/paper silhouettes. Preserve quiet Garden as valid standalone aesthetic; use the globe most naturally for Threshold Observatory, optionally Dream Passage/Fractal Vision/Creative Atelier.
+
+**Actual evidence and checks:** official upstream Globe.GL, Three-Globe and R3F-Globe docs plus current KFB Mindspace vision/module/WS1 intake/Return inspected. No source donor visuals isolated, no KFB scene/middleware source modified, no version install, no running sphere, no browser/device/GPU/performance/Stage/Site tests (**0**), no merge or Live. Documentation file/branch readbacks after GitHub writes; only editorial presence/source checks.
+
+**Unresolved:** original Lovable app source; original H13 source-authentic render; first source-isolated Garden/Creative sphere object; actual receiving WS1 active branch/render/portal APIs; pointer event interaction/depth/render cost and owner-safe runtime introduction; real licensing of images/tiles.
+
+**ONE NEXT GATE unchanged:** WS0 isolates actual original Lovable and H13 plus one visually attractive genuine Garden/Creative source; Georg selects the first artistic visual. Meta-globe stays optional until that gate and an independent future WS1 source preflight. No additional human gate, Site/Stage, runtime or masterplan ownership introduced here.
