@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.audio.event.v1",
+  "title": "KFB Audio Event v1",
+  "type": "object",
+  "required": ["schema", "seq", "type", "timestampMs"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": { "const": "kfb.audio.event.v1" },
+    "seq": { "type": "integer", "minimum": 0 },
+    "type": { "type": "string", "minLength": 1 },
+    "timestampMs": { "type": "number", "minimum": 0 },
+    "sourceId": { "type": ["string", "null"] },
+    "intensity01": { "type": "number", "minimum": 0, "maximum": 1 },
+    "meta": { "type": "object", "additionalProperties": true }
+  }
+}

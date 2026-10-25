@@ -1,0 +1,233 @@
+{
+  "schema": "kfb.adaptive-music-proof/1",
+  "build": "KFB-ADAPTIVE-MUSIC-STEM-PROOF-01",
+  "date": "2026-10-06",
+  "owner": "existing KFB Audio / Jukebox / Mixer",
+  "status": "BOUNDED_PROOF",
+  "deliverySurface": "EXISTING_KFB_AUDIO_SITE_AFTER_QA",
+  "hostIntegration": {
+    "audioContext": "INJECT_EXISTING_WHEN_AVAILABLE",
+    "standaloneProofFallback": true,
+    "newContextCountWhenInjected": 0
+  },
+  "donor": {
+    "path": "kfb-hub/stage/audio-calibration/audio-calibration.js",
+    "blob": "5cb3f08c1020eaaaf8ba6bb665906f567095fe67",
+    "rules": [
+      "one AudioContext",
+      "voice focus ducks music without pausing timeline",
+      "semantic buses remain owner"
+    ]
+  },
+  "decks": {
+    "G": {
+      "id": "KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01",
+      "style": "G",
+      "function": "COSMIC_ROADTRIP_ORCHESTRAL",
+      "bpm": 120,
+      "beatsPerBar": 4,
+      "phraseBars": 8,
+      "master": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01.mp3",
+      "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB_G_COSMIC_ROADTRIP_ORCHESTRAL_01 Stems (120BPM)",
+      "stems": [
+        {
+          "file": "0 Lead Vocals.mp3",
+          "sourceLabel": "Lead Vocals",
+          "role": "UNCLASSIFIED_VOX_LABEL",
+          "default": 0
+        },
+        {
+          "file": "1 Drums.mp3",
+          "sourceLabel": "Drums",
+          "role": "DRUMS",
+          "default": 0.72
+        },
+        {
+          "file": "2 Bass.mp3",
+          "sourceLabel": "Bass",
+          "role": "BASS",
+          "default": 0.78
+        },
+        {
+          "file": "3 Guitar.mp3",
+          "sourceLabel": "Guitar",
+          "role": "GUITARS",
+          "default": 0.62
+        },
+        {
+          "file": "4 Keyboard.mp3",
+          "sourceLabel": "Keyboard",
+          "role": "KEYS",
+          "default": 0.54
+        },
+        {
+          "file": "5 Percussion.mp3",
+          "sourceLabel": "Percussion",
+          "role": "PERCUSSION",
+          "default": 0.48
+        },
+        {
+          "file": "6 Strings.mp3",
+          "sourceLabel": "Strings",
+          "role": "ORCHESTRA_STRINGS",
+          "default": 0.56
+        },
+        {
+          "file": "7 Synth.mp3",
+          "sourceLabel": "Synth",
+          "role": "TEXTURE",
+          "default": 0.42
+        },
+        {
+          "file": "8 Other.mp3",
+          "sourceLabel": "Other",
+          "role": "UNCLASSIFIED_OTHER",
+          "default": 0.24
+        },
+        {
+          "file": "9 Brass.mp3",
+          "sourceLabel": "Brass",
+          "role": "ORCHESTRA_BRASS",
+          "default": 0.34
+        }
+      ],
+      "presets": {
+        "ROAD": {
+          "DRUMS": 0.64,
+          "BASS": 0.78,
+          "GUITARS": 0.64,
+          "KEYS": 0.48,
+          "PERCUSSION": 0.42,
+          "ORCHESTRA_STRINGS": 0.3,
+          "TEXTURE": 0.38,
+          "UNCLASSIFIED_OTHER": 0.18,
+          "ORCHESTRA_BRASS": 0.14,
+          "UNCLASSIFIED_VOX_LABEL": 0
+        },
+        "WIDE": {
+          "DRUMS": 0.56,
+          "BASS": 0.72,
+          "GUITARS": 0.54,
+          "KEYS": 0.54,
+          "PERCUSSION": 0.4,
+          "ORCHESTRA_STRINGS": 0.68,
+          "TEXTURE": 0.52,
+          "UNCLASSIFIED_OTHER": 0.24,
+          "ORCHESTRA_BRASS": 0.46,
+          "UNCLASSIFIED_VOX_LABEL": 0
+        },
+        "EPIC": {
+          "DRUMS": 0.78,
+          "BASS": 0.82,
+          "GUITARS": 0.62,
+          "KEYS": 0.46,
+          "PERCUSSION": 0.6,
+          "ORCHESTRA_STRINGS": 0.82,
+          "TEXTURE": 0.48,
+          "UNCLASSIFIED_OTHER": 0.3,
+          "ORCHESTRA_BRASS": 0.72,
+          "UNCLASSIFIED_VOX_LABEL": 0
+        }
+      }
+    },
+    "D": {
+      "id": "KFB_D_BASE_CONVERSATION_01",
+      "style": "D",
+      "function": "SOCIAL_CONVERSATION",
+      "bpm": 94,
+      "beatsPerBar": 4,
+      "phraseBars": 8,
+      "master": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB CONVERSATION STYLE D · BASE.mp3",
+      "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB CONVERSATION STYLE D · BASE Stems (94BPM)",
+      "stems": [
+        {
+          "file": "0 Lead Vocals.mp3",
+          "sourceLabel": "Lead Vocals",
+          "role": "UNCLASSIFIED_VOX_LABEL",
+          "default": 0
+        },
+        {
+          "file": "1 Backing Vocals.mp3",
+          "sourceLabel": "Backing Vocals",
+          "role": "UNCLASSIFIED_BACKING_VOX_LABEL",
+          "default": 0
+        },
+        {
+          "file": "2 Drums.mp3",
+          "sourceLabel": "Drums",
+          "role": "DRUMS",
+          "default": 0.34
+        },
+        {
+          "file": "3 Bass.mp3",
+          "sourceLabel": "Bass",
+          "role": "BASS",
+          "default": 0.56
+        },
+        {
+          "file": "4 Guitar.mp3",
+          "sourceLabel": "Guitar",
+          "role": "GUITARS",
+          "default": 0.34
+        },
+        {
+          "file": "5 Keyboard.mp3",
+          "sourceLabel": "Keyboard",
+          "role": "KEYS",
+          "default": 0.52
+        },
+        {
+          "file": "6 Percussion.mp3",
+          "sourceLabel": "Percussion",
+          "role": "PERCUSSION",
+          "default": 0.24
+        },
+        {
+          "file": "7 Strings.mp3",
+          "sourceLabel": "Strings",
+          "role": "ORCHESTRA_STRINGS",
+          "default": 0.26
+        },
+        {
+          "file": "8 Synth.mp3",
+          "sourceLabel": "Synth",
+          "role": "TEXTURE",
+          "default": 0.38
+        },
+        {
+          "file": "9 Brass.mp3",
+          "sourceLabel": "Brass",
+          "role": "ORCHESTRA_BRASS",
+          "default": 0.16
+        }
+      ],
+      "speechFocus": {
+        "musicGain": 0.72,
+        "eqHz": 2200,
+        "eqQ": 0.85,
+        "eqGainDb": -4.5,
+        "roleMultipliers": {
+          "DRUMS": 0.62,
+          "PERCUSSION": 0.5,
+          "GUITARS": 0.72,
+          "ORCHESTRA_BRASS": 0.45,
+          "ORCHESTRA_STRINGS": 0.78,
+          "KEYS": 0.88,
+          "BASS": 0.9,
+          "TEXTURE": 0.82
+        }
+      }
+    }
+  },
+  "transitionPolicies": [
+    "IMMEDIATE",
+    "NEXT_BEAT",
+    "NEXT_BAR",
+    "NEXT_PHRASE"
+  ],
+  "notes": [
+    "Source stem labels from Suno are not semantic truth. Lead/Backing Vocals and Other stay unclassified and muted by default until listening audit.",
+    "No sample-alignment claim is made until decoded browser/runtime evidence reports duration delta.",
+    "No second AudioContext, music clock or gameplay owner is introduced."
+  ]
+}
