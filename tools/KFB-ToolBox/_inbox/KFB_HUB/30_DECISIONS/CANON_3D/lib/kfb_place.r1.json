@@ -187,7 +187,10 @@
     8,
     12
    ],
-   "applies_to": "Anker und frei stehende Objekte; Stützen im Nest teilen den Kontakt des Ankers (V-763)"
+   "applies_to": "Anker und frei stehende Objekte; Stützen im Nest teilen den Kontakt des Ankers (V-763)",
+   "tree_foot_ratio": 0.12,
+   "tree_foot_min": 0.22,
+   "note_v784": "Baum: Kontakt am Stammfuß (Kronen-Hüllradius × 0,12, mindestens 0,22 m); Stücke paarweise ungleich groß, radial ±12 % versetzt"
   },
   "ordered": {
    "note": "Gebaute Ordnung (V-749 Nr. 6, V-512): Reihen erlaubt nach abgenommener Vorlage",
@@ -544,13 +547,16 @@
     {
      "role": "support",
      "kinds": [
+      "tree",
+      "tree",
       "bush"
      ],
      "count": 3,
      "h_rel": [
       0.7,
       0.9
-     ]
+     ],
+     "note": "V-784: Stützen meist kleinere Bäume derselben Familie (Leiter 1 : 0,62 : 0,38), ein Busch; sonst liest sich der Waldrand als Einzelbaum"
     },
     {
      "role": "accent",
@@ -711,7 +717,9 @@
     "path_trace": "Steinkit v4 + KayKit path_A–path_D"
    },
    "note": "P0; weitere Biome aus der Biom-Fahrt folgen mit P1",
-   "fluid": "water"
+   "fluid": "water",
+   "zone_m": 32,
+   "zone_note": "Laufzeit: eine Zone (2–4 Gruppen, rules.zone) misst 32 m; vier Zonen je 64-m-Zelle (V-784). P0 im CLI bleibt eine 64-m-Zelle."
   }
  },
  "adjacency": [],

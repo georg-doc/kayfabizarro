@@ -1,3 +1,4 @@
+# KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25 · V771 CLOSED · v8 platform-only login, exactv6content
 
@@ -22,6 +23,11 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25
+- V-786 N40-Entscheide: Fluff auf Trägerhaut (Löser), Ü5-Fuß frei, Laub grün, Stein warm, moss_cut am Rand. P0 bfa2b2f1.
+- V-784 kfb-place im Spiel (veg=core), Löser-Fixes Kontakt/Fluff/Zonen. V-785 Feinschliff-Liste aus Georgs Test.
+- V-783 Fortbewegungs-Durchgang S1 (Racer, Flug, Mech-Jetpack, Gehen) nach Welt-Runde 1.
+- V-782 Reihenfolge: Löser ins Spiel + Kritiker gegen KayKit-Promobilder, dann Combat/Destruction; Popup zurückgestellt.
+- V-781 FB-Mund = Original-Mund (b); WSB baut R5 Stufe 2.
 - V-780 Blick bei Ansprache kurz in die Kamera (B), Stellung bleibt ±40°.
 - V-779 Suno-Mindscapes: Georgs S2/S3/S8 Golden; neu S13 Traumreise, S14 Kreativ-Atelier, S15 Spiegelkammer (b231–b233); Claude Design nur gekapselte Module.
 - V-778 Sonne im Regelwerk = Blender-Rig, P0-Hang gedreht, Steinspur vom Hangfuß, Baumgruppe hangauf, Holzstücke ohne Durchdringung. P0 8414ec47.

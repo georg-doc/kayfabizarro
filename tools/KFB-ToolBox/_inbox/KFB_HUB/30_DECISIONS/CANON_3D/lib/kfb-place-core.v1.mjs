@@ -144,12 +144,13 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
 
   // Kontakt-Bögen mit Ursache an einem Objekt (V-749 Nr. 3, V-763): zwei Bögen auf 40–50 % des Umfangs, Lücke ≥ 25 %; gilt für Anker und frei stehende Objekte (auch Stamps, V-777)
   const contactArcs = (anc, objR, grp, down, cause) => { if (!anc) return 0
+    if (anc.kind === 'tree') objR = Math.max(rules.contact.tree_foot_min ?? 0.22, objR * (rules.contact.tree_foot_ratio ?? 0.12))   /* V-784: am Baum sitzt der Kontakt am Stammfuß, nicht am Kronenrand */
     const [p0, p1] = rules.contact.perimeter, cov = R.range(p0 + 0.01, p1 - 0.01), Rr = objR * 1.02, arcs = 2, w = Math.min(2 * Math.asin(Math.min(0.99, Math.min(0.18, Rr * 0.18) / Rr)), (0.04 * Math.PI * 2) / arcs)
     const rc = Rr * Math.sin(w / 2), covOf = (k) => (arcs * k * w) / (Math.PI * 2); let n = Math.max(1, Math.round((cov * Math.PI * 2) / arcs / w)); while (covOf(n) < p0 && n < 999) n++; while (covOf(n) > p1 && n > 1) n--
     const span = (Math.PI * 2) / arcs
     for (let a = 0; a < arcs; a++) { const start = down + a * span + R.range(-0.2, 0.2)
-      for (let t = 0; t < n; t++) { const ang = start + (t + 0.5) * w
-        push({ tile: 'contact:moss_pebble', kind: 'contact', r: +rc.toFixed(3), p: [anc.p[0] + Math.cos(ang) * Rr, anc.p[1], anc.p[2] + Math.sin(ang) * Rr], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: grp, role: 'contact', cause, layer: 4 }) } }
+      for (let t = 0; t < n; t++) { const ang = start + (t + 0.5) * w, dv = (t % 2 ? -1 : 1) * R.range(0.1, 0.3), rj = Rr * (1 + R.range(-0.12, 0.12))   /* V-784: Stückgrößen paarweise ungleich (Summe gleich, Abdeckung bleibt), radial versetzt – keine Perlenkette */
+        push({ tile: 'contact:moss_pebble', kind: 'contact', r: +(rc * (1 + dv)).toFixed(3), p: [anc.p[0] + Math.cos(ang) * rj, anc.p[1], anc.p[2] + Math.sin(ang) * rj], rotY: R.range(0, 6.28), sink: rules.sink.contact[0], group: grp, role: 'contact', cause, layer: 4 }) } }
     return Math.min(1, covOf(n)) }
 
   // 1 · feste Stamps (Landmarken, Dioramen, Stumpf): nicht umordnen, nur einbetten (V-716, embed.sop)
@@ -157,8 +158,9 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const rec = recipes[s.recipe] || {}, tile = tilesFor(cfg, rec.slots?.[0]?.kinds?.[0] || 'prop', B.kit?.[s.recipe])[0]
     const o = put(tile, s.x, s.z, { group: `stamp${i}`, role: rec.slots?.[0]?.role || 'landmark', layer: rec.layer, fixed: true, story: rec.story_template })
     const [sgx, sgz] = grad(terrain, s.x, s.z), sdown = Math.atan2(-sgz, -sgx)
+    const sdown0 = (() => { const [gx0, gz0] = grad(terrain, s.x, s.z); return Math.atan2(-gz0, -gx0) })()   // V-786: Moos am Schnittrand hangab, der Schnitt bleibt hell
     if (rec.wear_marks) o.wear = rec.wear_marks   /* Gebrauchsspuren mit Ursache (rules.biography.wear_marks_min) */
-    if (rec.cut_moss) push({ tile: 'contact:moss_cut', kind: 'contact', r: +(tile.r * 0.35).toFixed(3), p: [o.p[0] + R.range(-0.1, 0.1) * tile.r, +(o.p[1] + tile.h * (1 - (o.sink || 0))).toFixed(3), o.p[2] + R.range(-0.1, 0.1) * tile.r], rotY: R.range(0, 6.28), sink: 0, group: `stamp${i}`, role: 'wear', cause: 'Moos auf der Schnittfläche', layer: 4 })
+    if (rec.cut_moss) push({ tile: 'contact:moss_cut', kind: 'contact', r: +(tile.r * 0.16).toFixed(3), p: [o.p[0] + Math.cos(sdown0) * tile.r * 0.18, +(o.p[1] + tile.h * (1 - (o.sink || 0))).toFixed(3), o.p[2] + Math.sin(sdown0) * tile.r * 0.18], rotY: R.range(0, 6.28), sink: 0, group: `stamp${i}`, role: 'wear', cause: 'Moos auf der Schnittfläche', layer: 4 })
     contactArcs(o, tile.r, `stamp${i}`, sdown, 'Erde und Moos am Fuß, hangabwärts')
     for (const sl of (rec.slots || []).slice(1)) { const cnt = sl.count ?? 1, tl = tilesFor(cfg, sl.kinds[0], B.kit?.[s.recipe])
       for (let k = 0; k < cnt; k++) { const a = R.range(0, Math.PI * 2) + k * 2.39996, d = tile.r + tl[k % tl.length].r * R.range(1.05, 1.4);   /* V-778: Abstand Stumpf-Radius + halbe Holzlänge, keine Durchdringung bei jeder Drehung */ put(tl[k % tl.length], s.x + Math.cos(a) * d, s.z + Math.sin(a) * d, { group: `stamp${i}`, role: sl.role, layer: rec.layer, story: 'Holzstück desselben Stamms' }); contactArcs(inst[inst.length - 1], tl[k % tl.length].r, `stamp${i}`, sdown, 'liegt im Laub, hangabwärts angespült') } }
@@ -193,9 +195,16 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       // Fluff-Nester an Bäumen und Büschen (B2-R2 Variante A, V-750 Farbe aus der Harmonie)
       if (rec.fluff && (s.kind === 'tree' || s.kind === 'bush')) {
         const nests = s.kind === 'tree' ? 1 + R.int(0, 2) : R.int(1, 2), sun = cfg.light?.sun_az ?? -0.6
+        // V-786: Nest-Mitte auf der Trägerhaut. Bäume mit gemessenen B2-Ankern (Kachel-anchors, glTF-Lokal in m): die zur Sonne zeigenden Anker, gedreht und skaliert wie die
+        // Instanz; Büsche ohne Anker: Punkt auf der Kuppel-Hülle (d = 0,7 r → y = 0,71 h). So sitzen die Kugeln 5–60 % im Träger (Gate r4 ENV-FLUFF-HALT).
+        const ry = o.rotY || 0, cy = Math.cos(ry), sy = Math.sin(ry), rot = (v) => [v[0] * cy + v[2] * sy, v[1], -v[0] * sy + v[2] * cy]
+        const sunV = [Math.cos(sun), Math.sin(sun)], anc = (f.tile.anchors || []).filter((q) => q.p && q.n).map((q) => { const n = rot(q.n); return { q, n, sc: n[0] * sunV[0] + n[2] * sunV[1] + 0.3 * n[1] } }).sort((a, b) => b.sc - a.sc)
         for (let n = 0; n < nests; n++) { const balls = 1 + 3 + R.int(1, 3), a = sun + R.range(-0.5, 0.5) + n * 1.1
-          push({ tile: 'fluff:nest', kind: 'fluff', p: [o.p[0] + Math.cos(a) * f.tile.r * f.s * 0.8, o.p[1] + f.tile.h * f.s * (s.kind === 'tree' ? R.range(0.55, 0.8) : 0.5), o.p[2] + Math.sin(a) * f.tile.r * f.s * 0.8],
-            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, color_role: 'fluff', fluff_mode: card ? card.fluffMode : (cfg.fluff?.default_mode || 'heroic'), harvest: true, layer: 4 })
+          let np, nn = null
+          if (s.kind === 'tree' && anc[n]) { const pp = rot(anc[n].q.p); np = [o.p[0] + pp[0] * f.s, o.p[1] + pp[1] * f.s, o.p[2] + pp[2] * f.s]; nn = anc[n].n.map((v) => +v.toFixed(3)) }
+          else { const d = 0.7 * f.tile.r * f.s; np = [o.p[0] + Math.cos(a) * d, o.p[1] + f.tile.h * f.s * 0.71, o.p[2] + Math.sin(a) * d]; nn = [+(Math.cos(a) * 0.7).toFixed(3), 0.71, +(Math.sin(a) * 0.7).toFixed(3)] }
+          push({ tile: 'fluff:nest', kind: 'fluff', p: np.map((v) => +v.toFixed(3)), n: nn, support: o.tile,
+            rotY: 0, sink: 0, group: o.group, role: n === 0 ? 'fluff_hero' : 'fluff_side', balls, cr: +(f.tile.r * f.s).toFixed(3), color_role: 'fluff', fluff_mode: card ? card.fluffMode : (cfg.fluff?.default_mode || 'heroic'), harvest: true, layer: 4 })
           if (n === 0 && s.kind === 'tree' && s.role === 'anchor' && !fallen) { fallen = true; const nest = inst[inst.length - 1]
             for (let fb = 0; fb < (cfg.fluff?.fallobst?.balls ?? 2); fb++) { let x = nest.p[0] + R.range(-0.4, 0.4), z = nest.p[2] + R.range(-0.4, 0.4)   /* rollToRest: hangabwärts bis Mulde oder Hindernis (B2-R2) */
               for (let st = 0; st < 40; st++) { const [fx, fz] = grad(terrain, x, z), sl = Math.hypot(fx, fz); if (sl < 0.015) break
@@ -241,6 +250,8 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     const pathPts = inst.filter((x) => x.role === 'path').map((x) => x.p), solid = inst.filter((x) => ['anchor', 'support', 'landmark', 'focus'].includes(x.role))
     const nearPath = (x, z) => pathPts.some((p) => (p[0] - x) ** 2 + (p[2] - z) ** 2 < G.field.path_clear_m ** 2)
     const inSolid = (x, z) => solid.some((o) => (o.p[0] - x) ** 2 + (o.p[2] - z) ** 2 < (0.6 * (o.s || 1) + 0.3) ** 2)
+    const footR = (o) => (tilesFor(cfg, o.kind)[0]?.r || 0.6) * (o.s || 1) * 1.3 + 0.2 * (cfg.units?.m_per_H || 2.24)   // Ü5-Messkreis des Gates
+    const inFoot = (x, z) => solid.some((o) => /stone|rock|tree/.test(o.kind) && (o.p[0] - x) ** 2 + (o.p[2] - z) ** 2 < footR(o) ** 2)   // V-786: Feldgras lässt den Fuß von Steinen und Bäumen frei, dort nur Fuß-Büschel (≤ 50 % Umfang)
     // Bauweise-Tafel Regel 3 (Lab biome-sheets/Bauweise_Erdung.jpg): Büschel lehnen vom Objekt weg und hangabwärts, lang in der Kehle bzw. Senke, kurz auf der Kuppe
     const crowns = inst.filter((o) => o.kind === 'tree').map((o) => [o.p[0], o.p[2], (o.s || 1) * (tilesFor(cfg, 'tree')[0]?.r || 1.6)])
     const tuft = (x, z, sc, grp, src, step, from = null) => { if (masks?.blocked?.(x, z)) return
@@ -253,7 +264,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
     for (const o of solid) { const n = typeof G.foot.count === 'object' && !Array.isArray(G.foot.count) ? (G.foot.count[o.role] ?? 3) : R.pick(G.foot.count),   /* V-770: 5 am Anker, 3 an der Stütze */ ro = (o.s || 1) * (tilesFor(cfg, o.kind)[0]?.r || 0.6), [gx, gz] = grad(terrain, o.p[0], o.p[2])
       const downA = Math.hypot(gx, gz) > 0.02 ? Math.atan2(-gz, -gx) : (cfg.light?.sun_az ?? -0.6), sun = cfg.light?.sun_az ?? -0.6
       /* Bauweise: Fels → Grasnest in der Kehle bergauf; Strauch → Sonnenseite unter der Kante; Baum → an der Tropfkante; sonst hangabwärts */
-      const isStone = /stone|rock|boulder/.test(o.kind), side = isStone ? downA + Math.PI : o.kind === 'bush' ? sun : downA, arc = Math.PI * (isStone ? R.range(0.3, 0.5) : R.range(0.45, 0.95)), step = R.int(0, G.color.steps - 1)
+      const isStone = /stone|rock|boulder/.test(o.kind), side = isStone ? downA + Math.PI : o.kind === 'bush' ? sun : downA, arc = Math.PI * (isStone ? R.range(0.3, 0.5) : R.range(0.4, 0.6))   /* Ü5: ≤ 50 % des Fußes inkl. Büschelbreite */, step = R.int(0, G.color.steps - 1)
       const ring = o.kind === 'tree' ? [1.6, 2.2] : G.foot.ring_r
       for (let k = 0; k < n; k++) { const a = side - arc / 2 + arc * ((k + R.range(0.2, 0.8)) / n), d = ro * R.range(...ring)
         tuft(o.p[0] + Math.cos(a) * d, o.p[2] + Math.sin(a) * d, G.foot.ratio[Math.min(2, k === 0 ? 0 : k < 4 ? 1 : 2)] * R.range(0.9, 1.1), o.group, 'foot', step, [o.p[0], o.p[2]]) } }
@@ -275,7 +286,7 @@ export function placeChunk({ cfg, seed, chunk, terrain, biome = 'moos', masks = 
       for (let c = 0; c < nc; c++) { const edge = c >= nCore, nt = edge ? F.cluster_tufts.edge : F.cluster_tufts.core, step = R.int(0, G.color.steps - 1); plan.push(nt)
         const ca = rot + c * GA, cd = F.cluster_spacing_m * Math.sqrt(c + (c ? 0.5 : 0)) * R.range(0.9, 1.1), cx = x + Math.cos(ca) * cd, cz = z + Math.sin(ca) * cd
         for (let k = 0; k < nt; k++) { const ta = R.range(0, 6.28) + k * GA, td = F.tuft_spacing_m * Math.sqrt(k) * (edge ? F.edge_spread : 1), tx = cx + Math.cos(ta) * td, tz = cz + Math.sin(ta) * td
-          if (nearPath(tx, tz) || inSolid(tx, tz)) continue
+          if (nearPath(tx, tz) || inSolid(tx, tz) || inFoot(tx, tz)) continue
           const before = grass.field; tuft(tx, tz, G.foot.ratio[k === 0 ? 0 : k < 4 ? 1 : 2] * short * (edge ? F.edge_short : 1) * R.range(0.9, 1.1), grp, 'field', step); placed += grass.field - before } }
       grass.clusters += nc; grass.patches.push({ id: grp, clusters: nc, planned: plan.reduce((a, b) => a + b, 0), placed }) } }
     // c) Die eine Bedeutung je Zelle (V-770, Etherington 70/20/10): höchstens ein bewusster Regelbruch, Wahrscheinlichkeit = surrealism des Karten-Dreiers
