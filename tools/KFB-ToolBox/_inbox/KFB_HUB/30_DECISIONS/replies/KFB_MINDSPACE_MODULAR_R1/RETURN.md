@@ -63,3 +63,16 @@
 **Unresolved:** original Lovable app source; original H13 source-authentic render; first source-isolated Garden/Creative sphere object; actual receiving WS1 active branch/render/portal APIs; pointer event interaction/depth/render cost and owner-safe runtime introduction; real licensing of images/tiles.
 
 **ONE NEXT GATE unchanged:** WS0 isolates actual original Lovable and H13 plus one visually attractive genuine Garden/Creative source; Georg selects the first artistic visual. Meta-globe stays optional until that gate and an independent future WS1 source preflight. No additional human gate, Site/Stage, runtime or masterplan ownership introduced here.
+
+
+## R4 Addendum · 2026-10-26 · Egregore / Meta-Narrative Field proposal
+
+**Outcome:** New additive [EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md](EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md) safely records Georg's narrative-world vision of changing collective Egregore thought-fields in existing KFB Mindscapes. Their growth/decay/contestation can depend on NPC witnessing, imitation, resistance, ritual, narration and real sourced Card/poem/propaganda content, with spatially manifested POIs or meteorite-like arrivals. Stage/locale may be used/explored/contested by Men in Black, Hunky & Dory, FrizzleBob and source-backed Residents.
+
+**Sources/owner truth:** Sheldrake's original morphic resonance concept is cited as a hypothesis/fictional field metaphor; independent social-threshold/complex-contagion as possible technical model; real Registry deck deep_state_plumbing Card #45 THE EGREGORE with power/lore verified but its PDF source map is NOT verified. Preexisting Deck→Card→Biome→Resident→Triplet planning and ChatterBox authored Subject→Connector→Reframe, silent-turn and source-review hierarchy preserved; no new dialogue owner or automatic unapproved Triplets. Original Mindspace R1/R2/R3, existing 6 modes and one WS1 surface/player/audio authority retained. The WS0 intake is cross-linked additively; central KFB Hub/router not changed.
+
+**Evidence:** 1 new concept dossier and additive updates to WS0 brief, Changelog and this Return. Exact GitHub changed files, final branch/PR head and full-file readbacks are to be checked and recorded at handoff. Editorial source/mapping checks only; **0 KFB unit/integration/browser/GPU/source-object visual tests**, **0 Stage/Site**, **no build, asset import, merge, Live or human Golden**.
+
+**Unresolved:** source-isolated original H13/Lovable, real accepted first Garden/Meta-world, current WS1 receiver/provenance API, actual NPC knowledge/ChatterBox selector interfaces, poetry/media rights, real Card PDF map and renderer cost. All remain SOURCE_REQUIRED/PROPOSED rather than misreported as functional. Meteor impact cannot write terrain outside sole active Surface Truth owner.
+
+**Exactly one unchanged NEXT GATE:** WS0 Mindspace source/design arbitration: actual Lovable donor, H13 original and one compelling genuine Garden/Creative first-room visual in isolation; Georg chooses. After that gate existing owner may consider one bounded, sourced Egregore vignette as future WS1+Resident/ChatterBox trial, without rerouting MVP now. No human action required for review of this plan.

@@ -28,3 +28,15 @@
 - Kept 4 open alternatives: small outer-view globe in the shell, custom inward-facing map dome, host-owned nested/meta scene transitions, or cheap hand-built procedural sphere with no globe library. Globe lat/lng coordinates may be editorial/semantic instead of real-world lat/lng. No second physics, audio, camera, quest, Card registry, runtime or Site.
 - **Evidence:** GitHub Mindspace architecture/Return/WS1 intake read, official library README/Globe.GL API verified. No actual sphere/object source isolation, code/build/running 3D view/compatibility profiling, browser/GPU/Stage/Site tests; all 0.
 - **Single next gate unchanged:** WS0 source-isolates existing Lovable, H13 and one beautiful authentic Garden/Creative Mindspace; Georg chooses first artistic direction, WS1 receiver API inquiry later. No auto merge/Live.
+
+
+## 2026-10-26 · R4 · Egregores / collective narrative Mindscapes / morphic-field metaphor
+
+- Georg proposed Mindscapes as collective Egregores and morphic/meta-narrative fields that may appear as meteor impacts or placed authored POIs, grow/change with resident participation, influence Resident knowledge/Triplet selection, and be cultivated, investigated, exploited or contested by Men in Black, Hunky & Dory, FrizzleBob and others.
+- Added [EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md](EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md) on the EXISTING Mindspace research branch/PR #448. Distinguishes enterable Mindscape (experience) from collective Egregore (narrative identity), so quiet private Mindspaces are not forcibly converted into belief systems.
+- Source provenance: Sheldrake original morphic resonance hypothesis and esoteric Egregore definitions treated as conceptual/fictional sources; social reinforcement and complex contagion as separate implementable modeling inspirations. KFB Card deep_state_plumbing #45 THE EGREGORE source found with power/lore, **PDF mappingVerified=false**, no invented source art.
+- Existing Deck→Card→World Knowledge→Resident→Triplet spine, resident autonomy, canonical Subject→Connector→Reframe and ChatterBox/Triplet Curator KEEP/TUNE/CUT preserved. No real imported poetry, propaganda or unreviewed Triplets, no automatic mass mind-control or alteration of original Card truth.
+- Proposed visual/semantic lifecycle, multi-field NPC membership, reversible spread, contested belief, meaningful authored story encounters, low-cost spatial presentation, meteor VFX (no parallel terrain writer), deterministic event-state adapter and one possible future source-backed vignette.
+- R4 also linked from current WS0 Mindspace intake; no separate Gate, owner, world/renderer/Voice/Audio/Quest/Registry runtime, Site or Live claim.
+- Evidence level: source/literature/editorial review and exact GitHub write/readback; **0** KFB runtime/unit/integration/browser/GPU/source-visual/public tests.
+- **Next gate unchanged:** WS0 isolates original Lovable + H13 source and first authentic Garden/Creative Mindspace for Georg's visual selection before any WS1/ChatterBox receiver work.

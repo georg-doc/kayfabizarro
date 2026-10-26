@@ -40,3 +40,10 @@ Reconcile Georg's actual **working Lovable coherence-breathing app** with H13 Hy
 ## One outcome and return
 **Named decision:** `MINDSPACE_SOURCE_DESIGN_ARBITRATION_R1` = pin actual Lovable and H13 original source/screens + approved first garden reference + existing site/audio owner receiving plan.
 Return precise `SOURCE / USER INTENT / VERIFIED DONORS / MISSING PROOF / GEORG CHOICE / NEXT GATE` (GitHub repo/branch/PR/HEAD and any screenshots/visually isolated objects). No auto-merge, no Live.
+
+
+## R4 optional meta-narrative intake · 2026-10-26
+
+**Nonblocking research lead:** [EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md](EGREGORE_MORPHIC_META_NARRATIVE_FIELDS_R4_2026-10-26.md) adds Georg's idea that Mindscape surfaces can reveal collective **Egregores / narrative fields** maintained, contested and transformed by Resident actions and meaningful Card/poem/Triplet content. Fields can appear as a planned POI or a meteor-like impact; participants may be supporters, observers or critics. No generic 'mind-control zone', no new Triplet grammar, no replacement dialogue owner, and no automatically accepted source quote.
+
+**WS0 review option AFTER the existing source/visual selection:** Is an authored 'falling thought' vignette visually stronger than a static Sphere? Keep the same real H13/Garden donor isolation and genuine Card/model source checks first; actual NPC/World State/WS1 owner interfaces are future receiving questions. The original **single next gate** remains untouched: see original Lovable and H13 sources in isolation and Georg choose one attractive first Mindspace. This Egregore concept is **not** a new P0 blocker, implementation authorization or separate Site/Stage.
