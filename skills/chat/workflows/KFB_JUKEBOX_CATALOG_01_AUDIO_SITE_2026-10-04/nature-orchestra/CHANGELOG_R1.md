@@ -9,3 +9,8 @@
 - Source/document assertions 17/17 PASS, zero downloaded/audio/browser/runtime evidence. Draft PR #453 stacked on existing Audio Site PR #350.
 - No Hub, router, Stage or Live route updates: documentation planning does not change owner, canonical product URL or P0/human gate.
 - One next gate: VS0 AUDIO NATURE SOURCE-ISOLATION + FOREST ADAPTER INTAKE.
+
+## 2026-10-26 · R1a Sound Forge reference donor
+- Inspected public `FatGuy84/sound-forge@54bbdec315e92798660f93ae897c7ccedac7370e` README and both standalone HTML source files.
+- Added `DONOR_AUDIT_SOUND_FORGE_R1_2026-10-26.md`: useful synth-pad/short SFX variation/offline WAV authoring ideas, but no ecological scheduler, spatial runtime or field recordings; 0 browser/listening tests.
+- GitHub tree has no LICENSE and repo license metadata null; direct code reuse and vendoring blocked pending permission/license. Retained existing Audio owner, one AudioContext and first CC0 source-isolated forest gate.
