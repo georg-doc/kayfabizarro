@@ -148,6 +148,8 @@ Unser Konzept R1.6:
 ## 3b · Nachtrag nach Georgs Rückfrage (26.10.)
 
 ### 3b.1 Verkehr und Fußgänger (ADAPT als Muster)
+> **Georg 26.10.: nur einplanen, zurückgestellt.** Pisten gibt es noch nicht.
+> Georgs Idee für später: **Freeroaming zwischen Orten.** Autos fahren quer durchs Gelände von einem Point of Interest zum nächsten (Kartenzonen, Dioramen, Popup-2D-Szenen) und bereisen die Strecke dazwischen, ohne Straßen oder Pisten. Diese Variante kommt als **Weg D** zu A–C dazu und ist erst bei der Wiederaufnahme zu prüfen.
 Georg findet Verkehr interessant. Wir haben die Fahrzeuge: KayKit City Builder Bits, Kenney toy-car-kit (157), car-kit (50), city-kit-roads (95). NPCs dürfen inzwischen überall auftauchen, nicht nur an Biom-, Diorama- oder Kartenzonen.
 
 **Was World Explorer konkret macht** (`city_traffic.js`, `traffic_graph.js`):
@@ -212,6 +214,11 @@ Für unsere spätere Destruction (V-767) und Combat (V-782) gibt es zwei brauchb
 - **Panik-Menge und gepoolte GPU-Partikel**, alles über einen Modus-Controller mit wenigen Einhängepunkten.
 
 Erst wenn der Fahrplan dort ankommt.
+
+**Georg 26.10., Idee:** ein Kampf im Godzilla-Stil, mit 3D-Modellen inszeniert. Das Riesenmonster ist ein Black bzw. Dark Fluffer oder Goo-Monster.
+- Anschluss an V-583/V-595 („heilen statt töten“, geheilt = weiße Augen, kein Goo mehr) und an V-597 (Goo-Vorstadt).
+- Folgerung: Der Riesen-Fluffer wird wohl geheilt statt besiegt. Das ist Georgs Entscheid beim Konzept.
+- Einplanen bei Combat (V-782) und Destruction (V-767).
 
 ### 3b.4 Was heißt „Z14 ist vereinfacht“?
 Online-Karten sind in Zoomstufen gekachelt. Bei Zoom 14 (Z14) ist eine Kachel etwa 2,4 km breit, in Köln rund 1,5 km. Diese Vektor-Kacheln (OpenMapTiles-Schema) sind fürs **Kartenzeichnen** gemacht, nicht für 3D:

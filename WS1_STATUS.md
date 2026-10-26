@@ -22,6 +22,9 @@ Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-expl
   - Die Endlos-Welt hat keine Straßen, deshalb drei Wege: A Pisten je Zelle, B Verkehr in Stadtzonen, C Straßennetz als Welt-Entscheid. Dazu der Vorschlag „beseeltes Auto nah, anonym fern“ mit Ruf-Skala.
   - **Wetter/Himmel:** Fast alles habt ihr schon. Lehre: ein Tageslicht-Vertrag in `driveAtmos` (`daylight()/isNight()/onDaylight()`) statt eigener Rechnungen in Scheinwerfern, Ton, HUD, Tafeln und Grillen.
   - **Kaiju:** HOLD bis V-767/V-782.
+  - **Georg danach:**
+    - Verkehr nur einplanen. Idee Weg D: Autos fahren frei durchs Gelände von Ort zu Ort (Kartenzonen, Dioramen, Popup-Szenen).
+    - Riesenmonster als Black/Dark-Fluffer- bzw. Goo-Monster mit 3D-Modellen, inszeniert wie ein Godzilla-Kampf, bei Combat/Destruction. Wohl „heilen statt töten“ (V-595).
   - **Neue Fragen 4–5** im Dokument.
 - **Nebenbefund für euch:** Mitwandernder Ursprung (5b). World Explorer löst ihn nicht, er setzt nur beim Teleport neu auf. Es braucht eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform für Fließbänder und Rauschen, Rapier im selben Bild.
 
