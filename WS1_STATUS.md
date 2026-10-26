@@ -24,8 +24,12 @@ Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-expl
   - **Kaiju:** HOLD bis V-767/V-782.
   - **Georg danach:**
     - Verkehr nur einplanen. Idee Weg D: Autos fahren frei durchs Gelände von Ort zu Ort (Kartenzonen, Dioramen, Popup-Szenen).
-    - Riesenmonster als Black/Dark-Fluffer- bzw. Goo-Monster mit 3D-Modellen, inszeniert wie ein Godzilla-Kampf, bei Combat/Destruction. Wohl „heilen statt töten“ (V-595).
+    - Riesenmonster als Black/Dark-Fluffer- bzw. Goo-Monster mit 3D-Modellen, inszeniert wie ein Godzilla-Kampf, bei Combat/Destruction. Besiegen oder anders erledigen ist offen.
     - Waffen, Destruction und Minigames: Abgleich Kampf R1 mit World Explorer in §3b.5, eingeplant für Destruction, nicht vorgezogen. Fehlt bei uns: Wirkungsprofil je Waffe, Grundtypen, Hitze statt Munition, Zielhelfer, Aufschalten, Schwachstellen, Häuser über Zustands-Textur zerstören, Fahrzeug-Schaden in Stufen, Modus-Controller als Minigame-Vorlage.
+    - **Korrektur Georg:** Der Heil-Strahl ist keine Standardwaffe; Heilen ist ein Meta-Gimmick und kann anders laufen.
+    - Für den normalen Kampf (Arena-POC) wünscht Georg differenzierte Waffen und Mechaniken (§3b.6).
+    - Vorschlag: Waffe = K10-Karte + Gefühlsprofil aus `kfb-combat-def`. Das sind 8 Profile und 12 Karten, im Spiel laufen heute 2.
+    - Dazu ein Mechanik-Katalog und ein Waffen-Konzept R1 mit Prüfkriterien bei WSA/WS0.
   - **Neue Fragen 4–5** im Dokument.
 - **Nebenbefund für euch:** Mitwandernder Ursprung (5b). World Explorer löst ihn nicht, er setzt nur beim Teleport neu auf. Es braucht eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform für Fließbänder und Rauschen, Rapier im selben Bild.
 

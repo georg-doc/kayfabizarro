@@ -216,8 +216,8 @@ Für unsere spätere Destruction (V-767) und Combat (V-782) gibt es zwei brauchb
 Erst wenn der Fahrplan dort ankommt.
 
 **Georg 26.10., Idee:** ein Kampf im Godzilla-Stil, mit 3D-Modellen inszeniert. Das Riesenmonster ist ein Black bzw. Dark Fluffer oder Goo-Monster.
-- Anschluss an V-583/V-595 („heilen statt töten“, geheilt = weiße Augen, kein Goo mehr) und an V-597 (Goo-Vorstadt).
-- Folgerung: Der Riesen-Fluffer wird wohl geheilt statt besiegt. Das ist Georgs Entscheid beim Konzept.
+- Anschluss an V-597 (Goo-Vorstadt).
+- Ob der Riese besiegt oder auf anderem Weg erledigt wird, ist offen. Heilen (V-595) ist ein eigenes Meta-Gameplay, nicht der Standard des Kampfes (Georg 26.10.).
 - Einplanen bei Combat (V-782) und Destruction (V-767).
 
 ### 3b.4 Was heißt „Z14 ist vereinfacht“?
@@ -241,11 +241,11 @@ Das OSM City Lab holt dagegen die Rohdaten (Overpass) mit allen Angaben und IDs.
 | Feature | So macht es World Explorer | Für KFB |
 |---|---|---|
 | Wirkungsprofil je Waffe als Daten | Kadenz, Abklingzeit, Wirkung je Zieltyp (Gebäude, Monster, Auto), Flächenradius, Geschoss-Tempo, Streuung, Reichweite, Ton | unsere Waffenkarten beschreiben Asset und Halterung; ein **Wirkungsteil** fehlt (Heil- bzw. Fluff-Wirkung je Zieltyp, Fläche, Kadenz) |
-| drei Grundtypen | Schnellfeuer mit Leuchtspur, Rakete mit Flächenwirkung, Strahl (0,28 s) | z. B. Knet-Spritzer, Konfetti- bzw. Fluff-Rakete, Heil-Strahl |
+| drei Grundtypen | Schnellfeuer mit Leuchtspur, Rakete mit Flächenwirkung, Strahl (0,28 s) | gibt es im Arena-Prototyp schon feiner: 8 Gefühlsprofile, siehe §3b.6 |
 | Hitze statt Munition | Dauerfeuer heizt auf, bei Überhitzung kurze Pause | passt zu „kein HP, kein Grind“ |
 | Zielhelfer | nimmt das nächste Ziel im kleinen Kegel um die Blickrichtung, Schwachstellen leicht bevorzugt | wichtig für Touch und Gamepad |
 | Aufschalten + Salve | Ziel wird über Zeit aufgeschaltet, dann suchende Raketen-Salve | Boss-Kampf, Fahrzeug-Waffen |
-| Schwachstellen | benannte Trefferkugeln am Monster; Schwachstelle ×2 und blitzt auf | **Riesen-Goo-Monster:** Goo-Beulen als Heilpunkte, Kern zuletzt |
+| Schwachstellen | benannte Trefferkugeln am Monster; Schwachstelle ×2 und blitzt auf | **Riesen-Goo-Monster:** Goo-Beulen als Trefferzonen, Kern zuletzt |
 | Gebäude-Zerstörung ohne Einzelobjekte | jedes Haus im zusammengeführten Mesh trägt eine ID; Schaden, Brand und Einsturz stehen in einer kleinen Zustands-Textur, der Shader senkt das Haus ab; Trümmer und Kollider | **Goo-Vorstadt (V-597):** Haus zerfällt = befreit, Bewohner fliehen; Wertung „Stadt befreit in %“ statt Schaden |
 | Fahrzeug-Schaden als Stufen | Funken → Rauch → Brand → Explosion (Hüpfer mit Drall, Trümmer, Brandfleck) → Wrack 30 s → versinkt; Obergrenzen für gleichzeitige Explosionen und Kettenreaktionen (3 je Bild, Tiefe 3) | cartoonig als Knet-Plopp und Fluff-Wolke; die Obergrenzen übernehmen |
 | Partikel ganz auf der GPU | Bahn wird im Shader aus dem Startzustand gerechnet, CPU schreibt nur beim Start; Pause und Zeitlupe kostenlos | mit `knet-fx` abgleichen; passt zu Hit-Stop |
@@ -253,7 +253,7 @@ Das OSM City Lab holt dagegen die Rohdaten (Overpass) mit allen Angaben und IDs.
 | Modus-Controller für ein Minigame | ein Modul: Start/Ende, Intro, Leben, Sieg/Niederlage, Pause, Ergebnis-Karte, Statistik (Schüsse, Treffer), eigenes HUD; in geteilten Dateien nur aufgelistete Einhängepunkte | **Vorlage für alle Minigames**, passt zu Szenen `kfb.scene/1` (R1.6 §5.1) |
 | Auftritt aus der Welt | Monster steigt aus dem nächsten großen Gewässer (bis 2,5 km), sonst vom Kartenrand | Riese steigt aus See, Goo-Pfütze oder Krater |
 
-**Nicht übernehmen:** zerfallende Fußgänger (Ragdoll in Einzelteilen), Militär-Look und echte Waffen. Bei uns gilt „heilen statt töten“.
+**Nicht übernehmen:** zerfallende Fußgänger (Ragdoll in Einzelteilen), Militär-Look und echte Waffen. Heilen ist ein eigenes Meta-Gameplay (V-595) und läuft getrennt vom normalen Kampf.
 
 **Minigame-Optionen** (nur Ideen, Bildpaket vor dem Bau):
 - Goo-Riese als Boss mit Schwachstellen.
@@ -263,6 +263,55 @@ Das OSM City Lab holt dagegen die Rohdaten (Overpass) mit allen Angaben und IDs.
 - Fahrzeug-Waffen am Racer oder Combat-Mech (V-823) mit Aufschalten.
 
 **Owner:** Combat V-782, Destruction V-767, beides bei WS0 und WSA (V-584). Eingeplant für die Destruction-Slice, nicht vorgezogen.
+
+### 3b.6 Differenzierte Waffen für den normalen Kampf (Georg 26.10.)
+**Korrektur Georg:** Der Heil-Strahl ist keine Standardwaffe. Heilen ist ein Meta-Gimmick bzw. eigenes Gameplay und kann ganz anders laufen. Der normale Kampf (bisher Proof of Concept in der Combat Arena) braucht differenzierte Waffen und Mechaniken.
+
+**Was es schon gibt, aber getrennt:**
+- **Gefühl und Ballistik:** `combat-av/arena/modules/kfb-combat-def.js` (Modulvertrag v1.0.0) hat 8 Waffen:
+  - Stinger: Schnellfeuer.
+  - Hornet: 3er-Salve.
+  - Bamboo Rail: durchschlagend.
+  - Bog Lob: Bogenwurf mit Ätzpfütze.
+  - Scrap Cannon: Streuschuss mit 6 Kugeln.
+  - Nest Rocket: Fläche.
+  - Mortar: Bogenschuss mit Sprengwolke.
+  - Kayfabeam: Bolzenfolge.
+  - Dazu: Munitions-Silhouetten; 4 Energiearten (kinetisch, heiß, nass, elektrisch) × 8 Oberflächen als Treffer-Regel; Gegner-Roster mit Lebenspunkten; Einteilung „Signatur“ vs. „Wechsel“.
+- **Echte Modelle und Halterung:** K10-Waffenkarten, `combat-arena-v5/k10`, 12 Karten:
+  - Fernkampf: Pistole, Blaster, Action-Gewehr, Bogen, Armbrust, Mech-Minigun.
+  - Nahkampf: Skelett-Klinge, Stäbe, Zauberstab.
+  - Wurf: Rauchbombe.
+- **Im Spiel (Kampf R1):** nur 2 K10-Waffen mit einem festen Schuss (26 m, Kegel). Die Gefühlsprofile der Arena sind nicht angeschlossen.
+
+**Kern des Vorschlags:** Eine Waffe = K10-Karte (Modell, Halterung, Clip-Marker) + Gefühlsprofil aus `kfb-combat-def` (Rhythmus, Flugbahn, Wirkung, Energie). Damit wird aus dem vorhandenen Material sofort ein Arsenal statt zwei Pistolen, ohne neue Modelle.
+
+**Mechanik-Katalog** (vorhanden = Arena-Daten; neu = Vorschlag, z. T. aus World Explorer):
+
+| Achse | Optionen | Stand |
+|---|---|---|
+| Schussrhythmus | Einzel, Salve, Dauerfeuer | vorhanden |
+| | Aufladen (Bogen spannen, Strahl laden), Hitze bzw. Überhitzen statt Munition | neu |
+| Flugbahn | gerade, Bogen bzw. Wurf, Streuung, durchschlagend | vorhanden |
+| | suchend (Aufschalten), abprallend | neu |
+| Wirkung | Fläche, Pfütze bzw. Zone über Zeit, Rückstoß | vorhanden als Bild bzw. Wert |
+| | **Energie als Gameplay:** heiß = brennt nach, nass = bremst bzw. rutscht, elektrisch = betäubt bzw. springt zum Nachbarn, kinetisch = stößt weg | neu (heute nur Bild und Ton) |
+| Zielen | Zielhelfer im kleinen Kegel, Aufschalten, Schwachstellen, Treffer-Rückmeldung | neu |
+| Nahkampf | Klinge, Stab | Karten vorhanden |
+| | Kombo, Parieren, Ausweichrolle | neu |
+| Gegnerseite | Lebenspunkte-Klassen | vorhanden |
+| | Panzer (die Kayfabeam-Notiz „schmilzt Panzer“ deutet es an), Schild (Oberfläche `shield` vorhanden), Taumeln, Schwachstellen | neu |
+| Ausrüstung | Signatur-Waffe je Figur + Wechselwaffe | Einteilung vorhanden |
+| | Wechseln über das HUD | neu |
+| Fahrzeuge | Mech-Minigun | Karte vorhanden |
+| | Racer-Waffen | neu |
+| Umgebung | zerstörbare Props, explodierende Fässer, Deckung | neu, Destruction-Slice |
+
+**Nächster Schritt (Vorschlag, kein Bau):**
+- Ein **Waffen-Konzept R1** mit Prüfkriterien (kein Bastelregress): je Waffe Rolle, Rhythmus, Flugbahn, Wirkung, Konter.
+- Dazu eine Bild- bzw. Clip-Probe aus der Arena.
+- Owner: WSA (Arena, V-584) mit WS0 (Combat V-782).
+- Der Lead kann den Abgleich K10-Karten ↔ Gefühlsprofile als Tabelle zuliefern.
 
 ## 4 · Ausdrücklich nicht übernehmen
 
