@@ -1,5 +1,6 @@
 import { createAdaptiveStemEngine } from './adaptive-stems.mjs?v=0.3.1';
 import { initVoiceBench } from './voice-bench.js?v=0.3.1';
+import { createImmersiveAmbience } from './immersive-ambience.mjs?v=0.1.0';
 
 const RAW='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -7,7 +8,7 @@ const text=(v='')=>String(v??'');
 const escapeHtml=s=>text(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dbToGain=db=>10**(db/20);
 let catalog=null,soundscape=null,interaction=null,intake=[];
-let graph=null,adaptive=null,audioContextsCreated=0,activeState='C',voiceActive=false,xfadePosition=0,demoRun=0;
+let graph=null,adaptive=null,immersive=null,audioContextsCreated=0,activeState='C',voiceActive=false,xfadePosition=0,demoRun=0;
 const aMix=new Audio(),bMix=new Audio();aMix.crossOrigin='anonymous';bMix.crossOrigin='anonymous';
 const audioUrl=file=>RAW+file.split('/').map(encodeURIComponent).join('/');
 
@@ -56,6 +57,7 @@ function ensureGraph(){
  sources.deckA.connect(deckA);sources.deckB.connect(deckB);sources.preview.connect(preview);
  graph={ctx,master,buses,decks:{A:deckA,B:deckB,preview},sources};
  adaptive?.configureHost({audioContext:ctx,musicDestination:buses.SCORE});
+ immersive=createImmersiveAmbience({audioContext:ctx,destination:buses.GLOBAL_BED,onChange:renderImmersive});
  setFadeGains(0,0);applyMixTargets(0);renderContext();
  return graph;
 }
@@ -102,7 +104,7 @@ function getContextSnapshot(){
 }
 
 function exposeApi(){
- window.KFBAudioSite={version:'0.7.1',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()}};
+ window.KFBAudioSite={version:'0.7.1',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()},immersiveSound:{start:async()=>{await resumeGraph();return immersive.start()},stop:()=>immersive?.stop(),setPalette:value=>immersive?.setPalette(value),setDepth:value=>immersive?.setDepth(value),accent:()=>immersive?.accent(),getSnapshot:()=>immersive?.getSnapshot()||null}};
 }
 
 function bindExternalAdapter(){
@@ -171,6 +173,13 @@ function renderSources(){
  $('#missingSources').innerHTML=soundscape.missing.map(s=>'<div class="sourceitem"><div><b>'+escapeHtml(s.label)+'</b><br><small>'+escapeHtml(s.need)+'</small></div><span class="chip missing">'+escapeHtml(s.status)+'</span></div>').join('');
 }
 
+function renderImmersive(snapshot=immersive?.getSnapshot()){
+ const status=$('#immersiveStatus');if(!status)return;
+ status.textContent=snapshot?(snapshot.active?'SYNTH PLAYING':'STOPPED')+' · '+snapshot.palette.replaceAll('_',' ')+' · '+Math.round(snapshot.depth*100)+'% depth · module contexts '+snapshot.moduleCreatedAudioContexts:'READY · source-only synthesizer, not a nature field recording';
+ const depth=$('#immersiveDepthLabel');if(depth)depth.textContent=Math.round((snapshot?.depth??.25)*100)+'%';
+ const start=$('#immersiveStart'),stop=$('#immersiveStop');if(start)start.disabled=!!snapshot?.active;if(stop)stop.disabled=!snapshot?.active;
+}
+
 function loadMix(which){const sel=$(which==='A'?'#deckA':'#deckB'),t=catalog.tracks.find(x=>x.id===sel.value),a=which==='A'?aMix:bMix;if(!t)return;a.src=audioUrl(t.file);a.currentTime=0;return {a,t}}
 
 function setFadeGains(v,seconds=0){
@@ -209,9 +218,14 @@ function bind(){
  $('#ttsSpeak').onclick=async()=>{await resumeGraph();if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance('Statement. Response. Reframe. The groove leaves room for us.');u.onstart=()=>setVoiceActive(true,{source:'browser-tts-demo'});u.onend=u.onerror=()=>setVoiceActive(false,{source:'browser-tts-demo'});window.speechSynthesis.speak(u)};
  const drop=$('#drop'),input=$('#files');drop.onclick=()=>input.click();input.onchange=e=>filesChanged(e.target.files);drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag')};drop.ondragleave=()=>drop.classList.remove('drag');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');filesChanged(e.dataTransfer.files)};
  $('#startStemG').onclick=()=>startAdaptiveDeck('G').catch(()=>{});$('#startStemD').onclick=()=>startAdaptiveDeck('D').catch(()=>{});$('#stopStems').onclick=()=>adaptive.stop();$$('[data-boundary]').forEach(button=>button.onclick=()=>adaptive.setBoundary(button.dataset.boundary));$$('[data-stem-preset]').forEach(button=>button.onclick=()=>adaptive.setPreset(button.dataset.stemPreset));
+ $('#immersiveStart').onclick=async()=>{await resumeGraph();immersive.start()};
+ $('#immersiveStop').onclick=()=>immersive?.stop();
+ $('#immersivePalette').onchange=e=>{if(!immersive)ensureGraph();immersive.setPalette(e.target.value)};
+ $('#immersiveDepth').oninput=e=>{if(!immersive)ensureGraph();immersive.setDepth(+e.target.value)};
+ $('#immersiveAccent').onclick=async()=>{await resumeGraph();if(!immersive.getSnapshot().active)immersive.start();immersive.accent()};
  $('#downloadIntake').onclick=downloadIntake;$('#pStyle').onchange=renderPromptStyle;$('#buildPrompt').onclick=buildPrompt;$('#copyPrompt').onclick=()=>navigator.clipboard?.writeText($('#promptOut').value);
 }
 
-function renderAll(){renderCatalog();fillSelect($('#deckA'));fillSelect($('#deckB'));$('#deckB').selectedIndex=Math.min(1,$('#deckB').options.length-1);fillSelect($('#pRefs'),false);fillPromptStyles();renderSources();setFadeGains(0,0);filesChanged([]);renderContext();renderAdaptive()}
+function renderAll(){renderCatalog();fillSelect($('#deckA'));fillSelect($('#deckB'));$('#deckB').selectedIndex=Math.min(1,$('#deckB').options.length-1);fillSelect($('#pRefs'),false);fillPromptStyles();renderSources();renderImmersive();setFadeGains(0,0);filesChanged([]);renderContext();renderAdaptive()}
 
 load().catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:20px;color:#f88">'+escapeHtml(e.stack||e)+'</pre>')});
