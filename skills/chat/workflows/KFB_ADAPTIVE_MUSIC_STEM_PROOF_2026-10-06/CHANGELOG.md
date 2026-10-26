@@ -147,3 +147,10 @@
 - published evidence checkpoint `8c32d2bf8afecac063c2b1e11362710a1051504e`;
 - left one next gate: after exact Claude Coworker Return, Work/WSA implements only the tiny World-side context/event adapter;
 - no Production Hub, router, Cloudflare, Audio Site, second Site, merge or Live promotion.
+
+
+## 2026-10-26 · WS0 correction + integrated Immersive Sound source in existing KFB Audio MVP
+- Corrected executor label **VS0 → WS0**; broader Immersive Sound Universe R2 is integral to actual Audio Site v11, not Nature-only standalone or distant deferred project.
+- Additive current-MVP source work on branch `feature/kfb-audio-site-immersive-ws0-2026-10-26` stacked from this Audio owner #365; native Soundscape panel gets an injected-context ICEBERG/ONEIRIC/ORGANIC_AIR synthesized demo from internal Conspiracy Iceberg donor ideas; SOURCE bank, B/C/D MusicClock, Voice and existing Site preserved.
+- 17/17 current source static/syntax checks + 18/18 mock WebAudio PASS; 26-assertion Node QA script prepared but not yet executed; real hearing/browser/Site publish 0. Existing Site version 11 remains untouched; no standalone new runtime or Stage.
+- Current side-lane Return and WS0 brief at `IMMERSIVE_WS0_{RETURN,INTEGRATION_BRIEF,TEST_REPORT}_R1_2026-10-26.md` (full path names in same workflow); next source-to-Site gate is WS0 audio-source isolation + v11 parity/browser + same-Site publication only after green.
