@@ -39,3 +39,7 @@ The managed Site source also updates its existing `index.html`, `audio-site.js`,
 - complete packaged Site validator: 172/172 PASS;
 - `git diff --check`: PASS;
 - Site version 9 publication: PASS;\n- two post-deploy data-only loader checks: 12/12 PASS each;\n- additional Site publishes after setup: 0;\n- owner-visible Reload and audible DRY/D verdict: pending human gate.
+
+
+## WS0 Immersive Sound · Source-integrated candidate · 2026-10-26
+Receiver: **the existing KFB Audio Site Source 0.7.1 / v11** (do not create another Site). Source branch `feature/kfb-audio-site-immersive-ws0-2026-10-26`. Added `immersive-ambience.mjs`, controls to **the current Soundscape tab**, injected GLOBAL_BED routing via the **existing** `audio-site.js` AudioContext, and `qa-immersive.mjs`. Three synthesis modes: ICEBERG / ONEIRIC / ORGANIC_AIR, adapted from internal KFB Conspiracy Iceberg source; no Nature field recordings/placeholder music or unlicensed Sound Forge source. Try source-only original Iceberg audible proof before accepting sound quality. This repo folder is a **partial** representation of the actual Site-managed bundle: publishing executor must obtain original managed v11 dependencies and integrate these diffs in place. Static/mock source checks 17/17+18/18; real Node QA/browser/listening/Site update pending. Full owner return: `skills/chat/workflows/KFB_ADAPTIVE_MUSIC_STEM_PROOF_2026-10-06/IMMERSIVE_WS0_RETURN_R1_2026-10-26.md`.
