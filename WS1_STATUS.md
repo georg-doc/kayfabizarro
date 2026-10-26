@@ -1,7 +1,23 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §176.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§176 ist der neueste, Stand 26.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §177.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§177 ist der neueste, Stand 26.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 177 · 26.10. · Arsenal R1: Zuordnung K10-Waffenkarten ↔ Gefühlsprofile (für WSA, über WS0)
+Georg hat die Tabelle angefragt (Anschluss an §176/§3b.6). Fassung: `docs/WAFFEN_ZUORDNUNG_R1.md` auf diesem Zweig. Seite: https://claude.ai/artifact/5Dpj76JoSeS52wxECdia7k
+- **Zuordnung** (12 Karten aus `combat-arena-v5/k10`, Profile aus `kfb-combat-def.js`):
+  - Pistole → Stinger, Blaster → Kayfabeam, Action-Gewehr → Hornet, Armbrust → Bamboo Rail.
+  - Stab → Nest Rocket, Skelett-Stab → Bog Lob, Rauchbombe → Bogenwurf + Rauchzone.
+  - Mech-Minigun → Stinger mit Anlaufen + Hitze.
+  - Neu: Bögen → Spannschuss, Zauberstab → Kettenblitz, Klinge → Kombo/Parieren.
+- **Ohne Modell:** Scrap Cannon und Mortar (Job für WSB/WSA).
+- **Neue Mechaniken:**
+  - Aufladen, Hitze statt Munition, Energie als Spielregel.
+  - Zonen, Kombo, Zielhilfe/Aufschalten/Schwachstellen.
+  - Panzer/Schild/Taumeln am Gegner.
+- **Bitte an WS0:** an WSA weitergeben. WSA prüft in der Arena mit einem Clip je Zeile, daraus wird das Waffen-Konzept R1 mit Prüfkriterien.
+- Heilen ist laut Georg ein Meta-Gimmick und steht nicht in der Tabelle.
+- Offen bei Georg: die Signaturwaffe von FrizzleBob.
 
 ## 176 · 26.10. · World Explorer als Spender für die Endlos-Welt: Evaluierung und Konzept-Entwurf R1 (Georg-Auftrag)
 Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-explorer` gebeten (MIT, @e149dd5). Der Code wurde vollständig gelesen, nichts ausgeführt. Abgeglichen mit eurer R7-Notiz (PR #447 @dbd05a05), `game/proc-world-ws0` @fc4fbc3 und unserem Konzept R1.6.
