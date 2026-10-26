@@ -228,6 +228,42 @@ Online-Karten sind in Zoomstufen gekachelt. Bei Zoom 14 (Z14) ist eine Kachel et
 
 Das OSM City Lab holt dagegen die Rohdaten (Overpass) mit allen Angaben und IDs. Deshalb bleibt es Geografie-Owner, und Zonen werden daraus offline gebacken.
 
+### 3b.5 Waffen, Destruction und Minigames (Georg 26.10.)
+**Unser Stand (Kampf R1, `combatPlayer.js` auf `game/proc-world-ws0`):**
+- Zwei K10-Waffen (Pistole, HeroMan-Blaster) mit Waffenkarte, fester Halterung und Mündungsblitz.
+- Geschoss aus einem Pool, Knet-Treffer, Hit-Stop (V-567).
+- Feste Reichweite 26 m im Kegel, nur Ziele im Obstgarten.
+- Treffer → Warnung → Aggro → K.o. mit Fluff; Dark Fluffer werden geheilt (V-595). Kein Schaden am Spieler.
+- Sauber gebaut, aber eben basal: ein Waffentyp, keine Flächenwirkung, kein Zielhelfer, keine Schwachstellen, keine Zerstörung.
+
+**Was World Explorer mehr hat** (`walker_weapons.js`, `kaiju/kaiju_weapons.js`, `kaiju_destruction.js`, `vehicle_damage.js`, `kaiju_fx.js`, `kaiju_mode.js`):
+
+| Feature | So macht es World Explorer | Für KFB |
+|---|---|---|
+| Wirkungsprofil je Waffe als Daten | Kadenz, Abklingzeit, Wirkung je Zieltyp (Gebäude, Monster, Auto), Flächenradius, Geschoss-Tempo, Streuung, Reichweite, Ton | unsere Waffenkarten beschreiben Asset und Halterung; ein **Wirkungsteil** fehlt (Heil- bzw. Fluff-Wirkung je Zieltyp, Fläche, Kadenz) |
+| drei Grundtypen | Schnellfeuer mit Leuchtspur, Rakete mit Flächenwirkung, Strahl (0,28 s) | z. B. Knet-Spritzer, Konfetti- bzw. Fluff-Rakete, Heil-Strahl |
+| Hitze statt Munition | Dauerfeuer heizt auf, bei Überhitzung kurze Pause | passt zu „kein HP, kein Grind“ |
+| Zielhelfer | nimmt das nächste Ziel im kleinen Kegel um die Blickrichtung, Schwachstellen leicht bevorzugt | wichtig für Touch und Gamepad |
+| Aufschalten + Salve | Ziel wird über Zeit aufgeschaltet, dann suchende Raketen-Salve | Boss-Kampf, Fahrzeug-Waffen |
+| Schwachstellen | benannte Trefferkugeln am Monster; Schwachstelle ×2 und blitzt auf | **Riesen-Goo-Monster:** Goo-Beulen als Heilpunkte, Kern zuletzt |
+| Gebäude-Zerstörung ohne Einzelobjekte | jedes Haus im zusammengeführten Mesh trägt eine ID; Schaden, Brand und Einsturz stehen in einer kleinen Zustands-Textur, der Shader senkt das Haus ab; Trümmer und Kollider | **Goo-Vorstadt (V-597):** Haus zerfällt = befreit, Bewohner fliehen; Wertung „Stadt befreit in %“ statt Schaden |
+| Fahrzeug-Schaden als Stufen | Funken → Rauch → Brand → Explosion (Hüpfer mit Drall, Trümmer, Brandfleck) → Wrack 30 s → versinkt; Obergrenzen für gleichzeitige Explosionen und Kettenreaktionen (3 je Bild, Tiefe 3) | cartoonig als Knet-Plopp und Fluff-Wolke; die Obergrenzen übernehmen |
+| Partikel ganz auf der GPU | Bahn wird im Shader aus dem Startzustand gerechnet, CPU schreibt nur beim Start; Pause und Zeitlupe kostenlos | mit `knet-fx` abgleichen; passt zu Hit-Stop |
+| Kamerawackeln nach Abstand | Stärke an der Quelle, mit Entfernung schwächer | einfach, wirkungsvoll |
+| Modus-Controller für ein Minigame | ein Modul: Start/Ende, Intro, Leben, Sieg/Niederlage, Pause, Ergebnis-Karte, Statistik (Schüsse, Treffer), eigenes HUD; in geteilten Dateien nur aufgelistete Einhängepunkte | **Vorlage für alle Minigames**, passt zu Szenen `kfb.scene/1` (R1.6 §5.1) |
+| Auftritt aus der Welt | Monster steigt aus dem nächsten großen Gewässer (bis 2,5 km), sonst vom Kartenrand | Riese steigt aus See, Goo-Pfütze oder Krater |
+
+**Nicht übernehmen:** zerfallende Fußgänger (Ragdoll in Einzelteilen), Militär-Look und echte Waffen. Bei uns gilt „heilen statt töten“.
+
+**Minigame-Optionen** (nur Ideen, Bildpaket vor dem Bau):
+- Goo-Riese als Boss mit Schwachstellen.
+- Goo-Vorstadt befreien gegen die Uhr.
+- Schießbude bzw. Zielparcours mit Hitze und Zielhelfer.
+- Ort verteidigen gegen Wellen von Dark Fluffern.
+- Fahrzeug-Waffen am Racer oder Combat-Mech (V-823) mit Aufschalten.
+
+**Owner:** Combat V-782, Destruction V-767, beides bei WS0 und WSA (V-584). Eingeplant für die Destruction-Slice, nicht vorgezogen.
+
 ## 4 · Ausdrücklich nicht übernehmen
 
 | Teil | Warum nicht |

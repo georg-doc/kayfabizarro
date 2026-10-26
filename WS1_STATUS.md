@@ -25,6 +25,7 @@ Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-expl
   - **Georg danach:**
     - Verkehr nur einplanen. Idee Weg D: Autos fahren frei durchs Gelände von Ort zu Ort (Kartenzonen, Dioramen, Popup-Szenen).
     - Riesenmonster als Black/Dark-Fluffer- bzw. Goo-Monster mit 3D-Modellen, inszeniert wie ein Godzilla-Kampf, bei Combat/Destruction. Wohl „heilen statt töten“ (V-595).
+    - Waffen, Destruction und Minigames: Abgleich Kampf R1 mit World Explorer in §3b.5, eingeplant für Destruction, nicht vorgezogen. Fehlt bei uns: Wirkungsprofil je Waffe, Grundtypen, Hitze statt Munition, Zielhelfer, Aufschalten, Schwachstellen, Häuser über Zustands-Textur zerstören, Fahrzeug-Schaden in Stufen, Modus-Controller als Minigame-Vorlage.
   - **Neue Fragen 4–5** im Dokument.
 - **Nebenbefund für euch:** Mitwandernder Ursprung (5b). World Explorer löst ihn nicht, er setzt nur beim Teleport neu auf. Es braucht eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform für Fließbänder und Rauschen, Rapier im selben Bild.
 
