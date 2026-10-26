@@ -1,7 +1,7 @@
 {
  "schema": "kfb-ambience.v1",
  "sourceCommit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
- "checked": "2026-10-18",
+ "checked": "2026-10-26",
  "sources": [
   {
    "id": "park-birds",
@@ -141,6 +141,66 @@
    "page": "https://opengameart.org/content/rain-loopable",
    "author": "Ylmir",
    "sha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b"
+  },
+  {
+   "id": "freesound-816088",
+   "url": "https://freesound.org/people/forestfjord/sounds/816088/",
+   "file": "816088__forestfjord__forest-birds-axelfors.mp3",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/forestfjord/sounds/816088/",
+   "author": "forestfjord",
+   "sha256": "81242e97872f4b750dae0eeb70635c49f4ee2da88dfacef1d6e248c7e35752db",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-816111",
+   "url": "https://freesound.org/people/forestfjord/sounds/816111/",
+   "file": "816111__forestfjord__forest-birds-skephult-part-1.mp3",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/forestfjord/sounds/816111/",
+   "author": "forestfjord",
+   "sha256": "6ae901faafb239b0c702dacf29107ec4e0b011ac737b35bef28c8effceb40424",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-844605",
+   "url": "https://freesound.org/people/RyanKingArt/sounds/844605/",
+   "file": "844605__ryankingart__morning-forest-with-birds.flac",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/RyanKingArt/sounds/844605/",
+   "author": "RyanKingArt",
+   "sha256": "21138350c2797bbfdc9186082d829de51e8c5a9ba2c989fad74fe402c2dc1485",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-723913",
+   "url": "https://freesound.org/people/Magnesus/sounds/723913/",
+   "file": "723913__magnesus__forest-birds-ambient-seamless-loop.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/Magnesus/sounds/723913/",
+   "author": "Magnesus",
+   "sha256": "6a6fcb1466baba33f8ca2dfcdbaac24dcb5f5b2c440a5839a48b717896d07755",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-522298",
+   "url": "https://freesound.org/people/Defelozedd94/sounds/522298/",
+   "file": "522298__defelozedd94__crickets-at-night-clean-sound.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/Defelozedd94/sounds/522298/",
+   "author": "Defelozedd94",
+   "sha256": "d1fbaae90af7a23aa9ccedea87fec21a3b2bb81e290f17a4c4aaa1fae9fece64",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-819280",
+   "url": "https://freesound.org/people/forestfjord/sounds/819280/",
+   "file": "819280__forestfjord__two-forest-birds-intercommunicate-dalstorp-part-1.mp3",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/forestfjord/sounds/819280/",
+   "author": "forestfjord",
+   "sha256": "2805f99e1e8032c6445499de1eb500201dc4bbdddbda568a45d19acf524bdcc1",
+   "note": "Georg 26.10.2026, Nature Orchestra (PR #453) – kein Bett (Rauschen nach +38 dB), später Einzelrufe"
   }
  ],
  "assets": [
@@ -944,6 +1004,96 @@
    "author": "ElevenLabs text-to-sound v2 (WS0, V-844)",
    "status": "GENERATED_MEASURED_RUNTIME_UNVERIFIED",
    "note": "Biom-Lücke kfb-ambience; Schleife 3 s überblendet, Pegel -24.0 dBFS RMS; keine Fauna-Behauptung"
+  },
+  {
+   "id": "forest-3",
+   "file": "assets/forest-3.m4a",
+   "sha256": "1eae486b5ffb3b1aeef1d0ece3ff5969bfc29aabd758fb0dd667378875731a90",
+   "bytes": 726887,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-816088",
+   "sourceWindow": {
+    "start": 128,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "forestfjord",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-852: ruhigstes Fenster, Schleife 3.0 s überblendet, Pegel -27.0 dB RMS (Gain 28.7 dB)"
+  },
+  {
+   "id": "forest-4",
+   "file": "assets/forest-4.m4a",
+   "sha256": "dd56236daa5eb259756eba34789da3b14284d0cd1f2e10a8f26e7e4b4cab22eb",
+   "bytes": 726550,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-816111",
+   "sourceWindow": {
+    "start": 51,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "forestfjord",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-852: ruhigstes Fenster, Schleife 3.0 s überblendet, Pegel -27.0 dB RMS (Gain 33.4 dB)"
+  },
+  {
+   "id": "meadow-3",
+   "file": "assets/meadow-3.m4a",
+   "sha256": "dc30ac7f57bff631f71b602f9609e425a42d1bc87b9487f3cebc0f917b207504",
+   "bytes": 779998,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-844605",
+   "sourceWindow": {
+    "start": 103,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "RyanKingArt",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-852: ruhigstes Fenster, Schleife 3.0 s überblendet, Pegel -27.0 dB RMS (Gain 14.8 dB)"
+  },
+  {
+   "id": "meadow-4",
+   "file": "assets/meadow-4.m4a",
+   "sha256": "952f4066d66a3cdb71751811fc3b7058481497a23e9d5f043d83bb2f8fca2029",
+   "bytes": 450837,
+   "duration": 27.05,
+   "role": "bed",
+   "source": "freesound-723913",
+   "sourceWindow": {
+    "start": 0,
+    "seconds": 27.05
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Magnesus",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-852: ruhigstes Fenster, Schleife 0 s überblendet, Pegel -27.0 dB RMS (Gain -4.5 dB)"
+  },
+  {
+   "id": "crickets-night-1",
+   "file": "assets/crickets-night-1.m4a",
+   "sha256": "93fcebe27a9d0bf044d54d6ee50903961b6a91b3864548ceaae4d64cfca20be2",
+   "bytes": 966711,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-522298",
+   "sourceWindow": {
+    "start": 27,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Defelozedd94",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-852: ruhigstes Fenster, Schleife 3.0 s überblendet, Pegel -33.0 dB RMS (Gain 0.6 dB)"
   }
  ],
  "quarantined": [

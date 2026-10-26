@@ -31,3 +31,11 @@ Tiny Skies audio: reference only, unclear licence. Jukebox ambient beds remain m
 Repository-native `scripts/prepare-ambience.mjs`: 45 Hz high-pass, −26 LUFS target (thunder −20 LUFS), true-peak target ≤−9 dBTP, 40 ms attack / 120 ms tail, stereo 32 kHz Ogg. Targets are not final mixed loudness measurements. Runtime adds quiet layer gains and existing semantic-bus levels. Event pitch ±3%; no immediate same-file repeat; shifted Poisson minimum gap 5 s. Long beds are real 40–60 s excerpts, not short clips padded into beds.
 
 The three-minute non-repetitiveness gate is **OPEN for Georg’s ear**. Randomization is not a claim of perceptual uniqueness.
+
+
+## Freesound CC0 (Georg 26.10.2026, Nature Orchestra)
+- forest-birds-axelfors by forestfjord (CC0) – https://freesound.org/people/forestfjord/sounds/816088/ → forest-3
+- forest-birds-skephult-part-1 by forestfjord (CC0) – https://freesound.org/people/forestfjord/sounds/816111/ → forest-4
+- morning-forest-with-birds by RyanKingArt (CC0) – https://freesound.org/people/RyanKingArt/sounds/844605/ → meadow-3
+- forest-birds-ambient-seamless-loop by Magnesus (CC0) – https://freesound.org/people/Magnesus/sounds/723913/ → meadow-4
+- crickets-at-night-clean-sound by Defelozedd94 (CC0) – https://freesound.org/people/Defelozedd94/sounds/522298/ → crickets-night-1
