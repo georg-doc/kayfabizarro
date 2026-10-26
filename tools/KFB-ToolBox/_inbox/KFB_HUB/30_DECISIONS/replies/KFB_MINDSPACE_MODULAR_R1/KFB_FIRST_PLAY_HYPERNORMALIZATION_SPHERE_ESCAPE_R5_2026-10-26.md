@@ -106,3 +106,9 @@ First later playable slice is only successful when player can **recognize the sh
 
 ## 10 · One next gate (same project; design intake refinement, not new P0)
 **WS0 MINDSPACE SOURCE + FIRST-PLAY STORYBOARD ARBITRATION:** source-isolate actual Lovable breathing app, raw H13 and one real beautiful garden/creative visual donor as already required; ADD the first-play **Hypernormalisation inside-sphere** narrative as a user-authored alternate use-case for the very same Mindspace renderer; show the genuine source object in isolation plus one clear 10–12-panel inner-sphere → Gutter concept. Return one image/space design direction for Georg's visual selection. No WS1 implementation, new Site/Stage, new runtime owner or merge authorized by R5.
+
+## Additive R6 continuation — traversable outer-shell Card Doors and summoned spheres
+
+Georg's subsequent concept, documented in [CARD_DOORS_REST_STONE_FLUFF_RECALL_NETWORK_R6_2026-10-26.md](CARD_DOORS_REST_STONE_FLUFF_RECALL_NETWORK_R6_2026-10-26.md), extends the **corrected R5 immersive first-play Sphere**, not the superseded tiny panel/Minesweeper draft. A player who reaches Gutter and has a **real collected/traversed Card** can later bring that Card to a **Ruhestein** and optionally use Fluff to **manifest a similarly themed Mindscape Sphere**. Its **1–6 landscape Card Doors (3 usual)** connect real source Deck/Card Zones, semantic good-neighbors and curated mismatches. Actual travel adds Almanac provenance; the Card remains owned and source-immutable. This is an OPTIONAL early-discovery beat, not mandatory escape or first-play cost. One owner-hosted return must remain free and safe.
+
+Current R5 objective/source-first gate remains exactly the same: Lovable and H13 source isolation plus authentic visually convincing Sphere/Garden donor, integrated into one 10–12-frame inner-sphere→Gutter narrative proof before any WS1 implementation.
