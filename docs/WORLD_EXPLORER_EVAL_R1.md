@@ -1,6 +1,6 @@
-# World Explorer als Spender für die Endlos-Welt · Evaluierung und Konzept-Entwurf R1
+# World Explorer als Spender für die Endlos-Welt · Evaluierung und Konzept-Entwurf R1.1
 
-Stand 26.10.2026 · WS1 Lead · Entwurf für Georg und WS0 · kein Bauauftrag
+Stand 26.10.2026 (R1.1: Nachtrag Verkehr, Wetter/Himmel, Kaiju nach Georgs Rückfrage) · WS1 Lead · Entwurf für Georg und WS0 · kein Bauauftrag
 
 **Quelle:** `axieyangb/world-explorer` @e149dd5 (25.10.), MIT, © 2026 Jerry Xie; three r161, ohne Build-Schritt.
 - Code gelesen (Lead-Stichproben und vollständiger Audit durch einen Hilfsagenten, nur gelesen, nichts ausgeführt; 154 JS-Dateien, ~76 000 Zeilen, keine Tests im Repo).
@@ -145,13 +145,89 @@ Unser Konzept R1.6:
 - Dann als Spender für die Zufahrt und die Hohenzollernbrücke. Fahrkontakt bleibt das Gelände bzw. Track Core.
 - Die Prozentwerte sind Upstream-Werte, keine KFB-Konstanten.
 
+## 3b · Nachtrag nach Georgs Rückfrage (26.10.)
+
+### 3b.1 Verkehr und Fußgänger (ADAPT als Muster)
+Georg findet Verkehr interessant. Wir haben die Fahrzeuge: KayKit City Builder Bits, Kenney toy-car-kit (157), car-kit (50), city-kit-roads (95). NPCs dürfen inzwischen überall auftauchen, nicht nur an Biom-, Diorama- oder Kartenzonen.
+
+**Was World Explorer konkret macht** (`city_traffic.js`, `traffic_graph.js`):
+- **Erscheinen in Ringen um den Spieler:** Autos bis 400 m, weg ab 470 m; Fußgänger bis 210 m, weg ab 250 m (Hysterese).
+- **Obergrenzen:** 110 Autos, 72 Fußgänger.
+- **Instanziert gezeichnet:** wenige Draw Calls für alle Autos. Fußgänger als ein Instanz-Mesh mit Varianten je Instanz (Hemd, Hose, Haut, Haare, Regenschirm).
+- **Keine Wegsuche:** An Kreuzungen wählt jedes Auto zufällig, gewichtet (geradeaus und gleiche Straßenklasse bevorzugt, kein Wenden). Billig und wirkt lebendig.
+- **Dazu:** einfaches Auffahren, Ampeln. Zusammenstoß mit dem Spieler als 2D-Kasten (Rempler, abbremsen), ohne Physik-Körper.
+- **Dichte nach Tageszeit:** nachts 7 %, früh 30 %, abends 35 %, tags 100 %. Bei Regen Schirme, nachts Licht an.
+- **Spurgraph je Kachel im Worker,** im Haupt-Thread mit 1,2 ms je Bild zusammengeführt.
+
+**Die Lücke bei uns:** Die Endlos-Welt hat keine Straßen. World Explorers Verkehr hängt am OSM-Straßennetz. Drei Wege, die sich nicht ausschließen:
+
+| Weg | Was | Für wen | Bedarf |
+|---|---|---|---|
+| A · Pisten statt Straßen | Je Zelle wird ein ruhiger Korridor durchs Gelände gelegt (flachste Linie, deterministisch je Seed). Er ist sichtbar als Spur, Staubpiste oder Feldweg je Biom, oder unsichtbar. NPC-Autos folgen ihm; an Gabelungen gewichtet zufällig wie oben | Endlos-Welt, sofort Leben unterwegs | WS0 (Welt), Bildpaket (V-740) |
+| B · Echte Straßen nur in Zonen | In der Kölner Tasche gibt es OSM-Straßen (599 befahrbare Stücke im Kern). Dort läuft Verkehr wie bei World Explorer, mit Ampeln | Stadtzonen | nach der Bildabnahme der Tasche |
+| C · Straßennetz in der Endlos-Welt | prozedurale Straßen mit Kenney city-kit-roads bzw. Knete-Bändern („Roadtrip“ wörtlich) | ganze Welt | großer Welt-Entscheid, Georg und WS0 |
+
+**KFB-Dreh (Vorschlag):** zwei Stufen wie ein LOD für die Seele.
+- **Hintergrund-Verkehr:** fern und anonym, instanziert, ohne Fahrer im Bild.
+- **Beseelte Autos:** Kommt ein Auto in den Spiel-Ring (< 140 m), kann es einen Fahrer bekommen. Das ist ein Bewohner mit Signatur-Deck (WS-NPC), ansprechbar mit der Ruf-Skala („want a ride?“).
+  - Bingo: Kolonne bzw. Wettfahrt.
+  - Boggle: mehr.
+  - Bongo: später.
+  - Blödsinn: fährt weg.
+  - Humbug: vergessen.
+  - Beim Vorbeifahren dürfen Karten getauscht werden (Karten-Tratsch).
+- **Budget nach R1.6 §6:** ≤ 12 Figuren im Bild, also Fahrer nur in nahen Autos.
+
+**Fußgänger:** Unsere Fußgänger sind Bewohner mit Tagesplan (WS-NPC), keine anonyme Masse. Übernehmen lassen sich trotzdem die Erscheinungs-Ringe, die Dichte nach Tageszeit und Wetter und eine billige Fern-Menge als Instanz-Mesh mit Varianten (für Kölner Tasche, Disco, Feste). Nah werden daraus echte Bewohner.
+
+**Probe V1 (Vorschlag):** Weg A als Mechanik hinter `traffic=1`. Ein Korridor je Zelle, 10–20 KayKit-Autos instanziert, gewichtete Gabelungen, Dichte nach Tageszeit. Messen: Draw Calls, ms je Bild. Das Sichtbare (Pisten-Look) kommt erst nach einem Bildpaket.
+
+### 3b.2 Wetter und Himmel (wenig Neues, zwei echte Lehren)
+WS0 hat das meiste schon:
+- `driveAtmos.js`: Tageszeit, Zeitraffer, Wetter klar/Wolken/Regen/Nebel/Wind mit weichen Wechseln (20–60 s), Stimmungen je Biom, gemischt beim Übergang.
+- `driveWeather.js`: Regen bzw. Schnee in **einem** Draw Call mit Bewegung im Vertex-Shader, genau World Explorers Technik, dazu Knet-Tropfen auf dem Bildschirm.
+- `sky-drive.js`: Kuppel mit Knet-Mond, Sternen, Polarlicht, gemalten Wolken.
+
+**Lehre 1, ein Tageslicht-Vertrag:** World Explorer hat genau eine Quelle, `daylight.js`.
+- `getDaylight()` liefert 0…1, Wetter schon eingerechnet: Wolken, Regen und Nebel machen früher dunkel.
+- `isNight()` mit Hysterese.
+- Ein Ereignis bei Änderung.
+- Alles hängt daran: Autolichter, Verkehrsdichte, Schirme, Fenster.
+
+Bei uns rechnet heute jeder selbst: `headlightDaylight`, `TOD_AUDIO` in `driveAtmos`, `host.isNight` im HUD, `figureAmbient`, Werbetafeln nachts (V-839), Nachtgrillen (V-852). **Vorschlag:** `driveAtmos` stellt einen Vertrag `daylight()/isNight()/onDaylight()` bereit, und alle lesen ihn. Das ist klein, unsichtbar und verhindert, dass Scheinwerfer, Tafeln und Grillen zu verschiedenen Zeiten „Nacht“ sagen.
+
+**Lehre 2, Wetter hat Folgen:** Nässe 0…1 als gemeinsamer Wert. Daran hängen Regenschirme bei Bewohnern, weniger Leute auf der Straße und Licht an bei Nebel. Ob nasse Knete glänzen darf, ist Georgs Bild-Entscheid; die Mattierung ist abgenommen.
+
+**Himmel bevölkern:** `live_sky.js` zeichnet Flugzeuge in Instanz-Pools (etwa 6 Draw Calls für alle) und überbrückt die Zeit zwischen den Positionsmeldungen durch Hochrechnen. Für uns gilt nur das Muster, ohne Live-Daten: Zeppeline, Ballons, Vogelschwärme, später UFOs (nach deren Design-Paket, V-744), je Zelle mit festem Seed.
+
+**Nicht übernehmen:** echte Sonnenposition und Live-Wetter (Open-Meteo). Unsere Welt ist erfunden.
+
+**Eigene Idee, nicht aus World Explorer:** Wetter regional statt global, also Wetterfronten als Feld wie die Biome. Man fährt in einen Regen hinein und wieder hinaus. `driveAtmos` mischt Biom-Kurven schon nach Gewicht, ein Wetterfeld wäre derselbe Weg.
+
+### 3b.3 Kaiju (HOLD bis Combat/Destruction)
+„Kaiju“ ist Japanisch für „Riesenmonster“ (Godzilla). In World Explorer ist es ein Spielmodus: Ein Monster steigt aus dem nächsten Gewässer, man verteidigt die Stadt als Hubschrauber, Panzer oder Soldat.
+
+Für unsere spätere Destruction (V-767) und Combat (V-782) gibt es zwei brauchbare Ideen:
+- **Gebäude-Schaden ohne Einzelobjekte:** Jedes Gebäude im zusammengeführten Mesh trägt eine ID. Der Schaden steht in einer Zustands-Textur, ein Shader lässt es einstürzen. Dazu kommen Trümmer und Kollider.
+- **Panik-Menge und gepoolte GPU-Partikel**, alles über einen Modus-Controller mit wenigen Einhängepunkten.
+
+Erst wenn der Fahrplan dort ankommt.
+
+### 3b.4 Was heißt „Z14 ist vereinfacht“?
+Online-Karten sind in Zoomstufen gekachelt. Bei Zoom 14 (Z14) ist eine Kachel etwa 2,4 km breit, in Köln rund 1,5 km. Diese Vektor-Kacheln (OpenMapTiles-Schema) sind fürs **Kartenzeichnen** gemacht, nicht für 3D:
+- Linien und Umrisse sind geglättet und auf ein Raster gerundet. Kleine Wege, Treppen und Details fallen weg.
+- Es fehlt vieles an Zusatzinfos: keine Dachformen (bei World Explorer sind alle Dächer flach), Gebäudehöhe nur als grober Wert, keine Spurzahlen.
+- **Für uns entscheidend:** Die festen OSM-IDs fehlen oft. Unsere Landmarken hängen aber an genau diesen IDs, z. B. der Dom an way/4532022.
+
+Das OSM City Lab holt dagegen die Rohdaten (Overpass) mit allen Angaben und IDs. Deshalb bleibt es Geografie-Owner, und Zonen werden daraus offline gebacken.
+
 ## 4 · Ausdrücklich nicht übernehmen
 
 | Teil | Warum nicht |
 |---|---|
 | Laufzeit-Streaming von OpenFreeMap und AWS | Netz-Abhängigkeit in der Fahrt, Z14 vereinfacht, CORS bzw. Ratenlimits; R1.6 §5.10: Zonen offline als Paket |
 | ganzer Motor (three r161, Steuerung, Kamera, Wetter, Himmel, Ton) | zweiter Owner für alles; wir sind auf three r186 mit Host-Vertrag |
-| Verkehr, Fußgänger (`city_traffic`, `traffic_graph`) | Autos sind bei uns beseelt (Ruf-Skala V-712), Bewohner gehören WS-NPC |
+| Verkehr, Fußgänger als fertiger Code (`city_traffic`) | 1841 Zeilen, eng an die App gekoppelt. **Aber die Muster sind interessant (Georg 26.10.), siehe §3b.1** |
 | Routen-A* (`route_graph`) | Die Endlos-Welt hat kein Straßennetz; Aufträge in Fahrzeit laufen über R1.6 §5.2 |
 | WFC als Welt- oder Platz-Generator | `kfb-place` ist der eine Platzierungs-Owner (V-748 ff.) |
 | Kaiju, Waffen, Gebäude-Kollision | nicht unser Spiel bzw. Rapier ist Owner |
@@ -190,3 +266,5 @@ Unser Konzept R1.6:
 1. **WS0:** Soll P1 (Worker-Gelände) jetzt als unsichtbare Mechanik vorbereitet werden, und von wem? Vorschlag: Der Lead liefert den Patch samt Golden-Test gegen `endlessTerrain.js`; WS0 entscheidet über den Einbau.
 2. **Georg:** Echte Höhenmuster als Grund für Stadtzonen und als gelegentliche „Landschaft mit Wiedererkennung“, z. B. Kölner Bucht und Herkules: ja? Dann kommt zuerst ein Bild.
 3. **Georg:** Ferne Bäume als Papier-Aufsteller im Popup-Stil (wie die Werbetafeln): ja als Bildpaket?
+4. **Georg und WS0:** Verkehr: zuerst Weg A (Pisten je Zelle, Probe V1 hinter `traffic=1`)? Und soll C (Straßennetz in der Endlos-Welt) als eigener Welt-Entscheid auf die Liste?
+5. **WS0:** Den Tageslicht-Vertrag in `driveAtmos` einführen (unsichtbar)? Der Lead kann ihn als Patch liefern.

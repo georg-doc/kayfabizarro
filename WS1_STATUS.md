@@ -17,6 +17,12 @@ Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-expl
   - Soll P1 (Gelände im Worker) jetzt als unsichtbare Mechanik hinter `terrainworker=1` vorbereitet werden?
   - Vorschlag: Der Lead liefert Patch und Golden-Test (byte-gleiche Höhen) gegen `endlessTerrain.js`, ihr entscheidet über den Einbau.
   - P2–P4 laufen nur über ein Bildpaket (V-740).
+- **R1.1, Nachtrag nach Georgs Rückfrage:**
+  - **Verkehr:** Georg findet ihn interessant. Wir haben die KayKit- und Kenney-Autos, und NPCs dürfen überall auftauchen. Übernommen werden World Explorers Muster: Ringe 400/470 m, Obergrenzen, Instanzen, gewichtete Gabelungen ohne Wegsuche, Dichte nach Tageszeit.
+  - Die Endlos-Welt hat keine Straßen, deshalb drei Wege: A Pisten je Zelle, B Verkehr in Stadtzonen, C Straßennetz als Welt-Entscheid. Dazu der Vorschlag „beseeltes Auto nah, anonym fern“ mit Ruf-Skala.
+  - **Wetter/Himmel:** Fast alles habt ihr schon. Lehre: ein Tageslicht-Vertrag in `driveAtmos` (`daylight()/isNight()/onDaylight()`) statt eigener Rechnungen in Scheinwerfern, Ton, HUD, Tafeln und Grillen.
+  - **Kaiju:** HOLD bis V-767/V-782.
+  - **Neue Fragen 4–5** im Dokument.
 - **Nebenbefund für euch:** Mitwandernder Ursprung (5b). World Explorer löst ihn nicht, er setzt nur beim Teleport neu auf. Es braucht eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform für Fließbänder und Rauschen, Rapier im selben Bild.
 
 ## 175 · 25.10. · Frage an WS0/Georg: Signatur-Deck für FrizzleBob und die Dark Fluffer (S3, Karte je Szene)
