@@ -86,3 +86,10 @@
 - Proposed ecological non-repetitive Nature Conductor using existing `GLOBAL_BED` / `LOCAL_AMBIENCE` / spatial `WORLD_SFX`, controlled by real biome/weather/day-night state; optional Web Audio AudioWorklet and Tone.js/Three.js pad/spatial helpers alongside existing Sonus/Suno/Stems.
 - VS0 source-isolated forest intake, ElevenLabs prompts only as candidates, static checks 17/17 PASS, browser/audio QA 0, Site/Stage/Live 0.
 - No primary parent product gate change; side-lane next gate in `nature-orchestra/RETURN_R1.md`.
+
+
+## 2026-10-26 · KFB Immersive Sound Universe · broader R2 research
+- Additive `immersive-sound/` Vision/Technology/VS0/Test/Return/Changelog in Draft PR #453; Nature Orchestra R1 remains a subordinate source bank.
+- Direction broadens to organic/physical/tonal/granular/spectral/spatial/algorithmic/narrative/reactive/AI-authored sonic dimensions and Mindscape psychoacoustics.
+- Recovered KFB Iceberg Atmo source with explicit second-AudioContext firewall; surveyed native Web Audio/AudioWorklet, Tone, Elementary, FaustWasm, JSAmbisonics, Meyda, Strudel, RNBO, license-unclear Sound Forge.
+- R2 research checks 20/20 static PASS; no audio/browser/Stage acceptance; one VS0 three-palette `REAL → DREAM → REAL` source proof next; no primary parent gate/owner/URL changes.
