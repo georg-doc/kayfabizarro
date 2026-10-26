@@ -8,7 +8,7 @@ Receiving workshop is **WS0**, not VS0. The new immersive, ambient and mildly ps
 - Owner: KFB Audio & Soundscape / single Audio Site; project `appgprj_6ac1c73dc28881919123106bd6d3e90e`, URL `https://kfb-audio.frizzlebob.chatgpt.site/` (pre-existing source 0.7.1, site v11; new branch is NOT published).
 - Repo: `georg-doc/kayfabizarro`.
 - Existing current product PR #365, base branch `web/kfb-adaptive-music-stem-proof-2026-10-06`, verified receiver base head `9325a4af861d0a07e1986490f7ee42aa3f047819`.
-- Single integration branch `feature/kfb-audio-site-immersive-ws0-2026-10-26`; open Draft PR link/HEAD to be verified at closure after this document is written. Do not merge or promote automatically.
+- Single integration branch `feature/kfb-audio-site-immersive-ws0-2026-10-26`; **open Draft PR #455** https://github.com/georg-doc/kayfabizarro/pull/455 stacked on #365. Latest exact head must be fetched from branch/PR after every write. Do not merge or promote automatically.
 
 ## Exact source candidate delta
 - `tools/KFB-ToolBox/audio/card-performance-self-service/immersive-ambience.mjs` — true Web Audio DSP, 3 synthesizer palettes ICEBERG / ONEIRIC / ORGANIC_AIR, depth-morph, manual resonance, injected existing AudioContext and GLOBAL_BED bus; donor `travel/3D Conspiracy Iceberg Explorer/atmo-engine.js` reuses art direction but **not** its own standalone AudioContext/transport/master.
