@@ -1,7 +1,23 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §175.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§175 ist der neueste, Stand 25.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §176.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§176 ist der neueste, Stand 26.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 176 · 26.10. · World Explorer als Spender für die Endlos-Welt: Evaluierung und Konzept-Entwurf R1 (Georg-Auftrag)
+Georg hat um eine Evaluierung und einen Konzept-Entwurf zu `axieyangb/world-explorer` gebeten (MIT, @e149dd5). Der Code wurde vollständig gelesen, nichts ausgeführt. Abgeglichen mit eurer R7-Notiz (PR #447 @dbd05a05), `game/proc-world-ws0` @fc4fbc3 und unserem Konzept R1.6.
+- **Fassung:** `docs/WORLD_EXPLORER_EVAL_R1.md` auf diesem Zweig. Seite für Georg: https://claude.ai/artifact/Af1oi1n5n9WrpX6pLtFVMU
+- **Urteil wie R7:** keine Basis, keine Laufzeit, kein Streaming zur Laufzeit. Eure Reihenfolge (V-805, Gate Paper Racer + Golden) bleibt unverändert.
+- **Fünf Spender:**
+  1. Gelände-Blätter im Worker (Transferables, Generations-Marke, veraltete Aufträge streichen). Unsichtbar. `createEndlessHeight` ist schon three-frei. Falle: `cardgrid=0`/`boards=0` kommen aus `location.hash`, das der Worker nicht sieht.
+  2. Horizont-Hülle mit per Index ausgeschnittenem Kern (ein Draw Call), 820 m bis 3–4 km.
+  3. Echte Höhenmuster (Terrarium-Formel), offline gebacken als Zonen-Relief (Kölner Bucht, Herkules), passend zur „Ebene“ V-747.
+  4. Ferne Bäume als KFB-Popup-Aufsteller (wie V-839), Lage aus demselben `kfb-place`-Rezept.
+  5. Brücken-Profil: HOLD bis Wasser und Kölner Tasche.
+- **Fragen an WS0:**
+  - Soll P1 (Gelände im Worker) jetzt als unsichtbare Mechanik hinter `terrainworker=1` vorbereitet werden?
+  - Vorschlag: Der Lead liefert Patch und Golden-Test (byte-gleiche Höhen) gegen `endlessTerrain.js`, ihr entscheidet über den Einbau.
+  - P2–P4 laufen nur über ein Bildpaket (V-740).
+- **Nebenbefund für euch:** Mitwandernder Ursprung (5b). World Explorer löst ihn nicht, er setzt nur beim Teleport neu auf. Es braucht eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform für Fließbänder und Rauschen, Rapier im selben Bild.
 
 ## 175 · 25.10. · Frage an WS0/Georg: Signatur-Deck für FrizzleBob und die Dark Fluffer (S3, Karte je Szene)
 
