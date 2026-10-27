@@ -71,3 +71,20 @@ This slice changes method/documentation routing rather than a new playable visua
 **Coworker / Blender MCP reviews the original KayKit locomotion family and returns a visual KEEP/HOLD/REJECT table.**
 
 All new KFB animation/motion work should load `skills/kfb-cartoon-animation/SKILL.md` and then `references/kfb-integration-current-ssot.md` before the current project/runtime SSOT.
+
+
+---
+
+## Additive research intake · 2026-10-27 · NVIDIA MotionBricks / MacBook / WS0
+
+Status: **RESEARCH SAVED · NOT ADOPTED · NO RUNTIME CHANGE**.
+Georg requested a GitHub handoff for **later WS0 evaluation**, using a MacBook Pro whose chip/GPU is not yet identified.
+
+Canonical bounded research brief on this review branch:
+`skills/kfb-cartoon-animation/_handover/WS0_MOTIONBRICKS_MACBOOK_DONOR_RESEARCH_2026-10-27.md`.
+
+Verified upstream documentation: pretrained SOMA and G1 ONNX; NVIDIA TensorRT demo requires NVIDIA GPU; ONNX Runtime CPU inference is documented separately (G1 example). Local Mac compatibility, SOMA CPU generation, performance, stylistic fit and KFB retargeting **remain untested**. Preserve the current accepted KayKit motion baseline and existing movement/animation owners. Treat license categories for code, weights and sample motion separately.
+
+Actual execution: **0 Mac runs; 0 model downloads; 0 retargets; 0 visual proofs; 0 game tests; 0 production code changes**. No GPT Site or Stage required for this research intake. This note does not change the previously binding Motion SSOT, PR #344 or WB2 STOP state.
+
+**One next research gate when WS0 resumes:** `MOTIONBRICKS-MAC-ONNX-SOMA-ISOLATION-01` — identify hardware, attempt isolated CPU ONNX SOMA inference, visually isolate source motion, and only then consider one KayKit retarget comparison. No automatic merge or Live promotion.
