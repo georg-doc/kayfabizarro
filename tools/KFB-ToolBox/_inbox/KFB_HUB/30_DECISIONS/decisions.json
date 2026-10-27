@@ -12504,6 +12504,66 @@
    "applies": "sofort"
   },
   {
+   "id": "V-868",
+   "date": "2026-10-27",
+   "area": "Technik",
+   "verdict": "BUILD",
+   "text": "WS1-Stand zusammengeführt (Georg 27.10. „sauber lösen und testen“): game/mvp-r1 @e7c4ce3 + @9a95ea9 (Disco-Besetzung) in Zweig ws0/merge-ws1-25-10. 17 Konflikte von Hand, deckungsgleich mit WS1 docs/MERGE_HINWEISE_PROC_WORLD_R1: WS0-Weg mount=live/CAR_LIVE bleibt Basis, summon/dismount setzen TRAVEL.car (carLive() der WS1-Wege sieht den Live-Wagen), travel=1 bleibt hinter dem Schalter; WS1-Telemetrie (Säule zu Fuß, Höhe über Grund); M2Car at+travel, carKick+carYaw, WS0-Kamera; Audio car:true, Seele, Racer-Bus + Motor-Offload. Nachzüge: HyperSphere-Esc über hostKeys (Vertrag), HUD-Beschriftungen restlich EN, Tests an Entscheidungen angepasst (V-825 Reiseflamme, V-859 Ton-Host, EN-Knöpfe), V-861-Adapteränderung zurück (Vendor byte-gleich). Reihe 1 (80): 73 PASS; c2/c3g bekannte Altfehler, stage/cast/drift brauchen WS1-Rechner (~/kfb-ws1, Drift-Bericht).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein gemeinsamer Stand für WS0 und WS1, getestet, ohne doppelte Wege.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-869",
+   "date": "2026-10-27",
+   "area": "Spiel",
+   "verdict": "FACT",
+   "text": "WS1 Lead-Sammlung 27.10. (ws1/status docs/LEAD_SAMMLUNG_2026-10-27.md, §176–178) aufgenommen: World-Explorer-Eval R1.1 (fünf Spender: P1 Gelände im Worker als Angebot, P2 Horizont-Hülle, P3 Höhenmuster, P4 ferne Bäume als Popups, P5 Brücken HOLD; Verkehr Weg D Freeroaming zwischen Orten; Tageslicht-Vertrag driveAtmos; Kaiju als Fluffer/Goo-Riese bei V-767/V-782), Arsenal R1 (docs/WAFFEN_ZUORDNUNG_R1.md: 12 K10-Karten auf 8 Gefühlsprofile, u. a. Blaster → Kayfabeam, Minigun mit Hitze; neue Mechaniken Spannschuss, Kettenblitz, Kombo, Zonen), Heilen = Meta-Gimmick, keine Kampfwaffe (Georg 26.10.; der „Heilstrahl“). Offene Georg-Fragen gesammelt in q254.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nichts aus dem Lead-Chat geht verloren; Heilen bleibt Meta.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-870",
+   "date": "2026-10-27",
+   "area": "Figuren",
+   "verdict": "FACT",
+   "text": "SSOT-Prüfung nach Merge: FrizzleBob-Karte, Rezept v5b, georg-2026-10-14-Pets, Figurenregister und pet-eye-rig.v6 in WS0, WS1 und Merge byte-gleich (kein Drift). Drift gefunden: eyeoval.v1.js in drei Fassungen – src/vendor/eyes (neu: Pupillensitz + Lid-Rückzug, WS0-Freigabe 14.10.), src/vendor/fb/emb/frizzlegraft-v1 (alt, von faceMountActor genutzt), jsDelivr-Pin (Zwischenstand, von kaykit-eye-adapter genutzt). Vereinheitlichung nur mit Sichtprüfung (sichtbare Augenänderung), vorher kein Umbau.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "FrizzleBob ist überall gleich; das Augenoval wird bewusst vereinheitlicht.",
+   "applies": "offen"
+  },
+  {
+   "id": "V-871",
+   "date": "2026-10-27",
+   "area": "Prozess",
+   "verdict": "FAIL",
+   "text": "Register-Sync lief seit 26.10. ins Leere: Aufruf aus KFB_HUB statt 30_DECISIONS, Ausgabe verworfen, Hintergrund. WS1 bemerkte fehlende V-842…V-861. Nachgeholt (pushed 7a0377e); Regel: sync_github.sh im Vordergrund aus 30_DECISIONS, „pushed“ prüfen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Persistenz prüfen statt hoffen.",
+   "applies": "Regel"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12616,7 +12676,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1403",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1407",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

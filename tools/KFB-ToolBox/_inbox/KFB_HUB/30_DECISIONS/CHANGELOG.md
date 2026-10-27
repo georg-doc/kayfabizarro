@@ -168,6 +168,10 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-865 World Explorer als Donor für OSM-Streaming und Brücken (später, Vergleich).
 - V-866 Idee Waffen-Flyout an der Aktionsleiste, 6 aktive Waffen, Auswahl im Rucksack.
 - V-867 GitHub-Inventur: WS1 @1a09f83 noch nicht in proc-world (17 Konflikte), #454/#452/#451 neu, 13 alte PRs im Spiel-Repo.
+- V-868 WS1-Merge (@e7c4ce3 + @9a95ea9) gelöst und getestet, Zweig ws0/merge-ws1-25-10.
+- V-869 WS1 Lead-Sammlung aufgenommen (World Explorer, Arsenal, Heilen = Meta).
+- V-870 SSOT: FrizzleBob ohne Drift; eyeoval in drei Fassungen (Vereinheitlichung mit Sichtprüfung).
+- V-871 Sync-Fehler behoben (Skriptpfad).
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
