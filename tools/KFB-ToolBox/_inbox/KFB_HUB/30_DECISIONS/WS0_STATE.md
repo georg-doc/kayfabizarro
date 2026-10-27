@@ -80,3 +80,10 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - 25.10. spät abends: V-818 Fahrzeug-Seele im Spiel (q234 A Plakette unten rechts, KB-Knopf); V-817 Georg Utopia r814 PASS → Ausrollen bei WSB; V-815 Fahrplan 5b; Prüfpaket R2 (b234).
 - 25.10. abends: V-807 Fahrgefühl-SFX eingebaut (q228 PASS); Teaser v1 passt, Tuning vor dem Posten (q229); V-809 Meshy-Bühnen voll (q230); V-810 Fahrzeug-Seele Pilot freigegeben, Sprüche PASS (q231), HeyGen-Skript b238 bei Georg; V-811 Mindscape-Betten für Fahrt/Flug im Spiel.
 - 25.10. spät: Stufe 1 Fahren erledigt (V-783 Fixes, Kameras, Fassrolle länger/höher, Motor-Audio ±28 %/Last/Live-Auto/langer 5. Gang). Hero-Run: 22 Clips in 60_VIDEO/hero_run_r1/raw (Flammen-Dragster, Parade 14 Racer, Bullet-Time S05, Spiel-Ton), Schnitt läuft in WSV-Agent nach BRIEF_WSV_HERO_RUN_CUT_R1. Offen in Stufe 1: Tricks als HUD-Knöpfe, Dieselpunk-Flug, Mech, Drehung beim Gehen; dann Gameplay-Critic.
+
+## Stand 27.10. (nach V-872, Konsolidierung)
+- **Spiel:** `game/proc-world-ws0` @51c9cbe = gemeinsamer Stand WS0 + WS1 (`game/mvp-r1` @9a95ea9). S1 hat zwei Wege: `mount=live`/`CAR_LIVE` (Basis) und `travel=1` (WS1, hinter Schalter); summon/dismount setzen `TRAVEL.car`, damit `carLive()` überall stimmt.
+- **Tests:** `bash test/npc-suite.sh` nach `npx vite build` (75/80; c2/c3g Altfehler, stage/cast/drift brauchen ~/kfb-ws1). Stumme WS0-Prüfung: `node scripts/ws0/feature-check.mjs` gegen Site-Build (`node scripts/site/build-site.mjs`, Server kfb-mvp-local 5250).
+- **Site:** Paket R4 `site/mvp-r3-dist` @ec7b057, Übergabe WSA Hub b244.
+- **Sync:** nur `zsh sync_github.sh` im Vordergrund aus `30_DECISIONS` (V-871).
+- **Offen:** eyeoval-Vereinheitlichung mit Sichtprüfung (V-870); q249/q253/q254 im Hub; Krater geparkt (V-863); Einbettung (V-864) geparkt.
