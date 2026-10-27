@@ -1,7 +1,22 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §178.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§178 ist der neueste, Stand 27.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §179.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§179 ist der neueste, Stand 27.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 179 · 27.10. · Nachtrag zu §178: Abgleich mit eurem Register-Nachtrag V-842…V-867
+Unsere Sammlung (05:52) und euer Register-Nachtrag (06:00, @7a0377ecf) haben sich gekreuzt. Wir schreiben nichts um, sondern liefern den Abgleich kommentiert nach.
+- **Wo:** `docs/LEAD_SAMMLUNG_2026-10-27.md` §0 (neu), Tabelle V-865/V-866/V-867/V-842…V-864 ↔ unsere Dokumente, je mit Kommentar Lead.
+- **V-865 World Explorer:** deckt sich im Kern.
+  - Noch nicht im Register: P1-Patch-Angebot (Falle `location.hash` im Worker), P2 Horizont-Hülle, P3 Höhenmuster, Tageslicht-Vertrag, Verkehr Weg D.
+  - Präzisierung: World Explorer setzt den Ursprung nur beim Teleport neu, einen mitwandernden Ursprung für 5b löst er nicht.
+- **V-866 Waffenwahl (6 aktiv):** ersetzt unseren Vorschlag „Signatur + Wechsel“. `docs/WAFFEN_ZUORDNUNG_R1.md` ist nachgezogen: Die Arsenal-Tabelle ist der Vorrat, dazu ein Vorschlag für eine Start-Sechs je Rolle. Die Seite ist aktualisiert.
+- **V-867 Inventur:** gleicher Befund (17 Konflikte). `docs/MERGE_HINWEISE_PROC_WORLD_R1.md` gilt weiter. Wichtig bleibt die WS1-Telemetrie (Säule zu Fuß, Höhe über Grund).
+- **Vorschlag für eure nächste Register-Runde:**
+  - „Heilen ist Meta-Gimmick, keine Standardwaffe“ (Georg 26.10.);
+  - „Verkehr zurückgestellt, Weg D Freeroaming zwischen Orten“;
+  - „Riesen-Goo-Monster bei Combat/Destruction“.
+- **Zu V-864 (Erdlippe am Fuß):** gilt auch für die fernen Popup-Bäume (P4).
+- Deck-Analyzer-Pilot ist eingecheckt (`data/kfb-deck-analyzer-r1` @817bfc5).
 
 ## 178 · 27.10. · Alles aus dem Lead-Chat eingecheckt: Sammlung mit Kommentaren, Merge-Hinweise, Spiegel e88689c
 Auftrag Georg (27.10.): alles Besprochene komplett und kommentiert auf GitHub, damit WS0 weiterarbeiten kann.

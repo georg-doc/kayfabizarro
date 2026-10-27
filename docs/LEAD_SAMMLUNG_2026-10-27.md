@@ -7,6 +7,19 @@ WS1 Lead für WS0 · Auftrag Georg (27.10.): „Alles, was wir besprochen haben,
 - Entscheidungen Georgs sind mit Datum markiert; alles andere sind Vorschläge.
 - Das Register (V-Nummern) führt ihr. Hier stehen keine neuen V-Nummern.
 
+## 0 · Nachtrag 27.10. (nach WS0s Register-Nachtrag)
+WS0 hat um 06:00 die Nachzügler eingecheckt: Register V-842 bis V-867 (@7a0377ecf, „Sync lief ins Leere“). Damit überschneidet sich diese Sammlung (05:52) teilweise. Statt sie umzuschreiben, steht hier der Abgleich.
+
+| Register | Inhalt (WS0) | Bezug zu dieser Sammlung | Kommentar Lead |
+|---|---|---|---|
+| V-865 (IDEA) | World Explorer als Donor: Brücken-Höhen, Kachel-Streaming mit Speicherbudget, Worker, Teleport mit neuem Ursprung; Fern-Bewuchs als Papier-Cutouts als spätere Probe; Paper Racer zuerst | §3, `docs/WORLD_EXPLORER_EVAL_R1.md` | Deckt sich im Kern. **Noch nicht im Register:** P1 als Patch-Angebot (Falle `location.hash` im Worker), P2 Horizont-Hülle, P3 echte Höhenmuster (Frage an Georg), der Tageslicht-Vertrag und Verkehr Weg D (Georgs Idee). **Präzisierung:** World Explorer setzt den Ursprung nur beim Teleport neu; einen mitwandernden Ursprung für 5b löst er nicht |
+| V-866 (IDEA) | Waffenwahl über die Aktionsleiste, bis zu 6 aktive, Rest im Rucksack; erst Design-Skizze | §5, `docs/WAFFEN_ZUORDNUNG_R1.md` | Ersetzt meinen Vorschlag „Signatur- + Wechselwaffe“. Die Arsenal-Tabelle ist der Vorrat für die 6. Vorschlag einer Start-Sechs steht im Dokument. Frage 4 wird zu „Start-Sechs: passt das?“ |
+| V-867 (FACT) | GitHub-Inventur: WS1-Stand bis @1a09f83, Probe-Merge 17 Konflikte, neue PRs #449–#454, alte PRs #28–#43; Entscheidungen in q253 | §1, §2, `docs/MERGE_HINWEISE_PROC_WORLD_R1.md` | Gleicher Befund. Neu seitdem: Spiegel @9a95ea9 (e88689c, nur Disco-Besetzung, keine neuen Konflikte). Die Merge-Hinweise sagen je Konflikt, welche Seite; **wichtig bleibt die Telemetrie der WS1-Seite** (Säule zu Fuß und Höhe über Grund) |
+| V-842…V-864 | Figurenlicht, Einschläge und Krater (geparkt, V-860/V-863), Nature Orchestra und Freesound, CDN-Regel (raw zuerst, V-859/V-861), Einbettung ins Gelände (V-864) | – | Kein Widerspruch zu dieser Sammlung. **Zu V-864:** Die Erdlippe bzw. Düne am Fuß passt zu P4 (ferne Popup-Bäume brauchen am Fuß dieselbe Lippe, sonst schweben sie) |
+| Kein V | Weitere Themen dieser Sammlung | §4, §5 | **Noch nicht im Register:** Heilen ist Meta-Gimmick (Georg 26.10.), Verkehr zurückgestellt mit Weg D, Riesen-Goo-Monster bei Combat/Destruction. Vorschlag: bei der nächsten Register-Runde aufnehmen |
+
+Außerdem: Der **Deck-Analyzer** hat seinen Piloten eingecheckt (kayfabizarro `data/kfb-deck-analyzer-r1` @817bfc5, 06:11); er wartet also nicht mehr nur. Der Hinweis in §1 „im Register fehlen V-842…V-861“ ist erledigt.
+
 ## 1 · GitHub-Stand am 27.10. (morgens)
 
 | Was | Wo | Stand |
@@ -76,7 +89,7 @@ Abgeglichen mit `OFFENE_PUNKTE_GEORG.md` in `abnahme/ws1` und der Lead-Liste vom
 1. Echte Höhenmuster (Kölner Bucht, Herkules) als Grund für Stadtzonen: ja, zuerst als Bild? (P3)
 2. Ferne Bäume als Popup-Aufsteller: ja, als Bildpaket? (P4)
 3. Verkehr: Soll C, ein Straßennetz in der Endlos-Welt, als eigener Welt-Entscheid auf die Liste? (D ist notiert.)
-4. Signaturwaffe für FrizzleBob (Arsenal R1).
+4. ~~Signaturwaffe für FrizzleBob~~ → nach V-866: Start-Sechs für die Aktionsleiste (Vorschlag in `docs/WAFFEN_ZUORDNUNG_R1.md`).
 
 **Weiter offen (aus der Abnahme):**
 

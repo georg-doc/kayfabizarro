@@ -47,7 +47,15 @@ Stand 26.10.2026 · WS1 Lead für WSA und WS0 · Vorschlag, kein Bau, keine Abna
 | Zielhelfer, Aufschalten, Schwachstellen | alle | Trefferzonen am Gegner-Roster |
 | Panzer, Schild, Taumeln am Gegner | Konter-Spalte | Roster-Felder; Oberfläche `shield` gibt es schon |
 
-## Vorschlag Ausrüstung (offen für Georg)
+## Ausrüstung: jetzt V-866 (Georg 27.10.)
+> **Nachtrag 27.10.:** Georg hat inzwischen entschieden (Register V-866, IDEA). Waffenwahl über die Aktionsleiste: ein Flyout mit bis zu **6 aktiven Waffen**. Wer mehr sammelt, wählt im Rucksack, welche 6 aktiv sind. Erst Design-Skizze (V-740), dann Bau; die Belegung für Gamepad bzw. Tasten ist offen.
+> **Kommentar Lead:**
+> - Das ersetzt den Vorschlag unten „Signatur- + Wechselwaffe“.
+> - Die Tabelle oben bleibt der Vorrat, aus dem die 6 gewählt werden.
+> - Eine sinnvolle Start-Sechs nach Rolle, damit jede Rolle einmal vertreten ist: Pistole (Allrounder), Action-Gewehr (Salve), Armbrust (Präzision), Stab (Fläche), Rauchbombe (Taktik), Skelett-Klinge (Nahkampf).
+> - Die Frage „Signaturwaffe für FrizzleBob“ wird damit zu „Start-Sechs: passt das?“.
+
+### Früherer Vorschlag (überholt durch V-866)
 - In der Arena trägt jede Figur ihre Waffengruppe: Hero 1–3, Schurkin 4–7, Krieger 8, Magier 9–11, Mech 12.
 - Im Spiel spielt FrizzleBob. Nach der Arena-Einteilung „Signatur“ und „Wechsel“ wäre der Vorschlag:
   - eine Signaturwaffe, die immer da ist;
