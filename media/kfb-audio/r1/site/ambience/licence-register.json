@@ -1,7 +1,7 @@
 {
  "schema": "kfb-ambience.v1",
  "sourceCommit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
- "checked": "2026-10-26",
+ "checked": "2026-10-27",
  "sources": [
   {
    "id": "park-birds",
@@ -201,6 +201,76 @@
    "author": "forestfjord",
    "sha256": "2805f99e1e8032c6445499de1eb500201dc4bbdddbda568a45d19acf524bdcc1",
    "note": "Georg 26.10.2026, Nature Orchestra (PR #453) – kein Bett (Rauschen nach +38 dB), später Einzelrufe"
+  },
+  {
+   "id": "freesound-316617",
+   "url": "https://freesound.org/people/mechamantra/sounds/316617/",
+   "file": "316617__mechamantra__rain-and-thunder-copenhagen-evening.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/mechamantra/sounds/316617/",
+   "author": "mechamantra",
+   "sha256": "58c4b51ad18263dd91508397bd593b79fa05d1366d282c5ec637c9ba94a154fb",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-726522",
+   "url": "https://freesound.org/people/RyanKingArt/sounds/726522/",
+   "file": "726522__ryankingart__rushing-stream-river-water.m4a",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/RyanKingArt/sounds/726522/",
+   "author": "RyanKingArt",
+   "sha256": "2fbaee6aeae9bedf432c1efdcbe91834be66c42e33526c30ca6befaa2d14ae4f",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-830372",
+   "url": "https://freesound.org/people/C-V/sounds/830372/",
+   "file": "830372__c-v__rumblings-of-thunder.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/C-V/sounds/830372/",
+   "author": "C-V",
+   "sha256": "087cc0bd4554d8360ab357bc7e9e360e0dd132eaef49198601fc586323d568f8",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-645958",
+   "url": "https://freesound.org/people/eqko/sounds/645958/",
+   "file": "645958__eqko__frogs-at-night.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/eqko/sounds/645958/",
+   "author": "eqko",
+   "sha256": "7ef4223b82db242c82d3e8b23098c9186a86cd1c1fa05925055def162aeef048",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-746365",
+   "url": "https://freesound.org/people/RyanKingArt/sounds/746365/",
+   "file": "746365__ryankingart__southern-summer-evening-ambience-with-crickets-4.m4a",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/RyanKingArt/sounds/746365/",
+   "author": "RyanKingArt",
+   "sha256": "df31070d12b461a869c89b8349688ef98ebf0c8bceb6dc78824b1993699ed6cc",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-531015",
+   "url": "https://freesound.org/people/Noted451/sounds/531015/",
+   "file": "531015__noted451__ocean-waves.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/Noted451/sounds/531015/",
+   "author": "Noted451",
+   "sha256": "400b0ce64c0d6fddde21e61bbcc4c5cfeb9cbd2247886081b90f5c5abd96a4b3",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
+  },
+  {
+   "id": "freesound-325090",
+   "url": "https://freesound.org/people/ListenTonyBoy/sounds/325090/",
+   "file": "325090__listentonyboy__wind-thru-trees-or-strong-rain-02.wav",
+   "license": "CC0-1.0",
+   "page": "https://freesound.org/people/ListenTonyBoy/sounds/325090/",
+   "author": "ListenTonyBoy",
+   "sha256": "94bb6b58f547a45845fb692dd437bf07fa504bc6d78ed36ab0f43891fa982cf7",
+   "note": "Georg 27.10.2026, Nature Orchestra (PR #453)"
   }
  ],
  "assets": [
@@ -1094,6 +1164,132 @@
    "author": "Defelozedd94",
    "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
    "note": "WS0 V-852: ruhigstes Fenster, Schleife 3.0 s überblendet, Pegel -33.0 dB RMS (Gain 0.6 dB)"
+  },
+  {
+   "id": "pond-3",
+   "file": "assets/pond-3.m4a",
+   "sha256": "278801aa123972e332acf657ebfee0cdc16a2e11d546c8fe83595c818ce3a37e",
+   "bytes": 994988,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-645958",
+   "sourceWindow": {
+    "start": 3,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "eqko",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -33 dB RMS (Gain 6.7 dB)"
+  },
+  {
+   "id": "crickets-night-2",
+   "file": "assets/crickets-night-2.m4a",
+   "sha256": "4f02dea339662d2e95672cb4100a979a581a6db9ea37efceee28c19750bd17c0",
+   "bytes": 303747,
+   "duration": 25.0,
+   "role": "bed",
+   "source": "freesound-746365",
+   "sourceWindow": {
+    "start": 1,
+    "seconds": 25.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "RyanKingArt",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -33 dB RMS (Gain -0.5 dB)"
+  },
+  {
+   "id": "ocean-1",
+   "file": "assets/ocean-1.m4a",
+   "sha256": "9b7ddbfc40f19a3211ea9660b4a2cf485975589a596772de6a4a49d78418ea37",
+   "bytes": 991685,
+   "duration": 60.0,
+   "role": "bed",
+   "source": "freesound-531015",
+   "sourceWindow": {
+    "start": 4,
+    "seconds": 60.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Noted451",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -29 dB RMS (Gain 8.8 dB)"
+  },
+  {
+   "id": "river-2",
+   "file": "assets/river-2.m4a",
+   "sha256": "9497e2cfd0962319d76621480a255cf29b0f9f6e0652991562d7cf8e6235364c",
+   "bytes": 670207,
+   "duration": 55.0,
+   "role": "water",
+   "source": "freesound-726522",
+   "sourceWindow": {
+    "start": 1,
+    "seconds": 55.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "RyanKingArt",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -27 dB RMS (Gain -7.0 dB)"
+  },
+  {
+   "id": "rain-5",
+   "file": "assets/rain-5.m4a",
+   "sha256": "9826a5d2f7345fcf22eb4dbab6e5669a34e91681746a8660be3a3c453e664694",
+   "bytes": 661335,
+   "duration": 40.0,
+   "role": "weather",
+   "source": "freesound-316617",
+   "sourceWindow": {
+    "start": 621,
+    "seconds": 40.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "mechamantra",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -26 dB RMS (Gain 16.4 dB)"
+  },
+  {
+   "id": "wind-3",
+   "file": "assets/wind-3.m4a",
+   "sha256": "8ad6bce70c402058210033fbea4410ce397967f6fcf06824e702dfe517ffee59",
+   "bytes": 413894,
+   "duration": 25.0,
+   "role": "bed",
+   "source": "freesound-325090",
+   "sourceWindow": {
+    "start": 1,
+    "seconds": 25.0
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "ListenTonyBoy",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: ruhigstes Fenster, Schleife 3 s überblendet, Pegel -30 dB RMS (Gain 23.6 dB)"
+  },
+  {
+   "id": "thunder-2",
+   "file": "assets/thunder-2.m4a",
+   "sha256": "d7b62bea1238b7b4caac9ce5673f1e2823a1698430c2a5ebeaae7ee04f8f53ef",
+   "bytes": 153459,
+   "duration": 11.92,
+   "role": "thunder",
+   "source": "freesound-830372",
+   "sourceWindow": {
+    "start": 37,
+    "seconds": 11.92
+   },
+   "license": "CC0-1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "C-V",
+   "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+   "note": "WS0 V-853: Einzelschlag um die lauteste Stelle, Spitze -3 dB"
   }
  ],
  "quarantined": [

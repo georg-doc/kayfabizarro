@@ -39,3 +39,11 @@ The three-minute non-repetitiveness gate is **OPEN for Georg’s ear**. Randomiz
 - morning-forest-with-birds by RyanKingArt (CC0) – https://freesound.org/people/RyanKingArt/sounds/844605/ → meadow-3
 - forest-birds-ambient-seamless-loop by Magnesus (CC0) – https://freesound.org/people/Magnesus/sounds/723913/ → meadow-4
 - crickets-at-night-clean-sound by Defelozedd94 (CC0) – https://freesound.org/people/Defelozedd94/sounds/522298/ → crickets-night-1
+
+- frogs-at-night by eqko (CC0) – https://freesound.org/people/eqko/sounds/645958/ → pond-3
+- southern-summer-evening-ambience-with-crickets-4 by RyanKingArt (CC0) – https://freesound.org/people/RyanKingArt/sounds/746365/ → crickets-night-2
+- ocean-waves by Noted451 (CC0) – https://freesound.org/people/Noted451/sounds/531015/ → ocean-1
+- rushing-stream-river-water by RyanKingArt (CC0) – https://freesound.org/people/RyanKingArt/sounds/726522/ → river-2
+- rain-and-thunder-copenhagen-evening by mechamantra (CC0) – https://freesound.org/people/mechamantra/sounds/316617/ → rain-5
+- wind-thru-trees-or-strong-rain-02 by ListenTonyBoy (CC0) – https://freesound.org/people/ListenTonyBoy/sounds/325090/ → wind-3
+- rumblings-of-thunder by C-V (CC0) – https://freesound.org/people/C-V/sounds/830372/ → thunder-2
