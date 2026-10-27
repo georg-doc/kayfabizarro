@@ -12669,6 +12669,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-879",
+   "date": "2026-10-27",
+   "area": "HUD",
+   "verdict": "FACT",
+   "text": "Claude Design HUD Icon List R1 (Board, PROPOSED): b187-Brief mit Asset-Paket fehlte im Paket, jetzt unter design/UI_STATE_R1/b187_hud_3d/ (KFB-Stunt-Car-Race design/ui-state-r1 @dce76f5); Antworten in ANSWERS_ICON_LIST_R1.md: Toasts und Interaktions-Prompt gibt es, Pausenmenü/Schaden/Respawn-Bildschirm nicht (nur weicher Respawn); Lizenz CC BY ok (Georg); Eingaben Tastatur+Maus jetzt, Gamepad-Glyphen mitplanen, Touch nicht geplant (WS0-Vorschlag); Fluff = Sammel-Ressource in sechs Sorten (V-368), weder Leben noch Punkte. Hub-Briefings aufgeräumt: 23 erledigte bzw. überholte abgehakt.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Claude Design arbeitet nur mit dem, was im Paket liegt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12781,7 +12796,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1414",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1415",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
