@@ -1,0 +1,1563 @@
+{
+ "packId": "frizzlebob_s_ego_mania_narcissist",
+ "pdf": "FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf",
+ "checkedAt": "2026-10-27",
+ "pagesViewed": 15,
+ "quadsViewed": 3,
+ "mappingNote": "Seite 1 = Cover, Karte n liegt auf Seite 2+floor((n-1)/4), Viertel (n-1)%4 in Reihenfolge TL,TR,BL,BR (coverOffset 1, an den Titeln bestätigt). Seite 14 = Regelseite 'How to Wrestle a Pig', Seite 15 = Schlussseite. Layout wechselt: Karten 1-28 Stats unter dem Bild, 29-48 Bild links / Text rechts, Karten 33-36, 42, 43, 47, 48 tragen ein Typ-Label statt Stats. · WS0 27.10.: Lauf nur Bewertung (Georg q255/V-875); Titel/Power/Lore bleiben wie im JSON (Druckstand 23.10.), Abweichungen stehen in jsonDiff.",
+ "cards": [
+  {
+   "cardNumber": 1,
+   "cardName": "The Pond-Gazing Peacock",
+   "power": "Mirror Lock. Skip 3 turns. If water ripples, take 5 Emotional Damage.",
+   "lore": "I'd help you, but I'm currently busy existing as a visual masterpiece.",
+   "stats": {
+    "R": 2,
+    "A": 10,
+    "F": 0
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p2 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power spiegelt das Motiv (Kräuseln stört das Spiegelbild) und ist klar spielbar; Narcissus-Anspielung ist da, Lore und Bild bleiben erwartbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 2,
+   "cardName": "The Flexing Rooster",
+   "power": "Intimidating Decor. Use antlers in decorating to gain +2 Presence.",
+   "lore": "No one spits like me. I am nature's special effect.",
+   "stats": {
+    "R": 8,
+    "A": 8,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p2 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 1,
+    "scores": {
+     "pointe": 0,
+     "power": 0,
+     "lore": 1,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Kein erkennbarer Witz: Geweih beim Hahn ergibt keine Pointe, die Power ist unklar ('Presence' ist kein Deck-Wert) und das Bild zeigt Hahn mit Eiern statt Posieren.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 3,
+   "cardName": "The Portrait Poodle",
+   "power": "Dorian's Pact. Transfer physical damage to the card in hand.",
+   "lore": "The painting ages so I don't have to. Don't look in the attic.",
+   "stats": {
+    "R": 4,
+    "A": 6,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p2 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Dorian-Gray-Umkehrung (zerzauster Pudel schaut auf Welpenporträt) sitzt im Bild, Lore ist allein zitierbar; die Power ('card in hand') bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 4,
+   "cardName": "The Selfie-Stick Swan",
+   "power": "Crop & Filter. Remove 'Negative Vibes' tokens. Ignore reality.",
+   "lore": "If I didn't post it, did the forest really burn down? Doubtful.",
+   "stats": {
+    "R": 1,
+    "A": 12,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p2 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Schwan macht Selfie vor brennendem Wald, die Lore dreht 'fällt der Baum' treffend; 'Negative Vibes tokens' sind im Deck nicht definiert.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 5,
+   "cardName": "The Fog-Weaving Cuttlefish",
+   "power": "Rewrite History. Force opponent to discard last card and apologize.",
+   "lore": "I never said that. And if I did, you made me say it.",
+   "stats": {
+    "R": 3,
+    "A": 0,
+    "F": 12
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p3 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Gaslighting als klare Mechanik (Karte abwerfen und entschuldigen), Lore ist das Verleugnen-und-Umkehren-Skript in einem Satz; Bild mit umgeschriebenen Erinnerungen im Nebel trägt nur teilweise.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 6,
+   "cardName": "The Mockingbird",
+   "power": "Tone Policing. Negate argument by repeating it in a whiny voice.",
+   "lore": "You're crazy. You're imagining things. You're just like your mother.",
+   "stats": {
+    "R": 6,
+    "A": 4,
+    "F": 9
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p3 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power ist klar und spiegelt den Spottdrossel-Namen (Nachäffen); die Lore ist eine Aufzählung typischer Floskeln und braucht die Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 7,
+   "cardName": "The Lure-Light Anglerfish",
+   "power": "Love Bomb. Offer a gift. If accepted, swallow opponent whole next turn.",
+   "lore": "Mother knows best. Stay in the dark. It's dangerous out there.",
+   "stats": {
+    "R": 9,
+    "A": 2,
+    "F": 11
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p3 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Köder-Herz und Love Bombing greifen ineinander, die Power spiegelt das Motiv; die Lore handelt von der Mutter und passt nur halb zur Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 8,
+   "cardName": "The Revisionist Owl",
+   "power": "Alternative Facts. Change game rules mid-turn.",
+   "lore": "We have always been at war with Eastasia. I have always been the victim.",
+   "stats": {
+    "R": 2,
+    "A": 5,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p3 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Orwell-Zitat mit Opfer-Twist ist die Pointe, die Lore ist aber großenteils Fremdzitat; 'change game rules' ist vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 9,
+   "cardName": "The Caped Eagle",
+   "power": "Ratings Crash. If Adoration drops below 5, Laser Eye the board.",
+   "lore": "You guys are the real heroes. I'm just a god.",
+   "stats": {
+    "R": 12,
+    "A": 12,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p4 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Lore ('I'm just a god') ist allein zitierbar; der Rest ist Standard-Retterkomplex ohne Wissenskern, die Power nutzt zwar den Deck-Wert Adoration, ist aber vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 10,
+   "cardName": "The Plagiarist Magpie",
+   "power": "Memory Charn. Steal an Ability. Claim invention.",
+   "lore": "Fame is fickle, Harry. But stolen shiny objects are forever.",
+   "stats": {
+    "R": 1,
+    "A": 10,
+    "F": 12
+   },
+   "printTypo": "Druck: 'Memory Charn.' (Glyphenfehler, gemeint 'Charm' wegen Harry-Potter-Lore)",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p4 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (Fähigkeit stehlen, Erfindung beanspruchen) ist klar und passt zur Elster; Lore braucht Kontext und mischt Harry-Potter-Anklang mit Elster.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Power: Druck 'Memory Charn', JSON ebenso; hier als 'Memory Charm' (gemeint). Rest gleich. Stats neu."
+  },
+  {
+   "cardNumber": 11,
+   "cardName": "The Smile-Bot Dolphin",
+   "power": "Performative Empathy. Cry one tear on camera. Gain +10 Support.",
+   "lore": "I just want to be loved. Is that a crime? (Yes, it is murder).",
+   "stats": {
+    "R": 5,
+    "A": 11,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p4 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Bild (Delfin beißt blutigen Arm in Handschellen) macht die Lore-Pointe 'Yes, it is murder' dunkel anschaulich; 'Support' ist kein Deck-Wert, die Power bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 12,
+   "cardName": "The Medal-Heavy General",
+   "power": "Stolen Valor. Sacrifice minions to gain a medal.",
+   "lore": "I have won battles I wasn't even present for. That is leadership.",
+   "stats": {
+    "R": 8,
+    "A": 6,
+    "F": 9
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p4 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (Minions opfern für Medaille) spiegelt 'Stolen Valor' gut; der Rest ist solide, aber ohne Überraschung (Druck zeigt Keiler, JSON-Grade sprach von Schwein).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 13,
+   "cardName": "The Legacy Lion",
+   "power": "The Family Name. Discard a 'Child' card to save reputation.",
+   "lore": "A lion does not concern himself with the opinions of the sheep he sired.",
+   "stats": {
+    "R": 10,
+    "A": 5,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p5 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore (Löwe, Schafe, 'sired') ist zitierbar; die Power verweist auf eine 'Child'-Karte, die es im Deck nicht gibt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 14,
+   "cardName": "The Smothering Kangaroo",
+   "power": "Infantilize. Opponent cannot move without permission.",
+   "lore": "You'll never leave me. You're too weak. I made sure of it.",
+   "stats": {
+    "R": 4,
+    "A": 8,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p5 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Erwachsener im Beutel trägt die Pointe im Bild; 'cannot move' ist spielbar, aber vage, die Lore ist reine Kontrollrede.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 15,
+   "cardName": "The Wire-Hanger Persian",
+   "power": "No Wire Hangers. Deal 10 Psychic Damage. Scream until glass breaks.",
+   "lore": "I gave you life! And this is how you repay me? With dirt?",
+   "stats": {
+    "R": 12,
+    "A": 3,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p5 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Mommie-Dearest-Zitat plus Kleiderbügel im Bild passen; Power ist generischer Schaden, die Lore hat keinen eigenen Dreh.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 16,
+   "cardName": "The Golden Child Ant",
+   "power": "Triangulation. Transfer all blame to Scapegoat.",
+   "lore": "Why can't you be more like your brother? He sparkles.",
+   "stats": {
+    "R": 0,
+    "A": 12,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p5 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Goldkind, Sündenbock und Triangulation sind konkrete Familiensystem-Begriffe; die Power setzt eine Scapegoat-Karte voraus, die es nicht gibt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 17,
+   "cardName": "The Business Wolf",
+   "power": "Silian Rail. Stun opponent with superior card stock.",
+   "lore": "Look at that subtle off-white coloring. It's... beautiful.",
+   "stats": {
+    "R": 9,
+    "A": 7,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p6 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Visitenkarte und blutiger Anzug (American Psycho) sind bildstark, brauchen aber Filmwissen; 'stun' ist vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 18,
+   "cardName": "The Tech-Bro Ferret",
+   "power": "Disrupt. Destroy game board. Claim you saved humanity.",
+   "lore": "Move fast and break things. Mostly people. People are things.",
+   "stats": {
+    "R": 3,
+    "A": 11,
+    "F": 12
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p6 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore ('Mostly people. People are things.') ist stark und zitierbar; Power ist klar, aber ohne Überraschung, das Bild (Auto-Rakete) trägt wenig.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 19,
+   "cardName": "The Micromanager Queen",
+   "power": "CC on Reply All. Freeze productivity for 3 turns.",
+   "lore": "I need you to maximize synergy by asking me before you breathe.",
+   "stats": {
+    "R": 6,
+    "A": 2,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p6 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Marionettenfäden an Ameisen am Laptop passen zum Titel; Büro-Schikane ist erwartbar, die Power ist spielbar, aber ohne Dreh.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 20,
+   "cardName": "The Brand-Ambassador Cheetah",
+   "power": "Influencer. Convert Followers into Currency. Hollow out soul.",
+   "lore": "It's not a pyramid scheme. It's a trapezoid of opportunity!",
+   "stats": {
+    "R": 2,
+    "A": 12,
+    "F": 12
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p6 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Lore ('trapezoid of opportunity') steht allein, Gepard auf dem Laufband am Mining-Rig ist Teil des Witzes; 'Followers' ist kein Deck-Wert.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 21,
+   "cardName": "The Tantrum Hippo",
+   "power": "Smash. Destroy all cards on table. Including yours.",
+   "lore": "I ordered the tea ICED! ICED! THE JUNGLE IS RUINED!",
+   "stats": {
+    "R": 12,
+    "A": 0,
+    "F": 0
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p7 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Wutanfall ist erwartbar, die Power ein reiner Tischreset ohne Bezug zur Teetasse; kein Wissenskern.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 22,
+   "cardName": "The Thin-Skinned Balloon Fish",
+   "power": "Explosive Sensitivity. If criticized, deal 20 damage to everyone.",
+   "lore": "Are you saying I'm puffy? You're dead. You're all dead.",
+   "stats": {
+    "R": 10,
+    "A": 2,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p7 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Kugelfisch mit Nadel illustriert, was der Titel sagt; die Power (kritisiert, dann Schaden für alle) ist klar, hat aber keinen neuen Dreh.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 23,
+   "cardName": "The Spiteful Wasp",
+   "power": "Petty Vengeance. Spend all energy to inflict 1 point of annoyance.",
+   "lore": "I don't want the honey. I just want the flower to suffer.",
+   "stats": {
+    "R": 11,
+    "A": 0,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p7 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Reine Spitelogik ('I just want the flower to suffer') ist zitierbar und die Power ('1 point of annoyance') klar und komisch; das Bild ist nur Standard.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 24,
+   "cardName": "The Scream-Pillar",
+   "power": "Sonic Wall. Silence all logic.",
+   "lore": "AAAAAAHHHHHHHHH!!! (Pay attention to me!)",
+   "stats": {
+    "R": 8,
+    "A": 4,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p7 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Nur Titelwortspiel (Scream plus Caterpillar) mit Megafon-Raupe; 'Silence all logic' ist vage, die Lore reines Geschrei.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Titel/Power/Lore gleich (Buchstabenzahl im A-Schrei nicht sicher prüfbar). Stats neu."
+  },
+  {
+   "cardNumber": 25,
+   "cardName": "The Gauntlet Gorilla",
+   "power": "The Snap. Remove 50% of the deck. Perfectly balanced.",
+   "lore": "I'm the only one with the will to act. Also, I want a banana.",
+   "stats": {
+    "R": 12,
+    "A": 8,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p8 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Handschuh am Gorilla mit Bananen-Untertreibung und klarer Mechanik (50 % des Decks) funktioniert; ohne Wissenskern, reine Popanspielung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 26,
+   "cardName": "The Note-Writing Rat",
+   "power": "Delete. Write a name. Eliminated after 40 seconds.",
+   "lore": "I will become the God of the new sewer.",
+   "stats": {
+    "R": 10,
+    "A": 6,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p8 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "'God of the new sewer' sitzt als Pointe, Bild ('NAMES NAMES NAMES') verstärkt sie, die 40-Sekunden-Regel ist spielbar und stimmig zur Vorlage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 27,
+   "cardName": "The Sun-King Scarab",
+   "power": "Divine Right. All players must bow (skip turn) or be blinded.",
+   "lore": "Without me, the day does not start. Worship the sphere!",
+   "stats": {
+    "R": 4,
+    "A": 12,
+    "F": 12
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p8 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Mistkäfer rollt Sonnenball ist echte ägyptische Mythologie (Chepre) und der Wissenskern; Power ist nur halb klar, Lore Standard.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 28,
+   "cardName": "The Clockwork Kraken",
+   "power": "Mechanize. Turn organic cards into rigid metal.",
+   "lore": "Nature is messy. I have fixed it. You're welcome.",
+   "stats": {
+    "R": 8,
+    "A": 4,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p8 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Idee (Natur durch Zahnräder ersetzt) ist klar, aber 'organic cards' undefiniert, Lore flach und kein Wissenskern.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 29,
+   "cardName": "The Flying Monkey",
+   "power": "Proxy War. Attack opponent. Narcissist takes no blame.",
+   "lore": "The Boss is actually really nice once you get to know him!",
+   "stats": {
+    "R": 6,
+    "A": 10,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p9 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Flying Monkey ist ein echter Begriff aus der Narzissmus-Literatur, die Lore ist genau der Satz, den Enabler sagen; Power klar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 30,
+   "cardName": "The Doormat Turtle",
+   "power": "Absorb Abuse. Take double damage so Narcissist takes none.",
+   "lore": "If I just stay quiet, maybe he won't yell today.",
+   "stats": {
+    "R": 0,
+    "A": 8,
+    "F": 0
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p9 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (doppelter Schaden, damit der Narzisst keinen nimmt) spiegelt die Enabler-Rolle klar; Lore ist ernst und braucht die Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 31,
+   "cardName": "The Yes-Parrot",
+   "power": "Echo Chamber. Double effectiveness of Gaslighting.",
+   "lore": "Brilliant, sir! Genius, sir! You're so right, sir!",
+   "stats": {
+    "R": 0,
+    "A": 12,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p9 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Papagei sagt dreimal Ja, ordentlich; die Power setzt eine nicht benannte Gaslighting-Karte voraus und die Lore ist Standard.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 32,
+   "cardName": "The Energy Vampire Bat",
+   "power": "Vibe Kill. Drain 2 Action Points from every player.",
+   "lore": "I don't drink blood. I drink your will to live.",
+   "stats": {
+    "R": 2,
+    "A": 6,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p9 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore ('I drink your will to live') ist zitierbar; die Power nutzt 'Action Points', die im Deck nicht vorkommen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 33,
+   "cardName": "The Magic Mirror",
+   "cardType": "Item Card",
+   "power": "Validation Loop. Recover full health by lying to yourself.",
+   "lore": "You are the fairest. Everyone else is trash.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p10 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Maus sieht im Spiegel einen Bodybuilder, das Bild ist die Pointe; Power spiegelt das Motiv klar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Item Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 34,
+   "cardName": "The Pedestal",
+   "cardType": "Item Card",
+   "power": "High Ground. +5 Attack, but instant death if you fall.",
+   "lore": "It's lonely at the top. But the view of you ants is great.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p10 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore ('the view of you ants') ist die Pointe, rissige Säule im Sturm passt; 'if you fall' ist spieltechnisch unklar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Item Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 35,
+   "cardName": "The Black Hole Smartphone",
+   "cardType": "Item Card",
+   "power": "Doomscroll. Paralyze opponent with envy.",
+   "lore": "Feed me attention. I am starving in 4K resolution.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p10 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Likes im schwarzen Loch sind gut gezeichnet, Lore ('starving in 4K') ist zitierbar; 'Paralyze with envy' ist vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Item Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 36,
+   "cardName": "The Crown of Thorns (Fake)",
+   "cardType": "Item Card",
+   "power": "Victim Card. Immunity to criticism by claiming persecution.",
+   "lore": "Look how much I suffer for you! LOOK AT IT!",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p10 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (Immunität durch Opferrolle) ist klar und spiegelt die Karte; grüne Krone über weinendem Auge braucht Erklärung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Item Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 37,
+   "cardName": "The Cross-Bearing Donkey",
+   "power": "Guilt Trip. Opponent loses turn due to obligation.",
+   "lore": "No, go have fun. I'll just stay here and rot. Alone.",
+   "stats": {
+    "R": 2,
+    "A": 8,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p11 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Kreuz aus 'STYROFOAM' ist die Pointe im Bild, die Power (Zug verlieren wegen Pflicht) ist klar spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 38,
+   "cardName": "The Bandaged Leech",
+   "power": "Medical Mystery. Feign illness to escape accountability.",
+   "lore": "I would apologize, but my condition is flaring up.",
+   "stats": {
+    "R": 4,
+    "A": 6,
+    "F": 8
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p11 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Tropf mit 'Sympathy' im Bild trägt den Witz; 'feign illness' ist als Mechanik vage, Lore nur solide.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 39,
+   "cardName": "The Grudging Camel",
+   "power": "The Last Straw. Explode over minor inconvenience. Recall grievance from 1994.",
+   "lore": "I forgive. But I never, ever, ever forget.",
+   "stats": {
+    "R": 8,
+    "A": 2,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p11 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Strohhalm im Höcker (the last straw) ist das Bildwortspiel; die Power ist Erzählung statt Mechanik.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 40,
+   "cardName": "The Emo-Goth Raven",
+   "power": "Main Character Syndrome. The music swells. You matter most.",
+   "lore": "My darkness is too deep for you to understand.",
+   "stats": {
+    "R": 3,
+    "A": 9,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p11 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 0,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Der 'RAIP'-Grabstein ist ein Bildgag, aber die Power ('the music swells') ist nur Flavor ohne Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 41,
+   "cardName": "The Naked Mole Rat King",
+   "power": "Delusion. Defense is 0, but you act like it is 10.",
+   "lore": "Is it a draft? Or just the chill of pure excellence?",
+   "stats": {
+    "R": 0,
+    "A": 0,
+    "F": 12
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p12 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Nacktmull in Hermelin und die Lore ('chill of pure excellence') tragen Kaisers neue Kleider; Power sagt Verteidigung 0, gedruckt steht F:12.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 42,
+   "cardName": "The Shattered Visage",
+   "cardType": "Structure Card",
+   "power": "Despair. Look on my works, ye Mighty, and lose turn.",
+   "lore": "King of Kings. Name implies heavy depreciation.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p12 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Ozymandias (Shelley) ist ein konkreter Wissenskern und das Bild passt; Lore-Satz ('implies heavy depreciation') ist sperrig.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Structure Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 43,
+   "cardName": "The Bottomless Pit",
+   "cardType": "Hazard Card",
+   "power": "Insatiable. Discard your hand. It is not enough.",
+   "lore": "More. More. It's never enough. Fill the hole.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p12 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (Hand abwerfen, reicht trotzdem nicht) spiegelt Gier klar; die Lore ist nahe am Füllsatz.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Hazard Card], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 44,
+   "cardName": "The Ghost of Future Past",
+   "power": "Nostalgia Trap. Become immune to the present.",
+   "lore": "I used to be somebody. I used to be big.",
+   "stats": {
+    "R": 1,
+    "A": 1,
+    "F": 10
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p12 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Filmstreifen-Geist passt zum Titel, die Lore hat Sunset-Boulevard-Anklang; Power ist vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 45,
+   "cardName": "Uncle FrizzleBob (The Rogue)",
+   "power": "Cut & Paste. Physically cut an opponent's card in half.",
+   "lore": "Rules are for people who don't have scissors.",
+   "stats": {
+    "R": "Infinite",
+    "A": 0,
+    "F": 0
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p13 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 0,
+     "bild": 1
+    },
+    "reason": "Selbstreferenz (Schere und Kleber, Karte wirklich zerschneiden) ist Markenzeichen und die Lore zitierbar; ohne Wissenskern, Power ist Meta statt Spielzug.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 46,
+   "cardName": "The Grey Rock",
+   "power": "Bore to Death. Narcissist loses interest and wanders off.",
+   "lore": "I am boring. I am uninteresting. Go away.",
+   "stats": {
+    "R": 0,
+    "A": 0,
+    "F": 0
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p13 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Grey Rocking ist eine echte Technik, der gelangweilte Stein ist die Pointe, die Power ist klar (Narzisst geht weg).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Stats R/A/F (JSON hat keine)."
+  },
+  {
+   "cardNumber": 47,
+   "cardName": "The Truth Bomb",
+   "cardType": "Weapon",
+   "power": "Boundaries. Cancel a Gaslighting effect.",
+   "lore": "No. (A complete sentence).",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p13 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "'NO' als Bombe ist klares Bild, die Lore ('A complete sentence') steht allein und Grenzensetzen ist ein konkreter Begriff; die Power braucht eine nicht benannte Gaslighting-Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Weapon], keine R/A/F-Werte gedruckt."
+  },
+  {
+   "cardNumber": 48,
+   "cardName": "The Exit Door",
+   "cardType": "Escape",
+   "power": "No Contact. Leave the game. You win by not playing.",
+   "lore": "The only winning move.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Ego_Mania_NARCISSIST - ADD web ID.pdf p13 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "'Win by not playing' (WarGames) ist die Deck-Philosophie und klar spielbar; die offene Tür als Bild ist generisch.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Text gleich; neu: Typ-Label [Escape], keine R/A/F-Werte gedruckt."
+  }
+ ],
+ "deck": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.3,
+   "distribution": {
+    "1": 1,
+    "2": 4,
+    "3": 29,
+    "4": 11,
+    "5": 3
+   },
+   "reason": "Starkes Thema und viele zitierbare Lines (Cuttlefish, Cheetah, Rat, Rules-Karten), aber Power-Texte verweisen oft auf nicht existierende Karten und Marker (Child, Scapegoat, Gaslighting, Action Points, Support); die Mitte liegt bei solidem Durchschnitt.",
+   "ratingNote": "4+5 Sterne liegen mit 14 von 48 (29 %) knapp unter der Grenze; alle 4- und 5-Sterne-Karten wurden gegen die Tabelle geprüft, sechs Karten dabei auf 3 Sterne gesenkt.",
+   "version": "R1"
+  },
+  "topCards": [
+   "The Fog-Weaving Cuttlefish",
+   "The Note-Writing Rat",
+   "The Grey Rock",
+   "The Cross-Bearing Donkey",
+   "The Exit Door"
+  ],
+  "worstCards": [
+   "The Flexing Rooster",
+   "The Scream-Pillar",
+   "The Clockwork Kraken"
+  ],
+  "viralScore": 7,
+  "viralReason": "'It's not a pyramid scheme. It's a trapezoid of opportunity!' (Cheetah) und 'Rules are for people who don't have scissors.' (Uncle FrizzleBob) würden geteilt, dazu Narzissmus-Themen mit hoher Teilbarkeit."
+ },
+ "findings": [
+  "JSON-Text und Druck sind für alle 48 Karten gleich (Sync vom 23.10. bestätigt); einziger Textunterschied: Karte 10 gedruckt 'Memory Charn' (gemeint 'Charm'), hier korrigiert, Original in printTypo.",
+  "JSON hat keine Stats; Druck hat R/A/F auf 40 Karten (Karte 45: R: Infinite). Karten 33-36, 42, 43, 47, 48 haben kein R/A/F, nur Typ-Label [Item Card]/[Structure Card]/[Hazard Card]/[Weapon]/[Escape] (JSON kennt keine Typ-Labels).",
+  "JSON-Felder qa.verdict, topCards, worstCards, todos nennen Karten, die im Druck nicht vorkommen: 'Rule 3 - Burn the Script', 'Crystal Unicorn Empath', 'Boundary Alarm Cat'. Marketingtext/Verdict gehören offenbar zu einer anderen Deckversion.",
+  "Karte 2 Rooster: Power spricht von Geweih ('antlers in decorating'), Hahn hat keins; Bild zeigt Hahn mit Eiern, kein Flexen.",
+  "Karte 41 Naked Mole Rat King: Power sagt 'Defense is 0', gedruckt F:12 (F = Verteidigungs-Stat laut Regelseite); mögliche Absicht, aber Widerspruch.",
+  "Regelseite (p14): Zeilenumbruch-Dublette 'How thick the / the mask is.' und Fußzeile 'Not legal tender in Rhode Isl' wird vom GW-Logo abgeschnitten. Mechanik-Abschnitt nennt 'Gaslight', 'Grey Rock', 'God Mode' Karten, die so nicht als Titel existieren.",
+  "Cover und Schlussseite schreiben 'Kayfabizzaro' (zwei z), das Deck sonst 'Kayfabizarro'.",
+  "Mehrere Powers nutzen Marker/Karten ohne Definition: 'Child' card (13), 'Scapegoat' (16), 'Negative Vibes' tokens (4), 'Action Points' (32), 'Support' (11), 'Followers' (20), 'Gaslighting' (31, 47), 'Presence' (2).",
+  "Bildgags ohne Textentsprechung: Kreuz 'STYROFOAM' (37), Grabstein 'RAIP' (40), Tropf 'Sympathy' (38); Karte 12 zeigt einen Keiler, kein Schwein."
+ ]
+}

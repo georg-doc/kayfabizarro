@@ -97,3 +97,16 @@ Titel: Im `cardName` stehen gerade Apostrophe und Anführungszeichen wie im Kano
    - Für Marketing und die öffentliche Site ist das heikel. Ich habe es nur gemeldet; der Text steht wie gedruckt.
 3. **Anti-Rules:** Rund 15 Lore-Zeilen sind Notizen aus dem Designbriefing („Plants in pots. Silent visual gags.“) statt Text für Spieler. Sie sind wie gedruckt übernommen. Hier liegt der größte Hebel für eine Überarbeitung.
 4. **Wie weiter:** Sollen weitere Decks im gleichen Verfahren folgen? Kosten siehe oben.
+
+## Runde 2 · WS0 27.10. · nur Bewertung (Georg q255, V-875)
+
+Mission Control und Ego Mania waren am 23.10. nach Druck erfasst, hatten aber keine R1-Bewertung. Je Deck eine Teilsitzung nach AGENT_BRIEF_R1 (Sonnet, mehrere Seiten je Schritt); zusammen ≈ 315.000 Tokens, ≈ 5 Minuten. Titel, Power und Lore bleiben wie im JSON (Druckstand 23.10.), neu sind `rating`, `deckRating`, Top/Flop, viralScore und bei Ego Mania die gedruckten Werte (`stats`, 40 Karten). Stichprobe WS0: Mission Control Seite 6 (#17–20) gegen Transkription, stimmt.
+
+| Deck | Ø Punkte | Sterne Deck | 4★ + 5★ | viralScore (alt) |
+|---|---:|---:|---:|---:|
+| Mission Control | 6,55 | 3 | 30 %, mit Begründung | 7 (10) |
+| Ego Mania | 6,3 | 3 | 29 % | 7 (10) |
+
+Befunde:
+- Mission Control: #9–#11 Lore im Druck doppelt (#10 obere Fassung verderbt), #42 Lore beginnt mit „Completes“, Power „Blindfolded“ regeltechnisch leer, #50 doppelt die Goalpost-Idee von #2, #12/#56 Textende unter dem GW-Logo.
+- Ego Mania: `topCards`/`worstCards`/`qa.verdict` nannten Karten, die im Druck fehlen (jetzt in *Legacy); #2 Geweih in der Power, nicht im Bild; #41 „Defense is 0“, gedruckt F:12; mehrere Powers nutzen undefinierte Marker (Child, Scapegoat, Action Points, Support, Gaslighting); Cover „Kayfabizzaro“, Regelseite „the the“.

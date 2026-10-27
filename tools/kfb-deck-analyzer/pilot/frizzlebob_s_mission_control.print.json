@@ -1,0 +1,1617 @@
+{
+ "packId": "frizzlebob_s_mission_control",
+ "pdf": "FrizzleBob_s_Mission_Control - ADD web ID.pdf",
+ "checkedAt": "2026-10-27",
+ "pagesViewed": 15,
+ "quadsViewed": 3,
+ "mappingNote": "Zuordnung stimmt: Seite 1 = Cover, Karte n auf Seite 1+ceil(n/4), Viertel (n-1)%4 in Reihenfolge TL, TR, BL, BR; 56 Karten auf Seiten 2-15, per Titel geprueft. Kein Titel, keine Power und keine Lore weicht ab (JSON ist seit 23.10. synchron). · WS0 27.10.: Lauf nur Bewertung (Georg q255/V-875); Titel/Power/Lore bleiben wie im JSON (Druckstand 23.10.), Abweichungen stehen in jsonDiff.",
+ "cards": [
+  {
+   "cardNumber": 1,
+   "cardName": "Cartography Sidequest",
+   "power": "Weaponized FOMO - Target opponent must skip their next turn to draw cards they are not allowed to look at.",
+   "lore": "Go everywhere on the map. Prove to the machine that you have surveyed every inch of your own cage.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p2 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore sitzt (\"every inch of your own cage\"), aber die Power ist verquer (Karten ziehen, die man nicht ansehen darf) und das Bild illustriert nur die Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 2,
+   "cardName": "Level Goal",
+   "power": "Goalpost Shift - Move target opponent's victory token back three spaces.",
+   "lore": "Reach the end of the level. Your reward is a slightly harder level.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p2 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Alles greift ineinander: FINISH-Schild vor dem Fleischwolf, Lore als Zitat, Power verschiebt buchstaeblich das Ziel zurueck. Klare, spielbare Mechanik.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 3,
+   "cardName": "The Maze",
+   "power": "Cognitive Loop - Force opponent to shuffle their hand into their deck and redraw the same number minus one.",
+   "lore": "Find an exit to the level. Spoilers: there is no outside.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p2 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power ist klar und die Schleife (mischen, ziehen, eine weniger) spiegelt das Motiv; der Witz (\"no outside\") ist aber vorhersehbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 4,
+   "cardName": "It's All Upstairs From Here",
+   "power": "False Summit - Cancel an opponent's action just as it resolves.",
+   "lore": "Ascend to the top of a tower to fight a guy who could have just met you in the lobby.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p2 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Lobby-Pointe ist stark, aber Bild (muede Ziege auf Treppe) und Power (normaler Konter) tragen sie nicht weiter.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 5,
+   "cardName": "Run or Die",
+   "power": "Panic Attack - Opponent must play their next card in 3 seconds or discard it.",
+   "lore": "Go that way and don't stop. The illusion of choice, accelerated.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p3 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Echtzeit-Druck von 3 Sekunden ist klar und spielbar und passt zum Titel; \"illusion of choice, accelerated\" ist zitierbar. Das Hamsterrad als Bild bleibt Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 6,
+   "cardName": "Escape Sequence",
+   "power": "Scripted Collapse - Destroy all resource cards currently in play. Everyone starts running.",
+   "lore": "Run away from danger until you reach safety. Safety is a cutscene.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p3 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Safety is a cutscene\" steht allein. Der zweite Power-Satz (\"Everyone starts running\") ist keine Regel.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 7,
+   "cardName": "Rise to the Challenge",
+   "power": "Rising Sludge - Discard the bottom three cards of everyone's deck.",
+   "lore": "Climb up until you reach safety. Gravity is now a microtransaction.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p3 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Gravity is now a microtransaction\" ist die beste Zeile, aber Motiv (steigender Schleim) ist ein bekanntes Trope und die Power hat nur lose Verbindung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 8,
+   "cardName": "Broken Bridge",
+   "power": "Arbitrary Roadblock - Target opponent cannot attack or advance until they sacrifice a high-value card.",
+   "lore": "You cannot pass until the developers finish coding the next zone.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p3 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "404-Schild und \"Needs Plot Token to Fix\" machen den unfertigen Level-Block im Bild zur Pointe; \"advance\" in der Power bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 9,
+   "cardName": "Boss Battle",
+   "power": "Sponge Mechanics - Absorb the next 3 attacks directed at you.",
+   "lore": "Defeat a challenging monster who exists solely to gatekeep your dopamine.",
+   "stats": {},
+   "printTypo": "Lore steht im Druck doppelt: oben in anderer Schrift, unten sauber mit Power; gleicher Text.",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p4 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore \"gatekeep your dopamine\" gut; die Power ist ein gewoehnlicher Schutz und das Bild (Bulldogge auf Muenzen) erklaert das Bullet-Sponge-Konzept nicht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 10,
+   "cardName": "Kill Enemies to Open",
+   "power": "Blood Lock - Opponent cannot draw new cards until they destroy one of their own items.",
+   "lore": "Kill all the monsters in an area. You are the janitor of death.",
+   "stats": {},
+   "printTypo": "Lore steht im Druck doppelt; die obere Fassung ist verderbt (\"You reven the dork janostor of death.\"), die untere sauber und zaehlt.",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p4 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Dachs als Hausmeister vor geoeffneter Tuer macht \"janitor of death\" sichtbar, Bild und Lore verstaerken sich. Power (Blood Lock) ist klar, aber nur lose am Motiv.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 11,
+   "cardName": "Mass Monster-Slaughter",
+   "power": "Grindset - Play the same low-level attack three times in a row for triple damage.",
+   "lore": "Kill many of the same monster. Because repetitive labor is fun when it's violent!",
+   "stats": {},
+   "printTypo": "Lore steht im Druck doppelt (oben und unten); gleicher Text.",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p4 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Power (dreimal derselbe Angriff = dreifacher Schaden) bildet das Grinden sauber ab; der Witz an der Lore ist vorhersehbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 12,
+   "cardName": "20 Bear Asses",
+   "power": "Macabre Fetch - Steal a random resource card from an opponent's hand.",
+   "lore": "Retrieve Random Drops for an NPC. The pinnacle of heroic fetch quests.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": "Powertext endet unter dem GW-Logo; \"hand\" nur teilweise sichtbar.",
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p4 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Der Titel ist die Pointe (absurdes Quest-Ziel) und das Bild setzt sie drastisch um, aber die Power (Karte klauen) hat mit dem Motiv wenig zu tun und der Lore-Satz braucht die Karte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 13,
+   "cardName": "Gotta Kill Them All",
+   "power": "Hitlist - Target a specific card in an opponent's deck. If drawn, it is instantly destroyed.",
+   "lore": "Kill everyone on a list of targets. A psychopath's grocery run.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p5 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"A psychopath's grocery run\" ist zitierbar. Power (Karte im Deck markieren) ist als Idee gut, aber unklar, wie man \"specific\" waehlt; Eule mit Wollfaden-Tafel bleibt Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 14,
+   "cardName": "Kill Streak",
+   "power": "Momentum - For every card you played last turn, draw an extra card this turn.",
+   "lore": "Kill as many enemies as you can without getting hit. Perfect for your anxiety!",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p5 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schneeball-Power ist klar und spielbar und passt zur Streak; Lore und Bild (Frettchen mit Pümpeln) sind eher Beiwerk.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 15,
+   "cardName": "Player Versus Environment",
+   "power": "System Update - Change the current rules of the game randomly for one round.",
+   "lore": "Defeat the computer who is controlling the game against you. The house always wins.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p5 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"The house always wins\" sitzt, aber \"change the rules randomly\" ist als Power zu offen (wer wuerfelt, welche Regeln?).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 16,
+   "cardName": "Player Versus Player",
+   "power": "Divide and Conquer - Force two opponents to discard a card of each other's choosing.",
+   "lore": "Defeat another player who is likewise trying to defeat you. Keep the plebs fighting each other.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p5 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Zwei Chihuahuas um einen Knochen, oben der reiche Kater mit Geldschein: Bild und \"keep the plebs fighting\" ergeben sofort die Pointe. Power ist kompliziert formuliert.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 17,
+   "cardName": "Escort Mission",
+   "power": "Suicidal AI - Attach this to an opponent. They must spend one action per turn protecting it, or lose 5 points.",
+   "lore": "Help a weaker ally navigate a dangerous area. The ultimate test of your patience.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p6 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Das Schaf, das froehlich in die Stachelgrube laeuft, ist die Pointe; die Power (Schutzaktion pro Zug oder minus 5) setzt das Motiv klar und spielbar um. Lore ist nur okay.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 18,
+   "cardName": "Gotta Rescue Them All",
+   "power": "Guilt Trip - Opponent cannot play attack cards while you have fewer cards in your hand.",
+   "lore": "Save all the allies in distress. A hoarding pathology disguised as altruism.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p6 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Hoarding pathology disguised as altruism\" ist gut formuliert und gibt dem Retter-Trope einen echten Dreh; Power ist umstaendlich, Bild (Hund mit Kaetzchen-Sack) illustriert nur.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 19,
+   "cardName": "Hold the Line",
+   "power": "Attrition - Neither you nor your opponent can draw new cards for 2 turns.",
+   "lore": "Survive by not letting the enemy win. Stand in this circle until we say you can leave.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p6 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Patt-Mechanik (niemand zieht) ist klar und passt; \"Stand in this circle\" ist ein leiser Gag, das Bild (Igel an der Tuer) traegt wenig.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 20,
+   "cardName": "Save the Princess",
+   "power": "Damsel Tax - Steal an opponent's highest-value card and hide it under this card until they defeat it.",
+   "lore": "Rescue someone who's been kidnapped. Again. Try better locks next time.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p6 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Gelangweilte Flamingo-Prinzessin im Kaefig mit Froschritter ist Teil des Witzes, \"Try better locks next time\" ist zitierbar. Power (Karte verstecken, bis besiegt) bildet die Rettung als Spielzug ab.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 21,
+   "cardName": "Fetch Quest",
+   "power": "Busywork - Opponent must discard two cards to draw one card.",
+   "lore": "Retrieve one or more Plot Coupons for an NPC. You are an intern with a sword.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p7 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Intern with a sword\" ist zitierbar und die Power (zwei abwerfen, eine ziehen) ist die perfekte Busywork-Regel. Das Bild (Hund holt Stock) ist eher woertlich.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 22,
+   "cardName": "Chain of Deals",
+   "power": "Red Tape - Swap hands with an opponent, then randomly swap one card back.",
+   "lore": "Trade items for items until finally obtaining the one you want. Bureaucracy as gameplay.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p7 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Das Tauschketten-Bild (Buero-Klammer zu Amboss) ist stark, Power und Lore tragen es aber nur vage; \"Bureaucracy as gameplay\" ist eher Etikett.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 23,
+   "cardName": "Product Delivery Ordeal",
+   "power": "Fragile Cargo - Your next attack deals double damage, but if you take any damage before your next turn, you lose a turn.",
+   "lore": "Overcome obstacles to deliver Plot Coupons to an NPC. Postmates, but with dragons.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p7 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Postmates, but with dragons\" ist ein Satz zum Zitieren, und die Power (doppelter Schaden, aber zerbrechlich) spiegelt das Paket. Pelikan mit Pizzakarton unter Laserbeschuss passt, ohne Drachen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 24,
+   "cardName": "Plot Coupons",
+   "power": "Gatekeeper - Opponent cannot play their strongest card until they play three weak cards first.",
+   "lore": "Collect three ancient artifacts to open the door. The narrative equivalent of a punch card.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p7 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Alles stimmt: Waschbaer vor Spielautomat \"JACKPOT 3 PLOT COUPONS\", \"narrative equivalent of a punch card\" erklaert den Fachbegriff, die Power (erst drei schwache Karten) setzt ihn spielbar um.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 25,
+   "cardName": "Gotta Catch Them All",
+   "power": "Compulsive Capture - Take control of an opponent's weakest card permanently.",
+   "lore": "Collect all the items or Live Items. Turning wildlife preservation into a hostage situation.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p8 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Wildlife preservation into a hostage situation\" ist scharf formuliert; Pinguin mit Netz vor Glaesern ist aber das erwartbare Pokemon-Bild, die Power (schwaechste Karte dauerhaft) bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 26,
+   "cardName": "Herding Mission",
+   "power": "Pathing Error - Opponent's cards are played on the wrong targets this turn.",
+   "lore": "Herd animals into an area. Because AI pathfinding is a joke we play on you.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p8 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Eckige Wuerfelschafe zeigen den Pathfinding-Fehler im Bild, die Power (Karten auf falsche Ziele) setzt ihn klar um, und die Lore nennt den Mechanismus beim Namen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 27,
+   "cardName": "NPC Round-Up Mission",
+   "power": "Cat Herding - Opponent must reveal their hand and shuffle it back into their deck.",
+   "lore": "Gather a group of NPCs together. Wrangling digital toddlers.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p8 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Wrangling digital toddlers\" ist eine gute Zeile; die Power (Hand zeigen und mischen) hat keinen klaren Bezug zum Zusammentreiben, Kuh mit Megafon ist beliebig.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 28,
+   "cardName": "Live Items",
+   "power": "Inventory Bite - Discard a resource. It bites you; take 1 damage.",
+   "lore": "Stuffing living creatures into your infinite pocket. Don't think about the ethics.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p8 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Beissender Rucksack ist ein bekanntes Mimic-Trope und erklaert sich selbst; die Power (abwerfen, 1 Schaden) ist dafuer klar und spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 29,
+   "cardName": "Companion-Specific Sidequest",
+   "power": "Bribed Loyalty - Sacrifice an item card to draw two extra cards.",
+   "lore": "Earn your ally's favor. Friendship is transactional.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p9 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Durchschnitt: \"Friendship is transactional\" ist ordentlich, aber nicht neu; die Power ist vage und das Bild (Koala gibt Zahnrad) tut nur das Noetigste.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 30,
+   "cardName": "Loyalty Mission",
+   "power": "Trauma Dump - Opponent must skip their turn to listen to your backstory.",
+   "lore": "Complete your ally's personal goal so they don't betray you at the finale.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p9 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Trauma Dump\" als Skip-Zug ist eine klare, lustige Regel; der Bezug zur Loyalty-Mission ist aber lose und das Bild (Nashorn auf der Couch) dreht die Rollen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 31,
+   "cardName": "Romance Sidequest",
+   "power": "Simulated Love - Force an opponent's card to fight for you for one round.",
+   "lore": "Earn your ally's love. Select dialogue option C to receive affection.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p9 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Select dialogue option C to receive affection\" ist zitierbar; Pfau mit Rose vor Schaufensterpuppe ist erwartbar, Power unklar (welche Karte?).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 32,
+   "cardName": "Cosmetic Award",
+   "power": "Shiny Distraction - Negate all damage this turn, but your cards look absolutely ridiculous.",
+   "lore": "A shiny hat to validate your hundred hours of meaningless grinding.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p9 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Lore ist stark; \"your cards look absolutely ridiculous\" ist aber keine pruefbare Regel, und der Baer mit Schleife traegt die Pointe nicht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 33,
+   "cardName": "Stock Video Game Puzzle",
+   "power": "Sliding Blocks - Rearrange the order of the top 5 cards of any deck.",
+   "lore": "Solve a puzzle. Because the ancient architect loved pushing ice blocks around.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p10 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 0
+    },
+    "reason": "Power (oberste 5 Karten umsortieren) ist klar und passt zu Schiebepuzzles; das Bild (Tiger vor drei Statuen) zeigt keine Eisbloecke und widerspricht damit dem Text.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 34,
+   "cardName": "Mini-Game",
+   "power": "Distraction Game - Both players must roll a die; highest roll steals a card from the lowest.",
+   "lore": "Play a smaller game with its own rules. Pacing is a myth.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p10 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wuerfelduell als Spiel im Spiel ist klar und spielbar; der Witz (Drache und Mini-Automat PONG) ist da, bleibt aber vorhersehbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 35,
+   "cardName": "Variable Player Goals",
+   "power": "Goal Fragmentation - Change the win condition of the game for 2 turns.",
+   "lore": "Why save the world when you could be taking photos of frogs?",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p10 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Froschfoto-Zeile ist allein zitierbar; die Power (Siegbedingung aendern) ist zu offen, das Affenboot-Bild nur Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 36,
+   "cardName": "Instant-Win Condition",
+   "power": "Deus Ex Machina - If you hold this card for 5 consecutive turns without playing it, you win the game.",
+   "lore": "Reaching the most important objective. Press X to end the simulation.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p10 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Schlafender Troll neben dem Knopf unter Glas ist eine echte Anti-Klimax, und \"Karte halten statt spielen\" als Siegbedingung ist klar und mechanisch witzig. Lore ist nur okay.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 37,
+   "cardName": "100% Completion",
+   "power": "Sunk Cost Fallacy - Opponent cannot win unless their hand is completely empty.",
+   "lore": "Don't miss any optional objectives. Your digital grave requires all the shiny trinkets.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p11 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Das Faultier mit \"9,999/10,000 flags checked\" ist der Witz; die Power nennt den Sunk-Cost-Fehlschluss, setzt ihn aber nicht um (leere Hand hat damit nichts zu tun).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 38,
+   "cardName": "Gameplay Grading",
+   "power": "Harsh Grading - If opponent's attack doesn't defeat a card instantly, the attack is negated.",
+   "lore": "Play the game as well as possible. The machine judges your worth.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p11 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Durchschnitt: Power verstaendlich, aber schwer abzuwaegen; Bild (Affe-Schiedsrichter, \"S Rank\", Nilpferd) erklaert nichts und die Lore bleibt Floskel.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 39,
+   "cardName": "Secret Ending",
+   "power": "Lore Dump - Reveal your entire hand to the opponent; if you have a pair, double your attack points.",
+   "lore": "Collect all 500 hidden rocks to learn the true, disappointing lore.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p11 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"500 hidden rocks ... disappointing lore\" ist zitierbar; die Power (Hand zeigen, Paar) hat nur ueber den Namen mit dem Motiv zu tun.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 40,
+   "cardName": "Bragging Rights Reward",
+   "power": "Hollow Victory - Gain 10 points, but you cannot attack on your next turn.",
+   "lore": "An achievement for your profile that literally nobody else cares about.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p11 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power (10 Punkte, dafuer aussetzen) spiegelt den hohlen Sieg klar; Lore ist gut, aber das Bild (Krone mit leeren Zeilen) traegt die Pointe nicht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 41,
+   "cardName": "Challenge Run",
+   "power": "Self-Sabotage - Play with your hand facing outward to the opponent, but your attacks do +2 damage.",
+   "lore": "Complete the game with optional restrictions. Because normal misery wasn't enough.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p12 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Offene Hand fuer +2 Schaden ist eine klare, spielbare Selbstbeschraenkung; Schildkroete mit Klavier und Kuehlschrank ist erwartbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 42,
+   "cardName": "Self-Imposed Challenge",
+   "power": "Blindfolded - Draw cards blindly from the bottom of your deck.",
+   "lore": "Completes the game with your own restrictions. Stockholm Syndrome: Expert Edition.",
+   "stats": {},
+   "printTypo": "Lore beginnt mit \"Completes\" statt \"Complete\" (wirkt wie Tippfehler, im Druck wörtlich übernommen).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p12 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 0,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "\"Stockholm Syndrome: Expert Edition\" und das selbstgefesselte Kaenguru passen zusammen; die Power ist leer, denn Karten zieht man ohnehin blind.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 43,
+   "cardName": "No Item Use for You",
+   "power": "Elixir Hoarder - Opponent cannot use item cards for 3 turns.",
+   "lore": "Don't use your items. Hoard the mega-elixirs until the credits roll.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p12 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore (Elixiere bis zum Abspann horten) ist gut, die Power sperrt aber den Gegner statt den Spieler; das verletzte Kamel mit Trank bleibt Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 44,
+   "cardName": "No-Gear Level",
+   "power": "Confiscated Inventory - All players must discard their currently equipped items.",
+   "lore": "Don't use weapons or equipment. A sudden, arbitrary strip search by the developers.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p12 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Strip search by the developers\" sitzt, und die Power (alle werfen Ausruestung ab) setzt es direkt um; Pinguin mit Holzloeffel vor Waffenvitrinen ist ein guter Nebengag.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 45,
+   "cardName": "Speedrun",
+   "power": "Sequence Break - Skip your opponent's next turn.",
+   "lore": "Complete objectives as quickly as possible. Skip the story, break the physics.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p13 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Zug ueberspringen ist klar und passt zum Speedrun (\"Sequence Break\" ist ein echter Begriff, wird aber nicht erklaert); Gepard durch die Wand ist erwartbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 46,
+   "cardName": "Stealth-Based Mission",
+   "power": "Instant Fail - If opponent plays a loud (attack) card, their turn instantly ends.",
+   "lore": "Don't let enemies notice you. An instant fail state for stepping on a twig.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p13 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Der Zweig-Satz ist zitierbar, die Power (lauter Angriff beendet den Zug) spiegelt Stealth sauber, und der Elefant, der auf einen Zweig tritt, setzt die Pointe um.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 47,
+   "cardName": "Timed Mission",
+   "power": "Ticking Clock - Opponent has exactly 10 seconds to complete their entire turn.",
+   "lore": "Complete objectives before time runs out. Artificial stress for artificial stakes.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p13 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Klare, spielbare Zeitregel; doppelt sich aber mit Run or Die (3 Sekunden), und das Bild (Kaninchen vor 00:01) erklaert sich selbst.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 48,
+   "cardName": "No-Damage Run",
+   "power": "Glass Cannon - If you take any damage, discard your entire hand.",
+   "lore": "Don't get hurt. One microscopic pixel of a hitbox ruins five hours of work.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p13 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Glasgazelle zwischen Stachelkugeln ist \"Glass Cannon\" im Bild, die Power (Schaden = Hand weg) ist hart und klar, \"one microscopic pixel of a hitbox\" ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 49,
+   "cardName": "The Cake is a Lie",
+   "power": "Bait and Switch - Play a card face down. When opponent attacks it, it explodes for 3 damage.",
+   "lore": "Your real goal is to destroy the facility. The reward was bait.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p14 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Falle-Power (verdeckt legen, explodiert beim Angriff) setzt den Koeder klar um; die Portal-Anspielung traegt der Titel allein, die Lore erklaert sie nur.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Titel: JSON \"The Cake is a Lie\" -> \"The Cake Is a Lie\"; cardName nach V-271 (\"Is\" gross); Druck: The Cake is a Lie"
+  },
+  {
+   "cardNumber": 50,
+   "cardName": "Princess in Another Castle",
+   "power": "Moved Goalpost - Move an opponent's target to a different card just as they attack.",
+   "lore": "Finding and saving the princess. Except your reward is a fungal hallucination.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p14 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Koopa im Bauhelm, der Peach aus dem Tresor rettet, ist als Rollenumkehr gut; die Power doppelt Level Goal (Goalpost) und die Pilz-Lore ist ohne Mario-Wissen nicht zu lesen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 51,
+   "cardName": "Collect 12 Logs",
+   "power": "Tunnel Vision - Opponent can only play resource cards this turn; no attacks.",
+   "lore": "Goals players become too dependent on, forgetting how to actually play.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p14 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 0,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Kein Witz erkennbar (Schwein hackt Holz, Schatten im Hintergrund), die Lore ist ein holpriges Fragment ohne Pointe; nur die Power (nur Ressourcen) ist verstaendlich.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 52,
+   "cardName": "100 Babies",
+   "power": "Swarm Mechanics - Fill your opponent's hand with useless 0-point cards.",
+   "lore": "Players can set their own goals, such as having 100 babies. You are the architect of your own hell.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p14 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Erschoepfter Vogel im Huettchen unter 100 Kueken ist sofort lesbar und witzig; die Power (0-Punkte-Karten) ist unklar, weil es solche Karten nicht gibt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 53,
+   "cardName": "Scoring Points",
+   "power": "High Score - Gain 100 meaningless points. They do nothing, but you feel great.",
+   "lore": "Completing an objective to watch a digital integer increase. Dopamine achieved.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p15 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 0,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "\"Dopamine achieved\" ist zitierbar, aber die Power ist keine Mechanik (Punkte, die nichts tun); das Bild (Schwein auf Muenzen mit 999,999) bleibt Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 54,
+   "cardName": "Experience Grind",
+   "power": "Level Up - Discard 5 cards to increase your base attack by 1.",
+   "lore": "Repeat the same action until the bar is full. Welcome to middle management.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p15 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Ochse am Muehlstein mit 99%/100%-Balken ist die Pointe, \"Welcome to middle management\" ist zitierbar, und der Preis (5 Karten fuer +1) bildet den Grind spielbar ab.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 55,
+   "cardName": "Gold Sink",
+   "power": "Inflation - All cards cost double to play this turn.",
+   "lore": "A mechanic designed purely to delete the wealth you spent 40 hours accumulating.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p15 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Lore erklaert den Begriff Gold Sink gut; die Power nennt aber Inflation (ein anderer Wirtschaftsbegriff) und das Bild (Rabe, Muenzen im Loch) ist nur die Uebersetzung des Titels.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 56,
+   "cardName": "Hero Must Survive",
+   "power": "Game Over - Flip the table. (Or, in gameplay: End the match immediately [Rest vom GW-Logo verdeckt])",
+   "lore": "Don't allow a specific character to be killed. Good thing you're not the hero.",
+   "stats": {},
+   "printTypo": null,
+   "printOpen": "Powertext endet unter dem GW-Logo (\"...End the match immediately\" und Rest der Klammer verdeckt).",
+   "textSource": {
+    "source": "PDF FrizzleBob_s_Mission_Control - ADD web ID.pdf p15 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Das gelbe Kaninchen mit Dynamit \"THE GAME\" macht \"Good thing you're not the hero\" zur Pointe; die Power (Tisch umwerfen) ist als Gag gut, aber als Regel unklar und im Druck abgeschnitten.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Power: JSON enthaelt zusaetzlich \"[Rest vom GW-Logo verdeckt]\" (Druck-Abbruch); Text sonst gleich"
+  }
+ ],
+ "deck": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.55,
+   "distribution": {
+    "1": 0,
+    "2": 1,
+    "3": 38,
+    "4": 12,
+    "5": 5
+   },
+   "reason": "Die Lore-Zeilen sind das Staerkste am Deck (Gravity is a microtransaction, Safety is a cutscene, intern with a sword); Power und Bild tragen sie nicht immer, viele Bilder illustrieren nur den Titel. Mitte ist 3 Sterne.",
+   "ratingNote": "4 + 5 Sterne zusammen 17 von 56 (30,4 %, Richtwert 30 %); alle 17 gegen die Tabelle geprueft: bei den 5-Sterne-Karten (Level Goal, Save the Princess, Plot Coupons, No-Damage Run, Experience Grind = 8,9 %) tragen Bild, Lore und Mechanik gemeinsam, jede 4-Sterne-Karte hat mindestens zwei klar begruendete 2-Punkte-Kriterien. Mehrere weitere Karten an der 7-Punkte-Grenze wurden bewusst bei 3 Sternen gehalten (Bild ohne Beitrag oder Power ohne Motivbezug).",
+   "version": "R1"
+  },
+  "topCards": [
+   "Plot Coupons",
+   "Level Goal",
+   "Save the Princess",
+   "No-Damage Run",
+   "Experience Grind"
+  ],
+  "worstCards": [
+   "Collect 12 Logs",
+   "Scoring Points",
+   "Stock Video Game Puzzle"
+  ],
+  "viralScore": 7,
+  "viralReason": "\"Gravity is now a microtransaction\" und \"The narrative equivalent of a punch card\" (Plot Coupons) sind als Einzelzeilen teilbar; die Spieltrope-Satire funktioniert vor allem fuer Gamer."
+ },
+ "findings": [
+  "Karten 9, 10 und 11 (Boss Battle, Kill Enemies to Open, Mass Monster-Slaughter) tragen die Lore im Druck doppelt: oben in einer fetten Schrift, unten sauber zusammen mit der Power. Bei Karte 10 ist die obere Fassung verderbt (\"You reven the dork janostor of death.\"). Abgeschrieben ist die untere, saubere Fassung; Layout im Druck bereinigen.",
+  "Karte 56 (Hero Must Survive): Powertext laeuft unter dem GW-Logo aus; Ende der Klammer nicht lesbar. Karte 12 (20 Bear Asses): letztes Wort \"hand\" teilweise unter dem Logo.",
+  "Karte 49: Druck schreibt \"The Cake is a Lie\"; nach V-271 waere \"Is\" gross (cardName gesetzt, Druck in cardNamePrint).",
+  "Karte 42: Lore beginnt mit \"Completes\" (wirkt wie Tippfehler, wörtlich uebernommen). Power \"Draw cards blindly from the bottom of your deck\" ist regeltechnisch leer.",
+  "Karten 2 und 50 (Level Goal, Princess in Another Castle) doppeln die Goalpost-Idee in der Power.",
+  "Schrift-Etiketten (Patrick Hand, Special Elite) auf Seiten 3, 7 und 12 sowie Randworte (KayfaBINGO, Stay fluffy usw.) bewusst weggelassen. Seite 1 ist ein Cover ohne Karte. Karte 50 zeigt eine erkennbare Peach-/Mario-Anspielung (Bildrecht pruefen, falls ein Release geplant ist).",
+  "JSON-Altfelder (grade, artworkPrompt) nicht geprueft und nicht geaendert; einzelne artworkPrompts weichen vom Druckbild ab (z. B. Karte 22: Affe statt man, Karte 3: Opossum statt Waschbaer)."
+ ]
+}
