@@ -12744,6 +12744,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-884",
+   "date": "2026-10-27",
+   "area": "Look",
+   "verdict": "TUNE",
+   "text": "Georg q257 (TUNE): Portal muss an den Rändern wabern, die Pixel-Auflösung am Rand war vorher besser. Umgesetzt: queres Oval 1,6 : 1 bleibt, Rand waberend (drei langsam laufende Wellen), Pixel-Sprenkel wie vor V-876; q260 PASS Fahrer im Dach, dazu Lenkrad folgt dem Einschlag (±0,5 rad, geglättet) und Ohren im Fahrtwind nach j7_dangle_drive (u → m/s × 0,616, Deckel 45 m/s, Impulse land_roof/seat_settle aus dem J-7-Zeitplan). game/proc-world-ws0 @87401e6; Tests combat, hud-3d, s1-travel PASS.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Portal soll lebendig wirken, nicht wie ein Schablonenloch; im Dach soll man sehen, dass der Hase wirklich lenkt und Fahrtwind spürt.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-885",
+   "date": "2026-10-27",
+   "area": "HUD",
+   "verdict": "TUNE",
+   "text": "Georg q258 (TUNE): Props einheitlich leicht schräg zeigen, als Icon passen sie besser in die Slots, und als Fundsachen sollen sie genauso gekippt schweben statt aufrecht. Umgesetzt: Icon-Bühne R2 kippt jedes Prop um 30° um die Blickachse (Oberkante nach rechts); im Spiel schweben alle Fundsachen 30° gekippt (foundItems3d FLOAT.tiltDeg, vorher nur längliche 35°). Bögen neu, dann an ChatGPT (b246).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Winkel für alle Dinge macht die Slots ruhig und verbindet Icon und Fundstück zu einem Gegenstand.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-886",
+   "date": "2026-10-27",
+   "area": "Fahren",
+   "verdict": "BRIEF",
+   "text": "Georg q259 A: Ödland-Käfer ohne Vogel, Dach sauber schließen und Rost weitermalen (keine Luke). Auftrag an WSB: replies/WSB_V886_KAEFER_DACH_R1.md, neue Fassung wasteland_beetle_browser.v4.glb neben v3, Einbau macht WS0.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Vogel war nie Teil der Fahrzeug-Idee; ein geschlossenes Dach lässt den Käfer für sich stehen.",
+   "applies": "nach WSB-Lieferung"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12856,7 +12901,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1421",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1424",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

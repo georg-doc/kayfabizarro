@@ -186,6 +186,9 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-881 Paket design/hud-icons-r1 @59529ea (140 Renders, 2 Bögen, Prompt), q258 + b246; Rucksack-Namen EN, proc-world @91d494b.
 - V-882 AutoSprite/Popup-2,5D als Backlog; Aufräumen: Spiel-Repo 4,2 GB → 91 MB, Scratch 2 GB → 53 MB.
 - V-883 Fahrer im Dach im Spiel (q260), HUD-Paket öffentlich (b246), Käfer-Vogel q259.
+- V-884 Portal waberend mit Pixel-Sprenkeln (q257); Fahrer im Dach: Lenkrad und Ohren-Fahrtwind (q260 PASS).
+- V-885 Props einheitlich 30° gekippt: Icons R2 und schwebende Fundsachen (q258).
+- V-886 Käfer-Dach schließen: Auftrag an WSB (q259 A).
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
