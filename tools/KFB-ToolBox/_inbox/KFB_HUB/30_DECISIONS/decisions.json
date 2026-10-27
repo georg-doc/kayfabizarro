@@ -12609,6 +12609,36 @@
    "applies": "nach Bild"
   },
   {
+   "id": "V-875",
+   "date": "2026-10-27",
+   "area": "Karten",
+   "verdict": "DECISION",
+   "text": "Georg q255: (1) Uruk Rumble doppelte Werteblöcke als Bildvergleich vorlegen, Georg zeigt auf den gültigen; (2) Geopolitical Thrillers #3/#26/#28/#31/#35 bleiben wie gedruckt; (3) Anti-Rules Briefing-Notizen als Bild zeigen; (4) nächste Runde zuerst nur Bewertung R1 für Mission Control und Ego Mania (Text ist schon nach Druck). Restliche Spieltexte auf Englisch (Georg ja).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg entscheidet am Bild, nicht an Beschreibungen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-876",
+   "date": "2026-10-27",
+   "area": "Look",
+   "verdict": "TUNE",
+   "text": "Georg q238 zu den Critic-Fixes: (1) Fließbänder in der Ferne gröber (V-826) wirkt einfarbig, helle Flächen fließen ineinander, das typische Muster geht verloren → Standard wieder fein, V-826 nur noch per bands=coarse; Ferne-Flirren bleibt offen. (2) Portal (V-827) gut, aber Form: queres Oval nach der Autoform (1,6 : 1) mit ruhigem, organischem Rand (weiche Sprenkel-Blasen, langsame Welle) statt krisseligem, unregelmäßigem Rand. (3) Schatten (V-828) vorher besser, nachher zu hart → wie vorher, V-828 nur noch per shadow=deep.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Muster der Bänder und der weiche Schatten tragen den Look; das Portal folgt der Form, die es freigibt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12721,7 +12751,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1410",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1412",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

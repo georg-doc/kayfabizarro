@@ -87,3 +87,9 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Site:** Paket R4 `site/mvp-r3-dist` @ec7b057, Übergabe WSA Hub b244.
 - **Sync:** nur `zsh sync_github.sh` im Vordergrund aus `30_DECISIONS` (V-871).
 - **Offen:** eyeoval-Vereinheitlichung mit Sichtprüfung (V-870); q249/q253/q254 im Hub; Krater geparkt (V-863); Einbettung (V-864) geparkt.
+
+## Stand 27.10. abends (nach V-876)
+- V-873 Deck-Analyzer übernommen; V-875 Bewertung Mission Control + Ego Mania eingetragen (kayfabizarro data/kfb-deck-analyzer-r1 @6773f20). q256 Bildvergleich Uruk/Anti-Rules offen bei Georg.
+- V-874 P3 Höhenmuster: Brief an WS1 (Gate PASS), b245 wartet auf Weitergabe.
+- V-876 im Arbeitsbaum ~/kfb-ws0/kfb-mvp (noch nicht committet): Schatten und Bänder Standard wie vorher, Portal queres Oval mit organischem Rand; Prüfbild mit scripts/look/portal-shot.mjs ausstehend.
+- Übersetzung restlicher Spieltexte (Dialog, hudL3, Hud, HudClay, M1World-Ziele …) im Arbeitsbaum, noch nicht gebaut/getestet. Danach: vite build, npm test, feature-check, Portal-Bild, Commit + Push game/proc-world-ws0.

@@ -175,6 +175,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-872 Konsolidierung fertig: proc-world @51c9cbe, Site-Paket R4 @ec7b057, Übergabe WSA b244.
 - V-873 Nachzügler Deck-Analyzer R1 übernommen (3 Decks nach Druck, Bewertung R1, Abgleich 130 Decks), offene Punkte q255.
 - V-874 q254: nur P3 Höhenmuster als Bild (WS1), Rest nicht jetzt; Krater-Karten veraltet.
+- V-875 q255: Bildvergleich Uruk + Anti-Rules, Geopolitical bleibt, Bewertung Mission Control + Ego Mania zuerst.
+- V-876 q238: Bänder und Schatten wieder wie vorher, Portal als queres Oval mit organischem Rand.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
