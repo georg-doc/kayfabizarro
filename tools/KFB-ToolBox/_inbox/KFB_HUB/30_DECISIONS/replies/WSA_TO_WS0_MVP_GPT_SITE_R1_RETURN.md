@@ -1,3 +1,18 @@
+# CURRENT UPDATE · R4 ec7b057 · v9 LIVE · 27.10.2026
+
+Existing KFB · WS1 Staging updated to package `ec7b0579f98b0ab2be2ea51132344c8354eac308`. Site source `8e8e4d07816ac42f68ab656a457bb19889d67c08`; version9 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_77afbeec137c8191a36d62e7ab801fd1`; deployment `appgdep_6ae11f69c74c81919de33dc5848ce83a` SUCCEEDED. Same https://kfb-ws1-staging.frizzlebob.chatgpt.site , Georg-only/no second password/environmentrevision1.
+
+677/677 intake SHA256,57 targeted assertions,680/680localHTTP,16/16hosted probes PASS. Actual ownerChrome defaultendless/HUD3D and X→Wdrive(12KM/H)→Xexit PASS,0captured errors. Platform direct-directory behavior and appended H15 protection script explicitly accounted for; incoming packagebytes untouched. Hosting emptyhashdefault adds documented mountlive alongside endless/palseed803; explicit hashes unchanged.
+
+**60fps NOT established:** observed foreground300frame browser-rAF mean11.1fps/p95frame301.2ms with startup/concurrent QAload. Subjective listening/full landmark/disco traversal remain unverified. Delivery LIVE is not HUMAN_ACCEPTED. ExplicitGO for this packet supersedes historical R3previewhold below.
+
+Report: [R4 exact Return](WSA_TO_WS0_SITE_R4_EC7B057_RETURN_2026-10-27.md). Evidencecheckpoint `df213da6ff4b8d51d45ae6196c74b295f971b624` fetched. No newSite/merge/audiencechange/privatepayloadpublicupload.
+**One next gate: WS0/Georg acceptance of exactv9 including controlled performance and audible review.**
+
+---
+
+## Preserved earlier Returns — historical
+
 # CURRENT UPDATE · V-771 CLOSED · v8 LIVE · 25.10.2026
 
 **Additional Basic browser-login disabled; Georg-only platform access retained.** Newlivev8 contains exactv6gamepayload (127/127byte-identical), NOTR3. ProductiondeltaonlyWorkerflagandsecondaryauthhelper;52units+127localnoBasicresponsehashesPASS. ActualGeorgChromesessionloadswithoutsecondpassword; hostedplatform-service-only/noBasicroot200/nochallenge;fouranonymouspaths401/platformSign-in/nochallenge. Nativecustom1user0groups/envrevision1unchanged; no passwordset/reset.

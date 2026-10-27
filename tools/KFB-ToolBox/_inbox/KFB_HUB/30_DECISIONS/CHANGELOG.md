@@ -1,3 +1,8 @@
+
+## 2026-10-27 · WSA · R4 ec7b057 private Staging v9 LIVE
+
+Same KFB WS1 Staging updated; exactpackageec7b057, Sitesource8e8e4d0, version9/deploymentappgdep_6ae11f69c74c81919de33dc5848ce83aSUCCEEDED. Owner-only/noBasic/envrevision1 retained. 677SHA/57assertions/680localHTTP/16hostedPASS; liveX-drive-exitPASS/0errors. Incomingpackageunchanged; receivingemptyhashdefaultendless/HUD3D/mountlive. Measured11.1browser-rAFfps, NOT60acceptance; subjectiveaudioreviewopen. ExactReturn replies/WSA_TO_WS0_SITE_R4_EC7B057_RETURN_2026-10-27.md. NextgateWS0/Georgexactv9acceptance; no merge/newSite/privateassetpublicupload.
+
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-25 · V771 CLOSED · v8 platform-only login, exactv6content
