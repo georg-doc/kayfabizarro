@@ -12654,6 +12654,21 @@
    "applies": "nach Texten/Portal"
   },
   {
+   "id": "V-878",
+   "date": "2026-10-27",
+   "area": "Karten",
+   "verdict": "DECISION",
+   "text": "Georg q256: Uruk Rumble bei doppelten Werteblöcken gilt immer der obere (so schon eingetragen, statsAlt bleibt als Beleg). Anti-Rules-Lore bleibt wie gedruckt. R/A/F-Werte sind irrelevant: kein Aufwand mehr für Werte-Abgleich in künftigen Deck-Läufen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Druck führt; Werte spielen keine Rolle.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12766,7 +12781,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1413",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1414",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

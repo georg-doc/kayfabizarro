@@ -178,6 +178,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-875 q255: Bildvergleich Uruk + Anti-Rules, Geopolitical bleibt, Bewertung Mission Control + Ego Mania zuerst.
 - V-876 q238: Bänder und Schatten wieder wie vorher, Portal als queres Oval mit organischem Rand.
 - V-877 Critic 2/3: Fixliste bestätigt, Rauch bleibt, Fahrer im Dach mit Lenkrad (J-7) als nächster Fahr-Baustein.
+- V-878 q256: Uruk oberer Block, Anti-Rules wie gedruckt, R/A/F irrelevant.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
