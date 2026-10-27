@@ -12763,7 +12763,7 @@
    "date": "2026-10-27",
    "area": "HUD",
    "verdict": "TUNE",
-   "text": "Georg q258 (TUNE): Props einheitlich leicht schräg zeigen, als Icon passen sie besser in die Slots, und als Fundsachen sollen sie genauso gekippt schweben statt aufrecht. Umgesetzt: Icon-Bühne R2 kippt jedes Prop um 30° um die Blickachse (Oberkante nach rechts); im Spiel schweben alle Fundsachen 30° gekippt (foundItems3d FLOAT.tiltDeg, vorher nur längliche 35°). Bögen neu, dann an ChatGPT (b246).",
+   "text": "Georg q258 (TUNE): Props einheitlich leicht schräg zeigen, als Icon passen sie besser in die Slots, und als Fundsachen sollen sie genauso gekippt schweben statt aufrecht. Umgesetzt: Icon-Bühne R2 kippt jedes Prop um 30° um die Blickachse (Oberkante nach rechts); im Spiel schweben alle Fundsachen 30° gekippt (foundItems3d FLOAT.tiltDeg, vorher nur längliche 35°). Bögen neu (privat design/hud-icons-r1 @04f222c renders_r2, öffentlich @0003296), Spiel @31c8ea8; Hub q262.",
    "values": {},
    "owner": "Lab",
    "check": "ungeprüft",
@@ -12787,6 +12787,21 @@
    "superseded_by": [],
    "why": "Der Vogel war nie Teil der Fahrzeug-Idee; ein geschlossenes Dach lässt den Käfer für sich stehen.",
    "applies": "nach WSB-Lieferung"
+  },
+  {
+   "id": "V-887",
+   "date": "2026-10-27",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Georg 27.10. (global): Sprech- und Denkblasen, Zuruf-Auswahl und Comic-Wörter überdecken nie Figuren oder Köpfe (und weiter nie das HUD); der Pfeil zeigt stets auf die Kopfmitte des Sprechers, sein Ansatz wandert über den ganzen Blasenrand. Umgesetzt: Ausweichen immer an (vorher nur chat=syl), Figurenflächen repariert (Kopf-Anker → Figur-Wurzel; im Dach Hüfte → Kopf), Anker player = echte Kopf-Oberkante der Spielfigur, im Dach folgt der Kopf-Anker dem Kopfknochen; Kopfmitte = Mitte der Augen am Kopfknochen (faceMountActor), sonst 20 % unter der Oberkante; eigene Zipfel-Geometrie aimRoundRectPath (Vendor unverändert). game/proc-world-ws0 @31c8ea8; s5a, s5b, s5c (Prüfung auf Kopfmitte angepasst), talk, chatter, combat, hud-3d, s1-travel, c3b PASS; Hub q263.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Blase, die den Sprecher verdeckt, nimmt dem Bild genau das Gesicht, das spricht; der Pfeil muss eindeutig sagen, wer es ist.",
+   "applies": "sofort"
   },
   {
    "id": "V-427",
@@ -12901,7 +12916,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1424",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1425",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

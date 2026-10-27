@@ -189,6 +189,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-884 Portal waberend mit Pixel-Sprenkeln (q257); Fahrer im Dach: Lenkrad und Ohren-Fahrtwind (q260 PASS).
 - V-885 Props einheitlich 30° gekippt: Icons R2 und schwebende Fundsachen (q258).
 - V-886 Käfer-Dach schließen: Auftrag an WSB (q259 A).
+- V-887 Blasen nie über Köpfen, Pfeil immer zur Kopfmitte (global), proc-world @31c8ea8; Hub q261 Portal, q262 Icons R2, q263 Blasen; b247 WSB Käfer-Dach.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
