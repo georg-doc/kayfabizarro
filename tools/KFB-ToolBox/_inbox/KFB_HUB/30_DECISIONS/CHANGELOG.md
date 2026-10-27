@@ -173,6 +173,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-870 SSOT: FrizzleBob ohne Drift; eyeoval in drei Fassungen (Vereinheitlichung mit Sichtprüfung).
 - V-871 Sync-Fehler behoben (Skriptpfad).
 - V-872 Konsolidierung fertig: proc-world @51c9cbe, Site-Paket R4 @ec7b057, Übergabe WSA b244.
+- V-873 Nachzügler Deck-Analyzer R1 übernommen (3 Decks nach Druck, Bewertung R1, Abgleich 130 Decks), offene Punkte q255.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
