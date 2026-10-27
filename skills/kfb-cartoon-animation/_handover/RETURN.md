@@ -88,3 +88,27 @@ Verified upstream documentation: pretrained SOMA and G1 ONNX; NVIDIA TensorRT de
 Actual execution: **0 Mac runs; 0 model downloads; 0 retargets; 0 visual proofs; 0 game tests; 0 production code changes**. No GPT Site or Stage required for this research intake. This note does not change the previously binding Motion SSOT, PR #344 or WB2 STOP state.
 
 **One next research gate when WS0 resumes:** `MOTIONBRICKS-MAC-ONNX-SOMA-ISOLATION-01` — identify hardware, attempt isolated CPU ONNX SOMA inference, visually isolate source motion, and only then consider one KayKit retarget comparison. No automatic merge or Live promotion.
+
+---
+
+## Additive WS0 / VS Code cartoon-locomotion toolkit · 2026-10-27
+
+Status: **RESEARCH + TOOL SOURCE COMMITTED · NO MOTION AUTHORED · NO RUNTIME INTEGRATION**.
+
+Georg requests the researched Blender posing/animation stack to be preserved for **WS0 working in VS Code**, with future Motion Libraries and donors indexed. The initial scope is independent KFB cartoon walk/high-jump/turn *tool and source assessment*. **Do not work on MotionBricks now**; its prior separate ONNX/Mac research remains on HOLD for a later explicitly selected test.
+
+Companion source-of-truth for this bounded research intake:
+- WS0_CARTOON_LOCOMOTION_TOOLKIT_2026-10-27.md — creative/technical brief, authoring and QA loop, no Nintendo asset extraction;
+- WS0_CARTOON_LOCOMOTION_DONOR_ATLAS_2026-10-27.md — Blender/AnimAide/B Onion Skin/Snow/Rain/CloudRig/Blender MCP/Cascadeur/MotionBricks and existing KFB assets, licenses and readiness;
+- WS0_VSCODE_BLENDER_MCP_START_2026-10-27.md — copy-ready VS Code / WS0 cold start and source-isolation instruction;
+- WS0_CARTOON_LOCOMOTION_TOOL_REGISTRY_2026-10-27.json — machine-readable paths, status and gate;
+- skills/kfb-cartoon-animation/tools/pose_motion_audit.py — **new read-only Blender Python sampler, source committed but not executed in Blender**;
+- WS0_CARTOON_LOCOMOTION_RESEARCH_TEST_REPORT_2026-10-27.md — exact evidence and not-run tests.
+
+Reusable owned donor: media/3D_Assets/Animations/KFB_Motion_Library/source/ml_bake.py and ml_sheets.py; historical absolute file paths must not be run unchanged.
+
+Current accepted KayKit-native motion definitions / motion owner PR #344 remain binding. No second IK/rig/animation/gameplay runtime. WB2 PR #348 is still STOPPED / NO MVP; this research did not change it. No new Stage/Site route or Hub canonical product change; no merge/Live authorization.
+
+**Current single next WS0 gate (supersedes the earlier MotionBricks-next wording for the current assignment only): WS0_CARTOON_LOCO_SOURCE_ISOLATION_01.** On later resumption, inventory the real existing Blender MCP, inspect accepted KFB Mannequin_Medium/KayKit source clip in isolation and establish contact-sheet/baseline evidence; only then authorize new motion authoring. MotionBricks-Mac-ONNX remains a separate deferred gate, not executed as part of this one.
+
+Research branch: research/motionbricks-macbook-ws0-2026-10-27; Draft PR #456; implementation/source checkpoint: f178b69f0846fb6e870f8c375d0d40cea3145896; metadata closure head is the verified branch head after this Return is committed.

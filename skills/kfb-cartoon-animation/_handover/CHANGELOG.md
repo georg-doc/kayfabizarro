@@ -26,3 +26,10 @@
 - Appended research-only pointer to the shared animation `_handover/RETURN.md`.
 - No Motion/World/Combat runtime edits; no generated motion, visual proof, tested inference, Site, Stage, merge or Live promotion. Research branch `research/motionbricks-macbook-ws0-2026-10-27`; source-only review, not adoption.
 - Next gated action: `MOTIONBRICKS-MAC-ONNX-SOMA-ISOLATION-01` by WS0 only when resumed.
+
+## 2026-10-27 · WS0 / VS Code cartoon-locomotion research toolkit (additive)
+- Georg corrected the executor to **WS0** and requested all researched posing, animation and motion donor tools persisted for later VS Code / Blender MCP work.
+- Added 3 markdown guides (toolkit, donor atlas, WS0 starter), 1 machine-readable registry and 1 read-only Blender Python motion sampler. Existing ml_bake/ml_sheets and current Motion SSOT explicitly reused as donors.
+- Initial research gate changed to WS0_CARTOON_LOCO_SOURCE_ISOLATION_01; the existing MotionBricks Mac ONNX research is retained but DEFERRED, not attempted in first slice.
+- Nintendo Mario 64 is movement design reference only. No game asset/clip extraction, installation, pose authoring, runtime edits, WorldBuilder reopen, Stage, Site, merge or Live.
+- Source files 5/5 read back at f178b69f0846fb6e870f8c375d0d40cea3145896; registry JSON parses; no local Blender executable available for script execution, so implementation correctness and visual donor fit are NOT verified. See research test report.
