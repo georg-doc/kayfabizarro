@@ -141,6 +141,34 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-839 Sprechblase/Plakette/EN/Popups zur Kamera/Licht je Tafel (Georg q243/q244).
 - V-840 Werbetafeln am Straßenrand mit Karten und KB-Clips.
 - V-841 Audio-Routing R1: ein Besitzer, Vorrangregeln, Café-Bett S16.
+- V-842 Boden-Bounce auf Figuren statt hellem Saum (Kopf/Schulter-Schatten).
+- V-843 Einschlagspuren + Steinkit-Auswurf um die Mindscape-Kuppel.
+- V-844 Nature Orchestra: eigene Betten für Mesa/Wüste/Schnee/Canyon, Sturmböen, zwei neue Suno-Instrumentals.
+- V-845 Einschlag nach Etherington Impact Debris: Krone am Rand, Haufen auf den Strahlen, schräger Einschlag.
+- V-846 AOE-Starburst + Goo (Zensur-Tinte), ein Einschlag-Modul auch für zeitweise Destruction-VFX.
+- V-847 Egregore-Konzept R4 aufgenommen (additiv): Meteor-Einschlag = impactScar-Modul, erste Vignette THE EGREGORE nach Bildwahl.
+- V-848 Bildvorgabe Einschläge (4 Blätter, 75_REFS/impact_vfx_r1); Reihenfolge und Goo-Glanz in q249.
+- V-849 Idee: Farbband-Spritzer + Knetkugel-Stoß bei harten Landungen/Kollisionen (Einschlag-Modul, Karten-GPU-Simulation).
+- V-850 Meteor-Starburst nach Vorlage (3 Schichten, Polarraster); Relief/Formen-Weg in q250.
+- V-851 Meshy-Explosionsmodelle als Bausteine eingeordnet (Reduktion + Knete nötig).
+- Spieltexte EN: Startvorhang, HUD-Knöpfe, Steuerungshilfen.
+- V-852 Freesound-CC0-Betten in Wald/Wiese/Mesa, Nachtgrillen; Audio @bd4a75c.
+- V-853 Freesound Teil 2: Meer, Frösche, Sommergrillen, Wind in Bäumen, Gewitterregen, Bach, Donner; Audio @db507c0.
+- V-854 PR #455 Hörproben (Original-Iceberg + 3 Paletten) gerendert; Hörurteil Georg offen.
+- V-855 Krater-Konstruktion nach Georg (Strahlen → WFC → runder Krater → Auswurf → Ruß); Blatt in q251.
+- V-856 Ideen: Kristalle aus dem Einschlag, Schnee-Biom mit KayKit-Schnee, hüpfende Knet-Schneeflocken.
+- V-857 Hörurteil: Synth-Paletten nur leise; Vorrang Feldaufnahmen; nächste Audio-Ansätze notiert.
+- V-858 Vogel-Duett mit Antwort + leise Physik-Schicht (Laub, Tropfen, Böen); Audio @0aa844d.
+- V-859 Ton-Host raw.githubusercontent zuerst (jsDelivr 403 über 50 MB), Ersatz je Datei.
+- V-860 Krater geparkt (q251 Fail).
+- V-861 CDN-Prüfung: Ton behoben, Augen-Module ins Repo übernehmen (offen).
+- V-862 Krater-Nachbau: 10 Blind-Runden, 4–6/10, Methodenfrage in q252.
+- V-863 Krater-Nachbau übernommen (kein Kauf), Leitbild Baum/Wurzeln, geparkt; Augen-Adapter laden lokale Kopien (4 von 5).
+- V-864 Einbettung: Erdlippe/Sandverwehung für Stehendes, Stufen bis Krater, gleiche Logik für Destruction (geparkt).
+- V-865 World Explorer als Donor für OSM-Streaming und Brücken (später, Vergleich).
+- V-866 Idee Waffen-Flyout an der Aktionsleiste, 6 aktive Waffen, Auswahl im Rucksack.
+- V-867 GitHub-Inventur: WS1 @1a09f83 noch nicht in proc-world (17 Konflikte), #454/#452/#451 neu, 13 alte PRs im Spiel-Repo.
+- q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
 - q184 accepted: earlier audio-separation gate CLOSED. Current checked game188e4f709f1301f6574f06631b750c6adf2e44f8, remote36c5ae419b0eebc5cb579f1d34a35ae7bcd437e3. Node22.23.4 ready;24/24preparedmodulechecksPASS underNode22. Fullprivatebuildinputcouldnotbetransferred: connectorlargerbinaryempty/nonUTF8;ordinaryGitnocredential;authenticatedChromeZIPblocked,documenteddownloadretrytimedoutwithoutarchive. BLOCKEDreceivinginput;notpublished,noGeorgtokenrequest,nonewSite/audience/secret/gamechanges. Return replies/WSA_TO_WS0_MVP_GPT_SITE_R1_RETURN.md; evidenceWSA_MVP_GPT_SITE_R1_PREPARE/GO_V727_EVIDENCE.json. NextWS0/WS1:onecompleteprivatesource+figuresorfinsheddist/site-build/provenancehandoffatsameprivateprojectlocation;nohostsubstitution.
