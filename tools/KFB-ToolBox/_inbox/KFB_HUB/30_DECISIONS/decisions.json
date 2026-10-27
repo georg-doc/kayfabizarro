@@ -12879,6 +12879,21 @@
    "applies": "nach Einbau"
   },
   {
+   "id": "V-893",
+   "date": "2026-10-27",
+   "area": "Audio",
+   "verdict": "BRIEF",
+   "text": "Georg 27.10.: WSA bekommt die Ton-Prüfung (Fahrplan 2b): jedes Spiel-Ereignis mit Auslöser, Ton, Wiedergabe, Timing, Bus; Lückenliste mit ElevenLabs-Vorschlag; nur lesen, Abgabe auf Branch audit/wsa-ton-pruefung-r1 im privaten Repo (replies/WSA_V893_TON_PRUEFUNG_R1.md). Briefings im Hub priorisiert (P1/P2/P3, erledigte abgehakt).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst die Lücken kennen, dann gezielt Töne bauen; WSA liest nur und kollidiert mit niemandem.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12991,7 +13006,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1430",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1431",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
