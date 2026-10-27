@@ -180,6 +180,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-877 Critic 2/3: Fixliste bestätigt, Rauch bleibt, Fahrer im Dach mit Lenkrad (J-7) als nächster Fahr-Baustein.
 - V-878 q256: Uruk oberer Block, Anti-Rules wie gedruckt, R/A/F irrelevant.
 - V-879 Icon-Liste: b187 ins Design-Paket, fünf Antworten; 23 alte Briefings abgehakt.
+- V-876 umgesetzt: game/proc-world-ws0 @52fe4b3 (Portal-Oval, Bänder/Schatten zurück, Spieltexte EN), q257 Portal-Bild.
+- V-880 Cartoon-Locomotion-Paket (PR #456) als Backlog, Gate SOURCE_ISOLATION_01 nach Fahrer im Dach.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport

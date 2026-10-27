@@ -12684,6 +12684,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-880",
+   "date": "2026-10-27",
+   "area": "Animation",
+   "verdict": "BACKLOG",
+   "text": "Webchat-Recherche Cartoon-Locomotion (Mario-64-inspiriert: Walk, High Jump, Start/Stop/Pivot, Squash & Stretch) als Paket persistiert: kayfabizarro Draft-PR #456, Branch research/motionbricks-macbook-ws0-2026-10-27 @24ee782, Einstieg skills/kfb-cartoon-animation/_handover/WS0_VSCODE_BLENDER_MCP_START_2026-10-27.md. Inhalt: Brief, Tool-/Donor-Atlas (Pose Library, AnimAide, CloudRig, Cascadeur, Rigify, Retargeting, vorhandene KFB-Motion-Libraries), Blender-Prüfskript, MotionBricks zurückgestellt. Erster Schritt WS0 später: Gate WS0_CARTOON_LOCO_SOURCE_ISOLATION_01 (vorhandenen KayKit-/Mannequin-Rig und abgenommene Clips in Blender untersuchen), noch keine neuen Animationen. Nach Fahrer im Dach (V-877).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bewegung mit Cartoon-Gewicht macht die Figur lesbar; erst vorhandene Clips verstehen, dann Werkzeuge wählen.",
+   "applies": "nach V-877"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12796,7 +12811,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1415",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1417",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
