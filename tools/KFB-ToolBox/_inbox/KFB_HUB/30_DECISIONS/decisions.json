@@ -12714,6 +12714,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-882",
+   "date": "2026-10-27",
+   "area": "Welt",
+   "verdict": "BACKLOG",
+   "text": "Webchat AutoSprite × KFB-Popup-Welten (kayfabizarro planning/kfb-procedural-world-composition-wfc-osm-2026-10-24 @4d64f21, AUTOSPRITE_HD2D_MCP_PAPER_RACER_DONOR_R1, PR #447): 2,5D-Papierkulissen mit animierten Sprites + three.js-Licht/Partikeln. WS0-Sicht: passt zu den Pariser Popup-Tafeln (V-839); später eine kleine Probe an einem vorhandenen Popup: deterministische three.js-Scharnier-Wackel-/Klapp-Animation zuerst, AutoSprite animate_asset nur als Vergleich (braucht eigenen Zugang). Nicht jetzt: erst Fahrer im Dach (V-877) und Locomotion (V-880). Werkzeug-Caches (huggingface, codex, uv) bleiben (Georg 27.10.).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Lebendige Papierkulissen erweitern den Popup-Look, aber erst nach den laufenden Fahr-Bausteinen.",
+   "applies": "nach V-880"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12826,7 +12841,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1419",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1420",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

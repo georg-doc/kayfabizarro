@@ -184,6 +184,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-880 Cartoon-Locomotion-Paket (PR #456) als Backlog, Gate SOURCE_ISOLATION_01 nach Fahrer im Dach.
 - V-881 HUD-Icons: Prop-Renders aus festem Icon-Aufbau + Stil vom Bildmodell (ChatGPT), Georg wählt.
 - V-881 Paket design/hud-icons-r1 @59529ea (140 Renders, 2 Bögen, Prompt), q258 + b246; Rucksack-Namen EN, proc-world @91d494b.
+- V-882 AutoSprite/Popup-2,5D als Backlog; Aufräumen: Spiel-Repo 4,2 GB → 91 MB, Scratch 2 GB → 53 MB.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
