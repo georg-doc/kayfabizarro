@@ -12699,6 +12699,21 @@
    "applies": "nach V-877"
   },
   {
+   "id": "V-881",
+   "date": "2026-10-27",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "HUD-Icons neu aufgestellt (Georg 27.10.: bisherige selbstgebaute 2D/3D-Entwürfe tragen nicht, HUD in der Sackgasse): (1) konkrete Dinge (Rucksack-Fundsachen, KayKit-Waffen aus den Packs, K10-Arsenal, HUD-Props) bekommen eine Standard-Darstellung aus einem festen Icon-Aufbau (Blender, Kamera 3/4 orthografisch, Licht nur kfb_light_bpy, Knete kfb_clay_bpy mit Kit-Textur, transparent), automatisch für alle; (2) Stil, Rahmen, Slots, Zustände und abstrakte Icons (Tricks, Panel-Aktionen) entwirft ein designfähiges Bildmodell (ChatGPT, Gemini für Varianten) mit den Renders als feste Vorgabe, drei Richtungen als komplettes Icon-Blatt, Georg wählt. Danach schneidet WS0 die Icons und baut sie ein; Claude Design nur noch für Anordnung.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erkennbar heißt: das echte Prop zeigen; Stil kommt von einem Modell, das gestalten kann.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12811,7 +12826,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1417",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1419",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

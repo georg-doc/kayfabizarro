@@ -182,6 +182,8 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-879 Icon-Liste: b187 ins Design-Paket, fünf Antworten; 23 alte Briefings abgehakt.
 - V-876 umgesetzt: game/proc-world-ws0 @52fe4b3 (Portal-Oval, Bänder/Schatten zurück, Spieltexte EN), q257 Portal-Bild.
 - V-880 Cartoon-Locomotion-Paket (PR #456) als Backlog, Gate SOURCE_ISOLATION_01 nach Fahrer im Dach.
+- V-881 HUD-Icons: Prop-Renders aus festem Icon-Aufbau + Stil vom Bildmodell (ChatGPT), Georg wählt.
+- V-881 Paket design/hud-icons-r1 @59529ea (140 Renders, 2 Bögen, Prompt), q258 + b246; Rucksack-Namen EN, proc-world @91d494b.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
