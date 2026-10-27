@@ -1,3 +1,4 @@
+# KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-27 · WSA · R4 ec7b057 private Staging v9 LIVE
 
