@@ -1,0 +1,439 @@
+<title>World Explorer Spender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #f3efe6; --surface: #fffcf5; --ink: #22201b; --muted: #6a6457; --line: #ddd5c4;
+    --accent: #1f6f78; --accent-soft: #d8ebe9; --warm: #c4502b;
+    --adapt: #1f6f78; --adapt-bg: #d8ebe9; --hold: #946512; --hold-bg: #f4e6c8; --reject: #9b3a2a; --reject-bg: #f3dcd5; --keep: #3f7d4a; --keep-bg: #dcebd9;
+    --ring1: #e9a46a; --ring2: #e7c47c; --ring3: #b9cfa0; --ring4: #8fbcc0; --ring5: #c9d6db;
+    --f-head: 'Shantell Sans', 'Comic Sans MS', system-ui, sans-serif;
+    --f-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    --f-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #171a19; --surface: #202524; --ink: #ece7dc; --muted: #a9a394; --line: #343a38;
+    --accent: #6cc3c9; --accent-soft: #1f3a3b; --warm: #e7774f;
+    --adapt: #7fd0d5; --adapt-bg: #1d3b3d; --hold: #e7bd6a; --hold-bg: #3b311c; --reject: #f09a86; --reject-bg: #43261f; --keep: #8ccf96; --keep-bg: #23382a;
+    --ring1: #a4683b; --ring2: #a58a4c; --ring3: #6f8a5b; --ring4: #4e7f84; --ring5: #3c4a4f;
+    color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #171a19; --surface: #202524; --ink: #ece7dc; --muted: #a9a394; --line: #343a38;
+    --accent: #6cc3c9; --accent-soft: #1f3a3b; --warm: #e7774f;
+    --adapt: #7fd0d5; --adapt-bg: #1d3b3d; --hold: #e7bd6a; --hold-bg: #3b311c; --reject: #f09a86; --reject-bg: #43261f; --keep: #8ccf96; --keep-bg: #23382a;
+    --ring1: #a4683b; --ring2: #a58a4c; --ring3: #6f8a5b; --ring4: #4e7f84; --ring5: #3c4a4f;
+    color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 17px/1.55 var(--f-body); margin: 0; }
+  .wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 72px; }
+  header { display: grid; gap: 10px; margin-bottom: 28px; }
+  .eyebrow { font: 600 13px/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 800 clamp(28px, 4.4vw, 40px)/1.12 var(--f-head); margin: 0; text-wrap: balance; }
+  h2 { font: 800 clamp(21px, 2.6vw, 26px)/1.2 var(--f-head); margin: 0 0 12px; text-wrap: balance; }
+  h3 { font: 700 18px/1.3 var(--f-body); margin: 0 0 6px; }
+  p { margin: 0 0 12px; max-width: 70ch; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 64ch; margin: 0; }
+  .meta { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  code, .mono { font-family: var(--f-mono); font-size: .86em; background: var(--accent-soft); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+  section { margin-top: 40px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  nav.toc a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 14px; }
+  nav.toc a:hover, nav.toc a:focus-visible { border-color: var(--accent); outline: none; }
+  .verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; }
+  .verdict strong { color: var(--ink); }
+  .chip { display: inline-block; font: 700 12px/1 var(--f-body); letter-spacing: .05em; text-transform: uppercase; border-radius: 999px; padding: 5px 9px; white-space: nowrap; }
+  .chip.adapt { color: var(--adapt); background: var(--adapt-bg); }
+  .chip.hold { color: var(--hold); background: var(--hold-bg); }
+  .chip.reject { color: var(--reject); background: var(--reject-bg); }
+  .chip.keep { color: var(--keep); background: var(--keep-bg); }
+  .chip.vis { color: var(--muted); background: transparent; border: 1px solid var(--line); }
+  .donors { display: grid; gap: 14px; }
+  .donor { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: grid; grid-template-columns: 44px 1fr; gap: 4px 14px; }
+  .donor .n { font: 800 26px/1 var(--f-head); color: var(--accent); grid-row: span 3; padding-top: 2px; }
+  .donor .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .donor dl { display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 14px; margin: 6px 0 0; }
+  .donor dt { color: var(--muted); font-size: 14px; font-weight: 600; padding-top: 2px; }
+  .donor dd { margin: 0; }
+  .donor dd ul { margin: 0; padding-left: 18px; }
+  .donor dd li { margin-bottom: 3px; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--bg); }
+  tr:last-child td { border-bottom: 0; }
+  td.ok { color: var(--keep); font-weight: 700; white-space: nowrap; }
+  td.part { color: var(--hold); font-weight: 700; white-space: nowrap; }
+  .rings { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px 10px; }
+  .rings svg { width: 100%; height: auto; display: block; }
+  .rings .cap { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .box ul { margin: 0; padding-left: 18px; }
+  .box li { margin-bottom: 5px; }
+  ol.q { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 72ch; }
+  ol.q li::marker { font-weight: 700; color: var(--accent); }
+  .who { font-weight: 700; }
+  footer { margin-top: 48px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  a { color: var(--accent); }
+  @media (max-width: 560px) {
+    .donor { grid-template-columns: 1fr; }
+    .donor .n { grid-row: auto; }
+    .donor dl { grid-template-columns: 1fr; gap: 2px; }
+    .donor dt { padding-top: 8px; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Prozedurale Welt · Spender-Prüfung R1.1 · Entwurf</div>
+    <h1>World Explorer für den endlosen Cartoon-Roadtrip</h1>
+    <p class="lede">Kein Fundament, aber fünf Kniffe, die genau auf Lücken unserer Endlos-Welt passen. Einer davon ist unsichtbare Mechanik und kann sofort vorbereitet werden, die anderen brauchen zuerst ein Bild für Georg.</p>
+    <div class="meta">
+      <span>26.10.2026 · WS1 Lead für Georg und WS0</span>
+      <span>Quelle: <span class="mono">axieyangb/world-explorer @e149dd5</span>, MIT © 2026 Jerry Xie</span>
+    </div>
+    <nav class="toc" aria-label="Inhalt">
+      <a href="#urteil">Urteil</a><a href="#spender">Fünf Spender</a><a href="#ringe">Wo sie wirken</a><a href="#verkehr">Verkehr</a><a href="#wetter">Wetter &amp; Himmel</a><a href="#kaiju">Kaiju · Z14</a><a href="#waffen">Waffen</a><a href="#arsenal">Arsenal</a><a href="#belege">Am Code geprüft</a><a href="#nicht">Nicht übernehmen</a><a href="#plan">Wer was wann</a><a href="#risiken">Risiken</a><a href="#fragen">Fragen</a>
+    </nav>
+  </header>
+
+  <section id="urteil" style="margin-top:0">
+    <div class="verdict">
+      <p><strong>Was es ist:</strong> ein Erkunder für die echte Erde. Er streamt OSM-Kacheln und Höhendaten zu einem Ort auf dem Globus und baut daraus eine flache Region von 40 × 40 km. Unsere Welt ist das Gegenteil: endlos, erfunden, mit eigenem Höhenfeld, Biomen und <code>kfb-place</code>.</p>
+      <p><strong>Als Basis oder Laufzeit: nein.</strong> Er brächte einen zweiten Owner für Gelände, Straßen, Spieler und Kamera, dazu three r161 statt r186. Das deckt sich mit WS0s Spender-Notiz R7.</p>
+      <p><strong>Als Spender: ja, für fünf einzelne Techniken.</strong> Übernommen werden Muster und höchstens kleine reine Funktionen, keine Module.</p>
+      <p style="margin:0"><strong>Vorrang:</strong> unverändert bei WS0, also Fahrplan V-805 und das Gate „Paper Racer + Golden-Auswahl“. Owner der Welt ist WS0 (V-756).</p>
+    </div>
+  </section>
+
+  <section id="spender">
+    <h2>Die fünf Spender</h2>
+    <div class="donors">
+      <article class="donor">
+        <div class="n">1</div>
+        <h3>Gelände-Blätter im Worker bauen</h3>
+        <div class="tags"><span class="chip adapt">Adapt · zuerst</span><span class="chip vis">unsichtbar</span></div>
+        <dl>
+          <dt>World Explorer</dt><dd>Ein Worker rechnet die Kachel und schickt die Puffer ohne Kopie zurück (Transferable). Der Haupt-Thread setzt je Bild höchstens eine Kachel ein. Veraltete Ergebnisse werden beim Eintreffen verworfen; laufende Aufträge bricht er nicht ab, das machen wir besser.</dd>
+          <dt>Unsere Lücke</dt><dd>WS0s <code>endlessTerrain</code> baut die Blätter auf dem Haupt-Thread, bis zu 2,5 ms je Bild. Bei Racer-Flug und Drohnen-Zoom wird die Warteschlange länger. Der Bewuchs (<code>placeWorker</code>) läuft schon im Worker.</dd>
+          <dt>Gute Nachricht</dt><dd><code>createEndlessHeight</code> ist schon „ohne three“ und läuft in Node-Tests, kann also direkt in den Worker. Nebengewinn: <code>placeVeg</code> bekommt sein Höhenraster dann auch gleich aus dem Worker statt vom Haupt-Thread. <strong>Eine Falle:</strong> <code>cardgrid=0</code> und <code>boards=0</code> kommen aus der Adresse, die der Worker nicht sieht. Diese Schalter müssen als Optionen mitgehen.</dd>
+          <dt>Probe P1</dt><dd><ul>
+            <li>Schalter <code>terrainworker=1</code>, Golden-Test: byte-gleiche Höhen an 10 000 Punkten.</li>
+            <li>A/B im Slot: Racer-Flug, 10 min über Biomgrenzen, Zoom auf 40 K.</li>
+            <li>PASS: p95 nicht schlechter, Haupt-Thread-Scheibe mindestens halbiert, Nähte- und Kollider-Test grün.</li></ul></dd>
+        </dl>
+      </article>
+
+      <article class="donor">
+        <div class="n">2</div>
+        <h3>Horizont-Hülle mit ausgeschnittenem Kern</h3>
+        <div class="tags"><span class="chip adapt">Adapt</span><span class="chip vis">sichtbar · Bild zuerst</span></div>
+        <dl>
+          <dt>World Explorer</dt><dd>Ein grobes Netz über die ganze Region. Wo feine Kacheln geladen sind, werden deren Dreiecke per Index-Bereich ausgeblendet. Ergebnis: ein Draw Call, keine Lücke, kein Überlappen.</dd>
+          <dt>Unsere Lücke</dt><dd>Die Sicht endet bei 820 m. Ab etwa 33 m Flughöhe und beim Drohnen-Zoom sieht man den Rand oder nur Nebel. Für den Roadtrip fehlt „dort hinten kommt das nächste Biom“.</dd>
+          <dt>Unsere Fassung</dt><dd>Ein Ring von 820 m bis 3–4 km, der in 512-m-Schritten mitwandert, aus derselben Höhenfunktion. Die Farbe kommt aus den Fließbändern des Bioms, die mit der Entfernung ohnehin gröber werden (V-826).</dd>
+          <dt>Probe P2</dt><dd>Bildpaket Flug und Drohne, mit und ohne Hülle. Budget: 1 Draw Call, ≤ 20 k Dreiecke, 0 neue Shader-Programme, keine Tangente an der Schnittkante.</dd>
+        </dl>
+      </article>
+
+      <article class="donor">
+        <div class="n">3</div>
+        <h3>Echte Höhenmuster, offline gebacken</h3>
+        <div class="tags"><span class="chip adapt">Adapt · nur offline</span><span class="chip vis">sichtbar · Bild zuerst</span></div>
+        <dl>
+          <dt>World Explorer</dt><dd>Lädt AWS-Terrarium-Höhenkacheln live beim Teleport. Eine einzige Formel macht aus den Farben Meter. Abgetastet wird aber nur alle 200 m, das ist grob.</dd>
+          <dt>Unsere Lücke</dt><dd>Georgs Wunsch nach echten Höhenmustern (Kölner Bucht, Herkules im Bergpark). Dazu die „Ebene“ für Stadtzonen (V-747): Auf dem heutigen Gelände bräuchten drei Viertel der Kölner Gebäude zu steile Hügel (R1.6 §5.10).</dd>
+          <dt>Unsere Fassung</dt><dd>Wir übernehmen nur die Formel, nicht das grobe Raster. Ein Back-Skript holt die Kacheln einmal in voller Auflösung (in Köln etwa 24 m je Pixel, bei Bedarf feiner) und macht daraus ein Höhenmuster im Fußabdruck-Format (R1.6 §5.11). Das Muster wird normiert und cartoonig angepasst. <code>endlessTerrain</code> mischt es als Zonen-Relief ein, an derselben Stelle wie die „Ebene“. Kein Laden während der Fahrt.</dd>
+          <dt>Probe P3</dt><dd>Bild Kölner Bucht neben heutigem Gelände, dazu die Rampen-Tabelle neu gerechnet. PASS, wenn die Bucht ohne Abtrag die Werte der „Ebene 0,3“ erreicht. Credit: Terrain Tiles (Mapzen/AWS) in die Creator-Credits.</dd>
+        </dl>
+      </article>
+
+      <article class="donor">
+        <div class="n">4</div>
+        <h3>Ferne Bäume als Papier-Aufsteller</h3>
+        <div class="tags"><span class="chip adapt">Adapt · im Popup-Stil</span><span class="chip vis">sichtbar · Bild zuerst</span></div>
+        <dl>
+          <dt>World Explorer</dt><dd>Bis 150 m Low-Poly-Bäume mit Schatten und Wind, bis 600 m zwei feste, gekreuzte Flächen aus einem Atlas, dahinter nichts. Der Wechsel ist hart. Gut ist das Sammeln: je Art und Stufe ein Instanz-Mesh, Neuaufbau erst nach 20 m Weg.</dd>
+          <dt>Unsere Lücke</dt><dd>Fern zeigt der alte Bewuchs nur Baum-Silhouetten auf 128-m-Kacheln. Der neue <code>kfb-place</code>-Bewuchs hat noch keine Fern-Stufe.</dd>
+          <dt>Unsere Fassung</dt><dd>Keine Fotobäume. Fern stehen KFB-Popups: KayKit-Silhouette mit weißem Rand, zur Kamera gedreht wie die Pariser Werbetafeln (V-839), in der Biom-Palette. Die Lage kommt aus demselben Rezept, damit nah ↔ fern nicht springt.</dd>
+          <dt>Probe P4</dt><dd>Bildpaket zuerst, dann messen: Draw Calls, GPU-Zeit durch Alpha-Überzeichnung, Sprünge beim Wechsel.</dd>
+        </dl>
+      </article>
+
+      <article class="donor">
+        <div class="n">5</div>
+        <h3>Brücken-Profil</h3>
+        <div class="tags"><span class="chip hold">Hold</span><span class="chip vis">später · technisch der sauberste Teil</span></div>
+        <dl>
+          <dt>World Explorer</dt><dd>Eine reine Funktion ohne three: glättet die Fahrbahnlinie, hält 8 m lichte Höhe über Straßen (4 m über Fußwegen) und verteilt die Rampen mit begrenzter Steigung über den Weg-Graphen, auch über Kachelgrenzen. Herauslösen etwa 1–2 Tage, Golden-Gate-Sonderfälle müssen raus.</dd>
+          <dt>Wann für uns</dt><dd>Erst mit Wasser im Endlos-Gelände (Fahrplan 3) und der Kölner Tasche mit Rheinufer. Fahrkontakt bleibt Gelände bzw. Track Core. Die Upstream-Steigungen (5/7/10 %) sind keine KFB-Konstanten.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="ringe">
+    <h2>Wo die Spender wirken</h2>
+    <div class="rings">
+      <svg viewBox="0 0 900 190" role="img" aria-label="Ringe um den Fahrer von 0 bis 4000 Meter, Wurzel-Skala, mit den Spendern 1 bis 4">
+        <!-- Wurzel-Skala: x = 40 + 820 * sqrt(d / 4000) -->
+        <rect x="40" y="40" width="153.7" height="44" fill="var(--ring1)"/>
+        <rect x="193.7" y="40" width="163.8" height="44" fill="var(--ring2)"/>
+        <rect x="357.5" y="40" width="47.1" height="44" fill="var(--ring3)"/>
+        <rect x="404.6" y="40" width="5.4" height="44" fill="var(--ring3)"/>
+        <rect x="410" y="40" width="450" height="44" fill="var(--ring5)"/>
+        <line x1="404.6" y1="30" x2="404.6" y2="94" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="116.8" y="67" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Spiel</text>
+        <text x="275.6" y="67" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Bühne</text>
+        <text x="383" y="67" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Res.</text>
+        <text x="635" y="67" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Silhouette · heute nur Nebel</text>
+        <text x="404.6" y="24" text-anchor="middle" font-size="12" fill="var(--muted)">Sicht heute 820 m</text>
+        <g font-size="12" fill="var(--muted)" text-anchor="middle">
+          <line x1="40" y1="84" x2="40" y2="92" stroke="var(--muted)"/><text x="40" y="106">0</text>
+          <line x1="193.7" y1="84" x2="193.7" y2="92" stroke="var(--muted)"/><text x="193.7" y="106">140</text>
+          <line x1="357.5" y1="84" x2="357.5" y2="92" stroke="var(--muted)"/><text x="357.5" y="106">600</text>
+          <line x1="450" y1="84" x2="450" y2="92" stroke="var(--muted)"/><text x="450" y="106">1000</text>
+          <line x1="620" y1="84" x2="620" y2="92" stroke="var(--muted)"/><text x="620" y="106">2000</text>
+          <line x1="860" y1="84" x2="860" y2="92" stroke="var(--muted)"/><text x="852" y="106">4000 m</text>
+        </g>
+        <g font-size="13" fill="var(--ink)">
+          <rect x="40" y="122" width="370" height="20" rx="4" fill="var(--adapt-bg)"/>
+          <text x="48" y="137">① Blätter im Worker: alles, was der Quadtree baut</text>
+          <rect x="404.6" y="122" width="455.4" height="20" rx="4" fill="var(--adapt-bg)"/>
+          <text x="412" y="137">② Horizont-Hülle 820 m bis 3–4 km</text>
+          <rect x="357.5" y="150" width="92.5" height="20" rx="4" fill="var(--hold-bg)"/>
+          <text x="364" y="165">④ Popups</text>
+          <rect x="455" y="150" width="405" height="20" rx="4" fill="var(--keep-bg)"/>
+          <text x="463" y="165">③ Höhenmuster: als Zone, überall möglich</text>
+        </g>
+      </svg>
+      <p class="cap">Ringe aus unserem Konzept R1.6 §4.1, Abstand in Metern auf Wurzel-Skala, damit der kurze Spiel-Ring lesbar bleibt. Gelb hinterlegt: Popups ersetzen im Reserve-Ring das Modell.</p>
+    </div>
+  </section>
+
+  <section id="verkehr">
+    <h2>Verkehr und Fußgänger</h2>
+    <p><span class="chip hold">Georg: zurückgestellt</span> Vorerst nur einplanen, weil es noch keine Pisten gibt. Georgs Idee für später, als Weg D: Autos fahren frei durchs Gelände von Ort zu Ort, also zwischen Kartenzonen, Dioramen und Popup-Szenen.</p>
+    <p>Nachtrag nach Georgs Rückfrage: Verkehr ist interessant. Die Fahrzeuge haben wir schon: KayKit City Builder Bits, Kenney toy-car-kit (157 Modelle), car-kit (50), city-kit-roads (95). NPCs dürfen inzwischen überall auftauchen.</p>
+    <div class="grid2">
+      <div class="box">
+        <h3>Was World Explorer macht</h3>
+        <ul>
+          <li>Autos erscheinen bis 400 m um den Spieler und verschwinden ab 470 m, Fußgänger bis 210 m bzw. ab 250 m.</li>
+          <li>Höchstens 110 Autos und 72 Fußgänger, instanziert in wenigen Draw Calls. Fußgänger tragen Varianten je Instanz: Hemd, Hose, Haut, Haare, Schirm.</li>
+          <li>Keine Wegsuche: An Gabelungen wählt jedes Auto zufällig, gewichtet (lieber geradeaus). Das ist billig und wirkt lebendig.</li>
+          <li>Dichte nach Tageszeit: nachts 7 %, früh 30 %, abends 35 %, tags 100 %. Bei Regen Schirme, nachts Licht an.</li>
+          <li>Zusammenstöße mit dem Spieler als einfacher Kasten-Rempler, ohne Physik-Körper.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Die Lücke bei uns</h3>
+        <p style="margin:0">Die Endlos-Welt hat keine Straßen, und World Explorers Verkehr hängt am OSM-Straßennetz. Die Autos brauchen also etwas, dem sie folgen. Drei Wege, die sich nicht ausschließen, stehen in der Tabelle.</p>
+      </div>
+    </div>
+    <div class="tablewrap" style="margin-top:14px">
+      <table>
+        <thead><tr><th>Weg</th><th>Was</th><th>Bedarf</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A · Pisten</strong></td><td>Je Zelle ein ruhiger Korridor durchs Gelände (flachste Linie, fest je Seed). Sichtbar als Spur, Staubpiste oder Feldweg je Biom, oder unsichtbar. Autos folgen ihm, an Gabelungen gewichtet zufällig.</td><td>WS0, Bildpaket</td></tr>
+          <tr><td><strong>B · Stadtzonen</strong></td><td>In der Kölner Tasche gibt es echte OSM-Straßen (599 befahrbare Stücke im Kern). Dort läuft Verkehr wie bei World Explorer, mit Ampeln.</td><td>nach der Bildabnahme der Tasche</td></tr>
+          <tr><td><strong>C · Straßennetz</strong></td><td>Prozedurale Straßen in der ganzen Endlos-Welt aus Kenney-Straßen oder Knete-Bändern, „Roadtrip“ wörtlich.</td><td>großer Welt-Entscheid</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box" style="margin-top:14px">
+      <h3>KFB-Dreh (Vorschlag): Seele nach Entfernung</h3>
+      <ul>
+        <li><strong>Fern:</strong> anonymer Hintergrund-Verkehr, instanziert, ohne Fahrer im Bild.</li>
+        <li><strong>Nah (unter 140 m):</strong> Das Auto kann einen Fahrer bekommen, einen Bewohner mit Signatur-Deck, ansprechbar mit der Ruf-Skala („want a ride?“). Bingo = Kolonne oder Wettfahrt, Blödsinn = fährt weg. Beim Vorbeifahren dürfen Karten getauscht werden.</li>
+        <li><strong>Fußgänger</strong> bleiben Bewohner mit Tagesplan. Übernommen werden nur Erscheinungs-Ringe, Dichte nach Tageszeit und Wetter und eine billige Fern-Menge für Tasche, Disco und Feste.</li>
+        <li><strong>Budget:</strong> höchstens 12 Figuren im Bild, also Fahrer nur in nahen Autos.</li>
+        <li><strong>Probe V1:</strong> Weg A als Mechanik hinter <code>traffic=1</code> mit 10–20 KayKit-Autos. Der Pisten-Look kommt erst nach einem Bild.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="wetter">
+    <h2>Wetter und Himmel</h2>
+    <p>Hier bringt World Explorer wenig Neues. WS0 hat schon Tageszeit, weiche Wetterwechsel, Stimmungen je Biom, Regen und Schnee in einem Draw Call (dieselbe Technik), Knet-Tropfen auf dem Bildschirm und eine Kuppel mit Knet-Mond, Sternen und Polarlicht. Zwei echte Lehren und eine Idee:</p>
+    <div class="grid2">
+      <div class="box"><h3>Ein Tageslicht-Vertrag</h3><p style="margin:0">World Explorer hat genau eine Quelle: Tageslicht 0…1 mit dem Wetter schon eingerechnet, „Nacht“ mit Hysterese, ein Ereignis bei Änderung. Bei uns rechnen Scheinwerfer, Ton, HUD, Figurenlicht, Werbetafeln und Nachtgrillen jeweils selbst. Ein gemeinsamer Vertrag in <code>driveAtmos</code> ist klein und unsichtbar und sorgt dafür, dass alle gleichzeitig „Nacht“ sagen.</p></div>
+      <div class="box"><h3>Wetter mit Folgen</h3><p style="margin:0">Nässe 0…1 als gemeinsamer Wert: Bewohner mit Schirmen, weniger Leute draußen, Licht an bei Nebel. Ob nasse Knete glänzen darf, entscheidet Georg im Bild; die Mattierung ist abgenommen.</p></div>
+      <div class="box"><h3>Himmel bevölkern</h3><p style="margin:0">Flugzeuge als Instanz-Pools, etwa 6 Draw Calls für alle. Für uns ohne Live-Daten: Zeppeline, Ballons, Vogelschwärme, später UFOs nach deren Design-Paket, je Zelle mit festem Seed.</p></div>
+      <div class="box"><h3>Eigene Idee: Wetterfronten</h3><p style="margin:0">Nicht aus World Explorer. Wetter als Feld wie die Biome: Man fährt in einen Regen hinein und wieder hinaus. <code>driveAtmos</code> mischt die Biom-Stimmungen schon nach Gewicht. Echte Sonnenposition und Live-Wetter passen dagegen nicht zu einer erfundenen Welt.</p></div>
+    </div>
+  </section>
+
+  <section id="kaiju">
+    <h2>Kaiju und „Z14 vereinfacht“</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Was ist Kaiju?</h3>
+        <p>Japanisch für „Riesenmonster“, wie Godzilla. In World Explorer ist es ein Spielmodus: Ein Monster steigt aus dem nächsten Gewässer, man verteidigt die Stadt als Hubschrauber, Panzer oder Soldat.</p>
+        <p style="margin:0"><span class="chip hold">Hold</span> Interessant erst für Destruction (V-767) und Combat (V-782). Jedes Gebäude im zusammengeführten Mesh trägt eine ID, der Schaden steht in einer Zustands-Textur, und ein Shader lässt es einstürzen. Dazu kommen Panik-Menge und gepoolte Partikel.</p>
+        <p style="margin:12px 0 0"><strong>Georgs Idee:</strong> ein Godzilla-Kampf mit 3D-Modellen, das Riesenmonster ist ein Black bzw. Dark Fluffer oder Goo-Monster. Ob er besiegt oder anders erledigt wird, ist offen. Heilen ist ein eigenes Meta-Gameplay, nicht der Standard des Kampfes.</p>
+      </div>
+      <div class="box">
+        <h3>Was heißt „Z14 ist vereinfacht“?</h3>
+        <p>Online-Karten sind in Zoomstufen gekachelt. Bei Zoom 14 ist eine Kachel etwa 2,4 km breit, in Köln rund 1,5 km. Diese Kacheln sind fürs Kartenzeichnen gemacht: Umrisse sind geglättet und gerundet, kleine Wege und Treppen fehlen, Dächer sind immer flach, die Höhe ist nur ein grober Wert.</p>
+        <p style="margin:0">Für uns entscheidend: Oft fehlen die festen OSM-IDs. An denen hängen aber unsere Landmarken, etwa der Dom an way/4532022. Das OSM City Lab holt die Rohdaten mit allen Angaben und IDs und bleibt deshalb Owner der Geografie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="waffen">
+    <h2>Waffen, Destruction und Minigames</h2>
+    <p><strong>Unser Stand (Kampf R1):</strong> zwei echte Waffen mit Mündungsblitz, Knet-Treffern und Hit-Stop. Feste Reichweite 26 m, nur Ziele im Obstgarten; Treffer führen zu K.o. mit Fluff. Sauber gebaut, aber basal: ein Waffentyp, keine Flächenwirkung, kein Zielhelfer, keine Schwachstellen, keine Zerstörung.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Feature in World Explorer</th><th>Für KFB</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Wirkungsprofil je Waffe als Daten:</strong> Kadenz, Wirkung je Zieltyp, Flächenradius, Tempo, Streuung, Reichweite</td><td>Unsere Waffenkarten beschreiben Modell und Halterung; der Wirkungsteil fehlt</td></tr>
+          <tr><td><strong>Drei Grundtypen:</strong> Schnellfeuer, Rakete mit Fläche, Strahl</td><td>gibt es im Arena-Prototyp schon feiner: <a href="#arsenal">8 Gefühlsprofile</a></td></tr>
+          <tr><td><strong>Hitze statt Munition</strong></td><td>passt zu „kein HP, kein Grind“</td></tr>
+          <tr><td><strong>Zielhelfer:</strong> nächstes Ziel im kleinen Kegel</td><td>wichtig für Touch und Gamepad</td></tr>
+          <tr><td><strong>Aufschalten + suchende Salve</strong></td><td>Boss-Kampf, Fahrzeug-Waffen</td></tr>
+          <tr><td><strong>Schwachstellen:</strong> benannte Trefferzonen, doppelte Wirkung, Aufblitzen</td><td>Riesen-Goo-Monster: Goo-Beulen als Trefferzonen, Kern zuletzt</td></tr>
+          <tr><td><strong>Häuser zerstören ohne Einzelobjekte:</strong> Schaden in einer kleinen Textur, Shader senkt das Haus ab</td><td>Goo-Vorstadt (V-597): Haus zerfällt = befreit; Wertung „Stadt befreit in %“</td></tr>
+          <tr><td><strong>Fahrzeug-Schaden in Stufen</strong> bis Wrack, mit Obergrenzen für Kettenreaktionen</td><td>cartoonig als Knet-Plopp; die Obergrenzen übernehmen</td></tr>
+          <tr><td><strong>Partikel ganz auf der GPU,</strong> Pause und Zeitlupe kostenlos</td><td>mit unseren Knet-Effekten abgleichen</td></tr>
+          <tr><td><strong>Modus-Controller:</strong> Intro, Sieg/Niederlage, Pause, Ergebnis-Karte, Statistik, eigenes HUD, wenige Einhängepunkte</td><td>Vorlage für alle Minigames, passt zu unseren Szenen</td></tr>
+          <tr><td><strong>Auftritt aus der Welt:</strong> Monster steigt aus dem nächsten Gewässer</td><td>Riese steigt aus See, Goo-Pfütze oder Krater</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="box"><h3>Minigame-Ideen</h3><ul><li>Goo-Riese als Boss mit Schwachstellen</li><li>Goo-Vorstadt befreien gegen die Uhr</li><li>Schießbude bzw. Zielparcours</li><li>Ort verteidigen gegen Dark-Fluffer-Wellen</li><li>Fahrzeug-Waffen am Racer oder Combat-Mech</li></ul></div>
+      <div class="box"><h3>Nicht übernehmen</h3><p style="margin:0">Zerfallende Fußgänger, Militär-Look, echte Waffen. Heilen ist ein eigenes Meta-Gameplay und läuft getrennt vom normalen Kampf. Combat (V-782) und Destruction (V-767) liegen bei WS0 und WSA; eingeplant für die Destruction-Slice, nicht vorgezogen.</p></div>
+    </div>
+  </section>
+
+  <section id="arsenal">
+    <h2>Differenzierte Waffen für den normalen Kampf</h2>
+    <p><span class="chip hold">Korrektur Georg</span> Der Heil-Strahl ist keine Standardwaffe. Heilen ist ein Meta-Gimmick und kann ganz anders laufen. Der normale Kampf, bisher ein Proof of Concept in der Combat Arena, braucht differenzierte Waffen und Mechaniken.</p>
+    <div class="grid2">
+      <div class="box"><h3>Gefühl und Ballistik (Arena)</h3><p style="margin:0">Acht Waffen mit eigenem Rhythmus und eigener Flugbahn: Stinger (Schnellfeuer), Hornet (3er-Salve), Bamboo Rail (durchschlagend), Bog Lob (Bogenwurf mit Ätzpfütze), Scrap Cannon (Streuschuss), Nest Rocket (Fläche), Mortar (Bogenschuss), Kayfabeam (Bolzenfolge). Dazu vier Energiearten mal acht Oberflächen und Gegner mit Lebenspunkten.</p></div>
+      <div class="box"><h3>Echte Modelle (K10-Karten)</h3><p style="margin:0">Zwölf Karten: Pistole, Blaster, Action-Gewehr, Bogen, Armbrust, Mech-Minigun, Skelett-Klinge, Stäbe, Zauberstab, Rauchbombe. Im Spiel laufen davon bisher nur zwei, mit einem festen Schuss.</p></div>
+    </div>
+    <p style="margin-top:14px"><strong>Kern des Vorschlags:</strong> Eine Waffe besteht aus K10-Karte (Modell, Halterung, Animation) und Gefühlsprofil aus der Arena. So entsteht aus vorhandenem Material ein Arsenal, ohne neue Modelle.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Achse</th><th>Schon da (Arena)</th><th>Neu</th></tr></thead>
+        <tbody>
+          <tr><td>Rhythmus</td><td>Einzel, Salve, Dauerfeuer</td><td>Aufladen (Bogen spannen), Hitze statt Munition</td></tr>
+          <tr><td>Flugbahn</td><td>gerade, Bogen, Streuung, durchschlagend</td><td>suchend, abprallend</td></tr>
+          <tr><td>Wirkung</td><td>Fläche, Pfütze, Rückstoß</td><td>Energie als Spielregel: heiß brennt nach, nass bremst, elektrisch betäubt und springt über, kinetisch stößt weg</td></tr>
+          <tr><td>Zielen</td><td>–</td><td>Zielhelfer, Aufschalten, Schwachstellen, Treffer-Rückmeldung</td></tr>
+          <tr><td>Nahkampf</td><td>Klinge, Stab (Karten)</td><td>Kombo, Parieren, Ausweichrolle</td></tr>
+          <tr><td>Gegner</td><td>Lebenspunkte-Klassen</td><td>Panzer, Schild, Taumeln, Schwachstellen</td></tr>
+          <tr><td>Ausrüstung</td><td>Signatur- und Wechselwaffe</td><td>Wechseln über das HUD</td></tr>
+          <tr><td>Fahrzeuge</td><td>Mech-Minigun (Karte)</td><td>Racer-Waffen</td></tr>
+          <tr><td>Umgebung</td><td>–</td><td>zerstörbare Props, Fässer, Deckung</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px"><strong>Nächster Schritt, kein Bau:</strong> ein Waffen-Konzept R1 mit Prüfkriterien. Für jede Waffe stehen dort Rolle, Rhythmus, Flugbahn, Wirkung und Konter, dazu kommt eine Clip-Probe aus der Arena. Zuständig sind WSA und WS0. Der Lead liefert den Abgleich von Karten und Profilen als Tabelle zu.</p>
+  </section>
+
+  <section id="belege">
+    <h2>Am Code geprüft</h2>
+    <p>Die Behauptungen aus dem eingefügten Text, nachgeschlagen im Quellcode (gelesen, nichts ausgeführt). Die Live-Seite hat bisher niemand gemessen, weder WS0 noch ich. Es gibt also keine Zahlen zu fps und Speicher.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Behauptung</th><th>Befund</th><th>Stimmt?</th></tr></thead>
+        <tbody>
+          <tr><td>1-km-Kacheln, Region 40 × 40 km</td><td><code>global_tiles.js</code>: <code>GRID_DIM=40</code>, <code>CHUNK_SIZE=1000</code></td><td class="ok">ja</td></tr>
+          <tr><td>Worker baut Kacheln</td><td>ein Worker (<code>chunk_worker.js</code> + <code>chunk_builder.js</code>), höchstens 4 Kacheln gleichzeitig, typisierte Arrays zurück, Rückfall auf den Haupt-Thread</td><td class="ok">ja</td></tr>
+          <tr><td>OpenFreeMap z14, Höhen aus Terrarium</td><td>Vektor z14; Höhen sind <strong>z12</strong> von AWS (<code>global_tiles.js:1426</code>), Formel in Zeile 1465</td><td class="ok">ja</td></tr>
+          <tr><td>5 × 5 Desktop, 3 × 3 Touch</td><td><code>main.js:94</code> <code>LOAD_RADIUS</code> 2 bzw. 1, Entladen erst bei 3 bzw. 2</td><td class="ok">ja</td></tr>
+          <tr><td>eine Worker-Kachel je Bild</td><td><code>_processChunkBuildQueue(5.5)</code>, ferne Kacheln werden verworfen</td><td class="ok">ja</td></tr>
+          <tr><td>Cache 24 / 12 Kacheln</td><td>nur der Cache der dekodierten Vektorkacheln (je ~3–4 MB laut Kommentar); die Minikarte hat eigene Caches</td><td class="part">teils</td></tr>
+          <tr><td>lokaler Ursprung</td><td>nur beim Teleport: alles abreißen, neu laden. Kein mitwandernder Ursprung während der Fahrt</td><td class="part">teils</td></tr>
+          <tr><td>Brücken</td><td><code>bridge_profile.js</code>, <code>bridge_deck.js</code></td><td class="ok">ja</td></tr>
+          <tr><td>Vegetation nah / fern</td><td><code>vegetation.js</code>: <code>NEAR_R=150</code>, <code>FAR_R=600</code>, feste Kreuz-Flächen aus Canvas-Atlas, harter Wechsel, bis 28 Draw Calls</td><td class="ok">ja</td></tr>
+          <tr><td>Horizont</td><td><code>environment.js:349</code> 40-km-Netz, 80 × 80 Felder; Ausschnitt per Index in Zeile 429. Höhe auf Peking geeicht</td><td class="ok">ja</td></tr>
+          <tr><td>WFC</td><td><code>src/wfc/</code>: Löser nur in der Demo. Im Spiel liefert ein Aufruf falsche Argumente, Rücksprünge kommen nie vor. 24 Pekinger Stile, Fassaden-Atlas „AI-Generated“</td><td class="part">teils</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px"><strong>Wo WS0s Gelände schon weiter ist:</strong> Normalen über die Nachbarn (World Explorer rechnet jede Kachel für sich), Nähte zu gröberen Kacheln geschlossen, Kollider aus genau den gezeigten Dreiecken. Übernommen wird nur, was uns fehlt. Geprüft: 154 Dateien, rund 76 000 Zeilen, keine Tests im Repo.</p>
+  </section>
+
+  <section id="nicht">
+    <h2>Nicht übernehmen</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Teil</th><th>Warum nicht</th></tr></thead>
+        <tbody>
+          <tr><td>Kachel-Streaming zur Laufzeit (OpenFreeMap, AWS)</td><td>Netz-Abhängigkeit mitten in der Fahrt, Z14 ist vereinfacht. Bleibt bei R1.6 §5.10: Zonen offline als Paket. Dasselbe Streaming aus Three-geo-play haben wir schon einmal abgelehnt.</td></tr>
+          <tr><td>Der ganze Motor: three r161, Steuerung, Kamera, Wetter, Himmel, Ton</td><td>zweiter Owner für alles; wir laufen auf three r186 mit Host-Vertrag</td></tr>
+          <tr><td>Verkehr und Fußgänger als fertiger Code</td><td>1841 Zeilen, eng an die App gekoppelt. Die <a href="#verkehr">Muster</a> übernehmen wir aber gern.</td></tr>
+          <tr><td>Routen-A*</td><td>Die Endlos-Welt hat kein Straßennetz; Aufträge laufen über R1.6 §5.2</td></tr>
+          <tr><td>WFC als Welt- oder Platz-Generator</td><td><code>kfb-place</code> ist der eine Platzierungs-Owner (V-748 ff.)</td></tr>
+          <tr><td>Kaiju, Waffen, Gebäude-Kollision</td><td>nicht unser Spiel; Kollision gehört Rapier</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px"><span class="chip hold">Später vielleicht</span> die Fassaden-Grammatik aus <code>src/wfc/</code> (Erdgeschoss-Reihe, Eck-Pfeiler, Krone, Rücksprünge). Sie wäre eine Regelvorlage für Georgs Stadt-Baukasten mit Kenney-Fenstern, -Türen und Material-Codes, nur lokal je Gebäude und erst nach der Bildabnahme der Kölner Tasche. Übernommen würden nur die Regeln: Der Code ist auf Peking zugeschnitten und im Spiel fehlerhaft verdrahtet.</p>
+  </section>
+
+  <section id="plan">
+    <h2>Wer was wann</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Probe</th><th>Inhalt</th><th>Owner</th><th>Wann</th></tr></thead>
+        <tbody>
+          <tr><td><strong>P1</strong></td><td>Gelände im Worker, <code>terrainworker=1</code>, Golden-Test, A/B im Slot</td><td>WS0 als Gelände-Owner. Der Lead liefert auf Wunsch den Patch samt Test gegen <code>endlessTerrain.js</code></td><td>jetzt möglich; unsichtbare Mechanik ist nach V-740 parallel erlaubt</td></tr>
+          <tr><td><strong>P3</strong></td><td>Back-Skript Terrarium → Höhenmuster (Kölner Bucht, Herkules), Bilder und Rampen-Tabelle</td><td>WS1b bzw. Lead (Konzept §5.10/§5.11), Einbau WS0</td><td>vor dem Bau der Kölner Tasche</td></tr>
+          <tr><td><strong>P2</strong></td><td>Horizont-Hülle, Bildpaket Flug und Drohne</td><td>WS0 mit Claude Design</td><td>in Fahrplan 5b</td></tr>
+          <tr><td><strong>P4</strong></td><td>Ferne Popup-Bäume, Bildpaket</td><td>WS0 mit WSB bzw. Claude Design</td><td>in 5b, nach Bewuchs je Biom</td></tr>
+          <tr><td><strong>P5</strong></td><td>Brücken-Profil</td><td>WS1c (Wasser) + WS0</td><td>nach Wasser und Kölner Tasche</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="box">
+        <h3>Regeln für jede Übernahme</h3>
+        <ul>
+          <li>Muster oder kleine reine Funktionen, keine Module. Wörtlich übernommene Funktionen behalten den MIT-Kopf „© 2026 Jerry Xie“; World Explorer steht in den Creator-Credits.</li>
+          <li>Ein Höhen-Owner (<code>endlessTerrain</code>), ein Platzierungs-Owner (<code>kfb-place</code>), ein Licht-Rig.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Wie geprüft wird</h3>
+        <ul>
+          <li>Jede Probe hinter einem Schalter; A/B startet auf NEU.</li>
+          <li>Abnahme nur im Live-Stand mit Site-Hash.</li>
+          <li>Messen im Slot, A/B im Wechsel, immer gegen die leere Fahrt (R1.6 §6).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="risiken">
+    <h2>Risiken</h2>
+    <div class="grid2">
+      <div class="box"><h3>Höhen im Worker weichen ab</h3><p style="margin:0">Hängt die Höhenfunktion am Zustand des Haupt-Threads (Schalter aus der Adresse, live gesetzte Orte), gibt es Nähte und falsche Kollider. Darum kommt der Golden-Test zuerst. Neue Orte gehen als Nachricht an den Worker, bevor dort gebaut wird.</p></div>
+      <div class="box"><h3>Mitwandernder Ursprung</h3><p style="margin:0">Löst World Explorer nicht; er setzt nur beim Teleport neu auf. Für Fahrplan 5b braucht es eine eigene Lösung: Sprung in festen Schritten, Welt-Versatz als Uniform (sonst springen Fließbänder und Rauschen), Rapier-Körper im selben Bild verschieben.</p></div>
+      <div class="box"><h3>three r161 → r186</h3><p style="margin:0">Zählt nur, wenn Shader-Code übernommen wird: World Explorer hat 21 Shader-Patches auf Namen, die in r186 nicht geprüft sind. Wir übernehmen Muster, keine Shader-Patches.</p></div>
+      <div class="box"><h3>Alpha-Überzeichnung</h3><p style="margin:0">Ferne Aufsteller können auf Laptops GPU-Zeit fressen. Das wird in P4 gemessen.</p></div>
+      <div class="box"><h3>Echte Höhen passen nicht zum Fahrspaß</h3><p style="margin:0">Das Muster wird immer normiert und im Maßstab an unsere Hügel angepasst. Georg entscheidet im Bild.</p></div>
+    </div>
+  </section>
+
+  <section id="fragen">
+    <h2>Fragen</h2>
+    <ol class="q">
+      <li><span class="who">WS0:</span> Soll P1 (Gelände im Worker) jetzt als unsichtbare Mechanik vorbereitet werden, und von wem? Vorschlag: Der Lead liefert Patch und Golden-Test gegen <code>endlessTerrain.js</code>, WS0 entscheidet über den Einbau.</li>
+      <li><span class="who">Georg:</span> Echte Höhenmuster wie Kölner Bucht und Herkules, als Grund für Stadtzonen und ab und zu als Landschaft zum Wiedererkennen: ja? Dann kommt zuerst ein Bild.</li>
+      <li><span class="who">Georg:</span> Ferne Bäume als Papier-Aufsteller im Popup-Stil wie die Werbetafeln: ja, als Bildpaket?</li>
+      <li><span class="who">Georg und WS0:</span> Verkehr zuerst über Weg A (Pisten je Zelle, Probe hinter <code>traffic=1</code>)? Und soll C, ein Straßennetz in der Endlos-Welt, als eigener Welt-Entscheid auf die Liste?</li>
+      <li><span class="who">WS0:</span> Den Tageslicht-Vertrag in <code>driveAtmos</code> einführen (unsichtbar)? Der Lead kann ihn als Patch liefern.</li>
+    </ol>
+  </section>
+
+  <footer>
+    Abgeglichen mit WS0s Spender-Notiz R7 (<span class="mono">planning/kfb-procedural-world-composition-wfc-osm-2026-10-24 @dbd05a05</span>, PR #447), WS0s Endlos-Welt (<span class="mono">game/proc-world-ws0 @fc4fbc3</span>), Register bis V-841 und unserem Konzept R1.6 (<span class="mono">ws1/prozedurale-welt</span>). Fassung als Markdown: <span class="mono">ws1/status · docs/WORLD_EXPLORER_EVAL_R1.md</span>.
+  </footer>
+</div>

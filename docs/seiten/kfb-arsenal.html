@@ -1,0 +1,156 @@
+<title>KFB Arsenal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #f3efe6; --surface: #fffcf5; --ink: #22201b; --muted: #6a6457; --line: #ddd5c4;
+    --accent: #1f6f78; --accent-soft: #d8ebe9; --warm: #c4502b;
+    --adapt: #1f6f78; --adapt-bg: #d8ebe9; --hold: #946512; --hold-bg: #f4e6c8; --reject: #9b3a2a; --reject-bg: #f3dcd5; --keep: #3f7d4a; --keep-bg: #dcebd9;
+    --ring1: #e9a46a; --ring2: #e7c47c; --ring3: #b9cfa0; --ring4: #8fbcc0; --ring5: #c9d6db;
+    --f-head: 'Shantell Sans', 'Comic Sans MS', system-ui, sans-serif;
+    --f-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    --f-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #171a19; --surface: #202524; --ink: #ece7dc; --muted: #a9a394; --line: #343a38;
+    --accent: #6cc3c9; --accent-soft: #1f3a3b; --warm: #e7774f;
+    --adapt: #7fd0d5; --adapt-bg: #1d3b3d; --hold: #e7bd6a; --hold-bg: #3b311c; --reject: #f09a86; --reject-bg: #43261f; --keep: #8ccf96; --keep-bg: #23382a;
+    --ring1: #a4683b; --ring2: #a58a4c; --ring3: #6f8a5b; --ring4: #4e7f84; --ring5: #3c4a4f;
+    color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #171a19; --surface: #202524; --ink: #ece7dc; --muted: #a9a394; --line: #343a38;
+    --accent: #6cc3c9; --accent-soft: #1f3a3b; --warm: #e7774f;
+    --adapt: #7fd0d5; --adapt-bg: #1d3b3d; --hold: #e7bd6a; --hold-bg: #3b311c; --reject: #f09a86; --reject-bg: #43261f; --keep: #8ccf96; --keep-bg: #23382a;
+    --ring1: #a4683b; --ring2: #a58a4c; --ring3: #6f8a5b; --ring4: #4e7f84; --ring5: #3c4a4f;
+    color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 17px/1.55 var(--f-body); margin: 0; }
+  .wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 72px; }
+  header { display: grid; gap: 10px; margin-bottom: 28px; }
+  .eyebrow { font: 600 13px/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 800 clamp(28px, 4.4vw, 40px)/1.12 var(--f-head); margin: 0; text-wrap: balance; }
+  h2 { font: 800 clamp(21px, 2.6vw, 26px)/1.2 var(--f-head); margin: 0 0 12px; text-wrap: balance; }
+  h3 { font: 700 18px/1.3 var(--f-body); margin: 0 0 6px; }
+  p { margin: 0 0 12px; max-width: 70ch; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 64ch; margin: 0; }
+  .meta { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  code, .mono { font-family: var(--f-mono); font-size: .86em; background: var(--accent-soft); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+  section { margin-top: 40px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  nav.toc a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 14px; }
+  nav.toc a:hover, nav.toc a:focus-visible { border-color: var(--accent); outline: none; }
+  .verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; }
+  .verdict strong { color: var(--ink); }
+  .chip { display: inline-block; font: 700 12px/1 var(--f-body); letter-spacing: .05em; text-transform: uppercase; border-radius: 999px; padding: 5px 9px; white-space: nowrap; }
+  .chip.adapt { color: var(--adapt); background: var(--adapt-bg); }
+  .chip.hold { color: var(--hold); background: var(--hold-bg); }
+  .chip.reject { color: var(--reject); background: var(--reject-bg); }
+  .chip.keep { color: var(--keep); background: var(--keep-bg); }
+  .chip.vis { color: var(--muted); background: transparent; border: 1px solid var(--line); }
+  .donors { display: grid; gap: 14px; }
+  .donor { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: grid; grid-template-columns: 44px 1fr; gap: 4px 14px; }
+  .donor .n { font: 800 26px/1 var(--f-head); color: var(--accent); grid-row: span 3; padding-top: 2px; }
+  .donor .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .donor dl { display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 14px; margin: 6px 0 0; }
+  .donor dt { color: var(--muted); font-size: 14px; font-weight: 600; padding-top: 2px; }
+  .donor dd { margin: 0; }
+  .donor dd ul { margin: 0; padding-left: 18px; }
+  .donor dd li { margin-bottom: 3px; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--bg); }
+  tr:last-child td { border-bottom: 0; }
+  td.ok { color: var(--keep); font-weight: 700; white-space: nowrap; }
+  td.part { color: var(--hold); font-weight: 700; white-space: nowrap; }
+  .rings { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px 10px; }
+  .rings svg { width: 100%; height: auto; display: block; }
+  .rings .cap { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .box ul { margin: 0; padding-left: 18px; }
+  .box li { margin-bottom: 5px; }
+  ol.q { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 72ch; }
+  ol.q li::marker { font-weight: 700; color: var(--accent); }
+  .who { font-weight: 700; }
+  footer { margin-top: 48px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  a { color: var(--accent); }
+  @media (max-width: 560px) {
+    .donor { grid-template-columns: 1fr; }
+    .donor .n { grid-row: auto; }
+    .donor dl { grid-template-columns: 1fr; gap: 2px; }
+    .donor dt { padding-top: 8px; }
+  }
+  .new { color: var(--warm); font-weight: 700; }
+  td.n { font: 800 18px/1 var(--f-head); color: var(--accent); }
+  .priv { font-size: 12px; color: var(--muted); display: block; }
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Kampf · Zuordnung R1 · Vorschlag für WSA</div>
+    <h1>Zwölf Waffen, jede mit eigenem Gefühl</h1>
+    <p class="lede">Die Modelle sind gemessen, die Gefühlsprofile aus der Arena gibt es auch, aber beides war nie verbunden. Im Spiel laufen bisher zwei Waffen mit einem einzigen Schuss. Diese Tabelle verbindet beides.</p>
+    <div class="meta"><span>26.10.2026 · WS1 Lead für WSA und WS0</span><span>Heilen ist ein Meta-Gimmick und steht deshalb nicht hier (Georg)</span></div>
+  </header>
+
+  <section style="margin-top:0">
+    <div class="verdict">
+      <p><strong>Grundsatz:</strong> Eine Waffe besteht aus einer <em>K10-Karte</em> (Modell, Halterung, Animationsmarken) und einem <em>Gefühlsprofil</em> aus der Arena (Rhythmus, Flugbahn, Wirkung, Energie, Geschossform, Ton).</p>
+      <p style="margin:0">Die Animationsmarken entscheiden, was ohne neue Animation geht. Ein Bogen mit „spannen, halten, loslassen“ kann aufladen, die Klinge mit fünf Hieben kann eine Kombo. Die Zahlen bleiben die der Arena, bis WSA sie neu einstellt.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zuordnung</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>#</th><th>Waffe</th><th>Animationsmarken</th><th>Gefühlsprofil</th><th>Rolle</th><th>Konter gegen</th><th>Neue Mechanik</th><th>Energie</th></tr></thead>
+        <tbody>
+<tr><td class="n">1</td><td><strong>Pistole</strong><span class="priv">Prototype Gun_Pistol · Hero</span></td><td><code>aim, fire, fire-loop, reload</code></td><td><b>Stinger</b><br>Schnellfeuer, Leuchtspur</td><td>Allrounder, Startwaffe</td><td>Flieger, Kleine</td><td>optional Nachladen</td><td>kinetisch</td></tr>
+<tr><td class="n">2</td><td><strong>HeroMan-Blaster</strong><span class="priv">Hero · Kauf → privat</span></td><td><code>aim, fire, fire-loop, reload</code></td><td><b>Kayfabeam</b><br>Bolzenfolge, „schmilzt Panzer“</td><td>Dauerdruck auf Harte</td><td>Panzer, Metall</td><td><span class="new">Hitze statt Munition</span></td><td>heiß</td></tr>
+<tr><td class="n">3</td><td><strong>Action-Figure-Gewehr</strong><span class="priv">1H an der Hüfte · Hero · Kauf → privat</span></td><td><code>aim, fire, fire-loop</code></td><td><b>Hornet</b><br>3er-Salve, Darts</td><td>mittlere Distanz</td><td>Gruppen Kleiner</td><td>–</td><td>kinetisch</td></tr>
+<tr><td class="n">4</td><td><strong>Armbrust</strong><span class="priv">2H · Schurkin</span></td><td><code>aim, fire, fire-loop, reload</code></td><td><b>Bamboo Rail</b><br>Einzelschuss, durchschlagend</td><td>Präzision</td><td>Reihen, Distanz</td><td>Nachladen als Takt</td><td>kinetisch</td></tr>
+<tr><td class="n">5</td><td><strong>Bogen</strong><span class="priv">bow_withString · Schurkin</span></td><td><code>draw, hold, release</code></td><td><span class="new">neu: Spannschuss</span></td><td>Geschick</td><td>Distanz, Schwachstellen</td><td><span class="new">Aufladen</span>: Spannzeit = Reichweite und Wucht</td><td>kinetisch</td></tr>
+<tr><td class="n">6</td><td><strong>Bogen A</strong><span class="priv">bow_A_withString · Schurkin</span></td><td><code>draw, hold, release</code></td><td>wie 5, Variante</td><td>Variante oder Gegnerwaffe</td><td>–</td><td>z. B. Brandpfeil, brennt nach</td><td>heiß</td></tr>
+<tr><td class="n">7</td><td><strong>Rauchbombe</strong><span class="priv">Schurkin</span></td><td><code>throw</code></td><td>Flugbahn wie <b>Bog Lob</b></td><td>Taktik, kein Schaden</td><td>Zielen der Gegner</td><td><span class="new">Zone Rauch</span>: Gegner verlieren das Ziel</td><td>–</td></tr>
+<tr><td class="n">8</td><td><strong>Skelett-Klinge</strong><span class="priv">Krieger</span></td><td><code>chop, slice ×2, stab, jump-chop</code></td><td><span class="new">neu: Nahkampf</span></td><td>Nah, Risiko</td><td>Schilde umgehen</td><td><span class="new">Kombo</span>, Parieren, Ausweichrolle</td><td>kinetisch</td></tr>
+<tr><td class="n">9</td><td><strong>Zauberstab</strong><span class="priv">wand · Magier</span></td><td><code>bolt, charged, raise, channel</code></td><td><span class="new">neu: Kettenblitz</span></td><td>Gruppen-Kontrolle</td><td>Schilde, Gruppen</td><td><span class="new">springt über</span>, Aufladen, Dauerzauber</td><td>elektrisch</td></tr>
+<tr><td class="n">10</td><td><strong>Stab</strong><span class="priv">staff · Magier</span></td><td><code>bolt, charged, channel</code></td><td><b>Nest Rocket</b><br>Fläche, Rauchspur</td><td>Flächenschaden</td><td>Gruppen</td><td>Feuerball geladen, brennt nach</td><td>heiß</td></tr>
+<tr><td class="n">11</td><td><strong>Skelett-Stab</strong><span class="priv">Magier</span></td><td><code>bolt, charged, channel</code></td><td><b>Bog Lob</b><br>Bogenwurf, Ätzpfütze</td><td>Gebiet sperren</td><td>Bodentruppen</td><td><span class="new">Pfütze über Zeit</span>: bremst, rutscht</td><td>nass</td></tr>
+<tr><td class="n">12</td><td><strong>Mech-Minigun</strong><span class="priv">seitlich, Boden und Flug · Mech · Kauf → privat</span></td><td><code>kein Schuss-Clip</code></td><td>Basis <b>Stinger</b>, schneller, breiter</td><td>Mech- bzw. Fahrzeugwaffe</td><td>Massen, Flieger</td><td><span class="new">Anlaufen + Hitze</span></td><td>kinetisch</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px"><span class="new">Orange</span> = neu, gibt es in der Arena noch nicht. Bei der Armbrust ist die Energie in der Arena elektrisch; hier ist kinetisch vorgeschlagen.</p>
+    <p><strong>Zwei Profile ohne Modell:</strong> Scrap Cannon (Streuschuss mit 6 Kugeln) und Mortar (Bogenschuss mit Sprengwolke). Beide brauchen eine Karte, etwa eine Kanone oder einen Werfer aus einem vorhandenen Kit, oder eine Halterung am Racer. Das wäre ein Job für WSB bzw. WSA.</p>
+  </section>
+
+  <section>
+    <h2>Neue Mechaniken auf einen Blick</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Mechanik</th><th>Waffen</th><th>Braucht</th></tr></thead>
+        <tbody>
+          <tr><td>Aufladen</td><td>5, 6, 9, 10</td><td>Animationsmarken sind schon da</td></tr>
+          <tr><td>Hitze statt Munition</td><td>2, 12</td><td>Anzeige im HUD 3D, Ton beim Überhitzen</td></tr>
+          <tr><td>Energie als Spielregel: heiß brennt nach, nass bremst, elektrisch springt über</td><td>6, 9, 10, 11</td><td>Zustände am Gegner; heute nur Bild und Ton</td></tr>
+          <tr><td>Zone (Rauch, Pfütze)</td><td>7, 11</td><td>Flächen-Logik, auch für die Destruction-Slice</td></tr>
+          <tr><td>Kombo, Parieren, Ausweichen</td><td>8</td><td>Animationen da; Treffer-Fenster aus den Marken</td></tr>
+          <tr><td>Zielhilfe, Aufschalten, Schwachstellen</td><td>alle</td><td>Trefferzonen an den Gegnern</td></tr>
+          <tr><td>Panzer, Schild, Taumeln</td><td>siehe „Konter“</td><td>Felder im Gegner-Roster; die Oberfläche „Schild“ gibt es schon</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ausrüstung und nächster Schritt</h2>
+    <div class="grid2">
+      <div class="box"><h3>Ausrüstung (offen für Georg)</h3><p style="margin:0">In der Arena trägt jede Figur ihre eigene Waffengruppe. Im Spiel spielt FrizzleBob. Vorschlag nach der Arena-Einteilung: eine Signaturwaffe, die immer da ist, plus eine Wechselwaffe aus Fundsachen bzw. Rucksack, gewechselt über das HUD. Welche Signaturwaffe FrizzleBob trägt, entscheidet Georg.</p></div>
+      <div class="box"><h3>So geht es weiter</h3><ol class="q" style="gap:6px"><li>WSA prüft Zuordnung und Feinabstimmung in der Arena, mit einem kurzen Clip je Zeile.</li><li>Daraus wird ein Waffen-Konzept R1 mit Prüfkriterien.</li><li>Georg wählt anhand der Clips.</li><li>Erst dann folgt der Einbau ins Spiel (Combat, V-782, WS0).</li></ol></div>
+    </div>
+  </section>
+
+  <footer>Quellen: <span class="mono">combat-av/arena/combat-arena-v5/k10</span> (12 Karten, Status: Modell gemessen, Gameplay offen), <span class="mono">combat-av/arena/modules/kfb-combat-def.js</span> v1.0.0, <span class="mono">game/proc-world-ws0 · src/modules/combatPlayer.js</span>. Kauf-Modelle bleiben privat. Fassung als Markdown: <span class="mono">ws1/status · docs/WAFFEN_ZUORDNUNG_R1.md</span>.</footer>
+</div>

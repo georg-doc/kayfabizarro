@@ -1,7 +1,18 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §177.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§177 ist der neueste, Stand 26.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §178.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§178 ist der neueste, Stand 27.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 178 · 27.10. · Alles aus dem Lead-Chat eingecheckt: Sammlung mit Kommentaren, Merge-Hinweise, Spiegel e88689c
+Auftrag Georg (27.10.): alles Besprochene komplett und kommentiert auf GitHub, damit WS0 weiterarbeiten kann.
+- **Sammlung:** `docs/LEAD_SAMMLUNG_2026-10-27.md`. Enthält GitHub-Stand, World Explorer, Verkehr/Wetter/Kaiju, Waffen/Arsenal, alle offenen Fragen an Georg (zusammengeführt, mit Erledigt-Liste), Regeln und Angebote. Je Thema ein Kommentar Lead.
+- **Merge-Konflikte:** `docs/MERGE_HINWEISE_PROC_WORLD_R1.md`. Probe-Merge `game/mvp-r1` → `game/proc-world-ws0`: 17 Konflikte in 4 Dateien.
+  - Ursache: zwei S1-Wege (`mount=live` gegen `travel=1`).
+  - Empfehlung: euer Weg als Basis, `carLive` als Alias, **unsere Telemetrie behalten** (Säule zu Fuß und Höhe über Grund, Georg 25.10.).
+  - Der Lead mergt nichts in euren Zweig; auf Wunsch liefert er einen Prüf-Branch.
+- **Spiegel nachgezogen:** mvp e88689c (Disco-Besetzung, WS-NPC) → `game/mvp-r1` @9a95ea9, öffentlich `ws1/mvp-r1` @5ec9e21 (der Commit @372a93e davor war leer, harmlos).
+- **HTML-Kopien der Seiten:** `docs/seiten/world-explorer-spender.html`, `docs/seiten/kfb-arsenal.html`. Die Abnahme-Seite liegt als Schnappschuss in `abnahme/ws1` unter `seiten/`.
+- **Hinweis:** Im Register fehlen V-842…V-861; es gibt sie bisher nur als Commit-Texte in `game/proc-world-ws0`.
 
 ## 177 · 26.10. · Arsenal R1: Zuordnung K10-Waffenkarten ↔ Gefühlsprofile (für WSA, über WS0)
 Georg hat die Tabelle angefragt (Anschluss an §176/§3b.6). Fassung: `docs/WAFFEN_ZUORDNUNG_R1.md` auf diesem Zweig. Seite: https://claude.ai/artifact/5Dpj76JoSeS52wxECdia7k
