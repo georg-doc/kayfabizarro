@@ -197,6 +197,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-892 Bewuchs je Biom: zweite Sitzung (WS0-gesteuert) im Arbeitsbaum kfb-veg, Branch game/veg-biome-r1; q264 PASS.
 - V-893 WSA Ton-Prüfung (Brief, b250); Briefings priorisiert.
 - V-894 Sundown by the Sea in der Fahrt-Musik (Ton @b9e1f53, Pin @841a0e9); WSA-Auftrag um Ton-Auslieferung erweitert.
+- V-895 Musik nach Stimmung + Tempo (ruhig/treibend), Dockside Drift, Surf und Rockabilly, E-Funk neu; Ton @c37138a, Spiel @ceb1584.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport

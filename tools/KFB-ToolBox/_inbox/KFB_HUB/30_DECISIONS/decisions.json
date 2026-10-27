@@ -12909,6 +12909,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-895",
+   "date": "2026-10-27",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Georg 27.10.: Musik nicht nach Fahren/Gehen trennen, sondern nach Stimmung; ruhige Szenen (umsehen, Fluff ernten, NPCs) ruhig, treibende Surf-/Funk-Titel fürs Fahren; an das Tempo gekoppelt. Umgesetzt: Töpfe ruhig = mindscape (Klangbetten, Sundown by the Sea, Dockside Drift neu) + cozy, treibend = suno (Roadtrip + Transdimensional Surf-Trip verschoben + Surf und Rockabilly + E-Funk mit Talkbox neu); Wechsel nach Tempo mit Haltezeit (ab 14 m/s 4 s → treibend, unter 6 m/s 10 s → ruhig), Zonen Mindscape/Café wie bisher, Biom-/Tageszeit-Gewichte bleiben; Schalter music=v811. Ton kayfabizarro @c37138a, Spiel @ceb1584; Prüfung music-mood (ruhig → treibend nach ~5 s → ruhig nach 10 s, Ton von GitHub, 0 Fehler), Unit audio-mixer PASS. Ersetzt die Fahrt-Zuordnung aus V-811.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Musik soll zur Szene passen, nicht zum Fahrzeug: wer langsam schaut und erntet, hört Ruhe; wer rast, hört Surf und Funk.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -13021,7 +13036,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1432",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1433",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
