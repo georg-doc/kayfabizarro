@@ -194,6 +194,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-889 Cartoon-Loco Gate SOURCE_ISOLATION_01 erledigt (RETURN, Kontaktbogen).
 - V-890 Arbeitsteilung: WSB J-7 auf 10 Racer. V-891 WSB Cartoon-Schlüsselposen (Standbilder zuerst).
 - WSB-Abstimmung 27.10.: V-886/V-890/V-891 Gate PASS, direkt an WSB (Reihenfolge Käfer → Posen → J-7), Quellen + Konzeptblätter in 50_BLENDER/<Job>/, WSB pusht nicht (WS0 bringt Stände auf die Branches); Hub b247–b249.
+- V-892 Bewuchs je Biom: zweite Sitzung (WS0-gesteuert) im Arbeitsbaum kfb-veg, Branch game/veg-biome-r1; q264 PASS.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport

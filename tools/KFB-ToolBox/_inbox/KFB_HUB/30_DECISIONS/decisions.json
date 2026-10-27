@@ -12864,6 +12864,21 @@
    "applies": "nach Georgs Posen-Abnahme"
   },
   {
+   "id": "V-892",
+   "date": "2026-10-27",
+   "area": "Spielwelt",
+   "verdict": "BUILD",
+   "text": "Georg 27.10.: ja zu Bewuchs je Biom; WS1 erst Donnerstag wieder da, daher baut eine von WS0 gesteuerte zweite Claude-Code-Sitzung im eigenen Arbeitsbaum ~/kfb-ws0/kfb-veg (Branch game/veg-biome-r1, kein Push). Inhalt: kfb-place-Weg (veg=cartoon) pflanzt je Biom statt fest moos; Arten nur aus den vorhandenen veg-Listen in kfb-biome-drive.r1.json, moos unverändert, Gruppenwechsel an der Biomgrenze wie V-830; Kanon-Änderung als Patch, WS0 übernimmt. Prüfung: Build, biomeDrive, combat, Kontaktbogen 6 Biome vorher/nachher, Bildzeiten. q264 PASS (Portal-Rasterpunkte).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Gegend soll an ihren Pflanzen erkennbar sein; eine Wüste mit Moos-Wald zerstört das Biom.",
+   "applies": "nach Einbau"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12976,7 +12991,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1429",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1430",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
