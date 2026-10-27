@@ -12804,6 +12804,66 @@
    "applies": "sofort"
   },
   {
+   "id": "V-888",
+   "date": "2026-10-27",
+   "area": "Look",
+   "verdict": "TUNE",
+   "text": "Georg q261 (TUNE): Leistung der Animation? Punktemuster zu kleinteilig für den Cartoon-Look. Umgesetzt: Rand in grobe Comic-Rasterpunkte (9 px, wachsen zum Inneren) statt Pixel-Rauschen, Wabern bleibt; gemessen 60 fps mit und ohne Portal (Bildschirmtakt, kein Verlust). game/proc-world-ws0 @764575b; Hub q264. q262 PASS (Icons R2), q263 PASS (Blasen V-887).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Rasterpunkte sind die Sprache gedruckter Comics; feines Rauschen wirkt technisch.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-889",
+   "date": "2026-10-27",
+   "area": "Animation",
+   "verdict": "GATE",
+   "text": "WS0_CARTOON_LOCO_SOURCE_ISOLATION_01 erledigt (V-880): Blender 5.2.2, Quellen = Spieldateien FB v5b + Rig_Medium_MovementBasic; Rig 23 Körperknochen (FB 47 mit Ohren + IK); Messung mit pose_motion_audit (PR #456): Walking_B Wippen 0,054, Stand-Füße ungleichmäßig (Rutschen), Running_B ungleichmäßig, Sprünge ohne Ausholen/Quetschen/Strecken; Werkzeuge KEEP eingebaut (Pose Library, Breakdowner, Graph Editor, Motion Paths), HOLD AnimAide/Onion/CloudRig/Cascadeur, REJECT MotionBricks für jetzt. RETURN replies/WS0_CARTOON_LOCO_SOURCE_ISOLATION_01_RETURN.md, Kontaktbogen 75_REFS/cartoon_loco_r1. Nächstes Gate Schlüsselposen (V-891).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst messen, was die Spiel-Clips heute tun, dann gezielt ändern; keine neuen Animationen ins Blaue.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-890",
+   "date": "2026-10-27",
+   "area": "Fahren",
+   "verdict": "BRIEF",
+   "text": "Arbeitsteilung (Georg 27.10.: Jobs verteilen, Mac mini frei): WS0 bleibt einziger Schreiber im Spielcode und baut ein; abgeschlossene Pakete mit festem Ein-/Ausgang und Bildprüfung gehen raus. WSB: J-7 auf die übrigen 10 Racer ausrollen (replies/WSB_V890_J7_ROLLOUT_R1.md, Branch assets/wsb-j7-rollout-r2), Käfer erst nach V-886.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Parallel geht schneller, solange nur einer in den Spielcode schreibt und jedes Paket eine eigene Bildprüfung hat.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-891",
+   "date": "2026-10-27",
+   "area": "Animation",
+   "verdict": "BRIEF",
+   "text": "WSB: Cartoon-Schlüsselposen als Standbilder vor jeder Animation (visual first): CARTOON_WALK_A, HIGH_JUMP_A, START_STOP_PIVOT_A auf FB_CANON, Original daneben, Georg nimmt Posen ab, erst dann Animation (replies/WSB_V891_CARTOON_KEYPOSES_R1.md, Branch assets/wsb-cartoon-keyposes-r1).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Posen entscheiden, ob es nach Cartoon aussieht; die abzunehmen ist billiger als fertige Animationen zu verwerfen.",
+   "applies": "nach Georgs Posen-Abnahme"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12916,7 +12976,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1425",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1429",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

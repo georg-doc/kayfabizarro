@@ -190,6 +190,10 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - V-885 Props einheitlich 30° gekippt: Icons R2 und schwebende Fundsachen (q258).
 - V-886 Käfer-Dach schließen: Auftrag an WSB (q259 A).
 - V-887 Blasen nie über Köpfen, Pfeil immer zur Kopfmitte (global), proc-world @31c8ea8; Hub q261 Portal, q262 Icons R2, q263 Blasen; b247 WSB Käfer-Dach.
+- V-888 Portal-Rand Comic-Rasterpunkte (q261 → q264), q262/q263 PASS.
+- V-889 Cartoon-Loco Gate SOURCE_ISOLATION_01 erledigt (RETURN, Kontaktbogen).
+- V-890 Arbeitsteilung: WSB J-7 auf 10 Racer. V-891 WSB Cartoon-Schlüsselposen (Standbilder zuerst).
+- WSB-Abstimmung 27.10.: V-886/V-890/V-891 Gate PASS, direkt an WSB (Reihenfolge Käfer → Posen → J-7), Quellen + Konzeptblätter in 50_BLENDER/<Job>/, WSB pusht nicht (WS0 bringt Stände auf die Branches); Hub b247–b249.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport

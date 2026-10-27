@@ -93,3 +93,10 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - V-874 P3 Höhenmuster: Brief an WS1 (Gate PASS), b245 wartet auf Weitergabe.
 - V-876 im Arbeitsbaum ~/kfb-ws0/kfb-mvp (noch nicht committet): Schatten und Bänder Standard wie vorher, Portal queres Oval mit organischem Rand; Prüfbild mit scripts/look/portal-shot.mjs ausstehend.
 - Übersetzung restlicher Spieltexte (Dialog, hudL3, Hud, HudClay, M1World-Ziele …) im Arbeitsbaum, noch nicht gebaut/getestet. Danach: vite build, npm test, feature-check, Portal-Bild, Commit + Push game/proc-world-ws0.
+
+## Stand 27.10. spät
+- Erledigt: V-884 Portal waberend + Dach-Fahrer Lenkrad/Ohren (q260 PASS), V-885 Props 30° gekippt (Icons R2 + schwebende Fundsachen), V-886 WSB-Auftrag Käfer-Dach (b247, Gate PASS), V-887 Blasen nie über Köpfen + Pfeil zur Kopfmitte (global). Spiel game/proc-world-ws0 @31c8ea8.
+- Offen bei Georg: q261 Portal, q262 Icons R2, q263 Blasen; Briefings b244–b247.
+- HUD-Design läuft in einer anderen Sitzung weiter (design/hud-icons-r1: Gemini-Vorlagen R3, R4-Entscheidungen). WS0 liefert nur Objekt-Renders (renders_r2).
+- Nächster WS0-Schritt: Cartoon-Locomotion V-880, Gate SOURCE_ISOLATION_01; danach Dach-Anker für die übrigen Racer.
+- 27.10. nachts: WSB arbeitet V-886 → V-891 → V-890 (Quellen/Konzeptblätter in 50_BLENDER/V886_KAEFER, CARTOON_LOCO, J7; WSB pusht nicht, WS0 bringt Stände auf Branches, Abnahme-Blätter aus <Job>/out/abnahme/ in Hub). Cartoon-Loco Gate 01 erledigt (V-889). Offen bei Georg: q264 Portal-Rasterpunkte; WS1-Paket „Bewuchs je Biom“ wartet auf Georgs Ja; b245 wartet auf Weitergabe. Bei J-7 R2: roofDriver.js auf Vertrag r2 + Clip-Datei r2 erweitern.
