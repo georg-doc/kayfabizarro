@@ -8,3 +8,6 @@ Public copy of the HUD icon brief so that an external design model can read it. 
 - `BRIEF_HUD_3D_R1.md`: the earlier 3D prop HUD brief (round R1).
 
 Purchased models and private HUD props are not in this public copy; they stay in the private game repo.
+
+
+**R2 (27.10.):** every prop is now rendered at one uniform 30° tilt (Georg: icons fit the slots better, and found items float at the same tilt in the game). Use `renders_r2/` and `sheets/*_r2.jpg`; `renders/` and the R1 sheets stay for history.

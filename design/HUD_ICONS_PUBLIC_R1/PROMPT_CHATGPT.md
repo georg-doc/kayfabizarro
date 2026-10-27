@@ -1,9 +1,9 @@
 # KFB HUD icon sheet R1 · prompt for ChatGPT (public package)
 
 **Files (open or download directly):**
-- Prop sheet: https://raw.githubusercontent.com/georg-doc/kayfabizarro/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/sheets/props_sheet.jpg
-- Weapon sheet: https://raw.githubusercontent.com/georg-doc/kayfabizarro/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/sheets/weapons_sheet.jpg
-- Single renders, 512 px, transparent: https://github.com/georg-doc/kayfabizarro/tree/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/renders
+- Prop sheet: https://raw.githubusercontent.com/georg-doc/kayfabizarro/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/sheets/props_sheet_r2.jpg
+- Weapon sheet: https://raw.githubusercontent.com/georg-doc/kayfabizarro/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/sheets/weapons_sheet_r2.jpg
+- Single renders, 512 px, transparent (R2: every prop at the same 30° tilt, keep that tilt in the icons): https://github.com/georg-doc/kayfabizarro/tree/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/renders_r2
 - Earlier HUD brief (Fluff colours, target arrow, almanac rules): https://github.com/georg-doc/kayfabizarro/blob/design/kfb-hud-icons-public-r1/design/HUD_ICONS_PUBLIC_R1/BRIEF_HUD_3D_R1.md
 - Three screenshots of the current in-game HUD are uploaded separately in the chat.
 
