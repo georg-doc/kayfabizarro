@@ -1,3 +1,15 @@
+# CURRENT DIAGNOSIS · Einzelinstanz-FPS · 27.10.2026
+
+Version9/ec7b057 bleibt LIVE/unverändert. Einzelinstanzlive25FPS mit altemStartzähler; derselbePaketstand lokal nachAufwärmen beiStandard15,5–21,5FPS,Fast38,5–44,3; norender später73,8–88,1. 14Messfenster/4594Intervalle, CSS1312×645, FokusamFensterende/sichtbar/0Sichtbarkeitswechsel. Renderpfad-/Auflösungsengpass begründet; genaueGPU-Ursache und60fpsAbnahmeoffen. renderer.info14Calls28Tris ist letzterHUD-Pass, keinWeltbudgetnachweis.
+
+[Diagnose und konkreterWS0-Fix-Vorschlag](WSA_TO_WS0_SINGLE_INSTANCE_FPS_DIAGNOSIS_2026-10-27.md): bestehendeDPR-Qualitätsregelung, korrekteGesamtframezähler, vorhandenesVegetations-CullingA/B, Testsaufworld=endlessausrichten. NurBericht/Beweise, keinWorld-/Site-Patch. EigeneAlt-Artefaktebereinigt:~410MBrealzusätzlichfrei.
+
+**Ein nächstesGate: WS0 boundedWorld-Patch und Endlos-Einzelinstanzvergleich; dann neuerPinnedBuild anWSA.** KeineerneuteunbestimmteGeorg-AbnahmealsErsatzfürdenbelegtenLeistungsfix.
+
+---
+
+## Vorheriger Lieferstand
+
 # CURRENT UPDATE · R4 ec7b057 · v9 LIVE · 27.10.2026
 
 Existing KFB · WS1 Staging updated to package `ec7b0579f98b0ab2be2ea51132344c8354eac308`. Site source `8e8e4d07816ac42f68ab656a457bb19889d67c08`; version9 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_77afbeec137c8191a36d62e7ab801fd1`; deployment `appgdep_6ae11f69c74c81919de33dc5848ce83a` SUCCEEDED. Same https://kfb-ws1-staging.frizzlebob.chatgpt.site , Georg-only/no second password/environmentrevision1.

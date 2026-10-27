@@ -1,0 +1,760 @@
+{
+  "schema": "kfb.single-instance-performance/1",
+  "date": "2026-10-27",
+  "site": {
+    "project": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+    "version": 9,
+    "source": "8e8e4d07816ac42f68ab656a457bb19889d67c08",
+    "package": "ec7b0579f98b0ab2be2ea51132344c8354eac308",
+    "changed": false
+  },
+  "machine": {
+    "model": "MacBookPro18,2",
+    "chip": "Apple M1 Max",
+    "ramBytes": 34359738368,
+    "thermalWarning": false
+  },
+  "protocol": {
+    "liveSingleForegroundStartupFps": 25,
+    "localOrigin": "http://127.0.0.1:8796",
+    "identicalDeliveredBundleSha256": "75660a4fe5f8afae42d1cac79651f6249f11cb5939ab5f7341d84af2d019049c",
+    "warmupSeconds": 10,
+    "windowSeconds": 8,
+    "scenarios": 5,
+    "windows": 14,
+    "frameIntervals": 4594,
+    "oneControlledGameTab": true,
+    "noConcurrentOwnedLocalGame": true,
+    "baseHash": "#m1,harvest,look=terrain3,world=endless,hud=3d,palseed=803,mount=live",
+    "debugFlags": "debug,clean for public diagnostic hook exposure only; quality and norender use delivered flags",
+    "cssViewport": "1312x645",
+    "allWindowEndpointsFocused": true,
+    "allRecordedVisibilityChanges": 0,
+    "continuousFocusProof": false
+  },
+  "runs": {
+    "baseline-standard": [
+      {
+        "window": 1,
+        "elapsedMs": 8034.5,
+        "frames": 169,
+        "meanFps": 21,
+        "p95FrameMs": 73,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": null,
+        "drawMs": null,
+        "steps": 0,
+        "draws": 0,
+        "render": {
+          "stats": null,
+          "calls": null,
+          "triangles": null,
+          "programs": null,
+          "textures": null,
+          "geometries": null,
+          "dpr": null
+        },
+        "longTasks": 6,
+        "longTaskMs": 1125
+      },
+      {
+        "window": 2,
+        "elapsedMs": 8047,
+        "frames": 144,
+        "meanFps": 17.9,
+        "p95FrameMs": 77.8,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": null,
+        "drawMs": null,
+        "steps": 0,
+        "draws": 0,
+        "render": {
+          "stats": null,
+          "calls": null,
+          "triangles": null,
+          "programs": null,
+          "textures": null,
+          "geometries": null,
+          "dpr": null
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      }
+    ],
+    "debug-standard": [
+      {
+        "window": 1,
+        "elapsedMs": 8056.7,
+        "frames": 173,
+        "meanFps": 21.5,
+        "p95FrameMs": 76.6,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 2.768,
+        "drawMs": 10.971,
+        "steps": 434,
+        "draws": 173,
+        "render": {
+          "stats": {
+            "stepMs": 2886.2999997138977,
+            "drawMs": 3755.800000309944,
+            "steps": 801,
+            "draws": 365,
+            "multi": 212,
+            "dropped": 13
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 93,
+          "textures": 80,
+          "geometries": 158,
+          "dpr": 1.25
+        },
+        "longTasks": 5,
+        "longTaskMs": 1321
+      }
+    ],
+    "debug-fast": [
+      {
+        "window": 1,
+        "elapsedMs": 8016.8,
+        "frames": 309,
+        "meanFps": 38.5,
+        "p95FrameMs": 37.7,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1312,
+            "h": 645,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 4.07,
+        "drawMs": 7.493,
+        "steps": 474,
+        "draws": 309,
+        "render": {
+          "stats": {
+            "stepMs": 3425.799999654293,
+            "drawMs": 4029.8999996185303,
+            "steps": 802,
+            "draws": 465,
+            "multi": 223,
+            "dropped": 13
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 88,
+          "textures": 80,
+          "geometries": 155,
+          "dpr": 1
+        },
+        "longTasks": 4,
+        "longTaskMs": 587
+      },
+      {
+        "window": 2,
+        "elapsedMs": 8017.9,
+        "frames": 355,
+        "meanFps": 44.3,
+        "p95FrameMs": 32.2,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1312,
+            "h": 645,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 3.303,
+        "drawMs": 4.921,
+        "steps": 482,
+        "draws": 355,
+        "render": {
+          "stats": {
+            "stepMs": 5017.699999511242,
+            "drawMs": 5776.699999094009,
+            "steps": 1284,
+            "draws": 820,
+            "multi": 353,
+            "dropped": 13
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 88,
+          "textures": 80,
+          "geometries": 155,
+          "dpr": 1
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      }
+    ],
+    "debug-norender": [
+      {
+        "window": 1,
+        "elapsedMs": 8023.6,
+        "frames": 287,
+        "meanFps": 35.8,
+        "p95FrameMs": 67.5,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 96,
+            "h": 122,
+            "cssW": 48,
+            "cssH": 61
+          }
+        ],
+        "stepMs": 3.789,
+        "drawMs": 0.009,
+        "steps": 436,
+        "draws": 287,
+        "render": {
+          "stats": {
+            "stepMs": 3687.999999701977,
+            "drawMs": 4.200000107288361,
+            "steps": 738,
+            "draws": 388,
+            "multi": 153,
+            "dropped": 20
+          },
+          "calls": 1,
+          "triangles": 580,
+          "programs": 14,
+          "textures": 12,
+          "geometries": 25,
+          "dpr": 1.25
+        },
+        "longTasks": 2,
+        "longTaskMs": 913
+      },
+      {
+        "window": 2,
+        "elapsedMs": 8020.1,
+        "frames": 592,
+        "meanFps": 73.8,
+        "p95FrameMs": 33.3,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 96,
+            "h": 122,
+            "cssW": 48,
+            "cssH": 61
+          }
+        ],
+        "stepMs": 3.227,
+        "drawMs": 0.009,
+        "steps": 466,
+        "draws": 592,
+        "render": {
+          "stats": {
+            "stepMs": 5192.000000834465,
+            "drawMs": 9.79999989271164,
+            "steps": 1204,
+            "draws": 980,
+            "multi": 218,
+            "dropped": 21
+          },
+          "calls": 1,
+          "triangles": 580,
+          "programs": 14,
+          "textures": 12,
+          "geometries": 25,
+          "dpr": 1.25
+        },
+        "longTasks": 1,
+        "longTaskMs": 327
+      },
+      {
+        "window": 3,
+        "elapsedMs": 8006.1,
+        "frames": 705,
+        "meanFps": 88.1,
+        "p95FrameMs": 25.1,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 96,
+            "h": 122,
+            "cssW": 48,
+            "cssH": 61
+          }
+        ],
+        "stepMs": 2.682,
+        "drawMs": 0.007,
+        "steps": 483,
+        "draws": 705,
+        "render": {
+          "stats": {
+            "stepMs": 6487.500000536442,
+            "drawMs": 14.70000010728836,
+            "steps": 1687,
+            "draws": 1685,
+            "multi": 262,
+            "dropped": 21
+          },
+          "calls": 1,
+          "triangles": 580,
+          "programs": 14,
+          "textures": 12,
+          "geometries": 25,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      },
+      {
+        "window": 4,
+        "elapsedMs": 8008.6,
+        "frames": 619,
+        "meanFps": 77.3,
+        "p95FrameMs": 26.5,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 96,
+            "h": 122,
+            "cssW": 48,
+            "cssH": 61
+          }
+        ],
+        "stepMs": 3.491,
+        "drawMs": 0.009,
+        "steps": 479,
+        "draws": 619,
+        "render": {
+          "stats": {
+            "stepMs": 8159.700000405312,
+            "drawMs": 20.499999940395355,
+            "steps": 2166,
+            "draws": 2304,
+            "multi": 313,
+            "dropped": 22
+          },
+          "calls": 1,
+          "triangles": 580,
+          "programs": 14,
+          "textures": 12,
+          "geometries": 25,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      },
+      {
+        "window": 5,
+        "elapsedMs": 8001.8,
+        "frames": 651,
+        "meanFps": 81.4,
+        "p95FrameMs": 29.9,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 96,
+            "h": 122,
+            "cssW": 48,
+            "cssH": 61
+          }
+        ],
+        "stepMs": 2.902,
+        "drawMs": 0.008,
+        "steps": 480,
+        "draws": 651,
+        "render": {
+          "stats": {
+            "stepMs": 9552.900000154972,
+            "drawMs": 25.50000023841858,
+            "steps": 2646,
+            "draws": 2955,
+            "multi": 380,
+            "dropped": 22
+          },
+          "calls": 1,
+          "triangles": 580,
+          "programs": 14,
+          "textures": 12,
+          "geometries": 25,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      }
+    ],
+    "debug-standard-repeat": [
+      {
+        "window": 1,
+        "elapsedMs": 8037.9,
+        "frames": 153,
+        "meanFps": 19,
+        "p95FrameMs": 78.1,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 3.39,
+        "drawMs": 9.433,
+        "steps": 459,
+        "draws": 153,
+        "render": {
+          "stats": {
+            "stepMs": 3678.8000000715256,
+            "drawMs": 3132.500000178814,
+            "steps": 879,
+            "draws": 309,
+            "multi": 250,
+            "dropped": 13
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 83,
+          "textures": 80,
+          "geometries": 158,
+          "dpr": 1.25
+        },
+        "longTasks": 4,
+        "longTaskMs": 836
+      },
+      {
+        "window": 2,
+        "elapsedMs": 8015,
+        "frames": 124,
+        "meanFps": 15.5,
+        "p95FrameMs": 96.2,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 2.515,
+        "drawMs": 4.071,
+        "steps": 479,
+        "draws": 124,
+        "render": {
+          "stats": {
+            "stepMs": 4883.700000464916,
+            "drawMs": 3637.2999997735023,
+            "steps": 1358,
+            "draws": 433,
+            "multi": 374,
+            "dropped": 15
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 83,
+          "textures": 80,
+          "geometries": 158,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      },
+      {
+        "window": 3,
+        "elapsedMs": 8044.4,
+        "frames": 157,
+        "meanFps": 19.5,
+        "p95FrameMs": 79.7,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 2.031,
+        "drawMs": 3.356,
+        "steps": 483,
+        "draws": 157,
+        "render": {
+          "stats": {
+            "stepMs": 5864.5000004172325,
+            "drawMs": 4164.199999034405,
+            "steps": 1841,
+            "draws": 590,
+            "multi": 523,
+            "dropped": 15
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 83,
+          "textures": 80,
+          "geometries": 158,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      },
+      {
+        "window": 4,
+        "elapsedMs": 8050.9,
+        "frames": 156,
+        "meanFps": 19.4,
+        "p95FrameMs": 81.3,
+        "visibility": "visible",
+        "focused": true,
+        "visibilityChanges": 0,
+        "canvas": [
+          {
+            "w": 1640,
+            "h": 806,
+            "cssW": 1312,
+            "cssH": 645
+          },
+          {
+            "w": 57,
+            "h": 73,
+            "cssW": 28,
+            "cssH": 36
+          }
+        ],
+        "stepMs": 1.91,
+        "drawMs": 3.126,
+        "steps": 482,
+        "draws": 156,
+        "render": {
+          "stats": {
+            "stepMs": 6785.000000596046,
+            "drawMs": 4651.799998819828,
+            "steps": 2323,
+            "draws": 746,
+            "multi": 670,
+            "dropped": 15
+          },
+          "calls": 14,
+          "triangles": 28,
+          "programs": 83,
+          "textures": 80,
+          "geometries": 158,
+          "dpr": 1.25
+        },
+        "longTasks": 0,
+        "longTaskMs": 0
+      }
+    ]
+  },
+  "cleanup": {
+    "beforeFree": 30638080000,
+    "afterFree": 31047680000,
+    "volumeFreeDelta": 409600000,
+    "removedLogicalBytes": 416719321,
+    "targets": [
+      {
+        "path": "work/mvp-staging-drive-fix.tar.gz",
+        "files": 1,
+        "bytes": 21954237,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-staging-r2.tar.gz",
+        "files": 1,
+        "bytes": 21953735,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-staging-r3-preview-c41dc9.tar.gz",
+        "files": 1,
+        "bytes": 55046902,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-v771-v6-auth-fix.tar.gz",
+        "files": 1,
+        "bytes": 21954061,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-site-r2-package",
+        "files": 128,
+        "bytes": 47796011,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-site-r3-package",
+        "files": 635,
+        "bytes": 79776539,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-site-r3-c41dc9-package",
+        "files": 630,
+        "bytes": 79004699,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      },
+      {
+        "path": "work/mvp-gpt-site-r1-2026-10-24/dist",
+        "files": 703,
+        "bytes": 89233137,
+        "reason": "superseded reproducible build/archive or immutable GitHub dist intake; current R4/source/QA evidence retained"
+      }
+    ]
+  },
+  "interpretation": {
+    "finding": "render-path/resolution-sensitive bottleneck; simulation alone is materially faster",
+    "notProven": [
+      "exact GPU versus compositor/driver/shader/shadow cost",
+      "exclusive effect of DPR under varying sequential background load",
+      "60FPS acceptance for the playable scene"
+    ],
+    "confounds": [
+      "OS storage analysis and WindowServer substantial concurrent CPU activity; unrelated processes not terminated",
+      "startup and delayed resource activity can outlast10seconds; first norender window35.8 retained",
+      "device-emulation/unfocused runs discarded before accepted desktop matrix",
+      "Chrome GPU diagnostic page blocked by browser policy; no workaround attempted"
+    ],
+    "counterWarning": "renderer.info14calls28triangles is final HUD pass, not world total",
+    "sourceAudit": [
+      "test/perfMvp.mjs uses world=probe while delivered default world=endless",
+      "M1Loop.jsx draws world then hudPass; telemetry must delimit/sum whole frame",
+      "EndlessDrive.jsx passes no cull option to endlessVeg; its perObjectFrustumCulled therefore false"
+    ],
+    "independentAudit": "read-only tester verified5scenarios14windows4594intervals; agrees qualified render-path lead; no exact GPU cause"
+  },
+  "restoration": {
+    "productionSourceUntouched": true,
+    "localBuiltObserverRestoredByteExact": true,
+    "ownedLocalServerStopped": true,
+    "liveTabRestored": true
+  }
+}

@@ -1,3 +1,7 @@
+## 2026-10-27 · WSA Einzelinstanz-FPS-Diagnose / v9 unverändert
+
+14Messfenster4594Intervalle:Standard15,5–21,5FPS,Fast38,5–44,3; norender nachweiteremLaden73,8–88,1. Render-/Auflösungsengpass begründet, konkreteGPU-Ursacheoffen. HUD-Endzähler14Calls28Tris nichtWeltbudget. KonkreterWS0-Patchvorschlag: vorhandeneQualitätsregelung, Gesamtframezähler, Endlos-TeststattProbe; VegetationsCullalsnächsteHypothese. EigeneAlt-Pakete/Buildbereinigt,~410MBfrei. Report replies/WSA_TO_WS0_SINGLE_INSTANCE_FPS_DIAGNOSIS_2026-10-27.md. Site/World/Secretsunverändert; nächstesGateWS0World-Patch+kontrollierterVergleich.
+
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-27 · WSA · R4 ec7b057 private Staging v9 LIVE
