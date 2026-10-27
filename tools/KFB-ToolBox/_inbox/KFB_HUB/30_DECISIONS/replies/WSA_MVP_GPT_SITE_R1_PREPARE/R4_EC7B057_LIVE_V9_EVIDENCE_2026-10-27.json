@@ -1,0 +1,172 @@
+{
+  "schema": "kfb.ws1-staging.ec7b057.evidence/1",
+  "date": "2026-10-27",
+  "input": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "site/mvp-r3-dist",
+    "head": "ec7b0579f98b0ab2be2ea51132344c8354eac308",
+    "listedFiles": 677,
+    "listedBytes": 107013128,
+    "manifestSha256": "a67dea26c7ec3afb26e15d0bc791f45214b969a1871be2e937c7916f826443df",
+    "sha256Passed": 677
+  },
+  "site": {
+    "projectId": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+    "version": 9,
+    "versionId": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_77afbeec137c8191a36d62e7ab801fd1",
+    "sourceHead": "8e8e4d07816ac42f68ab656a457bb19889d67c08",
+    "deploymentId": "appgdep_6ae11f69c74c81919de33dc5848ce83a",
+    "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+    "archiveBytes": 118005760,
+    "archiveFiles": 752,
+    "envRevision": 1,
+    "audience": "unchanged custom one owner user zero groups",
+    "secondaryBasicAuth": false
+  },
+  "tests": {
+    "targetedAssertions": {
+      "passed": 57,
+      "failed": 0
+    },
+    "localHttp": {
+      "passed": 680,
+      "failed": 0
+    },
+    "hosted": {
+      "revision": "ec7b0579f98b0ab2be2ea51132344c8354eac308",
+      "passed": 16,
+      "failed": 0,
+      "checks": [
+        {
+          "kind": "anonymous denied",
+          "path": "/",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/game-package/assets/hero-Cg69yYuF.glb",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/game-package/",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/h15/index.html",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/heygen/beseeltes_fahrzeug.mp4",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/raw/0aa844d54313205463c8387c9fb7f10bbd817461/media/kfb-audio/r1/index.json",
+          "status": 401,
+          "pass": true
+        },
+        {
+          "kind": "entry",
+          "path": "/",
+          "status": 200,
+          "pass": true,
+          "location": null
+        },
+        {
+          "kind": "entry",
+          "path": "/game-package/",
+          "status": 200,
+          "pass": true,
+          "location": null
+        },
+        {
+          "kind": "entry",
+          "path": "/game-package/index.html",
+          "status": 307,
+          "pass": true,
+          "location": "/game-package/"
+        },
+        {
+          "kind": "entry",
+          "path": "/index.html",
+          "status": 307,
+          "pass": true,
+          "location": "/"
+        },
+        {
+          "kind": "exact bytes",
+          "path": "/SITE_README.md",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "kind": "exact bytes",
+          "path": "/assets/index--AnGlIN9.js",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "kind": "content preserved + platform protection script",
+          "path": "/h15/index.html",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "kind": "Range",
+          "path": "/assets/hero-Cg69yYuF.glb",
+          "status": 206,
+          "mime": "model/gltf-binary",
+          "pass": true
+        },
+        {
+          "kind": "Range",
+          "path": "/heygen/beseeltes_fahrzeug.mp4",
+          "status": 206,
+          "mime": "video/mp4",
+          "pass": true
+        },
+        {
+          "kind": "default",
+          "status": 200,
+          "pass": true
+        }
+      ]
+    },
+    "browser": {
+      "defaultEndlessHud3d": true,
+      "ownerLoginWithoutSecondaryPassword": true,
+      "xMountWDriveXExit": true,
+      "observedSpeedKmh": 12,
+      "capturedConsoleErrors": 0,
+      "audioIndicator": "Chrome reports audio playback; subjective listening not certified"
+    },
+    "fps": {
+      "frames": 300,
+      "meanFps": 11.1,
+      "p95FrameMs": 301.2,
+      "scope": "foreground Chrome browser rAF; startup included; local QA instance and many other browser tabs concurrently present; not engine-only telemetry",
+      "target60": "NOT_MET_IN_THIS_SAMPLE"
+    },
+    "historicalWs1Suite": "75/80 supplied, not rerun",
+    "initialProbeCorrections": "13/16 initial: directory routing expectations too strict; H15 HTML includes platform challenge injection. Delivered content intact; final checks explicitly accommodate only observed platform behavior."
+  },
+  "defaults": {
+    "emptyHash": "#m1,harvest,look=terrain3,world=endless,hud=3d,palseed=803,mount=live",
+    "explicitHashesPreserved": true
+  },
+  "unresolved": [
+    "60fps acceptance not met in observed sample",
+    "Subjective audio/biome bird listening unverified",
+    "Full cafe/dome/landmark travel and disco traversal not certified",
+    "Delivered README explicit hash without mount=live still does not enable X; bare URL receiving default adds flag",
+    "Newer game/music changes after ec7b057 are outside this pinned delivery"
+  ]
+}
