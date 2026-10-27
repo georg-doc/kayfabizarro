@@ -1,0 +1,410 @@
+{
+ "packId": "anti_rules_toolkit",
+ "file": "Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+ "changed": [
+  {
+   "n": 1,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Dry leader. Busy."
+   },
+   "new": {
+    "lore": "Cry harder, Esq."
+   }
+  },
+  {
+   "n": 3,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequence."
+   },
+   "new": {
+    "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequences."
+   }
+  },
+  {
+   "n": 4,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "The Meta: Cancel a move that is “too fun” on the grounds that it isn’t optimal."
+   },
+   "new": {
+    "power": "The Veto: Cancel a Move that is “too fun” on the grounds that it isn’t “optimal.”"
+   }
+  },
+  {
+   "n": 5,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it's okay."
+   },
+   "new": {
+    "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it’s okay."
+   }
+  },
+  {
+   "n": 10,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Blödsinn is not a mistake. It is a state."
+   },
+   "new": {
+    "lore": "BLÖDSINN is not a mistake. It is a state."
+   }
+  },
+  {
+   "n": 14,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Reality Check: If the table laughs, your roll succeeds automatically."
+   },
+   "new": {
+    "power": "Reality check: If the table laughs, your roll succeeds automatically."
+   }
+  },
+  {
+   "n": 15,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "They exist to interrupt pure panic."
+   },
+   "new": {
+    "lore": "They exist to interrupt rule panic."
+   }
+  },
+  {
+   "n": 17,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Edit: Physically cross out one word on a Stage Card. It is now forever removed."
+   },
+   "new": {
+    "power": "Editor: Physically cross out one word on a Stage Card. It is gone forever."
+   }
+  },
+  {
+   "n": 18,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Documents labeled “FINAL” and immediately contradicted."
+   },
+   "new": {
+    "lore": "Documents labeled ‘FINAL’ and immediately contradicted."
+   }
+  },
+  {
+   "n": 19,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Validation: Play to approve a move that the “Rules Lawyer” rejected."
+   },
+   "new": {
+    "power": "Validation: Play to approve a move that the ‘Rules Lawyer’ hates."
+   }
+  },
+  {
+   "n": 21,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Declaration: Read the Anti-Rule aloud. No discussion allowed."
+   },
+   "new": {
+    "power": "Declaration: Read one Anti-Rule aloud. No discussion allowed."
+   }
+  },
+  {
+   "n": 23,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Focus: If everyone looks at you, +1 to your roll."
+   },
+   "new": {
+    "power": "Focus: If everyone looks at you, +1 to your Roll."
+   }
+  },
+  {
+   "n": 26,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Critique: Claim this is “Bad Design,” reroll your die."
+   },
+   "new": {
+    "power": "Critique: Claim this is ‘Bad Design.’ Reroll your die."
+   }
+  },
+  {
+   "n": 27,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "When the table stalls… invoke an Anti-Rule."
+   },
+   "new": {
+    "lore": "When the table stalls... invoke an Anti-Rule."
+   }
+  },
+  {
+   "n": 28,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Stop: Any player may play this to stop trying to win. They are now telling stories."
+   },
+   "new": {
+    "power": "Stop: Any player may play this to Stop Trying to Win. They are now just telling stories."
+   }
+  },
+  {
+   "n": 30,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Comfort: Protect an Actor from a “Blödsinn” check."
+   },
+   "new": {
+    "power": "Comfort: Protect an Actor from a ‘Blödsinn’ check."
+   }
+  },
+  {
+   "n": 31,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "These feelings are ironic."
+   },
+   "new": {
+    "lore": "These framings are ironic."
+   }
+  },
+  {
+   "n": 32,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it works."
+   },
+   "new": {
+    "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it succeeds."
+   }
+  },
+  {
+   "n": 34,
+   "fields": [
+    "power",
+    "lore"
+   ],
+   "old": {
+    "power": "Doubt: Challenge a “correct” move. There is no correct move.",
+    "lore": "Remove the illusion of a “correct” move."
+   },
+   "new": {
+    "power": "Doubt: Challenge a 'Correct' move. There is no correct move.",
+    "lore": "Remove the illusion of a 'correct' move."
+   }
+  },
+  {
+   "n": 35,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Deflect: Shift the consequence of a bad roll to the Game Designer."
+   },
+   "new": {
+    "power": "Deflect: Shift the consequence of a bad roll to the 'Game Designer'."
+   }
+  },
+  {
+   "n": 36,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Define: You decide what another player's card “really” means."
+   },
+   "new": {
+    "power": "Define: You decide what another player's card *really* means."
+   }
+  },
+  {
+   "n": 38,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Philosophers, clerks, editors. Bureaucrats."
+   },
+   "new": {
+    "lore": "Philosophers, clerks, editors, bureaucrats."
+   }
+  },
+  {
+   "n": 45,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Interpretation: The rules mean whatever the group decides they mean tonight."
+   },
+   "new": {
+    "power": "Interpretation: The rules mean whatever the group decides they mean right now."
+   }
+  },
+  {
+   "n": 47,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Determine responsibility."
+   },
+   "new": {
+    "lore": "Externalize responsibility."
+   }
+  },
+  {
+   "n": 48,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Leave the emergency handle named “Please tell me the correct move” unused."
+   },
+   "new": {
+    "lore": "Remove the emergency handle marked \"Please tell me what the correct move is.\""
+   }
+  },
+  {
+   "n": 49,
+   "fields": [
+    "power"
+   ],
+   "old": {
+    "power": "Shift: Force an Actor to change their MOOD to “anxious.”"
+   },
+   "new": {
+    "power": "Shift: Force an Actor to change their MOOD to ‘Anxious’."
+   }
+  },
+  {
+   "n": 51,
+   "fields": [
+    "power",
+    "lore"
+   ],
+   "old": {
+    "power": "Tip: Instantly change the Quest Goal by 1/2.",
+    "lore": "If the tips, Quest collapses."
+   },
+   "new": {
+    "power": "Tip: Instantly change the Quest Die value by ±2.",
+    "lore": "If die tips, Quest collapses."
+   }
+  },
+  {
+   "n": 52,
+   "fields": [
+    "lore"
+   ],
+   "old": {
+    "lore": "Tell a story connecting Mood → Stage → Quest."
+   },
+   "new": {
+    "lore": "Tell a story connecting: Actor -> Stage -> Quest."
+   }
+  },
+  {
+   "n": 53,
+   "fields": [
+    "power",
+    "lore"
+   ],
+   "old": {
+    "power": "Game Over: End the game if everyone at the table feels “fluffy” (relaxed/confused).",
+    "lore": "Stay Fluffy."
+   },
+   "new": {
+    "power": "Game Over: End the game if everyone at the table feels 'fluffy' (relaxed/confused).",
+    "lore": "Stay fluffy."
+   }
+  },
+  {
+   "n": 54,
+   "fields": [
+    "power",
+    "lore"
+   ],
+   "old": {
+    "power": "Victory: Win the game instantly if you shout “BINGO!” for no reason.",
+    "lore": "Kayfabingo!"
+   },
+   "new": {
+    "power": "Victory: Win the game instantly if you shout 'BINGO' for no reason.",
+    "lore": "KayfaBINGO!"
+   }
+  }
+ ],
+ "confirmed": [
+  2,
+  6,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  16,
+  20,
+  22,
+  24,
+  25,
+  29,
+  33,
+  37,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  46,
+  50,
+  55,
+  56
+ ],
+ "added": [],
+ "notInPrint": [],
+ "open": [],
+ "cards": 56
+}

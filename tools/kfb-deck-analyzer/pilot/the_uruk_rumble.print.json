@@ -1,0 +1,1886 @@
+{
+ "packId": "the_uruk_rumble",
+ "pdf": "The_Uruk_Rumble - ADD web ID.pdf",
+ "checkedAt": "2026-10-27",
+ "pagesViewed": 15,
+ "quadsViewed": 20,
+ "mappingNote": "Registry-Zuordnung stimmt am Titel für Karten 1–52 (S. 2–14, TL/TR/BL/BR). Karten 53–54 liegen nicht im 2x2-Raster, sondern als Mini-Bonuskarten auf der Credit-Seite S. 15 (links oben bzw. links unten); Textquelle entsprechend p15 TL/BL.",
+ "cards": [
+  {
+   "cardNumber": 1,
+   "cardName": "Gilgamesh \"The King\"",
+   "cardNamePrint": "GILGAMESH \"THE KING\"",
+   "power": "Prima Nocta: Take one card from an opponent. If it's shiny, keep it.",
+   "lore": "Two-thirds god, one-third jerk. He rings the city bell just to wake people up. The original toxic bachelor.",
+   "stats": {
+    "R": 5,
+    "A": 2,
+    "F": 6
+   },
+   "printTypo": "„Prima Nocta“ wörtlich belassen (lateinisch eigentlich ius primae noctis).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p2 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Der Lore-Einstieg „Two-thirds god, one-third jerk“ ist zitierbar; die Power bleibt vage (was passiert, wenn die Karte nicht glänzt?).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 2,
+   "cardName": "Enkidu \"The Beast\"",
+   "cardNamePrint": "ENKIDU \"THE BEAST\"",
+   "power": "Wild Card: Cancels \"Civilization\" effects. Bonus damage if fighting alongside Gilgamesh.",
+   "lore": "Created from clay to humble the champ. Knows the woods, the animals, and exactly how hard to punch a god.",
+   "stats": {
+    "R": 3,
+    "A": 6,
+    "F": 1
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p2 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Power ist klar und spiegelt das Motiv (wild gegen Zivilisation); Lore ist eine Aufzählung, der Klappstuhl im Bild bleibt ohne Bezug im Text.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 3,
+   "cardName": "Uruk \"The Arena\"",
+   "cardNamePrint": "URUK \"THE ARENA\"",
+   "power": "Home Field Advantage: +2 Defense. Look at the brickwork—it's burnt brick, not sun-dried!",
+   "lore": "The Absurdly Cool City. Three leagues of copper walls. Smells like oppression and cedar.",
+   "stats": {
+    "R": 6,
+    "A": 1,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p2 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Echter Wissenskern: die Gebrannte-Ziegel-Zeile stammt aus Tafel I. „+2 Defense“ passt aber zu keinem Wert auf der Karte (R/A/F).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 4,
+   "cardName": "The 12 Tablets",
+   "cardNamePrint": "THE 12 TABLETS",
+   "power": "The Script: Rewrite the ending of the current turn.",
+   "lore": "The oldest story ever sold. Warning: Contains missing fragments, plot holes, and a baffling",
+   "stats": {
+    "R": 6,
+    "A": 4,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": "Letzte Wörter der Lore unter dem GW-Logo verdeckt; sichtbar nur „Gai… Ending“ (vermutlich „Gainax Ending“ wie auf Karte 49).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p2 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Solide Meta-Karte (Klebeband auf den Tafeln = Lücken), aber die Power bleibt unscharf und die Lore ist im Druck abgeschnitten.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 5,
+   "cardName": "Shamhat \"The Valet\"",
+   "cardNamePrint": "SHAMHAT \"THE VALET\"",
+   "power": "Civilize: Turn a 'Beast' card into a 'Sidekick' card. Takes 7 days (turns).",
+   "lore": "Used \"love arts\" to weaken Enkidu's knees and boost his IQ. The original influencers were temple priestesses.",
+   "stats": {
+    "R": 4,
+    "A": 2,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p3 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Power übersetzt die sieben Tage aus dem Epos direkt in Spielzüge; Lore und Bild bleiben brav.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 6,
+   "cardName": "Ninsun \"The Momager\"",
+   "cardNamePrint": "NINSUN \"THE MOMAGER\"",
+   "power": "Dream Interpretation: Look at top 3 cards. Reorder them to favor your son.",
+   "lore": "Gilgamesh's mom. She adopts Enkidu because her biological son is a handful. Always reads the spoilers.",
+   "stats": {
+    "R": 2,
+    "A": 1,
+    "F": 6
+   },
+   "printTypo": "Glyphe: „GIlgamesh's“ (i ohne Punkt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p3 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 0
+    },
+    "reason": "Power spiegelt die Traumdeutung sauber, und die Kuh trifft Ninsuns Beinamen „Wildkuh“. Der Anker in der Traumblase hat im Epos keine Grundlage.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 7,
+   "cardName": "Enlil \"The Booker\"",
+   "cardNamePrint": "ENLIL \"THE BOOKER\"",
+   "power": "Noise Complaint: Wipe the board (Flood). He can't sleep because humans are too loud.",
+   "lore": "A Jerkass God. Tried to delete humanity for being too noisy. Even other gods think he goes too far.",
+   "stats": {
+    "R": 1,
+    "A": 6,
+    "F": 3
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p3 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Der Booker, der hinter den Kulissen über Leben und Tod entscheidet, ist Enlil genau. Die Gewitterwolke im Anzug ist Sturmgott und Manager zugleich.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 8,
+   "cardName": "Shamash \"The Ref\"",
+   "cardNamePrint": "SHAMASH \"THE REF\"",
+   "power": "Divine Intervention: Bind a monster with 13 winds so the hero can land a cheap shot.",
+   "lore": "The Sun God. He hands out Cheat Codes (Axes, Swords) to Gilgamesh because he loves a winner.",
+   "stats": {
+    "R": 3,
+    "A": 3,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („loves a winner“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p3 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Die dreizehn Winde gegen Humbaba sind echt und als Power spielbar; der Bär bringt für den Sonnengott nichts mit.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 9,
+   "cardName": "Ishtar \"The Diva\"",
+   "cardNamePrint": "ISHTAR \"THE DIVA\"",
+   "power": "Yandere Tantrum: If rejected, summon a 'Bull of Heaven' or a 'Zombie Apocalypse'.",
+   "lore": "Goddess of Love and War. Don't date her. Ask her ex-boyfriends (who are now wolves and frogs).",
+   "stats": {
+    "R": 4,
+    "A": 6,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p4 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Stark über die Lore: die verwandelten Ex-Liebhaber und die Drohung, die Toten loszulassen, stehen wirklich im Epos. Die Katze bleibt Kostüm.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 10,
+   "cardName": "The Roast (Radish Cure)",
+   "cardNamePrint": "THE ROAST (RADISH CURE)",
+   "power": "Vicious Mockery: Inflict emotional damage. Force Ishtar to run to her daddy (Anu).",
+   "lore": "A brutal verbal beatdown citing every ex-lover she destroyed. The first recorded 'Diss Track'.",
+   "stats": {
+    "R": 5,
+    "A": 5,
+    "F": 2
+   },
+   "printTypo": "Werte gedruckt als „[R:S] [A:S]“ (S statt 5).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p4 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "„The first recorded Diss Track“ trifft Gilgameschs Abfuhr an Ischtar genau, und die lange Liste in der Hand ist das Bild dazu. Der Zusatz „Radish Cure“ bleibt unerklärt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 11,
+   "cardName": "Bull of Heaven \"Gugalana\"",
+   "cardNamePrint": "BULL OF HEAVEN \"GUGALANA\"",
+   "power": "Drought: Dries up the river. Opens sinkholes that swallow 200 men.",
+   "lore": "Ishtar borrowed her sister's husband to wreck the city. A weapon of mass destruction with horns.",
+   "stats": {
+    "R": 2,
+    "A": 6,
+    "F": 4
+   },
+   "printTypo": "Titel druckt „GUGALANA“ (übliche Schreibung Gugalanna, so im JSON).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p4 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Gutes Wissen (Erdlöcher, die Männer verschlucken; Gugalanna als Gatte Ereschkigals), aber die Power beschreibt eher, als dass sie eine Spielhandlung gibt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Titel: JSON „Bull of Heaven \"Gugalanna\"“ → Druck „Bull of Heaven \"Gugalana\"“; power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 12,
+   "cardName": "The Haunch Throw",
+   "cardNamePrint": "THE HAUNCH THROW\"",
+   "power": "Did You Just Flip Off Cthulhu?: Instant respect. Instant death sentence.",
+   "lore": "The ultimate Badass Boast. Enkidu taunts a goddess with beef. This will not end well.",
+   "stats": {
+    "R": 3,
+    "A": 6,
+    "F": 6
+   },
+   "printTypo": "Titel mit überzähligem schließendem Anführungszeichen: „THE HAUNCH THROW”“.",
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („end well“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p4 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Das fliegende Roboterbein greift den Mech-Stier von Karte 11 auf, das Bild trägt den Gag. Die Power ist ein Meme ohne Spielhandlung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "cardNamePrint: JSON „THE HAUNCH THROW“ → Druck „THE HAUNCH THROW\"“; power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 13,
+   "cardName": "The Cedar Forest",
+   "cardNamePrint": "THE CEDAR FOREST",
+   "power": "Sacred Ground: Trespassers must roll for intimidation.",
+   "lore": "A pristine nature reserve until two bros decided they needed lumber and glory. \"Going to see the Elephant\".",
+   "stats": {
+    "R": 6,
+    "A": 2,
+    "F": 3
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p5 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Durchschnittlich auf allen Achsen; die US-Redewendung „Going to see the Elephant“ passt nicht nach Mesopotamien.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 14,
+   "cardName": "Humbaba \"The Jobber\"",
+   "cardNamePrint": "HUMBABA \"THE JOBBER\"",
+   "power": "7 Auras: Remove one aura per turn to make him vulnerable.",
+   "lore": "Guardian of the forest. His face looks like entrails. He begged for mercy, but the script said \"die\".",
+   "stats": {
+    "R": 2,
+    "A": 5,
+    "F": 5
+   },
+   "printTypo": "Werte gedruckt als „[A:S] [F:S]“ (S statt 5).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p5 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Der Jobber, der nach Drehbuch verliert, ist die perfekte Wrestling-Übersetzung. Sieben Auren und das Eingeweide-Gesicht sind echt, und das Bild zeigt genau dieses Gesicht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 15,
+   "cardName": "The 13 Winds",
+   "cardNamePrint": "THE 13 WINDS",
+   "power": "Deus Ex Machina: Shamash immobilizes the boss so you can hit it.",
+   "lore": "It's not a fair fight if the Sun God blinds your opponent with tornadoes. Total rig job.",
+   "stats": {
+    "R": 1,
+    "A": 4,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p5 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Spielbar, wiederholt aber den Kern von Shamash (Karte 8) ohne neuen Witz.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 16,
+   "cardName": "\"Kill Him Already!\"",
+   "cardNamePrint": "\"KILL HIM ALREADY!\"",
+   "power": "Peer Pressure: Execute the target immediately. Gain Loot.",
+   "lore": "Gilgamesh hesitated. Enkidu didn't. \"If you let him go, he'll just come back for the sequel.\"",
+   "stats": {
+    "R": 4,
+    "A": 5,
+    "F": 1
+   },
+   "printTypo": "Wert gedruckt als „[A:S]“ (S statt 5).",
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („the sequel.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p5 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Klare Power; die Sequel-Pointe der Lore ist im Druck halb unter dem Logo und trägt so nur bedingt.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 17,
+   "cardName": "120lb Daggers (BFS)",
+   "cardNamePrint": "120lb DAGGERS (BFS)",
+   "power": "Dual Wielding: Attack twice. Requires Strength 60.",
+   "lore": "Gold daggers weighing 4 talents each. Anime swords existed in 2100 BCE.",
+   "stats": {
+    "R": 3,
+    "A": 5,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p6 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Spielbare Power, aber der Wissenskern widerspricht sich: 4 Talente sind weit mehr als 120 lb.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 18,
+   "cardName": "The Haircut",
+   "cardNamePrint": "THE HAIRCUT",
+   "power": "Civilization Upgrade: Lose 'Wild' trait, gain 'Depression'.",
+   "lore": "The barber of Uruk transforms the beast. Now he can drink beer and wear uncomfortable clothes.",
+   "stats": {
+    "R": 5,
+    "A": 1,
+    "F": 3
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p6 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "„Gain Depression“ ist der beste Satz; die Lore erklärt nur nach.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 19,
+   "cardName": "Door Building",
+   "cardNamePrint": "DOOR BUILDING",
+   "power": "Craftsmanship: Construct a tribute to Enlil (who still hates you).",
+   "lore": "They killed the guardian, stole the wood, and made a door for the god who hired the guardian. Mixed messages.",
+   "stats": {
+    "R": 6,
+    "A": 1,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p6 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Die Lore deckt einen echten Widerspruch des Epos auf (Tür für Enlil, der Humbaba eingesetzt hat) und steht allein. Die Power hat keine Spielwirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 20,
+   "cardName": "The Shared Dream",
+   "cardNamePrint": "THE SHARED DREAM",
+   "power": "Foreshadowing: Predict the next Trap card.",
+   "lore": "Every night, a new nightmare. Enkidu spins it as 'Reverse Psychology' for success. He was wrong.",
+   "stats": {
+    "R": 2,
+    "A": 3,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („He was wrong.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p6 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Der einstürzende Berg ist korrekt, aber Power (welche Trap-Karte?) und Lore bleiben flach.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 21,
+   "cardName": "The Council's Vote",
+   "cardNamePrint": "THE COUNCIL'S VOTE",
+   "power": "Executive Decision: Kill one hero. (They chose Enkidu because Gilgamesh is the franchise star).",
+   "lore": "Someone has to pay for the Bull. It can't be the King. Sorry, Enkidu.",
+   "stats": {
+    "R": 1,
+    "A": 6,
+    "F": 1
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p7 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "„Franchise star“ ist ein guter Gag, steht aber in der Power-Klammer statt im Bild oder in der Lore.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 22,
+   "cardName": "Soap Opera Disease",
+   "cardNamePrint": "SOAP OPERA DISEASE",
+   "power": "Wasting Away: Loses 1 HP per day for 12 days.",
+   "lore": "A mysterious divine illness. The slow agony of realizing you were just a plot device.",
+   "stats": {
+    "R": 4,
+    "A": 2,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p7 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Die zwölf Krankheitstage sind echt; die Power lässt offen, wer HP verliert, und das Spiel kennt keine HP.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 23,
+   "cardName": "The Maggot",
+   "cardNamePrint": "THE MAGGOT",
+   "power": "Reality Check: Gilgamesh gains 'Mortality Phobia'.",
+   "lore": "Gilgamesh refused to bury him for 7 days until... well, until nature happened. Grief is messy.",
+   "stats": {
+    "R": 6,
+    "A": 5,
+    "F": 0
+   },
+   "printTypo": "Glyphe: „untll“ (i ohne Punkt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p7 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Das Bild ist die Zeile aus Tafel X (der Wurm fällt aus der Nase) und damit die Pointe; die Power hängt an Karte 26 und an Gilgamesch im Spiel.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 24,
+   "cardName": "The Golden Statue",
+   "cardNamePrint": "THE GOLDEN STATUE",
+   "power": "Merchandising: Gain prestige, but lose your best friend.",
+   "lore": "The funeral was lavish. The grief was loud. The statue is solid gold. It doesn't help.",
+   "stats": {
+    "R": 3,
+    "A": 1,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („It doesn't help.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p7 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Lore hat Rhythmus und einen trockenen Schluss; die Power bleibt vage („gain prestige“).",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 25,
+   "cardName": "Lion Skin Hoodie",
+   "cardNamePrint": "LION SKIN HOODIE",
+   "power": "Intimidate: Scares tavern owners. Lowers Charisma.",
+   "lore": "He rejects the silk robes of the King to cosplay as his dead friend's wild past. Hourglass Plot.",
+   "stats": {
+    "R": 5,
+    "A": 4,
+    "F": 2
+   },
+   "printTypo": "„Hourglass Piot“ gedruckt, gemeint „Hourglass Plot“.",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p8 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Power verweist sauber auf Siduri, die vor ihm erschrickt; die Lore endet auf einem Trope-Namen statt auf einer Pointe.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 26,
+   "cardName": "Mortality Phobia",
+   "cardNamePrint": "MORTALITY PHOBIA",
+   "power": "Panic: Run to the end of the world. Do not stop for side quests.",
+   "lore": "\"Am I not like him? Must I lie down too?\" The first recorded existential crisis.",
+   "stats": {
+    "R": 5,
+    "A": 6,
+    "F": 1
+   },
+   "statsAlt": {
+    "R": 6,
+    "A": 2,
+    "F": 1
+   },
+   "printTypo": null,
+   "printOpen": "Zwei Wertesätze mit verschiedenen Zahlen gedruckt: oben [R:5] [A:6] [F:1], unten [R:6] [A:2] [F:1]; stats = oberer Satz.",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p8 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Echtes Epos-Zitat plus „first recorded existential crisis“: zitierbar und lehrreich. Das Bild illustriert nur.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 27,
+   "cardName": "The Steppe",
+   "cardNamePrint": "THE STEPPE",
+   "power": "Wander: Discard your hand to draw new cards from the 'Unknown' deck.",
+   "lore": "Roaming the wilderness eating raw meat. It's not a vacation; it's a trauma response.",
+   "stats": {
+    "R": 5,
+    "A": 2,
+    "F": 1
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p8 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Einen „Unknown“-Stapel gibt es nicht; die Trauma-Zeile ist ordentlich, das Bild bloße Landschaft.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 28,
+   "cardName": "Mayfly Philosophy",
+   "cardNamePrint": "MAYFLY PHILOSOPHY",
+   "power": "Nihilism: Negate all 'Glory' points.",
+   "lore": "\"Man is snapped off like a reed in the canebrake.\" We are here, then we are gone. Bummer.",
+   "stats": {
+    "R": 6,
+    "A": 1,
+    "F": 4
+   },
+   "printTypo": "Glyphe: „lIke“ (i ohne Punkt).",
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („gone. Bummer.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p8 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Zwei echte Epos-Bilder in einem: Schilfrohr-Zitat und Eintagsfliege (Utnapischtims Rede), das Bild zeigt beides. Die Power negiert genau den Ruhm, den Gilgamesch sucht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 29,
+   "cardName": "Mount Mashu",
+   "cardNamePrint": "MOUNT MASHU",
+   "power": "Threshold: Only those with \"Despair\" status may enter.",
+   "lore": "The gate where the sun rises and sets. The VIP entrance to the God Realm.",
+   "stats": {
+    "R": 4,
+    "A": 3,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p9 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Korrekt (Zwillingsgipfel, Sonnentor), aber ohne Witz, der über „VIP entrance“ hinausgeht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 30,
+   "cardName": "Scorpion People",
+   "cardNamePrint": "SCORPION PEOPLE",
+   "power": "Bouncer: \"You're not on the list.\" Check ID. Their glance is death.",
+   "lore": "But they are actually pretty chill once you explain you're grieving.",
+   "stats": {
+    "R": 3,
+    "A": 5,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Wertesatz doppelt gedruckt (oben und unten, gleiche Zahlen).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p9 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Skorpionmenschen als Türsteher mit Klemmbrett: Bild und Text verstärken sich sofort. Die Power sagt nicht, was der Spieler tut.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 31,
+   "cardName": "The Sun Tunnel",
+   "cardNamePrint": "THE SUN TUNNEL",
+   "power": "Speed Run: Roll dice. If you fail, the Sun catches you. Outrun the Fireball!",
+   "lore": "12 leagues of total darkness. He has to race the Sun God's commute.",
+   "stats": {
+    "R": 2,
+    "A": 6,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p9 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Wettlauf mit der Sonne durch zwölf Doppelstunden Dunkelheit stimmt; was beim Scheitern passiert, bleibt offen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 32,
+   "cardName": "Garden of Gems",
+   "cardNamePrint": "GARDEN OF GEMS",
+   "power": "Shiny Distraction: Skip a turn to stare at the bling.",
+   "lore": "After the darkness, a trippy crystal forest. Siduri lives near here.",
+   "stats": {
+    "R": 1,
+    "A": 2,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („near here.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p9 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 0,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Klare, motivgetreue Power; die Lore ist reiner Überleitungssatz.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 33,
+   "cardName": "Siduri \"The Barmaid\"",
+   "cardNamePrint": "SIDURI \"THE BARMAID\"",
+   "power": "Real Talk: \"Fill your belly. Dance and play.\" Heals 10 HP.",
+   "lore": "The tavern at the end of the universe. She gives the best advice in the book: Carpe Diem. Gilgamesh ignores it.",
+   "stats": {
+    "R": 5,
+    "A": 2,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": "Wertesatz doppelt gedruckt (oben und unten, gleiche Zahlen).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p10 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Siduris berühmter Rat ist korrekt zitiert; „Heals 10 HP“ setzt ein HP-System voraus, das die Karten nicht haben.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 34,
+   "cardName": "Urshanabi \"The Ferryman\"",
+   "cardNamePrint": "URSHANABI \"THE FERRYMAN\"",
+   "power": "Transport: Cross the Waters of Death.",
+   "lore": "He runs the taxi service to the immortal. Gets fired for bringing a smelly tourist along.",
+   "stats": {
+    "R": 4,
+    "A": 1,
+    "F": 3
+   },
+   "printTypo": null,
+   "printOpen": "Wertesatz doppelt gedruckt (oben und unten, gleiche Zahlen).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p10 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "„Gets fired for bringing a smelly tourist along“ ist eine gute Lore-Zeile; die Power nennt nur einen Ort, keine Wirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 35,
+   "cardName": "The Stone Things",
+   "cardNamePrint": "THE STONE THINGS",
+   "power": "Applied Phlebotinum: Safe passage. If broken, game over.",
+   "lore": "Nobody knows what they are. Gilgamesh smashed them in a tantrum. Nice job breaking it, Hero.",
+   "stats": {
+    "R": 1,
+    "A": 5,
+    "F": 6
+   },
+   "printTypo": "Glyphe: „GIlgamesh“ (i ohne Punkt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p10 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Ehrlicher Wissenskern (die Forschung weiß tatsächlich nicht, was die Steindinge sind); Power und Lore leben von TV-Tropes-Namen.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 36,
+   "cardName": "120 Punting Poles",
+   "cardNamePrint": "120 PUNTING POLES",
+   "power": "Disposable Tools: Use once, then throw away.",
+   "lore": "Since he broke the engine (Stone Things), he has to push the boat. Can't touch the water or you die.",
+   "stats": {
+    "R": 3,
+    "A": 3,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („water or you die.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p10 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Erklärt den Mechanismus richtig (Wasser des Todes, Stangen nur einmal); die Power ist eine Eigenschaft ohne Wirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 37,
+   "cardName": "Utnapishtim \"The Faraway\"",
+   "cardNamePrint": "UTNAPISHTIM \"THE FARAWAY\"",
+   "power": "Immortality: Cannot be killed. Bored by your problems.",
+   "lore": "The only human to retire from the game. He survived the Flood. Tired of visitors.",
+   "stats": {
+    "R": 5,
+    "A": 1,
+    "F": 5
+   },
+   "statsAlt": {
+    "R": 4,
+    "A": 2,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": "Zwei Wertesätze mit verschiedenen Zahlen gedruckt: oben [R:5] [A:1] [F:5], unten [R:4] [A:2] [F:4]; stats = oberer Satz.",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p11 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Beiname und Sonderstatus stimmen, die Schildkröte passt; aber kein Gag, der über „retire from the game“ hinausgeht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 38,
+   "cardName": "The Great Flood",
+   "cardNamePrint": "THE GREAT FLOOD",
+   "power": "Reset Button: Destroy all Civilization cards.",
+   "lore": "The gods flooded the earth because they couldn't sleep. The original \"Noah's Ark\" story (but with a cube).",
+   "stats": {
+    "R": 6,
+    "A": 6,
+    "F": 3
+   },
+   "statsAlt": {
+    "R": 6,
+    "A": 5,
+    "F": 3
+   },
+   "printTypo": "Anführungszeichen gedruckt als „\"Noah's Ark^“.",
+   "printOpen": "Zwei Wertesätze gedruckt: oben [R:6] [A:6] [F:3], unten [R:6] [A:5] [F:3]; stats = oberer Satz.",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p11 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Klare Power; der Lärm-Grund stammt aus Atrahasis, nicht aus Tafel XI, darum nur halber Wissenskern.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 39,
+   "cardName": "The Cube Boat",
+   "cardNamePrint": "THE CUBE BOAT",
+   "power": "Preserver of Life: Survive the wipe.",
+   "lore": "It wasn't a boat shape. It was a giant watertight box. Loaded with gold, family, and beasts.",
+   "stats": {
+    "R": 4,
+    "A": 2,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p11 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 0,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Fakten stimmen (Würfelform, Ladung), aber der Würfel-Witz ist schon auf Karte 38 verbraucht.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 40,
+   "cardName": "The Sleep Challenge",
+   "cardNamePrint": "THE SLEEP CHALLENGE",
+   "power": "Fail State: If you can't conquer Sleep, you can't conquer Death.",
+   "lore": "Gilgamesh tries to stay awake for 7 days. Passes out immediately. A humiliating defeat.",
+   "stats": {
+    "R": 3,
+    "A": 2,
+    "F": 6
+   },
+   "printTypo": "Glyphen: „GIlgamesh“, „immedlately“ (i ohne Punkt).",
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („humiliating defeat.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p11 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Sofort weggepennt, sabbernd, während die Schildkröten-Frau schon die Brote backt: Bild und Text greifen ineinander. Die Power ist ein Satz, keine Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 41,
+   "cardName": "The Moldy Loaves",
+   "cardNamePrint": "THE MOLDY LOAVES",
+   "power": "Power: Evidence: Prove the player was asleep/AFK.",
+   "lore": "Utnapishtim's wife baked one loaf for every day he slept. You can't argue with mold.",
+   "stats": {
+    "R": 5,
+    "A": 1,
+    "F": 3
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p12 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Die Brotreihe vom frischen bis zum verschimmelten Laib ist der Beweis aus Tafel XI; „You can't argue with mold“ steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 42,
+   "cardName": "The Plant of Heartbeat",
+   "cardNamePrint": "THE PLANT OF HEARTBEAT",
+   "power": "Power: Rejuvenation: Restores youth (does not grant immortality).",
+   "lore": "Deep under the Apsu. Prick your hands to get it. Gilgamesh wants to test it on old men first. Too clever by half.",
+   "stats": {
+    "R": 2,
+    "A": 4,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Wertesatz doppelt gedruckt (oben und unten, gleiche Zahlen).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p12 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Viel echtes Detail (Apsu, Dornen, Test an einem alten Mann), aber als Aufzählung; die Power hat keine Spielwirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 43,
+   "cardName": "The Bathing Spot",
+   "cardNamePrint": "THE BATHING SPOT",
+   "power": "Power: Vulnerability: Leave your inventory unguarded.",
+   "lore": "One moment of inattention. That's all it takes.",
+   "stats": {
+    "R": 4,
+    "A": 2,
+    "F": 1
+   },
+   "printTypo": "Wert gedruckt als „[A 2]“ (Doppelpunkt fehlt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p12 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Reine Überleitung zur Schlange: kein Witz, vage Power, generische Lore.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 44,
+   "cardName": "The Serpent",
+   "cardNamePrint": "THE SERPENT",
+   "power": "Power: The Theft: Steal the winning item. Gain 'New Skin'.",
+   "lore": "The Snake eats the plant and becomes young again. The true winner of the Epic. Diabolus ex Machina.",
+   "stats": {
+    "R": 6,
+    "A": 3,
+    "F": 4
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („Diabolus ex Machina.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p12 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Abgestreifte Haut neben der Pflanze erklärt die Häutung der Schlange wie im Epos; die Power spiegelt den Raub genau.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 45,
+   "cardName": "Return to Uruk",
+   "cardNamePrint": "RETURN TO URUK",
+   "power": "Power: Bookends: The story ends where it began.",
+   "lore": "He didn't bring the plant, but he brought the story. \"Go up, Urshanabi, walk on the walls of Uruk.\"",
+   "stats": {
+    "R": 5,
+    "A": 1,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p13 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Starkes echtes Schlusszitat und eine zitierbare erste Hälfte, aber kein Witz und keine Spielwirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 46,
+   "cardName": "The Brickwork",
+   "cardNamePrint": "THE BRICKWORK",
+   "power": "Power: Infrastructure: Build something that lasts longer than meat.",
+   "lore": "Immortality isn't living forever; it's building a city that people still talk about 4,000 years later.",
+   "stats": {
+    "R": 6,
+    "A": 1,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Zweiter Wertesatz unten schwer lesbar (etwa [R:6] [A:1] [F:3?]); stats = oberer, klar lesbarer Satz [R:6] [A:1] [F:6].",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p13 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Die Lore ist ein zitierbarer Merksatz; Power ohne Wirkung, Bild nur Ziegelwand.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 47,
+   "cardName": "The Secret Box",
+   "cardNamePrint": "THE SECRET BOX",
+   "power": "Power: The Text: Publish your autobiography.",
+   "lore": "Gilgamesh wrote his own legend. He lost the wrestling match with Death, but won the PR war.",
+   "stats": {
+    "R": 4,
+    "A": 3,
+    "F": 6
+   },
+   "printTypo": "Wert gedruckt als „[A 3]“ (Doppelpunkt fehlt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p13 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "„Lost the wrestling match with Death, but won the PR war“ bindet das Deck-Konzept; die Lapislazuli-Kiste stimmt mit dem Prolog überein.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 48,
+   "cardName": "The Moral",
+   "cardNamePrint": "THE MORAL",
+   "power": "Power: Wisdom: Swap 'Arrogance' for 'Acceptance'.",
+   "lore": "Life is short. Eat good food, love your family, wear clean clothes. Death is inevitable. Deal with it.",
+   "stats": {
+    "R": 5,
+    "A": 1,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („Deal with it.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p13 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wiederholt Siduris Rat ohne neuen Dreh; die Power tauscht zwei Begriffe ohne Spielwirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 49,
+   "cardName": "Tablet XII \"The Retcon\"",
+   "cardNamePrint": "TABLET XII \"THE RETCON\"",
+   "power": "Power: Continuity Error: Enkidu is alive again?",
+   "lore": "An incoherent appendix where Enkidu is a servant, not a friend. A 'Gainax Ending' that makes no sense.",
+   "stats": {
+    "R": 1,
+    "A": 6,
+    "F": 2
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p14 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "„Retcon“ für die angeflickte Tafel XII ist die schärfste Meta-Pointe des Decks, und dass Enkidu dort Diener ist, stimmt; die Power ist eine Frage, keine Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 50,
+   "cardName": "Pukku and Mikku",
+   "cardNamePrint": "PUKKU AND MIKKU",
+   "power": "Power: Lost Toys: Drop items into the Netherworld.",
+   "lore": "Gilgamesh loses his toys. Enkidu goes to fetch them. The plot of Tablet XII is... weird.",
+   "stats": {
+    "R": 2,
+    "A": 2,
+    "F": 5
+   },
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p14 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Pukku und Mikku sind echt und im Bild genau gezeigt; die Lore zuckt nur mit den Schultern.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 51,
+   "cardName": "Rules of the Dead",
+   "cardNamePrint": "RULES OF THE DEAD",
+   "power": "Power: Don't Do It: If you wear clean clothes, the dead will attack you.",
+   "lore": "Too Dumb to Live. Gilgamesh gave specific stealth instructions. Enkidu ignored all of them.",
+   "stats": {
+    "R": 4,
+    "A": 4,
+    "F": 4
+   },
+   "printTypo": "Glyphe: „GIlgamesh“; Wert gedruckt als „[A 4]“ (Doppelpunkt fehlt).",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p14 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Die Unterwelt-Regeln (keine sauberen Kleider) sind echt und als Power spielbar; Enkidu mit Groucho-Brille zwischen Dämonen ist das gescheiterte Anschleichen im Bild.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 52,
+   "cardName": "The Ghost",
+   "cardNamePrint": "THE GHOST",
+   "power": "Power: Final Goodbye: A bleak Q&A session about rotting corpses.",
+   "lore": "'Tell me the order of the Netherworld.' You don't want to know. It's mostly dust and eating clay.",
+   "stats": {
+    "R": 3,
+    "A": 3,
+    "F": 6
+   },
+   "printTypo": null,
+   "printOpen": "Ende der Lore-Zeile teilweise unter dem GW-Logo; letzte Wörter nur an den Oberlängen lesbar („and eating clay.“).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p14 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Echtes Zitat und korrektes Detail (Staub und Lehm als Speise), aber der Schluss ist im Druck verdeckt und die Power hat keine Wirkung.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "power neu (JSON null); lore neu (JSON null); stats neu"
+  },
+  {
+   "cardNumber": 53,
+   "cardName": "Etana's Eagle Rides",
+   "cardNamePrint": "ETANA'S EAGLE RIDES",
+   "power": null,
+   "lore": "GUARANTEED HIGH ALTITUDE!",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": "Mini-Bonuskarte auf der Credit-Seite: keine Power gedruckt, Werte als „?“; einziger Text ist die Bildzeile „GUARANTEED HIGH ALTITUDE!“ (als lore erfasst).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p15 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 0,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Bonus-Anspielung auf den Etana-Mythos ohne Power und ohne Werte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "lore neu (JSON null); keine stats (Druck „?“)"
+  },
+  {
+   "cardNumber": 54,
+   "cardName": "Adapa's Fish Shack: Don't Eat the Bread!",
+   "cardNamePrint": "ADAPA'S FISH SHACK: DON'T EAT THE BREAD!",
+   "power": null,
+   "lore": "Bread may contain divine curses.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": "Mini-Bonuskarte auf der Credit-Seite: keine Power gedruckt, Werte als „?“; Bildzeile „Bread may contain divine curses.“ als lore erfasst (steht zusätzlich als Randnotiz neben der Karte).",
+   "textSource": {
+    "source": "PDF The_Uruk_Rumble - ADD web ID.pdf p15 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-10-27"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 0,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Gute Anspielung (Adapa verweigert das Brot des Lebens), aber als Bonuskarte ohne Power und Werte.",
+    "version": "R1",
+    "ratedAt": "2026-10-27"
+   },
+   "jsonDiff": "Titel: JSON „Adapa's Fish Snack, Don't Eat the Bread!“ → Druck „Adapa's Fish Shack: Don't Eat the Bread!“; lore neu (JSON null); keine stats (Druck „?“)"
+  }
+ ],
+ "deck": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.44,
+   "distribution": {
+    "1": 0,
+    "2": 3,
+    "3": 35,
+    "4": 11,
+    "5": 5
+   },
+   "reason": "Fast jede Karte hat einen echten Epos-Kern (Tafel-Zitate, 13 Winde, Schimmelbrote, Tafel XII), und das Wrestling-Raster trägt bei Humbaba, Enlil und den Schimmelbroten. Viele Powers sind aber Satz statt Spielhandlung (besonders die „Power:“-Karten 41–52), und HP/Defense/Glory gibt es im Werteschema gar nicht.",
+   "ratingNote": null,
+   "version": "R1"
+  },
+  "topCards": [
+   {
+    "cardNumber": 14,
+    "cardName": "Humbaba \"The Jobber\"",
+    "points": 10
+   },
+   {
+    "cardNumber": 41,
+    "cardName": "The Moldy Loaves",
+    "points": 10
+   },
+   {
+    "cardNumber": 7,
+    "cardName": "Enlil \"The Booker\"",
+    "points": 9
+   },
+   {
+    "cardNumber": 28,
+    "cardName": "Mayfly Philosophy",
+    "points": 9
+   },
+   {
+    "cardNumber": 51,
+    "cardName": "Rules of the Dead",
+    "points": 9
+   }
+  ],
+  "worstCards": [
+   {
+    "cardNumber": 43,
+    "cardName": "The Bathing Spot",
+    "points": 4
+   },
+   {
+    "cardNumber": 53,
+    "cardName": "Etana's Eagle Rides",
+    "points": 4
+   },
+   {
+    "cardNumber": 54,
+    "cardName": "Adapa's Fish Shack: Don't Eat the Bread!",
+    "points": 4
+   }
+  ],
+  "viralScore": 7,
+  "viralReason": "„The Moldy Loaves“ (Brotreihe als Schlafbeweis, „You can't argue with mold“) und Humbaba „the script said die“ funktionieren als Einzelbild ohne Vorwissen; das Deck braucht sonst etwas Epos-Kenntnis.",
+  "topCardsLegacy": [
+   "HUMBABA \"THE JOBBER\"",
+   "TABLET XII \"THE RETCON\"",
+   "SHAMASH \"THE REF\"",
+   "MORTALITY PHOBIA",
+   "MAYFLY PHILOSOPHY"
+  ],
+  "worstCardsLegacy": [
+   "DOOR BUILDING",
+   "THE BRICKWORK",
+   "THE BATHING SPOT"
+  ],
+  "viralScoreLegacy": 9
+ },
+ "findings": [
+  "JSON hatte power und lore bei allen 54 Karten null; alle Power- und Lore-Texte sind hier neu vom Druck erfasst, ebenso alle stats.",
+  "Titelabweichungen: Karte 11 druckt „GUGALANA“ (JSON „Gugalanna“); Karte 54 druckt „ADAPA'S FISH SHACK: DON'T EAT THE BREAD!“ (JSON „Adapa's Fish Snack, Don't Eat the Bread!“); Karte 12 druckt „THE HAUNCH THROW”“ mit überzähligem schließendem Anführungszeichen.",
+  "Werteblock doppelt gedruckt (oben rechts und unten neben der Power) bei Karten 18, 25, 26, 30, 33, 34, 37, 38, 42, 46. Bei 26 (5/6/1 vs. 6/2/1), 37 (5/1/5 vs. 4/2/4) und 38 (A:6 vs. A:5) widersprechen sich die Zahlen; stats = oberer Satz, unterer in statsAlt. Bei 46 ist der untere Satz verwaschen. Entscheidung nötig, welcher Satz gilt.",
+  "Ab Karte 41 tragen die Power-Zeilen das Etikett „Power:“ vor dem Stichwort (Karten 41–52), davor nicht; wörtlich übernommen, Layout uneinheitlich.",
+  "Das GW-Logo unten rechts verdeckt auf jeder BR-Karte (4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52) das Ende der Lore-Zeile. Bei 4 ist das letzte Wort nicht lesbar (vermutlich „Gainax Ending“), sonst nur an den Oberlängen; printOpen jeweils gesetzt.",
+  "Glyphenfehler in der Ziffern-/Lore-Schrift: 5 erscheint als „S“ (Karten 10, 14, 16), i ohne Punkt (u. a. „GIlgamesh“, „untll“, „lIke“, „immedlately“), fehlende Doppelpunkte in „[A 2]“, „[A 3]“, „[A 4]“ (43, 47, 51), „Piot“ statt „Plot“ (25), schiefe Anführungszeichen um „Noah's Ark“ (38).",
+  "Powers verweisen auf Größen, die das Werteschema R/A/F nicht kennt: +2 Defense (3), HP (22, 33), Glory points (28), ein „Unknown“-Deck (27), Trap cards (20).",
+  "Inhaltliche Prüfpunkte: Karte 17 nennt 120 lb im Titel, aber 4 Talente in der Lore (deutlich schwerer); Karte 6 zeigt einen Anker in der Traumblase ohne Vorlage im Epos; Karte 38 nennt den Lärm als Flutgrund (Atrahasis, nicht Tafel XI).",
+  "Bonuskarten 53/54 haben weder Power noch Werte („?“); 54 trägt zusätzlich die Randnotiz „Bread may contain divine curses.“ außerhalb der Karte.",
+  "Sterne-Verteilung: 4+5 Sterne = 16/54 (30 %), 5 Sterne = 5/54 (9 %), innerhalb der Inflationsbremse."
+ ]
+}

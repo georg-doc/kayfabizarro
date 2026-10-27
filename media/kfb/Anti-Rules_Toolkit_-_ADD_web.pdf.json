@@ -10,173 +10,601 @@
     {
       "num": 1,
       "name": "The Rules Lawyer",
+      "cardNamePrint": "THE RULES LAWYER",
       "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
-      "lore": "Dry leader. Busy.",
+      "lore": "Cry harder, Esq.",
       "grade": 1,
       "gradeReason": "Perfect villain opener—everyone hates this bird immediately.",
-      "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+      "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace.",
+      "jsonLegacy": {
+        "cardName": "The Rules Lawyer",
+        "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+        "lore": "Dry leader. Busy."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p02 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Geier mit Perücke und Hammer plus Einspruch-Power sitzen sofort; der Lore-Satz braucht die Karte und steht identisch auf #13.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 2,
       "name": "The Optimizer",
+      "cardNamePrint": "THE OPTIMIZER",
       "power": "Efficiency Protocol: You may reroll a die, but your story narration must be devoid of fun or flavor.",
       "lore": "Nothing breaks faster than trying to weaponize ambiguity.",
       "grade": 1,
       "gradeReason": "Robot min-max goblin—clean joke, strong mechanic, instant table laugh.",
-      "artworkPrompt": "Style: steampunk comic. Subject: brass robot measuring fun. Mood: sterile precision."
+      "artworkPrompt": "Style: steampunk comic. Subject: brass robot measuring fun. Mood: sterile precision.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p02 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Power ist klar und spiegelt den Min-Maxer; der Lore-Satz handelt von Ambiguität und passt nicht zum Optimierer.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 3,
       "name": "The Nervous Beginner",
-      "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequence.",
+      "cardNamePrint": "THE NERVOUS BEGINNER",
+      "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequences.",
       "lore": "Confusing clarity with safety.",
       "grade": 2,
       "gradeReason": "Great social card, though softer than the brutal anti-rule anchors.",
-      "artworkPrompt": "Style: anxious comic. Subject: deer holding rulebook. Mood: uncertain panic."
+      "artworkPrompt": "Style: anxious comic. Subject: deer holding rulebook. Mood: uncertain panic.",
+      "jsonLegacy": {
+        "cardName": "The Nervous Beginner",
+        "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequence.",
+        "lore": "Confusing clarity with safety."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p02 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 1,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Reh im Scheinwerferlicht mit verkehrt gehaltenem Spielhandbuch ist die Pointe; offen bleibt, welche Konsequenzen die Power aufhebt.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 4,
       "name": "The Authority Figure",
-      "power": "The Meta: Cancel a move that is “too fun” on the grounds that it isn’t optimal.",
+      "cardNamePrint": "THE AUTHORITY FIGURE",
+      "power": "The Veto: Cancel a Move that is “too fun” on the grounds that it isn’t “optimal.”",
       "lore": "Authority sneaks back in wearing a helpful voice.",
       "grade": 1,
       "gradeReason": "Finger-pointing tyranny—sharp satire and universally playable.",
-      "artworkPrompt": "Style: symbolic comic. Subject: giant pointing hand. Mood: fake helpful control."
+      "artworkPrompt": "Style: symbolic comic. Subject: giant pointing hand. Mood: fake helpful control.",
+      "jsonLegacy": {
+        "cardName": "The Authority Figure",
+        "power": "The Meta: Cancel a move that is “too fun” on the grounds that it isn’t optimal.",
+        "lore": "Authority sneaks back in wearing a helpful voice."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p02 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 2,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Der Lore-Satz trägt die These des ganzen Decks und steht allein; die Hand aus der Wolke ist nur Illustration.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 5,
       "name": "The Panic",
-      "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it's okay.",
+      "cardNamePrint": "THE PANIC",
+      "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it’s okay.",
       "lore": "For those who freeze when meaning is not externally validated.",
       "grade": 2,
       "gradeReason": "Extremely relatable panic energy; funny and table-true.",
-      "artworkPrompt": "Style: surreal comic. Subject: terrified eyes close-up. Mood: catastrophic uncertainty."
+      "artworkPrompt": "Style: surreal comic. Subject: terrified eyes close-up. Mood: catastrophic uncertainty.",
+      "jsonLegacy": {
+        "cardName": "The Panic",
+        "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it's okay.",
+        "lore": "For those who freeze when meaning is not externally validated."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p03 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Spielbare, witzige Power; Lore erklärt nur, wer gemeint ist.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 6,
       "name": "The Crutch",
+      "cardNamePrint": "THE CRUTCH",
       "power": "Dependency: You cannot take an Action unless another player gives you permission first.",
       "lore": "Stabilize play when certainty becomes a crutch.",
       "grade": 2,
       "gradeReason": "Strong support joke, but less explosive than Panic or Silence.",
-      "artworkPrompt": "Style: absurd comic. Subject: wooden crutches stacked. Mood: dependency."
+      "artworkPrompt": "Style: absurd comic. Subject: wooden crutches stacked. Mood: dependency.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p03 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Klare Abhängigkeits-Mechanik; Bild und Lore wiederholen nur das Titelwort Krücke.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 7,
       "name": "The Sweat",
+      "cardNamePrint": "THE SWEAT",
       "power": "Slippery Dice: Reroll any 6. You cannot handle success without questioning it.",
       "lore": "Others start sweating. This booklet is for them.",
       "grade": 2,
       "gradeReason": "Bucket anxiety as a mechanic—solid and funny filler.",
-      "artworkPrompt": "Style: anxious cartoon. Subject: sweating bucket face. Mood: stress comedy."
+      "artworkPrompt": "Style: anxious cartoon. Subject: sweating bucket face. Mood: stress comedy.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p03 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Die Sechs neu werfen, weil man Erfolg nicht aushält, ist eine gute Mechanik; der Lore-Satz verweist auf ein Booklet statt auf die Karte.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 8,
       "name": "The Silence",
+      "cardNamePrint": "THE SILENCE",
       "power": "The Void: Play when the table stalls. Silence counts as a valid turn.",
       "lore": "A controlled void. A moment where players stop asking.",
       "grade": 1,
       "gradeReason": "Elegant anti-action card—simple, weird, and very Kayfabizarro.",
-      "artworkPrompt": "Style: minimalist satire. Subject: zipper mouth close-up. Mood: controlled emptiness."
+      "artworkPrompt": "Style: minimalist satire. Subject: zipper mouth close-up. Mood: controlled emptiness.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p03 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Verständliche Power, aber Bild (Reißverschlussmund) und Text bleiben wörtlich ohne zweite Ebene.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 9,
       "name": "The Lost Winner",
+      "cardNamePrint": "THE LOST WINNER",
       "power": "Forfeit: Give this card to anyone discussing “Victory Points.” They lose their next turn.",
       "lore": "Whoever asks how to win has already lost.",
       "grade": 1,
       "gradeReason": "Trophy shame is one of the cleanest jokes in the deck.",
-      "artworkPrompt": "Style: absurd comic. Subject: crying trophy cup. Mood: pathetic triumph."
+      "artworkPrompt": "Style: absurd comic. Subject: crying trophy cup. Mood: pathetic triumph.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p04 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 2,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Weinender, schmelzender Pokal, Strafe fürs Reden über Siegpunkte und ein zitierbarer Lore-Satz greifen ineinander; nur kein Wissenskern.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 10,
       "name": "The Nonsense State",
+      "cardNamePrint": "THE NONSENSE STATE",
       "power": "Valid Move: Play to justify an action that defies logic but feels right.",
-      "lore": "Blödsinn is not a mistake. It is a state.",
+      "lore": "BLÖDSINN is not a mistake. It is a state.",
       "grade": 1,
       "gradeReason": "This is basically the thesis statement—must-have cornerstone card.",
-      "artworkPrompt": "Style: surreal comic. Subject: frog through brick wall. Mood: glorious absurdity."
+      "artworkPrompt": "Style: surreal comic. Subject: frog through brick wall. Mood: glorious absurdity.",
+      "jsonLegacy": {
+        "cardName": "The Nonsense State",
+        "power": "Valid Move: Play to justify an action that defies logic but feels right.",
+        "lore": "Blödsinn is not a mistake. It is a state."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p04 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 2,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Lore ist ein Deck-Slogan zum Zitieren, der Fisch auf dem Fahrrad trägt den Unsinn; die Power sagt nicht, was die Rechtfertigung bewirkt.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 11,
       "name": "The Effective Move",
+      "cardNamePrint": "THE EFFECTIVE MOVE",
       "power": "Pragmatism: Ignore a rule if the result creates a better story.",
       "lore": "Nobody is right. Some things are effective.",
       "grade": 1,
       "gradeReason": "Strong philosophy card with perfect freestyle utility.",
-      "artworkPrompt": "Style: kinetic comic. Subject: absurd machine chain reaction. Mood: useful chaos."
+      "artworkPrompt": "Style: kinetic comic. Subject: absurd machine chain reaction. Mood: useful chaos.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p04 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 1,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Rube-Goldberg-Maschine als Bild für Wirksamkeit ist hübsch ironisch; die Power lässt offen, wer über die bessere Geschichte entscheidet.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 12,
       "name": "The Amnesia",
+      "cardNamePrint": "THE AMNESIA",
       "power": "Reset: Ignore the precedent set by the previous turn. We start fresh.",
       "lore": "The game remembers nothing. The players do.",
       "grade": 1,
       "gradeReason": "Brain-in-jar reset button is brutal and excellent for table disruption.",
-      "artworkPrompt": "Style: surreal satire. Subject: brain beside memory jar. Mood: deliberate forgetting."
+      "artworkPrompt": "Style: surreal satire. Subject: brain beside memory jar. Mood: deliberate forgetting.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p04 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 2,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Der Lore-Satz mit Umkehr am Ende steht allein; Goldfischglas und dampfendes Hirn machen die Amnesie sichtbar.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 13,
       "name": "Esq's Tears",
+      "cardNamePrint": "ESQ’S TEARS",
       "power": "Argument Ender: Play to instantly win a meta-argument about rules interpretation.",
       "lore": "Cry harder, Esq.",
       "grade": 2,
       "gradeReason": "Mean little pressure-release card—short, cruel, effective.",
-      "artworkPrompt": "Style: absurd satire. Subject: giant crying tissue fountain. Mood: dramatic overreaction."
+      "artworkPrompt": "Style: absurd satire. Subject: giant crying tissue fountain. Mood: dramatic overreaction.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p05 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Ausgewrungenes Taschentuch als Tränenfall ist gut, aber der Lore-Satz ist derselbe wie auf #1 und die Power ist ein Freifahrtschein ohne Kosten.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 14,
       "name": "The Correct Nonsense",
-      "power": "Reality Check: If the table laughs, your roll succeeds automatically.",
+      "cardNamePrint": "THE CORRECT NONSENSE",
+      "power": "Reality check: If the table laughs, your roll succeeds automatically.",
       "lore": "If it makes no sense, it may be correct.",
       "grade": 1,
       "gradeReason": "Banana math philosophy—pure Anti-Rules distilled into one perfect joke.",
-      "artworkPrompt": "Style: surreal comic. Subject: chalkboard banana equation. Mood: irrational certainty."
+      "artworkPrompt": "Style: surreal comic. Subject: chalkboard banana equation. Mood: irrational certainty.",
+      "jsonLegacy": {
+        "cardName": "The Correct Nonsense",
+        "power": "Reality Check: If the table laughs, your roll succeeds automatically.",
+        "lore": "If it makes no sense, it may be correct."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p05 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 5,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 2,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "„2 + 2 = BANANA“ mit angeklebter Banane, Lachen als Erfolgsbedingung und ein zitierbarer Lore-Satz: Bild, Mechanik und Satz verstärken sich.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 15,
       "name": "The Pressure Valve",
+      "cardNamePrint": "THE PRESSURE VALVE",
       "power": "Venting: Stop the game. Everyone takes a deep breath. No game state changes.",
-      "lore": "They exist to interrupt pure panic.",
+      "lore": "They exist to interrupt rule panic.",
       "grade": 2,
       "gradeReason": "Great pacing tool—less flashy, but socially excellent at the table.",
-      "artworkPrompt": "Style: industrial comic. Subject: steaming pipe valve. Mood: release and reset."
+      "artworkPrompt": "Style: industrial comic. Subject: steaming pipe valve. Mood: release and reset.",
+      "jsonLegacy": {
+        "cardName": "The Pressure Valve",
+        "power": "Venting: Stop the game. Everyone takes a deep breath. No game state changes.",
+        "lore": "They exist to interrupt pure panic."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p05 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Klare Pause-Mechanik, aber das undichte Ventil ist wörtlich und der Lore-Satz beginnt mit einem „They“ ohne Bezug.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 16,
       "name": "The Less Rules",
+      "cardNamePrint": "THE LESS RULES",
       "power": "Simplification: Remove one constraint from the current Scene.",
       "lore": "If you need more rules, you may use fewer.",
       "grade": 1,
       "gradeReason": "Strong paradox card and perfect manifesto energy.",
-      "artworkPrompt": "Style: office satire. Subject: paper shredder eating instructions. Mood: liberating destruction."
+      "artworkPrompt": "Style: office satire. Subject: paper shredder eating instructions. Mood: liberating destruction.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p05 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 2,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Das Paradox im Lore-Satz ist zitierbar; Aktenvernichter und Power bleiben wörtlich und vage („one constraint“).",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 17,
       "name": "The Red Pen",
-      "power": "Edit: Physically cross out one word on a Stage Card. It is now forever removed.",
+      "power": "Editor: Physically cross out one word on a Stage Card. It is gone forever.",
       "lore": "Hand-written rule lists and crossed-out instructions.",
       "grade": 1,
       "gradeReason": "Physical sabotage mechanic—absolutely evil and wonderfully memorable.",
-      "artworkPrompt": "Style: brutal comic. Subject: red pen stabbing paper. Mood: irreversible correction."
+      "artworkPrompt": "Style: brutal comic. Subject: red pen stabbing paper. Mood: irreversible correction.",
+      "jsonLegacy": {
+        "cardName": "The Red Pen",
+        "power": "Edit: Physically cross out one word on a Stage Card. It is now forever removed.",
+        "lore": "Hand-written rule lists and crossed-out instructions."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p06 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Die physische Streich-Power passt zum blutigen Rotstift; der Lore-Text ist eine Bildbeschreibung aus dem Briefing.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 18,
       "name": "The 'Final' Draft",
+      "cardNamePrint": "The ‘Final’ Draft",
       "power": "Revision: Change the Quest Goal immediately after the dice are rolled.",
-      "lore": "Documents labeled “FINAL” and immediately contradicted.",
+      "lore": "Documents labeled ‘FINAL’ and immediately contradicted.",
       "grade": 1,
       "gradeReason": "Perfect workplace lie converted into gameplay poison.",
-      "artworkPrompt": "Style: office satire. Subject: fake final document stack. Mood: bureaucratic betrayal."
+      "artworkPrompt": "Style: office satire. Subject: fake final document stack. Mood: bureaucratic betrayal.",
+      "jsonLegacy": {
+        "cardName": "The 'Final' Draft",
+        "power": "Revision: Change the Quest Goal immediately after the dice are rolled.",
+        "lore": "Documents labeled “FINAL” and immediately contradicted."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p06 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "„FINAL_v33_ACTUAL_REAL_FINAL.doc“ kennt jeder, und die Power ändert das Ziel nach dem Wurf; die Lore beschreibt eher, als dass sie pointiert.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 19,
       "name": "The Fake Stamp",
-      "power": "Validation: Play to approve a move that the “Rules Lawyer” rejected.",
+      "power": "Validation: Play to approve a move that the ‘Rules Lawyer’ hates.",
       "lore": "Fake approval stamps.",
       "grade": 2,
       "gradeReason": "Simple counter-card, but the APPROVED BY NOBODY stamp is hilarious.",
-      "artworkPrompt": "Style: stamp satire. Subject: giant fake approval stamp. Mood: illegitimate authority."
+      "artworkPrompt": "Style: stamp satire. Subject: giant fake approval stamp. Mood: illegitimate authority.",
+      "jsonLegacy": {
+        "cardName": "The Fake Stamp",
+        "power": "Validation: Play to approve a move that the “Rules Lawyer” rejected.",
+        "lore": "Fake approval stamps."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p06 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Der Stempel „APPROVED BY NOBODY“ trägt; die Power sagt nicht, was die Genehmigung bewirkt, die Lore ist ein Stichwort.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 20,
@@ -185,331 +613,1204 @@
       "lore": "Pseudo-legal disclaimers.",
       "grade": 2,
       "gradeReason": "Reliable support trick with strong anti-corporate flavor.",
-      "artworkPrompt": "Style: legal parody. Subject: magnifying glass over tiny print. Mood: slippery legality."
+      "artworkPrompt": "Style: legal parody. Subject: magnifying glass over tiny print. Mood: slippery legality.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p06 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare Ausrede-Power; Lupe aufs Kleingedruckte ist wörtlich, die Lore nur ein Stichwort.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 21,
       "name": "The Table",
-      "power": "Declaration: Read the Anti-Rule aloud. No discussion allowed.",
+      "cardNamePrint": "THE TABLE",
+      "power": "Declaration: Read one Anti-Rule aloud. No discussion allowed.",
       "lore": "As a Table Declaration.",
       "grade": 1,
       "gradeReason": "Wonderful meta-card—the battlefield itself becomes the mechanic.",
-      "artworkPrompt": "Style: surreal comic. Subject: walking wooden table. Mood: sacred authority."
+      "artworkPrompt": "Style: surreal comic. Subject: walking wooden table. Mood: sacred authority.",
+      "jsonLegacy": {
+        "cardName": "The Table",
+        "power": "Declaration: Read the Anti-Rule aloud. No discussion allowed.",
+        "lore": "As a Table Declaration."
+      },
+      "statsMarks": [
+        "R"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p07 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Der laufende Tisch auf Hühnerbeinen wird nicht genutzt; die Power hat keinen Effekt außer Vorlesen, der Lore-Text ist ein Satzfragment.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 22,
       "name": "The Controlled Void",
+      "cardNamePrint": "THE CONTROLLED VOID",
       "power": "Absence: Remove a card from the Stage. Replace it with nothing. Narrate the gap.",
       "lore": "A deliberate absence of authority.",
       "grade": 1,
       "gradeReason": "Black-hole theater—clean concept and incredible roleplay fuel.",
-      "artworkPrompt": "Style: abstract comic. Subject: velvet-rope black void. Mood: elegant emptiness."
+      "artworkPrompt": "Style: abstract comic. Subject: velvet-rope black void. Mood: elegant emptiness.",
+      "statsMarks": [
+        "R"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p07 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Ein schwarzes Loch hinter Absperrkordel mit „KEEP OUT“ ist die Pointe, und die Power macht die Lücke spielbar.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 23,
       "name": "The Shared Attention",
-      "power": "Focus: If everyone looks at you, +1 to your roll.",
+      "cardNamePrint": "THE SHARED ATTENTION",
+      "power": "Focus: If everyone looks at you, +1 to your Roll.",
       "lore": "Re-anchor play in shared attention instead of correctness.",
       "grade": 2,
       "gradeReason": "Smart social mechanic—less explosive, but excellent table glue.",
-      "artworkPrompt": "Style: symbolic comic. Subject: floating eyes watching spider. Mood: collective focus."
+      "artworkPrompt": "Style: symbolic comic. Subject: floating eyes watching spider. Mood: collective focus.",
+      "jsonLegacy": {
+        "cardName": "The Shared Attention",
+        "power": "Focus: If everyone looks at you, +1 to your roll.",
+        "lore": "Re-anchor play in shared attention instead of correctness."
+      },
+      "statsMarks": [
+        "R"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p07 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Klare Mechanik; die Lore ist Design-Jargon aus dem Konzept, keine Spielerzeile.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 24,
       "name": "The Safety Rail",
+      "cardNamePrint": "THE SAFETY RAIL",
       "power": "Risk: Ask “Safer from what?” If nobody answers, take a token.",
       "lore": "If a rule makes you feel safer, ask yourself: Safer from what?",
       "grade": 1,
       "gradeReason": "Sharp philosophical knife hidden inside a railing joke.",
-      "artworkPrompt": "Style: conceptual comic. Subject: broken cliff railing. Mood: dangerous clarity."
+      "artworkPrompt": "Style: conceptual comic. Subject: broken cliff railing. Mood: dangerous clarity.",
+      "statsMarks": [
+        "R"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p07 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 2,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Zerbrochenes Geländer am Abgrund plus „Safer from what?“ sitzt; die Power wiederholt nur die Frage und der Token hat keinen Zweck.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 25,
       "name": "Nervous Laughter",
+      "cardNamePrint": "NERVOUS LAUGHTER",
       "power": "Tension Break: Play when someone laughs nervously. You both draw a card.",
       "lore": "Someone laughs nervously. This indicates correct operation.",
       "grade": 2,
       "gradeReason": "Hyena panic feedback loop—great social signal card and very funny.",
-      "artworkPrompt": "Style: anxious comic. Subject: sweating hyena in suit. Mood: nervous release."
+      "artworkPrompt": "Style: anxious comic. Subject: sweating hyena in suit. Mood: nervous release.",
+      "statsMarks": [
+        "F"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p08 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 2,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Schwitzende Hyäne im Anzug und der Handbuch-Ton „This indicates correct operation“ machen die Karte; die Power belohnt genau das Motiv.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 26,
       "name": "Bad Design",
-      "power": "Critique: Claim this is “Bad Design,” reroll your die.",
+      "cardNamePrint": "BAD DESIGN",
+      "power": "Critique: Claim this is ‘Bad Design.’ Reroll your die.",
       "lore": "Someone claims this is bad design.",
       "grade": 2,
       "gradeReason": "Kettle-wheel absurdity works, though it shines more as a support jab.",
-      "artworkPrompt": "Style: absurd satire. Subject: broken wheel and kettle. Mood: smug criticism."
+      "artworkPrompt": "Style: absurd satire. Subject: broken wheel and kettle. Mood: smug criticism.",
+      "jsonLegacy": {
+        "cardName": "Bad Design",
+        "power": "Critique: Claim this is “Bad Design,” reroll your die.",
+        "lore": "Someone claims this is bad design."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p08 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare Power, aber Rad und Kessel bleiben ein unklarer Verweis und die Lore wiederholt die Power.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 27,
       "name": "The Stall",
+      "cardNamePrint": "THE STALL",
       "power": "Intervention: Play when the table stalls. The Anti-Rule stands in the room like a smell.",
-      "lore": "When the table stalls… invoke an Anti-Rule.",
+      "lore": "When the table stalls... invoke an Anti-Rule.",
       "grade": 1,
       "gradeReason": "Beautiful passive-aggressive design—simple and cruelly useful.",
-      "artworkPrompt": "Style: minimalist comic. Subject: old rotary phone waiting. Mood: awkward pause."
+      "artworkPrompt": "Style: minimalist comic. Subject: old rotary phone waiting. Mood: awkward pause.",
+      "jsonLegacy": {
+        "cardName": "The Stall",
+        "power": "Intervention: Play when the table stalls. The Anti-Rule stands in the room like a smell.",
+        "lore": "When the table stalls… invoke an Anti-Rule."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p08 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 0,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Ouroboros um einen Ladekreis ist ein starkes Bild fürs Hängen, aber die Power hat keinen Effekt und die Lore ist eine Anweisung.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 28,
       "name": "The Rage Quit",
-      "power": "Stop: Any player may play this to stop trying to win. They are now telling stories.",
+      "cardNamePrint": "THE RAGE QUIT",
+      "power": "Stop: Any player may play this to Stop Trying to Win. They are now just telling stories.",
       "lore": "Someone stops trying to win.",
       "grade": 1,
       "gradeReason": "This is secretly the whole philosophy of the deck—excellent closer for failure modes.",
-      "artworkPrompt": "Style: chaotic comic. Subject: flipped board game table. Mood: liberated collapse."
+      "artworkPrompt": "Style: chaotic comic. Subject: flipped board game table. Mood: liberated collapse.",
+      "jsonLegacy": {
+        "cardName": "The Rage Quit",
+        "power": "Stop: Any player may play this to stop trying to win. They are now telling stories.",
+        "lore": "Someone stops trying to win."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p08 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Das umgekippte Brett widerspricht der ruhigen Power ohne daraus eine Pointe zu machen; die Lore wiederholt die Power.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 29,
       "name": "The Compliance Aid",
+      "cardNamePrint": "THE COMPLIANCE AID",
       "power": "Restriction: Force a player to use simple words only.",
       "lore": "A compliance aid for people who hate improvisation.",
       "grade": 2,
       "gradeReason": "Straitjacket joke lands fast, though mechanically narrower.",
-      "artworkPrompt": "Style: dark satire. Subject: straitjacket with smile pin. Mood: constrained politeness."
+      "artworkPrompt": "Style: dark satire. Subject: straitjacket with smile pin. Mood: constrained politeness.",
+      "statsMarks": [
+        "R"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p09 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Zwangsjacke mit freundlichem Firmenlogo ist die Pointe zum Titel; die Power ist konkret und spielbar.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 30,
       "name": "The Safety Blanket",
-      "power": "Comfort: Protect an Actor from a “Blödsinn” check.",
+      "cardNamePrint": "THE SAFETY BLANKET",
+      "power": "Comfort: Protect an Actor from a ‘Blödsinn’ check.",
       "lore": "For players who need rules to feel safe.",
       "grade": 2,
       "gradeReason": "Blanket shield is cute and functional, but not a headline card.",
-      "artworkPrompt": "Style: soft absurd comic. Subject: folded blanket shield. Mood: defensive comfort."
+      "artworkPrompt": "Style: soft absurd comic. Subject: folded blanket shield. Mood: defensive comfort.",
+      "jsonLegacy": {
+        "cardName": "The Safety Blanket",
+        "power": "Comfort: Protect an Actor from a “Blödsinn” check.",
+        "lore": "For players who need rules to feel safe."
+      },
+      "statsMarks": [
+        "A"
+      ],
+      "printTypo": "Druck zeigt „Blődsinn“ (ő statt ö, Glyphenfehler).",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p09 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Die aus Text gewebte Decke ist ein gutes Bild; die Power setzt einen „Blödsinn check“ voraus, den die Karte nicht erklärt.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 31,
       "name": "The Ironic Poster",
+      "cardNamePrint": "THE IRONIC POSTER",
       "power": "Vibes: Play this card. It does nothing. If it bothers someone, you gain a token.",
-      "lore": "These feelings are ironic.",
+      "lore": "These framings are ironic.",
       "grade": 1,
       "gradeReason": "Cat nuke poster is flawless anti-seriousness design.",
-      "artworkPrompt": "Style: meme comic. Subject: cat explosion poster. Mood: ironic detachment."
+      "artworkPrompt": "Style: meme comic. Subject: cat explosion poster. Mood: ironic detachment.",
+      "jsonLegacy": {
+        "cardName": "The Ironic Poster",
+        "power": "Vibes: Play this card. It does nothing. If it bothers someone, you gain a token.",
+        "lore": "These feelings are ironic."
+      },
+      "statsMarks": [
+        "F"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p09 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Das Hang-in-there-Kätzchen über dem Vulkan mit „LET GO“ und eine Karte, die nichts tut, sitzen; die Lore ist ein Füllsatz.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 32,
       "name": "The Slide Deck",
-      "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it works.",
+      "cardNamePrint": "THE SLIDE DECK",
+      "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it succeeds.",
       "lore": "Belong in marketing, slides, posters, and onboarding jokes.",
       "grade": 1,
       "gradeReason": "Corporate improv weapon—players will absolutely abuse this.",
-      "artworkPrompt": "Style: office satire. Subject: burning projector presentation. Mood: performative confidence."
+      "artworkPrompt": "Style: office satire. Subject: burning projector presentation. Mood: performative confidence.",
+      "jsonLegacy": {
+        "cardName": "The Slide Deck",
+        "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it works.",
+        "lore": "Belong in marketing, slides, posters, and onboarding jokes."
+      },
+      "statsMarks": [
+        "A",
+        "F"
+      ],
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p09 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare CEO-Power; der Lore-Text ist eine Ablagenotiz aus dem Konzept („Belong in …“).",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 33,
       "name": "Hidden Power",
+      "cardNamePrint": "HIDDEN POWER",
       "power": "Reveal: Point at the player who is actually leading the table. They must skip a turn.",
       "lore": "Expose hidden power dynamics at the table.",
       "grade": 1,
       "gradeReason": "Puppet-master accusation card is mean, elegant, and socially explosive.",
-      "artworkPrompt": "Style: symbolic comic. Subject: marionette cross strings. Mood: exposed control."
+      "artworkPrompt": "Style: symbolic comic. Subject: marionette cross strings. Mood: exposed control.",
+      "printTypo": "Druck: „Roweal:“ statt „Reveal:“; außerdem fehlt das Etikett „Power:“.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p10 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Marionettenkreuz und die Power, den heimlichen Anführer zu benennen, passen zusammen; die Lore ist eine Design-Anweisung.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 34,
       "name": "The Illusion",
-      "power": "Doubt: Challenge a “correct” move. There is no correct move.",
-      "lore": "Remove the illusion of a “correct” move.",
+      "cardNamePrint": "THE ILLUSION",
+      "power": "Doubt: Challenge a 'Correct' move. There is no correct move.",
+      "lore": "Remove the illusion of a 'correct' move.",
       "grade": 1,
       "gradeReason": "Pipe labeled rule is perfect visual philosophy—core deck identity.",
-      "artworkPrompt": "Style: surreal comic. Subject: smoking pipe labeled rule. Mood: philosophical doubt."
+      "artworkPrompt": "Style: surreal comic. Subject: smoking pipe labeled rule. Mood: philosophical doubt.",
+      "jsonLegacy": {
+        "cardName": "The Illusion",
+        "power": "Doubt: Challenge a “correct” move. There is no correct move.",
+        "lore": "Remove the illusion of a “correct” move."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p10 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 1,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Magrittes Pfeife mit „This is a Rule“ ist eine echte Pointe; Power ohne Folge und Lore als Anweisung senken sie.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 35,
       "name": "The Blame",
-      "power": "Deflect: Shift the consequence of a bad roll to the Game Designer.",
+      "cardNamePrint": "THE BLAME",
+      "power": "Deflect: Shift the consequence of a bad roll to the 'Game Designer'.",
       "lore": "Look for someone to blame.",
       "grade": 2,
       "gradeReason": "Finger-pointing always works; simple and reliably funny.",
-      "artworkPrompt": "Style: accusatory comic. Subject: giant pointing finger. Mood: shameless deflection."
+      "artworkPrompt": "Style: accusatory comic. Subject: giant pointing finger. Mood: shameless deflection.",
+      "jsonLegacy": {
+        "cardName": "The Blame",
+        "power": "Deflect: Shift the consequence of a bad roll to the Game Designer.",
+        "lore": "Look for someone to blame."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p10 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Zeigefinger und Schuldverschiebung sind vorhersehbar, und am Tisch sitzt meist kein „Game Designer“, der die Folge tragen könnte.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 36,
       "name": "The Interpretation",
-      "power": "Define: You decide what another player's card “really” means.",
+      "cardNamePrint": "THE INTERPRETATION",
+      "power": "Define: You decide what another player's card *really* means.",
       "lore": "Look for the correct interpretation.",
       "grade": 1,
       "gradeReason": "Interpretive tyranny is glorious—strong control and perfect satire.",
-      "artworkPrompt": "Style: chaotic comic. Subject: shadow beast around car. Mood: interpretive madness."
+      "artworkPrompt": "Style: chaotic comic. Subject: shadow beast around car. Mood: interpretive madness.",
+      "jsonLegacy": {
+        "cardName": "The Interpretation",
+        "power": "Define: You decide what another player's card “really” means.",
+        "lore": "Look for the correct interpretation."
+      },
+      "printTypo": "Sternchen um „really“ wie gedruckt (wirkt wie Markdown-Rest).",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p10 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 1,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Rorschach-Klecks, in dem ein Auto zu sehen ist, ist witzig; die Power bleibt ohne Regelfolge, die Lore ist eine Anweisung.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 37,
       "name": "The Pot Plant",
+      "cardNamePrint": "THE POT PLANT",
       "power": "Witness: Do nothing. Just observe. Your silence is a valid move.",
       "lore": "Plants in pots. Silent visual gags.",
       "grade": 2,
       "gradeReason": "Weirdly powerful passive card—excellent table comedy through total refusal.",
-      "artworkPrompt": "Style: surreal comic. Subject: potted plant with eyes. Mood: suspicious observation."
+      "artworkPrompt": "Style: surreal comic. Subject: potted plant with eyes. Mood: suspicious observation.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p11 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Die Power doppelt #8 (Schweigen als Zug), und der Lore-Text ist eine Bildnotiz aus dem Briefing.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 38,
       "name": "The Bureaucrat",
+      "cardNamePrint": "THE BUREAUCRAT",
       "power": "Paperwork: Demand a player mime filling out a form before rolling.",
-      "lore": "Philosophers, clerks, editors. Bureaucrats.",
+      "lore": "Philosophers, clerks, editors, bureaucrats.",
       "grade": 1,
       "gradeReason": "Filing cabinet villain is brutally funny and instantly disruptive.",
-      "artworkPrompt": "Style: office satire. Subject: filing cabinet wrapped in tape. Mood: administrative oppression."
+      "artworkPrompt": "Style: office satire. Subject: filing cabinet wrapped in tape. Mood: administrative oppression.",
+      "jsonLegacy": {
+        "cardName": "The Bureaucrat",
+        "power": "Paperwork: Demand a player mime filling out a form before rolling.",
+        "lore": "Philosophers, clerks, editors. Bureaucrats."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p11 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 2
+        },
+        "reason": "Ein laufender Aktenschrank in rotem Klebeband macht „red tape“ wörtlich, die Pantomime-Power passt; die Lore ist eine Aufzählung.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 39,
       "name": "The Alien Tourist",
+      "cardNamePrint": "THE ALIEN TOURIST",
       "power": "Snapshot: Remember the current board state. You may revert to it later.",
       "lore": "Bizarre aliens. Surreal creatures.",
       "grade": 2,
       "gradeReason": "Memory-snapshot mechanic is clever, though less sharp than Bureaucrat.",
-      "artworkPrompt": "Style: whimsical comic. Subject: alien tourist with camera. Mood: detached curiosity."
+      "artworkPrompt": "Style: whimsical comic. Subject: alien tourist with camera. Mood: detached curiosity.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p11 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Kamera und Snapshot-Power passen sauber; die Lore ist eine Figurenliste aus dem Konzept.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 40,
       "name": "Uncle FrizzleBob",
+      "cardNamePrint": "UNCLE FRIZZLEBOB",
       "power": "Anarchy: Destroy this card (rip it up). Rewrite one rule for the rest of the game.",
       "lore": "Analog-first DIY cut&play artist.",
       "grade": 1,
       "gradeReason": "Signature mascot chaos card—absolute table legend material.",
-      "artworkPrompt": "Style: mascot comic. Subject: wild rabbit with scissors. Mood: joyful sabotage."
+      "artworkPrompt": "Style: mascot comic. Subject: wild rabbit with scissors. Mood: joyful sabotage.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p11 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Die Karte verlangt, sich selbst zu zerreißen, und das Bild zeigt den Hasen mit Schere beim Zerschneiden; die Lore ist eine Kurzbio.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 41,
       "name": "The Judge's Wig",
+      "cardNamePrint": "THE JUDGE’S WIG",
       "power": "Roleplay: Wear it (mime). You are in charge until you laugh.",
       "lore": "Allow law-and-order players to stay.",
       "grade": 2,
       "gradeReason": "Costume authority is hilarious and strong for social domination.",
-      "artworkPrompt": "Style: costume satire. Subject: oversized judge wig. Mood: fake authority."
+      "artworkPrompt": "Style: costume satire. Subject: oversized judge wig. Mood: fake authority.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p12 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare Kostüm-Power; die Lore ist eine Designnotiz statt eines Satzes für Spieler.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 42,
       "name": "The Police Badge",
+      "cardNamePrint": "THE POLICE BADGE",
       "power": "Policing: If you catch someone optimizing, you get a token.",
       "lore": "Default to policing or rule-lawyering.",
       "grade": 2,
       "gradeReason": "Sheriff of Nothing badge is a perfect petty-control joke.",
-      "artworkPrompt": "Style: parody comic. Subject: fake sheriff badge. Mood: officious nonsense."
+      "artworkPrompt": "Style: parody comic. Subject: fake sheriff badge. Mood: officious nonsense.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p12 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "„SHERIFF OF NOTHING“ auf dem Abzeichen ist die Pointe, die Power ist klar; die Lore ist ein Stichwort.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 43,
       "name": "The Lab Coat",
+      "cardNamePrint": "THE LAB COAT",
       "power": "Explanation: Explain the “Science” of your move to gain a bonus.",
       "lore": "The table is encouraged to let them try.",
       "grade": 1,
       "gradeReason": "Fake expertise as a mechanic—excellent improv fuel and universally usable.",
-      "artworkPrompt": "Style: academic satire. Subject: stained lab coat. Mood: fraudulent expertise."
+      "artworkPrompt": "Style: academic satire. Subject: stained lab coat. Mood: fraudulent expertise.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p12 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Bonus ohne Größe macht die Power vage; Kittel und Text bleiben wörtlich.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 44,
       "name": "The Dunce Cap",
+      "cardNamePrint": "THE DUNCE CAP",
       "power": "Humility: Wear it if you ask for a rule clarification. It protects you from judgment.",
       "lore": "Make rule anxiety visible without punishing it.",
       "grade": 2,
       "gradeReason": "Surprisingly kind design hidden inside a humiliation prop.",
-      "artworkPrompt": "Style: playful comic. Subject: dunce cap on pedestal. Mood: gentle embarrassment."
+      "artworkPrompt": "Style: playful comic. Subject: dunce cap on pedestal. Mood: gentle embarrassment.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p12 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Die Eselsmütze wird vom Strafinstrument zum Schutz, das ist die Pointe der Power; die Lore klingt nach Designdokument.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 45,
       "name": "The Dead Author",
-      "power": "Interpretation: The rules mean whatever the group decides they mean tonight.",
+      "cardNamePrint": "THE DEAD AUTHOR",
+      "power": "Interpretation: The rules mean whatever the group decides they mean right now.",
       "lore": "They look for the designer's intent.",
       "grade": 1,
       "gradeReason": "Gravestone philosophy card—core manifesto material and table-shaping.",
-      "artworkPrompt": "Style: gothic comic. Subject: gravestone with pen. Mood: liberated authorship."
+      "artworkPrompt": "Style: gothic comic. Subject: gravestone with pen. Mood: liberated authorship.",
+      "jsonLegacy": {
+        "cardName": "The Dead Author",
+        "power": "Interpretation: The rules mean whatever the group decides they mean tonight.",
+        "lore": "They look for the designer's intent."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p13 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 4,
+        "scores": {
+          "pointe": 2,
+          "power": 1,
+          "lore": 1,
+          "wissen": 2,
+          "bild": 2
+        },
+        "reason": "Grabstein mit tropfender Feder plus Power macht Barthes’ „Tod des Autors“ verständlich; die Power selbst hat keine Mechanik.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 46,
       "name": "The Ambiguity",
+      "cardNamePrint": "THE AMBIGUITY",
       "power": "Obscure: Play on another card. That card's text is now open to interpretation.",
       "lore": "Most games collapse under ambiguity.",
       "grade": 1,
       "gradeReason": "Fog-card is evil and elegant—wonderful controlled chaos tool.",
-      "artworkPrompt": "Style: misty comic. Subject: blurred rulebook in fog. Mood: uncertain meaning."
+      "artworkPrompt": "Style: misty comic. Subject: blurred rulebook in fog. Mood: uncertain meaning.",
+      "printTypo": "Druck: „Nost games“ statt „Most games“.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p13 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 1,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Die Karte ist in ihrem eigenen Bild vernebelt, das ist eine Meta-Pointe; die Power bleibt in der Wirkung offen.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 47,
       "name": "The Social Contract",
+      "cardNamePrint": "THE SOCIAL CONTRACT",
       "power": "Betrayal: Break a promise made in a previous turn for narrative effect.",
-      "lore": "Determine responsibility.",
+      "lore": "Externalize responsibility.",
       "grade": 2,
       "gradeReason": "Strong philosophy piece, though more subtle than the heavy hitters.",
-      "artworkPrompt": "Style: symbolic comic. Subject: handshake contract. Mood: fragile trust."
+      "artworkPrompt": "Style: symbolic comic. Subject: handshake contract. Mood: fragile trust.",
+      "jsonLegacy": {
+        "cardName": "The Social Contract",
+        "power": "Betrayal: Break a promise made in a previous turn for narrative effect.",
+        "lore": "Determine responsibility."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p13 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 1,
+          "bild": 1
+        },
+        "reason": "Handschlag und Verrat sind vorhersehbar; der Lore-Text ist ein Stichwort ohne Satz.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 48,
       "name": "The Emergency Handle",
+      "cardNamePrint": "THE EMERGENCY HANDLE",
       "power": "Reset: Pull to end the Scene immediately if it gets boring.",
-      "lore": "Leave the emergency handle named “Please tell me the correct move” unused.",
+      "lore": "Remove the emergency handle marked \"Please tell me what the correct move is.\"",
       "grade": 1,
       "gradeReason": "Emergency brake for boredom—perfect and brutally practical.",
-      "artworkPrompt": "Style: dramatic comic. Subject: red emergency handle. Mood: instant interruption."
+      "artworkPrompt": "Style: dramatic comic. Subject: red emergency handle. Mood: instant interruption.",
+      "jsonLegacy": {
+        "cardName": "The Emergency Handle",
+        "power": "Reset: Pull to end the Scene immediately if it gets boring.",
+        "lore": "Leave the emergency handle named “Please tell me the correct move” unused."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p13 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Klare Notbremse; die Lore greift das Manifest auf, wirkt aber nur mit dessen Kontext.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 49,
       "name": "The Mood Swing",
-      "power": "Shift: Force an Actor to change their MOOD to “anxious.”",
+      "cardNamePrint": "THE MOOD SWING",
+      "power": "Shift: Force an Actor to change their MOOD to ‘Anxious’.",
       "lore": "MOOD: The emotional state driving your Actor.",
       "grade": 2,
       "gradeReason": "Theater-mask mood control is funny and useful, but more support than spotlight.",
-      "artworkPrompt": "Style: stage comic. Subject: comedy tragedy masks. Mood: emotional manipulation."
+      "artworkPrompt": "Style: stage comic. Subject: comedy tragedy masks. Mood: emotional manipulation.",
+      "jsonLegacy": {
+        "cardName": "The Mood Swing",
+        "power": "Shift: Force an Actor to change their MOOD to “anxious.”",
+        "lore": "MOOD: The emotional state driving your Actor."
+      },
+      "printTypo": "Druck: zweimal „NOOD“ statt „MOOD“ (Power und Lore).",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p14 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare Power; die Lore ist ein Glossareintrag und im Druck zweimal verschrieben.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 50,
       "name": "The Skill Issue",
+      "cardNamePrint": "THE SKILL ISSUE",
       "power": "Incompetence: An Actor forgets their SKILL for this scene.",
       "lore": "SKILL: The trained ability your Actor relies on.",
       "grade": 1,
       "gradeReason": "Phrase alone wins—this card will be quoted constantly at the table.",
-      "artworkPrompt": "Style: meta comic. Subject: sword and papers flying. Mood: humiliating failure."
+      "artworkPrompt": "Style: meta comic. Subject: sword and papers flying. Mood: humiliating failure.",
+      "printTypo": "Titel steht im Druck zweimal nebeneinander („THE SKILL ISSUE“ über RAF-Kästen und über dem Zauberer-Bild); Karte hat zwei Bilder.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p14 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "„Skill issue“ als Gamer-Spott trägt kaum, die Lore ist ein Glossareintrag und das Layout ist doppelt.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 51,
       "name": "The Collapsed Quest",
-      "power": "Tip: Instantly change the Quest Goal by 1/2.",
-      "lore": "If the tips, Quest collapses.",
+      "cardNamePrint": "THE COLLAPSED QUEST",
+      "power": "Tip: Instantly change the Quest Die value by ±2.",
+      "lore": "If die tips, Quest collapses.",
       "grade": 2,
       "gradeReason": "Dice tower collapse is strong physical comedy and good structural chaos.",
-      "artworkPrompt": "Style: absurd comic. Subject: collapsing dice tower. Mood: unstable objective."
+      "artworkPrompt": "Style: absurd comic. Subject: collapsing dice tower. Mood: unstable objective.",
+      "jsonLegacy": {
+        "cardName": "The Collapsed Quest",
+        "power": "Tip: Instantly change the Quest Goal by 1/2.",
+        "lore": "If the tips, Quest collapses."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p14 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 1,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Konkrete Würfel-Power; das Wortspiel „Tip“ und der kippende Würfelturm verstärken sich.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 52,
       "name": "The Story Breaker",
+      "cardNamePrint": "THE STORY BREAKER",
       "power": "Disconnect: Interrupt a story connection that feels forced.",
-      "lore": "Tell a story connecting Mood → Stage → Quest.",
+      "lore": "Tell a story connecting: Actor -> Stage -> Quest.",
       "grade": 1,
       "gradeReason": "Scissors cutting film is elegant meta-sabotage and excellent freestyle tech.",
-      "artworkPrompt": "Style: cinematic comic. Subject: scissors cutting film strip. Mood: narrative disruption."
+      "artworkPrompt": "Style: cinematic comic. Subject: scissors cutting film strip. Mood: narrative disruption.",
+      "jsonLegacy": {
+        "cardName": "The Story Breaker",
+        "power": "Disconnect: Interrupt a story connection that feels forced.",
+        "lore": "Tell a story connecting Mood → Stage → Quest."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p14 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Schere am Filmstreifen ist wörtlich, die Power ohne Folge, die Lore eine Regelzeile.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 53,
       "name": "Stay Fluffy",
-      "power": "Game Over: End the game if everyone at the table feels “fluffy” (relaxed/confused).",
-      "lore": "Stay Fluffy.",
+      "cardNamePrint": "STAY FLUFFY",
+      "power": "Game Over: End the game if everyone at the table feels 'fluffy' (relaxed/confused).",
+      "lore": "Stay fluffy.",
       "grade": 1,
       "gradeReason": "Bunny end-condition is iconic and perfectly captures the whole anti-rules spirit.",
-      "artworkPrompt": "Style: mascot comic. Subject: fluffy rabbit glowing. Mood: peaceful absurdity."
+      "artworkPrompt": "Style: mascot comic. Subject: fluffy rabbit glowing. Mood: peaceful absurdity.",
+      "jsonLegacy": {
+        "cardName": "Stay Fluffy",
+        "power": "Game Over: End the game if everyone at the table feels “fluffy” (relaxed/confused).",
+        "lore": "Stay Fluffy."
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p15 TL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 1,
+          "power": 1,
+          "lore": 2,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Der elektrisierte, aufgeplusterte Hase und der Deck-Slogan tragen; die Spielende-Bedingung ist subjektiv.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 54,
       "name": "Kayfabingo!",
-      "power": "Victory: Win the game instantly if you shout “BINGO!” for no reason.",
-      "lore": "Kayfabingo!",
+      "cardNamePrint": "KAYFABINGO!",
+      "power": "Victory: Win the game instantly if you shout 'BINGO' for no reason.",
+      "lore": "KayfaBINGO!",
       "grade": 1,
       "gradeReason": "Ridiculous bingo finisher—pure FrizzleBob energy and table legend material.",
-      "artworkPrompt": "Style: chaotic comic. Subject: bizarre bingo card celebration. Mood: sudden triumph."
+      "artworkPrompt": "Style: chaotic comic. Subject: bizarre bingo card celebration. Mood: sudden triumph.",
+      "jsonLegacy": {
+        "cardName": "Kayfabingo!",
+        "power": "Victory: Win the game instantly if you shout “BINGO!” for no reason.",
+        "lore": "Kayfabingo!"
+      },
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p15 TR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Sofortsieg durch grundloses „BINGO“ ist die Anti-Regel auf den Punkt, das Bingo-Feld passt; die Lore wiederholt nur den Titel.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 55,
       "name": "The Strange Alertness",
+      "cardNamePrint": "THE STRANGE ALERTNESS",
       "power": "Awareness: +1 to rolls if you are visibly uncomfortable.",
       "lore": "Uncomfortable, irritated, or strangely alert.",
       "grade": 2,
       "gradeReason": "Eye paranoia card is weirdly strong and fits the deck’s social weirdness.",
-      "artworkPrompt": "Style: surreal comic. Subject: giant observing eye. Mood: hyper-awareness."
+      "artworkPrompt": "Style: surreal comic. Subject: giant observing eye. Mood: hyper-awareness.",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p15 BL",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 2,
+        "scores": {
+          "pointe": 1,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 1
+        },
+        "reason": "Spielbare Power; Auge und Aufzählungs-Lore fügen nichts hinzu.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     },
     {
       "num": 56,
       "name": "The End",
+      "cardNamePrint": "THE END",
       "power": "Consensus: The group decides when it is done. No winner.",
       "lore": "When the group feels done.",
       "grade": 1,
       "gradeReason": "The cleanest final statement possible—perfect philosophical closer.",
-      "artworkPrompt": "Style: vintage comic. Subject: spiral end card. Mood: satisfied conclusion.\n\n## QA"
+      "artworkPrompt": "Style: vintage comic. Subject: spiral end card. Mood: satisfied conclusion.\n\n## QA",
+      "source": "print",
+      "textSource": {
+        "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf p15 BR",
+        "method": "visual-transcription",
+        "checkedAt": "2026-10-27"
+      },
+      "rating": {
+        "stars": 3,
+        "scores": {
+          "pointe": 2,
+          "power": 2,
+          "lore": 0,
+          "wissen": 0,
+          "bild": 2
+        },
+        "reason": "Die zersprungene „That’s all Folks“-Scheibe als Schlusskarte sitzt; die Lore wiederholt die Power.",
+        "version": "R1",
+        "ratedAt": "2026-10-27"
+      }
     }
   ],
   "qa": {
@@ -521,13 +1822,16 @@
     "verdict": "This deck is dangerous because it teaches players that the rules were never real to begin with. The strongest cards—The Nonsense State, The Correct Nonsense, Stay Fluffy—don’t just work mechanically, they infect the table philosophy itself. It’s funny, hostile, and secretly a design manifesto wearing clown shoes. Table-ready? Absolutely yes. Just don’t hand it to anyone who still asks who won."
   },
   "topCards": [
-    "The Nonsense State",
     "The Correct Nonsense",
-    "Stay Fluffy"
+    "The Lost Winner",
+    "Nervous Laughter",
+    "The Amnesia",
+    "The Dead Author"
   ],
   "worstCards": [
-    "The Crutch",
-    "The Safety Blanket"
+    "The Table",
+    "The Pot Plant",
+    "The Story Breaker"
   ],
   "todos": {
     "urgent": [
@@ -548,7 +1852,7 @@
     "#FreestyleChaos",
     "#StayFluffy"
   ],
-  "viralScore": 10,
+  "viralScore": 7,
   "notes": "Page 1 and final print page are framing/manifesto pages; core gameplay cards begin on page 2 and conclude with The Final Exam. One intentional duplicate card title (The Skill Issue) appears in Kayfabizarro Specials and should be preserved unless publication formatting wants explicit distinction. Extremely strong system identity and one of the clearest meta-design decks in the project.",
   "savedAt": "2026-04-29T21:41:06Z",
   "extractionTool": "chatgpt_v6",
@@ -563,5 +1867,35 @@
     "art"
   ],
   "exhibitions": [],
-  "channels": []
+  "channels": [],
+  "topCardsLegacy": [
+    "The Nonsense State",
+    "The Correct Nonsense",
+    "Stay Fluffy"
+  ],
+  "worstCardsLegacy": [
+    "The Crutch",
+    "The Safety Blanket"
+  ],
+  "viralScoreLegacy": 10,
+  "viralReason": "„The Correct Nonsense“ mit „2 + 2 = BANANA“ und dem Satz „If it makes no sense, it may be correct.“ würde geteilt, weil Bild und Satz ohne Spielkenntnis funktionieren.",
+  "deckRating": {
+    "stars": 3,
+    "avgPoints": 5.57,
+    "distribution": {
+      "1": 0,
+      "2": 15,
+      "3": 27,
+      "4": 13,
+      "5": 1
+    },
+    "reason": "Starke Bildpointen (Banane an der Tafel, schmelzender Pokal, Magritte-Pfeife, Sheriff of Nothing) und meist spielbare Powers, aber rund die Hälfte der Lore-Zeilen sind Notizen aus dem Designbriefing statt Sätze für Spieler, und Wissen steckt kaum drin.",
+    "ratingNote": null,
+    "version": "R1"
+  },
+  "printSync": {
+    "source": "PDF Anti-Rules_Toolkit - ADD web ID.pdf – Deck-Analyzer R1 visuelle Transkription 2026-10-27",
+    "rule": "Georg 23.10.: PDF führt immer",
+    "grading": "GRADING_R1 (Georg 27.10.: 5 Kriterien, Sterne 1–5)"
+  }
 }
