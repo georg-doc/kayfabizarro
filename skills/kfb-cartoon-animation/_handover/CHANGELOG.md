@@ -19,3 +19,10 @@
 - Motion PR #333 runtime files remain untouched.
 - No Stage or Live runtime promotion.
 - Next gate: `APPLY_CANONICAL_SKILL_ON_NEXT_BOUNDED_ANIMATION_SLICE`.
+
+## 2026-10-27 · MotionBricks MacBook Pro WS0 research intake (review branch)
+- Georg asked to persist NVIDIA MotionBricks research for later WS0 examination, without claiming a working Mac inference path.
+- Added `_handover/WS0_MOTIONBRICKS_MACBOOK_DONOR_RESEARCH_2026-10-27.md` with official sources, CPU/ONNX versus TensorRT differences, hardware unknowns, licensing, owner constraints and an isolated WS0 gate.
+- Appended research-only pointer to the shared animation `_handover/RETURN.md`.
+- No Motion/World/Combat runtime edits; no generated motion, visual proof, tested inference, Site, Stage, merge or Live promotion. Research branch `research/motionbricks-macbook-ws0-2026-10-27`; source-only review, not adoption.
+- Next gated action: `MOTIONBRICKS-MAC-ONNX-SOMA-ISOLATION-01` by WS0 only when resumed.
