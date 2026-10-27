@@ -4,7 +4,9 @@
 import { report } from './_report.mjs'
 import { createSceneGrid } from '../../src/npc/sceneGrid.js'
 import { createSceneDirector, REGIE } from '../../src/npc/sceneDirector.js'
-import { SCENE_TYPES, poolTypes, validScene } from '../../src/npc/sceneTypes.js'
+import { SCENE_TYPES, poolTypes, validScene, typeOf } from '../../src/npc/sceneTypes.js'
+import { sceneCard, parseCard } from '../../src/npc/talkDirector.js'
+import { isBlocked } from '../../src/dialog/ssotLines.js'
 
 const groundAt = (x, z) => 3 * Math.sin(x / 40) * Math.cos(z / 55) + (x > 400 ? (x - 400) * 0.5 : 0)   // ab x > 400 steiler Hang (Neigung 0,5)
 const C = {}, X = {}
@@ -62,4 +64,9 @@ C.noFloodWhenStanding = inStand <= 1
   C.flufferOnlyAtTree = got.filter((s) => s.typ === 'fluffer').every((s) => s.anker.ort === 'dark_fluffer_ghost' && s.besetzung[0].sorte && /^q_/.test(s.besetzung[0].characterId))
   C.cardFromCardFor = got.filter((s) => s.typ === 'patrouille').every((s) => /^deck_x:\d+$/.test(s.karte)) && got.filter((s) => s.typ !== 'patrouille').every((s) => s.karte === null)
   C.allValidWithConflict = got.every(validScene) && new Set(got.map((s) => s.typ)).size >= 4 }
+// Disco-Karte (Lead 25.10.): Tänzer reihum, gesperrte Karten nie (geopolitical_thrillers), MC allein ohne Karte; Fluffer ohne Deck → null
+{ const disco = typeOf('disco').besetzungen[0], cards = Array.from({ length: 70 }, (_, n) => sceneCard(disco, n)), decks = new Set(cards.map((k) => k?.split(':')[0]))
+  X.discoDecks = [...decks]
+  C.discoCardFromDancers = cards.every((k) => k && !isBlocked(parseCard(k).deck.id, parseCard(k).num)) && decks.size === 7 && decks.has('geopolitical_thrillers_conspiracy_theories')
+  C.noCardWithoutDeck = sceneCard([{ characterId: 'frizzlebob' }], 0) === null && sceneCard(typeOf('fluffer').besetzungen[0], 0) === null }
 process.exit(report('unit-sceneDirector (WS-NPC S3 Regie R0, Platzhalter-Raster)', C, X))

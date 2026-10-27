@@ -14,7 +14,8 @@ export const SCENE_TYPES = Object.freeze([
   { typ: 'band', phasen: ['ruhe'], phase: 'ruhe', freigabe: 'entwurf', platz: { R: 8, maxSlope: 0.0192, plinthe: 'Bühne Ø 5 m' },   // Neigung < 1,1° = tan 0,0192
     besetzungen: [[{ characterId: 'orc_legacy_b', rolle: 'kfb_band_leader' }, { characterId: 'orc_raider', rolle: 'kfb_band_guitarist' }, { characterId: 'orc_brute', rolle: 'kfb_band_drummer' }, { characterId: 'orc_legacy_a', rolle: 'kfb_band_trumpeter' }]] },
   { typ: 'disco', phasen: ['ruhe'], phase: 'ruhe', freigabe: 'entwurf', platz: { R: 9, maxSlope: null, plinthe: false, note: 'discoSite r 9·s' },
-    besetzungen: [[{ characterId: 'frizzlebob', rolle: 'kfb_disco_mc' }]] },
+    // MC plus die sieben Tänzer (K12-Plätze; Register über kfb_disco_*), Lead 25.10.: die Tänzer tragen die Signatur-Decks der Szene
+    besetzungen: [[{ characterId: 'frizzlebob', rolle: 'kfb_disco_mc' }, ...['skeleton_minion', 'avian_swordsman', 'protagonist_a', 'toy_soldier', 'witch', 'black_knight', 'demon_lord'].map((characterId) => ({ characterId, rolle: 'kfb_disco_dancer' }))]] },
   // Konflikt (Lead 25.10.): Skelett-Patrouille (groupLife, Route an den Anker verschoben) und Dark Fluffer am Obstbaum (flufferSet, Platz = Baum der Fluffer-Definition)
   { typ: 'patrouille', phasen: ['konflikt'], phase: 'konflikt', freigabe: 'entwurf', platz: { R: 10, maxSlope: null, plinthe: false, note: 'Route mit ≥ 2 m Freiraum' }, gruppe: 'skeleton_patrol',
     besetzungen: [[{ characterId: 'skeleton_warrior', rolle: 'skeleton_patrol' }, { characterId: 'skeleton_rogue', rolle: 'skeleton_patrol' }, { characterId: 'skeleton_mage', rolle: 'skeleton_patrol' }]] },

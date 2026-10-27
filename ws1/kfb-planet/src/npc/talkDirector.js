@@ -34,10 +34,13 @@ const BY_DECK = new Map()
 CARDS.cards.forEach(([d, num]) => { const id = CARDS.decks[d][0]; if (isBlocked(id, num)) return; if (!BY_DECK.has(id)) BY_DECK.set(id, []); BY_DECK.get(id).push(+num) })
 export const deckCards = (deckId) => BY_DECK.get(deckId) || []
 
-// S3 (Lead 25.10.): Signatur-Karte einer Szene – erstes Mitglied der Besetzung mit Signatur-Deck, Karte je Szenen-Nummer reihum (gesperrte nie) → 'deck:num' | null
+// S3 (Lead 25.10.): Signatur-Karte einer Szene → 'deck:num' | null
+// Mitglieder mit Signatur-Deck reihum je Szenen-Nummer (Disco: sieben Tänzer), Karte im Deck reihum; gesperrte nie (deckCards)
 export function sceneCard(besetzung, n = 0) {
-  for (const b of besetzung) { const deck = signatureDeck(b.characterId), all = deck ? deckCards(deck) : []; if (all.length) return deck + ':' + all[(hash(b.characterId) + n) % all.length] }
-  return null
+  const withDeck = besetzung.filter((b) => deckCards(signatureDeck(b.characterId) || '').length)
+  if (!withDeck.length) return null
+  const b = withDeck[n % withDeck.length], deck = signatureDeck(b.characterId), all = deckCards(deck)
+  return deck + ':' + all[(hash(b.characterId) + n) % all.length]
 }
 export const parseCard = (k) => { const m = /^(.+):(\d+)$/.exec(k || ''); return m ? { deck: { id: m[1] }, num: +m[2] } : null }
 
@@ -74,7 +77,8 @@ export function createTalkDirector(options) {
   const gap = () => TALK.replyGap[0] + (TALK.replyGap[1] - TALK.replyGap[0]) * rnd()
   // Karte einer Figur: reihum durch ihr Signatur-Deck, mit tr1 bevorzugt Karten mit tr1-Zeile; keine Karte zweimal, bevor das Deck durch ist
   function cardFor(characterId) {
-    const hint = options.cardHint?.(characterId); if (hint && !isBlocked(hint.deck.id, hint.num)) return hint   // S3: Karte der Szene, in der die Figur steht
+    // S3: Karte der Szene, in der die Figur steht – nur aus ihrem eigenen Signatur-Deck (sonst erzählt jede Tänzerin die Karte der Szene)
+    const hint = options.cardHint?.(characterId); if (hint && hint.deck.id === signatureDeck(characterId) && !isBlocked(hint.deck.id, hint.num)) return hint
     const deck = signatureDeck(characterId), all = deck ? deckCards(deck) : []
     if (!all.length) return null
     const pref = tr1 ? all.filter((n) => tr1Line(deck, n)) : all, list = pref.length ? pref : all

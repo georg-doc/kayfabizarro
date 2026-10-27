@@ -145,4 +145,12 @@ C.planNoCardOneCall = planOccasion({ cause: 'songEnd', speakers: [sp('orc_brute'
   X.tr1Grammar = { lines: n, bad: bad.slice(0, 3) }
   C.tr1OpenerFitsStart = n > 400 && bad.length === 0
 }
+// cardHint (S3): nur aus dem eigenen Signatur-Deck; eine fremde Szenen-Karte wird ignoriert
+{ const own = deckCards(signatureDeck('witch'))[3], R1 = createTalkDirector({ sources: () => ({}), reader, callLine, say: () => {}, cardHint: (cid) => (cid === 'witch' ? { deck: { id: signatureDeck('witch') }, num: own } : { deck: { id: 'kayfabizarro_pulitzer_punk' }, num: 1 }) })
+  R1.inject({ group: 'disco_k12', cause: 'songEnd', speakers: [{ anchor: 'disco-witch', characterId: 'witch' }] }); R1.update(0.1); const L1 = R1.log()[0]
+  R1.inject({ group: 'disco_k12', cause: 'songEnd', speakers: [{ anchor: 'disco-minion', characterId: 'skeleton_minion' }] }); for (let i = 0; i < 400; i++) R1.update(0.05); const L2 = R1.log().find((e) => e.anchor === 'disco-minion')
+  X.hint = [L1?.text, L2?.text]
+  const t1 = byKey.get(signatureDeck('witch') + '#' + own)?.name.replace(/\s*\(.*\)\s*/, '').trim(), t2 = byKey.get('kayfabizarro_pulitzer_punk#1')?.name.replace(/\s*\(.*\)\s*/, '').trim()
+  X.hintTitles = [t1, t2]
+  C.cardHintOwnDeckOnly = !!L1 && !!L2 && L1.source === 'CARD' && L1.text.includes(t1) && L2.source === 'CARD' && !L2.text.includes(t2) }
 process.exit(report('unit-talkDirector (WS-NPC Wechselrede chat=syl)', C, X))
