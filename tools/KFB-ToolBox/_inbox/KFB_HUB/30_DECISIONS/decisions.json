@@ -12729,6 +12729,21 @@
    "applies": "nach V-880"
   },
   {
+   "id": "V-883",
+   "date": "2026-10-27",
+   "area": "Fahren",
+   "verdict": "BUILD",
+   "text": "Fahrer im Dach im Spiel (V-877): src/m2/roofDriver.js mit J-7-Clips, Ankern und Lenkrad (privat); Figur liegt je Bild auf dem Fahrzeugmodell, Einsteigen bis zur Hüfte, Fahr-Schleife mit IK-Händen; nur Dragster/Ironclad/Rustwing, sonst unsichtbar wie bisher; Schalter roof=0. game/proc-world-ws0 @30592f4, Lenkrad in assets/private @61ff2b8. Offen: Lenkrad-Drehung, Ohren-Fahrtwind (j7_dangle_drive), Dach-Anker für die übrigen Racer. HUD-Icon-Paket zusätzlich öffentlich (kayfabizarro design/kfb-hud-icons-public-r1 @4d6a4fb, nur freie Packs), weil ChatGPT private Links nicht öffnet. Ödland-Käfer: Vogel mit Dach verschmolzen, Weg A/B in q259.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wer fährt, sieht man jetzt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -12841,7 +12856,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1420",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1421",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
