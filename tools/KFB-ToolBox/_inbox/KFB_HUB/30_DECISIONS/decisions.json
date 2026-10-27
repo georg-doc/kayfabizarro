@@ -12894,6 +12894,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-894",
+   "date": "2026-10-27",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Georg 27.10.: neuer Song „Sundown by the Sea“ (KFB MusicalChatterbox, instrumental) in die Fahrt-Musik (Liste mindscape, wie Transdimensional Surf-Trip): AAC 128, Ausgleich −0,9 dB (Pegel gegen Surf-Trip), Tags evening/day/pond; kayfabizarro assets/kfb-audio-r1 @b9e1f53, Ton-Pin scripts/audio/remote.json im Spiel @841a0e9. Dazu V-893 Teil B: performante Ton-Auslieferung (Songs, Klangbetten, Audio-Site) misst WSA mit.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Neue Musik von Georg kommt ohne Umweg in die Fahrt; die Auslieferung muss mit dem wachsenden Bestand schnell bleiben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -13006,7 +13021,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1431",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1432",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

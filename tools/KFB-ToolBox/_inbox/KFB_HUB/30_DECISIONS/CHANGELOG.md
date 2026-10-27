@@ -196,6 +196,7 @@ R2 complete intake127/127,30unit and137localHTTPPASS. Nativev5 saved/deployed, b
 - WSB-Abstimmung 27.10.: V-886/V-890/V-891 Gate PASS, direkt an WSB (Reihenfolge Käfer → Posen → J-7), Quellen + Konzeptblätter in 50_BLENDER/<Job>/, WSB pusht nicht (WS0 bringt Stände auf die Branches); Hub b247–b249.
 - V-892 Bewuchs je Biom: zweite Sitzung (WS0-gesteuert) im Arbeitsbaum kfb-veg, Branch game/veg-biome-r1; q264 PASS.
 - V-893 WSA Ton-Prüfung (Brief, b250); Briefings priorisiert.
+- V-894 Sundown by the Sea in der Fahrt-Musik (Ton @b9e1f53, Pin @841a0e9); WSA-Auftrag um Ton-Auslieferung erweitert.
 - q245: Publish-Klon in den Papierkorb (16 ungesicherte Dateien in 90_ARCHIVE/publish_klon_ungesichert_2026-10-26).
 
 ## 2026-10-24 · WSA V-725/V-727 execution attempt / private input transport
