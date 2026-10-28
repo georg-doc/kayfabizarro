@@ -3,6 +3,7 @@
 Stand 11.10.2026 · Agent Motion-Director nach [V-177] · **kein neuer Beschluss**.
 v0.2: Georgs Antworten [V-179], Nachtrag §1d mit den zwei PDFs (Motion Matrix, H&D Runtime Strategy).
 Maßgeblich bleiben DECISIONS.md, Plan R1 und PROJECT_STATE [V-117]. Bei Widerspruch gilt das Register.
+**Seit 28.10. [V-919]:** Für Figuren-Animation (Gehen, Laufen, Springen, Drehen, Fahren im Dach, Jetpack, Charakter-Gänge) ist `ANIMATIONSBIBEL_R1.md` das SSOT; bei Widerspruch gilt die Bibel.
 Fokus: MVP. Demos erst als eigener Bauschritt mit Georgs Okay [V-177].
 
 **Lesehilfe**
