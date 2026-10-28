@@ -100,3 +100,21 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 - **Existing single WS0 next gate remains unchanged:** choose one actual-source, presently WS1b-feasible two-minute **Fluff acquisition → meaningful Resident/Card response** encounter. Roadster is an optional **later** vehicle/stunt physics donor to assess only after explicit separate intake authorization; it must not displace this gate or change the WS1/WS1b owner.
 
 **Recovery:** current branch/PR HEAD after final changelog write is authoritative; do not treat a checkpoint above as the final tip. The owner and review path are unchanged.
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · Cascade Sphere / Flying Mech / OSM Card-Maze R1 — WS0 REQUEST
+
+**User-authorized persistence and conceptual review** of a proposed source-backed 90–180-second KFB Mech/Fluff/Goo/Maze encounter, not a runtime build. Existing one design owner KFB_HUB/WS0 Game Design on Draft PR #435, one prospective productive receiver WS1/WS1b R3F, with current private owner/head to be confirmed. WB2 Four-Island R4 remains STOPPED/NO MVP.
+
+**New reviewed design:** `CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md`. It records Georg's full intent: flying source Combat Mech with Gatling/minigun and axe, future grapple, selective destruction/rebuild from flight, OSM Köln-Dom city-street maze and heights, technical Factory/Prototype/BlockBits Clay urban kit, Fluff-eyed/data packet waves, Black Goo/censorship/cleaning, six D6 Story Modes, derived Quest-Die push +2/+1/0/-1, 1 Actor + 3 Scene + 1 Quest Card, chill action/strategy mobile+desktop, Mindscape sphere/portal entry and Qiva dual replay potential. FIRST PLAY proof deliberately one small sourced street junction, 1–2 player tools, one contingent route-flow-and-repair outcome. This is not automatic canon or a second owner.
+
+**Source/evidence:** `CASCADE_SPHERE_TEST_REPORT_2026-10-28.md`. New design file creation exact GitHub branch/head/file readback: 1/1; source-accuracy correction of actual `CombatMech_Axe.gltf` + `.bin` in the Mystery Series 6 Combat Mech assets folder exact readback: 1/1; evidence report new file exact GitHub branch/head/file readback: 1/1. Editorial/source-text checks actually executed: **16/16 PASS**; **0** new gameplay/runtime/browser/3D visual/source-object-isolation/mobile/performance/Stage tests. No new GLB/scene/Site or Cloudflare publication. Historic Seed World 12/12 test report and Audio tests are not rerun.
+
+**Verified sources:** Source World Mech POC donor under `tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/...`; `tools/osm-city-lab` real normalized Dom/Zentrum data; existing WhackMan graph; original WS1 R3F/Fluff/Save modules; WS0 V-514 and V-531–533/q103 open; OSM/WFC planning PR #447; Audio PR #428; corrected Mindscape PR #448. Production versions/authorities stay with their existing owners. A loaded asset pathname is not the source-isolated visual acceptance.
+
+**Unresolved:** WS1b actual receiving head/API, visual source isolation of mech/axe/machine/street-cluster, grapple motion, original city source/collision and height contact, q103 Goo color matching, derivation/acceptance of D6/Quest-Digital semantics, performance mobile, Qiva replay external data. All remain scope-gated.
+
+**KFB Hub / router note:** the design and evidence files are in the existing KFB_HUB `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/` folder and Draft PR #435; branch-local `skills/chat/START_HERE.md` receives only a source pointer. The production Hub's published status/cards have not changed because this is not a deployed product or a new human playable review route. No bogus direct Stage URL.
+
+**ONE NEXT GATE (supersedes the older generic G1/G4 or Roadster-only gate for this concept lane):** `WS0_SOURCE_ISOLATION_AND_RECEIVER_TRIAGE` — WS0 pins actual active WS1b code/host, isolates real original Mech+Minigun (+Axe as source asset), a real machine/BlockBits donor and a coherent OSM street mini-zone, labels KEEP/ADAPT/REJECT/SOURCE_REQUIRED, then selects one playable two-minute Fluff/Goo/Mech encounter. Later runtime work needs explicit authorization. No merge/Live.
