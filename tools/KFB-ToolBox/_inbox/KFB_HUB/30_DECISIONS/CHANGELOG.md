@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-28 · V-905 Bänder · V-906 Krater R1 im Spiel · V-907 q269/q270
+
+Sand-Band je Biom getönt (q272). Krater Nachbau R1 statt V-850-Stern um die Kuppel (Fehler bei q268 eingeräumt), Generator auf game/crater-gen-r1 (q271). q269 A Schattenseiten-Regel an; q270 Steinchen nach Etherington-Regeln und Bandfarben neu.
+
 ## 2026-10-27 · WSA Einzelinstanz-FPS-Diagnose / v9 unverändert
 
 14Messfenster4594Intervalle:Standard15,5–21,5FPS,Fast38,5–44,3; norender nachweiteremLaden73,8–88,1. Render-/Auflösungsengpass begründet, konkreteGPU-Ursacheoffen. HUD-Endzähler14Calls28Tris nichtWeltbudget. KonkreterWS0-Patchvorschlag: vorhandeneQualitätsregelung, Gesamtframezähler, Endlos-TeststattProbe; VegetationsCullalsnächsteHypothese. EigeneAlt-Pakete/Buildbereinigt,~410MBfrei. Report replies/WSA_TO_WS0_SINGLE_INSTANCE_FPS_DIAGNOSIS_2026-10-27.md. Site/World/Secretsunverändert; nächstesGateWS0World-Patch+kontrollierterVergleich.

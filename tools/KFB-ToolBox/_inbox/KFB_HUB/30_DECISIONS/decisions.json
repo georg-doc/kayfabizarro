@@ -13059,6 +13059,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-905",
+   "date": "2026-10-28",
+   "area": "Look",
+   "verdict": "BUILD",
+   "text": "Georg 28.10.: zu viele gleichfarbige, helle Terrain-Bänder. Befund: das Sand-Band (peak = R.sand) war in jedem Biom und jeder Saat fast dasselbe Creme (L≈89). Jetzt je Biom zum Wahrzeichen-Ton getönt (bandtint 0,35, L≈77); bands=v825 = alt, bandtint=k Vergleich. Hub q272 (leicht/kräftig). Spiel @da5c06a.",
+   "values": {},
+   "owner": "KFB-Stunt-Car-Race game/proc-world-ws0 src/look/biomeTerrain.js · scripts/look/bands-ab.mjs",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Farbband, das in jedem Biom gleich aussieht, liest sich als Fehler, nicht als Biom.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-906",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "FIX",
+   "text": "Georg q268 (28.10.): „das ist NICHT der Krater, den wir gebaut haben“ – im Spiel lag noch der V-850-Stern mit Steinplatten, der Nachbau R1 (V-863) war nie eingebaut; Karte zeigte das nicht und die Ansicht war schlecht (Fehler WS0). Jetzt: Nachbau R1 als Kraterfeld (256², kfb-crater-r1.js) um die Kuppel – Gelände-Höhe (Laufen/Fahren), feines Kernnetz (Lippen, Schollen), Erd-Materialcode + feine Normalen im Gelände-Shader, Sprenkel-Übergang in die Bänder, Kuppel in der Mulde. crater=v850 = alt. Prozeduraler Generator nach dem Mentalmodell (Saat → Mulde, 12–18 Wurzelrisse mit Gabel, Schollen mit WFC-Nachbarregel) auf Branch game/crater-gen-r1 @68f6025, 16 Prüfungen über 30 Saaten grün; Schollen noch zu regelmäßig (Folgerunde läuft). Hub q271.",
+   "values": {},
+   "owner": "KFB-Stunt-Car-Race game/proc-world-ws0 @da5c06a src/world/craterR1.js, CraterMesh.jsx · scripts/look/crater-shot.mjs",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Abgenommene Arbeit muss im Spiel ankommen; eine Karte zeigt immer den Spielstand und sagt, was es ist.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-907",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "Georg q269 A + Notiz: Schattenseiten-Regel V-683 für alle Objekte an, Popups ggf. aufhellen, Farbigkeit und Licht ans Terrain anpassen. Georg q270 TUNE: Wüsten-Steinchen folgen nicht den Etherington-/Deep-Dive-Verteilungsregeln (SOPs) und müssen den Farbbändern/dem Terrain angepasst werden (wie zu Beginn).",
+   "values": {},
+   "owner": "Hub q269/q270",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Objekte und Steine gehören zum Boden: gleiches Licht, gleiche Farbfamilie, Verteilung nach den Regeln.",
+   "applies": "nach Bau"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -13171,7 +13216,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1445",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1449",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
