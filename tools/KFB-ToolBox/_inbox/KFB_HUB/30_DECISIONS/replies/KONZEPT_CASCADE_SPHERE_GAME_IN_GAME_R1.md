@@ -94,7 +94,19 @@ Größe, Anzahl und Lebensdauer kommen aus der Stärke. Die Formen folgen `SPEC_
 - `VFX Mysterious Objec - 192x192/` (Portal und Magie).
 
 Die Pixel-Sprites in `explosions_smoke/` passen nicht zum Knete-Look, höchstens als winzige Funken. Selbst gebaute SVG- oder Code-Formen nur als cartooniger Stütz-Layer, nie als Haupteffekt. 3D-Knete (Kugeln, Kit-Trümmer, GPU-Rauch) trägt, 2D-Flipbooks geben Blitz, Feuerball und Ring dazu.
-**Lücke:** ein gezeichnetes Cartoon-Explosions-Flipbook im passenden Stil. Kandidaten aus der 3D-Asset-Suche: „Free Cartoon Explosion frames“ (Sons of Welder, itch.io) und „Cartoon Combat VFX – Free Sample“ (G@mingAssets, itch.io). Download erst nach Georgs Ja.
+**Vorhandene VFX-Kataloge aus Claude Design (zuerst nutzen):**
+- **VFX-Werkbank v13 / FX-Foundation** (Export 06.09.2026, Dropbox `KFB Pet Studio/KFB Mech Slice v11 - KFB VFX Werkbank v13/fx-foundation-v13_2026-09-06/`; Module im Repo KFB-Combat-Arena `modules/`):
+  - `kfb-vfx-recipes.js` mit der Grammatik muzzle/travel/surface/cascade, also genau die Kaskade;
+  - `kfb-combat-atlas.js` (Ink-Atlas), `kfb-fx-sprites.js` (Alpha-Sprites), `kfb-fx-trails.js`, `kfb-fx-flame.js`, `kfb-hit-response.js`;
+  - `kfb-sfx-layers.js`, `kfb-mech-audio.js`.
+  - Bauanleitung: `docs/EINBAU_fx-foundation_v13.md` (vier Schichten, zwölf Gates).
+  - `fx-burst` baut auf diesen Rezepten auf, statt neu anzufangen.
+- **KFB VFX-01 Review Bank** (Dropbox `KFB_VFX_01_REVIEW/`, RETURN_VFX_01.md): Spender-Zensus mit echten Texturen. Zusätzlich zu FX_Visual kommen vor:
+  - `media/2D_Assets/free-cartoon-smoke-effects-asset-pack/` (fünf Cartoon-Rauch-Familien),
+  - `media/2D_Assets/Tiny Swords (Free Pack)/Particle FX/` (Staub, Explosion, Feuer).
+  - Georgs Wahl, welche Familien nach KFB aussehen, steht dort noch offen und kommt ins Designpaket.
+
+**Lücke (nur falls die Kataloge nicht reichen):** ein gezeichnetes Cartoon-Explosions-Flipbook im passenden Stil. Kandidaten aus der 3D-Asset-Suche: „Free Cartoon Explosion frames“ (Sons of Welder, itch.io) und „Cartoon Combat VFX – Free Sample“ (G@mingAssets, itch.io). Download erst nach Georgs Ja.
 **Benchmarks fürs Designpaket:** https://www.reddit.com/r/aigamedev/comments/1xf7px0/i_started_vibe_coding_games_2_weeks_ago_i_cant/ und https://www.reddit.com/r/GamePhysics/comments/1xe2unl/spellspill_added_a_slowmotion_spell_to_my_magicka/ (Spellspill: Zeitlupe, Trümmer, Schichten).
 
 ## 6c · Erster Boss: 4GTN „The Forgotten Scout“ (Web-Chat R8, Georg 28.10., V-975)
