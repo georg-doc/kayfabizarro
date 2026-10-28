@@ -14229,6 +14229,21 @@
    "applies": "Designpaket bzw. nach So"
   },
   {
+   "id": "V-983",
+   "date": "2026-10-28",
+   "area": "Spielwelt",
+   "verdict": "FIX",
+   "text": "Georg-Befunde auf Site R5: Jetpack bleibt nach Doppel-Space am Hang hüpfend hängen (Elan-Landelogik gegen Sprunglogik) → fix/jetpack-slope; T-Pose kurz vor Idle-Tanz mit Jetpack, Ruckeln bergauf, Lags zu Beginn bei Drehung/Bewegung → fix/loco-start (Vorkompilieren, Vorladen, weiche Höhennachführung). Glockenstuhl Roncalliplatz fürs Designpaket bestätigt (V-982 A).",
+   "values": {},
+   "owner": "WS0",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg testet R5 live.",
+   "applies": "vor Do 29.10."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
