@@ -289,3 +289,16 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **Persisted recommendation, not authority:** `CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` under the same PR #435 branch. Specifies a single **fresh external independent playable blind critic ONCE after a complete integrated POC** (optionally one review after a genuinely blocking repair), no critic at each micro-slice. Q0–Q8 game-specific real evidence for source FB_CANON, tech host, real 2–4 min loop, 3D canon, animation/audio feel, mobile/desktop performance, access-secure private Site, self-play critic, Guard and Georg human gate. Defines AAA as high polish *for KFB's stylized Playmation target*, not photorealism or inherited WB2 >=8.5 score.
 
 **No actual critic executed or game tested; status CRITIC_NOT_RUN.** No change to V-962 official register, protected Site, source branch, main, or runtime; ask WS0 to apply or reject explicit briefing amendment in its own V-962 owner. Additive ChangeLog/router/PR metadata only.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · R11 · External AAA One-Shot Prompt Benchmark
+
+Georg supplied a full blank-folder Cities: Skylines II–class Three.js/Vite One-Shot prompt to evaluate architecture-first, screenshot/test harness first, multi-agent fan-out, critics per module, blind A/B, AAA thresholds and unbounded /loop against our already-approved **V-962 R2 / V-968** Cascade Sphere private game/site project.
+
+**Saved in** `CASCADE_SPHERE_R11_EXTERNAL_ONE_SHOT_PROMPT_BENCHMARK_2026-10-28.md` (same existing WS0/KFB_HUB Game Design folder, Draft PR #435). Key result: KEEP early architecture/API and source alignment, actual full-play browser harness, single productive integrator, isolated source/test tasks where cheap, real independent final Critic, persistent STATUS/Return, deterministic accepted game result. DO NOT adopt empty-folder latest unpinned stack, photographic Cities: Skylines references, 12 parallel productive writers, four rounds per module, indefinite /loop, blind judge comparison to copyrighted commercial photoreal screenshots as required KFB proof, arbitrary preaccepted FPS ceilings or generic asset replacement.
+
+**Critic/AAA:** Existing binding KFB independent execution and WS0 CANON_3D, prior R10 proposed one fresh external self-play blind critic at integrated full POC, no internal critic every module. WB2 old 8.5 Nine-Dimension Whole Game Critic is explicitly WB2 scope only, not auto-binding here. This comparison makes no new source/deployment/quality threshold authoritative; V-962 register is unchanged until WS0 explicitly adopts a patch. No Critic run, no private or public game runtime changed, no new Site, no merge/Live.
+
+**One productive next gate remains current V-962:** source isolation + 3-image design package to WS0/Georg, then one real integrated private POC branch and protected Site. Continue through internal evidence to one final external Critic + Guard + Georg when WS0 adopts R10.
