@@ -1,3 +1,11 @@
+## 2026-10-28 · Bell Resonance R2 · archive source access and synthetic modal sound
+- Retained same KFB Audio owner #365 and unpublished immersive WS0 #455; research Draft PR #458 only, no second audio owner or runtime. Added 7 authentic field recording page-rights investigations and access blocker; original binaries 0, physical spectra 0.
+- Generated original offline WAV and spectral plot evidence outside repo: three distinct 14s 48k stereo PCM16 objects (struck bell / Egregore transformation / fictional rubbed bowl), measured input-matching spectral peaks, standalone synthetic-only provenance and SHA256. Local actual tests 18/18 PASS after fixing pre-roll expectation. Audio human hearing 0, native Web Audio/browser tests 0, Site updates 0.
+- New additive research R2 source audit, spectral report, evidence JSON, TEST_REPORT, updated Return. Exact sources and zip hash in R2 files; ZIP remains available as conversation artifact and NOT a committed binary/media source.
+- Next bell gate: KFB_BELL_R2_TWO_REAL_RECORDING_BYTES_PLUS_SOLO_SPECTRUM. Parent WS0 #455 publication gate stays intact; no Hub/Cloudflare/Live routing change.
+
+---
+
 ## 2026-10-28 · Bell Resonance / Impossible Campanile · research R1 (PR #458)
 
 - Georg requested deep historical / acoustic / occult research for church bells, bowls, Schumann-inspired sonic transformations, KFB Mindscapes and an optional standalone exhibition; research/production brief only, no runtime permission.
