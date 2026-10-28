@@ -1,3 +1,15 @@
+## BRANCH-LOCAL WS0 DESIGN ROUTE · 2026-10-28 · CASCADE SPHERE / MECH × OSM / PR #435
+
+**ADDITIVE PROPOSAL / SOURCE ROUTING ONLY, NOT MAIN OR CANON:** Georg's expanded flying Combat-Mech + OSM street-maze + Fluff/Goo/Card/Quest/Sphere mini-game concept is persisted under the existing KFB_HUB WS0 Game Design reply folder:
+
+`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md`
+
+Read its `CASCADE_SPHERE_TEST_REPORT_2026-10-28.md`, additive `RETURN.md` and `CHANGELOG.md` in the same folder. This is not runnable game code and does not reopen WB2 R4. WS0 design/data decisions, WS1/WS1b single game owner, Combat weapons/hits, OSM City Lab, Audio, Card/Save and Mindspace/HyperNorm boundaries are unchanged; no new Hub Stage or Site product.
+
+**One next gate:** WS0_SOURCE_ISOLATION_AND_RECEIVER_TRIAGE. Source-isolate actual Mech/Minigun/Axe, one technical kit object, one real small OSM neighborhood cluster, and verify current WS1b receiver before selecting one 90–180 s playable encounter. No auto-merge or Live.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-08 · VOICE REQUIRED IN NEXT RUNTIME MVP AFTER A/B
 
 Georg has authorized the KFB ChatterBox Voice Layer as a required acceptance seam for the **first runtime MVP slice explicitly authorized after the current Four-Island Story Vision A/B gate**.
