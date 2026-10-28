@@ -152,11 +152,11 @@ def classify_primitive(doc, mesh, primitive, asset_dir, cache, sample_colors, sa
         image.close()
     return result
 
-def scan_one(path, sample_colors, max_triangles):
+def scan_one(path, root, sample_colors, max_triangles):
     d = json.loads(path.read_text("utf-8-sig"))
     cache = {}
     out = {
-        "source": str(path), "sha256": sha(path),
+        "sourceRelative": str(path.relative_to(root)), "sha256": sha(path),
         "sourceGLTFVersion": d.get("asset", {}).get("version"),
         "sceneNodes": [{"name": n.get("name"), "mesh": n.get("mesh"),
                         "children": n.get("children", []),
@@ -197,12 +197,12 @@ def main():
     all_rows, errors = [], []
     for file in files:
         try:
-            all_rows.append(scan_one(file, args.sample_colors, args.max_triangles))
+            all_rows.append(scan_one(file, args.root, args.sample_colors, args.max_triangles))
         except (OSError, ValueError, KeyError, IndexError, struct.error) as exc:
-            errors.append({"source": str(file), "error": str(exc)})
+            errors.append({"sourceRelative": str(file.relative_to(args.root)), "error": str(exc)})
     report = {
         "schema": "kfb.kaykit.platformer.material-zone-offline-scan/0.1",
-        "verifiedFileCount": len(all_rows),
+        "parsedFileCount": len(all_rows),
         "sourceGLTFSeen": len(files),
         "errors": errors, "colorSampleEnabled": args.sample_colors,
         "sourceTruth": "mesh-local UV and triangle sample, NOT measured world contact",
