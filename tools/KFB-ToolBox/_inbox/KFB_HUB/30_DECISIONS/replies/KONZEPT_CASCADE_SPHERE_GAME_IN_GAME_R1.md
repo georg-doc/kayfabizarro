@@ -86,6 +86,17 @@ Ein gemeinsames Modul `fx-burst`, das das Hauptspiel später übernimmt. Es spie
 
 Größe, Anzahl und Lebensdauer kommen aus der Stärke. Die Formen folgen `SPEC_CARTOON_VFX_SHAPES_R1`: eine Masse mit Ausbuchtungen, zwei bis drei Töne, Lebenszyklus.
 
+**2D-Effekte aus dem Bestand (V-977):** kayfabizarro `media/3D_Assets/FX_Visual/`:
+- `brackeys_vfx_bundle/` (`predrawn/` gezeichnete Flipbooks, `particles/` Partikel-Texturen),
+- `kenney_smoke-particles/` (weiche Rauchwolken),
+- `FreeHitVfx/` (Treffer-Effekte mit `presets/`),
+- `Beams_BinbunVFX/` (Strahlen, z. B. Scanner von 4GTN, MIB-Blitz),
+- `VFX Mysterious Objec - 192x192/` (Portal und Magie).
+
+Die Pixel-Sprites in `explosions_smoke/` passen nicht zum Knete-Look, höchstens als winzige Funken. Selbst gebaute SVG- oder Code-Formen nur als cartooniger Stütz-Layer, nie als Haupteffekt. 3D-Knete (Kugeln, Kit-Trümmer, GPU-Rauch) trägt, 2D-Flipbooks geben Blitz, Feuerball und Ring dazu.
+**Lücke:** ein gezeichnetes Cartoon-Explosions-Flipbook im passenden Stil. Kandidaten aus der 3D-Asset-Suche: „Free Cartoon Explosion frames“ (Sons of Welder, itch.io) und „Cartoon Combat VFX – Free Sample“ (G@mingAssets, itch.io). Download erst nach Georgs Ja.
+**Benchmarks fürs Designpaket:** https://www.reddit.com/r/aigamedev/comments/1xf7px0/i_started_vibe_coding_games_2_weeks_ago_i_cant/ und https://www.reddit.com/r/GamePhysics/comments/1xe2unl/spellspill_added_a_slowmotion_spell_to_my_magicka/ (Spellspill: Zeitlupe, Trümmer, Schichten).
+
 ## 6c · Erster Boss: 4GTN „The Forgotten Scout“ (Web-Chat R8, Georg 28.10., V-975)
 - **Quelle:** KayKit-Roboter 4GTN, schon im Bestand als Rig_Large-Figur (23 Knochen), dazu `4GTN_Forgotten.glb` (überwachsene Fassung mit eigener Geometrie) und ein Katana. Leuchtstreifen liegen auf eigenen Glow-Meshes. Animation nur mit der eigenen Large-Clip-Familie (34 Clips); Medium-Clips verformen ihn falsch. Bis auf das Pulsen der Leuchtstreifen (Shader wie bei den Jetpack-Tanks, V-972) gibt es keine neuen Animationen.
 - **Ablauf (90–180 s, optionaler Abschluss einer Ebene):**
