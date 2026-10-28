@@ -170,3 +170,26 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **Routing:** R3 document + test report in the existing WS0/KFB_HUB reply folder, additive Return/changelog and branch-local router; current production Hub/public URL left unchanged, as there is no new accepted game feature. Existing Draft PR #435 updated to point at R3. PR/head/readback at final handoff authoritative. Main and all other owner branches untouched; no auto-merge or Live.
 
 **ONE NEXT GATE (supersedes R2's narrower gate): `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`.** WS0/Asset Librarian verifies exact missing Platformer FREE+EXTRA binaries, source hashes, texture, license/provenance and allowed publishing route, uploads under a separate correctly named owner/branch (not the sealed V-538 manifest); renders original button/lever/conveyor with real textures in isolation plus an actual Bakery display/croissant donor, pins WS1b owner, then selects **one** playable L01 Switchyard event with technical and sweet-supply variants of the **same** graph. Only separately authorized WS1 integration follows. No runtime/Stage/merge/Live now.
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · Cascade Sphere R4 Preproduction / Work-ready design contracts
+
+**User request:** pre-think game mechanics, WFC, module interfaces, Combat/Destruction/Fluff/Goo, reusable level recipes and work sequencing so later Work/WS1 execution can be bounded integration rather than a new speculative product design. **This is PREPRODUCTION / DOCUMENTS + PURE FIXTURE GRAPH CHECKS, NOT A RUNTIME IMPLEMENTATION OR DESIGN HUMAN PASS.**
+
+**Additive owner files in the same folder / Draft PR #435:**
+- `CASCADE_SPHERE_R4_INTEGRATION_BLUEPRINT_2026-10-28.md`: one graph/event/asset model, packet/maze state, deterministic tick/edge invalidation, limited optional WFC, Mech HIT→cell→route→repair→Fluff chain, Story/Quest, technical and Sweet variant, Work phases.
+- `CASCADE_SPHERE_R4_MODULE_CONTRACT_CANDIDATE_2026-10-28.json`: seven proposed receiver-adapter interfaces, event envelope/typed intents, event IDs and owner boundaries, WFC constraints and authored fallback. **Schema candidate**, not an approved global standard or actual WS1 API.
+- `CASCADE_SPHERE_R4_LEVEL_FIXTURES_2026-10-28.json`: authored L01–L03 path graphs, action switches, actor/socket constraints, planned wave counts, exact source role paths where known, unresolved source pins and expected after-action paths. **Design fixtures**, not game runtime data yet.
+- `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md`: one WS0 → Work/WS1 routing brief with source intake, C0 pure rules → C1 L01 live → C2 L02 real shot/repair → C3 L03 rooftop flight → C4 optional WFC/OSM/Sphere, 18 explicit independent acceptance scenarios.
+- `CASCADE_SPHERE_R4_TEST_REPORT_2026-10-28.md`: independently recorded actually executed static/graph checks and zero runtime evidence.
+
+**What is actually verified this turn:** branch-created file exact readbacks for all five files, **2/2 JSON parsed**, **32/32 actual editorial/contract assertions**, **3/3 pure directed-graph reachability action tests** (L01 switch-north, L02 shoot + repair, L03 roof activation). Those tests do not yet move Fluff packets through time, collide a Mech, mount a GLTF, trigger Combat/Audio, run WFC or prove any arrival count; new runtime/gameplay/browser/device/physics/GPU/CI/Stage/Live tests **0**.
+
+**Design decision recommendation, NOT human accepted:** WFC is optional and late, only for source-compatible *local decoration/connector variants* after a mandatory authored two-path, one-switch graph passes. The real maze/packet-route and World physics truth cannot be generated from local WFC compatibility alone. A deterministic source-authored fallback must always survive WFC contradiction. OSM city footprints/roads and famous landmarks stay geographic source truth, not arbitrary tiles.
+
+**Preserved owners and prior directions:** R1 Mech/OSM/technical Qiva story and Mindscape; R2 three quick Level+Gizmo concept; R3 purchased Platformer FREE/EXTRA source and restaurant/Tiny Treats Sweet Supply art. Single existing WS1/WS1b host, Combat, Asset Librarian, Audio, Save/Almanac, World/OSM and HyperNorm owners, no second stack, no WB2 R4 reopening. R3 purchased pack actual binary intake and source-isolation still undone, private V-538 manifest intact.
+
+**What Work must still discover/adapt:** actual current WS1b head/consumer APIs and authorizations; verified asset pixels/pivots/sockets/GLTF dependencies/licence closure; source button/lever and one good physical switch; genuine Combat HitEvent and opted-in corruptible shell; source save item/receipt/idempotence; browser and mobile feel; performance. The new interface JSON is intentionally a *candidate*, so the receiving owner may mark KEEP/ADAPT/REJECT rather than blindly implement fictitious API names.
+
+**ONE NEXT GATE remains `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`** (same R3 gate). WS0 receives these preproduction artifacts, settles exact source/receiver identity and chooses a real first Level01. Separately approved Work/WS1 then implements the single-owner C0–C1–C2–C3 sequence with independent critic and production guard. No new site, stage, merge, or Live change.
