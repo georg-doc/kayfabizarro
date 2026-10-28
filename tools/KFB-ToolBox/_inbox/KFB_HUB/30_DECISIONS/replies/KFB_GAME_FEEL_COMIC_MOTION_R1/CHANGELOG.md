@@ -126,3 +126,11 @@
 - Direct inspected the approved V-962 R2, binding KFB Independent Execution Guard v1.2, binding CANON_3D_R1 / CRITIC_3D_R1, and the older WB2-specific One-Shot External Critic Loop. Found **gap**: V-962 says no critic loops, but does not explicitly request one fresh external product-playing Critic, while generic binding contract requires independent authority and the requested external fresh-context mode.
 - Added `CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` to existing PR #435 as an **optional WS0 authority patch proposal only**: Q0–Q8 source, host, playable loop, 3D canon, tactile/AV, device/perf, secure Site, one external fresh blind self-play, Production Guard and Georg; at most one external post-repair review if critical. No WB2 8.5 score/gauntlet copied, no per-microslice critic or separate workflow.
 - Current external Critic is **NOT RUN**. No code, no build, no Stage/Site, no official WS0 register/Canon modification. WS0 has to amend V-962 explicitly if adopted.
+
+
+## 2026-10-28 · R11 One-Shot AAA external benchmark (comparison only)
+
+- Georg provided a complete third-party Cities: Skylines II–class "blank folder" AAA prompt with architecture first, screenshots/harness, parallel modules, per-module four-round critic, blind final benchmark, `/loop` until passes. Compared against actual approved V-962 R2 + concept V-968 brownfield Cascade Sphere with private game branch and protected Site.
+- Added `CASCADE_SPHERE_R11_EXTERNAL_ONE_SHOT_PROMPT_BENCHMARK_2026-10-28.md`: preserve architecture + test-first + independent final user-input critic + STATUS and single integrator; reject photoreal benchmark, new unpinned engine, unbounded fan-out and critic loops, indiscriminate CC0-only replacement and assumed 50fps/1500-drawcalls across devices.
+- `ultracode` may denote current Claude Code dynamic workflow orchestration or unrelated third-party tools; activation and quota depend on actual WSA environment, no assumption of installed tool. Recommend targeted nonwriting source-harness fan-out only if clearly worthwhile and one writer of game runtime.
+- R10 remains WS0 proposed critic gate only; WB2-heavy reviewer firewalled. No approved V-962 change, no runtime branch/site changes or QA activity. Existing One-Shot Gate unchanged.
