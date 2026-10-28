@@ -1,3 +1,16 @@
+## Aktuell: V-931 DIY-Jetpack integriert · 28.10.2026
+
+WS0s Lieferung @9a86ab3 ist verarbeitet: jeweils Take 1 für Low/High plus alle drei Pops, technisch ausgewählt, geschnitten, eingepegelt und im vorhandenen Spiel-Flugowner angeschlossen. Originale unverändert; keine weiteren Generierungen. Verbindliche DIY-/Steampunk-/Dieselpunk-Richtung bleibt.
+
+- Spiel: `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, verifizierter Head **cae485668d59a79069255072493dbb6aaf325192**, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45).
+- [Aktueller Return und nächstes Gate](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/cae485668d59a79069255072493dbb6aaf325192/audit/V931_JETPACK_RETURN_R1.md), [Messwerte](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/cae485668d59a79069255072493dbb6aaf325192/audit/V931_JETPACK_METRICS_R1.json).
+- Fünf vorbereitete FLACs + Manifest: `media/kfb-audio/r1/el/jetpack_diy_r2_cut/` am geprüften Assetpin **27008d5826f67f630b07f8f2b68181dcdd74c418**; gleicher neuer Ordner in Dropbox. 731.636 Dateibytes, 2.243.808 zusätzliche PCM-Bytes. Expliziter gepinnter Loader im Spiel statt globalem Indexeintrag.
+- Sichtbarer Spieltest: Normalschub/Boost nutzen getrennte Lastloops, Gleiten nur Luft; zwei Pops tatsächlich ausgelöst, dritte Variante im Lifecycle-Test. Ein Context, keine JS-/Audiofehler, keine verbleibenden Loops am Ende. Ein Cozy-Musikrequest fehlgeschlagen/abgebrochen, keine Jetpackdatei. Relevante Units, Produktionsbuild und bytegenaue Reproduktion der fünf FLACs bestanden; enger Critic CONTINUE.
+- Hörvergleich lokal im KFB-Hub-Checkout: `work/v908-racer-jetpack/test/out/v908/JETPACK_DIY_R3.html`. Vorherige Aufnahme und neue Quellen im Spiel mit gleichem Gesamtpegel, fünf Einzelklänge zusätzlich. Kein öffentlicher Host behauptet.
+- **Ein nächstes Gate: Georg hört den neuen Charakter und die Übergänge im Spiel; danach WS0-Übernahme/Tuning.** Der priorisierte Quellenauftrag ist erfüllt. Noch keine menschliche R3-Hörabnahme, kein Merge/Live. OSM-Langflug, Sprache unter Belastung und Elan-Manöver bleiben offen. Weitere ElevenLabs-Erzeugung erst bei konkreter Hörlücke.
+
+---
+
 ## Georgs Freigabe und Folgeauftrag · 28.10.2026
 
 ## Aktueller Integrationsstand 28.10.2026
