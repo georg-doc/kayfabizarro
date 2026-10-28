@@ -1,3 +1,14 @@
+## 2026-10-28 · CONTINUATION R2 · Three synthetic auditory source objects, archive rights pages
+**RESEARCH/REFERENCE AUDIO DELIVERED IN CONVERSATION; CURRENT AUDIO SITE STILL UNCHANGED.**
+- R2 source licensing/access audit: 7 per-page-licensed authentic field recording candidates incl. Commons public-domain Leverkusen, Trier, Cologne Ursula and Freesound Rouvenac indoor/outdoor; 0 genuine source binaries acquired, 0 field-recording audio heard or spectrally measured. Freesound login-gated; Commons binary retrieval blocked by this environment. Rouvenac outdoor page has Albi-vs-Rouvenac location conflict.
+- Offline-original synthetic render: three 14-second 48 kHz stereo PCM16 examples: isolated modal bell, invented Egregore tail, fictional rubbed bowl. Synthetic bell has five major illustrative modes 100/200/239.8/300.7/401.2 Hz plus higher modes; actual WAV FFT peak values and SHA256 recorded in EVIDENCE_R2.json. This is **not a measured historic bell**.
+- Local DSP validation 18/18 PASS after correcting one too-long pre-roll test-window assertion. Two real spectral visualization PNGs calculated on synthetic WAV; original generator + validator + output ZIP provided in this conversation, not committed as audio binaries to repo. 0 real browser, human listening, Site publication, Stage or Live.
+- Full records: R2_SOURCE_ACCESS_AUDIT.md, R2_MODAL_SYNTHESIS_PROOF.md, EVIDENCE_R2.json, TEST_REPORT_R2.md.
+- Protected single KFB Audio owner #365 and unpublished #455 not modified. Existing parent music/voice/mixer state and site publication gate unchanged; no new runtime/Stage.
+- **One next bell gate**: KFB_BELL_R2_TWO_REAL_RECORDING_BYTES_PLUS_SOLO_SPECTRUM. Independently acquire and isolate two rights-cleared real samples, verify exact license+byte+hash+modal/decay proof. Only after this should a WS0 audio-site consumer audition be considered.
+
+---
+
 # KFB Bell Resonance / Impossible Campanile R1 — RETURN
 Date: 2026-10-28
 **Outcome: RESEARCH + CONCEPT ARTEFACT SOURCE DELIVERED · NO AUDIO RUNTIME / NO PUBLISHED SITE / NO RENDERED SLIDES**
