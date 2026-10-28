@@ -13359,6 +13359,36 @@
    "applies": "nach Lieferung"
   },
   {
+   "id": "V-925",
+   "date": "2026-10-28",
+   "area": "Audio",
+   "verdict": "DECISION",
+   "text": "WSA-Folgeauftrag V-908 (Georg freigegeben: Grundkonzept + Schnittweise der 21 Kandidaten; Vergleich vorerst ohne V-903): zwei Fahrzeugstimmen (Dragster, Hover) mit eigener Dauerschichtung + getrennten Ereignissen im Spiel, danach ein Jetpack-Klangprofil (vorhandenes Flight-Profil jetpack zuerst). WS0-Entscheid: WSA baut auf Review-Branch work/wsa-v908-racer-jetpack-r1 vom aktuellen game/proc-world-ws0, WS0 merged (einziger Produktionsschreiber bleibt der Merge).",
+   "values": {},
+   "owner": "replies/WSA_AN_WS0_V908_RACER_JETPACK_FOLGEAUFTRAG_R1.md",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei klar verschiedene Fahrzeuge zuerst, dann der Jetpack – erst hören, dann ausrollen.",
+   "applies": "nach Merge"
+  },
+  {
+   "id": "V-926",
+   "date": "2026-10-28",
+   "area": "Spiel",
+   "verdict": "IDEA",
+   "text": "Backlog (Georg 28.10.): Greifhaken als zusätzlicher Fortbewegungsmodus (neben Gehen, Fahren, Fliegen mit Wagen bzw. Jetpack V-910); später ausarbeiten (Bewegung, Animation nach Animationsbibel V-919, Ton, Spielwert).",
+   "values": {},
+   "owner": "Chat 28.10.",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Haken in der Hand öffnet Wege, die weder Wagen noch Jetpack gehen.",
+   "applies": "später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
