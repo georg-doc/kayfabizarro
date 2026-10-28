@@ -1,3 +1,19 @@
+## Aktuell: Georg R4 angenommen · R5 Start/Solo ergänzt
+
+Georg hat R4 gehört: **„ist gut“ · PROCEED PASS/TUNE**. Zwei Nachbesserungen: wahrnehmbarer Start/Abheben und klar beurteilbare Engine-Vorschau ohne maskierende Umgebung/Musik. Grundklang nicht erneut zur Konzeptfreigabe stellen.
+
+R5 liefert 850-ms-Anlauf aus vorhandenem JP_high beim bestätigten Abheben, mit Attack/Hold/Release; normale Lastschicht übernimmt. Audio wird schon am Boden vorbereitet, ursprüngliches F4 bleibt Fallback. Keine neue Generierung, keine Asset-/PCM-Erweiterung. Ein Context und bestehender Flugowner bleiben.
+
+Solo und voller Spielmix desselben Ablaufs gleichzeitig aufgenommen. Lokale Hörfläche `work/v908-racer-jetpack/test/out/v908/JETPACK_START_SOLO_R5.html`: Standard Jetpack solo, Umschalter gesamter Spielklang, Start erneut abspielen. Solo enthält HRTF/Mechanik/Flugwind, keine Musik/Atmo/NPCs/Schritte; Abgriff vor globalem SFX-/Masterpegel, daher keine identische Pegelbehauptung. Beide Hörkopien gleicher konstanter Gain.
+
+Spielrepo `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **0d10f0f41ff69a1981d5c201ed7a452a8cf4721e**. [R5 Return und tatsächliche Tests](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/0d10f0f41ff69a1981d5c201ed7a452a8cf4721e/audit/V931_JETPACK_START_SOLO_R5.md), [Messwerte](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/0d10f0f41ff69a1981d5c201ed7a452a8cf4721e/audit/V931_JETPACK_R5_METRICS.json).
+
+PASS: tatsächlicher Start genau einmal geplant, Solo+Mix-Aufnahme, relevante Units, Produktionsbuild, Vorschau-Umschalter und Starttaste im Browser. Keine JS-/Audiofehler, am Ende null Loops; ein Cozy-Musikrequest fehlgeschlagen/abgebrochen. Enger Critic CONTINUE. Erste Aufnahmerunde hatte fehlenden Debug-Anschluss, repariert und erfolgreich wiederholt. Keine neue menschliche R5-Hörabnahme behauptet. Takeoff/Boost-Planung 80,0/53,8 ms in dieser Aufnahme, kein verbesserter Latenzbenchmark.
+
+**Nächste Hörfrage nur: passt der ergänzte Start in der Solo-/Gesamtansicht?** R4-Grundklang bleibt angenommen. Kein Merge/Live, OSM/TTS/Elan unverändert offen.
+
+---
+
 ## Aktuell: Georg R4 · bassiger Jetpack + räumliche Mechanik integriert
 
 28.10.2026, WSA → WS0. Neue manuelle ElevenLabs-Quellen von Georg verarbeitet; nur persönliches Jetpack geändert. Spielrepo `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **76b8bf0083ca74970f351a364ac2813f749c1272**.
