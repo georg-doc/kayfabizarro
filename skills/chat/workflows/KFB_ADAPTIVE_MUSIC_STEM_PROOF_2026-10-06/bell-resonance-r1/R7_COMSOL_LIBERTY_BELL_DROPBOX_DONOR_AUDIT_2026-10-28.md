@@ -1,0 +1,42 @@
+# KFB Bell Resonance R7 — COMSOL Liberty Bell and Dropbox KFB Bells intake
+Date 2026-10-28 · Mode: RESEARCH/DONOR AUDIT · Owner existing KFB Audio #365, pending WS0 immersive #455, research Draft PR #458. No runtime, Site, Stage, Live, or merge.
+
+## COMSOL July 2 2026 reference: KEEP as physics-design donor
+https://www.comsol.com/blogs/modeling-the-acoustics-of-the-liberty-bell-in-comsolmph/ — Mark Cops, July 2 2026. The model uses a CC BY 4.0 original 3D scan of a Liberty Bell replica by Penn State Behrend VAR Lab, then extracts a representative cross-section and revolves a simplified solid for linear elastic FEM. Original visual scan is NOT the same as physics solid and is NOT the actual historic Liberty Bell.
+- Baseline: Young E=120 GPa, rho=8800 kg/m^3, Poisson nu=0.34. Bell free-boundary eigenfrequency study predicts prime ~336 Hz; ideal partial ratios hum .5, prime 1, tierce 1.2, quint 1.5, nominal 2.0. Every mode has a symmetry-related degenerate orientation pair; original bell casting/tuning differs and the target ratios are not guaranteed truth.
+- Uncertainty model: E 85–125 GPa, rho 8400–9000 kg/m^3, nu 0.30–0.34, yields frequency uncertainty, widening for higher modes (paper reports approx ±17 Hz hum and ±60 Hz nominal).
+- A representative 1 mm crack disrupts axisymmetric stiffness, splitting degenerate eigenmode pairs into distinct frequencies. This is physically meaningful for a "crack/tuning" audible/3D comparison but cannot be simulated by drawing a decal crack on render-only mesh.
+- Shape optimization (20 iterations) minimizes deviation from tuned partial target ratios, reported <0.02% error in model. Not a claim that an arbitrary lowpoly bell can be physically tuned by mesh morph alone.
+- Acoustic-solid frequency-domain coupling uses a representative strike-boundary load and damping loss factor η=0.001 to estimate pressure / SPL at external observer positions; actual microphone room reverb and binaural perception still require separate measurement/spatial rendering.
+- Figures are reference images/educational source, NOT redistribution permission for embedded graphic assets or COMSOL model files. An openly viewable blog does not grant the software license, model source or data export.
+- Separate primary project description: https://var.psu.edu/portfolio-items/replica-liberty-bell-scan-3d-digitization-for-acoustic-research/ . Real historic Liberty Bell high precision scan is a DIFFERENT VAR project: https://var.psu.edu/libertybell/ . Never conflate replica scan vs original bell scan.
+
+## Actual Dropbox folder inspected via authorized connector
+User-provided URL: https://www.dropbox.com/scl/fo/lb62navev2h7uz3tay1xc/ADwOh3Q56tB7HUlsEjf-IRc?rlkey=ow3ftwv0dcfisdzp6qtowhaxa&dl=0
+Exact shared folder: /CLAUDE/MeshyModels/KFB Bells (public shared folder, view, downloads enabled). The authenticated Dropbox connector listed TWO (2) actual GLBs:
+1. old_church_bell.glb — 3,861,540 bytes; Dropbox content_hash c1a949e894ce6cc461053add20985c9b744e27f8fccb9569349c088460ed088f.
+2. ancient_weathered_bronze_church_bell.glb — 127,976,636 bytes; Dropbox content_hash b3336935866ed5635664b4e99e01a285a129820bac53aeb55248f186ecfceca8.
+These are Dropbox metadata/byte sizes, NOT GLB triangle/poly counts, UV/texture size, animation clips, rig, watertightness, pivot hierarchy, FEM-ready wall thickness or actual independent original 3D render proof. Dropbox preview surface returned only file identity and open-in-Dropbox links, no geometric thumbnails. The direct GLB retrieval could not cross this chat's sandbox network/URL tool boundary. Explicitly **zero** source bytes decoded / triangulated / visually isolated, **zero** actual animation checks.
+
+## Provenance / rights: don't infer license from filename
+- `old_church_bell.glb` name plausibly matches vertexgrocer Sketchfab *old church bell* https://sketchfab.com/3d-models/old-church-bell-8aa10771481c4a0d83f7a47af6fdf9e1 (CC BY; 3.1k triangles / ~1.5k vertices, photogrammetry-derived retopo, 2K texture for albedo/normal/roughness). BUT no uploaded GLB internal author/licence metadata or cryptographic source match was inspected. Attribution/identity and whether private file is actually this model are UNVERIFIED, not a licensed source-pass.
+- `ancient_weathered_bronze_church_bell.glb` title coincides with Fab/Pigsell `Ancient Weathered Bronze Church Bell` https://www.fab.com/listings/0fc4ff96-3fc0-4d08-b477-51783671689b; vendor describes AI-assisted base, hand-refined texture/model, commercial license selection. Do NOT assume that file originates there nor label it CC or PD; exact source/license sidecar is REQUIRED before any KFB public embedding. The filename and user description are not license receipts.
+- In particular 127.98 MB could mean large embedded texture/maps, not physically accurate mesh. Actual GLB parse must inspect glTF JSON chunk, accessor/primitive/material/texture compression, embedded images sizes, skins, animations, node graphs; unwrap only if source legally reusable.
+- Existing KFB/KayKit Holiday Bits 3D bells remain already tracked in the Asset Librarian, separate CC0 game-visual donors; compare source directly rather than generating more replacement test bells.
+
+## Receiving dual-representation architecture (no duplicated runtime)
+A. **Photographic/art 3D render mesh**: full original detail, inscriptions/wear, yoke/clapper and real provenance; intact source shown in isolation before processing. LOD / texture budgets for WebGL only after keeper is selected.
+B. **Physical bell solid**: extract/de-feature 2D bell rib/cross-section from the actual inspected original geometry (inner+outer contour and variable thickness), rebuild watertight volume (CAD STEP/BRep or verified tetra mesh). Rigid yoke/clapper assembly belongs to separate mechanical ODE/contact solve.
+C. **FEM mode bridge**: calibrated material ranges, physical support condition (COMSOL article uses idealized free boundary; actual mounted bell needs justified support), strike-area impulse and damping. Eigenproblem Kφ=ω²Mφ. Export f_k, decay/ζ_k, rendered-vertex mode vectors (correspondence or barycentric map) plus calibration confidence to KFB. Do not invent 3D shapes from FFT alone.
+D. **Audio/visual**: current owner KFB Audio Site #365 and candidate #455 handles sample clock, spatial emitters, voice duck; Three.js visual reads **read-only source-aligned** normal-mode field. Visual slow motion and displacement exaggeration labelled; no SVG pseudo-3D, no decorative FFT rings, no anthropomorphic bronze object humor. Optionally audible/visual crack-vs-intact and tuning-before/after compares only after validated FE.
+E. **Evidence artifacts**: original-donor solo screenshot+4 angles, source metadata+license receipt+SHA, mesh report (tri/vertex/material/anims/skins/clapper/inner-wall/watertight), physics-solid isolated, FEM mode 3D screenshots and frequency error table, same 1 source recording dry and synthetic A/B.
+
+## Decision / priority
+- SOURCE-ISOLATE first **old_church_bell.glb** (~3.9MB): feasible browser candidate if source identity/license is verified, but 3.1k-triangle external listing is NOT a measured fact about this Dropbox file.
+- Inspect **ancient_weathered...** separately for visual quality, original licensing and large embedded images, without adopting it as licensed or FEM-ready.
+- Add **VAR Lab Liberty Bell replica** CC-BY research source as higher-trust geometry/physics benchmark distinct from current user's actual Dropbox sources. The real Liberty Bell digital-twin scan is visual/historic comparator, not automatically same physics source.
+- No new Site, Asset Registry writer, COMSOL dependency or physics runtime authorized in this research slice.
+
+## Evidence / one next gate
+Actually confirmed: 1 connected shared folder, 2 GLB metadata records, declared sizes and Dropbox hashes; COMSOL model method researched from source article; 2 external supplier provenance leads. Unknown: original GLB inner topology/skins/animations and exact license, sound, measured modal data. No actual binaries imported, browsers/render tests, FEM/AudioContext. 
+ONE gate: `KFB_BELL_R7_ORIGINAL_GLB_BYTES_RIGHTS_AND_SOLO_MESH_INSPECTION` — on a source-capable WS0/Asset Librarian executor retrieve both exact GLB bytes, verify hash/license, show original source in isolated real 3D before integration, classify animation/physics suitability. After that plan ONE FE bell-mode experiment against source audio.
