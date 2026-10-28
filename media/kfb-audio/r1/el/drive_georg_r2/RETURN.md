@@ -1,3 +1,11 @@
+## Georgs Klarstellung · 28.10.2026
+
+Georg bestätigt: **„Noch nicht vorhanden; Vergleich vorerst ohne V-903“.** Der bestehende Vergleich ohne `engine_georg_r1` ist damit ausdrücklich freigegeben. V-903 ist keine offene Rückfrage und keine Voraussetzung für diesen Vergleich mehr. Die vorhandenen `baseline_partial`-WAVs bleiben unverändert; ihr Name dokumentiert weiterhin den tatsächlichen Umfang (ohne V-903). Ältere Aussagen unten, V-903 müsse vor dem nächsten Schritt ergänzt werden, sind hiermit überholt. Historische Manifest-/Mapping-Hinweise auf den fehlenden Satz bleiben Bestandsbeschreibung, kein aktueller Blocker.
+
+**Nächster Schritt:** tatsächliche Hörprüfung und Rollenbestätigung des vorhandenen Pakets ohne V-903. Keine neue Audioerzeugung und kein Spieleinbau durch diese Klarstellung.
+
+---
+
 # WSA → WS0 · V-908 · 28.10.2026
 
 **TECHNISCHES KANDIDATENPAKET — HÖRPRÜFUNG UND ROLLENBESTÄTIGUNG OFFEN. Kein Spielcode geändert. Nicht als fertiges Sounddesign oder vollständige V-908-Abnahme behandeln.**
