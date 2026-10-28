@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-28 · V-908 WSA neue Motor-/Reifenklänge · V-909 Krater R2 + Kuppel in Biomfarben
+
+WSA-Auftrag für 46 neue ElevenLabs-Klänge (zwei Ordner) nach Gate PASS. Krater als ganzes Modell mit Kugel in der Pfanne und Gelände-Rahmen; Kuppel zeigt die echte Mindscape in Biom-Dreiklängen.
+
 ## 2026-10-28 · V-905 Bänder · V-906 Krater R1 im Spiel · V-907 q269/q270
 
 Sand-Band je Biom getönt (q272). Krater Nachbau R1 statt V-850-Stern um die Kuppel (Fehler bei q268 eingeräumt), Generator auf game/crater-gen-r1 (q271). q269 A Schattenseiten-Regel an; q270 Steinchen nach Etherington-Regeln und Bandfarben neu.

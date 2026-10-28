@@ -13104,6 +13104,36 @@
    "applies": "nach Bau"
   },
   {
+   "id": "V-908",
+   "date": "2026-10-28",
+   "area": "Audio",
+   "verdict": "BRIEF",
+   "text": "Georg 28.10.: 46 neue ElevenLabs-Klänge (KFB Mixed Engine Sounds 11labs 18, KFB Race Car Engines + Tires 11labs 28: quietschende Reifen, stotternde Motoren, Drift, Gangwechsel) → WSA schneidet und ordnet sie Rollen zu (body, grit, stutter, whine, shift, skid, pass, cockpit) und mischt je Fahrzeug und Manöver geschichtet wie Star-Wars-/THX-Sounddesign; Grundlage Motor R2 + engine_georg_r1 (V-903) und Georgs Recherche Racer/Dieselpunk Spatial Audio R1 (kayfabizarro PR #457). Einbau WS0.",
+   "values": {},
+   "owner": "replies/WS0_AN_WSA_V908_MOTOR_REIFEN_SCHICHTEN_R1.md",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Fahrzeug klingt nach Gewicht und Manöver, wenn mehrere Schichten auf Drehzahl, Last, Drift und Schalten reagieren.",
+   "applies": "nach Lieferung"
+  },
+  {
+   "id": "V-909",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Georg q271 TUNE + 28.10.: Krater R2 – „nimm erstmal nur das 3D-Modell: Sphäre exakt einpassen, sauber ins Terrain, einheitliche Beleuchtung & Farbstimmung“; „der Rahmen soll das normale Terrain sein“; „echte Mindscape statt schwarzer Kugel“; „Mindsphären farbsteuerbar mit Biomfarben, harmonisch, prozedural“. Umsetzung: ganzes Nachbau-Netz, Kugel in der Pfanne (Kugelrand am Boden = 0,4 Scheibenradius), Gelände unter der Scheibe nur Unterlage (flach unter dem tiefsten Punkt) mit Erdlippe am Rand (V-864), Netz im Gelände-Material (Bänder wabern), Erde nur auf Schollen/Rissen/Mulde mit Sprenkelkante (V-403). Kuppel war schwarz, weil sie eine alte Engine-Fläche kopierte (H15 tauscht sie nach dem Start) – behoben; H15-Palettenquelle GAME: drei Dreiklänge [dunkel, mittel, hell] aus den Biom-Rollen am Kuppelort. Spiel @77359e1.",
+   "values": {},
+   "owner": "KFB-Stunt-Car-Race game/proc-world-ws0 src/world/craterR1.js, CraterMesh.jsx, MindSphere.jsx, site-extra/h15/index.html",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Einschlag gehört zu seinem Boden: die Kugel sitzt in ihrer Pfanne, der Rahmen ist Gelände, die Kuppel trägt die Farben ihres Bioms.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -13216,7 +13246,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1449",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1453",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
