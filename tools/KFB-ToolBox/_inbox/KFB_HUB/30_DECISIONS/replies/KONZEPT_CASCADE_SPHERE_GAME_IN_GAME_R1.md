@@ -38,19 +38,29 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
   - Halten: Vorschau der Kaskade („was passiert, wenn …“), loslassen löst aus.
 - **Am Handy:** ein Daumen für die Richtung, alles andere über Tippen. Die Kamera folgt von allein. Eine komplizierte Flugsteuerung ist nie nötig.
 
-## 4 · Spielfeld-Generator (wiederverwendbar für die ganze prozedurale Welt)
-1. **Grundriss:** ein kleiner OSM-Ausschnitt (Köln-Datensatz aus dem OSM City Lab), abstrahiert zum Straßengraphen. Er muss kein echtes Viertel sein, er liefert nur eine glaubwürdige Grundarchitektur. Alternativ ein Labyrinth aus dem WhackMan-Rezept (`wm-recipe.js`, `wm-maze.js`: MazeGraph, BFS, Tunnel) oder ein Dungeon-Generator.
-2. **Raster:** Der Graph wird auf das gemeinsame Raster des KayKit Platformer Pack gelegt (Grundzelle 2 × 2 m, Inventar `replies/KAYKIT_PLATFORMER_INVENTAR_R1.md`).
-3. **Wave Function Collapse:** Platformer-, Factory- und BlockBits-Teile als Kacheln mit Kanten-Regeln. WFC füllt das Raster, Höhen kommen aus OSM, fehlende werden gekennzeichnet genähert.
-4. **Aufgaben setzen:** Quellen, Ziele, Goo-Herde, Bauplätze und Anker werden aus dem Graphen gewählt (Engstellen = spannende Knoten).
+## 4 · Spielfeld-Generator (wiederverwendbar für die ganze prozedurale Welt; R9-Abgleich, V-978)
+1. **Grundriss aus OSM (Georgs Wahl):** ein kleiner Kölner Ausschnitt über das KFB OSM City Lab (kayfabizarro `tools/osm-city-lab/`). Es behält Straßenachsen, OSM-IDs und Gebäudegrundrisse und zeichnet Straßen als zusammenhängende Streifen mit Knoten-Patches. Stufe „Cartoon“ (vereinfachte, leicht verformte Fassaden), nicht „Clean“ oder „Grotesque“. **Brücken sind keine Kreuzungen:** Zwei Wege ohne gemeinsamen OSM-Knoten bleiben getrennt, eine Brücke führt über einen Weg hinweg. Genau das macht das Labyrinth interessant.
+2. **Die Stadt bleibt Stadt:** Straßen und Gebäude sind die räumliche Grundlage. Sie werden nicht aus Platformer-Kacheln nachgebaut.
+3. **KayKit-Teile als Funktionen:** Platformer-, Factory- und BlockBits-Teile kommen nur dort hin, wo sie eine Aufgabe haben:
+   - Förderband zwischen zwei Gebäuden,
+   - Rampe auf einem Dach,
+   - Schalter an einer Brücke,
+   - reparierbare Leitung an einer Goo-Fassade.
+
+   Plätze dafür sucht WFC bzw. eine Regel-Platzierung auf dem 2 × 2-m-Raster (Inventar `replies/KAYKIT_PLATFORMER_INVENTAR_R1.md`, Anschlüsse aus dem Platformer-Atlas R6/R7). Die Teile behalten ihre Form (V-574).
+4. **Aufgaben setzen:** Quellen, Ziele, Goo-Herde, Bauplätze und Anker kommen aus dem Straßengraphen. Engstellen und Brücken sind die spannenden Knoten.
 5. **Editor:** derselbe Generator mit Handeingriff (Teil tauschen, Aufgabe verschieben, Saat speichern). Damit entsteht auch der Bau- und Entdeckungsmodus.
 6. **Ausgabe:** ein Spielfeld-Datensatz mit Saat. Derselbe Datensatz dient als Minigame-Ebene, als Ort in der offenen Welt, als Scenelet oder als Quest-Ebene.
 
-## 5 · Welt und Look
-- **Mindscape-Sphäre** aus der HyperNorm-Engine (H15) als Hülle: Himmel, Wabern, Klangbett. Das Labyrinth ist eine begrenzte Spielzone darin, keine zweite Weltphysik.
-- **KFB-Karten in der Sphäre:** Zunächst bestehende Karten aus dem KI- und Technik-Umfeld (z. B. Roko's Basilisk) schweben zufällig durch die Mindscape und tragen das Thema. Eigene Qiva-Karten können später dazukommen.
-- **Farblogik:** Farbrollen und Paletten aus `replies/COLOR_CONCEPT_R1.md`. Das Labyrinth-Gelände bekommt die Bänder des Spiel-Geländes (terrain3), damit Wege und Zonen lesbar sind.
-- **Knete-Look** wie im Hauptspiel (Claymation, ein Licht-Rig). Der zufällig entdeckte GIF- bzw. Cel-Look bleibt Backlog (V-966).
+## 5 · Welt und Look (vier Ebenen, R9)
+1. **Gelände und Farbwelt:** der Farbband-Shader `terrain3` aus unserem Spiel (`src/look/terrain3.js`, `look=terrain3`): Domain-Warping, Fließbänder, Paletten, Höhenverteilung, Palettenschatten, Zeit-Animation. Boden und geeignete Plattformflächen dürfen fließen. Wege, Schalter, Gegner und alles Interaktive bleibt ruhig und lesbar.
+2. **Stadtarchitektur:** OSM-Grundrisse, Straßen, Brücken, Landmarken-Anker, Cartoon-Fassaden im Knete-Kanon.
+3. **Spielbare KayKit-Teile:** Plattformen, Rampen, Förderbänder, Schalter, Hindernisse, Props, alle unverändert.
+4. **KFB-Material- und Ereignisschicht:** Knete, ausgewählte animierte Farbflächen, Black Goo, Ink, Zerstörung und Aufbau.
+
+**Fassaden-Adapter:** `terrain3` färbt ein ganzes Material nach Weltkoordinaten und Höhe. Auf senkrechten Fassaden ergibt das nicht von selbst den gewünschten Look. Ein kleiner Adapter übernimmt Palette und Animationszeit von `terrain3`, färbt aber nur ausgewählte Dach-, Wand- oder Plattformzonen (Materialzonen-Atlas KayKit R7). Erster Vergleich im Designpaket: dieselbe Plattform nativ und mit Farbband-Zone.
+**Hülle:** Mindscape-Sphäre aus der HyperNorm-Engine (H15); das Labyrinth ist eine begrenzte Spielzone darin, keine zweite Weltphysik. KFB-Karten aus dem KI- und Technik-Umfeld (z. B. Roko's Basilisk) schweben darin. Ein Licht-Rig und Knete wie im Hauptspiel. Der zufällig entdeckte GIF- bzw. Cel-Look bleibt Backlog (V-966).
+**Quellen:** im Konzept-Ordner (PR 435, Head 83ab8b86) CASCADE_SPHERE_R9_WS1_ENVIRONMENT_OSM_TERRAIN3_KAYKIT_CROSSWALK, die Environment-Matrix (JSON) und der Quellenbericht. Offene WS1-Fragen zu Flächenform, Licht und Performance von `terrain3` gelten auch hier.
 
 ## 6 · Was wir wiederverwenden (keine Neubauten)
 | Baustein | Quelle |
@@ -167,7 +177,7 @@ Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einst
 - **Host:** Host-Vertrag nach `replies/KFB_HOST_CONTRACT_R3F_R1.md`. Einbau als Mindsphere, als Begegnung in der offenen Welt oder eigenständig (auch mobil).
 
 ## 10 · Zuschnitt des Baus durch WSA
-- **Schritt 0, Designpaket vor dem Bau (V-740):** Moodboard, drei Stilbilder (Labyrinth von oben in der Sphäre, Kaskade mit Fluff-Sog, Sweet-Supply-Haut), die isolierten Quellen im Spiel-Look mit Kit-Knete. Georg nimmt ab.
+- **Schritt 0, Designpaket vor dem Bau (V-740):** Moodboard, drei Stilbilder (Labyrinth von oben in der Sphäre, Kaskade mit Fluff-Sog, Sweet-Supply-Haut) plus Plattform nativ gegen Farbband-Zone, die isolierten Quellen im Spiel-Look mit Kit-Knete. Georg nimmt ab.
 - **Schritt 1, ein durchgehender Bau:** Kern, Generator (OSM-Ausschnitt plus WFC mit Platformer-Teilen), Mech-Haut, Rettungs-Modus, Steuerung, Klang mit den vorhandenen Sätzen. Danach Bau- und Entdeckungsmodus mit derselben Technik.
 - **Schritt 2:** Sweet-Supply-Haut, neue ElevenLabs-Klänge, Karten in der Sphäre, Qiva-Kampagne.
 - **Regeln:** höchstens zwei Runden je Schritt, keine Kritiker-Schleifen, nur vorhandene Clips, Abnahme im Spiel mit kurzen Clips.
