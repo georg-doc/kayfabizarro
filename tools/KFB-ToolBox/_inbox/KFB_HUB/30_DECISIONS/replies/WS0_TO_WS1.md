@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (28.10. abends) · Integrations-Block Do 29.10. bis So 1.11. (V-963, Brief-Gate PASS)
+Auftrag: `replies/BRIEF_WS1_INTEGRATION_SLICES_R2.md`. **Start-Commit:** `game/proc-world-ws0` @da3ea17 im privaten Repo georg-doc/KFB-Stunt-Car-Race. Darin: Abschluss-Build (Figurenwahl `char=`, Jetpack-Flug, `src/m1/flightSignal.js`, Fahrzeugfarben V-945), Locomotion States (`src/m1/locoStates.js`), FB-Licht als Ganzes, J-7 r4a_ring. Daraus `game/integration-r2` abzweigen. Pflicht-Tests vor jeder Übernahme stehen im Brief; neu dabei `test/closing-build.mjs`. WS0 schreibt bis So keinen Spielcode außer dem FB_CANON-Tausch (V-967, kommt als kleiner Commit auf game/proc-world-ws0 – beim täglichen Merge mitnehmen). Übergabe So bis 20 Uhr auf `ws1/status`.
+
 # NEU OBEN (25.10. spät) · Farbrollen: feste Deckel-Regel für die Laufzeit (V-806)
 Tönung der Rollen-Teile: Meshy Zug 0,8, Kit 0,85, Helligkeit bleibt (nur Fokus-Teil Code 5 zieht auch die Helligkeit). Zug je Teil senken, bis das geschätzte ΔE00 ≤ 18 ist: Bild-ΔE00 ≈ (0,0090·L*_Albedo + 0,385) × Albedo-ΔE00, linear gerechnet (8-Bit-Texturen sind sRGB-kodiert). Herleitung und Werte: `50_BLENDER/V803_FARBROLLEN/DECKEL_REGEL_WS1.md`. Codes flach lesen (siehe COLOR_CONCEPT_R1).
 
