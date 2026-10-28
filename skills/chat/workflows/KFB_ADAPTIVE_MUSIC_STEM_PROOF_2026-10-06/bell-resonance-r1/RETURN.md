@@ -1,3 +1,10 @@
+## 2026-10-28 · R5 recovery successfully persisted on GitHub
+Status: RESEARCH HANDOFF SAVED / VERIFIED. Previous two R5 create-file attempts were blocked, leaving the earlier research HEAD unchanged. A new bounded GitHub create-file write succeeded for `R5_ASSET_LIBRARIAN_PHYSICS_REVIEW.md` in this existing Bell Research Draft PR #458; direct branch-head and exact file read-back verified.
+R5 facts: source-fetched original KayKit `bell.gltf` and `bell_decorated.gltf` each have physically separate bell/ring/clapper glTF meshes; one Medieval Hexagon church building is architectural context only; original Holiday Bits CC0 sidecar checked. Source-only, not isolated visual or FEM acceptance. Three distinct coupled systems mapped: rigid-body swinging/clapper impact; elastic bronze shell eigenmodes using appropriate FEM solid geometry; acoustic radiation / recording and spatial audio via existing owner. No new runtime or Site; 0 actual Librarian authenticated preview, 0 real bell audio imports/FFT, 0 FE solves.
+One research gate: `KFB_BELL_R5_LIBRARIAN_DONOR_ISOLATION_AND_REAL_BELL_AUDIO_AUDIT`. The Audio Site PR #365 and unpublished immersive PR #455 remain protected; no auto-merge or public promotion.
+
+---
+
 ## 2026-10-28 · R4 binding design correction / CC0-PD sources / isolated true 3D geometry
 **PRODUCT DESIGN CORRECTION BY GEORG — BINDING.** R3 pseudo-spatial 2D/SVG-like graphic bell, rings and backdrop = REJECTED for product visual. R3 data/frame work remains research donor only, not product design. Object-humour / anthropomorphic bronze-remembering-strikes text explicitly rejected. Full contract: `R4_BINDING_3D_DESIGN_CORRECTION.md`.
 - Required: genuine 3D original bell mesh/scan, shell inner+outer geometry and variable wall rib, clapper, physical striking point; real cutaway/section, on-surface nodal antinode and exaggerated 3D mode displacement. FFT from sound does not establish mode shapes; require verified model + FEM / experimental fields. Separate 3D/recording/historical provenance and occult narrative layers. No pretending analytic mode is a measured physical eigenmode.
