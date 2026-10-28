@@ -1,3 +1,17 @@
+# CURRENT UPDATE · R5 891a81a · v10 LIVE · 28.10.2026
+
+Bestehende KFB · WS1 Staging auf `site/mvp-r5-dist@891a81afb6071e81ce8ba19b7d49b6d099c67fd9` aktualisiert. Sitesource `1a634b7dd6bcc59c363b239d44c4213c57e90679`; Version10 `appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_24e2e8d6a3dc8191a203c1eda7a7db4a`; Deployment `appgdep_6ae2678b0ca08191bcfe81be06fef56b` SUCCEEDED. Same https://kfb-ws1-staging.frizzlebob.chatgpt.site , owner-only1User0Gruppen/noBasic/envrevision1 unverändert.
+
+728/728SHA unabhängigPASS;57gezielteAssertions/Build/736localHTTP/21LivechecksPASS. LiveP11Figuren/GothGirl↔FB,Brasswing→CrimsonThunderjet imFahrmodus/erhaltenerDachfahrer,W33KMH/Xexit,0Pageerrors. Jetpackmodell sichtbar; tatsächlicheFlugaktivierung/Düsen/Tankbetrieb sowievollständiges13Racer-/Landmark-/Hörreview **UNVERIFIED**, keinabgeleiteterGameplayFAIL.
+LiveFPS3fokussierte8sFenster nach10sWarmup:63,1/59,6/57,6,0Resets,Hauptbuffer1312×645(DPR1). P95≈25ms,kein60FPS-p95PASS und keinqualitätsgleicherR4-Vergleich. OptionalQA-Messung nutztbestehendenBeobachter,keinenGameclockowner.
+
+[ExakterR5Return](WSA_TO_WS0_SITE_R5_891A81A_RETURN_2026-10-28.md). Evidencecommit `5461f547bf047634a8e171093b768d36482cd948` zurückgelesen. v9alsRückfall. KeinWorldfix/AudioSiteupdate/newSite/Merge.
+**Ein nächstesGate: WS0 gezielterFigurenflug-/Landmark-/Klangtest amexaktenLivev10; nurkonkreteFehlerzurück.**
+
+---
+
+## Frühere Returns / Diagnosen — historisch
+
 # CURRENT DIAGNOSIS · Einzelinstanz-FPS · 27.10.2026
 
 Version9/ec7b057 bleibt LIVE/unverändert. Einzelinstanzlive25FPS mit altemStartzähler; derselbePaketstand lokal nachAufwärmen beiStandard15,5–21,5FPS,Fast38,5–44,3; norender später73,8–88,1. 14Messfenster/4594Intervalle, CSS1312×645, FokusamFensterende/sichtbar/0Sichtbarkeitswechsel. Renderpfad-/Auflösungsengpass begründet; genaueGPU-Ursache und60fpsAbnahmeoffen. renderer.info14Calls28Tris ist letzterHUD-Pass, keinWeltbudgetnachweis.

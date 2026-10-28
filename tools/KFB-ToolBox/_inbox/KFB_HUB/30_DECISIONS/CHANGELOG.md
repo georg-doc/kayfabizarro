@@ -1,3 +1,7 @@
+## 2026-10-28 · WSA R5 891a81a · private Staging v10 LIVE
+
+R5Paket728SHA/57Assertions/736localHTTP/21LivechecksPASS; Sitesource1a634b7d,Deploymentappgdep_6ae2678b0ca08191bcfe81be06fef56bSUCCEEDED,owner-only/noBasicbeibehalten. LiveFigurenwahl und2Racerwechsel/Dachfahrer/Fahrt/Xexitgeprüft,0Pageerrors. FPS63,1/59,6/57,6 beiDPR1 nachWarmup;P95~25ms,nicht60fpsp95abgenommen. Flugaktivierung/Hören/Landmarksnochunverifiziert,nichtFAIL. Return replies/WSA_TO_WS0_SITE_R5_891A81A_RETURN_2026-10-28.md. KeinWorldpatch/AudioSite/neueSite/Merge. NächstesGateWS0gezielterFlight-/Landmark-/Klangtestaufv10.
+
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-28 abends · V-959–V-980 · Abschluss-Build, Kanon-FB, Licht, Locomotion States, Cascade Sphere, Site R5
