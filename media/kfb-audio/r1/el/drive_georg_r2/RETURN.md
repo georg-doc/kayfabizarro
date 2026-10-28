@@ -90,3 +90,12 @@ Provenienz: von Georg bereitgestellte ElevenLabs-Downloads, Bearbeitung im Folge
 Georg hat den echten Spielvergleich gehört: „sehr gut“, „funktioniert besser“. **PROCEED PASS / TUNE** für die Verbesserung; keine erneute Grundkonzeptfreigabe. Der Jetpack klingt noch zu sehr nach einer dicken Engine. Das ist ein konkreter verbleibender Klangpunkt, keine Ablehnung der Schub-/Gleit-/Ereignislogik.
 
 WSA setzt auf demselben Reviewbranch eine leichtere Zwischenmischung mit weniger P03-Motorkörper und zurückgenommener P01-Düse um und prüft sie im Spiel. WS0 erhält zusätzlich einen priorisierten ElevenLabs-Auftrag: kompakter persönlicher Jetpack-Dauerschub, luftig/mechanisch, ohne V8-/große Triebwerksanmutung. Zunächst ein Grundloop in zwei Laststufen; Schubende und Manöverakzent folgen nachrangig. Keine neue Generierung wurde bereits ausgeführt. Kein Merge oder Live-Promotion aus diesem Feedback ableiten.
+
+
+## Verbindliche Klangrichtung und R2 Lieferung
+
+Georgs Ergänzung: **alle Engines sind DIY / gebastelt / gehackt / getunt, Steampunk-/Dieselpunk, stotternd, unwuchtig und mit explosiven Pops.** Jetpack kleiner und leichter, aber dieselbe improvisierte Materialwelt; keine glatte sterile Sci-Fi-Turbine. Diese Vorgabe gilt für die Klanggestaltung aller Profile, ohne hier alle Fahrzeuge neu umzubauen.
+
+WS0: [konkreter Auftrag mit ElevenLabs-Prompts](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/51c78f56838cf11695472bf70591a700877d4779/audit/V908_WS0_JETPACK_DIY_R2.md). Priorität zwei zusammengehörige kleine DIY-Jetpack-Lastloops und drei separate Pop-Varianten; Schubende/Manöver nachrangig. Auffällige Pops an reale Last-/Schub-/Boost-Kanten, nicht zufälliges Dauerfeuer. Keine neue Generierung durch WSA behauptet.
+
+R2-Zwischenmischung geliefert in PR45, Branch `work/wsa-v908-racer-jetpack-r1`, verifizierter Head `51c78f56838cf11695472bf70591a700877d4779`: nur persönliches Jetpack P01 −3,9 dB / P03 −12 dB. Erneute echte Spielaufnahme, Unit-Prüfungen und unabhängiger enger Critic CONTINUE; noch keine menschliche R2-Hörfreigabe. Vergleich lokal `work/v908-racer-jetpack/test/out/v908/JETPACK_R2.html`. Historische R1-Aufnahme unverändert erhalten. Nächster produktiver Schritt: WS0 liefert die gezielten Quellen, WSA schneidet/prüft und integriert sie in den vorhandenen Flugpfad.
