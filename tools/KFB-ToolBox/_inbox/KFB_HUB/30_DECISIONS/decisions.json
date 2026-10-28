@@ -13134,6 +13134,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-910",
+   "date": "2026-10-28",
+   "area": "Figuren",
+   "verdict": "PLAN",
+   "text": "Jetpack (Georg 28.10., Auftrag direkt an WSB): Meshy „Cosmic Jetpack“ (50_BLENDER/JETPACK/_privat_meshy) für KayKit Rig_Medium/Large, Gurte per Geometrie-Schnitt weg, Cartoon-Größe (FB bleibt lesbar), am Rücken verankert; Tanks mit Nebel-/Flüssigkeits-Shader (Maske + Parameter als GLB-Extras, Laufzeit-Material WS0, Farben aus Palettenrollen); Düsen aus der Jetpack-Geometrie + Anker KFB_Thrust_L/R nach V-579, Flamme aus vehicleRig (Spiel); Flug-Clips in place (Start, Schweben, vorwärts, Kurve, Landung) nach kfb-cartoon-animation (V-891); Flug-SSOT bleibt M1Player (WS0). Später: Jetpack als freispielbare Alternative zum Wagen im Flugmodus (Spieldesign offen). Erst Konzeptbogen, Georg nimmt Bilder ab (V-740).",
+   "values": {},
+   "owner": "WSB-Auftrag 28.10.",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fliegen ohne Wagen braucht ein eigenes, lesbares Gerät mit Cartoon-Bewegung, aber dieselbe Flugphysik.",
+   "applies": "nach Konzeptbogen"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
