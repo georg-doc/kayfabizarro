@@ -13314,6 +13314,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-922",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg q278: Kügelchen-Kern so ins Spiel – Karten 362² nah + Fernfassung als Bildplatte, Sammeln bei 45–50 % (48 %), Aufprall-Geröll jetzt ins Spiel (an Landung/Rauch, Stärke aus Landetempo, Farbe vom Band), Fluid-Wirbel erst mit dem Wasser-Auftrag (V-913). Produktion auf game/balls-probe-r1, Merge WS0.",
+   "values": {},
+   "owner": "Hub q278",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Kern, viele Effekte: Karten, Aufprall und später Fluids teilen dieselben Kügelchen.",
+   "applies": "nach Einbau"
+  },
+  {
+   "id": "V-923",
+   "date": "2026-10-28",
+   "area": "Spielwelt",
+   "verdict": "DECISION",
+   "text": "Georg q279 TUNE: „erstmal die NPCs mit ihren Settings/Scenelets aus den Promo-Bildern nutzen – die KFB-Resident-Atlas-Szenen (Lorekeeper mit Schreibpult etc.)“. Quelle RA S17 (replies/RESIDENT_ATLAS_S17_1to1, data/cast.js: 30 Bewohner mit Habitat, Signatur-Requisiten, Aktivität, Pose) 1:1 als kfb.scene/1-Mikroszenen in den Generator (V-550 P1 Bewohner-Vignetten), keine erfundenen Requisiten; erst danach eigene neue Szenen.",
+   "values": {},
+   "owner": "Hub q279",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Bewohner gibt es schon mit ihren Orten – erst übernehmen, dann neu erfinden.",
+   "applies": "nach Port"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
