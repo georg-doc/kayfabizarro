@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "entries": [
   {
    "id": "V-001",
@@ -12924,6 +12924,96 @@
    "applies": "sofort"
   },
   {
+   "id": "V-896",
+   "date": "2026-10-27",
+   "area": "Welt",
+   "verdict": "FIX",
+   "text": "Georg 27.10.: beiger Fleck beim Start = Sand-Weg der alten Fundsachen-Demo (C3b, path3d) – in der Endlos-Welt ausgeblendet, path=1 zeigt ihn. Spiel @9c0289a.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Reste alter Demos haben in der neuen Welt nichts verloren.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-897",
+   "date": "2026-10-27",
+   "area": "Animation",
+   "verdict": "FIX",
+   "text": "Georg 27.10.: Q/E beim Gehen zeigte die Vorwärts-Animation – seitwärts/rückwärts jetzt mit KayKit Rig_Medium_MovementAdvanced (Running_Strafe_Left/Right, Walking_Backwards), Blick bleibt vorn. Spiel @177ec66.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Seitwärts muss nach seitwärts aussehen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-898",
+   "date": "2026-10-27",
+   "area": "Bewegung",
+   "verdict": "FIX",
+   "text": "Georg 27.10.: im Flug am Amphitheater hängen – Schwebeflug (WoW) weicht Wänden nach oben aus und landet im waagrechten Vorwärtsflug nicht von selbst; Drift wechselt beim Umgreifen Q↔E sofort die Seite (Drift ab ~18 km/h war schon da). Spiel @bad16f3; Düsenflammen wieder wie vor V-825 Fix 5 (Merge @3ab6792); V8-Motor R1 (Merge @0384b9d).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fliegen soll frei sein, nicht an Rängen enden.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-899",
+   "date": "2026-10-28",
+   "area": "Leistung",
+   "verdict": "BUILD",
+   "text": "WSA-Messung 15–21 fps; WS0-Befund: Knete-Shader auf FB kostet ~7 ms je Bild (40 → 60 fps ohne). Sofort: Stufe Standard regelt die Auflösung selbst (DPR 1 bei Last, zurück nach 20 s Ruhe), ausdrückliche Wahl bleibt; Spiel @ba146f0. Knete-Backen in Texturen läuft in eigener Sitzung (game/clay-bake-r1).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Flüssig spielbar geht vor Auflösung; der Look bleibt.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-900",
+   "date": "2026-10-28",
+   "area": "Audio",
+   "verdict": "APPROVAL",
+   "text": "Georg 28.10.: Motor soll rau, bass-lastig wummernd, körperlich spürbar, räumlich, übermächtig und podracer-artig klingen. Freigaben: 9 CC0-Aufnahmen von Freesound herunterladen (Lizenzzeile im Manifest) und ElevenLabs-Credits für ~20–30 Effekt-Schichten (Tiefbass, Turbine/Düse, Fahrtwind, Doppler, Boost, Knallen). Umsetzung Motor R2 in eigener Sitzung (game/engine-v8-r2).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Motor ist das Herz der Racer; Spielzeug-Klang zerstört die Immersion.",
+   "applies": "nach Hörprobe"
+  },
+  {
+   "id": "V-901",
+   "date": "2026-10-28",
+   "area": "Fahren",
+   "verdict": "BUILD",
+   "text": "Georg 27.10.: beim Fahren schnell im Flugmodus; Aufsetzen/Kollidieren/Federn nicht wie ein schwerer V8-Dieselpunk. Umgesetzt: Schwungflug von selbst nur aus Sprung-Zonen (rampfly=1 = vorher), im Sinken ×1,6 Schwerkraft (heavy=0 = vorher). Hügelfahrt 12 s Vollgas+Boost: Luft 81 → 21 %, längste Luftphase 8,7 → 1,6 s, keine Schwungflüge. Spiel @e32f483. V-891 Posen alle bestanden (q267); Speicher knapp (2,5 GB), WSA/WSB räumen auf.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein schwerer Wagen klebt am Boden und setzt satt auf; Fliegen ist eine bewusste Aktion.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -13036,7 +13126,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1433",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1445",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
