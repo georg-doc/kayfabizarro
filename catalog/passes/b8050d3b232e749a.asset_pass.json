@@ -1,0 +1,44 @@
+{
+ "schema": "kfb.asset-pass/1",
+ "module": "kfb_clay_bpy/1",
+ "asset": "kaykit-boardgamebits-1-0-free:D6_B_red",
+ "origin": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/D6_B_red.gltf",
+ "licence": "CC0 (Pack-Datei)",
+ "kit": "KayKit_BoardGameBits_1.0_FREE",
+ "clay": {
+  "version": "kfb-clay.v1.1",
+  "profile": "midground"
+ },
+ "role": "paved",
+ "color": "#f5e6c9",
+ "form_dna": {
+  "status": "proposal; visual check open"
+ },
+ "wear": [
+  "Vorschlag: Abnutzung an Griff- und Kontaktstellen; WS0 vervollständigt"
+ ],
+ "scale": {
+  "m_per_kaykit_u": 0.616381,
+  "h_m": 0.4623
+ },
+ "placement": {
+  "kind": "prop",
+  "sink": [
+   0.02,
+   0.05
+  ],
+  "foot_r_m": null,
+  "foot_off_m": null,
+  "long_axis": null,
+  "status": "V-932 offen"
+ },
+ "notes": [
+  "Entwurf; keine Spielabnahme",
+  "WS0 vervollständigt M5",
+  "WS0 vervollständigt vor Einbau (M5).",
+  "Native Blender-Inventurprüfung; kein vollständiger JS-Proof-Stage-Lauf."
+ ],
+ "complete": true,
+ "missing": [],
+ "status": "draft"
+}

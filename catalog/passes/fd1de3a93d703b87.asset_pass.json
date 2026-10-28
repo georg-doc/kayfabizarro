@@ -1,0 +1,44 @@
+{
+ "schema": "kfb.asset-pass/1",
+ "module": "kfb_clay_bpy/1",
+ "asset": "ultimate-nature-pack-by-quaternius-1:BirchTree_Dead_Snow_3:BirchTree_Dead_Snow_3",
+ "origin": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/Blends/BirchTree_Dead_Snow_3.blend#BirchTree_Dead_Snow_3",
+ "licence": "CC0 (Pack-Datei)",
+ "kit": "Ultimate Nature Pack by Quaternius(1)",
+ "clay": {
+  "version": "kfb-clay.v1.1",
+  "profile": "midground"
+ },
+ "role": "leaf",
+ "color": "#ed9c3e",
+ "form_dna": {
+  "status": "proposal; visual check open"
+ },
+ "wear": [
+  "Vorschlag: Abnutzung an Griff- und Kontaktstellen; WS0 vervollständigt"
+ ],
+ "scale": {
+  "m_per_kaykit_u": 0.616381,
+  "h_m": 1.9608
+ },
+ "placement": {
+  "kind": "tree",
+  "sink": [
+   0.05,
+   0.1
+  ],
+  "foot_r_m": null,
+  "foot_off_m": null,
+  "long_axis": null,
+  "status": "V-932 offen"
+ },
+ "notes": [
+  "Entwurf; keine Spielabnahme",
+  "WS0 vervollständigt M5",
+  "WS0 vervollständigt vor Einbau (M5).",
+  "Native Blender-Inventurprüfung; kein vollständiger JS-Proof-Stage-Lauf."
+ ],
+ "complete": true,
+ "missing": [],
+ "status": "draft"
+}

@@ -1,0 +1,44 @@
+{
+ "schema": "kfb.asset-pass/1",
+ "module": "kfb_clay_bpy/1",
+ "asset": "scifi-ultimate-space-kit-quaternius:Bush_1",
+ "origin": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Bush_1.gltf",
+ "licence": "CC0 (Pack-Datei)",
+ "kit": "SciFI_Ultimate Space Kit_Quaternius",
+ "clay": {
+  "version": "kfb-clay.v1.1",
+  "profile": "midground"
+ },
+ "role": "leaf",
+ "color": "#ed9c3e",
+ "form_dna": {
+  "status": "proposal; visual check open"
+ },
+ "wear": [
+  "Vorschlag: Abnutzung an Griff- und Kontaktstellen; WS0 vervollständigt"
+ ],
+ "scale": {
+  "m_per_kaykit_u": 0.616381,
+  "h_m": 1.5269
+ },
+ "placement": {
+  "kind": "bush",
+  "sink": [
+   0.05,
+   0.12
+  ],
+  "foot_r_m": null,
+  "foot_off_m": null,
+  "long_axis": null,
+  "status": "V-932 offen"
+ },
+ "notes": [
+  "Entwurf; keine Spielabnahme",
+  "WS0 vervollständigt M5",
+  "WS0 vervollständigt vor Einbau (M5).",
+  "Native Blender-Inventurprüfung; kein vollständiger JS-Proof-Stage-Lauf."
+ ],
+ "complete": true,
+ "missing": [],
+ "status": "draft"
+}

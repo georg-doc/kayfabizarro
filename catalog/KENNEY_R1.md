@@ -1,0 +1,44 @@
+# Kenney · eigene Inventurliste
+
+40 Einträge; Auswahl in Rezepten durch WS0.
+
+- `kenney-blaster-kit-2-1:blaster-a` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-a.glb`
+- `kenney-blaster-kit-2-1:blaster-b` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-b.glb`
+- `kenney-blaster-kit-2-1:blaster-c` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-c.glb`
+- `kenney-blaster-kit-2-1:blaster-d` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-d.glb`
+- `kenney-blaster-kit-2-1:blaster-e` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-e.glb`
+- `kenney-blaster-kit-2-1:blaster-f` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-f.glb`
+- `kenney-blaster-kit-2-1:blaster-g` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-g.glb`
+- `kenney-blaster-kit-2-1:blaster-h` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-h.glb`
+- `kenney-blaster-kit-2-1:blaster-i` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-i.glb`
+- `kenney-blaster-kit-2-1:blaster-j` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-j.glb`
+- `kenney-blaster-kit-2-1:blaster-k` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-k.glb`
+- `kenney-blaster-kit-2-1:blaster-l` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-l.glb`
+- `kenney-blaster-kit-2-1:blaster-m` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-m.glb`
+- `kenney-blaster-kit-2-1:blaster-n` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-n.glb`
+- `kenney-blaster-kit-2-1:blaster-o` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-o.glb`
+- `kenney-blaster-kit-2-1:blaster-p` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-p.glb`
+- `kenney-blaster-kit-2-1:blaster-q` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-q.glb`
+- `kenney-blaster-kit-2-1:blaster-r` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/blaster-r.glb`
+- `kenney-blaster-kit-2-1:bullet-foam-thick` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/bullet-foam-thick.glb`
+- `kenney-blaster-kit-2-1:bullet-foam-tip-thick` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/bullet-foam-tip-thick.glb`
+- `kenney-blaster-kit-2-1:bullet-foam-tip` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/bullet-foam-tip.glb`
+- `kenney-blaster-kit-2-1:bullet-foam` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/bullet-foam.glb`
+- `kenney-blaster-kit-2-1:clip-large` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/clip-large.glb`
+- `kenney-blaster-kit-2-1:clip-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/clip-small.glb`
+- `kenney-blaster-kit-2-1:crate-medium` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/crate-medium.glb`
+- `kenney-blaster-kit-2-1:crate-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/crate-small.glb`
+- `kenney-blaster-kit-2-1:crate-wide` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/crate-wide.glb`
+- `kenney-blaster-kit-2-1:grenade-a` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/grenade-a.glb`
+- `kenney-blaster-kit-2-1:grenade-b` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/grenade-b.glb`
+- `kenney-blaster-kit-2-1:scope-large-a` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/scope-large-a.glb`
+- `kenney-blaster-kit-2-1:scope-large-b` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/scope-large-b.glb`
+- `kenney-blaster-kit-2-1:scope-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/scope-small.glb`
+- `kenney-blaster-kit-2-1:silencer-larger` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/silencer-larger.glb`
+- `kenney-blaster-kit-2-1:silencer-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/silencer-small.glb`
+- `kenney-blaster-kit-2-1:smoke` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/smoke.glb`
+- `kenney-blaster-kit-2-1:target-detail` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/target-detail.glb`
+- `kenney-blaster-kit-2-1:target-fragment-large` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/target-fragment-large.glb`
+- `kenney-blaster-kit-2-1:target-fragment-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/target-fragment-small.glb`
+- `kenney-blaster-kit-2-1:target-large` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/target-large.glb`
+- `kenney-blaster-kit-2-1:target-small` · `media/3D_Assets/kenney_blaster-kit_2.1/Models/GLB format/target-small.glb`

@@ -1,0 +1,44 @@
+{
+ "schema": "kfb.asset-pass/1",
+ "module": "kfb_clay_bpy/1",
+ "asset": "ultimate-nature-pack-by-quaternius-1:Grass_Short:Grass_Short",
+ "origin": "media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/Blends/Grass_Short.blend#Grass_Short",
+ "licence": "CC0 (Pack-Datei)",
+ "kit": "Ultimate Nature Pack by Quaternius(1)",
+ "clay": {
+  "version": "kfb-clay.v1.1",
+  "profile": "midground"
+ },
+ "role": "grass",
+ "color": "#58a89d",
+ "form_dna": {
+  "status": "proposal; visual check open"
+ },
+ "wear": [
+  "Vorschlag: Abnutzung an Griff- und Kontaktstellen; WS0 vervollständigt"
+ ],
+ "scale": {
+  "m_per_kaykit_u": 0.616381,
+  "h_m": 0.2494
+ },
+ "placement": {
+  "kind": "grass",
+  "sink": [
+   0.0,
+   1.0
+  ],
+  "foot_r_m": null,
+  "foot_off_m": null,
+  "long_axis": null,
+  "status": "V-932 offen"
+ },
+ "notes": [
+  "Entwurf; keine Spielabnahme",
+  "WS0 vervollständigt M5",
+  "WS0 vervollständigt vor Einbau (M5).",
+  "Native Blender-Inventurprüfung; kein vollständiger JS-Proof-Stage-Lauf."
+ ],
+ "complete": true,
+ "missing": [],
+ "status": "draft"
+}
