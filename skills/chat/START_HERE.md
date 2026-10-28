@@ -1,3 +1,17 @@
+## BRANCH-LOCAL R4 · 2026-10-28 · CASCADE SPHERE INTEGRATION PREPRODUCTION
+
+**ADDITIVE DESIGN/GRAPH QA ONLY — NOT CANON / NOT RUNTIME AUTHORIZATION.** For the current WS0 preproduction and later Work/WS1 integration, read the following existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/ files in order:
+1. `CASCADE_SPHERE_R4_INTEGRATION_BLUEPRINT_2026-10-28.md` — play rules, generator hierarchy, optional bounded WFC, owner-safe Mech/Fluff/Goo/repair, skins and open-world boundaries.
+2. `CASCADE_SPHERE_R4_MODULE_CONTRACT_CANDIDATE_2026-10-28.json` — 7 **candidate** interface/owner and event/typed WFC proposals. No verified WS1 runtime API claimed.
+3. `CASCADE_SPHERE_R4_LEVEL_FIXTURES_2026-10-28.json` — 3 explicit directed graph fixtures with verified source-only initial/final paths, not running player/combat.
+4. `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` — C0 → C1 → C2 → C3 → optional C4 Work phases and 18 subsequent independent QA cases.
+5. `CASCADE_SPHERE_R4_TEST_REPORT_2026-10-28.md` and additive `RETURN.md`/`CHANGELOG.md`. R1–R3 original materials remain linked in prior router sections.
+
+**Evidence:** JSON 2/2 parsed; editorial checks 32/32; tiny pure directed graph reachability checks 3/3; runtime, combat/asset rendering, browser/mobile/GPU, stage/site: 0. WB2 R4 still STOPPED. WS1/WS1b sole game writer after actual head/API re-pin; no auto-merge/Live and no new engine.
+**One next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`: authorized hash/source + actual visual donor isolation, pin real WS1b host and freeze first meaningful L01 scene; then separately approve Work integration.
+
+---
+
 ## BRANCH-LOCAL WS0 R3 · 2026-10-28 · PLATFORMER EXTRA + SWEET SUPPLY ASSET INTAKE
 
 **READ NEXT:** Existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`SWEET_SUPPLY_ASSETS_PLATFORMER_INTAKE_R3_WS0_2026-10-28.md` plus `SWEET_SUPPLY_PLATFORMER_R3_TEST_REPORT_2026-10-28.md`, additive RETURN/CHANGELOG and prior Cascade Sphere R1/Factory Maze R2. Still same Draft PR #435 and Game Design owner, not a new runtime, Site, Stage, World or Card owner.
