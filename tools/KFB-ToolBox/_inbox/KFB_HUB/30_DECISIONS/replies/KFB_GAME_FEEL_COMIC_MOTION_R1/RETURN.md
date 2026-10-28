@@ -254,3 +254,27 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **Work brief existing file** appended optional later F-37…F-44 source/rig/glow/weakpoint/route/other player/safety acceptance tests, preserving F-01…F-36. Other player actor capabilities remain source+host gated and cannot assume Mech flight/gun. Katana handslot mounted in historic Resident Atlas, not proven Combat strike. Preserve current single WS1/Combat/Audio/World/Save, original R1–R7 and WB2 R4 STOP, no new product or Source Model rewrite.
 
 **One next gate UNCHANGED:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` for first playable level. Later independent boss source isolation in existing Librarian and Work/WS1 post-L03 authorization only; do not block L01 over boss.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · R9 Existing WS1 MVP Environment: Terrain3 × OSM City × Clay Facade × KayKit Tiles
+
+**User asked what environment design already exists in the actual currently running MVP:** flowing terrain-colorband shader for ground/buildings, OSM roads/buildings/bridges and Platformer tile/feature props for Cascade Sphere. Answer: **actual parts exist, but no integrated/accepted one-scene combination is proven.**
+
+**Source-led materials added, existing KFB_HUB WS0 Game Design lane / Draft PR #435:**
+- `CASCADE_SPHERE_R9_WS1_ENVIRONMENT_OSM_TERRAIN3_KAYKIT_CROSSWALK_2026-10-28.md`: source evidence and a low-scope visual/scene composition direction.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_SOURCE_MATRIX_2026-10-28.json`: 11 source/owner/status strata, one L01 environment Golden fixture candidate.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_CROSSWALK_SOURCE_REPORT_2026-10-28.md`: direct source review and **22/22 editorial/source-state checks**, 0 new runtime/browser/image/render/collision/mobile/GPU tests.
+
+**Main verified source:** `ws1/terrain-439` contains `ws1/kfb-planet/src/look/terrain3.js` **actual animated flowing multicolor terrain shader**, `m1-terrain.js` host hookup, `terrain2.js` and `stageGround.js`. WS1_STATUS §§114 and 145 report game/probe use and open lighting/terrain look issues (latest 22 Oct). Branch `ws1/r3f-frame` alone is OLDER and lacks terrain3. Do not infer latest active WS1b host or verified live Site from branch name. Colorbands currently paint entire ground material in world XZ plus height — **no accepted selectively masked blue platform top or building facade material in current WS1 source**.
+
+**OSM:** Main `tools/osm-city-lab` has actual normalized city geography and S1c clean/cartoon/grotesque building presentations; continuous road strips with junctions only at actual shared OSM node IDs (bridge crossing with no shared ID must NOT be connected), source streets, real building footprints, OSM provenance, source landmark anchors, but no accepted integrated WS1 city road/bridge-deck/collider or Cathedral override in this audit. OSM City Lab/World/Track authority preserved. WS0 cross-project terrain/OSM/WFC PR #447 remains separate source and same ownership.
+
+**Building/environment canon:** `CANON_3D/CANON_3D_R1.md` in WS0 Register is current 3D design SSOT; Clay Surface Canon + S5 facade router source source-preserved city/place mapping; one light, one scene palette, contact and stage background. Do not invent a second Environment SSOT or replace original KayKit shape with generic colored meshes. 3D Golden still requires source/masked/composed views.
+
+**KayKit:** actual City Builder 1.1/Prototype 1.1 models on main, Dungeon/World Atlas measured cell/fugen/road connectors and authoring Gizmo, R6 entire source Platformer FREE/EXTRA on Dropbox and R7 true material zones are candidates. EXTRA conveyor has separate threads material; blue platform/ramp single source atlas material requires UV/face masks, not direct whole-material terrain3 injection.
+
+**R9 recommended mini-game environment:** existing WS1 terrain3 Ground + source-faithful authored small City Builder road/functional GameGraph + KayKit Platformer measured live-switch/conveyor/ramps with true colliders + source-supported 3D Clay/light and selectively masked animated effect; later optional protected OSM city crop and existing World/Portal. KFB colorband host shader and palette are reused, BUT building/kit shader needs **masked recipient-owned variant** since current `applyTerrain3` overwrites diffuseColor on whole material and world XZ+height projects awkwardly onto vertical buildings. First L01 Golden should compare source native vs subtle band on real platform top and EXTRA conveyor threads while road and landmark still readable.
+
+**One next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`: source-verify actual Platformer original file bytes, render one source model and true mask/connector, pin active WS1b code/host, choose one actual L01 palette/road/site scene and then authorize only existing WS1 receiving work. No Live, main merge, new site or Stage claim.
