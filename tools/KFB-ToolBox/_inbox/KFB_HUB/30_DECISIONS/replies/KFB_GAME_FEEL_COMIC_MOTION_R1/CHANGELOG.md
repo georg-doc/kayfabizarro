@@ -29,3 +29,12 @@
 - Evidence: source-doc create/readback 1/1; report checkpoint write/readback 1/1; **8/8 actual source-text assertions**; prior 16/16 + 9/9 tests retained as history. Executable gameplay/physics/CI/Stage/Site/performance tests 0.
 - Appended `TEST_REPORT_R1.md` and `RETURN.md`; no previous concept content rewritten, no runtime or protected other branches modified, no PR/merge, no public Stage or Site action.
 - The single WS0 next gate remains one source-backed **Fluff acquisition → meaningful Resident/Card response** encounter; Roadster stays a later research reference only.
+
+
+## 2026-10-28 · KFB Cascade Sphere / Mech-OSM-Card-Maze · GEORG INPUT / DESIGN ONLY
+
+- Captured Georg's full expanded concept in `CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md`: source-real flying Combat Mech, gatling and energy axe, optional grappling, precise shoot/remove/build/repair, OSM Cologne block as believable maze, technical Factory/Prototype/BlockBits scenery, streams of instanced colored Fluff characters/packets, dark Goo and reversible Ink censorship, D6 Story-Mode/Quest-Die-derived route outcome, 1 Actor + 3 Scene + 1 Quest Card, temporary Mindscape Sphere and later Open World encounter instance. Proposed the smallest 90–180 s single street-junction flow, not full free-destructible city.
+- Direct GitHub source audit: Seed World POC and Mech source/pin; actual CombatMech_Axe.gltf/bin located in Mystery Set next to minigun; OSM City Lab cached dom-zentrum-v0; WhackMan MazeGraph; current WS1 R3F+Fluff/Save; WS0 V-514/V-531–533 q103; OSM/WFC PR #447, Audio PR #428, Mindspace PR #448, asset registry. Marked donor possession separately from source-object visual isolation/WS1 runtime acceptance.
+- Added `CASCADE_SPHERE_TEST_REPORT_2026-10-28.md` with **16/16 actual editorial/source-text assertions** and 3/3 newly added/updated design/evidence files exact GitHub readbacks at the recorded checkpoints. New gameplay/visual/physics/browser/performance tests: **0**.
+- Appended additive project Return, set the one next WS0 source-isolation + receiver-triage gate; branch-local router/PR metadata update follows. Existing R4 STOP, current runtime/Combat/Audio/OSM/Card/Hub owners, live Hub, Stage/Site and public Cloudflare unchanged. No merge/promotion.
+
