@@ -193,3 +193,22 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **What Work must still discover/adapt:** actual current WS1b head/consumer APIs and authorizations; verified asset pixels/pivots/sockets/GLTF dependencies/licence closure; source button/lever and one good physical switch; genuine Combat HitEvent and opted-in corruptible shell; source save item/receipt/idempotence; browser and mobile feel; performance. The new interface JSON is intentionally a *candidate*, so the receiving owner may mark KEEP/ADAPT/REJECT rather than blindly implement fictitious API names.
 
 **ONE NEXT GATE remains `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`** (same R3 gate). WS0 receives these preproduction artifacts, settles exact source/receiver identity and chooses a real first Level01. Separately approved Work/WS1 then implements the single-owner C0–C1–C2–C3 sequence with independent critic and production guard. No new site, stage, merge, or Live change.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · R5 organic chill cartoon feedback, WS0/Work C1
+
+**Georg contributed user-level experiential refinements:** soft tactile Claymation/ASMR-style destruction instead of hard shrapnel, gently breathing/contracting Black Goo, reparative inflatable clay, Fluff expressive hesitation/bounce at actual route change, playful surreal large scenic WFC objects, tiny soft sound cues and a genuine tactile C1 Switchyard feel gate. Accepted as **additive design proposals for WS0 discussion**, not as already shipped animation or an overhaul of R4 game graph/physics.
+
+**R5 documents, same owner folder / Draft PR #435:**
+1. `CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM_2026-10-28.md` — full engineering critique/source crosswalk, L01 tactile cue sequence, C2/C3 staged ideas, small-scene WFC restrictions, reset/accessibility/perf.
+2. `CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE_2026-10-28.json` — separate 5-row source-agnostic **PresentationCue** overlay by accepted game fact+source role+theme. No changes to authoritative R4 event envelope; no new event engine/audio mixer. Audio asset IDs intentionally unresolved `null` pending current Audio owner; C1 must not invent files.
+3. `CASCADE_SPHERE_R5_CHILL_FEEDBACK_SOURCE_REPORT_2026-10-28.md` — source/version audit and actual static checks: **30/30 PASS** after GitHub readback; 0 gameplay/browser/asset render/mobile/device/audio audition/new WFC runtime tests.
+4. Existing `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` **appended** with F-19…F-24 independent feel/QA scenarios; old F-01…F-18 unchanged.
+
+**Actual donors read:** existing WS1 `fluffSuck.js` multi-phase instanced squash/plop, current KFB Cartoon Animation semantic FX doctrine, `kfb-deform-instanced.js` candidate technique, WS0 organic cartoon VFX Shapes R1 and V-514 flight/destruct hits, existing R4 event/Work docs; **not newly executed**. Do not assert a generalized Goo morph renderer or Fluff emoting exists.
+
+**Critical limitation:** WFC can be visually strange only in optional scenic/model roles that preserve physical clearance, source provenance, hero object silhouette, landmarks, camera and graph. Core facts are distinct from presentation. Fluff stops/reorients at next legal graph node instead of teleporting. R2/R3 main gameplay, KayKit purchased FREE/EXTRA asset intake, and private V-538 manifest boundary unchanged.
+
+**ONE next WS0 gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`, now include source-isolated original KayKit lever hinge, actual small Fluff visual and Audio source-cue identification before a later authorized WS1 C1 feel pass. No new product owner, Live, Stage, main, or merge.
