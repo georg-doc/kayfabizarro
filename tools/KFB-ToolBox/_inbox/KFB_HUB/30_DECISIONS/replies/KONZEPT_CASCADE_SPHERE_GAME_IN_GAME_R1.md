@@ -82,6 +82,11 @@ Qivas Begriffe werden zu Spielmechaniken. So erklärt das Minispiel Qiva nebenbe
 | „Frage wird Wache“ | ein Wächter, der eine Stelle dauerhaft beobachtet (Tower Defense) |
 | Rückverfolgbarkeit, Abweichungsregeln | Fluff-Ströme mit Stempel am Ziel; Abweichungen sichtbar als Goo |
 | 60-Tage-Simulation „Kestrel Cloud“ | eine Kampagne: jede Runde ein Tag der fiktiven Firma |
+| Kommandozentrale mit Live-Netzwerk-Graph | das Labyrinth selbst ist der lebende Netzwerk-Graph der Firma |
+| „Firmen-DNA“, Logo-Q aus Doppelhelix (Crimson #D81A1D, Hellgrau #F4F4F5) | Saat der Ebene = DNA der Firma; Qiva-Haut mit Helix-Leitungen in Crimson/Hellgrau |
+| Firmen-Stimme: kurzes gesprochenes Lagebild | FrizzleBob gibt vor jeder Runde ein gesprochenes Lagebild |
+| „Jede Intervention bleibt beim Menschen, Freigabe“ | große Eingriffe (Sprengung, Umbau) brauchen einen Bestätigungs-Tipp |
+| „Wir beobachten Systeme, nicht Menschen“ | Fluffs sind Ströme, keine Figuren mit Namen; der Wächter schaut auf Knoten |
 | gemessene Treffsicherheit | Sterne und Trefferquote je Runde |
 
 **Kampagne nach Stefans „Drehbuch Simulation Qiva 2026 V2“** (24 Tage bei der fiktiven Firma Kestrel Cloud, fünf Erzählstränge). Jeder Strang wird eine Ebenen-Art:
@@ -96,7 +101,7 @@ Qivas Begriffe werden zu Spielmechaniken. So erklärt das Minispiel Qiva nebenbe
 
 Die vier Aufnahme-Pausen des Drehbuchs (Wache und Lagebild, Shadow Impact, Compliance-Lücke, Konjunktiv-Frage) werden kurze Zwischenszenen mit FrizzleBob als Erzähler.
 
-Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einstiegspunkt. Er kann es als Erklär- und Marketing-Schicht für Qiva nutzen und technisch mitbauen, ohne das Hauptspiel zu berühren. Gelesen: Investoren-Papier (17.10.) und Drehbuch V2. Noch zu lesen vor dem Kampagnen-Teil: QIVA_FULL_CONTEXT.md, Simulationsbericht, Testing-Doku, Ablaufbilder (Dropbox-Ordner „Stefan Lietz CV and AI Projects“).
+Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einstiegspunkt. Er kann es als Erklär- und Marketing-Schicht für Qiva nutzen und technisch mitbauen, ohne das Hauptspiel zu berühren. Gelesen: Investoren-Papier (17.10.), Drehbuch V2 und QIVA_FULL_CONTEXT.md Abschnitt 0a (Produkt, Marke, Checkpoints 45–57). Noch zu lesen vor dem Kampagnen-Teil: QIVA_FULL_CONTEXT.md, Simulationsbericht, Testing-Doku, Ablaufbilder (Dropbox-Ordner „Stefan Lietz CV and AI Projects“).
 
 ## 9 · Modulgrenzen
 - `cascade-core`: reines Datenmodell und Regeln (Graph, Ströme, Goo, Kaskade, Bauen, Wächter). Deterministisch, ohne three.js, mit Golden-Test.

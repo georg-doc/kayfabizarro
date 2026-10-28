@@ -14019,6 +14019,21 @@
    "applies": "nach Georgs OK zum Konzept"
   },
   {
+   "id": "V-969",
+   "date": "2026-10-28",
+   "area": "Figuren",
+   "verdict": "BUILD",
+   "text": "FB_CANON im Spiel (V-967 erledigt): v5b bleibt Gerüst, das linke Ohr mit Biss kommt unverändert aus R8 A11 (graftCanonEar in faceMountActor; A11 ist ein Spielfigur-Export mit Hüllen-Skala 0,64 und eingebackenem Gesicht, daher kein Dateitausch). Guard test/fb-canon.mjs (Quelle, sha, Build, Laufzeit kfbCanon earL=17556). Spiel @1256f17. Später: WSB exportiert A11 sauber als Template wie v5b, dann ganzer Tausch.",
+   "values": {},
+   "owner": "Spiel @1256f17",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: Drift beim Ohr – Kanon muss im Spiel sein und bleiben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
