@@ -1,3 +1,13 @@
+## BRANCH-LOCAL WS0 R3 · 2026-10-28 · PLATFORMER EXTRA + SWEET SUPPLY ASSET INTAKE
+
+**READ NEXT:** Existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`SWEET_SUPPLY_ASSETS_PLATFORMER_INTAKE_R3_WS0_2026-10-28.md` plus `SWEET_SUPPLY_PLATFORMER_R3_TEST_REPORT_2026-10-28.md`, additive RETURN/CHANGELOG and prior Cascade Sphere R1/Factory Maze R2. Still same Draft PR #435 and Game Design owner, not a new runtime, Site, Stage, World or Card owner.
+
+Actual connected Dropbox shows KayKit Platformer FREE and purchased EXTRA with CC0 License.txt; original `Assets/gltf` variants present. KayKit Restaurant Bits 1.0/1.1 and three Tiny Treats packs already exist on main. Existing private repo `georg-doc/kayfabizarro-private-assets` default `intake/v538-2026-10-18` is **a distinct sealed V-538 intake, not** an append target. WS0 should own a separate hash-verified Platformer source intake and update existing Asset Librarian through its own owner. Keep raw licensed sources/variants/atlases and optimized game allowlist clearly separate. No binaries were pushed in this design turn.
+
+**ONE NEXT GATE:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` — source/hash/license/provenance audit, explicit authorized asset import, source-isolated original lever/button/conveyor and bakery objects, current WS1b consumer ref pin, one original L01 Switchyard route with two optional art variants. No auto-merge, WB2 R4 reopening or Live.
+
+---
+
 ## BRANCH-LOCAL WS0 GAME DESIGN R2 · 2026-10-28 · KAYKIT PROTOTYPE FACTORY MAZE
 
 **DESIGN / SOURCE PROPOSAL ONLY, NO RUNTIME, NO MAIN CHANGE.** Georg has refined Cascade Sphere to a three-level source-backed factory-city maze using KayKit Prototype Bits 1.1 + City Builder Bits 1.1, official Platformer Pack after verified intake, Dungeon measured seam and WhackMan route donors, one flying Mech, instanced Fluff, Goo, build/destroy and cards.
