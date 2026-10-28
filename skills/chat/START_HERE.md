@@ -1,3 +1,17 @@
+## BRANCH-LOCAL R8 · 2026-10-28 · 4GTN LARGE-RIG BOSS DONOR FOR CASCADE SPHERE
+
+**ADDITIVE SOURCE-BASED BOSS DESIGN ONLY, no new combat/runtime/asset owner or live boss.** Existing WS0/KFB_HUB Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
+- `CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0_2026-10-28.md` (source evidence, game concept and optional end-level boss);
+- `CASCADE_SPHERE_R8_4GTN_BOSS_RECIPE_CANDIDATE_2026-10-28.json` (source-pinned Rig_Large actor, 4GTN_Forgotten geometry, Katana, candidate state phases);
+- `CASCADE_SPHERE_R8_4GTN_BOSS_SOURCE_REPORT_2026-10-28.md` (24/24 static checks; zero new runtime/3D/Combat/animation tests).
+- `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` now adds future F-37…F-44 acceptance (prior F1–F36 preserved); additive RETURN/CHANGELOG.
+
+**Source truth:** 4GTN and 4GTN_Forgotten GLBs are both available on main, actually Rig_Large **23 bones**, 6 Large clip set files, historically 34 large clips; do not reuse Medium clips as their proportions deform 4GTN. Forgotten is separate geometry, not texture morph; original 4GTN_glow source strips are independent visual material meshes, not boss hitboxes. Optional 90–180 s "Forgotten Scout" after L03, Mech shooter or peaceful restore graph outcome; other actor types require actual World/Combat interface proof.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` (first playable L01); later Boss source-isolation and Work/WS1 post-L03 authorized trial. WB2 R4 STOP, no Main merge or Stage/Live.
+
+---
+
 ## BRANCH-LOCAL R6/R7 · 2026-10-28 · KAYKIT PLATFORMER SOURCE ATLAS + MATERIAL ZONES
 
 **ADDENDUM / SOURCE INSPECTION ONLY; no runtime, new asset owner, Shader Site or production approval.** Existing WS0 Game Design/KFB_HUB PR #435 folder at `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/` now contains:
