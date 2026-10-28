@@ -14199,6 +14199,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-981",
+   "date": "2026-10-28",
+   "area": "Combat",
+   "verdict": "SPEC",
+   "text": "WSA-Brief V-962 R3 nach Lücken-Audit R12 (Web-Chat): Platformer als eigener Branch assets/kaykit-platformer-r1 @5c6096a gepinnt; ein spielbarer 2–4-Minuten-Durchlauf zuerst, 4GTN/Sweet Supply/Qiva/WFC-Varianten blockieren nicht; eine Ereigniskette mit einem Zustands-Besitzer (cascade-core), Effekte/Klang/Belohnung hören nur zu; Generator prüft Lösbarkeit per Wegesuche; Greifhaken vollständig mit Tests; FB/Gatling/Jetpack im selben Build; ein unabhängiger End-Test (R10) statt Kritiker-Schleifen; Licht/Touch/Performance P1. replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R3.md.",
+   "values": {},
+   "owner": "WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Web-Chat R12: gezieltes Update statt neues Großbriefing, damit der One-Shot keine Zeit mit falschen Pfaden und Nebenzielen verliert.",
+   "applies": "vor WSA-Start"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -14311,7 +14326,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1453",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1457",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
