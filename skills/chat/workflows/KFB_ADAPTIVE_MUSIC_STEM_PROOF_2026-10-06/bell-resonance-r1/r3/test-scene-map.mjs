@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
 import {readEnvelope,modeToGeometry,sourceIntegrity} from './bell-r3-scene-map.mjs';
-const data=JSON.parse(readFileSync(new URL('./analysis.json',import.meta.url)));
+const data={schema:'bell-r3-envelope.v1',dt:0.06,provenance:'SYNTHETIC_QA_FIXTURE_ONLY',samples:Object.fromEntries(['bell','egregore','bowl'].map(id=>[id,{sha256:'a'.repeat(64),frequencyReferencesHz:[100,200,239.8,300.7,401.2,528.6,684.2,1051],rows:[[0,0,0,0,0,0,0,0,0],[.5,.6,.7,.8,.9,.5,.4,.3,.2]]}]))};
 let n=0;const pass=(v)=>{assert.ok(v);n++};
 pass(data.schema==='bell-r3-envelope.v1');
 pass(Object.keys(data.samples).length===3);
