@@ -13914,6 +13914,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-962",
+   "date": "2026-10-28",
+   "area": "Combat",
+   "verdict": "TODO",
+   "text": "Cascade Sphere „Mech Rescue R0“ als eigenständiger POC an WSA work: eigener Branch poc/cascade-sphere-r0 im privaten Repo, Host-Vertrag create/update/dispose, Quellen-Gate (KayKit Combat Mech mit Minigun und Axt, Factory/BlockBits-Teil, kleiner Kölner OSM-Ausschnitt) mit Bild vor dem Bau, dann Schleife einfliegen – Goo-Zelle zerlegen (Kaskade, Trümmer + Knetpartikel) – Fluff einsammeln – Brücke wiederherstellen – Fluffs am Ziel. Konzept kayfabizarro planning/kfb-game-feel-comic-motion-ideation-r1-2026-10-19 (PR 435). Goo-Reinigung, Farben, Quest-Würfel bleiben bei WS0. Brief replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R1.md.",
+   "values": {},
+   "owner": "WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: Mech/OSM/Fluff-Defense als eigenes kleines Spiel parallel, modular für Mindsphere/Game-in-Game, Einstieg für externe Mitarbeit (Stefan).",
+   "applies": "jetzt, WSA parallel zu WS1-Slices"
+  },
+  {
+   "id": "V-963",
+   "date": "2026-10-28",
+   "area": "Prozess",
+   "verdict": "PLAN",
+   "text": "Integrations-Block Do–So an WS1 (Wochenvolumen knapp, Reset So 22 Uhr): ein Integrationszweig game/integration-r2 im Besitz von WS1-Lead, WS0 schreibt bis So keinen Spielcode; gemeinsame Dateien nur WS1-Lead; täglicher Merge von game/proc-world-ws0; feste Testliste vor jeder Übernahme; Übergabe So 20 Uhr mit genau einem Commit. Slices I1 Kern (Endlos-Standard, Weltursprung, Zellgedächtnis), I2 Themen-Saat + Steine über kfb-place, I3 Begegnungen, I4 Wasser, I5 Unterwegs (auf WS0-Abschluss-Build), I6 Klang je Thema, I7 Spielschleife. Max. zwei Runden je Slice. Brief replies/BRIEF_WS1_INTEGRATION_SLICES_R2.md.",
+   "values": {},
+   "owner": "WS1",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: Produktionsfokus koordiniert auf WS1/WSA verlagern, ohne die Merge-Probleme vom letzten Mal; Fehlerschleifen strukturell vermeiden.",
+   "applies": "Do 29.10. bis So 1.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

@@ -1,0 +1,25 @@
+# WS0 → WSA work · Cascade Sphere „Mech Rescue R0“ als eigenständiger POC neben dem Spiel (V-962) · 28.10.2026
+
+**Tier 0**
+1. **Eigenständig, nicht im Spiel:** eigener Branch `poc/cascade-sphere-r0` im privaten Repo georg-doc/KFB-Stunt-Car-Race (KayKit-Kaufmaterial bleibt privat). Kein Commit in `game/proc-world-ws0`. Das Modul hält den Host-Vertrag nach `replies/KFB_HOST_CONTRACT_R3F_R1.md` (aktuelle Fassung inkl. fixedDt/after), damit WS0 es später als Mindsphere bzw. Begegnung einhängt.
+2. **Bestand vor Neubau (V-956):** Mech, Waffen, Zerstörung, Trümmer und Klänge kommen aus vorhandenen Quellen, unverändert (V-574). Keine selbst gebauten Animationen, keine eigenen Gliedmaßen-Posen.
+3. **Design zuerst (V-740):** Vor dem Bau ein Designpaket an WS0: Moodboard aus den vorhandenen Vorlagen (Spellspill-Referenz, Cascade-Konzept), zwei Stilbilder (Stadt-Labyrinth von oben und Zerfall einer Zelle mit Fluff-Sog) und die isolierten Quellen im Spiel-Look mit Kit-Knete (V-672). Georg nimmt ab, dann Bau. Höchstens zwei Runden je Schritt, keine Kritiker-Schleifen; Tokens sind bis Sonntag knapp.
+
+**Warum:** Georg 28.10.: Die Cascade Sphere (Mech, OSM-Stadt, Fluff-Defense) soll parallel zum Hauptspiel als kleines eigenes Spiel entstehen, aus vorhandenen Bausteinen, modular für später (Mindsphere bzw. Game-in-Game). Ein abgeschlossenes Minispiel mit klarer Schnittstelle ist zudem der Einstieg für externe Mitarbeit (Stefan) ohne Eingriff ins Hauptspiel.
+
+**Quellen (lesen):**
+- Konzept: Repo georg-doc/kayfabizarro, Branch `planning/kfb-game-feel-comic-motion-ideation-r1-2026-10-19`, Datei CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md im Unterordner KFB_GAME_FEEL_COMIC_MOTION_R1 des Register-Ordners replies (Draft-PR 435, Head e5d70dbd). Dort auch Quellen- und Donor-Matrix.
+- Bestand Kampf und Zerstörung: `replies/COMBAT_ARENA_STATUS_R1.md`, `replies/BRIEF_WS1_FLIGHT_DESTRUCTION_R1.md` (Seed-World-Module `createWorld`, `createDestruct`, `createWeaponFX`; `sw-mech`/`sw-app` bleiben draußen), `replies/MODULE_INVENTORY_R1.md` §5.
+- Pflichtmodul für Zerfall und Wiederaufbau: `kfb-fluff-suck` mit den Richtungen `suck` und `build` nach `replies/SPEC_FLUFF_SUCTION_R1.md` (V-533, V-535).
+- Trümmer-Look: `replies/SPELLSPILL_R2_REF/`, `replies/WS0_SPELLSPILL_LOOK_COHESION_DIAG_R1_2026-10-16.md`; Cartoon-VFX-Formen `replies/SPEC_CARTOON_VFX_SHAPES_R1.md` (V-499).
+- Klänge: Set `debris_crash_r1` im Audio-Zweig (Cue-Muster wie `src/audio/cueMap.js` im Spiel-Branch).
+- Register (Branch docs/kfb-decisions-register-2026-10-11): V-499, V-532, V-533, V-535, V-574, V-609, V-740, V-956, V-962.
+
+**Auftrag:**
+1. **Quellen isolieren (Gate):** KayKit Combat Mech mit Minigun und Axt (Axt aus dem Mystery-Kit), ein Bauteil aus Factory bzw. BlockBits, ein kleiner zusammenhängender Ausschnitt aus dem Kölner OSM-Datensatz (wenige Straßenblöcke, nicht die Innenstadt). Je Quelle: lädt, Clips laufen, Maßstab passt, Pfad und Herkunft. Ergebnis als ein Bild an WS0.
+2. **Stadt-Labyrinth:** Der OSM-Ausschnitt wird zum abstrakten, cartoonischen Raster (Orientierung und Spielfeld, kein exakter Stadtplan). Gebäude = Zellen aus vorhandenen Bauteilen, Höhen aus OSM, fehlende Höhen gekennzeichnet genähert. Kein eingestampfter flacher Plan.
+3. **Spielschleife R0 (90–180 s):** einfliegen (die vorhandene Flugsteuerung des Spiels nach V-514; `sw-mech` bleibt draußen), blockierte Fluff-Route sehen, mit der Minigun eine Goo-befallene Zelle zerlegen (Zellschaden mit Kaskade aus `createDestruct`; der Zerfall läuft über `kfb-fluff-suck` Richtung `suck`, Formen nach V-499), Fluff einsammeln, ein Brücken- oder Leitungsteil über `kfb-fluff-suck` Richtung `build` wiederherstellen, Fluff-Einheiten erreichen das Ziel. Erfolg = sichtbare Zustände (wie viele Fluffs am Ziel, welche Knoten frei).
+4. **Goo-Reinigung nach geltender Regel:** jede Fluff-Farbe wäscht Geschwärztes frei (V-609, V-532). Offen bei WS0, nicht entscheiden: Farbzuordnung der Fluff-Einheiten, Quest-Würfel, Karten-Modi.
+5. **Für externe Mitarbeit:** README mit einem Einstiegspunkt, Start-Befehl und Modulgrenzen.
+
+**Rückgabe:** Branch und Commit, Gate-Bild, danach ein kurzer Clip der Schleife (headless, normale Kamera), offene Fragen an Georg nur dort, wo er entscheiden muss.
