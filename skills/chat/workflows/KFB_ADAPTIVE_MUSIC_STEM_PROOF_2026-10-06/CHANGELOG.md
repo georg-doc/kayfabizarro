@@ -1,3 +1,13 @@
+## 2026-10-28 · Bell Resonance / Impossible Campanile · research R1 (PR #458)
+
+- Georg requested deep historical / acoustic / occult research for church bells, bowls, Schumann-inspired sonic transformations, KFB Mindscapes and an optional standalone exhibition; research/production brief only, no runtime permission.
+- Current ownership recovered: existing Audio MVP PR #365 / private Site Source 0.7.1 v11 and unpublished WS0 Immersive PR #455, on which research branch is stacked; old immersive #453 / #350 donor research is not a receiving runtime.
+- Created bell-resonance-r1 package: RESEARCH_ATLAS_R1.md, SOURCE_ATLAS_R1.md, SLIDE_STORYBOARD_R1.md (14 complete audiovisual slides), PRODUCTION_BRIEF_R1.md, SOURCE.json (six lead records), TEST_REPORT_R1.md (8/8 editorial/JSON PASS), RETURN.md.
+- WDR/Austrian/Hibbert and per-file CC0 Freesound candidates recorded; Dropbox earlier Binaural/Shepard/Spatial research included read-only, with SBaGenX/SynapSeq as offline donors. NO binary imported, ear audition, measured modal spectrum, rendered deck, visual object isolation, browser test, Site update, Cloudflare or merge.
+- Proposed next gate: KFB_BELL_R1_THREE_SOURCE_RIGHTS_SOLO_AUDITION_MODAL_MEASUREMENT, subordinate to the existing #455 current WS0 Audio Site browser/source-isolation gate. Existing owner, Egregore fiction/measured physics distinction and audio/voice/clock contracts unchanged.
+
+---
+
 ## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
 
 - Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.
