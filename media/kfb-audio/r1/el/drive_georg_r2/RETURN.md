@@ -1,3 +1,13 @@
+## Aktuell: R3 klanglich abgelehnt · vorige R2 wieder aktiv
+
+Georgs Hörurteil: neues hohes Quietschen sehr unangenehm und unpassend, auch WS0s neue Quellen überzeugen nicht. Die neue Mischung ist **nicht freigegeben**. Voriger R2-Flugpfad wieder Standard, neues Paket deaktiviert; Quellen erhalten. Spielbranch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **d7e6e0d1edc195bf31242596ba3981d2a00d5a84**. Frischer sichtbarer Spieltest: DIY=false, keine neuen PCM-Bytes, alter Boost, ein Context, am Ende 0 Loops, keine JS-Fehler; ein Cozy-Musikrequest abgebrochen/fehlgeschlagen. Enger Unit-/Syntaxcheck PASS. Kein Merge/Live.
+
+**Alle Antriebe müssen satten Bass und räumlichen Klang liefern.** Kleiner Jetpack bedeutet nicht bassarm. Kreischendes Metall, Klappern und Scheppern sind erlaubt, aber kurze, sparsame und variierende Akzente statt nerviger Wiederholung. Vorherige pauschale Bassverbote in Prompts sind überholt. Quellen trocken/mono-kompatibel; Position, Bewegung und Raum im Spiel separat nachweisen. Kein Spatial-PASS behauptet.
+
+Georg generiert die nächste Auswahl manuell. [Vier überarbeitete Prompts und Einsatzregeln](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/d7e6e0d1edc195bf31242596ba3981d2a00d5a84/audit/V931_MANUAL_JETPACK_PROMPTS_R2.md). Erst bassigen Grundlauf hören, dann Lastvariante und separate Fehlzündungs-/Metallakzente. WSA wartet auf diese Kandidaten statt weitere Generierungen oder Filterexperimente zu starten. Nächster Schritt: manuelle neue Quellen von Georg. Historische technischen Nachweise unten bleiben gültig, ersetzen das negative Hörurteil aber nicht.
+
+---
+
 ## Aktuell: V-931 DIY-Jetpack integriert · 28.10.2026
 
 WS0s Lieferung @9a86ab3 ist verarbeitet: jeweils Take 1 für Low/High plus alle drei Pops, technisch ausgewählt, geschnitten, eingepegelt und im vorhandenen Spiel-Flugowner angeschlossen. Originale unverändert; keine weiteren Generierungen. Verbindliche DIY-/Steampunk-/Dieselpunk-Richtung bleibt.
