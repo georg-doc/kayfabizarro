@@ -89,3 +89,33 @@ Deliver one coherent miniature source-authentic *Factory Maze* inside the **exis
 - `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` (chill/fun, pull/don't gate, return and provenance).
 
 **One immediate next WS0 step remains:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` to turn candidate sources and L01 into a real source+host-pinned authorization. This brief is ready for WS0 discussion; its content must not be treated as Work/WS1 auto-execution approval.
+
+
+---
+
+## ADDITIVE R5 · 2026-10-28 · C1 organic cartoon feel (no change to C0 logic or WS1 authority)
+
+**Georg experience input:** soften Destruction/Goo, add emotional Fluff reroute reactions, decorative surreal scale and sparse satisfying soft SFX. Read:
+- `CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM_2026-10-28.md` — complete source-aware reasoning and C1/C2/C3/optional WFC scope;
+- `CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE_2026-10-28.json` — five **candidate presentation-only fact→cue profiles**, source cue IDs currently unresolved, not a new event bus.
+
+**Exactly one C1 feel outcome to prove together with F-01…F-18:** in the **actual WS1-hosted, source-authentic Switchyard**, the accepted route-switch input changes the real graph and triggers (1) a tactile lever squash/hinge/elastic recovery, (2) brief visible hesitation/bounce of at least one correctly routed Fluff at the *next legal junction*, and (3) one short existing Audio-owner sourced "soft wooden klonk"/plop cue if an asset is available. Sound unavailable or muted is a local audio-source limitation, not permission to invent audio files or block the graph. The same source action must remain recognizable with sound OFF and reduced movement.
+
+**Do not add `mood_modifier` as authoritative event state.** Stable `runId/eventId/tick/type/subjectId` events remain untouched; the existing animation/media layer looks up a `PresentationCue` by accepted fact, source role and active Tech/Sweet theme. No second clock, move writer, FX trigger or audio mixer; animation never grants loot or steers pathfinding.
+
+**C2 later** after existing real Combat HitEvent: soft Goo withdrawal/one organ-shaped lobe and source-authoritative inflate/settle on repair (not polygon storm). **C3 later**: one marshmallow contact bounce on real rooftop landing or Fluff descent. **Optional WFC** after authored gameplay passes: giant coffee cup/flower switch/sleeping bridge permitted only in source-verified scenic or measured snap-compatible roles; preserve collision, reachability, original OSM, camera and phone-readable route.
+
+**Additional independent feel acceptance cases (new R5 cases; prior F-01…F-18 remain unchanged):**
+
+| ID | Action / condition | Required observable result |
+| --- | --- | --- |
+| F-19 | L01 one accepted lever flip | Exactly one source-attached hinge/squash/elastic motion, returns to baseline; graph switch changes independent of tween. |
+| F-20 | L01 Fluff rerouted at fork | At least one Fluff pauses/tilts/bounces at a legal node, then takes the correct path with no teleport/extra route event. |
+| F-21 | same intent twice or reset/unmount mid-tween | No duplicated SFX or rewards, stale effects cleaned; later scene enters clean. |
+| F-22 | L01 muted and reduced-motion | Source-visible lever state, clear direction/arrival, no unrequested camera shake; same logical route and result. |
+| F-23 | Tech vs Sweet visual profiles | Same authoritative graph events, arrival counts and switch collision; audio profile changes only through existing KFB Audio owner. |
+| F-24 | real focused mobile/desktop effect OFF vs SOFT | Source-authentic model/eyes/button remain legible; report actual render p50/p95, cue count, draw calls and relevant degradation rather than claiming free shaders. |
+
+**Visual staging order:** Source isolation of true KayKit lever pivot + instanced Fluff visual, then one real 3–6-second action/feedback capture, then continuous full-run F-01…F-18. Don't create new scene/renderer to audition. The production Guard sees causal test, tactile test and actual source screenshot together; no automatic scene PASS from this document.
+
+**Single immediate next gate UNCHANGED:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`. R5 is an additive quality criterion for the subsequently authorized WS1 C1 source-real run, not a new blocking approval process or asset generation scope.
