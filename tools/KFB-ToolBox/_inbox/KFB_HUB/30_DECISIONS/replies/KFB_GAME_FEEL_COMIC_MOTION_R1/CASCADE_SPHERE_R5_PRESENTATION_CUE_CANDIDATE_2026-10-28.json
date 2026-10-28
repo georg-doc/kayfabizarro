@@ -1,0 +1,193 @@
+{
+  "schema": "kfb.cascade.presentation-cues/0.1-candidate",
+  "status": "DESIGN_CONSUMER_MAPPING_NOT_EVENT_BUS_NOT_RUNTIME",
+  "date": "2026-10-28",
+  "owner": "existing WS1 presentation owner, source cue selection via existing KFB Audio; not a new system owner",
+  "input": "Only accepted immutable game facts from existing owner; never synthetic presentation events authoring world state.",
+  "invariants": [
+    "Event payload and RouteGraph not modified by presentation profile",
+    "Effect cue is deduplicated by runId+eventId+subjectId",
+    "One host clock; no animation wait blocks simulation",
+    "Reset/reload/unmount clears transient transforms, audio intent and FX pools",
+    "Source object original geometry and collider authority preserved",
+    "Muted or reduced-motion input yields same logical outcomes",
+    "Deterministic seeded variation for repeated play without random-frame geometry",
+    "Only source-existing authorized sound and object refs can be resolved in actual WS1 host"
+  ],
+  "profiles": {
+    "SOFT": {
+      "primaryVfxMax": 1,
+      "secondaryVfxMax": 1,
+      "tertiaryVfxMax": 0,
+      "cameraShake": false,
+      "audioCueIntentMax": 1,
+      "notes": "Default: tactile, low-density, readable"
+    },
+    "PLAYFUL": {
+      "primaryVfxMax": 1,
+      "secondaryVfxMax": 2,
+      "tertiaryVfxMax": 1,
+      "cameraShake": false,
+      "audioCueIntentMax": 1,
+      "notes": "More bounce/deformation but same logic"
+    },
+    "REDUCED": {
+      "primaryVfxMax": 1,
+      "secondaryVfxMax": 0,
+      "tertiaryVfxMax": 0,
+      "cameraShake": false,
+      "audioCueIntentMax": 0,
+      "notes": "State change still visible through object pose/color, optional nonmoving labels"
+    }
+  },
+  "bindings": [
+    {
+      "factType": "SWITCH_ACCEPTED",
+      "semanticRole": "route-lever",
+      "cueId": "switch_soft_squash_r1",
+      "mood": "tactile-soft",
+      "animation": {
+        "type": "elastic",
+        "phaseMs": [
+          120,
+          200
+        ],
+        "anchor": "source-measured-hinge",
+        "returnToBaseline": true
+      },
+      "audio": {
+        "intent": "soft-wooden-klonk",
+        "assetId": null,
+        "owner": "KFB_AUDIO_OWNER",
+        "status": "SOURCE_CUE_ID_REQUIRED"
+      },
+      "primary": "hinged lever bend and recover",
+      "secondary": "local contact blob",
+      "logicalStateEffect": "NONE"
+    },
+    {
+      "factType": "PACKET_ROUTED",
+      "semanticRole": "friendly-fluff",
+      "cueId": "fluff_hesitate_r1",
+      "mood": "surprised-gentle",
+      "animation": {
+        "type": "squash-bounce",
+        "phaseMs": [
+          150,
+          300
+        ],
+        "anchor": "packet visual transform; at next legal node",
+        "returnToBaseline": true
+      },
+      "audio": {
+        "intent": "none",
+        "assetId": null,
+        "owner": "KFB_AUDIO_OWNER"
+      },
+      "primary": "brief stop/tilt and bounce, forward direction clear",
+      "secondary": "optional one tiny question Emanata, safe-space only",
+      "logicalStateEffect": "NONE"
+    },
+    {
+      "factType": "HIT_ACCEPTED",
+      "semanticRole": "goo-infected-shell",
+      "cueId": "goo_soft_recoil_r1",
+      "mood": "soft-splat",
+      "animation": {
+        "type": "melt-recoil",
+        "phaseMs": [
+          140,
+          260
+        ],
+        "anchor": "opt-in adaptation shell overlay",
+        "returnToBaseline": false
+      },
+      "audio": {
+        "intent": "soft-squish",
+        "assetId": null,
+        "owner": "KFB_AUDIO_OWNER",
+        "status": "SOURCE_CUE_ID_REQUIRED"
+      },
+      "primary": "one organ-shaped contraction",
+      "secondary": "one bounded lobe/puddle, no shard storm",
+      "logicalStateEffect": "NONE"
+    },
+    {
+      "factType": "REPAIR_ACCEPTED",
+      "semanticRole": "repair-socket",
+      "cueId": "repair_inflate_r1",
+      "mood": "restoration",
+      "animation": {
+        "type": "inflate-settle",
+        "phaseMs": [
+          300,
+          280
+        ],
+        "anchor": "accepted repaired object visual child",
+        "returnToBaseline": true
+      },
+      "audio": {
+        "intent": "gentle-pop-settle",
+        "assetId": null,
+        "owner": "KFB_AUDIO_OWNER",
+        "status": "SOURCE_CUE_ID_REQUIRED"
+      },
+      "primary": "single volume grows/settles to measured object frame",
+      "secondary": "small soft contact deformation",
+      "logicalStateEffect": "NONE"
+    },
+    {
+      "factType": "ROOF_BUTTON_ACCEPTED",
+      "semanticRole": "rooftop-relay",
+      "cueId": "roof_marshmallow_r1",
+      "mood": "springy",
+      "animation": {
+        "type": "squash-recover",
+        "phaseMs": [
+          100,
+          260
+        ],
+        "anchor": "source button/packet landing visual only",
+        "returnToBaseline": true
+      },
+      "audio": {
+        "intent": "soft-landing",
+        "assetId": null,
+        "owner": "KFB_AUDIO_OWNER",
+        "status": "SOURCE_CUE_ID_REQUIRED"
+      },
+      "primary": "squish then recover",
+      "secondary": "short non-persistent body settle",
+      "logicalStateEffect": "NONE"
+    }
+  ],
+  "cosmeticThemeOverrides": {
+    "TECH_FACTORY": {
+      "switch": "wood/clay klonk visual",
+      "goo": "ink/slime",
+      "repair": "soft extrusion"
+    },
+    "SWEET_SUPPLY": {
+      "switch": "short bakery bell or wooden tap if source-owned",
+      "goo": "colored edible-safe stylization; no new Goo gameplay truth",
+      "repair": "squishy frosting-like settle"
+    },
+    "DREAMLIKE": {
+      "switch": "slow elastic overshoot",
+      "goo": "gentle pulsating organic material",
+      "repair": "balloon-clay inflate"
+    }
+  },
+  "performance": "caps are candidate scene constraints; baseline p50/p95 real-device measurement needed, no asserted 60fps",
+  "optionalWfc": {
+    "role": "decorative or source-and-collider-verified actuator prefab only",
+    "avoid": [
+      "protected critical graph sockets",
+      "historical OSM roads and landmarks",
+      "camera/target occlusion",
+      "invalid collider/landing/support"
+    ],
+    "fallback": "authored source object"
+  },
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}
