@@ -1,3 +1,15 @@
+## BRANCH-LOCAL R12 · 2026-10-28 · CURRENT WS0 V-962 R2 ONE-SHOT STATUS / ASSET IMPORT FIX
+
+**LATEST SOURCE TRUTH, READ FIRST:** Existing WS0 Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R12_WS0_ONE_SHOT_INTEGRATION_GAP_AUDIT_2026-10-28.md`, plus its additive Return/Changelog and R10 external blind reviewer recommendation. This is a PROPOSED WS0 owner patch, **NOT** a change to approved register V-962 R2/V-968.
+
+**Critical correction:** KayKit Platformer EXTRA source ALREADY on private `georg-doc/KFB-Stunt-Car-Race` BRANCH `assets/kaykit-platformer-r1` in FOLDER `kaykit_platformer_r1/` with 525 glTF/bin and README SHA-256 file list. `assets/kaykit-platformer-r1` is NOT a directory inside `game/proc-world-ws0`. Metadata projection on `georg-doc/kayfabizarro` `registry/kaykit-platformer-r1` is only catalog: preview/runtime PENDING. Four earlier R3/R6/R7/R9 docs now start with explicit R12 source correction. Do not reupload source, do not pretend browser-ready; verify exact private source/authorized packaging.
+
+**Other current statuses:** private productive `game/proc-world-ws0` jetpack/loco/FB_CANON test exists; Site dist branch exists; planned POC branch `poc/cascade-sphere-r0` NOT yet found. Actual gameplay, Grapple new host physics, OSM 2m raster plus true bridge geometry, cross-repo Combat/Goo/Fluff authoritative coupling, private Site auth, mobile tests, and **one actual external fresh blind Critic** remain unproven. WS0 current V-962 still references old PR #435 head and 24 original checks; R10/R11 and future tests optional to adopt. One short real end-to-end playable loop is the mandatory One-Shot outcome, not 15 module demos.
+
+**Next owner action:** WS0 amend the existing V-962 register/brief with R12's concrete source/authority correction, single external critic after full integrated POC and one protected Site source-auth/QA, then authorize the separate WSA Build after source+design approval. No new asset owner, new main runtime, private code edit, Stage/Live or auto-merge here.
+
+---
+
 ## BRANCH-LOCAL R11 · 2026-10-28 · EXTERNAL AAA ONE-SHOT PROMPT BENCHMARK
 
 **COMPARISON ONLY; not official V-962 update or Work game runtime.** See the existing KFB_HUB WS0 Game Design owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R11_EXTERNAL_ONE_SHOT_PROMPT_BENCHMARK_2026-10-28.md` and additive Return/Changelog.
