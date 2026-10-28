@@ -14094,6 +14094,21 @@
    "applies": "mit V-962 R2"
   },
   {
+   "id": "V-974",
+   "date": "2026-10-28",
+   "area": "Combat",
+   "verdict": "SPEC",
+   "text": "Effekt-Baukasten fx-burst für Waffen und Zerstörung (Georg 28.10.): ein Ereignis-Modul aus vorhandenen Bausteinen – Rauchfahne dustTrail (GPU), Aufprall-Kugeln landingDebris, Steinkit-Splitter (ImpactDebris), Spellspill-Trümmer, Fluff-Sog, Mündungsfeuer primär/sekundär aus muzzle-fx.v1 (Combat Arena). Zerfall wird geschummelt: Effekt verdeckt im Dichte-Maximum, Modell darunter ausgeblendet/geschrumpft, Kit-Trümmer fliegen; Aufbau umgekehrt. Vorgaben je Ereignis als Daten. Gebaut im Cascade-Sphere-POC (WSA), danach Übernahme ins Hauptspiel. Konzept V-968 §6b.",
+   "values": {},
+   "owner": "WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: Rauchfahne, Explosionen, Spellspill-Debris, Splitter und Fluff-Partikel passen zu den Kaskaden; beim Zerstören darf geschummelt werden.",
+   "applies": "mit V-962 R2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

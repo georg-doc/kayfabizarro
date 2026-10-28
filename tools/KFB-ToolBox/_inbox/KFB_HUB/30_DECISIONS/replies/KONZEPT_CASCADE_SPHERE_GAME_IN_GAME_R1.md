@@ -66,6 +66,26 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 | Labyrinth | WhackMan v1 (`wm-recipe.js`, `wm-maze.js`) |
 | Mindscape | HyperNorm H15 |
 
+## 6b · Effekt-Baukasten für Waffen und Zerstörung (Georg 28.10., V-974)
+Ein gemeinsames Modul `fx-burst`, das das Hauptspiel später übernimmt. Es spielt Effekte über **ein** Ereignis ab, z. B. `burst(art, ort, stärke, richtung)`, und nutzt nur vorhandene Bausteine:
+- **Rauchfahne** aus dem Spiel: `src/modules/dustTrail.js` (GPU-Ringpuffer, viele kleine, fast durchsichtige Partikel).
+- **Aufprall-Kugeln** (Staub, Erde, Stein): `src/world/landingDebris.js`.
+- **Splitter und Brocken:** Steinkit v4 wie in `src/world/ImpactDebris.jsx`, dazu Spellspill-Trümmerformen (V-499).
+- **Fluff-Partikel und Sog:** `kfb-fluff-suck`.
+- **Mündungsfeuer** primär und sekundär aus der Combat Arena: `src/vendor/combat/muzzle-fx.v1.mjs` mit `muzzle-sources.v1.mjs`, Mündungsanker `KFB_Muzzle`. Die offene Achsfrage aus dem Mündungs-Return R3 (+Z gegen +Y) klärt das Quellen-Gate mit einem Bild.
+
+**Schummeln erlaubt und gewollt:** Beim Zerfall einer Zelle verdeckt der Effekt im Moment größter Dichte (Rauch, Fluff, Explosion) das Modell. Darunter wird das Modell ausgeblendet bzw. geschrumpft, und Trümmerteile aus dem Kit fliegen heraus. Es gibt kein echtes Zerbrechen der Geometrie. Beim Aufbau läuft es umgekehrt: Fluff-Wolke, darin wächst das Teil (`build`).
+
+**Vorgaben je Ereignis** (Werte als Daten, Darstellung getrennt von der Simulation wie §10b):
+- Treffer klein,
+- Zelle zerfällt,
+- Kaskade (Kettenzerfall mit Takt),
+- Goo platzt,
+- Aufbau,
+- Schuss primär und sekundär.
+
+Größe, Anzahl und Lebensdauer kommen aus der Stärke. Die Formen folgen `SPEC_CARTOON_VFX_SHAPES_R1`: eine Masse mit Ausbuchtungen, zwei bis drei Töne, Lebenszyklus.
+
 ## 7 · Klang
 - **Neu mit ElevenLabs (bestehendes `sfx_gen.py`):** Explosionen, Einstürze in Stufen (klein, mittel, Kaskade), Aufbau-Geräusche (Knete formt sich, Teile rasten ein), Greifhaken, Wächter, Goo. Kinoartig und basslastig, mit tiefem Druck und viel Raum, geschichtet aus Anschlag, Körper und Ausklang bzw. Trümmer (V-461).
 - **Vorhanden:** Jetpack-Set `jetpack_diy_r2`, `debris_crash_r1`, Fahrgefühl- und HUD-Klänge.
