@@ -118,3 +118,11 @@
 - Created `CASCADE_SPHERE_R9_WS1_ENVIRONMENT_OSM_TERRAIN3_KAYKIT_CROSSWALK_2026-10-28.md`, `CASCADE_SPHERE_R9_ENVIRONMENT_SOURCE_MATRIX_2026-10-28.json` and `CASCADE_SPHERE_R9_ENVIRONMENT_CROSSWALK_SOURCE_REPORT_2026-10-28.md` with **22/22 static source/status assertions** and **zero new render/browser/gpu/gameplay/OSM bridge proof**. Existing `main`, private assets and WS1/Stage remain unchanged.
 - R9 source-aware visual proposal: one source-authentic authored L01 small city + real terrain3 ground, source City Builder/Platformer functional props, optional later OSM clip with geographic and bridge grade truth, one masked native-vs-farbbands material proof on selected kit surface. Current terrain3 material is a full-material injection; selective building/blue source faces require measured R7 UV/face mask/recipient-owner adapter, not direct application.
 - Additive Return, branch-local router and PR #435 updated only; single current WS0 gate remains `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`. No merge/deployment/site/public URL.
+
+
+## 2026-10-28 · R10 External Blind Critic and AAA-styled POC QA proposal for V-962
+
+- User questioned whether approved V-962 R2 actually includes a true separate external Blind Critic and AAA Quality Gates.
+- Direct inspected the approved V-962 R2, binding KFB Independent Execution Guard v1.2, binding CANON_3D_R1 / CRITIC_3D_R1, and the older WB2-specific One-Shot External Critic Loop. Found **gap**: V-962 says no critic loops, but does not explicitly request one fresh external product-playing Critic, while generic binding contract requires independent authority and the requested external fresh-context mode.
+- Added `CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` to existing PR #435 as an **optional WS0 authority patch proposal only**: Q0–Q8 source, host, playable loop, 3D canon, tactile/AV, device/perf, secure Site, one external fresh blind self-play, Production Guard and Georg; at most one external post-repair review if critical. No WB2 8.5 score/gauntlet copied, no per-microslice critic or separate workflow.
+- Current external Critic is **NOT RUN**. No code, no build, no Stage/Site, no official WS0 register/Canon modification. WS0 has to amend V-962 explicitly if adopted.
