@@ -39,8 +39,30 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
   - Halten: Vorschau der Kaskade („was passiert, wenn …“), loslassen löst aus.
 - **Am Handy:** ein Daumen für die Richtung, alles andere über Tippen. Die Kamera folgt von allein. Eine komplizierte Flugsteuerung ist nie nötig.
 
+## 4a · Neu ab 29.10. (Georg, V-988): Ebene 1 auf dem KFB Random Maze statt OSM
+- **Warum:** Die OSM-Struktur direkt als Spielpfad zu nehmen ergibt keine lesbare Bahn (WSA-Befund nach dem ersten Mechanik-Test, Georgs Kritik). Spielbahnen entstehen aus Bewegung, Höhenwechseln und klaren Entscheidungen.
+- **Topologie = Labyrinth** aus dem Random-Maze-Modul (V-984): rund oder eckig, aus Saat, garantiert lösbar. Ein paar gezielte Schleifen ergeben Alternativrouten. Gänge sind Fluff-Wege und Strom-Leitungen.
+- **Mauern sind Gizmo-Wände:** aus dem Gelände hochgezogen, mit Ziegel-Struktur, zerstörbar (Durchbruch = Abkürzung bzw. Umleitung des Fluff-Flusses) und neu wachsend (Umbau per Knopf später).
+- **Gebäude als Blöcke in Labyrinth-Zellen:** etwas kleinere Goo-Gebäude bzw. Zerstörungs-Blöcke (Seed-World-Zellen) um einen **zentralen Hauptort** in der Mitte: Turm (Glocke, MiB-Wachturm, Panoptikum), Dom, alter Stiefel, Riesen-Donut. Das wählt Georg je Ebene.
+- **Platformer-Teile nur als Funktionen:** Weichen, Schalter, Förderbänder, Brücken über Mauern, eine Rampe für den Höhenwechsel. Sie sind blau markiert und klar bedienbar.
+- **Erste Teststrecke klein und komponiert:** Start → Fluff-Sammelstelle → Goo-Hindernis → Weiche → Ziel, ein Höhenwechsel, eine Alternativroute. Aus der Schulterkamera gut lesbar. WFC und Regel-Ableitung erst danach.
+- **Doppelnutzen:** Das Maze-Modul wird als eigenständiges Host-Modul gebaut und danach ins Hauptspiel übernommen (Zufallsbegegnung bzw. Minigame-Spielplatz, V-984). OSM und Köln bleiben eine spätere Variante bzw. der Rahmen um das Labyrinth.
+
+## 4b · HUD (Georg 29.10., V-989)
+Das Knete-HUD des Hauptspiels wird übernommen und angepasst, nicht neu gebaut. Quellen in `game/proc-world-ws0`:
+- `src/HudClay.jsx` (HUD 3D, Aktionsleiste R14 als Standard),
+- `src/vendor/hud/hud-r4/` bzw. `hud-r5/`,
+- Icons R2 und die Wagen-Icons im gleichen Stil.
+
+**Belegung im Minigame:**
+- Waffen-Slots: Gatling (Fluff, 1), Raketen (2).
+- Aktions-Knöpfe: Greifhaken, Bauen bzw. Aktivieren, Umleiten (Weiche).
+- Anzeigen: Fluff-Vorrat, Fluffs am Ziel, Goo-Rest. Mit Bell Defense zusätzlich die Glocken-Integrität.
+
+Fehlende Icons im selben Stil (Icon-Bühne mit Knete) kommen über WSB bzw. die bestehende Icon-Bühne. Es gibt keine selbst gezeichneten SVG-Icons. Am Handy werden die Knöpfe zu den Tipp-Zielen (§3).
+
 ## 4 · Spielfeld-Generator (wiederverwendbar für die ganze prozedurale Welt; R9-Abgleich, V-978)
-1. **Grundriss aus OSM (Georgs Wahl):** ein kleiner Kölner Ausschnitt über das KFB OSM City Lab (kayfabizarro `tools/osm-city-lab/`). Es behält Straßenachsen, OSM-IDs und Gebäudegrundrisse und zeichnet Straßen als zusammenhängende Streifen mit Knoten-Patches. Stufe „Cartoon“ (vereinfachte, leicht verformte Fassaden), nicht „Clean“ oder „Grotesque“. **Brücken sind keine Kreuzungen:** Zwei Wege ohne gemeinsamen OSM-Knoten bleiben getrennt, eine Brücke führt über einen Weg hinweg. Genau das macht das Labyrinth interessant.
+1. **Grundriss aus OSM (spätere Köln-Variante; Ebene 1 siehe §4a):** ein kleiner Kölner Ausschnitt über das KFB OSM City Lab (kayfabizarro `tools/osm-city-lab/`). Es behält Straßenachsen, OSM-IDs und Gebäudegrundrisse und zeichnet Straßen als zusammenhängende Streifen mit Knoten-Patches. Stufe „Cartoon“ (vereinfachte, leicht verformte Fassaden), nicht „Clean“ oder „Grotesque“. **Brücken sind keine Kreuzungen:** Zwei Wege ohne gemeinsamen OSM-Knoten bleiben getrennt, eine Brücke führt über einen Weg hinweg. Genau das macht das Labyrinth interessant.
 1b. **Alternative Grundrisse (später, V-984):** Derselbe Generator nimmt auch ein Labyrinth aus dem KFB-Random-Maze-Modul (rund, eckig, zufällig; Mauern aus dem Gelände hochgezogen, Ziegel) an. Für Ebene 1 bleibt es beim OSM-Ausschnitt.
 2. **Die Stadt bleibt Stadt:** Straßen und Gebäude sind die räumliche Grundlage. Sie werden nicht aus Platformer-Kacheln nachgebaut.
 3. **KayKit-Teile als Funktionen:** Platformer-, Factory- und BlockBits-Teile kommen nur dort hin, wo sie eine Aufgabe haben:
