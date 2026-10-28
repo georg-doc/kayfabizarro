@@ -111,3 +111,5 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Offen bei Georg:** q312 ASMR (übernommen), VFX-01-Auswahl (Review Bank), itch.io-Explosions-Flipbooks nur nach Ja, Push-Schlüssel für WSB (Vorschlag 5).
 - **Regel neu:** Abnahme-Clips immer im Spiel-Look (`look=terrain3`), nie in der Testwelt (grüner Boden, orange Kuppel).
 - **Nach dem Reset (So):** erster WS0-Slice KFB Random Maze (V-984), Design zuerst; Quellen in `replies/GIZMO_MAZE_RECOVERY_R1.md`.
+- **Danach (V-985):** Tunnel (4 Skins aus Joyride/Orgel-Attraktionen), Berge/Schluchten (mit WS1 b245), Mine und Untergrund-Ebenen bzw. Rabbit Holes unter Karten-Geländen.
+- **Site:** R5.1 `site/mvp-r51-dist` @b3b8ae8 (b258). Cascade Sphere: Quellen-Gate HOLD bei WSA (V-986).

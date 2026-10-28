@@ -14259,6 +14259,36 @@
    "applies": "nach So 22 Uhr"
   },
   {
+   "id": "V-985",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Terrain-Komponenten nach dem Reset (Georg 28.10.), in dieser Reihenfolge: (1) KFB Random Maze (V-984); (2) Tunnel als prozedurale Module mit vier Skins/3D-Topologien aus Joyride und den KFB-Orgel-Attraktionen, an Straßen/Gelände angeschlossen; (3) größere Berge und Schluchten (WS1-Höhenmuster b245); (4) Mine (Caveman) und Untergrund-Ebenen als eigene Räume wie Mindscapes: Dungeons und „Rabbit Holes“ in andere KFB-Decks, Eingänge ggf. unter den Karten-Geländen. Jedes als Host-Modul, Design zuerst.",
+   "values": {},
+   "owner": "WS0 nach So",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: Tunnel, Berge, Schluchten, Mine, Untergrund und Rabbit Holes als prozedurale Komponenten nach So einplanen.",
+   "applies": "nach So"
+  },
+  {
+   "id": "V-986",
+   "date": "2026-10-28",
+   "area": "Site",
+   "verdict": "BUILD",
+   "text": "Site-Update R5.1 aus game/proc-world-ws0 @d061549: Jetpack am Hang (Doppel-Leertaste = Flug, sauber landen), keine T-Pose Ruhe→Tanz (eigene Ruhe-Aktionen, kein Überblenden auf ungeladene Clips), Bergauf ohne Sägezahn (weiche Höhennachführung LIFT_K), Start-Ruckler halbiert (compileAsync vor kfb:ready, Clip-Pakete vorgeladen). Paket site/mvp-r51-dist @b3b8ae8, Hub b258. WSA-Cascade R1: Designpaket da, Quellen-Gate HOLD (FB+Jetpack+Gatling-Griff/Mündung/Flug und SeedWorld/Goo isoliert fehlen).",
+   "values": {},
+   "owner": "Site",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Befunde auf R5 live.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
