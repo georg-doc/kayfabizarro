@@ -119,3 +119,33 @@ Deliver one coherent miniature source-authentic *Factory Maze* inside the **exis
 **Visual staging order:** Source isolation of true KayKit lever pivot + instanced Fluff visual, then one real 3–6-second action/feedback capture, then continuous full-run F-01…F-18. Don't create new scene/renderer to audition. The production Guard sees causal test, tactile test and actual source screenshot together; no automatic scene PASS from this document.
 
 **Single immediate next gate UNCHANGED:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`. R5 is an additive quality criterion for the subsequently authorized WS1 C1 source-real run, not a new blocking approval process or asset generation scope.
+
+
+---
+
+## ADDITIVE R6 · 2026-10-28 · Complete KayKit Platformer source atlas → Work source preflight (before gameplay code)
+
+**Georg asks to understand every tile/prop/source and prepare measured modular assembly.** This adds a concrete Asset Librarian/World Atlas source preflight, not another game engine or a new gameplay gate. Keep R1–R5, F-01…F-24 and current WS0 intake goal.
+
+**Read first (same owner folder):**
+1. `KAYKIT_PLATFORMER_R6_FULL_SOURCE_INVENTORY_2026-10-28.json`: full 370 FREE and 525 EXTRA actual observed GLTF/BIN pairs, exact folder/filename metadata and tier differences; no SHA-256 yet.
+2. `KAYKIT_PLATFORMER_R6_SEMANTIC_ATLAS_2026-10-28.json`: 171 role keys, each color family, suggested functional category; zero accepted connector/surface proof.
+3. `KAYKIT_PLATFORMER_R6_GLTF_GEOMETRY_SAMPLES_2026-10-28.json`: 12 real GLTF JSON hierarchical/position accessor probes, including button/lever children, split cannon/saw, conveyor threads texture, ramp and pipe. Bounds are mesh-local hints, not final colliders.
+4. `KAYKIT_PLATFORMER_R6_FOUR_MEASURED_BOARD_FIXTURES_CANDIDATE_2026-10-28.json`: four unassembled source test boards (seam, switch, belt-pipe, hazard).
+5. `KAYKIT_PLATFORMER_R6_MODULAR_ATLAS_BUILD_BRIEF_2026-10-28.md` and `KAYKIT_PLATFORMER_R6_SOURCE_ATLAS_TEST_REPORT_2026-10-28.md`: step-by-step source extraction/measurement, validated port grammar, snap/Gizmo/world/generator integration and evidence limits.
+
+**Authoring contract:** use existing Asset Librarian source refs, `World Atlas/kit-lab.js` measured bounding/contact, `dungeon-grid.js` canonical seams, `resident_atlas_s6/lib/studio.js` authoring TransformControls and KFB Assembly A0 AssetRef/Surface/Connector vocabulary. No separate JSON runtime owner or source registry. Only source pinned/rendered/physically verified pieces become approved Snap/WFC/Combat instances.
+
+**Important source distinction:** official FREE and EXTRA folders can share all FREE filenames/sizes but hashes remain to be computed; don't publish `EXTRA has same bytes` as an established fact. Entire source pack is present on Dropbox, *not yet uploaded*. Neutral and colored models can carry overlapping names and are two independent role families until source identity and geometry prove equivalence.
+
+**Additional future independent QA cases (old F-01…F-24 remain intact):**
+| ID | Preflight | Required evidence |
+| --- | --- | --- |
+| F-25 | complete package intake | Exact 895 observed GLTF/BIN pairs + actual SHA-256/dependencies checked, reproducible source branch commit, real renderer load errors enumerated; no raw private credential leak |
+| F-26 | moving composite source | actual original button/lever child nodes, measured pivot and reset, one animated source mesh not entire stand-in; source vs assembled photo pair |
+| F-27 | true tile seams | real supported floor↔ramp, railing, pipe and conveyor port/collider/clearance tests; negative incompatible adjacency identified, no guessed dimensions from basename |
+| F-28 | conveyor and source texture | `threads.png` loaded and UV movement separate from actual authoritative Fluff motion, verified belt direction and overhang |
+| F-29 | source variants | blue/red/green/yellow real model/material parity on one representative family, neutral source identity distinct, same functional ports only after measured compatibility |
+| F-30 | WFC author fallback | after C1 is green, optional local WFC only in permitted variant sockets; contradiction uses identical proven authored layout, visual effect cannot block player or shift real OSM roads |
+
+**Do not block existing WS0 L01 on all 171 manual port measurements:** first automatically parse/load all; visually inspect source-critical 5–8 real models; measure four family boards as owner time allows. L01 genuinely requires one source-safe floor/road, one lever/button, one source-visible Fluff and one destination. All families can become catalogued in incremental release slices after source intake. Keep one next gate `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` and a later separately approved WS1 build.
