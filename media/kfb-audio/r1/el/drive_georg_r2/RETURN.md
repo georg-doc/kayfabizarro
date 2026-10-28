@@ -1,3 +1,17 @@
+## Aktuell: gemeinsamer Flight-Slice R6 gestartet · Jetpack-Abgabe ausstehend
+
+Georg: neuer Enginegrundklang wirkt propellerartig; ursprünglicher Jet-Schub soll Basis sein. **PS0 war ein Versprecher, WS0 ist gemeint**, ausdrücklich geklärt. WSA als Integrator auf bestehendem Reviewbranch, Abstimmung mit WS0 über PR45 Kommentar6463436543 angefragt.
+
+Spielbasis auf aktuellen committed WS0-Stand **a5a47976e17137fe1f5c5fb916a0ae3f7c081b6b** zusammengeführt, zusätzliche Elternschaft hält aktuelle Welt/HUD/Fluff-Assets. Reviewbranch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **42d1218527840be3f833d7f6b09c90261d087fd1**. [Aktueller Return mit offenen Grenzen](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/42d1218527840be3f833d7f6b09c90261d087fd1/audit/JOINT_FLIGHT_R6_RETURN.md).
+
+P01-Jet-Schub und P03-Körper wieder Basis; die propellerartig wirkenden JP_low/high nicht geladen. Neue Metall-/Pop-Varianten separat erhalten, HRTF und 850-ms-Start aus Original-Jet. 7.294.140 zusätzliche PCM-Bytes. Vorhandene Clay-Spuren/Puffs/Manöverlinien lesen denselben Flugzustand wie Audio; echte Düsen nur über KFB_Thrust_L/R. Keine erfundene Jetpack-Geometrie oder neue Flugphysik.
+
+Prüfflug `work/v908-racer-jetpack/test/out/v908/JOINT_FLIGHT_R6.html`: Solo/Gesamtmix desselben sichtbaren Ablaufs auf zusammengeführtem Spielstand, Start/Schub/Boost/Gleiten/Banking/Landung. Banking bestätigt; **Fassrolle bei zwei automatischen Eingabefolgen nicht ausgelöst**, rollSeq0, daher offener Prüfnachweis. Keine JS-/Audiofehler, ein Context, Ende0Loops; ein Cozy-Musikrequest fehlgeschlagen/abgebrochen. Targeted Units/enger Critic CONTINUE nach historische-Event-Replay-Reparatur. Zahlen sind keine vollständige Audiovisuell-Abnahme.
+
+**Neues Jetpack noch nicht integriert:** WSB V-910-Ordner enthält Konzept/rohes Meshy-Modell/Arbeitssichtungen, keinen fertigen GLB-Anker-/Clip-Return. nozzles0 / assetPending=true in Aufnahme ausdrücklich gekennzeichnet. WS0 bitte fertige Abgabe/Pin (Medium-Rückenanker, KFB_Thrust_L/R, Flugclips/Return) benennen/liefern; vollständige neue Modell-/Rauch-/Düsen-/Rollenabnahme erst danach. Dieser Materialanschluss ist quarantiniert, übriger Slice fortgeführt. Keine Lieferantwort oder abgeschlossene Abstimmung behauptet, kein Merge/Live.
+
+---
+
 ## Aktuell: Georg R4 angenommen · R5 Start/Solo ergänzt
 
 Georg hat R4 gehört: **„ist gut“ · PROCEED PASS/TUNE**. Zwei Nachbesserungen: wahrnehmbarer Start/Abheben und klar beurteilbare Engine-Vorschau ohne maskierende Umgebung/Musik. Grundklang nicht erneut zur Konzeptfreigabe stellen.
