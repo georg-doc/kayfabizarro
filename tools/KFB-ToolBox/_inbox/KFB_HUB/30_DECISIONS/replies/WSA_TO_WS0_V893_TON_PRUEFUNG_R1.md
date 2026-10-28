@@ -1,19 +1,19 @@
-# WSA → WS0 · V-893 Ton-Prüfung R1 · 2026-10-27
+# WSA → WS0 · V-893 Ton-Prüfung R1 · 2026-10-28
 
-Status: **Quellenprüfung und vollständige lokale Site-Messläufe gesichert; Hör-/Bild-Ton-Abnahme teilweise OFFEN. Kein Gesamt-PASS.** Der vollständige Auftrag liegt inzwischen als Nutzereinfügung vor; der frühere 404 ist kein Blocker mehr.
+**Erneute Quellen- und Auslieferungsprüfung gesichert; vollständige Hör-/Bild-Ton-Abnahme weiterhin OFFEN. Kein Gesamt-PASS.**
 
-Bericht: [audit/TON_PRUEFUNG_R1.md](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/f752c31279af2d8ff9297af15b0c36b32848b036/audit/TON_PRUEFUNG_R1.md)
+[Prüfbericht](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/04c5d8fc763392c23c03a782aa586a8e6cf4b660/audit/TON_PRUEFUNG_R1.md)
 
-- Repo/Branch: `georg-doc/KFB-Stunt-Car-Race` · `audit/wsa-ton-pruefung-r1`.
-- Exakter zurückgelesener Audit-Head: `f752c31279af2d8ff9297af15b0c36b32848b036`; Bericht vollständig inhaltsgleich zurückgelesen. Vergleich zur Quelle: ausschließlich diese Audit-Datei hinzugefügt.
-- Gemessene Quelle: `game/proc-world-ws0` @ `ceb1584db457171379bc914541fb84e9e0a52fb1`; Audio-Pin `c37138a97c166d0790757ec3a888f2401c7ad5d9`. 1.435 versionierte Dateien nach Prüfung unverändert.
-- Abschlussabgleich: Quellbranch inzwischen `9c0289a6b90b08c4c98047acfbabc1b9a0ec9cfe`, ausschließlich Demo-Sandweg-Sichtbarkeit (V-896); kein geänderter Audioaufruf/Pin. Neuer Build nicht erneut gemessen.
-- 72 Ereigniszeilen; 9 fehlende spezifische Anschlüsse (davon Spielende/Tank voll bedingt), 2 fehlende beschlossene Instrument-Klangfarben als Dialog-Unterfälle. Vorhandene Aufnahmen zuerst geprüft. NPC-/schwere Schritte bereits produziert; Interaktionssounds lokal vorhanden, teils nicht im Remote-Katalog.
-- 349 Cue-Einträge inventarisiert; 321/321 Bank-Cues katalogbelegt und isoliert startfähig. Vorhandene Mixerchecks 51/51 PASS mit dokumentierten übersprungenen Cacheprüfungen.
-- Vollständiger lokaler Site-Build erfolgreich, vier 60-Sekunden-Fahrmessungen (frei/Fast 4G, kalt/warm), zusätzliche 18 Aktionsfenster. Keine Browserfehler. Schalten, Fehlzündung, Boost, Schuss, Explosion und spätere Landungen durch Starts belegt; keine menschliche Hörabnahme.
-- Drei Hauptwerte: Grundstock kalt **11,50 s frei / 28,84 s Fast 4G**; dekodiertes PCM **677,27 MiB** in der Fahrserie (683,59 MiB nach zusätzlichen Aktionen); Audio-Frame-p95 **0,4–0,5 ms**, Spitzen **bis 9,7 ms**. Das strikte Ziel <=1 ms in jedem Frame ist nicht bestanden; vollständiges CPU-Profil offen.
-- Kalt erster Titel: firstMs 6043 / 1132 ms nach startMusic; separat Eingabe→playing 7914 / 5401 ms. Unterschiedliche zufällige Titel, keine kausale Aussage zugunsten der Drosselung.
-- Erste 60 Sekunden: 490–561 Audioanfragen, 30,4–34,6 MiB vollständig gemessener Transfer. Proxycache warm ohne Upstream, aber keine nachgewiesenen Browsercache-Hits. Site-Umschreibung kann beide Fetch-Hosts auf denselben Raw-Proxy zurückführen. Bericht enthält Grenzen und höchstens drei Auslieferungsvorschläge.
-- Keine Spiel-/Audioänderung, keine generierten Sounds, kein Deploy, Merge oder PR. Lokaler Site-Build ist keine veröffentlichte Site-Abnahme.
+- Auftrag: replies/WS0_AN_WSA_V893_TON_PRUEFUNG_R1.md jetzt erreichbar und gelesen (Blob b668ae32337942f313ef093b020ab9f47a2313c7); stimmt mit der eingefügten Fassung überein. Georgs „go“ vom 28.10. gilt Lesen/Messen, nicht dem vorbereiteten Reparaturauftrag.
+- Repo/Branch: georg-doc/KFB-Stunt-Car-Race · audit/wsa-ton-pruefung-r1. Verifizierter Head: `04c5d8fc763392c23c03a782aa586a8e6cf4b660`; vollständige Datei nach Schreiben inhaltsgleich zurückgelesen.
+- Gemessene Quelle: `74ba4a9ca8e5c0e24ba27f2e80addb4180c3f6e9`; Audio-Pin `a0167cf4ade9db795822bf3a142937d5672824bc`. Motor R2/Schichten und neue Bewegungen berücksichtigt. 1.457 versionierte Dateien der lokalen Kopie nach Test unverändert.
+- Währenddessen Quellbranch auf `6c3bd140cd69f98aa4e9cdccd634564bd4478c34` weitergelaufen (Tafellicht/Wüste/Oasen). Kein Nachweis für den neueren Weltstand; neue Oasen nicht abgenommen.
+- 77 Ereigniszeilen; 9 fehlende spezifische Anschlüsse (Spielende/Tank voll bedingt), 2 fehlende Instrumentenfarben als Dialog-Unterfälle. 353 Cues, alle 325 Bank-Zuordnungen im aktuellen Index vorhanden; das ist Katalognachweis, kein vollständiger Hörtest.
+- Lokaler Site-Build PASS; vier Fahrmessungen frei/Fast 4G × kalt/warm; zusätzlich 20 Aktionsfenster. engineR2 19/19 und engineVoice 14/14 Regelchecks PASS.
+- Drei Hauptwerte: Grundstock kalt **30,60 s frei / 34,68 s Fast 4G**; erfasstes gehaltenes PCM **674,90 MiB** einschließlich zusätzlicher R2-AudioBuffer; Audio-p95 **0,2–0,3 ms**, Maxima **2,9–4,5 ms**. Striktes <=1 ms pro Frame nicht erfüllt; umfassendes asynchrones CPU-Profil offen.
+- Einzelmessungen mit zufälligen Titeln; kein kontrollierter Vorher/Nachher-Vergleich. Speicherzählung heute um erzeugte R2-Monobuffer erweitert, kein direkter Vergleich zum alten Decode-only-Wert.
+- Im freien Kaltlauf 2 gemeldete Rückfälle und 1 Musikfehler: jsDelivr-Musik spielt kurz, 844 ms später weiterer Titelwechsel; Range ERR_ABORTED. 15 Racer-Dateien tatsächlich über jsDelivr HTTP 200 geliefert. Jede Ersatzhost-Anfrage einzeln im Bericht. Andere drei Läufe ohne Musikfehler/Fallback.
+- Zusätzlicher Nachweis: Schrittzähler bei Gehen/Rennen/Seitwärts/Rückwärts; Sprung/Landung der Figur, Kampfstarts, Bodenwelle und Bremse; Ausstieg erreicht foot, Figurenflug danach fly. Passende H01-Landestarts nahezu zeitgleich mit M2-Landing plus 5 ms Scheduling. Kein menschliches Ohrurteil daraus ableiten.
+- Spiel, Audiodateien, Pins und Deployments unverändert; lediglich Auditdatei aktualisiert. Höchstens drei Vorschläge im Bericht; keine Reparatur, kein PR/Merge.
 
-**Ein nächstes Gate:** WS0 nimmt die OFFEN-Zeilen am identischen Quellstand mit synchronem Bild/Ton ab, besonders erste Aktionen vor Ladeende sowie seltene Fahr-/Welt-/Dialogereignisse. Kein neuer Auftrag oder lauffähiger Grundstand muss dafür erst beschafft werden. Georg muss aktuell nichts entscheiden.
+**Nächstes Gate:** synchroner Bild-/Tondurchgang der OFFEN-Zeilen am eingefrorenen Stand durch WS0 mit benanntem Hörprüfer; Ernte/seltene Fahrfiguren/Welt-/Dialogereignisse noch nicht vollständig reproduziert. Der Bericht ist keine abgeschlossene vollständige Spiel-Ton-Abnahme. Georg muss aktuell keine neuen Sounds auswählen oder entscheiden.
