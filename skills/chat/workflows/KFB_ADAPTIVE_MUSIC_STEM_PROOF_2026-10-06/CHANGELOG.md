@@ -1,3 +1,11 @@
+## 2026-10-28 · Bell Resonance R5 recovery persisted after blocked tool attempts
+- Existing bell research Draft PR #458 now contains `bell-resonance-r1/R5_ASSET_LIBRARIAN_PHYSICS_REVIEW.md`: verified current Asset Librarian Registry/read-only candidate search; exact KayKit Holiday Bits separate bell/ring/clapper glTF donors (2 source glTF reads), Medieval Hexagon church context model (1 source glTF read), source license sidecar (1 read).
+- Engine separation retained: coupled pendulum/contact, FEM structural eigenmodes, acoustic radiation and spatial audio via existing KFB Audio owner. No second Runtime/AudioContext, fresh Site, Hub route or Stage.
+- R5 is research-only: 0 donor-source independent renderings, 0 authenticated Librarian live searches, 0 real bell WAV acquisition or physical FFT, 0 FEM solve, 0 browser/Audio Site publication. Single gate `KFB_BELL_R5_LIBRARIAN_DONOR_ISOLATION_AND_REAL_BELL_AUDIO_AUDIT`.
+- Previous write attempts were blocked, but follow-up create-file and read-back succeeded. This is not retroactive implementation/visual acceptance.
+
+---
+
 ## 2026-10-28 · Bell Resonance R4 · USER REJECTED R3 VISUAL / true 3D geometry proof
 - Binding Georg visual correction: no 2D/SVG/pseudo-spatial ring/vault/cheap scaffolding as product, no personified bronze/object-humour; show real 3D bell geometry with inner/outer walls and sound bow, real cutaway, clapper, and *physically validated* FE/experimental surface eigenmodes rather than decorative FFT halos.
 - Added R4_Binding design correction with research-backed modal/FEM pipeline and license-isolated 3D donor shortlist; historical objects not downloaded/adopted. Created original **nonhistorical** true 3D geometrical test with three GLB exports and isolated VTK screenshots, scripts, 44/44 numerical/roundtrip tests PASS. Bundle is a conversation artifact, NOT hosted/published or in GitHub binary source.
