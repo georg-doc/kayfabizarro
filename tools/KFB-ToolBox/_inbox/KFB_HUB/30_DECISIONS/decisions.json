@@ -13419,6 +13419,21 @@
    "applies": "nach Einbau"
   },
   {
+   "id": "V-929",
+   "date": "2026-10-28",
+   "area": "HUD",
+   "verdict": "BUILD",
+   "text": "HUD R14 (ChatGPT-HUD-Lab, Branch design/hud-icons-r1 @7c216fd, Issue #44): Icons waren zu klein (512er-Leinwand statt sichtbarer Silhouette skaliert: Blaster 46 %, Bombe 38 %, Schwert 35 % der Slotbreite). WS0 setzt das eine nächste Gate um: eine Sechser-Aktionsleiste mit Original-Icons nach Alpha-Silhouette skaliert und optisch zentriert in den echten R5-Mulden (≥ 3 px Rand bei 48 px), ersetzt die alte untere Leiste, Leiste AN/AUS, Zustände; Belege 48/64 px, leer + echte Szene; Georg KEEP/TUNE/FAIL. Site-Frage: keine neue HUD-Site und kein World-Studio-Umbau (V-390) – HUD-Lab als Prüfansicht im Spiel (#hudlab), Originale im Asset Librarian. Bau auf game/hud-fit-r14, Merge WS0.",
+   "values": {},
+   "owner": "HUD_R14_WS0_VISUAL_FIT_HANDOVER_2026-10-28.md",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Icon muss im Slot so groß wirken wie sein Nachbar – gemessen an dem, was man sieht, nicht an der Leinwand.",
+   "applies": "nach Georgs KEEP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
