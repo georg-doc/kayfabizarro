@@ -1,5 +1,9 @@
 # KFB Audio · additive owner changelog
 
+## 2026-10-28 · Research R1 · Racer/Dieselpunk spatial visceral audio
+
+Draft PR #457 / `research/kfb-racer-dieselpunk-spatial-audio-r1-2026-10-28`, based on unchanged verified v20 Flight/Crash PR #428 head 945518d382ea0aacf62260325adc9a55a3eda241. Added source atlas, creator-chapter/reference analysis, ten role/module grammar, current telemetry mapping, HRTF vs binaural-beats distinction, no-duplicated-owner plan and one World/Race first proof. 16/16 editorial assertions and exact-file readbacks on initial checkpoint. 0 new audio/World/browser tests, 0 new site publish; PR #455/v11 isolated-donor ancestry warning; previous v20 implementation/hosting remains in prior entries. One gate: true World/Race telemetry → one-vehicle DRY/SPATIAL A/B. Detail `research/RETURN_R1.md`.
+
 ## 2026-10-18 · Flight + Crash R1
 
 Same owner-private Audio Site v20/Source0.10.0; native f0ae805e4b76fd1a02e2cf6416505a836d677bec, deployment appgdep_6ad4e66a08208191b305e3f93a4ba925. Draft PR428, branch audio/flight-crash-r1-2026-10-18 stacked on PR426. Five flight profiles,12 private propulsion donors, explicit bounded material/contact cascades, shared30s audition. Hosted13cues/2roots/6contacts/0late, onecontext, zeroendedsources. Independent38source/263runtime; regressions185Racer/395Combat/172Site/511footsteps/25ambience passed. Private Dropbox package delivered; public code/manifests only. PROCEED PASS not HUMAN_ACCEPTED, no World/paid/merge/Live. Next: actual World owner sends authoritative flight/Hit/support facts via tiny adapter. Details WSA_FLIGHT_CRASH_R1_RETURN.md.

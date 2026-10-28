@@ -1,3 +1,9 @@
+## 2026-10-28 · Racer/Dieselpunk Spatial + Visceral Audio R1 RESEARCH (no runtime promotion)
+
+One bounded research-only candidate on Draft PR #457, branch `research/kfb-racer-dieselpunk-spatial-audio-r1-2026-10-28`, stacked on the existing v20 Flight/Crash Audio Site PR #428. See `research/RETURN_R1.md` and `research/INTEGRATION_BRIEF_R1.md`. Sound grammar covers source-faithful mechanical drivetrain, physical tyre/contact, flight pressure, binaural HRTF external sources, spatial occlusion/reverb and optional source-isolated Mindscape transitions. Direct user YouTube fetch throttled; creator's chapter announcement used, marked as such. 16/16 editorial checks and 3/3 initial file readbacks, zero new browser/audio/World tests or hosted deployment. Existing Site v20/Source0.10.0 and prior technical evidence below remain unchanged and NOT newly verified. Next one gate: WS1/Race real-telemetry A/B in actual host, no new audio owner/Stage/HUD.
+
+---
+
 # WSA · Flight + Crash R1 · RETURN · 2026-10-18
 
 Status: IMPLEMENTED_AND_HOSTED_RUNTIME_CHECKED. Georg's production instruction is PROCEED PASS, not HUMAN_ACCEPTED. No World writes or paid generation.
