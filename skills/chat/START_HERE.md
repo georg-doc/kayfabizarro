@@ -1,3 +1,13 @@
+## BRANCH-LOCAL R11 · 2026-10-28 · EXTERNAL AAA ONE-SHOT PROMPT BENCHMARK
+
+**COMPARISON ONLY; not official V-962 update or Work game runtime.** See the existing KFB_HUB WS0 Game Design owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R11_EXTERNAL_ONE_SHOT_PROMPT_BENCHMARK_2026-10-28.md` and additive Return/Changelog.
+
+Georg supplied an external blank-folder Cities: Skylines II–class AAA one-shot prompt. Reuse architecture-first, original asset/source policy, screenshot+real-play verification early, one integration writer, persistent resumable status and an actually independent final external blind critic. Avoid unpinned new stack, photoreal-only benchmarks, arbitrary perf guarantees, many productive agents fighting for shared core, per-module four-round critic gates and unbounded `/loop`; `ultracode` is tool/version-specific, not guaranteed in WSA. Existing V-962 R2 + V-968 remain owner scope, current R10 one external end critic still proposed to WS0 and the approved register was NOT modified.
+
+**One current V-962 next step unchanged:** sources and design package to WS0/Georg, then authorized brownfield private POC integrated one-shot with budget-conscious internal tests/repair and protected Site. No main merge, new runtime/site/live.
+
+---
+
 ## BRANCH-LOCAL R10 · 2026-10-28 · EXTERNAL BLIND CRITIC / AAA POC QUALITY PROPOSAL
 
 **WS0 ACTION REQUIRED / NOT OFFICIAL V-962 AMENDMENT.** Georg explicitly asked whether approved V-962 R2 really contains an independent external blind critic and stylized AAA quality gates. Read existing KFB_HUB owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` and additive Return/Changelog.
