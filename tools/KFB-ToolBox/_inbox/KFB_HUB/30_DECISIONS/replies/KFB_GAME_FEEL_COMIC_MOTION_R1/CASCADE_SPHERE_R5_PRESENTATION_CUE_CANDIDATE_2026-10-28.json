@@ -86,7 +86,8 @@
       },
       "primary": "brief stop/tilt and bounce, forward direction clear",
       "secondary": "optional one tiny question Emanata, safe-space only",
-      "logicalStateEffect": "NONE"
+      "logicalStateEffect": "NONE",
+      "triggerGuard": "Only when route actually changed at a validated junction by a prior accepted SWITCH_ACCEPTED; at most once per packet per switch eventId; not on every ordinary edge advance."
     },
     {
       "factType": "HIT_ACCEPTED",
@@ -110,7 +111,8 @@
       },
       "primary": "one organ-shaped contraction",
       "secondary": "one bounded lobe/puddle, no shard storm",
-      "logicalStateEffect": "NONE"
+      "logicalStateEffect": "NONE",
+      "triggerGuard": "Only Combat owner verified impact on opted-in goo-infected adaptation-shell target; unrelated prop hit produces no Goo recoil."
     },
     {
       "factType": "REPAIR_ACCEPTED",
@@ -134,7 +136,8 @@
       },
       "primary": "single volume grows/settles to measured object frame",
       "secondary": "small soft contact deformation",
-      "logicalStateEffect": "NONE"
+      "logicalStateEffect": "NONE",
+      "triggerGuard": "Only after World owner validates socket, resource and accepted permanent state; visual inflate never mutates source collision"
     },
     {
       "factType": "ROOF_BUTTON_ACCEPTED",
