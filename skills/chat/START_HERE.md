@@ -1,3 +1,17 @@
+## BRANCH-LOCAL R5 · 2026-10-28 · ORGANIC CHILL CARTOON GAME FEEL
+
+**Additive design/source input only, NOT WS1 execution or a new animation engine.** On the existing KFB_HUB WS0 Game Design Draft PR #435 branch read:
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM_2026-10-28.md`;
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE_2026-10-28.json`;
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_CHILL_FEEDBACK_SOURCE_REPORT_2026-10-28.md`;
+- existing `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` has R5 C1 acceptance addendum F-19…F-24.
+
+The paths above are *relative to the existing tools/KFB-ToolBox/_inbox/KFB_HUB owner folder*; R1–R4 and previous R3 Platformer source/WS0 authorization remain. One accepted `SWITCH_ACCEPTED` fact triggers one source lever elastic cue, one legally rerouted Fluff hesitation at the correct junction, one audio-owner source soft cue if available, with muted/reduced motion fallback; C2 Goo+repair, C3 rooftop optional feel later. No mood/tween mutation to canonical event or actual World/Combat/Save. WFC spectacle scenic-only with source/physical constraints. 30/30 source/static editorial checks; gameplay/visual/audio/GPU/Stage = 0.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`. No auto merge, live release, new Site or second Runtime.
+
+---
+
 ## BRANCH-LOCAL R4 · 2026-10-28 · CASCADE SPHERE INTEGRATION PREPRODUCTION
 
 **ADDITIVE DESIGN/GRAPH QA ONLY — NOT CANON / NOT RUNTIME AUTHORIZATION.** For the current WS0 preproduction and later Work/WS1 integration, read the following existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/ files in order:
