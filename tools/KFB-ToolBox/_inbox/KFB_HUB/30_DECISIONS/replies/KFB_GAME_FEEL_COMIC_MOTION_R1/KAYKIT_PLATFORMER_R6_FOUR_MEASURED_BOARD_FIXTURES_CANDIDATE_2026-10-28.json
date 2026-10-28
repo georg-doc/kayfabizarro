@@ -1,0 +1,242 @@
+{
+  "schema": "kfb.kaykit.platformer.test-boards/0.1-candidate",
+  "date": "2026-10-28",
+  "owner": "WS0/Asset Librarian actual 3D source proof",
+  "status": "DESIGN_ONLY_UNMEASURED_BOARD_PLACEMENTS",
+  "sources": {
+    "free": "Dropbox user-shared KayKit_Platformer_Pack_1.0_FREE/Assets/gltf",
+    "extra": "Dropbox user-shared KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf"
+  },
+  "boards": [
+    {
+      "board": "SEAM_BOARD",
+      "goal": "Does true physical floor/ramp/railing seam fit at measured grid and level change?",
+      "actors": [
+        {
+          "sourceLocator": "FREE/neutral/floor_wood_4x4.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/platform_slope_4x4x4_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/platform_4x4x1_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/railing_straight_single_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        }
+      ],
+      "tests": [
+        "bounds-world-with-node-transforms",
+        "support-footprint",
+        "slope-end-contact",
+        "rotation-0-90-180-270",
+        "ray-clearance"
+      ],
+      "acceptanceStatus": "NOT_TESTED"
+    },
+    {
+      "board": "SWITCH_BOARD",
+      "goal": "Real movable button/lever mesh with source-derived hinge, bounded contact and one audible/visible reaction.",
+      "actors": [
+        {
+          "sourceLocator": "FREE/blue/button_base_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/lever_floor_base_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/green/lever_wall_base_B_green.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        }
+      ],
+      "tests": [
+        "node-hierarchy",
+        "button-travel-hinge",
+        "click-contact-proximity",
+        "reset-mid-tween",
+        "touch-target-accessibility",
+        "dedupe-accepted-switch"
+      ],
+      "acceptanceStatus": "NOT_TESTED"
+    },
+    {
+      "board": "CONVEYOR_PIPE_BOARD",
+      "goal": "Belt shader UV and packet routing use one graph; pipe ends have compatible actual dimensions.",
+      "actors": [
+        {
+          "sourceLocator": "EXTRA/blue/conveyor_4x4x1_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/pipe_straight_A_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/pipe_90_A_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        }
+      ],
+      "tests": [
+        "atlas-and-threads-texture",
+        "actual-belt-footprint-overhang",
+        "belt-in-out-orientation",
+        "pipe-diameter-and-end-faces",
+        "graph-route-visible-alignment",
+        "no-texture-scroll-as-game-state"
+      ],
+      "acceptanceStatus": "NOT_TESTED"
+    },
+    {
+      "board": "HAZARD_BOARD",
+      "goal": "Decomposed dynamic hazards animate source child meshes and keep a tested swept volume.",
+      "actors": [
+        {
+          "sourceLocator": "EXTRA/blue/saw_trap_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "EXTRA/neutral/sawblade.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "EXTRA/blue/cannon_base_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        },
+        {
+          "sourceLocator": "FREE/blue/spring_pad_blue.gltf",
+          "sourceFileChecked": "EXISTS_IN_SOURCE_INVENTORY",
+          "sourcePin": "PENDING_BYTES_AND_SHA256",
+          "actualWorldBBox": null,
+          "measuredContactPorts": [],
+          "placementTransform": null,
+          "sourceRenderProof": null
+        }
+      ],
+      "tests": [
+        "child-mesh-transform",
+        "saw-rotation-and-swept-collider",
+        "cannon-turret-barrel-axes",
+        "spring-safe-impulse-direction",
+        "nonlethal-disabled-in-chill"
+      ],
+      "acceptanceStatus": "NOT_TESTED"
+    }
+  ],
+  "portContractCandidates": [
+    {
+      "kind": "walk-flat",
+      "test": "source top-face normal & area, correct Y, collision/support and clearance"
+    },
+    {
+      "kind": "walk-ramp-low",
+      "test": "real source slope lower edge Y/width and actor slope limit"
+    },
+    {
+      "kind": "walk-ramp-high",
+      "test": "real slope upper edge Y/width and valid next-support connection"
+    },
+    {
+      "kind": "pipe-open",
+      "test": "actual mesh open-end ring center/normal/diameter and obstruction"
+    },
+    {
+      "kind": "belt-in",
+      "test": "true leading top lane surface, orientation, width, no overlap"
+    },
+    {
+      "kind": "belt-out",
+      "test": "true trailing top lane surface, orientation, width, no overlap"
+    },
+    {
+      "kind": "wall-closed",
+      "test": "transverse horizontal ray and collision blocked"
+    },
+    {
+      "kind": "actuator-contact",
+      "test": "source child pivot/travel vs physical reachable contact with host input"
+    },
+    {
+      "kind": "hazard-swept-zone",
+      "test": "full animation min/max collider envelope with safe buffer"
+    }
+  ],
+  "warnings": [
+    "No board is actually assembled",
+    "No real connector pose or dimensions accepted",
+    "No invented graybox fallback to masquerade as source",
+    "Use actual source GLTF pixels and local hierarchy; no renderer until source import",
+    "C1 only needs seam/switch boards; belts and hazards can follow"
+  ],
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}
