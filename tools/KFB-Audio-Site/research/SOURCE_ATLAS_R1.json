@@ -1,0 +1,141 @@
+{
+  "schema": "kfb.racer-spatial-audio-research/1",
+  "date": "2026-10-28",
+  "mode": "RESEARCH_ONLY",
+  "owner": {
+    "repository": "georg-doc/kayfabizarro",
+    "receivingBranch": "audio/flight-crash-r1-2026-10-18",
+    "receivingHead": "945518d382ea0aacf62260325adc9a55a3eda241",
+    "receivingPR": 428,
+    "audioSite": "https://kfb-audio.frizzlebob.chatgpt.site/#flight",
+    "siteStatus": "EXISTING_HOSTED_V20_FROM_PRIOR_RECEIPTS_NOT_REVERIFIED_THIS_TURN"
+  },
+  "references": [
+    {
+      "id": "video",
+      "type": "creator-video",
+      "url": "https://www.youtube.com/watch?v=3jdrae2g9gA",
+      "status": "CHAPTERS_FROM_CREATOR_MIRROR_ONLY_DIRECT_THROTTLED",
+      "mirror": "https://telemetr.io/ch/channels/1679557048-xssracademy/posts?cursor=IBQ%3D",
+      "topic": "Assassin's Creed Odyssey audio breakdown"
+    },
+    {
+      "id": "racer",
+      "type": "internal",
+      "path": "tools/KFB-Audio-Site/dist/racer/engine.mjs",
+      "ref": "945518d382ea0aacf62260325adc9a55a3eda241",
+      "status": "GITHUB_SOURCE_READ_NOT_REAUDITIONED"
+    },
+    {
+      "id": "flight",
+      "type": "internal",
+      "path": "tools/KFB-Audio-Site/dist/racer/FLIGHT_CONSUMER.md",
+      "ref": "945518d382ea0aacf62260325adc9a55a3eda241",
+      "status": "GITHUB_SOURCE_READ"
+    },
+    {
+      "id": "gaps",
+      "type": "internal",
+      "path": "tools/KFB-Audio-Site/dist/racer/FLIGHT_WS0_GAPS.json",
+      "ref": "945518d382ea0aacf62260325adc9a55a3eda241",
+      "status": "GITHUB_SOURCE_READ"
+    },
+    {
+      "id": "ambience",
+      "type": "internal",
+      "path": "tools/KFB-Audio-Site/dist/ambience/CONSUMER.md",
+      "ref": "945518d382ea0aacf62260325adc9a55a3eda241",
+      "status": "GITHUB_SOURCE_READ"
+    },
+    {
+      "id": "adaptive_immersive",
+      "type": "internal",
+      "pr": 455,
+      "status": "CANDIDATE_ON_OLDER_V11_BASE_RECONCILE_BEFORE_REUSE"
+    },
+    {
+      "id": "audio_source_baseline",
+      "type": "internal",
+      "path": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md",
+      "ref": "main",
+      "status": "GITHUB_SOURCE_READ"
+    },
+    {
+      "id": "webaudio",
+      "type": "official-spec",
+      "url": "https://www.w3.org/TR/webaudio-1.1/",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "mdn_hrtf",
+      "type": "official-doc",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "mdn_worklet",
+      "type": "official-doc",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "mdn_convolver",
+      "type": "official-doc",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "three_positional",
+      "type": "official-doc",
+      "url": "https://threejs.org/docs/pages/PositionalAudio.html",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "beamng_engine",
+      "type": "official-doc",
+      "url": "https://docs.beamng.com/modding/vehicle/sections/sounds/engine_audio/",
+      "status": "PUBLIC_SOURCE_READ"
+    },
+    {
+      "id": "resonance_audio_web",
+      "type": "external-sdk",
+      "url": "https://github.com/resonance-audio/resonance-audio-web-sdk",
+      "status": "ARCHIVED_2026_04_19_DO_NOT_ADOPT"
+    },
+    {
+      "id": "kenney_impact",
+      "type": "sound-pool",
+      "url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0",
+      "status": "SOURCE_LICENSE_PAGE_READ_NOT_AUDITIONED"
+    },
+    {
+      "id": "freesound",
+      "type": "sound-pool",
+      "url": "https://freesound.org/help/faq/",
+      "license": "PER_FILE_CC0_BY_OR_BY_NC",
+      "status": "NO_FILE_SELECTED"
+    },
+    {
+      "id": "granular_concept",
+      "type": "algorithm-example",
+      "url": "https://github.com/Jonas-Hack/Granular-Synthesis-for-Engine-Audio",
+      "status": "RESEARCH_ONLY_NO_CODE_COPY_LICENSE_UNVERIFIED"
+    }
+  ],
+  "sourceRules": [
+    "exact source-in-isolation before integration",
+    "no invented replacement A1",
+    "no rejected sustained oscillator friction",
+    "no site/source-v11 overwrite of v20",
+    "private audio remains private",
+    "music/voice mixing and world physics owners unchanged"
+  ],
+  "tests": {
+    "sourceCodeRead": true,
+    "sourceAudioAuditioned": false,
+    "browserRuntimeExecuted": false,
+    "newSitePublished": false,
+    "worldIntegrated": false
+  }
+}
