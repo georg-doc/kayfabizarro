@@ -84,7 +84,19 @@ Qivas Begriffe werden zu Spielmechaniken. So erklärt das Minispiel Qiva nebenbe
 | 60-Tage-Simulation „Kestrel Cloud“ | eine Kampagne: jede Runde ein Tag der fiktiven Firma |
 | gemessene Treffsicherheit | Sterne und Trefferquote je Runde |
 
-Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einstiegspunkt. Er kann es als Erklär- und Marketing-Schicht für Qiva nutzen und technisch mitbauen, ohne das Hauptspiel zu berühren. Das Papier vom 17.10. ist die bisher geprüfte Quelle; die übrigen Qiva-Unterlagen (Drehbuch, Simulationsbericht, Ablaufbilder) liegen in Georgs Dropbox und werden vor dem Kampagnen-Teil gelesen.
+**Kampagne nach Stefans „Drehbuch Simulation Qiva 2026 V2“** (24 Tage bei der fiktiven Firma Kestrel Cloud, fünf Erzählstränge). Jeder Strang wird eine Ebenen-Art:
+
+| Strang im Drehbuch | Ebenen-Art |
+|---|---|
+| A · flaky Tests, Reverts, „Test ist wieder rot, ignoriere“ | flackernde Goo-Herde, die immer wieder aufploppen; ein Wächter beruhigt sie |
+| B · Umbau des Rechnungsdienstes auf eine Event-Queue | Förderband umleiten; Halten zeigt vorher die Kaskade (Shadow Impact) |
+| C · persönliche Daten in Debug-Logs | vergiftete Fluff-Ströme herausfiltern, bevor sie das Ziel erreichen |
+| D · Datenbank-Migrationen, Sperren, verzögerte Rechnungen | Brücke im Umbau: Strom kurz umleiten, im „Wartungsfenster“ bauen |
+| E · Freitags-Ausfall plus Anbieter-Störung „Nordwind Cloud“ | Boss-Welle: große Kaskade plus Sturm von außen, danach Aufräum-Runde (Post-Mortem) |
+
+Die vier Aufnahme-Pausen des Drehbuchs (Wache und Lagebild, Shadow Impact, Compliance-Lücke, Konjunktiv-Frage) werden kurze Zwischenszenen mit FrizzleBob als Erzähler.
+
+Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einstiegspunkt. Er kann es als Erklär- und Marketing-Schicht für Qiva nutzen und technisch mitbauen, ohne das Hauptspiel zu berühren. Gelesen: Investoren-Papier (17.10.) und Drehbuch V2. Noch zu lesen vor dem Kampagnen-Teil: QIVA_FULL_CONTEXT.md, Simulationsbericht, Testing-Doku, Ablaufbilder (Dropbox-Ordner „Stefan Lietz CV and AI Projects“).
 
 ## 9 · Modulgrenzen
 - `cascade-core`: reines Datenmodell und Regeln (Graph, Ströme, Goo, Kaskade, Bauen, Wächter). Deterministisch, ohne three.js, mit Golden-Test.
