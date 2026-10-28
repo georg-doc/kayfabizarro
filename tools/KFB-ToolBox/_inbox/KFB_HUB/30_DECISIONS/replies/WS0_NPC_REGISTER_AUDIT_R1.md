@@ -350,6 +350,25 @@ Quelle: `~/Dropbox/CLAUDE/KFB Stunt Car Race/_inbox/KayKit_PACKS_References_Scen
 
 **Varianten, die das Spiel noch nicht nutzt:** Farmer A/B Textur B (dunkel), Goth Girl weiß, Avian braun, Orc Brute grau-blau, Monstrosity grün, Hero Man blau (nur im Atlas), Cleric zweite Textur, Hoarder B, Plant Warrior rot/orange, 4GTN weiß, Marksman Helm/Kapuze, Magical Girl ×4. Die Texturen liegen in den Packs (`textures/…_B.png`, z. B. `farmer_texture_B.png`, `hoarder_texture_B.png`); der Atlas setzt sie über `skin`, die Spiel-Darsteller kennen heute nur die eingebettete Textur.
 
+## R3 · Ork-Band r1b, jonglierender Clown, Textur-Varianten (Georg 28.10., q280 D)
+
+**Ork-Band (ersetzt den RA-Slot „orc-warband“):** läuft unverändert über `src/npc/bandLife.js` mit Scenelet `orc_band_01` (kfb.scenelet/1 R2). Die GLBs im Spiel (`src/private/50_BLENDER/ORKBAND/_privat_kauf_asset/band/KFB_Band_*.r1.glb`, Trompete) sind sha-gleich mit dem Hub-Stand r1b (z. B. Trompeter 6c8c3c44fe8c, Trommler e6eed268422c). Status im Spiel: `private`, alle 4 Mitglieder geladen, Clips bounce / strum / drum_v5c / trumpet_groove.
+- Trompete in der linken Faust, Mundstück am Mund (Streifen `test/out/perf/band_trumpeter_streifen.jpg`); Trommler schlägt mit beiden Keulen auf die Trommel, Keulen in den Fäusten, kein sichtbares Durchdringen (`band_drummer_streifen.jpg`).
+- Nicht geprüft: Mikro an der Lippe des Leaders (aus der Spielkamera verdeckt), Bodenkontakt der Legacy-Orks (wirken am Hang knapp schwebend, nicht gemessen).
+- Port-Status orc-warband damit: **lädt (über bandLife r1b)** statt „fehlt“.
+
+**Clown B50 r1b:** neues Modul `src/npc/clownLife.js` (Stil bandLife): Bühne + private Ebene, Clown über den Darsteller-Slot (KFB-Augen aus den Ankern der Karte, PROOF wie Ritter/Dämon), Clip `kfb_clown_juggle_cascade3_d` als Schleife, Requisiten auf den Spuren `clown_juggle_j5.prop_tracks.{pin,donut,candy}.json` (lerp/slerp, Eltern = Clown-Wurzel), Clip und Spur aus einer Uhr. Keine neue Animation.
+- Abgleich mit dem WSB-Streifen (Bilder 0/6/13/20/27 Keulen, 13 Donuts): gleiche Lage der Keulen in Hand/Luft in allen fünf Bildern; Bild 6 Keule vor dem Gesicht wie im Beweis (bekannter J5-Punkt). Donuts Bild 13: einer oben, zwei in den Händen wie im Beweis.
+- Abweichungen: nur der Jonglier-Zustand läuft (stop/talk/resume nicht geschaltet); Kamera schneidet den Scheitel (2,1 u) oben ab; Bühnen-Wiese (r 8 m) liegt als Scheibe auf dem Gelände (Platz Neigung 0,065, 3 cm eingesenkt).
+- Assets: liegen nicht im privaten Spiel-Repo, nur im Hub (`50_BLENDER/B50/clown`). Für die Probe in den Worktree kopiert (`src/private/50_BLENDER/B50/clown`, gitignored). Für den Bau auf WS1 müssen sie in den Zweig `assets/private`.
+- Szenen-Typ `clown` (Entwurf) in `src/npc/sceneTypes.js`, je Besetzung eine Requisiten-Variante; Fabrik im Szenen-Wirt. `band` gab es schon.
+
+**Textur-Varianten (q280 D):** Daten `src/data/characters/variants.r1.json` (Varianten-IDs `<registerId>:<a|b|…>`, Textur aus der Pack-Datei am Pin 891eadf0), Wahl je Zelle aus dem Seed (`src/npc/variantPick.js`, Regie setzt `besetzung[].variante` in kfb.scene/1), Tausch beim Laden (`src/npc/variants.js`: nur die Körper-Textur, Augen-Rig ausgenommen, Materialien vor der Knete geklont). Blatt `~/kfb-ws0/npc-scenes/test/out/variants_sheet.jpg`.
+- Mit Datei und im Bild: Farmer A/B hell/dunkel, Goth Girl schwarz/weiß, Avian blau/braun, Orc Brute grün/grau-blau, Monstrosity grau/grün, Cleric A/B, Hoarder A/B, Plant Warrior A/B, Hero Man rot/blau, Magical Girl A–D, Hiker A/b (zusätzlich).
+- **Ohne Datei:** Plant Warrior dritte Farbe (Pack hat nur zwei Texturen); 4GTN grün/bemoost ist ein eigenes Modell (`4GTN_Forgotten.glb`), kein Textur-Tausch.
+- Befund: Der Spiel-Körper von Farmer B (K11 harke) trägt schon Textur B (dunkel); das öffentliche Farmer_B.glb trägt A.
+- KFB-Augen bleiben bei Farmer B, Goth Girl, Avian (Darsteller-Slot); die übrigen sind Kit-Originale mit Originalaugen.
+
 ## Belege
 
 - Probe-Bilder (Teil 2): `~/kfb-ws0/npc-scenes/test/out/npc_scenes_sheet.jpg`, Einzelbilder `~/kfb-ws0/npc-scenes/test/out/npc_scenes/m*.png`, Status `probe_status*.json` daneben.
