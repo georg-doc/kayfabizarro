@@ -1,0 +1,929 @@
+{
+  "schema": "kfb.kaykit.platformer.material-zone-source-probes/0.1",
+  "status": "ORIGINAL_GLTF_JSON_VERIFIED_TEXTURE_PIXELS_AND_FACE_ZONES_NOT_YET_MEASURED",
+  "date": "2026-10-28",
+  "samples": [
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "platform_4x4x1_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/platform_4x4x1_blue.gltf",
+      "bytes": 2978,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "platform_4x4x1_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 120,
+              "indexCount": 252
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "platform_4x4x1_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_4x4x1_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "platform_slope_4x4x4_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/platform_slope_4x4x4_blue.gltf",
+      "bytes": 2997,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "platform_slope_4x4x4_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 172,
+              "indexCount": 252
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "platform_slope_4x4x4_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_slope_4x4x4_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "button_base_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/button_base_blue.gltf",
+      "bytes": 4950,
+      "classification": "MULTI_NODE_SAME_ATLAS_MATERIAL",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "button_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 84,
+              "indexCount": 252
+            }
+          ]
+        },
+        {
+          "meshIndex": 1,
+          "name": "button_base_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 5,
+              "positionAccessor": 4,
+              "vertexCount": 136,
+              "indexCount": 324
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "button_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        },
+        {
+          "index": 1,
+          "name": "button_base_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "button_base_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "lever_floor_base_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/lever_floor_base_blue.gltf",
+      "bytes": 5184,
+      "classification": "MULTI_NODE_SAME_ATLAS_MATERIAL",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "lever_floor_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 253,
+              "indexCount": 1020
+            }
+          ]
+        },
+        {
+          "meshIndex": 1,
+          "name": "lever_floor_base_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 5,
+              "positionAccessor": 4,
+              "vertexCount": 112,
+              "indexCount": 300
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "lever_floor_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": [
+            0,
+            0.2999999523162842,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "name": "lever_floor_base_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "lever_floor_base_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "pipe_straight_A_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/pipe_straight_A_blue.gltf",
+      "bytes": 2982,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "pipe_straight_A_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 128,
+              "indexCount": 384
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "pipe_straight_A_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "pipe_straight_A_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "conveyor_4x4x1_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/conveyor_4x4x1_blue.gltf",
+      "bytes": 5287,
+      "classification": "MULTI_PRIMITIVE_MATERIAL",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        },
+        {
+          "materialIndex": 1,
+          "name": "threads",
+          "metallic": 0,
+          "roughness": 0.5,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "threads.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "conveyor_4x4x1_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 1004,
+              "indexCount": 2904
+            },
+            {
+              "primitiveIndex": 1,
+              "materialIndex": 1,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 5,
+              "positionAccessor": 4,
+              "vertexCount": 120,
+              "indexCount": 324
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "conveyor_4x4x1_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png",
+        "threads.png"
+      ],
+      "buffers": [
+        "conveyor_4x4x1_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "saw_trap_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/saw_trap_blue.gltf",
+      "bytes": 5020,
+      "classification": "MULTI_NODE_SAME_ATLAS_MATERIAL",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "saw_trap_sawblade_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 1878,
+              "indexCount": 3480
+            }
+          ]
+        },
+        {
+          "meshIndex": 1,
+          "name": "saw_trap_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 5,
+              "positionAccessor": 4,
+              "vertexCount": 311,
+              "indexCount": 756
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "saw_trap_sawblade_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        },
+        {
+          "index": 1,
+          "name": "saw_trap_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "saw_trap_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "hammer_blue.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/hammer_blue.gltf",
+      "bytes": 3061,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "hammer_blue",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 591,
+              "indexCount": 1860
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "hammer_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "hammer_blue.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "EXTRA",
+      "color": "neutral",
+      "file": "floor_wood_4x4.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/neutral/floor_wood_4x4.gltf",
+      "bytes": 2988,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "floor_wood_4x4",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 736,
+              "indexCount": 1032
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "floor_wood_4x4",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "floor_wood_4x4.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "red",
+      "file": "platform_4x4x1_red.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/red/platform_4x4x1_red.gltf",
+      "bytes": 2975,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "platform_4x4x1_red",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 120,
+              "indexCount": 252
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "platform_4x4x1_red",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_4x4x1_red.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "green",
+      "file": "platform_4x4x1_green.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/green/platform_4x4x1_green.gltf",
+      "bytes": 2981,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "platform_4x4x1_green",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 120,
+              "indexCount": 252
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "platform_4x4x1_green",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_4x4x1_green.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    },
+    {
+      "tier": "FREE",
+      "color": "yellow",
+      "file": "platform_4x4x1_yellow.gltf",
+      "sourceRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/yellow/platform_4x4x1_yellow.gltf",
+      "bytes": 2984,
+      "classification": "SINGLE_PRIMITIVE_ATLAS",
+      "materials": [
+        {
+          "materialIndex": 0,
+          "name": "platformer",
+          "metallic": 0,
+          "roughness": 0.30000001192092896,
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "image": "platformer_texture.png"
+        }
+      ],
+      "meshes": [
+        {
+          "meshIndex": 0,
+          "name": "platform_4x4x1_yellow",
+          "primitives": [
+            {
+              "primitiveIndex": 0,
+              "materialIndex": 0,
+              "attributes": [
+                "POSITION",
+                "TEXCOORD_0",
+                "NORMAL"
+              ],
+              "uvAccessor": 1,
+              "positionAccessor": 0,
+              "vertexCount": 120,
+              "indexCount": 252
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "index": 0,
+          "name": "platform_4x4x1_yellow",
+          "mesh": 0,
+          "children": [],
+          "translation": null
+        }
+      ],
+      "images": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_4x4x1_yellow.bin"
+      ],
+      "sourceTruth": "actual_original_gltf_json",
+      "notVerified": [
+        "UV color region geometry mapping",
+        "actual texture pixel sample",
+        "material visually rendered",
+        "surface mask/collider"
+      ]
+    }
+  ],
+  "counts": {
+    "SINGLE_PRIMITIVE_ATLAS": 8,
+    "MULTI_NODE_SAME_ATLAS_MATERIAL": 3,
+    "MULTI_PRIMITIVE_MATERIAL": 1
+  },
+  "findings": [
+    "Platform and ramps in checked colored variants use one glTF material named platformer, one mesh primitive and one shared platformer_texture.png. Their blue regions are NOT a separately addressable material slot in source.",
+    "Button and floor/wall lever have separately named child meshes but share the same platformer atlas material. Mesh-scoped override is possible after material cloning, but blue surfaces within that mesh require texture/UV mask or per-face geometry split.",
+    "Conveyor extra has two independent glTF primitives/materials: platformer (platformer_texture.png) and threads (threads.png). Its belt material is a particularly low-risk selective animation target without changing the hard frame.",
+    "Saw trap has separately named sawblade child but its entire asset still uses one shared platformer atlas; mesh-scoped override requires material cloning and collider-safe animation.",
+    "Original different color variants each declare the same platformer material name and platformer_texture.png filename, with color expressed by image content and/or mapped UVs. Material.name alone cannot identify blue vs red regions.",
+    "Use the exact source material index and primitive identity; cloned per-instance material or selected primitive replacement must not leak changes to all instances sharing cached source material.",
+    "Any use of KFB moving terrain color-band shader needs true semantic/UV mask after BIN+PNG intake, source render proof, pass-through of original PBR texture, and visual/combat/collider separation."
+  ],
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}
