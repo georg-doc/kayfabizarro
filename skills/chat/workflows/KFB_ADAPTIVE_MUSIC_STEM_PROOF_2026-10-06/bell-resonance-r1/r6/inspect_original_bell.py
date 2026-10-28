@@ -27,7 +27,8 @@ def inspect(source: Path, target: Path, *, render: bool = True):
     target.mkdir(parents=True, exist_ok=True)
     facts = {"source": str(source), "sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
              "sourceGeometry": "ORIGINAL_FILE", "FEM": "NOT_TESTED", "models": [], "renders": []}
-    for node, name, mesh, matrix in meshes:
+    for node, name, geometry, matrix in meshes:
+        mesh = geometry.copy()
         mesh.apply_transform(matrix)
         facts["models"].append({"node": node, "mesh": name, "vertices": len(mesh.vertices),
                                 "triangles": len(mesh.faces), "watertight": bool(mesh.is_watertight),
