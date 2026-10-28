@@ -1,3 +1,12 @@
+## 2026-10-28 · R6 original KayKit source verification / no fake donor preview
+**Outcome: source metadata verified, original geometry rendering blocked by binary transfer, read-only inspector ready.** Current KFB Asset Registry main contains 7,819 model-3d records. Current source GLTF parse on original KayKit Holiday Bits `bell.gltf` and `bell_decorated.gltf`: 12/12 source-text structural checks PASS, including actual separate bell/ring/clapper meshes, original source .bin names, mesh/bbox/triangle counts and absence of embedded animation. Original .bin existence and byte size separately corroborated in connected Dropbox.
+An offline read-only donor inspector `bell-resonance-r1/r6/inspect_original_bell.py` is now saved in GitHub, with fail-closed exact source dependency checks, four source-isolated 3D views after node transforms, and per-mesh geometry report when true bytes available. Local sister implementation: 5/5 fixture checks PASS using **R4 synthetic control GLB and roundtripped glTF ONLY**, not original KayKit visual proof; exact GitHub source read back, not runner-tested. A 3.8 KB conversation ZIP includes tool+test results+README. No actual KayKit source render, true wall/FEM, physical ringing or audio Site.
+Two Wikimedia PD/CC0 pages rechecked; Freesound CC0 original login-gated; original audio bytes downloaded 0, spectra 0. Public audio media URL transfer blocked; no invented source replacement.
+R6 research and test evidence: `bell-resonance-r1/R6_EXACT_KAYKIT_DONORS_AND_AUDIO_ACCESS_2026-10-28.md`, `bell-resonance-r1/R6_SOURCE_INSPECTOR_TEST_REPORT.md`, `bell-resonance-r1/r6/inspect_original_bell.py`.
+One next gate: `KFB_BELL_R6_SOURCE_BINARY_TRANSFER_ORIGINAL_DONOR_VISUAL_PROOF`. No new AudioContext, Audio Site, Hub/Cloudflare/Live, merge or World owner.
+
+---
+
 ## 2026-10-28 · Bell Resonance R5 recovery persisted after blocked tool attempts
 - Existing bell research Draft PR #458 now contains `bell-resonance-r1/R5_ASSET_LIBRARIAN_PHYSICS_REVIEW.md`: verified current Asset Librarian Registry/read-only candidate search; exact KayKit Holiday Bits separate bell/ring/clapper glTF donors (2 source glTF reads), Medieval Hexagon church context model (1 source glTF read), source license sidecar (1 read).
 - Engine separation retained: coupled pendulum/contact, FEM structural eigenmodes, acoustic radiation and spatial audio via existing KFB Audio owner. No second Runtime/AudioContext, fresh Site, Hub route or Stage.
