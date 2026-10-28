@@ -136,7 +136,8 @@ Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einst
   - Wirkung auf Desktop und Handy gemessen.
 - **Quellen:** im Konzept-Ordner KFB_GAME_FEEL_COMIC_MOTION_R1 (PR 435, Head 363f8730): CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF, CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM, CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE (JSON). Animationszeiten und Klangdateien sind Vorschläge, zugeordnet wird aus dem KFB-Bestand.
 
-## 11 · Offen für Georg (nur, wo er entscheiden muss)
-1. Grundriss für die erste Ebene: echter OSM-Ausschnitt oder WhackMan-Labyrinth?
-2. Spielfigur in der Sphäre: FrizzleBob mit Jetpack, Combat Mech oder beides im Wechsel?
-3. Darf Stefan den Zweig sehen, sobald Schritt 1 steht?
+## 11 · Georgs Entscheidungen (28.10.)
+1. **Grundriss:** ein echter OSM-Ausschnitt, gern stilisiert und vereinfacht.
+2. **Spielfigur:** zuerst FrizzleBob mit Jetpack und Gatling. Später Combat Mech und alle KayKit-Figuren mit Medium- und Large-Rig (Figurenwahl wie im Hauptspiel).
+3. **Stefan:** darf den Zweig sehen. Produktion läuft nur über unsere Repos, nicht über seine Dropbox. Für Stefan wird der Stand als eigene GPT-Site bereitgestellt.
+4. **Architektur:** möglichst dieselbe modulare Architektur wie die MVP-Haupt-Slices (Host-Vertrag, Module mit create/update/dispose, Site-Paket wie `site/mvp-r3-dist`), damit Minigame und Hauptspiel gegenseitig Plug-and-Play nutzbar sind.
