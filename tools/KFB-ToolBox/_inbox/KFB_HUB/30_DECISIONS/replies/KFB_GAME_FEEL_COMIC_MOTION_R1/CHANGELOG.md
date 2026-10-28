@@ -1,3 +1,13 @@
+## 2026-10-28 · Fluff Switchyard · KayKit Factory/Maze/Platformer · WS0 R1 (additive to Cascade Sphere)
+**DESIGN/SOURCE AUDIT PERSISTED · NOT GAMEPLAY BUILT.** Georg proposed a maze-based, source-backed 3D platformer/factory mini-activity: place switches and obstacles, reroute instanced cartoon-eyed Fluff, cleanse/selectively repair infected KFB City Builder buildings, optionally defend civic landmarks and later use the verified Combat Mech/Jetpack to reach higher activation anchors. First prove small factory Maze; OSM city skins/grapple/mass animals/full combat deferred. This refines the already existing `CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md`, no new game runtime owner.
+**Source:** three KayKit CC0 pages reviewed; Platformer and Prototype Bits are not in current tracked Registry index, external FREE downloads SOURCE_REQUIRED; City Builder Bits present with 45 entries. Current Kenney Factory Kit 148, Kenney Prototype Kit 74 and KayKit BlockBits 44 entries. **11/11 exact source IDs verified** in City Builder/Factory pack shards. No isolated model visual acceptance.
+**Scenario:** 3 authored logical directed route recipes, two alternative solutions each. 21/21 abstract graph BFS assertions PASS (not physical playability), 2/2 source/recipe JSON parse PASS, no new runtime/browser/render/audio/Stage tests. L1 Switchyard 90–150s, L2 Goo Junction 150–210s, L3 Mech Rescue 180–240s are authoring targets.
+**Files:** `FLUFF_SWITCHYARD_KAYKIT_MAZE_PLATFORMER_WS0_R1_2026-10-28.md`, `FLUFF_SWITCHYARD_SOURCE_ATLAS_R1.json`, `FLUFF_SWITCHYARD_THREE_LEVEL_RECIPES_R1.json`, `FLUFF_SWITCHYARD_TEST_REPORT_R1_2026-10-28.md`. Source/variant gates and q103 open; current Dungeon S13.2 seam graph, WhackMan BFS, Seed World destruction and editor candidate reuse explicit.
+**Ownership:** WS0 current design/decisions, WS1/WS1b only productive R3F game receiver; preserve Combat Arena, Asset Librarian, existing Audio, PlayerSave/Card/Almanac, Track/OSM; WB2 R4 remains STOPPED. User label "VS0" is reconciled to established "WS0"; do not create new owner.
+**One next gate:** `WS0_SWITCHYARD_SOURCE_ISOLATION_AND_WS1B_RECEIVER_TRIAGE` — show original actual 3D source assets in isolation; measure maze/factory module dimensions and confirm current WS1b host before a bounded L1 consumer implementation. No new Site, Cloudflare or Hub routing change, auto-merge or Live.
+
+---
+
 # Additive changelog · KFB Game Feel × Playable Comic R1
 
 ## 2026-10-19 · WS1 proposal intake + WS0 cross-concept alignment · DESIGN
