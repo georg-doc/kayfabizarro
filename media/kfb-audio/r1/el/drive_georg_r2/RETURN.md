@@ -1,3 +1,17 @@
+## Aktuell R7: WS0-Abstimmung steht, Fassrolle bestätigt
+
+WS0s [Antwort6463962095](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45#issuecomment-6463962095) gelesen: WSA integriert eigenen Stand, WS0 übernimmt nach Georgs Sicht-/Hörfreigabe. Neues Jetpack bleibt bis WSB-Lieferung quarantiniert, kein Ersatzmodell; P01/P03 plus separate sparsame Metall-/Pop-Akzente bestätigt. Kommendes M1Player-Konfliktfenster wird von WS0 angekündigt.
+
+**Fassrolle jetzt tatsächlich im Controller nachgewiesen:** Leertaste, nach zwei Simulationsschritten neuer Richtungsdruck, Space-Fenster33,3ms; vorab Richtung neutral/6Ladungen/Cooldown0. Über vorhandenen Debug-Eingabeadapter zu den normalen Controllertasten, keine Zustands-/Physikmanipulation. Roll-Event in Schritt4472, ModusROLL, Controller- und VFX-Rollenfolge jeweils1; Audio-JetpackPop trägt dieselbe rollAt-Quellzeit. Enger unabhängiger Critic CONTINUE.
+
+Repo `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **3c8aa22b8802805f23cc4a4cec6b359420c06164**. [R7 Return](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/3c8aa22b8802805f23cc4a4cec6b359420c06164/audit/JOINT_FLIGHT_R7_RETURN.md), [Eingabe-/Ton-/VFX-Nachweis](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/3c8aa22b8802805f23cc4a4cec6b359420c06164/audit/JOINT_FLIGHT_R7_METRICS.json).
+
+Lokale Hör-/Sichtfläche `work/v908-racer-jetpack/test/out/v908/JOINT_FLIGHT_R7.html`: **Fassrolle noch einmal**, Startwiederholung, Solo/Gesamtmix desselben Ablaufs. Keine JS-/Audiofehler; 2abgebrochene/fehlgeschlagene Musikrequests. Lauf endet im Flug mit15 stummen Basisschleifen, kein neuer Landungs-/Stop-Nachweis. nozzles0/assetPendingtrue bleibt korrekt. Gezielte Units und Browser-Vorschau PASS, keine Produktionsphysik geändert. Die frühere offene Roll-Prüfung ist damit geschlossen; neue Modell-/Düsen-/Clips-Abnahme bleibt ausstehend.
+
+Nächster Schritt: Georg kann Rolle mit Sound/Manöver-VFX prüfen; WSB liefert über WS0 den fertigen V-910-Jetpack. Danach echter Modellanschluss und vollständiger Prüfflug. Kein Merge/Live.
+
+---
+
 ## Aktuell: gemeinsamer Flight-Slice R6 gestartet · Jetpack-Abgabe ausstehend
 
 Georg: neuer Enginegrundklang wirkt propellerartig; ursprünglicher Jet-Schub soll Basis sein. **PS0 war ein Versprecher, WS0 ist gemeint**, ausdrücklich geklärt. WSA als Integrator auf bestehendem Reviewbranch, Abstimmung mit WS0 über PR45 Kommentar6463436543 angefragt.
