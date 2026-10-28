@@ -212,3 +212,28 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **Critical limitation:** WFC can be visually strange only in optional scenic/model roles that preserve physical clearance, source provenance, hero object silhouette, landmarks, camera and graph. Core facts are distinct from presentation. Fluff stops/reorients at next legal graph node instead of teleporting. R2/R3 main gameplay, KayKit purchased FREE/EXTRA asset intake, and private V-538 manifest boundary unchanged.
 
 **ONE next WS0 gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`, now include source-isolated original KayKit lever hinge, actual small Fluff visual and Audio source-cue identification before a later authorized WS1 C1 feel pass. No new product owner, Live, Stage, main, or merge.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · KayKit Platformer R6 source atlas / R7 actual material zones
+
+**Georg asks for source-proven modular use of ALL KayKit Platformer parts and selective KFB animated terrain-colorband / surreal material mixes on ACTUAL individual source material zones, especially blue platform tops and conveyor belt.** R1–R5 gameplay/3D design, one WS0/Asset Librarian and sole WS1/WS1b R3F game host remain unchanged. Do not reopen WB2 R4 STOP.
+
+**R6 catalog delivered on this same Draft PR #435 branch:**
+- `KAYKIT_PLATFORMER_R6_FULL_SOURCE_INVENTORY_2026-10-28.json`: all 10 Dropbox model color directories complete; FREE 370, EXTRA 525 GLTF/BIN source filename pairs, matching texture entries. FREE names/metadata sizes duplicated 370/370 inside corresponding EXTRA folders; no SHA256 byte identity proof.
+- `KAYKIT_PLATFORMER_R6_SEMANTIC_ATLAS_2026-10-28.json`: 171 neutral+colored independent role keys (121 in FREE, +50 EXTRA only), categorized with source variants and exact connector/snap/render/physics checks still required.
+- `KAYKIT_PLATFORMER_R6_GLTF_GEOMETRY_SAMPLES_2026-10-28.json`: 12 actual original Dropbox GLTF JSON reads of hierarchy, mesh-local POSITION accessor min/max and declared BIN/PNG dependencies; NOT world-space collision or render.
+- `KAYKIT_PLATFORMER_R6_FOUR_MEASURED_BOARD_FIXTURES_CANDIDATE_2026-10-28.json`: four NOT YET ASSEMBLED or measured source boards (SEAM, SWITCH, CONVEYOR_PIPE, HAZARD), 14 exact source model names and nine proposed port proof types.
+- `KAYKIT_PLATFORMER_R6_MODULAR_ATLAS_BUILD_BRIEF_2026-10-28.md` and `KAYKIT_PLATFORMER_R6_SOURCE_ATLAS_TEST_REPORT_2026-10-28.md`: source-hash intake, actual Kit Lab/Assembly A0 model measurement, Collider/Surface/TransformControls/Gizmo/WFC, QA. Static docs 30/30 and board-inclusive 26/26 checks (overlap; not 56 independent).
+
+**R7 color/material zone source findings (user addition during R6):**
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_GLTF_SOURCE_PROBES_2026-10-28.json`: 12 actual ORIGINAL GLTF material/primitive/node source JSON reads. Blue platform/ramp/pipe have ONE material named platformer + platformer_texture.png, so *blue upper faces are NOT independent source material slots*. Button/lever/saw have independently named child meshes yet share platformer atlas; per-instance cloned child material allows whole child effect, not automatic blue zone masking. EXTRA conveyor is the exception: TWO distinct primitive materials, index 0 platformer body and index 1 threads + threads.png belt. Different red/green/yellow variants retain same material name; actual per-color PNG UV/pixel masks remain unmeasured.
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TARGETS_CANDIDATE_2026-10-28.json`: 8 source-specific zone targets, four native/Clay/animated bands/surreal visual profiles, all pending actual mask/3D proof.
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONES_AND_TERRAIN_COLORBAND_WS0_2026-10-28.md`: four selective mask techniques (primitive material, child mesh, sampled atlas UV/palette region, measured top-normal geometry), image+material source preservation, KFB terrain colorband shader as current material-owner consumer, source native fallback, restore, no shared cached mutation, mobile/GPU checks.
+- `KAYKIT_PLATFORMER_R7_OFFLINE_MATERIAL_ZONE_SCANNER.py`: prepared optional-Pillow offline GLTF/BIN/PNG source material and UV/color triangle analysis tool, meant to execute AFTER real source bytes are locally present. Saved as source, NOT executed or accepted as tested script. Output uses relative paths to avoid exposing private Dropbox machine location.
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TEST_REPORT_2026-10-28.md`: 30/30 actual static consistency checks, ZERO full source PNG/BIN pixel sampling/3D render/shader compile, browser/mobile/GPU/perf/WS1/Live tests. R6 and R7 static checks not game QA.
+
+**Work handoff:** existing `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` appended R6 source preflight F-25…F-30 and R7 material-zone feel F-31…F-36, preserving F-01…F-24. Do not make entire 525-model manually authored color zones a blocker for L01; source-isolate one real switch, one platform's upper face and one EXTRA belt material as first goldens.
+
+**One next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`: license/sha bytes and source proof, selected material/connector areas and current WS1b host pin. Only then separately authorize WS1 integration; no Game/Asset/Stage/Site/Cloudflare/Live or public-private binary writes were done here.
