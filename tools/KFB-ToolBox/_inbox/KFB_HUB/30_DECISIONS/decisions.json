@@ -13044,6 +13044,21 @@
    "applies": "nach WSA-Lieferung"
   },
   {
+   "id": "V-904",
+   "date": "2026-10-28",
+   "area": "Look",
+   "verdict": "FIX",
+   "text": "Georg 28.10.: Popups/Dioramen dunkler als das Gelände, Licht nicht stimmig. Befund: Kamera-Tafeln (Popups, Café-Kulisse, Werbetafeln) standen oft im Gegenlicht. Fix: Normale überwiegend nach oben (popupLight), Tafel im Gegenlicht 46 → 58, Gelände 102; Spiel @c9fe739. Hub q269 (A Schattenseiten-Regel V-683 an, B Popups aufhellen). Mindscape-Kuppel fast schwarz, tief in der Senke, 216 lose Einschlag-Platten → Hub q268.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Ort im Bild soll im selben Licht stehen wie sein Boden.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
