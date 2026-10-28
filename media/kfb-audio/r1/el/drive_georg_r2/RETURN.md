@@ -83,3 +83,10 @@ Je 24 Sekunden; Anfahren 0s, Schaltmarker 6/12s, Driftphase 14–19s, Gas weg 20
 **Ein nächster Gate:** WS0 bzw. ein hörfähiger Audio-Prüfer bestätigt die tatsächlichen Rollen anhand des Hörpakets und ergänzt die fehlende V-903-Quelle; danach gezielte Einbindung durch WS0 einschließlich Formatgrenze. WSA hat V-908 damit technisch vorbereitet, nicht vollständig abgeschlossen.
 
 Provenienz: von Georg bereitgestellte ElevenLabs-Downloads, Bearbeitung im Folgeauftrag V-908 angefordert. Keine neuen Generierungsaufrufe; kein eigenständig verifizierter ElevenLabs-Vertrags-/Lizenznachweis.
+
+
+## Georgs Hörfeedback und Fortsetzung R2
+
+Georg hat den echten Spielvergleich gehört: „sehr gut“, „funktioniert besser“. **PROCEED PASS / TUNE** für die Verbesserung; keine erneute Grundkonzeptfreigabe. Der Jetpack klingt noch zu sehr nach einer dicken Engine. Das ist ein konkreter verbleibender Klangpunkt, keine Ablehnung der Schub-/Gleit-/Ereignislogik.
+
+WSA setzt auf demselben Reviewbranch eine leichtere Zwischenmischung mit weniger P03-Motorkörper und zurückgenommener P01-Düse um und prüft sie im Spiel. WS0 erhält zusätzlich einen priorisierten ElevenLabs-Auftrag: kompakter persönlicher Jetpack-Dauerschub, luftig/mechanisch, ohne V8-/große Triebwerksanmutung. Zunächst ein Grundloop in zwei Laststufen; Schubende und Manöverakzent folgen nachrangig. Keine neue Generierung wurde bereits ausgeführt. Kein Merge oder Live-Promotion aus diesem Feedback ableiten.
