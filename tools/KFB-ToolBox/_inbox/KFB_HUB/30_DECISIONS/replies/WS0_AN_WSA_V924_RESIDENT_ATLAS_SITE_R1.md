@@ -1,0 +1,27 @@
+# WS0 → WSA work · Resident Atlas als Ansicht in der Asset-Bibliothek (Werkbank): Bewohner, Promo-Bilder, Spielstand, Lücken (V-924) · 28.10.2026
+
+**Tier 0**
+1. **Werkzeug, kein Spiel, kein neuer Ort (V-390):** Du baust den Resident Atlas als Tab bzw. Ansicht in der Asset-Bibliothek (Asset Librarian, neben Dramatis Personae; wie V-399), keine eigene neue Site. Kein Spielcode, keine Modelländerung (V-574), keine eigene Szenen- oder Platzierungslogik (V-748). Szenen fürs Spiel erzeugt und baut WS0; die Site zeigt sie und nimmt Ergänzungen als Daten auf.
+2. **Privat:** Promo-Bilder und KayKit-Mystery-Inhalte sind Kauf- bzw. Patreon-Material (V-470). Die Ansicht läuft nur im privaten Teil, Weg wie die MVP-Site als GPT-Site bzw. Stage (V-624/V-695: Passwort für alle Pfade), Owner-Private-Sperre plus Gegenprobe ohne Anmeldung auf allen Pfaden (V-771), und eine Build-Prüfung im Code, die abbricht, wenn Promo- oder Mystery-Dateien außerhalb des geschützten Builds landen (V-630). Keine dieser Dateien in öffentliche Repos oder Seiten.
+3. **Abgabe:** zuerst ein Bild der Oberfläche (eine Kartenansicht + die Lücken-Übersicht als Entwurf) an WS0, Georg nimmt es ab (V-740), dann Bau; eigener Branch `site/wsa-resident-atlas-r1` im privaten Repo georg-doc/KFB-Stunt-Car-Race, geschützte Vorschau, Rückmeldung an WS0 mit Link. Kein Löschen ohne Georgs Ja; vor großen Schritten `df -h /` (über 8 GB frei).
+
+**Warum:** Georg 28.10.: Der Resident Atlas (Claude Design, Export S17) hatte die Bewohner schon mit Promo-Bildern und Szenenbau; nur ein Teil ist im Spiel (Disco, Ork-Band, Lorekeeper u. a.). Er will eine produktive Werkbank wie beim Asset Librarian: je Bewohner sehen, welche Promo-Bilder es gibt und wie aussagekräftig sie für den Nachbau sind, was im Spiel schon läuft, was fehlt (Requisiten, Clips, Augen-Profile, Texturvarianten), und neue Bewohner oder Scenelets einfügen können. Entscheid V-923: die RA-Bewohner zuerst 1:1 in den NPC-Generator; V-918 Plan; V-920 Prop-Pool.
+
+**Quellen (lesen):**
+- Resident Atlas S17: `~/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/RESIDENT_ATLAS_S17_1to1/` (START_HERE.md, CURRENT_STATE.md, HANDOVER.md; `data/cast.js` RESIDENTS = 30 Bewohner mit activity, habitat, signatureProps, actor, reference; Promo-Verweise unter ref/atlas/)
+- KayKit-Promo-Sammlung (Kay Lousberg, Patreon; nur lesen): `~/Dropbox/CLAUDE/KFB Stunt Car Race/_inbox/KayKit_PACKS_References_Scenes_Demos/` (164 Dateien: Monats-Figuren als GIF, Pack-Übersichten, Musterszenen, gespeicherte Beiträge)
+- WS0-Prüfung: `replies/WS0_NPC_REGISTER_AUDIT_R1.md` (132 Figuren, Spielbarkeit, Aktivitäten, Requisiten, Lücken; Abschnitt „Promo-Abgleich“ folgt)
+- Szenen-Format im Spiel: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/game/proc-world-ws0/src/npc/sceneTypes.js (`kfb.scene/1`)
+- **Figuren-Identität nur aus dem Charakter-Register (V-682):** `30_DECISIONS/CHARACTERS_R1/` (index.json, aliases.json, characters/<id>/character.json); `residentId` aus S17 wird darauf abgebildet (aliases). `cast.js` liefert nur Szenen-Daten (Aktivität, Habitat, Requisiten, Promo-Verweise), nicht die Figurenliste; `src/data/characters/registry.r1.json` im Spiel ist eine Ableitung davon.
+- Register (Branch docs/kfb-decisions-register-2026-10-11, Ordner tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/): V-390, V-391, V-399, V-470, V-494, V-503, V-550, V-624, V-630, V-682, V-695, V-740, V-771, V-918, V-920, V-923.
+
+**Datenvertrag (damit Site und Spiel dieselbe Quelle haben):** WS0 liefert `resident_scenes.r1.json` im privaten Repo (Branch `game/npc-scenes-probe-r1`, Ordner `src/data/npc/`): je Bewohner `residentId`, `characterId`, `scene` (kfb.scene/1 inkl. Requisiten im Szenenraum), `status` (lädt/teilweise/fehlt), `gaps[]`, `gameShot` (Pfad Spielbild). Die Site liest diese Datei und zeigt sie; Ergänzungen aus der Site (neue Bewohner, Scenelets, Requisiten-Wünsche, Promo-Zuordnungen, Bewertung der Promo-Bilder) schreibt sie als eigene Datei `resident_atlas_input.r1.json` im selben Schema-Stil, die WS0 übernimmt. Bis WS0 die Datei liefert, arbeitest du mit den S17-Daten und markierst „Spielstand offen“.
+
+**Auftrag:**
+1. **Bewohner-Karten** (nur 2D: Promo-Bilder und Spielbilder als Bilder; keine Figuren in 3D – sonst nur über Figurenkarten mit KFB-Eye-Rig und Knete, V-391/V-214): je Bewohner (30 aus S17 plus Register-Figuren mit Promo) eine Karte mit Name und Rolle aus dem Register, Aktivität, allen passenden Promo-Bildern (GIF abspielbar), S17-Szenenbau (Requisiten, Habitat, Pose), Spielstand und Lücken.
+2. **Promo-Bewertung:** je Promo-Bild eine Einstufung, wie gut es als Nachbau-Vorlage taugt (Figur, Requisiten, Umgebung, Licht sichtbar ja/nein), damit Georg das beste Bild je Szene wählen kann; Auswahl als Feld speichern.
+3. **Lücken-Übersicht:** Tabelle über alle Bewohner: fehlende Requisiten, Clips, Augen-Profile, Texturvarianten; daraus eine Bestell-Liste (wer liefert was: WSB Modelle/Clips, WSA Klänge, WS0 Einbau) als Export.
+4. **Eingabe:** neue Bewohner bzw. Scenelets anlegen (Figur aus dem Register, Aktivität, Requisiten aus dem Prop-Pool V-920, Promo-Bezug), als Daten speichern, nichts im Spiel ändern.
+5. **Bedienung:** Filter nach Status, Biom, Fraktion, Pack; Suche; Texte deutsch, Spieltexte englisch; ohne Fachjargon.
+
+**Rückgabe:** private URL, Branch, Anzahl Karten, wie viele Bewohner Promo-Bilder haben und wie gut sie taugen, offene Fragen an Georg nur dort, wo er entscheiden muss.
