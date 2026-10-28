@@ -131,6 +131,14 @@ Die Pixel-Sprites in `explosions_smoke/` passen nicht zum Knete-Look, höchstens
 - **Reihenfolge:** Erst muss der Kern laufen (erste Ebene). 4GTN, Forgotten, Katana und die Large-Clips kommen schon ins Quellen-Gate (isoliert, Glow-Meshes sichtbar). Gebaut wird der Boss als eigener Schritt danach. Katana-Angriff und weitere Muster kommen später.
 - **Quellen:** im Konzept-Ordner (PR 435, Head 4d4aa7ab) CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0, das Boss-Rezept (JSON) und der Quellenbericht. Prüffälle F-37 bis F-44 aus dem Work-Brief gelten.
 
+## 6d · Option: Bell Defense (Web-Chat „Bell Resonance“, V-982)
+- **Idee:** Eine große Glocke (Klang-Referenz Petersglocke im Kölner Dom, Schlagton c⁰) ist Landmarke, zu verteidigendes Ziel und Waffe zugleich. Sie ersetzt einen ohnehin vorgesehenen Ziel- bzw. Versorgungsknoten, es gibt keinen neuen Modus.
+- **KISS:** ein Wert, Glockenintegrität 0–100. Black-Fluff-Treffer senken ihn, umgeleiteter freundlicher Fluff repariert. Daraus folgen Lautstärke, Dämpfung bzw. Ausklang des Läutens sowie Stärke und Reichweite der Schutzwelle (Fläche um die Glocke). Die Tonhöhe bleibt erkennbar. Bei 0 fällt die Glocke aus.
+- **Erste Fassung:** eine Glocke, zwei Fluff-Routen, ein Black-Goo-Angriffsstrom, zwei Handlungen (abwehren oder Fluff zur Reparatur umleiten), eine zweite Welle als Probe. Schutzwelle mit sechs farbigen Segmenten für die Story-Modes, zunächst eine einzige Wirkung; Farbzuordnung bleibt bei WS0.
+- **Entscheidung:** Georg wählt im Designpaket, ob die Glocke das Ziel der ersten Ebene wird. Der R3-Kern bleibt bis dahin unverändert.
+- **Quellen:** im Konzept-Ordner (PR 435, Head 350eccd7) CASCADE_SPHERE_BELL_DEFENSE_KISS_WS0_OPTION_R1, Regelrezept (JSON) und Prüfbericht.
+- **Für das Hauptspiel (Georg):** Glocken, Klangschalen und Ripple-Wellen auch als KFB-Landmarken mit räumlichem Klang in der offenen Welt (Klangbetten je Thema, Slice I6 bzw. danach).
+
 ## 7 · Klang
 - **Neu mit ElevenLabs (bestehendes `sfx_gen.py`):** Explosionen, Einstürze in Stufen (klein, mittel, Kaskade), Aufbau-Geräusche (Knete formt sich, Teile rasten ein), Greifhaken, Wächter, Goo. Kinoartig und basslastig, mit tiefem Druck und viel Raum, geschichtet aus Anschlag, Körper und Ausklang bzw. Trümmer (V-461).
 - **Vorhanden:** Jetpack-Set `jetpack_diy_r2`, `debris_crash_r1`, Fahrgefühl- und HUD-Klänge.
