@@ -1,0 +1,317 @@
+{
+  "schema": "kfb.ws1-staging.r5-live/1",
+  "date": "2026-10-28",
+  "input": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "site/mvp-r5-dist",
+    "head": "891a81afb6071e81ce8ba19b7d49b6d099c67fd9",
+    "filesListed": 728,
+    "bytesListed": 160728791,
+    "actualFiles": 729,
+    "actualBytes": 160817279,
+    "manifestSha256": "6c12336ba741ad8685e01ee5fb465d306361d97539be55951ddf4d34492d888a",
+    "largestFileBytes": 19319258,
+    "sha256Passed": 728,
+    "independentSha256Passed": 728,
+    "buildMetadataCommit": "50a02b6ce49434a8c837264ffc2a793bc4ee2269",
+    "readmeCodeCommit": "9fc8d09354133849a04562799b1c37e7e72b846a"
+  },
+  "site": {
+    "project": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+    "version": 10,
+    "versionId": "appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_24e2e8d6a3dc8191a203c1eda7a7db4a",
+    "deploymentId": "appgdep_6ae2678b0ca08191bcfe81be06fef56b",
+    "status": "succeeded",
+    "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+    "sourceHead": "1a634b7dd6bcc59c363b239d44c4213c57e90679",
+    "sourceRepository": "appgprj_6ad2ac305b788191af0bdfc68823a300",
+    "sourceBranch": "main",
+    "envRevision": 1,
+    "archive": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_00000000ca8881f49a009c9eb6ad0609",
+      "content_hash": "sha256:59630d376cfeb228f897761e924082f98f64ca7757d667b95a1b891bbf5b0bf3",
+      "size_bytes": 181370880,
+      "file_count": 810
+    },
+    "audience": "custom owner-only1user0groups unchanged",
+    "basicAuth": false
+  },
+  "tests": {
+    "targetedAssertions": {
+      "passed": 57,
+      "failed": 0
+    },
+    "build": "PASS",
+    "localHttp": {
+      "passed": 736,
+      "failed": 0
+    },
+    "hosted": {
+      "revision": "891a81afb6071e81ce8ba19b7d49b6d099c67fd9",
+      "url": "https://kfb-ws1-staging.frizzlebob.chatgpt.site",
+      "hosted": true,
+      "passed": 21,
+      "failed": 0,
+      "checks": [
+        {
+          "kind": "anonymous denied",
+          "path": "/",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/game-package/assets/FB_R8_probe_A11-BxGn3K_e.glb",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/game-package/",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/h15/index.html",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/heygen/beseeltes_fahrzeug.mp4",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "anonymous denied",
+          "path": "/raw/33bcb759eaf4be31b9fd1c54501f907b323538b3/media/kfb-audio/r1/index.json",
+          "pass": true,
+          "status": 401
+        },
+        {
+          "kind": "exact file",
+          "path": "/SITE_README.md",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "exact file",
+          "path": "/site-build.json",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "exact file",
+          "path": "/assets/index-DyPjW1SH.js",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "exact file",
+          "path": "/assets/FB_R8_probe_A11-BxGn3K_e.glb",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "exact file",
+          "path": "/assets/jetpack_r2d-oO3eI2uM.glb",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "exact file",
+          "path": "/assets/v945_rust_runner-CYa_PwFK.webp",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "root revision/default script",
+          "path": "/",
+          "pass": true,
+          "status": 200
+        },
+        {
+          "kind": "entry alias",
+          "path": "/game-package/",
+          "pass": true,
+          "status": 200,
+          "location": null
+        },
+        {
+          "kind": "entry alias",
+          "path": "/game-package/index.html",
+          "pass": true,
+          "status": 307,
+          "location": "/game-package/"
+        },
+        {
+          "kind": "entry alias",
+          "path": "/index.html",
+          "pass": true,
+          "status": 307,
+          "location": "/"
+        },
+        {
+          "kind": "range",
+          "path": "/assets/FB_R8_probe_A11-BxGn3K_e.glb",
+          "pass": true,
+          "status": 206,
+          "mime": "model/gltf-binary"
+        },
+        {
+          "kind": "range",
+          "path": "/heygen/beseeltes_fahrzeug.mp4",
+          "pass": true,
+          "status": 206,
+          "mime": "video/mp4"
+        },
+        {
+          "kind": "h15 route",
+          "path": "/h15/",
+          "pass": true,
+          "status": 200,
+          "mime": "text/html; charset=utf-8"
+        },
+        {
+          "kind": "h15 route",
+          "path": "/h15/support.js",
+          "pass": true,
+          "status": 200,
+          "mime": "text/javascript; charset=utf-8"
+        },
+        {
+          "kind": "audio index proxy",
+          "path": "/raw/<pinned>/media/kfb-audio/r1/index.json",
+          "pass": true,
+          "status": 200
+        }
+      ]
+    },
+    "browser": {
+      "normalOwnerEntry": "PASS/no additional password",
+      "defaultEndlessHudR14": "PASS",
+      "pMenu": "PASS/11characters,13racers+2additionalvehicles",
+      "characterSwap": "PASS/GothGirl thenFrizzleBob visibly rendered",
+      "carSummon": "PASS/Brasswing Roadster",
+      "mountedCarSwap": "PASS/Brasswing→CrimsonThunderjet,FBroofdriverretained",
+      "drive": "PASS/W33kmh observed",
+      "exit": "PASS/X",
+      "pageErrors": 0,
+      "jetpackModel": "VISIBLE on both characters",
+      "flightActivation": "UNVERIFIED/automation seam frozen after non-improving inputs; not gameplayFAIL",
+      "all13Racers": "not rerun, incoming j7-roof reportedgreen",
+      "cafeDomeBirdListening": "UNVERIFIED; incoming featurecheck reportedgreen"
+    },
+    "fps": [
+      {
+        "window": 1,
+        "frames": 506,
+        "durationMs": 8025.1,
+        "meanFps": 63.1,
+        "p95FrameMs": 25,
+        "focused": true,
+        "visibility": "visible",
+        "resets": 0,
+        "canvas": [
+          {
+            "width": 1312,
+            "height": 645,
+            "cssWidth": 1312,
+            "cssHeight": 645
+          },
+          {
+            "width": 57,
+            "height": 73,
+            "cssWidth": 28,
+            "cssHeight": 36
+          }
+        ],
+        "scope": "browser rAF after10s continuous visible focus; not GPU or engine-render telemetry"
+      },
+      {
+        "window": 2,
+        "frames": 477,
+        "durationMs": 8004.1,
+        "meanFps": 59.6,
+        "p95FrameMs": 25,
+        "focused": true,
+        "visibility": "visible",
+        "resets": 0,
+        "canvas": [
+          {
+            "width": 1312,
+            "height": 645,
+            "cssWidth": 1312,
+            "cssHeight": 645
+          },
+          {
+            "width": 57,
+            "height": 73,
+            "cssWidth": 28,
+            "cssHeight": 36
+          }
+        ],
+        "scope": "browser rAF after10s continuous visible focus; not GPU or engine-render telemetry"
+      },
+      {
+        "window": 3,
+        "frames": 461,
+        "durationMs": 8008.4,
+        "meanFps": 57.6,
+        "p95FrameMs": 25.1,
+        "focused": true,
+        "visibility": "visible",
+        "resets": 0,
+        "canvas": [
+          {
+            "width": 1312,
+            "height": 645,
+            "cssWidth": 1312,
+            "cssHeight": 645
+          },
+          {
+            "width": 57,
+            "height": 73,
+            "cssWidth": 28,
+            "cssHeight": 36
+          }
+        ],
+        "scope": "browser rAF after10s continuous visible focus; not GPU or engine-render telemetry"
+      }
+    ],
+    "fpsInterpretation": "3focused8s foreground browser-rAF windows after10s continuousfocus;0resets;effectiveDPR1/render1312x645. Not equal-quality controlledcomparison to oldDPR1.25; p95~25ms,not60fpsp95PASS.",
+    "independentReview": "Tester728SHA;Critic5entrychecks+21hostedrecords;GuardCONTINUE, no newhumanapprovalgate"
+  },
+  "changes": {
+    "sitePaths": 68,
+    "packageBytesUnmodified": true,
+    "receivingEntry": "sameemptyhashendless/hud3d/palseed803/mountlive; explicit hashesunchanged",
+    "optionalQa": "existingquery-gatedobserver upgraded towarmup/focusreset/3boundedwindows",
+    "gameWorldCodeChanged": false,
+    "audioSiteChanged": false,
+    "newSite": false,
+    "merge": false
+  },
+  "audio": {
+    "pin": "33bcb759eaf4be31b9fd1c54501f907b323538b3",
+    "rawFirst": true,
+    "separateJsDelivrFallback": true,
+    "directIndexStatus": 200,
+    "directCors": "*",
+    "subjectiveHearing": "not certified"
+  },
+  "media": {
+    "privateLocalProof": [
+      "work/r5-live-v10-driver.png",
+      "work/r5-live-v10-fps.png"
+    ],
+    "publicRawAssetsUploaded": false
+  },
+  "disk": {
+    "approxFreeGiB": 26,
+    "newUnrelatedCleanup": false
+  },
+  "nextGate": "WS0 runs the remaining actual flight/dome/cafe/audio spot-check on exact v10 and returns concrete failures only; WSA changes only proven receiving defects."
+}
