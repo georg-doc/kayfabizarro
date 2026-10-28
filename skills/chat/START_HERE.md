@@ -1,3 +1,15 @@
+## BRANCH-LOCAL R10 · 2026-10-28 · EXTERNAL BLIND CRITIC / AAA POC QUALITY PROPOSAL
+
+**WS0 ACTION REQUIRED / NOT OFFICIAL V-962 AMENDMENT.** Georg explicitly asked whether approved V-962 R2 really contains an independent external blind critic and stylized AAA quality gates. Read existing KFB_HUB owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` and additive Return/Changelog.
+
+Actual approved `WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R2.md` says "keine Kritiker-Schleifen" but does NOT explicitly invoke an isolated fresh external critic. Binding `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md` requires Builder/Tester/Critic/Guard roles and a separate fresh context, real product self-visit and own screenshots/video when an external critic is explicitly asked for. Binding WS0 CANON_3D CRITIC_3D_R1 defines 3D visual K1–K10 thresholds. WB2's 8.5 heavy critic is WB2-only, NOT automatically Cascade Sphere.
+
+**Recommended WS0 wording:** one fresh true external product-playing blind critic only AFTER integrated 2–4 minute POC and before Georg/Stefan handoff, one targeted follow-up for genuinely critical repair; no critic micro-loops. Collect Q0–Q8 real POC source/gameplay/visual/controls/audio/perf/security evidence inside the existing one-shot. If fresh critic not actually run, report `CRITIC_NOT_RUN`, never QA PASS. Do not silently edit V-962 register from PR #435.
+
+**Current status:** proposal documented only. No external Critic/session, game QA, new Site/Stage or main/WS1/private repo code. One POC next gate still source+design approval under approved V-962.
+
+---
+
 ## BRANCH-LOCAL R9 · 2026-10-28 · ACTUAL WS1 ENVIRONMENT SOURCE / OSM / KAYKIT CROSSWALK
 
 **SOURCE REVIEW + ADDITIVE MINI-GAME DESIGN ONLY. NOT A NEW ENVIRONMENT SSOT OR RUNTIME.** Read existing KFB_HUB WS0 game-design folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
