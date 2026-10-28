@@ -178,3 +178,28 @@ Deliver one coherent miniature source-authentic *Factory Maze* inside the **exis
 **No original 525-model material atlas has yet been decoded/rendered** in WS1. The offline scanner is a prepared utility, not a source-authoritative runtime feature or already green extraction. Source material samples are *better than filenames*, but not evidence that a blue upper face has a distinct addressable UV palette region without BIN/PNG tests.
 
 **One next gate unchanged:** WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE. Include a source-real conveyor material-slot proof and one platform top/side mask comparison in the existing asset/visual intake, without blocking the basic L01 gameplay on all 525 source masks. No new Site/Stage/Live.
+
+
+---
+
+## ADDITIVE R8 · 2026-10-28 · 4GTN Rig_Large Boss, first post-L03 optional encounter
+
+**Georg idea:** source-authentic January-2026 KayKit 4GTN as large-rig end-of-level opponent for the Combat Mech, later alternative KayKit and KFB actors (including FrizzleBob), with future boss families. This is a deferred, bounded boss encounter candidate, NOT new mandatory C1/level-one scope. Read `CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0_2026-10-28.md` and `CASCADE_SPHERE_R8_4GTN_BOSS_RECIPE_CANDIDATE_2026-10-28.json`.
+
+**Source already in GitHub main:** `4GTN.glb`, `4GTN_Forgotten.glb`, shared texture and `gltf/4GTN_Katana.gltf` + BIN. Prior Rig_Large Resident Atlas confirms actual **Rig_Large** with **23 bones** and historically 34 Large clips; source `Rig_Large_*` animations present under KayKit_Character_Animations_1.1. Medium clips falsely bind by name but deform the large proportions — do not substitute. Both robot models have actual different geometry; glow strips are distinct source meshes/material `4GTN_glow`, can be made a targeted presentation layer, not direct hitboxes.
+
+**Work later path:** C3+ optional 4GTN source-isolation and skeleton/katana/clip and glow mask proof → one scanner telegraph/relay node puzzle in a source-authentic scene using already authored Maze graph → only after actual Combat weakpoint/HitEvent proof add one attack/contact window → one end state/save/safe return. 4GTN can be a robot encountered at end of L03 or short optional extra; no extra player controller, Combat scene or boss AI service. Chill permits stabilization/pacification alternative to damage, same game state truth. Other player actors require real capabilities and accessible geometry, not assumed flight/guns.
+
+**Independent future acceptance cases, appended without changing F-01…F-36:**
+| ID | Later scope | Exact observable evidence |
+| --- | --- | --- |
+| F-37 | source 4GTN/Forgotten/Katana identity | two original source models, actual texture and real Katana shown from same target camera, asset pins+source usage |
+| F-38 | large rig clips and foot contact | true Rig_Large animation, no Medium clip collapse, clean host animation transitions and source-ground contact |
+| F-39 | selective glow material | true original `4GTN_glow` source mesh changes while body remains original, no glow mesh as implicit hitbox; reduced-motion safe |
+| F-40 | readable scan/pulse telegraph | one bound slow boss action visually readable and avoided; boss phase from accepted game fact rather than animation event |
+| F-41 | authoritative one-hit weakpoint | exact source-fit socket target collision/hit accepted once by Combat; unrelated mesh hit not counted |
+| F-42 | boss/Fluff graph cause & recovery | active relay actually interrupts or restores a graph edge, same seed/action replay yields stable logical outcome |
+| F-43 | source-real alternative playable character | one actual KayKit/FB player control path can reach existing boss/relay objective without faked Mech flight/weapon |
+| F-44 | full original-source encounter and safety | optional 90–180 s contiguous boss fight or peaceful resolution, true mobile/desktop measured performance, audio, save receipt and safe return |
+
+**Do not turn the future Boss QA into prerequisite of the existing next WS0 L01 intake gate.** Same one next gate: `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`; only after real C1–C3 playable proof should WS0 authorize a bounded Boss integration job.
