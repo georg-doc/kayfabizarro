@@ -13824,6 +13824,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-956",
+   "date": "2026-10-28",
+   "area": "Animation",
+   "verdict": "RULE",
+   "text": "Georg 28.10. nach V-954: „use what works“ – nichts neu bauen oder erfinden. FrizzleBobs Bewegungen (Gehen, Laufen, Sprung, Idle, Flug) aus vorhandenen, schon feinjustierten Clips wählen: KFB Motion Library (alle Fassungen, u. a. Strut-Gang kfb_locomotion_strut_walking_a, Holding/Drunk Walk, Hop, Tänze), KayKit-Rig_Medium-Clips, Mixamo und die recherchierten Open-Source-Plattformen; Clips unverändert (V-574), Stellschrauben nur Clip-Wahl je Zustand, Tempo passend zur Geschwindigkeit, Übergänge. Nie Gliedmaßen rechnerisch verbiegen; Clips mit Körperdurchdringung fallen raus. Auch die Fluganimation (heute starr mit ausgebreiteten Armen) aus vorhandenen Clips (u. a. Combat-Mech). Auswahl als Spiel-GIFs je Zustand für Georg (Branch game/fb-motion-pick).",
+   "values": {},
+   "owner": "Chat 28.10.",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was schon gut animiert ist, wird gewählt, nicht nachgebaut – Cartoon-Anatomie lässt sich nicht hinrechnen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
