@@ -1,4 +1,4 @@
-# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0). · r809 (V-809, WS0 25.10.): optionale gradient_map (Verlaufs-Abbildung für wenig gesättigte Teile, Albedo-Buntheit C* < 15; Standard aus). · r816 (V-824, Georg q237 B, WS0 25.10.): optionale cluster_map (Farbcluster der Textur nach Flächenrang auf die Palette, Helligkeit und Zeichnung bleiben; Textur-Kopie nur im Speicher; Standard aus).
+# kfb_clay_bpy · Blender-Knet- und Palettenmodul (V-563 K1; Kanon Gebiete 6, 8, 15; V-565 Eingangsprüfung, V-566 Asset-Pass). WSB 2026-10-20 · r803 (V-803, WS0 25.10.): _src_info folgt dem Mix-Zweig bis zur Textur, NON_ALBEDO nur ao/lightmap/shadow (Vorschlag WSB) · r803b: Grundfarbe = glTF-Faktor × Textur × COLOR_0 (Vorschlag WSB, WS0 25.10.). · r806 (V-806, WS0 25.10.): optionaler pull_value (Helligkeitszug, nur Fokus-Teil Code 5; Standard 0). · r809 (V-809, WS0 25.10.): optionale gradient_map (Verlaufs-Abbildung für wenig gesättigte Teile, Albedo-Buntheit C* < 15; Standard aus). · r816 (V-824, Georg q237 B, WS0 25.10.): optionale cluster_map (Farbcluster der Textur nach Flächenrang auf die Palette, Helligkeit und Zeichnung bleiben; Textur-Kopie nur im Speicher; Standard aus). · r945 (V-945, WS0 28.10.): cluster_map optional grau_L/grau_kante/grau_k (Lack-Band, Standard aus – ohne die Schlüssel byte-gleich)
 #
 # EIN Material-Baustein für alles, was in Blender gebaut wird, mit den Profilen 1:1 aus
 #   replies/CLAY_SSOT_R1/kfb-clay.v1.1.js (Quellzeilen unten je Wert) und den Rollenfarben aus
@@ -228,7 +228,7 @@ _CLUSTER_IMG = {}
 def cluster_image(image, cmap):
     """r816 (V-816, Vorschlag WSB): Kopie der Textur nur im Speicher (nicht gespeichert, nicht ins Asset gebacken): jedes Texel bekommt Farbton und Buntheit (OKLab a, b)
     der Rollenfarbe seines Clusters, die Helligkeit (OKLab L) und damit die gemalte Zeichnung bleibt. cmap: {'ab': [[a, b], ...] Cluster-Mitten, 'hex': [Rollenfarbe je Cluster],
-    'grau_c': OKLab-Buntheit, darunter grau/dunkel → 'grau_hex' (Verlaufs-Abbildung)}."""
+    'grau_c': OKLab-Buntheit, darunter grau/dunkel → 'grau_hex' (Verlaufs-Abbildung)}. r945 optional: 'grau_L' [lo, hi] (nur dieses OKLab-L-Band), 'grau_kante', 'grau_k' (Dämpfung)."""
     import numpy as np
     key = (image.name, json.dumps(cmap, sort_keys=True))
     if key in _CLUSTER_IMG: return _CLUSTER_IMG[key]
@@ -238,6 +238,10 @@ def cluster_image(image, cmap):
     lab = _oklab(c); C = np.hypot(lab[:, 1], lab[:, 2]); AB = np.array(cmap['ab'], float)
     tgt = _oklab(np.array([_lin(x) for x in cmap['hex']], float))[:, 1:]; tg = _oklab(np.array([_lin(cmap['grau_hex'])], float))[0, 1:]
     near = np.argmin(((lab[:, None, 1:] - AB[None]) ** 2).sum(2), 1); ab = np.where((C < cmap['grau_c'])[:, None], tg[None], tgt[near])
+    if 'grau_L' in cmap or 'grau_k' in cmap:   # r945 (V-945, WS0 28.10.): optional – Grau-Rolle nur im Lack-Helligkeitsband (weiche Kanten 'grau_kante', Standard 0,05) und gedämpft (×grau_k); außerhalb bleibt der eigene Farbton (Scheiben, Reifen, Schatten, Glanz neutral). Ohne die Schlüssel byte-gleich wie r816
+        lo, hi = cmap.get('grau_L', [0.0, 1.0]); e = float(cmap.get('grau_kante', 0.05)); Lc = lab[:, 0]
+        wb = np.clip((Lc - (lo - e)) / e, 0.0, 1.0) * np.clip(((hi + e) - Lc) / e, 0.0, 1.0); wb = (wb * wb * (3 - 2 * wb))[:, None]   # wb: Band-Gewicht (w ist die Bildbreite)
+        ab = np.where((C < cmap['grau_c'])[:, None], wb * float(cmap.get('grau_k', 1.0)) * tg[None] + (1 - wb) * lab[:, 1:], tgt[near])
     out = _oklab_inv(np.c_[lab[:, :1], ab])
     if srgb: out = np.where(out <= 0.0031308, 12.92 * out, 1.055 * np.power(out, 1 / 2.4) - 0.055)
     im2 = bpy.data.images.new(f'{image.name}:r816:{hashlib.md5(key[1].encode()).hexdigest()[:8]}', w, h, alpha=True); im2.colorspace_settings.name = image.colorspace_settings.name
