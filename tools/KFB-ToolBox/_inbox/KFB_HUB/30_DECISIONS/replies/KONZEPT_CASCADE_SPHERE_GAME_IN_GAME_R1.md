@@ -112,6 +112,25 @@ Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einst
 - **Schritt 2:** Sweet-Supply-Haut, neue ElevenLabs-Klänge, Karten in der Sphäre, Qiva-Kampagne.
 - **Regeln:** höchstens zwei Runden je Schritt, keine Kritiker-Schleifen, nur vorhandene Clips, Abnahme im Spiel mit kurzen Clips.
 
+## 10b · Feel und Feedback (Web-Chat R5, übernommen)
+- **Simulation und Darstellung getrennt:** Ein Ereignis wie „Weiche nach Norden geöffnet“ ist sofort Spielzustand. Eine eigene Darstellungsschicht entscheidet, ob die Weiche wippt, ein Fluff hüpft oder ein Klonk ertönt. Animationen ändern nie den Spielzustand. Deshalb läuft dieselbe Simulation mit Factory-, Sweet-Supply- oder Mindscape-Haut.
+- **Fünf Reaktionsmuster** (Cue-Tabelle nach R5, umgesetzt mit `fluffSuck.js` Squash & Stretch, dem Cartoon-Motion-Kanon und `SPEC_CARTOON_VFX_SHAPES_R1`):
+  - Weiche: staucht, überschwingt, federt.
+  - Fluff umgeleitet: zögert, neigt sich, Bounce, erst am nächsten gültigen Knoten.
+  - Goo getroffen: zieht sich zusammen, wabbelt, Plopp.
+  - Reparatur: Knete wächst auf und setzt sich.
+  - Dachschalter: Marshmallow-Verformung.
+- **Erste Ebene Pflicht:** nur elastische Weiche, eine Fluff-Reaktion, ein kurzer Klang. Goo, Aufblas-Reparatur und Marshmallow folgen in Ebene 2 und 3.
+- **WFC mit Grenzen:** Große surreale Objekte (halb geschmolzener Kaffeebecher, schlafendes Wesen) stehen auf Landmarken-Plätzen. Wird so ein Objekt selbst Brücke oder Schalter, braucht es dieselben geprüften Anschlüsse, Kollisionsflächen und Interaktionspunkte wie ein normales Modul. Lesbarkeit am Handy geht vor.
+- **Abnahme:** die 18 technischen Prüffälle aus dem Web-Chat-Integrationsbrief R4 plus F-19 bis F-24:
+  - genau eine Hebelanimation je Schaltung,
+  - Fluff reagiert am gültigen Knoten,
+  - keine doppelten Klänge bei Doppel-Eingabe oder Reset,
+  - verständlich ohne Ton und mit reduzierter Bewegung,
+  - Häute ändern keine Regeln,
+  - Wirkung auf Desktop und Handy gemessen.
+- **Quellen:** im Konzept-Ordner KFB_GAME_FEEL_COMIC_MOTION_R1 (PR 435, Head 363f8730): CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF, CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM, CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE (JSON). Animationszeiten und Klangdateien sind Vorschläge, zugeordnet wird aus dem KFB-Bestand.
+
 ## 11 · Offen für Georg (nur, wo er entscheiden muss)
 1. Grundriss für die erste Ebene: echter OSM-Ausschnitt oder WhackMan-Labyrinth?
 2. Spielfigur in der Sphäre: FrizzleBob mit Jetpack, Combat Mech oder beides im Wechsel?
