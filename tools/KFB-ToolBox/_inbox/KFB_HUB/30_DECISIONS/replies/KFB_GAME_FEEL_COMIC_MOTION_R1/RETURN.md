@@ -237,3 +237,20 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **Work handoff:** existing `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` appended R6 source preflight F-25…F-30 and R7 material-zone feel F-31…F-36, preserving F-01…F-24. Do not make entire 525-model manually authored color zones a blocker for L01; source-isolate one real switch, one platform's upper face and one EXTRA belt material as first goldens.
 
 **One next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`: license/sha bytes and source proof, selected material/connector areas and current WS1b host pin. Only then separately authorize WS1 integration; no Game/Asset/Stage/Site/Cloudflare/Live or public-private binary writes were done here.
+
+
+---
+
+## 2026-10-28 · R8 addendum · KayKit 4GTN Rig_Large optional boss and future boss family
+
+**Georg's new user concept:** authentic KayKit January 2026 4GTN as large rig end-level enemy for current Combat Mech, later as boss against other KayKit player characters and FB/KFB character rigs. Bosses are a later modular game family, not required for L01 Switchyard, no new Combat/world/character owner.
+
+**Source now directly confirmed:** `media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/` in public KFB main has `4GTN.glb` (Git blob `fa7a7e418ba90703fdabaf272867a46dda5047ab`), `4GTN_Forgotten.glb` (`a514ef273142a90fa35e9e4c1cdbfd58f900b93f`), source texture and `gltf/4GTN_Katana.gltf`/bin. Six Rig_Large character animations set files present on main. Existing Resident Atlas S34 **measured** 4GTN Rig_Large **23 bones**, 34 historically available large clips; Medium clips bind common bone names but collapse/ground-penetrate, so NO Medium-to-Large substitution. 4GTN_Forgotten is additional source geometry, not one switchable texture. Separate source emissive `4GTN_glow` strip meshes are potential selective material presentation, not damage collision.
+
+**Original source:** Kay Lousberg Jan 1 2026 Patreon post (4GTN forgotten planetary scout) and official Series 6 page; its story is inspiration for a sensor/guardian boss who can be overcome by battling or restoring a route.
+
+**Files:** `CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0_2026-10-28.md` (source, 2–3 minute optional staged nonlethal/Combat encounter, one boss actor, one scan, one source-verified weakpoint, reuse Fluff routing), `CASCADE_SPHERE_R8_4GTN_BOSS_RECIPE_CANDIDATE_2026-10-28.json` (source-pinned actor, exact Rig_Large, candidate small phase machine and reused boss action interfaces), `CASCADE_SPHERE_R8_4GTN_BOSS_SOURCE_REPORT_2026-10-28.md` (source/static evidence, **24/24** current-turn source/contract assertions; **0** runtime/boss/3D/animation/device/Audio/Stage tests).
+
+**Work brief existing file** appended optional later F-37…F-44 source/rig/glow/weakpoint/route/other player/safety acceptance tests, preserving F-01…F-36. Other player actor capabilities remain source+host gated and cannot assume Mech flight/gun. Katana handslot mounted in historic Resident Atlas, not proven Combat strike. Preserve current single WS1/Combat/Audio/World/Save, original R1–R7 and WB2 R4 STOP, no new product or Source Model rewrite.
+
+**One next gate UNCHANGED:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` for first playable level. Later independent boss source isolation in existing Librarian and Work/WS1 post-L03 authorization only; do not block L01 over boss.
