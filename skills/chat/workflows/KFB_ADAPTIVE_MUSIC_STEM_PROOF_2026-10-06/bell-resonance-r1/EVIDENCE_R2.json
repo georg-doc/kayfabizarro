@@ -1,0 +1,127 @@
+{
+  "schema": "kfb.bell-resonance.synthetic-proof.r2",
+  "date": "2026-10-28",
+  "evidenceClass": "SYNTHETIC_OFFLINE_ONLY",
+  "repo": "georg-doc/kayfabizarro",
+  "ownerPR": 365,
+  "relatedImmersivePR": 455,
+  "researchPR": 458,
+  "sourceAudioArchiveMeasured": false,
+  "sourceAudioBinariesImported": 0,
+  "siteDeployed": false,
+  "earAuditionCount": 0,
+  "sampleRateHz": 48000,
+  "channels": 2,
+  "bitDepth": 16,
+  "durationSeconds": 14,
+  "seed": 20261028,
+  "modes": [
+    {
+      "name": "hum",
+      "authoredHz": 100,
+      "amplitude": 0.25,
+      "exponentialTauSeconds": 10.5,
+      "actualFftPeakHz": 99.98
+    },
+    {
+      "name": "prime",
+      "authoredHz": 200,
+      "amplitude": 0.4,
+      "exponentialTauSeconds": 7,
+      "actualFftPeakHz": 200.04
+    },
+    {
+      "name": "tierce",
+      "authoredHz": 239.8,
+      "amplitude": 0.27,
+      "exponentialTauSeconds": 5.8,
+      "actualFftPeakHz": 239.87
+    },
+    {
+      "name": "quint",
+      "authoredHz": 300.7,
+      "amplitude": 0.15,
+      "exponentialTauSeconds": 3.5,
+      "actualFftPeakHz": 300.66
+    },
+    {
+      "name": "nominal",
+      "authoredHz": 401.2,
+      "amplitude": 0.32,
+      "exponentialTauSeconds": 2.8,
+      "actualFftPeakHz": 401.18
+    },
+    {
+      "name": "high1",
+      "authoredHz": 528.6,
+      "amplitude": 0.16,
+      "exponentialTauSeconds": 1.1,
+      "actualFftPeakHz": 528.63
+    },
+    {
+      "name": "high2",
+      "authoredHz": 684.2,
+      "amplitude": 0.12,
+      "exponentialTauSeconds": 0.9,
+      "actualFftPeakHz": 684.17
+    },
+    {
+      "name": "high3",
+      "authoredHz": 1051,
+      "amplitude": 0.13,
+      "exponentialTauSeconds": 0.45,
+      "actualFftPeakHz": 1051.03
+    }
+  ],
+  "files": [
+    {
+      "name": "01_MODAL_BELL_ISOLATED.wav",
+      "sha256": "570d96f64e824033979967e352581f620151b720059d25b62c9f57f0a9168aa8",
+      "peakDBFS": -6.38,
+      "rmsDBFS": -23.2,
+      "bytes": 2688044,
+      "status": "ORIGINAL_SYNTHETIC"
+    },
+    {
+      "name": "02_IMPOSSIBLE_BELL_EGREGORE.wav",
+      "sha256": "463b80be8925ce3838b5ff3bf2c6ad8192edc0428f308b170d167d30b22b524f",
+      "peakDBFS": -6.41,
+      "rmsDBFS": -22.7,
+      "bytes": 2688044,
+      "status": "ORIGINAL_SYNTHETIC"
+    },
+    {
+      "name": "03_FICTIONAL_RUBBED_BOWL.wav",
+      "sha256": "ccfd408a5d8e823bdf0070e1d340db36c65225ca0b6d6b4d5f0de012a22eaabb",
+      "peakDBFS": -11.97,
+      "rmsDBFS": -23.03,
+      "bytes": 2688044,
+      "status": "ORIGINAL_SYNTHETIC"
+    }
+  ],
+  "checks": {
+    "passed": 18,
+    "total": 18,
+    "browserAudioTests": 0,
+    "humanEarTests": 0
+  },
+  "bundle": {
+    "filename": "KFB_BELL_RESONANCE_SYNTHETIC_R2.zip",
+    "sha256": "5c323a9a9fdf5bfbd37b4be9dc6fcd65adc465f4f17700daa7380ba491726b7d",
+    "location": "Conversation downloadable artifact, not committed to GitHub",
+    "includes": [
+      "3 original WAVs",
+      "2 measured plots",
+      "generator Python source",
+      "validator Python source",
+      "EVIDENCE.json",
+      "TEST_RESULTS.json",
+      "README.md"
+    ]
+  },
+  "archiveAccess": {
+    "freesound": "LOGIN_REQUIRED",
+    "commons": "LICENSING_PAGE_VERIFIED_BUT_BINARY_UNAVAILABLE"
+  },
+  "nextGate": "KFB_BELL_R2_TWO_REAL_RECORDING_BYTES_PLUS_SOLO_SPECTRUM"
+}
