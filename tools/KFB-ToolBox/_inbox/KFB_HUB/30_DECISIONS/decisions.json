@@ -13839,6 +13839,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-957",
+   "date": "2026-10-28",
+   "area": "Look",
+   "verdict": "FIX",
+   "text": "FB-Licht (Georg: Schattenblatt auf den Schultern „10-mal gefixt“ + falsches Licht von unten): Ursache 1 – die Eigenschatten-Milderung (FootShade) lief nur mit look=terrain3, in anderen Welten warf der große Kopf seinen vollen Schatten auf die Schultern; jetzt FigureShade in jeder Welt, Eigenschatten einheitlich, weichere Kante. Ursache 2 – der V-842-Boden-Bounce (warmes Licht auf alle nach unten zeigenden Flächen) erzeugte das Licht von unten; gestrichen, Unterseiten nur noch über die Hemisphäre des einen Rigs. V-842 damit ersetzt. Regression test/fb-shoulder-shadow.mjs (Schulterband + Kinn heller als Sonnenseite) in drei Welten mittags/abends. Spiel @80f16fb, Hub q300.",
+   "values": {},
+   "owner": "Spiel @80f16fb",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Figur wird vom selben Himmel beleuchtet wie der Boden, auf dem sie steht – in jeder Welt gleich.",
+   "applies": "nach Georgs KEEP"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
