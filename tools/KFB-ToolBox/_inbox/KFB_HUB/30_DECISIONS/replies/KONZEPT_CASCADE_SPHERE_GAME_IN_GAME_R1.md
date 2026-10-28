@@ -86,6 +86,18 @@ Ein gemeinsames Modul `fx-burst`, das das Hauptspiel später übernimmt. Es spie
 
 Größe, Anzahl und Lebensdauer kommen aus der Stärke. Die Formen folgen `SPEC_CARTOON_VFX_SHAPES_R1`: eine Masse mit Ausbuchtungen, zwei bis drei Töne, Lebenszyklus.
 
+## 6c · Erster Boss: 4GTN „The Forgotten Scout“ (Web-Chat R8, Georg 28.10., V-975)
+- **Quelle:** KayKit-Roboter 4GTN, schon im Bestand als Rig_Large-Figur (23 Knochen), dazu `4GTN_Forgotten.glb` (überwachsene Fassung mit eigener Geometrie) und ein Katana. Leuchtstreifen liegen auf eigenen Glow-Meshes. Animation nur mit der eigenen Large-Clip-Familie (34 Clips); Medium-Clips verformen ihn falsch. Bis auf das Pulsen der Leuchtstreifen (Shader wie bei den Jetpack-Tanks, V-972) gibt es keine neuen Animationen.
+- **Ablauf (90–180 s, optionaler Abschluss einer Ebene):**
+  1. Erwachen: Leuchtstreifen pulsieren, er blockiert eine Fluff-Route.
+  2. Scanner-Schwenk: langsam, klar angekündigt; ausweichen, Deckung oder eine Weiche umlegen.
+  3. Offen: Ein Kontrollknoten ist kurz frei, Treffer mit der Gatling oder Stabilisieren per Fluff-Umleitung.
+  4. Ruhe: Er taumelt cartoonig und kommt zur Ruhe, die Versorgung läuft wieder.
+- **Heilen statt töten (Georg):** Der Sieg ist eine Heilung nach der Goo- bzw. Black-Fluffer-Logik (Fluff wäscht Geschwärztes frei, V-609, V-532). 4GTN wird zur Natur- bzw. Moos-Fassung `4GTN_Forgotten` und bleibt als Begleiter: Später kämpft er als Roboter-Buddy bzw. Waffe gegen höherstufige Fluff-Gegner und andere Themen-Bosse. Der Zustand bleibt im Encounter-Gedächtnis.
+- **Gleicher Boss für alle Spielerfiguren:** Nur die erlaubten Aktionen wechseln (fliegen und schießen, springen, Schalter).
+- **Reihenfolge:** Erst muss der Kern laufen (erste Ebene). 4GTN, Forgotten, Katana und die Large-Clips kommen schon ins Quellen-Gate (isoliert, Glow-Meshes sichtbar). Gebaut wird der Boss als eigener Schritt danach. Katana-Angriff und weitere Muster kommen später.
+- **Quellen:** im Konzept-Ordner (PR 435, Head 4d4aa7ab) CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0, das Boss-Rezept (JSON) und der Quellenbericht. Prüffälle F-37 bis F-44 aus dem Work-Brief gelten.
+
 ## 7 · Klang
 - **Neu mit ElevenLabs (bestehendes `sfx_gen.py`):** Explosionen, Einstürze in Stufen (klein, mittel, Kaskade), Aufbau-Geräusche (Knete formt sich, Teile rasten ein), Greifhaken, Wächter, Goo. Kinoartig und basslastig, mit tiefem Druck und viel Raum, geschichtet aus Anschlag, Körper und Ausklang bzw. Trümmer (V-461).
 - **Vorhanden:** Jetpack-Set `jetpack_diy_r2`, `debris_crash_r1`, Fahrgefühl- und HUD-Klänge.
@@ -154,7 +166,7 @@ Für Stefan: ein abgeschlossenes Modul mit eigenem Zweig, README und einem Einst
   - verständlich ohne Ton und mit reduzierter Bewegung,
   - Häute ändern keine Regeln,
   - Wirkung auf Desktop und Handy gemessen.
-- **Quellen:** im Konzept-Ordner KFB_GAME_FEEL_COMIC_MOTION_R1 (PR 435, Head 363f8730): CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF, CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM, CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE (JSON). Animationszeiten und Klangdateien sind Vorschläge, zugeordnet wird aus dem KFB-Bestand.
+- **Quellen:** im Konzept-Ordner KFB_GAME_FEEL_COMIC_MOTION_R1 (PR 435, Head 4d4aa7ab; R5-Stand 363f8730): CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF, CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM, CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE (JSON). Animationszeiten und Klangdateien sind Vorschläge, zugeordnet wird aus dem KFB-Bestand.
 
 ## 11 · Georgs Entscheidungen (28.10.)
 1. **Grundriss:** ein echter OSM-Ausschnitt, gern stilisiert und vereinfacht.
