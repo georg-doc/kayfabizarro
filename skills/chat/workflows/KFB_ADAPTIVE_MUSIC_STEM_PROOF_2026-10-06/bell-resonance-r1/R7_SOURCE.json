@@ -1,0 +1,96 @@
+{
+  "schema": "kfb.bell-source-intake.r7",
+  "date": "2026-10-28",
+  "owner": "KFB Audio #365",
+  "researchPr": 458,
+  "immersiveCandidatePr": 455,
+  "mode": "SOURCE_METADATA_AND_RESEARCH_ONLY",
+  "folder": {
+    "pathDisplay": "/CLAUDE/MeshyModels/KFB Bells",
+    "sharedLink": "https://www.dropbox.com/scl/fo/lb62navev2h7uz3tay1xc/ADwOh3Q56tB7HUlsEjf-IRc?rlkey=ow3ftwv0dcfisdzp6qtowhaxa&dl=0",
+    "fileCount": 2,
+    "downloadAllowed": true
+  },
+  "files": [
+    {
+      "sourceId": "bell-glb-old",
+      "filename": "old_church_bell.glb",
+      "bytes": 3861540,
+      "dropboxContentHash": "c1a949e894ce6cc461053add20985c9b744e27f8fccb9569349c088460ed088f",
+      "pathDisplay": "/CLAUDE/MeshyModels/KFB Bells/old_church_bell.glb",
+      "candidatePublicOrigin": "https://sketchfab.com/3d-models/old-church-bell-8aa10771481c4a0d83f7a47af6fdf9e1",
+      "candidatePublicLicense": "CC BY",
+      "sourceIdentityVerified": false,
+      "licenseForThisFileVerified": false,
+      "geometryParsed": false,
+      "sourceObjectRendered": false,
+      "animationInspected": false,
+      "meshTriangles": null,
+      "meshMaterials": null,
+      "innerGeometryVerified": false,
+      "decision": "FIRST_SOLO_DONOR_CANDIDATE"
+    },
+    {
+      "sourceId": "bell-glb-weathered",
+      "filename": "ancient_weathered_bronze_church_bell.glb",
+      "bytes": 127976636,
+      "dropboxContentHash": "b3336935866ed5635664b4e99e01a285a129820bac53aeb55248f186ecfceca8",
+      "pathDisplay": "/CLAUDE/MeshyModels/KFB Bells/ancient_weathered_bronze_church_bell.glb",
+      "candidatePublicOrigin": "https://www.fab.com/listings/0fc4ff96-3fc0-4d08-b477-51783671689b",
+      "candidatePublicLicense": "Commercial Fab listing, not established CC",
+      "sourceIdentityVerified": false,
+      "licenseForThisFileVerified": false,
+      "geometryParsed": false,
+      "sourceObjectRendered": false,
+      "animationInspected": false,
+      "meshTriangles": null,
+      "meshMaterials": null,
+      "innerGeometryVerified": false,
+      "decision": "CONDITIONAL_VISUAL_DONOR_NOT_ACCEPTED"
+    }
+  ],
+  "reference": {
+    "title": "Modeling the Acoustics of the Liberty Bell in COMSOL Multiphysics",
+    "author": "Mark Cops",
+    "published": "2026-07-02",
+    "url": "https://www.comsol.com/blogs/modeling-the-acoustics-of-the-liberty-bell-in-comsolmph/",
+    "replicaScanSource": "https://var.psu.edu/portfolio-items/replica-liberty-bell-scan-3d-digitization-for-acoustic-research/",
+    "actualHistoricBellTwin": "https://var.psu.edu/libertybell/",
+    "note": "COMSOL uses CC BY 4.0 scan of a replica for physics reconstruction; distinct from actual historic Liberty Bell scan.",
+    "reportedMaterialBaseline": {
+      "E_GPa": 120,
+      "densityKgM3": 8800,
+      "poisson": 0.34
+    },
+    "materialRanges": {
+      "E_GPa": [
+        85,
+        125
+      ],
+      "densityKgM3": [
+        8400,
+        9000
+      ],
+      "poisson": [
+        0.3,
+        0.34
+      ]
+    },
+    "predictedFundamentalHz": 336,
+    "illustrativeCrackWidthMm": 1,
+    "uncertaintyHzHumApprox": 17,
+    "uncertaintyHzNominalApprox": 60,
+    "lossFactorEta": 0.001,
+    "claimsStatus": "SOURCE_RESEARCH_NOT_EXECUTED_KFB_FEM"
+  },
+  "actualProof": {
+    "dropboxFoldersListed": 1,
+    "dropboxFileRecords": 2,
+    "actualGLBBytesTransferred": 0,
+    "real3DObjectsRendered": 0,
+    "licenseFileIdentitiesVerified": 0,
+    "FEMSolves": 0,
+    "siteDeploys": 0
+  },
+  "nextGate": "KFB_BELL_R7_ORIGINAL_GLB_BYTES_RIGHTS_AND_SOLO_MESH_INSPECTION"
+}

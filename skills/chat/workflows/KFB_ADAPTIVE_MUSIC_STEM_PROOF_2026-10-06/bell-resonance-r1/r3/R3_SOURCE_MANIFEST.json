@@ -1,0 +1,71 @@
+{
+  "schema": "kfb.bell-visual-proof.r3",
+  "date": "2026-10-28",
+  "status": "LOCAL_INTERACTIVE_RESEARCH_PROOF_NOT_SITE",
+  "owner": "KFB Audio & Soundscape current Site PR #365",
+  "receivingResearchPR": 458,
+  "immersiveCandidatePR": 455,
+  "sourceNature": "Three authored synthetic R2 WAVs; no real church bells or physical bowls",
+  "singleOwnerConstraint": "Standalone lab only, must integrate via existing AudioContext/mixer before any future Site/World consumer",
+  "artifact": {
+    "filename": "KFB_BELL_CAMPANILE_R3_PROOF.zip",
+    "sha256": "297481cfded2bb22065fe8ce239c34d894b67277287fbff2f30ac6444338d078",
+    "sizeBytes": 9359829,
+    "storage": "conversation downloadable artifact only, not GitHub binary"
+  },
+  "files": [
+    {
+      "name": "index.html",
+      "sha256": "a9670d0563aa2ed7e8f0ea10eae6ed2ae78b78d8e4734b0e1cc08ca5da5dd10c",
+      "scope": "standalone HTML local visual"
+    },
+    {
+      "name": "visual.js",
+      "sha256": "236f2471066a580095d7c3d52980aaa2addc17f5b5e0db1a932ed9d378adc996",
+      "scope": "procedural bell/arch stage drawing and transport"
+    },
+    {
+      "name": "analysis.json",
+      "sha256": "5fff3a0b44b889a7c23c561cc2c96cbb14e7760d45781b2f751056c511dfd0d4",
+      "scope": "3 sources x 234 source-derived 60ms frames"
+    },
+    {
+      "name": "BROWSER_TEST_REPORT.json",
+      "sha256": "63d45191aa0772121c6831124d841bd6393e9ac5250aa78a13b28c3c5f9eb828",
+      "scope": "actual headless offline browser fixture"
+    }
+  ],
+  "tests": {
+    "r2ExistingSourceRevalidation": "18/18 PASS",
+    "nodePureAdapter": "25/25 PASS",
+    "browserOfflineFixture": "15/15 PASS",
+    "browserOriginalURL": "0: local file and localhost blocked",
+    "humanListening": "0",
+    "originalHistoricSourceSolo": "0",
+    "sitePublication": "0"
+  },
+  "proofVisuals": [
+    "01_ISOLATED_SOURCE_AT_REST.png",
+    "02_SOURCE_ISOLATED_PLAYING.png",
+    "03_VAULT_LISTENING.png",
+    "04_SECOND_MAP.png",
+    "05_EGREGORE_SOURCE.png",
+    "06_BOWL_SOURCE.png"
+  ],
+  "vfxState": {
+    "modes": 8,
+    "analysisIntervalSeconds": 0.06,
+    "framesPerRecording": 234,
+    "visualModes": [
+      "solo",
+      "vault",
+      "field"
+    ],
+    "audioChoices": 3,
+    "syntheticOnly": true,
+    "realTimeAudioAnalyser": false,
+    "usesPrecomputedFFT": true
+  },
+  "sourceCode": "Pure readEnvelope and modeToGeometry map committed under r3/*.mjs; full standalone visual and byte-exact WAVs reside in downloadable ZIP. Repo test uses transparently named QA fixture, not real audio as false source.",
+  "nextGate": "KFB_BELL_R3_RIGHTS_CLEARED_REAL_BELL_SOLO_AND_SOURCE_VISUAL_ISOLATION"
+}

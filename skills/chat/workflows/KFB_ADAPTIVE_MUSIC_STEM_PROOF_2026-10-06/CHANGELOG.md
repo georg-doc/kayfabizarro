@@ -1,3 +1,63 @@
+## 2026-10-28 · Bell Resonance R7 · COMSOL method + two real Dropbox GLB candidates
+- User supplied 2026-07-02 COMSOL Liberty Bell vibroacoustics article. Recovered source-backed distinction: 3D replica scan (CC BY 4.0 VAR Lab) → simplified axisymmetric FEM solid, eigenmode pairs, material uncertainty, 1mm crack-driven pair split, 20-step optimized tuning and acoustic-solid response. Historic original Liberty Bell scan is a separate project. No licensed COMSOL model or actual simulation downloaded.
+- Shared Dropbox folder `/CLAUDE/MeshyModels/KFB Bells` connected and listed: `old_church_bell.glb` 3,861,540 bytes, `ancient_weathered_bronze_church_bell.glb` 127,976,636 bytes, exact Dropbox content hashes in `bell-resonance-r1/R7_SOURCE.json`. Source file bytes, topology, animations and separate visual donor isolation remain untested due binary transfer restriction.
+- The first filename matches a plausible CC BY photogrammetry Sketchfab listing, the second a similarly named AI-assisted commercial Fab listing; **no identity, rights or license verified for the user's actual binaries**. No claim that 128MB reflects geometry detail. Do not import until author/source/rights and real GLB mesh proof.
+- Research and WS0 donor plan: `bell-resonance-r1/R7_COMSOL_LIBERTY_BELL_DROPBOX_DONOR_AUDIT_2026-10-28.md`, machine `R7_SOURCE.json`, `R7_TEST_REPORT.md` (6/6 research/editorial checks PASS; 0 actual object/audio/FEM/browser tests). Full rendered model/3D proof unavailable, no new runtime, AudioContext, Site, Hub or Cloudflare Stage. Existing #365 / unpublished #455 protected.
+- **One next research gate:** `KFB_BELL_R7_ORIGINAL_GLB_BYTES_RIGHTS_AND_SOLO_MESH_INSPECTION`. Once source available, show each exact original mesh in isolation before physics optimization or integration.
+
+---
+
+## 2026-10-28 · R6 original KayKit source verification / no fake donor preview
+**Outcome: source metadata verified, original geometry rendering blocked by binary transfer, read-only inspector ready.** Current KFB Asset Registry main contains 7,819 model-3d records. Current source GLTF parse on original KayKit Holiday Bits `bell.gltf` and `bell_decorated.gltf`: 12/12 source-text structural checks PASS, including actual separate bell/ring/clapper meshes, original source .bin names, mesh/bbox/triangle counts and absence of embedded animation. Original .bin existence and byte size separately corroborated in connected Dropbox.
+An offline read-only donor inspector `bell-resonance-r1/r6/inspect_original_bell.py` is now saved in GitHub, with fail-closed exact source dependency checks, four source-isolated 3D views after node transforms, and per-mesh geometry report when true bytes available. Local sister implementation: 5/5 fixture checks PASS using **R4 synthetic control GLB and roundtripped glTF ONLY**, not original KayKit visual proof; exact GitHub source read back, not runner-tested. A 3.8 KB conversation ZIP includes tool+test results+README. No actual KayKit source render, true wall/FEM, physical ringing or audio Site.
+Two Wikimedia PD/CC0 pages rechecked; Freesound CC0 original login-gated; original audio bytes downloaded 0, spectra 0. Public audio media URL transfer blocked; no invented source replacement.
+R6 research and test evidence: `bell-resonance-r1/R6_EXACT_KAYKIT_DONORS_AND_AUDIO_ACCESS_2026-10-28.md`, `bell-resonance-r1/R6_SOURCE_INSPECTOR_TEST_REPORT.md`, `bell-resonance-r1/r6/inspect_original_bell.py`.
+One next gate: `KFB_BELL_R6_SOURCE_BINARY_TRANSFER_ORIGINAL_DONOR_VISUAL_PROOF`. No new AudioContext, Audio Site, Hub/Cloudflare/Live, merge or World owner.
+
+---
+
+## 2026-10-28 · Bell Resonance R5 recovery persisted after blocked tool attempts
+- Existing bell research Draft PR #458 now contains `bell-resonance-r1/R5_ASSET_LIBRARIAN_PHYSICS_REVIEW.md`: verified current Asset Librarian Registry/read-only candidate search; exact KayKit Holiday Bits separate bell/ring/clapper glTF donors (2 source glTF reads), Medieval Hexagon church context model (1 source glTF read), source license sidecar (1 read).
+- Engine separation retained: coupled pendulum/contact, FEM structural eigenmodes, acoustic radiation and spatial audio via existing KFB Audio owner. No second Runtime/AudioContext, fresh Site, Hub route or Stage.
+- R5 is research-only: 0 donor-source independent renderings, 0 authenticated Librarian live searches, 0 real bell WAV acquisition or physical FFT, 0 FEM solve, 0 browser/Audio Site publication. Single gate `KFB_BELL_R5_LIBRARIAN_DONOR_ISOLATION_AND_REAL_BELL_AUDIO_AUDIT`.
+- Previous write attempts were blocked, but follow-up create-file and read-back succeeded. This is not retroactive implementation/visual acceptance.
+
+---
+
+## 2026-10-28 · Bell Resonance R4 · USER REJECTED R3 VISUAL / true 3D geometry proof
+- Binding Georg visual correction: no 2D/SVG/pseudo-spatial ring/vault/cheap scaffolding as product, no personified bronze/object-humour; show real 3D bell geometry with inner/outer walls and sound bow, real cutaway, clapper, and *physically validated* FE/experimental surface eigenmodes rather than decorative FFT halos.
+- Added R4_Binding design correction with research-backed modal/FEM pipeline and license-isolated 3D donor shortlist; historical objects not downloaded/adopted. Created original **nonhistorical** true 3D geometrical test with three GLB exports and isolated VTK screenshots, scripts, 44/44 numerical/roundtrip tests PASS. Bundle is a conversation artifact, NOT hosted/published or in GitHub binary source.
+- Recorded eight CC0/Public Domain church-bell recordings as exact license/author/page source candidates. Original WAV/OGG download attempted but blocked by Freesound account requirement and Wikimedia OGG inaccessible in tool. Therefore audio imports/real source spectra 0. No purchase/license negotiation required for verified CC0/PD.
+- Added four R4 research files, owner Return / research Return, PR #458 evidence. Single existing Audio owner #365, pending immersive #455, no runtime or Site change. Next gate KFB_BELL_R4_REAL_CC0_AUDIO_PLUS_VERIFIED_SOURCE_3D_MODAL_ISOLATION.
+
+---
+
+## 2026-10-28 · Bell Resonance R3 · isolated source-to-architecture prototype
+- Three actual original R2 synthetic WAVs (not historic bells) analyzed into 234 × (RMS+8 bands) frames/source; authored independent bronze bell shown first as original source object, then listening-vault and speculative Egregore/Ley map 2D concept modes. Local portable interactive HTML/CSS/JS + six Chromium screenshots packaged as conversation artifact `KFB_BELL_CAMPANILE_R3_PROOF.zip` with hashes in R3_SOURCE_MANIFEST.json. **Not committed in repo as binary/full UI; not deployed**.
+- Tests executed: original R2 18/18, pure source→geometry module 25/25 Node, offline Playwright media/controls 15/15 (local HTTP and file access blocked; fixture used real WAV bytes with data URL, not public URL QA). No historic church bell recordings acquired or measured. No human sonic acceptance, Site/3D/HRTF/iOS proof.
+- GitHub under bell-resonance-r1/r3/: pure DOM-free adapter, portable fixture test, test report, source manifest, source→WS0 integration handoff. Research PR #458 remains stacked on #455 / existing #365, no audio owner/mixer/context/site/World modifications.
+- One next bell gate: KFB_BELL_R3_RIGHTS_CLEARED_REAL_BELL_SOLO_AND_SOURCE_VISUAL_ISOLATION. Existing #455 browser/source isolation and in-place Site publication remains independently open.
+
+---
+
+## 2026-10-28 · Bell Resonance R2 · archive source access and synthetic modal sound
+- Retained same KFB Audio owner #365 and unpublished immersive WS0 #455; research Draft PR #458 only, no second audio owner or runtime. Added 7 authentic field recording page-rights investigations and access blocker; original binaries 0, physical spectra 0.
+- Generated original offline WAV and spectral plot evidence outside repo: three distinct 14s 48k stereo PCM16 objects (struck bell / Egregore transformation / fictional rubbed bowl), measured input-matching spectral peaks, standalone synthetic-only provenance and SHA256. Local actual tests 18/18 PASS after fixing pre-roll expectation. Audio human hearing 0, native Web Audio/browser tests 0, Site updates 0.
+- New additive research R2 source audit, spectral report, evidence JSON, TEST_REPORT, updated Return. Exact sources and zip hash in R2 files; ZIP remains available as conversation artifact and NOT a committed binary/media source.
+- Next bell gate: KFB_BELL_R2_TWO_REAL_RECORDING_BYTES_PLUS_SOLO_SPECTRUM. Parent WS0 #455 publication gate stays intact; no Hub/Cloudflare/Live routing change.
+
+---
+
+## 2026-10-28 · Bell Resonance / Impossible Campanile · research R1 (PR #458)
+
+- Georg requested deep historical / acoustic / occult research for church bells, bowls, Schumann-inspired sonic transformations, KFB Mindscapes and an optional standalone exhibition; research/production brief only, no runtime permission.
+- Current ownership recovered: existing Audio MVP PR #365 / private Site Source 0.7.1 v11 and unpublished WS0 Immersive PR #455, on which research branch is stacked; old immersive #453 / #350 donor research is not a receiving runtime.
+- Created bell-resonance-r1 package: RESEARCH_ATLAS_R1.md, SOURCE_ATLAS_R1.md, SLIDE_STORYBOARD_R1.md (14 complete audiovisual slides), PRODUCTION_BRIEF_R1.md, SOURCE.json (six lead records), TEST_REPORT_R1.md (8/8 editorial/JSON PASS), RETURN.md.
+- WDR/Austrian/Hibbert and per-file CC0 Freesound candidates recorded; Dropbox earlier Binaural/Shepard/Spatial research included read-only, with SBaGenX/SynapSeq as offline donors. NO binary imported, ear audition, measured modal spectrum, rendered deck, visual object isolation, browser test, Site update, Cloudflare or merge.
+- Proposed next gate: KFB_BELL_R1_THREE_SOURCE_RIGHTS_SOLO_AUDITION_MODAL_MEASUREMENT, subordinate to the existing #455 current WS0 Audio Site browser/source-isolation gate. Existing owner, Egregore fiction/measured physics distinction and audio/voice/clock contracts unchanged.
+
+---
+
 ## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
 
 - Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.

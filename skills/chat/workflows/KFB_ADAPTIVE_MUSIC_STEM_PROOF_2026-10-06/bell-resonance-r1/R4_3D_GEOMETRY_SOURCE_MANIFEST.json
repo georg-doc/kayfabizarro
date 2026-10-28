@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.bell-resonance.geometry-proof.r4",
+  "date": "2026-10-28",
+  "class": "ORIGINAL_PARAMETRIC_3D_ENGINEERING_TEST_NOT_HISTORICAL_SCAN_OR_FEM",
+  "threeDimensional": true,
+  "owner": "KFB Audio #365",
+  "branch": "research/kfb-bell-resonance-mindscapes-r1-2026-10-28",
+  "sourceBundle": "KFB_BELL_R4_GEOMETRY_PROOF.zip",
+  "bundleSHA256": "b67b3f25d276fd09ef6a1eb1080648f039b8a56303028ace532619c2b5167bc5",
+  "bundleStored": "Conversation downloadable artifact, NOT GitHub binary or published Site",
+  "meshDetails": {
+    "outerAndInnerShell": true,
+    "wallThicknessVariable": true,
+    "shellVolumeWatertight": true,
+    "cutawayRealMesh": true,
+    "clapperSeparate": true,
+    "radiationSimulation": false,
+    "eigenmodesFEM": false,
+    "modelSource": "create_bell_model.py",
+    "renderSource": "render_bell.py",
+    "QA": "check_geometry.py",
+    "rimMouthOutsideDiameterM": 2.32,
+    "heightM": 2.11,
+    "mode": "analytic m3 exaggerated displacement, for geometry proof ONLY"
+  },
+  "glbs": [
+    {
+      "name": "KFB_BELL_ISOLATED.glb",
+      "bytes": 1688744,
+      "sha256": "9f79bc0e8a987927ab63b61b5017fed4770e27ef3388a2e3369d19fa3bb9edd4",
+      "meshParts": 3,
+      "sourceOriginal": true
+    },
+    {
+      "name": "KFB_BELL_CUTAWAY.glb",
+      "bytes": 1533296,
+      "sha256": "73b74e80cc9f7fc336eda55d1d0428312f34e38bd2e224fa0952a5771e2e1d00",
+      "meshParts": 3,
+      "sourceOriginal": true
+    },
+    {
+      "name": "KFB_BELL_ILLUSTRATIVE_MODE_M3.glb",
+      "bytes": 1658620,
+      "sha256": "8c75651eb691f1c56c7f76ba4591243b839c8052aeb4fc4fb062613132b4e7",
+      "meshParts": 1,
+      "sourceOriginal": true
+    }
+  ],
+  "sourceProofPNGs": [
+    "PROOF_3D_ISOLATED.png",
+    "PROOF_3D_CUTAWAY.png",
+    "PROOF_3D_ILLUSTRATIVE_MODE_M3.png"
+  ],
+  "tests": {
+    "actual3DMeshChecks": 44,
+    "actual3DMeshPass": 44,
+    "realHistoric3DScansImported": 0,
+    "realBellAudioImported": 0,
+    "FEMcomputed": 0,
+    "siteTests": 0,
+    "realSourceHRTFTests": 0
+  },
+  "nextGate": "KFB_BELL_R4_REAL_CC0_AUDIO_PLUS_VERIFIED_SOURCE_3D_MODAL_ISOLATION"
+}
