@@ -1,0 +1,48 @@
+{
+  "drive_georg_r2": {
+    "files": [
+      "body_candidate_01",
+      "body_candidate_02",
+      "grit_candidate_01",
+      "grit_candidate_02",
+      "stutter_candidate_01",
+      "stutter_candidate_02",
+      "whine_candidate_01",
+      "whine_candidate_02",
+      "skid_candidate_01",
+      "skid_candidate_02",
+      "cockpit_candidate_01",
+      "cockpit_candidate_02"
+    ],
+    "ext": "flac",
+    "gainDb": {
+      "body_candidate_01": 0,
+      "body_candidate_02": 0,
+      "grit_candidate_01": 0,
+      "grit_candidate_02": 0,
+      "stutter_candidate_01": 0,
+      "stutter_candidate_02": 0,
+      "whine_candidate_01": 0,
+      "whine_candidate_02": 0,
+      "skid_candidate_01": 0,
+      "skid_candidate_02": 0,
+      "cockpit_candidate_01": 0,
+      "cockpit_candidate_02": 0
+    },
+    "norm": "lufs",
+    "status": "candidate_not_listened",
+    "manifest": "el/drive_georg_r2/manifest.json",
+    "eventFiles": [
+      "shift_event_candidate_01.mp3",
+      "shift_event_candidate_02.mp3",
+      "shift_event_candidate_03.mp3",
+      "skid_event_candidate_01.mp3",
+      "skid_event_candidate_02.mp3",
+      "skid_event_candidate_03.mp3",
+      "stutter_event_candidate_01.mp3",
+      "stutter_event_candidate_02.mp3",
+      "stutter_event_candidate_03.mp3"
+    ],
+    "integrationNote": "Events are MP3 paths in manifest; current game loader supports only set.ext. WS0 must implement explicit per-file paths or a separate homogeneous event set before binding events. No event id in files list."
+  }
+}

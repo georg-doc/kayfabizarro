@@ -1,0 +1,60 @@
+{
+  "status": "OFFLINE_MATERIAL_STUDY_NOT_GAME_CAPTURE",
+  "durationSeconds": 24,
+  "events": [
+    {
+      "t": 0,
+      "event": "launch"
+    },
+    {
+      "t": 6,
+      "event": "shift"
+    },
+    {
+      "t": 12,
+      "event": "shift"
+    },
+    {
+      "t": 14,
+      "event": "drift/slip stage; tyre source only for dragster"
+    },
+    {
+      "t": 20,
+      "event": "lift-off"
+    }
+  ],
+  "missingBaseline": "engine_georg_r1 absent; baseline_partial = R2+vehicle_feel+existing drift donor",
+  "limitations": [
+    "Not exact WebAudio engineVoice nonlinear chain or gameplay telemetry",
+    "Candidate layering uses unconfirmed semantic roles, not ear-approved sound design",
+    "Existing shifts retained; new event candidates are isolated in review page, not falsely presented as confirmed shifts",
+    "Hover uses ground acceleration sequence; shift markers are test events, not authorization to invent flight gears",
+    "No real headset/speaker, Doppler, room, game timing or listening proof"
+  ],
+  "files": [
+    {
+      "file": "auditions/dragster_baseline_partial.wav",
+      "lufs": -22.999999974613957,
+      "peakDb": -6.987504352052751,
+      "sha256": "b443b6ebb144a05224b5f18c8d4864a5c437d54641b09b70a6baed2c8ce74c67"
+    },
+    {
+      "file": "auditions/dragster_candidate_layers.wav",
+      "lufs": -22.999998706230414,
+      "peakDb": -7.658041849882737,
+      "sha256": "887961f72e1661584e99dcd4d4a4db19afe4f7c2489abbd47c3b474bf048d9d1"
+    },
+    {
+      "file": "auditions/hover_baseline_partial.wav",
+      "lufs": -22.999999613485524,
+      "peakDb": -7.986810417927471,
+      "sha256": "246cf20363e927a44b65daf6b77205037cfc993e74b92ced62a2a3bfbd34348e"
+    },
+    {
+      "file": "auditions/hover_candidate_layers.wav",
+      "lufs": -22.99999875870194,
+      "peakDb": -6.926094679370393,
+      "sha256": "1531c3e875a8dd25a9eb5994149b45ab201e8592bba66b507faaca99f8df2174"
+    }
+  ]
+}

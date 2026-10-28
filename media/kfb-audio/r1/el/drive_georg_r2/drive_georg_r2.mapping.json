@@ -1,0 +1,1141 @@
+{
+  "schemaVersion": 1,
+  "status": "PROPOSAL_NOT_INTEGRATED_NOT_LISTENED",
+  "owner": "WSA assets; WS0 gameplay integration",
+  "sourceGameHead": "c3212e261433dd4f545b4a77b5e7f0c331106af1",
+  "assets": {
+    "body_candidate_01": "el/drive_georg_r2/body_candidate_01.flac",
+    "body_candidate_02": "el/drive_georg_r2/body_candidate_02.flac",
+    "grit_candidate_01": "el/drive_georg_r2/grit_candidate_01.flac",
+    "grit_candidate_02": "el/drive_georg_r2/grit_candidate_02.flac",
+    "stutter_candidate_01": "el/drive_georg_r2/stutter_candidate_01.flac",
+    "stutter_candidate_02": "el/drive_georg_r2/stutter_candidate_02.flac",
+    "whine_candidate_01": "el/drive_georg_r2/whine_candidate_01.flac",
+    "whine_candidate_02": "el/drive_georg_r2/whine_candidate_02.flac",
+    "skid_candidate_01": "el/drive_georg_r2/skid_candidate_01.flac",
+    "skid_candidate_02": "el/drive_georg_r2/skid_candidate_02.flac",
+    "cockpit_candidate_01": "el/drive_georg_r2/cockpit_candidate_01.flac",
+    "cockpit_candidate_02": "el/drive_georg_r2/cockpit_candidate_02.flac",
+    "shift_event_candidate_01": "el/drive_georg_r2/shift_event_candidate_01.mp3",
+    "shift_event_candidate_02": "el/drive_georg_r2/shift_event_candidate_02.mp3",
+    "shift_event_candidate_03": "el/drive_georg_r2/shift_event_candidate_03.mp3",
+    "skid_event_candidate_01": "el/drive_georg_r2/skid_event_candidate_01.mp3",
+    "skid_event_candidate_02": "el/drive_georg_r2/skid_event_candidate_02.mp3",
+    "skid_event_candidate_03": "el/drive_georg_r2/skid_event_candidate_03.mp3",
+    "stutter_event_candidate_01": "el/drive_georg_r2/stutter_event_candidate_01.mp3",
+    "stutter_event_candidate_02": "el/drive_georg_r2/stutter_event_candidate_02.mp3",
+    "stutter_event_candidate_03": "el/drive_georg_r2/stutter_event_candidate_03.mp3"
+  },
+  "presets": {
+    "v8": {
+      "pitchMultiplier": 1,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -12,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -22,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -24,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -26,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    },
+    "dragster": {
+      "pitchMultiplier": 0.86,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -10,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -17,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -30,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -26,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    },
+    "hotrod": {
+      "pitchMultiplier": 1.07,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -14,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -15,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -19,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -30,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -26,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    },
+    "heavy": {
+      "pitchMultiplier": 0.9,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -10,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -21,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -23,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -25,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -22,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    },
+    "jet": {
+      "pitchMultiplier": 1,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -16,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -23,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -30,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -14,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -22,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    },
+    "hover": {
+      "pitchMultiplier": 1.04,
+      "layers": [
+        {
+          "role": "body",
+          "variants": [
+            "body_candidate_01",
+            "body_candidate_02"
+          ],
+          "gainDb": -19,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "engine running; load scales from 0.35 at closed throttle to 1 at full load",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "playbackRateRange": [
+            0.8,
+            1.2
+          ],
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "grit",
+          "variants": [
+            "grit_candidate_01",
+            "grit_candidate_02"
+          ],
+          "gainDb": -26,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "throttle > 0.4",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0.4,
+              0.7,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "stutter",
+          "variants": [
+            "stutter_candidate_01",
+            "stutter_candidate_02"
+          ],
+          "gainDb": -32,
+          "bus": "sfx",
+          "route": "existing engineVoice.input",
+          "trigger": "rpm < 1200 and throttle < 0.15",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              800,
+              1000,
+              1200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "whine",
+          "variants": [
+            "whine_candidate_01",
+            "whine_candidate_02"
+          ],
+          "gainDb": -12,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "engine running",
+          "crossfade": {
+            "control": "rpm",
+            "keys": [
+              900,
+              2400,
+              4200
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "skid",
+          "variants": [
+            "skid_candidate_01",
+            "skid_candidate_02"
+          ],
+          "gainDb": -18,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "ground contact AND confirmed rubber tyre AND speed > 4m/s AND abs(slipAngle)>8deg; no hover/air tyre fiction",
+          "crossfade": {
+            "control": "absoluteSlipAngleDegrees",
+            "keys": [
+              8,
+              18,
+              35
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "additionalControls": {
+            "wheelSlip01": [
+              0.15,
+              0.45,
+              0.8
+            ],
+            "surface": "host-authoritative material only; unknown = retain old sound",
+            "releaseMs": 160
+          },
+          "enabled": false,
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        },
+        {
+          "role": "cockpit",
+          "variants": [
+            "cockpit_candidate_01",
+            "cockpit_candidate_02"
+          ],
+          "gainDb": -24,
+          "bus": "sfx",
+          "route": "existing engineVoice.clean",
+          "trigger": "confirmed interior camera only",
+          "crossfade": {
+            "control": "throttle",
+            "keys": [
+              0,
+              0.5,
+              1
+            ],
+            "law": "equal_power",
+            "smoothMs": 100
+          },
+          "semanticStatus": "unconfirmed_do_not_auto_bind",
+          "routeOverride": "existing dry player path; no external HRTF",
+          "selection": "one variant per role per engine start, seeded; never all variants simultaneously"
+        }
+      ]
+    }
+  },
+  "events": {
+    "shift": {
+      "variants": [
+        "shift_event_candidate_01",
+        "shift_event_candidate_02",
+        "shift_event_candidate_03"
+      ],
+      "trigger": "actual gear edge only; no arbitrary jet gear",
+      "status": "semantic identification pending",
+      "bus": "sfx",
+      "gainDb": -16,
+      "pitchSemitoneJitter": [
+        -0.4,
+        0.4
+      ],
+      "gainDbJitter": [
+        -1,
+        1
+      ],
+      "selection": "uniform_no_immediate_repeat",
+      "simultaneousVariants": 1,
+      "cooldownMs": 150,
+      "polyphony": 2,
+      "components": "single composite; no independently verified attack/body/tail layers"
+    },
+    "skid": {
+      "variants": [
+        "skid_event_candidate_01",
+        "skid_event_candidate_02",
+        "skid_event_candidate_03"
+      ],
+      "trigger": "confirmed tyre-slip threshold rising edge only",
+      "status": "semantic identification pending",
+      "bus": "sfx",
+      "gainDb": -16,
+      "pitchSemitoneJitter": [
+        -0.4,
+        0.4
+      ],
+      "gainDbJitter": [
+        -1,
+        1
+      ],
+      "selection": "uniform_no_immediate_repeat",
+      "simultaneousVariants": 1,
+      "cooldownMs": 300,
+      "polyphony": 2,
+      "components": "single composite; no independently verified attack/body/tail layers"
+    },
+    "stutter": {
+      "variants": [
+        "stutter_event_candidate_01",
+        "stutter_event_candidate_02",
+        "stutter_event_candidate_03"
+      ],
+      "trigger": "idle misfire or actual lift-off fact, not continuous frame trigger",
+      "status": "semantic identification pending",
+      "bus": "sfx",
+      "gainDb": -16,
+      "pitchSemitoneJitter": [
+        -0.4,
+        0.4
+      ],
+      "gainDbJitter": [
+        -1,
+        1
+      ],
+      "selection": "uniform_no_immediate_repeat",
+      "simultaneousVariants": 1,
+      "cooldownMs": 2500,
+      "polyphony": 2,
+      "components": "single composite; no independently verified attack/body/tail layers"
+    }
+  },
+  "existingPolicy": [
+    {
+      "set": "engine_v8_r2",
+      "ids": [
+        "V1_idle",
+        "V2_low",
+        "V3_mid",
+        "V4_high",
+        "V5_burble",
+        "V6_drag"
+      ],
+      "actionNow": "keep",
+      "afterListening": "retain original RPM grid; candidate body additive at listed trim, compare bass masking"
+    },
+    {
+      "set": "engine_r2",
+      "ids": [
+        "S1_sub_idle",
+        "S2_sub_mid",
+        "S3_sub_high"
+      ],
+      "actionNow": "keep",
+      "afterListening": "attenuate 3dB only while candidate body active; no duplicate octave reinforcement"
+    },
+    {
+      "set": "engine_r2",
+      "ids": [
+        "T1_turbine_low",
+        "T2_turbine_mid",
+        "T3_turbine_high",
+        "P1_pod_roar_mid",
+        "P2_pod_roar_high"
+      ],
+      "actionNow": "keep",
+      "afterListening": "equal-power replace matching layer only when candidate approved; never stack all at full gain"
+    },
+    {
+      "set": "engine_r2",
+      "ids": [
+        "G1_shift_up_heavy",
+        "G2_shift_down_heavy",
+        "G3_clunk_metal",
+        "C1_crackle_series",
+        "C2_backfire_big",
+        "C3_burble_pops"
+      ],
+      "actionNow": "keep",
+      "afterListening": "one semantic event owner; choose old OR approved new composite, no duplicate shift/crackle"
+    },
+    {
+      "set": "engine_r2",
+      "ids": [
+        "B1_boost_ignite",
+        "B2_boost_roar",
+        "L1_launch_rev",
+        "W1_rush_mid",
+        "W2_rush_high",
+        "D1_doppler_pod",
+        "D2_doppler_v8",
+        "D3_doppler_air"
+      ],
+      "actionNow": "keep"
+    },
+    {
+      "set": "engine_georg_r1",
+      "actionNow": "unresolved_missing_index_and_local_folder; do not assume completed V903",
+      "afterListening": "do not stack before its mapping is supplied"
+    },
+    {
+      "set": "vehicle_feel_r1",
+      "actionNow": "keep all offload/wind/brake/contact/servo/boost/pass assets; no blanket replacement"
+    },
+    {
+      "set": "ws_audio_gaps_r1",
+      "ids": [
+        "R05_drift_slide_loop",
+        "R06_drift_charge"
+      ],
+      "actionNow": "keep",
+      "afterListening": "only crossfade R05 to confirmed skid; retain charge cue and all physical surface cues"
+    }
+  ],
+  "delivery": {
+    "loopFormat": "FLAC mono PCM16 44100",
+    "eventFormat": "MP3 CBR128 mono 44100",
+    "normalization": "baked -16 LUFS; index gainDb = 0 (do not normalize twice)",
+    "mixedFormatLoaderGap": "Current loader is set.ext only. Loops appear in index files; eventFiles are explicit metadata. WS0 must resolve MP3 paths before event activation.",
+    "loadPolicy": "only active preset selected variants, at most 6 loop files; one cockpit OR external rendering; events lazy decode/cache; release old preset after fade",
+    "maxNewLoops": 6,
+    "newLoopPcmBudgetBytes": 4233600,
+    "newEventPolyphony": 2
+  },
+  "spatial": "WS0 owns listener, distance, room, camera truth; no fake acoustic positions or second context"
+}
