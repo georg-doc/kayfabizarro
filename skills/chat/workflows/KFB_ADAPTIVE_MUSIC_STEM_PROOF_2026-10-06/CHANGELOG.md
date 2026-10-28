@@ -1,3 +1,11 @@
+## 2026-10-28 · Bell Resonance R3 · isolated source-to-architecture prototype
+- Three actual original R2 synthetic WAVs (not historic bells) analyzed into 234 × (RMS+8 bands) frames/source; authored independent bronze bell shown first as original source object, then listening-vault and speculative Egregore/Ley map 2D concept modes. Local portable interactive HTML/CSS/JS + six Chromium screenshots packaged as conversation artifact `KFB_BELL_CAMPANILE_R3_PROOF.zip` with hashes in R3_SOURCE_MANIFEST.json. **Not committed in repo as binary/full UI; not deployed**.
+- Tests executed: original R2 18/18, pure source→geometry module 25/25 Node, offline Playwright media/controls 15/15 (local HTTP and file access blocked; fixture used real WAV bytes with data URL, not public URL QA). No historic church bell recordings acquired or measured. No human sonic acceptance, Site/3D/HRTF/iOS proof.
+- GitHub under bell-resonance-r1/r3/: pure DOM-free adapter, portable fixture test, test report, source manifest, source→WS0 integration handoff. Research PR #458 remains stacked on #455 / existing #365, no audio owner/mixer/context/site/World modifications.
+- One next bell gate: KFB_BELL_R3_RIGHTS_CLEARED_REAL_BELL_SOLO_AND_SOURCE_VISUAL_ISOLATION. Existing #455 browser/source isolation and in-place Site publication remains independently open.
+
+---
+
 ## 2026-10-28 · Bell Resonance R2 · archive source access and synthetic modal sound
 - Retained same KFB Audio owner #365 and unpublished immersive WS0 #455; research Draft PR #458 only, no second audio owner or runtime. Added 7 authentic field recording page-rights investigations and access blocker; original binaries 0, physical spectra 0.
 - Generated original offline WAV and spectral plot evidence outside repo: three distinct 14s 48k stereo PCM16 objects (struck bell / Egregore transformation / fictional rubbed bowl), measured input-matching spectral peaks, standalone synthetic-only provenance and SHA256. Local actual tests 18/18 PASS after fixing pre-roll expectation. Audio human hearing 0, native Web Audio/browser tests 0, Site updates 0.
