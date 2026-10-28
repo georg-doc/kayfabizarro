@@ -1,3 +1,15 @@
+## Georgs Freigabe und Folgeauftrag · 28.10.2026
+
+**Grundkonzept und Schnittweise freigegeben.** Georg hat die Hörproben positiv beurteilt; keine Einzelabnahme sämtlicher Dateien erforderlich. Auswahl/Eignung der tatsächlich eingebauten Klangrollen bleibt Aufgabe des Builders. Die ältere Aufforderung unten, vor Weiterarbeit alle 46 Quellen von Georg abnehmen zu lassen oder V-903 zu ergänzen, ist nicht die aktuelle Route. Vergleich ohne V-903 bleibt freigegeben.
+
+Nächster Auftrag: zwei unterschiedliche bestehende Fahrzeuge mit Dauerschichten und getrennten Events im Spiel vergleichen; anschließend einen Jetpack-Typ als eigenen Haupt-Locomotion-Klangprofil-Slice bearbeiten. WSA kann Recherche und Jetpack-Slice sowie nach Koordination den benannten Integrator im bestehenden WS0-Owner übernehmen. Erweiterte Primärquellen-Recherche, konkrete Timing-/Trigger-Regeln und gezielte ElevenLabs-GAP-Liste für WS0 sind Bestandteil. Greifhaken/Gripping ist nur eine spätere Konzeptnotiz, kein aktueller Physikbau.
+
+Verbindlicher Folgeauftrag: https://github.com/georg-doc/kayfabizarro/blob/5515bf10f28760708d51204fca7ab7f9b7bced41/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WSA_AN_WS0_V908_RACER_JETPACK_FOLGEAUFTRAG_R1.md
+
+Diese Runde sichert Planung/Freigabe; keine neue Laufzeitintegration, neue Hör-/Gameplay-Messung oder Generierung behauptet. **Nächster Schritt: den Folgeauftrag im vorhandenen Spielowner ausführen; keine erneute Konzeptfreigabe abfragen.**
+
+---
+
 ## Georgs Klarstellung · 28.10.2026
 
 Georg bestätigt: **„Noch nicht vorhanden; Vergleich vorerst ohne V-903“.** Der bestehende Vergleich ohne `engine_georg_r1` ist damit ausdrücklich freigegeben. V-903 ist keine offene Rückfrage und keine Voraussetzung für diesen Vergleich mehr. Die vorhandenen `baseline_partial`-WAVs bleiben unverändert; ihr Name dokumentiert weiterhin den tatsächlichen Umfang (ohne V-903). Ältere Aussagen unten, V-903 müsse vor dem nächsten Schritt ergänzt werden, sind hiermit überholt. Historische Manifest-/Mapping-Hinweise auf den fehlenden Satz bleiben Bestandsbeschreibung, kein aktueller Blocker.
