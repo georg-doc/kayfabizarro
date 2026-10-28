@@ -40,6 +40,7 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 
 ## 4 · Spielfeld-Generator (wiederverwendbar für die ganze prozedurale Welt; R9-Abgleich, V-978)
 1. **Grundriss aus OSM (Georgs Wahl):** ein kleiner Kölner Ausschnitt über das KFB OSM City Lab (kayfabizarro `tools/osm-city-lab/`). Es behält Straßenachsen, OSM-IDs und Gebäudegrundrisse und zeichnet Straßen als zusammenhängende Streifen mit Knoten-Patches. Stufe „Cartoon“ (vereinfachte, leicht verformte Fassaden), nicht „Clean“ oder „Grotesque“. **Brücken sind keine Kreuzungen:** Zwei Wege ohne gemeinsamen OSM-Knoten bleiben getrennt, eine Brücke führt über einen Weg hinweg. Genau das macht das Labyrinth interessant.
+1b. **Alternative Grundrisse (später, V-984):** Derselbe Generator nimmt auch ein Labyrinth aus dem KFB-Random-Maze-Modul (rund, eckig, zufällig; Mauern aus dem Gelände hochgezogen, Ziegel) an. Für Ebene 1 bleibt es beim OSM-Ausschnitt.
 2. **Die Stadt bleibt Stadt:** Straßen und Gebäude sind die räumliche Grundlage. Sie werden nicht aus Platformer-Kacheln nachgebaut.
 3. **KayKit-Teile als Funktionen:** Platformer-, Factory- und BlockBits-Teile kommen nur dort hin, wo sie eine Aufgabe haben:
    - Förderband zwischen zwei Gebäuden,
