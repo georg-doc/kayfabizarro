@@ -13779,6 +13779,21 @@
    "applies": "nach Georgs Abnahme"
   },
   {
+   "id": "V-953",
+   "date": "2026-10-28",
+   "area": "Spielwelt",
+   "verdict": "BUILD",
+   "text": "Zur Abnahme im Hub (alle im Spiel geprüft, Standard unverändert bis Georgs KEEP): q293 Gummiring (V-952), q294 Leerlauf-Tanz + Knete-Emanata (game/idle-life-r1 @4f1ac5d, idledance/emanata), q295 Farbbänder-Ruhe in drei Stufen (game/theme-seed-r1 @8fbc728, bandscale/bandn), q296 Hochsprung r32 im Spiel (game/jump-r32 @4e91151, jumpclip=r32a|r32b; Ausholen 0,47 s vor Abheben), q297 Fahrer im Dach alle 13 (WSB J7 r3z, Vertrag r3z_b, Jetbound body_lean_scale 0,8), q298 Gehen r38B im Spiel (@3035591, walkclip=r38b; Standfuß-Rutschen 0,008 statt 0,46). Befund: der „schleifende Fuß“ der Kritiker ist eine Verdeckung in der Seitenansicht, im Spiel nicht vorhanden. Wüsten-Steinchen R4 pausiert bis Themen-Saat/Bodenentscheid.",
+   "values": {},
+   "owner": "Hub q293–q298",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Geprüft wird im Spiel, nicht auf der Bühne – dort, wo Georg es später sieht.",
+   "applies": "nach Georgs Abnahmen"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
