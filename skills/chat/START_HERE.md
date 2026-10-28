@@ -1,3 +1,20 @@
+## BRANCH-LOCAL R6/R7 · 2026-10-28 · KAYKIT PLATFORMER SOURCE ATLAS + MATERIAL ZONES
+
+**ADDENDUM / SOURCE INSPECTION ONLY; no runtime, new asset owner, Shader Site or production approval.** Existing WS0 Game Design/KFB_HUB PR #435 folder at `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/` now contains:
+- `KAYKIT_PLATFORMER_R6_FULL_SOURCE_INVENTORY_2026-10-28.json` (895 GLTF/BIN pairs, 10 source folders; files still only on Dropbox);
+- `KAYKIT_PLATFORMER_R6_SEMANTIC_ATLAS_2026-10-28.json` (171 neutral/colored role identities, source variants, candidate ports/actions);
+- `KAYKIT_PLATFORMER_R6_GLTF_GEOMETRY_SAMPLES_2026-10-28.json` and `KAYKIT_PLATFORMER_R6_FOUR_MEASURED_BOARD_FIXTURES_CANDIDATE_2026-10-28.json` (12 original source GLTF JSON examples and 4 not-yet-measured source test boards);
+- `KAYKIT_PLATFORMER_R6_MODULAR_ATLAS_BUILD_BRIEF_2026-10-28.md` and `KAYKIT_PLATFORMER_R6_SOURCE_ATLAS_TEST_REPORT_2026-10-28.md`;
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_GLTF_SOURCE_PROBES_2026-10-28.json` (12 direct original GLTF material/primitive samples, real independent EXTRA conveyor threads material);
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TARGETS_CANDIDATE_2026-10-28.json` + `KAYKIT_PLATFORMER_R7_MATERIAL_ZONES_AND_TERRAIN_COLORBAND_WS0_2026-10-28.md` (8 mask targets and existing KFB animated terrain colorband/surreal mix proposal);
+- `KAYKIT_PLATFORMER_R7_OFFLINE_MATERIAL_ZONE_SCANNER.py` (source-only prepared Python; not executed on actual binary pack), `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TEST_REPORT_2026-10-28.md`.
+
+**Key source truth:** normal blue platform/ramp has only ONE source platformer material/UV atlas, so face-specific blue tint needs REAL UV/face mask proof. Buttons/levers/saw have separate mesh children, not separate source materials. EXTRA conveyor has separate second primitive/material threads.png; preferred first selective terrain-colorband proof. Source art/physical colliders stay independent; KFB CANON_3D and existing WS1/WS1b material owner remain authoritative. Existing Work brief has R6 F25–F30 and R7 F31–F36 future QA; **all are future tests, not live acceptance**.
+
+**One next gate remains `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`:** proper source binary/hashes and visual material source-isolation in current Asset Librarian/Kit Lab, current WS1b source pin, one Switchyard. WB2 R4 STOP; no Live/auto-merge.
+
+---
+
 ## BRANCH-LOCAL R5 · 2026-10-28 · ORGANIC CHILL CARTOON GAME FEEL
 
 **Additive design/source input only, NOT WS1 execution or a new animation engine.** On the existing KFB_HUB WS0 Game Design Draft PR #435 branch read:
