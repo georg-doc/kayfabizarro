@@ -1,3 +1,16 @@
+## BRANCH-LOCAL R9 · 2026-10-28 · ACTUAL WS1 ENVIRONMENT SOURCE / OSM / KAYKIT CROSSWALK
+
+**SOURCE REVIEW + ADDITIVE MINI-GAME DESIGN ONLY. NOT A NEW ENVIRONMENT SSOT OR RUNTIME.** Read existing KFB_HUB WS0 game-design folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
+- `CASCADE_SPHERE_R9_WS1_ENVIRONMENT_OSM_TERRAIN3_KAYKIT_CROSSWALK_2026-10-28.md` – actual WS1 terrain3 and ground seam source, OSM City Lab three city styles/road and bridge semantics, current 3D canon/Clay/lighting, measured Kit Lab and Platformer R6/R7 assets, one proposed true L01 environment composite.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_SOURCE_MATRIX_2026-10-28.json` – 11 source/owner/status records and one first Environment Golden candidate.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_CROSSWALK_SOURCE_REPORT_2026-10-28.md` – 22/22 source/document assertions, **0** new real visual/gameplay/render/City bridge/mobile tests. Return and Changelog additive.
+
+**Truth:** current `ws1/terrain-439` really contains animated `terrain3` bands and R3F terrain hook; older `ws1/r3f-frame` does NOT. Latest private WS1b source/head and current Site runtime still need verification. OSM City Lab offers normalized real roads/buildings and Clean/Cartoon/Grotesque source presentation, but full current WS1 bridge contact/hero landmark fit unproven. KayKit original source and R6/R7 semantically measured/GLTF material sample donors exist; full purchased Platformer binary/visual intake pending. Apply existing WS0 CANON_3D_R1, NOT a new shader/color authority. Current `applyTerrain3` affects whole material; selective building/Platformer faces need source UV/mesh masks and current WS1 material owner.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` plus actual current WS1b host branch/palette/source pin, one authored source-true L01 scene. No new Stage/Site, main merge, Runtime modification or Live.
+
+---
+
 ## BRANCH-LOCAL R8 · 2026-10-28 · 4GTN LARGE-RIG BOSS DONOR FOR CASCADE SPHERE
 
 **ADDITIVE SOURCE-BASED BOSS DESIGN ONLY, no new combat/runtime/asset owner or live boss.** Existing WS0/KFB_HUB Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
