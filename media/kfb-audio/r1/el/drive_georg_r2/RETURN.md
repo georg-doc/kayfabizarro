@@ -1,3 +1,16 @@
+## Aktuell: Georg R4 · bassiger Jetpack + räumliche Mechanik integriert
+
+28.10.2026, WSA → WS0. Neue manuelle ElevenLabs-Quellen von Georg verarbeitet; nur persönliches Jetpack geändert. Spielrepo `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **76b8bf0083ca74970f351a364ac2813f749c1272**.
+
+- Zwei bassreiche Lastloops, vier reine Metallvarianten und drei Pops geschnitten; Originale unverändert. Assetpin **5bcaf7e94dda3727a547d945a9a5a0042f61b32b**, `media/kfb-audio/r1/el/jetpack_georg_r4/`, auch Dropbox unter `40_AUDIO/elevenlabs_r1/jetpack_georg_r4`.
+- Räumliche HRTF-Ausgabe folgt der Figur, vorhandener Listener/Context/Mixowner bleibt. Ein Metall-Loop gleichzeitig, kurze Phasen mit Pausen, keine direkte Variantenwiederholung, weiches Schubende. Alte Engine-Färbung für neue Jetpack-Mischung umgangen, Bass erhalten und breit gestützt. Drei Pops an bestätigten Lastkanten.
+- [Return, konkrete Kritik und ElevenLabs-Optimierungen](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/76b8bf0083ca74970f351a364ac2813f749c1272/audit/V931_WS0_JETPACK_GEORG_R4.md), [Messwerte](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/76b8bf0083ca74970f351a364ac2813f749c1272/audit/V931_JETPACK_R4_METRICS.json). Frühere R3-Quellen klanglich abgelehnt; pauschale Bassverbote waren falsch. Georg berichtet gute Vielfalt der neu getrennten Mechanik-Loops; Gesamtmischung noch nicht gehört/freigegeben.
+- Echter sichtbarer Spieltest: drei Metallphasen (2→4→3), HRTF-Position folgt Figur, Motor/Metall aus beim Gleiten, Luft bleibt; ein Context, keine JS-/Audiofehler, nach Landung null Loops/retiring. Ein Cozy-Musikrequest fehlgeschlagen/abgebrochen. Relevante Units und Build PASS, enger Critic CONTINUE nach Ausblendkorrektur.
+- Paket 2.575.482 Dateibytes, 10.063.620 zusätzliche PCM-Bytes; keine globale Speicherreduktion behauptet. Keine neuen Generierungsaufrufe oder weiteren Credits durch WSA.
+- Lokale Hörfläche `work/v908-racer-jetpack/test/out/v908/JETPACK_GEORG_R4.html` im KFB-Hub-Checkout: vorige R2 gegen neue R4 im echten Spiel, Gesamtpegel angeglichen, neun Einzelklänge. **Ein nächstes Gate: Georg hört Bass, Übergänge, Metall-Dosierung und räumliche Wirkung.** Danach WS0-Übernahme/Tuning, kein Merge/Live. OSM-Langflug/TTS/Elan weiterhin offen.
+
+---
+
 ## Aktuell: R3 klanglich abgelehnt · vorige R2 wieder aktiv
 
 Georgs Hörurteil: neues hohes Quietschen sehr unangenehm und unpassend, auch WS0s neue Quellen überzeugen nicht. Die neue Mischung ist **nicht freigegeben**. Voriger R2-Flugpfad wieder Standard, neues Paket deaktiviert; Quellen erhalten. Spielbranch `work/wsa-v908-racer-jetpack-r1`, [PR45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), verifizierter Head **d7e6e0d1edc195bf31242596ba3981d2a00d5a84**. Frischer sichtbarer Spieltest: DIY=false, keine neuen PCM-Bytes, alter Boost, ein Context, am Ende 0 Loops, keine JS-Fehler; ein Cozy-Musikrequest abgebrochen/fehlgeschlagen. Enger Unit-/Syntaxcheck PASS. Kein Merge/Live.
