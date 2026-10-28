@@ -14184,6 +14184,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-980",
+   "date": "2026-10-28",
+   "area": "Site",
+   "verdict": "BUILD",
+   "text": "Site-Paket R5 aus game/proc-world-ws0 @9fc8d09 (Figurenwahl, Jetpack mit Tanks und Klang, Locomotion States, FB_CANON, Licht als Ganzes, Dachfahrer auch nach Wagenwechsel, V-945-Farben): KFB-Stunt-Car-Race site/mvp-r5-dist @891a81a, stumme Feature-Prüfung grün (mit /raw-Proxy). Fix: V-945-Grundfarbbilder im Site-Build als eigene Dateien (Pages-Grenze 25 MiB). Hub: b256 WS1-Integrations-Block, b257 WSA-Deploy R5; erledigt/überholt markiert b140, b247, b248-wsb, b251, b252; b253 geht in Slice I4 auf. Jetpack-Bündel (jetpack, jetTank, flightSignal, locoStates) holt WSA je Bau-Schritt aktuell aus dem Hauptspiel.",
+   "values": {},
+   "owner": "Site",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 28.10.: spielbare Version als Session-Abschluss auf die Site; Hub-Briefings aktuell halten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
