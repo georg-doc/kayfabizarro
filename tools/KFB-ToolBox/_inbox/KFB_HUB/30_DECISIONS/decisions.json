@@ -13449,6 +13449,36 @@
    "applies": "nach Georgs Wahl in q283"
   },
   {
+   "id": "V-931",
+   "date": "2026-10-28",
+   "area": "Ton",
+   "verdict": "DECIDE",
+   "text": "Klangrichtung aller Antriebe (Georg, über WSA audio): DIY, gebastelt/gehackt/getunt, Steampunk/Dieselpunk, unrund und stotternd, mit gezielten explosiven Pops; nicht jedes Fahrzeug gleiche Datei oder gleiche Unregelmäßigkeit. Jetpack kleiner und leichter (kleiner Motorkörper, weniger Bass), keine sterile Sci-Fi-Turbine. Pops nur als One-shots an bestätigten Schub-/Lastwechseln mit Varianten und Sperrzeit. R2-Zwischenmischung (P01 −3,9 dB, P03 −12 dB) auf PR 45. WS0 liefert zwei Jetpack-Lastloops + drei Pops per ElevenLabs (Prompts replies/WS0_JETPACK_ELEVENLABS_R2.md), WSA schneidet und bindet an.",
+   "values": {},
+   "owner": "PR 45 · audit/V908_WS0_JETPACK_DIY_R2.md",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Maschinen sind gebastelt, nicht gekauft – man soll hören, dass jemand daran herumgeschraubt hat.",
+   "applies": "nach Georgs Hörurteil"
+  },
+  {
+   "id": "V-932",
+   "date": "2026-10-28",
+   "area": "Welt",
+   "verdict": "DECIDE",
+   "text": "Prop-Pool (V-920) Messstand WSA: 6092 GLB/glTF mit unveränderter measure() gemessen, 84/84 Forest-Kacheln exakt gleich. Quaternius Ultimate Nature (150 Modelle nur BLEND/FBX/OBJ): WS0 entscheidet: BLEND-Original in Blender öffnen und je Modellobjekt dieselbe measure() anwenden (Öffnen ersetzt nur das Laden, nicht die Messung); FBX/OBJ zählen als Format-Duplikate, keine eigenen Kacheln. foot_r_m/foot_off_m und long_axis bleiben leer (offen) – der Kern nutzt ohne Messung die Formel (note_v790), WS0/WSB messen nach; keine erfundenen Werte.",
+   "values": {},
+   "owner": "PROP_POOL_START.md (WSA, lokal)",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gemessen wird mit derselben Routine am Original; was die Routine nicht misst, bleibt leer statt geraten.",
+   "applies": "nach WSA-Kachelkatalog"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
