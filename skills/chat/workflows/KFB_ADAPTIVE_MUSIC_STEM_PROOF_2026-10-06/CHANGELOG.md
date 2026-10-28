@@ -1,3 +1,11 @@
+## 2026-10-28 · Bell Resonance R4 · USER REJECTED R3 VISUAL / true 3D geometry proof
+- Binding Georg visual correction: no 2D/SVG/pseudo-spatial ring/vault/cheap scaffolding as product, no personified bronze/object-humour; show real 3D bell geometry with inner/outer walls and sound bow, real cutaway, clapper, and *physically validated* FE/experimental surface eigenmodes rather than decorative FFT halos.
+- Added R4_Binding design correction with research-backed modal/FEM pipeline and license-isolated 3D donor shortlist; historical objects not downloaded/adopted. Created original **nonhistorical** true 3D geometrical test with three GLB exports and isolated VTK screenshots, scripts, 44/44 numerical/roundtrip tests PASS. Bundle is a conversation artifact, NOT hosted/published or in GitHub binary source.
+- Recorded eight CC0/Public Domain church-bell recordings as exact license/author/page source candidates. Original WAV/OGG download attempted but blocked by Freesound account requirement and Wikimedia OGG inaccessible in tool. Therefore audio imports/real source spectra 0. No purchase/license negotiation required for verified CC0/PD.
+- Added four R4 research files, owner Return / research Return, PR #458 evidence. Single existing Audio owner #365, pending immersive #455, no runtime or Site change. Next gate KFB_BELL_R4_REAL_CC0_AUDIO_PLUS_VERIFIED_SOURCE_3D_MODAL_ISOLATION.
+
+---
+
 ## 2026-10-28 · Bell Resonance R3 · isolated source-to-architecture prototype
 - Three actual original R2 synthetic WAVs (not historic bells) analyzed into 234 × (RMS+8 bands) frames/source; authored independent bronze bell shown first as original source object, then listening-vault and speculative Egregore/Ley map 2D concept modes. Local portable interactive HTML/CSS/JS + six Chromium screenshots packaged as conversation artifact `KFB_BELL_CAMPANILE_R3_PROOF.zip` with hashes in R3_SOURCE_MANIFEST.json. **Not committed in repo as binary/full UI; not deployed**.
 - Tests executed: original R2 18/18, pure source→geometry module 25/25 Node, offline Playwright media/controls 15/15 (local HTTP and file access blocked; fixture used real WAV bytes with data URL, not public URL QA). No historic church bell recordings acquired or measured. No human sonic acceptance, Site/3D/HRTF/iOS proof.
