@@ -1,3 +1,9 @@
+## 2026-10-28 · Research companion · Bell Resonance / Impossible Campanile (Draft PR #458)
+
+**RESEARCH-PERSISTED · CONCEPT SLIDES AUTHORED AS STORYBOARD · NO NEW RUNTIME/SITE.** This is an additive historical, bell-acoustics, bowl, spatial, binaural, Schumann-sonification, Egregore / Ley / morphic narrative and immersive Mindscape concept. Full source and engineering handoff: `bell-resonance-r1/RESEARCH_ATLAS_R1.md`, `SOURCE_ATLAS_R1.md`, `SLIDE_STORYBOARD_R1.md` (14 storyboard scenes), `PRODUCTION_BRIEF_R1.md`, `SOURCE.json`, `TEST_REPORT_R1.md`, and `RETURN.md`. Draft PR #458 is stacked on WS0 immersive Draft PR #455 (which remains unpublished) and current Audio owner #365; prior donor #453 is not current source owner. 8/8 editorial/source read-back/JSON checks PASS; 0 sound binaries imported/aurally isolated, 0 spectra measured, 0 real audio/browser tests, 0 slides rendered, 0 Site/Stage/Live/merge. No change to existing MVP listening gate or to current WS0 #455 browser/source-isolation/publish gate. Single downstream bell gate: `KFB_BELL_R1_THREE_SOURCE_RIGHTS_SOLO_AUDITION_MODAL_MEASUREMENT`. See research package Return for limitations and the exact latest branch ref.
+
+---
+
 ## 2026-10-13 · RETURN · Triplet & Opener Studio · existing Audio Site v11
 
 Status: **DEPLOYED_AND_VISIBLY_VERIFIED · CONTENT_HOT_RELOAD_PASS · PRODUCT_TUNE / HUMAN_LISTENING_PENDING**
