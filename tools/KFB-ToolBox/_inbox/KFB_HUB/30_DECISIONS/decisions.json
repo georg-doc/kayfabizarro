@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "entries": [
   {
    "id": "V-001",
@@ -14286,6 +14286,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Georgs Befunde auf R5 live.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-987",
+   "date": "2026-10-29",
+   "area": "Combat",
+   "verdict": "DECISION",
+   "text": "Cascade Sphere spielt mit Third-Person-Verfolgerkamera (über der Schulter, Fadenkreuz) wie Hauptspiel und Seed-World-POC; Draufsicht nur als Übersicht/Lagebild. Seed-World-POC 01 als spielbare Standalone-Referenz lokal unter 75_REFS/seedworld_poc01 (läuft: Flug, Minigun, Raketen, zerstörbare bunte Stadt). Georg: Design-Ja an WSA, R5.1 an WSA gegeben.",
+   "values": {},
+   "owner": "WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: Stilbilder wirken wie Draufsicht – gewünscht ist Third-Person-Shooter-Kamera.",
    "applies": "sofort"
   },
   {

@@ -30,6 +30,7 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
   - Der Kern weiß nichts vom Thema.
 
 ## 3 · Steuerung (auch am Handy ohne Fummelei)
+- **Kamera (Georg 29.10., V-987):** Third-Person-Verfolgerkamera über der Schulter mit Fadenkreuz wie im Hauptspiel bzw. im Seed-World-POC (Flug, Minigun auf 1, Raketen auf 2). Die Draufsicht der Stilbilder ist nur Übersicht bzw. Lagebild (z. B. kurz beim Rundenstart oder als Zoom-out), nicht die Spielkamera. Spielbare Referenz: `KFB_HUB/75_REFS/seedworld_poc01/SeedWorld_Mech_Destruction_POC01.html` (Kopie der Standalone-Datei aus kayfabizarro `tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/`).
 - **Frei fliegen** mit unserer Spielsteuerung (Jetpack bzw. Mech, Flugsignal und Flug-Zustände aus dem Hauptspiel).
 - **Zeigen und tippen** löst Aktionen aus:
   - Tippen auf Goo oder Gegner: zielen und feuern (Gatling bzw. Blaster, Zielhilfe).
