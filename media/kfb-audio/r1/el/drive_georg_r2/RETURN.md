@@ -1,5 +1,17 @@
 ## Georgs Freigabe und Folgeauftrag · 28.10.2026
 
+## Aktueller Integrationsstand 28.10.2026
+
+Georgs Grundkonzept-/Schnittfreigabe und Vergleich ohne V-903 sind umgesetzt. Dragster und Hover wurden zuerst im echten Spiel integriert und verglichen, anschließend ein persönliches Jetpack-Profil. Umsetzung durch WSA auf eigenem WS0-Reviewbranch, kein Merge und keine Live-Promotion.
+
+- [Draft PR 45](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/45), Repo `georg-doc/KFB-Stunt-Car-Race`, Branch `work/wsa-v908-racer-jetpack-r1`, verifizierter Head `ad73ead27334def7805624ac068cf2bcdea14341` (Implementierung `2ba9f5231aa0e5f4e9d586cd5ba00b82b77c04bc`). Basis WS0 `36461d199ff037824cbe330b4ed553d8f00a7b81`.
+- [Vollständiger Return und Grenzen](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad73ead27334def7805624ac068cf2bcdea14341/audit/V908_INTEGRATION_RETURN_R1.md), [Messwerte](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad73ead27334def7805624ac068cf2bcdea14341/audit/V908_METRICS_R1.json), [Recherche und zwei gezielte optionale ElevenLabs-Prompts](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad73ead27334def7805624ac068cf2bcdea14341/audit/V908_RESEARCH_AND_GAPS_R1.md).
+- Sechs echte Spielaufnahmen; ein AudioContext, keine protokollierten JS-/Audiofehler. Zehn Fahrzeugwechsel: fünf neue Requests, 3.528.000 PCM-Bytes stabil, maximal drei neue Loops. Jetpack: Schub/Gleiten/Boost/Kurve/Landung, Motor aus beim Gleiten, Luft bleibt, kein R2-Neustart beim Landen. Warmstart-Nachbesserung: erster Takeoff 15,4 ms, Boost 25,2 ms bis zur Audio-Planung im abschließenden Lauf (n=2, keine Lautsprecherlatenz).
+- Build und relevante Unit-Regressionen bestanden; unabhängiger Critic/Guard CONTINUE nach Reparatur der Landungsnaht. Hörvergleich lokal in `work/v908-racer-jetpack/test/out/v908/SPIELVERGLEICH.html` des KFB-Hub-Checkouts, mit konstantem Pegelausgleich; keine öffentliche Abnahme-URL behauptet.
+- Nächstes Gate: Gesamt-Hörabnahme durch Georg/WS0, danach WS0-Übernahme. OSM, Elan-Rollmanöver und TTS-Belastungstest offen; keine erneute Einzeldateifreigabe. Greifhaken nur spätere Konzeptnotiz. Frühere offene Aussagen zu V-903/Integrations-GO unten sind durch Georgs spätere Freigabe überholt; historische Material-/Quellrollen-Befunde bleiben erhalten.
+
+
+
 **Grundkonzept und Schnittweise freigegeben.** Georg hat die Hörproben positiv beurteilt; keine Einzelabnahme sämtlicher Dateien erforderlich. Auswahl/Eignung der tatsächlich eingebauten Klangrollen bleibt Aufgabe des Builders. Die ältere Aufforderung unten, vor Weiterarbeit alle 46 Quellen von Georg abnehmen zu lassen oder V-903 zu ergänzen, ist nicht die aktuelle Route. Vergleich ohne V-903 bleibt freigegeben.
 
 Nächster Auftrag: zwei unterschiedliche bestehende Fahrzeuge mit Dauerschichten und getrennten Events im Spiel vergleichen; anschließend einen Jetpack-Typ als eigenen Haupt-Locomotion-Klangprofil-Slice bearbeiten. WSA kann Recherche und Jetpack-Slice sowie nach Koordination den benannten Integrator im bestehenden WS0-Owner übernehmen. Erweiterte Primärquellen-Recherche, konkrete Timing-/Trigger-Regeln und gezielte ElevenLabs-GAP-Liste für WS0 sind Bestandteil. Greifhaken/Gripping ist nur eine spätere Konzeptnotiz, kein aktueller Physikbau.
