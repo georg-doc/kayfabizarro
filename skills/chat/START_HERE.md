@@ -1,3 +1,19 @@
+## BRANCH-LOCAL WS0 GAME DESIGN R2 · 2026-10-28 · KAYKIT PROTOTYPE FACTORY MAZE
+
+**DESIGN / SOURCE PROPOSAL ONLY, NO RUNTIME, NO MAIN CHANGE.** Georg has refined Cascade Sphere to a three-level source-backed factory-city maze using KayKit Prototype Bits 1.1 + City Builder Bits 1.1, official Platformer Pack after verified intake, Dungeon measured seam and WhackMan route donors, one flying Mech, instanced Fluff, Goo, build/destroy and cards.
+
+Read from the existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/ owner folder:
+- PROTOTYPE_FACTORY_MAZE_KAYKIT_R2_WS0_2026-10-28.md (gameplay/design and exact source matrix);
+- PROTOTYPE_FACTORY_MAZE_R2_SOURCE_SELECTION.json (16 source candidates, all unrendered);
+- PROTOTYPE_FACTORY_MAZE_R2_TEST_REPORT_2026-10-28.md (26/26 document/source checks, 0 gameplay/visual tests);
+- additive RETURN.md and CHANGELOG.md; R1 Cascade Sphere remains prior context.
+
+The complete official KayKit Platformer Pack has NOT been identified as a current imported KFB environment pack; official FREE and EXTRA tiers are not interchangeable. Current WS1/WS1b remains sole productive R3F owner, WB2 Island R4 remains STOPPED, other Combat/Asset/World/Card/Audio owners unchanged, no new GPT Site or Cloudflare Stage.
+
+**ONE NEXT GATE:** WS0_SOURCE_ISOLATION_AND_LEVEL01_FIXTURE — WS0 + Asset Librarian isolate original existing City/Prototype 1.1 components and real Mech, resolve Platformer Pack, pin actual WS1b receiver and select one Level01 Switchyard game fixture. No runtime/merge/Live authorization implied.
+
+---
+
 ## BRANCH-LOCAL WS0 DESIGN ROUTE · 2026-10-28 · CASCADE SPHERE / MECH × OSM / PR #435
 
 **ADDITIVE PROPOSAL / SOURCE ROUTING ONLY, NOT MAIN OR CANON:** Georg's expanded flying Combat-Mech + OSM street-maze + Fluff/Goo/Card/Quest/Sphere mini-game concept is persisted under the existing KFB_HUB WS0 Game Design reply folder:
