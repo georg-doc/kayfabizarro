@@ -128,3 +128,27 @@ WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately t
 **KFB Hub / router note:** the design and evidence files are in the existing KFB_HUB `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/` folder and Draft PR #435; branch-local `skills/chat/START_HERE.md` receives only a source pointer. The production Hub's published status/cards have not changed because this is not a deployed product or a new human playable review route. No bogus direct Stage URL.
 
 **ONE NEXT GATE (supersedes the older generic G1/G4 or Roadster-only gate for this concept lane):** `WS0_SOURCE_ISOLATION_AND_RECEIVER_TRIAGE` — WS0 pins actual active WS1b code/host, isolates real original Mech+Minigun (+Axe as source asset), a real machine/BlockBits donor and a coherent OSM street mini-zone, labels KEEP/ADAPT/REJECT/SOURCE_REQUIRED, then selects one playable two-minute Fluff/Goo/Mech encounter. Later runtime work needs explicit authorization. No merge/Live.
+
+---
+
+## CURRENT ADDENDUM · 2026-10-28 · KayKit Prototype Factory Maze R2 for WS0
+
+**Status:** GEORG ADDITIVE CREATIVE IDEATION + SOURCE-AUDITED DESIGN, no gameplay implementation, no accepted design look, no new runtime, no Site/Stage/Live. This R2 refines the same-day Cascade Sphere R1 without discarding its Mech, OSM city, Mindscape, Fluff/Goo, KFB cards or optional Qiva direction.
+
+**Read first:** 
+- PROTOTYPE_FACTORY_MAZE_KAYKIT_R2_WS0_2026-10-28.md — full 3-level gameplay design, generator/Dungeon/Gizmo adaptation, source-real KayKit candidates, Fluff path/gameplay and pending WS0 decisions.
+- PROTOTYPE_FACTORY_MAZE_R2_SOURCE_SELECTION.json — 16 exact source candidate GLTF paths with source-only statuses, explicit gaps, retained provenance.
+- PROTOTYPE_FACTORY_MAZE_R2_TEST_REPORT_2026-10-28.md — executed current-turn data/source/edit checks, untested results.
+- Prior R1: CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md, own report and prior Return remain valid history.
+
+**Exact source findings:** Official KayKit Platformer itch product confirmed CC0 and family contents, but the complete official pack has **not** been found as an identified KFB main environment pack. The current GLB_platformer folder contains only five other character GLBs. Do not fake Platformer assets from Kenney packs or assume Extra premium assets are owned. Main includes KayKit_Bits_Bundle1_1.1 Prototype Bits with **85 actual GLTF** and City Builder Bits with **73 actual GLTF**, their correct 1.1 texture/binaries, plus a known original City Builder 1.0 scene recipe with noBase handling. 16 selected 1.1 asset candidates all have matching .gltf and .bin file names in the repository's directory inventory. This is existence, **not** actual visual isolation/measurement. Existing Dungeon S13.2 measured cell/seam/door generator and WhackMan MazeGraph/BFS are usable typed donors, while TransformControls are an AUTHORING Gizmo donor, not mobile play interaction.
+
+**P0 proposed product:** L01 SWITCHYARD 90–150 s (1 split, 2 feasible routes, 1 switch, 1 wave) → L02 BLACK GOO BLOCK 120–210 s (1 infectable detachable cell + Mech targeted shot + valid repair socket) → L03 ROOFTOP RELAY 150–240 s (2 heights, real Platformer button only after source intake, player flight/landing). One canonical graph, one receiver, same world/combat/audio/card/save authorities. OSM city and larger Mindscape wrapper later; no alternate world/simulator/renderer or new editor owner.
+
+**Real new checks:** Source-design and selection documents each created on the existing Draft PR #435 branch and exact fetched back. Test report **26/26 source/editorial assertions PASS** (including 16/16 candidate GLTF names and 16/16 matching BIN names in GitHub main directory inventory). No runtime/gameplay/Node/browser/3D visual screenshot/mobile/GPU/Stage tests: **0**. No CI, no asset download/upload, no actual SOURCE-ISOLATED donor render.
+
+**Scope and owner:** Existing KFB_HUB WS0 Game Design doc lane / Draft PR #435, WS1/WS1b only productive game receiver after explicit separate approval. Audio, Combat, OSM City Lab, Registry/Librarian, Card/Almanac, World/Camera/Save and HyperNorm/Mindscape owners retained. WB2 R4 remains STOPPED. Published KFB Hub live metadata unchanged as there is no playable or published user-facing milestone. Branch-local START_HERE routing and PR body carry the source pointers; no auto-merge or Live.
+
+**Open for WS0:** official Platformer FREE/EXTRA asset intake and license/version pin; real measured/visually isolated 1.1 buildings/roads/prototype switches; actual source button/mech mount; active WS1b receiving head and existing flight/shot/hit interface; one destructible adaptation shell without destroying original building geometry; packet mesh/eyes visibility at phone scale; q103 Goo color cure, D6 and Quest-Die balance; player-save idempotence; later OSM-to-Maze and Mindscape entry/return contracts.
+
+**ONE NEXT GATE (replaces R1's wider source/receiver triage for this game-specific design lane):** WS0_SOURCE_ISOLATION_AND_LEVEL01_FIXTURE. WS0/Asset Librarian isolate actual source City Builder+Prototype 1.1 models, resolve current Platformer pack availability and exact source status, and pin current WS1b owner/head. Then select exactly one L01 SWITCHYARD fork/two-route/switch/wave recipe with KEEP/ADAPT/REJECT/SOURCE_REQUIRED before any later authorized WS1 gameplay proof. No Stage/Live promotion.
