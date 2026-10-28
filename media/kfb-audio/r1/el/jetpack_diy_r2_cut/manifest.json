@@ -1,0 +1,141 @@
+{
+  "sourceCommit": "9a86ab34d8b6db00d18476d36b60d6df3770ebf6",
+  "selection": "Technical candidate: lowest sub-180 Hz fraction + 0.01 * envelope variation dB per load; no claimed auditory judgement",
+  "sourceInventory": [
+    {
+      "id": "A_jetpack_low_take1",
+      "sha256": "2b327cec9fa3ef3bb79e1ab02bca14fa10ebb0385e5b404bd66c0b7ab44cf572",
+      "seconds": 8.0,
+      "bassBelow180Fraction": 0.006580793340239655,
+      "envelopeStdDb": 1.6210005981148816,
+      "monoMethod": "average",
+      "monoLossDb": -0.006901254757019987
+    },
+    {
+      "id": "A_jetpack_low_take2",
+      "sha256": "b0b42711d6748a5b7a3e1ce79f43ee7eeaae25dbbd548d1530dfb7e04ab631a7",
+      "seconds": 8.0,
+      "bassBelow180Fraction": 0.5449348236574312,
+      "envelopeStdDb": 1.094078132968912,
+      "monoMethod": "average",
+      "monoLossDb": -1.2586339468518228
+    },
+    {
+      "id": "B_jetpack_high_take1",
+      "sha256": "43aab74b5eabfcacd0a61f10cb6d251517bb2e6816157120fcfeb8aa844d2bea",
+      "seconds": 8.0,
+      "bassBelow180Fraction": 0.10625671271244792,
+      "envelopeStdDb": 0.759096237763841,
+      "monoMethod": "average",
+      "monoLossDb": -0.2877575485439301
+    },
+    {
+      "id": "B_jetpack_high_take2",
+      "sha256": "ba90e4695b40e5792500028dfd6a38e6009decb1719dae43f1abfa036a4b37f1",
+      "seconds": 8.0,
+      "bassBelow180Fraction": 0.1758388226492674,
+      "envelopeStdDb": 0.7427335119626725,
+      "monoMethod": "average",
+      "monoLossDb": -0.6385705856481992
+    },
+    {
+      "id": "C_jetpack_pop_v1",
+      "sha256": "38cde8411e1a1c66ecfa84e1d69ec10ef4791940b95a1fa358c1e06788185589",
+      "seconds": 0.48,
+      "bassBelow180Fraction": 0.8782121776870273,
+      "envelopeStdDb": 18.306645663343723,
+      "monoMethod": "average",
+      "monoLossDb": -0.5709823338881116
+    },
+    {
+      "id": "C_jetpack_pop_v2",
+      "sha256": "83a3aefaf2ee672550e160847f1aa697f2d8499910afd9dfe18fbbcd96015594",
+      "seconds": 0.48,
+      "bassBelow180Fraction": 0.4343418860776111,
+      "envelopeStdDb": 13.124930120327267,
+      "monoMethod": "average",
+      "monoLossDb": -0.02659264420266974
+    },
+    {
+      "id": "C_jetpack_pop_v3",
+      "sha256": "9f564385606e4cc86e28f661bc19a875233e5f9997172fd9cff3b08328bbd949",
+      "seconds": 0.48,
+      "bassBelow180Fraction": 0.8618642039493897,
+      "envelopeStdDb": 12.682032347075463,
+      "monoMethod": "average",
+      "monoLossDb": -0.06988417779995601
+    }
+  ],
+  "assets": {
+    "low": {
+      "file": "low.flac",
+      "sourceId": "A_jetpack_low_take1",
+      "sourceSha256": "2b327cec9fa3ef3bb79e1ab02bca14fa10ebb0385e5b404bd66c0b7ab44cf572",
+      "sha256": "773dcc002dadeac6c70bcfdc8d924a7e494dc1ab4611f989c55d9618f1d43f76",
+      "bytes": 329626,
+      "seconds": 5.88,
+      "sourceStartSeconds": 0.25,
+      "overlapSeconds": 0.12,
+      "gainDb": 4.3797285774230374,
+      "measuredLufsPaddedTo500ms": -19.99999784755095,
+      "truePeakDb": -10.16987276934675,
+      "seamJumpToP999": 0.022225328487559304
+    },
+    "high": {
+      "file": "high.flac",
+      "sourceId": "B_jetpack_high_take1",
+      "sourceSha256": "43aab74b5eabfcacd0a61f10cb6d251517bb2e6816157120fcfeb8aa844d2bea",
+      "sha256": "c8405016b6141ae2e49953170743f41562c342879233f6107d0588c3014bbaa5",
+      "bytes": 358612,
+      "seconds": 5.88,
+      "sourceStartSeconds": 0.35,
+      "overlapSeconds": 0.12,
+      "gainDb": -7.388392006624013,
+      "measuredLufsPaddedTo500ms": -19.999999239457235,
+      "truePeakDb": -7.623118410643601,
+      "seamJumpToP999": 0.041410494727063575
+    },
+    "pop1": {
+      "file": "pop1.flac",
+      "sourceId": "C_jetpack_pop_v1",
+      "sourceSha256": "38cde8411e1a1c66ecfa84e1d69ec10ef4791940b95a1fa358c1e06788185589",
+      "sha256": "2435f9a15d4722da457fe2985196afc2d6287bf26ccb9f86262a9498629e1206",
+      "bytes": 14078,
+      "seconds": 0.32,
+      "sourceStartSeconds": 0.005124716553287982,
+      "overlapSeconds": 0,
+      "gainDb": -2.7156323497914667,
+      "measuredLufsPaddedTo500ms": -22.456193386353604,
+      "truePeakDb": -2.9999196574765756,
+      "seamJumpToP999": 0.0
+    },
+    "pop2": {
+      "file": "pop2.flac",
+      "sourceId": "C_jetpack_pop_v2",
+      "sourceSha256": "83a3aefaf2ee672550e160847f1aa697f2d8499910afd9dfe18fbbcd96015594",
+      "sha256": "ffab6589f6394ce16433cd56283f4d64be657e58bf927c64c3b3549a379c825c",
+      "bytes": 15822,
+      "seconds": 0.32,
+      "sourceStartSeconds": 0.022766439909297054,
+      "overlapSeconds": 0,
+      "gainDb": -3.3789669382325838,
+      "measuredLufsPaddedTo500ms": -24.498538067201864,
+      "truePeakDb": -3.0000416336456315,
+      "seamJumpToP999": 0.0
+    },
+    "pop3": {
+      "file": "pop3.flac",
+      "sourceId": "C_jetpack_pop_v3",
+      "sourceSha256": "9f564385606e4cc86e28f661bc19a875233e5f9997172fd9cff3b08328bbd949",
+      "sha256": "fc67e754902253ac1b784fbc643eb4a9ae3f0e467aa1cb4ad0f092a561242e6b",
+      "bytes": 13498,
+      "seconds": 0.32,
+      "sourceStartSeconds": 0.0,
+      "overlapSeconds": 0,
+      "gainDb": -3.1343080871192828,
+      "measuredLufsPaddedTo500ms": -25.244543521802594,
+      "truePeakDb": -3.0001869530178644,
+      "seamJumpToP999": 0.0
+    }
+  }
+}
