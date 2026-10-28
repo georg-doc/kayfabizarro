@@ -149,3 +149,32 @@ Deliver one coherent miniature source-authentic *Factory Maze* inside the **exis
 | F-30 | WFC author fallback | after C1 is green, optional local WFC only in permitted variant sockets; contradiction uses identical proven authored layout, visual effect cannot block player or shift real OSM roads |
 
 **Do not block existing WS0 L01 on all 171 manual port measurements:** first automatically parse/load all; visually inspect source-critical 5–8 real models; measure four family boards as owner time allows. L01 genuinely requires one source-safe floor/road, one lever/button, one source-visible Fluff and one destination. All families can become catalogued in incremental release slices after source intake. Keep one next gate `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` and a later separately approved WS1 build.
+
+
+---
+
+## ADDITIVE R7 · 2026-10-28 · Source Material Zones and Selective Animated KFB Terrain Colorbands
+
+**User requirement:** identify which exact original KayKit Platformer model surfaces/parts are independent material slots, independently movable mesh nodes or UV-atlas color zones; allow KFB terrain-colored moving bands and surreal material mix on select blue tops/belts/props, not blindly on every face. Read:
+- KAYKIT_PLATFORMER_R7_MATERIAL_ZONES_AND_TERRAIN_COLORBAND_WS0_2026-10-28.md (full source-backed strategy and constraints);
+- KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_GLTF_SOURCE_PROBES_2026-10-28.json (12 ORIGINAL GLTF materials, mesh primitives, child nodes);
+- KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TARGETS_CANDIDATE_2026-10-28.json (8 exact targeted candidates, four optional presentation profiles);
+- KAYKIT_PLATFORMER_R7_OFFLINE_MATERIAL_ZONE_SCANNER.py (offline source-only scanner, not executed on the full pack; needs source GLTF/BIN/PNG intake and optionally Pillow for actual atlas pixel sampling).
+
+**Direct original source conclusion:** sampled blue platform and slope, pipes, neutral wood floor, colored red/green/yellow platforms = ONE primitive, ONE platformer material with atlas, so blue surfaces are **NOT independent material slots**. Button/lever/sawblade have separate original child mesh nodes sharing one source atlas material, allowing per-mesh cloned materials after source load; finer face recoloring requires UV/mask. EXTRA conveyor_4x4x1_blue has separate primitive material index 1 **threads** using threads.png, independent of platformer frame material index 0: lowest-risk first animated belt surface. Source atlases, UV masks and true visual geometry still require actual binary/pixel source probing and render proof.
+
+**Material-zone guard:** add any KFB shader as recipient-owned **presentation/material profile**, never a gameplay condition, custom collision, second animation ticker, global shared material mutation or new material engine. Keep Source OFF→same exact original material, all clones disposed on reset; sample performance p50/p95 on real target Mac/phone with effects OFF/ON. KFB CANON_3D palette/lighting and current WS1 terrain-material owner remain authoritative; active WS1b API to be pinned by Work.
+
+**Future acceptance cases (previous F-01…F-30 remain intact):**
+| ID | Situation | Required actual WS1/Asset Librarian proof |
+| --- | --- | --- |
+| F-31 | original model + mask disabled | exact source KayKit atlas/material identity and lighting, no unintended global replacement |
+| F-32 | L01 blue platform top masked colorband | upper surface colored/animated from KFB terrain profile while original side trims and underside remain unchanged under 0/90/180/270° rotations |
+| F-33 | EXTRA conveyor special source material | threads.png primitive animates or receives colorbands separately from frame, actual authoritative Fluff routing unaffected by texture scrolling |
+| F-34 | source button/lever child animation + tint | moving/tinted child stays independent of original base and of other cached switch instances, reset restores original pose |
+| F-35 | actual model UV/face/material audit | indexed BIN UV+POSITION/PNG samples produce verifiable per-face zone candidate masks; red/green/yellow/neutral handling provenance checked |
+| F-36 | creative mix and device QA | source original vs KFB Clay/band/surreal material blend rendered from same camera; mobile readability/visual continuity measured, reduced-motion fallback and shader/program/clone/dispose evidence |
+
+**No original 525-model material atlas has yet been decoded/rendered** in WS1. The offline scanner is a prepared utility, not a source-authoritative runtime feature or already green extraction. Source material samples are *better than filenames*, but not evidence that a blue upper face has a distinct addressable UV palette region without BIN/PNG tests.
+
+**One next gate unchanged:** WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE. Include a source-real conveyor material-slot proof and one platform top/side mask comparison in the existing asset/visual intake, without blocking the basic L01 gameplay on all 525 source masks. No new Site/Stage/Live.
