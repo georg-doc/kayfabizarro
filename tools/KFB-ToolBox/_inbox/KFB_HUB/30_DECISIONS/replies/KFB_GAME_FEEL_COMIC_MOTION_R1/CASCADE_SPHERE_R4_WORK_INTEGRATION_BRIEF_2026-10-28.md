@@ -1,0 +1,91 @@
+# WS0 → Work / WS1 Integration Brief Candidate — Cascade Sphere Prototype Factory Maze R4
+**2026-10-28 · PREPARATION / NOT AN AUTHORIZATION TO MODIFY CURRENT WS1.**
+**This is the one Work-ready conceptual brief for later explicit WS0 approval.** It references existing PR #435, source R1–R3, R4 Blueprint, Contract Candidate, three Level Fixtures. Avoid creating a duplicate product spec outside the owner. Retain current single next gate `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`.
+
+## Product outcome / non-outcome
+Deliver one coherent miniature source-authentic *Factory Maze* inside the **existing live WS1 R3F game owner**, with three short, readable runs. At every run an actual authored connection changes where Fluff goes. Core delight: switch/flow/bounce, then Goo/Minigun/repair, then a rooftop Mech-activated relay. Single renderer/movement/combat/audio/save. Preserve KFB Clay source material, creator identity and optional Sweet Supply theme without building a restaurant game. After standalone entry proof, a World-owned POI/portal can offer encounter + safe return.
+
+**Non-outcome:** another low-poly separate three.js demo with fake player/collision/sound, a second universal WFC engine, all of Cologne, 500 agents, bespoke grappling hook, a new Card deck, a second game HUD, unmeasured FX overload, or a decorative nice picture with no working switch/packet consequence.
+
+## Role and ownership before any code
+- **WS0 (Game Design/Data + Asset Librarian):** confirms actual purchased Platformer FREE/EXTRA provenance, source hash, version, allowed public/private intake; pins chosen original assets and visual isolation; approves one L01 fixture and current design/3D canon; resolves which original Card(s), if any, appear.
+- **Work Builder/Integrator (only productive writer, WS1 current owner):** re-fetch exact latest active WS1b source + current contracts; reconcile R4 candidate JSON with real data/API; implements one thin encounter adapter and L01, then upgrades L02/L03 after green evidence. Never write onto a stale `ws1/combo-r2` snapshot based solely on this brief.
+- **Integration Tester (separate):** tests real graph/unit+host flows, actual source model render, mobile controls, save/reload and sound facts.
+- **Independent Critic:** reads live scene via gameplay controls from real device/browser and scores tactile action/readability/visual source fidelity/scope at a named checkpoint.
+- **Production Guard:** reviews evidence, chooses continue/repair/quarantine/stop. Only after assembled product and critic feedback can Georg decide PASS/TUNE/FAIL. Apply `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md`; no Builder self-acceptance.
+- **Stage/Site:** no new Site on concept acceptance; if current target is Site-capable, prefer existing appropriate owner Site according to KFB Site-first policy. A Live launch is a separately owned decision. Do not invent a public URL.
+
+## PREWORK P0: Exact sources and fixed fixture, not a giant asset migration
+1. Read R4 Blueprint, candidate module contract, three fixtures and R3 asset-intake; choose 5–8 original source models and ONE factory palette.
+2. Finish Platformer FREE/EXTRA asset source intake from provided Dropbox with original license, paths/size/digests, correct color textures and build visibility. Existing sealed `georg-doc/kayfabizarro-private-assets` V-538 manifest must be left unchanged; create a separate authorized intake destination if needed.
+3. Isolate source models in actual Asset Librarian/Kit Lab: City Builder road T + building, Prototype floor/door/target, Platformer lever/button and conveyor, real Combat Mech/Minigun; Bakery case/croissant only for optional art variant. Check orthographic and gameplay view + bounding boxes, collision feet, actual material.
+4. Pin exact current WS1b writer/branch/host, relevant Combat HitEvent, Audio, World Save, Player Save interfaces; emit KEEP/ADAPT/REJECT/SOURCE_REQUIRED per donor.
+5. Freeze L01 one source junction, two routes, one switch, one destination, first short wave. Don't wait for full WFC/OSM or q103 if L01 doesn't use either.
+
+## Integration path with explicit exits
+### C0: pure rules test, no visual claim
+- Parse candidate fixtures and validate unique node/edge IDs, endpoints, switch/socket target, initial blocked and final traversable routes, same seed/action order replay, blocked all-path WAIT, switch reverse, no premature packet arrivals, packet/receipt dedupe.
+- Avoid separate `setInterval`/rAF. Use host-owned fixed tick; game state and world-save owner mapped before code.
+- **Exit:** a pure test report with passing fixtures and one rerun, exact committed code, no visual acceptance claim.
+
+### C1: L01 SWITCHYARD in the actual WS1 host
+- Existing camera, player, input, assets, terrain, physics and one HUD; exact KayKit road/Prototype meshes and original materials, not rough greybox stand-ins declared final. Source lever activation changes canonical edge. One small Fluff group visibly queues, diverts, arrives in coherent route.
+- One short continuous clip from normal Play; one reset/same-seed sequence. Mobile tap large enough to activate and source display unobscured.
+- **Exit:** observable original model + input→route causal proof + visual/interactive desktop/mobile testing. No WFC mandatory.
+
+### C2: L02 BLACK GOO BLOCK
+- Combat owner emits real accepted ShotEvent→HitEvent. Only opted-in detachable shell hit; original intact KayKit model remains. Accepted hit changes local contamination/damage, yields candidate Fluff through source owner, repair consumes source-owned resource and changes a real edge/surface. Arrival sequence and save/reload remain source-identical.
+- **Exit:** one shot→visual physical break→actual route blockage/open→resource→repair→arrival chain, independently verified no duplicates and no body collision mismatch.
+
+### C3: L03 ROOFTOP RELAY
+- Existing Mech flight/motion reaches validated roof station; source Platformer button actually mounted; pressure/contact triggers one edge, at most 2 short waves. Desktop direct third-person; mobile accessible approach or authorized Build interaction per same state truth. Test jump/land/contact/camera occlusion/sound.
+- **Exit:** actor physically reaches/activates source switch, Fluff wave changes path and landmark receives packets, safe exit and return tested.
+
+### C4: optional controlled procedural and narrative expansion
+- Only once C1–C3 are real and measured: compare authored slot fill vs bounded deterministic tile-WFC (same seeds/camera); reject WFC if no discernible quality/variation advantage. Then try OSM validated small city patch, then sphere/H13 wrapper, then extra Card/Story Mode rule variants.
+- One expansion per measured outcome; no simultaneous city+OSM+WFC+full physics explosion rewrite.
+
+## Test matrix — executable acceptance scenarios for independent Tester
+| ID | Level / condition | Required observed output |
+| --- | --- | --- |
+| F-01 | parse each fixture | stable unique IDs; no dangling edges or sockets |
+| F-02 | L01 initial | no legal path to goal; arriving packets wait at valid node |
+| F-03 | L01 activate one switch | e_jn open, e_js closed; path spawn→junction→north→goal |
+| F-04 | L01 double trigger same intentId | one state change, one event, no duplicate receipt |
+| F-05 | L02 shoot unmatched prop | no cell damage, no Fluff grant, no changed route |
+| F-06 | L02 accepted Hit on shell | one cell becomes exposed; e_jr opens; final destination still blocked |
+| F-07 | L02 repair without source resource | rejected; e_rg remains closed |
+| F-08 | L02 eligible source-owned repair | e_rg opens; path reaches goal once |
+| F-09 | L03 Mech remote activation without contact | rejected by movement/contact owner |
+| F-10 | L03 owner-verified rooftop activation | e_jr opens; roof-to-goal path valid |
+| F-11 | after complete reset and exact same action timeline | logical node/packet outcomes identical, visually randomized FX allowed |
+| F-12 | user changes only Tech/Sweet theme | authoritative graph/event/arrival counts identical |
+| F-13 | decorative WFC contradictions | fallback to authored valid map; no lost mandatory switch or landmark |
+| F-14 | no/small screen, missing optional asset | game remains playable or marks local source blocker, no global boot death |
+| F-15 | L02 WorldSave fresh load | one repaired/damaged source-linked state, player origin and scene validity preserved |
+| F-16 | ejection/portal return | one safe return transform and idempotent reward; no second game renderer |
+| F-17 | sound + VFX hit and repair | only subscribed accepted facts, nonexplosive repair has no invented boom |
+| F-18 | actual phone/desktop | real gesture/button playability, face readability, measured scene/GPU p50/p95 |
+
+**Do not assert the numerical expected packet arrivals in fixture data are observed.** They are expected outcomes contingent on accepted input/time, with no live simulation executed yet. C0 writes a pure packet simulator and tests them before calling them PASS. The current R4 fixture source-only check is just graph reachability under simulated edge changes.
+
+## Acceptance packaging per phase
+- exact repo/branch/pinned head and changed paths;
+- current host contract/API and owner evidence;
+- source pin and isolated visual donor manifest, source original vs scene screenshot;
+- tests summary with counts (unit/host/browser/mobile/GPU) and time/device;
+- 30–120s contiguous capture at play camera, no menu-only screenshot;
+- performance with visible target device p50/p95, drawcalls/triangles, asset decoding failures, sound bus proof;
+- `RETURN.md`, `TEST_REPORT.md` and additive changelog where owner contract specifies;
+- exactly one next productive task / gate and issues for deferred nice-to-haves.
+
+## Existing source anchors
+- R1/R2/R3 documentation in this folder and existing Draft PR #435.
+- `tools/world_atlas/source/lib/dungeon-grid.js`, `kit-lab.js`, `source/scenes/kaykit-city.js`.
+- `tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-maze.js`.
+- Source-measured KayKit Bits Bundle 1.1, Platformer purchased Dropbox FREE/EXTRA, Mech Minigun/Axe source, Tiny Treats and Restaurant in main.
+- `skills/chat/masterplan/KFB_PROCEDURAL_TERRAIN_WFC_OSM_LANDMARK_NPC_COMPOSITION_R1_2026-10-24.md` PR #447 (keep WFC local).
+- `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/BRIEF_WS1_FLIGHT_DESTRUCTION_R1.md` (existing V-514 owner and event family).
+- `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` (chill/fun, pull/don't gate, return and provenance).
+
+**One immediate next WS0 step remains:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` to turn candidate sources and L01 into a real source+host-pinned authorization. This brief is ready for WS0 discussion; its content must not be treated as Work/WS1 auto-execution approval.
