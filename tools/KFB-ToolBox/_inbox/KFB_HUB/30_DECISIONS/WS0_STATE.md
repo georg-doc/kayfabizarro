@@ -100,3 +100,13 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - HUD-Design läuft in einer anderen Sitzung weiter (design/hud-icons-r1: Gemini-Vorlagen R3, R4-Entscheidungen). WS0 liefert nur Objekt-Renders (renders_r2).
 - Nächster WS0-Schritt: Cartoon-Locomotion V-880, Gate SOURCE_ISOLATION_01; danach Dach-Anker für die übrigen Racer.
 - 27.10. nachts: WSB arbeitet V-886 → V-891 → V-890 (Quellen/Konzeptblätter in 50_BLENDER/V886_KAEFER, CARTOON_LOCO, J7; WSB pusht nicht, WS0 bringt Stände auf Branches, Abnahme-Blätter aus <Job>/out/abnahme/ in Hub). Cartoon-Loco Gate 01 erledigt (V-889). Offen bei Georg: q264 Portal-Rasterpunkte; WS1-Paket „Bewuchs je Biom“ wartet auf Georgs Ja; b245 wartet auf Weitergabe. Bei J-7 R2: roofDriver.js auf Vertrag r2 + Clip-Datei r2 erweitern.
+
+## Stand 28.10. spät (nach V-980) · Sparmodus bis So 22 Uhr
+- **Budget:** WS0 hat gut 40 % des Wochenvolumens verbraucht, Reset So 22 Uhr. WS0 schreibt bis So keinen Spielcode, steuert nur (Hub, Register, Merges). Reserve Sa/So tagsüber für Merge-Hilfe.
+- **Spiel:** `game/proc-world-ws0` @9fc8d09 (privates Repo). Pflicht-Tests: host, j7-roof (13 + Wechsel), closing-build, fb-shoulder-shadow, `node test/fb-canon.mjs`, dazu feature-check gegen Site-Build (lokal mit /raw-Proxy, Skript im Scratchpad rawproxy.py-Muster).
+- **Site:** Paket R5 `site/mvp-r5-dist` @891a81a, Hub b257 an WSA. R6 nach WS1-Übergabe So.
+- **WS1:** Integrations-Block V-963 (b256, Brief `replies/BRIEF_WS1_INTEGRATION_SLICES_R2.md`), Zweig `game/integration-r2`, Übergabe So 20 Uhr auf ws1/status (UEBERGABE_INTEGRATION_R2.md, ein Commit).
+- **WSA:** Cascade Sphere (b248; Brief `replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R2.md`, Konzept `replies/KONZEPT_CASCADE_SPHERE_GAME_IN_GAME_R1.md`), zuerst Quellen-Gate + Designpaket an WS0. Danach P2: b254 Prop-Pool, b255 Resident Atlas.
+- **WSB:** ruht. Werkzeuge camLock, lieferung.py, groessen.py (WSB_TOOLS). Offener Wunsch: A11 sauber als Template exportieren, dann ganzer FB-Tausch statt Ohr-Graft.
+- **Offen bei Georg:** q312 ASMR (übernommen), VFX-01-Auswahl (Review Bank), itch.io-Explosions-Flipbooks nur nach Ja, Push-Schlüssel für WSB (Vorschlag 5).
+- **Regel neu:** Abnahme-Clips immer im Spiel-Look (`look=terrain3`), nie in der Testwelt (grüner Boden, orange Kuppel).

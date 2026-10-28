@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-28 abends · V-959–V-980 · Abschluss-Build, Kanon-FB, Licht, Locomotion States, Cascade Sphere, Site R5
+
+Spiel `game/proc-world-ws0` @9fc8d09: J-7 r4a_ring auf allen 13 Racern, auch nach Wagenwechsel (V-959, V-970); FB-Licht als Ganzes – Ursache war eine teilweise eingebrannte Kontakt-AO aus der Bindepose (V-960, V-964, q308 KEEP); Abschluss-Build mit freier Figurenwahl, Jetpack-Flug, Flugsignal, V-945-Wagenfarben (q309 KEEP); Locomotion States mit Ruhe-Pool, Tempo-Mischung, Waffenhaltung im Flug (V-965, q310 KEEP); FB_CANON-Ohr mit Guard test/fb-canon.mjs (V-967, V-969); Jetpack-Tanks mit Shader und Klang (V-972, V-979). Assets: Jetpack r1 + V-945 r2 (V-961), FB_CANON A11, jetpack_diy_r2_cut, ASMR-Satz asmr_r1 (V-976), KayKit Platformer EXTRA auf assets/kaykit-platformer-r1. Planung: WS1-Integrations-Block Do–So (V-963, b256), WSA Cascade Sphere Game-in-Game als eigene Site (V-962 R2, V-968 Konzept, V-971 Georgs Entscheidungen, V-973 Greifhaken, V-974 fx-burst, V-975 Boss 4GTN, V-977 VFX-Kataloge, V-978 Environment vier Ebenen; b248), Cel-Look Backlog (V-966). Site-Paket R5 site/mvp-r5-dist @891a81a (V-980, b257). Aufräumen: drei erledigte Arbeitskopien, Testausgaben, 4,7 GB Blender-Zwischenstände (Georgs Ja); 24 GB frei.
+
 ## 2026-10-28 · V-908 WSA neue Motor-/Reifenklänge · V-909 Krater R2 + Kuppel in Biomfarben
 
 WSA-Auftrag für 46 neue ElevenLabs-Klänge (zwei Ordner) nach Gate PASS. Krater als ganzes Modell mit Kugel in der Pfanne und Gelände-Rahmen; Kuppel zeigt die echte Mindscape in Biom-Dreiklängen.
