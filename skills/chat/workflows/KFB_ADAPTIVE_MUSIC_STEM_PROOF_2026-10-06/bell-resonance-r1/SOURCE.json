@@ -1,0 +1,105 @@
+{
+  "schema": "kfb.bell-resonance.research.v1",
+  "date": "2026-10-28",
+  "mode": "RESEARCH_ONLY",
+  "owner": "KFB Audio & Soundscape",
+  "repo": "georg-doc/kayfabizarro",
+  "baseOwnerPR": 365,
+  "relatedImmersivePR": 455,
+  "sourceArchiveStatus": "LEADS_ONLY_NO_BINARIES_IMPORTED",
+  "narrativeLevels": [
+    "DOCUMENTED",
+    "MEASURED",
+    "CULTURAL_BELIEF",
+    "KFB_FICTION"
+  ],
+  "frequencyTypes": [
+    "partial_frequency_hz",
+    "strike_pitch_hz",
+    "tuning_reference_hz",
+    "rhythmic_modulation_hz",
+    "binaural_difference_hz",
+    "electromagnetic_reference_hz"
+  ],
+  "sources": [
+    {
+      "id": "B01",
+      "title": "20260420 Church bell half hour mark",
+      "source": "Freesound/Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/852491/",
+      "publishedLicense": "CC0",
+      "declaredDurationSeconds": 28.682,
+      "sourceFormat": "wav",
+      "sourceSampleRateHz": 48000,
+      "channels": 1,
+      "acquired": false,
+      "auditioned": false,
+      "measured": false,
+      "licenseReceiptCaptured": false
+    },
+    {
+      "id": "B02",
+      "title": "Rouvenac church bell from inside the church",
+      "source": "Freesound/Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/850511/",
+      "publishedLicense": "CC0",
+      "declaredDurationSeconds": 22.715,
+      "sourceFormat": "wav",
+      "sourceSampleRateHz": 48000,
+      "channels": 1,
+      "acquired": false,
+      "auditioned": false,
+      "measured": false,
+      "licenseReceiptCaptured": false
+    },
+    {
+      "id": "B03",
+      "title": "KFB fictional modal bell",
+      "source": "PROPOSED SYNTHESIS",
+      "url": null,
+      "publishedLicense": null,
+      "measuredPartialHz": null,
+      "acquired": false,
+      "auditioned": false,
+      "measured": false,
+      "licenseReceiptCaptured": false
+    },
+    {
+      "id": "ARCHIVE_WDR",
+      "title": "WDR Glockenpforte",
+      "source": "WDR",
+      "url": "https://www1.wdr.de/dossiers/religion/christentum/glockenpforte",
+      "rights": "REFERENCE_ONLY_PERMISSION_REQUIRED"
+    },
+    {
+      "id": "ARCHIVE_AT",
+      "title": "Glockenarchiv Österreich",
+      "source": "Glockenarchiv",
+      "url": "https://www.glockenarchiv.at/ueber-das-archiv",
+      "rights": "REFERENCE_ONLY_PER_FILE_CHECK"
+    },
+    {
+      "id": "ARCHIVE_HIBBERT",
+      "title": "William Hibbert Bell Research",
+      "source": "Hibbert",
+      "url": "https://www.hibberts.co.uk/",
+      "rights": "REFERENCE_ONLY_PERMISSION_REQUIRED"
+    }
+  ],
+  "proofState": {
+    "rightsReceipts": 0,
+    "importedSourceBinaries": 0,
+    "isolatedAudioAuditions": 0,
+    "measuredBellSpectra": 0,
+    "renderedConceptSlides": 0,
+    "newSiteDeploys": 0
+  },
+  "guardrails": {
+    "singleAudioContext": true,
+    "existingKfbAudioOwner": true,
+    "noUnverifiedSourceDesign": true,
+    "noClinicalClaims": true,
+    "noAutoMerge": true
+  },
+  "nextGate": "KFB_BELL_R1_THREE_SOURCE_RIGHTS_SOLO_AUDITION_MODAL_MEASUREMENT"
+}
