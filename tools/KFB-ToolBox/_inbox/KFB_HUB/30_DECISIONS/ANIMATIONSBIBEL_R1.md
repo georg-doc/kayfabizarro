@@ -46,3 +46,6 @@
 
 ## 5 · Später: Charakter-Gänge (nach Georgs Wahl)
 Doppel-Wipp-Gang, Stolzieren, Schlurfen, Schleichen, Zehenspitzen, Hüpfen (Blair-Tafel), dazu Salto oder Rolle (Mario-Tafel). Jeder als eigener Clip auf dem Basis-Verfahren; Posen neu, Technik gleich.
+
+## 6 · Referenzen (privat, nur Studienmaterial)
+Georg 28.10.: Blair-Gangarten-Tafel, Gangzyklus Contact–Recoil–Passing–High-Point, zwei Aktionsfolgen, Gang-Schlüsselposen, Mario-Sprite-Sheet. Ablage: privates Repo georg-doc/KFB-Stunt-Car-Race, Branch `studio-refs/animation-classics-r1`, Ordner `refs/animation_classics_r1/` (mit QUELLEN.md); Dropbox `KFB_HUB/75_REFS/animation_classics_r1/`. Nie in öffentliche Repos.
