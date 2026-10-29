@@ -1,11 +1,11 @@
-# WS0 → WSB · K10 Runde 2: Gatling, Shotgun und Action-Figure-Gewehr sauber an FrizzleBob und die großen Figuren (V-1013) · R1 · 29.10.2026
+# WS0 → WSB · K10 Runde 2: Gatling, Shotgun, Action-Figure-Gewehr und Schilde sauber an FrizzleBob und die großen Figuren (V-1013, V-1015) · R1 · 29.10.2026
 
 **Tier 0**
 1. **Erst das Modell, dann messen (V-648):** Für jede Waffe zuerst den Waffentyp nach `replies/WEAPON_GRIP_MODELS_R1.md` bestimmen. Dann die Ziel-Lage in einem Satz beschreiben, wie ein Mensch sie hält. Erst danach messen. Die Messung bestätigt nur.
 2. **Kit-Waffen as-is (V-574, V-581, V-582):**
    - Original-Netz unverändert.
    - Je Waffe eine feste, gemessene Halterungsdrehung (`slotOffset.rotation`, mit Beleg).
-   - Echte 2H-Waffen (Shotgun, Gewehre) nach den drei Clip-Familien. Ausnahmen mit eigener Entscheidung: Gatling seitlich getragen (V-1014), Action-Figure-Gewehr 1H (V-592).
+   - Echte 2H-Waffen (Shotgun, Gewehre) nach den drei Clip-Familien. Ausnahmen mit eigener Entscheidung: Gatling seitlich getragen (V-1014), Action-Figure-Gewehr 1H (V-592), Shotgun 1H mit Schild als zweite Ausrüstung (V-1015, Ranged_1H_* wie V-592).
    - Nur vorhandene Clips, keine neuen Keyframes (V-956).
 3. **Abgabe über die eine Prüfbühne:** Knete (`kfb_clay_bpy`), ein Licht-Rig (`CANON_3D/lib/kfb_light_bpy.py`), KFB-Augen sichtbar, 0 Durchstich. Georg sieht nur Bestandenes.
 
@@ -23,7 +23,7 @@
   - Jetpack-Vertrag: `src/private/50_BLENDER/JETPACK/data/v910_jetpack.contract.r1.json` im Spiel-Repo, Sitz `seat_per_figure`.
   - Der Jetpack wird kleiner (Faktor 0,75 um den Rücken-Kontaktpunkt, V-1012). Prüfe beide Größen.
   - Maßstab: Figur wie im Spiel. A11 ist ein Spielfigur-Export mit Hüllen-Skala 0,64; Rig, Arme und Körper sind bitgleich zu v5b (V-969; Beleg im Spiel-Repo `src/modules/faceMountActor.js`, Kommentar zu V-967). Waffe im Kit-Maßstab am Handslot, wie die K10-Karten im Spiel.
-- Register (Branch docs/kfb-decisions-register-2026-10-11): V-574, V-581, V-582, V-592, V-648, V-866, V-897, V-956, V-965, V-969, V-970, V-990, V-1012, V-1013, V-1014.
+- Register (Branch docs/kfb-decisions-register-2026-10-11): V-574, V-581, V-582, V-592, V-648, V-866, V-897, V-956, V-965, V-969, V-970, V-990, V-1012, V-1013, V-1014, V-1015.
 
 **Auftrag (in dieser Reihenfolge):**
 1. **Gatling an FrizzleBob:**
@@ -44,6 +44,14 @@
 4. **Nach Zeit**, nach demselben Muster:
    - SpaceRanger_Rifle (KayKit Mystery S4, Kauf, privat, nur in `_privat_kauf_asset/`);
    - Gun_Rifle und Gun_Sniper (Prototype Bits, CC0).
+
+5. **Schilde** (V-1015, nach den Waffen), nach `WEAPON_GRIP_MODELS_R1.md` §2: außen am Unterarm auf dem Handrücken, Fläche vom Körper weg, nie innen, nie in der Handfläche. Vorbild ist der Demon Lord aus K13 (`50_BLENDER/K13/RETURN.md`, Karten `kfb_kit_bk_shield*.weapon.json`).
+   - **Survivalist-Schild an FrizzleBob, links:** der Schild aus dem Kit-Artwork (`ballistic_shield_A` bzw. `_B`, welcher im Artwork zu sehen ist; der andere als Variante). Zusammen mit der Shotgun einhändig rechts genau wie im Kit-Artwork (V-574), Clips Ranged_1H_*. Das ist die zweite Ausrüstung neben der beidhändigen Shotgun. Dazu der Schild allein links zum Action-Figure-Gewehr und zur seitlich getragenen Gatling (rechte Hand, V-1014). Pistole und Blaster sind in K10 nur an Schurkin und Hero Man eingepasst: an FrizzleBob nur, wenn die K10-Halterung ohne Änderung passt, sonst Befund.
+   - **Blocken:** die vorhandenen Block-Clips aus dem KayKit-Animationspaket (Bestand zuerst auflisten, keine neuen Keyframes). Prüfen, dass der Schild in der Block-Pose vor dem Körper steht und nicht in Kopf oder Schulter sticht. Für alle Schild-Posen gelten die FB-Prüfungen von oben: beide Jetpack-Größen, Ohren, Bauch.
+   - **Große Figuren:** Ziel ist der Brawl Brute.
+     - `BlackKnight_Shield_Large` hat schon die K13-Karte `kfb_kit_bk_shield_large` mit abgenommenen Halterungen je Clip. Diese Karte erweitern, die Halterungen bleiben.
+     - Neu: `Monstrosity_BarndoorShield_Large` und `Skeleton_Shield_Large_A/B`, mit den vorhandenen Rig_Large-Clips (Walking_A, Running_A, Dodge). Fehlt ein Clip, nur Befund.
+   - **Je Schild:** Karte, Halterung als Daten, Nahbild Unterarm von außen (Spec §Abgabe). Prüfwerte aus Spec §2. In Block-Clips gilt wie in K13 die Grenze „so gut wie der Demon Lord“ (K13 RETURN), 0 Durchdringung bleibt Pflicht.
 
 **Je Waffe zurück** (Spec `WEAPON_GRIP_MODELS_R1.md` §Abgabe je Waffe):
 - Vor der Messung ein Satz „so hält man sie“.

@@ -14709,6 +14709,36 @@
    "applies": "seit 21.10."
   },
   {
+   "id": "V-1015",
+   "date": "2026-10-29",
+   "area": "Combat",
+   "verdict": "PLAN",
+   "text": "Schilde (Georg 29.10.): jetzt einpassen in WSB K10 Runde 2 – Survivalist-Schild links an FB (mit Shotgun 1H wie im Kit-Artwork als zweite Ausrüstung, sonst zu 1H-Waffen und Gatling), Block-Clips aus dem Bestand, große Kit-Schilde (Monstrosity-Scheunentor, BlackKnight, Skeleton Large) an Rig_Large; Regeln WEAPON_GRIP_MODELS_R1 §2, Vorbild Demon Lord K13. Spielregel nach So (WS0): richtungsabhängiger Block, Treffer aus dem vorderen Kegel werden abgefangen bzw. gemindert (weniger Fluff-Verlust, Goo prallt ab).",
+   "values": {},
+   "owner": "WSB jetzt · WS0 nach So",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: Schilde (Survivalist, Monstrosity u. a.) mit einpassen; später Schutz gegen Treffer, KISS.",
+   "applies": "Einpassen jetzt, Regel nach So"
+  },
+  {
+   "id": "V-1016",
+   "date": "2026-10-29",
+   "area": "Combat",
+   "verdict": "PLAN",
+   "text": "Energieschild als Prop (Georg 29.10.): kleines Artefakt am Handgelenk (Uhr bzw. Armband) oder Aufsatz wie der Robo-Arm (B31) erzeugt einen leicht gebogenen rechteckigen Energieschild mit betonten Außenkanten, bläulich schimmernd, zuckende Blitze, Treffer-Reaktion als VFX, elektrisches Surren und eigenes Sound-Design; dieselbe Block-Regel wie der echte Schild (V-1015). Dazu als Power-up bzw. Aktionsknopf eine kurze Rundum-Variante (Kugel) aus demselben Modul, Fluff-Kosten. Look nur Emission/Bloom, kein zusätzliches Licht (ein Rig). Design zuerst (Bildblatt), Prop aus Bestand bzw. Asset-Suche, Klang nach Georgs Go über sfx_gen. HUD: Aktionsknöpfe im Claymation-Stil mit kleinem Icon und Zahl (Ladungen/Abklingzeit) als HUD-Update im Spiel (WS0 nach So, R14-Leiste V-929).",
+   "values": {},
+   "owner": "WS0 nach So · Design zuerst",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: Energieschild-Prop am Handgelenk, bläulich mit Blitzen und Sound, plus kurze Rundum-Variante als Power-up; Aktionsknöpfe in Knete mit Icon und Zahl.",
+   "applies": "nach So, Design zuerst"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
