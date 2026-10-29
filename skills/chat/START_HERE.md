@@ -1,3 +1,15 @@
+## BRANCH-LOCAL R18 · 2026-10-29 · INTENTIONAL HYPERNORM COLLAGE PROJECTION ON SOURCE 3D ASSETS
+
+**Latest correction to the living WS0 concept:** Georg explicitly welcomes unhinged anamorphic/warped H13 HyperNorm music-video collage on actual irregular KayKit/Kenney GLTF buildings. **Temporarily obscured/distorted card image is a desired feature**, not a demand for always-readable 16:9 "hero facade". Only true collectible `CARD_VAULT` and gameplay/UI must remain readable. Source H13 curated anti-repetition and H13 original layered beat/shot grammar are the composer source; no new independent randomized engine. Avoid visible harsh UV seams, clone stamping, layer overload/muddy overdraw using deliberate material/Clay/Paper edges, staggered masks/negative space (S4 craft) and quiet gameplay lines. Lower motion/opacity during real impact/cell destruction for action clarity.
+
+**Read in existing WS0/KFB_HUB Game Design PR #435:**
+- `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R18_INTENTIONAL_HYPERNORM_COLLAGE_DISTORTION_SEAM_REPETITION_COMPOSITION_2026-10-29.md` and `CASCADE_SPHERE_R18_HYPERNORM_COLLAGE_PROJECTION_SOURCE_QA_2026-10-29.md`.
+- Same folder R15 for source KayKit/GLTF surface modes, R16 for rough linen + source-wall breaches, R17 shared Gamer/Vehicle/Gatling/Cannon impact/material resistance, R14 **Gaussian Splats 3DGS**, not "Splits" and not physical rolling colored beads. Original full 3D FB_CANON; source Host R1.2 and Track/Combat/3D/Audio ownership unchanged.
+
+**Official V-962 R2 register is UNCHANGED.** These are source-checked design-only proposals, not real R3F/multi-face/3DGS/live game/GPU/AAA tests. WS0 must expressly decide any future WSA build rewrite. 20/20 R14–R18 editorial/source checks; 0 new runtime tests.
+
+---
+
 ## BRANCH-LOCAL R13 · 2026-10-29 · HyperNorm Card Buildings / Comic Gutter City / Colored-Ball Cascades
 
 **CURRENT CONCEPT-DESIGN DONOR, NOT NEW AUTHORITY.** WS0 KFB_HUB game-design folder in existing Draft PR #435:
