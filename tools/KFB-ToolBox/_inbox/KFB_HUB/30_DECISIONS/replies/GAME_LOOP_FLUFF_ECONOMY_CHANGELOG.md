@@ -30,3 +30,11 @@
 - **No fabricated proof:** 0 runtime tests, 0 browser tests, 0 player playtests; source-backed conceptual review, arithmetic/progression milestone semantics inspected. No active runtime change, no new owner, no Hub or Stage update.
 - **Exactly one next gate:** WS0/Georg intake R4 design and nominate one real NPC + two canonical Cards + confirmed POI for a bounded later source-aware dialogue/wayfinding/save proof. Runtime remains separately gated.
 
+## 2026-10-29 · SESSION CUT R5 · GEORG CREATIVE STEERING · ORDERED CARD EXPOSURES / SIGNAL MEMORY
+
+- **Georg's addition:** persist the **order** in which the player obtains canonical Cards and each NPC first encounters a Card, including when a cross-deck mismatch arrived through an actual courier/social interaction and from whom. This can make different player save journeys produce meaningfully different NPC dialogue sequences.
+- **Soft hypothesis, NOT a new rule/AI:** earlier exposure may carry a mild primacy bias, moderated by latest relevant events and the Resident's authored identity. Do not impose a numeric psychological model, irreversible first-card beliefs, universal alignment scores or extra runtime owner.
+- **New concept:** `GAME_LOOP_SIGNAL_MEMORY_R5.md` uses existing `PLAYER_SAVE` + `LEAN EVENT MEMORY LEDGER` + `NPC_MEMORY_VIEW` ownership; source-authored initial 1–6 Card seed order is not falsely treated as a historical lived event; receipts preserve meaningful ordered first-sharing/context and optional later re-interpretation, deduping actual rewards.
+- **Minimal proof for later owner:** two disposable per-player save orders with the same final pair of real Cards, equal membership but differing ordered first-exposure receipts, source-grounded short dialogue and exact fresh import. Nothing implemented now.
+- **Source state:** current GitHub memory architecture, Card pipeline, R4 and R4 Return re-read, owner/branch current. **0 runtime, 0 browser, 0 human gameplay tests**. No Hub/Cloudflare/Live or runtime alteration.
+- **One next gate:** WS0/Georg intake for minimal ordered Card receipts on the existing Lean Memory pipeline; a paper A/B order check only after content source selection.
