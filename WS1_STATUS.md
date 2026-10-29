@@ -1,7 +1,49 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §180.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§180 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §181.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§181 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 181 · 29.10. nachmittags · IR2 I1 + I2 Stufe 1 im Integrationszweig · zwei Befunde der Endlos-Welt an WS0 (Flug, Test-Ladezeit)
+**Im Zweig `game/integration-r2` @85a4cda** (I1 @5cb1209, I2 @85a4cda, Test-Infrastruktur @7780104). Pflicht-Tests alle grün (`scripts/ir2/pflicht.sh`); die npc-suite läuft nach.
+- **I1 Zu Fuß ohne Inselrand:**
+  - In der Endlos-Welt stieß man zu Fuß bei ~150 m an eine unsichtbare Wand: `M1BOUNDS.walkR` der alten Insel galt weiter. Gefunden beim Teleport-Test, weil die Figur immer zurücksprang.
+  - Jetzt gilt in `world=endless` kein Radius mehr; die Jetpack-Landung gilt auch dort. Ein Absturz setzt auf den Boden der Stelle statt zum Start (`M1Player.jsx`).
+- **I1 Gedächtnis je Zelle:**
+  - `worldSave.js` hat einen neuen Abschnitt `cells` (Deckel 4096, älteste fallen raus, Reparatur beim Laden).
+  - Neu: `src/world/cellMemory.js` mit `cellKey(art, x, z, id)` (Zelle = 256-m-Feld wie Karten/Tafeln), `mark`/`has`, gebündeltes Schreiben unter eigenem Schlüssel `kfb.world-cells`.
+  - Karten (`cardRelief.js`) merken neue Einsammlungen dort. Vorher flags mit Deckel 256: darüber wurde still vergessen.
+  - Unit-Test `test/unit/cellMemory.mjs`. I3 und I7 nutzen denselben Speicher.
+- **I1 Mitwandernder Weltursprung, gemessen statt gebaut** (Figur gehend, Bildschirm-Zucken je Bild):
+  - 0 km, 10 km, 30 km, 100 km: kein Unterschied (< 0,6 px).
+  - 300 km: Schritte entlang x gehen in der f32-Genauigkeit von Rapier verloren (Figur kommt nicht vorwärts).
+  - 100 km sind mit dem Racer-Flug in gut 20 min erreichbar.
+  - Ein echter Ursprungs-Umzug berührt fast jedes Weltmodul (Gelände-Blätter, kfb-place-Zellen, Orte, Kuppel, Karten, NPCs, Rapier). Das sind mehr als zwei Runden.
+  - **Frage an Georg (über euch):** jetzt bauen, oder bis ~100 km ohne und später sauber (Ursprung in festen Schritten + Welt-Versatz für Shader und Gelände)?
+- **I2 Stufe 1 (hinter `theme=1`):**
+  - Themen je Region nach Nachbarschafts-Gewichten (`src/data/worlds/kfb-theme-weights.r1.json`, Startwerte nach der Farb-Logik V-1006).
+  - Kleine Ausreißer-Quote je Region (Wüste|Schnee selten) und als Gruppe im Bewuchs (6 % der 32-m-Zonen bekommen die Arten eines anderen Themas, über kfb-place).
+  - `seed=` würfelt Welt und Paletten (palseed hat Vorrang).
+  - Settings › World: „Seed …“ + Knopf **New seed** (setzt `theme=1,seed=<neu>` und lädt neu).
+  - Häufigkeits-Prüfung `node scripts/ir2/theme-freq.mjs`: 5 feste Saaten, alle Themen 9–23 %, gleiche Nachbarn 14 %, Wüste|Schnee 3,4 % (gleichverteilt vorher 6 %), PASS.
+  - Noch offen: V-1004/V-1005 (Kleinteile) und das Abbilden der 18 V-1010-Profile auf die 6 Laufzeit-Themen.
+- **Test-Infrastruktur:** `scripts/ir2/pflicht.sh` (eure Pflicht-Liste plus Vorbereitung, die ein frischer Klon braucht):
+  - Kassette erzeugen (`scripts/hud/shrink-cassette.mjs`); ohne sie stürzt hud-3d ab. Das war der „Altfehler“ am Start.
+  - Drift-Vorlauf.
+  - feature-check liest das Tempo über `ClayHud.speed()`. `debris: null` ist seit V-906 erwartet (Krater ersetzt die Steine).
+
+**Endlos-Welt als Standard: fertig, aber noch nicht im Zweig (Zweig `ir2/i1-standard` @eca320e).** `SITE_HASH` → `world=endless,veg=cartoon`. Damit laufen j7-roof und closing-build zum ersten Mal in der Endlos-Welt, und zwei Pflicht-Tests werden rot:
+1. **closing-build `slopeTakeoff`, reproduzierbar:**
+   - Am steilen Hang (Steigung 0,49 ≈ 26°) bergauf im Lauf startet der Jetpack (takeoffs 1) und steht nach 1 s wieder am Boden (agl −0,09).
+   - Flach (0,22) und quer geht es. Auf der Probe-Insel fand der Test keinen so steilen Fall.
+   - Flugsteuerung ist eure (V-910). Bitte Fix oder Freigabe, dass der Lead es im Rahmen von I5 behebt.
+   - Vermutung: Startschub mit Nickwinkel (`liftPitch`) gegen den Hang, dann greift die Bodenkontakt-Landung (`landAgl` 0,3, `contactSteps` 6) nach 0,5 s.
+2. **j7-roof wackelt:** Je Lauf ist ein anderer Racer komplett leer (seated/wheelOnCar/… alle null), im Wiederholungslauf ein anderer. Der erste Wagen lädt in der Endlos-Welt nicht rechtzeitig, der Test wartet zu kurz. Vorschlag: Wartebedingung auf „Wagen geladen“ statt fester Zeit.
+
+**Bitte entscheiden (WS0 bzw. Georg):**
+- Endlos-Welt als Standard jetzt in den Zweig, mit diesen zwei als benannte Befunde? Oder erst nach dem Hangstart-Fix?
+- Weltursprung jetzt oder später (siehe oben)?
+
+**Hinweis Ablauf:** Die anderen WS1-Sitzungen laufen gerade nicht (keine erreichbar). Ihre Aufträge für I2–I7 liegen bereit (`~/kfb-ws1/ir2-docs/AUFTRAG_GEMEINSAM.txt`). Bis sie laufen, macht der Lead die Slices der Reihe nach selbst.
 
 ## 180 · 29.10. mittags · Integrations-Block V-963 (b256) gestartet: `game/integration-r2` @72fbb25 · Grundlinie · Fragen an WS0
 **Start jetzt statt Fr früh (Georg 29.10. mittags):** „im Prinzip würde ich das jetzt gerne schon abarbeiten“.
