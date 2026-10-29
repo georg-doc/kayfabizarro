@@ -1,3 +1,16 @@
+## 2026-10-29 · R2 original user transcript recovery / chapter atlas / source bridge
+
+- Found original native Google Doc `KFB Author Dossier: Jason Samosa` via connected Google Drive (one tab, **101,163 characters**, **39 chapters**, through **1:33:45**). Transcribed text read; not copied verbatim into public GitHub. Audiovisual video itself not reviewed.
+- Added `TRANSCRIPT_CHAPTER_ATLAS_R2.md` as a timestamped 39-row faithful recap with nine source-critical timecodes and normalized aliases. Found two distinct Jasons (Samosa vs Reza Jorjani) and three distinct Hambro persons.
+- Added `SOURCE_CHECKS_R2.md` (11 new `WC-S18..28`, 14 new `WC-C18..31`) and `RELATIONS_R2.md` (9 new `WC-H09..17`, plus 7 noncausal cross-model comparison rows). Combined: 28 sources, 31 claims, 17 historical/reporting edge IDs.
+- Added `TEST_REPORT_R2.md`: **15/15 static document checks PASS**, 0 browser/code/CI, 0 PDF scan pages or audiovisual validation. Marked all historical R1 reports as superseded **only for former transcript-access limitation**; retained their original content.
+- Specific source checks: Peter Dale Scott's footnote-104 self-correction vs Samosa 18:44 attribution; 1963 papal succession error; false Fleming death year; ambiguous Sir Charles/Jocelyn/Charles Eric Hambro attribution; authentic Italian parliamentary **1981 Banca d'Italia–Moneyrex source inventory**.
+- Created the topic's resumable `RETURN.md`; existing WorldView author dossiers, card/deck owners, user Google Doc, Hub/Main and all product/runtime surfaces left untouched. Research branch Draft PR #394 remains unmerged.
+
+**Exactly one next gate:** `WCC_HAMBRO_SINDONA_MONEYREX_ORIGINAL_ALIGNMENT` (1969/1971/1974/1981 original Italian/U.S. banking source set).
+
+---
+
 # WCC / Samosa Topic — Additive Research Changelog
 
 ## 2026-10-29 · R1 source intake / historical-conceptual split
