@@ -14574,6 +14574,21 @@
    "applies": "I2"
   },
   {
+   "id": "V-1006",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Farben und Themen entstehen über Nachbarschafts-Gewichte (WFC/Markov über die Saat) statt gesetzter Biome (Georg 29.10.): z. B. auf Orange meist Lila, selten Hellblau (Joyride-Farblogik, Farbrollen aus COLOR_CONCEPT_R1); Themen-Sätze nach Dreier-Regel (Wüste: Oase mit Wasser-Shader, große + zwei kleine Palmen, Sand-Kügelchen, Grasbüschel); seltene surreale Ausreißer (Schnee-Bäume in der Wüste) mit kleinem Gewicht, als Gruppe; Gewichte als Datentabelle, Justage per Bild-Karten; Häufigkeits-Prüfung über lange Fahrt. Erweitert V-951. SPEC_PLACEMENT_GRAMMAR_R2 §8; WS1 Slice I2.",
+   "values": {},
+   "owner": "WS1 I2",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: Farbbiome sollen sich prozedural aus Kombinationen ergeben, mit seltenen exotischen Ausreißern.",
+   "applies": "I2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

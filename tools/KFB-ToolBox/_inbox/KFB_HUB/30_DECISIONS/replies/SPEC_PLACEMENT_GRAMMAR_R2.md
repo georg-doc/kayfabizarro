@@ -181,3 +181,11 @@ Für Materialcodes, Fundstücke, Fluff-Nester, Fluff-Kugeln und Blumen gilt dies
   - Im Spiel betroffen: `src/world/loot.js`, `src/modules/foundItems3d.js`, die Fluff-Nester in `src/world/placeVeg.js`.
 - **Bäume** bleiben bei ihren bestehenden Regeln (Massen und Formationen). Blumen folgen der gleichen Grundidee in klein.
 - **Prüfung:** Eine Zählprüfung je Kamera-Marke stellt fest: Gruppengröße 2–3, keine Sorte doppelt je Fundstück-Gruppe, kein Fremd-Element in einer Familie, Mindestabstand eingehalten, mindestens drei Codes im Blick.
+
+
+## 8 · Nachtrag 29.10.2026 (Georg, V-1006): Farben und Themen über Nachbarschafts-Wahrscheinlichkeiten
+- **Gleiche Logik wie bei den Kleinteilen, eine Ebene höher:** Farbbänder und Themen werden nicht als Biome gesetzt. Sie ergeben sich aus Nachbarschafts-Regeln mit Gewichten (WFC bzw. Markov-Kette über die Saat). Beispiel nach der Joyride-Farblogik: Auf Orange folgt meist Lila, mit kleiner Wahrscheinlichkeit Hellblau. Grundlage sind die Farbrollen und Paletten aus `replies/COLOR_CONCEPT_R1.md`. Daraus entstehen Farb-Gebiete von selbst, das passt zur Themen-Saat V-951.
+- **Themen-Elemente genauso:** Jedes Thema hat typische Sätze nach der Dreier-Regel. Beispiel Wüste: eine Oase mit Wasser-Shader, eine große Palme und zwei kleinere, Sand-Kügelchen bzw. Steinchen, ein bis zwei Grasbüschel.
+- **Seltene surreale Ausreißer sind erwünscht:** Mit kleinem Gewicht (Vorschlag: wenige Prozent je Zelle) darf eine exotische Kombination entstehen, z. B. schneebedeckte Bäume und Büsche in der Wüste. Ein Ausreißer bleibt eine Gruppe nach der Dreier-Regel, kein Flickenteppich. Die Nachbarschaft zu ihm folgt wieder den Regeln.
+- **Gewichte sind Daten, nicht Code:** eine Tabelle Nachbarschaft → Gewicht je Farbrolle bzw. Thema. Georg kann sie später über Bilder justieren (Hub-Karte mit Varianten, keine Zahlen für Georg).
+- **Prüfung:** Über eine längere Fahrt werden Häufigkeiten gezählt. Die Verteilung soll den Gewichten folgen, Ausreißer selten bleiben, und kein Band bzw. Thema darf abrupt ohne erlaubte Nachbarschaft wechseln.
