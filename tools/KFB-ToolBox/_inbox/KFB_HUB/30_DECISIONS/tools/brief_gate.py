@@ -60,7 +60,8 @@ def main():
         elif 'ÜBERHOLT' in open(fp, encoding='utf-8', errors='ignore').read(400):
             blockers.append(f'{p}: als ÜBERHOLT markiert')
     # V-1022: Empfänger-Fähigkeit. Claude Design generiert keine Bilder und sucht keine Referenzen im Netz (replies/RECEIVER_CAPABILITIES_R1.md)
-    if re.search(r'claude design', low) and re.search(r'style-frames?|endqualität|moodboard|style frames?', low) and not re.search(r'nur code|three\.js-bühne|aus gelieferten bildern', low):
+    rcv = '\n'.join(low.split('\n')[:3] + [l for l in low.split('\n') if 'empfänger' in l])  # Empfänger = Kopf bzw. Empfänger-Zeile, nicht jede Erwähnung
+    if re.search(r'claude design', rcv) and re.search(r'style-frames?|endqualität|moodboard|style frames?', low) and not re.search(r'nur code|three\.js-bühne|aus gelieferten bildern', low):
         blockers.append('Empfänger Claude Design: Auftrag verlangt gerenderte Bilder bzw. Moodboard – Claude Design kann keine Bilder generieren (V-1022, RECEIVER_CAPABILITIES_R1)')
 
     # Prüfpaket
