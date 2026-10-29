@@ -1,4 +1,7 @@
 # R13 · Cascade Sphere: HyperNorm Card Buildings / Gutter City / Colored Ball Cascade
+
+> **GAUSSIAN SPLATS CORRECTION R14 · 2026-10-29:** Georg meant **3D Gaussian Splats** inside/behind the HyperNorm Card Building walls, visible through a damage aperture like a pocket-world window, NOT "Splits" as a standalone portal material effect. R13 source-palette rolling balls and 3DGS scene rendering are two distinct technologies. For source accuracy and minimal proof please read `CASCADE_SPHERE_R14_GAUSSIAN_SPLATS_CARD_BUILDING_REVEAL_CORRECTION_2026-10-29.md`. This is concept only; no actual 3DGS renderer/format/GPU/runtime accepted.
+
 **2026-10-29 · Georg's additive conceptual exploration. DESIGN ONLY.** Do not rewrite or start the authorized `V-962 R2` private game job. No new Renderer, Host, World, Road, FX, Card Registry, Audio or Physics owner; no new Game/Stage/Site and no material, particle or shader implementation in this pass.
 **Owner:** existing KFB_HUB WS0 Game Design / Draft PR #435. WS0 decides if/when a new official V-962 revision changes the private Cascade Sphere POC. Existing Source/Design and human-quality gates remain binding.
 
