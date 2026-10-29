@@ -14589,6 +14589,21 @@
    "applies": "I2"
   },
   {
+   "id": "V-1007",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Ein stochastischer KFB-Verteiler für alle Ebenen (Georg 29.10.): Saat-Hierarchie Welt → Zone/Thema → Deck → Zelle → Gruppe, je Ebene eine Gewichtstabelle als Daten (Nachbarschaften, Dreier-Sätze, kleine Ausreißer-Quote), ein Löser (kfb-place/WFC), Häufigkeits-Prüfung. Ebenen: Farbbänder, Themen/Props, Kleinteile, Himmel (Wolken-Variation inkl. Schattenseiten-Färbung, Verlauf aus der Bandpalette), Planeten (mehrere, verteilt mit Mindestwinkel, Größe/Farbe variiert: Knet-Mond, Ringplanet, lila Planet, selten die Erde; nicht Quaternius), Klänge, NPCs/Begegnungen. Deck-Saat verschiebt Gewichte (z. B. Dystopie-Deck). Fraktal auch für Spielmechanik (Goo, Fluff-Quellen, Gebäude, Spuren). Reihenfolge: I2 → I6 → Himmel/Planeten nach Reset → Deck-Saat. replies/KONZEPT_KFB_VERTEILER_R1.md.",
+   "values": {},
+   "owner": "WS1 I2 + WS0",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: dieselbe Logik für Skydome, Planeten, Sounds, NPCs und später Karten-Saat – eine globale Verteilungsfunktion.",
+   "applies": "gestaffelt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

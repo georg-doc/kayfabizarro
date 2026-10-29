@@ -7,6 +7,7 @@ Für Slice I2 (Themen-Saat) liegt der fertige Prop-Pool von WSA bereit (V-920): 
 Für Slice I2 zusätzlich: Materialcodes nach `replies/SPEC_GUTTER_CURB_R1.md` §8 (V-1004) – Zweier- und Dreiergruppen (ein größeres, ein bis zwei kleinere Elemente; Knete-Kügelchen aus dem Kugel-Kern, Grasbüschel, Pilz mit zwei Begleitern), mindestens drei Codes je Spielerblick, kein Teppich; dazu sanfte Dünen-Schwingung im Gelände-Generator.
 Ebenfalls I2: Fundstücke, Fluff-Nester und Blumen nach `replies/SPEC_PLACEMENT_GRAMMAR_R2.md` §7 (V-1005) – Dreier-Regel mit Familien (Süßes/Backwaren zusammen, kein Hamburger neben dem Donut, keine Sorte doppelt), Sammelabstand statt Haufen, Blumen in Farb-Grüppchen als Beet aus dem Quaternius-Bestand des Prop-Pools.
 Und für I2 als Kern der Themen-Saat: Farben und Themen über Nachbarschafts-Gewichte statt fester Biome, mit seltenen surrealen Ausreißern (z. B. Schnee-Bäume in der Wüste) – `replies/SPEC_PLACEMENT_GRAMMAR_R2.md` §8 (V-1006).
+Rahmen dafür: `replies/KONZEPT_KFB_VERTEILER_R1.md` (V-1007) – ein Löser, Gewichtstabellen als Daten, Saat-Hierarchie; I2 baut den Kern so, dass Himmel, Klang und Begegnungen später nur eigene Tabellen brauchen.
 Für Slice I6 (Klang je Thema): zwei neue Suno-Instrumentals mit Stems in assets/private `40_AUDIO/suno_r2/` – „Bouncing Busker Groove“ (198 s) und „Shepard Ascent“ (228 s), Katalog `40_AUDIO/music_catalog_r1.json`.
 
 # NEU OBEN (25.10. spät) · Farbrollen: feste Deckel-Regel für die Laufzeit (V-806)

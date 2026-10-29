@@ -114,3 +114,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Danach (V-985):** Tunnel (4 Skins aus Joyride/Orgel-Attraktionen), Berge/Schluchten (mit WS1 b245), Mine und Untergrund-Ebenen bzw. Rabbit Holes unter Karten-Geländen.
 - **Site:** R5.1 `site/mvp-r51-dist` @b3b8ae8 (b258). Cascade Sphere: Quellen-Gate HOLD bei WSA (V-986).
 - **Leitidee nach dem Golden (V-1002):** Kartenviertel als Hauptachse der Karten-Platzierung, `replies/KONZEPT_KARTENVIERTEL_R1.md`; zuerst Module aus der Cascade Sphere ins Hauptspiel übernehmen.
+- **Verteiler (V-1007):** `replies/KONZEPT_KFB_VERTEILER_R1.md` – nach dem Reset Himmel und Planeten (N Körper, verteilt) als WS0-Slice.
