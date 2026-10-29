@@ -2,6 +2,7 @@
 
 # NEU OBEN (28.10. abends) · Integrations-Block Do 29.10. bis So 1.11. (V-963, Brief-Gate PASS)
 Auftrag: `replies/BRIEF_WS1_INTEGRATION_SLICES_R2.md`. **Start-Commit:** `game/proc-world-ws0` @9fc8d09 (oder neuer) im privaten Repo georg-doc/KFB-Stunt-Car-Race. Darin: Abschluss-Build (Figurenwahl `char=`, Jetpack-Flug, `src/m1/flightSignal.js`, Fahrzeugfarben V-945), Locomotion States (`src/m1/locoStates.js`), FB-Licht als Ganzes, J-7 r4a_ring. Daraus `game/integration-r2` abzweigen. Pflicht-Tests vor jeder Übernahme stehen im Brief; neu dabei `test/closing-build.mjs`. WS0 schreibt bis So keinen Spielcode außer dem FB_CANON-Tausch (V-967, kommt als kleiner Commit auf game/proc-world-ws0 – beim täglichen Merge mitnehmen). Übergabe So bis 20 Uhr auf `ws1/status`.
+Stand 29.10.: WS1 ist noch nicht gestartet. WS0 bringt vorher noch R5.2-Fixes auf game/proc-world-ws0 (Dachfahrer-Verankerung, Mindscape-Eingang, Aussteigen, Aktionsleiste mit Modus- und Wagenwahl, Settings statt P-Menü und Palette). Beim Start den dann aktuellen Commit nehmen.
 Für Slice I2 (Themen-Saat) liegt der fertige Prop-Pool von WSA bereit (V-920): 5.595 freigegebene Kacheln aus 68 Packs, Kataloge kayfabizarro `catalog/wsa-prop-pool-r1` und privat `catalog/wsa-prop-pool-r1-private` (Kaufpacks). Nur über `kfb-place` einbinden, nichts neu inventarisieren.
 Für Slice I6 (Klang je Thema): zwei neue Suno-Instrumentals mit Stems in assets/private `40_AUDIO/suno_r2/` – „Bouncing Busker Groove“ (198 s) und „Shepard Ascent“ (228 s), Katalog `40_AUDIO/music_catalog_r1.json`.
 

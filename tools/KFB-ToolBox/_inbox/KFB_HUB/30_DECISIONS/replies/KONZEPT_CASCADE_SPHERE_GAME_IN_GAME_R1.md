@@ -48,6 +48,13 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 - **Erste Teststrecke klein und komponiert:** Start → Fluff-Sammelstelle → Goo-Hindernis → Weiche → Ziel, ein Höhenwechsel, eine Alternativroute. Aus der Schulterkamera gut lesbar. WFC und Regel-Ableitung erst danach.
 - **Doppelnutzen:** Das Maze-Modul wird als eigenständiges Host-Modul gebaut und danach ins Hauptspiel übernommen (Zufallsbegegnung bzw. Minigame-Spielplatz, V-984). OSM und Köln bleiben eine spätere Variante bzw. der Rahmen um das Labyrinth.
 
+## 4d · Karten-Gebäude mit HyperNorm-Hülle in der Gutter-Stadt (Georg 29.10., V-995; Web-Chat R13)
+- **Kernbild:** Ein Gebäude ist ein räumlicher Kartenbehälter. Zerschießen öffnet die Hülle, legt die Karte frei, setzt farbige Kugeln bzw. Fluff frei. Reparatur schließt sie wieder.
+- **Vier Schichten:** HyperNorm-Hülle (Quader, Engine H15 mit einer gemeinsamen Bildquelle; Würfel-Projektion der 2:1-Fläche, damit Muster über Kanten laufen), Kartenkern (echtes Kartenbild), Kugelfüllung (InstancedMesh, wenige echte Kontakte), Gutter-Stadt (Maze-Gänge als Straßen mit Knete-Bürgersteigen und Bordsteinen).
+- **Optik und Physik sind getrennt:** Viele Kugeln sind sichtbar, berechnet werden nur Treffer, Graph und Fluff-Einheiten. Die Kollision einer Wandsektion fällt erst mit dem bestätigten Schadensereignis weg.
+- **Befall und Heilung:** Graustufen-Hülle mit herabfließendem Goo (V-625, V-677), Heilung bringt die Kartenfarbe zurück.
+- **Golden:** vier Kartengebäude, eine versteckte Originalkarte, ein zerstörbarer Wandbereich je Gebäude, ein Kugelausbruch, ein echter Gutter-Fluff-Fluss, FrizzleBob, eine vollständige Reparatur. Brief `replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R4.md`.
+
 ## 4b · HUD (Georg 29.10., V-989)
 Das Knete-HUD des Hauptspiels wird übernommen und angepasst, nicht neu gebaut. Quellen in `game/proc-world-ws0`:
 - `src/HudClay.jsx` (HUD 3D, Aktionsleiste R14 als Standard),
