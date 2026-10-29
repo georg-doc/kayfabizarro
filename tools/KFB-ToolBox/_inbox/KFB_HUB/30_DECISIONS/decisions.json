@@ -15118,6 +15118,21 @@
    "applies": "bis So 20 Uhr"
   },
   {
+   "id": "V-1042",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Architektur vor Weiterbau (Georg 29.10.), erste Aufgabe nach So: eine Seite „Stadt, Gelände, Zerstörung, Fluff – Bauweise und Budget“ plus ein Mess-Spike, bevor weitergebaut wird. Inhalt: (1) Stadtblöcke aus OSM-Grundrissen als unterschiedlich hohe Quader, auf das Zellen-Raster gerastert, Zwischenräume als Gutter/Bürgersteig/Straße über kfb-curb (V-1000), Höhenunterschiede als Stufen, Rampen, Gefälle über Socket-Kacheln (V-1003), Gelände bleibt ein Höhen-Owner (carve); (2) Physik: Gebäude als einfache Kollisionsquader, Straßen im Höhenfeld; (3) Fluff-Kugeln: nur wenige echte Physik-Kugeln nahe der Figur, der Rest als instanzierte Kugeln, die einem gemeinsamen Gefälle-Feld folgen und sich als Sammel-Haufen bzw. Bodenfleck setzen; Gaussian Splats nur als Option für ferne Fluff-Flächen; (4) Wasser, Fluss, Wasserfall zurückgestellt; später teilen Wasser und Kugeln dasselbe Gefälle-Feld; (5) Budgets je Zelle (Draw-Calls über Instanzen, Physik-Körper, Partikel) und Streaming wie die 192/256-m-Zellen. Spike: ein OSM-Viertel mit Blöcken, Straßen, einer Zerstörungskaskade und etwa 500 Kugeln, gemessen auf dem Ziel-Mac. Bis So kein Bau (V-1041).",
+   "values": {},
+   "owner": "WS0 (nach So)",
+   "check": "Architektur-Seite + Spike-Messung",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne gemeinsame Bauweise und Budget droht eine Performance-Sackgasse, sobald Stadt, Zerstörung und Fluff zusammenkommen.",
+   "applies": "nach So, vor jedem Weiterbau"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
