@@ -1,3 +1,7 @@
+> **R2 ADDITIVE GRAPH NOTICE (2026-10-29):** Preserve the eight R1 historical and eight R1 non-causal edges below, but read together with [RELATIONS_R2.md](RELATIONS_R2.md): nine more narrowly typed documentary/reporting edges `WC-H09..17`, revised four-author comparison and three **separate Hambro person nodes**. The formerly open full-transcript access gap is now **closed for text** (not audio), while primary transaction/asset original gaps remain open. No artistic analogy has been promoted to corporate ownership, criminal action or historical causal proof.
+
+---
+
 # WCC / Samosa — Documentary Graph, Author-World Comparison, Warburg Neighbours
 
 **2026-10-29 · Research, not an assertion of a unified secret organisation.**  
