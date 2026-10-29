@@ -57,6 +57,22 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 
 **Gutter-Stadt verbindlich nach `replies/SPEC_GUTTER_CURB_R1.md` (V-1000):** Bürgersteig-Ring mit Bordstein aus dem Modul `kfb-curb`, keine Bastel-Steine.
 
+## 4d.2 · Treffer-Löcher mit Wandstärke, Rand und Brandspur (Georg 29.10., V-1001)
+Bisher schneidet ein Treffer nur ein Rechteck aus der Hülle und zeigt die Karte dahinter. Das ist weder glaubwürdig noch passend zu den Waffen. Neu gilt:
+- **Lochform nach Waffe (Impact-Modell §4f):**
+  - Gatling: kleine runde Einschüsse, die sich zu einem ausgefransten Loch summieren.
+  - Rakete bzw. Kanone: ein großes Loch mit ausgebrochenen, unregelmäßigen Kanten.
+  - Racer: eine gestauchte, eingedrückte Kante, Durchbruch nur bei genug Wucht.
+  - Form aus einer Distanz-Maske (Kreis bzw. Kreise plus Rauschen am Rand), **nie rechteckig**.
+- **Wandstärke sichtbar,** auch bei der einfachen Quader-Variante: Die Hülle hat eine Dicke (z. B. 0,15–0,3 m). Am Lochrand sieht man die Schnittfläche, als Lagen wie bei Pappe bzw. Knete mit Fase, im Material der Hülle (Panel-Kanten, Motivrand). Umsetzung: je Loch ein instanzierter Rand-Ring entlang der Lochkontur durch die Wanddicke, dazu der Masken-Schnitt im Hüllen-Shader. Kein echtes Mesh-Boolean nötig.
+- **Dahinter ist Raum:** Der Kartenkern bzw. das Innere (Rückseite der HyperNorm-Hülle, später ein Splat-Raum §4e) liegt mit Abstand hinter der Wand. Nach dem Kugelausbruch sieht man den leeren bzw. teilgeleerten Innenraum.
+- **Brandspur:** ein dunkler, verkohlter Ring um das Loch, wie unser Kontaktton (dunkel, nie schwarz), dazu Schmauchspuren in Schussrichtung. Das liegt im Hüllen-Shader über einer Schadens-Textur (Trefferpositionen, Radien, Stärke), keine Extra-Objekte.
+- **Nachbrennen:**
+  - Nach Raketentreffern zeitlich begrenzt kleine Flammen, Funken und Rauch am Rand über `fx-burst` (Flipbooks aus FX_Visual bzw. Brackeys, Kenney-Rauch, GPU-Rauchfahne; §6b), danach bleibt nur die Brandspur.
+  - Bei Reparatur schließen sich Loch, Rand und Brandspur wieder, als Sprenkelband (V-403).
+- **Kollision und Logik** wie §4d: Das Loch öffnet die Kollision erst mit dem bestätigten Schaden aus `cascade-core`. Die Maske bildet genau diesen Zustand ab.
+- **Gleiches Prinzip für KayKit-Originalgebäude (§4f):** Dort sitzen Maske, Rand und Brandspur auf den Fassadensegmenten.
+
 ## 4e · Option: Gaussian-Splat-Innenräume hinter der Fassade (Web-Chat R14, V-998)
 - **Idee:** Durch ein Loch in der HyperNorm-Fassade sieht man in einen echten räumlichen 3D-Splat-Raum. Die Öffnung ist nur Zugang bzw. Sichtausschnitt.
 - **Getrennt von den Kugeln:** Splats sind Darstellung, die rollenden Knetkugeln sind ein eigenes Partikel- und Physiksystem. Beides lässt sich kombinieren, wird aber nicht gleichgesetzt.

@@ -14499,6 +14499,21 @@
    "applies": "sofort, WSA Golden"
   },
   {
+   "id": "V-1001",
+   "date": "2026-10-29",
+   "area": "Combat",
+   "verdict": "SPEC",
+   "text": "Treffer-Löcher in Kartengebäuden (Georg 29.10.: bisher nur rechteckiger Ausschnitt): Lochform nach Waffe aus Distanz-Maske (Gatling kleine runde Einschüsse, Rakete großes ausgebrochenes Loch, Racer Stauchkante), nie rechteckig; sichtbare Wandstärke auch bei Quadern über instanzierten Rand-Ring durch die Wanddicke (Pappe-/Knete-Lagen, Hüllenmaterial), kein Mesh-Boolean; Innenraum dahinter; Brandspur (dunkler Ring, Schmauch) über Schadens-Textur im Hüllen-Shader; Nachbrennen (Flammen, Funken, Rauch) zeitlich über fx-burst; Reparatur schließt alles als Sprenkelband. Konzept §4d.2.",
+   "values": {},
+   "owner": "WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: glaubwürdige Ränder, Wandstärke, Brand- und Schmauchspuren statt Rechteck-Ausschnitt.",
+   "applies": "WSA Golden"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
