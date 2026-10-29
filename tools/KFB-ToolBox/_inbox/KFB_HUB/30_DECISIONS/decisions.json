@@ -14839,7 +14839,9 @@
    "check": "drei Frames + Kritiker-Urteil",
    "source": "Georg 29.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-1028"
+   ],
    "why": "Bildmodelle können Style-Frames aus Eingabebildern, Claude Design nicht (V-1022); drei Frames halten den Aufwand klein und zeigen den Look vor dem teuren Blender-Bau.",
    "applies": "ab sofort, MiB-Turm"
   },
@@ -14902,6 +14904,21 @@
    "superseded_by": [],
    "why": "Georg will jede Figur selbst spielen können, um Lücken zu finden und zu entscheiden, welche sich lohnen; eine gemeinsame Grundfunktion hält es einfach.",
    "applies": "Grundlage jetzt, Rest nach So"
+  },
+  {
+   "id": "V-1028",
+   "date": "2026-10-29",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "MiB-Turm Frames in Blender statt Bild-Chat (Georg 29.10.: Bildmodell erzeugt Fantasiebilder ohne Bezug zu unseren Props und Figuren; b263/V-1023 abgebrochen). Konzeptblatt R3 (50_BLENDER/B40/KONZEPTBLATT_MIB_TURM_R3.md) ändert R2: Tür ist eine herausgeschnittene dunkle Platte, die senkrecht nach oben herausfährt (ersetzt Scharnier/Griff), Türränder bläulich-elektrisch leuchtend wie UFO-Luken (Teil der Tür-Ausnahme V-733), dahinter das warm-weiße Lichtvolumen; Agenten treten nacheinander aus dem Gegenlicht, der Türsteher kommt zuletzt und sichert vor der Tür wie ein Tank (ersetzt „neben der Tür, ≥ 85 % frei“, V-530/R2); Scannen mit Schild-Uhr links (V-1017/V-1020, Farben passend zum Anzug) oder einem einheitlichen Smartphone-Requisit in der Faust (dasselbe wie bei den scrollenden Protagonisten), Posen aus vorhandenen Clips, Blick über EyeRig/kfb-gaze.v1; Anzug-Prüfung: schwarzer Anzug, weißes Hemd, schwarze Krawatte, weiße Manschetten, Grundform ohne Mech-Verformung. Vier Frames (Tür hoch, Scannen, Treffer, Abgang) als Vorlage, Auftrag WSB 50_BLENDER/ANTWORT_WS0_2026-10-29_B40_R7.md. Blick-Laufzeit im Spiel (NPCs sehen sich an, schauen umher, Kamera, Brauen wo vorhanden) kommt mit dem N35-Blickmodul nach Sonntag.",
+   "values": {},
+   "owner": "WSB (r7) · WS0",
+   "check": "vier Frames + Kritiker",
+   "source": "Georg 29.10.",
+   "supersedes": "V-1023 (Bild-Chat für MiB-Frames)",
+   "superseded_by": [],
+   "why": "Frames aus den echten Modellen sind direkt baubar; Bildmodelle erfinden Figuren und Requisiten neu.",
+   "applies": "sofort, WSB r7"
   },
   {
    "id": "V-427",

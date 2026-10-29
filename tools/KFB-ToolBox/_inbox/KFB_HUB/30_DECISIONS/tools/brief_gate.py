@@ -44,7 +44,7 @@ def main():
 
     blockers, notes = [], []
     # V-Verweise: existieren sie, sind sie überholt oder ein FAIL?
-    for vid in sorted(set(re.findall(r'V-\d{3}', brief))):
+    for vid in sorted(set(re.findall(r'V-\d{3,4}', brief))):
         e = by_id.get(vid)
         if not e:
             blockers.append(f'{vid}: nicht im Register (decisions.json)')
