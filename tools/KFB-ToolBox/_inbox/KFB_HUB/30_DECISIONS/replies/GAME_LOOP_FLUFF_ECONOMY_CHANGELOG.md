@@ -76,3 +76,11 @@
 - **Prior-local status:** R9, R10 and R11 are local document drafts from earlier discussions, **not** persisted to this GitHub branch. R12 is a directly reviewed continuation of the verified R8 and present conversation, not a claim that R9–R11 were merged.
 - **Verification:** R12 concept GitHub write and exact readback; 0 runtime, 0 browser, 0 player playtests, 0 visual source-object isolation. No Stage or Live claim. World R4 STOP unchanged.
 - **One next gate:** WS0/Georg register intake for one source-pinned Card surface, one Resident and one optional cave/POI scene; no runtime authorization from this concept cut.
+
+## 2026-10-29 · SESSION CUT R13 · TRANSMEDIA GREATER INTENT
+
+- Georg correction: prioritise the Infinite Canvas across comics, Decks, Card knowledge, varied anthropomorphic performers, songs and videos over detailed micro-scenarios or automatic rap-style NPC output.
+- Source-backed new concept: GAME_LOOP_TRANSMEDIA_GREATER_INTENT_R13.md. Topic-to-Deck-to-song/video relations are an optional cross-media discovery and interpretation path, not new game or media owner.
+- Existing kfb.deck-song.v1 metadata has deckId. Historical 200+ Suno archive count is not a newly verified complete current catalog. No bulk generation or ideological truth judgments.
+- R9–R11 remain local-only drafts; this branch contains R2–R8, R12 and R13. Docs only, no live tests or publication.
+- One next gate: WS0/Georg editorial intake of the cross-media Greater Intent.
