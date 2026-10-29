@@ -14664,6 +14664,21 @@
    "applies": "Ausbau nach Golden-Ja"
   },
   {
+   "id": "V-1012",
+   "date": "2026-10-29",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Jetpack kleiner, damit FrizzleBob lesbar bleibt (Georg 29.10., Kritik Golden: Jetpack verdeckt Figur und Fokus). Ein Faktor im Sitz aus dem Jetpack-Vertrag (seat_per_figure), skaliert um den Rücken-Kontaktpunkt, Düsen/Flammen/Tank wandern mit; Start 0,75, A/B gegen 1,0 im Spiel-Look von hinten (Spielkamera). Keine Neumodellierung (V-506: Länge über Skalierung). Ein Wert für Hauptspiel und Cascade (FB_CANON + jetpack.js). WS1 als kleiner I5-Punkt, WSA übernimmt.",
+   "values": {},
+   "owner": "WS1 I5 · WSA",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: Jetpack kleiner, damit man den Character besser sieht.",
+   "applies": "WS1 I5"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
