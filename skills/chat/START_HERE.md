@@ -1,3 +1,9 @@
+## BRANCH-LOCAL R14 · 2026-10-29 · Gaussian Splats behind HyperNorm Card Buildings (user correction)
+
+**READ `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R14_GAUSSIAN_SPLATS_CARD_BUILDING_REVEAL_CORRECTION_2026-10-29.md` in existing WS0 Draft PR #435.** Georg explicitly clarified **`Gaussian Splats`**, not `Splits`. Intended visual: real 3DGS volumetric mini-scene visible through a shot/damaged HyperNorm building shell, with actual collision and shell damage managed by the existing Game owner. 3DGS primitives are **not** the separate rolling, source-colored KFB balls in R13 and are **not** collision/physics or full traversable Portal by themselves. Candidate 3DGS source/runtime assets and format not yet validated. Source gate: one building, one real 3DGS asset, three camera angles and performance/fallback test. **CONCEPT ONLY**; official V-962 R2 and host/private game remain unmodified.
+
+---
+
 ## BRANCH-LOCAL R18 · 2026-10-29 · INTENTIONAL HYPERNORM COLLAGE PROJECTION ON SOURCE 3D ASSETS
 
 **Latest correction to the living WS0 concept:** Georg explicitly welcomes unhinged anamorphic/warped H13 HyperNorm music-video collage on actual irregular KayKit/Kenney GLTF buildings. **Temporarily obscured/distorted card image is a desired feature**, not a demand for always-readable 16:9 "hero facade". Only true collectible `CARD_VAULT` and gameplay/UI must remain readable. Source H13 curated anti-repetition and H13 original layered beat/shot grammar are the composer source; no new independent randomized engine. Avoid visible harsh UV seams, clone stamping, layer overload/muddy overdraw using deliberate material/Clay/Paper edges, staggered masks/negative space (S4 craft) and quiet gameplay lines. Lower motion/opacity during real impact/cell destruction for action clarity.
