@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.asset-pass/1",
+  "module": "kfb_clay_bpy/1",
+  "asset": "kenney-nature-kit:log_stackLarge",
+  "origin": "media/3D_Assets/kenney_nature-kit/Models/GLTF format/log_stackLarge.glb",
+  "licence": "CC0 (Nature-Branch License.txt)",
+  "kit": "kenney_nature-kit",
+  "clay": {
+    "version": "kfb-clay.v1.1",
+    "profile": "midground"
+  },
+  "role": "bark",
+  "color": "#74467d",
+  "form_dna": {
+    "status": "proposal; visual check open"
+  },
+  "wear": [
+    "Vorschlag: Abnutzung an Griff- und Kontaktstellen; WS0 vervollständigt"
+  ],
+  "scale": {
+    "m_per_kaykit_u": 0.616381,
+    "h_m": 0.2135
+  },
+  "placement": {
+    "kind": "log",
+    "sink": [
+      0.1,
+      0.25
+    ],
+    "foot_r_m": null,
+    "foot_off_m": null,
+    "long_axis": null,
+    "status": "V-932 offen"
+  },
+  "notes": [
+    "Entwurf; keine Spielabnahme",
+    "WS0 vervollständigt M5",
+    "WS0 vervollständigt vor Einbau (M5).",
+    "Originalprüfung G2/G5: PASS; Blender-Knetmaterial: PASS. Spielabnahme durch WS0 offen."
+  ],
+  "complete": true,
+  "missing": [],
+  "status": "draft"
+}
