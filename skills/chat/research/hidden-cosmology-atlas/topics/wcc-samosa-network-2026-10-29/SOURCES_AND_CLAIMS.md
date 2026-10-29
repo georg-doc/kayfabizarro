@@ -1,3 +1,7 @@
+> **CURRENT SOURCE COVERAGE · R2:** The R1 source ledger **WC-S01..17** / claim ledger **WC-C01..17** below are retained unchanged as an audit snapshot. A full **101,163-character** 39-chapter transcript was subsequently recovered from the user's private Google Doc (source **WC-S18**), with new `WC-S18..28` and `WC-C18..31` records in [SOURCE_CHECKS_R2.md](SOURCE_CHECKS_R2.md). **Combined current count: 28 source/input records and 31 claims; not 28 full primary originals.** The R1 opening claim that most of the transcript was unavailable no longer describes present access. See the [timestamped atlas](TRANSCRIPT_CHAPTER_ATLAS_R2.md).
+
+---
+
 # WCC / Samosa — Source Custody and Atomic Claims R1
 
 **Date:** 2026-10-29 · **Status:** bounded source audit; NOT a full video transcript review.  
