@@ -1,3 +1,16 @@
+## RESEARCH TOPIC INTAKE · 2026-10-29 · JASON SAMOSA / WCC NETWORK R2
+
+**Additive existing-owner research branch / Draft PR #394:** [WCC / Jason Samosa topic Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [Full 39-chapter video source index](topics/wcc-samosa-network-2026-10-29/TRANSCRIPT_CHAPTER_ATLAS_R2.md) · [R2 source-ledger claims](topics/wcc-samosa-network-2026-10-29/SOURCE_CHECKS_R2.md) · [R2 historical/noncausal graph](topics/wcc-samosa-network-2026-10-29/RELATIONS_R2.md) · [R2 actual test report](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R2.md).
+
+**New evidence:** The user-owned Google Doc `KFB Author Dossier: Jason Samosa` was located; one **101,163-character timestamped transcript** / **39 chapters** read (the documentary audio not independently played). Private source copy and KFB author masters remain unchanged. Combined source inventory: **28 records, 31 atomic claims, 17 documentary/reporting edges**; initial R1 absence-of-transcript is superseded. Tests **15/15 static PASS**, no PDF original page screenshots or runtime/Stage work.
+
+**Worldviews kept separate:** Samosa (WCC as transnational covert corporate hub); Jason Reza Jorjani (real first-hand public citation/reception of Samosa plus independent Fourth-Reich/breakaway cosmology); Farrell (Nazi International and postwar hidden finance/technology, original WCC passage still missing); Daniel Liszt/Dark Journalist (X-PROTECT/disclosure/Atlantis schema, original WCC passage still missing). Typed historical edges are not confused with Warburg analogies, nor with fiction (SPECTRE/SWEEP). Key source-critical corrections: Scott/CIC attribution, three Hambros, 1958/1963 papal chronology, Fleming 1964.
+
+**No new editable author master, Graph runtime, game/card generation, GPT Site, main Hub route, Cloudflare Stage or Live claim. No merge.**  
+**ONE next source gate:** original **1969–1981 Hambro/Sindona/Moneyrex transaction** audit, especially 1974 Farnsworth and 1981-04-30 Banca d'Italia letter.
+
+---
+
 ## CURRENT SOURCE MIRROR VALIDATION — 2026-10-13 — KURT METZGER GOOGLE DOC IN-PLACE WRITE
 
 **User-authorized bounded integration test:** A pre-existing Google Doc `KFB Author Dossier: Kurt Metzger (Updated & Consolidated)` was read through the connected Google Drive API and updated **in place** with one additive, metadata-only probe `WV_DOC_SYNC_20261013_01`, using native tab `t.0`, a guarded `requiredRevisionId`, one append-only Google Docs `batchUpdate` insert and direct readback.
