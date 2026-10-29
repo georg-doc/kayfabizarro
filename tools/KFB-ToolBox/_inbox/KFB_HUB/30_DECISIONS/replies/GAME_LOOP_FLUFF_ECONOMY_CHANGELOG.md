@@ -93,3 +93,11 @@
 - This is a **WS0 editorial intake** of the existing Bigger Picture / Global Intent, not their unsanctioned replacement, a new canonical master or a runtime proposal. R9–R11 remain local-only earlier drafts. No World/Main/Hub/Stage/Live modification.
 - Evidence: current GitHub global references, R13 concept/Return, startup workflow, and R14 file exact readback. Zero runtime/browser/player playtests.
 - Exactly one next gate: WS0/Georg review R14 against current global creative guidance and decide whether to add a cross-reference; no other owner action implied.
+
+## 2026-10-29 · SESSION CUT R15 · UNIVERSE IN A NUTSHELL / NO PHILOSOPHER KING
+
+- **Georg correction:** even subtle game mechanics must not prescribe enlightened behavior, improved empathy, intellectual conversion or a hidden politically/philosophically favored destination. The creative author's humane hopes are not gameplay goals, NPC development requirements or “2–4%” outcomes. A world modeled for surprises is different from a player-education funnel.
+- **New additive design:** `GAME_LOOP_UNIVERSE_IN_A_NUTSHELL_NONTELEOLOGY_R15.md`. The playful universe models concrete actors, biases, relationships, constraints, causal events, conflicting source Card claims and social consequences, **not final human interpretations**. Plato's cave need not be escaped; staying, leaving, returning, attacking, helping or not caring must not be ordered by an invisible moral score.
+- **Clarifies R14 without rewriting history:** Respect persons without endorsing every claim, maintain factual attribution and integrity, preserve NPC refusal and harm consequences, but don't reward agreement with authorial enlightenment. No hidden didactic “nudges”, compulsory research or empathy checks. Chill gameplay, satire and juicy physics are sufficient on their own.
+- **Scope:** existing global Bigger Picture, Global Intent, WS0 and game owners remain authoritative; this is docs-only editorial input for them. R9–R11 remain local-only; no new systems or Live/Stage/Hub work.
+- **Proof:** exact R15 GitHub write/readback; no runtime, browser or playtests. **One next gate:** WS0/Georg explicitly reconcile R14 with R15, optionally cross-reference the corrected principle in existing creative homes.
