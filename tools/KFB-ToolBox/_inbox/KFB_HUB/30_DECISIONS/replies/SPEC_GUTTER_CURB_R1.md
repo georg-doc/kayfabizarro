@@ -60,3 +60,17 @@ Mehrere Höhenstufen (Treppen, Terrassen), Kugeln kullern Stufen hinunter bzw. b
 - **Sockets werden gemessen, nicht von Hand vergeben:** Das Kantenprofil jedes Teils wird auf dem 2-×-2-m-Raster abgetastet (Höhe und Form an n Punkten je Kante). Daraus entsteht die Socket-ID automatisch, als Daten im Platzierungs- bzw. WFC-Löser (`kfb-place`). Grundlage ist das Inventar `replies/KAYKIT_PLATFORMER_INVENTAR_R1.md`. Handvergabe erzeugt genau die Fehler, die wir vermeiden wollen.
 - **Bodenblende für jedes Asset auf dem Gelände:** Im Materialadapter wird die Fassade bzw. der Fuß eines Objekts über einige Zentimeter bis Dezimeter in die Bandfarbe des Geländes darunter überblendet. Gemessen wird der Abstand Weltpunkt minus `surfaceAt`, es braucht also keine Vertex-Farben und es funktioniert auch bei Original-Assets. Darüber liegt der dunkle Kontaktton (V-570). Das ist die allgemeine Form dessen, was Bürgersteig-Ring und Erdlippe für ihre Fälle schon leisten.
 - **Prüfung:** Zusätzlich zu §5 prüft der Löser jede Kachel-Nachbarschaft auf passende Sockets. Eine harte Kante ohne Gegenstück ist ein Fehler.
+
+## 8 · Organik: leichte Asymmetrie und Materialcodes (Georg 29.10., V-1004)
+- **Leicht deformiert, nie kaputt:** Bordstein, Bürgersteig, Sockel und Fassaden bekommen eine handmodellierte Unregelmäßigkeit, wie die KayKit-Fassaden im Joyride-Slice und in der Claude-Design-„Knetstraße“ bzw. die welligen Mauerkronen der Gizmo-Wand im Panoptikum-Slice.
+  - Umsetzung: langwellige Abweichung (Wellenlänge mindestens 3–5 m) der Breite, Höhe und Kantenlage um wenige Prozent, aus einem festen Rauschen mit Saat.
+  - **Keine** kleinteiligen Knubbel. Die Silhouette bleibt klar und durchgehend. Das ist die Grenze aus V-952: Rahmen bleiben einfach und sauber, nur leicht atmend.
+- **Gelände mit leichter Dünen-Schwingung:** Wo kein direkter Übergang nötig ist, schwingt das Gelände sanft (niederfrequente Höhenwelle im Gelände-Generator). Es ist Teil des Höhenfelds, kein aufgelegtes Übergangs-Objekt (§4 bleibt).
+- **Materialcodes statt Clutter (V-797 bleibt gültig):** kleine Gruppen aus zwei bis drei Elementen nach den Etherington-Regeln (ein größeres, ein bis zwei kleinere), platziert per `kfb-place` bzw. WFC.
+  - Elemente:
+    - kleine Knete-Kügelchen in Palettenfarbe statt großer „Knet-Eier“, aus dem Kugel-Kern der Ball-Probe, verwandt mit den Fluff-Kugeln;
+    - Grasbüschel;
+    - ein Pilz mit zwei kleineren Begleitern als Mini-Biom.
+  - **Dichte-Ziel:** In einer normalen Spielerkamera sind mindestens drei verschiedene Materialcodes zu sehen, aber kein Teppich. Gruppen statt Streuung, auch vereinzelt auf dem Bürgersteig.
+  - Farben passen zum Biom bzw. Thema. So bleibt die Materialsprache lesbar, auch wenn Fluff-Kugeln wegrollen.
+- **Prüfung:** Die Zählprüfung aus §5 erlaubt ausdrücklich Materialcode-Gruppen nach dieser Regel. Einzelstücke ohne Gruppe und Teppiche fallen durch.
