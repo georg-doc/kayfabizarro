@@ -1,3 +1,7 @@
+> **R2 SUPERSESSION NOTICE:** The test counts below were correct at the **R1 checkpoint before the user's original Google Doc was found**. They are historical and do NOT describe current transcript coverage. Read [TEST_REPORT_R2.md](TEST_REPORT_R2.md) for the full 39-chapter / 101,163-character **text** retrieval and current ledger integrity. Neither R1 nor R2 reviewed the video's full audiovisual stream or original PDF page images.
+
+---
+
 # WCC / Samosa R1 — Actual Research and Integrity Test Report
 
 **Checked:** 2026-10-29 · Existing owner Draft PR #394 · No game runtime or website was edited.
