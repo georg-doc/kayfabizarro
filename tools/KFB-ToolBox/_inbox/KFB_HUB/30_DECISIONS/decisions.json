@@ -13624,7 +13624,9 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-1029"
+   ],
    "why": "Die Maschinen sind gebastelt, nicht gekauft – man soll hören, dass jemand daran herumgeschraubt hat.",
    "applies": "nach Georgs Hörurteil"
   },
@@ -14919,6 +14921,21 @@
    "superseded_by": [],
    "why": "Frames aus den echten Modellen sind direkt baubar; Bildmodelle erfinden Figuren und Requisiten neu.",
    "applies": "sofort, WSB r7"
+  },
+  {
+   "id": "V-1029",
+   "date": "2026-10-29",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "(1) Bass-Regel korrigiert (Georg 28.10. auf PR 45 nach R3-Ablehnung, im Register nachgetragen): alle Antriebe mit sattem Bass und räumlichem Klang, auch das kleine Jetpack; Metall-/Klapper-Akzente kurz, sparsam, wechselnd; pauschale Bassverbote waren falsch. Jetpack R4 (Georgs manuelle Quellen, HRTF) wartet auf Georgs Hörurteil. (2) WSA-audio-Briefing „Songs, Fahrzeug-/Flugforschung, ASMR-Gebäude R1“ (kayfabizarro @bf5ab0b, PR 455) freigegeben mit WS0-Punkten: keine neuen ElevenLabs-Klänge, erst Hörmatrix der vorhandenen 40 ASMR + 3 Goo-House-Clips; Spielanschluss der Gebäude-Klänge erst nach Georgs Hörurteil und über den Kanal V-1024 (WS1 hält das Spiel bis So). Auftrag replies/WS0_AN_WSA_AUDIO_SONGS_ASMR_R2.md; ersetzt Hub b259.",
+   "values": {},
+   "owner": "WSA audio · WS0",
+   "check": "Site-Probe + Hörmatrix",
+   "source": "Georg 28./29.10.",
+   "supersedes": "V-931 (nur „weniger Bass“)",
+   "superseded_by": [],
+   "why": "Georgs Hörurteil auf PR 45 war nie im Register; WSA hatte ein eigenes Briefing samt Recherchestrang hinterlegt, das WS0 nicht kannte.",
+   "applies": "sofort"
   },
   {
    "id": "V-427",
