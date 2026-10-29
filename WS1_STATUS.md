@@ -1,7 +1,37 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §181.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§181 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §182.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§182 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 182 · 29.10. nachmittags · IR2 I3, I6 (Schritt 1), I7 im Integrationszweig · Stand für Georg in Klartext · Fragen
+**Zweig `game/integration-r2` @e5c6669**, Pflicht-Tests alle grün (`scripts/ir2/pflicht.sh`), npc-suite unverändert (nur die bekannten Altfehler c2, c3, c3g).
+
+**Für Georg in Klartext:** Mit den Schaltern `theme=1,encounters=1,goal=1` in der Endlos-Welt gilt:
+- Zu Fuß überallhin, ohne unsichtbare Wand.
+- Gesammeltes bleibt gesammelt.
+- „New seed“ in Settings › World erzeugt eine neue Welt mit neuen Farben und Themen; die Musik folgt dem Thema.
+- Unterwegs tauchen Begegnungen auf (Bewohner, Disco, Skelett-Patrouille).
+- Ein Pfeil zeigt zur nächsten Karte; beim Einsammeln fliegt das Kartenbild ins Kartenfach.
+
+**Technik je Slice:**
+- **I3 `encounters=1`:**
+  - Dieselbe Szenen-Technik von WS-NPC (Raster, Regie, Szenen-Wirt), mit Maßen für die Endlos-Welt: Raster 192 m, Abstand 400–1000 m, Plätze 150–450 m voraus, Abbau ab 380 m.
+  - Plätze frei von Start, Ernte, Orten, Kuppel, Karten-/Tafelplätzen und Oasen. Entwürfe sind dabei.
+  - Probe `scripts/ir2/enc-run.mjs`: 3 km → 6 Szenen (bewohner, disco, patrouille), keine Seitenfehler.
+  - Noch nicht im Pool: Amphitheater und „Karte als Gelände“ als eigene Einträge, Scenelets der Bühne (V-941). Das ist WS-NPC-Arbeit, sobald die Sitzung läuft.
+- **I7 `goal=1`:**
+  - Ziel „Next card“ = nächste offene Gelände-Karte (HUD-Zielpfeil); Kartenflug ins Almanach-Fach (`src/hud/cardFlight.js`).
+  - Probe `scripts/ir2/goal-check.mjs` PASS.
+- **I6 Schritt 1:** `theme=1` schaltet die Musik nach Thema ein (bisher nur `bgm=biome`). Die Klangbetten folgen schon dem Biom-/Themen-Platz. Die neuen Suno-Stücke (suno_r2) in die Tabelle aufzunehmen bleibt bei WS-Audio.
+
+**Fragen (Georg bzw. WS0):**
+1. **Karten-Identität der Gelände-Karten:** Alle Gelände-Karten zeigen dasselbe Bild (`card_r3`) und tragen kein Deck bzw. keine Nummer. Deshalb kann eine eingesammelte Karte im Almanach nicht als bestimmte Karte erscheinen (der Flug ist da, die Zählung nicht). Vorschlag: je Kartenplatz eine Karte aus dem Deck, das das Thema bzw. Kartenviertel (V-1002) vorgibt. Das braucht ein Kartenbild je Karte als Relief, also Kugel-Kern-Backen je Karte (WSB/WSA?) oder vorerst Platte statt Relief.
+2. Weiter offen aus §181: Endlos-Welt als Standard (wartet auf den Hangstart-Fix des Jetpacks) und Weltursprung (Vorschlag: später).
+
+**Als Nächstes (Lead):**
+- I4 Wasser (Seen auf Basis der Oasen).
+- I5 Fehler aus der Live-Site: bitte die aktuelle Liste nennen, falls es eine gibt. Sonst nimmt der Lead die offenen Kleinigkeiten aus WS0_STATE (inneres Portal Mindscape, steile Kamera vor der Kuppel, „CM“-Icon).
+- Danach eine Abnahme-Seite mit Clip je Slice für Georg.
 
 ## 181 · 29.10. nachmittags · IR2 I1 + I2 Stufe 1 im Integrationszweig · zwei Befunde der Endlos-Welt an WS0 (Flug, Test-Ladezeit)
 **Im Zweig `game/integration-r2` @85a4cda** (I1 @5cb1209, I2 @85a4cda, Test-Infrastruktur @7780104). Pflicht-Tests alle grün (`scripts/ir2/pflicht.sh`); die npc-suite läuft nach.
