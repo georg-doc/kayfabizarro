@@ -161,3 +161,23 @@ Alle sind deterministisch über `seed`; Zufall nur über `rng(seed)`.
 - **Startwerte bestätigen:** Gruppen je 10 m und Bandbreiten sind Startwerte. Georg oder WS1 tunen sie im Spiel (God-Mode-Schieber: `density`, `spread`, `sinkBias`).
 - **Footprint-Methode:** Die Hüllen-Näherung (WSB) und WS0s Methode (Bodenplatten-Schnitt) unterscheiden sich. Für Steine zählt die Grenze, an der die Bühne den Boden trifft.
 - **Etherington-Originale:** noch nicht gegengelesen (siehe Konzept, offene Frage 4).
+
+
+## 7 · Nachtrag 29.10.2026 (Georg, V-1005): eine Verteilungslogik für alle Kleinteile
+Für Materialcodes, Fundstücke, Fluff-Nester, Fluff-Kugeln und Blumen gilt dieselbe Logik: Gruppen nach der **Dreier-Regel**, platziert mit `kfb-place` bzw. WFC, harmonisch über die Fläche verteilt. Nie wahllos geworfene Haufen, nie ein Teppich.
+- **Gruppe = zwei bis drei verwandte Elemente.** Verwandt heißt je nach Art:
+  - Materialcodes: Größe (ein größeres, ein bis zwei kleinere; `SPEC_GUTTER_CURB_R1.md` §8).
+  - Fundstücke: Familie (Süßes und Backwaren zusammen: Donut, Windbeutel, Kirschkuchen; Geschirr zusammen: Teekanne, Teller). Kein Hamburger neben dem Donut. Kein Überhang einer Sorte (nicht mehrere Brote in einer Gruppe), höchstens ein Element je Sorte pro Gruppe.
+  - Blumen: Farbe und Sorte (z. B. zwei weiße neben einer gelben). Mehrere Gruppen ergeben einen Beet-Charakter. Die Blütenfarben folgen den Farbrollen des Bioms bzw. Themas.
+- **Abstand innerhalb der Gruppe:** Fundstücke liegen nicht aufeinander, sondern mit Sammelabstand nebeneinander bzw. leicht gestaffelt entlang einer Laufrichtung. So kann man sie nacheinander aufnehmen und es entsteht eine kleine Spur.
+- **Verteilung zwischen Gruppen:**
+  - Abstand und Dichte nach den Etherington-Zahlen.
+  - Fundstücke, Fluff-Nester und Blumen weichen einander aus bzw. ergänzen sich, z. B. Fundstück-Spur zum Fluff-Nest, Blumen am Wegrand.
+  - Je Spielerblick sind mindestens drei verschiedene Codes zu sehen, keine Art dominiert.
+- **Quellen:**
+  - Fundstücke: WSB B28 Loot (`media/3D_Assets/WSB_BLENDER/public_r1/B28/`) bzw. Prop-Pool.
+  - Blumen: Quaternius Nature-Packs aus dem Prop-Pool (V-920, im Asset Librarian vollständig aufgenommen).
+  - Kügelchen: Kugel-Kern.
+  - Im Spiel betroffen: `src/world/loot.js`, `src/modules/foundItems3d.js`, die Fluff-Nester in `src/world/placeVeg.js`.
+- **Bäume** bleiben bei ihren bestehenden Regeln (Massen und Formationen). Blumen folgen der gleichen Grundidee in klein.
+- **Prüfung:** Eine Zählprüfung je Kamera-Marke stellt fest: Gruppengröße 2–3, keine Sorte doppelt je Fundstück-Gruppe, kein Fremd-Element in einer Familie, Mindestabstand eingehalten, mindestens drei Codes im Blick.
