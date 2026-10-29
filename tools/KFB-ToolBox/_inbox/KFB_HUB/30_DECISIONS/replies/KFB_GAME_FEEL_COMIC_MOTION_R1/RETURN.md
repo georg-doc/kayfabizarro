@@ -353,3 +353,12 @@ Georg supplied a full blank-folder Cities: Skylines II–class Three.js/Vite One
 **Design recommendation:** A+B first: readable animated HyperNorm exterior with a source card seen only through one real damage-mask/sector-collider aperture. Bounded C as 200–600 instanced visible palette beads and a few real collision contacts, most balls cosmetic curve/heightfield followers; only real accepted game events change `cascade-core` Fluff/Goo, damage, card collect, build and route. Do not try to calculate real rigid-body physics for every sphere. One 4–6 card block game golden, source fake-box downgrade controlled, then extend. `cardNo:1..56` optional subset; don't require 56 buildings/sequential death. All player rigs stay original 3D.
 
 **Authority:** Official WS0 V-962 R2 + V-968 remain UNMODIFIED; new comic-gutter HyperNorm city is an **alternative proposed scene-generation/presentation path**, not authorized POC rewrite, not a new Site/World/Shader/Physics owner. WS0 may amend its official register after evaluating R13 vs stalled OSM City. Existing R10 external blind-quality path proposed. No main/private game code/source changes, no new QA runtime, no deploy.
+
+
+---
+
+## 2026-10-29 · R14 Gaussian Splats correction to Card Building view / no actual implementation
+
+Georg corrected the interpretation from **“Splits”** to **Gaussian Splats (3DGS)**. This is the 3D volumetric visual content behind a mask-open HyperNorm Card Building shell, with a parallax pocket scene, not a new "split portal" mechanic. Existing shell damage sectors and an actual aperture may reveal the splat space; the splat primitives are NOT the physical rolling KFB card-color beads and do NOT inherently create player collision, walkability or a traversable world. Full original 3D FB_CANON and original Maze/Track/Combat/Destruct owners unchanged.
+
+Created `CASCADE_SPHERE_R14_GAUSSIAN_SPLATS_CARD_BUILDING_REVEAL_CORRECTION_2026-10-29.md` (same WS0 Draft PR #435). R13 top corrected to point to R14. Proposed source test: ONE authentic 3DGS dataset + ONE building/visible shell breach + real camera 3-angle occlusion and mobile frame/memory tests before multi-building ambition. Actual 3DGS runnable API and source assets NOT verified by this source audit; no new game shader, runtime, Stage/Site, critic, private code or official register authority edits.
