@@ -1,3 +1,23 @@
+## CURRENT TOPIC RETURN · 2026-10-29 · SAMOSA WCC R3 ADDITIVE SOURCE AUDIT
+
+**Result:** The user's updated four-tab `KFB Author Dossier: Jason Samosa (WCC & Deep State Cartographer)` was read through the exact connected private Google Doc (observed **124,543 chars**, one old transcript + worldview/creative dossier + two substantial new research appendices). Older R2 `KFB Author Dossier: Jason Samosa` (39 chapters, 101,163 characters) remains a separate document. Both originals **untouched**. Private source text and IDs not republished.
+
+**New files:** [R3 dossier delta](DOSSIER_UPDATE_REVIEW_R3.md) · [12 new sources / 13 claims](SOURCES_AND_CLAIMS_R3.md) · [12 new documentary plus 7 non-causal edges](RELATIONS_R3.md) · [R3 test evidence](TEST_REPORT_R3.md). Previous R1/R2 files and all original ID assignments preserved. Combined current ledger **40 input/source IDs, 44 atomic claims, 29 documented/source-reporting edges, 15 numbered non-causal edges** (plus R2's 7 unnumbered conceptual comparison rows). **14/14 static document QA PASS**; not a claim that all historical propositions are true.
+
+**Strongest new original-grounded findings:** Milan State Archive historical inventory (2022) identifies Hambros Bank **24.5%** and Continental Illinois **24.5%** minority BPF interests, via John McCaffery. University Bologna D'Addea thesis' **indexed shareholder-book excerpts** date Hambros entry **29 May 1964**, Continental **7 May 1965**; Sindona's Fasco had gained BPF control **28 Oct 1960**. D'Addea's Moneyrex founding section reports **2 Dec 1964** and 850 international banking counterparties with maximum approximately $40bn annual trading volume. **Source correction:** his 25% Cofina/1972 Hambros exit passage addresses **BPF**, not independently Moneyrex. Moneyrex-specific Hambros equity remains `OPEN`, not falsely disproved or confirmed.
+
+**Major person correction:** The updated donor claims Jocelyn Olaf was Sir Charles Jocelyn's son. A 1966 *New Yorker* bank profile, Oxford DNB and Cobbold Family Trust show **Jocelyn Olaf (1919–1994) is Ronald Olaf Hambro's son**, whereas **Charles Eric Alexander Hambro (1930–2002)** is Sir Charles Jocelyn's only son. The father→son handoff story is replaced by separate **family-branch and company-level roles**, not erased banking continuity.
+
+**Vatican:** NARA original CIA McCone **May 10, 1963 memo** of his **May 1 conversation with Pope John XXIII** plus **June 6, 1963 CIA field successor assessment** (explicitly speculative, not official CIA policy) provide direct evidence of political intelligence contact/forecast, **not papal vote control**. Montini Milan 1954/created Cardinal 1958/elected 1963 independently confirmed; Treccani reports Pius XII's **1953 offer of cardinal elevation** which Montini asked to decline. “Exile” interpretation remains separate from dates.
+
+**Actual access limits:** Official 69-page Milan archive **historical narrative** PDF text scope index 4 (printed 5), original shareholder certificate unseen; 4-page McCone and 7-page successor CIA scan text snippets, but page-image screenshots failed: **0 IMAGE_VERIFIED**. D'Addea PDF not fully opened; targeted index excerpts only. 1974 NYT full original inaccessible, underlying Banca d'Italia **1981-04-30 Moneyrex letter** remains inventory-only. No code tests/CI/browser/Stage, no gameplay, none expected for research-only slice.
+
+**Owner/PR/branch:** `georg-doc/kayfabizarro`, `research/hidden-cosmology-atlas-2026-10-13`, existing [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Actual verified Git head is the most recent branch ref; each document write checked against exact new commit head and file readback. Research-only; main router and KFB Hub remain correctly untouched: new topic is discoverable from this branch's existing Living Atlas and project Return. No additional Stage route or auto-merge.
+
+**Exactly ONE next evidence gate — `WCC_MONEYREX_EQUITY_ORIGINAL_1981`:** obtain **Moneyrex 1964–72 shareholder/board transfer originals** and **1981-04-30 Bank of Italy Moneyrex inquiry letter**. Resolve whether a named Hambros entity held shares, how many and when, and whether the WCC legal corporation appears as counterparty. The corresponding asserted historical edge is not promoted until original entry evidence exists.
+
+---
+
 # Jason Samosa / WCC — Topic Return R2 (2026-10-29)
 
 **Mode:** RESEARCH · bounded source and cross-author network analysis; **status:** R2 text-corpus recovered and persisted, not primary-causality accepted.  
