@@ -116,3 +116,7 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Leitidee nach dem Golden (V-1002):** Kartenviertel als Hauptachse der Karten-Platzierung, `replies/KONZEPT_KARTENVIERTEL_R1.md`; zuerst Module aus der Cascade Sphere ins Hauptspiel übernehmen.
 - **Verteiler (V-1007):** `replies/KONZEPT_KFB_VERTEILER_R1.md` – nach dem Reset Himmel und Planeten (N Körper, verteilt) als WS0-Slice.
 - **29.10. nachts:** WS1-Start Fr 30.10. früh ab @72fbb25 (b256 aktualisiert). Site R5.2 bei WSA (b260). WSA-Golden R4 läuft; Gesamtupdate Gutter-Spec + Treffer-Löcher (V-1000/V-1001) noch nicht an WSA, wird nachgebrieft. Offene Kleinigkeiten: inneres Portal Mindscape, steile Kamera vor der Kuppel, „CM“-Icon, fb-shoulder-shadow endless_gold_hals.
+
+## 29.10. vormittags
+- V-1009: WSA-Golden R4 mit Bürgersteig + Treffer-Löchern zurück, Mechanik PASS, Kritik REWORK 7,1; Golden-Entscheidung bei Georg. b248 done.
+- V-1010: Web-Chat-Gewichte R1 (PR 459) als optionale I2-Startwerte in WS0_TO_WS1 + b256.

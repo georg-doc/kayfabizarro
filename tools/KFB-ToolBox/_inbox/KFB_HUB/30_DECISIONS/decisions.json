@@ -14619,6 +14619,36 @@
    "applies": "Fr 30.10. früh"
   },
   {
+   "id": "V-1009",
+   "date": "2026-10-29",
+   "area": "Cascade Sphere",
+   "verdict": "REVIEW",
+   "text": "WSA-Golden R4 mit Bürgersteig-Ringen (V-1000) und Treffer-Löchern (V-1001) zurück: Mechanik PASS (4 Ringe/Sockel, Sohle max. 2,47 cm, Gatling kumuliert, Rakete öffnet, 22 cm Wandrand, Brandspur, Nachbrennen 7,5 s, Reparatur schließt alles, 600 Kugeln, eine H15-Quelle; Mac Median 17,1 ms, p95 71,6 ms). Blinde Kritik REWORK 7,1/10: Figur und Jetpack verdecken den Fokus, Hüllenraster konkurriert mit Karte/Bresche, Boden und Welt verschmelzen. WS0-Empfehlung: Kernfrage beantwortet sich am Clip (Bresche zeigt die Karte, Kugeln treten aus, Bordstein ohne Bastelei); Fokus-/Kamera-Korrektur nicht als eigene Runde, sondern im Ausbau. Georg entscheidet den Golden. KFB-Stunt-Car-Race poc/cascade-sphere-r0 @646eb84.",
+   "values": {},
+   "owner": "WSA · Georg",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: WSA soll weiterlaufen; Golden mit Bürgersteig und Treffer-Löchern als Grundlage für die Golden-Entscheidung.",
+   "applies": "vor Ausbau"
+  },
+  {
+   "id": "V-1010",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Web-Chat-Entwurf KFB-Verteiler-Gewichte R1 (kayfabizarro PR 459, Draft, Head cd4baf2): 18 Themenprofile (Paletten-, Rollen-, Story-Mode-Gewichte, Nachbarschaften, Prop-/Landmark-Dreier, Klangbett-Familie, Billboard-Motive, 2 surreale Ausreißer, Bewohner-Kandidaten), 130 Deck-Zuordnungen, 9 Kartenreferenzen, 7 Prüfungen für WS1. Status: Startwerte, keine Laufzeit-Entscheidung. WS1 I2 lädt ihn optional in den Saat-Browser und prüft mit festen Seeds; Übernahme entscheidet WS0 nach den Testläufen. Offen: niedrig-konfidente Zuordnung The Biological Metropolis.",
+   "values": {},
+   "owner": "WS1 I2",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: WFC-Gewichte heuristisch aus Deck-JSON und Dramatis Personae, dann Testläufe.",
+   "applies": "WS1 I2 ab Fr 30.10."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
