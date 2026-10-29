@@ -55,6 +55,12 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 - **Befall und Heilung:** Graustufen-Hülle mit herabfließendem Goo (V-625, V-677), Heilung bringt die Kartenfarbe zurück.
 - **Golden:** vier Kartengebäude, eine versteckte Originalkarte, ein zerstörbarer Wandbereich je Gebäude, ein Kugelausbruch, ein echter Gutter-Fluff-Fluss, FrizzleBob, eine vollständige Reparatur. Brief `replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R4.md`.
 
+## 4e · Option: Gaussian-Splat-Innenräume hinter der Fassade (Web-Chat R14, V-998)
+- **Idee:** Durch ein Loch in der HyperNorm-Fassade sieht man in einen echten räumlichen 3D-Splat-Raum. Die Öffnung ist nur Zugang bzw. Sichtausschnitt.
+- **Getrennt von den Kugeln:** Splats sind Darstellung, die rollenden Knetkugeln sind ein eigenes Partikel- und Physiksystem. Beides lässt sich kombinieren, wird aber nicht gleichgesetzt.
+- **Nicht im Golden.** Danach kommt ein eigener Nachweis: ein Splat-Innenraum hinter einer zerstörbaren Fassade, mit richtiger Tiefe und Verdeckung gegen die Mesh-Welt und mit Bildzeit-Messung. Als Quelle dienen die Splat-Beispiele aus `replies/SPLAT_EXAMPLES_R2.md` (V-733). Es wird ein vorhandener three.js-Splat-Renderer genutzt, keine Eigenentwicklung.
+- **Quellen:** im Konzept-Ordner (PR 435, Head cf0e146e) die Datei CASCADE_SPHERE_R14 zu Gaussian Splats in Kartengebäuden.
+
 ## 4b · HUD (Georg 29.10., V-989)
 Das Knete-HUD des Hauptspiels wird übernommen und angepasst, nicht neu gebaut. Quellen in `game/proc-world-ws0`:
 - `src/HudClay.jsx` (HUD 3D, Aktionsleiste R14 als Standard),
