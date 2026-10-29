@@ -61,6 +61,26 @@ Das Knete-HUD des Hauptspiels wird übernommen und angepasst, nicht neu gebaut. 
 
 Fehlende Icons im selben Stil (Icon-Bühne mit Knete) kommen über WSB bzw. die bestehende Icon-Bühne. Es gibt keine selbst gezeichneten SVG-Icons. Am Handy werden die Knöpfe zu den Tipp-Zielen (§3).
 
+## 4c · Sprechblasen (Georg 29.10., V-992)
+Die KFB-Sprechblasen des Hauptspiels werden als Modul übernommen, nicht nachgebaut. Quellen in `game/proc-world-ws0`:
+- `src/bubbleLayer.js` (genau ein Blasen-Renderer, V-204/V-212),
+- `src/bubbleAnchors.js`, `src/bubbleAvoid.js`, `src/BubbleHost.jsx`,
+- `src/vendor/chatterbox-core.js` (Layout 1:1 aus ChatterBox Studio).
+
+Was das Modul mitbringt:
+- **Zipfel-Logik:** Der Zipfel zeigt immer auf die Kopfmitte des Sprechers, sein Ansatz wandert über den Rand (V-887). Blasen stehen nie über Köpfen.
+- **Schrift und Tokens:** Shantell Sans mit fett gesetzten Tokens.
+- **Blasenarten:** Sprech- und Denkblase.
+- **Verhalten:** Flip-Reveal mit 520 ms Staffelung, Ausweichen vor anderen Blasen und dem HUD, Spielerwahl im selben Blasenkörper.
+
+**Nutzung im Minigame:**
+- Tool-Tips an Funktionsteilen (Weiche, Schalter, Bauplatz),
+- Reaktionen der Fluffs und Bewohner,
+- FrizzleBobs Lagebild vor der Runde (§8),
+- Boss-Sprüche (4GTN).
+
+Texte kommen aus dem Triplet- bzw. Chatter-Bestand. Spieltexte sind englisch.
+
 ## 4 · Spielfeld-Generator (wiederverwendbar für die ganze prozedurale Welt; R9-Abgleich, V-978)
 1. **Grundriss aus OSM (spätere Köln-Variante; Ebene 1 siehe §4a):** ein kleiner Kölner Ausschnitt über das KFB OSM City Lab (kayfabizarro `tools/osm-city-lab/`). Es behält Straßenachsen, OSM-IDs und Gebäudegrundrisse und zeichnet Straßen als zusammenhängende Streifen mit Knoten-Patches. Stufe „Cartoon“ (vereinfachte, leicht verformte Fassaden), nicht „Clean“ oder „Grotesque“. **Brücken sind keine Kreuzungen:** Zwei Wege ohne gemeinsamen OSM-Knoten bleiben getrennt, eine Brücke führt über einen Weg hinweg. Genau das macht das Labyrinth interessant.
 1b. **Alternative Grundrisse (später, V-984):** Derselbe Generator nimmt auch ein Labyrinth aus dem KFB-Random-Maze-Modul (rund, eckig, zufällig; Mauern aus dem Gelände hochgezogen, Ziegel) an. Für Ebene 1 bleibt es beim OSM-Ausschnitt.
@@ -93,7 +113,7 @@ Fehlende Icons im selben Stil (Icon-Bühne mit Knete) kommen über WSB bzw. die 
 | Zellschaden, Einsturz, Rekonstruktion | Seed-World `createDestruct`, `createWorld`, `createWeaponFX` (`sw-mech`, `sw-app` bleiben draußen) |
 | Trümmer-Look, Effekt-Schichten | Spellspill-Referenz, `SPEC_CARTOON_VFX_SHAPES_R1` (V-499) |
 | Zerfall und Aufbau | `kfb-fluff-suck` (`suck`/`build`) |
-| Goo-Gebäude | Goo-Vorstadt- bzw. Goo-Varianten (K14), Blob-Corp-Tower |
+| Goo-Gebäude | **Goo-Vorstadt K14, entschieden** (V-597, V-625, V-629, V-660, V-677, q168): Kenney City Kits Commercial/Industrial/Suburban als Utopia-Blöcke; befallene Häuser in **Graustufen** (die Farbe ist gestohlen und kommt mit dem Fluff zurück); Goo **herabfließend** (Variante b) im Block-Material als Waber-Shader wie das Gelände in dunklen Farben, dazu feine **Ink-Flüsse** (kostenneutral); Fensterlicht als Verlauf blutrot→orange→gelb. Kein schwarzer Knetklumpen auf dem Dach. Quellen: `50_BLENDER/K14/RETURN.md`, Skript `scripts/k14_build_r4.py`, Bögen `out/r3`, `out/r4`. Blob-Corp-Tower (B40) als Hauptort möglich. |
 | GPU-Partikel, Knetkugeln | Karten-Relief- und Kugel-Proben (R2/R3) |
 | Jetpack, Flugsignal, Locomotion States, Waffen-Haltung | Hauptspiel `game/proc-world-ws0` (Abschluss-Build, V-965) |
 | Bauteile | KayKit Platformer Pack (`assets/kaykit-platformer-r1`), Factory-Kit, BlockBits, Tiny Treats |
