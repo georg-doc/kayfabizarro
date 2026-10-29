@@ -1,6 +1,15 @@
 # WS0 · Arbeitsstand und Ablauf (lebendes Dokument)
 Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
+
+## 0 · Stand 29.10. abends (Register bis V-1046) – zuerst lesen
+- **Fokus bis So 1.11. 20 Uhr (V-1041):** WS1-Integrationsblock hat Vorrang; keine neuen Nebenaufträge; Kleinkorrekturen genau eine Runde; Gate-Prüfer nach §1.4 (sonnet, eine Runde, nur Design/Specs/Architektur) – am 29.10. zu oft und zu breit eingesetzt.
+- **Kanal WS1 (V-1024):** Branch `comms/ws0-ws1` im privaten Repo, Worktree `~/kfb-ws0/comms-wt`; nur auf Georgs Zuruf lesen, kein Polling. Stand: Q-001–Q-008 beantwortet bzw. zur Kenntnis, N-001–N-003 gesendet.
+- **WSB (Mac mini, „Blender-Jobs für KFB“, Nachrichten per SendMessage an bridge:session_017NGZbxHaV75KFcq7NUke2R):** läuft B40 r7 (MiB-Frames, Gesichter V-1045 gebaut, Frames in Blender). Danach nach So: K10 Gewehre/Schilde (Shotgun 1H + Schild), Badewanne R6/Cape-Bestand, Rakete. Jetpack r2e nicht bestanden, r2d bleibt.
+- **Offen bei Georg:** Lid-Standard (V-1046: „nicht die Claymation-Lider, eher die anderen“ – welche?), Blatt B40 r7 nach Kritiker, HUD-Prototyp b271 (Claude Design, Paket design/claude-design-r3/hud_r1) zum Durchklicken.
+- **Wartet auf Rückgabe:** WSA Prop-Pool R2 (b264), WSA audio Songs/ASMR (b266), WSA Cascade R5 Folgeauftrag (Pappwand-Zielsequenz, schreibt WS0 nach So), WSA Site R5.2 (b260).
+- **Nach So, Reihenfolge:** Architektur-Seite + Mess-Spike Stadt/Gelände/Zerstörung/Fluff/Rauch (V-1042/V-1043) → Figuren freischalten + Lückenliste (V-1027) → HUD-Einbau nach KEEP → Reise-Zubehör/Rauch (V-1030, V-1033) → MiB-Mannequin, Waffen-VFX (V-1044).
+
 ## 1 · Ablauf für jedes Briefing und jede Antwort an eine Sitzung
 0. **Jede Frage an Georg** aus einem Status, RETURN oder Briefing kommt sofort als Karte in den Hub (`decisions`). Ausnahme: Abnahmen mit Bildern auf der WS1-Abnahme-Seite präsentiert WS1 selbst in seiner Sitzung (Georg kann die Seite nicht aus dem Hub öffnen); WS0 trägt die Urteile aus dem WS1-Status ins Register ein.
 1. **Bereich bestimmen:** HUD, Figuren, Licht, Welt, Fahren, Kampf, Audio oder Spiel (siehe `tools/brief_domains.json`).
