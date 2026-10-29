@@ -55,6 +55,8 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 - **Befall und Heilung:** Graustufen-Hülle mit herabfließendem Goo (V-625, V-677), Heilung bringt die Kartenfarbe zurück.
 - **Golden:** vier Kartengebäude, eine versteckte Originalkarte, ein zerstörbarer Wandbereich je Gebäude, ein Kugelausbruch, ein echter Gutter-Fluff-Fluss, FrizzleBob, eine vollständige Reparatur. Brief `replies/WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R4.md`.
 
+**Gutter-Stadt verbindlich nach `replies/SPEC_GUTTER_CURB_R1.md` (V-1000):** Bürgersteig-Ring mit Bordstein aus dem Modul `kfb-curb`, keine Bastel-Steine.
+
 ## 4e · Option: Gaussian-Splat-Innenräume hinter der Fassade (Web-Chat R14, V-998)
 - **Idee:** Durch ein Loch in der HyperNorm-Fassade sieht man in einen echten räumlichen 3D-Splat-Raum. Die Öffnung ist nur Zugang bzw. Sichtausschnitt.
 - **Getrennt von den Kugeln:** Splats sind Darstellung, die rollenden Knetkugeln sind ein eigenes Partikel- und Physiksystem. Beides lässt sich kombinieren, wird aber nicht gleichgesetzt.

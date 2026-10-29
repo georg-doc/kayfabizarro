@@ -14484,6 +14484,21 @@
    "applies": "nach dem Golden"
   },
   {
+   "id": "V-1000",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Gutter, Bordstein, Bürgersteig als ein prozedurales Einfass-Modul kfb-curb statt Bastelei (Georg 29.10. nach Bastel-Bordstein bei WSA): Gutter = terrain3-Bandfläche wie offenes Gelände; jeder Block auf Sockel mit Bürgersteig-Ring; Ring aus Polygon-Offset der Grundrisse (Maze rund/eckig, OSM, Hand) mit gerundeten Ecken, extrudiertem Knete-Bordsteinprofil, Längs-UV-Pflaster, Bänder aufgehellt wie Krater-Lippe, folgt surfaceAt; eine Geometrie für Bild, Laufhöhe und Kollision; Kanten-Linien für Kugel-Bouncen später. Nur zwei Übergangs-Familien (Bürgersteig-Ring, Erdlippe); Dünen/Erdzungen/Kieselsäume als Übergang verboten. Mechanische Prüfung vor jedem Bild. Spec replies/SPEC_GUTTER_CURB_R1.md; Grundlage CANON_3D Gebiete 2 und 15, Etherington-Regeln in Zahlen, V-570.",
+   "values": {},
+   "owner": "WSA + Hauptspiel",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: „wie wir diese ganzen unsinnigen Bastelstunden mal in den Griff kriegen“ – Übergänge strukturell lösen.",
+   "applies": "sofort, WSA Golden"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
