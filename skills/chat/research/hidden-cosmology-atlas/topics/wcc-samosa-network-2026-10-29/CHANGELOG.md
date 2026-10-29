@@ -1,3 +1,19 @@
+## 2026-10-29 · R3 updated Samosa dossier / Hambro banking & papal intelligence evidence
+
+- User supplied updated four-native-tab `KFB Author Dossier: Jason Samosa (WCC & Deep State Cartographer)`. Exact mapped private Google Doc read **124,543 characters**; local attached snapshot read (403,577 bytes). Older original one-tab R2 transcript remains independently preserved. Updated dossier was **NOT** edited, copied verbatim or made public.
+- New [DOSSIER_UPDATE_REVIEW_R3.md](DOSSIER_UPDATE_REVIEW_R3.md): compare old and new research coverage, preserve emic narrative, separate independent author statements from Gemini/editorial persona/Triplet adaptation.
+- New [SOURCES_AND_CLAIMS_R3.md](SOURCES_AND_CLAIMS_R3.md): **12** new `WC-S29..40` classified source/material records, **13** new `WC-C32..44` atomic propositions. Key sourced record: Milan State Archive official *inventory* reports **Hambros and Continental Illinois 24.5% BPF stakes**; D'Addea thesis search-index excerpts date **1964 Hambros entry** versus **1960 Fasco/Sindona controlling acquisition**.
+- New central correction: **Jocelyn Olaf Hambro was Ronald Olaf Hambro's son, NOT Sir Charles Jocelyn Hambro's son**. Confirmed 1966 contemporary New Yorker bank profile, Cobbold Family Trust and Oxford DNB; family/institutional network survives, but false father-son handoff discarded. Identify separate `Charles Eric Alexander Hambro` (Sir Charles's actual only son).
+- R3 source-custody gap: quoted thesis text about **25% Hambros/Cofina and 1972 Hambros exit is Banca Privata Finanziaria (BPF) ownership**, not demonstrated Moneyrex ownership. Moneyrex founded Dec 1964 under Fasco and 850 bank counterparties reported by D'Addea; claimed separate `Hambros→Moneyrex 25%` unresolved until company primary shares/1981 Bank of Italy investigation.
+- Vatican time-line correction upgraded from dates to **original CIA McCone→John XXIII May 1, 1963 memo** plus **June 6 CIA staff papal succession forecast** (not an installation order), Pontifical Academy Montini timeline and contemporary Treccani report of earlier declined 1953 cardinal proposal. The new editorial “1954 exile” causal interpretation remains an author interpretation.
+- New [RELATIONS_R3.md](RELATIONS_R3.md): **12** typed source/historical reporting `WC-H18..29`, **7** explicitly non-causal `WC-W09..15` edges. Existing owners and R1/R2 records preserved.
+- New [TEST_REPORT_R3.md](TEST_REPORT_R3.md): **14/14** static ID/source-reference/provenance checks PASS; combined **40 sources / 44 claims / 29 historical-reporting edges / 15 numbered exploratory edges**; PDF page-image screenshots **0** (web screenshot failed), CI/code/browser 0.
+- No user doc write, existing other author-master edit, KFB Card generation, Hub/main router modification, Cloudflare Stage, Live/promotion or auto-merge.
+
+**Exactly one next source gate:** obtain original **Moneyrex 1964–72 share registers + 1981-04-30 Banca d'Italia Moneyrex letter** and decide if any actual Hambros stake and **WCC** company transfer can be historically registered.
+
+---
+
 ## 2026-10-29 · R2 original user transcript recovery / chapter atlas / source bridge
 
 - Found original native Google Doc `KFB Author Dossier: Jason Samosa` via connected Google Drive (one tab, **101,163 characters**, **39 chapters**, through **1:33:45**). Transcribed text read; not copied verbatim into public GitHub. Audiovisual video itself not reviewed.
