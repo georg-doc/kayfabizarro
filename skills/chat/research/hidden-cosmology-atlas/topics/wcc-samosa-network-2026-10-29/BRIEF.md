@@ -1,3 +1,7 @@
+> **CURRENT ACCESS UPDATE · 2026-10-29 · R2:** The complete user-owned timestamped transcription was recovered and inspected as a **101,163-character / 39-chapter** private Google Doc. The R1 paragraph below saying only the first ~4 minutes were accessible is a **historical pre-recovery snapshot, no longer the current access state**. Read [Transcript Chapter Atlas R2](TRANSCRIPT_CHAPTER_ATLAS_R2.md), [R2 source checks](SOURCE_CHECKS_R2.md), and [R2 relations](RELATIONS_R2.md). The spoken audio itself was not independently played; speech-to-text names need verification. The new evidence gate is the **1969–1981 Hambro/Sindona/Moneyrex documentary link**, not transcript recovery.
+
+---
+
 # World Commerce Corporation / Jason Samosa — Research Branch R1
 
 **Topic ID:** `HCA-TOPIC-WCC-2026-10-29`  
