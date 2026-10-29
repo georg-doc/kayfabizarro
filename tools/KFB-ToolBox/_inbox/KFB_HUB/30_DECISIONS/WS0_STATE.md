@@ -120,3 +120,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 ## 29.10. vormittags
 - V-1009: WSA-Golden R4 mit Bürgersteig + Treffer-Löchern zurück, Mechanik PASS, Kritik REWORK 7,1; Golden-Entscheidung bei Georg. b248 done.
 - V-1010: Web-Chat-Gewichte R1 (PR 459) als optionale I2-Startwerte in WS0_TO_WS1 + b256.
+- V-1011: Golden-Feedback Georg (Loch≠Treffer, Bänder grau) → Ausbau-Vorschlag Treffer-Grammatik R17, Bänder farbig, Heilstrahl=Bau/Heil-Werkzeug. WS1 gestartet (b256 done).
