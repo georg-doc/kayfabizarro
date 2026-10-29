@@ -171,3 +171,10 @@ Authority: current WS0 V-962 R3/V-968 protected golden first, private game branc
 - Wrote `CASCADE_SPHERE_R13_HYPERNORM_CARD_BUILDINGS_GUTTER_CITY_CONCEPT_2026-10-29.md`, `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_RECIPE_CANDIDATE_2026-10-29.json`, `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_SOURCE_QA_2026-10-29.md` — **24/24 source/schema/editorial checks**, zero GPU/r3f/browser/player/physic/mobile perf tests.
 - Proposed one A+B source Golden first (animated outside HyperNorm, hidden card, accepted shell sector hole + mask, one world event/Fluff path), bounded C colored balls with source palette, instanced visuals plus sparse hit physics, no per-ball global damage authority. Performance SAFE/STANDARD/STRESS are *unmeasured suggestions*, not promises. Real card IDs and 56-card deck layout remain optional.
 - No official V-962 R2 update, private code, game source/assets, Stage, Site, live content, independent critic, merge or new parallel World/Track engine. Same Draft PR #435 / WS0 branch with Return/Changelog/router/PR metadata only.
+
+
+## 2026-10-29 · R14 Gaussian Splats correction, not “Splits”
+
+- User clarified their preceding concept: **Gaussian Splats / 3DGS** behind/inside the animated HyperNorm card-building, viewed through damaged shell like a 3D world portal. The previous assistant read “splats” as “splits” (tears/portal openings); this interpretation is withdrawn.
+- New `CASCADE_SPHERE_R14_GAUSSIAN_SPLATS_CARD_BUILDING_REVEAL_CORRECTION_2026-10-29.md`: 3DGS pocket-volume vs physical card-palette rolling ball VFX, separate real collision, damage-mask+wall sector, depth/alpha sorting and camera behavior, source 3DGS API/format/asset and mobile performance unknown; one building proof candidate. R13 now points to R14.
+- Same existing WS0 planning draft only; no V-962 official revision, no private game/source, renderer, build, Site, gameplay, GPU test or Live.
