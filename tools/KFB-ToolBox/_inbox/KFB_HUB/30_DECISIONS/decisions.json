@@ -14683,7 +14683,7 @@
    "date": "2026-10-29",
    "area": "Combat",
    "verdict": "TODO",
-   "text": "Schusswaffen sauber an FB und weitere Figuren anpassen (Georg 29.10.), Grundlage KFB Arsenal R1 (WS1, kayfabizarro ws1/status docs/WAFFEN_ZUORDNUNG_R1.md: 12 K10-Karten, 8 Gefühlsprofile, Rollen, Energien). Stand K10: Gatling nur am Mech (B50) eingepasst, seitlich am Tragegriff; Action-Figure-Gun ist 2H-Sturmgewehr; Shotgun und SpaceRanger_Rifle (Mystery S4, privat) und Prototype-Gewehre offen. Job WSB K10 Runde 2: Gatling an FB (medium, mit Jetpack auf dem Rücken, V-1012) und Rig_Large, Shotgun als Modell für das bisher modellose Arsenal-Profil Scrap Cannon (Streuschuss), Action-Figure-Gun und Gewehre 2H; nach WEAPON_GRIP_MODELS_R1, V-581/V-582, nur vorhandene Clips, eine Prüfbühne. WSA tunt Gefühl in der Arena, Einbau ins Spiel nach So durch WS0 (Combat-Owner V-782) bzw. in den Cascade-Ausbau.",
+   "text": "Schusswaffen sauber an FB und weitere Figuren anpassen (Georg 29.10.), Grundlage KFB Arsenal R1 (WS1, kayfabizarro ws1/status docs/WAFFEN_ZUORDNUNG_R1.md: 12 K10-Karten, 8 Gefühlsprofile, Rollen, Energien). Stand K10: Gatling nur am Mech (B50) eingepasst, seitlich am Tragegriff (V-1014); Action-Figure-Gewehr 1H an der Hüfte (V-592), an FB noch offen; Shotgun (KayKit Mystery Series 6, Paket Survivalist, privat; K10 §1 nannte fälschlich S4), SpaceRanger_Rifle (Mystery S4, privat) und Prototype-Gewehre Gun_Rifle/Gun_Sniper (CC0) offen. Job WSB K10 Runde 2: Gatling an FB (medium, mit Jetpack auf dem Rücken, V-1012) und Brawl Brute (Rig_Large), Shotgun 2H als Modell für das bisher modellose Arsenal-Profil Scrap Cannon (Streuschuss), Action-Figure-Gewehr 1H nach V-592, Gewehre 2H; nach WEAPON_GRIP_MODELS_R1, V-581/V-582, nur vorhandene Clips, eine Prüfbühne. WSA tunt Gefühl in der Arena, Einbau ins Spiel nach So durch WS0 (Combat-Owner V-782) bzw. in den Cascade-Ausbau.",
    "values": {},
    "owner": "WSB · WSA · WS0",
    "check": "ungeprüft",
@@ -14692,6 +14692,21 @@
    "superseded_by": [],
    "why": "Georg 29.10.: Gatling für FB und andere Chars sowie Shotgun der Action Figure/Survivalist sauber anpassen; Arsenal von WS1 nutzen.",
    "applies": "WSB-Job nach Golden-Ja"
+  },
+  {
+   "id": "V-1014",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Gatling (CombatMech_Minigun, Mystery S5) wird seitlich getragen (Georg 21.10. an WSB, K10 §4, nachgetragen 29.10.): rechte Hand am Tragegriff (handslot.r), eine Halterung für Boden und Flug, Oberkörper in der Trage-Pose, Host dreht beim Feuern −36°. Ersetzt für die Gatling die Stützhand-Zeile aus V-581/V-582; linke Stützhand in K10 geprüft und verworfen (mech_aim_fit.json). Ausgeschlossen: Ranged_2H_*, flight_aim, flight_brake_recover. Ersetzt die Clip-Zeile aus V-990 (Ranged_2H_Aiming als Oberkörper-Schicht); die Spiel-Schicht in locoStates.js (upper 2H, flyWeapon) stellt WS0 nach So auf die Trage-Pose um.",
+   "values": {},
+   "owner": "WSB · WSA · WS0",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mit Stützhand ging die Gatling in allen Ziel-Clips durch den Körper; Georg wählte am 21.10. die Seitenhaltung wie im Destruction-Mech-POC.",
+   "applies": "seit 21.10."
   },
   {
    "id": "V-427",
