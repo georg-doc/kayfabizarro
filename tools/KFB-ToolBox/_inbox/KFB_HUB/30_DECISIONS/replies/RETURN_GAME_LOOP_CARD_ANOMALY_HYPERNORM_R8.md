@@ -11,7 +11,7 @@
 **Public acceptance:** no Site/Stage, no runtime and no deployment.
 
 ## R8 changed files
-- replies/GAME_LOOP_CARD_ANOMALY_HYPERNORM_R8.md — new annotated concept, status/evidence, four small manifestations, a two-role example, Almighty Card provenance restrictions.
+- replies/GAME_LOOP_CARD_ANOMALY_HYPERNORM_R8.md — new annotated concept, status/evidence, four small manifestations, a two-role example, canonical Card provenance restrictions.
 - replies/GAME_LOOP_FLUFF_ECONOMY_CHANGELOG.md — appended R8, all R2–R7 preserved.
 - replies/RETURN_GAME_LOOP_CARD_ANOMALY_HYPERNORM_R8.md — this Return.
 No changes to DECISIONS.md, the central router, Hub, canonical deck source, earlier versions, World/Combat or public assets.
