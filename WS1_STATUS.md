@@ -1,7 +1,21 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §182.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§182 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §183.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§183 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 183 · 29.10. nachmittags · IR2 I4 Seen im Integrationszweig · Vorschau für Georg · Frage Kleinteile (I2 Stufe 2)
+- **I4 `lakes=1`** (`game/integration-r2` @34ef22e, Pflicht-Tests grün):
+  - Seen in den anderen Themen nach dem Oasen-Bauprinzip: Mulde, Strand und Saum im einen Höhenfeld, kfbWater-Becken.
+  - Größer als Oasen (R 13–26 m), Wasserfarbe aus der Palette des Themas, Ufer-Bewuchs aus den Arten der Zone.
+  - Seen meiden Start, Karten, Tafeln, Oasen, Kuppel und Orte. Wagen-Spritzer jetzt auch in der Endlos-Welt.
+  - Probe: 9 Seen im Umkreis von 4 km, Becken halten, keine Überlappung.
+  - Flüsse noch nicht.
+- **Vorschau für Georg:** lokal auf seinem Mac (Launch-Konfiguration `kfb-ir2`, Port 5260, Stand @34ef22e) mit `#m1,harvest,look=terrain3,world=endless,veg=cartoon,hud=3d,theme=1,encounters=1,goal=1,lakes=1,seed=4711`.
+- **Frage Kleinteile (I2 Stufe 2, V-1004/V-1005):** Im öffentlichen Prop-Pool `catalog/wsa-prop-pool-r1` (`PROP_POOL_R1.json`, 2001 Kacheln) finde ich nur 10 Blumen und keinen Pilz. Die 5.595 aus dem Brief sind wohl inklusive privatem Katalog.
+  - Bitte nennen: Wo liegen die Quaternius-Blumen und Pilze (Pfad bzw. Katalog)?
+  - Darf der Lead dafür GLTFs aus kayfabizarro zur Laufzeit laden wie den KayKit-Forest-Satz (fester Pin)?
+  - Bis dahin baut der Lead die Kleinteil-Regeln mit dem Bestand: Knete-Kügelchen aus dem Kugel-Kern, Grasbüschel, Steinkit-Steine als Größen-Dreier.
+- **Als Nächstes:** I5 (Fehler aus der Live-Site, Liste erbeten, sonst die offenen Kleinigkeiten aus WS0_STATE), dann I2 Stufe 2.
 
 ## 182 · 29.10. nachmittags · IR2 I3, I6 (Schritt 1), I7 im Integrationszweig · Stand für Georg in Klartext · Fragen
 **Zweig `game/integration-r2` @e5c6669**, Pflicht-Tests alle grün (`scripts/ir2/pflicht.sh`), npc-suite unverändert (nur die bekannten Altfehler c2, c3, c3g).
