@@ -15163,6 +15163,21 @@
    "applies": "nach So"
   },
   {
+   "id": "V-1045",
+   "date": "2026-10-29",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "MiB-Gesichter FAIL (Georg 29.10. zum Proof-Blatt agent_b40): Türsteher AGL – Ork-Zähne entfernt und KFB-Augen auf die Zahnreihe gesetzt (zwei Fehler kombiniert); Augen gehören unter die Brauen nach Georgs Ork-Einstellung in der Figurenkarte orc_brute, Zähne zurück (originals.keep), Haare in eigener Farbe statt Hautfarbe. Die drei Medium-Agenten haben keinen Mund, nur Augen. Fix in WSB B40 r7 Punkt 2 vor den Frames: Zähne, Augen nach Figurenkarte, getrennte Farben für Haut/Haare/Anzug/Hemd/Krawatte, Mund aus dem KFB-Mundsatz (Ruhe geschlossen, V-243) über den Gesichts-Anker; Prüfbild Gesicht nah je Figur. Das Proof-Blatt vom 18.10. war als abnahmefähig markiert, obwohl Mund fehlte – Gate prüft Gesichtsvollständigkeit nicht.",
+   "values": {},
+   "owner": "WSB (r7)",
+   "check": "Gesicht nah je Figur, Kritiker",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Gesicht ohne Mund und Augen auf den Zähnen ist ein sichtbarer Grundfehler, der nie durch ein Gate hätte kommen dürfen.",
+   "applies": "sofort, vor den r7-Frames"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
