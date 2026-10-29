@@ -1,3 +1,15 @@
+## CURRENT RESEARCH SOURCE ADDENDUM · 2026-10-29 · SAMOSA WCC R3
+
+**Existing owner:** Hidden Cosmology Atlas Editorial Research · [WCC topic R3 Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [updated private dossier comparison](topics/wcc-samosa-network-2026-10-29/DOSSIER_UPDATE_REVIEW_R3.md) · [R3 sources and atomic claims](topics/wcc-samosa-network-2026-10-29/SOURCES_AND_CLAIMS_R3.md) · [R3 documentary/conceptual graph](topics/wcc-samosa-network-2026-10-29/RELATIONS_R3.md) · [R3 actual tests](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R3.md). All prior R1/R2 source packets preserved.
+
+**New personal-source delta:** user supplied `KFB Author Dossier: Jason Samosa (WCC & Deep State Cartographer)`, **four native Google Doc tabs and 124,543 characters**; read-only exact Drive source, unchanged, full private source not copied here. Added 12 records + 13 atomic claims + 12 typed historical/reporting edges + 7 noncausal links. Current cumulative 40 sources / 44 claims / 29 historical edge IDs / 15 numbered Warburg edge IDs. Static source/graph check **14/14 PASS**.
+
+**Main new evidence and corrections:** documented historical **Hambros 24.5% BPF**, Continental Illinois 24.5%; **Fasco/Sindona controls BPF in 1960**, university thesis indexed BPF shareholder entry **Hambros 1964 / Continental 1965**. Jocelyn Olaf Hambro was **Ronald Olaf's son**, not Sir Charles Jocelyn's; the latter's son was **Charles Eric Alexander Hambro**. The donor's 'Hambros 25% Moneyrex, exited 1972' appears to transpose D'Addea's **BPF** text; Moneyrex company itself and its 1964/850 bank relationship exist as independent academic research claims, equity remains **UNRESOLVED**. May/June 1963 original CIA documents establish **McCone–John XXIII diplomacy** and speculative papal succession forecasting, not a papal installation order. Historical links, source claims and downstream game/persona layer stay separate.
+
+**One next source gate:** `WCC_MONEYREX_EQUITY_ORIGINAL_1981` — obtain original Moneyrex share transfers (1964–72) and April 30, 1981 Banca d'Italia source. No runtime, Card/Deck, worldbuild, Hub/Main, Site/Stage, Live or merge promotion.
+
+---
+
 ## RESEARCH TOPIC INTAKE · 2026-10-29 · JASON SAMOSA / WCC NETWORK R2
 
 **Additive existing-owner research branch / Draft PR #394:** [WCC / Jason Samosa topic Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [Full 39-chapter video source index](topics/wcc-samosa-network-2026-10-29/TRANSCRIPT_CHAPTER_ATLAS_R2.md) · [R2 source-ledger claims](topics/wcc-samosa-network-2026-10-29/SOURCE_CHECKS_R2.md) · [R2 historical/noncausal graph](topics/wcc-samosa-network-2026-10-29/RELATIONS_R2.md) · [R2 actual test report](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R2.md).
