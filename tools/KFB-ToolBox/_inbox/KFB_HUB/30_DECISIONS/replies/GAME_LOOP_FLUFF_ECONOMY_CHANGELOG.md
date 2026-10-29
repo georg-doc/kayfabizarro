@@ -84,3 +84,12 @@
 - Existing kfb.deck-song.v1 metadata has deckId. Historical 200+ Suno archive count is not a newly verified complete current catalog. No bulk generation or ideological truth judgments.
 - R9–R11 remain local-only drafts; this branch contains R2–R8, R12 and R13. Docs only, no live tests or publication.
 - One next gate: WS0/Georg editorial intake of the cross-media Greater Intent.
+
+## 2026-10-29 · SESSION CUT R14 · GLOBAL NORTH STAR / CRITICAL THINKING THROUGH PLAY
+
+- Georg identifies the overarching KFB purpose: a playful, satirical, transmedia encounter with human thought, ideologies, disagreement and contradictions; invite primary-source curiosity, intellectual flexibility and human recognition across radically different views without preaching one authorial worldview.
+- `GAME_LOOP_GLOBAL_NORTH_STAR_EPISTEMIC_PLURALISM_R14.md` preserves the distinction **respecting a person ≠ endorsing a claim ≠ excusing harm** and **multiple viewpoints ≠ equal evidence**. Cards remain source-grounded; NPCs can disagree, change or keep convictions with real consequences. Cognitive dissonance is the aesthetic resonance space, not XP or a compulsory ideological quiz.
+- No manufactured “neutrality”, fake equivalence, contact-guilt shortcut, social referral gate or moral victory meter. The “2–4%” phrase is an aspiration/metaphor, not a validated effect size. Avoid quantifying user belief changes without evidence.
+- This is a **WS0 editorial intake** of the existing Bigger Picture / Global Intent, not their unsanctioned replacement, a new canonical master or a runtime proposal. R9–R11 remain local-only earlier drafts. No World/Main/Hub/Stage/Live modification.
+- Evidence: current GitHub global references, R13 concept/Return, startup workflow, and R14 file exact readback. Zero runtime/browser/player playtests.
+- Exactly one next gate: WS0/Georg review R14 against current global creative guidance and decide whether to add a cross-reference; no other owner action implied.
