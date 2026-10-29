@@ -53,3 +53,10 @@ Erst grün, dann Bild an Georg (V-740, V-561).
 
 ## 6 · Später
 Mehrere Höhenstufen (Treppen, Terrassen), Kugeln kullern Stufen hinunter bzw. bouncen auf Kanten (Kanten-Linien aus §2), Bordstein-Varianten je Thema (Gizmo-Wand-Skin), Rinnstein als Fluff-Kanal.
+
+## 7 · Ergänzung 29.10. (Georgs Recherche, V-1003): Sockets für Kachel-Teile, Bodenblende für alle Assets
+- **Wo Sockets gelten:** für Kachel-Teile auf festem Raster, also Platformer-, Factory- und BlockBits-Teile sowie spätere Terrassen-, Klippen- und Stufen-Sätze (V-985). **Nicht** für das durchgehende Gelände (`terrain3`-Höhenfeld) und nicht für den Bürgersteig-Ring. Der entsteht aus dem Offset, Kurven brauchen dort keine Kacheln.
+- **Socket-Code** je Seite (X±, Z±, Y±): `[Profil]_[Höhe]_[Richtung]`, z. B. `Flat_0`, `Slope_0to1_+` bzw. `_-`, `Curve_In`/`Curve_Out`, `Foundation`. Die Gegenseite muss passen: steigend zu fallend, Fundament unten zu Fläche oben. Symmetrie-Klassen (X, I, L, T) drehen Teil und Sockets im Speicher mit, es wird kein Mesh pro Richtung gebaut.
+- **Sockets werden gemessen, nicht von Hand vergeben:** Das Kantenprofil jedes Teils wird auf dem 2-×-2-m-Raster abgetastet (Höhe und Form an n Punkten je Kante). Daraus entsteht die Socket-ID automatisch, als Daten im Platzierungs- bzw. WFC-Löser (`kfb-place`). Grundlage ist das Inventar `replies/KAYKIT_PLATFORMER_INVENTAR_R1.md`. Handvergabe erzeugt genau die Fehler, die wir vermeiden wollen.
+- **Bodenblende für jedes Asset auf dem Gelände:** Im Materialadapter wird die Fassade bzw. der Fuß eines Objekts über einige Zentimeter bis Dezimeter in die Bandfarbe des Geländes darunter überblendet. Gemessen wird der Abstand Weltpunkt minus `surfaceAt`, es braucht also keine Vertex-Farben und es funktioniert auch bei Original-Assets. Darüber liegt der dunkle Kontaktton (V-570). Das ist die allgemeine Form dessen, was Bürgersteig-Ring und Erdlippe für ihre Fälle schon leisten.
+- **Prüfung:** Zusätzlich zu §5 prüft der Löser jede Kachel-Nachbarschaft auf passende Sockets. Eine harte Kante ohne Gegenstück ist ein Fehler.

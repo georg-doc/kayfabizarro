@@ -14529,6 +14529,21 @@
    "applies": "nach dem Golden"
   },
   {
+   "id": "V-1003",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "Übergänge, Ergänzung zur Gutter-Spec nach Georgs Socket-Recherche: 3D-Sockets nur für Kachel-Teile auf Raster (Platformer/Factory/BlockBits, später Terrassen/Klippen/Stufen), nicht für terrain3-Höhenfeld und Bürgersteig-Ring; Code [Profil]_[Höhe]_[Richtung] mit Gegenseiten-Regel und Symmetrie-Klassen; Sockets werden aus abgetasteten Kantenprofilen gemessen statt von Hand vergeben (Daten im kfb-place-Löser); Bodenblende im Materialadapter für jedes Asset über Abstand zu surfaceAt (ohne Vertex-Farben) plus Kontaktton. SPEC_GUTTER_CURB_R1 §7.",
+   "values": {},
+   "owner": "WSA + Hauptspiel",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Recherche zu 3D-WFC-Sockets und Mesh-Terrain-Blending.",
+   "applies": "mit kfb-curb"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
