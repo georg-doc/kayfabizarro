@@ -15103,6 +15103,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1041",
+   "date": "2026-10-29",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Fokus bis So 1.11. 20 Uhr (Georg 29.10.: „endlose Schleifen für Kleinkram, so halten wir nie bis So für Core Engine und Gameplay“): Vorrang hat WS1s Integrationsblock (I1–I7, Kanal). WS0 schreibt bis dahin keine neuen Nebenaufträge; Kleinkorrekturen bekommen genau eine Runde, danach bleibt der alte Stand. WSB: Jetpack r2e eine Runde, dann B40 r7; K10-Gewehre/Schilde, Badewanne/Cape und Rakete nach So. Claude-Design-HUD-Prototyp läuft parallel ohne WS1-Last. Gate-Prüfer für kleine Korrekturen höchstens eine Runde.",
+   "values": {},
+   "owner": "WS0 · WSB",
+   "check": "-",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nebenschauplätze fraßen Zeit und Aufmerksamkeit, während der Kern bis So stehen muss.",
+   "applies": "bis So 20 Uhr"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
