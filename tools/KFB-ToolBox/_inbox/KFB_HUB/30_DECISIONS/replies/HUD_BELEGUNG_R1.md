@@ -1,4 +1,4 @@
-# HUD-Belegung R1 · was der Spieler wann sieht und drückt · WS0 · 29.10.2026 (V-1035, V-1038) · ENTWURF zur Freigabe durch Georg
+# HUD-Belegung R1 · was der Spieler wann sieht und drückt · WS0 · 29.10.2026 (V-1035, V-1038) · FREIGEGEBEN Georg 29.10. (mit Radio im HUD und Almanach an seinem heutigen Platz)
 
 ## Grundsatz
 Wenige feste Plätze, in allen Modi an derselben Stelle. Es wechseln nur die Inhalte, nie die Plätze. Was gerade nichts zu tun hat, ist ausgeblendet. Keine Knöpfe außerhalb der Plätze.
@@ -6,14 +6,16 @@ Wenige feste Plätze, in allen Modi an derselben Stelle. Es wechseln nur die Inh
 ## Die Plätze
 | # | Platz | Inhalt | Bleibt/neu |
 |---|---|---|---|
-| 1 | **Almanach-Fächer** (rechts) | Karten, Fundsachen, Inventar (ersetzt die Truhe) | bleibt wie er ist |
-| 2 | **Status** (oben links) | Leben und Fluff-Vorrat, schlicht, eine Zeile | neu, ersetzt die Fluff-Slot-Reihe |
-| 3 | **Vier Aktionsknöpfe** (unten rechts, Daumenbereich) | Primär · Sekundär · Bewegung · Kontext | neu, ersetzt Leiste und Kassette |
+| 1 | **Almanach** (oben links) | Kartenstapel mit Zähler, Fächer „Letzte Karten“, Inventar (ersetzt die Truhe) | bleibt wie er ist, an seinem heutigen Platz |
+| 2 | **Zielhinweis** (oben Mitte) | Richtung, Name und Entfernung zum nächsten Ziel (wie heute „Existentialist Café 260 m“), nur wenn aktiv | ersetzt den quer zeigenden Pfeil und die Orts-Zeile |
+| 3 | **Status** (oben rechts) | Leben und Fluff-Vorrat, schlicht, eine Zeile; daneben klein und gerade das Zahnrad für Einstellungen | ersetzt die Fluff-Münzreihe und das schräge Zahnrad |
 | 4 | **Reise-Knopf** (unten links) | ein Knopf, öffnet den Fächer Gehen · Jetpack/Rakete/Cape · Fahrzeuge (V-940) | neu |
-| 5 | **Einstellungen** (oben rechts, klein, gerade) | Pause, Musik/Radio, Figur, Welt | Zahnrad gerade, Radio wandert hierher |
-| 6 | **Zielhinweis** (oberer Bildrand) | Richtung zur nächsten Karte, nur wenn aktiv | ersetzt den quer zeigenden Pfeil |
+| 5 | **Radio** (unten links neben dem Reise-Knopf) | drei runde Knöpfe: Play/Pause, nächster Titel, Ton an/aus; Tippen auf den Titel öffnet die Playlist | bleibt im HUD (Georg 29.10.), ohne Kassetten-Gehäuse |
+| 6 | **Vier Aktionsknöpfe** (unten rechts, Daumenbereich) | Primär · Sekundär · Bewegung · Kontext | neu, ersetzt Leiste und Sprechblasen-Fach |
 
-Entfällt: Kassette mit Knöpfen, bläuliche Truhe, schräges Zahnrad, quer zeigender Pfeil, die zwei Extra-Knöpfe außerhalb.
+Entfällt: Kassetten-Gehäuse, bläuliche Truhe, schräges Zahnrad, quer zeigender Pfeil, Fluff-Münzreihe, die zwei Extra-Knöpfe außerhalb. Vorerst nicht im HUD: Minikarte, Tacho, Modus-Plakette; Tempo zeigt später das Fahrzeug bzw. das Raketen-Bullauge (V-1032).
+
+Abklingzeit eines Knopfs: Farbe füllt den Knopf von unten wieder auf (V-673).
 
 ## Die vier Aktionsknöpfe je Modus
 | Modus | Primär | Sekundär | Bewegung | Kontext (nur wenn etwas da ist) |
@@ -36,7 +38,7 @@ Kampf ist kein eigener Modus: Primär und Sekundär sind in allen Bewegungsarten
 - Später, nur als Option: Bordkanone auf der Motorhaube im Mad-Max-Stil, gekoppelt an den Fahrer.
 
 ## Tasten (Vorschlag, Desktop)
-Linke Maustaste Primär · rechte Maustaste Sekundär · Leertaste Bewegung · E Kontext · Q Reise-Fächer · Esc Einstellungen. Zahlen 1–6 wählen direkt eine Waffe.
+Linke Maustaste Primär · rechte Maustaste Sekundär · Leertaste Bewegung · E Kontext · Q Reise-Fächer · M Radio Play/Pause · N nächster Titel · Esc Einstellungen. Zahlen 1–6 wählen direkt eine Waffe.
 
 ## Danach
 Nach Georgs Freigabe baut Claude Design daraus einen klickbaren HTML-Prototyp aus den freigestellten Claymation-Vorlagen (Bilder ≤ 2 MB, Paket auf GitHub); Georg klickt ihn durch; dann Einbau ins Spiel durch WS0 nach So.

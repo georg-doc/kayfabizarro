@@ -15073,6 +15073,21 @@
    "applies": "mit dem HUD-Neuanfang"
   },
   {
+   "id": "V-1039",
+   "date": "2026-10-29",
+   "area": "HUD",
+   "verdict": "PASS",
+   "text": "HUD-Belegung R1 freigegeben (Georg 29.10.: „ja“ plus Radio im HUD): sechs feste Plätze – Almanach oben links wie heute, Zielhinweis oben Mitte (Name und Entfernung), Status mit geradem Zahnrad oben rechts, Reise-Knopf und Radio (Play/Pause, Weiter, Ton an/aus, Playlist) unten links, vier Aktionsknöpfe Primär/Sekundär/Bewegung/Kontext unten rechts; Abklingzeit füllt von unten (V-673). Entfällt: Kassetten-Gehäuse, Truhe, schräges Zahnrad, Querpfeil, Fluff-Münzreihe, Extra-Knöpfe; vorerst nicht im HUD: Minikarte, Tacho, Modus-Plakette. Datei replies/HUD_BELEGUNG_R1.md; Prototyp bei Claude Design nur als Code aus gelieferten Bildern (replies/BRIEF_CLAUDE_DESIGN_HUD_R1.md), Abnahme per Hub-Karte KEEP/TUNE/FAIL.",
+   "values": {},
+   "owner": "Claude Design → Georg → WS0",
+   "check": "Prototyp KEEP",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst die Belegung, dann das Bild: so kann der Prototyp nicht wieder ein Sammelsurium werden.",
+   "applies": "sofort, Claude Design"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
