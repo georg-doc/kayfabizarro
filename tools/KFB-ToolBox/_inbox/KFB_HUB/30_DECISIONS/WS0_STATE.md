@@ -113,3 +113,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Nach dem Reset (So):** erster WS0-Slice KFB Random Maze (V-984), Design zuerst; Quellen in `replies/GIZMO_MAZE_RECOVERY_R1.md`.
 - **Danach (V-985):** Tunnel (4 Skins aus Joyride/Orgel-Attraktionen), Berge/Schluchten (mit WS1 b245), Mine und Untergrund-Ebenen bzw. Rabbit Holes unter Karten-Geländen.
 - **Site:** R5.1 `site/mvp-r51-dist` @b3b8ae8 (b258). Cascade Sphere: Quellen-Gate HOLD bei WSA (V-986).
+- **Leitidee nach dem Golden (V-1002):** Kartenviertel als Hauptachse der Karten-Platzierung, `replies/KONZEPT_KARTENVIERTEL_R1.md`; zuerst Module aus der Cascade Sphere ins Hauptspiel übernehmen.
