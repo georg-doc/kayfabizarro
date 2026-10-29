@@ -1,0 +1,2562 @@
+{
+  "schema": "kfb.verteiler-deck-weight-draft/1",
+  "version": "R1",
+  "created": "2026-10-29",
+  "status": "DESIGN_PROPOSAL_NOT_RUNTIME",
+  "owner": "WS0 / KFB Decisions Register",
+  "receiver": "WS1 I2 seed browser, later I3 encounter and WS-Audio I6",
+  "scope": "data-only planning · no scene, game, audio, figure, asset, Site or Stage mutation",
+  "sources": {
+    "concept": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KONZEPT_KFB_VERTEILER_R1.md",
+    "register": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/DECISIONS.md (V-1002,V-1004,V-1005,V-1006,V-1007)",
+    "brief": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/BRIEF_WS1_INTEGRATION_SLICES_R2.md",
+    "handoff": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_TO_WS1.md",
+    "colour": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/kfb-color-concept.r1.json (kfb.color-concept/1)",
+    "placement": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CANON_3D/lib/kfb_place.r1.json (kfb.place/1)",
+    "deckRegistry": "registry/assets/v1/decks/index.json",
+    "deckRegistryBlobSha": "b1399317c33fbd6ff17a622da68c684207bd5b4c",
+    "deckRegistrySourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+    "deckWorld": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md",
+    "characters": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CHARACTERS_R1/index.json (kfb.character-index/1; 132 entries)",
+    "personae": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WSA_DRAMATIS_PERSONAE_R1_RETURN.md (13 marked entries)",
+    "dropboxCrosscheck": "/CLAUDE/KFB_HUB/30_DECISIONS/replies/KONZEPT_KFB_VERTEILER_R1.md and /Mac/Documents/Codex/2026-10-28/nimm-folgende-nderungen-an-kfb-asset/work/librarian/DRAMATIS_PERSONAE_R1.md (read only)"
+  },
+  "method": {
+    "inheritance": [
+      "worldSeed",
+      "zoneTheme",
+      "optionalDeckSeed",
+      "cell",
+      "group"
+    ],
+    "weightScale": "Integer weights, each peer distribution sums to 100; NOT measured probabilities or approved balance.",
+    "selection": "Overlay these family weights as data onto existing kfb-place / WFC solve; do not create a second generator.",
+    "determinism": "Stable seed and stable canonical deckId/cardNumber and cell ID must replay same output; local group random draws must not re-roll ancestors.",
+    "grouping": "Three-rule proposal uses L/M/S roles; kfb.place/1 rules.group.sizes [1,0.62,0.38], sink/contact/gate and non-clone constraints remain authoritative.",
+    "visualTruth": "Deck PDF crop is authoritative; text JSON supplies semantics, artworkPrompt is not image truth; no invented asset IDs or character-to-deck canon assignments.",
+    "colourTruth": "Six existing world palettes and their role colours remain in kfb.color-concept/1; story mode is overlay, not replacement; painted Meshy only gentle tint.",
+    "outlierProbabilityProposal": 0.03,
+    "outlierGate": "Candidate only where playable routes, sightline, collision/contact, identity, readable cards, and the kfb-place adjacency rules remain valid.",
+    "residentGate": "All residentCandidateIds are affinity suggestions only; do not auto-assign signatureDeck or overwrite kfb.character/1.1 fields with todo or non-GEORG status.",
+    "billboardGate": "Resolve actual cover or [deckId,cardNumber] against registry and original PDF; avoid repeating same card art within a deck-quarter.",
+    "audioGate": "Bed family strings are conceptual search labels, not verified loops, licenses or new mixer contracts; WS-Audio owns selection/mix.",
+    "themesGate": "130 deck assignments are an editorial first pass; 104 TBD bundleSuggestions are not evidence of accepted canonical categories.",
+    "noRuntimeChange": true
+  },
+  "profiles": [
+    {
+      "id": "kfb_town_baseline",
+      "label": "KFB Town · historical hub",
+      "semantics": {
+        "category": "town",
+        "topics": [
+          "royal satire",
+          "mine",
+          "market"
+        ],
+        "moodDescriptors": [
+          "bustling",
+          "layered"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "kfb_town": 60,
+          "otown": 20,
+          "canyon": 10,
+          "protopia": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 25,
+          "accent": 20,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 35,
+          "absurd": 25,
+          "heroic": 5,
+          "mystical": 10,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "market crate",
+            "street lantern",
+            "repairable sign"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "market square",
+            "royal gate",
+            "exploited mine entrance"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "fairground-town-bed",
+        "layers": [
+          "street bustle",
+          "hand percussion"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "town notice",
+          "royal parody",
+          "mine history"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "royal arch carrying a tiny market stall",
+        "mine-cart used as a park bench"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "norman",
+        "lady_dory"
+      ],
+      "neighbourWeights": {
+        "kfb_town_baseline": 55,
+        "future_utopia": 15,
+        "future_dystopia": 15,
+        "future_protopia": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "future_utopia",
+      "label": "Forget Utopia · polished promise",
+      "semantics": {
+        "category": "futures",
+        "topics": [
+          "glass city",
+          "perfect service",
+          "delayed delivery"
+        ],
+        "moodDescriptors": [
+          "glossy",
+          "seductive",
+          "uneasy"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "otown": 35,
+          "bucht": 35,
+          "kfb_town": 15,
+          "protopia": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 25,
+          "accent": 20,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 15,
+          "comic": 20,
+          "absurd": 10,
+          "heroic": 30,
+          "mystical": 20,
+          "forbidden": 5
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "model-city plinth",
+            "service access panel",
+            "automated queue marker"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "finished-city façade",
+            "keynote pavilion",
+            "hidden maintenance entrance"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "polished-keynote-bed",
+        "layers": [
+          "soft synthetic pulse",
+          "hushed machinery"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "finished render",
+          "launch roadmap",
+          "seamless service"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "golden maintenance hatch in pristine boulevard",
+        "half-buried obsolete demo booth"
+      ],
+      "residentCandidateIds": [
+        "brain_cyborg",
+        "frizzlebob",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "future_utopia": 65,
+        "kfb_town_baseline": 20,
+        "future_protopia": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "future_dystopia",
+      "label": "Ignore Dystopia · managed alarm",
+      "semantics": {
+        "category": "media fear",
+        "topics": [
+          "emergency",
+          "narrowed agency",
+          "loop"
+        ],
+        "moodDescriptors": [
+          "ominous",
+          "exhausted",
+          "claustrophobic"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 40,
+          "wueste": 30,
+          "otown": 20,
+          "kfb_town": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 20,
+          "strang": 20,
+          "leaf": 5,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 25,
+          "comic": 5,
+          "absurd": 10,
+          "heroic": 5,
+          "mystical": 20,
+          "forbidden": 35
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "warning loudspeaker",
+            "temporary barricade",
+            "broken alert light"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "doomsday-clock tower",
+            "sealed broadcast hall",
+            "no-off-ramp gate"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "alarm-broadcast-bed",
+        "layers": [
+          "distant mechanical drone",
+          "intermittent muted pulse"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "renewed alarm",
+          "infinite feed",
+          "permanent emergency"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "flower bed flowering through a PA speaker",
+        "snow-coated warning tree in arid quarry"
+      ],
+      "residentCandidateIds": [
+        "demon_lord",
+        "norman",
+        "gothgirl"
+      ],
+      "neighbourWeights": {
+        "future_dystopia": 65,
+        "kfb_town_baseline": 20,
+        "future_protopia": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "future_protopia",
+      "label": "Embrace Protopia · repair in progress",
+      "semantics": {
+        "category": "futures",
+        "topics": [
+          "workshop",
+          "shared skill",
+          "small repair"
+        ],
+        "moodDescriptors": [
+          "lively",
+          "unfinished",
+          "welcoming"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "protopia": 60,
+          "otown": 20,
+          "bucht": 15,
+          "canyon": 5
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 10,
+          "accent": 15,
+          "strang": 5,
+          "leaf": 30,
+          "sky": 20
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 30,
+          "absurd": 15,
+          "heroic": 20,
+          "mystical": 10,
+          "forbidden": 5
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "tool crate",
+            "repaired fence post",
+            "shared notebook stand"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "community workshop",
+            "open repair yard",
+            "cultivated garden"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "working-yard-bed",
+        "layers": [
+          "warm percussion",
+          "water and leaf movement"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "open notebook",
+          "visible seam",
+          "proof of concept"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "flowering traffic sign turned into trellis",
+        "repaired satellite dish watering a greenhouse"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "witch",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "future_protopia": 65,
+        "kfb_town_baseline": 25,
+        "future_utopia": 10
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "power_conspiracy",
+      "label": "Power / finance / surveillance",
+      "semantics": {
+        "category": "political satire",
+        "topics": [
+          "finance",
+          "influence network",
+          "secret institutions"
+        ],
+        "moodDescriptors": [
+          "suspicious",
+          "bureaucratic",
+          "tense"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 40,
+          "kfb_town": 25,
+          "otown": 20,
+          "wueste": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 20,
+          "strang": 20,
+          "leaf": 5,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 25,
+          "comic": 5,
+          "absurd": 10,
+          "heroic": 5,
+          "mystical": 20,
+          "forbidden": 35
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "file boxes",
+            "camera tripod",
+            "stamped access barrier"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "MiB-style tower candidate",
+            "finance block",
+            "surveillance gate"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "noir-infrastructure-bed",
+        "layers": [
+          "low drone",
+          "distant mechanical ticks"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "pyramid chart",
+          "obscured camera",
+          "overlapping ownership"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "oversized chess pawn at bank entrance",
+        "small rooftop palm over sealed concrete bunker"
+      ],
+      "residentCandidateIds": [
+        "lord_hunky",
+        "lady_dory",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "power_conspiracy": 60,
+        "future_dystopia": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "technology_ai",
+      "label": "AI / automation / epistemic sabotage",
+      "semantics": {
+        "category": "technology",
+        "topics": [
+          "automation",
+          "algorithmic authority",
+          "AI"
+        ],
+        "moodDescriptors": [
+          "cold",
+          "playful",
+          "uncertain"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "otown": 45,
+          "canyon": 25,
+          "bucht": 20,
+          "kfb_town": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 25,
+          "accent": 20,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 20,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 15,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "server rack",
+            "robotic display arm",
+            "wiring spool"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "data centre",
+            "algorithm podium",
+            "abandoned research dome"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "synthetic-inference-bed",
+        "layers": [
+          "modular machine hum",
+          "digital chirp"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "interface theatre",
+          "AI takeover",
+          "machine decision"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "server rack growing a tree from its cooling vents",
+        "robot proudly offering a handwritten apology"
+      ],
+      "residentCandidateIds": [
+        "brain_cyborg",
+        "lord_hunky",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "technology_ai": 60,
+        "future_utopia": 25,
+        "power_conspiracy": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "psyche_mind",
+      "label": "Psyche / mind / identity",
+      "semantics": {
+        "category": "psychology",
+        "topics": [
+          "attention",
+          "identity",
+          "dream"
+        ],
+        "moodDescriptors": [
+          "uncanny",
+          "introspective",
+          "comic"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 30,
+          "otown": 30,
+          "bucht": 20,
+          "protopia": 20
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 10,
+          "leaf": 10,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 10,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 35,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "oversized mirror",
+            "scribbled notebook",
+            "thought-cloud sculpt"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "dream-lab booth",
+            "hall of mirrors",
+            "unfinished therapy stage"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "psychic-echo-bed",
+        "layers": [
+          "granular breath texture",
+          "muted melodic fragments"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "inner dialogue",
+          "archetype clash",
+          "anxiety circus"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "mirror reflecting yesterday's street",
+        "tiny stage inside a discarded helmet"
+      ],
+      "residentCandidateIds": [
+        "gothgirl",
+        "frizzlebob",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "psyche_mind": 55,
+        "philosophy_epistemic": 25,
+        "kfb_town_baseline": 20
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "myth_history",
+      "label": "Myth / ancient history / folklore",
+      "semantics": {
+        "category": "history",
+        "topics": [
+          "pharaoh",
+          "folklore",
+          "myth"
+        ],
+        "moodDescriptors": [
+          "ceremonial",
+          "dusty",
+          "theatrical"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "wueste": 35,
+          "canyon": 30,
+          "kfb_town": 25,
+          "otown": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 10,
+          "leaf": 10,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 10,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 35,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "ceramic urn",
+            "torn banner",
+            "small carved tablet"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "pyramid gate",
+            "sarcophagus stage",
+            "forgotten shrine"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "mythic-percussion-bed",
+        "layers": [
+          "dry wind",
+          "low frame drum"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "ancient decree",
+          "cursed contract",
+          "impossible relic"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "sarcophagus vending-machine slot",
+        "pyramid crowned with tiny paper theatre"
+      ],
+      "residentCandidateIds": [
+        "mummy_a",
+        "mummy_b",
+        "witch"
+      ],
+      "neighbourWeights": {
+        "myth_history": 60,
+        "fantasy_dungeon": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "improv_theatre",
+      "label": "Comic / theatre / wrestling",
+      "semantics": {
+        "category": "comedy",
+        "topics": [
+          "improv",
+          "roleplay",
+          "wrestling"
+        ],
+        "moodDescriptors": [
+          "rowdy",
+          "performative",
+          "chaotic"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "kfb_town": 35,
+          "otown": 30,
+          "bucht": 20,
+          "canyon": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 35,
+          "absurd": 25,
+          "heroic": 5,
+          "mystical": 10,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "prop microphone",
+            "portable mask",
+            "foam trophy"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "pop-up comic stage",
+            "wrestling ring",
+            "travelling booth"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "carnival-groove-bed",
+        "layers": [
+          "comic percussion",
+          "audience texture"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "cue card",
+          "mock trophy",
+          "broken fourth wall prop"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "wrestling ring on a floating postage stamp",
+        "spotlight shining from a coffee cup"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "orc_brute",
+        "lady_dory"
+      ],
+      "neighbourWeights": {
+        "improv_theatre": 65,
+        "kfb_town_baseline": 25,
+        "psyche_mind": 10
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "philosophy_epistemic",
+      "label": "Philosophy / knowledge / ideology",
+      "semantics": {
+        "category": "philosophy",
+        "topics": [
+          "epistemology",
+          "debate",
+          "ideology"
+        ],
+        "moodDescriptors": [
+          "questioning",
+          "abrasive",
+          "absurd"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 30,
+          "otown": 30,
+          "kfb_town": 25,
+          "protopia": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 10,
+          "leaf": 10,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 20,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 15,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "folding lectern",
+            "book stack",
+            "debate placard"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "open-air forum",
+            "logic labyrinth",
+            "argument tower"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "thinking-room-bed",
+        "layers": [
+          "plucked low strings",
+          "resonant ticks"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "argument map",
+          "paradox",
+          "authority claim"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "giant question mark as a city gate",
+        "open book acting as a stairway"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "lady_dory",
+        "brain_cyborg"
+      ],
+      "neighbourWeights": {
+        "philosophy_epistemic": 60,
+        "psyche_mind": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "medical_body",
+      "label": "MedKayfab / anatomy / medicine",
+      "semantics": {
+        "category": "health education",
+        "topics": [
+          "anatomy",
+          "clinical investigation",
+          "biology"
+        ],
+        "moodDescriptors": [
+          "curious",
+          "precise",
+          "visceral"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "bucht": 30,
+          "protopia": 25,
+          "kfb_town": 25,
+          "otown": 20
+        },
+        "roleWeights": {
+          "ground": 25,
+          "tower": 15,
+          "accent": 20,
+          "strang": 10,
+          "leaf": 10,
+          "sky": 20
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 20,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 15,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "labelled instrument case",
+            "anatomical model",
+            "diagnostic lamp"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "field clinic",
+            "anatomy walk-through",
+            "micro-world laboratory"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "clinical-organic-bed",
+        "layers": [
+          "subtle circulation pulse",
+          "light acoustic rhythm"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "body systems",
+          "clinical case",
+          "diagnostic evidence"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "blood vessel forming a street map",
+        "microscope as an observation tower"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "brain_cyborg",
+        "witch"
+      ],
+      "neighbourWeights": {
+        "medical_body": 60,
+        "psyche_mind": 20,
+        "future_protopia": 20
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "music_industry",
+      "label": "Music / sonic history / industry",
+      "semantics": {
+        "category": "music",
+        "topics": [
+          "industry",
+          "copyright",
+          "sonic history"
+        ],
+        "moodDescriptors": [
+          "rhythmic",
+          "raw",
+          "rebellious"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 35,
+          "otown": 30,
+          "bucht": 20,
+          "kfb_town": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 35,
+          "absurd": 25,
+          "heroic": 5,
+          "mystical": 10,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "vinyl crate",
+            "tour microphone",
+            "coiled cable"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "record-press hall",
+            "radio antenna tower",
+            "small performance club"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "industrial-rhythm-bed",
+        "layers": [
+          "dubby bass texture",
+          "room ambience"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "sample lineage",
+          "payola",
+          "playlist monopoly"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "vinyl disc as orbiting second moon",
+        "turntable embedded in the old road"
+      ],
+      "residentCandidateIds": [
+        "gothgirl",
+        "frizzlebob",
+        "orc_brute"
+      ],
+      "neighbourWeights": {
+        "music_industry": 65,
+        "improv_theatre": 20,
+        "power_conspiracy": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "craft_art",
+      "label": "Art / repair / creative process",
+      "semantics": {
+        "category": "art",
+        "topics": [
+          "craft",
+          "creative work",
+          "editing"
+        ],
+        "moodDescriptors": [
+          "tactile",
+          "active",
+          "unfinished"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "protopia": 40,
+          "bucht": 30,
+          "otown": 20,
+          "kfb_town": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 10,
+          "accent": 15,
+          "strang": 5,
+          "leaf": 30,
+          "sky": 20
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 30,
+          "absurd": 15,
+          "heroic": 20,
+          "mystical": 10,
+          "forbidden": 5
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "paint jar",
+            "pencil rack",
+            "scrap-paper bundle"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "shared studio",
+            "open-air mural wall",
+            "reclaimed printing press"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "atelier-workshop-bed",
+        "layers": [
+          "paper and brush textures",
+          "hand percussion"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "draft",
+          "annotation",
+          "revision"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "enormous eraser as a bridge",
+        "ink pot with a tiny field of flowers"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "gothgirl",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "craft_art": 60,
+        "future_protopia": 25,
+        "improv_theatre": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "romance_social",
+      "label": "Love / social contracts / trust",
+      "semantics": {
+        "category": "relationships",
+        "topics": [
+          "romance",
+          "betrayal",
+          "social role"
+        ],
+        "moodDescriptors": [
+          "intimate",
+          "awkward",
+          "bittersweet"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "bucht": 40,
+          "kfb_town": 30,
+          "protopia": 20,
+          "otown": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 10,
+          "accent": 15,
+          "strang": 5,
+          "leaf": 30,
+          "sky": 20
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 35,
+          "absurd": 25,
+          "heroic": 5,
+          "mystical": 10,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "letter box",
+            "café chair",
+            "crumpled invitation"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "garden gazebo",
+            "public confession podium",
+            "bridge with missing middle plank"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "social-chamber-bed",
+        "layers": [
+          "soft acoustic motif",
+          "nearby chatter"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "promise",
+          "secret",
+          "breakup"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "engagement ring used as a roundabout",
+        "love letter blown into the town clock"
+      ],
+      "residentCandidateIds": [
+        "lady_dory",
+        "lord_hunky",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "romance_social": 60,
+        "psyche_mind": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "cosmic_scifi",
+      "label": "Cosmic / sci-fi / UFO",
+      "semantics": {
+        "category": "space opera",
+        "topics": [
+          "cosmic myth",
+          "UFO",
+          "alien"
+        ],
+        "moodDescriptors": [
+          "strange",
+          "expansive",
+          "satirical"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "otown": 40,
+          "canyon": 30,
+          "bucht": 20,
+          "wueste": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 10,
+          "leaf": 10,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 10,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 35,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "antenna dish",
+            "meteor fragment",
+            "portable star chart"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "orbiting craft",
+            "ringed planet landmark",
+            "alien observatory"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "cosmic-drone-bed",
+        "layers": [
+          "soft harmonic sweep",
+          "metallic resonances"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "planetary propaganda",
+          "UFO logbook",
+          "transmission"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "Earth as the rare tiny visible orb",
+        "microscopic fairground on a ring planet"
+      ],
+      "residentCandidateIds": [
+        "lord_hunky",
+        "lady_dory",
+        "brain_cyborg"
+      ],
+      "neighbourWeights": {
+        "cosmic_scifi": 60,
+        "technology_ai": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "labor_urban",
+      "label": "Work / economy / industrial memory",
+      "semantics": {
+        "category": "labour",
+        "topics": [
+          "economy",
+          "industrial history",
+          "class"
+        ],
+        "moodDescriptors": [
+          "worn",
+          "human",
+          "historical"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "kfb_town": 40,
+          "wueste": 20,
+          "protopia": 20,
+          "otown": 20
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 20,
+          "strang": 20,
+          "leaf": 5,
+          "sky": 15
+        },
+        "storyModeWeights": {
+          "tragic": 20,
+          "comic": 20,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 15,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "tool chest",
+            "factory time clock",
+            "folded worker sign"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "abandoned warehouse",
+            "rail-side market",
+            "repurposed mill"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "industrial-memory-bed",
+        "layers": [
+          "metal impacts",
+          "distant engine idle"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "working day",
+          "wage claim",
+          "industrial ruin"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "giant factory whistle repurposed as flower pot",
+        "time clock ticking in a deserted meadow"
+      ],
+      "residentCandidateIds": [
+        "norman",
+        "orc_brute",
+        "frizzlebob"
+      ],
+      "neighbourWeights": {
+        "labor_urban": 60,
+        "kfb_town_baseline": 25,
+        "future_protopia": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "fantasy_dungeon",
+      "label": "Dungeon / adventure / tabletop",
+      "semantics": {
+        "category": "fantasy",
+        "topics": [
+          "dungeon",
+          "quest",
+          "character class"
+        ],
+        "moodDescriptors": [
+          "adventurous",
+          "odd",
+          "playful"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "canyon": 35,
+          "wueste": 30,
+          "otown": 20,
+          "kfb_town": 15
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 10,
+          "absurd": 20,
+          "heroic": 10,
+          "mystical": 35,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "map scroll",
+            "wooden shield",
+            "torch holder"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "dungeon portal",
+            "quest camp",
+            "tilted watchtower"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "adventure-percussion-bed",
+        "layers": [
+          "cavern echo",
+          "small melodic fanfare"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "quest notice",
+          "failed prophecy",
+          "character class"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "dungeon door opening onto a suburban café",
+        "enormous dice as a roadside ruin"
+      ],
+      "residentCandidateIds": [
+        "black_knight",
+        "orc_brute",
+        "demon_lord"
+      ],
+      "neighbourWeights": {
+        "fantasy_dungeon": 60,
+        "myth_history": 25,
+        "kfb_town_baseline": 15
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    },
+    {
+      "id": "meta_crossgenre",
+      "label": "Cross-genre / awaiting WS0 classification",
+      "semantics": {
+        "category": "meta",
+        "topics": [
+          "mixed-genre",
+          "unclassified"
+        ],
+        "moodDescriptors": [
+          "open",
+          "ironic",
+          "varied"
+        ]
+      },
+      "colour": {
+        "paletteWeights": {
+          "kfb_town": 40,
+          "otown": 30,
+          "canyon": 20,
+          "bucht": 10
+        },
+        "roleWeights": {
+          "ground": 20,
+          "tower": 20,
+          "accent": 25,
+          "strang": 15,
+          "leaf": 10,
+          "sky": 10
+        },
+        "storyModeWeights": {
+          "tragic": 10,
+          "comic": 35,
+          "absurd": 25,
+          "heroic": 5,
+          "mystical": 10,
+          "forbidden": 15
+        },
+        "roleWeightsMeaning": "Relative emphasis for own-built objects only; never replace canonical palette hex or recolour painted Meshy textures."
+      },
+      "composition": {
+        "propTriplet": {
+          "arrangement": "L/M/S anchored group; deterministic variation; actual asset IDs from approved Prop-Pool",
+          "candidates": [
+            "card stand",
+            "reusable stage curtain",
+            "modular sign"
+          ]
+        },
+        "landmarkTriplet": {
+          "arrangement": "One primary silhouette plus two smaller narrative supports; NOT three equally dominant landmarks",
+          "candidates": [
+            "card plaza",
+            "travelling pavilion",
+            "open-deck forum"
+          ]
+        }
+      },
+      "audio": {
+        "bedFamily": "crossgenre-neutral-bed",
+        "layers": [
+          "light percussion",
+          "ambient room tone"
+        ],
+        "status": "DESIGN_FAMILY_NOT_AUDIO_ASSET",
+        "mixOwner": "WS-Audio I6 / KFB Audio Site"
+      },
+      "billboard": {
+        "sourceRule": "Use canonical deck cover or verified PDF/card crop only; image/prompt substitution forbidden",
+        "motifSearch": [
+          "deck cover",
+          "card title",
+          "cross-reference"
+        ]
+      },
+      "surrealOutlierCandidates": [
+        "giant card becoming a folding wall",
+        "stage curtain hiding a miniature garden"
+      ],
+      "residentCandidateIds": [
+        "frizzlebob",
+        "lady_dory",
+        "norman"
+      ],
+      "neighbourWeights": {
+        "meta_crossgenre": 70,
+        "kfb_town_baseline": 20,
+        "improv_theatre": 10
+      },
+      "proposalStatus": "PROPOSED_WEIGHTS_AND_COMPOSITION_NOT_ASSET_ACCEPTANCE"
+    }
+  ],
+  "deckAssignments": [
+    {
+      "deckId": "1001_kayfabe_nights",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "academic_anarchy_intellectual",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "ai_kayfabe",
+      "familyId": "technology_ai",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "anti_rules_toolkit",
+      "familyId": "craft_art",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "big_bad_brain_wrestling",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "brain_flipper_image_spots",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "bullshit_jobs_uncut",
+      "familyId": "labor_urban",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "cinematic_kayfabizarro_2",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "cosmic_grift_dark_journalism",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "deep_state_plumbing",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "dream_wrestling_with_kayfabe_freud",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "embrace_protopia",
+      "familyId": "future_protopia",
+      "confidence": "high",
+      "basis": "canonical_three_deck_world_mapping"
+    },
+    {
+      "deckId": "epistemic_sabotage",
+      "familyId": "technology_ai",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "federal_kayfabe",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "forget_utopia",
+      "familyId": "future_utopia",
+      "confidence": "high",
+      "basis": "canonical_three_deck_world_mapping"
+    },
+    {
+      "deckId": "frizzlebob_s_ego_mania_narcissist",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+      "familyId": "cosmic_scifi",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "frizzlebob_s_mission_control",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "geopolitical_thrillers_conspiracy_theories",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "grimms_kayfabe_legends_expansion_set_02",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "ideology_wrestling",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "familyId": "future_dystopia",
+      "confidence": "high",
+      "basis": "canonical_three_deck_world_mapping"
+    },
+    {
+      "deckId": "jung_and_shinn_a_guide_to_cosmic_cringe",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_1_morale_ethics",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_improv_comedy",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "familyId": "fantasy_dungeon",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_monopolies_manipulation_murder_vol",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_philosophy",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_pulitzer_punk",
+      "familyId": "craft_art",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarro_siege_tower_wall_siege_kampaigns",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizarros_ontological_hazards",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kayfabizzaro_politics",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kosmik_kayfabizarro_sci_fi_space_opera",
+      "familyId": "cosmic_scifi",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "kreative_kayfab_creative_hero_journey",
+      "familyId": "craft_art",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "medkayfab_ancestral_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_atomic_elements",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_biochemistry",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_cardiology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_clinical_cases",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_dentistry",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_dermatology_01",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_dermatology_02",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_diagnostic_tools",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_differential_diagnosis",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_disease_timelines",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_emergency_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_endocrinology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_essential_pharmacology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_gastrology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_genetics",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_geriatrics",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_gross_anatomy",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_hematology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_histology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_hospital_hierarchy",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_immunology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_intensive_care_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_internal_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_laboratory_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_microbiology_infectiology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_neonatal_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_nephrology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_neuroanatomy",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_neurology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_nursing_care",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_obstetrics_gynaecology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_oncology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_ophthalmology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_orthopedics_trauma",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_otolaryngology_ent",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_pathology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_pediatrics",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_pharmacology_01",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_pharmacology_02",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_physiology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_pneumology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_psychiatry",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_radiology",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_rules_comic_01",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_science",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "medkayfab_surgery",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_the_bedside_ballet",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_thinking_traps",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_tropical_medicine",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_urology_01",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "medkayfab_urology_02",
+      "familyId": "medical_body",
+      "confidence": "high",
+      "basis": "registry_prefix_medkayfab"
+    },
+    {
+      "deckId": "mind_traps",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "museum_of_modern_mess",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "nibelungen_booster_pack_design",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "observation_underground",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "pharaoh_piledriver",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "philosopher_dungeon_raid",
+      "familyId": "fantasy_dungeon",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "platos_dungeon_raid_hero_set_01",
+      "familyId": "fantasy_dungeon",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "platos_dungeon_raid_v05",
+      "familyId": "fantasy_dungeon",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "plot_pusher_posse",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "programming_the_whole_child",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "project_gateway_kayfabe",
+      "familyId": "cosmic_scifi",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "protopia_web",
+      "familyId": "future_protopia",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "reality_redrawn",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "romantic_kayfabe",
+      "familyId": "romance_social",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "saboteur_sketchbook_medicine_history_psyops_add_",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "secret_spy_suplexes",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "shadow_monopoly_blackrock_vanguard_co",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "shadow_politics",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "shakespearean_animal_beatdown",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "sonic_slaughterhouse",
+      "familyId": "music_industry",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "sonic_warfare_music_history_01",
+      "familyId": "music_industry",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "suppressed_book_deck",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "symphonic_savagery",
+      "familyId": "music_industry",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_bards_barnyard_beatdown",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_biological_metropolis",
+      "familyId": "meta_crossgenre",
+      "confidence": "low",
+      "basis": "fallback_requires_WS0_review"
+    },
+    {
+      "deckId": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_carnival_of_unsolved_problems_therapy",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_importance_of_being_kayfab_earnest",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_kayfabe_crucible_coming_of_age",
+      "familyId": "psyche_mind",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_kayfabe_money_trail_9_11",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_kayfabizarro_manifesto_cover_up",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_move_1",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_move_id",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_pharaoh_script_psychology_of_evil",
+      "familyId": "power_conspiracy",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "the_uruk_rumble",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "trust_and_betrayal",
+      "familyId": "romance_social",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "uncle_frizzlebob_s_tragic_flaws_id",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "uncle_frizzlebob_s_tragic_flaws_shakespeare",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "familyId": "philosophy_epistemic",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "what_work_was_for",
+      "familyId": "labor_urban",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "woad_and_warriors",
+      "familyId": "myth_history",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    },
+    {
+      "deckId": "wrinkle_rumble",
+      "familyId": "improv_theatre",
+      "confidence": "medium",
+      "basis": "manual_theme_read"
+    }
+  ],
+  "canonThreeDeckCardOverrides": [
+    {
+      "deckId": "forget_utopia",
+      "familyId": "future_utopia",
+      "world": "Utopia",
+      "cards": [
+        {
+          "cardNumber": 2,
+          "cardName": "The Finished City"
+        },
+        {
+          "cardNumber": 5,
+          "cardName": "The Cure-All Keynote"
+        },
+        {
+          "cardNumber": 10,
+          "cardName": "The Hero Demo"
+        }
+      ],
+      "source": "registry/assets/v1/decks/forget_utopia.json",
+      "sourceBlobSha": "38cde115ce02fef5f2ffd5f7ec58ea3921848ae4"
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "familyId": "future_dystopia",
+      "world": "Dystopia",
+      "cards": [
+        {
+          "cardNumber": 1,
+          "cardName": "The Doomsday Clock"
+        },
+        {
+          "cardNumber": 6,
+          "cardName": "The State of Exception"
+        },
+        {
+          "cardNumber": 17,
+          "cardName": "The Infinite Feed"
+        }
+      ],
+      "source": "registry/assets/v1/decks/ignore_dystopia.json",
+      "sourceBlobSha": "2ef45002ecbb18c6b218a273c0b1c0da4a2265ba"
+    },
+    {
+      "deckId": "embrace_protopia",
+      "familyId": "future_protopia",
+      "world": "Protopia",
+      "cards": [
+        {
+          "cardNumber": 1,
+          "cardName": "The Open Notebook"
+        },
+        {
+          "cardNumber": 5,
+          "cardName": "The Fixable Thing"
+        },
+        {
+          "cardNumber": 8,
+          "cardName": "The Compounding"
+        }
+      ],
+      "source": "registry/assets/v1/decks/embrace_protopia.json",
+      "sourceBlobSha": "2d9aeb01737fa23bd85deb071b520053121a22f5"
+    }
+  ],
+  "checksForWS1": [
+    "Load exact pinned deck registry/index and assert count=130, unique deckId and 1:1 family assignment",
+    "Validate each distribution sums to 100; reject invalid palette or Story-Mode identifiers",
+    "Resolve nine explicit billboard card refs through canonical shards/PDF; show cards as source objects before composing scenes",
+    "Sample fixed seeds over many cells; report family, prop, colour, mood, audio and anomaly frequencies against weights",
+    "Replay same seed and same spatial identifiers byte-identically; check neighbour restrictions and no invalid prop contact",
+    "Test two distinct deck overrides at same zone and different residents at same Card to prove genuinely different emphases",
+    "Present proposed triplets with actual verified Prop-Pool IDs and source-isolated images before any gameplay adoption"
+  ],
+  "deferred": [
+    "WS1 integration into runtime; seed UI selector; audited Prop-Pool asset IDs; explicit audio loop IDs; new sky/planet weights; named resident signature deck assignments; acceptance calibration; public browser proof"
+  ]
+}
