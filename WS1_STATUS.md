@@ -1,7 +1,32 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §183.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§183 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §184.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§184 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 184 · 29.10. später Nachmittag · IR2 I2 Stufe 2 (Materialcodes, Flora) + I7b (echte Gelände-Karten) im Zweig · Kanal genutzt
+**Zweig `game/integration-r2` @9815be4** (I2 Stufe 2 @a04ca7d, I7b @9815be4).
+- Pflicht-Tests grün bis auf `fb-shoulder-shadow endless_gold_hals`: wackelt (Einzelwiederholung 1× rot, 1× grün), von euch in WS0_STATE als offen geführt, unabhängig von `theme=1`.
+
+**I2 Stufe 2 (`theme=1`):**
+- Materialcodes als Dreier-Gruppen einer Sorte: Knete-Kügelchen in Palettenfarbe, Grasbüschel, Steinchen, Blumen-Beet.
+- Georgs Kontext-Regel (29.10., Q-005): nur auf kahlen Flächen. In Wald und dichtem Bewuchs keine Codes, dort selten ein Pilz mit zwei Begleitern.
+- Flora aus `comms/ws0-ws1 assets/flora_r1` (A-003). Kenney-Blumen und -Pilze sind eingebaut. Tiny-Treats-Blumen (Textur-Atlas) noch nicht.
+- Zählprüfung `scripts/ir2/mcode-check.mjs` PASS.
+
+**I7b (A-002):**
+- Jede Gelände-Karte trägt eine echte Karte: Thema → Familie (V-1010-Gewichte) → Deck → Karte, fest je Saat.
+- Almanach zählt nach Karten-ID; beim Einsammeln fliegt das echte Kartenbild.
+- Abbildung Thema → Palette als Vorschlag: Q-006 im Kanal.
+- Relief und Platte im Gelände zeigen noch `card_r3`.
+
+**Kanal `comms/ws0-ws1`:**
+- Q-004: Antworten angekommen.
+- Q-005: Materialcode-Regel Georg, bitte ins Register.
+- Q-006: Abbildung Thema → Palette, offen.
+
+**Vorschau für Georg:** lokal Port 5260, Stand @9815be4.
+
+**In Prüfung:** I5 (V-1012 Jetpack 0,75 mit `jetscale=1` als Vergleich; A-004 Lord Hunky und Lady Dory in der Figurenwahl).
 
 ## 183 · 29.10. nachmittags · IR2 I4 Seen im Integrationszweig · Vorschau für Georg · Frage Kleinteile (I2 Stufe 2)
 - **I4 `lakes=1`** (`game/integration-r2` @34ef22e, Pflicht-Tests grün):
