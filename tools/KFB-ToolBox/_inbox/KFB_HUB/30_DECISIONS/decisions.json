@@ -14874,6 +14874,36 @@
    "applies": "(1) jetzt, (2) nach dem MVP"
   },
   {
+   "id": "V-1026",
+   "date": "2026-10-29",
+   "area": "Welt",
+   "verdict": "BRIEF",
+   "text": "Prop-Pool R2 (Georg 29.10.): (1) Quaternius Ultimate Nature von WS0 headless aus BLEND nach GLB umgewandelt (150/150 mit Mesh und Material), zusammen mit Kenney Nature Kit (329 GLB) und Quaternius Stylized Nature MegaKit (68 glTF) auf Branch assets/nature-packs-r1 im privaten Repo; (2) WSA work nimmt sie in den Katalog auf, gleicht alle KayKit-Packs ab (u. a. Halloween-Bäume, Snow Biome, Platformer, Mystery 4–6 nur Umgebung/Requisiten), vergibt Klassen mit Abdeckungstabelle Klasse × Thema, Färbbarkeit je Eintrag (flat/atlas/vertex) und führt Ressourcen als eigene Klasse (Holzstämme und -stapel in Mengenstufen mit Säge/Axt, Erz- und Goldstapel mit Schaufel/Spitzhacke/Minen-Requisiten, weitere Rohstoffe) samt Mikroszenen-Gruppen; (3) Übergabe als zusammengeführte Kachelliste im Format der Spiel-Fassung (257 + neue) mit Prüfskript, WS1 bekommt sie über den Kanal (V-1024). Ressourcen werden später meta-narrativ mit dem Fluff-Ressourcen-Konzept verbunden und zu Spielmechanik (eigene Entscheidung). Auftrag replies/WS0_AN_WSA_V1026_PROP_POOL_R2.md.",
+   "values": {},
+   "owner": "WS0 (Umwandlung) → WSA work → WS1",
+   "check": "Katalog-Branch, Abdeckungstabelle, Prüfskript grün",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Katalog R1 kam nie im Spiel an, drei fertige Nature-Packs und einige KayKit-Packs fehlten; Ressourcen sollen Spielmechanik werden.",
+   "applies": "sofort, WSA work"
+  },
+  {
+   "id": "V-1027",
+   "date": "2026-10-29",
+   "area": "Figuren",
+   "verdict": "PLAN",
+   "text": "Jede Figur als Spielerfigur wählbar (Georg 29.10., zunächst für Georg zum Beurteilen, nicht zwingend im fertigen Spiel): KayKit Medium und Large (Demon Lord, Brute), Men in Black inkl. Türsteher, Toy Soldiers, Legacy-Figuren, Frankensteinings (Hunky, Dory), Prop-Figuren (Bleistift, Radiergummi) und später Pflanzen-Figuren (V-1025). Modular: Wahl kommt aus dem Figurenregister (Merkmal playable, WS1 baut die Grundlage in A-004/A-005), je Rig-Familie ein Adapter (medium, large, legacy, schwebend für Props ohne Hände: Waffe in plausibler Handposition schwebend verankert, dieselben Waffen-, Kampf- und Zerstörungs-Clips bzw. -Mechaniken). Fehlende Clips bekommen einen Rückfall plus automatische Lückenliste je Figur und Familie; Georg entscheidet danach, welche Lücken sich lohnen (Legacy hat dieselbe Bounce-Bewegung und einige Kampf-Optionen). Meta-narrative Rollen (Radiergummi = Zensur/Buh, Farbe) später nur über Shader und Skins auf denselben Grundfunktionen, keine eigene Mechanik je Figur. Freischaltung und Lückenliste baut WS0 nach Sonntag.",
+   "values": {},
+   "owner": "WS1 (Grundlage) · WS0 (nach So)",
+   "check": "Figurenwahl mit allen Figuren + Lückenliste",
+   "source": "Georg 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will jede Figur selbst spielen können, um Lücken zu finden und zu entscheiden, welche sich lohnen; eine gemeinsame Grundfunktion hält es einfach.",
+   "applies": "Grundlage jetzt, Rest nach So"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
