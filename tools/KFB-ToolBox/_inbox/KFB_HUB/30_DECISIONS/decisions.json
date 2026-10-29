@@ -14814,6 +14814,21 @@
    "applies": "nach So"
   },
   {
+   "id": "V-1022",
+   "date": "2026-10-29",
+   "area": "Prozess",
+   "verdict": "FAIL",
+   "text": "MiB-Turm Designpaket R2 bei Claude Design FAIL (Georg 29.10.): Claude Design kann keine Bilder generieren und keine Referenzbilder im Netz suchen; das Briefing verlangte aber neun Style-Frames in Endqualität (Claymation) und ein Moodboard aus Referenzen, die nicht im Paket lagen. Ergebnis: Übermalung der Ist-Keyframes. Zusätzlich las Claude Design große Dateien des Pakets nicht (Storyboard-Bogen 8,5 MB, MP4), obwohl sie im Branch liegen. Ursache WS0: Auftrag nach Wunsch-Ergebnis statt nach Fähigkeit des Empfängers geschrieben; Brief-Gate und Paket-Check prüften Konsistenz und Dateien, nicht die Machbarkeit. Regel: Claude Design bekommt nur Code-Aufträge (HTML/three.js-Bühnen, Module, UI, Montage aus gelieferten Bildern); gerenderte Bilder bzw. Style-Frames kommen aus einem Bildmodell (ChatGPT-Bild, Gemini) mit Eingabebildern oder direkt aus Blender (WSB). Brief-Gate prüft den Empfänger gegen eine Fähigkeitsliste (replies/RECEIVER_CAPABILITIES_R1.md). Paketdateien für Claude Design höchstens wenige MB.",
+   "values": {},
+   "owner": "WS0",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: „Weißt du noch nicht mal, welche Fähigkeiten Claude Design hat?“ – erneut Tokens für eine halbgare Übermalung verschwendet.",
+   "applies": "sofort, jeder Auftrag an Claude Design"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

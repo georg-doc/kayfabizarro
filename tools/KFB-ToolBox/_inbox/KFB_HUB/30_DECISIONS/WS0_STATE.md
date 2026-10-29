@@ -124,3 +124,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - V-1014 Gatling-Seitenhaltung nachgetragen; WSA-Brief R5 (V-1011) Gate PASS nach 5 Runden, Konzeptblatt KONZEPTBLATT_CASCADE_R5_TREFFER_R1; WSB K10 R2 in Prüfung.
 - WSB K10 R2 Schusswaffen Gate PASS (8 Runden), Hub b262. Schilde (Survivalist, Monstrosity u. a.) als Ergänzung vorgeschlagen, wartet auf Georg.
 - V-1018 Paket-Check; MiB-Turm-Paket R2 (design/claude-design-r3) Gate PASS, Hub b222 v5. V-1019/1020 Energieschild-Tune + MiB-Sphäre. Offen: Georg zu 3D-Werkbank Energieschild und UFO-Lab-Bausteinen.
+- V-1022 FAIL MiB-Paket bei Claude Design (keine Bildgenerierung); RECEIVER_CAPABILITIES_R1 + Guard im brief_gate; b222 done(FAIL). Memory kfb-claude-design-capabilities.
