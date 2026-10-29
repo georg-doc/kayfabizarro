@@ -1,3 +1,16 @@
+## BRANCH-LOCAL R13 · 2026-10-29 · HyperNorm Card Buildings / Comic Gutter City / Colored-Ball Cascades
+
+**CURRENT CONCEPT-DESIGN DONOR, NOT NEW AUTHORITY.** WS0 KFB_HUB game-design folder in existing Draft PR #435:
+- `CASCADE_SPHERE_R13_HYPERNORM_CARD_BUILDINGS_GUTTER_CITY_CONCEPT_2026-10-29.md` – Georg's new full proposal: varied hypernormalisation card/cube 3D buildings, concealed collectible source KFB card, shell infection/damage masks and actual collision sectors, card color/height-ball infill, ball flows spilling into maze/gutter streets, existing Joyride clay curb/sidewalk, 56 deck IDs as *optional* puzzle, actual 3D FB_CANON/player unchanged.
+- `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_RECIPE_CANDIDATE_2026-10-29.json` – optional data-only four Card Block design recipe and explicit game/visual event authority.
+- `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_SOURCE_QA_2026-10-29.md` – 24/24 static checks; **ZERO** current H15 3D shader/ball GPU/game/mobile/source-asset Runtime tests.
+
+**Source-grounded:** H13 HyperNorm is accepted 2D 1024×512 canvas, Clay Stage R2 applies H13/H14-derived frames on **one** 3D Billboard via CanvasTexture; 6-face seamless 3D H15 is NOT proven. Card Zone Lab v2 has real source card-seeded palettes/height queries and carve/path but DOES NOT convert any image automatically to physical height; current Joyride transition-atlas source includes actual clay curb stones/sidewalk, Track Core remains only road/contact constructor. Visual particles and real Fluff/Goo simulation separate. FrizzleBob retains **full original 3D rig**, no forced standee. Use candidate A+B (outside live HyperNorm + actual hidden card/vault), C (source palette balls) as bounded instanced FX with sparse contacts; do not mandate 56 buildings or whole per-ball GPU rigid physics.
+
+**Next owner action:** WS0 should compare Gutter City concept with current official V-962 R2 OSM POC and explicitly amend its own `docs/kfb-decisions-register-2026-10-11` only if adopted; do NOT auto-create private WSA POC, revise real game Host/WS1/world/road owner or deploy a Site. Existing source/design gate and planned independent blind Critic remain as before.
+
+---
+
 ## BRANCH-LOCAL R12 · 2026-10-28 · CURRENT WS0 V-962 R2 ONE-SHOT STATUS / ASSET IMPORT FIX
 
 **LATEST SOURCE TRUTH, READ FIRST:** Existing WS0 Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R12_WS0_ONE_SHOT_INTEGRATION_GAP_AUDIT_2026-10-28.md`, plus its additive Return/Changelog and R10 external blind reviewer recommendation. This is a PROPOSED WS0 owner patch, **NOT** a change to approved register V-962 R2/V-968.
