@@ -1,3 +1,15 @@
+## CURRENT ADDITIVE RESEARCH RETURN · 2026-10-29 · JASON SAMOSA WCC R2
+
+**Outcome:** Actual user-owned timestamped transcript of the **2026-10-21** Jason Samosa WCC film recovered from the existing private Google Doc `KFB Author Dossier: Jason Samosa` (**101,163 characters / 39 chapters / last time 01:33:45**). Source criticism and four distinct worldview comparisons committed to the existing **Hidden Cosmology Atlas research-only owner**, not a new author runtime, new product, or replacement private notebook. Complete spoken audio not reviewed; transcription contains errors, corrected name targets without rewriting original private donor.
+
+**Exact source files:** [Topic Return](topics/wcc-samosa-network-2026-10-29/RETURN.md); [Full chapter index](topics/wcc-samosa-network-2026-10-29/TRANSCRIPT_CHAPTER_ATLAS_R2.md); [Source/claim updates](topics/wcc-samosa-network-2026-10-29/SOURCE_CHECKS_R2.md); [R2 relation graph](topics/wcc-samosa-network-2026-10-29/RELATIONS_R2.md); [R2 tests](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R2.md) plus preserved R1 claims/graph and additive topic changelog. Source/claim/graph counters **28 / 31 / 17** and **15/15 actual static document checks PASS**, original page screenshots **0**, code/CI/browser **0**. Jorjani's author-to-author **citation of Samosa** is sourced separately from Farrell and Liszt's editorial comparator dossiers. Samosa `WCC→P2→SWEEP→JFK` arrows remain speaker claims unless the exact archival edge is documented.
+
+**Repository:** `georg-doc/kayfabizarro`; **Branch:** `research/hidden-cosmology-atlas-2026-10-13`; **review:** [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Committed writes individually checked against branch head and exact file. This is **RESEARCH ONLY**, without stage, router, Hub, Cloudflare, card generation, NotebookLM sync, main promotion or automatic merge.
+
+**One next source gate:** `WCC_HAMBRO_SINDONA_MONEYREX_ORIGINAL_ALIGNMENT` — 1969–1971 bank/board originals + May 20, 1974 NYT Farnsworth + Apr 30, 1981 Bank of Italy Moneyrex primary document; resolve the actual legal-entity signatory and distinguish named Hambro relatives.
+
+---
+
 ## CURRENT RETURN — KURT METZGER GOOGLE DOCS SCOPED MIRROR PROBE v0.1.0 — 2026-10-13
 
 **Outcome:** Successful user-authorized **additive in-place Google Docs write** for the existing Kurt Metzger Google Doc, proved by revision-guarded batchUpdate, new exact revision and readback of unique metadata-only phrase `WV_DOC_SYNC_20261013_01` exactly once. Existing body and formatting elements were not replaced; source-author claims and KFB performance text were not edited. Google Docs is still the **preserved Gemini donor**, not a complete content-equivalent mirror of the current GitHub author Markdown. This proves safe document writing, not end-to-end NotebookLM synchronization.
