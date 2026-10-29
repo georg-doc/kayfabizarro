@@ -1,7 +1,41 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §179.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§179 ist der neueste, Stand 27.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §180.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§180 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 180 · 29.10. mittags · Integrations-Block V-963 (b256) gestartet: `game/integration-r2` @72fbb25 · Grundlinie · Fragen an WS0
+**Start jetzt statt Fr früh (Georg 29.10. mittags):** „im Prinzip würde ich das jetzt gerne schon abarbeiten“.
+- `game/integration-r2` liegt im privaten Repo, abgezweigt von `game/proc-world-ws0` @72fbb25 (R5.2). Besitzer bis zur Übergabe: WS1-Lead.
+- Ab jetzt bitte keinen Spielcode auf `proc-world` außer dem FB_CANON-Tausch (V-967); den ziehe ich beim täglichen Merge mit.
+- Die Übergabe bleibt So bis 20 Uhr (`UEBERGABE_INTEGRATION_R2.md`, ein Commit).
+
+**Grundlinie der Pflicht-Tests am Start (@72fbb25, private-assets @da990fe, frischer Klon):**
+- Grün: Build, host, j7-roof (13 Racer, Wechsel 4), fb-shoulder-shadow, closing-build, terrain-seams, fb-canon (R8 A11).
+- **hud-3d ROT am Startstand:** Absturz bei `cassetteButtons().box`. `hud3d.js` gibt `{}` zurück, solange der Kassetten-Slot keine Wurzel hat; zuletzt geändert in 4f40cfa (R5.2 Bedienung im HUD). Der Lead repariert das als Erstes im Integrationszweig, weil ohne Grün nichts gemergt werden darf.
+- **feature-check:** keine Seitenfehler; Auto live rufen und verlassen ok, Ton ok. Aber:
+  - `debris: null`: Objekt `impact-debris` nicht gefunden.
+  - `hudSpeed: null`: `ClayHud.dom().speedState()` liefert im Wagen nichts.
+- **npc-suite, 80 Tests, 4 rot:**
+  - c2 `pupilZeroWhenClosed` und c3g `glowsAtNight`/`noGlowByDay` (bekannte Altfehler).
+  - **c3 `treesTextured` neu:** 15/17 Baum-Meshes mit Textur.
+  - drift: braucht `test/out/drift/drift-report.json` aus einem Vorlauf; im frischen Klon fehlt die Datei.
+
+**Fragen an WS0 (bitte kurz in `WS0_TO_WS1.md`):**
+1. `debris: null` und `hudSpeed: null`: Ist das seit dem Krater-Umbau (V-860/V-863) bzw. R5.2 erwartet, oder ein Fehler? Der Lead prüft parallel im Bild.
+2. c3 `treesTextured` 15/17: bekannt oder Fehler?
+3. Pflicht-Tests, die schon am Startstand rot sind: Der Lead behandelt sie als „benannt, nicht schlechter werden“ und repariert, was billig ist. Einverstanden?
+
+**Verteilung der Slices (Lead):**
+| Slice | Owner |
+|---|---|
+| I1 Kern, I5, alle Merges | Lead |
+| I2 Themen-Saat + Saat-Browser | WS1b; wartet auf eine Freigabe in seinem Fenster (nur Georg), sonst Lead |
+| I3 | WS-NPC |
+| I4 | WS1c |
+| I6 | WS-Audio |
+| I7 | WS1e |
+
+Die Sitzungen geben nur über den Lead ab. Gemeinsame Dateien ändert nur der Lead.
 
 ## 179 · 27.10. · Nachtrag zu §178: Abgleich mit eurem Register-Nachtrag V-842…V-867
 Unsere Sammlung (05:52) und euer Register-Nachtrag (06:00, @7a0377ecf) haben sich gekreuzt. Wir schreiben nichts um, sondern liefern den Abgleich kommentiert nach.
