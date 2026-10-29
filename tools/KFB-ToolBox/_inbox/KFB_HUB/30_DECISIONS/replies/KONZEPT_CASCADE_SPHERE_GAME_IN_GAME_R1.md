@@ -189,6 +189,7 @@ Die Pixel-Sprites in `explosions_smoke/` passen nicht zum Knete-Look, höchstens
 ## 7 · Klang
 - **Neu mit ElevenLabs (bestehendes `sfx_gen.py`):** Explosionen, Einstürze in Stufen (klein, mittel, Kaskade), Aufbau-Geräusche (Knete formt sich, Teile rasten ein), Greifhaken, Wächter, Goo. Kinoartig und basslastig, mit tiefem Druck und viel Raum, geschichtet aus Anschlag, Körper und Ausklang bzw. Trümmer (V-461).
 - **Vorhanden:** Jetpack-Set `jetpack_diy_r2`, `debris_crash_r1`, Fahrgefühl- und HUD-Klänge.
+- **Spielmusik-Kandidat (Georg 29.10., V-993):** Suno „Shepard Ascent“ (instrumental, 228 s, Mix + 9 Stems in assets/private `40_AUDIO/suno_r2/shepard_ascent/`). Die Shepard-Steigerung passt zur Kaskade: Stems je nach Spannung zu- und wegschalten.
 - **Musik:** unsere Tracks und Klangbetten (Mindscape-Betten, Biom-Musik) als Ebenen, die mit der Spannung der Runde steigen bzw. fallen.
 
 ## 8 · Qiva als Metaerzählung (Stefan)
