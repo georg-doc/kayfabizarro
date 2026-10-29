@@ -38,3 +38,12 @@
 - **Minimal proof for later owner:** two disposable per-player save orders with the same final pair of real Cards, equal membership but differing ordered first-exposure receipts, source-grounded short dialogue and exact fresh import. Nothing implemented now.
 - **Source state:** current GitHub memory architecture, Card pipeline, R4 and R4 Return re-read, owner/branch current. **0 runtime, 0 browser, 0 human gameplay tests**. No Hub/Cloudflare/Live or runtime alteration.
 - **One next gate:** WS0/Georg intake for minimal ordered Card receipts on the existing Lean Memory pipeline; a paper A/B order check only after content source selection.
+
+## 2026-10-29 · SESSION CUT R6 · KAYFABE TOY FLUFF / BLACK FLUFFER / OPTIONAL ALCHEMY & LOOT
+
+- **Georg direction:** Card collection and NPC world knowledge remain primary; Fluff should be a physically enjoyable low-level material ecology and satirical NPC-work resource loop, not a large RPG economy. Correction: **Kayfabe** (not the accidental voice transcription).
+- **R6 concept:** `GAME_LOOP_KAYFABE_FLUFF_TOY_LOOT_R6.md`. Six existing Story-Mode Fluff colours, **one optional** six-of-six alchemy recipe at the Witch/Alchemist for one missing real Card; no seventh type or 12-component High/Low market. Other card discovery through quests, residents, found chests, exploration, ordinary rewards and source-backed encounters.
+- **Black Fluffer source:** V-583 heals with a **reused action**, becomes peaceful, stops Goo, emits finite colourful Fluff once. `dark_fluffer` tainted state is distinct from coloured types; no extra weapon/FX/runtime owner. `Grab & Hook` currently UNVERIFIED as exact runtime donor, retained only as tactile gameplay candidate.
+- **World-source reuse:** WFC/`kfb-place` seeded **placement** is separate from the canonical reward/loot table. Persistent object opening/unique Card provenance must be idempotent; guarded encounters should not universally force combat. V-480 industrial harvest/recycling world causality is enough without a whole production market.
+- **Evidence:** re-read relevant WS0 register Fluff/Dark Fluffer/Witch, six-colour dressing, minigame, suction, placement/Verteiler and Game Loop R1. GitHub concept file written and exact ref/file checked. **0 runtime, 0 browser, 0 player playtests**.
+- **Next gate:** WS0/Georg intake of R6 toy-first secondary Fluff ecology, followed only under receiving-owner approval by one tiny source-isolated interaction POI proof. No runtime/main/Hub/Stage change.
