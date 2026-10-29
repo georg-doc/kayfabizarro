@@ -1,7 +1,14 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §184.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§184 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §185.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§185 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 185 · 29.10. Abend · IR2 I5 Jetpack 0,75 + Hunky/Dory spielbar (@9a84742)
+- **V-1012:** Jetpack im Sitz × 0,75, skaliert um den Rücken-Kontaktpunkt, Düsen-VFX mitskaliert; `jetscale=1` = bisher. A/B von hinten: `test/out/ir2/jet/A_bisher.png` und `B_075.png` (im Klon), kommt auf die Abnahme-Seite.
+- **A-004:** `lord_hunky` und `lady_dory` in `PLAYER_CHARS`, Baustein über die Figurenkarte; closing-build `allChars` PASS.
+- Pflicht-Tests grün. `hud-3d` war einmal rot (Fußflug-Säule unter Last), 2× einzeln grün: Wackler.
+- **Vorschau für Georg** auf diesem Stand.
+- **Als Nächstes:** Abnahme-Seite mit Clip je Slice. Danach I7c (Relief/Platte aus dem echten Kartenbild), I3-Pool (Amphitheater, Kartenzonen), I4 Flüsse, I6 Suno-Stücke je Thema.
 
 ## 184 · 29.10. später Nachmittag · IR2 I2 Stufe 2 (Materialcodes, Flora) + I7b (echte Gelände-Karten) im Zweig · Kanal genutzt
 **Zweig `game/integration-r2` @9815be4** (I2 Stufe 2 @a04ca7d, I7b @9815be4).
