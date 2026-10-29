@@ -1,3 +1,7 @@
+## 2026-10-29 · WSA Audio Briefing · Songs + ASMR/Gebäude + Forschungs-Routing
+
+Status: **BRIEFING PERSISTED · IMPLEMENTATION NOT STARTED**. Der aktuelle Audio-Site-Owner bleibt Draft PR #455 auf #365. Zwei neue private Suno-Master mit je neun Stems sind am Asset-Pin verifiziert; der reale Katalogpfad und fehlende Einträge sind benannt. 40 ASMR-Clips und drei Goo-House-Clips existieren, sind jedoch weder in der Site-Hörfläche noch als reale Gebäude-Kaskade im aktuellen Spiel verdrahtet. Fahrzeug-/Flugforschung wurde in diesen Owner neu geroutet. Vollauftrag: `WSA_AUDIO_SONGS_ASMR_BUILDINGS_BRIEF_R1_2026-10-29.md`. Nächstes Gate: WSA Audio liefert Site-Revision und Hörproben; erst Georgs Hörurteil öffnet die Runtime-Verdrahtung.
+
 ## 2026-10-13 · RETURN · Triplet & Opener Studio · existing Audio Site v11
 
 Status: **DEPLOYED_AND_VISIBLY_VERIFIED · CONTENT_HOT_RELOAD_PASS · PRODUCT_TUNE / HUMAN_LISTENING_PENDING**

@@ -1,3 +1,10 @@
+## 2026-10-29 · Briefing · zwei Suno-Songs + ASMR/Gebäude + Forschungs-Routing
+
+- Zwei private Master plus je neun Stems am Pin `da990fe4097c6ed7e59eda24ef2cf1acc6dbcb51` geprüft; tatsächlicher Katalog `40_AUDIO/music_catalog_r1.json` enthält beide Titel noch nicht.
+- Bestehende 40er-ASMR-Bank und drei Goo-House-Zerstörungsklänge inventarisiert. Aktuelle Audio-Site ohne Hörmatrix; aktuelles Spiel ohne speziellen ASMR-/Goo-House-Aufruf und ohne reale Gebäude-Zerstörungskaskade.
+- Fahrzeug-/Flugforschung aus Game PR #45 in den aktuellen Audio-Site-Owner geroutet.
+- Nur Briefing/Owner-Metadaten; keine Site-, Audio- oder Spielimplementierung.
+
 ## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
 
 - Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.
