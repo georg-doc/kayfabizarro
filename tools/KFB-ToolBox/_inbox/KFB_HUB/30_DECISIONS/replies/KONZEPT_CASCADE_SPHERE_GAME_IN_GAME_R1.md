@@ -61,6 +61,22 @@ Ein kleines, entspanntes Action-, Zerstörungs-, Bau- und Tower-Defense-Spiel in
 - **Nicht im Golden.** Danach kommt ein eigener Nachweis: ein Splat-Innenraum hinter einer zerstörbaren Fassade, mit richtiger Tiefe und Verdeckung gegen die Mesh-Welt und mit Bildzeit-Messung. Als Quelle dienen die Splat-Beispiele aus `replies/SPLAT_EXAMPLES_R2.md` (V-733). Es wird ein vorhandener three.js-Splat-Renderer genutzt, keine Eigenentwicklung.
 - **Quellen:** im Konzept-Ordner (PR 435, Head cf0e146e) die Datei CASCADE_SPHERE_R14 zu Gaussian Splats in Kartengebäuden.
 
+## 4f · Nach dem Golden: Materialadapter, echte KayKit-Gebäude, eine Impact-Physik (Web-Chat R15–R18, V-999)
+- **Ein Materialadapter mit mehreren Oberflächenmodi** für vorhandene 3D-Assets, statt alles als Quader darzustellen:
+  - Farbbänder nach `terrain3`,
+  - Knete-Fassade (Geometrie und Details bleiben),
+  - Stoff (Rough Linen aus der Theatervorhang-Runtime mit Diffuse-, Normal-, Roughness- und AO-Textur),
+  - HyperNorm-Collage.
+  - Farb- und Lichtregie bleiben gemeinsam.
+- **HyperNorm auf unregelmäßigen KayKit-Modellen darf wild werden (R18):** Verzogene Bilder, über Kanten wandernde Fragmente und Überlagerungen sind erwünscht. Unerwünscht sind harte UV-Sprünge, identische Muster auf Nachbargebäuden, flackernde Kanten und Effekt-Überladung. Regel: Die Collage darf wild sein, Silhouette und Interaktionen des Gebäudes bleiben lesbar. Die Unähnlichkeits-Auswahl der Engine (H13) bleibt, es gibt keine unabhängig randomisierte Collage.
+- **Zerstörbare Original-Gebäude:** Ein schlanker Adapter behandelt ausgewählte Bereiche eines KayKit-Modells als beschädigbare Fassadensegmente, nach dem Vorbild der Wandzellen, Stützabhängigkeiten und Trümmer-Pools aus Seed World.
+- **Eine Impact-Physik für alle Treffer (R17):** Jeder Treffer hat Energie, Richtung und Kontaktfläche. Das Material entscheidet über Verformung, Rückstoß, Schaden und Durchbruch.
+  - Gatling: viele kleine Punkttreffer, Dellen, kumulative Schwächung.
+  - Kanone bzw. Rakete: ein großer Impuls, Durchbruch, Segmente, Kugelschwall.
+  - Dieselpunk-Racer: Masse, Tempo, Winkel. Er prallt ab, gleitet seitlich ab oder bricht frontal durch, verliert dabei aber Energie.
+  - Grundlagen: Racer-/Rapier-Chassis-Kontakte und Seed-World-Zerstörung.
+- **Quellen:** im Konzept-Ordner (PR 435, Head cf0e146e) R15–R18 mit den Quellenberichten. Gebaut wird erst nach dem abgenommenen Golden (§4d).
+
 ## 4b · HUD (Georg 29.10., V-989)
 Das Knete-HUD des Hauptspiels wird übernommen und angepasst, nicht neu gebaut. Quellen in `game/proc-world-ws0`:
 - `src/HudClay.jsx` (HUD 3D, Aktionsleiste R14 als Standard),
