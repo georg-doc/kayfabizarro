@@ -14439,6 +14439,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-997",
+   "date": "2026-10-29",
+   "area": "Site",
+   "verdict": "BUILD",
+   "text": "R5.2 aus game/proc-world-ws0 @72fbb25: Dachfahrer im Szenengraph am Fahrzeug (Abweichung ≈ 0,001 u, Ursache: Kopie je Physik-Schritt gegen interpoliertes Zeichnen), Ring aus (roofring=1); Mindscape mit Schwebeflug ohne Jetpack, Kamera gleitet hinter die Figur; Aussteigen neben dem Wagen; Aktionsleiste Laufen/Fliegen/Fahren/Wagenwahl, P-Tafel weg, Settings Character/World, Palette nur mit debug; Krater ohne Zacken und Einsinken (Gelände-Loch, eine Fläche für Bild und Laufhöhe, Lippe 3 m); Vorwärmen der Schuss-Effekte. Paket site/mvp-r52-dist @9015812, Hub b260 (b258 überholt). Offen: inneres Portal als Rückweg in der Kuppel, steile Kamera beim Anlauf auf die Kuppel, „CM“ ohne Icon in der Wagenwahl, fb-shoulder-shadow endless_gold_hals rot seit Loco-Fix.",
+   "values": {},
+   "owner": "Site",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Befunde auf der Live-Site 29.10.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
