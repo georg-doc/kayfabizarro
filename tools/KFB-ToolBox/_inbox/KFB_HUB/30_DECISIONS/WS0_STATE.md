@@ -122,3 +122,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - V-1010: Web-Chat-Gewichte R1 (PR 459) als optionale I2-Startwerte in WS0_TO_WS1 + b256.
 - V-1011: Golden-Feedback Georg (Loch≠Treffer, Bänder grau) → Ausbau-Vorschlag Treffer-Grammatik R17, Bänder farbig, Heilstrahl=Bau/Heil-Werkzeug. WS1 gestartet (b256 done).
 - V-1014 Gatling-Seitenhaltung nachgetragen; WSA-Brief R5 (V-1011) Gate PASS nach 5 Runden, Konzeptblatt KONZEPTBLATT_CASCADE_R5_TREFFER_R1; WSB K10 R2 in Prüfung.
+- WSB K10 R2 Schusswaffen Gate PASS (8 Runden), Hub b262. Schilde (Survivalist, Monstrosity u. a.) als Ergänzung vorgeschlagen, wartet auf Georg.
