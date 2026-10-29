@@ -14604,6 +14604,21 @@
    "applies": "gestaffelt"
   },
   {
+   "id": "V-1008",
+   "date": "2026-10-29",
+   "area": "Prozess",
+   "verdict": "PLAN",
+   "text": "WS1-Start verschoben auf Fr 30.10. früh, Start-Commit 72fbb25 (R5.2), Übergabe So 20 Uhr; Testliste um terrain-seams, hud-3d, fb-canon ergänzt; Reihenfolge I1 → I2 (Verteiler, Themen-Saat, Kleinteile, Saat-Browser in Settings › World + Hash seed=) → I3 → I5 Live-Fehler → I4/I6/I7. WSA-Golden läuft ohne Gutter-/Treffer-Gesamtupdate weiter (wird nachgebrieft). WFC/Verteiler: Arbeitshypothese aus Klassikern (gewichtete Nachbarschaft + Blue-Noise-Gruppen, Rauschfelder für Großräume), KFB-spezifische Gewichte heuristisch aus Deck-JSON/Dramatis Personae, iterativ über Saat-Testläufe.",
+   "values": {},
+   "owner": "WS1 Fr",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg 29.10.: morgen früh mit WS1 starten, alles vorbereiten.",
+   "applies": "Fr 30.10. früh"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

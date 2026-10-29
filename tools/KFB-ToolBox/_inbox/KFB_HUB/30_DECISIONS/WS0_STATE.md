@@ -115,3 +115,4 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - **Site:** R5.1 `site/mvp-r51-dist` @b3b8ae8 (b258). Cascade Sphere: Quellen-Gate HOLD bei WSA (V-986).
 - **Leitidee nach dem Golden (V-1002):** Kartenviertel als Hauptachse der Karten-Platzierung, `replies/KONZEPT_KARTENVIERTEL_R1.md`; zuerst Module aus der Cascade Sphere ins Hauptspiel übernehmen.
 - **Verteiler (V-1007):** `replies/KONZEPT_KFB_VERTEILER_R1.md` – nach dem Reset Himmel und Planeten (N Körper, verteilt) als WS0-Slice.
+- **29.10. nachts:** WS1-Start Fr 30.10. früh ab @72fbb25 (b256 aktualisiert). Site R5.2 bei WSA (b260). WSA-Golden R4 läuft; Gesamtupdate Gutter-Spec + Treffer-Löcher (V-1000/V-1001) noch nicht an WSA, wird nachgebrieft. Offene Kleinigkeiten: inneres Portal Mindscape, steile Kamera vor der Kuppel, „CM“-Icon, fb-shoulder-shadow endless_gold_hals.
