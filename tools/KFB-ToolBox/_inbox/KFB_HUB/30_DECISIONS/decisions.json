@@ -15223,6 +15223,21 @@
    "applies": "nach So"
   },
   {
+   "id": "V-1049",
+   "date": "2026-10-30",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Spielrichtung entschieden (Georg 30.10., zu V-1047): Karten zuerst – Hauptziel sind echte Karten und das Weltwissen der Bewohner; Fluff, Holz und Erz sind Nebensache (Spielplatz, Baumaterial, kein Grind, Sechs-Farben-Rezept optional). Leben und Fluff bleiben zwei getrennte Werte; Fluff wird nicht als Leben abgebucht und nicht umgerechnet. HUD-Status zeigt beide getrennt (V-1039). Die übrigen Bausteine aus PR 460 (Rollen, Anomalie, Gerüchte-Mühle, Conflict is King) bleiben Vorschlag bis zum Intake nach So.",
+   "values": {},
+   "owner": "WS0 · WS1 (nach So)",
+   "check": "Spielprobe Kartenweg ohne Fluff-Zwang",
+   "source": "Georg 30.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine klare Hauptachse gibt Begegnungen und Dialogen Sinn und hält Fluff als Spaß statt Pflicht.",
+   "applies": "sofort als Richtung, Bau nach So"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -15335,7 +15350,7 @@
    "georg": "- **TESTED RESULT:** browser-rendered stills at beats 8.4 / 14.2 / 17.8 / 20.6 s, isolation lanes A/B/mouths; verifier rounds on card legibility + counter beat."
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1463",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1469",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
