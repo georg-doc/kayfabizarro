@@ -13,6 +13,7 @@ Die Kartengebäude sehen im Spiel-Look gut aus: eine beschossene Hülle mit pass
 - Belege im Branch: `review/evidence/v1001-play.png`, `v1001-play-healed.png`, `v1001-edge.png`; `review/cascade-sphere-r5/RETURN_A_R2.md`, `BLIND_CRITIC_A_R2.md`.
 
 ## Vorlagen und Bildreferenzen (`KFB_HUB/`)
+- **Zuerst:** `30_DECISIONS/replies/KRATER_MENTALMODELL_R1.md` (Zerstörungs-Logik: Kruste, Wurzelrisse, Schollen, Auswurf; gilt ausdrücklich auch für Gebäude), V-843 bis V-851, V-855, V-860, V-862, V-863.
 - `75_REFS/impact_vfx_r1/` Georgs vier Einschlag-Blätter (V-848): Knet-Relief, wulstige Strahlen, aufgeworfene Platten.
 - `75_REFS/seedworld_poc01/SeedWorld_Mech_Destruction_POC01.html` Zellen-Zerstörung als Vorbild.
 - `75_REFS/crater_golden_r1`, `75_REFS/splats_r2`, `75_REFS/hud_shots_r1` (Spiel-Look).
