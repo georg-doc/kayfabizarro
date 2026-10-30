@@ -37,3 +37,15 @@ Aus Wellenlinien und Halbkreisen, S-Form als Grundlinie. Dünner Rauch weitet si
 - **Asymmetrie aus dem Treffwinkel:** Der Rand reißt nicht rundum gleich, Teile hängen, große Stücke rutschen nach unten, Splitter fliegen weit.
 - **Stufen:** Kratzer und Schmauch, Delle, Einschüsse, Bresche mit Gerüst. Dazu das Krater-Mentalmodell (`replies/KRATER_MENTALMODELL_R1.md`) für Risse und Schollen; im Zweifel gilt die Physik dort, die Form hier.
 - **Effekt-Layer:** kurzer, kleiner Blitz, dann runde Knet-Rauchmasse, Partikel zuletzt.
+
+## Effekt-Bestand und Zuordnung nach Treffer-Art (Georg 30.10.)
+Bestand: https://github.com/georg-doc/kayfabizarro/tree/main/media/3D_Assets/FX_Visual (`brackeys_vfx_bundle`, `explosions_smoke`, `kenney_smoke-particles`, `FreeHitVfx`, `Beams_BinbunVFX`, `VFX Mysterious Objec - 192x192`), dazu V-977 (Claude-Design-Kataloge, kfb-vfx-recipes). Vorhandene Sprites vor Eigenbau; Pixel-Explosionen nicht als Haupteffekt. Der Zellen-Look (Cel) muss zur Knete passen; passende Datei wählt WS-Design nach Sichtprüfung.
+
+Eine Treffer-Grammatik, die Art bestimmt Spur und Effekt:
+| Treffer-Art | Spur an der Wand | Trümmer | Effekt-Layer |
+|---|---|---|---|
+| Gatling, Einzelschuss | kleine Einschüsse, Kratzer, Schmauch; viele wachsen zur Bresche | nur Splitter | kleiner Treffer-Funke, wenig Rauch |
+| Rakete, Explosion | großer Ausriss, Lagen und Gerüst sichtbar, Ruß | alle drei Klassen im Treffwinkel | kleiner spitzer Blitz, große runde Rauchmasse, Partikel |
+| Fahrzeug-Rammen | Stauchung, Delle, verschobene Platten (Domino), keine Durchschuss-Form | große Stücke fallen, wenig Splitter | Staub, Rammstoß, kein Feuerball |
+| Flächenwirkung (AOE) | Schaden nimmt nach außen ab, mehrere Flächen zugleich | je Abstand kleinere Klasse | Druckring, Staubwelle, Rauch am Zentrum |
+| Energie (heiß, elektrisch, nass) | Schmelzrand; Schmauchspur; Spritzer | wie Einzelschuss | Flamme; Blitz aus `Beams_BinbunVFX`; Pfütze erst mit Fluid (V-913) |

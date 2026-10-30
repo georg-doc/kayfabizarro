@@ -17,7 +17,7 @@ Die Kartengebäude sehen im Spiel-Look gut aus: eine beschossene Hülle mit pass
 - `75_REFS/impact_vfx_r1/` Georgs vier Einschlag-Blätter (V-848): Knet-Relief, wulstige Strahlen, aufgeworfene Platten.
 - `75_REFS/seedworld_poc01/SeedWorld_Mech_Destruction_POC01.html` Zellen-Zerstörung als Vorbild.
 - `75_REFS/crater_golden_r1`, `75_REFS/splats_r2`, `75_REFS/hud_shots_r1` (Spiel-Look).
-- FX-Bibliothek: `KFB Hex Assets Worldbuilding & Combat Arena/media/3D_Assets/FX_Visual` (V-977).
+- FX-Bibliothek: https://github.com/georg-doc/kayfabizarro/tree/main/media/3D_Assets/FX_Visual (V-977), Zuordnung nach Treffer-Art in `ETHERINGTON_ZERSTOERUNG_R1.md`.
 
 ## Konzepte und SSOTs (`KFB_HUB/30_DECISIONS/`)
 - `replies/KONZEPTBLATT_CASCADE_R5_TREFFER_R1.md`, `replies/WS0_AN_WSA_V1011_CASCADE_AUSBAU_R5.md` (Treffer-Grammatik, Stufen, Material, Heil-Werkzeug), `replies/WSA_AN_WS0_V1011_CASCADE_R5_STEP_A_RETURN_R2.md`.
