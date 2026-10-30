@@ -1,5 +1,11 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-30 · WS0 Intake · THREE.LOD / BatchedMesh / Clay / Shadow LOD für das **aktive** prozedurale MVP (Research R1)
+
+- Georg bestätigt: Das prozedurale Open-World-MVP läuft weiter; das alte WB2-R4-STOP auf #348 ist **nicht** der aktive WS0/WS1-Spielstatus. Aktiver privater Owner: `georg-doc/KFB-Stunt-Car-Race` (`game/proc-world-ws0` und `game/integration-r2`). Korrigierter Research-Input samt offiziellem Three.js-API-Audit: `replies/RESEARCH_THREEJS_LOD_PROC_WORLD_WS0_R1_2026-10-30.md`; exakter Return: `replies/RETURN_THREEJS_LOD_PROC_WORLD_WS0_R1_2026-10-30.md`.
+- Source-backed: bestehendes `endlessVeg.js` globales `BatchedMesh`/64-m-Zellen, `QualityDpr.jsx` automatisches Fast/Standard; WS1 Amphitheater 349k→59k Tris, WSB B7 80k/25k; `renderer.info` HUD-pass-only Messfalle (WSA 27.10.). Vergleichen statt zweiten LOD-/Clay-/World-Owner bauen. Keine neuen Spiel-Tests/Runtime-Writes/Stage/Live.
+- **V-1041 bleibt Vorrang:** WS1-Integrationsblock bis 01.11. 20:00 nicht mit Nebenslice stören. Ein nächstes Gate: `WS0_LOD_TRIAGE_IN_V1042_V1043` im bereits geplanten Architektur-/Performance-Spike nach Integrationsblock (gleiches Seed/Route, vollständige Frames, Geometry/Material/Shadow/Culling A/B); noch **kein neues V-Urteil oder WS1-Bauauftrag**.
+
 ## 2026-10-28 · WSA R5 891a81a · private Staging v10 LIVE
 
 R5Paket728SHA/57Assertions/736localHTTP/21LivechecksPASS; Sitesource1a634b7d,Deploymentappgdep_6ae2678b0ca08191bcfe81be06fef56bSUCCEEDED,owner-only/noBasicbeibehalten. LiveFigurenwahl und2Racerwechsel/Dachfahrer/Fahrt/Xexitgeprüft,0Pageerrors. FPS63,1/59,6/57,6 beiDPR1 nachWarmup;P95~25ms,nicht60fpsp95abgenommen. Flugaktivierung/Hören/Landmarksnochunverifiziert,nichtFAIL. Return replies/WSA_TO_WS0_SITE_R5_891A81A_RETURN_2026-10-28.md. KeinWorldpatch/AudioSite/neueSite/Merge. NächstesGateWS0gezielterFlight-/Landmark-/Klangtestaufv10.
