@@ -9,6 +9,7 @@
 - `slots/` – freigestellte Knet-Slots (Grund, leer, gesteppt, gefüllt, Hover gold, gesperrt, Abklingzeit, bereit, gewählt, Warnung; dazu kleine Varianten).
 - `icons/` – freigestellte Knet-Icons nach Gruppen: `core` (Hand, Faust, Blaster, Schwert, Donut), `movement` (gehen, laufen, springen), `travel` (Stiefel, Flügel, Auto), `menu` (Zahnrad, Karte, Almanach, Rucksack, Zeigefinger, Sprechblase), `radio` (Play, Pause, Weiter, Ton an/aus), `fluff` (Fluff-Kugeln mit Zahl), `vehicles` (sechs Dieselpunk-Fahrzeuge für den Reise-Fächer).
 - `almanach/` – der Almanach, wie er heute im Spiel ist und bleibt: Kartenstapel oben links und offener Fächer „Letzte Karten“. Nachbauen wie im Bild.
+- `sprechblasen/` – SSOT der Sprechblasen mit dem Code aus dem Spiel, siehe `sprechblasen/LIESMICH.md`. Nicht neu entwerfen.
 - `szene/spiel_gehen_ohne_hud.jpg` – Spielbild ohne HUD als Hintergrund.
 
 ## Auftrag
