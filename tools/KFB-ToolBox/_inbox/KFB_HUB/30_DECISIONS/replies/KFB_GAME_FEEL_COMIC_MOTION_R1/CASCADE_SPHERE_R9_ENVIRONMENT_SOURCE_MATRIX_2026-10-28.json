@@ -1,0 +1,137 @@
+{
+  "schema": "kfb.cascade.environment-source-crosswalk/0.1-candidate",
+  "date": "2026-10-28",
+  "status": "DESIGN_INPUT_PROPOSAL_ONLY_NO_RUNTIME_ADOPTION",
+  "owner": "WS0 Game Design + CANON_3D; only WS1/WS1b productive World writer",
+  "sourceContexts": [
+    {
+      "layer": "GROUND",
+      "role": "organic moving colored ground and collision source",
+      "source": "ws1/terrain-439/ws1/kfb-planet/src/look/terrain3.js",
+      "sourceCommit": "4df9362a156fabb32411a960915e38d3a68ae224",
+      "sourceStatus": "ACTUAL_IMPLEMENTED_SOURCE_IN_WS1_TERRAIN_BRANCH; HISTORICAL_WS1_STATUS_REPORTS_GAME_PROBE",
+      "consumerStatus": "CURRENT_WS1B_ACTIVE_HEAD_NOT_VERIFIED",
+      "candidateUsage": "reuse palette, time, shadow and masked material donor in host"
+    },
+    {
+      "layer": "TERRAIN_COLLISION",
+      "role": "actual walkable/driveable ground",
+      "source": "ws1/terrain-439/ws1/kfb-planet/src/modules/m1-terrain.js",
+      "sourceStatus": "ACTUAL_SOURCE_HOST_COLLIDER_DATA",
+      "consumerStatus": "REPLAY_AND_SOURCE_COLLIDER_QA_PENDING"
+    },
+    {
+      "layer": "GROUND_DIORAMA_SEAM",
+      "role": "diorama-to-ground clay speckle source",
+      "source": "ws1/combo-r2/ws1/kfb-planet/src/modules/stageGround.js",
+      "sourceStatus": "SOURCE_CODE_EXISTS_DONOR",
+      "consumerStatus": "ACTUAL_CURRENT_HOST_INCLUSION_PENDING"
+    },
+    {
+      "layer": "OSM_CITY_GEOMETRY",
+      "role": "roads buildings footprint city looks",
+      "source": "tools/osm-city-lab/README.md; tools/osm-city-lab/src/style/cartoon-city.js; tools/osm-city-lab/src/viewer/street-surface.js",
+      "sourceStatus": "CITY_LAB_REAL_NORMALIZED_GEO_AND_PRESENTATION_IMPLEMENTATION",
+      "consumerStatus": "RECEIVING_WS1_SCENE_NOT_PROVEN"
+    },
+    {
+      "layer": "OSM_BRIDGE",
+      "role": "real bridge OSM anchors/grade separation",
+      "source": "tools/osm-city-lab/data/dom-zentrum-v0; tools/osm-city-lab/docs/PRESENTATION_S1C.md",
+      "sourceStatus": "SOURCE_ANCHOR/OVERPASS_NO_FAKE_JUNCTION",
+      "consumerStatus": "FLY/WALK_BRIDGE_DECK_HEIGHT_AND_CONTACT_UNPROVEN"
+    },
+    {
+      "layer": "OSM_LANDMARK",
+      "role": "source identity/footprint + model override",
+      "source": "tools/osm-city-lab/docs/LANDMARK_OVERRIDES.md",
+      "sourceStatus": "CONTRACT_READY",
+      "consumerStatus": "ACCEPTED_SOURCE_MODEL_FIT_UNPROVEN"
+    },
+    {
+      "layer": "BUILDING_CLAY",
+      "role": "KFB clay golden + OSM facade",
+      "source": "tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md; tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CANON_3D/CANON_3D_R1.md",
+      "sourceStatus": "DESIGN_CANON_VALID; S5_ADAPTER_IS_PREPARED",
+      "consumerStatus": "NOT_SINGLE_WS1_BUILDING_FLOWING_COLORBAND_LAYER"
+    },
+    {
+      "layer": "KAYKIT_TILE_ASSEMBLY",
+      "role": "measured modular source pieces",
+      "source": "tools/world_atlas/source/lib/kit-lab.js; tools/world_atlas/source/lib/dungeon-grid.js; tools/world_atlas/source/lib/road-solver.js",
+      "sourceStatus": "REAL_KIT_LAB_MEASURED_DONOR_AND_DUNGEON",
+      "consumerStatus": "PLATFORMER_FULL_PHYSICS/PORTS_CURRENT_WS1_UNPROVEN"
+    },
+    {
+      "layer": "KAYKIT_PLATFORMER",
+      "role": "FREE+EXTRA source tiles; switch conveyor etc",
+      "source": "KAYKIT_PLATFORMER_R6_FULL_SOURCE_INVENTORY_2026-10-28.json",
+      "sourceStatus": "SOURCE_DROPBOX_895_GLTF+BIN_FILES/171_CANDIDATE_ROLES",
+      "consumerStatus": "BINARY_INTAKE_AND_SOURCE_RENDER_PENDING"
+    },
+    {
+      "layer": "KIT_MATERIAL_ZONE",
+      "role": "moving bands on selected platform face/belt",
+      "source": "KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_GLTF_SOURCE_PROBES_2026-10-28.json",
+      "sourceStatus": "12_SOURCE_GLTF_STRUCTURE_MATERIAL_PROBES; EXTRA_BELT_THREADS_SEPARATE",
+      "consumerStatus": "BIN/UV/PNG_PIXEL_MASK_AND_REAL_SHADER_RENDER_PENDING"
+    },
+    {
+      "layer": "ENVIRONMENT_CANON",
+      "role": "one hand-authored scene, light, ground, silhouette and palette",
+      "source": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/CANON_3D/CANON_3D_R1.md",
+      "sourceStatus": "BINDING_WS0_SSOT",
+      "consumerStatus": "ACTUAL_L01_CONCEPT_SHEET_AND_CRITIC_NOT_DONE"
+    }
+  ],
+  "sceneCandidate": {
+    "id": "L01_ENV_SOURCE_GOLDEN_R9",
+    "sourceGameFixture": "L01_SWITCHYARD",
+    "logicalMazeAuthority": "R4_FIXTURE_GRAPH",
+    "preset": "TECH_FACTORY",
+    "ground": "WS1_EXISTING_TERRAIN3_PALETTE_MASKED",
+    "road": "REAL_KAYKIT_CITY_SOURCE_NOW; OSM_CLIP_LATER",
+    "bridges": "NONE_REQUIRED_L01",
+    "buildings": "SOURCE_AUTHENTIC_KAYKIT_CITY_AND_CLAY_GOLDEN",
+    "functional": [
+      "one original KayKit lever",
+      "one actual Platformer conveyor AFTER_SOURCE_READY",
+      "one goal/watertower",
+      "eye-bearing Fluff"
+    ],
+    "materials": [
+      "native source baseline",
+      "one masked blue platform-top candidate",
+      "conveyor material threads independent from frame"
+    ],
+    "qaViews": [
+      "isometric35",
+      "actor_street_eye",
+      "source_contact_close",
+      "silhouette",
+      "greyscale",
+      "thumbnail",
+      "albedo",
+      "material_id",
+      "final"
+    ],
+    "qaRequired": [
+      "source geometry and UV/texture matches",
+      "accepted host portal/ground collision",
+      "route changes causal",
+      "one lighting rig and palette",
+      "real mobile desktop p50 p95"
+    ],
+    "status": "NOT_EXECUTED"
+  },
+  "unknowns": [
+    "actual WS1b active head and current site source",
+    "source color band look palette/shape and actor/prop shadow consistency WS0 final decision",
+    "source-built road and facade real contact in actual WS1",
+    "OSM bridge decks/elevation physical integration",
+    "full Platformer binary source/atlas SHA/palette and original model pixels",
+    "mask-aware adapter for vertical building faces and colored kit tops"
+  ],
+  "singleNextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE",
+  "notes": "This JSON is an annotated design crosswalk, not an accepted new registry, OSM scene recipe schema or WS1 configuration."
+}

@@ -1,0 +1,823 @@
+{
+  "schema": "kfb.kaykit.platformer.gltf-probes/0.1-source",
+  "date": "2026-10-28",
+  "method": "read 12 actual small original .gltf JSON files through Dropbox fetch; parse node trees, mesh POSITION accessor bounds, and declared texture/binary paths",
+  "status": "ACTUAL_GLTF_JSON_SOURCE_READ_BUT_NOT_RENDERED_OR_WORLD_MEASURED",
+  "sampleCount": 12,
+  "probes": [
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "pipe_straight_A_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/pipe_straight_A_blue.gltf",
+      "gltfBytes": 2982,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "pipe_straight_A_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "pipe_straight_A_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -1,
+                  0,
+                  -1
+                ],
+                "max": [
+                  1,
+                  2,
+                  1
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "pipe_straight_A_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "pipe_90_A_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/pipe_90_A_blue.gltf",
+      "gltfBytes": 3019,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "pipe_90_A_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "pipe_90_A_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -1.000000238418579,
+                  7.73498172179643e-8,
+                  -1
+                ],
+                "max": [
+                  1,
+                  3,
+                  2.000000238418579
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "pipe_90_A_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "spring_pad_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/spring_pad_blue.gltf",
+      "gltfBytes": 3001,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "spring_pad_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "spring_pad_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -0.75,
+                  0,
+                  -0.75
+                ],
+                "max": [
+                  0.75,
+                  0.9999999403953552,
+                  0.75
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "spring_pad_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "button_base_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/button_base_blue.gltf",
+      "gltfBytes": 4950,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "button_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "button_base_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "button_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -0.675000011920929,
+                  0.09000003337860107,
+                  -0.675000011920929
+                ],
+                "max": [
+                  0.675000011920929,
+                  0.31999993324279785,
+                  0.675000011920929
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "button_base_blue",
+          "primitives": [
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -0.875,
+                  0,
+                  -0.875
+                ],
+                "max": [
+                  0.875,
+                  0.20000004768371582,
+                  0.875
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "button_base_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "lever_floor_base_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/lever_floor_base_blue.gltf",
+      "gltfBytes": 5184,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "lever_floor_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": [
+            0,
+            0.2999999523162842,
+            0
+          ],
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "lever_floor_base_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "lever_floor_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -0.24349093437194824,
+                  -0.24349066615104675,
+                  -0.24349065124988556
+                ],
+                "max": [
+                  0.24349044263362885,
+                  1.428467035293579,
+                  0.2434907853603363
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "lever_floor_base_blue",
+          "primitives": [
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -0.40000009536743164,
+                  -2.622683403785686e-8,
+                  -0.6000000238418579
+                ],
+                "max": [
+                  0.40000009536743164,
+                  0.40000012516975403,
+                  0.6000000238418579
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "lever_floor_base_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "file": "platform_slope_4x4x4_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/platform_slope_4x4x4_blue.gltf",
+      "gltfBytes": 2997,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "platform_slope_4x4x4_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "platform_slope_4x4x4_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -2,
+                  0,
+                  -2
+                ],
+                "max": [
+                  2,
+                  4,
+                  2
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "platform_slope_4x4x4_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "conveyor_4x4x1_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/conveyor_4x4x1_blue.gltf",
+      "gltfBytes": 5287,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "conveyor_4x4x1_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "conveyor_4x4x1_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -2.1000003814697266,
+                  -1.1920928955078125e-7,
+                  -2.000000476837158
+                ],
+                "max": [
+                  2.1000003814697266,
+                  1.000000238418579,
+                  1.9999995231628418
+                ]
+              },
+              "materialIndex": 0
+            },
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -1.6000001430511475,
+                  -1.1631183838289871e-7,
+                  -2.000000476837158
+                ],
+                "max": [
+                  1.6000001430511475,
+                  1.0000001192092896,
+                  1.9999995231628418
+                ]
+              },
+              "materialIndex": 1
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png",
+        "threads.png"
+      ],
+      "buffers": [
+        "conveyor_4x4x1_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "cannon_base_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/cannon_base_blue.gltf",
+      "gltfBytes": 7246,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "cannon_barrel_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": [
+            0,
+            2,
+            0.00002288818359375
+          ],
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "cannon_turret_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": [
+            0,
+            0.5,
+            -0.000025928020477294922
+          ],
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "cannon_base_blue",
+          "mesh": 2,
+          "children": [
+            1
+          ],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "cannon_barrel_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -1.5000004768371582,
+                  -1.0000228881835938,
+                  -0.9853874444961548
+                ],
+                "max": [
+                  1.4999998807907104,
+                  0.999976396560669,
+                  1.6146124601364136
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "cannon_turret_blue",
+          "primitives": [
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -1.3286232948303223,
+                  5.960464477539063e-8,
+                  -0.6499999165534973
+                ],
+                "max": [
+                  1.3286224603652954,
+                  2.4497365951538086,
+                  0.6500005125999451
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "cannon_base_blue",
+          "primitives": [
+            {
+              "positionAccessor": 8,
+              "positionBounds": {
+                "min": [
+                  -0.9999997019767761,
+                  1.1920928955078125e-7,
+                  -1
+                ],
+                "max": [
+                  1.0000003576278687,
+                  0.5681891441345215,
+                  1
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "cannon_base_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "file": "saw_trap_blue.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/saw_trap_blue.gltf",
+      "gltfBytes": 5020,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "saw_trap_sawblade_blue",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "saw_trap_blue",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "saw_trap_sawblade_blue",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -3.398074150085449,
+                  -0.4501860439777374,
+                  -3.3980724811553955
+                ],
+                "max": [
+                  3.398073673248291,
+                  0.45018503069877625,
+                  3.3980753421783447
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "saw_trap_blue",
+          "primitives": [
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -1.4181698560714722,
+                  -1,
+                  -1.418169379234314
+                ],
+                "max": [
+                  1.4181697368621826,
+                  1,
+                  1.4181702136993408
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "saw_trap_blue.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "EXTRA",
+      "color": "neutral",
+      "file": "sawblade.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/neutral/sawblade.gltf",
+      "gltfBytes": 3060,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "sawblade",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "sawblade",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -3.398074150085449,
+                  -0.4501860439777374,
+                  -3.3980724811553955
+                ],
+                "max": [
+                  3.398073673248291,
+                  0.45018503069877625,
+                  3.3980753421783447
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "sawblade.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "neutral",
+      "file": "floor_wood_4x4.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/neutral/floor_wood_4x4.gltf",
+      "gltfBytes": 2988,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "floor_wood_4x4",
+          "mesh": 0,
+          "children": [],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "floor_wood_4x4",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -2,
+                  0,
+                  -2
+                ],
+                "max": [
+                  1.9999998807907104,
+                  0.5,
+                  2
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "floor_wood_4x4.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    },
+    {
+      "tier": "FREE",
+      "color": "green",
+      "file": "lever_wall_base_B_green.gltf",
+      "relativePath": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/green/lever_wall_base_B_green.gltf",
+      "gltfBytes": 5184,
+      "assetVersion": "2.0",
+      "nodes": [
+        {
+          "name": "lever_wall_B_green",
+          "mesh": 0,
+          "children": [],
+          "translation": [
+            0,
+            0,
+            0.2499997615814209
+          ],
+          "rotation": null,
+          "scale": null
+        },
+        {
+          "name": "lever_wall_base_B_green",
+          "mesh": 1,
+          "children": [
+            0
+          ],
+          "translation": null,
+          "rotation": null,
+          "scale": null
+        }
+      ],
+      "meshes": [
+        {
+          "name": "lever_wall_B_green",
+          "primitives": [
+            {
+              "positionAccessor": 0,
+              "positionBounds": {
+                "min": [
+                  -0.3750002384185791,
+                  -0.15000014007091522,
+                  -0.10000002384185791
+                ],
+                "max": [
+                  0.3749997615814209,
+                  0.14999987185001373,
+                  0.7499998211860657
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        },
+        {
+          "name": "lever_wall_base_B_green",
+          "primitives": [
+            {
+              "positionAccessor": 4,
+              "positionBounds": {
+                "min": [
+                  -0.5000001192092896,
+                  -0.600000262260437,
+                  -8.881784197001252e-15
+                ],
+                "max": [
+                  0.5000001192092896,
+                  0.600000262260437,
+                  0.3999999761581421
+                ]
+              },
+              "materialIndex": 0
+            }
+          ]
+        }
+      ],
+      "textureDependencies": [
+        "platformer_texture.png"
+      ],
+      "buffers": [
+        "lever_wall_base_B_green.bin"
+      ],
+      "note": "Mesh accessor min/max are in mesh-local coordinates. Transform nodes/meshes and inspect geometry/contact in true 3D source isolation before approved snap/collider values."
+    }
+  ],
+  "findings": [
+    "FREE/blue button_base is a composite with button_blue as child mesh, providing candidate separate animation target.",
+    "FREE/blue lever_floor_base has lever_floor_blue nested child with local translation ~0.3 up; actual hinge pivot and motion range need 3D inspection.",
+    "EXTRA/blue cannon_base nests barrel and turret meshes; enables separately aimed visual subparts but rig/control not proven.",
+    "EXTRA/blue saw_trap nests sawblade visual mesh; hazard sweep/physics must be authored and measured.",
+    "EXTRA/blue conveyor_4x4x1 uses TWO image dependencies platformer_texture.png and threads.png, separate belt UV material.",
+    "FREE/blue platform_slope_4x4x4 accessor spans [-2,0,-2] to [2,4,2], a geometrical hint only; actual valid ramp clearance/support path needs measurement.",
+    "EXTRA conveyor local position accessor includes ±2.1 in X (overshoots 4-grid nominal width), so naive 4.0 AABB snap can overlap."
+  ],
+  "notProven": [
+    "correct world-space bounds with all node transforms",
+    "actual visible source material/UV decode",
+    "on-ground behavior / colliders",
+    "lever hinge physical pivot and animated contact",
+    "slope traversability",
+    "conveyor UV animated offset",
+    "actual runtime visual acceptance"
+  ],
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}

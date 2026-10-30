@@ -1,0 +1,209 @@
+{
+  "schema": "kfb.cascade.boss-recipe/0.1-candidate",
+  "status": "DESIGN_FIXTURE_NO_RUNTIME_BOSS_AI_OR_DAMAGE_INTEGRATION",
+  "created": "2026-10-28",
+  "owner": "existing WS0 KFB_HUB Game Design; later WS1/WS1b and existing Combat as productive authorities",
+  "scene": {
+    "id": "B01_FORGOTTEN_SCOUT",
+    "name": "The Forgotten Scout",
+    "place": "post-L03 authored Factory Maze relay/corridor",
+    "playMode": "CHILL_NONLETHAL_OR_COMBAT",
+    "minRunSecondsCandidate": 90,
+    "maxRunSecondsCandidate": 180,
+    "mandatoryForL01": false,
+    "arena": {
+      "existingRouteGraphFixture": "L03_ROOFTOP_RELAY",
+      "sceneNodes": [
+        "junction",
+        "roof",
+        "goal"
+      ],
+      "candidateSocketCount": 2,
+      "finalPlacement": "SOURCE_WORLD_CONTACT_REQUIRED",
+      "camera": "existing WS1 movement/camera"
+    }
+  },
+  "boss": {
+    "id": "4gtn-scout",
+    "model": {
+      "assetRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+      "sourceGitBlob": "fa7a7e418ba90703fdabaf272867a46dda5047ab",
+      "rigFamily": "Rig_Large",
+      "jointCount": 23
+    },
+    "forgotten": {
+      "assetRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb",
+      "sourceGitBlob": "a514ef273142a90fa35e9e4c1cdbfd58f900b93f",
+      "relationship": "DISTINCT_GEOMETRY_NOT_SKIN_OR_MORPH",
+      "enabledForP0": false
+    },
+    "weapon": {
+      "assetRef": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/gltf/4GTN_Katana.gltf",
+      "status": "SOURCE_CONFIRMED_RESIDENT_ATLAS_HANDSLOT_FIT_DONOR_RUNTIME_COMBAT_UNPROVEN"
+    },
+    "sourceTexture": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_texture.png",
+    "animations": {
+      "familyPath": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/",
+      "sources": [
+        "Rig_Large_General.glb",
+        "Rig_Large_MovementBasic.glb",
+        "Rig_Large_MovementAdvanced.glb",
+        "Rig_Large_CombatMelee.glb",
+        "Rig_Large_Simulation.glb",
+        "Rig_Large_Special.glb"
+      ],
+      "knownHistoricalClipCount": 34,
+      "specificBossClips": "SOURCE_AND_PLAYER_HOST_PROOF_REQUIRED",
+      "forbidRigMedium": true
+    },
+    "glow": {
+      "sourceMaterial": "4GTN_glow",
+      "sourceMeshConvention": "*_2 on mesh pieces, irregular names; inspect actual nodes",
+      "allowedVisual": "small emissive scan telegraph / pulse using per-instance source-mesh clone",
+      "noGameplayAuthority": true
+    },
+    "weakpoint": {
+      "id": "4gtn-source-weakpoint",
+      "sourceRigNode": null,
+      "realContactVolume": null,
+      "enabledAfterSourceProof": false
+    }
+  },
+  "bossStateMachine": {
+    "authoritativeStateOwner": "existing Combat/WS1 EncounterState",
+    "states": [
+      "DORMANT",
+      "SCANNING",
+      "EXPOSED",
+      "STABILIZED",
+      "DEFEATED",
+      "EXITED"
+    ],
+    "transitions": [
+      {
+        "from": "DORMANT",
+        "to": "SCANNING",
+        "trigger": "AUTHORITATIVE_SCENE_ACTIVATED",
+        "effect": "start one gentle scanner telegraph"
+      },
+      {
+        "from": "SCANNING",
+        "to": "EXPOSED",
+        "trigger": "AUTHORITATIVE_ROUTE_SIGNAL_INTERRUPTED",
+        "effect": "one clear source-valid weakpoint window"
+      },
+      {
+        "from": "EXPOSED",
+        "to": "STABILIZED",
+        "trigger": "AUTHORITATIVE_RELAY_RESTORED",
+        "effect": "stop corruption, reconnect one existing edge"
+      },
+      {
+        "from": "EXPOSED",
+        "to": "DEFEATED",
+        "trigger": "BOSS_WEAKPOINT_HIT_ACCEPTED",
+        "effect": "one bounded stun/settle and restore edge after owner-approved condition"
+      },
+      {
+        "from": "STABILIZED",
+        "to": "EXITED",
+        "trigger": "ENCOUNTER_RESULT_SAVED",
+        "effect": "one idempotent world receipt"
+      },
+      {
+        "from": "DEFEATED",
+        "to": "EXITED",
+        "trigger": "ENCOUNTER_RESULT_SAVED",
+        "effect": "one idempotent world receipt"
+      }
+    ],
+    "phaseTiming": "CURRENT_HOST_FIXED_TICK; NEVER_ANIMATION_TIME_AUTHORITATIVE",
+    "hitOncePerEventId": true,
+    "conditions": [
+      "boss cannot be damaged simply by hitting glow textures",
+      "no arbitrary health depletion from cosmetic particle collisions",
+      "missing validated Weakpoint disables COMBAT defeat option but allows authored supply puzzle path"
+    ]
+  },
+  "mechanics": {
+    "environmentalActions": [
+      "SWITCH",
+      "REDIRECT_FLUFF",
+      "REPAIR_RELAY",
+      "DODGE_SCAN",
+      "AUTHORITATIVE_HIT_IF_WEAKPOINT_APPROVED"
+    ],
+    "telegraphs": [
+      {
+        "id": "scan-cone",
+        "type": "VISIBLE_PULSE",
+        "visualAnchor": "SOURCE_GLOW_MESHES",
+        "hitVolume": "SOURCE_CONTACT_PROOF_REQUIRED"
+      }
+    ],
+    "enemyWaves": 0,
+    "puzzleWin": "relay restored and source-authoritative packets reach goal",
+    "combatWin": "weakpoint confirmed and boss phase advanced by Combat authoritative event; no simple renderer ray hit",
+    "nonLethalOption": true
+  },
+  "players": [
+    {
+      "actor": "KayKit Combat Mech",
+      "source": "existing Seed World POC and WS1 active flight donor",
+      "skillsCandidate": [
+        "FLY",
+        "SHOOT_MINIGUN",
+        "INTERACT_SWITCH"
+      ],
+      "acceptance": "actual host owner readiness pending"
+    },
+    {
+      "actor": "another KayKit character",
+      "source": "current Asset Librarian character pool",
+      "skillsCandidate": [
+        "GROUND",
+        "MELEE_OR_INTERACT"
+      ],
+      "acceptance": "source exact rig and current host control/collision required"
+    },
+    {
+      "actor": "FrizzleBob",
+      "source": "current FB authoring/rig owner",
+      "skillsCandidate": [
+        "GROUND",
+        "INTERACT",
+        "WORLD_ACTION"
+      ],
+      "acceptance": "current FB control/ability source evidence and 3D actor fit required"
+    }
+  ],
+  "futureVariants": [
+    "4GTN_Forgotten visually source-authored boss when isolated",
+    "additional KayKit Rig_Large boss model + real clips",
+    "KFB own Rig_Medium/large/FB player actors via same approved intent adapter"
+  ],
+  "qa": {
+    "future": [
+      "F-37",
+      "F-38",
+      "F-39",
+      "F-40",
+      "F-41",
+      "F-42",
+      "F-43",
+      "F-44"
+    ],
+    "actualRuntimeTests": 0,
+    "actualVisualTests": 0,
+    "sourceFilesPresentOnMain": true,
+    "sourceAtlasRigProofHistorical": true,
+    "blocking": [
+      "source model+Rig_Large animation isolated in current Asset Librarian",
+      "exact WS1/Combat event and weakpoint socket/Collider",
+      "actual player capability adapter and reachable encounter",
+      "actual device performance and usable source-visible 3D boss"
+    ]
+  },
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE",
+  "notes": "Candidate post-L03 boss cannot delay first L01/source asset acceptance. No new runtime or public Stage."
+}

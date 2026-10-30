@@ -1,0 +1,244 @@
+{
+  "schema": "kfb.ws0.cascade-factory-source-selection/0.1-candidate",
+  "status": "PROPOSAL_ONLY_NOT_ASSET_REGISTRY_NOT_RUNTIME",
+  "owner": "existing KFB_HUB/WS0 Game Design; Asset Librarian source authority",
+  "repo": "georg-doc/kayfabizarro",
+  "ref": "main",
+  "date": "2026-10-28",
+  "officialSourcePages": [
+    {
+      "pack": "kaykit-platformer",
+      "url": "https://kaylousberg.itch.io/kaykit-platformer",
+      "availabilityInKfb": "UNRESOLVED_OFFICIAL_PACK_MISSING_AS_IDENTIFIED_IN_MAIN",
+      "tier": "FREE_120_unique; EXTRA_not_assumed",
+      "sourceIsolationRequired": true
+    },
+    {
+      "pack": "kaykit-prototype-bits-1.1",
+      "url": "https://kaylousberg.itch.io/prototype-bits",
+      "availabilityInKfb": "SOURCE_LISTED",
+      "modelCountByBundleReadme": 85,
+      "basePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/",
+      "sourceIsolationRequired": true
+    },
+    {
+      "pack": "kaykit-city-builder-bits-1.1",
+      "url": "https://kaylousberg.itch.io/city-builder-bits",
+      "availabilityInKfb": "SOURCE_LISTED",
+      "modelCountByBundleReadme": 73,
+      "basePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/",
+      "sourceIsolationRequired": true
+    }
+  ],
+  "candidates": [
+    {
+      "pack": "city",
+      "role": "route",
+      "name": "road_straight",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_straight.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "fork",
+      "name": "road_tsplit",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_tsplit.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "turn",
+      "name": "road_corner",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_corner.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "junction",
+      "name": "road_junction",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_junction.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "protected-building",
+      "name": "building_A_withoutBase",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/building_A_withoutBase.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "infected-building-candidate",
+      "name": "building_C_withoutBase",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/building_C_withoutBase.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "landmark",
+      "name": "watertower",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/watertower.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "city",
+      "role": "visual-signal",
+      "name": "trafficlight_A",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/trafficlight_A.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "pad",
+      "name": "Floor_Prototype",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Floor_Prototype.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "floor",
+      "name": "Primitive_Floor",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Floor.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "elevation",
+      "name": "Primitive_Stairs",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Stairs.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "portal",
+      "name": "Primitive_Doorway",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Doorway.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "wall-seam",
+      "name": "Primitive_Wall",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Wall.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "hit-target",
+      "name": "Wall_Target",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Wall_Target.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "door",
+      "name": "Door_A",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Door_A.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "proto",
+      "role": "repair-station",
+      "name": "Workbench",
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench.gltf",
+      "sourceExists": "listed-on-main",
+      "renderedInIsolation": false,
+      "measured": false,
+      "collisionVerified": false,
+      "visualStatus": "SOURCE_REQUIRED"
+    }
+  ],
+  "actor": {
+    "model": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb",
+    "weapons": [
+      "CombatMech_Minigun.gltf",
+      "CombatMech_Axe.gltf"
+    ],
+    "sourceExists": "confirmed",
+    "gameplayHostReady": "UNVERIFIED",
+    "renderedInIsolation": false
+  },
+  "graphDonors": [
+    "tools/world_atlas/source/lib/dungeon-grid.js",
+    "tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-maze.js"
+  ],
+  "visualDonors": [
+    "tools/world_atlas/source/scenes/kaykit-city.js",
+    "tools/resident_atlas_s6/lib/studio.js"
+  ],
+  "runtimeReceiver": "WS1/WS1b R3F, actual active ref to be pinned",
+  "levels": [
+    "L01_SWITCHYARD",
+    "L02_BLACK_GOO_BLOCK",
+    "L03_ROOFTOP_RELAY"
+  ],
+  "caveats": [
+    "not a second registry",
+    "official Platformer kit not verified present",
+    "current files are not automatically visually accepted",
+    "do not assume Platformer EXTRA models owned",
+    "1.1 textures required with 1.1 models",
+    "no code/runtime/build QA executed"
+  ],
+  "nextGate": "WS0_SOURCE_ISOLATION_AND_LEVEL01_FIXTURE"
+}

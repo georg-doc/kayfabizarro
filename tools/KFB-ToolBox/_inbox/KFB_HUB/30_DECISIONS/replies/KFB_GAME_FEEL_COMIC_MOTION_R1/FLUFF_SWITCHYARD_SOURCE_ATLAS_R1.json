@@ -1,0 +1,166 @@
+{
+  "schema": "kfb.switchyard.source-atlas.r1",
+  "date": "2026-10-28",
+  "owner": "WS0 Game Design PR #435",
+  "receivingGameOwner": "WS1/WS1b",
+  "sourceType": "GITHUB_REGISTRY_EXACT_OR_EXTERNAL_PACK_PAGE",
+  "inspectionLevel": "METADATA_SOURCE_AUDIT_ONLY_NO_3D_ISOLATION",
+  "external": [
+    {
+      "pack": "KayKit Platformer FREE",
+      "url": "https://kaylousberg.itch.io/kaykit-platformer",
+      "cc": "CC0",
+      "freeUniqueModelsAtLeast": 120,
+      "freeIncludes": [
+        "platforms",
+        "ramps",
+        "buttons",
+        "switches",
+        "goal"
+      ],
+      "extraTierSeparate": [
+        "conveyors",
+        "hammer_traps",
+        "spike_traps",
+        "saws",
+        "cannon"
+      ],
+      "inRegistry": false,
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "KayKit Prototype Bits FREE",
+      "url": "https://kaylousberg.itch.io/prototype-bits",
+      "cc": "CC0",
+      "freeUniqueModelsAtLeast": 64,
+      "freeIncludes": [
+        "prototype blocks",
+        "stairs",
+        "character"
+      ],
+      "inRegistry": false,
+      "status": "SOURCE_REQUIRED"
+    },
+    {
+      "pack": "KayKit City Builder Bits FREE",
+      "url": "https://kaylousberg.itch.io/city-builder-bits",
+      "cc": "CC0",
+      "freeUniqueModelsAtLeast": 32,
+      "inRegistry": true,
+      "registryPack": "kaykit-city-builder-bits-1-0-free",
+      "status": "SOURCE_EXISTS_NOT_VISUALLY_ACCEPTED"
+    }
+  ],
+  "existingPacks": [
+    {
+      "id": "kaykit-city-builder-bits-1-0-free",
+      "registryRecords": 45
+    },
+    {
+      "id": "kenney-factory-kit-3-0",
+      "registryRecords": 148
+    },
+    {
+      "id": "kenney-prototype-kit",
+      "registryRecords": 74
+    },
+    {
+      "id": "kaykit-blockbits-1-0-free",
+      "registryRecords": 44
+    }
+  ],
+  "assets": [
+    {
+      "role": "healthy_building",
+      "id": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A.gltf",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "alternate_building",
+      "id": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_B.gltf",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "straight_street",
+      "id": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/road_straight.gltf",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "street_junction",
+      "id": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/road_junction.gltf",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "landmark_water_tower",
+      "id": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/watertower.gltf",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "floor_switch",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/button-floor-round.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "lever",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/lever-single.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "conveyor_junction",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/conveyor-junction-t.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "conveyor_corner",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/conveyor-corner.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "factory_machine",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/machine.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    },
+    {
+      "role": "valve",
+      "id": "media/3D_Assets/kenney_factory-kit_3.0/Models/GLB format/pipe-glass-large-valve.glb",
+      "status": "REGISTRY_PRESENT_SOURCE_ISOLATION_PENDING"
+    }
+  ],
+  "runtimeDonors": [
+    {
+      "id": "Dungeon S13.2",
+      "path": "tools/world_atlas/source/lib/dungeon-grid.js",
+      "scope": "deterministic maze graph/seams/seed, NOT physical measured tile units"
+    },
+    {
+      "id": "WhackMan graph",
+      "path": "tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-maze.js",
+      "scope": "navigation/gates/BFS, not a second world or maze renderer"
+    },
+    {
+      "id": "Seed World destruction POC",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/sw-destruct.js",
+      "scope": "cells/support/2bit damage candidate; actual WS1 consumer adapter required"
+    },
+    {
+      "id": "Shared in-scene editor",
+      "path": "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md",
+      "scope": "TransformControls/patch proposal; Dungeon E1 browser proof blocked"
+    },
+    {
+      "id": "Mech source POC",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/sw-mech.js",
+      "scope": "visual/action donor pending receiving WS1 authorization"
+    }
+  ],
+  "boundaries": {
+    "q103ColorRule": "OPEN",
+    "grapple": "SOURCE_REQUIRED",
+    "osmFirstThreeLevels": "DEFERRED",
+    "newRuntime": false,
+    "newGameSite": false,
+    "liveVisualSourceProof": 0,
+    "gameplayTests": 0
+  },
+  "nextGate": "WS0_SWITCHYARD_SOURCE_ISOLATION_AND_WS1B_RECEIVER_TRIAGE"
+}

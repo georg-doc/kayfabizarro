@@ -1,3 +1,178 @@
+## BRANCH-LOCAL R14 · 2026-10-29 · Gaussian Splats behind HyperNorm Card Buildings (user correction)
+
+**READ `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R14_GAUSSIAN_SPLATS_CARD_BUILDING_REVEAL_CORRECTION_2026-10-29.md` in existing WS0 Draft PR #435.** Georg explicitly clarified **`Gaussian Splats`**, not `Splits`. Intended visual: real 3DGS volumetric mini-scene visible through a shot/damaged HyperNorm building shell, with actual collision and shell damage managed by the existing Game owner. 3DGS primitives are **not** the separate rolling, source-colored KFB balls in R13 and are **not** collision/physics or full traversable Portal by themselves. Candidate 3DGS source/runtime assets and format not yet validated. Source gate: one building, one real 3DGS asset, three camera angles and performance/fallback test. **CONCEPT ONLY**; official V-962 R2 and host/private game remain unmodified.
+
+---
+
+## BRANCH-LOCAL R18 · 2026-10-29 · INTENTIONAL HYPERNORM COLLAGE PROJECTION ON SOURCE 3D ASSETS
+
+**Latest correction to the living WS0 concept:** Georg explicitly welcomes unhinged anamorphic/warped H13 HyperNorm music-video collage on actual irregular KayKit/Kenney GLTF buildings. **Temporarily obscured/distorted card image is a desired feature**, not a demand for always-readable 16:9 "hero facade". Only true collectible `CARD_VAULT` and gameplay/UI must remain readable. Source H13 curated anti-repetition and H13 original layered beat/shot grammar are the composer source; no new independent randomized engine. Avoid visible harsh UV seams, clone stamping, layer overload/muddy overdraw using deliberate material/Clay/Paper edges, staggered masks/negative space (S4 craft) and quiet gameplay lines. Lower motion/opacity during real impact/cell destruction for action clarity.
+
+**Read in existing WS0/KFB_HUB Game Design PR #435:**
+- `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R18_INTENTIONAL_HYPERNORM_COLLAGE_DISTORTION_SEAM_REPETITION_COMPOSITION_2026-10-29.md` and `CASCADE_SPHERE_R18_HYPERNORM_COLLAGE_PROJECTION_SOURCE_QA_2026-10-29.md`.
+- Same folder R15 for source KayKit/GLTF surface modes, R16 for rough linen + source-wall breaches, R17 shared Gamer/Vehicle/Gatling/Cannon impact/material resistance, R14 **Gaussian Splats 3DGS**, not "Splits" and not physical rolling colored beads. Original full 3D FB_CANON; source Host R1.2 and Track/Combat/3D/Audio ownership unchanged.
+
+**Official V-962 R2 register is UNCHANGED.** These are source-checked design-only proposals, not real R3F/multi-face/3DGS/live game/GPU/AAA tests. WS0 must expressly decide any future WSA build rewrite. 20/20 R14–R18 editorial/source checks; 0 new runtime tests.
+
+---
+
+## BRANCH-LOCAL R13 · 2026-10-29 · HyperNorm Card Buildings / Comic Gutter City / Colored-Ball Cascades
+
+**CURRENT CONCEPT-DESIGN DONOR, NOT NEW AUTHORITY.** WS0 KFB_HUB game-design folder in existing Draft PR #435:
+- `CASCADE_SPHERE_R13_HYPERNORM_CARD_BUILDINGS_GUTTER_CITY_CONCEPT_2026-10-29.md` – Georg's new full proposal: varied hypernormalisation card/cube 3D buildings, concealed collectible source KFB card, shell infection/damage masks and actual collision sectors, card color/height-ball infill, ball flows spilling into maze/gutter streets, existing Joyride clay curb/sidewalk, 56 deck IDs as *optional* puzzle, actual 3D FB_CANON/player unchanged.
+- `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_RECIPE_CANDIDATE_2026-10-29.json` – optional data-only four Card Block design recipe and explicit game/visual event authority.
+- `CASCADE_SPHERE_R13_HYPERNORM_GUTTER_CITY_SOURCE_QA_2026-10-29.md` – 24/24 static checks; **ZERO** current H15 3D shader/ball GPU/game/mobile/source-asset Runtime tests.
+
+**Source-grounded:** H13 HyperNorm is accepted 2D 1024×512 canvas, Clay Stage R2 applies H13/H14-derived frames on **one** 3D Billboard via CanvasTexture; 6-face seamless 3D H15 is NOT proven. Card Zone Lab v2 has real source card-seeded palettes/height queries and carve/path but DOES NOT convert any image automatically to physical height; current Joyride transition-atlas source includes actual clay curb stones/sidewalk, Track Core remains only road/contact constructor. Visual particles and real Fluff/Goo simulation separate. FrizzleBob retains **full original 3D rig**, no forced standee. Use candidate A+B (outside live HyperNorm + actual hidden card/vault), C (source palette balls) as bounded instanced FX with sparse contacts; do not mandate 56 buildings or whole per-ball GPU rigid physics.
+
+**Next owner action:** WS0 should compare Gutter City concept with current official V-962 R2 OSM POC and explicitly amend its own `docs/kfb-decisions-register-2026-10-11` only if adopted; do NOT auto-create private WSA POC, revise real game Host/WS1/world/road owner or deploy a Site. Existing source/design gate and planned independent blind Critic remain as before.
+
+---
+
+## BRANCH-LOCAL R12 · 2026-10-28 · CURRENT WS0 V-962 R2 ONE-SHOT STATUS / ASSET IMPORT FIX
+
+**LATEST SOURCE TRUTH, READ FIRST:** Existing WS0 Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R12_WS0_ONE_SHOT_INTEGRATION_GAP_AUDIT_2026-10-28.md`, plus its additive Return/Changelog and R10 external blind reviewer recommendation. This is a PROPOSED WS0 owner patch, **NOT** a change to approved register V-962 R2/V-968.
+
+**Critical correction:** KayKit Platformer EXTRA source ALREADY on private `georg-doc/KFB-Stunt-Car-Race` BRANCH `assets/kaykit-platformer-r1` in FOLDER `kaykit_platformer_r1/` with 525 glTF/bin and README SHA-256 file list. `assets/kaykit-platformer-r1` is NOT a directory inside `game/proc-world-ws0`. Metadata projection on `georg-doc/kayfabizarro` `registry/kaykit-platformer-r1` is only catalog: preview/runtime PENDING. Four earlier R3/R6/R7/R9 docs now start with explicit R12 source correction. Do not reupload source, do not pretend browser-ready; verify exact private source/authorized packaging.
+
+**Other current statuses:** private productive `game/proc-world-ws0` jetpack/loco/FB_CANON test exists; Site dist branch exists; planned POC branch `poc/cascade-sphere-r0` NOT yet found. Actual gameplay, Grapple new host physics, OSM 2m raster plus true bridge geometry, cross-repo Combat/Goo/Fluff authoritative coupling, private Site auth, mobile tests, and **one actual external fresh blind Critic** remain unproven. WS0 current V-962 still references old PR #435 head and 24 original checks; R10/R11 and future tests optional to adopt. One short real end-to-end playable loop is the mandatory One-Shot outcome, not 15 module demos.
+
+**Next owner action:** WS0 amend the existing V-962 register/brief with R12's concrete source/authority correction, single external critic after full integrated POC and one protected Site source-auth/QA, then authorize the separate WSA Build after source+design approval. No new asset owner, new main runtime, private code edit, Stage/Live or auto-merge here.
+
+---
+
+## BRANCH-LOCAL R11 · 2026-10-28 · EXTERNAL AAA ONE-SHOT PROMPT BENCHMARK
+
+**COMPARISON ONLY; not official V-962 update or Work game runtime.** See the existing KFB_HUB WS0 Game Design owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R11_EXTERNAL_ONE_SHOT_PROMPT_BENCHMARK_2026-10-28.md` and additive Return/Changelog.
+
+Georg supplied an external blank-folder Cities: Skylines II–class AAA one-shot prompt. Reuse architecture-first, original asset/source policy, screenshot+real-play verification early, one integration writer, persistent resumable status and an actually independent final external blind critic. Avoid unpinned new stack, photoreal-only benchmarks, arbitrary perf guarantees, many productive agents fighting for shared core, per-module four-round critic gates and unbounded `/loop`; `ultracode` is tool/version-specific, not guaranteed in WSA. Existing V-962 R2 + V-968 remain owner scope, current R10 one external end critic still proposed to WS0 and the approved register was NOT modified.
+
+**One current V-962 next step unchanged:** sources and design package to WS0/Georg, then authorized brownfield private POC integrated one-shot with budget-conscious internal tests/repair and protected Site. No main merge, new runtime/site/live.
+
+---
+
+## BRANCH-LOCAL R10 · 2026-10-28 · EXTERNAL BLIND CRITIC / AAA POC QUALITY PROPOSAL
+
+**WS0 ACTION REQUIRED / NOT OFFICIAL V-962 AMENDMENT.** Georg explicitly asked whether approved V-962 R2 really contains an independent external blind critic and stylized AAA quality gates. Read existing KFB_HUB owner folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R10_BLIND_CRITIC_AAA_QUALITY_GATE_V962_WS0_PROPOSAL_2026-10-28.md` and additive Return/Changelog.
+
+Actual approved `WS0_AN_WSA_V962_CASCADE_SPHERE_POC_R2.md` says "keine Kritiker-Schleifen" but does NOT explicitly invoke an isolated fresh external critic. Binding `skills/chat/KFB_INDEPENDENT_EXECUTION_GUARD_CONTRACT_2026-10-05.md` requires Builder/Tester/Critic/Guard roles and a separate fresh context, real product self-visit and own screenshots/video when an external critic is explicitly asked for. Binding WS0 CANON_3D CRITIC_3D_R1 defines 3D visual K1–K10 thresholds. WB2's 8.5 heavy critic is WB2-only, NOT automatically Cascade Sphere.
+
+**Recommended WS0 wording:** one fresh true external product-playing blind critic only AFTER integrated 2–4 minute POC and before Georg/Stefan handoff, one targeted follow-up for genuinely critical repair; no critic micro-loops. Collect Q0–Q8 real POC source/gameplay/visual/controls/audio/perf/security evidence inside the existing one-shot. If fresh critic not actually run, report `CRITIC_NOT_RUN`, never QA PASS. Do not silently edit V-962 register from PR #435.
+
+**Current status:** proposal documented only. No external Critic/session, game QA, new Site/Stage or main/WS1/private repo code. One POC next gate still source+design approval under approved V-962.
+
+---
+
+## BRANCH-LOCAL R9 · 2026-10-28 · ACTUAL WS1 ENVIRONMENT SOURCE / OSM / KAYKIT CROSSWALK
+
+**SOURCE REVIEW + ADDITIVE MINI-GAME DESIGN ONLY. NOT A NEW ENVIRONMENT SSOT OR RUNTIME.** Read existing KFB_HUB WS0 game-design folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
+- `CASCADE_SPHERE_R9_WS1_ENVIRONMENT_OSM_TERRAIN3_KAYKIT_CROSSWALK_2026-10-28.md` – actual WS1 terrain3 and ground seam source, OSM City Lab three city styles/road and bridge semantics, current 3D canon/Clay/lighting, measured Kit Lab and Platformer R6/R7 assets, one proposed true L01 environment composite.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_SOURCE_MATRIX_2026-10-28.json` – 11 source/owner/status records and one first Environment Golden candidate.
+- `CASCADE_SPHERE_R9_ENVIRONMENT_CROSSWALK_SOURCE_REPORT_2026-10-28.md` – 22/22 source/document assertions, **0** new real visual/gameplay/render/City bridge/mobile tests. Return and Changelog additive.
+
+**Truth:** current `ws1/terrain-439` really contains animated `terrain3` bands and R3F terrain hook; older `ws1/r3f-frame` does NOT. Latest private WS1b source/head and current Site runtime still need verification. OSM City Lab offers normalized real roads/buildings and Clean/Cartoon/Grotesque source presentation, but full current WS1 bridge contact/hero landmark fit unproven. KayKit original source and R6/R7 semantically measured/GLTF material sample donors exist; full purchased Platformer binary/visual intake pending. Apply existing WS0 CANON_3D_R1, NOT a new shader/color authority. Current `applyTerrain3` affects whole material; selective building/Platformer faces need source UV/mesh masks and current WS1 material owner.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` plus actual current WS1b host branch/palette/source pin, one authored source-true L01 scene. No new Stage/Site, main merge, Runtime modification or Live.
+
+---
+
+## BRANCH-LOCAL R8 · 2026-10-28 · 4GTN LARGE-RIG BOSS DONOR FOR CASCADE SPHERE
+
+**ADDITIVE SOURCE-BASED BOSS DESIGN ONLY, no new combat/runtime/asset owner or live boss.** Existing WS0/KFB_HUB Game Design Draft PR #435 folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`:
+- `CASCADE_SPHERE_R8_4GTN_LARGE_RIG_BOSS_WS0_2026-10-28.md` (source evidence, game concept and optional end-level boss);
+- `CASCADE_SPHERE_R8_4GTN_BOSS_RECIPE_CANDIDATE_2026-10-28.json` (source-pinned Rig_Large actor, 4GTN_Forgotten geometry, Katana, candidate state phases);
+- `CASCADE_SPHERE_R8_4GTN_BOSS_SOURCE_REPORT_2026-10-28.md` (24/24 static checks; zero new runtime/3D/Combat/animation tests).
+- `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` now adds future F-37…F-44 acceptance (prior F1–F36 preserved); additive RETURN/CHANGELOG.
+
+**Source truth:** 4GTN and 4GTN_Forgotten GLBs are both available on main, actually Rig_Large **23 bones**, 6 Large clip set files, historically 34 large clips; do not reuse Medium clips as their proportions deform 4GTN. Forgotten is separate geometry, not texture morph; original 4GTN_glow source strips are independent visual material meshes, not boss hitboxes. Optional 90–180 s "Forgotten Scout" after L03, Mech shooter or peaceful restore graph outcome; other actor types require actual World/Combat interface proof.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` (first playable L01); later Boss source-isolation and Work/WS1 post-L03 authorized trial. WB2 R4 STOP, no Main merge or Stage/Live.
+
+---
+
+## BRANCH-LOCAL R6/R7 · 2026-10-28 · KAYKIT PLATFORMER SOURCE ATLAS + MATERIAL ZONES
+
+**ADDENDUM / SOURCE INSPECTION ONLY; no runtime, new asset owner, Shader Site or production approval.** Existing WS0 Game Design/KFB_HUB PR #435 folder at `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/` now contains:
+- `KAYKIT_PLATFORMER_R6_FULL_SOURCE_INVENTORY_2026-10-28.json` (895 GLTF/BIN pairs, 10 source folders; files still only on Dropbox);
+- `KAYKIT_PLATFORMER_R6_SEMANTIC_ATLAS_2026-10-28.json` (171 neutral/colored role identities, source variants, candidate ports/actions);
+- `KAYKIT_PLATFORMER_R6_GLTF_GEOMETRY_SAMPLES_2026-10-28.json` and `KAYKIT_PLATFORMER_R6_FOUR_MEASURED_BOARD_FIXTURES_CANDIDATE_2026-10-28.json` (12 original source GLTF JSON examples and 4 not-yet-measured source test boards);
+- `KAYKIT_PLATFORMER_R6_MODULAR_ATLAS_BUILD_BRIEF_2026-10-28.md` and `KAYKIT_PLATFORMER_R6_SOURCE_ATLAS_TEST_REPORT_2026-10-28.md`;
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_GLTF_SOURCE_PROBES_2026-10-28.json` (12 direct original GLTF material/primitive samples, real independent EXTRA conveyor threads material);
+- `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TARGETS_CANDIDATE_2026-10-28.json` + `KAYKIT_PLATFORMER_R7_MATERIAL_ZONES_AND_TERRAIN_COLORBAND_WS0_2026-10-28.md` (8 mask targets and existing KFB animated terrain colorband/surreal mix proposal);
+- `KAYKIT_PLATFORMER_R7_OFFLINE_MATERIAL_ZONE_SCANNER.py` (source-only prepared Python; not executed on actual binary pack), `KAYKIT_PLATFORMER_R7_MATERIAL_ZONE_TEST_REPORT_2026-10-28.md`.
+
+**Key source truth:** normal blue platform/ramp has only ONE source platformer material/UV atlas, so face-specific blue tint needs REAL UV/face mask proof. Buttons/levers/saw have separate mesh children, not separate source materials. EXTRA conveyor has separate second primitive/material threads.png; preferred first selective terrain-colorband proof. Source art/physical colliders stay independent; KFB CANON_3D and existing WS1/WS1b material owner remain authoritative. Existing Work brief has R6 F25–F30 and R7 F31–F36 future QA; **all are future tests, not live acceptance**.
+
+**One next gate remains `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`:** proper source binary/hashes and visual material source-isolation in current Asset Librarian/Kit Lab, current WS1b source pin, one Switchyard. WB2 R4 STOP; no Live/auto-merge.
+
+---
+
+## BRANCH-LOCAL R5 · 2026-10-28 · ORGANIC CHILL CARTOON GAME FEEL
+
+**Additive design/source input only, NOT WS1 execution or a new animation engine.** On the existing KFB_HUB WS0 Game Design Draft PR #435 branch read:
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_CHILL_CARTOON_FEEL_WS0_ADDENDUM_2026-10-28.md`;
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_PRESENTATION_CUE_CANDIDATE_2026-10-28.json`;
+- `30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_R5_CHILL_FEEDBACK_SOURCE_REPORT_2026-10-28.md`;
+- existing `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` has R5 C1 acceptance addendum F-19…F-24.
+
+The paths above are *relative to the existing tools/KFB-ToolBox/_inbox/KFB_HUB owner folder*; R1–R4 and previous R3 Platformer source/WS0 authorization remain. One accepted `SWITCH_ACCEPTED` fact triggers one source lever elastic cue, one legally rerouted Fluff hesitation at the correct junction, one audio-owner source soft cue if available, with muted/reduced motion fallback; C2 Goo+repair, C3 rooftop optional feel later. No mood/tween mutation to canonical event or actual World/Combat/Save. WFC spectacle scenic-only with source/physical constraints. 30/30 source/static editorial checks; gameplay/visual/audio/GPU/Stage = 0.
+
+**ONE next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`. No auto merge, live release, new Site or second Runtime.
+
+---
+
+## BRANCH-LOCAL R4 · 2026-10-28 · CASCADE SPHERE INTEGRATION PREPRODUCTION
+
+**ADDITIVE DESIGN/GRAPH QA ONLY — NOT CANON / NOT RUNTIME AUTHORIZATION.** For the current WS0 preproduction and later Work/WS1 integration, read the following existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/ files in order:
+1. `CASCADE_SPHERE_R4_INTEGRATION_BLUEPRINT_2026-10-28.md` — play rules, generator hierarchy, optional bounded WFC, owner-safe Mech/Fluff/Goo/repair, skins and open-world boundaries.
+2. `CASCADE_SPHERE_R4_MODULE_CONTRACT_CANDIDATE_2026-10-28.json` — 7 **candidate** interface/owner and event/typed WFC proposals. No verified WS1 runtime API claimed.
+3. `CASCADE_SPHERE_R4_LEVEL_FIXTURES_2026-10-28.json` — 3 explicit directed graph fixtures with verified source-only initial/final paths, not running player/combat.
+4. `CASCADE_SPHERE_R4_WORK_INTEGRATION_BRIEF_2026-10-28.md` — C0 → C1 → C2 → C3 → optional C4 Work phases and 18 subsequent independent QA cases.
+5. `CASCADE_SPHERE_R4_TEST_REPORT_2026-10-28.md` and additive `RETURN.md`/`CHANGELOG.md`. R1–R3 original materials remain linked in prior router sections.
+
+**Evidence:** JSON 2/2 parsed; editorial checks 32/32; tiny pure directed graph reachability checks 3/3; runtime, combat/asset rendering, browser/mobile/GPU, stage/site: 0. WB2 R4 still STOPPED. WS1/WS1b sole game writer after actual head/API re-pin; no auto-merge/Live and no new engine.
+**One next gate unchanged:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE`: authorized hash/source + actual visual donor isolation, pin real WS1b host and freeze first meaningful L01 scene; then separately approve Work integration.
+
+---
+
+## BRANCH-LOCAL WS0 R3 · 2026-10-28 · PLATFORMER EXTRA + SWEET SUPPLY ASSET INTAKE
+
+**READ NEXT:** Existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/`SWEET_SUPPLY_ASSETS_PLATFORMER_INTAKE_R3_WS0_2026-10-28.md` plus `SWEET_SUPPLY_PLATFORMER_R3_TEST_REPORT_2026-10-28.md`, additive RETURN/CHANGELOG and prior Cascade Sphere R1/Factory Maze R2. Still same Draft PR #435 and Game Design owner, not a new runtime, Site, Stage, World or Card owner.
+
+Actual connected Dropbox shows KayKit Platformer FREE and purchased EXTRA with CC0 License.txt; original `Assets/gltf` variants present. KayKit Restaurant Bits 1.0/1.1 and three Tiny Treats packs already exist on main. Existing private repo `georg-doc/kayfabizarro-private-assets` default `intake/v538-2026-10-18` is **a distinct sealed V-538 intake, not** an append target. WS0 should own a separate hash-verified Platformer source intake and update existing Asset Librarian through its own owner. Keep raw licensed sources/variants/atlases and optimized game allowlist clearly separate. No binaries were pushed in this design turn.
+
+**ONE NEXT GATE:** `WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE` — source/hash/license/provenance audit, explicit authorized asset import, source-isolated original lever/button/conveyor and bakery objects, current WS1b consumer ref pin, one original L01 Switchyard route with two optional art variants. No auto-merge, WB2 R4 reopening or Live.
+
+---
+
+## BRANCH-LOCAL WS0 GAME DESIGN R2 · 2026-10-28 · KAYKIT PROTOTYPE FACTORY MAZE
+
+**DESIGN / SOURCE PROPOSAL ONLY, NO RUNTIME, NO MAIN CHANGE.** Georg has refined Cascade Sphere to a three-level source-backed factory-city maze using KayKit Prototype Bits 1.1 + City Builder Bits 1.1, official Platformer Pack after verified intake, Dungeon measured seam and WhackMan route donors, one flying Mech, instanced Fluff, Goo, build/destroy and cards.
+
+Read from the existing KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/ owner folder:
+- PROTOTYPE_FACTORY_MAZE_KAYKIT_R2_WS0_2026-10-28.md (gameplay/design and exact source matrix);
+- PROTOTYPE_FACTORY_MAZE_R2_SOURCE_SELECTION.json (16 source candidates, all unrendered);
+- PROTOTYPE_FACTORY_MAZE_R2_TEST_REPORT_2026-10-28.md (26/26 document/source checks, 0 gameplay/visual tests);
+- additive RETURN.md and CHANGELOG.md; R1 Cascade Sphere remains prior context.
+
+The complete official KayKit Platformer Pack has NOT been identified as a current imported KFB environment pack; official FREE and EXTRA tiers are not interchangeable. Current WS1/WS1b remains sole productive R3F owner, WB2 Island R4 remains STOPPED, other Combat/Asset/World/Card/Audio owners unchanged, no new GPT Site or Cloudflare Stage.
+
+**ONE NEXT GATE:** WS0_SOURCE_ISOLATION_AND_LEVEL01_FIXTURE — WS0 + Asset Librarian isolate original existing City/Prototype 1.1 components and real Mech, resolve Platformer Pack, pin actual WS1b receiver and select one Level01 Switchyard game fixture. No runtime/merge/Live authorization implied.
+
+---
+
+## BRANCH-LOCAL WS0 DESIGN ROUTE · 2026-10-28 · CASCADE SPHERE / MECH × OSM / PR #435
+
+**ADDITIVE PROPOSAL / SOURCE ROUTING ONLY, NOT MAIN OR CANON:** Georg's expanded flying Combat-Mech + OSM street-maze + Fluff/Goo/Card/Quest/Sphere mini-game concept is persisted under the existing KFB_HUB WS0 Game Design reply folder:
+
+`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_GAME_FEEL_COMIC_MOTION_R1/CASCADE_SPHERE_MECH_OSM_CARD_MAZE_WS0_R1_2026-10-28.md`
+
+Read its `CASCADE_SPHERE_TEST_REPORT_2026-10-28.md`, additive `RETURN.md` and `CHANGELOG.md` in the same folder. This is not runnable game code and does not reopen WB2 R4. WS0 design/data decisions, WS1/WS1b single game owner, Combat weapons/hits, OSM City Lab, Audio, Card/Save and Mindspace/HyperNorm boundaries are unchanged; no new Hub Stage or Site product.
+
+**One next gate:** WS0_SOURCE_ISOLATION_AND_RECEIVER_TRIAGE. Source-isolate actual Mech/Minigun/Axe, one technical kit object, one real small OSM neighborhood cluster, and verify current WS1b receiver before selecting one 90–180 s playable encounter. No auto-merge or Live.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-08 · VOICE REQUIRED IN NEXT RUNTIME MVP AFTER A/B
 
 Georg has authorized the KFB ChatterBox Voice Layer as a required acceptance seam for the **first runtime MVP slice explicitly authorized after the current Four-Island Story Vision A/B gate**.

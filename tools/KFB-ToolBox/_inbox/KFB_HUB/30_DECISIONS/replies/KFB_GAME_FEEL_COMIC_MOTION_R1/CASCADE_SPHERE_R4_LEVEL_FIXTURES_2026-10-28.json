@@ -1,0 +1,678 @@
+{
+  "schema": "kfb.cascade.factory-fixtures/0.1-candidate",
+  "status": "NON_CANONICAL_DOCUMENTED_DESIGN_FIXTURES_NOT_RUNTIME",
+  "date": "2026-10-28",
+  "owner": "existing KFB_HUB/WS0 Game Design",
+  "receivingOwner": "WS1/WS1b R3F exact head pending",
+  "interpretation": {
+    "edges": "directed, open/closed; packets may hold at last valid node when no route",
+    "routeSolver": "pure deterministic BFS unweighted in these three fixtures",
+    "tick": "host-owned 60Hz frame tick; no independent clock",
+    "levelCoordinates": "topological coordinates only; metres/pivots from source-isolation and host",
+    "fakeSourceIds": "None; SOURCE_REQUIRED marked"
+  },
+  "themes": {
+    "technical": {
+      "name": "Factory Incident",
+      "replaces": "visuals/captions/audio only",
+      "source": "existing City, Prototype, Mech"
+    },
+    "sweet": {
+      "name": "Sweet Supply",
+      "replaces": "visuals/captions/audio only",
+      "source": "existing Bakery Interior, Restaurant Bits, Baked Goods",
+      "sameGraph": true,
+      "exampleAssets": [
+        {
+          "role": "bakery:display_case_short.gltf",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/display_case_short.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "goods:croissant.gltf",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/croissant.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "restaurant:dough",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/crate_dough.gltf",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        }
+      ]
+    }
+  },
+  "levels": [
+    {
+      "id": "L01_SWITCHYARD",
+      "title": "The Switchyard",
+      "runTargetSeconds": [
+        90,
+        150
+      ],
+      "theme": "tech-factory",
+      "seed": 101,
+      "status": "DESIGN_FIXTURE",
+      "nodes": [
+        {
+          "id": "spawn",
+          "xy": [
+            0,
+            1
+          ],
+          "level": 0,
+          "role": "packet-spawn"
+        },
+        {
+          "id": "junction",
+          "xy": [
+            1,
+            1
+          ],
+          "level": 0,
+          "role": "switch-node"
+        },
+        {
+          "id": "north",
+          "xy": [
+            2,
+            0
+          ],
+          "level": 0,
+          "role": "detour"
+        },
+        {
+          "id": "south",
+          "xy": [
+            2,
+            2
+          ],
+          "level": 0,
+          "role": "blocked-branch"
+        },
+        {
+          "id": "goal",
+          "xy": [
+            3,
+            1
+          ],
+          "level": 0,
+          "role": "landmark"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e_sj",
+          "from": "spawn",
+          "to": "junction",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_jn",
+          "from": "junction",
+          "to": "north",
+          "state": "closed",
+          "reason": "switch-south"
+        },
+        {
+          "id": "e_ng",
+          "from": "north",
+          "to": "goal",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_js",
+          "from": "junction",
+          "to": "south",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_sg",
+          "from": "south",
+          "to": "goal",
+          "state": "closed",
+          "reason": "damaged-route"
+        }
+      ],
+      "sockets": [
+        {
+          "id": "lever-one",
+          "at": "junction",
+          "action": "SWITCH",
+          "mode": "intervention",
+          "owner": "WS1_WORLD_CONTACT",
+          "asset": {
+            "role": "prototype:Wall_Target.gltf",
+            "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Wall_Target.gltf",
+            "source": "main",
+            "revision": "PIN_AT_WS0_INTAKE",
+            "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+          },
+          "physicalProof": "NOT_TESTED"
+        }
+      ],
+      "state": {
+        "switchOrientation": "south",
+        "infectedShell": null,
+        "damageBits": [],
+        "repairedSockets": [],
+        "arrivals": 0,
+        "lost": 0
+      },
+      "initialConditions": {
+        "pathToGoal": false,
+        "reachableDetourExistsIfSwitch": true
+      },
+      "actions": [
+        {
+          "id": "switch-north",
+          "kind": "SWITCH",
+          "target": "lever-one",
+          "preconditions": [
+            "AUTHORIZED_CONTACT_OR_ACCESSIBLE_BUILD_MODE"
+          ],
+          "effects": [
+            {
+              "edgeId": "e_jn",
+              "to": "open"
+            },
+            {
+              "edgeId": "e_js",
+              "to": "closed"
+            }
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "waveId": "w1",
+          "packetKind": "friendly-fluff",
+          "count": 8,
+          "spawnEveryHostTicks": 24,
+          "at": "spawn",
+          "destination": "goal"
+        }
+      ],
+      "expected": {
+        "preRoute": [],
+        "afterActions": [
+          "switch-north"
+        ],
+        "postRoute": [
+          "spawn",
+          "junction",
+          "north",
+          "goal"
+        ],
+        "logicalArrivals": 8,
+        "logicalLost": 0,
+        "graphOpensBy": [
+          "e_jn"
+        ],
+        "repeatSameSeedAndInputs": true
+      },
+      "lookAssets": [
+        {
+          "role": "city:road_tsplit.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_tsplit.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "city:road_straight.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/road_straight.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "city:watertower.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/watertower.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "prototype:Floor_Prototype.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Floor_Prototype.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        }
+      ],
+      "notes": [
+        "The broken south edge is intentionally visible; source packets wait rather than teleport through it",
+        "One big lever at junction; no Mech weapon needed for L01",
+        "Sweet Supply is a second presentation of this exact graph, not a second fixture"
+      ]
+    },
+    {
+      "id": "L02_BLACK_GOO_BLOCK",
+      "title": "Black Goo Block",
+      "runTargetSeconds": [
+        120,
+        210
+      ],
+      "theme": "tech-factory",
+      "seed": 202,
+      "status": "DESIGN_FIXTURE",
+      "nodes": [
+        {
+          "id": "spawn",
+          "xy": [
+            0,
+            1
+          ],
+          "level": 0,
+          "role": "packet-spawn"
+        },
+        {
+          "id": "junction",
+          "xy": [
+            1,
+            1
+          ],
+          "level": 0,
+          "role": "damaged-conduit"
+        },
+        {
+          "id": "repairBay",
+          "xy": [
+            2,
+            1
+          ],
+          "level": 0,
+          "role": "repair-socket"
+        },
+        {
+          "id": "goal",
+          "xy": [
+            3,
+            1
+          ],
+          "level": 0,
+          "role": "landmark"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e_sj",
+          "from": "spawn",
+          "to": "junction",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_jr",
+          "from": "junction",
+          "to": "repairBay",
+          "state": "closed",
+          "reason": "contaminated-shell"
+        },
+        {
+          "id": "e_rg",
+          "from": "repairBay",
+          "to": "goal",
+          "state": "closed",
+          "reason": "broken-conduit"
+        }
+      ],
+      "sockets": [
+        {
+          "id": "corrupt-shell",
+          "at": "junction",
+          "action": "SHOOT",
+          "mode": "gameplay",
+          "owner": "COMBAT_HIT_EVENT",
+          "asset": {
+            "role": "detachable-corrupt-adaptation",
+            "sourcePath": "SOURCE_REQUIRED",
+            "sourceVisualStatus": "NOT_ACCEPTED"
+          },
+          "physicalProof": "NOT_TESTED"
+        },
+        {
+          "id": "socket-conduit",
+          "at": "repairBay",
+          "action": "REPAIR",
+          "mode": "gameplay",
+          "owner": "WORLD_SUPPORT_AND_SAVE",
+          "asset": {
+            "role": "prototype:Primitive_Doorway.gltf",
+            "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Doorway.gltf",
+            "source": "main",
+            "revision": "PIN_AT_WS0_INTAKE",
+            "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+          },
+          "physicalProof": "NOT_TESTED"
+        }
+      ],
+      "state": {
+        "switchOrientation": null,
+        "infectedShell": {
+          "id": "corrupt-shell",
+          "goo": "infected",
+          "damage": "intact"
+        },
+        "damageBits": [],
+        "repairedSockets": [],
+        "arrivals": 0,
+        "lost": 0
+      },
+      "initialConditions": {
+        "pathToGoal": false,
+        "packetWaitAt": "junction"
+      },
+      "actions": [
+        {
+          "id": "shoot-corrupt-shell",
+          "kind": "SHOOT",
+          "target": "corrupt-shell",
+          "preconditions": [
+            "AUTHORITATIVE_COMBAT_HIT",
+            "CELL_IS_OPTED_IN"
+          ],
+          "effects": [
+            {
+              "shellId": "corrupt-shell",
+              "goo": "removed",
+              "damage": "exposed"
+            },
+            {
+              "edgeId": "e_jr",
+              "to": "open"
+            }
+          ],
+          "grantCandidate": {
+            "resource": "source-owned-fluff",
+            "count": 1,
+            "owner": "WS1_PLAYER_SAVE",
+            "status": "VALIDATE_BEFORE_IMPLEMENT"
+          }
+        },
+        {
+          "id": "repair-conduit",
+          "kind": "REPAIR",
+          "target": "socket-conduit",
+          "preconditions": [
+            "AUTHORITATIVE_WORLD_SOCKET_VALID",
+            "PLAYER_HAS_SOURCE_OWNED_FLUFF"
+          ],
+          "effects": [
+            {
+              "edgeId": "e_rg",
+              "to": "open"
+            }
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "waveId": "w1",
+          "packetKind": "friendly-fluff",
+          "count": 10,
+          "spawnEveryHostTicks": 24,
+          "at": "spawn",
+          "destination": "goal"
+        }
+      ],
+      "expected": {
+        "preRoute": [],
+        "afterActions": [
+          "shoot-corrupt-shell",
+          "repair-conduit"
+        ],
+        "postRoute": [
+          "spawn",
+          "junction",
+          "repairBay",
+          "goal"
+        ],
+        "logicalArrivals": 10,
+        "logicalLost": 0,
+        "repeatSameSeedAndInputs": true
+      },
+      "lookAssets": [
+        {
+          "role": "city:building_C_withoutBase.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/building_C_withoutBase.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "prototype:Workbench.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Workbench.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "prototype:Wall_Target.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Wall_Target.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        }
+      ],
+      "notes": [
+        "Intact KayKit source building unchanged; opt-in detachable shell is a separate accepted consumer mesh",
+        "Shooting does not auto-award Fluff except through existing owner; expected path only after repair",
+        "Actual Mech host weapon integration still needs source and live QA"
+      ]
+    },
+    {
+      "id": "L03_ROOFTOP_RELAY",
+      "title": "Rooftop Relay",
+      "runTargetSeconds": [
+        150,
+        240
+      ],
+      "theme": "tech-factory",
+      "seed": 303,
+      "status": "DESIGN_FIXTURE",
+      "nodes": [
+        {
+          "id": "spawn",
+          "xy": [
+            0,
+            1
+          ],
+          "level": 0,
+          "role": "packet-spawn"
+        },
+        {
+          "id": "junction",
+          "xy": [
+            1,
+            1
+          ],
+          "level": 0,
+          "role": "route-fork"
+        },
+        {
+          "id": "roof",
+          "xy": [
+            2,
+            0
+          ],
+          "level": 1,
+          "role": "landable-button"
+        },
+        {
+          "id": "ground",
+          "xy": [
+            2,
+            2
+          ],
+          "level": 0,
+          "role": "blocked-lane"
+        },
+        {
+          "id": "goal",
+          "xy": [
+            3,
+            1
+          ],
+          "level": 0,
+          "role": "landmark"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e_sj",
+          "from": "spawn",
+          "to": "junction",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_jr",
+          "from": "junction",
+          "to": "roof",
+          "state": "closed",
+          "reason": "roof-switch-off",
+          "transition": "elevated-conduit"
+        },
+        {
+          "id": "e_rg",
+          "from": "roof",
+          "to": "goal",
+          "state": "open",
+          "reason": null,
+          "transition": "down-conduit"
+        },
+        {
+          "id": "e_jg",
+          "from": "junction",
+          "to": "ground",
+          "state": "open",
+          "reason": null
+        },
+        {
+          "id": "e_gg",
+          "from": "ground",
+          "to": "goal",
+          "state": "closed",
+          "reason": "goo-chokepoint"
+        }
+      ],
+      "sockets": [
+        {
+          "id": "roof-switch",
+          "at": "roof",
+          "action": "ACTIVATE",
+          "mode": "gameplay",
+          "owner": "WS1_MOVEMENT_AND_CONTACT",
+          "asset": {
+            "role": "KayKit-Platformer-button",
+            "sourcePath": "DROPBOX_PLATFORMER_FREE/Assets/gltf/blue/button_base_blue.gltf",
+            "revision": "WS0_IMPORT_REQUIRED",
+            "sourceVisualStatus": "SOURCE_REQUIRED"
+          },
+          "physicalProof": "NOT_TESTED"
+        }
+      ],
+      "state": {
+        "switchOrientation": "ground",
+        "infectedShell": null,
+        "damageBits": [],
+        "repairedSockets": [],
+        "arrivals": 0,
+        "lost": 0
+      },
+      "initialConditions": {
+        "pathToGoal": false,
+        "roofStationPhysicallyReachable": "TO_BE_PROVEN"
+      },
+      "actions": [
+        {
+          "id": "activate-roof",
+          "kind": "ACTIVATE",
+          "target": "roof-switch",
+          "preconditions": [
+            "AUTHORITATIVE_LANDING_OR_ACCESSIBLE_ACTION_CONTACT"
+          ],
+          "effects": [
+            {
+              "edgeId": "e_jr",
+              "to": "open"
+            },
+            {
+              "edgeId": "e_jg",
+              "to": "closed"
+            }
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "waveId": "w1",
+          "packetKind": "friendly-fluff",
+          "count": 12,
+          "spawnEveryHostTicks": 24,
+          "at": "spawn",
+          "destination": "goal"
+        }
+      ],
+      "expected": {
+        "preRoute": [],
+        "afterActions": [
+          "activate-roof"
+        ],
+        "postRoute": [
+          "spawn",
+          "junction",
+          "roof",
+          "goal"
+        ],
+        "logicalArrivals": 12,
+        "logicalLost": 0,
+        "repeatSameSeedAndInputs": true
+      },
+      "lookAssets": [
+        {
+          "role": "prototype:Primitive_Stairs.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Stairs.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "prototype:Primitive_Floor.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Assets/gltf/Primitive_Floor.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "city:building_A_withoutBase.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/building_A_withoutBase.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        },
+        {
+          "role": "city:watertower.gltf",
+          "sourcePath": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/City Builder Bits/Assets/gltf/watertower.gltf",
+          "source": "main",
+          "revision": "PIN_AT_WS0_INTAKE",
+          "sourceVisualStatus": "SOURCE_ISOLATION_REQUIRED"
+        }
+      ],
+      "notes": [
+        "Roof station and conduit need measured support, approach and source Platformer button loaded by real Asset Librarian",
+        "Host Mech flight must own transform; no second grappling controller",
+        "Height 1 is schematic level index, not unverified metre height"
+      ]
+    }
+  ]
+}
