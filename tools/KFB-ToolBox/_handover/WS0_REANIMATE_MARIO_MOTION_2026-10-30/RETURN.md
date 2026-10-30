@@ -8,8 +8,9 @@ Persisted a bounded, source-first WS0 investigation of Niaz Morshed's /reanimate
 - Repo: georg-doc/kayfabizarro
 - Existing owner: KFB ToolBox / Motion authoring
 - Branch: research/ws0-reanimate-mario-motion-donor-2026-10-30
-- PR: see GitHub draft PR (created after this Return)
-- Head: **verify the branch head in GitHub after this write; do not fill by guess**
+- Draft PR: **#461** — https://github.com/georg-doc/kayfabizarro/pull/461
+- WS0 tracking issue: **#462** — https://github.com/georg-doc/kayfabizarro/issues/462
+- Verified initial documentation commit: `6edde71a86a127684f105fecc13d0ed934b61610` (four docs read back exactly). Final metadata checkpoint is a follow-up commit; retrieve the current branch ref for the latest head.
 
 ## Artifacts
 - BRIEF.md — ordered G0 / P1 / P2 / P3 WS0 execution and accept/reject rules.
