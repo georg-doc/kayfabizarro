@@ -15253,6 +15253,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1051",
+   "date": "2026-10-30",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "B40 r7 Frames: blinder Kritiker 5,1 REWORK, K5 = 3, Stopp nach CRITIC_3D_R1, keine Reparaturrunde (50_BLENDER/B40/RETURN.md r7.7, renders/r7/lauf3/). Hauptursache: Der Ort aus Konzeptblatt R3 ist im Bild nicht da (Platz, Weg, Bordstein-Ring, abgetretener Ring, rosa Wahrzeichen fehlen; Modelle fehlen im Bestand, Ring nur als Daten-Eintrag, das ENV-Gate prüft das nicht). Bild 3 erfüllt R3 weitgehend, Bild 1 teilweise, Bild 2 und 4 nicht. Nutzbar bleiben Turm r7f, AGL r7b, AG1–3 r7c, Ort- und Ereignis-Skript. Neuansatz nach So, zu entscheiden: Modelle für Ort (aus Prop-Pool R2 bzw. kfb-curb) oder WSB baut sie; Tür lesbar machen (zweiteilig oder sichtbar vorn); Scan-Pose mit passendem Clip ohne Blaster; Türsteher vor die Tür mit eigener Rückweg-Gasse; ENV-Gate soll Biografie-Einträge im Bild prüfen.",
+   "values": {},
+   "owner": "WS0 (nach So)",
+   "check": "Neuansatz-Entscheid",
+   "source": "WSB 30.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Kritiker fand, was das Gate nicht prüft: Ein Ort, der nur in den Daten steht, ist kein Ort im Bild.",
+   "applies": "nach So"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
