@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "entries": [
   {
    "id": "V-001",
@@ -15191,6 +15191,36 @@
    "superseded_by": [],
    "why": "Eine starre Gesichtsregel passt nicht zu allen Figuren; die Figurenkarte ist die eine Quelle, das Abnahmebild der Beleg.",
    "applies": "sofort"
+  },
+  {
+   "id": "V-1047",
+   "date": "2026-10-30",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "Web-Chat-Eingang Game Loop R2–R8, R12–R19 (kayfabizarro Draft-PR 460, Branch planning/kfb-game-loop-fluff-economy-r2-2026-10-29, Georgs kreative Steuerung, nur Konzept, 0 Tests): Hauptziel echte Karten sammeln und das Weltwissen der Bewohner erweitern (Boten, Schenken, Zeigen, Streiten; je Bewohner 1–6 Startkarten), Gegner sind Meinungskorridore, Zensur, Propaganda (MiB, Radiergummi, Goo); R3 überstimmt R2: Fluff und Holz/Erz sind Nebenökonomie, Spielplatz und Bau-Material, kein Grind, Sechs-Farben-Rezept nur optional; Motto „You choose something, ride the consequences“ (R17 korrigiert R16); Conflict is King mit Zuschauen oder Eingreifen (R19); weiter Rollen/Masken (R7), Karten-Anomalie (R8), Gerüchte-Mühle (R18), kein Philosophenkönig (R15). Offen und von Georg zu bestätigen; offene Sachfrage Fluff = Leben oder Sammelvorrat (R2 D4), betrifft HUD-Status V-1039. Vorbehalt: die Formel „Island R4 STOP / NO MVP“ in diesen Dateien meint die alte Linie, nicht das laufende Spiel. Intake nach So.",
+   "values": {},
+   "owner": "Georg (Bestätigung) · WS0",
+   "check": "Georg-Entscheid je Kernpunkt",
+   "source": "Web-Chat 29.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Web-Chat hat mit Georg die Spielrichtung geklärt; sie muss ins Register, sonst bauen HUD und Spike an der falschen Annahme.",
+   "applies": "Intake nach So"
+  },
+  {
+   "id": "V-1048",
+   "date": "2026-10-30",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Web-Chat-Dossier Three.js-LOD (replies/RESEARCH_THREEJS_LOD_PROC_WORLD_WS0_R1_2026-10-30.md, RETURN_… im Register-Branch @3a2bdd4, 0 Laufzeit-Messungen) geht in den Mess-Spike V-1042/V-1043 ein: zuerst vollständige Bild-Telemetrie (Welt, Schatten, HUD), dann A/B für Bewuchs-Culling, Geometrie-LOD, Knete-Material-LOD, Schattenkosten; nur Gemessenes kommt ins Spiel. Kein Sofortauftrag vor So. Zusatz-Eingang kayfabizarro Draft-PR 461 (Niaz /reanimate als Bewegungs-Spender für einen Sprung, SOP-Übung per YouTube-Playlist): nur Planung, Tool und Export ungeprüft; ruht bis nach So, Regel V-956 bleibt gültig.",
+   "values": {},
+   "owner": "WS0 (nach So)",
+   "check": "Spike-Messung",
+   "source": "Web-Chat 30.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "LOD-Recherche passt zum geplanten Spike und braucht keinen eigenen Strang.",
+   "applies": "nach So"
   },
   {
    "id": "V-427",
