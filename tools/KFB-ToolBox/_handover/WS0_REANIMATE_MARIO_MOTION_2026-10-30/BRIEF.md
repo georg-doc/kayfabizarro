@@ -77,3 +77,7 @@ If login, payment, upload restrictions or access block qualification, record exa
 
 ## WS0 handoff / one next gate
 **Next: G0 source/capability/rights audit on the exact Niaz /reanimate site with one original KFB-owned 1–3 s reference.** Return actual screenshot/export evidence and a yes/no on editable input→output feasibility. Only then run P1 isolated Mario-like jump A/B through current Motion owner.
+
+## 2026-10-30 · Claude SOP playlist training (additive companion)
+Georg supplied a YouTube playlist to train Claude on correct use of KFB production SOPs. The URL and **unverified** video inventory are captured in `PLAYLIST_SOURCE.json`; full learning-by-doing protocol in `CLAUDE_SOP_PLAYLIST_TRAINING.md` and `SOP_TRAINING_TEST_PLAN.md`. This is a preparatory **training/evaluation** exercise, not a claim of watching videos, successful model fine-tuning or an adopted /reanimate integration. Claude must demonstrate E1 authority recovery, E2 donor-object isolation, conditional E3 original KFB jump A/B, E4 crash-safe GitHub readback with independent assessment. Do not treat videos as SSOT or replace accepted motion owners.
+**One next gate remains WS0 G0:** prove exact playlist inventory/access **and** /reanimate input/export on an original KFB-owned reference before P1.

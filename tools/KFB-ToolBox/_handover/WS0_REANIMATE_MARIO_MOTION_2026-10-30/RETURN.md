@@ -33,3 +33,11 @@ Read-only GitHub document searches and inspection completed. Actual animation co
 
 ## One next gate
 **WS0 performs G0 external capability, terms and export proof** on exact https://reanimate.niazmorshed.dev/ with one original 1–3s KFB motion input; then decide whether to run the isolated P1 jump A/B. No new world runtime action from this document.
+
+## 2026-10-30 · Additive playlist training handoff
+- Georg supplied `https://youtube.com/playlist?list=PLUETZMzKOlb_UsmyOqdjsmRic2gR5erJx&si=9ZGd-3zIYKh9faUB` for a Claude training round focused on **correct KFB SOP execution**.
+- Prepared `CLAUDE_SOP_PLAYLIST_TRAINING.md`, `PLAYLIST_SOURCE.json` and `SOP_TRAINING_TEST_PLAN.md` on this same research branch. First docs checkpoint `52901d1caa426c0878b920720d0c22dc6f981d5e`, read-back 3/3 exact.
+- Playlist titles, publisher, individual videos and transcripts: **UNVERIFIED** (YouTube access disabled in current reader). No course summary or video lessons claimed.
+- Training is **procedural evaluation, not model weight fine-tuning**. E0 playlist intake, E1 cold-start SSOT, E2 actual donor isolation, conditional E3 animation A/B and E4 GitHub verification. Independent test/critic/guard required. All **0 executed**.
+- No changes to runtime, R4 world, motion clips, Site, Stage, central KFB Hub or Live. Draft PR #461 and WS0 issue #462 retain planning authority; no merge.
+- **One next gate:** WS0 G0 qualifies playlist content and exact /reanimate tool/output/rights using an original KFB-owned reference; only then conditional jump A/B.
