@@ -15493,6 +15493,36 @@
    "applies": "vor Stufe 1 des Tratschs"
   },
   {
+   "id": "V-1067",
+   "date": "2026-10-31",
+   "area": "Dialog",
+   "verdict": "TBD",
+   "text": "Gespräch mit dem Spieler (Georg 31.10.): Monkey-Island-artiger Dialog als Chat in Sprechblasen statt großer Antwortflächen; Karten-Vorschau in der Blase, nur im Spieler-Gespräch anklickbar, freie NPC-Gespräche nicht (Timing), dort über Letzte Karten im Almanach; mehrere NPCs anwesend, gezielt ansprechen; Kartenauftrag; Ortstipp diegetisch und als Wegpunkt übernehmbar, Wegpunkt-Verwaltung schlank; Karte als eigener Gesprächsbeitrag; Schießen statt Antworten ist erlaubt und hat Folgen (ändert V-1039 für Primär im Gespräch). Mindscape: Schweben reicht (q316). Entwurf replies/GESPRAECH_SPIELER_R1.md, Hub q317. Sprechblasen nicht erneut über Claude Design.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q317",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die großen Antwortflächen passen nicht zum Chat in Blasen; Spielerfreiheit gehört auch ins Gespräch.",
+   "applies": "vor dem Gesprächs-Prototyp"
+  },
+  {
+   "id": "V-1068",
+   "date": "2026-10-31",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Georg 31.10. an WS1 (Q-013): HUD v6 wird jetzt hinter hud=v6 eingebaut, N-002 für dieses Vorhaben aufgehoben; Gespräch, Rucksack und Deck-Viewer auf derselben Grundlage danach bei WS0; kein paralleler HUD-Zweig bis zur Übergabe. Echte Karte mit Kanon-Kante ist Standard (cardart=0 = Platzhalter). Steine: neuer Stand bleibt Standard (stones=v904 = alt), korrigiert A-011. Kristall-Laternen leuchten am Tag leicht (widerruft c3g noGlowByDay), Adern aus.",
+   "values": {},
+   "owner": "WS1",
+   "check": "hud=v6",
+   "source": "WS1 Q-012, Q-013",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das alte HUD verdirbt das Testen.",
+   "applies": "bei HUD-Übergabe"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
