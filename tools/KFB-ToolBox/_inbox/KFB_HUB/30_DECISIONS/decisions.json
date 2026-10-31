@@ -15598,6 +15598,21 @@
    "applies": "bei Flug und MiB"
   },
   {
+   "id": "V-1074",
+   "date": "2026-10-31",
+   "area": "Site",
+   "verdict": "DECISION",
+   "text": "Site-Update R5.2 (b260) entfällt, Georgs Frage 31.10.: Paket aus 72fbb25 ist der Start-Commit von WS1, alles davon steckt in game/integration-r2 und ist überholt (HUD v6, echte Karten). Getestet wird über WS1s Abnahme-Seite; neues Site-Paket erst nach dem Merge.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub b260",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kein Auslieferungs-Aufwand für einen überholten Stand.",
+   "applies": "nach dem Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
