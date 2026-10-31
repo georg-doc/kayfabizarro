@@ -1,0 +1,213 @@
+{
+  "scope": "Read-only source audit; no runtime or asset payload",
+  "files": [
+    {
+      "target": "game/weapon-profile.v1.mjs",
+      "source": {
+        "key": "game",
+        "repo": "georg-doc/KFB-Stunt-Car-Race",
+        "ref": "game/integration-r2",
+        "sha": "b09ba49d7ce4804c50442faf300e4ace8196ea61",
+        "date": "2026-10-31T19:22:22Z",
+        "message": "IR2 Himmel: zwölf gemalte Planeten von WSA (N-023, V-1116) über die Naht der Körper in sky-r1 – ein Atlas (scripts/sky/build_planet_atlas.py, Register r4, Rand ausgeblutet), Zuordnung Art → Planeten als Daten in kfb-sky-r1.json (Ring = Ringplanet), Wahl je Körper aus der Saat, am selben Himmel verschieden; Platzierung, Größen und Luft bleiben beim Verteiler. N-023 offene Punkte: kein heller Rand (keine Limb-Aufhellung), nahe Wolken überdecken Körper höchstens zu 15 %. planets=0 = Shader-Körper (Vergleich). Mip-Stufe aus der Pixelgröße (kein Rahmen am Zellrand). skyShots: EXTRA/TAG\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+      },
+      "path": "src/vendor/combat/weapon-profile.v1.mjs",
+      "gitBlob": "9e4713557e2f6509cdf3d4e037cc5f4f821d44c3"
+    },
+    {
+      "target": "arena/weapon-profile.v1.mjs",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "modules/combat/weapon-profile.v1.mjs",
+      "gitBlob": "8d551dd779dfea94d2c963b0c922f5e519847158"
+    },
+    {
+      "target": "game/muzzle-sources.v1.mjs",
+      "source": {
+        "key": "arenaOpen",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/openworld-modules-v584-2026-10-21",
+        "sha": "cb0d93cf3d4542c15f70f88ce2ab08d418374049",
+        "date": "2026-10-21T03:39:24Z",
+        "message": "V584 job 3: package four independent combat modules and contract tests for WS1"
+      },
+      "path": "modules/combat/muzzle-sources.v1.mjs",
+      "gitBlob": "11fbcf7a284a9613ef39facebc6bda9492457794"
+    },
+    {
+      "target": "arena/muzzle-sources.v1.mjs",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "modules/combat/muzzle-sources.v1.mjs",
+      "gitBlob": "11fbcf7a284a9613ef39facebc6bda9492457794"
+    },
+    {
+      "target": "profiles/pistol.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/pistol.json",
+      "gitBlob": "394e1b8fb7cfa8097f9136ebde0bec79bc48beb3"
+    },
+    {
+      "target": "profiles/blaster.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/blaster.json",
+      "gitBlob": "ef1ed2c9a21a4e90f2bc200b5b23afa16893f027"
+    },
+    {
+      "target": "profiles/action-rifle.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/action-rifle.json",
+      "gitBlob": "434255d83906909a39177ad1e4c44130b338e5a4"
+    },
+    {
+      "target": "profiles/crossbow.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/crossbow.json",
+      "gitBlob": "1baf59a9e951fc7a3d6e16d45d76db5db076f63c"
+    },
+    {
+      "target": "profiles/gatling.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/gatling.json",
+      "gitBlob": "93cef1fb3f2d1a0f110cd457c5644f268964d856"
+    },
+    {
+      "target": "profiles/smoke.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/smoke.json",
+      "gitBlob": "9d1fb8e114423606c7ebee36acd2de3cab74120e"
+    },
+    {
+      "target": "profiles/blade.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/blade.json",
+      "gitBlob": "e87e08f77490be751dbba10d1ffbca1e7cc233b6"
+    },
+    {
+      "target": "profiles/wand.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/wand.json",
+      "gitBlob": "a9dd4d4d9185a6d7523c8b42839654fca4b2e3c3"
+    },
+    {
+      "target": "profiles/skeleton-staff.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/skeleton-staff.json",
+      "gitBlob": "48c367df04437c5db0c22a1a7d939a47840fef62"
+    },
+    {
+      "target": "profiles/staff.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/staff.json",
+      "gitBlob": "94e56903b5e74d70f81ddfd3ae24fc16e000a3eb"
+    },
+    {
+      "target": "profiles/bow-a.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/bow-a.json",
+      "gitBlob": "cd144ba40bd984bd2a3672077c1500728366b35c"
+    },
+    {
+      "target": "profiles/bow.json",
+      "source": {
+        "key": "arenaK10",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "ref": "wsa/k10-weapon-families-2026-10-21",
+        "sha": "8ef6740621479f931ac288b4c379333c5d5e05a1",
+        "date": "2026-10-21T15:18:06Z",
+        "message": "Connect K10 weapon families to Arena combat on isolated WSA slice"
+      },
+      "path": "combat-arena-v5/k10/profiles/bow.json",
+      "gitBlob": "0ca1344944ccb2fdfa26f6bd79550ee485f13b84"
+    }
+  ]
+}
