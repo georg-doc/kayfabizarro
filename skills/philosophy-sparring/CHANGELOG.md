@@ -96,3 +96,15 @@
 - `TEST_REPORT_R4.md` verified evidence: `f51dcfa8a1579ab02e715b7b722a441b42d62e47`; **6/6** Readbacks und **14/14** statische Checks PASS; **0** reale G12/G13-Dialoge oder Autor-Abnahmen.
 - Keine KFB-Runtime, kein Hub-/Site-/Stage-Write, keine Veröffentlichung privater Quelltexte, kein Merge.
 - One next gate: echter, vom Nutzer/Autor bewerteter G12- oder G13-Dialog.
+
+## 2026-10-31 · R5 · RELATIONAL AUTONOMY / MEDICAL ETHICS
+
+- R4-Bestand auf dem exakten GitHub-Branch vor R5 bestätigt: bisheriger R4-Owner, 13 Golden Cases, TECH_ANTHROPOLOGY_R4 und 14/14 dokumentierte statische Checks vorhanden.
+- Ein weiteres vom Nutzer privat bereitgestelltes Word-Manuskript textgebunden analysiert. Original, Titel, Personenidentität, Zitate und Einzelreferenzen **nicht** in Public GitHub persistiert. Private Analyse liegt als separates Chat-Artefakt vor.
+- Öffentliche **generische** Regel `RELATIONAL_AUTONOMY_R5.md`: relationale Selbstbestimmung ist kein Zwang zur Zustimmung oder Gesprächsteilnahme; Entscheidungsfähigkeit, Entscheidungsinhalt, ärztliche Fürsorge, psychologische Hypothesen, rechtliche Voraussetzungen und Freiverantwortlichkeit getrennt prüfen.
+- Quellenbasis (öffentlich): Bundesärztekammer 2019, Bundesverfassungsgericht 2020, Deutscher Ethikrat 2022, BGB §1827, AWMF S2k-Leitlinie veröffentlicht am 22.10.2026. Kein individueller Rechts-/Klinikbefund.
+- Starter v0.6, Skill, Research-Protokoll und README ergänzt; G14 und G15 als synthetische Golden Cases (15 insgesamt).
+- Implementation commit `fc412550f6659f7d8f6aac8637a663edfe9a16fa` und Test-Checkpoint `97ae6f96f1c6abfd821968ac60497dbf1df6af44` jeweils auf exaktem Branch geprüft.
+- TEST_REPORT_R5.md: 6/6 Dateireadbacks, 16/16 statische Checks PASS. Reale G14/G15-Modelldialoge: 0/2; neue Autor-Abnahmen: 0.
+- Keine zweite KFB-Runtime, kein Hub/Router-, Site-/Stage-Write, kein automatischer Merge.
+- Exactly one next gate: echter G14-Dialog, vom Nutzer/Autor anhand philosophischer Tiefe und Achtung des Patienten-Neins begutachtet.

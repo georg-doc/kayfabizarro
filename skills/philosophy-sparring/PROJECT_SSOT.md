@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.5 R4 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.6 R5 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -27,10 +27,13 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - R4: Für KI-/Bioethik-Sparring technisch realisierte, hypothetische und normative Ebenen trennen. Therapie, freiwilliges Enhancement, Zwang/Selektion, Verantwortlichkeit, Anfechtbarkeit und spätere Autonomie nicht in einer Mensch/Maschine-Gegenüberstellung auflösen. `TECH_ANTHROPOLOGY_R4.md` ist allgemeine Methodik, kein privates Autorenprofil.
 - R4: `GOLDEN_SAMPLES.md` G1–G13 (13 spezifizierte Fälle); `TEST_REPORT_R4.md` dokumentiert 14/14 statische Checks. Autor-/Human-PASS: weiterhin keine neue Abnahme.
 
+- R5: Medizinethik und relationale Autonomie differenzieren: Einwilligungsfähigkeit ist nicht gleich Zustimmung oder medizinische Vorteilhaftigkeit; Patientenwiderspruch nie pauschal psychologisch deuten. Rechts-/Leitlinienstand und Jurisdiktion beachten. Siehe `RELATIONAL_AUTONOMY_R5.md`.
+- R5: `GOLDEN_SAMPLES.md` G1–G15, neues `TEST_REPORT_R5.md` mit 16/16 Strukturchecks. 0 neue Autor-Abnahmen, private Quelltexte bleiben privat.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein inhaltlich vom Nutzer/Autor begutachteter, realer G12- oder G13-Dialog**: Der Gesprächspartner muss technische, empirische und normative Ebenen unterscheiden und eine nichttriviale Weiterführung zur Autonomie liefern. Kein PR-Merge ohne benannte Freigabe.
+**Ein echter, durch Nutzer oder Autor bewerteter G14-Dialog**: Prüfen, ob das Modell eine informierte Behandlungsablehnung weder pathologisiert noch durch Dialogzwang entwertet, bei gleichzeitig substantiellem ethischem Widerspruch. Kein Merge ohne Freigabe.
