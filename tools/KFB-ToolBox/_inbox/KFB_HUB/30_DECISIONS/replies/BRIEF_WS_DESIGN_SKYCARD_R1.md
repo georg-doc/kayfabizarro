@@ -11,15 +11,15 @@ Georg: Über einem Kartenviertel soll das Deck von weitem lesbar sein. Statt Bil
 **Vorlage:** `~/Dropbox/CLAUDE/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html` als Code, Bild `KFB Card Zone Lab v2/KFB Style References/Card Zone Lab v2 Bildschirmfoto 2026-09-22 um 01.13.13.png`. Übernimm aus dem Lab:
 - den Schleier (`holoU`, ab Zeile 1208): vier wabernde Bahnen von den Zonenecken zu den Kartenecken;
 - `tickCard` (ab Zeile 2240): Zero-G-Drift, träge zur Kamera, aus der Nähe ruhig;
-- `spin` und das Aufdecken bei Annäherung.
+- das Aufdecken bei Annäherung. Eine eigene Drehung der Karte kommt nur dazu, wenn sie aus der Ferne hilft; `spin` im Lab ist die Kamera.
 Nachbauen heißt übernehmen, kein neuer Entwurf.
 
 ## Bau auf `design/kartengebaeude-r1`, hinter `skycard=1`
-- Ein Modul, das eine Karte und eine Zone nimmt. Inhalt ist das Cover des Decks, aus demselben Weg wie der Deck-Viewer; Kante aus `module/card-edge-r1`.
+- Ein Modul, das eine Karte und eine Zone nimmt. Inhalt ist das Cover des Decks, aus demselben Weg wie der Deck-Viewer; Kante aus `module/card-edge-r1` (Stand a8554963, noch nicht im Stamm; prüfe die ferne Karte, die dort ungeprüft ist).
 - Größe und Höhe so, dass die Karte aus der Spielkamera von weitem lesbar ist und nichts verdeckt. Du entscheidest sie selbst nach Bild.
-- Das Licht läuft über das eine Rig (V-385). Der Schleier nimmt die Farben der Viertel-Palette.
+- Die Karte läuft über das eine Rig (V-385). WS0-Entscheidung auf Georgs Wunsch nach dem Kraftfeld: Der Schleier ist ein Effekt wie im Lab und darf additiv leuchten. Er wirft kein Licht auf Figuren oder Boden. Er nimmt die Farben der Viertel-Palette.
 - Viertel heilen (V-1002): Ist das Viertel geheilt, sinkt die Karte in den Almanach mit dem vorhandenen Kartenflug. Fehlt dafür noch der Auslöser, melde das, und zeige es per Testknopf.
 - Der Cover-Aufsteller bleibt, bis Georg geurteilt hat. Modelle ändert nur WSB (V-1065).
 
 ## Rückgabe an WS0, dann Stopp
-Einzelbilder in voller Größe (V-1100): von weitem aus der Spielkamera, vom Rand des Viertels, darunter stehend, dazu ein kurzes Video mit Drift und Schleier. Je Bild ein Satz, was abzunehmen ist. Bildraten-Vergleich im selben Lauf, Schleier kostet Pixel (V-1090). Branch, Commit, Tests, was ungeprüft ist. Kritiker höchstens einmal, eine Reparaturrunde je Befund. Merge nur mit Georg.
+Einzelbilder in voller Größe (V-1100): von weitem aus der Spielkamera, vom Rand des Viertels, darunter stehend, dazu ein kurzes Video mit Drift und Schleier. Je Bild ein Satz, was abzunehmen ist. Messung gepaart mit und ohne `skycard=1` über das 1×1-Readback-Tor (`gpuGate` in `spike/main.js`, V-1094, V-1097), gleiche Kamera, dpr 1, ohne HUD, Fremdlast nennen; Unterschiede unter 20–30 % gelten als nicht belegt (V-1090). Branch, Commit, Tests, was ungeprüft ist. Kritiker höchstens einmal, eine Reparaturrunde je Befund. Merge nur mit Georg.
