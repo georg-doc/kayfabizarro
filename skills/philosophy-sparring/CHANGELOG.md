@@ -155,3 +155,8 @@
 ## 2026-10-31 · Standalone P1
 
 User-authorized private Site entry surface deployed through native Sites. Public R9 methodology reused, no private corpus or private destination identifiers published here. Prompt/mode preparation and note export implemented; no model backend. Syntax check passed; browser and Free visitor acceptance outstanding. Details and one next gate: RETURN.md. No merge or KFB runtime integration.
+
+
+## 2026-10-31 · URL-first R9 decision and evidence
+
+User superseded API/embedded chatbot and ChatGPT Project setup direction: one portable GitHub entry for ordinary ChatGPT/Perplexity; Site administration only. START.md R9-URL-1 added, with compact standalone rules, two synthetic examples, demand-loaded R9 references, honest source status, living-document change proposals and markers. SOURCE_INTAKE.md defines repeatable original-source and prompt updates. TEST_REPORT_URL_R9.md records actual browser evidence: ChatGPT GitHub content/markers reproduced (initial UI error; raw failed); Perplexity Free GitHub and raw retrieval failed. Cross-platform URL-only gate remains OPEN. Six of seven original source candidates recovered privately; exact remaining source missing. No original texts/private analysis published. No API, merge or KFB runtime changes.
