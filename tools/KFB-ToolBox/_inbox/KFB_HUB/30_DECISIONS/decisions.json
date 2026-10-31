@@ -15418,6 +15418,36 @@
    "applies": "bei Nutzung der Dossiers"
   },
   {
+   "id": "V-1062",
+   "date": "2026-10-31",
+   "area": "Assets",
+   "verdict": "DECISION",
+   "text": "WSB-Lieferung übernommen (assets/private @3411c83, additiv, 9188 Dateien): Rakete r1e mit sieben Farbzonen, Cape R1, MiB V1. Georg 31.10.: Rakete in getrennten Zonen (rot, weiß, Flossen, Rand des Bullauges) für spätere Skins und eventuell andere Flugweisen; Cape als figurenbasierte Flugoption neben der Rakete; beide auch für große Rigs, Fokus zuerst Medium. Abnahme bleibt die Spielaufnahme. Offen: kein Flug-Clip für Rig_Large gefunden, Cape-Schleifen noch nicht in three.js gelaufen. push_private_assets.sh jetzt additiv, baute vorher den Baum aus der Liste und hätte Fehlendes entfernt.",
+   "values": {},
+   "owner": "WSB/WS0",
+   "check": "assets/private",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will Skins und verschiedene Flugweisen später ohne Neubau; Cape ist die zweite Flugoption.",
+   "applies": "bei Rakete und Cape"
+  },
+  {
+   "id": "V-1063",
+   "date": "2026-10-31",
+   "area": "Assets",
+   "verdict": "FACT",
+   "text": "Prop-Pool R2 von WSA eingegangen und auf GitHub geprüft: öffentlich 2330 Einträge aus 25 Packs, privat 6136 aus 63 Packs, 173 neue Modelle bestanden, Prüfbericht PASS, ursprüngliche 257 Spielkacheln unverändert. Klassen und Themen sind automatische Etiketten, keine Spielabnahme. Echte Lücke für den Einbau: Wüste und Pastell haben im öffentlichen Teil 0 Steine, Mesa 4, Gras fast nur Moos. Einbau nach So, Kachelliste über den Kanal (N-007).",
+   "values": {},
+   "owner": "WSA",
+   "check": "Prop-Pool R2",
+   "source": "WSA 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Katalog ist Bestand, nicht Abnahme.",
+   "applies": "beim Einbau der Kacheln"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
