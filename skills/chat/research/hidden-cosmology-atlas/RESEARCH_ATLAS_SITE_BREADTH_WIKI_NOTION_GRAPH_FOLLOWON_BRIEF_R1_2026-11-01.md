@@ -1,3 +1,15 @@
+## CURRENT META-NAVIGATION / VISUAL RESEARCH QA ADDENDUM · 2026-11-01
+
+**User direction:** in-place extension of the existing private **KFB Research Atlas Site** to a graphically navigable, **source/provenance and version-auditable** research surface. No second Site/project, Notion SSOT or arbitrary graph database. Current candidate source view is [R2 ten-cluster/91-node census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R2_2026-11-01.json), *not 91 independently verified biographies*. Current source graph and owner rules are [Graph Provenance, Quality & Versioning R1](ATLAS_GRAPH_PROVENANCE_QUALITY_AND_VERSIONING_CONTRACT_R1_2026-11-01.md); older seven-cluster language below is historical.
+
+**Add to the planned reader**: ten-cluster semantic zoom → author/institution source Wiki → evidence-scoped ego graph → source/claim inspector → **Git revision history / corrections** → research opportunity list. Four edge layers: documented/reported historical, author-asserted, conceptual noncausal/Warburg, disputed/open/retracted. Edges should carry **type labels, source IDs, dates and counterevidence** so color/geometry alone never implies control. A `Compare earlier Git SHA`/ `Why this edge changed` view reveals corrected relations and source attribution, including known WCC person-identity and BPF/Moneyrex correction and JM textual scope shift. Show independent QA owner/agent run only if recorded. A changed graph layout is not a historical revision.
+
+**Actual source donors must be visually isolated first**: current Site/Hub source UI, optional sanitized private NIE design and source-proven Deck art as *creative* layer. Fed/Vatican/Secret Societies sources are research subjects, not Card Lore factual endorsements; named author is **Dark Journalist / Daniel Liszt**, not a new “Dark Jungle” owner. Source Wiki and graph must draw from existing GitHub Markdown/JSON, Notion only as a subsequent read-only linked-view pilot with user-authorized one-way sync proof. No authenticated Site behind-login publication checks happened in this planning update.
+
+**One Site receiving gate** remains `ATLAS_SITE_BREADTH_INDEX_INTAKE_01`, after real WSA dossier intake; official owning work next gate `ATLAS_BREADTH_CORPUS_BATCH_AB_01` continues. Do not ship graph-looking placeholders just to display all candidates.
+
+---
+
 # Research Atlas GPT Site · Breadth-First Corpus, Wiki / Notion / Graph Follow-On R1
 **Date:** 2026-11-01. **New user priority:** BREADTH-FIRST AUTHOR LANDSCAPE AND NETWORK EXPLORATION. **Receiving owner:** existing privately published `https://kfb-research-atlas.frizzlebob.chatgpt.site/`, *not a second Research Site*; parent editorial source owner `georg-doc/kayfabizarro/skills/chat/research/hidden-cosmology-atlas/`, branch `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394. **Status:** FOLLOW-ON BRIEF ONLY, NOT A NEW SITE VERSION, no new browser proof. Preserve current deployed R1/site project identity, KFB brand and Puharich reference.
 **Source-of-truth:** existing Atlas GitHub author Markdown, topic source/claim/typed relation ledgers; Site/Notion derived indexes are views, never an independent source editor.
