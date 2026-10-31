@@ -1,3 +1,20 @@
+## CURRENT TOPIC RETURN · 2026-10-31 · MONEYREX ARCHIVE ACCESS R4
+
+**Outcome:** Specific original-custody route identified; **neither requested target original has yet been acquired**. Published original `Gazzetta Ufficiale` Moneyrex company notices **1990-05-04** (M-5488), **1994-05-10** (M-4304), **1995-04-10** (M-3658), and 1981-04-30 declassified *Camera dei deputati* Sindona Commission **Banca d’Italia document 2** were located. Original Gazette public notices are source evidence for corporate identity/liquidation notices; the **1981 letter is catalogue only**, no page scan or full content inspected.
+
+**Most actionable identity:** `Moneyrex – Euro Market Money Brokers S.p.A., Milano, Corso Monforte 45`, court registry `125461/3208/11` (1990 & 1994) or `125461/3608/11` (1995 printed variant). `Antonio Castelli` liquidator in 1990/1995, capital `L. 50,000,000`. These dates do not establish *historical 1964–72 shareholders* or successful final liquidation in 1995.
+
+**Two official direct requests ready, NOT SENT:**
+- `ars_segreteria@camera.it` for Italian Parliament original **Apr 30, 1981 Bank of Italy letter plus annexes**, precise archival signature and any digital scan.
+- `archivio@mi.camcom.it` for pre-1996 **Moneyrex share/board/Tribunal company file 1964–1972**; `certificati.libri@mi.camcom.it` for ceased-company fallback. Current official Chamber form `MO-CC07` available. Exact neutral Italian draft texts in [R4 archive plan](MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md).
+
+**Evidence:** New [R4 archive access and source IDs](MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md) + [R4 test evidence](TEST_REPORT_R4_2026-10-31.md); **6 new WC-S41..46 + 6 new WC-C45..50**; cumulative **46 source/input records / 50 claims**, prior 29 documentary and 15 numbered noncausal edges unaffected. **12/12 actual static checks PASS**; target source originals acquired **0**, archive emails sent **0**, original PDF screenshot verifications **0**. Published 1990 original Gazette PDF text read with screenshot failure; other official register/custody texts read via searchable official HTML. No inferred ownership by Hambros or World Commerce Corporation.
+
+**Owner:** `georg-doc/kayfabizarro` / `research/hidden-cosmology-atlas-2026-10-13` / [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Current GitHub head is the verified branch ref after this Return. No Stage/Hub/Main route touched: research only, no auto-merge/promote.
+
+**Exactly ONE next gate — `WCC_MONEYREX_ARCHIVE_ORIGINALS_RECEIPT_R1`:** submit the two formal archival requests, obtain complete original letter and 1964–72 Moneyrex company files or officially documented absence/access route; then page-image and custody verification and only then decide whether direct legal `Hambros→Moneyrex` / `WCC→Moneyrex` edges exist.
+
+---
 ## CURRENT TOPIC RETURN · 2026-10-29 · SAMOSA WCC R3 ADDITIVE SOURCE AUDIT
 
 **Result:** The user's updated four-tab `KFB Author Dossier: Jason Samosa (WCC & Deep State Cartographer)` was read through the exact connected private Google Doc (observed **124,543 chars**, one old transcript + worldview/creative dossier + two substantial new research appendices). Older R2 `KFB Author Dossier: Jason Samosa` (39 chapters, 101,163 characters) remains a separate document. Both originals **untouched**. Private source text and IDs not republished.
