@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.4 R3 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.5 R4 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -24,10 +24,13 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - R3: Wenn die vom Nutzer bezeichnete Originalfassung eine vorherige Bearbeitung ersetzt, müssen Deutungen und Belegstatus der Bearbeitung explizit superseded werden. Methodik: `SOURCE_FIDELITY_R3.md`, `TEST_REPORT_R3.md`. Keine Veröffentlichung privater Originale.
 - R3: 11 Golden-Cases dokumentiert, G10 Original vs. Derivat, G11 Fußnoten pro Version. Strukturelle R3 Checks 12/12; keine neuen Autor-Abnahmen.
 
+- R4: Für KI-/Bioethik-Sparring technisch realisierte, hypothetische und normative Ebenen trennen. Therapie, freiwilliges Enhancement, Zwang/Selektion, Verantwortlichkeit, Anfechtbarkeit und spätere Autonomie nicht in einer Mensch/Maschine-Gegenüberstellung auflösen. `TECH_ANTHROPOLOGY_R4.md` ist allgemeine Methodik, kein privates Autorenprofil.
+- R4: `GOLDEN_SAMPLES.md` G1–G13 (13 spezifizierte Fälle); `TEST_REPORT_R4.md` dokumentiert 14/14 statische Checks. Autor-/Human-PASS: weiterhin keine neue Abnahme.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein vom Autor oder Nutzer begutachteter Dialog an der ausdrücklich als Original bezeichneten Manuskriptfassung**; dabei muss der Gesprächspartner nachweislich das Original und nicht eine Bearbeitung auslegen und eine sachlich neue Konsequenz liefern. Kein PR-Merge ohne benannte Freigabe.
+**Ein inhaltlich vom Nutzer/Autor begutachteter, realer G12- oder G13-Dialog**: Der Gesprächspartner muss technische, empirische und normative Ebenen unterscheiden und eine nichttriviale Weiterführung zur Autonomie liefern. Kein PR-Merge ohne benannte Freigabe.

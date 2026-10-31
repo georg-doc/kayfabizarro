@@ -84,3 +84,15 @@
 - R3 Evidence checkpoint: `3b7b028cfe164de58b92e5b7c64c4b9cf2704963`; `TEST_REPORT_R3.md` dokumentiert **6/6 GitHub-Readbacks, 12/12 statische Strukturchecks PASS**.
 - Keine Autor-/Human-Abnahme, keine neue App/Runtime, kein Site-/Stage-/Hub-Write, kein Merge.
 - Next gate: ein echter, anhand der autorisierten Originalfassung begutachteter vertiefender Dialog.
+
+## 2026-10-31 · R4 PRIVATE SOURCE INTAKE / GENERALIZED TECH ETHICS SKILL
+
+- Ein weiteres Originaldokument zur Philosophie von KI, Anthropologie und Bioethik ausschließlich privat textgebunden ausgewertet; keine private Quelle, Identität, Manuskriptstelle oder Bibliografie öffentlich publiziert.
+- Quellenprüfregel erweitert: Deep Learning ist nicht identisch mit AGI, starkem KI-Begriff, Superintelligenz oder Bewusstsein; Technisch-Mögliches nicht mit moralisch Zulässigem gleichsetzen.
+- Therapie, freiwilliges Enhancement, soziale Normierung, künftige Personen und algorithmische Verantwortlichkeit getrennt behandeln.
+- Externe Forschungsdonors: Stanford Encyclopedia of Philosophy (Human Enhancement, Ethics of Artificial Intelligence) und offizielle EU-AI-Act-Zeitachse.
+- `STARTER_PROMPT.md` auf v0.5 R4, `SKILL.md`, `RESEARCH_PROTOCOL.md`, `README.md` aktualisiert; `TECH_ANTHROPOLOGY_R4.md` neu; `GOLDEN_SAMPLES.md` um G12–G13 auf **13** Fälle erweitert.
+- Implementation checkpoint: `c14793a0de81dd18e965acde8744efc1d8a4fea0`.
+- `TEST_REPORT_R4.md` verified evidence: `f51dcfa8a1579ab02e715b7b722a441b42d62e47`; **6/6** Readbacks und **14/14** statische Checks PASS; **0** reale G12/G13-Dialoge oder Autor-Abnahmen.
+- Keine KFB-Runtime, kein Hub-/Site-/Stage-Write, keine Veröffentlichung privater Quelltexte, kein Merge.
+- One next gate: echter, vom Nutzer/Autor bewerteter G12- oder G13-Dialog.

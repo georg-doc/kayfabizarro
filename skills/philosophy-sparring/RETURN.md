@@ -1,41 +1,37 @@
-# RETURN · Philosophy Sparring v0.4 R3 · Source Fidelity
+# RETURN · Philosophy Sparring v0.5 R4
 
-Date: 2026-10-31  
-Status: **R3 IMPLEMENTED · STATIC PASS · HUMAN REVIEW PENDING · DRAFT PR**  
-Owner: Philosophical Sparring Skill only  
-Repo: `georg-doc/kayfabizarro` (public source)  
-Branch: `planning/philosophy-sparring-webchat-mvp-2026-10-31`  
-Draft PR: https://github.com/georg-doc/kayfabizarro/pull/463 (OPEN, UNMERGED)  
-Latest checkpoint before this Return write: `3b7b028cfe164de58b92e5b7c64c4b9cf2704963`  
-**Read exact branch HEAD afresh**; this return itself creates a later commit.
+Date: 2026-10-31
+Status: R4 IMPLEMENTED · STATIC PASS · PRIVATE MODEL ANALYSIS · HUMAN_REVIEW_PENDING
+Owner: Philosophy Sparring Content; only one content owner
+Repository: georg-doc/kayfabizarro (public code/skill)
+Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31
+Draft PR: https://github.com/georg-doc/kayfabizarro/pull/463 (unmerged)
+Implementation checkpoint: c14793a0de81dd18e965acde8744efc1d8a4fea0
+Evidence checkpoint: f51dcfa8a1579ab02e715b7b722a441b42d62e47
+Current HEAD: read exact branch ref after this Return commit.
 
-## Actual result
+## Delivered
 
-The user explicitly identified a previously discussed source as an editorial derivative rather than the intended original. The earlier interpretation was dependent on the wrong source and is **SUPERSEDED for claims about the original author**. We reviewed the original privately, compared the real argumentative structure, and verified that different versions can contain distinct note apparatuses. The correction is **not** a defect or criticism of the author.
+- Self-contained German Starter Prompt v0.5, model-agnostic and webchat-first.
+- New generic technology/anthropology argument gate: separate actual technological capabilities from futures, inference and normative license; identify contestability, accountability, non-domination and future-person agency.
+- Existing prompt, skill and research protocol updated; R4 method added in `TECH_ANTHROPOLOGY_R4.md`.
+- Golden Samples now G1–G13 (two new fictional cases); no automatic assumption of success.
+- Existing R1–R3 research, Original/Adaptation Source Fidelity and negative Golden findings retained.
 
-Public source documents updated:
-- `SOURCE_FIDELITY_R3.md` (new generic original-vs-adaptation rule).
-- `STARTER_PROMPT.md` v0.4; `SKILL.md`, `RESEARCH_PROTOCOL.md`, `README.md`.
-- `GOLDEN_SAMPLES.md`: G10 source-version correction and G11 edition-specific citation structure, 11 cases total.
-- `TEST_REPORT_R3.md` (new static evidence).
-- `PROJECT_SSOT.md`, `CHANGELOG.md`, `RETURN.md` (owner handoff).
+## Actual checks
 
-## Evidence
+- Six of six changed/new files read directly from the exact branch.
+- Fourteen of fourteen static-content checks PASS in `TEST_REPORT_R4.md`.
+- A source-grounded private model exploration occurred in the conversation; its manuscript-specific details are not copied to this public repository.
+- No author/user acceptance of G12 or G13. No independent external-model comparison, CI, Site/Stage or browser deployment. No Stage link required.
 
-- Direct GitHub readback: **6/6** affected source files.
-- **12/12** structural checks PASS, including privacy protections. See `TEST_REPORT_R3.md`.
-- One private DOCX-original-vs-adaptation comparison with underlying note-structure inspection; detailed data provided only as separate private chat artifact.
-- **0** new author/human acceptance results; **0** model-to-model comparative executions. The earlier G7 FAIL feedback remains recorded and is not overwritten by static checks.
-- No public source deployment, KFB runtime, Hub/Router, Site or Cloudflare update. No Stage URL for this documentation-only slice.
+## Unresolved and deferred
 
-## Protected boundaries
-
-Private original manuscripts, author identities, exact titles, complete citations, document hashes and private interpretive profiles are **not** copied to the public repository. This project owns only a public generic method; it does not become an owner of private files, KFB Author Dossiers, ChatterBox or game runtime. No auto-merge/Live promotion.
-
-## Unresolved
-
-The currently available manuscript analysis is model-generated and not validated by the author. The new prompt rule still requires live dialogue testing. Public source URLs should not be presented as proof a Free-plan LLM has opened them.
+- Relevant external philosophical and regulatory sources support research leads; they do not validate each cited statement of any original work.
+- Real dialogue style, handling of genuine disagreement and sophistication of a whole cross-essay discussion require author/user evaluation.
+- Personal unpublished text, sources and interpretations stay private. No new GitHub Inbox repository was created by this slice.
+- KFB Dossiers, world, NPC, ChatterBox, Hub, audio and publishing owners remain unchanged; no auto-merge or Live promotion.
 
 ## Exactly one next gate
 
-**Real author- or user-reviewed, text-grounded continuation on the designated original**, verifying that the model preserves its actual argument hierarchy and develops a meaningful new line of reasoning rather than a textbook distinction.
+A genuine user/author-reviewed G12 or G13 conversation: compare the argument to the original privately, require a nontrivial, evidence-conscious continuation and then revise only the smallest demonstrably weak behavior.
