@@ -16048,6 +16048,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1104",
+   "date": "2026-10-31",
+   "area": "Figuren",
+   "verdict": "PLAN",
+   "text": "Figuren-Quelle und Augen (Georg 31.10., WS1 Q-019). Befund WS0: Es wird kein externer Code geladen; beim Start vermisst der Vendor facehost für jede Figur mit KFB-Augen das gehäutete Netz neu, rund 2 s Hauptfaden je Figur. Das Register CHARACTERS_R1 und die Figurenkarten kfb.figure/1 sind die vorgesehene Quelle (V-394, V-682), im Spiel aber nur teilweise: Der gepinnte Snapshot registry.r1.json trägt nur einen Teil der Felder (keine preferences), Körper und Karten stehen zusätzlich in der OVERRIDE-Tabelle von build-playable.py, Augenprofile in Batch-Dateien und cast-review.r1.json, FrizzleBob in eigenen Rezepten. Entscheidung: 1) Sofort WS1: Q-019 Variante a, Face-Host-Ergebnis je Modell-Hash als Bau-Schritt vorberechnen, Vendor unverändert in einer Hülle, Rückfall auf Messung, Bildgleichheit als Test. 2) Zielbild: je Figur eine Karte als Quelle und ein fertig gebautes GLB (Körper, Augen, Lider, Mund, Teile als benannte Knoten, Hash in der Karte), Clips je Rig-Familie getrennt, das Spiel liest nur. Ein Bau-Schritt erzeugt die Laufzeit-Daten aus Register und Karte, OVERRIDE entfällt. Pilot WSB nach dem Merge: eine einfache Medium-Figur, Bildvergleich gegen heute, FrizzleBob zuletzt, weil seine Ohren und sein Gesicht abgenommen sind.",
+   "values": {},
+   "owner": "WS1 · WSB · WS0",
+   "check": "Bildgleichheit, Startzeit, Pilot-Figur",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Dieselbe Rechnung bei jedem Start und mehrere Listen sind genau die Bastel-Stellen, die Georg vermeiden will; fertige Figuren machen sie überflüssig.",
+   "applies": "a sofort, Pilot nach dem Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
