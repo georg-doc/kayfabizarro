@@ -150,3 +150,8 @@
 - Work/Sites ist Konzept und technischer Feasibility-Plan, keine gebaute Site. EWR-Verfügbarkeit und Free-Besucherrechte sind im Erstellerkonto zu verifizieren.
 - Kein KFB-Hub-/Router-/Runtime-/Cloudflare-/Stage-/Site-Write, kein Merge und keine Live-Behauptung.
 - Next gate: Work-/Sites-Feasibility ohne private Datenfreigabe; bei Limitierungen Free-Projekt/Webchat.
+
+
+## 2026-10-31 · Standalone P1
+
+User-authorized private Site entry surface deployed through native Sites. Public R9 methodology reused, no private corpus or private destination identifiers published here. Prompt/mode preparation and note export implemented; no model backend. Syntax check passed; browser and Free visitor acceptance outstanding. Details and one next gate: RETURN.md. No merge or KFB runtime integration.
