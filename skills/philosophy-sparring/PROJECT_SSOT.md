@@ -1,3 +1,23 @@
+## Current · Nine originals and public reader · 2026-10-31
+
+Canonical public reading entry: https://philosophie-leseraum.frizzlebob.chatgpt.site/
+Existing owner: philosophy-sparring. Repo georg-doc/kayfabizarro. Branch planning/philosophy-sparring-webchat-mvp-2026-10-31; PR https://github.com/georg-doc/kayfabizarro/pull/463 remains unmerged.
+Implementation head 7ec704dcbf696b12ed4d759e52d70795a0ce6f99; evidence head ae38f2d7dd8518dcfbc8296350c7a920e41a5a06. Fetch exact final branch head after this Return write.
+
+S3 KI/Transhumanismus, S8 Hawking (2019 per user), S9 Glaubensbekenntnis added by explicit publication authorization. Nine original extracted texts now public. INTEGRATION_S3_S8_S9.md adds bounded textual analysis, external bibliographic references, prompt deltas and three unrun synthetic cases. START is R9-URL-3. Personal correspondence, private analysis and external full articles excluded.
+
+Public reader Site v1, source db615ecb0a9ef1cdffc652641ba37d456e72eb5e; native deployment succeeded and exact hosted landing page visibly shows R9-URL-3. Public access read back; anonymous configuration HTTP 200 after normal redirect. Two-button minimal UI. Source/rebuild instructions in reading-site/. Private administration stays private.
+
+Checks: 6/6 original implementation readbacks; 11/11 reader/evidence readbacks; 9/9 output TXT byte equality; local internal links PASS; independent content/privacy review CONTINUE after two bounded fixes. Layout/footnote fidelity and comprehensive mobile/accessibility audit remain unverified.
+
+Perplexity actual button click auto-submits request without copying. Configuration and S9 original retrieval both FAIL, including direct path retry. URL-only personalized dialogue is NOT accepted as reliable. No new ChatGPT host test. See TEST_REPORT_PUBLIC_READER_R9.md for exact evidence and scope.
+
+One next gate: validate a truly retrievable Perplexity source channel or an accepted compact direct-configuration fallback; require unseen-passage retrieval proof before declaring corpus integration functional. Public human reading and source publication are complete.
+
+Earlier entries below are historical and superseded where inconsistent with this current release.
+
+---
+
 ## Current · R9 public six-text release · 2026-10-31
 
 User-authorized six original texts published as extracted text in corpus/S1,S2,S4,S5,S6,S7.txt. START.md now R9-URL-2 with linked public source catalog. Exact implementation head da5b55dc7ba9804a8bb13da4aa9faf49f2cc1265; 8/8 branch file content readbacks equal. See TEST_REPORT_CORPUS_R9.md for format and evidence limits.
