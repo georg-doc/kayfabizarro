@@ -1,7 +1,7 @@
 # RETURN · Philosophischer Sparringspartner v0.2 R1
 
 **Stand:** 2026-10-31  
-**Status:** IMPLEMENTATION VERIFIED / STATIC REVIEW PASS / REAL DIALOGUE UNTESTED / DRAFT PR  
+**Status:** IMPLEMENTATION VERIFIED / STATIC REVIEW PASS / ONE PRIVATE G7 MODEL PROBE / AUTHOR REVIEW PENDING / DRAFT PR  
 **Owner:** Philosophischer Sparringspartner Sidequest (ein Inhalt-/Skill-Owner)  
 **Repo:** `georg-doc/kayfabizarro` (public)  
 **Branch:** `planning/philosophy-sparring-webchat-mvp-2026-10-31`  
@@ -32,7 +32,7 @@
 - R1 Dokumenten-Readback: **8/8** relevante Implementierungs-/Recherchedateien; **12/12** statische Strukturprüfungen PASS, siehe `RESEARCH_TEST_REPORT_R1.md`.
 - Voriger MVP Static Check: 8/8, dokumentiert in `TEST_REPORT.md`.
 - Web-/Forschungsquellen mit URLs und Grenzen dokumentiert in `RESEARCH_PATTERNS_R1_2026-10-31.md`. Zwei existierende Google-Drive-Dossiers strukturell gelesen, nicht als wahrheitsgeprüfte externe Evidenz interpretiert.
-- **0/7** Golden-Sample-Gespräche mit echten Modellen durchgeführt. **0** Vater-Essays empfangen oder analysiert.
+- **G7 einmal mit einem privaten Word-Manuskript textgebunden durchlaufen**; **0/7** Fälle mit dem Verfasser evaluiert; G1–G6 nicht ausgeführt. Manuskript/identifizierende Inhalte **nicht** öffentlich persistiert.
 - Kein Live/Site/Stage/Cloudflare; öffentlich ist lediglich der Branch-Quellcode. Keine visuelle QA/Screenshots für dieses reine Dokumentprojekt.
 
 ## Unresolved & Deferred
@@ -43,6 +43,13 @@
 - Bestehende KFB Author Dossiers weiterhin bei ihren derzeitigen Eignern. Kein neuer Dossier-Kanon oder KFB/ChatterBox-Owner.
 - Später: autorenspezifisch verifizierte Primärtexte/Editionen sowie Freigabe-/Kontextschema, bevor satirische KFB-Adaption erfolgt.
 
+## Additiver G7-Nachweis vom 2026-10-31
+
+- Erste private DOCX-Vorlage in diesem Chat gelesen; im Original keine OOXML-Fußnoten, Kommentare oder redigierten Änderungen. **Privater Inhalt und Dateiname nicht in diesem öffentlichen Return.**
+- Regelkorrektur in `RESEARCH_PROTOCOL.md` und `GOLDEN_SAMPLES.md`: Bei fehlenden Fußnoten zwei Quellenanker **vorschlagen**, nicht angeblich vorhandene Fußnoten zitieren.
+- Ergebnis bleibt **Modell-Selbsttest / HUMAN_UNREVIEWED**, nicht Golden-PASS. Der private Detailbericht liegt als separat übergebenes Chat-Artefakt, nicht im GitHub-Repo.
+- Die Änderungen sind auf dem aktuellen Branch eingecheckt; technische Grundlage: `320871d46aac6ad2c8d8d9e94a3adf648b989baa`.
+
 ## Genau ein nächstes Gate
 
-**Ein persönlich freigegebener Essay privat ablegen und einen echten G7-Test in normalem ChatGPT oder Claude durchführen.** Anschließend aus dem realen Dialog-Stil und den tatsächlichen Quellen-/Fußnotengrenzen einen gezielten v0.3-Fix ableiten. Bis dahin keine automatische Profilübernahme und kein PR-Merge.
+**Die anonymisierte G7-Gesprächseröffnung mit dem Verfasser prüfen**: Trifft die Rekonstruktion seine These und ist die Gegenfrage für ihn produktiv? Erst aus tatsächlichem Feedback Gesprächston und persönliches Profil weiterentwickeln. Keine automatische Profilübernahme und kein PR-Merge.

@@ -24,4 +24,4 @@ Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes
 
 ## Next gate
 
-**Ein reales, vom Autor freigegebenes Essay privat einlesen und G7 in einem regulären Webchat erproben**. Daraus den tatsächlichen Gesprächsstil und die Quellenarbeit gezielt überarbeiten. G1–G6 bleiben weitere Kandidaten, keine unbewiesene Gesamtabnahme.
+**Eine erste anonymisierte G7-Gesprächseröffnung dem Verfasser zur Beurteilung vorlegen**. Ein privates Manuskript wurde bereits textgebunden gelesen, jedoch noch nicht vom Verfasser dialogisch getestet oder bewertet. Erst aus dessen Feedback den Stil gezielt anpassen; übrige G1–G6 bleiben offen.

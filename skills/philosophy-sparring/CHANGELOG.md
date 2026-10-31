@@ -49,3 +49,13 @@
 - 0/7 Golden Cases in echtem Dialog getestet; kein behaupteter Produkt-/Human-PASS.
 - `RESEARCH_TEST_REPORT_R1.md` dokumentiert Prüfungen, Grenzen und Quellenstatus.
 - Next gate: privat freigegebener Essay → G7-Webchat-Dialogtest → gezielte Überarbeitung.
+
+## 2026-10-31 · FIRST PRIVATE MANUSCRIPT PROBE · G7
+
+- Ein vom Nutzer **privat bereitgestelltes** DOCX im aktuellen Chat lokal eingelesen. Der Ausgangstext und seine Identität wurden **nicht** nach GitHub kopiert; keine Veröffentlichung, kein persönliches Autorenprofil angelegt.
+- OOXML-Prüfung: im untersuchten DOCX keine Fußnoten, Kommentare oder Änderungsverfolgung vorhanden. Daraus **allgemeine** Anpassung: Nicht vorhandene Fußnoten nie halluzinieren; stattdessen zwei getrennt ausgewiesene Quellenanker vorschlagen.
+- Im Chat eine erste sachgebundene Argumentrekonstruktion und zentrale Gegenfrage erarbeitet, Quellenanker an realen Primär-/akademischen Referenzstellen gegengeprüft.
+- Teststatus: **G7 1 textgebundener Modelldurchlauf / 0 Autor-Abnahmen**; G1–G6 weiter nicht ausgeführt. Kein Abnahmesiegel für das gesamte Produkt.
+- Privater Ergebnisbericht nur als Chat-Artefakt, **nicht** im Public-Repo; Original in Drive unverändert.
+- Implementation milestone `320871d46aac6ad2c8d8d9e94a3adf648b989baa`; `RESEARCH_PROTOCOL.md` und `GOLDEN_SAMPLES.md` aus exaktem Branch zurückgelesen.
+- Kein KFB Runtime/Hub/Site/Stage Change.
