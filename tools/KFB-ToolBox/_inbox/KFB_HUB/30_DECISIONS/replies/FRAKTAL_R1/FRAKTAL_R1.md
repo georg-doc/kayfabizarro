@@ -121,3 +121,17 @@ Das Auge entscheidet weiter (V-817). **`PRUEFUNG.md` und `fraktal_ref.mjs` bezie
 ## 8 · Etherington bleibt Quelle
 
 Die Tafeln belegen, was herauskommen soll, nicht wie es gebaut wird: #161 und #162 Klein, Mittel, Groß immer wieder angewendet; #117, #170 Ruhe und Unterbrechung; #27, #28 Auswurf; #169 aus der Ferne wenige Schlüsselsteine. Belege je Term in `FRAKTAL_R1.vor_WFC.md` §2.
+
+## 9 · TUNE-Runde: Beziehung und Gelände (Stand @3f047405, Schalter `place=r3`)
+
+Überholt §1 (Vorwissen), §3 und §4 Punkte 1, 3, 5, 6. Beweis in `WFC_BEWEIS_R2/`, Herkunft jedes Werts in `WFC_BEWEIS_R2/TABELLE_HERKUNFT.md`.
+
+**Vorwissen jetzt:** Die Wahrscheinlichkeit eines Stücks oder Korns hängt von den wirklichen gröberen Objekten in Reichweite ab: Abstand zum Rand je Sorte als Kurve, Seite um das Objekt, Lücke zwischen zwei Felsen. Dazu kommen Hang, Senke, Kuppe, Wasserabstand, Straßenabstand und Sperren als Faktor. Hangab wird die Seite enger. Die Bodenplatz-Ebene setzt nur noch Objekte und unsichtbare Quellpunkte, keine Flächen-Zustände mehr; im Bild sind keine Zellformen zu erkennen. Modul `kfb-place-cascade`, keine Gruppenbauer.
+
+**Gelände im Spiel:** Weltfeste 128-m-Kacheln vom Hauptfaden, darum bleibt alles eine reine Funktion von Saat und Ort. Bäume und große Formationen sind Objekte im Vorwissen (Sperre und Bezug), berechnet auf den Kachel-Höhen.
+
+**Fast-Berühren:** Paare im Vorwissen gesperrt, in allen drei Draufsichten 0 Verstöße. Mit Bäumen und Formationen im Spiel nicht nachgezählt.
+
+**Rechenzeit im Spiel:** Neue Zelle im Worker rund 90–130 ms im Median, höchstens 170–240 ms, 850–880 Objekte im Median. Bildzeit nicht gemessen; es sind rund dreimal so viele Instanzen wie mit `place=r2`.
+
+**Noch offen:** Straße gibt es im Spiel dieses Stands nicht (`T.roadDistance` fehlt), das Straßenbild nutzt ein Prüfstück. Bodenbänder fehlen im Vorwissen, weil sie nur im Shader leben. Die Tabelle stammt aus einer einzigen Vorlage und ist nur an zwei Saaten und drei Themen angesehen. Die Pflichtliste ist nicht gelaufen.

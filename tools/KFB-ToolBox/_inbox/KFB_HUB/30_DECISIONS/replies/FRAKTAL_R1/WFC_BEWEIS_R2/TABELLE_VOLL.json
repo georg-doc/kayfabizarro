@@ -1,0 +1,1429 @@
+{
+ "schema": "kfb.place-cascade/1",
+ "source": "V-1117. Herkunft je Block in herkunft. gemessen = scripts/place/vorlage-mess.mjs an V-1078 Vorlage 5 (Bildchat, Hinweis V-148). gesetzt = Startwert. Endgültig nach kfb_place (V-749).",
+ "herkunft": {
+  "bezug.kies.fels, bezug.blume.fels, bezug.gras.fels": "gemessen, Dichte je m2 nach Abstand zum Felsrand, Kies über Korndichte auf Stücke umgerechnet",
+  "seite.kappa, seite.winkel Fels": "gemessen, Resultante 0,82 und 0,86, Winkel Kies gegen Pflanzen 93 Grad",
+  "stueck.adj kies-gras, kies-blume, gras-blume": "gemessen, nah 0,22, 0,27, 1,78",
+  "stueck.far kies-gras, kies-blume, gras-blume": "gemessen, fern 0,40, 0,52, 1,33",
+  "korn.adj kiesel-kiesel, korn.far kiesel-kiesel": "gemessen, 1,43 und 1,32",
+  "patch.far fels-fels, patch.prior geroell fels": "gemessen, Gruppenabstand Median 9,1 m, 10 Gruppen je 1600 m2",
+  "patch.objekte fels, brocken": "gemessen, Radien 0,33 bis 1,25",
+  "korn.objekte kiesel": "gemessen, Radien 0,075 bis 0,16, nach unten erweitert gesetzt",
+  "fast_beruehren": "belegt V-749",
+  "gelaende, ufer_m, luecke, seite.kappa_hang, seite.winkel_hang, Busch, Strunk, Baum, Kugel, Krume, Halm, Zonen ausser geroell": "gesetzt",
+  "nicht gemessen": "Etherington-Tafeln liegen nur als Links vor, Vorlagen 1 bis 4 sind Schrägansichten",
+  "korn.bezug kiesel.kies": "gemessen 1,0 je m2 nahe am Fels, auf Spielkosten um rund 20 Prozent gesenkt",
+  "stueck.adj blume-blume, gras-gras und far": "gesetzt nach Bild im Spiel: gemessen 1,26 und 1,1 ergab gleichmäßig gesteckte Blumen; hier stärker geklumpt"
+ },
+ "fast_beruehren": [
+  0.85,
+  1.25
+ ],
+ "ufer_m": 0.7,
+ "strasse_m": 0.4,
+ "bezugsradius_m": 0.85,
+ "tile_exclude": [
+  "kk_rock_1_",
+  "kk_rock_2_"
+ ],
+ "zone": {
+  "site_m": 32,
+  "block": 8,
+  "jitter": 0.3,
+  "states": [
+   "ruhe",
+   "geroell",
+   "wiese",
+   "beet",
+   "dickicht"
+  ],
+  "prior": {
+   "moos": {
+    "ruhe": 0.26,
+    "geroell": 0.22,
+    "wiese": 0.3,
+    "beet": 0.12,
+    "dickicht": 0.1
+   },
+   "mesa": {
+    "ruhe": 0.38,
+    "geroell": 0.28,
+    "wiese": 0.18,
+    "beet": 0.08,
+    "dickicht": 0.08
+   },
+   "wueste": {
+    "ruhe": 0.44,
+    "geroell": 0.3,
+    "wiese": 0.14,
+    "beet": 0.06,
+    "dickicht": 0.06
+   },
+   "schnee": {
+    "ruhe": 0.48,
+    "geroell": 0.36,
+    "wiese": 0.0,
+    "beet": 0.0,
+    "dickicht": 0.16
+   },
+   "pastell": {
+    "ruhe": 0.22,
+    "geroell": 0.14,
+    "wiese": 0.28,
+    "beet": 0.28,
+    "dickicht": 0.08
+   },
+   "canyon": {
+    "ruhe": 0.42,
+    "geroell": 0.28,
+    "wiese": 0.14,
+    "beet": 0.08,
+    "dickicht": 0.08
+   }
+  },
+  "adj": {
+   "geroell": {
+    "geroell": 1.6,
+    "wiese": 0.7,
+    "beet": 0.2,
+    "dickicht": 0.8
+   },
+   "wiese": {
+    "wiese": 1.6,
+    "beet": 3.0,
+    "dickicht": 2.0
+   },
+   "beet": {
+    "beet": 0.8,
+    "dickicht": 0.5
+   },
+   "dickicht": {
+    "dickicht": 1.2
+   }
+  },
+  "far": {}
+ },
+ "patch": {
+  "site_m": 4,
+  "block": 16,
+  "jitter": 0.42,
+  "zone_warp": {
+   "amp_m": 15,
+   "scale_m": 37
+  },
+  "states": [
+   "leer",
+   "fels",
+   "brocken",
+   "busch",
+   "strunk",
+   "grasquelle",
+   "blumenquelle",
+   "kies",
+   "keim"
+  ],
+  "prior": {
+   "ruhe": {
+    "leer": 0.985,
+    "brocken": 0.006,
+    "kies": 0.004,
+    "keim": 0.005
+   },
+   "geroell": {
+    "leer": 0.86,
+    "fels": 0.05,
+    "brocken": 0.05,
+    "kies": 0.015,
+    "grasquelle": 0.012,
+    "blumenquelle": 0.006,
+    "busch": 0.003
+   },
+   "wiese": {
+    "leer": 0.86,
+    "fels": 0.025,
+    "brocken": 0.015,
+    "grasquelle": 0.055,
+    "blumenquelle": 0.015,
+    "busch": 0.015,
+    "strunk": 0.005
+   },
+   "beet": {
+    "leer": 0.87,
+    "fels": 0.015,
+    "brocken": 0.015,
+    "grasquelle": 0.02,
+    "blumenquelle": 0.065,
+    "busch": 0.005
+   },
+   "dickicht": {
+    "leer": 0.82,
+    "fels": 0.012,
+    "brocken": 0.018,
+    "busch": 0.1,
+    "grasquelle": 0.02,
+    "strunk": 0.03
+   }
+  },
+  "biome": {
+   "wueste": {
+    "grasquelle": 0.6,
+    "blumenquelle": 0.4,
+    "busch": 0.6,
+    "strunk": 0.3,
+    "fels": 0.8,
+    "brocken": 0.8,
+    "kies": 0.8
+   },
+   "schnee": {
+    "grasquelle": 0,
+    "blumenquelle": 0,
+    "strunk": 0.5,
+    "fels": 0.8,
+    "brocken": 0.8,
+    "kies": 0.8
+   },
+   "mesa": {
+    "grasquelle": 0.6,
+    "blumenquelle": 0.4,
+    "fels": 0.8,
+    "brocken": 0.8,
+    "kies": 0.8
+   },
+   "canyon": {
+    "grasquelle": 0.6,
+    "blumenquelle": 0.4,
+    "fels": 0.8,
+    "brocken": 0.8,
+    "kies": 0.8
+   }
+  },
+  "adj": {
+   "leer": {
+    "leer": 1.12
+   },
+   "fels": {
+    "fels": 0,
+    "brocken": 4,
+    "kies": 2,
+    "grasquelle": 1,
+    "blumenquelle": 0.6,
+    "busch": 1
+   },
+   "brocken": {
+    "brocken": 0.5,
+    "kies": 1.6,
+    "grasquelle": 1,
+    "blumenquelle": 0.7
+   },
+   "kies": {
+    "kies": 1.3,
+    "grasquelle": 0.3,
+    "blumenquelle": 0.3
+   },
+   "grasquelle": {
+    "grasquelle": 2.2,
+    "blumenquelle": 1.8,
+    "busch": 2.2
+   },
+   "blumenquelle": {
+    "blumenquelle": 2.6,
+    "busch": 1
+   },
+   "busch": {
+    "busch": 1.2
+   },
+   "strunk": {
+    "strunk": 0,
+    "busch": 1.2,
+    "grasquelle": 1.5
+   }
+  },
+  "far": {
+   "fels": {
+    "fels": 0.12,
+    "brocken": 0.8,
+    "kies": 1.1
+   },
+   "brocken": {
+    "brocken": 0.7
+   },
+   "grasquelle": {
+    "grasquelle": 0.85
+   },
+   "blumenquelle": {
+    "blumenquelle": 0.85
+   },
+   "busch": {
+    "busch": 0.7
+   },
+   "strunk": {
+    "strunk": 0
+   },
+   "kies": {
+    "kies": 0.8
+   }
+  },
+  "objekte": {
+   "fels": {
+    "r_m": [
+     0.7,
+     1.5
+    ],
+    "hart": true
+   },
+   "brocken": {
+    "r_m": [
+     0.33,
+     0.7
+    ],
+    "hart": true
+   },
+   "busch": {
+    "r_m": [
+     0.7,
+     1.2
+    ]
+   },
+   "strunk": {
+    "r_m": [
+     0.25,
+     0.4
+    ]
+   },
+   "grasquelle": {
+    "r_m": [
+     0.2,
+     0.34
+    ]
+   },
+   "blumenquelle": {
+    "r_m": [
+     0.16,
+     0.24
+    ]
+   },
+   "kies": {
+    "r_m": [
+     0,
+     0
+    ]
+   },
+   "keim": {
+    "r_m": [
+     0,
+     0
+    ]
+   }
+  },
+  "gelaende": {
+   "fels": {
+    "hang": 1.5,
+    "senke": -0.5,
+    "hang_max": 0.9,
+    "wasser": [
+     4,
+     6,
+     0.4
+    ]
+   },
+   "brocken": {
+    "hang": 1.2,
+    "senke": 0.2,
+    "hang_max": 0.8
+   },
+   "kies": {
+    "senke": 1.0,
+    "hang_max": 0.45,
+    "wasser": [
+     1.2,
+     3,
+     6
+    ],
+    "strasse": [
+     1.5,
+     1.5,
+     5
+    ]
+   },
+   "grasquelle": {
+    "senke": 1.0,
+    "hang_max": 0.5,
+    "wasser": [
+     2.5,
+     3.5,
+     5
+    ],
+    "strasse": [
+     3.0,
+     1.8,
+     6
+    ]
+   },
+   "blumenquelle": {
+    "senke": 0.8,
+    "hang_max": 0.32,
+    "wasser": [
+     4.5,
+     3.5,
+     3
+    ],
+    "strasse": [
+     4.5,
+     2.0,
+     3
+    ]
+   },
+   "busch": {
+    "senke": 0.8,
+    "hang_max": 0.5,
+    "wasser": [
+     5,
+     5,
+     2.0
+    ]
+   },
+   "strunk": {
+    "hang_max": 0.4
+   }
+  }
+ },
+ "stueck": {
+  "name": "stueck",
+  "site_m": 1,
+  "block": 16,
+  "jitter": 0.42,
+  "reichweite_m": 6,
+  "warp": {
+   "amp_m": 0.7,
+   "scale_m": 4.5
+  },
+  "rauschen": {
+   "amp": 1.6,
+   "scale_m": 4
+  },
+  "states": [
+   "leer",
+   "kies",
+   "stein",
+   "kugel",
+   "gras",
+   "blume",
+   "pilz"
+  ],
+  "bezug": {
+   "kies": {
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.205
+      ],
+      [
+       0.75,
+       0.236
+      ],
+      [
+       1.25,
+       0.143
+      ],
+      [
+       1.75,
+       0.118
+      ],
+      [
+       2.5,
+       0.04
+      ],
+      [
+       3.5,
+       0.011
+      ],
+      [
+       5,
+       0.002
+      ],
+      [
+       6,
+       0.0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "kappa_hang": 6,
+      "winkel": 0
+     }
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.205
+      ],
+      [
+       0.75,
+       0.236
+      ],
+      [
+       1.25,
+       0.143
+      ],
+      [
+       1.75,
+       0.118
+      ],
+      [
+       2.5,
+       0.04
+      ],
+      [
+       3.5,
+       0.011
+      ],
+      [
+       5,
+       0.0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "kappa_hang": 6,
+      "winkel": 0
+     }
+    },
+    "kies": {
+     "kurve": [
+      [
+       0,
+       0.26
+      ],
+      [
+       1,
+       0.211
+      ],
+      [
+       2,
+       0.087
+      ],
+      [
+       3.5,
+       0.019
+      ],
+      [
+       5,
+       0.0
+      ]
+     ],
+     "seite": {
+      "kappa": 1.5,
+      "kappa_hang": 6,
+      "winkel": 0
+     }
+    }
+   },
+   "stein": {
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.11
+      ],
+      [
+       1,
+       0.09
+      ],
+      [
+       2,
+       0.03
+      ],
+      [
+       3.5,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 2.2,
+      "kappa_hang": 5,
+      "winkel": 0
+     }
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.07
+      ],
+      [
+       1,
+       0.05
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 2.2,
+      "kappa_hang": 5,
+      "winkel": 0
+     }
+    },
+    "kies": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       1.5,
+       0.015
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    }
+   },
+   "kugel": {
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       1,
+       0.015
+      ],
+      [
+       2.5,
+       0
+      ]
+     ]
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.025
+      ],
+      [
+       1,
+       0.012
+      ],
+      [
+       2,
+       0
+      ]
+     ]
+    },
+    "busch": {
+     "kurve": [
+      [
+       0,
+       0.05
+      ],
+      [
+       1,
+       0.02
+      ],
+      [
+       2,
+       0
+      ]
+     ]
+    },
+    "strunk": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    },
+    "keim": {
+     "kurve": [
+      [
+       0,
+       0.35
+      ],
+      [
+       1,
+       0.2
+      ],
+      [
+       2,
+       0.03
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    },
+    "baum": {
+     "kurve": [
+      [
+       0,
+       0.02
+      ],
+      [
+       1.5,
+       0
+      ]
+     ]
+    }
+   },
+   "gras": {
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.02
+      ],
+      [
+       0.75,
+       0.05
+      ],
+      [
+       1.25,
+       0.11
+      ],
+      [
+       1.75,
+       0.15
+      ],
+      [
+       2.5,
+       0.05
+      ],
+      [
+       3.5,
+       0.01
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "winkel": 1.62,
+      "winkel_hang": 1.5
+     }
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.02
+      ],
+      [
+       0.75,
+       0.04
+      ],
+      [
+       1.25,
+       0.09
+      ],
+      [
+       1.75,
+       0.1
+      ],
+      [
+       2.5,
+       0.03
+      ],
+      [
+       3.5,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "winkel": 1.62,
+      "winkel_hang": 1.5
+     }
+    },
+    "busch": {
+     "kurve": [
+      [
+       0,
+       0.22
+      ],
+      [
+       1,
+       0.14
+      ],
+      [
+       2.2,
+       0.03
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    },
+    "strunk": {
+     "kurve": [
+      [
+       0,
+       0.28
+      ],
+      [
+       0.8,
+       0.12
+      ],
+      [
+       1.8,
+       0
+      ]
+     ]
+    },
+    "grasquelle": {
+     "kurve": [
+      [
+       0,
+       0.22
+      ],
+      [
+       1,
+       0.14
+      ],
+      [
+       2,
+       0.04
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    },
+    "blumenquelle": {
+     "kurve": [
+      [
+       0,
+       0.08
+      ],
+      [
+       1.5,
+       0.05
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    },
+    "baum": {
+     "kurve": [
+      [
+       0,
+       0.1
+      ],
+      [
+       1,
+       0.14
+      ],
+      [
+       2.5,
+       0.05
+      ],
+      [
+       4,
+       0
+      ]
+     ]
+    }
+   },
+   "blume": {
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.02
+      ],
+      [
+       0.75,
+       0.2
+      ],
+      [
+       1.25,
+       0.22
+      ],
+      [
+       1.75,
+       0.09
+      ],
+      [
+       2.5,
+       0.06
+      ],
+      [
+       3.5,
+       0.02
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "winkel": 1.62,
+      "winkel_hang": 1.5
+     }
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.01
+      ],
+      [
+       0.75,
+       0.12
+      ],
+      [
+       1.25,
+       0.12
+      ],
+      [
+       1.75,
+       0.05
+      ],
+      [
+       2.5,
+       0.03
+      ],
+      [
+       3.5,
+       0
+      ]
+     ],
+     "seite": {
+      "kappa": 3.0,
+      "winkel": 1.62,
+      "winkel_hang": 1.5
+     }
+    },
+    "blumenquelle": {
+     "kurve": [
+      [
+       0,
+       0.2
+      ],
+      [
+       1,
+       0.12
+      ],
+      [
+       2,
+       0.03
+      ],
+      [
+       3,
+       0
+      ]
+     ]
+    },
+    "grasquelle": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       1.5,
+       0.06
+      ],
+      [
+       3,
+       0.01
+      ],
+      [
+       4,
+       0
+      ]
+     ]
+    },
+    "baum": {
+     "kurve": [
+      [
+       1,
+       0
+      ],
+      [
+       2,
+       0.04
+      ],
+      [
+       3.5,
+       0.02
+      ],
+      [
+       5,
+       0
+      ]
+     ]
+    }
+   },
+   "pilz": {
+    "strunk": {
+     "kurve": [
+      [
+       0,
+       0.5
+      ],
+      [
+       0.5,
+       0.22
+      ],
+      [
+       1.2,
+       0.03
+      ],
+      [
+       2,
+       0
+      ]
+     ]
+    },
+    "busch": {
+     "kurve": [
+      [
+       0,
+       0.09
+      ],
+      [
+       0.8,
+       0.03
+      ],
+      [
+       1.5,
+       0
+      ]
+     ]
+    },
+    "baum": {
+     "kurve": [
+      [
+       0,
+       0.06
+      ],
+      [
+       1.2,
+       0.02
+      ],
+      [
+       2,
+       0
+      ]
+     ]
+    },
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.015
+      ],
+      [
+       0.8,
+       0
+      ]
+     ]
+    }
+   }
+  },
+  "luecke": {
+   "kies": {
+    "reichweite_m": 2.4,
+    "p": 0.45
+   },
+   "stein": {
+    "reichweite_m": 1.8,
+    "p": 0.08
+   }
+  },
+  "gelaende": {
+   "kies": {
+    "senke": 0.9,
+    "hang_max": 0.5,
+    "wasser": [
+     1.2,
+     2.5,
+     2.0
+    ],
+    "strasse": [
+     1.2,
+     1.2,
+     1.5
+    ]
+   },
+   "stein": {
+    "senke": 0.5,
+    "hang_max": 0.7
+   },
+   "kugel": {
+    "hang_max": 0.45
+   },
+   "gras": {
+    "senke": 0.8,
+    "hang_max": 0.55,
+    "wasser": [
+     2.5,
+     3,
+     2.0
+    ],
+    "strasse": [
+     2.8,
+     1.5,
+     1.0
+    ]
+   },
+   "blume": {
+    "senke": 0.6,
+    "hang_max": 0.36,
+    "wasser": [
+     4,
+     3,
+     1.0
+    ]
+   },
+   "pilz": {
+    "senke": 0.8,
+    "hang_max": 0.45
+   }
+  },
+  "adj": {
+   "leer": {
+    "leer": 1.0
+   },
+   "kies": {
+    "kies": 1.4,
+    "stein": 1.6,
+    "kugel": 0.9,
+    "gras": 0.22,
+    "blume": 0.27,
+    "pilz": 0.2
+   },
+   "stein": {
+    "stein": 0.6,
+    "kugel": 0.6,
+    "gras": 0.5,
+    "blume": 0.5
+   },
+   "gras": {
+    "gras": 1.9,
+    "blume": 1.78,
+    "pilz": 1.4
+   },
+   "blume": {
+    "blume": 2.4
+   },
+   "pilz": {
+    "pilz": 1.2
+   },
+   "kugel": {
+    "kugel": 1.8
+   }
+  },
+  "far": {
+   "kies": {
+    "gras": 0.4,
+    "blume": 0.52
+   },
+   "gras": {
+    "blume": 1.33,
+    "gras": 0.65
+   },
+   "blume": {
+    "blume": 0.55
+   },
+   "stein": {
+    "stein": 0.7
+   },
+   "kugel": {
+    "kugel": 0.6
+   }
+  },
+  "objekte": {
+   "kies": {
+    "r_m": [
+     0,
+     0
+    ]
+   },
+   "stein": {
+    "r_m": [
+     0.15,
+     0.32
+    ],
+    "hart": true
+   },
+   "kugel": {
+    "r_m": [
+     0.09,
+     0.16
+    ]
+   },
+   "gras": {
+    "r_m": [
+     0.09,
+     0.26
+    ]
+   },
+   "blume": {
+    "r_m": [
+     0.09,
+     0.22
+    ]
+   },
+   "pilz": {
+    "r_m": [
+     0.1,
+     0.16
+    ]
+   }
+  }
+ },
+ "korn": {
+  "name": "korn",
+  "site_m": 0.25,
+  "block": 16,
+  "jitter": 0.42,
+  "reichweite_m": 1.2,
+  "warp": {
+   "amp_m": 0.15,
+   "scale_m": 1.2
+  },
+  "states": [
+   "leer",
+   "kiesel",
+   "krume",
+   "halm"
+  ],
+  "bezug": {
+   "kiesel": {
+    "kies": {
+     "kurve": [
+      [
+       0,
+       0.11
+      ],
+      [
+       0.45,
+       0.08
+      ],
+      [
+       0.9,
+       0.016
+      ],
+      [
+       1.2,
+       0
+      ]
+     ]
+    },
+    "stein": {
+     "kurve": [
+      [
+       0,
+       0.1
+      ],
+      [
+       0.4,
+       0.04
+      ],
+      [
+       0.8,
+       0
+      ]
+     ]
+    },
+    "fels": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       0.5,
+       0.01
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    },
+    "brocken": {
+     "kurve": [
+      [
+       0,
+       0.03
+      ],
+      [
+       0.5,
+       0.01
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    }
+   },
+   "krume": {
+    "kugel": {
+     "kurve": [
+      [
+       0,
+       0.14
+      ],
+      [
+       0.4,
+       0.06
+      ],
+      [
+       0.9,
+       0
+      ]
+     ]
+    },
+    "keim": {
+     "kurve": [
+      [
+       0,
+       0.04
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    }
+   },
+   "halm": {
+    "gras": {
+     "kurve": [
+      [
+       0,
+       0.05
+      ],
+      [
+       0.4,
+       0.02
+      ],
+      [
+       0.9,
+       0
+      ]
+     ]
+    },
+    "blume": {
+     "kurve": [
+      [
+       0,
+       0.04
+      ],
+      [
+       0.5,
+       0
+      ]
+     ]
+    }
+   }
+  },
+  "gelaende": {
+   "kiesel": {
+    "senke": 0.6,
+    "hang_max": 0.55
+   },
+   "krume": {
+    "hang_max": 0.5
+   },
+   "halm": {
+    "hang_max": 0.55
+   }
+  },
+  "adj": {
+   "kiesel": {
+    "kiesel": 1.43,
+    "krume": 1.0,
+    "halm": 0.5
+   },
+   "krume": {
+    "krume": 1.5
+   },
+   "halm": {
+    "halm": 1.2
+   }
+  },
+  "far": {
+   "kiesel": {
+    "kiesel": 1.32
+   },
+   "krume": {
+    "krume": 0.8
+   }
+  },
+  "objekte": {
+   "kiesel": {
+    "r_m": [
+     0.05,
+     0.14
+    ]
+   },
+   "krume": {
+    "r_m": [
+     0.03,
+     0.06
+    ]
+   },
+   "halm": {
+    "r_m": [
+     0.05,
+     0.09
+    ]
+   }
+  }
+ },
+ "modelle": {
+  "gras_hoehe_je_r": 1.8,
+  "busch_skala_je_r": 1.0,
+  "blume": {
+   "modelle": [
+    "quat:Flower_3_Single",
+    "quat:Flower_4_Single"
+   ],
+   "model_h": {
+    "quat:Flower_3_Single": 2.05,
+    "quat:Flower_4_Single": 2.39
+   },
+   "hoehe_je_r": 3.2
+  },
+  "pilz": {
+   "modelle": [
+    "flora:mushroom_red",
+    "flora:mushroom_tan"
+   ],
+   "skala_je_r": 4.5
+  },
+  "strunk": {
+   "modelle": [
+    "flora:stump_old",
+    "flora:stump_round"
+   ],
+   "skala_je_r": 2.2
+  }
+ },
+ "near_m": 64
+}

@@ -18,17 +18,20 @@ const matrix = (states, T) => { const S = states.length, M = new Float64Array(S 
 const blockLinks = (n) => { const links = []; for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { const l = []; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) { if (!dx && !dy) continue; const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= n || ny >= n) continue; l.push([ny * n + nx, Math.max(Math.abs(dx), Math.abs(dy)) > 1 ? 1 : 0]) } links.push(l) } return links }
 const colour = (bi, bj) => (bi & 1) + 2 * (bj & 1)
 
-export function createLevel(name, L, seedInt, salt, priorAt, maxBlocks) {
-  const n = L.block, S = L.states.length, A = matrix(L.states, L.adj), D = matrix(L.states, L.far), links = blockLinks(n), cache = new Map(), stat = { solved: 0, fallback: 0 }
+// V-1117: forbid(i, j, s, i2, j2, s2) sperrt ein Zustandspaar zweier Plätze (Fast-Berühren), empty(bi, bj) spart den Löser für Blöcke, deren Vorwissen nur „leer“ ist; beides ohne Wirkung auf bisherige Aufrufe.
+export function createLevel(name, L, seedInt, salt, priorAt, maxBlocks, { forbid = null, empty = null, hard = null } = {}) {
+  const n = L.block, S = L.states.length, A = matrix(L.states, L.adj), D = matrix(L.states, L.far), links = blockLinks(n), cache = new Map(), stat = { solved: 0, fallback: 0, skipped: 0 }, blank = empty ? new Int8Array(n * n) : null
   const key = (bi, bj) => (bi + 1048576) * 2097152 + (bj + 1048576)
   function solve(bi, bj) { const k0 = key(bi, bj); let b = cache.get(k0); if (b) { cache.delete(k0); cache.set(k0, b); return b }
+    if (empty?.(bi, bj)) { stat.skipped++; cache.set(k0, blank); if (cache.size > maxBlocks) cache.delete(cache.keys().next().value); return blank }
     const c = colour(bi, bj), near = []; for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) if ((di || dj) && colour(bi + di, bj + dj) < c) near.push([bi + di, bj + dj, solve(bi + di, bj + dj)])
     const N = n * n, w = new Float64Array(N * S), i0 = bi * n, j0 = bj * n
     for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { const k = y * n + x; priorAt(i0 + x, j0 + y, w, k * S)
       if (x < 2 || y < 2 || x >= n - 2 || y >= n - 2) for (const [nbi, nbj, sol] of near) { const ox = nbi * n, oz = nbj * n
         for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) { const gi = i0 + x + dx, gj = j0 + y + dy, lx = gi - ox, ly = gj - oz; if (lx < 0 || ly < 0 || lx >= n || ly >= n) continue
-          const st = sol[ly * n + lx], M = Math.max(Math.abs(dx), Math.abs(dy)) > 1 ? D : A; for (let s = 0; s < S; s++) w[k * S + s] *= M[st * S + s] } } }
-    const r = collapse({ N, S, w, links, A, D, noise: (k) => u01(seedInt, i0 + k % n, j0 + Math.floor(k / n), salt + 1), pick: (k) => u01(seedInt, i0 + k % n, j0 + Math.floor(k / n), salt + 2) })
+          const st = sol[ly * n + lx], M = Math.max(Math.abs(dx), Math.abs(dy)) > 1 ? D : A; for (let s = 0; s < S; s++) { w[k * S + s] *= M[st * S + s]; if (forbid && forbid(i0 + x, j0 + y, s, gi, gj, st)) w[k * S + s] = 0 } } } }
+    const after = forbid ? (b, st, setze) => { if (hard && !hard[st]) return; const x = b % n, y = (b - x) / n; for (const [o] of links[b]) { const ox = o % n, oy = (o - ox) / n; for (let s = 0; s < S; s++) if (forbid(i0 + x, j0 + y, st, i0 + ox, j0 + oy, s)) setze(o, s, 0) } } : null
+    const r = collapse({ N, S, w, links, A, D, noise: (k) => u01(seedInt, i0 + k % n, j0 + Math.floor(k / n), salt + 1), pick: (k) => u01(seedInt, i0 + k % n, j0 + Math.floor(k / n), salt + 2), after, sparse: !!empty })
     stat.solved++; stat.fallback += r.fallback; cache.set(k0, r.out); if (cache.size > maxBlocks) cache.delete(cache.keys().next().value); return r.out }
   return { name, states: L.states, n, S, stat, at: (i, j) => { const bi = Math.floor(i / n), bj = Math.floor(j / n); return solve(bi, bj)[(j - bj * n) * n + (i - bi * n)] } }
 }

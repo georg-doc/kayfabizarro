@@ -1,0 +1,400 @@
+{
+"top_ufer": {
+"anzahl": {
+"fels": 13,
+"grasquelle": 49,
+"strunk": 4,
+"brocken": 10,
+"busch": 7,
+"blumenquelle": 19,
+"gras": 377,
+"blume": 324,
+"pilz": 11,
+"kugel": 12,
+"stein": 39,
+"halm": 385,
+"kiesel": 632,
+"krume": 31
+},
+"fast_beruehren": {
+"nahe_paare": 21,
+"verstoss": 0,
+"deutlich_ueberlappt": 1
+},
+"band_m": [
+"0-0.5",
+"0.5-1",
+"1-1.5",
+"1.5-2",
+"2-3",
+"3-4",
+"4-6",
+"6-9"
+],
+"dichte": {
+"kiesel": [
+0.962,
+0.879,
+0.761,
+0.557,
+0.212,
+0.128,
+0.064,
+0
+],
+"blume": [
+0.094,
+0.197,
+0.175,
+0.146,
+0.079,
+0.029,
+0.018,
+0.023
+],
+"gras": [
+0.075,
+0.052,
+0.134,
+0.163,
+0.083,
+0.064,
+0.033,
+0.021
+],
+"stein": [
+0.019,
+0.105,
+0.103,
+0.017,
+0.014,
+0.003,
+0.001,
+0
+]
+},
+"seiten": {
+"felsen": 8,
+"mit_beiden": 8,
+"winkel_kies_pflanzen_median": 155,
+"res_kies": 0.87,
+"res_pflanzen": 0.81
+},
+"nachbarn_nah": {
+"kies-kies": 4.27,
+"kies-blume": 0.02,
+"kies-gras": 0.02,
+"blume-blume": 0.56,
+"blume-gras": 0.28,
+"gras-gras": 0.52
+},
+"nachbarn_fern": {
+"kies-kies": 3.85,
+"kies-blume": 0.07,
+"kies-gras": 0.03,
+"blume-blume": 0.64,
+"blume-gras": 0.6,
+"gras-gras": 0.63
+},
+"frei_4m": 0.733,
+"loeser_ms": 918,
+"je_ebene": {
+"patch": {
+"solved": 47,
+"fallback": 0,
+"skipped": 0
+},
+"stueck": {
+"solved": 144,
+"fallback": 0,
+"skipped": 0
+},
+"korn": {
+"solved": 723,
+"fallback": 0,
+"skipped": 475
+}
+}
+},
+"top_ufer_b": {
+"anzahl": {
+"brocken": 8,
+"fels": 20,
+"grasquelle": 39,
+"blumenquelle": 14,
+"busch": 18,
+"strunk": 4,
+"gras": 352,
+"blume": 288,
+"stein": 51,
+"kugel": 32,
+"pilz": 20,
+"kiesel": 922,
+"halm": 358,
+"krume": 72
+},
+"fast_beruehren": {
+"nahe_paare": 24,
+"verstoss": 0,
+"deutlich_ueberlappt": 3
+},
+"band_m": [
+"0-0.5",
+"0.5-1",
+"1-1.5",
+"1.5-2",
+"2-3",
+"3-4",
+"4-6",
+"6-9"
+],
+"dichte": {
+"kiesel": [
+0.72,
+0.894,
+0.984,
+0.87,
+0.485,
+0.176,
+0.017,
+0
+],
+"blume": [
+0.107,
+0.168,
+0.127,
+0.104,
+0.066,
+0.042,
+0.006,
+0.01
+],
+"gras": [
+0.067,
+0.044,
+0.078,
+0.092,
+0.094,
+0.031,
+0.012,
+0.018
+],
+"stein": [
+0.04,
+0.08,
+0.05,
+0.04,
+0.033,
+0.011,
+0.001,
+0
+]
+},
+"seiten": {
+"felsen": 17,
+"mit_beiden": 17,
+"winkel_kies_pflanzen_median": 144,
+"res_kies": 0.83,
+"res_pflanzen": 0.84
+},
+"nachbarn_nah": {
+"kies-kies": 2.85,
+"kies-blume": 0.02,
+"kies-gras": 0.01,
+"blume-blume": 0.49,
+"blume-gras": 0.24,
+"gras-gras": 0.41
+},
+"nachbarn_fern": {
+"kies-kies": 2.65,
+"kies-blume": 0.05,
+"kies-gras": 0.03,
+"blume-blume": 0.75,
+"blume-gras": 0.62,
+"gras-gras": 0.7
+},
+"frei_4m": 0.725,
+"loeser_ms": 934,
+"je_ebene": {
+"patch": {
+"solved": 47,
+"fallback": 0,
+"skipped": 0
+},
+"stueck": {
+"solved": 145,
+"fallback": 0,
+"skipped": 0
+},
+"korn": {
+"solved": 745,
+"fallback": 0,
+"skipped": 420
+}
+}
+},
+"top_strasse": {
+"anzahl": {
+"grasquelle": 40,
+"brocken": 8,
+"fels": 12,
+"blumenquelle": 25,
+"strunk": 3,
+"busch": 6,
+"gras": 327,
+"blume": 281,
+"kugel": 6,
+"stein": 34,
+"pilz": 12,
+"kiesel": 803,
+"halm": 320,
+"krume": 16
+},
+"fast_beruehren": {
+"nahe_paare": 14,
+"verstoss": 0,
+"deutlich_ueberlappt": 1
+},
+"band_m": [
+"0-0.5",
+"0.5-1",
+"1-1.5",
+"1.5-2",
+"2-3",
+"3-4",
+"4-6",
+"6-9"
+],
+"dichte": {
+"kiesel": [
+1.374,
+1.653,
+1.078,
+0.802,
+0.513,
+0.048,
+0.021,
+0
+],
+"blume": [
+0.098,
+0.149,
+0.104,
+0.076,
+0.038,
+0.021,
+0.014,
+0.012
+],
+"gras": [
+0,
+0.066,
+0.07,
+0.095,
+0.042,
+0.012,
+0.028,
+0.023
+],
+"stein": [
+0.049,
+0.083,
+0.07,
+0.019,
+0.015,
+0.009,
+0.001,
+0
+]
+},
+"seiten": {
+"felsen": 7,
+"mit_beiden": 7,
+"winkel_kies_pflanzen_median": 153,
+"res_kies": 0.83,
+"res_pflanzen": 0.91
+},
+"nachbarn_nah": {
+"kies-kies": 3.14,
+"kies-blume": 0.01,
+"kies-gras": 0.01,
+"blume-blume": 0.45,
+"blume-gras": 0.24,
+"gras-gras": 0.36
+},
+"nachbarn_fern": {
+"kies-kies": 2.93,
+"kies-blume": 0.03,
+"kies-gras": 0.02,
+"blume-blume": 0.64,
+"blume-gras": 0.55,
+"gras-gras": 0.59
+},
+"frei_4m": 0.761,
+"loeser_ms": 939,
+"je_ebene": {
+"patch": {
+"solved": 47,
+"fallback": 0,
+"skipped": 0
+},
+"stueck": {
+"solved": 145,
+"fallback": 0,
+"skipped": 0
+},
+"korn": {
+"solved": 645,
+"fallback": 0,
+"skipped": 497
+}
+}
+},
+"spiel": {
+"bereit_ms": 5389,
+"start": {
+"mode": "veg=core",
+"ready": true,
+"models": 119,
+"cells": 24,
+"queued": 0,
+"waiting": 0,
+"instances": 16509,
+"fails": 0,
+"lastError": null,
+"maxMs": 4.7,
+"workerMs": 559.3
+},
+"start_zellen": 23,
+"letzte": {
+"warte_ms": 7554,
+"maxScheibe_ms": 8.2,
+"instanzen": 33925,
+"fails": 0,
+"err": null
+},
+"neue_zellen": {
+"anzahl": 91,
+"ms_median": 91.6,
+"ms_p90": 113,
+"ms_max": 169.9,
+"objekte_median": 856,
+"objekte_max": 2295
+},
+"debug": {
+"biomes": 6,
+"groups": {
+"kk": 216,
+"grass": 5194,
+"palm": 0,
+"flora": 123,
+"leicht": 1077,
+"pebble": 15211,
+"flLeaf": 2154,
+"flBloom": 2154,
+"fluff": 553
+}
+},
+"fehler": []
+}
+}
