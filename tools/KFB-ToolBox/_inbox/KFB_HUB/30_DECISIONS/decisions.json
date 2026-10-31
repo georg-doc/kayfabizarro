@@ -15403,6 +15403,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1061",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "FACT",
+   "text": "Perplexity-Dossiers (privates Repo main, _research/KFB Research Perplexity, 8 Jobs, Übersicht, JSON-Entwurf) abgeglichen: replies/PERPLEXITY_GAP_R1.md. Vollständig, aber nur Vorschläge, nichts ausgeführt, Verträglichkeit für r180 statt r186, kannten unsere Specs nicht. Vier Widersprüche zu Registerregeln: HUD (V-1039), NPC-Wissen (Georg 23.10. kein inhaltliches Matching), Bewegung (V-956, V-574), Gebäudeschaden (V-1001, V-1042). Größte Lücken sind Verdrahtung und Konsolidierung, nicht Recherche: Gebiet→SSOT in brief_domains.json, Treffer- und Gebäude-Vertrag, Abnahme für Einbettung mit Georgs Urteilen als Kalibrierung, Leistungsgrundlage (Einzelinstanz 27.10.: 15–21 fps), Rauch-Policy, Streuung kleiner Dinge, Rig-/Clip-Pass, Ereignis-Vertrag.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Gap-Liste",
+   "source": "Agent 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Externe Recherche zählt erst nach Abgleich mit Code und Regeln.",
+   "applies": "bei Nutzung der Dossiers"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
