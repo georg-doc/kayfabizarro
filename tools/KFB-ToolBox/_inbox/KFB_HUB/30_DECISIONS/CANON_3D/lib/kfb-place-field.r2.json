@@ -491,52 +491,6 @@
       "keep_r": 0.4
     }
   },
-  "ground": {
-    "stone": {
-      "overall": 0.7,
-      "band": 0.75,
-      "gain": 1.15,
-      "size": [
-        0.02,
-        0.14
-      ]
-    },
-    "pebble": {
-      "overall": 0.2,
-      "band": 0.9,
-      "gain": 1.1,
-      "up": 0.25
-    },
-    "grass": {
-      "overall": 0.1,
-      "band": 1.2,
-      "gain": 1.25,
-      "up": 0.55
-    },
-    "flora": {
-      "overall": 0,
-      "band": 1.1,
-      "gain": 1.25,
-      "up": 0.45,
-      "nopull": true
-    },
-    "flLeaf": {
-      "overall": 0,
-      "band": 1.1,
-      "gain": 1.15,
-      "up": 0.4,
-      "nopull": true,
-      "role": 0.7
-    },
-    "flBloom": {
-      "overall": 0,
-      "band": 0.01,
-      "gain": 1,
-      "up": 0.4,
-      "nopull": true,
-      "role": 0.85
-    }
-  },
   "near_m": 64,
   "garden": {
     "wueste": "#d9c6a4",

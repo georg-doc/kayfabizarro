@@ -16078,6 +16078,21 @@
    "applies": "nach Merge und Site, stufenweise"
   },
   {
+   "id": "V-1106",
+   "date": "2026-10-31",
+   "area": "Figuren",
+   "verdict": "PLAN",
+   "text": "Speicherweg Figuren-Verwaltung (Georg 31.10.: alle paar Tage 3 bis 5 Figuren, kein Echtzeit-Bedarf, WSA soll Möglichkeiten prüfen). WS0: GitHub bleibt die Verbindung zwischen den Sites, kein direktes Koppeln. Entwürfe liegen in der Werkstatt-Site (D1 bzw. R2 der Sites). „Einchecken“ erzeugt gesammelt einen Vorschlags-Branch; Bestand: Kern und 36 Tests von WSA (kayfabizarro PR #416, branch toolbox/github-character-proposals-r1-2026-10-17), Georgs Felder mit Status GEORG, Rücklesen, kein Merge. Der direkte Site-zu-GitHub-Weg war am 17.10. blockiert und ist erneut zu prüfen; Rückfall: Georg sagt WSA work „einchecken“, die Sitzung liest die Entwürfe und pusht, kein Kopieren durch Georg. Danach prüft WS0, das Backen läuft, das Spiel holt die Figur über den festen Commit beim nächsten Bau, die Site liest nie Entwürfe. Wichtig: PR #416 deckt nicht alle Regler ab; was der Kern nicht kennt, darf nicht still wegfallen. Auftrag an WSA zusammen mit Stufe 2 aus V-1105.",
+   "values": {},
+   "owner": "WSA work · WS0",
+   "check": "echter Probelauf mit einer Figur",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Seltene Sammel-Änderungen brauchen keine Echtzeit; ein fester Commit hält das Spiel nachvollziehbar, und der Vorschlags-Kern existiert schon.",
+   "applies": "mit Stufe 2 aus V-1105"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

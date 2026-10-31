@@ -1,0 +1,545 @@
+{
+  "schema": "kfb.place-field/2",
+  "source": "V-1076, V-1007, V-1005, V-1036, V-797. Startwerte WS-Verteiler 31.10., justiert an Draufsichten; Gewichte sind Daten, der Löser kfb-place-field liest nur diese Datei. Alle Maße in Metern; Einsinken kommt aus kfb_place rules.sink (V-749).",
+  "ground_state": "leer",
+  "levels": {
+    "zone": {
+      "site_m": 32,
+      "block": 8,
+      "jitter": 0.3,
+      "states": [
+        "ruhe",
+        "geroell",
+        "wiese",
+        "beet",
+        "dickicht"
+      ],
+      "prior": {
+        "moos": {
+          "ruhe": 0.22,
+          "geroell": 0.14,
+          "wiese": 0.32,
+          "beet": 0.2,
+          "dickicht": 0.12
+        },
+        "mesa": {
+          "ruhe": 0.28,
+          "geroell": 0.38,
+          "wiese": 0.18,
+          "beet": 0.08,
+          "dickicht": 0.08
+        },
+        "wueste": {
+          "ruhe": 0.3,
+          "geroell": 0.44,
+          "wiese": 0.14,
+          "beet": 0.06,
+          "dickicht": 0.06
+        },
+        "schnee": {
+          "ruhe": 0.34,
+          "geroell": 0.5,
+          "wiese": 0.0,
+          "beet": 0.0,
+          "dickicht": 0.16
+        },
+        "pastell": {
+          "ruhe": 0.2,
+          "geroell": 0.12,
+          "wiese": 0.3,
+          "beet": 0.3,
+          "dickicht": 0.08
+        },
+        "canyon": {
+          "ruhe": 0.28,
+          "geroell": 0.42,
+          "wiese": 0.14,
+          "beet": 0.08,
+          "dickicht": 0.08
+        }
+      },
+      "adj": {
+        "geroell": {
+          "geroell": 1.6,
+          "wiese": 0.7,
+          "beet": 0.2,
+          "dickicht": 0.8
+        },
+        "wiese": {
+          "wiese": 1.6,
+          "beet": 3.0,
+          "dickicht": 2.0
+        },
+        "beet": {
+          "beet": 0.8,
+          "dickicht": 0.5
+        },
+        "dickicht": {
+          "dickicht": 1.2
+        }
+      },
+      "far": {}
+    },
+    "patch": {
+      "site_m": 4,
+      "block": 16,
+      "jitter": 0.42,
+      "states": [
+        "leer",
+        "fels",
+        "stein",
+        "kiesel",
+        "gras",
+        "blume",
+        "pilz",
+        "busch",
+        "strunk"
+      ],
+      "zone_warp": {
+        "amp_m": 15,
+        "scale_m": 37
+      },
+      "prior": {
+        "ruhe": {
+          "leer": 0.985,
+          "fels": 0.004,
+          "stein": 0.004,
+          "kiesel": 0.004,
+          "gras": 0.003
+        },
+        "geroell": {
+          "leer": 0.8,
+          "fels": 0.11,
+          "stein": 0.025,
+          "kiesel": 0.02,
+          "gras": 0.02,
+          "busch": 0.006,
+          "blume": 0.012,
+          "strunk": 0.002
+        },
+        "wiese": {
+          "leer": 0.76,
+          "fels": 0.07,
+          "gras": 0.1,
+          "blume": 0.05,
+          "stein": 0.01,
+          "busch": 0.012,
+          "strunk": 0.004
+        },
+        "beet": {
+          "leer": 0.73,
+          "blume": 0.16,
+          "gras": 0.07,
+          "fels": 0.035,
+          "stein": 0.006,
+          "busch": 0.003
+        },
+        "dickicht": {
+          "leer": 0.77,
+          "busch": 0.08,
+          "gras": 0.07,
+          "pilz": 0.03,
+          "stein": 0.015,
+          "fels": 0.02,
+          "strunk": 0.015
+        }
+      },
+      "biome": {
+        "wueste": {
+          "gras": 0.7,
+          "blume": 0.5,
+          "busch": 0.6,
+          "pilz": 0,
+          "strunk": 0.3
+        },
+        "schnee": {
+          "gras": 0,
+          "blume": 0,
+          "pilz": 0.2,
+          "strunk": 0.5
+        },
+        "mesa": {
+          "gras": 0.6,
+          "blume": 0.4
+        },
+        "canyon": {
+          "gras": 0.6,
+          "blume": 0.4,
+          "pilz": 0.4
+        }
+      },
+      "adj": {
+        "fels": {
+          "fels": 0,
+          "stein": 2,
+          "kiesel": 9,
+          "gras": 6,
+          "blume": 0.8,
+          "pilz": 3,
+          "busch": 1
+        },
+        "stein": {
+          "stein": 0.4,
+          "kiesel": 3,
+          "gras": 2,
+          "blume": 0.8,
+          "pilz": 1.5,
+          "busch": 1
+        },
+        "kiesel": {
+          "kiesel": 1.2,
+          "gras": 0.6,
+          "blume": 0.3,
+          "pilz": 0,
+          "busch": 0.5
+        },
+        "gras": {
+          "gras": 1.6,
+          "blume": 2.6,
+          "pilz": 1.5,
+          "busch": 2.5
+        },
+        "blume": {
+          "blume": 2.2,
+          "pilz": 0,
+          "busch": 1
+        },
+        "pilz": {
+          "pilz": 0,
+          "busch": 5
+        },
+        "busch": {
+          "busch": 0.5
+        },
+        "strunk": {
+          "strunk": 0,
+          "pilz": 6,
+          "gras": 2,
+          "fels": 0.5,
+          "blume": 0.5,
+          "kiesel": 0.4,
+          "busch": 1.2
+        }
+      },
+      "far": {
+        "fels": {
+          "fels": 0.2,
+          "stein": 0.8,
+          "kiesel": 1.3,
+          "gras": 1.1,
+          "blume": 3.5
+        },
+        "stein": {
+          "stein": 0.7
+        },
+        "kiesel": {
+          "kiesel": 0.7,
+          "blume": 0.6
+        },
+        "gras": {
+          "gras": 0.7,
+          "blume": 0.9
+        },
+        "blume": {
+          "blume": 0.72
+        },
+        "pilz": {
+          "pilz": 0
+        },
+        "busch": {
+          "busch": 0.5
+        },
+        "strunk": {
+          "strunk": 0
+        }
+      },
+      "density": {
+        "scale_m": 71,
+        "range": [
+          0.45,
+          1.9
+        ]
+      }
+    }
+  },
+  "outlier": {
+    "zone": 0.025
+  },
+  "deck": {
+    "dystopie": {
+      "blume": 0.3,
+      "gras": 0.7,
+      "stein": 1.3,
+      "kiesel": 1.3
+    }
+  },
+  "terrain": {
+    "fels": {
+      "slope_max": 0.75,
+      "accept": 0.75,
+      "slope_gain": 0.8
+    },
+    "stein": {
+      "slope_max": 0.6,
+      "accept": 0.9,
+      "slope_gain": 0.4
+    },
+    "kiesel": {
+      "slope_max": 0.45,
+      "accept": 1,
+      "slope_gain": 0
+    },
+    "gras": {
+      "slope_max": 0.5,
+      "accept": 0.85,
+      "hollow_gain": 0.25
+    },
+    "blume": {
+      "slope_max": 0.32,
+      "accept": 0.9,
+      "hollow_gain": 0.2
+    },
+    "pilz": {
+      "slope_max": 0.42,
+      "accept": 1
+    },
+    "busch": {
+      "slope_max": 0.5,
+      "accept": 0.9,
+      "hollow_gain": 0.15
+    },
+    "strunk": {
+      "slope_max": 0.4,
+      "accept": 1
+    }
+  },
+  "formation": {
+    "fels": {
+      "anchor_r_m": [
+        0.38,
+        1.0
+      ],
+      "big_p": 0.18,
+      "big_r_m": [
+        1.0,
+        1.5
+      ],
+      "counts": {
+        "3": 0.6,
+        "5": 0.32,
+        "7": 0.08
+      },
+      "tiers": [
+        1,
+        0.62,
+        0.38,
+        0.5,
+        0.3,
+        0.26,
+        0.2
+      ],
+      "trail": [
+        5,
+        11
+      ],
+      "keep_r": 0.5,
+      "trail_r_m": [
+        0.09,
+        0.2
+      ]
+    },
+    "stein": {
+      "anchor_r_m": [
+        0.17,
+        0.36
+      ],
+      "counts": {
+        "3": 0.75,
+        "5": 0.25
+      },
+      "tiers": [
+        1,
+        0.62,
+        0.38,
+        0.5,
+        0.3
+      ],
+      "trail": [
+        2,
+        5
+      ],
+      "keep_r": 0.3,
+      "trail_r_m": [
+        0.06,
+        0.13
+      ]
+    },
+    "kiesel": {
+      "r_m": [
+        0.04,
+        0.09
+      ],
+      "n": [
+        4,
+        12
+      ],
+      "n_near_rock": [
+        7,
+        16
+      ],
+      "run_m": [
+        1.3,
+        2.8
+      ],
+      "keep_r": 0.15,
+      "fan": [
+        0.6,
+        1.2
+      ],
+      "coarse_p": 0.4,
+      "coarse_r_m": [
+        0.1,
+        0.18
+      ],
+      "kugel_p": 0.06,
+      "kugel_r_m": [
+        0.14,
+        0.22
+      ]
+    },
+    "gras": {
+      "counts": {
+        "3": 0.45,
+        "5": 0.4,
+        "7": 0.15
+      },
+      "sigma_m": [
+        0.6,
+        1.1
+      ],
+      "keep_r": 0.15,
+      "h_m": [
+        0.62,
+        0.42,
+        0.28
+      ]
+    },
+    "blume": {
+      "step_m": [
+        0.55,
+        1.1
+      ],
+      "grass": [
+        0,
+        2
+      ],
+      "keep_r": 0.25,
+      "out_m": [
+        2.0,
+        4.0
+      ],
+      "models": [
+        "quat:Flower_3_Single",
+        "quat:Flower_4_Single"
+      ],
+      "model_h": {
+        "quat:Flower_3_Single": 2.05,
+        "quat:Flower_4_Single": 2.39
+      },
+      "h_m": [
+        0.72,
+        0.58,
+        0.45
+      ]
+    },
+    "pilz": {
+      "scale": 0.62,
+      "group_p": 0.25,
+      "group_scale": 0.8,
+      "keep_r": 0.2,
+      "models": [
+        "flora:mushroom_red",
+        "flora:mushroom_tan"
+      ]
+    },
+    "busch": {
+      "scale": [
+        1.3,
+        0.95,
+        0.65
+      ],
+      "counts": {
+        "1": 0.2,
+        "3": 0.8
+      },
+      "keep_r": 0.5
+    },
+    "tile_exclude": [
+      "kk_rock_1_",
+      "kk_rock_2_"
+    ],
+    "small_r_m": 0.2,
+    "strunk": {
+      "models": [
+        "flora:stump_old",
+        "flora:stump_round"
+      ],
+      "scale": [
+        0.5,
+        0.85
+      ],
+      "keep_r": 0.4
+    }
+  },
+  "ground": {
+    "stone": {
+      "overall": 0.7,
+      "band": 0.75,
+      "gain": 1.15,
+      "size": [
+        0.02,
+        0.14
+      ]
+    },
+    "pebble": {
+      "overall": 0.2,
+      "band": 0.9,
+      "gain": 1.1,
+      "up": 0.25
+    },
+    "grass": {
+      "overall": 0.1,
+      "band": 1.2,
+      "gain": 1.25,
+      "up": 0.55
+    },
+    "flora": {
+      "overall": 0,
+      "band": 1.1,
+      "gain": 1.25,
+      "up": 0.45,
+      "nopull": true
+    },
+    "flLeaf": {
+      "overall": 0,
+      "band": 1.1,
+      "gain": 1.15,
+      "up": 0.4,
+      "nopull": true,
+      "role": 0.7
+    },
+    "flBloom": {
+      "overall": 0,
+      "band": 0.01,
+      "gain": 1,
+      "up": 0.4,
+      "nopull": true,
+      "role": 0.85
+    }
+  },
+  "near_m": 64,
+  "garden": {
+    "wueste": "#d9c6a4",
+    "moos": "#b6bf9f"
+  }
+}
