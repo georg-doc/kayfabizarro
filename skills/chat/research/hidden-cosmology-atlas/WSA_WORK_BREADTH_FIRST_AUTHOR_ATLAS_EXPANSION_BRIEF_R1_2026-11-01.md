@@ -1,0 +1,90 @@
+# WSA / ChatGPT Work · Hidden Cosmology Atlas Breadth-First Author & Network Census R1
+**Date:** 2026-11-01. **Georg decision:** BROADEN authors, works, institutions, primary-source leads and typed relations FIRST; no additional Puharich audio or Moneyrex micro-research as default job. **Execution:** BOUNDED RESEARCH / AUTHORING, existing owner `georg-doc/kayfabizarro/skills/chat/research/hidden-cosmology-atlas/`, existing branch `research/hidden-cosmology-atlas-2026-10-13`, open **Draft PR #394**. This is a **ready-to-run WSA Work assignment**, not a claim agents have run.
+**One owner / one outcome:** add source-aware dossiers and source-scoped *candidate* relation network for **seven clusters** to the existing GitHub editorial SSOT. Do not auto-merge/promote or set up a second database/NIE/game runtime. Public/private source access and owners stay separate.
+**Parent files:** `START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `FRESH_CHAT_SLICE_PROTOCOL.md`, Atlas `LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md`, `RETURN.md`, `authors/README.md`, source-only `WORLDVIEW_RESEARCH_CORE_v1.0.0.md`, `relations/source-relations_v0.1.0.md`, `ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R1_2026-11-01.json`, current Site `site/TEST_REPORT.md` and `site/SOURCE.json`. Current GitHub ref overrides past chat heads and this snapshot.
+
+## 0 · Why this is the next Work outcome
+The case-specific source/claim reader already works as a local validated private GPT Site candidate. **Do not divert the next Work job into single-claim proof or login repairs**. At this stage maximize *coverage discoverability and appropriate source citation*, not exhaustive proof of all claims. A 2–4 primary-source lead dossier for each useful missing author is more valuable than a 40-page speculative biography. Later deep-dives selected by actual source/link gaps, research importance and independent evidence availability.
+
+## 1 · Recover and reconcile before new content
+1. Fetch exact current GitHub branch head, PR #394, existing author masters and current `authors/README.md`, WCC R4 and Jorjani R2 topic ledgers; preserve all IDs.
+2. Inventory existing **private Google Drive** author Docs before generating any duplicate; examples **Jan Irvin** and **Christopher Knowles** Docs discovered in connected Drive, **Jason Samosa** exists as updated and legacy document. Existing GitHub author masters eight: Kurt Metzger, David Icke, Daniel Liszt, William Bramley, Joseph Farrell, Catherine Austin Fitts, Jason Reza Jorjani, Michael Wann. Jesse Michels is currently **host/source register** not guest worldview. Do not treat any private Doc as newly authorized public content; do not leak its IDs.
+3. Search *authorized, relevant Dropbox only* for already-held originals, books, historic documents, article drafts, transcripts. Example: a private `The Story of the Five Star Trust` report exists, but is a **derivative summary of allegations**, not an original court/bank record. Keep its full text private. Distinguish ICIJ **FIVE STAR TRUST** offshore entity from that claimed network until unique register/party identifiers match.
+4. Inspect existing Notion `Recherchequellen` and KFB pages as **discovery/index donor**. These are currently project/reading lists, not a proven active synchronized Atlas database. No Notion page/DB writes or moves until data owner/read-only migration gate is explicitly approved. Notion read/list access is available, not a verified two-way sync.
+5. Compare the JSON census and any current owner branch updates; add missing nodes only when they have an identifiable real person/institution/work. **No parallel author master** if one exists. Give ambiguous names `IDENTITY_UNRESOLVED` rather than silently fixing them (e.g. “George Arney”).
+6. Existing **NIE** graph is privately held and explicitly local-only; reuse conceptual `ResearchPacket → NIE ANALYZE/GENERATE/PLAY` interface, but never publish full NIE manifest or its local paths.
+
+## 2 · Seven crosslinked but noncausal-first research clusters
+| Cluster | Initial scope and author roles | Original source leads | First reusable output |
+|---|---|---|---|
+| C01 Postwar transfer | Joseph Farrell (existing); candidate source readers Annie Jacobsen, Linda Hunt, Christopher Simpson, John Loftus; historical subjects von Braun, Gehlen, Skorzeny | [1946 Paperclip FRUS memorandum](https://history.state.gov/historicaldocuments/frus1946v05/d448), [NARA wartime CIA/IWG files](https://www.archives.gov/iwg/declassified-records/rg-263-cia-records) | Source-linked original vs Farrell's *Nazi International* historical interpretation |
+| C02 OSS / CIA | Historical persons Donovan, Dulles, Wisner; researchers Tim Weiner, Douglas Valentine, Peter Dale Scott, David Talbot | [NARA CIA institutional history](https://www.archives.gov/research/intelligence/cia), [OSS records](https://www.archives.gov/research/military/ww2/oss) | Dated succession chronology; no assumption of one uninterrupted covert actor |
+| C03 Organized crime / law | Meyer **Lansky** (user “Meyer-Lensky”, likely alias pending review), Luciano, Roy Cohn, Epstein as historical nodes; journalism Whitney Webb, Dan Moldea, Seymour Hersh | Court archives, contemporaneous trial and congressional records to be identified | Persons and legal cases as distinct objects, no guilty-by-association edge |
+| C04 Finance / trusts | Catherine Austin Fitts (existing), Lucy Komisar / David Cay Johnston candidates; Five Star Trust, Mega Corporation and Mega Group **separate unverified entity identities** | [ICIJ same-name FIVE STAR TRUST](https://offshoreleaks.icij.org/nodes/162340), original company/court/bank records to seek | Corporate-identity/alias/period checks before finance edges |
+| C05 Iran-Contra / Epstein / WCC | Samosa private donor; existing WCC R4; Gary Webb, Robert Parry, Jonathan Marshall; North, Secord, Wexner historical nodes | [National Security Archive Iran-Contra](https://nsarchive.gwu.edu/special-exhibits/iran-contra-affair), [DOJ Epstein Library](https://www.justice.gov/epstein), FBI Vault | Source-tagged legal/document collections and **independent chronology**, not a monolithic verified conspiracy |
+| C06 Alternate tech / psi | Existing Jorjani, Bramley, Liszt, Icke, Wann; future Puharich, Swann, Townsend Brown, Nikola Tesla, Vallée, Dolan, Redfern | Actual patent, memoir, SRI/FOIA and lecture editions; current `JM-S16..21` are initial source chain | Clear original speaker/interpretation distinction + multiple fields-of-sense |
+| C07 Media / narratives | Existing Metzger, Jesse host; private Drive Jan Irvin and Christopher Knowles; “George Arney” exact referent uncertain | Original programs/books/site author pages; avoid quote inheritance from host to guest | Author/source-specific viewpoint and media-framing cross-index |
+
+**Important editorial separation:** Authors/researchers receive author dossiers. Historic persons receive biographical/entity notes only as needed for verified relations; alleged operations receive institution/program/topic pages; primary documents receive source IDs; original-world claims receive atomic claim IDs; fictional KFB Residents are a **different system**.
+
+## 3 · Broad batch planning; no arbitrary 54 full biographies
+**Batch A — source custody/migration census (first Work checkpoint):** catalog all eight existing GitHub masters, the known Drive-only authors and Samosa, relevant Dropbox files, and Notion discovery home; finish one deduplicated `entity_id → owner → source status → need` report. Do NOT reauthor eight current masters or copy entire Docs. Register records created in this phase are **proposals until branch readback**.
+
+**Batch B — 8 new author dossiers (candidate 1):** `andrija-puharich`, `ingo-swann`, `thomas-townsend-brown`, `nikola-tesla`, `annie-jacobsen`, `linda-hunt`, `christopher-simpson`, `peter-dale-scott`. Before creating each, recheck for existing master/aliases. Dossier = 1–3 pages source-constrained with 2–5 identifiable works or original-source leads, dated context, core questions, documentary and conceptual neighbors, disagreements, caveats, link to nearest source archive, and clearly missing primaries. Any incomplete result remains `SOURCE_LEAD_DOSSIER`, not `PRIMARY_VERIFIED`.
+
+**Batch C — 8 author dossiers or source-only links (candidate 2):** `whitney-webb`, `robert-parry`, `gary-webb`, `john-loftus`, `douglas-valentine`, `tim-weiner`, `jacques-vallee`, `richard-dolan`; complete source-led mini-biographies only if accessible. **Jan Irvin and Christopher Knowles** should be prioritized for safe dedup/Drive-donor assessment rather than blindly creating two more GitHub files. Existing Farrell and Dark Journalist originals get a `SOURCE_GAPS_AND_WORKS` addendum, never duplicated author masters.
+
+**Batch D — crosslinked research question matrix and packet exports:** for every cluster, 3–5 `questionIds` with **the exact historical relationship being asked about**, source chain and falsifier, and typed `DOCUMENTED`, `SOURCE_SAYS`, `SUGGESTED`, `CONCEPTUAL_NEIGHBOR`, `DISPUTED`, or `ORIGINAL_UNAVAILABLE` status. Produce a *documentary edge table* strictly backed by original/attributed sources, and separate *noncausal adjacency* for candidate connections. Create a **read-only** machine-readable index for Site/Notion/Graph consumers. Summarize cluster coverage and missing-work queue. **No automatic Card or NIE content publication.**
+
+**Boundedness:** These are *internal Work checkpoints of one broad research assignment*, not four independent chat approval gates. A specific author with no workable sources is `DEFERRED_SOURCE_MISSING` and the executor continues the roster. The batch titles above are priorities, not fictitious commitments to finish every name without material.
+
+## 4 · Minimum portable dossier record and source model
+```yaml
+entityId: author/andrija-puharich
+entityType: AUTHOR
+canonicalName: Andrija Puharich
+aliases: []
+researchStatus: SOURCE_LEAD_DOSSIER
+clusterIds: [C06_UFO_PSI_ALT_HISTORY]
+sourceOwner: skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md
+privateDonorRefs: PRIVATE_POINTER_ONLY
+works:
+  - workId: source/JM-S16
+    title: "Publisher-reissued purported 1984 Lily Dale lecture"
+    sourceKind: PUBLISHER_TRANSCRIPT
+    eventDate: 1984-07-02
+    publicationDate: 2026-09-16
+    verifiedScope: INDEXED_TEXT_ONLY
+claims: [JM-C19, JM-C21, JM-C22]
+relations:
+  documentary: [JM-H09, JM-H10]
+  conceptualNoncausal: [JM-W10]
+openQuestions:
+  - questionId: PUHARICH_1984_AUDIO_AND_REMAINDER_ABDUCTION_CLAIM
+    missingOriginal: "Independently listened timecoded lecture and remaining recordings"
+consumerReadiness: RESEARCH_ONLY
+```
+**Illustration uses existing JM IDs** and proposes a future author path; does NOT indicate that `authors/andrija-puharich.md` was created. For historical authorship, distinguish original author quote vs publisher transcript vs secondary retelling vs editorial interpretation. Date-specific historical events, factual identity, financing and involvement edges need *source passages* not name co-occurrence. Allegations about living persons must be attributed to identifiable sources rather than stated as findings.
+
+## 5 · Read/write topology, source and privacy contract
+- **GitHub Atlas Markdown/JSON:** sole editable SSOT for *published editorial conclusions, source IDs, dossier masters, claim ledger, relation ledger, research queue and additive Return*. One stable per-author GitHub Markdown `authors/<slug>.md`; one stable institutional/topic record per identified subject; no second graph truth store.
+- **Dropbox (connected, private):** archive of books, videos, audio, transcripts, scanned PDFs, local NIE. It is an **original/donor custody layer**, not overwritten in the research job; full private text, secrets, unlicensed reproductions or local NIE graphs NOT auto-published.
+- **Google Drive/Docs:** some user-created existing author dossiers/private drafts, donor/editor surface; GitHub is the current new author master per `authors/README.md`. Existing Docs keep originals, metadata and change history until separately approved mirror/sync. Do not create simultaneous new authoritative Google Docs.
+- **Notion (connected, potential Obsidian-like front end):** existing KFB/Research and Reading List pages are confirmed. Proposed **derived, view-only navigational projection** with backlink-rich Authors/Institutions/Works/Claims/Relations/Research Questions, all keyed by GitHub `entityId`/sourceId/claimId and Git SHA. Do NOT migrate all content or auto-write Notion until separate approved one-page/one-database pilot and observed upsert/readback. No duplicate editable source truth.
+- **Research Atlas GPT Site:** existing privately deployed Site is a **consumer** of versioned Atlas index. Do not block this Work research on Site authenticated login; Site receiving changes separately briefed.
+- **NIE + KFB:** separate private narrative/intelligence layer; outputs through evidence-rich `ResearchPacket` and explicit creative-editorial adapter. No site→local Mac shortcut, no second ChatterBox or invented canonical Card IDs.
+
+## 6 · QA and evidence gates
+At each source checkpoint, run real scripts or native checks for: unique entityIds; actual GitHub author-path existence for `EXISTING`; alias collisions and common-name splits; provenance links resolve; speaker vs host separated; candidate edges `causality:false` unless direct documentary evidence; no `verified` field without original check; no private Drive IDs/Dropbox source paths in public repo; no accidental overwrite of R4 Moneyrex or R2 Puharich; every future Site read-only export pins exact GitHub head/revision. Record actual counts (new author master files, source leads, original passages, historical vs conceptual edges, rejected identities), not planned counts as completed research.
+**QA needs real independent source/fidelity reader plus separate production Guard on substantial WSA work.** After each actual GitHub write fetch exact branch head and file(s). Timeouts = `UNKNOWN`, inspect before retry; do not regenerate unverified content or duplicate files.
+
+## 7 · Work-specific handoff / execution and stops
+**Builder/Integrator:** WSA Work with authorized connected GitHub + optional Dropbox/Drive/Notion reads, single GitHub writer; **Independent Test:** separate reviewer verifies 2 sample dossiers (one official document-rich, one speculative source), sources, IDs, privacy; **Independent Critic:** confirms meaningful coverage/written clarity and whether graphs falsely imply causation; **Production Guard:** continues/quarantines single missing-author source, STOP only if core author file/owner integrity cannot be preserved. No one writes and self-accepts full production.
+**Output:** Source inventory delta; newly created genuine 1–3 page author dossier files (count actual); cluster map and evidence/graph/question index; test report; changelog; Atlas SSOT/Return in same branch; direct links to changed files; exact PR/head. One coherent broad atlas-corpus slice; no Site/Stage/Hub publication in this writer lane.
+**Next researcher:** continue candidate batch, **not** deep dive into one historic money trail unless the source atlas shows a clear prioritization.
+
+### Ready-to-paste WSA Work instruction
+> Continue existing `georg-doc/kayfabizarro` branch `research/hidden-cosmology-atlas-2026-10-13`, Draft PR #394, with CURRENT GitHub head, not an old SHA. Read three KFB chat SOPs, Hidden Cosmology Atlas v0.2 SSOT and Return, `ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R1_2026-11-01.json` and this full Work brief. **Do breadth-first author/source discovery and create missing Markdown dossiers**, not a Puharich/Moneyrex deep dive and not a new game runtime or UI. Reuse exact eight existing GitHub masters and private donor Docs/Dropbox (read-only); identify ambiguous George Arney, Mega Corporation and Five Star Trust identities before relations. Within one Work assignment perform source inventory → candidate dossier batches → documentary vs conceptual relation/question graph → tests/evidence → additive Return/changelog. Save small GitHub checkpoints and verify exact branch head/file after every write. No publishing private NIE, Notion mass migration, merging or Site publication. Give actual counts, unresolved source gaps and one next breadth gate.
+
+## One next execution gate
+`ATLAS_BREADTH_CORPUS_BATCH_AB_01` — recover/dedup private sources and produce an **actual source-grounded first batch of dossiers** in the existing GitHub owner. Site graph/Notion mirror occurs after a source-relevant corpus exists; the original separate private Site login gate is non-blocking for this research writer.
