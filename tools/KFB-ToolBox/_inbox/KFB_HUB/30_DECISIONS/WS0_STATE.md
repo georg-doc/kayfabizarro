@@ -165,3 +165,6 @@ Hub offen: Karten-Schwelle (q355). Reparaturrunden laufen: WS-Verteiler (Muster 
 
 ## Stand 31.10. Nacht, Reihenfolge (V-1126, V-1127)
 WS1 nach Merge-Runde: Kartenzonen (N-028), dann Joyride, Site (V-1123). WSA work: Waffen-Effekte, Brief im Hub, Georg gibt ihn weiter. Rückgaben offen: WS-Verteiler, Figuren (Augen, Fisch r4), WS-Design (Sky-Card-Umriss).
+
+## Stand 31.10. abends (V-1132 bis V-1138)
+Reparaturrunden laufen: WS-Verteiler (Fels-Fuß, Ansammlungen mit Grund, Blumen; N-024 gilt weiter), WS-Design (Sky-Card als Kuppel und Kraftfeld, Stadtplan danach). WS1: Stufe C ohne Termin und ohne Render-Pause (N-033), danach elf neue Planeten (N-031), dann Kartenzonen; Bilder zu den Himmel-Fragen kommen über den Kanal, WS0 macht die Hub-Karte; roter Himmelsanteil-Test nach Stufe C an WS-Himmel. WSA: Waffen plus Nachtrag bei der Combat-Slice-Ebene, Planeten-Katalog als Hinweis. Hub-Archiv: KFB_HUB_ARCHIV/hub_karten, Karten mit Antwort bleiben im Hub.
