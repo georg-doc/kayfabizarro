@@ -1,7 +1,14 @@
 # WS1_STATUS · KFB MVP R1 (Status-Branch `ws1/status`, Spiel auf `ws1/mvp-r1`)
 
-Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §185.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§185 ist der neueste, Stand 29.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Stand: 23.10.2026, WS1-Lead (Claude Code auf Georgs Mac). Empfänger: WS0. **Neueste Abschnitte zuerst; aktueller Gesamtstand = §149, neueste Notiz §186.** Abnahmen: Seite „KFB Abnahme“ (https://claude.ai/artifact/HVwr3YSWy1MFfSEyLCrFi6). Bis 22.10. lag der Status auf `ws1/terrain-439` (Historie übernommen). Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
+Neueste Einträge oben (§186 ist der neueste, Stand 31.10.). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 186 · 31.10. · IR2 laufender Stand: HUD v6 R3, Wasser F1/F2 R1, Gischt, Bällebad (@22d98ca)
+- Ausführlich in **`STAND_INTEGRATION_R2.md`** (dieser Zweig). Abnahme-Seite Version 13. Kanal Q-020.
+- **HUD v6 R3:** Deck-Viewer (KFB Card Viewer auf dem Deck-PDF), feste Leiste, HUD-Größe, Schriften im Spiel, Test `hud-v6`.
+- **Wasser (`water=1`):** kfb-hydro der Probe in Fenstern (Worker) mit kfbWater. Neue Parameter `lakeDepth`/`endFromTerrain`; der Grund betrifft auch die Probe-Quelle. Die Nähte an den Fenstergrenzen erfüllen das Kriterium noch nicht (R2).
+- **Gischt** (Kugel-Kern wake/impact) und **Bällebad-Probe** (`baellebad=1`).
+- **Pflicht** rot 0. contract-static und deps neu rot, behoben.
 
 ## 185 · 29.10. Abend · IR2 I5 Jetpack 0,75 + Hunky/Dory spielbar (@9a84742)
 - **V-1012:** Jetpack im Sitz × 0,75, skaliert um den Rücken-Kontaktpunkt, Düsen-VFX mitskaliert; `jetscale=1` = bisher. A/B von hinten: `test/out/ir2/jet/A_bisher.png` und `B_075.png` (im Klon), kommt auf die Abnahme-Seite.
