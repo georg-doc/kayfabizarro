@@ -108,3 +108,15 @@
 - TEST_REPORT_R5.md: 6/6 Dateireadbacks, 16/16 statische Checks PASS. Reale G14/G15-Modelldialoge: 0/2; neue Autor-Abnahmen: 0.
 - Keine zweite KFB-Runtime, kein Hub/Router-, Site-/Stage-Write, kein automatischer Merge.
 - Exactly one next gate: echter G14-Dialog, vom Nutzer/Autor anhand philosophischer Tiefe und Achtung des Patienten-Neins begutachtet.
+
+## 2026-10-31 · R6 — SELF-EFFICACY, VULNERABILITY AND FAIR THEORY CRITIQUE
+
+- Ein weiteres älteres Word-Manuskript privat analysiert, ohne Original, Titel, Autorenidentität, Textstellen oder bibliografische Notizen auf Public GitHub zu veröffentlichen.
+- Methodenbefund: Psychologische Wirksamkeitserwartung ist keine Erfolgsgarantie und kein moralischer Wert. Tatsächliche Handlungswirksamkeit, normative Erlaubnis und gesetzliche Einschränkungen trennen.
+- Originale Bandura-Quellen von 1977 und 2001 anhand Publikations- und Abstract-Evidenz geprüft. Direkte, stellvertretende und kollektive Agency berücksichtigt. Kein vollständiger kritischer Volltext-Check behauptet.
+- Starter Prompt v0.7, SKILL.md, RESEARCH_PROTOCOL.md, README.md aktualisiert; AGENCY_VULNERABILITY_R6.md neu; G16/G17 synthetisch hinzugefügt (17 insgesamt).
+- Implementierungs-Commit: dd584c362f229007423593385ed14c4e13fcddec.
+- Test-Evidenz-Commit: 167ec1853d9b599c13e85f72a6288ac0d03bfd09; 6/6 Dateireadbacks und 16/16 strukturelle Checks PASS.
+- G16/G17 reale Dialoge 0/2, neue Autorenfreigaben 0. Privater Deep-Read bleibt als Chat-Datei, nicht im öffentlichen Repository.
+- Keine KFB-Runtime, kein Hub, Site, Stage, neuer Owner oder Merge.
+- Next gate: ein echter Nutzer- oder Autor-Review des G16-Theorievergleichs.

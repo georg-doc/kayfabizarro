@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.6 R5 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.7 R6 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -30,10 +30,13 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - R5: Medizinethik und relationale Autonomie differenzieren: Einwilligungsfähigkeit ist nicht gleich Zustimmung oder medizinische Vorteilhaftigkeit; Patientenwiderspruch nie pauschal psychologisch deuten. Rechts-/Leitlinienstand und Jurisdiktion beachten. Siehe `RELATIONAL_AUTONOMY_R5.md`.
 - R5: `GOLDEN_SAMPLES.md` G1–G15, neues `TEST_REPORT_R5.md` mit 16/16 Strukturchecks. 0 neue Autor-Abnahmen, private Quelltexte bleiben privat.
 
+- R6: Wirksamkeitserwartung, tatsächlichen Einfluss, Erfolgsgarantie und normative Erlaubnis auseinanderhalten. Bei Theoriekritik den stärksten belegten Text prüfen; direkte, stellvertretende und kollektive Agency sowie Vulnerabilität unterscheiden. Öffentliche Methodik in AGENCY_VULNERABILITY_R6.md.
+- R6: Golden Samples G1–G17; TEST_REPORT_R6.md dokumentiert 16/16 statische Checks. Keine neue Autor-Abnahme; privates Manuskript nur im Chat.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein echter, durch Nutzer oder Autor bewerteter G14-Dialog**: Prüfen, ob das Modell eine informierte Behandlungsablehnung weder pathologisiert noch durch Dialogzwang entwertet, bei gleichzeitig substantiellem ethischem Widerspruch. Kein Merge ohne Freigabe.
+**Ein echter, vom Nutzer oder Autor bewerteter G16-Dialog**: faire Rekonstruktion empirischer Theorie und gehaltvolle normative Weiterführung ohne Strohpuppe. Kein Merge ohne Freigabe.
