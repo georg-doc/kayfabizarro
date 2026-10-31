@@ -10,4 +10,4 @@ Jede Stelle richtet sich nach ihren Nachbarn zu allen Seiten, und jede feinere G
 - Wie schnell das im Spiel läuft, ist nicht gemessen.
 - Planeten sind damit noch nicht gerechnet.
 
-**Dein Urteil:** Richtung stimmt, aber noch nicht schlüssig und natürlich, weil der Bezug zu anderen Objekten, Gelände und Ort fehlt. Das wird gerade nachgearbeitet. Erst nach deinem Ja baut WS1 es ein.
+**Dein Urteil:** Richtung stimmt, aber noch nicht schlüssig und natürlich, weil der Bezug zu anderen Objekten, Gelände und Ort fehlt. Die Nacharbeit ist fertig, Bilder im Ordner `WFC_BEWEIS_R2`: Steine und Kies wirken jetzt schlüssig, Blumen, Gras und Ufer noch nicht. Erst nach deinem Ja baut WS1 es ein.
