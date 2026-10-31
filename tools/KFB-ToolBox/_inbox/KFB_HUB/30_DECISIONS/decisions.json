@@ -15898,6 +15898,21 @@
    "applies": "beim Merge"
   },
   {
+   "id": "V-1094",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "WSB STEIN_LEICHT_R1: leichte Steine aus dem Bestand, nur Sohle flach geschnitten, 8 Kiesel und 12 Felsen. Von WS0 auf dem Blatt angesehen und angenommen, auch kiesel_ky_i mit 56 Dreiecken. Keine Reduktion nötig. Bildrate im Spiel noch ungeprüft. Verteiler baut sie hinter place=r2 ein und misst gepaart mit dem 1×1-Readback-Tor, Ursache Steine oder Schatten wird damit belegt. Danach q333 mit neuen Blättern aktualisieren.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Verteiler-Rückgabe",
+   "source": "50_BLENDER/STEIN_LEICHT_R1/RETURN.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bestand vor Neubau; die letzte Bildzeit-Tabelle maß mit rAF, das auf dieser Maschine die GPU nicht misst.",
+   "applies": "bei der Rückgabe"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
