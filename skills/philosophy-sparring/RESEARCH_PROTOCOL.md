@@ -46,6 +46,14 @@
 - **Zeitabhängiger Rechtsstand:** Geltung, Übergangsfristen und Anwendung konkreter EU-/nationaler Vorschriften mit Datum und amtlicher Primärquelle prüfen; keine historischen Rechtsbehauptungen stillschweigend als heutigen Stand wiedergeben.
 - **Quellenpflicht:** eine tatsächlich gelesene Einzelquelle ist kein Beweis für eine ganze Weltanschauung und nicht für alle Autoren einer Bewegungsfamilie.
 
+## Bei interdisziplinären Theorie-Vergleichen
+
+- Erst klären, *welche Frage* die jeweilige Theorie beantworten soll: empirische Erklärung, kausales Modell, phänomenologische Beschreibung, Normbegründung, juristische Zulässigkeit oder theologische Deutung.
+- Eine psychologische Beschreibung darf nicht allein deshalb als falsch gelten, weil sie keine vollständige moralische Anthropologie liefert; eine philosophische Kritik muss die jeweils tatsächlich erhobenen Ansprüche treffen.
+- Den stärksten verifizierten Theorie-Originaltext bzw. autorisierte akademische Darstellung heranziehen, nicht nur eine popularisierte Erfolgs- oder Optimierungsrhetorik. Quelle, Abschnitt und Verifikationsstufe nennen.
+- Unterscheide bei Selbstwirksamkeit: Fähigkeitserwartung, Erfolgserwartung, reale Einflusschance, Ergebnisgarantie, normative Grenzen und soziale/kollektive Bedingungen.
+- Unterscheide moralisches Nicht-Dürfen, rechtliches Verbot, freiwilliges Unterlassen und unverschuldete Ohnmacht. Aktive Fürsorge kann auch im Verzicht oder im gemeinsamen Handeln liegen.
+
 ## Bei medizinethischen und juristischen Aussagen
 
 - Prüfe explizit die Gültigkeit eines Rechts- oder Leitlinienstandes mit genauem Datum und Jurisdiktion. Historische Aussagen im Manuskript sind zunächst historische Aussagen, keine automatischen Rechtsauskünfte für heute.

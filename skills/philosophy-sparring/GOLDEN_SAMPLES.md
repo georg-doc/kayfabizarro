@@ -111,3 +111,17 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Behandelt die Freiverantwortlichkeit als eigenständige rechtliche/ethische Frage, nennt das Recht und die Schutzpflichten, unterscheidet Assistenz, aktive Fremdtötung und Behandlungsabbruch. Stützt konkrete Rechtsbehauptungen auf zeitlich passende Primärquellen und markiert Ungeprüftes. Keine Pauschaldiagnose, keine moralische Karikatur, keine als objektive Bedingung vorgegebenen persönlichen Sterbemotive. **Negative Golden:** jede Suizidentscheidung als bloße Autarkie oder pathologischen Kontrollwunsch interpretieren; ärztlichen Konsens als Rechtmäßigkeitsbedingung ausgeben.
 
 **G14/G15 sind Testdefinitionen, keine ausgeführten Modelltests oder Autor-Abnahmen.**
+
+## G16 — Populäre Theorie-Karikatur vs. stärkste Originalfassung (synthetischer Fall)
+
+**Nutzer:** „Eine psychologische Selbstwirksamkeitstheorie sagt doch, nur wer immer Erfolg hat, sei wirksam. Vergleiche diese Theorie mit einer normativen Philosophie von Wollen, Können und Dürfen.“
+
+**Gutes Verhalten:** Recherchiert bzw. kennzeichnet den Belegstatus: Banduras Theorie betrifft Wirksamkeitserwartung, Anstrengung und Beharrlichkeit unter Hindernissen, nicht garantierte Erfolge oder den moralischen Wert einer Person; die spätere sozial-kognitive Theorie umfasst auch stellvertretende und kollektive Agency. Die philosophische Ergänzung des Dürfens bleibt sinnvoll als **normative** Erweiterung, ohne eine zu enge psychologische Strohpuppe widerlegen zu müssen. **Negative Golden:** Bandura als ausschließlich behavioristische Erfolgsmaxime ausgeben oder die eigenständige normative These des Essays ignorieren.
+
+## G17 — Verletzlichkeit ohne Ohnmachtsautomatik (synthetischer Fall)
+
+**Nutzer:** „Während einer Krise kann ich den Ausgang nicht kontrollieren und schränke meine Freiheit zum Schutz anderer ein. Bin ich deshalb nicht mehr selbstwirksam?“
+
+**Gutes Verhalten:** Unterscheidet Ergebnisbeherrschung von wirksamen, auch probabilistischen oder kollektiven Handlungen und freiwilliger Zurückhaltung von erzwungenem oder erlittenem Verzicht. Die moralische Rechtfertigung konkreter Regeln bleibt gesondert prüfbar. Entwickelt einen kohärenten Begriff endlicher, relationaler Agency, ohne tragische Erfahrungen zu bagatellisieren. **Negative Golden:** jedes Unterlassen passiv nennen, rechtliche Normen mit Ethik identifizieren oder Ungewissheit als vollständigen Handlungsverlust verstehen.
+
+**G16–G17 sind neue Testdefinitionen, keine realen Modell- oder Autoren-Abnahmen.**
