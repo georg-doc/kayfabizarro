@@ -1,3 +1,15 @@
+## BINDING USER PRODUCT DIRECTION · 2026-10-31 · RESEARCH ATLAS META-ADMIN GPT SITE YES
+
+Georg has decided **YES: a specialist Research Atlas GPT Site is the intended meta-administrative interface** for evidence-led research, author/institution/topic register, GitHub/authorized Dropbox/Drive cross-search, bounded Work research dispatch and source-backed downstream NIE / NotebookLM / essays / KFB authoring packet workflows. This **supersedes the conditional “possibly a Site later” planning statement**, but **does not** authorize inventing a second historical source/graph database, publishing private NIE files, rebuilding the KFB gameplay runtime, automerging or claiming a Site has deployed.
+
+**Current implementation brief (source owner):** [Research Atlas Meta-Admin GPT Site R1](KFB_RESEARCH_ATLAS_META_ADMIN_GPT_SITE_BRIEF_R1_2026-10-31.md). **Already traced one real source chain:** [Puharich–Jorjani 1984/2026 end-to-end evidence journey](RESEARCH_ATLAS_END_TO_END_CASE_PUHARICH_JORJANI_R1_2026-10-31.md) with current `JM-S16/S17/S19`, `JM-C19/C21/C22`, `JM-H09/H10`, `JM-W10`; this is a GitHub documentary walkthrough **NOT an implemented browser Site, audio-verified quote or connected Work job**. **Central entity directory:** [14-entry derived pointer-only registry](ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json). **Actual static QA:** [25/25 metadata/document checks](RESEARCH_ATLAS_META_ADMIN_SITE_BRIEF_TEST_REPORT_R1_2026-10-31.md), no Site/CI/browser/NIE tests.
+
+**Authority and privacy:** Hidden Cosmology Atlas GitHub branch remains the editorial SSOT, WCC R4 and Jorjani R2 original source ledgers retain their precise status; private user NIE was located via authorized Dropbox and its **local-only** contents remain out of public GitHub. `overworld/docs/NIE_ADAPTER_HOOK.md` is documented **not built**. GPT Site requires verified auth before claiming Dropbox/local Mac/Work job access. Existing KFB Production Hub remains the **one cross-project front door**; later link only after actual Site publication/readback. No Cloudflare Stage link or Site URL is claimed for this briefing.
+
+**ONE next product gate:** `RESEARCH_ATLAS_SITE_PUHARICH_EVIDENCE_READER_01`: one real read-only source/claim/typed-edge/packet Site surface, source isolation before visual integration, site-specific independently inspected evidence. The separate Puharich original-audio gate remains research backlog, not a blocker for faithful source browsing.
+
+---
+
 ## RESEARCH ARCHIVE ACCESS ADDENDUM · 2026-10-31 · MONEYREX R4
 
 **Existing source owner:** [Samosa/WCC topic Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [R4 official archival access / Italian requests](topics/wcc-samosa-network-2026-10-29/MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md) · [R4 actual tests](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R4_2026-10-31.md). Nothing moved or duplicated from R1–R3. `WC-S20` still identifies the **1981-04-30** declassified Bank of Italy→Sindona Commission **Moneyrex** letter (**catalogued only, not read**). Original parliamentary custody contact **ars_segreteria@camera.it**.
