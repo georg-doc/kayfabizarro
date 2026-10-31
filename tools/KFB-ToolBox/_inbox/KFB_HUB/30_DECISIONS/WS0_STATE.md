@@ -153,3 +153,6 @@ Georg: q330 TUNE, q331 TUNE, q332 TUNE (direkt an WS1), q333 KEEP als Richtung, 
 
 ## Stand 31.10. spätnachmittags (V-1101 bis V-1109)
 Hub offen: q339 Verteilung, q340 Gespräch, q341 drei Figuren; b274 Pop-up-Pilot bei Georg. Laufend: WS-Himmel R2, WS-Design Sky-Card, Spiel-Sitzung Audio, WSB Brick-Fish, Joyride-Analyse. WS1 hat N-015 bis N-017 im Kanal. Merge-Liste neu: card-edge @a8554963, weltwissen @57bea6af, verteiler @e12e21c1, cast @3077e33c (private Körper in assets/private @023b70c9). V-1104 Augen-Vorberechnung bei WS1, GLB-Pilot nach dem Merge. Testregel V-1107.
+
+## Stand 31.10. Abend (V-1115)
+Budget 70 %: keine neuen Aufträge. FRAKTAL_R1 fertig, Freigabe Hub q351; danach WS1 Kanal mit TIER0, brief_domains und Kanon umstellen. Laufend: Spiel-Sitzung (Blaster, Hüpfen, Fluff-Klang), WS-Design Sky-Card TUNE, Figuren (Fisch, Lider, NPC-Lider). Hub-Speicher frei gemacht, weitere alte Videos bei Bedarf.

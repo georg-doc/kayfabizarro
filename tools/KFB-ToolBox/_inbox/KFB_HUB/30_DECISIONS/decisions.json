@@ -16213,6 +16213,36 @@
    "applies": "Bericht, dann Umbau"
   },
   {
+   "id": "V-1115",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "FRAKTAL_R1 (replies/FRAKTAL_R1): eine Funktion kinder() mit Fällen als Tabellenzeilen, TIER0-Zeilen, fünf Prüfungen. Georgs Lesart bestätigt, mit Präzisierung: Abstände wachsen, Richtung mit Ursache ist Pflicht, Größe fällt in Stufen, Kartenrelief ist Ausnahme. Wartet auf Georgs Freigabe (Hub). Danach ersetzt es SPEC_PLACEMENT_GRAMMAR_R2 als Pflichtlektüre; WS1 baut Fußkügelchen, Ufer-Spritzer und Uferlinien, Aufprall daraus. Hub-Speicher: 38 alte Videos beantworteter Karten gelöscht (Georg Ja). Wochenbudget 70 %: keine neuen Aufträge aus WS0, Weiteres an WS1 und WSA work.",
+   "values": {},
+   "owner": "WS0 · WS1",
+   "check": "Georgs Freigabe, fraktal-check",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Muster stand längst in den Papieren, aber nur für Fluff und Steine; eine Funktion mit Prüfung beendet die Einzellösungen.",
+   "applies": "nach Georgs Freigabe"
+  },
+  {
+   "id": "V-1116",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Planeten WSA (PR #46, sky-planets-r1, revision-r3): Georg nimmt den Zwölfersatz an, Vulkan PASS, Käsemond provisorisch. Einbau WS1 über bodyColor() in sky-r1 nach Merge von world/himmel-r1 (N-023). WSA-Vorschlag zur gemeinsamen Regel ist in FRAKTAL_R1 aufgegangen; WFC ordnet Nachbarschaften, Felder und Abstandsfunktionen tragen Dichte und Größe. Generierte Zwischenbilder werden nicht zur nächsten Stilreferenz.",
+   "values": {},
+   "owner": "WS1 · WSA work",
+   "check": "Einzelbilder Himmel",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Satz ist da und passt in die vorbereitete Stelle; die Verteilungslogik gibt es nur einmal.",
+   "applies": "N-023"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
