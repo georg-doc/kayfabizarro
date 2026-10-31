@@ -15868,6 +15868,21 @@
    "applies": "beim Merge"
   },
   {
+   "id": "V-1092",
+   "date": "2026-10-31",
+   "area": "Wasser",
+   "verdict": "BUILD",
+   "text": "WS1 N-012 fertig, game/integration-r2 @22d98ca: HUD v6 mit Deck-Viewer und fester Leiste, Wasser F1/F2 R1 hinter water=1, Gischt auf dem Kugel-Kern, Bällebad-Probe baellebad=1, hud-3d grün. Abnahme-Seite Version 13, Urteil Hub q332. Offen: Versatz und Pegelsprung an den Fenstergrenzen (WS1 R2), kfb-hydro.v1 hat zwei neue Parameter mit Probe-Standard (lakeDepth, endFromTerrain), die an den Owner der Probe-Quelle müssen. N-013 meldet world-save/2 an WS1.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Hub q332",
+   "source": "Q-020, Q-021",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 wartet auf Georg, deshalb steht die Frage jetzt im Hub.",
+   "applies": "beim Urteil"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
