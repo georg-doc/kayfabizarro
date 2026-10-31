@@ -1,3 +1,14 @@
+## 2026-10-31 · Songs + ASMR R2 · bestehende private Audio-Site v21
+
+**DEPLOYED · TECHNICAL PASS · GEORGS HÖRURTEIL OFFEN.** Bestehende Site https://kfb-audio.frizzlebob.chatgpt.site/ Version 21, Site-Quellcommit `6e86082b8f950236f2d1f31cf3a930684dfaadb2`, Deployment `appgdep_6ae55b8aaa84819191369a84744598fb` succeeded; Version/Commit nativ zurückgelesen. Die aktuelle Site-v20-Quelle wurde erweitert, kein Rückschritt auf den alten PR455-Snapshot. Zwei AAC-Master im Klang-Speicher @fae628c2d85699a203742cb008e344a4653bc28d; privater Musikkatalog @1c186978525ef9927483da21001625b9eabea473. Songs & ASMR: Soundbed/Radio plus 43er-Hörmatrix, lokale Keep/Tune/Cut-Auswahl und Export. 172 Site- und 18 Card-Regressionen PASS; lokale Browser-Wiedergabe beider gepinnter Master und Gebäude-Crack/Burst PASS. Produktionsbrowser endet am privaten Anmeldegate; keine produktive Hörabnahme behauptet. Keine Generierung/Spieländerung. Vollständiger Return: `WSA_SONGS_ASMR_R2_RETURN_2026-10-31.md`. Ein Gate: Georg hört; danach WS0 → comms/ws0-ws1 → WS1/game/integration-r2.
+
+## 2026-10-29 · Briefing · zwei Suno-Songs + ASMR/Gebäude + Forschungs-Routing
+
+- Zwei private Master plus je neun Stems am Pin `da990fe4097c6ed7e59eda24ef2cf1acc6dbcb51` geprüft; tatsächlicher Katalog `40_AUDIO/music_catalog_r1.json` enthält beide Titel noch nicht.
+- Bestehende 40er-ASMR-Bank und drei Goo-House-Zerstörungsklänge inventarisiert. Aktuelle Audio-Site ohne Hörmatrix; aktuelles Spiel ohne speziellen ASMR-/Goo-House-Aufruf und ohne reale Gebäude-Zerstörungskaskade.
+- Fahrzeug-/Flugforschung aus Game PR #45 in den aktuellen Audio-Site-Owner geroutet.
+- Nur Briefing/Owner-Metadaten; keine Site-, Audio- oder Spielimplementierung.
+
 ## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
 
 - Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.
@@ -147,3 +158,10 @@
 - published evidence checkpoint `8c32d2bf8afecac063c2b1e11362710a1051504e`;
 - left one next gate: after exact Claude Coworker Return, Work/WSA implements only the tiny World-side context/event adapter;
 - no Production Hub, router, Cloudflare, Audio Site, second Site, merge or Live promotion.
+
+
+## 2026-10-26 · WS0 correction + integrated Immersive Sound source in existing KFB Audio MVP
+- Corrected executor label **VS0 → WS0**; broader Immersive Sound Universe R2 is integral to actual Audio Site v11, not Nature-only standalone or distant deferred project.
+- Additive current-MVP source work on branch `feature/kfb-audio-site-immersive-ws0-2026-10-26` stacked from this Audio owner #365; native Soundscape panel gets an injected-context ICEBERG/ONEIRIC/ORGANIC_AIR synthesized demo from internal Conspiracy Iceberg donor ideas; SOURCE bank, B/C/D MusicClock, Voice and existing Site preserved.
+- 17/17 current source static/syntax checks + 18/18 mock WebAudio PASS; 26-assertion Node QA script prepared but not yet executed; real hearing/browser/Site publish 0. Existing Site version 11 remains untouched; no standalone new runtime or Stage.
+- Current side-lane Return and WS0 brief at `IMMERSIVE_WS0_{RETURN,INTEGRATION_BRIEF,TEST_REPORT}_R1_2026-10-26.md` (full path names in same workflow); next source-to-Site gate is WS0 audio-source isolation + v11 parity/browser + same-Site publication only after green.
