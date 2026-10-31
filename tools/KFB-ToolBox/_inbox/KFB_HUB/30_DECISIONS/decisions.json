@@ -15976,8 +15976,8 @@
    "id": "V-1099",
    "date": "2026-10-31",
    "area": "HUD",
-   "verdict": "FAIL",
-   "text": "Georg 31.10. zu q330 und q331. Gespräch FAIL im Aussehen: Zipfel zu klein und falsch, Farbpunkte machen alle Antworten gleichrangig, passt nicht in unser Design. Ursache bei WS0: Georgs Zipfel-Korrektur (30/22 statt 18/12) und die Antwortspalte stehen nur im HUD-Prototyp, die Bitte NACHRICHT_WS0_sprechblasen blieb unbeantwortet, WS-Weltwissen baute deshalb nach dem alten Code. Vorgabe replies/SPRECHBLASEN_SSOT_R2.md mit Referenzbild, Zipfel für alle Sprechblasen, Antworten hinter wissen=r1. Himmel TUNE: Bilder zeigten den Himmel nur als schmalen Streifen, der Planet ist nicht der gemeinte. Ursache bei WS0: Auftrag und V-1007 nannten „lila Planet“ nur als Wort, ohne Bild, gegen V-740. Georg wählt die Vorlage im Hub q336; WS-Himmel wartet darauf. Himmels-Beweise künftig mit Himmel als Hauptfläche, dazu ein Fahrbild. WS0 hat q330 trotz offenem Kritiker-REWORK vorgelegt, das bleibt aus.",
+   "verdict": "TUNE",
+   "text": "Georg 31.10. zu q330 und q331 (beide TUNE). Gespräch im Aussehen falsch, die Gesprächs-Logik bleibt: Zipfel zu klein und falsch, Farbpunkte machen alle Antworten gleichrangig, passt nicht in unser Design. Ursache bei WS0: Georgs Zipfel-Korrektur (30/22 statt 18/12) und die Antwortspalte stehen nur im HUD-Prototyp, die Bitte NACHRICHT_WS0_sprechblasen blieb unbeantwortet, WS-Weltwissen baute deshalb nach dem alten Code. Vorgabe replies/SPRECHBLASEN_SSOT_R2.md mit Referenzbild, Zipfel für alle Sprechblasen, Antworten hinter wissen=r1. Himmel TUNE: Bilder zeigten den Himmel nur als schmalen Streifen, der Planet ist nicht der gemeinte. Ursache bei WS0: Auftrag und V-1007 nannten „lila Planet“ nur als Wort, ohne Bild, gegen V-740. Georg wählt die Vorlage im Hub q336; WS-Himmel wartet darauf. Himmels-Beweise künftig mit Himmel als Hauptfläche, dazu ein Fahrbild. WS0 hat q330 trotz offenem Kritiker-REWORK vorgelegt, das bleibt aus.",
    "values": {},
    "owner": "WS0 · WS-Weltwissen · WS-Himmel",
    "check": "Hub q336, Blatt WS-Weltwissen R2",
@@ -15985,6 +15985,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Eine abgenommene Form steckte nur im Prototyp, und eine Vorlage stand nur als Wort im Auftrag; beides driftet. Vorgaben brauchen ein Bild und müssen ins Spiel zurückfließen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-1100",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 31.10. im Hub: „ich kann in diesen sammel-bildern nichts erkennen und freigeben! macht endlich sinnvolle screenshots!“ Ab sofort kein Sammelblatt mehr im Hub. Je Folie ein Motiv, das das Bild füllt, in voller Größe aus dem Spiel; Vergleich höchstens zwei Bilder nebeneinander, gleicher Ausschnitt; wenige Folien statt vieler Kacheln. Sammelblätter nur noch intern. Urteile: q333 Verteiler KEEP als Richtung, Standard erst nach lesbaren Einzelbildern im Hub, place=r2 bleibt Schalter. q334 Kartenkante KEEP, die Tusche an den Geländekarten bleibt zu dick und wird dünner. q335 Einzelfehler reparieren (Hero Man Augen, Norman Mund, Brick-Fish, Mannequin) durch WSB, neue Einzelbilder. q332 Wasser TUNE: Georg gab WS1 die Korrekturen direkt.",
+   "values": {},
+   "owner": "WS0 · alle Sitzungen",
+   "check": "Hub q333, q334, q335, q336",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg kann aus verkleinerten Kacheln nicht urteilen; eine Freigabe ohne lesbares Bild ist keine.",
    "applies": "sofort"
   },
   {
