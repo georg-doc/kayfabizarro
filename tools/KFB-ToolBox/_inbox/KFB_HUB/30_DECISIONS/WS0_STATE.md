@@ -159,3 +159,6 @@ Budget 70 %: keine neuen Aufträge. FRAKTAL_R1 fertig, Freigabe Hub q351; danach
 
 ## Stand 31.10. spätabends (V-1118 bis V-1120)
 Hub offen: Verteilungs-Muster (q353), Brick-Fish (q354). Sky-Card TUNE bei WS-Design (Umriss des Viertels). Audio: Georg-Notiz, Prüfung erst nach Merge. WS1 hat N-025 (Figuren-Branch). Bei Ja zu q353: TIER0 und brief_domains umstellen, N-024 aufheben, WS1 Einbau unter 4 m samt Einzelbildern, WSA Folgetext. Danach Wurf-Weg Brick-Fish; WSB: Lorekeeper-Brille, demon_lord, Timelines.
+
+## Stand 31.10. Nacht (V-1121, V-1122)
+Hub offen: Karten-Schwelle (q355). Reparaturrunden laufen: WS-Verteiler (Muster mit Bezug zu Objekten und Gelände), WSB (Fisch r4), Figuren (Augen-Verankerung global), WS-Design (Sky-Card-Umriss). WS1 nach Q-030: ufo-licht, himmel plus Planeten, cast, Stufe C; N-026 gesendet. Georgs Screenshot zu den Lidern fehlt.
