@@ -1,0 +1,264 @@
+{
+  "scope": "Source-byte and pure-validator comparison only. No asset loading, browser, gameplay or hearing acceptance.",
+  "sourceFilesVerified": 16,
+  "rows": [
+    {
+      "weapon": "action-rifle",
+      "game": "CONTRACT_PASS",
+      "gameIssues": [],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "blade",
+      "game": "CONTRACT_PASS",
+      "gameIssues": [],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "blaster",
+      "game": "CONTRACT_PASS",
+      "gameIssues": [],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "bow-a",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+        "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+        "CLIP_FAMILY_EVIDENCE_REQUIRED",
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "bow",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+        "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+        "CLIP_FAMILY_EVIDENCE_REQUIRED",
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "crossbow",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "gatling",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED",
+        "ROOT_YAW_ONLY_MEASURED_AIM_FAMILY"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "pistol",
+      "game": "CONTRACT_PASS",
+      "gameIssues": [],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "skeleton-staff",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+        "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+        "CLIP_FAMILY_EVIDENCE_REQUIRED",
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED",
+        "MUZZLE_PRIMARY_SOURCE_REQUIRED",
+        "MUZZLE_SECONDARY_SOURCE_REQUIRED",
+        "MUZZLE_VARIANTS_ARRAY_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "smoke",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "staff",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+        "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+        "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+        "CLIP_FAMILY_EVIDENCE_REQUIRED",
+        "CLIP_FAMILY_AIM_REQUIRED",
+        "CLIP_FAMILY_NATURAL_REQUIRED",
+        "CLIP_FAMILY_LAYERED_REQUIRED",
+        "MUZZLE_PRIMARY_SOURCE_REQUIRED",
+        "MUZZLE_SECONDARY_SOURCE_REQUIRED",
+        "MUZZLE_VARIANTS_ARRAY_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    },
+    {
+      "weapon": "wand",
+      "game": "CONTRACT_FAIL",
+      "gameIssues": [
+        "MUZZLE_PRIMARY_SOURCE_REQUIRED",
+        "MUZZLE_SECONDARY_SOURCE_REQUIRED",
+        "MUZZLE_VARIANTS_ARRAY_REQUIRED"
+      ],
+      "arena": "CONTRACT_PASS",
+      "arenaIssues": []
+    }
+  ],
+  "excludedSelectionProbes": [
+    {
+      "weapon": "action-rifle",
+      "selectedClip": "Ranged_1H_Reload",
+      "game": {
+        "status": "CONTRACT_PASS",
+        "rule": "V-574",
+        "issues": [],
+        "visualProofRequired": true
+      },
+      "arena": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "SELECTED_CLIP_EXCLUDED"
+        ],
+        "visualProofRequired": true
+      }
+    },
+    {
+      "weapon": "action-rifle",
+      "selectedClip": "Ranged_2H_Shoot",
+      "game": {
+        "status": "CONTRACT_PASS",
+        "rule": "V-574",
+        "issues": [],
+        "visualProofRequired": true
+      },
+      "arena": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "SELECTED_CLIP_EXCLUDED"
+        ],
+        "visualProofRequired": true
+      }
+    },
+    {
+      "weapon": "gatling",
+      "selectedClip": "flight_aim",
+      "game": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+          "CLIP_FAMILY_AIM_REQUIRED",
+          "CLIP_FAMILY_NATURAL_REQUIRED",
+          "CLIP_FAMILY_LAYERED_REQUIRED",
+          "ROOT_YAW_ONLY_MEASURED_AIM_FAMILY"
+        ],
+        "visualProofRequired": true
+      },
+      "arena": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "SELECTED_CLIP_EXCLUDED"
+        ],
+        "visualProofRequired": true
+      }
+    },
+    {
+      "weapon": "staff",
+      "selectedClip": "Ranged_Magic_Raise",
+      "game": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+          "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+          "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+          "CLIP_FAMILY_EVIDENCE_REQUIRED",
+          "CLIP_FAMILY_AIM_REQUIRED",
+          "CLIP_FAMILY_NATURAL_REQUIRED",
+          "CLIP_FAMILY_LAYERED_REQUIRED",
+          "MUZZLE_PRIMARY_SOURCE_REQUIRED",
+          "MUZZLE_SECONDARY_SOURCE_REQUIRED",
+          "MUZZLE_VARIANTS_ARRAY_REQUIRED"
+        ],
+        "visualProofRequired": true
+      },
+      "arena": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "SELECTED_CLIP_EXCLUDED"
+        ],
+        "visualProofRequired": true
+      }
+    },
+    {
+      "weapon": "bow",
+      "selectedClip": "Ranged_Bow_Release",
+      "game": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "KIT_AXIS_ROTATION_EVIDENCE_REQUIRED",
+          "KIT_AXIS_ROTATION_MUST_BE_MEASURED_Y90",
+          "SLOT_POSITION_NEEDS_VISIBLE_INTERPENETRATION",
+          "CLIP_FAMILY_EVIDENCE_REQUIRED",
+          "CLIP_FAMILY_AIM_REQUIRED",
+          "CLIP_FAMILY_NATURAL_REQUIRED",
+          "CLIP_FAMILY_LAYERED_REQUIRED"
+        ],
+        "visualProofRequired": true
+      },
+      "arena": {
+        "status": "CONTRACT_FAIL",
+        "rule": "V-574",
+        "issues": [
+          "SELECTED_CLIP_EXCLUDED"
+        ],
+        "visualProofRequired": true
+      }
+    }
+  ],
+  "gameHasExclusionExport": false,
+  "arenaHasExclusionExport": true
+}
