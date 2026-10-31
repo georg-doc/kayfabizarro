@@ -1,6 +1,6 @@
 # Songs und ASMR im Spiel · Rückgabe an WS0 · 31.10.2026 (V-1109)
 
-**Branch:** `game/audio-asmr-r1` @a3e268d4, von `game/integration-r2` @bb87eb11. Nicht gemergt.
+**Branch:** `game/audio-asmr-r1` @95c91847, von `game/integration-r2` @bb87eb11. Nicht gemergt. Georgs Punkte zu den Videos stehen im Abschnitt „Runde 2“, die Tabellen gelten für den neuen Stand.
 **Schalter:** ASMR nur mit `asmr=1`. Die zwei Titel laufen ohne Schalter.
 **Gehört hat das niemand:** Geprüft sind Auslösung, Ort, Zeitpunkt und Pegelverlauf in der Aufnahme. Das Hörurteil fällt in Georgs Spielvergleich.
 
@@ -11,10 +11,31 @@ Alle aus der Spielkamera, Site-Look, Ton vom gepinnten Speicher, ASMR-Satz vom T
 |---|---|
 | `Knete.mp4` | Wagen wächst 1,2 · Squash bei Aufsetzen und Sprüngen 5,8 / 8,9 / 11,7 / 13,1 · Wagen zerfällt in Fluff 18,7 |
 | `Goo.mp4` | Goo ziehen 5,7 / 9,3 · Tropfen 7,0 / 10,2 · Blubbern 7,0 · geheilt: Schnurren 14,4, Fluff frei 14,8 · Fleck weg, Reinigen 18,4 |
-| `Fluff.mp4` | Ankommen 0,1 / 1,7 / 4,2 / 14,4 · Fluff fällt nach Faustschlag oder fliegt zum Saugarm 0,9 / 2,7 / 11,1 / 13,8 |
+| `Fluff_R2.mp4` | neu: ohne Jaulen, weicher Plopp · Fluff fällt nach Faustschlag 1,0 / 2,8 / 5,2 / 11,7 · fliegt zum Saugarm 8,6 / 15,3 |
+| `Fluff.mp4` | alter Stand, nur zum Vergleich |
 | `MiB.mp4` | Turm wächst 6,0 · Anzug 8,3 / 12,2 / 13,8 · Blitz lädt 9,0 |
 | `Songs.mp4` | Shepard und Busker als Radio bei Fahrt, danach als Klangbett im Stand |
 | `Ohne_Schalter_Vergleich.jpg` | links Ausgangsstand, rechts Branch, ohne Schalter |
+
+## Runde 2 · Georgs Punkte zu den Videos (31.10.)
+**Hüpfen: nur Testablauf.** Mein Prüfskript setzte die Figur alle 250 ms knapp über den Boden, sie fiel jedes Mal herunter. Am Stamm ohne Eingabe bewegt sie sich im Stand um unter 1 cm, mit demselben Versetzen um 48 cm, bei allen drei Figuren gleich. Kein Spielfehler.
+
+**Blaster: Im Video war es nicht der Blaster, sondern die Heil-Pistole des Dark Fluffers, und die liegt im Stamm bei allen Figuren falsch.**
+- K10-Blaster und K10-Pistole sitzen richtig: im Schuss liegen sie auf der Unterarmachse, FrizzleBob, GothGirl und Barbar gleich (`Waffe_*_Blaster_Schuss.jpg`).
+- Die Heil-Pistole liegt quer vor dem Bauch, rund 90 bis 115 Grad neben dem Unterarm, bei allen drei Figuren (`Waffe_*_Heilpistole.jpg`, Übersicht `Waffe_Uebersicht.jpg`; Winkel grob, die Waffe hat keinen Mündungs-Knoten).
+- Ursache: `src/npc/darkFluffer.js:25` setzt für dieselbe Kit-Pistole eine eigene Drehung (`GUN_SLOT`, V-581). Die abgenommene K10-Karte nutzt eine andere (`kfb_kit_gun_pistol_prototype.weapon.json`, `slotOffset`). Das verletzt V-536.
+- Sie erscheint nur mit dem Schalter `fluffer`, der nicht im Site-Hash steht. Sobald eine K10-Waffe aktiv ist, wird sie ausgeblendet.
+- Nicht repariert, wie beauftragt. Ob die Heil-Pistole die K10-Drehung bekommt, entscheidest du.
+- Stand der Bilder: `game/integration-r2` @7022aa60, ohne `asmr=1`. Eigene Kamera auf die echte Spielszene, zusätzlich in der Spielkamera geprüft. Die Dunkelheit im Gegenlicht ist die bekannte Figurenbeleuchtung.
+
+**Fluff einsammeln:**
+- Das Jaulen war `F03_fluff_arrive` (`asmr_r1_lufs`), mein eigener Anschluss an den Sammel-Zähler. Der Clip fällt in der Tonhöhe stark ab. In `Fluff.mp4` liegt er genau auf den Zeitpunkten 0,1 / 1,7 / 4,2 s. Raus aus `src/audio/AudioHost.jsx`, der Clip hängt jetzt nirgends mehr.
+- Das Plopp war der Korken-Plopp des Saugarms. **Alt:** `fluff_suction_r1/S04_pop_ground_a|b` und `S03_pop_tree_a|b`. **Neu:** `debris_crash_r1/D05_fluff_land_a|b` („muffled pillowy puffs“), an Baum und Boden, in `src/audio/suckAudio.js`. Das gilt ohne Schalter. Wasser bleibt `S05`, ohne Ton-Server (öffentlicher Pin, dort fehlt D05) bleibt der alte Plopp.
+- Nachgeprüft in der neuen Aufnahme: F03, S03 und S04 sind nicht mehr nachweisbar, D05 ist da, die Spitzen beim Saugen liegen 4 bis 6 dB tiefer. Hart bleiben der Faustschlag und `F08_fruit_drop_bounce` nach dem Baumtreffer, die habe ich nicht angefasst. Weich genug oder nicht, entscheidet das Ohr.
+
+**Stimme des Fahrers:** +3 dB vor dem UI-Bus (`SOUL_VOICE_DB`, `src/audio/vehicleSoul.js`), eingetragen in `AUDIO_ROUTING_R1.md`. Der Rest des UI-Busses und die Orakel- und TV-Clips bleiben. Genius Loci läuft über dieselbe Plakette und bekommt die Anhebung mit. Im Lauf bestätigt: Die Plakette sprach mit der Anhebung. Ob es reicht, entscheidet das Ohr.
+
+**Tests (V-1107):** PASS `test/unit/asmrMap.mjs`, `test/unit/engineR2.mjs`, `test/contract-static.mjs`. `test/unit/audioMixer.mjs` scheitert wie vorher an der fehlenden privaten Ablage. Ohne Schalter ändern sich jetzt zwei Klänge, gewollt: Plopp und Stimme. Bild und Programmliste habe ich in dieser Runde nicht erneut verglichen, der Diff enthält nur Ton. Neu: `test/blaster-stills.mjs`.
 
 ## Ereignis-Tabelle
 | Ereignis | Datei | Stelle im Code | Begrenzung |
@@ -32,7 +53,6 @@ Alle aus der Spielkamera, Site-Look, Ton vom gepinnten Speicher, ASMR-Satz vom T
 | Fluff fällt nach Faust oder Explosion | F01_fluff_rustle | `src/audio/kfbAudio.js:381` | 1,5 s Abstand |
 | Fluff fliegt zum Saugarm | F01_fluff_rustle | `src/m1/M1World.jsx:376` | 1,5 s Abstand fasst den Saugstoß zusammen |
 | Wagen zerfällt in Fluff | F01_fluff_rustle | `src/m1/M1World.jsx:856` | einmal je Ausstieg |
-| Fluff kommt an (Zähler steigt) | F03_fluff_arrive | `src/audio/AudioHost.jsx:114` | 0,8 s Abstand fasst Serien zusammen |
 | MiB-Agenten kommen und gehen | M01_suit_rustle | `src/npc/mibEvent.js:192` | 0,9 s Abstand, vier Agenten klingen als einer |
 | Blitz lädt vor dem Strahl | M04_flash_charge | `src/npc/mibEvent.js:194` | einmal je Ereignis |
 
@@ -41,6 +61,7 @@ Alle aus der Spielkamera, Site-Look, Ton vom gepinnten Speicher, ASMR-Satz vom T
 ## Was fehlt
 - **Kein Ereignis im Spiel, daher nicht angeschlossen:**
   - K03 Teil rastet ein
+  - F03 Ankommen: Das Ereignis gibt es, der Clip klingt dort aber wie Jaulen (Georg), deshalb raus
   - M02 Sonnenbrille (die Agenten tragen im Spiel keine)
   - M03 Knopf im Ohr
   - B01 bis B05: Die Clips beschreiben einen großen alten Roboter, den gibt es im Spiel nicht
@@ -67,7 +88,7 @@ Quelle: `design/kartengebaeude-r1`, `cascade/r4/runtime.js`, `core.subscribe`.
 - **Dateien:** Die drei Clips liegen in `melee_destruction_r1_lufs`, im Index des Ton-Speichers stehen sie nicht. Vor dem Anschluss also ein Pin wie beim ASMR-Satz.
 
 ## Ohne Schalter
-- **Ton:** Der Satz steht ohne `asmr=1` nicht im Index, keine Datei wird geladen (Protokoll: null Abrufe, null Auslösungen). Neu sind nur die zwei Titel.
+- **Ton:** Der Satz steht ohne `asmr=1` nicht im Index, keine Datei wird geladen (Protokoll: null Abrufe, null Auslösungen). Neu sind die zwei Titel und aus Runde 2 der weichere Plopp und die lautere Stimme.
 - **Bild:** gleich. Die Abweichung Ausgang gegen Branch liegt im selben Bereich wie Ausgang gegen Ausgang.
 - **Programmliste:** kein neuer benannter Programmname. Die Zahl wird beim Laden festgelegt und schwankt bei beiden Ständen von Lauf zu Lauf (110 bis 117). In einem Durchgang lagen beide exakt gleich bei 115. Ein Lauf-gegen-Lauf-Vergleich der Liste taugt deshalb nicht als scharfer Beweis, Zählwerte kommen in Stufe B. Der Diff enthält keinen Shader- oder Material-Code.
 - **Eine Änderung für MiB auch ohne Schalter:** Die Ton-Anbindung wandelt Positionen jetzt in die Form, die `play` erwartet. Heute ohne Wirkung, weil der MiB-Satz fehlt.
