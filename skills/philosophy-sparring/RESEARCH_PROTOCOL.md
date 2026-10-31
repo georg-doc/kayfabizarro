@@ -35,6 +35,8 @@
 - Wenn das Importformat möglicherweise Fußnoten, Kommentare, Textfelder oder Formatierungen auslässt, keine vollständige Quellenprüfung behaupten; Original-DOCX oder Original-PDF maßgeblich halten.
 - Persönliches Autorenprofil, Lektüreinteressen und Originaltexte nur nach Einwilligung dauerhaft speichern oder teilen. Nicht aus dem Stil psychische Eigenschaften ableiten.
 
+**Wenn keine Fußnoten vorhanden sind:** Keine Stellen fingieren und nicht behaupten, zwei vorhandene Fußnoten geprüft zu haben. Stattdessen den Befund ausdrücklich nennen und zwei **vorgeschlagene Quellenanker** mit getrennten Verifikationsstufen ausweisen. Ein öffentliches Quellenportal und eine konkrete geprüfte Stelle sind nicht dasselbe. Originalausgabe/Übersetzung für eine spätere zitierfähige Fassung klären.
+
 ## Minimales Quellenprotokoll für Forschungsantworten
 
 - Aussage/Frage:
