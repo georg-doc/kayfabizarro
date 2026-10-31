@@ -59,3 +59,16 @@
 - Privater Ergebnisbericht nur als Chat-Artefakt, **nicht** im Public-Repo; Original in Drive unverändert.
 - Implementation milestone `320871d46aac6ad2c8d8d9e94a3adf648b989baa`; `RESEARCH_PROTOCOL.md` und `GOLDEN_SAMPLES.md` aus exaktem Branch zurückgelesen.
 - Kein KFB Runtime/Hub/Site/Stage Change.
+
+## 2026-10-31 · HUMAN FEEDBACK / NONTRIVIALITY FAILURE → R2
+
+- Georgs Kritik an der ersten G7-Gesprächseröffnung als **FAIL — TOO TRIVIAL / TEXTBOOK DIALECTIC** aufgenommen; nicht als Ablehnung durch den Essayautor ausgeben.
+- Ein weiteres vertraulich bereitgestelltes Manuskript für methodische Analyse herangezogen; Text/Dateiname/Verfasser/Referenzliste werden **nicht** öffentlich ins Repository kopiert.
+- Neue generische Qualitätsregel: erst Binnenlogik und ungeklärte Geltungsbedingungen eines Arguments prüfen; Standardfragen intern testweise beantworten und bei Lehrbuchlösbarkeit verwerfen.
+- Relevante Primär-/akademische Gegenquellen sollen bei wirklicher Argumentwirkung geprüft werden; nicht als Autorennamen-Liste anfügen.
+- DOCX-Referenzregeln korrigiert: **manuell nummerierte Endnoten/Quellennachweise sind trotz fehlender OOXML-Fußnoten echte sichtbare Referenzen**.
+- `STARTER_PROMPT.md` v0.3, `SKILL.md`, `RESEARCH_PROTOCOL.md`, `README.md` aktualisiert; `QUALITY_DEEP_DIALOGUE_R2.md` neu.
+- `GOLDEN_SAMPLES.md` um G8/G9 ergänzt (9 definierte Fälle, **keine** neue Human-Abnahme).
+- R2 implementation commit `1e2f36cdd26b5effb5d0796f1e8584b5affae7a2`.
+- `TEST_REPORT_R2.md`: **6/6** geänderte Dateien gelesen, **12/12** statische Strukturchecks bestanden; `0` aktuelle Modell-/Autor-Abnahmen.
+- Unveröffentlichte Inhalte ausschließlich in der privaten Chat-Analyse; unverändert kein neuer KFB-Owner, Hub, Site, Stage oder Merge.

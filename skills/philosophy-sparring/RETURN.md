@@ -1,7 +1,7 @@
-# RETURN · Philosophischer Sparringspartner v0.2 R1
+# RETURN · Philosophischer Sparringspartner v0.3 R2
 
 **Stand:** 2026-10-31  
-**Status:** IMPLEMENTATION VERIFIED / STATIC REVIEW PASS / ONE PRIVATE G7 MODEL PROBE / AUTHOR REVIEW PENDING / DRAFT PR  
+**Status:** R2 IMPLEMENTED / STATIC REVIEW PASS / G7 USER-FEEDBACK FAIL / R2 MODEL/HUMAN REVIEW PENDING / DRAFT PR  
 **Owner:** Philosophischer Sparringspartner Sidequest (ein Inhalt-/Skill-Owner)  
 **Repo:** `georg-doc/kayfabizarro` (public)  
 **Branch:** `planning/philosophy-sparring-webchat-mvp-2026-10-31`  
@@ -52,4 +52,15 @@
 
 ## Genau ein nächstes Gate
 
-**Die anonymisierte G7-Gesprächseröffnung mit dem Verfasser prüfen**: Trifft die Rekonstruktion seine These und ist die Gegenfrage für ihn produktiv? Erst aus tatsächlichem Feedback Gesprächston und persönliches Profil weiterentwickeln. Keine automatische Profilübernahme und kein PR-Merge.
+**Ein echtes vertieftes, quellenbewusstes Gespräch nach R2/G8 testen und durch den Nutzer oder Verfasser bewerten lassen.** Entscheidender Maßstab: mindestens eine argumentative Konsequenz, die über eine geläufige Lehrbuchunterscheidung hinausgeht. Keine automatische Profilübernahme, kein PR-Merge.
+
+## Additiver R2-Nachweis vom 2026-10-31
+
+- Vorheriger G7-Frageeinstieg durch Georg als zu trivial beurteilt: **HUMAN FEEDBACK FAIL**, niemals als Verfasserurteil behandeln.
+- Zweites privates DOCX methodisch geprüft; sichtbarer **manuell nummerierter Schlussapparat** trotz fehlender Word-OOXML-Fußnotenstruktur. Weder Manuskript, bibliografische Liste, Titel noch identifizierende Inhalte öffentlich übernommen.
+- R2-Skilländerungen: echte argumentative Tiefenprüfung, eigene Voraussetzungen testen, historische Gegenquelle nur bei konkretem Mehrwert; G8 und G9 als Negativtests (neun Fälle insgesamt).
+- `QUALITY_DEEP_DIALOGUE_R2.md` dokumentiert das öffentliche, abstrakte Design und **nur öffentliche externe Quellen**.
+- `TEST_REPORT_R2.md`: 6/6 Dateireadbacks, 12/12 statische Checks PASS. Keine R2-Gesprächs- oder Autor-Abnahmen (0).
+- Implementationscheckpoint `1e2f36cdd26b5effb5d0796f1e8584b5affae7a2`; Evidence-Checkpoint `bd767e2198d0c93f466b92dbb9327c7c65be17a3`.
+- Private Analyse ist nur als separates Chat-Artefakt vorhanden; keine öffentliche Übertragung personenbezogener Notizen.
+- Project Owner und Draft PR #463 bleiben unverändert, keine Runtime-/Hub-/Site-/Stage-Änderung.
