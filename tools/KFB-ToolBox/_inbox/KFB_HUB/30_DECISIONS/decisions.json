@@ -16408,6 +16408,21 @@
    "applies": "nach Merge-Runde 1"
   },
   {
+   "id": "V-1128",
+   "date": "2026-10-31",
+   "area": "Figuren",
+   "verdict": "BUILD",
+   "text": "Figuren cast/alle-figuren-r1 @9203ccfc: Augen-Regel V-1122 umgesetzt. Ursache: Ohne Kopfknochen hingen Augen an der Figur statt am Anker-Knoten (brick_fish, pet_chick, pet_cow, pet_pig bis 60 cm Abweichung). Eine Stelle pinEyesToAnchor, Prüfung sitzFest in cast-all (höchstens 1 cm), 101 Figuren PASS; Grenze: nur Spielerfiguren, bei Medium und Large Clip-Auswahl. Fisch r4 im Spiel wie auf WSBs Bild, gemessene Augenmitte identisch; die weiße Kugel im Video ist die Rückseite des Auges bei seitlicher Sicht, kein Fehler. Ohne neue Hub-Karte (V-1125). Offen, klein: Raketen-Sitz bei Familie schwebend, an WS1 nach Kartenzonen (N-029). Halb geschlossenes Lid wirkt von der Seite weiter wie eine Kuppel.",
+   "values": {},
+   "owner": "Figuren · WS1",
+   "check": "Vorher-Nachher brick_fish_sitz_paar",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Fehler saß im gemeinsamen Weg, darum eine Korrektur und ein Test statt Einzelfixe.",
+   "applies": "Merge-Runde"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
