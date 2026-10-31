@@ -1,3 +1,7 @@
+# 2026-10-31 · Private Research Atlas reader R1
+
+Source-grounded reader implemented and privately deployed. Hosted authenticated proof/Hub link pending login. See current RETURN.md and site/TEST_REPORT.md. Existing ledgers and private NIE owners retained.
+
 # Hidden Cosmology Atlas — Additive Owner Changelog
 **Owner:** existing KFB Hidden Cosmology Atlas Editorial Research; `georg-doc/kayfabizarro`; branch `research/hidden-cosmology-atlas-2026-10-13`; Draft PR #394. Historical research topic logs remain in their individual `topics/*/CHANGELOG.md` files and prior Git commits. This root summary is a **new chronological index**, not a replacement of those records.
 

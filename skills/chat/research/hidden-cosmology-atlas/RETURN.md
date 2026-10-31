@@ -1,3 +1,19 @@
+## CURRENT SITE RETURN · 2026-10-31 · PRIVATE RESEARCH ATLAS READER R1
+
+Implemented the bounded Puharich reader, with isolated JM-S16, separated JM-C19/C21/C22, clickable typed JM-H09/H10/W10 relations, derived 14-entity/2-topic registry, multiword search, PREPARED_ONLY Work request and evidence-bound essay/NIE JSON exports. Existing GitHub ledgers remain editorial masters. KFB Hub palette/design inspected in isolation and hub-live.css reused. No private NIE source payload copied.
+
+**Private Site deployed:** https://kfb-research-atlas.frizzlebob.chatgpt.site · project `appgprj_6ae66f5da80c8191b5b130f20a47c2bc` · version `appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_c8d9cf0e8b04819184b754ef6d86f7b4` · deployment `appgdep_6ae67046cd5081919718c03d24634381` · Sites source `4faefd6a8cb1593dea91eb5d59fce8ecedd23c21`. Native publication succeeded. Direct URL opened to correct sign-in gate; authenticated hosted content/revision not verified because browser requires user login. No PUBLIC_VERIFIED or human-acceptance claim. Hub link remains pending that proof; no Cloudflare needed.
+
+**Repository:** georg-doc/kayfabizarro · branch `research/hidden-cosmology-atlas-2026-10-13` · existing [PR #394](https://github.com/georg-doc/kayfabizarro/pull/394), unmerged. Implementation head `6260f6865aa6ec0b386ae515af80e0a2844bf624`, evidence head `6a6330f89312a7110edf4e2367a01186f63765d6`. Data snapshot `84143cc680e447ae4ff1b0f434e3148e4f681aa7`. Final head is the commit containing this Return, fetched after write.
+
+**Changed files:** site/index.html, style.css, app.js, kfb.css, registry.json, TEST_REPORT.md, SOURCE.json; additive owner RETURN.md and CHANGELOG.md. [Actual evidence](site/TEST_REPORT.md) records syntax, source/reference/privacy inspection, multiword search, relation/filter details, clipboard request, export-mode switch, 14 rendered registry items and desktop/mobile no-overflow checks. Independent read-only Critic/Guard verified small repairs and routed CONTINUE to truthful handoff. No hosted connector, audio, NIE execution, NotebookLM import or CI proof. Download control implemented but resulting downloaded file not separately inspected.
+
+**Access:** static reader; connected apps in the chat do not transfer access to Site. Eligibility discovery unavailable in this session. Work execution is explicit manual handoff; no fake provider receipt. No local Mac access, no new evidence DB, no game/runtime or source owner changes. No merge or Live promotion.
+
+**ONE next gate:** `RESEARCH_ATLAS_AUTHENTICATED_READER_REVIEW_01` — sign in to the private Site, verify revision `84143cc680e4` and the source/claim reader, then persist hosted proof and link from existing Hub. Original audio research remains separately open.
+
+---
+
 ## CURRENT PRODUCT-DIRECTION RETURN · 2026-10-31 · RESEARCH ATLAS META-ADMIN GPT SITE BRIEF R1
 
 **Human decision:** Georg explicitly approved **YES** to a GPT Site as the Research Atlas meta-administrative orchestration interface **now**. Scope is source-backed cross-repository/private authorized research discovery, linked Wiki/graph and author/institution register, bounded Work/Deep Research dispatch and audited export to user-owned **NIE**, NotebookLM, essays, KFB Triplets/dialogues/card-index proposals. The Site is an **approved design direction; no Site was actually built, connected or published** in this documentation slice. The earlier “Site maybe later” roadmap was superseded *only for that product-direction choice*. Existing GitHub Atlas remains sole editorial evidence/claim/relationship SSOT; local-only NIE corpus is private. KFB game ChatterBox/Card/Resident and KFB Hub owners unchanged.
