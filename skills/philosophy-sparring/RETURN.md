@@ -1,3 +1,12 @@
+
+
+## 2026-10-31 · URL-first R9 decision and evidence
+
+User superseded API/embedded chatbot and ChatGPT Project setup direction: one portable GitHub entry for ordinary ChatGPT/Perplexity; Site administration only. START.md R9-URL-1 added, with compact standalone rules, two synthetic examples, demand-loaded R9 references, honest source status, living-document change proposals and markers. SOURCE_INTAKE.md defines repeatable original-source and prompt updates. TEST_REPORT_URL_R9.md records actual browser evidence: ChatGPT GitHub content/markers reproduced (initial UI error; raw failed); Perplexity Free GitHub and raw retrieval failed. Cross-platform URL-only gate remains OPEN. Six of seven original source candidates recovered privately; exact remaining source missing. No original texts/private analysis published. No API, merge or KFB runtime changes.
+
+Current files: START.md, SOURCE_INTAKE.md, TEST_REPORT_URL_R9.md, PROJECT_SSOT.md, CHANGELOG.md, RETURN.md. Private Site index updated to administration and native deployment succeeded; private destination metadata excluded. Next gate: exact missing original and approved source release, with Perplexity URL-only retrieval still unresolved. Branch planning/philosophy-sparring-webchat-mvp-2026-10-31 / PR #463 remains unmerged. Read exact final head after this write.
+
+---
 # CURRENT UPDATE · Minimal standalone interface · 2026-10-31
 
 User requested an extremely simple chat-like entry and genuine integrated AI dialogue. Existing owner and branch/PR #463 retained.
