@@ -120,3 +120,20 @@
 - G16/G17 reale Dialoge 0/2, neue Autorenfreigaben 0. Privater Deep-Read bleibt als Chat-Datei, nicht im öffentlichen Repository.
 - Keine KFB-Runtime, kein Hub, Site, Stage, neuer Owner oder Merge.
 - Next gate: ein echter Nutzer- oder Autor-Review des G16-Theorievergleichs.
+
+## 2026-10-31 · R7 · THOUGHT STYLE / UNCERTAINTY
+
+- Vollständige private Lektüre eines weiteren älteren Manuskripts; öffentliche R7-Methodik `THOUGHT_STYLE_R7.md` und `UNCERTAINTY_DECISIONS_R7.md` ergänzt. Kein Privattitel, Originaltext, Identitätsmerkmal oder persönliches Autorenprofil im öffentlichen Repo.
+- Denkbewegung, Argumentation, Sprachwahl, Duktus, rhetorische Fragen, Textton, Subtext und Referenzpraktiken separat behandelt; keine psychologische Sentimentdiagnose oder Stilklon.
+- Starter v0.8, G18–G21 synthetische Sollfälle; Implementierung `ff212fc197ff2358a6b7ebd989d747dc4124af15`; Evidenz `7f4f202e9ee19fff31548a91b7aa306a07b486c7` mit **7/7 Readbacks, 20/20 Strukturchecks PASS**.
+- Keine Modell-/Autoren-Abnahme von G18–G21; R7 bleibt kein Human-PASS.
+
+## 2026-10-31 · R8 · BALANCED RETROSPECTIVE META-ANALYSIS (USER CORRECTION)
+
+- Nutzer fordert ausdrücklich Korpusgleichgewicht statt eines nur auf letzten Text/Thema ausgerichteten Profils. **Alle sechs als Originale bezeichneten Manuskripte rückwirkend nach identischem achtteiligem Raster geprüft**, gekürzte Bearbeitung nicht als siebtes Original gezählt.
+- Beobachtungsstufen O1/O2/I1/P1/X, Genre-/Längen- und historische Kontext-Effekte, Quellenrollen, Gegenbelege und Grenze zwischen textlichem Ton und psychischem Zustand explizit operationalisiert.
+- **Privates Detailresultat** mit 6 Einzelkarten, 12 bereichsübergreifenden Mustern, 4 nur hypothetischen Querbezügen, Einwänden und portabler Gesprächskarte wurde in einem **nicht geteilten, ausschließlich vom Eigentümer zugänglichen Google Doc** abgelegt. Das öffentliche GitHub enthält weder dessen URL noch private Quellen-/Profiltexte.
+- Öffentlich `BALANCED_CROSS_CORPUS_R8.md` als allgemeine Methode, R7-Methodenaddendum und Starter v0.9 ergänzt; G22–G24 (insgesamt 24 synthetische Golden Cases).
+- R8 implementation `afe413179d610f53323bc6e1c1c28bf037eeb988`, evidence `97a793edd42b13d4fca257dd86093f2a141cbe1b`, `TEST_REPORT_R8.md`: **7/7 Readbacks, 24/24 statische Checks PASS**.
+- Ein echter modellübergreifender Cross-Corpus-Gesprächs-PASS steht aus. Keine Autorenbewertung, kein GitHub-Originaltext, kein neuer KFB Runtime-/Hub-/Site-/Stage-Owner und kein Merge.
+- **Next gate:** ein vom Nutzer/Autor bewerteter Dialog über zwei Originalargumente mit explizitem Gegenbeispiel und einer substantiellen Weiterentwicklung.

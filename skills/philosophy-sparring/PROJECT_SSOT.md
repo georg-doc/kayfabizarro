@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.7 R6 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.9 R8 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -33,10 +33,14 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - R6: Wirksamkeitserwartung, tatsächlichen Einfluss, Erfolgsgarantie und normative Erlaubnis auseinanderhalten. Bei Theoriekritik den stärksten belegten Text prüfen; direkte, stellvertretende und kollektive Agency sowie Vulnerabilität unterscheiden. Öffentliche Methodik in AGENCY_VULNERABILITY_R6.md.
 - R6: Golden Samples G1–G17; TEST_REPORT_R6.md dokumentiert 16/16 statische Checks. Keine neue Autor-Abnahme; privates Manuskript nur im Chat.
 
+- R7: Metaanalyse prüft Denkbewegung, argumentative Last, Textton, Duktus, Referenzen und Denktraditionen neben Themen; `THOUGHT_STYLE_R7.md`, `UNCERTAINTY_DECISIONS_R7.md`, `TEST_REPORT_R7.md`. Vier neue synthetische Goldens G18–G21; 20/20 Strukturprüfungen PASS.
+- R8: **Retrospektiver symmetrischer Vergleich aller sechs vom Nutzer als Originale bezeichneten Texte**, nicht bloß letzter Essay. Eine Bearbeitung ausdrücklich als Derivat ausgenommen. Acht identische Kategorien pro Original, Gegenbelege, O1/O2/I1/P1/X, Stil/Genre-/Recency-Vorbehalte, getrennte bestätigte Präferenzen. Öffentliche generische Methode: `BALANCED_CROSS_CORPUS_R8.md`; konkrete Korpusmatrix und Kontextkarte **privat, eigentümergeführtes Google Doc** ohne öffentliche URL im GitHub.
+- R8: Starter v0.9, 24 Golden-Samples spezifiziert; 7/7 Readback und 24/24 statische Tests PASS (`TEST_REPORT_R8.md`). Keine neue Autor-/Human-Abnahme, kein Profil- oder Manuskript-Public-Write.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein echter, vom Nutzer oder Autor bewerteter G16-Dialog**: faire Rekonstruktion empirischer Theorie und gehaltvolle normative Weiterführung ohne Strohpuppe. Kein Merge ohne Freigabe.
+**Ein vom Nutzer/Autor begutachteter, quellengebundener Cross-Corpus-Dialog**, der zwei verschiedene Originale und ein Gegenbeispiel integriert, echte argumentative Neuerkenntnis und nicht bloß Themenaggregation liefert. Kein Merge ohne ausdrückliche Freigabe.
