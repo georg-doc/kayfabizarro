@@ -46,6 +46,15 @@
 - **Zeitabhängiger Rechtsstand:** Geltung, Übergangsfristen und Anwendung konkreter EU-/nationaler Vorschriften mit Datum und amtlicher Primärquelle prüfen; keine historischen Rechtsbehauptungen stillschweigend als heutigen Stand wiedergeben.
 - **Quellenpflicht:** eine tatsächlich gelesene Einzelquelle ist kein Beweis für eine ganze Weltanschauung und nicht für alle Autoren einer Bewegungsfamilie.
 
+## Retrospektive Korpusabdeckung / No Recency Drift
+
+- Bei jeder neuen Originalquelle zuerst das **gesamte bisher verfügbare Originalkorpus** als Bestand abgleichen; gekürzte Bearbeitungen und frühere KI-Zusammenfassungen als Derivate markieren.
+- Alle Originale **symmetrisch** über dasselbe Acht-Achsen-Raster untersuchen (Argumentarchitektur, Begründungsbewegung, Sprachwahl/Terminologie, Syntax/Duktus, rhetorisches Fragen/Metaphern, textuelle Tonlage, Quellen/Traditionen, Dialogfolgen). Nach Textgröße/Genre differenzieren, aber nicht methodisch ungleich behandeln.
+- Aus jeder Quelle mindestens ein belegtes Muster **und** eine abweichende/kontrastierende Stelle bestimmen. Konsens nie durch Löschen von Gegenbeispielen herstellen.
+- Verallgemeinerungen mit Quelle/Abschnitt, Anzahl unabhängiger Originale, O1/O2/I1/P1/X, Gegenausnahmen und Nächster Verifikationsschritt versehen. Absolute Wort-/Konnektorenhäufigkeiten ohne Textlängenvergleich sind kein psychologisches Persönlichkeitsmerkmal.
+- Die tatsächlich vom Nutzer bestätigten Gesprächspräferenzen getrennt vom Autorentext aufbewahren. Kritik des Nutzers an einer trivialen Antwort ist **kein** Beweis für eine ausdrückliche Autorenpräferenz.
+- Das **vollständige private Analysepaket** außerhalb des öffentlichen GitHub speichern. Öffentliche Repo-Dateien enthalten nur allgemeine Verfahren und künstliche Testfälle, niemals private Manuskriptkarten oder personenbezogene Stilprofile.
+
 ## Textübergreifende Muster und historische Erkenntnisperspektive
 
 - Nicht nur Themen-Tags extrahieren. Für jede Beobachtung: konkret benannte Text-/Abschnittsbelege, **Beobachtung vs. Interpretation**, Zahl der unabhängigen Manuskripte, mögliche Gegenbeispiele, zeitliche Distanz, Verifikationsgrad und Revisionsstatus.

@@ -61,3 +61,7 @@ This record is not a psychological assessment, a voice clone, a doctrinal identi
 ## Synthetic evaluations
 
 G18 argument movement across sources; G19 diction and text-vs-psychology; G20 decisions under uncertainty; G21 bibliographic provenance and historical horizon. These are tests to run later, not passed capabilities.
+
+## R8 methodological addendum
+
+R7 introduced the analytic layers. The authoritative **balanced cross-corpus application rule** is now [BALANCED_CROSS_CORPUS_R8.md](BALANCED_CROSS_CORPUS_R8.md). Do not treat the most recently reviewed document as the default profile or the sole source of writing-style claims. All six currently supplied originals were revisited in a separate **private, owner-only research file**; its content is not in this public repository and must not be inferred or invented from the existence of this public note.

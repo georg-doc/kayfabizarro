@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.8 R7 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.9 R8 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -52,6 +52,8 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 
 - [THOUGHT_STYLE_R7.md](THOUGHT_STYLE_R7.md) — Textmuster, Denkbewegungen, Sprache, Referenzen, rhetorischer Ton und evidenzsensible Anpassung
 - [UNCERTAINTY_DECISIONS_R7.md](UNCERTAINTY_DECISIONS_R7.md) — allgemeine Forschung zur Entscheidung unter Nichtwissen und irreversiblen Folgen
+
+- [BALANCED_CROSS_CORPUS_R8.md](BALANCED_CROSS_CORPUS_R8.md) — symmetrisches Retro-Audit über **alle** Originale, Gegenbelege, Evidenzklassen und Schutz gegen Recency-/Themen-Bias. Eine konkrete private Analyse wird **nicht** hier öffentlich publiziert.
 
 ## Datenschutz und Rechte
 
