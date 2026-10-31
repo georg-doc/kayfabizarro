@@ -1,3 +1,15 @@
+## 2026-10-31 · R4 original archive access reconnaissance / targeted correspondence
+
+- [MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md](MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md) found **three actual original published Moneyrex announcements** in the Italian `Gazzetta Ufficiale` (**1990, 1994, 1995**): named `Moneyrex – Euro Market Money Brokers S.p.A.`, `Corso Monforte 45, Milano`, capital **50 million lire**, liquidation status by 1990 and liquidator **Antonio Castelli**. Registry **125461/3208/11** (1990/94) vs **125461/3608/11** (1995), discrepancy preserved.
+- No duplicate 1981 Bank of Italy letter record: prior **WC-S20** already identifies the official declassified **1981-04-30** `Camera dei deputati` Sindona-Commission item **2**; full letter/annex scans **not actually obtained or read**.
+- Official archive channels confirmed: `ars_segreteria@camera.it` (Parliament), `archivio@mi.camcom.it` (Milan pre-1996 company filings), and `certificati.libri@mi.camcom.it` (ceased firms). Found official `MO-CC07` request form. Two **Italian source-request templates** prepared, **not sent**.
+- Added six distinct source/access IDs `WC-S41..46` and six atomic source/identity propositions `WC-C45..50`. Cumulative ledger **46 sources, 50 claims**; 29 documented/reporting and 15 noncausal numbered edges **unchanged**.
+- [TEST_REPORT_R4_2026-10-31.md](TEST_REPORT_R4_2026-10-31.md): **12/12 static reference/access-state checks PASS**. Original target docs acquired **0**; archive inquiries sent **0**; PDF page screenshots **0** due cache misses, no runtime, CI, browser/Stage acceptance.
+- Research recommended to remain with current KFB owner, Perplexity optional **scout only** for directly inspectable originals. No new SSOT, deleted authors, Hub, Cloudflare Stage, website, main route, product runtime, automatic merge or Live.
+
+**ONE NEXT GATE:** `WCC_MONEYREX_ARCHIVE_ORIGINALS_RECEIPT_R1` — submit/send exact two source requests and obtain Moneyrex pre-1973 shareholders/transfer evidence and 1981-04-30 Banca d’Italia letter; inspect original scans before making any WCC/Hambros corporate-ownership assertion.
+
+---
 ## 2026-10-29 · R3 updated Samosa dossier / Hambro banking & papal intelligence evidence
 
 - User supplied updated four-native-tab `KFB Author Dossier: Jason Samosa (WCC & Deep State Cartographer)`. Exact mapped private Google Doc read **124,543 characters**; local attached snapshot read (403,577 bytes). Older original one-tab R2 transcript remains independently preserved. Updated dossier was **NOT** edited, copied verbatim or made public.
