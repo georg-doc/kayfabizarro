@@ -1,6 +1,6 @@
 # TIER0 · Zeilen für jeden Auftrag zu Verteilung, Partikeln und Übergängen (wörtlich kopieren)
 
-1. Jedes kleine Element ist Kind einer Quelle: Fels, Busch, Uferlinie, Einschlag, Lochkante oder Ruhekeim auf kahlem Boden. Ohne Quelle = FAIL.
+1. Jedes kleine Element ist Kind einer Quelle: Fels, Busch, Uferlinie, Einschlag, Lochkante oder Ruhekeim auf kahlem Boden. Fels, Busch und Ruhekeim kommen aus dem WFC-Löser `kfb-place-field`/`collapse`, Ufer aus der Wasserkante, Einschlag und Lochkante aus dem Ereignis, keine eigenen Keime. Ohne Quelle = FAIL.
 2. Eine Funktion: `kinder()` in `kfb-place-core`, ein Fall ist eine Zeile im Block `fraktal` von `kfb_place.r1.json`. Kein zweiter Verteiler, keine eigene Formel, Zufall nur aus Saat und Ort.
 3. An der Quelle groß und dicht. Nach außen seltener, Abstände wachsen, Größe fällt in Stufen auf der Leiter 1 : 0,62 : 0,38. Kein stufenloser Verlauf.
 4. Immer eine Richtung mit Ursache: Hang, Schatten, Strömung, Treffwinkel. Höchstens halber Umfang, größte Lücke mindestens ein Viertel. Nie Kranz, Saum, Ring.

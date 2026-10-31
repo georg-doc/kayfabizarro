@@ -67,6 +67,9 @@ Abbruch  r < r_min(Blick) oder Flächenregel                      darunter Shade
 
 ## 3 · Die Fälle als Zeilen derselben Tabelle
 
+**Woher die Quelle kommt (Pflicht, V-1007, V-1076, V-1114):** Der Löser entscheidet oben, was wo steht: `kfb-place-field` mit `kfb-place-collapse` über Thema → Zone 32 m → Bodenplatz 4 m → Formation → Element, WFC ordnet die Nachbarschaften. `kinder()` lässt unten aus jeder Quelle die kleineren Teile wachsen. Beides zusammen ist das Fraktale, das eine über die Ebenen, das andere von groß nach klein. Fels, Busch und Ruhekeim kommen aus dem Löser; Ufer aus der Bogenlänge der Wasserkante; Einschlag und Lochkante aus dem Ereignis. Keine eigenen Keime.
+
+
 Maße in Metern. Ohne Kennzeichen belegt aus dem genannten Papier oder Code, sonst [V].
 
 | Fall | Quelle Q und Stärke | Richtung a(p) | Größenkurve | Dichtekurve | Gruppe | Farbe | Träger |
