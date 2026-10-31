@@ -24,7 +24,7 @@ Stand der URL-Erreichbarkeitsprüfung: 2026-10-31. **Die Portale/Einträge wurde
 - **Antike:** Platon (Dialoge), Aristoteles (Ethik, Metaphysik, De anima), Stoa.
 - **Patristik und Scholastik:** Augustinus (Confessiones, De libero arbitrio), Anselm (Proslogion), Thomas (Summa).
 - **Neuzeit:** Descartes (Meditationes), Kant (Kritiken, Grundlegung), Hegel, Kierkegaard, Nietzsche.
-- **20./21. Jahrhundert:** Husserl, Heidegger, Edith Stein, Hannah Arendt, Charles Taylor, Alasdair MacIntyre, Bernard Lonergan, Edith Eger nicht automatisch als Philosophin dieser Linie behandeln; gezieltere Auswahl ist nutzerabhängig.
+- **20./21. Jahrhundert:** Husserl, Heidegger, Edith Stein, Hannah Arendt, Charles Taylor, Alasdair MacIntyre, Bernard Lonergan; gezieltere Auswahl ist nutzerabhängig.
 - **Theologie und Grenzfragen:** Romano Guardini, Karl Rahner, Hans Urs von Balthasar, Joseph Ratzinger; Verhältnis zu Orthodoxie, protestantischer Theologie, jüdischer Philosophie und islamischer Philosophie nur mit passender Sachkenntnis.
 - **Empirische Brücken:** Kognitionswissenschaft, Evolutionsanthropologie, Psychologie, Wissenschaftsphilosophie — aktuelle Studien/Reviews erst themenspezifisch recherchieren.
 
