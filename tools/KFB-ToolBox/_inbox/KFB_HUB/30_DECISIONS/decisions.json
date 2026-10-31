@@ -15808,6 +15808,21 @@
    "applies": "nach dem Site-Stand"
   },
   {
+   "id": "V-1088",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "PLAN",
+   "text": "Asset-Linie für 2D-Props (Georg 31.10.): WSA work orchestriert die ChatGPT-Bildgenerierung, jeder Stapel ein frischer Lauf ohne Chat-Verlauf, damit nichts driftet. Stil-Definition zuerst: Claybound-Referenzen plus KayKit, Tiny Treats, Kenney als Form- und Designsprache, Anker-Bögen von WSB (echte Modelle), V-1028 als Lehre. Pro Klasse Schnittkante ja oder nein (Bäume eher ohne). Gate im Code: Alpha, Maße, Hintergrund, Palette. Freigabe als Stapel in der Asset Library (kein neues Werkzeug, V-390), später eigene Erzeugung per Webchat möglich, Lieferung über GitHub im Katalog-Format. Nach dem Site-Stand, Pilot mit wenigen Klassen. WSB-Fixes UFO r1, CAST_FIX_R1 assets/private @6bb4bbe.",
+   "values": {},
+   "owner": "WSA work · WSB",
+   "check": "Pilot-Stapel",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Frische Läufe statt langem Chat verhindern Format- und Stil-Drift; Georg gibt Stapel frei statt von Hand zu generieren.",
+   "applies": "nach dem Site-Stand"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

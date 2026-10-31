@@ -17,3 +17,7 @@ Modul: `src/look/lightCone.js`. Startvorhang und Laternen-Practicals behalten ec
 **Große Fahrer:** verdrahtet, Clip je Rig, Lenkrad, Wanne 1,04. Nicht im Spiel getestet: Im Register ist keine große Figur spielbar.
 
 **Offen:** Wannen-Einstieg r7c/r7d von WSB noch nicht eingebaut (kein Auftrag). Disco nur als Standbild geprüft. Hunky und Dory fehlen im UFO noch. Das UFO-Modell ist 15 MB groß.
+
+## Wanne, Zusatz · Aufnahmen `Wanne_Sprung.mp4`, `Wanne_Sprung_Nahbilder.jpg`, `Wanne_im_Faecher.jpg`
+Wanne steht im Fächer und in der V-Taste, ohne Schalter, solange die Datei da ist. Düse und Fahne über vehicleRig und dustTrail wie alle Wagen. Sprung hinein und heraus r7c/r7d, Zeitplan für Ohren und Ton.
+Offen: Fächer-Icon fehlt (zeigt „BK“ wie der Mech). Fahrzeug-Stauchen beim Landen (`vehicle_squash`) nicht verdrahtet, das Dach kennt es im Spiel auch nicht. Large im Spiel nicht getestet.
