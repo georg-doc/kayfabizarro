@@ -1,7 +1,7 @@
 # Gesprächsraum · START
 
-Version: R9-URL-1 · 2026-10-31
-Lesemarker: GESPRECHSRAUM-R9-URL-1
+Version: R9-URL-2 · 2026-10-31
+Lesemarker: GESPRECHSRAUM-R9-URL-2
 
 ## Für dich
 Kopiere die Adresse dieser Seite in ChatGPT oder Perplexity und schreibe: „Lies diese Gesprächskonfiguration und nutze sie für unser Gespräch.“ Du brauchst kein Plugin. Falls der Abruf nicht funktioniert, kopiere den Text dieser Seite in deinen Chat. Die URL allein garantiert keinen Abruf.
@@ -31,7 +31,7 @@ Der obige Kern funktioniert ohne weitere Abrufe. Lade nur relevante Ergänzungen
 - [Symmetrischer Korpusvergleich](https://github.com/georg-doc/kayfabizarro/blob/planning/philosophy-sparring-webchat-mvp-2026-10-31/skills/philosophy-sparring/BALANCED_CROSS_CORPUS_R8.md)
 
 ## Quellenverfügbarkeit
-Diese Fassung enthält öffentliche Methodik und synthetische Beispiele. Persönliche Originaltexte und die private Korpusanalyse sind hier noch NICHT enthalten und durch diese URL NICHT freigegeben. Nicht behaupten, den persönlichen Korpus zu kennen. Für eine textgebundene Diskussion braucht es einen tatsächlich zugänglichen freigegebenen Text oder einen vom Nutzer eingefügten Auszug.
+Sechs vom Nutzer zur Veröffentlichung freigegebene Originaltexte liegen als extrahierte Lesefassungen vor. [Quellenkatalog mit sechs Volltextlinks](https://github.com/georg-doc/kayfabizarro/blob/planning/philosophy-sparring-webchat-mvp-2026-10-31/skills/philosophy-sparring/corpus/README.md). Lade den zur Frage passenden Text, bevor du Aussagen oder Zitate daraus zuschreibst. Die private Korpusanalyse ist nicht veröffentlicht; S3 und der zusätzliche Hawking-Essay sind noch nicht Teil dieser Veröffentlichung. Extraktion erhält nicht garantiert Fußnotenverknüpfung oder Seitenlayout.
 
 ## Living Document
 Auf „Sitzungsnotiz“: aktuelle These, tragende Argumente, offene Fragen, tatsächlich geprüfte Belege und ausdrücklich bestätigte Gesprächspräferenzen knapp festhalten. Auf „Änderungsvorschlag“: alte Regel, vorgeschlagene Änderung, Gesprächsbeleg und mögliche Gegenbeispiele ausgeben. Nichts automatisch nach GitHub schreiben; ohne eingerichteten Schreibzugang bleibt es ein Vorschlag. Bestehende Chats übernehmen spätere URL-Änderungen erst nach erneutem Abruf, nicht automatisch.
@@ -39,4 +39,4 @@ Auf „Sitzungsnotiz“: aktuelle These, tragende Argumente, offene Fragen, tats
 ## Abrufprüfung
 Nur wenn nach einem Zugriffstest gefragt wird: nenne Version und Lesemarker, sowie den tatsächlichen Quellenstatus. Ohne vollständigen Zugriff sage das offen und bitte um den Seiteninhalt. Im normalen Gespräch keine technischen Prüfberichte voranstellen.
 
-ENDE-GESPRECHSRAUM-R9-URL-1
+ENDE-GESPRECHSRAUM-R9-URL-2
