@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "entries": [
   {
    "id": "V-001",
@@ -16676,6 +16676,36 @@
    "superseded_by": [],
    "why": "Georg: Karten sollen Welt und Allegorie werden, ohne Druck-PDFs im Spiel zu laden.",
    "applies": "nach den Kartenzonen"
+  },
+  {
+   "id": "V-1146",
+   "date": "2026-11-01",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 01.11.: Festplatte von 110 GB frei auf rund 9 GB, Hauptverantwortung WS0; Vorschlag, Georgs Arbeitsdateien nur online zu halten, war falsch und entfällt. Messung: 80 volle Repo-Kopien von WSA (rund 49 GB, davon 8 in der Dropbox mit 16,5 GB, 4,2 GB abgebrochene Downloads), 50_BLENDER 30 GB (23.000 PNG 15 GB, 4.100 GLB 15 GB), Claude-App 45 GB (VM 21, Cowork-Ordner 22), Gesprächsverläufe 6,9 GB, WS0-Kopien kfb-mvp 14,6 und KFB_GitHub_sync 5,8. Regel: GitHub ist der Speicher. Je Repo und Rechner höchstens ein Spiegel mit partiellem Abruf, Arbeit in Worktrees mit Sparse Checkout, nie Repo-Kopien in der Dropbox, Job-Ende räumt seine Kopie ab. Probe-Bilder nur letzte Runde und Abgenommenes lokal. Löschen nur über den Papierkorb nach Georgs Ja; Georg leert ihn. Text replies/BRIEF_WSA_AUFRAEUMEN_R1.md.",
+   "values": {},
+   "owner": "WS0 · WSA · WSB",
+   "check": "freier Platz vorher und nachher",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Volle Kopien je Auftrag haben die Platte gefüllt, obwohl alles auf GitHub liegt.",
+   "applies": "nach Aufräumen, Platz messen"
+  },
+  {
+   "id": "V-1147",
+   "date": "2026-11-01",
+   "area": "Karten",
+   "verdict": "PLAN",
+   "text": "Georg 01.11.: Karten vorab backen und Deck-Paket als SSOT-Modul zusammen mit dem Rollout-Workflow. Vorschlag replies/KONZEPT_DECK_PAKET_R1.md: V-363 Deck-Dossier wird umgesetzt, Eigentümer ist die Sitzung KFB Deck Rollout, Backen per Skript ohne Modell, Lesen und Bewerten mit günstigerem Modell je Deck mit Stichprobe, Ablage auf GitHub statt Dropbox, Spiel und Viewer lesen dasselbe Paket. Wartet auf Georgs Freigabe.",
+   "values": {},
+   "owner": "Deck Rollout · WS1",
+   "check": "Pilot drei Decks",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Heute liegen Kartentext, Bewertung, Bild und Marketing getrennt und widersprechen sich.",
+   "applies": "nach dem Pilot"
   },
   {
    "id": "V-427",
