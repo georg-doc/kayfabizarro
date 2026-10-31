@@ -1,3 +1,5 @@
+> **VERALTET:** erste Fassung vor V-1117 („eine Funktion“). Gilt nur noch für auswerfende Ereignisse, sonst `FRAKTAL_R1.md`.
+
 # PRUEFUNG · Fünf mechanische Prüfungen für das eine Muster · 31.10.2026
 
 Referenz: `fraktal_ref.mjs` in diesem Ordner, rein, ohne three; `node fraktal_ref.mjs` zeigt Gut- und Gegenproben. Einbau als `scripts/place/fraktal-check.mjs` durch die bauende Sitzung (Stufe A aus V-1107). Liegendes prüft es direkt auf der Worker-Ausgabe, Fliegendes auf der Auslöse-Liste plus Ruhelage. **Noch nichts davon läuft im Spiel.**

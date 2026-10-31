@@ -156,3 +156,6 @@ Hub offen: q339 Verteilung, q340 Gespräch, q341 drei Figuren; b274 Pop-up-Pilot
 
 ## Stand 31.10. Abend (V-1115)
 Budget 70 %: keine neuen Aufträge. FRAKTAL_R1 fertig, Freigabe Hub q351; danach WS1 Kanal mit TIER0, brief_domains und Kanon umstellen. Laufend: Spiel-Sitzung (Blaster, Hüpfen, Fluff-Klang), WS-Design Sky-Card TUNE, Figuren (Fisch, Lider, NPC-Lider). Hub-Speicher frei gemacht, weitere alte Videos bei Bedarf.
+
+## Stand 31.10. spätabends (V-1118 bis V-1120)
+Hub offen: Verteilungs-Muster (q353), Brick-Fish (q354). Sky-Card TUNE bei WS-Design (Umriss des Viertels). Audio: Georg-Notiz, Prüfung erst nach Merge. WS1 hat N-025 (Figuren-Branch). Bei Ja zu q353: TIER0 und brief_domains umstellen, N-024 aufheben, WS1 Einbau unter 4 m samt Einzelbildern, WSA Folgetext. Danach Wurf-Weg Brick-Fish; WSB: Lorekeeper-Brille, demon_lord, Timelines.

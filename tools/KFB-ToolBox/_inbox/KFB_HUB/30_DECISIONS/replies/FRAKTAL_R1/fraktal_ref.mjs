@@ -1,3 +1,4 @@
+// VERALTET: erste Fassung vor V-1117; gilt nur für auswerfende Ereignisse, sonst FRAKTAL_R1.md
 // FRAKTAL_R1 · Referenz, kein Spiel-Code: die eine Funktion kinder() und die Prüfungen aus PRUEFUNG.md, rein, ohne three. node fraktal_ref.mjs [--json]
 export const LEITER = 0.618   // 1 : 0,62 : 0,38 = q^0 : q^1 : q^2 (kfb_place rules.group.sizes)
 export const SCHWELLE = { rho: 3, groesse: 1.2, spearman: -0.2, resultante: 0.45, luecke: 0.25, rhythmus: 0.6, cluster: 0.8, gerade: 0.15, ruhe: 0.5, px: 3 }

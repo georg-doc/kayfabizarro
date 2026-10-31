@@ -1,3 +1,5 @@
+> **VERALTET:** erste Fassung vor V-1117 („eine Funktion“). Gilt nur noch für auswerfende Ereignisse, sonst `FRAKTAL_R1.md`.
+
 # FRAKTAL_R1 · Lückenliste und Widersprüche · 31.10.2026
 
 Stand im Spiel: `world/verteiler-r1` @e0054fda (gemergt hinter `place=r2`, aus), `origin/game/integration-r2` @7022aa60 soweit lokal lesbar, Gischt-Code @bb87eb11. T-Nummern siehe `FRAKTAL_R1.md`.

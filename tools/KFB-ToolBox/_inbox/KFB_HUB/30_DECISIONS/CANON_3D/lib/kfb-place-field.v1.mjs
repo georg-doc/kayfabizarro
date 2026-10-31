@@ -18,7 +18,7 @@ const matrix = (states, T) => { const S = states.length, M = new Float64Array(S 
 const blockLinks = (n) => { const links = []; for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { const l = []; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) { if (!dx && !dy) continue; const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= n || ny >= n) continue; l.push([ny * n + nx, Math.max(Math.abs(dx), Math.abs(dy)) > 1 ? 1 : 0]) } links.push(l) } return links }
 const colour = (bi, bj) => (bi & 1) + 2 * (bj & 1)
 
-function createLevel(name, L, seedInt, salt, priorAt, maxBlocks) {
+export function createLevel(name, L, seedInt, salt, priorAt, maxBlocks) {
   const n = L.block, S = L.states.length, A = matrix(L.states, L.adj), D = matrix(L.states, L.far), links = blockLinks(n), cache = new Map(), stat = { solved: 0, fallback: 0 }
   const key = (bi, bj) => (bi + 1048576) * 2097152 + (bj + 1048576)
   function solve(bi, bj) { const k0 = key(bi, bj); let b = cache.get(k0); if (b) { cache.delete(k0); cache.set(k0, b); return b }

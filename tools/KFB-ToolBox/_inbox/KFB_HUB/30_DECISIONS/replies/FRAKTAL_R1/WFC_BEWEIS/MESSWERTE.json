@@ -1,0 +1,294 @@
+{
+ "a": {
+  "anzahl": {
+   "fels": 22,
+   "brocken": 32,
+   "busch": 26,
+   "strunk": 4,
+   "stein": 167,
+   "kugel": 80,
+   "blume": 692,
+   "pilz": 43,
+   "gras": 886,
+   "kiesel": 2215,
+   "krume": 919,
+   "halm": 2101
+  },
+  "abfall_vom_felsrand": [
+   {
+    "band_m": "0-1",
+    "je_m2": 1.394,
+    "mittl_r_cm": "5.4",
+    "stein_je_m2": 0.0792,
+    "kiesel_je_m2": 1.133
+   },
+   {
+    "band_m": "1-2",
+    "je_m2": 1.118,
+    "mittl_r_cm": "5.1",
+    "stein_je_m2": 0.0908,
+    "kiesel_je_m2": 0.846
+   },
+   {
+    "band_m": "2-4",
+    "je_m2": 0.55,
+    "mittl_r_cm": "5.3",
+    "stein_je_m2": 0.0374,
+    "kiesel_je_m2": 0.405
+   },
+   {
+    "band_m": "4-8",
+    "je_m2": 0.19,
+    "mittl_r_cm": "5.1",
+    "stein_je_m2": 0.011,
+    "kiesel_je_m2": 0.135
+   },
+   {
+    "band_m": "8-14",
+    "je_m2": 0.073,
+    "mittl_r_cm": "4.9",
+    "stein_je_m2": 0.0031,
+    "kiesel_je_m2": 0.041
+   }
+  ],
+  "um_den_fels": {
+   "felsen": 13,
+   "sektoren_0_bis_8": [
+    0,
+    0,
+    0,
+    0,
+    3,
+    2,
+    5,
+    1,
+    2
+   ],
+   "kranz_8von8": 0.154,
+   "mittel_sektoren": 5.8,
+   "ohne_kinder": 0,
+   "resultante_median": 0.47
+  },
+  "paarrichtungen_8": {
+   "n": [
+    61,
+    64,
+    55,
+    77,
+    61,
+    64,
+    55,
+    77
+   ],
+   "max_durch_min": 1.4
+  },
+  "steingruppen": {
+   "groesse": {
+    "1": 91,
+    "2": 27,
+    "3": 10,
+    "4": 5,
+    "5": 1,
+    "6": 2,
+    "9": 1
+   },
+   "anteil_mehrere_groessen": 0.67
+  },
+  "fast_beruehren": {
+   "paare": 63,
+   "verstoss": 16
+  },
+  "frei_4m": 0.591,
+  "bloecke": {
+   "stueck": {
+    "rand_zu_innen": 1.038,
+    "je_blockfarbe": [
+     0.0534,
+     0.057,
+     0.0465,
+     0.0726
+    ]
+   },
+   "korn": {
+    "rand_zu_innen": 0.964,
+    "je_blockfarbe": [
+     0.0087,
+     0.0096,
+     0.0082,
+     0.0091
+    ]
+   }
+  },
+  "loeser_rueckfall": {
+   "zone": 0,
+   "patch": 0,
+   "stueck": 0,
+   "korn": 0
+  }
+ },
+ "b": {
+  "anzahl": {
+   "fels": 25,
+   "brocken": 28,
+   "busch": 40,
+   "strunk": 6,
+   "stein": 157,
+   "kugel": 73,
+   "blume": 517,
+   "pilz": 78,
+   "gras": 833,
+   "kiesel": 1930,
+   "krume": 802,
+   "halm": 1938
+  },
+  "abfall_vom_felsrand": [
+   {
+    "band_m": "0-1",
+    "je_m2": 1.242,
+    "mittl_r_cm": "5.1",
+    "stein_je_m2": 0.0892,
+    "kiesel_je_m2": 0.974
+   },
+   {
+    "band_m": "1-2",
+    "je_m2": 0.865,
+    "mittl_r_cm": "5.3",
+    "stein_je_m2": 0.079,
+    "kiesel_je_m2": 0.699
+   },
+   {
+    "band_m": "2-4",
+    "je_m2": 0.364,
+    "mittl_r_cm": "5.4",
+    "stein_je_m2": 0.0271,
+    "kiesel_je_m2": 0.279
+   },
+   {
+    "band_m": "4-8",
+    "je_m2": 0.079,
+    "mittl_r_cm": "5.1",
+    "stein_je_m2": 0.0043,
+    "kiesel_je_m2": 0.051
+   },
+   {
+    "band_m": "8-14",
+    "je_m2": 0.054,
+    "mittl_r_cm": "4.9",
+    "stein_je_m2": 0.0017,
+    "kiesel_je_m2": 0.032
+   }
+  ],
+  "um_den_fels": {
+   "felsen": 17,
+   "sektoren_0_bis_8": [
+    0,
+    0,
+    1,
+    0,
+    4,
+    1,
+    2,
+    7,
+    2
+   ],
+   "kranz_8von8": 0.118,
+   "mittel_sektoren": 5.9,
+   "ohne_kinder": 0,
+   "resultante_median": 0.53
+  },
+  "paarrichtungen_8": {
+   "n": [
+    36,
+    32,
+    31,
+    34,
+    36,
+    32,
+    31,
+    34
+   ],
+   "max_durch_min": 1.16
+  },
+  "steingruppen": {
+   "groesse": {
+    "1": 91,
+    "2": 25,
+    "3": 7,
+    "4": 8,
+    "5": 2,
+    "6": 1
+   },
+   "anteil_mehrere_groessen": 0.72
+  },
+  "fast_beruehren": {
+   "paare": 65,
+   "verstoss": 13
+  },
+  "frei_4m": 0.602,
+  "bloecke": {
+   "stueck": {
+    "rand_zu_innen": 1.079,
+    "je_blockfarbe": [
+     0.0463,
+     0.0462,
+     0.0557,
+     0.0546
+    ]
+   },
+   "korn": {
+    "rand_zu_innen": 1.029,
+    "je_blockfarbe": [
+     0.0076,
+     0.0075,
+     0.0084,
+     0.0082
+    ]
+   }
+  },
+  "loeser_rueckfall": {
+   "zone": 0,
+   "patch": 0,
+   "stueck": 0,
+   "korn": 0
+  }
+ },
+ "reihenfolge": {
+  "von_links_oben": "f09c2d44",
+  "von_rechts_unten": "f09c2d44"
+ },
+ "kosten": {
+  "neue_zelle_64m_ms": 464,
+  "objekte": 453,
+  "aufbau_ms": 1,
+  "je_ebene_bloecke": [
+   [
+    "stueck",
+    65
+   ],
+   [
+    "korn",
+    325
+   ]
+  ]
+ },
+ "bloecke": {
+  "stueck": {
+   "rand_zu_innen": 1.016,
+   "je_farbe": [
+    0.0655,
+    0.0663,
+    0.066,
+    0.0655
+   ]
+  },
+  "korn": {
+   "rand_zu_innen": 1.012,
+   "je_farbe": [
+    0.0107,
+    0.0105,
+    0.011,
+    0.0108
+   ]
+  }
+ }
+}
