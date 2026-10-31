@@ -135,3 +135,7 @@ Die Tafeln belegen, was herauskommen soll, nicht wie es gebaut wird: #161 und #1
 **Rechenzeit im Spiel:** Neue Zelle im Worker rund 90–130 ms im Median, höchstens 170–240 ms, 850–880 Objekte im Median. Bildzeit nicht gemessen; es sind rund dreimal so viele Instanzen wie mit `place=r2`.
 
 **Noch offen:** Straße gibt es im Spiel dieses Stands nicht (`T.roadDistance` fehlt), das Straßenbild nutzt ein Prüfstück. Bodenbänder fehlen im Vorwissen, weil sie nur im Shader leben. Die Tabelle stammt aus einer einzigen Vorlage und ist nur an zwei Saaten und drei Themen angesehen. Die Pflichtliste ist nicht gelaufen.
+
+## 10 · Reparaturrunde V-1132 (Stand 3331e98b, Schalter `place=r3`)
+
+Überholt in §9 die Bodenplatz-Quellen und die Kugeln. Neue Ebenen `quelle` (4 m), `perle` (0,5 m) und `art` (6-m-Raster). Randabstand gegen den gemessenen Fußumriss der Felsen, Kügelchen über den Kugel-Kern. Vorgaben, Bilder und Messwerte in `WFC_BEWEIS_R3/VORGABEN_TABELLE.md`. **Blinder Kritiker: Nein.** Materialcode, Busch-Fuß und Artenwechsel sind offen. Die Prüfung `grundStat` ist zu weich.
