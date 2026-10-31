@@ -54,17 +54,25 @@
     "overall": 0,
     "band": 1.1,
     "gain": 1.15,
-    "up": 0.4,
+    "up": 0.7,
     "nopull": true,
-    "role": 0.7
+    "role": 0.7,
+    "role_tone": [
+     3.2,
+     0.3
+    ]
    },
    "flBloom": {
     "overall": 0,
     "band": 0.01,
     "gain": 1,
-    "up": 0.4,
+    "up": 0.8,
     "nopull": true,
-    "role": 0.85
+    "role": 0.85,
+    "role_tone": [
+     2.2,
+     0.5
+    ]
    }
   },
   "sink": {
