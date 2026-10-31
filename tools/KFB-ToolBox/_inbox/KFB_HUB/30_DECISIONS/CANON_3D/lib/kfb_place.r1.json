@@ -11,6 +11,62 @@
   "note": "H = Lab-Einheit K2 (3,64 u)"
  },
  "rules": {
+  "ground_albedo": {
+   "note": "V-1100: Erdung der Verteiler-Elemente. Band und Zelle bestimmen den Bodenanteil am Fuß, Übergang über das Sprenkel-Modul (V-403), Kontaktton aus contact.tone_step_Lstar.",
+   "stone": {
+    "overall": 0.7,
+    "band": 0.5,
+    "gain": 1.15,
+    "size": [
+     0.02,
+     0.14
+    ],
+    "band_max_m": 0.16,
+    "cell": [
+     0.12,
+     0.03,
+     0.07
+    ],
+    "contact": 0.1,
+    "contact_max_m": 0.05,
+    "proj": true
+   },
+   "pebble": {
+    "overall": 0.2,
+    "band": 0.9,
+    "gain": 1.1,
+    "up": 0.25
+   },
+   "grass": {
+    "overall": 0.1,
+    "band": 1.2,
+    "gain": 1.25,
+    "up": 0.55
+   },
+   "flora": {
+    "overall": 0,
+    "band": 1.1,
+    "gain": 1.25,
+    "up": 0.45,
+    "nopull": true
+   },
+   "flLeaf": {
+    "overall": 0,
+    "band": 1.1,
+    "gain": 1.15,
+    "up": 0.4,
+    "nopull": true,
+    "role": 0.7
+   },
+   "flBloom": {
+    "overall": 0,
+    "band": 0.01,
+    "gain": 1,
+    "up": 0.4,
+    "nopull": true,
+    "role": 0.85
+   }
+  },
   "sink": {
    "rock": [
     0.4,
