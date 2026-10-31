@@ -150,3 +150,6 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 
 ## Stand 31.10. nachmittags (V-1099, V-1100)
 Georg: q330 TUNE, q331 TUNE, q332 TUNE (direkt an WS1), q333 KEEP als Richtung, q334 KEEP plus dünnere Tusche, q335 Einzelfehler. Kein Sammelblatt mehr im Hub. Laufend: Weltwissen R2 (Blasen nach SPRECHBLASEN_SSOT_R2), Verteiler Einzelbilder, Kartenkante Tusche, WSB vier Figuren. WS-Himmel wartet auf Hub q336 (Planet-Vorlage); danach Bild an WS-Himmel. Rückgaben sehe ich selbst an, dann Hub.
+
+## Stand 31.10. spätnachmittags (V-1101 bis V-1109)
+Hub offen: q339 Verteilung, q340 Gespräch, q341 drei Figuren; b274 Pop-up-Pilot bei Georg. Laufend: WS-Himmel R2, WS-Design Sky-Card, Spiel-Sitzung Audio, WSB Brick-Fish, Joyride-Analyse. WS1 hat N-015 bis N-017 im Kanal. Merge-Liste neu: card-edge @a8554963, weltwissen @57bea6af, verteiler @e12e21c1, cast @3077e33c (private Körper in assets/private @023b70c9). V-1104 Augen-Vorberechnung bei WS1, GLB-Pilot nach dem Merge. Testregel V-1107.

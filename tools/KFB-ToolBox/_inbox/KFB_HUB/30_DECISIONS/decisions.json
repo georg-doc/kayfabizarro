@@ -16123,6 +16123,21 @@
    "applies": "Analyse jetzt, Einbau nach Auswahl"
   },
   {
+   "id": "V-1109",
+   "date": "2026-10-31",
+   "area": "Audio",
+   "verdict": "PASS",
+   "text": "Georg 31.10.: Songs und ASMR R2 auf der Audio-Site freigegeben, Feinheiten erst im Spiel und im Ereignisablauf beurteilen (WSA-Rückgabe PR #455, Pin fae628c2 und assets/private @1c186978). WS0 entscheidet: Einbau durch die Spiel-Sitzung statt WS1, weil WS1 mit Wasser, HUD und Messwerkzeug voll ist; das ersetzt den Kanal-Weg aus dem Auftrag vom 29.10. Teil A jetzt: Shepard Ascent und Bouncing Busker Groove in Soundbed und Radio, Pegelkorrektur −1,6 und −1,7 dB. Teil B jetzt: ASMR an echte Materialereignisse (Knete, Goo, Fluff), hinter asmr=1. Teil C nach dem Merge des Kartenviertels: Goo-House crack, wobble, burst an die echte Gebäude-Kaskade, gemeinsame Kennung und Zeitbasis mit den VFX. Nächstes Gate ist Georgs Spielvergleich. Georg baut die Planeten-Bilder gerade selbst; WS-Himmel erwartet sie.",
+   "values": {},
+   "owner": "Spiel-Sitzung",
+   "check": "Spielaufnahme mit Ton, Hub-Frage",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Klang lässt sich nur im Ereignis beurteilen; WS1 bleibt beim Kern, der Einbau hängt am Kartenviertel erst für die Gebäude.",
+   "applies": "A und B jetzt, C nach dem Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
