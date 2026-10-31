@@ -34,18 +34,21 @@ function createLevel(name, L, seedInt, salt, priorAt, maxBlocks) {
 }
 
 // Kachel-Listen aus kfb_place (Steinkit v4, nur runde Brocken, Form-DNA V-794), Bewuchs je Biom aus biomes.<b>.cartoon (V-889)
-export function fieldTiles(cfg, table) {
+// Leichte Steine von WSB (STEIN_LEICHT_R1, kfb.stone-kit/1): als Kacheln mit Maßen und Einsinken aus der Datei; Modelle unverändert, Maßstab 1 = normierte Form
+export const lightTiles = (kit) => kit.stones.map((q) => ({ id: 'leicht:' + q.id, node: q.node, set: q.set, kit: 'Leicht', kind: q.set === 'kiesel' ? 'stone_S' : q.sizeClass[0] === 'L' ? 'stone_L' : 'stone_M', h_m: q.dims_unit.y, hull_r_m: q.hullRadius_unit, gate_r_m: q.hullRadius_unit, import_scale: 1, sinkMin: q.sinkMin, sinkMax: q.sinkMax, tris: q.tris }))
+export function fieldTiles(cfg, table, light = null) {
   const dom = (t) => ({ id: t.id, kind: t.kind, h: t.h_m, r: t.gate_r_m ?? t.hull_r_m, tile: t }), X = [...(cfg.rules?.form_dna?.exclude || []), ...(table?.formation?.tile_exclude || [])], TBY = new Map(cfg.tiles.map((t) => [t.id, t]))
+  const lt = light ? lightTiles(light).map(dom) : null
   const stone = (kind) => cfg.tiles.filter((t) => t.kit === 'Steinkit v4' && t.kind === kind && t.shape === 'chunk' && !X.some((q) => t.id.includes(q))).map(dom)
   const list = (a) => (a || []).map((id) => TBY.get(id)).filter(Boolean).map(dom)
   const veg = Object.fromEntries(Object.entries(cfg.biomes).filter(([, B]) => B.cartoon).map(([b, { cartoon: C }]) => [b, { bush: list(C.bush), grass: list(C.grass) }]))
   const pebble = cfg.tiles.filter((t) => t.kit === 'KayKit Forest' && t.kind === 'rock' && /Rock_3_/.test(t.id) && (t.tris || 999) <= 200).map(dom)   // Kiesel: wenige Dreiecke, Steinkit-S hat 800 je Stein
-  return { L: stone('stone_L'), M: stone('stone_M'), S: stone('stone_S'), pebble: pebble.length ? pebble : stone('stone_S'), veg }
+  if (lt) { const M = lt.filter((d) => d.kind === 'stone_M'); return { L: lt.filter((d) => d.kind === 'stone_L'), M, S: M, pebble: lt.filter((d) => d.kind === 'stone_S'), veg } } return { L: stone('stone_L'), M: stone('stone_M'), S: stone('stone_S'), pebble: pebble.length ? pebble : stone('stone_S'), veg }
 }
 export const MUSHROOM = 'flora:mushroom_red', MUSHROOM_GROUP = 'flora:mushroom_redGroup'
 
-export function createPlaceField({ table, cfg, seed, biomeAt, order = null, deck = null, maxBlocks = 512 }) {
-  const SEED = fnv(seed), T = table, Z = T.levels.zone, P = T.levels.patch, rules = cfg.rules, sunAz = cfg.light?.sun_az ?? -0.6, tiles = fieldTiles(cfg, table), deckM = deck ? T.deck?.[deck] : null
+export function createPlaceField({ table, cfg, seed, biomeAt, order = null, deck = null, maxBlocks = 512, light = null }) {
+  const SEED = fnv(seed), T = table, Z = T.levels.zone, P = T.levels.patch, rules = cfg.rules, sunAz = cfg.light?.sun_az ?? -0.6, tiles = fieldTiles(cfg, table, light), LT = new Map(light ? lightTiles(light).map((t) => [t.id, t]) : []), deckM = deck ? T.deck?.[deck] : null
   const biomes = Object.keys(Z.prior), jit = (L, i, j, salt) => (L.jitter * 2) * (u01(SEED, i, j, salt) - 0.5)
   const sitePosL = (L, i, j, salt) => [(i + 0.5 + jit(L, i, j, salt)) * L.site_m, (j + 0.5 + jit(L, i, j, salt + 1)) * L.site_m]
   const zone = createLevel('zone', Z, SEED, 100, (i, j, w, o) => { const [x, z] = sitePosL(Z, i, j, 110), pr = Z.prior[biomeAt(x, z)] || Z.prior.moos; Z.states.forEach((s, k) => { w[o + k] = pr[s] ?? 0 }) }, maxBlocks)
@@ -67,7 +70,7 @@ export function createPlaceField({ table, cfg, seed, biomeAt, order = null, deck
       if (st !== T.ground_state) { const [x, z] = sitePos(i, j), R = T.terrain[st] || {}, sl = slope(x, z); if (sl <= (R.slope_max ?? 1)) { const acc = (R.accept ?? 1) + (R.slope_gain ?? 0) * sl + (R.hollow_gain ?? 0) * Math.max(-1, Math.min(1, hollow(x, z))); v = u01(SEED, i, j, 330) < acc && !blocked(x, z, T.formation[st]?.keep_r ?? 0.2) } }
       aliveMemo.set(k, v); return v }
     const sinkOf = (R, kind) => { const q = rules.sink[kind] || [0, 0.05], lim = kind === 'grass' ? 0.04 : kind === 'bush' ? q[1] : rules.sink_cap; return Math.min(lim, q[0] + (q[1] - q[0]) * R.next()) }
-    const put = (R, id, kind, x, z, sc, ga, gr, bm, st, kindSink = kind) => { if (slope(x, z) > (T.terrain[st]?.slope_max ?? 0.8)) return {}; const o = { t: id, k: kind, r: 'field', st, p: [x, h(x, z), z], ry: R.next() * 6.283, rx: 0, rz: 0, s: sc, sk: sinkOf(R, kindSink), cr: 0, cc: 0, ga, gr, bm }; out.push(o); return o }
+    const put = (R, id, kind, x, z, sc, ga, gr, bm, st, kindSink = kind) => { if (slope(x, z) > (T.terrain[st]?.slope_max ?? 0.8)) return {}; const o = { t: id, k: kind, r: 'field', st, p: [x, h(x, z), z], ry: R.next() * 6.283, rx: 0, rz: 0, s: sc, sk: LT.has(id) ? LT.get(id).sinkMin + (LT.get(id).sinkMax - LT.get(id).sinkMin) * R.next() : sinkOf(R, kindSink), cr: 0, cc: 0, ga, gr, bm }; out.push(o); return o }
     const biomeIx = (b) => (order ? order.indexOf(b) : -1)
     const nearest = (i, j, want, ring = 1) => { let best = null, bd = Infinity; const [x, z] = sitePos(i, j); for (let dj = -ring; dj <= ring; dj++) for (let di = -ring; di <= ring; di++) { if (!di && !dj) continue; const a = i + di, b = j + dj; if (!want.includes(stateAt(a, b)) || !alive(a, b)) continue; const [px, pz] = sitePos(a, b), d = Math.hypot(px - x, pz - z); if (d < bd) { bd = d; best = { x: px, z: pz, st: stateAt(a, b), i: a, j: b, d } } } return best }
     const F_SMALL = T.formation.small_r_m, shade = sunAz + Math.PI, openOf = (q) => downAt(q.x, q.z) * 0.5 + (sunAz + (u01(SEED, q.i, q.j, 350) - 0.5) * 2.2) * 0.5   // Auslaufseite je Fels fest, also Seite statt Kranz

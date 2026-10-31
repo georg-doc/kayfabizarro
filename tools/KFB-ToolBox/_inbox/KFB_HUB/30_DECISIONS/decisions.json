@@ -15943,6 +15943,21 @@
    "applies": "beim Merge"
   },
   {
+   "id": "V-1097",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Verteiler mit leichten Steinen: world/verteiler-r1 @73769a85, Pflichtliste ohne npc-suite grün, Hub q333 aktualisiert. Korrektur zu V-1093: Die Warnung deutlich langsamer beruhte auf rAF-Messung und ist ungültig, Vermutung Steine samt Schatten widerlegt. Readback-Messung bei dpr 1 ohne HUD: neuer Stand 0,4 bis rund 6 ms über heute, unter dem 60-fps-Ziel mit wenig Reserve, Werte unter Fremdlast unsicher; bei dpr 2 meist über dem Ziel. Leichte Steine sparen 28 bis 37 % Dreiecke gegenüber alt, bringen aber wenig Zeit. Bestätigt V-1090: Pixel sind die Grenze. WS0 entscheidet: Steine leicht bleiben; place=r2 wird erst Standard nach echter Fahrt mit HUD in der 5-Minuten-Messung auf ruhigem Rechner, nach der AA- und dpr-Arbeit. V-749 gilt: Fels- und Kieselgrößen in kfb-place-field.r2.json widersprechen der Regel alle Zahlen aus kfb_place, beim Merge dorthin überführen; bis dahin keine Größen von Hand ändern.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Merge-Abend",
+   "source": "BILDZEIT_DREI_STAENDE.json, BILDZEIT_JE_GRUPPE.json",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Falsche Messung korrigiert; die Bremse liegt nicht bei den Steinen, sondern bei den Pixeln.",
+   "applies": "bei AA und dpr"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
