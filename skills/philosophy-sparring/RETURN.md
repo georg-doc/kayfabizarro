@@ -1,3 +1,20 @@
+# CURRENT UPDATE · Minimal standalone interface · 2026-10-31
+
+User requested an extremely simple chat-like entry and genuine integrated AI dialogue. Existing owner and branch/PR #463 retained.
+
+Private Site updated successfully: large readable typography, neutral soft colors, rounded composer, two choices (Weiterdenken/Hinterfragen). Source inputs, note export and methodology hidden under More. Private destination identifiers remain excluded from public GitHub.
+
+Changed source files: dist/index.html, dist/style.css, dist/app.js. Public R9 starter retained.
+Evidence: JS syntax PASS; local browser empty input guard PASS; mode selection PASS; clipboard contains entered question and selected mode PASS; text download observed PASS; More open/close PASS; clear inputs PASS. Hosted new UI visually verified at exact private URL in narrow viewport; desktop local view also inspected. Native deployment succeeded. Note export was retained but not retested. No real AI response claimed.
+
+Access inspection: owner only, zero external visitors, external invitations supported. Intended visitor address not confirmed, so no invitation or access change. Actual intended visitor/Free account test pending.
+
+AI direction: server-side Responses API using canonical R9 instructions, authenticated per-user conversation handling, private source access and bounded usage. Official reference: https://developers.openai.com/api/docs/guides/conversation-state . API credential flow requires OpenAI Developers plugin; suggested, not confirmed connected. No API key provisioned, no backend implemented, no model trial or usage costs incurred by testing. Private manuscripts remain outside deployed files.
+
+Next gate: establish authorized model access and confirmed visitor identity, then implement/test actual multi-turn dialogue. UI is deployed; standalone AI product remains incomplete.
+
+---
+
 # CURRENT RETURN · Standalone P1 · 2026-10-31
 
 Owner: existing philosophy-sparring content owner. User authorized standalone Site setup in Work.
