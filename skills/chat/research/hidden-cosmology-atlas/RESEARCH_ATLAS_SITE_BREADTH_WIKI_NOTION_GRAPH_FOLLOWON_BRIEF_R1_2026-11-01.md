@@ -1,3 +1,19 @@
+## CURRENT JOURNALISTIC LENS / MEDIA-TRIANGULATION SITE ADDENDUM · 2026-11-01
+
+Existing `https://kfb-research-atlas.frizzlebob.chatgpt.site/` is **the only designated Research Atlas specialist Site** (owner-private, existing published version). No build, after-login browser acceptance, Notion migration, new Site, Hub link or CI happened in this authoring slice. No new reader URL/Live claim.
+
+The future Source/Wiki/Graph interface reads the **current 140-candidate R4 census** `ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json` as candidate intake only. Journalism is a *cross-cluster filter* with work/author/source roles, not an eleventh topic cluster. Reuse [Journalism Donor & Media Triangulation Contract](JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md) and previous creative/source graph versions.
+
+**User-visible Site switch**: `JOURNALISM` lens shows an independent/source-backed original article, exact byline and publication date, linked primary document, source passage actually read, direct original source root, contrasting mainstream/outlet reporting, author thesis vs observed facts and counter-evidence. An `OUTLET COMPARE` can show Reuters/AP/FT/WSJ/NYT/Guardian/BBC and independent outlets (Unlimited Hangout, Corbett, Regenauer, et al.) **without faking balanced truth or assigning political labels as validation scores**. Surface a `WIRE/MIRROR SAME ROOT` warning where three outlets repeat the same document/report; source independence is a graph property.
+
+**Reverse source traversal:** click from an HCA article -> quoted original FRUS/CIA/FBI/trust/court archive -> exact page/timecode and review status; click a historical source -> journalists, academics, comedians and creative KFB Cards that *cite/interpret* it. KFB satirical edits retain separate fictional provenance. Version/history tab shows corrected journalist quote/source attribution, AI-run ID/reviewer if actually logged and specific `what would falsify it?` conditions.
+
+**First receiving Site acceptance journey, only after real Work dossier/source entries:** (a) actual Webb/Goodwin investigative original and its referenced primary document, (b) independent mainstream/academic report about same narrowly identified event and flags for one reused wire, (c) the Broze chap-13 / Corbett guest interview / 1933 Nature / 2024 history comparison, (d) Quigley book vs original Rhodes will, with legal trust governance separate from speculative extra continuity. Show user that `SOURCE_REPORTS`, `AUTHOR_INTERPRETS` and `DOCUMENTED_HISTORICAL_ACTION` are separate graph lines. No placeholder charts or fake Dropbox/Work runtime calls. Site receives source-pinned reviewed export from existing GitHub and preserves previous local proof.
+
+**ONE Site receiving gate** remains `ATLAS_SITE_BREADTH_INDEX_INTAKE_01`; **one active Work production gate** remains `ATLAS_BREADTH_CORPUS_BATCH_AB_01`. Authentication/Hub publication separate, no automatic merge or Live.
+
+---
+
 ## CURRENT CREATIVE / RESEARCH LENS NAVIGATION ADDENDUM · 2026-11-01
 
 **Same existing private GPT Research Atlas Site**, future **R3 103 candidate-node / 10-cluster** snapshot, **no Site build or publication** in this source briefing. The [cross-lens source/creative donor contract](CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md) is a *projection* of the GitHub evidence truth, not a second graph owner.
