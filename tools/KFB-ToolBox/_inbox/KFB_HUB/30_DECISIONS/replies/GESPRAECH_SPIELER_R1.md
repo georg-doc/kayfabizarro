@@ -27,7 +27,7 @@ Das ändert V-1039 in einem Punkt: Dort sind Primär und Sekundär im Gespräch 
 - Erfüllen: Du spielst die Karte im Gespräch mit der Figur. Sie tauscht eine Karte und erzählt deine weiter.
 
 ## Ortstipp und Wegpunkt
-- Du fragst in die Runde. Antworten kann nur, wer die Karte oder ihren Ort wirklich kennt, also einen Eintrag aus eigener Erfahrung hat; die Figur zeigt dabei in die Richtung (Zeige-Clip aus dem Bestand, WSB prüft).
+- Du fragst in die Runde. Antworten kann nur, wer die Karte oder ihren Ort wirklich kennt, also einen Eintrag aus eigener Erfahrung hat; die Figur zeigt dabei in die Richtung (Bestand: `kfb_gesture_pointing_a`, noch nicht angesehen).
 - „Merken“ legt den Ort in eine kurze Wegpunkt-Liste. Der Zielhinweis oben (Platz 2, V-1039) zeigt den zuletzt gewählten. Wechseln und Löschen im Almanach, mehr nicht.
 - Geländekarten liegen an festen Plätzen (q241). Wir kennen ihren Ort also schon und verfolgen nichts Neues.
 
