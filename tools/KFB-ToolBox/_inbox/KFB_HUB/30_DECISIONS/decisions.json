@@ -15973,6 +15973,21 @@
    "applies": "beim Urteil"
   },
   {
+   "id": "V-1099",
+   "date": "2026-10-31",
+   "area": "HUD",
+   "verdict": "FAIL",
+   "text": "Georg 31.10. zu q330 und q331. Gespräch FAIL im Aussehen: Zipfel zu klein und falsch, Farbpunkte machen alle Antworten gleichrangig, passt nicht in unser Design. Ursache bei WS0: Georgs Zipfel-Korrektur (30/22 statt 18/12) und die Antwortspalte stehen nur im HUD-Prototyp, die Bitte NACHRICHT_WS0_sprechblasen blieb unbeantwortet, WS-Weltwissen baute deshalb nach dem alten Code. Vorgabe replies/SPRECHBLASEN_SSOT_R2.md mit Referenzbild, Zipfel für alle Sprechblasen, Antworten hinter wissen=r1. Himmel TUNE: Bilder zeigten den Himmel nur als schmalen Streifen, der Planet ist nicht der gemeinte. Ursache bei WS0: Auftrag und V-1007 nannten „lila Planet“ nur als Wort, ohne Bild, gegen V-740. Georg wählt die Vorlage im Hub q336; WS-Himmel wartet darauf. Himmels-Beweise künftig mit Himmel als Hauptfläche, dazu ein Fahrbild. WS0 hat q330 trotz offenem Kritiker-REWORK vorgelegt, das bleibt aus.",
+   "values": {},
+   "owner": "WS0 · WS-Weltwissen · WS-Himmel",
+   "check": "Hub q336, Blatt WS-Weltwissen R2",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine abgenommene Form steckte nur im Prototyp, und eine Vorlage stand nur als Wort im Auftrag; beides driftet. Vorgaben brauchen ein Bild und müssen ins Spiel zurückfließen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
