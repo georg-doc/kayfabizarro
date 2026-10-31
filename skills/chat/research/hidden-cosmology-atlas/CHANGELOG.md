@@ -1,3 +1,15 @@
+## 2026-11-01 · GEORG PRIORITY OVERRIDE · Breadth-first author landscape before more deep-dive research
+
+- **Georg decision:** first expand **authors, works, institutions, clusters, candidate source relationships and missing-original questions** using WSA Work; do not spend the main next Work slice on Puharich audio or Moneyrex claim proof. Current private GPT Site R1 is sufficient evidence-model baseline, broaden data before new site features. No merge, publication or Live change.
+- **Added** [54-candidate, 7-cluster source/owner census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R1_2026-11-01.json): eight existing GitHub master authors, additional Google Drive author donors (including Jan Irvin and Christopher Knowles), source-backed Puharich topic, WCC institutional register, previously absent historians/journalists, and distinct legal-person/institution/claims nodes. **Zero new completed author dossiers** in this briefing pass. Names “George Arney”, “Mega Corporation”, user’s “Meyer-Lensky” and two unrelated-looking “Five Star Trust” instances remain explicit identity-resolution questions.
+- **Added** [WSA Work broad-corpus job](WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md) — dedup existing GitHub/Drive/Dropbox/Notion → source-led dossier batches → structured research question/graph candidates → separate source tests → source+Return GitHub readbacks. Existing documentary vs conceptual edge guards intact.
+- **Added** [existing GPT Site follow-on briefing](RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md) — grow the **existing private Site**, not another Site, into navigable author/cluster/wiki/typed graph once source corpus is real. Notion is a potential linked read-only Obsidian-like presentation layer with optional later one-way GitHub→Notion audited pilot, **no Notion writes done**.
+- **Original source leads discovered** NARA OSS/CIA and US State FRUS Paperclip original, official DOJ Epstein/FBI Vault and Iran-Contra National Security Archive indexes; private Dropbox historical Five Star Trust summary *read but not accepted as primary evidence*. Notion `Recherchequellen` page and private Drive donor titles read/discovered, no private IDs/contents reproduced publicly.
+- [QA](ATLAS_BREADTH_EXPANSION_BRIEF_TEST_REPORT_R1_2026-11-01.md): **25/25 static owner/metadata/privacy/graph-status checks PASS**, one test predicate corrected, 0 new primary PDF page-image checks, 0 completed authors, 0 Site/browser CI tests, 0 agent runs, 0 private Notion/Drive/Dropbox modifications.
+- **One next research execution gate:** `ATLAS_BREADTH_CORPUS_BATCH_AB_01`. Separate site consumer gate is `ATLAS_SITE_BREADTH_INDEX_INTAKE_01` and remains dependent on real GitHub corpus. Do not block author research on authenticated Site login/Hub link.
+
+---
+
 # 2026-10-31 · Private Research Atlas reader R1
 
 Source-grounded reader implemented and privately deployed. Hosted authenticated proof/Hub link pending login. See current RETURN.md and site/TEST_REPORT.md. Existing ledgers and private NIE owners retained.
