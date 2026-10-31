@@ -1,0 +1,2153 @@
+{
+  "schema": "kfb.hca.breadth-census/4",
+  "date": "2026-11-01",
+  "type": "RESEARCH_INTAKE_CANDIDATES_NOT_VERIFIED_DOSSIERS",
+  "owner": "Hidden Cosmology Atlas Editorial Research",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "pr": 394,
+  "scope": "Breadth first. Candidate nodes only; names and thematic co-placement never certify relationships.",
+  "privacy": "Private Drive/Dropbox/Notion source IDs, document bodies and private NIE excluded. Source titles may be used as discovery leads only.",
+  "node_kind_policy": {
+    "author": "Writer, researcher or published narrator with attributable works",
+    "researcher": "Journalist/investigator with sources to verify",
+    "host": "Interview/publisher/source discovery node",
+    "person": "Historical subject, not an author by default",
+    "entity": "Organization/trust/company/program, not an author",
+    "concept": "Symbolic category or historiographical tradition, not a single legal organization",
+    "work": "A specific literary or archival work, distinct from its subject, modern re-reading or downstream artwork"
+  },
+  "record_owner_rules": {
+    "git_author_master": "skills/chat/research/hidden-cosmology-atlas/authors/<slug>.md",
+    "git_issues_and_topics": "skills/chat/research/hidden-cosmology-atlas/topics/",
+    "git_relation_register": "skills/chat/research/hidden-cosmology-atlas/relations/source-relations_v0.1.0.md",
+    "notion": "PROPOSED_READ_ONLY_WIKI_PROJECTION",
+    "drive": "PRIVATE_DONOR_NOT_AUTO_PUBLISHED",
+    "dropbox": "PRIVATE_ARCHIVE_NOT_AUTO_PUBLISHED",
+    "site": "EXISTING_PRIVATE_SITE_CONSUMER"
+  },
+  "clusters": [
+    {
+      "id": "C01_POSTWAR_TRANSFER",
+      "label": "Nazi International / Paperclip / postwar recruitment",
+      "anchors": [
+        "https://history.state.gov/historicaldocuments/frus1946v05/d448",
+        "https://www.archives.gov/iwg/declassified-records/rg-263-cia-records"
+      ],
+      "historical_status": "Official source indexes/documents located; no fabricated Nazi-international single coordinating entity."
+    },
+    {
+      "id": "C02_OSS_CIA_NETWORKS",
+      "label": "OSS→SSU→CIG→CIA and intelligence personnel networks",
+      "anchors": [
+        "https://www.archives.gov/research/intelligence/cia",
+        "https://www.archives.gov/research/military/ww2/oss"
+      ],
+      "historical_status": "Institutional succession documented; individual links require dates/records."
+    },
+    {
+      "id": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "label": "Meyer Lansky / organized crime / legal and political networks",
+      "anchors": [],
+      "historical_status": "Discovery agenda, NOT connected historical supernetwork."
+    },
+    {
+      "id": "C04_COVERT_FINANCE_TRUSTS",
+      "label": "Offshore structures / money flows / Five Star Trust / MEGA naming",
+      "anchors": [
+        "https://offshoreleaks.icij.org/nodes/162340"
+      ],
+      "historical_status": "Specific ICIJ entity is a name collision lead; no identity match with private Five Star Trust dossier."
+    },
+    {
+      "id": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "label": "Iran-Contra / Epstein archives / WCC / Mega Group",
+      "anchors": [
+        "https://nsarchive.gwu.edu/special-exhibits/iran-contra-affair",
+        "https://www.justice.gov/epstein",
+        "https://vault.fbi.gov/jeffrey-epstein/jeffrey-epstein"
+      ],
+      "historical_status": "Separate event/corpus indexes; cross-event bridges are research questions only."
+    },
+    {
+      "id": "C06_UFO_PSI_ALT_HISTORY",
+      "label": "Puharich / Tesla / Swann / Brown / alternative technology",
+      "anchors": [],
+      "historical_status": "Source claims and conceptual relations, not physical verification."
+    },
+    {
+      "id": "C07_MEDIA_INTERPRETATION",
+      "label": "Investigative authors / worldviews / media narratives",
+      "anchors": [],
+      "historical_status": "Distinguish interviewer, researcher, quoted witness and fictional KFB character."
+    },
+    {
+      "id": "C08_MONETARY_CENTRAL_BANKS",
+      "label": "Money creation, central banks and monetary systems / Federal Reserve / BIS",
+      "anchors": [
+        "https://www.federalreserve.gov/faqs/about_14986.htm",
+        "https://www.stlouisfed.org/in-plain-english/who-owns-the-federal-reserve-banks",
+        "https://www.federalreservehistory.org/essays/federal-reserve-act-signed",
+        "https://www.bis.org/about/annual-report"
+      ],
+      "historical_status": "Official institutional history and contemporary governance pages; claims of total private ownership, monetary control or clandestine operations require precise separate tests."
+    },
+    {
+      "id": "C09_VATICAN_FINANCE",
+      "label": "Vatican finance / IOR / APSA / Banco Ambrosiano / Sindona / P2",
+      "anchors": [
+        "https://www.ior.va/en/annual-reports/",
+        "https://www.ior.va/en/faq-en/",
+        "https://www.vaticannews.va/en/vatican-city/news/2025-07/administration-patrimony-holy-see-apsa-tasks-mandate-vatican.html"
+      ],
+      "historical_status": "IOR and APSA separate entities; WCC R4 BPF/Moneyrex original gaps remain open. This cluster cross-references WCC, does not copy ledgers."
+    },
+    {
+      "id": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "label": "Secret societies, esoteric orders, historical mysticism and Mystery Schools",
+      "anchors": [
+        "https://www.theosophical.org/component/content/article?id=1040",
+        "https://www.gov.uk/government/publications/charity-registration-decision-the-theosophical-society-in-england/charity-registration-decision-the-theosophical-society-in-england"
+      ],
+      "historical_status": "Distinguish documented legal societies, historical initiatory traditions, author mythography and metaphorical mystery-school lineage; Dark Journalist is existing Daniel Liszt author master."
+    }
+  ],
+  "records": [
+    {
+      "id": "joseph-farrell",
+      "name": "Joseph P. Farrell",
+      "kind": "author",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/joseph-farrell.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "annie-jacobsen",
+      "name": "Annie Jacobsen",
+      "kind": "researcher",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "linda-hunt",
+      "name": "Linda Hunt",
+      "kind": "researcher",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "christopher-simpson",
+      "name": "Christopher Simpson",
+      "kind": "researcher",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "john-loftus",
+      "name": "John Loftus",
+      "kind": "researcher",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "wernher-von-braun",
+      "name": "Wernher von Braun",
+      "kind": "person",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "reinhard-gehlen",
+      "name": "Reinhard Gehlen",
+      "kind": "person",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "otto-skorzeny",
+      "name": "Otto Skorzeny",
+      "kind": "person",
+      "cluster": "C01_POSTWAR_TRANSFER",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "tim-weiner",
+      "name": "Tim Weiner",
+      "kind": "researcher",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "douglas-valentine",
+      "name": "Douglas Valentine",
+      "kind": "researcher",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "peter-dale-scott",
+      "name": "Peter Dale Scott",
+      "kind": "researcher",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "david-talbot",
+      "name": "David Talbot",
+      "kind": "researcher",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "william-donovan",
+      "name": "William J. Donovan",
+      "kind": "person",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "allen-dulles",
+      "name": "Allen W. Dulles",
+      "kind": "person",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "frank-wisner",
+      "name": "Frank Wisner",
+      "kind": "person",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "whitney-webb",
+      "name": "Whitney Webb",
+      "kind": "author",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "dan-moldea",
+      "name": "Dan E. Moldea",
+      "kind": "author",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "seymour-hersh",
+      "name": "Seymour Hersh",
+      "kind": "author",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "meyer-lansky",
+      "name": "Meyer Lansky",
+      "kind": "person",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "lucky-luciano",
+      "name": "Charles 'Lucky' Luciano",
+      "kind": "person",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "roy-cohn",
+      "name": "Roy Cohn",
+      "kind": "person",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jeffrey-epstein",
+      "name": "Jeffrey Epstein",
+      "kind": "person",
+      "cluster": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "catherine-austin-fitts",
+      "name": "Catherine Austin Fitts",
+      "kind": "author",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/catherine-austin-fitts.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "lucy-komisar",
+      "name": "Lucy Komisar",
+      "kind": "researcher",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "david-cay-johnston",
+      "name": "David Cay Johnston",
+      "kind": "researcher",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "five-star-trust-claimed-network",
+      "name": "Five Star Trust — claimed financial network",
+      "kind": "entity",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "IDENTITY_RESOLUTION_FIRST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "five-star-trust-icij",
+      "name": "Five Star Trust — ICIJ offshore entity",
+      "kind": "entity",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "IDENTITY_RESOLUTION_FIRST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "mega-corporation-unresolved",
+      "name": "Mega Corporation — exact referent pending",
+      "kind": "entity",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "IDENTITY_RESOLUTION_FIRST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "mega-group",
+      "name": "Mega Group — philanthropist study group",
+      "kind": "entity",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "IDENTITY_RESOLUTION_FIRST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "gary-webb",
+      "name": "Gary Webb",
+      "kind": "researcher",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "robert-parry",
+      "name": "Robert Parry",
+      "kind": "researcher",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jonathan-marshall",
+      "name": "Jonathan Marshall",
+      "kind": "researcher",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "oliver-north",
+      "name": "Oliver North",
+      "kind": "person",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "richard-secord",
+      "name": "Richard Secord",
+      "kind": "person",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "leslie-wexner",
+      "name": "Leslie Wexner",
+      "kind": "person",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "world-commerce-corporation",
+      "name": "World Commerce Corporation",
+      "kind": "entity",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "EXISTING_TOPIC_NOT_NEW_MASTER",
+      "donor": "topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jason-samosa",
+      "name": "Jason Samosa",
+      "kind": "author",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "donor": "topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jason-reza-jorjani",
+      "name": "Jason Reza Jorjani",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/README.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "william-bramley",
+      "name": "William Bramley",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/README.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "daniel-liszt",
+      "name": "Daniel Liszt / Dark Journalist",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/README.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "david-icke",
+      "name": "David Icke",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/README.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "michael-wann",
+      "name": "Michael Wann",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/README.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "andrija-puharich",
+      "name": "Andrija Puharich",
+      "kind": "researcher",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "SOURCE_TOPIC_EXISTS_DOSSIER_PENDING",
+      "donor": "topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "ingo-swann",
+      "name": "Ingo Swann",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "thomas-townsend-brown",
+      "name": "Thomas Townsend Brown",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "nikola-tesla",
+      "name": "Nikola Tesla",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jacques-vallee",
+      "name": "Jacques Vallée",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "richard-dolan",
+      "name": "Richard Dolan",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "nick-redfern",
+      "name": "Nick Redfern",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "kurt-metzger",
+      "name": "Kurt Metzger",
+      "kind": "author",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "EXISTING_GITHUB_MASTER",
+      "donor": "authors/kurt-metzger.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jesse-michels-american-alchemy",
+      "name": "Jesse Michels / American Alchemy",
+      "kind": "host",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "EXISTING_GITHUB_SOURCE_HOST_NOT_AUTHOR",
+      "donor": "sources/jesse-michels-american-alchemy.md",
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "jan-irvin",
+      "name": "Jan Irvin",
+      "kind": "author",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "christopher-knowles",
+      "name": "Christopher Knowles",
+      "kind": "author",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "george-arney-unresolved",
+      "name": "George Arney — identity/research referent not yet established",
+      "kind": "person",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "IDENTITY_RESOLUTION_FIRST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "federal-reserve-system",
+      "name": "Federal Reserve System",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "federal-reserve-board",
+      "name": "Board of Governors of the Federal Reserve System",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "federal-reserve-banks",
+      "name": "12 Federal Reserve Banks",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "bank-for-international-settlements",
+      "name": "Bank for International Settlements (BIS)",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "bank-of-england",
+      "name": "Bank of England",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "federal-open-market-committee",
+      "name": "Federal Open Market Committee (FOMC)",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "paul-warburg",
+      "name": "Paul Warburg",
+      "kind": "person",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "nelson-aldrich",
+      "name": "Nelson W. Aldrich",
+      "kind": "person",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "carter-glass",
+      "name": "Carter Glass",
+      "kind": "person",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "ellen-brown",
+      "name": "Ellen Brown",
+      "kind": "author",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "g-edward-griffin",
+      "name": "G. Edward Griffin",
+      "kind": "author",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "nomi-prins",
+      "name": "Nomi Prins",
+      "kind": "author",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "murray-rothbard",
+      "name": "Murray N. Rothbard",
+      "kind": "author",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "institute-for-works-of-religion",
+      "name": "Istituto per le Opere di Religione (IOR)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "apsa",
+      "name": "Administration of the Patrimony of the Apostolic See (APSA)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "banco-ambrosiano",
+      "name": "Banco Ambrosiano",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "banca-privata-finanziaria",
+      "name": "Banca Privata Finanziaria (BPF)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "propaganda-due",
+      "name": "Propaganda Due (P2)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "asif-vatican",
+      "name": "Vatican Supervisory and Financial Information Authority (ASIF)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "INSTITUTION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "michele-sindona",
+      "name": "Michele Sindona",
+      "kind": "person",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "roberto-calvi",
+      "name": "Roberto Calvi",
+      "kind": "person",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "paul-marcinkus",
+      "name": "Paul Marcinkus",
+      "kind": "person",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "licio-gelli",
+      "name": "Licio Gelli",
+      "kind": "person",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "john-pollard-historian",
+      "name": "John F. Pollard",
+      "kind": "researcher",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "gerald-posner",
+      "name": "Gerald Posner",
+      "kind": "researcher",
+      "cluster": "C09_VATICAN_FINANCE",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "theosophical-society",
+      "name": "Theosophical Society",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "hermetic-order-golden-dawn",
+      "name": "Hermetic Order of the Golden Dawn",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "ordo-templi-orientis",
+      "name": "Ordo Templi Orientis (O.T.O.)",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "mystery-schools",
+      "name": "Mystery Schools — historiographical/conceptual umbrella",
+      "kind": "concept",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "freemasonry-traditions",
+      "name": "Freemasonry — multiple Grand Lodges, not one owner",
+      "kind": "concept",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "rosicrucian-traditions",
+      "name": "Rosicrucianism — diverse organizations/traditions",
+      "kind": "concept",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "helena-blavatsky",
+      "name": "Helena Petrovna Blavatsky",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "rudolf-steiner",
+      "name": "Rudolf Steiner",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "manly-p-hall",
+      "name": "Manly P. Hall",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "aleister-crowley",
+      "name": "Aleister Crowley",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "wouter-hanegraaff",
+      "name": "Wouter J. Hanegraaff",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "antoine-faivre",
+      "name": "Antoine Faivre",
+      "kind": "author",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "NEW_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_INVENTORY_BEFORE_DOSSIER"
+    },
+    {
+      "id": "sam-tripoli",
+      "name": "Sam Tripoli",
+      "kind": "host",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "NEW_AUTHOR_AND_CREATIVE_DONOR_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "george-carlin",
+      "name": "George Carlin",
+      "kind": "author",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CONVERGENT_INTERESTS_PRIMARY_CLIP_RESEARCH_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "robert-monroe",
+      "name": "Robert A. Monroe",
+      "kind": "author",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "LOOSH_SOURCE_WORK_IDENTIFIED_AUTHOR_MASTER_PENDING",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "loosh",
+      "name": "Loosh / emotional harvesting (Monroe term)",
+      "kind": "concept",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "AUTHOR_NARRATIVE_CONCEPT_NOT_EMPIRICAL_MECHANISM",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "first-enoch",
+      "name": "1 Enoch / Book of the Watchers",
+      "kind": "work",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "CRITICAL_EDITION_TEXTUAL_WORK",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "nephilim",
+      "name": "Nephilim / Watchers tradition",
+      "kind": "concept",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "MYTH_TEXT_CONCEPT_VERSION_DEPENDENT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "tartaria-narratives",
+      "name": "Tartaria / Tartary historical-geographical vs modern narrative",
+      "kind": "concept",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "MULTIPLE_FIELDS_HISTORICAL_TOPONYM_VS_MODERN_MYTH",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "atlantis-narratives",
+      "name": "Atlantis / Plato and later alternative-historical narratives",
+      "kind": "concept",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "MULTIPLE_FIELDS_CLASSICAL_TEXT_VS_MODERN_CLAIM",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "sovereign-military-order-of-malta",
+      "name": "Sovereign Military Order of Malta (SMOM)",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "LEGAL_IDENTITY_REQUIRES_EXACT_ORGANIZATION",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "ghislaine-maxwell",
+      "name": "Ghislaine Maxwell",
+      "kind": "person",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "PUBLIC_RECORD_SUBJECT_NOT_AUTHOR_ENDORSEMENT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "terramar-project",
+      "name": "The TerraMar Project",
+      "kind": "entity",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "OCEAN_PROJECT_REPORTED_NOT_ATLANTIS_PROOF",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "bimini-cuba-atlantis-claim",
+      "name": "Bimini–Cuba Atlantis search attribution",
+      "kind": "concept",
+      "cluster": "C06_UFO_PSI_ALT_HISTORY",
+      "state": "DARK_JOURNALIST_ASSERTION_NOT_INDEPENDENT_HISTORICAL_FACT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "SOURCE_PASSAGE_OR_IDENTITY_AUDIT_BEFORE_PROMOTION"
+    },
+    {
+      "id": "james-corbett",
+      "name": "James Corbett",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "JOURNALISTIC_DONOR_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "INVESTIGATIVE",
+        "PODCAST_HOST",
+        "DOCUMENTARY_AUTHOR"
+      ]
+    },
+    {
+      "id": "derrick-broze",
+      "name": "Derrick Broze",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "IDENTITY_CORRECTION_DAVID_BOZE_PROBABLE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "INVESTIGATIVE",
+        "DOCUMENTARY_AUTHOR",
+        "PODCAST_HOST"
+      ]
+    },
+    {
+      "id": "tom-oliver-regenauer",
+      "name": "Tom-Oliver Regenauer",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "JOURNALISTIC_DONOR_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "AUTHOR",
+        "ESSAYIST",
+        "JOURNALISM"
+      ]
+    },
+    {
+      "id": "patrik-baab",
+      "name": "Patrik Baab",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "JOURNALISTIC_DONOR_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "JOURNALISM",
+        "AUTHOR"
+      ]
+    },
+    {
+      "id": "dirk-pohlmann",
+      "name": "Dirk Pohlmann",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "JOURNALISTIC_DONOR_CANDIDATE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "DOCUMENTARY",
+        "JOURNALISM"
+      ]
+    },
+    {
+      "id": "mark-goodwin",
+      "name": "Mark Goodwin",
+      "kind": "researcher",
+      "cluster": "C04_COVERT_FINANCE_TRUSTS",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "JOURNALISM",
+        "FINANCE",
+        "EDITOR"
+      ]
+    },
+    {
+      "id": "iain-davis",
+      "name": "Iain Davis",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "JOURNALISM",
+        "GEOPOLITICS"
+      ]
+    },
+    {
+      "id": "john-klyczek",
+      "name": "John Klyczek",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "RESEARCH",
+        "AUTHOR"
+      ]
+    },
+    {
+      "id": "max-jones",
+      "name": "Max Jones",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "JOURNALISM",
+        "PUBLISHER_CONTRIBUTOR"
+      ]
+    },
+    {
+      "id": "c-z-means",
+      "name": "C. Z. Means / ParaPower Mapping",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "PODCAST_HOST",
+        "JOURNALISTIC_DONOR"
+      ]
+    },
+    {
+      "id": "ed-berger",
+      "name": "Ed Berger",
+      "kind": "researcher",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "RESEARCHER",
+        "AUTHOR"
+      ]
+    },
+    {
+      "id": "jeffrey-sachs",
+      "name": "Jeffrey D. Sachs",
+      "kind": "author",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "ACADEMIC_ANALYST_NOT_AUTOMATIC_JOURNALIST",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "ECONOMIST",
+        "GEOPOLITICAL_ANALYST",
+        "ACADEMIC"
+      ]
+    },
+    {
+      "id": "scott-ritter",
+      "name": "Scott Ritter",
+      "kind": "researcher",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "COMMENTATOR_ANALYST_STATUS_NEEDS_EXACT_SOURCE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MILITARY_ANALYST",
+        "COMMENTATOR",
+        "PRIOR_INSPECTOR"
+      ]
+    },
+    {
+      "id": "ryan-dawson",
+      "name": "Ryan Dawson",
+      "kind": "researcher",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "INDEPENDENT_COMMENTATOR_ORIGINALS_PENDING",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "CITIZEN_JOURNALIST",
+        "COMMENTATOR"
+      ]
+    },
+    {
+      "id": "carroll-quigley",
+      "name": "Carroll Quigley",
+      "kind": "author",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "HISTORIAN_BIBLIOGRAPHIC_ORIGINAL",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "ACADEMIC_HISTORIAN",
+        "AUTHOR"
+      ]
+    },
+    {
+      "id": "cecil-rhodes",
+      "name": "Cecil John Rhodes",
+      "kind": "person",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "HISTORICAL_PERSON_ORIGINAL_WILL_SOURCE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORICAL_PERSON",
+        "INSTITUTIONAL_FOUNDER"
+      ]
+    },
+    {
+      "id": "alfred-milner",
+      "name": "Alfred Milner",
+      "kind": "person",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "HISTORICAL_PERSON_NEEDS_ORIGINAL_CORRESPONDENCE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORICAL_PERSON"
+      ]
+    },
+    {
+      "id": "technocracy-inc",
+      "name": "Technocracy Incorporated",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_TECHNOCRACY_ORGANIZATION",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "INSTITUTION",
+        "HISTORICAL"
+      ]
+    },
+    {
+      "id": "howard-scott",
+      "name": "Howard Scott",
+      "kind": "person",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_TECHNOCRACY_SUBJECT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORICAL_PERSON"
+      ]
+    },
+    {
+      "id": "m-king-hubbert",
+      "name": "M. King Hubbert",
+      "kind": "person",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORICAL_TECHNOCRACY_SUBJECT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORICAL_PERSON"
+      ]
+    },
+    {
+      "id": "rhodes-trust",
+      "name": "Rhodes Trust",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "HISTORICAL_ORGANIZATION_ORIGINAL_WILL_SOURCE",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "INSTITUTION",
+        "ARCHIVE_CUSTODIAN"
+      ]
+    },
+    {
+      "id": "unlimited-hangout",
+      "name": "Unlimited Hangout",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "ORIGINAL_PUBLISHER_VERIFIED",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "NEWS_PUBLISHER",
+        "INVESTIGATIVE_ARCHIVE"
+      ]
+    },
+    {
+      "id": "corbett-report",
+      "name": "The Corbett Report",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "ORIGINAL_PUBLISHER_VERIFIED",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "NEWS_PUBLISHER",
+        "DOCUMENTARY_ARCHIVE"
+      ]
+    },
+    {
+      "id": "conscious-resistance-network",
+      "name": "The Conscious Resistance Network",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "ORIGINAL_PUBLISHER_VERIFIED",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "DOCUMENTARY_PUBLISHER"
+      ]
+    },
+    {
+      "id": "pyramid-of-power-series",
+      "name": "The Pyramid of Power (17 chapters)",
+      "kind": "work",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "ORIGINAL_PUBLISHER_SERIES_17",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "DOCUMENTARY_SERIES"
+      ]
+    },
+    {
+      "id": "one-nation-under-blackmail",
+      "name": "One Nation Under Blackmail (two volumes)",
+      "kind": "work",
+      "cluster": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "state": "ORIGINAL_PUBLICATION_LIBRARY_DONOR_PRESENT",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "INVESTIGATIVE_BOOK"
+      ]
+    },
+    {
+      "id": "tragedy-and-hope",
+      "name": "Tragedy and Hope (1966)",
+      "kind": "work",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "BIBLIOGRAPHIC_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORY_BOOK"
+      ]
+    },
+    {
+      "id": "anglo-american-establishment",
+      "name": "The Anglo-American Establishment (1981)",
+      "kind": "work",
+      "cluster": "C02_OSS_CIA_NETWORKS",
+      "state": "BIBLIOGRAPHIC_SOURCE_LEAD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORY_BOOK"
+      ]
+    },
+    {
+      "id": "rhodes-will-codicils",
+      "name": "Cecil Rhodes wills and codicils",
+      "kind": "work",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "state": "ORIGINAL_HISTORICAL_DOCUMENT_INDEX",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "PRIMARY_ORIGINAL_DOCUMENT"
+      ]
+    },
+    {
+      "id": "technocracy-movement-1930s",
+      "name": "Technocracy movement 1930s",
+      "kind": "concept",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "state": "HISTORIOGRAPHIC_RESEARCH_FIELD",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "HISTORICAL_MOVEMENT"
+      ]
+    },
+    {
+      "id": "reuters-news",
+      "name": "Reuters",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "WIRE_NEWS_SOURCE"
+      ]
+    },
+    {
+      "id": "associated-press",
+      "name": "Associated Press (AP)",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "WIRE_NEWS_SOURCE"
+      ]
+    },
+    {
+      "id": "financial-times",
+      "name": "Financial Times",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MAINSTREAM_PRESS"
+      ]
+    },
+    {
+      "id": "new-york-times",
+      "name": "The New York Times",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MAINSTREAM_PRESS"
+      ]
+    },
+    {
+      "id": "the-guardian",
+      "name": "The Guardian",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MAINSTREAM_PRESS"
+      ]
+    },
+    {
+      "id": "wall-street-journal",
+      "name": "The Wall Street Journal",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MAINSTREAM_PRESS"
+      ]
+    },
+    {
+      "id": "bbc-news",
+      "name": "BBC News",
+      "kind": "entity",
+      "cluster": "C07_MEDIA_INTERPRETATION",
+      "state": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "donor": null,
+      "public_claims_verified": false,
+      "edge_status": "NO_NEW_CAUSAL_EDGE",
+      "next": "INVENTORY_ORIGINAL_PUBLICATION_AND_CITED_PRIMARY_DOCUMENTS",
+      "role_facets": [
+        "MAINSTREAM_PRESS"
+      ]
+    }
+  ],
+  "created_dossiers_count": 0,
+  "updated": "2026-11-01",
+  "provenance": {
+    "derivedFrom": "skills/chat/research/hidden-cosmology-atlas/ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R3_2026-11-01.json",
+    "baseBlobSha": "df24a860f74b6b5a07cb29f1ca791350cce4af54",
+    "change": "ADD_JOURNALISTIC_DONOR_ROLES_OUTLETS_TECHNOCRACY_QUIGLEY_RHODES_ORIGINAL_WORKS",
+    "newRecords": 37,
+    "sourceStatus": "CANDIDATE_DISCOVERY_AND_ORIGINAL_PUBLISHER_INDEX_NOT_FULL_FACT_CHECK"
+  },
+  "cluster_overlays": {
+    "daniel-liszt": [
+      "C06_UFO_PSI_ALT_HISTORY",
+      "C07_MEDIA_INTERPRETATION",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "joseph-farrell": [
+      "C01_POSTWAR_TRANSFER",
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C08_MONETARY_CENTRAL_BANKS",
+      "C09_VATICAN_FINANCE"
+    ],
+    "catherine-austin-fitts": [
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C08_MONETARY_CENTRAL_BANKS"
+    ],
+    "world-commerce-corporation": [
+      "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "C09_VATICAN_FINANCE"
+    ],
+    "michele-sindona": [
+      "C09_VATICAN_FINANCE",
+      "C04_COVERT_FINANCE_TRUSTS"
+    ],
+    "sam-tripoli": [
+      "C07_MEDIA_INTERPRETATION",
+      "C06_UFO_PSI_ALT_HISTORY"
+    ],
+    "robert-monroe": [
+      "C06_UFO_PSI_ALT_HISTORY",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "george-carlin": [
+      "C07_MEDIA_INTERPRETATION",
+      "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "C04_COVERT_FINANCE_TRUSTS"
+    ],
+    "atlantis-narratives": [
+      "C06_UFO_PSI_ALT_HISTORY",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "first-enoch": [
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "C06_UFO_PSI_ALT_HISTORY"
+    ],
+    "whitney-webb": [
+      "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "C07_MEDIA_INTERPRETATION"
+    ],
+    "seymour-hersh": [
+      "C02_OSS_CIA_NETWORKS",
+      "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "C07_MEDIA_INTERPRETATION"
+    ],
+    "james-corbett": [
+      "C02_OSS_CIA_NETWORKS",
+      "C07_MEDIA_INTERPRETATION",
+      "C08_MONETARY_CENTRAL_BANKS"
+    ],
+    "derrick-broze": [
+      "C07_MEDIA_INTERPRETATION",
+      "C08_MONETARY_CENTRAL_BANKS",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "tom-oliver-regenauer": [
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C07_MEDIA_INTERPRETATION",
+      "C08_MONETARY_CENTRAL_BANKS"
+    ],
+    "carroll-quigley": [
+      "C02_OSS_CIA_NETWORKS",
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "pyramid-of-power-series": [
+      "C02_OSS_CIA_NETWORKS",
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C07_MEDIA_INTERPRETATION",
+      "C08_MONETARY_CENTRAL_BANKS",
+      "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    ],
+    "jeffrey-sachs": [
+      "C02_OSS_CIA_NETWORKS",
+      "C04_COVERT_FINANCE_TRUSTS",
+      "C08_MONETARY_CENTRAL_BANKS"
+    ]
+  },
+  "corrections": {
+    "wrong_term": "Dark Jungle",
+    "canonical_author_label": "Daniel Liszt / Dark Journalist",
+    "canonical_author_id": "daniel-liszt",
+    "new_owner_created": false
+  },
+  "meta_navigation": {
+    "views": [
+      "WIKI",
+      "EGO_GRAPH",
+      "SOURCE_TIMELINE",
+      "PROVENANCE",
+      "DIFF_HISTORY",
+      "RESEARCH_QUEUE",
+      "LENS_SWITCH",
+      "CONVERGENCE_COMPARE",
+      "CREATIVE_EXPORT_PREVIEW",
+      "JOURNALIST_DONORS",
+      "OUTLET_COVERAGE_COMPARE",
+      "PUBLICATION_TO_PRIMARY_SOURCE"
+    ],
+    "truth": "Source claims, hypothesis and conceptual links are distinct",
+    "site_status": "PLANNED_ONLY_R4_NO_SITE_CHANGED"
+  },
+  "ambiguous_names": [
+    {
+      "input": "George Arney",
+      "status": "EXACT_IDENTITY_UNRESOLVED",
+      "instruction": "Locate cited program/author/work; do not quietly replace with another George."
+    },
+    {
+      "input": "Meyer-Lensky",
+      "status": "LIKELY_MEYER_LANSKY_ALIAS_NEEDS_CONFIRMATION"
+    },
+    {
+      "input": "Mega Corporation",
+      "status": "UNRESOLVED_REFERENT",
+      "instruction": "Do not silently equate with informal Mega Group or a particular corporation."
+    },
+    {
+      "input": "Five Star Trust",
+      "status": "NAME_COLLISION",
+      "instruction": "Private Dropbox summary asserts vast financial network, not primary verified; ICIJ Offshore Leaks same name Cook Islands not assumed same trust."
+    }
+  ],
+  "layer_policy": {
+    "inclusionParity": "All genres may yield nodes, original works, attributed claims and meaningful relations; parity of discoverability DOES NOT mean parity of historical evidentiary support.",
+    "creativeInterface": "Separate versioned authored output lens / adapter on same research records; not a second source master.",
+    "hostGuestSeparation": "A host's question, guest allegation and performance riff are separate source records.",
+    "historicalVsMythic": "Original source text and its sense field distinct from later literal interpretation and KFB satire.",
+    "relationEvidence": "No historical claim edges were introduced in this R3 census."
+  },
+  "external_public_leads": [
+    {
+      "subjectId": "sam-tripoli",
+      "type": "ORIGINAL_PUBLISHER_EPISODE_LISTING",
+      "title": "Tin Foil Hat #1032 with Dark Journalist, October 2026",
+      "url": "https://samtripoli.com/category/tin-foil-hat/",
+      "scope": "Publisher episode summary; no full audio checked"
+    },
+    {
+      "subjectId": "sam-tripoli",
+      "type": "PODCAST_PUBLISHER_EPISODE",
+      "title": "Tin Foil Hat #948 with Joseph P. Farrell, December 2025",
+      "url": "https://podcasts.apple.com/us/podcast/948-defeating-death-with-dr-joseph-p-farrell/id577245086?i=1000739971670",
+      "scope": "Episode metadata, no original audio checked"
+    },
+    {
+      "subjectId": "robert-monroe",
+      "type": "BIBLIOGRAPHIC_EDITION",
+      "title": "Far Journeys, Doubleday 1985",
+      "url": "https://search.worldcat.org/title/11755227",
+      "scope": "Catalog confirms work, Loosh text needs exact edition/page authentication"
+    },
+    {
+      "subjectId": "first-enoch",
+      "type": "ACADEMIC_CRITICAL_TEXT_EDITION",
+      "title": "Online Critical Pseudepigrapha 1 Enoch",
+      "url": "https://pseudepigrapha.org/reader.html?doc=1En.xml",
+      "scope": "Critical edition overview and variant caveats, not entire text inspected"
+    },
+    {
+      "subjectId": "george-carlin",
+      "type": "QUOTATION_ARCHIVE_WITH_PRIMARY_EVENT_LEAD",
+      "title": "Politically Incorrect episode 2001-05-16 Convergent Interests",
+      "url": "https://www.georgecarlin.net/quotes/tvandinterviewquotes.html",
+      "scope": "Fan archive with program provenance, original video not independently played"
+    },
+    {
+      "subjectId": "bimini-cuba-atlantis-claim",
+      "type": "REPRODUCED_HOST_TRANSCRIPT",
+      "title": "Dark Journalist X-122 AUTEC in the HotZone Ghislaine Atlantis Search",
+      "url": "https://fight.fudgie.org/search/show/dkj/episode/20220319_Sat_wP_lceSyYgQ",
+      "scope": "Third-party transcript/episode text; precise host speech indexed; original video/audio not independently checked"
+    },
+    {
+      "subjectId": "terramar-project",
+      "type": "REPRODUCED_OFFICIAL_INTERVIEW_TRANSCRIPT",
+      "title": "Ghislaine Maxwell interview, TerraMar Q&A",
+      "url": "https://webflow.rev.com/transcripts/doj-interview-with-ghislaine-maxwell-day-1",
+      "scope": "Transcript of DOJ interview as reproduced; corroborates she described ocean exploration, NOT Atlantis operation"
+    },
+    {
+      "subjectId": "unlimited-hangout",
+      "type": "PUBLISHER_SELF_DESCRIPTION",
+      "url": "https://unlimitedhangout.com/about-us/",
+      "scope": "Publisher statement of editorial sourcing standards, not independent quality audit"
+    },
+    {
+      "subjectId": "unlimited-hangout",
+      "type": "PUBLISHER_CONTRIBUTOR_INDEX",
+      "url": "https://unlimitedhangout.com/authors/",
+      "scope": "Verified roster Whitney Webb Mark Goodwin Iain Davis et al; authors are independent contributors, not auto-corrob"
+    },
+    {
+      "subjectId": "whitney-webb",
+      "type": "ORIGINAL_BYLINE_ARCHIVE",
+      "url": "https://unlimitedhangout.com/author/whitney-webb/",
+      "scope": "Articles & investigative series; individual article sources need claim extraction"
+    },
+    {
+      "subjectId": "corbett-report",
+      "type": "OFFICIAL_DOCUMENTARY_INDEX",
+      "url": "https://corbettreport.com/corbett-report-documentaries/",
+      "scope": "Documentaries offer linked transcripts; inspect source footnotes per claim"
+    },
+    {
+      "subjectId": "pyramid-of-power-series",
+      "type": "AUTHOR_ORIGINAL_SERIES_HISTORY",
+      "url": "https://thepyramidofpower.net/about/",
+      "scope": "Author confirms series expanded from 10 to 17 chapters and final chapter in two volumes"
+    },
+    {
+      "subjectId": "pyramid-of-power-series",
+      "type": "OFFICIAL_EPISODE_TRANSCRIPT",
+      "url": "https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+      "scope": "Chapter 13 is Technocratic State; source claims require validation"
+    },
+    {
+      "subjectId": "derrick-broze",
+      "type": "PUBLISHED_INTERVIEW_CONNECTION",
+      "url": "https://corbettreport.com/opting-out-of-technocracy/",
+      "scope": "Corbett and Derrick Broze appearance about technocracy; episode source index, not independent corroboration"
+    },
+    {
+      "subjectId": "tom-oliver-regenauer",
+      "type": "AUTHOR_ARTICLE_ARCHIVE",
+      "url": "https://www.regenauer.press/blog",
+      "scope": "Self-hosted chronology 2021-2026 with author archives; not externally fact-checked"
+    },
+    {
+      "subjectId": "patrik-baab",
+      "type": "AUTHOR_OFFICIAL_SITE",
+      "url": "https://www.patrikbaab.de/",
+      "scope": "Independent author/profile and methods; no full episodes read"
+    },
+    {
+      "subjectId": "seymour-hersh",
+      "type": "AUTHOR_PUBLICATION_ARCHIVE",
+      "url": "https://seymourhersh.substack.com/about",
+      "scope": "Author publication/biographical archive; specific investigative articles need sources"
+    },
+    {
+      "subjectId": "ryan-dawson",
+      "type": "COMMENTATOR_SITE_INDEX",
+      "url": "https://www.ancreport.com/",
+      "scope": "Independent analyst self-publisher original statements; claims not independent historical validation"
+    },
+    {
+      "subjectId": "jeffrey-sachs",
+      "type": "ACADEMIC_INSTITUTIONAL_BIO",
+      "url": "https://capitalism.columbia.edu/directory/jeffrey-sachs",
+      "scope": "Academic position verified; geopolitic commentary and empirical studies separate"
+    },
+    {
+      "subjectId": "tragedy-and-hope",
+      "type": "LIBRARY_BIBLIOGRAPHY",
+      "url": "https://books.google.com/books/about/Tragedy_and_Hope.html?id=uOwkAQAAMAAJ",
+      "scope": "Quigley 1966 book bibliographic entry; full text not inspected"
+    },
+    {
+      "subjectId": "anglo-american-establishment",
+      "type": "LIBRARY_BIBLIOGRAPHY",
+      "url": "https://books.google.com/books/about/The_Anglo_American_Establishment.html?id=V19nAAAAMAAJ",
+      "scope": "Quigley 1981 work index; period links are author interpretation"
+    },
+    {
+      "subjectId": "rhodes-will-codicils",
+      "type": "ORIGINAL_TRUST_ARCHIVE_INDEX",
+      "url": "https://www.rhodeshouse.ox.ac.uk/about/trustees-governance-financial-statements/",
+      "scope": "Rhodes Trust has will & codicil original scans; scan pages not examined here"
+    },
+    {
+      "subjectId": "technocracy-movement-1930s",
+      "type": "CONTEMPORANEOUS_JOURNAL_REPORT",
+      "url": "https://www.nature.com/articles/131087b0",
+      "scope": "Nature January 1933 historical published report; original page image not inspected"
+    },
+    {
+      "subjectId": "technocracy-movement-1930s",
+      "type": "PEER_REVIEWED_HISTORICAL_STUDY",
+      "url": "https://doi.org/10.1080/17449359.2024.2343657",
+      "scope": "Oh 2024 paper about Howard Scott and Technocracy Inc, article/abstract read"
+    },
+    {
+      "subjectId": "technocracy-inc",
+      "type": "PRIMARY_HISTORICAL_MAP_CATALOG",
+      "url": "https://www.jstor.org/stable/community.34227574",
+      "scope": "Howard Scott Technate of America map 1940 catalog; full item not inspected"
+    }
+  ],
+  "journalism_donor_policy": {
+    "sameGraphNotNewRuntime": true,
+    "layerType": "MULTI_ROLE_SOURCE_AND_PUBLICATION_OVERLAY",
+    "authorLabelsNotTruthScores": true,
+    "requiredPerPublication": [
+      "authorId",
+      "bylineOriginalURL",
+      "publisher",
+      "publicationDate",
+      "editionOrUpdatedDate",
+      "claimsWithSpecificPassages",
+      "citedOriginalSourceRoots",
+      "independentCorroboration",
+      "sourceDisagreements",
+      "editorialStatus",
+      "corrections",
+      "conflictsOfInterestWhereActuallyKnown",
+      "archivedURLIfActual"
+    ],
+    "primaryVsReporting": "Published original reporting is primary for what journalist wrote, not automatically for bank transactions or covert involvement claimed.",
+    "outletSpectrum": "Select strongest relevant articles across divergent editorial lines, not an arbitrary balanced quota",
+    "triangulation": "Deduplicate Reuters/AP wire and mirrored articles by common primary reporting root",
+    "protection": "Living persons are not presumed criminal from document mentions or coappearance"
+  },
+  "identity_corrections": [
+    {
+      "userTerm": "David Boze",
+      "researchLead": "Derrick Broze",
+      "confidence": "HIGH_MATCH_TITLE_AND_17_PART_SERIES",
+      "reason": "Official documentary author of 17-part The Pyramid of Power, chapter 13 Technocratic State; do not equate to other similarly named individuals."
+    },
+    {
+      "userTerm": "Carol Quickly",
+      "researchLead": "Carroll Quigley",
+      "confidence": "VERY_HIGH_SPELLING_AND_WORK",
+      "reason": "1966 Tragedy and Hope and 1981 The Anglo-American Establishment bibliography."
+    },
+    {
+      "userTerm": "Seymore Hersh",
+      "researchLead": "Seymour M. Hersh",
+      "confidence": "HIGH_SPELLING",
+      "reason": "Official personal Substack attribution."
+    },
+    {
+      "userTerm": "patrick baab",
+      "researchLead": "Patrik Baab",
+      "confidence": "HIGH_OFFICIAL_NAME",
+      "reason": "Official patikbaab (website patrikbaab.de)."
+    }
+  ]
+}
