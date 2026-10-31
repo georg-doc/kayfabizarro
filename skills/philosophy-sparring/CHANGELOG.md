@@ -137,3 +137,16 @@
 - R8 implementation `afe413179d610f53323bc6e1c1c28bf037eeb988`, evidence `97a793edd42b13d4fca257dd86093f2a141cbe1b`, `TEST_REPORT_R8.md`: **7/7 Readbacks, 24/24 statische Checks PASS**.
 - Ein echter modellübergreifender Cross-Corpus-Gesprächs-PASS steht aus. Keine Autorenbewertung, kein GitHub-Originaltext, kein neuer KFB Runtime-/Hub-/Site-/Stage-Owner und kein Merge.
 - **Next gate:** ein vom Nutzer/Autor bewerteter Dialog über zwei Originalargumente mit explizitem Gegenbeispiel und einer substantiellen Weiterentwicklung.
+
+## 2026-10-31 · R9 · SEVENTH ORIGINAL / SEMANTIC TRANSFER / WORK-SITES FEASIBILITY
+
+- Ein siebtes Word-Original privat analysiert; der historische Quellenkontext und die Notenstruktur wurden überprüft. Original, Titel, Namen, Dateimetadaten und private Quellenliste wurden nicht öffentlich in GitHub übertragen.
+- Die vollständige retrospektive Analyse wurde auf sieben Originale umgestellt, mit einer gleichgewichteten siebten Acht-Achsen-Karte, aktueller Muster-/Gegenbeispielmatrix, neuer portabler Kontextkarte und dem historischen R8-Sechserstand im Archiv.
+- Das neue private Google Doc wurde erfolgreich zurückgelesen, mit Zugriffsmetadaten shared=false / owner-only. Seine URL bleibt außerhalb dieses öffentlichen Repo.
+- Allgemeine Lehre: säkulare und religiöse Fortschritts-/Erlösungsbegriffe ohne vorschnelle Gleichsetzung untersuchen; irreversible Vergangenheitsansprüche gegebenenfalls gegen Zukunftsoptimismus halten. Kein Überfit auf das neueste Manuskript.
+- Starter v0.10 R9, SKILL, RESEARCH_PROTOCOL, BALANCED_CROSS_CORPUS_R8 und README aktualisiert. TEMPORAL_JUSTICE_R9.md und WORK_SITE_READINESS_R9.md neu; G25-G27 ergänzt, 27 Golden Tests insgesamt.
+- Implementation commit ee0040269d0dbd262d525947ed4a5a292d14a4d3; Evidence commit 5126425b8615300cb2196b188ae20180de1bfeac.
+- TEST_REPORT_R9.md: 8/8 veränderte Dateien aus exaktem Branch, 20/20 statische Checks PASS. Reale G25-G27-Dialoge 0/3, neue Autor-/Human-Abnahmen 0.
+- Work/Sites ist Konzept und technischer Feasibility-Plan, keine gebaute Site. EWR-Verfügbarkeit und Free-Besucherrechte sind im Erstellerkonto zu verifizieren.
+- Kein KFB-Hub-/Router-/Runtime-/Cloudflare-/Stage-/Site-Write, kein Merge und keine Live-Behauptung.
+- Next gate: Work-/Sites-Feasibility ohne private Datenfreigabe; bei Limitierungen Free-Projekt/Webchat.

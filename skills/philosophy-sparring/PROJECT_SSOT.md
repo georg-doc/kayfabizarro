@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.9 R8 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.10 R9 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -37,10 +37,14 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - R8: **Retrospektiver symmetrischer Vergleich aller sechs vom Nutzer als Originale bezeichneten Texte**, nicht bloß letzter Essay. Eine Bearbeitung ausdrücklich als Derivat ausgenommen. Acht identische Kategorien pro Original, Gegenbelege, O1/O2/I1/P1/X, Stil/Genre-/Recency-Vorbehalte, getrennte bestätigte Präferenzen. Öffentliche generische Methode: `BALANCED_CROSS_CORPUS_R8.md`; konkrete Korpusmatrix und Kontextkarte **privat, eigentümergeführtes Google Doc** ohne öffentliche URL im GitHub.
 - R8: Starter v0.9, 24 Golden-Samples spezifiziert; 7/7 Readback und 24/24 statische Tests PASS (`TEST_REPORT_R8.md`). Keine neue Autor-/Human-Abnahme, kein Profil- oder Manuskript-Public-Write.
 
+- R9: Das siebte vom Nutzer als Original bezeichnete Manuskript erhielt dasselbe Acht-Achsen-Raster. Sieben-Quellen-Rebalancing und die sechs archivierten Einzelanalysen liegen in einem neu erstellten privaten Google Doc, dessen Eigentümer-Zugriff geprüft wurde. Keine öffentliche Datei, kein persönliches Autorenprofil, keine private URL im Repo.
+- R9: Semantische Gleichheit verschiedener Traditionen nicht als identische Geltung interpretieren. Irreversibles vergangenes Leid nur bei sachlicher Relevanz prüfen, ohne jüngstes Thema zu verabsolutieren. Methodik TEMPORAL_JUSTICE_R9.md.
+- R9: WORK_SITE_READINESS_R9.md hält Webchat/Free-Project/Work/Sites als getrennte Optionen mit Account-/EWR-Prüfpflicht fest; keine Site erstellt. G1-G27 Golden Tests, TEST_REPORT_R9.md 8/8 Datei-Readbacks und 20/20 statische Checks.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein vom Nutzer/Autor begutachteter, quellengebundener Cross-Corpus-Dialog**, der zwei verschiedene Originale und ein Gegenbeispiel integriert, echte argumentative Neuerkenntnis und nicht bloß Themenaggregation liefert. Kein Merge ohne ausdrückliche Freigabe.
+**Begrenzter Work-/Sites-Machbarkeitstest mit dem tatsächlichen Erstellerkonto und einer Free-Besucherperspektive**: Zugriff und echte modellgestützte Interaktion überprüfen, ohne private Korpusdaten freizugeben. Falls nicht verfügbar, mit autorisiertem ChatGPT-Free-Projekt und Webchat fortsetzen. Kein Merge.
