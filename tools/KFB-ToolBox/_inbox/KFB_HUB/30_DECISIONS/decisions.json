@@ -15778,6 +15778,36 @@
    "applies": "nach der Integration"
   },
   {
+   "id": "V-1086",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "IDEA",
+   "text": "Georg 31.10., nach dem Site-Stand: Bäume und Props sind am Boden fixiert, knicken beim Überfahren gummiartig um, schnellen zurück und pendeln (Vertex-Shader wie V-605, Eigenschaft je Teil im Verteiler: biegsam, hart, umkippbar). 2D-Pop-ups bekommen Spielfunktionen mit lesbarem Bildzeichen: Katapult (Gummi-Fuß), Rampe (Scharnier), Zerstörung (Reißkante), Stunt-Racer-Logik, nachvollziehbare Überraschung. Probe zuerst: ein federnder Baum und eine Rampe.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Probe",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Durchfahren ohne Reaktion wirkt tot; Federn macht Spaß und braucht keine Clips.",
+   "applies": "nach dem Site-Stand"
+  },
+  {
+   "id": "V-1087",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "IDEA",
+   "text": "Gilliam-Baukasten (Georg 31.10., Monty-Python-Papiercollagen): aus 3D-Modellen Ansichten und Zustände als freigestellte 2D-Pop-ups mit weißer Schnittkante rendern (WSB, Stapel aus dem Bestand), fern Pappe, nah bei Bedarf das Modell, Aufklappen überdeckt den Wechsel (V-1085). Sparsam messen: Durchsichtiges kostet Pixel (Mess-Spike). Render-Test mit wenigen Modellen nach dem Site-Stand. UFO: Welt-Ereignis 7 m, Bühne 15 m (V-482), Hunky am Steuer, Dory kommentiert (V-744).",
+   "values": {},
+   "owner": "WS0 · WSB",
+   "check": "Render-Test",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Stil und zugleich eine Lösung für Ladezeit und Menge.",
+   "applies": "nach dem Site-Stand"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
