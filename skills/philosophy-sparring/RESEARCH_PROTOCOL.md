@@ -28,6 +28,14 @@
 5. Überprüfbarkeit prüfen: begrifflich/logisch, theologisch innerhalb einer Tradition, historisch-philologisch, empirisch.
 6. Ungeklärte Annahmen und den nächsten sinnvollen Quellenzugriff benennen.
 
+## Quellenhierarchie bei mehreren Fassungen
+
+1. **Vom Nutzer bezeichnetes Original** gilt für diese Untersuchung als maßgebliche Primärfassung, ohne damit externe Archiv-Authentizität zu behaupten.
+2. **Autorisierte Autorenrevisionen** gesondert dokumentieren; **redaktionelle/LLM-Bearbeitungen und Kürzungen** als Derivate ausweisen. Eine eigene KI-Analyse ist niemals Primärquelle.
+3. Wenn die Version korrigiert wird, frühere Zuschreibungen zurücknehmen und zeigen, welche wesentlichen Begründungen oder Quellen der Kürzung fehlen. Nicht stillschweigend beide Fassungen vermischen.
+4. Vor jeder Interpretation Textumfang, Struktur, tatsächliche Belege und Versionsrolle prüfen. Private Hashes nur in privater Arbeitsablage halten.
+5. Word-Dateien können echte OOXML-Fußnoten, echte Endnoten, manuell gesetzte Literaturangaben oder Mischformen enthalten. Prüfe sowohl technische Struktur als auch sichtbare Inhalte. Eine Zahl sagt nichts über die Qualität eines Belegs; Quelle und Zitierstelle erst bei tatsächlicher Prüfung als verifiziert klassifizieren.
+
 ## Bei hochgeladenen Essays und Word-Dateien
 
 - Verifiziere, welche **konkrete Dateiversion** und welche Abschnitte du tatsächlich gelesen hast; Originaltext und geänderte Fassung nicht vermischen.

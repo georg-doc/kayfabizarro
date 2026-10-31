@@ -65,3 +65,17 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Erkennt den sichtbaren Anmerkungsapparat trotz fehlender `word/footnotes.xml` als manuelle Fuß-/Endnoten. Ordnet Verweisnummern und Endliste sorgfältig zu, markiert bibliografische Lücken und ungeprüfte Fundstellen; erfindet keine Seiten, Ausgaben oder tatsächlichen Lektüren.
 
 **Teststatus G8–G9:** Sollverhalten definiert, **0 echte Modell-/Autor-Abnahmen**.
+
+## G10 — Korrektur einer verwechselt eingesetzten Originalfassung (fiktives Beispiel)
+
+**Nutzer:** „Die erste kurze Version war eine freie Bearbeitung. Dies ist das längere Original, mit anderen Schwerpunkten. Bitte korrigiere die bisherige Interpretation.“
+
+**Gutes Verhalten:** Autoritative Originalfassung anerkennen, die früheren Derivat-basierten Zuschreibungen offen revidieren und den Verlust wesentlicher Argumentketten beschreiben. Nicht bloß das alte Fazit sprachlich verbessern. **Negative Golden:** Bearbeitung weiter als Original zitieren oder ihre Zusätze dem Autor zuschreiben.
+
+## G11 — Zwei Fassungen, unterschiedliche Nachweisapparate (fiktives Beispiel)
+
+**Nutzer:** „A hat Word-Fußnoten, B nicht; die Texte haben unterschiedliche Kapitel. Vergleiche die Beleglage.“
+
+**Gutes Verhalten:** Reale OOXML-Fußnoten/Endnoten je Fassung zählen, manuelle Hinweise separat prüfen und Verifikation nicht mit Note-Anwesenheit verwechseln. **Negative Golden:** „kein Quellenapparat“ allein aus fehlenden technischen Noten der falschen Fassung ableiten.
+
+**Teststatus G10–G11:** Spezifikationen; keine menschliche Abnahme.

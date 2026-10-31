@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.3 R2 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.4 R3 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -41,6 +41,8 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [INBOX_ROUTING_R1.md](INBOX_ROUTING_R1.md) — sichere Ablage von Word-Essays und spätere GitHub-/Google-Drive-/Notebook-Integration
 - [RESEARCH_TEST_REPORT_R1.md](RESEARCH_TEST_REPORT_R1.md) — R1 static checks
 - [QUALITY_DEEP_DIALOGUE_R2.md](QUALITY_DEEP_DIALOGUE_R2.md) — Anti-Lehrbuch-Trivialität, tiefere Argumentprüfung und manuell gesetzte Endnoten
+
+- [SOURCE_FIDELITY_R3.md](SOURCE_FIDELITY_R3.md) — Originale, Bearbeitungen, Zitate und Versionskorrekturen sauber unterscheiden
 
 ## Datenschutz und Rechte
 
