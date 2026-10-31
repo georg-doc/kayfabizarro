@@ -1,0 +1,99 @@
+{
+ "off": {
+  "mod": "sky-drive",
+  "lights": [
+   1,
+   1,
+   1,
+   5
+  ],
+  "programme": 113,
+  "neueProgramme": 18,
+  "vorstandGegenSich": 6,
+  "neueZeilen": 0,
+  "neueZeilenBeispiel": [],
+  "kuppelBild": {
+   "mean": 0.015,
+   "big": 0.00001
+  },
+  "kuppelBildVorstandGegenSich": {
+   "mean": 0.02,
+   "big": 0.00003
+  },
+  "chunks": true,
+  "atmos": true,
+  "pixelAuskunft": {
+   "diff": {
+    "mean": 14.344,
+    "big": 0.26633
+   },
+   "noise": {
+    "mean": 10.422,
+    "big": 0.19475
+   }
+  }
+ },
+ "on": {
+  "mod": "sky-r1",
+  "lights": [
+   1,
+   1,
+   1,
+   5
+  ],
+  "fog": {
+   "near": 140,
+   "far": 620
+  }
+ },
+ "Y4": {
+  "worst": 1.15,
+  "at": 17.6
+ },
+ "P1_wörtlich_px": {
+  "med": 39,
+  "max": 149
+ },
+ "P1_konstant_px": {
+  "med": 3,
+  "max": 9
+ },
+ "P2_dL": {
+  "med": 0.4,
+  "max": 8.25
+ },
+ "P3_dE": {
+  "med": 0.003,
+  "max": 0.006
+ },
+ "P4_spreadTag": 6.6,
+ "P6": [
+  {
+   "C": 0.09,
+   "dh": 179.2,
+   "dL": -21.9
+  },
+  {
+   "C": 0.068,
+   "dh": 115.5,
+   "dL": -22.1
+  },
+  {
+   "C": 0.071,
+   "dh": 164.7,
+   "dL": -22.1
+  }
+ ],
+ "P8_dE": 0.0051,
+ "P9": [
+  0.172,
+  0.174,
+  0.183,
+  0.132,
+  0.132,
+  0.132,
+  0.178,
+  0.179,
+  0.181
+ ]
+}

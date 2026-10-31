@@ -1,0 +1,432 @@
+[
+ {
+  "name": "tag",
+  "hour": 12.5,
+  "kind": "ice",
+  "free": true,
+  "what": "Tag: Planet frei im Himmel, Wolkenmassen, Horizont unten.",
+  "x": 341.1720682850288,
+  "z": -217.02629352453735,
+  "az": 166.1,
+  "el": 26.98,
+  "deg": 19.33,
+  "type": "ice",
+  "theme": "pastell",
+  "form": "zuege",
+  "bodies": [
+   [
+    "purple",
+    9.81,
+    352.64,
+    3.43,
+    true,
+    false
+   ],
+   [
+    "ice",
+    19.33,
+    166.1,
+    26.98,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -41.6,
+   8.3
+  ],
+  "moonAz": -151.67783864456723,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/tag.png",
+  "cover": 0.331,
+  "tones": [
+   "#f7ebf0",
+   "#b4c1df"
+  ]
+ },
+ {
+  "name": "daemmerung",
+  "hour": 17.45,
+  "kind": "ember",
+  "free": true,
+  "what": "Dämmerung: warmer Verlauf, Planet in anderer Farbe.",
+  "x": 225.78826027483854,
+  "z": 949.7955273366471,
+  "az": 359.18,
+  "el": 20.87,
+  "deg": 16.57,
+  "type": "ember",
+  "theme": "wueste",
+  "form": "inseln",
+  "bodies": [
+   [
+    "maroon",
+    16.33,
+    174.51,
+    16.41,
+    false,
+    false
+   ],
+   [
+    "ember",
+    16.57,
+    359.18,
+    20.87,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -6,
+   90.8
+  ],
+  "moonAz": -69.17176157966517,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/daemmerung.png",
+  "cover": 0.16,
+  "tones": [
+   "#feb8d1",
+   "#62a793"
+  ]
+ },
+ {
+  "name": "nacht",
+  "hour": 22.5,
+  "kind": "moon",
+  "free": true,
+  "night": true,
+  "what": "Nacht: Riesenmond mit hellem Kern, Sterne, Wolken in der Palettenfarbe.",
+  "x": 341.1720682850288,
+  "z": -217.02629352453735,
+  "deg": 17.86,
+  "type": "moon",
+  "theme": "pastell",
+  "form": "zuege",
+  "bodies": [
+   [
+    "purple",
+    9.81,
+    352.64,
+    3.43,
+    true,
+    false
+   ],
+   [
+    "ice",
+    19.33,
+    166.1,
+    26.98,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   38.8,
+   -25
+  ],
+  "moonAz": -25.00184153481877,
+  "moonEl": 38.80579864410419,
+  "file": "test/out/sky_r2/nacht.png",
+  "cover": 0.283,
+  "tones": [
+   "#84698c",
+   "#30324f"
+  ]
+ },
+ {
+  "name": "lila",
+  "hour": 11,
+  "kind": "purple",
+  "free": true,
+  "what": "Lila-Grüner Planet groß.",
+  "x": -968.5572629095537,
+  "z": -1037.080259165681,
+  "az": 169.56,
+  "el": 22.21,
+  "deg": 15.65,
+  "type": "purple",
+  "theme": "canyon",
+  "form": "inseln",
+  "bodies": [
+   [
+    "purple",
+    15.65,
+    169.56,
+    22.21,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -40.6,
+   -16.7
+  ],
+  "moonAz": -176.679680179386,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/lila.png",
+  "cover": 0.184,
+  "tones": [
+   "#f7ece6",
+   "#bfaccd"
+  ]
+ },
+ {
+  "name": "farbe",
+  "hour": 16,
+  "kind": "flame",
+  "free": true,
+  "what": "Andere Farbe: Orange und Karminrot.",
+  "x": -61.78177199539138,
+  "z": -476.75277976073073,
+  "az": 33.66,
+  "el": 16.82,
+  "deg": 17.02,
+  "type": "flame",
+  "theme": "wueste",
+  "form": "zuege",
+  "bodies": [
+   [
+    "flame",
+    17.02,
+    33.66,
+    16.82,
+    false,
+    false
+   ],
+   [
+    "moon",
+    18.98,
+    161.06,
+    22.93,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -21,
+   66.7
+  ],
+  "moonAz": -93.3402083966567,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/farbe.png",
+  "cover": 0.171,
+  "tones": [
+   "#f7e7ed",
+   "#a4bdda"
+  ]
+ },
+ {
+  "name": "erde",
+  "hour": 10.5,
+  "kind": "earth",
+  "free": true,
+  "what": "Die seltene Erde.",
+  "x": 2043.7286444480676,
+  "z": 625.3717980367153,
+  "az": 153.99,
+  "el": 15.22,
+  "deg": 16.13,
+  "type": "earth",
+  "theme": "mesa",
+  "form": "zuege",
+  "bodies": [
+   [
+    "purple",
+    18.16,
+    346.32,
+    24.29,
+    false,
+    false
+   ],
+   [
+    "earth",
+    16.13,
+    153.99,
+    15.22,
+    false,
+    false
+   ],
+   [
+    "moon",
+    5.11,
+    57.39,
+    10.57,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -38.8,
+   -25
+  ],
+  "moonAz": 175.0128907437314,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/erde.png",
+  "cover": 0.12,
+  "tones": [
+   "#f8ebe8",
+   "#95c2b8"
+  ]
+ },
+ {
+  "name": "tief",
+  "hour": 15.5,
+  "kind": null,
+  "low": true,
+  "what": "Großer Körper tief am Horizont, unten im Dunst, als Kugel lesbar.",
+  "x": 341.1720682850288,
+  "z": -217.02629352453735,
+  "az": 352.64,
+  "el": 3.43,
+  "deg": 9.81,
+  "type": "purple",
+  "theme": "pastell",
+  "form": "zuege",
+  "bodies": [
+   [
+    "purple",
+    9.81,
+    352.64,
+    3.43,
+    true,
+    false
+   ],
+   [
+    "ice",
+    19.33,
+    166.1,
+    26.98,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -25.6,
+   58.3
+  ],
+  "moonAz": -101.6741555749297,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/tief.png",
+  "cover": 0.28,
+  "tones": [
+   "#f7ebf0",
+   "#b4c1df"
+  ]
+ },
+ {
+  "name": "ring",
+  "hour": 13.5,
+  "kind": null,
+  "ring": true,
+  "free": true,
+  "what": "Seltene Ring-Variante.",
+  "x": -944.9672246612245,
+  "z": 604.2672650025202,
+  "az": 167.65,
+  "el": 16.93,
+  "deg": 12.8,
+  "type": "flame",
+  "theme": "wueste",
+  "form": "inseln",
+  "bodies": [
+   [
+    "flame",
+    12.8,
+    167.65,
+    16.93,
+    false,
+    true
+   ]
+  ],
+  "moon": [
+   -38.8,
+   25
+  ],
+  "moonAz": -135.0099442880214,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/ring.png",
+  "cover": 0.201,
+  "tones": [
+   "#f4ebf4",
+   "#c0c09e"
+  ]
+ },
+ {
+  "name": "fahrt",
+  "hour": 15,
+  "kind": null,
+  "low": true,
+  "game": true,
+  "what": "Fahrbild aus der Spielkamera.",
+  "x": 341.1720682850288,
+  "z": -217.02629352453735,
+  "az": 352.64,
+  "el": 3.43,
+  "deg": 9.81,
+  "type": "purple",
+  "theme": "pastell",
+  "form": "zuege",
+  "bodies": [
+   [
+    "purple",
+    9.81,
+    352.64,
+    3.43,
+    true,
+    false
+   ],
+   [
+    "ice",
+    19.33,
+    166.1,
+    26.98,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   -29.7,
+   50
+  ],
+  "moonAz": -110.00810275320258,
+  "moonEl": 3.0002209841782523,
+  "file": "test/out/sky_r2/fahrt.png"
+ },
+ {
+  "name": "vergleich",
+  "kind": "moon",
+  "compare": true,
+  "night": true,
+  "skip": 2,
+  "what": "Vorlage (links) und neu (rechts): Nacht, gleicher Ausschnitt, Mond an derselben Bildstelle.",
+  "x": 699.5336265035004,
+  "z": -1766.1634234509263,
+  "deg": 17.87,
+  "type": "moon",
+  "theme": "schnee",
+  "form": "haufen",
+  "bodies": [
+   [
+    "ice",
+    19.4,
+    4.26,
+    21.03,
+    false,
+    false
+   ]
+  ],
+  "moon": [
+   29.7,
+   -50
+  ],
+  "moonAz": -50.00368306963754,
+  "moonEl": 29.700672441588676,
+  "pitchDeg": 28.556461623175327,
+  "file": "test/out/sky_r2/vergleich.png",
+  "cover": 0.273,
+  "tones": [
+   "#93666f",
+   "#24394a"
+  ]
+ }
+]
