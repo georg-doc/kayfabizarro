@@ -15538,6 +15538,36 @@
    "applies": "beim Merge"
   },
   {
+   "id": "V-1070",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Weltwissen freigegeben (Georg q313): replies/WELTWISSEN_MODELL_R1.md ausarbeiten; Rufe zeigen nur die Haltung, wer eine Karte gehört hat, kennt sie. Ändert die Ruf-Grammatik vom 24.10. (V-712) in diesem Punkt. Speicher (q314): private Assets aus dem lokalen Spiegel entfernt, GitHub und Dropbox unverändert.",
+   "values": {},
+   "owner": "WS0",
+   "check": "SSOT §4",
+   "source": "Hub q313, q314",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Emergenz braucht Wissen, das bleibt, auch wenn eine Figur es ablehnt.",
+   "applies": "bei Stufe 1 des Tratschs"
+  },
+  {
+   "id": "V-1071",
+   "date": "2026-10-31",
+   "area": "Design",
+   "verdict": "TUNE",
+   "text": "Kartengebäude TUNE 4 (Georg q315 im Chat): Zerstörung wird nicht gemalt, sondern logisch konstruiert und reproduzierbar: ein Modul Einschlag, Energie, Saat → Rissgraph → Schollen → Lochkante; Tusche nur auf Graphkanten; Gate. Fächerlinien im Loch beheben, WFC verhindert gleiche Requisiten dicht beieinander (Hydrant höchstens einmal je Blockseite), Bordstein-Fugen kleiner. Nachtrag mit Georgs markiertem Bild (replies/REF_KARTENGEBAEUDE_TUNE4): dunkler Streifen am oberen Kartenrand beheben; WS0 entscheidet: Karte so groß wie die Fassade direkt hinter der Wand, Kartenkante erst sichtbar, wenn die Wand fast weg ist; Kugeln als Auswurf-Fächer aus dem Loch statt rundem Haufen, Georg noch unsicher, Urteil am nächsten Blatt. Musterblatt zuerst an WS0, dann Hub. Hub-Karten: klickbare Links über das Feld links, Bilder und Clips über slides statt Pfad im Text.",
+   "values": {},
+   "owner": "WS-Design · WS0",
+   "check": "Musterblatt, props-gate",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg: wirkt wie Bastelstunde ohne Bruchlogik; nur Konstruktion ist wiederholbar und liefert ein sauberes Muster.",
+   "applies": "bei jedem Zerstörungsbild"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

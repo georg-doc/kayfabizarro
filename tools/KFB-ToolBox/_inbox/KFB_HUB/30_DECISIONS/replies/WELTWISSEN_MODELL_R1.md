@@ -1,4 +1,4 @@
-# Weltwissen der Figuren · Entwurf R1 · WS0 · 31.10.2026 (V-1066) · ENTWURF, wartet auf Georg (Hub-Frage q313)
+# Weltwissen der Figuren · Entwurf R1 · WS0 · 31.10.2026 (V-1066, V-1070) · FREIGEGEBEN Georg 31.10. (q313: so ausarbeiten, Rufe zeigen nur die Haltung)
 
 **Ziel (Georg 31.10.):** Karten sind das Weltwissen der Figuren. Figuren tauschen es in Triplets aus. Es entsteht ein emergentes System: Mit Spieldauer, Begegnungen, Orten und Kartengebäuden wächst es, und dieselbe Figur ist in zwei Spielen verschieden. Passt zu Game Loop PR 460 (V-1047, Hauptziel Karten und Weltwissen; V-1049) und zum Global Intent (Lean Memory, keine zweite NPC-Datenbank).
 
@@ -21,7 +21,7 @@ Eintrag: `Karte · Quelle (Start, Figur, Spieler, Ort) · Wissensform (gesehen, 
 ## Was es bewirkt
 - **Was die Figur sagt:** Triplets nur aus Karten ihrer Liste.
 - **Zwei Spiele, zwei Figuren:** Spieler A spielt andere Karten an anderen Orten, also hat dieselbe Figur eine andere Liste und redet, urteilt und bittet anders. Nichts davon muss je Spielweg geschrieben werden.
-- **Haltung statt Tor (Vorschlag):** Heute entscheidet der Ruf, ob eine Karte wandert. Vorschlag: Wer sie gehört hat, kennt sie immer; der Ruf setzt nur die Haltung (überzeugt, offen, gleichgültig, hält es für Blödsinn). So kann eine Figur später über eine Karte lästern, die sie ablehnt. Rufe bleiben als sichtbare Reaktion, sind aber nicht Pflicht in jedem Austausch.
+- **Haltung statt Tor (entschieden):** Wer eine Karte gehört hat, kennt sie immer; der Ruf setzt nur die Haltung (überzeugt, offen, gleichgültig, hält es für Blödsinn). So kann eine Figur später über eine Karte lästern, die sie ablehnt. Rufe bleiben als sichtbare Reaktion, sind aber nicht Pflicht in jedem Austausch.
 
 ## Warum der Spieler Karten zeigt
 Dafür muss niemand den Inhalt einer Karte auswerten; Deck und Quelle sind Daten.
@@ -36,5 +36,5 @@ Dafür muss niemand den Inhalt einer Karte auswerten; Deck und Quelle sind Daten
 - Karten-Spekulation (V-702) bleibt eine weitere Quelle.
 - Aus Dossier 07 kommt nur: Wissen und Haltung trennen, spätere Rückbezüge. Nicht: Aussagen, Beweise, physische Karten.
 
-## Erster Beweis nach Georgs Ja
+## Erster Beweis
 Ein Ort, wenige Figuren, ein Kartengebäude: Karte freispielen, Zeuge merkt es, erzählt es in der nächsten Begegnung, spricht dich darauf an, bittet um eine fehlende Karte. Zwei Läufe mit verschiedenen Karten zeigen dieselbe Figur verschieden. Abnahme im Spiel.

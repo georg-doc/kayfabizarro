@@ -33,6 +33,7 @@ Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier d
 - **Karten wandern von Kopf zu Kopf.** Bewohner tragen Karten als Wissen und erzählen sie in Begegnungen weiter; erzählt wird mit Quelle (Gerücht D2, V-602). Ketten (told-of-told) sind freigegeben; `kfb.world-save/2` baut der Lead zu Stufe 1.
 - **Kein thematisches Matching.** Der Mismatch zwischen den Karten zweier Figuren ist gewollt: kognitive Dissonanz als Resonanzraum, Satire auf Filterblasen.
 - **„Conflict is king!“** Ein Dramaturg wählt Begegnungen und Karten; die Bewertung bleibt sozial.
+- **Weltwissen (Georg 31.10., V-1070):** Wer eine Karte gehört hat, kennt sie. Rufe zeigen nur die Haltung und entscheiden nicht mehr, ob eine Karte wandert; sie sind nicht in jedem Austausch Pflicht. Kein Besitzer oder Ort einer Karte wird verfolgt. Modell: `replies/WELTWISSEN_MODELL_R1.md`.
 - **Rufe:** **Bingo!**, **Boggle...?**, **Bongo.**, **Blödsinn!**, **Humbug?!** (Schreibweise §2b). Humbug = Blitzdingsen bzw. Löschen (V-530), später auch teilweise; Auslöser: zu schnelle Verbreitung. KafKaBONDO! ist ein Bug bzw. Artefakt.
 - **Sprechblasen** zuerst als Klartext („decodiert“); Fluff-o-lect und Pottymouth-Glyphen später.
 - **Identität:** Jede Figur hat ein Signatur-Deck (`SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.json`, 62 Figuren, Georg 20.10.) und eine Tratsch-Art (Tratschmaul, Skeptiker, Übertreiber, Schweiger, angepasst, rebellisch). Beides gehört ins Figuren-Register (`CHARACTERS_R1`), nicht in eigene Listen.
