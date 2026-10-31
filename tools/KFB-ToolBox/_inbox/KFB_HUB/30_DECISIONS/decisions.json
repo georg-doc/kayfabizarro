@@ -16018,6 +16018,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1102",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg 31.10.: Uferlinien, Pop-ups, Deck-Landmarke. 1) Wasser: Im Stamm gibt es nur weichen Schaum ohne Uferlinien (kfbWater kitFluid). Neue Ebene „Uferlinien“: wandernde Konturlinien aus dem Abstand zum Ufer (vShore), Logik wie die Küstenlinien in TinySkies und unser Farbband, eigener Shader, Schalter shore=lines, Einbau WS1 in Wasser R2. 2) Pop-ups: Asset-Linie V-1088 startet jetzt als Pilot (Bäume und Büsche) bei WSA work, jeder Stapel ein frischer Lauf mit Anker-Bögen, keine freie Fantasie (V-1028), ohne Kante (V-1089). Pop-ups laufen als normale Katalog-Einträge durch den einen Löser (V-1076). Der Mess-Spike (V-1090) zeigt: Durchsichtiges kostet Pixel, Pop-ups sind also eine Stilentscheidung, kein Spar-Mittel; der Pilot misst das. 3) Deck-Landmarke: statt Billboards eine Sky-Card nach Card Zone Lab v2, die über dem Kartenviertel schwebt (Zero-G-Drift, träge zur Kamera, Schleier-Shader zu den Zonenecken); WS-Design baut sie als ein Modul hinter skycard=1 auf design/kartengebaeude-r1. Ergänzt V-173 und V-1002, der Cover-Aufsteller bleibt bis zum Urteil. Hub-Briefings bereinigt: nur noch was wirklich ansteht, in echter Reihenfolge.",
+   "values": {},
+   "owner": "WS1 · WSA work · WS-Design",
+   "check": "Einzelbilder je Punkt",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Bausteine liegen im Bestand; alle drei machen die Welt lesbarer, ohne einen zweiten Verteiler oder ein neues Werkzeug.",
+   "applies": "sofort, je Punkt hinter Schalter"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
