@@ -16333,6 +16333,21 @@
    "applies": "eine Runde"
   },
   {
+   "id": "V-1123",
+   "date": "2026-10-31",
+   "area": "Site",
+   "verdict": "PLAN",
+   "text": "Georg 31.10.: Hat WS1 einen guten Stand, wird der Branch eingecheckt und über WSA work als modular aktualisierbare Site bereitgestellt, mit Schnittstellen zu den anderen Sites und Assets, Leistung und Laden nach den Standardtests auf der Zielplattform GPT-Site, als integrativer WSA-Slice. WS0: Auslöser ist Stufe C grün, Standard-Schalter festgelegt, Georg hat den Stamm gespielt. Spiel-Kern, Module und Assets werden einzeln über feste Stände aktualisiert (V-1096, getrennte Dateien); GitHub bleibt die Verbindung zwischen den Sites (V-1106); private Assets bleiben privat. Tests laufen gegen die veröffentlichte Site: Start, Laden je Modell, Speicher, Bildzeit; Bildzeit und GPU über Messseite im echten Browser (1×1-Tor, V-1107). WS0 schreibt den Auftrag erst aus dem dann gültigen Stamm, nicht vorab.",
+   "values": {},
+   "owner": "WS1 · WSA work",
+   "check": "Site-Rückgabe mit Messwerten",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was auf dem Entwicklungsrechner läuft, sagt wenig über die Site; zählen muss die Messung dort.",
+   "applies": "nach Stufe C"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
