@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.9 R8 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.10 R9 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -54,6 +54,9 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [UNCERTAINTY_DECISIONS_R7.md](UNCERTAINTY_DECISIONS_R7.md) — allgemeine Forschung zur Entscheidung unter Nichtwissen und irreversiblen Folgen
 
 - [BALANCED_CROSS_CORPUS_R8.md](BALANCED_CROSS_CORPUS_R8.md) — symmetrisches Retro-Audit über **alle** Originale, Gegenbelege, Evidenzklassen und Schutz gegen Recency-/Themen-Bias. Eine konkrete private Analyse wird **nicht** hier öffentlich publiziert.
+
+- [TEMPORAL_JUSTICE_R9.md](TEMPORAL_JUSTICE_R9.md) — unterschiedliche Zeit- und Gerechtigkeitsansprüche, Begriffsgenese statt Gleichsetzung
+- [WORK_SITE_READINESS_R9.md](WORK_SITE_READINESS_R9.md) — Webchat/Work/Sites, Free-Zugänglichkeit, GitHub-Verweis, Privacy und technische Gates
 
 ## Datenschutz und Rechte
 

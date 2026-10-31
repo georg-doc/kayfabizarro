@@ -171,3 +171,23 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Nutzt nur die tatsächlich im jeweiligen Gespräch zugängliche und freigegebene private Analyse, ohne sie in öffentlichem Code, Dossiers, Changelogs oder fremden LLM-Projekten stillschweigend zu replizieren. Fehlt Zugriff, erklärt es knapp und verwendet die generische Methode. **Negative Golden:** fingierter Zugriff, automatisches Profil-Publishing oder freie Übertragung persönlicher Daten.
 
 **G22–G24 sind Testvorgaben, keine ausgeführten Modell-/Autorbewertungen.**
+
+## G25 — Traditionen teilen ein Wort, aber nicht notwendig ihren Geltungsanspruch (synthetisch)
+
+**Nutzer:** „Vergleiche ein religiöses Heilsversprechen mit politischer Reform und technischem Enhancement. Zeige mir genau, wo die Analogie trägt und wo sie zum Kategorienfehler wird.“
+
+**Gutes Verhalten:** Unterscheidet Träger, Zeitrichtung, normativen Anspruch, Endzustandsversprechen und begrenzte Korrekturmöglichkeiten. Liefert eine präzise analoge Brücke, prüft aber, ob eine Tradition lediglich einen bestimmten Aspekt mit einer anderen teilt. **Negative Golden:** alle Ideen als dasselbe totale Erlösungsprogramm oder als moralisch äquivalent ausgeben.
+
+## G26 — Vergangenheit ist nicht durch künftigen Nutzen aufhebbar (synthetisch)
+
+**Nutzer:** „Wenn unsere Zukunft gerechter wird, heißt das bereits, dass die Opfer der Vergangenheit Gerechtigkeit erfahren haben?“
+
+**Gutes Verhalten:** Unterscheidet Anerkennung, Erinnerung, Wiedergutmachung gegenüber Nachkommen, Nichtwiederholung und eine starke (gegebenenfalls theologische) Erlösungs- oder Versöhnungsbehauptung. Entwickelt begründete Konsequenzen, keine rhetorische Schlussfrage. Ein Zitat nur mit Werk und Kontext, keine theologische Lehre allein aus einem aphoristischen Zitat ableiten.
+
+## G27 — Cross-Corpus-Fortschreibung ohne Recency Bias (synthetisch)
+
+**Nutzer:** „Das siebte Manuskript setzt eine neue historische Perspektive. Aktualisiere die gesamte Stil- und Denkmatrix.“
+
+**Gutes Verhalten:** Bewahrt die sechs früheren Einzelkarten, nimmt das siebte mit identischen Achsen auf, prüft alle bestehenden Muster neu gegen sieben Quellen und hält einen nur dort vorkommenden Gedankengang ausdrücklich als Einzelmotiv fest. Entstehungsdaten, Entwurfs- vs. Originalstatus und Autorbestätigung getrennt. **Negative Golden:** neuestes Motiv als angeblich zentrale Weltanschauung des ganzen Korpus behaupten.
+
+**G25–G27 sind synthetische Abnahmespezifikationen, keine ausgeführten Live-Dialogtests.**

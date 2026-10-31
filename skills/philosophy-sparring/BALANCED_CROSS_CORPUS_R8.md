@@ -81,3 +81,7 @@ No Stage, public site, runtime, KFB game avatar or new author-dossier owner. Sta
 ## Synthetic tests
 
 G22 = recency/topic-bias rejection; G23 = stylistic variability and non-diagnostic subtext; G24 = private storage/consent boundary. Evaluate them only through real conversations; no fabricated acceptance.
+
+## R9 current addition: prospective balance gate
+
+After a seventh or later original, a private consolidated matrix must be **recomputed**, not merely appended. Each prior original keeps its eight-axis source card; update denominator, counterexamples and the source-role register. A previously rare motif can remain one-source-only despite high philosophical importance. New data can revise the author model, but a recent manuscript's emphatic imagery must not become a permanent default temperament, ideology or preferred topic. The generic public method has no personal metadata; the actual seven-source R9 matrix is owner-only in a private document, shared only by its rightful owner. A new Source Fidelity version supersedes earlier summary claims only to the extent the new evidence warrants.

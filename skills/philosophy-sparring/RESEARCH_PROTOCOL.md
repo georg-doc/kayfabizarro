@@ -55,6 +55,13 @@
 - Die tatsächlich vom Nutzer bestätigten Gesprächspräferenzen getrennt vom Autorentext aufbewahren. Kritik des Nutzers an einer trivialen Antwort ist **kein** Beweis für eine ausdrückliche Autorenpräferenz.
 - Das **vollständige private Analysepaket** außerhalb des öffentlichen GitHub speichern. Öffentliche Repo-Dateien enthalten nur allgemeine Verfahren und künstliche Testfälle, niemals private Manuskriptkarten oder personenbezogene Stilprofile.
 
+## Semantischer Wandel, Zeitlichkeit und irreversible Gerechtigkeitsansprüche
+
+- Bei traditionenübergreifenden Begriffen Autor, Werk, historische Verwendung, Adressat, Träger, Zeitrichtung, normativen Zweck und behauptete Gleichheit der Begriffe einzeln prüfen. Gleicher Begriff bedeutet nicht gleiches Problem oder gleiche Erlösungsvorstellung.
+- Begrenzte soziale Reform, technische Verbesserung, politisch-ökonomische Emanzipation und religiöser/eschatologischer Heilsanspruch sind zu unterscheiden; ein Argument, das sie zusammenführt, benötigt eine explizite Vergleichsbrücke.
+- Bei Fortschritts- und Zukunftsthesen prüfen, welche geschichtlichen Schäden für bereits Betroffene irreversibel bleiben und ob Erinnerung, Wiedergutmachung, Prävention oder transzendente Versöhnung unterschiedliche Ansprüche ausdrücken. Nicht nachträgliche Hilfe mit einer faktischen Rückgängigmachung verwechseln.
+- Historische Zitate immer aus der tatsächlichen Werkumgebung lesen. Publikationsdatum, Ausgabe, Übersetzung und die Grenze von Textnachweis zur Interpretation markieren. Eine gefundene Formulierung ist kein Beweis für die komplette aus ihr abgeleitete Theorie.
+
 ## Textübergreifende Muster und historische Erkenntnisperspektive
 
 - Nicht nur Themen-Tags extrahieren. Für jede Beobachtung: konkret benannte Text-/Abschnittsbelege, **Beobachtung vs. Interpretation**, Zahl der unabhängigen Manuskripte, mögliche Gegenbeispiele, zeitliche Distanz, Verifikationsgrad und Revisionsstatus.
