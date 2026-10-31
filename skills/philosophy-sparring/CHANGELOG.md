@@ -72,3 +72,15 @@
 - R2 implementation commit `1e2f36cdd26b5effb5d0796f1e8584b5affae7a2`.
 - `TEST_REPORT_R2.md`: **6/6** geänderte Dateien gelesen, **12/12** statische Strukturchecks bestanden; `0` aktuelle Modell-/Autor-Abnahmen.
 - Unveröffentlichte Inhalte ausschließlich in der privaten Chat-Analyse; unverändert kein neuer KFB-Owner, Hub, Site, Stage oder Merge.
+
+## 2026-10-31 · SOURCE CORRECTION R3 · USER_DESIGNATED_ORIGINAL
+
+- Nutzer korrigierte die Provenienz eines zuvor besprochenen privaten Manuskripts: Die zuerst gelesene Fassung war eine Bearbeitung, nicht die beabsichtigte Originalfassung.
+- Die aus dem Derivat abgeleitete frühere Deutung ist **SUPERSEDED**, soweit sie die dortigen Schwerpunkte dem Original zuschrieb. Dies ist eine Quellenidentifikations- und Analysekorrektur; **kein Qualitätsurteil über den Originalautor**.
+- Privater Vergleich programmatisch durchgeführt, einschließlich Dokumentumfang und Word-OOXML-Notenstruktur; private Dateinamen, Inhalte, Quelle-Hashes und Bibliografie bewusst **nicht** öffentlich dokumentiert.
+- `SOURCE_FIDELITY_R3.md` eingeführt: Quellenhierarchie, Original/Derivat, Korrekturpflicht, Fußnotenprüfung und datensparsamer Umgang.
+- `STARTER_PROMPT.md` v0.4, `SKILL.md`, `RESEARCH_PROTOCOL.md`, `README.md` aktualisiert; `GOLDEN_SAMPLES.md` ergänzt um G10 und G11 (11 insgesamt).
+- Implementation checkpoint: `5a5d8ec07a6cb2b62748426be501e7faed0a2164`.
+- R3 Evidence checkpoint: `3b7b028cfe164de58b92e5b7c64c4b9cf2704963`; `TEST_REPORT_R3.md` dokumentiert **6/6 GitHub-Readbacks, 12/12 statische Strukturchecks PASS**.
+- Keine Autor-/Human-Abnahme, keine neue App/Runtime, kein Site-/Stage-/Hub-Write, kein Merge.
+- Next gate: ein echter, anhand der autorisierten Originalfassung begutachteter vertiefender Dialog.

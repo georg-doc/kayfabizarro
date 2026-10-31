@@ -1,6 +1,6 @@
 # Project SSOT · Philosophischer Sparringspartner
 
-Status: **PILOT v0.3 R2 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
+Status: **PILOT v0.4 R3 / candidate** (kein veröffentlichtes Chat-Produkt, kein KFB-Runtime-Modul)  
 Owner: Philosophie-Sparringspartner Sidequest · **ein** Inhalt-/Skill-Owner  
 Repository: georg-doc/kayfabizarro (public)  
 Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31  
@@ -21,10 +21,13 @@ Outcome: Ein **vollständig kopierbarer, modellübergreifender deutschsprachiger
 - Nutzerfeedback zum vorigen G7-Gesprächseinstieg = **FAIL / TOO TRIVIAL**, nicht als Autorenfeedback umdeuten. Privat eingelesene Manuskripte bleiben privat.
 - KFB später nur mögliche Content-/Design-Quelle. Bestehende ChatterBox/NPC/Lore/World-Owners bleiben unverändert.
 
+- R3: Wenn die vom Nutzer bezeichnete Originalfassung eine vorherige Bearbeitung ersetzt, müssen Deutungen und Belegstatus der Bearbeitung explizit superseded werden. Methodik: `SOURCE_FIDELITY_R3.md`, `TEST_REPORT_R3.md`. Keine Veröffentlichung privater Originale.
+- R3: 11 Golden-Cases dokumentiert, G10 Original vs. Derivat, G11 Fußnoten pro Version. Strukturelle R3 Checks 12/12; keine neuen Autor-Abnahmen.
+
 ## Scope-Grenzen
 
 Kein Profil des Vaters, keine nicht autorisierten Essays, kein personenbezogenes Gesprächsarchiv. Keine Behauptung, dass LLMs öffentliche URLs zuverlässig laden, dauerhaft erinnern oder ohne Berechtigung auf GitHub schreiben. Keine Modell-/Free-Tier-Zusage jenseits verifizierter offizieller Hilfeseiten.
 
 ## Next gate
 
-**Ein echter fortgesetzter theologischer Dialog am anspruchsvollen Argumentniveau von R2/G8**, nach Freigabe des Verfassers oder vom Nutzer vermittelt; prüfen, ob die Antwort eine nachweisbar neue Konsequenz und einen belastbaren Quellenkontrast entwickelt. Bislang keine Autorbewertung, keine PR-Freigabe.
+**Ein vom Autor oder Nutzer begutachteter Dialog an der ausdrücklich als Original bezeichneten Manuskriptfassung**; dabei muss der Gesprächspartner nachweislich das Original und nicht eine Bearbeitung auslegen und eine sachlich neue Konsequenz liefern. Kein PR-Merge ohne benannte Freigabe.
