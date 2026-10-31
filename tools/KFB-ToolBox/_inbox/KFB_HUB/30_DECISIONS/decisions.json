@@ -16093,6 +16093,21 @@
    "applies": "mit Stufe 2 aus V-1105"
   },
   {
+   "id": "V-1107",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Laufende Integration und Testen (Georg 31.10., WS1 Q-024: nicht jedes Mal jedes Modul neu vermessen und alles neu prüfen, zu aufwendig und teuer). Drei Stufen. A Sitzung auf eigenem Branch: nur die eigenen Tests plus Nachweis, dass ohne Schalter alles gleich bleibt (Programmliste und Bild); fasst sie gemeinsame Dateien an, nennt sie das. B Merge in den Stamm: die feste Pflichtliste läuft als Skript auf einem Slot, Auswertung eine Zeile je Test, nur Rotes wird gelesen. C Sammeltest je Merge-Runde, nicht je Commit: npc-suite und Gesamtszenarien (Start, 30 s Laufen, Wagen rufen und wechseln, 1 km Fahrt, Wasser, Kampf) auf ruhigem Rechner. Schaltet ein Schalter auf Standard, läuft C immer. Leistung: Zählwerte (Zeichenaufrufe, neue Programme, Dreiecke, Texturspeicher, Einmal-Kosten) sind unabhängig von Fremdlast und gelten scharf je Modul in perf.json; Zeiten nur in Stufe C mit dem 1×1-Readback-Tor, gepaart im Wechsel (V-1090, V-1094, V-1097). Schwelle für Zeiten erst nach drei ruhigen Wiederholungen aus der gemessenen Streuung, bis dahin nur Hinweis. Grundwerte liegen im Repo, angehoben nur nach Georgs Ja über eine Hub-Frage in Worten und Bild, ohne Zahlen. Owner: WS1 baut scripts/perf/ und die Testzuordnung aus seinen Skripten. Kritiker nur vor einer Vorlage an Georg, nicht je Commit. Brief-Gate-Prüfer liest künftig Brief und genannte Einträge statt des ganzen Pakets.",
+   "values": {},
+   "owner": "WS1 · alle Sitzungen",
+   "check": "Skript scripts/perf, erste Grundwerte",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die teuren Teile sind Wiederholung und Lesen; Zählwerte und Skripte kosten keine Aufmerksamkeit, und Zeiten sind unter Fremdlast ohnehin nicht belastbar.",
+   "applies": "sofort, Skript bei WS1"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
