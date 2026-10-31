@@ -1,3 +1,15 @@
+## 2026-10-31 · R2 · Puharich 1984 archival reissue discovered; 90%-quote split; Atlas reader proposal
+
+- Located Greg Mallozzi / **The Cosmic Clock** publisher archive of Puharich's alleged **1984-07-02 Lily Dale** lecture, released **2026-09-16**, 30:01 Acast episode and Substack publisher transcription; two web editions, **one claimed original tape**. Full Substack and Acast direct opens cache-missed; publisher transcript's indexed searchable text read; **0 original audio minutes listened**, custody tape master/hash and full 3+ hour remainder unverified.
+- **Quote-fidelity correction:** 1984 publisher transcript says approximately 90% of UFO **sightings**, attributed to **man-made** craft; 2026 Jorjani narrows this to **close encounters** with a **US fleet**. Jorjani's extra **half of abductions staged** claim not established in inspected original transcript excerpts. Do not silently backdate narrower Jorjani wording as a 1984 quote. Historical truth of UFO percentage independently unproven.
+- New [R2 Puharich archival source delta](PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md): **6 new `JM-S16..21`, 8 `JM-C19..26`, 2 `JM-H09..10` documentary/source-attribution edges, 4 noncausal `JM-W10..13` comparisons**; previous R1 entirely preserved; combined JM **21 / 26 / 10 / 13** respectively.
+- [R2 QA](TEST_REPORT_R2.md): **19/19** actually run Code Mode static document/reference checks after repairing one overly literal test predicate; no CI/code build/browser/runtime/audio verification or new PDF page images.
+- New owner-level [research Wiki/Graph/GPT Site + Dossier Roadmap R1](../../RESEARCH_WIKI_GRAPH_SITE_AND_DOSSIER_ROADMAP_R1_2026-10-31.md), proposal only. GitHub source SSOT, wiki and graph read-only projections, ChatGPT Work source executor, GPT Site later only upon meaningful reader gate. Prioritize original-source intake for **Puharich, Ingo Swann, Thomas Townsend Brown, Nikola Tesla**, followed by WCC institutional dossier using existing records and source expansion of **Joseph P. Farrell** and **Daniel Liszt/Dark Journalist** existing masters.
+- Existing WCC/Samosa independently advanced to **R4 / 46 source IDs / 50 claims**; its original-register/1981-letter archive gate stays separate and not falsely closed. Other private Docs/NotebookLM/Hub/main router/Card owners and production Site/Stage unchanged.
+- **One next gate** for this topic: `PUHARICH_1984_AUDIO_AND_REMAINDER_ABDUCTION_CLAIM`; direct audio and original record context, not another compilation of unattributed copycat articles. No merge, Live or user-accepted publication.
+
+---
+
 # Jorjani × Jesse Michels Trilogy — Additive Research Changelog
 
 ## 2026-10-31 · R1 — original video inventory, attributed transcript, source criticism and graph
