@@ -15913,6 +15913,21 @@
    "applies": "bei der Rückgabe"
   },
   {
+   "id": "V-1095",
+   "date": "2026-10-31",
+   "area": "Karten",
+   "verdict": "BUILD",
+   "text": "Kartenkante: module/card-edge-r1 @6b311889 enthält den Stamm bis 22d98ca4, Hub q334. Eine Kante und ein Kartenbild ohne Schalter, WS1s inkedCard und card-art-2d raus, cardart=0 bleibt Platzhalter. Fach, Fächer, Kartenflug, Almanach und Deck-Viewer-Streifen umgestellt. Behoben: verschlucktes c.inkRev in cardRelief.js (N-014). Ungeprüft: lange Fahrt, ferne Karte aus der Spielkamera, npc-suite gegen den Endstand; fünf Tests nur vor dem letzten Merge gelaufen. Unter hoher Last können Karten Textblatt bleiben. Viewer und Arena nicht umgestellt. Site-Prüfung läuft.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q334",
+   "source": "docs/card-edge/EINBAU.md, OFFENE_PUNKTE.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Schalter, also volle Testliste einschließlich npc-suite vor dem Merge.",
+   "applies": "beim Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
