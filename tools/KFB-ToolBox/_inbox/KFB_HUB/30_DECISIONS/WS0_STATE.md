@@ -147,3 +147,6 @@ Keine Löschungen ohne Georgs Ja. Keine Merges. Keine Credits ohne Georgs Go im 
 - WSB K10 R2 Schusswaffen Gate PASS (8 Runden), Hub b262. Schilde (Survivalist, Monstrosity u. a.) als Ergänzung vorgeschlagen, wartet auf Georg.
 - V-1018 Paket-Check; MiB-Turm-Paket R2 (design/claude-design-r3) Gate PASS, Hub b222 v5. V-1019/1020 Energieschild-Tune + MiB-Sphäre. Offen: Georg zu 3D-Werkbank Energieschild und UFO-Lab-Bausteinen.
 - V-1022 FAIL MiB-Paket bei Claude Design (keine Bildgenerierung); RECEIVER_CAPABILITIES_R1 + Guard im brief_gate; b222 done(FAIL). Memory kfb-claude-design-capabilities.
+
+## Stand 31.10. nachmittags (V-1099, V-1100)
+Georg: q330 TUNE, q331 TUNE, q332 TUNE (direkt an WS1), q333 KEEP als Richtung, q334 KEEP plus dünnere Tusche, q335 Einzelfehler. Kein Sammelblatt mehr im Hub. Laufend: Weltwissen R2 (Blasen nach SPRECHBLASEN_SSOT_R2), Verteiler Einzelbilder, Kartenkante Tusche, WSB vier Figuren. WS-Himmel wartet auf Hub q336 (Planet-Vorlage); danach Bild an WS-Himmel. Rückgaben sehe ich selbst an, dann Hub.
