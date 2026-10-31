@@ -15883,6 +15883,21 @@
    "applies": "beim Urteil"
   },
   {
+   "id": "V-1093",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Verteiler Runde 2: world/verteiler-r1 @4e31f7c4 enthält den Stamm @22d98ca4, Hub q333. Bleibt hinter place=r2, nicht Standard: langsamer in fünf von sechs Themen, Ursache vermutet (rund 2.000 Steine, Schatten), nicht einzeln gemessen. WSB-Auftrag: leichte Stein-Sätze, 8 Kiesel und 12 Felsen, zuerst Bestand. Build wird auch ohne Schalter größer (Flora). Prüfgrenzen wurden gelockert, Zieldichte der Vorlage nicht erreicht. Offen: Fundstücke, Fluff-Nester, Deck-Saat. street-plan an collapse auf world/verteiler-streetplan-r1 @99d21e57, Basis der Design-Stand c64e11de; ändert den Plan sichtbar, Übernahme nach Viertel-Entscheidung, Viertel dann neu ansehen. Zeige-Geste: kfb_gesture_salute_a 1,7 bis 2,4 s, Brust zum Ziel, kurze Überblendung, in der Spielkamera ungeprüft.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q333",
+   "source": "Verteiler R2, WSB GESTE_R1",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schalter bleibt zu, bis leichte Steine messbar helfen; Geste aus dem Bestand statt neuer Keyframes.",
+   "applies": "beim Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
