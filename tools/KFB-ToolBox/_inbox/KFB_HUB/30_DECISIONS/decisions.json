@@ -15523,6 +15523,21 @@
    "applies": "bei HUD-Übergabe"
   },
   {
+   "id": "V-1069",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Rückgabe game/flight-mib-r1 @30e9a9d2 (Rauch, Rakete r1e, MiB V1, Cape über jetvar=cape, Idle-Tausch, Mindscape-Schweben), Aufnahmen replies/FLIGHT_MIB_R1, Merge nach So durch WS0 mit assets/private ab c8b5d13. WS0 entscheidet: MiB-Turm landet im Blickfeld (Ausnahme von V-637 außer Sicht, damit die Landung lesbar ist); MiB-Spitze 2,2 ms gegen 1,5 ms aus V-603 für V1 hingenommen, Nachmessung im Viertel. Offen: Kollision, Orb-Lider, Rauch-Budget je Zelle, Cape in der Figurenkarte. Badewanne R6 geliefert, assets/private @b02201d, Einbau offen. Georgs Urteil Hub q318.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q318",
+   "source": "Spiel-Sitzung und WSB 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will das Ereignis sehen; ein seltenes Ereignis darf kurz teurer sein.",
+   "applies": "beim Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
