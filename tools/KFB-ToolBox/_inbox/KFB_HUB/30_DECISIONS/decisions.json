@@ -15373,6 +15373,21 @@
    "applies": "-"
   },
   {
+   "id": "V-1059",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "DECISION",
+   "text": "Kurswechsel Jetpack und MiB (Georg 31.10. an WSB, von WSB weitergegeben, „Ja, so machen“): Abnahme je Paket als Spielaufnahme aus der Spielkamera statt Standbilder, je Paket ein Verantwortlicher. Jetpack: r2d bleibt Schmuckstück, Rakete nach vorn; fertig = Aufnahme mit Start, Schweben, Vorwärtsflug, Kurve, Landung, Flamme und Rauch (V-1032, V-1033, V-956). MiB V1: spielbar verstanden als Ereignis läuft im Spiel; Turm landet auf normalem Gelände ohne Platz, Bordstein, Wahrzeichen; Tür wie r7f; Scan mit Uhr/Smartphone entfällt, Agenten zielen direkt; nur Spielkamera; Türsteher neben der Tür (ersetzt V-1028/V-1051 für V1). Verantwortlich im Spiel für beide: WS0 auf eigenem Branch von game/integration-r2, Merge nach So 20 Uhr. Das MiB-Ereignis existiert im Spiel noch nicht. Hebt V-1041 für diese Pakete auf. WSB: danach K10 Gewehre/Schilde, Badewanne/Cape.",
+   "values": {},
+   "owner": "WSB (Assets) · WS0 (Spiel)",
+   "check": "Spielaufnahme je Paket",
+   "source": "Georg 31.10. via WSB",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein laufendes Jetpack und ein laufendes MiB-Ereignis im Spiel zählen mehr als weitere Einzelbilder.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
