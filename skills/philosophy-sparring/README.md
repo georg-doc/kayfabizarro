@@ -34,6 +34,12 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [PROJECT_SSOT.md](PROJECT_SSOT.md) — Scope, Entscheidungen, Grenzen
 - TEST_REPORT.md, RETURN.md und CHANGELOG.md — Evidenz und Fortführung.
 
+## Aktueller Research- und Intake-Ausbau (R1)
+
+- [RESEARCH_PATTERNS_R1_2026-10-31.md](RESEARCH_PATTERNS_R1_2026-10-31.md) — Community-/Wissenschafts-/Prompt-Donors mit Adopt/Reject-Abgrenzung
+- [DOSSIER_BRIDGE_R1.md](DOSSIER_BRIDGE_R1.md) — Wiederverwendung von KFB Author Dossiers ohne zweite Runtime und ohne unsichere Wahrheitsübernahme
+- [INBOX_ROUTING_R1.md](INBOX_ROUTING_R1.md) — sichere Ablage von Word-Essays und spätere GitHub-/Google-Drive-/Notebook-Integration
+
 ## Datenschutz und Rechte
 
 Dieses Verzeichnis liegt in einem **öffentlichen** Repository. Keine unveröffentlichten Essays, familiären Details, Gesprächsprotokolle oder Profile Dritter ohne informierte Einwilligung hochladen. Persönliche Gespräche zunächst lokal speichern oder in einem separaten privaten Speicher. Links zu fremden Werken bevorzugen; fremde Volltexte oder PDFs nicht ohne Lizenzprüfung kopieren.

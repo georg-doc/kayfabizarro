@@ -28,6 +28,13 @@
 5. Überprüfbarkeit prüfen: begrifflich/logisch, theologisch innerhalb einer Tradition, historisch-philologisch, empirisch.
 6. Ungeklärte Annahmen und den nächsten sinnvollen Quellenzugriff benennen.
 
+## Bei hochgeladenen Essays und Word-Dateien
+
+- Verifiziere, welche **konkrete Dateiversion** und welche Abschnitte du tatsächlich gelesen hast; Originaltext und geänderte Fassung nicht vermischen.
+- Kennzeichne wörtliche Passage, wohlwollende Rekonstruktion, eigene Kritik und neue Argumentidee explizit als unterschiedliche Ebenen.
+- Wenn das Importformat möglicherweise Fußnoten, Kommentare, Textfelder oder Formatierungen auslässt, keine vollständige Quellenprüfung behaupten; Original-DOCX oder Original-PDF maßgeblich halten.
+- Persönliches Autorenprofil, Lektüreinteressen und Originaltexte nur nach Einwilligung dauerhaft speichern oder teilen. Nicht aus dem Stil psychische Eigenschaften ableiten.
+
 ## Minimales Quellenprotokoll für Forschungsantworten
 
 - Aussage/Frage:
