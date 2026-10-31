@@ -1,3 +1,14 @@
+## RESEARCH ARCHIVE ACCESS ADDENDUM · 2026-10-31 · MONEYREX R4
+
+**Existing source owner:** [Samosa/WCC topic Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [R4 official archival access / Italian requests](topics/wcc-samosa-network-2026-10-29/MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md) · [R4 actual tests](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R4_2026-10-31.md). Nothing moved or duplicated from R1–R3. `WC-S20` still identifies the **1981-04-30** declassified Bank of Italy→Sindona Commission **Moneyrex** letter (**catalogued only, not read**). Original parliamentary custody contact **ars_segreteria@camera.it**.
+
+**New original public source proof:** Moneyrex – Euro Market Money Brokers S.p.A. public `Gazzetta Ufficiale` corporate notices 1990, 1994, 1995; last addresses **Milano, Corso Monforte 45**, **capital 50m lire**, **liquidator Antonio Castelli**. Tribunal Milano **125461/3208/11** (1990/94) vs **125461/3608/11** (1995): conflicting subnumber remains UNRESOLVED. Historical `Moneyrex 1964–72` share registers still **not obtained**. Milan chamber archive **archivio@mi.camcom.it** is the official direct line for pre-1996 company records, plus `certificati.libri@mi.camcom.it` for ceased entities. Both source requests prepared, **0 sent**. Perplexity is optional narrowly targeted original-source discovery, not evidence custody.
+
+**New ledger IDs:** `WC-S41..46` (6) + `WC-C45..50` (6). Combined topic: **46 source records, 50 claims, 29 documentary/reporting edge IDs, 15 numbered noncausal relation IDs** (edges unchanged). **12/12 static consistency PASS**, original PDF scanned page images **0**, requested source originals received **0**, no UI/CI/runtime tests. Existing draft PR #394 is review surface; no Stage, Hub/main router or Live promotion for this research-only pass.
+
+**ONE next evidence gate:** `WCC_MONEYREX_ARCHIVE_ORIGINALS_RECEIPT_R1` — request and obtain original 1981 letter + 1964–72 Moneyrex share/transfer book, validate custody and full image pages, then inspect alleged Hambros/WCC ownership separately.
+
+---
 ## CURRENT RESEARCH SOURCE ADDENDUM · 2026-10-29 · SAMOSA WCC R3
 
 **Existing owner:** Hidden Cosmology Atlas Editorial Research · [WCC topic R3 Return](topics/wcc-samosa-network-2026-10-29/RETURN.md) · [updated private dossier comparison](topics/wcc-samosa-network-2026-10-29/DOSSIER_UPDATE_REVIEW_R3.md) · [R3 sources and atomic claims](topics/wcc-samosa-network-2026-10-29/SOURCES_AND_CLAIMS_R3.md) · [R3 documentary/conceptual graph](topics/wcc-samosa-network-2026-10-29/RELATIONS_R3.md) · [R3 actual tests](topics/wcc-samosa-network-2026-10-29/TEST_REPORT_R3.md). All prior R1/R2 source packets preserved.
