@@ -15928,6 +15928,21 @@
    "applies": "beim Merge"
   },
   {
+   "id": "V-1096",
+   "date": "2026-10-31",
+   "area": "Site",
+   "verdict": "DECISION",
+   "text": "Site-Bereitschaft (site/readiness-r1 @dbc75c94, docs/site/SITE_BEREITSCHAFT_R1.md). WS0 entscheidet: 1) Site und Vorschau laufen mit getrennten Dateien, Einzeldatei nur noch für den Offline-Fall. 2) Der Branch mit den ausgelagerten Lenkrad-Teilen kommt mit in die Merge-Liste, die Einzeldatei bleibt dabei byte-gleich. 3) Start-Adresse der Site wird die Endlos-Welt mit HUD v6 und den am Abend festgelegten Standard-Schaltern, nicht mehr world=probe,hud=3d; Änderung in src/siteHash.js beim Merge. 4) Dach-Clips später laden und Modelle komprimieren jetzt nicht: wenig Gewinn gegenüber dem Hebel getrennte Dateien; Komprimieren wäre Sache von WSB. 5) Für WSA im Site-Paket: Ton geht direkt an raw.githubusercontent und fällt bei privatem kayfabizarro aus (V-599), also Umstellung vor dem Schalter; rund 300 bis 480 Proxy-Abrufe je Start gegen die Plattform-Grenzen prüfen; fremde Adressen cdnjs und Google Fonts; Branch game/integration-r2; Paketgröße neu. 6) Messung nach dem Merge wiederholen, weil Kartenkante noch fehlt. Ungeprüft: echte Plattform, Passwort, hörbarer Ton, lange Fahrt, schwächere GPU.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Merge-Abend, dann WSA",
+   "source": "docs/site/SITE_BEREITSCHAFT_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will die Endlos-Welt sehen; getrennte Dateien halbieren die Startzeit ohne Änderung am Spiel.",
+   "applies": "beim Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
