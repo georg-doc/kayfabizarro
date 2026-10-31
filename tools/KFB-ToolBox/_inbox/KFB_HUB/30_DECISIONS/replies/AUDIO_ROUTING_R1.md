@@ -19,6 +19,8 @@
 | Fahrzeug- und Welt-SFX | `el/`, `site/` | sfx | Ereignisse (V-807), Präsenz-Schleifen |
 | HyperNorm-Engine H15 (Kuppel) | `site-extra/h15` (Claude Design) | – | eigener Ton aus (Soundbed, Binaural; Jukebox nicht gestartet); Klang trägt das Mindscape-Bett |
 | Orakel-Clips (Bild-im-Bild) | `heygen/` | ui | clipPip, unverändert |
+| Songs Shepard Ascent, Bouncing Busker Groove (V-1109) | `georg-doc/kayfabizarro@fae628c2`, `media/kfb-audio/r1/suno_r2/*.m4a`; Katalog `assets/private` @1c186978 | music | in den Listen Radio (`suno`) und Klangbett (`mindscape`), nie im Kuppel-Bett; feste Korrektur −1,6 und −1,7 dB vor den Bussen; kein Beat-Sync, Tempo und Tonart sind Schätzungen; Stems bleiben privat |
+| ASMR-Satz `asmr_r1_lufs`, 40 Clips (V-1109) | `assets/private` @1c186978, `40_AUDIO/elevenlabs_r1/asmr_r1_lufs/`, Prüfsummen in `scripts/audio/asmr-pin.json`; Site: `/kfb-asmr/` | sfx | nur mit `asmr=1`; nur an echten Ereignissen, immer mit Raumposition; Abstand je Klang, höchstens drei zugleich, begrenzte Menge je Zeitfenster; nie je Bild oder Partikel, keine Dauerfläche; Dateien unverändert |
 
 ## Offen
 - Raumklang in der Kuppel (Gedichtzeilen aus ihrer Richtung, Claude-Design-Idee 2).
