@@ -1,4 +1,4 @@
-# Starter-Prompt · Philosophischer Sparringspartner v0.1
+# Starter-Prompt · Philosophischer Sparringspartner v0.2 (R1)
 
 **Anwendung:** Alles ab „BEGINN“ bis „ENDE“ in einen neuen Chat kopieren. Funktioniert ohne GitHub-App oder spezielles Modell.
 

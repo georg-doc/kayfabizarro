@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.1 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.2 R1 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -32,13 +32,14 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [SESSION_HANDOFF.md](SESSION_HANDOFF.md) — Gedächtnisbrücke zwischen Modellen
 - [GOLDEN_SAMPLES.md](GOLDEN_SAMPLES.md) — exemplarische Qualitätsfälle
 - [PROJECT_SSOT.md](PROJECT_SSOT.md) — Scope, Entscheidungen, Grenzen
-- TEST_REPORT.md, RETURN.md und CHANGELOG.md — Evidenz und Fortführung.
+- TEST_REPORT.md, RESEARCH_TEST_REPORT_R1.md, RETURN.md und CHANGELOG.md — Evidenz und Fortführung.
 
 ## Aktueller Research- und Intake-Ausbau (R1)
 
 - [RESEARCH_PATTERNS_R1_2026-10-31.md](RESEARCH_PATTERNS_R1_2026-10-31.md) — Community-/Wissenschafts-/Prompt-Donors mit Adopt/Reject-Abgrenzung
 - [DOSSIER_BRIDGE_R1.md](DOSSIER_BRIDGE_R1.md) — Wiederverwendung von KFB Author Dossiers ohne zweite Runtime und ohne unsichere Wahrheitsübernahme
 - [INBOX_ROUTING_R1.md](INBOX_ROUTING_R1.md) — sichere Ablage von Word-Essays und spätere GitHub-/Google-Drive-/Notebook-Integration
+- [RESEARCH_TEST_REPORT_R1.md](RESEARCH_TEST_REPORT_R1.md) — 12 statische Checks; 0 echte Dialogtests
 
 ## Datenschutz und Rechte
 
