@@ -160,3 +160,15 @@ User-authorized private Site entry surface deployed through native Sites. Public
 ## 2026-10-31 · URL-first R9 decision and evidence
 
 User superseded API/embedded chatbot and ChatGPT Project setup direction: one portable GitHub entry for ordinary ChatGPT/Perplexity; Site administration only. START.md R9-URL-1 added, with compact standalone rules, two synthetic examples, demand-loaded R9 references, honest source status, living-document change proposals and markers. SOURCE_INTAKE.md defines repeatable original-source and prompt updates. TEST_REPORT_URL_R9.md records actual browser evidence: ChatGPT GitHub content/markers reproduced (initial UI error; raw failed); Perplexity Free GitHub and raw retrieval failed. Cross-platform URL-only gate remains OPEN. Six of seven original source candidates recovered privately; exact remaining source missing. No original texts/private analysis published. No API, merge or KFB runtime changes.
+
+
+## Current · R9 public six-text release · 2026-10-31
+
+User-authorized six original texts published as extracted text in corpus/S1,S2,S4,S5,S6,S7.txt. START.md now R9-URL-2 with linked public source catalog. Exact implementation head da5b55dc7ba9804a8bb13da4aa9faf49f2cc1265; 8/8 branch file content readbacks equal. See TEST_REPORT_CORPUS_R9.md for format and evidence limits.
+
+Perplexity fresh Free/Search retest still fails GitHub/raw retrieval; independent raw URL HTTP 200. Exact blocker is external retrieval, not absent files. No reliable URL-only Perplexity claim. Existing Site remains private administration; no API, main merge or KFB runtime change.
+
+One next gate: real Perplexity content retrieval through a separately verified public reading surface for approved public material; do not expose the private administration Site.
+
+---
+
