@@ -1,3 +1,14 @@
+## 2026-11-01 · R2 · Federal Reserve / Vatican / Mystery Schools & versioned evidence graph
+
+- **Additive scope:** [R2 ten-cluster/91-node research-intake census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R2_2026-11-01.json) adds **37 proposed entity/author/concept candidates and 3 clusters** to the original **54-node/7-cluster R1** (R1 unchanged). Clusters cover monetary/Fed/BIS, Vatican IOR/APSA/financial networks, documented societies and Mystery Schools as conceptual umbrella. **Existing Dark Journalist = Daniel Liszt**, no “Dark Jungle” owner/dossier.
+- **Original publisher source discovery:** Federal Reserve's Board/reserve-bank descriptions, BIS reports, IOR/ASPA distinct institutional explanations, Theosophical Society historical account/UK Charity Commission. These are URL/HTML text/source-index leads, **not new audited original PDFs or verified illicit network claims**.
+- **New evidence/quality contract:** [Graph, provenance, owner and correction-history design](ATLAS_GRAPH_PROVENANCE_QUALITY_AND_VERSIONING_CONTRACT_R1_2026-11-01.md) defines four visually distinct edge layers, authorship vs AI reviewer traceability, falsifier field, Git SHA/version comparison, no transitive causality or merged legal entities. [Three retrospective correction examples](ATLAS_GRAPH_CORRECTION_HISTORY_CASES_R1_2026-11-01.json): `WC-C32` genealogical identity, `WC-C36` Moneyrex/BPF company scope, JM-C19/C21/C22 original vs later attributed quote. No newly investigated event, model identity or source claim fabricated.
+- **Existing receiving briefs updated additively:** [WSA dossier breadth Work](WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md) and [current Site wiki/Notion/graph follow-on](RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md). No second editable graph store, Notion SSOT, new Site project, or game runtime.
+- [Source/structure QA](ATLAS_GRAPH_QUALITY_AND_CLUSTER_R2_TEST_REPORT_2026-11-01.md) **28/28** actual GitHub-readback consistency tests; 0 new dossiers, 0 historical documentary edges, 0 audiovisual original media, 0 original PDF screenshot pages, 0 Site/browser/CI/Work tests. Current private Research Atlas Site unchanged, authenticated hosted revision still awaiting separate review.
+- **One next productive gate** `ATLAS_BREADTH_CORPUS_BATCH_AB_01` on current owner branch/Draft PR #394; no merge, Hub link/Cloudflare Stage/Live promotion.
+
+---
+
 ## 2026-11-01 · GEORG PRIORITY OVERRIDE · Breadth-first author landscape before more deep-dive research
 
 - **Georg decision:** first expand **authors, works, institutions, clusters, candidate source relationships and missing-original questions** using WSA Work; do not spend the main next Work slice on Puharich audio or Moneyrex claim proof. Current private GPT Site R1 is sufficient evidence-model baseline, broaden data before new site features. No merge, publication or Live change.
