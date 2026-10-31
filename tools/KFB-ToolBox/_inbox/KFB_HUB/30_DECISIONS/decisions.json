@@ -15958,6 +15958,21 @@
    "applies": "bei AA und dpr"
   },
   {
+   "id": "V-1098",
+   "date": "2026-10-31",
+   "area": "Figuren",
+   "verdict": "BUILD",
+   "text": "Figuren: cast/alle-figuren-r1 @53226ab8 enthält den Stamm @22d98ca4. 100 von 100 im Spiel geprüft auf ba68f299, danach Stichproben; Körper nicht im HTML, rund 17 KB mehr Code. Gläser Driver und Man in Black durchscheinend, Lider sichtbar. Lücken und Einzelfehler Hub q335. WS0: Faces des Medium-Blatts sind in dieser Auflösung von WS0 nicht einzeln beurteilt, Gesichtsblatt je Figur vor jedem Zeigen. Beim Merge: Builds nur mit vollständigem src/private (kfb-mvp/src/private steht auf da990fe, fehlt Flug r1h und KFB_Rocket.r1e; nutzbar flight-wt/src/private). closing-build tank bei Figuren rot, bei Verteiler über pflicht.sh grün; Merge wertet nur pflicht.sh bei niedriger Last, npc-suite gegen Endstand.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q335, Merge-Abend",
+   "source": "docs/cast/LUECKEN_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg entscheidet, welche Lücken sich lohnen; rote Tests unter Fremdlast zählen nicht als Befund.",
+   "applies": "beim Urteil"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
