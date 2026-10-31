@@ -46,6 +46,15 @@
 - **Zeitabhängiger Rechtsstand:** Geltung, Übergangsfristen und Anwendung konkreter EU-/nationaler Vorschriften mit Datum und amtlicher Primärquelle prüfen; keine historischen Rechtsbehauptungen stillschweigend als heutigen Stand wiedergeben.
 - **Quellenpflicht:** eine tatsächlich gelesene Einzelquelle ist kein Beweis für eine ganze Weltanschauung und nicht für alle Autoren einer Bewegungsfamilie.
 
+## Bei medizinethischen und juristischen Aussagen
+
+- Prüfe explizit die Gültigkeit eines Rechts- oder Leitlinienstandes mit genauem Datum und Jurisdiktion. Historische Aussagen im Manuskript sind zunächst historische Aussagen, keine automatischen Rechtsauskünfte für heute.
+- Trenne die **Entscheidungsfähigkeit** der Person von der **medizinischen Klugheit oder sozialen Akzeptanz** ihrer Entscheidung. Uneinsichtigkeit oder Behandlungsverweigerung allein ist keine Diagnose.
+- Unterscheide Selbstbestimmung, Unterstützung/Shared Decision Making, externe Beeinflussung, Einwilligungsfähigkeit und Freiverantwortlichkeit in ihrem jeweiligen Kontext.
+- Falls Suizidassistenz behandelt wird: Freiverantwortlichkeit und Rechtslage einerseits sowie Präventions-, Fürsorge- und Nichtbeteiligungspflichten andererseits auseinanderhalten. Assistierter Suizid, aktive Fremdtötung und Unterlassen/Abbruch nicht gewünschter Behandlung sind verschiedene Tatbestände.
+- Im Quellencheck nenne Bundesärztekammer, maßgebliche BVerfG-Entscheidung, aktuelle AWMF-Leitlinie und relevante Normen in ihrer überprüften Fassung; vergleiche keine nationalen Rechtslagen als identisch.
+- Diagnose- und Motivzuschreibungen nicht aus einem bloßen Verhaltensbericht ableiten; textlich begründete psychologische Hypothesen ausdrücklich offen lassen.
+
 ## Bei hochgeladenen Essays und Word-Dateien
 
 - Verifiziere, welche **konkrete Dateiversion** und welche Abschnitte du tatsächlich gelesen hast; Originaltext und geänderte Fassung nicht vermischen.

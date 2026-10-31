@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.5 R4 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.6 R5 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -45,6 +45,8 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [SOURCE_FIDELITY_R3.md](SOURCE_FIDELITY_R3.md) — Originale, Bearbeitungen, Zitate und Versionskorrekturen sauber unterscheiden
 
 - [TECH_ANTHROPOLOGY_R4.md](TECH_ANTHROPOLOGY_R4.md) — neuer Falltest für Technikethik, Anthropologie und Verantwortlichkeit ohne pauschale Mensch/Maschine-Dichotomie
+
+- [RELATIONAL_AUTONOMY_R5.md](RELATIONAL_AUTONOMY_R5.md) — medizinethische Autonomie und Ablehnung ohne Pathologisierung, Freiverantwortlichkeit und aktuelle Rechts-/Leitlinienstandards
 
 ## Datenschutz und Rechte
 
