@@ -1,3 +1,7 @@
+## 2026-10-31 · Songs + ASMR R2 · bestehende private Audio-Site v21
+
+**DEPLOYED · TECHNICAL PASS · GEORGS HÖRURTEIL OFFEN.** Bestehende Site https://kfb-audio.frizzlebob.chatgpt.site/ Version 21, Site-Quellcommit `6e86082b8f950236f2d1f31cf3a930684dfaadb2`, Deployment `appgdep_6ae55b8aaa84819191369a84744598fb` succeeded; Version/Commit nativ zurückgelesen. Die aktuelle Site-v20-Quelle wurde erweitert, kein Rückschritt auf den alten PR455-Snapshot. Zwei AAC-Master im Klang-Speicher @fae628c2d85699a203742cb008e344a4653bc28d; privater Musikkatalog @1c186978525ef9927483da21001625b9eabea473. Songs & ASMR: Soundbed/Radio plus 43er-Hörmatrix, lokale Keep/Tune/Cut-Auswahl und Export. 172 Site- und 18 Card-Regressionen PASS; lokale Browser-Wiedergabe beider gepinnter Master und Gebäude-Crack/Burst PASS. Produktionsbrowser endet am privaten Anmeldegate; keine produktive Hörabnahme behauptet. Keine Generierung/Spieländerung. Vollständiger Return: `WSA_SONGS_ASMR_R2_RETURN_2026-10-31.md`. Ein Gate: Georg hört; danach WS0 → comms/ws0-ws1 → WS1/game/integration-r2.
+
 ## 2026-10-29 · Briefing · zwei Suno-Songs + ASMR/Gebäude + Forschungs-Routing
 
 - Zwei private Master plus je neun Stems am Pin `da990fe4097c6ed7e59eda24ef2cf1acc6dbcb51` geprüft; tatsächlicher Katalog `40_AUDIO/music_catalog_r1.json` enthält beide Titel noch nicht.
