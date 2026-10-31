@@ -168,3 +168,5 @@ WS1 nach Merge-Runde: Kartenzonen (N-028), dann Joyride, Site (V-1123). WSA work
 
 ## Stand 31.10. abends (V-1132 bis V-1138)
 Reparaturrunden laufen: WS-Verteiler (Fels-Fuß, Ansammlungen mit Grund, Blumen; N-024 gilt weiter), WS-Design (Sky-Card als Kuppel und Kraftfeld, Stadtplan danach). WS1: Stufe C ohne Termin und ohne Render-Pause (N-033), danach elf neue Planeten (N-031), dann Kartenzonen; Bilder zu den Himmel-Fragen kommen über den Kanal, WS0 macht die Hub-Karte; roter Himmelsanteil-Test nach Stufe C an WS-Himmel. WSA: Waffen plus Nachtrag bei der Combat-Slice-Ebene, Planeten-Katalog als Hinweis. Hub-Archiv: KFB_HUB_ARCHIV/hub_karten, Karten mit Antwort bleiben im Hub.
+
+Nachtrag 31.10.: Sky-Card nach V-1142, V-1143 bei WS-Design (Modell-Seite, Strich-Modul, Formvergleich, dann Stopp und Hub-Frage zur Form). WSA Combat: Schritt 1 angenommen (V-1140), Antwort und Linien-Zusatz liegen im Hub zum Weitergeben. Hub-Archiv: 271 Dateien warten auf Georgs Knopf unter Fragen; Knopf konnte WS0 nicht selbst sehen, Hub-Stand nach dem Klick in archiv/rest prüfen. WS0 löscht nichts mehr selbst.
