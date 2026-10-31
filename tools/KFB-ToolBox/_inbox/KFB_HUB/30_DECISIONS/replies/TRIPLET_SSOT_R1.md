@@ -41,6 +41,7 @@ Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier d
 - **Stimme im Spiel:** Sprachmelodie über die Chatterbox-Familie der Figur. Gesprochene Triplets als Einzeldateien nur dort, wo Georg sie freigibt (V-285).
 
 ## 5 · Offen (wird hier nachgetragen, nicht neu erfragt)
-- Stufe 0 des Tratschs (WS-NPC): Der Dramaturg verdreifacht den Konflikt. Nach etwa einer Woche gibt es aber fast nur noch BINGO, und die Blasen bleiben schwach. Vorschläge von WS-NPC liegen bei Georg.
+- Stufe 0 des Tratschs (WS-NPC): gerechnet, das frühere BINGO-Ende ist behoben (`docs/ws-npc/tratsch/README.md`, Spiel-Branch). Im Spiel läuft der Karten-Tratsch noch nicht.
+- Weltwissen-Modell: Entwurf `replies/WELTWISSEN_MODELL_R1.md`, Hub q313 (Georg 31.10., V-1066).
 - Decks für die Kayfabrick-Bots fehlen; the_uruk_rumble (Orc Brute) hat in cards.json 0 Karten.
 - Triplet-Abnahme-UI (V-237): später als WSA-Site mit Figuren und Stimmen.

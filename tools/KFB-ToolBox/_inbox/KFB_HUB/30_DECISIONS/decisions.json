@@ -15463,6 +15463,36 @@
    "applies": "bei jedem Auftrag"
   },
   {
+   "id": "V-1065",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Aufgabengrenze (Georg 31.10. über WSB, gesetzt für alle laufenden Sitzungen): WSB macht alles an Modellen, Rigs, Knochen und Clips (Auswahl, Umrechnen auf Large, Posen, Sitz, Anker, Durchdringung) und liefert Datei, sha256, clips.json. Spiel-Sitzungen machen Abspielen, Zustände, Überblenden, Physik, Rauch, Ablauf, Rückfall-Regeln im Code; keine GLB-Änderung, keine neuen oder umgerechneten Clips, kein Knochen-Offset zum Ändern einer Pose (V-956, V-574). Fehlt etwas: Platzhalter, Lücke an WSB. Clip-Lückenliste führt die Figuren-Sitzung, WSB schließt, Georg entscheidet über Hub-Frage. Superhelden-Flug: erst Bestand suchen (Motion Library, KayKit, Mixamo), neue Pose nur als letzter Weg, eine Runde ohne Kritiker.",
+   "values": {},
+   "owner": "WSB + alle Sitzungen",
+   "check": "Worktree-Prüfung 31.10.: keine Blender-Arbeit in Flug- und Figuren-Sitzung",
+   "source": "Georg 31.10. über WSB",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sitzungen hatten parallel in Clip-Fragen hineingegriffen; Georg sieht Drift in der Aufgabenverteilung.",
+   "applies": "bei jeder Lücke an Figuren oder Clips"
+  },
+  {
+   "id": "V-1066",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "Weltwissen (Georg 31.10.): Karten sind Weltwissen, Figuren tauschen es in Triplets aus; emergentes System über Spieldauer, Begegnungen, Spieler, Orte und Kartengebäude; Zeugen beim Freispielen einer Karte; dieselbe Figur unterscheidet sich je Spielweg; Rufe nicht zwingend; Besitzer oder Ort einer Karte werden nicht verfolgt; Figuren merken sich, wer was erzählt hat. Offen: Spielermotivation zum Zeigen. Entwurf replies/WELTWISSEN_MODELL_R1.md, Hub q313. Prozessregel: Etwas liegt nur bei Georg, wenn eine Hub-Frage existiert.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub q313",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Zielbild geht über die Rufe-Logik vom 23.10. hinaus; schlank mit vorhandener Lean Memory.",
+   "applies": "vor Stufe 1 des Tratschs"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
