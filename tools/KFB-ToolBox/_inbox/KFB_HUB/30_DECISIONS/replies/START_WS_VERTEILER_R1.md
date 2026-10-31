@@ -3,6 +3,11 @@ Empfänger: neue Claude-Code-Sitzung für die prozedurale Welt. Das ist ein Kern
 
 **Georg 31.10.:** Die Wave-Function-Collapse-Logik für alle Umgebungs-Props ist „immer noch nicht … sauber durchdacht und implementiert“, nicht einmal für Steine, Kiesel und Grashalm-Gruppen, „und flowers vermisse ich auch“. Zu den Steinen: Die Dreiergruppen stehen in Reihen, das Muster wirkt nicht natürlich, sie liegen wie Fremdkörper auf dem Boden.
 
+**Tier 0** (wörtlich aus CANON_3D_R1 §0)
+1. **Kanon lesen:** `CANON_3D/CANON_3D_R1.md` und die Zeilen deines Fachgebiets. **Vor dem Bau** liegt ein ausgefülltes Konzeptblatt `CANON_3D/KONZEPTBLATT_R1.md` vor; WS0 schreibt es (V-561). Du entwirfst es in der ersten Stunde selbst und schickst es WS0, WS0 bestätigt es.
+2. **Bauen nur mit den Kanon-Werkzeugen:** Umgebung `CANON_3D/lib/kfb_env.py`, Löser `kfb-place`, Licht das eine Rig. Eigene Platzierungs-, Licht- oder Knete-Helfer sind verboten; was am Löser fehlt, wird dort erweitert.
+3. **Abgabe:** mechanisches Gate grün, dann der blinde Kritiker nach `CANON_3D/CRITIC_3D_R1.md` für Spielszenen (V-561). Georgs Auge geht bei Einbettung vor; Kritiker nur für Form und Muster, eine Runde. Georg sieht nur Bestandenes, über WS0 im Hub.
+
 ## Befund im Code (`origin/game/integration-r2`, lies selbst nach)
 - `src/vendor/place/kfb-place-core.v1.mjs`: Echtes WFC ist nur `solveLocal`, also die Slots innerhalb einer Gruppe. Die Gruppen selbst sitzen auf Zufalls-Keimen je Zelle (`src/world/placeWorker.js`). Gruppen wissen nichts voneinander.
 - Kiesel sind ein Zellraster im Boden-Shader (`src/look/biomeTerrain.js`, `kfbStones`). Ein Raster mit Zufall je Zelle kann keine Gruppen bilden, es entstehen Reihen. Die Farbe ist die Palettenrolle, nicht der Boden an der Stelle.

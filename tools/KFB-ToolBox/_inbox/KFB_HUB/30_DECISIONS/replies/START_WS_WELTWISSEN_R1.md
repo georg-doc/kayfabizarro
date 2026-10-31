@@ -12,17 +12,18 @@ Empfänger: neue Claude-Code-Sitzung für den Spielkern. Du entscheidest Details
 
 ## Auftrag: der erste Beweis, nichts darüber hinaus
 Eine Szene in der Welt mit einem Ort, drei Figuren und einer freigespielten Karte:
-1. **Weltwissen:** Jede Figur führt ihre Kartenliste im vorhandenen Lean Memory (Spielstand `kfb.world-save`, das Schema gehört WS1 bzw. WS0; Änderung als Vorschlag melden). Kein Besitzer und kein Ort einer Karte wird verfolgt.
+1. **Weltwissen:** Jede Figur führt ihre Kartenliste im vorhandenen Lean Memory (Spielstand `kfb.world-save`, das Schema gehört WS1 bzw. WS0; Änderung als Vorschlag melden). Kein Besitzer und keine Lage einer Karte wird verfolgt; Geländekarten liegen ohnehin an festen Plätzen (q241), daher kommt die Richtung beim Ortstipp.
 2. **Zeuge:** Wird die Karte freigespielt, bekommen Figuren in Sichtweite den Eintrag „gesehen“, derselbe Mechanismus wie `onCured`. In der nächsten Begegnung erzählen sie weiter, mit Quelle, als Triplet. Rufe zeigen nur die Haltung und entscheiden nicht, ob eine Karte wandert.
-3. **Gespräch mit dem Spieler:** in der Welt, kein eigener Bildschirm. Ansprechen, Kamera rückt näher, Zuschauer werfen ein, zwei bis vier Antwort-Blasen an deiner Figur, Karten-Vorschau in der Blase klickbar, das Gespräch wartet.
-4. **Auftrag und Ortstipp:** Figur bittet um eine fehlende Karte ihres Decks, Zuschauer mit eigenem Eintrag zeigt die Richtung, „Merken“ setzt den Zielhinweis. Clip `kfb_gesture_pointing_a` ansehen, passt er nicht, melde die Lücke an WSB.
+3. **Gespräch mit dem Spieler:** in der Welt, kein eigener Bildschirm. Ansprechen, Gesprächs-Stellung und Blicke nach V-780 (±40°, keine neue Kamera), Zuschauer werfen ein, zwei bis vier Antwort-Blasen an deiner Figur, Karten-Vorschau in der Blase klickbar, das Gespräch wartet.
+4. **Auftrag und Ortstipp:** Figur bittet um eine fehlende Karte ihres Decks, Zuschauer mit eigenem Eintrag zeigt die Richtung, „Merken“ setzt den Zielhinweis. Clip `kfb_gesture_pointing_a` ansehen, Geste nur mit freier Hand (V-729), passt er nicht, melde die Lücke an WSB.
 5. **Karte spielen:** Almanach als Hand, Karte fliegt in die Blase (vorhandener Kartenflug), Figur antwortet aus ihrer Liste und tauscht eine Karte.
 6. **Schießen statt antworten:** Waffe bleibt erreichbar, beendet das Gespräch, vorhandene Warnen-Drohen-KO-Logik, Zuschauer werden Zeugen.
 
 **Prüfung:** Zwei Läufe mit verschiedenen Karten zeigen dieselbe Figur sichtbar verschieden. Ein Lauf endet mit Schießen.
 
 ## Grenzen
-- **Arbeitsort:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zugriff `GIT_SSH_COMMAND="ssh -i ~/.ssh/kfb_private_assets_deploy -o IdentitiesOnly=yes"`. Worktree `~/kfb-ws0/wissen-wt`, Branch `game/weltwissen-r1` von `origin/game/integration-r2` @58da229. Hinter Schalter `wissen=r1`, ohne Schalter bitgenau wie bisher. Kein HUD-Umbau: WS1 baut HUD v6, du hängst dich nur an Gesprächs-Zustand und Plätze.
+- **Arbeitsort:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zugriff `GIT_SSH_COMMAND="ssh -i ~/.ssh/kfb_private_assets_deploy -o IdentitiesOnly=yes"`. Worktree `~/kfb-ws0/wissen-wt`, Branch `game/weltwissen-r1` von `origin/game/integration-r2` @58da229. Hinter Schalter `wissen=r1`, ohne Schalter bitgenau wie bisher. Kein HUD-Umbau: WS1 baut HUD v6 auf `game/integration-r2`, du fügst nur den Gesprächs-Zustand hinzu und holst dir regelmäßig den neuesten Stand. Absprache über WS0.
+- Zusammenführen: Nach Georgs KEEP holst du den neuesten Stand von `game/integration-r2`, lässt die feste Testliste laufen (`terrain-seams`, `hud-3d`, `fb-canon`) und pushst hinter deinem Schalter selbst dorthin. Kein Warten auf einen Termin.
 - **Modelle und Clips:** nur WSB (V-1065), Lücken melden.
 - **Text:** nur aus Kartendaten und abgenommenen Triplet-Sets, Rückfall nach Konzept §3.1. Sätze im Spiel auf Englisch, Anrede neutral.
 - **Festplatte:** rund 20 GB frei. Kein voller Fetch, kein Klon, `node_modules` per Link, Testausgaben löschen, unter 8 GB frei anhalten und WS0 melden. Nie nach `~/KFB_GitHub_sync` holen.
