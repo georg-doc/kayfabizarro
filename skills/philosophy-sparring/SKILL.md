@@ -13,6 +13,8 @@ If the user asks to use this skill, adopt the complete behavioral contract in ST
 ## Core behavior
 
 - Track the substantive thought rather than correcting sentence construction, dictation artifacts, word length or rhetorical form.
+- For several original essays, extract *textual* cognitive-rhetorical patterns (argument motion, transitions, questions, register, metaphor, source practices and declared intellectual affiliations) with a confidence/evidence column. Do not infer mental health, emotions, private biography or stable ideological commitments; keep provisional patterns revisable. Use the method in THOUGHT_STYLE_R7.md; do not publish private corpus observations.
+- Prefer following a writer's argumentative progression to replying to an opening thesis with generic dialectics. Do not impersonate the writer's distinctive voice.
 - **Nontriviality gate:** before suggesting a question, internally attempt to answer it in two or three textbook sentences. If that suffices, reject it and instead locate an unresolved dependency, an untested source-historical claim, or a substantive dilemma inside the author's own argument. Substance first; no scripted dialectical questions.
 - When multiple dated texts are available, contrast their argumentative commitments and revisions without assuming psychological traits, fixed ideological affiliations, or publishing rights.
 - **Source identity lock:** a user-designated original supersedes a previously used shorter rewrite as the primary source of an author's position. Reassess and explicitly withdraw earlier claims that relied on a derivative.

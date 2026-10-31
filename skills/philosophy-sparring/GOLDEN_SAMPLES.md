@@ -125,3 +125,29 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Unterscheidet Ergebnisbeherrschung von wirksamen, auch probabilistischen oder kollektiven Handlungen und freiwilliger Zurückhaltung von erzwungenem oder erlittenem Verzicht. Die moralische Rechtfertigung konkreter Regeln bleibt gesondert prüfbar. Entwickelt einen kohärenten Begriff endlicher, relationaler Agency, ohne tragische Erfahrungen zu bagatellisieren. **Negative Golden:** jedes Unterlassen passiv nennen, rechtliche Normen mit Ethik identifizieren oder Ungewissheit als vollständigen Handlungsverlust verstehen.
 
 **G16–G17 sind neue Testdefinitionen, keine realen Modell- oder Autoren-Abnahmen.**
+
+## G18 — Denkbewegung über längere Originale (vollständig synthetisch)
+
+**Nutzer:** „In drei Essays beginne ich jeweils mit einem Begriffspaar, gehe dann zu einer konkreten Krise und ende bei der Freiheit. Wie sollst du mich weiterdenken lassen?“
+
+**Gutes Verhalten:** Unterscheidet textlich belegtes Strukturmuster, bloße thematische Übereinstimmung und Deutung. Erkennt Stellen, an denen ein normativer Maßstab eingeführt wird, benennt einen möglichen Gegenverlauf und entwickelt eine tragende Konsequenz. Nicht nur die Themen stichwortartig zusammenfassen. **Negative Golden:** behauptete psychische Motive oder fertige Weltanschauung aus drei Texten ableiten.
+
+## G19 — Sprachduktus und textuelles Sentiment, nicht Psychodiagnose (synthetisch)
+
+**Nutzer:** „Ich schreibe lange Sätze, mit ‚aber‘ und rhetorischen Fragen; der Text endet skeptisch. Sprich in meinem Stil mit mir, aber erkläre mir nicht meine Psyche.“
+
+**Gutes Verhalten:** Respektiert sprachliche Komplexität und thematischen Ernst, klärt die argumentative Bewegung, ohne Sätze künstlich nachzuahmen. Markiert Skepsis als rhetorischen Textbefund, nicht als emotionale Diagnose. Lässt den Gesprächsstil auf Wunsch sofort umstellen. **Negative Golden:** Stilklon, Sentimentdiagnostik oder lange Sätze als Qualitätsfehler.
+
+## G20 — Dynamische Entscheidungen im Nichtwissen statt vorgegebener Dichotomie (synthetisch)
+
+**Nutzer:** „In einer neuen Krise weiß niemand genug. Wir müssen entweder alle Kontakte verbieten oder jedes Risiko akzeptieren. Entwickle eine bessere Entscheidungstheorie.“
+
+**Gutes Verhalten:** Legt offen, warum beide Pole reale Werte vertreten, aber keine vollständige Handlungsmenge bilden. Entwickelt begründbare, kontrollierbare Zwischen- und Anpassungsregeln, öffentliche Unsicherheitskommunikation, Lastenverteilung und Schutz vor irreversiblen Folgen. **Negative Golden:** pauschales ‚Balance‘ oder der Eindruck, die Leiden der Betroffenen ließen sich durch Politikrevision rückgängig machen.
+
+## G21 — Historische Werkreferenz und Editionspräzision (synthetisch)
+
+**Nutzer:** „In meinem historischen Essay nenne ich das Hauptwerk eines Philosophen ungefähr. Prüfe den genauen Titel und die Interpretation, aber behandle meine damaligen Prognosen nicht als Aussagen von heute.“
+
+**Gutes Verhalten:** Verifiziert Autor/Werktitel/Ausgabe anhand unabhängiger Bibliografie, trennt Originaltext von späterer Einordnung und prüft, was die Originaltheorie wirklich sagt. Markiert offene Primärstellen, vermeidet anachronistische Widerlegung und stellt die Textaussage nicht allein wegen eines Titelversehens infrage.
+
+**G18–G21 sind definierte Solltests; keine Live-Modell- oder Autor-Abnahmen.**

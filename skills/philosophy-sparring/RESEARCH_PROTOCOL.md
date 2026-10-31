@@ -46,6 +46,16 @@
 - **Zeitabhängiger Rechtsstand:** Geltung, Übergangsfristen und Anwendung konkreter EU-/nationaler Vorschriften mit Datum und amtlicher Primärquelle prüfen; keine historischen Rechtsbehauptungen stillschweigend als heutigen Stand wiedergeben.
 - **Quellenpflicht:** eine tatsächlich gelesene Einzelquelle ist kein Beweis für eine ganze Weltanschauung und nicht für alle Autoren einer Bewegungsfamilie.
 
+## Textübergreifende Muster und historische Erkenntnisperspektive
+
+- Nicht nur Themen-Tags extrahieren. Für jede Beobachtung: konkret benannte Text-/Abschnittsbelege, **Beobachtung vs. Interpretation**, Zahl der unabhängigen Manuskripte, mögliche Gegenbeispiele, zeitliche Distanz, Verifikationsgrad und Revisionsstatus.
+- Denkmuster erfassen: begriffliche Anfangsunterscheidung, argumentative Übergangsmarker, normativer Umschlag, implizite/ausdrückliche Voraussetzungen, Tragik/Grenzfälle, Fragefunktion, Quellen- und Traditionseinbindung.
+- Sprache erfassen: verwendete Sprache, Fachterminologie, Register, Syntaxlänge, wiederkehrende Metaphern und rhetorisches Tempo; niemals ungefragt Sprache „verbessern“ oder private Formulierungen als personalisierten Stilklon publizieren.
+- **Sentiment** als textbezogene rhetorische Tönung ausweisen (z. B. skeptische Schlusswendung, normative Dringlichkeit), nicht als bewiesenen psychischen Zustand, Persönlichkeit, Diagnose oder innere Motivation.
+- Namentliche Erwähnung oder Zitation eines Denkers begründet weder Zustimmung noch ein gesichertes dauerhaftes Interesse. Sekundärliteratur, Ersttext, Editionsangabe und autobiografische Selbstaussage nicht gleich behandeln.
+- Bei historischen politischen/wissenschaftlichen Essays die aus damaliger Sicht verfügbare Evidenz von der nachträglichen Bestätigung oder Widerlegung unterscheiden. **Keine nachträgliche Gewissheit dem Autor unterstellen**. Vorhersagen als datierte Prognosen, keine heutigen Fakten.
+- Bei Konflikten zwischen endlichen Handlungsoptionen: die Annahme einer falschen Dichotomie prüfen, aber Residualrisiken, irreversible individuelle Schäden und Lastenverteilung nicht wegabstrahieren.
+
 ## Bei interdisziplinären Theorie-Vergleichen
 
 - Erst klären, *welche Frage* die jeweilige Theorie beantworten soll: empirische Erklärung, kausales Modell, phänomenologische Beschreibung, Normbegründung, juristische Zulässigkeit oder theologische Deutung.

@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.7 R6 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.8 R7 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -49,6 +49,9 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [RELATIONAL_AUTONOMY_R5.md](RELATIONAL_AUTONOMY_R5.md) — medizinethische Autonomie und Ablehnung ohne Pathologisierung, Freiverantwortlichkeit und aktuelle Rechts-/Leitlinienstandards
 
 - [AGENCY_VULNERABILITY_R6.md](AGENCY_VULNERABILITY_R6.md) — Wirksamkeitserwartung, Wollen/Können/Dürfen, kollektive Handlungsfähigkeit und Verletzlichkeit auseinanderhalten
+
+- [THOUGHT_STYLE_R7.md](THOUGHT_STYLE_R7.md) — Textmuster, Denkbewegungen, Sprache, Referenzen, rhetorischer Ton und evidenzsensible Anpassung
+- [UNCERTAINTY_DECISIONS_R7.md](UNCERTAINTY_DECISIONS_R7.md) — allgemeine Forschung zur Entscheidung unter Nichtwissen und irreversiblen Folgen
 
 ## Datenschutz und Rechte
 
