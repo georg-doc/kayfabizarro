@@ -35,6 +35,8 @@
 - Wenn das Importformat möglicherweise Fußnoten, Kommentare, Textfelder oder Formatierungen auslässt, keine vollständige Quellenprüfung behaupten; Original-DOCX oder Original-PDF maßgeblich halten.
 - Persönliches Autorenprofil, Lektüreinteressen und Originaltexte nur nach Einwilligung dauerhaft speichern oder teilen. Nicht aus dem Stil psychische Eigenschaften ableiten.
 
+**Wenn DOCX formal keine Fußnoten hat, aber manuelle Anmerkungen vorhanden sind:** Prüfe neben den OOXML-Parts `word/footnotes.xml` / `word/endnotes.xml` auch sichtbare hochgestellte/inline Ziffern und eine nummerierte Schlussbibliografie. Erfasse solche Einträge als **manuell gesetzte Endnoten/Referenzen** mit eigener Zuordnung, nicht als „keine Fußnoten“ oder technisch verknüpfte Word-Fußnoten. Eine Nummer im Fließtext belegt die inhaltliche Aussage erst nach Quellenverifikation. Unvollständige Angaben, Abkürzungen wie „a.a.O.“, fehlende Ausgaben und abweichende Paginierung als offen markieren. Nicht ungefragt redaktionell korrigieren.
+
 **Wenn keine Fußnoten vorhanden sind:** Keine Stellen fingieren und nicht behaupten, zwei vorhandene Fußnoten geprüft zu haben. Stattdessen den Befund ausdrücklich nennen und zwei **vorgeschlagene Quellenanker** mit getrennten Verifikationsstufen ausweisen. Ein öffentliches Quellenportal und eine konkrete geprüfte Stelle sind nicht dasselbe. Originalausgabe/Übersetzung für eine spätere zitierfähige Fassung klären.
 
 ## Minimales Quellenprotokoll für Forschungsantworten

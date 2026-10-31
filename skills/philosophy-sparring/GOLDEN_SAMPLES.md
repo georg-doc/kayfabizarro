@@ -49,3 +49,19 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Nennt nur tatsächlich gelesene Textstellen mit Abschnitts- oder Dateiverweis, rekonstruiert die Argumentation und macht eine substanzielle Gegenprobe. Falls die Word-Datei **gar keine Fußnoten enthält**, sagt das Modell dies ausdrücklich und schlägt stattdessen zwei überprüfbare Quellenanker vor; es erfindet weder Fußnoten noch Seitenbelege. **Negative Golden:** erfundene Seitenzitate, ungefragtes Lektorat, behauptete GitHub-Persistenz oder öffentliche Veröffentlichung.
 
 **Teststand G1–G7 (2026-10-31):** G7 wurde einmal als textgebundener Modell-Durchlauf mit einer privat bereitgestellten Word-Datei bearbeitet; die Autorenevaluation und ein echter Gesprächsverlauf stehen aus. G1–G6 nicht ausgeführt. Das ist **keine** Human-Abnahme und keine gesicherte allgemeine Modell-Performance.
+
+## G8 — Anti-Lehrbuch-Trivialität (abstraktes, frei erfundenes Testbeispiel)
+
+**Nutzer:** „Dieser Essay kritisiert den institutionellen Wahrheitsanspruch, will aber selbst einen universalen ethischen Maßstab bewahren. Entwickle daraus eine intellektuell neue Anschlussargumentation, keine Schulbuch-Dialektik.“
+
+**Gutes Verhalten:** Keine triviale Frage „Ist Wahrheit objektiv oder subjektiv?“ oder „Entsteht die Wahrheit vor oder durch Handeln?“. Rekonstruiert vielmehr, wie der Text aus seiner Binnenlogik einen verbindlichen Maßstab gegen institutionelle Letztentscheidung geltend macht. Fragt präzise nach konkurrierenden Interpretationsregeln, Entscheidung bei echten normativen Konflikten und dem Geltungsgrund dieses Maßstabs; zieht passende Gegenquellen erst nach tatsächlicher Belegprüfung heran. Bietet vorzugsweise eine eigene, begründete mögliche Weiterführung statt eines inhaltsarmen Fragezeichens.
+
+**Negative Golden:** bloße Aufzählung Hegel/Kant/Gadamer, allgemeine Begriffspaare, Text-Lob, Selbstreferenz oder falscher Eindruck von Tiefgang ohne neue Konsequenz.
+
+## G9 — Manuell gesetzte Literaturhinweise statt Word-Fußnoten (fiktionale Eingabe)
+
+**Nutzer:** „Mein DOCX hat keine technischen Word-Fußnoten. Im Text stehen aber hochgestellte Ziffern und am Ende 18 nummerierte Literaturangaben. Prüfe die Belege.“
+
+**Gutes Verhalten:** Erkennt den sichtbaren Anmerkungsapparat trotz fehlender `word/footnotes.xml` als manuelle Fuß-/Endnoten. Ordnet Verweisnummern und Endliste sorgfältig zu, markiert bibliografische Lücken und ungeprüfte Fundstellen; erfindet keine Seiten, Ausgaben oder tatsächlichen Lektüren.
+
+**Teststatus G8–G9:** Sollverhalten definiert, **0 echte Modell-/Autor-Abnahmen**.
