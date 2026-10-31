@@ -40,3 +40,10 @@ Ein Licht-Rig; Knete wie auf der Proof-Stage; Sprenkel-Übergänge statt Verlauf
 
 ## Rückgabe an Georg
 Ein Blatt mit den besten Spielbildern und eine kurze Aufnahme, dazu in drei Sätzen, was gut ist und was nicht. Er antwortet KEEP, TUNE oder FAIL. Commit und Push auf deinen Branch.
+
+## TUNE 3 · geparkt, startet erst auf Georgs Zuruf (31.10., V-1057)
+- **Bordstein-Fugen:** nicht aufgemalt, sondern als Geometrie wie die Joyride-Bürgersteige; vorhandene Bauweise aus `KFB Joyride J17 · FB Cabrio/JOYRIDE_J17_2026-10-01` übernehmen.
+- **Hebel raus, blaues Rohr raus,** samt Sockel; der Knopf Umleiten entfällt damit im Kartenviertel.
+- **Stadt-Requisiten statt dessen:** Ampeln, Verkehrsschilder, Laternen, Hydranten, Bänke und KayKit-/Tiny-Treats-City-Props aus Joyride v17, über Asset Librarian und Prop-Pool-Kataloge (V-920, V-1026) per WFC gesetzt, in Gruppen wie die Materialcodes (V-1005, V-1036): Sie zeigen „urbane Straßenszene“, echte Verkehrslogik entfällt vorerst.
+- **Orientierung:** Lampen und Ampeln zur Straße ausgerichtet, nach der vorhandenen Logik aus Joyride; das darf Georg nicht erneut prüfen müssen.
+
