@@ -16663,6 +16663,21 @@
    "applies": "nach Einbau"
   },
   {
+   "id": "V-1145",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "IDEA",
+   "text": "Georg 31.10., Nebenstrang: Karten als Teil der Welt. Probe replies/KARTEN_KUGEL_PROBE_R1 (Wölbung offline aus dem Druck-PDF, ins Spielbild montiert) zeigt: Motiv als Kugel liest sich. Befund: Web-PDF je Karte rund 776 px breit, Druck-PDF rund 1366 px; Karte als WebP aus Druckqualität rund 120 kB, Motiv rund 70 kB (eine Karte gemessen). WS0-Empfehlung: Karten einmal offline aus dem Druck-PDF backen (ganze Karte plus Motiv), laden nach Bedarf, pdf.js nur im Lese-Viewer. Planet als flache Fläche mit Kugel-Shader und Motiv-Bild, keine 3D-Kugel; vorgebackene PNGs nur für einen festen Satz. Gelände zuerst schärfer durch gebackene Quelle und Motiv statt ganzer Karte, kleinere Karten nur falls nötig. Nach den Kartenzonen als Auftrag, jetzt nichts gestartet. Idee: Himmelskörper zeigt das Motiv der nächsten Kartenzone.",
+   "values": {},
+   "owner": "WS0",
+   "check": "später Probe im Spiel",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg: Karten sollen Welt und Allegorie werden, ohne Druck-PDFs im Spiel zu laden.",
+   "applies": "nach den Kartenzonen"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
