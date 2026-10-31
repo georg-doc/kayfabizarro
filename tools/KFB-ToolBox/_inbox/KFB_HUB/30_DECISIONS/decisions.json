@@ -15688,6 +15688,21 @@
    "applies": "nach dem Kernspiel"
   },
   {
+   "id": "V-1080",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Wasser in der Endlos-Welt (Georg 31.10.: muss noch umgesetzt werden): WS1 baut es nach docs/KONZEPT_WASSER_ENDLOS_R1.md auf dem Bestand (Island Kit R1 KONZEPT_R2, Fluid-Shader Card Zone Lab v2, kfb-hydro, kfbWater), sobald HUD v6 steht; kein Warten auf einen Termin. Eigene rivers=1 und lakes=1 entfallen. WS0 entscheidet: erst Binnenwasser (Seen, Flüsse, Fälle), Küste und Meer später; Wasser als Schicht 3 der Belegung, die auch WS-Verteiler abfragt. Schritte F0–F4 einzeln, Georg urteilt je Schritt, Shader-Frage D1 als Vergleichsbild bei F0. Tauchen nach F4. Hebt die Zurückstellung aus V-1042 Nr. 4 auf.",
+   "values": {},
+   "owner": "WS1",
+   "check": "F0–F4, Hub",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 hat Quellen und Hydrologie-Port auf seinem Rechner und kennt die Fehler aus rivers und lakes.",
+   "applies": "nach HUD v6"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
