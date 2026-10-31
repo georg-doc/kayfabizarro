@@ -15703,6 +15703,21 @@
    "applies": "nach HUD v6"
   },
   {
+   "id": "V-1081",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "PASS",
+   "text": "Georg 31.10.: Rakete, Cape, Men in Black (q321) und Figurenwahl (q322) KEEP, so nehmen und später optimieren; Sitzungen bringen ihre Branches selbst in game/integration-r2. Figuren-Körper in assets/private @90da7f8, Laden bei Bedarf nur mit figuren=alle. Blätter mit vielen Figuren waren in der Auflösung nicht beurteilbar: künftig kleinere Einzelblätter oder Stichproben im Spiel. Hub: Mehrfachauswahl fehlte, multi war wirkungslos; jetzt gebaut (Version 30). Rucksack-Sichtung q323 für später. Kartengebäude TUNE 4 @3301196 in q324.",
+   "values": {},
+   "owner": "alle",
+   "check": "Testlisten, Hub",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will vorankommen und später optimieren.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
