@@ -15838,6 +15838,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1090",
+   "date": "2026-10-31",
+   "area": "Technik",
+   "verdict": "FACT",
+   "text": "Mess-Spike R1 (spike/viertel-r1 @d3d7b441, docs/spike/SPIKE_VIERTEL_R1.md), alle Zeiten unter Fremdlast, Unterschiede unter 20–30 % nicht belegbar: Grenze sind die Pixel, nicht die Dreiecke (bis 12,5 M nicht merklich). Reihenfolge für den Bau: Kantenglättung und Auflösung (dpr), dann H15-Upload (bis 245 ms ohne Wartepunkt) und Gebäude-Spitzen (p99 70–81 ms), kein Geometrie-LOD jetzt. 500 Kugeln tragen, leere Plätze entfernen. Budget Rauch je aktive Zelle 16 Knet-Massen, 256 Puffs, 128 Flipbook. Budget Zelle Welt 60–100 k Dreiecke, höchstens 4 Aufrufe. 60-Bilder-Urteil offen, Nachmessung 5 Minuten auf ruhigem Rechner.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Nachmessung",
+   "source": "Mess-Spike",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bauschritte nach Messung statt Vermutung.",
+   "applies": "beim Merge"
+  },
+  {
+   "id": "V-1091",
+   "date": "2026-10-31",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "AFK-Rückgaben: game/ufo-licht-r1 @779e60df (UFO HD ohne Hänger, Lichtkegel-Modul, Wanne mit Sprung und Icon, Flug-Rücken Space Ranger und Mech-Flügel; Mund Hunky und Dory als eigener Baustein offen). design/kartengebaeude-r1 @ae06a12 (Viertel als eigene Seite #viertel=1, Waffen an Kit-Häusern). world/himmel-r1 @c4e8994d (Hub q330, Kritiker zuletzt REWORK, P1 WS0-Auslegung). game/weltwissen-r1 @871eba47 (Hub q331, world-save/2, zwei Läufe sichtbar verschieden). Talk Library r2 in assets/private @e28436b. Merge mit Georg.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Merge-Abend",
+   "source": "Sitzungen 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Stand für den Integrations-Abend.",
+   "applies": "beim Merge"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

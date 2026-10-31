@@ -80,7 +80,7 @@ export function solveLocal(slots, R, rules, tries = 16) {
 
 // ── Nest: Stützen und Kiesel eng um den Anker (V-749 Nr. 7): Abstand je Paar entweder überlappt (≤ 0,85 × Radiensumme) oder mit Luft (≥ 1,25 ×),
 // nie dazwischen; Stützen im Fächer, Kiesel hangabwärts; Nachbarabstände paarweise ≥ 30 % verschieden. Positionen relativ zum Anker.
-function nestPositions(R, radii, rules, slopeDir, pOver = 0.55) {
+export function nestPositions(R, radii, rules, slopeDir, pOver = 0.55) {
   const mg = rules.group.band_margin ?? 0, ov = rules.group.overlap_max * (1 - mg), air = rules.group.air_min * (1 + mg), out = [[0, 0]], hosted = new Set()   // V-789: Rand gegen ±8 % Hüllen-Unterschied Löser/Gate
   const okAt = (p, i) => { let nj = -1, nd = Infinity
     for (let j = 0; j < out.length; j++) { const dd = Math.hypot(p[0] - out[j][0], p[1] - out[j][1]), s = radii[j] + radii[i]; if (dd < 0.5 * s || (dd > ov * s && dd < air * s)) return false; if (dd < nd) { nd = dd; nj = j } }
