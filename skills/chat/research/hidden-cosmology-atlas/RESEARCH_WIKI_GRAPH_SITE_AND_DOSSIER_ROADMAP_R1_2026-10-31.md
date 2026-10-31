@@ -1,3 +1,13 @@
+## USER DECISION ADDENDUM · 2026-10-31 · GPT SITE DIRECTION APPROVED
+
+Georg has **explicitly chosen the GPT Site as the meta-administrative research/workflow surface NOW**. The old conditional recommendation in Sections 1, 3 and 8 (“consider Site only later”) is historical and is **SUPERSEDED as a product-direction question**, not as a data-ownership or safety rule. A Site was **not built or published** in this research/briefing slice.
+
+**Binding next product brief:** [KFB Research Atlas Meta-Admin GPT Site Brief R1](KFB_RESEARCH_ATLAS_META_ADMIN_GPT_SITE_BRIEF_R1_2026-10-31.md). The Site specializes in source search, cross-provider authorized retrieval, evidence/wiki/graph browsing, bounded Work research dispatch, derived author/institution register and auditable research-packet export to NIE/NotebookLM/essays/KFB editorial owners. A [Puharich–Jorjani genuine source/claim walkthrough](RESEARCH_ATLAS_END_TO_END_CASE_PUHARICH_JORJANI_R1_2026-10-31.md) and [pointer-only registry view](ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json) are prepared. Existing GitHub Atlas SSOT remains sole historical source owner; the private NIE remains a separate protected owner; KFB Production Hub remains the one cross-KFB front door. No unverified direct Site→Work or local Mac file API and no fake Live.
+
+**ONE next product implementation gate:** `RESEARCH_ATLAS_SITE_PUHARICH_EVIDENCE_READER_01`, source-accurate read-only working Site prototype. Research-only files do not require Stage publication. No auto-merge or game runtime changes.
+
+---
+
 # KFB Hidden Cosmology Atlas — Research Wiki / Graph / GPT Site and Dossier Expansion Roadmap R1
 **Status:** additive **RESEARCH / DESIGN PROPOSAL**, NOT new Site/runtime authorization, NOT new canonical ontology, NOT a Docs/NotebookLM migration. Date: 2026-10-31. **One owner:** existing Hidden Cosmology Atlas Editorial Research. Branch `research/hidden-cosmology-atlas-2026-10-13` / open Draft PR #394. Does **not** supersede the current WCC R4 original-access gate nor past author/worldview rules. Proposal is a read-only **projection over existing source IDs**, never a second SSOT.
 
