@@ -4,12 +4,22 @@ Empfänger: neue Claude-Code-Sitzung für die prozedurale Welt. Du entscheidest 
 **Du fängst nicht bei null an.** Im Spiel gibt es schon Uhr, Wetter (klar, Wolken, Regen, Nebel, Wind, auto), Stimmungen über das eine Licht-Rig und eine Kuppel mit Sonne, Knet-Riesenmond, Sternen, Polarlicht und gemalten Wolken. Das baust du aus, du ersetzt es nicht.
 
 **Tier 0** (wörtlich aus CANON_3D_R1 §0)
-1. **Kanon lesen:** `CANON_3D/CANON_3D_R1.md` und die Zeilen deines Fachgebiets. **Vor dem Bau** liegt ein ausgefülltes Konzeptblatt `CANON_3D/KONZEPTBLATT_R1.md` vor; WS0 schreibt es (V-561). Du entwirfst es in der ersten Stunde selbst und schickst es WS0, WS0 bestätigt es.
-2. **Bauen nur mit den Kanon-Werkzeugen:** Umgebung `CANON_3D/lib/kfb_env.py`, Löser `kfb-place`, Licht das eine Rig. Eigene Platzierungs-, Licht- oder Knete-Helfer sind verboten; was am Löser fehlt, wird dort erweitert.
-3. **Abgabe:** mechanisches Gate grün, dann der blinde Kritiker nach `CANON_3D/CRITIC_3D_R1.md` für Spielszenen (V-561). Georgs Auge geht bei Einbettung vor; Kritiker nur für Form und Muster, eine Runde. Georg sieht nur Bestandenes, über WS0 im Hub.
+1. **Kanon lesen:** `CANON_3D/CANON_3D_R1.md` (diese Seite) und die Zeilen deines Fachgebiets. **Vor dem Bau** liegt ein ausgefülltes Konzeptblatt `CANON_3D/KONZEPTBLATT_R1.md` vor; WS0 schreibt es (V-561).
+2. **Bauen nur mit den Kanon-Werkzeugen:**
+   - Umgebung: `CANON_3D/lib/kfb_env.py` (Blender: `kfb_env_bpy`);
+   - Figuren, Material und Licht: Proof-Stage-Module.
+   - Eigene Platzierungs-, Licht- oder Knete-Helfer sind verboten.
+3. **Abgabe:**
+   - mechanisches Gate grün (`kfb_env_bpy.run()` + Proof-Stage G1–G7);
+   - dann der blinde Kritiker nach `CANON_3D/CRITIC_3D_R1.md`;
+   - Georg sieht nur Bestandenes.
+
+**Für diesen Auftrag (WS0-Entscheidung):** Das ist Laufzeit-Code im Spiel, kein Blender-Job: Das Gate sind die Tests deines Schalters plus die feste Testliste; der Löser `kfb-place` ist das Kanon-Werkzeug und wird dort erweitert. Blinder Kritiker eine Runde, nur für Form und Muster; bei Einbettung geht Georgs Auge vor. Zum Konzeptblatt siehe unten.
+
+**Konzeptblatt (WS0):** Dieser Himmel zeigt, wo du bist und welche Stimmung gerade herrscht, weil er zum Thema der Region gehört, und der Spieler soll zuerst den einen großen Himmelskörper oder die Wolkenmasse sehen. Form: gemalte Knet-Wolken, runde Knet-Planeten; verboten sind Schwellwert-Rauschen, Nebelbalken, zweite Lichter. Kameras: Spielkamera, Fahrt, Blick nach oben.
 
 ## Ziel (V-759, V-1007, Slice S2 aus V-746)
-Die Fahrt durch die endlose Welt wird mit wechselndem Himmel zum surrealen Roadtrip. Wechselt das Biom, wechselt der Himmel mit: Farbe, Wolken, Himmelskörper, Stimmung.
+Die Fahrt durch die endlose Welt wird mit wechselndem Himmel zum surrealen Roadtrip. Wechselt das Thema der Region, wechselt der Himmel mit: Farbe, Wolken, Himmelskörper, Stimmung.
 
 ## Lesen, bevor du baust (`~/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/`)
 - `replies/KONZEPT_KFB_VERTEILER_R1.md`: Zeilen Himmel Wolken, Himmel Verlauf, Planeten, dazu die Reihenfolge. Du nutzt den einen Verteiler, keinen zweiten Zufall.
@@ -18,7 +28,7 @@ Die Fahrt durch die endlose Welt wird mit wechselndem Himmel zum surrealen Roadt
 - Code: `src/modules/sky-drive.js` (`cloudLayer`, `uHorizon`, `uZenith`, `skyColor`, `uMoon`), `src/Planets.jsx` (ansehen, was davon taugt).
 
 ## Auftrag
-1. **Atmosphären-Dirigent je Biom und Saat:** Daten statt Sonderfälle. Tageszeit, Wetter und Stimmung folgen dem einen Licht-Rig, kein zweites Licht.
+1. **Atmosphären-Dirigent je Thema und Saat:** „Biom“ heißt hier Thema bzw. Themen-Mischung aus dem Verteiler (V-951, V-1006), keine gesetzten Grenzen. Daten statt Sonderfälle. Tageszeit, Wetter und Stimmung folgen dem einen Licht-Rig, kein zweites Licht.
 2. **Verlauf aus der Palette:** Horizont und Zenit als Nachbarschaft zur Bandpalette des Bioms (`skypal=biome`, Himmel = Laub +90°), mit weichem Übergang beim Biomwechsel.
 3. **Wolken:** Form bleibt die gemalte Knet-Wolke nach Kanon, kein Schwellwert-Rauschen. Prozedural sind Auswahl, Verteilung, Dichte, Schichten und die Färbung der Schattenseite aus der Palette.
 4. **Himmelskörper:** mehrere, mit Mindestwinkel verteilt, Größe und Farbe variiert: Knet-Riesenmond, Ringplanet, lila Planet, selten die Erde (V-1007, nicht Quaternius). Entscheidung WS0 zu Kanon Gebiet 18: höchstens ein großer Signatur-Himmelskörper je Himmelshälfte bleibt, kleinere dürfen dazukommen, zusammen nicht mehr als im Kanon erlaubte Himmelsfläche. Erst im Spiel-Bestand suchen.
@@ -26,7 +36,7 @@ Die Fahrt durch die endlose Welt wird mit wechselndem Himmel zum surrealen Roadt
 6. **Budget:** Der Himmel darf die Bildrate kaum kosten. Vorher und nachher im selben Lauf vergleichen, nicht absolut, solange andere Sitzungen rendern.
 
 ## Grenzen
-- **Arbeitsort:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zugriff `GIT_SSH_COMMAND="ssh -i ~/.ssh/kfb_private_assets_deploy -o IdentitiesOnly=yes"`. Worktree `~/kfb-ws0/sky-wt`, Branch `world/himmel-r1` von `origin/game/integration-r2` @58da229. Nicht auf `game/integration-r2` pushen; WS0 führt zusammen. Alles hinter einem Schalter (`sky=r1`), ohne Schalter läuft das Spiel bitgenau wie bisher.
+- **Arbeitsort:** privates Repo `georg-doc/KFB-Stunt-Car-Race`, Zugriff `GIT_SSH_COMMAND="ssh -i ~/.ssh/kfb_private_assets_deploy -o IdentitiesOnly=yes"`. Worktree `~/kfb-ws0/sky-wt`, Branch `world/himmel-r1` von `origin/game/integration-r2` @58da229. Alles hinter einem Schalter (`sky=r1`), ohne Schalter läuft das Spiel bitgenau wie bisher.
 - **Modelle:** Neue oder geänderte Modelle macht nur WSB in Blender (V-1065). Fehlt ein Himmelskörper als Modell, baue ihn als Shader oder Platzhalter und melde die Lücke an WS0.
 - **Malen:** Nichts von Hand malen, was prozedural und wiederholbar sein soll: gleiche Saat, gleicher Himmel.
 - **Festplatte:** rund 20 GB frei. Kein voller Fetch, kein Klon, `node_modules` per Link aus `~/kfb-ws0/kfb-mvp`, Testausgaben löschen, unter 8 GB frei anhalten und WS0 melden. Nie nach `~/KFB_GitHub_sync` holen.
