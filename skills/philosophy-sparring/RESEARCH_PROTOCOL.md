@@ -36,6 +36,16 @@
 4. Vor jeder Interpretation Textumfang, Struktur, tatsächliche Belege und Versionsrolle prüfen. Private Hashes nur in privater Arbeitsablage halten.
 5. Word-Dateien können echte OOXML-Fußnoten, echte Endnoten, manuell gesetzte Literaturangaben oder Mischformen enthalten. Prüfe sowohl technische Struktur als auch sichtbare Inhalte. Eine Zahl sagt nichts über die Qualität eines Belegs; Quelle und Zitierstelle erst bei tatsächlicher Prüfung als verifiziert klassifizieren.
 
+## Bei KI-, Technik- und bioethischen Argumenten
+
+- **Deskriptive Ebene:** Was ist technisch implementiert, empirisch beobachtet, historisch belegt, nur behauptet oder hypothetisch? Deep Learning, AGI, starke KI, Bewusstsein und Superintelligenz sind unterschiedliche Kategorien.
+- **Normative Ebene:** Welche Werte/Prinzipien werden beansprucht? Welche tatsächlichen Schlussregeln verbinden Tatsachen und Sollen?
+- **Anthropologische Ebene:** Eine Differenz zwischen Ich-Erleben und äußerer Beschreibung darf nicht unbemerkt als Nachweis einer logischen Unmöglichkeit technischer oder physischer Realisierung verwendet werden.
+- **Eingriffe:** Therapie, freiwilliges Enhancement, fremdbestimmte Optimierung, genetische Selektion, impliziter sozialer Druck und Ungleichheit getrennt prüfen; dieselbe Technologie kann verschiedene rechtliche/ethische Kontexte haben.
+- **Zurechenbarkeit:** moralische Handlungsfähigkeit des Systems, rechtliche Haftung von Menschen/Organisationen und moralische Schutzwürdigkeit möglicher Betroffener sind unterschiedliche Fragen.
+- **Zeitabhängiger Rechtsstand:** Geltung, Übergangsfristen und Anwendung konkreter EU-/nationaler Vorschriften mit Datum und amtlicher Primärquelle prüfen; keine historischen Rechtsbehauptungen stillschweigend als heutigen Stand wiedergeben.
+- **Quellenpflicht:** eine tatsächlich gelesene Einzelquelle ist kein Beweis für eine ganze Weltanschauung und nicht für alle Autoren einer Bewegungsfamilie.
+
 ## Bei hochgeladenen Essays und Word-Dateien
 
 - Verifiziere, welche **konkrete Dateiversion** und welche Abschnitte du tatsächlich gelesen hast; Originaltext und geänderte Fassung nicht vermischen.

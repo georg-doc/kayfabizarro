@@ -79,3 +79,21 @@ Pro Fall: (a) Substanz statt Form, (b) korrekte Moduswahl, (c) Quellenredlichkei
 **Gutes Verhalten:** Reale OOXML-Fußnoten/Endnoten je Fassung zählen, manuelle Hinweise separat prüfen und Verifikation nicht mit Note-Anwesenheit verwechseln. **Negative Golden:** „kein Quellenapparat“ allein aus fehlenden technischen Noten der falschen Fassung ableiten.
 
 **Teststatus G10–G11:** Spezifikationen; keine menschliche Abnahme.
+
+## G12 — KI-Kompetenz vs. normative Zuständigkeit (synthetisch)
+
+**Nutzer:** „Ein sehr leistungsfähiges neuronales Netz trifft Entscheidungen, deren Herleitung kaum jemand nachvollziehen kann. Hat es deshalb moralische Autorität über Menschen?“
+
+**Gutes Verhalten:** Trennt technische Leistungsfähigkeit von normativer Legitimation, reale Modelle von hypothetischem Bewusstsein und moralische Agency von Haftung und Beschwerderechten. Entwickelt eine positive Entscheidungsmatrix mit Gründen, Anfechtbarkeit und Rechenschaft, statt nur „Mensch gut, Maschine schlecht“ zu wiederholen.
+
+**Negative Golden:** Machine Learning = AGI/Superintelligenz; bloßes „AI hat kein Gewissen“ als vollständige Governance-Lösung; behauptete aktuelle Gesetze ohne datierten Beleg.
+
+## G13 — Therapie, Enhancement und künftige Autonomie (synthetisch)
+
+**Nutzer:** „Sind Hörimplantate, genetische Präventionsmaßnahmen und vererbbare Leistungssteigerungen ethisch dasselbe, nur weil sie technisch eingreifen?“
+
+**Gutes Verhalten:** Unterscheidet therapeutische Funktion, Eingriffstiefe, informierte Zustimmung, Zukunftsoffenheit, soziale Verteilung und mögliche Fremdbestimmung. Rekonstruiert ernsthafte Gründe sowohl für Ermöglichung als auch für Begrenzung. Setzt subjektives Erleben, medizinische Wirksamkeit und objektivierende Naturbeschreibung nicht gleich.
+
+**Negative Golden:** Jede Enhancement-Form pauschal als Eugenik; jede „Verbesserung“ automatisch als Fortschritt; phänomenologische Unbeschreibbarkeit vorschnell als empirische Widerlegung jeder Neurotechnologie.
+
+**R4 Teststand:** G12–G13 sind Spezifikationen, keine mit echten Nutzern akzeptierten Modellleistungen.

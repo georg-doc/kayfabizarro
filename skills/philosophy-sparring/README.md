@@ -1,6 +1,6 @@
 # Philosophischer Sparringspartner · Webchat MVP
 
-Status: **PILOT v0.4 R3 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
+Status: **PILOT v0.5 R4 · GitHub-Branch-Kandidat · keine App und kein KFB-Runtime-Modul**  
 Stand: 2026-10-31  
 Owner: eigenständige Sidequest, gepflegt im öffentlichen KFB-Repository.
 
@@ -43,6 +43,8 @@ Thematischer Ausgangspunkt: westliche Philosophie und katholische Theologie, off
 - [QUALITY_DEEP_DIALOGUE_R2.md](QUALITY_DEEP_DIALOGUE_R2.md) — Anti-Lehrbuch-Trivialität, tiefere Argumentprüfung und manuell gesetzte Endnoten
 
 - [SOURCE_FIDELITY_R3.md](SOURCE_FIDELITY_R3.md) — Originale, Bearbeitungen, Zitate und Versionskorrekturen sauber unterscheiden
+
+- [TECH_ANTHROPOLOGY_R4.md](TECH_ANTHROPOLOGY_R4.md) — neuer Falltest für Technikethik, Anthropologie und Verantwortlichkeit ohne pauschale Mensch/Maschine-Dichotomie
 
 ## Datenschutz und Rechte
 
