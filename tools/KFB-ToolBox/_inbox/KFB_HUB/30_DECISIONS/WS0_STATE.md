@@ -3,7 +3,8 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 
 
 ## 0 · Stand 29.10. abends (Register bis V-1046) – zuerst lesen
-- **Fokus bis So 1.11. 20 Uhr (V-1041):** WS1-Integrationsblock hat Vorrang; keine neuen Nebenaufträge; Kleinkorrekturen genau eine Runde; Gate-Prüfer nach §1.4 (sonnet, eine Runde, nur Design/Specs/Architektur) – am 29.10. zu oft und zu breit eingesetzt.
+- **Seit 31.10. (V-1059, V-1060):** Sechs Arbeiten parallel auf eigenen Branches (spike/viertel-r1, module/card-edge-r1, design/kartengebaeude-r1, cast/alle-figuren-r1, game/flight-mib-r1, WS1-Testlink N-004); WSB Rakete, dann K10, Badewanne/Cape; WS0 merged nach So 20 Uhr; Gap-Liste Perplexity `replies/PERPLEXITY_GAP_R1.md`.
+- **Überholt durch V-1060:** Fokus bis So (V-1041): WS1-Integrationsblock hat Vorrang; keine neuen Nebenaufträge; Kleinkorrekturen genau eine Runde; Gate-Prüfer nach §1.4 (sonnet, eine Runde, nur Design/Specs/Architektur) – am 29.10. zu oft und zu breit eingesetzt.
 - **Kanal WS1 (V-1024):** Branch `comms/ws0-ws1` im privaten Repo, Worktree `~/kfb-ws0/comms-wt`; nur auf Georgs Zuruf lesen, kein Polling. Stand: Q-001–Q-008 beantwortet bzw. zur Kenntnis, N-001–N-003 gesendet.
 - **WSB (Mac mini, „Blender-Jobs für KFB“, Adresse per ListAgents holen):** B40 r7 gestoppt, Kritiker 5,1 REWORK (V-1051), Neuansatz nach So. Nach So außerdem: K10 Gewehre/Schilde (Shotgun 1H + Schild), Badewanne R6/Cape-Bestand, Rakete. Jetpack r2e nicht bestanden, r2d bleibt.
 - **Spielrichtung (V-1049, 30.10.):** Karten und Weltwissen zuerst, Fluff Nebensache, Leben und Fluff getrennt. Intake der übrigen Bausteine aus PR 460 nach So.

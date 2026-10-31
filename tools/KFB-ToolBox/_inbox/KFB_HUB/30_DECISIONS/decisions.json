@@ -15388,6 +15388,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-1060",
+   "date": "2026-10-31",
+   "area": "Prozess",
+   "verdict": "DECISION",
+   "text": "Sechs Arbeiten parallel gestartet (Georg 31.10. „ja, alle sechs“, hebt V-1041 auf; Grenze bleibt nur: WS1 hält game/integration-r2 bis So 20 Uhr): Mess-Spike spike/viertel-r1; Kartenkante und Kartenbild module/card-edge-r1; WS-Design TUNE 3 auf design/kartengebaeude-r1; alle Figuren cast/alle-figuren-r1; Jetpack-Rauch, Flug, MiB game/flight-mib-r1; WS1-Testlink mit allen Schaltern (Kanal N-004). Eigene Branches von game/integration-r2, Merge durch WS0 nach Übergabe. Rückgaben nur als Blatt, Clip oder Messwerte.",
+   "values": {},
+   "owner": "WS0",
+   "check": "je Rückgabe",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Sperre war zu breit; Arbeit auf eigenen Branches stört WS1 nicht, und das Wochenbudget verfällt sonst.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
