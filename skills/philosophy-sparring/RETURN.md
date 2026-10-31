@@ -1,3 +1,18 @@
+# CURRENT RETURN · Standalone P1 · 2026-10-31
+
+Owner: existing philosophy-sparring content owner. User authorized standalone Site setup in Work.
+Repo: georg-doc/kayfabizarro
+Branch: planning/philosophy-sparring-webchat-mvp-2026-10-31
+PR: #463, unmerged. Prior verified head: d936f78587bf24cf7d3893459bbb9746b5dd1bd8.
+
+A private P1 entry surface was built and native deployment reported success. All private destination URLs, IDs and source-repository details remain outside this public repository.
+Features: German conversation-mode selection, question/source input, canonical public R9 prompt preview/copy/export, session-note export and clear inputs. No manuscripts, private analysis or private Drive links included. Inputs remain in page memory. Explicitly a launch/copy experience, no model backend.
+Checks: JavaScript syntax check passed; source packaging/push and native private deployment succeeded. Browser interactions, responsive screenshots, clipboard/download behavior and Free visitor rights remain unverified. No human acceptance or model-dialogue acceptance. No KFB runtime integration, main merge or public access change.
+Changed Site files (private source): dist/index.html, dist/app.js, dist/starter.json, .openai/hosting.json. Public change: this Return.
+Next gate: verify actual browser interactions and authorized Free visitor access, then evaluate supported P2 model runtime.
+
+---
+
 # RETURN · Philosophischer Sparringspartner v0.10 R9
 
 Date: 2026-10-31
