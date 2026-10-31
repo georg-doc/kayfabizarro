@@ -162,3 +162,6 @@ Hub offen: Verteilungs-Muster (q353), Brick-Fish (q354). Sky-Card TUNE bei WS-De
 
 ## Stand 31.10. Nacht (V-1121, V-1122)
 Hub offen: Karten-Schwelle (q355). Reparaturrunden laufen: WS-Verteiler (Muster mit Bezug zu Objekten und Gelände), WSB (Fisch r4), Figuren (Augen-Verankerung global), WS-Design (Sky-Card-Umriss). WS1 nach Q-030: ufo-licht, himmel plus Planeten, cast, Stufe C; N-026 gesendet. Georgs Screenshot zu den Lidern fehlt.
+
+## Stand 31.10. Nacht, Reihenfolge (V-1126, V-1127)
+WS1 nach Merge-Runde: Kartenzonen (N-028), dann Joyride, Site (V-1123). WSA work: Waffen-Effekte, Brief im Hub, Georg gibt ihn weiter. Rückgaben offen: WS-Verteiler, Figuren (Augen, Fisch r4), WS-Design (Sky-Card-Umriss).

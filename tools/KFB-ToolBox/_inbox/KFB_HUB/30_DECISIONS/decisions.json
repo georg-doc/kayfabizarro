@@ -16378,6 +16378,36 @@
    "applies": "WS1 Merge-Runde"
   },
   {
+   "id": "V-1126",
+   "date": "2026-10-31",
+   "area": "Kampf",
+   "verdict": "PLAN",
+   "text": "Waffen-Effekte (Georg 31.10.): Mündungsfeuer aus dem Kit-Modell extrem dunkel, Ursache im Code: normal beleuchtetes Material, 0,06 s. Soll hell flammig lesen, Burst, Gatling-Folge und große Rakete mit Deformer, Rückstoß, Action-Shooter-Standard, je Waffenart eigener Effekt; gleiche Schnittstelle später für Düsen der Dieselpunk-Antriebe. WS0-Entscheidung: Auftrag an WSA work (Bestand muzzle-fx, Combat Arena) hinter fx=r2; WS-Ausnahme zu V-385: selbstleuchtend und ein gemeinsames kurzes Lichtsignal nur beim Schuss des Spielers. Rückstoß nur als Slot-Zug, Modelle und Clips unverändert (V-574).",
+   "values": {},
+   "owner": "WSA work · WS1",
+   "check": "Einzelbilder und Videos je Waffe",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Feuer muss sein eigenes Licht haben; ein beleuchtetes dunkles Modell liest nie als Flamme.",
+   "applies": "sofort bei WSA"
+  },
+  {
+   "id": "V-1127",
+   "date": "2026-10-31",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "Kartenzonen als spielbare Grundlogik (Georg 31.10.): Zufallsbegegnungen über Kartenzonen, Ziel-Pfeil zeigt die nächste Zone, Zonen unterscheiden sich in Anatomie und Farbe nach Biom, HyperNorm je Zone zeigt die Karten des Decks, einzelne Karten im Gelände, testbar mit Wasser und Begegnungen. WS0-Entscheidung: WS1 nach Merge-Runde 1, vor der Joyride-Reihe und vor dem Site-Paket (V-1123); baut auf cardSites V-834, drei Zonenarten als Datentabelle hinter zones=1, unabhängig vom gesperrten feinen Verteilungsmuster.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Einzelbilder, Fahrt-Video, Testfahrt",
+   "source": "Georg 31.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kartensammeln ist die Grundlogik des Spiels, darum kommt der Kreislauf aus Pfeil, Zone und Karte vor weiterer Ausstattung.",
+   "applies": "nach Merge-Runde 1"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
