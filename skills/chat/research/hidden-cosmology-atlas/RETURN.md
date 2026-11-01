@@ -1,3 +1,7 @@
+## 2026-11-01 · Unlimited Hangout conversation card
+
+[Wald an der Börse?](packages/unlimited-hangout-conversation/README.md) · second private Site conversation card. Next source gate: local agreement and actual decision rights in Costa Rica.
+
 ## 2026-11-01 · Fed conversation pilot
 
 [Three-part reader and method comparison](packages/fed-conversation-pilot/README.md). One table question, seven local follow-up routes; separate cost calculator and six-perspective reading bench. Next review: try the short answer, one spontaneous question and one pair of lenses in a real conversation.
