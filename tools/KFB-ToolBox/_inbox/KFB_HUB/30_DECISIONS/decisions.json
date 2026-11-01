@@ -17803,6 +17803,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1221",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Probe Baum umklappen @0fa35088, klappen=1 hinter place=r3: Baeume klappen um und federn zurueck, Schatten mit, acht Plaetze, Kosten im Rauschen, Mini bestellt. Figur und Bueschen nicht gezeigt, Vergleich ohne Schalter fehlt, Kamera steckt bei Halt in dichten Kronen. Hub-Frage.",
+   "values": {},
+   "owner": "WS-Verteiler",
+   "check": "WFC_BEWEIS_R9_KLAPPEN",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg entscheidet am Clip, ob Interaktivitaet Menge ersetzt (V-1217).",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
