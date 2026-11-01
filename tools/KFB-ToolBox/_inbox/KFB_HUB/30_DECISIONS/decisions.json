@@ -17908,6 +17908,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1228",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "PLAN",
+   "text": "WS-Verteiler Klaerung: Baeume und Felsen haben unter place=r3 keine Kollider, man faehrt durch. Kontakt beim ersten Beruehrungspunkt machbar, mit Schwelle nachgeben oder prallen, Baum richtet sich erst auf, wenn der Platz frei ist; Eingriffe in Wagen, Figur, Kamera bei WS1. Hub-Frage nachgeben, fest oder nach dem MVP; WS0 empfiehlt nachgeben. Sterne und Himmel als ein Stand @a8596d0f (N-064).",
+   "values": {},
+   "owner": "WS0",
+   "check": "q396, N-064",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Feste Baeume wuerden dichte Gruppen zur Wand machen; Georg entscheidet Gefuehl und Zeitpunkt.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
