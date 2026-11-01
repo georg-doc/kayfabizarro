@@ -17638,6 +17638,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1210",
+   "date": "2026-11-01",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "Explosion Grundstand @73711774: Papierzacken raus, Feuer rund eine Sekunde im Bild, Haenger erste Explosion 88 bis 115 ms bei niedriger Last, Feuerblatt beim Laden auf 2048. Grenze: Spielkamera schneidet die Saeule oben, Kamera bleibt unveraendert. Hub-Frage mit oder ohne Papierfetzen. Offen: Tonposition am neuen Ort, Explosion am Baum im Bild, Vergleich ohne Schalter.",
+   "values": {},
+   "owner": "Flug-Sitzung",
+   "check": "replies/WAFFEN_FX_R1/RETURN.md",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg entscheidet Papier am Vergleich; die Kameragrenze wird benannt, nicht kaschiert.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

@@ -58,3 +58,10 @@ Abweichung: Feuer vormultipliziert deckend statt Screen, auf der hellen Wüste w
 **Spielkamera:** Blickt steil nach unten, von der Säule bleibt ein Band am oberen Rand. Das ist kein Bildfehler, dafür braucht es eine Entscheidung zur Kamera.
 Grafikspeicher rund 72 MB (3072² und 2048² mit Mipmaps), Download 2,1 MB. Blätter liegen noch nicht in `assets/private`.
 Kritiker einmal vor den letzten Änderungen: FAIL zu Papierbild, Staffelung, Fuß, Staub, Brocken, Fetzen, Spielkamera. Geändert außer Spielkamera, er hat den Endstand nicht gesehen.
+
+## Explosion, Runde nach Georgs Urteil (V-1184)
+Clips mit Ton: `Explosion_Grundstand.mp4`, `Explosion_mit_Papier.mp4` (Spielkamera, unverändert, Figur steht), `Explosion_Seite.mp4`. Papierzacken und Schein sind raus. Feuer, Rauch, Staub, Brocken; Ort: Baum, wenn einer getroffen ist, sonst 4,5 m vor der Figur, Größe 0,5 (rund 16 m breit). Fetzen aus neun echten Kartenbildern hinter dem Datenschalter `paper`.
+Spielkamera: 3 m hoch, 24° nach unten, oberer Bildrand nur rund 3,5° über dem Horizont. Sichtbare Höhe an einem Ort rund 3 m + 6 % der Entfernung, eine ganze Säule passt nicht ins Bild.
+Hänger: Feuerblatt beim Laden auf 2048 verkleinert. Erste Explosion jetzt 88 bis 115 ms bei niedriger Auslastung (vorher 157 bis 187, unter Last 280 bis 500), danach unter 20 ms, ein Seitenlauf ganz ohne. Grafikspeicher rund 44 MB (gerechnet).
+Kritiker einmal, auf dem Stand vor der letzten Änderung, nicht auf dem Endstand.
+Nicht geprüft: Explosion am Baum im Bild, Vergleich ohne Schalter, Site-Probe, Mac-mini-Messung lag noch nicht vor. In `assets/private` fehlen `Explosion_Feuer_6x6.webp`, `Explosion_Rauch_8x8_2048.webp`, `Explosion_Papier_Atlas.webp`.
