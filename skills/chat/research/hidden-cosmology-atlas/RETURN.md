@@ -1,3 +1,7 @@
+## 2026-11-01 · WCC-Akteursszene und Logenvergleich
+
+[Quellenpaket, Szenendaten und Leseansichten](packages/actor-network-pilot/README.md). WCC 1952/54/69 und anschließender Vergleich von sechs Organisationen. Nächste Gegenprobe: P2-Listeneintrag, Aussage und unabhängiger Beleg.
+
 ## 2026-11-01 · Unlimited Hangout conversation card
 
 [Wald an der Börse?](packages/unlimited-hangout-conversation/README.md) · second private Site conversation card. Next source gate: local agreement and actual decision rights in Costa Rica.
