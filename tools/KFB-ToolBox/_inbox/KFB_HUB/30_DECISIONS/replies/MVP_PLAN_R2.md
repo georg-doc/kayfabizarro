@@ -24,6 +24,7 @@ Danach Testfahrt-Adresse an Georg.
 - Deck-Moment beim Abschluss einer Zone, Kartenwind, Klingende Welt.
 - Pistole und Blaster in Schichten (Flug-Sitzung), Hänger der ersten Explosion.
 - Ladezeit vor dem Site-Paket.
+- Sternenhimmel als Probe bei WS-Himmel (`stars=1`), blockiert nichts.
 
 **Volumen (Georg 01.11.):** WS1 darf morgen über 50 % gehen. Reicht es, kommen vor dem Site-Paket zuerst Nebelschwaden, dann Geysir mit Konfettikanone.
 
@@ -31,7 +32,8 @@ Danach Testfahrt-Adresse an Georg.
 Site-Paket (V-1123), dazu Werkzeug „Testen und Messen“ (WSA). Abnahme: Georg spielt, Kritiker erste 10 Minuten.
 
 ## Nach dem MVP, eingeplant, nicht vergessen
-- **Himmel:** Augen als instanzierte 3D-Augen (WS-Himmel, erst Konzeptseite mit Vergleichsbildern), `worldPulse`, Story-Stimmung.
+- **Zeit und Geschichte:** Uhr und Datum als Prop, Zeitreise-Modus mit historischen Decks, Historiker-Prop mit Recherche-Atlas (KONZEPT_STERNE_ZEIT_HISTORIKER_R1).
+- **Himmel:** Sternbilder über Teleskop-Prop, bunte Sterne; Augen als instanzierte 3D-Augen (WS-Himmel, erst Konzeptseite mit Vergleichsbildern), `worldPulse`, Story-Stimmung.
 - **Wetter Teil 2 bis 4:** mit Nebelschwaden Option A, Windstoß über Prop, Geysir Option A (WS-Himmel Konzept, Plätze über den einen Verteiler).
 - **Nacht:** Nachtebene, Lagerfeuer, Regel für lokale und temporäre Lichter, Leuchtstab, Leuchtkugel.
 - **Spiel:** Kontakt-Wackeln, Postkarten-Modus, Karten-Tratsch, Geschenke und Streiche (WS-NPC), Konfetti-Regen mit Wetter.
