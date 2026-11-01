@@ -49,3 +49,12 @@ Geteilte Dateien mit Absicht: `kfbAudio.js`, `AudioHost.jsx`, `M1World.jsx`, `or
 
 ## Nachtrag Übergabe Ton (Georg PASS, V-1184)
 Stand `game/waffen-fx-r1` @659c793c, Stamm @6f3fdaf7 nachgeholt. Grün nach dem Nachholen: `fxR2-off-route`, `repair-audio-ownership` (60 von 60 Klängen geladen), `combatFxR2`, `combatRepair`, `asmrMap`, `contract-static`, Site-Build mit `combat: copied`, 60 Dateien, Lauf gegen den Site-Stand mit `fx=r2` spielt die drei Schuss-Schichten. Abgleich: 60 von 60 Klängen gleich mit `assets/private` @137600de. Ohne Schalter: Vergleich vor dem Nachholen gegen @6b683955, Programmzahl und Bild im Rauschen des Ausgangs.
+
+## Explosion in Schichten (Georgs Entscheidung, V-1184)
+Stand @ca62e6ba, `fx=r2`. Clips mit Ton: `Explosion_Seite.mp4`, `Explosion_Spielkamera.mp4`. Sie stammen vom Stand kurz vor dem letzten Commit; danach änderte sich nur das unsichtbare Vorladen.
+Aufbau: Blitz und Papierzacken (bedruckt, weißer Schnittrand, dunkler Schatten) 0,2 bis 0,3 s vorn, zugleich Feuer als Bildfolge über Rauch als Bildfolge, Tafel zum Spieler gedreht, Bodenpunkte aufeinander, Fuß weich ausgeblendet, Staubring, Brocken, Fetzen, Funken. Gitter, Größe, Bodenpunkt, Zeit in `src/data/combat/explosionSheets.r1.json`.
+Abweichung: Feuer vormultipliziert deckend statt Screen, auf der hellen Wüste wusch Screen es rosa aus. Feuer beginnt 0,18 s vor dem Rauch im Blatt, kleiner dunkler Anfang fällt weg, die ersten 0,35 s laufen 2,6-fach. Säule 35 m breit, 11 m vor der Figur.
+**Offen:** Erste Explosion hängt 280 bis 500 ms (Auslastung des Rechners 30 bis 80), die zweite nicht, ohne Schalter nicht. Ursache sitzt in der ersten Bildfolge. Vorladen läuft nachweislich, ausgeschlossen: Programm, Mipmaps, Größe beim Vorladen. Nicht gemessen auf ruhigem Rechner.
+**Spielkamera:** Blickt steil nach unten, von der Säule bleibt ein Band am oberen Rand. Das ist kein Bildfehler, dafür braucht es eine Entscheidung zur Kamera.
+Grafikspeicher rund 72 MB (3072² und 2048² mit Mipmaps), Download 2,1 MB. Blätter liegen noch nicht in `assets/private`.
+Kritiker einmal vor den letzten Änderungen: FAIL zu Papierbild, Staffelung, Fuß, Staub, Brocken, Fetzen, Spielkamera. Geändert außer Spielkamera, er hat den Endstand nicht gesehen.

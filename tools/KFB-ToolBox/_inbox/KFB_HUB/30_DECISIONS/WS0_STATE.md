@@ -173,3 +173,6 @@ Nachtrag 31.10.: Sky-Card nach V-1142, V-1143 bei WS-Design (Modell-Seite, Stric
 
 ## Stand 01.11. bis V-1196
 Hub offen: Steinchen hell oder voll, Verteilung dicht genug. Kartenbilder Ja (Kartenkante baut Sperr-Regel, Uebergabe folgt). Waffen-Ton PASS und uebergeben (N-048), Bild: Schichtlogik V-1194, WSB rendert auf dem Mini, Flug-Sitzung wartet. Mini-Messung Verteiler nach WFC_BEWEIS_R7/MINI. Kartenzonen zones=1 Standard in naechster Runde. Warten auf: WS-Himmel, Mini, Kartenkante, WS1 Testfahrt.
+
+## Stand 01.11. bis V-1204
+Plan replies/MVP_PLAN_R2.md. N-051 an WS1: Teil 1 schliessen, Merge-Runde 3, Spielchronik. Hub offen: Explosion in Schichten. Blaetter nach assets/private pushen. Papierkorb-Gang: WOLKEN_R1, WFC_BEWEIS R2 bis R6 verschoben, Georg leert. Worktrees stale: spike, nature, cd-r3, streetplan, wissen, alles gepusht. Ueberholt: wsa/combat-vfx-r2-*, PR 48 mit Merge von waffen-fx schliessen.
