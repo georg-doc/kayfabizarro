@@ -1,3 +1,9 @@
+## 2026-11-01 · Rhodes / Milner / Round Table
+
+Neuer Quellenraum: https://kfb-research-atlas.frizzlebob.chatgpt.site/rhodes.html
+Paket: packages/rhodes-milner-round-table/README.md; rhodes.html; rhodes-network.json.
+16 Entitäten / 9 Beziehungen, Quigley und historische Gegenprüfung, gesellschaftliche Perspektive. Durham GRE/B191/1 als neues konkretes Findmittel; Originale noch offen. Finanzierung Round Table und anonyme Autorschaft bleiben die nächste Gegenprobe. Private Site veröffentlicht, Quelle 94129704d1bca9b2f718b9fcb94cdc7f5be4761d; HTML-Anker und JSON geprüft. Kein Spielcode und kein Merge.
+
 ## 2026-11-01 · Einmalige Mittagsprüfung
 
 [Maletti: Gerichtsrede zu einer Quittung von 1979](packages/maletti-flip/README.md) und [WCC: Prager Bestandskennung 100/35](packages/actor-network-pilot/README.md). Beweisstück und tschechoslowakischer Einzelakt bleiben einzusehen. Der Lauf endet an diesen beiden konkreten Beschaffungsschritten.

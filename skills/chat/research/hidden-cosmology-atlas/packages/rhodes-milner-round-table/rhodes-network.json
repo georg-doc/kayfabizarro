@@ -1,0 +1,274 @@
+{
+  "schema": "kfb.atlas.case-network/1",
+  "case_id": "rhodes-milner-round-table",
+  "date": "2026-11-01",
+  "nodes": [
+    {
+      "id": "rhodes",
+      "label": "Cecil Rhodes"
+    },
+    {
+      "id": "milner",
+      "label": "Alfred Milner"
+    },
+    {
+      "id": "trust",
+      "label": "Rhodes Trust"
+    },
+    {
+      "id": "kindergarten",
+      "label": "Milners Kindergarten"
+    },
+    {
+      "id": "curtis",
+      "label": "Lionel Curtis"
+    },
+    {
+      "id": "kerr",
+      "label": "Philip Kerr / Lord Lothian"
+    },
+    {
+      "id": "dawson",
+      "label": "Geoffrey Robinson / Dawson"
+    },
+    {
+      "id": "brand",
+      "label": "Robert Brand"
+    },
+    {
+      "id": "roundtable",
+      "label": "Round-Table-Bewegung"
+    },
+    {
+      "id": "journal",
+      "label": "The Round Table · Zeitschrift"
+    },
+    {
+      "id": "chatham",
+      "label": "Chatham House / BIIA–RIIA"
+    },
+    {
+      "id": "inquiry",
+      "label": "The Inquiry"
+    },
+    {
+      "id": "cfr",
+      "label": "Council on Foreign Relations"
+    },
+    {
+      "id": "quigley",
+      "label": "Carroll Quigley"
+    },
+    {
+      "id": "colonized",
+      "label": "Kolonialisierte Bevölkerungen"
+    },
+    {
+      "id": "majestic",
+      "label": "Treffen im Hotel Majestic, 1919"
+    }
+  ],
+  "sources": [
+    {
+      "id": "will",
+      "title": "Rhodes · Testament und Nachtrag",
+      "url": "https://www.rhodeshouse.ox.ac.uk/media2/nx4f5yks/willandcodicils.pdf",
+      "locator": "Testament 1.7.1899; Nachtrag 11.10.1901, Ernennung Milners",
+      "status": "Primärtext als Edition · Text gelesen"
+    },
+    {
+      "id": "rt",
+      "title": "Round Table · Jahrhundertauswahl",
+      "url": "https://api.pageplace.de/preview/DT0400.9781136964367_A25777419/preview-9781136964367_A25777419.pdf",
+      "locator": "Vorwort und Einleitung, Druck-S. 1–4",
+      "status": "Historischer Rückblick aus dem Umfeld der Zeitschrift"
+    },
+    {
+      "id": "majestic",
+      "title": "Katharina Rietzler · Hotel Majestic",
+      "url": "https://www.chathamhouse.org/2019/05/hotel-majestic-and-origins-chatham-house",
+      "locator": "Absätze zum Treffen vom 30.5.1919",
+      "status": "Historikerin auf der Website der Institution"
+    },
+    {
+      "id": "ch",
+      "title": "Chatham House · Institutionsgeschichte",
+      "url": "https://www.chathamhouse.org/about-us/our-history",
+      "locator": "Einträge 1920, 1922 und 1926",
+      "status": "Retrospektive institutionelle Selbstdarstellung"
+    },
+    {
+      "id": "cfr",
+      "title": "George Gavrilis · CFR, A Short History",
+      "url": "https://www.cfr.org/sites/default/files/pdf/cfrcentennialbook.pdf",
+      "locator": "Druck-S. 4–9",
+      "status": "Vom CFR publizierte Institutionsgeschichte"
+    },
+    {
+      "id": "quigley",
+      "title": "Carroll Quigley · The Anglo-American Establishment",
+      "url": "https://www.voltairenet.org/IMG/pdf/1_Carroll_Quigley_-_The_Anglo_American_Establishment.pdf#page=33",
+      "locator": "1981; hier Neusatz-PDF S. 2–3, 33–35, 266–267",
+      "status": "Autorenperspektive · kein geprüftes Druckfaksimile"
+    },
+    {
+      "id": "malcomson",
+      "title": "Scott Loomis Malcomson · Cambridge-Dissertation 2024",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/38cfdb6b-79bc-42bd-849c-2b16fabdf840/content#page=280",
+      "locator": "Abstract und Druck-S. 273–276; Quigley in Fn. 8 auf S. 275",
+      "status": "Archivgestützte Forschung · Text gelesen"
+    },
+    {
+      "id": "van-schoor",
+      "title": "W. P. van Schoor · Vortrag 5.10.1950",
+      "url": "https://sahistory.org.za/archive/document-51-w-p-van-schoor-origin-and-development-segregation-south-africa-j-abrahamse",
+      "locator": "Passagen zu Glen Grey Act, Bergbau und Union",
+      "status": "Historische oppositionelle Analyse, edierter Auszug"
+    },
+    {
+      "id": "rhodes-history",
+      "title": "Rhodes Trust · Who was Rhodes?",
+      "url": "https://www.rhodeshouse.ox.ac.uk/impact-legacy/legacy-equity-inclusion/who-was-rhodes/",
+      "locator": "Absätze über Vermögen, BSAC und Lobengula",
+      "status": "Heutige institutionelle Selbstkritik"
+    },
+    {
+      "id": "archive",
+      "title": "Round Table · Archivzugang",
+      "url": "https://www.commonwealthroundtable.co.uk/commonwealth/from-the-archive-2/",
+      "locator": "Absatz zur anonymen Autorschaft und Anhang F",
+      "status": "Findhinweis des Herausgebers"
+    },
+    {
+      "id": "may",
+      "title": "Alexander May · The Round Table, 1910–66",
+      "url": "https://ora.ox.ac.uk/objects/uuid:ee7ebd01-f085-44e9-917b-98d21a0f4206",
+      "locator": "Oxford DPhil 1995; Anhang F als nächster Zugang",
+      "status": "Volltextzugriff in diesem Lauf gescheitert"
+    },
+    {
+      "id": "duncan",
+      "title": "Duncan Papers · University of Cape Town",
+      "url": "https://www.atom.lib.uct.ac.za/index.php/duncan-papers",
+      "locator": "BC294; Korrespondenz Duncan–Curtis",
+      "status": "Suchindex-Fund; Katalogaufruf gescheitert"
+    }
+  ],
+  "edges": [
+    {
+      "source": "rhodes",
+      "target": "milner",
+      "relation": "ernannte zum Testamentsvollstrecker und Treuhänder",
+      "date": "1901-10-11",
+      "evidence_id": "will",
+      "status": "Urkundentext",
+      "rationale": "Nachtrag statt bloßer Namensnähe.",
+      "revision_test": "Eine abweichende gültige Testamentsfassung."
+    },
+    {
+      "source": "kindergarten",
+      "target": "roundtable",
+      "relation": "Mitglieder bildeten den organisatorischen Kern",
+      "date": "1909–1910",
+      "evidence_id": "rt",
+      "status": "Historische Rekonstruktion",
+      "rationale": "Mehrere Personen aus der südafrikanischen Verwaltung setzten ihre Kooperation fort.",
+      "revision_test": "Korrespondenz zu Initiatoren und tatsächlicher Teilnahme."
+    },
+    {
+      "source": "kerr",
+      "target": "journal",
+      "relation": "war erster Herausgeber",
+      "date": "ab 1910",
+      "evidence_id": "rt",
+      "status": "Historische Rekonstruktion",
+      "rationale": "Publizistische Funktion.",
+      "revision_test": "Redaktionsunterlagen."
+    },
+    {
+      "source": "roundtable",
+      "target": "journal",
+      "relation": "publizierte politische Positionen",
+      "date": "ab 1910",
+      "evidence_id": "rt",
+      "status": "Historische Rekonstruktion",
+      "rationale": "Bewegung und Publikation haben unterschiedliche Gegenstandstypen.",
+      "revision_test": "Protokoll einer konkreten Redaktion."
+    },
+    {
+      "source": "curtis",
+      "target": "majestic",
+      "relation": "versammelte britische und amerikanische Teilnehmer",
+      "date": "1919-05-30",
+      "evidence_id": "majestic",
+      "status": "Institutionell überlieferter Gründungsvorgang",
+      "rationale": "Treffen am Rand der Friedenskonferenz.",
+      "revision_test": "Zeitgenössisches Sitzungsprotokoll."
+    },
+    {
+      "source": "majestic",
+      "target": "chatham",
+      "relation": "gab Anstoß zur Institutsgründung",
+      "date": "1919–1920",
+      "evidence_id": "ch",
+      "status": "Institutionelle Rückschau",
+      "rationale": "Britisches Institut eröffnet am 5.7.1920.",
+      "revision_test": "Gründungsprotokoll und Satzung."
+    },
+    {
+      "source": "inquiry",
+      "target": "cfr",
+      "relation": "Angehörige beteiligten sich an der Gründung",
+      "date": "1921",
+      "evidence_id": "cfr",
+      "status": "Institutionelle Rückschau",
+      "rationale": "Verbindung mit einem eigenen New Yorker Kreis aus Wirtschaft und Recht.",
+      "revision_test": "Mitglieder- und Gründungsakten."
+    },
+    {
+      "source": "chatham",
+      "target": "cfr",
+      "relation": "gemeinsamer Gründungsanstoß, getrennte Institutionen",
+      "date": "1919–1921",
+      "evidence_id": "cfr",
+      "status": "Institutionelle Rückschau",
+      "rationale": "Ursprünglicher gemeinsamer Plan wurde geändert.",
+      "revision_test": "Wechselseitige Korrespondenz und Satzungen."
+    },
+    {
+      "source": "quigley",
+      "target": "roundtable",
+      "relation": "deutete als Teil einer länger bestehenden Milner Group",
+      "date": "Manuskript 1949 / Buch 1981",
+      "evidence_id": "quigley",
+      "status": "Zugeschriebene Interpretation",
+      "rationale": "Zugehörigkeit wird teils aus langjähriger Zusammenarbeit erschlossen.",
+      "revision_test": "Einzelne behauptete Mitgliedschaft an eigenständigem Beleg prüfen."
+    }
+  ],
+  "conceptual_neighbors": [
+    {
+      "target_case": "p2-maletti-0499",
+      "type": "Vergleich der Mitgliedschaftsbelege"
+    },
+    {
+      "target_case": "wcc-walzwerk",
+      "type": "Vergleich von Verfügungsmacht und Genehmigung"
+    }
+  ],
+  "archival_leads": [
+    {
+      "repository": "Durham University Library",
+      "reference": "GRE/B191/1",
+      "url": "https://n2t.durham.ac.uk/ark:/32150/s1kk91fk60d.xml",
+      "items": [
+        "Milner to Grey, 2 March 1902",
+        "Rhodes Trustees minutes, 5 May 1902, nos. 1–28",
+        "Rhodes Trustees minutes, 29 May 1902, nos. 29–40",
+        "Stead to Hawksley, 5 June 1902"
+      ],
+      "access_status": "catalogue_read_originals_not_examined",
+      "question": "Welche Befugnisse und Auswahlregeln wurden tatsächlich ausgeübt? Keine Aussage über spätere Round-Table-Finanzierung."
+    }
+  ]
+}
