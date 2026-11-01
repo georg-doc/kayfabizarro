@@ -74,3 +74,11 @@ Größen und Farben sind Daten: `sizes`, `colors`, `defaults` in `explosionSheet
 Tonposition folgt dem Explosionsort, Pegel bis 14 m unverändert. Höhe nimmt jetzt die echte Geländeoberfläche, vorher steckte die Explosion am Hang im Boden.
 Kritiker fünfmal, zuletzt auf dem Stand vor der letzten Anpassung: NEIN wegen Unterseiten zu violett, Teile fliegen aus dem Bild, Teile liegen bis 6,5 s. Die ersten beiden angepasst, die Liegezeit ist Absicht. Den Endstand hat er nicht gesehen, nur ich.
 Rauchfarbe und Papier-Zeitpunkt hat er ebenfalls beanstandet, unverändert gelassen, weil von Georg abgenommen.
+
+## Mündungsfeuer, Runde V-1214
+Clips mit Ton, Figur steht: `Pistole_Spielkamera_R3.mp4`, `Blaster_Spielkamera_R3.mp4`, `Pistole_Seite_R3.mp4`, `Blaster_Seite_R3.mp4`.
+Pistole: drei ungleiche Flammen aus dem Explosions-Feuerblatt, dunkler Rauch aus dem Rauchblatt, Funken. Blaster: Strahl im Shader, weiß bis blau, dazu wenig Dampf. Kein neues Blatt. `src/modules/muzzleSheets.js`, Rezepte in `src/data/combat/muzzle.r1.json`. Die Klumpen und Stacheln aus `shotBurst.js` sind für beide Waffen raus. Schusslicht stärker. Ton unverändert.
+Aus der Spielkamera liegt die Mündung hinter der Figur, ein Strahl nach vorn wird stark verkürzt. Deshalb sind die Flammen im Spiel größer, als eine Pistole es wäre.
+Kritiker einmal vor der letzten Anpassung: NEIN wegen zu kurzer Flamme, Rauch auf dem Kopf, dünnem Strahl. Flamme und Strahl danach länger, Rauch kleiner und dunkler. Den Endstand hat er nicht gesehen, nur ich.
+
+Korrektur Pistole nach WS0: Feuer nur auf der Mündungsseite, rund 2 m statt 4 m, kein Fächer, nichts vor oder über dem Kopf. Neu: `Pistole_Spielkamera_R3.mp4`, `Pistole_Spielkamera_R3.jpg`. `Pistole_Seite_R3.mp4` zeigt noch die große Fassung. Tests danach nicht wiederholt, nur Pistolen-Daten, Rauchrichtung und Schein geändert.

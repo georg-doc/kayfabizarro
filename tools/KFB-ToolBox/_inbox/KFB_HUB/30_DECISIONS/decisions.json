@@ -17878,6 +17878,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1226",
+   "date": "2026-11-01",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "Muendungsfeuer @058b5917: eigene Simulation scheiterte (Wirbelring), Pistole aus fruehen Feuerzellen, Blaster als Strahl im Shader. Erste Fassung wirkte wie brennender Kopf, von WS0 zurueckgegeben. Muendung liegt in der Pose hinter Kopf und Schulter; Hub-Frage, Haltung als Option. An WS1 N-062.",
+   "values": {},
+   "owner": "Flug-Sitzung",
+   "check": "replies/WAFFEN_FX_R1",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sichtbarkeit haengt an der Haltung, nicht an groesseren Flammen.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
