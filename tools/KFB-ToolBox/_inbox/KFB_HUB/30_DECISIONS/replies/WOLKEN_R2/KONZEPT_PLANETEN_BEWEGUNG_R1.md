@@ -22,7 +22,7 @@ Videos und Bilder: `aufgang_puls.webm`, `planet_toenungen.jpg`.
 - **Später die ganze Welt:** Gras, Fluff, Lampen hängen sich an dieselbe Zahl.
 
 ## 3 · Tönung
-- **So läuft es:** Das Bild wird zur Palettenrolle des Bioms gemischt, seine Helligkeit bleibt (`bodies.tint`: Standard `land`, Rolle `bloom`, Anteil 0,3; weitere Fassungen `eigen`, `warm`, `kuehl`, Wahl je Szene über `scenes`). Das Motiv bleibt lesbar.
+- **So läuft es:** Der Farbton des Bildes wird zur Palettenrolle des Bioms hin gedreht, Helligkeit und Sättigung bleiben (`bodies.tint`: Standard `land`, Rolle `bloom`, Anteil 0,3; weitere Fassungen `eigen`, `warm`, `kuehl`, Wahl je Szene über `scenes`). Das Motiv bleibt lesbar.
 - **Vergleich:** `planet_toenungen.jpg`: ohne, warm, kühl, derselbe Planet an derselben Stelle. Im Bild steht Anteil 0,35.
 - **Geltung:** Nur gemalte Planeten, Nacht-Mond nicht. Shader-Körper bleiben wie sie sind.
 
