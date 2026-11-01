@@ -9,7 +9,8 @@ Vieles ist schon da. Inventur zuerst, in dieser Reihenfolge:
 2. **YouTube-Videos und Songs** je Deck.
 3. **NotebookLM-Notebooks**, die Grundlage vieler Decks waren.
 4. **Deck-Paket** `decks-ssot/` auf `data/kfb-decks-ssot` und die Karten-JSONs.
-5. Eigene Deep-Research-Läufe, nur wo eine Lücke bleibt.
+5. **Vorhandene Dossier-Planung und Booklets:** `replies/DECK_DOSSIER_ARCHITECTURE_R1.md`, Substack-Archiv cancelthiscomic.substack.com/archive, MD-Booklets unter `(DB) CS 2020 Krazy Karnikl/Krazy Kayfabizarro/PACKAGES & BOOKLETS`.
+6. Eigene Deep-Research-Läufe, nur wo eine Lücke bleibt.
 
 Der Substack-Ton ist teils KI-lastig: Absicht und Fakten übernehmen, Text nicht ungeprüft. Stimme: Carny und KnuckleBob aus der FrizzleBob-Stimmvorlage.
 
