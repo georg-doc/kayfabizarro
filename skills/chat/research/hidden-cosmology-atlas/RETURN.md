@@ -1,3 +1,7 @@
+## 2026-11-01 · Named Holstein handover proposal
+
+[Case record](topics/gehlen-german-stay-behind/HOLSTEIN_TRANSFER.md) and [source comparisons](topics/gehlen-german-stay-behind/RESEARCH_NEIGHBOURS.md). March 1956 offer by Lunding traced to a German file via published archival research. Next check: original 01292/01292.e and a German acceptance or implementation record. [Regenauer inventory](topics/gehlen-german-stay-behind/REGENAUER_SOURCE_LINKS.csv) retains 278 link occurrences.
+
 ## 2026-11-01 · German stay-behind handover and Ganser
 
 [Source case](topics/gehlen-german-stay-behind/README.md) · [Comparative author dossier](authors/daniele-ganser.md). From 1956, institutional transfer confirmed. Smith's 1952 statement and Gehlen's 1951 involvement identified. Next evidence gate: a net-specific signed handover record.

@@ -22,3 +22,7 @@ Documentary edges include Gehlen → visited planned radio-base location (GS-02/
 **What would resolve personal authorization?** Locate a contemporary German acceptance memorandum or a bilateral handover protocol identifying the specific net, effective date and signatories. The targeted secondary finding aid is Schmidt-Eenboom and Stoll, *Die Partisanen der NATO*, section “Die Übernahme von ausländisch geführten Netzen,” starting p. 142 in [this edition](https://d-nb.info/1071212737/04). Follow its archival notes to individual BND or Chancellery files and compare the name and date with a sending-service counterpart. The contents page was inspected. This is an archival lead.
 
 Coverage: targeted text inspection of declassified CIA record reproductions, parliamentary answers, the NARA research aid and the linked Ganser material. Printed compilation pages are locators. No manuscript signatures were authenticated.
+
+## Follow-up · named Danish network in Holstein
+
+[Who offered the Toepke network, when and to whom](HOLSTEIN_TRANSFER.md) · [comparative author and case notes](RESEARCH_NEIGHBOURS.md) · [Regenauer link inventory](REGENAUER_SOURCE_LINKS.csv).
