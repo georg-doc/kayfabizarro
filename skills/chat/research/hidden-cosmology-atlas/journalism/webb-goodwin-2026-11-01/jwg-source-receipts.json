@@ -1,0 +1,399 @@
+{
+  "packetId": "ATLAS_BREADTH_C02_JWG",
+  "researchDate": "2026-11-01",
+  "inputGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+  "authorCheck": {
+    "exactHead": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+    "whitneyWebb": "ABSENT",
+    "markGoodwin": "ABSENT",
+    "method": "GitHub contents authors directory fetched"
+  },
+  "sources": [
+    {
+      "sourceId": "JWG-S01",
+      "title": "Sustainably Surveilling and Tokenizing Nature: The Case of O.N.E. Amazon",
+      "url": "https://unlimitedhangout.com/sustainably-surveilling-and-tokenizing-nature-the-case-of-o-n-e-amazon/",
+      "sourceKind": "JOINT_BYLINED_ORIGINAL_REPORTING",
+      "accessScope": "BOUNDED_HTML_PASSAGES",
+      "sourceLocator": "Byline/date; opening; What is O.N.E. Amazon?; Partners",
+      "publicationDate": "2024-08-28",
+      "retrievedDate": "2026-11-01",
+      "independenceGroup": "UNLIMITED_HANGOUT_JOINT_BYLINE",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0
+    },
+    {
+      "sourceId": "JWG-S02",
+      "title": "Satellogic announces $30m strategic investment",
+      "url": "https://satellogic.com/news/press-releases/satellogic-announces-30-million-strategic-investment-from-tether-investments-limited/",
+      "sourceKind": "CORPORATE_PRESS_RELEASE",
+      "accessScope": "HTML_FINANCING_AND_STRATEGY_PARAGRAPHS",
+      "sourceLocator": "Opening note terms; CEO strategy statement",
+      "publicationDate": "2024-04-15",
+      "retrievedDate": "2026-11-01",
+      "independenceGroup": "SATELLOGIC_ISSUER",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0
+    },
+    {
+      "sourceId": "JWG-S03",
+      "title": "Veea investor presentation",
+      "url": "https://www.sec.gov/Archives/edgar/data/1840317/000121390024047544/ea020705801ex99-1_plumacq1.htm",
+      "sourceKind": "CORPORATE_PRESENTATION_IN_SEC_CUSTODY",
+      "accessScope": "HTML_EXTRACTED_SLIDE_TEXT_NOT_IMAGES",
+      "sourceLocator": "Extracted slide labels 29\u201331",
+      "publicationDate": "2024-05-29",
+      "retrievedDate": "2026-11-01",
+      "independenceGroup": "VEEA_ISSUER",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0
+    },
+    {
+      "sourceId": "JWG-S04",
+      "title": "ONE Amazon current product description",
+      "url": "https://oneamazon.com/",
+      "sourceKind": "CORPORATE_PRODUCT_PAGE",
+      "accessScope": "HTML_PRODUCT_AND_FOOTER_DISCLOSURES",
+      "sourceLocator": "Forest lane; footer",
+      "publicationDate": null,
+      "retrievedDate": "2026-11-01",
+      "independenceGroup": "ONE_AMAZON_ISSUER",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0
+    },
+    {
+      "sourceId": "JWG-S05",
+      "title": "Are biodiversity credits just another business-as-usual finance scheme?",
+      "url": "https://news.mongabay.com/2024/03/are-biodiversity-credits-just-another-business-as-usual-finance-scheme/",
+      "sourceKind": "INDEPENDENT_JOURNALISM_LEAD",
+      "accessScope": "SEARCH_INDEX_ONLY_FULL_FETCH_403",
+      "sourceLocator": "No full text read",
+      "publicationDate": null,
+      "retrievedDate": "2026-11-01",
+      "independenceGroup": "MONGABAY",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "JWG-C01",
+      "text": "Authors interpret the project as financial control and surveillance under conservation language.",
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "status": "AUTHOR_INTERPRETATION",
+      "reviewStatus": "UNREVIEWED",
+      "attributedTo": [
+        "whitney-webb",
+        "mark-goodwin"
+      ],
+      "sourceLocator": "Byline/date; opening; What is O.N.E. Amazon?; Partners"
+    },
+    {
+      "claimId": "JWG-C02",
+      "text": "Issuer reports Nettar/Tether secured convertible financing; principal and net proceeds differ.",
+      "sourceIds": [
+        "JWG-S02"
+      ],
+      "status": "ISSUER_TRANSACTION_ASSERTION",
+      "reviewStatus": "UNREVIEWED",
+      "attributedTo": [
+        "Satellogic"
+      ],
+      "sourceLocator": "Opening note terms; CEO strategy statement"
+    },
+    {
+      "claimId": "JWG-C03",
+      "text": "CEO links financing with US and national-security-market strategy.",
+      "sourceIds": [
+        "JWG-S02"
+      ],
+      "status": "ISSUER_STATED_STRATEGY",
+      "reviewStatus": "UNREVIEWED",
+      "attributedTo": [
+        "Satellogic CEO"
+      ],
+      "sourceLocator": "Opening note terms; CEO strategy statement"
+    },
+    {
+      "claimId": "JWG-C04",
+      "text": "Veea presents partnership claims and proposed forest sensing phases.",
+      "sourceIds": [
+        "JWG-S03"
+      ],
+      "status": "CORPORATE_PROPOSAL_NOT_COUNTERPART_VERIFIED",
+      "reviewStatus": "UNREVIEWED",
+      "attributedTo": [
+        "Veea"
+      ],
+      "sourceLocator": "Extracted slide labels 29\u201331"
+    },
+    {
+      "claimId": "JWG-C05",
+      "text": "Current OAC description distinguishes vehicle interests from land title and carbon credits; not yet offered.",
+      "sourceIds": [
+        "JWG-S04"
+      ],
+      "status": "LATER_COMPANY_QUALIFICATION_NOT_INDEPENDENT_COUNTER",
+      "reviewStatus": "UNREVIEWED",
+      "attributedTo": [
+        "ONE Amazon"
+      ],
+      "sourceLocator": "Forest lane; footer"
+    },
+    {
+      "claimId": "JWG-C06",
+      "text": "Current inspected English page credits Whitney Webb and Mark Goodwin.",
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "sourceLocator": "Current page byline/date",
+      "status": "OBSERVED_PUBLICATION_METADATA",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "JWG-C07",
+      "text": "Article hyperlink points to Satellogic financing announcement.",
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "sourceLocator": "Partners passage; financing hyperlink (retrieved link37)",
+      "status": "OBSERVED_PUBLICATION_METADATA",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "JWG-C08",
+      "text": "Article hyperlink points to SEC-hosted Veea investor presentation.",
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "sourceLocator": "Partners/technology passage; presentation hyperlink (retrieved link60)",
+      "status": "OBSERVED_PUBLICATION_METADATA",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "JWG-C09",
+      "text": "Article links ONE Amazon domain; current retrieved content is not established as its 2024 version.",
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "sourceLocator": "What is O.N.E. Amazon? company hyperlink (retrieved link21)",
+      "status": "OBSERVED_PUBLICATION_METADATA",
+      "reviewStatus": "UNREVIEWED"
+    }
+  ],
+  "relations": [
+    {
+      "edgeId": "JWG-E01",
+      "fromEntityId": "whitney-webb",
+      "toEntityId": "source/JWG-S01",
+      "type": "CO_BYLINE",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "claimIds": [
+        "JWG-C06"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "Current page byline/date",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/whitney-webb.md",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    },
+    {
+      "edgeId": "JWG-E02",
+      "fromEntityId": "mark-goodwin",
+      "toEntityId": "source/JWG-S01",
+      "type": "CO_BYLINE",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "claimIds": [
+        "JWG-C06"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "Current page byline/date",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/mark-goodwin.md",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    },
+    {
+      "edgeId": "JWG-E03",
+      "fromEntityId": "source/JWG-S01",
+      "toEntityId": "source/JWG-S02",
+      "type": "CITES",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01",
+        "JWG-S02"
+      ],
+      "claimIds": [
+        "JWG-C07"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "Partners passage; financing hyperlink (retrieved link37)",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    },
+    {
+      "edgeId": "JWG-E04",
+      "fromEntityId": "source/JWG-S01",
+      "toEntityId": "source/JWG-S03",
+      "type": "CITES",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01",
+        "JWG-S03"
+      ],
+      "claimIds": [
+        "JWG-C08"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "Partners/technology passage; presentation hyperlink (retrieved link60)",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    },
+    {
+      "edgeId": "JWG-E05",
+      "fromEntityId": "source/JWG-S01",
+      "toEntityId": "source/JWG-S04",
+      "type": "LINKS_DOMAIN_CURRENT_VERSION_DIFFERS",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01",
+        "JWG-S04"
+      ],
+      "claimIds": [
+        "JWG-C09"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "What is O.N.E. Amazon? company hyperlink (retrieved link21)",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    },
+    {
+      "edgeId": "JWG-E06",
+      "fromEntityId": "source/JWG-S01",
+      "toEntityId": "claim/JWG-C01",
+      "type": "SOURCE_ASSERTS",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceIds": [
+        "JWG-S01"
+      ],
+      "claimIds": [
+        "JWG-C01"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "sourceLocator": "Opening argument and What is O.N.E. Amazon? passages",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+      "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+      "editor": "/root/psi_profiles; metadata integration /root",
+      "publicationDate": "2024-08-28",
+      "eventDate": null,
+      "counterEvidence": [],
+      "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+      "originalSourceScope": "See per-source bounded HTML receipt"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "JWG-Q01",
+      "question": "Trace financing use",
+      "missingOriginal": "Signed instruments and disbursements",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JWG-Q02",
+      "question": "Check counterpart agreements and deployment",
+      "missingOriginal": "Contracts and field audits",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JWG-Q03",
+      "question": "Establish specific rights and consent",
+      "missingOriginal": "Executed contracts and independent community testimony",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JWG-Q04",
+      "question": "Compare instrument editions and outcomes",
+      "missingOriginal": "Archived offers, current terms, ecological baseline and independent outcomes",
+      "status": "OPEN"
+    }
+  ],
+  "externalSourceRefs": [
+    "JWC-S01",
+    "JWC-S02"
+  ],
+  "bylineVersionNote": "Current canonical page names both authors; legacy Spanish-route search rendition credits Mark Goodwin only.",
+  "independentCounterStatus": "Separate BIS/CPMI and CAP original context in context-receipts.json; no independent investigation adjudicating the specific project. Mongabay remains search-only.",
+  "identityExclusion": "One Amazon health research project is not this company.",
+  "coverage": {
+    "authorModules": 2,
+    "jointArticlesBoundedRead": 1,
+    "linkedCorporateOriginalsRead": 3,
+    "sourceIds": 5,
+    "claims": 9,
+    "relations": 6,
+    "questions": 4,
+    "audioMinutes": 0,
+    "pageImages": 0,
+    "bookChapters": 0,
+    "githubWrites": 0
+  },
+  "reviewStatus": "UNREVIEWED",
+  "integrationCorrections": [
+    "Author IDs normalized to existing census slugs.",
+    "JWG-E02 owner points to Goodwin.",
+    "JWG-C06\u201309 provide narrow observed byline/link predicates for E01\u201305; no historical claim upgraded."
+  ]
+}
