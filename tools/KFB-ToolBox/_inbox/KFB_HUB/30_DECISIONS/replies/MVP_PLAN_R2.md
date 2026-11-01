@@ -8,9 +8,9 @@ Stamm `game/integration-r2`. Reihenfolge nach Bereitschaft, alles hinter Schalte
 |---|---|---|---|
 | `design/kartengebaeude-r1` | @9e3de40b ohne `review/`, `src/private/` prüfen | | Georg |
 | `game/cape-dangle-r1` | @2eec5975 | | PASS |
-| `assets/sky-planets-r1` | fünf Blüten-Planeten @5311659 | | PASS |
-| `world/verteiler-r1` | neue Runde kommt | `place=r3` | Dichte PASS, Kügelchen und Wald laufen |
-| `game/waffen-fx-r1` | @659c793c Ton, Explosion @ca62e6ba | `fx=r2` | Ton PASS, Bild offen |
+| `assets/sky-planets-r1` | 67 Himmelskörper mit Augenwelten @2e634095 (PR 46) | | PASS laut WSA, Blick steht aus |
+| `world/verteiler-r1` | @a8d7c30c | `place=r3` | Dichte PASS, Kosten misst der Mac mini |
+| `game/waffen-fx-r1` | @ca62e6ba, Blätter in `assets/private` @1a52b478 | `fx=r2` | Ton PASS, Bild bei Georg |
 | `world/himmel-r1` | Übergabe kommt | `sky=r1`, `skymove`, Kuppel | Georg PASS |
 | `module/card-pack-poc-r1` | Übergabe kommt | `cardart=pack` | Georg Ja |
 | `zones=1` | wird Standard bei grünen Tests | | Georg PASS |
