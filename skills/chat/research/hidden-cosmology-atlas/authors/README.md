@@ -108,3 +108,18 @@ See [source inventory](../breadth/SOURCE_CUSTODY_INVENTORY_R1_2026-11-01.md), [r
 ## Journalism C02 — 2026-11-01
 
 Two source-led author modules bring the master-file inventory to eighteen: [Whitney Webb](whitney-webb.md) and [Mark Goodwin](mark-goodwin.md). They share one reporting lineage for the selected article; two bylines do not double its evidence. [Article-to-original packet](../journalism/webb-goodwin-2026-11-01/webb-goodwin-one-amazon-packet.md), [source review](../journalism/webb-goodwin-2026-11-01/c02-review.md) and [current navigation](../breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) preserve actual reading limits. Existing WCC/Moneyrex and JM/Puharich topics remain their own ledger owners.
+
+
+
+## Additive C03 journalism profiles — 2026-11-01
+
+Six source-led profiles added; total dedicated author masters: **24**, not 24 completed whole-corpus audits.
+
+- [Gary Webb](gary-webb.md): Publisher work lead → bounded DOJ findings; Webb original passage still missing.
+- [Robert Parry](robert-parry.md): Indexed original note → editorial comparison with CIA reporting-policy findings; direct citation not established.
+- [Seymour Hersh](seymour-hersh.md): Partially read article → later testimony with shared Taguba inquiry root; report scan still missing.
+- [James Corbett](james-corbett.md): Publisher episode notes → cited historical periodical text; spoken contemporary claims not audited.
+- [Derrick Broze](derrick-broze.md): Release → publisher transcript → historical edition comparison; no audiovisual verification.
+- [Patrik Baab](patrik-baab.md): Author method interview → bibliography → normative comparison, not adjudication of field reporting.
+
+[First NotebookLM/source-chain package](../packages/journalistic-source-chains-c03/README.md), [standalone reader](../packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md), [Gemini inventory prompt](../packages/journalistic-source-chains-c03/GEMINI_NOTEBOOK_INVENTORY_PROMPT_DE.md). Source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Notebook import and deployed Site update are not performed.

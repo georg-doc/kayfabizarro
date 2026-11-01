@@ -1,3 +1,25 @@
+## CURRENT RETURN — six journalism profiles and NotebookLM package C03 · 2026-11-01
+
+**Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `5a63096cb3de8fdef0b8cbae374127d4cb5ea716`; immutable source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Final handoff commit is the one containing this section; exact final head/readbacks returned in chat. Previous Returns below are historical.
+
+**Outcome:** six added source-led profiles — Gary Webb, Robert Parry, Seymour Hersh, James Corbett, Derrick Broze, Patrik Baab — bring dedicated author masters to **24**. [Thematic package](packages/journalistic-source-chains-c03/README.md): journalistic assertion → original record → limits/countercheck. Six author cases, sixteen source references, eighteen scoped claims, fourteen noncausal relations (eight documentary metadata/citation, five conceptual comparisons, one open edition comparison). A source record may be metadata, an index excerpt or a section of the same report; counts are not independent confirmations.
+
+**Actual source findings:** Webb publisher claims require the unread original book/newspaper passage; DOJ conclusions contain qualifications. Parry publisher text is index-only after direct 403; CIA policy passages read in FAS custody do not establish a direct article citation. Hersh reporting and Taguba testimony partly share an inquiry root. Corbett show notes lead to historical periodical text; Broze's 1938 reference versus matching 1937 text is an open edition question. Baab's methodological interview and Press Code comparison do not certify field reporting.
+
+**Prepared outputs:** [standalone NotebookLM reader](packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md), public source URLs, [read-only source-chain graph](packages/journalistic-source-chains-c03/atlas-source-chains.json), [Gemini inventory prompt](packages/journalistic-source-chains-c03/GEMINI_NOTEBOOK_INVENTORY_PROMPT_DE.md), inventory JSON schema and explicit empty NOT_RUN template. Notebook/Gemini access and imports are not performed. The existing Atlas breadth index receives additive immutable pointers; Site remains at its prior deployment.
+
+**Cross-source discovery:** bounded Drive/Dropbox metadata searches and Notion hub/two child reads locate relevant holdings; private locators/content retained outside the public package. No actual Notebook membership or complete cross-platform reconciliation is claimed. [Reconciliation workflow](packages/journalistic-source-chains-c03/NOTEBOOK_RECONCILIATION.md) separates observed source membership, cited links, editions and private inventory from sanitized public metadata.
+
+**TheWebb:** [free-only review](packages/journalistic-source-chains-c03/THEWEBB_FREE_REVIEW.md) actually exercised a public discrepancy view and return control. No paid/login/API/MCP access; original PDF fetch unsuccessful. Browser observation strengthens the UI benchmark only, not historical source authentication.
+
+**Changed files:** `authors/{gary-webb,robert-parry,seymour-hersh,james-corbett,derrick-broze,patrik-baab}.md`, `authors/README.md`; `packages/journalistic-source-chains-c03/` receipts, reader, graph, source URL list, inventory prompt/schema/template, reconciliation and free benchmark reports, revision pin, validator/test report/independent review; existing breadth index, Living Atlas, changelog and this Return.
+
+**Checks:** [actual report](packages/journalistic-source-chains-c03/TEST_REPORT.md), [independent review](packages/journalistic-source-chains-c03/INDEPENDENT_REVIEW.md). All 28 relation endpoints resolve; original AB01 arrays and C02 extension preserved. Source checkpoint 18/18 files read back exactly. No audio/book-body/image audit, Notebook import, hosted Site acceptance, CI, main merge, Hub changes or outreach claimed.
+
+**One next gate: `NOTEBOOK_SOURCE_INVENTORY_RECONCILIATION_01`** — receive the user's sanitized, access-bounded Gemini inventory and compare identifiers/editions with the pinned existing Atlas source records; retrieve only genuinely missing public originals. In parallel-independent future source work, close specific unread passage gaps rather than multiplying author verdicts. No paid provider dependency.
+
+---
+
 ## CURRENT RETURN — Webb/Goodwin journalism chain C02 and web-chat reconciliation · 2026-11-01
 
 **Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `6f9fa0c512a85ebaa66100653a49ee06dc1907b2`; source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. Final handoff is the commit containing this section; exact final head/readbacks are returned in chat. Prior Return sections below are historical.
@@ -496,5 +518,6 @@ The researcher must faithfully report what the source author says and how that a
 Independent source discovery/metadata for the three core authors; speaker/audio verification for the initial Kurt Metzger interview; first complete author worldview dossier; later comparative narrative mapping; any formal KFB Deck intake/creative transformation. None is a blocker for the corrected NotebookLM prompt.
 
 **ONE NEXT GATE — WORLDVIEW_SOURCE_CORPUS_INTAKE_01:** Execute independent source research (in NotebookLM or this research chat) for “The Worldview According to Kurt Metzger”, capturing traceable original statements with exactly the author's own certainty, then build separate Dark Journalist and Michael Wann dossiers.
+
 
 

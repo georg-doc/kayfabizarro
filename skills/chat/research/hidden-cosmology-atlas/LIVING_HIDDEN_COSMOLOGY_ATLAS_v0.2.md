@@ -1,3 +1,11 @@
+## Additive C03 — six journalism profiles and first Notebook package · 2026-11-01
+
+[Current Return](RETURN.md) and [package](packages/journalistic-source-chains-c03/README.md) record 24 dedicated author masters after six additions. C03 contains 16 source references, 18 scoped claims and 14 noncausal relations, distinct from prior metrics. [Standalone reader](packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md) and [source-chain view](packages/journalistic-source-chains-c03/atlas-source-chains.json) are prepared derived exports pinned to `9b27a3818ec7386d9aafe7146ba0831827e28e35` through [revision note](packages/journalistic-source-chains-c03/PACKAGE_REVISION.md). No Notebook import or hosted Site update performed.
+
+[Gemini inventory prompt](packages/journalistic-source-chains-c03/GEMINI_NOTEBOOK_INVENTORY_PROMPT_DE.md) enables an access-bounded metadata export; actual notebook membership remains unknown. Existing Drive/Dropbox/Notion discovery is bounded and private source locators remain private. [TheWebb free review](packages/journalistic-source-chains-c03/THEWEBB_FREE_REVIEW.md) records a public comparison interaction without account/payment/API access. Next gate: `NOTEBOOK_SOURCE_INVENTORY_RECONCILIATION_01`.
+
+---
+
 ## Additive C02 source intake and navigation · 2026-11-01
 
 [Current Return](RETURN.md) records the Webb/Goodwin source-chain outcome at immutable source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. [Article packet](journalism/webb-goodwin-2026-11-01/webb-goodwin-one-amazon-packet.md), [author index](authors/README.md) and [existing breadth navigation](breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json): eighteen author masters; C02 adds nine source references, thirteen scoped claims, eleven noncausal edges and four questions, separately from AB01 metrics. Eight sources have bounded text reads; one lead remains unread. Corporate assertions and later product terms do not resolve case-level implementation, consent or financing links.
@@ -487,5 +495,6 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 - **RETURN:** `RETURN.md` in this directory; final head and verification counts. Exact head from the latest branch/PR must be read after writes.
 
 **HISTORICAL GATE (six-author milestone): `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — intake remains ongoing for seven authors; the current next named gate is stated in the 2026-10-13 additive outcome above.**
+
 
 

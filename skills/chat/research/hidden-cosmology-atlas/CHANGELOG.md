@@ -1,3 +1,9 @@
+## 2026-11-01 — C03 journalism breadth and Notebook source handoff
+
+Added Gary Webb, Robert Parry, Seymour Hersh, James Corbett, Derrick Broze and Patrik Baab source-lead profiles. Prepared a standalone NotebookLM reader, source URL list and typed Atlas source-chain view, plus access-bounded Gemini inventory prompt/schema and additive reconciliation workflow. Public-only TheWebb interaction checked; no paid access. Sixteen source records, eighteen claims, fourteen noncausal relations; independent bounded review and deterministic closure passed. Source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Existing breadth index and source arrays preserved additively. No Notebook import or Site release. See current Return.
+
+---
+
 ## 2026-11-01 — C02 Webb/Goodwin sources and web-chat navigation
 
 Added two author masters and one jointly bylined ONE Amazon investigation chain with nine source references, thirteen claims, eleven noncausal edges and four questions. Added bounded primary corporate, policy and community-advisory context; recorded missing independent case evidence. Reconciled five navigation findings across twenty first-parent commits, including already-registered Moneyrex R4 and JM/Puharich work. Preserved AB01 arrays and historical registry entries; added immutable source pins and validation. Source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. See current Return and C02 test report. No Site publication, main merge, Hub edit or archive outreach.
@@ -76,5 +82,6 @@ Source-grounded reader implemented and privately deployed. Hosted authenticated 
 - **Updated additively:** original [wiki/graph/Site roadmap](RESEARCH_WIKI_GRAPH_SITE_AND_DOSSIER_ROADMAP_R1_2026-10-31.md) decision override, [Atlas v0.2 living owner](LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md), owner [RETURN.md](RETURN.md). Existing WCC R4 (46/50) and JM R2 (21/26) topic histories, sources/relations, and private Docs remain untouched.
 - **No source/runtime/CI/browser/Stage/Hub/main router/Live changes**, no new canonical research runtime, no auto-merge. Canonical KFB Production Hub remains the cross-KFB front door. The later Site gets a Hub link only upon verifiable Site publication. Stage route **none** for this research briefing.
 - **One next productive Site gate:** `RESEARCH_ATLAS_SITE_PUHARICH_EVIDENCE_READER_01`; a real Site-capable executor should render and inspect exact source, claims, typed link and prepared Work/consumer packet (with truthful auth status), then return actual Site URL and browser evidence *if published*.
+
 
 
