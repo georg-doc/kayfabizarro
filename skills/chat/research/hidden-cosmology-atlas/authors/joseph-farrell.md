@@ -48,3 +48,8 @@ Required source receipt: `sourceId | speaker | original_work | edition/date | UR
 ## SOURCE_GAPS_AND_WORKS — breadth intake, 2026-11-01
 
 SOL-S08 locates a public Solari description of the July 28, 2026 Fitts–Farrell quarterly program. This documents a program listing; subscriber content/audio was not read or played, and no shared position is inferred. The older correspondence remains a body-unavailable lead. See [shared receipts and publication edges](../breadth/solari-intake.json). Preserve the existing author model; exact original passages remain the next source gate.
+
+
+## Quellen-Nachtrag · Project Camelot, Februar 2009
+
+Die [Interviewseite](https://projectcamelot.org/joseph_farrell.html) kennzeichnet ihre einleitende Darstellung der „Nazi International“ ausdrücklich als Farrells eigene Buchthese. Farrell beschreibt darin eine organisierte, finanzierte Struktur mit eigenem Nachrichten- und Sicherheitsapparat. Dieser Zuschreibungsbeleg ist vom [Interviewtranskript](https://projectcamelot.org/lang/en/Dr_Joseph_Farrel_-_Nazi_International_%28Feb_2009%29.pdf) zu unterscheiden: dessen erste Sprecherwechsel lauten anders. Offene Sachprüfung: konkrete Buchanmerkung und unabhängig entstandener Finanzbeleg für eine benannte Transaktion.

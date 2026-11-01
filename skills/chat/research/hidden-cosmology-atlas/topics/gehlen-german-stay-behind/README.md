@@ -26,3 +26,8 @@ Coverage: targeted text inspection of declassified CIA record reproductions, par
 ## Follow-up · named Danish network in Holstein
 
 [Who offered the Toepke network, when and to whom](HOLSTEIN_TRANSFER.md) · [comparative author and case notes](RESEARCH_NEIGHBOURS.md) · [Regenauer link inventory](REGENAUER_SOURCE_LINKS.csv).
+
+
+## Getrennte Kontrollspur · KIBITZ-15
+
+[EGPA-1092 vom 16. April 1953](https://www.cia.gov/readingroom/docs/KIBITZ%20%20%20VOL.%202_0147.pdf), S. 1–2, beschreibt die am 13. April erteilte Abwicklungsanweisung für KIBITZ-15. Der Akteur und der Vorgang sind von der späteren Toepke-Offerte zu trennen. Für diese bleibt das Antwort- oder Vollzugsstück zu 01292 gesucht. Separater Einstieg zur Gehlen-Organisation: [NARA-Findbericht, RG 263, Wilhelm Krichbaum](https://www.archives.gov/iwg/declassified-records/rg-263-cia-records/rg-263-krichbaum.html). Der Findbericht ersetzt keine einzelne Akte.

@@ -1,3 +1,7 @@
+## 2026-11-01 · Maletti, erster 180-Grad-Flip und offene Gegenproben
+
+[Maletti-Fall und Basisrecherche](packages/maletti-flip/README.md). Quellenketten für Register, eigene Handlungen und spätere Einschätzungen getrennt. Additive Nachträge bei Farrell, KIBITZ/Toepke und WCC. Nächster Prüfpunkt: unabhängig entstandener Aufnahme- oder Beitragsbeleg zu Maletti ab 1977.
+
 ## 2026-11-01 · WCC-Akteursszene und Logenvergleich
 
 [Quellenpaket, Szenendaten und Leseansichten](packages/actor-network-pilot/README.md). WCC 1952/54/69 und anschließender Vergleich von sechs Organisationen. Nächste Gegenprobe: P2-Listeneintrag, Aussage und unabhängiger Beleg.
