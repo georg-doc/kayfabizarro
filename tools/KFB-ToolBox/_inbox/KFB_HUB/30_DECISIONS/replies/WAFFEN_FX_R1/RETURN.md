@@ -65,3 +65,12 @@ Spielkamera: 3 m hoch, 24° nach unten, oberer Bildrand nur rund 3,5° über dem
 Hänger: Feuerblatt beim Laden auf 2048 verkleinert. Erste Explosion jetzt 88 bis 115 ms bei niedriger Auslastung (vorher 157 bis 187, unter Last 280 bis 500), danach unter 20 ms, ein Seitenlauf ganz ohne. Grafikspeicher rund 44 MB (gerechnet).
 Kritiker einmal, auf dem Stand vor der letzten Änderung, nicht auf dem Endstand.
 Nicht geprüft: Explosion am Baum im Bild, Vergleich ohne Schalter, Site-Probe, Mac-mini-Messung lag noch nicht vor. In `assets/private` fehlen `Explosion_Feuer_6x6.webp`, `Explosion_Rauch_8x8_2048.webp`, `Explosion_Papier_Atlas.webp`.
+
+## Explosion, Runde V-1214 (Stand 9147d572, Stamm d3d34c0a)
+Clips mit Ton: `Explosion_Spielkamera_R3.mp4`, `Explosion_Seite_R3.mp4` (Kamera kurz nach der Zündung gedreht, dann ruhig), `Explosion_Baum_R3.mp4`.
+Papier ist Standard, landet und liegt still, dann weg. Pendelt zur Kamera, leicht aufgehellt, damit es als Papier zu lesen ist.
+Splitter und Trümmer: `src/modules/explosionShards.js`. Bewegung und Grundformen aus dem Spender Seed World (`sw-destruct.js`), die alten Brocken sind raus. Steinkit und Oktaeder probiert und verworfen: rund bzw. kristallig.
+Größen und Farben sind Daten: `sizes`, `colors`, `defaults` in `explosionSheets.r1.json`. Nur `medium` und `fire` sind eingetragen. Die Farbe wirkt noch nicht, Ton folgt noch dem Treffer und nicht der Größe.
+Tonposition folgt dem Explosionsort, Pegel bis 14 m unverändert. Höhe nimmt jetzt die echte Geländeoberfläche, vorher steckte die Explosion am Hang im Boden.
+Kritiker fünfmal, zuletzt auf dem Stand vor der letzten Anpassung: NEIN wegen Unterseiten zu violett, Teile fliegen aus dem Bild, Teile liegen bis 6,5 s. Die ersten beiden angepasst, die Liegezeit ist Absicht. Den Endstand hat er nicht gesehen, nur ich.
+Rauchfarbe und Papier-Zeitpunkt hat er ebenfalls beanstandet, unverändert gelassen, weil von Georg abgenommen.
