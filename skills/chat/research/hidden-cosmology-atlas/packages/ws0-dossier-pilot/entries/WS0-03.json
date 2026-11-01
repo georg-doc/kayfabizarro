@@ -1,0 +1,108 @@
+{
+  "schema": "kfb.atlas.deck-dossier-pilot.v1",
+  "id": "WS0-03",
+  "title": "Hypernormalisation: find the seam in the sealed room",
+  "deckId": "ignore_dystopia",
+  "cardRefs": [
+    {
+      "cid": "cid:ignore_dystopia:41",
+      "cardNumber": 41,
+      "registryPath": "registry/assets/v1/decks/ignore_dystopia.json",
+      "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+      "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+    }
+  ],
+  "derivedFrom": [
+    "WS0-S03",
+    "WS0-S08",
+    "WS0-S11"
+  ],
+  "layers": {
+    "card": {
+      "name": "The Sealed Room",
+      "lore": "Hypernormalisation is treating fakeness as normal because alternatives seem unimaginable.",
+      "power": "Present the system as total, with absolutely no outside to step into.",
+      "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
+      "sourceId": "WS0-S03"
+    },
+    "sources": [
+      "WS0-S03",
+      "WS0-S08",
+      "WS0-S11"
+    ],
+    "interpretation": {
+      "summary": "The card depicts a closed horizon of action. Its relationship to Curtis is thematic at this stage: the official trailer metadata provides a publisher-level lead, while the whole film and Yurchak’s book remain unread for this pilot. A montage or total-system narrative is not proof of a single coordinating actor. The existing Substack essay supplies a richer author perspective and a Brainfood reading list; its same-master language remains satirical interpretation, not a verified network.",
+      "statuses": [
+        "card: creative compression",
+        "Curtis link: publisher metadata only",
+        "universal social explanation: untested"
+      ],
+      "counterposition": "Ask which concrete institution, decision and alternative the account identifies. A claim of no outside must be tested against specific cases."
+    },
+    "brainfood": {
+      "voice": "FrizzleBob — Carny/KnuckleBob editorial draft",
+      "text": "The room says there’s no exit. Funny thing for a room to advertise. Pick one wall, find the paperwork, and see whether the door is locked—or merely painted over.",
+      "status": "NEW_EDITORIAL_ADAPTATION_NOT_SOURCE_QUOTE",
+      "voiceBasis": "Carny concrete exhibit/direct address + KnuckleBob paper/trail/mechanism, from inventoried FrizzleBob voice donors. New prose, not copied source assertions."
+    },
+    "solutionWatch": {
+      "kind": "SMALL_ACTION_EXPERIMENT",
+      "action": "Replace one round of doomscrolling with one checkable local question and a reversible action.",
+      "steps": [
+        "Choose one claim from the story and locate its closest original document.",
+        "Write an alternative explanation that would change your conclusion.",
+        "Try one small action within your control and record what actually changed."
+      ],
+      "sourceIds": [
+        "WS0-S03"
+      ],
+      "limit": "Editorial exercise, not an evidence-based treatment or a claim to solve structural power.",
+      "checkedAt": "2026-11-01"
+    }
+  },
+  "claims": [
+    {
+      "id": "WS0-03-C1",
+      "statement": "The existing Sealed Room card represents hypernormalisation as accepting evident falseness because alternatives feel unimaginable.",
+      "status": "CREATIVE_DEFINITION_AND_EDITORIAL_INTERPRETATION",
+      "sourceIds": [
+        "WS0-S03"
+      ],
+      "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    }
+  ],
+  "formats": [
+    {
+      "format": "short essay",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "existing card",
+      "status": "EXISTING_CARD_REFERENCE"
+    },
+    {
+      "format": "FrizzleBob tip",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "source-linked dialogue script",
+      "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
+    }
+  ],
+  "checkedAt": "2026-11-01",
+  "reviewer": "Codex builder; independent source/structure review recorded separately; Georg editorial acceptance pending",
+  "fieldsOfSense": [
+    "source criticism",
+    "creative card interpretation",
+    "practical media literacy"
+  ],
+  "runtimeIntegration": "CONTRACT_ONLY; no game files or canonical deck records changed",
+  "dialogueExample": {
+    "question": "Who is the single actor behind hypernormalisation?",
+    "answer": "This packet does not establish one. The card and essay are interpretive/creative frames. A specific historical claim needs its own actors, documents and dates.",
+    "sourceIds": [
+      "WS0-S03",
+      "WS0-S11"
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "kfb.atlas.deck-dossier-pilot.v1",
+  "id": "WS0-02",
+  "title": "Roko’s Basilisk: a threat inside an argument",
+  "deckId": "kayfabizarro_philosophy",
+  "cardRefs": [
+    {
+      "cid": "cid:kayfabizarro_philosophy:30",
+      "cardNumber": 30,
+      "registryPath": "registry/assets/v1/decks/kayfabizarro_philosophy.json",
+      "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+      "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+    }
+  ],
+  "derivedFrom": [
+    "WS0-S02",
+    "WS0-S06",
+    "WS0-S07",
+    "WS0-S10"
+  ],
+  "layers": {
+    "card": {
+      "name": "The Basilisk's Naughty List",
+      "lore": "The moment you learn about the Basilisk, you are trapped. If you don't start helping it now, it will put you in a simulated torture chamber later.",
+      "power": "Information Hazard. Showing this card to an opponent permanently infects them. If they do not aid you, they lose 1 health every turn.",
+      "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
+      "sourceId": "WS0-S02"
+    },
+    "sources": [
+      "WS0-S02",
+      "WS0-S06",
+      "WS0-S07",
+      "WS0-S10"
+    ],
+    "interpretation": {
+      "summary": "The existing card turns a philosophical scenario into a game penalty. Preserve that fiction, but separate it from a prediction about an existing AI. Bensinger contests the popular fundraising/obedience retelling. The underlying2010 post has not been independently inspected here.",
+      "statuses": [
+        "card: fictional mechanic",
+        "basilisk: disputed thought experiment",
+        "Bensinger: attributed interpretation"
+      ],
+      "counterposition": "An emotionally forceful conditional does not establish its premises, the agent’s existence or an obligation to obey."
+    },
+    "brainfood": {
+      "voice": "FrizzleBob — Carny/KnuckleBob editorial draft",
+      "text": "The robot from tomorrow sent an invoice. Charming. Before you pay, ask who proved the robot, who wrote the terms, and why a thought experiment suddenly wants your wallet.",
+      "status": "NEW_EDITORIAL_ADAPTATION_NOT_SOURCE_QUOTE",
+      "voiceBasis": "Carny concrete exhibit/direct address + KnuckleBob paper/trail/mechanism, from inventoried FrizzleBob voice donors. New prose, not copied source assertions."
+    },
+    "solutionWatch": {
+      "kind": "ARGUMENT_CHECK",
+      "action": "Split one AI prediction into assumptions, claimed mechanism and observed evidence.",
+      "steps": [
+        "Write the conditional argument without the horror imagery.",
+        "Mark which assumptions the source supplies and which are untested.",
+        "Read the disagreement before deciding whether the conclusion follows."
+      ],
+      "sourceIds": [
+        "WS0-S06",
+        "WS0-S07"
+      ],
+      "limit": "This is an editorial reasoning exercise, not a settled solution to decision theory or all AI risk.",
+      "checkedAt": "2026-11-01"
+    }
+  },
+  "claims": [
+    {
+      "id": "WS0-02-C1",
+      "statement": "Bensinger describes the basilisk as a disputed thought experiment and says Roko’s argument opposed constructing the proposed threatening agent rather than asking people to finance it.",
+      "status": "ATTRIBUTED_RETROSPECTIVE_INTERPRETATION",
+      "sourceIds": [
+        "WS0-S07"
+      ],
+      "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    }
+  ],
+  "formats": [
+    {
+      "format": "short essay",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "existing card",
+      "status": "EXISTING_CARD_REFERENCE"
+    },
+    {
+      "format": "existing song lead",
+      "status": "LOCATED_NOT_AUDIO_VERIFIED"
+    },
+    {
+      "format": "FrizzleBob tip",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "source-linked dialogue script",
+      "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
+    }
+  ],
+  "checkedAt": "2026-11-01",
+  "reviewer": "Codex builder; independent source/structure review recorded separately; Georg editorial acceptance pending",
+  "fieldsOfSense": [
+    "source criticism",
+    "creative card interpretation",
+    "practical media literacy"
+  ],
+  "runtimeIntegration": "CONTRACT_ONLY; no game files or canonical deck records changed",
+  "dialogueExample": {
+    "question": "Does knowing about the Basilisk oblige me to help it?",
+    "answer": "The card presents a fictional penalty. The inspected LessWrong accounts describe a disputed thought experiment; they do not establish a real obligation or an existing threatening agent.",
+    "sourceIds": [
+      "WS0-S02",
+      "WS0-S06",
+      "WS0-S07"
+    ]
+  }
+}

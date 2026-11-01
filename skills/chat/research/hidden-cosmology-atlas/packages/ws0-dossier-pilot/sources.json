@@ -1,0 +1,128 @@
+{
+  "sources": [
+    {
+      "id": "WS0-S01",
+      "title": "Observation Underground card registry",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/registry/assets/v1/decks/observation_underground.json",
+      "locator": "cards[cardNumber=35]",
+      "readScope": "Exact card name/lore/power read; creative statement, not historical evidence.",
+      "kind": "KFB creative source",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S02",
+      "title": "Kayfabizarro Philosophy card registry",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/registry/assets/v1/decks/kayfabizarro_philosophy.json",
+      "locator": "cards[cardNumber=30]",
+      "readScope": "Exact card name/lore/power read; no source-original Roko post inspected.",
+      "kind": "KFB creative source",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S03",
+      "title": "Ignore Dystopia card registry",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/registry/assets/v1/decks/ignore_dystopia.json",
+      "locator": "cards[cardNumber=41]",
+      "readScope": "Exact card name/lore/power read; current package manifest confirms cid:ignore_dystopia:41.",
+      "kind": "KFB creative source",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S04",
+      "title": "PCLOB 2023 Section 702 report",
+      "url": "https://documents.pclob.gov/prod/Documents/OversightReport/e9e72454-4156-49b9-961a-855706216063/2023%20PCLOB%20702%20Report%20(002).pdf",
+      "locator": "Printed pp.64–65, Downstream collection",
+      "readScope": "Reused NB01 JP-S05 bounded text inspection; no new page image/audio inspection. Not current-law advice.",
+      "kind": "official oversight report",
+      "independenceGroup": "PCLOB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S05",
+      "title": "Your Security Plan — EFF Surveillance Self-Defense",
+      "url": "https://ssd.eff.org/module/your-security-plan",
+      "locator": "How do I make my own security plan?; Security planning as a regular practice",
+      "readScope": "HTML guide read; page last reviewed2023-10-27, accessed2026-11-01. Recommendations adapted for this pilot.",
+      "kind": "practitioner guide",
+      "independenceGroup": "EFF",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S06",
+      "title": "Roko’s Basilisk — LessWrong revision1.8.0",
+      "url": "https://www.lesswrong.com/w/rokos-basilisk?version=1.8.0",
+      "locator": "Introduction paragraphs1–5; Roko’s post",
+      "readScope": "Community retrospective explanation read; not the original2010 post and not independent of Bensinger commentary.",
+      "kind": "community reference",
+      "independenceGroup": "LessWrong/Bensinger",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S07",
+      "title": "A few misconceptions surrounding Roko’s basilisk — Rob Bensinger",
+      "url": "https://www.lesswrong.com/posts/WBJZoeJypcNRmsdHx/a-few-misconceptions-surrounding-roko-s-basilisk",
+      "locator": "Main article, opening point and point two (2015-10-05)",
+      "readScope": "Author’s own retrospective interpretation read, excluding reader comments. Roko’s original is quoted/reported, not separately recovered.",
+      "kind": "first-person commentary",
+      "independenceGroup": "LessWrong/Bensinger",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S08",
+      "title": "HyperNormalisation: A new film by Adam Curtis — BBC trailer",
+      "url": "https://www.youtube.com/watch?v=AUiqaFIONPQ",
+      "locator": "Publisher title/description, publication2016-10-13",
+      "readScope": "Search-indexed official BBC trailer metadata only; direct web fetch failed. Zero trailer/full-film minutes reviewed.",
+      "kind": "publisher metadata",
+      "independenceGroup": "BBC",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Codex source inspection"
+    },
+    {
+      "id": "WS0-S09",
+      "title": "When Free Markets Meet the AI-Blob",
+      "url": "https://cancelthiscomic.substack.com/p/when-free-markets-meet-the-ai-blob-8fb",
+      "locator": "B4–6 data extraction; B16–25 Protopian Guide",
+      "readScope": "Local author HTML export read by independent inventory reviewer; no external evidence links. Satire and advice, not independent empirical evidence.",
+      "kind": "KFB authored creative/commentary export",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Independent local inventory reviewer",
+      "locatorConvention": "Bn = nth outermost p/h1/h2/h3/h4/li HTML block, document order, normalized whitespace; blank blocks count."
+    },
+    {
+      "id": "WS0-S10",
+      "title": "Roko’s Basilisk and the Art of AI Overreach",
+      "url": "https://cancelthiscomic.substack.com/p/rokos-basilisk-and-the-art-of-ai",
+      "locator": "B2–3 fictional premise; B8–15 art and AI hosts; B19 Basilisk",
+      "readScope": "Local author HTML export read; narrative fiction, no external original-source links.",
+      "kind": "KFB authored creative/commentary export",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Independent local inventory reviewer",
+      "locatorConvention": "Bn = nth outermost p/h1/h2/h3/h4/li HTML block, document order, normalized whitespace; blank blocks count."
+    },
+    {
+      "id": "WS0-S11",
+      "title": "Hypernormalisation: Why You Still Can’t Think for Yourself",
+      "url": "https://cancelthiscomic.substack.com/p/hypernormalisation-why-you-still",
+      "locator": "B11–12 Yurchak attribution; B17–20 analogy; B40–47 Brainfood",
+      "readScope": "Local author HTML export read; two outbound discovery links. Video/book recommendations are largely unlinked labels, not verified originals.",
+      "kind": "KFB authored creative/commentary export",
+      "independenceGroup": "KFB",
+      "checkedAt": "2026-11-01",
+      "reviewer": "Independent local inventory reviewer",
+      "locatorConvention": "Bn = nth outermost p/h1/h2/h3/h4/li HTML block, document order, normalized whitespace; blank blocks count."
+    }
+  ]
+}
