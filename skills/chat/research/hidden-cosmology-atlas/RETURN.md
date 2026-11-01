@@ -1,3 +1,7 @@
+## 2026-11-01 · Einmalige Mittagsprüfung
+
+[Maletti: Gerichtsrede zu einer Quittung von 1979](packages/maletti-flip/README.md) und [WCC: Prager Bestandskennung 100/35](packages/actor-network-pilot/README.md). Beweisstück und tschechoslowakischer Einzelakt bleiben einzusehen. Der Lauf endet an diesen beiden konkreten Beschaffungsschritten.
+
 ## 2026-11-01 · Maletti, erster 180-Grad-Flip und offene Gegenproben
 
 [Maletti-Fall und Basisrecherche](packages/maletti-flip/README.md). Quellenketten für Register, eigene Handlungen und spätere Einschätzungen getrennt. Additive Nachträge bei Farrell, KIBITZ/Toepke und WCC. Nächster Prüfpunkt: unabhängig entstandener Aufnahme- oder Beitragsbeleg zu Maletti ab 1977.
