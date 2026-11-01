@@ -270,5 +270,21 @@
       "access_status": "catalogue_read_originals_not_examined",
       "question": "Welche Befugnisse und Auswahlregeln wurden tatsächlich ausgeübt? Keine Aussage über spätere Round-Table-Finanzierung."
     }
+  ],
+  "followup_audits": [
+    {
+      "url": "roundtable-audit.json",
+      "revision": "finance-authorship-2026-11-01",
+      "claim_ids": [
+        "RT-F01",
+        "RT-F02",
+        "RT-F03",
+        "RT-A01",
+        "RT-A02",
+        "RT-R01",
+        "RT-R02"
+      ],
+      "note": "Finanzierung sekundär gestützt; keine unqualifizierte Zahlungskante ergänzt. Autorschaft mit Evidenzstufen."
+    }
   ]
 }

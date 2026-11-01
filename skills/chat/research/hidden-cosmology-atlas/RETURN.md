@@ -1,3 +1,9 @@
+## 2026-11-01 · Round Table: Finanzierung, Autorschaft und Regenauer
+
+[Quellenketten und Beleggrenzen](packages/rhodes-milner-round-table/README.md) · [Audit-Daten](packages/rhodes-milner-round-table/roundtable-audit.json)
+Site: https://kfb-research-atlas.frizzlebob.chatgpt.site/rhodes.html#finanzierung
+Zahlungsbeschluss weiter offen; Fördermechanismus und GBP2500 sekundär eingegrenzt. Lothian17/11 als konkrete Briefspur. Brand/Perry durch Brand1921 OCR-Selbstauskunft; vier redaktionelle Artikelzuordnungen. Drei Regenauer-Essays mit Quigley/Stead-Kette und Rollen-Gegenprobe. Nächster Schritt: NRS-Briefe1909 und Trustee-Beschluss einsehen. Site source 4eefa959b2171e76600f73dc189c60b322f80465; veröffentlicht, Daten/Anker geprüft. Kein Merge.
+
 ## 2026-11-01 · Rhodes / Milner / Round Table
 
 Neuer Quellenraum: https://kfb-research-atlas.frizzlebob.chatgpt.site/rhodes.html

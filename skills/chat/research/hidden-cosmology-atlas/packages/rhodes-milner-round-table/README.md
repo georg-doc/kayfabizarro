@@ -23,3 +23,18 @@ Site source: 94129704d1bca9b2f718b9fcb94cdc7f5be4761d. Veröffentlichung succeed
 JSON parse, eindeutige HTML-IDs und interne Sprungziele geprüft. Home und Orden verlinken neue Ansicht. Kein Spielcode, kein Merge, kein neuer Runtime-Owner.
 
 HTML und JSON in diesem Paket sind der ausgelieferte Snapshot. Quellen und genaue Fundstellen stehen direkt darin. Archivbilder wurden ohne geprüfte Lizenz nicht übernommen.
+
+## 2026-11-01 · Finanzierung / anonyme Autoren / Regenauer
+
+Additiver Folgelauf zum Rhodes-Paket. Neue Datei roundtable-audit.json mit zwölf Quellen, sieben Claims, Zitationskanten, vier konkreten offenen Fragen und Zugriffszuständen. Drei Regenauer-Originalessays plus Monopole-Querverweis gezielt gelesen, kein Gesamtblog-Audit.
+
+Befunde:
+- May 2010 beschreibt Spendenverdopplung bis Ende1915; Thompson berichtet Milners Vermittlung von GBP2500. Beides Sekundärnachweise, kein unterschriebener Beschluss/Kassenbeleg. Jahresbezug von „That summer“ in der öffentlichen Thompson-Summary nicht normalisiert; 1921/1922 bleibt offen.
+- Neuer konkreter Findhinweis NARSSA Lothian17/11: zwei Milner-Briefe1909 über Abe Bailey. NARSSA nur Suchindex lesbar (direkt Timeout/404); NRS bestätigt GD40/17 als Kerr-Bestand, Einzelreferenz unbestätigt.
+- Brand1921, Introduction vii–viii, erklärt Autorschaft seiner Round-Table-Aufsätze1912–1920 und F.Perry als Mitautor von Finance in War (Kap.IV,S.94,Juni1915). OCR gelesen. Erstdruckvergleich fehlt.
+- May2024: Brand (zwei Artikel1923), Leeper1920, Morrah1949 als redaktionelle Zuschreibungen mit Heft-/Seitenangaben. AppendixF erneut403; keine Originalaktenprüfung behauptet.
+- Regenauer: Tragik und Hoffnung24.06.2022; Trio Infernale1 12.11.2023 und2 26.11.2023. Gemeinsame Quigley-/Stead-Ursprünge zählen nicht als unabhängige Bestätigung. Stead1902 Vorwort und S.49 unterscheiden Kommentar/Testament und berichten seine Abberufung als Vollstrecker im Januar1901; konkrete Gegenprobe zur posthumen Rollenbeschreibung.
+
+Geprüft: JSON, sieben Quellenreferenzen, HTML-IDs und Sprungziele. Keine Manuskriptbilder angesehen; Brand/Stead/Elton als OCR markiert. Keine vollständige Buch-/Corpus-Lektüre behauptet. Kein Archivkontakt, kein Kauf, kein Spielcode, kein Merge. Site privat unverändert; source 4eefa959b2171e76600f73dc189c60b322f80465; Veröffentlichung succeeded.
+Nächster Quellen-Gate: aktuelle Signatur der beiden Milner-Briefe bestätigen und Originale samt Zahlungsbezug einsehen; daneben Trustee-Minute zur GBP2500-Summe. Empfangene Findmittel sind keine Zahlungsbeweise.
+
