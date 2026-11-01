@@ -1,3 +1,7 @@
+## 2026-11-01 · Corbett source audit
+
+[Regenauer and Corbett on the Balfour drafts](packages/corbett-source-chains/README.md). Same exhibition link, separate editorial voices, independent checks against the draft sequence. Next check for a stronger authorship claim: dated working copies for the clause in question.
+
 ## 2026-11-01 · Competing readings
 
 [Two reader cases and German methods guide](packages/competing-readings/README.md). First Toepke, then Regenauer/mBridge. Next gate: review whether the discriminating source test is legible to a new reader.

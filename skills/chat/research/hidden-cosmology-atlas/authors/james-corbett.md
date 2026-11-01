@@ -34,3 +34,6 @@ Broze is a documented guest at metadata scope (**JT3-E01**); the same appearance
 **JT3-Q01:** Which exact contemporary policy is claimed to descend from which historical actor? Obtain the policy’s original drafting record and an independent institutional chronology; an absent chain keeps the relation conceptual. **JT3-Q02:** Confirm the 1937 scan and relevant reprints before comparing quotations. A contradictory original or a merely analogous vocabulary could narrow a continuity claim. Next bounded gate: one explicit contemporary claim aligned to a listened segment or authenticated transcript and its cited record. Research-only, unreviewed; no video/audio played.
 
 **Source access and limitations:** [JT3 source receipts](../packages/journalistic-source-chains-c03/jt3-source-receipts.json).
+
+
+[Regenauer to Corbett: Balfour draft source audit and linked-URL inventory](../packages/corbett-source-chains/README.md)
