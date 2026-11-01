@@ -17113,6 +17113,36 @@
    "applies": "nach nächster Runde"
   },
   {
+   "id": "V-1175",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "WS-Design Sky-Card d25fb455: Blitze über die Kuppel, Audio-Sync über kfbAudio mit ruhigem Takt ohne Ton, Kritiker FAIL. WS0-Sichtung: Kuppel gut, Hauptblitz als breiter gerader Streifen nicht zeigbar. Kurze Runde ohne neue Gestaltungsfrage, Bett vorerst Bouncing Busker Groove, danach Hub mit Merge-Frage.",
+   "values": {},
+   "owner": "WS-Design",
+   "check": "Video mit Ton",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg soll keine sichtbaren Mängel mehr sehen, die wir schon kennen.",
+   "applies": "nach Runde"
+  },
+  {
+   "id": "V-1176",
+   "date": "2026-11-01",
+   "area": "Prozess",
+   "verdict": "BUILD",
+   "text": "Mac mini bereit (V-1169): Spiegel und Worktrees außerhalb der Dropbox, game/integration-r2 und assets/private sparse, Node 24, Playwright, Build und GPU-Test PASS, auch bei ausgeschaltetem Bildschirm. Schlüssel nur lesend, Ergebnisse als Dateien. Nicht getestet: gesperrter Bildschirm, zwei Läufe zugleich, Ton fehlt im Sparse-Checkout. WS0 nutzt ihn zuerst für Messungen auf ruhigem Rechner, wenn ein Stand gepusht ist. Rund 25 GB frei.",
+   "values": {},
+   "owner": "Blender-Sitzung",
+   "check": "erste Messung",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ruhiger Rechner für gültige Messungen und bildlastige Läufe.",
+   "applies": "nach erster Messung"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
