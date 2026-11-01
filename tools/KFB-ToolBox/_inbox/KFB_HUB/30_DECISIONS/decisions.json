@@ -17968,6 +17968,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1232",
+   "date": "2026-11-01",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Georg 01.11.: Hero-Shot-Vorbild Hearthstone und andere Online-TCGs, Sitzung informiert. ElevenLabs-Satz card_reward_r1 (20 Klaenge, Rollen in card_reward_map.r1.json, Hoerprobe als Hub-Frage). Noch nicht in assets/private, erst nach Georgs Ja.",
+   "values": {},
+   "owner": "Kartenkante",
+   "check": "40_AUDIO/elevenlabs_r1/card_reward_r1_lufs",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Reward braucht eigene Kaskade wie der Waffen-Ton; nicht aus Kampfklaengen zusammenstueckeln.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
