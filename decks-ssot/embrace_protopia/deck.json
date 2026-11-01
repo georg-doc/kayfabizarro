@@ -1,0 +1,3105 @@
+{
+ "schema": "kfb.deck-paket/1",
+ "packId": "embrace_protopia",
+ "title": "Protopia Sketchbook — Deck C: EMBRACE",
+ "role": "EMBRACE",
+ "question": "What can be improved today?",
+ "quelle": {
+  "druckPdf": "Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1).pdf",
+  "sha256": "49947b009e0168aa56f22170f04f060f34575f79e75fd8f93598a74de9310eaa",
+  "seiten": 15,
+  "coverOffset": 1,
+  "jsonStand": "data/kfb-deck-analyzer-r1:media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+ },
+ "bewertung": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.4,
+   "distribution": {
+    "1": 0,
+    "2": 2,
+    "3": 38,
+    "4": 14,
+    "5": 2
+   },
+   "reason": "Durchgehend sauber gezeichnet, Power und Lore sind klar und fehlerfrei, aber viele Karten bleiben bei allgemeinen Haltungssaetzen; echte Wissenskerne (Parasympathikus, Soziale Ablehnung, Basisraten, Flow) und sofort sitzende Bildpointen sind die Ausnahme.",
+   "ratingNote": null,
+   "version": "R1"
+  },
+  "topCards": [
+   "The Risk of Being Soft-Blocked",
+   "The Held Breath",
+   "The Track Record",
+   "The First Hello",
+   "The Done Thing"
+  ],
+  "worstCards": [
+   "The Standing Record",
+   "The Rough Test",
+   "The Open Question"
+  ],
+  "viralScore": 6,
+  "viralReason": "Karte 27 ('Your nervous system thinks that is death. It is not.' mit Alarmglocke) und die Kroete zwischen DOOM und SAVED (Karte 46) wuerden geteilt, weil Bild und Satz sofort funktionieren."
+ },
+ "marketing": {
+  "viralScoreAlt": 9,
+  "overallScore": 9,
+  "coverScore": 5.0,
+  "g1Anteil": 0.5,
+  "topCardsAlt": [
+   "THE CORE QUESTION",
+   "The Ugly First Draft",
+   "The Compounding"
+  ],
+  "worstCardsAlt": [
+   "The Widening Mind",
+   "The Rough Test",
+   "The Comfort of Maybe"
+  ],
+  "hashtags": [
+   "#Protopia",
+   "#Kayfabizarro",
+   "#FrizzleBob",
+   "#IncrementalChange",
+   "#AgencyNotAnxiety",
+   "#ProtopiaSketchbook",
+   "#KayfabizarroHannover",
+   "#EmbraceProtopia"
+  ],
+  "blurb": "For visitors paralyzed by big problems and worse news — 56 cards that convert the overwhelming question of the future into one small, specific, touchable thing you can do this week. No manifesto. Just the pencil.",
+  "tier": "GRUEN"
+ },
+ "verweise": {
+  "video": "https://www.youtube.com/watch?v=PTbyElt7AE8",
+  "songs": null,
+  "tratsch": null
+ },
+ "cover": "bilder/cover.webp",
+ "cards": [
+  {
+   "cid": "cid:embrace_protopia:1",
+   "n": 1,
+   "cardName": "The Open Notebook",
+   "power": "Picture the future as a page with room left on it, not a poster on a wall.",
+   "lore": "Protopia is the idea that the future is a process of slow, incremental improvement you participate in.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Beaver mit Riesenbleistift am halbfertigen Damm: nett, aber die Metapher 'Seite mit Platz' bleibt abstrakt. Lore definiert Protopia brauchbar, braucht aber den Deck-Kontext.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/01.webp",
+    "motiv": "bilder/motiv/01.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3019,
+     0.4606,
+     0.5708,
+     0.5394
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.801
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Painterly and immediately imagistic — you are already holding the pencil.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: eager beaver gripping oversized pencil, blank notebook open. Mood: focused readiness."
+  },
+  {
+   "cid": "cid:embrace_protopia:2",
+   "n": 2,
+   "cardName": "The Erasable Line",
+   "power": "Draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.",
+   "lore": "The ability to correct beats the appearance of certainty.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Panischer Waschbär radiert am Bauplan: Bild und Bleistift-Power passen, der Witz ist vorhersehbar. Power ist klar und spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/02.webp",
+    "motiv": "bilder/motiv/02.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4293,
+     0.1952,
+     0.4886,
+     0.6694
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.98
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "A single tool choice IS the performance. No translation needed.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grinning raccoon erasing a blueprint mid-sketch. Mood: gleeful impermanence."
+  },
+  {
+   "cid": "cid:embrace_protopia:3",
+   "n": 3,
+   "cardName": "The Ugly First Draft",
+   "power": "Make the first version bad on purpose. Bad is how you know it is real.",
+   "lore": "Starting before you are ready produces better results than waiting for a perfect plan.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Opossum mit Schatzkarte 'Trash King / Dead End / Bad Smells' macht den absichtlich schlechten Entwurf sofort sichtbar. Power ist eine klare Handlung, die Lore bleibt Allgemeinplatz.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/03.webp",
+    "motiv": "bilder/motiv/03.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0301,
+     0,
+     0.9699,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.465
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Permission plus method plus proof — clearest creative invite in the deck.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: possum proudly holding a chaotic crossed-out treasure map. Mood: unashamed momentum."
+  },
+  {
+   "cid": "cid:embrace_protopia:4",
+   "n": 4,
+   "cardName": "The Next Pass",
+   "power": "Do not finish it. Improve it once, then leave it better and open.",
+   "lore": "Continuous small improvement treats work as never finished, compounding into large change.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Specht hackt 'BETTER' in den Baum: Bild und Titel tragen die Pointe beim ersten Blick. Power ('Improve it once') ist etwas vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/04.webp",
+    "motiv": "bilder/motiv/04.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3102,
+     0.5439,
+     0.3866,
+     0.4561
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.669
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "The loop is the action. Player becomes the woodpecker pecking BETTER into the tree.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: red-crested woodpecker drilling BETTER into tree bark repeatedly. Mood: relentless iterative joy."
+  },
+  {
+   "cid": "cid:embrace_protopia:5",
+   "n": 5,
+   "cardName": "The Fixable Thing",
+   "power": "Find one broken thing close enough to touch.",
+   "lore": "Reframing a vast problem as a specific, local, finishable task restores the sense that action is possible.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Leguan ölt das Gattertor, während hinten die Stadt brennt: die Pointe sitzt. Power und Lore bleiben allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/05.webp",
+    "motiv": "bilder/motiv/05.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2459,
+     0.5651,
+     0.4952,
+     0.4349
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.528
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Spatial and immediate — you look around the room right now.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: iguana in tool belt oiling a hinge while city burns behind. Mood: focused calm amid chaos."
+  },
+  {
+   "cid": "cid:embrace_protopia:6",
+   "n": 6,
+   "cardName": "The Right-Sized Move",
+   "power": "Choose a repair you can finish this week, not a revolution you can only announce.",
+   "lore": "A series of small wins builds momentum and evidence that larger change is possible.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Eichhörnchen mit Aufgabenrolle und Eichel; die Power (Reparatur dieser Woche statt Revolution) ist klar. Bild trägt wenig zur Pointe bei.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/06.webp",
+    "motiv": "bilder/motiv/06.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0947,
+     0.3538,
+     0.8308,
+     0.6462
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.278
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Binary choice — finish vs. announce — forces immediate behavior selection.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: squirrel with goggles writing a short to-do list, acorn as anchor. Mood: practical determination."
+  },
+  {
+   "cid": "cid:embrace_protopia:7",
+   "n": 7,
+   "cardName": "The Boring Win",
+   "power": "Accept that small fixes do not trend. They just hold.",
+   "lore": "Maintenance and repair are systematically undervalued because they are undramatic.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Schildkröte flickt im Regen den Zaun: Bild illustriert das Undramatische gut, die Power ist aber eher eine Haltung als eine Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/07.webp",
+    "motiv": "bilder/motiv/07.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3948,
+     0.0026,
+     0.6052,
+     0.8847
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.975
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Mindset acceptance not performance trigger — needs a moment of internal processing first.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: turtle in raincoat trimming a fence in the rain, unbothered. Mood: quiet persistence."
+  },
+  {
+   "cid": "cid:embrace_protopia:8",
+   "n": 8,
+   "cardName": "The Compounding",
+   "power": "One repair a week is fifty-two a year. Nobody clapped, and the place is different.",
+   "lore": "Small consistent improvements accumulate non-linearly over time, outperforming heroic one-offs.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Dachs hakt Pflastersteine ab: '52 im Jahr' ist konkret und spielbar. Lore ist ein generischer Satz zu Zinseszins.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/08.webp",
+    "motiv": "bilder/motiv/08.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.5039,
+     0.1473,
+     0.4063,
+     0.5338
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Nobody clapped is instantly embodied — invisible heroism becomes a complete identity.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: badger with ruler laying checkmarks across a growing grid of tiles. Mood: quiet compound pride."
+  },
+  {
+   "cid": "cid:embrace_protopia:9",
+   "n": 9,
+   "cardName": "The Held Breath",
+   "power": "Before reacting, take the one breath the feed is built to deny you.",
+   "lore": "A deliberate slow exhale activates the parasympathetic system, a fast physiological route from reaction back into thinking.",
+   "grade": 1,
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Faultier haucht den Lärm der Stadt weg: Bild und Power verstärken sich. Lore nennt einen echten Mechanismus (langsames Ausatmen aktiviert den Parasympathikus), man lernt etwas.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/09.webp",
+    "motiv": "bilder/motiv/09.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0326,
+     0,
+     0.8703,
+     0.9421
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.149
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Physiologically immediate — reader is already breathing. The card is its own performance.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: sloth hanging from branch exhaling a slow blue cloud over a frantic city below. Mood: sovereign calm."
+  },
+  {
+   "cid": "cid:embrace_protopia:10",
+   "n": 10,
+   "cardName": "The Lower Lung",
+   "power": "Breathe low enough to think. The nervous system votes with oxygen.",
+   "lore": "Reclaiming attention begins with regulating the physical body that carries it.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Leuchtender Wal passt als 'unterer Lungenflug', die Power ('Breathe low enough to think') ist aber vage. Lore zu allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/10.webp",
+    "motiv": "bilder/motiv/10.webp"
+   },
+   "motiv": {
+    "rect": [
+     0,
+     0,
+     0.5823,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.937
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Physical instruction plus biological fact — the body is the stage and it is already on.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: glowing whale diving deep underwater surrounded by tiny luminous fish. Mood: deep sovereign intelligence."
+  },
+  {
+   "cid": "cid:embrace_protopia:11",
+   "n": 11,
+   "cardName": "The Boring Gap",
+   "power": "Let stillness feel like falling behind. It is actually catching up to yourself.",
+   "lore": "Brief disengagement and mind-wandering support consolidation, so the empty moment is where understanding forms.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Capybara auf der Bank mit Glühbirne zeigt Leerlauf als Denkzeit. Lore trifft einen belegten Kern (Mind-Wandering unterstuetzt Konsolidierung), die Power ist eher Spruch als Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/11.webp",
+    "motiv": "bilder/motiv/11.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1057,
+     0.2782,
+     0.3034,
+     0.64
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Reframe of stillness is smart but internal — surrender required before performance.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: capybara sitting alone on park bench, one lightbulb forming above its head. Mood: peaceful latent insight."
+  },
+  {
+   "cid": "cid:embrace_protopia:12",
+   "n": 12,
+   "cardName": "The Reclaimed Second",
+   "power": "Place attention on purpose. Take one second back, then another.",
+   "lore": "Agency over attention is foundational, making the reclaimed second the smallest unit of freedom.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Chamäleon drueckt den 'HERE'-Knopf: Power (eine Sekunde zurueckholen) ist klar. Bild und Lore sind dekorativ bzw. allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/12.webp",
+    "motiv": "bilder/motiv/12.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2912,
+     0.1755,
+     0.6334,
+     0.7569
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.216
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Micro-action, right now, one second — smallest possible threshold for embodiment.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: chameleon pressing a HERE button with one precise toe, gears behind it. Mood: quiet decisive agency."
+  },
+  {
+   "cid": "cid:embrace_protopia:13",
+   "n": 13,
+   "cardName": "The Person Nearby",
+   "power": "Authority is overrated, proximity is underrated. Ask the one who actually does the thing.",
+   "lore": "Real know-how is tacit knowledge, learned by doing and living in practitioners.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Eber am Zaun, Stachelschwein mit Schlüssel: Power ('Ask the one who actually does the thing') ist klar. Die Lore (stilles Wissen) bleibt oberflaechlich.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/13.webp",
+    "motiv": "bilder/motiv/13.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1065,
+     0.2576,
+     0.4738,
+     0.6334
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.517
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Clear action but needs a specific person nearby — context-dependent performance.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: boar in overalls leaning over fence sharing a wrench with porcupine mechanic. Mood: no-nonsense neighborly trust."
+  },
+  {
+   "cid": "cid:embrace_protopia:14",
+   "n": 14,
+   "cardName": "The Practitioner",
+   "power": "Trade the forecaster's confidence for the neighbor's callus.",
+   "lore": "Skills and knowledge are sustained and passed on within communities of practice bound by shared doing.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Der Diplomwisch verpufft per UFO-Strahl, während der Schlüssel weitergereicht wird: Bild ist Teil der Pointe. Lore nennt Praxisgemeinschaften, ein echter Wissensbegriff.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/14.webp",
+    "motiv": "bilder/motiv/14.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0572,
+     0.1345,
+     0.7929,
+     0.8655
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.524
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.512
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Strong metaphor but forecaster/callus trade is a frame shift not immediate embodiment.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grizzled chimp handing wrench to young monkey while a diploma fizzles overhead. Mood: earned competence over credentials."
+  },
+  {
+   "cid": "cid:embrace_protopia:15",
+   "n": 15,
+   "cardName": "The Unimpressive Source",
+   "power": "Notice that real know-how is often badly dressed and lives three doors down.",
+   "lore": "Authority signals like polish and credentials can be inversely related to hands-on competence.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Schlipsvogel mit Klemmbrett vor dem zerlumpten Capybara: Bild passt, der Witz wird aber schon durch die Power erklaert.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/15.webp",
+    "motiv": "bilder/motiv/15.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1381,
+     0.0995,
+     0.6498,
+     0.7766
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.689
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.517,
+     0.5,
+     0.483
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "An observational reframe — good insight but notice is softer than do.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: scruffy capybara being interviewed by tiny clipboard-holding bird about expertise. Mood: inverse credibility amusement."
+  },
+  {
+   "cid": "cid:embrace_protopia:16",
+   "n": 16,
+   "cardName": "The Shared Skill",
+   "power": "Pass knowledge hand to hand. It cannot be deplatformed.",
+   "lore": "Knowledge held and taught within a community is robust against single points of failure.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Krähen geben Werkzeug und Schlösser weiter; 'cannot be deplatformed' ist ein guter Satz, das Bild erklaert ihn aber nicht. Lore bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/16.webp",
+    "motiv": "bilder/motiv/16.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0216,
+     0.1391,
+     0.5281,
+     0.6946
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.512,
+     0.5,
+     0.488
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Pass knowledge hand to hand is as physical as it gets — and the punchline seals it.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: gang of crows passing a lockpick through many hands in a circle. Mood: conspiratorial solidarity."
+  },
+  {
+   "cid": "cid:embrace_protopia:17",
+   "n": 17,
+   "cardName": "The Invitation",
+   "power": "Turn watching into showing up. Name a time, a place, a task.",
+   "lore": "Action is far more likely when it is specific and social, converting vague intention into behavior.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Pelikan mit Klebeband am Flügel klebt 'BRING GLOVES' an den Mast. Power (Zeit, Ort, Aufgabe nennen) ist konkret. Lore allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/17.webp",
+    "motiv": "bilder/motiv/17.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3873,
+     0.451,
+     0.533,
+     0.549
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.944
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.498
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Name a time, a place, a task — three exact behaviors, fully embodied immediately.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: frazzled pelican stapling BRING GLOVES flyers to a lamppost. Mood: urgent amateur organizer energy."
+  },
+  {
+   "cid": "cid:embrace_protopia:18",
+   "n": 18,
+   "cardName": "The Shared Hands",
+   "power": "Split a problem the way your ancestors raised a barn.",
+   "lore": "Mutual aid is a deep and widespread survival strategy across species, older than money.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Oktopus hebt allein das Scheunendach: Gag ist vorhersehbar. Lore ('älter als Geld') ist ordentlich, Power ist vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/18.webp",
+    "motiv": "bilder/motiv/18.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2717,
+     0.2195,
+     0.7255,
+     0.7805
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.96
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.493
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Barn-raising metaphor is vivid but requires translation to a current specific problem.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: octopus in denim vest hammering roof beams with all eight arms at once. Mood: ancestral collaborative muscle."
+  },
+  {
+   "cid": "cid:embrace_protopia:19",
+   "n": 19,
+   "cardName": "The Awkward Start",
+   "power": "Go to the first small, clumsy gathering anyway. Clumsy is the entry fee.",
+   "lore": "The willingness to tolerate an awkward beginning separates groups that form from groups that stay imagined.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Taube, Emu, Ente und Krähe um die Kaffeekanne: Power ('go to the first clumsy gathering') ist klar, Bild trägt wenig Neues.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/19.webp",
+    "motiv": "bilder/motiv/19.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1169,
+     0.4837,
+     0.4425,
+     0.5163
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.796
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.498,
+     0.5,
+     0.502
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Clumsy is the entry fee is a complete permission slip and performance cue in one.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: pigeon, emu, duck, and crow awkwardly huddled over coffee carafe on bare table. Mood: painfully hopeful first meeting."
+  },
+  {
+   "cid": "cid:embrace_protopia:20",
+   "n": 20,
+   "cardName": "The Thicker Rope",
+   "power": "Build together until the crowd can act, not just feel together.",
+   "lore": "Communities that self-organize shared resources thicken over repeated cooperation.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Vögel flechten das Seil dicker: Bild zeigt das Thema. Power und Lore sind allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/20.webp",
+    "motiv": "bilder/motiv/20.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0513,
+     0.225,
+     0.8768,
+     0.775
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.712
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.493,
+     0.5,
+     0.507
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Outcome description more than invitation — act vs. feel is sharp but it is a process milestone.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: flock of small yellow birds collectively weaving a thick rope around a wooden post. Mood: cumulative collective power."
+  },
+  {
+   "cid": "cid:embrace_protopia:21",
+   "n": 21,
+   "cardName": "The Available Hour",
+   "power": "The future you can touch is the next few hours. Start there.",
+   "lore": "Action only ever occurs in the present, making today the only workable unit of the future.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Fledermaus an der Uhr mit markierten Stunden; Power ('next few hours') ist klar. Pointe und Lore bleiben schwach.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/21.webp",
+    "motiv": "bilder/motiv/21.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3577,
+     0.4002,
+     0.5955,
+     0.5998
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.841
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Start there — two words of complete instruction after a clear frame. Immediate.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: small bat clinging to pocket watch face, wings spread, clock hands at golden hour. Mood: urgent present-tense focus."
+  },
+  {
+   "cid": "cid:embrace_protopia:22",
+   "n": 22,
+   "cardName": "The Done Thing",
+   "power": "Trade one perfect someday for one finished today.",
+   "lore": "A completed small action changes the world more than a large intended one.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Mistkäfer rollt seine Kugel, während das 'Irgendwann'-Schloss nur als Dunst schimmert: Pointe sitzt sofort. Power ist eine klare Tauschhandlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/22.webp",
+    "motiv": "bilder/motiv/22.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.287,
+     0.5083,
+     0.4113,
+     0.4915
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.981
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Clean binary swap — dung beetle rolling a real ball vs. glowing dream castle. Total clarity.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: dung beetle in patched jacket pushing a real mud ball away from a holographic dream castle. Mood: grounded over glamour."
+  },
+  {
+   "cid": "cid:embrace_protopia:23",
+   "n": 23,
+   "cardName": "The Unsexy Now",
+   "power": "Accept that today's improvement is small and real. Both are features.",
+   "lore": "Taking small concrete actions before motivation arrives reliably lifts mood and agency.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Elch fegt den Boden: Bild passt, Pointe schwach. Lore beschreibt Verhaltensaktivierung treffend (handeln vor der Motivation).",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/23.webp",
+    "motiv": "bilder/motiv/23.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4377,
+     0,
+     0.4656,
+     0.9506
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.997
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Acceptance is the action — but it requires internal reframe before the external move fires.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: moose in flannel shirt sweeping a floor with a broom, coffee cup steaming nearby. Mood: dignified unglamorous effort."
+  },
+  {
+   "cid": "cid:embrace_protopia:24",
+   "n": 24,
+   "cardName": "The Standing Record",
+   "power": "Act now, because now is the only place leverage lives.",
+   "lore": "Agency is structurally located in the now; the past is fixed and the future is unreachable.",
+   "grade": 2,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Panzernashorn hebt einen Ziegel; zum Titel 'Standing Record' gibt es keinen erkennbaren Witz. Lore ist philosophisch und nicht zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/24.webp",
+    "motiv": "bilder/motiv/24.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3803,
+     0.2228,
+     0.5001,
+     0.6882
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "True and sharp but leverage lives is philosophical — Act now needs a what attached.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: armored rhino driving a shoulder into a brick, coffee cup steam wafting behind. Mood: irreversible committed force."
+  },
+  {
+   "cid": "cid:embrace_protopia:25",
+   "n": 25,
+   "cardName": "The Unknown Face",
+   "power": "Treat the stranger as a possible ally with a different toolbox, not a threat.",
+   "lore": "Humans succeeded as a species through unusual friendliness to non-kin.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Hyäne mit Schraubenschluessel vor dem Geier: 'different toolbox' ist im Bild sichtbar. Power ist Haltung, Lore nur angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/25.webp",
+    "motiv": "bilder/motiv/25.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1521,
+     0.5312,
+     0.5511,
+     0.4688
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.596
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Mindset reframe is clear; toolbox metaphor useful but the action is still internal.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: spotted hyena and vulture awkwardly exchanging wrenches, meeting eyes cautiously. Mood: wary species-crossing curiosity."
+  },
+  {
+   "cid": "cid:embrace_protopia:26",
+   "n": 26,
+   "cardName": "The First Hello",
+   "power": "Lower the bar to contact. Most cooperation starts embarrassingly small.",
+   "lore": "Low-stakes contact between groups reliably reduces prejudice.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Zwei Igel sagen vorsichtig 'HI': Stacheln und Smalltalk sind sofort die Pointe. Lore nennt den echten Befund (Kontakt senkt Vorurteile).",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/26.webp",
+    "motiv": "bilder/motiv/26.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.5546,
+     0.4064,
+     0.3356,
+     0.5485
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Lower the bar to contact IS the performance — Hello is already the card in action.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: two prickly hedgehogs facing each other, one saying HI in a small speech bubble. Mood: tentative generous first step."
+  },
+  {
+   "cid": "cid:embrace_protopia:27",
+   "n": 27,
+   "cardName": "The Risk of Being Soft-Blocked",
+   "power": "Accept that they might not respond. Your nervous system thinks that is death. It is not.",
+   "lore": "Social rejection registers in the brain like physical pain—an outdated survival alarm.",
+   "grade": 2,
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Nervöses Tierchen winkt vor der Alarmglocke: Bild und Titel treffen beim ersten Blick. 'Your nervous system thinks that is death. It is not.' ist zitierbar, die Lore (soziale Ablehnung wirkt wie Schmerz) ist ein echter Wissenskern.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/27.webp",
+    "motiv": "bilder/motiv/27.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4472,
+     0.2299,
+     0.3718,
+     0.6105
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.961
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "It is not is a great punchline — but acceptance of non-response requires internal defusing first.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: panicked quokka ringing a giant bell alone, black puff of silence around it. Mood: alarm system running on wrong data."
+  },
+  {
+   "cid": "cid:embrace_protopia:28",
+   "n": 28,
+   "cardName": "The Widened Circle",
+   "power": "Go first. Every ally was a stranger until somebody did.",
+   "lore": "Reciprocal strategies that begin by cooperating outperform purely defensive ones.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Tapire und ein blau umrissener Neuer mit Blatt: Bild passt. Lore verweist auf kooperative Strategien (Tit-for-Tat) und lehrt etwas, die Power ist allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/28.webp",
+    "motiv": "bilder/motiv/28.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.34,
+     0.0877,
+     0.3636,
+     0.7668
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.927
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Go first — cleanest action command in the STRANGER section. Logic justifies it immediately.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: first tapir in a group extending a leaf to a ghost-outline tapir not yet arrived. Mood: founding cooperative gesture."
+  },
+  {
+   "cid": "cid:embrace_protopia:29",
+   "n": 29,
+   "cardName": "The Open Question",
+   "power": "Run on huh, I wonder, instead of we are doomed or we are saved.",
+   "lore": "Intrinsic motivation produces better learning and persistence than reward or fear.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Erdmännchen zeichnet ein bluehendes Fragezeichen: huebsches Bild. Power und Lore bleiben allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/29.webp",
+    "motiv": "bilder/motiv/29.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1298,
+     0.3591,
+     0.4211,
+     0.5085
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.504
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Swap the internal voice — player is already running on something. The card reroutes it now.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: meerkat in overalls drawing a lush green question mark, wildflowers spiraling from its tip. Mood: fertile investigative wonder."
+  },
+  {
+   "cid": "cid:embrace_protopia:30",
+   "n": 30,
+   "cardName": "The Cheap Experiment",
+   "power": "Framed as an experiment, wonder costs less than hope.",
+   "lore": "Framing situations as experiments reduces the paralysis of needing a guaranteed outcome.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schnabeltier im Labor, Gebräu quillt über: passend, aber nicht überraschend. Power ('wonder costs less than hope') ist eher Spruch.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/30.webp",
+    "motiv": "bilder/motiv/30.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1402,
+     0.373,
+     0.5001,
+     0.5977
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.176
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.504
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Powerful reframe but requires applying to a specific current situation before it fires.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: platypus in lab coat gleefully pouring neon liquid into overflowing beaker. Mood: permitted mess in service of data."
+  },
+  {
+   "cid": "cid:embrace_protopia:31",
+   "n": 31,
+   "cardName": "The Wrong Answer",
+   "power": "Be wrong a lot. Curiosity treats that as data, not defeat.",
+   "lore": "Treating mistakes as feedback is what allows iteration to converge on what works.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Fuchs zeigt auf die rot umkreiste Fehlskizze, daneben der bessere Entwurf. Bild erklaert die Power gut, der Rest ist allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/31.webp",
+    "motiv": "bilder/motiv/31.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0732,
+     0.2884,
+     0.329,
+     0.5108
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.504,
+     0.5,
+     0.496
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Be wrong a lot is both permission and action — player gets a new job description immediately.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: fox circling a wrong-answer dog with a red arrow, dog morphs happily into a wolf. Mood: iterative transformation without shame."
+  },
+  {
+   "cid": "cid:embrace_protopia:32",
+   "n": 32,
+   "cardName": "The Widening Mind",
+   "power": "Let interest expand attention where fear shrinks it.",
+   "lore": "Positive states like curiosity broaden the range of thoughts and actions a person considers.",
+   "grade": 3,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Eule im Schlüsselloch einer schwarzen Wand, dahinter bunte Landschaft: Bild trägt die Pointe. Lore nennt den belegten Erweiterungseffekt positiver Zustaende.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/32.webp",
+    "motiv": "bilder/motiv/32.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3226,
+     0.0735,
+     0.3441,
+     0.7257
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.949
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.504,
+     0.5,
+     0.496
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Describes the mechanism but does not tell you what to do with your hands right now.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: owl bursting from a black dome into a kaleidoscopic mountain landscape. Mood: fear-ceiling breaking open to color."
+  },
+  {
+   "cid": "cid:embrace_protopia:33",
+   "n": 33,
+   "cardName": "The Logged Observation",
+   "power": "Write down what you actually saw, not what the headline said you would see.",
+   "lore": "Keeping a direct record over time counters the distortions of memory and media.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Bär schreibt mit Brille in sein Notizbuch; Power ist klar und spielbar. Rest allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/33.webp",
+    "motiv": "bilder/motiv/33.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4289,
+     0.1609,
+     0.5711,
+     0.8391
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.694
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Write down what you actually saw — exact physical immediately executable action.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: grumpy bear in glasses writing intently in a notebook, surrounded by crumpled newspapers. Mood: stubborn first-person epistemology."
+  },
+  {
+   "cid": "cid:embrace_protopia:34",
+   "n": 34,
+   "cardName": "The Honest Denominator",
+   "power": "Count the whole thing, including the times it worked and nobody noticed.",
+   "lore": "Attending to base rates corrects the overweighting of vivid, alarming cases.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Krähe macht Strichlisten; Lore nennt Basisraten richtig als Korrektur fuer auffaellige Fälle. Bild und Power sind eher Illustration.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/34.webp",
+    "motiv": "bilder/motiv/34.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3737,
+     0.5087,
+     0.2945,
+     0.4512
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.601
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Sharp insight but count the whole thing needs a current data set to engage with.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: raven chalking tally marks on a wall, one highlighted row that nobody circled. Mood: unfashionable statistical honesty."
+  },
+  {
+   "cid": "cid:embrace_protopia:35",
+   "n": 35,
+   "cardName": "The Inconvenient Entry",
+   "power": "Keep the notes that argue against you. Those are the valuable ones.",
+   "lore": "Actively seeking disconfirming evidence separates inquiry from rationalization.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Ziege streicht Eintrag durch; die Lore (widerlegende Belege suchen) ist ein echter Wissenskern. Pointe und Power bleiben schwach.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/35.webp",
+    "motiv": "bilder/motiv/35.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4653,
+     0.1978,
+     0.4721,
+     0.7196
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.939
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Behavioral but requires having existing notes to keep — depends on prior setup.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: skeptical goat writing furiously in open book, thought bubble full of crossed-out certainties. Mood: principled self-opposition."
+  },
+  {
+   "cid": "cid:embrace_protopia:36",
+   "n": 36,
+   "cardName": "The Track Record",
+   "power": "Trust a page of your own observations over a year of someone else's predictions.",
+   "lore": "Personal calibrated records outperform remembered impressions and forecasts.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Der Elefant, der nie vergisst, braucht ein Notizbuch und ignoriert die Kristallkugel: Bild ist Teil der Pointe. Power ist klar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/36.webp",
+    "motiv": "bilder/motiv/36.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3906,
+     0.3405,
+     0.5544,
+     0.6595
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.806
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Requires a personal log to trust — strong frame but depends on prior practice.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: elephant examining its own smudged notebook, a glowing crystal ball untouched beside it. Mood: sovereign record-keeper over oracle."
+  },
+  {
+   "cid": "cid:embrace_protopia:37",
+   "n": 37,
+   "cardName": "The Made Thing",
+   "power": "Make something with your hands this week. Bread, a fix, a fence.",
+   "lore": "Craftsmanship connects skill, material, and judgment, building a grounded sense of agency.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Orang-Utan knetet Teig; Power nennt konkrete Beispiele (Brot, Reparatur, Zaun). Pointe schwach.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/37.webp",
+    "motiv": "bilder/motiv/37.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4554,
+     0.14,
+     0.5199,
+     0.7993
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Bread, a fix, a fence — three perfect examples collapse the ask to fully specific.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: orangutan kneading dough aggressively on a wooden board, flour cloud around it. Mood: grounded tactile making-joy."
+  },
+  {
+   "cid": "cid:embrace_protopia:38",
+   "n": 38,
+   "cardName": "The Returned Attention",
+   "power": "Let manual work pull attention out of the loop and back into the room.",
+   "lore": "Absorbing, skill-matched activity produces flow that displaces rumination.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Otter schnitzt, das Handy mit Sprung liegt im Dreck: Bild ist die Pointe. Lore nennt Flow als Gegenmittel zum Grübeln.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/38.webp",
+    "motiv": "bilder/motiv/38.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4975,
+     0.1823,
+     0.4179,
+     0.8139
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.986
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Process invitation — the outcome is clear but let requires giving up the loop first.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: otter whittling a wood figure, cracked phone face-down in wood shavings. Mood: absorbed escape from the feed."
+  },
+  {
+   "cid": "cid:embrace_protopia:39",
+   "n": 39,
+   "cardName": "The Slow Reward",
+   "power": "Work at the speed of hands. That is not a bug, it is the medicine.",
+   "lore": "Effortful, slower processes produce deeper learning and satisfaction than frictionless ones.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Schnecke poliert einen Steinpilz: Bild passt zum Tempo. 'Not a bug, it is the medicine' ist ein guter Satz, die Power aber vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/39.webp",
+    "motiv": "bilder/motiv/39.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3239,
+     0.1597,
+     0.6251,
+     0.7471
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.879
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Reframe of slowness as feature — needs the player to be currently doing something slow.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: snail ascending a mushroom stem in rain, serene face, no hurry at all. Mood: therapeutic deliberate pace."
+  },
+  {
+   "cid": "cid:embrace_protopia:40",
+   "n": 40,
+   "cardName": "The Restored Limb",
+   "power": "A muscle you use stays yours. Friction is what keeps the grip.",
+   "lore": "Capacities are maintained through use, resisting the quiet erosion of disuse.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Gorilla mit Hammer; Verbindung zu 'Restored Limb' bleibt schwach. Lore (Gebrauch hält Fähigkeiten) allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/40.webp",
+    "motiv": "bilder/motiv/40.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3028,
+     0.07,
+     0.663,
+     0.8657
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.92
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Principle over invitation — grip metaphor is strong but the action is implied not commanded.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: gorilla raising a heavy hammer, arm sinew visible, fire in background. Mood: reclaimed physical capability."
+  },
+  {
+   "cid": "cid:embrace_protopia:41",
+   "n": 41,
+   "cardName": "The Small Opening",
+   "power": "Do not storm the front gate. Find the side door nobody guards.",
+   "lore": "Change often enters through small, low-resistance points rather than direct confrontation.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wiesel schlüpft zwischen zwei 'KEEP OUT'-Schildern durch den Spalt: Pointe sitzt. Power ist als Haltung formuliert.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/41.webp",
+    "motiv": "bilder/motiv/41.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.5038,
+     0.4524,
+     0.2714,
+     0.522
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Find the side door nobody guards — spatially immediate strategic and already half the work.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: ferret slipping through a cracked side door marked KEEP OUT, grinning. Mood: cheerful principled infiltration."
+  },
+  {
+   "cid": "cid:embrace_protopia:42",
+   "n": 42,
+   "cardName": "The Pilot Move",
+   "power": "Run a tiny version. Low stakes, real feedback, no permission needed.",
+   "lore": "Small reversible experiments let you learn what works at low cost before committing.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Taube streicht einen Zebrastreifen mit der Rolle: Mini-Test mit realem Bild, Power ist klar und spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/42.webp",
+    "motiv": "bilder/motiv/42.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4473,
+     0.2043,
+     0.4524,
+     0.696
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "No permission needed removes the last excuse — Run a tiny version is the complete task.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: city pigeon with a paint roller laying a tiny crosswalk stripe in the street. Mood: unsanctioned practical prototyping."
+  },
+  {
+   "cid": "cid:embrace_protopia:43",
+   "n": 43,
+   "cardName": "The Quiet Sabotage",
+   "power": "Improvement often looks like mild disobedience to a stuck system.",
+   "lore": "Small principled noncompliance is a constructive act when declining to cooperate with a broken rule.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Krähe löst mit Büroklammer 'DO NOT REPAIR'-Schloss: Bild passt zur Power, der Witz bleibt vorhersehbar. Lore etwas schwer lesbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/43.webp",
+    "motiv": "bilder/motiv/43.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3832,
+     0.3181,
+     0.4195,
+     0.5815
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.604
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Excellent insight but Improvement often looks like is still description not invitation.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: crow in tactical vest repairing a DO NOT REPAIR panel from behind, tools out. Mood: constructive principled disobedience."
+  },
+  {
+   "cid": "cid:embrace_protopia:44",
+   "n": 44,
+   "cardName": "The Proof of Concept",
+   "power": "Build the working example. One beats a thousand arguments.",
+   "lore": "A functioning demonstration shifts a debate more than rhetoric does.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Mäuse treiben mit Wasserrad eine Glühbirne an: Beweis statt Streit, Bild und Power verstärken sich.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/44.webp",
+    "motiv": "bilder/motiv/44.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.5956,
+     0.1018,
+     0.334,
+     0.6989
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Build the working example — exact verb, exact artifact, zero ambiguity.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: three mice building a spinning waterwheel together, crowd of astonished onlookers. Mood: demonstration ending all discussion."
+  },
+  {
+   "cid": "cid:embrace_protopia:45",
+   "n": 45,
+   "cardName": "The Surrendered Sure",
+   "power": "Give up being certain. It is harder than giving up money.",
+   "lore": "Tolerance of ambiguity is a learnable disposition required for protopia.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Pangolin stemmt den Felsbrocken 'CERTAIN': Bild passt, Pointe ist aber erklaerend. Lore zu Ambiguitätstoleranz nur angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/45.webp",
+    "motiv": "bilder/motiv/45.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2305,
+     0.3727,
+     0.7008,
+     0.6273
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.513
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Harder than giving up money reframes beautifully but surrender is internal work.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: pangolin dropping a cracked boulder labeled CERTAIN, sand spraying on impact. Mood: costly but necessary release."
+  },
+  {
+   "cid": "cid:embrace_protopia:46",
+   "n": 46,
+   "cardName": "The Comfort of Maybe",
+   "power": "Trade the warm baths of hopeless and handled for the cold shower of it depends on us.",
+   "lore": "Giving up the relief of certainty is the discomfort protopia asks you to accept.",
+   "grade": 3,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Kröte zwischen den Sesseln 'DOOM' und 'SAVED' ruft 'IT'S UP TO US!': Bild ist die Pointe. Power (warmes Bad gegen kalte Dusche) ist Metapher ohne klare Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/46.webp",
+    "motiv": "bilder/motiv/46.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.651,
+     0.5698,
+     0.2566,
+     0.3772
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Abstract warmth metaphor — it depends on us is still a frame not yet an action.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: toad choosing between DOOM and SAVED armchairs, a question mark umbrella above in rain. Mood: uneasy agency over comfortable despair."
+  },
+  {
+   "cid": "cid:embrace_protopia:47",
+   "n": 47,
+   "cardName": "The Ongoing Effort",
+   "power": "Accept there is no final version. The cost is showing up again next week.",
+   "lore": "Durable improvement is maintained, not achieved once.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Kamel mit Werkzeuggurt vor dem Kalender voller Ziegel: Bild passt. Power ist klar im Ton, aber keine Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/47.webp",
+    "motiv": "bilder/motiv/47.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2429,
+     0.4516,
+     0.3866,
+     0.462
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.849
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Showing up again next week is behavioral but accept is the real ask — internal before external.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: camel with saddlebags standing before a long calendar, every week marked with a brick. Mood: stolid endless commitment."
+  },
+  {
+   "cid": "cid:embrace_protopia:48",
+   "n": 48,
+   "cardName": "The Worthwhile Bill",
+   "power": "Pay in certainty and comfort. Get back the wheel the other two decks took.",
+   "lore": "The trade protopia offers is the discomfort of ongoing uncertainty in exchange for restored agency.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Känguru stempelt 'PAID' auf die Rechnung: Bild passt zum Titel. Power bezieht sich auf 'the other two decks' und braucht Serienwissen.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/48.webp",
+    "motiv": "bilder/motiv/48.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3266,
+     0.2365,
+     0.6284,
+     0.751
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.21
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Brilliant exhibition-aware meta-reference — but it is a trade description more than performance cue.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: kangaroo stamping PAID on a document labeled Certainty and Comfort, receiving a glowing steering wheel. Mood: deliberate costly bargain."
+  },
+  {
+   "cid": "cid:embrace_protopia:49",
+   "n": 49,
+   "cardName": "The Visible Seam",
+   "power": "If you can see how it was made, you can remake it. Seams are honesty.",
+   "lore": "Showing the seams of a system lets people understand, question, and modify it.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Vernähter Frosch zeigt auf die Naht: Pointe sitzt. Power und Lore bleiben allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/49.webp",
+    "motiv": "bilder/motiv/49.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4694,
+     0.2156,
+     0.505,
+     0.7844
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.989
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Seams are honesty is a beautiful reframe but see how it was made requires something seamed in front of you.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: a toad pointing at its own visible suture lines with a knowing grin. Mood: radical transparency as invitation."
+  },
+  {
+   "cid": "cid:embrace_protopia:50",
+   "n": 50,
+   "cardName": "The Open Question",
+   "power": "If it invites your question instead of closing it, you are in the workshop.",
+   "lore": "Systems that remain genuinely open to revision are the structural signature of participatory process.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Hund mit Notizblock 'YOUR TURN': nett, aber ohne Spitze. Lore ist abstrakt (strukturelle Signatur partizipativer Prozesse).",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/50.webp",
+    "motiv": "bilder/motiv/50.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4431,
+     0.5174,
+     0.4754,
+     0.4826
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.951
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Diagnostic framing is sharp — it is a detection heuristic not an immediate action.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: scruffy dog holding a notepad reading YOUR TURN, a warm workshop light behind it. Mood: invitation over conclusion."
+  },
+  {
+   "cid": "cid:embrace_protopia:51",
+   "n": 51,
+   "cardName": "The Plural Path",
+   "power": "If there is more than one way forward, it is a future, not a funnel.",
+   "lore": "The presence of multiple viable paths signals genuine agency.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Ameise vor Karte mit TUNNEL / OVERPASS / MAZE / BRIDGE / UNKNOWN: Bild passt sehr gut zu 'Future, not a funnel'. Power ist ein Test, keine Handlung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/51.webp",
+    "motiv": "bilder/motiv/51.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3898,
+     0.2545,
+     0.2682,
+     0.4925
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.825
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Funnel vs. future is a killer distinction — but spotting it is observation before action.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: ant with backpack examining map showing TUNNEL, OVERPASS, MAZE, BRIDGE, UNKNOWN branches. Mood: genuine-option abundance."
+  },
+  {
+   "cid": "cid:embrace_protopia:52",
+   "n": 52,
+   "cardName": "The Rough Test",
+   "power": "The rougher and more inviting it is, the more likely it is yours to edit.",
+   "lore": "Visible imperfection signals an unfinished thing still open to your hand.",
+   "grade": 3,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Zerzauster Falter neben durchsichtigem Würfel: Zusammenhang zum Titel 'Rough Test' ist nicht erkennbar. Power ist Haltung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/52.webp",
+    "motiv": "bilder/motiv/52.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3784,
+     0.1048,
+     0.5363,
+     0.7904
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.95
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Useful heuristic for identifying opportunity — but it is criteria not a direct invitation.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: paint-splattered moth pressed against a perfect glass cube, wings open. Mood: rough aliveness vs. sealed perfection."
+  },
+  {
+   "cid": "cid:embrace_protopia:53",
+   "n": 53,
+   "cardName": "The Nearest Lever",
+   "power": "Look around the actual room you are in. Find the one thing within arm's reach.",
+   "lore": "Effective change starts from where you already have leverage and access.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Katze kreist das Wollknaeuel in der Chaosecke ein: 'within arm's reach' ist im Bild sichtbar, Power ist konkret.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/53.webp",
+    "motiv": "bilder/motiv/53.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4836,
+     0.1868,
+     0.431,
+     0.7284
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.998
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Look around the actual room you are in — spatially immediate, requires no metaphor translation.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: striped cat drawing a red circle around a ball of yarn in a chaotic room. Mood: calm leverage-finding amid overwhelm."
+  },
+  {
+   "cid": "cid:embrace_protopia:54",
+   "n": 54,
+   "cardName": "The One Percent",
+   "power": "You do not need the whole future. You need today, one percent better.",
+   "lore": "Marginal gains, small improvements compounded consistently, produce large results.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Chamäleon dreht am Knopf 'FUTURE' mit 'CLICK': Bild passt, Pointe vorhersehbar. Lore zu marginalen Gewinnen nur angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/54.webp",
+    "motiv": "bilder/motiv/54.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3693,
+     0.3675,
+     0.2945,
+     0.5974
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.963
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "One percent better is precisely scaled — player knows exactly what size improvement to make.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: chameleon clicking a combination dial labeled FUTURE one notch forward. Mood: micro-precision over total ambition."
+  },
+  {
+   "cid": "cid:embrace_protopia:55",
+   "n": 55,
+   "cardName": "The Quiet Start",
+   "power": "Nobody will clap. Start anyway. The clapping was never the point.",
+   "lore": "Action driven by intrinsic purpose is more durable than action requiring applause.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Maulwurf gräbt ohne Publikum: Bild und 'Nobody will clap' stimmen überein. Power klar, Lore allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/55.webp",
+    "motiv": "bilder/motiv/55.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3974,
+     0.1766,
+     0.482,
+     0.6252
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.937
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Start anyway — two-word command plus permission to work without audience. Complete.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: mole emerging from dark earth tunnel, no crowd above, digging on regardless. Mood: intrinsic purpose over approval."
+  },
+  {
+   "cid": "cid:embrace_protopia:56",
+   "n": 56,
+   "cardName": "The Core Question",
+   "power": "Forget the brochure. Ignore the loop. Pick up the pencil.",
+   "lore": "Agency is recovered by converting the vast question of the future into one workable thing you can do now.",
+   "cardNamePrint": "THE CORE QUESTION",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Gelbe Pfote mit Füllfeder; Power ('Pick up the pencil') ist ein klarer Schluss und greift den Stift des Decks auf. Das Bild fügt dem wenig hinzu.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/56.webp",
+    "motiv": "bilder/motiv/56.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4203,
+     0.0737,
+     0.5199,
+     0.7788
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.894
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Triple command equals triple embodiment. The deck's premise delivered as pure performance.",
+   "artworkPrompt": "Style: watercolor ink sketch, aged paper. Subject: giant golden paw gripping an oversized fountain pen, tiny aliens watching in awe. Mood: enormous agency compressed to one tool."
+  }
+ ]
+}

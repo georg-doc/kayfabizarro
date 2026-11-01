@@ -1,0 +1,3113 @@
+{
+ "schema": "kfb.deck-paket/1",
+ "packId": "forget_utopia",
+ "title": "Forget Utopia",
+ "role": "FORGET",
+ "question": "What must be true for this promise to work?",
+ "quelle": {
+  "druckPdf": "Deck_A_UTOPIA_-_Forget_Utopia.pdf",
+  "sha256": "76314195b1062f935a4e3c09602cd563725b07f64d346a31f3bf0a71f2c4a112",
+  "seiten": 15,
+  "coverOffset": 1,
+  "jsonStand": "data/kfb-deck-analyzer-r1:media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json"
+ },
+ "bewertung": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.18,
+   "distribution": {
+    "1": 0,
+    "2": 6,
+    "3": 34,
+    "4": 15,
+    "5": 1
+   },
+   "reason": "Durchgehend sauber geschriebenes Deck mit stimmigem Tonfall und klarem Wissenskern pro Karte (Halo-Effekt, Verlustaversion, hedonische Anpassung, Pre-Mortem), aber die Power-Texte sind fast durchweg Rhetorik statt Spielhandlung und viele Bilder bebildern nur den Titel. Stark sind die Tier-Pointen (Mausefallen-Tastatur, Sekretärvogel, Windhund mit Banner).",
+   "ratingNote": "4 + 5 Sterne zusammen 16 von 56 (29 %), knapp unter der Grenze von 30 %; nach Prüfung gegen die Tabelle gehalten. Power erreicht nur auf den Karten 34, 53, 54 und 56 die volle Punktzahl, weil die übrigen Power-Texte Haltungen statt klarer Handlungen beschreiben.",
+   "version": "R1"
+  },
+  "topCards": [
+   "The Hero Demo",
+   "The Moving Launch Date",
+   "The Finished City",
+   "The Missing Receipt",
+   "The Forgotten Muscle"
+  ],
+  "worstCards": [
+   "The Comfort Trap",
+   "The Patience Tax",
+   "The Closed Loop"
+  ],
+  "viralScore": 6,
+  "viralReason": "„The Hero Demo“ (Lemur auf der Mausefallen-Tastatur) und „The Moving Launch Date“ (Windhund jagt das Banner) würden geteilt, weil jeder Tech-Pitch das Bild sofort wiedererkennt."
+ },
+ "marketing": {
+  "viralScoreAlt": 8,
+  "overallScore": 9,
+  "coverScore": 4.8,
+  "g1Anteil": 0.446,
+  "topCardsAlt": [
+   "The Shine Test",
+   "The Core Question",
+   "The California Ideology",
+   "The Treadmill",
+   "The Signature Line"
+  ],
+  "worstCardsAlt": [
+   "The Vanishing Present",
+   "The Unfalsifiable Mission",
+   "The Assumption Stack"
+  ],
+  "hashtags": [
+   "#ForgetUtopia",
+   "#Kayfabizarro",
+   "#ExhibitionHannover",
+   "#UtopianFiction",
+   "#CriticalThinking",
+   "#CardGame",
+   "#MediaLiteracy",
+   "#KayfaBIZARRO"
+  ],
+  "blurb": "A card deck that names the rhetorical moves used to sell futures that never arrive. For anyone who has ever stood in a line to nowhere and wondered exactly how they got there.",
+  "tier": "GRUEN"
+ },
+ "verweise": {
+  "video": "https://www.youtube.com/watch?v=BOgt2SAVCQc",
+  "songs": null,
+  "tratsch": null
+ },
+ "cover": "bilder/cover.webp",
+ "cards": [
+  {
+   "cid": "cid:forget_utopia:1",
+   "n": 1,
+   "cardName": "The Glossy Horizon",
+   "power": "Hold up a future so polished the visitor sees their own face in it. Sell the reflection.",
+   "lore": "A scale model of tomorrow is easily mistaken for a measurement of it.",
+   "cardNamePrint": "THE GLOSSY HORIZON",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Chamäleon vor seinem Spiegelbild in der Glaskuppel trägt das Bild; die Power ist Rhetorik ohne Handlung. Der Lore-Satz vom Modell, das mit einer Messung verwechselt wird, ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/01.webp",
+    "motiv": "bilder/motiv/01.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0787,
+     0.3491,
+     0.3915,
+     0.5225
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Chameleon in bubble = you ARE the reflection being sold. Instant.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: chameleon gazing into iridescent dome, sees own distorted reflection. Mood: seductive, uncanny."
+  },
+  {
+   "cid": "cid:forget_utopia:2",
+   "n": 2,
+   "cardName": "The Finished City",
+   "power": "Show the destination as already built. No scaffolding, no mud, no maintenance, no Tuesday.",
+   "lore": "The render is an argument dressed as a photograph of something that does not yet exist.",
+   "cardNamePrint": "THE FINISHED CITY",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Der Pudel allein in der blank polierten, leeren Stadt macht „kein Dienstag“ sofort sichtbar. Lore („Argument, als Foto verkleidet“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/02.webp",
+    "motiv": "bilder/motiv/02.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4099,
+     0.2903,
+     0.2657,
+     0.5603
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'No scaffolding, no Tuesday' — the absence named is the move. Zero-setup.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: poodle sitting pristine in perfect glass city plaza, no workers, no weather. Mood: uncannily clean, hollow."
+  },
+  {
+   "cid": "cid:forget_utopia:3",
+   "n": 3,
+   "cardName": "The Vanishing Present",
+   "power": "Make today feel like a waiting room with bad chairs, so the future feels like rescue.",
+   "lore": "Re-framing the present as merely an obstacle devalues the only time anyone can actually act in.",
+   "cardNamePrint": "THE VANISHING PRESENT",
+   "grade": 3,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Eintagsfliege im Wartezimmer mit schlechten Stühlen und Regenbogen hinter der Tür: Motiv und Text sagen dasselbe, und das Insekt macht „vergehende Gegenwart“ zur Pointe. Lore ist nur im Kartenkontext stark.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/03.webp",
+    "motiv": "bilder/motiv/03.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2479,
+     0.3554,
+     0.2325,
+     0.4904
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Dragonfly in waiting room is soft — metaphor reads conceptually before it performs.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: dragonfly slumped on plastic chair in grey waiting room, rainbow door in background. Mood: drained, wistful."
+  },
+  {
+   "cid": "cid:forget_utopia:4",
+   "n": 4,
+   "cardName": "The Signature Line",
+   "power": "Offer the dream. Ask only that they stop looking at the floor and sign.",
+   "lore": "Awe and scrutiny use different states of mind, and awe is faster.",
+   "cardNamePrint": "THE SIGNATURE LINE",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Krake mit Stift am Vertrag ist solide, aber erwartbar. Die Lore (Staunen und Prüfen sind verschiedene Zustände) bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/04.webp",
+    "motiv": "bilder/motiv/04.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1412,
+     0.0818,
+     0.5363,
+     0.7895
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.91
+   },
+   "herkunft": {
+    "seite": 2,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'Awe is faster' is a single-sentence PhD thesis. Octopus with pen clinches it.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: octopus holding glowing pen over contract scroll, eyes wide in wonder. Mood: dazzled, complicit."
+  },
+  {
+   "cid": "cid:forget_utopia:5",
+   "n": 5,
+   "cardName": "The Cure-All Keynote",
+   "power": "Promise that one product retires an entire category of human suffering.",
+   "lore": "Recasting complex social problems as neat technical fixes flatters the tool and ignores the politics.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Walross hakt „Hunger, Einsamkeit, Tod“ am Pult ab: Der Haken bei Death ist der Gag. Lore nennt Solutionismus, aber ohne Begriff.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/05.webp",
+    "motiv": "bilder/motiv/05.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0967,
+     0.2016,
+     0.6564,
+     0.7845
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.282
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Walrus checking HUNGER/LONELINESS/DEATH boxes is great; the logic needs one beat to land.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: walrus at podium checking off enormous checkbox list including DEATH, city skyline behind. Mood: preposterous, ceremonial."
+  },
+  {
+   "cid": "cid:forget_utopia:6",
+   "n": 6,
+   "cardName": "The Roadmap to Eden",
+   "power": "Draw a straight line from now to paradise. Hide the cliffs behind the font.",
+   "lore": "Roadmaps present uncertain futures as scheduled milestones, borrowing the authority of a train timetable.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Raupe auf der Route zum Abgrund passt, ist aber vorhersehbar. Der Zugfahrplan-Vergleich in der Lore ist der beste Teil.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/06.webp",
+    "motiv": "bilder/motiv/06.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4604,
+     0.3343,
+     0.5396,
+     0.6657
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.59
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Caterpillar on dotted path to UTOPIA sun with cliff gap is strong; slightly standard metaphor.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: fuzzy caterpillar on glowing milestone path, massive cliff gap hidden behind soft mist, UTOPIA sun on far side. Mood: optimistic, treacherous."
+  },
+  {
+   "cid": "cid:forget_utopia:7",
+   "n": 7,
+   "cardName": "The Moving Launch Date",
+   "power": "Let salvation slip one quarter, then another. Keep the faith by keeping the date close.",
+   "lore": "Breakthroughs said to be a few years away sustain belief precisely by never arriving.",
+   "cardNamePrint": "THE MOVING LAUNCH DATE",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Windhund jagt ein Banner, daneben ausgestrichene Quartalsdaten und „SOON!“: Bild und Titel sind eine Pointe. Lore („nie ankommen als Glaubensstütze“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/07.webp",
+    "motiv": "bilder/motiv/07.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1015,
+     0.3302,
+     0.4853,
+     0.58
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.63
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Greyhound chasing 'ALMOST THERE' with crossed-out Q3 2023/2024/2025/SOON = instant recognition.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: racing greyhound mid-sprint, scoreboard of crossed-out launch dates trailing behind it. Mood: frantic, tragicomic."
+  },
+  {
+   "cid": "cid:forget_utopia:8",
+   "n": 8,
+   "cardName": "The Pre-Order",
+   "power": "Collect belief up front. Deliver the future on a later invoice, or not at all.",
+   "lore": "Trading on anticipation is a practice old enough to have a name: vaporware.",
+   "cardNamePrint": "THE PRE-ORDER",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nager mit Vorbestellungs-Zetteln in der Schlange ist verständlich, aber ohne Dreh. Die Lore endet auf „vaporware“, das trägt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/08.webp",
+    "motiv": "bilder/motiv/08.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1213,
+     0.4208,
+     0.4146,
+     0.4954
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.692
+   },
+   "herkunft": {
+    "seite": 3,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'Vaporware' lore payoff is sharp; hamsters queuing at empty storefront needs reading to fully snap.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: long queue of hamsters clutching pre-order slips outside sealed glass storefront, empty inside. Mood: earnest, futile."
+  },
+  {
+   "cid": "cid:forget_utopia:9",
+   "n": 9,
+   "cardName": "The Stage Light",
+   "power": "Aim everything bright and warm. Let the glare do the editing.",
+   "lore": "The society of the spectacle dictates that the polished image stands in for and outranks the thing itself.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Motte am Scheinwerfer ist das bekannte Bild. Wissenskern: Debords Gesellschaft des Spektakels, konkret genannt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/09.webp",
+    "motiv": "bilder/motiv/09.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0894,
+     0.0954,
+     0.7386,
+     0.8828
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.063
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.504
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Moth-to-stage-light is classic; Debord reference requires one more beat of context to perform.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: giant moth drawn toward blinding stage spotlight, backstage chaos invisible in silhouette. Mood: hypnotic, obliterating."
+  },
+  {
+   "cid": "cid:forget_utopia:10",
+   "n": 10,
+   "cardName": "The Hero Demo",
+   "power": "Show the one path that works flawlessly. Call it the way it works.",
+   "lore": "A smooth demo predicts almost nothing about a messy real deployment because it only walks the happy path.",
+   "grade": 2,
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Lemur tippt auf einer Tastatur voller Mausefallen, nur ein Weg ist sicher: der „happy path“ als Bild. Lore erklärt den Mechanismus (Demo sagt nichts über Praxis) präzise und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/10.webp",
+    "motiv": "bilder/motiv/10.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3392,
+     0,
+     0.612,
+     0.7752
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.965
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.503
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Lemur at keyboard is charming; 'happy path' concept needs one breath to activate.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: ring-tailed lemur at keyboard performing perfect demo, wires sparking out of frame. Mood: polished surface, chaos underneath."
+  },
+  {
+   "cid": "cid:forget_utopia:11",
+   "n": 11,
+   "cardName": "The Standing Ovation",
+   "power": "Reward applause faster than questions. Make doubt feel rude.",
+   "lore": "In a charged crowd, social proof makes visible enthusiasm self-reinforcing until the clapping becomes the evidence.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Seehunde klatschen, die Eule sitzt skeptisch dazwischen: Bild verstärkt „Zweifel wirkt unhöflich“. „Bis das Klatschen der Beweis wird“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/11.webp",
+    "motiv": "bilder/motiv/11.webp"
+   },
+   "motiv": {
+    "rect": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.214
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.504,
+     0.5,
+     0.496
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Seals clapping with lone owl not clapping — solid image but social proof concept needs moment.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: rows of seals mid-applause, single owl sitting still and skeptical among them. Mood: tribal, pressure-cooker."
+  },
+  {
+   "cid": "cid:forget_utopia:12",
+   "n": 12,
+   "cardName": "The Afterglow",
+   "power": "Send them home shining. The details can wait for a calmer head that never arrives.",
+   "lore": "Positive affect at the moment of decision narrows scrutiny—wonder is an excellent place to hide a clause.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Leuchtkäfer im Glühen, im Hintergrund Kleingedrucktes: Das Bild liefert die „Klausel“ mit. „Wonder is an excellent place to hide a clause“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/12.webp",
+    "motiv": "bilder/motiv/12.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1165,
+     0.2142,
+     0.2939,
+     0.3794
+    ],
+    "quelle": "auffaellig",
+    "guete": 0.6
+   },
+   "herkunft": {
+    "seite": 4,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.503,
+     0.5,
+     0.497
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'Wonder is an excellent place to hide a clause' — devastating line, zero setup needed.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: euphoric fireflies emerging from conference hall into night, contract fine-print floating unread behind them. Mood: luminous, oblivious."
+  },
+  {
+   "cid": "cid:forget_utopia:13",
+   "n": 13,
+   "cardName": "The Founder Myth",
+   "power": "Cast one person as the author of tomorrow. Origin story optional, confidence mandatory.",
+   "lore": "Charismatic authority rests on belief in the individual, meaning it asks for faith and resists audit by design.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Riesiger Schuhschnabel über winziger Menge bebildert den Gründermythos nur knapp. Wissenskern: charismatische Herrschaft (Weber), richtig getroffen.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/13.webp",
+    "motiv": "bilder/motiv/13.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3261,
+     0.0531,
+     0.344,
+     0.7255
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.899
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Shoebill in stadium with tiny crowd below is strong; 'resists audit by design' carries the weight.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: towering shoebill bird alone on stadium pitch, distant crowd worshipping. Mood: messianic, lonely at the top."
+  },
+  {
+   "cid": "cid:forget_utopia:14",
+   "n": 14,
+   "cardName": "The Genius Pass",
+   "power": "Let brilliance excuse the parts that do not add up yet.",
+   "lore": "The halo effect allows genius in one domain to be quietly spent as credibility in another.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Pfau mit Heiligenschein hält eine leere Tabelle: Der Halo-Effekt wird wörtlich, die Zahlen fehlen. Lore („Genie als Glaubwürdigkeit in anderem Feld ausgeben“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/14.webp",
+    "motiv": "bilder/motiv/14.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.309,
+     0.0614,
+     0.6844,
+     0.8179
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.849
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.489
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Peacock with halo holding blank spreadsheet — visual argument IS the critique. G1 without hesitation.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: peacock with glowing halo displaying blank grid to admiring audience, glitching tech behind. Mood: reverent, vacuous."
+  },
+  {
+   "cid": "cid:forget_utopia:15",
+   "n": 15,
+   "cardName": "The Unfalsifiable Mission",
+   "power": "Make the goal so large that no particular failure can touch it.",
+   "lore": "A mission framed as advancing humanity immunizes itself from the accountability a narrow promise would face.",
+   "grade": 3,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wal mit Banner „FOR A BETTER WIG WORLD“ ist eine schön sinnlose Mission. Der Wal selbst hat mit Unwiderlegbarkeit wenig zu tun.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/15.webp",
+    "motiv": "bilder/motiv/15.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0432,
+     0,
+     0.7271,
+     0.7333
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.0
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'FOR A BETTER WIG WORLD' gag is funny but unfalsifiability concept reads conceptual before performative.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: humpback whale trailing enormous banner through utopian skies, banner text absurdly grandiose. Mood: grand, unaccountable."
+  },
+  {
+   "cid": "cid:forget_utopia:16",
+   "n": 16,
+   "cardName": "The Disciple Seat",
+   "power": "Offer the crowd a role: believe loudly, and you belong.",
+   "lore": "Shared identity raises the social cost of doubt and turns scrutiny into something close to betrayal.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Pinguinreihen mit Abzeichen und ein leerer Stuhl, ordentlich, aber ohne eigene Pointe. Lore bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/16.webp",
+    "motiv": "bilder/motiv/16.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0051,
+     0,
+     0.9949,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.488
+   },
+   "herkunft": {
+    "seite": 5,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.489,
+     0.5,
+     0.511
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Rows of badge-wearing penguins is excellent — identity-as-compliance needs one beat to fully land.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: endless rows of badge-wearing penguins in conference hall, single empty chair at edge. Mood: conformist, chilling."
+  },
+  {
+   "cid": "cid:forget_utopia:17",
+   "n": 17,
+   "cardName": "The Velvet Rope",
+   "power": "Make scarcity feel like status. The line is the product.",
+   "lore": "Artificial scarcity reads as value, and exclusion reads as quality.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Flamingo mit Spiegel vor dem Samtseil ist eine hübsche Szene ohne Dreh. Die Lore („Ausschluss liest sich als Qualität“) trägt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/17.webp",
+    "motiv": "bilder/motiv/17.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.429,
+     0.1538,
+     0.571,
+     0.8462
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.895
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'The line is the product' — three words, complete thesis. Flamingo at mirror delivers it.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: flamingo preening before ornate mirror behind velvet rope, long empty queue behind. Mood: self-satisfied, absurd."
+  },
+  {
+   "cid": "cid:forget_utopia:18",
+   "n": 18,
+   "cardName": "The Number You Are",
+   "power": "Hand out a position. Let people defend their place in a queue to nowhere.",
+   "lore": "Loss aversion makes people defend their position even when the underlying prospect is poor.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Nacktmull mit Wartenummer 24.991 vor „WAITING...“ ist verständlich. Wissenskern: Verlustaversion, korrekt benannt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/18.webp",
+    "motiv": "bilder/motiv/18.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1866,
+     0.2572,
+     0.2895,
+     0.346
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.718
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'YOU ARE NO. 24,991' display + walrus clutching ticket = visceral recognition. Table-instant.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: panicked walrus gripping numbered ticket while board displays its enormous queue number. Mood: resigned, defensive."
+  },
+  {
+   "cid": "cid:forget_utopia:19",
+   "n": 19,
+   "cardName": "The Referral",
+   "power": "Turn each believer into a recruiter. Growth disguised as generosity.",
+   "lore": "Referral mechanics convert enthusiasm into distribution, making the crowd mistake marketing for sharing.",
+   "grade": 2,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Ameisen als Anwerber sind nur Illustration, ein Witz ist nicht erkennbar. Lore erklärt Empfehlungsmechanik sauber, aber ohne Biss.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/19.webp",
+    "motiv": "bilder/motiv/19.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1023,
+     0.2703,
+     0.2501,
+     0.411
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": "Druck: \"distributiom\"; gemeint \"distribution\"",
+    "printOpen": null
+   },
+   "gradeReason": "Ants passing glowing orb is charming; 'mistake marketing for sharing' requires the lore read.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: chain of ants passing glowing referral orb across landscape, each ant smiling, unaware. Mood: earnest, algorithmic."
+  },
+  {
+   "cid": "cid:forget_utopia:20",
+   "n": 20,
+   "cardName": "The Early Access",
+   "power": "Reward the faithful with a slightly nicer waiting room.",
+   "lore": "Tiered access grants small status upgrades that feel like progress while the destination stays exactly as far away.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Faultier im Sessel vor der verketteten „CLOSED“-Tür: das „etwas bessere Wartezimmer“ ist im Bild. Lore („Fortschritt fühlt sich an, das Ziel bleibt fern“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/20.webp",
+    "motiv": "bilder/motiv/20.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3331,
+     0.2262,
+     0.3142,
+     0.581
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.857
+   },
+   "herkunft": {
+    "seite": 6,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Sloth in velvet chair beside chained door is good; 'destination stays exactly as far away' needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: contented sloth in plush armchair next to EARLY ACCESS TIER sign, heavy chained door still locked behind. Mood: pampered, stranded."
+  },
+  {
+   "cid": "cid:forget_utopia:21",
+   "n": 21,
+   "cardName": "The Eternal Soon",
+   "power": "Keep the payoff one horizon away, always visible, never closer.",
+   "lore": "A perpetual soon exploits hyperbolic discounting by keeping the prize psychologically near while practically distant.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schildkröte auf dem Weg zur Sonne passt, bleibt aber brav. Hyperbolisches Diskontieren ist genannt, aber nicht erklärt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/21.webp",
+    "motiv": "bilder/motiv/21.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4833,
+     0.3947,
+     0.3817,
+     0.4561
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.772
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Giant tortoise on endless rainbow road — 'always visible, never closer' is the move and it's visible.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: ancient tortoise on infinite rainbow path, golden horizon retreating at exactly its pace. Mood: patient, futile."
+  },
+  {
+   "cid": "cid:forget_utopia:22",
+   "n": 22,
+   "cardName": "The Deferred Self",
+   "power": "Promise the better you arrives bundled with the better thing.",
+   "lore": "The future self becomes a product, and the present self is cast as a defect to be upgraded away.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Einsiedlerkrebs in der Dose, im Spiegel mit goldenem Haus: „das bessere Ich im besseren Ding“ sitzt. Lore trägt nur mit Karte.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/22.webp",
+    "motiv": "bilder/motiv/22.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2108,
+     0.2259,
+     0.6037,
+     0.7215
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.249
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'Present self as defect to be upgraded away' — hermit crab seeing shell-upgrade reflection nails it cold.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: hermit crab in battered can looking in mirror, seeing itself in shining golden shell. Mood: aspirational, melancholy."
+  },
+  {
+   "cid": "cid:forget_utopia:23",
+   "n": 23,
+   "cardName": "The Spent Now",
+   "power": "Trade a real Tuesday for an imagined someday, on repeat.",
+   "lore": "Every hour spent anticipating is an hour not lived—an opportunity cost that compounds invisibly.",
+   "grade": 3,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Ratte im Haufen „LATER“-Kalender ist klar, aber Motiv und Titel bleiben nebeneinander. Lore („eine Stunde Vorfreude ist eine ungelebte Stunde“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/23.webp",
+    "motiv": "bilder/motiv/23.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1452,
+     0,
+     0.7913,
+     0.8075
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.366
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Rat on pile of LATER notebooks reads as visual metaphor before it invites performance.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: frantic rat buried in tower of LATER notebooks, calendar pages swirling overhead. Mood: compulsive, invisible loss."
+  },
+  {
+   "cid": "cid:forget_utopia:24",
+   "n": 24,
+   "cardName": "The Renewed Vow",
+   "power": "When someday slips, sell the vow again at full price.",
+   "lore": "Sustained belief is maintained by re-committing rather than re-evaluating, avoiding the pain of sunk cost.",
+   "grade": 2,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 0
+    },
+    "reason": "Vogel, der einen bröckelnden Thron nachmalt, zeigt „Gelübde zum vollen Preis neu verkaufen“ nicht. Sunk-Cost-Hinweis nur angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/24.webp",
+    "motiv": "bilder/motiv/24.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2245,
+     0.3033,
+     0.4294,
+     0.5131
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 7,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Bluebird at gilded shrine is evocative; sunk cost mechanism needs lore to complete the move.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: bluebird painting gold shrine altar for the third time, fresh votive candles around older half-melted ones. Mood: ritual, avoidant."
+  },
+  {
+   "cid": "cid:forget_utopia:25",
+   "n": 25,
+   "cardName": "The Wet Blanket",
+   "power": "Frame every question as a failure of imagination.",
+   "lore": "Reframing criticism as small-mindedness discredits the questioner without engaging the question.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nilpferd vor einer bunten Tierschar passt zu „nasser Decke“, aber ohne Überraschung. Lore („Kritik als Kleingeist abtun, ohne die Frage zu beantworten“) ist treffend.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/25.webp",
+    "motiv": "bilder/motiv/25.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2331,
+     0.2131,
+     0.3224,
+     0.6609
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.502
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Hippo raising hand among colorful excited animals = the questioner already feels the cold. Instant.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: grey hippo with raised hand among technicolor celebrating animals, all others turning away. Mood: socially costly, precise."
+  },
+  {
+   "cid": "cid:forget_utopia:26",
+   "n": 26,
+   "cardName": "The Luddite Label",
+   "power": "Sort skeptics into the past tense. They do not get it yet.",
+   "lore": "The modern slur misnames a labor argument about power as an ignorant fear of progress.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Mammut in der Vitrine „THE PAST“ ist solide. Wissenskern: Luddismus war ein Arbeitskampf, kein Technikhass, konkret und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/26.webp",
+    "motiv": "bilder/motiv/26.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2468,
+     0.2683,
+     0.3685,
+     0.4857
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.504
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Mammoth in museum case labelled THE PAST while modern animals use gadgets — image makes the argument.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: woolly mammoth sealed in museum display case while animals with devices point and laugh. Mood: diagnostic, cruel-funny."
+  },
+  {
+   "cid": "cid:forget_utopia:27",
+   "n": 27,
+   "cardName": "The Lonely Question",
+   "power": "Make asking feel like leaving the room. Most people stay.",
+   "lore": "The fear of social exclusion is processed like physical pain, making dissent genuinely costly.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Einsamer Wolf auf dem Stuhl abseits des Lagerfeuers zeigt „Fragen heißt den Raum verlassen“ passend, aber erwartbar. Wissenskern: sozialer Ausschluss wird wie Schmerz verarbeitet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/27.webp",
+    "motiv": "bilder/motiv/27.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1799,
+     0.2291,
+     0.2854,
+     0.6018
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.502,
+     0.5,
+     0.498
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Wolf alone while fox/raccoon/deer warm by fire — strong image but social pain mechanism needs a beat.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: lone wolf in cold darkness, group of animals gathered at warm fire in distance. Mood: aching isolation, silencing."
+  },
+  {
+   "cid": "cid:forget_utopia:28",
+   "n": 28,
+   "cardName": "The Convert Bonus",
+   "power": "Welcome the doubter back warmly. Belief tastes sweeter after surrender.",
+   "lore": "Following the relief of cognitive dissonance, former doubters defend the new belief more strongly than those who never doubted.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Strauß zieht den Kopf aus dem Loch, die Bären feiern: guter Dreh, aber Lore und Power bleiben generisch.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/28.webp",
+    "motiv": "bilder/motiv/28.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0532,
+     0.265,
+     0.3191,
+     0.5447
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 8,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.504,
+     0.5,
+     0.496
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Ostrich emerging from hole celebrated by pastel animals — cognitive dissonance mechanism is the engine.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: ostrich pulling head from ground to celebratory confetti shower, eyes shining with newly minted belief. Mood: relieved, fervent."
+  },
+  {
+   "cid": "cid:forget_utopia:29",
+   "n": 29,
+   "cardName": "The Warm Bath",
+   "power": "Lower the pulse. Optimism as a sedative, dosed in keynotes.",
+   "lore": "A hopeful pitch amplifies our natural optimism bias into comfortable, paralyzed inaction.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Capybara im Thermalbad unter Neon „IT WILL BE FINE.“ ist sehr stimmig. Power „Optimismus als Beruhigungsmittel“ ist aber vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/29.webp",
+    "motiv": "bilder/motiv/29.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1307,
+     0.3212,
+     0.3767,
+     0.4502
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.495
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'IT WILL BE FINE' neon + capybara soaking = optimism-as-sedative is the image, not the caption.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: blissful capybara soaking in hot spring, glowing 'IT WILL BE FINE' sign reflected in steam. Mood: sedated, warm-trap."
+  },
+  {
+   "cid": "cid:forget_utopia:30",
+   "n": 30,
+   "cardName": "The California Ideology",
+   "power": "Fuse rebel optimism with market faith until questioning either feels like questioning freedom.",
+   "lore": "Treating technological progress as inherently liberating smoothly conceals who actually wins and loses.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Seelöwe mit Friedenszeichen und Dollarpfeilen zeigt die Verschmelzung, aber ohne Dreh. Wissenskern: „Californian Ideology“ als echter Begriff.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/30.webp",
+    "motiv": "bilder/motiv/30.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2414,
+     0.3694,
+     0.3603,
+     0.5234
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.499
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": "Druck: \"markst\"; gemeint \"market\"",
+    "printOpen": null
+   },
+   "gradeReason": "Seal balancing peace symbol + money arrow + wind turbines = the contradiction IS the image. Zero setup.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: smiling seal juggling peace sign, dollar graph arrow, and wind turbine against utopian skyline. Mood: cheerfully contradictory."
+  },
+  {
+   "cid": "cid:forget_utopia:31",
+   "n": 31,
+   "cardName": "The Numbed Hand",
+   "power": "Comfort so complete that nobody reaches for the wheel.",
+   "lore": "Reassurance that progress is automatic reduces the felt need to act; agency becomes optional.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schlafender Koala am Steuer eines selbstfahrenden Autos trifft „keiner greift zum Lenkrad“. Lore ist eher Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/31.webp",
+    "motiv": "bilder/motiv/31.webp"
+   },
+   "motiv": {
+    "rect": [
+     0,
+     0.0548,
+     0.9795,
+     0.9452
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.488
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.495,
+     0.5,
+     0.505
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Koala asleep at wheel with DO NOT DISTURB is strong; 'agency becomes optional' needs one breath.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: koala asleep at car steering wheel, DO NOT DISTURB crown on head, car floating in pastel clouds. Mood: passive, drifting."
+  },
+  {
+   "cid": "cid:forget_utopia:32",
+   "n": 32,
+   "cardName": "The Sweet Stall",
+   "power": "Keep them hopeful, seated, and exactly where you left them.",
+   "lore": "When optimism is detached from action, it functions solely to maintain the status quo.",
+   "grade": 2,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 0,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Panda vor der mit „LATER“ vernagelten Tür ist nett, die Lore („Optimismus ohne Handlung erhält den Status quo“) ist ein Füllsatz.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/32.webp",
+    "motiv": "bilder/motiv/32.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1391,
+     0.1915,
+     0.4392,
+     0.6876
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 9,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.499,
+     0.5,
+     0.501
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Panda eating bamboo with LATER signs is excellent; detached-optimism-as-status-quo needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: panda contentedly eating bamboo in colourful living room, LATER signs blocking every exit. Mood: comfortable, inert."
+  },
+  {
+   "cid": "cid:forget_utopia:33",
+   "n": 33,
+   "cardName": "The Beautiful Mockup",
+   "power": "Present the picture of the thing as the thing.",
+   "lore": "The mind treats vivid representation as proxy evidence of reality.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Leierschwanz mit Staffelei-Bild vor der verfallenen Werkstatt zeigt Bild gegen Sache. Lore ist nur eine Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/33.webp",
+    "motiv": "bilder/motiv/33.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1528,
+     0.2121,
+     0.3734,
+     0.6537
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.495
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Lyrebird painting phone on easel in ruined workshop = picture IS the thing. Five-word power, one image.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: lyrebird carefully painting a phone on canvas in rubble-filled studio, finished render gleaming. Mood: meticulous, hollow."
+  },
+  {
+   "cid": "cid:forget_utopia:34",
+   "n": 34,
+   "cardName": "The Prototype Loop",
+   "power": "Show the same working corner from forty angles. Imply the whole.",
+   "lore": "Repeated exposure to a single polished fragment makes it feel like a finished system.",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Mistkäfer rollt die Kugel im Kreis: „dieselbe Ecke aus vierzig Winkeln“ ist klare, spielbare Handlung. Wissenskern (wiederholte Darbietung) bleibt oberflächlich.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/34.webp",
+    "motiv": "bilder/motiv/34.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2165,
+     0.4339,
+     0.3323,
+     0.426
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.492
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Dung beetle rolling glowing sphere in glass dome — 'same corner, forty angles' is the exact visual.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: dung beetle proudly rolling single gleaming sphere in rotating glass dome, observers seeing it from every angle. Mood: thorough, partial."
+  },
+  {
+   "cid": "cid:forget_utopia:35",
+   "n": 35,
+   "cardName": "The Missing Receipt",
+   "power": "Skip the part where it survived contact with a real week.",
+   "lore": "The absent record of ordinary operation is always the most important missing document.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Sekretärvogel vor dem leeren Rahmen mit Schild „IN USE“: Sekretär plus fehlender Beleg ist eine echte Pointe. Lore („wichtigstes fehlendes Dokument“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/35.webp",
+    "motiv": "bilder/motiv/35.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1492,
+     0.244,
+     0.3586,
+     0.5744
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.495,
+     0.5,
+     0.505
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Secretary bird at gallery with IN USE tag on empty frame is clever; 'real week' concept needs one beat.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: secretary bird gesturing at empty gilded frame with IN USE tag, other frames vaguely promising. Mood: evasive, bureaucratic."
+  },
+  {
+   "cid": "cid:forget_utopia:36",
+   "n": 36,
+   "cardName": "The Vibes Audit",
+   "power": "Let the feeling of progress stand in for the measurement of it.",
+   "lore": "When momentum is conveyed through tone rather than metrics, the feeling arrives first and satisfies.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Quokka vor Schalttafel, auf dem Schirm eine lächelnde Sonne statt Zahlen: sitzt, aber der Rest ist Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/36.webp",
+    "motiv": "bilder/motiv/36.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0998,
+     0.2092,
+     0.3241,
+     0.61
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 10,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.492,
+     0.5,
+     0.508
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Quokka at control panel with smiley sun dial — vibes-as-dashboard is the image. No explanation needed.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: gleeful quokka at mission control, all dials replaced by mood-emoji readouts, smiley sun as key metric. Mood: frictionless, unaccountable."
+  },
+  {
+   "cid": "cid:forget_utopia:37",
+   "n": 37,
+   "cardName": "The Smooth Surface",
+   "power": "Promise a life with no edges, no effort, no callus.",
+   "lore": "The easiest option steadily wins not because it is best, but because it asks the least.",
+   "grade": 3,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schnecke auf der glatten Kugel ist hübsch, aber ohne Dreh. Lore („gewinnt, weil sie am wenigsten verlangt“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/37.webp",
+    "motiv": "bilder/motiv/37.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1874,
+     0.1584,
+     0.658,
+     0.7864
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.648
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.503
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Snail on iridescent bubble is visually pretty but metaphor requires unpacking before it performs.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: snail gliding on perfect soap bubble, landscape without friction below, edge of bubble paper-thin. Mood: effortless, fragile."
+  },
+  {
+   "cid": "cid:forget_utopia:38",
+   "n": 38,
+   "cardName": "The Outsourced Limb",
+   "power": "Let the device do the reaching. Keep the hand on the glass.",
+   "lore": "Skills offloaded to tools erode through disuse—a documented trade of capability for ease.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "T. rex mit Cyborg-Kurzarm am Tablet: Die Kurzarm-Pointe trägt „ausgelagerte Gliedmaße“. Wissenskern („Fähigkeiten verkümmern“) bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/38.webp",
+    "motiv": "bilder/motiv/38.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.067,
+     0.1227,
+     0.7189,
+     0.8592
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.33
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.506
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "T-rex with tiny wired prosthetic arm touching tablet = strong visual; skill-atrophy lore needed to snap.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: T-rex with tiny wired prosthetic arm tapping tablet, own arms withered further. Mood: enabling, atrophying."
+  },
+  {
+   "cid": "cid:forget_utopia:39",
+   "n": 39,
+   "cardName": "The Forgotten Muscle",
+   "power": "What you never lift, you slowly cannot.",
+   "lore": "Frictionlessness has a hidden long-term cost paid in lost ability through disuse atrophy.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Ziege auf der Rolltreppe, die Steintreppe voller Spinnweben: Bild ist die Pointe. Wissenskern: Disuse-Atrophie, konkret und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/39.webp",
+    "motiv": "bilder/motiv/39.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1043,
+     0.105,
+     0.8703,
+     0.895
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.326
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.503,
+     0.5,
+     0.497
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Goat choosing escalator while stone stairs cobweb — image is crisp; disuse atrophy needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: mountain goat stepping onto escalator beside ancient cobwebbed stone stairs. Mood: comfort choosing itself, quietly eroding."
+  },
+  {
+   "cid": "cid:forget_utopia:40",
+   "n": 40,
+   "cardName": "The Comfort Trap",
+   "power": "Sell ease so total it quietly removes the option of effort.",
+   "lore": "When the effortful path is engineered away, a life optimized for comfort loses access to the difficulty that builds skill.",
+   "grade": 1,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Seekuh in der Hängematte ist reine Illustration von „Komfort“. Lore ist eine Umschreibung des Titels.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/40.webp",
+    "motiv": "bilder/motiv/40.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0692,
+     0,
+     0.8982,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.273
+   },
+   "herkunft": {
+    "seite": 11,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.506,
+     0.5,
+     0.494
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Manatee in rainbow hammock: ease = hammock that ate the exit. Embodiment is immediate.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: enormous manatee sinking luxuriously into rainbow hammock, exits on all sides grown shut with vines. Mood: supremely comfortable, trapped."
+  },
+  {
+   "cid": "cid:forget_utopia:41",
+   "n": 41,
+   "cardName": "The Next Version",
+   "power": "Frame every problem as a thing the next release will fix.",
+   "lore": "Defining progress as the next product keeps attention on acquisition and off of repair.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Elster tauscht Kisten, im Eimer „OLD/OBSOLETE“: Elster plus „Neu!“ sitzt. Lore bleibt Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/41.webp",
+    "motiv": "bilder/motiv/41.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3016,
+     0.2156,
+     0.3833,
+     0.4581
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.96
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.506
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Magpie with NEW box over OLD/OBSOLETE bin is sharp; acquisition-over-repair mechanism needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: magpie triumphantly clutching iridescent NEW box, OLD box full of unsolved problems labelled OBSOLETE below. Mood: perpetually forward, never fixing."
+  },
+  {
+   "cid": "cid:forget_utopia:42",
+   "n": 42,
+   "cardName": "The Trade-In",
+   "power": "Make replacement feel like growth. Discard the old, including the lesson.",
+   "lore": "Planned obsolescence designs products to be replaced rather than maintained.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Waschbär am Fließband mit Recycling-Sonne ist verständlich, aber ohne Dreh. Wissenskern: geplante Obsoleszenz, richtig definiert.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/42.webp",
+    "motiv": "bilder/motiv/42.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4072,
+     0.0602,
+     0.5928,
+     0.8096
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.992
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.494
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Raccoon feeding tools into solar conveyor is fun; 'discard the lesson' is where the card earns its keep.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: raccoon cheerfully tossing tools onto blazing conveyor belt marked RECYCLE, same tools emerging shiny-new on other end. Mood: enthusiastic, amnesiac."
+  },
+  {
+   "cid": "cid:forget_utopia:43",
+   "n": 43,
+   "cardName": "The Treadmill",
+   "power": "Movement without arrival, billed monthly.",
+   "lore": "Due to hedonic adaptation, each upgrade delivers a brief lift before resetting the wanting.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Hamster im Laufband ist das erwartbare Bild. Wissenskern: hedonische Anpassung, korrekt benannt und erklärt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/43.webp",
+    "motiv": "bilder/motiv/43.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2085,
+     0.1643,
+     0.5643,
+     0.6744
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.864
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.506,
+     0.5,
+     0.494
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'Movement without arrival, billed monthly' — five words, subscription economy demolished. Hamster confirms.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: exhausted hamster sprinting on premium treadmill, BILLED MONTHLY display ticking, scenery never changing. Mood: effortful, pointless."
+  },
+  {
+   "cid": "cid:forget_utopia:44",
+   "n": 44,
+   "cardName": "The Loyalty Tier",
+   "power": "Reward staying on the treadmill with a faster treadmill.",
+   "lore": "Loyalty systems convert repeat consumption into identity, masking escalation as belonging.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Kamel auf Treppe Bronze bis Diamond passt, doch „Gold“ steht zweimal und die Pointe verpufft. Lore bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/44.webp",
+    "motiv": "bilder/motiv/44.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.289,
+     0.4145,
+     0.3734,
+     0.4463
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.442
+   },
+   "herkunft": {
+    "seite": 12,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.494,
+     0.5,
+     0.506
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Camel on stacked Diamond/Platinum/Gold stairs = faster treadmill AS the reward. Tautology visible.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: camel climbing tier stairs from Bronze to Diamond, each step a slightly shinier treadmill. Mood: aspirational, circular."
+  },
+  {
+   "cid": "cid:forget_utopia:45",
+   "n": 45,
+   "cardName": "The Mortgaged Now",
+   "power": "Borrow against today to furnish a tomorrow that ships late.",
+   "lore": "Continually deferring satisfaction spends the present as a means, never an end.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Biber baut ein Haus aus Kredit- und Schuldenkarten: Kartenhaus als Bild trägt. Text bleibt sonst Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/45.webp",
+    "motiv": "bilder/motiv/45.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2022,
+     0.1148,
+     0.765,
+     0.8852
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.511
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Beaver building house of credit/debt/borrow cards is rich visual; 'ships late' lore grounds the move.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: beaver carefully stacking house of credit cards labelled DEBT/FUTURE/BORROW, rainbow outside, structure swaying. Mood: industrious, precarious."
+  },
+  {
+   "cid": "cid:forget_utopia:46",
+   "n": 46,
+   "cardName": "The Patience Tax",
+   "power": "Charge attention as rent on a building with no keys.",
+   "lore": "Attention spent on anticipation is a finite resource drained without return.",
+   "grade": 3,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Specht vor Messgerät „ATTENTION“ und verschlossener Tür erklärt die „Patience Tax“ nicht. Die Lore ist ein Füllsatz.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/46.webp",
+    "motiv": "bilder/motiv/46.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0987,
+     0.2723,
+     0.2823,
+     0.5954
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Woodpecker at attention meter + locked door is inventive but 'rent on building with no keys' needs unpacking.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: woodpecker pecking at attention gauge while ornate door stays locked, gauge needle dropping. Mood: metered, draining."
+  },
+  {
+   "cid": "cid:forget_utopia:47",
+   "n": 47,
+   "cardName": "The Unlived Week",
+   "power": "Add up the Tuesdays spent in the waiting room.",
+   "lore": "The cost of perpetual anticipation is invisible because it is paid in ordinary, un-itemized hours.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Eichhörnchen schreibt „WAITED, STILL WAITING“ auf den Kassenzettel: gute Idee, aber zu leise umgesetzt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/47.webp",
+    "motiv": "bilder/motiv/47.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2126,
+     0.1147,
+     0.6531,
+     0.7805
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.733
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Squirrel writing 'WAITED/WAITED/STILL WAITING' on infinite receipt is poignant; invisibility needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: squirrel writing on endless receipt scroll, each line reading WAITED, Tuesday after Tuesday scrolling off table. Mood: careful, invisible cost."
+  },
+  {
+   "cid": "cid:forget_utopia:48",
+   "n": 48,
+   "cardName": "The Polite Bill",
+   "power": "Present the total gently, after the lights are warm and the doubt is gone.",
+   "lore": "Costs disclosed amid positive affect at the close of a pitch receive the least scrutiny.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Taube überreicht Rechnung „$ INFINITE + TAX“ und gurrt: höfliche Zumutung, sitzt. Inhaltlich dasselbe wie Karte 12.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/48.webp",
+    "motiv": "bilder/motiv/48.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0536,
+     0,
+     0.7238,
+     0.8558
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.629
+   },
+   "herkunft": {
+    "seite": 13,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Pigeon delivering invoice to warm-lit table is quietly sharp; positive-affect mechanism needs the lore read.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: cooing pigeon sliding $ INFINITE + TAX invoice under warm lamplight to unsuspecting recipient. Mood: warm, gently predatory."
+  },
+  {
+   "cid": "cid:forget_utopia:49",
+   "n": 49,
+   "cardName": "The Seamless Surface",
+   "power": "Remove every visible seam, so the labor and the trade-offs disappear.",
+   "lore": "Hiding the seams of a system hides its workings, leaving users unable to contest what they use.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Gürteltier als nahtlose Glaskugel ist sauber gelöst. Die Lore („Nähte verstecken heißt Funktion verstecken“) ist nur Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/49.webp",
+    "motiv": "bilder/motiv/49.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.3056,
+     0.2498,
+     0.4195,
+     0.5762
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.505
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Armadillo curled into perfect sphere rolling blind = hidden seam IS the form. Instant body knowledge.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: armadillo rolled into flawless ball careening across landscape, all seams invisible, joints concealed. Mood: smooth, unknowable."
+  },
+  {
+   "cid": "cid:forget_utopia:50",
+   "n": 50,
+   "cardName": "The Closed Loop",
+   "power": "Leave no room for a question. If you cannot ask, you are inside the pitch.",
+   "lore": "A presentation that absorbs every objection in advance leaves no opening for genuine inquiry.",
+   "grade": 1,
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Axolotl in der Seifenblase ist reine Illustration ohne Witz. Power („wer nicht fragen kann, steckt im Pitch“) ist als Gedanke gut, hier nur beschrieben.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/50.webp",
+    "motiv": "bilder/motiv/50.webp"
+   },
+   "motiv": {
+    "rect": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.385
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.498
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "'If you cannot ask, you are inside the pitch' — axolotl in bubble = perfect enclosure of the idea.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: bewildered axolotl sealed in pristine bubble, cracks forming from outside questions bouncing off. Mood: airtight, no exit."
+  },
+  {
+   "cid": "cid:forget_utopia:51",
+   "n": 51,
+   "cardName": "The Single Story",
+   "power": "Offer one path forward and call it the future.",
+   "lore": "When only one route is presented, a manufactured choice is being disguised as an inevitability.",
+   "grade": 2,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wombat vor Karte mit nur einem freien Pfeil passt, ist aber vorhersehbar. Lore („inszenierte Wahl als Zwangsläufigkeit“) ist treffend.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/51.webp",
+    "motiv": "bilder/motiv/51.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2275,
+     0.0337,
+     0.6482,
+     0.7746
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.0
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.505,
+     0.5,
+     0.495
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Capybara on map with single glowing arrow is clean; 'manufactured choice as inevitability' needs lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: capybara studying map with single illuminated route, all alternative paths blacked out. Mood: confident, foreclosed."
+  },
+  {
+   "cid": "cid:forget_utopia:52",
+   "n": 52,
+   "cardName": "The Shine Test",
+   "power": "The shinier it is, the harder you should look for the floor.",
+   "lore": "Sufficiently advanced presentation acts like magic, and magic works precisely by hiding the mechanism.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Rabe blinzelt in eine gleißende Kugel. Lore („Magie funktioniert, indem sie den Mechanismus verbirgt“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/52.webp",
+    "motiv": "bilder/motiv/52.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.2772,
+     0.1001,
+     0.4837,
+     0.578
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.925
+   },
+   "herkunft": {
+    "seite": 14,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.498,
+     0.5,
+     0.502
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Best single line in the deck. Crow with gleaming orb = corvid wisdom about surfaces. No setup needed.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: crow circling a blinding iridescent sphere, tilting head to find where it stands. Mood: skeptical, drawn, searching."
+  },
+  {
+   "cid": "cid:forget_utopia:53",
+   "n": 53,
+   "cardName": "The Assumption Stack",
+   "power": "Name every quiet if the promise stands on.",
+   "lore": "Surfacing the load-bearing ifs a pitch keeps hidden is the core of a pre-mortem audit.",
+   "grade": 3,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Giraffe vor Turm mit „IF“ im Gerüst passt. Power („Nenne jedes stille Wenn“) ist klar ausführbar, Wissen bleibt angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/53.webp",
+    "motiv": "bilder/motiv/53.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.1992,
+     0.257,
+     0.3833,
+     0.5569
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "TL",
+    "rect": [
+     0,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Giraffe with IF/IF/IF tower is conceptually accurate but 'quiet if' phrasing needs unpacking at table.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: giraffe peering at tower of IF blocks holding up impossible utopian structure, each block labeled. Mood: analytical, precarious."
+  },
+  {
+   "cid": "cid:forget_utopia:54",
+   "n": 54,
+   "cardName": "The Load-Bearing Lie",
+   "power": "Find the one assumption that, if false, drops the whole roof.",
+   "lore": "Identifying the single most fragile assumption tells you more than admiring the finished facade ever could.",
+   "grade": 1,
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nashorn vor rissigem Bogen ist stimmig. Power („die eine Annahme finden, die das Dach trägt“) ist klar spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/54.webp",
+    "motiv": "bilder/motiv/54.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0585,
+     0.2497,
+     0.4952,
+     0.5918
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.838
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "TR",
+    "rect": [
+     0.5,
+     0,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Rhino in crumbling arch = one creature, one keystone, entire structure. Embodiment is the card.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: rhinoceros standing in cracked triumphal arch, entire facade held by its presence alone. Mood: load-bearing, precarious."
+  },
+  {
+   "cid": "cid:forget_utopia:55",
+   "n": 55,
+   "cardName": "The Beneficiary",
+   "power": "Ask who is already paid whether or not tomorrow arrives.",
+   "lore": "Many who sell a future are compensated on the promise rather than the delivery; for them, arrival is optional.",
+   "grade": 2,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Geier reicht den Beutel „REWARDS“, die Vogelmenge jubelt: wer wird bezahlt, ob es kommt oder nicht. „For them, arrival is optional“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/55.webp",
+    "motiv": "bilder/motiv/55.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.4789,
+     0.0965,
+     0.436,
+     0.5515
+    ],
+    "quelle": "vordergrund",
+    "guete": 1.0
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "BL",
+    "rect": [
+     0,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "Vulture receiving REWARDS bag over crowd is sharp; 'arrival is optional' mechanism needs the lore.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: vulture in spotlight receiving bulging REWARDS bag from podium while crowd below cheers for a future not yet delivered. Mood: compensated regardless."
+  },
+  {
+   "cid": "cid:forget_utopia:56",
+   "n": 56,
+   "cardName": "The Core Question",
+   "power": "Hold the brochure up to the light. Count the things that have to be true. Notice how many are not.",
+   "lore": "A promise is only as sound as its hidden assumptions.",
+   "cardNamePrint": "THE CORE QUESTION",
+   "grade": 1,
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Der gelbe Hase zieht den Vorhang vom Gerüst: Schlusspointe, Bild und Aufgabe passen. Power gibt drei klare Schritte.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "bilder": {
+    "karte": "bilder/karte/56.webp",
+    "motiv": "bilder/motiv/56.webp"
+   },
+   "motiv": {
+    "rect": [
+     0.0809,
+     0.0664,
+     0.6235,
+     0.7451
+    ],
+    "quelle": "vordergrund",
+    "guete": 0.0
+   },
+   "herkunft": {
+    "seite": 15,
+    "viertel": "BR",
+    "rect": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "pruefstand": {
+    "text": "gesehen",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01",
+    "printTypo": null,
+    "printOpen": null
+   },
+   "gradeReason": "FrizzleBob pulling curtain on unfinished city = perfect closer. Power IS the instruction. Exhibition gold.",
+   "artworkPrompt": "Style: watercolor cartoon. Subject: FrizzleBob rabbit pulling back billboard curtain to reveal unfinished scaffold city behind glossy render. Mood: revelatory, impish."
+  }
+ ]
+}

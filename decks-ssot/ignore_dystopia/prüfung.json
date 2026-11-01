@@ -1,0 +1,230 @@
+{
+ "schema": "kfb.deck-paket-pruefung/1",
+ "packId": "ignore_dystopia",
+ "geprueftAm": "2026-11-01",
+ "zaehlung": {
+  "karten": 56,
+  "gesehen": 55,
+  "offen": [
+   "cid:ignore_dystopia:9"
+  ],
+  "textGeaendert": 1,
+  "nurSchreibweise": 0,
+  "sterne": {
+   "1": 0,
+   "2": 2,
+   "3": 38,
+   "4": 14,
+   "5": 2
+  }
+ },
+ "herkunft": {
+  "pdf": "Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP.pdf",
+  "sha256": "dbda07adfbe92a4aeb410b25e680b8ef63ec9b701e17ccc615741fced6d5c282",
+  "bytes": 70901270
+ },
+ "zuschnitt": {
+  "hinweise": [
+   {
+    "n": 5,
+    "page": 3,
+    "quad": "TL",
+    "flags": [
+     "lore-Ende fehlt: disoriented to resist",
+     "Text an Schnittkante rechts: Suspend the rules to save the da"
+    ]
+   },
+   {
+    "n": 13,
+    "page": 5,
+    "quad": "TL",
+    "flags": [
+     "power-Ende fehlt: camera ready confidence",
+     "lore-Ende fehlt: but beat chance"
+    ]
+   },
+   {
+    "n": 15,
+    "page": 5,
+    "quad": "BL",
+    "flags": [
+     "lore-Ende fehlt: carries zero cost"
+    ]
+   },
+   {
+    "n": 22,
+    "page": 7,
+    "quad": "TR",
+    "flags": [
+     "Text an Schnittkante links: The Sunk Future"
+    ]
+   },
+   {
+    "n": 25,
+    "page": 8,
+    "quad": "TL",
+    "flags": [
+     "Text an Schnittkante rechts: Faces sell bett"
+    ]
+   },
+   {
+    "n": 26,
+    "page": 8,
+    "quad": "TR",
+    "flags": [
+     "lore-Ende fehlt: is too slow"
+    ]
+   },
+   {
+    "n": 34,
+    "page": 10,
+    "quad": "TR",
+    "flags": [
+     "power-Ende fehlt: is out of"
+    ]
+   },
+   {
+    "n": 40,
+    "page": 11,
+    "quad": "BR",
+    "flags": [
+     "power-Ende fehlt: depletion you farmed"
+    ]
+   },
+   {
+    "n": 42,
+    "page": 12,
+    "quad": "TR",
+    "flags": [
+     "Text an Schnittkante links: ALTERNATIVE"
+    ]
+   },
+   {
+    "n": 49,
+    "page": 14,
+    "quad": "TL",
+    "flags": [
+     "Text an Schnittkante rechts: where resolution kills engagement"
+    ]
+   }
+  ],
+  "motivNiedrigeGuete": [
+   {
+    "cid": "cid:ignore_dystopia:6",
+    "guete": 0.216
+   },
+   {
+    "cid": "cid:ignore_dystopia:9",
+    "guete": 0.0
+   },
+   {
+    "cid": "cid:ignore_dystopia:14",
+    "guete": 0.261
+   },
+   {
+    "cid": "cid:ignore_dystopia:45",
+    "guete": 0.256
+   },
+   {
+    "cid": "cid:ignore_dystopia:46",
+    "guete": 0.076
+   },
+   {
+    "cid": "cid:ignore_dystopia:50",
+    "guete": 0.042
+   }
+  ]
+ },
+ "befunde": [
+  "Karte 9 The Firehose: im Druck wirklich weder POWER noch LORE (Seite p04 und Viertel k09 geprüft); nur Bildschrift. printOpen gesetzt, nichts ergänzt. Im Bild steht außerdem 'DISTACTION' statt DISTRACTION (Bildtext, nicht Kartentext).",
+  "Karte 46 The Outsourced Verdict: Lore im Druck 'the capacity to independently weigh evidence atrophies', im JSON fehlt 'independently' (einzige inhaltliche Textabweichung im Deck).",
+  "Titel 1 bis 4 und 56 sind im Druck in Versalien; cardName bleibt nach V-271 unverändert, cardNamePrint neu gesetzt (56 war schon im JSON).",
+  "Schrift-Glyphfehler in der Schreibmaschinenschrift: Karte 38 ('hreathing', 'paraaympathetic') und 50 ('abeence') eindeutig; weitere Karten haben leicht verzerrte Buchstaben ohne Bedeutungsänderung. Gemeint jeweils das korrekte Wort, im Text korrekt übernommen.",
+  "Karte 2 Power wird im Druck mit Silbentrennung umbrochen ('perma-nently'), Karte 53 mit Gedankenstrich ('still—in'); wie im JSON übernommen.",
+  "Wiederkehrende Motive: offene Käfigtür (24 und 43), Verkaufsautomat (4 und 30), Stempel (6, 44, 54), Steuerrad (45 und 55), Schafe mit Handys (19 und 20); wirkt als bewusste Serie, senkt aber bei den Wiederholungen die Pointe.",
+  "Inhalt: 'Adrenal'-Burnout auf Karte 39 ist medizinisch keine anerkannte Diagnose (Adrenal Fatigue); Lore formuliert vorsichtig als 'Sustained stress without recovery', deshalb nur Wissen 1.",
+  "Karte 1 bis 4 liegen auf p02 mit dem Seitentitel 'The Clock Is Ticking (But the Hands Are Painted On)'; weitere Seiten haben eigene Seitentitel (z. B. 'Cui Bono? (Who Profits?)'), die nicht Kartentexte sind und weggelassen wurden.",
+  "Keine Karten im Druck, die im JSON fehlen, und umgekehrt: 56 von 56."
+ ],
+ "textAenderungen": [
+  {
+   "cid": "cid:ignore_dystopia:46",
+   "felder": [
+    "lore"
+   ],
+   "nurSchreibweise": [],
+   "alt": {
+    "lore": "When judgment is fully outsourced, the capacity to weigh evidence atrophies."
+   },
+   "neu": {
+    "lore": "When judgment is fully outsourced, the capacity to independently weigh evidence atrophies."
+   },
+   "quelle": "PDF Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP.pdf p13 TR"
+  }
+ ],
+ "widersprueche": {
+  "karten": [
+   {
+    "cid": "cid:ignore_dystopia:12",
+    "titel": "The Grateful Drift",
+    "grade": 1,
+    "sterne": 2,
+    "art": "grade und Sterne liegen zwei Stufen auseinander",
+    "gradeGrund": "Overload, then gratitude, then acceptance. Elegant dark operator arc, immediately playable.",
+    "sterneGrund": "'Grateful Drift' wird im Bild (Ente schläft auf Müllhaufen) kaum sichtbar, die Pointe fehlt. Filter-Idee (kein zentraler Zensor nötig) ist nur oberflächlich."
+   }
+  ],
+  "deck": [
+   "G1-Anteil 86% gegen 4+5-Sterne-Anteil 29%: Altbewertung ist deutlich großzügiger.",
+   "Deck-Gesamtscore alt 9/10 gegen 3 Sterne nach R1.",
+   "Top-Karten alt und neu haben keine Überschneidung."
+  ],
+  "gradeGegenSterne": {
+   "g1": {
+    "1": 0,
+    "2": 1,
+    "3": 31,
+    "4": 14,
+    "5": 2
+   },
+   "g2": {
+    "1": 0,
+    "2": 1,
+    "3": 7,
+    "4": 0,
+    "5": 0
+   },
+   "g3": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+   }
+  },
+  "hinweis": "Nicht gemittelt. Vorschlag grade aus Sternen: 4-5 → 1, 3 → 2, 1-2 → 3; erst nach Abnahme."
+ },
+ "stichproben": {
+  "ocrGegenprobe": [
+   {
+    "cid": "cid:ignore_dystopia:9",
+    "ocrTreffer": 0.0,
+    "seite": 4,
+    "viertel": "TL"
+   }
+  ]
+ },
+ "kosten": {
+  "modell": "claude-sonnet (Teilsitzung)",
+  "tokens": 145320,
+  "werkzeugaufrufe": 26,
+  "sekunden": 265
+ },
+ "bilder": {
+  "bytes": 10801336,
+  "bakeSekunden": 47.5
+ },
+ "mappingNote": "Zuordnung laut Registry stimmt: Karte n liegt auf Seite 1+1+floor((n-1)/4) (p02 bis p15, Cover p01 nicht geöffnet), Viertel TL, TR, BL, BR; alle 56 Titel am Druck geprüft. Jede Seite hat ein Titelband über den vier Karten (nicht Teil der Karten).",
+ "seitenGesehen": 14,
+ "vierGesehen": 3
+}

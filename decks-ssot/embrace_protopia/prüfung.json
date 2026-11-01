@@ -1,0 +1,145 @@
+{
+ "schema": "kfb.deck-paket-pruefung/1",
+ "packId": "embrace_protopia",
+ "geprueftAm": "2026-11-01",
+ "zaehlung": {
+  "karten": 56,
+  "gesehen": 56,
+  "offen": [],
+  "textGeaendert": 0,
+  "nurSchreibweise": 0,
+  "sterne": {
+   "1": 0,
+   "2": 2,
+   "3": 38,
+   "4": 14,
+   "5": 2
+  }
+ },
+ "herkunft": {
+  "pdf": "Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1).pdf",
+  "sha256": "49947b009e0168aa56f22170f04f060f34575f79e75fd8f93598a74de9310eaa",
+  "bytes": 69688602
+ },
+ "zuschnitt": {
+  "hinweise": [
+   {
+    "n": 13,
+    "page": 5,
+    "quad": "TL",
+    "flags": [
+     "Text an Schnittkante rechts: THE NEIGHBOR / Authority is overrated. F"
+    ]
+   },
+   {
+    "n": 41,
+    "page": 12,
+    "quad": "TL",
+    "flags": [
+     "Text an Schnittkante rechts: IDE DOOR / Don't storm the front gate. I"
+    ]
+   }
+  ],
+  "motivNiedrigeGuete": [
+   {
+    "cid": "cid:embrace_protopia:6",
+    "guete": 0.278
+   },
+   {
+    "cid": "cid:embrace_protopia:9",
+    "guete": 0.149
+   },
+   {
+    "cid": "cid:embrace_protopia:12",
+    "guete": 0.216
+   },
+   {
+    "cid": "cid:embrace_protopia:30",
+    "guete": 0.176
+   },
+   {
+    "cid": "cid:embrace_protopia:48",
+    "guete": 0.21
+   }
+  ]
+ },
+ "befunde": [
+  "Titel, Power und Lore aller 56 Karten stimmen mit dem aktuellen JSON ueberein (keine Aenderung).",
+  "Zwei Karten heissen im Druck wirklich 'The Open Question': #29 (Seite 9 TL, Meerkat, Curiosity) und #50 (Seite 14 TR, Hund mit 'YOUR TURN', Tell); gleicher Titel, verschiedener Inhalt.",
+  "Karte 56 steht im Druck in Versalien ('THE CORE QUESTION'); das JSON hat bereits cardName 'The Core Question' und cardNamePrint 'THE CORE QUESTION', beides unveraendert uebernommen.",
+  "Je Seite steht ein durchlaufendes Kapitel-Banner (z. B. 'THE SKETCH / Finished is for tombstones. Draw it in pencil.', 'THE SMALL REPAIR / Revolutions are brochures. Fix the damn gate.', 'THE NEIGHBOR', 'THE WORK PARTY', 'TODAY', 'THE STRANGER', 'CURIOSITY', 'THE NOTEBOOK', 'THE HANDS', 'THE SIDE DOOR', 'THE COST: YOUR CERTAINTY', 'THE TELL: ALWAYS UNFINISHED', 'THE TURN'); es gehoert zu keiner Karte und ist nicht in cards uebernommen. Seite 4 hat kein Banner, sondern nummerierte Karten (09-12).",
+  "Layout-Unterschiede: Seite 4 (Karten 9-12) ohne POWER:/LORE:-Etiketten und anderes Panorama-Layout; Seiten 5 (13-16) und 9 (29-32) setzen Power/Lore einzeilig klein unter das Bild.",
+  "Karte 24 'The Standing Record': Nashorn mit Ziegel; Titel und Motiv hängen nicht erkennbar zusammen. Karte 52 'The Rough Test': Falter neben durchsichtigem Wuerfel, Bezug zum Titel unklar.",
+  "Karte 48 Power ('the other two decks') verweist auf Serienkontext, den die Karte allein nicht liefert.",
+  "Keine Druckfehler gefunden; Stempel/Randwoerter (KayfaBINGO!, KayfaBOGGLE!, KayfaBIZARRO!, BLÖDSINN!, HUMBUG!, What the FLUFF?!, Stay fluffy!) und Bildbeschriftungen (BRING GLOVES, KEEP OUT, DOOM/SAVED, CERTAIN, FUTURE) bewusst nicht uebernommen.",
+  "Es wurde kein Viertelbild geoeffnet; kleine Schrift auf Seite 5 am Seitenbild gelesen (OCR dort unsauber, Seitenbild eindeutig lesbar)."
+ ],
+ "textAenderungen": [],
+ "widersprueche": {
+  "karten": [
+   {
+    "cid": "cid:embrace_protopia:32",
+    "titel": "The Widening Mind",
+    "grade": 3,
+    "sterne": 4,
+    "art": "grade und Sterne liegen zwei Stufen auseinander",
+    "gradeGrund": "Describes the mechanism but does not tell you what to do with your hands right now.",
+    "sterneGrund": "Eule im Schlüsselloch einer schwarzen Wand, dahinter bunte Landschaft: Bild trägt die Pointe. Lore nennt den belegten Erweiterungseffekt positiver Zustaende."
+   },
+   {
+    "cid": "cid:embrace_protopia:46",
+    "titel": "The Comfort of Maybe",
+    "grade": 3,
+    "sterne": 4,
+    "art": "grade und Sterne liegen zwei Stufen auseinander",
+    "gradeGrund": "Abstract warmth metaphor — it depends on us is still a frame not yet an action.",
+    "sterneGrund": "Kröte zwischen den Sesseln 'DOOM' und 'SAVED' ruft 'IT'S UP TO US!': Bild ist die Pointe. Power (warmes Bad gegen kalte Dusche) ist Metapher ohne klare Handlung."
+   }
+  ],
+  "deck": [
+   "Deck-Gesamtscore alt 9/10 gegen 3 Sterne nach R1.",
+   "Viral-Score alt 9 gegen neu 6.",
+   "Top-Karten alt und neu haben keine Überschneidung."
+  ],
+  "gradeGegenSterne": {
+   "g1": {
+    "1": 0,
+    "2": 0,
+    "3": 19,
+    "4": 8,
+    "5": 1
+   },
+   "g2": {
+    "1": 0,
+    "2": 1,
+    "3": 19,
+    "4": 4,
+    "5": 1
+   },
+   "g3": {
+    "1": 0,
+    "2": 1,
+    "3": 0,
+    "4": 2,
+    "5": 0
+   }
+  },
+  "hinweis": "Nicht gemittelt. Vorschlag grade aus Sternen: 4-5 → 1, 3 → 2, 1-2 → 3; erst nach Abnahme."
+ },
+ "stichproben": {
+  "ocrGegenprobe": []
+ },
+ "kosten": {
+  "modell": "claude-sonnet (Teilsitzung)",
+  "tokens": 137615,
+  "werkzeugaufrufe": 23,
+  "sekunden": 233
+ },
+ "bilder": {
+  "bytes": 10188730,
+  "bakeSekunden": 32.9
+ },
+ "mappingNote": "Standard-Zuordnung (p02-p15, je 4 Karten, TL/TR/BL/BR) stimmt fuer alle 56 Karten am Titel. Seite 4 (Karten 9-12) ist ein Panorama-Layout ohne POWER:/LORE:-Etiketten; Power = grosser Text, Lore = kleiner Text darunter. Cover p01 nicht gelesen.",
+ "seitenGesehen": 14,
+ "vierGesehen": 0
+}

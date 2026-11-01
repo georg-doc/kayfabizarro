@@ -1,0 +1,1666 @@
+{
+ "packId": "forget_utopia",
+ "pdf": "Deck_A_UTOPIA_-_Forget_Utopia.pdf",
+ "checkedAt": "2026-11-01",
+ "pagesViewed": 14,
+ "quadsViewed": 2,
+ "mappingNote": "Zuordnung stimmt: Cover p01 (nicht gelesen), Karten ab p02, je 4 pro Seite, Reihenfolge TL, TR, BL, BR; Karte n liegt auf Seite 2+floor((n-1)/4). Alle 56 Titel passen zur JSON-Reihenfolge. Zusätzlich Viertel k48 und k30 geprüft.",
+ "cards": [
+  {
+   "cardNumber": 1,
+   "cardName": "The Glossy Horizon",
+   "cardNamePrint": "THE GLOSSY HORIZON",
+   "power": "Hold up a future so polished the visitor sees their own face in it. Sell the reflection.",
+   "lore": "A scale model of tomorrow is easily mistaken for a measurement of it.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p02 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Chamäleon vor seinem Spiegelbild in der Glaskuppel trägt das Bild; die Power ist Rhetorik ohne Handlung. Der Lore-Satz vom Modell, das mit einer Messung verwechselt wird, ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 2,
+   "cardName": "The Finished City",
+   "cardNamePrint": "THE FINISHED CITY",
+   "power": "Show the destination as already built. No scaffolding, no mud, no maintenance, no Tuesday.",
+   "lore": "The render is an argument dressed as a photograph of something that does not yet exist.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p02 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Der Pudel allein in der blank polierten, leeren Stadt macht „kein Dienstag“ sofort sichtbar. Lore („Argument, als Foto verkleidet“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 3,
+   "cardName": "The Vanishing Present",
+   "cardNamePrint": "THE VANISHING PRESENT",
+   "power": "Make today feel like a waiting room with bad chairs, so the future feels like rescue.",
+   "lore": "Re-framing the present as merely an obstacle devalues the only time anyone can actually act in.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p02 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Eintagsfliege im Wartezimmer mit schlechten Stühlen und Regenbogen hinter der Tür: Motiv und Text sagen dasselbe, und das Insekt macht „vergehende Gegenwart“ zur Pointe. Lore ist nur im Kartenkontext stark.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 4,
+   "cardName": "The Signature Line",
+   "cardNamePrint": "THE SIGNATURE LINE",
+   "power": "Offer the dream. Ask only that they stop looking at the floor and sign.",
+   "lore": "Awe and scrutiny use different states of mind, and awe is faster.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p02 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Krake mit Stift am Vertrag ist solide, aber erwartbar. Die Lore (Staunen und Prüfen sind verschiedene Zustände) bleibt vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 5,
+   "cardName": "The Cure-All Keynote",
+   "power": "Promise that one product retires an entire category of human suffering.",
+   "lore": "Recasting complex social problems as neat technical fixes flatters the tool and ignores the politics.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p03 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Walross hakt „Hunger, Einsamkeit, Tod“ am Pult ab: Der Haken bei Death ist der Gag. Lore nennt Solutionismus, aber ohne Begriff.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 6,
+   "cardName": "The Roadmap to Eden",
+   "power": "Draw a straight line from now to paradise. Hide the cliffs behind the font.",
+   "lore": "Roadmaps present uncertain futures as scheduled milestones, borrowing the authority of a train timetable.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p03 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Raupe auf der Route zum Abgrund passt, ist aber vorhersehbar. Der Zugfahrplan-Vergleich in der Lore ist der beste Teil.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 7,
+   "cardName": "The Moving Launch Date",
+   "cardNamePrint": "THE MOVING LAUNCH DATE",
+   "power": "Let salvation slip one quarter, then another. Keep the faith by keeping the date close.",
+   "lore": "Breakthroughs said to be a few years away sustain belief precisely by never arriving.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p03 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Windhund jagt ein Banner, daneben ausgestrichene Quartalsdaten und „SOON!“: Bild und Titel sind eine Pointe. Lore („nie ankommen als Glaubensstütze“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 8,
+   "cardName": "The Pre-Order",
+   "cardNamePrint": "THE PRE-ORDER",
+   "power": "Collect belief up front. Deliver the future on a later invoice, or not at all.",
+   "lore": "Trading on anticipation is a practice old enough to have a name: vaporware.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p03 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nager mit Vorbestellungs-Zetteln in der Schlange ist verständlich, aber ohne Dreh. Die Lore endet auf „vaporware“, das trägt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  },
+  {
+   "cardNumber": 9,
+   "cardName": "The Stage Light",
+   "power": "Aim everything bright and warm. Let the glare do the editing.",
+   "lore": "The society of the spectacle dictates that the polished image stands in for and outranks the thing itself.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p04 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Motte am Scheinwerfer ist das bekannte Bild. Wissenskern: Debords Gesellschaft des Spektakels, konkret genannt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 10,
+   "cardName": "The Hero Demo",
+   "power": "Show the one path that works flawlessly. Call it the way it works.",
+   "lore": "A smooth demo predicts almost nothing about a messy real deployment because it only walks the happy path.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p04 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 5,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Lemur tippt auf einer Tastatur voller Mausefallen, nur ein Weg ist sicher: der „happy path“ als Bild. Lore erklärt den Mechanismus (Demo sagt nichts über Praxis) präzise und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 11,
+   "cardName": "The Standing Ovation",
+   "power": "Reward applause faster than questions. Make doubt feel rude.",
+   "lore": "In a charged crowd, social proof makes visible enthusiasm self-reinforcing until the clapping becomes the evidence.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p04 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Seehunde klatschen, die Eule sitzt skeptisch dazwischen: Bild verstärkt „Zweifel wirkt unhöflich“. „Bis das Klatschen der Beweis wird“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 12,
+   "cardName": "The Afterglow",
+   "power": "Send them home shining. The details can wait for a calmer head that never arrives.",
+   "lore": "Positive affect at the moment of decision narrows scrutiny—wonder is an excellent place to hide a clause.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p04 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Leuchtkäfer im Glühen, im Hintergrund Kleingedrucktes: Das Bild liefert die „Klausel“ mit. „Wonder is an excellent place to hide a clause“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 13,
+   "cardName": "The Founder Myth",
+   "power": "Cast one person as the author of tomorrow. Origin story optional, confidence mandatory.",
+   "lore": "Charismatic authority rests on belief in the individual, meaning it asks for faith and resists audit by design.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p05 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Riesiger Schuhschnabel über winziger Menge bebildert den Gründermythos nur knapp. Wissenskern: charismatische Herrschaft (Weber), richtig getroffen.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 14,
+   "cardName": "The Genius Pass",
+   "power": "Let brilliance excuse the parts that do not add up yet.",
+   "lore": "The halo effect allows genius in one domain to be quietly spent as credibility in another.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p05 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Pfau mit Heiligenschein hält eine leere Tabelle: Der Halo-Effekt wird wörtlich, die Zahlen fehlen. Lore („Genie als Glaubwürdigkeit in anderem Feld ausgeben“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 15,
+   "cardName": "The Unfalsifiable Mission",
+   "power": "Make the goal so large that no particular failure can touch it.",
+   "lore": "A mission framed as advancing humanity immunizes itself from the accountability a narrow promise would face.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p05 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wal mit Banner „FOR A BETTER WIG WORLD“ ist eine schön sinnlose Mission. Der Wal selbst hat mit Unwiderlegbarkeit wenig zu tun.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 16,
+   "cardName": "The Disciple Seat",
+   "power": "Offer the crowd a role: believe loudly, and you belong.",
+   "lore": "Shared identity raises the social cost of doubt and turns scrutiny into something close to betrayal.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p05 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Pinguinreihen mit Abzeichen und ein leerer Stuhl, ordentlich, aber ohne eigene Pointe. Lore bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 17,
+   "cardName": "The Velvet Rope",
+   "power": "Make scarcity feel like status. The line is the product.",
+   "lore": "Artificial scarcity reads as value, and exclusion reads as quality.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p06 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Flamingo mit Spiegel vor dem Samtseil ist eine hübsche Szene ohne Dreh. Die Lore („Ausschluss liest sich als Qualität“) trägt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 18,
+   "cardName": "The Number You Are",
+   "power": "Hand out a position. Let people defend their place in a queue to nowhere.",
+   "lore": "Loss aversion makes people defend their position even when the underlying prospect is poor.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p06 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Nacktmull mit Wartenummer 24.991 vor „WAITING...“ ist verständlich. Wissenskern: Verlustaversion, korrekt benannt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 19,
+   "cardName": "The Referral",
+   "power": "Turn each believer into a recruiter. Growth disguised as generosity.",
+   "lore": "Referral mechanics convert enthusiasm into distribution, making the crowd mistake marketing for sharing.",
+   "stats": null,
+   "printTypo": "Druck: \"distributiom\"; gemeint \"distribution\"",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p06 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Ameisen als Anwerber sind nur Illustration, ein Witz ist nicht erkennbar. Lore erklärt Empfehlungsmechanik sauber, aber ohne Biss.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (JSON hat die gemeinte Schreibung: \"distributiom\"; gemeint \"distribution\")"
+  },
+  {
+   "cardNumber": 20,
+   "cardName": "The Early Access",
+   "power": "Reward the faithful with a slightly nicer waiting room.",
+   "lore": "Tiered access grants small status upgrades that feel like progress while the destination stays exactly as far away.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p06 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Faultier im Sessel vor der verketteten „CLOSED“-Tür: das „etwas bessere Wartezimmer“ ist im Bild. Lore („Fortschritt fühlt sich an, das Ziel bleibt fern“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 21,
+   "cardName": "The Eternal Soon",
+   "power": "Keep the payoff one horizon away, always visible, never closer.",
+   "lore": "A perpetual soon exploits hyperbolic discounting by keeping the prize psychologically near while practically distant.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p07 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schildkröte auf dem Weg zur Sonne passt, bleibt aber brav. Hyperbolisches Diskontieren ist genannt, aber nicht erklärt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 22,
+   "cardName": "The Deferred Self",
+   "power": "Promise the better you arrives bundled with the better thing.",
+   "lore": "The future self becomes a product, and the present self is cast as a defect to be upgraded away.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p07 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Einsiedlerkrebs in der Dose, im Spiegel mit goldenem Haus: „das bessere Ich im besseren Ding“ sitzt. Lore trägt nur mit Karte.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 23,
+   "cardName": "The Spent Now",
+   "power": "Trade a real Tuesday for an imagined someday, on repeat.",
+   "lore": "Every hour spent anticipating is an hour not lived—an opportunity cost that compounds invisibly.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p07 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Ratte im Haufen „LATER“-Kalender ist klar, aber Motiv und Titel bleiben nebeneinander. Lore („eine Stunde Vorfreude ist eine ungelebte Stunde“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 24,
+   "cardName": "The Renewed Vow",
+   "power": "When someday slips, sell the vow again at full price.",
+   "lore": "Sustained belief is maintained by re-committing rather than re-evaluating, avoiding the pain of sunk cost.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p07 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 0
+    },
+    "reason": "Vogel, der einen bröckelnden Thron nachmalt, zeigt „Gelübde zum vollen Preis neu verkaufen“ nicht. Sunk-Cost-Hinweis nur angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 25,
+   "cardName": "The Wet Blanket",
+   "power": "Frame every question as a failure of imagination.",
+   "lore": "Reframing criticism as small-mindedness discredits the questioner without engaging the question.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p08 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nilpferd vor einer bunten Tierschar passt zu „nasser Decke“, aber ohne Überraschung. Lore („Kritik als Kleingeist abtun, ohne die Frage zu beantworten“) ist treffend.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 26,
+   "cardName": "The Luddite Label",
+   "power": "Sort skeptics into the past tense. They do not get it yet.",
+   "lore": "The modern slur misnames a labor argument about power as an ignorant fear of progress.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p08 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Mammut in der Vitrine „THE PAST“ ist solide. Wissenskern: Luddismus war ein Arbeitskampf, kein Technikhass, konkret und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 27,
+   "cardName": "The Lonely Question",
+   "power": "Make asking feel like leaving the room. Most people stay.",
+   "lore": "The fear of social exclusion is processed like physical pain, making dissent genuinely costly.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p08 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Einsamer Wolf auf dem Stuhl abseits des Lagerfeuers zeigt „Fragen heißt den Raum verlassen“ passend, aber erwartbar. Wissenskern: sozialer Ausschluss wird wie Schmerz verarbeitet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 28,
+   "cardName": "The Convert Bonus",
+   "power": "Welcome the doubter back warmly. Belief tastes sweeter after surrender.",
+   "lore": "Following the relief of cognitive dissonance, former doubters defend the new belief more strongly than those who never doubted.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p08 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Strauß zieht den Kopf aus dem Loch, die Bären feiern: guter Dreh, aber Lore und Power bleiben generisch.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 29,
+   "cardName": "The Warm Bath",
+   "power": "Lower the pulse. Optimism as a sedative, dosed in keynotes.",
+   "lore": "A hopeful pitch amplifies our natural optimism bias into comfortable, paralyzed inaction.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p09 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Capybara im Thermalbad unter Neon „IT WILL BE FINE.“ ist sehr stimmig. Power „Optimismus als Beruhigungsmittel“ ist aber vage.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 30,
+   "cardName": "The California Ideology",
+   "power": "Fuse rebel optimism with market faith until questioning either feels like questioning freedom.",
+   "lore": "Treating technological progress as inherently liberating smoothly conceals who actually wins and loses.",
+   "stats": null,
+   "printTypo": "Druck: \"markst\"; gemeint \"market\"",
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p09 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Seelöwe mit Friedenszeichen und Dollarpfeilen zeigt die Verschmelzung, aber ohne Dreh. Wissenskern: „Californian Ideology“ als echter Begriff.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (JSON hat die gemeinte Schreibung: \"markst\"; gemeint \"market\")"
+  },
+  {
+   "cardNumber": 31,
+   "cardName": "The Numbed Hand",
+   "power": "Comfort so complete that nobody reaches for the wheel.",
+   "lore": "Reassurance that progress is automatic reduces the felt need to act; agency becomes optional.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p09 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schlafender Koala am Steuer eines selbstfahrenden Autos trifft „keiner greift zum Lenkrad“. Lore ist eher Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 32,
+   "cardName": "The Sweet Stall",
+   "power": "Keep them hopeful, seated, and exactly where you left them.",
+   "lore": "When optimism is detached from action, it functions solely to maintain the status quo.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p09 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 0,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Panda vor der mit „LATER“ vernagelten Tür ist nett, die Lore („Optimismus ohne Handlung erhält den Status quo“) ist ein Füllsatz.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 33,
+   "cardName": "The Beautiful Mockup",
+   "power": "Present the picture of the thing as the thing.",
+   "lore": "The mind treats vivid representation as proxy evidence of reality.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p10 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Leierschwanz mit Staffelei-Bild vor der verfallenen Werkstatt zeigt Bild gegen Sache. Lore ist nur eine Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 34,
+   "cardName": "The Prototype Loop",
+   "power": "Show the same working corner from forty angles. Imply the whole.",
+   "lore": "Repeated exposure to a single polished fragment makes it feel like a finished system.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p10 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Mistkäfer rollt die Kugel im Kreis: „dieselbe Ecke aus vierzig Winkeln“ ist klare, spielbare Handlung. Wissenskern (wiederholte Darbietung) bleibt oberflächlich.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 35,
+   "cardName": "The Missing Receipt",
+   "power": "Skip the part where it survived contact with a real week.",
+   "lore": "The absent record of ordinary operation is always the most important missing document.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p10 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Sekretärvogel vor dem leeren Rahmen mit Schild „IN USE“: Sekretär plus fehlender Beleg ist eine echte Pointe. Lore („wichtigstes fehlendes Dokument“) steht allein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 36,
+   "cardName": "The Vibes Audit",
+   "power": "Let the feeling of progress stand in for the measurement of it.",
+   "lore": "When momentum is conveyed through tone rather than metrics, the feeling arrives first and satisfies.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p10 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Quokka vor Schalttafel, auf dem Schirm eine lächelnde Sonne statt Zahlen: sitzt, aber der Rest ist Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 37,
+   "cardName": "The Smooth Surface",
+   "power": "Promise a life with no edges, no effort, no callus.",
+   "lore": "The easiest option steadily wins not because it is best, but because it asks the least.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p11 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Schnecke auf der glatten Kugel ist hübsch, aber ohne Dreh. Lore („gewinnt, weil sie am wenigsten verlangt“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 38,
+   "cardName": "The Outsourced Limb",
+   "power": "Let the device do the reaching. Keep the hand on the glass.",
+   "lore": "Skills offloaded to tools erode through disuse—a documented trade of capability for ease.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p11 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "T. rex mit Cyborg-Kurzarm am Tablet: Die Kurzarm-Pointe trägt „ausgelagerte Gliedmaße“. Wissenskern („Fähigkeiten verkümmern“) bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 39,
+   "cardName": "The Forgotten Muscle",
+   "power": "What you never lift, you slowly cannot.",
+   "lore": "Frictionlessness has a hidden long-term cost paid in lost ability through disuse atrophy.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p11 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 2
+    },
+    "reason": "Ziege auf der Rolltreppe, die Steintreppe voller Spinnweben: Bild ist die Pointe. Wissenskern: Disuse-Atrophie, konkret und richtig.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 40,
+   "cardName": "The Comfort Trap",
+   "power": "Sell ease so total it quietly removes the option of effort.",
+   "lore": "When the effortful path is engineered away, a life optimized for comfort loses access to the difficulty that builds skill.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p11 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Seekuh in der Hängematte ist reine Illustration von „Komfort“. Lore ist eine Umschreibung des Titels.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 41,
+   "cardName": "The Next Version",
+   "power": "Frame every problem as a thing the next release will fix.",
+   "lore": "Defining progress as the next product keeps attention on acquisition and off of repair.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p12 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Elster tauscht Kisten, im Eimer „OLD/OBSOLETE“: Elster plus „Neu!“ sitzt. Lore bleibt Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 42,
+   "cardName": "The Trade-In",
+   "power": "Make replacement feel like growth. Discard the old, including the lesson.",
+   "lore": "Planned obsolescence designs products to be replaced rather than maintained.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p12 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Waschbär am Fließband mit Recycling-Sonne ist verständlich, aber ohne Dreh. Wissenskern: geplante Obsoleszenz, richtig definiert.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 43,
+   "cardName": "The Treadmill",
+   "power": "Movement without arrival, billed monthly.",
+   "lore": "Due to hedonic adaptation, each upgrade delivers a brief lift before resetting the wanting.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p12 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 2,
+     "bild": 1
+    },
+    "reason": "Hamster im Laufband ist das erwartbare Bild. Wissenskern: hedonische Anpassung, korrekt benannt und erklärt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 44,
+   "cardName": "The Loyalty Tier",
+   "power": "Reward staying on the treadmill with a faster treadmill.",
+   "lore": "Loyalty systems convert repeat consumption into identity, masking escalation as belonging.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p12 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Kamel auf Treppe Bronze bis Diamond passt, doch „Gold“ steht zweimal und die Pointe verpufft. Lore bleibt allgemein.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 45,
+   "cardName": "The Mortgaged Now",
+   "power": "Borrow against today to furnish a tomorrow that ships late.",
+   "lore": "Continually deferring satisfaction spends the present as a means, never an end.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p13 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Biber baut ein Haus aus Kredit- und Schuldenkarten: Kartenhaus als Bild trägt. Text bleibt sonst Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 46,
+   "cardName": "The Patience Tax",
+   "power": "Charge attention as rent on a building with no keys.",
+   "lore": "Attention spent on anticipation is a finite resource drained without return.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p13 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Specht vor Messgerät „ATTENTION“ und verschlossener Tür erklärt die „Patience Tax“ nicht. Die Lore ist ein Füllsatz.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 47,
+   "cardName": "The Unlived Week",
+   "power": "Add up the Tuesdays spent in the waiting room.",
+   "lore": "The cost of perpetual anticipation is invisible because it is paid in ordinary, un-itemized hours.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p13 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Eichhörnchen schreibt „WAITED, STILL WAITING“ auf den Kassenzettel: gute Idee, aber zu leise umgesetzt.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 48,
+   "cardName": "The Polite Bill",
+   "power": "Present the total gently, after the lights are warm and the doubt is gone.",
+   "lore": "Costs disclosed amid positive affect at the close of a pitch receive the least scrutiny.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p13 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Taube überreicht Rechnung „$ INFINITE + TAX“ und gurrt: höfliche Zumutung, sitzt. Inhaltlich dasselbe wie Karte 12.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 49,
+   "cardName": "The Seamless Surface",
+   "power": "Remove every visible seam, so the labor and the trade-offs disappear.",
+   "lore": "Hiding the seams of a system hides its workings, leaving users unable to contest what they use.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p14 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Gürteltier als nahtlose Glaskugel ist sauber gelöst. Die Lore („Nähte verstecken heißt Funktion verstecken“) ist nur Behauptung.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 50,
+   "cardName": "The Closed Loop",
+   "power": "Leave no room for a question. If you cannot ask, you are inside the pitch.",
+   "lore": "A presentation that absorbs every objection in advance leaves no opening for genuine inquiry.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p14 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 2,
+    "scores": {
+     "pointe": 0,
+     "power": 1,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Axolotl in der Seifenblase ist reine Illustration ohne Witz. Power („wer nicht fragen kann, steckt im Pitch“) ist als Gedanke gut, hier nur beschrieben.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 51,
+   "cardName": "The Single Story",
+   "power": "Offer one path forward and call it the future.",
+   "lore": "When only one route is presented, a manufactured choice is being disguised as an inevitability.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p14 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Wombat vor Karte mit nur einem freien Pfeil passt, ist aber vorhersehbar. Lore („inszenierte Wahl als Zwangsläufigkeit“) ist treffend.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 52,
+   "cardName": "The Shine Test",
+   "power": "The shinier it is, the harder you should look for the floor.",
+   "lore": "Sufficiently advanced presentation acts like magic, and magic works precisely by hiding the mechanism.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p14 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Rabe blinzelt in eine gleißende Kugel. Lore („Magie funktioniert, indem sie den Mechanismus verbirgt“) ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 53,
+   "cardName": "The Assumption Stack",
+   "power": "Name every quiet if the promise stands on.",
+   "lore": "Surfacing the load-bearing ifs a pitch keeps hidden is the core of a pre-mortem audit.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p15 TL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Giraffe vor Turm mit „IF“ im Gerüst passt. Power („Nenne jedes stille Wenn“) ist klar ausführbar, Wissen bleibt angedeutet.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 54,
+   "cardName": "The Load-Bearing Lie",
+   "power": "Find the one assumption that, if false, drops the whole roof.",
+   "lore": "Identifying the single most fragile assumption tells you more than admiring the finished facade ever could.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p15 TR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 3,
+    "scores": {
+     "pointe": 1,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 1
+    },
+    "reason": "Nashorn vor rissigem Bogen ist stimmig. Power („die eine Annahme finden, die das Dach trägt“) ist klar spielbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 55,
+   "cardName": "The Beneficiary",
+   "power": "Ask who is already paid whether or not tomorrow arrives.",
+   "lore": "Many who sell a future are compensated on the promise rather than the delivery; for them, arrival is optional.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p15 BL",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 1,
+     "lore": 2,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Geier reicht den Beutel „REWARDS“, die Vogelmenge jubelt: wer wird bezahlt, ob es kommt oder nicht. „For them, arrival is optional“ ist zitierbar.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich"
+  },
+  {
+   "cardNumber": 56,
+   "cardName": "The Core Question",
+   "cardNamePrint": "THE CORE QUESTION",
+   "power": "Hold the brochure up to the light. Count the things that have to be true. Notice how many are not.",
+   "lore": "A promise is only as sound as its hidden assumptions.",
+   "stats": null,
+   "printTypo": null,
+   "printOpen": null,
+   "textSource": {
+    "source": "PDF Deck_A_UTOPIA_-_Forget_Utopia.pdf p15 BR",
+    "method": "visual-transcription",
+    "checkedAt": "2026-11-01"
+   },
+   "rating": {
+    "stars": 4,
+    "scores": {
+     "pointe": 2,
+     "power": 2,
+     "lore": 1,
+     "wissen": 1,
+     "bild": 2
+    },
+    "reason": "Der gelbe Hase zieht den Vorhang vom Gerüst: Schlusspointe, Bild und Aufgabe passen. Power gibt drei klare Schritte.",
+    "version": "R1",
+    "ratedAt": "2026-11-01"
+   },
+   "jsonDiff": "gleich (Titel im Druck in Versalien)"
+  }
+ ],
+ "deck": {
+  "deckRating": {
+   "stars": 3,
+   "avgPoints": 6.18,
+   "distribution": {
+    "1": 0,
+    "2": 6,
+    "3": 34,
+    "4": 15,
+    "5": 1
+   },
+   "reason": "Durchgehend sauber geschriebenes Deck mit stimmigem Tonfall und klarem Wissenskern pro Karte (Halo-Effekt, Verlustaversion, hedonische Anpassung, Pre-Mortem), aber die Power-Texte sind fast durchweg Rhetorik statt Spielhandlung und viele Bilder bebildern nur den Titel. Stark sind die Tier-Pointen (Mausefallen-Tastatur, Sekretärvogel, Windhund mit Banner).",
+   "ratingNote": "4 + 5 Sterne zusammen 16 von 56 (29 %), knapp unter der Grenze von 30 %; nach Prüfung gegen die Tabelle gehalten. Power erreicht nur auf den Karten 34, 53, 54 und 56 die volle Punktzahl, weil die übrigen Power-Texte Haltungen statt klarer Handlungen beschreiben.",
+   "version": "R1"
+  },
+  "topCards": [
+   {
+    "cardNumber": 10,
+    "cardName": "The Hero Demo",
+    "stars": 5,
+    "points": 9
+   },
+   {
+    "cardNumber": 7,
+    "cardName": "The Moving Launch Date",
+    "stars": 4,
+    "points": 8
+   },
+   {
+    "cardNumber": 2,
+    "cardName": "The Finished City",
+    "stars": 4,
+    "points": 8
+   },
+   {
+    "cardNumber": 35,
+    "cardName": "The Missing Receipt",
+    "stars": 4,
+    "points": 8
+   },
+   {
+    "cardNumber": 39,
+    "cardName": "The Forgotten Muscle",
+    "stars": 4,
+    "points": 8
+   }
+  ],
+  "worstCards": [
+   {
+    "cardNumber": 40,
+    "cardName": "The Comfort Trap",
+    "stars": 2,
+    "points": 4
+   },
+   {
+    "cardNumber": 46,
+    "cardName": "The Patience Tax",
+    "stars": 2,
+    "points": 4
+   },
+   {
+    "cardNumber": 50,
+    "cardName": "The Closed Loop",
+    "stars": 2,
+    "points": 4
+   }
+  ],
+  "viralScore": 6,
+  "viralReason": "„The Hero Demo“ (Lemur auf der Mausefallen-Tastatur) und „The Moving Launch Date“ (Windhund jagt das Banner) würden geteilt, weil jeder Tech-Pitch das Bild sofort wiedererkennt."
+ },
+ "findings": [
+  "Alle 56 Karten stimmen in Titel, Power und Lore mit dem JSON überein (keine Änderung bei Titel, Power oder Lore); nichts im Druck fehlt im JSON und umgekehrt.",
+  "Druckfehler: Karte 19 Lore „distributiom“ statt „distribution“; Karte 30 Power „markst“ statt „market“. Das JSON enthält jeweils die gemeinte Schreibung (als printTypo vermerkt, im Text korrigiert).",
+  "Titel in Versalien gedruckt: Karten 1, 2, 3, 4, 7, 8 und 56 (cardNamePrint gesetzt); die übrigen 49 Titel sind gemischt geschrieben.",
+  "Layout: Auf Seite 14 (Karten 49, 50) stehen Power und Lore in einem Absatz statt in zwei Zeilen; Titelschrift und Rahmenstil wechseln von Seite zu Seite (z. B. Seite 14 mit Schreibmaschinenschrift, Seite 15 mit unterstrichenen Titeln).",
+  "Bildfehler: Karte 44 zeigt die Stufe „Gold“ zweimal (Bronze, Silver, Gold, Gold, Platinum, Diamond); Karte 7 hat im Datum „2024“ ein überschriebenes Zeichen („Q3 202*6“); Karte 46 zeigt auf dem Messgerät unleserliche Ziffern.",
+  "Inhaltliche Überschneidungen: Karte 12 (Afterglow) und 48 (Polite Bill) tragen denselben Mechanismus (positive Stimmung am Pitch-Ende schwächt die Prüfung); Karten 23, 45, 46, 47 variieren dieselbe Idee „Vorfreude kostet Gegenwart“; Karten 29, 31, 32 sind drei Fassungen von „Optimismus beruhigt“.",
+  "Power-Texte sind fast alle Haltungs-Imperative ohne Spielmechanik; nur 34, 53, 54 und 56 sind klar ausführbar.",
+  "Stempel-Zusatzwörter (BLÖDSINN!, HUMBUG!, KayfaBONGO!, KayfaBIZARRO!, Kayfa BOGGLE!, LULLABY LIES!, …) variieren je Seite und wurden nicht abgeschrieben; Schlusszeile auf Karte 55 „Forget Utopia. Stay fluffy!“ ebenfalls nicht.",
+  "Alle Texte am Kartenende (auch unter dem GW-Logo, z. B. Karte 48) waren lesbar; printOpen bleibt überall leer. Das Cover (p01) wurde nicht gelesen."
+ ]
+}
