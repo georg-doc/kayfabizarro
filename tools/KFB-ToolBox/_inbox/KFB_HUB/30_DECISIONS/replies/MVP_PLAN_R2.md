@@ -25,6 +25,8 @@ Danach Testfahrt-Adresse an Georg.
 - Pistole und Blaster in Schichten (Flug-Sitzung), Hänger der ersten Explosion.
 - Ladezeit vor dem Site-Paket.
 
+**Volumen (Georg 01.11.):** WS1 darf morgen über 50 % gehen. Reicht es, kommen vor dem Site-Paket zuerst Nebelschwaden, dann Geysir mit Konfettikanone.
+
 ## Block 3 · Site
 Site-Paket (V-1123), dazu Werkzeug „Testen und Messen“ (WSA). Abnahme: Georg spielt, Kritiker erste 10 Minuten.
 
@@ -32,7 +34,7 @@ Site-Paket (V-1123), dazu Werkzeug „Testen und Messen“ (WSA). Abnahme: Georg
 - **Himmel:** Augen als instanzierte 3D-Augen (WS-Himmel, erst Konzeptseite mit Vergleichsbildern), `worldPulse`, Story-Stimmung.
 - **Wetter Teil 2 bis 4:** mit Nebelschwaden Option A, Windstoß über Prop, Geysir Option A (WS-Himmel Konzept, Plätze über den einen Verteiler).
 - **Nacht:** Nachtebene, Lagerfeuer, Regel für lokale und temporäre Lichter, Leuchtstab, Leuchtkugel.
-- **Spiel:** Kontakt-Wackeln, Postkarten-Modus, Karten-Tratsch.
+- **Spiel:** Kontakt-Wackeln, Postkarten-Modus, Karten-Tratsch, Geschenke und Streiche (WS-NPC), Konfetti-Regen mit Wetter.
 - **Karten:** Stadt-Architektur, alle Decks im Paket (Rollout, parkt), Recherche-Dossier.
 
 **Grundsätze neu:** Jede neue Fähigkeit hängt an einem Prop (V-1203). VFX in Schichten wie Ton (V-1194). Belege ohne Fahrt, je Bild ein Satz (V-1188). „Karten“ heißt nur Spielkarten.
