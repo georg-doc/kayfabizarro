@@ -23,6 +23,7 @@ Danach Testfahrt-Adresse an Georg.
 - HyperNorm-Boden je Deck (`deckGround`, WS-Design) nach Kartengebäude.
 - Deck-Moment beim Abschluss einer Zone, Kartenwind, Klingende Welt.
 - Pistole und Blaster in Schichten (Flug-Sitzung), Hänger der ersten Explosion.
+- Hartgummi: Bäume und Props reagieren auf echten Kontakt, biegen und federn, nichts bleibt stecken (V-1229); direkt nach Runde 3, wenn das Volumen reicht.
 - Ladezeit vor dem Site-Paket.
 - Sternenhimmel als Probe bei WS-Himmel (`stars=1`), blockiert nichts.
 
