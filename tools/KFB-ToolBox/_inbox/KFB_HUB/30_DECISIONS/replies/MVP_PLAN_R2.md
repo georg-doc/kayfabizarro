@@ -32,6 +32,7 @@ Danach Testfahrt-Adresse an Georg.
 Site-Paket (V-1123), dazu Werkzeug „Testen und Messen“ (WSA). Abnahme: Georg spielt, Kritiker erste 10 Minuten.
 
 ## Nach dem MVP, eingeplant, nicht vergessen
+- **Explosionen als Baukasten:** Farbvarianten für Magie, Größen Small bis Large; kleine zeitgesteuerte Pflanzen- und Pilz-Explosionen mit weichem ASMR-Plop und Sporenwolke, bei Kontakt später psychedelisch, Plätze über den Verteiler, Verwandt mit dem Geysir (V-1215).
 - **Zeit und Geschichte:** Uhr und Datum als Prop, Zeitreise-Modus mit historischen Decks, Historiker-Prop mit Recherche-Atlas (KONZEPT_STERNE_ZEIT_HISTORIKER_R1).
 - **Himmel:** Sternbilder über Teleskop-Prop, bunte Sterne; Augen als instanzierte 3D-Augen (WS-Himmel, erst Konzeptseite mit Vergleichsbildern), `worldPulse`, Story-Stimmung.
 - **Wetter Teil 2 bis 4:** mit Nebelschwaden Option A, Windstoß über Prop, Geysir Option A (WS-Himmel Konzept, Plätze über den einen Verteiler).
