@@ -40,4 +40,4 @@ Site-Paket (V-1123), dazu Werkzeug „Testen und Messen“ (WSA). Abnahme: Georg
 - **Spiel:** Kontakt-Wackeln, Postkarten-Modus, Karten-Tratsch, Geschenke und Streiche (WS-NPC), Konfetti-Regen mit Wetter.
 - **Karten:** Stadt-Architektur, alle Decks im Paket (Rollout, parkt), Recherche-Dossier.
 
-**Grundsätze neu:** Jede neue Fähigkeit hängt an einem Prop (V-1203). VFX in Schichten wie Ton (V-1194). Belege ohne Fahrt, je Bild ein Satz (V-1188). „Karten“ heißt nur Spielkarten.
+**Grundsätze neu:** Interaktivität vor Menge: wenige Bäume, die umklappen und sich wieder aufrichten, statt vieler starrer (V-1217). Jede neue Fähigkeit hängt an einem Prop (V-1203). VFX in Schichten wie Ton (V-1194). Belege ohne Fahrt, je Bild ein Satz (V-1188). „Karten“ heißt nur Spielkarten.
