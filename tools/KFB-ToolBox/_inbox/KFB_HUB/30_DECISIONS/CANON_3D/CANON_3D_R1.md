@@ -17,6 +17,12 @@
 - `S/` = `CANON_3D/sources/`: eingefrorene Kopien aus Lab und Spenderordnern, Herkunft und Prüfsumme in `S/MANIFEST.tsv`;
 - die Originale dort zählen nicht mehr.
 
+## Absicht · Drei Ebenen (V-1171, Georg 01.11.)
+KFB mischt überzeichnete, hypernormalisierte Realität mit stilisierter Cartoonhaftigkeit (Kayfabe und Bizarro). Die kognitive Dissonanz ist der Resonanzraum (McCloud, Eisner).
+- **Hintergrund:** realistisch und haptisch. Dazu gehört der Klang: viszeral, fast wie Call of Duty, gemischt mit Star-Wars-Sci-Fi und Dieselpunk.
+- **Vordergrund:** stilisierte Figuren mit Glubschaugen und 2D-Pop-ups, hier entsteht Identifikation.
+- **Mittelgrund:** verbindet beides: Übergänge, Environment-Props, Claymation, Wave Function Collapse als fraktales Designprinzip.
+
 ## 0 · Pflicht für jeden Job (Tier 0 jedes Briefs; diese drei Zeilen kopiert WS0 wörtlich in jeden 3D-Brief)
 1. **Kanon lesen:** `CANON_3D/CANON_3D_R1.md` (diese Seite) und die Zeilen deines Fachgebiets. **Vor dem Bau** liegt ein ausgefülltes Konzeptblatt `CANON_3D/KONZEPTBLATT_R1.md` vor; WS0 schreibt es (V-561).
 2. **Bauen nur mit den Kanon-Werkzeugen:**
