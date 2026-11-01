@@ -1,3 +1,9 @@
+## 2026-11-01 · S10 öffentlich · R9-URL-4
+
+Zehn Originaltexte. S10 Wissen und Glaubensgewissheit als DOC-Textauszug veröffentlicht. START ergänzt Zweifel/Korrigierbarkeit und die säkulare/theologische Begründung der Menschenwürde. Öffentlicher Leseraum https://philosophie-leseraum.frizzlebob.chatgpt.site/ Version 2. Implementierung 18c55df84ac304a616b728c2c481057ab88cc2c8. Alle zehn geänderten Dateien über den Branch zurückgelesen. Öffentlicher S10-Download bytegleich mit Extraktion. ChatGPT über den öffentlichen Startknopf geöffnet, vorbereiteten Auftrag um eine Blindfrage ergänzt und gesendet. Version und beide Marker korrekt. Abschnitt 26: Suppenwürfel, Koch in der Küche und Physiker im Teilchenbeschleuniger korrekt identifiziert. Im angemeldeten Testkonto geprüft. Nächster unabhängiger Praxistest: Gespräch zu Zweifel oder Menschenwürde mit dem Autor.
+
+---
+
 ## Current · Nine originals and public reader · 2026-10-31
 
 Canonical public reading entry: https://philosophie-leseraum.frizzlebob.chatgpt.site/
