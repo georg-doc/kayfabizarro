@@ -1,3 +1,11 @@
+## Additive C02 source intake and navigation · 2026-11-01
+
+[Current Return](RETURN.md) records the Webb/Goodwin source-chain outcome at immutable source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. [Article packet](journalism/webb-goodwin-2026-11-01/webb-goodwin-one-amazon-packet.md), [author index](authors/README.md) and [existing breadth navigation](breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json): eighteen author masters; C02 adds nine source references, thirteen scoped claims, eleven noncausal edges and four questions, separately from AB01 metrics. Eight sources have bounded text reads; one lead remains unread. Corporate assertions and later product terms do not resolve case-level implementation, consent or financing links.
+
+[Web-chat reconciliation](breadth/WEBCHAT_RECONCILIATION_C02_2026-11-01.md) restores navigation to existing Moneyrex R4, Jorjani/Michels/Puharich, TheWebb.io benchmark and source/creative contracts without duplicating ownership. Moneyrex was already registered, not a newly discovered packet. Legacy registry entries remain historical and point to the current breadth view; deployed Site content is unchanged. [Validation](journalism/webb-goodwin-2026-11-01/TEST_REPORT.md). Next gate: `JWG_ONE_AMAZON_DATED_INSTRUMENTS_AND_CONSENT_01`.
+
+---
+
 ## CURRENT CORPUS MILESTONE — breadth batch AB01 · 2026-11-01
 
 Eight new source-lead author masters now exist: Annie Jacobsen, Linda Hunt, Christopher Simpson, Peter Dale Scott, Andrija Puharich, Ingo Swann, Thomas Townsend Brown and Nikola Tesla. Existing eight masters retained; Fitts/Farrell/Liszt receive additive Solari source links. This supersedes earlier zero-new-dossier status statements below, without overwriting the 140-candidate R4 census or presenting source leads as complete worldviews.
@@ -479,4 +487,5 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 - **RETURN:** `RETURN.md` in this directory; final head and verification counts. Exact head from the latest branch/PR must be read after writes.
 
 **HISTORICAL GATE (six-author milestone): `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — intake remains ongoing for seven authors; the current next named gate is stated in the 2026-10-13 additive outcome above.**
+
 

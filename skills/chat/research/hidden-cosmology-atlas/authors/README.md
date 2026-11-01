@@ -102,3 +102,9 @@ Eight additional source-lead dossiers, bringing the master-file inventory to six
 - [Nikola Tesla](nikola-tesla.md)
 
 See [source inventory](../breadth/SOURCE_CUSTODY_INVENTORY_R1_2026-11-01.md), [read-only index](../breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) and [test report](../breadth/TEST_REPORT_R1_2026-11-01.md).
+
+
+
+## Journalism C02 — 2026-11-01
+
+Two source-led author modules bring the master-file inventory to eighteen: [Whitney Webb](whitney-webb.md) and [Mark Goodwin](mark-goodwin.md). They share one reporting lineage for the selected article; two bylines do not double its evidence. [Article-to-original packet](../journalism/webb-goodwin-2026-11-01/webb-goodwin-one-amazon-packet.md), [source review](../journalism/webb-goodwin-2026-11-01/c02-review.md) and [current navigation](../breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) preserve actual reading limits. Existing WCC/Moneyrex and JM/Puharich topics remain their own ledger owners.

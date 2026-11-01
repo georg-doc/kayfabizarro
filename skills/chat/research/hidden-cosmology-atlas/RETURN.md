@@ -1,3 +1,21 @@
+## CURRENT RETURN — Webb/Goodwin journalism chain C02 and web-chat reconciliation · 2026-11-01
+
+**Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `6f9fa0c512a85ebaa66100653a49ee06dc1907b2`; source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. Final handoff is the commit containing this section; exact final head/readbacks are returned in chat. Prior Return sections below are historical.
+
+**Outcome:** two source-led author masters, [Whitney Webb](authors/whitney-webb.md) and [Mark Goodwin](authors/mark-goodwin.md), bring the author-master total to eighteen. Their jointly bylined [ONE Amazon source chain](journalism/webb-goodwin-2026-11-01/webb-goodwin-one-amazon-packet.md) is one reporting lineage, not independent corroboration by two authors. Nine new source references (eight bounded text reads and one unread lead), thirteen scoped claims, eleven noncausal edges (seven documentary, one author-assertion, three conceptual), four open questions. AB01 totals remain separately scoped and unchanged.
+
+**Finding:** Satellogic financing disclosure, Veea's SEC-hosted investor presentation and current ONE Amazon wording document different corporate statements. They do not establish a funding bridge, implemented surveillance, community consent or historical token terms. BIS policy context and the BCA Community Advisory Panel paper add distinct primary perspectives; neither is an independent investigation of this case. Mongabay full text remains unread. No broad historical claim is certified.
+
+**Other web-chat work:** [five-finding reconciliation](breadth/WEBCHAT_RECONCILIATION_C02_2026-11-01.md) audits twenty first-parent commits. Moneyrex R4 and Jorjani/Michels/Puharich were already stored; their owner links are repaired in the existing breadth index. TheWebb.io benchmark and existing journalism/creative contracts receive explicit pointers. No duplicated source masters, no claim that all branches were audited. Moneyrex originals remain outstanding and prepared archive requests remain unsent.
+
+**Changed files:** `authors/{whitney-webb,mark-goodwin}.md`, `authors/README.md`; two `breadth/WEBCHAT_RECONCILIATION_C02_2026-11-01` files and the existing breadth index; `ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json` (historical-view pointer, original entries retained); `journalism/webb-goodwin-2026-11-01/` source receipts, context receipts, article packet, independent review, validator and test report; this Return, Living Atlas and additive changelog.
+
+**Evidence:** [actual test report](journalism/webb-goodwin-2026-11-01/TEST_REPORT.md), [independent bounded review](journalism/webb-goodwin-2026-11-01/c02-review.md). All twenty-two edge endpoints resolve; AB01 arrays and legacy registry entries/topics preserved. Eight existing reconciliation targets verified. Source checkpoint 8/8 file bodies read back exactly. Final navigation pins immutable source checkpoints. Existing Site retains its earlier deployment; this slice has no Site acceptance claim, Hub/Cloudflare changes, merge or outreach.
+
+**One next gate: `JWG_ONE_AMAZON_DATED_INSTRUMENTS_AND_CONSENT_01`** — dated legal terms, actual deployment and independent community evidence for this specific case. Continue within the existing owner; do not infer use of funds or consent from partnerships and roadmaps.
+
+---
+
 ## CURRENT RETURN — breadth corpus batch AB01 completed · 2026-11-01
 
 **Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `7b9afcfb38993589c6110d77eeeb32cec89d54aa`; source checkpoint/head before this handoff `267e2ea50cf333c1d87d55c4970ee6ac0ec72214`; inventory checkpoint `789c9aa37e5608d1fb23cb45e08ad756059048c5`. Final handoff commit is the Git commit containing this section; exact final branch head/readback is returned in chat. No merge or Live promotion.
@@ -478,4 +496,5 @@ The researcher must faithfully report what the source author says and how that a
 Independent source discovery/metadata for the three core authors; speaker/audio verification for the initial Kurt Metzger interview; first complete author worldview dossier; later comparative narrative mapping; any formal KFB Deck intake/creative transformation. None is a blocker for the corrected NotebookLM prompt.
 
 **ONE NEXT GATE — WORLDVIEW_SOURCE_CORPUS_INTAKE_01:** Execute independent source research (in NotebookLM or this research chat) for “The Worldview According to Kurt Metzger”, capturing traceable original statements with exactly the author's own certainty, then build separate Dark Journalist and Michael Wann dossiers.
+
 

@@ -1,7 +1,7 @@
 {
   "schema": "kfb.research-atlas.entity-registry-view/1",
   "date": "2026-10-31",
-  "status": "BRANCH_PROPOSAL_READ_ONLY_VIEW",
+  "status": "HISTORICAL_BRANCH_PROJECTION_CURRENT_NAVIGATION_SUPERSEDES",
   "repository": "georg-doc/kayfabizarro",
   "owner": "Hidden Cosmology Atlas Editorial Research",
   "branch": "research/hidden-cosmology-atlas-2026-10-13",
@@ -156,5 +156,11 @@
     "live_graph": false,
     "dropbox_site_access_verified": false,
     "work_job_api_integrated": false
+  },
+  "currentNavigation": {
+    "path": "skills/chat/research/hidden-cosmology-atlas/breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json",
+    "asOfSourceHead": "2b1110659f76d32e6ca96cb215d84fb11ff5686b",
+    "reason": "Legacy entries retained as historical projection. AB01/C02 author masters and topic pointers are current in breadth navigation.",
+    "siteCopyStatus": "OLDER_SITE_REGISTRY_NOT_REPUBLISHED"
   }
 }

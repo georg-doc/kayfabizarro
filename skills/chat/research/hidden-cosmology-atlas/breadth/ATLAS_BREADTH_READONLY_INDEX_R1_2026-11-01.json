@@ -174,7 +174,9 @@
       "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
       "censusState": "NEW_CANDIDATE",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/whitney-webb.md",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
     },
     {
       "entityId": "dan-moldea",
@@ -354,7 +356,10 @@
       "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
       "censusState": "EXISTING_TOPIC_NOT_NEW_MASTER",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-01"
+      ]
     },
     {
       "entityId": "jason-samosa",
@@ -363,7 +368,10 @@
       "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
       "censusState": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-01"
+      ]
     },
     {
       "entityId": "jason-reza-jorjani",
@@ -372,7 +380,10 @@
       "clusterId": "C06_UFO_PSI_ALT_HISTORY",
       "censusState": "EXISTING_GITHUB_MASTER",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
     },
     {
       "entityId": "william-bramley",
@@ -418,7 +429,10 @@
       "censusState": "SOURCE_TOPIC_EXISTS_DOSSIER_PENDING",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
       "researchStatus": "SOURCE_LEAD_DOSSIER",
-      "ownerPath": "authors/andrija-puharich.md"
+      "ownerPath": "authors/andrija-puharich.md",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
     },
     {
       "entityId": "ingo-swann",
@@ -493,7 +507,10 @@
       "clusterId": "C07_MEDIA_INTERPRETATION",
       "censusState": "EXISTING_GITHUB_SOURCE_HOST_NOT_AUTHOR",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
     },
     {
       "entityId": "jan-irvin",
@@ -1015,7 +1032,9 @@
       "clusterId": "C04_COVERT_FINANCE_TRUSTS",
       "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
       "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
-      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/mark-goodwin.md",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
     },
     {
       "entityId": "iain-davis",
@@ -1571,6 +1590,147 @@
       "name": "Missing Money Key Documents",
       "kind": "work",
       "sourceId": "SOL-S12"
+    },
+    {
+      "entityId": "source/JWG-S01",
+      "name": "Sustainably Surveilling and Tokenizing Nature: The Case of O.N.E. Amazon",
+      "kind": "work",
+      "sourceId": "JWG-S01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S02",
+      "name": "Satellogic announces $30m strategic investment",
+      "kind": "work",
+      "sourceId": "JWG-S02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S03",
+      "name": "Veea investor presentation",
+      "kind": "work",
+      "sourceId": "JWG-S03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S04",
+      "name": "ONE Amazon current product description",
+      "kind": "work",
+      "sourceId": "JWG-S04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S05",
+      "name": "Are biodiversity credits just another business-as-usual finance scheme?",
+      "kind": "work",
+      "sourceId": "JWG-S05",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S01",
+      "name": "Unlimited Hangout \u2014 About",
+      "kind": "work",
+      "sourceId": "JWC-S01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S02",
+      "name": "Using Bitcoin and Stablecoins to Expand Dollar Dominance with Whitney Webb and Mark Goodwin",
+      "kind": "work",
+      "sourceId": "JWC-S02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S03",
+      "name": "Report for the G20 on tokenisation highlights the opportunities, risks and future considerations for central banks",
+      "kind": "work",
+      "sourceId": "JWC-S03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S04",
+      "name": "Recommendations on Biodiversity Credits of the Community Advisory Panel: Discussion Paper for Consultation",
+      "kind": "work",
+      "sourceId": "JWC-S04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C01",
+      "kind": "claim",
+      "claimId": "JWG-C01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C02",
+      "kind": "claim",
+      "claimId": "JWG-C02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C03",
+      "kind": "claim",
+      "claimId": "JWG-C03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C04",
+      "kind": "claim",
+      "claimId": "JWG-C04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C05",
+      "kind": "claim",
+      "claimId": "JWG-C05",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C06",
+      "kind": "claim",
+      "claimId": "JWG-C06",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C07",
+      "kind": "claim",
+      "claimId": "JWG-C07",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C08",
+      "kind": "claim",
+      "claimId": "JWG-C08",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C09",
+      "kind": "claim",
+      "claimId": "JWG-C09",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C01",
+      "kind": "claim",
+      "claimId": "JWC-C01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C02",
+      "kind": "claim",
+      "claimId": "JWC-C02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C03",
+      "kind": "claim",
+      "claimId": "JWC-C03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C04",
+      "kind": "claim",
+      "claimId": "JWC-C04",
+      "extensionId": "C02_WEBB_GOODWIN"
     }
   ],
   "sources": [
@@ -3001,7 +3161,10 @@
       "JM-H10",
       "JM-W10"
     ],
-    "scope": "Read current Puharich R2 owner locally; external sources not reread or played in this batch. JM-S21 stays URL-only; JM-S16/S17 one recording lineage."
+    "scope": "Read current Puharich R2 owner locally; external sources not reread or played in this batch. JM-S21 stays URL-only; JM-S16/S17 one recording lineage.",
+    "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/",
+    "returnPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+    "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2"
   },
   "metrics": {
     "censusCandidates": 140,
@@ -3020,5 +3183,561 @@
     "Empty counterEvidence arrays mean not supplied, never no contrary evidence exists.",
     "Documentary publication edges establish a listing/credit, not underlying claims.",
     "Batch C author dossiers, journalistic evidence chains and Site/Notion projection remain queued."
-  ]
+  ],
+  "updated": "2026-11-01",
+  "currentMilestone": "ATLAS_BREADTH_CORPUS_BATCH_C_02",
+  "metricsScope": "Original AB01 metrics retained; use extensions for C02 deltas. Topic registration does not add historical source/claim counts.",
+  "extensions": [
+    {
+      "extensionId": "C02_WEBB_GOODWIN",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b",
+      "sourcePackets": [
+        {
+          "path": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "path": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "authorPaths": [
+        "authors/whitney-webb.md",
+        "authors/mark-goodwin.md"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "JWG-S01",
+          "url": "https://unlimitedhangout.com/sustainably-surveilling-and-tokenizing-nature-the-case-of-o-n-e-amazon/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S02",
+          "url": "https://satellogic.com/news/press-releases/satellogic-announces-30-million-strategic-investment-from-tether-investments-limited/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1840317/000121390024047544/ea020705801ex99-1_plumacq1.htm",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S04",
+          "url": "https://oneamazon.com/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S05",
+          "url": "https://news.mongabay.com/2024/03/are-biodiversity-credits-just-another-business-as-usual-finance-scheme/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S01",
+          "url": "https://unlimitedhangout.com/about-us/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S02",
+          "url": "https://unlimitedhangout.com/2024/08/resources/show-notes/using-bitcoin-and-stablecoins-to-expand-dollar-dominance-with-whitney-webb-and-mark-goodwin/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S03",
+          "url": "https://www.bis.org/media-releases/20241021-report-g20-tokenisation-highlights-opportunities-risks-and-future-considerations-central-banks",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S04",
+          "url": "https://www.biodiversitycreditalliance.org/wp-content/uploads/2024/08/EN-Recommendations-from-the-CAP-for-consultation.pdf",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "claimRefs": [
+        {
+          "claimId": "JWG-C01",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C02",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C03",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C04",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C05",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C06",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C07",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C08",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C09",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C01",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C02",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C03",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C04",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "documentaryEdges": [
+        {
+          "edgeId": "JWG-E01",
+          "fromEntityId": "whitney-webb",
+          "toEntityId": "source/JWG-S01",
+          "type": "CO_BYLINE",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C06"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Current page byline/date",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/whitney-webb.md",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E02",
+          "fromEntityId": "mark-goodwin",
+          "toEntityId": "source/JWG-S01",
+          "type": "CO_BYLINE",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C06"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Current page byline/date",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/mark-goodwin.md",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E03",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S02",
+          "type": "CITES",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S02"
+          ],
+          "claimIds": [
+            "JWG-C07"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Partners passage; financing hyperlink (retrieved link37)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E04",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S03",
+          "type": "CITES",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S03"
+          ],
+          "claimIds": [
+            "JWG-C08"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Partners/technology passage; presentation hyperlink (retrieved link60)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E05",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S04",
+          "type": "LINKS_DOMAIN_CURRENT_VERSION_DIFFERS",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S04"
+          ],
+          "claimIds": [
+            "JWG-C09"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "What is O.N.E. Amazon? company hyperlink (retrieved link21)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWC-E01",
+          "fromEntityId": "whitney-webb",
+          "toEntityId": "catherine-austin-fitts",
+          "type": "PUBLISHER_LISTS_GUEST_WITH_HOST",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWC-S02"
+          ],
+          "claimIds": [
+            "JWC-C02"
+          ],
+          "sourceLocator": "Byline/date and description/Originally published, lines63\u201381",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "originalPublicationDate": "2024-08-20",
+          "nextFalsifier": "Original recording or publisher correction changes the listed participant role.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json"
+        },
+        {
+          "edgeId": "JWC-E02",
+          "fromEntityId": "mark-goodwin",
+          "toEntityId": "catherine-austin-fitts",
+          "type": "PUBLISHER_LISTS_GUEST_WITH_HOST",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWC-S02"
+          ],
+          "claimIds": [
+            "JWC-C02"
+          ],
+          "sourceLocator": "Byline/date and description/Originally published, lines63\u201381",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "originalPublicationDate": "2024-08-20",
+          "nextFalsifier": "Original recording or publisher correction changes the listed participant role.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json"
+        }
+      ],
+      "authorAssertionEdges": [
+        {
+          "edgeId": "JWG-E06",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "claim/JWG-C01",
+          "type": "SOURCE_ASSERTS",
+          "layer": "B_AUTHOR_ASSERTION",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C01"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Opening argument and What is O.N.E. Amazon? passages",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        }
+      ],
+      "conceptualNoncausalEdges": [
+        {
+          "edgeId": "JWC-E03",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWC-S03",
+          "type": "CONCEPTUAL_CONTRAST",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWC-S03"
+          ],
+          "claimIds": [
+            "JWG-C01",
+            "JWC-C03"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Compare political-economic critique with institutional risk/efficiency framing; later policy is not a case rebuttal.",
+          "nextFalsifier": "A specific original project audit could replace generic policy context.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        },
+        {
+          "edgeId": "JWC-E04",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWC-S04",
+          "type": "CONCEPTUAL_NEIGHBOR",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWC-S04"
+          ],
+          "claimIds": [
+            "JWG-C01",
+            "JWC-C04"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Compare the authors\u2019 monitoring concerns with separately authored consent/privacy recommendations; no case verdict.",
+          "nextFalsifier": "Independent affected-community accounts and executed terms could establish case-specific agreement or conflict.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        },
+        {
+          "edgeId": "JWC-E05",
+          "fromEntityId": "source/JWG-S02",
+          "toEntityId": "source/JWG-S03",
+          "type": "CONCEPTUAL_EVIDENCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S02",
+            "JWG-S03"
+          ],
+          "claimIds": [
+            "JWG-C02",
+            "JWG-C04"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Contrast financing-instrument evidence and deployment-plan evidence; no use-of-funds bridge is established.",
+          "nextFalsifier": "A dated agreement and traced disbursement could establish or contradict a specific linkage.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        }
+      ],
+      "questions": [
+        {
+          "questionId": "JWG-Q01",
+          "question": "Trace financing use",
+          "missingOriginal": "Signed instruments and disbursements",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q02",
+          "question": "Check counterpart agreements and deployment",
+          "missingOriginal": "Contracts and field audits",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q03",
+          "question": "Establish specific rights and consent",
+          "missingOriginal": "Executed contracts and independent community testimony",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q04",
+          "question": "Compare instrument editions and outcomes",
+          "missingOriginal": "Archived offers, current terms, ecological baseline and independent outcomes",
+          "status": "OPEN"
+        }
+      ],
+      "reviewPath": "journalism/webb-goodwin-2026-11-01/c02-review.md",
+      "metrics": {
+        "newAuthorMasters": 2,
+        "sourceRecords": 9,
+        "claims": 13,
+        "documentaryEdges": 7,
+        "authorAssertionEdges": 1,
+        "conceptualEdges": 3,
+        "questions": 4
+      },
+      "limits": [
+        "One joint article, three linked corporate originals; one inaccessible journalism lead.",
+        "Two additional primary contexts are institutional policy and stakeholder recommendations, not an independent O.N.E. Amazon case audit."
+      ]
+    }
+  ],
+  "registeredResearchCollections": [
+    {
+      "registrationId": "REC-C02-01",
+      "label": "Moneyrex archive-access R4 within existing WCC/Samosa topic",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [
+        "WC-S20",
+        "WC-S41",
+        "WC-S42",
+        "WC-S43",
+        "WC-S44",
+        "WC-S45",
+        "WC-S46"
+      ],
+      "reuseClaimIds": [
+        "WC-C45",
+        "WC-C46",
+        "WC-C47",
+        "WC-C48",
+        "WC-C49",
+        "WC-C50"
+      ],
+      "accessState": "1981 letter catalog only; 1964\u201372 shareholder records not acquired; prepared requests not sent.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-02",
+      "label": "Jorjani/Michels trilogy and Puharich 1984 recovery R2",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [
+        "JM-S16",
+        "JM-S17",
+        "JM-S21"
+      ],
+      "reuseClaimIds": [
+        "JM-C19",
+        "JM-C21",
+        "JM-C22"
+      ],
+      "accessState": "Topic Return reports publisher transcript indexing, 0 original audio minutes and unverified remainder claim; no primary external research in reconciliation.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-03",
+      "label": "TheWebb.io benchmark and external-provider gate",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/WEBB_IO_ARCHIVE_BENCHMARK_AND_EXTERNAL_MCP_GATE_R1_2026-11-01.md",
+      "documentPaths": [],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Vendor/publisher discovery and design comparison; no provider/API/MCP integration verified.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-05",
+      "label": "Journalism and creative cross-lens governance",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md",
+        "skills/chat/research/hidden-cosmology-atlas/CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Existing contract, not completed original research",
+      "registrationOnly": true
+    }
+  ],
+  "reconciliationRef": {
+    "path": "breadth/WEBCHAT_RECONCILIATION_C02_2026-11-01.json",
+    "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b",
+    "findings": 5,
+    "commitAuditCount": 20,
+    "scope": "Pinned first-parent commit metadata plus named topic and registry bodies; not exhaustive historical search"
+  },
+  "consumerRule": "Existing AB01 arrays plus extension arrays form read-only navigation. Resolve every packet at its own gitSha; do not assume one snapshot for all periods. Existing topic collections remain reference-only, never duplicated counts."
 }
