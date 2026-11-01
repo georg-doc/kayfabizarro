@@ -32,7 +32,7 @@ Zwischen zwei Feldern gibt es keine Linie. Im Übergang (Ökoton) mischen sich d
 ## Bewährte Lösungen
 
 - **Horizon Zero Dawn (Guerrilla, GDC 2017):** Platzierung über Dichte statt über gesetzte Punkte; „WorldData“, also 2D-Karten, teils erzeugt, teils gemalt; datengetrieben, deterministisch, lokal stabil. Übernommen: Dichte aus Feldern als Vorwissen, je Sorte eigene Regel. Gelesen habe ich nur die Zusammenfassung der Folien; die PDF war für mein Werkzeug zu groß. [Folien](https://www.guerrilla-games.com/media/News/Files/GDC2017_VanMuijden_GPUBasedProceduralPlacementInHorizonZeroDawn.pdf), [Seite](https://www.guerrilla-games.com/read/gpu-based-procedural-placement-in-horizon-zero-dawn)
-- **Verzerrtes Rauschen (Inigo Quilez):** Rauschen an einem durch Rauschen verschobenen Ort ergibt gewachsene statt rasterförmiger Formen. [Artikel](https://iquilezles.org/articles/warp/)
+- **Verzerrtes Rauschen (Inigo Quilez):** Rauschen an einem durch Rauschen verschobenen Ort ergibt gewachsene statt rasterförmiger Formen. Aus eigenem Wissen, der Artikel war beim Abruf nicht erreichbar (404). [Artikel](https://iquilezles.org/articles/warp/)
 - **Ökoton:** Übergangszone, in der zwei Gemeinschaften sich mischen, an den Rändern oft als Mosaik. [Wikipedia](https://en.wikipedia.org/wiki/Ecotone)
 - **Etherington #117, #170** (`FRAKTAL_R1.vor_WFC.md` §2): Ruhe und Unterbrechung. **V-797:** Zonen und Massen statt Clutter.
 

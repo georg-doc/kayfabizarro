@@ -141,3 +141,7 @@ Die Tafeln belegen, was herauskommen soll, nicht wie es gebaut wird: #161 und #1
 Überholt in §9 die Bodenplatz-Quellen und die Kugeln. Neue Ebenen `quelle` (4 m), `perle` (0,5 m) und `art` (6-m-Raster). Randabstand gegen den gemessenen Fußumriss der Felsen, Kügelchen über den Kugel-Kern. Vorgaben, Bilder und Messwerte in `WFC_BEWEIS_R3/VORGABEN_TABELLE.md`. **Blinder Kritiker: Nein.** Materialcode, Busch-Fuß und Artenwechsel sind offen. Die Prüfung `grundStat` ist zu weich.
 
 **Letzte Runde (Stand 5aa08e74):** Fuß als ein Band-Modell für Fels und Busch, Fußumriss auch für Büsche, Materialcode als kleine Gruppen, Eltern nur Stein, Baum, Busch, Blumenart in Flecken von rund 6–12 m. Belege in `WFC_BEWEIS_R4/VORGABEN_TABELLE.md`. Kritiker: Nein, der grobe Fehler ist laut ihm behoben. Ufer, Hangfuß und Rinne sind nicht bearbeitet.
+
+## 11 · Dichte über die Fläche (Stand 9d6e04eb, V-1165)
+
+Oberste Ebene neu: Felder über Hunderte Meter als Vorwissen, Modell in `MODELL_DICHTE_R1.md`, Belege in `WFC_BEWEIS_R5/VORGABEN_TABELLE.md`. Kritiker: Nein, die Karte zeigt Felder, im Spiel sind sie kaum lesbar. Bildzeit ungültig gemessen.
