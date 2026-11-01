@@ -1,3 +1,7 @@
+## 2026-11-01 · Competing readings
+
+[Two reader cases and German methods guide](packages/competing-readings/README.md). First Toepke, then Regenauer/mBridge. Next gate: review whether the discriminating source test is legible to a new reader.
+
 ## 2026-11-01 · Toepke archival custody and Regenauer publication inventory
 
 [Archival follow-up](topics/gehlen-german-stay-behind/ARCHIVE_01292_FOLLOWUP.md) records Friis' printed completion claim and the unresolved personal acceptance. Best Danish next source: archive 5007, KC copybook packet 4 (1956–57). [Regenauer source repository](packages/regenauer-source-repository/README.md) covers 191 publications and 362 editions, with source locators, exact URL recurrence and a keyword finder. The original German note and operational follow-up remain outstanding. Source discovery is distinct from verification of cited claims.
