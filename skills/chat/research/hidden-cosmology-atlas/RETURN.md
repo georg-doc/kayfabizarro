@@ -1,3 +1,7 @@
+## 2026-11-01 · Toepke archival custody and Regenauer publication inventory
+
+[Archival follow-up](topics/gehlen-german-stay-behind/ARCHIVE_01292_FOLLOWUP.md) records Friis' printed completion claim and the unresolved personal acceptance. Best Danish next source: archive 5007, KC copybook packet 4 (1956–57). [Regenauer source repository](packages/regenauer-source-repository/README.md) covers 191 publications and 362 editions, with source locators, exact URL recurrence and a keyword finder. The original German note and operational follow-up remain outstanding. Source discovery is distinct from verification of cited claims.
+
 ## 2026-11-01 · Named Holstein handover proposal
 
 [Case record](topics/gehlen-german-stay-behind/HOLSTEIN_TRANSFER.md) and [source comparisons](topics/gehlen-german-stay-behind/RESEARCH_NEIGHBOURS.md). March 1956 offer by Lunding traced to a German file via published archival research. Next check: original 01292/01292.e and a German acceptance or implementation record. [Regenauer inventory](topics/gehlen-german-stay-behind/REGENAUER_SOURCE_LINKS.csv) retains 278 link occurrences.
