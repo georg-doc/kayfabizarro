@@ -110,3 +110,9 @@ Required: `source_id | speaker | work_title | publication_or_episode_date | orig
 - **KFB performance / Triplet:** independently authored fictional KFB Resident directions, not a real author's direct voice or invented quotation.
 
 **NotebookLM GitHub Web URL auto-refresh:** NOT VERIFIED. File path is stable; actual revision is the Git commit and `content_version` tracks editorial intent.
+
+
+
+## SOURCE_GAPS_AND_WORKS — breadth intake, 2026-11-01
+
+[Solari source appendix](../breadth/solari-intake.md) adds dated publisher passages, the May 2020 Skidmore/Fitts update and separate official-accounting leads. Original statements, publisher synopses and uninspected leads remain distinct; unsupported adjustments are not a measured cash-loss total. See [shared receipts and publication edges](../breadth/solari-intake.json). Preserve the existing author model; exact original passages remain the next source gate.

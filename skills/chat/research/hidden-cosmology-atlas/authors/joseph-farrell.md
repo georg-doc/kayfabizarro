@@ -42,3 +42,9 @@ Existing external original-source candidates are inventoried in the shared resea
 Required source receipt: `sourceId | speaker | original_work | edition/date | URL | passage/page | faithful_statement | author_native_qualification | source_asserted_relations`.
 
 **Status:** `DERIVED_INTRODUCTION` · `COMPLETE_GEMINI_DOC_MIGRATION_PENDING` · `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_UNVERIFIED`.
+
+
+
+## SOURCE_GAPS_AND_WORKS — breadth intake, 2026-11-01
+
+SOL-S08 locates a public Solari description of the July 28, 2026 Fitts–Farrell quarterly program. This documents a program listing; subscriber content/audio was not read or played, and no shared position is inferred. The older correspondence remains a body-unavailable lead. See [shared receipts and publication edges](../breadth/solari-intake.json). Preserve the existing author model; exact original passages remain the next source gate.

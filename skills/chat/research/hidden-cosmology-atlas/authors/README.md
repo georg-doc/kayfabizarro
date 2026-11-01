@@ -85,3 +85,20 @@ The user should test one GitHub blob page with a precise unique content marker a
 Keep the old Google Docs sources available as a **temporary operational NotebookLM fallback** until this controlled test passes. No Site/Cloudflare/GitHub Pages substitute, and no auto-merge/promote Live.
 
 **One next gate:** `GITHUB_MARKDOWN_NOTEBOOKLM_URL_GOLDEN_R1` — import one existing author GitHub Markdown blob page as a NotebookLM Web source, check exact text, commit a harmless version marker under authorized scope, then verify whether update/refresh actually replaces the source snapshot.
+
+
+
+## Breadth batch AB01 — 2026-11-01
+
+Eight additional source-lead dossiers, bringing the master-file inventory to sixteen. These are bounded bibliographies and source questions, not eight completed worldview reconstructions. Existing eight masters remain unchanged except additive Solari links in Fitts/Farrell/Liszt.
+
+- [Annie Jacobsen](annie-jacobsen.md)
+- [Linda Hunt](linda-hunt.md)
+- [Christopher Simpson](christopher-simpson.md)
+- [Peter Dale Scott](peter-dale-scott.md)
+- [Andrija Puharich](andrija-puharich.md)
+- [Ingo Swann](ingo-swann.md)
+- [Thomas Townsend Brown](thomas-townsend-brown.md)
+- [Nikola Tesla](nikola-tesla.md)
+
+See [source inventory](../breadth/SOURCE_CUSTODY_INVENTORY_R1_2026-11-01.md), [read-only index](../breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) and [test report](../breadth/TEST_REPORT_R1_2026-11-01.md).
