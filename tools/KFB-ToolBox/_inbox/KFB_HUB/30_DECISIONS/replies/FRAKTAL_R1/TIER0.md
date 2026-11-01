@@ -1,9 +1,9 @@
 # TIER0 · Zeilen für jeden Auftrag zu Verteilung, Partikeln und Übergängen (wörtlich kopieren)
 
 1. Alles Stehende und Liegende kommt aus einer Löser-Kaskade: je Maßstab ein Raster und eine Tabelle von Nachbarschafts-Wahrscheinlichkeiten zu allen Seiten. Kein zweiter Verteiler, keine eigene Formel, Zufall nur aus Saat und Ort.
-2. Löser ist `createLevel` und `collapse` aus `kfb-place-field` und `kfb-place-collapse`. Ein neuer Fall ist eine Tabellenzeile in `kfb_place.r1.json`, kein Code.
+2. Löser ist `createLevel` und `collapse` aus `kfb-place-field` und `kfb-place-collapse`. Ein neuer Fall ist eine Tabellenzeile in `kfb-place-cascade.r3.json`, kein Code.
 3. Die Zelle der feineren Ebene ist bedingt durch den Zustand der gröberen. „leer“ vererbt sich, unter einem Objekt bleibt der Platz frei. Keine feine Ebene ohne gröbere.
-4. Gruppen, Größenstufen, Abfall und Lücken sind Ergebnis der Tabelle. Nie von Hand setzen: keine Dreier-Regel als Bauvorschrift, keine Kränze, Säume, Reihen, keine Abstandskurve je Objekt.
+4. Gruppen, Größenstufen, Abfall und Lücken sind Ergebnis der Tabelle. Nie von Hand setzen: keine Kränze, Säume, Reihen, keine Abstandskurve je Objekt. Ausnahme Bäume (V-1216): Stufen keine, wenige (meist Dreiergruppe), viele (Fibonacci-Folge) als Tabellenwert der Ebene `hain`, nie im Code.
 5. Größe hängt am Raster der Ebene. Keine eigene Größenregel, Spannen aus der Tabelle.
 6. Hang, Schatten, Sperre, Thema, Deck und Wasserabstand wirken als Faktor im Vorwissen der Ebene, nie als Nachbearbeitung.
 7. `kinder()` nur, wenn ein Ereignis etwas auswirft (Einschlag, Spritzer, Fluff im Flug): Große bleiben nah und fallen, Mittlere fächern, Kleinste fliegen am weitesten. Was danach liegt, gehört wieder der Kaskade. Ausnahmen: Kartenrelief, dort bestimmt das Bild die Kugeln; Linien an Ufer und Rissen folgen dem Gelände, laufen spitz aus und setzen aus.
