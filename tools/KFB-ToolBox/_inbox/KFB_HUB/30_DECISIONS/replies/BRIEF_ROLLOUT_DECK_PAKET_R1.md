@@ -7,7 +7,7 @@ Georg hat `replies/KONZEPT_DECK_PAKET_R1.md` (in `KFB_HUB/30_DECISIONS`) freigeg
 
 **Platz (V-1146):** Die Platte ist knapp. Je Lauf ein Deck holen, backen, hochladen, lokal abräumen. Keine Repo-Kopien und keine Bildstapel in der Dropbox, keine volle Kopie von `kayfabizarro`: Worktree mit Sparse Checkout und `--filter=blob:none`.
 
-**Pilot, deine drei Decks, dann Stopp:**
+**Pilot mit den drei Pilot-Decks aus deinem Desk (nicht die drei älteren Deck-Analyzer-Piloten), dann Stopp:**
 1. **Schema und Prüfskript** auf Zweig `data/kfb-decks-ssot` vom Stand `data/kfb-deck-analyzer-r1`: `deck.json`, Bilder, Texte, `prüfung.json`, Kennung `cid:<deck>:<nr>`, wie das Spiel sie nutzt. Schau in `src/data/cards.json` auf `game/integration-r2`, was das Spiel erwartet.
 2. **Backen per Skript ohne Modell:** `karte` rund 1366 px und `motiv` rund 700 px als WebP aus dem Druck-PDF, Cover. Motiv-Rechteck automatisch vorschlagen, Stichprobe selbst ansehen. Erste Werkzeuge: dein `render_pdf.swift`, Probe `replies/KARTEN_KUGEL_PROBE_R1`.
 3. **Text und Bewertung:** Nur was im Abgleich noch ungeprüft ist, mit Sonnet je Deck, Stichprobe am Bild. Sterne nach GRADING_R1. Liste, wo `grade`, Sterne und deine Scores einander widersprechen; nicht mitteln. Marketing-Scores bleiben Deck-Werte.

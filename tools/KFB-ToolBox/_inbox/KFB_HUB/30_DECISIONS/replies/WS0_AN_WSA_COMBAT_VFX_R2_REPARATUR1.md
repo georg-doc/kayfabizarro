@@ -13,6 +13,6 @@ Georg zum Stand @ac07947e: Das Mündungsfeuer ist „viel zu mickrig“, „das 
 - Alles über `kfbAudio` (V-841), kein zweiter Abspielweg.
 - Neue ElevenLabs-Klänge nur, wenn Georg über WS0 zustimmt. Sag, was du damit bräuchtest.
 
-**4 · Selbst prüfen, bevor du abgibst.** Sieh die Videos aus der Spielkamera an und höre sie mit Ton. Würdest du damit spielen wollen? Wenn nicht, gib es nicht ab.
+**4 · Selbst prüfen, bevor du abgibst.** Sieh die Videos aus der Spielkamera Bild für Bild an. Hören kannst du nicht: Prüfe beim Ton Pegel, Tiefton-Anteil, Länge und Takt zur Flamme und sag offen, dass die Hörabnahme bei Georg liegt. Ist die Wucht schon im Bild oder in den Tonwerten nicht da, gib es nicht ab.
 
 **Rückgabe an WS0, dann Stopp:** Modell-Seite. Je Waffe ein kurzes Video mit Ton aus der Spielkamera und ein Einzelbild im hellsten Moment aus der Spielkamera. Ein Video mit Treffer und Explosion. Tests wie zuletzt. Kritiker höchstens einmal, auf dem Endstand, mit Georgs Sätzen. Gatling und Rakete warten weiter auf Georgs Urteil.
