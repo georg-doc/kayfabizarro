@@ -1,3 +1,7 @@
+## 2026-11-01 · Sporrenberg, Originalzugang und Gegenprobe
+
+[Prüfbericht](breadth/sporrenberg-vernehmungen.md). Britischer Bestand amtlich als nicht digitalisiert ausgewiesen. Zwei veröffentlichte Berichtsauszüge geprüft. Polnische Spur 947/Z, Bd. III, S. 527 im Verfahren gegen Erich Koch lokalisiert. Nächster Schritt ist die Konkordanz beim IPN und Einsicht in die vollständigen Protokolle beider Tage. Technische Verbindung weiterhin unbelegt.
+
 ## 2026-11-01 · Secret Space Program, Herkunftsprüfung
 
 [Magenta, Glocke, Paperclip und MOL](breadth/secret-space-pruefpfade.md). Für Magenta sind der anonyme Eingang 1996 und das CUN-Heft März 2000 unterschieden, für die Glocke Witkowskis Rückblick auf 1997 und sein Druck von 1998. Die V-2–Paperclip–Saturn-V-Personenspur ist über Arthur Rudolph dokumentiert. Für beide behaupteten Geräte fehlt eine zuordenbare Übergabeakte. Nächster Archivschritt: datierte Sporrenberg-Vernehmungen und Anlagen abgleichen.

@@ -32,3 +32,6 @@ Die frühesten auffindbaren Veröffentlichungen über die zwei behaupteten Gerä
 | „Glocke“ → Paperclip → geheime Raumfahrt | **Kein konkreter Transfer nachgewiesen.** Für eine identifizierbare Person ließe sich der behauptete Glocken-Auftrag gegen die JIOA-Personalakten prüfen, für ein Gerät gegen Fracht-, Versuchs- oder Übernahmeunterlagen. In den geprüften Quellen fehlt ein solcher gemeinsamer Identifikator. Wie sich ein geheimes Raumfahrtvorhaben positiv nachweisen lässt, zeigt das NRO-Aktenverzeichnis zum Manned Orbiting Laboratory mit Planungsunterlagen und Einstellung im Juni 1969. [NARA, RG 330, JIOA](https://www.archives.gov/iwg/declassified-records/rg-330-defense-secretary) · [NRO, freigegebene MOL-Unterlagen](https://www.nro.gov/About-NRO/history/history-MOL/) |
 
 **Nächster Schritt für den Atlas:** Sporrenbergs polnische Vernehmungsnachweise mit Witkowskis genauer Beschreibung abgleichen. Auf italienischer Seite wäre ein zeitgenössischer Amtsregistereintrag oder eine amerikanische Übergabeakte der erste Fund, der die Bergungskette materiell verlängern könnte.
+
+
+[Ergebnis der Sporrenberg-Gegenprobe mit Kew-Signatur, Berichtsauszügen und polnischer Seitenreferenz](sporrenberg-vernehmungen.md).
