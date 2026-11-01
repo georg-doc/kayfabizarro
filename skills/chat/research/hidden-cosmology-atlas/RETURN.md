@@ -1,3 +1,7 @@
+## 2026-11-01 · Fed conversation pilot
+
+[Three-part reader and method comparison](packages/fed-conversation-pilot/README.md). One table question, seven local follow-up routes; separate cost calculator and six-perspective reading bench. Next review: try the short answer, one spontaneous question and one pair of lenses in a real conversation.
+
 ## 2026-11-01 · Corbett source audit
 
 [Regenauer and Corbett on the Balfour drafts](packages/corbett-source-chains/README.md). Same exhibition link, separate editorial voices, independent checks against the draft sequence. Next check for a stronger authorship claim: dated working copies for the clause in question.
