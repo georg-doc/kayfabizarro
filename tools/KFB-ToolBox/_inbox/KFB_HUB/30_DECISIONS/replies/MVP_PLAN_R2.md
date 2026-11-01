@@ -2,7 +2,9 @@
 
 **Ziel:** Georg spielt eine Site: laufen, fahren, Pfeil, Kartenzone, Karten sammeln, Deck-Moment, Begegnung, Kampf, Tag und Nacht, mit Ton. Lizenz- und Repo-Fragen sind bis dahin außen vor.
 
-## Block 1 · Zusammenführen (WS1, jetzt der Engpass)
+**Stand 01.11. abends:** Merge-Runde 3 ist im Stamm @d6df214 (Kartengebäude, Cape, Verteiler, Waffen, Sterne mit Himmel, Kartenbilder, Blüten-Planeten, `zones=1` Standard), Stufe C läuft. Offen aus Block 1: Hero-Shot, Planeten einzeln nachladen. Weiter ab 22 Uhr mit Block 2.
+
+## Block 1 · Zusammenführen (WS1)
 Stamm `game/integration-r2`. Reihenfolge nach Bereitschaft, alles hinter Schaltern, Stufe B je Runde.
 | Zweig | Stand | Schalter | Urteil |
 |---|---|---|---|

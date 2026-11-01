@@ -176,3 +176,8 @@ Hub offen: Steinchen hell oder voll, Verteilung dicht genug. Kartenbilder Ja (Ka
 
 ## Stand 01.11. bis V-1204
 Plan replies/MVP_PLAN_R2.md. N-051 an WS1: Teil 1 schliessen, Merge-Runde 3, Spielchronik. Hub offen: Explosion in Schichten. Blaetter nach assets/private pushen. Papierkorb-Gang: WOLKEN_R1, WFC_BEWEIS R2 bis R6 verschoben, Georg leert. Worktrees stale: spike, nature, cd-r3, streetplan, wissen, alles gepusht. Ueberholt: wsa/combat-vfx-r2-*, PR 48 mit Merge von waffen-fx schliessen.
+
+## Wiedereinstieg 22 Uhr 01.11. (bis V-1241)
+Plan replies/MVP_PLAN_R2.md. Stamm @d6df214 mit Runde 3, Stufe C lief zuletzt. Hub frei. Beim Start zuerst WS1-Kanal lesen, wenn Georg ruft.
+Zuerst: WS1 meldet Stand und Testfahrt-Adresse (Q-049, mit place=r3, hero=1, cardart=pack, N-071) an Georg geben. Dann in Reihenfolge: Hero-Shot-Merge, Planeten nachladen, Chronik mit LEAN_MEMORY_R1, sammel=1 mit Seiten (V-1231, V-1237), Hartgummi (V-1229) mit WS-Verteiler, deckGround-Go an WS-Design samt Planeten-Collage (V-1240), Deck-Moment, Befreiung, MiB-Druck, Ladezeit, Site-Paket durch WSA.
+Waffen, Sterne R2, Hero-Shot: PASS, Feinschliff spaeter (Mario-Funken, Explosions-Farben und Groessen). Offen klein: 26 alte PRs zuklappen (Formular-Thema V-1207), Winkel az120/240 nach MVP, Sporen nach MVP.
