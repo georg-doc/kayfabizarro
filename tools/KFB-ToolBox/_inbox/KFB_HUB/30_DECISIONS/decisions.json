@@ -17473,6 +17473,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1199",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "WS-Himmel Reparatur @55648b92: weiche Rechtecke behoben (eigene Schwelle je Karte, Fenster nach echter Ausdehnung), Himmel wirkt voller als vorher. Abendstreifen kommen nicht aus dem Himmel, sind im Stamm bei tiefer Sonne, an WS1 N-049. Wolken-Hub-Frage alt gegen neu. Kamera 12 Grad geht nach Georgs Antwort an WS1.",
+   "values": {},
+   "owner": "WS-Himmel",
+   "check": "WOLKEN_R2",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hatte gesagt, der alte Look gewinnt; darum entscheidet er am Vergleich, nicht ich.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
