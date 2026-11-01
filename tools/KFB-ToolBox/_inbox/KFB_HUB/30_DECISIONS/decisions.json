@@ -16903,6 +16903,21 @@
    "applies": "nach Georgs Urteil"
   },
   {
+   "id": "V-1161",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "SPEC",
+   "text": "WS-Himmel Konzept replies/WETTER_KONZEPT_R1: Fahrkamera zeigt Himmel nur bis rund 9 Grad, Planeten kaum im Bild, Hub q366. P9Himmel: Stichprobe falsch, skyR1 wird beim nächsten Merge geändert. Wolken als echte Modelle in einem Aufruf, Form aus cloud-family.v3, Look wie heute; Splats nein. Karten-Himmel nur mit vielen kleinen Karten sinnvoll, Hub q367. Reihenfolge: Wolken-Objekte, Regisseur mit Blitz und Donner, Boden, Kugeln; Karten-Himmel unabhängig nach Deck-Paket. Kein Zielbild für Wetter, nach V-740 Bildpaket als Schritt 0. WS0-Festlegung, bis Georg anders sagt: meist schön mit Ereignissen, Gewitter zieht von selbst und die Regie führt selten hinein, Schnee im Schneeland und selten als Überraschung, Tag eher lang.",
+   "values": {},
+   "owner": "WS-Himmel · WSA",
+   "check": "Bildpaket, Hub",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wetter braucht Wolken im Raum und klare Antworten zur Kamera.",
+   "applies": "nach Georgs Wahl"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
