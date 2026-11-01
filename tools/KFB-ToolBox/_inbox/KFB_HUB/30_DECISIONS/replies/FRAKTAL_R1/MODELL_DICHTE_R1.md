@@ -38,6 +38,12 @@ Zwischen zwei Feldern gibt es keine Linie. Im Übergang (Ökoton) mischen sich d
 
 Nicht gelesen: Ghost of Tsushima, die Suche lieferte nur die gesperrte Vortragsseite.
 
+## Nachtrag V-1174: Masse
+
+Die Karte zeigte Felder, das Spiel nicht, weil nur hohe Dinge auf Entfernung tragen. Darum Feld `wald` (rund 270 m): Bäume aus dem Löser statt aus dem alten Pass, im Kern hoch und dicht, zum Rand kleiner und seltener. Hochbusch als Waldmantel am Rand: Wahrscheinlichkeit 4f(1−f), also dort am größten, wo das Feld halb ist. Große Felsen nur im Felsfeld. Vom alten Pass bleiben Oasen und, nach Felsfeld ausgedünnt, Formationen.
+
+**Ferne, nur Vorschlag:** Bodentönung nach Feld wäre ein Eingriff in den Boden-Shader mit eigener Feldtextur und gehört WS1, nicht klein. Hohe Massen tragen das Feld jetzt ohne das.
+
 ## Was das nicht löst
 
-Bäume und große Formationen kommen weiter aus dem vorhandenen Pass und folgen den neuen Feldern nicht. Sie sind nur Eltern. Ufer ist draußen. Der Rand der fernen Pflanzen bei 140 m ist eine Sichtgrenze und kein Muster.
+Hangfuß und Rinne sind nicht als eigene Ursache gebaut. Ufer ist draußen. Bäume haben wie zuvor keine Kollision, der Wagen fährt hindurch.
