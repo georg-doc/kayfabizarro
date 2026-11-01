@@ -11,3 +11,5 @@ Anschluss an die bestehenden Autorenprofile und [Solari-Quellen](solari-intake.j
 **4 · Mystery Schools und Giza:** [Akhenaten-Interview](https://www.darkjournalist.com/s-farrell4.php). Akhenaten, Mystery Schools und Giza sind auf der Episodenseite als Themen gekoppelt. Im Atlas als Motivvergleich lesbar; eine institutionelle Traditionslinie wäre eine andere Behauptung. Nächster Schritt: Sprecher und Zeitmarke festhalten, dann die dort tatsächlich angeführte Überlieferung bestimmen.
 
 **Einstiege für weitere Werke:** [Farrells Buchkatalog](https://gizadeathstar.com/books/) (Web-Eintragsdatum ist kein Ersterscheinungsnachweis); [Giza-Podcast](https://gizadeathstar.com/gizapodcast/); [Dark Journalist, Interviews und Gäste](https://www.darkjournalist.com/). Für neue Beiträge je eine konkrete Aussage mit Sprecher, Seite/Zeitmarke und ausdrücklich genanntem Beleg erfassen. Erst eine nachweisbare Handlung erhält eine Akteursrolle. Vergleichsmaterial separat verlinken.
+
+[Vertiefung der Goldfolge mit zehn Hörstellen und den beiden archivierten RT-Originalseiten](farrell-gold-2013.md).

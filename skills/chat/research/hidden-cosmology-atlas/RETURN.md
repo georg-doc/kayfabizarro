@@ -1,3 +1,7 @@
+## 2026-11-01 · Farrell zur Goldrückholung
+
+[Goldfolge mit Zeitmarken](breadth/farrell-gold-2013.md) und [nächster Vergleich zur geheimen Raumfahrt](breadth/secret-space-pruefpfade.md). Tonspur der Farrell-Folge vollständig maschinell transkribiert, RT-Gastkommentar und Episodenbeschreibung in Januar-2013-Fassungen geprüft. Einzelne Keiser-Sprecherzuordnung offen. Bundesbank, BIZ und Verwahrstellen separat dokumentiert. Nächste Prüfung: dokumentierten Paperclip-Technologietransfer mit den frühesten Magenta- und Glocke-Erzählungen vergleichen.
+
 ## 2026-11-01 · Milner: Originalzugang; Farrell/Liszt: erster Quellenvergleich
 
 [Finanzierung und Archivanfragepunkte](packages/rhodes-milner-round-table/milner-originalspuren.md) · [Vier Themen und Gegenproben](breadth/farrell-liszt-quellenketten.md). Handschriften und Trustees-Minute weiter offen; Originalfundstelle für den separaten Vorgang 1906 eingegrenzt. Recherche-Branch, keine Änderung an Live oder Spiel. Nächster Schritt: Reproduktionen zu 17/11 und Beschluss-/Buchungsnachweise getrennt ermitteln.

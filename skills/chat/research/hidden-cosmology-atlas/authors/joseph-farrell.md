@@ -56,3 +56,5 @@ Die [Interviewseite](https://projectcamelot.org/joseph_farrell.html) kennzeichne
 
 
 [Gemeinsame und getrennte Publikationsspuren: Gold, Paperclip, 9/11 und Mystery Schools](../breadth/farrell-liszt-quellenketten.md).
+
+[Vertiefung der Goldfolge mit zehn Hörstellen und den beiden archivierten RT-Originalseiten](../breadth/farrell-gold-2013.md).
