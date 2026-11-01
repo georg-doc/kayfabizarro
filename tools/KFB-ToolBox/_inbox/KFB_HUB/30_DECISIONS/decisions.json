@@ -17188,6 +17188,21 @@
    "applies": "nach Testfahrt"
   },
   {
+   "id": "V-1180",
+   "date": "2026-11-01",
+   "area": "Karten",
+   "verdict": "DECISION",
+   "text": "Deck-Paket-Pilot zurück: data/kfb-decks-ssot @660209b7, drei Decks, Prüfskript PASS, Karte 128 kB, Motiv 41 kB, Hochrechnung 1,3 GB Bilder. WS0 entscheidet (Georg delegiert): Bilder auf Cloudflare R2 mit unveränderlichen Pfaden und CORS, deck.json und prüfung.json auf GitHub, Spiel lädt nicht von GitHub-Rohdateien, Manifest aus Bauschritt. Georg: Karten und Texte bleiben, The Firehose ohne Text, The Open Question doppelt. Bewertungssystem wird später konsolidiert nach harten, reproduzierbaren Kriterien; kein Stapellauf mit R1-Bewertung, grade nicht ableiten. Topaz kein Hindernis. Neu: Plakette statt NotebookLM-Logo automatisch, schneller Aufnahmeprozess neuer Decks; Motiv steht fürs Spiel im Vordergrund. Triplets und Gespräche drehen sich um Titel und Lore, Power ist meta-satirisch, kein Metageschwurbel. Stapel nur Bilder nach Georgs Okay, möglichst Mac mini.",
+   "values": {},
+   "owner": "Deck Rollout",
+   "check": "Plan, dann Stapel",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Leistung und Kosten im Spiel; GitHub-Rohdateien sind dafür unsicher.",
+   "applies": "nach Stapellauf"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",

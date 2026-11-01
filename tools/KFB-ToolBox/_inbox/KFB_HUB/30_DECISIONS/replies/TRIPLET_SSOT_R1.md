@@ -18,6 +18,8 @@
 ## 2 · Die Kartenzeile in einem Absatz
 Maßgeblich ist `TRIPLET_SET_SPEC_R2.md` (V-266) mit der Korrektur V-700; hier der Kern. Die Karte spricht selbst (Show it, Spin it, Sell it). Eine Zeile je Karte, Englisch, in einem Atem (etwa 8–20 Wörter bzw. 80–95 Zeichen). **Ein ganzer Satz mit Fluss, der auch in Suno trägt:** kurz, prägnant, Comic-Stil, Weglassungen erwünscht. **Kein Etikett am Zeilenanfang wie „Broken Bridge:“ oder „Escape Sequence:“, keine Semikolons, kein Telegramm** (V-700). Ein Doppelpunkt mitten im Satz nach einer Hinführung trägt dagegen („Approval? Not for **The Heel**: bear hugs and eye pokes.“); Golden: `SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md`. Der Titel steht im Satz, die Satzform folgt der Karte und wechselt über das Deck. Nur Wörter der Karte, höchstens ein Fluff-o-lect-Wort, Mechanik nur, wenn sie ein Bild ist, Closure statt Erklärung. Ohne nachweisbare Felder gibt es keine Zeile; dann wird der Kartentext roh benutzt. Prüfung: `triplet_set_check.py` bzw. `song_gate.py` (C14) melden FAIL bei einem Etikett mit Doppelpunkt am Zeilenanfang und bei Semikolons; das Intro „<Decktitel>: <Slogan>“ bleibt erlaubt.
 
+**Korrektur V-1180 (Georg 01.11.):** Triplets und Gespräche drehen sich um Titel und Lore. Die Power ist meta-satirisch und höchstens Seitenhieb, kein Metageschwurbel.
+
 ## 2b · Satzbild in Sprechblasen und Textausgabe (Georg 24.10., V-699)
 - **Kartentitel immer fett**, in jedem Sprechblasen-Satz und jedem angezeigten Triplet.
 - **Kursiv kontextuell:** Betonung, Umkehrung oder Pointe, **höchstens eine kursive Stelle je Sprechblase** (Georg 24.10.).
