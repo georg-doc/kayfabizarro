@@ -1,3 +1,7 @@
+## 2026-11-01 · German stay-behind handover and Ganser
+
+[Source case](topics/gehlen-german-stay-behind/README.md) · [Comparative author dossier](authors/daniele-ganser.md). From 1956, institutional transfer confirmed. Smith's 1952 statement and Gehlen's 1951 involvement identified. Next evidence gate: a net-specific signed handover record.
+
 ## 2026-11-01 · Breakaway Civilization reception history
 
 [Source chain and exact locators](topics/breakaway-civilization/README.md). Dolan's 2009 book and contemporary lecture, Farrell's postwar faction model, Fitts' direct 2010 and joint 2012 reception, and Jorjani's 2025 reformulation. Open check: inspect the original 2009 printed pp. 564–565 against Farrell's chapter 9 citation.

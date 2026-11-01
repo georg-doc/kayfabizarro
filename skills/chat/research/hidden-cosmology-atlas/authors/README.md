@@ -128,3 +128,6 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 ## NB01 addition — 2026-11-01
 
 [Jiang Xueqin](jiang-xueqin.md): original-caption pilot for Game Theory #6. See [NB01 intake and source chain](../packages/notebook-return-nb01/README.md). 25 author masters; this addition is a bounded lecture study, not a corpus audit.
+
+
+[Daniele Ganser — comparative Gladio research, dissertation and German source audit](daniele-ganser.md)
