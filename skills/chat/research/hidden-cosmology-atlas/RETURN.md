@@ -1,3 +1,7 @@
+## 2026-11-01 · Secret Space Program, Herkunftsprüfung
+
+[Magenta, Glocke, Paperclip und MOL](breadth/secret-space-pruefpfade.md). Für Magenta sind der anonyme Eingang 1996 und das CUN-Heft März 2000 unterschieden, für die Glocke Witkowskis Rückblick auf 1997 und sein Druck von 1998. Die V-2–Paperclip–Saturn-V-Personenspur ist über Arthur Rudolph dokumentiert. Für beide behaupteten Geräte fehlt eine zuordenbare Übergabeakte. Nächster Archivschritt: datierte Sporrenberg-Vernehmungen und Anlagen abgleichen.
+
 ## 2026-11-01 · Farrell zur Goldrückholung
 
 [Goldfolge mit Zeitmarken](breadth/farrell-gold-2013.md) und [nächster Vergleich zur geheimen Raumfahrt](breadth/secret-space-pruefpfade.md). Tonspur der Farrell-Folge vollständig maschinell transkribiert, RT-Gastkommentar und Episodenbeschreibung in Januar-2013-Fassungen geprüft. Einzelne Keiser-Sprecherzuordnung offen. Bundesbank, BIZ und Verwahrstellen separat dokumentiert. Nächste Prüfung: dokumentierten Paperclip-Technologietransfer mit den frühesten Magenta- und Glocke-Erzählungen vergleichen.
