@@ -17728,6 +17728,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1216",
+   "date": "2026-11-01",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "Georg 01.11.: Wald darf etwa halb so dicht werden, wenn das die Leistung loest. Konzept in drei Stufen: keine, wenige (meist Dreiergruppe), viele (Fibonacci-Folge ueber WFC, gewisse Regelmaessigkeit). Mac mini: Wald 18,1 ms trotz weniger Dreiecke.",
+   "values": {},
+   "owner": "WS-Verteiler",
+   "check": "WFC_BEWEIS_R8/MINI",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Cartoon-Konzept statt Dichte; spart Pixel und liest sich besser als gleichmaessiges Fuellen.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
