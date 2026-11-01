@@ -1,3 +1,9 @@
+## NB02 / WS0 bounded pilot — 2026-11-01
+
+[Normalized return](packages/notebook-return-nb02/README.md) and [three-entry WS0 pilot](packages/ws0-dossier-pilot/README.md) now supplement NB01.745 imported rows retained;99 source-list entries;9/9 prior aliases match by title. Three existing cards receive five-layer editorial dossiers, separate from unchanged author intake and canonical game/card state. [Current Return](RETURN.md) records private Atlas publication and independent verification. Next gate: Georg reviews these three before expansion.
+
+---
+
 ## Additive C03 — six journalism profiles and first Notebook package · 2026-11-01
 
 [Current Return](RETURN.md) and [package](packages/journalistic-source-chains-c03/README.md) record 24 dedicated author masters after six additions. C03 contains 16 source references, 18 scoped claims and 14 noncausal relations, distinct from prior metrics. [Standalone reader](packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md) and [source-chain view](packages/journalistic-source-chains-c03/atlas-source-chains.json) are prepared derived exports pinned to `9b27a3818ec7386d9aafe7146ba0831827e28e35` through [revision note](packages/journalistic-source-chains-c03/PACKAGE_REVISION.md). No Notebook import or hosted Site update performed.

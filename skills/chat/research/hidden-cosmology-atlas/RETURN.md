@@ -541,3 +541,20 @@ Tests: JavaScript syntax passes; independent counts, source joins and all five S
 Acceptance: https://kfb-research-atlas.frizzlebob.chatgpt.site/#jiang-pilot and #notebook-return. Screenshot retained in local NB01 work folder. Prompt: 3,869 characters excluding terminal newline, ready for native Data Table, not yet executed in NotebookLM.
 
 Next gate: receive native table export and reconcile aliases, URLs and cited-only originals. Audio alignment and primary historical-document verification remain research follow-ons. Generated visuals never create verified historical/control edges.
+
+
+## NB02 + WS0 pilot Return — 2026-11-01
+
+User authorized full table cleanup, NB01 reconciliation, then exactly three WS0 five-layer entries on current GitHub, no game code. Owner: existing Hidden Cosmology Atlas. Repo georg-doc/kayfabizarro; branch research/hidden-cosmology-atlas-2026-10-13; draft PR394 unchanged/unmerged. Content checkpoint513d45bd8e897308ad4aea0fb9f2e594928e3976 (67 exact file readbacks). Main7e1c4ab0f143b2f1c0f33017eb473574f20190c9 and source deck branch8799ce51e757ba30a9fa1ab2016a8e402d08f90e were rechecked unchanged before closure.
+
+Result: packages/notebook-return-nb02/ preserves745rows in50blocks with all14original fields, unique IDs and scoped joins;99source-list entries;9/9NB01aliases matched by title. Nine unresolved reference tokens remain flagged, with no guessed cross-block identity. Structural cleanup does not certify352claims. OriginalSheet unchanged. Full normalized CSV/JSON is downloadable in the private Atlas; GitHub preserves the complete equivalent block records and reconciliation/audit.
+
+packages/ws0-dossier-pilot/ contains3entries,11source receipts, inventory, data contract, readable essays, one-page effort/game handoff, and independent/test reports. Joins: cid:observation_underground:35;cid:kayfabizarro_philosophy:30;cid:ignore_dystopia:41. Allfive layers perentry, one featured SolutionWatch, explicit satire/interpretation/source boundaries. Existing cardtext retained. Game, card/deckmasters and runtime owners unchanged. No newdecks/massruns.
+
+Independent review confirmed745-row/14-field preservation, all admitted joins, card fidelity and source attribution after two narrow source-ID repairs. Three local routes show five layers; NB02 search resolves Jiang source. Actual existing privateSite #ws0 and #nb02 were browser-verified at content513d45bd8e89. Site sourcebf54ca58ccb107d10b418c567e4989d7bcfd34d2; deploymentappgdep_6ae6bb22bed0819199a9d9c74948066f succeeded. Owner-only audience unchanged. Sitehas_mcp=false; no live AI/game integration claimed. See packages/ws0-dossier-pilot/TEST_REPORT.md.
+
+Acceptance: https://kfb-research-atlas.frizzlebob.chatgpt.site/#ws0 ; table: https://kfb-research-atlas.frizzlebob.chatgpt.site/#nb02 . No separate CloudflareStage, centralrouter or Hub update required.
+
+Unresolved: original-passages for most exportclaims;9reference tokens;30title identitymatches; unlinked Brainfood, original2010Roko post, fullCurtis/Yurchak inspection, audio/song verification and product comparisons. These remain explicit follow-ons, not silently completed.
+
+ONE NEXT GATE: Georg jointly reviews the three entries for source boundaries, FrizzleBob voice and practical value. Stop expansion here until that review.
