@@ -17428,6 +17428,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1196",
+   "date": "2026-11-01",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Waffen-Ton uebergeben: game/waffen-fx-r1 @659c793c, N-048. Ton und Bild bleiben am Schalter fx=r2, Georgs Testfahrt mit fx=r2. Offen: Passwort-Tor und Deployment ungeprueft, instancesNear unter place=r3 teuer moeglich, einmal index.json 404 vom ersten Tonhost.",
+   "values": {},
+   "owner": "WS1",
+   "check": "N-048",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Trennen von Ton und Bild kostet mehr, als Georgs Testfahrt mit dem Schalter zu fahren; das Bild wird auf demselben Schalter ersetzt.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
