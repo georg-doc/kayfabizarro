@@ -17818,6 +17818,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1222",
+   "date": "2026-11-01",
+   "area": "Technik",
+   "verdict": "FACT",
+   "text": "Mac mini: Wald r3 @cde9339c 12,1 ms (heute 10,4, Ziel unter 16 erreicht), Sterne an und aus gleich (7,5 gegen 7,4 ms Blick oben, 15,2 Fahrt), Klappen im Median 0 ms. Stand 0fa35088 an WS1 (N-059).",
+   "values": {},
+   "owner": "WS1",
+   "check": "WFC_BEWEIS_R8/MINI_CDE9339C, STERNE_R1/MINI, R9_KLAPPEN/MINI",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erste ruhige Messreihe: Wald-Halbierung loest das Problem, Sterne und Klappen kosten nichts.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
