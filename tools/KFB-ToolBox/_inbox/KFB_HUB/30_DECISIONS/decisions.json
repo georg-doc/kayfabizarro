@@ -16918,6 +16918,21 @@
    "applies": "nach Georgs Wahl"
   },
   {
+   "id": "V-1162",
+   "date": "2026-11-01",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Georg 01.11.: Combat- und Destruction-Sounds erzeugt WS0 selbst mit dem ElevenLabs-Zugang. Pilot 40_AUDIO/elevenlabs_r1/combat_destruct_r2.json: 23 Klänge, rund 2200 Credits, dazu Kaskaden und Schichten aus combat_destruct_r2_mix.py. Ursache des Plip-Plop: alte Prompts cartoon toy blaster, clay. Tiefton gemessen, gehört hat WS0 nichts; Hörurteil Georg, Kopfhörer oder Boxen, weil Laptop-Lautsprecher unter 80 Hz wenig wiedergeben. WSA baut Schichten, Varianten, Kaskaden und Takt, erzeugt keine Klänge. Hub q368. Hub-Briefings abgeglichen; Repo kayfabizarro ist weiter öffentlich, V-599 offen.",
+   "values": {},
+   "owner": "WS0 · WSA",
+   "check": "Hub q368, Hörurteil",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Klangziel ist neu; alte Sätze waren nach Spielzeug gepromptet.",
+   "applies": "nach Hörurteil"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
