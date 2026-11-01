@@ -1,7 +1,7 @@
 # Auftrag Deck Rollout · Deck-Paket Pilot · WS0 · 01.11.2026 (V-1153, V-1147, V-363)
 Georg hat `replies/KONZEPT_DECK_PAKET_R1.md` (in `KFB_HUB/30_DECISIONS`) freigegeben: „Ja, Pilot starten“. Lies es zuerst. Du bist Eigentümer des Deck-Pakets, weil Pipeline und Desk bei dir laufen. Der Deck-Analyzer-Prozess zieht zu dir.
 
-**Lesen:** `replies/DECK_ANALYZER_UEBERGABE_R1.md`, `replies/TRIPLET_SSOT_R1.md` §1, im Repo `georg-doc/kayfabizarro` Zweig `data/kfb-deck-analyzer-r1`: `tools/kfb-deck-analyzer/GRADING_R1.md`, `AGENT_BRIEF_R1.md`, `DECK_ABGLEICH_R1.md`.
+**Lesen:** `replies/DECK_ANALYZER_UEBERGABE_R1.md`, `replies/TRIPLET_SSOT_R1.md` §1, im Repo `georg-doc/kayfabizarro` Zweig `data/kfb-deck-analyzer-r1`: im Ordner `kfb-deck-analyzer` unter `tools` die Dateien `GRADING_R1.md`, `AGENT_BRIEF_R1.md`, `DECK_ABGLEICH_R1.md`.
 
 **Regeln:** Das Druck-PDF führt beim Kartentext. Original-PDFs bleiben unverändert. Keine Textänderung ohne Protokoll, Altwerte bleiben erhalten. ROT-Decks bekommen kein Marketing. Merge nach `main` nur mit Georg. Georgs Prototyp-Ordner liest du nur.
 
