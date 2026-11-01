@@ -1,6 +1,6 @@
 # The Holstein network: who proposed the handover?
 
-Hans Mathiesen Lunding offered the West German side the network run in southeastern Schleswig-Holstein by former Wehrmacht officer Günter Toepke (also spelled Günther). The best located account places the approach in Hamburg on 8 March 1956 and identifies Adolf Heusinger as the person from whom Lunding sought help. A German file note dated 13 March is cited by researchers who used the intelligence archive. No signed German acceptance, personnel roll transferred or effective date of operational control was located.
+Hans Mathiesen Lunding offered the West German side the Holstein network run by Günter Toepke. The archival study names Heusinger as a contact and cites a note dated 13 March about the 8 March 1956 Hamburg meeting with KAMMGARN. The specific date of Lunding's approach and the attendees require original-page verification. Friis separately reports transfer to the BND in 1956. See the [follow-up, evidence status and Danish and German retrieval references](ARCHIVE_01292_FOLLOWUP.md).
 
 ## Following the references from the 2015 book
 
