@@ -12,7 +12,8 @@
       "kind": "Original lecture; automatic English captions",
       "readScope": "Caption selections: 00:00–01:39, 14:35–24:41, 35:05–44:47; keyword matches elsewhere. 0 audio minutes verified.",
       "limits": "Caption transcription errors remain. Publisher reports the lecture date. Original author testimony is not independent proof of historical claims.",
-      "root": "Predictive History"
+      "root": "Predictive History",
+      "dateKind": "YouTube publication date; same lecture date stated by publisher"
     },
     {
       "id": "JP-S02",
@@ -147,7 +148,7 @@
     {
       "id": "JP-R02",
       "fromId": "JP-C05",
-      "toId": "Whitney Webb / Mark Goodwin",
+      "toId": "webb-goodwin-pair",
       "type": "thematic comparison",
       "layer": "editorial",
       "causal": false,
@@ -159,7 +160,7 @@
     {
       "id": "JP-R03",
       "fromId": "JP-C06",
-      "toId": "Societal Life Cycle mindmap",
+      "toId": "NB01-M2",
       "type": "thematic comparison",
       "layer": "editorial",
       "causal": false,
@@ -169,5 +170,21 @@
       "note": "Similar competition/decline themes; map provenance does not establish that Jiang supplied each node."
     }
   ],
-  "completion": "Bounded original-caption pilot; original historical documents and audio alignment pending"
+  "completion": "Bounded original-caption pilot; original historical documents and audio alignment pending",
+  "externalRefs": [
+    {
+      "id": "webb-goodwin-pair",
+      "label": "Whitney Webb / Mark Goodwin",
+      "memberIds": [
+        "whitney-webb",
+        "mark-goodwin"
+      ],
+      "kind": "editorial comparison group; not a historical entity"
+    },
+    {
+      "id": "NB01-M2",
+      "label": "Societal Life Cycle mindmap",
+      "manifest": "intake.json"
+    }
+  ]
 }
