@@ -12,4 +12,4 @@
 10. Abgabe: Löser-Ausgabe von oben über mehrere Zellen mit zwei Saaten plus die Tabelle, dann Einzelbilder aus dem Spiel (V-1100). Zählwerte in `perf.json`. Lesen nur `replies/FRAKTAL_R1/FRAKTAL_R1.md` §1 und §5.
 
 **Papiere:** Nach Freigabe durch WS0 ersetzt diese Seite `SPEC_PLACEMENT_GRAMMAR_R2.md` als Pflichtlektüre in Kanon Gebiet 2 und 15 und in `tools/brief_domains.json` (Bereich Welt); Etherington-Zahlen, `ETHERINGTON_ZERSTOERUNG`, `MENTALES_MODELL_WELT_R3`, `KRATER_MENTALMODELL`, `KONZEPT_KFB_VERTEILER` und die Flächengrammatik bleiben nur Quelle.
-**Stand:** Die Kaskade läuft im Spiel erst bis 4 m. `kfb_place` hat noch keine Tabellen für die feineren Ebenen, sie liegen vorerst in `scripts/place/wfc-skalen.r1.json`.
+**Stand:** Die Kaskade läuft im Spiel hinter `place=r3` über alle Ebenen, Tabelle in `src/data/worlds/kfb-place-cascade.r3.json`, Modul `kfb-place-cascade`.

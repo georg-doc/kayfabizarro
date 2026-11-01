@@ -145,3 +145,7 @@ Die Tafeln belegen, was herauskommen soll, nicht wie es gebaut wird: #161 und #1
 ## 11 · Dichte über die Fläche (Stand 9d6e04eb, V-1165)
 
 Oberste Ebene neu: Felder über Hunderte Meter als Vorwissen, Modell in `MODELL_DICHTE_R1.md`, Belege in `WFC_BEWEIS_R5/VORGABEN_TABELLE.md`. Kritiker: Nein, die Karte zeigt Felder, im Spiel sind sie kaum lesbar. Bildzeit ungültig gemessen.
+
+## 12 · Verdichtet und Bänder (V-1184)
+
+Felder nach dem Modell in `MODELL_DICHTE_R1.md`, je Feld eine herrschende Art, Wald und Felsfeld dicht, hohe Büsche als runde Kuppen. Grobe Ebenen je Zelle, Perle und Korn erst nah, Zellen vor dem Wagen im Voraus. Kiesel und Kügelchen tragen die Bänder des Bodens (`baender=hell` Standard, `voll` Vergleich, `aus`), Kügelchen an Fels oder Busch behalten nah am Fuß die Farbe des Elternteils. Tabelle: `src/data/worlds/kfb-place-cascade.r3.json`, nicht `kfb_place.r1.json`. Belege in `WFC_BEWEIS_R7/`.

@@ -17383,6 +17383,21 @@
    "applies": "01.11."
   },
   {
+   "id": "V-1193",
+   "date": "2026-11-01",
+   "area": "Audio",
+   "verdict": "KEEP",
+   "text": "Georg 01.11.: Waffen-Ton PASS (Mischung aus game/waffen-fx-r1 @95f2f01c). Mischung und Pegel fest; Tests und Stamm nachholen, dann Uebergabe an WS1 hinter fx=r2. Offen: Vorbeifahrt an Fels und Busch braucht Abfrage aus der Bewuchs-Verteilung, Doppler folgt noch nicht dem Tempo.",
+   "values": {},
+   "owner": "Flug-Sitzung",
+   "check": "q380",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Ton kann vor dem Bild ins Spiel; nichts wartet auf das Feuer, wenn es hinter dem Schalter liegt.",
+   "applies": "01.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
