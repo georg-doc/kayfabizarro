@@ -46,3 +46,6 @@ Risiko: Der Fächer im zweiten Explosionsbild kommt einer Krone nahe, er steht r
 ## Tests und Übergabe
 Geteilte Dateien mit Absicht: `kfbAudio.js`, `AudioHost.jsx`, `M1World.jsx`, `orchard3d.js`, `kfb-flight-vfx.js` (drei `export`), `weapon-fx.r2.mjs`, `build-site.mjs`, `vitePrivateAudio.mjs`. Nötig in `assets/private`: `combat_destruct_r2/r3/r5_lufs` (Stand @3ab91d03 laut PR 48; hier aus der Dropbox gemessen).
 **Nicht gelaufen:** voller Site-Build mit Schritt 3c (nur das Kopierskript), Vergleich Programmliste und Bild ohne Schalter (zu groß für den Rechner, der Router nimmt ohne Schalter die alte Fabrik), Gatling, Dark-Szene, Treffer an Figuren im Bild.
+
+## Nachtrag Übergabe Ton (Georg PASS, V-1184)
+Stand `game/waffen-fx-r1` @659c793c, Stamm @6f3fdaf7 nachgeholt. Grün nach dem Nachholen: `fxR2-off-route`, `repair-audio-ownership` (60 von 60 Klängen geladen), `combatFxR2`, `combatRepair`, `asmrMap`, `contract-static`, Site-Build mit `combat: copied`, 60 Dateien, Lauf gegen den Site-Stand mit `fx=r2` spielt die drei Schuss-Schichten. Abgleich: 60 von 60 Klängen gleich mit `assets/private` @137600de. Ohne Schalter: Vergleich vor dem Nachholen gegen @6b683955, Programmzahl und Bild im Rauschen des Ausgangs.

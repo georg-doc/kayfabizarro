@@ -1,0 +1,725 @@
+{
+ "hinweis": "Stände: heute = baender=aus, r2 = baender=hell, r3 = baender=voll",
+ "seed": "4711",
+ "viewport": "1280×800",
+ "reihenfolge": [
+  "heute",
+  "r2",
+  "r3",
+  "r3",
+  "r2",
+  "heute"
+ ],
+ "spots": {
+  "wueste": {
+   "x": -455.46159700387045,
+   "z": -129.60072328428387
+  },
+  "moos": {
+   "x": 449.8197085209908,
+   "z": 410.11269899551144
+  }
+ },
+ "roh": {
+  "moos": {
+   "heute": [
+    {
+     "lauf": 0,
+     "an": {
+      "frames": 122,
+      "ms": 12.4,
+      "msMean": 13.48,
+      "schattenMs": 2.53,
+      "weltMs": 9.9,
+      "dreieckeGesamt": 627960,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 532216,
+      "calls": 100
+     },
+     "aus": {
+      "frames": 94,
+      "ms": 13.2,
+      "msMean": 13.54,
+      "schattenMs": 0.86,
+      "weltMs": 12.5,
+      "dreieckeGesamt": 551040,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 551040,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 17.7,
+      "msMean": 18.01,
+      "schattenMs": 2.3,
+      "weltMs": 15.5,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    },
+    {
+     "lauf": 5,
+     "an": {
+      "frames": 123,
+      "ms": 14,
+      "msMean": 15.09,
+      "schattenMs": 2.73,
+      "weltMs": 11.2,
+      "dreieckeGesamt": 627960,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 532216,
+      "calls": 100
+     },
+     "aus": {
+      "frames": 92,
+      "ms": 12.6,
+      "msMean": 13.1,
+      "schattenMs": 0.83,
+      "weltMs": 11.9,
+      "dreieckeGesamt": 551040,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 551040,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 24.3,
+      "msMean": 26.02,
+      "schattenMs": 4.17,
+      "weltMs": 19.8,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    }
+   ],
+   "r2": [
+    {
+     "lauf": 1,
+     "an": {
+      "frames": 122,
+      "ms": 15.6,
+      "msMean": 15.51,
+      "schattenMs": 3.43,
+      "weltMs": 11.8,
+      "dreieckeGesamt": 615790,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 520046,
+      "calls": 100
+     },
+     "aus": {
+      "frames": 91,
+      "ms": 15.3,
+      "msMean": 15.34,
+      "schattenMs": 1.75,
+      "weltMs": 13.2,
+      "dreieckeGesamt": 532216,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 532216,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 32.2,
+      "msMean": 31.78,
+      "schattenMs": 4.11,
+      "weltMs": 28.2,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    },
+    {
+     "lauf": 4,
+     "an": {
+      "frames": 120,
+      "ms": 15.3,
+      "msMean": 16.14,
+      "schattenMs": 3.22,
+      "weltMs": 11.9,
+      "dreieckeGesamt": 615790,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 520046,
+      "calls": 100
+     },
+     "aus": {
+      "frames": 92,
+      "ms": 13.3,
+      "msMean": 14.18,
+      "schattenMs": 1.21,
+      "weltMs": 12.1,
+      "dreieckeGesamt": 551040,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 551040,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 71,
+      "ms": 32.6,
+      "msMean": 32.18,
+      "schattenMs": 3.34,
+      "weltMs": 29,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    }
+   ],
+   "r3": [
+    {
+     "lauf": 2,
+     "an": {
+      "frames": 123,
+      "ms": 13.5,
+      "msMean": 13.96,
+      "schattenMs": 2.41,
+      "weltMs": 11.2,
+      "dreieckeGesamt": 646784,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 551040,
+      "calls": 100
+     },
+     "aus": {
+      "frames": 94,
+      "ms": 12.9,
+      "msMean": 13.12,
+      "schattenMs": 1.21,
+      "weltMs": 11.3,
+      "dreieckeGesamt": 556186,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 556186,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 22.6,
+      "msMean": 22.92,
+      "schattenMs": 3.5,
+      "weltMs": 19.1,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    },
+    {
+     "lauf": 3,
+     "an": {
+      "frames": 123,
+      "ms": 18.3,
+      "msMean": 18.9,
+      "schattenMs": 4.09,
+      "weltMs": 14.4,
+      "dreieckeGesamt": 604612,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 508868,
+      "calls": 99
+     },
+     "aus": {
+      "frames": 90,
+      "ms": 19.9,
+      "msMean": 22.24,
+      "schattenMs": 2.49,
+      "weltMs": 18.2,
+      "dreieckeGesamt": 532216,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 532216,
+      "calls": 86
+     },
+     "dpr2": {
+      "frames": 71,
+      "ms": 34.6,
+      "msMean": 40.42,
+      "schattenMs": 4.37,
+      "weltMs": 31.1,
+      "dreieckeGesamt": 651930,
+      "dreieckeSchatten": 95744,
+      "dreieckeBild": 556186,
+      "calls": 100
+     },
+     "instanzen": {
+      "kk": 680,
+      "grass": 0,
+      "palm": 5,
+      "flora": 198,
+      "leicht": 877,
+      "pebble": 1088,
+      "flLeaf": 1075,
+      "flBloom": 1075,
+      "grassQ": 1712,
+      "fluff": 0,
+      "balls": 12176
+     }
+    }
+   ]
+  },
+  "wueste": {
+   "heute": [
+    {
+     "lauf": 0,
+     "an": {
+      "frames": 123,
+      "ms": 17.6,
+      "msMean": 17.75,
+      "schattenMs": 3.07,
+      "weltMs": 14.2,
+      "dreieckeGesamt": 1084396,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 983634,
+      "calls": 137
+     },
+     "aus": {
+      "frames": 91,
+      "ms": 16.6,
+      "msMean": 16.98,
+      "schattenMs": 1.39,
+      "weltMs": 15.1,
+      "dreieckeGesamt": 984410,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 984410,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 41.4,
+      "msMean": 45.03,
+      "schattenMs": 5.27,
+      "weltMs": 37.1,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    },
+    {
+     "lauf": 5,
+     "an": {
+      "frames": 120,
+      "ms": 21.6,
+      "msMean": 22.07,
+      "schattenMs": 3.97,
+      "weltMs": 17.5,
+      "dreieckeGesamt": 1085172,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 984410,
+      "calls": 138
+     },
+     "aus": {
+      "frames": 90,
+      "ms": 21.6,
+      "msMean": 21.4,
+      "schattenMs": 1.76,
+      "weltMs": 19.4,
+      "dreieckeGesamt": 984410,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 984410,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 72,
+      "ms": 38,
+      "msMean": 40.6,
+      "schattenMs": 3.55,
+      "weltMs": 35.1,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    }
+   ],
+   "r2": [
+    {
+     "lauf": 1,
+     "an": {
+      "frames": 122,
+      "ms": 16.4,
+      "msMean": 16.59,
+      "schattenMs": 2.53,
+      "weltMs": 14,
+      "dreieckeGesamt": 1084396,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 983634,
+      "calls": 137
+     },
+     "aus": {
+      "frames": 93,
+      "ms": 15.6,
+      "msMean": 15.81,
+      "schattenMs": 1.11,
+      "weltMs": 14.5,
+      "dreieckeGesamt": 1018674,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 1018674,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 71,
+      "ms": 26,
+      "msMean": 26.3,
+      "schattenMs": 3.35,
+      "weltMs": 22.7,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    },
+    {
+     "lauf": 4,
+     "an": {
+      "frames": 123,
+      "ms": 15,
+      "msMean": 15.52,
+      "schattenMs": 2.32,
+      "weltMs": 12.6,
+      "dreieckeGesamt": 1085172,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 984410,
+      "calls": 138
+     },
+     "aus": {
+      "frames": 91,
+      "ms": 14.7,
+      "msMean": 15.11,
+      "schattenMs": 0.98,
+      "weltMs": 13.7,
+      "dreieckeGesamt": 1018674,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 1018674,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 72,
+      "ms": 27.4,
+      "msMean": 28.6,
+      "schattenMs": 3.61,
+      "weltMs": 23.8,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    }
+   ],
+   "r3": [
+    {
+     "lauf": 2,
+     "an": {
+      "frames": 121,
+      "ms": 17.6,
+      "msMean": 17.88,
+      "schattenMs": 2.86,
+      "weltMs": 14.5,
+      "dreieckeGesamt": 1088358,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 987596,
+      "calls": 138
+     },
+     "aus": {
+      "frames": 92,
+      "ms": 17.3,
+      "msMean": 17.76,
+      "schattenMs": 1.2,
+      "weltMs": 16.3,
+      "dreieckeGesamt": 988932,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 988932,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 28,
+      "msMean": 29.01,
+      "schattenMs": 3.88,
+      "weltMs": 24,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    },
+    {
+     "lauf": 3,
+     "an": {
+      "frames": 120,
+      "ms": 17.2,
+      "msMean": 17.87,
+      "schattenMs": 2.95,
+      "weltMs": 14.3,
+      "dreieckeGesamt": 1084396,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 983634,
+      "calls": 137
+     },
+     "aus": {
+      "frames": 93,
+      "ms": 17.1,
+      "msMean": 17.43,
+      "schattenMs": 1.24,
+      "weltMs": 15.8,
+      "dreieckeGesamt": 987596,
+      "dreieckeSchatten": 0,
+      "dreieckeBild": 987596,
+      "calls": 125
+     },
+     "dpr2": {
+      "frames": 70,
+      "ms": 32,
+      "msMean": 33.57,
+      "schattenMs": 3.66,
+      "weltMs": 27.9,
+      "dreieckeGesamt": 1119436,
+      "dreieckeSchatten": 100762,
+      "dreieckeBild": 1018674,
+      "calls": 138
+     },
+     "instanzen": {
+      "kk": 330,
+      "grass": 0,
+      "palm": 2,
+      "flora": 123,
+      "leicht": 1616,
+      "pebble": 725,
+      "flLeaf": 531,
+      "flBloom": 531,
+      "grassQ": 957,
+      "fluff": 0,
+      "balls": 9604
+     }
+    }
+   ]
+  }
+ },
+ "errs": [],
+ "tabelle": {
+  "moos": {
+   "heute": {
+    "ms": 14.3,
+    "welt": 11.7,
+    "schatten": 2.6,
+    "schattenAus": 13.3,
+    "dpr2": 22,
+    "dreieckeBild": 532216,
+    "dreieckeSchatten": 95744,
+    "calls": 100,
+    "je": [
+     13.48,
+     15.09
+    ]
+   },
+   "r2": {
+    "ms": 15.8,
+    "welt": 12.5,
+    "schatten": 3.3,
+    "schattenAus": 14.8,
+    "dpr2": 32,
+    "dreieckeBild": 520046,
+    "dreieckeSchatten": 95744,
+    "calls": 100,
+    "je": [
+     15.51,
+     16.14
+    ]
+   },
+   "r3": {
+    "ms": 16.4,
+    "welt": 13.2,
+    "schatten": 3.3,
+    "schattenAus": 17.7,
+    "dpr2": 31.7,
+    "dreieckeBild": 529954,
+    "dreieckeSchatten": 95744,
+    "calls": 100,
+    "je": [
+     13.96,
+     18.9
+    ]
+   }
+  },
+  "wueste": {
+   "heute": {
+    "ms": 19.9,
+    "welt": 16.4,
+    "schatten": 3.5,
+    "schattenAus": 19.2,
+    "dpr2": 42.8,
+    "dreieckeBild": 984022,
+    "dreieckeSchatten": 100762,
+    "calls": 138,
+    "je": [
+     17.75,
+     22.07
+    ]
+   },
+   "r2": {
+    "ms": 16.1,
+    "welt": 13.6,
+    "schatten": 2.4,
+    "schattenAus": 15.5,
+    "dpr2": 27.5,
+    "dreieckeBild": 984022,
+    "dreieckeSchatten": 100762,
+    "calls": 138,
+    "je": [
+     16.59,
+     15.52
+    ]
+   },
+   "r3": {
+    "ms": 17.9,
+    "welt": 15,
+    "schatten": 2.9,
+    "schattenAus": 17.6,
+    "dpr2": 31.3,
+    "dreieckeBild": 985615,
+    "dreieckeSchatten": 100762,
+    "calls": 138,
+    "je": [
+     17.88,
+     17.87
+    ]
+   }
+  }
+ },
+ "dprKontrolle": {
+  "steigt": 6,
+  "von": 6,
+  "gueltig": true
+ }
+}
