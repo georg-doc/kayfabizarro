@@ -139,3 +139,5 @@ Die Tafeln belegen, was herauskommen soll, nicht wie es gebaut wird: #161 und #1
 ## 10 · Reparaturrunde V-1132 (Stand 3331e98b, Schalter `place=r3`)
 
 Überholt in §9 die Bodenplatz-Quellen und die Kugeln. Neue Ebenen `quelle` (4 m), `perle` (0,5 m) und `art` (6-m-Raster). Randabstand gegen den gemessenen Fußumriss der Felsen, Kügelchen über den Kugel-Kern. Vorgaben, Bilder und Messwerte in `WFC_BEWEIS_R3/VORGABEN_TABELLE.md`. **Blinder Kritiker: Nein.** Materialcode, Busch-Fuß und Artenwechsel sind offen. Die Prüfung `grundStat` ist zu weich.
+
+**Letzte Runde (Stand 5aa08e74):** Fuß als ein Band-Modell für Fels und Busch, Fußumriss auch für Büsche, Materialcode als kleine Gruppen, Eltern nur Stein, Baum, Busch, Blumenart in Flecken von rund 6–12 m. Belege in `WFC_BEWEIS_R4/VORGABEN_TABELLE.md`. Kritiker: Nein, der grobe Fehler ist laut ihm behoben. Ufer, Hangfuß und Rinne sind nicht bearbeitet.
