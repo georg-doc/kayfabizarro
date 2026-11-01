@@ -1,3 +1,7 @@
+## 2026-11-01 · Breakaway Civilization reception history
+
+[Source chain and exact locators](topics/breakaway-civilization/README.md). Dolan's 2009 book and contemporary lecture, Farrell's postwar faction model, Fitts' direct 2010 and joint 2012 reception, and Jorjani's 2025 reformulation. Open check: inspect the original 2009 printed pp. 564–565 against Farrell's chapter 9 citation.
+
 ## CURRENT RETURN — six journalism profiles and NotebookLM package C03 · 2026-11-01
 
 **Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `5a63096cb3de8fdef0b8cbae374127d4cb5ea716`; immutable source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Final handoff commit is the one containing this section; exact final head/readbacks returned in chat. Previous Returns below are historical.
