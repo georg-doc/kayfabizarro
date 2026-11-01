@@ -1,3 +1,23 @@
+## CURRENT RETURN — breadth corpus batch AB01 completed · 2026-11-01
+
+**Owner:** `georg-doc/kayfabizarro`, branch `research/hidden-cosmology-atlas-2026-10-13`, [Draft PR #394](https://github.com/georg-doc/kayfabizarro/pull/394). Input `7b9afcfb38993589c6110d77eeeb32cec89d54aa`; source checkpoint/head before this handoff `267e2ea50cf333c1d87d55c4970ee6ac0ec72214`; inventory checkpoint `789c9aa37e5608d1fb23cb45e08ad756059048c5`. Final handoff commit is the Git commit containing this section; exact final branch head/readback is returned in chat. No merge or Live promotion.
+
+**Outcome:** eight real source-lead author files (Jacobsen, Hunt, Simpson, Scott, Puharich, Swann, Brown, Tesla), plus additive Solari source links in Fitts/Farrell/Liszt. Sixteen author masters now exist; original bodies preserved. The 140-node R4 census remains a candidate roster, not completed biographies.
+
+**Actual corpus:** 43 scoped source records, 35 claim records, 12 documentary bibliographic/publication/institutional edges, eight noncausal comparison edges, 30 open research questions across all ten clusters. Institution identity/mandate coverage C08–C10 is separate from author dossiers. Source counts include catalogs, indexed-only and unavailable leads; no complete-book/audio or cash-flow verification is claimed.
+
+**Changed files:** `authors/{annie-jacobsen,linda-hunt,christopher-simpson,peter-dale-scott,andrija-puharich,ingo-swann,thomas-townsend-brown,nikola-tesla}.md`; additive `authors/{catherine-austin-fitts,joseph-farrell,daniel-liszt}.md` and `authors/README.md`; `institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md`; `breadth/` inventory, four source-receipt JSON packets, Solari appendix, question matrix, read-only index, independent review, Production Guard, test report and validator; this Return, additive changelog and living Atlas.
+
+**Evidence:** [Test report](breadth/TEST_REPORT_R1_2026-11-01.md), [independent source review](breadth/independent-review.md), [Production Guard](breadth/production-guard.md). Unique IDs, 40 resolved edge endpoints, 30 questions, noncausality flags, eight dossier files and targeted privacy checks pass. Solari issuer/date corrections accepted on independent readback. Inventory 1/1 and source milestone 21/21 files exactly read back from GitHub. [Read-only index](breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) pins the immutable source checkpoint; it is navigation over owner packets, not a second editable truth store.
+
+**Source custody:** Jan Irvin/Knowles private donor bodies inspected and lack original citations; Samosa/Fitts private versions metadata-only. Relevant Dropbox metadata and Notion discovery page inventoried without migration. Private IDs/full text remain private. Solari reconstruction is freshly sourced because the previous recovery artifact was not supplied. OIG originals still inaccessible; adjustment totals are not a cash-loss measure. Webb.io benchmark remains optional and unconnected.
+
+**Not performed:** Batch C biographies/journalism chains, full historical/technical adjudication, Site publication, login repair, Notion synchronization, private NIE export, Hub/Cloudflare edits or merge. Existing Site is not evidence that these new dossiers are deployed.
+
+**One next gate: `ATLAS_BREADTH_CORPUS_BATCH_C_02`** — remaining source-led author/journalism intake, beginning with one Webb/Goodwin article → actually read primary record → independent counter/explanation chain; preserve author-source attribution and existing owner. Site projection follows a separate source-relevant receiver pass.
+
+---
+
 ## CURRENT ADDITIVE RESEARCH RETURN · 2026-11-01 · JOURNALISM SOURCE DONORS AND MEDIA TRIANGULATION R4
 
 **Outcome:** Existing Hidden Cosmology Atlas gains a journalism/academic/media **role lens**, not an eleventh topic cluster, new source truth DB or an automatically trusted journalist rank. Georg wants Whitney Webb / Unlimited Hangout, James Corbett, suspected **Derrick Broze** (*The Pyramid of Power*; 17 chapters, chapter 13 technocracy), Regenauer, Patrik Baab, Dirk Pohlmann, Seymour Hersh, Jeffrey Sachs (academic analyst), Scott Ritter, Ryan Dawson and other critical reporters alongside original publisher and mainstream-source comparison, historical Carroll Quigley/Cecil Rhodes original documents and historical Technocracy 1930s. All source claims must connect **byline → work → quoted claim → cited actually-read original document → independent sources/counterevidence**, with available correction/revision history. No mere citation or rehosting equals independent historical proof.
@@ -458,3 +478,4 @@ The researcher must faithfully report what the source author says and how that a
 Independent source discovery/metadata for the three core authors; speaker/audio verification for the initial Kurt Metzger interview; first complete author worldview dossier; later comparative narrative mapping; any formal KFB Deck intake/creative transformation. None is a blocker for the corrected NotebookLM prompt.
 
 **ONE NEXT GATE — WORLDVIEW_SOURCE_CORPUS_INTAKE_01:** Execute independent source research (in NotebookLM or this research chat) for “The Worldview According to Kurt Metzger”, capturing traceable original statements with exactly the author's own certainty, then build separate Dark Journalist and Michael Wann dossiers.
+

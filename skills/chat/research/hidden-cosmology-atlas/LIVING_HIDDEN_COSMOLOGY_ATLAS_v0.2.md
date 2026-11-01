@@ -1,3 +1,13 @@
+## CURRENT CORPUS MILESTONE — breadth batch AB01 · 2026-11-01
+
+Eight new source-lead author masters now exist: Annie Jacobsen, Linda Hunt, Christopher Simpson, Peter Dale Scott, Andrija Puharich, Ingo Swann, Thomas Townsend Brown and Nikola Tesla. Existing eight masters retained; Fitts/Farrell/Liszt receive additive Solari source links. This supersedes earlier zero-new-dossier status statements below, without overwriting the 140-candidate R4 census or presenting source leads as complete worldviews.
+
+[Corpus index](breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json) pins source commit `267e2ea50cf333c1d87d55c4970ee6ac0ec72214`: 43 scoped source records, 35 claims, 12 documentary metadata/institutional relations, eight noncausal comparisons and 30 questions in ten clusters. [Tests and independent review](breadth/TEST_REPORT_R1_2026-11-01.md) distinguish read passages, catalog/index leads and unavailable originals. Solari does not turn unsupported adjustments into measured cash loss. Source bodies, proposed identities and publication dates remain separately scoped.
+
+GitHub remains the editorial owner. Private Drive/Dropbox/Notion inventory did not migrate material or create a second author master. The existing Site has not received this corpus. **Next gate: `ATLAS_BREADTH_CORPUS_BATCH_C_02`**, source-led journalist/remaining-author chains; current [Return](RETURN.md) contains exact checkpoint lineage and unresolved work.
+
+---
+
 ## BINDING RESEARCH ATLAS DIRECTION · 2026-11-01 · JOURNALISTIC DONOR SOURCE CHAINS + MULTI-PERSPECTIVE TRIANGULATION
 
 Georg explicitly adds **journalistic donor and cross-editorial evidence comparison** to the same ten-topic Hidden Cosmology Atlas source network. Treat journalistic work, scholarly/economic geopolitical analysis and media commentary as distinct source/role facets, **not** as automatic evidence, partisan quality ranks or a second editorial SSOT. Research first: which original reporter said what, when and with which hyperlinked court/FOIA/financial/archival primary document? Review exact originals separately; deduplicate wire syndication, quote-chain echoes and mirrors. Compare relevant mainstream and alternative investigations fairly on their specific source work, not false editorial equivalence.
@@ -469,3 +479,4 @@ Chapter boundaries remain adjustable to recovered source material; **do not excl
 - **RETURN:** `RETURN.md` in this directory; final head and verification counts. Exact head from the latest branch/PR must be read after writes.
 
 **HISTORICAL GATE (six-author milestone): `WORLDVIEW_SOURCE_CORPUS_INTAKE_01` — intake remains ongoing for seven authors; the current next named gate is stated in the 2026-10-13 additive outcome above.**
+

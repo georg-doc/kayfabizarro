@@ -1,3 +1,12 @@
+## 2026-11-01 — Breadth corpus AB01, source leads and independent review
+
+- Added eight author masters; retained existing eight and appended narrow Solari links to three.
+- Inventoried private donor custody without publishing donor IDs or bodies.
+- Added 43 source records, 35 claims, 20 noncausal relations (12 documentary, eight conceptual), and 30 questions; C08–C10 institutional coverage included.
+- Corrected Solari interview/public-availability dates and FASAB issuer attribution after independent review; resolved author/work aliases and preserved source-scope gaps.
+- Source snapshot `267e2ea50cf333c1d87d55c4970ee6ac0ec72214`, 21/21 exact file readbacks. Read-only receiver index pins that snapshot. Tests and review receipts in `breadth/`.
+- No Site/Notion/Hub/private-NIE publication or merge. Next `ATLAS_BREADTH_CORPUS_BATCH_C_02`.
+
 ## 2026-11-01 · R4 · Journalistic donor sources, reporting-lineage checks, Technocracy and Rhodes source leads
 
 - Added **cross-cutting journalistic donors lens** over the existing research graph with individual byline, original work, exact primary-source citations, correction review, source independence, strongest contrary material and multi-outlet comparisons. No journalist receives a universal trust-score or historical factual status solely from profession, employer, awards or political perspective.
@@ -61,3 +70,4 @@ Source-grounded reader implemented and privately deployed. Hosted authenticated 
 - **Updated additively:** original [wiki/graph/Site roadmap](RESEARCH_WIKI_GRAPH_SITE_AND_DOSSIER_ROADMAP_R1_2026-10-31.md) decision override, [Atlas v0.2 living owner](LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md), owner [RETURN.md](RETURN.md). Existing WCC R4 (46/50) and JM R2 (21/26) topic histories, sources/relations, and private Docs remain untouched.
 - **No source/runtime/CI/browser/Stage/Hub/main router/Live changes**, no new canonical research runtime, no auto-merge. Canonical KFB Production Hub remains the cross-KFB front door. The later Site gets a Hub link only upon verifiable Site publication. Stage route **none** for this research briefing.
 - **One next productive Site gate:** `RESEARCH_ATLAS_SITE_PUHARICH_EVIDENCE_READER_01`; a real Site-capable executor should render and inspect exact source, claims, typed link and prepared Work/consumer packet (with truthful auth status), then return actual Site URL and browser evidence *if published*.
+
