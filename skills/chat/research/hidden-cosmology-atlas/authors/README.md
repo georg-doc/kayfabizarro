@@ -123,3 +123,8 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 - [Patrik Baab](patrik-baab.md): Author method interview → bibliography → normative comparison, not adjudication of field reporting.
 
 [First NotebookLM/source-chain package](../packages/journalistic-source-chains-c03/README.md), [standalone reader](../packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md), [Gemini inventory prompt](../packages/journalistic-source-chains-c03/GEMINI_NOTEBOOK_INVENTORY_PROMPT_DE.md). Source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Notebook import and deployed Site update are not performed.
+
+
+## NB01 addition — 2026-11-01
+
+[Jiang Xueqin](jiang-xueqin.md): original-caption pilot for Game Theory #6. See [NB01 intake and source chain](../packages/notebook-return-nb01/README.md). 25 author masters; this addition is a bounded lecture study, not a corpus audit.
