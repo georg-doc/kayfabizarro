@@ -85,3 +85,8 @@ Source-grounded reader implemented and privately deployed. Hosted authenticated 
 
 
 
+
+
+## Site projection published — 2026-11-01
+
+Existing Atlas updated and browser-verified: https://kfb-research-atlas.frizzlebob.chatgpt.site. Research snapshot 2944c3e304c554d8a4673ddc242efc20bd0e9c00; Site source a2df88789637c71e2bfb4beabd6ced40d6d42e6f. 16 in-site source-led profiles plus8historical masterlinks; six C03 source chains; C02 packet; NotebookLM downloads. See [publication/test receipt](site/SITE_AUTHORS_CHAINS_DEPLOYMENT_2026-11-01.md). No merge/access change. Next gate GEMINI_INVENTORY_RECONCILIATION; user runs Gemini independently.
