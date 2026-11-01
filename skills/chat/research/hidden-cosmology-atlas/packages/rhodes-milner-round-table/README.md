@@ -38,3 +38,5 @@ Befunde:
 Geprüft: JSON, sieben Quellenreferenzen, HTML-IDs und Sprungziele. Keine Manuskriptbilder angesehen; Brand/Stead/Elton als OCR markiert. Keine vollständige Buch-/Corpus-Lektüre behauptet. Kein Archivkontakt, kein Kauf, kein Spielcode, kein Merge. Site privat unverändert; source 4eefa959b2171e76600f73dc189c60b322f80465; Veröffentlichung succeeded.
 Nächster Quellen-Gate: aktuelle Signatur der beiden Milner-Briefe bestätigen und Originale samt Zahlungsbezug einsehen; daneben Trustee-Minute zur GBP2500-Summe. Empfangene Findmittel sind keine Zahlungsbeweise.
 
+
+[Milner: vier Finanzierungsvorgänge und der Weg zu den Originalen](milner-originalspuren.md)

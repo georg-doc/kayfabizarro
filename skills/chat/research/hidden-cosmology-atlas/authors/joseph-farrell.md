@@ -53,3 +53,6 @@ SOL-S08 locates a public Solari description of the July 28, 2026 Fitts–Farrell
 ## Quellen-Nachtrag · Project Camelot, Februar 2009
 
 Die [Interviewseite](https://projectcamelot.org/joseph_farrell.html) kennzeichnet ihre einleitende Darstellung der „Nazi International“ ausdrücklich als Farrells eigene Buchthese. Farrell beschreibt darin eine organisierte, finanzierte Struktur mit eigenem Nachrichten- und Sicherheitsapparat. Dieser Zuschreibungsbeleg ist vom [Interviewtranskript](https://projectcamelot.org/lang/en/Dr_Joseph_Farrel_-_Nazi_International_%28Feb_2009%29.pdf) zu unterscheiden: dessen erste Sprecherwechsel lauten anders. Offene Sachprüfung: konkrete Buchanmerkung und unabhängig entstandener Finanzbeleg für eine benannte Transaktion.
+
+
+[Gemeinsame und getrennte Publikationsspuren: Gold, Paperclip, 9/11 und Mystery Schools](../breadth/farrell-liszt-quellenketten.md).

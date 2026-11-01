@@ -1,3 +1,7 @@
+## 2026-11-01 · Milner: Originalzugang; Farrell/Liszt: erster Quellenvergleich
+
+[Finanzierung und Archivanfragepunkte](packages/rhodes-milner-round-table/milner-originalspuren.md) · [Vier Themen und Gegenproben](breadth/farrell-liszt-quellenketten.md). Handschriften und Trustees-Minute weiter offen; Originalfundstelle für den separaten Vorgang 1906 eingegrenzt. Recherche-Branch, keine Änderung an Live oder Spiel. Nächster Schritt: Reproduktionen zu 17/11 und Beschluss-/Buchungsnachweise getrennt ermitteln.
+
 ## 2026-11-01 · Round Table: Finanzierung, Autorschaft und Regenauer
 
 [Quellenketten und Beleggrenzen](packages/rhodes-milner-round-table/README.md) · [Audit-Daten](packages/rhodes-milner-round-table/roundtable-audit.json)
