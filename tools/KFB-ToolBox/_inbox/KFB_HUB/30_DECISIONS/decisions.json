@@ -17263,6 +17263,21 @@
    "applies": "nach Merge-Runde 2"
   },
   {
+   "id": "V-1185",
+   "date": "2026-11-01",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "WS1: Kartenzonen R1 @6a5c73f und Vertragsfix @69f4fed hinter zones=1, Relief und Streu-Zonen, Pfeil, Begegnung; Hub q378. Testfahrt-Rekorder rec=1 und Prüfstand scripts/perf gebaut. Site-Werkzeug Testen und Messen später mit Site-Paket durch WSA. HyperNorm-Boden je Zone fehlt, Modul mit Deck-Saat von WS-Design erfragt. Doppler und Vorbeifahrt-Cues vorhanden in cueMap, Ton-Inventur bei Flug-Sitzung.",
+   "values": {},
+   "owner": "WS1 · WS-Design · Flug-Sitzung",
+   "check": "Hub q378, Inventur",
+   "source": "Georg 01.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Spielschleife Pfeil, Zone, Karte steht.",
+   "applies": "nach Testfahrt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
