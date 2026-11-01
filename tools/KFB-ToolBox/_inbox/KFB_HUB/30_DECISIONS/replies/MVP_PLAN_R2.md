@@ -21,7 +21,7 @@ Danach Testfahrt-Adresse an Georg.
 - Tag und Wetter Teil 1 fertig: Kamera 12°, Blockmuster bei tiefer Sonne, Lichtkreis.
 - Spielchronik Machbarkeitsnachweis (Q-046): Rekorder läuft ohne Zutun, Lean Memory wird daraus gegengerechnet.
 - HyperNorm-Boden je Deck (`deckGround`, WS-Design) nach Kartengebäude.
-- Deck-Moment beim Abschluss einer Zone, Kartenwind, Klingende Welt.
+- Hero-Shot beim Sammeln (Kartensitzung, `hero=1`, V-1230), danach Deck-Moment beim Abschluss einer Zone, Kartenwind, Klingende Welt.
 - Pistole und Blaster in Schichten (Flug-Sitzung), Hänger der ersten Explosion.
 - Hartgummi: Bäume und Props reagieren auf echten Kontakt, biegen und federn, nichts bleibt stecken (V-1229); direkt nach Runde 3, wenn das Volumen reicht.
 - Ladezeit vor dem Site-Paket.
