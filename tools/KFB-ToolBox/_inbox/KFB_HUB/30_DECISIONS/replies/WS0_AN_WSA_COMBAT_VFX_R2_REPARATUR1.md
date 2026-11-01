@@ -11,7 +11,9 @@ Georg zum Stand @ac07947e: Das Mündungsfeuer ist „viel zu mickrig“, „das 
 **3 · Ton.** Schuss aus Schichten: Anschlag, Körper mit Tiefton, Ausklang. Mehrere Varianten je Waffe, damit kein Schuss gleich klingt, genau im Takt mit der Flamme. Dazu Treffer und eine Explosion, weil Georg die Wucht im Ganzen beurteilt.
 - Quellen: zuerst `40_AUDIO/elevenlabs_r1/combat_av_fix_r1` bis `r3` und die Zuordnung in `src/audio/cueMap.js`, dann geeignete freie Sammlungen. Prüfe, ob die vorhandenen Dateien im Spiel überhaupt richtig ankommen, oder ob der Weg sie dünn macht.
 - Alles über `kfbAudio` (V-841), kein zweiter Abspielweg.
-- Neue ElevenLabs-Klänge nur, wenn Georg über WS0 zustimmt. Sag, was du damit bräuchtest.
+- **ElevenLabs ist freigegeben** (Georg 01.11.). Nutze es gezielt für das, was im Bestand fehlt, und führe Prompts und Dateien im Register der Klänge.
+- **Rang und Klangziel (V-1156):** Kampf- und Zerstörungssounds samt Kaskaden sind Georg „ebenso wichtig wie die Dieselpunk-Racer- und Engine-Sounds“. Sie sollen „visceral, immersiv und basslastig“ sein: „Star Wars THX, aber mit Steam-/Dieselpunk-Signatures“, also großer Tiefton und Raum, dazu Dampf, Ventile, Metall, Kolben.
+- **Kaskaden:** Ein Treffer ist eine Folge: Einschlag, Bersten, Trümmer, Nachrollen im Raum. Nähe, Größe und Material ändern sie. Schichten dürfen sich überlagern, ohne zu übersteuern; Tiefton braucht ein eigenes Budget im Mix.
 
 **4 · Selbst prüfen, bevor du abgibst.** Sieh die Videos aus der Spielkamera Bild für Bild an. Hören kannst du nicht: Prüfe beim Ton Pegel, Tiefton-Anteil, Länge und Takt zur Flamme und sag offen, dass die Hörabnahme bei Georg liegt. Ist die Wucht schon im Bild oder in den Tonwerten nicht da, gib es nicht ab.
 
