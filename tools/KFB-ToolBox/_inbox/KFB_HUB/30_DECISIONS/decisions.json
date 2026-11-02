@@ -18296,6 +18296,36 @@
    "superseded_by": [],
    "why": "Ein Generator, eine Bildquelle; H15 bleibt in der Curator-Site quellgetreu.",
    "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1252",
+   "date": "02.11.2026",
+   "area": "Video",
+   "verdict": "RULE",
+   "text": "HyperNorm-Gedichte lesbar (Georg 02.11.): Cut-up ja, aber jede gezeigte Einheit ist ein ganzer Sinnabschnitt bis zum Satzzeichen, hoechstens zwei Zeilen, Gedicht von vorn in Strophenfolge, keine lesbaren Wiederholungen (Ghosts nur Textur), Lesezeit ca. 0,35 s je Wort plus 1,2 s auch im DROP, Effekte nach 20 Prozent fertig, Einheit im Blick und nie ueber der Naht. Gilt fuer H15 PoemBand (Brief BRIEF_CLAUDE_DESIGN_H15_POEMS_R1 an Claude Design) und fuer Texte im deckGround-Generator.",
+   "values": {},
+   "owner": "Claude Design · WS-Design",
+   "check": "Clip vorher/nachher",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Verszeilen einzeln plus lesbare Ghosts plus Start beim laengsten Block zerschneiden Sinn; H15 bleibt in der Curator-Site quellgetreu, deshalb Fix an der Quelle.",
+   "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1253",
+   "date": "02.11.2026",
+   "area": "Video",
+   "verdict": "DECISION",
+   "text": "q404 Ja: WSA work veroeffentlicht H15 als Experience in der Curator-Site (Stand 29ce481, Site nur mit Anmeldung). Georg konnte die lokale Vorschau nicht oeffnen (laeuft auf dem Rechner der WSA-Sitzung); er beurteilt die veroeffentlichte Seite. Gedicht-Fix (V-1252) folgt als neuer H15-Pin von Claude Design, WSA zieht ihn nach.",
+   "values": {},
+   "owner": "WSA work",
+   "check": "q404",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Seite ist nicht oeffentlich, darum geringes Risiko; Urteil an der echten Seite statt an einer unerreichbaren Vorschau.",
+   "applies": "02.11.2026"
   }
  ],
  "imported_acceptance": [
