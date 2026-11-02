@@ -18461,6 +18461,36 @@
    "superseded_by": [],
    "why": "Spieler sehen die gedruckte Karte, nicht den Prompt; WS0 hatte die Zeile zu frueh uebernommen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1263",
+   "date": "03.11.2026",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Suno R3 (Georg 03.11.): fuenf Stile als Hub-Briefings b291-b295 mit getrenntem STYLE und LYRICS, Soli fuer die Ernte, je einem Deck-Cluster zugeordnet: Bluegrass (Money Trail, Monopolies, Farm), 80er Art-Pop im Geist von Roxy Music (Ignore Dystopia, Forget Utopia, HyperNorm), Kairo-Psychedelic der 70er (Pharaoh, 1001 Nights), Krautrock/Kosmische (Observation, KI), Klezmer mit Wiener Note (Freud, Therapy). SSOT-Datei SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R3.md. Vier neue Songs mit Stems (Reptilian Surfer, Sax and Trumpet Call, Tender Bends, S16 Cafe Absurde) werden geerntet und katalogisiert.",
+   "values": {},
+   "owner": "Georg (Suno) · WS0",
+   "check": "b291-b295, music_catalog_r1.json",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will neue Stile mit getrennten Kopierfeldern; Cluster-Zuordnung macht sie fuer Jukebox und Zonen nutzbar.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1264",
+   "date": "03.11.2026",
+   "area": "Video",
+   "verdict": "PLAN",
+   "text": "WSV Art Direction R1 (V-1254): Brief replies/VIDEO_R1/BRIEF_WSV_ART_DIRECTION_R1.md, Recherche ChatGPT plus Perplexity gesichert als RESEARCH_REMOTION_ART_DIRECTION_R1.md. Schritt A vier Style-Frames (Gedichtzeile, Planeten-Collage, Cut-out-Figur aus PD-Pool, alles zusammen) zur Abnahme im Hub; dann Clip 30-45 s auf Reptilian Surfer; dann gemeinsames Modul poem-timing. Sitzung als Chip fuer Georg angelegt. Kein Reviewer, Schritt A ist das Bild-Gate.",
+   "values": {},
+   "owner": "WSV",
+   "check": "Style-Frames",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Repos und Skills aus der Recherche statt Eigenbau (kfb-use-what-works).",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
