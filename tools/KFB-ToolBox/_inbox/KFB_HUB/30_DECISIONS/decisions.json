@@ -18341,6 +18341,21 @@
    "superseded_by": [],
    "why": "Remotion rendert bildgenau im Takt aus Song-Daten und ist als Clip mit Ton pruefbar; die Live-Engine braucht dieselben Regeln als geteilten Code, nicht als zweite Fassung.",
    "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1255",
+   "date": "02.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "deckGround R2 (design/deck-ground-r1 @23bd6567): Generator hnGround.js nach H15-Regeln je Zone, Inhalt nur aus dem Deck der Zone, Saat aus Deck und Ort, Planeten-Collage aus PLANET_CELLS, Textregel V-1252, Gate gruen; Bauzeit M1 Max 0,7-2,3 s je Zone, Felder bis 25 ms (wird auf zwei Bilder geteilt). Hub q405. Merge durch WS1 erst nach Georgs Ja und Mini-Zahlen; Gebaeudehuelle auf denselben Generator ist der naechste Schritt.",
+   "values": {},
+   "owner": "Georg · WS-Design",
+   "check": "q405",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Beleg zwei Decks von vorn und seitlich, WS0 angesehen; Gelaende drumherum selbst laut, das entscheidet Georg.",
+   "applies": "02.11.2026"
   }
  ],
  "imported_acceptance": [
