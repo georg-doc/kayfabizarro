@@ -1,3 +1,7 @@
+## 2026-11-02 · Printed card alongside the surveillance wiki voice draft
+
+[Wiki pilot](https://kfb-research-atlas.frizzlebob.chatgpt.site/ueberwachung.html) · [Deck page 9, lower left](https://kfb-research-atlas.frizzlebob.chatgpt.site/media/observation-underground/seite-09.pdf). Visually compared the whole page and card crop to the registry and verified PDF blob identity. The printed scene differs from the artwork prompt. See the [updated voice review](packages/ws0-dossier-pilot/WS0-01-VOICE-REVIEW.md). Site revision ed81c9a7ae76d364cbdbbbc340ecfb1efd9e4370. Next gate: Georg reviews the juxtaposition before more cards are illustrated.
+
 ## 2026-11-02 · Überwachung als Wiki-Pilot
 
 [Wer lässt den Agenten rein?](https://kfb-research-atlas.frizzlebob.chatgpt.site/ueberwachung.html) führt direkt oder über „Mehr erfahren“ zu Abschnitt D auf Druckseite 64, PDF-Seite 70. Explore unterscheidet Quellenbezug, Akteure und redaktionellen Motivvergleich. Rückverweise zur Karte und zum zweiten Verwendungskontext im Jiang-Dossier. Der alte Kartenlink führt zum Piloten, alle fünf Dossierebenen bleiben erreichbar. Site-Quelle b3e5ab23fe21859d3a3d74c692c38062c7089fc2. Lokaler Browsercheck für Zweiklickweg, Filter und Rücksprung, private Veröffentlichung und Live-Rücklesen der Inhaltsmerkmale erfolgreich. Nächster Schritt: Georg prüft den Lesepfad vor Übernahme für weitere Karten.
