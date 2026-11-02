@@ -56,6 +56,10 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | E-Funk mit Talkbox | 142 | G Moll | 119 |
 | Orchester-Charaktere | 108 | B Dur | 261 aus Gruppen-Stems, 1039 aus Advanced Split (553 eigenständig) |
 | Orchester 2 | 104 | G Moll | 252 aus Gruppen-Stems, 1197 aus Advanced Split (557 eigenständig, Saxophone = Übersprechen) |
+| Reptilian Surfer (Surf-Noir, 02.11.) | 129 | A Moll | 208 eigenständig (247 roh; Brass 92, Bariton-Sax 99, Tremolo-Gitarre 17) |
+| Sax and Trumpet Call (Northern Soul, 02.11.) | 117,5 | B Dur | 179 eigenständig (200 roh; Tenorsax 121, Trompete 49, Lead-Stem 7) |
+| Tender Bends (R&B, 02.11.) | 84 | F Dur | 428 eigenständig (623 roh; Altsax 156, gedämpfte Trompete 153, Gitarre 43, Rhodes 42, Synth 26) |
+| S16 Café Absurde, zweiter Take (02.11.) | 103,4 | D Dur (Prompt D Moll) | 226 eigenständig (265 roh; Klarinette 85, Kornett 63, Gitarre 49) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 

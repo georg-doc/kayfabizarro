@@ -18491,6 +18491,21 @@
    "superseded_by": [],
    "why": "Repos und Skills aus der Recherche statt Eigenbau (kfb-use-what-works).",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1265",
+   "date": "03.11.2026",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Ernte der vier neuen Suno-Songs (40_AUDIO/chatterbox_r1/suno_tests/<id>, Katalog und SSOT 6): reptilian_surfer 129 BPM A Moll 208 Phrasen (Brass, Bariton-Sax, Tremolo-Gitarre); sax_trumpet_call 117,5 BPM B Dur 179; tender_bends 84 BPM F Dur 428; cafe_absurde_b 103,4 BPM D Dur 226 (neuer Take, 223 s). Cafe-Bett bleibt bis Hub q407. dedupe_harvest.py liest nur adv_-Ordner (per Symlink umgangen); Brass und Woodwinds ueberschneiden sich stark.",
+   "values": {},
+   "owner": "WS0 · Georg (q407)",
+   "check": "music_catalog_r1.json, q407",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Neues Material fuer Chatterbox und Jukebox registriert; Bettwechsel nur nach Hoerurteil.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
