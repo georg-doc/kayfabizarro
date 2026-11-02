@@ -1,5 +1,16 @@
 # Changelog · KFB Asset Librarian
 
+## Polyfork Federated 3D Search proposal · 2026-11-02
+
+Status: OWNER-HANDOFF PROPOSAL · NO SITE/RUNTIME CHANGE
+
+- WS0 request: extend current Asset Librarian 3D asset search with Polyfork as a distinct read-only external source inside the existing Browse, Inspector, Saved Sets and shared Asset Picker; no second Registry or Site.
+- Source-first brief: _handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/POLYFORK_FEDERATED_3D_SEARCH_WS0_R1_2026-11-02.md.
+- Return: _handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/RETURN_POLYFORK_SEARCH_WS0_R1_2026-11-02.md.
+- Keep local Registry facts separate from externally fetched provider metadata; source-labeled cards, provider-specific filters, real isolated GLB proof, external candidate-only Saved Set and handoff. Source/rights review: Polyfork October 2026 free CDN hotlink permitted; KFB raw-file mirrors/exports not permitted without separate rights. Current API/CORS/3D real test pending.
+- Evidence: owner source and provider documentation read, two files written/read back. 0 runtime/browser/API-query/GLB tests, no Site publish, no branch merge, no new V-number. Existing Phase A QA 8/8 was not rerun.
+- Exactly one next gate: ASSET_LIBRARIAN_POLYFORK_SOURCE_PROOF_01 in the existing private Asset Librarian GPT Site, one actual free provider source object isolated and checked for CORS/license.
+
 ## Style Reference Library proposal · 2026-10-05
 
 Status: **PROPOSAL · PLANNING ONLY · NO RUNTIME / SITE CHANGE**
