@@ -1231,6 +1231,7 @@ d('V-1250','02.11.2026','Video','REVIEW','WSA work meldet H15 als Bereich Experi
 d('V-1251','02.11.2026','Look','PLAN','Planeten als Collage-Ebene (V-1240) gehen in den einen deckGround-Generator je Zone (V-1248): Quelle die Planeten-Einzelzellen aus dem Stamm, kein zweiter Atlas, nie als Planet erkennbar, Saat wie die Zone; Boden und Gebaeudehuelle. In der H15-Engine selbst (Curator) erst nach dem Spiel, als Engine-Runde bei Claude Design.','WS-Design','Georg Chat 02.11.','Georg 02.11.'),
 d('V-1252','02.11.2026','Video','RULE','HyperNorm-Gedichte lesbar (Georg 02.11.): Cut-up ja, aber jede gezeigte Einheit ist ein ganzer Sinnabschnitt bis zum Satzzeichen, hoechstens zwei Zeilen, Gedicht von vorn in Strophenfolge, keine lesbaren Wiederholungen (Ghosts nur Textur), Lesezeit ca. 0,35 s je Wort plus 1,2 s auch im DROP, Effekte nach 20 Prozent fertig, Einheit im Blick und nie ueber der Naht. Gilt fuer H15 PoemBand (Brief BRIEF_CLAUDE_DESIGN_H15_POEMS_R1 an Claude Design) und fuer Texte im deckGround-Generator.','Claude Design · WS-Design','Clip vorher/nachher','Georg 02.11.'),
 d('V-1253','02.11.2026','Video','DECISION','q404 Ja: WSA work veroeffentlicht H15 als Experience in der Curator-Site (Stand 29ce481, Site nur mit Anmeldung). Georg konnte die lokale Vorschau nicht oeffnen (laeuft auf dem Rechner der WSA-Sitzung); er beurteilt die veroeffentlichte Seite. Gedicht-Fix (V-1252) folgt als neuer H15-Pin von Claude Design, WSA zieht ihn nach.','WSA work','q404','Georg 02.11.'),
+d('V-1254','02.11.2026','Video','PLAN','Art-Direction-Slice im Videostudio WSV (Remotion, von WS0 orchestriert) statt Claude-Design-Brief: Gedichttypografie nach V-1252, Planeten-Collage (V-1240), Paper-Art/Cut-out im Geist von Terry Gilliam (PD-Bildpool, Kartenschnipsel, Pappe, Stop-Motion auf Zweiern). Erst Style-Frames zur Abnahme (V-740), dann ein Clip auf einem vorhandenen Song, dann ein gemeinsames Modul fuer Zeitlogik und Satz, das H15 und der deckGround-Generator uebernehmen. Brief b287 pausiert. Georg sammelt Remotion-Repos von Reddit; Brief geht danach raus.','WSV · WS0','Style-Frames, Clip','Georg 02.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2449,6 +2450,7 @@ WHY = {
  'V-1251':('Ein Generator, eine Bildquelle; H15 bleibt in der Curator-Site quellgetreu.','02.11.2026'),
  'V-1252':('Verszeilen einzeln plus lesbare Ghosts plus Start beim laengsten Block zerschneiden Sinn; H15 bleibt in der Curator-Site quellgetreu, deshalb Fix an der Quelle.','02.11.2026'),
  'V-1253':('Seite ist nicht oeffentlich, darum geringes Risiko; Urteil an der echten Seite statt an einer unerreichbaren Vorschau.','02.11.2026'),
+ 'V-1254':('Remotion rendert bildgenau im Takt aus Song-Daten und ist als Clip mit Ton pruefbar; die Live-Engine braucht dieselben Regeln als geteilten Code, nicht als zweite Fassung.','02.11.2026'),
 }
 SUP = {}
 for e in E:
