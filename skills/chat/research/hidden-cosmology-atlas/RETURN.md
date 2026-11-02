@@ -1,3 +1,7 @@
+## 2026-11-02 · Überwachung als Wiki-Pilot
+
+[Wer lässt den Agenten rein?](https://kfb-research-atlas.frizzlebob.chatgpt.site/ueberwachung.html) führt direkt oder über „Mehr erfahren“ zu Abschnitt D auf Druckseite 64, PDF-Seite 70. Explore unterscheidet Quellenbezug, Akteure und redaktionellen Motivvergleich. Rückverweise zur Karte und zum zweiten Verwendungskontext im Jiang-Dossier. Der alte Kartenlink führt zum Piloten, alle fünf Dossierebenen bleiben erreichbar. Site-Quelle b3e5ab23fe21859d3a3d74c692c38062c7089fc2. Lokaler Browsercheck für Zweiklickweg, Filter und Rücksprung, private Veröffentlichung und Live-Rücklesen der Inhaltsmerkmale erfolgreich. Nächster Schritt: Georg prüft den Lesepfad vor Übernahme für weitere Karten.
+
 ## 2026-11-02 · WS0 surveillance card voice review
 
 [Original tip, revised candidate, permission test and visual-source handoff](packages/ws0-dossier-pilot/WS0-01-VOICE-REVIEW.md). Next gate: Georg reads the new line aloud and reviews it for the card.
