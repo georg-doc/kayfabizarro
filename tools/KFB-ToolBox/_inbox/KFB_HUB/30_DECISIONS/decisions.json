@@ -18446,6 +18446,21 @@
    "superseded_by": [],
    "why": "Georg hat am Bild abgenommen, Mini belegt den Leistungsgewinn.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1262",
+   "date": "03.11.2026",
+   "area": "Wissen",
+   "verdict": "RULE",
+   "text": "Korrigiert V-1258: FrizzleBob-Tipps haengen nur an Druckbild oder Kartentext der gedruckten Karte, nie am artworkPrompt (NSA Backdoor: Druck zeigt Tier mit Grubenhelm am BIG-TECH-Schrank, winkender Gastgeber steht nur im Prompt; Atlas-Commit 5770ed4). Je Karte drei getrennte Felder: Druckbild nach PDF-Seite mit Lage, Kartentext, Motivprompt, je mit Quellrevision. NSA-Tipp wird neu geschrieben. Deckwerkstatt (Atlas, Workchat, Google-Dokument mit drei Tabs, NotebookLM) ruht bis nach dem MVP. Ein Spielanschluss: Hinter der Karte ueber Karten-ID, spaeter am Historiker-Prop im Kartenfaecher (V-1213, V-1203).",
+   "values": {},
+   "owner": "Recherche-Atlas",
+   "check": "b290",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Spieler sehen die gedruckte Karte, nicht den Prompt; WS0 hatte die Zeile zu frueh uebernommen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
