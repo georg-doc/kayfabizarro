@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "entries": [
   {
    "id": "V-001",
@@ -18116,6 +18116,21 @@
    "superseded_by": [],
    "why": "Fertige Staende sind drin; Pause kostet nichts, naechste groessere Slices starten mit vollem Volumen.",
    "applies": "01.11."
+  },
+  {
+   "id": "V-1242",
+   "date": "2026-11-02",
+   "area": "Prozess",
+   "verdict": "PLAN",
+   "text": "Runde 3 mit Stufe C abgeschlossen (Q-050), Testfahrt-Adresse als Hub-Frage mit place=r3. Limit zurueckgesetzt. Start Block 2: WS1 Hero-Shot-Merge, Planeten nachladen, Chronik, sammel=1; WS-Verteiler Hartgummi auf eigenem Branch mit kleinem Haken fuer WS1; WS-Design deckGround mit Planeten-Collage. N-072.",
+   "values": {},
+   "owner": "WS1, WS-Verteiler, WS-Design",
+   "check": "Q-050, N-072",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Volle Breite nach Limit-Ruecksetzung, Dateigrenzen getrennt, damit sich niemand in die Quere kommt.",
+   "applies": "02.11."
   },
   {
    "id": "V-427",
