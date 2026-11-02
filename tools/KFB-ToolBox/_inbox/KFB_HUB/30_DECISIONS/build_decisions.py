@@ -1227,6 +1227,8 @@ d('V-427','2026-10-17','Prozess','TBD','Repo privat (Georg: Ziel privates Repo, 
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 d('V-1248','02.11.2026','Design','RULE','HyperNorm-Flächen im Spiel (Boden laut, Gebäudehülle) nie aus einem eingefrorenen Engine-Standbild: Ein festes Motiv oder ein fester Satz wiederholt sich und liest sich als Aussage oder Bias. Die Fläche wird je Zone aus den Regeln der H15-Engine erzeugt (Bänder, Naht, Raster), einmal beim Bau der Zone; Text- und Bildfelder füllt das Deck der Zone mit seinen eigenen Karten. Karten und Cover bleiben feste Bilder, sie sind gestaltete Deck-Inhalte. q403: laut.','WS-Design','q403 laut; Georg zu Standbildern','Georg 02.11.'),
 d('V-1249','02.11.2026','Spiel','PLAN','N-074 an WS1: Variante erledigt=e, gesammelte Geländekarte löst sich nach dem Hero-Shot per Sprenkel-Modul auf (erster Teil der Befreiung), Kartengebäude bleiben Trümmer-Landmarke; Hub-Frage nach Beleg. N-067 Warteschlange Go (600 m oder ein Spieltag). Planeten R29 einbauen. Dann Deck-Moment, dann Ladezeit. cellMemory ruht bis Truhen. Testfahrt-Adresse q401 aktualisiert (gummi=1, cardart=pack, kein hero=1).','WS1','Q-051 bis Q-055','Georg 02.11. (Idee verschwinden)'),
+d('V-1250','02.11.2026','Video','REVIEW','WSA work meldet H15 als Bereich Experience in der Curator-Site (Commit 29ce481, Vorschau 127.0.0.1:5416 nur auf dem Mac der Sitzung, Pool 481/481, 7 Gedichte, 320 Zitate, 31/31 + 13/13 Tests, 94-97 fps, H15 quellgetreu, nichts veroeffentlicht). WS0 kann die Vorschau nicht sehen; Hub q404 fragt Georg nach Ja zur Veroeffentlichung.','Georg','q404','Georg 02.11.'),
+d('V-1251','02.11.2026','Look','PLAN','Planeten als Collage-Ebene (V-1240) gehen in den einen deckGround-Generator je Zone (V-1248): Quelle die Planeten-Einzelzellen aus dem Stamm, kein zweiter Atlas, nie als Planet erkennbar, Saat wie die Zone; Boden und Gebaeudehuelle. In der H15-Engine selbst (Curator) erst nach dem Spiel, als Engine-Runde bei Claude Design.','WS-Design','Georg Chat 02.11.','Georg 02.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2441,6 +2443,8 @@ WHY = {
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
  'V-1248':('Georg: Standbilder frieren Aussagen ein und können als Bias gelesen werden; die Engine lebt vom Wechsel. Je Zone einmal erzeugt kostet kaum Leistung, laufende Engine im Spiel wäre teuer.','02.11.2026'),
  'V-1249':('Georg: Verblassen wirkt verwaschen, Haken im Gelände unsichtbar, gesammelte Karten sollen eher verschwinden. Das passt zur Befreiung; Gebäude-Trümmer halten die Landmarken-Regel.','02.11.2026'),
+ 'V-1250':('Brief vom 25.10. abgeschlossen; Veroeffentlichen nur nach Georgs Ja.','02.11.2026'),
+ 'V-1251':('Ein Generator, eine Bildquelle; H15 bleibt in der Curator-Site quellgetreu.','02.11.2026'),
 }
 SUP = {}
 for e in E:
