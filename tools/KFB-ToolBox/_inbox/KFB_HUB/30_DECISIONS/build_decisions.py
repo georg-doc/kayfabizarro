@@ -1233,6 +1233,8 @@ d('V-1252','02.11.2026','Video','RULE','HyperNorm-Gedichte lesbar (Georg 02.11.)
 d('V-1253','02.11.2026','Video','DECISION','q404 Ja: WSA work veroeffentlicht H15 als Experience in der Curator-Site (Stand 29ce481, Site nur mit Anmeldung). Georg konnte die lokale Vorschau nicht oeffnen (laeuft auf dem Rechner der WSA-Sitzung); er beurteilt die veroeffentlichte Seite. Gedicht-Fix (V-1252) folgt als neuer H15-Pin von Claude Design, WSA zieht ihn nach.','WSA work','q404','Georg 02.11.'),
 d('V-1254','02.11.2026','Video','PLAN','Art-Direction-Slice im Videostudio WSV (Remotion, von WS0 orchestriert) statt Claude-Design-Brief: Gedichttypografie nach V-1252, Planeten-Collage (V-1240), Paper-Art/Cut-out im Geist von Terry Gilliam (PD-Bildpool, Kartenschnipsel, Pappe, Stop-Motion auf Zweiern). Erst Style-Frames zur Abnahme (V-740), dann ein Clip auf einem vorhandenen Song, dann ein gemeinsames Modul fuer Zeitlogik und Satz, das H15 und der deckGround-Generator uebernehmen. Brief b287 pausiert. Georg sammelt Remotion-Repos von Reddit; Brief geht danach raus.','WSV · WS0','Style-Frames, Clip','Georg 02.11.'),
 d('V-1255','02.11.2026','Look','REVIEW','deckGround R2 (design/deck-ground-r1 @23bd6567): Generator hnGround.js nach H15-Regeln je Zone, Inhalt nur aus dem Deck der Zone, Saat aus Deck und Ort, Planeten-Collage aus PLANET_CELLS, Textregel V-1252, Gate gruen; Bauzeit M1 Max 0,7-2,3 s je Zone, Felder bis 25 ms (wird auf zwei Bilder geteilt). Hub q405. Merge durch WS1 erst nach Georgs Ja und Mini-Zahlen; Gebaeudehuelle auf denselben Generator ist der naechste Schritt.','Georg · WS-Design','q405','Georg 02.11.'),
+d('V-1256','02.11.2026','Look','DECISION','q405 Passt, einbauen: deckGround R2 geht in den Stamm hinter deckground=1 (N-075, WS1), sobald Mini-Zahlen da sind und kein Feld ueber ca. 12 ms braucht. Naechster Schritt WS-Design: Gebaeudehuelle aus demselben Generator statt laufender Engine.','WS1 · WS-Design','q405','Georg 02.11.'),
+d('V-1257','02.11.2026','Prozess','PLAN','Hub-Dateispeicher 94 Prozent (963 Dateien, ca. 1 GB): WS0 archiviert alte und verwaiste Hub-Dateien geprueft (sha256) nach KFB_HUB_ARCHIV/hub_assets; Loeschen nur per Knopf im Hub durch Georg, archivierte Slides werden als archiviert markiert. Behalten: offene Fragen, Briefings, Strands, Seite, letzte 3 Tage.','WS0 · Georg (Klick)','Hub-Bereich Speicher aufraeumen','Georg 02.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2453,6 +2455,8 @@ WHY = {
  'V-1253':('Seite ist nicht oeffentlich, darum geringes Risiko; Urteil an der echten Seite statt an einer unerreichbaren Vorschau.','02.11.2026'),
  'V-1254':('Remotion rendert bildgenau im Takt aus Song-Daten und ist als Clip mit Ton pruefbar; die Live-Engine braucht dieselben Regeln als geteilten Code, nicht als zweite Fassung.','02.11.2026'),
  'V-1255':('Beleg zwei Decks von vorn und seitlich, WS0 angesehen; Gelaende drumherum selbst laut, das entscheidet Georg.','02.11.2026'),
+ 'V-1256':('Georg hat am Bild abgenommen.','02.11.2026'),
+ 'V-1257':('Endgueltiges Loeschen macht WS0 nie selbst; Archiv zuerst.','02.11.2026'),
 }
 SUP = {}
 for e in E:

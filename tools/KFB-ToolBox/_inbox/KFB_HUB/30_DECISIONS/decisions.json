@@ -18356,6 +18356,36 @@
    "superseded_by": [],
    "why": "Beleg zwei Decks von vorn und seitlich, WS0 angesehen; Gelaende drumherum selbst laut, das entscheidet Georg.",
    "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1256",
+   "date": "02.11.2026",
+   "area": "Look",
+   "verdict": "DECISION",
+   "text": "q405 Passt, einbauen: deckGround R2 geht in den Stamm hinter deckground=1 (N-075, WS1), sobald Mini-Zahlen da sind und kein Feld ueber ca. 12 ms braucht. Naechster Schritt WS-Design: Gebaeudehuelle aus demselben Generator statt laufender Engine.",
+   "values": {},
+   "owner": "WS1 · WS-Design",
+   "check": "q405",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat am Bild abgenommen.",
+   "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1257",
+   "date": "02.11.2026",
+   "area": "Prozess",
+   "verdict": "PLAN",
+   "text": "Hub-Dateispeicher 94 Prozent (963 Dateien, ca. 1 GB): WS0 archiviert alte und verwaiste Hub-Dateien geprueft (sha256) nach KFB_HUB_ARCHIV/hub_assets; Loeschen nur per Knopf im Hub durch Georg, archivierte Slides werden als archiviert markiert. Behalten: offene Fragen, Briefings, Strands, Seite, letzte 3 Tage.",
+   "values": {},
+   "owner": "WS0 · Georg (Klick)",
+   "check": "Hub-Bereich Speicher aufraeumen",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Endgueltiges Loeschen macht WS0 nie selbst; Archiv zuerst.",
+   "applies": "02.11.2026"
   }
  ],
  "imported_acceptance": [
