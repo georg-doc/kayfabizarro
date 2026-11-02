@@ -18401,6 +18401,21 @@
    "superseded_by": [],
    "why": "Konkretes Bilddetail statt Maschinen-Metaphern macht die Stimme menschlich und verbindet Karte, NPC und Spiel ueber dasselbe Detail; Umfang bleibt klein bis zum MVP.",
    "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1259",
+   "date": "02.11.2026",
+   "area": "Prozess",
+   "verdict": "BUILD",
+   "text": "Hub-Speicher (V-1257): 623 Dateien, ca. 537 MB, nur aus beantworteten Karten aelter als 3 Tage, archiviert in KFB_HUB_ARCHIV/hub_assets (297 neu, sha256 geprueft) plus hub_karten/dateien (326 vom 31.10.). Hub Version 32 mit Bereich Speicher aufraeumen unter Fragen, Loeschen erst nach zweitem Klick durch Georg, Liste cleanup/r1. Offen: 58 Dateien ohne Verweis nicht erfasst; Knopf im Browser ungetestet (Browser-Pane ohne Anmeldung).",
+   "values": {},
+   "owner": "Georg (Klick)",
+   "check": "cleanup/r1",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Archiv vor Loeschen; Klick bleibt bei Georg.",
+   "applies": "02.11.2026"
   }
  ],
  "imported_acceptance": [
