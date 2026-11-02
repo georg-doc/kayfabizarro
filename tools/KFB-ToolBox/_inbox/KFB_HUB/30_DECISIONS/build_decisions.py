@@ -1243,6 +1243,7 @@ d('V-1262','03.11.2026','Wissen','RULE','Korrigiert V-1258: FrizzleBob-Tipps hae
 d('V-1263','03.11.2026','Audio','BUILD','Suno R3 (Georg 03.11.): fuenf Stile als Hub-Briefings b291-b295 mit getrenntem STYLE und LYRICS, Soli fuer die Ernte, je einem Deck-Cluster zugeordnet: Bluegrass (Money Trail, Monopolies, Farm), 80er Art-Pop im Geist von Roxy Music (Ignore Dystopia, Forget Utopia, HyperNorm), Kairo-Psychedelic der 70er (Pharaoh, 1001 Nights), Krautrock/Kosmische (Observation, KI), Klezmer mit Wiener Note (Freud, Therapy). SSOT-Datei SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R3.md. Vier neue Songs mit Stems (Reptilian Surfer, Sax and Trumpet Call, Tender Bends, S16 Cafe Absurde) werden geerntet und katalogisiert.','Georg (Suno) · WS0','b291-b295, music_catalog_r1.json','Georg 03.11.'),
 d('V-1264','03.11.2026','Video','PLAN','WSV Art Direction R1 (V-1254): Brief replies/VIDEO_R1/BRIEF_WSV_ART_DIRECTION_R1.md, Recherche ChatGPT plus Perplexity gesichert als RESEARCH_REMOTION_ART_DIRECTION_R1.md. Schritt A vier Style-Frames (Gedichtzeile, Planeten-Collage, Cut-out-Figur aus PD-Pool, alles zusammen) zur Abnahme im Hub; dann Clip 30-45 s auf Reptilian Surfer; dann gemeinsames Modul poem-timing. Sitzung als Chip fuer Georg angelegt. Kein Reviewer, Schritt A ist das Bild-Gate.','WSV','Style-Frames','Georg 03.11.'),
 d('V-1265','03.11.2026','Audio','BUILD','Ernte der vier neuen Suno-Songs (40_AUDIO/chatterbox_r1/suno_tests/<id>, Katalog und SSOT 6): reptilian_surfer 129 BPM A Moll 208 Phrasen (Brass, Bariton-Sax, Tremolo-Gitarre); sax_trumpet_call 117,5 BPM B Dur 179; tender_bends 84 BPM F Dur 428; cafe_absurde_b 103,4 BPM D Dur 226 (neuer Take, 223 s). Cafe-Bett bleibt bis Hub q407. dedupe_harvest.py liest nur adv_-Ordner (per Symlink umgangen); Brass und Woodwinds ueberschneiden sich stark.','WS0 · Georg (q407)','music_catalog_r1.json, q407','Georg 03.11.'),
+d('V-1266','03.11.2026','Video','REVIEW','WSV Art Direction R1 Schritt A: vier Style-Frames (Blake-Zeile auf Zeitungsstreifen, 16 gerissene Planeten-Innenausschnitte, Cut-out-Figur aus Gudea-Kopf, Mughal-Mantel, Marmorbeinen mit Musterklammern und Klappkiefer, alles zusammen mit Poe), eigener SVG-Code, @remotion/noise und fonts 4.0.536, Frame 60 byte-gleich. Hub q408; WS0-Anmerkung: noch eher ruhig, Gilliam waere wilder. Offen: Takt gegen Audio pruefen, 512-px-Zellen werden gross weich, Schatten drehen mit.','Georg · WSV','q408','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2473,6 +2474,7 @@ WHY = {
  'V-1263':('Georg will neue Stile mit getrennten Kopierfeldern; Cluster-Zuordnung macht sie fuer Jukebox und Zonen nutzbar.','03.11.2026'),
  'V-1264':('Repos und Skills aus der Recherche statt Eigenbau (kfb-use-what-works).','03.11.2026'),
  'V-1265':('Neues Material fuer Chatterbox und Jukebox registriert; Bettwechsel nur nach Hoerurteil.','03.11.2026'),
+ 'V-1266':('Bild-Gate vor dem Clip (V-740).','03.11.2026'),
 }
 SUP = {}
 for e in E:
