@@ -1,3 +1,7 @@
+## 2026-11-02 · WS0 surveillance card voice review
+
+[Original tip, revised candidate, permission test and visual-source handoff](packages/ws0-dossier-pilot/WS0-01-VOICE-REVIEW.md). Next gate: Georg reads the new line aloud and reviews it for the card.
+
 ## 2026-11-01 · Sporrenberg, Originalzugang und Gegenprobe
 
 [Prüfbericht](breadth/sporrenberg-vernehmungen.md). Britischer Bestand amtlich als nicht digitalisiert ausgewiesen. Zwei veröffentlichte Berichtsauszüge geprüft. Polnische Spur 947/Z, Bd. III, S. 527 im Verfahren gegen Erich Koch lokalisiert. Nächster Schritt ist die Konkordanz beim IPN und Einsicht in die vollständigen Protokolle beider Tage. Technische Verbindung weiterhin unbelegt.

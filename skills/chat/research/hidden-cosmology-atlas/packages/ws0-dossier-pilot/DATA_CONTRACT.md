@@ -9,3 +9,7 @@ The five WS0 layers coexist with V-363 stages L0 sources → L1 essay → L2 exi
 Dialogue contract (not implemented): request card/topic ID + permitted source scope + desired depth; return answer segments with claim/source IDs and passage locators, or an explicit unknown. Retrieval/access control and any model key live on a server. Static Site capability does not itself supply an LLM, private-source retrieval or a game integration. No keys embedded in game/browser assets. No hosted dialogue endpoint, BYOK or live NPC is claimed here.
 
 Conceptual relations: surveillance→basilisk (different kinds of coercion); basilisk→sealed room (imagined inevitability); sealed room→surveillance (recovering bounded agency). These are editorial teaching comparisons, not historical influence or coordination edges.
+
+## Card motif handoff for WS0
+
+For each card, carry the source visual description beside lore and power, with exact donor field, revision and inspection status. Resolve deck ID and card number and check name before reuse. [Verified example and voice review](WS0-01-VOICE-REVIEW.md).
