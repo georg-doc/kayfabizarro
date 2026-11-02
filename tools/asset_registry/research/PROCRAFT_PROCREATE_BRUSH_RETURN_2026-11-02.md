@@ -7,7 +7,7 @@ Repo: `georg-doc/kayfabizarro`
 Branch: `research/procraft-brush-interoperability-2026-11-02`
 Base: `main` at `7e1c4ab0f143b2f1c0f33017eb473574f20190c9`
 Initial research checkpoint: `0561816768114ec153ef9d364d522483e49eaf75`
-PR: none at this checkpoint; no merge authorized.
+Draft PR: #464 · https://github.com/georg-doc/kayfabizarro/pull/464 · open, unmerged; no merge authorized.
 
 ## Outcome
 
