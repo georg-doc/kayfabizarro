@@ -1235,6 +1235,7 @@ d('V-1254','02.11.2026','Video','PLAN','Art-Direction-Slice im Videostudio WSV (
 d('V-1255','02.11.2026','Look','REVIEW','deckGround R2 (design/deck-ground-r1 @23bd6567): Generator hnGround.js nach H15-Regeln je Zone, Inhalt nur aus dem Deck der Zone, Saat aus Deck und Ort, Planeten-Collage aus PLANET_CELLS, Textregel V-1252, Gate gruen; Bauzeit M1 Max 0,7-2,3 s je Zone, Felder bis 25 ms (wird auf zwei Bilder geteilt). Hub q405. Merge durch WS1 erst nach Georgs Ja und Mini-Zahlen; Gebaeudehuelle auf denselben Generator ist der naechste Schritt.','Georg · WS-Design','q405','Georg 02.11.'),
 d('V-1256','02.11.2026','Look','DECISION','q405 Passt, einbauen: deckGround R2 geht in den Stamm hinter deckground=1 (N-075, WS1), sobald Mini-Zahlen da sind und kein Feld ueber ca. 12 ms braucht. Naechster Schritt WS-Design: Gebaeudehuelle aus demselben Generator statt laufender Engine.','WS1 · WS-Design','q405','Georg 02.11.'),
 d('V-1257','02.11.2026','Prozess','PLAN','Hub-Dateispeicher 94 Prozent (963 Dateien, ca. 1 GB): WS0 archiviert alte und verwaiste Hub-Dateien geprueft (sha256) nach KFB_HUB_ARCHIV/hub_assets; Loeschen nur per Knopf im Hub durch Georg, archivierte Slides werden als archiviert markiert. Behalten: offene Fragen, Briefings, Strands, Seite, letzte 3 Tage.','WS0 · Georg (Klick)','Hub-Bereich Speicher aufraeumen','Georg 02.11.'),
+d('V-1258','02.11.2026','Wissen','DECISION','Recherche-Atlas-Pilot (b286; kayfabizarro research/hidden-cosmology-atlas, Commit 513d45b, Paket 880c849, Draft-PR 394) abgenommen: drei Dossiers mit fuenf Ebenen, cid-Schnittstelle, Aufwand 6-13 h je Themendossier. Uebernommen: neue Tipp-Zeile NSA Backdoor (Dietrich, winkender Hausherr, no sign of forced entry); Regel Tipp haengt am Detail des Kartenmotivs, Motivtext plus Feldname plus Quellrevision je Karte; Solution Watch als pruefbare 5-10-Minuten-Aufgabe mit ehrlicher Grenze. Letzter Schritt: zwei weitere Tipps, zwei Quellenluecken; dann Pause bis nach dem MVP (b289).','Recherche-Atlas · Georg','b289','Georg 02.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2457,6 +2458,7 @@ WHY = {
  'V-1255':('Beleg zwei Decks von vorn und seitlich, WS0 angesehen; Gelaende drumherum selbst laut, das entscheidet Georg.','02.11.2026'),
  'V-1256':('Georg hat am Bild abgenommen.','02.11.2026'),
  'V-1257':('Endgueltiges Loeschen macht WS0 nie selbst; Archiv zuerst.','02.11.2026'),
+ 'V-1258':('Konkretes Bilddetail statt Maschinen-Metaphern macht die Stimme menschlich und verbindet Karte, NPC und Spiel ueber dasselbe Detail; Umfang bleibt klein bis zum MVP.','02.11.2026'),
 }
 SUP = {}
 for e in E:
