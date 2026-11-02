@@ -18148,6 +18148,21 @@
    "applies": "02.11."
   },
   {
+   "id": "V-1244",
+   "date": "2026-11-02",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Hartgummi world/gummi-r1 @5711ce5f, gummi=1: Kontaktliste je Zelle, Biegen nach Tempo, Wagen drueckt sich durch, Figur gleitet, Felsen bremsen, Schatten biegt mit; zwei kleine Haken fuer WS1. Clips zeigen das Gefuehl kaum, darum Urteil in der Testfahrt nach Merge hinter Schalter. Mini-Messung bestellt. N-073.",
+   "values": {},
+   "owner": "WS1, WS-Verteiler",
+   "check": "WFC_BEWEIS_R10_GUMMI",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fahrgefuehl entscheidet sich beim Fahren, nicht am Video.",
+   "applies": "02.11."
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
