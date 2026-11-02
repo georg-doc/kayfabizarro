@@ -1,0 +1,12 @@
+Mini (WSB) · design/huelle-gen-r1 @0f39654a · 03.11.2026 00:00
+Last vorher { 1.54 1.47 1.44 } (gewartet 0 s)
+Last nachher { 1.23 1.35 1.39 }
+Dauer 182 s, Exit 1
+Letzte Konsolenzeile: Node.js v24.22.2
+Abbruch Lauf 1: Vite fand src/private/40_AUDIO/elevenlabs_r1/debris_crash_r1/D03_metal_bits_a.mp3 nicht (Ordner fehlte im privaten Teil-Checkout des Mini), Startknopf kam nie. Ordner nachgeholt, Lauf 2:
+Mini (WSB) · design/huelle-gen-r1 @0f39654a · 03.11.2026 00:04
+Last vorher { 1.36 1.37 1.40 } (gewartet 0 s)
+Last nachher { 1.88 1.63 1.50 }
+Dauer 224 s, Exit 0
+Letzte Konsolenzeile: {"machine":{"cpu":"Apple M4","host":"Mac.fritz.box"},"runs":[{"tag":"alt","deck":"","info":{"ready":true,"uploads":68,"owners":1,"width":1024,"height":512,"pool":594,"audioContexts":0,"error":null},"measure":{"frameMed":13.5,"frameP95":81.6,"gpuWaitMed":26.9,"mainBusyPct":39.3,"scriptMsPerS":324.8,"gatedFrameMed":31},"load":[1.6,1.44,1.42],"errors":[]},{"tag":"gen","deck":"forget_utopia","info":{"
+Hinweise Lauf 2: huelle.json errors=[] in allen 4 Laeufen. Im Log 25x Vite 'Failed to resolve import virtual:kfb-v945 from src/m2/M2Car.jsx' (Pre-transform) und 4x 'net::ERR_HTTP2_PROTOCOL_ERROR', beide ohne Abbruch. review/assets und review/donors als Verknuepfung auf replies/HUELLE_R1/review_src, nicht committet. Privater Teil-Checkout um 40_AUDIO/elevenlabs_r1/debris_crash_r1 erweitert.

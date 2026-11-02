@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "entries": [
   {
    "id": "V-001",
@@ -18431,6 +18431,21 @@
    "superseded_by": [],
    "why": "Ein Generator fuer Boden und Huelle (V-1248), dazu grosser Leistungsgewinn.",
    "applies": "02.11.2026"
+  },
+  {
+   "id": "V-1261",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "DECISION",
+   "text": "q406 Passt, einbauen: Huelle aus dem Bodengenerator (design/huelle-gen-r1 @0f39654a) geht nach deckGround in den Stamm hinter huelle=gen (N-077, WS1). Mini: mit GPU-Abgleich 25,8 statt 29,5-31 ms je Bild, P95 24 statt 69-82 ms, Skriptzeit halbiert, Bauschritt max. 7,1 ms. Testfahrt danach mit deckground=1,huelle=gen.",
+   "values": {},
+   "owner": "WS1",
+   "check": "q406, replies/HUELLE_R1/MINI",
+   "source": "Georg 02.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat am Bild abgenommen, Mini belegt den Leistungsgewinn.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

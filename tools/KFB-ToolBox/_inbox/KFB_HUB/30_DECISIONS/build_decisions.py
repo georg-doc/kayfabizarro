@@ -1238,6 +1238,7 @@ d('V-1257','02.11.2026','Prozess','PLAN','Hub-Dateispeicher 94 Prozent (963 Date
 d('V-1258','02.11.2026','Wissen','DECISION','Recherche-Atlas-Pilot (b286; kayfabizarro research/hidden-cosmology-atlas, Commit 513d45b, Paket 880c849, Draft-PR 394) abgenommen: drei Dossiers mit fuenf Ebenen, cid-Schnittstelle, Aufwand 6-13 h je Themendossier. Uebernommen: neue Tipp-Zeile NSA Backdoor (Dietrich, winkender Hausherr, no sign of forced entry); Regel Tipp haengt am Detail des Kartenmotivs, Motivtext plus Feldname plus Quellrevision je Karte; Solution Watch als pruefbare 5-10-Minuten-Aufgabe mit ehrlicher Grenze. Letzter Schritt: zwei weitere Tipps, zwei Quellenluecken; dann Pause bis nach dem MVP (b289).','Recherche-Atlas · Georg','b289','Georg 02.11.'),
 d('V-1259','02.11.2026','Prozess','BUILD','Hub-Speicher (V-1257): 623 Dateien, ca. 537 MB, nur aus beantworteten Karten aelter als 3 Tage, archiviert in KFB_HUB_ARCHIV/hub_assets (297 neu, sha256 geprueft) plus hub_karten/dateien (326 vom 31.10.). Hub Version 32 mit Bereich Speicher aufraeumen unter Fragen, Loeschen erst nach zweitem Klick durch Georg, Liste cleanup/r1. Offen: 58 Dateien ohne Verweis nicht erfasst; Knopf im Browser ungetestet (Browser-Pane ohne Anmeldung).','Georg (Klick)','cleanup/r1','Georg 02.11.'),
 d('V-1260','02.11.2026','Look','REVIEW','Gebaeudehuelle aus dem deckGround-Generator (design/huelle-gen-r1 @0f39654a, huelle=gen): sheet-engine.js ersetzt die laufende H15-Engine im iframe, ganze Felder je Wandband, keine lesbare Zeile doppelt, Dach wie Boden, Haken gegen Doppel zwischen Boden und Huelle. MacBook: Hauptfaden 71-93 auf 9-11 Prozent, Bildabstand P95 69-90 auf 33-34 ms. Hub q406. Merge nach Georgs Ja und Mini-Zahlen. Befund: Viertel-Seite braucht nicht eingecheckte review/assets (gatling.glb, platformer/) und review/donors/sw-fx.js, Klaerung beim Viertel-Merge.','Georg · WS-Design','q406','Georg 02.11.'),
+d('V-1261','03.11.2026','Look','DECISION','q406 Passt, einbauen: Huelle aus dem Bodengenerator (design/huelle-gen-r1 @0f39654a) geht nach deckGround in den Stamm hinter huelle=gen (N-077, WS1). Mini: mit GPU-Abgleich 25,8 statt 29,5-31 ms je Bild, P95 24 statt 69-82 ms, Skriptzeit halbiert, Bauschritt max. 7,1 ms. Testfahrt danach mit deckground=1,huelle=gen.','WS1','q406, replies/HUELLE_R1/MINI','Georg 02.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2463,6 +2464,7 @@ WHY = {
  'V-1258':('Konkretes Bilddetail statt Maschinen-Metaphern macht die Stimme menschlich und verbindet Karte, NPC und Spiel ueber dasselbe Detail; Umfang bleibt klein bis zum MVP.','02.11.2026'),
  'V-1259':('Archiv vor Loeschen; Klick bleibt bei Georg.','02.11.2026'),
  'V-1260':('Ein Generator fuer Boden und Huelle (V-1248), dazu grosser Leistungsgewinn.','02.11.2026'),
+ 'V-1261':('Georg hat am Bild abgenommen, Mini belegt den Leistungsgewinn.','03.11.2026'),
 }
 SUP = {}
 for e in E:
