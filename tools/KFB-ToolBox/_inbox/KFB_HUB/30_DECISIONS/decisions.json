@@ -19331,6 +19331,21 @@
    "superseded_by": [],
    "why": "Augen lesen ueber Kontrast: weisser Ball, farbiges Lid.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1321",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Planet nachts dunkler (world/planet-einfuegen-r1 @216344b2): eigener Wertesatz der Kuppel in kfb-sky-r1.json einfuegen-Block (Nacht-Belichtung 0,1, Schwarzpunkt 0,006, Farbstich 0,8, Saettigung 0,7, Saum 0,2), Helligkeit 60 auf 33 (Wolken 37); Hub q427. Pop-up-Bestand R2 (design/popups-bestand-r2 @b25ae69c, privat @465745fb): 28 Motive Tueren, Tresore, Mystery-Szenen, Wasser-Dioramen ueber kfbInsert, Tags in kfb-themen-tags.r1.json; Klassen an WS-Verteiler fuer einzelPlaetze.r1.json.",
+   "values": {},
+   "owner": "WS-Himmel · WS-Design · WS-Verteiler",
+   "check": "q427",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Modul, eigene Werte je Anwendung.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

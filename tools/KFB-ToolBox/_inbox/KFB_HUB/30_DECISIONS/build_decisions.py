@@ -1298,6 +1298,7 @@ d('V-1317','03.11.2026','HUD','DECISION','Georg 03.11.: Schliessen-X in HUD und 
 d('V-1318','03.11.2026','Spiel','TUNE','Georg-Antworten: q426 Viertel Stufe 2 Passt; q425 Planet Passt, aber Vorschauen kaum lesbar; q424 Einfuegen TUNE nur Planet nachts zu hell (an WS-Himmel); q423 HUD TUNE: Vorhang und Buehne bildschirmfuellend, nach dem Laden Kamerafahrt in die Spielkamera, Knet-Ladebalken aus echtem Fortschritt, FLUFFY aus neuen Boegen (an Kartenkante). Ink Blobs sind die Fluffer (Gegner), nicht Pop-ups; Vorschauen nie verzerren. Hub-Belege ab jetzt gross: ein Vergleich pro Bild, hoechstens zwei Felder. N-099 an WS1: Merge-Liste nach der blinden Kritik (Topfpflanzen inkl. EyeRig-Lidfarbe mit NPC-Check, Einfuegen, Planet, Viertel Stufe 2, HUD nach Abnahme).','Kartenkante · WS-Himmel · WS-Design · WS1','q423-q426, N-099','Georg 03.11.'),
 d('V-1319','03.11.2026','Spiel','DECISION','Ink Blobs = Fluffer-Gegner (Georg 03.11.): Saetze evil teen R5 (8), magical R4 (8), Baskenmuetzen-Tintenmonster. Immer als gemischte Gruppen mit Cartoon-Huepfen (Squash & Stretch, versetzte Phasen); beim Landen dunkle matt glaenzende GPU-Tintenspritzer; Zensur-Tintenspuren ueber vorhandenes src/look/inkPatch.js, temporaer verblassend, Heilen spaeter; keine grosse Komplexitaet. Auf mobs2d, Einfuegen-Modul, ein Atlas, Instancing, Partikel-Pool; Schalter inkblobs=1. Slice an Rakete/Flug-Sitzung.','Rakete/Flug · Georg','b306','Georg 03.11.'),
 d('V-1320','03.11.2026','Figuren','DECISION','Georg praezisiert die Lid-Regel: Lider farbig im Farbton der Umgebung, kraeftig und deutlich dunkler als der weisse Augapfel; die aufgehellten Lider (EyeRig _lidColor ohne Abdunkeln) waren das Problem. Figuren-Sitzung: Farbton halten, Saettigung halten/anheben, Helligkeit deckeln (etwa 60 % des Augapfel-Weiss), keine Farbton-Verschiebung; Beleg Toepfe plus zwei NPCs.','Figuren · Georg','q422, V-1312','Georg 03.11.'),
+d('V-1321','03.11.2026','Welt','REVIEW','Planet nachts dunkler (world/planet-einfuegen-r1 @216344b2): eigener Wertesatz der Kuppel in kfb-sky-r1.json einfuegen-Block (Nacht-Belichtung 0,1, Schwarzpunkt 0,006, Farbstich 0,8, Saettigung 0,7, Saum 0,2), Helligkeit 60 auf 33 (Wolken 37); Hub q427. Pop-up-Bestand R2 (design/popups-bestand-r2 @b25ae69c, privat @465745fb): 28 Motive Tueren, Tresore, Mystery-Szenen, Wasser-Dioramen ueber kfbInsert, Tags in kfb-themen-tags.r1.json; Klassen an WS-Verteiler fuer einzelPlaetze.r1.json.','WS-Himmel · WS-Design · WS-Verteiler','q427','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2583,6 +2584,7 @@ WHY = {
  'V-1318':('Georg urteilt nur so gut, wie er die Bilder lesen kann.','03.11.2026'),
  'V-1319':('Charakter durch Bewegung und VFX statt neuer Systeme; vorhandene Tinte wiederverwenden.','03.11.2026'),
  'V-1320':('Augen lesen ueber Kontrast: weisser Ball, farbiges Lid.','03.11.2026'),
+ 'V-1321':('Ein Modul, eigene Werte je Anwendung.','03.11.2026'),
 }
 SUP = {}
 for e in E:
