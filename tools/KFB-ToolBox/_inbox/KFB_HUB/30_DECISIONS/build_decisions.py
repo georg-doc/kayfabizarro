@@ -1336,6 +1336,7 @@ d('V-1355','03.11.2026','Spiel','TUNE','Georg-Antworten: q451 Kartenbau-Konzept 
 d('V-1356','03.11.2026','Welt','REVIEW','Truhe Staubfahnen-Rauch (dustTrail-Material, flacher Stoss am Fuss) und Monolith-Rueckseite so hell wie Vorderseite (design/tueren-r1 @168e43ef); Hub q452, q453. Kartenrelief im Gelaende-Shader: cardAlbedo.js (kartenalbedo=1) von WS-Design, Anschluss im Relief an WS1 (N-104), dritte unbeleuchtete Bildschicht im Relief gefunden.','WS-Design · WS1 · Georg','q447, q448, q452, q453, N-104','Georg 03.11.'),
 d('V-1357','03.11.2026','HUD','REVIEW','Radio in der Ecke (module/hud-clay-r1 @5bb9ac66): keine Leiste, Gehaeuse ~200-226 x ~100 px, Topper ueber den Bildrand, Icons frei im Slot (22 px), Titel nur im Maxi; Hub q454. Tueren-Uebergang aus dem Portal-Wirbel (design/tueren-r1 @da82a885): Radius = Oeffnung x (1+40k^2), k aus Abstand zur Bildebene/6 m, Ausgang schrumpft ueber 8 m, Sprenkel nur als Rand; Hub q455.','Kartenkante · WS-Design · Georg','q450, q449, q454, q455','Georg 03.11.'),
 d('V-1358','03.11.2026','Look','REVIEW','Kontakt-Haertung (world/sonne-tag-r1 @3c8fc5db, src/look/shadowContact.js ersetzt getShadow nur in Endlos-Welt): Vergleichsleiter 0,15/0,6/1,8 m fuer Abstand Werfer-Empfaenger, Proben 4/9/8, Radius 1,5 cm + 7 cm/m (max 35 cm), Staerke x1,55 am Werfer bis x0,6 ab 4,5 m; Werte in kfb-drive-moods kontaktschatten; Kosten nicht messbar. Hub q456.','WS-Himmel · Georg','q446, q456','Georg 03.11.'),
+d('V-1359','03.11.2026','Welt','REVIEW','Kartenbau R2 (design/kartenbau-r1 @8449bc26, enthaelt tueren-r1; src/world/kartenBau.js): Waende/Dach einmal frontal mit echtem Huellen-Material gebacken, Karten als Ausschnitte (135 Karten/7 Gebaeude), Ablauf 1,7 s je Gebaeude (Stapel-Squash, 35-ms-Staffel, Flip mit Ueberschwung, Einrasten mit Slow-in/Squash/Nachfedern, Fugen zu, Glanz), Staub und Kartenklang; Schlussdifferenz Mittel 11/255 (2-4 px Kantenversatz durch gerundete Box). Offen: Kit-Haeuser flach im Flug. Hub q457.','WS-Design · Georg','q451, q457','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2659,6 +2660,7 @@ WHY = {
  'V-1356':('Karten im Gelaende sind Gelaende: ein Licht, ein Shader.','03.11.2026'),
  'V-1357':('Der Effekt kommt aus dem Objekt; das HUD duckt sich in die Ecke.','03.11.2026'),
  'V-1358':('Schatten verankern Figuren am Boden, ohne zu den 2D-Props zu brechen.','03.11.2026'),
+ 'V-1359':('Konzept zuerst hat getragen: Karten sind die Fassade, nichts wird getauscht.','03.11.2026'),
 }
 SUP = {}
 for e in E:

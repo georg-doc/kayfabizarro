@@ -19901,6 +19901,21 @@
    "superseded_by": [],
    "why": "Schatten verankern Figuren am Boden, ohne zu den 2D-Props zu brechen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1359",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Kartenbau R2 (design/kartenbau-r1 @8449bc26, enthaelt tueren-r1; src/world/kartenBau.js): Waende/Dach einmal frontal mit echtem Huellen-Material gebacken, Karten als Ausschnitte (135 Karten/7 Gebaeude), Ablauf 1,7 s je Gebaeude (Stapel-Squash, 35-ms-Staffel, Flip mit Ueberschwung, Einrasten mit Slow-in/Squash/Nachfedern, Fugen zu, Glanz), Staub und Kartenklang; Schlussdifferenz Mittel 11/255 (2-4 px Kantenversatz durch gerundete Box). Offen: Kit-Haeuser flach im Flug. Hub q457.",
+   "values": {},
+   "owner": "WS-Design · Georg",
+   "check": "q451, q457",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Konzept zuerst hat getragen: Karten sind die Fassade, nichts wird getauscht.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
