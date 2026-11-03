@@ -19046,6 +19046,21 @@
    "superseded_by": [],
    "why": "Testfahrt fuer Georg mit allem, was schon im Stamm ist.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1302",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "PLAN",
+   "text": "Befund WS-Design: Im Endlos-Spiel gibt es heute keine Kartengebaeude (Zonenart viertel inaktiv, cascade/r4 nur auf der Viertel-Seite). Go an WS-Design: (1) deckGround-Blatt in vier Streifen ueber vier Bilder hochladen (ca. 4 statt 14,5 ms), (2) Generator-Huelle als Vorgabe in cascade/r4, alte Engine hinter Schalter, (3) Kartenviertel ins Endlos-Spiel hinter viertel=1, selten als Ereignis, Boden plus Huelle aus einem Generator, zerstoerbar mit dem vorhandenen Zerstoerungs-Modul, kein Schritt ueber 12 ms. Grundlage Georgs V-1289 (Zerstoerung der Kartengebaeude als Hauptmechanismus).",
+   "values": {},
+   "owner": "WS-Design · WS1",
+   "check": "Belege Viertel",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Hauptmechanismus braucht die Gebaeude im Endlos-Spiel.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
