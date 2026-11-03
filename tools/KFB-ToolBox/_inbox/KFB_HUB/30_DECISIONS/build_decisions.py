@@ -1249,6 +1249,7 @@ d('V-1268','03.11.2026','Video','FAIL','q408 Art Direction R1 FAIL (Georg: total
 d('V-1269','03.11.2026','Video','PLAN','Gemeinfreier Pool um fruehe Zeichentrick- und Filmclips erweitern (Georg 03.11.): Cartoons vor Mickey Mouse (McCay, Cohl, Fleischer, Felix, Aesop, Reiniger, Starewitsch) und Schwarz-Weiss-Menschenmengen (z. B. Metropolis 1927, Prelinger) als HyperNorm-Ebene. Zuerst Katalog durch WSV (Quelle, Grund der Gemeinfreiheit, Laenge, Groesse, Szenen); Download erst nach Georgs Ja und wenn Plattenplatz da ist.','WSV · Georg','Katalogliste','Georg 03.11.'),
 d('V-1270','03.11.2026','Video','REVIEW','WSV Papier-Musikvideo R2: Konzept KONZEPT_GILLIAM_R2.md und Storyboard (drei Gags an Observation Underground: Taschenspion, Handy-Nacken, 6 Stunden 58 Minuten; Gedichte Blake Sick Rose, Blake Tiger, Poe Raven als Erpresserbrief, Flugblatt, Sprechblase; Quellen im Abspann; je Gag 13-15 s auf Reptilian Surfer). Hub q409 mit FAIL-Option; Ja schliesst das Laden weniger gemeinfreier Stiche und Fotos ein. Luecke: Animations of Mortality nicht einsehbar.','Georg · WSV','q409','Georg 03.11.'),
 d('V-1271','03.11.2026','Video','REVIEW','PD-Filmkatalog R1 (WSV, 60_VIDEO/art_direction_r1/PD_FILM_KATALOG_R1.md): 38 Eintraege, 20 auch in DE frei (ca. 4,8 GB). Nur ueberall freie Titel; Fleischer, Felix, Aesop nur USA, Reiniger, Starewitsch, Metropolis in DE geschuetzt, entfallen. Erste Auswahl sechs Clips ca. 1 GB ohne Ton (Gertie, Little Nemo, Lusitania, Mann mit der Kamera, Siegesparade San Francisco 1918 mit Masken, Siegesparade Paris 1918), Hub q410; Rest bei mehr Plattenplatz. LoC lieferte 403.','Georg · WSV','q410','Georg 03.11.'),
+d('V-1272','03.11.2026','Video','DECISION','Georg 03.11.: alle Filme aus dem PD-Katalog nehmen, dazu Stummfilm-Klassiker und Bauhaus-Stil. WSV laedt jetzt die 20 ueberall freien Titel nach 60_VIDEO/pd_film (Stopp unter 9 GB frei); die 18 nur in den USA freien folgen bei mehr Platz, nur privat. Katalog R2: Stummfilm (Melies, Caligari, Nosferatu, Chaplin, Keaton, Lloyd) und Bauhaus/abstrakter Film (Schlemmer, Ruttmann, Eggeling, Moholy-Nagy) plus Bauhaus-Grafik. Suno R3: fuenf Songs mit Stems da (Porch Roll, Glossy Melancholy, Hijaz Spring Reverb, Kuehle Wiederholung, Freylekhs Dance), Ernte laeuft.','WSV · WS0','q410, pd_film','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2485,6 +2486,7 @@ WHY = {
  'V-1269':('Passt zu Dada, Collage und HyperNorm; Platte voll, deshalb erst Liste.','03.11.2026'),
  'V-1270':('Konzept vor Render nach FAIL R1 (V-1268).','03.11.2026'),
  'V-1271':('Downloads nur mit Georgs Ja und gezielt wegen Plattenplatz.','03.11.2026'),
+ 'V-1272':('Georg hat alle freigegeben; gestaffelt wegen Plattenplatz.','03.11.2026'),
 }
 SUP = {}
 for e in E:
