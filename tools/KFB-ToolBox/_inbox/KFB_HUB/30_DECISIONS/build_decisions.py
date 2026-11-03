@@ -1248,6 +1248,7 @@ d('V-1267','03.11.2026','Prozess','TODO','Festplatte voll (2 GB frei, Georg 03.1
 d('V-1268','03.11.2026','Video','FAIL','q408 Art Direction R1 FAIL (Georg: totaler Murks, AI-Slop): Planeten-Schnipsel nur Unruhe, Figur konzeptlos, Gedichte wie Webseiten-Layout, Quellenzeile unlesbar und fehl am Platz. Naechster Schritt WSV: Gilliams Handwerk aus Primaerquellen (Animations of Mortality), ein Konzeptblatt mit drei Gags als Storyboard an echten KFB-Karten, Gedichte als Teil des Gags, Quellen im Abspann; Bau erst nach Georgs Ja. Keine Planeten-Schnipsel in dieser Runde.','WSV','Konzeptblatt','Georg 03.11.'),
 d('V-1269','03.11.2026','Video','PLAN','Gemeinfreier Pool um fruehe Zeichentrick- und Filmclips erweitern (Georg 03.11.): Cartoons vor Mickey Mouse (McCay, Cohl, Fleischer, Felix, Aesop, Reiniger, Starewitsch) und Schwarz-Weiss-Menschenmengen (z. B. Metropolis 1927, Prelinger) als HyperNorm-Ebene. Zuerst Katalog durch WSV (Quelle, Grund der Gemeinfreiheit, Laenge, Groesse, Szenen); Download erst nach Georgs Ja und wenn Plattenplatz da ist.','WSV · Georg','Katalogliste','Georg 03.11.'),
 d('V-1270','03.11.2026','Video','REVIEW','WSV Papier-Musikvideo R2: Konzept KONZEPT_GILLIAM_R2.md und Storyboard (drei Gags an Observation Underground: Taschenspion, Handy-Nacken, 6 Stunden 58 Minuten; Gedichte Blake Sick Rose, Blake Tiger, Poe Raven als Erpresserbrief, Flugblatt, Sprechblase; Quellen im Abspann; je Gag 13-15 s auf Reptilian Surfer). Hub q409 mit FAIL-Option; Ja schliesst das Laden weniger gemeinfreier Stiche und Fotos ein. Luecke: Animations of Mortality nicht einsehbar.','Georg · WSV','q409','Georg 03.11.'),
+d('V-1271','03.11.2026','Video','REVIEW','PD-Filmkatalog R1 (WSV, 60_VIDEO/art_direction_r1/PD_FILM_KATALOG_R1.md): 38 Eintraege, 20 auch in DE frei (ca. 4,8 GB). Nur ueberall freie Titel; Fleischer, Felix, Aesop nur USA, Reiniger, Starewitsch, Metropolis in DE geschuetzt, entfallen. Erste Auswahl sechs Clips ca. 1 GB ohne Ton (Gertie, Little Nemo, Lusitania, Mann mit der Kamera, Siegesparade San Francisco 1918 mit Masken, Siegesparade Paris 1918), Hub q410; Rest bei mehr Plattenplatz. LoC lieferte 403.','Georg · WSV','q410','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2483,6 +2484,7 @@ WHY = {
  'V-1268':('Stil eines Meisters ist Arbeitsweise, nicht Textur; Konzept vor Render (V-740).','03.11.2026'),
  'V-1269':('Passt zu Dada, Collage und HyperNorm; Platte voll, deshalb erst Liste.','03.11.2026'),
  'V-1270':('Konzept vor Render nach FAIL R1 (V-1268).','03.11.2026'),
+ 'V-1271':('Downloads nur mit Georgs Ja und gezielt wegen Plattenplatz.','03.11.2026'),
 }
 SUP = {}
 for e in E:
