@@ -1337,6 +1337,10 @@ d('V-1356','03.11.2026','Welt','REVIEW','Truhe Staubfahnen-Rauch (dustTrail-Mate
 d('V-1357','03.11.2026','HUD','REVIEW','Radio in der Ecke (module/hud-clay-r1 @5bb9ac66): keine Leiste, Gehaeuse ~200-226 x ~100 px, Topper ueber den Bildrand, Icons frei im Slot (22 px), Titel nur im Maxi; Hub q454. Tueren-Uebergang aus dem Portal-Wirbel (design/tueren-r1 @da82a885): Radius = Oeffnung x (1+40k^2), k aus Abstand zur Bildebene/6 m, Ausgang schrumpft ueber 8 m, Sprenkel nur als Rand; Hub q455.','Kartenkante · WS-Design · Georg','q450, q449, q454, q455','Georg 03.11.'),
 d('V-1358','03.11.2026','Look','REVIEW','Kontakt-Haertung (world/sonne-tag-r1 @3c8fc5db, src/look/shadowContact.js ersetzt getShadow nur in Endlos-Welt): Vergleichsleiter 0,15/0,6/1,8 m fuer Abstand Werfer-Empfaenger, Proben 4/9/8, Radius 1,5 cm + 7 cm/m (max 35 cm), Staerke x1,55 am Werfer bis x0,6 ab 4,5 m; Werte in kfb-drive-moods kontaktschatten; Kosten nicht messbar. Hub q456.','WS-Himmel · Georg','q446, q456','Georg 03.11.'),
 d('V-1359','03.11.2026','Welt','REVIEW','Kartenbau R2 (design/kartenbau-r1 @8449bc26, enthaelt tueren-r1; src/world/kartenBau.js): Waende/Dach einmal frontal mit echtem Huellen-Material gebacken, Karten als Ausschnitte (135 Karten/7 Gebaeude), Ablauf 1,7 s je Gebaeude (Stapel-Squash, 35-ms-Staffel, Flip mit Ueberschwung, Einrasten mit Slow-in/Squash/Nachfedern, Fugen zu, Glanz), Staub und Kartenklang; Schlussdifferenz Mittel 11/255 (2-4 px Kantenversatz durch gerundete Box). Offen: Kit-Haeuser flach im Flug. Hub q457.','WS-Design · Georg','q451, q457','Georg 03.11.'),
+d('V-1360','03.11.2026','Welt','KEEP','Truhe mit Staubfahnen-Rauch (q452) und Monolith-Rueckseite so hell wie vorne (q453): Passt, so einbauen. Merge erst mit Stand, in dem Tueren-Uebergang hinter eigenem Flag aus bleibt.','WS-Design · Georg','q452, q453','Georg 03.11.'),
+d('V-1361','03.11.2026','Welt','TUNE','Tueren-Uebergang (q455): Mechanismus bleibt; Uebergangsbild = eigenes 2D-Bild der Tuer/des Portals spiralig verwirbelt (fraktaler Strudel), psychedelisch gemischt mit dem Kartenmotiv des Ziel-Bioms. Tuer-/Portal-Props nur farbiger Glow mit wabernden Energiestroemen (Sci-Fi). Erst Storyboard + Clip.','WS-Design · Georg','q455','Georg 03.11.'),
+d('V-1362','03.11.2026','Look','TUNE','Schatten (q456): Wurfschatten zurueck auf vorher (schwaecher, kuerzer, weich); FB behaelt volle Farbigkeit; neu nur kurzer dunkler Kontaktschatten am Fuss/an der Prop-Basis (AO-artig).','WS-Himmel · Georg','q456','Georg 03.11.'),
+d('V-1363','03.11.2026','Welt','TUNE','Kartenbau (q457): Abschluss-Glanz von unten nach oben (Beamer-Logik) im HyperNorm-Look statt schraeg; Zellgrenzen organisch ueberblenden statt grau betonen; weniger technisch: Timing/Kurven zuerst als Remotion-Clip (After-Effects-Logik), nach Abnahme ins Spiel; Kit-Vorspruenge im Flug nicht flach.','WS-Design · Georg','q457','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2661,6 +2665,10 @@ WHY = {
  'V-1357':('Der Effekt kommt aus dem Objekt; das HUD duckt sich in die Ecke.','03.11.2026'),
  'V-1358':('Schatten verankern Figuren am Boden, ohne zu den 2D-Props zu brechen.','03.11.2026'),
  'V-1359':('Konzept zuerst hat getragen: Karten sind die Fassade, nichts wird getauscht.','03.11.2026'),
+ 'V-1360':('Abgenommenes geht rein, Offenes bleibt hinter Flag.','03.11.2026'),
+ 'V-1361':('Der Uebergang entsteht aus dem Bild der Tuer selbst, nicht aus einer fremden Flaeche.','03.11.2026'),
+ 'V-1362':('Schatten verankern, ohne Farbe und Leichtigkeit der Figur zu nehmen.','03.11.2026'),
+ 'V-1363':('Transitions wie im Motion Design denken: erst Kurven im Clip, dann Spiel.','03.11.2026'),
 }
 SUP = {}
 for e in E:
