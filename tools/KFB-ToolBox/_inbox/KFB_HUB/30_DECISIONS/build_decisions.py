@@ -1315,6 +1315,7 @@ d('V-1334','03.11.2026','HUD','REVIEW','Radio kompakt (module/hud-clay-r1 @17390
 d('V-1335','03.11.2026','Spiel','DECISION','Georg waehlt aus der blinden Kritik (q434): echte Sonne/harte Schatten/ruhiger Tagesboden (WS-Himmel), naechste Karte als Monolith und Bauten setzen sich aus Karten zusammen (WS-Design), Fluglage mit kippendem Horizont und Spuren in der Knete (Rakete/Flug). Rest auf Wiedervorlage (replies/WIEDERVORLAGE_BLINDE_KRITIK_R1.md). q435 Radio: kein UI-Wechsel, Titel im Fenster, Knoepfe fest; Lautstaerke ggf. ins Sound-Overlay (Kartenkante). q436 Truhe: kein Knet-Rauch, Puff wie Geysir-/Explosions-Verpuffung ohne Feuer; Pfuetzen versickern mit Transparenz (WS-Design). Ink Blobs an Verteiler-Plaetzen (inkblobs-r1 @a758b193), Zusammenspieltest beim Verteiler.','WS-Himmel · WS-Design · Rakete/Flug · Kartenkante','q434-q436','Georg 03.11.'),
 d('V-1336','03.11.2026','HUD','REVIEW','Radio fest (module/hud-clay-r1 @754258a7): Gehaeuse wie Bogen, kompakt, Knoepfe fest in Slots, Titel als Lauftext im 14-px-Fenster (11,5 px Schrift), kein Herausklappen/Hover/Equalizer; Ton-Knopf nur stumm, Lautstaerke in Einstellungen > Sound; Pixelvergleich Songwechsel 0/8462 geaendert. Hub q437.','Kartenkante · Georg','q435, q437','Georg 03.11.'),
 d('V-1337','03.11.2026','Welt','REVIEW','Truhe TUNE (design/truhen-r1 @0f73f9a9): Puff = Anfang der Kampf-Verpuffung (explosionSheets puff, until/fade), ohne Feuer, ~1 s; Pfuetzen versickern mit Transparenz (melt.fade); Hub q438. Alle 2D-Assets ueber WFC (world/popup-klassen-r3 @1042104b): Ink-Blob-Raster 165 Gruppen/9 km2, Fuss-Dressing aus vorhandenem Bewuchs, Sichtgarantie mit dichtem 58-m-Raster ohne Karte in 150 m (kein Pop-up im Bild 13,7 % auf 1,1 %); 1819 Pop-ups/9 km2 - WSB-Messung vor Merge; Baumgeister deckeln; Denker wirkt blass (pruefen). Hub q439. Platte 7,8 GB: git-tmp_pack (445 MB) in den Papierkorb, Georg leert Papierkorb und App-Cache.','WS-Design · WS-Verteiler · Georg','q438, q439','Georg 03.11.'),
+d('V-1338','03.11.2026','Technik','STATUS','WSB-Messung dichte Pop-ups (Mini M4, popup-klassen-r3 @0f3c34ce gegen @746414f3): Pop-ups samt Flecken ~0,1 ms, Gesamtstand +0,2 bis 0,7 ms (Rest vermutlich Fuss-Dressing); nur 7/14 aktive Pop-ups an den Messorten, 30+ ungemessen; Bewuchs traegt 12 von 18 ms bei x5/z-1478. Kein Instancing je Motiv noetig.','WSB · WS-Verteiler','V-1337','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2617,6 +2618,7 @@ WHY = {
  'V-1335':('Wenige starke Ideen jetzt, der Rest wartet sichtbar; UI bleibt stabil.','03.11.2026'),
  'V-1336':('Ein festes Bedienfeld aus Georgs Vorlage; Lesbarkeit an der Grenze offen benennen.','03.11.2026'),
  'V-1337':('Immer etwas zu entdecken, ohne das Hauptziel zu ueberdecken; vorher messen.','03.11.2026'),
+ 'V-1338':('Erst messen, dann optimieren.','03.11.2026'),
 }
 SUP = {}
 for e in E:
