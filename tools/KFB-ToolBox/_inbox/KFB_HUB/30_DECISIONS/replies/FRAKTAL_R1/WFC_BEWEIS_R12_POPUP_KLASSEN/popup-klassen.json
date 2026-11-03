@@ -1,0 +1,599 @@
+{
+ "feld_m": 4000,
+ "plaetze": 134,
+ "klassen": {
+  "figur": 30,
+  "szene": 21,
+  "baumgeist": 26,
+  "wasser": 12,
+  "wahrzeichen": 4,
+  "statue": 18,
+  "tresor": 8,
+  "tuer": 8,
+  "ding": 7
+ },
+ "biome": {
+  "pastell": 31,
+  "mesa": 26,
+  "moos": 15,
+  "canyon": 22,
+  "schnee": 5,
+  "wueste": 35
+ },
+ "motive": {
+  "az_mondgoettin": 7,
+  "az_jaguar": 11,
+  "az_sternenpriester": 4,
+  "sz_sumpfwrack": 4,
+  "(Biom)": 26,
+  "wa_korallenfall": 1,
+  "wz_sternwarte": 1,
+  "az_federschlange": 8,
+  "sz_orakel": 4,
+  "st_diskobolos": 5,
+  "tresor_auge": 1,
+  "st_denker": 3,
+  "wa_oasenbogen": 2,
+  "sz_spiralportal": 3,
+  "tresor_kosmos": 1,
+  "tuer_sumpf": 2,
+  "sz_labor": 4,
+  "wa_sumpfaugen": 3,
+  "st_nike": 6,
+  "ding_fahrrad": 7,
+  "st_venus": 4,
+  "wa_wuestenoase": 2,
+  "sz_spukvilla": 3,
+  "tresor_jahrmarkt": 1,
+  "tuer_wald": 2,
+  "wa_glyzinie": 2,
+  "wz_hanok_tor": 2,
+  "tresor_sonne": 1,
+  "tuer_hafen": 1,
+  "tresor_dschungel": 2,
+  "wz_kreml": 1,
+  "tresor_industrie": 1,
+  "tuer_wueste": 3,
+  "wa_dschungelfall": 2,
+  "sz_observatorium": 2,
+  "sz_stelzenhuette": 1,
+  "tresor_pirat": 1
+ },
+ "unpassend_anteil": 0.19,
+ "gleiches_motiv_nachbarn": [
+  "ding_fahrrad"
+ ],
+ "wasser_lage": {
+  "steil_max": 0.119,
+  "tiefer_min_m": 1.24
+ },
+ "andere_lage": {
+  "steil_max": 0.2,
+  "tiefer_min_m": -14.1
+ },
+ "neu": [
+  {
+   "x": -1843.6,
+   "z": -1682,
+   "klasse": "szene",
+   "motiv": "sz_sumpfwrack",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -556.2,
+   "z": -1533.3,
+   "klasse": "wasser",
+   "motiv": "wa_korallenfall",
+   "passt": false,
+   "biome": "moos",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": -1044.2,
+   "z": -1369.7,
+   "klasse": "szene",
+   "motiv": "sz_orakel",
+   "passt": false,
+   "biome": "canyon",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1028.4,
+   "z": -1357.3,
+   "klasse": "tresor",
+   "motiv": "tresor_auge",
+   "passt": true,
+   "biome": "pastell",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": -876.4,
+   "z": -1203.6,
+   "klasse": "wasser",
+   "motiv": "wa_oasenbogen",
+   "passt": false,
+   "biome": "schnee",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 1992.2,
+   "z": -1214.7,
+   "klasse": "szene",
+   "motiv": "sz_orakel",
+   "passt": false,
+   "biome": "mesa",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -1184.6,
+   "z": -1029.3,
+   "klasse": "szene",
+   "motiv": "sz_spiralportal",
+   "passt": true,
+   "biome": "canyon",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -710,
+   "z": -1042.8,
+   "klasse": "szene",
+   "motiv": "sz_sumpfwrack",
+   "passt": true,
+   "biome": "schnee",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 90.9,
+   "z": -1038.1,
+   "klasse": "tresor",
+   "motiv": "tresor_kosmos",
+   "passt": false,
+   "biome": "wueste",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": 888.6,
+   "z": -1030.8,
+   "klasse": "tuer",
+   "motiv": "tuer_sumpf",
+   "passt": true,
+   "biome": "pastell",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": 1020.1,
+   "z": -1056.9,
+   "klasse": "szene",
+   "motiv": "sz_labor",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1531.2,
+   "z": -1047.3,
+   "klasse": "wasser",
+   "motiv": "wa_sumpfaugen",
+   "passt": true,
+   "biome": "pastell",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": -1204.9,
+   "z": -721.7,
+   "klasse": "wasser",
+   "motiv": "wa_wuestenoase",
+   "passt": true,
+   "biome": "wueste",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 1821,
+   "z": -736.5,
+   "klasse": "szene",
+   "motiv": "sz_spukvilla",
+   "passt": true,
+   "biome": "canyon",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -882.9,
+   "z": -540.5,
+   "klasse": "tresor",
+   "motiv": "tresor_jahrmarkt",
+   "passt": true,
+   "biome": "mesa",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": 94.7,
+   "z": -547.2,
+   "klasse": "szene",
+   "motiv": "sz_labor",
+   "passt": true,
+   "biome": "wueste",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 889.6,
+   "z": -576.7,
+   "klasse": "szene",
+   "motiv": "sz_orakel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -1045.9,
+   "z": -400.9,
+   "klasse": "wasser",
+   "motiv": "wa_sumpfaugen",
+   "passt": false,
+   "biome": "moos",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": -579,
+   "z": -394.3,
+   "klasse": "tuer",
+   "motiv": "tuer_wald",
+   "passt": false,
+   "biome": "wueste",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": -883.5,
+   "z": -239.8,
+   "klasse": "wasser",
+   "motiv": "wa_glyzinie",
+   "passt": false,
+   "biome": "wueste",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 75.2,
+   "z": -246.7,
+   "klasse": "szene",
+   "motiv": "sz_spiralportal",
+   "passt": true,
+   "biome": "wueste",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -705.4,
+   "z": -97.6,
+   "klasse": "tresor",
+   "motiv": "tresor_sonne",
+   "passt": true,
+   "biome": "wueste",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": -549.3,
+   "z": -90.2,
+   "klasse": "tuer",
+   "motiv": "tuer_hafen",
+   "passt": false,
+   "biome": "wueste",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": 400.1,
+   "z": -83.3,
+   "klasse": "tresor",
+   "motiv": "tresor_dschungel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": 712.6,
+   "z": -98.3,
+   "klasse": "szene",
+   "motiv": "sz_labor",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -896.1,
+   "z": 228.4,
+   "klasse": "tresor",
+   "motiv": "tresor_industrie",
+   "passt": true,
+   "biome": "wueste",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": 894.9,
+   "z": 226.6,
+   "klasse": "wasser",
+   "motiv": "wa_glyzinie",
+   "passt": false,
+   "biome": "wueste",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": -1349.5,
+   "z": 415.7,
+   "klasse": "tresor",
+   "motiv": "tresor_dschungel",
+   "passt": true,
+   "biome": "canyon",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": -719.5,
+   "z": 571.6,
+   "klasse": "tuer",
+   "motiv": "tuer_wueste",
+   "passt": true,
+   "biome": "wueste",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": -238.5,
+   "z": 575.9,
+   "klasse": "tuer",
+   "motiv": "tuer_wueste",
+   "passt": true,
+   "biome": "canyon",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": 1197.3,
+   "z": 559.4,
+   "klasse": "wasser",
+   "motiv": "wa_dschungelfall",
+   "passt": true,
+   "biome": "canyon",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": -882.2,
+   "z": 868,
+   "klasse": "wasser",
+   "motiv": "wa_oasenbogen",
+   "passt": true,
+   "biome": "wueste",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 404.6,
+   "z": 863.6,
+   "klasse": "tuer",
+   "motiv": "tuer_wueste",
+   "passt": true,
+   "biome": "wueste",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": -1059.6,
+   "z": 1049.4,
+   "klasse": "szene",
+   "motiv": "sz_spukvilla",
+   "passt": true,
+   "biome": "wueste",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 83.5,
+   "z": 1029.8,
+   "klasse": "wasser",
+   "motiv": "wa_wuestenoase",
+   "passt": true,
+   "biome": "wueste",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 1020.5,
+   "z": 1035.8,
+   "klasse": "szene",
+   "motiv": "sz_labor",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1183.5,
+   "z": 1053.4,
+   "klasse": "szene",
+   "motiv": "sz_orakel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 259.1,
+   "z": 1209.1,
+   "klasse": "tuer",
+   "motiv": "tuer_wald",
+   "passt": true,
+   "biome": "wueste",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": -1345.6,
+   "z": 1364.2,
+   "klasse": "wasser",
+   "motiv": "wa_sumpfaugen",
+   "passt": true,
+   "biome": "pastell",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 1053.5,
+   "z": 1354.1,
+   "klasse": "szene",
+   "motiv": "sz_sumpfwrack",
+   "passt": true,
+   "biome": "pastell",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1345.5,
+   "z": 1511.2,
+   "klasse": "szene",
+   "motiv": "sz_observatorium",
+   "passt": false,
+   "biome": "mesa",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1994.3,
+   "z": 1500,
+   "klasse": "szene",
+   "motiv": "sz_stelzenhuette",
+   "passt": true,
+   "biome": "canyon",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -872.2,
+   "z": 1690.8,
+   "klasse": "tresor",
+   "motiv": "tresor_pirat",
+   "passt": false,
+   "biome": "wueste",
+   "h": 5.5,
+   "strasse": -1
+  },
+  {
+   "x": -728.9,
+   "z": 1688.8,
+   "klasse": "szene",
+   "motiv": "sz_spiralportal",
+   "passt": true,
+   "biome": "wueste",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1663.7,
+   "z": 1699.6,
+   "klasse": "tuer",
+   "motiv": "tuer_sumpf",
+   "passt": true,
+   "biome": "pastell",
+   "h": 5,
+   "strasse": -1
+  },
+  {
+   "x": -1219.1,
+   "z": 1854.3,
+   "klasse": "szene",
+   "motiv": "sz_sumpfwrack",
+   "passt": true,
+   "biome": "schnee",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": 1984.9,
+   "z": 1846,
+   "klasse": "szene",
+   "motiv": "sz_spukvilla",
+   "passt": false,
+   "biome": "schnee",
+   "h": 8.5,
+   "strasse": -1
+  },
+  {
+   "x": -576,
+   "z": 2013.8,
+   "klasse": "wasser",
+   "motiv": "wa_dschungelfall",
+   "passt": true,
+   "biome": "mesa",
+   "h": 6.5,
+   "strasse": -1
+  },
+  {
+   "x": 1028.6,
+   "z": 2012.4,
+   "klasse": "szene",
+   "motiv": "sz_observatorium",
+   "passt": false,
+   "biome": "mesa",
+   "h": 8.5,
+   "strasse": -1
+  }
+ ],
+ "shots": [
+  {
+   "datei": "1_WASSER_wa_glyzinie.jpg",
+   "ziel": {
+    "x": 894.9,
+    "z": 226.6,
+    "klasse": "wasser",
+    "motiv": "wa_glyzinie",
+    "passt": false,
+    "biome": "wueste",
+    "h": 6.5,
+    "strasse": -1
+   },
+   "abstand_wagen_m": 14.9,
+   "bild": "WA_GLYZINIE"
+  },
+  {
+   "datei": "2_SZENE_sz_spiralportal.jpg",
+   "ziel": {
+    "x": 75.2,
+    "z": -246.7,
+    "klasse": "szene",
+    "motiv": "sz_spiralportal",
+    "passt": true,
+    "biome": "wueste",
+    "h": 8.5,
+    "strasse": -1
+   },
+   "abstand_wagen_m": 16.2,
+   "bild": "SZ_SPIRALPORTAL"
+  }
+ ],
+ "fehler": []
+}

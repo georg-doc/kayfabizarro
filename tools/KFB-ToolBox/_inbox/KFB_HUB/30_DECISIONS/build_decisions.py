@@ -1300,6 +1300,7 @@ d('V-1319','03.11.2026','Spiel','DECISION','Ink Blobs = Fluffer-Gegner (Georg 03
 d('V-1320','03.11.2026','Figuren','DECISION','Georg praezisiert die Lid-Regel: Lider farbig im Farbton der Umgebung, kraeftig und deutlich dunkler als der weisse Augapfel; die aufgehellten Lider (EyeRig _lidColor ohne Abdunkeln) waren das Problem. Figuren-Sitzung: Farbton halten, Saettigung halten/anheben, Helligkeit deckeln (etwa 60 % des Augapfel-Weiss), keine Farbton-Verschiebung; Beleg Toepfe plus zwei NPCs.','Figuren · Georg','q422, V-1312','Georg 03.11.'),
 d('V-1321','03.11.2026','Welt','REVIEW','Planet nachts dunkler (world/planet-einfuegen-r1 @216344b2): eigener Wertesatz der Kuppel in kfb-sky-r1.json einfuegen-Block (Nacht-Belichtung 0,1, Schwarzpunkt 0,006, Farbstich 0,8, Saettigung 0,7, Saum 0,2), Helligkeit 60 auf 33 (Wolken 37); Hub q427. Pop-up-Bestand R2 (design/popups-bestand-r2 @b25ae69c, privat @465745fb): 28 Motive Tueren, Tresore, Mystery-Szenen, Wasser-Dioramen ueber kfbInsert, Tags in kfb-themen-tags.r1.json; Klassen an WS-Verteiler fuer einzelPlaetze.r1.json.','WS-Himmel · WS-Design · WS-Verteiler','q427','Georg 03.11.'),
 d('V-1322','03.11.2026','Figuren','REVIEW','Lidregel an einer Stelle (world/topfpflanzen-r1 @157a80ad, pet-eye-rig.v6.js LID_RULE/lidTone): Farbton der Flaeche, Saettigung +20 % zum Vollen, L* hoechstens 0,6 x Augapfel-Weiss und 0,9 x Flaeche; Wimpern Lid x0,5; gilt fuer alle Figuren ohne eigenes Lid-Material inkl. KayKit-NPCs. Hub q428 (Lorekeeper, Topf). Befund: NPC-Gesichtsfarbe aus sampleActorFaceColor heller als gerenderte Haut (eigene kleine Aufgabe, offen).','Figuren · Georg','q428, V-1320','Georg 03.11.'),
+d('V-1323','03.11.2026','Welt','STATUS','Pop-up-Klassen R2 in der Welt (WS-Verteiler world/popup-klassen-r2 @f8e10357 auf popups-bestand-r2): tuer/tresor/szene/wasser in einzelPlaetze.r1.json, Tresore Gewicht 0,35 (8 von 134), Wasser nur flach und in Mulden (12 von 134), Auswahl ueber themenTags mit Bruch 0,19, keine Doppelten in zwei Rasterschritten; pickPopup nimmt e.motiv; Tag-IDs auf echte Bildnamen. Naechster Schritt: Zone in die Pop-up-Wahl. Merge nach der blinden Kritik.','WS-Verteiler','V-1321','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2587,6 +2588,7 @@ WHY = {
  'V-1320':('Augen lesen ueber Kontrast: weisser Ball, farbiges Lid.','03.11.2026'),
  'V-1321':('Ein Modul, eigene Werte je Anwendung.','03.11.2026'),
  'V-1322':('Eine Regel an einer Stelle, fuer alle Figuren.','03.11.2026'),
+ 'V-1323':('Platzierung gehoert dem einen Verteiler; Bruch bewusst und gemessen.','03.11.2026'),
 }
 SUP = {}
 for e in E:
