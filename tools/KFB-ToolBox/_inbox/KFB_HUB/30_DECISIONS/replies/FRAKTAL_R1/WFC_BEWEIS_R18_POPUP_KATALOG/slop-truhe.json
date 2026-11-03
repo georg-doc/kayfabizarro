@@ -1,0 +1,96 @@
+{
+ "familien": {
+  "magie": 61,
+  "fuzzy": 34,
+  "rpg": 39,
+  "alien": 75,
+  "bau": 36,
+  "wild": 85,
+  "nerd": 33,
+  "teen": 45,
+  "cyber": 45,
+  "forscher": 12,
+  "kultur": 55,
+  "deepstate": 15,
+  "hofstaat": 30,
+  "sondertrupp": 13,
+  "militaer": 22,
+  "cia": 16,
+  "finanz": 13,
+  "bosse": 16
+ },
+ "plaetze": 645,
+ "truhen": 543,
+ "truhen_motiv": {
+  "tr": 370,
+  "tr_buch": 25,
+  "tr_musik": 32,
+  "tr_antike": 40,
+  "tr_kunst": 15,
+  "tr_abenteuer": 30,
+  "tr_technik": 7,
+  "tr_schatz": 24
+ },
+ "paar": {
+  "set": "finanz",
+  "passt": true,
+  "n": 3,
+  "truhe": "tr_muell_toilet",
+  "groesse": "mittel",
+  "d": 14.9
+ },
+ "paare": 2,
+ "mitglieder": [
+  {
+   "blob": "SL_FINANZ_IMMOBILIEN_MOGUL",
+   "set": "finanz",
+   "home": "finanz",
+   "pos": [
+    388.75,
+    -14.69,
+    438.37
+   ]
+  },
+  {
+   "blob": "SL_FINANZ_02",
+   "set": "finanz",
+   "home": "finanz",
+   "pos": [
+    390.12,
+    -16.01,
+    434.59
+   ]
+  },
+  {
+   "blob": "SL_FINANZ_KREDITHAI",
+   "set": "finanz",
+   "home": "finanz",
+   "pos": [
+    391.94,
+    -15.9,
+    440.02
+   ]
+  }
+ ],
+ "truhe_im_spiel": {
+  "name": "TR_MUELL_TOILET",
+  "groesse": "mittel",
+  "offen": false,
+  "x": 376.4,
+  "z": 434,
+  "yaw": 2.729,
+  "tgt": 2.728
+ },
+ "kamera": {
+  "pos": [
+   386.9,
+   -11.4,
+   418.8
+  ],
+  "blick": [
+   383.8,
+   435.6
+  ]
+ },
+ "fehler": []
+}
