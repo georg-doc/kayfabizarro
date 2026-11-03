@@ -19556,6 +19556,21 @@
    "superseded_by": [],
    "why": "Wenige starke Ideen jetzt, der Rest wartet sichtbar; UI bleibt stabil.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1336",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Radio fest (module/hud-clay-r1 @754258a7): Gehaeuse wie Bogen, kompakt, Knoepfe fest in Slots, Titel als Lauftext im 14-px-Fenster (11,5 px Schrift), kein Herausklappen/Hover/Equalizer; Ton-Knopf nur stumm, Lautstaerke in Einstellungen > Sound; Pixelvergleich Songwechsel 0/8462 geaendert. Hub q437.",
+   "values": {},
+   "owner": "Kartenkante · Georg",
+   "check": "q435, q437",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein festes Bedienfeld aus Georgs Vorlage; Lesbarkeit an der Grenze offen benennen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
