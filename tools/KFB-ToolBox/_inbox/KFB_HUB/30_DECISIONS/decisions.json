@@ -18776,6 +18776,21 @@
    "superseded_by": [],
    "why": "Vorhandene ChatGPT-Serien statt Neubau; gezogene Knete zerstoert Radius und Rahmen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1284",
+   "date": "03.11.2026",
+   "area": "Prozess",
+   "verdict": "STATUS",
+   "text": "WSA-Aufraeumen b296 (Rueckgabe privat KFB-Stunt-Car-Race @1528b75, Branch recovery/wsa-housekeeping-return-2026-11-03): 13 auf 17 GiB frei, 9 Kopien und 20 Caches entfernt, 10 private Sicherungsbranches, Spiegel 7,5 auf 3,0 GiB. 51 Kopien bleiben, weil WSA keinen nativen privaten Git-Push hat. WS0-Versuch, die Kopien per Agent privat zu sichern, wurde von der Sicherheitspruefung abgelehnt; Georg entscheidet den Weg. Kassetten-Radio aus den ChatGPT-Boegen ist Legacy (Georg: zu viele Knoepfe fuer eine Kassette).",
+   "values": {},
+   "owner": "Georg · WSA · WS0",
+   "check": "RETURN.md",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Keine Kopie ohne nachgewiesene Sicherung entfernen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
