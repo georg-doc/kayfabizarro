@@ -1283,6 +1283,7 @@ d('V-1302','03.11.2026','Spiel','PLAN','Befund WS-Design: Im Endlos-Spiel gibt e
 d('V-1303','03.11.2026','Kampf','PLAN','Befund: Im Spiel gibt es keine Gebaeude- oder Wandzerstoerung, nur Effekte; Treffer kennt combatPlayer.r2.js nur fuer Obstgarten-Ziele. Go: Flug-Sitzung baut einen Zielhaken options.targets() mit sweep (Treffer mit Ort, Normale, Richtung, Energie, Waffe; Explosion mit Radius) als einziges Zielsystem, Obstgarten und 2D-Gegner laufen mit; WS-Design meldet die Viertel-Gebaeude als Ziele an und liefert Lochgeometrie und Bruch. Bis dahin Viertel ohne Zerstoerung ins Endlos-Spiel.','Flug-Sitzung · WS-Design','Unit-Test Treffer, Viertel-Belege','Georg 03.11.'),
 d('V-1304','03.11.2026','Kampf','BUILD','Zielhaken (Flug-Sitzung game/zielhaken-r1 @f95dc10c, nur fx=r2): combatTargets.js mit addCombatTarget (boxes oder sweep, hit, blast), Treffer mit Ort, Normale, Richtung, Energie, Waffe; Explosion meldet Ziele im Radius (medium 6 m, small 2,5 m) mit Energieabfall; ein Zielsystem, Obstgarten, addTarget und 2D-Gegner unveraendert; Units gruen. Merge frei nach explosion-groessen (N-095); WS-Design baut die Viertel-Gebaeude dagegen.','WS1 · WS-Design','N-095','Georg 03.11.'),
 d('V-1305','03.11.2026','Spiel','REVIEW','Kartenviertel im Endlos-Spiel (WS-Design design/viertel-endlos-r1 @0ab19dd0, enthaelt Zielhaken; viertel=1 mit fx=r2): Gewicht 0,12 (29 Viertel auf 408 Kartenplaetze im 6-km-Umkreis), ebener Platz 30 m, Boden und Huelle aus einem Generator, Gebaeude feste Hindernisse und Ziele am Zielhaken mit Loch, Bruch, Truemmern; Huelle-Generator Vorgabe in cascade/r4 (huelle=alt); Blatt in vier Streifen (14,5 ms waren das Readback-Gate); review/assets und donors im privaten Stamm. Bau 8,9 s verteilt, Schritte bis 12,3 ms, Bordstein 13,6 ms. Hub q420, Merge frei N-096. Offen: Planeten-Dekodierung auf dem Hauptfaden (an WS-Himmel, gemeinsamer Zellen-Cache), Bordstein zerlegen, Zufahrt auf eine Gasse (Stufe 2).','WS1 · WS-Himmel · WS-Design','q420, N-096','Georg 03.11.'),
+d('V-1306','03.11.2026','Technik','STATUS','Viertel-Nachzug r1b (@15459d40): Kartenbilder ueber createImageBitmap, PNG-Dekodierungen auf dem Hauptfaden 13 auf 0, Aufgaben ueber 16 ms beim Laden 43 auf 29; WS1 nimmt r1b (N-096). Planeten-Cache geparkt (world/planeten-cache-r1 @c8e1b3ac), Planeten-webp wurden schon abseits dekodiert. Neuer Befund: skyCells scheitert auch auf dem Stamm (p95 67 statt 40 ms beim Nachladen, Ursache Streaming), an WS1 zu a (N-097).','WS1','N-096, N-097','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2553,6 +2554,7 @@ WHY = {
  'V-1303':('Ein Zielsystem fuer alles, Effekte nur aus einem Modul.','03.11.2026'),
  'V-1304':('Grundlage fuer den Hauptmechanismus Zerstoerung.','03.11.2026'),
  'V-1305':('Hauptmechanismus erstmals im Endlos-Spiel spielbar.','03.11.2026'),
+ 'V-1306':('Messen vor Umbauen; ein falscher Verdacht wurde schnell korrigiert.','03.11.2026'),
 }
 SUP = {}
 for e in E:

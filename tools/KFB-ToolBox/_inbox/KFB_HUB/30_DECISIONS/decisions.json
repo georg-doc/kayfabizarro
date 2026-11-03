@@ -19106,6 +19106,21 @@
    "superseded_by": [],
    "why": "Hauptmechanismus erstmals im Endlos-Spiel spielbar.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1306",
+   "date": "03.11.2026",
+   "area": "Technik",
+   "verdict": "STATUS",
+   "text": "Viertel-Nachzug r1b (@15459d40): Kartenbilder ueber createImageBitmap, PNG-Dekodierungen auf dem Hauptfaden 13 auf 0, Aufgaben ueber 16 ms beim Laden 43 auf 29; WS1 nimmt r1b (N-096). Planeten-Cache geparkt (world/planeten-cache-r1 @c8e1b3ac), Planeten-webp wurden schon abseits dekodiert. Neuer Befund: skyCells scheitert auch auf dem Stamm (p95 67 statt 40 ms beim Nachladen, Ursache Streaming), an WS1 zu a (N-097).",
+   "values": {},
+   "owner": "WS1",
+   "check": "N-096, N-097",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Messen vor Umbauen; ein falscher Verdacht wurde schnell korrigiert.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
