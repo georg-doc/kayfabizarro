@@ -20021,6 +20021,51 @@
    "superseded_by": [],
    "why": "Der Beamer erzaehlt das Fertigwerden, statt es technisch abzuscannen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1367",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "KEEP",
+   "text": "Schatten (q458): einfach der alte, sanftere Schatten (Stand vor harter Sonne); Fussschatten per Default aus, hinter Schalter fuer spaeteres Testing. Sonnenscheibe/Lichthof/Farbtemperatur bleiben.",
+   "values": {},
+   "owner": "WS-Himmel · Georg",
+   "check": "q458",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst testen, dann Schatten verfeinern.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1368",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "Tueren R3 (q459): Effekt gut, Timing falsch. Portal ruht (nur Glow/Stroeme) bis zur Beruehrung; Strudel startet an der Tuerebene, fuellt das Bild beim Durchfahren. Belege in Fahrtrichtung und schraeg von vorne, nie seitlich.",
+   "values": {},
+   "owner": "WS-Design · Georg",
+   "check": "q459",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ausloeser wirken bei Beruehrung, nicht vorher.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1369",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "Kartenbau (q460): Karten-/Stapel-Idee faellt; EIN durchgehender Sci-Fi-Beamer-Effekt baut das Gebaeude von unten nach oben (z. B. blaues Holo-Gitter -> Materialisieren), juicy animiert, aus bewaehrten Vorbildern abgeleitet; erst Remotion-Clip.",
+   "values": {},
+   "owner": "WS-Design · Georg",
+   "check": "q460",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Effekt aus einem Guss statt mehrerer zusammengesteckter.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
