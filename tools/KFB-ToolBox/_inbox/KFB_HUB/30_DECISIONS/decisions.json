@@ -19211,6 +19211,21 @@
    "superseded_by": [],
    "why": "Gemalte Bilder tragen ihr Licht schon; Beleuchten wie 3D kaempft dagegen. Einfuegen statt Flickwerk.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1313",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Knet-HUD glatt (Kartenkante module/hud-clay-r1 @43f18297, hudkit=clay): Tafel, Reiter, Schalter, Regler, FLUFFY-Pille aus Overlay-Paket KFB_HUD_v5_WS0, Icon-Tabelle src/data/hud/kfb-hud-smooth.r1.json mit einer Knopf-Logik, Design-Check 30 rot auf 0 rot/7 gelb; Radio sechs Knoepfe ueber kfbAudio plus Lauftext und Lautstaerke; Vorhang three.js-Stoff auf kfb:ready; Almanach-Ueberdeckung bei 1280x720 behoben. Hub q423. Topfpflanzen Lider @0878c43e: Lid = Flaeche unter dem Auge; EyeRig v6 _lidColor ohne Abdunkeln (alle KayKit-NPC-Lider werden Gesichtsfarbe) - NPC-Bild beim Merge-Check pruefen; Lab-Shader linearisiert Topffarben doppelt (bewusst belassen, abgenommener Look).",
+   "values": {},
+   "owner": "Kartenkante · Figuren · WS1",
+   "check": "q423, q422",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Familie aus dem vorhandenen Satz; Icons als Daten, damit der Bogen nur ein Tausch ist.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
