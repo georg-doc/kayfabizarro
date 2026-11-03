@@ -19721,6 +19721,21 @@
    "superseded_by": [],
    "why": "Klein und fest im Spiel, gross nur auf Wunsch; Skins sind Daten.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1347",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Tueren als Eingaenge Prototyp (design/tueren-r1 @7d70099c auf truhen-r1/monolith-r1, tueren=1, privat @4f7cf0fd): Oeffnung als Daten (popup_clay.json oeffnung), Wirbel-Shader mit Ziel-Kartenbild, Annaeherung ab 8 m mit Tropfen-Art saugen, Durchgang ueber Sprenkel-Modul 0,38/<=0,6/0,45 s, Teleport, Puff, Ausgang aus veg().ausgang; Testziel bis Verteiler-Merge. Neu: Klasse hoehle (8), 12 Alien-Truhen. Merge-Regel: kfb-themen-tags.r1.json aus popup-klassen-r3 (@3d1342ee) nehmen. Hub q445. SFX per ElevenLabs nach Georgs Ja.",
+   "values": {},
+   "owner": "WS-Design · WS-Verteiler · Georg",
+   "check": "q445",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Tueren zeigen ihr Ziel, bevor man durchgeht.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

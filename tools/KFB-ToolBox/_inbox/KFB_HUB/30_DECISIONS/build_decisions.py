@@ -1324,6 +1324,7 @@ d('V-1343','03.11.2026','Welt','STATUS','Verteiler r3 @27e8e4ca: Baumgeister 8,9
 d('V-1344','03.11.2026','Welt','REVIEW','Kartenbau (design/kartenbau-r1 @ad4e7088, kartenbau=1): Karten fallen und rasten als Kacheln ein, 1,5 s je Gebaeude; grauer Balken war Labyrinth-Wand KFB_Random_Maze aus cascade/r4 im Endlos-Host, entfernt (eine Zeile runtime.js), WS1 nimmt ad4e7088 beim Viertel-Merge mit (N-102). Hub q443.','WS-Design · WS1 · Georg','q443, N-102','Georg 03.11.'),
 d('V-1345','03.11.2026','Welt','STATUS','Tuer-Vorladen (world/popup-klassen-r3 @88e57ea1): unter 50 m Ziel in Schritten, neun Zellen um die Ankunft in eigenen Vorrat (Worker frei, wie V-1184), ueber 80 m verwerfen; Sprung bis Ziel bereit 3,6-4,5 s ohne, 0,24 s mit Vorladen; Ankunftszelle nach 4,5-5 s Aufenthalt fertig, sonst Uebergangs-Tafel; laengstes Bild 48 ms. Gelaende-Kacheln/Kollider am Ziel erst nach dem Sprung.','WS-Verteiler','V-1343','Georg 03.11.'),
 d('V-1346','03.11.2026','HUD','REVIEW','Radio Mini/Maxi mit Skins (module/hud-clay-r1 @b5abe8eb, privat @acbc0e5a): Mini fest (Titelleiste ueber Balkenradio, 4 Knoepfe inkl. Maxi, 206x107 px, Titel 14 px), Maxi 355x390 mit Playlist, Reglern Musik/Effekte, Skin-Reihe, nur ueber Knopf/X; ersetzt Songlisten-Overlay; Skin-Tabelle radioSkins (Clay gebaut, Sci-Fi/DIY vorbereitet, Boegen fehlen). Hub q444.','Kartenkante · Georg','q444','Georg 03.11.'),
+d('V-1347','03.11.2026','Welt','REVIEW','Tueren als Eingaenge Prototyp (design/tueren-r1 @7d70099c auf truhen-r1/monolith-r1, tueren=1, privat @4f7cf0fd): Oeffnung als Daten (popup_clay.json oeffnung), Wirbel-Shader mit Ziel-Kartenbild, Annaeherung ab 8 m mit Tropfen-Art saugen, Durchgang ueber Sprenkel-Modul 0,38/<=0,6/0,45 s, Teleport, Puff, Ausgang aus veg().ausgang; Testziel bis Verteiler-Merge. Neu: Klasse hoehle (8), 12 Alien-Truhen. Merge-Regel: kfb-themen-tags.r1.json aus popup-klassen-r3 (@3d1342ee) nehmen. Hub q445. SFX per ElevenLabs nach Georgs Ja.','WS-Design · WS-Verteiler · Georg','q445','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2635,6 +2636,7 @@ WHY = {
  'V-1344':('Laden wird zum Kartenmoment; sichtbare Reste vor dem Hub beheben.','03.11.2026'),
  'V-1345':('Die Tuer haelt ihr Versprechen ohne Wartezeit.','03.11.2026'),
  'V-1346':('Klein und fest im Spiel, gross nur auf Wunsch; Skins sind Daten.','03.11.2026'),
+ 'V-1347':('Tueren zeigen ihr Ziel, bevor man durchgeht.','03.11.2026'),
 }
 SUP = {}
 for e in E:
