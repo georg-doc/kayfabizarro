@@ -19871,6 +19871,21 @@
    "superseded_by": [],
    "why": "Karten im Gelaende sind Gelaende: ein Licht, ein Shader.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1357",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Radio in der Ecke (module/hud-clay-r1 @5bb9ac66): keine Leiste, Gehaeuse ~200-226 x ~100 px, Topper ueber den Bildrand, Icons frei im Slot (22 px), Titel nur im Maxi; Hub q454. Tueren-Uebergang aus dem Portal-Wirbel (design/tueren-r1 @da82a885): Radius = Oeffnung x (1+40k^2), k aus Abstand zur Bildebene/6 m, Ausgang schrumpft ueber 8 m, Sprenkel nur als Rand; Hub q455.",
+   "values": {},
+   "owner": "Kartenkante · WS-Design · Georg",
+   "check": "q450, q449, q454, q455",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Effekt kommt aus dem Objekt; das HUD duckt sich in die Ecke.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

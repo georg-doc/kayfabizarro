@@ -1334,6 +1334,7 @@ d('V-1353','03.11.2026','HUD','REVIEW','Georg-Antworten: q447 Truhe - keine Knet
 d('V-1354','03.11.2026','Welt','REVIEW','Kartenbau-Konzept R2 (design/kartenbau-r1 @472e0136, KONZEPT_KARTENBAU.md + Storyboard 6 Bilder): Vorbilder Kartenhaus, Faecher/Wasserfall, Fallblatt, Karte ausspielen; 1,4 s je Gebaeude mit Stapel-Squash, 40-ms-Staffel in Boegen, Flip Ruecken->Huellenstueck, Einrasten mit Slow-in/Squash/Nachfedern, Tuschefugen zu; Karten sind von Anfang an Huellen-Ausschnitte (gleiche UV/Material), Schnitt nach Sheet-Panels, kein Tausch; InstancedMesh je Huellen-Material, Bewegung im Vertex-Shader. Hub q451, Bau erst nach Freigabe.','WS-Design · Georg','q443, q451','Georg 03.11.'),
 d('V-1355','03.11.2026','Spiel','TUNE','Georg-Antworten: q451 Kartenbau-Konzept Passt, so bauen (WS-Design). q446 Sonne: Licht gut, Schatten nah am Werfer staerker und lang auslaufend - Kontakt-Haertung (PCSS bzw. Abstand zum Werfer) an WS-Himmel. q449 Tueren: Uebergang aus dem Portal-Wirbel selbst (waechst ueber die Tuer, oeffnet aus der Ausgangstuer), getimed ueber Abstand zur Bildebene, keine lila Fremdebene. q450 Radio: keine Titelleiste, in die Ecke eingepasst, Topper ohne Zusatzhoehe, Titel nur im Maxi bzw. Skin-Display, Icons freistehend im Slot ohne Doppelrahmen (Kartenkante). Zustaendigkeit: deckGround/Huellen-Generator WS-Design, cardRelief WS1, cardEdge Kartenkante.','WS-Design · WS-Himmel · Kartenkante · Georg','q446, q449-q451','Georg 03.11.'),
 d('V-1356','03.11.2026','Welt','REVIEW','Truhe Staubfahnen-Rauch (dustTrail-Material, flacher Stoss am Fuss) und Monolith-Rueckseite so hell wie Vorderseite (design/tueren-r1 @168e43ef); Hub q452, q453. Kartenrelief im Gelaende-Shader: cardAlbedo.js (kartenalbedo=1) von WS-Design, Anschluss im Relief an WS1 (N-104), dritte unbeleuchtete Bildschicht im Relief gefunden.','WS-Design · WS1 · Georg','q447, q448, q452, q453, N-104','Georg 03.11.'),
+d('V-1357','03.11.2026','HUD','REVIEW','Radio in der Ecke (module/hud-clay-r1 @5bb9ac66): keine Leiste, Gehaeuse ~200-226 x ~100 px, Topper ueber den Bildrand, Icons frei im Slot (22 px), Titel nur im Maxi; Hub q454. Tueren-Uebergang aus dem Portal-Wirbel (design/tueren-r1 @da82a885): Radius = Oeffnung x (1+40k^2), k aus Abstand zur Bildebene/6 m, Ausgang schrumpft ueber 8 m, Sprenkel nur als Rand; Hub q455.','Kartenkante · WS-Design · Georg','q450, q449, q454, q455','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2655,6 +2656,7 @@ WHY = {
  'V-1354':('Erst Konzept und Storyboard, dann Bau; der Uebergang ist nahtlos, weil nichts getauscht wird.','03.11.2026'),
  'V-1355':('Effekte entstehen aus dem Objekt selbst; HUD nimmt keinen unnoetigen Platz.','03.11.2026'),
  'V-1356':('Karten im Gelaende sind Gelaende: ein Licht, ein Shader.','03.11.2026'),
+ 'V-1357':('Der Effekt kommt aus dem Objekt; das HUD duckt sich in die Ecke.','03.11.2026'),
 }
 SUP = {}
 for e in E:
