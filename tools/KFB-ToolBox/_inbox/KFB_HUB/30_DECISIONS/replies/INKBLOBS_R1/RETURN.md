@@ -60,3 +60,12 @@ Im ruhigen Messpaar: Renderzeit 18,4 ms mit gegen 18,2 ms ohne, Bildzeit 24,9 ge
   - `INK_R4_Kulturgruppe_Wueste_vorn.jpg`: ein Platz im Biom „wueste“ mit Mexikanisch, Indisch, Französisch und einem Bauarbeiter als Fremdem.
   - Die Prüfung `plaetze` ist grün.
 - **Nicht neu gemessen:** die Bildzeit mit dem größeren Atlas. Die Zahl der Instanzen ist gleich, nur die Textur ist größer.
+
+## Runde 5 (03.11. abends): Könige und Königinnen
+**Stand:** `game/inkblobs-r1` @cf4ad2a5, Atlas `assets/inkblobs-r1` @b6f6bec1.
+- Die 8 Könige und Königinnen (ChatGPT 19_34_47 bis 19_34_55) sind im Atlas, im Seitenverhältnis. Er hat jetzt 72 Blobs auf 2560 × 2880, die Datei ist 2,4 MB groß, auf der Grafikkarte etwa 39 MB.
+- Sie sind eine Anführer-Variante neben der Mütze: Ein Platz mit Anführer (etwa jeder vierte) bekommt zur Hälfte Mütze, zur Hälfte König bzw. Königin. Als Fremde in anderen Gruppen kommen sie nicht vor.
+- **Belege:**
+  - `INK_R5_Koenige_Kontaktbogen.jpg`: die 8 nebeneinander.
+  - `INK_R5_Koenig_fuehrt_Gruppe_vorn.jpg`: der Narrenkönig führt eine Alien-Gruppe mit einem Bauarbeiter als Fremdem.
+  - Die Prüfung `plaetze` ist grün.
