@@ -19736,6 +19736,21 @@
    "superseded_by": [],
    "why": "Tueren zeigen ihr Ziel, bevor man durchgeht.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1348",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Georg-Antworten: q439 POI-Sicht Passt; q440 Fluglage/Spuren Passt; q441 Sonne: harte Schatten zurueck (passen nicht zu 2D-Props/Blobs), Rest bleibt (WS-Himmel); q438 Truhe: Wolke unter der Truhe aus Dieselpunk-/Jetpack-Bodenstaub-VFX (WS-Design mit Rakete/Flug); q442 Monolith: Karten immer flache 3D-Flaeche mit KFB-Ink-Outline und KFB-Kartenruecken, ein Kartenmodul (Memory); q443 Kartenbau: lazy/billig, Zell-Uebergang unsauber - Stopp, erst Storyboard und nahtloses Konzept; q445 Tueren: Fahrtrichtung/Tempo bleiben, Oeffnung frei befahrbar, Ueberblendung als ein Bewegungsfluss. Neue Kings/Queens-Blobs an Rakete/Flug (Anfuehrer).",
+   "values": {},
+   "owner": "WS-Design · WS-Himmel · Rakete/Flug",
+   "check": "q438-q445",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Konsistenz vor Effekt: Karten immer gleich, Schatten passend zu 2D, Bewegung ohne Bruch.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
