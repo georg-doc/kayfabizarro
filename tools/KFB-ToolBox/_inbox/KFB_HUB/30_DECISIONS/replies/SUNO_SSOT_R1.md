@@ -65,6 +65,9 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Hijaz Spring Reverb (Kairo-Psychedelic, 03.11.) | 106,4 | A Moll (Hijaz, Vierteltöne) | 284 eigenständig (311 roh; Gitarre 140, Nay 75, Brass 32, Synth 14) |
 | Kühle Wiederholung (Motorik, 03.11.) | 133,3 | G Dur | 175 eigenständig (192 roh; Flöte 97, Brass 42, Minimoog 29) |
 | Freylekhs Dance (Klezmer, 03.11.) | 104,2 (kein Anziehen messbar) | G Moll (Freygish, Konfidenz 0,56) | 275 eigenständig (277 roh; Klarinette 238, Brass 18, Geige 17) |
+| Sunset Spiral (Afrikanische Psychedelic, 03.11., Kurzprompt) | 137,0 | B Moll | 40 eigenständig (42 roh; Gitarre 33, Synth 5) |
+| Psychedelic Lanterns (Chinesische Psychedelic, 03.11., Kurzprompt) | 139,0 | B Moll (Pentatonik, E Moll 0,70 im Synth) | 164 eigenständig (192 roh; Gitarre/Guzheng 82, Synth 30, Brass 25, Woodwinds 10) |
+| Agua de Mar A (Mexikanischer Psychedelic-Rock, 03.11., Kurzprompt) | 129,6 | E Moll | 101 eigenständig (116 roh; Brass 46, Gitarre 37, Synth 7) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
