@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.kaykit.platformer.material-zone-targets/0.1-candidate",
+  "created": "2026-10-28",
+  "status": "SOURCE_GLTF_MATERIAL_BOUNDARIES_CONFIRMED; VISUAL_COLOR_MASKS_NOT_YET_PROVEN",
+  "owner": "existing WS0/Asset Librarian/3D canon; WS1 material consumer",
+  "purpose": "prioritize exact measured/material proof for selective terrain-colorband and material mix effects",
+  "sourceTruth": "actual original GLTF JSON, not just stock images",
+  "targets": [
+    {
+      "id": "conveyor_belt_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/conveyor_4x4x1_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "conveyor_4x4x1_blue",
+        "modelName": "conveyor_4x4x1_blue.gltf"
+      },
+      "maskKind": "primitive-material-slot",
+      "primitiveMaterialIndex": 1,
+      "materialName": "threads",
+      "image": "threads.png",
+      "semanticSurface": "belt",
+      "effect": "flowing-terrain-colorband-plus-native-thread-tex",
+      "geometryProof": "MATERIAL_SLOT_CONFIRMED_BY_GLTF",
+      "maskProof": "PRIMITIVE_CONFIRMED_PIXELS_NOT_RENDERED",
+      "constraints": [
+        "preserve material 0 original platformer frame",
+        "separate shader/map clones by instance",
+        "visual UV scrolling must not steer game graph",
+        "material PBR and KFB lighting survive"
+      ]
+    },
+    {
+      "id": "conveyor_frame_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/conveyor_4x4x1_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "conveyor_4x4x1_blue",
+        "modelName": "conveyor_4x4x1_blue.gltf"
+      },
+      "maskKind": "primitive-material-slot",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "frame",
+      "effect": "native-clay-preserve",
+      "geometryProof": "MATERIAL_SLOT_CONFIRMED_BY_GLTF",
+      "maskProof": "PRIMITIVE_CONFIRMED_PIXELS_NOT_RENDERED"
+    },
+    {
+      "id": "platform_top_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/platform_4x4x1_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "platform_4x4x1_blue",
+        "modelName": "platform_4x4x1_blue.gltf"
+      },
+      "maskKind": "UV_OR_MESH_FACE_MASK_REQUIRED",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "upper-face-not-entire-mesh",
+      "effect": "KFB-terrain-colorband-soft-flow",
+      "geometryProof": "SINGLE_PRIMITIVE_CONFIRMED",
+      "maskProof": "SOURCE_ATLAS_UV_GEOMETRY_PENDING",
+      "constraints": [
+        "preserve side/native trim",
+        "compare 4 rotations",
+        "avoid visible sawtooth on bevel"
+      ]
+    },
+    {
+      "id": "ramp_top_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/platform_slope_4x4x4_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "platform_slope_4x4x4_blue",
+        "modelName": "platform_slope_4x4x4_blue.gltf"
+      },
+      "maskKind": "UV_AND_SLOPE_FACE_MASK_REQUIRED",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "verified-ramp-walkable-face",
+      "effect": "KFB-terrain-colorband-along-slope",
+      "geometryProof": "SINGLE_PRIMITIVE_CONFIRMED",
+      "maskProof": "SOURCE_ATLAS_UV_GEOMETRY_PENDING",
+      "constraints": [
+        "normal mask alone insufficient",
+        "support and climb collision from WS1 owner"
+      ]
+    },
+    {
+      "id": "button_child_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/button_base_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "button_blue",
+        "modelName": "button_base_blue.gltf"
+      },
+      "maskKind": "source-child-mesh",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "button-visible-child",
+      "effect": "elastic-clay-tint-feedback",
+      "geometryProof": "SOURCE_CHILD_NODE_CONFIRMED",
+      "maskProof": "MESH_SEPARATE_MATERIAL_SHARED",
+      "constraints": [
+        "clone child material",
+        "base retains original",
+        "reset original pose and material"
+      ]
+    },
+    {
+      "id": "lever_child_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/lever_floor_base_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "lever_floor_blue",
+        "modelName": "lever_floor_base_blue.gltf"
+      },
+      "maskKind": "source-child-mesh",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "lever-visible-child",
+      "effect": "soft-bend-mood-tint",
+      "geometryProof": "SOURCE_CHILD_NODE_CONFIRMED",
+      "maskProof": "MESH_SEPARATE_MATERIAL_SHARED",
+      "constraints": [
+        "actual hinge pivot must be measured",
+        "no double game state"
+      ]
+    },
+    {
+      "id": "pipe_inner_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/pipe_straight_A_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "pipe_straight_A_blue",
+        "modelName": "pipe_straight_A_blue.gltf"
+      },
+      "maskKind": "UV_OR_VERIFIED_OVERLAY_REQUIRED",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "interior-flow-not-whole-pipe",
+      "effect": "internal-flux-terrain-colorband",
+      "geometryProof": "SINGLE_PRIMITIVE_CONFIRMED",
+      "maskProof": "SOURCE_ATLAS_UV_GEOMETRY_PENDING"
+    },
+    {
+      "id": "saw_blade_blue",
+      "src": {
+        "source": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/saw_trap_blue.gltf",
+        "sourceRevision": "PENDING_SHA256",
+        "meshNode": "saw_trap_sawblade_blue",
+        "modelName": "saw_trap_blue.gltf"
+      },
+      "maskKind": "source-child-mesh",
+      "primitiveMaterialIndex": 0,
+      "materialName": "platformer",
+      "image": "platformer_texture.png",
+      "semanticSurface": "moving-saw-blade",
+      "effect": "bounded-cartoony-motion-highlight",
+      "geometryProof": "SOURCE_CHILD_NODE_CONFIRMED",
+      "maskProof": "MESH_SEPARATE_MATERIAL_SHARED"
+    }
+  ],
+  "candidateProfiles": [
+    {
+      "id": "NATIVE",
+      "origin": "same exact KayKit texture and original mesh",
+      "animated": false
+    },
+    {
+      "id": "KFB_CLAY_ACCENT",
+      "origin": "existing KFB clay material owner",
+      "animated": false,
+      "blend": "authored-zone-mask"
+    },
+    {
+      "id": "KFB_TERRAIN_BANDS",
+      "origin": "WS1 current terrain material palette/source profile REQUIRED",
+      "animated": true,
+      "blend": "authored-zone-mask",
+      "runtimeTimeOwner": "existing WS1"
+    },
+    {
+      "id": "SURREAL_TEXTURE_MIX",
+      "origin": "source texture + KFB approved noise/ink/soft flow",
+      "animated": true,
+      "blend": "authored-zone-mask",
+      "runtimeTimeOwner": "existing WS1"
+    }
+  ],
+  "sourceSampleTests": [
+    "native/unmodified output at same camera",
+    "material-slot-only belt and frame comparison",
+    "UV mask for platform actual sample pixels",
+    "top-face shape and side trim preservation",
+    "red/green/yellow atlas variant compatibility",
+    "no shader side effects on cached shared materials",
+    "reduced motion uniform stays stable",
+    "texture maps and shader clone/dispose validated",
+    "real mobile/desktop scene p95 measurement"
+  ],
+  "allShadersImplemented": false,
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}

@@ -1,0 +1,254 @@
+{
+  "schema": "kfb.fluff-switchyard.three-level-recipes.r1",
+  "date": "2026-10-28",
+  "owner": "WS0 Game Design, productive consumer WS1/WS1b",
+  "mode": "CONCEPT_GRAPH_TEST_ONLY",
+  "coordinatePolicy": "NO_PHYSICAL_GRID_UNITS_ASSUMED",
+  "fluffColorPolicy": "q103 OPEN, no canonical color assignment",
+  "runtimeOwner": "EXISTING_WS1_R3F_ONLY",
+  "levels": [
+    {
+      "id": "L1",
+      "name": "Switchyard",
+      "status": "PROPOSAL_LOGICAL_GRAPH_NOT_PLAYABLE",
+      "durationTargetSeconds": [
+        90,
+        150
+      ],
+      "requiredNewFeature": "toggle a verified floor switch or clear one blockage",
+      "playerInteractionSource": "WS1_RECEIVER_PENDING",
+      "packetGraph": {
+        "nodes": [
+          "source",
+          "fork",
+          "short",
+          "blue",
+          "silo"
+        ],
+        "edges": [
+          {
+            "from": "source",
+            "to": "fork"
+          },
+          {
+            "from": "fork",
+            "to": "short",
+            "when": {
+              "all": [
+                "shortClean"
+              ]
+            }
+          },
+          {
+            "from": "short",
+            "to": "silo"
+          },
+          {
+            "from": "fork",
+            "to": "blue",
+            "when": {
+              "all": [
+                "blueSwitch"
+              ]
+            }
+          },
+          {
+            "from": "blue",
+            "to": "silo"
+          }
+        ]
+      },
+      "initialState": {
+        "shortClean": false,
+        "blueSwitch": false
+      },
+      "solutionActionSets": [
+        [
+          "shortClean"
+        ],
+        [
+          "blueSwitch"
+        ]
+      ],
+      "goalNodes": [
+        "silo"
+      ],
+      "sourceAssets": [
+        "lever",
+        "conveyor_junction",
+        "conveyor_corner",
+        "factory_machine"
+      ]
+    },
+    {
+      "id": "L2",
+      "name": "Goo Junction",
+      "status": "PROPOSAL_LOGICAL_GRAPH_NOT_PLAYABLE",
+      "durationTargetSeconds": [
+        150,
+        210
+      ],
+      "requiredNewFeature": "roof switch reachable by existing platform/jump or repair designated socket",
+      "playerInteractionSource": "WS1_RECEIVER_PENDING",
+      "packetGraph": {
+        "nodes": [
+          "source",
+          "fork",
+          "short",
+          "service",
+          "silo"
+        ],
+        "edges": [
+          {
+            "from": "source",
+            "to": "fork"
+          },
+          {
+            "from": "fork",
+            "to": "short",
+            "when": {
+              "all": [
+                "repair"
+              ]
+            }
+          },
+          {
+            "from": "short",
+            "to": "silo"
+          },
+          {
+            "from": "fork",
+            "to": "service",
+            "when": {
+              "all": [
+                "roofSwitch"
+              ]
+            }
+          },
+          {
+            "from": "service",
+            "to": "silo"
+          }
+        ]
+      },
+      "initialState": {
+        "repair": false,
+        "roofSwitch": false
+      },
+      "solutionActionSets": [
+        [
+          "repair"
+        ],
+        [
+          "roofSwitch"
+        ]
+      ],
+      "goalNodes": [
+        "silo"
+      ],
+      "sourceAssets": [
+        "healthy_building",
+        "floor_switch",
+        "straight_street"
+      ]
+    },
+    {
+      "id": "L3",
+      "name": "Mech Rescue",
+      "status": "PROPOSAL_LOGICAL_GRAPH_NOT_PLAYABLE",
+      "durationTargetSeconds": [
+        180,
+        240
+      ],
+      "requiredNewFeature": "either clean+restore bridge or open+route detour; mech only after WS1 combat/flight gates",
+      "playerInteractionSource": "WS1_RECEIVER_PENDING",
+      "packetGraph": {
+        "nodes": [
+          "source",
+          "fork",
+          "bridge",
+          "bypass",
+          "tower",
+          "relay"
+        ],
+        "edges": [
+          {
+            "from": "source",
+            "to": "fork"
+          },
+          {
+            "from": "fork",
+            "to": "bridge",
+            "when": {
+              "all": [
+                "cleanse",
+                "restore"
+              ]
+            }
+          },
+          {
+            "from": "bridge",
+            "to": "tower"
+          },
+          {
+            "from": "bridge",
+            "to": "relay"
+          },
+          {
+            "from": "fork",
+            "to": "bypass",
+            "when": {
+              "all": [
+                "openBypass",
+                "divert"
+              ]
+            }
+          },
+          {
+            "from": "bypass",
+            "to": "tower"
+          },
+          {
+            "from": "bypass",
+            "to": "relay"
+          }
+        ]
+      },
+      "initialState": {
+        "cleanse": false,
+        "restore": false,
+        "openBypass": false,
+        "divert": false
+      },
+      "solutionActionSets": [
+        [
+          "cleanse",
+          "restore"
+        ],
+        [
+          "openBypass",
+          "divert"
+        ]
+      ],
+      "goalNodes": [
+        "tower",
+        "relay"
+      ],
+      "sourceAssets": [
+        "landmark_water_tower",
+        "alternate_building",
+        "floor_switch",
+        "factory_machine"
+      ]
+    }
+  ],
+  "guardrails": {
+    "allSolutionsRequireRealPlayerAccessProof": true,
+    "allCurrentSolutionsAbstractOnly": true,
+    "deadEndWithoutUndoForbidden": true,
+    "damageNeverUpdatesRouteWithoutWorldAck": true,
+    "cardGrantOnlyExistingIdempotentSave": true,
+    "clientGeneratedScoreForbidden": true
+  },
+  "nextGate": "WS0_SWITCHYARD_SOURCE_ISOLATION_AND_WS1B_RECEIVER_TRIAGE"
+}

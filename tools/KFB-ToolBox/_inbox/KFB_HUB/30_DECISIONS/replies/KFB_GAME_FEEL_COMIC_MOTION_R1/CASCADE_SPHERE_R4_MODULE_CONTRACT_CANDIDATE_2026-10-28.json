@@ -1,0 +1,273 @@
+{
+  "schema": "kfb.cascade.integration-proposal/0.1-candidate",
+  "status": "DESIGN_CONTRACT_CANDIDATE_NOT_OWNER_SSOT_NOT_IMPLEMENTED",
+  "date": "2026-10-28",
+  "owner": {
+    "sourceOfTruth": "existing KFB_HUB/WS0 Game Design + Card Registry",
+    "gameRuntime": "WS1/WS1b R3F - head/API pin required",
+    "combat": "existing Combat/ShotEvent-HitEvent authoritative owner",
+    "navigation": "existing World/Surface/Movement owner; graph donor WhackMan",
+    "audio": "existing KFB Audio Site and one AudioContext",
+    "assets": "existing Asset Librarian/Registry",
+    "persistence": "existing kfb.save/1 and kfb.world-save/1+Almanac",
+    "mindscape": "existing HyperNormalisation/Mindspace",
+    "notes": "WB2 R4 STOPPED; no second renderer/player/physics/input/asset library or mutable global world manager"
+  },
+  "candidateInterfaces": [
+    {
+      "name": "SourceResolver",
+      "inputs": [
+        "asset role",
+        "commit-pinned source GLTF/GLB",
+        "texture/bin dependencies"
+      ],
+      "outputs": [
+        "verified source object",
+        "measured footprint",
+        "socket/connector table"
+      ],
+      "reuses": "Asset Librarian / Kit Lab",
+      "missing": "visual object-source isolation + release allowlist"
+    },
+    {
+      "name": "SceneRecipeAdapter",
+      "inputs": [
+        "candidate level fixture",
+        "chosen source objects and dimensions",
+        "owner world terrain and support"
+      ],
+      "outputs": [
+        "owner-accepted scene instances/colliders",
+        "author-approved socket transforms"
+      ],
+      "reuses": "World Atlas Assembly A0 + existing World/WS1",
+      "missing": "actual current WS1b receiving API"
+    },
+    {
+      "name": "RouteGraph",
+      "inputs": [
+        "stable nodes and directed edges",
+        "canonical seam mutation events"
+      ],
+      "outputs": [
+        "route or WAIT",
+        "invalidation on accepted change",
+        "topology QA"
+      ],
+      "reuses": "WhackMan BFS + Dungeon canonical seams",
+      "missing": "thin pure encounter adapter"
+    },
+    {
+      "name": "PacketFlow",
+      "inputs": [
+        "host tick",
+        "wave recipe",
+        "route graph",
+        "accepted world events"
+      ],
+      "outputs": [
+        "spawned, waiting, progress, arrived, lost",
+        "exactly-once facts"
+      ],
+      "reuses": "existing Fluff source/render presentation",
+      "missing": "deterministic pure logic; packet body animation validation"
+    },
+    {
+      "name": "Intervention",
+      "inputs": [
+        "validated switch/touch/Mech contact",
+        "authoritative HitEvent",
+        "repair socket support"
+      ],
+      "outputs": [
+        "ActionAccepted/ActionRejected",
+        "edge/node mutation",
+        "one gameplay event"
+      ],
+      "reuses": "WS1 current input/movement; Combat hit; World placements",
+      "missing": "actual event port confirmation"
+    },
+    {
+      "name": "ResultAndSave",
+      "inputs": [
+        "arrivals/loss/corruption",
+        "source-owned CardId",
+        "quest milestone event"
+      ],
+      "outputs": [
+        "one encounter receipt",
+        "Almanac reference via existing owner"
+      ],
+      "reuses": "kfb.save/1, kfb.world-save/1, Almanac",
+      "missing": "current schema field mapping; reload verification"
+    },
+    {
+      "name": "PresentationAdapters",
+      "inputs": [
+        "accepted facts",
+        "theme tech/sweet"
+      ],
+      "outputs": [
+        "Clay+Goo+Ink visual state",
+        "existing sound effect cue"
+      ],
+      "reuses": "existing 3D canon, Audio Site, HUD/HyperNorm",
+      "missing": "renderer/textures source-fit, mobile budget"
+    }
+  ],
+  "candidateEventTypes": {
+    "playerIntent": [
+      "SWITCH_REQUEST",
+      "SHOOT_REQUEST",
+      "REPAIR_REQUEST",
+      "ACTIVATE_REQUEST"
+    ],
+    "accepted": [
+      "SWITCH_ACCEPTED",
+      "HIT_ACCEPTED",
+      "SHELL_EXPOSED",
+      "FLUFF_COLLECT_ACCEPTED",
+      "REPAIR_ACCEPTED",
+      "ROOF_BUTTON_ACCEPTED"
+    ],
+    "simulation": [
+      "PACKET_SPAWNED",
+      "PACKET_WAITING",
+      "PACKET_ROUTED",
+      "PACKET_ARRIVED",
+      "PACKET_LOST",
+      "GOO_NODE_CHANGED"
+    ],
+    "result": [
+      "QUEST_PROGRESS_ACCEPTED",
+      "ENCOUNTER_RESULT_SAVED",
+      "ENCOUNTER_EXITED"
+    ],
+    "rejection": [
+      "ACTION_REJECTED_NO_CONTACT",
+      "ACTION_REJECTED_INVALID_SOCKET",
+      "ACTION_REJECTED_DUPLICATE",
+      "ACTION_REJECTED_INVALID_STATE"
+    ],
+    "envelope": {
+      "schema": "kfb.cascade.event/0.1-candidate",
+      "fields": [
+        "runId",
+        "seq",
+        "tick",
+        "eventId",
+        "type",
+        "subjectId",
+        "actorId?",
+        "causeEventId?",
+        "payload",
+        "sourceProvenance?"
+      ]
+    },
+    "dedupe": "eventId/runId authoritative; repeat intents yield no second reward; no Date.now randomness in logic",
+    "publishing": "design-only type vocabulary, not real current event bus API"
+  },
+  "wfcPlan": {
+    "enabledByDefault": false,
+    "status": "OPTIONAL_COMPARE_AFTER_AUTHORED_L01_PASS",
+    "primary": "authored topological path graph fixed first; constrained prefab placement second",
+    "candidateAlgorithm": [
+      "pin mandatory spawn/target/switch/physical exit",
+      "gather measured source tile sockets and allowed orientations",
+      "prune incompatible neighbor ports (symmetric compatibility)",
+      "propagate until stable",
+      "pick lowest entropy cell with seeded deterministic tie-break and authored weights",
+      "backtrack with bounded attempt count; record contradiction",
+      "on fail return exact authored layout",
+      "validate global path, physical support, city geometry, button access"
+    ],
+    "tileDraft": {
+      "id": "SOURCE_MEASURED_TILE_REQUIRED",
+      "sourceAssetRef": "PIN_BY_ASSET_LIBRARIAN",
+      "ports": {
+        "N": "road|walk|conveyor|none",
+        "E": "road|walk|conveyor|none",
+        "S": "road|walk|conveyor|none",
+        "W": "road|walk|conveyor|none",
+        "UP": "support|elevator|none",
+        "DOWN": "support|elevator|none"
+      },
+      "rotationDegreesAllowed": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "surfaceHeightM": null,
+      "clearanceM": null,
+      "footprintM": null,
+      "weight": 1,
+      "themeTags": [
+        "tech-factory",
+        "sweet-supply"
+      ],
+      "semanticTags": [
+        "noncritical-decor"
+      ],
+      "constraints": [
+        "exact port match or explicit authored adapter tile",
+        "measured support and clearance",
+        "never overwrite required topology node",
+        "never displace immutable OSM source road",
+        "global reachability after solve"
+      ]
+    },
+    "maxBacktracksCandidate": 32,
+    "fallback": "known-authored-layout",
+    "worldRules": [
+      "OSM geodata source graph preserved and clipped before local decoration",
+      "do not move landmarks",
+      "WFC supplies decoration/local variants rather than global path solvability"
+    ],
+    "acceptance": [
+      "same seed+rules+asset pins -> same module IDs",
+      "true physical gap/overlap check after assembly",
+      "if contradiction -> stable fallback",
+      "mandatory action still accessible",
+      "global route before/after actions still passes fixtures"
+    ]
+  },
+  "physicalSceneRules": {
+    "sourceModelTruth": "exact source refs, GLTF textures and independent bbox/pivot/size measurement",
+    "gizmo": "authoring-only TransformControls; mobile touch uses snap hotspot",
+    "intactBuilding": "source asset retained; only authored adaptation shell targeted for first destruction",
+    "gooeffect": "world infection state distinct from card Ink visual mask and distinct from physical damage",
+    "height": "host terrain/support surfaces; fixture xy/level are schematic",
+    "fluff": "logical packet not one rigid body per rendered sprite; color mapping subject to WS0 q103",
+    "destruction": "ShotEvent/HitEvent authoritative from Combat; on accepted hit mutate eligible source-attached cell; repair via World support",
+    "assetVisibility": "source tier and exact source model pin; do not claim missing Extra already imported"
+  },
+  "acceptance": {
+    "source": "source/render proof with exact GLTF/bin/texture and model sizing for chosen assets",
+    "logic": "3 fixture before/after route tests; action dedupe; packet identity; reload without duplicate awards",
+    "game": "three actual independent contiguous play runs with source-true art and no second host; L01 before L02",
+    "mobile": "real touch response, visual readability and measured performance, not CSS screenshot alone",
+    "work": "builder+tester+independent critic+production guard; current active WS1b branch check; freeze one gate at a time",
+    "publication": "no automatic merger, production stage, Site or Live"
+  },
+  "blockingUnknowns": [
+    "complete source hashes and ingest of purchased Platformer FREE/EXTRA in authorized repo",
+    "visually isolated real button/lever/conveyor and KayKit City/Prototype + bakery source",
+    "current private WS1b R3F receiving branch and game host/event API",
+    "Combat HitEvent actual current consumer and source slot for detachable infected cell",
+    "physical-connector reach/contact/safe landing",
+    "q103 Goo color policy only if first level needs matching colors",
+    "exact authoritative Save/Almanac adapter",
+    "per-device UX and performance acceptance targets"
+  ],
+  "explicitNonGoals": [
+    "no second asset registry/maze renderer/input/Combat/Audio/World runtime",
+    "no generic city destruction",
+    "no full Cologne OSM recreation in first proof",
+    "no grappling before actual motion owner proof",
+    "no new nutrition/cooking economy",
+    "no Qiva runtime dependency",
+    "no persistent global WFC solver as gameplay owner"
+  ],
+  "nextGate": "WS0_PLATFORMER_ASSET_INTAKE_AND_L01_SOURCE_GATE"
+}

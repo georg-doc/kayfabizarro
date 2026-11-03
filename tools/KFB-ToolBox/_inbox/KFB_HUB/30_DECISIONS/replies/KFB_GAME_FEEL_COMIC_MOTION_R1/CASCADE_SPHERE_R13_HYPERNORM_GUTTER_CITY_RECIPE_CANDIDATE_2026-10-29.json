@@ -1,0 +1,265 @@
+{
+  "schema": "kfb.cascade.card-building-gutter-city/0.1-CANDIDATE",
+  "version": "R13",
+  "date": "2026-10-29",
+  "status": "CONCEPT_ONLY_NOT_RUNTIME_VALIDATED",
+  "owner": "WS0 KFB_HUB Game Design; current V-962 R2 remains official until WS0 action",
+  "authoritativeHost": "existing KFB game R3F Host Contract R1.2; exactly one player/world/road/combat/audio owner",
+  "scene": {
+    "id": "GUTTER_CITY_CARD_VAULT_GOLDEN_01",
+    "type": "candidate",
+    "map": "COMIC_GUTTER_CITY",
+    "seed": "fixture-source-pinned",
+    "dimensions": "small 4–6 block sample only",
+    "players": [
+      {
+        "id": "FB_CANON",
+        "mode": "original 3D rig",
+        "skills": [
+          "existing flight",
+          "existing source combat",
+          "ground walk",
+          "land on roofs"
+        ],
+        "twoDStandee": false
+      }
+    ],
+    "roads": {
+      "semantics": "existing cascade-core MazeGraph edges",
+      "render": "existing Track Core recipe + Joyride clay curb/sidewalk donor",
+      "mode": [
+        "GUTTER_PAPER_LANE",
+        "CLAY_STREET",
+        "FARBBAND_ACCENT"
+      ],
+      "mask": "animated band never overrides legibility/collision",
+      "roadMetrics": "SOURCE_OWNER_MEASURE_REQUIRED",
+      "connectionKeys": [
+        "roadEdgeId",
+        "sourceNodeId",
+        "destNodeId"
+      ],
+      "futureModes": [
+        "vehicle corridor",
+        "foot-only stair",
+        "ball chute",
+        "fly clearance"
+      ]
+    },
+    "blocks": [
+      {
+        "id": "panel-07",
+        "deckId": null,
+        "cardNo": 7,
+        "footprint": "16:9 or source card aspect",
+        "height": "source-authored varying",
+        "hero": "card readable 16:9 face or full roof",
+        "faceCountMax": 6,
+        "shell": "HYPERNORM_VISUAL_CANDIDATE",
+        "interior": [
+          "CARD_VAULT",
+          "SOURCE_PALETTE_BALL_FILL"
+        ],
+        "damage": "AUTHORITY_GATED_WALL_SECTORS",
+        "sourceCard": "PIN_REAL_REGISTRY_ID"
+      },
+      {
+        "id": "panel-14",
+        "deckId": null,
+        "cardNo": 14,
+        "footprint": "square",
+        "height": "source-authored varying",
+        "hero": "roof artwork",
+        "faceCountMax": 6,
+        "shell": "HYPERNORM_VISUAL_CANDIDATE",
+        "interior": [
+          "PALETTE_RUBBLE"
+        ],
+        "damage": "AUTHORITY_GATED_WALL_SECTORS",
+        "sourceCard": "PIN_REAL_REGISTRY_ID"
+      },
+      {
+        "id": "panel-21",
+        "deckId": null,
+        "cardNo": 21,
+        "footprint": "rectangle",
+        "height": "source-authored varying",
+        "hero": "one wall",
+        "faceCountMax": 6,
+        "shell": "STATIC_OR_SOURCE_ANIMATED",
+        "interior": [
+          "CARD_VAULT"
+        ],
+        "damage": "NATIVE_SOURCE",
+        "sourceCard": "PIN_REAL_REGISTRY_ID"
+      },
+      {
+        "id": "panel-28",
+        "deckId": null,
+        "cardNo": 28,
+        "footprint": "rectangle",
+        "height": "source-authored varying",
+        "hero": "one wall",
+        "faceCountMax": 6,
+        "shell": "STATIC_OR_SOURCE_ANIMATED",
+        "interior": [
+          "BALL_FILL"
+        ],
+        "damage": "NATIVE_SOURCE",
+        "sourceCard": "PIN_REAL_REGISTRY_ID"
+      }
+    ],
+    "deck": {
+      "nominalCardSlots": 56,
+      "cardIDs": "real deckId + cardNo; never assume 56 cards must spawn",
+      "collectibleDedupe": "existing CardRegistry / PlayerSave",
+      "sequence": "OPTIONAL NOT MANDATORY"
+    }
+  },
+  "visualArchitecture": {
+    "hypernorm": {
+      "source": "KFB H13 2D canvas; KFB Clay Stage R2 H14 frames CanvasTexture; H15 exact API unknown",
+      "faces": "visible sides and roof from shared frame atlas/host clock",
+      "seamPolicy": "abstract visual phase can be continuous; meaningful cross-face illustrations require authored UV/edge masking proof",
+      "fallback": "static accepted collage frame"
+    },
+    "maskChannels": [
+      "hypernormVisibility",
+      "shellBreach",
+      "gooInfection",
+      "cardReveal",
+      "clayMaterial"
+    ],
+    "cardVault": {
+      "source": "existing actual KFB card-registry image",
+      "imageSourcePolicy": "uncropped hero reveal with card cell and aspect contract",
+      "model": "stable interior card plane or safe slot",
+      "collect": "after authorized reveal event"
+    },
+    "particleFill": {
+      "colorSource": "deterministic real source artwork sampled palette or World palette",
+      "optionalHeightSource": "approved height map only; color-to-height inference must be labeled",
+      "render": "InstancedMesh / existing owner geometry",
+      "authority": "MOST BALLS COSMETIC",
+      "physicsTiers": [
+        "P0_CURVE_FLOW",
+        "P1_NEAR_CAMERA_SPARSE_CONTACT",
+        "P2_AFTER_GPU_SOURCE_PROOF"
+      ]
+    },
+    "destruction": {
+      "shellVisual": "mask with authored holes",
+      "actualCollider": "quantized wall sector collision based on existing Destruct authority",
+      "repair": "build event → restore collision and visual mask",
+      "invariant": "visual transparency never changes collision by itself"
+    }
+  },
+  "authoritativeEvents": [
+    {
+      "event": "HIT_ACCEPTED",
+      "authority": "Combat",
+      "visual": "flash/squash only, no state damage invented"
+    },
+    {
+      "event": "SHELL_SECTOR_DAMAGED",
+      "authority": "Seed World Destruct",
+      "visual": "increase shell mask hole and release a source-local visual bead wave"
+    },
+    {
+      "event": "CARD_EXPOSED",
+      "authority": "existing scene/Deck",
+      "visual": "show inner card from source registry"
+    },
+    {
+      "event": "PALETTE_BALL_FLOW",
+      "authority": "visual simulation",
+      "visual": "throttled instanced beads roll along gutter curve",
+      "gameplay": "NONE until separately accepted gather/Fluff conversion"
+    },
+    {
+      "event": "ROUTE_CHANGED",
+      "authority": "cascade-core",
+      "visual": "Fluff bounce at valid connection"
+    },
+    {
+      "event": "GOO_CLEANSED",
+      "authority": "existing Fluff/Goo rules V-609/V-532",
+      "visual": "infection mask recedes after actual game success"
+    },
+    {
+      "event": "REBUILD_ACCEPTED",
+      "authority": "existing Destruct+Fluff ledger",
+      "visual": "shell mask closes, source geometry sectors return"
+    },
+    {
+      "event": "CARD_COLLECTED",
+      "authority": "PlayerSave/Deck",
+      "visual": "card becomes collectible once only"
+    }
+  ],
+  "qa": {
+    "proposedSourceGate": [
+      "H15 source frame owner API and reference render",
+      "R2/R3 GPU balls actual code vs only concept",
+      "Track Core correct current car/pedestrian profile and Joyride curbs",
+      "actual KFB card source image, deck+cell identity, color palette and crop",
+      "FB_CANON source rig and actual hit/flight event"
+    ],
+    "goldenViews": [
+      "35deg play camera",
+      "ground-height street view",
+      "roof land view",
+      "shell breach close view",
+      "color/MaterialID and silent/reduced-motion"
+    ],
+    "nonNegotiables": [
+      "actual one-cycle play goal",
+      "real card readability",
+      "real shell hole/physical collider parity",
+      "real player actor 3D",
+      "one renderer/track/player/audio owner",
+      "seed deterministic",
+      "whole 2–4 min playable"
+    ],
+    "actualRuntimeTests": 0,
+    "actualVisualTests": 0,
+    "actualGPUProfile": 0,
+    "officialWS0Adoption": false
+  },
+  "candidatePerfProfiles": {
+    "SAFE": {
+      "activeBuildings": "4–6",
+      "animatedFaces": "one hero face, remainder baked or throttle",
+      "visibleBalls": "~200–600 conceptual",
+      "ballBodies": "a few hero colliders",
+      "measured": false
+    },
+    "STANDARD": {
+      "activeBuildings": "6–12",
+      "animatedFaces": "shared atlas visible fronts",
+      "visibleBalls": "~500–2000 conceptual",
+      "ballBodies": "sparse near-player",
+      "measured": false
+    },
+    "STRESS": {
+      "activeBuildings": "12–56 only if needed",
+      "animatedFaces": "distance based throttled/LOD",
+      "visibleBalls": ">2000 candidate only",
+      "ballBodies": "no full ball rigid physics by default",
+      "measured": false
+    }
+  },
+  "gates": {
+    "currentOfficial": "V-962 R2 source/design approval",
+    "changeRequires": "WS0 NEW AUTHORIZED REGISTER DECISION",
+    "nextCandidate": "ONE_SOURCE_AUTHENTIC_FOUR_CARD_BUILDING_GUTTER_GOLDEN_AND_GAMEPLAY"
+  },
+  "refs": [
+    "tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/00_ONBOARDING.md",
+    "tools/KFB-ToolBox/_inbox/KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/billboards/stage.js",
+    "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+    "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/transition-atlas.v1.js",
+    "skills/chat/KFB_OPEN_WORLD_ROAD_TRACK_CORE_CANON_2026-10-07.md",
+    "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KONZEPT_CASCADE_SPHERE_GAME_IN_GAME_R1.md"
+  ]
+}

@@ -1,0 +1,4856 @@
+{
+  "schema": "kfb.kaykit.platformer.source-inventory/0.1-candidate",
+  "created": "2026-10-28",
+  "owner": "WS0/Asset Librarian intake, not production registry",
+  "provenance": {
+    "free": "https://www.dropbox.com/scl/fo/2xr71fa9czj8ibyaefog4/AFWr0GunBMcc05dQLLl6F_4?rlkey=lhty677518g4nyepusps6tgt3&dl=0",
+    "extra": "https://www.dropbox.com/scl/fo/z0nmtrkeuko9afnr02wwp/AML2C9iu3vGrYCScKdyt_xE?rlkey=2ivkfiajavr42cilv4gwj28ex&dl=0",
+    "author": "Kay Lousberg / KayKit",
+    "version": "1.0",
+    "license": "CC0 (original License.txt read from both folders); SOURCE tier not inferred"
+  },
+  "validation": {
+    "method": "complete direct-child Dropbox listing of 10 source/Assets/gltf/color folders; observed filename & metadata size, NOT binary hashes or glTF rendering",
+    "completeFolders": 10,
+    "freeVariants": 370,
+    "extraVariants": 525,
+    "freeIncludedInExtra": 370,
+    "extraAddedVariants": 155,
+    "freeExtraSameSizes": true,
+    "variantsWithDifferentSizes": [],
+    "distinctPartRoleKeys": 171,
+    "note": "neutral/name and colored/name are distinct canonical family keys, even if basename overlaps"
+  },
+  "sourceGroups": [
+    {
+      "tier": "FREE",
+      "color": "neutral",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/neutral/",
+      "models": [
+        {
+          "g": "ball.gltf",
+          "gBytes": 3006,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1.gltf",
+          "gBytes": 3044,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2.gltf",
+          "gBytes": 3044,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4.gltf",
+          "gBytes": 3028,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb.gltf",
+          "gBytes": 3042,
+          "bBytes": 17760
+        },
+        {
+          "g": "cone.gltf",
+          "gBytes": 2963,
+          "bBytes": 4752
+        },
+        {
+          "g": "floor_wood_1x1.gltf",
+          "gBytes": 3010,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_2x2.gltf",
+          "gBytes": 3005,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_2x6.gltf",
+          "gBytes": 2971,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_4x4.gltf",
+          "gBytes": 2988,
+          "bBytes": 25616
+        },
+        {
+          "g": "pillar_1x1x1.gltf",
+          "gBytes": 3066,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_1x1x2.gltf",
+          "gBytes": 3066,
+          "bBytes": 13264
+        },
+        {
+          "g": "pillar_1x1x4.gltf",
+          "gBytes": 3050,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_1x1x8.gltf",
+          "gBytes": 3050,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_2x2x2.gltf",
+          "gBytes": 3062,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_2x2x4.gltf",
+          "gBytes": 3046,
+          "bBytes": 15440
+        },
+        {
+          "g": "pillar_2x2x8.gltf",
+          "gBytes": 3047,
+          "bBytes": 17520
+        },
+        {
+          "g": "platform_wood_1x1x1.gltf",
+          "gBytes": 3023,
+          "bBytes": 25616
+        },
+        {
+          "g": "sign.gltf",
+          "gBytes": 3046,
+          "bBytes": 24528
+        },
+        {
+          "g": "signage_arrows_left.gltf",
+          "gBytes": 3081,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right.gltf",
+          "gBytes": 3084,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_finish_wide.gltf",
+          "gBytes": 5148,
+          "bBytes": 44712
+        },
+        {
+          "g": "signage_finish.gltf",
+          "gBytes": 5119,
+          "bBytes": 34600
+        },
+        {
+          "g": "spring.gltf",
+          "gBytes": 3051,
+          "bBytes": 27088
+        },
+        {
+          "g": "structure_A.gltf",
+          "gBytes": 3061,
+          "bBytes": 6272
+        },
+        {
+          "g": "structure_B.gltf",
+          "gBytes": 3043,
+          "bBytes": 15392
+        },
+        {
+          "g": "structure_C.gltf",
+          "gBytes": 3024,
+          "bBytes": 8736
+        },
+        {
+          "g": "strut_horizontal.gltf",
+          "gBytes": 2974,
+          "bBytes": 1192
+        },
+        {
+          "g": "strut_vertical.gltf",
+          "gBytes": 3064,
+          "bBytes": 1192
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 38,
+      "allBinMatched": true
+    },
+    {
+      "tier": "FREE",
+      "color": "blue",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/blue/",
+      "models": [
+        {
+          "g": "arch_blue.gltf",
+          "gBytes": 3033,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_blue.gltf",
+          "gBytes": 3047,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_blue.gltf",
+          "gBytes": 3021,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_blue.gltf",
+          "gBytes": 3043,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_blue.gltf",
+          "gBytes": 3063,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_blue.gltf",
+          "gBytes": 3064,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_blue.gltf",
+          "gBytes": 3021,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_blue.gltf",
+          "gBytes": 3088,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_blue.gltf",
+          "gBytes": 3081,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_blue.gltf",
+          "gBytes": 4950,
+          "bBytes": 8192
+        },
+        {
+          "g": "cone_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4816
+        },
+        {
+          "g": "diamond_blue.gltf",
+          "gBytes": 3060,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "heart_blue.gltf",
+          "gBytes": 3058,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_blue.gltf",
+          "gBytes": 3082,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_blue.gltf",
+          "gBytes": 5184,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_blue.gltf",
+          "gBytes": 5169,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_blue.gltf",
+          "gBytes": 5179,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_blue.gltf",
+          "gBytes": 3009,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 35488
+        },
+        {
+          "g": "pipe_90_A_blue.gltf",
+          "gBytes": 3019,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_blue.gltf",
+          "gBytes": 3019,
+          "bBytes": 17824
+        },
+        {
+          "g": "pipe_end_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_blue.gltf",
+          "gBytes": 2982,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_blue.gltf",
+          "gBytes": 2983,
+          "bBytes": 7552
+        },
+        {
+          "g": "platform_1x1x1_blue.gltf",
+          "gBytes": 2986,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_blue.gltf",
+          "gBytes": 2998,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_blue.gltf",
+          "gBytes": 2998,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_blue.gltf",
+          "gBytes": 3023,
+          "bBytes": 14456
+        },
+        {
+          "g": "platform_decorative_2x2x2_blue.gltf",
+          "gBytes": 3015,
+          "bBytes": 14456
+        },
+        {
+          "g": "platform_hole_6x6x1_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 12400
+        },
+        {
+          "g": "platform_slope_2x2x2_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7680
+        },
+        {
+          "g": "railing_corner_double_blue.gltf",
+          "gBytes": 3086,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_blue.gltf",
+          "gBytes": 3086,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_blue.gltf",
+          "gBytes": 3085,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_blue.gltf",
+          "gBytes": 3092,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_blue.gltf",
+          "gBytes": 3093,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_blue.gltf",
+          "gBytes": 3088,
+          "bBytes": 3504
+        },
+        {
+          "g": "signage_arrow_stand_blue.gltf",
+          "gBytes": 3035,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_blue.gltf",
+          "gBytes": 3037,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_blue.gltf",
+          "gBytes": 3096,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_blue.gltf",
+          "gBytes": 3099,
+          "bBytes": 44952
+        },
+        {
+          "g": "spring_pad_blue.gltf",
+          "gBytes": 3001,
+          "bBytes": 22352
+        },
+        {
+          "g": "star_blue.gltf",
+          "gBytes": 3053,
+          "bBytes": 3560
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 83,
+      "allBinMatched": true
+    },
+    {
+      "tier": "FREE",
+      "color": "red",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/red/",
+      "models": [
+        {
+          "g": "arch_red.gltf",
+          "gBytes": 3030,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_red.gltf",
+          "gBytes": 3044,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_red.gltf",
+          "gBytes": 3018,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_red.gltf",
+          "gBytes": 3040,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_red.gltf",
+          "gBytes": 3060,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_red.gltf",
+          "gBytes": 3061,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_red.gltf",
+          "gBytes": 3018,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_red.gltf",
+          "gBytes": 3085,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_red.gltf",
+          "gBytes": 3078,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_red.gltf",
+          "gBytes": 4945,
+          "bBytes": 8192
+        },
+        {
+          "g": "cone_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4784
+        },
+        {
+          "g": "diamond_red.gltf",
+          "gBytes": 3057,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "heart_red.gltf",
+          "gBytes": 3055,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_red.gltf",
+          "gBytes": 3079,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_red.gltf",
+          "gBytes": 5179,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_red.gltf",
+          "gBytes": 5164,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_red.gltf",
+          "gBytes": 5174,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_red.gltf",
+          "gBytes": 3006,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 34688
+        },
+        {
+          "g": "pipe_90_A_red.gltf",
+          "gBytes": 3016,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_red.gltf",
+          "gBytes": 3016,
+          "bBytes": 17344
+        },
+        {
+          "g": "pipe_end_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_red.gltf",
+          "gBytes": 2979,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_red.gltf",
+          "gBytes": 2980,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_red.gltf",
+          "gBytes": 2983,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_red.gltf",
+          "gBytes": 2995,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_red.gltf",
+          "gBytes": 2995,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_red.gltf",
+          "gBytes": 3020,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_red.gltf",
+          "gBytes": 3012,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 12400
+        },
+        {
+          "g": "platform_slope_2x2x2_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7680
+        },
+        {
+          "g": "railing_corner_double_red.gltf",
+          "gBytes": 3083,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_red.gltf",
+          "gBytes": 3083,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_red.gltf",
+          "gBytes": 3082,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_red.gltf",
+          "gBytes": 3089,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_red.gltf",
+          "gBytes": 3090,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_red.gltf",
+          "gBytes": 3085,
+          "bBytes": 3504
+        },
+        {
+          "g": "signage_arrow_stand_red.gltf",
+          "gBytes": 3032,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_red.gltf",
+          "gBytes": 3034,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_red.gltf",
+          "gBytes": 3093,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_red.gltf",
+          "gBytes": 3096,
+          "bBytes": 44952
+        },
+        {
+          "g": "spring_pad_red.gltf",
+          "gBytes": 2998,
+          "bBytes": 21808
+        },
+        {
+          "g": "star_red.gltf",
+          "gBytes": 3050,
+          "bBytes": 3560
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 83,
+      "allBinMatched": true
+    },
+    {
+      "tier": "FREE",
+      "color": "green",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/green/",
+      "models": [
+        {
+          "g": "arch_green.gltf",
+          "gBytes": 3036,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_green.gltf",
+          "gBytes": 3050,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_green.gltf",
+          "gBytes": 3024,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_green.gltf",
+          "gBytes": 3046,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_green.gltf",
+          "gBytes": 3066,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_green.gltf",
+          "gBytes": 3067,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_green.gltf",
+          "gBytes": 3024,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_green.gltf",
+          "gBytes": 3091,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_green.gltf",
+          "gBytes": 3084,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_green.gltf",
+          "gBytes": 4955,
+          "bBytes": 8192
+        },
+        {
+          "g": "cone_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4720
+        },
+        {
+          "g": "diamond_green.gltf",
+          "gBytes": 3063,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "heart_green.gltf",
+          "gBytes": 3061,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_green.gltf",
+          "gBytes": 3085,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_green.gltf",
+          "gBytes": 5189,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_green.gltf",
+          "gBytes": 5174,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_green.gltf",
+          "gBytes": 5184,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_green.gltf",
+          "gBytes": 3012,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_green.gltf",
+          "gBytes": 3029,
+          "bBytes": 34304
+        },
+        {
+          "g": "pipe_90_A_green.gltf",
+          "gBytes": 3022,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_green.gltf",
+          "gBytes": 3022,
+          "bBytes": 17312
+        },
+        {
+          "g": "pipe_end_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_green.gltf",
+          "gBytes": 2985,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_green.gltf",
+          "gBytes": 2986,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_green.gltf",
+          "gBytes": 2989,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_green.gltf",
+          "gBytes": 3001,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_green.gltf",
+          "gBytes": 3001,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_green.gltf",
+          "gBytes": 3026,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_green.gltf",
+          "gBytes": 3018,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 12368
+        },
+        {
+          "g": "platform_slope_2x2x2_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_green.gltf",
+          "gBytes": 3032,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_green.gltf",
+          "gBytes": 3032,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7520
+        },
+        {
+          "g": "railing_corner_double_green.gltf",
+          "gBytes": 3089,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_green.gltf",
+          "gBytes": 3089,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_green.gltf",
+          "gBytes": 3088,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_green.gltf",
+          "gBytes": 3095,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_green.gltf",
+          "gBytes": 3096,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_green.gltf",
+          "gBytes": 3091,
+          "bBytes": 3504
+        },
+        {
+          "g": "signage_arrow_stand_green.gltf",
+          "gBytes": 3038,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_green.gltf",
+          "gBytes": 3040,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_green.gltf",
+          "gBytes": 3099,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_green.gltf",
+          "gBytes": 3102,
+          "bBytes": 44952
+        },
+        {
+          "g": "spring_pad_green.gltf",
+          "gBytes": 3004,
+          "bBytes": 21776
+        },
+        {
+          "g": "star_green.gltf",
+          "gBytes": 3056,
+          "bBytes": 3560
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 83,
+      "allBinMatched": true
+    },
+    {
+      "tier": "FREE",
+      "color": "yellow",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/yellow/",
+      "models": [
+        {
+          "g": "arch_tall_yellow.gltf",
+          "gBytes": 3053,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 28544
+        },
+        {
+          "g": "arch_yellow.gltf",
+          "gBytes": 3039,
+          "bBytes": 28016
+        },
+        {
+          "g": "ball_yellow.gltf",
+          "gBytes": 3027,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_yellow.gltf",
+          "gBytes": 3049,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_yellow.gltf",
+          "gBytes": 3069,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_yellow.gltf",
+          "gBytes": 3070,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_yellow.gltf",
+          "gBytes": 3027,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_yellow.gltf",
+          "gBytes": 3094,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_yellow.gltf",
+          "gBytes": 3087,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_yellow.gltf",
+          "gBytes": 4960,
+          "bBytes": 8192
+        },
+        {
+          "g": "cone_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4720
+        },
+        {
+          "g": "diamond_yellow.gltf",
+          "gBytes": 3066,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "heart_yellow.gltf",
+          "gBytes": 3064,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_yellow.gltf",
+          "gBytes": 3088,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_yellow.gltf",
+          "gBytes": 5194,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_yellow.gltf",
+          "gBytes": 5179,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_yellow.gltf",
+          "gBytes": 5189,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_yellow.gltf",
+          "gBytes": 3015,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_yellow.gltf",
+          "gBytes": 3032,
+          "bBytes": 34304
+        },
+        {
+          "g": "pipe_90_A_yellow.gltf",
+          "gBytes": 3025,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_yellow.gltf",
+          "gBytes": 3025,
+          "bBytes": 17312
+        },
+        {
+          "g": "pipe_end_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_yellow.gltf",
+          "gBytes": 2988,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_yellow.gltf",
+          "gBytes": 2989,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_yellow.gltf",
+          "gBytes": 2992,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_yellow.gltf",
+          "gBytes": 3004,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_yellow.gltf",
+          "gBytes": 3004,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_yellow.gltf",
+          "gBytes": 3029,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_yellow.gltf",
+          "gBytes": 3021,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 12368
+        },
+        {
+          "g": "platform_slope_2x2x2_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_yellow.gltf",
+          "gBytes": 3035,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_yellow.gltf",
+          "gBytes": 3035,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7520
+        },
+        {
+          "g": "railing_corner_double_yellow.gltf",
+          "gBytes": 3092,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_yellow.gltf",
+          "gBytes": 3092,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_yellow.gltf",
+          "gBytes": 3091,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_yellow.gltf",
+          "gBytes": 3098,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_yellow.gltf",
+          "gBytes": 3099,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_yellow.gltf",
+          "gBytes": 3094,
+          "bBytes": 3504
+        },
+        {
+          "g": "signage_arrow_stand_yellow.gltf",
+          "gBytes": 3041,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_yellow.gltf",
+          "gBytes": 3043,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_yellow.gltf",
+          "gBytes": 3102,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_yellow.gltf",
+          "gBytes": 3105,
+          "bBytes": 44952
+        },
+        {
+          "g": "spring_pad_yellow.gltf",
+          "gBytes": 3007,
+          "bBytes": 21776
+        },
+        {
+          "g": "star_yellow.gltf",
+          "gBytes": 3059,
+          "bBytes": 3560
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 83,
+      "allBinMatched": true
+    },
+    {
+      "tier": "EXTRA",
+      "color": "neutral",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/neutral/",
+      "models": [
+        {
+          "g": "ball.gltf",
+          "gBytes": 3006,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2.gltf",
+          "gBytes": 3046,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4.gltf",
+          "gBytes": 3030,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1.gltf",
+          "gBytes": 3044,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2.gltf",
+          "gBytes": 3044,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4.gltf",
+          "gBytes": 3028,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb.gltf",
+          "gBytes": 3042,
+          "bBytes": 17760
+        },
+        {
+          "g": "cannon_bullet.gltf",
+          "gBytes": 3069,
+          "bBytes": 24384
+        },
+        {
+          "g": "chain_full.gltf",
+          "gBytes": 3076,
+          "bBytes": 141136
+        },
+        {
+          "g": "chain_link_end_bottom.gltf",
+          "gBytes": 3074,
+          "bBytes": 5184
+        },
+        {
+          "g": "chain_link_end_top.gltf",
+          "gBytes": 3087,
+          "bBytes": 5768
+        },
+        {
+          "g": "chain_link.gltf",
+          "gBytes": 3061,
+          "bBytes": 8640
+        },
+        {
+          "g": "cone.gltf",
+          "gBytes": 2963,
+          "bBytes": 4752
+        },
+        {
+          "g": "floor_spikes_2x2x1.gltf",
+          "gBytes": 2976,
+          "bBytes": 5984
+        },
+        {
+          "g": "floor_spikes_4x4x1.gltf",
+          "gBytes": 2980,
+          "bBytes": 22176
+        },
+        {
+          "g": "floor_spikes_curved_4x2x2.gltf",
+          "gBytes": 3106,
+          "bBytes": 22232
+        },
+        {
+          "g": "floor_wood_1x1.gltf",
+          "gBytes": 3010,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_2x2.gltf",
+          "gBytes": 3005,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_2x6.gltf",
+          "gBytes": 2971,
+          "bBytes": 25616
+        },
+        {
+          "g": "floor_wood_4x4.gltf",
+          "gBytes": 2988,
+          "bBytes": 25616
+        },
+        {
+          "g": "hammerblock_spikes.gltf",
+          "gBytes": 3055,
+          "bBytes": 64384
+        },
+        {
+          "g": "hammerblock.gltf",
+          "gBytes": 2966,
+          "bBytes": 42080
+        },
+        {
+          "g": "pillar_1x1x1.gltf",
+          "gBytes": 3066,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_1x1x2.gltf",
+          "gBytes": 3066,
+          "bBytes": 13264
+        },
+        {
+          "g": "pillar_1x1x4.gltf",
+          "gBytes": 3050,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_1x1x8.gltf",
+          "gBytes": 3050,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_2x2x2.gltf",
+          "gBytes": 3062,
+          "bBytes": 13200
+        },
+        {
+          "g": "pillar_2x2x4.gltf",
+          "gBytes": 3046,
+          "bBytes": 15440
+        },
+        {
+          "g": "pillar_2x2x8.gltf",
+          "gBytes": 3047,
+          "bBytes": 17520
+        },
+        {
+          "g": "platform_wood_1x1x1.gltf",
+          "gBytes": 3023,
+          "bBytes": 25616
+        },
+        {
+          "g": "sawblade.gltf",
+          "gBytes": 3060,
+          "bBytes": 83056
+        },
+        {
+          "g": "sign.gltf",
+          "gBytes": 3046,
+          "bBytes": 24528
+        },
+        {
+          "g": "signage_arrows_left.gltf",
+          "gBytes": 3081,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right.gltf",
+          "gBytes": 3084,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_finish_wide.gltf",
+          "gBytes": 5148,
+          "bBytes": 44712
+        },
+        {
+          "g": "signage_finish.gltf",
+          "gBytes": 5119,
+          "bBytes": 34600
+        },
+        {
+          "g": "spikeball_hanger.gltf",
+          "gBytes": 3079,
+          "bBytes": 37492
+        },
+        {
+          "g": "spikeball.gltf",
+          "gBytes": 3054,
+          "bBytes": 32640
+        },
+        {
+          "g": "spikeroller_horizontal.gltf",
+          "gBytes": 3078,
+          "bBytes": 27504
+        },
+        {
+          "g": "spikeroller_vertical.gltf",
+          "gBytes": 3094,
+          "bBytes": 32688
+        },
+        {
+          "g": "spring.gltf",
+          "gBytes": 3051,
+          "bBytes": 27088
+        },
+        {
+          "g": "structure_A.gltf",
+          "gBytes": 3061,
+          "bBytes": 6272
+        },
+        {
+          "g": "structure_B.gltf",
+          "gBytes": 3043,
+          "bBytes": 15392
+        },
+        {
+          "g": "structure_C.gltf",
+          "gBytes": 3024,
+          "bBytes": 8736
+        },
+        {
+          "g": "strut_horizontal.gltf",
+          "gBytes": 2974,
+          "bBytes": 1192
+        },
+        {
+          "g": "strut_vertical.gltf",
+          "gBytes": 3064,
+          "bBytes": 1192
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        }
+      ],
+      "gltfCount": 53,
+      "allBinMatched": true
+    },
+    {
+      "tier": "EXTRA",
+      "color": "blue",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/blue/",
+      "models": [
+        {
+          "g": "arch_blue.gltf",
+          "gBytes": 3033,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_blue.gltf",
+          "gBytes": 3047,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_blue.gltf",
+          "gBytes": 3021,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_blue.gltf",
+          "gBytes": 3043,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_blue.gltf",
+          "gBytes": 3063,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_blue.gltf",
+          "gBytes": 3064,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_blue.gltf",
+          "gBytes": 3021,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_blue.gltf",
+          "gBytes": 3088,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_blue.gltf",
+          "gBytes": 3081,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_blue.gltf",
+          "gBytes": 4950,
+          "bBytes": 8192
+        },
+        {
+          "g": "cannon_base_blue.gltf",
+          "gBytes": 7246,
+          "bBytes": 86136
+        },
+        {
+          "g": "chest_blue.gltf",
+          "gBytes": 5133,
+          "bBytes": 49400
+        },
+        {
+          "g": "chest_large_blue.gltf",
+          "gBytes": 5182,
+          "bBytes": 84856
+        },
+        {
+          "g": "cone_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4816
+        },
+        {
+          "g": "conveyor_2x4x1_blue.gltf",
+          "gBytes": 5287,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_2x8x1_blue.gltf",
+          "gBytes": 5285,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x4x1_blue.gltf",
+          "gBytes": 5287,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x8x1_blue.gltf",
+          "gBytes": 5285,
+          "bBytes": 42424
+        },
+        {
+          "g": "diamond_blue.gltf",
+          "gBytes": 3060,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_blue.gltf",
+          "gBytes": 3068,
+          "bBytes": 19460
+        },
+        {
+          "g": "floor_net_2x2x1_blue.gltf",
+          "gBytes": 3037,
+          "bBytes": 25728
+        },
+        {
+          "g": "floor_net_4x4x1_blue.gltf",
+          "gBytes": 3045,
+          "bBytes": 70784
+        },
+        {
+          "g": "floor_spikes_trap_2x2x1_blue.gltf",
+          "gBytes": 4913,
+          "bBytes": 19716
+        },
+        {
+          "g": "floor_spikes_trap_4x4x1_blue.gltf",
+          "gBytes": 4923,
+          "bBytes": 62980
+        },
+        {
+          "g": "hammer_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_large_blue.gltf",
+          "gBytes": 3077,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_large_spikes_blue.gltf",
+          "gBytes": 3051,
+          "bBytes": 25776
+        },
+        {
+          "g": "hammer_spikes_blue.gltf",
+          "gBytes": 3035,
+          "bBytes": 25936
+        },
+        {
+          "g": "heart_blue.gltf",
+          "gBytes": 3058,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_blue.gltf",
+          "gBytes": 3082,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_blue.gltf",
+          "gBytes": 5184,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_blue.gltf",
+          "gBytes": 5169,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_blue.gltf",
+          "gBytes": 5179,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_blue.gltf",
+          "gBytes": 3009,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 35488
+        },
+        {
+          "g": "pipe_90_A_blue.gltf",
+          "gBytes": 3019,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_blue.gltf",
+          "gBytes": 3019,
+          "bBytes": 17824
+        },
+        {
+          "g": "pipe_end_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_blue.gltf",
+          "gBytes": 2982,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_blue.gltf",
+          "gBytes": 2983,
+          "bBytes": 7552
+        },
+        {
+          "g": "platform_1x1x1_blue.gltf",
+          "gBytes": 2986,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_blue.gltf",
+          "gBytes": 3012,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_blue.gltf",
+          "gBytes": 2978,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_blue.gltf",
+          "gBytes": 2998,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_blue.gltf",
+          "gBytes": 2998,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_blue.gltf",
+          "gBytes": 3023,
+          "bBytes": 14456
+        },
+        {
+          "g": "platform_decorative_2x2x2_blue.gltf",
+          "gBytes": 3015,
+          "bBytes": 14456
+        },
+        {
+          "g": "platform_hole_6x6x1_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 12400
+        },
+        {
+          "g": "platform_slope_2x2x2_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_blue.gltf",
+          "gBytes": 2997,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_blue.gltf",
+          "gBytes": 3031,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_blue.gltf",
+          "gBytes": 3029,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_blue.gltf",
+          "gBytes": 3061,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 7680
+        },
+        {
+          "g": "railing_corner_double_blue.gltf",
+          "gBytes": 3086,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_blue.gltf",
+          "gBytes": 3086,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_blue.gltf",
+          "gBytes": 3085,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_blue.gltf",
+          "gBytes": 3092,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_blue.gltf",
+          "gBytes": 3093,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_blue.gltf",
+          "gBytes": 3088,
+          "bBytes": 3504
+        },
+        {
+          "g": "safetynet_2x2x1_blue.gltf",
+          "gBytes": 3004,
+          "bBytes": 21456
+        },
+        {
+          "g": "safetynet_4x2x1_blue.gltf",
+          "gBytes": 3004,
+          "bBytes": 30160
+        },
+        {
+          "g": "safetynet_6x2x1_blue.gltf",
+          "gBytes": 2993,
+          "bBytes": 38864
+        },
+        {
+          "g": "saw_trap_blue.gltf",
+          "gBytes": 5020,
+          "bBytes": 78520
+        },
+        {
+          "g": "saw_trap_double_blue.gltf",
+          "gBytes": 6980,
+          "bBytes": 147184
+        },
+        {
+          "g": "saw_trap_long_blue.gltf",
+          "gBytes": 5163,
+          "bBytes": 87088
+        },
+        {
+          "g": "signage_arrow_stand_blue.gltf",
+          "gBytes": 3035,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_blue.gltf",
+          "gBytes": 3037,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_blue.gltf",
+          "gBytes": 3096,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_blue.gltf",
+          "gBytes": 3099,
+          "bBytes": 44952
+        },
+        {
+          "g": "spikeblock_double_horizontal_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 21800
+        },
+        {
+          "g": "spikeblock_double_vertical_blue.gltf",
+          "gBytes": 3037,
+          "bBytes": 21800
+        },
+        {
+          "g": "spikeblock_down_blue.gltf",
+          "gBytes": 3004,
+          "bBytes": 18128
+        },
+        {
+          "g": "spikeblock_left_blue.gltf",
+          "gBytes": 3004,
+          "bBytes": 18128
+        },
+        {
+          "g": "spikeblock_omni_blue.gltf",
+          "gBytes": 3075,
+          "bBytes": 35672
+        },
+        {
+          "g": "spikeblock_quad_blue.gltf",
+          "gBytes": 3036,
+          "bBytes": 29144
+        },
+        {
+          "g": "spikeblock_right_blue.gltf",
+          "gBytes": 3007,
+          "bBytes": 18128
+        },
+        {
+          "g": "spikeblock_up_blue.gltf",
+          "gBytes": 2982,
+          "bBytes": 18128
+        },
+        {
+          "g": "spring_pad_blue.gltf",
+          "gBytes": 3001,
+          "bBytes": 22352
+        },
+        {
+          "g": "star_blue.gltf",
+          "gBytes": 3053,
+          "bBytes": 3560
+        },
+        {
+          "g": "swiper_blue.gltf",
+          "gBytes": 3049,
+          "bBytes": 37828
+        },
+        {
+          "g": "swiper_double_blue.gltf",
+          "gBytes": 3055,
+          "bBytes": 66420
+        },
+        {
+          "g": "swiper_double_long_blue.gltf",
+          "gBytes": 3059,
+          "bBytes": 109492
+        },
+        {
+          "g": "swiper_long_blue.gltf",
+          "gBytes": 3051,
+          "bBytes": 59332
+        },
+        {
+          "g": "swiper_quad_blue.gltf",
+          "gBytes": 3052,
+          "bBytes": 124724
+        },
+        {
+          "g": "swiper_quad_long_blue.gltf",
+          "gBytes": 3054,
+          "bBytes": 210740
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        },
+        {
+          "name": "threads.png",
+          "bytes": 2969
+        }
+      ],
+      "gltfCount": 118,
+      "allBinMatched": true
+    },
+    {
+      "tier": "EXTRA",
+      "color": "red",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/red/",
+      "models": [
+        {
+          "g": "arch_red.gltf",
+          "gBytes": 3030,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_red.gltf",
+          "gBytes": 3044,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_red.gltf",
+          "gBytes": 3018,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_red.gltf",
+          "gBytes": 3040,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_red.gltf",
+          "gBytes": 3060,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_red.gltf",
+          "gBytes": 3061,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_red.gltf",
+          "gBytes": 3018,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_red.gltf",
+          "gBytes": 3085,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_red.gltf",
+          "gBytes": 3078,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_red.gltf",
+          "gBytes": 4945,
+          "bBytes": 8192
+        },
+        {
+          "g": "cannon_base_red.gltf",
+          "gBytes": 7239,
+          "bBytes": 86040
+        },
+        {
+          "g": "chest_large_red.gltf",
+          "gBytes": 5177,
+          "bBytes": 84856
+        },
+        {
+          "g": "chest_red.gltf",
+          "gBytes": 5128,
+          "bBytes": 49400
+        },
+        {
+          "g": "cone_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4784
+        },
+        {
+          "g": "conveyor_2x4x1_red.gltf",
+          "gBytes": 5284,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_2x8x1_red.gltf",
+          "gBytes": 5282,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x4x1_red.gltf",
+          "gBytes": 5284,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x8x1_red.gltf",
+          "gBytes": 5282,
+          "bBytes": 42424
+        },
+        {
+          "g": "diamond_red.gltf",
+          "gBytes": 3057,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_red.gltf",
+          "gBytes": 3065,
+          "bBytes": 19460
+        },
+        {
+          "g": "floor_net_2x2x1_red.gltf",
+          "gBytes": 3034,
+          "bBytes": 25728
+        },
+        {
+          "g": "floor_net_4x4x1_red.gltf",
+          "gBytes": 3042,
+          "bBytes": 70784
+        },
+        {
+          "g": "floor_spikes_trap_2x2x1_red.gltf",
+          "gBytes": 4908,
+          "bBytes": 19716
+        },
+        {
+          "g": "floor_spikes_trap_4x4x1_red.gltf",
+          "gBytes": 4918,
+          "bBytes": 62980
+        },
+        {
+          "g": "hammer_large_red.gltf",
+          "gBytes": 3074,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_large_spikes_red.gltf",
+          "gBytes": 3048,
+          "bBytes": 25648
+        },
+        {
+          "g": "hammer_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_spikes_red.gltf",
+          "gBytes": 3032,
+          "bBytes": 25808
+        },
+        {
+          "g": "heart_red.gltf",
+          "gBytes": 3055,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_red.gltf",
+          "gBytes": 3079,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_red.gltf",
+          "gBytes": 5179,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_red.gltf",
+          "gBytes": 5164,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_red.gltf",
+          "gBytes": 5174,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_red.gltf",
+          "gBytes": 3006,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 34688
+        },
+        {
+          "g": "pipe_90_A_red.gltf",
+          "gBytes": 3016,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_red.gltf",
+          "gBytes": 3016,
+          "bBytes": 17344
+        },
+        {
+          "g": "pipe_end_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_red.gltf",
+          "gBytes": 2979,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_red.gltf",
+          "gBytes": 2980,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_red.gltf",
+          "gBytes": 2983,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_red.gltf",
+          "gBytes": 3009,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_red.gltf",
+          "gBytes": 2975,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_red.gltf",
+          "gBytes": 2995,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_red.gltf",
+          "gBytes": 2995,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_red.gltf",
+          "gBytes": 3020,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_red.gltf",
+          "gBytes": 3012,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 12400
+        },
+        {
+          "g": "platform_slope_2x2x2_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_red.gltf",
+          "gBytes": 2994,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_red.gltf",
+          "gBytes": 3028,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_red.gltf",
+          "gBytes": 3026,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_red.gltf",
+          "gBytes": 3058,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 7680
+        },
+        {
+          "g": "railing_corner_double_red.gltf",
+          "gBytes": 3083,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_red.gltf",
+          "gBytes": 3083,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_red.gltf",
+          "gBytes": 3082,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_red.gltf",
+          "gBytes": 3089,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_red.gltf",
+          "gBytes": 3090,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_red.gltf",
+          "gBytes": 3085,
+          "bBytes": 3504
+        },
+        {
+          "g": "safetynet_2x2x1_red.gltf",
+          "gBytes": 3001,
+          "bBytes": 21456
+        },
+        {
+          "g": "safetynet_4x2x1_red.gltf",
+          "gBytes": 3001,
+          "bBytes": 30160
+        },
+        {
+          "g": "safetynet_6x2x1_red.gltf",
+          "gBytes": 2990,
+          "bBytes": 38864
+        },
+        {
+          "g": "saw_trap_double_red.gltf",
+          "gBytes": 6973,
+          "bBytes": 146480
+        },
+        {
+          "g": "saw_trap_long_red.gltf",
+          "gBytes": 5158,
+          "bBytes": 86384
+        },
+        {
+          "g": "saw_trap_red.gltf",
+          "gBytes": 5015,
+          "bBytes": 77944
+        },
+        {
+          "g": "signage_arrow_stand_red.gltf",
+          "gBytes": 3032,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_red.gltf",
+          "gBytes": 3034,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_red.gltf",
+          "gBytes": 3093,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_red.gltf",
+          "gBytes": 3096,
+          "bBytes": 44952
+        },
+        {
+          "g": "spikeblock_double_horizontal_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_double_vertical_red.gltf",
+          "gBytes": 3034,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_down_red.gltf",
+          "gBytes": 3000,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_left_red.gltf",
+          "gBytes": 3000,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_omni_red.gltf",
+          "gBytes": 3072,
+          "bBytes": 35544
+        },
+        {
+          "g": "spikeblock_quad_red.gltf",
+          "gBytes": 3033,
+          "bBytes": 29016
+        },
+        {
+          "g": "spikeblock_right_red.gltf",
+          "gBytes": 3003,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_up_red.gltf",
+          "gBytes": 2978,
+          "bBytes": 18000
+        },
+        {
+          "g": "spring_pad_red.gltf",
+          "gBytes": 2998,
+          "bBytes": 21808
+        },
+        {
+          "g": "star_red.gltf",
+          "gBytes": 3050,
+          "bBytes": 3560
+        },
+        {
+          "g": "swiper_double_long_red.gltf",
+          "gBytes": 3056,
+          "bBytes": 109492
+        },
+        {
+          "g": "swiper_double_red.gltf",
+          "gBytes": 3052,
+          "bBytes": 66420
+        },
+        {
+          "g": "swiper_long_red.gltf",
+          "gBytes": 3048,
+          "bBytes": 59332
+        },
+        {
+          "g": "swiper_quad_long_red.gltf",
+          "gBytes": 3051,
+          "bBytes": 210740
+        },
+        {
+          "g": "swiper_quad_red.gltf",
+          "gBytes": 3049,
+          "bBytes": 124724
+        },
+        {
+          "g": "swiper_red.gltf",
+          "gBytes": 3046,
+          "bBytes": 37828
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        },
+        {
+          "name": "threads.png",
+          "bytes": 2969
+        }
+      ],
+      "gltfCount": 118,
+      "allBinMatched": true
+    },
+    {
+      "tier": "EXTRA",
+      "color": "green",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/green/",
+      "models": [
+        {
+          "g": "arch_green.gltf",
+          "gBytes": 3036,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_tall_green.gltf",
+          "gBytes": 3050,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 28544
+        },
+        {
+          "g": "ball_green.gltf",
+          "gBytes": 3024,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_green.gltf",
+          "gBytes": 3046,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_green.gltf",
+          "gBytes": 3066,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_green.gltf",
+          "gBytes": 3067,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_green.gltf",
+          "gBytes": 3024,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_green.gltf",
+          "gBytes": 3091,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_green.gltf",
+          "gBytes": 3084,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_green.gltf",
+          "gBytes": 4955,
+          "bBytes": 8192
+        },
+        {
+          "g": "cannon_base_green.gltf",
+          "gBytes": 7253,
+          "bBytes": 85720
+        },
+        {
+          "g": "chest_green.gltf",
+          "gBytes": 5138,
+          "bBytes": 49400
+        },
+        {
+          "g": "chest_large_green.gltf",
+          "gBytes": 5187,
+          "bBytes": 84856
+        },
+        {
+          "g": "cone_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4720
+        },
+        {
+          "g": "conveyor_2x4x1_green.gltf",
+          "gBytes": 5290,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_2x8x1_green.gltf",
+          "gBytes": 5288,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x4x1_green.gltf",
+          "gBytes": 5290,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x8x1_green.gltf",
+          "gBytes": 5288,
+          "bBytes": 42424
+        },
+        {
+          "g": "diamond_green.gltf",
+          "gBytes": 3063,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_green.gltf",
+          "gBytes": 3071,
+          "bBytes": 19460
+        },
+        {
+          "g": "floor_net_2x2x1_green.gltf",
+          "gBytes": 3040,
+          "bBytes": 25728
+        },
+        {
+          "g": "floor_net_4x4x1_green.gltf",
+          "gBytes": 3048,
+          "bBytes": 70784
+        },
+        {
+          "g": "floor_spikes_trap_2x2x1_green.gltf",
+          "gBytes": 4918,
+          "bBytes": 19716
+        },
+        {
+          "g": "floor_spikes_trap_4x4x1_green.gltf",
+          "gBytes": 4928,
+          "bBytes": 62980
+        },
+        {
+          "g": "hammer_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_large_green.gltf",
+          "gBytes": 3080,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_large_spikes_green.gltf",
+          "gBytes": 3054,
+          "bBytes": 25648
+        },
+        {
+          "g": "hammer_spikes_green.gltf",
+          "gBytes": 3038,
+          "bBytes": 25808
+        },
+        {
+          "g": "heart_green.gltf",
+          "gBytes": 3061,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_green.gltf",
+          "gBytes": 3085,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_green.gltf",
+          "gBytes": 5189,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_green.gltf",
+          "gBytes": 5174,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_green.gltf",
+          "gBytes": 5184,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_green.gltf",
+          "gBytes": 3012,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_green.gltf",
+          "gBytes": 3029,
+          "bBytes": 34304
+        },
+        {
+          "g": "pipe_90_A_green.gltf",
+          "gBytes": 3022,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_green.gltf",
+          "gBytes": 3022,
+          "bBytes": 17312
+        },
+        {
+          "g": "pipe_end_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_green.gltf",
+          "gBytes": 2985,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_green.gltf",
+          "gBytes": 2986,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_green.gltf",
+          "gBytes": 2989,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_green.gltf",
+          "gBytes": 3015,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_green.gltf",
+          "gBytes": 2981,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_green.gltf",
+          "gBytes": 3001,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_green.gltf",
+          "gBytes": 3001,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_green.gltf",
+          "gBytes": 3026,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_green.gltf",
+          "gBytes": 3018,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 12368
+        },
+        {
+          "g": "platform_slope_2x2x2_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_green.gltf",
+          "gBytes": 3000,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_green.gltf",
+          "gBytes": 3032,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_green.gltf",
+          "gBytes": 3034,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_green.gltf",
+          "gBytes": 3032,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_green.gltf",
+          "gBytes": 3064,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 7520
+        },
+        {
+          "g": "railing_corner_double_green.gltf",
+          "gBytes": 3089,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_green.gltf",
+          "gBytes": 3089,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_green.gltf",
+          "gBytes": 3088,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_green.gltf",
+          "gBytes": 3095,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_green.gltf",
+          "gBytes": 3096,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_green.gltf",
+          "gBytes": 3091,
+          "bBytes": 3504
+        },
+        {
+          "g": "safetynet_2x2x1_green.gltf",
+          "gBytes": 3007,
+          "bBytes": 21424
+        },
+        {
+          "g": "safetynet_4x2x1_green.gltf",
+          "gBytes": 3007,
+          "bBytes": 30128
+        },
+        {
+          "g": "safetynet_6x2x1_green.gltf",
+          "gBytes": 2996,
+          "bBytes": 38832
+        },
+        {
+          "g": "saw_trap_double_green.gltf",
+          "gBytes": 6987,
+          "bBytes": 146000
+        },
+        {
+          "g": "saw_trap_green.gltf",
+          "gBytes": 5025,
+          "bBytes": 77464
+        },
+        {
+          "g": "saw_trap_long_green.gltf",
+          "gBytes": 5168,
+          "bBytes": 85904
+        },
+        {
+          "g": "signage_arrow_stand_green.gltf",
+          "gBytes": 3038,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_green.gltf",
+          "gBytes": 3040,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_green.gltf",
+          "gBytes": 3099,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_green.gltf",
+          "gBytes": 3102,
+          "bBytes": 44952
+        },
+        {
+          "g": "spikeblock_double_horizontal_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_double_vertical_green.gltf",
+          "gBytes": 3040,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_down_green.gltf",
+          "gBytes": 3006,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_left_green.gltf",
+          "gBytes": 3006,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_omni_green.gltf",
+          "gBytes": 3078,
+          "bBytes": 35544
+        },
+        {
+          "g": "spikeblock_quad_green.gltf",
+          "gBytes": 3039,
+          "bBytes": 29016
+        },
+        {
+          "g": "spikeblock_right_green.gltf",
+          "gBytes": 3009,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_up_green.gltf",
+          "gBytes": 2984,
+          "bBytes": 18000
+        },
+        {
+          "g": "spring_pad_green.gltf",
+          "gBytes": 3004,
+          "bBytes": 21776
+        },
+        {
+          "g": "star_green.gltf",
+          "gBytes": 3056,
+          "bBytes": 3560
+        },
+        {
+          "g": "swiper_double_green.gltf",
+          "gBytes": 3058,
+          "bBytes": 64116
+        },
+        {
+          "g": "swiper_double_long_green.gltf",
+          "gBytes": 3062,
+          "bBytes": 102836
+        },
+        {
+          "g": "swiper_green.gltf",
+          "gBytes": 3049,
+          "bBytes": 36676
+        },
+        {
+          "g": "swiper_long_green.gltf",
+          "gBytes": 3054,
+          "bBytes": 56004
+        },
+        {
+          "g": "swiper_quad_green.gltf",
+          "gBytes": 3055,
+          "bBytes": 120116
+        },
+        {
+          "g": "swiper_quad_long_green.gltf",
+          "gBytes": 3057,
+          "bBytes": 197428
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        },
+        {
+          "name": "threads.png",
+          "bytes": 2969
+        }
+      ],
+      "gltfCount": 118,
+      "allBinMatched": true
+    },
+    {
+      "tier": "EXTRA",
+      "color": "yellow",
+      "rootRelative": "KayKit_Platformer_Pack_1.0_EXTRA/Assets/gltf/yellow/",
+      "models": [
+        {
+          "g": "arch_tall_yellow.gltf",
+          "gBytes": 3053,
+          "bBytes": 28016
+        },
+        {
+          "g": "arch_wide_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 28544
+        },
+        {
+          "g": "arch_yellow.gltf",
+          "gBytes": 3039,
+          "bBytes": 28016
+        },
+        {
+          "g": "ball_yellow.gltf",
+          "gBytes": 3027,
+          "bBytes": 14368
+        },
+        {
+          "g": "barrier_1x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_1x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7224
+        },
+        {
+          "g": "barrier_2x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_2x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x1_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x2_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_3x1x4_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 7032
+        },
+        {
+          "g": "barrier_4x1x1_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7160
+        },
+        {
+          "g": "barrier_4x1x2_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7288
+        },
+        {
+          "g": "barrier_4x1x4_yellow.gltf",
+          "gBytes": 3049,
+          "bBytes": 7096
+        },
+        {
+          "g": "bomb_A_yellow.gltf",
+          "gBytes": 3069,
+          "bBytes": 17760
+        },
+        {
+          "g": "bomb_B_yellow.gltf",
+          "gBytes": 3070,
+          "bBytes": 30176
+        },
+        {
+          "g": "bracing_large_yellow.gltf",
+          "gBytes": 3027,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_medium_yellow.gltf",
+          "gBytes": 3094,
+          "bBytes": 5480
+        },
+        {
+          "g": "bracing_small_yellow.gltf",
+          "gBytes": 3087,
+          "bBytes": 3592
+        },
+        {
+          "g": "button_base_yellow.gltf",
+          "gBytes": 4960,
+          "bBytes": 8192
+        },
+        {
+          "g": "cannon_base_yellow.gltf",
+          "gBytes": 7260,
+          "bBytes": 85720
+        },
+        {
+          "g": "chest_large_yellow.gltf",
+          "gBytes": 5192,
+          "bBytes": 84856
+        },
+        {
+          "g": "chest_yellow.gltf",
+          "gBytes": 5143,
+          "bBytes": 49400
+        },
+        {
+          "g": "cone_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4720
+        },
+        {
+          "g": "conveyor_2x4x1_yellow.gltf",
+          "gBytes": 5293,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_2x8x1_yellow.gltf",
+          "gBytes": 5291,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x4x1_yellow.gltf",
+          "gBytes": 5293,
+          "bBytes": 42424
+        },
+        {
+          "g": "conveyor_4x8x1_yellow.gltf",
+          "gBytes": 5291,
+          "bBytes": 42424
+        },
+        {
+          "g": "diamond_yellow.gltf",
+          "gBytes": 3066,
+          "bBytes": 4576
+        },
+        {
+          "g": "flag_A_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_B_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "flag_C_yellow.gltf",
+          "gBytes": 3074,
+          "bBytes": 19460
+        },
+        {
+          "g": "floor_net_2x2x1_yellow.gltf",
+          "gBytes": 3043,
+          "bBytes": 25728
+        },
+        {
+          "g": "floor_net_4x4x1_yellow.gltf",
+          "gBytes": 3051,
+          "bBytes": 70784
+        },
+        {
+          "g": "floor_spikes_trap_2x2x1_yellow.gltf",
+          "gBytes": 4923,
+          "bBytes": 19716
+        },
+        {
+          "g": "floor_spikes_trap_4x4x1_yellow.gltf",
+          "gBytes": 4933,
+          "bBytes": 62980
+        },
+        {
+          "g": "hammer_large_spikes_yellow.gltf",
+          "gBytes": 3057,
+          "bBytes": 25648
+        },
+        {
+          "g": "hammer_large_yellow.gltf",
+          "gBytes": 3083,
+          "bBytes": 22632
+        },
+        {
+          "g": "hammer_spikes_yellow.gltf",
+          "gBytes": 3041,
+          "bBytes": 25808
+        },
+        {
+          "g": "hammer_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 22632
+        },
+        {
+          "g": "heart_yellow.gltf",
+          "gBytes": 3064,
+          "bBytes": 5612
+        },
+        {
+          "g": "hoop_angled_yellow.gltf",
+          "gBytes": 3088,
+          "bBytes": 37824
+        },
+        {
+          "g": "hoop_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 19456
+        },
+        {
+          "g": "lever_floor_base_yellow.gltf",
+          "gBytes": 5194,
+          "bBytes": 14320
+        },
+        {
+          "g": "lever_wall_base_A_yellow.gltf",
+          "gBytes": 5179,
+          "bBytes": 13776
+        },
+        {
+          "g": "lever_wall_base_B_yellow.gltf",
+          "gBytes": 5189,
+          "bBytes": 10016
+        },
+        {
+          "g": "pipe_180_A_yellow.gltf",
+          "gBytes": 3015,
+          "bBytes": 25984
+        },
+        {
+          "g": "pipe_180_B_yellow.gltf",
+          "gBytes": 3032,
+          "bBytes": 34304
+        },
+        {
+          "g": "pipe_90_A_yellow.gltf",
+          "gBytes": 3025,
+          "bBytes": 14720
+        },
+        {
+          "g": "pipe_90_B_yellow.gltf",
+          "gBytes": 3025,
+          "bBytes": 17312
+        },
+        {
+          "g": "pipe_end_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 10944
+        },
+        {
+          "g": "pipe_straight_A_yellow.gltf",
+          "gBytes": 2988,
+          "bBytes": 4864
+        },
+        {
+          "g": "pipe_straight_B_yellow.gltf",
+          "gBytes": 2989,
+          "bBytes": 7488
+        },
+        {
+          "g": "platform_1x1x1_yellow.gltf",
+          "gBytes": 2992,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_2x2x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x1_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x2_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x2x4_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_4x4x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x1_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x2_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x2x4_yellow.gltf",
+          "gBytes": 3018,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x1_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x2_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_6x6x4_yellow.gltf",
+          "gBytes": 2984,
+          "bBytes": 4344
+        },
+        {
+          "g": "platform_arrow_2x2x1_yellow.gltf",
+          "gBytes": 3004,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_arrow_4x4x1_yellow.gltf",
+          "gBytes": 3004,
+          "bBytes": 8672
+        },
+        {
+          "g": "platform_decorative_1x1x1_yellow.gltf",
+          "gBytes": 3029,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_decorative_2x2x2_yellow.gltf",
+          "gBytes": 3021,
+          "bBytes": 14328
+        },
+        {
+          "g": "platform_hole_6x6x1_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 12368
+        },
+        {
+          "g": "platform_slope_2x2x2_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x4x4_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_2x6x4_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x2x2_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x4x4_yellow.gltf",
+          "gBytes": 3003,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_4x6x4_yellow.gltf",
+          "gBytes": 3035,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x2x2_yellow.gltf",
+          "gBytes": 3037,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x4x4_yellow.gltf",
+          "gBytes": 3035,
+          "bBytes": 6008
+        },
+        {
+          "g": "platform_slope_6x6x4_yellow.gltf",
+          "gBytes": 3067,
+          "bBytes": 6008
+        },
+        {
+          "g": "power_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 7520
+        },
+        {
+          "g": "railing_corner_double_yellow.gltf",
+          "gBytes": 3092,
+          "bBytes": 8028
+        },
+        {
+          "g": "railing_corner_padded_yellow.gltf",
+          "gBytes": 3092,
+          "bBytes": 8324
+        },
+        {
+          "g": "railing_corner_single_yellow.gltf",
+          "gBytes": 3091,
+          "bBytes": 5364
+        },
+        {
+          "g": "railing_straight_double_yellow.gltf",
+          "gBytes": 3098,
+          "bBytes": 5208
+        },
+        {
+          "g": "railing_straight_padded_yellow.gltf",
+          "gBytes": 3099,
+          "bBytes": 4984
+        },
+        {
+          "g": "railing_straight_single_yellow.gltf",
+          "gBytes": 3094,
+          "bBytes": 3504
+        },
+        {
+          "g": "safetynet_2x2x1_yellow.gltf",
+          "gBytes": 3010,
+          "bBytes": 21424
+        },
+        {
+          "g": "safetynet_4x2x1_yellow.gltf",
+          "gBytes": 3010,
+          "bBytes": 30128
+        },
+        {
+          "g": "safetynet_6x2x1_yellow.gltf",
+          "gBytes": 2999,
+          "bBytes": 38832
+        },
+        {
+          "g": "saw_trap_double_yellow.gltf",
+          "gBytes": 6994,
+          "bBytes": 146000
+        },
+        {
+          "g": "saw_trap_long_yellow.gltf",
+          "gBytes": 5173,
+          "bBytes": 85904
+        },
+        {
+          "g": "saw_trap_yellow.gltf",
+          "gBytes": 5030,
+          "bBytes": 77464
+        },
+        {
+          "g": "signage_arrow_stand_yellow.gltf",
+          "gBytes": 3041,
+          "bBytes": 11864
+        },
+        {
+          "g": "signage_arrow_wall_yellow.gltf",
+          "gBytes": 3043,
+          "bBytes": 7016
+        },
+        {
+          "g": "signage_arrows_left_yellow.gltf",
+          "gBytes": 3102,
+          "bBytes": 44952
+        },
+        {
+          "g": "signage_arrows_right_yellow.gltf",
+          "gBytes": 3105,
+          "bBytes": 44952
+        },
+        {
+          "g": "spikeblock_double_horizontal_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_double_vertical_yellow.gltf",
+          "gBytes": 3043,
+          "bBytes": 21672
+        },
+        {
+          "g": "spikeblock_down_yellow.gltf",
+          "gBytes": 3009,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_left_yellow.gltf",
+          "gBytes": 3009,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_omni_yellow.gltf",
+          "gBytes": 3081,
+          "bBytes": 35544
+        },
+        {
+          "g": "spikeblock_quad_yellow.gltf",
+          "gBytes": 3042,
+          "bBytes": 29016
+        },
+        {
+          "g": "spikeblock_right_yellow.gltf",
+          "gBytes": 3012,
+          "bBytes": 18000
+        },
+        {
+          "g": "spikeblock_up_yellow.gltf",
+          "gBytes": 2987,
+          "bBytes": 18000
+        },
+        {
+          "g": "spring_pad_yellow.gltf",
+          "gBytes": 3007,
+          "bBytes": 21776
+        },
+        {
+          "g": "star_yellow.gltf",
+          "gBytes": 3059,
+          "bBytes": 3560
+        },
+        {
+          "g": "swiper_double_long_yellow.gltf",
+          "gBytes": 3065,
+          "bBytes": 102836
+        },
+        {
+          "g": "swiper_double_yellow.gltf",
+          "gBytes": 3061,
+          "bBytes": 64116
+        },
+        {
+          "g": "swiper_long_yellow.gltf",
+          "gBytes": 3057,
+          "bBytes": 56004
+        },
+        {
+          "g": "swiper_quad_long_yellow.gltf",
+          "gBytes": 3060,
+          "bBytes": 197428
+        },
+        {
+          "g": "swiper_quad_yellow.gltf",
+          "gBytes": 3058,
+          "bBytes": 120116
+        },
+        {
+          "g": "swiper_yellow.gltf",
+          "gBytes": 3052,
+          "bBytes": 36676
+        }
+      ],
+      "textureFiles": [
+        {
+          "name": "platformer_texture.png",
+          "bytes": 38588
+        },
+        {
+          "name": "threads.png",
+          "bytes": 2969
+        }
+      ],
+      "gltfCount": 118,
+      "allBinMatched": true
+    }
+  ],
+  "addedExtraByFolder": [
+    {
+      "color": "neutral",
+      "additional": [
+        "cannon_bullet.gltf",
+        "chain_full.gltf",
+        "chain_link.gltf",
+        "chain_link_end_bottom.gltf",
+        "chain_link_end_top.gltf",
+        "floor_spikes_2x2x1.gltf",
+        "floor_spikes_4x4x1.gltf",
+        "floor_spikes_curved_4x2x2.gltf",
+        "hammerblock.gltf",
+        "hammerblock_spikes.gltf",
+        "sawblade.gltf",
+        "spikeball.gltf",
+        "spikeball_hanger.gltf",
+        "spikeroller_horizontal.gltf",
+        "spikeroller_vertical.gltf"
+      ]
+    },
+    {
+      "color": "blue",
+      "additional": [
+        "cannon_base_blue.gltf",
+        "chest_blue.gltf",
+        "chest_large_blue.gltf",
+        "conveyor_2x4x1_blue.gltf",
+        "conveyor_2x8x1_blue.gltf",
+        "conveyor_4x4x1_blue.gltf",
+        "conveyor_4x8x1_blue.gltf",
+        "floor_net_2x2x1_blue.gltf",
+        "floor_net_4x4x1_blue.gltf",
+        "floor_spikes_trap_2x2x1_blue.gltf",
+        "floor_spikes_trap_4x4x1_blue.gltf",
+        "hammer_blue.gltf",
+        "hammer_large_blue.gltf",
+        "hammer_large_spikes_blue.gltf",
+        "hammer_spikes_blue.gltf",
+        "safetynet_2x2x1_blue.gltf",
+        "safetynet_4x2x1_blue.gltf",
+        "safetynet_6x2x1_blue.gltf",
+        "saw_trap_blue.gltf",
+        "saw_trap_double_blue.gltf",
+        "saw_trap_long_blue.gltf",
+        "spikeblock_double_horizontal_blue.gltf",
+        "spikeblock_double_vertical_blue.gltf",
+        "spikeblock_down_blue.gltf",
+        "spikeblock_left_blue.gltf",
+        "spikeblock_omni_blue.gltf",
+        "spikeblock_quad_blue.gltf",
+        "spikeblock_right_blue.gltf",
+        "spikeblock_up_blue.gltf",
+        "swiper_blue.gltf",
+        "swiper_double_blue.gltf",
+        "swiper_double_long_blue.gltf",
+        "swiper_long_blue.gltf",
+        "swiper_quad_blue.gltf",
+        "swiper_quad_long_blue.gltf"
+      ]
+    },
+    {
+      "color": "red",
+      "additional": [
+        "cannon_base_red.gltf",
+        "chest_large_red.gltf",
+        "chest_red.gltf",
+        "conveyor_2x4x1_red.gltf",
+        "conveyor_2x8x1_red.gltf",
+        "conveyor_4x4x1_red.gltf",
+        "conveyor_4x8x1_red.gltf",
+        "floor_net_2x2x1_red.gltf",
+        "floor_net_4x4x1_red.gltf",
+        "floor_spikes_trap_2x2x1_red.gltf",
+        "floor_spikes_trap_4x4x1_red.gltf",
+        "hammer_large_red.gltf",
+        "hammer_large_spikes_red.gltf",
+        "hammer_red.gltf",
+        "hammer_spikes_red.gltf",
+        "safetynet_2x2x1_red.gltf",
+        "safetynet_4x2x1_red.gltf",
+        "safetynet_6x2x1_red.gltf",
+        "saw_trap_double_red.gltf",
+        "saw_trap_long_red.gltf",
+        "saw_trap_red.gltf",
+        "spikeblock_double_horizontal_red.gltf",
+        "spikeblock_double_vertical_red.gltf",
+        "spikeblock_down_red.gltf",
+        "spikeblock_left_red.gltf",
+        "spikeblock_omni_red.gltf",
+        "spikeblock_quad_red.gltf",
+        "spikeblock_right_red.gltf",
+        "spikeblock_up_red.gltf",
+        "swiper_double_long_red.gltf",
+        "swiper_double_red.gltf",
+        "swiper_long_red.gltf",
+        "swiper_quad_long_red.gltf",
+        "swiper_quad_red.gltf",
+        "swiper_red.gltf"
+      ]
+    },
+    {
+      "color": "green",
+      "additional": [
+        "cannon_base_green.gltf",
+        "chest_green.gltf",
+        "chest_large_green.gltf",
+        "conveyor_2x4x1_green.gltf",
+        "conveyor_2x8x1_green.gltf",
+        "conveyor_4x4x1_green.gltf",
+        "conveyor_4x8x1_green.gltf",
+        "floor_net_2x2x1_green.gltf",
+        "floor_net_4x4x1_green.gltf",
+        "floor_spikes_trap_2x2x1_green.gltf",
+        "floor_spikes_trap_4x4x1_green.gltf",
+        "hammer_green.gltf",
+        "hammer_large_green.gltf",
+        "hammer_large_spikes_green.gltf",
+        "hammer_spikes_green.gltf",
+        "safetynet_2x2x1_green.gltf",
+        "safetynet_4x2x1_green.gltf",
+        "safetynet_6x2x1_green.gltf",
+        "saw_trap_double_green.gltf",
+        "saw_trap_green.gltf",
+        "saw_trap_long_green.gltf",
+        "spikeblock_double_horizontal_green.gltf",
+        "spikeblock_double_vertical_green.gltf",
+        "spikeblock_down_green.gltf",
+        "spikeblock_left_green.gltf",
+        "spikeblock_omni_green.gltf",
+        "spikeblock_quad_green.gltf",
+        "spikeblock_right_green.gltf",
+        "spikeblock_up_green.gltf",
+        "swiper_double_green.gltf",
+        "swiper_double_long_green.gltf",
+        "swiper_green.gltf",
+        "swiper_long_green.gltf",
+        "swiper_quad_green.gltf",
+        "swiper_quad_long_green.gltf"
+      ]
+    },
+    {
+      "color": "yellow",
+      "additional": [
+        "cannon_base_yellow.gltf",
+        "chest_large_yellow.gltf",
+        "chest_yellow.gltf",
+        "conveyor_2x4x1_yellow.gltf",
+        "conveyor_2x8x1_yellow.gltf",
+        "conveyor_4x4x1_yellow.gltf",
+        "conveyor_4x8x1_yellow.gltf",
+        "floor_net_2x2x1_yellow.gltf",
+        "floor_net_4x4x1_yellow.gltf",
+        "floor_spikes_trap_2x2x1_yellow.gltf",
+        "floor_spikes_trap_4x4x1_yellow.gltf",
+        "hammer_large_spikes_yellow.gltf",
+        "hammer_large_yellow.gltf",
+        "hammer_spikes_yellow.gltf",
+        "hammer_yellow.gltf",
+        "safetynet_2x2x1_yellow.gltf",
+        "safetynet_4x2x1_yellow.gltf",
+        "safetynet_6x2x1_yellow.gltf",
+        "saw_trap_double_yellow.gltf",
+        "saw_trap_long_yellow.gltf",
+        "saw_trap_yellow.gltf",
+        "spikeblock_double_horizontal_yellow.gltf",
+        "spikeblock_double_vertical_yellow.gltf",
+        "spikeblock_down_yellow.gltf",
+        "spikeblock_left_yellow.gltf",
+        "spikeblock_omni_yellow.gltf",
+        "spikeblock_quad_yellow.gltf",
+        "spikeblock_right_yellow.gltf",
+        "spikeblock_up_yellow.gltf",
+        "swiper_double_long_yellow.gltf",
+        "swiper_double_yellow.gltf",
+        "swiper_long_yellow.gltf",
+        "swiper_quad_long_yellow.gltf",
+        "swiper_quad_yellow.gltf",
+        "swiper_yellow.gltf"
+      ]
+    }
+  ],
+  "readiness": {
+    "sha256": "PENDING_BINARY_INTAKE",
+    "realGLTFGeometryAll": "NOT_MEASURED",
+    "materialPreview": "NOT_TESTED",
+    "allowlist": "NOT_APPROVED",
+    "sourceOwnership": "Read-only provenance"
+  }
+}

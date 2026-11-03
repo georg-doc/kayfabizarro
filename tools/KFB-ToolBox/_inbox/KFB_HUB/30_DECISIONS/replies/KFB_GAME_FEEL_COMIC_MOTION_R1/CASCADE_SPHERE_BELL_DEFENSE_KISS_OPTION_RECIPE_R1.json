@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.cascade.bell-defense.OPTION.v1",
+  "date": "2026-10-28",
+  "status": "CONCEPT_NOT_RUNTIME",
+  "authority": "WS0 R3 V-962 V-968 unchanged",
+  "mode": "ONE_SINK_REPLACEMENT_OR_POST_GOLDEN_VARIANT_ONLY",
+  "owner": "cascade-core (existing private R3 host)",
+  "bellId": "cascade-foyer-bell-01",
+  "initial": {
+    "integrity": 80
+  },
+  "bounds": {
+    "integrity": [
+      0,
+      100
+    ]
+  },
+  "balanceProposal": {
+    "contactDamage": 10,
+    "validSupplyRepair": 15,
+    "pulseIntervalTicks": 240,
+    "assumingFixedTickHz": 60,
+    "pulseStrengthFormula": "h>0 ? 0.25+0.75*h : 0",
+    "pulseRadiusFractionFormula": "h>0 ? 0.70+0.30*h : 0"
+  },
+  "domain": {
+    "enemy": "black-goo-boids",
+    "friendly": "valid-friendly-fluff-supply",
+    "contact": "hitbox accepted in existing World/physics",
+    "logicalEnemyState": "existing owner; visual instances have no individual game state authority",
+    "colors": "WS0_UNRESOLVED_SIX_STORY_MODE_PALETTE",
+    "visualStoryModes": [
+      "Tragic",
+      "Comic",
+      "Absurd",
+      "Heroic",
+      "Mystical",
+      "Forbidden"
+    ],
+    "separateAOEClasses": 0
+  },
+  "eventKinds": [
+    "bell.contact",
+    "bell.repaired",
+    "bell.pulse",
+    "bell.disabled"
+  ],
+  "eventIdentity": "existing instanceId+tick+bellId+kind+causeId; dedupe before applying damage/repair/audio",
+  "success": "integrity>0 AND authored legitimate supply arrivals target reached",
+  "audioSource": "SOURCE_REQUIRED/EXISTING_ACCEPTED_ONLY",
+  "realDomRecordingLicensed": false,
+  "true3DBellDonorAccepted": false,
+  "notes": "Pitch c0 is official Dom research fact; may not identify any unverified sound clip as real Dicke Pitter.",
+  "tests": [
+    "min/max hp clamp",
+    "hit damage",
+    "repair clamp",
+    "zero means no pulse",
+    "radius monotonic",
+    "power monotonic",
+    "no palette claim",
+    "source not accepted",
+    "one core owner",
+    "R3 gate unchanged"
+  ],
+  "nextReview": "WS0_EXISTING_CASCADE_R3_SOURCE_DESIGN_PACKAGE_OPTIONAL_OBJECTIVE_SELECTION"
+}
