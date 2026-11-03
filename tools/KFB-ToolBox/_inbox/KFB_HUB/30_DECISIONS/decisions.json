@@ -19136,6 +19136,21 @@
    "superseded_by": [],
    "why": "Erst frischer Blick von aussen, dann Site; Messung trennt Testbuild-Artefakt von echtem Spielerproblem.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1308",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "TUNE",
+   "text": "Georg-Antworten: q407 Cafe-Bett bleibt erster Take; q417 Explosionsgroessen Passt; q420 Viertel Passt, Stufe 2 (Gasse, Bordstein zerlegen, Lader/Huelle getrennt) an WS-Design; q414 Pop-ups heller und farbiger (Dom zu dunkel) an WS-Design, im einen Licht-Rig; q418 Topfpflanzen PASS, Toepfe ruhiger (weniger kleinteilige Muster), Herkunft Lab vs. selbst gebaut klaeren, an Figuren-Sitzung; q416/q419 TUNE an Kartenkante: IMMER ein Icon-Satz und eine UI-Logik (Design-Check, kein freistehendes x), Vorhang bleibt three.js-Stoff mit Knet-Material, Radio mit voller Bedienung (zurueck, Play/Pause, weiter, Lautstaerke, Ton aus, Liste, Lauftext). Blinde Kritik b303 direkt an WSB-Mac-mini-Sitzung geschickt. Stamm @cb50ba6 bleibt bis zur Kritik unveraendert.",
+   "values": {},
+   "owner": "Kartenkante · WS-Design · Figuren · WSB",
+   "check": "q407, q414, q416-q420, b303",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein HUD wirkt nur aus einem Guss; bewegte Teile brauchen echte Simulation statt Bildern.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
