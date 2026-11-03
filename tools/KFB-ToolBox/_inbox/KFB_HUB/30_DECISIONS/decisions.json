@@ -19676,6 +19676,21 @@
    "superseded_by": [],
    "why": "Tueren fuehren dorthin, wo ihr Motiv hingehoert; Kultur-Blobs nach Region.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1344",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Kartenbau (design/kartenbau-r1 @ad4e7088, kartenbau=1): Karten fallen und rasten als Kacheln ein, 1,5 s je Gebaeude; grauer Balken war Labyrinth-Wand KFB_Random_Maze aus cascade/r4 im Endlos-Host, entfernt (eine Zeile runtime.js), WS1 nimmt ad4e7088 beim Viertel-Merge mit (N-102). Hub q443.",
+   "values": {},
+   "owner": "WS-Design · WS1 · Georg",
+   "check": "q443, N-102",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Laden wird zum Kartenmoment; sichtbare Reste vor dem Hub beheben.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
