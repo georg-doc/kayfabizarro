@@ -20186,6 +20186,36 @@
    "superseded_by": [],
    "why": "2D-Claymation-PNGs tragen Look und Juice schneller als neue 3D-Modelle.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1378",
+   "date": "04.11.2026",
+   "area": "Figuren",
+   "verdict": "KEEP",
+   "text": "Idle-Animationen (Georg 04.11.) an WSB, Vorrang vor meshopt: Arme stecken im Default im Koerper -> Retarget-/Rig-Korrektur je Figur (V-1065), kein Hand-Keyframing; Idle-System Basis + nicht-repetitiver Miniclip-Pool mit weichen Uebergaengen, dann Tanz, als Daten in clips.json; Werkzeug-Recherche (Mixamo, Clip-Katalog, NVIDIA-Werkzeug, offene Motion-Generatoren) vor Eigenbau; erst FB, dann alle spielbaren Figuren; Beleg vorne/seitlich plus Spielkamera von hinten.",
+   "values": {},
+   "owner": "WSB · Georg",
+   "check": "",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Idles tragen das Spielgefuehl, gerade von hinten.",
+   "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1379",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "FAIL",
+   "text": "Ladevorhang aus Knet-Grafik (hudkit=clay im Stamm): Georg 04.11. „das geht nicht“. WS1 schaltet ihn per Default aus (N-108, Ueberblendung als Ersatz); Kartenkante baut echten three.js-Stoffvorhang (q419), zwei Bahnen, Samt/Goldfransen, Ease-in/-out, dann Kamerafahrt und Ladebalken (q423).",
+   "values": {},
+   "owner": "Kartenkante · WS1 · Georg",
+   "check": "q419, q423",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Keine hochskalierten Grafikschnipsel als Ersatz fuer echte Animation.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

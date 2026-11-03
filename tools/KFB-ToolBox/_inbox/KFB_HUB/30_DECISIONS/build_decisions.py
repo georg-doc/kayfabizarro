@@ -1355,6 +1355,8 @@ d('V-1374','03.11.2026','Welt','TUNE','Tueren R3b (q461, Georg im Chat): Strudel
 d('V-1375','04.11.2026','Look','REVIEW','Fluff-Klumpen r2 (WSB assets/fluff-clay-r1 @af460c79, Bundle replies/FLUFF_CLAY_R1/MINI, scripts/fluff/fluff_clay_r2.py): L 3888 Dreiecke mit sieben spiraligen Straehnen als Teil der Oberflaeche, comic_M 1200 nur angedeutet; Name/Material/Farbe/Ursprung wie r1, Code zeigt noch auf r1 (placeVeg.js:39, npcSceneProbe.js:12). Budget-Entscheid WS0: L bis 4000, M bis 1280. Hub q463.','WSB · Georg','q463','Georg 03.11.'),
 d('V-1376','04.11.2026','Site','RULE','Auslieferung (Georg 04.11., N-107): einzige Quelle GitHub (KFB-MVP + assets/private); Site = reine Build-Ausgabe aus einem Commit (Split-Build); kein Laden zur Laufzeit von GitHub (privates Repo, raw ist kein CDN, V-427); Site-Host mit Cache, Hash-Namen, Kompression, Laden in Stufen.','WS0 · WS1','N-107','Georg 04.11.'),
 d('V-1377','04.11.2026','HUD','REVIEW','Satelliten-Leiste (Kartenkante module/hud-clay-r1 @efc8fe94, Sprites R2 privat @5993e209): links FLUFF (6 Arten) + SCORE (Summe) + Radio-Saeule, Panel faehrt nach rechts aus (Songs, Playlist, Musik/Effekte), nur gerade Mittelstuecke gestreckt; radio=ecke als Rueckfall. Hub q464. Fluff-Kugeln (Georg 04.11., q463 FAIL): keine Blender-Modelle, vorhandene Claymation-PNGs freigestellt und animiert, Aufsammeln als juicy Flug in die FLUFF-Zelle (Kartenkante, fluffpng=1); Blender erst fuers Metagame (Newton-Wiege-Alchemie). UI-Varianten/Skins per PNG mit gleicher Layout-Logik. WSB legt meshopt/KTX2-Liste selbst an.','Kartenkante · WSB · Georg','q463, q464','Georg 04.11.'),
+d('V-1378','04.11.2026','Figuren','KEEP','Idle-Animationen (Georg 04.11.) an WSB, Vorrang vor meshopt: Arme stecken im Default im Koerper -> Retarget-/Rig-Korrektur je Figur (V-1065), kein Hand-Keyframing; Idle-System Basis + nicht-repetitiver Miniclip-Pool mit weichen Uebergaengen, dann Tanz, als Daten in clips.json; Werkzeug-Recherche (Mixamo, Clip-Katalog, NVIDIA-Werkzeug, offene Motion-Generatoren) vor Eigenbau; erst FB, dann alle spielbaren Figuren; Beleg vorne/seitlich plus Spielkamera von hinten.','WSB · Georg','','Georg 04.11.'),
+d('V-1379','04.11.2026','HUD','FAIL','Ladevorhang aus Knet-Grafik (hudkit=clay im Stamm): Georg 04.11. „das geht nicht“. WS1 schaltet ihn per Default aus (N-108, Ueberblendung als Ersatz); Kartenkante baut echten three.js-Stoffvorhang (q419), zwei Bahnen, Samt/Goldfransen, Ease-in/-out, dann Kamerafahrt und Ladebalken (q423).','Kartenkante · WS1 · Georg','q419, q423','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2697,6 +2699,8 @@ WHY = {
  'V-1375':('Fluff soll aussehen wie gekneteter Flusen, nicht wie Plastik.','04.11.2026'),
  'V-1376':('GitHub ist die Quelle, die Site nur der Ausgabeort.','04.11.2026'),
  'V-1377':('2D-Claymation-PNGs tragen Look und Juice schneller als neue 3D-Modelle.','04.11.2026'),
+ 'V-1378':('Idles tragen das Spielgefuehl, gerade von hinten.','04.11.2026'),
+ 'V-1379':('Keine hochskalierten Grafikschnipsel als Ersatz fuer echte Animation.','04.11.2026'),
 }
 SUP = {}
 for e in E:
