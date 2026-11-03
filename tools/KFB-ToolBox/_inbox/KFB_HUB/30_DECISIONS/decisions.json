@@ -18806,6 +18806,51 @@
    "superseded_by": [],
    "why": "Ein Skriptaufruf statt eines Agenten je Song; eine Liste als Uebergabe an den Audio-Besitzer.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1286",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "PLAN",
+   "text": "Neue Knet-HUD-Boegen von Georg (KFB Hud + UI/KFB Claymtion HUD elements: Schalter, Regler, Medienknoepfe, Playlist, Pillen, Tafeln, Blasen, Balken, Fluff-Muenzen, Slot-Leisten, Icons) sind Hauptquelle, Kassetten-Radio Legacy. Luecken als 21 Einzelauftraege fuer ChatGPT-Web (b300): lange Teile zum Schneiden, Reiter, CTA-Plakette, FLUFFY-Schrift, Erzaehlerbox ohne Zipfel, Ticker, Titelplatte, Haekchen, Schliessen/Zurueck, Scrollbar, Knet-Radio ohne Kassette, Vorhang; Schriften als Webfonts. Fresh-Image-Job-Regel (KFB-Stunt-Car-Race popup_assets_r1/workflow, 03.11.): jedes Bild ein neuer Auftrag, ein Motiv je Bild. Neue Pop-ups (Wahrzeichen, Azteken, Baumgeister, Statuen) gehen in den Pop-up-Pool von WSA, im Spiel mit Hartgummi-Reaktion. N-083.",
+   "values": {},
+   "owner": "WS1 · Georg · WSA",
+   "check": "b300, N-083",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Boegen zuerst; nur Luecken neu, je ein Motiv pro Auftrag.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1287",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "TODO",
+   "text": "Nebel aus der Hoehe (Georg 03.11.): zu breiter und hoher Nebel verdeckt beim Fliegen den Horizont, Planeten wirken halb abgeschnitten. Nebelhoehe und -dichte mit der Kamerahoehe fuehren, klarer Horizont aus der Hoehe; WS1 N-080 r, ggf. mit WS-Himmel.",
+   "values": {},
+   "owner": "WS1 · WS-Himmel",
+   "check": "Beleg Flughoehe vorher/nachher",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Horizont und Planeten muessen aus der Flughoehe lesbar sein.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1288",
+   "date": "03.11.2026",
+   "area": "Wissen",
+   "verdict": "INFO",
+   "text": "Atlas-Check-in Privacy Kayfabe (kayfabizarro @2c3a950): Pilot fertig inkl. Tipps am Druckbild, Roko-Quelle archiviert gefunden, Curtis-Aussage bei 00:24:08 geprueft. Signatur auf alten Deck-PDFs: Vorschlag Ein-Deck-Test mit Fussleiste bzw. Kolophon; das Google-Zeichen wird nicht ueberdeckt. Entscheidung Signatur pro Ausgabe oder pro Karte nach dem MVP. Offen: 0.01-Prozent-Angabe auf The Transparency Report als fiktiv kenntlich machen oder belegen.",
+   "values": {},
+   "owner": "Georg (nach MVP)",
+   "check": "Atlas-Check-in",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Dokumentiert, kein Bau vor dem MVP.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
