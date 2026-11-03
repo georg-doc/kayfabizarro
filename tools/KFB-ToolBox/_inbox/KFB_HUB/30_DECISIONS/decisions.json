@@ -18911,6 +18911,21 @@
    "superseded_by": [],
    "why": "Ein Horizont fuer alle Himmelsteile, keine Tricks (V-385).",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1293",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "DECISION",
+   "text": "Bildauftraege (Georg 03.11.: Briefings schlecht, Slider doppelt bestellt, Form verwechselt, erste Pop-up-Runde ohne Szene und Charme): HUD je Familie als ein Bogen in einem Lauf, Props als Einzelbilder freigestellt mit Szene; vorher Bestand pruefen; neue Serie bei Drift; Truhen und Gegner als eigene Jobs. Georgs neue Boegen (KFB Claymation Scenes + HUD) liefern fast alle Luecken aus b300 (Pillen, Reiter, CTA-Plakette, FLUFFY, Erzaehlerbox, Ticker, Haekchen, Schliessen, Zurueck, Scrollbar, Radio, Vorhang) plus Scenelets (Wasser, Pilze, Sci-Fi, Welt-Dioramen). Knet-Tafel hudkit=clay (module/hud-clay-r1 @2c20dc15, Luckiest Guy plus Fredoka) nimmt einen Bogen als Quelle. Hoehendunst q412 TUNE: Planet wirkt aufgeklebt, R2 mit Luftperspektive je Bildpunkt, Horizontband aus dem Welt-Nebel, Planet sinkt mit der Kamera. Mac mini: Gummi-Messung und Slice 2D-Gegner mobs2d=1 (instanziert, Klappscheibe, Explosion M). Platte nach Browser-Schliessen 16 GB; WSA-Kopien gesichert (29 voll, 22 teilweise, 0 Fehler), Entfernen ueber b302.",
+   "values": {},
+   "owner": "alle",
+   "check": "Belege je Slice",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Drift bei Bildgenerierung beherrschen; vorhandene Boegen nutzen; Mini nicht leerlaufen lassen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

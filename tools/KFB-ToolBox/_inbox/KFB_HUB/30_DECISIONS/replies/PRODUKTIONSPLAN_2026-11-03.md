@@ -29,3 +29,12 @@ b300 Knet-HUD-Lücken, b301 läuft bei WSA im Composer.
 - Hub-Fragen werden gesammelt, damit Georg sie bei der Rückkehr gebündelt sieht.
 - Messen nur, was für das Spiel zählt. Mini-Zahlen nur bei Leistungsfragen.
 - Plattenplatz: mindestens 9 GB frei halten. Nichts löschen; WSA entfernt seine Kopien erst nach der Sicherung durch WS0.
+
+## Nach der Integration, vor der GPT-Site: blinde Kritik auf dem Mac mini (Georg 03.11., V-1294)
+- Sobald WS1 meldet, dass die Fixrunde drin ist, läuft auf dem Mini die Testfahrt mit allen Schaltern. WSB startet dort vier blinde Kritiker. Sie bekommen nur das laufende Spiel und eine Seite Global Intent (drei Ebenen V-1171: realistischer Hintergrund und Ton, Cartoon-Vordergrund, Knete und WFC in der Mitte), keine Briefs und keine Vorgeschichte.
+  1. Look: Design, Farbe, Licht, Stimmigkeit der Ebenen.
+  2. Spiel: Steuerung, Fahrgefühl, Fliegen, Ziele, Belohnung.
+  3. Technik: Code, Bildzeit, Ladezeit, Speicher.
+  4. Kreativ und Metaerzählung: Satire, Kartenwelt, HyperNorm.
+- Jeder Kritiker liefert ein kurzes Protokoll und 5–10 Vorschläge, an die wir noch nicht gedacht haben. Keine Albernheiten, keine neuen Großsysteme, nur was den Global Intent stärkt.
+- WS0 sortiert die Vorschläge und legt Georg eine Auswahl im Hub vor. Das ist die eine Kritikrunde dieser Runde.
