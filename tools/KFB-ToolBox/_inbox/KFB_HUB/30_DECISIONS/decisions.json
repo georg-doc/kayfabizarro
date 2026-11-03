@@ -18851,6 +18851,36 @@
    "superseded_by": [],
    "why": "Dokumentiert, kein Bau vor dem MVP.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1289",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Spielrichtung (Georg 03.11.): Gebaeude-Zerstoerung (HyperNorm-Kartengebaeude) ist der Hauptmechanismus, weil Terrain und Bauten ohne Dioramen am meisten Spiel erlauben; Gelaendekarten bleiben, Truhen kommen dazu. Surreale Knet-Pop-ups (Wahrzeichen bunt gemischt, z. B. Koelner Dom im Kreml-Biom) als Points of Interest, nie direkt nebeneinander, ueber den Verteiler mit Mindestabstand. Truhen als 2D-Knet-Pop-ups mit Augen und Deck-Motiv (Bildwechsel zu/auf, Squash, VFX, card_reward_r3-Klang), 3D-KayKit-Truhe nur fuer die Goblin-Bank (KONZEPT_PROPS_LOOT_R1 ergaenzt). Pop-ups im Spiel: traege zur Kamera drehen, Licht und Toenung wie die Welt, Kontaktschatten, Hartgummi nach Steifigkeitstabelle je Prop-Klasse mit Durchlass-Hoehe fuers Blaetterdach (WS-Verteiler, WS1 N-084).",
+   "values": {},
+   "owner": "WS1 · WS-Verteiler · WSA",
+   "check": "N-084, Konzept",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zerstoerung bietet die meiste Spieltiefe; 2D-Knet-Pop-ups liefern Vielfalt schnell und passen zum Stil.",
+   "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1290",
+   "date": "03.11.2026",
+   "area": "Fahren",
+   "verdict": "PLAN",
+   "text": "WS1 Q-058 Diagnose der Testfahrt: keine Regression, sondern Schalter und Einstellung (travel=1 fehlte in der Adresse, Ausrollen 0,9/s, Boost nach 2,9 s leer, Kuppenflug nur ueber Rampen); Motorton: lokaler Ton-Zwischenspeicher ohne engine_r2; Gelaendekarten echte Hoehe, wird Schein-Gelaende; Baeume reagieren, aber zu kurz; HUD-Punkte sind Elan-Platzhalter (Georg: Elan parken, Schwungflug spaeter als zweiter Flugmodus wie Dragonriding), Lebensbalken ohne Funktion; Drift gebaut, aber schwach; Speedlines sind Jetpack-Effekte an der Figur; Sechseck-Topf ist ein gefaerbter Kenney-Stumpf. Reihenfolge: h+o, g; deckGround, Huelle, testfahrt-build mit c; b+n, j, d, e; k, l; a mit p. f, m und Steifigkeit an WS-Verteiler. Vorgabe-Adresse bekommt travel=1; E im Fahrzeug ab Tempo immer Drift.",
+   "values": {},
+   "owner": "WS1 · WS-Verteiler",
+   "check": "Q-058, N-084",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Diagnose vor Tuning hat gezeigt, dass das meiste Einstellung ist; kleine Fixes zuerst.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

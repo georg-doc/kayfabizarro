@@ -38,6 +38,11 @@
   | Groß | seltener Fund: Song, Tanz-Clip, Skin, Hut, dazu Fluff |
 - Keine Doppelten, wenn es vermeidbar ist, wie bei den Karten (V-1231). Kein Kauf und keine Echtgeld-Logik.
 - Eine Karte aus der Truhe bekommt denselben Hero-Shot (V-1230).
+- **Aussehen (Georg 03.11., V-1289):** Truhen im Gelände sind Knet-Pop-ups in 2D wie die neuen Pop-ups, keine 3D-Kisten.
+  - Eine Serie entsteht schnell: Augen, Charakter, je Deck ein eigenes Motiv.
+  - Öffnen: Bildwechsel zu-auf mit Squash, kleiner Sprenkel- oder Funkenstoß und Truhenklang aus `card_reward_r3`.
+  - Größe klein, mittel, groß nach der Tabelle oben.
+  - Die 3D-KayKit-Truhe mit Öffnen-Animation bleibt der Goblin-Bank vorbehalten.
 
 ## Reihenfolge
 **MVP:** Tabelle als Daten und Startausrüstung mit Kompass, Radio, einer Waffe, Jetpack. Nichts ist gesperrt, ohne dass man es merkt; Kernfunktionen sind vom Start da und können später als Fund beginnen.
