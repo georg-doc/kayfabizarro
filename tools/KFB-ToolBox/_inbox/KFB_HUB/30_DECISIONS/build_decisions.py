@@ -1362,6 +1362,7 @@ d('V-1381','04.11.2026','HUD','FAIL','Intro/Ladebildschirm (Georg 04.11.): Versa
 d('V-1382','04.11.2026','HUD','KEEP','Fluff-HUD (Georg 04.11.): oben mittig kompaktes, animierbares Ressourcen-Element (6 Arten + Gesamt-Fluff); Aufklapper fuer Fluff-Alchemie-Optionen; Button Kayfabricate... oeffnet KFB-Standard-Overlay (vorerst Platzhalter). Spaeter Fluff-Alchemie-Minispiel (DIY, cartoon-logisch, juicy: Karten, Props, Power-ups, Heiltraenke), Newton-Wiege-Idee. Links nur Satelliten-Radio im Massstab der Action-Buttons. Welt-Kugeln: Georgs Sprites KFB_Fluff_24_States_Game_Sprites (6 Farben x ball/squash/melt/splat), Zuordnung Farbe-Art offen (heroic orange vs tuerkis). Alles Kartenkante nach dem Intro.','Kartenkante · Georg','','Georg 04.11.'),
 d('V-1383','04.11.2026','Welt','TUNE','Holo-Aufbau im Spiel (design/kartenbau-r4 @a4082a87, Hub q466; Georg im Chat): Aufbau cool, aber Strahler in der Mitte erschliesst sich nicht/redundant -> integrieren (Saeule zeichnet das Hologramm, faechert zu den Waenden) oder weglassen; Umriss-Zustand zu kleinteilig -> grosse Holo-Flaechen mit wenigen Linien wie im Remotion-Clip, Liniendichte nach Bildgroesse. Tueren R4 (q467), Slop-Ton R2 (q468), Pop-up-Katalog 392 neu/577 gesamt (q469, assets/popups-ingest-r1 @bf5a9a6e) im Hub; Slop-Zerfall R2 von WS0 zurueck (liest sich nicht als Papier). WSB: Arm-Korrektur 18 Grad als Clip-Satz je Koerpergruppe (breite Koerper eigene Datei).','WS-Design · WS-Verteiler · Rakete/Flug · WSB · Georg','q466, q467, q468, q469','Georg 04.11.'),
 d('V-1384','04.11.2026','Welt','TUNE','Tueren R4 (q467, Georg im Chat): bei 80 %; integratives Konzept fehlt, 3-4 Immersionsbrueche (sichtbares Mittel-Loch, punktfoermige Umwandlung, Transition). WS-Design: Recherche-Agent zu Portal-/Warp-Durchfahrten in Cartoon-/Sci-Fi-Spielen, dann eine Seite Choreografie (Zustaende, Portal, Spieler, Kamera, Farbe/Form, Ton), Storyboard, erst dann bauen.','WS-Design · Georg','q467','Georg 04.11.'),
+d('V-1385','04.11.2026','HUD','REVIEW','Intro R2 (Kartenkante module/hud-clay-r1 @160fcf7d): three.js-Stoffvorhang (Verlet nach offiziellem Cloth-Beispiel), zwei Samtbahnen, Volant mit Goldfransen, Buehnenlicht; Erzaehlzeile Fredoka Gross/Klein, ein Ladebalken-Teil mit echtem Fortschritt; Oeffnen 1,7 s Ease-in/-out, Kamerafahrt ab 40 %, HUD danach, Renderer freigegeben; ein Kritiker gelaufen. Hub q470. Slop-Zerfall R3 Kritiker 3/10 -> R4 mit Blatt-Fall-Modell freigegeben.','Kartenkante · Rakete/Flug · Georg','q470','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2711,6 +2712,7 @@ WHY = {
  'V-1382':('Fluff wird sichtbare Ressource mit eigenem Verwertungs-Kreislauf.','04.11.2026'),
  'V-1383':('Jedes Effekt-Element braucht einen erkennbaren Zweck im Ablauf.','04.11.2026'),
  'V-1384':('Uebergaenge brauchen eine Choreografie, nicht Schichten.','04.11.2026'),
+ 'V-1385':('Ein Kritiker vor der Abgabe faengt die groben Brueche.','04.11.2026'),
 }
 SUP = {}
 for e in E:

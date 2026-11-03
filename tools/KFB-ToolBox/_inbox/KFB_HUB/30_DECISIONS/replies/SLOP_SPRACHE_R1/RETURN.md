@@ -68,3 +68,24 @@ Konzept-Probe auf Auftrag von WS0 (03.11.). Nichts davon ist im Spiel.
 - Die liegenden Schnipsel sind am Ende klein und blass, auf Folie 2 rechts kaum zu sehen.
 - Die kleinen Schnipsel fliegen teils noch oben aus dem Bild.
 - Code: `fx/slop-r1`; Prüf-Haken `inkClean`, `sizes`, `pose`; Testmodus `mobbild`.
+
+## Runde 3 (04.11.): Zerfall als „Papier reißt“ (WS0-Rückgabe), ein Kritiker auf dem Endstand
+Belege: `SLOP_R3_Storyboard_1/2.jpg`, `SLOP_R3_ZERFALL_VORN.mp4`, `SLOP_R3_ZERFALL_SCHRAEG.mp4` (mit Ton).
+- Umgesetzt:
+  - wenige große Stücke: ein großer Bogen und ein gerader Riss am Gesicht vorbei, zwei Bisse am Rand;
+  - Drehung um eine waagrechte Achse, damit die helle Rückseite zeigt;
+  - 4 statt 14 Tropfen, kein Treffer-Spritzer beim tödlichen Treffer;
+  - die Stücke liegen 5 s auf dem Hang (meist Papierseite oben) und verblassen dann;
+  - Kamera 5 m weg, 1 m höher.
+- **Kritiker** (ein Durchlauf, blind auf Bildfolgen und Folien): „liest sich als Papier“ **3/10**, „ein Effekt“ **4/10**. Die Kernpunkte stimmen mit meiner eigenen Prüfung überein:
+  1. Das große Stück wirkt wie ein Brett: gerade Kante, kein heller Rissrand.
+  2. Es fällt zu schnell (in unter 0,5 s flach), Kippen und Flattern sind kaum sichtbar.
+  3. Am Ende liegt eine helle Fläche ohne Gesicht, die Pfütze liest sich als Schatten.
+  4. Splitter und ein naher Tropfen (schwarzer Ring) wirken wie eigene Effekte.
+- **Vorschlag R4** (gleiche eine Operation):
+  - große Stücke langsam (Endtempo etwa 1,2 m/s, 1–1,5 s in der Luft), dabei sichtbar 1–2 Umdrehungen;
+  - beide großen Risse als Bögen, dazu ein breiter heller Rissrand;
+  - das Gesichtsstück landet mit der Druckseite oben;
+  - keine Splitter, die weit wegfliegen;
+  - Tropfen nur nach unten;
+  - Pfütze kleiner, nur unter den Stücken.

@@ -20291,6 +20291,21 @@
    "superseded_by": [],
    "why": "Uebergaenge brauchen eine Choreografie, nicht Schichten.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1385",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Intro R2 (Kartenkante module/hud-clay-r1 @160fcf7d): three.js-Stoffvorhang (Verlet nach offiziellem Cloth-Beispiel), zwei Samtbahnen, Volant mit Goldfransen, Buehnenlicht; Erzaehlzeile Fredoka Gross/Klein, ein Ladebalken-Teil mit echtem Fortschritt; Oeffnen 1,7 s Ease-in/-out, Kamerafahrt ab 40 %, HUD danach, Renderer freigegeben; ein Kritiker gelaufen. Hub q470. Slop-Zerfall R3 Kritiker 3/10 -> R4 mit Blatt-Fall-Modell freigegeben.",
+   "values": {},
+   "owner": "Kartenkante · Rakete/Flug · Georg",
+   "check": "q470",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Kritiker vor der Abgabe faengt die groben Brueche.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
