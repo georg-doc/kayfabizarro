@@ -1,0 +1,97 @@
+{
+ "machine": "Apple M4",
+ "runs": [
+  {
+   "tag": "ohne",
+   "frames": 699,
+   "frameMed": 13.4,
+   "frameP95": 18.5,
+   "renderMed": 11.2,
+   "renderP95": 14.8,
+   "calls": 176,
+   "tris": 667655,
+   "mobsMs": null,
+   "live": 0,
+   "errs": 0,
+   "load": [
+    2.49,
+    2.18,
+    2
+   ]
+  },
+  {
+   "tag": "mit",
+   "frames": 719,
+   "frameMed": 12.8,
+   "frameP95": 20.4,
+   "renderMed": 10.6,
+   "renderP95": 15.5,
+   "calls": 177,
+   "tris": 667755,
+   "mobsMs": 0.018,
+   "live": 50,
+   "errs": 0,
+   "load": [
+    2.41,
+    2.19,
+    2.01
+   ]
+  },
+  {
+   "tag": "ohne",
+   "frames": 696,
+   "frameMed": 13.6,
+   "frameP95": 19.7,
+   "renderMed": 11.2,
+   "renderP95": 15.4,
+   "calls": 176,
+   "tris": 667655,
+   "mobsMs": null,
+   "live": 0,
+   "errs": 0,
+   "load": [
+    2.42,
+    2.22,
+    2.03
+   ]
+  },
+  {
+   "tag": "mit",
+   "frames": 712,
+   "frameMed": 12.9,
+   "frameP95": 22,
+   "renderMed": 10.6,
+   "renderP95": 16.9,
+   "calls": 177,
+   "tris": 667755,
+   "mobsMs": 0.027,
+   "live": 50,
+   "errs": 0,
+   "load": [
+    2.28,
+    2.21,
+    2.03
+   ]
+  }
+ ],
+ "sum": {
+  "n": 50,
+  "ohne": {
+   "frameMed": 13.5,
+   "frameP95": 19.1,
+   "renderMed": 11.2,
+   "renderP95": 15.1,
+   "calls": 176,
+   "tris": 667655
+  },
+  "mit": {
+   "frameMed": 12.85,
+   "frameP95": 21.2,
+   "renderMed": 10.6,
+   "renderP95": 16.2,
+   "calls": 177,
+   "tris": 667755,
+   "mobsMs": 0.02
+  }
+ }
+}
