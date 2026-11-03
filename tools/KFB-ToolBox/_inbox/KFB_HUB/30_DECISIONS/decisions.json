@@ -18671,6 +18671,21 @@
    "superseded_by": [],
    "why": "Georg will auf mehreren Rechnern testen; Stage statt Hin und Her.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1277",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Die Testfahrt-Adresse ohne Hash zeigte den alten Spike R4 (Hex-Insel, Pluralism Simulator); Georg hielt es fuer eine Regression. Ursache: WS0 hatte die Adresse ohne Hash genannt, und die Seite faellt ohne Hash auf den alten Spike zurueck. Regel: Ohne oder mit unbekanntem Hash leitet die Seite auf die aktuelle Testfahrt-Vorgabe um; alte Spikes nur hinter ausdruecklichem Hash (N-079). WS0 gibt Georg Testfahrt-Links nur mit vollem Hash. q401 hat jetzt Heimnetz- und localhost-Link.",
+   "values": {},
+   "owner": "WS1 · WS0",
+   "check": "N-079, q401",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg darf nie in einem alten Fail-Stand landen; das liest sich als Regression.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
