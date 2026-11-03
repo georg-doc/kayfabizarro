@@ -18926,6 +18926,21 @@
    "superseded_by": [],
    "why": "Drift bei Bildgenerierung beherrschen; vorhandene Boegen nutzen; Mini nicht leerlaufen lassen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1294",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Flugsteuerung (Flug-Sitzung game/flugsteuerung-r1 @56c42756, flug=r2): ein Schwebeflug fuer Figur und Dieselpunk-Wagen, Tasten nach V-1279, Speedlines am Bildrand mit Einstellung und flylines=0; Hub q413. Hartgummi R11 (world/gummi-r1): Mini-Teilung zeigt keine Code-Ursache, Gegenprobe heute ebenso 21 ms, Hartgummi unter 2 ms. Beide Merge frei (N-087). Blinde Kritik auf dem Mac mini nach der Integration vor der GPT-Site (Georg 03.11.): vier Kritiker (Look, Spiel, Technik, Kreativ/Metaerzaehlung), nur Spiel plus eine Seite Global Intent, je Protokoll und 5-10 Vorschlaege, WS0 sortiert fuer den Hub (PRODUKTIONSPLAN).",
+   "values": {},
+   "owner": "WS1 · WSB",
+   "check": "q413, N-087",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Blinde Sicht findet, was wir nicht sehen; eine Kritikrunde an der richtigen Stelle statt vieler.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
