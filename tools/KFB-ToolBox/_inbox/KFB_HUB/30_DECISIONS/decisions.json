@@ -19091,6 +19091,21 @@
    "superseded_by": [],
    "why": "Grundlage fuer den Hauptmechanismus Zerstoerung.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1305",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Kartenviertel im Endlos-Spiel (WS-Design design/viertel-endlos-r1 @0ab19dd0, enthaelt Zielhaken; viertel=1 mit fx=r2): Gewicht 0,12 (29 Viertel auf 408 Kartenplaetze im 6-km-Umkreis), ebener Platz 30 m, Boden und Huelle aus einem Generator, Gebaeude feste Hindernisse und Ziele am Zielhaken mit Loch, Bruch, Truemmern; Huelle-Generator Vorgabe in cascade/r4 (huelle=alt); Blatt in vier Streifen (14,5 ms waren das Readback-Gate); review/assets und donors im privaten Stamm. Bau 8,9 s verteilt, Schritte bis 12,3 ms, Bordstein 13,6 ms. Hub q420, Merge frei N-096. Offen: Planeten-Dekodierung auf dem Hauptfaden (an WS-Himmel, gemeinsamer Zellen-Cache), Bordstein zerlegen, Zufahrt auf eine Gasse (Stufe 2).",
+   "values": {},
+   "owner": "WS1 · WS-Himmel · WS-Design",
+   "check": "q420, N-096",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Hauptmechanismus erstmals im Endlos-Spiel spielbar.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
