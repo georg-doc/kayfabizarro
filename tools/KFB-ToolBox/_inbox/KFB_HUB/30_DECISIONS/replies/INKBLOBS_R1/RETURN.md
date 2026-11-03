@@ -29,3 +29,11 @@ Im ruhigen Messpaar: Renderzeit 18,4 ms mit gegen 18,2 ms ohne, Bildzeit 24,9 ge
 - Der Clip wurde unter Last aufgenommen, mit etwa 16 Bildern pro Sekunde.
 - kfbInsert ist als gleiche Datei übernommen und lässt sich ohne Konflikt mit design/einfuegen-r1 zusammenführen. Ändert WS-Design die Datei vorher noch, gilt deren Fassung.
 - Heilen kommt später, wie besprochen.
+
+## Runde 2 (03.11. abends): Alien-Satz, nasse Spur, runde Schatten
+**Stand:** `game/inkblobs-r1` @77012e24, Atlas `assets/inkblobs-r1` @264498a5.
+- **Aliens R6:** 8 Alien-Blobs mit im Atlas, jetzt 32 Blobs. Jede Gruppe kommt eher aus einem Satz (reihum Teens, Magier, Aliens) mit etwa einem Viertel Fremder dazwischen. Der Anführer trägt weiter Mütze. Beleg: `INK_Gruppe_vorn_Aliens_rund.jpg`.
+- **Tintenspur (Georg: „mehr nach Tinte, glänzend“):** Das ist eine Erweiterung von inkPatch, die nur auf Wunsch greift (`wet`); die bisherigen Nutzer bleiben unverändert, der alte Test ist grün. Die Spur ist tiefschwarz-violett und glatt, mit Sonnenglanz, Himmelsspiegelung am flachen Blickwinkel, hellem Meniskusrand, feinen Ausläufern und Spritzern. Sie hat überall denselben Tintenton, auch auf hellen Bodenbändern. Beleg: `INK_Spur_alt_neu.jpg` (links alt, rechts neu, gleiches angehaltenes Bild).
+- **Kontaktschatten:** rund statt oval, kleiner im Sprung und beim Landen mit der Stauchung kurz breiter.
+- **Bildzeit mit 30 Blobs** (`bildzeit_aliens.json`), zwei Messrunden unter Last. Ruhige Paare: Runde A 19,2 und 20,2 ms Renderzeit gegen 16,8 ms ohne; Runde B 17,1 und 16,4 ms gegen 16,6 ms. Mehrkosten zwischen null und etwa 3 ms; die Last überdeckt den Unterschied. 3 Zeichenaufrufe mehr, Rechenzeit der Blobs 0,03 bis 0,06 ms.
+- **Nicht gemessen:** die Kosten der nassen Spur selbst. Solange ein Fleck liegt, prüft jedes Bodenpixel einmal die Fleckmaske; Pixel ausserhalb der Flecken steigen dabei früh aus, Pixel im Fleck rechnen sie für den Rand viermal mehr.

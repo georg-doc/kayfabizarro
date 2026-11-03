@@ -1,0 +1,207 @@
+{
+ "note": "32 Blobs im Atlas, 30 im Spiel, zwei Messrunden unter Last",
+ "runde_a": {
+  "machine": "Apple M1 Max",
+  "runs": [
+   {
+    "tag": "ohne",
+    "frames": 390,
+    "frameMed": 21.7,
+    "frameP95": 36.3,
+    "renderMed": 16.8,
+    "renderP95": 20.9,
+    "calls": 171,
+    "tris": 651031,
+    "mobsMs": null,
+    "live": 0,
+    "tropfen10s": 0,
+    "errs": 0,
+    "load": [
+     16.61,
+     16.59,
+     18.44
+    ]
+   },
+   {
+    "tag": "mit",
+    "frames": 375,
+    "frameMed": 25.7,
+    "frameP95": 30.6,
+    "renderMed": 19.2,
+    "renderP95": 22.4,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.055,
+    "live": 30,
+    "tropfen10s": 1741,
+    "errs": 0,
+    "load": [
+     17.85,
+     16.95,
+     18.51
+    ]
+   },
+   {
+    "tag": "ohne",
+    "frames": 165,
+    "frameMed": 60.2,
+    "frameP95": 86.1,
+    "renderMed": 36.2,
+    "renderP95": 51.2,
+    "calls": 171,
+    "tris": 646307,
+    "mobsMs": null,
+    "live": 0,
+    "tropfen10s": 0,
+    "errs": 0,
+    "load": [
+     17.67,
+     17.06,
+     18.49
+    ]
+   },
+   {
+    "tag": "mit",
+    "frames": 341,
+    "frameMed": 27.6,
+    "frameP95": 36.6,
+    "renderMed": 20.2,
+    "renderP95": 24.1,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.056,
+    "live": 30,
+    "tropfen10s": 1707,
+    "errs": 0,
+    "load": [
+     16.51,
+     16.83,
+     18.35
+    ]
+   }
+  ],
+  "sum": {
+   "n": 30,
+   "ohne": {
+    "frameMed": 40.95,
+    "frameP95": 61.2,
+    "renderMed": 26.5,
+    "renderP95": 36.05,
+    "calls": 171,
+    "tris": 648669
+   },
+   "mit": {
+    "frameMed": 26.65,
+    "frameP95": 33.6,
+    "renderMed": 19.7,
+    "renderP95": 23.25,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.06,
+    "tropfen10s": 1724
+   }
+  }
+ },
+ "runde_b": {
+  "machine": "Apple M1 Max",
+  "runs": [
+   {
+    "tag": "ohne",
+    "frames": 107,
+    "frameMed": 80.6,
+    "frameP95": 170.5,
+    "renderMed": 52.3,
+    "renderP95": 89,
+    "calls": 171,
+    "tris": 646307,
+    "mobsMs": null,
+    "live": 0,
+    "tropfen10s": 0,
+    "errs": 0,
+    "load": [
+     15.61,
+     16.37,
+     18.03
+    ]
+   },
+   {
+    "tag": "mit",
+    "frames": 440,
+    "frameMed": 21.2,
+    "frameP95": 29.2,
+    "renderMed": 17.1,
+    "renderP95": 20.8,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.038,
+    "live": 30,
+    "tropfen10s": 1772,
+    "errs": 0,
+    "load": [
+     12.62,
+     15.58,
+     17.69
+    ]
+   },
+   {
+    "tag": "ohne",
+    "frames": 459,
+    "frameMed": 20.4,
+    "frameP95": 32,
+    "renderMed": 16.6,
+    "renderP95": 21.9,
+    "calls": 171,
+    "tris": 651031,
+    "mobsMs": null,
+    "live": 0,
+    "tropfen10s": 0,
+    "errs": 0,
+    "load": [
+     9.78,
+     14.61,
+     17.27
+    ]
+   },
+   {
+    "tag": "mit",
+    "frames": 451,
+    "frameMed": 20.3,
+    "frameP95": 28.6,
+    "renderMed": 16.4,
+    "renderP95": 20.3,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.026,
+    "live": 30,
+    "tropfen10s": 1625,
+    "errs": 0,
+    "load": [
+     7.61,
+     13.64,
+     16.82
+    ]
+   }
+  ],
+  "sum": {
+   "n": 30,
+   "ohne": {
+    "frameMed": 50.5,
+    "frameP95": 101.25,
+    "renderMed": 34.45,
+    "renderP95": 55.45,
+    "calls": 171,
+    "tris": 648669
+   },
+   "mit": {
+    "frameMed": 20.75,
+    "frameP95": 28.9,
+    "renderMed": 16.75,
+    "renderP95": 20.55,
+    "calls": 174,
+    "tris": 676751,
+    "mobsMs": 0.03,
+    "tropfen10s": 1698.5
+   }
+  }
+ }
+}
