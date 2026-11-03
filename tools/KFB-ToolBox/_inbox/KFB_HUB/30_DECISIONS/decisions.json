@@ -19811,6 +19811,21 @@
    "superseded_by": [],
    "why": "Der Spieler bleibt in seiner Bewegung; die Welt wechselt um ihn herum.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1353",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Georg-Antworten: q447 Truhe - keine Knet-Rauchwolken, Staubfahnen-Rauch (dustTrail) als Stoss unter der Truhe; Partikel und Zerfliessen PASS. q448 Monolith - Rueckseite zu dunkel; Kartenrelief wirkt als Fremdkoerper: Karte und Karten-Gelaende durch den Gelaende-Shader (Kartenbild als Albedo, gleiche Schattierung, groundGrade, Dunst, Licht, Sprenkelrand) - an WS-Design. Radio-Skins (module/hud-clay-r1 @a2aba06f, privat @dddd9215): Industrie, Retro, Satellit, Sci-Fi, DIY, Clay; kompakt 24 px / gross 34 px; Maxi 9-Slice mit Mindestgroessen; Default Industrie. Hub q450 (q437, q444 zurueckgezogen).",
+   "values": {},
+   "owner": "WS-Design · Kartenkante · Georg",
+   "check": "q447, q448, q450",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gelaende und Karte aus einem Shader; HUD-Skins als Daten.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
