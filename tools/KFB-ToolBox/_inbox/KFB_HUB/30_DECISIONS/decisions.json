@@ -19646,6 +19646,21 @@
    "superseded_by": [],
    "why": "Tueren sind Versprechen: man sieht schon, wohin es geht; vorhandene Uebergaenge statt neuer Systeme.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1342",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Monolith (design/monolith-r1 @8c3637b0, monolith=1, auf truhen-r1): naechste offene Karte 18 m aufrecht, sichtbar ab 220 m, Ruecken (Papier, Tuscherand, KFB), Drehung 130-50 m per Feder, Durchfahren sammelt ueber cardRelief.collectSite; Hub q442. Kartenbau (design/kartenbau-r1 @bdd759bd, kartenbau=1): Karten fallen und rasten als Kacheln ein, 1,5 s je Gebaeude; zurueck wegen grauem Balken im Vordergrund. Radio: Georg will farbige Sci-Fi-/DIY-Tech-Skins, Mini mit festen Knoepfen, Maxi mit Playlist und Sound-Reglern, Skins in Einstellungen und Maxi waehlbar (Kartenkante). Platte 9,1 GB.",
+   "values": {},
+   "owner": "WS-Design · Kartenkante · Georg",
+   "check": "q442",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ziele stehen in der Welt; das HUD darf Charakter zeigen, wenn es fest bleibt.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
