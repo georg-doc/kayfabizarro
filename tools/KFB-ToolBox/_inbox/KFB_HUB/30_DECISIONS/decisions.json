@@ -19226,6 +19226,21 @@
    "superseded_by": [],
    "why": "Eine Familie aus dem vorhandenen Satz; Icons als Daten, damit der Bogen nur ein Tausch ist.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1314",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "STATUS",
+   "text": "Modul Einfuegen (WS-Design design/einfuegen-r1 @4a712327, src/look/kfbInsert.js, Modell review/einfuegen-r1/EINFUEGEN_MODELL.md): Bild aus ACES zurueckgerechnet, tags 100 % Bildfarbe unbeleuchtet, Belichtung/Farbstich aus Rig-Stimmung, Light-Wrap aus kfbAir und Sonnenfarbe, Spiegeln zur Sonne (Sperre fuer Schrift), Kontaktschatten, GLSL-Chunk fuer Kuppel an WS-Himmel. WS0-Blick: tags gut, nachts milchig (Schwarzpunkt gehoben, heller als Gelaende) - zurueck: Kontrast halten, Mondblau, Lesbarkeit ueber Rand/Light-Wrap. Viertel Stufe 2 Zwischenstand design/viertel-stufe2-r1 @996df2bc.",
+   "values": {},
+   "owner": "WS-Design · WS-Himmel",
+   "check": "V-1312",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nacht heisst dunkler und kuehler, nicht milchig; Lesbarkeit kommt vom Rand.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
