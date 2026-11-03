@@ -1,0 +1,331 @@
+{
+ "feld_m": 4000,
+ "plaetze": 133,
+ "klassen": {
+  "figur": 25,
+  "truhe": 13,
+  "statue": 16,
+  "wasser": 10,
+  "baumgeist": 21,
+  "wahrzeichen": 3,
+  "portal": 6,
+  "ding": 7,
+  "szene": 17,
+  "tuer": 14,
+  "tresor": 1
+ },
+ "truhe_groesse": {
+  "klein": 9,
+  "mittel": 4
+ },
+ "truhe_in_mulde": 6,
+ "truhe_raster": 11,
+ "mulde_anteil_alle": 0.44,
+ "viertel_im_feld": 13,
+ "truhe_an_viertel_ecke": 2,
+ "motive_truhe": {
+  "tr_hirn": 1,
+  "tr_orakel": 1,
+  "tr_tentakel": 3,
+  "tr_korsar": 1,
+  "tr_rotmaul": 2,
+  "tr_weltraum": 1,
+  "tr_pilzwald": 1,
+  "tr_amethyst": 1,
+  "tr_zunge": 1,
+  "tr_pilz": 1
+ },
+ "motive_portal": {
+  "portal_kristall": 4,
+  "po_a1": 2
+ },
+ "unpassend_anteil": 0.18,
+ "kand": [
+  {
+   "x": -1843.6,
+   "z": -1682,
+   "y": -13.73,
+   "klasse": "truhe",
+   "motiv": "tr_hirn",
+   "passt": true,
+   "biome": "pastell",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 2.4
+  },
+  {
+   "x": 1020.1,
+   "z": -1056.9,
+   "y": -13.68,
+   "klasse": "truhe",
+   "motiv": "tr_orakel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 1.3,
+   "groesse": "mittel",
+   "ecke": null,
+   "mulde_m": 2.6
+  },
+  {
+   "x": 889.6,
+   "z": -576.7,
+   "y": -14.28,
+   "klasse": "truhe",
+   "motiv": "tr_tentakel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 8.1
+  },
+  {
+   "x": -1349.5,
+   "z": 415.7,
+   "y": -12.54,
+   "klasse": "truhe",
+   "motiv": "tr_korsar",
+   "passt": true,
+   "biome": "canyon",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 3.6
+  },
+  {
+   "x": 404.6,
+   "z": 863.6,
+   "y": -19.01,
+   "klasse": "truhe",
+   "motiv": "tr_rotmaul",
+   "passt": true,
+   "biome": "wueste",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 7.5
+  },
+  {
+   "x": -1059.6,
+   "z": 1049.4,
+   "y": -11.07,
+   "klasse": "truhe",
+   "motiv": "tr_rotmaul",
+   "passt": true,
+   "biome": "wueste",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 0.1
+  },
+  {
+   "x": 1020.5,
+   "z": 1035.8,
+   "y": -15.77,
+   "klasse": "truhe",
+   "motiv": "tr_weltraum",
+   "passt": true,
+   "biome": "pastell",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 1.6
+  },
+  {
+   "x": 1183.5,
+   "z": 1053.4,
+   "y": -12.03,
+   "klasse": "truhe",
+   "motiv": "tr_tentakel",
+   "passt": true,
+   "biome": "pastell",
+   "h": 0.8450000000000001,
+   "groesse": "klein",
+   "ecke": null,
+   "mulde_m": 0.1
+  },
+  {
+   "x": 1994.3,
+   "z": 1500,
+   "y": -16.13,
+   "klasse": "truhe",
+   "motiv": "tr_pilzwald",
+   "passt": true,
+   "biome": "canyon",
+   "h": 1.3,
+   "groesse": "mittel",
+   "ecke": null,
+   "mulde_m": 1.9
+  },
+  {
+   "x": -728.9,
+   "z": 1688.8,
+   "y": -9.59,
+   "klasse": "truhe",
+   "motiv": "tr_amethyst",
+   "passt": true,
+   "biome": "wueste",
+   "h": 1.3,
+   "groesse": "mittel",
+   "ecke": null,
+   "mulde_m": -0.7
+  },
+  {
+   "x": -576,
+   "z": 2013.8,
+   "y": -17.64,
+   "klasse": "truhe",
+   "motiv": "tr_zunge",
+   "passt": true,
+   "biome": "mesa",
+   "h": 1.3,
+   "groesse": "mittel",
+   "ecke": null,
+   "mulde_m": 2.4
+  },
+  {
+   "x": -1044.2,
+   "z": -1369.7,
+   "y": -20.09,
+   "klasse": "portal",
+   "motiv": "portal_kristall",
+   "passt": false,
+   "biome": "canyon",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": 3
+  },
+  {
+   "x": 1992.2,
+   "z": -1214.7,
+   "y": 8.5,
+   "klasse": "portal",
+   "motiv": "portal_kristall",
+   "passt": false,
+   "biome": "mesa",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": -14.1
+  },
+  {
+   "x": 75.2,
+   "z": -246.7,
+   "y": -11.78,
+   "klasse": "portal",
+   "motiv": "po_a1",
+   "passt": true,
+   "biome": "wueste",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": 4.6
+  },
+  {
+   "x": 712.6,
+   "z": -98.3,
+   "y": -9.41,
+   "klasse": "portal",
+   "motiv": "portal_kristall",
+   "passt": true,
+   "biome": "pastell",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": 0.1
+  },
+  {
+   "x": -882.2,
+   "z": 868,
+   "y": -13.86,
+   "klasse": "portal",
+   "motiv": "po_a1",
+   "passt": true,
+   "biome": "wueste",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": 1.2
+  },
+  {
+   "x": 1984.9,
+   "z": 1846,
+   "y": -24.59,
+   "klasse": "portal",
+   "motiv": "portal_kristall",
+   "passt": false,
+   "biome": "schnee",
+   "h": 6,
+   "groesse": null,
+   "ecke": null,
+   "mulde_m": 4.8
+  }
+ ],
+ "shots": [
+  {
+   "datei": "1_TRUHE_tr_orakel_MITTEL.jpg",
+   "ziel": {
+    "x": 1020.1,
+    "z": -1056.9,
+    "y": -13.68,
+    "klasse": "truhe",
+    "motiv": "tr_orakel",
+    "passt": true,
+    "biome": "pastell",
+    "h": 1.3,
+    "groesse": "mittel",
+    "ecke": null,
+    "mulde_m": 2.6
+   },
+   "kamera": {
+    "pos": [
+     1023,
+     -11.5,
+     -1059.8
+    ]
+   },
+   "bild": {
+    "name": "TR_ORAKEL",
+    "groesse": "mittel",
+    "offen": false,
+    "x": 1020.1,
+    "z": -1056.9,
+    "yaw": 2.356,
+    "tgt": 2.356
+   }
+  },
+  {
+   "datei": "2_PORTAL_po_a1.jpg",
+   "ziel": {
+    "x": 75.2,
+    "z": -246.7,
+    "y": -11.78,
+    "klasse": "portal",
+    "motiv": "po_a1",
+    "passt": true,
+    "biome": "wueste",
+    "h": 6,
+    "groesse": null,
+    "ecke": null,
+    "mulde_m": 4.6
+   },
+   "kamera": {
+    "pos": [
+     85.1,
+     -9.3,
+     -236.8
+    ]
+   },
+   "bild": {
+    "name": "PO_A1",
+    "x": 75.2,
+    "z": -246.7,
+    "yaw": 0.785,
+    "tgt": 0.785
+   }
+  }
+ ],
+ "fehler": []
+}

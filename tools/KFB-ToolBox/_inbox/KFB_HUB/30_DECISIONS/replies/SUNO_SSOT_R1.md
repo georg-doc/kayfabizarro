@@ -72,6 +72,7 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Kitsune no Majo (Japanische Psychedelic, instrumental, 03.11., Kurzprompt) | 134 | G Dur | 270 eigenständig (295 roh; guitar 108, brass 49, woodwinds 42, lead_vocals 28) |
 | Chicha de Maíz (Peruanische Chicha, Psychedelic, instrumental, 03.11., Kurzprompt) | 105 | G Moll | 151 eigenständig (170 roh; guitar 113, synth 17, woodwinds 13, brass 8) |
 | Warm Room Pulse (03.11.) | 85,8 | D Moll | 300 eigenständig (318 roh; guitar 145, woodwinds 123, keyboard 15, strings 7) |
+| Mysterious Horizons (03.11.) | 98,4 | A Moll | 142 eigenständig (151 roh; guitar 115, backing_vocals 13, brass 4, synth 4) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
