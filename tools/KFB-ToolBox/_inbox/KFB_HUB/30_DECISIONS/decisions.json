@@ -19886,6 +19886,21 @@
    "superseded_by": [],
    "why": "Der Effekt kommt aus dem Objekt; das HUD duckt sich in die Ecke.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1358",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "Kontakt-Haertung (world/sonne-tag-r1 @3c8fc5db, src/look/shadowContact.js ersetzt getShadow nur in Endlos-Welt): Vergleichsleiter 0,15/0,6/1,8 m fuer Abstand Werfer-Empfaenger, Proben 4/9/8, Radius 1,5 cm + 7 cm/m (max 35 cm), Staerke x1,55 am Werfer bis x0,6 ab 4,5 m; Werte in kfb-drive-moods kontaktschatten; Kosten nicht messbar. Hub q456.",
+   "values": {},
+   "owner": "WS-Himmel · Georg",
+   "check": "q446, q456",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schatten verankern Figuren am Boden, ohne zu den 2D-Props zu brechen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
