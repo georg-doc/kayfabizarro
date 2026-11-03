@@ -19796,6 +19796,21 @@
    "superseded_by": [],
    "why": "Eine Karte, ein Modul, ueberall gleich.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1352",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Tueren TUNE (design/tueren-r1 @4d3b8509): Durchgang versetzt Wagen/Figur samt Kamera um Eingang->Ausgang (M2Car versetze, followCam.shift, M1Player versetze), Gier 0->0, Tempo erhalten; Ausgang relativ wie Eingang, Tuer im Ruecken; Sprenkel schliesst ab 0,38 s vor der Bildebene, Versatz beim Kreuzen, max 0,3 s Halten; Oeffnung frei, Rahmen/Sockel derzeit auch nicht fest (offen). Hub q449 (Testziel).",
+   "values": {},
+   "owner": "WS-Design · Georg",
+   "check": "q445, q449",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Spieler bleibt in seiner Bewegung; die Welt wechselt um ihn herum.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

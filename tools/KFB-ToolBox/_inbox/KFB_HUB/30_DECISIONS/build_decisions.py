@@ -1329,6 +1329,7 @@ d('V-1348','03.11.2026','Spiel','TUNE','Georg-Antworten: q439 POI-Sicht Passt; q
 d('V-1349','03.11.2026','Look','REVIEW','Sonne TUNE (world/sonne-tag-r1 @59fdc787): Schatten zurueck auf Stammstand (adoptRig identisch), Sonnenscheibe, Farbtemperatur, Bahn 40 Grad, groundGrade bleiben; Hub q446. Radio-Skins von Georg (KFB Radios: Industrie-Gelb, Tuerkis-Retro, Beige-Satellit, Lila-Sci-Fi, Holz-DIY, je Mini/Maxi) an Kartenkante; Maxi-Panel als 9-Slice hoeher, Mindestgroessen (Zeile 32 px, Schrift 16 px, Knoepfe 34 px).','WS-Himmel · Kartenkante · Georg','q441, q446','Georg 03.11.'),
 d('V-1350','03.11.2026','Welt','REVIEW','Truhe mit Jetpack-Bodenwolke (design/tueren-r1 @3c08e865): puff() aus vendor/vfx/kfb-flight-vfx.js wie jetpack puffSmall, ohne Duesen/Fahnen, am Fuss unter der Truhe, beim Landen breiter; dustTrail (Fahne) nicht genommen. Hub q447.','WS-Design · Rakete/Flug · Georg','q438, q447','Georg 03.11.'),
 d('V-1351','03.11.2026','Spiel','REVIEW','Monolith als Karte (design/tueren-r1 @d41ff91c): cardEdge-Modul wie Gelaende- und Himmelskarte, Kartenbild mit Tuschekontur, Rueckseite KayfaBizarro_Card_Backside_01_lowrez.png, Querformat 13 m hoch, kein kfbInsert; Hub q448. Radio-Skins: Slots klein, Kartenkante zeigt kompakt | gross als Bilder.','WS-Design · Kartenkante · Georg','q442, q448','Georg 03.11.'),
+d('V-1352','03.11.2026','Welt','REVIEW','Tueren TUNE (design/tueren-r1 @4d3b8509): Durchgang versetzt Wagen/Figur samt Kamera um Eingang->Ausgang (M2Car versetze, followCam.shift, M1Player versetze), Gier 0->0, Tempo erhalten; Ausgang relativ wie Eingang, Tuer im Ruecken; Sprenkel schliesst ab 0,38 s vor der Bildebene, Versatz beim Kreuzen, max 0,3 s Halten; Oeffnung frei, Rahmen/Sockel derzeit auch nicht fest (offen). Hub q449 (Testziel).','WS-Design · Georg','q445, q449','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2645,6 +2646,7 @@ WHY = {
  'V-1349':('Licht und HUD lesbar und stimmig zu den 2D-Elementen.','03.11.2026'),
  'V-1350':('Vorhandene 3D-VFX wiederverwenden statt neuer Rauch.','03.11.2026'),
  'V-1351':('Eine Karte, ein Modul, ueberall gleich.','03.11.2026'),
+ 'V-1352':('Der Spieler bleibt in seiner Bewegung; die Welt wechselt um ihn herum.','03.11.2026'),
 }
 SUP = {}
 for e in E:
