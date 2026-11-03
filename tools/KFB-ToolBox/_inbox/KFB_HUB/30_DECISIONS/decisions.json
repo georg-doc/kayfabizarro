@@ -19031,6 +19031,21 @@
    "superseded_by": [],
    "why": "Ladezeit als kleine Show, Radio diegetisch aus dem einen Bogen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1301",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "WS1 Q-060: deckGround, Huelle und Hoehendunst R1 im Stamm @6949593 (Stufe B voll rot 0); deckGround-Shader ausgelagert, Zone im Spiel ca. 2 s verteilt, Hochladen 2048er-Blatt 14,5 ms einmalig; huelle=gen wirkt nur auf der Viertel-Seite, nicht im Endlos-Spiel (WS-Design prueft die Huelle der Kartengebaeude im Endlos-Spiel). testfahrt-build.sh fuer Mini, WS0-MacBook, Laptop mit Motorton R2 (engine_r2, engine_v8_r2 ungetrackt, WSA legt sie nach assets/private, b299 ergaenzt). Testfahrt q401 neu mit travel=1,deckground=1,huelle=gen,hoehendunst=1; naechste Uebernahme: Hoehendunst R2, Flug, Gummi, Pop-ups, Themen, HUD-Kit, Topfpflanzen, Explosionsgroessen, mobs2d.",
+   "values": {},
+   "owner": "WS1",
+   "check": "q401, Q-060",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Testfahrt fuer Georg mit allem, was schon im Stamm ist.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

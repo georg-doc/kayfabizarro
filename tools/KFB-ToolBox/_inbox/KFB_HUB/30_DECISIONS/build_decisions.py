@@ -1278,6 +1278,7 @@ d('V-1297','03.11.2026','Kampf','BUILD','Explosionsgroessen (Flug-Sitzung game/e
 d('V-1298','03.11.2026','Welt','REVIEW','Topfpflanzen mit Augen (Figuren-Sitzung world/topfpflanzen-r1 @ae92ae1a, topfpflanzen=1 mit gummi=1): Plant Prop Lab v2, Toepfe in Biom-Palette, EyeRig v6 mit E2, Wind, Hartgummi plus Plopp zur Seite mit Sprenkel und Ton, Plaetze ueber den Verteiler. Hub q418 (Standbilder; Clips zeigten eine schwarze Baumkrone im Bild, nicht vorgelegt). Merge frei N-091; Rueckkehr-Zustand geploppter Toepfe spaeter ueber Zellgedaechtnis; Kamera im Laub pruefen.','WS1 · Georg','q418, N-091','Georg 03.11.'),
 d('V-1299','03.11.2026','HUD','PLAN','mobs2d R2 (@6f3c2878, WS0 gepusht): Explosion S drin, Kameraabstand 12 m plus Gruppenreichweite, Auftauchen erst nach ruhiger Kamera (N-092). Schwarze Krone in den Topfpflanzen-Clips kam von der Belegkamera, nicht vom Spiel. Naechster Kartenkante-Slice: Ladevorhang mit Knet-Erzaehlerbox und Ladezeilen sowie Knet-Radio mit Titelfenster, vier Knoepfen und aufklappbarer Liste aus dem einen Bogen, hinter hudkit=clay; WS1 liefert Bereit-Signal und Ladezeit-Verkuerzung (N-093). Mac mini frei bis zur blinden Kritik.','Kartenkante · WS1','N-092, N-093','Georg 03.11.'),
 d('V-1300','03.11.2026','HUD','REVIEW','Ladevorhang und Knet-Radio (Kartenkante module/hud-clay-r1 @698da795, hudkit=clay, privat @f18de82d): Vorhang oeffnet in 1,4 s auf kfb:ready (Platzhalter nach 2 s Spielzeit, spaetestens 60 s), Erzaehlerbox mit acht Ladezeilen; Radio mit Titelfenster, vier Knoepfen am vorhandenen Owner, Songliste aus musicTracks, Leuchtzustand vorbereitet. Hub q419. Merge frei N-094; WS1 feuert kfb:ready.','WS1 · Georg','q419, N-094','Georg 03.11.'),
+d('V-1301','03.11.2026','Spiel','STATUS','WS1 Q-060: deckGround, Huelle und Hoehendunst R1 im Stamm @6949593 (Stufe B voll rot 0); deckGround-Shader ausgelagert, Zone im Spiel ca. 2 s verteilt, Hochladen 2048er-Blatt 14,5 ms einmalig; huelle=gen wirkt nur auf der Viertel-Seite, nicht im Endlos-Spiel (WS-Design prueft die Huelle der Kartengebaeude im Endlos-Spiel). testfahrt-build.sh fuer Mini, WS0-MacBook, Laptop mit Motorton R2 (engine_r2, engine_v8_r2 ungetrackt, WSA legt sie nach assets/private, b299 ergaenzt). Testfahrt q401 neu mit travel=1,deckground=1,huelle=gen,hoehendunst=1; naechste Uebernahme: Hoehendunst R2, Flug, Gummi, Pop-ups, Themen, HUD-Kit, Topfpflanzen, Explosionsgroessen, mobs2d.','WS1','q401, Q-060','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2543,6 +2544,7 @@ WHY = {
  'V-1298':('Belege angesehen, sichtbarer Fehler im Clip nicht weitergegeben.','03.11.2026'),
  'V-1299':('Sichtbare UI bei der Kit-Sitzung, Technik bei WS1; ein Audio-Owner.','03.11.2026'),
  'V-1300':('Ladezeit als kleine Show, Radio diegetisch aus dem einen Bogen.','03.11.2026'),
+ 'V-1301':('Testfahrt fuer Georg mit allem, was schon im Stamm ist.','03.11.2026'),
 }
 SUP = {}
 for e in E:
