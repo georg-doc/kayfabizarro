@@ -1,3 +1,7 @@
+## 2026-11-03 · WS0 check-in on the first workshop deck
+
+[Privacy Kayfabe review and proposed signature workflow](packages/ws0-dossier-pilot/WS0_CHECKIN_PRIVACY_KAYFABE_2026-11-03.md). V-1258 stays paused until after MVP. No PDF batch run. Decision deferred: edition-level signature or signature on cut cards.
+
 ## 2026-11-03 · WS0 V-1258 close-out
 
 Pilot accepted by Georg and WS0. Surveillance now uses the approved line in the entry as well as the wiki. [Basilisk](packages/ws0-dossier-pilot/WS0-02.md) and [Sealed Room](packages/ws0-dossier-pilot/WS0-03.md) each have English game copy, a separate German spoken version, a print-verified motif and a timed Solution Watch. Roko's author text is available in a 2014 Wayback capture of the July 2010 Google cache mirror. Curtis's relevant narration was checked against film audio, timed captions and scene frames. Continuous viewing of the entire film remains open. The pilot pauses until the post-MVP game decision. No further deck production.
