@@ -19421,6 +19421,21 @@
    "superseded_by": [],
    "why": "Charakter aus Bewegung und Tinte; Georgs Bilder direkt in die Module.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1327",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Georg-Antworten: q427 Planet nachts Passt, q428 farbige Lider Passt, q429 Ink Blobs: Spuren glaenzend nach Tinte, Kontaktschatten rund statt oval (an Rakete/Flug). HUD r4 (module/hud-clay-r1 @32a5db2c): Radio 1,8x (Knopf 47 px = Aktionsleisten-Slot), Einstellungen vier Zeilen, Belege als Zweierfolien; Hub q430. Viertel Kamera behoben (@f8f1ca1e: Platzhoehe Median des Saumrings, Saum 24 m, Ring +0,9/-1,9 m statt +8,4). WSA b299 erledigt (14 Songs, Audio-Site v22, kfb-audio 9da3526, 34 Motorklaenge privat). Neuer Song Warm Room Pulse geerntet (85,8 BPM, D-Moll); Test Song ohne WSA ins Spiel-Radio laeuft (Audio-Site-Quelle liegt nur in ChatGPT Sites bei WSA).",
+   "values": {},
+   "owner": "Kartenkante · WS-Design · Rakete/Flug · WSA",
+   "check": "q427-q430, b299",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wiederholbare Wege ohne Engpass-Sitzung, wo es sicher geht.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
