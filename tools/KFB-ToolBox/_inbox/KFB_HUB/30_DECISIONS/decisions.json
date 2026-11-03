@@ -19016,6 +19016,21 @@
    "superseded_by": [],
    "why": "Sichtbare UI bei der Kit-Sitzung, Technik bei WS1; ein Audio-Owner.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1300",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Ladevorhang und Knet-Radio (Kartenkante module/hud-clay-r1 @698da795, hudkit=clay, privat @f18de82d): Vorhang oeffnet in 1,4 s auf kfb:ready (Platzhalter nach 2 s Spielzeit, spaetestens 60 s), Erzaehlerbox mit acht Ladezeilen; Radio mit Titelfenster, vier Knoepfen am vorhandenen Owner, Songliste aus musicTracks, Leuchtzustand vorbereitet. Hub q419. Merge frei N-094; WS1 feuert kfb:ready.",
+   "values": {},
+   "owner": "WS1 · Georg",
+   "check": "q419, N-094",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ladezeit als kleine Show, Radio diegetisch aus dem einen Bogen.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
