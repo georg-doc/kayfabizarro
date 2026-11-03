@@ -1,0 +1,509 @@
+{
+  "researchRunId": "ATLAS_BREADTH_CORPUS_BATCH_AB_01_BPS",
+  "date": "2026-11-01",
+  "executor": "/root/psi_profiles",
+  "modelIdentification": null,
+  "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+  "reviewStatus": "UNREVIEWED",
+  "gitWrites": 0,
+  "sourceOwner": "Existing Hidden Cosmology Atlas editorial owner; root integrator sole GitHub writer",
+  "authorDirectoryCheck": {
+    "url": "https://api.github.com/repos/georg-doc/kayfabizarro/contents/skills/chat/research/hidden-cosmology-atlas/authors?ref=7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+    "result": "No existing master for any of the four assigned canonical slugs"
+  },
+  "sources": [
+    {
+      "sourceId": "BPS-S01",
+      "title": "Beyond Telepathy, third edition ebook",
+      "url": "https://www.simonandschuster.com/books/Beyond-Telepathy/Andrija-Puharich/9781644116906",
+      "sourceKind": "PUBLISHER_METADATA_AND_INTRODUCTION",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_METADATA_DESCRIPTION_AND_HOROWITZ_INTRODUCTION; no Puharich chapter read",
+      "sourceLocator": "About The Book; Excerpt / introduction; Product Details",
+      "publicationDate": "2026-02-24",
+      "independenceGroup": "BPS-LINEAGE-01",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S02",
+      "title": "Ingo Swann Works",
+      "url": "https://ingoswann.com/works",
+      "sourceKind": "ESTATE_PUBLISHER_INDEX",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_WORKS_DESCRIPTIONS_ONLY; no book/manuscript read",
+      "sourceLocator": "Natural ESP; Penetration; Remote Viewing The Real Story",
+      "publicationDate": null,
+      "independenceGroup": "BPS-LINEAGE-02",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S03",
+      "title": "CIA-RDP79-00999A000300080001-3",
+      "url": "https://www.cia.gov/readingroom/docs/CIA-RDP79-00999A000300080001-3.pdf",
+      "sourceKind": "ARCHIVE_DOCUMENT_LEAD",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "SEARCH_INDEX_ONLY; PDF not opened",
+      "sourceLocator": "Search result only; no page locator",
+      "publicationDate": null,
+      "independenceGroup": "BPS-LINEAGE-03",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S04",
+      "title": "Ask Molly: Did CIA Really Study Psychic Powers?",
+      "url": "https://www.cia.gov/stories/story/ask-molly-did-cia-really-study-psychic-powers",
+      "sourceKind": "INSTITUTIONAL_RETROSPECTIVE",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_READ; not original 1995 evaluation",
+      "sourceLocator": "Discussion of 1995 evaluation and non-restoration",
+      "publicationDate": "2021-10-27",
+      "independenceGroup": "BPS-LINEAGE-04",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S05",
+      "title": "US1974483A Electrostatic motor",
+      "url": "https://patents.google.com/patent/US1974483A/en",
+      "sourceKind": "PATENT_REPRODUCTION",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_METADATA_AND_EXTRACTED_OPENING_DESCRIPTION; not page images",
+      "sourceLocator": "Metadata; Definitions opening invention paragraph",
+      "publicationDate": "1934-09-25",
+      "independenceGroup": "BPS-LINEAGE-05",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S06",
+      "title": "US2949550A Electrokinetic apparatus",
+      "url": "https://patents.google.com/patent/US2949550A/en",
+      "sourceKind": "PATENT_REPRODUCTION",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_METADATA_AND_OCR_DESCRIPTION_EXCERPTS; not page images",
+      "sourceLocator": "Description opening specification and electrode/medium paragraphs",
+      "publicationDate": "1960-08-16",
+      "independenceGroup": "BPS-LINEAGE-06",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S07",
+      "title": "Bahder and Fazi: Force on an Asymmetric Capacitor",
+      "url": "https://arxiv.org/abs/physics/0211001v2",
+      "sourceKind": "AUTHOR_RESEARCH_ABSTRACT",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_ABSTRACT_AND_METADATA_ONLY; full paper not read",
+      "sourceLocator": "Abstract; submission history; journal reference",
+      "publicationDate": "2003-03-12",
+      "independenceGroup": "BPS-LINEAGE-07",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S08",
+      "title": "US645576A System of transmission of electrical energy",
+      "url": "https://patents.google.com/patent/US645576A/en",
+      "sourceKind": "PATENT_REPRODUCTION",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_METADATA_AND_OPENING_OCR_SPECIFICATION; not page images",
+      "sourceLocator": "Description opening specification; metadata",
+      "publicationDate": "1900-03-20",
+      "independenceGroup": "BPS-LINEAGE-08",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S09",
+      "title": "US685957A Apparatus for the utilization of radiant energy",
+      "url": "https://patents.google.com/patent/US685957A/en",
+      "sourceKind": "PATENT_REPRODUCTION",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_METADATA_AND_OCR_SPECIFICATION_EXCERPTS; not page images",
+      "sourceLocator": "Description: radiation-exposed conductor, condenser and discharge circuit",
+      "publicationDate": "1901-11-05",
+      "independenceGroup": "BPS-LINEAGE-09",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "sourceId": "BPS-S10",
+      "title": "Nikola Tesla Museum Activity archive finding aid",
+      "url": "https://tesla-museum.org/en/legacy/archive/activity/",
+      "sourceKind": "ARCHIVE_FINDING_AID",
+      "accessedOn": "2026-11-01",
+      "inspectedScope": "HTML_COLLECTION_DESCRIPTION; no individual archive object read",
+      "sourceLocator": "Activity category description and Plans and Drawings distinction",
+      "publicationDate": null,
+      "independenceGroup": "BPS-LINEAGE-10",
+      "audioMinutesListened": 0,
+      "pdfPageImagesInspected": 0,
+      "reviewStatus": "UNREVIEWED"
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "BPS-C01",
+      "text": "Official publisher/distributor record identifies a third edition ebook Beyond Telepathy by Andrija Puharich with introduction by Mitch Horowitz, Park Street Press, 2026-02-24, ISBN 9781644116906.",
+      "sourceIds": [
+        "BPS-S01"
+      ],
+      "status": "BIBLIOGRAPHIC_METADATA_READ",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C02",
+      "text": "Swann estate works index lists Natural ESP, Penetration and Remote Viewing: The Real Story; no contents validated.",
+      "sourceIds": [
+        "BPS-S02"
+      ],
+      "status": "PUBLISHER_LISTS",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C03",
+      "text": "CIA retrospective says remote viewing was considered unreliable for intelligence purposes and the program was not restored; original evaluation not read.",
+      "sourceIds": [
+        "BPS-S04"
+      ],
+      "status": "INSTITUTION_SOURCE_SAYS",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C04",
+      "text": "US1974483A names Brown and records filing 1930-02-07 and publication 1934-09-25.",
+      "sourceIds": [
+        "BPS-S05"
+      ],
+      "status": "BIBLIOGRAPHIC_METADATA_READ",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C05",
+      "text": "US2949550A names Brown and records filing 1957-07-03 and publication 1960-08-16.",
+      "sourceIds": [
+        "BPS-S06"
+      ],
+      "status": "BIBLIOGRAPHIC_METADATA_READ",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C06",
+      "text": "Brown specification proposes electrode apparatus moving relative to a dielectric medium; this is not a verified gravity-control claim.",
+      "sourceIds": [
+        "BPS-S06"
+      ],
+      "status": "SOURCE_ASSERTS",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C07",
+      "text": "Bahder/Fazi abstract reports capacitor experiments and calls for vacuum and gas/pressure tests; full methods not read.",
+      "sourceIds": [
+        "BPS-S07"
+      ],
+      "status": "SOURCE_ASSERTS_ABSTRACT_ONLY",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C08",
+      "text": "US645576A names Tesla and records filing 1897-09-02 and publication 1900-03-20.",
+      "sourceIds": [
+        "BPS-S08"
+      ],
+      "status": "BIBLIOGRAPHIC_METADATA_READ",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C09",
+      "text": "US685957A names Tesla and records filing 1901-03-21 and publication 1901-11-05.",
+      "sourceIds": [
+        "BPS-S09"
+      ],
+      "status": "BIBLIOGRAPHIC_METADATA_READ",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C10",
+      "text": "Tesla radiant-energy specification describes radiation-exposed conductor, condenser and discharge circuit.",
+      "sourceIds": [
+        "BPS-S09"
+      ],
+      "status": "SOURCE_ASSERTS",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "claimId": "BPS-C11",
+      "text": "Tesla Museum describes scientific works and patent documentation, with plans/drawings maintained separately.",
+      "sourceIds": [
+        "BPS-S10"
+      ],
+      "status": "CUSTODIAN_DESCRIBES_HOLDINGS",
+      "reviewStatus": "UNREVIEWED"
+    }
+  ],
+  "relations": [
+    {
+      "edgeId": "BPS-E01",
+      "fromEntityId": "andrija-puharich",
+      "toEntityId": "source/BPS-S01",
+      "type": "BIBLIOGRAPHIC_AUTHOR_CREDIT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C01"
+      ],
+      "sourceIds": [
+        "BPS-S01"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original edition title page; do not assign Horowitz introduction claims to Puharich.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E02",
+      "fromEntityId": "ingo-swann",
+      "toEntityId": "source/BPS-S02",
+      "type": "PUBLISHER_LISTS_WORKS",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C02"
+      ],
+      "sourceIds": [
+        "BPS-S02"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/ingo-swann.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect individual work title pages and author text.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E03",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "source/BPS-S05",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C04"
+      ],
+      "sourceIds": [
+        "BPS-S05"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan and identity record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E04",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "source/BPS-S06",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C05"
+      ],
+      "sourceIds": [
+        "BPS-S06"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan; performance remains separate.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E05",
+      "fromEntityId": "nikola-tesla",
+      "toEntityId": "source/BPS-S08",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C08"
+      ],
+      "sourceIds": [
+        "BPS-S08"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/nikola-tesla.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan and family record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E06",
+      "fromEntityId": "nikola-tesla",
+      "toEntityId": "source/BPS-S09",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C09"
+      ],
+      "sourceIds": [
+        "BPS-S09"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/nikola-tesla.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan; do not infer performance.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E07",
+      "fromEntityId": "andrija-puharich",
+      "toEntityId": "ingo-swann",
+      "type": "CONCEPTUAL_NEIGHBOR",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [],
+      "sourceIds": [
+        "BPS-S01",
+        "BPS-S02"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Shared psi topic is editorial comparison; historical collaboration requires an original dated record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E08",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "nikola-tesla",
+      "type": "CONCEPTUAL_NEIGHBOR",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [],
+      "sourceIds": [
+        "BPS-S05",
+        "BPS-S06",
+        "BPS-S08",
+        "BPS-S09"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Electrical invention is a thematic neighbor only; no collaboration or technology transfer established.",
+      "auditEventIds": []
+    }
+  ],
+  "reusedExistingRecords": {
+    "sourceIds": [
+      "JM-S16",
+      "JM-S17",
+      "JM-S21"
+    ],
+    "claimIds": [
+      "JM-C19",
+      "JM-C21",
+      "JM-C22"
+    ],
+    "relationIds": [
+      "JM-H09",
+      "JM-H10",
+      "JM-W10"
+    ],
+    "scope": "Read current Puharich R2 owner locally; external sources not reread or played in this batch. JM-S21 stays URL-only; JM-S16/S17 one recording lineage."
+  },
+  "coverage": {
+    "dossiers": 4,
+    "newSourceIds": 10,
+    "newClaimIds": 11,
+    "newRelations": 8,
+    "bibliographicRelations": 6,
+    "conceptualNoncausalRelations": 2,
+    "fullBooksRead": 0,
+    "fullPapersRead": 0,
+    "audioMinutesListened": 0,
+    "pdfPageImagesInspected": 0,
+    "primaryTechnicalPatentTextsInspected": 4,
+    "independentlyReviewedDossiers": 0
+  },
+  "nextGate": "Independent review of speculative and patent-based sample; root integrates only after current-head dedup and receipt validation",
+  "identityNormalization": "Root integrator maps author/<slug> transport aliases to existing R4 <slug>; source/<ID> remains a work endpoint."
+}

@@ -1,0 +1,273 @@
+{
+  "schema": "kfb.atlas.claim-source-audit/1",
+  "case_id": "rhodes-milner-round-table",
+  "revision": "finance-authorship-2026-11-01",
+  "sources": [
+    {
+      "id": "may-finance",
+      "title": "Alexander May · Centennial Selection (2010)",
+      "url": "https://api.pageplace.de/preview/DT0400.9781136964367_A25777419/preview-9781136964367_A25777419.pdf",
+      "locator": "Druck-S. 2 und 4; PDF-Indizes 12 und 14",
+      "access": "text_read",
+      "kind": "Retrospektive aus dem Umfeld der Zeitschrift"
+    },
+    {
+      "id": "thompson",
+      "title": "J. Lee Thompson · A Wider Patriotism, Kapitel 15",
+      "url": "https://www.cambridge.org/core/books/abs/wider-patriotism/conclusion-a-wider-patriotism/F31517B41CB2E6D93D7FB16015E4CF55",
+      "locator": "Öffentliche Summary, Absatz nach Dawson; Kapitel S.196–208",
+      "access": "summary_read",
+      "kind": "Sekundärdarstellung; zugehörige Endnoten nicht zugänglich"
+    },
+    {
+      "id": "narssa",
+      "title": "NARSSA · Lothian Muniments",
+      "url": "https://www.nationalarchives.gov.za/node/9052905",
+      "locator": "Hinweis 17/11: zwei Milner-Briefe 1909 über Abe Bailey; Matthews/Wainwright/Pearson, Guide, S.257",
+      "access": "search_index_only",
+      "kind": "Archivisches Findmittel; Direktabruf Timeout/404"
+    },
+    {
+      "id": "nrs",
+      "title": "National Records of Scotland · GD40",
+      "url": "https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?df=&di=y&dt=&k=&ko=a&r=GD40&reference=GD40&ro=s&st=1&tc=y&tl=n&tn=n&tp=n",
+      "locator": "GD40/17 = Philip Kerr; GD40 Sammlung offen, off site",
+      "access": "catalogue_read",
+      "kind": "Bestandsnachweis; Einzelakte GD40/17/11 nicht bestätigt"
+    },
+    {
+      "id": "may-authors",
+      "title": "Alex May · From the Archives (21.06.2024)",
+      "url": "https://www.commonwealthroundtable.co.uk/general/history/from-the-archives-a-round-table-project/",
+      "locator": "Einleitung; Einträge Brand 1923, Leeper 1920, Morrah 1949",
+      "access": "text_read",
+      "kind": "Redaktionelle Zuschreibungen auf Grundlage von Nachlässen; Originale nicht eingesehen"
+    },
+    {
+      "id": "brand1921",
+      "title": "R. H. Brand · War and National Finance (1921)",
+      "url": "https://archive.org/stream/warnationalfinan00branrich/warnationalfinan00branrich_djvu.txt",
+      "locator": "Titelblatt; Introduction vii–viii; Kapitel IV S.94, Juni 1915",
+      "access": "ocr_read",
+      "kind": "Zeitnahe Selbstauskunft und Wiederabdruck; keine Bildprüfung"
+    },
+    {
+      "id": "regenauer2022",
+      "title": "Tom-Oliver Regenauer · Tragik und Hoffnung",
+      "url": "https://www.regenauer.press/tragik-und-hoffnung",
+      "locator": "24.06.2022; Absätze zu Rhodes, Quigley und Round Table",
+      "access": "text_read",
+      "kind": "Journalistischer Autorenblick"
+    },
+    {
+      "id": "regenauer2023a",
+      "title": "Tom-Oliver Regenauer · Trio Infernale (1/2)",
+      "url": "https://www.regenauer.press/trio-infernale",
+      "locator": "12.11.2023; Stead/Testament und Kerr-Archivlink",
+      "access": "text_read",
+      "kind": "Journalistischer Autorenblick"
+    },
+    {
+      "id": "regenauer2023b",
+      "title": "Tom-Oliver Regenauer · Trio Infernale (2/2)",
+      "url": "https://www.regenauer.press/trio-infernale-2",
+      "locator": "26.11.2023; Chirol/Fritzinger und Zimmern/Cole",
+      "access": "text_read_by_research_agent",
+      "kind": "Journalistischer Autorenblick; weiterführende Quellen nur teilweise zugänglich"
+    },
+    {
+      "id": "stead1902",
+      "title": "W. T. Stead (Hg.) · The Last Will and Testament of Cecil John Rhodes (1902)",
+      "url": "https://archive.org/stream/RhodesCecilJohnTheLastWillAndTestamentOfCecilJohnRhodes/Rhodes_Cecil_John_-_The_last_will_and_testament_of_Cecil_John_Rhodes_djvu.txt",
+      "locator": "Prefatory Note 4.6.1902; Inhaltsverzeichnis; Druck-S.49",
+      "access": "ocr_read",
+      "kind": "Zeitgenössische Edition mit Kommentaren; kein durchgehendes Rechtsdokument"
+    },
+    {
+      "id": "may-thesis",
+      "title": "Alexander May · The Round Table, 1910–66 (1995)",
+      "url": "https://ora.ox.ac.uk/objects/uuid:ee7ebd01-f085-44e9-917b-98d21a0f4206",
+      "locator": "Appendix F; ORA weist acht Dateien aus",
+      "access": "metadata_search_index_only",
+      "kind": "Volltext erneut HTTP403; keine Direktprüfung von Appendix F"
+    },
+    {
+      "id": "trust1956",
+      "title": "Lord Elton (Hg.) · First Fifty Years of the Rhodes Trust (1955/1956)",
+      "url": "https://archive.org/stream/firstfiftyyearso013455mbp/firstfiftyyearso013455mbp_djvu.txt",
+      "locator": "Editor’s Foreword; Chapter II, S.16",
+      "access": "ocr_search_and_passages_read",
+      "kind": "Institutioneller Rückblick; kein konkreter Round-Table-Zahlungsbeschluss im gesichteten Material"
+    }
+  ],
+  "claims": [
+    {
+      "id": "RT-F01",
+      "claim": "Rhodes Trust verdoppelte andere Spenden bis Ende 1915.",
+      "source_ids": [
+        "may-finance"
+      ],
+      "status": "secondary_supported",
+      "missing": "Bewilligungsprotokoll, Beginn, Höchstbetrag, Zahlungsbuchungen und Unterschriften."
+    },
+    {
+      "id": "RT-F02",
+      "claim": "Thompson berichtet eine von Milner vermittelte abschließende Zuwendung von GBP2500.",
+      "source_ids": [
+        "thompson"
+      ],
+      "status": "secondary_supported_date_unresolved",
+      "missing": "Originalbeschluss und exaktes Datum. Summary nennt Juni1921 und Dawsons Rückkehr nach mehr als einem Jahr, danach „That summer“; Jahr hier bewusst nicht normalisiert. Wikipedia1921 ist keine unabhängige Gegenprobe."
+    },
+    {
+      "id": "RT-F03",
+      "claim": "NARSSA-Suchindex verzeichnet zwei Milner-Briefe1909 über Baileys Finanzhilfe unter17/11.",
+      "source_ids": [
+        "narssa",
+        "nrs"
+      ],
+      "status": "archival_lead_only",
+      "missing": "NRS muss Zuordnung zur heutigen Einzelreferenz bestätigen; Briefe, Betrag, Zahlungsart und Empfänger ungelesen."
+    },
+    {
+      "id": "RT-A01",
+      "claim": "Brand erklärt1921 seine Autorschaft der wiederabgedruckten Round-Table-Aufsätze1912–1920; Finance in War gemeinsam mit F.Perry.",
+      "source_ids": [
+        "brand1921"
+      ],
+      "status": "primary_self_attribution_ocr",
+      "missing": "Vergleich KapitelIV (S.94, Juni1915) mit Zeitschriften-Erstdruck; Brand erwähnt Kürzungen redundanter Passagen."
+    },
+    {
+      "id": "RT-A02",
+      "claim": "May2024 ordnet Reparationen1923 und Inflation1923 Brand zu, Russland1920 Leeper, Crown without sceptre1949 Morrah.",
+      "source_ids": [
+        "may-authors"
+      ],
+      "status": "editorial_attribution",
+      "missing": "AppendixF samt dahinterliegenden Redaktionsakten je Artikel."
+    },
+    {
+      "id": "RT-R01",
+      "claim": "Regenauers zwei Essayzweige teilen Quigley/Stead; erneute Zitierung erhöht nicht die Zahl unabhängiger Belege.",
+      "source_ids": [
+        "regenauer2022",
+        "regenauer2023a",
+        "regenauer2023b",
+        "stead1902"
+      ],
+      "status": "citation_chain_audited",
+      "missing": "Von dort kein unterschriebener Finanzierungsbeschluss und keine konkrete anonyme Artikelautorschaft nachgewiesen."
+    },
+    {
+      "id": "RT-R02",
+      "claim": "Stead1902 berichtet aufS.49 die Entfernung seines Namens aus den Vollstreckern im Januar1901. Sein Vorwort trennt eigene Kommentare vom Testament.",
+      "source_ids": [
+        "stead1902",
+        "regenauer2023a"
+      ],
+      "status": "primary_edition_countercheck_ocr",
+      "missing": "Für juristisch exaktes Datum eigenständige Kontrolle des Januar-Kodizills; keine Verwechslung ideeller Rolle mit letzter Vollmacht."
+    }
+  ],
+  "source_edges": [
+    {
+      "from": "regenauer2022",
+      "to_url": "https://info.publicintelligence.net/RhodesLastWill.pdf",
+      "relation": "links",
+      "status": "target_timeout"
+    },
+    {
+      "from": "regenauer2022",
+      "to_url": "https://www.carrollquigley.net/pdf/The_Anglo-American_Establishment.pdf",
+      "relation": "links",
+      "status": "target_exceeds_webtool_limit_existing_atlas_edition_available"
+    },
+    {
+      "from": "regenauer2023a",
+      "to": "stead1902",
+      "relation": "links_to_work",
+      "status": "ocr_alternate_path_read"
+    },
+    {
+      "from": "regenauer2023a",
+      "to_url": "https://archives.bodleian.ox.ac.uk/agents/corporate_entities/1009",
+      "relation": "links_to_finding_aid",
+      "status": "retrieval_failed"
+    },
+    {
+      "from": "regenauer2023b",
+      "to_url": "https://www.unityofthepolis.com/professor-carroll-quigley-and-the-article-that-said-too-little/",
+      "relation": "links",
+      "status": "agent_opened_original_letter_not_traced"
+    },
+    {
+      "from": "regenauer2023b",
+      "to_url": "https://dokumen.pub/diplomat-without-portfolio-valentine-chirol-his-life-and-the-times-9780755622047-9781845111861.html",
+      "relation": "links",
+      "status": "403"
+    },
+    {
+      "from_url": "https://www.regenauer.press/monopole-macht-und-mord",
+      "to": "regenauer2023a",
+      "relation": "links_to_same_author_prior_essay",
+      "status": "agent_checked_not_independent_confirmation"
+    }
+  ],
+  "open_questions": [
+    {
+      "priority": 1,
+      "question": "Welche beiden Milner-Briefe von1909 liegen unter Lothian17/11, und bestätigen sie Zusage, Zahlung oder nur Bitte?",
+      "next": "Aktuelle NRS-Signatur bestätigen und Originale einsehen; Kontakt/Beschaffung nicht ausgeführt."
+    },
+    {
+      "priority": 2,
+      "question": "Welcher Trustees-Beschluss autorisierte die GBP2500, wann und mit welchem Abstimmungsergebnis?",
+      "next": "Thompsons Endnote und Trust-Protokoll/Kassenbuch; Datum1921/1922 offen."
+    },
+    {
+      "priority": 3,
+      "question": "Welche Redaktionsbelege trägt May AppendixF für die vier Beispielartikel an?",
+      "next": "ORA-Dateien regulär zugänglich machen oder Bibliotheksexemplar; kein erfundener PDF-Direktlink."
+    },
+    {
+      "priority": 4,
+      "question": "Was wurde an Finance in War gegenüber dem anonymen Erstdruck geändert?",
+      "next": "Erstdruck Juni1915 gegen Brand1921 KapitelIV abgleichen."
+    }
+  ],
+  "conceptual_neighbors": [
+    {
+      "target": "maletti",
+      "relation": "contrast",
+      "reason": "Selbstauskunft, Namensliste und unabhängige Rolle getrennt prüfen; kein historischer Zusammenhang behauptet."
+    },
+    {
+      "target": "wcc",
+      "relation": "shared_question",
+      "reason": "Zusage, Befugnis, Geldfluss und politischer Einfluss brauchen unterschiedliche Belege."
+    },
+    {
+      "target": "corbett-source-chains",
+      "relation": "method_analogy",
+      "reason": "Mehrere Essays mit demselben Ursprung sind keine unabhängige Triangulation."
+    }
+  ],
+  "coverage": {
+    "scope": "Gezielte Finanzierung, vier redaktionelle Artikelzuordnungen, ein zeitnaher Selbstnachweis, drei Regenauer-Essays und ein Querverweis. Kein vollständiger Corpus-Audit.",
+    "primary_manuscript_images_viewed": 0,
+    "ocr_passages": [
+      "Brand Titel/Einleitung/KapitelIV",
+      "Stead Vorwort/Inhaltsverzeichnis/S49",
+      "Elton Vorwort/S16"
+    ],
+    "failures": [
+      "May ORA403",
+      "Bodleian Katalog502/TLS",
+      "NARSSA direkt Timeout/404 (Index lesbar)",
+      "NRS Einzelreferenz nicht abrufbar",
+      "Thompson Notes nicht abrufbar"
+    ],
+    "negative_evidence_rule": "Nichtabruf und fehlender Treffer sind kein Beweis für Nichtexistenz."
+  }
+}
