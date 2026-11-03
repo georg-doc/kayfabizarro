@@ -18896,6 +18896,21 @@
    "superseded_by": [],
    "why": "Mehr parallele Arbeit bei Georgs Abwesenheit, Integration bleibt bei WS1; 2D-Pop-ups liefern Vielfalt ohne Diorama-Bau und performance-arm.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1292",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Hoehendunst R1 (WS-Himmel, world/nebel-hoehe-r1 @c0b92d59, hoehendunst=1 mit sky=r1): Ursache Welt-Nebel mit Bodendunst-Farbe plus feste Kuppel-Horizontlinie; ueber 12 m Kamerahoehe senkt die eine Luftfunktion den Horizont um den Winkel zum Gelaenderand (160 m: 7,4 Grad), Nebel bis 3,5-fach weiter; Kuppel, Nebel, Wolken, Planeten, Sterne lesen denselben Wert. Boden unveraendert. Hub q412, Merge frei N-086.",
+   "values": {},
+   "owner": "Georg · WS1",
+   "check": "q412",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Horizont fuer alle Himmelsteile, keine Tricks (V-385).",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
