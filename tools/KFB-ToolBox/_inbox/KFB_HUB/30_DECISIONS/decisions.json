@@ -19121,6 +19121,21 @@
    "superseded_by": [],
    "why": "Messen vor Umbauen; ein falscher Verdacht wurde schnell korrigiert.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1307",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "Fixrunde komplett im Stamm @cb50ba6 (Q-061/Q-062): neun Zweige plus Viertel r1b gemergt, Flug R2 Standard, fahrt=r2, drift=r2, reliefschein=1, popups=clay, hudkit=clay, viertel=1, ladeplan=1 (bereit 12,2-12,8 s statt 15,4-16,1 s bei 50 Mbit/s; Ziel 8 s braucht kleinere Modelle). skyCells-Ruckeln nur im Einzeldatei-Build (Planetenzellen eingebettet), Site/Split sauber (Q-063). N-098: Steighilfe steig=1 Go (28-45 Grad), skyCells gegen Split testen, meshopt/KTX2-Liste fuer WSB-Auftrag. q401 neue Testfahrt-Adresse; blinde Kritik an WSB (b303).",
+   "values": {},
+   "owner": "WS1 · WSB",
+   "check": "Q-061, Q-062, Q-063, N-098, q401, b303",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst frischer Blick von aussen, dann Site; Messung trennt Testbuild-Artefakt von echtem Spielerproblem.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
