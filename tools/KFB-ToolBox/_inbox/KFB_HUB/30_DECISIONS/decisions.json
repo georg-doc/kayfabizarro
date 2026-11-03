@@ -19196,6 +19196,21 @@
    "superseded_by": [],
    "why": "Grosse Farbflaechen lesen auf Spieldistanz; Belege im gleichen Licht vergleichen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1312",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "DECISION",
+   "text": "q421 FAIL (Pop-ups heller): gemalte Bild-Assets werden eingefuegt, nicht beleuchtet. Bild bleibt im eigenen Licht (tags 100 % Bildfarbe, unbeleuchtet), Szene faerbt minimal nach: Tageszeit-Farbstich und Belichtung (nachts nie Schattenriss), derselbe Dunst wie das Gelaende, Light-Wrap, Kontaktschatten, Lichtseite zur Sonne. Ein Modul Einfuegen (Besitzer WS-Design) fuer Pop-ups, Props, Truhen, Fluffer und Planeten (WS-Himmel nutzt es); erst Modell aus bewaehrter Compositing-Praxis, dann Beleg. popups-hell-r1 geparkt. q422 Passt: Topfpflanzen ruhig einbauen; Regel: KFB-Lider immer Grund- bzw. Umgebungsfarbe (linker Topf hatte orange Lider), an Figuren-Sitzung inkl. Vorgabe im EyeRig.",
+   "values": {},
+   "owner": "WS-Design · WS-Himmel · Figuren",
+   "check": "q421, q422",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gemalte Bilder tragen ihr Licht schon; Beleuchten wie 3D kaempft dagegen. Einfuegen statt Flickwerk.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
