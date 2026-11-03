@@ -1,0 +1,142 @@
+{
+ "feld_m": 3000,
+ "plaetze": 1819,
+ "klassen": {
+  "figur": 280,
+  "portal": 84,
+  "tuer": 299,
+  "szene": 276,
+  "baumgeist": 161,
+  "wasser": 55,
+  "tresor": 129,
+  "truhe": 138,
+  "ding": 124,
+  "wahrzeichen": 13,
+  "statue": 260
+ },
+ "baumgeist_anteil": 0.089,
+ "wahrzeichen_dicht": 12,
+ "eingaenge": 383,
+ "mit_ziel": 60,
+ "ms_je_ziel": 6.83,
+ "abstand_m": [
+  1730,
+  6147
+ ],
+ "bruch": 0.08,
+ "mit_zone": 43,
+ "ziel_biom_je_motiv": {
+  "portal_kristall": {
+   "pastell": 7,
+   "mesa": 2
+  },
+  "tuer_wald": {
+   "moos": 4,
+   "schnee": 1,
+   "canyon": 1,
+   "mesa": 1
+  },
+  "tuer_kerker": {
+   "schnee": 3,
+   "moos": 2,
+   "pastell": 1,
+   "wueste": 1
+  },
+  "po_a1": {
+   "canyon": 3,
+   "mesa": 2,
+   "wueste": 2,
+   "pastell": 1
+  },
+  "tuer_wueste": {
+   "wueste": 1,
+   "moos": 1
+  },
+  "tuer_felsenschott": {
+   "pastell": 3
+  },
+  "tuer_raumkuppel": {
+   "wueste": 1,
+   "pastell": 2
+  },
+  "tuer_sumpf": {
+   "pastell": 5,
+   "mesa": 1,
+   "moos": 1
+  },
+  "tuer_forschungsbunker": {
+   "wueste": 2,
+   "canyon": 1
+  },
+  "tuer_pilzkeller": {
+   "schnee": 1,
+   "moos": 1,
+   "pastell": 1
+  },
+  "tuer_hafen": {
+   "moos": 2
+  },
+  "tuer_luftschleuse": {
+   "mesa": 2,
+   "schnee": 1
+  },
+  "tuer_sicherheitstor": {
+   "pastell": 3
+  }
+ },
+ "tuer": {
+  "x": -73.89178916905075,
+  "z": 41.9432592606172,
+  "h": 5,
+  "motiv": "tuer_sumpf",
+  "klasse": "tuer",
+  "ziel": {
+   "x": 3636.9199222662764,
+   "z": 1621.7398843025421,
+   "y": -11.303879915885851,
+   "yaw": 1.1683091781093382,
+   "biome": "moos",
+   "deck": "sonic_warfare_music_history_01",
+   "zone": "14:6",
+   "motiv": "tuer_sumpf",
+   "passt": true,
+   "key": "-74:42>3633:1620",
+   "palette": "moos",
+   "farbe": "#f18f2a",
+   "d": 4029
+  }
+ },
+ "sprung": {
+  "ziel": {
+   "x": 3636.9199222662764,
+   "z": 1621.7398843025421,
+   "y": -11.303879915885851,
+   "yaw": 1.1683091781093382,
+   "biome": "moos",
+   "deck": "sonic_warfare_music_history_01",
+   "zone": "14:6",
+   "motiv": "tuer_sumpf",
+   "passt": true,
+   "key": "-74:42>3633:1620",
+   "palette": "moos",
+   "farbe": "#f18f2a",
+   "d": 4029
+  },
+  "ausgang_sofort": {
+   "x": 3633.2,
+   "z": 1620.2,
+   "motiv": "tuer_sumpf",
+   "ausgang": true,
+   "rueck_d": 4029
+  },
+  "bereit_nach_ms": 8937,
+  "ausgang_im_spiel": {
+   "name": "TUER_SUMPF",
+   "x": 3633.2,
+   "z": 1620.2,
+   "yaw": -1.561,
+   "tgt": -1.561
+  }
+ },
+ "fehler": []
+}

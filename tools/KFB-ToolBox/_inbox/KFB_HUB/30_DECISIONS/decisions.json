@@ -19661,6 +19661,21 @@
    "superseded_by": [],
    "why": "Ziele stehen in der Welt; das HUD darf Charakter zeigen, wenn es fest bleibt.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1343",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "STATUS",
+   "text": "Verteiler r3 @27e8e4ca: Baumgeister 8,9 %, Wahrzeichen 13 (12 im dichten Raster), Tresore 7 %; Tuer-Ziel-Waehler portalZiel.js (383 Eingaenge, Ziele 1,7-6,1 km, Bruch 8 %, 70 % an Kartenzonen, gleiche Tuer gleiches Ziel, Ausgang mit Rueckweg, 7 ms); Zellbau am Ziel 8,9 s - Vorladen ab 40-60 m beauftragt. Ink Blobs R4 (inkblobs-r1 @af24aebd, Atlas @24e5ea37): 64 Blobs (Bauarbeiter R9, RPG R7, Nerds, Kultur mit Regionen-Tags), 2560er Atlas ~35 MB GPU, Kultur-Gruppen 60 % an passenden Plaetzen; Berufe-Bogen nicht trennbar. Radio: Kartenkante @d92a144c (Titelleiste 14 px) und Mini/Maxi-Mechanik mit Skin-Tabelle; farbige Sci-Fi/DIY-Boegen fehlen in Dropbox.",
+   "values": {},
+   "owner": "WS-Verteiler · Rakete/Flug · Kartenkante",
+   "check": "V-1341, V-1342",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Tueren fuehren dorthin, wo ihr Motiv hingehoert; Kultur-Blobs nach Region.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

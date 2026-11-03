@@ -45,3 +45,18 @@ Im ruhigen Messpaar: Renderzeit 18,4 ms mit gegen 18,2 ms ohne, Bildzeit 24,9 ge
 - **Belege:** `INK_P1_Dreiergruppe_vorn.jpg` (ein Platz mit n = 3), `INK_P2_zwei_Gruppen.jpg` (zwei Plätze in der Welt, der zweite steht etwas höher am Hang). Die Prüfung ist grün: zwei Gruppen mit je 3, nach dem Entladen 3 übrig, Platz besiegt, wieder geladen bleibt er leer.
 - **Tropfen-Kern:** Die Spritzer laufen über `look/kfbTropfen.js` (von WS-Design, unverändert übernommen), `createInkSplash` ist jetzt die Art `platzen`.
 - **Nicht geprüft:** das Zusammenspiel mit dem echten Verteiler-Zweig. Vorrat voll heißt: Der Platz bleibt leer und wird als `full` gezählt.
+
+## Runde 4 (03.11. abends): neue Sätze, Kultur nach Region
+**Stand:** `game/inkblobs-r1` @af24aebd, Atlas `assets/inkblobs-r1` @24e5ea37.
+- **Aufgenommen:** Bauarbeiter r9 und RPG r7 (aus den Zips), 8 Nerds (Fledermausflügel, 18_15_26 bis 18_15_40), 8 Kultur-Blobs (18_38_53 bis 18_39_01). Der Atlas hat jetzt 64 Blobs auf 2560² mit Feldern zu 320 px (vorher 32 Blobs auf 3072 × 1536 mit 384 px). Die Datei ist 2,1 MB groß, auf der Grafikkarte belegt der Atlas samt Mip-Stufen etwa 35 MB (vorher etwa 25 MB). Es bleibt eine Textur und ein Zeichenaufruf. Ab etwa 64 weiteren Blobs wäre ein zweiter Atlas sinnvoll, der je Satz nachgeladen wird.
+- **Ausgelassen:**
+  - Die Bögen „Acht wilde Bauarbeiter-Tintenmonster-1“ und „Acht wütende RPG-Klecksmonster-1“ zeigen dieselben Figuren wie die Zips in anderer Fassung. Das ist der verworfene Erstversuch des Bauarbeiter-Zips bzw. die zweite Fassung der RPG-Figuren.
+  - „Acht verrückte Berufs-Klecksmonster“ ist über Alpha nicht sauber trennbar: Selbst voll deckende Pixel berühren sich an zwei Spaltengrenzen. Die Berufe bräuchten eine Freistellung wie die Zips.
+- **Kultur:** Jeder Kultur-Blob trägt ein Regionen-Tag: britisch, französisch, italienisch, japanisch, indisch, mexikanisch, alpenländisch, amerikanisch. `inkblobs.r1.json → kultur` ordnet Biome (moos, pastell, schnee, wueste, mesa, canyon) und später Zonen Regionen zu; die Zuordnung ist ein Vorschlag. Hat ein Platz ein Biom oder eine Zone mit Regionen, wird er zu 60 % eine Kultur-Gruppe, passende Regionen zuerst. Sonst erscheinen Kultur-Blobs nur als Fremde. Ohne Biom und ohne Zone zählt Kultur wie ein normaler Satz.
+- **Gruppen:** Die Grundsätze sind jetzt Teens, Magier, Aliens, Bauarbeiter, RPG und Nerds, dazu Kultur nach Region und der Anführer mit Mütze; etwa ein Viertel Fremde bleibt.
+- **Belege:**
+  - `INK_R4_neue_Saetze_Kontaktbogen.jpg`: die 32 neuen im Seitenverhältnis.
+  - `INK_R4_Atlas_alle_64.jpg`: alle 64. Als Raster nicht für die Hub-Karte gedacht, weil Georg kleine Raster nicht lesen kann.
+  - `INK_R4_Kulturgruppe_Wueste_vorn.jpg`: ein Platz im Biom „wueste“ mit Mexikanisch, Indisch, Französisch und einem Bauarbeiter als Fremdem.
+  - Die Prüfung `plaetze` ist grün.
+- **Nicht neu gemessen:** die Bildzeit mit dem größeren Atlas. Die Zahl der Instanzen ist gleich, nur die Textur ist größer.
