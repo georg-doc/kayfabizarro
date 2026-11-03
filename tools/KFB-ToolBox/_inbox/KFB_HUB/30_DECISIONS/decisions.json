@@ -19856,6 +19856,21 @@
    "superseded_by": [],
    "why": "Effekte entstehen aus dem Objekt selbst; HUD nimmt keinen unnoetigen Platz.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1356",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Truhe Staubfahnen-Rauch (dustTrail-Material, flacher Stoss am Fuss) und Monolith-Rueckseite so hell wie Vorderseite (design/tueren-r1 @168e43ef); Hub q452, q453. Kartenrelief im Gelaende-Shader: cardAlbedo.js (kartenalbedo=1) von WS-Design, Anschluss im Relief an WS1 (N-104), dritte unbeleuchtete Bildschicht im Relief gefunden.",
+   "values": {},
+   "owner": "WS-Design · WS1 · Georg",
+   "check": "q447, q448, q452, q453, N-104",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Karten im Gelaende sind Gelaende: ein Licht, ein Shader.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
