@@ -19061,6 +19061,21 @@
    "superseded_by": [],
    "why": "Der Hauptmechanismus braucht die Gebaeude im Endlos-Spiel.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1303",
+   "date": "03.11.2026",
+   "area": "Kampf",
+   "verdict": "PLAN",
+   "text": "Befund: Im Spiel gibt es keine Gebaeude- oder Wandzerstoerung, nur Effekte; Treffer kennt combatPlayer.r2.js nur fuer Obstgarten-Ziele. Go: Flug-Sitzung baut einen Zielhaken options.targets() mit sweep (Treffer mit Ort, Normale, Richtung, Energie, Waffe; Explosion mit Radius) als einziges Zielsystem, Obstgarten und 2D-Gegner laufen mit; WS-Design meldet die Viertel-Gebaeude als Ziele an und liefert Lochgeometrie und Bruch. Bis dahin Viertel ohne Zerstoerung ins Endlos-Spiel.",
+   "values": {},
+   "owner": "Flug-Sitzung · WS-Design",
+   "check": "Unit-Test Treffer, Viertel-Belege",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Zielsystem fuer alles, Effekte nur aus einem Modul.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
