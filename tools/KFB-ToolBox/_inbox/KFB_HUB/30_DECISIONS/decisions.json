@@ -20171,6 +20171,21 @@
    "superseded_by": [],
    "why": "GitHub ist die Quelle, die Site nur der Ausgabeort.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1377",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Satelliten-Leiste (Kartenkante module/hud-clay-r1 @efc8fe94, Sprites R2 privat @5993e209): links FLUFF (6 Arten) + SCORE (Summe) + Radio-Saeule, Panel faehrt nach rechts aus (Songs, Playlist, Musik/Effekte), nur gerade Mittelstuecke gestreckt; radio=ecke als Rueckfall. Hub q464. Fluff-Kugeln (Georg 04.11., q463 FAIL): keine Blender-Modelle, vorhandene Claymation-PNGs freigestellt und animiert, Aufsammeln als juicy Flug in die FLUFF-Zelle (Kartenkante, fluffpng=1); Blender erst fuers Metagame (Newton-Wiege-Alchemie). UI-Varianten/Skins per PNG mit gleicher Layout-Logik. WSB legt meshopt/KTX2-Liste selbst an.",
+   "values": {},
+   "owner": "Kartenkante · WSB · Georg",
+   "check": "q463, q464",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "2D-Claymation-PNGs tragen Look und Juice schneller als neue 3D-Modelle.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
