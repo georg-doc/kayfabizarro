@@ -19001,6 +19001,21 @@
    "superseded_by": [],
    "why": "Belege angesehen, sichtbarer Fehler im Clip nicht weitergegeben.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1299",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "PLAN",
+   "text": "mobs2d R2 (@6f3c2878, WS0 gepusht): Explosion S drin, Kameraabstand 12 m plus Gruppenreichweite, Auftauchen erst nach ruhiger Kamera (N-092). Schwarze Krone in den Topfpflanzen-Clips kam von der Belegkamera, nicht vom Spiel. Naechster Kartenkante-Slice: Ladevorhang mit Knet-Erzaehlerbox und Ladezeilen sowie Knet-Radio mit Titelfenster, vier Knoepfen und aufklappbarer Liste aus dem einen Bogen, hinter hudkit=clay; WS1 liefert Bereit-Signal und Ladezeit-Verkuerzung (N-093). Mac mini frei bis zur blinden Kritik.",
+   "values": {},
+   "owner": "Kartenkante · WS1",
+   "check": "N-092, N-093",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sichtbare UI bei der Kit-Sitzung, Technik bei WS1; ein Audio-Owner.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

@@ -1276,6 +1276,7 @@ d('V-1295','03.11.2026','Welt','REVIEW','q413 Passt: Flugsteuerung flug=r2 wird 
 d('V-1296','03.11.2026','Spiel','REVIEW','Runde 03.11. morgens: Hoehendunst R2 (@f197040c: Luftperspektive je Bildpunkt, Horizontband aus Welt-Nebel, Planet sinkt 1,35-fach mit der Kamera und geht teils hinter dem Gelaende auf) Hub q415. Knet-HUD r2 (module/hud-clay-r1 @0e063a69, Bogen KFB Clay-UI-Atlas mit FLUFFY!, privat @327ca3e2) Hub q416. 2D-Gegner mobs2d (game/mobs2d-r1 @cc977d25 vom Mini per Bundle, WS0 gepusht; 50 Gegner ohne messbare Kosten, Platzhalter, Hub erst mit WSA-Bildern; Explosion S und Pilz-Verpuffung an die Flug-Sitzung). WS1 Q-059: HUD h+o und Hartgummi-Gleiten g im Stamm; Inventur entfaellt (kein Dropbox auf WS1). Merges N-087 bis N-089 frei.','WS1 · Georg','q415, q416, N-089','Georg 03.11.'),
 d('V-1297','03.11.2026','Kampf','BUILD','Explosionsgroessen (Flug-Sitzung game/explosion-groessen-r1 @62d89b62, fx=r2): S ein Drittel von M, schneller, wenige Truemmer; Puff ein Siebtel ohne Feuer, bunt gefaerbter Rauch fuer Pilze und Sporen; nur Daten in explosionSheets sizes. Hub q417. Merge vor mobs2d (N-090); Gegner nutzen S, Anfuehrer M; WSB ergaenzt Kameraabstand beim Auftauchen.','WS1 · WSB','q417, N-090','Georg 03.11.'),
 d('V-1298','03.11.2026','Welt','REVIEW','Topfpflanzen mit Augen (Figuren-Sitzung world/topfpflanzen-r1 @ae92ae1a, topfpflanzen=1 mit gummi=1): Plant Prop Lab v2, Toepfe in Biom-Palette, EyeRig v6 mit E2, Wind, Hartgummi plus Plopp zur Seite mit Sprenkel und Ton, Plaetze ueber den Verteiler. Hub q418 (Standbilder; Clips zeigten eine schwarze Baumkrone im Bild, nicht vorgelegt). Merge frei N-091; Rueckkehr-Zustand geploppter Toepfe spaeter ueber Zellgedaechtnis; Kamera im Laub pruefen.','WS1 · Georg','q418, N-091','Georg 03.11.'),
+d('V-1299','03.11.2026','HUD','PLAN','mobs2d R2 (@6f3c2878, WS0 gepusht): Explosion S drin, Kameraabstand 12 m plus Gruppenreichweite, Auftauchen erst nach ruhiger Kamera (N-092). Schwarze Krone in den Topfpflanzen-Clips kam von der Belegkamera, nicht vom Spiel. Naechster Kartenkante-Slice: Ladevorhang mit Knet-Erzaehlerbox und Ladezeilen sowie Knet-Radio mit Titelfenster, vier Knoepfen und aufklappbarer Liste aus dem einen Bogen, hinter hudkit=clay; WS1 liefert Bereit-Signal und Ladezeit-Verkuerzung (N-093). Mac mini frei bis zur blinden Kritik.','Kartenkante · WS1','N-092, N-093','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2539,6 +2540,7 @@ WHY = {
  'V-1296':('Belege angesehen; Platzhalter-Optik nicht vor Georg, bis echte Bilder da sind.','03.11.2026'),
  'V-1297':('Groessen als Daten statt neuer Technik (V-1215).','03.11.2026'),
  'V-1298':('Belege angesehen, sichtbarer Fehler im Clip nicht weitergegeben.','03.11.2026'),
+ 'V-1299':('Sichtbare UI bei der Kit-Sitzung, Technik bei WS1; ein Audio-Owner.','03.11.2026'),
 }
 SUP = {}
 for e in E:
