@@ -18791,6 +18791,21 @@
    "superseded_by": [],
    "why": "Keine Kopie ohne nachgewiesene Sicherung entfernen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1285",
+   "date": "03.11.2026",
+   "area": "Audio",
+   "verdict": "BUILD",
+   "text": "Tokensparender Suno-Weg (Georg 03.11.): 40_AUDIO/chatterbox_r1/ingest_suno.py erledigt Kopie, Tempo, Tonart, Ernte, Dedupe (dedupe_harvest.py jetzt mit --all fuer Gruppen-Stems), Katalog mit source_folder, SSOT-Zeile und Eintrag in 40_AUDIO/KFB_AUDIO_PENDING.md in einem Aufruf; immer mit Ordnernamen. Erster Lauf: Kitsune no Majo 134 BPM G Dur 270 Phrasen, Chicha de Maiz 105 BPM G Moll 151. Offene Liste fuer WSA (Audio-Site/kfb-audio): 14 Songs seit 02.11., Briefing b299.",
+   "values": {},
+   "owner": "WS0 · WSA",
+   "check": "ingest_suno.py, KFB_AUDIO_PENDING.md, b299",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Skriptaufruf statt eines Agenten je Song; eine Liste als Uebergabe an den Audio-Besitzer.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

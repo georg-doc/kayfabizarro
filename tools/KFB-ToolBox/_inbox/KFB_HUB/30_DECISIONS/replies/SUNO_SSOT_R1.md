@@ -69,6 +69,8 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Sunset Spiral (Afrikanische Psychedelic, 03.11., Kurzprompt) | 137,0 | B Moll | 40 eigenständig (42 roh; Gitarre 33, Synth 5) |
 | Psychedelic Lanterns (Chinesische Psychedelic, 03.11., Kurzprompt) | 139,0 | B Moll (Pentatonik, E Moll 0,70 im Synth) | 164 eigenständig (192 roh; Gitarre/Guzheng 82, Synth 30, Brass 25, Woodwinds 10) |
 | Agua de Mar A (Mexikanischer Psychedelic-Rock, 03.11., Kurzprompt) | 129,6 | E Moll | 101 eigenständig (116 roh; Brass 46, Gitarre 37, Synth 7) |
+| Kitsune no Majo (Japanische Psychedelic, instrumental, 03.11., Kurzprompt) | 134 | G Dur | 270 eigenständig (295 roh; guitar 108, brass 49, woodwinds 42, lead_vocals 28) |
+| Chicha de Maíz (Peruanische Chicha, Psychedelic, instrumental, 03.11., Kurzprompt) | 105 | G Moll | 151 eigenständig (170 roh; guitar 113, synth 17, woodwinds 13, brass 8) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
