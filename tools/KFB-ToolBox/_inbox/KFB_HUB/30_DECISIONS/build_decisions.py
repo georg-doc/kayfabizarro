@@ -1359,6 +1359,7 @@ d('V-1378','04.11.2026','Figuren','KEEP','Idle-Animationen (Georg 04.11.) an WSB
 d('V-1379','04.11.2026','HUD','FAIL','Ladevorhang aus Knet-Grafik (hudkit=clay im Stamm): Georg 04.11. „das geht nicht“. WS1 schaltet ihn per Default aus (N-108, Ueberblendung als Ersatz); Kartenkante baut echten three.js-Stoffvorhang (q419), zwei Bahnen, Samt/Goldfransen, Ease-in/-out, dann Kamerafahrt und Ladebalken (q423).','Kartenkante · WS1 · Georg','q419, q423','Georg 04.11.'),
 d('V-1380','04.11.2026','HUD','TUNE','q464 Satelliten-Leiste (Georg im Chat): FLUFF-Leiste und SCORE nach links verlegt = Fehler im WS0-Auftrag; zurueck nach oben an den alten Platz, links nur das Radio, Radio im Massstab der Action-Buttons. Fluff-PNG-Pickups angehalten, Georg liefert Bilder. Slop-Sprache R1 (fx/slop-r1 @f7085db0): Ton-Proben in Hub q465; Zerfall von WS0 zurueck (grauer Puff weg, runde D-Schnipsel statt Zacken, Papier-Rueckseite, Pfuetze erst aus dem Zerfall, Seitenansicht).','Kartenkante · Rakete/Flug · Georg','q464, q465','Georg 04.11.'),
 d('V-1381','04.11.2026','HUD','FAIL','Intro/Ladebildschirm (Georg 04.11.): Versalien-Plakette kaum lesbar, Ladebalken mit darübergelegter ausgeschnittener Ebene = No-Gos, haette ein Kritiker finden muessen. Kartenkante gestaltet Intro aus einem Guss (Stoffvorhang, lesbarer Erzaehltext in Gross/Klein, sauberer Ladebalken, Kamerafahrt), ein Kritiker vor Abgabe. Slop-Ton q465: Richtung gut, dumpfer/blubbriger; Fluffer gleich gross mit leichter Variation; Sprechblasen bei Slop vermutlich keine, sonst nur Standardblasen. Hub-Speicher Runde 2: 389 Dateien (505 MB) in KFB_HUB_ARCHIV/hub_assets archiviert, cleanup/r1 bereit fuer Georgs Klick.','Kartenkante · Rakete/Flug · Georg','q423, q465','Georg 04.11.'),
+d('V-1382','04.11.2026','HUD','KEEP','Fluff-HUD (Georg 04.11.): oben mittig kompaktes, animierbares Ressourcen-Element (6 Arten + Gesamt-Fluff); Aufklapper fuer Fluff-Alchemie-Optionen; Button Kayfabricate... oeffnet KFB-Standard-Overlay (vorerst Platzhalter). Spaeter Fluff-Alchemie-Minispiel (DIY, cartoon-logisch, juicy: Karten, Props, Power-ups, Heiltraenke), Newton-Wiege-Idee. Links nur Satelliten-Radio im Massstab der Action-Buttons. Welt-Kugeln: Georgs Sprites KFB_Fluff_24_States_Game_Sprites (6 Farben x ball/squash/melt/splat), Zuordnung Farbe-Art offen (heroic orange vs tuerkis). Alles Kartenkante nach dem Intro.','Kartenkante · Georg','','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2705,6 +2706,7 @@ WHY = {
  'V-1379':('Keine hochskalierten Grafikschnipsel als Ersatz fuer echte Animation.','04.11.2026'),
  'V-1380':('Vorhandene HUD-Plaetze bleiben; neue Teile passen sich an.','04.11.2026'),
  'V-1381':('Lesbarkeit und saubere Ebenen sind Pflicht vor jedem Beleg.','04.11.2026'),
+ 'V-1382':('Fluff wird sichtbare Ressource mit eigenem Verwertungs-Kreislauf.','04.11.2026'),
 }
 SUP = {}
 for e in E:
