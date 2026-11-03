@@ -19616,6 +19616,21 @@
    "superseded_by": [],
    "why": "Die Knete reagiert auf den Spieler; der Horizont macht Fliegen spuerbar.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1340",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "Echte Sonne bei Tag (WS-Himmel world/sonne-tag-r1 @42e05976 auf planet-einfuegen-r1): Bahn max 40 Grad, Hauptlicht 3,1, Fuellung 0,6, Farbtemperatur ueber den Tag (Stimmungen vormittag/nachmittag), Sonnenscheibe mit Lichthof; Schatten haerter (2,5/0,9), Kasten >=24 m, 4096 px (GPU 16 auf 64 MB); groundGrade.js stuft Gelaende/Bewuchs ab (Mittag 0,7/0,6), Figuren/Pop-ups voll. Kosten unter Messgenauigkeit. Tests oneRig (6 Laternen-Punktlichter im Stamm) und nightShadow N2 (world=probe) rot, nicht durch diese Aenderung. Hub q441.",
+   "values": {},
+   "owner": "WS-Himmel · Georg",
+   "check": "q434, q441",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Realistischer Hintergrund durch ein klares Licht, nicht durch Effekte.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

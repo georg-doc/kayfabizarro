@@ -1,0 +1,62 @@
+{
+ "fahrt": {
+  "live": {
+   "mapSize": 4096,
+   "radius": 24
+  },
+  "dpr": 1,
+  "buffer": [
+   1280,
+   720
+  ],
+  "alt": {
+   "mapSize": 2048,
+   "radius": 10.4,
+   "frameMs": 9,
+   "frameNoShadowMs": 8.9,
+   "shadowMs": 0.1,
+   "shadowCalls": 14,
+   "mapMB": 16
+  },
+  "neu": {
+   "mapSize": 4096,
+   "radius": 24,
+   "frameMs": 8.8,
+   "frameNoShadowMs": 9,
+   "shadowMs": -0.2,
+   "shadowCalls": 19,
+   "mapMB": 64
+  },
+  "errs": 0
+ },
+ "figur": {
+  "live": {
+   "mapSize": 4096,
+   "radius": 24
+  },
+  "dpr": 1,
+  "buffer": [
+   1280,
+   720
+  ],
+  "alt": {
+   "mapSize": 2048,
+   "radius": 10.4,
+   "frameMs": 10.5,
+   "frameNoShadowMs": 9.9,
+   "shadowMs": 0.6,
+   "shadowCalls": 58,
+   "mapMB": 16
+  },
+  "neu": {
+   "mapSize": 4096,
+   "radius": 24,
+   "frameMs": 10.4,
+   "frameNoShadowMs": 10.3,
+   "shadowMs": 0.1,
+   "shadowCalls": 75,
+   "mapMB": 64
+  },
+  "errs": 0
+ }
+}

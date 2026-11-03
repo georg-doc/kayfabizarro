@@ -1317,6 +1317,7 @@ d('V-1336','03.11.2026','HUD','REVIEW','Radio fest (module/hud-clay-r1 @754258a7
 d('V-1337','03.11.2026','Welt','REVIEW','Truhe TUNE (design/truhen-r1 @0f73f9a9): Puff = Anfang der Kampf-Verpuffung (explosionSheets puff, until/fade), ohne Feuer, ~1 s; Pfuetzen versickern mit Transparenz (melt.fade); Hub q438. Alle 2D-Assets ueber WFC (world/popup-klassen-r3 @1042104b): Ink-Blob-Raster 165 Gruppen/9 km2, Fuss-Dressing aus vorhandenem Bewuchs, Sichtgarantie mit dichtem 58-m-Raster ohne Karte in 150 m (kein Pop-up im Bild 13,7 % auf 1,1 %); 1819 Pop-ups/9 km2 - WSB-Messung vor Merge; Baumgeister deckeln; Denker wirkt blass (pruefen). Hub q439. Platte 7,8 GB: git-tmp_pack (445 MB) in den Papierkorb, Georg leert Papierkorb und App-Cache.','WS-Design · WS-Verteiler · Georg','q438, q439','Georg 03.11.'),
 d('V-1338','03.11.2026','Technik','STATUS','WSB-Messung dichte Pop-ups (Mini M4, popup-klassen-r3 @0f3c34ce gegen @746414f3): Pop-ups samt Flecken ~0,1 ms, Gesamtstand +0,2 bis 0,7 ms (Rest vermutlich Fuss-Dressing); nur 7/14 aktive Pop-ups an den Messorten, 30+ ungemessen; Bewuchs traegt 12 von 18 ms bei x5/z-1478. Kein Instancing je Motiv noetig.','WSB · WS-Verteiler','V-1337','Georg 03.11.'),
 d('V-1339','03.11.2026','Spiel','REVIEW','Fluglage und Knete-Spuren (Rakete/Flug game/fluglage-spuren-r1 @c075b44a, fluglage=1, knetespur=1): Kamera kippt im Flug zu Fuss bis 7 Grad (nur Darstellung), Figurlage/Ohren aus Stamm; Spuren als Gelaendeflicken (inkPatch-Muster) mit Mulden, Rillen, Wulst, Verschmieren, Ringpuffer 64, Kosten nicht messbar. Hub q440. Denker-Blaesse war Schubrauch des Wagens, kein Fehler. Pop-ups im Spiel ueblich 10-15 aktiv.','Rakete/Flug · WS-Verteiler · Georg','q440, q439','Georg 03.11.'),
+d('V-1340','03.11.2026','Look','REVIEW','Echte Sonne bei Tag (WS-Himmel world/sonne-tag-r1 @42e05976 auf planet-einfuegen-r1): Bahn max 40 Grad, Hauptlicht 3,1, Fuellung 0,6, Farbtemperatur ueber den Tag (Stimmungen vormittag/nachmittag), Sonnenscheibe mit Lichthof; Schatten haerter (2,5/0,9), Kasten >=24 m, 4096 px (GPU 16 auf 64 MB); groundGrade.js stuft Gelaende/Bewuchs ab (Mittag 0,7/0,6), Figuren/Pop-ups voll. Kosten unter Messgenauigkeit. Tests oneRig (6 Laternen-Punktlichter im Stamm) und nightShadow N2 (world=probe) rot, nicht durch diese Aenderung. Hub q441.','WS-Himmel · Georg','q434, q441','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2621,6 +2622,7 @@ WHY = {
  'V-1337':('Immer etwas zu entdecken, ohne das Hauptziel zu ueberdecken; vorher messen.','03.11.2026'),
  'V-1338':('Erst messen, dann optimieren.','03.11.2026'),
  'V-1339':('Die Knete reagiert auf den Spieler; der Horizont macht Fliegen spuerbar.','03.11.2026'),
+ 'V-1340':('Realistischer Hintergrund durch ein klares Licht, nicht durch Effekte.','03.11.2026'),
 }
 SUP = {}
 for e in E:
