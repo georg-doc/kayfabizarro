@@ -1,0 +1,65 @@
+{
+ "machine": "Apple M1 Max",
+ "runs": [
+  {
+   "tag": "ohne",
+   "frames": 296,
+   "frameMed": 31.9,
+   "frameP95": 50.6,
+   "renderMed": 23.1,
+   "renderP95": 29.7,
+   "spuren": 0,
+   "errs": 0,
+   "load": [
+    8.86,
+    13.28,
+    18.91
+   ]
+  },
+  {
+   "tag": "mit",
+   "frames": 397,
+   "frameMed": 23.2,
+   "frameP95": 32.1,
+   "renderMed": 18.1,
+   "renderP95": 23.9,
+   "spuren": 64,
+   "errs": 0,
+   "load": [
+    11.77,
+    13.63,
+    18.85
+   ]
+  },
+  {
+   "tag": "ohne",
+   "frames": 304,
+   "frameMed": 30.2,
+   "frameP95": 49.7,
+   "renderMed": 21.9,
+   "renderP95": 31,
+   "spuren": 0,
+   "errs": 0,
+   "load": [
+    11.43,
+    13.35,
+    18.54
+   ]
+  },
+  {
+   "tag": "mit",
+   "frames": 396,
+   "frameMed": 22,
+   "frameP95": 45.8,
+   "renderMed": 17.2,
+   "renderP95": 24.2,
+   "spuren": 64,
+   "errs": 0,
+   "load": [
+    16.2,
+    14.18,
+    18.65
+   ]
+  }
+ ]
+}

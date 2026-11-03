@@ -19601,6 +19601,21 @@
    "superseded_by": [],
    "why": "Erst messen, dann optimieren.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1339",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Fluglage und Knete-Spuren (Rakete/Flug game/fluglage-spuren-r1 @c075b44a, fluglage=1, knetespur=1): Kamera kippt im Flug zu Fuss bis 7 Grad (nur Darstellung), Figurlage/Ohren aus Stamm; Spuren als Gelaendeflicken (inkPatch-Muster) mit Mulden, Rillen, Wulst, Verschmieren, Ringpuffer 64, Kosten nicht messbar. Hub q440. Denker-Blaesse war Schubrauch des Wagens, kein Fehler. Pop-ups im Spiel ueblich 10-15 aktiv.",
+   "values": {},
+   "owner": "Rakete/Flug · WS-Verteiler · Georg",
+   "check": "q440, q439",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Knete reagiert auf den Spieler; der Horizont macht Fliegen spuerbar.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
