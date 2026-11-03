@@ -19451,6 +19451,21 @@
    "superseded_by": [],
    "why": "Tinte muss nach Tinte aussehen; das HUD bleibt klein, bis man es braucht.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1329",
+   "date": "03.11.2026",
+   "area": "Audio",
+   "verdict": "STATUS",
+   "text": "Song ohne WSA ins Spiel-Radio getestet: Warm Room Pulse auf -18 LUFS AAC (wie WSA: feste Verstaerkung, 128 kbit/s, 48 kHz), assets/private @b53a10e1 (40_AUDIO/music_aac/suno_20261103/ + Katalog), Spielzweig audio/song-warm-room-pulse-r1 @e06c508 (songsR2.js SONGS_PRIVATE, songs-pin.json, songs-copy.mjs, Site-Build /kfb-songs/, Dev-Route). WSA-14 sind nur auf der Audio-Site, nicht im Spiel (REGISTERED_NOT_GAME_RUNTIME_DEPLOYED); werden auf demselben Weg nachgetragen (audio/songs-wsa-14-r1). Audio-Site-Quelle liegt nur in ChatGPT Sites (WSA). Radio Mini/Offen/Songliste (module/hud-clay-r1 @4cf065af) Hub q432; Tasten M stumm (nicht im Wagen), Punkt = naechster Song (N ist Clownsbombe). N-100 an WS1 (Merge-Liste ergaenzt).",
+   "values": {},
+   "owner": "WS0 · Kartenkante · WS1",
+   "check": "q432, N-100",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Neue Songs ohne Engpass ins Spiel; ein Rezept, privat, gepinnt.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
