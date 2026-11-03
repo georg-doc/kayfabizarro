@@ -1255,6 +1255,8 @@ d('V-1274','03.11.2026','Video','RULE','Georg 03.11.: Gilliam ist Stil-Ebene und
 d('V-1275','03.11.2026','Audio','BUILD','Ernte Suno R3: bluegrass_porch_roll 129 BPM G Dur 37 Phrasen (nur Banjo, zu schnell; Export ohne Geigen-Stem), artpop_glossy 106 BPM G Dur 336, cairo_hijaz 106 BPM A Moll 284, motorik_kuehl 133 BPM G Dur 175, klezmer_freylekhs 104 BPM G Moll 275 (Klarinette 238; Beschleunigung nicht messbar). Katalog und SSOT 6 ergaenzt, Briefings b291-b295 erledigt. Brass-Stems vermutlich Uebersprechen, ungehoert.','WS0','music_catalog_r1.json','Georg 03.11.'),
 d('V-1276','03.11.2026','Spiel','REVIEW','WS1 Q-056: erledigt=e im Stamm @47bf8b1a (Karte loest sich nach dem Hero-Shot per Sprenkel-Modul in 1,6 s auf, Gebaeude unberuehrt), Hub q411. Warteschlange mit GAME_CLOCK und R29 lokal, Push nach Stufe B; Planeten auf @ce101581. Q-057: testfahrt-build.sh fuer Mac mini und WS0-MacBook nach deckGround und Huelle (Stopp unter 9 GB); Stage fuer WSA mit dem Site-Paket nach Deck-Moment und Ladezeit, hinter Georgs Passwort, private Assets nie oeffentlich (N-078). Testfahrt im Heimnetz unter 192.168.178.106:5300.','WS1','q411, N-078','Georg 03.11.'),
 d('V-1277','03.11.2026','Spiel','RULE','Die Testfahrt-Adresse ohne Hash zeigte den alten Spike R4 (Hex-Insel, Pluralism Simulator); Georg hielt es fuer eine Regression. Ursache: WS0 hatte die Adresse ohne Hash genannt, und die Seite faellt ohne Hash auf den alten Spike zurueck. Regel: Ohne oder mit unbekanntem Hash leitet die Seite auf die aktuelle Testfahrt-Vorgabe um; alte Spikes nur hinter ausdruecklichem Hash (N-079). WS0 gibt Georg Testfahrt-Links nur mit vollem Hash. q401 hat jetzt Heimnetz- und localhost-Link.','WS1 · WS0','N-079, q401','Georg 03.11.'),
+d('V-1278','03.11.2026','Spiel','DECISION','q411 Passt: erledigt E (gesammelte Gelaendekarte loest sich auf) wird Standard, B/C/D und ws1/erledigt-r1 entfallen.','WS1','q411','Georg 03.11.'),
+d('V-1279','03.11.2026','Fahren','TODO','Georgs Testfahrt 03.11. (sieht cool aus, Fahrgefuehl traegt nicht): Laden ca. 30 s plus Anlauf-Ruckeln; Tempo steigt ab einem Punkt nicht, haelt nicht, Travel States nicht spuerbar (Vergleich mit V-783); Motorton nur heiseres Husten statt Schichten (V-908); Steigung zu Fuss und mit Dieselpunk kaum zu schaffen; Gelaendekarten als Schein-Gelaende ohne Kollision; kaum Baeume (Kronen in der Erde, Buesche, Stuempfe); Hartgummi zu Fuss steckt man fest, sanft herausschieben; HUD links unklare Knubbel und Bar; Claymation-Pop-ups spaeter gummiartig. Nach V-805 vor dem Deck-Moment; WS1 diagnostiziert zuerst je Punkt (N-080).','WS1','Q mit Ursache je Punkt','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2497,6 +2499,8 @@ WHY = {
  'V-1275':('Material registriert; Bluegrass braucht Advanced Split fuer die Geige.','03.11.2026'),
  'V-1276':('Georg will auf mehreren Rechnern testen; Stage statt Hin und Her.','03.11.2026'),
  'V-1277':('Georg darf nie in einem alten Fail-Stand landen; das liest sich als Regression.','03.11.2026'),
+ 'V-1278':('Georg hat am Bild abgenommen.','03.11.2026'),
+ 'V-1279':('Kernschleife Fahren und Fliegen ist das MVP; Diagnose vor blindem Tunen.','03.11.2026'),
 }
 SUP = {}
 for e in E:
