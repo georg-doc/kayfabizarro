@@ -19766,6 +19766,21 @@
    "superseded_by": [],
    "why": "Licht und HUD lesbar und stimmig zu den 2D-Elementen.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1350",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Truhe mit Jetpack-Bodenwolke (design/tueren-r1 @3c08e865): puff() aus vendor/vfx/kfb-flight-vfx.js wie jetpack puffSmall, ohne Duesen/Fahnen, am Fuss unter der Truhe, beim Landen breiter; dustTrail (Fahne) nicht genommen. Hub q447.",
+   "values": {},
+   "owner": "WS-Design · Rakete/Flug · Georg",
+   "check": "q438, q447",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene 3D-VFX wiederverwenden statt neuer Rauch.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

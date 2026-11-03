@@ -1327,6 +1327,7 @@ d('V-1346','03.11.2026','HUD','REVIEW','Radio Mini/Maxi mit Skins (module/hud-cl
 d('V-1347','03.11.2026','Welt','REVIEW','Tueren als Eingaenge Prototyp (design/tueren-r1 @7d70099c auf truhen-r1/monolith-r1, tueren=1, privat @4f7cf0fd): Oeffnung als Daten (popup_clay.json oeffnung), Wirbel-Shader mit Ziel-Kartenbild, Annaeherung ab 8 m mit Tropfen-Art saugen, Durchgang ueber Sprenkel-Modul 0,38/<=0,6/0,45 s, Teleport, Puff, Ausgang aus veg().ausgang; Testziel bis Verteiler-Merge. Neu: Klasse hoehle (8), 12 Alien-Truhen. Merge-Regel: kfb-themen-tags.r1.json aus popup-klassen-r3 (@3d1342ee) nehmen. Hub q445. SFX per ElevenLabs nach Georgs Ja.','WS-Design · WS-Verteiler · Georg','q445','Georg 03.11.'),
 d('V-1348','03.11.2026','Spiel','TUNE','Georg-Antworten: q439 POI-Sicht Passt; q440 Fluglage/Spuren Passt; q441 Sonne: harte Schatten zurueck (passen nicht zu 2D-Props/Blobs), Rest bleibt (WS-Himmel); q438 Truhe: Wolke unter der Truhe aus Dieselpunk-/Jetpack-Bodenstaub-VFX (WS-Design mit Rakete/Flug); q442 Monolith: Karten immer flache 3D-Flaeche mit KFB-Ink-Outline und KFB-Kartenruecken, ein Kartenmodul (Memory); q443 Kartenbau: lazy/billig, Zell-Uebergang unsauber - Stopp, erst Storyboard und nahtloses Konzept; q445 Tueren: Fahrtrichtung/Tempo bleiben, Oeffnung frei befahrbar, Ueberblendung als ein Bewegungsfluss. Neue Kings/Queens-Blobs an Rakete/Flug (Anfuehrer).','WS-Design · WS-Himmel · Rakete/Flug','q438-q445','Georg 03.11.'),
 d('V-1349','03.11.2026','Look','REVIEW','Sonne TUNE (world/sonne-tag-r1 @59fdc787): Schatten zurueck auf Stammstand (adoptRig identisch), Sonnenscheibe, Farbtemperatur, Bahn 40 Grad, groundGrade bleiben; Hub q446. Radio-Skins von Georg (KFB Radios: Industrie-Gelb, Tuerkis-Retro, Beige-Satellit, Lila-Sci-Fi, Holz-DIY, je Mini/Maxi) an Kartenkante; Maxi-Panel als 9-Slice hoeher, Mindestgroessen (Zeile 32 px, Schrift 16 px, Knoepfe 34 px).','WS-Himmel · Kartenkante · Georg','q441, q446','Georg 03.11.'),
+d('V-1350','03.11.2026','Welt','REVIEW','Truhe mit Jetpack-Bodenwolke (design/tueren-r1 @3c08e865): puff() aus vendor/vfx/kfb-flight-vfx.js wie jetpack puffSmall, ohne Duesen/Fahnen, am Fuss unter der Truhe, beim Landen breiter; dustTrail (Fahne) nicht genommen. Hub q447.','WS-Design · Rakete/Flug · Georg','q438, q447','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2641,6 +2642,7 @@ WHY = {
  'V-1347':('Tueren zeigen ihr Ziel, bevor man durchgeht.','03.11.2026'),
  'V-1348':('Konsistenz vor Effekt: Karten immer gleich, Schatten passend zu 2D, Bewegung ohne Bruch.','03.11.2026'),
  'V-1349':('Licht und HUD lesbar und stimmig zu den 2D-Elementen.','03.11.2026'),
+ 'V-1350':('Vorhandene 3D-VFX wiederverwenden statt neuer Rauch.','03.11.2026'),
 }
 SUP = {}
 for e in E:
