@@ -19841,6 +19841,21 @@
    "superseded_by": [],
    "why": "Erst Konzept und Storyboard, dann Bau; der Uebergang ist nahtlos, weil nichts getauscht wird.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1355",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Georg-Antworten: q451 Kartenbau-Konzept Passt, so bauen (WS-Design). q446 Sonne: Licht gut, Schatten nah am Werfer staerker und lang auslaufend - Kontakt-Haertung (PCSS bzw. Abstand zum Werfer) an WS-Himmel. q449 Tueren: Uebergang aus dem Portal-Wirbel selbst (waechst ueber die Tuer, oeffnet aus der Ausgangstuer), getimed ueber Abstand zur Bildebene, keine lila Fremdebene. q450 Radio: keine Titelleiste, in die Ecke eingepasst, Topper ohne Zusatzhoehe, Titel nur im Maxi bzw. Skin-Display, Icons freistehend im Slot ohne Doppelrahmen (Kartenkante). Zustaendigkeit: deckGround/Huellen-Generator WS-Design, cardRelief WS1, cardEdge Kartenkante.",
+   "values": {},
+   "owner": "WS-Design · WS-Himmel · Kartenkante · Georg",
+   "check": "q446, q449-q451",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Effekte entstehen aus dem Objekt selbst; HUD nimmt keinen unnoetigen Platz.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
