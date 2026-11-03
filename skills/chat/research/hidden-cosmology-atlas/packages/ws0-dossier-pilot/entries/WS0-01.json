@@ -16,7 +16,8 @@
     "WS0-S01",
     "WS0-S04",
     "WS0-S05",
-    "WS0-S09"
+    "WS0-S09",
+    "WS0-S14"
   ],
   "layers": {
     "card": {
@@ -24,13 +25,24 @@
       "lore": "The government doesn't need to crack your password when Big Tech leaves the back door wide open and the porch light on.",
       "power": "Reads everything, regardless of your cute encryption.",
       "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
-      "sourceId": "WS0-S01"
+      "sourceId": "WS0-S01",
+      "visual": {
+        "field": "artworkPrompt",
+        "value": "Style: Kayfabizarro heist. Subject: government agent walking through open tech company back door, host waving cheerfully. Mood: consensual betrayal.",
+        "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Observation_Underground_-_ADD_web.pdf.json",
+        "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+        "printedPage": 9,
+        "position": "lower left",
+        "printSource": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Observation_Underground%20-%20ADD%20web.pdf",
+        "inspection": "Printed: digging animal and sparking BIG TECH server. The approved waving-host line plays the JSON prompt."
+      }
     },
     "sources": [
       "WS0-S01",
       "WS0-S04",
       "WS0-S05",
-      "WS0-S09"
+      "WS0-S09",
+      "WS0-S14"
     ],
     "interpretation": {
       "summary": "The card compresses different surveillance mechanisms into an all-seeing backdoor. That is a dramatic premise; the inspected report supports a narrower collection process. The NB01 infographic is useful as a question map, not proof of blanket access. Neither this report nor a product label establishes that every encrypted message is readable.",
@@ -42,18 +54,20 @@
       "counterposition": "Avoid both total-immunity promises and the claim that nothing helps. Protection depends on the data, adversary and access mechanism."
     },
     "brainfood": {
-      "voice": "FrizzleBob — Carny/KnuckleBob editorial draft",
-      "text": "Step right up: the all-seeing machine comes with a very blurry instruction manual. Name the data. Name the doorway. Then check who actually holds the key.",
-      "status": "NEW_EDITORIAL_ADAPTATION_NOT_SOURCE_QUOTE",
-      "voiceBasis": "Carny concrete exhibit/direct address + KnuckleBob paper/trail/mechanism, from inventoried FrizzleBob voice donors. New prose, not copied source assertions."
+      "voice": "FrizzleBob",
+      "text": "Three weeks I practiced that lockpick trick. Watch the host. He’s waving the agent in. The report’s going to say “no sign of forced entry.”",
+      "spokenDE": "Drei Wochen hab ich den Trick mit dem Dietrich geübt. Guck dir den Hausherrn an. Der winkt den Agenten rein. Im Protokoll steht nachher bloß: keine Einbruchsspuren.",
+      "status": "ACCEPTED_V1258",
+      "voiceBasis": "Printed: digging animal and sparking BIG TECH server. The approved waving-host line plays the JSON prompt."
     },
     "solutionWatch": {
       "kind": "FEATURED_SOLUTION_WATCH",
-      "action": "Spend ten minutes making a one-data-item security plan before buying a new phone.",
+      "action": "Choose a weather app that lets you enter a city. Note its location permission. If enabled, turn it off and enter the city by hand. Does the forecast still load? Restore the setting if desired.",
       "steps": [
-        "Choose one item: private messages, location history or documents.",
-        "List where it is stored, who can access it and the specific access you want to reduce.",
-        "Choose one proportionate change, then set a review date."
+        "Choose a weather app that lets you enter a city.",
+        "Note its location permission.",
+        "If enabled, turn it off and enter the city by hand.",
+        "Does the forecast still load? Restore the setting if desired."
       ],
       "options": [
         {
@@ -75,10 +89,12 @@
       "sourceIds": [
         "WS0-S05"
       ],
-      "checkedAt": "2026-11-01",
+      "checkedAt": "2026-11-03",
       "funding": "No paid placement or affiliate links introduced.",
       "successCheck": "You can explain one threat, one chosen mitigation and one remaining limitation.",
-      "notProvided": "No purchase verdict or individual legal/security guarantee."
+      "notProvided": "No purchase verdict or individual legal/security guarantee.",
+      "limit": "This tests one feature on this phone. Previously stored data and provider disclosures are outside the test.",
+      "minutes": "5–10"
     }
   },
   "claims": [
@@ -110,8 +126,8 @@
       "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
     }
   ],
-  "checkedAt": "2026-11-01",
-  "reviewer": "Codex builder; independent source/structure review recorded separately; Georg editorial acceptance pending",
+  "checkedAt": "2026-11-03",
+  "reviewer": "Pilot accepted by Georg and WS0 (V-1258). Close-out: 2026-11-03.",
   "fieldsOfSense": [
     "source criticism",
     "creative card interpretation",

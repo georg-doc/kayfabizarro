@@ -16,7 +16,9 @@
     "WS0-S02",
     "WS0-S06",
     "WS0-S07",
-    "WS0-S10"
+    "WS0-S10",
+    "WS0-S15",
+    "WS0-S12"
   ],
   "layers": {
     "card": {
@@ -24,43 +26,55 @@
       "lore": "The moment you learn about the Basilisk, you are trapped. If you don't start helping it now, it will put you in a simulated torture chamber later.",
       "power": "Information Hazard. Showing this card to an opponent permanently infects them. If they do not aid you, they lose 1 health every turn.",
       "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
-      "sourceId": "WS0-S02"
+      "sourceId": "WS0-S02",
+      "visual": {
+        "field": "artworkPrompt",
+        "value": "Style: conspiracy thriller cartoon. Subject: giant scroll with YOUR NAME visible while robotic snake looms overhead. Mood: paranoid doom.",
+        "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Kayfabizarro_Philosophy_-_ADD_web.pdf.json",
+        "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+        "printedPage": 9,
+        "position": "upper right",
+        "printSource": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Kayfabizarro_Philosophy%20-%20ADD%20web.pdf",
+        "inspection": "Printed: a mechanical hand holds a pen beside the checkbox for ‘You (The Reader)’ on a long paper roll."
+      }
     },
     "sources": [
       "WS0-S02",
       "WS0-S06",
       "WS0-S07",
-      "WS0-S10"
+      "WS0-S10",
+      "WS0-S15",
+      "WS0-S12"
     ],
     "interpretation": {
-      "summary": "The existing card turns a philosophical scenario into a game penalty. Preserve that fiction, but separate it from a prediction about an existing AI. Bensinger contests the popular fundraising/obedience retelling. The underlying2010 post has not been independently inspected here.",
+      "summary": "Roko considers conditional punishment of informed potential donors by a hypothetical future singleton. This is one possibility in an argument about altruism. The printed card turns it into a game penalty.",
       "statuses": [
-        "card: fictional mechanic",
-        "basilisk: disputed thought experiment",
-        "Bensinger: attributed interpretation"
+        "2010 argument recovered via archive",
+        "card: satire"
       ],
       "counterposition": "An emotionally forceful conditional does not establish its premises, the agent’s existence or an obligation to obey."
     },
     "brainfood": {
-      "voice": "FrizzleBob — Carny/KnuckleBob editorial draft",
-      "text": "The robot from tomorrow sent an invoice. Charming. Before you pay, ask who proved the robot, who wrote the terms, and why a thought experiment suddenly wants your wallet.",
-      "status": "NEW_EDITORIAL_ADAPTATION_NOT_SOURCE_QUOTE",
-      "voiceBasis": "Carny concrete exhibit/direct address + KnuckleBob paper/trail/mechanism, from inventoried FrizzleBob voice donors. New prose, not copied source assertions."
+      "voice": "FrizzleBob",
+      "text": "Look where the metal hand put the tick. ‘You (The Reader).’ Funny. I’ve read the whole list and that pen’s still in somebody else’s hand.",
+      "spokenDE": "Guck, wo die Metallhand ihr Häkchen setzt. »Du (der Leser).« Komisch. Ich hab die ganze Liste gelesen, und den Stift hält immer noch ein anderer.",
+      "status": "V1258_FINAL_PASS",
+      "voiceBasis": "Printed: a mechanical hand holds a pen beside the checkbox for ‘You (The Reader)’ on a long paper roll."
     },
     "solutionWatch": {
       "kind": "ARGUMENT_CHECK",
-      "action": "Split one AI prediction into assumptions, claimed mechanism and observed evidence.",
+      "action": "Read the paragraph beginning ‘In this vein’ in Roko’s post. Underline the conditional verbs. Rewrite one sentence as an unconditional threat, then circle the assumption you had to add.",
       "steps": [
-        "Write the conditional argument without the horror imagery.",
-        "Mark which assumptions the source supplies and which are untested.",
-        "Read the disagreement before deciding whether the conclusion follows."
+        "Read the paragraph beginning ‘In this vein’ in Roko’s post.",
+        "Underline the conditional verbs.",
+        "Rewrite one sentence as an unconditional threat, then circle the assumption you had to add."
       ],
       "sourceIds": [
-        "WS0-S06",
-        "WS0-S07"
+        "WS0-S12"
       ],
-      "limit": "This is an editorial reasoning exercise, not a settled solution to decision theory or all AI risk.",
-      "checkedAt": "2026-11-01"
+      "limit": "This tests a change in wording. It cannot establish the existence or intentions of a future AI.",
+      "checkedAt": "2026-11-03",
+      "minutes": "5–10"
     }
   },
   "claims": [
@@ -72,6 +86,15 @@
         "WS0-S07"
       ],
       "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    },
+    {
+      "id": "WS0-02-C2",
+      "statement": "Roko considers conditional punishment of informed potential donors by a hypothetical future singleton.",
+      "status": "ATTRIBUTED_SOURCE_PASSAGE",
+      "sourceIds": [
+        "WS0-S12"
+      ],
+      "reviewScope": "Original author text via cache mirror"
     }
   ],
   "formats": [
@@ -96,8 +119,8 @@
       "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
     }
   ],
-  "checkedAt": "2026-11-01",
-  "reviewer": "Codex builder; independent source/structure review recorded separately; Georg editorial acceptance pending",
+  "checkedAt": "2026-11-03",
+  "reviewer": "Pilot accepted by Georg and WS0 (V-1258). Close-out: 2026-11-03.",
   "fieldsOfSense": [
     "source criticism",
     "creative card interpretation",

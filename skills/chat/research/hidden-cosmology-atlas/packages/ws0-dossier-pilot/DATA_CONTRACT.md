@@ -13,3 +13,7 @@ Conceptual relations: surveillance→basilisk (different kinds of coercion); bas
 ## Card motif handoff for WS0
 
 For each card, carry the source visual description beside lore and power, with exact donor field, revision and inspection status. Resolve deck ID and card number and check name before reuse. [Verified example and voice review](WS0-01-VOICE-REVIEW.md).
+
+## V-1258 · Accepted editorial contract
+
+Join card to deck ID, card number and source revision. Retain the source visual field name and its verbatim text beside the printed PDF locator and the actual inspection scope. Base each tip on an identifiable detail and label whether the detail comes from the print or the design description. The game line is English. A German read-aloud version is a separate editorial field. Each Solution Watch takes 5–10 minutes, yields a result the reader can check and closes with the boundary of that result.

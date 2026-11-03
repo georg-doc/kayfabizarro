@@ -1,3 +1,7 @@
+## 2026-11-03 · WS0 V-1258 close-out
+
+Pilot accepted by Georg and WS0. Surveillance now uses the approved line in the entry as well as the wiki. [Basilisk](packages/ws0-dossier-pilot/WS0-02.md) and [Sealed Room](packages/ws0-dossier-pilot/WS0-03.md) each have English game copy, a separate German spoken version, a print-verified motif and a timed Solution Watch. Roko's author text is available in a 2014 Wayback capture of the July 2010 Google cache mirror. Curtis's relevant narration was checked against film audio, timed captions and scene frames. Continuous viewing of the entire film remains open. The pilot pauses until the post-MVP game decision. No further deck production.
+
 ## 2026-11-03 · Who Opens the Door? · Deck workshop pilot
 
 [Open the workshop from the surveillance card](https://kfb-research-atlas.frizzlebob.chatgpt.site/ueberwachung.html#deckwerkstatt). Native Google Doc with three verified tabs: evidence, existing card and new card candidates. English-only game copy. Eight inline links across the tabs. NotebookLM import is a reader action. Next gate: review which of the three candidate moves adds a distinct decision.
