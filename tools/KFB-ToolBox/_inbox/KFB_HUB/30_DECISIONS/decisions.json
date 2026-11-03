@@ -19826,6 +19826,21 @@
    "superseded_by": [],
    "why": "Gelaende und Karte aus einem Shader; HUD-Skins als Daten.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1354",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Kartenbau-Konzept R2 (design/kartenbau-r1 @472e0136, KONZEPT_KARTENBAU.md + Storyboard 6 Bilder): Vorbilder Kartenhaus, Faecher/Wasserfall, Fallblatt, Karte ausspielen; 1,4 s je Gebaeude mit Stapel-Squash, 40-ms-Staffel in Boegen, Flip Ruecken->Huellenstueck, Einrasten mit Slow-in/Squash/Nachfedern, Tuschefugen zu; Karten sind von Anfang an Huellen-Ausschnitte (gleiche UV/Material), Schnitt nach Sheet-Panels, kein Tausch; InstancedMesh je Huellen-Material, Bewegung im Vertex-Shader. Hub q451, Bau erst nach Freigabe.",
+   "values": {},
+   "owner": "WS-Design · Georg",
+   "check": "q443, q451",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erst Konzept und Storyboard, dann Bau; der Uebergang ist nahtlos, weil nichts getauscht wird.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [

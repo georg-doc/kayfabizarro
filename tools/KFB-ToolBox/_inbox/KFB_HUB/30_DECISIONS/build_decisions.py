@@ -1331,6 +1331,7 @@ d('V-1350','03.11.2026','Welt','REVIEW','Truhe mit Jetpack-Bodenwolke (design/tu
 d('V-1351','03.11.2026','Spiel','REVIEW','Monolith als Karte (design/tueren-r1 @d41ff91c): cardEdge-Modul wie Gelaende- und Himmelskarte, Kartenbild mit Tuschekontur, Rueckseite KayfaBizarro_Card_Backside_01_lowrez.png, Querformat 13 m hoch, kein kfbInsert; Hub q448. Radio-Skins: Slots klein, Kartenkante zeigt kompakt | gross als Bilder.','WS-Design · Kartenkante · Georg','q442, q448','Georg 03.11.'),
 d('V-1352','03.11.2026','Welt','REVIEW','Tueren TUNE (design/tueren-r1 @4d3b8509): Durchgang versetzt Wagen/Figur samt Kamera um Eingang->Ausgang (M2Car versetze, followCam.shift, M1Player versetze), Gier 0->0, Tempo erhalten; Ausgang relativ wie Eingang, Tuer im Ruecken; Sprenkel schliesst ab 0,38 s vor der Bildebene, Versatz beim Kreuzen, max 0,3 s Halten; Oeffnung frei, Rahmen/Sockel derzeit auch nicht fest (offen). Hub q449 (Testziel).','WS-Design · Georg','q445, q449','Georg 03.11.'),
 d('V-1353','03.11.2026','HUD','REVIEW','Georg-Antworten: q447 Truhe - keine Knet-Rauchwolken, Staubfahnen-Rauch (dustTrail) als Stoss unter der Truhe; Partikel und Zerfliessen PASS. q448 Monolith - Rueckseite zu dunkel; Kartenrelief wirkt als Fremdkoerper: Karte und Karten-Gelaende durch den Gelaende-Shader (Kartenbild als Albedo, gleiche Schattierung, groundGrade, Dunst, Licht, Sprenkelrand) - an WS-Design. Radio-Skins (module/hud-clay-r1 @a2aba06f, privat @dddd9215): Industrie, Retro, Satellit, Sci-Fi, DIY, Clay; kompakt 24 px / gross 34 px; Maxi 9-Slice mit Mindestgroessen; Default Industrie. Hub q450 (q437, q444 zurueckgezogen).','WS-Design · Kartenkante · Georg','q447, q448, q450','Georg 03.11.'),
+d('V-1354','03.11.2026','Welt','REVIEW','Kartenbau-Konzept R2 (design/kartenbau-r1 @472e0136, KONZEPT_KARTENBAU.md + Storyboard 6 Bilder): Vorbilder Kartenhaus, Faecher/Wasserfall, Fallblatt, Karte ausspielen; 1,4 s je Gebaeude mit Stapel-Squash, 40-ms-Staffel in Boegen, Flip Ruecken->Huellenstueck, Einrasten mit Slow-in/Squash/Nachfedern, Tuschefugen zu; Karten sind von Anfang an Huellen-Ausschnitte (gleiche UV/Material), Schnitt nach Sheet-Panels, kein Tausch; InstancedMesh je Huellen-Material, Bewegung im Vertex-Shader. Hub q451, Bau erst nach Freigabe.','WS-Design · Georg','q443, q451','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2649,6 +2650,7 @@ WHY = {
  'V-1351':('Eine Karte, ein Modul, ueberall gleich.','03.11.2026'),
  'V-1352':('Der Spieler bleibt in seiner Bewegung; die Welt wechselt um ihn herum.','03.11.2026'),
  'V-1353':('Gelaende und Karte aus einem Shader; HUD-Skins als Daten.','03.11.2026'),
+ 'V-1354':('Erst Konzept und Storyboard, dann Bau; der Uebergang ist nahtlos, weil nichts getauscht wird.','03.11.2026'),
 }
 SUP = {}
 for e in E:
