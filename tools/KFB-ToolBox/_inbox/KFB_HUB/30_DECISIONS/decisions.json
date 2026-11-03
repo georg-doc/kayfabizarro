@@ -19166,6 +19166,21 @@
    "superseded_by": [],
    "why": "Ein HUD, eine Formensprache: die vorhandene glatte Familie ist der Massstab.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1310",
+   "date": "03.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Pop-ups heller (WS-Design design/popups-hell-r1 @186c6a05, POPUP_HELL in popupClayCore.js): Grundhelligkeit aus Bildfarbe (Tag 0,24, Nacht 0,36), Kantenlicht in Himmelsfarbe, Gegenlicht aus Rig-Richtung, etwas mehr Saettigung; ein Rig, keine Lampe; vier Texturzugriffe mehr je Pixel. Hub q421. Webchat-Bildserien getrennt: b305 Truhen, b306 Black Fluffer, b307 Geysire, b308 Pilze (je ein Chat, ein Bild pro Nachricht). Topfpflanzen ruhig @4a4a3b66 zurueck (Punkte lesen als Mund, Farbe grau, Ast im Beleg).",
+   "values": {},
+   "owner": "WS-Design · Figuren · Georg",
+   "check": "q421, b305-b308",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Lesbarkeit aus dem einen Licht statt Extra-Lampe; Serien bleiben in einem Lauf konsistent.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
