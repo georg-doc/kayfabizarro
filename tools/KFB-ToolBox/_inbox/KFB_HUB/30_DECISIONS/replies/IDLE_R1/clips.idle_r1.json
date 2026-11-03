@@ -1,0 +1,82 @@
+{
+ "schema": "kfb.idle-pool/1",
+ "job": "IDLE_R1 (Georg 04.11. über WS0)",
+ "note": "Ruhe-Kette als Daten: Grundhaltung (Schleife) mit seltenen Einschüben und Tanz nach längerer Ruhe. Die Spiel-Sitzung spielt nur ab (V-1065). Ersetzt LOCO_STATES.pools in src/m1/locoStates.js für Figuren mit Körpergruppe 'breit'. Alle Clips liegen korrigiert in den .fb.glb-Dateien dieses Ordners (gleiche Clipnamen wie die Quellen).",
+ "koerpergruppen": {
+  "breit": { "figuren": ["frizzlebob"], "clips": "fb", "note": "WSB-Messung 04.11.: nur FrizzleBob braucht die Arm-Korrektur. Die übrigen 12 spielbaren Figuren (KayKit-Körper, SpaceRanger-Körper von Hunky und Dory) zeigen die Arme schon ohne Korrektur neben dem Körper (Spielkamera von hinten und vorn, Idle_B)." },
+  "kaykit": { "figuren": ["gothgirl", "adventurer-barbarian", "adventurer-mage", "lorekeeper", "farmer-b", "toy-soldier", "skeleton-warrior", "skeleton-mage", "skeleton-rogue", "skeleton-minion", "lord_hunky", "lady_dory"], "clips": "original" }
+ },
+ "dateien_fb": {
+  "Rig_Medium_General.glb": "Rig_Medium_General.fb.glb",
+  "Rig_Medium_MovementBasic.glb": "Rig_Medium_MovementBasic.fb.glb",
+  "Rig_Medium_MovementAdvanced.glb": "Rig_Medium_MovementAdvanced.fb.glb",
+  "Rig_Medium_Simulation.glb": "Rig_Medium_Simulation.fb.glb",
+  "Rig_Medium_Special.glb": "Rig_Medium_Special.fb.glb",
+  "Rig_Medium_CombatRanged.glb": "Rig_Medium_CombatRanged.fb.glb",
+  "KFB_Motion_Library_Rig_Medium.glb (v1 @c746a95)": "KFB_Motion_Library_Rig_Medium.fb.glb",
+  "libs/Rig_Medium/KFB_Motion_idle.glb (v2 @7b5cf66)": "KFB_Motion_idle.v2.Rig_Medium.fb.glb",
+  "libs/Rig_Medium/KFB_Motion_gesture.glb (v2 @7b5cf66)": "KFB_Motion_gesture.v2.Rig_Medium.fb.glb",
+  "libs/Rig_Medium/KFB_Motion_dance.glb (v2 @7b5cf66)": "KFB_Motion_dance.v2.Rig_Medium.fb.glb"
+ },
+ "korrektur": {
+  "arm": { "abspreizen_grad": 18, "raum": "Elternknochen chest, Ruhelage", "formel": "r' = Δ(w) · r, Δ(w) = slerp(1, Δ18°, w)", "gewicht_je_clip": "siehe korrektur.json (0 = Clip unverändert: Halten, Greifen, Waffen, Sitzen, Klettern, Instrumente, sowie wo 18° messbar schlechter wird)" },
+  "huefte": { "regel": "nur Stand-Clips (idle, gesture, dance): fester Hub = −Median der tiefsten Fußpunkte, ab 0,3 cm, höchstens 3 cm", "hub_cm": "siehe korrektur.json" }
+ },
+ "pools": {
+  "happy": {
+   "base": [ { "clip": "kfb_idle_standing_idle_03_a", "w": 3 }, { "clip": "kfb_idle_happy_a", "w": 2 } ],
+   "baseWechselS": [25, 45],
+   "beats": [
+    { "clip": "kfb_gesture_waving_gesture_a", "w": 2, "was": "winkt kurz" },
+    { "clip": "kfb_idle_mutant_idle_a", "w": 2, "was": "Achselzucken, Gewicht verlagern" },
+    { "clip": "kfb_gesture_pointing_a", "w": 1, "was": "zeigt in die Ferne" },
+    { "clip": "kfb_gesture_talking_a", "w": 1, "was": "redet mit sich selbst" },
+    { "clip": "kfb_gesture_taunt_a", "w": 1, "was": "neckt" },
+    { "clip": "kfb_gesture_standing_greeting_a", "w": 1, "was": "grüßt" }
+   ]
+  },
+  "bored": {
+   "base": [ { "clip": "kfb_idle_drunk_idle_variation_a", "w": 1 } ],
+   "baseWechselS": [30, 60],
+   "beats": [ { "clip": "kfb_idle_mutant_idle_a", "w": 2 }, { "clip": "kfb_gesture_talking_a", "w": 1 } ]
+  },
+  "threat": {
+   "base": [ { "clip": "kfb_idle_offensive_idle_a", "w": 1 } ],
+   "beats": [ { "clip": "kfb_idle_ninja_a", "w": 1 }, { "clip": "kfb_gesture_taunt_a", "w": 1 } ],
+   "note": "offensive_idle hat nach 18° noch 9 % Arm im Rumpf (vorher 31 %); eigene FB-Fassung offen"
+  }
+ },
+ "takt": {
+  "beatAlleS": [8, 16],
+  "beatMaxS": 6,
+  "keineWiederholungDerLetzten": 3,
+  "fadeBaseS": 0.6,
+  "fadeBeatS": 0.45,
+  "rueckblendeVorEndeS": 0.45,
+  "gelangweiltNachS": 45,
+  "note": "heute (LOCO_STATES): Einschub alle 3–5,5 s, gelangweilt nach 30 s; Georg: nicht repetitiv als aneinandergereihte Miniclips. Darum seltener, länger, Grundhaltung wechselt selbst."
+ },
+ "tanz": {
+  "vorschlag_ab_s": { "groove": 20, "simple": 40, "big": 75 },
+  "heute_ab_s": { "groove": 4, "simple": 10, "big": 20 },
+  "clips": {
+   "simple": ["kfb_dance_chicken_a", "kfb_dance_hokey_pokey_a"],
+   "big": ["kfb_dance_twist_dance_a", "kfb_dance_samba_a"]
+  },
+  "ersetzt": ["kfb_dance_wave_hip_hop_a", "kfb_dance_slide_hip_hop_a", "kfb_dance_house_a", "kfb_dance_hip_hop_a"],
+  "grund": "offene Armhaltung: nach 18° 3,6–4,7 % Arm im Rumpf statt 10–20 % bei den Hip-Hop- und House-Clips (Hände vor FBs Bauch); bpm der neuen Clips offen (WS1-Schätzung wie idle_dance.r1)",
+  "datei": "src/data/life/idle_dance.r1.json bleibt Eigentum der Spiel-Sitzung; hier nur der Vorschlag"
+ },
+ "luecken": [
+  { "was": "Kopf kratzen", "quelle": "Mixamo (Georg lädt, Library-01-Pipeline)", "grund": "in keinem Bestand" },
+  { "was": "Gähnen mit Strecken", "quelle": "Mixamo", "grund": "in keinem Bestand; Arm-Gewicht dann 0 (erhobene Arme)" },
+  { "was": "Umschauen (über die Schulter)", "quelle": "kfb_gesture_look_over_shoulder_a als eigene FB-Fassung", "grund": "nach 18° noch 24 % Arm im Rumpf" },
+  { "was": "Ohrenwackeln", "quelle": "prozedural (ear-dangle-Impuls) oder kurzer additiver Ohr-Clip von WSB", "grund": "Ohrknochen gibt es nur bei FB, kein Mocap" },
+  { "was": "Gewicht verlagern (ruhig)", "quelle": "Mixamo Weight Shift", "grund": "mutant_idle trägt es heute mit" }
+ ],
+ "offen": [
+  "Tanz-Clips mit Knie-Moves sinken bei FB 5–8 cm ein (Fußplan nötig, nicht per Hüfthub)",
+  "kfb_idle_happy_a berührt nach Hüfthub stellenweise −1,0 cm (G3-Grenze)",
+  "Motion-Library-Idles der übrigen Figuren nur gemessen, nicht einzeln angesehen"
+ ]
+}
