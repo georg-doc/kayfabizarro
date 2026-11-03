@@ -1253,6 +1253,7 @@ d('V-1272','03.11.2026','Video','DECISION','Georg 03.11.: alle Filme aus dem PD-
 d('V-1273','03.11.2026','Video','DECISION','q409 Passt, Figuren laden und bauen, mit Georgs Klarstellung: keine redaktionellen Gags, sondern Elemente einer HyperNormalisation-Musikvideo-Collage. Die Gag-Bewegungen werden schleifbare Cut-out-Motive (1-4 Takte, ganze Stichfiguren, begrenzte Gilliam-Bewegung), montiert auf dem Schlag mit PD-Fundfilm und Gedichtzeilen als Requisit, Ironie statt Handlung, Motive kehren wieder; zugleich einzeln spielbare Ebenen fuer die HyperNorm-Engine. Erst vier Standbilder, dann Clip.','WSV','q409','Georg 03.11.'),
 d('V-1274','03.11.2026','Video','RULE','Georg 03.11.: Gilliam ist Stil-Ebene und Vibe; weitere Ebenen der HyperNorm-Musikvideo-Collage: psychedelische Animation der spaeten 60er/70er (Beatles-Videos, Yellow Submarine) nur als selbst nachgebautes Stilvokabular ohne Fremdmaterial, sowie kitschige 50er-Werbung, Teleshopping, Industrie- und Lehrfilme als echtes Fundmaterial (Prelinger, Katalog R2, laden erst nach Freigabe). Standbilder zeigen alle Ebenen geschichtet.','WSV','Katalog R2, vier Standbilder','Georg 03.11.'),
 d('V-1275','03.11.2026','Audio','BUILD','Ernte Suno R3: bluegrass_porch_roll 129 BPM G Dur 37 Phrasen (nur Banjo, zu schnell; Export ohne Geigen-Stem), artpop_glossy 106 BPM G Dur 336, cairo_hijaz 106 BPM A Moll 284, motorik_kuehl 133 BPM G Dur 175, klezmer_freylekhs 104 BPM G Moll 275 (Klarinette 238; Beschleunigung nicht messbar). Katalog und SSOT 6 ergaenzt, Briefings b291-b295 erledigt. Brass-Stems vermutlich Uebersprechen, ungehoert.','WS0','music_catalog_r1.json','Georg 03.11.'),
+d('V-1276','03.11.2026','Spiel','REVIEW','WS1 Q-056: erledigt=e im Stamm @47bf8b1a (Karte loest sich nach dem Hero-Shot per Sprenkel-Modul in 1,6 s auf, Gebaeude unberuehrt), Hub q411. Warteschlange mit GAME_CLOCK und R29 lokal, Push nach Stufe B; Planeten auf @ce101581. Q-057: testfahrt-build.sh fuer Mac mini und WS0-MacBook nach deckGround und Huelle (Stopp unter 9 GB); Stage fuer WSA mit dem Site-Paket nach Deck-Moment und Ladezeit, hinter Georgs Passwort, private Assets nie oeffentlich (N-078). Testfahrt im Heimnetz unter 192.168.178.106:5300.','WS1','q411, N-078','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2493,6 +2494,7 @@ WHY = {
  'V-1273':('Curtis-Montage statt Sketch; dieselben Bausteine dienen Video und Engine.','03.11.2026'),
  'V-1274':('Collage lebt von Schichten verschiedener Epochen; geschuetzte Vorbilder nur als Stil.','03.11.2026'),
  'V-1275':('Material registriert; Bluegrass braucht Advanced Split fuer die Geige.','03.11.2026'),
+ 'V-1276':('Georg will auf mehreren Rechnern testen; Stage statt Hin und Her.','03.11.2026'),
 }
 SUP = {}
 for e in E:
