@@ -60,6 +60,11 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Sax and Trumpet Call (Northern Soul, 02.11.) | 117,5 | B Dur | 179 eigenständig (200 roh; Tenorsax 121, Trompete 49, Lead-Stem 7) |
 | Tender Bends (R&B, 02.11.) | 84 | F Dur | 428 eigenständig (623 roh; Altsax 156, gedämpfte Trompete 153, Gitarre 43, Rhodes 42, Synth 26) |
 | S16 Café Absurde, zweiter Take (02.11.) | 103,4 | D Dur (Prompt D Moll) | 226 eigenständig (265 roh; Klarinette 85, Kornett 63, Gitarre 49) |
+| Porch Roll (Bluegrass, 03.11.) | 128,9 | G Dur | 37 eigenständig (37 roh; Banjo im Gitarren-Stem 31; Scruggs-Rollen zu schnell für den Schnitt, nur 7 Stems ohne Fiddle-Stem) |
+| Glossy Melancholy (80er Art-Pop, 03.11.) | 105,6 | G Dur | 336 eigenständig (386 roh; Oboe/Altsax Woodwinds 177, Brass 81, Gitarre 30, Synth-Lead 12) |
+| Hijaz Spring Reverb (Kairo-Psychedelic, 03.11.) | 106,4 | A Moll (Hijaz, Vierteltöne) | 284 eigenständig (311 roh; Gitarre 140, Nay 75, Brass 32, Synth 14) |
+| Kühle Wiederholung (Motorik, 03.11.) | 133,3 | G Dur | 175 eigenständig (192 roh; Flöte 97, Brass 42, Minimoog 29) |
+| Freylekhs Dance (Klezmer, 03.11.) | 104,2 (kein Anziehen messbar) | G Moll (Freygish, Konfidenz 0,56) | 275 eigenständig (277 roh; Klarinette 238, Brass 18, Geige 17) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
