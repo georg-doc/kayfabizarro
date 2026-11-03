@@ -1303,6 +1303,7 @@ d('V-1322','03.11.2026','Figuren','REVIEW','Lidregel an einer Stelle (world/topf
 d('V-1323','03.11.2026','Welt','STATUS','Pop-up-Klassen R2 in der Welt (WS-Verteiler world/popup-klassen-r2 @f8e10357 auf popups-bestand-r2): tuer/tresor/szene/wasser in einzelPlaetze.r1.json, Tresore Gewicht 0,35 (8 von 134), Wasser nur flach und in Mulden (12 von 134), Auswahl ueber themenTags mit Bruch 0,19, keine Doppelten in zwei Rasterschritten; pickPopup nimmt e.motiv; Tag-IDs auf echte Bildnamen. Naechster Schritt: Zone in die Pop-up-Wahl. Merge nach der blinden Kritik.','WS-Verteiler','V-1321','Georg 03.11.'),
 d('V-1324','03.11.2026','HUD','STATUS','HUD r3 (module/hud-clay-r1 @30c395c3, privat @0accfb45 70_HUD/smooth_r2): Tabelle kfb-hud-smooth.r2.json mit Georgs 24 Icons frei/rund, Pillen, Reiter, FLUFFY bunt, Radio 4 Slots, Ziel-Teile; X/Zurueck/Haken frei in allen Overlays; Vorhang vollflaechig in allen Formaten, Ladebalken aus DefaultLoadingManager, Kamerafahrt 1,3 s (camIntro.js) vor Kontrolle; Ziel-UI ueber sweepTargets/combatTargets wie fireK10, gesperrt nach 0,6 s, host.combat lesend. WS0: Radio zu klein, 1,5x vor Hub; Belege als Zweierfolien. Befund Kamera kippt auf versenktem Viertel-Platz an WS-Design.','Kartenkante · WS-Design','q423','Georg 03.11.'),
 d('V-1325','03.11.2026','Welt','STATUS','Zone in der Pop-up-Wahl (world/popup-klassen-r2 @b9c67b51): Karten bis 280 m geben Deck-Tags in die Gewichte (voll bis 80 m), Deck aus cardFor, Bruch 0,19, Saat aus dem Ort; 77 von 109 Plaetzen in Zonenreichweite, 19 Motive aendern sich; Test zoneGewicht. Merge nach der blinden Kritik mit popups-bestand-r2. Offen notiert: fernes Kartenrelief flimmert in der Textur (Mipmapping, spaeter).','WS-Verteiler','V-1323','Georg 03.11.'),
+d('V-1326','03.11.2026','Spiel','REVIEW','Ink-Blob-Gegner R1 (Rakete/Flug game/inkblobs-r1 @6e26f96e, inkblobs=1, Atlas privat assets/inkblobs-r1 @e8a0e58e): 24 Blobs aus drei Saetzen gemischt, Huepfen mit Vorbereitung/Streckung/Landestauchung, Gruppenreaktion, 4-6 GPU-Spritzer je Landung aus Pool, Spuren ueber inkPatch 9+6 s, kfbInsert; 30 Blobs 18,4 gegen 18,2 ms. Hub q429 (Frage Spuren glaenzender). Neue Georg-Lieferung (KFB CLaymation Ink Blobs + Chests + Doors): Alien-Blobs R6 an Rakete/Flug; Truhen-Serien als Klasse truhe (zu/auf, Squash, Funken, card_reward_r3) und Dungeon-Tueren, Sci-Fi-Portale an WS-Design. b305 erledigt.','Rakete/Flug · WS-Design · Georg','q429, b305','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2593,6 +2594,7 @@ WHY = {
  'V-1323':('Platzierung gehoert dem einen Verteiler; Bruch bewusst und gemessen.','03.11.2026'),
  'V-1324':('Lesbarkeit im Spiel vor Vollstaendigkeit; sichtbare Schwaechen vor dem Hub beheben.','03.11.2026'),
  'V-1325':('Eine Themenlogik fuer Songs, Props und Karten.','03.11.2026'),
+ 'V-1326':('Charakter aus Bewegung und Tinte; Georgs Bilder direkt in die Module.','03.11.2026'),
 }
 SUP = {}
 for e in E:
