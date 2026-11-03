@@ -37,3 +37,11 @@ Im ruhigen Messpaar: Renderzeit 18,4 ms mit gegen 18,2 ms ohne, Bildzeit 24,9 ge
 - **Kontaktschatten:** rund statt oval, kleiner im Sprung und beim Landen mit der Stauchung kurz breiter.
 - **Bildzeit mit 30 Blobs** (`bildzeit_aliens.json`), zwei Messrunden unter Last. Ruhige Paare: Runde A 19,2 und 20,2 ms Renderzeit gegen 16,8 ms ohne; Runde B 17,1 und 16,4 ms gegen 16,6 ms. Mehrkosten zwischen null und etwa 3 ms; die Last überdeckt den Unterschied. 3 Zeichenaufrufe mehr, Rechenzeit der Blobs 0,03 bis 0,06 ms.
 - **Nicht gemessen:** die Kosten der nassen Spur selbst. Solange ein Fleck liegt, prüft jedes Bodenpixel einmal die Fleckmaske; Pixel ausserhalb der Flecken steigen dabei früh aus, Pixel im Fleck rechnen sie für den Rand viermal mehr.
+
+## Runde 3 (03.11.): Verteiler-Plätze, ein Tropfen-Kern
+**Stand:** `game/inkblobs-r1` @a758b193.
+- **Plätze:** mobs2d nimmt `EINZEL.inkblob.add(cellKey, [{ x, z, y, n, seed, biome, zone }])` und `drop(cellKey)` an. Je Platz stellt es n Mitglieder aus dem festen Vorrat auf (`mobs2dn`, Vorgabe 50); die Mischung richtet sich nach `seed`: eher ein Satz, etwa ein Viertel Fremde, bei einem Viertel der Plätze ein Anführer mit Mütze. Die Gruppe bummelt höchstens 3 m um ihren Platz. Beim Entladen verschwindet sie und gibt den Vorrat frei. Ist ein Platz besiegt, merkt sich das Zellgedächtnis das (Art `inkblob`), und beim nächsten Laden bleibt er leer. Kommen Zellen vor dem Modulstart, puffert sie der Haken wie bei den Pop-ups. Das Streuen um den Spieler gibt es nur noch als Prüfmodus `inkstreu=1`.
+- **Verteiler:** Der Aufruf `EINZEL.inkblob.add/drop` kommt vom WS-Verteiler und ist auf diesem Zweig nicht drin. Die Prüfung ruft denselben Haken direkt (`test/inkblobs.mjs plaetze`).
+- **Belege:** `INK_P1_Dreiergruppe_vorn.jpg` (ein Platz mit n = 3), `INK_P2_zwei_Gruppen.jpg` (zwei Plätze in der Welt, der zweite steht etwas höher am Hang). Die Prüfung ist grün: zwei Gruppen mit je 3, nach dem Entladen 3 übrig, Platz besiegt, wieder geladen bleibt er leer.
+- **Tropfen-Kern:** Die Spritzer laufen über `look/kfbTropfen.js` (von WS-Design, unverändert übernommen), `createInkSplash` ist jetzt die Art `platzen`.
+- **Nicht geprüft:** das Zusammenspiel mit dem echten Verteiler-Zweig. Vorrat voll heißt: Der Platz bleibt leer und wird als `full` gezählt.
