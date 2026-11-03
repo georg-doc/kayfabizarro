@@ -20216,6 +20216,21 @@
    "superseded_by": [],
    "why": "Keine hochskalierten Grafikschnipsel als Ersatz fuer echte Animation.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1380",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "TUNE",
+   "text": "q464 Satelliten-Leiste (Georg im Chat): FLUFF-Leiste und SCORE nach links verlegt = Fehler im WS0-Auftrag; zurueck nach oben an den alten Platz, links nur das Radio, Radio im Massstab der Action-Buttons. Fluff-PNG-Pickups angehalten, Georg liefert Bilder. Slop-Sprache R1 (fx/slop-r1 @f7085db0): Ton-Proben in Hub q465; Zerfall von WS0 zurueck (grauer Puff weg, runde D-Schnipsel statt Zacken, Papier-Rueckseite, Pfuetze erst aus dem Zerfall, Seitenansicht).",
+   "values": {},
+   "owner": "Kartenkante · Rakete/Flug · Georg",
+   "check": "q464, q465",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene HUD-Plaetze bleiben; neue Teile passen sich an.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

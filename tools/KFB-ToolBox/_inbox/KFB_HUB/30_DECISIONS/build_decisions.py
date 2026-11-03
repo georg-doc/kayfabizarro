@@ -1357,6 +1357,7 @@ d('V-1376','04.11.2026','Site','RULE','Auslieferung (Georg 04.11., N-107): einzi
 d('V-1377','04.11.2026','HUD','REVIEW','Satelliten-Leiste (Kartenkante module/hud-clay-r1 @efc8fe94, Sprites R2 privat @5993e209): links FLUFF (6 Arten) + SCORE (Summe) + Radio-Saeule, Panel faehrt nach rechts aus (Songs, Playlist, Musik/Effekte), nur gerade Mittelstuecke gestreckt; radio=ecke als Rueckfall. Hub q464. Fluff-Kugeln (Georg 04.11., q463 FAIL): keine Blender-Modelle, vorhandene Claymation-PNGs freigestellt und animiert, Aufsammeln als juicy Flug in die FLUFF-Zelle (Kartenkante, fluffpng=1); Blender erst fuers Metagame (Newton-Wiege-Alchemie). UI-Varianten/Skins per PNG mit gleicher Layout-Logik. WSB legt meshopt/KTX2-Liste selbst an.','Kartenkante · WSB · Georg','q463, q464','Georg 04.11.'),
 d('V-1378','04.11.2026','Figuren','KEEP','Idle-Animationen (Georg 04.11.) an WSB, Vorrang vor meshopt: Arme stecken im Default im Koerper -> Retarget-/Rig-Korrektur je Figur (V-1065), kein Hand-Keyframing; Idle-System Basis + nicht-repetitiver Miniclip-Pool mit weichen Uebergaengen, dann Tanz, als Daten in clips.json; Werkzeug-Recherche (Mixamo, Clip-Katalog, NVIDIA-Werkzeug, offene Motion-Generatoren) vor Eigenbau; erst FB, dann alle spielbaren Figuren; Beleg vorne/seitlich plus Spielkamera von hinten.','WSB · Georg','','Georg 04.11.'),
 d('V-1379','04.11.2026','HUD','FAIL','Ladevorhang aus Knet-Grafik (hudkit=clay im Stamm): Georg 04.11. „das geht nicht“. WS1 schaltet ihn per Default aus (N-108, Ueberblendung als Ersatz); Kartenkante baut echten three.js-Stoffvorhang (q419), zwei Bahnen, Samt/Goldfransen, Ease-in/-out, dann Kamerafahrt und Ladebalken (q423).','Kartenkante · WS1 · Georg','q419, q423','Georg 04.11.'),
+d('V-1380','04.11.2026','HUD','TUNE','q464 Satelliten-Leiste (Georg im Chat): FLUFF-Leiste und SCORE nach links verlegt = Fehler im WS0-Auftrag; zurueck nach oben an den alten Platz, links nur das Radio, Radio im Massstab der Action-Buttons. Fluff-PNG-Pickups angehalten, Georg liefert Bilder. Slop-Sprache R1 (fx/slop-r1 @f7085db0): Ton-Proben in Hub q465; Zerfall von WS0 zurueck (grauer Puff weg, runde D-Schnipsel statt Zacken, Papier-Rueckseite, Pfuetze erst aus dem Zerfall, Seitenansicht).','Kartenkante · Rakete/Flug · Georg','q464, q465','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2701,6 +2702,7 @@ WHY = {
  'V-1377':('2D-Claymation-PNGs tragen Look und Juice schneller als neue 3D-Modelle.','04.11.2026'),
  'V-1378':('Idles tragen das Spielgefuehl, gerade von hinten.','04.11.2026'),
  'V-1379':('Keine hochskalierten Grafikschnipsel als Ersatz fuer echte Animation.','04.11.2026'),
+ 'V-1380':('Vorhandene HUD-Plaetze bleiben; neue Teile passen sich an.','04.11.2026'),
 }
 SUP = {}
 for e in E:
