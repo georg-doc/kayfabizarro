@@ -1349,6 +1349,7 @@ d('V-1368','03.11.2026','Welt','TUNE','Tueren R3 (q459): Effekt gut, Timing fals
 d('V-1369','03.11.2026','Welt','TUNE','Kartenbau (q460): Karten-/Stapel-Idee faellt; EIN durchgehender Sci-Fi-Beamer-Effekt baut das Gebaeude von unten nach oben (z. B. blaues Holo-Gitter -> Materialisieren), juicy animiert, aus bewaehrten Vorbildern abgeleitet; erst Remotion-Clip.','WS-Design · Georg','q460','Georg 03.11.'),
 d('V-1370','03.11.2026','Welt','REVIEW','Tueren R3b (design/tueren-r3 @f8c1012c): Ruhe mit Glow/Stroemen bis Beruehrung, Strudel startet an der Front (Nase Wagen 2,1 m, Figur 0,35 m), Richtung/Tempo gleich; Hub q461. Kartenbau R4 (design/kartenbau-r4 @a245361d, Remotion Kartenbau-R4, kurven4.ts): ein Holo-Effekt aus Vorbildern (Warp-in, Holo-Shader, Bauvorschau): Emitter-Ring, blaues Holo-Gitter aus der Fassade von unten, Materialisieren mit gluehender Kante, Hoehepunkt 3,1 s Blitz/Pop/Druckwelle, langes Ausklingen; Hub q462.','WS-Design · Georg','q459, q460, q461, q462','Georg 03.11.'),
 d('V-1371','03.11.2026','Assets','KEEP','Georg 03.11.: Claymation-Pop-up-Assets (MixedBag 04 u. a.) alle indexieren, ins Spiel und in die Asset-Bibliothek; Ein-Aufruf-Ingest wie bei Songs (WS-Verteiler). Schwarze Fluffer heissen Slop-Heads (Slop-Units), Claymation-Figuren Fluff-Heads. Radio als Satelliten-Saeule in der linken Seitenleiste, klappt nach rechts zur Playlist aus; Kopfzeilen Fluff-Leiste + Gesamtpunktzahl (Kartenkante). Fluff-Kuegelchen als Claymation-Klumpen (WSB). Slop-Verhalten, Loot-Tabelle, Slop-Almanach spaeter.','WS-Verteiler · Kartenkante · WSB · Georg','','Georg 03.11.'),
+d('V-1372','03.11.2026','Audio','KEEP','Slop-Sprache und -VFX (Georg 03.11.), Konzeptphase bei Rakete/Flug: Slop-Heads als Stimmfamilie der abgenommenen Melodie-Sprache (Chatterbox Spec R2, V-492/V-498): blubbrig-bassige Blasen-Synthese (Minnaert/van den Doel), auf Welt-Tonart gerastert, 3er-Mob ergaenzt sich (Bass/Mitte/Oben, Ruf-Antwort), Aufregung hoeher/schneller, Tod absteigendes Glissando. Treffer-Materialcodes Gebaeude/Slop ungepanzert/gepanzert. Aufloesen = eine Metapher: runde organische Papierschnipsel mit harten Kanten (D-Form), aus Krater/Etherington. D-Form als allgemeines Gestaltungsprinzip.','Rakete/Flug · Georg','','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2685,6 +2686,7 @@ WHY = {
  'V-1369':('Ein Effekt aus einem Guss statt mehrerer zusammengesteckter.','03.11.2026'),
  'V-1370':('Ausloeser bei Beruehrung und ein Effekt aus einem Guss.','03.11.2026'),
  'V-1371':('Schnell erzeugte 2D-Claymation-Assets werden ein grosser, sauber indexierter Pool.','03.11.2026'),
+ 'V-1372':('Gegner bekommen eine eigene Lebenswelt in Klang und Bild, gebaut auf der abgenommenen Melodie-Sprache.','03.11.2026'),
 }
 SUP = {}
 for e in E:
