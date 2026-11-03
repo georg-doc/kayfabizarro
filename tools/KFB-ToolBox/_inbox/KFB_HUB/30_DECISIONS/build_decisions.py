@@ -1343,6 +1343,7 @@ d('V-1362','03.11.2026','Look','TUNE','Schatten (q456): Wurfschatten zurueck auf
 d('V-1363','03.11.2026','Welt','TUNE','Kartenbau (q457): Abschluss-Glanz von unten nach oben (Beamer-Logik) im HyperNorm-Look statt schraeg; Zellgrenzen organisch ueberblenden statt grau betonen; weniger technisch: Timing/Kurven zuerst als Remotion-Clip (After-Effects-Logik), nach Abnahme ins Spiel; Kit-Vorspruenge im Flug nicht flach.','WS-Design · Georg','q457','Georg 03.11.'),
 d('V-1364','03.11.2026','Look','REVIEW','Schatten-TUNE (world/sonne-tag-r1 @f3c3d1e7): Sonnenbahn/-staerke/Fuellung von oben auf Stand vor harter Sonne, Kontakt-Haertung entfernt; FB-Entsaettigung kam v.a. von schwaecherer Fuellung (13 Uhr -16 % Buntheit), jetzt +10 % Buntheit/+8 % Saettigung. Neu: Fussschatten (look/footContact.js, kfb-drive-moods fussschatten) = vorhandener Kontaktfleck an FB-Fuessen und Topfpflanzen-Basis, schrumpft beim Abheben. Hebt V-587/V-564 (Blob-Schatten entfernt) fuer Figur und Topfpflanzen auf. Hub q458.','WS-Himmel · Georg','q456, q458','Georg 03.11.'),
 d('V-1365','03.11.2026','Welt','REVIEW','Tueren R3 Konzept (design/tueren-r3 @f89d8373, tueren=1): Aufsteller nur farbiger Glow aus Bildfarbe + spiralige Energiestroeme; Uebergang = Droste-Strudel des eigenen Tuerbilds, Luecken mit Kartenmotiv des Ziels als Kaleidoskop, Farbton laeuft mit; Abstand treibt, bei voller Fahrt ~0,55 s hinein/0,6 s hinaus; Richtung/Tempo gleich; Eingaenge drehen zu Wagen/Figur. Hub q459. Kartenbau R3 (Remotion, kartenbau-r3 @4d3b9cb0) von WS0 zurueck: Abschluss liest als Scanner-Linie, HyperNorm-Felder kaum sichtbar -> weicher Beamer-Kegel mit sichtbarem HyperNorm-Lichtbild.','WS-Design · WS0 · Georg','q455, q457, q459','Georg 03.11.'),
+d('V-1366','03.11.2026','Welt','REVIEW','Kartenbau R3b Remotion-Clip (design/kartenbau-r3 @f7030565, 60_VIDEO/remotion/src/kartenbau, kurven.ts 30 fps): Stapel wird Beamer, weicher Kegel im Dunst mit leichter Kino-Abdunklung, HyperNorm-Lichtbild (M3-Baender versetzt, Palette, Koernung) fuellt sich 3,1-4,1 s von unten, Felder ~0,5 s + Feder, rasten in echte Fassade, alles steht bei 5,2 s; Kartenraender weich. Hub q460.','WS-Design · Georg','q457, q460','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2673,6 +2674,7 @@ WHY = {
  'V-1363':('Transitions wie im Motion Design denken: erst Kurven im Clip, dann Spiel.','03.11.2026'),
  'V-1364':('Ein kleiner dunkler Fleck am Fuss verankert besser als ein langer harter Schatten.','03.11.2026'),
  'V-1365':('Erst das Bild pruefen, dann Georg: technische Reste bleiben bei WS0.','03.11.2026'),
+ 'V-1366':('Der Beamer erzaehlt das Fertigwerden, statt es technisch abzuscannen.','03.11.2026'),
 }
 SUP = {}
 for e in E:
