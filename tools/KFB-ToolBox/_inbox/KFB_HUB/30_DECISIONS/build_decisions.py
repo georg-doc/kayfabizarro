@@ -1302,6 +1302,7 @@ d('V-1321','03.11.2026','Welt','REVIEW','Planet nachts dunkler (world/planet-ein
 d('V-1322','03.11.2026','Figuren','REVIEW','Lidregel an einer Stelle (world/topfpflanzen-r1 @157a80ad, pet-eye-rig.v6.js LID_RULE/lidTone): Farbton der Flaeche, Saettigung +20 % zum Vollen, L* hoechstens 0,6 x Augapfel-Weiss und 0,9 x Flaeche; Wimpern Lid x0,5; gilt fuer alle Figuren ohne eigenes Lid-Material inkl. KayKit-NPCs. Hub q428 (Lorekeeper, Topf). Befund: NPC-Gesichtsfarbe aus sampleActorFaceColor heller als gerenderte Haut (eigene kleine Aufgabe, offen).','Figuren · Georg','q428, V-1320','Georg 03.11.'),
 d('V-1323','03.11.2026','Welt','STATUS','Pop-up-Klassen R2 in der Welt (WS-Verteiler world/popup-klassen-r2 @f8e10357 auf popups-bestand-r2): tuer/tresor/szene/wasser in einzelPlaetze.r1.json, Tresore Gewicht 0,35 (8 von 134), Wasser nur flach und in Mulden (12 von 134), Auswahl ueber themenTags mit Bruch 0,19, keine Doppelten in zwei Rasterschritten; pickPopup nimmt e.motiv; Tag-IDs auf echte Bildnamen. Naechster Schritt: Zone in die Pop-up-Wahl. Merge nach der blinden Kritik.','WS-Verteiler','V-1321','Georg 03.11.'),
 d('V-1324','03.11.2026','HUD','STATUS','HUD r3 (module/hud-clay-r1 @30c395c3, privat @0accfb45 70_HUD/smooth_r2): Tabelle kfb-hud-smooth.r2.json mit Georgs 24 Icons frei/rund, Pillen, Reiter, FLUFFY bunt, Radio 4 Slots, Ziel-Teile; X/Zurueck/Haken frei in allen Overlays; Vorhang vollflaechig in allen Formaten, Ladebalken aus DefaultLoadingManager, Kamerafahrt 1,3 s (camIntro.js) vor Kontrolle; Ziel-UI ueber sweepTargets/combatTargets wie fireK10, gesperrt nach 0,6 s, host.combat lesend. WS0: Radio zu klein, 1,5x vor Hub; Belege als Zweierfolien. Befund Kamera kippt auf versenktem Viertel-Platz an WS-Design.','Kartenkante · WS-Design','q423','Georg 03.11.'),
+d('V-1325','03.11.2026','Welt','STATUS','Zone in der Pop-up-Wahl (world/popup-klassen-r2 @b9c67b51): Karten bis 280 m geben Deck-Tags in die Gewichte (voll bis 80 m), Deck aus cardFor, Bruch 0,19, Saat aus dem Ort; 77 von 109 Plaetzen in Zonenreichweite, 19 Motive aendern sich; Test zoneGewicht. Merge nach der blinden Kritik mit popups-bestand-r2. Offen notiert: fernes Kartenrelief flimmert in der Textur (Mipmapping, spaeter).','WS-Verteiler','V-1323','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2591,6 +2592,7 @@ WHY = {
  'V-1322':('Eine Regel an einer Stelle, fuer alle Figuren.','03.11.2026'),
  'V-1323':('Platzierung gehoert dem einen Verteiler; Bruch bewusst und gemessen.','03.11.2026'),
  'V-1324':('Lesbarkeit im Spiel vor Vollstaendigkeit; sichtbare Schwaechen vor dem Hub beheben.','03.11.2026'),
+ 'V-1325':('Eine Themenlogik fuer Songs, Props und Karten.','03.11.2026'),
 }
 SUP = {}
 for e in E:
