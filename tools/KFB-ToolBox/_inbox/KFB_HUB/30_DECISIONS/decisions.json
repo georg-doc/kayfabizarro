@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "entries": [
   {
    "id": "V-001",
@@ -20141,6 +20141,36 @@
    "superseded_by": [],
    "why": "Uebergaenge immer mit Ease-in/-out und der naechsten Szene denken.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1375",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "Fluff-Klumpen r2 (WSB assets/fluff-clay-r1 @af460c79, Bundle replies/FLUFF_CLAY_R1/MINI, scripts/fluff/fluff_clay_r2.py): L 3888 Dreiecke mit sieben spiraligen Straehnen als Teil der Oberflaeche, comic_M 1200 nur angedeutet; Name/Material/Farbe/Ursprung wie r1, Code zeigt noch auf r1 (placeVeg.js:39, npcSceneProbe.js:12). Budget-Entscheid WS0: L bis 4000, M bis 1280. Hub q463.",
+   "values": {},
+   "owner": "WSB · Georg",
+   "check": "q463",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fluff soll aussehen wie gekneteter Flusen, nicht wie Plastik.",
+   "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1376",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "RULE",
+   "text": "Auslieferung (Georg 04.11., N-107): einzige Quelle GitHub (KFB-MVP + assets/private); Site = reine Build-Ausgabe aus einem Commit (Split-Build); kein Laden zur Laufzeit von GitHub (privates Repo, raw ist kein CDN, V-427); Site-Host mit Cache, Hash-Namen, Kompression, Laden in Stufen.",
+   "values": {},
+   "owner": "WS0 · WS1",
+   "check": "N-107",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "GitHub ist die Quelle, die Site nur der Ausgabeort.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

@@ -1,6 +1,6 @@
 # KFB Entscheidungen (PASS / TUNE / FAIL / RULE / TBD)
 
-Stand 2026-11-03 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
+Stand 2026-11-04 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
 
 ## A · Entscheidungen und Vorgaben
 
@@ -1342,6 +1342,8 @@ Stand 2026-11-03 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur
 | V-1372 | 03.11.2026 | 03.11.2026 | Audio | **KEEP** | Slop-Sprache und -VFX (Georg 03.11.), Konzeptphase bei Rakete/Flug: Slop-Heads als Stimmfamilie der abgenommenen Melodie-Sprache (Chatterbox Spec R2, V-492/V-498): blubbrig-bassige Blasen-Synthese (Minnaert/van den Doel), auf Welt-Tonart gerastert, 3er-Mob ergaenzt sich (Bass/Mitte/Oben, Ruf-Antwort), Aufregung hoeher/schneller, Tod absteigendes Glissando. Treffer-Materialcodes Gebaeude/Slop ungepanzert/gepanzert. Aufloesen = eine Metapher: runde organische Papierschnipsel mit harten Kanten (D-Form), aus Krater/Etherington. D-Form als allgemeines Gestaltungsprinzip. | Gegner bekommen eine eigene Lebenswelt in Klang und Bild, gebaut auf der abgenommenen Melodie-Sprache. | Rakete/Flug · Georg |  | Georg 03.11. |
 | V-1373 | 03.11.2026 | 03.11.2026 | Welt | **KEEP** | Kartenbau R4 Holo (q462, Georg im Chat): Pass, Outlines/Halo am Anfang super. Bau sauber: Gebaeude buendig auf Bodenplatte; Beamer-Ring kommt aus der Bodenplatte in der Grundriss-Mitte, nur am Anfang, vom Hologramm ueberlagert; Beam-Zentrum nicht an der Hausecke. Dann ins Spiel (kurven4.ts), Beleg aus anderer Ansicht. | Effektquellen muessen plausibel im Objekt sitzen. | WS-Design · Georg | q462 | Georg 03.11. |
 | V-1374 | 03.11.2026 | 03.11.2026 | Welt | **TUNE** | Tueren R3b (q461, Georg im Chat): Strudel weicher, bläulich scheinendes Hyperraum-Portal (Tuerbild/Kartenmotiv bleiben weich verwirbelt); Timing mit Ease-in, Hoehepunkt, Ease-out und sauberem Reveal der Ziel-Landschaft; Biom-Farbe als eigene Ebene schon im Strudel. Grundkritik: Animationen als Einzeleffekte statt mit naechster Szene und Ueberblendung gedacht. | Uebergaenge immer mit Ease-in/-out und der naechsten Szene denken. | WS-Design · Georg | q461 | Georg 03.11. |
+| V-1375 | 04.11.2026 | 04.11.2026 | Look | **REVIEW** | Fluff-Klumpen r2 (WSB assets/fluff-clay-r1 @af460c79, Bundle replies/FLUFF_CLAY_R1/MINI, scripts/fluff/fluff_clay_r2.py): L 3888 Dreiecke mit sieben spiraligen Straehnen als Teil der Oberflaeche, comic_M 1200 nur angedeutet; Name/Material/Farbe/Ursprung wie r1, Code zeigt noch auf r1 (placeVeg.js:39, npcSceneProbe.js:12). Budget-Entscheid WS0: L bis 4000, M bis 1280. Hub q463. | Fluff soll aussehen wie gekneteter Flusen, nicht wie Plastik. | WSB · Georg | q463 | Georg 03.11. |
+| V-1376 | 04.11.2026 | 04.11.2026 | Site | **RULE** | Auslieferung (Georg 04.11., N-107): einzige Quelle GitHub (KFB-MVP + assets/private); Site = reine Build-Ausgabe aus einem Commit (Split-Build); kein Laden zur Laufzeit von GitHub (privates Repo, raw ist kein CDN, V-427); Site-Host mit Cache, Hash-Namen, Kompression, Laden in Stufen. | GitHub ist die Quelle, die Site nur der Ausgabeort. | WS0 · WS1 | N-107 | Georg 04.11. |
 
 ## B · Abnahmen aus Projektdateien (93)
 

@@ -1,0 +1,7 @@
+Mini (WSB) · assets/fluff-clay-r1 @af460c79 (Basis game/integration-r2 @cb50ba69) · 04.11.2026
+Neu: src/assets/fluff/fluff_ball_{absurd,comic,forbidden,heroic,mystical,tragic}_L.r2.glb und fluff_ball_comic_M.r2.glb, Bauskript scripts/fluff/fluff_clay_r2.py (baut bitgleich nach, geprüft).
+L: 3888 Dreiecke, 1 Hülle, Strähnen spiralig vom Scheitel, alle gleich herum, Rillen dazwischen. comic_M: 1200 Dreiecke, Strähnen nur angedeutet.
+Gleich wie r1: Knotenname, Material und Farbe (Abweichung 0), Ursprung Mitte, Ausrichtung, keine UVs, keine Textur. Hülle gegen r1: Breite -3 bis +0,5 %, Höhe 6 bis 12 % flacher (geknetet gedrückt); Spiel normiert beide Wege auf die Hülle (placeVeg Kugelradius, npcSceneProbe größte Kante).
+Abnahme-Bühne v1.2, --type prop --pose ground, alle 7 Paare r1|r2: G2 G3 G4 G5 G6 PASS, G4 ohne Inseln.
+Spielcode zeigt weiter auf r1 (placeVeg.js:39, npcSceneProbe.js:12); Umstellen ist eine Zeile je Datei.
+Holen: git fetch assets-fluff-clay-r1.bundle refs/heads/assets/fluff-clay-r1:refs/heads/assets/fluff-clay-r1

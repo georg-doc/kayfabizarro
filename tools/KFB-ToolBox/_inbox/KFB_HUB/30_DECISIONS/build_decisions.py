@@ -1352,6 +1352,8 @@ d('V-1371','03.11.2026','Assets','KEEP','Georg 03.11.: Claymation-Pop-up-Assets 
 d('V-1372','03.11.2026','Audio','KEEP','Slop-Sprache und -VFX (Georg 03.11.), Konzeptphase bei Rakete/Flug: Slop-Heads als Stimmfamilie der abgenommenen Melodie-Sprache (Chatterbox Spec R2, V-492/V-498): blubbrig-bassige Blasen-Synthese (Minnaert/van den Doel), auf Welt-Tonart gerastert, 3er-Mob ergaenzt sich (Bass/Mitte/Oben, Ruf-Antwort), Aufregung hoeher/schneller, Tod absteigendes Glissando. Treffer-Materialcodes Gebaeude/Slop ungepanzert/gepanzert. Aufloesen = eine Metapher: runde organische Papierschnipsel mit harten Kanten (D-Form), aus Krater/Etherington. D-Form als allgemeines Gestaltungsprinzip.','Rakete/Flug · Georg','','Georg 03.11.'),
 d('V-1373','03.11.2026','Welt','KEEP','Kartenbau R4 Holo (q462, Georg im Chat): Pass, Outlines/Halo am Anfang super. Bau sauber: Gebaeude buendig auf Bodenplatte; Beamer-Ring kommt aus der Bodenplatte in der Grundriss-Mitte, nur am Anfang, vom Hologramm ueberlagert; Beam-Zentrum nicht an der Hausecke. Dann ins Spiel (kurven4.ts), Beleg aus anderer Ansicht.','WS-Design · Georg','q462','Georg 03.11.'),
 d('V-1374','03.11.2026','Welt','TUNE','Tueren R3b (q461, Georg im Chat): Strudel weicher, bläulich scheinendes Hyperraum-Portal (Tuerbild/Kartenmotiv bleiben weich verwirbelt); Timing mit Ease-in, Hoehepunkt, Ease-out und sauberem Reveal der Ziel-Landschaft; Biom-Farbe als eigene Ebene schon im Strudel. Grundkritik: Animationen als Einzeleffekte statt mit naechster Szene und Ueberblendung gedacht.','WS-Design · Georg','q461','Georg 03.11.'),
+d('V-1375','04.11.2026','Look','REVIEW','Fluff-Klumpen r2 (WSB assets/fluff-clay-r1 @af460c79, Bundle replies/FLUFF_CLAY_R1/MINI, scripts/fluff/fluff_clay_r2.py): L 3888 Dreiecke mit sieben spiraligen Straehnen als Teil der Oberflaeche, comic_M 1200 nur angedeutet; Name/Material/Farbe/Ursprung wie r1, Code zeigt noch auf r1 (placeVeg.js:39, npcSceneProbe.js:12). Budget-Entscheid WS0: L bis 4000, M bis 1280. Hub q463.','WSB · Georg','q463','Georg 03.11.'),
+d('V-1376','04.11.2026','Site','RULE','Auslieferung (Georg 04.11., N-107): einzige Quelle GitHub (KFB-MVP + assets/private); Site = reine Build-Ausgabe aus einem Commit (Split-Build); kein Laden zur Laufzeit von GitHub (privates Repo, raw ist kein CDN, V-427); Site-Host mit Cache, Hash-Namen, Kompression, Laden in Stufen.','WS0 · WS1','N-107','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2691,6 +2693,8 @@ WHY = {
  'V-1372':('Gegner bekommen eine eigene Lebenswelt in Klang und Bild, gebaut auf der abgenommenen Melodie-Sprache.','03.11.2026'),
  'V-1373':('Effektquellen muessen plausibel im Objekt sitzen.','03.11.2026'),
  'V-1374':('Uebergaenge immer mit Ease-in/-out und der naechsten Szene denken.','03.11.2026'),
+ 'V-1375':('Fluff soll aussehen wie gekneteter Flusen, nicht wie Plastik.','04.11.2026'),
+ 'V-1376':('GitHub ist die Quelle, die Site nur der Ausgabeort.','04.11.2026'),
 }
 SUP = {}
 for e in E:
