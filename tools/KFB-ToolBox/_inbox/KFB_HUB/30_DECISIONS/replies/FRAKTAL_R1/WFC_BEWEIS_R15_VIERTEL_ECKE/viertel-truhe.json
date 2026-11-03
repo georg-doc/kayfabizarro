@@ -1,0 +1,127 @@
+{
+ "feld_m": 4000,
+ "plaetze": 133,
+ "klassen": {
+  "figur": 22,
+  "baumgeist": 23,
+  "truhe": 11,
+  "statue": 13,
+  "wasser": 10,
+  "wahrzeichen": 2,
+  "portal": 6,
+  "tuer": 14,
+  "szene": 17,
+  "ding": 8,
+  "tresor": 7
+ },
+ "truhe_groesse": {
+  "klein": 9,
+  "mittel": 2
+ },
+ "unpassend_anteil": 0.16,
+ "ecken": [
+  {
+   "x": 314.9,
+   "z": -1324.5,
+   "y": -17.251863548317672,
+   "h": 0.8450000000000001,
+   "motiv": "tr_zunge",
+   "groesse": "klein",
+   "ecke": "1:-6",
+   "r": 0.39
+  },
+  {
+   "x": -869.2,
+   "z": 1647.1,
+   "y": -11.816793184274784,
+   "h": 0.8450000000000001,
+   "motiv": "tr_fleischfresser",
+   "groesse": "klein",
+   "ecke": "-4:6",
+   "r": 0.39
+  }
+ ],
+ "pruefe": [
+  {
+   "ecke": {
+    "x": 314.9,
+    "z": -1324.5,
+    "y": -17.251863548317672,
+    "h": 0.8450000000000001,
+    "motiv": "tr_zunge",
+    "groesse": "klein",
+    "ecke": "1:-6",
+    "r": 0.39
+   },
+   "geladen": true,
+   "site": "1:-6",
+   "lokal": [
+    16.9,
+    17
+   ],
+   "naechstes_gebaeude": {
+    "d": 8.32,
+    "id": "vault-1",
+    "w": 7.4,
+    "dd": 6.9
+   },
+   "gebaeude_bis_m": 24.8,
+   "vaults": 7,
+   "felder": [
+    "id",
+    "x",
+    "z",
+    "w",
+    "d",
+    "h",
+    "yaw",
+    "cardNo",
+    "deckId",
+    "approach",
+    "baseY"
+   ],
+   "datei": "VIERTEL_ECKE_1_-6_tr_zunge.jpg"
+  },
+  {
+   "ecke": {
+    "x": -869.2,
+    "z": 1647.1,
+    "y": -11.816793184274784,
+    "h": 0.8450000000000001,
+    "motiv": "tr_fleischfresser",
+    "groesse": "klein",
+    "ecke": "-4:6",
+    "r": 0.39
+   },
+   "geladen": true,
+   "site": "-4:6",
+   "lokal": [
+    17,
+    -16.9
+   ],
+   "naechstes_gebaeude": {
+    "d": 8.34,
+    "id": "vault-3",
+    "w": 8.1,
+    "dd": 6.2
+   },
+   "gebaeude_bis_m": 24.8,
+   "vaults": 7,
+   "felder": [
+    "id",
+    "x",
+    "z",
+    "w",
+    "d",
+    "h",
+    "yaw",
+    "cardNo",
+    "deckId",
+    "approach",
+    "baseY"
+   ],
+   "datei": "VIERTEL_ECKE_-4_6_tr_fleischfresser.jpg"
+  }
+ ],
+ "fehler": []
+}

@@ -19526,6 +19526,21 @@
    "superseded_by": [],
    "why": "Ein frischer Blick von aussen vor der Site; Fehler zuerst, Ideen nach Georgs Wahl.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1334",
+   "date": "03.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Radio kompakt (module/hud-clay-r1 @17390e20): vier Knoepfe immer da (30 px), Equalizer, Titel nur bei Songwechsel/Hover, kein Auf-/Zuklappen; Hub q435. Truhe Puff und Kruemel (design/truhen-r1 @bda129ae): Knet-Puff 0,4 s, 56 Muenzkruemel huepfen/kullern/liegen/zerfliessen ~3,5 s; ein Tropfen-Kern src/look/kfbTropfen.js fuer Tinte und Truhe (inkblobs-r1 @01f77067 umgestellt); Hub q436. Verteiler r3 @746414f3: Tresore 7/133, Truhe auf Viertel-Diagonale 24 m. Ink-Blob-Plaetze: Weg (a) - Verteiler liefert EINZEL.inkblob, Rakete/Flug stellt Gruppen dort auf.",
+   "values": {},
+   "owner": "Kartenkante · WS-Design · WS-Verteiler · Rakete/Flug",
+   "check": "q435, q436",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Besitzer je Teil, ein Kern je Effektart.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
