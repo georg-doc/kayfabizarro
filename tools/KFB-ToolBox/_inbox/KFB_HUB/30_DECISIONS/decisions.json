@@ -19241,6 +19241,21 @@
    "superseded_by": [],
    "why": "Nacht heisst dunkler und kuehler, nicht milchig; Lesbarkeit kommt vom Rand.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1315",
+   "date": "03.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "Einfuegen Nacht-Korrektur (design/einfuegen-r1 @53dd9b7a): Schwarzpunkt nicht gehoben, Saettigung nachts 0,97, Belichtung nachts 0,18 ins Mondblau, abends fast voll (Fahr-Stimmung abends so dunkel wie nachts), Light-Wrap nachts 0,95; Boden/Bild abends 22/44, nachts 26/42 statt 80/27. Hub q424 (ohne Planet-Platzhalter). Planeten: WS-Himmel stellt auf kfbInsert um (kfbInsertEdgeLod @afce41b2).",
+   "values": {},
+   "owner": "WS-Design · WS-Himmel · Georg",
+   "check": "q424",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Einfuegen mit Kontrast statt Aufhellen; erst geprueft, dann vorgelegt.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
