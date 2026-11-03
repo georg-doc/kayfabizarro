@@ -1,0 +1,6 @@
+Mini (WSB) · review/blinde-kritik-r1 @76b851bf (Basis game/integration-r2 @cb50ba69) · 03.11.2026
+Vier blinde Kritiker nacheinander bzw. zu dritt parallel (Look, Spiel, Kreativ), Technik allein auf dem Mini gemessen.
+Spiel: lokaler Build von cb50ba69 (KFB_CARDPACK=1 vite build, ohne KFB_SPLIT und ohne h15), vite preview 127.0.0.1:5300 mit privaten Assets.
+Grund: Chromium auf dem Mini erreicht 192.168.178.106 nicht (macOS-Netzfreigabe, nicht verändert).
+QA WSB: alle Bildverweise vorhanden (17/14/9/16 Bilder), Figur auf jedem Standbild von vorn oder Seite, kein Code- oder Spieländerung, nichts aus src/private, node_modules, dist, .card-packs im Zweig.
+Holen: git fetch review-blinde-kritik-r1.bundle refs/heads/review/blinde-kritik-r1:refs/heads/review/blinde-kritik-r1

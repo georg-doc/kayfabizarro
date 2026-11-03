@@ -19511,6 +19511,21 @@
    "superseded_by": [],
    "why": "Bedienung immer sichtbar, aber klein; ein Partikelsystem fuer alle Cartoon-Effekte.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1333",
+   "date": "03.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Blinde Kritik R1 (WSB, review/blinde-kritik-r1 @76b851bf, gepusht): vier Protokolle, 56 Befunde, 39 Vorschlaege; lief auf lokalem Einzeldatei-Build cb50ba6 ohne Split/h15. Hauptbefunde: Kuppel-Rekursion (MindSphere/HyperSphere laden ungeprueft, 11 GB), bei Tag kein realistischer Hintergrund, Faehigkeiten nicht an Fundstuecken, Entwicklertext sichtbar, Shader-Ruckler nach Vorhang, Ton-404 soul/, Netz-Abrufe zur Laufzeit, Kartenboden gespiegelt, Ziel springt. Auswahl von 17 Vorschlaegen Hub q434 (Mehrfachwahl). N-101 an WS1: Merges frei (ohne HUD und Truhen), Fehlerliste 1-7 vor der Site. Georg: alle 2D-Assets ueber WFC (Ink-Blob-3er-Mobs, Einzel-POIs mit Fuss-Dressing Kiesel/Gras/Blumen, Sichtgarantie 1-2 POIs ohne Hauptziel) an WS-Verteiler.",
+   "values": {},
+   "owner": "WSB · WS1 · WS-Verteiler · Georg",
+   "check": "q434, N-101",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein frischer Blick von aussen vor der Site; Fehler zuerst, Ideen nach Georgs Wahl.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
