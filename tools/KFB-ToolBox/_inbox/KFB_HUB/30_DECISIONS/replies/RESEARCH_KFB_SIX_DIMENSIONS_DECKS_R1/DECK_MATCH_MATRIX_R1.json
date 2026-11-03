@@ -1,0 +1,653 @@
+{
+  "schema": "kfb.six-dimensions-deck-donor-audit/1.0",
+  "date": "2026-10-18",
+  "status": "RESEARCH_DESIGN_ONLY_NOT_CANON",
+  "github": {
+    "repository": "georg-doc/kayfabizarro",
+    "catalogPath": "registry/assets/v1/decks/index.json",
+    "catalogDecks": 130,
+    "catalogCards": 6985,
+    "sourceScope": "main registry + 18 inspected deck shards, not a publishing audit"
+  },
+  "dropbox": {
+    "folderUrl": "https://www.dropbox.com/scl/fo/51ss0sodi225lst7zy4ee/AGMdkkwnKIOh4yx0UEh5fd0?rlkey=6d5v5tqwr1dctfr1g86f9sao1&dl=0",
+    "workspaceJsonFiles": 387,
+    "workspaceJsonScope": "versions / duplicates possible; not number of distinct unpublished decks",
+    "bookletBasePath": "/(DB) CS 2020 Krazy Karnikl/Krazy Kayfabizarro/PACKAGES & BOOKLETS/MD BOOKLETS (drafts)/",
+    "workspaceJsonBasePath": "/(DB) CS 2020 Krazy Karnikl/Krazy Kayfabizarro/Comic Seminar PDFS/MODIFIED PROTOTYPES (PDFs, uncompressed, v05)/KAYFABIZARRO WORKSPACE/export/kayfabizarro-data/decks/"
+  },
+  "themes": [
+    "experience",
+    "epistemology",
+    "fractal-story",
+    "warburg",
+    "cosmology",
+    "inner-dialogue"
+  ],
+  "githubDecks": [
+    {
+      "deckId": "jung_and_shinn_a_guide_to_cosmic_cringe",
+      "priority": "A",
+      "tags": [
+        "inner-dialogue",
+        "experience"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/jung_and_shinn_a_guide_to_cosmic_cringe.json",
+      "cards": [
+        {
+          "cardNumber": 21,
+          "cardName": "THE SHADOW"
+        },
+        {
+          "cardNumber": 20,
+          "cardName": "THE CRYPTOMNESIA"
+        },
+        {
+          "cardNumber": 12,
+          "cardName": "THE WISH-FULFILMENT"
+        }
+      ]
+    },
+    {
+      "deckId": "kayfabizarro_philosophy",
+      "priority": "A",
+      "tags": [
+        "cosmology",
+        "epistemology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/kayfabizarro_philosophy.json",
+      "cards": [
+        {
+          "cardNumber": 35,
+          "cardName": "The Perception Filter"
+        },
+        {
+          "cardNumber": 34,
+          "cardName": "The Quantum Observer"
+        },
+        {
+          "cardNumber": 37,
+          "cardName": "The Timeline Splitter"
+        }
+      ]
+    },
+    {
+      "deckId": "project_gateway_kayfabe",
+      "priority": "A",
+      "tags": [
+        "experience",
+        "cosmology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/project_gateway_kayfabe.json",
+      "cards": [
+        {
+          "cardNumber": 2,
+          "cardName": "The Stargate Viewer"
+        },
+        {
+          "cardNumber": 9,
+          "cardName": "The Gateway Process"
+        },
+        {
+          "cardNumber": 10,
+          "cardName": "The Psychic Driver"
+        }
+      ]
+    },
+    {
+      "deckId": "medkayfab_science",
+      "priority": "A",
+      "tags": [
+        "epistemology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/medkayfab_science.json",
+      "cards": [
+        {
+          "cardNumber": 5,
+          "cardName": "Popper-the-Falsifier"
+        },
+        {
+          "cardNumber": 6,
+          "cardName": "Kuhn-the-Shifter"
+        },
+        {
+          "cardNumber": 9,
+          "cardName": "RCT-the-Gold-Standard"
+        },
+        {
+          "cardNumber": 28,
+          "cardName": "Placebo-the-Trickster"
+        }
+      ]
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "priority": "A",
+      "tags": [
+        "fractal-story"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/kayfabizarro_monomyth_mayhem.json",
+      "cards": [
+        {
+          "cardNumber": 44,
+          "cardName": "Fractal Narrative"
+        },
+        {
+          "cardNumber": 29,
+          "cardName": "Quest Die"
+        },
+        {
+          "cardNumber": 30,
+          "cardName": "BLÖDSINN!"
+        },
+        {
+          "cardNumber": 41,
+          "cardName": "Timeline Shift"
+        }
+      ]
+    },
+    {
+      "deckId": "dream_wrestling_with_kayfabe_freud",
+      "priority": "A",
+      "tags": [
+        "experience",
+        "inner-dialogue"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/dream_wrestling_with_kayfabe_freud.json",
+      "cards": [
+        {
+          "cardNumber": 1,
+          "cardName": "THE UNCONSCIOUS (Das Unbewusste)"
+        },
+        {
+          "cardNumber": 45,
+          "cardName": "THE GAP (Die Lücke)"
+        },
+        {
+          "cardNumber": 51,
+          "cardName": "THE PROPHETIC DREAM (Wahrtraum)"
+        }
+      ]
+    },
+    {
+      "deckId": "epistemic_sabotage",
+      "priority": "B",
+      "tags": [
+        "epistemology",
+        "warburg"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/epistemic_sabotage.json",
+      "cards": [
+        {
+          "cardNumber": 16,
+          "cardName": "The Dust-Bunny Librarian"
+        },
+        {
+          "cardNumber": 30,
+          "cardName": "The Ticking Tortoise"
+        },
+        {
+          "cardNumber": 37,
+          "cardName": "The Silver-Haired Time-Fox"
+        }
+      ]
+    },
+    {
+      "deckId": "the_carnival_of_unsolved_problems_therapy",
+      "priority": "B",
+      "tags": [
+        "inner-dialogue",
+        "experience"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/the_carnival_of_unsolved_problems_therapy.json",
+      "cards": [
+        {
+          "cardNumber": 37,
+          "cardName": "Solo Anti-Journaling"
+        },
+        {
+          "cardNumber": 40,
+          "cardName": "7-Day Witness"
+        },
+        {
+          "cardNumber": 25,
+          "cardName": "Wait… What?"
+        }
+      ]
+    },
+    {
+      "deckId": "medkayfab_thinking_traps",
+      "priority": "B",
+      "tags": [
+        "epistemology",
+        "experience"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/medkayfab_thinking_traps.json",
+      "cards": [
+        {
+          "cardNumber": 37,
+          "cardName": "Flash-the-Intuition"
+        },
+        {
+          "cardNumber": 15,
+          "cardName": "Blind-Spot-the-Expert"
+        },
+        {
+          "cardNumber": 36,
+          "cardName": "Patient-the-Voice-Ignore"
+        }
+      ]
+    },
+    {
+      "deckId": "medkayfab_differential_diagnosis",
+      "priority": "B",
+      "tags": [
+        "epistemology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/medkayfab_differential_diagnosis.json",
+      "cards": [
+        {
+          "cardNumber": 22,
+          "cardName": "Nomogram-the-Calculator"
+        },
+        {
+          "cardNumber": 33,
+          "cardName": "Probabil-the-Spectrum"
+        },
+        {
+          "cardNumber": 35,
+          "cardName": "Test-of-Time-the-Slow-Reveal"
+        }
+      ]
+    },
+    {
+      "deckId": "kayfabizarros_ontological_hazards",
+      "priority": "B",
+      "tags": [
+        "cosmology"
+      ],
+      "mappingStatus": "unverified",
+      "shard": "registry/assets/v1/decks/kayfabizarros_ontological_hazards.json",
+      "cards": [
+        {
+          "cardNumber": 13,
+          "cardName": "The Cave of Shadows"
+        },
+        {
+          "cardNumber": 8,
+          "cardName": "The Poet"
+        },
+        {
+          "cardNumber": 14,
+          "cardName": "The Ivory Tower"
+        }
+      ]
+    },
+    {
+      "deckId": "kreative_kayfab_creative_hero_journey",
+      "priority": "B",
+      "tags": [
+        "warburg",
+        "fractal-story"
+      ],
+      "mappingStatus": "unverified",
+      "shard": "registry/assets/v1/decks/kreative_kayfab_creative_hero_journey.json",
+      "cards": [
+        {
+          "cardNumber": 8,
+          "cardName": "The Ghost Slot"
+        },
+        {
+          "cardNumber": 18,
+          "cardName": "I Remember Differently"
+        },
+        {
+          "cardNumber": 25,
+          "cardName": "The Cut-Up Poet"
+        },
+        {
+          "cardNumber": 27,
+          "cardName": "The Frottage Texture"
+        }
+      ]
+    },
+    {
+      "deckId": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "priority": "B",
+      "tags": [
+        "fractal-story",
+        "epistemology"
+      ],
+      "mappingStatus": "unverified",
+      "shard": "registry/assets/v1/decks/unspoken_systems_kayfabizarro_meta_deck_01.json",
+      "cards": [
+        {
+          "cardNumber": 3,
+          "cardName": "MEMORY DRIFT"
+        },
+        {
+          "cardNumber": 37,
+          "cardName": "MEANING AS PERFORMANCE"
+        },
+        {
+          "cardNumber": 47,
+          "cardName": "THE OBSERVER"
+        }
+      ]
+    },
+    {
+      "deckId": "reality_redrawn",
+      "priority": "B",
+      "tags": [
+        "cosmology",
+        "epistemology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/reality_redrawn.json",
+      "cards": [
+        {
+          "cardNumber": 3,
+          "cardName": "THE PHENOMENA GOGGLES"
+        },
+        {
+          "cardNumber": 4,
+          "cardName": "KAYFABE REALITY WRESTLING"
+        },
+        {
+          "cardNumber": 37,
+          "cardName": "THE FALSE MEMORY OF HISTORY"
+        }
+      ]
+    },
+    {
+      "deckId": "mind_traps",
+      "priority": "B",
+      "tags": [
+        "epistemology"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/mind_traps.json",
+      "cards": [
+        {
+          "cardNumber": 10,
+          "cardName": "WHAT WOULD NEED TO BE TRUE... ?"
+        },
+        {
+          "cardNumber": 53,
+          "cardName": "EPISTEMIC SABOTAGE"
+        }
+      ]
+    },
+    {
+      "deckId": "medkayfab_neuroanatomy",
+      "priority": "B",
+      "tags": [
+        "experience"
+      ],
+      "mappingStatus": "verified",
+      "shard": "registry/assets/v1/decks/medkayfab_neuroanatomy.json",
+      "cards": [
+        {
+          "cardNumber": 52,
+          "cardName": "Memory Mike"
+        },
+        {
+          "cardNumber": 8,
+          "cardName": "Limby the Limbic System"
+        }
+      ]
+    }
+  ],
+  "dropboxDraftCandidates": [
+    {
+      "candidateId": "borromean_mnemosyne_dice",
+      "filename": "11 ADD-ON - Borromean Mnemosyne DIY Dice v4.0.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "warburg",
+        "fractal-story"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "fractal_almanac_ideation",
+      "filename": "68 FrizzleBob’s_Fractal_Almanac - Ideation. Brainstorming & Disruption Card Deck Add-On 22.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "warburg",
+        "experience"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "compendium_of_knowing",
+      "filename": "61 FrizzleBob’s_Fractal_Almanac - COMPENDIUM_OF_KNOWING Card Deck Add-On 15.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "epistemology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "fringe_science_gatekeepers",
+      "filename": "52 FrizzleBob’s_Fractal_Almanac - FRINGE SCIENCE & KNOWLEDGE GATEKEEPERS Card Deck Add-On 07.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "cosmology",
+        "epistemology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "fractal_memory_palace",
+      "filename": "72 FrizzleBob’s_Fractal_Almanac - MEMORY_PALACE_Impact_Theory_Card Deck AddOn 25.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "experience",
+        "inner-dialogue"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "the_fractured_frame",
+      "filename": "43 The Fractured Frame - Cut-Up Comics, Emergent Play, and the Impossibility of Linear Meaning - Krazy KAYFABIZARRO Komik Kard Kult v4.0.md",
+      "classifier": "DRAFT_ESSAY",
+      "tags": [
+        "fractal-story",
+        "warburg"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "great_work_alchemy",
+      "filename": "64 FrizzleBob’s_Fractal_Almanac - GREAT_WORK_Alchemy_Card Deck Add-On 19.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "cosmology",
+        "experience"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "koan_kompendium",
+      "filename": "65 FrizzleBob’s_Fractal_Almanac - KOAN_KOMPENDIUM_Card Deck Add-On 20.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "inner-dialogue",
+        "experience"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "critical_thinking",
+      "filename": "54 FrizzleBob’s_Fractal_Almanac - critical_thinking_toolkit Card Deck Add-On 09.md",
+      "classifier": "DRAFT_BOOKLET",
+      "tags": [
+        "epistemology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "the_infinite_canvas",
+      "filename": "kayfabizzaro-infinte-canvas-tenth-art-01-add.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "fractal-story",
+        "warburg"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "narrative_intelligence",
+      "filename": "kayfabizarro-narrative-intelligence-web-v1-id-pdf.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "fractal-story",
+        "epistemology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "epistemic_mischief_exhibition",
+      "filename": "epistemic-mischief-2--h.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "warburg",
+        "fractal-story"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "epistemic_mischief_german",
+      "filename": "epistemic-mischief-deutsch-brainstorming-ideation-add.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "warburg",
+        "experience"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "immanuel_kayfabe_kant",
+      "filename": "immanuel-kayfabezarro-kant-a-critique-of-pure-blodsinn-add--id.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "cosmology",
+        "epistemology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "forbidden_firmware",
+      "filename": "forbidden-firmware-ancient-conspiracy-akashic-card-deck-add--id.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "cosmology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    },
+    {
+      "candidateId": "akashic_archive",
+      "filename": "kayfabizarro-conspiracy-akashic-archive-www-awakeningmap-org-add--id.json",
+      "classifier": "WORKSPACE_JSON_UNVERIFIED_PUBLICATION",
+      "tags": [
+        "cosmology"
+      ],
+      "source": "connected Dropbox read",
+      "publishStatus": "NOT_VERIFIED"
+    }
+  ],
+  "candidateTriplets": [
+    {
+      "id": "two_witnesses",
+      "priority": "A",
+      "deckCards": [
+        [
+          "jung_and_shinn_a_guide_to_cosmic_cringe",
+          21
+        ],
+        [
+          "jung_and_shinn_a_guide_to_cosmic_cringe",
+          20
+        ],
+        [
+          "medkayfab_science",
+          5
+        ]
+      ]
+    },
+    {
+      "id": "the_black_cloth",
+      "priority": "A",
+      "deckCards": [
+        [
+          "kreative_kayfab_creative_hero_journey",
+          8
+        ],
+        [
+          "kayfabizarro_monomyth_mayhem",
+          44
+        ],
+        [
+          "epistemic_sabotage",
+          16
+        ]
+      ],
+      "requires": "visual mapping check for Ghost Slot"
+    },
+    {
+      "id": "the_metron_dossier",
+      "priority": "B",
+      "deckCards": [
+        [
+          "kayfabizarro_philosophy",
+          35
+        ],
+        [
+          "kayfabizarro_philosophy",
+          37
+        ],
+        [
+          "medkayfab_science",
+          6
+        ]
+      ]
+    }
+  ],
+  "constraints": [
+    "No automatic publication or canon",
+    "Deck registry is not publication proof",
+    "Unverified card mapping requires original image/PDF comparison",
+    "No duplicate cards or runtime owners",
+    "D6 story and Quest dice remain distinct",
+    "Heim six dimensions are not D6 story modes",
+    "No proprietary Nathal training copied",
+    "No gameplay build in this research"
+  ],
+  "nextGate": "WS0 independently pins one triplet's exact PDF image and ownership/provenance before paper test"
+}
