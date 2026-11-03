@@ -18521,6 +18521,21 @@
    "superseded_by": [],
    "why": "Bild-Gate vor dem Clip (V-740).",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1267",
+   "date": "03.11.2026",
+   "area": "Prozess",
+   "verdict": "TODO",
+   "text": "Festplatte voll (2 GB frei, Georg 03.11.). Groesste Posten: ~/.codex/.chatgpt-projects/.../work 26 GB (113 WSA-Arbeitsordner), ~/.codex/mirrors kayfabizarro 7,6 GB, ~/.codex/sessions 5,9 GB plus thread_history 3,5 GB, Claude-VM vm_bundles 20 GB, KFB_GitHub_sync 5,5 GB, kfb-mvp/src/private 5,2 GB. Massnahmen: WS0-Zwischendateien (ca. 640 MB) in den Papierkorb; Georg leert den Papierkorb; WSA raeumt gesicherte Arbeitsordner (b296). Keine Online-only-Vorschlaege.",
+   "values": {},
+   "owner": "Georg · WSA · WS0",
+   "check": "df -h vorher/nachher",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS0 verantwortet den Plattenplatz; WSA kennt den Sicherungsstand seiner Ordner, WS0 loescht nie selbst endgueltig.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
