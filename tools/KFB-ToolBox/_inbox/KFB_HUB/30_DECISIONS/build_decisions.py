@@ -1322,6 +1322,7 @@ d('V-1341','03.11.2026','Welt','DECISION','Georg 03.11.: Tueren/Hoehleneingaenge
 d('V-1342','03.11.2026','Spiel','REVIEW','Monolith (design/monolith-r1 @8c3637b0, monolith=1, auf truhen-r1): naechste offene Karte 18 m aufrecht, sichtbar ab 220 m, Ruecken (Papier, Tuscherand, KFB), Drehung 130-50 m per Feder, Durchfahren sammelt ueber cardRelief.collectSite; Hub q442. Kartenbau (design/kartenbau-r1 @bdd759bd, kartenbau=1): Karten fallen und rasten als Kacheln ein, 1,5 s je Gebaeude; zurueck wegen grauem Balken im Vordergrund. Radio: Georg will farbige Sci-Fi-/DIY-Tech-Skins, Mini mit festen Knoepfen, Maxi mit Playlist und Sound-Reglern, Skins in Einstellungen und Maxi waehlbar (Kartenkante). Platte 9,1 GB.','WS-Design · Kartenkante · Georg','q442','Georg 03.11.'),
 d('V-1343','03.11.2026','Welt','STATUS','Verteiler r3 @27e8e4ca: Baumgeister 8,9 %, Wahrzeichen 13 (12 im dichten Raster), Tresore 7 %; Tuer-Ziel-Waehler portalZiel.js (383 Eingaenge, Ziele 1,7-6,1 km, Bruch 8 %, 70 % an Kartenzonen, gleiche Tuer gleiches Ziel, Ausgang mit Rueckweg, 7 ms); Zellbau am Ziel 8,9 s - Vorladen ab 40-60 m beauftragt. Ink Blobs R4 (inkblobs-r1 @af24aebd, Atlas @24e5ea37): 64 Blobs (Bauarbeiter R9, RPG R7, Nerds, Kultur mit Regionen-Tags), 2560er Atlas ~35 MB GPU, Kultur-Gruppen 60 % an passenden Plaetzen; Berufe-Bogen nicht trennbar. Radio: Kartenkante @d92a144c (Titelleiste 14 px) und Mini/Maxi-Mechanik mit Skin-Tabelle; farbige Sci-Fi/DIY-Boegen fehlen in Dropbox.','WS-Verteiler · Rakete/Flug · Kartenkante','V-1341, V-1342','Georg 03.11.'),
 d('V-1344','03.11.2026','Welt','REVIEW','Kartenbau (design/kartenbau-r1 @ad4e7088, kartenbau=1): Karten fallen und rasten als Kacheln ein, 1,5 s je Gebaeude; grauer Balken war Labyrinth-Wand KFB_Random_Maze aus cascade/r4 im Endlos-Host, entfernt (eine Zeile runtime.js), WS1 nimmt ad4e7088 beim Viertel-Merge mit (N-102). Hub q443.','WS-Design · WS1 · Georg','q443, N-102','Georg 03.11.'),
+d('V-1345','03.11.2026','Welt','STATUS','Tuer-Vorladen (world/popup-klassen-r3 @88e57ea1): unter 50 m Ziel in Schritten, neun Zellen um die Ankunft in eigenen Vorrat (Worker frei, wie V-1184), ueber 80 m verwerfen; Sprung bis Ziel bereit 3,6-4,5 s ohne, 0,24 s mit Vorladen; Ankunftszelle nach 4,5-5 s Aufenthalt fertig, sonst Uebergangs-Tafel; laengstes Bild 48 ms. Gelaende-Kacheln/Kollider am Ziel erst nach dem Sprung.','WS-Verteiler','V-1343','Georg 03.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2631,6 +2632,7 @@ WHY = {
  'V-1342':('Ziele stehen in der Welt; das HUD darf Charakter zeigen, wenn es fest bleibt.','03.11.2026'),
  'V-1343':('Tueren fuehren dorthin, wo ihr Motiv hingehoert; Kultur-Blobs nach Region.','03.11.2026'),
  'V-1344':('Laden wird zum Kartenmoment; sichtbare Reste vor dem Hub beheben.','03.11.2026'),
+ 'V-1345':('Die Tuer haelt ihr Versprechen ohne Wartezeit.','03.11.2026'),
 }
 SUP = {}
 for e in E:

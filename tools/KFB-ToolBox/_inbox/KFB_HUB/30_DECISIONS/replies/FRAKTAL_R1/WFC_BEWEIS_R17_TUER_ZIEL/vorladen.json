@@ -1,0 +1,102 @@
+[
+ {
+  "modus": "ohne Vorladen",
+  "tuer": {
+   "x": -73.89178916905075,
+   "z": 41.9432592606172,
+   "motiv": "tuer_sumpf"
+  },
+  "ziel_d": 4029,
+  "vorladen": {
+   "an": false,
+   "tuer": null,
+   "rechnet": false,
+   "zellen": 0,
+   "fertig": 0,
+   "gestartet": 0,
+   "verworfen": 0
+  },
+  "vorlade_fertig_ms": null,
+  "bild_max_ms": 37.5,
+  "bilder_ueber_50ms": 0,
+  "bereit_ms": 3551,
+  "fehler": []
+ },
+ {
+  "modus": "mit Vorladen",
+  "tuer": {
+   "x": -73.89178916905075,
+   "z": 41.9432592606172,
+   "motiv": "tuer_sumpf"
+  },
+  "ziel_d": 4029,
+  "vorladen": {
+   "an": true,
+   "tuer": {
+    "x": -73.89178916905075,
+    "z": 41.9432592606172,
+    "motiv": "tuer_sumpf"
+   },
+   "rechnet": false,
+   "zellen": 1,
+   "fertig": 1,
+   "gestartet": 1,
+   "verworfen": 0
+  },
+  "vorlade_fertig_ms": 4983,
+  "bild_max_ms": 35.4,
+  "bilder_ueber_50ms": 0,
+  "bereit_ms": 243,
+  "fehler": []
+ },
+ {
+  "modus": "ohne Vorladen",
+  "tuer": {
+   "x": -34.105069918558,
+   "z": -94.54024139419198,
+   "motiv": "tuer_wueste"
+  },
+  "ziel_d": 3652,
+  "vorladen": {
+   "an": false,
+   "tuer": null,
+   "rechnet": false,
+   "zellen": 0,
+   "fertig": 0,
+   "gestartet": 0,
+   "verworfen": 0
+  },
+  "vorlade_fertig_ms": null,
+  "bild_max_ms": 40.4,
+  "bilder_ueber_50ms": 0,
+  "bereit_ms": 4519,
+  "fehler": []
+ },
+ {
+  "modus": "mit Vorladen",
+  "tuer": {
+   "x": -34.105069918558,
+   "z": -94.54024139419198,
+   "motiv": "tuer_wueste"
+  },
+  "ziel_d": 3652,
+  "vorladen": {
+   "an": true,
+   "tuer": {
+    "x": -34.105069918558,
+    "z": -94.54024139419198,
+    "motiv": "tuer_wueste"
+   },
+   "rechnet": false,
+   "zellen": 1,
+   "fertig": 1,
+   "gestartet": 1,
+   "verworfen": 0
+  },
+  "vorlade_fertig_ms": 4514,
+  "bild_max_ms": 47.7,
+  "bilder_ueber_50ms": 0,
+  "bereit_ms": 235,
+  "fehler": []
+ }
+]
