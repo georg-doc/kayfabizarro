@@ -19256,6 +19256,21 @@
    "superseded_by": [],
    "why": "Einfuegen mit Kontrast statt Aufhellen; erst geprueft, dann vorgelegt.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1316",
+   "date": "03.11.2026",
+   "area": "Himmel",
+   "verdict": "REVIEW",
+   "text": "Planeten ueber kfbInsert (WS-Himmel world/planet-einfuegen-r1 @ffbc6d68, mit design/einfuegen-r1 @afce41b2): sky-r1 drawBody nutzt kfbInsert und kfbInsertEdgeLod (feste Mip-Stufe), Nacht-Mond selfLit, EndlessDrive ruft insertUpdate je Bild; Abdunkelung uBodyLight und Palettendrehung fuer gemalte Planeten entfallen; Shader-Koerper unveraendert. Tests gruen. Hub q425. Offen: Nacht-Mond als Zelle nicht belegt, echter Flug nicht geprueft. Viertel Stufe 2 @681bc75e zurueck (Zufahrt wie Planke, schwarzer Fleckenteppich, Beleg von hinten, Debug-Leiste).",
+   "values": {},
+   "owner": "WS-Himmel · WS-Design · Georg",
+   "check": "q425",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Einfuege-Weg fuer alle gemalten Bilder, auch am Himmel.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
