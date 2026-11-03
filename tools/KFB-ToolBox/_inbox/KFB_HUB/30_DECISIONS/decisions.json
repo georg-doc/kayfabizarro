@@ -19346,6 +19346,21 @@
    "superseded_by": [],
    "why": "Ein Modul, eigene Werte je Anwendung.",
    "applies": "03.11.2026"
+  },
+  {
+   "id": "V-1322",
+   "date": "03.11.2026",
+   "area": "Figuren",
+   "verdict": "REVIEW",
+   "text": "Lidregel an einer Stelle (world/topfpflanzen-r1 @157a80ad, pet-eye-rig.v6.js LID_RULE/lidTone): Farbton der Flaeche, Saettigung +20 % zum Vollen, L* hoechstens 0,6 x Augapfel-Weiss und 0,9 x Flaeche; Wimpern Lid x0,5; gilt fuer alle Figuren ohne eigenes Lid-Material inkl. KayKit-NPCs. Hub q428 (Lorekeeper, Topf). Befund: NPC-Gesichtsfarbe aus sampleActorFaceColor heller als gerenderte Haut (eigene kleine Aufgabe, offen).",
+   "values": {},
+   "owner": "Figuren · Georg",
+   "check": "q428, V-1320",
+   "source": "Georg 03.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Regel an einer Stelle, fuer alle Figuren.",
+   "applies": "03.11.2026"
   }
  ],
  "imported_acceptance": [
