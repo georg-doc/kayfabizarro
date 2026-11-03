@@ -17,6 +17,12 @@ Georgs Idee vom 03.11. Songs sammelt man wie Karten. Die Bausteine sind schon da
 - **Ablauf:** Am Ende eines Songs kommt der nächste, mit der vorhandenen Überblendung.
 - **Pool:** Ungesammelte Songs gehören dazu, denn so hört man sie frei. Gesammelte bleiben im Pool und lassen sich zusätzlich gezielt wählen.
 
+## 2b · Eine Themenlogik für Songs, Props und Karten (Georg 03.11., V-1291)
+- Kein festes Mapping. Songs (Musikkatalog), Pop-ups (`popup_tags.json`) und Decks tragen dieselben Tags: Region bzw. Kultur, Stimmung, Element.
+- Ausgewählt wird wie bei WFC: Nachbarn im Biom und in der Zone bestimmen die Gewichte. Meist passt es, manchmal ist es bewusst cartoonig-bizarr unpassend. Die Saat kommt aus dem Ort; wer dorthin zurückkehrt, findet dasselbe vor.
+- Wer in anderen Biomen unterwegs ist, sammelt andere Karten, andere Songs und sieht andere Props.
+- Besitzer der Logik ist der eine Verteiler (WS-Verteiler); Radio und Pop-ups lesen sie nur.
+
 ## 3 · Bedienung
 - **Am Radio nur vier Knöpfe:** Play/Pause, nächster Song, Ton aus, Aufklappen.
 - **Diegetisch:** Das Radio sieht aus wie ein echtes Knet-Radio mit Drehknöpfen, Skala und Lautsprechergitter, nicht wie flache Schaltflächen. Vorlagen und Elemente gestaltet Georg mit ChatGPT-Web (Hub b298), der Einbau folgt dem HUD-Prototyp.
