@@ -38,6 +38,7 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 - **KFB-Crossover (Cut-up/Remix):** zwei Genres, die absurd unpassend und trotzdem tanzbar zusammengehen, z. B. Deephouse mit Trap brasileiro (V-701, Golden `SUNO_SSOT_PROMPTS/BBBW01_DEEPHOUSE_TRAP_BRASILEIRO.md`): Sprache und Vortrag der Stimme, Tempo, zwei, drei Klangquellen mit Produktionsbegriff, eine Besonderheit (Whistle-Register).
 - **Frequenz- und Spannungsbetten (V-718):** S1 bis S7 für Mindspace-Räume, S8 bis S12 für Spannungsbetten (Hub b191 bis b202, Quelle `replies/RESEARCH_BINAURAL_SHEPARD_SPATIAL_R1.md`). Suno liefert nur das musikalische Bett, die exakte Frequenzschicht kommt aus Datei bzw. Offline-Render. Tempo-Regel: Hz × 60 = BPM.
 - **Mind- und Soundscapes (V-779):** Georgs Golden-Fassungen S2/S3/S8 und die Räume S13–S15 in `SUNO_SSOT_PROMPTS/SUNO_MINDSCAPES_R1.md`; Tempo als Gefühl, keine Pflicht.
+- **Weltmusik im Kurzprompt-Verfahren (V-1280, Georg 03.11.):** Ins Style-Feld nur Region plus „instrumental, upbeat, psychedelic“. Suno erweitert das selbst zu markanten Betten mit Soli (afrikanisch, chinesisch, mexikanisch erprobt). Die erweiterte Fassung landet im Katalogfeld `prompt`. Weitere Regionen: Hub b297.
 - **Insel-Grundton** (Chatterbox V-678): O-Town Funk/Disco, Bucht Surf, Canyon Western, Farm Polka, Aliens Space, Utopia-Bürokratie Marsch.
 
 ## 6 · Ernte und Ergebnisse
