@@ -1,3 +1,11 @@
+# CURRENT R8 · R7 WITHDRAWN / BASE-ONLY CORRECTION IN PRODUCTION · 2026-11-04
+
+Georg rejected R7 because it still has per-slot empty-well rims. DO NOT USE or integrate the R7 MixedBag. Auftrag4 (double-height bar_1…bar_8) is CANCELLED. The action tray has one outer edge; internal places are borderless. Current priority is only the complete bare base-glyph atlas in the exact12role order, then Kartenkante's one-call cut and actual Compact/Normal/Large game proof. No new tray design is authorized by this correction. SOP R8/retraction checkpoint ad14c2540139a6eabf5e291282ec4b40ff0f63d2; R7QA retraction35790b39da55167a42fa66259999359323547dea. Corrected base delivery not yet claimed in this checkpoint.
+
+---
+
+# HISTORICAL R7 · REJECTED, NOT CURRENT DELIVERY
+
 # CURRENT · NATIVE288SLOT FAMILY R7 / PRODUCTIVE ART DELIVERY · 2026-11-04
 
 Georg authorized continued productive work. R7 supplies288pxslot-base candidates while retaining R6's shared-object-content/no-extra-frame/no-new-skin rules. The rejected brown/beige draft remains excluded. No larger original file was found: a FRESH native image job used ONLY the actual existing graphite-gray bar_4.png as its visual donor. This is clearly labeled SOURCE-CONDITIONED NATIVE RE-RENDER, NOT pixel-identical recovered original art or a new accepted skin.
