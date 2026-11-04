@@ -1,3 +1,23 @@
+# CURRENT · NATIVE288SLOT FAMILY R7 / PRODUCTIVE ART DELIVERY · 2026-11-04
+
+Georg authorized continued productive work. R7 supplies288pxslot-base candidates while retaining R6's shared-object-content/no-extra-frame/no-new-skin rules. The rejected brown/beige draft remains excluded. No larger original file was found: a FRESH native image job used ONLY the actual existing graphite-gray bar_4.png as its visual donor. This is clearly labeled SOURCE-CONDITIONED NATIVE RE-RENDER, NOT pixel-identical recovered original art or a new accepted skin.
+
+**Delivered:**8neutral bar_1…bar_8 PNGs,288high, widths274/500/724/948/1172/1396/1620/1844 (existing receiving widths×2);8neutral lossless WebPs;48lossless colored WebPs from unchanged hudskin.py/recolor and existing six palette IDs. No per-skin object drawings. Exact source, prompt, masks, native donor, build script, actual cavity measurements and source comparison included. Existing foreground weapon PNG is reused unchanged across skins; existing role glyphs occupy Secondary/Movement, Context remains empty. The visible proof is a LOCAL COMPOSITION, not a game screenshot or proven400object Hero-Shot pipeline.
+
+**Actual validation:** native generated canvas2172×724, isolated2090×610. Every fitted source patch is downsampled; cap/cell repeat creates the size family without pixel enlargement/blur/feather.8/8images have288height; independent component detection finds36cavities, exactly npertray. For n>=2centers x137+224i,y142, floors176×176.1er floor174×176,center136 vs existing target137 (1nativepx difference), openly recorded. All48tints preserve source alpha exactly; final soft edge<=2px. Current actionSize.js locally returns Large1.25for288source height at70.8referencepx,DPR2, vs1.016949with144source; Auto behavior checked. Actual in-game behavior/format/state/readability remains NOT_RUN, not inferred from counters.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Slot_Bases_R7_288_2026-11-04.zip; id:KeQLaY5-IIAAAAAAAA7eeQ;11213004bytes; SHA256567382cf14f22072cc88f8d75b3e1bfa8e50418a5f9d478947fd019d6e534f72; server2026-11-04T22:00:51Z.104files, ZIP integrity verified. Private source binaries stay outside public GitHub.
+
+**Owner/branch/PR:** georg-doc/kayfabizarro; design/kfb-clay-hud-skin-kit-r1-2026-11-04; DraftPR468. SOP implementation7b525ab30a2849d3440deee8a0e860eafb0210fb; verified evidence5c547fef7030ddf69da8b803a1ac5d5f2f5fa1f0. Source/palette/action module blobs pinned in MASTER_SLOT_BASES_R7_QA.json. Changed this phase: SOP_CLAY_HUD_R1.md, MASTER_SLOT_BASES_R7_QA.json, docs/hud-kit/RETURN.md and CHANGELOG.md. Latest final Return/changelog head is verified at handoff.
+
+**Receiving path:** neutral sources are candidates for src/assets/hud_v6/ui/bar_n.png; existing sk_<skin>_ui_bar_n.webp names stay in hudkit. No new setting/skin ID/runtime renderer/layout group. No extra pillow/tile/frame behind hero content. This chat does not install them into the game. Existing six palette values are reused as-is, not reinterpreted from the painted signature bars.
+
+**Limits:** source likeness is a visible candidate, no new Georg/WS0design acceptance.1er optical alignment needs actual HUD check. The content fixture is an existing neutral rocket_launcher.png (blob0421d3767c3337d2f0ea69e25502d1dee69bbac8); its exact3Dmodel provenance was not independently verified. Actual canonical object-Hero-Shot intake is still a receiving seam; no400+asset claim. Steam/Slime Sheet1detector holds, standard controls, responsive measurements and all-six game proofs remain open under R4/R5. No runtime write, merge, Stage/Site or Live promotion; no WS0message sent. R6rejected art is not in this package.
+
+**One next gate:** Kartenkante consumes these measured288source candidates in the EXISTING HUD owner and supplies a real Normal/Large comparison with1/4/8slots, unchanged content foreground, empty context and role/state/readability proof. This resolves the art-output lack without falsely claiming a recovered original or completed game acceptance.
+
+---
+
 # CURRENT · GEORG CORRECTION R6 / CONTENT VS SKIN / NO NEW TRAY STYLE · 2026-11-04
 
 **Binding user correction:** actual collected props/weapons/power-ups use their own3DHero-Shot content icon shared across ALL skins;400+objects must not become400+painted images per skin. The12role glyphs cover actions/default roles, not the object catalog. Skin affects the existing carrier/well; content identity/ref/pixels remain skin-neutral. No unnecessary frames: only the existing cavity, no icon tile,pillow,plaque or decorative extra carrier. Fixed slot/layout contract remains unchanged.
