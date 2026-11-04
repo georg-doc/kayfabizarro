@@ -1447,6 +1447,7 @@ d('V-1466','04.11.2026','Assets','DECIDED','MixedBag 13: Diven-Slop-Familie (KFB
 d('V-1467','04.11.2026','Figuren','OPEN','Jetpack gross R4 (WSB assets/jetpack-gross-r4 @03601d51): 1,25x r2 (Alien 1,35), glatte Rueckenplatte auf FB-Rueckenflaeche, Neigung aus Rueckenlinie (5-19 Grad), Ruhe/Gehen Rumpf 0 -> q514. HUD-Skins blue/slime/hazard v2 privat auf 703f9b9 umgesetzt: assets/private @3dbfc0eb, module/hud-clay-r1 @c62e12fd9 gepusht. b320 Muster-Auftrag ohne Slop-Anhang (Georg: kein Leopard-Slop vorhanden).','WSB · Kartenkante','q514, b320','Georg 04.11.'),
 d('V-1468','04.11.2026','Figuren','PASS','q514 PASS: Jetpack gross R4 (assets/jetpack-gross-r4 @03601d51) ins Spiel als Standard-Sitz, r3 Rueckfall -> WS1 N-142. MixedBag 13 Verteiler @7466fa7d: Katalog 1162, Slops 429/32 Familien, Diven 12+21, Theater 12. Forscher-Neurender = Motive 01-08 -> uebernehmen deren Namen, alte Fransen-Schnitte in aus; Leuchtschein-Bogen (09-16) neu bestellen mit Motivliste (b324 Notiz).','WSB · WS1 · Verteiler','q514, b324','Georg 04.11.'),
 d('V-1469','04.11.2026','Assets','DECIDED','MixedBag 13 gepusht: assets/popups-ingest-r1 @c0d7f40f, assets/private @e3edfa8f. Katalog 1154, Slops 421/32 Familien, Forscher 01-08 = Neurender (Fransen-Schnitte im Papierkorb, Quellbogen in aus), 09-16 frei. Diven normale Familie. Neuer Bildauftrag b325: Leuchtbogen (Popup Assets 04 Set-1, 8 Motive benannt) mit echtem Alpha, 2 Bilder 2x2.','Verteiler · Flug','b325','WS0 04.11.'),
+d('V-1470','04.11.2026','Assets','DECIDED','MixedBag 14 -> Verteiler: Slop-Familie Schamanen (2x 3x2, Bogen -1 ohne Alpha), Frostbite 07-12 (Schneeengel bleibt), Slop-Familie Wildwest (R14 RGBA-Boegen + 4 Varianten-Boegen), Weltwunder 12 Scenelets. Georg: Briefing ergab keine roetlichen Augaepfel; flacher Schneeengel fuer 2D-Slops unpassend -> kuenftige Slop-Auftraege: roetliche Augaepfel, nur aufrechte Posen. b314 erledigt.','Verteiler · Flug','b314','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2881,6 +2882,7 @@ WHY = {
  'V-1467':('Ein Bildauftrag verlangt nur Anhaenge, die es sicher gibt.','04.11.2026'),
  'V-1468':('Ein Neurender erbt den Namen seines Motivs, nicht den freien Platz.','04.11.2026'),
  'V-1469':('Ein Bildauftrag nennt seine Motive einzeln, sonst malt das Modell den naechstbesten Bogen.','04.11.2026'),
+ 'V-1470':('Ein 2D-Slop schaut in die Kamera; was liegt, wird zum Fleck.','04.11.2026'),
 }
 SUP = {}
 for e in E:
