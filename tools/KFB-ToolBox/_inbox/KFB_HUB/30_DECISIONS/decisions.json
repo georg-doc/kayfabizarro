@@ -21986,6 +21986,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1498",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "Georg q526 (Drift, Konzept stand laengst): Aktionsleiste = (1) Basis-Leiste, dynamisch skalierbar fuer n Plaetze, sie allein traegt den Skin; (2) darauf flache, abgerundete Button-Flaechen OHNE Mulde und OHNE Rahmen; (3) darauf unsere 3D-Assets (Waffen, Props, Power-ups, Heiltraenke) als 3D-Hero-Shot-Icons, Originalmodell und Originalfarben in der HUD-Ansicht V-670/671 (orthografisch, 35 Grad gedreht, 22 Grad von oben, kfb_hud_actionbar.r2.json, N32/scripts/n32r2_render.py), mit sauberem dezentem Schatten unten rechts. R3d (Rahmen um die Leiste, unsichtbare Plaetze, gemalte Glyphen) ist verworfen; Glyphen nur fuer Taetigkeiten ohne Asset. Gilt fuer Aktionsleiste, Reise-Knopf und Faecher.",
+   "values": {},
+   "owner": "Kartenkante",
+   "check": "q526",
+   "source": "Georg q526",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
