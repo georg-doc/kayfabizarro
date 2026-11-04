@@ -1,5 +1,12 @@
 {
-  "qa": {
+  "status": "STEAM_SLIME_FIXED_INTEGRATION_REMOTE_SAVED_FINAL_REVIEW_PENDING_RESTART",
+  "date": "2026-11-05",
+  "authoring": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "design/kfb-clay-hud-skin-kit-r1-2026-11-04",
+    "pr": 468
+  },
+  "cutter": {
     "status": "PASS",
     "sixSkinSingleCallCuts": 6,
     "actualWellCentersMatchIndependentR4Evidence": 12,
@@ -24,29 +31,94 @@
     "checksWeakened": false,
     "change": "Only legacy-invalid cell detection falls back to the opaque continuous body height, excluding head motifs; same six-cell plausibility check retained. Geometric arrow position avoids empty yellow-median warnings.",
     "expectedWarnings": "Five existing current-receiver arrow downsampling notices retained; no missing roles, grid or spacing warnings.",
-    "runtimeProof": "PENDING Kartenkante",
+    "runtimeProof": "Partial actual game evidence recorded separately; final six-skin acceptance pending restart.",
     "scriptSha256": {
       "hudbar_measure.py": "a4f5defa8a969176d6270d97687ad0999f675d062a487bef3e91381ab9c26a0b",
       "cut-sheet1.py": "55c856f5dea622af5e7792b3958c8b1770c1e6b74ab7d5804599582bc0977b91",
       "sheet_grid.py": "ea3bc38da2377ae194965eb86b4a40c9adf96383207052f8724ed23768418123"
     }
   },
-  "archive": {
-    "file": "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip",
+  "privateDeltaArchive": {
+    "file": "KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip",
     "size": 39694097,
     "sha256": "aa8bd8fc812225c1fa246a379fac233ce41bd4d83fb32c9980b2e06fe06e2735",
-    "files": 135
+    "files": 135,
+    "dropbox": {
+      "file": {
+        "file": {
+          "size": 39694097
+        },
+        "file_id": "id:KeQLaY5-IIAAAAAAAA7enA",
+        "modified_time": "2026-11-04T23:15:08Z",
+        "name": "KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip",
+        "object_type": "file",
+        "path": "ns:1174592111//CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip",
+        "path_display": "/CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip"
+      },
+      "status": "completed"
+    }
   },
-  "owner": "Kartenkante; existing game runtime sole writer",
   "receiver": {
     "repository": "georg-doc/KFB-Stunt-Car-Race",
     "branch": "module/hud-clay-r1",
-    "baseline": "ea99dcf372d2983578202ad404a17ab6771305b8"
+    "verifiedRemoteHead": "ac4a433f6f921f8c552a4c00fbc73604e149e7b5",
+    "art": {
+      "branch": "assets/private",
+      "head": "2f96ab217de15ee587a1d22f1d6a150b45f70ba5",
+      "filesChecked": 154,
+      "mismatches": []
+    },
+    "commonBaseRoleCount": 12,
+    "skinSpecificRoleSets": 0,
+    "soleRuntimeWriter": "Kartenkante"
   },
-  "authoring": {
-    "repository": "georg-doc/kayfabizarro",
-    "branch": "design/kfb-clay-hud-skin-kit-r1-2026-11-04",
-    "pr": 468
+  "staticReceivingChecks": {
+    "nativeCutExportsImportedForAllSix": true,
+    "measuredRadioCoordinatesImportedForAllSix": true,
+    "builtR9SurfaceHashMatches": 102,
+    "nativeBarPixelMatches": 18,
+    "nativeGearRadioPixelMatches": 12,
+    "freshPrivateArchiveRebuildExit": 0
   },
-  "integration": "Directly messaged and verified in the running Kartenkante Claude Code session; R9 installed/build passing, R10 adoption and 6x3 actual-game checks in progress. No game PASS claimed."
+  "independentCutterCritic": "PASS reported directly by Kartenkante; minimum-radius body reference and old cut-hudbar missing-arrow failure behavior remain documented residual risks.",
+  "actualGameEvidence": {
+    "preFinal": {
+      "cases": 24,
+      "stateScreenshots": 72,
+      "allSixSkins": true,
+      "sizes": "Compact/Normal/Large at1280x720DPR2 plus Large1440x900DPR2",
+      "allSixRetinaLargePhysicalPx": 177,
+      "sourceBudgetPx": 180
+    },
+    "lastCommittedState": {
+      "finalCasesRun": 4,
+      "skin": "retro",
+      "remainingCases": 20,
+      "sharedJumpAndTravelDistinct": true,
+      "actionNineSliceSeamsFixedViaSingleCanvas": true,
+      "finalWholeMatrixCritic": "NOT_RUN"
+    },
+    "fullNineStateCoverage": "NOT_CLAIMED"
+  },
+  "openFindings": [
+    {
+      "skin": "hazard",
+      "finding": "Initial actual-game critic identified siren/gear role selection; preserve and resolve receiving cutter semantics."
+    },
+    {
+      "skin": "teal",
+      "finding": "Initial actual-game critic identified tiny arrow knob; existing auto-downsample notice is not visual acceptance."
+    },
+    {
+      "scope": "other panels",
+      "finding": "Thin CSS slice seams were reported; action surface was fixed, complete panel review is not claimed."
+    }
+  ],
+  "stop": {
+    "reason": "Georg asked in the running Claude session to stop for shutdown/restart due UI bugs; Kartenkante stopped server/test browser, WS0 pushed code and private art. This chat starts no new jobs.",
+    "ownCaptureWatcher": "terminated",
+    "restartAutomatically": false
+  },
+  "nextGate": "Only after Georg/WS0 resumes: Kartenkante gets first reserved browser slot, resolves remaining semantic cut findings and completes all24 final-state cases plus independent critic and a usable game-review preview. No merge or Live promotion.",
+  "proofLocation": "Existing stable worktree /Users/georgv.westphalen/kfb-ws0/cardedge-wt/test/out/hud-kit/six_skins; pre-final and final-Retro evidence must not be mixed into a final-all-skin PASS."
 }
