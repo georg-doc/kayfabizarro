@@ -179,10 +179,25 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
+    "sheets": 2,
+    "depictions": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }
