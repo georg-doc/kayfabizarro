@@ -1,0 +1,62 @@
+{
+  "status": "GENERATED_DRAFT_AWAITING_GEORG",
+  "jobs": 2,
+  "sheets": 2,
+  "figures": 12,
+  "georg_pass": 0,
+  "cards_design": 12,
+  "reference_hashes_checked": 6,
+  "actual_source_files": [
+    {
+      "key": "education-selfimprovement",
+      "source": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+      "sha256": "8f38cfe9280f9d2d09847302ac00eeb7191e5d445f5b0b6b89ec2ffdd14da832",
+      "git_blob_sha": "ae591813a4f6844818b3ee7aa67a1ad5b55f36ab",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 315,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0
+    },
+    {
+      "key": "culture-interpretation",
+      "source": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+      "sha256": "9755411ba238df35640aef043e28918e878205e0467d4852c6112f7a528a6411",
+      "git_blob_sha": "6ec8bb1cb58df78229268bb78381e44a78eb365e",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 120,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0
+    }
+  ],
+  "qa_views_px": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "prior_georg_pass_checkpoint": "2c085252a5fdd7db9899822b345e3949ad80e551",
+  "prior_batch_georg_pass": 24,
+  "accepted_stethoscope_detail": true,
+  "runtime_tests": 0,
+  "individual_game_crops": 0,
+  "intake_eligible": 0,
+  "github_verification": {
+    "implementation_head": "55095d30a7f220592e4e90f93409d14c8f40c0ac",
+    "branch_ref_verified": true,
+    "exact_text_readbacks": 9,
+    "remote_png_byte_matches": 2,
+    "prior_pass_exact_text_readbacks": 12
+  }
+}

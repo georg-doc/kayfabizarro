@@ -1,3 +1,13 @@
+# CURRENT RETURN · Batch24 PASS + Education/Culture12 candidates ·2026-11-04
+
+WSA → WS0/Verteiler. georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469. Georg accepted all24health/everyday actors, including incorrect stethoscope detail as non-blocking; no image repair. PASS checkpoint2c085252a5fdd7db9899822b345e3949ad80e551,12exact text readbacks/branch ref verified. Index now24PASS sheets/144depictions (22eligible sheets/132depictions); old seam/crop QA retained, cardsDESIGN.
+
+Next authorized batch completed:2native independent reference-conditioned image calls,2transparent1536x1024 3x2sheets,12NEW education/self-improvement +culture/interpretation actors, exactly2female-read each. PNGs, original prompts/receipts, manifests, QA and12DESIGN cards under EDUCATION_CULTURE_12_2026-11-04. New12DRAFT awaiting Georg, no automaticPASS/intake. Reference hashes6/6, actual source/alpha/seam/outer-edge tests,64/96/160/192px views; implementation checkpoint `55095d30a7f220592e4e90f93409d14c8f40c0ac`:9/9exact text readbacks and2/2remote PNG byte matches, branch ref verified. Final evidence/Return head returned after publication. No model/seed invention, retries, generated style chain, alpha repair, runtime changes/tests, canonical IDs, library write, retirement, Stage/Live or merge. Writer531 remains30drafts/501queued; previous WS0/Couples reconciliation unchanged.
+
+Details: BATCH_EDUCATION_CULTURE_2026-11-04/{BATCH_RETURN.md,QA_SUMMARY.json}. One next gate: Georg design verdict for the new two sheets/cells, then manifest update and existing-owner intake.
+
+## Previous Return
+
 # CURRENT RETURN · Batch24 GEORG PASS / next batch12 authorized ·2026-11-04
 
 WSA → WS0, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. All24 health/everyday actors accepted; incorrect stethoscope detail explicitly accepted as non-blocking, no repair. Four manifests and24figure statuses nowPASS, intake eligible; old seam/crop evidence preserved. Root index now24PASS sheets/144depictions (including two International Couples sheets still intake-excluded by WS0 brief);22eligible sheets/132depictions. Cards remainDESIGN; canonical receiving mapping/runtime/library refresh not claimed.
