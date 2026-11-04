@@ -1,0 +1,240 @@
+{
+ "machine": "Apple M1 Max",
+ "runs": [
+  {
+   "tag": "0",
+   "frames": 490,
+   "frameMed": 19.7,
+   "frameP95": 24.4,
+   "renderMed": 15.6,
+   "renderP95": 18.3,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "0",
+   "inkSdfMs": null,
+   "gpuTex": 93,
+   "gpuGeo": 165,
+   "programs": 183,
+   "heapMB": 293.1,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    6.54,
+    7.37,
+    7.35
+   ]
+  },
+  {
+   "tag": "shader",
+   "frames": 465,
+   "frameMed": 19.9,
+   "frameP95": 29.3,
+   "renderMed": 15.6,
+   "renderP95": 17.8,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "shader",
+   "inkSdfMs": null,
+   "gpuTex": 93,
+   "gpuGeo": 160,
+   "programs": 182,
+   "heapMB": 276,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    6.16,
+    7.2,
+    7.29
+   ]
+  },
+  {
+   "tag": "sdf",
+   "frames": 489,
+   "frameMed": 19.7,
+   "frameP95": 23.3,
+   "renderMed": 15.8,
+   "renderP95": 17.8,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "sdf",
+   "inkSdfMs": 1217,
+   "gpuTex": 97,
+   "gpuGeo": 166,
+   "programs": 186,
+   "heapMB": 327.8,
+   "sdfMB": 16.88,
+   "errs": 0,
+   "load": [
+    6.12,
+    7.1,
+    7.25
+   ]
+  },
+  {
+   "tag": "dupe",
+   "frames": 520,
+   "frameMed": 18.7,
+   "frameP95": 34.5,
+   "renderMed": 14.9,
+   "renderP95": 16.2,
+   "calls": 180,
+   "tris": 710266,
+   "live": 60,
+   "inkline": "dupe",
+   "inkSdfMs": null,
+   "gpuTex": 93,
+   "gpuGeo": 157,
+   "programs": 184,
+   "heapMB": 286.1,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    5.23,
+    6.82,
+    7.15
+   ]
+  },
+  {
+   "tag": "0",
+   "frames": 505,
+   "frameMed": 19.1,
+   "frameP95": 34.3,
+   "renderMed": 15,
+   "renderP95": 17.2,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "0",
+   "inkSdfMs": null,
+   "gpuTex": 93,
+   "gpuGeo": 161,
+   "programs": 173,
+   "heapMB": 273.6,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    6.49,
+    7.03,
+    7.21
+   ]
+  },
+  {
+   "tag": "shader",
+   "frames": 493,
+   "frameMed": 19.5,
+   "frameP95": 33.2,
+   "renderMed": 15.2,
+   "renderP95": 17.1,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "shader",
+   "inkSdfMs": null,
+   "gpuTex": 94,
+   "gpuGeo": 157,
+   "programs": 181,
+   "heapMB": 297.2,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    5.45,
+    6.75,
+    7.11
+   ]
+  },
+  {
+   "tag": "sdf",
+   "frames": 430,
+   "frameMed": 20.2,
+   "frameP95": 37,
+   "renderMed": 14.5,
+   "renderP95": 17.4,
+   "calls": 178,
+   "tris": 710026,
+   "live": 60,
+   "inkline": "sdf",
+   "inkSdfMs": 1210,
+   "gpuTex": 97,
+   "gpuGeo": 166,
+   "programs": 184,
+   "heapMB": 313.9,
+   "sdfMB": 16.88,
+   "errs": 0,
+   "load": [
+    4.84,
+    6.51,
+    7.01
+   ]
+  },
+  {
+   "tag": "dupe",
+   "frames": 506,
+   "frameMed": 19.1,
+   "frameP95": 34.5,
+   "renderMed": 14.8,
+   "renderP95": 16.7,
+   "calls": 180,
+   "tris": 710266,
+   "live": 60,
+   "inkline": "dupe",
+   "inkSdfMs": null,
+   "gpuTex": 95,
+   "gpuGeo": 164,
+   "programs": 187,
+   "heapMB": 363.8,
+   "sdfMB": 0,
+   "errs": 0,
+   "load": [
+    5.21,
+    6.48,
+    6.98
+   ]
+  }
+ ],
+ "sum": {
+  "0": {
+   "frameMed": 19.4,
+   "frameP95": 29.35,
+   "renderMed": 15.3,
+   "renderP95": 17.75,
+   "calls": 178,
+   "tris": 710026,
+   "gpuTex": 93,
+   "heapMB": 283.35
+  },
+  "n": 60,
+  "shader": {
+   "frameMed": 19.7,
+   "frameP95": 31.25,
+   "renderMed": 15.4,
+   "renderP95": 17.45,
+   "calls": 178,
+   "tris": 710026,
+   "gpuTex": 93.5,
+   "heapMB": 286.6
+  },
+  "sdf": {
+   "frameMed": 19.95,
+   "frameP95": 30.15,
+   "renderMed": 15.15,
+   "renderP95": 17.6,
+   "calls": 178,
+   "tris": 710026,
+   "gpuTex": 97,
+   "heapMB": 320.85
+  },
+  "dupe": {
+   "frameMed": 18.9,
+   "frameP95": 34.5,
+   "renderMed": 14.85,
+   "renderP95": 16.45,
+   "calls": 180,
+   "tris": 710266,
+   "gpuTex": 94,
+   "heapMB": 324.95
+  }
+ }
+}

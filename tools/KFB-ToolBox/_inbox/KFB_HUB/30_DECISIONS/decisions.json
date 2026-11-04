@@ -21671,6 +21671,21 @@
    "superseded_by": [],
    "why": "Eine Linie mit Gewicht traegt das Licht mit; eine gleichmaessige Linie ist ein Aufkleber.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1477",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Kartenkante HUD R3 (module/hud-clay-r1 @63eb5767): Skins Blau/Schleim/Hazard v2, Zahlen-Marke am Muldenrand (Kugel 17-29 % verdeckt statt 45-70 %), Deck-Kopfleiste im Skin, Fluff-Leiste im Deck aus, Regler Travel speed bis 3.0x; Format-Matrix 0 Ueberlappungen; WebKit ok (Vorhang Ersatz ohne WebGPU), Firefox in Sandbox nicht startbar -> Hub q515. Kayfabricate-Knopf 9-Slice falsch -> b328. HUD-Abdeckungsmatrix 34x9x6 -> WSA-HUD-Work-Chat b328 (Bogen 1 2048, Glyphen, Reise-Streifen, Master-Kit). Flug: Ink-Kontur 4 Varianten gebaut (inkline, alle ~0 ms bei 60 Slops), Beleg zurueck wegen Groessen/Ausschnitt; Ursache Zellhoehe statt Koerper -> slopGroesse.js fx/slop-r1 @39e0c950, koerper_v vom Verteiler; Slot an Flug.",
+   "values": {},
+   "owner": "Kartenkante · Flug · Verteiler",
+   "check": "q515, b328",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gemessen wird der Koerper, nicht die Zelle; der Hut sitzt obendrauf.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
