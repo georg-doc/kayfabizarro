@@ -1,0 +1,347 @@
+{
+ "schema": "kfb.meshopt-delivery/1",
+ "id": "MODELLE_KLEINER_R2",
+ "date": "2026-11-04",
+ "auftrag": "WS1 Q-064 über WS0",
+ "status": "pending-ws1",
+ "verfahren": {
+  "geometrie": "EXT_meshopt_compression, Methode QUANTIZE ohne quantize() = Filter NONE, verlustfrei; reorder",
+  "texturen": "EXT_texture_webp (sharp), PNG ≤ 256² ohne Alpha verlustfrei",
+  "simplify": "MeshoptSimplifier nur bei statischen Props, je Datei unten",
+  "nicht": "kein prune/dedup/join/Umbenennen, kein quantize (würde Knoten-TRS ändern), kein toktx/KTX2",
+  "grund_verlustfrei": "Der Filter-Modus (8-Bit-Normalen, 12/16-Bit-Animation) zerstörte bei A11 Augen- und Mund-Normalen"
+ },
+ "spiel_braucht": "MeshoptDecoder (GLTFLoader.setMeshoptDecoder) – WS1 bereitet vor; WebP lädt GLTFLoader ohne Zusatz",
+ "ablage": "neue Dateien mit Endung .mo.glb neben dem Original; Originale unverändert. Umschalten im Spiel durch WS1",
+ "dateien": {
+  "ufo": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/UFO_HD_R1/_privat_meshy/KFB_UFO_HD.r1.glb",
+   "neu": "50_BLENDER/UFO_HD_R1/_privat_meshy/KFB_UFO_HD.r1.mo.glb",
+   "sha256": "7cf02461dd27982cac67fff2f638df122254148426656f225bbb097fbda8d725",
+   "mb_vor": 15.01,
+   "mb_nach": 4.09,
+   "anteil": 0.27,
+   "ziel": "≤ 5 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    440002,
+    132242
+   ],
+   "optionen": {
+    "simplify": "0.3,0.001",
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich gleich"
+  },
+  "tub": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/TUB_R6/_privat_meshy/KFB_BathtubKart.r6e.glb",
+   "neu": "50_BLENDER/TUB_R6/_privat_meshy/KFB_BathtubKart.r6e.mo.glb",
+   "sha256": "d188476ad8de3019b2f6f62ea71af40bf1fcd87f2eb75071eab1cc24ca048058",
+   "mb_vor": 7.31,
+   "mb_nach": 2.16,
+   "anteil": 0.3,
+   "ziel": "≤ 2.5 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    201078,
+    60934
+   ],
+   "optionen": {
+    "simplify": "0.25,0.004",
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 82,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich+nah gleich"
+  },
+  "crater": {
+   "repo": "game (Zweig assets/meshopt-r2)",
+   "original": "src/assets/world/crater_a2.glb",
+   "neu": "src/assets/world/crater_a2.mo.glb",
+   "sha256": "8a5e066aea26ee629e1681341b3ac783789dccf6cb35f9f8c0d08546f448c7dc",
+   "mb_vor": 6.56,
+   "mb_nach": 2.14,
+   "anteil": 0.33,
+   "ziel": "≤ 2.5 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    148000,
+    148000
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich+oben gleich, dunkler Rand erhalten"
+  },
+  "jetpack": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/JETPACK/_privat_meshy/r2/jetpack_r2d.glb",
+   "neu": "50_BLENDER/JETPACK/_privat_meshy/r2/jetpack_r2d.mo.glb",
+   "sha256": "2e09d4ba6bf995157c40596d3ab2f401561a8cd791354b4202478fee342b9cd1",
+   "mb_vor": 6.39,
+   "mb_nach": 0.52,
+   "anteil": 0.08,
+   "ziel": "≤ 2 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    7410,
+    7410
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 88,
+    "max_px": 1024
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich gleich"
+  },
+  "roof": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/J7/_privat_kauf_asset/KFB_Motion_roofdriver_j7.r4a.glb",
+   "neu": "50_BLENDER/J7/_privat_kauf_asset/KFB_Motion_roofdriver_j7.r4a.mo.glb",
+   "sha256": "15fb7b557f5d4b843b3460e8efaaed033f75f072e1f71ca6b57318e1fc29af36",
+   "mb_vor": 5.3,
+   "mb_nach": 0.53,
+   "anteil": 0.1,
+   "ziel": "≤ 2 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    0,
+    0
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": true,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "nicht im Bild geprüft (nur Clips): resample, Kurven innerhalb der Toleranz, Clip-Namen und -Längen gleich"
+  },
+  "tower": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/B40/_privat_meshy/KFB_BlobCorp_Tower_Eye.game.r7f.glb",
+   "neu": "50_BLENDER/B40/_privat_meshy/KFB_BlobCorp_Tower_Eye.game.r7f.mo.glb",
+   "sha256": "d4f21cd81761f14dcd0c5016eab31e942374e037bc9755968d753d49936d8761",
+   "mb_vor": 3.39,
+   "mb_nach": 1.2,
+   "anteil": 0.35,
+   "ziel": "≤ 1.3 MB",
+   "ziel_erreicht": true,
+   "dreiecke": [
+    45772,
+    27033
+   ],
+   "optionen": {
+    "simplify": "0.4,0.002",
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 82,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich (rest/half/closed) gleich"
+  },
+  "stone": {
+   "repo": "game (Zweig assets/meshopt-r2)",
+   "original": "src/assets/place/kfb_stone_kit.v4.glb",
+   "neu": "src/assets/place/kfb_stone_kit.v4.mo.glb",
+   "sha256": "286046919ea1b5042fbf5203427b32f2385e3dc284f1eb7de2291e910b8cfd74",
+   "mb_vor": 1.95,
+   "mb_nach": 0.94,
+   "anteil": 0.48,
+   "ziel": "≤ 0.8 MB",
+   "ziel_erreicht": false,
+   "dreiecke": [
+    84897,
+    66447
+   ],
+   "optionen": {
+    "simplify": "0.3,0.0018",
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "vorn+seitlich+nah gleich; stärkere Stufe (0,3/0,004) verworfen: Streifen auf Flächen"
+  },
+  "a11": {
+   "repo": "assets/private (Zweig assets/meshopt-r2-private)",
+   "original": "50_BLENDER/FB/R5/R8/FB_R8_probe_A11.glb",
+   "neu": "50_BLENDER/FB/R5/R8/FB_R8_probe_A11.mo_kandidat.glb",
+   "sha256": "9f65a0fe4c51a95b8f69bbf9ee7aac9e75a311a7377762cf6636a5eefa0ce8eb",
+   "mb_vor": 7.67,
+   "mb_nach": 3.43,
+   "anteil": 0.45,
+   "ziel": "≤ 3 MB",
+   "ziel_erreicht": false,
+   "dreiecke": [
+    165478,
+    165478
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "Proof G1–G6 PASS (G4 WARN wie Original), Augen und Mund intakt",
+   "hinweis": "FB_CANON (Sperre per sha): nur Kandidat. Gilt erst mit neuem Pin durch Georg."
+  },
+  "v5b": {
+   "repo": "game (Zweig assets/meshopt-r2)",
+   "original": "src/assets/actors/FB_TEMPLATE_LOOK_v5b.glb",
+   "neu": "src/assets/actors/FB_TEMPLATE_LOOK_v5b.mo.glb",
+   "sha256": "a57f3366b35e89488b71d278bd41895f1daf9bd624ce4b3d563ab54a7b7b7557",
+   "mb_vor": 1.79,
+   "mb_nach": 0.79,
+   "anteil": 0.44,
+   "ziel": "≤ 0.7 MB",
+   "ziel_erreicht": false,
+   "dreiecke": [
+    61034,
+    61034
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": true
+   },
+   "sicht": "nicht im Bild prüfbar (FB_CANON-Sperre der Proof-Stage), Signatur gleich, verlustfrei",
+   "hinweis": "Gilt erst mit neuem Pin (Q-064)."
+  },
+  "lorekeeper": {
+   "repo": "game (Zweig assets/meshopt-r2)",
+   "original": "src/assets/actors/cast/Lorekeeper.glb",
+   "neu": "src/assets/actors/cast/Lorekeeper.mo.glb",
+   "sha256": "fcd15ad0887d4dbc1f9c10eaf399275c989d81c02db48590b57d132514276ce7",
+   "mb_vor": 0.58,
+   "mb_nach": 0.34,
+   "anteil": 0.58,
+   "ziel": "≤ 40 %",
+   "ziel_erreicht": false,
+   "dreiecke": [
+    10738,
+    10738
+   ],
+   "optionen": {
+    "simplify": null,
+    "lockBorder": false,
+    "resample": false,
+    "webp_q": 90,
+    "max_px": 0
+   },
+   "signatur_gleich": {
+    "nodes": true,
+    "materials": true,
+    "anims": true,
+    "morphs": true,
+    "skins": true,
+    "tex": true,
+    "trs": false
+   },
+   "sicht": "vorn+seitlich gleich",
+   "hinweis": "Knoten-TRS weichen an 8 Knochen um höchstens 1,1e-5 ab (Gleitkomma-Rundung); sonst gleich. Verlustfrei sind 58 % das Minimum, das Ziel 40 % ginge nur verlustbehaftet."
+  }
+ },
+ "offen": [
+  "Über Ziel, verlustfrei nicht weiter: A11 3,43/3 (Figur, Kandidat), v5b 0,79/0,7 (Figur), Lorekeeper 58 %/40 % (Figur), Stein-Kit 0,94/0,8 (mehr Simplify erzeugt Streifen)",
+  "Agenten-Dateien aus Q-064 im Repo nicht gefunden: bitte Pfade nennen",
+  "hero.glb nicht angefasst",
+  "toktx/KTX2 nicht genutzt (wartet auf Georgs Ja)"
+ ]
+}
