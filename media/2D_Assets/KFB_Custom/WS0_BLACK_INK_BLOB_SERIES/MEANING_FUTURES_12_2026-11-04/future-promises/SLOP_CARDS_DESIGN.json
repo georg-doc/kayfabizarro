@@ -1,0 +1,582 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_FUTURE_PROMISES_20261104",
+  "figuren": [
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_01",
+      "name": {
+        "v": "Frau Trendgewiss",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She predicts the prevailing direction with admirable loyalty to whichever way it is already turning.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "future trend analyst",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "quiet clipped authority interrupted by doubt",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Richtung ist eindeutig. Sie wartet nur kurz ab, welche es diesmal wird.",
+        "black_white_logic": "She predicts the prevailing direction with admirable loyalty to whichever way it is already turning.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot1 FEMALE-READ FUTURE TREND ANALYST: medium tall asymmetrical curved bean ink blob with one high soft violet quiff, tiny worn indigo soft cap, little mustard collar and one round copper earstud. One heavy half-lid and other raised, WHITE/red/black gaze sideways, CLOSED narrow skeptical mouth with one ivory fang. Both hands hold ONE beautiful portable brass WEATHER VANE at own belly: squat rounded copper weighted base, a short thick vertical spindle and ONE broad simple arrow rotating on top. NO letters/compass directions, extra rotating wheels, background wind or floating arrows; one compact recognizable prop with tactile worn metal."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_02",
+      "name": {
+        "v": "Herr Automatenvertrauen",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He regards winding the machine as proof that it has learned to want something.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "AI evangelist",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "expansive bright confidence, conspicuous pauses for agreement",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es arbeitet schon ganz von allein. Er möchte nur ungern mit dem Aufziehen aufhören.",
+        "black_white_logic": "He regards winding the machine as proof that it has learned to want something.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot2 male AI EVANGELIST: very broad low springy ink splat with three irregular upward goo lobes, tiny teal hoodie collar and a short rust scarf. Enormous ecstatic SIDEWAYS open-tooth LAUGH, one eye shut and other wide WHITE/red/black looking fondly at object, NO tongue. Holds ONE small clearly INANIMATE rounded teal-and-brass CLOCKWORK ROBOT TOY at belly, stubby simple toy limbs, blank enamel face with no expressive eyes, one huge ivory winding key at its back. One goo hand turns key. Toy is a handheld object, not an additional living character; exactly SIX main ink actors on sheet, no screens/code/text."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_03",
+      "name": {
+        "v": "Herr Späterleben",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He preserves tomorrow with the exhausted care of someone who has postponed today on its behalf.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "cryonic future salesman",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "precise soft correction with an impatient last word",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es wird später besser. Die Aufbewahrung hat er bereits großzügig berechnet.",
+        "black_white_logic": "He preserves tomorrow with the exhausted care of someone who has postponed today on its behalf.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot3 male CRYONIC FUTURE SALESMAN: tall drooping broad-bottom pear ink blob with one long soft downward crown lobe, tiny plum hood and small cream collar, two padded mustard wrist cuffs. Heavy sleepy WHITE/red/black eyes looking DOWN, deep FLAT downward lip with three little ivory teeth, no grin. Both arms hug ONE absurdly huge bulbous old-fashioned silver-and-copper insulated vacuum flask with thick blue cap CLOSED, softly rounded metal, visible scuffs, no labels, smoke, ice or extra tools. Upright whole dark goo outline, flask against own belly, no human torso."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_04",
+      "name": {
+        "v": "Architektin Endlichgut",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She makes the future habitable by keeping the model small enough to agree with her.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "utopian architect",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "strained breath and a tentative rising finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Hier passt alles zusammen. Für Bewohner ist im Modell noch kein Aufwand vorgesehen.",
+        "black_white_logic": "She makes the future habitable by keeping the model small enough to agree with her.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot4 FEMALE-READ UTOPIAN ARCHITECT: compact rounded triangular ink splat, sculpted purple curled goo crest under little faded cream cap, short coral collar, subtle lashes. Proud knowing CLOSED crooked gold-fang smile, one white/red/black eye shut in wink and other calmly forward. Both hands present ONE small single-piece cream model HOUSE with teal rounded pitched roof, plain recessed dark window and tiny brass round door knob, held firmly against own belly. Clearly a compact handheld architectural model, NOT a scenelet, no miniature landscape/people/trees/baseplate. Whole ink lobes dominate and are visible around prop."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_05",
+      "name": {
+        "v": "Herr Vorratszukunft",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He prepares for the worst because an ordinary afternoon offers too little certainty.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "doomsday prepper",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low contented judgement, slow rounded emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er ist auf alles vorbereitet. Es wäre inzwischen etwas unhöflich, wenn nichts davon einträte.",
+        "black_white_logic": "He prepares for the worst because an ordinary afternoon offers too little certainty.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male DOOMSDAY PREPPER: towering narrow tapered ink blob with two uneven drooping upper lobes, battered tiny olive cap and short rust-red scarf. Huge alarmed uneven WHITE/red/black eyes looking UP, crooked compressed ZIGZAG mouth with two broad lower fangs, no smile/tongue. One huge goo arm protectively hugs ONE giant rounded sealed tin of food with plain dull teal labelless body and fat copper lid, other hand delicately grips ONE comically tiny ivory spoon at belly. No gas mask/weapons/piles, blank no symbols/text, physical nervous attachment."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_06",
+      "name": {
+        "v": "Herr Aufstiegsweg",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He sells the next step with the confidence of someone who intends to keep holding the ladder.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "social mobility adviser",
+              "biome": [],
+              "decks": [
+                "ai_kayfabe",
+                "forget_utopia",
+                "ignore_dystopia",
+                "embrace_protopia",
+                "wrinkle_rumble"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "brisk official middle register with sudden anxious catches",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Aufstieg steht offen. Die Leiter wird allerdings nur beratend überlassen.",
+        "black_white_logic": "He sells the next step with the confidence of someone who intends to keep holding the ladder.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_FUTURE_PROMISES_20261104",
+        "image_cell": {
+          "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot6 male SOCIAL MOBILITY ADVISER: very low broad heavy wavy ink splat, one short crown curl, tiny worn burgundy short collar and small soft mustard cap. Lazy half-lidded WHITE/red/black gaze UP, CLOSED shallow crooked smile with three sparse teeth. Both hands cradle ONE tiny folded thick wooden stepladder close against own body, just four beautifully rounded worn wood rails with THREE broad ivory steps, folded compactly not standing on ground. He does not climb it or offer it to another actor. Few strong shapes, no floor/scenery, no humanoid limbs; full goo base visible."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    }
+  ]
+}

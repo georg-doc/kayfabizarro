@@ -1,0 +1,183 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_FUTURE_PROMISES_20261104",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_AWAITING_GEORG",
+  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+    "sha256": "231b2baa28cc1b75344b0838a396cb59099903bebff6415d6a3857f20166a707"
+  },
+  "production_record": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+  "cards": "MEANING_FUTURES_12_2026-11-04/future-promises/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_DECISION"
+  },
+  "figuren": [
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Trendgewiss",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "portable brass weather vane"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ FUTURE TREND ANALYST: medium tall asymmetrical curved bean ink blob with one high soft violet quiff, tiny worn indigo soft cap, little mustard collar and one round copper earstud. One heavy half-lid and other raised, WHITE/red/black gaze sideways, CLOSED narrow skeptical mouth with one ivory fang. Both hands hold ONE beautiful portable brass WEATHER VANE at own belly: squat rounded copper weighted base, a short thick vertical spindle and ONE broad simple arrow rotating on top. NO letters/compass directions, extra rotating wheels, background wind or floating arrows; one compact recognizable prop with tactile worn metal.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Automatenvertrauen",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small clockwork robot toy"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 male AI EVANGELIST: very broad low springy ink splat with three irregular upward goo lobes, tiny teal hoodie collar and a short rust scarf. Enormous ecstatic SIDEWAYS open-tooth LAUGH, one eye shut and other wide WHITE/red/black looking fondly at object, NO tongue. Holds ONE small clearly INANIMATE rounded teal-and-brass CLOCKWORK ROBOT TOY at belly, stubby simple toy limbs, blank enamel face with no expressive eyes, one huge ivory winding key at its back. One goo hand turns key. Toy is a handheld object, not an additional living character; exactly SIX main ink actors on sheet, no screens/code/text.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Späterleben",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized insulated flask"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male CRYONIC FUTURE SALESMAN: tall drooping broad-bottom pear ink blob with one long soft downward crown lobe, tiny plum hood and small cream collar, two padded mustard wrist cuffs. Heavy sleepy WHITE/red/black eyes looking DOWN, deep FLAT downward lip with three little ivory teeth, no grin. Both arms hug ONE absurdly huge bulbous old-fashioned silver-and-copper insulated vacuum flask with thick blue cap CLOSED, softly rounded metal, visible scuffs, no labels, smoke, ice or extra tools. Upright whole dark goo outline, flask against own belly, no human torso.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Architektin Endlichgut",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small handheld model house"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ UTOPIAN ARCHITECT: compact rounded triangular ink splat, sculpted purple curled goo crest under little faded cream cap, short coral collar, subtle lashes. Proud knowing CLOSED crooked gold-fang smile, one white/red/black eye shut in wink and other calmly forward. Both hands present ONE small single-piece cream model HOUSE with teal rounded pitched roof, plain recessed dark window and tiny brass round door knob, held firmly against own belly. Clearly a compact handheld architectural model, NOT a scenelet, no miniature landscape/people/trees/baseplate. Whole ink lobes dominate and are visible around prop.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Vorratszukunft",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large sealed food tin",
+        "tiny spoon"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male DOOMSDAY PREPPER: towering narrow tapered ink blob with two uneven drooping upper lobes, battered tiny olive cap and short rust-red scarf. Huge alarmed uneven WHITE/red/black eyes looking UP, crooked compressed ZIGZAG mouth with two broad lower fangs, no smile/tongue. One huge goo arm protectively hugs ONE giant rounded sealed tin of food with plain dull teal labelless body and fat copper lid, other hand delicately grips ONE comically tiny ivory spoon at belly. No gas mask/weapons/piles, blank no symbols/text, physical nervous attachment.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_FUTURE_PROMISES_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Aufstiegsweg",
+      "bild": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small folded wooden stepladder"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male SOCIAL MOBILITY ADVISER: very low broad heavy wavy ink splat, one short crown curl, tiny worn burgundy short collar and small soft mustard cap. Lazy half-lidded WHITE/red/black gaze UP, CLOSED shallow crooked smile with three sparse teeth. Both hands cradle ONE tiny folded thick wooden stepladder close against own body, just four beautifully rounded worn wood rails with THREE broad ivory steps, folded compactly not standing on ground. He does not climb it or offer it to another actor. Few strong shapes, no floor/scenery, no humanoid limbs; full goo base visible.",
+      "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/future-promises/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ]
+}

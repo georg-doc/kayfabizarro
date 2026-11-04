@@ -193,10 +193,25 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
+    "sheets": 2,
+    "depictions": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }
