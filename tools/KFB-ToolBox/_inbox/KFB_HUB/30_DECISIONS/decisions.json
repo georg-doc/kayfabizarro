@@ -20681,6 +20681,21 @@
    "superseded_by": [],
    "why": "Die Site ist reine Build-Ausgabe und braucht nichts von aussen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1411",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Slop-Goo-Tod (q487, Georg im Chat): Blobs drehen sich als flache 2D-Karten -> zylindrisch zur Kamera, nie Kante, hoechstens ~20 Grad Schwenk; Uebergang Blob -> Splash fehlt -> Blob wird sichtbar zum Spritzer (Squash, Ueberblendung Silhouette/erstes Splash-Bild, gleiche Farbe/Groesse); Zustandswechsel flackern -> vorgeladen, ueberblendet, keine Spruenge. Gilt auch fuer Huepfen/Reaktionen.",
+   "values": {},
+   "owner": "Rakete/Flug · Georg",
+   "check": "q487",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "2D-Figuren nie als Karte zeigen, jeder Zustand fliesst in den naechsten.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
