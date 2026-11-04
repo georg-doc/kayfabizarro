@@ -1,0 +1,4 @@
+import * as THREE from './vendor/three.module.js';
+import {EyeRig} from './vendor/pet-eye-rig.v6.js';
+// Unmodified KFB EyeRig-v6 donor. The invisible sphere is a fit scaffold only.
+export function createKfbEye(){const group=new THREE.Group(),body=new THREE.Mesh(new THREE.SphereGeometry(.9,32,24),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false,colorWrite:false}));group.add(body);group.updateMatrixWorld(true);const rig=new EyeRig({THREE,inner:group},{anchor:{dx:0,dy:0,ring:.64,track:.12},baseColor:0xd5bd73,pupilSize:.52});rig.build();rig.eyes[1].visible=false;const target=new THREE.Mesh(new THREE.SphereGeometry(.25,16,12),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false,colorWrite:false}));target.position.z=1;group.add(target);return {group,target,rig};}

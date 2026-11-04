@@ -1,0 +1,71 @@
+{
+  "id": "dada-garten",
+  "title": "Dada-Garten",
+  "context": "ARTISTIC",
+  "look": "paper",
+  "bpm": 125,
+  "colors": [
+    "#130b22",
+    "#ecb7de",
+    "#c5ee76"
+  ],
+  "music": [
+    "music/s2_atembett/0 Bass.mp3",
+    "music/s2_atembett/1 Keyboard.mp3",
+    "music/s2_atembett/2 Strings.mp3",
+    "music/s2_atembett/3 Synth.mp3"
+  ],
+  "atmo": [
+    "audio/KS1_angerieben.m4a",
+    "audio/KS3_duett.m4a",
+    "audio/NA2_bach.m4a",
+    "audio/NA3_voegel.m4a"
+  ],
+  "texts": [
+    "A CARAFE, THAT IS A BLIND GLASS.",
+    "A kind in glass and a cousin, a spectacle and nothing strange",
+    "Tyger Tyger, burning bright,",
+    "In the forests of the night;"
+  ],
+  "textSource": "poetry",
+  "mixDb": {"music": [0, -4, 4, 0], "atmo": [-8, -8, -10, -14], "voice": null},
+  "portals": [
+    {
+      "kind": "bubble",
+      "target": "sendezentrale"
+    },
+    {
+      "kind": "eye",
+      "target": "aktenrauschen"
+    },
+    {
+      "kind": "caption",
+      "target": "sendezentrale"
+    }
+  ],
+  "schema": "kfb.hypernorm-sphere/2",
+  "seed": 738,
+  "shells": 3,
+  "hold": {
+    "minimumSeconds": 4,
+    "perBars": 16
+  },
+  "rights": [
+    {
+      "source": "georg-doc/KFB-Stunt-Car-Race@assets/hypernorm-r1",
+      "rights": "Georg-owned/generated; PRIVATE; same authenticated Site only"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/15396",
+      "rights": "Gertrude Stein (1874–1946), Tender Buttons (1914); public domain, author died over 70 years ago"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/1934",
+      "rights": "William Blake (1757–1827), Songs of Innocence and Experience (1794); public domain"
+    },
+    {
+      "source": "https://www.archives.gov/research/topics/uaps",
+      "rights": "NARA federal collection index; excerpts attributed to NARA; no LHOHQ material copied"
+    }
+  ]
+}

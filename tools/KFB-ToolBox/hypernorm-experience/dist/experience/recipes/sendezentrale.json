@@ -1,0 +1,65 @@
+{
+  "id": "sendezentrale",
+  "title": "Sendezentrale",
+  "context": "POLITICAL",
+  "look": "crt",
+  "bpm": 125,
+  "colors": [
+    "#070908",
+    "#b6ff88",
+    "#d7422a"
+  ],
+  "music": [
+    "music/M2_endlose_steigung.m4a"
+  ],
+  "atmo": [
+    "audio/KS4_kristall.m4a",
+    "audio/NA4_nacht.m4a"
+  ],
+  "texts": [
+    "The broadcast will continue.",
+    "No further action is required.",
+    "You have already seen this before."
+  ],
+  "textSource": "meme-pool",
+  "mixDb": {"music": [0], "atmo": [-6, -10], "voice": 0},
+  "portals": [
+    {
+      "kind": "television",
+      "target": "aktenrauschen"
+    },
+    {
+      "kind": "eye",
+      "target": "dada-garten"
+    },
+    {
+      "kind": "bubble",
+      "target": "aktenrauschen"
+    }
+  ],
+  "schema": "kfb.hypernorm-sphere/2",
+  "seed": 738,
+  "shells": 3,
+  "hold": {
+    "minimumSeconds": 4,
+    "perBars": 16
+  },
+  "rights": [
+    {
+      "source": "georg-doc/KFB-Stunt-Car-Race@assets/hypernorm-r1",
+      "rights": "Georg-owned/generated; PRIVATE; same authenticated Site only"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/15396",
+      "rights": "Gertrude Stein (1874–1946), Tender Buttons (1914); public domain, author died over 70 years ago"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/1934",
+      "rights": "William Blake (1757–1827), Songs of Innocence and Experience (1794); public domain"
+    },
+    {
+      "source": "https://www.archives.gov/research/topics/uaps",
+      "rights": "NARA federal collection index; excerpts attributed to NARA; no LHOHQ material copied"
+    }
+  ]
+}

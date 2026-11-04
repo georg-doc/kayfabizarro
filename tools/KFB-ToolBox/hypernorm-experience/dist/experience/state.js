@@ -1,0 +1,6 @@
+export const SPHERES=['sendezentrale','aktenrauschen','dada-garten'];
+export function rng(seed){return ()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
+export function createState(seed=738){return {seed,room:0,visits:[0,0,0],mode:'rabbit',lastInput:0,roomStarted:0,elapsed:0,history:[],nextRoom:1,transitioning:false};}
+export function selectNext(state,steer=0){if(steer<-.2)return (state.room+2)%3;if(steer>.2)return (state.room+1)%3;const candidates=[0,1,2].filter(i=>i!==state.room);const minimum=Math.min(...candidates.map(i=>state.visits[i]));const balanced=candidates.filter(i=>state.visits[i]===minimum);return balanced[Math.floor(rng(state.seed+state.history.length*7919)()*balanced.length)];}
+export function enterRoom(state,room,time){if(!Number.isInteger(room)||room<0||room>2)throw Error('Invalid sphere');state.room=room;state.visits[room]++;state.roomStarted=time;state.nextRoom=(room+1)%3;state.history.push({room:SPHERES[room],at:time,seed:state.seed+state.visits[room]*997});}
+export function shotAt(seconds,bpm=125){const beat=seconds*bpm/60,cycle=Math.floor(beat/64),within=beat%64;const hold=within<16;return {hold,local:hold?within*60/bpm:(within-16)%4*60/bpm,slot:hold?cycle*13:cycle*13+1+Math.floor((within-16)/4),duration:hold?16*60/bpm:4*60/bpm};}
