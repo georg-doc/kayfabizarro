@@ -20486,6 +20486,21 @@
    "superseded_by": [],
    "why": "Abgenommenes hinter Schaltern einbauen, Offenes bleibt aus.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1398",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "terrainRipple (WS-Design design/kartenbau-r4 @49f54514, src/look/terrainRipple.js): Vertex-Versatz plus Normalen, Ringpuffer 8, Neigung gedeckelt, Endlos-Gelaende und Viertel, onRipple-Ereignis, Quellen harte Landung Wagen/Figur; Holo-Druckwelle ersetzt. Hub q480. Vorhang R4 (Kartenkante @5f65caac, velvetCurtain.js nach webgpu_compute_cloth r186: Compute-Verlet, 2x96x72, Sheen, unregelmaessige Falten, Oberkante ausserhalb) Hub q481. Naechstes WS-Design: Aufprallschaden Wagen-Gebaeude mit Ripple; animierte HyperNorm-Fassade (Ebenen im Shader, gemeinsame Uhr ab Aufbau, Vorbild H15).",
+   "values": {},
+   "owner": "WS-Design · Kartenkante · Georg",
+   "check": "q480, q481",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine reaktive Welt braucht ein gemeinsames Einschlag-Modul.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

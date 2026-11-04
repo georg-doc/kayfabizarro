@@ -1375,6 +1375,7 @@ d('V-1394','04.11.2026','Welt','KEEP','Georg 04.11.: Holo-Aufbau sehr cool; aeus
 d('V-1395','04.11.2026','HUD','TUNE','Vorhang R3 (Georg 04.11.): Physik/Licht ok, wirkt aber wie Faltwand, brauner Balken stoert. Neues Vorbild von Georg: three.js webgpu_compute_cloth (GPU-Stoff, hohe Aufloesung, weiche Normalen, Samt-Sheen); schwerer Theatervorhang mit tiefen runden Falten, kein Balken; spaeter DIY-Holzbuehnen-Portal als Rahmen (Bild-Briefing b312). Plan B: KFB-Karte auf Faltwand. Slop-Papier-Tod angehalten (R7 3-5/10; dunkles Clay-Bild liest sich nicht als Papier); Tod bleibt Platzen+Spur; neue Richtung: gemalte schwarze Goo-Splash-Sprites (Bild-Briefing b313). Slop-Stimme, Schreck-Ton, Treffer-Codes, Bewegungen merge-fertig machen.','Kartenkante · Rakete/Flug · Georg','q474','Georg 04.11.'),
 d('V-1396','04.11.2026','Look','RULE','Georg 04.11. (q479): 2D/3D-Mix bei den Fluff-Kugeln vermeiden. Regel: HUD = 2D-PNGs (Georgs Claymation-Sprites); 3D-Welt = 3D im Licht-Rig mit kfb-clay (instanzierte Klumpen in Georgs Farben, Spritzer als GPU-Partikel aus kfbTropfen nach dem Vorbild der Splash-Bilder); Flug ins HUD mit Uebergabe 3D->Sprite im Bildschirmraum. Pop-ups bleiben bewusst 2D-Einfuegen-Ebene. Umbau Kartenkante nach dem Vorhang.','Kartenkante · Georg','q479','Georg 04.11.'),
 d('V-1397','04.11.2026','Spiel','BUILD','Slop merge-fertig (fx/slop-r1 @04a4ccbc, enthaelt popups-ingest-r1 und inkblobs-r1; FF auf integration-r2): slopbewegung=1, slopton=1 (Stimme R2, Schreck, Treffer-Codes, Tod-Glissando), slopzerfall angehalten; privat assets/slop-audio-r1 @73fe6acb. An WS1 N-110. Zweiter Radio-Skin von Georg (tuerkis mit Gluehroehre) an Kartenkante nach Vorhang und Fluff-Umbau.','Rakete/Flug · Verteiler · Kartenkante · WS1','','Georg 04.11.'),
+d('V-1398','04.11.2026','Look','REVIEW','terrainRipple (WS-Design design/kartenbau-r4 @49f54514, src/look/terrainRipple.js): Vertex-Versatz plus Normalen, Ringpuffer 8, Neigung gedeckelt, Endlos-Gelaende und Viertel, onRipple-Ereignis, Quellen harte Landung Wagen/Figur; Holo-Druckwelle ersetzt. Hub q480. Vorhang R4 (Kartenkante @5f65caac, velvetCurtain.js nach webgpu_compute_cloth r186: Compute-Verlet, 2x96x72, Sheen, unregelmaessige Falten, Oberkante ausserhalb) Hub q481. Naechstes WS-Design: Aufprallschaden Wagen-Gebaeude mit Ripple; animierte HyperNorm-Fassade (Ebenen im Shader, gemeinsame Uhr ab Aufbau, Vorbild H15).','WS-Design · Kartenkante · Georg','q480, q481','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2737,6 +2738,7 @@ WHY = {
  'V-1395':('Gemalte Bilder fuer Effekte, die sich physikalisch nicht als Material lesen.','04.11.2026'),
  'V-1396':('Eine Bildsprache je Ebene: UI zweidimensional, Welt dreidimensional.','04.11.2026'),
  'V-1397':('Abgenommenes hinter Schaltern einbauen, Offenes bleibt aus.','04.11.2026'),
+ 'V-1398':('Eine reaktive Welt braucht ein gemeinsames Einschlag-Modul.','04.11.2026'),
 }
 SUP = {}
 for e in E:
