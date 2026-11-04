@@ -1,4 +1,10 @@
 # KFB HUD Kit · additive changelog
+## 2026-11-04 · Hazard/Blue/Slime sequential skin-wave intake
+- Recorded exact three models from user reference (top-left Yellow Hazard; bottom-right Blue Reactor; preceding lower-row Slime Green), production order and new WS0 two-sheet requirements.
+- Source isolation: six preexisting R3 donor PNGs with hash and border-alpha checks; old accepted Hazard 9-slice preserved. Existing donor bar boundaries still require human crop scrutiny.
+- TWO newly generated Hazard Sheet1 attempts both FAIL (RGB 1536×1024 mixed three-skin collage, one with baked checkerboard). Quarantined only failing generator seam after two non-improving attempts; raw outputs archived in conversation ZIP.
+- Stored machine queue, source QA manifest and fresh-chat resumption brief; no source-binary GitHub pin, no runtime or deployment changes.
+
 ## 2026-11-04 · R1.1 WS0 runtime-spec reconciliation (docs only)
 - Cross-checked KFB-Stunt-Car-Race@module/hud-clay-r1 HUD_SKIN_SPEC.md, HUD_LAYOUT_R2.md, hudbar_measure.py, cut-sheet1.py and master-kit.py.
 - Corrected radio to LEFT screen edge with neutral Master-Kit panel opening RIGHT. No per-skin replacement drawer image required.

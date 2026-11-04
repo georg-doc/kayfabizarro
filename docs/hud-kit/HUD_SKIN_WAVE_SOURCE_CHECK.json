@@ -1,0 +1,156 @@
+{
+  "schema_version": "kfb.hud-wave-source-qa/1",
+  "date": "2026-11-04",
+  "original_user_reference": {
+    "file": "image(20261104-041849).png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "3c0d25a46f4f00eefd7e68d974a93cd97535e8ded3ecc8e71dbc613fd1c8447f"
+  },
+  "current_chat_archive": "KFB_HUD_Skin_Wave_Source_And_Failure_Recovery_2026-11-04.zip (user-downloadable in producing chat; NOT in GitHub; reattach in fresh chat)",
+  "donor_visual_status": "SOURCE_ISOLATED_ONLY_NOT_NEW_SHEETS",
+  "components": [
+    {
+      "skin": "hazard_yellow",
+      "role": "radio_minified_alternate",
+      "file": "hazard_yellow_radio_minified_source.png",
+      "dimensions": [
+        127,
+        510
+      ],
+      "sha256": "85b9f7c78cec51fbea1b95b82881459e3999f66100269a32b4818ba08170f80d",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 36
+      },
+      "visual_status": "TUNE_BOTTOM_CROP_POSSIBLE"
+    },
+    {
+      "skin": "hazard_yellow",
+      "role": "panel_historic",
+      "file": "hazard_yellow_panel_historical_donor.png",
+      "dimensions": [
+        259,
+        400
+      ],
+      "sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "visual_status": "HAZARD_9SLICE_HUMAN_PASS_OLD"
+    },
+    {
+      "skin": "reactor_blue",
+      "role": "radio_minified",
+      "file": "reactor_blue_radio_minified_source.png",
+      "dimensions": [
+        125,
+        485
+      ],
+      "sha256": "687e987d53dd8465357718d02962d9c84f1dba31b0d62bcb16668336aefbc577",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 0,
+        "top": 28,
+        "bottom": 0
+      },
+      "visual_status": "TUNE_TOP_CROP_POSSIBLE"
+    },
+    {
+      "skin": "reactor_blue",
+      "role": "panel_historic",
+      "file": "reactor_blue_panel_historical_donor.png",
+      "dimensions": [
+        279,
+        407
+      ],
+      "sha256": "58556ccdc7d23a1a5873dcd5569b292c10e08bd7f9fab76c1afcd4a207ce10b1",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "visual_status": "LOCAL_9SLICE_CANDIDATE"
+    },
+    {
+      "skin": "slime_green",
+      "role": "radio_minified",
+      "file": "slime_green_radio_minified_source.png",
+      "dimensions": [
+        133,
+        492
+      ],
+      "sha256": "ab8dad1533d488210fafce4c3e0cd0e348b4cd73b0c8f64d1607540a6dabf9d7",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 20,
+        "top": 27,
+        "bottom": 0
+      },
+      "visual_status": "TUNE_TOP_AND_RIGHT_CROP_POSSIBLE"
+    },
+    {
+      "skin": "slime_green",
+      "role": "panel_historic",
+      "file": "slime_green_panel_historical_donor.png",
+      "dimensions": [
+        270,
+        408
+      ],
+      "sha256": "c0c22c086c4d8edf873ccb7e60fdb79fc43ed2d5dae2de2d106625481eaa0f21",
+      "alpha": "RGBA_0_255",
+      "edge_alpha_over_20": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "visual_status": "CANDIDATE"
+    }
+  ],
+  "failed_generation": [
+    {
+      "job": 1,
+      "file": "FAILED_JOB_01_rgb_black_three_themes.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "32e05b111100de2d908ff7df11d24f20e3d3a460ad68c8b5e2b47688432d95c2",
+      "structural_status": "FAIL"
+    },
+    {
+      "job": 2,
+      "file": "FAILED_JOB_02_rgb_checker_three_themes.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "34296aa3d1036dbeda1c0374a484473006c26caf07c54e6210e0185b2f0b47e7",
+      "structural_status": "FAIL"
+    }
+  ],
+  "measurements": {
+    "donors_rgba": "6/6",
+    "donor_panel_border_free": "3/3",
+    "radio_border_touch": "3/3",
+    "generated_production_sheet_pass": "0/2"
+  },
+  "notes": "Alpha-border touching is not proof of a visible defect by itself; inspect at native scale. Images not uploaded as binaries to GitHub."
+}

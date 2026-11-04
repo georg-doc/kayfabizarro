@@ -22,3 +22,10 @@ Next gate: source-isolated first real 2048 Sheet1 with attached accepted donor a
 - 14/14 deterministic contract assertions PASS in this update: left radio/right drawer, code ownership, steam skin, palette aliases, manifest field shape, preserved band/grid/state/speed contracts, documentation-only paths.
 - Runtime source inspected at `georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1` with branch head `7a3eec71dc6806bfbeb6ee1ab242868678cd8802`; documents `docs/hud-kit/HUD_SKIN_SPEC.md`, `HUD_LAYOUT_R2.md` and programs `hudbar_measure.py`, `cut-sheet1.py`, `master-kit.py`.
 - No PNG regenerated and no new image/visual or browser tests; previous 7/7 PNG validator fixtures unchanged. Manifest coordinates are illustrative zeros/nullable, marked NOT MEASURED, not game input.
+
+## 2026-11-04 · three-skin wave preflight
+- New attempted Hazard-Yellow image jobs: **0/2 PASS**. Both produced RGB 1536×1024, wrong theme set (all three), and lacked true PNG transparency. First opaque dark background; second drawn checkerboard. These are negative evidence, NOT donors.
+- Existing R3 donor assets: **6/6 RGBA** with alpha=0 present. Panels **3/3** have zero pixels with alpha>20 at all 4 image edges. Radio columns **3/3** touch at least one image edge with alpha>20: Hazard alternate bottom 36 rows; Blue top 28; Slime top 27 and right 20. These are potential crop defects; no visual PASS from format test alone.
+- Reference submitted in this turn: 1536×1024 RGBA transparent, SHA256 `3c0d25a46f4f00eefd7e68d974a93cd97535e8ded3ecc8e71dbc613fd1c8447f`.
+- Source objects were shown separately in conversation preview; no next-gen output, no game integration, no browser runtime QA. Local source/error ZIP contains 13 files and ~9.3 MB; binary not on GitHub.
+- Follow-up gate: isolated Hazard Sheet1 2048×2048 true-alpha and manual 48px silhouette + crop review; only then Sheet2 / Blue / Slime.
