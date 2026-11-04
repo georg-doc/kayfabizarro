@@ -1,3 +1,27 @@
+# CURRENT · HUD R10 · CUTS FIXED / GAME INTEGRATED / RESTART RECOVERY · 2026-11-05
+
+Steam and Slime's automatic well detection is fixed without changing native art. All six source pairs now cut in one call each:6Fluff+4radio,1476native. Existing12export comparisons unchanged;12actual source-well centers verified; two missing-well negative cases reject. Five expected current arrow-resize notices retained. Fresh ZIP extraction/rebuild passes. Independent receiving cutter critic PASS.
+
+**Real receiving integration:** direct collaboration with existing Kartenkante Claude Code session. R9 six-skin surfaces, R10 native bars/radio coordinates, shared R8base12roles, shared3DHero-Shots, source-budget and async-KIT sizing fixes, Settings skin chooser and action single-canvas seam correction are implemented. No per-slot rims/new object art or second runtime owner. Runtime remains georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1.
+
+**Remote backup verified:** code **ac4a433f6f921f8c552a4c00fbc73604e149e7b5** and private assets/private **2f96ab217de15ee587a1d22f1d6a150b45f70ba5**. Read back critical cutter, HUD code/data, shared-glyph data and receiving handoff at immutable code head.154required UI/native bar/signature/common glyph/Hero files match exact remote Git blobs. Native receiving images match102R9hashes,18bar pixel comparisons and12gear/radio pixel comparisons; all6hudbar and measured radio coordinate records agree. These are integrity/source checks, not proof of semantic role correctness.
+
+**Actual game evidence:** a pre-final24case/72state-image matrix covered all six at1280x720DPR2Compact/Normal/Large plus1440x900DPR2Large. All six measured177physicalpx against180source budget. Initial visual critic found issues; R8 missing import, action slice seams, tooltip and picker wrapping were then corrected. Only Retro4cases ran on the last committed state. Final6x4matrix and final independent image review remain NOT_RUN. Do not label the earlier full matrix as acceptance of the newer source/art pair.
+
+**Current known receiving findings:** Hazard siren/gear role selection and tiny Teal arrow need semantic cut review/fix. General panel seam review is not certified complete. The original Steam/Slime0/6 and4/6 holds are resolved; new visual findings are separate, not concealed by successful counts.
+
+**Restart stop:** Georg asked in the running native session to stop for shutdown/restart because of UI bugs. Kartenkante stopped server/test browser and WS0 pushed both source/art branches. This chat stopped its remaining monitor and started no further captures. No usable preview is currently claimed running. Authoring closure records the recovery point; whole-HUD/game/design acceptance is NOT complete.
+
+**Private cutter delta COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7enA;39694097bytes;135files;SHA256aa8bd8fc812225c1fa246a379fac233ce41bd4d83fb32c9980b2e06fe06e2735. Contains exact private scripts/patch, six native export sets, unchanged source pairs, baseline evidence and reproducible checks. R9surfaces/R8base are in the previous MixedBag and now backed up in receiving private art. This immutable delta is not advertised as final game proof.
+
+**Authoring persistence:** georg-doc/kayfabizarro, branch design/kfb-clay-hud-skin-kit-r1-2026-11-04, draftPR468. Updated SOP R10, HUD_CUTTER_REPAIR_R10_QA.json, Return and additive changelog. Evidence checkpointd801dfe0b0b675c2bba12da66491ad2679238ebc; SOP6fd7a3df7fd43699d141996f58518c262287b80f. Latest authoring head is fetched after closure commits. No game source write by this chat, no public screenshot/private-source copy, Hub/Stage change, merge or Live promotion.
+
+**One resume gate:** after Georg/WS0 explicitly resumes, Kartenkante takes first reserved browser slot, reviews/fixes the Teal/Hazard cut semantics, runs all24cases on the final exact source/art pair and gets independent image critic; then leaves a usable six-skin game review. Existing stable evidence locations: receiving worktree test/out/hud-kit/six_skins/, docs/hud-kit/six_skins_r9/ and docs/hud-kit/hub_r9/. Keep pre-final and final-Retro captures distinguished. Do not start automatically before restart/resume.
+
+---
+
+## Superseded checkpoints
+
 # CURRENT · HUD SURFACES R9 · SIX SKINS · 2026-11-04
 
 **Delivered:** 102 rendered HUD surfaces/controls (17 each for Retro, Steam, Teal, Reactor Blue, Slime Green, Hazard v2), plus24unchanged native R4 signature copies. Continuous action_surface832×180, ONE outer edge, ZERO individual slot rims/cavities/rings. No enlargement, blur or new object/glyph art. Existing common R8 symbols and actual-object Hero-Shots stay shared. R7 and cancelled bar_1..bar_8 family excluded.
