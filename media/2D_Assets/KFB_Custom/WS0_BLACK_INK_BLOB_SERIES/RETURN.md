@@ -1,3 +1,17 @@
+# CURRENT CHECKPOINT · Hitmen/women gang · explorers PASS · 2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Explorers ALL SIX GEORG DESIGN PASS. Mechanics, selected sailor R2 and pirates all-six PASS retained. Miners FAIL/TUNE unchanged. Normal families always one or two female-read Slops.
+- Hitmen/women: ONE new original-reference-conditioned 1536x1024 transparent 3x2 sheet, exactly six characters with two female-read slots2/5. DRAFT awaiting Georg.
+- PNG SHA256 62dd7006fee1b4dab7fa6072ae51cca415d8ea488d2a124db97cc2855bb079ae. Alpha0..254, 553683 fully transparent pixels; four sampled background points alpha0, one alpha1. Correct alpha composite inspected; faint residual alpha noted. Exact args/receipt and QA archived.
+- No extracted sprites, Librarian admission, runtime tests, new owners, Stage/Site/Live or merge.
+
+## One next gate
+Georg design verdict on hitmen/women sheet.
+
+## Historical Return
+
 # GEORG DECISION · EXPLORERS ALL SIX DESIGN PASS · 2026-11-04
 
 Georg: “super! alle PASS”. Explorer/pioneer/researcher six-sheet ALL SIX DESIGN PASS. Mechanics, selected sailor R2 and pirates PASS retained. Standing cast rule: one or two female-read Slops per normal family. New authorized production: one six-character absurd surreal killer/hitman/hitwoman gang sheet, exactly two female-read slots planned. No runtime or Librarian admission implied.
