@@ -221,10 +221,25 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
+    "sheets": 2,
+    "depictions": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }

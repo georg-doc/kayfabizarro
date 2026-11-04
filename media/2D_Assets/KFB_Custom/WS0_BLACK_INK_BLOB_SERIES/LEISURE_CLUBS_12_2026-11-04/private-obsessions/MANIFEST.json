@@ -1,0 +1,183 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_AWAITING_GEORG",
+  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+    "sha256": "d310b535934d98a3f56d3631e653084e15a9d61e76b712e2e93a7aae8b137f5a"
+  },
+  "production_record": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+  "cards": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_DECISION"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Petri Geduld",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short fishing rod with old boot"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ OBSESSIVE ANGLER: broad low wavy ink splat with one curled violet quiff under tiny faded teal fishing cap, short coral neckerchief, subtle lashes. Huge startled WHITE/red/black eyes looking DOWN, crooked open UNDERBITE with TWO big bottom teeth, no tongue/O mouth. Holds ONE short thick curved wooden fishing rod at own belly, a SHORT fat cord suspends ONE small worn brown BOOT close against her own goo side. Boot is a HELD PROP, never worn; character body has NO feet/legs. Entire rod/cord/boot stay compact inside cell, no fish/water/floor.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Zähnungsgrad",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized tweezers holding small stamp"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 male STAMP COLLECTOR: towering skinny bent bean ink blob with two drooping crown lobes, tiny cream knitted collar and little plum soft cap, round brass spectacles. Tight CLOSED crooked fang smile, one heavy sleepy eye and one wide WHITE/red/black gazing DOWN. Both goo hands delicately operate ONE absurdly huge rounded wooden TWEEZERS pinching a SINGLE tiny square ivory postage stamp with thick scalloped edge, entirely BLANK. No album/paper pile/text/numbers, few beautiful wood/paper clay volumes.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Fernzuständig",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short brass telescope"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male AMATEUR ASTRONOMER: compact nearly spherical springy ink splat with one long sideways crown curl, tiny mustard soft hood and short indigo collar. One eye squints CLOSED and the other WHITE/red/black is very wide looking toward object, long flat worried lower lip with THREE sparse ivory teeth. Both arms hug ONE thick short battered BRASS TELESCOPE with a big rounded teal eyepiece and huge convex dark front lens at own belly, not looking through it. No tripod/stars/scenery or floating planets, whole blob dominant.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Zugzwang",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized ivory die"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 male BOARD-GAME OBSESSIVE: very wide low heavy ink splat, three blunt crown nubs, tiny moss cap and short burgundy scarf collar. Furious SIDEWAYS CLENCHED irregular teeth, one eye narrowed and other WHITE/red/black staring forward, no tongue. Both hands squeeze ONE gigantic rounded IVORY DIE at own belly, a few broad circular COPPER PIPS sculpted as dimples, no written numbers/letters. Die visibly dents soft goo hands, one simple bold prop, no gameboard/table.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Maßstab",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small wooden glider",
+        "paintbrush"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ MODEL BUILDER: tall leaning pear ink blob, soft violet rolled quiff tied with tiny coral kerchief, short cream work collar, subtle lashes. One eye CLOSED in careful effort, other WHITE/red/black down, tiny crooked lip with one tooth biting upper lip. One hand holds ONE small beautiful rounded WOODEN MODEL GLIDER with teal wings, other touches wingtip with ONE fat short paintbrush. Clearly inanimate handheld model, no flying scene or stand, wings/brush fit safely inside cell, complete ink base visible.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_PRIVATE_OBSESSIONS_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Restpassung",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large wooden jigsaw piece"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male PUZZLE ENTHUSIAST: medium tall rounded triangular ink splat, one long drooping goo crown lobe, tiny mustard cardigan collar and cream wrist cuff, no hat. Eyes very wide unequal WHITE/red/black upward, huge crooked sagging UNDERBITE with sparse teeth, no grin. Both hands cradle ONE enormous thick worn indigo WOODEN JIGSAW PIECE with three broad rounded tabs and one deep notch against own body. Simple clearly physical object, no lettering/picture/floating symbol, no full puzzle/scene.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ]
+}

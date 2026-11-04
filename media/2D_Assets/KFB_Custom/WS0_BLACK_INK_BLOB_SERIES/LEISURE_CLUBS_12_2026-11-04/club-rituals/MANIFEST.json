@@ -1,0 +1,186 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CLUB_RITUALS_20261104",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_AWAITING_GEORG",
+  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+    "sha256": "1a79aea9a1790d9cd487bae7bba9c2b7208103c9a13f1df32d8fe44d5da2a615"
+  },
+  "production_record": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+  "cards": "LEISURE_CLUBS_12_2026-11-04/club-rituals/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_DECISION"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Beschlussfähig",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden ballot box"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 male CLUB CHAIRMAN: very low broad heavy wavy ink splat with three short side lobes, tiny indigo ceremonial cap and short burgundy velvet collar, one small brass rosette. CLOSED complacent crooked gold-fang smile, heavy WHITE/red/black half-lids down. Both arms possessively hug ONE fat rounded worn wooden BALLOT BOX against own belly, SINGLE narrow slot with just THREE thick blank ivory ballots peeking out. No text/labels/desk/coat torso, all goo base visible, simple wooden object.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Einstimmig",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "large tuning fork",
+        "tiny baton"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ CHOIR CONDUCTOR: tall thin curved bean ink blob with one huge violet rolled crown curl, tiny teal collar and cream bow tie, subtle lashes. One WHITE/red/black eye wide and other squeezed, broad SIDEWAYS jagged toothy shout, NO tongue/O mouth. Both goo hands grip ONE enormous softly rounded SILVER TUNING FORK with TWO thick prongs at belly; ONE tiny short wooden conductor baton tucked securely against one palm. No sheet music, notes, choir/extra actors or stage.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Bahnbestand",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single large bowling pin"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male BOWLING CLUB KEEPER: compact nearly spherical ink splat with two drooping crown lobes, tiny mustard soft cap and short faded moss knitted collar. Deep tired downward flat lower lip with TWO sparse ivory teeth, WHITE/red/black eyes half shut gazing sideways. Cradles ONE oversized beautifully rounded worn IVORY BOWLING PIN with a fat coral neck band like a cherished pet, both hands gently supporting it. No ball, lane, floor or extra equipment.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Regelmoment",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large blank red card",
+        "small whistle"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 male AMATEUR REFEREE: towering leaning pear ink blob, three short uneven crown lobes, tiny cream/indigo striped collar and no full shirt/torso. Huge angry crooked UNDERBITE with THREE uneven teeth, one eye almost closed and other WHITE/red/black forward. Holds ONE enormous thick BLANK RED CARD upright at own side, opposite hand grips ONE tiny rounded brass whistle close to belly. Card physical clay/leather edges, no writing/icons, no arm reaching toward neighboring actor.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Zweckbindung",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "velvet donation pouch",
+        "single coin"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male CLUB FUNDRAISER: medium tall narrow rounded triangular ink splat with one long drooping crown curl, little worn plum cap and short cream collar, single small copper medal. Huge anxious WHITE/red/black eyes looking UP, compressed crooked ZIGZAG mouth with single lower tooth, no smile/tongue. One goo arm hugs ONE plump faded burgundy velvet DONATION POUCH with broad cream cord, other hand delicately pinches ONE tiny plain copper coin above pouch mouth. Few strong fabric/metal volumes, no labels, cash pile or begging scene.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Knopfhoheit",
+      "bild": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "large ivory button",
+        "small needle and short thread"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 FEMALE-READ THEATRE COSTUME KEEPER: broad squat asymmetric ink splat with soft violet goo bun under short teal work headband, tiny coral collar, subtle lashes. One eye CLOSED in focused effort and other WHITE/red/black looking DOWN, CLOSED narrow crooked ivory-fang smirk. Holds ONE absurdly giant thick round IVORY BUTTON with FOUR large smooth holes at own belly, opposite hand a tiny blunt brass needle threaded with a SHORT thick burgundy cord loop attached to button. Needle/thread wholly within her own cell, no cloth torso, mannequin, sewing machine or background.",
+      "prompt_quelle": "LEISURE_CLUBS_12_2026-11-04/club-rituals/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ]
+}
