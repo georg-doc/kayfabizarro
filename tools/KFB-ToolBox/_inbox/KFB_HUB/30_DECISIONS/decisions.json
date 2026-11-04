@@ -20831,6 +20831,21 @@
    "superseded_by": [],
    "why": "Ein konfliktfreies Paket statt vieler Einzel-Merges.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1421",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "WS1-Blocker geloest: WSB kann nicht pushen, WS0 hat assets/idle-fb-r1 @26e19652, bunny-tail-r1 @580c3102, fb-belly-r1 @0861f93e, fb-tshirt-r1 @22c44fee (nicht freigegeben) auf GitHub gepusht (N-116). T-Shirt (q489): kein Fail, aber wirkt gebastelt/fassfoermig -> aus KayKit-Kleidung ableiten, Schwanz nicht abschneiden, Kleidungs-/Accessoire-Tausch zwischen Figuren als System (WSB nach Blinder Kritik). Fluff (q490): kein magnetisches Anziehen, nur ueber Saugarm/Roboterarm (Kartenkante). HUD: Radio bleibt links, Steampunk bleibt Skin; WSA-Nachtrag Briefing b319. Kontroll-Eskalation Konzept (Rakete/Flug, K0-K5, Auffaelligkeit je Fraktion/Region, Abkuehlung, Verhoer-Techniken, UFO-Kuppel als Luke) Hub q494; Roster-Entwurf Boss/eskalation beim Verteiler @e125b44d.",
+   "values": {},
+   "owner": "WS1 · WSB · Kartenkante · Rakete/Flug · Verteiler · WSA · Georg",
+   "check": "q489, q490, q494",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSB-Lieferungen gehen sofort auf GitHub, sonst blockiert WS1.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

@@ -91,3 +91,9 @@ Gespielt als MiB oder Alien dreht sich das um: Dann landet das UFO, um Bewohner 
 3. K3 Toy Soldiers auf Abruf mit Rufen.
 4. K4 Verhör: MiB-Ziel Spieler, Verhör-Pool über das Triplet-SSOT.
 5. K5 UFO: Kuppel-Shader, Landen, Aus- und Einsteigen; der Traktorstrahl bleibt die zweite Interaktion.
+
+## Bilder (dieser Ordner)
+- `SCHAUBILD_ESKALATION_R1.png`: die Stufen-Treppe mit Auffälligkeit und Abkühlung.
+- `STORYBOARD_UFO_R1_1.png`: 1 Landen, 2 Kuppel öffnet.
+- `STORYBOARD_UFO_R1_2.png`: 3 Aussteigen und Scannen, 4 Angriff oder Rückzug.
+- Quelle der Bilder: `bilder.html`. Es sind Skizzen zum Ablauf, keine Style-Frames.

@@ -1,0 +1,139 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#efe7d8;font-family:'Avenir Next','Helvetica Neue',Arial,sans-serif;color:#2a2230}
+.slide{width:1600px;height:900px;position:relative;background:#f4ecdf;margin-bottom:20px}
+.t{font-size:40px;font-weight:700;position:absolute;left:60px;top:36px}
+.st{font-size:22px;position:absolute;left:62px;top:92px;color:#5b4f63}
+</style></head><body>
+
+<!-- Schaubild Eskalation -->
+<div class="slide" id="schaubild">
+<div class="t">Kontroll-Eskalation</div>
+<div class="st">Je auffälliger der Spieler, desto wahrscheinlicher die nächste Stufe. Ruhe kühlt ab.</div>
+<svg width="1600" height="900" style="position:absolute;left:0;top:0">
+<defs><marker id="pf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a2230"/></marker>
+<marker id="pb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3e6a83"/></marker>
+<linearGradient id="heat" x1="0" x2="1"><stop offset="0" stop-color="#7a8d4a"/><stop offset="0.5" stop-color="#e9c14a"/><stop offset="1" stop-color="#a64670"/></linearGradient></defs>
+<!-- Treppe -->
+<g font-size="24" font-weight="700">
+<g transform="translate(70,640)"><rect width="230" height="150" rx="22" fill="#d8cfbf"/><text x="20" y="44">Ruhe</text><text x="20" y="80" font-weight="400" font-size="20">Slops bummeln,</text><text x="20" y="106" font-weight="400" font-size="20">plaudern</text></g>
+<g transform="translate(320,560)"><rect width="230" height="230" rx="22" fill="#c9cf9f"/><text x="20" y="44">Unruhe</text><text x="20" y="80" font-weight="400" font-size="20">Slops lauter,</text><text x="20" y="106" font-weight="400" font-size="20">mehr Common</text></g>
+<g transform="translate(570,480)"><rect width="230" height="310" rx="22" fill="#e9d49a"/><text x="20" y="44">Nachschub</text><text x="20" y="80" font-weight="400" font-size="20">Slops springen</text><text x="20" y="106" font-weight="400" font-size="20">aus Häusern,</text><text x="20" y="132" font-weight="400" font-size="20">Fluff-Kugeln, Boss</text></g>
+<g transform="translate(820,400)"><rect width="230" height="390" rx="22" fill="#e6b88a"/><text x="20" y="44">Streife</text><text x="20" y="80" font-weight="400" font-size="20">1–3 Toy Soldiers</text><text x="20" y="106" font-weight="400" font-size="20">sehen nach</text><text x="20" y="132" font-weight="400" font-size="20">dem Rechten</text></g>
+<g transform="translate(1070,320)"><rect width="230" height="470" rx="22" fill="#c98a9a"/><text x="20" y="44">Verhör</text><text x="20" y="80" font-weight="400" font-size="20">Men in Black</text><text x="20" y="106" font-weight="400" font-size="20">stellen und</text><text x="20" y="132" font-weight="400" font-size="20">verhören</text></g>
+<g transform="translate(1320,240)"><rect width="230" height="550" rx="22" fill="#9c7fb0"/><text x="20" y="44" fill="#fff">Abholung</text><text x="20" y="80" font-weight="400" font-size="20" fill="#fff">Hunky und Dory</text><text x="20" y="106" font-weight="400" font-size="20" fill="#fff">landen mit</text><text x="20" y="132" font-weight="400" font-size="20" fill="#fff">dem UFO</text></g>
+</g>
+<!-- Pfeile hoch -->
+<g stroke="#2a2230" stroke-width="4" fill="none" marker-end="url(#pf)">
+<path d="M190,620 C230,560 300,560 360,548"/><path d="M440,540 C480,480 550,480 610,468"/><path d="M690,460 C730,400 800,400 860,388"/><path d="M940,380 C980,320 1050,320 1110,308"/><path d="M1190,300 C1230,240 1300,240 1360,228"/>
+</g>
+<!-- Abkühlung -->
+<path d="M1430,806 C1100,842 500,842 190,806" stroke="#3e6a83" stroke-width="5" fill="none" stroke-dasharray="14 10" marker-end="url(#pb)"/>
+<text x="560" y="884" font-size="24" fill="#3e6a83" font-weight="700">Abkühlung: Ruhe, unbeobachtet, Bingo!, Humbug?!</text>
+<!-- Auffälligkeits-Balken -->
+<rect x="70" y="160" width="1000" height="26" rx="13" fill="url(#heat)"/>
+<text x="70" y="220" font-size="22">Auffälligkeit: Slops abschießen, Häuser zerstören, Toy Soldiers treffen, Bongo. und Blödsinn! im Verhör</text>
+<!-- Würfel -->
+<g transform="translate(1110,140)"><rect width="440" height="76" rx="16" fill="#fff" stroke="#2a2230" stroke-width="2"/><text x="20" y="34" font-size="21" font-weight="700">Gewürfelt, nicht fest:</text><text x="20" y="62" font-size="20">nie eine Stufe überspringen</text></g>
+</svg></div>
+
+<!-- Storyboard 1+2 -->
+<div class="slide" id="story1">
+<div class="t">UFO von Hunky und Dory · 1 Landen · 2 Kuppel öffnet</div>
+<svg width="1600" height="900" style="position:absolute;left:0;top:0">
+<defs>
+<radialGradient id="dome" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/><stop offset="0.45" stop-color="#d9e8f4"/><stop offset="0.7" stop-color="#e7d6f0"/><stop offset="1" stop-color="#bfe3dc"/></radialGradient>
+<linearGradient id="hull" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9ced6"/><stop offset="1" stop-color="#7d8592"/></linearGradient>
+<linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f6c9b8"/><stop offset="1" stop-color="#f3e1c6"/></linearGradient>
+</defs>
+<!-- Panel 1 -->
+<g transform="translate(60,140)">
+<rect width="720" height="700" rx="24" fill="url(#sky)"/>
+<path d="M0,520 C200,500 500,540 720,515 L720,676 Q720,700 696,700 L24,700 Q0,700 0,676 Z" fill="#c9a6cf"/>
+<path d="M0,560 C220,545 480,585 720,560" stroke="#e9c14a" stroke-width="22" fill="none" opacity="0.8"/>
+<!-- Geländewelle -->
+<ellipse cx="360" cy="560" rx="230" ry="26" fill="none" stroke="#8a6c99" stroke-width="5" opacity="0.7"/><ellipse cx="360" cy="560" rx="300" ry="36" fill="none" stroke="#8a6c99" stroke-width="3" opacity="0.4"/>
+<!-- Staub -->
+<g fill="#e8dccd" opacity="0.9"><circle cx="190" cy="535" r="30"/><circle cx="230" cy="548" r="22"/><circle cx="520" cy="538" r="30"/><circle cx="480" cy="550" r="20"/></g>
+<!-- Beine -->
+<g stroke="#5c6470" stroke-width="12" stroke-linecap="round"><path d="M270,470 L230,545"/><path d="M450,470 L490,545"/><path d="M330,478 L320,552"/><path d="M390,478 L400,552"/></g>
+<g fill="#5c6470"><ellipse cx="230" cy="548" rx="24" ry="8"/><ellipse cx="490" cy="548" rx="24" ry="8"/><ellipse cx="320" cy="555" rx="20" ry="7"/><ellipse cx="400" cy="555" rx="20" ry="7"/></g>
+<!-- Rumpf gestaucht -->
+<ellipse cx="360" cy="450" rx="250" ry="50" fill="url(#hull)"/><ellipse cx="360" cy="438" rx="250" ry="34" fill="#dfe3e8"/>
+<g fill="#e9c14a"><circle cx="180" cy="458" r="8"/><circle cx="260" cy="470" r="8"/><circle cx="360" cy="474" r="8"/><circle cx="460" cy="470" r="8"/><circle cx="540" cy="458" r="8"/></g>
+<!-- Kuppel milchig zu -->
+<path d="M220,425 C230,300 490,300 500,425 Z" fill="url(#dome)" stroke="#9fb6c8" stroke-width="5"/>
+<path d="M260,380 C290,335 340,322 380,325" stroke="#ffffff" stroke-width="10" fill="none" opacity="0.8" stroke-linecap="round"/>
+<!-- Squash-Linien -->
+<g stroke="#2a2230" stroke-width="5" stroke-linecap="round"><path d="M110,430 L60,430"/><path d="M110,460 L70,470"/><path d="M610,430 L660,430"/><path d="M610,460 L650,470"/></g>
+<text x="36" y="70" font-size="38" font-weight="700">1 · Landen</text>
+<text x="36" y="112" font-size="24">Vier Füße setzen auf, kurzer Squash,</text><text x="36" y="144" font-size="24">Staub und Geländewelle. Kuppel milchig:</text><text x="36" y="176" font-size="24">niemand zu sehen.</text>
+</g>
+<!-- Panel 2 -->
+<g transform="translate(820,140)">
+<rect width="720" height="700" rx="24" fill="url(#sky)"/>
+<path d="M0,520 C200,500 500,540 720,515 L720,676 Q720,700 696,700 L24,700 Q0,700 0,676 Z" fill="#c9a6cf"/>
+<path d="M0,560 C220,545 480,585 720,560" stroke="#e9c14a" stroke-width="22" fill="none" opacity="0.8"/>
+<g stroke="#5c6470" stroke-width="12" stroke-linecap="round"><path d="M270,480 L230,545"/><path d="M450,480 L490,545"/><path d="M330,488 L320,552"/><path d="M390,488 L400,552"/></g>
+<g fill="#5c6470"><ellipse cx="230" cy="548" rx="24" ry="8"/><ellipse cx="490" cy="548" rx="24" ry="8"/><ellipse cx="320" cy="555" rx="20" ry="7"/><ellipse cx="400" cy="555" rx="20" ry="7"/></g>
+<ellipse cx="360" cy="455" rx="250" ry="56" fill="url(#hull)"/><ellipse cx="360" cy="440" rx="250" ry="38" fill="#dfe3e8"/>
+<!-- Kuppel geöffnet: zwei Hälften klappen auf -->
+<g transform="rotate(-38 230 425)"><path d="M230,425 C232,330 330,310 362,312 L362,425 Z" fill="url(#dome)" stroke="#9fb6c8" stroke-width="5" opacity="0.95"/></g>
+<g transform="rotate(38 490 425)"><path d="M490,425 C488,330 390,310 358,312 L358,425 Z" fill="url(#dome)" stroke="#9fb6c8" stroke-width="5" opacity="0.95"/></g>
+<!-- Hunky und Dory sichtbar -->
+<g><ellipse cx="315" cy="400" rx="38" ry="44" fill="#7a8d4a"/><circle cx="315" cy="345" r="30" fill="#7a8d4a"/><circle cx="305" cy="340" r="9" fill="#fff"/><circle cx="326" cy="340" r="9" fill="#fff"/><circle cx="307" cy="342" r="4" fill="#2a2230"/><circle cx="324" cy="342" r="4" fill="#2a2230"/><path d="M300,318 L292,295 M330,318 L338,295" stroke="#7a8d4a" stroke-width="5"/><circle cx="292" cy="293" r="6" fill="#e9c14a"/><circle cx="338" cy="293" r="6" fill="#e9c14a"/></g>
+<g><ellipse cx="410" cy="402" rx="34" ry="42" fill="#a64670"/><circle cx="410" cy="350" r="28" fill="#a64670"/><circle cx="400" cy="345" r="9" fill="#fff"/><circle cx="420" cy="345" r="9" fill="#fff"/><circle cx="402" cy="347" r="4" fill="#2a2230"/><circle cx="418" cy="347" r="4" fill="#2a2230"/><path d="M386,330 C380,312 396,306 410,322 C424,306 440,312 434,330" fill="#e9c14a"/></g>
+<text x="36" y="70" font-size="38" font-weight="700">2 · Kuppel öffnet</text>
+<text x="36" y="112" font-size="24">Die Kuppel ist die Luke (vorhandener Clip).</text><text x="36" y="144" font-size="24">Erst jetzt sieht man Hunky und Dory.</text><text x="36" y="176" font-size="24">Später per Regler auch klar für Innen-Szenen.</text>
+</g>
+</svg></div>
+
+<!-- Storyboard 3+4 -->
+<div class="slide" id="story2">
+<div class="t">UFO von Hunky und Dory · 3 Aussteigen und Scannen · 4 Angriff oder Rückzug</div>
+<svg width="1600" height="900" style="position:absolute;left:0;top:0">
+<defs>
+<radialGradient id="dome2" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/><stop offset="0.45" stop-color="#d9e8f4"/><stop offset="0.7" stop-color="#e7d6f0"/><stop offset="1" stop-color="#bfe3dc"/></radialGradient>
+<linearGradient id="hull2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9ced6"/><stop offset="1" stop-color="#7d8592"/></linearGradient>
+<linearGradient id="sky2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f6c9b8"/><stop offset="1" stop-color="#f3e1c6"/></linearGradient>
+<linearGradient id="beam" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9dff9a" stop-opacity="0.9"/><stop offset="1" stop-color="#9dff9a" stop-opacity="0.15"/></linearGradient>
+</defs>
+<!-- Panel 3 -->
+<g transform="translate(60,140)">
+<rect width="720" height="700" rx="24" fill="url(#sky2)"/>
+<path d="M0,520 C200,500 500,540 720,515 L720,676 Q720,700 696,700 L24,700 Q0,700 0,676 Z" fill="#c9a6cf"/>
+<!-- UFO hinten klein -->
+<g transform="translate(-60,40) scale(0.62)"><g stroke="#5c6470" stroke-width="12"><path d="M270,480 L230,545"/><path d="M450,480 L490,545"/></g><ellipse cx="360" cy="455" rx="250" ry="56" fill="url(#hull2)"/><ellipse cx="360" cy="440" rx="250" ry="38" fill="#dfe3e8"/><g transform="rotate(-38 230 425)"><path d="M230,425 C232,330 330,310 362,312 L362,425 Z" fill="url(#dome2)" stroke="#9fb6c8" stroke-width="5"/></g><g transform="rotate(38 490 425)"><path d="M490,425 C488,330 390,310 358,312 L358,425 Z" fill="url(#dome2)" stroke="#9fb6c8" stroke-width="5"/></g></g>
+<!-- Sprungbögen -->
+<path d="M150,330 C210,250 300,300 320,440" stroke="#2a2230" stroke-width="4" stroke-dasharray="10 9" fill="none"/>
+<path d="M210,330 C320,230 420,300 440,450" stroke="#2a2230" stroke-width="4" stroke-dasharray="10 9" fill="none"/>
+<!-- Hunky gelandet, gestaucht -->
+<g><ellipse cx="320" cy="490" rx="46" ry="36" fill="#7a8d4a"/><circle cx="320" cy="438" r="30" fill="#7a8d4a"/><circle cx="310" cy="433" r="9" fill="#fff"/><circle cx="331" cy="433" r="9" fill="#fff"/><circle cx="314" cy="435" r="4" fill="#2a2230"/><circle cx="335" cy="435" r="4" fill="#2a2230"/><path d="M305,411 L297,388 M335,411 L343,388" stroke="#7a8d4a" stroke-width="5"/><circle cx="297" cy="386" r="6" fill="#e9c14a"/><circle cx="343" cy="386" r="6" fill="#e9c14a"/></g>
+<!-- Dory mit Scan -->
+<g><ellipse cx="440" cy="492" rx="36" ry="40" fill="#a64670"/><circle cx="440" cy="442" r="28" fill="#a64670"/><circle cx="430" cy="437" r="9" fill="#fff"/><circle cx="450" cy="437" r="9" fill="#fff"/><circle cx="434" cy="439" r="4" fill="#2a2230"/><circle cx="454" cy="439" r="4" fill="#2a2230"/><path d="M416,422 C410,404 426,398 440,414 C454,398 470,404 464,422" fill="#e9c14a"/><path d="M470,470 L510,455" stroke="#a64670" stroke-width="12" stroke-linecap="round"/></g>
+<path d="M512,455 L640,400 L640,520 Z" fill="#9dff9a" opacity="0.45"/>
+<!-- Spieler (Hase) -->
+<g transform="translate(610,380)"><ellipse cx="30" cy="110" rx="34" ry="44" fill="#f2c94c"/><circle cx="30" cy="58" r="26" fill="#f2c94c"/><ellipse cx="18" cy="16" rx="8" ry="26" fill="#f2c94c"/><ellipse cx="42" cy="16" rx="8" ry="26" fill="#f2c94c"/></g>
+<text x="36" y="70" font-size="38" font-weight="700">3 · Aussteigen, Scannen</text>
+<text x="36" y="112" font-size="24">Sprung über den Rand mit vorhandenen Clips,</text><text x="36" y="144" font-size="24">Landung mit Squash. Dann gehen sie auf</text><text x="36" y="176" font-size="24">den Spieler zu und scannen ihn.</text>
+</g>
+<!-- Panel 4 -->
+<g transform="translate(820,140)">
+<rect width="720" height="700" rx="24" fill="url(#sky2)"/>
+<path d="M0,520 C200,500 500,540 720,515 L720,676 Q720,700 696,700 L24,700 Q0,700 0,676 Z" fill="#c9a6cf"/>
+<line x1="360" y1="215" x2="360" y2="700" stroke="#2a2230" stroke-width="3" stroke-dasharray="6 8"/>
+<!-- links: Angriff -->
+<g><ellipse cx="180" cy="300" rx="150" ry="34" fill="url(#hull2)"/><path d="M95,286 C100,220 260,220 265,286 Z" fill="url(#dome2)" stroke="#9fb6c8" stroke-width="4"/>
+<path d="M150,330 L210,330 L260,600 L100,600 Z" fill="url(#beam)"/>
+<g transform="translate(150,430) rotate(-12)"><ellipse cx="30" cy="80" rx="30" ry="38" fill="#f2c94c"/><circle cx="30" cy="34" r="22" fill="#f2c94c"/><ellipse cx="20" cy="0" rx="7" ry="22" fill="#f2c94c"/><ellipse cx="40" cy="0" rx="7" ry="22" fill="#f2c94c"/></g>
+<g fill="#e9c14a"><circle cx="140" cy="400" r="10"/><circle cx="230" cy="380" r="9"/><circle cx="200" cy="350" r="8"/><circle cx="120" cy="470" r="9"/></g>
+<text x="40" y="660" font-size="26" font-weight="700">Angriff</text><text x="40" y="690" font-size="20">Strahl hebt an, Fluff fliegt raus</text></g>
+<!-- rechts: Rückzug -->
+<g><g transform="translate(330,170) scale(0.5)"><ellipse cx="360" cy="455" rx="250" ry="56" fill="url(#hull2)"/><ellipse cx="360" cy="440" rx="250" ry="38" fill="#dfe3e8"/><path d="M220,425 C230,330 490,330 500,425 Z" fill="url(#dome2)" stroke="#9fb6c8" stroke-width="6"/></g>
+<path d="M600,620 C580,500 560,420 520,400" stroke="#2a2230" stroke-width="4" stroke-dasharray="10 9" fill="none"/><path d="M640,640 C640,520 600,430 560,405" stroke="#2a2230" stroke-width="4" stroke-dasharray="10 9" fill="none"/>
+<path d="M480,260 L480,200 M500,270 L520,215 M460,270 L440,215" stroke="#2a2230" stroke-width="5" stroke-linecap="round"/>
+<text x="400" y="660" font-size="26" font-weight="700">Rückzug</text><text x="400" y="690" font-size="20">zurückhüpfen, Kuppel zu, Abflug</text></g>
+<text x="36" y="70" font-size="38" font-weight="700">4 · Angriff oder Rückzug</text>
+<text x="36" y="112" font-size="24">Je nach Beziehung und Auffälligkeit.</text><text x="36" y="144" font-size="24">Als MiB gespielt dreht es sich um:</text><text x="36" y="176" font-size="24">dann holen sie Bewohner ab.</text>
+</g>
+</svg></div>
+</body></html>
