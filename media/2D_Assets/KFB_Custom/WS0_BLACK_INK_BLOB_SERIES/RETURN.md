@@ -1,3 +1,7 @@
+# GEORG DECISION · OFFICE12 ALL PASS · DRIVERS + FUTURE CATALOGUE ·2026-11-04
+
+Office analog/digital ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New production: twelve diverse driver Slops across two3x2 sheets covering bus/taxi/gig/train/truck/delivery and plane/ship/spaceship/space taxi/race/pod racer, two female-read per sheet. Future repair/catalogue/metadata and1–3HP are owner-review proposals, not current game admission. Read SLOPS_CATALOGUE_REPAIR_WS0_PROPOSAL_2026-11-04.md. Asset Librarian Site currently being edited: no writes there, no repair agent started now.
+
 # CURRENT CHECKPOINT · Office workforce12 · worker/CEO PASS ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469.
