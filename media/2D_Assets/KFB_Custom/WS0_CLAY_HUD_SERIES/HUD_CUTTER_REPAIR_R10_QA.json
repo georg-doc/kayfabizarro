@@ -1,0 +1,52 @@
+{
+  "qa": {
+    "status": "PASS",
+    "sixSkinSingleCallCuts": 6,
+    "actualWellCentersMatchIndependentR4Evidence": 12,
+    "negativeMissingWellCases": [
+      {
+        "skin": "steam",
+        "case": "one actual well removed; five remain",
+        "rejected": true,
+        "error": "5 statt 6 gefunden"
+      },
+      {
+        "skin": "slime",
+        "case": "one actual well removed; five remain",
+        "rejected": true,
+        "error": "5 statt 6 gefunden"
+      }
+    ],
+    "unchangedWorkingSkinPixelComparisons": 12,
+    "maxExportWidth": 1476,
+    "artworkRepainted": false,
+    "skinSpecificCoordinatesInDetector": false,
+    "checksWeakened": false,
+    "change": "Only legacy-invalid cell detection falls back to the opaque continuous body height, excluding head motifs; same six-cell plausibility check retained. Geometric arrow position avoids empty yellow-median warnings.",
+    "expectedWarnings": "Five existing current-receiver arrow downsampling notices retained; no missing roles, grid or spacing warnings.",
+    "runtimeProof": "PENDING Kartenkante",
+    "scriptSha256": {
+      "hudbar_measure.py": "a4f5defa8a969176d6270d97687ad0999f675d062a487bef3e91381ab9c26a0b",
+      "cut-sheet1.py": "55c856f5dea622af5e7792b3958c8b1770c1e6b74ab7d5804599582bc0977b91",
+      "sheet_grid.py": "ea3bc38da2377ae194965eb86b4a40c9adf96383207052f8724ed23768418123"
+    }
+  },
+  "archive": {
+    "file": "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip",
+    "size": 39694097,
+    "sha256": "aa8bd8fc812225c1fa246a379fac233ce41bd4d83fb32c9980b2e06fe06e2735",
+    "files": 135
+  },
+  "owner": "Kartenkante; existing game runtime sole writer",
+  "receiver": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "module/hud-clay-r1",
+    "baseline": "ea99dcf372d2983578202ad404a17ab6771305b8"
+  },
+  "authoring": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "design/kfb-clay-hud-skin-kit-r1-2026-11-04",
+    "pr": 468
+  },
+  "integration": "Directly messaged and verified in the running Kartenkante Claude Code session; R9 installed/build passing, R10 adoption and 6x3 actual-game checks in progress. No game PASS claimed."
+}
