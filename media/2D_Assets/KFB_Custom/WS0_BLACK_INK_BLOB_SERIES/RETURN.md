@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · Portrait couple-family pilot · lawkeepers PASS ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.
+
+-Lawkeepers12 BOTH SHEETS ALL GEORG DESIGN PASS recorded. Prior accepted families retained, miners FAIL/TUNE unchanged.
+-New relational format: ONE1024x1536transparent portrait2columns x3rows sheet,6whole Slops=3married couples, one per row. Tea/garden/space-travel love-hate relationships via shared motifs, reciprocal gaze/gestures; independent silhouettes, no touch/overlap observed. DRAFT awaiting Georg. Three female-read actors as intentional mixed-couple cast exception.
+-PNG SHA256206119a612d1be01217ce0cf36de088e85f6759cdee683954be0ec9b878d158e; RGBA0..254,570020fully transparent pixels, five background samples0. Correct checker/96px proof inspected. HOLD: rose crosses nominal column seam; mechanical512cell crops have fragments/edge loss, not accepted standalone exports.
+-Exact original-reference args/receipt/hash/actual grid and draft pair sidecar archived in COUPLES_RELATIONSHIP_PILOT_2026-11-04. Pair sourceKeys map to later canonical IDs, no new registry/runtime relationship owner. Future family/cluster/master-servant dialectics documented as format proposal only; no automatic lore/game mechanics.
+-Later repair/catalogue queue unchanged; no helper or Asset Librarian Site writes, registry/runtime tests, new owners, Stage/Site/Live/merge.
+
+## One next gate
+Georg evaluates this portrait pilot: readable love-hate relationships, consistent whole-ink bodies, independent silhouettes. Export seam repair remains separate.
+
+## Historical Return
+
 # GEORG DECISION · LAWKEEPERS12 ALL PASS · COUPLE FORMAT PILOT ·2026-11-04
 
 Both lawkeeper sheets ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New authorized visual format: ONE portrait2columns x3rows sheet,6Slops=3dysfunctional married couples, one pair per row. Shared motifs, reciprocal gaze and related gestures establish love-hate relationship while silhouettes/props remain separate and non-overlapping. This relational3mixed-pair pilot uses3female-read actors, an explicit cast-format exception to normal1–2per six-family. Family/cluster and later master/servant dialectics are design proposals, no new canonical registry/runtime relation schema. See RELATIONSHIP_CLUSTER_FORMAT_PILOT_2026-11-04.md.
