@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.hud-surfaces-qa/9",
+  "surfacesAndControls": 102,
+  "skinCount": 6,
+  "newPartTypesPerSkin": 17,
+  "signatureCopies": 24,
+  "webpCount": 126,
+  "r7SlotFilesAdmitted": false,
+  "newObjectOrRoleImages": 0,
+  "newActionPatchesUpscaled": false,
+  "actionSurfaceSource": "canonical panel.png; all nine patches downsampled or unchanged",
+  "actionSurfaceNativePixels": [
+    832,
+    180
+  ],
+  "sharedCloseSilhouetteAcrossSkins": true,
+  "runtimeImportVerified": false,
+  "inheritedSignatureHolds": [
+    "steam sheet1 wells",
+    "slime sheet1 wells"
+  ],
+  "nextGate": "Kartenkante: bind one continuous action background, shared canonical content and state layers; compare Compact/Normal/Large in game; existing layout unchanged.",
+  "archive": {
+    "file": "KFB_MixedBag_HUD_Surfaces_R9_2026-11-04.zip",
+    "size": 97063833,
+    "sha256": "91c22cf8e4c44f848264e3968f5872e8d0286d062c243dc0fa73a0198abf2d2e",
+    "files": 407,
+    "newSurfacesAndControls": 102,
+    "webpManifestReferences": 126,
+    "runtimeVerified": false
+  },
+  "actualChecks": {
+    "losslessRoundtrips": 102,
+    "maxSoftEdgePx": 2,
+    "canonicalCloseMaskIdentical": true,
+    "labelGroundContrastChecks": 42,
+    "minLabelGroundContrast": 4.874,
+    "staticSizeCases": 18,
+    "manifestReferenceHashes": 126,
+    "freshExtractedArchiveValidatorExit": 0,
+    "isolatedInstallerFiles": 126
+  },
+  "sourceLineage": [
+    "current receiver panel/sliders/toggles/canonical-X",
+    "current cut-smooth actual source atlas 03Nov",
+    "current cut-radio actual source atlas 03Nov",
+    "existing Satellite clean R2 panel",
+    "unchanged delivered native R4 signature source parts"
+  ],
+  "scopeCorrectionComment": "https://github.com/georg-doc/kayfabizarro/pull/468#issuecomment-6643804099",
+  "sopCheckpoint": "c3fc19cf0a58fb8499c4e0c55c8d1ccf708ab118",
+  "gameRepoWritten": false,
+  "gameDevCLI": "UNAVAILABLE; repository-native asset checks used",
+  "dropbox": {
+    "file": {
+      "file": {
+        "size": 97063833
+      },
+      "file_id": "id:KeQLaY5-IIAAAAAAAA7emw",
+      "modified_time": "2026-11-04T22:57:46Z",
+      "name": "KFB_MixedBag_HUD_Surfaces_R9_2026-11-04.zip",
+      "object_type": "file",
+      "path": "ns:1174592111//CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Surfaces_R9_2026-11-04.zip",
+      "path_display": "/CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Surfaces_R9_2026-11-04.zip"
+    },
+    "status": "completed"
+  }
+}
