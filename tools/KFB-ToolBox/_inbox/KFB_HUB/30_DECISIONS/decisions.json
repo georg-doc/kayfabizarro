@@ -21131,6 +21131,21 @@
    "superseded_by": [],
    "why": "Der Pool ist vollstaendig registriert; jedes Stueck darf vorkommen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1441",
+   "date": "04.11.2026",
+   "area": "Figuren",
+   "verdict": "REVIEW",
+   "text": "Retro-Schultergurte R1 (WSB assets/jetpack-r1 @abcfbc54, von WS0 gepusht): skinned Teil mit FB-Rumpfgewichten, Haut- und Ueber-Shirt-Fassung, Vertrag gurte_retro.contract.r1 mit parts[]-Eintrag; Rest: Aermelkappen ueber Traeger beim Ducken. Zeigen zusammen mit Jetpack-Groesse (q500). WSB baut Vorschau Alien gross mit kuerzerer Glocke als Bild zur Hub-Option.",
+   "values": {},
+   "owner": "WSB",
+   "check": "q500",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Hub-Option braucht ein Bild, bevor Georg sie waehlen kann.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
