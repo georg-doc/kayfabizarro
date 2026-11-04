@@ -1452,6 +1452,7 @@ d('V-1471','04.11.2026','Site','DECIDED','Georg: keine Mauern vor einer spielbar
 d('V-1472','04.11.2026','Site','DECIDED','Korrektur zu V-1471, Georg: Zielplattform ist seine private GPT-Site (WSA-Work, OpenAI), mehrfach vorgegeben. Kein Cloudflare, kein Login, kein Austausch gekaufter Modelle (N-124.6 zurueckgenommen). WS1 liefert statischen Build in release/run5 (N-143 neu), WSA-Work hostet (b326).','WS1 · WSA-Work','N-143, b326','Georg 04.11.'),
 d('V-1473','04.11.2026','Welt','PLAN','Georg Go 04.11., Bau nach Testlauf 5 (Node-Teile jetzt): (1) WFC-Grosszellen Viertel+Labyrinth (Verteiler PLAN_GROSSE_ZELLEN_R1; Go Schritte 1-2 runder Graph + Ebene gross), Viertel-Generator viertel-gen.mjs kfb.viertel/1 max 12 Gebaeude (WS-Design, Go Node-Teil), Schnittstelle viertelZelle. (2) Startlevel Prison Break start=gefaengnis: Start im Hof unter Panoptikum, Ziel Tor -> offene Welt; Suchkegel trifft FB -> cueBus panoptikum.erwischt -> Mauer-Umbau plus langsamer Takt; Pfuetzen WS-Himmel als Bodenfleck. (3) Karten-Album kfb.card-album/1, Verteilung bevorzugt fehlende Karten, Deck/Zine-Portale (Verteiler/Kartenkante/WS-Design/WS1). WS1 N-144, N-145.','Verteiler · WS-Design · WS-Himmel · Kartenkante · WS1','N-144, N-145','Georg 04.11.'),
 d('V-1474','04.11.2026','Steuerung','RULE','Georg 04.11. (Drift-Korrektur, baut auf V-434): I = einzige Interaktionstaste (aufheben, Truhe, Tuer/Portal, ein-/aussteigen, sprechen, ansehen) als ACTION_KEYS.interact in hostKeys.js; talk:KeyE entfaellt; Q/E nur Seitschritt bzw. Drift; ein Router, statischer Test gegen Doppelbelegung -> WS1 N-147, WS-Design, Kartenkante. Dazu WS1 Q-071: Stage-Buendel aus privatem Spiel-Repo site/stage statt oeffentlichem kayfabizarro ws1/preview (N-146, b326). Hub-Stand aktualisiert.','WS1 · WS-Design · Kartenkante','N-146, N-147','Georg 04.11.'),
+d('V-1475','04.11.2026','Site','RULE','Site-Grundausstattung fuer jeden Stand (Georg 04.11., N-148): Spielchronik-POC (Lean Memory) auf Stage; ein Spielstand kfb.save/1 mit Auto-Save (Ereignisse, 60 s, Tab-Wechsel), 3 Plaetze + Testlauf, Export/Import; Rekorder rec=1 immer an, Bericht kfb.run-report/1 je Sitzung -> WSA-Site legt ihn serverseitig ins private Spiel-Repo reports/; Tempo in tempo.r1.json, Georg: Wagen/Jetpack +33 %, alle 20-40 s eine Begegnung (Median <=30 s, P90 <=40 s), Dichte vom Verteiler; neue Assets = Daten, WS1 nimmt je Release den neuesten Katalog-Head. b326 ergaenzt.','WS1 · Verteiler · WSA-Work','N-148, b326','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2891,6 +2892,7 @@ WHY = {
  'V-1472':('Eine Vorgabe, die nicht im Register steht, gilt fuer die Sessions nicht.','04.11.2026'),
  'V-1473':('Die Welt waechst aus Saaten, nicht aus Szenen; das erste Level ist ein Ausbruch aus dem Blick.','04.11.2026'),
  'V-1474':('Eine Hand, eine Taste: Wer interagiert, drueckt I.','04.11.2026'),
+ 'V-1475':('Jeder Testlauf schreibt mit; was gemessen wird, laesst sich justieren statt diskutieren.','04.11.2026'),
 }
 SUP = {}
 for e in E:

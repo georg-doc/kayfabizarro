@@ -21641,6 +21641,21 @@
    "superseded_by": [],
    "why": "Eine Hand, eine Taste: Wer interagiert, drueckt I.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1475",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "RULE",
+   "text": "Site-Grundausstattung fuer jeden Stand (Georg 04.11., N-148): Spielchronik-POC (Lean Memory) auf Stage; ein Spielstand kfb.save/1 mit Auto-Save (Ereignisse, 60 s, Tab-Wechsel), 3 Plaetze + Testlauf, Export/Import; Rekorder rec=1 immer an, Bericht kfb.run-report/1 je Sitzung -> WSA-Site legt ihn serverseitig ins private Spiel-Repo reports/; Tempo in tempo.r1.json, Georg: Wagen/Jetpack +33 %, alle 20-40 s eine Begegnung (Median <=30 s, P90 <=40 s), Dichte vom Verteiler; neue Assets = Daten, WS1 nimmt je Release den neuesten Katalog-Head. b326 ergaenzt.",
+   "values": {},
+   "owner": "WS1 · Verteiler · WSA-Work",
+   "check": "N-148, b326",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jeder Testlauf schreibt mit; was gemessen wird, laesst sich justieren statt diskutieren.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

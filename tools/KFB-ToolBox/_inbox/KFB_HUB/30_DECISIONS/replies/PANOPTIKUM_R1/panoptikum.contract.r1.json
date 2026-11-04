@@ -1,0 +1,82 @@
+{
+ "schema": "kfb.asset-contract/1",
+ "id": "panoptikum.r1",
+ "job": "PANOPTIKUM_R1 (WS0 04.11., Gefängnis-Startlevel, Einbau WS-Design createPanoptikum)",
+ "date": "2026-11-04",
+ "panoptikum": {
+  "glb": "50_BLENDER/PANOPTIKUM_R1/_privat_meshy/KFB_Panoptikum.r1.glb",
+  "glb_mo": "50_BLENDER/PANOPTIKUM_R1/_privat_meshy/KFB_Panoptikum.r1.mo.glb",
+  "sha256": "4e256db71fd5fd1d3c2a059bb8decef595dfe5591253ce78b298e73c36f10812",
+  "sha256_mo": "4d6cbdb5e792435ea172a0818c7a68556b4e3b5bf81b4f7df802f8a5be5b9145",
+  "privat": true,
+  "quelle": "MeshyModels/_browser/prison_panopticon/PrisonPanopticon_B_simpler.glb, Netz und Texturen unverändert (Texturen byte-gleich, 11 entartete Dreiecke beim Import entfallen)",
+  "knoten": {
+   "KFB_Panoptikum": "Wurzel, Ursprung Mitte Sockel am Fußpunkt (y=0), vorn = +Z (offener Hof)",
+   "Panoptikum_Meshy": "Bau, 200 235 Dreiecke, Material Meshy (3 Texturen WebP)",
+   "Panoptikum_Sockel": "runder Steinsockel, 1 148 Dreiecke, Material Sockel_Stein ohne Textur (Grundfarbe), extras.kfb.role stone",
+   "kegel_ursprung": "Leerobjekt in der Linsenmitte des Scheinwerfers; lokale +Z = Strahlrichtung in Ruhe"
+  },
+  "masse_m": {
+   "faktor_m_je_quell_einheit": 17.0,
+   "bau_hoehe": 18.25,
+   "turm_ueber_hof": 15.65,
+   "hof_boden": 2.6,
+   "sockel_radius_oben": 17.34,
+   "sockel_radius_unten": 17.86,
+   "sockel_hoehe": 1.0,
+   "bau_einsinken_in_sockel": 0.06
+  },
+  "kegel_ursprung": {
+   "pos_m": [
+    7.57,
+    16.93,
+    1.28
+   ],
+   "richtung_gltf": [
+    -0.82,
+    -0.12,
+    0.56
+   ],
+   "hinweis": "Achse folgt dem modellierten Scheinwerfergehäuse (nach vorn links in den Hof, 7° nach unten). Schwenken übernimmt das Spiel."
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profil": "midground",
+   "sockel": "Rolle stone"
+  },
+  "kompression": "meshopt verlustfrei wie MODELLE_KLEINER_R2 (reorder + EXT_meshopt_compression ohne quantize), 8,34 → 5,08 MB, Geometrie und Texturen nach dem Entpacken gleich. KTX2 nicht gemacht: toktx fehlt auf dem Mac mini, Installation wartet auf Georgs Ja; Texturen bleiben WebP wie im Original.",
+  "spiel_braucht": "GLTFLoader.setMeshoptDecoder für die .mo.glb",
+  "pruefung": "Proof Stage v1.3 --type stage --units m: G2 PASS, G3 PASS (steht), G4 WARN (22 offene Kanten im Meshy-Original), G5 PASS, G6 PASS"
+ },
+ "rabe": {
+  "glb": "50_BLENDER/PANOPTIKUM_R1/rabe/KFB_Rabe.r1.glb",
+  "glb_mo": "50_BLENDER/PANOPTIKUM_R1/rabe/KFB_Rabe.r1.mo.glb",
+  "sha256": "217eb62470ef09c972c9c3471d01448a2f9596e29e0586f25b9b77fd93395a93",
+  "sha256_mo": "a9c8e3e26106f250f3d0ad0e22eead44445b4a96ae303ffd3f131d1059b92368",
+  "privat": false,
+  "quelle": "OpenGameArt „Raven“ von Teh_Bucket (CC0), https://opengameart.org/content/raven-0; Netz, Rig (32 Knochen) und Clips unverändert; nur Textur an das Material gehängt und Wurzel gesetzt",
+  "knoten": {
+   "KFB_Rabe": "Wurzel ohne Drehung und Skalierung, Ursprung Körpermitte, Kopf = +Z, oben = +Y",
+   "raven_armature": "Rig mit Drehung 180° und Maßstab 0,332 (Clips unberührt)"
+  },
+  "clips": {
+   "fly": "Flügelschlag, 1,42 s, Schleife",
+   "stand": "Sitzpose, ein Bild",
+   "gleiten": "kein eigener Clip in der Quelle; Gleitlage = fly bei 1,208 s angehalten (Flügel waagrecht)"
+  },
+  "masse_m": {
+   "spannweite_ruhe": 1.4
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profil": "midground"
+  },
+  "augen": "keine KFB-Augen (nur rote Augenpunkte in der Textur). Offene Frage an WS0, ob Hintergrund-Vögel das Augen-Rig brauchen.",
+  "pruefung": "Proof Stage v1.3 --type prop --pose float mit fly bei 1,208 s und 0,30 s: G2, G3, G5, G6 PASS, G4 WARN (72 offene Kanten an Federspitzen)"
+ },
+ "geier": "Kein fertiges freies Geier-Modell mit Flug-Clip gefunden (3d-assets: polyfork, threedassets, opengameart, quaternius, kenney, blenderkit); nichts selbst animiert.",
+ "weitere_kandidaten": [
+  "polyfork Crow (frei, Rig, Clips Walk/Idle/Run/Fly 3 s, ohne Textur)",
+  "OpenGameArt Bird-Animated (CC-BY 3.0, sehr grob)"
+ ]
+}
