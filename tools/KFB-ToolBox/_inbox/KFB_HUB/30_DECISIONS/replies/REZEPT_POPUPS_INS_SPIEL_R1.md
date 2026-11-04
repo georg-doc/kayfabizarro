@@ -43,6 +43,8 @@ Ein neuer Ordner mit Georgs Claymation-Bildern (ZIPs, Einzelbilder, Bögen auf G
    - schreibt je Familie bzw. Thema einen Kontaktbogen.
 
    Bekanntes bleibt, wie es ist: Ein zweiter Lauf über denselben Ordner meldet `neu: 0`.
+
+   Kommen Slop-Units dazu, baut der Lauf auch das Gegner-Roster `src/data/mobs2d/slop-roster.r1.json` neu (`scripts/assets/slop_roster.mjs`). Name und evilAbility bleiben dabei erhalten.
 5. **Prüfen.**
    - Die neuen Kontaktbögen ansehen: Schnitt sauber, kein Grund mehr sichtbar, keine Doppelten. Neu-Renderings desselben Motivs bleiben als Varianten.
    - `node test/unit/popupKatalog.mjs` muss PASS zeigen. Eine neue Slop-Familie gehört zusätzlich in `groupSets` von `src/data/mobs2d/inkblobs.r1.json`; der Test sagt, wenn sie fehlt.
