@@ -21821,6 +21821,21 @@
    "superseded_by": [],
    "why": "Golden heisst: abgenommen, belegt, mit Herkunft im Katalog.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1487",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "RULE",
+   "text": "Georg 04.11.: nicht tagelang auf Testlauf 5 hinarbeiten. Testlauf 5 = sofortiger Stage-Stand von WS1-Stamm @3fbb117c; danach jeder Merge ein eigener Stage-Stand im 1-2-Std.-Takt (Pop-ups/Slops, HUD, Kartenbau, Blasen, Figuren, meshopt), Fehler als kleine Slices, kein Sammel-Release -> WS1 N-156, WSA PR #49. Spielstand/Laufbericht-Module (core/spielstand-r1 @0bdcc9a8, kfb.spielstand/1) -> N-155. WS-Design Aufprall R4 (@23a3270c): Schramme/Bresche nah -> Hub q519; Fassade/Boden zurueck (Spiegelschrift mx sperren, Bodenschrift zu gross, Fassade unscharf/durchscheinend, schwarzer Balken).",
+   "values": {},
+   "owner": "WS1 · WSA · Verteiler · WS-Design",
+   "check": "N-155, N-156, q519",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Stand, den man spielen kann, schlaegt einen Plan, den man lesen muss.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
