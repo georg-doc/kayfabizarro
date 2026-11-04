@@ -20351,6 +20351,21 @@
    "superseded_by": [],
    "why": "FB bekommt Charakter von hinten: freie Arme, Schwanz, Shirt-Motiv, eigenes Jetpack.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1389",
+   "date": "04.11.2026",
+   "area": "Figuren",
+   "verdict": "KEEP",
+   "text": "FB-Idles (q471) Georg PASS im Chat, an WS1 N-109 (assets/idle-fb-r1 @26e19652, clips.idle_r1.json). Backlog (Georg 04.11.): abgeknickte Handgelenke bei Faust-Haenden in Medium- und Large-Rigs (z. B. Troll an der Trommel); Ursache vermutlich offene-Hand-Rotationen aus Mocap/Mixamo auf Faust-Haende ohne Finger-Ausgleich bzw. abweichende Knochen-Roll; Optionen: Handgelenk-Rotation je Rig daempfen/klemmen beim Retarget, Faust-Handgelenk neutral backen, Hand-IK. Erst nach den laufenden WSB-Jobs pruefen. Slop-Zerfall R4/R5 unter 7/10 -> als Remotion-Tod-Clip in der 2D-Bibliothek (Riss-Phase). Holo R2b fast: Linien kraeftiger.",
+   "values": {},
+   "owner": "WSB · WS1 · Rakete/Flug · WS-Design · Georg",
+   "check": "q471",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Faust-Haende brauchen eigene Handgelenk-Regeln statt Mocap-Rohwerte.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
