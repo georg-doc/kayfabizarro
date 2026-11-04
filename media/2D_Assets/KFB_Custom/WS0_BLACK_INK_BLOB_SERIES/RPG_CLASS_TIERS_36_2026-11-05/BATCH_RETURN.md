@@ -11,3 +11,6 @@ Technical checks: six selected RGBA1536×1024 PNGs, hashes, transparent pixels, 
 No game roster, runtime, hit logic, canonical IDs, Librarian publication, Stage, merge or Live change. Existing game contract separates stage from absurdity; hits1/2/3 remain DESIGN proposals only.
 
 Next gate: Georg's design verdict on the six selected sheets.
+
+## Archival evidence
+Implementation head 511db25eaf374e146a49d8a2af65d3d7e2a2ae01. All37text files read back exactly; all7PNG versions byte-identical to committed copies. Final evidence/Return checkpoint follows.

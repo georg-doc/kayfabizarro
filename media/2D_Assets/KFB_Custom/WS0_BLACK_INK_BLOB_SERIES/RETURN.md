@@ -1,3 +1,21 @@
+# Current WSA Return · 2026-11-05 · RPG class tier batch
+
+Owner WSA · georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · draft PR469.
+
+Previous pilot6 has Georg Design PASS at535495b97c21aea3db28c2a173192b759b3131f3. Accepted source33sheets/198depictions;31sheets/186depictions intake-eligible. International Couples still excluded by WS0; Miners FAIL/TUNE excluded. Counts overlap receiving roster; do not add them.
+
+New six sheets: barbar/cultist, cleric/thief, assassin/paladin, deathknight/bard, hoarder/dungeonmaster, rule-nerd/snack-provider. Twelve row identities×3stages=36depictions. One male and one female identity per sheet, three depictions each. All new manifests DRAFT, Georg-statusnull, intakefalse. Cards/names/voices/FrizzleBob notes DESIGN; authoring IDs only.
+
+Implementation checkpoint511db25eaf374e146a49d8a2af65d3d7e2a2ae01:44files,6generation jobs plus1native layout edit,7PNG versions retained/6selected. Both original benchmark PNGs were actual conditioning inputs for every new job; edit used its R1 target. Model/seed not exposed.37exact text readbacks and7byte-identical PNG comparisons completed. Selected1536×1024RGBA sources have clear visible cell seams; reviewed at64/96/160/192px and light/dark/checker.
+
+Limitations: native alpha interiors max254/255 and residual alpha1, final normalization deferred. Illustrative continuity has small tooth/sculpt differences. Repeated elite snack tongue and other prompt deviations recorded in per-sheet QA. No runtime/game data, canonical mapping, Librarian publication, Stage, merge or Live change.
+
+Changed source folder RPG_CLASS_TIERS_36_2026-11-05 plus SET_MANIFESTS_R1.json and this Return. Prior pilot acceptance updates retained.
+
+One next gate: Georg's design verdict on the six selected RPG class tier sheets.
+
+---
+
 # Current update · 2026-11-05 · RPG pilot PASS
 
 Georg accepted all six pilot R2 depictions. Source inventory is now 33 PASS sheets / 198 depictions, 31 sheets / 186 depictions intake-eligible. Cards remain DESIGN. Next authorized outcome: six RPG tier sheets, twelve identities at three stages (36 depictions). Same WSA owner and branch/PR #469. Technical alpha notes remain; no runtime or Librarian publication claimed.
@@ -436,4 +454,5 @@ WS0 register `docs/kfb-decisions-register-2026-10-11` / DECISIONS.md holds decis
 
 ## Exactly one next gate
 **WS0:** use issue #466 to admit one actual six-actor `normie_a` low-level source sheet via existing Asset Librarian into the 72-actor receiving pipeline, prove alpha/96px, animate in existing `mobs2d`, show one real WS1 in-game bounce/hit/splatter/collision screenshot/clip with honest test counts. Do not merge/promote automatically. Georg action required now: **nothing**.
+
 
