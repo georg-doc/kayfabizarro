@@ -1,3 +1,17 @@
+# CURRENT CHECKPOINT · Mafia six-sheet · hitmen PASS · 2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Hitmen/women ALL SIX GEORG DESIGN PASS; earlier mechanics, selected sailor R2, pirates and explorers all-six PASS retained. Miners FAIL/TUNE unchanged. Normal families one or two female-read Slops.
+- Mafia bosses/mob queens: ONE new original-reference-conditioned 1536x1024 transparent 3x2 sheet, six cinematic crime milieus, two female-read slots2/5. DRAFT awaiting Georg. Style inputs actual original Freche/RPG images, not failed generation parents.
+- PNG SHA256 d00d25f9a6dc2759596368515c811b599afd9efb7eaf65c915a2598bc52c9f98. RGBA alpha0..254; 560041 fully transparent pixels, five background samples alpha0; correct checker composite inspected. Exact args/receipt/QA archived.
+- No extracted sprites, registration, runtime tests, new owners, Stage/Site/Live or merge.
+
+## One next gate
+Georg design verdict on mafia sheet.
+
+## Historical Return
+
 # GEORG DECISION · HITMEN/WOMEN ALL SIX DESIGN PASS · 2026-11-04
 
 Georg: “wieder alles PASS”. All six hitmen/women designs accepted. Prior accepted mechanics, selected sailor R2, pirates and explorers unchanged; miners FAIL/TUNE unchanged. New authorized production: one surreal six-character mafia-boss/mob-queen sheet interpreting different cinematic organized-crime milieus, not only Italian; two female-read slots planned. No asset registry/runtime admission implied.
