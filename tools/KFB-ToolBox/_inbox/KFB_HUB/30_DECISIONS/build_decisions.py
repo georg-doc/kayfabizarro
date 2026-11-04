@@ -1449,6 +1449,7 @@ d('V-1468','04.11.2026','Figuren','PASS','q514 PASS: Jetpack gross R4 (assets/je
 d('V-1469','04.11.2026','Assets','DECIDED','MixedBag 13 gepusht: assets/popups-ingest-r1 @c0d7f40f, assets/private @e3edfa8f. Katalog 1154, Slops 421/32 Familien, Forscher 01-08 = Neurender (Fransen-Schnitte im Papierkorb, Quellbogen in aus), 09-16 frei. Diven normale Familie. Neuer Bildauftrag b325: Leuchtbogen (Popup Assets 04 Set-1, 8 Motive benannt) mit echtem Alpha, 2 Bilder 2x2.','Verteiler · Flug','b325','WS0 04.11.'),
 d('V-1470','04.11.2026','Assets','DECIDED','MixedBag 14 -> Verteiler: Slop-Familie Schamanen (2x 3x2, Bogen -1 ohne Alpha), Frostbite 07-12 (Schneeengel bleibt), Slop-Familie Wildwest (R14 RGBA-Boegen + 4 Varianten-Boegen), Weltwunder 12 Scenelets. Georg: Briefing ergab keine roetlichen Augaepfel; flacher Schneeengel fuer 2D-Slops unpassend -> kuenftige Slop-Auftraege: roetliche Augaepfel, nur aufrechte Posen. b314 erledigt.','Verteiler · Flug','b314','Georg 04.11.'),
 d('V-1471','04.11.2026','Site','DECIDED','Georg: keine Mauern vor einer spielbaren Version. Cloudflare Access, Login und Passwort-Gate gestrichen (N-141 zurueckgenommen). Testlauf 5 als offene Site ohne Login; gekaufte Modelle per Release-Build durch freie/eigene ersetzt statt geschuetzt -> WS1 N-143.','WS1','N-143','Georg 04.11.'),
+d('V-1472','04.11.2026','Site','DECIDED','Korrektur zu V-1471, Georg: Zielplattform ist seine private GPT-Site (WSA-Work, OpenAI), mehrfach vorgegeben. Kein Cloudflare, kein Login, kein Austausch gekaufter Modelle (N-124.6 zurueckgenommen). WS1 liefert statischen Build in release/run5 (N-143 neu), WSA-Work hostet (b326).','WS1 · WSA-Work','N-143, b326','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2885,6 +2886,7 @@ WHY = {
  'V-1469':('Ein Bildauftrag nennt seine Motive einzeln, sonst malt das Modell den naechstbesten Bogen.','04.11.2026'),
  'V-1470':('Ein 2D-Slop schaut in die Kamera; was liegt, wird zum Fleck.','04.11.2026'),
  'V-1471':('Erst spielbar, dann Tueren; eine Mauer vor nichts schuetzt nur den Aufwand.','04.11.2026'),
+ 'V-1472':('Eine Vorgabe, die nicht im Register steht, gilt fuer die Sessions nicht.','04.11.2026'),
 }
 SUP = {}
 for e in E:

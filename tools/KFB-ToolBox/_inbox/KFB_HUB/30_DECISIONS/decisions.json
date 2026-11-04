@@ -21596,6 +21596,21 @@
    "superseded_by": [],
    "why": "Erst spielbar, dann Tueren; eine Mauer vor nichts schuetzt nur den Aufwand.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1472",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "DECIDED",
+   "text": "Korrektur zu V-1471, Georg: Zielplattform ist seine private GPT-Site (WSA-Work, OpenAI), mehrfach vorgegeben. Kein Cloudflare, kein Login, kein Austausch gekaufter Modelle (N-124.6 zurueckgenommen). WS1 liefert statischen Build in release/run5 (N-143 neu), WSA-Work hostet (b326).",
+   "values": {},
+   "owner": "WS1 · WSA-Work",
+   "check": "N-143, b326",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Vorgabe, die nicht im Register steht, gilt fuer die Sessions nicht.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
