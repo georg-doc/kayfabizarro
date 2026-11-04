@@ -155,3 +155,20 @@ Belege: `SLOP_R3_Storyboard_1/2.jpg`, `SLOP_R3_ZERFALL_VORN.mp4`, `SLOP_R3_ZERFA
   2. Der flach liegende Kopf wird aus flacher Kamera zur Kante, das Gesicht ist nur in der Nahaufnahme lesbar.
   3. Die Rückseite und das liegende Körperstück wirken als glatte Flächen (leere Karte, Planke).
   4. Das Blatt wird kurz zur Kante (dünner Strich).
+
+## Tod R7 im Spiel (04.11., letzte Runde nach WS0)
+- Belege:
+  - `SLOP_R7_ZERFALL_SPIEL.mp4`: echte Spielkamera hinter der Figur, Blob 9 m entfernt;
+  - `SLOP_R7_ZERFALL_NAH.mp4`: Nahaufnahme;
+  - `SLOP_R7_Storyboard_1/2.jpg`.
+- Code fx/slop-r1 @9be361e2: Rissrand 2,4-mal breiter, Stücke weiter auseinander, Kopf gewölbt bei 55°, Körper knickt nur ab (32°) und behält den Druck zur Kamera.
+- Kritiker (ein Lauf): Spielkamera **3/10**, Nahaufnahme **5/10**, ein Effekt **4/10**. Damit unter der Schwelle von 6. Nicht an Georg.
+- Mängel:
+  1. Der breite Rissrand wirkt mit seinen regelmäßigen Zacken wie Säge, Gebiss oder Spitze, nicht wie Papierfaser.
+  2. Der Kopf wirkt nach dem Kippen wieder wie eine stehende Silhouette.
+  3. Der Körper bleibt ein dunkler Laib mit Volumen.
+  4. Die Tinte macht das Papier pauschal schwarz; die Pfütze ist eine zweite Ebene.
+- Gesamtbild aller Runden:
+  - Im Spiel lag „Papier“ bei 3–5, im 2D-Clip bei 5–6.
+  - Die Einheit stieg bis 6 (R6), R7 fiel wieder auf 4.
+  - Der Ansatz „Blob-Bild wird zu Papier“ trägt aus Spiel-Entfernung nicht: Ein dunkles, plastisch gemaltes Clay-Bild liest sich nicht als dünnes Blatt.
