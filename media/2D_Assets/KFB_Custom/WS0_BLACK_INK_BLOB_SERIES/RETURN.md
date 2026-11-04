@@ -1,3 +1,7 @@
+# GEORG DECISION · LAWKEEPERS12 ALL PASS · COUPLE FORMAT PILOT ·2026-11-04
+
+Both lawkeeper sheets ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New authorized visual format: ONE portrait2columns x3rows sheet,6Slops=3dysfunctional married couples, one pair per row. Shared motifs, reciprocal gaze and related gestures establish love-hate relationship while silhouettes/props remain separate and non-overlapping. This relational3mixed-pair pilot uses3female-read actors, an explicit cast-format exception to normal1–2per six-family. Family/cluster and later master/servant dialectics are design proposals, no new canonical registry/runtime relation schema. See RELATIONSHIP_CLUSTER_FORMAT_PILOT_2026-11-04.md.
+
 # CURRENT CHECKPOINT · International lawkeepers12 · drivers PASS ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.
