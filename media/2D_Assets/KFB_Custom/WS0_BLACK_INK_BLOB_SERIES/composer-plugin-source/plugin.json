@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kfb-asset-scene-composer",
+  "version": "0.2.3",
+  "description": "Source-led KFB claymation scene art plus 2D sky-body and roadside pop-up production, fresh independent image jobs, explicit approvals, additive GitHub persistence and verified Asset Librarian handoff.",
+  "author": {
+    "name": "Georg Westphalen",
+    "email": "georg@cimoc.de"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Make a KFB claymation reference image from this verified Asset Librarian asset and its actual source views.",
+          "Build a KFB scene image using these Asset Librarian selection records, preserving source identity.",
+          "Review this KFB image against the donor and prepare a parts list and archive receipt.",
+          "Write a Meshy text-to-3D prompt for this scene; run meshy-scene-prompt-preflight to preserve requested statues and figurative props while excluding only live actors.",
+          "Create an eight-piece KFB claymation scenelet series: eight fresh transparent PNG image jobs, then a 4×2 contact sheet, with QA and WS0 tags."
+        ],
+        "developerName": "Georg Westphalen",
+        "displayName": "KFB Asset Scene Composer",
+        "longDescription": "Prepare asset-accurate KFB claymation reference images and scene plates using actual donor views, bounded context, verifiable image archives and mandatory fresh independent image jobs for every new subject. Meshy prompt preflight protects selected sculptural props from overbroad exclusions. Chat workflow only; automatic Librarian capture requires later owner integration. Includes KFB 2D planets, roadside scenelets, and the reusable Claymation Scenelet Workshop profile with 4/6/8/12-up contact sheets, separate PASS/integration and private WS0 handoff. No new server, provider or registry.",
+        "shortDescription": "Source-based KFB clay scene art"
+      }
+    }
+  }
+}

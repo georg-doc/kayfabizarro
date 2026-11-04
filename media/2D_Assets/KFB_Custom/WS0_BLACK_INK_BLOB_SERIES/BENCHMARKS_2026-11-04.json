@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-04",
+  "references": [
+    {
+      "filename": "fa536a8d-8c4c-4a00-8575-506b8d6484cc.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "library_id": "libfile_675ccace12788191b3513ff9f1984364",
+      "role": "body/material",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "bytes": 1802767,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht freche Tinten-Knetmonster(1).png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+      "library_id": "libfile_2b01029103748191a07d067750770947",
+      "role": "family morphology",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "bytes": 2179683,
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wütende Tintenmonster aus Knete.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/wut-family.png",
+      "library_id": "libfile_27b35aef6128819182ae6a09fa49b616",
+      "role": "family/expression exceptions",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "bytes": 2252974,
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wilde Bauarbeiter-Tintenmonster(1).png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/construction-props.png",
+      "library_id": "libfile_1ba03acd981481919f65f33e66ec96d7",
+      "role": "prop craft; glowing eyes optional",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "bytes": 3658265,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        1,
+        253
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht verrückte Berufs-Klecksmonster.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/professions-props.png",
+      "library_id": "libfile_fe402d7078008191abd23ad015670b5e",
+      "role": "accessory/material benchmark; faces too similar",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "bytes": 2681218,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wütende RPG-Klecksmonster.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png",
+      "library_id": "libfile_08e4172d49508191ba17a45e36bbec58",
+      "role": "accessory/material benchmark; faces too similar",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "bytes": 2520220,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    }
+  ],
+  "rejected_local_outputs": [
+    {
+      "filename": "exec-624bdc21-a1db-4023-8e5e-bb3d9bf41cdc.png",
+      "library_id": "libfile_e6d0d3d5d18c8191a03855216e5d27e2",
+      "role": "scout",
+      "sha256": "902d41aa443734dfc38fc5e6b1ce6f70495f79445715ac9f14e5ca691793a252",
+      "status": "TOTAL_FAIL_QUARANTINED_NEVER_STYLE_INPUT"
+    },
+    {
+      "filename": "exec-304e5091-594b-4dcd-aa06-222ca74bbf41.png",
+      "library_id": "libfile_973f4a9768c0819188134861628910a3",
+      "role": "Funker",
+      "sha256": "be969a8fa0bfc8a93e86c8f7fc1e7e581a4cd104971441400147cbbaa2cecd69",
+      "status": "TOTAL_FAIL_QUARANTINED_NEVER_STYLE_INPUT"
+    },
+    {
+      "filename": "exec-06c433ba-e620-4b6f-a49d-51146187974d.png",
+      "library_id": "libfile_862bd0c0ac148191a1993457daa0f7b7",
+      "role": "Sergeant",
+      "sha256": "f74475e9db3de9b9fd90d591aee5d70d7d1d7582d94c4c1a9b3a5abac76e7cf0",
+      "status": "TOTAL_FAIL_QUARANTINED_NEVER_STYLE_INPUT"
+    }
+  ],
+  "initial_invocations": 6,
+  "restarted_invocations": 5,
+  "locally_saved_outputs": 3,
+  "other_remote_outcomes": "UNKNOWN",
+  "binary_git_import": false,
+  "binary_plugin_bundle": true,
+  "new_design_pass_count": 0,
+  "technical_holds": [
+    "Construction alpha extrema 1..253: no fully transparent pixel; do not treat as game-ready transparent sprite.",
+    "Professions and RPG alpha max 254; preserve source, inspect alpha/background and edges separately.",
+    "Six reference images are design benchmarks, not technical alpha PASS or individually approved game sprites."
+  ]
+}

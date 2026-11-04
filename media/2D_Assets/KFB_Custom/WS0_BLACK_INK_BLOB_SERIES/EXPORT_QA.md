@@ -1,3 +1,7 @@
+## CURRENT R2 OVERRIDE · 2026-11-04 · TOTAL FAIL RECOVERY
+
+Read SOP_INK_MONSTERS_R2.md and POSTMORTEM_2026-11-04.md FIRST. White sclera / red iris / black pupil is now default. User-selected original pixels must actually be provided as STYLE references for new subjects. The rejected veteran batch is TOTAL FAIL and stopped. On a newly authorized image request use ONE pilot before six-image expansion; accepted pilot counts as slot 1 of the requested six unless Georg requests a separate style study. Six singles are experimental, not proven superior to explicit 3x2 sheet production. Old examples below remain historical recipes and must be adapted to R2, never copied blindly.
+
 # Black Ink Sprite Export QA · repeatable gates
 
 ## Source vs derived vs imported
