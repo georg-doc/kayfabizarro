@@ -1,3 +1,19 @@
+# CURRENT · RETRO PILOT R2 · 2026-11-04
+
+User explicitly authorized separate generated parts plus image-script assembly without upscaling. **Native-source resolution seam resolved:** header source2172x724, radio724x2172, hardware1536x1024. Final atlas2048x2048 RGBA; closed/header1980x220 (9:1), open uses identical header pixels plus original donor drawer. No source image enlarged. Straight lower rail and plain numeric field are fitted separately while round wells/endcaps are protected;32px feather joins and external matte cleanup are explicit in archived assemble.py.
+
+**Evidence:**10/10 structural checks pass:2048RGBA, alpha,32px border, clear band gaps, >=32px component separation(min74.24),9:1 silhouette, pixel-identical headers, radio861px,9major components, no upscale. Original receiving cut-sheet1.py exits0: warnings[],6Fluff cells,4radio slots,3details. Existing runtime export remains1046px; compatibility evidence only, full-size atlas/parts retained. Native source radio861; cutter padded crop865. Dark/light and minified proof included. Independent critic NOT_RUN; gameplay integration NOT_RUN; Georg design CANDIDATE, no self-acceptance.
+
+**Verified evidence commit:**0d633e27e535831a906016d3f2bbb4a7ef103690 (QA file and branch readback). Final source SHA2565a457e97a719f8587f0fa3498037de6b95ecbec9e67a1d25262e7abbe26d6ab1.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_Pilot_R2_2048_2026-11-04.zip; file id id:KeQLaY5-IIAAAAAAAA7dxA;23786375bytes. Includes atlas,9parts,raw originals,source/transform manifest,QA,assembly/validation scripts,exact repository-native cutter/helper copies,compatibility exports,light/dark/small proof and quarantined header trials. Full actual imagegen prompts retained in chat; archive README summarizes them. Model/seed not exposed.
+
+**Files changed:** sibling SOP_CLAY_HUD_R1.md addendum; RETRO_PILOT_R2_QA.json; this Return and additive changelog. Owner georg-doc/kayfabizarro, branch design/kfb-clay-hud-skin-kit-r1-2026-11-04, PR468. No game-repo writes, no merge, Stage/Site or Live promotion. User will send WS0 update; no chat message sent.
+
+**Pending:** other five Sheet1 skins, all Sheet2/3, neutral master, human design acceptance and independent art review. **One next gate:** Georg visual decision on Retro pilot before propagating family production; technical outcome is proven, design acceptance is not inferred.
+
+---
+
 # CURRENT WSA HUD PILOT · 2026-11-04
 
 User commission supersedes earlier Hazard-first routing below: one Retro Sheet1 first; then six complete skin families and neutral master. SOP: media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/SOP_CLAY_HUD_R1.md, implementation checkpoint a45299f1295069a758fac0bbf56524153f330e28 (file and branch verified).
