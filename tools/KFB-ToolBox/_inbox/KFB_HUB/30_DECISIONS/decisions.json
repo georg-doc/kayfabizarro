@@ -20876,6 +20876,21 @@
    "superseded_by": [],
    "why": "Bildparallel heisst: nach der Kamerablickrichtung ausrichten, spiegeln statt drehen, Neigung begrenzen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1424",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "KEEP",
+   "text": "MixedBag 08: drei Jetpack-Baukaesten a 3 Sheets (A Steampunk schlank, B kompakt, C Alien) -> WSB JETPACK_R1, ein Modul mit Tauschsystem wie T-Shirt, erst Alien, Zweig assets/jetpack-r1 (b310 erledigt). Slop-Familien Presse (12) und Musiker (12, Alpha-PNGs) plus Winter-Tueren/Dioramen (b317 Teil 1) -> Verteiler-Ingest. WSA HUD-Kit PR #468 an Laufzeit-Spec angeglichen (Head 1011cff9, b319 erledigt); WS1 bekommt HUD nur ueber Kartenkantes Merge-Head, kein N noetig.",
+   "values": {},
+   "owner": "WSB · Verteiler · Kartenkante · WSA",
+   "check": "b310, b317, b319",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Sheets werden direkt Vorlage: 3D an WSB, 2D in den Katalog; Doku-Abgleiche gehen nicht an WS1.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
