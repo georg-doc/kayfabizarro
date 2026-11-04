@@ -21221,6 +21221,21 @@
    "superseded_by": [],
    "why": "Der Release ist eine Liste mit Besitzer und Status, nicht ein Bauchgefuehl.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1447",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Kartenkante Slot: Hazard-Skin per add-skin.py ein Aufruf (24 s, #hudskin=hazard), Formatmatrix 5x4x3 = 60 Messungen 0 Verstoesse (Schrift >=14 px angehoben, Settings nach echter Fenstergroesse, Hazard-Schublade, kompakte Kayfabricate-Zeile), AD-Critic PASS knapp; module/hud-clay-r1 @f05d056d, assets/private @a3e8562b. Naechst im Code: Hazard-Umfaerbung Almanach/Wegweiser/Aktionsleiste (Pipeline-Luecke), Zahnrad-Kontrast 4,5:1; dann Boards in den Hub. WSA-Rueckmeldung b322 (2048 px, >=32 px Abstand). Slot jetzt WS-Himmel (Knetkorn R3).",
+   "values": {},
+   "owner": "Kartenkante · WSA · WS-Himmel",
+   "check": "b322",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Skin ist ein Aufruf; was nicht automatisch geht, ist ein Fehler der Pipeline.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
