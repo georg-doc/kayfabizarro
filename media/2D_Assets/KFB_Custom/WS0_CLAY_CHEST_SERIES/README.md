@@ -28,7 +28,8 @@ Eine überraschende Themenidee wird zu einer **lebenden, klar erkennbaren Schatz
 2. `SERIES_PROVENANCE.md` — menschliche PASS-Serie, tatsächlich sichtbare historische Prompts vs. rekonstruierte Vorgaben, Quellenstatus.
 3. `EXPORT_QA.md` — 3×2-Raster, PNG-Alpha, 96px, visuelle Probe, negative QA, Sprite-Metadaten.
 4. `TEST_REPORT.md` — nachgemessene, eng begrenzte technische Bestandsaufnahme dieser Runde.
-5. `CHANGELOG.md` + `RETURN.md` — Fortsetzung/Recovery und ein nächstes Gate.
+5. `SERIES_RECIPE.template.json` — maschinenlesbare 12-Slot-Inputvorlage für neue Themen (kein ausführbares Plugin).
+6. `CHANGELOG.md` + `RETURN.md` — Fortsetzung/Recovery und ein nächstes Gate.
 
 ## Bindende Stilkerne (Kurzform)
 
