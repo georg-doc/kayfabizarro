@@ -1,0 +1,320 @@
+{
+ "id": "kfb_jetpack.r1b.gross4",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-04",
+ "status": "pending-georg",
+ "job": "JETPACK_GROSS_R4 (Georg über WS0, Q-513): „ein wenig kleiner; schlampige Modellierung des Rückenteils und nicht sauber angepasste Kippung/Ausrichtung“. 1,25 × groß r2, Rückenplatte als glatte Grundform eng am Rücken ohne Überstand, Neigung nach Rückenlinie, mittig und gerade.",
+ "ersetzt": "50_BLENDER/JETPACK_R1/data/jetpack.contract.r1b.gross3.json (R3)",
+ "verfahren": {
+  "skript": "scripts/bau_r4.py (umhüllt die Skin-Skripte, ersetzt conform/seat_parts aus jp_lib)",
+  "schritte": [
+   "Platte auf den Hauptkörper des Packs begrenzt (kein Überstand)",
+   "Rückenlinie: Strahlen von hinten auf FBs Mittellinie über die Höhe des Packs, Gerade; Pack-Hochachse parallel dazu, x = 0, kein Rollen/Gieren",
+   "Haut unter der Platte als glatte quadratische Fläche (keine Wellen)",
+   "Pack-Rückseite als glatte Fläche; Pack als ein Block so gesetzt, dass die dünnste Stelle der Platte 0,6 × ihrer Grunddicke hat",
+   "Teile außerhalb der Platte (Glocke, Kapseln) frei vom Rumpf: Block rückt ab, Platte füllt"
+  ],
+  "hoehe": "scripts/sweep_r4b.sh: z 0,82–0,94, höchste Höhe mit Kopf frei"
+ },
+ "messung": "16 Clips wie korrektur1 (clips_auf_figur.mjs mit Punkt-Abgleich, messe_jp.py), tiefste Stelle in cm.",
+ "gilt_unveraendert": "Kopf in Schleichen/Ducken taucht weit nach hinten (auch ohne Jetpack); Arme in Chicken/Samba schwingen durch den Rücken; Hüfte im Twist dreht gegen die Brust.",
+ "skins": {
+  "comic": {
+   "root_node": "KFB_Jetpack_Comic",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Comic_gross.r4.glb",
+   "sha256": "a5f38aad37129fba90e986f31eb1dddaac89bf258ae34b095e1d4e968904b464",
+   "ersetzt": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Comic_gross.r3.glb",
+   "bau": {
+    "scale": 1.8125,
+    "faktor_zu_gross_r2": 1.25,
+    "z_local": 0.82,
+    "neigung_deg_aus_rueckenlinie": 4.82
+   },
+   "rueckenplatte": {
+    "teil": "S1_schale",
+    "form": "Rückseite glatte Quadratfläche an FBs Rücken (Lehm-Unebenheiten überbrückt, Haut ragt höchstens 0.48 cm darüber), Vorderseite glatte Fläche der Pack-Rückseite; auf den Hauptkörper S1_gehaeuse begrenzt (Faktor x 0.95, z 0.95)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8189599411988433,
+      0.23780862621564675,
+      0,
+      0,
+      -0.23780862621564675,
+      2.8189599411988433,
+      0,
+      4.1359294807307804e-22,
+      -0.15310271606418058,
+      -0.34737447426890444,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.12
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.18,
+    "arme": 17.57,
+    "kopf": 9.06,
+    "schwanz": 3.62
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.89
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_comic_gross.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_comic_gross.r4.json"
+  },
+  "steampunk_kompakt": {
+   "root_node": "KFB_Jetpack_Steampunk_Kompakt",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Steampunk_Kompakt_gross.r4.glb",
+   "sha256": "6abd574b9a14d4682231efdcd439ca0e4628003186b08deb71248b695dfe2cfd",
+   "ersetzt": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Steampunk_Kompakt_gross.r3.glb",
+   "bau": {
+    "scale": 1.9375,
+    "faktor_zu_gross_r2": 1.25,
+    "z_local": 0.94,
+    "neigung_deg_aus_rueckenlinie": 19.04
+   },
+   "rueckenplatte": {
+    "teil": "S1_polster",
+    "form": "Rückseite glatte Quadratfläche an FBs Rücken (Lehm-Unebenheiten überbrückt, Haut ragt höchstens 0.26 cm darüber), Vorderseite glatte Fläche der Pack-Rückseite; auf den Hauptkörper S1_kapsel begrenzt (Faktor x 0.64, z 0.89)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      3.0240745579376442,
+      0,
+      0,
+      0,
+      0,
+      2.8585999451273683,
+      0.9866278818924525,
+      0,
+      0,
+      -0.9866278818924525,
+      2.8585999451273683,
+      0,
+      4.1359294807307804e-22,
+      -0.03310272704631623,
+      -0.32204248135975866,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 0.0
+   },
+   "clips16_worst_cm": {
+    "rumpf": 1.64,
+    "arme": 0.48,
+    "kopf": 6.12,
+    "schwanz": 2.63
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 0.0
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_steampunk_kompakt_gross.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_steampunk_kompakt_gross.r4.json"
+  },
+  "retro": {
+   "root_node": "KFB_Jetpack_Retro",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Retro_gross.r4.glb",
+   "sha256": "7d3a1a5f2030aad97e78156e701282f76142417a43f70ab98ffb8b578564519b",
+   "ersetzt": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Retro_gross.r3.glb",
+   "bau": {
+    "scale": 1.8125,
+    "faktor_zu_gross_r2": 1.25,
+    "z_local": 0.86,
+    "neigung_deg_aus_rueckenlinie": 7.82
+   },
+   "rueckenplatte": {
+    "teil": "S1_schale",
+    "form": "Rückseite glatte Quadratfläche an FBs Rücken (Lehm-Unebenheiten überbrückt, Haut ragt höchstens 0.56 cm darüber), Vorderseite glatte Fläche der Pack-Rückseite; auf den Hauptkörper S1_gehaeuse begrenzt (Faktor x 0.95, z 0.91)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.802673474669231,
+      0.38484996003855443,
+      0,
+      0,
+      -0.38484996003855443,
+      2.802673474669231,
+      0,
+      4.1359294807307804e-22,
+      -0.1131027197248925,
+      -0.3411468169815054,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.28
+   },
+   "clips16_worst_cm": {
+    "rumpf": 1.97,
+    "arme": 2.21,
+    "kopf": 9.53,
+    "schwanz": 3.8
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.45
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_retro_gross.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_retro_gross.r4.json"
+  },
+  "candy": {
+   "root_node": "KFB_Jetpack_Candy",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Candy_gross.r4.glb",
+   "sha256": "6b825564c3957f5a192a597911bdca0f0653fc4d1f64c28ef5c8995daa60cbe9",
+   "ersetzt": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Candy_gross.r3.glb",
+   "bau": {
+    "scale": 1.6031,
+    "faktor_zu_gross_r2": 1.25,
+    "z_local": 0.9,
+    "neigung_deg_aus_rueckenlinie": 10.93
+   },
+   "rueckenplatte": {
+    "teil": "S1_platte",
+    "form": "Rückseite glatte Quadratfläche an FBs Rücken (Lehm-Unebenheiten überbrückt, Haut ragt höchstens 0.72 cm darüber), Vorderseite glatte Fläche der Pack-Rückseite; auf den Hauptkörper S1_ei begrenzt (Faktor x 1.00, z 0.95)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.5021387091925233,
+      0,
+      0,
+      0,
+      0,
+      2.4567544370076573,
+      0.47440042804263005,
+      0,
+      0,
+      -0.47440042804263005,
+      2.4567544370076573,
+      0,
+      4.1359294807307804e-22,
+      -0.0731027233856043,
+      -0.331594649170632,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.13,
+    "schwanz": 3.6
+   },
+   "clips16_worst_cm": {
+    "rumpf": 1.31,
+    "arme": 17.82,
+    "kopf": 9.64,
+    "schwanz": 3.84
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.13,
+    "schwanz": 3.6
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_candy_gross.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_candy_gross.r4.json"
+  },
+  "alien_kurz": {
+   "root_node": "KFB_Jetpack_Alien",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Alien_kurz_gross.r4.glb",
+   "sha256": "abce1c18d698677f982ac494685444bd5ca45a553a082031cb43d74fb522829e",
+   "ersetzt": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Alien_kurz_gross.r3.glb",
+   "bau": {
+    "scale": 1.35,
+    "faktor_zu_gross_r2": 1.25,
+    "z_local": 0.86,
+    "neigung_deg_aus_rueckenlinie": 13.44,
+    "bell_k": 0.35
+   },
+   "rueckenplatte": {
+    "teil": "S1_sockel_platte",
+    "form": "Rückseite glatte Quadratfläche an FBs Rücken (Lehm-Unebenheiten überbrückt, Haut ragt höchstens 0.17 cm darüber), Vorderseite glatte Fläche der Pack-Rückseite; auf den Hauptkörper S1_kern begrenzt (Faktor x 1.00, z 1.00)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.107097148549871,
+      0,
+      0,
+      0,
+      0,
+      2.049399242559058,
+      0.4897153641019209,
+      0,
+      0,
+      -0.4897153641019209,
+      2.049399242559058,
+      0,
+      4.1359294807307804e-22,
+      -0.1131027197248925,
+      -0.3411468169815054,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.32
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.15,
+    "arme": 13.0,
+    "kopf": 10.04,
+    "schwanz": 3.85
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.7
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_alien_kurz_gross.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_alien_kurz_gross.r4.json",
+   "hinweis": "Glocke 35 %; unten rückt der Block wegen der Po-Wölbung ab (Rumpf frei), die Platte füllt den Abstand."
+  }
+ },
+ "nicht_geaendert": [
+  "steampunk_schlank (nicht im Auftrag)",
+  "Standard-Sitze r1",
+  "R3-Dateien bleiben liegen"
+ ]
+}
