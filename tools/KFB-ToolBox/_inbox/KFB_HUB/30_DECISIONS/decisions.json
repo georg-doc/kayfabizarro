@@ -21311,6 +21311,21 @@
    "superseded_by": [],
    "why": "Fuer die Site zaehlen Seiten, nicht hunderte Einzelbilder.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1453",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "Privater Spiegel ~/kfb-ws0/kfb-mvp/src/private ff da990fe -> cb56cc06 (Atlas); 230 ungetrackte, bytegleiche Dateien beiseite nach ~/kfb-ws0/_private_untracked_vor_ff_cb56cc06 (104 MB, nicht geloescht). Flug fx/slop-r1 @356317b4: Slop R9 6/10 (zackige Zellen, keine Fugen; offen Risswachstum, gestaffeltes Loesen, Tropfen-Ringe), Eskalation R2 6/10 (Anmarsch, Sprechzeile, Bingo; offen Auswahl ueber Blase, Anmarsch 13 s, K1/K2 klein) -> Clips an q503/q504 nachgetragen, naechste Code-Runde. Verteiler Atlas im Ingest @6ec1a788 (bytegleich), popup_spiel bei jedem Lauf. Slots: Kartenkante -> Verteiler -> WS-Design -> Flug.",
+   "values": {},
+   "owner": "Flug · Verteiler · WS-Design · Kartenkante",
+   "check": "q503, q504",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Beiseitelegen statt loeschen, wenn lokale Dateien einem Update im Weg stehen.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
