@@ -1387,6 +1387,7 @@ d('V-1406','04.11.2026','HUD','REVIEW','Vorhang R4b (Kartenkante @35852563): Zac
 d('V-1407','04.11.2026','Figuren','REVIEW','FB Hasenschwanz A gewaehlt (assets/bunny-tail-r1 @580c3102, B/C archiviert) und cremeweisser Fellbauch (assets/fb-belly-r1 @0861f93e): Farbkarte FB_Body_Belly.r1.png auf zweiter UV (uv1, nahtlose Abwicklung) am Rumpf, keine Geometrie, abschaltbar fuer T-Shirt; Anlegen vor applyClay. Hub q485. Naechstes WSB: T-Shirt.','WSB · Georg','q472, q485','Georg 04.11.'),
 d('V-1408','04.11.2026','Assets','BUILD','MixedBag 06 im Katalog (Verteiler @7fe7bbd6, privat @77d1de92): 72 neu, Katalog 871; 48 Tueren nach Kultur getaggt (Tuerluecken Mesa/Canyon/Westeuropa/Mittelmeer zu, Decks ohne Tuer 9 -> 0), Kandidaten fuer Tueren R5; 12 Organ-Truhen; 12 Tinten-Blobs zu Familie Glu (30). Briefing Tueren/kuehle Szenen erledigt.','WS-Verteiler · Georg','','Georg 04.11.'),
 d('V-1409','04.11.2026','HUD','REVIEW','HUD R2 (Kartenkante module/hud-clay-r1 @b0ee1881, HUD_LAYOUT_R2.md, master-kit.py): Master-Kit aus Georgs Clay-Teilen (KFB_HUD_v5_WS0), Skins Retro/Steampunk/Teal per Umfaerbung (Rand/Fuellung/Gold getrennt, Schattierung bleibt; neuer Skin = Zeile mit zwei Farben); Settings mit Clay-Toggle/-Slidern, Titel Fredoka mit Knet-Kontur, X innen in der Ecke; Action-Leiste in Slot-Leisten, Almanach im Kit-Rahmen, Wegweiser als Plakette. Kritiker 3 Runden, Restpunkte behoben. Fehlteile: Action-Icons Faust/Granate/Stiefel im Radio-Glyph-Stil. Hub q486.','Kartenkante · Georg','q483, q486','Georg 04.11.'),
+d('V-1410','04.11.2026','Spiel','REVIEW','WS1 Q-064 (Stamm @5ce6a40): Fehlerliste N-101 1-6 erledigt (Kuppel-Guard, Dev-Info aus, Ton-404, Shader vorwaermen 383->183 ms, Kartenboden-Schrift, Next-Card, Tastenrouter, Dialog-Pendeln), Merges N-100 bis N-106 drin, Site liefert alles selbst aus (0 Abrufe nach aussen, 961 MB). N-112: keine Deck-PDFs in die Site, Viewer zeigt Kartenbilder; Testfahrt-Vorgabe plus fluglage/knetespur/inkblobs/topfpflanzen; Modell-Liste an WSB nach T-Shirt; MeshoptDecoder/KTX2Loader vorbereiten; hero.glb raus. FB Bauch+Schwanz PASS (q485) an WS1 N-111. Slop-Goo-Tod (fx/slop-r1 @b4a87867, slopgoo=1, Umfaerbe-Shader, 7/10) Hub q487. Vorhang R4b TUNE (Flimmern, Ton, fuellender Schatten, Kamerafahrt-Choreografie, Knicke) und HUD-Skin-Spec an Kartenkante.','WS1 · WSB · Rakete/Flug · Kartenkante · Georg','q484, q485, q487','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2761,6 +2762,7 @@ WHY = {
  'V-1407':('FrizzleBob wird von hinten und vorn klar als Cartoon-Hase lesbar.','04.11.2026'),
  'V-1408':('Jede Region bekommt ihre passende Tuer in die Kartenzonen.','04.11.2026'),
  'V-1409':('Ein Master-Kit, viele Skins: kein Drift mehr.','04.11.2026'),
+ 'V-1410':('Die Site ist reine Build-Ausgabe und braucht nichts von aussen.','04.11.2026'),
 }
 SUP = {}
 for e in E:

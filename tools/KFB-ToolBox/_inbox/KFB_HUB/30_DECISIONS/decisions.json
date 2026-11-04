@@ -20666,6 +20666,21 @@
    "superseded_by": [],
    "why": "Ein Master-Kit, viele Skins: kein Drift mehr.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1410",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "WS1 Q-064 (Stamm @5ce6a40): Fehlerliste N-101 1-6 erledigt (Kuppel-Guard, Dev-Info aus, Ton-404, Shader vorwaermen 383->183 ms, Kartenboden-Schrift, Next-Card, Tastenrouter, Dialog-Pendeln), Merges N-100 bis N-106 drin, Site liefert alles selbst aus (0 Abrufe nach aussen, 961 MB). N-112: keine Deck-PDFs in die Site, Viewer zeigt Kartenbilder; Testfahrt-Vorgabe plus fluglage/knetespur/inkblobs/topfpflanzen; Modell-Liste an WSB nach T-Shirt; MeshoptDecoder/KTX2Loader vorbereiten; hero.glb raus. FB Bauch+Schwanz PASS (q485) an WS1 N-111. Slop-Goo-Tod (fx/slop-r1 @b4a87867, slopgoo=1, Umfaerbe-Shader, 7/10) Hub q487. Vorhang R4b TUNE (Flimmern, Ton, fuellender Schatten, Kamerafahrt-Choreografie, Knicke) und HUD-Skin-Spec an Kartenkante.",
+   "values": {},
+   "owner": "WS1 · WSB · Rakete/Flug · Kartenkante · Georg",
+   "check": "q484, q485, q487",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Site ist reine Build-Ausgabe und braucht nichts von aussen.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
