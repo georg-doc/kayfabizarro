@@ -21896,6 +21896,21 @@
    "superseded_by": [],
    "why": "Ein Eingang ohne Oeffnung ist eine Wand mit Bild.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1492",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "STATUS",
+   "text": "Stage-Stand 3 site/stage @fdea7117 (HUD @05d15624) -> PR #49. Reihenfolge Stand 4 Kartenbau + Pop-up @ee7e5d6b (oeffnung fuer 130 Eingaenge, 3 Nicht-Tueren als Szene, Schwelle), Stand 5 Blasen @65db6687 + Slops @94bf1b20, Stand 6 Diesel-Jetpack R2, Bodenton r2, Spielstand/Laufbericht (N-166). fx/slop-r1 @a760843d brach inkblobs=1 (TDZ) -> Fix @6555188e + Node-Starttest (N-164). Kipp-Beleg: 90 Grad liest als Karte -> Kamera Jetpack/Flug max 70 Grad (WS1 N-165), Tintenspur ab 60 Grad (Flug). HUD Aktionsgroesse Auto/Compact/Normal/Large + gemeinsamer Glyphensatz (hud-clay-r1 @42d28666); HUD-Chat Bogen-2-Zellenfolge b333.",
+   "values": {},
+   "owner": "WS1 · WSA · Flug · Verteiler · Kartenkante",
+   "check": "N-164, N-165, N-166, b333",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was von oben nur noch Karte ist, braucht eine Kamera, die nicht ganz von oben schaut.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
