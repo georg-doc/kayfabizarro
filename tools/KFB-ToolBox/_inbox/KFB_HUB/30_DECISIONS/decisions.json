@@ -21656,6 +21656,21 @@
    "superseded_by": [],
    "why": "Jeder Testlauf schreibt mit; was gemessen wird, laesst sich justieren statt diskutieren.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1476",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "PLAN",
+   "text": "Georg 04.11.: gewichtete, organische KFB-Ink-Outline fuer 2D-Slops (spaeter global fuer alle 2D-Props, Schalter inkline=0|shader|sdf|dupe im Modul bildparallel), unten/rechts bzw. Schattenseite dicker, nie tote weisse Linie. Flug: Vergleichsvideo 4 Varianten (ohne, Shader-Alpha, Distanzfeld im Atlas, Silhouetten-Duplikat) im echten Hintergrund, Gruppe +-10 %, Kosten bei 60 Slops -> Hub. Weisser Saum: Hauptursache Light-Wrap (Flug-Fix e60e36a0), teils Freistellungs-Fransen alter Boegen. Verteiler: Inventur alter illustrativer 2D-Props/Billboards fuer spaeteren Ersatz durch Clay-Look. Reisetempo-Regler = vorhandener reisetempo.js 0,5-3,0 (Reddit-Wunsch), nicht eingeengt; Verteiler-Takt-Waechter/Mischung gepusht @d83fae63.",
+   "values": {},
+   "owner": "Flug · Verteiler",
+   "check": "N-146, N-148",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Linie mit Gewicht traegt das Licht mit; eine gleichmaessige Linie ist ein Aufkleber.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
