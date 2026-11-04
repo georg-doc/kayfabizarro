@@ -1,0 +1,131 @@
+{
+  "cutter_reports": [
+    {
+      "set": "base",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "retro",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "steam",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "teal",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "blue",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "slime",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    },
+    {
+      "set": "hazard",
+      "glyphs": 12,
+      "missing": [],
+      "warnings": []
+    }
+  ],
+  "source_atlases": [
+    {
+      "set": "base",
+      "file": "base/glyphs/base_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "342e5c2aa7ec6cc93d1344171ac92b5fda5eff6eeefc4a9b467515be60dfe0c0"
+    },
+    {
+      "set": "retro",
+      "file": "skin_atlases/retro_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "3c8283685ecedacd3aff869e337e6f5eb6b927f2d6c28363652607f1443c729f"
+    },
+    {
+      "set": "steam",
+      "file": "skin_atlases/steam_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "fbc4a15b774d55cbbe1dc8517f824a93afe183da9a71b5d4e6e7c566e65e9afe"
+    },
+    {
+      "set": "teal",
+      "file": "skin_atlases/teal_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "54e46d15c82a411e5a7b5934b4701e3b00b2b9d58178cae32acbc2c258b57776"
+    },
+    {
+      "set": "blue",
+      "file": "skin_atlases/blue_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "0afd2ccf1daf9748e9636167cd3ffd4f08678cf38f03466193249f5483249716"
+    },
+    {
+      "set": "slime",
+      "file": "skin_atlases/slime_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "dcf8462f6fd7a48f720dcafaff4c2ec6e0d0f87342be5b528cb3a395d3094594"
+    },
+    {
+      "set": "hazard",
+      "file": "skin_atlases/hazard_SHEET_2_1536x1024_RGBA.png",
+      "sha256": "0f16750fe5d63129c2a72e4555a261d0063579b47291a32f261fff4bfad1262f"
+    }
+  ],
+  "total_glyphs": 84,
+  "base_roles": [
+    "fist",
+    "grenade",
+    "jump",
+    "boost",
+    "hand",
+    "talk",
+    "pickup",
+    "enter",
+    "exit",
+    "land",
+    "heal",
+    "travel"
+  ],
+  "source_blobs": {
+    "HUD_SKIN_SPEC.md": "18ea7842190378daf4e09fc7a1dd4fd870e0d3fa",
+    "cut-glyphs.py": "451cbac818f0228ed8982dd41715bc48df0cc45f",
+    "glyphs.js": "ccfc579bbf5d7d07809788e89ef62cf0c82de774",
+    "actionSize.js": "8c1c7f995319e65763a0f63a0287ea9c9e5d61ed",
+    "hud-glyphs.empty.r1.json": "1348b4950d6876c81974839b546612fa90650f73"
+  },
+  "new_art_sets": 1,
+  "reused_skin_sets": 6,
+  "new_art_status": "CANDIDATE_NO_NEW_GEORG_ACCEPTANCE",
+  "runtime_game_proof": "NOT_RUN",
+  "runtime_writes": false,
+  "upscaled": false,
+  "resolver_checks": {
+    "checks": 100,
+    "failed": 0,
+    "meaning": "Current unmodified receiver modules: base fallback, skin override, empty-cell fallback, legacy transition and source-limited Action Size; local fixture only, not game evidence"
+  },
+  "base_image_qa": {
+    "max_soft_edge_px": 2,
+    "alpha_outside_cells_nonzero": 0,
+    "warnings": [],
+    "upscaled": false,
+    "blurred": false
+  },
+  "sop_checkpoint": "632c092af8f37172644cc697148011aad9718b6a",
+  "archive": {
+    "filename": "KFB_MixedBag_HUD_Base_Glyphs_R5_2026-11-04.zip",
+    "sha256": "01cefe0a1b7b4c41511a3c419b29b122b30c5f90ac42675b9e1f338fbcdcc798",
+    "bytes": 20626360,
+    "files": 131,
+    "upload": "See current owner Return for verified completion; never inferred from local ZIP"
+  }
+}
