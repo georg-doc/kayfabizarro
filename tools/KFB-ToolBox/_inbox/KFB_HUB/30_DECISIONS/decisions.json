@@ -20591,6 +20591,21 @@
    "superseded_by": [],
    "why": "Erst Layout-System und Board, dann bauen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1405",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "TUNE",
+   "text": "Georg 04.11.: HUD-Board R1 (q483) TUNE: Settings-Overlay mit Default-Switch, ohne Clay-Slider/Knoepfe, Bangers-Versalien und X unpassend; Action-Buttons, Almanach, Waypoint ins System; alles aus bestehenden Clay-UI-Teilen ableiten; ein Master-Kit, Skins per Farb-/Material-Umfaerbung, nur wenige Hero-Teile je Skin (Teal-Set als dritter Skin). Fluff heroic bleibt orange (q476). Hasenschwanz A rund/klein + weisser ovaler Fellbauch (q472, WSB). Tueren R5 Passt so bauen (q477). Augen +15 %/Pupillen enger uebernehmen, Goth Girl kleiner, Lider hautfarben, kein Aerger-Keil an inneren Lidwinkeln (q478). Fluff-Welt 3D-Logik, Transitionen sloppy (q479). Ripple: beige Unterflaeche unter Bordstein entfernen (q482). Bild-Briefings ab jetzt immer zwei Sprite-Sheets mit Raster statt Einzelbilder; Farbvarianten per Umfaerbung; offene Briefings umgeschrieben. MixedBag 06: Tueren/Portale/Organ-Truhen an Verteiler, Goo-Spritzer an Flug (Slop-Tod + Umfaerbe-Shader), Teal-HUD an Kartenkante.",
+   "values": {},
+   "owner": "Kartenkante · Figuren · WSB · WS-Design · Verteiler · Rakete/Flug · Georg",
+   "check": "q472, q476, q477, q478, q479, q482, q483",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ableiten statt neu erzeugen haelt Stil und Aufwand zusammen.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
