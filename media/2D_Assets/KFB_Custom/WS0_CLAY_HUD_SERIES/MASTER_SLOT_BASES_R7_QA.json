@@ -4,7 +4,7 @@
   "all_heights288": true,
   "skin_derivatives": 48,
   "alpha_preserved_all_skins": true,
-  "no_new_skin": true,
+  "no_new_skin": "Historical technical field; irrelevant to design rejection",
   "no_scripted_upscale": true,
   "content_fixture_shared_sha256": "0c83f89ca0a6550a23085d41e65afd2328d10b821a213e5e6cb25c791d1e2727",
   "action_size": {
@@ -393,7 +393,7 @@
       ]
     }
   ],
-  "design_status": "SOURCE_CONDITIONED_CANDIDATE",
+  "design_status": "GEORG_REJECTED_DO_NOT_USE",
   "game_proof": "NOT_RUN",
   "full_3d_hero_pipeline_proof": "NOT_RUN",
   "license": "NOT_RELICENSED: preserve original source/repository rights",
@@ -423,5 +423,6 @@
   "runtime_written": false,
   "delivery_status": "RETRACTED_WRONG_DESIGN",
   "rejection_reason": "Per-slot empty-well rims remain; explicit correction requires one tray outer edge and borderless places. Auftrag4 is cancelled.",
-  "current_next_gate": "Base glyph atlas only, then one-call cut and actual Compact/Normal/Large game proof"
+  "current_next_gate": "Base glyph atlas only, then one-call cut and actual Compact/Normal/Large game proof",
+  "status": "REJECTED"
 }
