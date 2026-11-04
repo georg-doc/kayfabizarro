@@ -1,0 +1,166 @@
+{
+  "sailors": {
+    "sha256": "7433cf63ee3172eff75e100c5f3fc1f7681e0310226c44dbdb2f142d2e2d113e",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_pixels": 589771,
+    "total_pixels": 1572864,
+    "background_samples": [
+      {
+        "xy": [
+          0,
+          0
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          512,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1024,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          500,
+          10
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1500,
+          1000
+        ],
+        "alpha": 0
+      }
+    ],
+    "game_tested": false
+  },
+  "mechanics": {
+    "sha256": "50186fdfc3ccf0658ee8beba2306ecd67b58697f7f7aaacf243b3394aa1a7121",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_pixels": 626121,
+    "total_pixels": 1572864,
+    "background_samples": [
+      {
+        "xy": [
+          0,
+          0
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          512,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1024,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          500,
+          10
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1500,
+          1000
+        ],
+        "alpha": 0
+      }
+    ],
+    "game_tested": false
+  },
+  "unused_alpha_attempt": {
+    "sha256": "f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_pixels": 613824,
+    "total_pixels": 1572864,
+    "background_samples": [
+      {
+        "xy": [
+          0,
+          0
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          512,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1024,
+          512
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          500,
+          10
+        ],
+        "alpha": 0
+      },
+      {
+        "xy": [
+          1500,
+          1000
+        ],
+        "alpha": 0
+      }
+    ],
+    "game_tested": false
+  },
+  "correction": "Previous colored-background HOLD was a preview misdiagnosis. Fully transparent background pixels have residual RGB colors; correct alpha compositing shows cutouts. Alpha max254 is recorded, not by itself a failure. Further in-game edge evaluation still not run.",
+  "sailor_design_status": "DRAFT awaiting Georg",
+  "mechanic_design_status": "ALL SIX GEORG PASS",
+  "job_counts": {
+    "sheet_generation": 1,
+    "unnecessary_background_edit": 1,
+    "selected": "original sheet"
+  }
+}

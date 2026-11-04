@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · Historic sailors + Mechanics PASS · 2026-11-04
+
+Owner WS0 · repo georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Mechanics: ALL SIX GEORG DESIGN PASS. Prior transparency hold corrected: original alpha0 background and checker compositing verified; preview displayed residual RGB. 626121 fully transparent pixels. No cleanup required based on that mistaken finding.
+- Historic sailors: one generated original-reference-conditioned 3x2 six-character PNG, 1536x1024. DRAFT awaiting Georg. 589771 fully transparent pixels; samples alpha0, extrema0..254. Source PNG, exact prompt/arguments, hash and audit archived.
+- One unnecessary sailor background-edit call completed due to the same preview misdiagnosis, not selected; receipt/hash retained. Do not count it as another approved sheet or six extra actors.
+- Miners remain FAIL/TUNE; prior pilot PASS historical. No further miner production.
+- No Librarian admission or runtime tests; no new owners, Stage, Site, merge or Live.
+
+## One next gate
+Georg design decision on the historic sailor sheet.
+
+## Historical Return · superseded where conflicting
+
 # GEORG DECISION · 2026-11-04 · SIX MECHANICS DESIGN PASS
 
 Georg: “top! die 6 mechanics sind alle PASS!” All six designs accepted. Transparency hold remains; no Librarian/game admission implied. Next authorized production: ONE transparent 3x2 six-character historic sailor/naval soldier/veteran seafarer Slops sheet, including seamen/women; weird historic absurd-surreal tone. Existing originals as style references. No further miner generation.

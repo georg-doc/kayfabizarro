@@ -12,11 +12,9 @@
   "generated_jobs": 1,
   "characters": 6,
   "mechanical_crops": 6,
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "ALL_SIX_GEORG_DESIGN_PASS",
   "holds": [
-    "colored background despite requested transparency",
-    "raw grid crops not individually approved",
-    "no runtime tests or Librarian registration"
+    "No runtime or canonical Librarian admission tested"
   ],
   "crops": [
     {
@@ -50,5 +48,6 @@
       "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
     }
   ],
-  "derived_exports_location": "LOCAL_ONLY: six raw cell crops and 96px proof; reproducible from archived sheet"
+  "derived_exports_location": "LOCAL_ONLY: six raw cell crops and 96px proof; reproducible from archived sheet",
+  "transparency_correction": "Prior colored-background claim was preview RGB misdiagnosis. Correct compositing verifies actual transparent background; see SAILORS_HISTORIC_2026-11-04/QA.json."
 }

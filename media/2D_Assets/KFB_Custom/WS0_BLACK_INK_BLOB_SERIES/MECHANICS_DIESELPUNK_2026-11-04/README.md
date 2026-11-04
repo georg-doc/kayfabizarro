@@ -1,7 +1,7 @@
 # Auto / Jetpack mechanics · Dieselpunk · R1
 
-One generated 3x2 six-character sheet, explicitly requested by Georg after miners FAIL/TUNE. Three female-read characters planned. Actual original family + construction + professions images supplied as STYLE inputs; no failed miner output used as parent.
+Georg Design PASS for ALL SIX mechanics · 2026-11-04.
 
-Georg Design PASS for ALL SIX mechanics · 2026-11-04. Technical HOLD: colored background generated despite transparent-background argument. Six raw grid crops are mechanical candidates with background, not clean game sprites. Do not register or integrate as accepted assets. Exact prompt/arguments and receipt in PRODUCTION_RECORD.json; hashes/technical checks in MANIFEST.json.
+Correction: prior colored-background HOLD was a preview misdiagnosis. The ORIGINAL PNG has actual transparent alpha; correct checker composite shows clean separation. 626121 pixels alpha0, sampled background alpha0, range0..254. See sibling sailor QA.json for measurements. Residual RGB under zero-alpha pixels must not be mistaken for opaque matte. No image modification required on that evidence.
 
-Next receiving gate: isolate clean alpha via image tool and inspect before Asset Librarian admission. Design PASS does not close the technical hold. Existing WS0 / Asset Librarian / WS1 ownership remains. No runtime, Site, Stage or Live changes.
+One generated 3x2 six-character sheet; actual original family/construction/professions style inputs. Existing raw crops local/reproducible. No runtime/Librarian admission tested; preserve source bytes and inspect receiving game rendering before admission.
