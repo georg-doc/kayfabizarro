@@ -1,3 +1,7 @@
+# GEORG DECISION · HITMEN/WOMEN ALL SIX DESIGN PASS · 2026-11-04
+
+Georg: “wieder alles PASS”. All six hitmen/women designs accepted. Prior accepted mechanics, selected sailor R2, pirates and explorers unchanged; miners FAIL/TUNE unchanged. New authorized production: one surreal six-character mafia-boss/mob-queen sheet interpreting different cinematic organized-crime milieus, not only Italian; two female-read slots planned. No asset registry/runtime admission implied.
+
 # CURRENT CHECKPOINT · Hitmen/women gang · explorers PASS · 2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
