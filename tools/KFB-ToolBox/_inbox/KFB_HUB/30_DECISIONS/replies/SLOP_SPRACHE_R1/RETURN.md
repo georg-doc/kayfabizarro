@@ -89,3 +89,28 @@ Belege: `SLOP_R3_Storyboard_1/2.jpg`, `SLOP_R3_ZERFALL_VORN.mp4`, `SLOP_R3_ZERFA
   - keine Splitter, die weit wegfliegen;
   - Tropfen nur nach unten;
   - Pfütze kleiner, nur unter den Stücken.
+
+## Runde 4–5 Zerfall im Spiel und B: Bewegungs-Bibliothek R1 (04.11.)
+**Zerfall im Spiel (R4, R5):**
+- Kritiker R4: 5/10 und 4/10, R5: 3/10 und 4/10. Belege `SLOP_R5_*`.
+- Ursache: Das Reißen dauerte null Bilder. Deshalb wird der Tod jetzt in Remotion als Teil von B gebaut (WS0 einverstanden).
+
+**B · Bewegungs-Bibliothek R1:**
+- Belege:
+  - `SLOP_BEWEGUNG_R1.mp4` (18,5 s mit Ton);
+  - `SLOP_BEWEGUNG_R1_Schluesselbilder.jpg`, `SLOP_BEWEGUNG_R1_Tod_Folge.jpg`;
+  - `KONZEPTBLATT_SLOP_BEWEGUNG_R1.md`.
+- Kurven-Datei `60_VIDEO/remotion/src/slop-anim/slopKurven.ts` (eine Quelle für Bild, Ton und Spiel), Komposition `Slop-Bewegung`, Ton-Skript `remotion/scripts/slop-bewegung-ton.mjs`.
+- Schreck-Ton (A) in `slopVoice.js` (`schreck()`), fx/slop-r1 @83e74ead.
+- Kritiker (ein Lauf, Runde 2 von B): Bewegung **6/10**, „liest sich als Papier“ **6/10**, „ein Effekt“ **4/10**. Runde 1 lag bei 4, 5 und 4.
+- Was trägt:
+  - Ducken vor dem Schreck, gestreckter Schrei in der Luft, Landung, maßvolle Verzerrung;
+  - Panik-Zickzack;
+  - Risslinie und Aufblitzen der hellen Rückseite.
+- Was fehlt (Liste für Runde 2):
+  1. Totes Standbild von etwa 3 s nach dem Liegen. Die Pfütze erscheint gleich in voller Größe.
+  2. Das Ende schrumpft schwebend, statt in eine bleibende kleine Pfütze einzusickern.
+  3. Zu wenig „zwei Hälften“: Es löst sich nur ein schmaler Streifen. Umkippen ist eine starre Drehung, ohne Biegen.
+  4. Die Rückseite wirkt als konturlose Fläche wie ein Loch.
+  5. Nachzittern und Treffer sind in den Proben kaum zu sehen.
+  6. Gesicht und Ausdruck können sich nicht ändern, das ist ein festes Bild. Dafür bräuchte es ein „erschrocken“-Bild je Blob.
