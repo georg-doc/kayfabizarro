@@ -1,3 +1,21 @@
+# CURRENT · FULL HUD COMPLETENESS / DESIGN REVIEW · 2026-11-04
+
+Georg explicitly requested a full modular HUD questions/completeness check for WS0, including Primary/Secondary, separate Interact,1..6slots, all existing modules, exact dimensions and sharpness. Further binding requirements: formal tab/panel hierarchy; Hazard stripes must not run under tabs and erase their contours; canonical isolated Close-X; responsive headers; cartoon hover/pressed/active motion with stable layout; no double frames; real standard buttons distinct from sliders; padding/readable typography instead of blanket Bangers/all-caps; skin typography concept, individually isolated layers and explicit manifest state resolution.
+
+**Checked in:** docs/hud-kit/WS0_HUD_COMPLETENESS_AND_DESIGN_REVIEW_R1.md, full34-element coverage table +9specific WS0/Kartenkante questions, measured/current source references, proposed layer/state/typography contract and full-system completion criteria. New Georg rules are binding; font choices, layout reconciliation and schema details remain explicitly open decisions. SOP points to this audit. This is documentation/source inspection, NOT new implementation or browser QA.
+
+**Concrete discrepancy:** current hudV6.js builds Primary+Secondary+0..3Items+Interact main bar3..6, plus separate Travel/Backpack, and2talk actions. Old layout says3+2; statesR2 declares different movement roles. 'Up to6' scope, separate Interact position, item reflow and Walk/Drive/Fly action roles need one owner contract. Source read head6b72ba39323aa1f264bc2a70b5010963d2b64565; file blobs pinned in audit.
+
+**Resolution and completeness:**1472-source bar does not cover matrix2275large-Retina demand; cutter1046export also needs resolution decision. Sheet1pair is only signature-parts delivery, never full skin acceptance. ActionGlyphs, dynamic master trays, standard controls, travel/minimap, complete states/manifest, typography/padding and actual game proofs remain pending. Intentional neutral owner modules preserved; exceptions to confirm.
+
+**Actual validation:** static read of34coverage entries, live branch hudV6/layout/states/clayKit/skin-manifest and current runtime spec; docs/SOP exact branch-head + file readbacks. No new raster generation, browser check, image acceptance, runtime patch, merge or publication. No message sent to WS0; user has chosen to forward later.
+
+**Owner/branch/PR:**georg-doc/kayfabizarro; design/kfb-clay-hud-skin-kit-r1-2026-11-04; PR468. Audit implementation8d537fd1949a0f4f6d7ba78730430a3af1db4649; SOP checkpointba543d716d6bf009184bbe5f96d98c870fbd0d8d. Read latest branch head for this Return.
+
+**One next gate:** WS0/Kartenkante answer audit questions1–9 in existing runtime SSOT, producing one explicit full HUD parts/slot/typography/state contract and a full Retro integration acceptance roster. Existing Retro pair/cutter seam remains below; no completed-skin claim.
+
+---
+
 # CURRENT · RETRO NATIVE PAIR R3 · 2026-11-04
 
 WS0/Kartenkante user briefing supersedes2048 delivery and full-silhouette9:1 fitting. Original attempt1 design accepted; attempt2 rejected (closed includes drawer). New pair is a candidate assembled without upscaling from larger individual native sources; not falsely labeled pixel-identical to accepted1254 whole sheet. Original soft/feathered2048 montage is superseded.
