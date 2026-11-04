@@ -1,0 +1,258 @@
+{
+  "version": "HUD_CONTRACT_R1_DELIVERY_R4",
+  "contract_repo": "georg-doc/KFB-Stunt-Car-Race",
+  "contract_branch": "module/hud-clay-r1",
+  "contract_reported_commit": "5c8d0c52",
+  "contract_blob": "8d52e2292ac259c9ddf150cfe3e0cb18628f97be",
+  "authoring_repo": "georg-doc/kayfabizarro",
+  "authoring_branch": "design/kfb-clay-hud-skin-kit-r1-2026-11-04",
+  "pr": 468,
+  "sop_commit": "d6044641ef4e5084061cc4de0cb4d279c1b4f6b3",
+  "skins": [
+    {
+      "skin": "retro",
+      "label": "Retro",
+      "sheet1_status": "CUTTER_PASS",
+      "sheet1_cutter": {
+        "exit_code": 0,
+        "stdout": "{\"skin\": \"retro\", \"warnings\": [], \"cells\": 6, \"details\": 3, \"protect\": [], \"slice\": [27, 74, 45, 77], \"column\": {\"w\": 208, \"h\": 904, \"slotD\": 106.0, \"bodyR\": 106}}\n",
+        "stderr": ""
+      },
+      "sheet1_files": [
+        {
+          "file": "retro/RETRO_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "74e208f4c900b56b385129348a07e478710139885a516b5240d21b02bcf8f27f"
+        },
+        {
+          "file": "retro/RETRO_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "8035d2b3c3b6d925d11fc936470e7037c4af00a24561c9687b7117f409d0c8c8"
+        }
+      ],
+      "sheet2_file": {
+        "file": "retro/glyphs/retro_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "3c8283685ecedacd3aff869e337e6f5eb6b927f2d6c28363652607f1443c729f"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE"
+    },
+    {
+      "skin": "steam",
+      "label": "Steam",
+      "sheet1_status": "CUTTER_HOLD",
+      "sheet1_cutter": {
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "{\"fail\": \"Mulden: 0 statt 6 gefunden\"}"
+      },
+      "sheet1_files": [
+        {
+          "file": "steam/steam_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "80df073c7db5ce0f05448f41a8ce246b061fc4f85dc8182943f50ca443455157"
+        },
+        {
+          "file": "steam/steam_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "7ccfa0e4bc5e6fda19e0da68cc0d1fff7c2e67588bc2e547ccd13bed66bc19d6"
+        }
+      ],
+      "sheet2_file": {
+        "file": "steam/glyphs/steam_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "fbc4a15b774d55cbbe1dc8517f824a93afe183da9a71b5d4e6e7c566e65e9afe"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE",
+      "body_ratio": 10.72992700729927,
+      "sheet1_max_soft_edge_px": 2.23606797749979,
+      "sheet1_grid_warnings": [],
+      "radio_native_height": 900
+    },
+    {
+      "skin": "teal",
+      "label": "Teal",
+      "sheet1_status": "CUTTER_PASS",
+      "sheet1_cutter": {
+        "exit_code": 0,
+        "stdout": "{\"skin\": \"teal\", \"warnings\": [], \"cells\": 6, \"details\": 3, \"protect\": [{\"edge\": \"bottom\", \"crossings\": 20}], \"slice\": [33, 84, 46, 86], \"column\": {\"w\": 282, \"h\": 904, \"slotD\": 106.5, \"bodyR\": 258}}",
+        "stderr": ""
+      },
+      "sheet1_files": [
+        {
+          "file": "teal/teal_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "b50f06911a90085598df99e8e76f7b060e340862094c8e29b26d9df4a0a69a8f"
+        },
+        {
+          "file": "teal/teal_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "2f8a2c8a24fd3f41c346b36c8ca2b4267c3e460b0cab122ebf87729b088e2c67"
+        }
+      ],
+      "sheet2_file": {
+        "file": "teal/glyphs/teal_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "54e46d15c82a411e5a7b5934b4701e3b00b2b9d58178cae32acbc2c258b57776"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE",
+      "body_ratio": 9.932432432432432,
+      "sheet1_max_soft_edge_px": 2.23606797749979,
+      "sheet1_grid_warnings": [],
+      "radio_native_height": 900
+    },
+    {
+      "skin": "blue",
+      "label": "Reactor Blue",
+      "sheet1_status": "CUTTER_PASS_WITH_NUMPY_WARNINGS",
+      "sheet1_cutter": {
+        "exit_code": 0,
+        "stdout": "{\"skin\": \"blue\", \"warnings\": [], \"cells\": 6, \"details\": 3, \"protect\": [], \"slice\": [27, 83, 41, 84], \"column\": {\"w\": 293, \"h\": 903, \"slotD\": 68.5, \"bodyR\": 217}}",
+        "stderr": "/Users/georgv.westphalen/Library/Python/3.9/lib/python/site-packages/numpy/_core/fromnumeric.py:3596: RuntimeWarning: Mean of empty slice.\n  return _methods._mean(a, axis=axis, dtype=dtype,\n/Users/georgv.westphalen/Library/Python/3.9/lib/python/site-packages/numpy/_core/_methods.py:138: RuntimeWarning: invalid value encountered in scalar divide\n  ret = ret.dtype.type(ret / rcount)"
+      },
+      "sheet1_files": [
+        {
+          "file": "blue/blue_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "e034ebcd7cf089bbb81e61d2ac29a1ab68c3796f67efb6a6a55e44405ef26b3a"
+        },
+        {
+          "file": "blue/blue_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "99e55b14105e85e29eac1909be1c81c97b27cb117d78d02815d13cfff588bedb"
+        }
+      ],
+      "sheet2_file": {
+        "file": "blue/glyphs/blue_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "0afd2ccf1daf9748e9636167cd3ffd4f08678cf38f03466193249f5483249716"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE",
+      "body_ratio": 9.01840490797546,
+      "sheet1_max_soft_edge_px": 3,
+      "sheet1_grid_warnings": [],
+      "radio_native_height": 900
+    },
+    {
+      "skin": "slime",
+      "label": "Slime Green",
+      "sheet1_status": "CUTTER_HOLD",
+      "sheet1_cutter": {
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "{\"fail\": \"Mulden: 4 statt 6 gefunden\"}"
+      },
+      "sheet1_files": [
+        {
+          "file": "slime/slime_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "5787c66d2c92cccabb98ec680ae41d3bf7f52e878ad84ad8bd3199b06365f444"
+        },
+        {
+          "file": "slime/slime_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "0f031e20fe3f90b882e2733b9dacf82ace2a11bf33ab341c8faa9ba599f4133c"
+        }
+      ],
+      "sheet2_file": {
+        "file": "slime/glyphs/slime_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "dcf8462f6fd7a48f720dcafaff4c2ec6e0d0f87342be5b528cb3a395d3094594"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE",
+      "body_ratio": 10.068493150684931,
+      "sheet1_max_soft_edge_px": 2.23606797749979,
+      "sheet1_grid_warnings": [],
+      "radio_native_height": 900
+    },
+    {
+      "skin": "hazard",
+      "label": "Hazard v2",
+      "sheet1_status": "CUTTER_PASS",
+      "sheet1_cutter": {
+        "exit_code": 0,
+        "stdout": "{\"skin\": \"hazard\", \"warnings\": [], \"cells\": 6, \"details\": 3, \"protect\": [{\"edge\": \"bottom\", \"crossings\": 32}], \"slice\": [48, 48, 35, 47], \"column\": {\"w\": 233, \"h\": 903, \"slotD\": 81.5, \"bodyR\": 209}}",
+        "stderr": ""
+      },
+      "sheet1_files": [
+        {
+          "file": "hazard/hazard_SHEET_1a_1536x1024_RGBA.png",
+          "sha256": "57f5a85aabf129b952ea7936bc006a37b59ca397d4eb5b0dff5032ec816cea69"
+        },
+        {
+          "file": "hazard/hazard_SHEET_1b_1536x1024_RGBA.png",
+          "sha256": "a977aecd0e8f9f681c41aece3a1c3b0821d285de340a1f0d79ff5c96d28025cf"
+        }
+      ],
+      "sheet2_file": {
+        "file": "hazard/glyphs/hazard_SHEET_2_1536x1024_RGBA.png",
+        "sha256": "0f16750fe5d63129c2a72e4555a261d0063579b47291a32f261fff4bfad1262f"
+      },
+      "glyph_count": 12,
+      "glyph_grid_warnings": [],
+      "glyph_max_soft_edge_px": 2.23606797749979,
+      "upscaled": false,
+      "runtime_game_proof": "NOT_RUN",
+      "human_design_acceptance": "Retro pair R3 accepted per WS0 user reply; new art CANDIDATE",
+      "body_ratio": 10.137931034482758,
+      "sheet1_max_soft_edge_px": 2.23606797749979,
+      "sheet1_grid_warnings": [],
+      "radio_native_height": 900
+    }
+  ],
+  "counts": {
+    "sheet1_pairs": 6,
+    "new_sheet1_pairs": 5,
+    "sheet2": 6,
+    "individual_role_glyphs": 72,
+    "cutter_pass": 4,
+    "cutter_hold": 2
+  },
+  "waypoint": {
+    "file": "waypoint_arrow_neutral.png",
+    "sha256": "50ba3dcb5724d25aa40bc9d49b765a5bc2d6ab2b5d0b5f25e08e6c6b41f30fc3",
+    "source": "actual existing kenney_arrow-rounded.glb",
+    "source_blob": "271caf31ae0649917bb85107fccacbaf4ae7bd65",
+    "neutral": true,
+    "extra_grid_cell": false,
+    "art_status": "SOURCE_RENDER_COMPANION_NOT_RUNTIME_PATCH"
+  },
+  "deferred": [
+    "Sheet3: explicitly out of current HUD",
+    "Large Retina",
+    "neutral Master-Kit 288px source/complete standard-control integration remains owner coverage work",
+    "responsive min/max measurements: MEASURE_REQUIRED by Kartenkante"
+  ],
+  "unresolved": [
+    "Steam six-well cutter area/brightness recognition",
+    "Slime two wells below cutter minimum-area threshold",
+    "Blue cutter emits NumPy warnings; all exported JSON parsed with strict finite syntax",
+    "Full six-skin gameplay/format/state proof and WS0 acceptance: Kartenkante owner"
+  ],
+  "next_gate": "Kartenkante runs delivered pairs/glyph manifests through existing receiving pipeline, resolves Steam/Slime detection and supplies six-skin format/state game evidence to WS0; Georg has no new specification question",
+  "no_runtime_writes": true,
+  "no_merge": true,
+  "no_publication": true,
+  "no_ws0_message_sent": true,
+  "archive": {
+    "filename": "KFB_MixedBag_HUD_Contract_R4_2026-11-04.zip",
+    "sha256": "fd0594cce7434ead6986bc384e66af7cef30501995f92c388ffb9180a6f6d9f2",
+    "bytes": 168993371,
+    "upload_status": "See current owner Return; not inferred from this local evidence record"
+  },
+  "cutter_reference_blobs": {
+    "scripts/hud-kit/cut-sheet1.py": "dcb60f816aea4a6e5cfd4f795c5de2542c6c7d4d",
+    "scripts/hud-kit/hudbar_measure.py": "75e91e77fa9c8695d605beaecbdfc64f5a9a2ed9",
+    "scripts/hud-kit/sheet_grid.py": "330428687f68a63dcd7fdcc110ce6a7dd3562a2e"
+  }
+}
