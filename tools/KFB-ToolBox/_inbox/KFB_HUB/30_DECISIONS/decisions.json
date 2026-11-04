@@ -20846,6 +20846,21 @@
    "superseded_by": [],
    "why": "WSB-Lieferungen gehen sofort auf GitHub, sonst blockiert WS1.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1422",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "KEEP",
+   "text": "Georg-Antworten 04.11.: HUD R2 Pass fuer jetzt, Feintuning spaeter, Modularisierung fuer Skins/Zustaende/Anwendungsfaelle/Spielmodi -> ins Spiel (q486). Vorhang R4c Passt, aber geschlossen beginnen (kein Mittelspalt) plus Stoff-Swoosh (q491). Ripple R3 Passt (q492) -> kartenbau-r4 merge-fertig. Kontroll-Eskalation Passt so bauen, nicht ueberkomplex, skalierbar, emergent willkommen; Roster Boss/eskalation freigegeben; erst K0-K3 hinter kontrolle=1, dann MiB/UFO (q494). Slops: weiterhin schraeg zur Kamera -> strikt bildparallele Billboards, Richtung per Spiegeln mit Flip-Squash, Recherche 2,5D/HD-2D (q493). Backlog WSB: FB-Waffenhaltung Arme im Koerper, Schuss-Animation.",
+   "values": {},
+   "owner": "Kartenkante · WS-Design · Rakete/Flug · WSB · Georg",
+   "check": "q486, q491, q492, q493, q494",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "2D-Figuren bleiben immer bildparallel; die Welt eskaliert einfach und skalierbar.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
