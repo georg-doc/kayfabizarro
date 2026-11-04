@@ -21206,6 +21206,21 @@
    "superseded_by": [],
    "why": "Eine registrierte Regel entscheidet vor Georg; Sterne folgen aus der Struktur.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1446",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "WS1 Q-069: Stamm @fe1b0628 (HUD @8c4861d3, Start-WFC @fe5b22f4, Schwanz; S1+S2 uhr/cueBus/rezept/spielZustand, vehicle.enter/exit als Rezepte, setTimeout -> Marken; spiel-zustand-Test PASS; Tests ueber KFB_BASE-Server; flags.js mit Release-Vorschlag; jetklapp). WS0 N-135: Release-Satz ja + tueren=1 + kartenbau=1 nach Merge; Site nackte Adresse = RELEASE_HASH, Zugang bis q499 hinter Passwort inkl. /raw; Stufe B Split + PW_GPU; S3 Truhe dann Portal ueber Tueren-Head; Merge-Reihenfolge. kartenbau-r4-head @ec6efb36 (Ripple-Fix) -> N-134; Aufprall R3 design/aufprall-r3 @75099bd1 Mulde statt Sterne, Beleg im naechsten Slot.",
+   "values": {},
+   "owner": "WS1 · WS-Design",
+   "check": "N-134, N-135, Q-069",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Release ist eine Liste mit Besitzer und Status, nicht ein Bauchgefuehl.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
