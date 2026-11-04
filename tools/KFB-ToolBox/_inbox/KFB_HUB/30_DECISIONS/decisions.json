@@ -21626,6 +21626,21 @@
    "superseded_by": [],
    "why": "Die Welt waechst aus Saaten, nicht aus Szenen; das erste Level ist ein Ausbruch aus dem Blick.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1474",
+   "date": "04.11.2026",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "Georg 04.11. (Drift-Korrektur, baut auf V-434): I = einzige Interaktionstaste (aufheben, Truhe, Tuer/Portal, ein-/aussteigen, sprechen, ansehen) als ACTION_KEYS.interact in hostKeys.js; talk:KeyE entfaellt; Q/E nur Seitschritt bzw. Drift; ein Router, statischer Test gegen Doppelbelegung -> WS1 N-147, WS-Design, Kartenkante. Dazu WS1 Q-071: Stage-Buendel aus privatem Spiel-Repo site/stage statt oeffentlichem kayfabizarro ws1/preview (N-146, b326). Hub-Stand aktualisiert.",
+   "values": {},
+   "owner": "WS1 · WS-Design · Kartenkante",
+   "check": "N-146, N-147",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Hand, eine Taste: Wer interagiert, drueckt I.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
