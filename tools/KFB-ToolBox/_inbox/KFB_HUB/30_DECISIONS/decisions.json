@@ -21176,6 +21176,21 @@
    "superseded_by": [],
    "why": "Vorhandene Bewegung sichtbar machen, statt neue zu bauen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1444",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Alien gross mit kuerzerer Glocke (WSB Vorschau, 60 % Kappe im Kopf / 35 % alles frei) -> Hub q507, Zweig nicht gepusht. WS-Design Code ohne Beleg: design/hn-fassade-r1 @5bbfb0bb (eine Uhr HN_UHR, Baender ziehen, Palette atmet, Korn 12 fps), design/aufprall-r1 @b7606909. Figuren Lid-Runde 2 im Code (fblid=r2, E2 duenner/flacher, Fellton #caa730). WS-Himmel Knetkorn R2 FAIL, Kontakt-AO neu @39681661. Browser-Slots auf Georgs Mac ab jetzt nacheinander: Flug (goo60) -> Figuren (Lider) -> WS-Design (kfbInsert, Fassade, Aufprall) -> Kartenkante (Formatmatrix) -> WS-Himmel (Knetkorn); je Slot ein Build, ein Browser mit Heap-Limit, danach alles schliessen.",
+   "values": {},
+   "owner": "WSB · alle lokalen Sessions",
+   "check": "q507",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Browser-Slot zur Zeit haelt den Mac am Leben; Belege kommen dafuer geordnet.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
