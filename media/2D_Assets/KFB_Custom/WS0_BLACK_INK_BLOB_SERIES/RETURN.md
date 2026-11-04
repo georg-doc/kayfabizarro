@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · International lawkeepers12 · drivers PASS ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.
+
+-Drivers12 BOTH SHEETS ALL GEORG DESIGN PASS recorded; driver title/field-note metadata remains proposal, not implicitly canon. Prior accepted families retained, miners FAIL/TUNE unchanged.
+-Lawkeepers12: TWO completed independent original-reference-conditioned1536x1024transparent3x2sheets, twelve fictional international police/order-enforcer archetypes, two female-read each. BOTH DRAFT awaiting Georg. Tragicomic authority/power critique via uniform/emblem/prop acting, no scenelets. Source PNGs/exact args/receipts/QA archived under LAWKEEPERS_12_2026-11-04.
+-Civic SHA25606056d9320ac7e48ac2491b2b32a08e39f78c0282c237b852b35766a138436d1; institutions SHA2567a49ba2d7cc0cb8aca956959844e212ea294ecea085905278260dcf36b9785df. BothRGBA0..254,614788/602904alpha0pixels, five sampled background points0 each. Proper checker/96px comparison inspected, no blanket clean-isolated/anatomy/game claim.
+-One extra invocation failed at input-read before output because Downloads reference missing; exact original plugin Freche/Professions hashes verified, then supplied actual pixels.2completed generations,3invocation attempts; no blind unknown retry or seed claims.
+-Later repair/catalogue remains queued under WS0 proposal and issue466; no owner reply/acceptance assumed, no Asset Librarian Site writes, no helper agent launched. No extracted sprites, registration/runtime tests, new owners, Stage/Site/Live/merge.
+
+## One next gate
+Georg design verdict on both lawkeeper sheets.
+
+## Historical Return
+
 # GEORG DECISION · DRIVERS12 ALL PASS · INTERNATIONAL LAWKEEPERS12 ·2026-11-04
 
 Drivers ground/air-space BOTH SHEETS ALL12 GEORG DESIGN PASS. Driver title/bio drafts remain writing PROPOSALS; design approval is not automatic lore/HP acceptance. Prior accepted families retained, miners FAIL/TUNE unchanged. New authorized product:12international archetypal police/order-enforcer Slops, two3x2 transparent sheets, tragically comic authority and satirical power critique through uniforms/props/emblems. Two female-read per sheet. Existing WS0 review of later repair/catalogue plan remains requested, no owner reply assumed; no Asset Librarian Site writes or repair agent now.
