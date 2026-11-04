@@ -1,3 +1,11 @@
+## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
+
+- Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.
+- Local 18/18 RGBA + 108/108 crop checks: 48/108 boundary risk; one real isolated Granny donor and one ZIP integrity PASS; original PNG bytes **not** checked into GitHub.
+- Reused existing WS0 `INKBLOBS_R1` Return, `KFB-Stunt-Car-Race` 72-blob private atlas/mobs2d and Asset Librarian read-only facade; no second asset truth or actor runtime.
+- WS0 intake issue #466; one small low-level six-sprite import and WS1 animation/hit/collision proof next. No game integration, Stage/Live, merge or V-number assignment.
+- Candidate handoff: `media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/RETURN.md`.
+
 ## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
 
 - Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.

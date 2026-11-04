@@ -1,0 +1,302 @@
+{
+  "schema": "kfb.ink-source-intake/1",
+  "date": "2026-11-04",
+  "owner": "WS0",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "binaryStatus": "LOCAL_BYTES_VERIFIED_GITHUB_NOT_IMPORTED",
+  "humanVisualStatus": "PASS_ALL_18_SOURCE_SHEETS",
+  "runtimeStatus": "NOT_IMPORTED_NEW_108",
+  "sheetCount": 18,
+  "characterCandidateCount": 108,
+  "alphaNote": "18 RGBA sources have alpha; 48/108 mechanically cropped cells flagged border risk; no whole-source production alpha PASS claim",
+  "sheets": [
+    {
+      "sheetId": "kfb-ink-evil_masterminds",
+      "sourceFile": "KFB_BlackInk_EvilMasterminds_6_2x3_ALPHA.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 768,
+      "height": 1024,
+      "sourceSha256": "09d63c1cf6c6147c0daea1791c1c2088830efe385f008915a445101c4ee9e900",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-goons",
+      "sourceFile": "KFB_BlackInk_Goons_6_2x3_ALPHA.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 768,
+      "height": 1024,
+      "sourceSha256": "e82474652ab9e936b3da02c483df1326754678b250c16069b6ece66536017a68",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-cia_spies",
+      "sourceFile": "KFB_BlackInk_CIA_Spies_6_2x3_ALPHA.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 768,
+      "height": 1024,
+      "sourceSha256": "820b812ecd1d7b8a6ed6b6bc9b80d23104908f33f64a95c842d1267dcc17b286",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-deep_state",
+      "sourceFile": "KFB_BlackInk_DeepState_6_2x3_ALPHA.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 768,
+      "height": 1024,
+      "sourceSha256": "73b52e3d24cb41a23d199b091742759acbe683d57c9af35d1fe76f88dfc80ef7",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-philosophy_traditions",
+      "sourceFile": "KFB_BlackInk_Philosophy_Traditions_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "a2938a173ba9e4db109c6f5cecf58f2c19728afba30015025d50f1b70f008ca5",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-philosophy_metaphysics",
+      "sourceFile": "KFB_BlackInk_Philosophy_Metaphysics_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "8a88a64ba2dee4cf94c81bdc0df5e6b21217f6f7c2938ab1beb8486cc21f9b6c",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-historical_icons_01",
+      "sourceFile": "KFB_BlackInk_Historical_Icons_01_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "932c787a0f9259d5dfa423aaf0dbc9cc333352e9def6b9e89b30f98986fe2fab",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-historical_icons_02",
+      "sourceFile": "KFB_BlackInk_Historical_Icons_02_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "c3d88b23e5b69f3dddd31035615ccda9204e6950ed94963cd059eada0ac09bcd",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-normie_a",
+      "sourceFile": "KFB_BlackInk_Normie_NPC_InkBlobs_A_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "767ba0d071ca0ca11377c2ee7e412607264803b6d4317ae71bc4bac513d07954",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-normie_b",
+      "sourceFile": "KFB_BlackInk_Normie_NPC_InkBlobs_B_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "52097523028b374404acbecc9f415d1193dc9d16e4c1a5ecbcfeb3cf14665df9",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-young_female_a",
+      "sourceFile": "sechs_freche_tinten_kle3monstermädchen.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "09e117d0fcd20cce87792b00fb004ae209322ebf4d7f2195628779c0fee5bf4f",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-young_female_b",
+      "sourceFile": "sechs_glänzende_tintenblob_charaktere.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "3d822668d7d56977d0ad6003f4cd74bf87142a1f6e9ca34c94d2cd6bd2577dfc",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-granny_a",
+      "sourceFile": "KFB_BlackInk_Oma_InkBlobs_Sheet_01_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "16bc8e5486742b55e1de039baea4d738d0ca4256df011e3ae3c1866f9cf2253e",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-granny_b",
+      "sourceFile": "KFB_BlackInk_Oma_InkBlobs_Sheet_02_6_3x2_ALPHA.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "64d881f4e8a13e782baaf44230420f33e1dc8ea515d5a62f6aeaa4e04e647d91",
+      "tier": "low-level",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-military_a",
+      "sourceFile": "sechs_tönende_tintenmonster_im_militärstil.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 1086,
+      "height": 1448,
+      "sourceSha256": "449ece8e6c84046af0fcb497240094308084c611fecf2dc81b62015a67702b62",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-military_b",
+      "sourceFile": "claymation_inkmonster_spezialeinheit_im_einsatz.png",
+      "grid": {
+        "columns": 2,
+        "rows": 3,
+        "characters": 6
+      },
+      "width": 1086,
+      "height": 1448,
+      "sourceSha256": "09c8cfe9811b2e51798378e5e248b01e5e4453622efcb775f7e04e17c8618c65",
+      "tier": "special",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-cult_leaders",
+      "sourceFile": "sechs_farbenfrohe_kult_guru_knetfiguren.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "35fc54d6e42cd433689f93364103eac412cf60f9955aad2b198bc37434e5a735",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    },
+    {
+      "sheetId": "kfb-ink-cult_helpers",
+      "sourceFile": "sechs_magische_tintenblob_kultisten_als_sprite_she.png",
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "characters": 6
+      },
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "270b90c3b7d4c82f6db7de297cb476a24d6e473ffe93f37c0a3a8181b7dd2e1e",
+      "tier": "lore",
+      "sourceByteStatus": "LOCAL_VERIFIED_GITHUB_IMPORT_PENDING",
+      "humanVisual": "PASS",
+      "technical": "RGBO_ALPHA_PRESENT__CELL_QA_PENDING"
+    }
+  ]
+}
