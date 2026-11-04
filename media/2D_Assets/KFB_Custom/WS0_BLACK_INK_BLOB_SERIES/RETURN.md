@@ -1,3 +1,7 @@
+# GEORG DECISION · DRIVERS12 ALL PASS · INTERNATIONAL LAWKEEPERS12 ·2026-11-04
+
+Drivers ground/air-space BOTH SHEETS ALL12 GEORG DESIGN PASS. Driver title/bio drafts remain writing PROPOSALS; design approval is not automatic lore/HP acceptance. Prior accepted families retained, miners FAIL/TUNE unchanged. New authorized product:12international archetypal police/order-enforcer Slops, two3x2 transparent sheets, tragically comic authority and satirical power critique through uniforms/props/emblems. Two female-read per sheet. Existing WS0 review of later repair/catalogue plan remains requested, no owner reply assumed; no Asset Librarian Site writes or repair agent now.
+
 # CURRENT CHECKPOINT · Drivers12 + WS0 catalogue/repair proposal ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.
