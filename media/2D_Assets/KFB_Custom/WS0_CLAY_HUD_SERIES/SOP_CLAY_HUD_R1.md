@@ -1,4 +1,17 @@
-# KFB Clay HUD Production SOP · R1 · 2026-11-04
+# KFB Clay HUD Production SOP · R3 · 2026-11-04
+
+## CURRENT OVERRIDE · R3 · Sheet1 pair / WS0 + Kartenkante · 2026-11-04
+This section supersedes the earlier single2048 Sheet1/native-resolution gate and whole-header9:1 fitting below. User relayed current runtime HUD_SKIN_SPEC.md §2a, blob e78a6a8556b4875436c0a1a924283bfd69b807d1 on module/hud-clay-r1. Original attempt1 design accepted; original attempt2 rejected because CLOSED wrongly has a drawer. The later softened2048 montage is not the new source canon.
+- First deliver Retro as TWO native-source composed1536x1024 RGBA sheets, no upscaling/recoloring. Then same pair for Steam, Teal, Reactor Blue, Slime Green, Hazard v2. After Sheet1 pairs, Sheet2 actions and Sheet3 travel as commissioned.
+- 1a: closed within x32..1504,y32..352; open within same x32..1504,y384..992. Both1472wide, same x position. Closed no drawer; open blank drawer + centered bottom arrow. BODY excluding head motif >=9:1; antenna/dish may extend upward inside band. Do not force full silhouette9:1 by squeezing head or blending strip joins.
+- 1b: radio x32..432,y32..992, proportional, >=860high. Right columns x464..784,816..1136,1168..1504. Row1 y32..352 = gear normal,gear hover,arrow; rows2 y384..688 and3 y720..992 =3–5 details, unused cells empty.
+- All margins,gutters,background exactlyalpha0. No detached red/yellow dust, external glow/shadow. Soft edge <=3px; preserve actual clay detail, no blanket blur or sharpening claim. Preserve internal lamp/tube emission as painted inside closed object contour only.
+- User explicitly authorizes separate generated source parts + image-script assembly. Uniform downsampling only; document actual source dimensions and hashes. Background cleanup is explicit and bounded to an edge matte. No32px feathered joins on the closed bar.
+- Acceptance check: current sheet_grid.check_pair plus explicit cell occupancy, edge-width and background tests. Current cutter command: cut-sheet1.py <1a> retro <HUD> <WORK> --b <1b>; owning add-skin.py exposes the same --b argument. Fetch current cut-sheet1.py,hudbar_measure.py,sheet_grid.py together. Run unchanged references in isolated output folders; never silence warnings or patch game runtime to claim source success.
+- If artwork cells are correct but detector mistakes dish/grille for cells, preserve its exact detected coordinates/error and diagnostic source row; hand the smallest cutter seam to Kartenkante. Do not darken/recolor accepted art solely to bypass a detector, and do not label failed cutter execution PASS.
+- Human acceptance of original attempt1 design does not automatically accept newly assembled pair pixels. Return exact source pair, hashes,actual tests and one next gate. User will forward WS0; no automatic chat message.
+
+## Legacy single-sheet history (superseded for new Sheet1 production)
 Owner: WSA HUD authoring, commissioned by WS0. Receiving runtime: georg-doc/KFB-Stunt-Car-Race, module/hud-clay-r1. Authoring branch: design/kfb-clay-hud-skin-kit-r1-2026-11-04, PR #468. No second runtime, no layout movement, no automatic merge or publication.
 
 ## Read and inspect
