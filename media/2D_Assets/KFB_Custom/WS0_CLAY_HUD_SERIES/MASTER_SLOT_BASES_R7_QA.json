@@ -4,7 +4,7 @@
   "all_heights288": true,
   "skin_derivatives": 48,
   "alpha_preserved_all_skins": true,
-  "no_new_skin": "Historical technical field; irrelevant to design rejection",
+  "no_new_skin": true,
   "no_scripted_upscale": true,
   "content_fixture_shared_sha256": "0c83f89ca0a6550a23085d41e65afd2328d10b821a213e5e6cb25c791d1e2727",
   "action_size": {
@@ -424,5 +424,6 @@
   "delivery_status": "RETRACTED_WRONG_DESIGN",
   "rejection_reason": "Per-slot empty-well rims remain; explicit correction requires one tray outer edge and borderless places. Auftrag4 is cancelled.",
   "current_next_gate": "Base glyph atlas only, then one-call cut and actual Compact/Normal/Large game proof",
-  "status": "REJECTED"
+  "status": "REJECTED",
+  "historical_technical_checks_do_not_override_rejection": true
 }
