@@ -1,5 +1,12 @@
 # RETURN · WS0 Living Clay Chest Series Prompt System · 2026-11-04
 
+## Current additive status · 2026-11-04 · FROST R1 CANDIDATE
+
+The next 12er topic **Frost & Frozen Wonders** has been generated as a session-local pack with two output 3×2 sheets, twelve 512² RGBA cutouts and a 96px contact. Technical tests: 12/12 sprites RGBA/transparent corners, 2/2 sheets 1536×1024, all sprites >=41px side padding, ZIP 16 files / CRC PASS. The source images were produced as two 6×2 contact generations and repacked; the generator did not directly obey native 3×2. More importantly, eye gaze and right-side gold keyhole are still somewhat repetitive, so the new style-system anti-drift goal remains **TUNE/NOT YET PROVEN**. **Georg acceptance is PENDING**. No PNG binary imported to GitHub; no runtime/Stage change. Exact candidate details: `SERIES_FROST_R1_2026-11-04.md`.
+
+**Current one next gate: Georg visually reviews Frost R1 → PASS / TUNE / FAIL.** This current status supersedes the earlier “generate a new 12er sample” next gate later in this Return.
+
+
 **Status:** **DOCUMENTED & GITHUB-VERIFIED · DRAFT PR · NO AUTO-MERGE · NO DEPLOYMENT**  
 Owner **WS0 visual authoring**; keine Änderung an Asset-Librarian-, World-, ChatterBox-, 3D- oder Game-Runtime-Ownern.  
 Repository: `georg-doc/kayfabizarro`  
