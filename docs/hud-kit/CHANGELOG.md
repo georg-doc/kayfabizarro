@@ -30,3 +30,7 @@
 - Structural PNG validator + 7 local fixtures passed. Manual style/clip acceptance still separate.
 - User-rejected source failures retained in language: satellite R1 cropped and teal left-crop are NOT reusable donors. No binary assets committed.
 - No public Stage or Hub changes: documentation-only source route; receiving products unchanged.
+
+
+## 2026-11-04 · WSA fixed HUD lane / Retro pilot
+Added sibling SOP media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/SOP_CLAY_HUD_R1.md. User's Retro-first order controls new production. Two native1254 RGBA jobs fail2048/border gate; quarantined without upscale. Return records hashes and pending coverage. Dropbox upload COMPLETED: /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_Pilot_R1_2026-11-04.zip, file id id:KeQLaY5-IIAAAAAAAA7dow,3895525bytes. No runtime or publication changes. Next: compliant native2048 Retro pilot; no further blind same-strategy jobs.
