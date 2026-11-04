@@ -1,0 +1,110 @@
+{
+ "id": "kfb_jetpack.diesel.r1",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-04",
+ "status": "pending-georg",
+ "job": "JETPACK_DIESEL_R1 (Georg über WS0): Dieselpunk-Jetpack kompakt als neuer Default-Kandidat (weniger kleinteilig als Comic), nach MixedBag 15 Bögen 1–3, auf dem Jetpack-Vertrag groß r4, Knete, Bauteil-Meta-Asset; Mods/Anbauteile out of scope, Teile so benannt, dass sie später schaltbar werden.",
+ "source": "KFB Claymation Reference/…/KFB MixedBag 15: „Kompakter Dieselpunk-Jetpack-Bauplan in sechs Ansichten-1“, „Explodierte Dieselpunk-Jetpack-Bauteile-2“, „Dieselpunk-Jetpack in sechs Bauschritten-3“",
+ "verfahren": {
+  "skin": "scripts/diesel_bau.py (Grundformen aus jp_lib + weiche Polster „slab“)",
+  "sitz": "scripts/bau_r4.py unverändert (glatte Rückenplatte, Neigung nach Rückenlinie, mittig, gerade), mit JP_TMAX=4.0: Plattenvorderseite folgt der Pack-Rückseite auf voller Höhe (kein Spalt zwischen Platte und Gehäuse, Kritiker-Befund)",
+  "hoehe": "z 0,82–1,02 gesucht, gewählt 0,84 (höchste Höhe mit Kopf in Ruhe 0 und Rumpf 0)",
+  "groesse": "scale 1,8125 wie Comic/Retro groß r4 (1,25 × groß r2)"
+ },
+ "skins": {
+  "diesel": {
+   "root_node": "KFB_Jetpack_Diesel",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Diesel_gross.r1.glb",
+   "sha256": "f670cd9e2db0a810432fd87001f7052e8eacf693ad787622e479aeebdc711023",
+   "bau": {
+    "scale": 1.8125,
+    "faktor_wie": "comic/retro gross r4",
+    "z_local": 0.84,
+    "neigung_deg_aus_rueckenlinie": 8.04,
+    "jp_tmax": 4.0
+   },
+   "stages": "S1 Platte, Gehäuse, Rostblech mit Delle und Abplatzern, Trichterdüse mit Rostwulst und Sprenkeln · S2 Rundknopf orange, Vierkant-Taste creme · S3 C-Rohrbügel mit zwei Muffen, zwei Nieten",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "rueckenplatte": {
+    "teil": "S1_platte",
+    "form": "glatte Quadratfläche an FBs Rücken, Vorderseite = Pack-Rückseite; 0,13 × 0,26 (schmaler als das Gehäuse 0,16 × 0,27, damit die Arme frei bleiben)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8011531886296863,
+      0.3957636934856782,
+      0,
+      0,
+      -0.3957636934856782,
+      2.8011531886296863,
+      0,
+      4.1359294807307804e-22,
+      -0.13310267137869403,
+      -0.3448147307124506,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.34
+   },
+   "gehen_cm": {
+    "Walking_B": {
+     "rumpf": 0.0,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 3.62
+    },
+    "Walking_A": {
+     "rumpf": 0.09,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 2.38
+    }
+   },
+   "clips17_worst_cm": {
+    "rumpf": 2.28,
+    "arme": 0.38,
+    "kopf": 7.14,
+    "schwanz": 3.82
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_diesel_gross.r1.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_diesel_gross.r1.json",
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_diesel.r1.json",
+   "gruppen": [
+    "platte",
+    "gehaeuse",
+    "rostblech",
+    "duese",
+    "knoepfe",
+    "rohr",
+    "nieten"
+   ],
+   "schalten": "eine Gruppe ausblenden = alle Knoten mit dieser gruppe; Teile mit traeger folgen ihrem Träger (Nieten und Flecken mit dem Rostblech)",
+   "seiten": "L/R = Figurenseite (L = Figur links = +x)",
+   "weggelassen": [
+    "Gurtschiene und Schrauben auf der Körperseite der Platte (Bogen 2): lägen im Rücken der Figur",
+    "Schultergurte (Bogen 1): eigenes skinned Teil (GURTE_R1)"
+   ],
+   "material": "7 Knete-Farben (JP_Diesel_*), Knete-Körnung zur Laufzeit über kfb-clay (Profil midground) wie die anderen Packs"
+  }
+ },
+ "messung": "17 Clips (16 wie korrektur1 + Walking_A), clips_auf_figur.mjs, messe_jp.py, tiefste Stelle in cm",
+ "gilt_unveraendert": "Kopf in Schleichen/Ducken taucht weit nach hinten (auch ohne Jetpack); Hüfte im Twist dreht gegen die Brust.",
+ "kritik": "ein Kritiker (blind, nur Bilder und Bögen): Runde 1 „nicht abnahmefähig“; umgesetzt: Spalt Platte/Gehäuse geschlossen, Platte heller und schmaler, Gehäuse 15 % flacher, Düse als Glocke mit Sprenkeln, Rohr 1,4 × dicker und tiefer, Rostblech schmaler mit senkrechter Delle, Abplatzer flach und grau, Farben kühler, Gruppen/Träger/Seiten in der Teile-Liste. Nicht umgesetzt: eigene Knete-Struktur im Mesh (kommt zur Laufzeit), Gruppen-Elternknoten (Werkzeuge erwarten Teile direkt unter der Wurzel; Gruppe steht in extras.kfb.gruppe)",
+ "nicht_geaendert": [
+  "alle anderen Skins und Sitze",
+  "bau_r4.py"
+ ]
+}

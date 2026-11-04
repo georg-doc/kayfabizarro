@@ -76,3 +76,15 @@ Ein neuer Ordner mit Georgs Claymation-Bildern (ZIPs, Einzelbilder, Bögen auf G
 - **popupClayCore:** liest den Katalog.
 - **Nahbereich:** Die Sichtgarantie (1–2 Pop-ups im Nahbereich ohne Hauptziel) bleibt, wie sie ist.
 - **Später, nicht hier:** Verhalten der Slop-Units (Angriff, Reputation) und die Loot-Tabelle.
+
+**Nachtrag 04.11. (MB15):**
+- **Feste Quelle:** `KFB Claymation Reference/KFB InkMonster Slops/`.
+  - Jeder neue Bogen dort bekommt eine Regel in `popup_regeln.r1.json`: Muster `(^|/)<name> - ChatGPT-Bild`, Raster laut Bogen, eigene Familie oder Variante.
+  - Die neue Familie kommt in die `groupSets` von `inkblobs.r1.json`; sonst schlägt der Test `popupKatalog` fehl (`familieInMobs2d`).
+- **Slop-Atlas, Körper:** Jede Zelle trägt `koerper_v`, die Körper-Oberkante ab der Fußlinie (für `slopGroesse` von Flug).
+  - Automatisch kommt sie aus `koerperlinie`.
+  - Wo die Automatik irrt, gilt ein Override in `scripts/assets/slop_koerper.r1.json`. Zweifelsfälle bei jedem neuen Atlas am Kontaktbogen prüfen: außerhalb 0,65–0,95, weit weg vom Familienmittel oder viel fester Teil darüber (Hüte, Kronen, Helme, große Frisuren).
+- **Slop-Atlas, Distanzfeld:** Jede Seite bekommt ihr Distanzfeld `*.sdf.png` neben die Seite, Eintrag `seiten[k].sdf` und `sdf_max` in der Atlas-JSON (Tuschkontur `inkline=sdf`).
+  - Format wie Flugs `inkSdfRechnen`: R8 in voller Auflösung, 0,5 + Abstand / (2 · max), außen +, innen −, je Zelle getrennt.
+  - Gegenprobe: `SDF_OUT=<ordner> node test/slopSdfBacken.mjs <atlas.json>` muss dasselbe Bild liefern.
+- **Pop-up-Atlas:** bekommt dasselbe Distanzfeld erst, wenn Flug `inkline2d` belegt hat.
