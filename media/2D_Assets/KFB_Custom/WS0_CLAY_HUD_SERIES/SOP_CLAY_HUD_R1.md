@@ -1,6 +1,19 @@
-# KFB Clay HUD Production SOP · R7 · 2026-11-04
+# KFB Clay HUD Production SOP · R8 · 2026-11-04
 
-## CURRENT R7 · productive288source-conditioned master candidates · 2026-11-04
+## CURRENT GEORG/WS0 CORRECTION R8 · BASE ONLY / BORDERLESS PLACES / R7 RETRACTED · 2026-11-04
+
+Georg explicitly rejected R7: it still has empty-slot rims. User-relayed WS0/Kartenkante addendum is BINDING over the older wording still visible in GitHub §2c:
+- The action tray is ONE supporting surface with ONE outer edge. Every place inside is BORDERLESS. No per-slot rim, cavity outline, ring, pillow, tile or duplicate frame. Glyph/content sits directly on that surface.
+- Original Auftrag4 (double-height bar_1…bar_8 sources) is CANCELLED. Do not continue or integrate that family.
+- R7 gray/tinted8+48slot files and their montage are RETRACTED / DO_NOT_USE, despite their passing geometric tests. The package remains historical failure evidence only. R6brown/beige draft also remains rejected. Do not interpret either as a new skin or legitimate Master.
+- FIRST delivery is a BASE GLYPH ATLAS ONLY:1536×1024RGBA,4×3cells344×296,32pxgaps/margins, alpha0 outside contours. Exact role order fist,grenade,jump,boost / hand,talk,pickup,enter / exit,land,heal,travel.
+- Base must read at Compact0.85. Skin cells may be empty -> base role. No I/Space or other key/text in raster. Runtime hints and states stay existing-owner layers.
+- Glyphs have no separate pedestal,plate,ring,frame or uniform raised backing contour. Intrinsic object features (grenade pull-ring, boot sole, semantic doorway arch) are part of the depicted object, not UI containers. Landing glyph needs no ground plinth.
+- Retain the one neutral actual-object Hero-Shot per canonical asset across skins; role glyphs cover actions/defaults only. No400+per-skin object drawing or added content frame.
+- Current fetched HUD_SKIN_SPEC §2c blob18ea7842190378daf4e09fc7a1dd4fd870e0d3fa still says “Mulde ist der einzige Container” and288source work. That stale text is NOT authority to override the explicit latest user/WS0correction. No runtime write here; receiving owner updates its own spec/code.
+- Receiving gate: Kartenkante cuts the completed base with current cut-glyphs.py in ONE call and shows Compact/Normal/Large in the actual game. This art chat provides base only and does not reintroduce trays or an unsolicited replacement layout.
+
+## REJECTED/SUPERSEDED R7 · productive288source-conditioned master candidates · 2026-11-04
 
 Georg authorized productive continuation after R6. The rejected brown/beige tray remains excluded. A FRESH native image job used ONLY the actual existing graphite-gray bar_4.png as the visual donor. No larger original was recovered: this is explicitly a SOURCE-CONDITIONED NATIVE RE-RENDER CANDIDATE, not pixel-identical original art or an accepted seventh skin.
 
