@@ -1440,6 +1440,7 @@ d('V-1459','04.11.2026','Welt','DECISION','Nach Drosselung durch: comms N-138, a
 d('V-1460','04.11.2026','Welt','STATUS','Pushes (GitHub zeitweise ok): assets/popups-ingest-r1 @ebba2fd6 (fussOk+kanteOk gemeinsame Funktion fussPruefung.js, Ringabstand, Billboards ohne Cremerand, assets/private @e62773f6), design/kfbinsert-r1 @d6fcec05 (Tafeln mit Hang-Regel), aufprall-r3 @fd467789, fx/slop-r1 @de88099d (letzte Runde vor Georg: Rissnetz 9x10, gemalte Tropfen, Nachschub springt aus Haus). Oval = eigener Wagen scheint durch Wand (crimson_flame_dragster) -> WS1 N-139. WS0: Hintergrund-Wahrzeichen (Eiffelturm) Suchkreis 15 m, sonst bis 10 % einsinken statt verschwinden. M1World nur WS1 (Verteiler-Debugzeile zurueck; freeze ueber window.__kfbM1.mods.mobs2d).','WS-Design · Verteiler · Flug · WS1','N-139','WS0 04.11.'),
 d('V-1461','04.11.2026','Spiel','REVIEW','Flug letzter Beleg vor Georg: Slop-Tod R14 8/10 (Rissnetz vom Treffer, Krone zerfaellt in Goldstreifen, Stuecke angelehnt, Tropfen mit Schweif) -> q503 aktualisiert; Eskalation R7 6/10 (Anmarsch, Drehung 0 Grad, K1/K2 teilweise; Nachschub aus Luftpunkt im Test, Pentagramm-Bodenscheibe im Slop-Bild) -> q504 aktualisiert. Flug pausiert bis Georgs Urteil. Verteiler: Hang mit halber Bildbreite @304ed53e; WS-Design: Wahrzeichen bleiben (flachste Stelle 15 m, Fuss am tiefsten Punkt), GRABEN 0,1 @041e0047.','Flug · Verteiler · WS-Design','q503, q504','WS0 04.11.'),
 d('V-1462','04.11.2026','Welt','KEEP','Pop-up-Stapel merge-fertig -> WS1 N-140: design/kfbinsert-r1 @b3298195 (bildparallel, Spiegeln ausserhalb Bild, Fuge, fuss_v, Atlas nah/fern mit Seiten-Obergrenze, Paris-Kulisse, Hang-Regel Tafeln, Wahrzeichen bleiben, gummi-Wind-Anker im Bildpfad) + assets/popups-ingest-r1 @95cf9f58 (fussOk/kanteOk mit Bildbreite, leere Plaetze statt Angraben, weiche Pflichtzahlen; hangUngeeignet 0 im Probe-Merge). 404 x5 und React-key-Warnung an WS1. WS-Design-Block fertig; offen nur Georg-Urteile (Aufprall q509, Fassade q508).','WS-Design · Verteiler · WS1','N-140','WS0 04.11.'),
+d('V-1463','04.11.2026','Welt','STATUS','Verteiler Probe-Merge mit kfbinsert @b3298195 + gummi=1: Seite fehlerfrei, hangUngeeignet 0, Bodenkontakt PASS. Neuschnitt Buechertruhen 1 + Tonwelt-Tueren 2 mit feld_alpha (Code @9b0a5550, privat @703f9b95, Spiegel nachgezogen). Offen fuer Flug nach Georg: Slops nahe Kamera riesig/pixelig, Kanten-Schlieren -> Mindestabstand/Hoechstgroesse, bildparallel ohne Traegheit. Lokale Sessions pausieren bis Georgs Hub-Antworten; Browser frei.','Verteiler · Flug','','WS0 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2867,6 +2868,7 @@ WHY = {
  'V-1460':('Ein Wahrzeichen bleibt; eine Regel darf es nicht wegrechnen.','04.11.2026'),
  'V-1461':('Bei 8 von 10 entscheidet Georg, nicht der naechste Kritiker.','04.11.2026'),
  'V-1462':('Ein Modul ist fertig, wenn es mit allen Schaltern des Testfahrt-Stands laeuft.','04.11.2026'),
+ 'V-1463':('Wenn alles belegt ist, ruht der Mac bis Georg entscheidet.','04.11.2026'),
 }
 SUP = {}
 for e in E:
