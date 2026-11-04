@@ -21911,6 +21911,21 @@
    "superseded_by": [],
    "why": "Was von oben nur noch Karte ist, braucht eine Kamera, die nicht ganz von oben schaut.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1493",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "TUNE",
+   "text": "Georg q524 Aktionsplaetze TUNE: doppelte/unnoetige Rahmen, Icons in Empty Slots statt randloser Flaechen als Buttons (schon einmal angemerkt) -> Kartenkante: Leiste = ein Rahmen, Plaetze randlose Mulden, Glyphe direkt, Zustaende als Flaechenzustand. q523 Almanach R3b TUNE mit Verweis auf Chat (Inhalt bei Georg erfragt). Stage-Stand 4 site/stage @82521769 (Kartenbau, Blasen) -> PR #49; Stand 5 gemergt (Oeffnungen, Blasen @65db6687, Slops @94bf1b20, Kamera 70) -> ohne Georg-Warten pushen (N-167). Glasriss-Masken (Keith333 CC-BY, Poly Haven CC0) in design/aufprall-r3 @8dba33c2 hinter risse=r2.",
+   "values": {},
+   "owner": "Kartenkante · WS1 · WSA · WS-Design",
+   "check": "q523, q524, N-167",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Rahmen pro Funktion; was im Rahmen liegt, braucht keinen zweiten.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
