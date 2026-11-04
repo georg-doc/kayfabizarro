@@ -17,6 +17,20 @@ WS0/Kartenkante answered all nine audit questions. The binding owner is georg-do
 - Neutral: reticle,targeting,loading-chip,Fluff colors,speech/dialogue,cardhero/flight,curtain andcontentimages. Pause=Settings,Portal=HUDhidden.
 - CoverageR2/integration screenshots+measurements are Kartenkante's duty;WS0 accepts eachline;Georg decidesdesign. WSA suppliesart/manifest,NO runtime rights. Windowmin/max remain MEASURE_REQUIRED for Kartenkante's formatmatrix,not a new user question.
 
+## Georg feedback · bases, optional future glyph themes and sizing · 2026-11-04
+
+**Recorded user feedback, not a gameplay acceptance:** Georg likes the six skin directions. He clarified that his original request concerned the bases/wells on which icons sit; the newly themed glyphs were an unexpected addition. He is interested in keeping them if consistent in-game assembly preserves readability and avoids bulky UI. This is positive visual direction, not an unconditional PASS for all72glyphs, states, controls or gameplay.
+
+**Binding design emphasis:** complete the neutral Master-Kit slot bases and clean single-frame assembly. Container/well, role glyph, content image, key label and state overlay remain separate layers. Existing painted role sets are retained. Preserve the same role silhouette, orientation and optical size across themes; theme detail must not defeat recognition at the actual gameplay size. No extra frame/pillow under a role glyph. Weapon/vehicle/travel content remains neutral.
+
+**PROPOSAL — future skin cost:** use a complete canonical shared role-glyph set as fallback; a future skin may optionally replace roles by explicit manifest references. Resolve skin override -> shared role asset, never a blank/missing action or a guessed item thumbnail. This does not relax the current receiving HUD_CONTRACT_R1 requirement for12themed roles in the present six skins. No second runtime resolver or newly approved shared set is claimed here.
+
+**PROPOSAL — user sizing, requested as a possibility:** begin with one Action Size preference, default Auto (responsive), optionally Compact/Normal/Large after measured limits. Scale the action group coherently: carrier, well, glyph, key hint, spacing and state overlays. Keep its bottom-center L2 anchor and fixed slot ordering, with the travel control beside it; size preference never changes slot count or moves context. Motion remains a separate transform inside stable geometry/hitboxes.
+
+Do not promise one unrestricted global HUD zoom. The near-full-width header has less native pixel headroom than action glyphs; scaling every component by an arbitrary125% could violate the no-upscale/Standard-Retina contract. Each component must respect available viewport/zone bounds, source pixels at actual DPR, readable labels (current contract minimum14px), and non-overlapping useful pointer/touch targets. Suggested all-action hit-target floor44reference px is a proposal, not an already implemented measured fact. If a requested size cannot fit sharply, clamp that group or use the existing compact presentation; do not blur/enlarge raster art or shrink labels below their floor. Remember user preference; Auto/reset remains available.
+
+**Receiving proof still needed:** compare all six skins with the same neutral and themed role/content cases at actual48/64px and in the game, including empty context, I, cooldown/locked, focus/pressed, travel/weapon popovers, compact viewport and reduced motion. Determine whether fine glyph detail survives or needs simplification. Sizing is a documented concept only; exact ranges, default behavior and actual usability need Kartenkante's existing runtime/format matrix. No runtime implementation authorized or performed by this art chat.
+
 ## Superseded discussion and bounded history
 
 ## Current full-system completeness / Georg design authority
