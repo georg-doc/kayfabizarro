@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.slop-batch-evidence/1",
+  "date": "2026-11-05",
+  "native_generation_jobs": 6,
+  "native_edit_jobs": 1,
+  "retained_source_pngs": 7,
+  "selected_sheets": 6,
+  "identities": 12,
+  "depictions": 36,
+  "male_read_identities": 6,
+  "female_read_identities": 6,
+  "new_georg_pass": 0,
+  "runtime_tests": 0,
+  "librarian_publications": 0,
+  "checks": {
+    "manifest_unique_ids": 36,
+    "selected_fixed_cell_seams_clear_of_visible_content": 6,
+    "dimensions_all": [
+      1536,
+      1024
+    ]
+  },
+  "limitations": [
+    "Alpha interiors max254; residual alpha1 and edge normalization deferred.",
+    "Illustrative identity continuity is not exact model/rig continuity.",
+    "Per-sheet prompt deviations retained in QA.json.",
+    "Model and seed not exposed."
+  ],
+  "next_gate": "Georg design verdict on six new sheets"
+}

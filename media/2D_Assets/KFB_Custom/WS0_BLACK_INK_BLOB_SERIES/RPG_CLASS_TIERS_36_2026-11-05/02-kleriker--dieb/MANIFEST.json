@@ -1,0 +1,243 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_PENDING_GEORG",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+    "sha256": "e6b2cf2335ff61df2e87cc770322cc53ac97774bac9da58584570fc05302ec8e"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "PENDING_GEORG"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_KLERIKER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Diakonin Nebenwirkung",
+      "variant_title": "trash",
+      "klasse": "kleriker",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_KLERIKER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "padded wood mallet, bandage roll"
+      ],
+      "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
+      "prompt_auszug": "Worried drooping mouth, wide eyes watching hands. One hand holds small wooden healing MALLET with linen-padded head, other cradles a plain bandage roll.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_KLERIKER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Diakonin Nebenwirkung",
+      "variant_title": "common",
+      "klasse": "kleriker",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_KLERIKER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "brass-capped padded mallet, bandage roll"
+      ],
+      "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
+      "prompt_auszug": "Sternly encouraging crooked teeth, one eyebrow raised. Same padded mallet now brass-capped, SAME bandage roll in little leather loop; cap/collar/medallion unchanged.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_KLERIKER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Diakonin Nebenwirkung",
+      "variant_title": "elite",
+      "klasse": "kleriker",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_KLERIKER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ornate padded mallet, shoulder clasp"
+      ],
+      "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
+      "prompt_auszug": "Beatific closed-lip self-satisfaction, half-lidded sideways gaze. Same compact mallet now beautiful rounded brass with ivory padding, one modest copper shoulder clasp, no mitre or full robe.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DIEB_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Mitnahme",
+      "variant_title": "trash",
+      "klasse": "dieb",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_DIEB_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small iron key, purse"
+      ],
+      "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
+      "prompt_auszug": "Alarmed eyes glance back, puckered crooked worried lip. Holds one tiny bent iron KEY and a nearly flat worn purse.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DIEB_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Mitnahme",
+      "variant_title": "common",
+      "klasse": "dieb",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_DIEB_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "key ring, fuller purse"
+      ],
+      "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
+      "prompt_auszug": "Suspicious narrowed gaze to side, tight asymmetric closed tooth smile. Same green cap/patch and neckerchief; same key now on short brass ring with two other keys, purse slightly fuller.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DIEB_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Mitnahme",
+      "variant_title": "elite",
+      "klasse": "dieb",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_DIEB_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large brass key, locked purse"
+      ],
+      "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
+      "prompt_auszug": "Offended aristocratic squint, lower lip thrust forward. Same key ring now a splendid compact brass MASTER KEY and one matching little fat locked purse; not a huge treasure chest.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "image": "sheet-r2.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "c7df60664361fa9b58169d1df59f4b80ff0c6900294b4294bf84faeaf02f3d41",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 905641,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 0,
+    "1024": 0,
+    "horizontal": 0
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "eye_rule": "White/ivory sclera, red iris, black pupil on open eyes; some eyes close for acting.",
+    "row_identity": "recognizable class/signature across three illustrated variants, not a rig",
+    "viewed_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "background_views": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Teeth and small cheek/scar details vary between stages; illustrative continuity, not an exact rig.",
+      "R1 top-middle prop crossed the equal cell boundary; one native layout edit R2 selected, R1 retained."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Native output max254/255 with residual alpha1 at some empty/outer pixels. Final normalization deferred."
+}

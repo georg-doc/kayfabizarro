@@ -241,11 +241,48 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }
