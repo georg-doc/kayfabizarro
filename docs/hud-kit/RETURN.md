@@ -1,3 +1,23 @@
+# CURRENT · BASE ONLY R8 / R7 REJECTED / AUFTRAG4 CANCELLED · 2026-11-04
+
+**Georg/WS0 latest rule:** the action tray is one supporting surface with one outer edge; each place inside is BORDERLESS. R7still has per-slot empty-well rims and was explicitly rejected. DO NOT integrate/use R7. Original Auftrag4(double-height bar_1…bar_8) is CANCELLED, not an outstanding task. No replacement tray design is included or requested by this correction. Latest explicit user-relayed WS0 brief wins over the older “Mulde”/288wording still fetched from private HUD_SKIN_SPEC §2c blob18ea7842190378daf4e09fc7a1dd4fd870e0d3fa.
+
+**Current delivery — ONLY base atlas:** corrected12bareclayglyphs,1536×1024RGBA,4×3cells344×296,32pxgaps/margins, exact row order fist/grenade/jump/boost; hand/talk/pickup/enter; exit/land/heal/travel. Removed the thick uniform brown backing contour and landing ground plinth from the previous base. Natural object features (grenade pull-ring, semantic doorway, boot sole) remain; no UI socket,rim,ring,plate,pillow or pedestal behind glyphs. No I/Space or other text baked. This replaces the previous common-base art for this receiving step; skin-specific overrides are not supplied or mixed in.
+
+**Actual checks:** current unmodified cut-glyphs.py blob451cbac818f0228ed8982dd41715bc48df0cc45f ran in ONE call:Exit0,12glyphs,missing[],warnings[]. Alpha0 outside cells, edge<=2.24px, no cell-edge contact or scripted upscale/blur.12role keys present in base, skins{}. New atlas SHA2561aa6c5d9596003ec01f8455429801b4d2c1faeadd6fdd06bf643ee6ab911541f. Local54/64/80pxcomparison approximates0.85/1/1.25with rounding; this is NOT game evidence. Actual Compact/Normal/Large, readability and simplification remain Kartenkante/Georg's game gate.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Base_Only_R8_2026-11-04.zip; id:KeQLaY5-IIAAAAAAAA7eig;5580682bytes; SHA256b54e2672fad507d22d8c25ac8490feb4fbdf4f339134e5534f41a1c924bb54ab; server2026-11-04T22:14:42Z.39files, ZIP integrity checked. One atlas,12PNGs,12lossless WebPs,base-only data candidate,native generation/prompt/assembly/cutter/readme and local size proofs. ZERO trays, ZERO skin atlases. Explicit R7do-not-use notice included. Existing R7zip is historical rejected evidence, not an active source.
+
+**Owner/branch/PR:** georg-doc/kayfabizarro; design/kfb-clay-hud-skin-kit-r1-2026-11-04; DraftPR468. SOP correctionad14c2540139a6eabf5e291282ec4b40ff0f63d2; R7retractiona01f4afb7b0e50fe47a75bea0dacc29b2a09a320; verified base evidence8361ffdc29621ea68a6942a36b27333a8f6bf607. Changed this phase:SOP_CLAY_HUD_R1.md,MASTER_SLOT_BASES_R7_QA.json,BASE_ONLY_R8_QA.json,docs/hud-kit/RETURN.md,CHANGELOG.md. Exact file/head readbacks performed; final Return/changelog head is verified at handoff.
+
+**Content boundary retained:** real selected props/weapons/power-ups use one canonical actual-object3DHero-Shot shared across skins; role glyphs are actions/default cases. No400per-skin images, no added content frame. Hero-Shot catalog/runtime intake is not proven by this atlas. No game-repo/runtime write, merge, new layout/skin, Stage/Site or Live promotion. No new Georg/WS0product acceptance inferred; bare base is an art candidate. User forwards WS0; no message sent.
+
+**ONE NEXT GATE:** Kartenkante consumes ONLY the R8base packet, cuts its atlas with the existing one-call command and shows the base in the actual game at Compact/Normal/Large. Any noisy glyph gets a targeted simplification AFTER that visible comparison. No more bar_1…bar_8art work.
+
+---
+
+# HISTORY BEFORE R8 BASE DELIVERY · earlier candidate claims do not override withdrawal
+
 # CURRENT R8 · R7 WITHDRAWN / BASE-ONLY CORRECTION IN PRODUCTION · 2026-11-04
 
 Georg rejected R7 because it still has per-slot empty-well rims. DO NOT USE or integrate the R7 MixedBag. Auftrag4 (double-height bar_1…bar_8) is CANCELLED. The action tray has one outer edge; internal places are borderless. Current priority is only the complete bare base-glyph atlas in the exact12role order, then Kartenkante's one-call cut and actual Compact/Normal/Large game proof. No new tray design is authorized by this correction. SOP R8/retraction checkpoint ad14c2540139a6eabf5e291282ec4b40ff0f63d2; R7QA retraction35790b39da55167a42fa66259999359323547dea. Corrected base delivery not yet claimed in this checkpoint.
