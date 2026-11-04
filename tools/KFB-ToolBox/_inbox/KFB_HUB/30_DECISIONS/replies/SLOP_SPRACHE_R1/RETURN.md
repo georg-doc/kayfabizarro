@@ -2,6 +2,15 @@
 
 Konzept-Probe auf Auftrag von WS0 (03.11.). Nichts davon ist im Spiel.
 
+
+## Slop-Tod aus Georgs Goo-Splash · R2 (04.11., Schalter slopgoo=1)
+Der Blob bläht sich kurz auf und platzt in einen von Georgs gemalten Spritz-Abläufen. Die Krone sackt in die Pfütze, die Pfütze läuft breit aus und liegt flach auf dem Gelände. Die Tropfen fliegen im Bogen und bleiben als Perlen liegen. Die Pfütze sickert ein, ein nasser Fleck bleibt und trocknet. Ton wie im Spiel: Tod-Glissando ab dem Treffer, nasser Klatsch beim Platzen.
+Umfärben im Code: Helligkeit und Glanz bleiben, die Farbe wechselt (sechs Story-Farben aus dem HUD).
+- `SLOP_GOO_R2_SPIEL.mp4` (11 s, Spielkamera, Blob 9 m vor der Kamera, Treffer bei 3,5 s), `SLOP_GOO_R2_NAH.mp4` (11 s, Nahkamera).
+- `SLOP_GOO_R2_FARBEN_krone.png`, `SLOP_GOO_R2_FARBEN_pfuetze.png`: vier Blobs in comic, absurd, heroic, mystical.
+- Kritiker R1 5/10 (Platzen wirkte wie Bildtausch, harter Sprung in die Pfütze, Einsickern nur Ausblenden), R2 nach Zusammensacken, Auslaufen und nassem Fleck: **7/10**. Offen laut Kritiker: Der nasse Fleck trocknet zu einem hellen Lila-Grau statt dunkel vom Rand her, Lila auf lila Boden geht unter, die Flugtropfen liegen alle in einer Bildebene.
+- Code: fx/slop-r1 (src/npc/slopGoo.js, scripts/fx/goo_atlas.py), Bilder privat: assets/slop-goo-r1.
+
 ## Belege (dieser Ordner)
 - **Ton** (Standbild des 3er-Mobs, Blasentext am Sprecher, −16 LUFS):
   - `SLOP_R1_1_PLAUDERN.mp4` (12 s): Die drei ergänzen sich zu einer Melodie, zweimal mit Schluss im Dreiklang.

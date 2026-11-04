@@ -1386,6 +1386,7 @@ d('V-1405','04.11.2026','HUD','TUNE','Georg 04.11.: HUD-Board R1 (q483) TUNE: Se
 d('V-1406','04.11.2026','HUD','REVIEW','Vorhang R4b (Kartenkante @35852563): Zacken weg, Bahnen gleiten aus dem Bild, Moire weg (Querbiegefedern, kein Specular), weicher VSM-Schatten auf die Szene; geschlossen noch streifig (Barcode), Kritiker FAIL aesthetisch. Hub q484 mit Vorschlag KFB-Karte auf geschlossenen Vorhang projizieren (Georgs Plan B).','Kartenkante · Georg','q481, q484','Georg 04.11.'),
 d('V-1407','04.11.2026','Figuren','REVIEW','FB Hasenschwanz A gewaehlt (assets/bunny-tail-r1 @580c3102, B/C archiviert) und cremeweisser Fellbauch (assets/fb-belly-r1 @0861f93e): Farbkarte FB_Body_Belly.r1.png auf zweiter UV (uv1, nahtlose Abwicklung) am Rumpf, keine Geometrie, abschaltbar fuer T-Shirt; Anlegen vor applyClay. Hub q485. Naechstes WSB: T-Shirt.','WSB · Georg','q472, q485','Georg 04.11.'),
 d('V-1408','04.11.2026','Assets','BUILD','MixedBag 06 im Katalog (Verteiler @7fe7bbd6, privat @77d1de92): 72 neu, Katalog 871; 48 Tueren nach Kultur getaggt (Tuerluecken Mesa/Canyon/Westeuropa/Mittelmeer zu, Decks ohne Tuer 9 -> 0), Kandidaten fuer Tueren R5; 12 Organ-Truhen; 12 Tinten-Blobs zu Familie Glu (30). Briefing Tueren/kuehle Szenen erledigt.','WS-Verteiler · Georg','','Georg 04.11.'),
+d('V-1409','04.11.2026','HUD','REVIEW','HUD R2 (Kartenkante module/hud-clay-r1 @b0ee1881, HUD_LAYOUT_R2.md, master-kit.py): Master-Kit aus Georgs Clay-Teilen (KFB_HUD_v5_WS0), Skins Retro/Steampunk/Teal per Umfaerbung (Rand/Fuellung/Gold getrennt, Schattierung bleibt; neuer Skin = Zeile mit zwei Farben); Settings mit Clay-Toggle/-Slidern, Titel Fredoka mit Knet-Kontur, X innen in der Ecke; Action-Leiste in Slot-Leisten, Almanach im Kit-Rahmen, Wegweiser als Plakette. Kritiker 3 Runden, Restpunkte behoben. Fehlteile: Action-Icons Faust/Granate/Stiefel im Radio-Glyph-Stil. Hub q486.','Kartenkante · Georg','q483, q486','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2759,6 +2760,7 @@ WHY = {
  'V-1406':('Offen ehrlich zeigen und einen Ausweg anbieten statt endloser Runden.','04.11.2026'),
  'V-1407':('FrizzleBob wird von hinten und vorn klar als Cartoon-Hase lesbar.','04.11.2026'),
  'V-1408':('Jede Region bekommt ihre passende Tuer in die Kartenzonen.','04.11.2026'),
+ 'V-1409':('Ein Master-Kit, viele Skins: kein Drift mehr.','04.11.2026'),
 }
 SUP = {}
 for e in E:
