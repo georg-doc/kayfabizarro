@@ -1,3 +1,20 @@
+# CURRENT CHECKPOINT · Two worker sheets + additional CEOs · 2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Mafia ALL SIX GEORG DESIGN PASS. Earlier mechanics, selected sailor R2, pirates, explorers, hitmen/women PASS unchanged; miners FAIL/TUNE unchanged.
+- User flags recurring top-right round mouth and bottom-right tongue as non-blocking but asks for consistency PLUS uniqueness/offbeat cartoon appeal. Persisted SOP steering. Seeds cannot be controlled/read with available native tool; no seed claim.
+- THREE fresh independent jobs: workers sheet1 six; workers sheet2 six further professions; CEOs six additional =18pictured Slops. Initial executor interpretation workers+CEOs as pair corrected by adding worker sheet2, giving actual12-worker family comparison. All DRAFT awaiting Georg. Two female-read per sheet with positions varied.
+- Same original reference morphology per job; workers use original construction craft, CEOs original RPG craft. No generated output style chain. Actual prompts/receipts/PNG hashes/alpha QA archived under WORKERS_CEOS_DUO_2026-11-04/.
+- Builder observations: material/body/white-red-black eyes consistent; fixed slot tongue/O-mouth patterns broken. Heavy lids, curled crests, caps/collars and fang-smiles recur. Worker2 bricklayer close to donor, crate/lock repeats between worker1 andCEO, pink gum used twice. Not a claim of complete uniqueness or proof of method superiority.
+- Technical: all1536x1024 RGBA alpha0..254. Worker1 one tested background alpha1, others0; worker2/CEO five samples0. Correct checker composites inspected. Mechanical96px comparison shows neighbor fragments/edge holds, especially worker2; not clean isolated sprites. No registry admission/runtime tests.
+- Existing WS0/Asset Librarian/WS1 owners retained, no Stage/Site/Live/merge.
+
+## One next gate
+Georg judges both worker sheets plus CEOs for style, uniqueness and offbeat claymation appeal.
+
+## Historical Return
+
 # GEORG DECISION · MAFIA ALL SIX PASS · TWO-SHEET VARIATION EXPERIMENT · 2026-11-04
 
 Mafia bosses/mob queens ALL SIX GEORG DESIGN PASS. Georg observes recurrent slot-specific motifs (top-right round mouth, bottom-right tongue); non-blocking but control next runs for consistency PLUS uniqueness and offbeat claymation charm. Explicit next experiment: TWO independent new 3x2 sheet jobs, twelve Slops total: six blue-collar workers, then six weird CEOs/corporate/board chiefs. Each two female-read characters, with positions varied. Seeds not exposed or controllable in current native tool; do not claim seed randomization. Use actual originals as style inputs, no previous-generation style chain. Compare material, body, eyes, slot repetition and prop individuality across both sheets. This is two distinct families, not a controlled same-theme A/B experiment.
