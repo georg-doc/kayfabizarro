@@ -1,0 +1,139 @@
+{
+  "schema": "kfb.hud-retro-pair-return/1",
+  "date": "2026-11-04",
+  "spec_blob": "e78a6a8556b4875436c0a1a924283bfd69b807d1",
+  "files": [
+    {
+      "file": "RETRO_SHEET_1a_1536x1024_RGBA.png",
+      "sha256": "74e208f4c900b56b385129348a07e478710139885a516b5240d21b02bcf8f27f",
+      "bytes": 1167113
+    },
+    {
+      "file": "RETRO_SHEET_1b_1536x1024_RGBA.png",
+      "sha256": "8035d2b3c3b6d925d11fc936470e7037c4af00a24561c9687b7117f409d0c8c8",
+      "bytes": 1139978
+    }
+  ],
+  "grid_warnings": [],
+  "body_ratio": 10.5,
+  "radio_height": 900,
+  "max_soft_edge_px": 2.23606797749979,
+  "upscaled": false,
+  "feathered_joins": false,
+  "original_cutter": {
+    "blob": "2f56286cf088ddf8487b674c2f6718c8b5c0e67f",
+    "helper_blob": "e54b7775ebed3c7786b91f9ce0cfe54e799150ab",
+    "exit_code": 1,
+    "error": "Mulden: Abst\u00e4nde der Mulden ungleich",
+    "cause": "first-six candidate selection includes dish and grille",
+    "runtime_modified": false
+  },
+  "cell_diagnostic": {
+    "note": "Read-only diagnostic; original runtime cutter remains unmodified and FAIL. Selecting first six bright round blobs includes dish/grille; a uniform six-cell row exists among all candidates.",
+    "all_candidates": [
+      [
+        74.5,
+        57.5,
+        111,
+        93,
+        3858
+      ],
+      [
+        183.0,
+        86.0,
+        102,
+        114,
+        2755
+      ],
+      [
+        364.5,
+        90.0,
+        73,
+        70,
+        3889
+      ],
+      [
+        472.0,
+        90.0,
+        74,
+        70,
+        3903
+      ],
+      [
+        580.0,
+        90.5,
+        74,
+        71,
+        3907
+      ],
+      [
+        687.5,
+        90.0,
+        73,
+        70,
+        3888
+      ],
+      [
+        796.0,
+        90.0,
+        74,
+        70,
+        3843
+      ],
+      [
+        903.5,
+        90.5,
+        73,
+        71,
+        3898
+      ]
+    ],
+    "selected_row": [
+      [
+        364.5,
+        90.0,
+        73,
+        70,
+        3889
+      ],
+      [
+        472.0,
+        90.0,
+        74,
+        70,
+        3903
+      ],
+      [
+        580.0,
+        90.5,
+        74,
+        71,
+        3907
+      ],
+      [
+        687.5,
+        90.0,
+        73,
+        70,
+        3888
+      ],
+      [
+        796.0,
+        90.0,
+        74,
+        70,
+        3843
+      ],
+      [
+        903.5,
+        90.5,
+        73,
+        71,
+        3898
+      ]
+    ],
+    "plausibility_pass": true
+  },
+  "acceptance": "PAIR_CANDIDATE; original attempt1 design accepted, new pair not inferred accepted",
+  "next_gate": "Kartenkante selects uniform six-cell row and reruns original one-call cutter"
+}
