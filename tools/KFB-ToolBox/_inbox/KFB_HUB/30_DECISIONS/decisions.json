@@ -20996,6 +20996,21 @@
    "superseded_by": [],
    "why": "Uebergaenge aus einem Guss brauchen einen Regisseur und eine Uhr, nicht viele Clips.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1432",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "ARCHITEKTUR_REVIEW_R1 (Agent): zwei Build-Wege (Site baut nicht, was getestet wird), 244 verstreute Schalter, kein zentraler Spielzustand (setTimeout in M1World), Truhe oeffnet nur durch Naehe, /raw /cdn /fonts ohne Passwort, Pop-up-PNGs ohne Obergrenze (166 MP), WebGPU-Vorhang als zweiter Renderer, Konflikt followCam (tueren-r3 vs kamera=r2). WS1 N-124: Go fuer Q-067 S1+S2 (uhr/cueBus/spielZustand), S3 ueber interactable.js; nur WS1 mergt in den Stamm; ein Build-Weg mit KFB_RELEASE=1; src/flags.js mit Release-Satz; WS0 entscheidet slopgoo=1 im Release an; Site privat (gekaufte Modelle), /raw unter Schutz, Cloudflare Access vorbereiten -> Hub q499 (Georg schaltet ein). Verteilt: WS-Design (Rebase auf kamera=r2, interactable, Bild-Obergrenze LRU), Flug (KTX2-Atlas, Vorwaermliste, cueBus), Kartenkante (WebGPU-Vorhang 3 Browser), Verteiler (Atlas-Plan, Sichtweite-Laden).",
+   "values": {},
+   "owner": "WS1 · WS-Design · Flug · Kartenkante · Verteiler",
+   "check": "q499, N-124, Q-066, Q-067",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Site muss bauen, was getestet wurde, und darf Gekauftes nie oeffentlich zeigen.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
