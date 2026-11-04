@@ -20966,6 +20966,21 @@
    "superseded_by": [],
    "why": "Kleidung kommt aus dem Bestand und wird getauscht, nicht neu gebaut.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1430",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Georg 04.11. (AFK, alle drei Rechner laufen): Ziel eine integrierte Spielversion mit WFC-Katalog von Anfang an (statt Kristalle), Slops, HUD R2, Tueren, Interaktionen (Truhe per Aktionsknopf oder Schuss, Portal in allen Fortbewegungsarten gleich, spaeter KFB-Dialog), ein Zustandsautomat plus eine Ereignis-Uhr -> WS1 N-120. Abnahmen: Tueren R5b q496 Passt -> WS-Design merge-Head; T-Shirt R2 q498 Passt -> WS1 N-121 (mit garment-system); Rohdaten q497 Ja (WSB fragt Georg direkt). HUD @5ecde295 (Saugarm, Vorhang-Start, Kontrast) -> N-121. Jetpack R1 (4 Skins) gepusht assets/jetpack-r1 @0b185f49, zu klein -> WSB Groessen-Variante, dann Skins Comic/Tinte (FB, zuerst) und Retro-Computer, Bauteile als Meta-Assets (Detailansicht, Montage, Modding). Verteiler: Start-WFC, Ingest MB10/11/12 (Tavernen, keltisch, Frost-Truhen, Suesses-Slops), Voll-Inventur inkl. Varianten. Kartenkante: Hazard-Skin als End-to-End-Probe der Skin-Pipeline plus responsive Matrix. Recherche TRANSITIONS_R1 (Tiny Skies) und ARCHITEKTUR_REVIEW_R1 als Agenten. WSA-Work-Chat (Jetpacks) kuenftig fuer 3D-Vorlagen.",
+   "values": {},
+   "owner": "WS1 · WSB · Verteiler · WS-Design · Kartenkante · Georg",
+   "check": "q496, q497, q498, N-120, N-121",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Integration vor neuen Einzelteilen; jede Interaktion haengt an einer Uhr und einem Zustand.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
