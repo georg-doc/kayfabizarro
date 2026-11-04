@@ -21401,6 +21401,21 @@
    "superseded_by": [],
    "why": "Bei Drosselung buendelt einer die Pushes; alle anderen warten.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1459",
+   "date": "04.11.2026",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Nach Drosselung durch: comms N-138, assets/private @3a00b0e6 (Verteiler 184 Dateien), Register; Spiegel ff auf @3a00b0e6; flight-wt slop_r1 als Verweis auf Spiegel (alte Kopie umbenannt). WS-Design: fuss_v am Atlas abgenommen (721 Stuecke, Sinkanteil exakt), Paris ohne Sieb, design/kfbinsert-r1 @b766d280 + aufprall-r3 @5e010572 gepusht; Oval: CPU-Feld ohne Loch -> Fassaden-Shader (Code lesen). WS0-Entscheidung Hang: Neigungspruefung (<=0,1 x Hoehe) des Verteilers fuer alle Pop-up-Plaetze, kfbInsert tiefster Punkt mit max. 3 % Angraben, Paris-Tafeln rücken auf nahe ebene Stelle; Billboards popup_r1/billboards nachschneiden (Verteiler). Slop-Bilder R12 7/10 an q503.",
+   "values": {},
+   "owner": "WS-Design · Verteiler · Flug",
+   "check": "q503",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Steile Plaetze werden bei der Wahl verworfen, nicht beim Aufsetzen versteckt.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
