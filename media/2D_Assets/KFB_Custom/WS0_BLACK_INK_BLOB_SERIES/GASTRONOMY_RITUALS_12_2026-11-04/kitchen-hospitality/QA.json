@@ -1,7 +1,7 @@
 {
   "schema": "kfb.slop-sheet-qa/1",
-  "sha256": "5cce945df2ba8ea07a7000be8060ed5765820f7b6301fec02607f15c6698e707",
-  "git_blob_sha": "9e87cdbdd0940f71e429ba5d616ae671fa8ac009",
+  "sha256": "b7ea0c8c339a59ac700135aace24e853e014969971874a9b37e03c0f2d99bdaa",
+  "git_blob_sha": "0b24212d1966b1e9cf99329328cf7b55f6aa3afb",
   "dimensions": [
     1536,
     1024
@@ -11,11 +11,11 @@
     0,
     254
   ],
-  "alpha0_pixels": 595374,
+  "alpha0_pixels": 620020,
   "seam_pixels_gt16": {
     "512": 0,
     "1024": 0,
-    "horizontal512": 59
+    "horizontal512": 60
   },
   "outer_edge_pixels_gt16": 0,
   "cells": [
@@ -23,14 +23,14 @@
       "zelle": 0,
       "alpha_gt16_bbox_in_cell": [
         23,
-        14,
-        494,
+        13,
+        495,
         501
       ],
       "margins_px": [
         23,
-        14,
-        18,
+        13,
+        17,
         11
       ]
     },
@@ -39,42 +39,42 @@
       "alpha_gt16_bbox_in_cell": [
         52,
         5,
-        473,
-        508
+        474,
+        507
       ],
       "margins_px": [
         52,
         5,
-        39,
-        4
+        38,
+        5
       ]
     },
     {
       "zelle": 2,
       "alpha_gt16_bbox_in_cell": [
-        36,
-        7,
-        473,
+        35,
+        5,
+        475,
         512
       ],
       "margins_px": [
-        36,
-        7,
-        39,
+        35,
+        5,
+        37,
         0
       ]
     },
     {
       "zelle": 3,
       "alpha_gt16_bbox_in_cell": [
-        34,
-        3,
+        33,
+        2,
         491,
         504
       ],
       "margins_px": [
-        34,
-        3,
+        33,
+        2,
         21,
         8
       ]
@@ -82,16 +82,16 @@
     {
       "zelle": 4,
       "alpha_gt16_bbox_in_cell": [
-        23,
+        24,
         9,
         481,
-        504
+        503
       ],
       "margins_px": [
-        23,
+        24,
         9,
         31,
-        8
+        9
       ]
     },
     {
@@ -148,9 +148,9 @@
       0
     ]
   ],
-  "georg_status": null,
-  "design_status": "DRAFT_AWAITING_GEORG",
-  "generated_jobs": 1,
+  "georg_status": "PASS",
+  "design_status": "ALL_SIX_GEORG_DESIGN_PASS",
+  "generated_jobs": 2,
   "figures": 6,
   "female_read_slots_1based": [
     3,
@@ -169,5 +169,20 @@
   "runtime_tests": 0,
   "individual_game_exports": 0,
   "librarian_registered": false,
-  "intake_eligible": false
+  "intake_eligible": true,
+  "selected_image": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+  "job_counts": {
+    "new_sheet_generation": 1,
+    "eyelid_edit": 1,
+    "total_calls": 2
+  },
+  "edit_review": {
+    "target": "top-right oyster merchant, viewer-right upper eyelid",
+    "upper_lid_now_violet": true,
+    "sclera_red_iris_black_pupil_preserved_visually": true,
+    "outside_roi_pixel_identical": false,
+    "outside_roi_visible_RGB_MAE": 5.956215821917378,
+    "note": "Native image edit introduces small rendering variations beyond lid; not a bitwise local paint patch."
+  },
+  "georg_decision": "Georg accepts all12 with eyelid fix."
 }

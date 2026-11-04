@@ -1,3 +1,11 @@
+# GEORG DECISION · ALL12PASS WITH EYELID FIX ·2026-11-04
+
+KitchenR2eyelid correction accepted; all12gastronomy nowPASS/intake eligible. R2selected, R1original retained. Native outside-ROI rendering differences documented and R2visually accepted, no bitwise patch claim. Cards remainDESIGN, no runtime/library refresh claimed. Historical pending verdict below superseded.
+
+# EYELID CORRECTION · Kitchen R2 ·2026-11-04
+
+Georg requests the marked top-right oyster merchant upper eyelid be filled/colored correctly. One native imagegen edit against clean R1:cream-colored upper-lid crescent above lash now dark violet, actual white/red/black eye below retained visually. R1unchanged archived; R2selected candidate, same6authoring IDs/cells. R2transparent1536x1024, exact prompt/receipt/hash/alpha QA recorded. Native output is not pixel-identical outside small ROI (visible RGB MAE5.956); small rendering differences preserved as evidence, no false exact-local-patch claim. Original generation calls2 +eyelid edit1 =3calls for12main characters, not18new actors. Both selected source sheets remainDRAFT; no new Georg PASS.
+
 # Gastronomy, enjoyment and dining rituals ·batch12 ·2026-11-04
 
 WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, Draft PR#469.

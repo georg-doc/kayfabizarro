@@ -1,17 +1,17 @@
 {
-  "status": "GENERATED_DRAFT_AWAITING_GEORG",
+  "status": "ALL12_GEORG_DESIGN_PASS",
   "jobs": 2,
   "sheets": 2,
   "figures": 12,
-  "georg_pass": 0,
+  "georg_pass": 12,
   "cards_design": 12,
   "reference_hashes_checked": 6,
   "actual_source_files": [
     {
       "key": "kitchen-hospitality",
-      "source": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
-      "sha256": "5cce945df2ba8ea07a7000be8060ed5765820f7b6301fec02607f15c6698e707",
-      "git_blob_sha": "9e87cdbdd0940f71e429ba5d616ae671fa8ac009",
+      "source": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+      "sha256": "b7ea0c8c339a59ac700135aace24e853e014969971874a9b37e03c0f2d99bdaa",
+      "git_blob_sha": "0b24212d1966b1e9cf99329328cf7b55f6aa3afb",
       "alpha": [
         0,
         254
@@ -19,9 +19,10 @@
       "seams": {
         "512": 0,
         "1024": 0,
-        "horizontal512": 59
+        "horizontal512": 60
       },
-      "outer_edge_pixels": 0
+      "outer_edge_pixels": 0,
+      "source_r1_retained": true
     },
     {
       "key": "dining-rituals",
@@ -50,12 +51,20 @@
   "prior_meaning_futures_georg_pass": 12,
   "runtime_tests": 0,
   "individual_game_crops": 0,
-  "intake_eligible": 0,
+  "intake_eligible": 12,
   "github_verification": {
     "implementation_head": "4751ad4e47cf0320ca01720197e78fbac5b84b91",
     "branch_ref_verified": true,
     "exact_text_readbacks": 9,
     "remote_png_byte_matches": 2,
     "prior_meaning_futures_pass_readbacks": 8
+  },
+  "edit_jobs": 1,
+  "total_image_calls": 3,
+  "selected_variants": 2,
+  "eyelid_edit": {
+    "record": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/EYELID_EDIT_RECORD.json",
+    "status": "GEORG_PASS",
+    "outside_roi_pixel_identical": false
   }
 }

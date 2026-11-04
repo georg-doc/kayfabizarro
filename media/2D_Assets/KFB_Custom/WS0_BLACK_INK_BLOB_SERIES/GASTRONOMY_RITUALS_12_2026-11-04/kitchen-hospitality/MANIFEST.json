@@ -1,10 +1,9 @@
 {
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_AWAITING_GEORG",
-  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -12,14 +11,15 @@
     "order": "row-major"
   },
   "image": {
-    "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
-    "sha256": "5cce945df2ba8ea07a7000be8060ed5765820f7b6301fec02607f15c6698e707"
+    "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+    "sha256": "b7ea0c8c339a59ac700135aace24e853e014969971874a9b37e03c0f2d99bdaa"
   },
   "production_record": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
   "cards": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "AWAITING_GEORG_DESIGN_DECISION"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Kitchen R2 eyelid fix selected; R1 retained, original QA/native-render differences documented."
   },
   "figuren": [
     {
@@ -27,7 +27,7 @@
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Küchenchef Abschmeck",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 0,
         "cell_base": 0,
         "row": 0,
@@ -44,8 +44,8 @@
       ],
       "prompt_auszug": "TOP LEFT slot1 male HEAD COOK: very broad low heavy wavy ink splat, three thick asymmetric crown lobes, ONE small crumpled cream chef toque and tiny mustard neckerchief. Furious sideways jagged toothy UNDERBITE, one WHITE/red/black eye huge and other narrowed, no circular mouth or tongue. Both hands support ONE fat rounded worn COPPER SOUP POT against own belly, one thick wooden ladle rests across rim and is gripped at handle; inside just smooth dark green clay soup. No stove/fire/steam/furniture, no full apron torso, complete goo base visible.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -54,7 +54,7 @@
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Herr Blätterstolz",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 1,
         "cell_base": 0,
         "row": 0,
@@ -71,8 +71,8 @@
       ],
       "prompt_auszug": "TOP MIDDLE slot2 male PASTRY PERFECTIONIST: very tall narrow drooping pear ink blob with a long crooked top lobe, tiny faded plum soft cap and short gingham cream/coral collar. Heavy sleepy WHITE/red/black lids looking DOWN, CLOSED tenderly smug crooked smile with two uneven fangs. Holds ONE absurdly giant plump golden CROISSANT at own belly, delicately brushing its fat layered surface with ONE tiny rounded pastry brush, exaggerated large pastry/tiny tool. Hand-modeled clay flakes as broad soft folds, not crumbs/clutter, no scene.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -81,7 +81,7 @@
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Madame Schalenwert",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 2,
         "cell_base": 0,
         "row": 0,
@@ -97,17 +97,18 @@
       ],
       "prompt_auszug": "TOP RIGHT slot3 FEMALE-READ OYSTER MERCHANT: squat broad asymmetric ink splat, tiny teal tied headscarf over violet goo curl and short cream striped collar, one copper earstud. One lid raised and other half shut WHITE/red/black sideways gaze, narrow CLOSED knowing GOLD-fang smile, subtle lashes. Both hands cradle ONE enormous beautifully rounded OPEN OYSTER SHELL containing ONE oversized cream pearl, shell muted dusty blue/ivory ridges and plump smooth inner surface. Clearly an inanimate food/pearl prop, no animal face, no knife/water/backdrop.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
-      "erneuert": []
+      "erneuert": [],
+      "requested_repair": "Upper viewer-right eyelid filled dark violet, actual eye below lash remains ivory-red-black."
     },
     {
       "id": "WSA_KITCHEN_HOSPITALITY_20261104_04",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Herr Spülbestand",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 3,
         "cell_base": 0,
         "row": 1,
@@ -123,8 +124,8 @@
       ],
       "prompt_auszug": "BOTTOM LEFT slot4 male DISHWASHING WORKER: towering bent bean ink blob with one short drooping upper lobe, tiny cream kerchief and faded indigo work collar. Huge anxious WHITE/red/black eyes upward, long crooked flat downward mouth with THREE small sparse teeth. Both goo arms struggle to hold ONE nested stack of exactly THREE very thick chipped ivory PLATES with broad teal rims at own belly. Just three bold ceramics, no cups/brush/soap/sink or floor, whole dark ink base clearly visible.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -133,7 +134,7 @@
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Herr Ringwurst",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 4,
         "cell_base": 0,
         "row": 1,
@@ -149,8 +150,8 @@
       ],
       "prompt_auszug": "BOTTOM MIDDLE slot5 male SAUSAGE SELLER: compact nearly spherical springy ink blob with three short low side lobes, tiny battered rust-red cap and short cream collar. Ecstatic SIDEWAYS uneven-tooth LAUGH, one eye shut and other WHITE/red/black looking lovingly down, no tongue. Both arms hug ONE gigantic plump rounded pink/rust BOLOGNA SAUSAGE RING with a single small cream tie at joined ends, simple fat loop at own belly like a treasured cushion. Cartoon sculpted clay food, NO raw meat/blood/gore/cleaver or shop scene; goo body dominant.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -159,7 +160,7 @@
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
       "name": "Frau Anrichtewürde",
       "bild": {
-        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
         "zelle": 5,
         "cell_base": 0,
         "row": 1,
@@ -176,10 +177,27 @@
       ],
       "prompt_auszug": "BOTTOM RIGHT slot6 FEMALE-READ HEAD WAITER: medium tall rounded triangular ink blob, elegant soft violet rolled crown curl with no hat, tiny navy lapel collar and one large copper stud. One WHITE/red/black eye very wide and other compressed into stern squint, broad CLOSED clenched irregular tooth grimace. Holds ONE absurdly huge softly rounded SILVER CLOCHE lifted just above ONE comically tiny cream plate bearing a SINGLE little green pea, all held securely within her own cell against belly. No tray/table/environment or extra diners, cloche/plate two simple props, full goo body below.",
       "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     }
-  ]
+  ],
+  "variants": [
+    {
+      "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+      "selected": false,
+      "reason": "Upper eyelid color correction requested by Georg."
+    },
+    {
+      "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+      "selected": true,
+      "edit_record": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/EYELID_EDIT_RECORD.json",
+      "georg_status": "PASS"
+    }
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04",
+    "verdict": "all12gastronomyPASS with corrected eyelid R2 selected"
+  }
 }

@@ -1,3 +1,21 @@
+# CURRENT RETURN · Gastronomy12PASS with eyelidR2 / Leisure12 next ·2026-11-04
+
+WSA → WS0/Verteiler. georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. Georg accepts corrected upper eyelid (topright oyster merchant) andALL12gastronomy. KitchenR2selected, originalR1retained; native render differences outside ROI documented, R2accepted visually. Index30PASS sheets/180depictions,28eligible sheets/168depictions; International Couples WS0 exclusion/discrepancy preserved. CardsDESIGN, no actual receiving catalog refresh/runtime/combat/library changes.
+
+Next authorized batch:12NEW leisure/club/private-obsession Slops on two3x2sheets, exactly2female-read each, fresh native image calls using originalrefs, DRAFT until actual Georg verdict. No new image jobs at this checkpoint. Next action:produce/inspect/archive two candidate sheets. No retirement/Stage/Live/merge.
+
+## Previous Return
+
+# CURRENT RETURN · Gastronomy kitchen R2 eyelid correction ·2026-11-04
+
+WSA → WS0/Verteiler, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. Prior education/culture12 andmeaning/future12 accepted, source index28PASS sheets/168depictions,26eligible sheets/156depictions. NEWgastronomy12remainDRAFT.
+
+Georg requests oyster merchant (topright kitchen slot3) upper viewer-right eyelid color correction. One native image edit completed:upper lid now dark violet; actual ivory sclera/red iris/black pupil below lash retained visually. Whole transparent1536x1024 R2selected; R1preserved; same6IDs/cells/cards. Model/seed not exposed. Native output has small changes outside repair ROI (not pixel-identical); documented, no synthetic exact-preservation claim. Three total image calls forgastronomy batch:two new sheets +one eyelid edit,12main characters. Original prompts andedit record/hashes/QA/metadata archived. No alpha painting or external image provider. No newDesignPASS/runtime/library/HP/rarity/retirement/Stage/Live/merge.
+
+Next gate:Georg visual verdict for corrected kitchenR2 anddiningR1. Only actualPASS updates intake. Previous human approvals remain preserved; old seam/crop evidence retained.
+
+## Previous Return
+
 # CURRENT RETURN · Meaning/Futures12 PASS + Gastronomy12 candidates ·2026-11-04
 
 WSA → WS0/Verteiler. georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469. Georg accepts ALL12meaning/future actors. Latest PASS checkpoint357887608c7c2c7098abde911cb9fb3eec2a703c:8/8exact text readbacks/branch ref. Meaning implementationd9bf1a0b4bc66a2778d80fb350d14b5cb075180c:9exact text readbacks,2remote PNG byte matches. Source index28PASS sheets/168depictions,26eligible sheets/156depictions. Original props/crop QA retained, cardsDESIGN; International Couples WS0 exclusion/discrepancy unchanged.
