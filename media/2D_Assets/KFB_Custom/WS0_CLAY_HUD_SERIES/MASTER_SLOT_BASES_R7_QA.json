@@ -1,0 +1,423 @@
+{
+  "neutral_trays": 8,
+  "total_detected_cavities": 36,
+  "all_heights288": true,
+  "skin_derivatives": 48,
+  "alpha_preserved_all_skins": true,
+  "no_new_skin": true,
+  "no_scripted_upscale": true,
+  "content_fixture_shared_sha256": "0c83f89ca0a6550a23085d41e65afd2328d10b821a213e5e6cb25c791d1e2727",
+  "action_size": {
+    "module_blob": "8c1c7f995319e65763a0f63a0287ea9c9e5d61ed",
+    "old_source144_large": 1.0169491525423728,
+    "new_sources288": [
+      {
+        "n": 1,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 2,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 3,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 4,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 5,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 6,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 7,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      },
+      {
+        "n": 8,
+        "sourceH": 288,
+        "cap": 2.0338983050847457,
+        "large": 1.25
+      }
+    ],
+    "auto_compact_verified": true,
+    "game_proof": "NOT_RUN"
+  },
+  "rows": [
+    {
+      "n": 1,
+      "actual_cavities": 1,
+      "dimensions": [
+        274,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_1.webp",
+          "sha256": "116c09e7fd304bf6222747f037feb51ec2414c70e50d898ebdfe4653adb9972e"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_1.webp",
+          "sha256": "9849d9b07f7de29ef2a9f8eb5819a913a61b2353a172b9fe8838427cde3c13fc"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_1.webp",
+          "sha256": "16883e8a6716543a3ce73f216f2bd7897ac5df9f29e2966a66cdbabc6c8b9644"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_1.webp",
+          "sha256": "65b82aa3e13126050cdb50534372d6d71d8910838e6430f2d66f122125854565"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_1.webp",
+          "sha256": "d2478f9615af08150235a301643c71ba83f7b978349402c1cdd6814c3c823ae2"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_1.webp",
+          "sha256": "bc3e538aa92f44532bb3b91fb9bf1fc0b69caecc7979a8873150ad30de088c97"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "actual_cavities": 2,
+      "dimensions": [
+        500,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_2.webp",
+          "sha256": "8b74d4cd131082da26d54038dcb72fabd6b9e877f70b696ee7362ff5da965944"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_2.webp",
+          "sha256": "6c6365f639ccc6ce9dba73edef8764c189ff63705995559fd49d2ebbd54936a9"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_2.webp",
+          "sha256": "5a5624437f9e61b772019f3e81db390f039535edda39d9f854dac15108a782eb"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_2.webp",
+          "sha256": "257434b0c7980508f858922360f8561fc4e6eb5f9621f92652ba3613a759d2d8"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_2.webp",
+          "sha256": "9459d680000d75cf8498eaa697303c7bfa63fb5fe290cdb4dc7f4d6c5a6115e2"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_2.webp",
+          "sha256": "e9d0aad1ff51ebed7644dd92adc7d921417321b36a24c82181330f23eb78a4dd"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "actual_cavities": 3,
+      "dimensions": [
+        724,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_3.webp",
+          "sha256": "c494970aa3fcf48abb296fee19e450c47a3b6e606ea722abb763fba9e4d28e8a"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_3.webp",
+          "sha256": "1464f55c8130656462c3bd548665f64b1c6edc26b68918c7c7d040071b1ee1d9"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_3.webp",
+          "sha256": "6da3a713fa6af92924d1c7398a7228f88b1c43bc8cb5ee097217579da09db856"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_3.webp",
+          "sha256": "0bb37ab0c9695d3c53017371b935f2b21f088028c8c84473bb70cb9e7f31d156"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_3.webp",
+          "sha256": "6cbf256571ff2e7d46cc4c8b8dd1ab4393ed2bf592d6d6d1027983795b6851fe"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_3.webp",
+          "sha256": "38adc2ef18f778867a35e718aaeca3b75688de550607ca685f05b24e4a1f0d6c"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "actual_cavities": 4,
+      "dimensions": [
+        948,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_4.webp",
+          "sha256": "ee006bd1ac3ec49944b0487e09c6726b9292e002d43a3679d40ebb3129a5f161"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_4.webp",
+          "sha256": "96d2c2367ca56fdc007cbfc6774ab7037e407b083a7bde2b31281a307e38e943"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_4.webp",
+          "sha256": "5b955bb328d270e543335403789e2e1973933d817af3b48ff65705041efff20c"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_4.webp",
+          "sha256": "3f9e4177e4c1206507ddb83f32570e3ba96a00fee552ccc4a2821f265493c582"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_4.webp",
+          "sha256": "5d5c7de690ef29bf9e1f28dc46fe3e71aae707a9e4a799ca10d322ba30e3b5fe"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_4.webp",
+          "sha256": "7cb04bd0148b4231207c0bb3810742832b3a9fa1c4ad38f4998e54245ea77656"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "actual_cavities": 5,
+      "dimensions": [
+        1172,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_5.webp",
+          "sha256": "edd8ddfe090e6d239f036e5a28050b12b59d6a0d2baca6fb98460d60bffc612f"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_5.webp",
+          "sha256": "915bede0211a8e0aff542e69ee3bc381233cc691c1b286e3d16efe8263398892"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_5.webp",
+          "sha256": "e6e3c3c3d0440d43a844682d03c33fce82ab08e4e35e365bb318f9a9116723c4"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_5.webp",
+          "sha256": "8b7686814ff457e71c8bf70fe6a548af3e00b698335f1e5cb8f0193be5a453fc"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_5.webp",
+          "sha256": "03c02b8a166e140d4ea5ef47b576e784ead029bc19cd75872ad63b5d02f75262"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_5.webp",
+          "sha256": "049602831b8afba07376399b54b6141ab2d9f59831ac757e734e9598d393c0ad"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "actual_cavities": 6,
+      "dimensions": [
+        1396,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_6.webp",
+          "sha256": "7363e40e3148526e41b9f4351969df1a8ac7db4941d32dce9d663c2567ee0fd8"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_6.webp",
+          "sha256": "3ac4003b7e3f2a738a48c3c443a75d67dc38100cbad6f70bf295e9891f5417e4"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_6.webp",
+          "sha256": "8d2552ea03599ca307eddec0a127bc343888d5222df4e1a9460cab4f87622b29"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_6.webp",
+          "sha256": "b819a3232e9234d891dd516a330002f4701b3819a6e24bafb6bb88902744f8ce"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_6.webp",
+          "sha256": "613f4cb1a314ffce6f276b9e33430fd7f9ea7c278d5474fd32450f1b99118c06"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_6.webp",
+          "sha256": "4ec1690d6edc41f9adb97a3271d8619ab3f5540c7dc6f9ede6faa6c19b1b6f37"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "actual_cavities": 7,
+      "dimensions": [
+        1620,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_7.webp",
+          "sha256": "c745d918bb090711ad511cd18295c5400eb313c0c5806e189fb8aca436c5c1c7"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_7.webp",
+          "sha256": "e5e2e2eb214b9b50d5c232407b738dfe967377b9584c504ab48568f87d3d855c"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_7.webp",
+          "sha256": "5796bd76f9c68e311a5f6ed7dd175a525bd1e15329bdeedac45da1dbb16e408f"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_7.webp",
+          "sha256": "a275a8ea57d6aa945c05be23e8fd4c041111766a92a943f011f6fb1d5cb7579f"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_7.webp",
+          "sha256": "fd67ddc9de17a61bf5ba3814b9062bd9a91fcbfb220638bbca19e2f1dea6e3c2"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_7.webp",
+          "sha256": "1b9d373cb89a8a568d67c2dc3eb5eb4b867bf08f7f1e7dbb18241e2282297a70"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "actual_cavities": 8,
+      "dimensions": [
+        1844,
+        288
+      ],
+      "soft_edge": 2,
+      "skin_files": [
+        {
+          "skin": "retro",
+          "file": "hudkit/sk_retro_ui_bar_8.webp",
+          "sha256": "642cdea247888c2b46dc193e8fbd0c3633f61b382874e1c210f00342a23536c6"
+        },
+        {
+          "skin": "steam",
+          "file": "hudkit/sk_steam_ui_bar_8.webp",
+          "sha256": "5afa2d96d1d3cb01eba3a6d1c87dec2a06c802efb1402d7d1e4a2170158291b5"
+        },
+        {
+          "skin": "teal",
+          "file": "hudkit/sk_teal_ui_bar_8.webp",
+          "sha256": "5dfcfe35bc0f551f66dcf3c3c07921427106df9585a57dc386facc1bb1364d79"
+        },
+        {
+          "skin": "hazard",
+          "file": "hudkit/sk_hazard_ui_bar_8.webp",
+          "sha256": "a7239286c67cf01fc83b5cf94ee30d934cae63acf3e9224dc7d6676201155bc3"
+        },
+        {
+          "skin": "blue",
+          "file": "hudkit/sk_blue_ui_bar_8.webp",
+          "sha256": "1835d818e6dab9214598ab12d2da49cddb155ff7573f0cf1292edffbd1bc04ff"
+        },
+        {
+          "skin": "slime",
+          "file": "hudkit/sk_slime_ui_bar_8.webp",
+          "sha256": "fc74af928f38e6fade312f26bf6e74429437d134541d5dc19087dd966838664e"
+        }
+      ]
+    }
+  ],
+  "design_status": "SOURCE_CONDITIONED_CANDIDATE",
+  "game_proof": "NOT_RUN",
+  "full_3d_hero_pipeline_proof": "NOT_RUN",
+  "license": "NOT_RELICENSED: preserve original source/repository rights",
+  "source_blobs": {
+    "original_bar_1.png": "c90528264de936793a42fc30e5213089af7998b1",
+    "original_bar_4.png": "fcd6d7a9f45da77774c48a37eefa088204894e11",
+    "original_bar_8.png": "1d98c6f42024b445dee0e8cbdb2de3e1702fbc8d",
+    "hudskin.py": "f2c06010a929e027fff889dbc61e55c64f22a2d5",
+    "skins.r2.json": "53c385cd618324c7d995e5559e782fddfce3dd6c",
+    "content_sample.png": "0421d3767c3337d2f0ea69e25502d1dee69bbac8",
+    "actionSize.mjs": "8c1c7f995319e65763a0f63a0287ea9c9e5d61ed"
+  },
+  "sop_checkpoint": "7b525ab30a2849d3440deee8a0e860eafb0210fb",
+  "original_comparison": "SOURCE_COMPARISON.jpg",
+  "source_conditioned_not_recovered_original": true,
+  "archive": {
+    "filename": "KFB_MixedBag_HUD_Slot_Bases_R7_288_2026-11-04.zip",
+    "bytes": 11213004,
+    "sha256": "567382cf14f22072cc88f8d75b3e1bfa8e50418a5f9d478947fd019d6e534f72",
+    "files": 104,
+    "dropbox_status": "completed",
+    "dropbox_file": "id:KeQLaY5-IIAAAAAAAA7eeQ"
+  },
+  "artistic_acceptance": "SOURCE_CONDITIONED_CANDIDATE_NOT_GEORG_OR_WS0_PASS",
+  "new_native_image_not_recovered_original": true,
+  "runtime_written": false
+}
