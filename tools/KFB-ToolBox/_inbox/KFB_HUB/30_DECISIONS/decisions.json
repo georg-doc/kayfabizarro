@@ -21071,6 +21071,21 @@
    "superseded_by": [],
    "why": "Ein gepushter Stamm ist der Takt; alle rebasen darauf.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1437",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "REVIEW",
+   "text": "Kontakt-AO R1b (WS-Himmel world/kontakt-ao-r1 @bb440998): Fuge im Objekt an der Gelaende-Schnittlinie, hart, min. 4 px, nur dunkler; Bodenfleck an Steinen/Bueschen entfernt; Loch am Hangstein behoben (1/5 der Hoehe). Zielkonflikt Fuge allein vs. plus Stammring (kontaktring=1) -> Hub q505. Knetkorn Go: Adapter look/terrainClay.js in EndlessDrive, knetkorn=1, kfb-clay v1.1 background als Normalenantwort, profileUniforms im Adapter.",
+   "values": {},
+   "owner": "WS-Himmel",
+   "check": "q505",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kontakt folgt der Beruehrlinie; ein runder Fleck kann das nicht.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
