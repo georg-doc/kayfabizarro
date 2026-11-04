@@ -1,3 +1,25 @@
+# CURRENT · SHARED BASE GLYPHS R5 / RECEIVING §2c · 2026-11-04
+
+**WS0 addendum received via Georg:** “HUD-Chat: Bogen2 (Aktions-Glyphen) – verbindliche Zellenfolge und Basis-Satz”. Corroborated directly by current receiving HUD_SKIN_SPEC.md §2c, cut-glyphs.py, glyphs.js, actionSize.js and hud-glyphs.r1.json. The actual Hub note was not independently recovered; no false read claim. Exact receiving head checked:42d28666c8b2238ac9338041ef5bb71e167c6690. Source-module blobs are pinned in GLYPH_BASE_R5_QA.json. Action Size and shared fallback are BUILT by the existing owner in code, superseding the prior proposal status below; this chat did not implement or game-test them.
+
+**Delivered base FIRST:** a new complete12-role common clay glyph set, neutral ivory/brown/ochre, freestanding and readable without extra slot backings;1536×1024RGBA in exact4×3cells344×296,32px margins/gutters. Row-major: fist/grenade/jump/boost; hand/talk/pickup/enter; exit/land/heal/travel. I remains runtime-only. The existing six R4 skin sheets already match that order and are reused unchanged. Future skins may omit roles and resolve skin -> base; no requirement to repaint all12. Empty slots are not a substitute for the complete base.
+
+**Usable artifacts:** new base atlas,12individual PNGs, native generation and exact prompt/semantic donor, six R4 skin atlases,84lossless WebPs, receiver-shaped hud-glyphs.r1.json, canonical keys and measured dimensions. All staged locally, no game-repo write. Existing neutral waypoint is included as a companion, never a13thcell.
+
+**Actual validation:** current unmodified cut-glyphs.py cut7/7atlases,84glyphs, no missing roles and warnings[] for each. Base image bounds: alpha0 outside cells, no cell-edge contact, max soft edge2px, no upscale/blur/feather.100local assertions against unchanged receiving glyphs.js/actionSize.js pass: all-role base fallback for unknown future skin, skin overrides, absent Talk overrides, empty-base transition, responsive sizes and144/288source-height cap. This is source-module/asset evidence, NOT a gameplay or all-six visual acceptance. New common art remains CANDIDATE; no new Georg/WS0 PASS inferred.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Base_Glyphs_R5_2026-11-04.zip; id:KeQLaY5-IIAAAAAAAA7eRw;20626360bytes; SHA25601cefe0a1b7b4c41511a3c419b29b122b30c5f90ac42675b9e1f338fbcdcc798; server2026-11-04T21:07:38Z.131files, ZIP integrity checked. This supplements, not overwrites, R4. Source binaries remain outside public GitHub.
+
+**Owner/branch/PR:** georg-doc/kayfabizarro; design/kfb-clay-hud-skin-kit-r1-2026-11-04; DraftPR468. SOP implementation632c092af8f37172644cc697148011aad9718b6a; verified evidence1f1771de31b841674e60bdee78f62f2bf568cf98. Final Return/changelog head is verified at handoff. Changed this phase: SOP_CLAY_HUD_R1.md, GLYPH_BASE_R5_QA.json, docs/hud-kit/RETURN.md and CHANGELOG.md.
+
+**Receiving nuance:** current cutter skips empty cells but does not delete an older role override from a reused populated data file. Our candidate is built from the pinned empty template, base first. The existing owner must reconcile omissions when later updating partial skin sets. No new resolver/runtime owner is created.
+
+**Still open:**288pxneutral slot bases (the art needed for materially larger Retina actions), Steam/Slime Sheet1cutter holds, full format/state/readability game proof, standard-control coverage and integration acceptance. R4 results remain unchanged. No runtime write, merge, Stage/Site or Live promotion. User forwards WS0; no message sent.
+
+**One next receiving gate:** Kartenkante imports the complete base then optional existing skin overrides through the current pipeline and supplies an actual game comparison, including context/I/cooldown/empty and size settings. Next authoring art group remains neutral288pxMaster slot bases. No new specification question for Georg.
+
+---
+
 # GEORG FEEDBACK · BASES / GLYPH COST / ACTION SIZE · 2026-11-04
 
 Georg likes the skin directions and clarified that his original action-button request meant the carrier/well bases. The themed glyphs are a welcome possibility, conditional on readable, consistent and visually light in-game assembly. This is positive direction, not a blanket72glyph/gameplay PASS.
