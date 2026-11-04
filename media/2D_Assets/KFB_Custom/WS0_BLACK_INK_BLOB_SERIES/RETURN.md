@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · Resident A/B states · international couple12 PASS ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · issue466.
+
+-International couple12 BOTH SHEETS ALL GEORG DESIGN PASS recorded. Prior accepted families retained; miners FAIL/TUNE unchanged.
+-Resident emotion-state pilot: TWO new independent1024x1536transparent2x3portrait sheets.6identities x2depictions=12renderings (not12unique identities), count interpretation explicitly stated before generation. LEFT fear/confusion/panic, RIGHT anger/offense/aggression. Each row matched domestic outfit/prop, flexible deformation/twin likeness allowed. BOTH DRAFT awaiting Georg.
+-A SHA256209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b; B SHA256d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce. RGBA0..254,502969/574184alpha0pixels, five background samples0each, correct checker/12at96px proof inspected. Similar scale/no counterpart overlap observed; per-actor identity/anatomy/crop/edge not accepted. A more clothing-covered and repeated scream/V-brow; B more varied closed/cold expressions. Small teeth/crown differences retained as evidence, not strict identity claim.
+-Exact original refs/args/receipts/hashes/QA/draft state mapping archived under RESIDENT_STATES_2026-11-04. Format contract RESIDENT_EMOTION_STATE_FORMAT_2026-11-04.md. No new canonical registry/runtime schema, no destroyed-buildingAI/hostility/combat implemented; canonical IDs/transitions/disposition null.
+-Later repair/catalogue queued, no helper/Asset Librarian Site writes, registry/runtime tests, new owners, Stage/Site/Live/merge.
+
+## One next gate
+Georg evaluates both sheets: identity recognition, expressive opposite emotions, equal scale/no overlap, whole-ink domestic satire.
+
+## Historical Return
+
 # GEORG DECISION · INTERNATIONAL COUPLE12 ALL PASS · RESIDENT EMOTION-STATES PILOT ·2026-11-04
 
 International portrait couples BOTH SHEETS ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New requested visual experiment: TWO portrait2columns x3rows six-slot sheets, interpreted as12depictions of6resident identities, each row same identity in stateA(left fear/confusion/panic) vs stateB(right rage/offended aggression). Counts explicit:6identities x2states=12depictions, not12identities/24images. Same outfits/personal props connect flexible/deformed ink bodies; no strict pixel-identical requirement. Everyday pajamas/robes/domestic-neighbor satire, no destroyed-building scene. Equal cell sizes/visual scale, no overlaps. Runtime destroyed-building reactions remain design intent/proposal, no gameplay implementation or forced hostility assignment.
