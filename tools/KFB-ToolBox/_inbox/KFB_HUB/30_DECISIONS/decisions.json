@@ -21281,6 +21281,21 @@
    "superseded_by": [],
    "why": "Alle gemalten Bilder gehen durch ein Einfuege-Modul; ein Fuss steht immer auf dem Boden.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1451",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "PARKED",
+   "text": "Knetkorn R4 FAIL (Fahrkamera ohne sichtbaren Unterschied, Dellen nur dunkle Flecken ohne Lichtkante, Baender verschoben?) -> geparkt bis nach MVP; Wiederaufnahme: erst Bandverschiebung klaeren (an/aus im selben Stand), dann Lichtkante statt Abdunklung. Heads world/knetkorn-r1 @9a726671, world/kontakt-ao-r1 @d9bb053b bereit. Ovales Fenster: driveWeather liest Szene nicht -> WS-Design/WS-Himmel klaeren direkt (tuerPortal-Quad oder Lackspiegelung). kfbInsert R2 @7b59748a im Code (Fuge in px, Fuss tiefster Punkt, Einsinken 5,5 %, Paris-Kulisse ueber kfbInsert). Platte 15 GB -> Verteiler push_private + Atlas frei. Slot jetzt Flug.",
+   "values": {},
+   "owner": "WS-Himmel · WS-Design · Verteiler · Flug",
+   "check": "",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was in vier Runden nicht traegt, wartet bis nach dem MVP.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

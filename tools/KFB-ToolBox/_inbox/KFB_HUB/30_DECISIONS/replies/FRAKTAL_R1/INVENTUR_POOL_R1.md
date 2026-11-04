@@ -1,6 +1,6 @@
 # Voll-Inventur des Bild-Pools · R1 · 04.11.2026 (WS-Verteiler)
 
-Stand Code: `assets/popups-ingest-r1` @57260563. Die Bilder dazu pushe ich nach `assets/private`, sobald die Platte wieder über 9 GB frei hat.
+Stand Code: `assets/popups-ingest-r1` @57260563. Die Bilder dazu liegen in `assets/private` @dc4fb07e (MB07 Oma, Varianten, Kontaktbögen), der Pop-up-Atlas @cb56cc06.
 
 ## Umfang
 - Pool: alle Ordner unter `KFB Claymation Reference/`, mit allen MixedBags und den Ordnern darüber.
@@ -37,7 +37,7 @@ Ergebnis: Katalog 1118 Stücke, davon 124 Varianten. Slops 396 in 31 Familien. L
 - **Einzeldatei-Build:** Mit dem vollen privaten Stand bricht er ab, die eine HTML wird zu groß. Belege und Site brauchen den geteilten Build (`KFB_SPLIT=1` bzw. `KFB_SITE=1`); die Tests auf der Einzeldatei brauchen Umstellung oder Atlanten.
 - **Pop-up-Bilder:** 1118 Stücke, davon 722 Pop-ups als Einzel-PNG (etwa 166 Megapixel, gut 320 MB). Plan (freigegeben):
   - Atlas-Seiten je Klasse und Thema, nach Hauptbiom geordnet; Nah-Fassung 512 px, Fern-Fassung 256 px; WebP, Seiten höchstens 2048 px, 6 px Rand.
-  - Geschätzt etwa 30 Nah-Seiten und 8 Fern-Seiten statt 722 Dateien.
+  - Gebaut am 04.11. (`scripts/assets/popup_atlas.py`, privat `assets/private` @cb56cc06, Ordner `popup_atlas_r1/`): 722 Stücke auf 43 Nah-Seiten (46,5 MB) und 13 Fern-Seiten (20,2 MB), zusammen 66,7 MB statt gut 320 MB. Meist ein Hauptbiom je Seite, keine Überlappungen, Alpha sauber.
   - Laden und Entladen je Zelle mit Obergrenze in kfbInsert/popupClayCore (WS-Design).
   - KTX2 erst nach Georgs Ja zum Werkzeug.
 - **Slop-Atlas:** Seite 1 hat 3072 × 4032 px (336 Zellen), Seite 2 inzwischen 3072 × 768 (60 Zellen). Jede weitere Familie verlängert Seite 2, bis 4096 px Höhe; danach Seite 3. Flug liest Seiten schon getrennt. Kommt dort dieselbe 2048-px-Grenze wie bei den Pop-ups, schneide ich den Slop-Atlas in 2048er-Seiten um.
