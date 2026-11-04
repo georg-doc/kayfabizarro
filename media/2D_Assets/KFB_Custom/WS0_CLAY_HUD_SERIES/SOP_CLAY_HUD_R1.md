@@ -1,4 +1,27 @@
-# KFB Clay HUD Production SOP · R9 · 2026-11-04
+# KFB Clay HUD Production SOP · R10 · 2026-11-05
+
+## CURRENT R10 · CUTTER REPAIR + RECEIVING INTEGRATION / RESTART HOLD
+
+Georg explicitly authorized finishing Steam/Slime cuts and integrating all six skins with Kartenkante. Kartenkante remains the sole runtime writer. This art chat repaired/tested scripts in its own output, sent them directly to the existing Claude Code session, and verified receiving artifacts without racing the worktree or taking a second GPU/browser slot.
+
+- Original R4 source images remain unchanged. If legacy six-cell detection is invalid, measure the longest opaque continuous body band (>=75% of maximum row coverage), excluding head/antenna height, and retain the existing six/radius/location/spacing checks against that body reference. No per-skin detector coordinates. Missing-well negative cases must still fail.
+- Pass the already measured geometric arrow position into measure; do not calculate medians from an empty yellow mask. Current six one-call cuts exit0, each6Fluff/4radio at1476native pixels. Twelve previously working exported bitmaps remain identical to current baseline;12Steam/Slime centers match independent earlier evidence. Two five-well negative tests fail correctly. Expected existing arrow-downsampling notices remain explicit.
+- Import native images WITH their same hudbar data and measured radio coordinates; do not mix differently cropped source/cutter images. R9 surfaces stay shared master geometry in the six measured palettes. No rejected R7 slot frames or new object/glyph art.
+- Use the existing R8 common12role set, with shared actual3DHero-Shots taking precedence. Jump and travel must be distinct; no per-skin400content images. Actual receiving base has12entries and skins{}.
+- ActK reads180source height from action_surface, with separate glyph budget. Layout must invalidate after asynchronous KIT loading, or RetinaLarge stays at fallback144 instead of177. Actual1440x900DPR2Large177<=180 has been measured for all six in the pre-final matrix.
+- Browser border-image seams on the action surface were fixed by receiving code: compose its nine pieces once on one native-height180canvas, then scale that single surface. Preserve caps and blank interior; no blur or extra cell rims. Other panel seam review is not globally claimed complete.
+- New skin selection is in Settings > Game > HUD skin, with hash choice taking precedence and stored preference. Action size changes immediately. Flat round button surfaces follow Georg's newer V-1498/q528 concept; no rim/cavity per place, neutral content.
+
+**Verified remote recovery:** game module/hud-clay-r1@ac4a433f6f921f8c552a4c00fbc73604e149e7b5, private art assets/private@2f96ab217de15ee587a1d22f1d6a150b45f70ba5.154required built files match exact remote Git blobs. Code/data/source files fetched at immutable head. No merge/Live promotion.
+
+**Evidence boundary:** independent cutter critic PASS. A first actual six-skin24case/72state-image matrix ran before the final R8/canvas corrections; initial image critic found issues. On the last committed state only Retro's4cases ran. Do NOT combine pre-final other-skin images with final Retro into a final-six PASS. Final independent image review remains pending. Current receiving findings: Hazard siren/gear semantic selection and tiny Teal arrow need resolution/review; successful role counts alone do not certify semantics.
+
+**Explicit restart stop:** Georg asked in the running session to shut down/restart for UI bugs. Kartenkante stopped server/browser; this chat terminated its own remaining monitor. Start no new jobs until Georg/WS0 resumes. After resumption Kartenkante has the first reserved browser slot: resolve remaining cut semantics, run all6x4cases on the final source/art pair, retain empty/hover/pressed and neutral-content evidence, get independent critic and leave a usable game-review preview. This is outstanding work, not a completed all-skin acceptance.
+
+Private immutable cutter delta: KFB_MixedBag_HUD_Cutter_Fix_R10_2026-11-05.zip,39694097bytes,SHA256aa8bd8fc812225c1fa246a379fac233ce41bd4d83fb32c9980b2e06fe06e2735,Dropbox id:KeQLaY5-IIAAAAAAAA7enA. Public recovery QA: HUD_CUTTER_REPAIR_R10_QA.json (evidence checkpointd801dfe0b0b675c2bba12da66491ad2679238ebc). Private source scripts stay in private game/Dropbox, not copied into public authoring Git.
+
+## Superseded R9 checkpoint
+
 
 ## CURRENT R9 · HUD SURFACES, SHARED CONTENT, ONE ACTION OUTER EDGE
 
