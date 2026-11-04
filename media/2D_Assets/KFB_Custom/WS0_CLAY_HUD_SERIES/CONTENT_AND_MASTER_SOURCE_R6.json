@@ -1,0 +1,45 @@
+{
+  "status": "REJECTED_BY_GEORG_NOT_A_NEW_SKIN",
+  "reason": "Unrequested brown/beige visual redesign; existing slot basis must retain form/colors and no additional functional frames.",
+  "rejected_art": {
+    "file": "quarantine/NATIVE_MASTER_TRAY.png",
+    "sha256": "51b65d3152fdc13c4f7f8c613bd71ff2f72e9c6087de3adc5b3db14e0a14fe4f"
+  },
+  "canonical_existing_sources": [
+    {
+      "file": "source_bar_1.png",
+      "size": [
+        137,
+        144
+      ],
+      "sha256": "380176c933f9d3e045b9b218249b066e3b1aa40fa0620b0b5fde1da0e99ee86e"
+    },
+    {
+      "file": "source_bar_4.png",
+      "size": [
+        474,
+        144
+      ],
+      "sha256": "618c709adbd464460b2d48717b6553d5d8d18f6d0092815a49d8c167dadc826c"
+    },
+    {
+      "file": "source_bar_8.png",
+      "size": [
+        922,
+        144
+      ],
+      "sha256": "c7b07347a5a25ab00f3e0c18e85e2d83ba2df10986dee912160496cea1af47ec"
+    }
+  ],
+  "geometry_note": "Current bar_4 source474x144; render reference uses115high. Do not interpret115 as native source height and redesign source proportions. Native288needs exact original-source lineage, no pixel upscaling.",
+  "native_288_proven": false,
+  "new_skin_registered": false,
+  "artifact_uploaded": false,
+  "runtime_written": false,
+  "source_search": [
+    "current private game src/assets/hud_v6/ui/bar_1,4,8.png:144pxhigh",
+    "KFB_ActionBar_R5_Modular_PNG.zip: empty rails88\u2013101pxhigh; different design-candidate lineage",
+    "KFB_HUD_3D_Paket_R1.zip: no source action-tray mesh"
+  ],
+  "next_gate": "Original high-resolution/model source of the existing slot bases from owning pipeline; continue content/role separation docs meanwhile"
+}
