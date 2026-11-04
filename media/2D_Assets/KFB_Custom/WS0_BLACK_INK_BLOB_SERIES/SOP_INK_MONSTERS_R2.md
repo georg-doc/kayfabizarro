@@ -1,3 +1,7 @@
+# ADDITIVE GEORG CAST DECISION · 2026-11-04
+
+For normal six-character Slop / Ink Monster families ALWAYS include one or two female-read characters, unless Georg explicitly chooses a different cast. Keep whole footless ink anatomy; convey gender reading subtly through expression, lids/lashes, quiff/scarf and character design, not human torsos. Source-backed sheets remain valid. New explorer/pioneer/research family uses jungle/pyramid/alien planet as prop/costume vibe only, no scenelet.
+
 # Black Ink Monster Production SOP · R2 · 2026-11-04
 
 Status: Georg decisions captured; recovery workflow NOT yet image-validated. Owner WS0; Asset Registry/Librarian remains asset truth, WS1 owns game runtime. Supersedes conflicting eye, batch and reference rules in PROMPT_SYSTEM.md / EXPORT_QA.md for new Ink Monster jobs only. Historical PASS artwork is not retroactively rejected.

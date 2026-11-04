@@ -1,3 +1,7 @@
+# GEORG DECISION · PIRATES ALL SIX PASS · FAMILY CAST RULE · 2026-11-04
+
+Georg: “die sind wieder alle 6 PASS”. Pirate six-sheet DESIGN PASS. Normal Slop / Ink Monster families should ALWAYS include one or two female-read characters unless a later explicit theme/request overrides. New authorized production: one unique six-character explorer/pioneer/researcher 3x2 transparent sheet; jungle/pyramid/alien-planet vibes ONLY, no scenelets. Exactly two female-read slots planned. Mechanics and selected sailor R2 PASS unchanged, miners FAIL/TUNE unchanged. No runtime/Librarian admission implied.
+
 # CURRENT CHECKPOINT · Pirate sheet + selected sailor R2 PASS · 2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
