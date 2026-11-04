@@ -1,3 +1,21 @@
+# CURRENT RETURN · Leisure12PASS / RPG three-stage pilot next ·2026-11-04
+
+WSA → WS0/Verteiler, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. Georg acceptsALL12leisure/clubs. Index32PASS sheets/192depictions,30eligible sheets/180depictions; International Couples WS0 exclusion/discrepancy retained. Leisure implementation0d1fc748af0e29a5e2dc51a1fd5da2921b9cb11e:9exact text readbacks,2remote PNG byte matches; accepted kitchenR2also byte-matches. CardsDESIGN, historical crop QA preserved.
+
+Next authorized visual experiment:one transparent landscape3columns×2rows six-depiction sheet; columnsTrash/Common/Elite, two RPG identitieswarrior/mage. Gear, acting andsignature quirks progress but species/identity remain; groups may read asbrothers/gang/escalation alternatives. Two identities×three stages, not six distinct characters. Normal two-female-per-six casting rule treated asstate/variant format exception:mage identity female inallthreecells, warrior male inallthree. No gameplay/HP/rarity changes or implementation of future stages4–6. DRAFT pendingGeorg. Next action:produce andarchiveone pilot after source-grounded level preflight.
+
+## Previous Return
+
+# CURRENT RETURN · Gastronomy12PASS with eyelidR2 + Leisure12 candidates ·2026-11-04
+
+WSA → WS0/Verteiler. georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469. Georg accepts eyelid fix andALL12gastronomy, kitchenR2selected/R1retained. Native outside-ROI differences documented and visually accepted, no pixel-local-patch claim. PASS+edit checkpoint7aab2b834bc7306dcdc71ad7a898f1d2f77edf52,12/12exact text readbacks/branch ref, R2PNGbytes follow. Index30PASS sheets/180depictions,28eligible sheets/168depictions, International Couples WS0 exclusion/discrepancy retained. Prior meaning/future12PASSpreserved. CardsDESIGN, original crop/prop observations retained.
+
+Next authorized batch:2native independent original-reference calls,2transparent1536x1024 3x2sheets,12NEW leisure/club/private-obsession actors, exactly2female-read each. PNGs, exact prompts/receipts, manifests, QA and12DESIGN cards under LEISURE_CLUBS_12_2026-11-04. New12DRAFT/intake=false pending actualGeorg. Reference hashes6/6,RGBA/source/alpha/seam/outer-edge checks and64/96/160/192px review views; exact post-write evidence in batch Return. Authoring IDs only, no runtime/combat/catalog refresh, alpha repair, library write, retirement, Stage/Live or merge. Writer53130drafts/501open unchanged.
+
+Details:BATCH_LEISURE_CLUBS_2026-11-04/{BATCH_RETURN.md,QA_SUMMARY.json}. One next gate:Georg verdict for NEWtwo sheets/cells; then manifest status and existing-owner intake. Prior12already accepted.
+
+## Previous Return
+
 # CURRENT RETURN · Gastronomy12PASS with eyelidR2 / Leisure12 next ·2026-11-04
 
 WSA → WS0/Verteiler. georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. Georg accepts corrected upper eyelid (topright oyster merchant) andALL12gastronomy. KitchenR2selected, originalR1retained; native render differences outside ROI documented, R2accepted visually. Index30PASS sheets/180depictions,28eligible sheets/168depictions; International Couples WS0 exclusion/discrepancy preserved. CardsDESIGN, no actual receiving catalog refresh/runtime/combat/library changes.

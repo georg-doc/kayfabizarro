@@ -1,0 +1,62 @@
+{
+  "status": "ALL12_GEORG_DESIGN_PASS",
+  "jobs": 2,
+  "sheets": 2,
+  "figures": 12,
+  "georg_pass": 12,
+  "cards_design": 12,
+  "reference_hashes_checked": 6,
+  "actual_source_files": [
+    {
+      "key": "private-obsessions",
+      "source": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+      "sha256": "d310b535934d98a3f56d3631e653084e15a9d61e76b712e2e93a7aae8b137f5a",
+      "git_blob_sha": "1a6b775f2ba4f64e43fe59b0d0615c644bfd8216",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 0,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0
+    },
+    {
+      "key": "club-rituals",
+      "source": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+      "sha256": "1a79aea9a1790d9cd487bae7bba9c2b7208103c9a13f1df32d8fe44d5da2a615",
+      "git_blob_sha": "71cac927869ebf0bfff615527586e2b16a9b212e",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 459,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0
+    }
+  ],
+  "qa_views_px": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "prior_georg_pass_checkpoint": "7aab2b834bc7306dcdc71ad7a898f1d2f77edf52",
+  "prior_gastronomy_georg_pass": 12,
+  "prior_eyelid_fix_selected": "kitchenR2",
+  "runtime_tests": 0,
+  "individual_game_crops": 0,
+  "intake_eligible": 12,
+  "github_verification": {
+    "implementation_head": "0d1fc748af0e29a5e2dc51a1fd5da2921b9cb11e",
+    "branch_ref_verified": true,
+    "exact_text_readbacks": 9,
+    "remote_png_byte_matches": 2,
+    "accepted_kitchenR2_remote_png_byte_matches": 1
+  }
+}
