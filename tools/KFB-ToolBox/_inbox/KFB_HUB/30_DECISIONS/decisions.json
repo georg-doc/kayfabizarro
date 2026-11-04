@@ -21296,6 +21296,21 @@
    "superseded_by": [],
    "why": "Was in vier Runden nicht traegt, wartet bis nach dem MVP.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1452",
+   "date": "04.11.2026",
+   "area": "Welt",
+   "verdict": "KEEP",
+   "text": "Pop-up-Atlas R1 (Verteiler, assets/private @cb56cc06 popup_atlas_r1/): 722 Pop-ups, nah 512 px 43 Seiten 46,5 MB, fern 256 px 13 Seiten 20,2 MB, WebP <=2048, popup_atlas.r1.json; privater Rest @dc4fb07e. popup_atlas.py ins Ingest-Rezept. WS-Design baut Atlas-Laden in kfbInsert (Seite einmal hochladen, Obergrenze/Entladen je Seite, nah/fern, Rueckfall Einzel-PNG). Ovales Fenster: zweiter Treffer = Fassade vault-3, vermutlich Fassadenloch auf Kartenflaeche -> WS-Design/WS-Himmel pruefen im naechsten Slot.",
+   "values": {},
+   "owner": "Verteiler · WS-Design",
+   "check": "",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fuer die Site zaehlen Seiten, nicht hunderte Einzelbilder.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

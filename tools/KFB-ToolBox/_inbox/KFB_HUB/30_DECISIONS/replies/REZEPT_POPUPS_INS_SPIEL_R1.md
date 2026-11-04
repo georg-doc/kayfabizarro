@@ -40,6 +40,8 @@ Ein neuer Ordner mit Georgs Claymation-Bildern (ZIPs, Einzelbilder, Bögen auf G
    - schreibt den Katalog `src/data/popups/popup_katalog.r1.json`;
    - trägt neue Motive und Familien in `kfb-themen-tags.r1.json` ein;
    - baut den Slop-Atlas `slop_r1/slop_atlas.r1.webp` neu, wenn Slop-Units dazukommen;
+   - schreibt das Feld `spiel` je Eintrag, also ob und wo der Verteiler das Stück stellt (`scripts/assets/popup_spiel.mjs`);
+   - baut den Pop-up-Atlas `popup_atlas_r1/` neu, wenn Pop-ups dazukommen (`scripts/assets/popup_atlas.py`: Nah-Seiten 512 px, Fern-Seiten 256 px, Seiten höchstens 2048 px; von Hand mit `--popup-atlas`);
    - schreibt je Familie bzw. Thema einen Kontaktbogen.
 
    Bekanntes bleibt, wie es ist: Ein zweiter Lauf über denselben Ordner meldet `neu: 0`.
@@ -51,7 +53,7 @@ Ein neuer Ordner mit Georgs Claymation-Bildern (ZIPs, Einzelbilder, Bögen auf G
    - `node scripts/assets/popup_luecken.mjs` zeigt die Lückenliste je Biom und Deck.
 6. **Bilder privat pushen.**
    ```
-   python3 scripts/assets/push_private.py <A> popup_clay_r1 slop_r1 popup_katalog_r1 -m "Pop-up-Katalog: <Ordner>"
+   python3 scripts/assets/push_private.py <A> popup_clay_r1 slop_r1 popup_katalog_r1 popup_atlas_r1 -m "Pop-up-Katalog: <Ordner>"
    ```
    Das Skript prüft zuerst, dass das Repo privat ist und mindestens 9 GB frei sind. Es arbeitet in einem schlanken Klon und lädt nichts nach. Den Commit-Hash notieren.
 7. **Code.**
