@@ -1,9 +1,9 @@
 {
-  "status": "GENERATED_DRAFT_AWAITING_GEORG",
+  "status": "ALL24_GEORG_DESIGN_PASS",
   "jobs": 4,
   "sheets": 4,
   "figures": 24,
-  "georg_pass": 0,
+  "georg_pass": 24,
   "cards_design": 24,
   "actual_source_files": [
     {
@@ -86,11 +86,12 @@
   ],
   "runtime_tests": 0,
   "individual_game_crops": 0,
-  "intake_eligible": 0,
+  "intake_eligible": 24,
   "github_verification": {
     "implementation_head": "0b2d39d08162af3a01043b4e3b9ea73fd4de9ce7",
     "branch_ref_verified": true,
     "exact_text_readbacks": 17,
     "remote_png_byte_matches": 4
-  }
+  },
+  "georg_note": "Incorrect stethoscope detail accepted; no image edit requested. Source QA remains historical evidence."
 }

@@ -1,3 +1,13 @@
+# CURRENT RETURN · Batch24 GEORG PASS / next batch12 authorized ·2026-11-04
+
+WSA → WS0, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. All24 health/everyday actors accepted; incorrect stethoscope detail explicitly accepted as non-blocking, no repair. Four manifests and24figure statuses nowPASS, intake eligible; old seam/crop evidence preserved. Root index now24PASS sheets/144depictions (including two International Couples sheets still intake-excluded by WS0 brief);22eligible sheets/132depictions. Cards remainDESIGN; canonical receiving mapping/runtime/library refresh not claimed.
+
+Next authorized image batch:12NEW Slops, two3x2sheets, education/self-improvement and cultural administration/interpretive authority, exactly2female-read each; original refs, progressive QA, DRAFT until Georg decision. No new image jobs invoked at this PASS checkpoint. No merge/Live.
+
+Next action: produce and archive the two new candidate sheets, then Georg visual verdict.
+
+## Previous Return
+
 # CURRENT RETURN · AFK cluster batch24 · 2026-11-04
 
 Owner WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469. Prior Golden metadata head725ae8b4a71911341631ca9dc451966517df2b8d remains preserved. Implementation checkpoint `0b2d39d08162af3a01043b4e3b9ea73fd4de9ce7`:17/17exact text readbacks and4/4remote PNG byte matches, branch ref verified. Final evidence/Return head is returned after publication.
