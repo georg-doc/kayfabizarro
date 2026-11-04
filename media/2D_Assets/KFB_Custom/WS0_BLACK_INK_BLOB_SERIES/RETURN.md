@@ -1,3 +1,7 @@
+# GEORG DECISION · SEAFARER SECOND VARIANT PASS · 2026-11-04
+
+Selected sailors-historic-sheet-r2-selected.png (SHA256 f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1). Georg expressly PASS for second displayed version, all six characters. Earlier original-selected/DRAFT statements below are historical and superseded. Mechanics all six PASS unchanged. Miners FAIL/TUNE unchanged. Next authorized image: one six-character pirate/privateer sheet including a dieselpunk space pirate couple. No game admission or merge.
+
 # CURRENT CHECKPOINT · Historic sailors + Mechanics PASS · 2026-11-04
 
 Owner WS0 · repo georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · Draft PR #469.

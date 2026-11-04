@@ -1,7 +1,7 @@
-# Historic sailor Slops · R1
+# Historic sailor Slops · selected R2 · GEORG DESIGN PASS
 
-One original-reference-conditioned generated 1536x1024 3x2 sheet, six distinct sailors/naval soldiers/veteran seamen and women. DRAFT awaiting Georg design verdict. Actual original Freche morphology and RPG prop-craft inputs supplied; no rejected miner/style chain.
+Georg explicitly accepted the SECOND displayed variant: “die zweite, korrigierte (?) variante der 6 ist PASS.” Selected file: sailors-historic-sheet-r2-selected.png, original generated filename exec-b344c485-2e2e-47ed-8019-70ca48bd61dc.png, SHA256 f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1.
 
-Original selected. A second unnecessary background extraction call completed and was not selected; exact args/receipt/hash retained in provenance. Correct alpha compositing proves the original sheet already has real transparency. 589771 fully transparent pixels, background samples alpha0, alpha range 0..254. No claim of game-ready edge/collision/runtime acceptance. QA proof images saved locally. Model/seed not exposed.
+All six designs PASS in that selected sheet. R1 remains historical, not the selected variant. R2 was a background-extraction edit attempt; later audit showed R1 already transparent. This does not change Georg's explicit selection of the SECOND variant. R2 1536x1024 RGBA, alpha0..254, 613824 fully transparent pixels; no game/runtime/Librarian admission claimed.
 
-Next gate: Georg design verdict on sailor sheet. WS0 / Asset Librarian / WS1 remain owners; no registration, runtime, Stage or Live change.
+Exact prompt and edit receipt in PRODUCTION_RECORD.json, original vs extra-attempt hashes in QA.json. Existing WS0/Asset Librarian/WS1 ownership unchanged.
