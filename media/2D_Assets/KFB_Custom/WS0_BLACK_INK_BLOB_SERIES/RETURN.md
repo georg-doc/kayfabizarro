@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · Explorer six-sheet · pirates PASS · 2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Pirates: ALL SIX GEORG DESIGN PASS recorded in owner README. Mechanics and selected sailor R2 all-six PASS retained; miners FAIL/TUNE unchanged.
+- Standing cast rule persisted in SOP: normal Slop/Ink Monster families always one or two female-read characters unless later explicit request overrides.
+- Explorers/pioneers/researchers: ONE new original-reference-conditioned 1536x1024 transparent 3x2 sheet, six unique pictured actors, exactly two female-read slots2/5. Jungle/pyramid/alien context is prop/costume vibe only, no scenelet. DRAFT awaiting Georg.
+- PNG SHA256 613b2f3856045d00bdf6d04a52566884f929a97f99b407383c1ffc5ec22b9a53; alpha0..254, 559667 fully transparent pixels, five background samples alpha0. Correct checker composite inspected. Exact args/receipt/source role/QA archived. One job, zero extracted sprites claimed.
+- No Librarian registration, runtime tests, new owners, Stage/Site/Live or merge.
+
+## One next gate
+Georg design verdict on explorer sheet.
+
+## Historical Return
+
 # GEORG DECISION · PIRATES ALL SIX PASS · FAMILY CAST RULE · 2026-11-04
 
 Georg: “die sind wieder alle 6 PASS”. Pirate six-sheet DESIGN PASS. Normal Slop / Ink Monster families should ALWAYS include one or two female-read characters unless a later explicit theme/request overrides. New authorized production: one unique six-character explorer/pioneer/researcher 3x2 transparent sheet; jungle/pyramid/alien-planet vibes ONLY, no scenelets. Exactly two female-read slots planned. Mechanics and selected sailor R2 PASS unchanged, miners FAIL/TUNE unchanged. No runtime/Librarian admission implied.
