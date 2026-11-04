@@ -1419,6 +1419,7 @@ d('V-1438','04.11.2026','Spiel','STATUS','Modelle kleiner (WSB assets/meshopt-r2
 d('V-1439','04.11.2026','Spiel','STATUS','Plattensturz 12 -> 2,1 GB in Minuten: Ursache macOS-Swap 13 GB durch ca. 40 liegengebliebene vite/Chrome/node-Prozesse (nicht Scratch). Alle Sessions pausiert, gemeldet, eigene Server/Browser beendet, max. einer je Beleg; Entwarnung. Platte 7,8 GB (Grenze 9): Georg kann den Papierkorb leeren. Granate (WSB fb-clips-r1 r3 @9e3eaeee, Abwurf 0,65 s) -> WS1 N-131. WS-Design Tueren-Head auf @0001fb78 mit echtem portalZiel und Vorladen in Arbeit; Figuren Lider-Fortschritt, Ohren nachgebessert nach Kritiker-FAIL.','alle Sessions · WSB · WS1','N-131','WS0 04.11.'),
 d('V-1440','04.11.2026','Welt','STATUS','Verteiler Voll-Inventur fertig (assets/popups-ingest-r1 @57260563): MB07/10/11/12 drin (Frost-Truhen, Pub, keltisch, Slops suess + oma), Katalog 1118 (124 Varianten aus verworfenen Neu-Renderings, Grenze 0,95 gesichtet), Slops 396/31 Familien, Seltenheits-Boden 0,15 -> alle Stuecke werden gestellt; INVENTUR_POOL_R1.md -> WS1 N-132. Push privater Rest und Pop-up-Atlas (ca. 30+8 Seiten) warten auf Platte >10 GB (Georg leert Papierkorb). WS-Himmel: Knetkorn R1 knapp FAIL (Schlieren bei flachem Blick, fleckig), Korrektur vorbereitet; Zweige auf Stamm @0001fb78 rebasen.','Verteiler · WS-Himmel · WS1','N-132','WS0 04.11.'),
 d('V-1441','04.11.2026','Figuren','REVIEW','Retro-Schultergurte R1 (WSB assets/jetpack-r1 @abcfbc54, von WS0 gepusht): skinned Teil mit FB-Rumpfgewichten, Haut- und Ueber-Shirt-Fassung, Vertrag gurte_retro.contract.r1 mit parts[]-Eintrag; Rest: Aermelkappen ueber Traeger beim Ducken. Zeigen zusammen mit Jetpack-Groesse (q500). WSB baut Vorschau Alien gross mit kuerzerer Glocke als Bild zur Hub-Option.','WSB','q500','WS0 04.11.'),
+d('V-1442','04.11.2026','Spiel','STATUS','Merge-fertige Heads an WS1 N-133: Tueren design/tueren-r5-head @ded4b7ca (ein Ausloeser Wagen/Jetpack/Fuss, Ereignisse portal.*, portale.go fuer interactable, tuerLook(t), Halte-Loop, Vorladen; WS1-Notizen Ruckler, freeze beendet Flug, helle Tuerflaeche 0,1 s), Kartenbau design/kartenbau-r4-head @e457546d (Holo, Ripple an, Trapez-Fugen, aufprall=1 aus), HUD module/hud-clay-r1 @0cf2cce9 (Fluff rollt und sickert ein). Swap 15,5 GB / Platte 4,8 GB: alle Browser/Builds auf Georgs Mac gestoppt, nur Code; Push-Benachrichtigung an Georg (Papierkorb leeren).','WS-Design · Kartenkante · WS1 · alle','N-133','WS0 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2825,6 +2826,7 @@ WHY = {
  'V-1439':('Zuerst den Swap pruefen, dann Dateien suchen; laufende Browser kosten Platte.','04.11.2026'),
  'V-1440':('Der Pool ist vollstaendig registriert; jedes Stueck darf vorkommen.','04.11.2026'),
  'V-1441':('Eine Hub-Option braucht ein Bild, bevor Georg sie waehlen kann.','04.11.2026'),
+ 'V-1442':('Mergefertige Heads gehen an WS1; Belege warten, wenn der Rechner keine Luft hat.','04.11.2026'),
 }
 SUP = {}
 for e in E:

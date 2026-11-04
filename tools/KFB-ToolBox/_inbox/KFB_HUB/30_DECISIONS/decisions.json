@@ -21146,6 +21146,21 @@
    "superseded_by": [],
    "why": "Eine Hub-Option braucht ein Bild, bevor Georg sie waehlen kann.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1442",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "Merge-fertige Heads an WS1 N-133: Tueren design/tueren-r5-head @ded4b7ca (ein Ausloeser Wagen/Jetpack/Fuss, Ereignisse portal.*, portale.go fuer interactable, tuerLook(t), Halte-Loop, Vorladen; WS1-Notizen Ruckler, freeze beendet Flug, helle Tuerflaeche 0,1 s), Kartenbau design/kartenbau-r4-head @e457546d (Holo, Ripple an, Trapez-Fugen, aufprall=1 aus), HUD module/hud-clay-r1 @0cf2cce9 (Fluff rollt und sickert ein). Swap 15,5 GB / Platte 4,8 GB: alle Browser/Builds auf Georgs Mac gestoppt, nur Code; Push-Benachrichtigung an Georg (Papierkorb leeren).",
+   "values": {},
+   "owner": "WS-Design · Kartenkante · WS1 · alle",
+   "check": "N-133",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mergefertige Heads gehen an WS1; Belege warten, wenn der Rechner keine Luft hat.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
