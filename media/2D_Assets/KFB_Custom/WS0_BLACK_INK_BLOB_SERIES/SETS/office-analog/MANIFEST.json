@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_OFFICE_ANALOG_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+    "sha256": "123921284e89a643da0da7211dbbf6f17afb92fc9f7cf68f4f2291509f0c6d4a"
+  },
+  "production_record": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/office-analog/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_BUERO_ANALOG_01",
+      "id_scope": "canonical_roster",
+      "name": "Frau Abrechnung",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot1 FEMALE-READ PAYROLL ACCOUNTANT: broad low squashed ink puddle, little dusty rose hair scarf on a soft goo curl, round brass pince-nez low below exhausted lids, small cream collar.",
+          "Cradles a fat mechanical adding machine with large round ivory keys; a thick blank paper receipt ribbon spills out and winds once loosely around her massive goo wrist, she attempts to wind it back with a pencil."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ PAYROLL ACCOUNTANT: broad low squashed ink puddle, little dusty rose hair scarf on a soft goo curl, round brass pince-nez low below exhausted lids, small cream collar. One eye desperately focused downward, other drifting, mouth a deep FLAT droop with one lower tooth. Cradles a fat mechanical adding machine with large round ivory keys; a thick blank paper receipt ribbon spills out and winds once loosely around her massive goo wrist, she attempts to wind it back with a pencil. Clear simple paper/hand relationship, familiar payroll grind made grotesquely tactile, no writing or detached clutter.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_ANALOG_02",
+      "id_scope": "canonical_roster",
+      "name": "Herr Ablagefreude",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Huge irregular toothy SIDEWAYS laugh as if delighted by filing order, one WHITE eye/red iris/black pupil wide and one narrowed."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot2 ARCHIVE REGISTRAR: towering narrow leaning splat with one tall curling goo crest, tiny green eyeshade and short charcoal sleeve cuffs. Huge irregular toothy SIDEWAYS laugh as if delighted by filing order, one WHITE eye/red iris/black pupil wide and one narrowed. Both arms embrace THREE fat worn manila folders stacked so tightly their paper edges bulge like layered pastry, a single enormous brass paperclip compresses them. Rich thick sculpted parchment and spring metal; no stamps/text.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_ANALOG_03",
+      "id_scope": "canonical_roster",
+      "name": "Rat Nochfehlend",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot3 MUNICIPAL APPROVAL OFFICER: compact spherical splat, tiny battered black cap and high faded indigo clerk collar.",
+          "Holds a big red rubber stamp hovering above a thin folded permit cradled in opposite goo hand; his stamp's handle is absurdly worn smooth while document pristine."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot3 MUNICIPAL APPROVAL OFFICER: compact spherical splat, tiny battered black cap and high faded indigo clerk collar. Deeply offended triangular UNDERBITE showing two long ivory teeth, one lid raised, red pupils turned sideways toward documents. Holds a big red rubber stamp hovering above a thin folded permit cradled in opposite goo hand; his stamp's handle is absurdly worn smooth while document pristine. Blank stamp face/paper. His posture blocks access protectively, no desk or building.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_ANALOG_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Stellvertretungsweise",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot4 EARNEST JUNIOR TEAM LEAD: medium wide leaning bean-shaped splat, short beige cardigan collar and tiny burgundy knitted tie, uneven goo crest.",
+          "Holds a bulky black Bakelite telephone receiver to one ear-lobe while other hand clutches a short second receiver at belly, the two THICK coiled cords loosely loop together once."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot4 EARNEST JUNIOR TEAM LEAD: medium wide leaning bean-shaped splat, short beige cardigan collar and tiny burgundy knitted tie, uneven goo crest. Both WHITE eyes wide RED irises BLACK pupils looking UP with strained hopeful attention; lips pressed into a broad CLENCHED crooked tooth smile. Holds a bulky black Bakelite telephone receiver to one ear-lobe while other hand clutches a short second receiver at belly, the two THICK coiled cords loosely loop together once. Two handles, clear physical competing attention, not a spaghetti cable tangle, no phone base or scene.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_ANALOG_05",
+      "id_scope": "canonical_roster",
+      "name": "Frau Protokollfest",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot5 FEMALE-READ MINUTES SECRETARY: tall pear-shaped ink blob leaning forward, soft sculpted purple bun-like goo loop, tiny teal velvet collar and one round pearl stud.",
+          "Grips a thick fountain pen between goo fingers above a tiny worn shorthand notebook, but notebook held delicately shut by her other hand."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ MINUTES SECRETARY: tall pear-shaped ink blob leaning forward, soft sculpted purple bun-like goo loop, tiny teal velvet collar and one round pearl stud. Half-closed WHITE eyes/red iris/black pupils, knowing narrow CLOSED asymmetric smirk with one broad gold fang. Grips a thick fountain pen between goo fingers above a tiny worn shorthand notebook, but notebook held delicately shut by her other hand. Satire in perfectly poised futile readiness; chunky beautiful ivory paper, brass pen and ink nib, no readable marks, no literal joke label.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_ANALOG_06",
+      "id_scope": "canonical_roster",
+      "name": "Herr Beschaffungsruhe",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot6 RETIRING PROCUREMENT CLERK: very low sagging wide ink blob, tiny patched charcoal felt hat, narrow mustard tie and worn cream collar.",
+          "Carefully oils a comically massive office stapler with a tiny copper oil can; stapler cradled like treasured machinery, miniature drop clinging to spout.",
+          "Hands believable, lovely hand-modeled metal wear, few bold props, no desk."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot6 RETIRING PROCUREMENT CLERK: very low sagging wide ink blob, tiny patched charcoal felt hat, narrow mustard tie and worn cream collar. One eye fully closed with contentment, other sleepy red gaze DOWN, crooked shallow smile with THREE widely separated teeth, no tongue. Carefully oils a comically massive office stapler with a tiny copper oil can; stapler cradled like treasured machinery, miniature drop clinging to spout. Hands believable, lovely hand-modeled metal wear, few bold props, no desk.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/analog-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESIDENTS_A_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 3,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+    "sha256": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b"
+  },
+  "production_record": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/residents-a/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      2,
+      3
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESIDENT_01_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Lesefrieden",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_01",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW1 TOP identity01: fussy retired night-reader, very broad LOW ink puddle with TWO short crown lobes, cream pinstriped pajama COLLAR and short OPEN burgundy quilted dressing-gown lapels, tiny soft cream nightcap with burgundy pompom on one side.",
+          "Holds SAME small blue chipped enamel tea mug in both states, one broad ivory front tooth and two little lower teeth in both.",
+          "LEFT A: shoulders/lobes curl protectively upward, huge uneven wide eyes WHITE/red/black pupils looking upward with startled confusion, lower lip trembles into jagged clench, both goo hands clutch mug at belly.",
+          "RIGHT B: broad goo lobes tense outward but inside cell, heavy eyebrows compressed DOWN, glaring red pupils forward, mouth huge skewed triangular snarl showing same tooth arrangement; one goo hand firmly holds mug against body, other closes into fist at OWN waist, no striking or reaching.",
+          "Same outfit/nightcap/mug/color/identity."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP identity01: fussy retired night-reader, very broad LOW ink puddle with TWO short crown lobes, cream pinstriped pajama COLLAR and short OPEN burgundy quilted dressing-gown lapels, tiny soft cream nightcap with burgundy pompom on one side. Holds SAME small blue chipped enamel tea mug in both states, one broad ivory front tooth and two little lower teeth in both. LEFT A: shoulders/lobes curl protectively upward, huge uneven wide eyes WHITE/red/black pupils looking upward with startled confusion, lower lip trembles into jagged clench, both goo hands clutch mug at belly. RIGHT B: broad goo lobes tense outward but inside cell, heavy eyebrows compressed DOWN, glaring red pupils forward, mouth huge skewed triangular snarl showing same tooth arrangement; one goo hand firmly holds mug against body, other closes into fist at OWN waist, no striking or reaching. Same outfit/nightcap/mug/color/identity.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_01_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Lesefrieden",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_01",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW1 TOP identity01: fussy retired night-reader, very broad LOW ink puddle with TWO short crown lobes, cream pinstriped pajama COLLAR and short OPEN burgundy quilted dressing-gown lapels, tiny soft cream nightcap with burgundy pompom on one side.",
+          "Holds SAME small blue chipped enamel tea mug in both states, one broad ivory front tooth and two little lower teeth in both.",
+          "LEFT A: shoulders/lobes curl protectively upward, huge uneven wide eyes WHITE/red/black pupils looking upward with startled confusion, lower lip trembles into jagged clench, both goo hands clutch mug at belly.",
+          "RIGHT B: broad goo lobes tense outward but inside cell, heavy eyebrows compressed DOWN, glaring red pupils forward, mouth huge skewed triangular snarl showing same tooth arrangement; one goo hand firmly holds mug against body, other closes into fist at OWN waist, no striking or reaching.",
+          "Same outfit/nightcap/mug/color/identity."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP identity01: fussy retired night-reader, very broad LOW ink puddle with TWO short crown lobes, cream pinstriped pajama COLLAR and short OPEN burgundy quilted dressing-gown lapels, tiny soft cream nightcap with burgundy pompom on one side. Holds SAME small blue chipped enamel tea mug in both states, one broad ivory front tooth and two little lower teeth in both. LEFT A: shoulders/lobes curl protectively upward, huge uneven wide eyes WHITE/red/black pupils looking upward with startled confusion, lower lip trembles into jagged clench, both goo hands clutch mug at belly. RIGHT B: broad goo lobes tense outward but inside cell, heavy eyebrows compressed DOWN, glaring red pupils forward, mouth huge skewed triangular snarl showing same tooth arrangement; one goo hand firmly holds mug against body, other closes into fist at OWN waist, no striking or reaching. Same outfit/nightcap/mug/color/identity.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_02_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Badeordnung",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_02",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE identity02 FEMALE-READ bath-time neighbor, tall asymmetrical pear ink blob with one curled purple upper lobe, coral towel turban with a single teal stripe, short teal terrycloth bathrobe COLLAR/lapels only with coral sash knot over upper blob, NO humanoid body below or robe-shaped legs.",
+          "LEFT A: inward hunched broad soft base, head tilt, WHITE eyes huge one pupil slightly off-center, lips stretched into anxious sideways teeth grimace, free hand protectively cups own cheek.",
+          "Comic affronted interrupted self-care, no tongue, exactly same towel/robe accents/brush."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE identity02 FEMALE-READ bath-time neighbor, tall asymmetrical pear ink blob with one curled purple upper lobe, coral towel turban with a single teal stripe, short teal terrycloth bathrobe COLLAR/lapels only with coral sash knot over upper blob, NO humanoid body below or robe-shaped legs. SAME small cream wooden-handled bath brush with oval brass back held in one hand in BOTH states; round pearl-like clay stud one side, two upper fangs and one large lower tooth. LEFT A: inward hunched broad soft base, head tilt, WHITE eyes huge one pupil slightly off-center, lips stretched into anxious sideways teeth grimace, free hand protectively cups own cheek. RIGHT B: upright tensed body, one lid squints and other glares, fierce snarling OPEN asymmetric jagged mouth, same teeth, free hand flat on own hip/side, brush held close not used as weapon. Comic affronted interrupted self-care, no tongue, exactly same towel/robe accents/brush.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_02_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Badeordnung",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_02",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE identity02 FEMALE-READ bath-time neighbor, tall asymmetrical pear ink blob with one curled purple upper lobe, coral towel turban with a single teal stripe, short teal terrycloth bathrobe COLLAR/lapels only with coral sash knot over upper blob, NO humanoid body below or robe-shaped legs.",
+          "LEFT A: inward hunched broad soft base, head tilt, WHITE eyes huge one pupil slightly off-center, lips stretched into anxious sideways teeth grimace, free hand protectively cups own cheek.",
+          "Comic affronted interrupted self-care, no tongue, exactly same towel/robe accents/brush."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE identity02 FEMALE-READ bath-time neighbor, tall asymmetrical pear ink blob with one curled purple upper lobe, coral towel turban with a single teal stripe, short teal terrycloth bathrobe COLLAR/lapels only with coral sash knot over upper blob, NO humanoid body below or robe-shaped legs. SAME small cream wooden-handled bath brush with oval brass back held in one hand in BOTH states; round pearl-like clay stud one side, two upper fangs and one large lower tooth. LEFT A: inward hunched broad soft base, head tilt, WHITE eyes huge one pupil slightly off-center, lips stretched into anxious sideways teeth grimace, free hand protectively cups own cheek. RIGHT B: upright tensed body, one lid squints and other glares, fierce snarling OPEN asymmetric jagged mouth, same teeth, free hand flat on own hip/side, brush held close not used as weapon. Comic affronted interrupted self-care, no tongue, exactly same towel/robe accents/brush.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_03_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Hausverstand",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_03",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM identity03 fastidious home custodian, compact round ink blob with small curled top tuft, faded moss-green knitted sleeveless house-vest collar over ivory pajama collar, mustard knitted sleep cap.",
+          "SAME fat crumpled blank newspaper roll hugged under own arm in both states, round brass pince-nez and one gold tooth among sparse ivory teeth.",
+          "LEFT A: body flattens a bit, eyes almost pop white with red irises/pupils upward, mouth long downward bent lower-lip pout exposing gold tooth, hands grip newspaper as comfort blanket, confused offense rather than cute sadness.",
+          "RIGHT B: body puffs within same cell size, intense red gaze through pince-nez, huge clenched uneven-tooth grin-snarl with gold tooth visible, one goo finger planted on OWN rolled newspaper as if quoting rules, no pointing at other actor.",
+          "Identical cap/vest/glasses/newspaper, clear same resident."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM identity03 fastidious home custodian, compact round ink blob with small curled top tuft, faded moss-green knitted sleeveless house-vest collar over ivory pajama collar, mustard knitted sleep cap. SAME fat crumpled blank newspaper roll hugged under own arm in both states, round brass pince-nez and one gold tooth among sparse ivory teeth. LEFT A: body flattens a bit, eyes almost pop white with red irises/pupils upward, mouth long downward bent lower-lip pout exposing gold tooth, hands grip newspaper as comfort blanket, confused offense rather than cute sadness. RIGHT B: body puffs within same cell size, intense red gaze through pince-nez, huge clenched uneven-tooth grin-snarl with gold tooth visible, one goo finger planted on OWN rolled newspaper as if quoting rules, no pointing at other actor. Identical cap/vest/glasses/newspaper, clear same resident.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_03_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Hausverstand",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_03",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM identity03 fastidious home custodian, compact round ink blob with small curled top tuft, faded moss-green knitted sleeveless house-vest collar over ivory pajama collar, mustard knitted sleep cap.",
+          "SAME fat crumpled blank newspaper roll hugged under own arm in both states, round brass pince-nez and one gold tooth among sparse ivory teeth.",
+          "LEFT A: body flattens a bit, eyes almost pop white with red irises/pupils upward, mouth long downward bent lower-lip pout exposing gold tooth, hands grip newspaper as comfort blanket, confused offense rather than cute sadness.",
+          "RIGHT B: body puffs within same cell size, intense red gaze through pince-nez, huge clenched uneven-tooth grin-snarl with gold tooth visible, one goo finger planted on OWN rolled newspaper as if quoting rules, no pointing at other actor.",
+          "Identical cap/vest/glasses/newspaper, clear same resident."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM identity03 fastidious home custodian, compact round ink blob with small curled top tuft, faded moss-green knitted sleeveless house-vest collar over ivory pajama collar, mustard knitted sleep cap. SAME fat crumpled blank newspaper roll hugged under own arm in both states, round brass pince-nez and one gold tooth among sparse ivory teeth. LEFT A: body flattens a bit, eyes almost pop white with red irises/pupils upward, mouth long downward bent lower-lip pout exposing gold tooth, hands grip newspaper as comfort blanket, confused offense rather than cute sadness. RIGHT B: body puffs within same cell size, intense red gaze through pince-nez, huge clenched uneven-tooth grin-snarl with gold tooth visible, one goo finger planted on OWN rolled newspaper as if quoting rules, no pointing at other actor. Identical cap/vest/glasses/newspaper, clear same resident.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+    "sha256": "7a49ba2d7cc0cb8aca956959844e212ea294ecea085905278260dcf36b9785df"
+  },
+  "production_record": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/law-institutions/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_ORDNUNG_07",
+      "id_scope": "canonical_roster",
+      "name": "Frau Grenzfall",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot7 FEMALE-READ BORDER DOCUMENTS OFFICER: broad squat asymmetric ink splat, faded sea-green peaked cap and small plum collar, one thin gold shoulder braid.",
+          "One goo hand grips a tiny blank passport booklet, other peers at it through a comically huge round brass magnifier so her OWN enlarged eyeball dominates glass."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot7 FEMALE-READ BORDER DOCUMENTS OFFICER: broad squat asymmetric ink splat, faded sea-green peaked cap and small plum collar, one thin gold shoulder braid. Sleepy half-lidded RED gaze down, CLOSED crooked smile with one flat gold fang. One goo hand grips a tiny blank passport booklet, other peers at it through a comically huge round brass magnifier so her OWN enlarged eyeball dominates glass. One round invented badge with raised simple concentric ring, no writing. Understated scrutiny turned self-scrutiny, no booth or border scenery.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_08",
+      "id_scope": "canonical_roster",
+      "name": "Wachtmeister Auftrieb",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot8 HARBOUR CONSTABLE: very tall thin slumped pear blob, navy knit officer cap with tiny plain brass anchor-shaped emblem, short faded cream scarf.",
+          "Both arms squeeze a huge worn cream life ring diagonally against own soft goo body, one fat brass whistle trapped awkwardly under ring."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot8 HARBOUR CONSTABLE: very tall thin slumped pear blob, navy knit officer cap with tiny plain brass anchor-shaped emblem, short faded cream scarf. Wide staring uneven WHITE/red/black eyes looking RIGHT, mouth pressed in a crooked ZIGZAG with three sparse ivory teeth. Both arms squeeze a huge worn cream life ring diagonally against own soft goo body, one fat brass whistle trapped awkwardly under ring. Ring tactile seams no text, no water/ship, no legs/bust.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_09",
+      "id_scope": "canonical_roster",
+      "name": "Gardist Übergröße",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot9 GRAND CEREMONIAL PALACE GUARD: tiny low broad puddle under an absurdly huge tall red-and-brass ceremonial helmet with one soft olive plume, short navy collar and TWO oversized plain circular brass buttons.",
+          "One eye tightly closed other looking UP red iris black pupil, huge crooked triangle UNDERBITE, not O.",
+          "Both goo hands struggle to balance a chunky ceremonial mace held horizontally against belly, big rounded head with blunt bulbs, non-threatening stationary pose."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot9 GRAND CEREMONIAL PALACE GUARD: tiny low broad puddle under an absurdly huge tall red-and-brass ceremonial helmet with one soft olive plume, short navy collar and TWO oversized plain circular brass buttons. One eye tightly closed other looking UP red iris black pupil, huge crooked triangle UNDERBITE, not O. Both goo hands struggle to balance a chunky ceremonial mace held horizontally against belly, big rounded head with blunt bulbs, non-threatening stationary pose. Entire helmet/plume/mace fits cell. No aggressive attack/victims, no real monarchy/nation symbols.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_10",
+      "id_scope": "canonical_roster",
+      "name": "Inspektor Krümelmaß",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot10 MUNICIPAL HYGIENE INSPECTOR: medium tall bean-shaped ink blob, battered white official cap with tiny teal roundel, faded olive work collar."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot10 MUNICIPAL HYGIENE INSPECTOR: medium tall bean-shaped ink blob, battered white official cap with tiny teal roundel, faded olive work collar. One eye half closed in suspicious concentration, other wide WHITE/red/black focused on an enormous brass caliper he uses to MEASURE a tiny single crumb held in opposite goo hand. Broad clenched flat ivory-tooth grimace. Two strong props only, no piles/desk/floating labels, bureaucratic obsession shown in physical size mismatch, beautiful metal and cream clay crumb.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_11",
+      "id_scope": "canonical_roster",
+      "name": "Herr Durchgangslage",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot11 TRANSIT FARE ENFORCER: spherical heavy drooping ink splat, small mustard peaked cap and short indigo collar, fat blank brass medallion.",
+          "Cradles one thick mechanical turnstile COUNTER as a handheld rounded iron box with a single short three-spoke brass arm poking out, other hand holds tiny blank ticket pinched delicately."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot11 TRANSIT FARE ENFORCER: spherical heavy drooping ink splat, small mustard peaked cap and short indigo collar, fat blank brass medallion. Very tired eyes red pupils LEFT, enormous downward lower-lip sag with two widely separated teeth, no smile/tongue. Cradles one thick mechanical turnstile COUNTER as a handheld rounded iron box with a single short three-spoke brass arm poking out, other hand holds tiny blank ticket pinched delicately. Entry authority without actual gate/scene, chunky stylized tool, whole goo body.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_12",
+      "id_scope": "canonical_roster",
+      "name": "Marschallin Eigenprüfung",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot12 FEMALE-READ RETRO-FUTURE ORDINANCE MARSHAL: tall asymmetric triangle-rounded ink splat with purple curled goo crest, small copper open helmet collar (face unobstructed), teal aviator hood and one brass shoulder tab.",
+          "Holds a bulbous brass-and-cream portable permission scanner with big oval glass eye-lens pointing at a single tiny copper badge cradled in other hand: checking her OWN authority rather than anyone else."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot12 FEMALE-READ RETRO-FUTURE ORDINANCE MARSHAL: tall asymmetric triangle-rounded ink splat with purple curled goo crest, small copper open helmet collar (face unobstructed), teal aviator hood and one brass shoulder tab. Confident broad SIDEWAYS jagged tooth smile, one lid raised and one sleepy WHITE/red/black eye, NO tongue. Holds a bulbous brass-and-cream portable permission scanner with big oval glass eye-lens pointing at a single tiny copper badge cradled in other hand: checking her OWN authority rather than anyone else. Badge plain rounded triangular spiral emblem, no letters. Worn gentle dieselpunk/retro-sci-fi, tactile clay glass, no weapon, no beams or graphics.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/institutions-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

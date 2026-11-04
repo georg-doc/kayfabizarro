@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MAFIA_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+    "sha256": "d00d25f9a6dc2759596368515c811b599afd9efb7eaf65c915a2598bc52c9f98"
+  },
+  "production_record": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/mafia/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_MAFIA_01",
+      "id_scope": "canonical_roster",
+      "name": "Don Kleingedruckt",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT: COSA NOSTRA CINEMA DON, broad very low sagging ink splat, tiny black fedora tilted on one thick goo curl, cream tuxedo collar, little red carnation and deep black short lapels.",
+          "Cradles a ridiculously tiny cream clay lap cat in huge goo hand, other hand raises an oversized unlit fat cigar held in thick gold-ringed goo fingers."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT: COSA NOSTRA CINEMA DON, broad very low sagging ink splat, tiny black fedora tilted on one thick goo curl, cream tuxedo collar, little red carnation and deep black short lapels. Heavy half-closed WHITE eyes with red irises black pupils, profoundly bored drooping underbite with one enormous GOLD tooth. Cradles a ridiculously tiny cream clay lap cat in huge goo hand, other hand raises an oversized unlit fat cigar held in thick gold-ringed goo fingers. The giant hand/tiny pet contrast gives physical dark humor. No human nose/moustache/ethnicity.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MAFIA_02",
+      "id_scope": "canonical_roster",
+      "name": "Madame Kassenruhe",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Hands hold a fat folding ivory fan and squat black lacquered wooden money box with gold latch."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER: FEMALE-READ YAKUZA-THRILLER SYNDICATE MATRIARCH, tall tapering asymmetric ink splat, dark plum sculpted goo coiffure with simple gold pin, short black silk jacket draped off one shoulder with ONE large coral koi-shaped embroidery patch, modest neckline no human torso. Cold perfectly upright posture, one narrowed lid and one raised, CLOSED crooked smile with two thin uneven ivory fangs. Hands hold a fat folding ivory fan and squat black lacquered wooden money box with gold latch. Imposing elegant authority, not a geisha or caricature, no slanted ethnic eyes.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MAFIA_03",
+      "id_scope": "canonical_roster",
+      "name": "Herr Glücksreserve",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT: TRIAD-CRIME-CINEMA GAMBLING KINGPIN, nearly spherical compact ink splat, short worn teal silk mandarin-collar cape with thick brass frog fastenings, round gold-rimmed spectacles low on nose-less goo face.",
+          "Both hands hug a chunky green-and-gold mahjong tile case with just THREE huge ivory tiles sticking out, each a simple circular colored inset, NO writing or symbols."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT: TRIAD-CRIME-CINEMA GAMBLING KINGPIN, nearly spherical compact ink splat, short worn teal silk mandarin-collar cape with thick brass frog fastenings, round gold-rimmed spectacles low on nose-less goo face. Large WHITE eyes with red irises black pupils looking down greedily; tiny puckered O mouth with one fang. Both hands hug a chunky green-and-gold mahjong tile case with just THREE huge ivory tiles sticking out, each a simple circular colored inset, NO writing or symbols. One fat polished jade ring, restrained prop count, no ethnic facial cues.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MAFIA_04",
+      "id_scope": "canonical_roster",
+      "name": "Onkel Altbestand",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT: BRATVA-THRILLER OLD GUARD BOSS, tall massive pear-shaped ink splat with wide bottom goo lobes, battered black leather cap, short oxblood leather shoulder jacket with thick beige fleece collar, one heavy gold chain.",
+          "Tiny narrowed WHITE eyes, red irises black pupils gazing sideways, huge clenched uneven ivory-tooth scowl.",
+          "Cradles a big battered brown locked metal cashbox with rounded corners, other goo fist rests on a fat heavy gold pocket watch dangling on short chain.",
+          "Menacing worn material heft; no nationalist insignia or ethnic physiognomy."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT: BRATVA-THRILLER OLD GUARD BOSS, tall massive pear-shaped ink splat with wide bottom goo lobes, battered black leather cap, short oxblood leather shoulder jacket with thick beige fleece collar, one heavy gold chain. Tiny narrowed WHITE eyes, red irises black pupils gazing sideways, huge clenched uneven ivory-tooth scowl. Cradles a big battered brown locked metal cashbox with rounded corners, other goo fist rests on a fat heavy gold pocket watch dangling on short chain. Menacing worn material heft; no nationalist insignia or ethnic physiognomy.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MAFIA_05",
+      "id_scope": "canonical_roster",
+      "name": "Doña Selbstverständlich",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM CENTER: FEMALE-READ CARTEL-THRILLER MOB QUEEN, squat wide luxuriant ink blob, large cream tailored hat with burgundy band, short ivory jacket collar over dark goo, one chunky gold hoop earring and soft purple goo victory curl.",
+          "Huge delighted crooked fang laugh, one eyelid half closed, other wide WHITE eye red iris black pupil.",
+          "One goo arm hugs a tiny beautiful pink clay lap dog wearing enormous gold collar, other hand holds a bulbous gold perfume bottle shaped like a pineapple with broad green-gold leaf stopper."
+        ]
+      },
+      "prompt_auszug": "BOTTOM CENTER: FEMALE-READ CARTEL-THRILLER MOB QUEEN, squat wide luxuriant ink blob, large cream tailored hat with burgundy band, short ivory jacket collar over dark goo, one chunky gold hoop earring and soft purple goo victory curl. Huge delighted crooked fang laugh, one eyelid half closed, other wide WHITE eye red iris black pupil. One goo arm hugs a tiny beautiful pink clay lap dog wearing enormous gold collar, other hand holds a bulbous gold perfume bottle shaped like a pineapple with broad green-gold leaf stopper. Confident gaudy luxury and tactile surreal charm, no sombrero or ethnic facial parody.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MAFIA_06",
+      "id_scope": "canonical_roster",
+      "name": "Mr. Nebenquote",
+      "bild": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT: LONDON UNDERWORLD BOOKMAKER BOSS, short wiry asymmetrical bean-shaped splat, faded charcoal tweed flat cap with a tiny feather, short navy waistcoat lapels, small rust-red cravat.",
+          "Holds a fat chunky brass old-fashioned telephone receiver against goo ear lobe, other hand grips an oversized rolled racing ledger with one big plain leather strap, no writing."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT: LONDON UNDERWORLD BOOKMAKER BOSS, short wiry asymmetrical bean-shaped splat, faded charcoal tweed flat cap with a tiny feather, short navy waistcoat lapels, small rust-red cravat. One bulging WHITE eye with red iris black pupil and one squinting eye, manic lopsided open mouth with sparse uneven teeth and thick tongue. Holds a fat chunky brass old-fashioned telephone receiver against goo ear lobe, other hand grips an oversized rolled racing ledger with one big plain leather strap, no writing. A little brass bell hangs from ledger strap, tactile officious arrogance.",
+      "prompt_quelle": "MAFIA_BOSSES_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

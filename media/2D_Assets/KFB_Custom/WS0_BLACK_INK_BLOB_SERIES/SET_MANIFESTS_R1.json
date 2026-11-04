@@ -1,0 +1,153 @@
+{
+  "schema": "kfb.slop-set-index/1",
+  "date": "2026-11-04",
+  "source_owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "assets/ws0-ink-miners-2026-11-04",
+    "pr": 469
+  },
+  "counts": {
+    "selected_sheets": 20,
+    "pass_depictions": 120,
+    "canonical_ids_matched": 108,
+    "resident_authoring_depictions": 12,
+    "resident_identities": 6,
+    "intake_eligible_sheets": 18,
+    "intake_eligible_depictions": 108
+  },
+  "excluded_sources": [
+    {
+      "path": "MINERS_2026-11-04",
+      "status": "FAIL_TUNE",
+      "intake_eligible": false
+    },
+    {
+      "path": "INTERNATIONAL_COUPLES_12_2026-11-04",
+      "status": "PASS",
+      "intake_eligible": false,
+      "reason": "WS0 brief exclusion; existing game import discrepancy logged"
+    }
+  ],
+  "sets": [
+    {
+      "set_id": "WSA_MECHANICS_20261104",
+      "manifest": "SETS/mechanics/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SAILORS_20261104",
+      "manifest": "SETS/sailors/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PIRATES_20261104",
+      "manifest": "SETS/pirates/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EXPLORERS_20261104",
+      "manifest": "SETS/explorers/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HITMEN_20261104",
+      "manifest": "SETS/hitmen/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MAFIA_20261104",
+      "manifest": "SETS/mafia/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS1_20261104",
+      "manifest": "SETS/workers1/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS2_20261104",
+      "manifest": "SETS/workers2/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CEOS_20261104",
+      "manifest": "SETS/ceos/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "manifest": "SETS/office-analog/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "manifest": "SETS/office-digital/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "manifest": "SETS/drivers-ground/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "manifest": "SETS/drivers-space/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "manifest": "SETS/law-civic/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "manifest": "SETS/law-institutions/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "manifest": "SETS/couples-pilot/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_COUPLES_A_20261104",
+      "manifest": "SETS/couples-a/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_COUPLES_B_20261104",
+      "manifest": "SETS/couples-b/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "manifest": "SETS/residents-a/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "manifest": "SETS/residents-b/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    }
+  ]
+}
