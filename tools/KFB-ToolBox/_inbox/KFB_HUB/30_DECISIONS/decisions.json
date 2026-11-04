@@ -21041,6 +21041,21 @@
    "superseded_by": [],
    "why": "Der Start zeigt den Katalog, nicht Platzhalter; Kontakt ist eine Fuge, kein Teller.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1435",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Treffer-Runde Flug fx/slop-r1 @2f63d2b0: nur ein Tod Goo (slopgoo=1 Standard), Aufblaehen, 3D-Papierschnipsel mit eigenem Bild, Tropfen/D-Schnipsel, Krone, Pfuetze, einsickern; Groessen +-10 %, Atlasseite 2; Kritiker 8 Runden max 6 -> WS0 sieht Nahbeleg: Richtung stimmt, gezielt 1-4 (9 m Lesbarkeit, Krone rund matt, helle Kante, 60-fps-Beleg) -> Hub q503. Eskalation K0-K3 (kontrolle=1) -> Hub q504. WS1 N-128 (ersetzt @638bfd8c), N-127 FB-Clips assets/fb-clips-r1 @b3b4274a (L-01..L-06, CombatRanged.fb.r2 Arme frei) + Korrektur-Heads bunny-tail @5984ce1b, tshirt @ff7621cb; jetpack @3919b5f5 (kompakt gross r2 1,55, Folie angefragt). zsh-Falle \\$ref:refs erneut -> \\${ref} nutzen.",
+   "values": {},
+   "owner": "Flug · WSB · WS1",
+   "check": "q503, q504, N-127, N-128",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nach acht Kritiker-Runden entscheidet ein Blick auf den Beleg die Richtung, nicht die Zahl.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

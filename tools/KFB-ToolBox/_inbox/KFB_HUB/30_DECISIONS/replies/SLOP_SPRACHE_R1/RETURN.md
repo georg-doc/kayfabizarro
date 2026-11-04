@@ -5,6 +5,16 @@ Konzept-Probe auf Auftrag von WS0 (03.11.). Nichts davon ist im Spiel.
 
 
 
+
+## Slop-Tod R6 · Platzen in einem Zug (Georg TUNE und Blind-Kritik R2, 04.11.)
+- Nur noch ein Slop-Tod: Goo ist Standard für alle Ink-Slops; keine Explosion, keine Kisten, kein Rauch mehr.
+- Platzen: Aufblähen mit Zittern und Wabbeln. Dann zerreißt der Blob in unregelmäßige 3D-Papierschnipsel mit seinem eigenen Bild (Rückseite Papier), dazu viele kleine Goo-Tropfen und D-förmige Tusche- und Papierschnipsel. Danach kommt eine niedrige Goo-Krone. Pfütze, Schnipsel und Tropfen liegen und sickern ein, der nasse Fleck trocknet.
+- Goo knetig-matt, ohne Blaustich und Silber; gefärbte Varianten mit gedämpftem Glanz.
+- Größen gleich (1,5 m × skala), Atlas-Seite 2 (Politik) im Spiel geprüft.
+- Belege: `SLOP_GOO_R6_SPIEL.mp4`, `SLOP_GOO_R6_NAH.mp4`, `SLOP_GOO_R6_SEITE.mp4` (mit Ton), `SLOP_GOO_R6_UMKREISEN.mp4`, `SLOP_GOO_R6_JEDES_BILD.png`, `SLOP_GOO_R6_FARBEN.png`.
+- Kritiker über die Runden: 5 · 5 · 6 · 5,5 · 6 · 5 · 6 · 6 (Endstand). Offen: Der Riss-Moment springt im Beleg in einem Bild (der Prüflauf läuft unter 30 fps; im Spiel sind 0,1 s Anreißen mehrere Bilder), die Krone ist noch zu spitz und glänzend, einzelne Schnipsel zeigen sich als Kante, aus 9 m wirkt der Tod klein.
+- Kontroll-Eskalation K0–K3 (hinter kontrolle=1): `KONTROLLE_R1_K0_K3.mp4`. Abschüsse zählen, Unruhe, Nachschub springt von der Hausstelle, die Streife kommt und spricht, Bingo senkt den Zähler.
+
 ## Slops bildparallel (2,5D wie HD-2D) · R1 (04.11., Schalter slopbewegung=1 bzw. slopgoo=1)
 Georg: „das habt ihr immer noch nicht drauf“ – Tafeln drehten sich schräg. Jetzt richtet sich jede Slop-Tafel im Shader nach der Kamera, die gerade rendert: rechts = Kamera-Rechte waagrecht, oben = Welt-Oben, parallel zur Bildebene (nicht zum Kamera-Ort gedreht, kein Schwenk mehr). Schaut die Kamera steil von oben, lehnt die Tafel sich höchstens 20° zurück. Richtung nur per Spiegeln mit kurzem Squash-Flip (nie schmaler als gut die Hälfte, erst wenn die neue Laufrichtung kurz anhält). Gilt für Blob, Treffer, Schreck, Tod, Goo-Hügel, Krone und fliegende Tropfen; Pfütze und Perlen liegen flach.
 - Recherche (Paper Mario, Octopath/HD-2D, Don't Starve, Cult of the Lamb): alle richten nach der Blickrichtung der Kamera aus, spiegeln statt zu drehen und begrenzen zusätzlich die Kamera-Neigung; Kontaktschatten unter dem Fuß.
