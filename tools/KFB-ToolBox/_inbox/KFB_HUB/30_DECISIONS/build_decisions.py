@@ -1417,6 +1417,7 @@ d('V-1436','04.11.2026','Spiel','STATUS','WS1 Q-068: Stamm game/integration-r2 @
 d('V-1437','04.11.2026','Look','REVIEW','Kontakt-AO R1b (WS-Himmel world/kontakt-ao-r1 @bb440998): Fuge im Objekt an der Gelaende-Schnittlinie, hart, min. 4 px, nur dunkler; Bodenfleck an Steinen/Bueschen entfernt; Loch am Hangstein behoben (1/5 der Hoehe). Zielkonflikt Fuge allein vs. plus Stammring (kontaktring=1) -> Hub q505. Knetkorn Go: Adapter look/terrainClay.js in EndlessDrive, knetkorn=1, kfb-clay v1.1 background als Normalenantwort, profileUniforms im Adapter.','WS-Himmel','q505','WS0 04.11.'),
 d('V-1438','04.11.2026','Spiel','STATUS','Modelle kleiner (WSB assets/meshopt-r2 @df1d1a74 + meshopt-r2-private @3bd6ac28, meshopt verlustfrei + WebP, .mo.glb neben Originalen; 6/10 unter Ziel) -> WS1 N-130; Halsschatten Q-068 = Messproblem (Median, happy_a, Kopf aus Maske, Grenzen bleiben). Platte fiel auf 9,3 GB (Scratch WS-Design 4,1 + Figuren 4,6 GB); Figuren raeumte eigenen Scratch auf -> 13 GB; Bitte an WS-Design vom Sicherheits-Klassifikator blockiert, nicht wiederholt. WSB naechste Jobs: Granate, Retro-Gurte skinned.','WSB · WS1 · Figuren','N-130','WS0 04.11.'),
 d('V-1439','04.11.2026','Spiel','STATUS','Plattensturz 12 -> 2,1 GB in Minuten: Ursache macOS-Swap 13 GB durch ca. 40 liegengebliebene vite/Chrome/node-Prozesse (nicht Scratch). Alle Sessions pausiert, gemeldet, eigene Server/Browser beendet, max. einer je Beleg; Entwarnung. Platte 7,8 GB (Grenze 9): Georg kann den Papierkorb leeren. Granate (WSB fb-clips-r1 r3 @9e3eaeee, Abwurf 0,65 s) -> WS1 N-131. WS-Design Tueren-Head auf @0001fb78 mit echtem portalZiel und Vorladen in Arbeit; Figuren Lider-Fortschritt, Ohren nachgebessert nach Kritiker-FAIL.','alle Sessions · WSB · WS1','N-131','WS0 04.11.'),
+d('V-1440','04.11.2026','Welt','STATUS','Verteiler Voll-Inventur fertig (assets/popups-ingest-r1 @57260563): MB07/10/11/12 drin (Frost-Truhen, Pub, keltisch, Slops suess + oma), Katalog 1118 (124 Varianten aus verworfenen Neu-Renderings, Grenze 0,95 gesichtet), Slops 396/31 Familien, Seltenheits-Boden 0,15 -> alle Stuecke werden gestellt; INVENTUR_POOL_R1.md -> WS1 N-132. Push privater Rest und Pop-up-Atlas (ca. 30+8 Seiten) warten auf Platte >10 GB (Georg leert Papierkorb). WS-Himmel: Knetkorn R1 knapp FAIL (Schlieren bei flachem Blick, fleckig), Korrektur vorbereitet; Zweige auf Stamm @0001fb78 rebasen.','Verteiler · WS-Himmel · WS1','N-132','WS0 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2821,6 +2822,7 @@ WHY = {
  'V-1437':('Kontakt folgt der Beruehrlinie; ein runder Fleck kann das nicht.','04.11.2026'),
  'V-1438':('Verlustfrei verkleinern schuetzt Augen und Mund; Scratch waechst still und braucht ein Auge.','04.11.2026'),
  'V-1439':('Zuerst den Swap pruefen, dann Dateien suchen; laufende Browser kosten Platte.','04.11.2026'),
+ 'V-1440':('Der Pool ist vollstaendig registriert; jedes Stueck darf vorkommen.','04.11.2026'),
 }
 SUP = {}
 for e in E:
