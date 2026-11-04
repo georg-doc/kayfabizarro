@@ -1,0 +1,298 @@
+{
+ "id": "kfb_jetpack.r1b.gross3",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-04",
+ "status": "pending-georg",
+ "job": "JETPACK_GROSS_R3 (Georg über WS0 04.11.): große Jetpacks noch größer (1,3–1,5 × groß) und tiefer, Seitenansicht wichtig; Schwanzberührung erstmal erlaubt, Rumpf bleibt frei. Alien: kurze Glocke im selben Sitz.",
+ "zu": [
+  "50_BLENDER/JETPACK_R1/data/jetpack.contract.r1b.json",
+  "50_BLENDER/JETPACK_R1/data/jetpack.contract.r1b.korrektur1.json"
+ ],
+ "regel": "Sitz-Suche (scripts/sweep_gross4.sh): Faktor 1,5/1,4/1,3 × bisherige große Größe, z, Neigung, Abstand; gültig, wenn in Ruhe Rumpf < 0,5 cm und Kopf < 1,5 cm. Gewählt: größter Faktor (1,5), Höhe nach Bild (Seitenansicht), so dass das Pack den Rücken füllt und nicht am Po hängt.",
+ "messung": "16 Clips wie korrektur1 (clips_auf_figur.mjs mit Punkt-Abgleich, messe_jp.py), tiefste Stelle in cm; Figur FB A11 mit Schwanz A und Bauch.",
+ "gilt_unveraendert": "Kopf in Schleichen/Ducken taucht weit nach hinten (auch ohne Jetpack); Arme in Chicken/Samba schwingen durch den Rücken; Rumpf in Twist/Sprung-Start dreht gegen die Brust.",
+ "skins": {
+  "comic": {
+   "root_node": "KFB_Jetpack_Comic",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Comic_gross.r3.glb",
+   "sha256": "bf5d4f82a88907e6100739d434696a87682ce02f71de5b79b0a5d12e45b775cc",
+   "ersetzt_glb_gross": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Comic_gross.r2.glb",
+   "stufen": "ganze Ausbaustufe S1–S3",
+   "bau": {
+    "scale": 2.175,
+    "faktor_zum_bisherigen_gross": 1.5,
+    "z_local": 0.86,
+    "tilt_deg": 0.0,
+    "y_off": 0.025
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      3.394767493840136,
+      0,
+      0,
+      0,
+      0,
+      3.394767493840136,
+      0,
+      0,
+      0,
+      0,
+      3.394767493840136,
+      0,
+      4.1359294807307804e-22,
+      -0.1131027197248925,
+      -0.3411468169815054,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.46
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.41,
+    "arme": 18.16,
+    "kopf": 8.29,
+    "schwanz": 3.85
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.32
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_comic_gross.r3.json"
+  },
+  "steampunk_kompakt": {
+   "root_node": "KFB_Jetpack_Steampunk_Kompakt",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Steampunk_Kompakt_gross.r3.glb",
+   "sha256": "56a8eec2c4d6e50f88763b794cc3119618146af5dffef55ad4b6bd929be02780",
+   "ersetzt_glb_gross": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Steampunk_Kompakt_gross.r2.glb",
+   "stufen": "ganze Ausbaustufe S1–S3 + Seitenturbinen T_ (zuschaltbar wie bisher)",
+   "bau": {
+    "scale": 2.325,
+    "faktor_zum_bisherigen_gross": 1.5,
+    "z_local": 0.94,
+    "tilt_deg": -6.0,
+    "y_off": 0.025
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      3.628889543950521,
+      0,
+      0,
+      0,
+      0,
+      3.6090101081221313,
+      -0.3793222306069255,
+      0,
+      0,
+      0.3793222306069255,
+      3.6090101081221313,
+      0,
+      4.1359294807307804e-22,
+      -0.03310272704631623,
+      -0.32204248135975866,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.09
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.6,
+    "arme": 18.42,
+    "kopf": 8.95,
+    "schwanz": 3.71
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.07,
+    "arme": 3.68,
+    "kopf": 0.0,
+    "schwanz": 2.29
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_steampunk_kompakt_gross.r3.json",
+   "hinweis": "Arme streifen die Kupferkapseln seitlich in fast allen Clips 2–4 cm (auch ohne Turbinen gemessen; war bei groß r1/r2 ähnlich). Größe 1,3/1,4 ändert das kaum."
+  },
+  "retro": {
+   "root_node": "KFB_Jetpack_Retro",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Retro_gross.r3.glb",
+   "sha256": "e0b1e43daf8600465a411619190d10414a3a46f782545ccc0c8ab9b66e7429ff",
+   "ersetzt_glb_gross": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Retro_gross.r2.glb",
+   "stufen": "ganze Ausbaustufe S1–S3",
+   "bau": {
+    "scale": 2.175,
+    "faktor_zum_bisherigen_gross": 1.5,
+    "z_local": 0.86,
+    "tilt_deg": -6.0,
+    "y_off": 0.025
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      3.394767493840136,
+      0,
+      0,
+      0,
+      0,
+      3.376170978430977,
+      -0.35484980195623783,
+      0,
+      0,
+      0.35484980195623783,
+      3.376170978430977,
+      0,
+      4.1359294807307804e-22,
+      -0.1131027197248925,
+      -0.3411468169815054,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.88
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.45,
+    "arme": 16.28,
+    "kopf": 6.66,
+    "schwanz": 3.63
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.34
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_retro_gross.r3.json"
+  },
+  "candy": {
+   "root_node": "KFB_Jetpack_Candy",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Candy_gross.r3.glb",
+   "sha256": "bcd46f1bba9ad32c8a25a6bae8c8367d02f8819696907059ac560d0b843d994a",
+   "ersetzt_glb_gross": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Candy_gross.r2.glb",
+   "stufen": "ganze Ausbaustufe S1–S3",
+   "bau": {
+    "scale": 1.9238,
+    "faktor_zum_bisherigen_gross": 1.5,
+    "z_local": 0.9,
+    "tilt_deg": 0.0,
+    "y_off": 0.045
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      3.002691411190398,
+      0,
+      0,
+      0,
+      0,
+      3.002691411190398,
+      0,
+      0,
+      0,
+      0,
+      3.002691411190398,
+      0,
+      4.1359294807307804e-22,
+      -0.0731027233856043,
+      -0.3628108961597059,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.54
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.26,
+    "arme": 17.47,
+    "kopf": 10.59,
+    "schwanz": 3.76
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 2.87
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_candy_gross.r3.json"
+  },
+  "alien_kurz": {
+   "root_node": "KFB_Jetpack_Alien",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Alien_kurz_gross.r3.glb",
+   "sha256": "007d356b9cb9511b2b6ef8ed08730736f2cc2fe63f591a17c6b977795ac8228d",
+   "ersetzt_glb_gross": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Alien_gross_kurz.vorschau.glb",
+   "stufen": "ganze Ausbaustufe S1–S3",
+   "bau": {
+    "scale": 1.62,
+    "faktor_zum_bisherigen_gross": 1.5,
+    "z_local": 0.78,
+    "tilt_deg": 4.0,
+    "y_off": 0.045,
+    "bell_k": 0.35
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.5285165410471713,
+      0,
+      0,
+      0,
+      0,
+      2.5223572022455887,
+      0.17638039422685745,
+      0,
+      0,
+      -0.17638039422685745,
+      2.5223572022455887,
+      0,
+      4.1359294807307804e-22,
+      -0.19310271240346877,
+      -0.3837101851129646,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.6
+   },
+   "clips16_worst_cm": {
+    "rumpf": 2.53,
+    "arme": 18.22,
+    "kopf": 7.42,
+    "schwanz": 3.8
+   },
+   "gehen_Walking_B_cm": {
+    "rumpf": 0.0,
+    "arme": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.49
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_alien_kurz_gross.r3.json",
+   "hinweis": "Georgs Wahl „kurze Glocke“: Glocke 35 % (bell_k 0,35), Wurzel-Extras variant glocke_kurz. Ersetzt Alien groß (Glocke voll) als großen Sitz; Standard-Alien.r1 bleibt."
+  }
+ },
+ "nicht_geaendert": [
+  "steampunk_schlank (nicht im Auftrag)",
+  "alle Standard-Sitze r1"
+ ]
+}
