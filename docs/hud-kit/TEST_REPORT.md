@@ -18,3 +18,7 @@ WS0 nominal 512px + 640px + 1220px exceeds 2048px canvas, before padding. The au
 ## Outcome
 READY AS DESIGN/AUTHORING STANDARD · SOURCE REFERENCES NOT YET GITHUB-PINNED · NOT GAME READY.
 Next gate: source-isolated first real 2048 Sheet1 with attached accepted donor and actual alpha/layout/visual review.
+## 2026-11-04 · R1.1 WS0 runtime alignment (documentation-only)
+- 14/14 deterministic contract assertions PASS in this update: left radio/right drawer, code ownership, steam skin, palette aliases, manifest field shape, preserved band/grid/state/speed contracts, documentation-only paths.
+- Runtime source inspected at `georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1` with branch head `7a3eec71dc6806bfbeb6ee1ab242868678cd8802`; documents `docs/hud-kit/HUD_SKIN_SPEC.md`, `HUD_LAYOUT_R2.md` and programs `hudbar_measure.py`, `cut-sheet1.py`, `master-kit.py`.
+- No PNG regenerated and no new image/visual or browser tests; previous 7/7 PNG validator fixtures unchanged. Manifest coordinates are illustrative zeros/nullable, marked NOT MEASURED, not game input.

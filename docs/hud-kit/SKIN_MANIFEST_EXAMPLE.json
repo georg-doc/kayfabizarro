@@ -1,6 +1,6 @@
 {
   "schema_version": "kfb.hud-skin/1",
-  "description": "Skin exchange manifest EXAMPLE, not a validated full JSON Schema",
+  "description": "STRUCTURAL EXAMPLE ONLY · measurements are placeholders, never feed this file to runtime until cut-sheet1.py populates measured pixel values.",
   "skin_id": "teal_w_tesla",
   "reference": {
     "asset_path": "SOURCE_REQUIRED",
@@ -38,7 +38,14 @@
     "fluff_slots": 6,
     "actions_max": 6,
     "slice_insets_px": "MEASURE_PER_SKIN",
-    "protected_features_px": []
+    "protected_features_px": [],
+    "drawer_slice_insets_px": {
+      "top": null,
+      "right": null,
+      "bottom": null,
+      "left": null
+    },
+    "drawer_split_px": null
   },
   "states": [
     "normal",
@@ -78,5 +85,97 @@
     "corners": "NOT_TESTED",
     "at_48px": "NOT_TESTED",
     "game_integration": "NOT_TESTED"
-  }
+  },
+  "runtime_skin_id": "teal",
+  "runtime_authority": "georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1/docs/hud-kit/HUD_SKIN_SPEC.md",
+  "radio_layout": {
+    "edge": "left",
+    "expanded_panel_direction": "right",
+    "expanded_panel_owner": "code_tinted_neutral_master_kit"
+  },
+  "palette_semantics": {
+    "body": "runtime Rand / master-kit.py SKINS[skin].rim (surface recoloring)",
+    "cream": "runtime Füllung / master-kit.py SKINS[skin].fill",
+    "active": "runtime gold Akzent (shared across skins)",
+    "rim": "artist-owned dark outline of signature PNG; NOT runtime rim recolor key",
+    "glow": "artist-owned light/emissive detail of signature PNG"
+  },
+  "available_runtime_skins": [
+    {
+      "runtime_id": "retro",
+      "authoring_id": "retro_alchemical_wood"
+    },
+    {
+      "runtime_id": "steam",
+      "authoring_id": "steampunk_copper"
+    },
+    {
+      "runtime_id": "teal",
+      "authoring_id": "teal_w_tesla"
+    }
+  ],
+  "runtime_hudbar": {
+    "bar": [
+      0,
+      0
+    ],
+    "open": [
+      0,
+      0
+    ],
+    "knob": [
+      0,
+      0
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "field": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "panel": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "knobAt": [
+      0,
+      0
+    ],
+    "panelTop": 0
+  },
+  "runtime_measurements_status": "PLACEHOLDERS_ONLY__REPLACE_FROM_RUNTIME_CUT_SHEET1_MEASURE"
 }

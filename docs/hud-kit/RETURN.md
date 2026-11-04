@@ -3,6 +3,10 @@ Owner: existing WS0 / KFB ToolBox design-authoring lane. Receiving HUD Runtimes 
 Repository: georg-doc/kayfabizarro
 Review branch: design/kfb-clay-hud-skin-kit-r1-2026-11-04
 Branch created from main 7e1c4ab0f143b2f1c0f33017eb473574f20190c9. Inspect branch ref for latest verified head after this Return; no merge, no public publication.
+## WS0 addendum · R1.1 · 2026-11-04 (doc-only, later PR-branch head)
+Authoritative receiving runtime: `georg-doc/KFB-Stunt-Car-Race` branch `module/hud-clay-r1` at `7a3eec71dc6806bfbeb6ee1ab242868678cd8802`, `docs/hud-kit/HUD_SKIN_SPEC.md`. Radio is LEFT with Master-Kit drawer expanding RIGHT, not right-side/left-opening. Steampunk Copper is distinct runtime `steam` skin. Palette: authoring `body` -> runtime Rand, `cream` -> Füllung, `active` -> Akzent; `rim`/`glow` stay signature art. Example manifest now carries runtime_hudbar fields and drawer insets, with unmeasured placeholders. Existing 430/565/925, Sheet2 4x4, state and action contracts remain. Only docs touched, no runtime/merge/public route.
+Latest head is read from branch ref at handoff; this markdown is not a frozen commit ID.
+
 ## Result
 Persisted a reusable KFB Cartoon Clay HUD skin contract with WS0 fresh-image job prompts (signature parts only), normalized component inventory, PNG + 9-slice QA boundaries, optional right-edge speed/altitude, action slots 1–6, and manifest exchange example. No runtime code or UI replaced.
 ## Actual tests

@@ -5,7 +5,7 @@ Owner: existing KFB ToolBox/WS0 visual design; Race/World/Travel/Combat/Audio ke
 1. HUD_SKIN_SPEC.md (semantic contract)
 2. WS0_IMAGE_JOBS.md (two fresh image-generation prompts)
 3. HUD_COMPONENT_COVERAGE.csv (existing donors/gaps)
-4. SKIN_MANIFEST_SCHEMA.json (machine-readable exchange contract)
+4. SKIN_MANIFEST_EXAMPLE.json (machine-readable field example; coordinates NOT MEASURED)
 5. RETURN.md (current findings and next gate)
 This is a persistent authoring kit for the reference-driven family accepted in the image chat. The previously named docs/hud-kit/HUD_SKIN_SPEC.md could NOT be fetched from GitHub before this branch; the WS0 text delivered by Georg is its supplied source for R1.
 No fake brand, no generic replacement HUD chrome, no second renderer, no AudioContext, map, speed or progression owner. The same component/anchor semantics work in every visual skin.
@@ -17,3 +17,6 @@ The actual accepted image-job PNG source files from this chat are not yet stored
 - Binding WS0 occupancy: hud_r1/HUD_BELEGUNG_R1.md on that branch; six fixed anchors, four action slots in Race.
 - K7 flight HUD/inventory donor: tools/KFB-ToolBox/_inbox/KFB HUD Flight Board - Flight VFX/KFB_HUD_FLIGHT_SESSION_CUT_2026-10-09_r1/docs/LIVING_HUD_FLIGHT.md
 Do not create new public Stage merely for documentation. All game integration needs its receiving product's review.
+
+## WS0 runtime reconciliation · 2026-11-04
+Source: `georg-doc/KFB-Stunt-Car-Race` branch `module/hud-clay-r1`, `docs/hud-kit/HUD_SKIN_SPEC.md` (runtime truth for layout and colors). Radio column **LEFT**, its neutral Master-Kit panel opens **RIGHT**; right edge is reserved for optional tempo/altitude. `steam` / `steampunk_copper` is a distinct skin. Authoring `body` = runtime Rand, `cream` = runtime Füllung, `active` = runtime Akzent. Signature `rim`/`glow` are not runtime recolor fields. Manifest template now describes measured runtime output fields but contains unmeasured placeholders. This was an additive documentation alignment, not a new design or game build.
