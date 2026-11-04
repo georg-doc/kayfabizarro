@@ -20426,6 +20426,21 @@
    "superseded_by": [],
    "why": "Fluff fuehlt sich beim Einsammeln wie Fluff an.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1394",
+   "date": "04.11.2026",
+   "area": "Welt",
+   "verdict": "KEEP",
+   "text": "Georg 04.11.: Holo-Aufbau sehr cool; aeussere Overlay-Ringe am Ende sloppy -> Modul terrainRipple (echte Welle im Gelaende-Shader, Ringpuffer, Ereignis fuer Props; auf knetespur-Mechanik aufsetzen) fuer Holo-Pop, harte Landung, Slop-Tod, Aufprall (WS-Design). HyperNorm-Fassade laeuft beim Aufdecken schon animiert und synchron. Strassen-Props (Ampeln, Hydranten) Hartgummi bei Kontakt und Wackeln auf Ripple (Verteiler). Spaeter: Wagen gegen Kartengebaeude = leichter Aufprallschaden mit Ripple. Neue Fluff-Spritzer/Tropfen-Sprites (6 Farben, Bogen mit weissen Balken-Resten) an Kartenkante. Slop-Tod R6 im Spiel: Einheit 6/10, Papier 4/10 -> letzte Runde, Beleg aus Spielkamera, ab 6/10 an Georg.",
+   "values": {},
+   "owner": "WS-Design · Verteiler · Kartenkante · Rakete/Flug · Georg",
+   "check": "q473",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Cartoon-Welt reagiert bis ins Gelaende: ein Ripple-Modul fuer alle Einschlaege.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

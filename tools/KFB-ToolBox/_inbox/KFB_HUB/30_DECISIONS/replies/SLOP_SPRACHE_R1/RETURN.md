@@ -138,3 +138,20 @@ Belege: `SLOP_R3_Storyboard_1/2.jpg`, `SLOP_R3_ZERFALL_VORN.mp4`, `SLOP_R3_ZERFA
   - Teen, Magie, Alien, Bau, RPG und Nerd sind gleich häufig; ohne Biom am Platz auch Kultur, dann je etwa 13 % der Blobs.
   - In ihren 6 Biomen (Wüste, Mesa, Canyon, Schnee, Moos, Pastell) stellt Kultur etwa 47 % der Blobs, jede andere Familie etwa 9 %.
   - Anführer (Mütze, König) sind zusammen etwa 8 % der Blobs, stehen aber in jeder vierten Gruppe vorn.
+
+## Tod R6 im Spiel (04.11., Weg a)
+- Belege: `SLOP_R6_ZERFALL_VORN.mp4`, `SLOP_R6_ZERFALL_SCHRAEG.mp4` (10 s mit Ton), `SLOP_R6_Storyboard_1/2.jpg`.
+- Code fx/slop-r1 @8d6e928e:
+  - `src/npc/slopPhasen.js` übernimmt die Phasen 1:1 aus `slopKurven.ts`; das Ton-Skript liest dieselben Marken.
+  - `slopZerfall.js` R6 macht daraus zwei Stücke, ohne Splitter:
+    1. Reißverschluss unter dem Gesicht.
+    2. Kopf und Körper ziehen auseinander, der Körper dreht halb durch.
+    3. Der Kopf kippt nach hinten um seine Unterkante und liegt mit dem Gesicht oben (echte Perspektive).
+    4. Die Tinte kriecht, die Pfütze breitet sich aus, die Stücke schmelzen.
+  - Die Druckseite leuchtet im eigenen Licht, damit sie beim Reißen nicht schwarz wird.
+- Schreck-Erholung in `slopKurven.ts` gekürzt (36 statt 44 Bilder).
+- Kritiker (ein Lauf): Papier **4/10**, ein Effekt **6/10**. Die Einheit ist die beste aller Spiel-Runden, die Lesbarkeit in Spiel-Entfernung schwach:
+  1. Der Riss ist nur ein dünner Strich.
+  2. Der flach liegende Kopf wird aus flacher Kamera zur Kante, das Gesicht ist nur in der Nahaufnahme lesbar.
+  3. Die Rückseite und das liegende Körperstück wirken als glatte Flächen (leere Karte, Planke).
+  4. Das Blatt wird kurz zur Kante (dünner Strich).
