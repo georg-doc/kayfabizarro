@@ -1,0 +1,63 @@
+{
+  "status": "BASE_ONLY_ART_CANDIDATE",
+  "latest_user_brief": "WS0/Kartenkante via Georg: no slot rims; Auftrag4 cancelled",
+  "roles": [
+    "fist",
+    "grenade",
+    "jump",
+    "boost",
+    "hand",
+    "talk",
+    "pickup",
+    "enter",
+    "exit",
+    "land",
+    "heal",
+    "travel"
+  ],
+  "size": [
+    1536,
+    1024
+  ],
+  "cell_size": [
+    344,
+    296
+  ],
+  "gap": 32,
+  "margin": 32,
+  "cutter": {
+    "exit_code": 0,
+    "set": "base",
+    "glyphs": 12,
+    "missing": [],
+    "warnings": [],
+    "script_blob": "451cbac818f0228ed8982dd41715bc48df0cc45f",
+    "actual_command": "python3 cut-glyphs.py base/glyphs/base_SHEET_2_1536x1024_RGBA.png base hudkit --data hud-glyphs.r1.json",
+    "one_call": true
+  },
+  "alpha_outside_cells_nonzero": 0,
+  "max_soft_edge_px": 2.23606797749979,
+  "base_roles_complete": true,
+  "skin_overrides": {},
+  "trays_in_package": 0,
+  "skin_atlases_in_package": 0,
+  "key_text_baked": false,
+  "visual_check": "All12bareglyphs inspected; removed uniform backing contours and land ground plinth; intrinsic door arch, grenade pull ring and boot sole preserved",
+  "upscaled": false,
+  "blurred": false,
+  "local_size_proof": "54/64/80px thumbnail comparison only; not actual runtime proof",
+  "game_proof": "NOT_RUN",
+  "r7_status": "RETRACTED_DO_NOT_INTEGRATE",
+  "auftrag4": "CANCELLED",
+  "runtime_written": false,
+  "delivery_atlas_sha256": "1aa6c5d9596003ec01f8455429801b4d2c1faeadd6fdd06bf643ee6ab911541f",
+  "archive": {
+    "filename": "KFB_MixedBag_HUD_Base_Only_R8_2026-11-04.zip",
+    "bytes": 5580682,
+    "sha256": "b54e2672fad507d22d8c25ac8490feb4fbdf4f339134e5534f41a1c924bb54ab",
+    "files": 39,
+    "status": "completed",
+    "file_id": "id:KeQLaY5-IIAAAAAAAA7eig"
+  },
+  "sop_checkpoint": "ad14c2540139a6eabf5e291282ec4b40ff0f63d2"
+}
