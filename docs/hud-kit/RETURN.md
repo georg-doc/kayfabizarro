@@ -1,3 +1,23 @@
+# CURRENT · HUD SURFACES R9 · SIX SKINS · 2026-11-04
+
+**Delivered:** 102 rendered HUD surfaces/controls (17 each for Retro, Steam, Teal, Reactor Blue, Slime Green, Hazard v2), plus24unchanged native R4 signature copies. Continuous action_surface832×180, ONE outer edge, ZERO individual slot rims/cavities/rings. No enlargement, blur or new object/glyph art. Existing common R8 symbols and actual-object Hero-Shots stay shared. R7 and cancelled bar_1..bar_8 family excluded.
+
+**Private packet COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Surfaces_R9_2026-11-04.zip. Dropbox id:KeQLaY5-IIAAAAAAAA7emw;97063833bytes;407files;SHA25691c22cf8e4c44f848264e3968f5872e8d0286d062c243dc0fa73a0198abf2d2e. Includes lossless PNG/WebP, deploy/hudkit, exact slices/aliases/states/layers manifest, merge-only receiving skin overlay, verified art installer, source inputs/rebuild scripts, original six R4 sheet1a/b pairs+evidence and unchanged R8 shared glyph set. No rejected R6/R7 art.
+
+**Actual tests:**126manifest references+hashes,102lossless roundtrips and alpha-mask checks, outsidealpha0/RGB0,soft-edge<=2px, identical canonical standalone-X shape across six,42label-ground contrast checks(min4.874:1),18staticCompact/Normal/Large cases atDPR2without enlargement. Fresh extracted ZIP:406internalhashes verified, validator exit0, installer copied126files in isolated temporary folder and checked them; game directory untouched. Static visible proofs ACTION_SURFACES_ALL_SIX.jpg, STATIC_SIZE_COMPARISON.jpg and6component boards are in packet. These are NOT game captures.
+
+**Source/recovery:** existing canonical panel, sliders/toggles/X, actual current cut-smooth and cut-radio source atlases, Satellite cleanR2 panel. Existing hudskin.py color transform, native R4 color measurements; Slime uses measured actual green rather than dominant brown hardware. No paid/new image-generation job. Source hashes+all rebuild inputs archived. Optional game-dev CLI unavailable; repository-native image checks used. SOP checkpointc3fc19cf0a58fb8499c4e0c55c8d1ccf708ab118; QA evidence checkpoint91d39d5f312c67635ee95a6d3b1053b58212e6a5(file+branch exact readback).
+
+**Ownership:** authoring georg-doc/kayfabizarro, branch design/kfb-clay-hud-skin-kit-r1-2026-11-04, draftPR468. Changed SOP_CLAY_HUD_R1.md, HUD_SURFACES_R9_QA.json, this Return and additive changelog. Receiver georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1, existing Kartenkante runtime owner. No game source/code/layout change, merge, Stage/Site or Live promotion. WS0 correction is verified PR comment6643804099, not an inferred direct-chat response.
+
+**Unresolved:** actual game import/interactive states/format acceptance not run. Existing R4Steam/Slime signature well detection remains HOLD; other four previously cut successfully. R9 does not erase those independent signature gates or claim whole-HUD completion. Font labels/keys remain runtime Fredoka mixed case; skin display fonts still pending Georg visual approval. Minimap/tacho/new travel instrumentation deferred, separate pause/portal art not needed.
+
+**One next gate:** Kartenkante imports this concrete packet, merges only the overlay into existing skin data preserving hudbar, binds ONE action_surface behind existing fixed action anchors, removes old per-place frames and checks actual Compact/Normal/Large with shared content in game. Existing signature cutter holds remain explicit. Current branch head must be read from ref; it advances when this Return is committed.
+
+---
+
+## Superseded production checkpoints
+
 # CURRENT · BASE ONLY R8 / R7 REJECTED / AUFTRAG4 CANCELLED · 2026-11-04
 
 **Georg/WS0 latest rule:** the action tray is one supporting surface with one outer edge; each place inside is BORDERLESS. R7still has per-slot empty-well rims and was explicitly rejected. DO NOT integrate/use R7. Original Auftrag4(double-height bar_1…bar_8) is CANCELLED, not an outstanding task. No replacement tray design is included or requested by this correction. Latest explicit user-relayed WS0 brief wins over the older “Mulde”/288wording still fetched from private HUD_SKIN_SPEC §2c blob18ea7842190378daf4e09fc7a1dd4fd870e0d3fa.
