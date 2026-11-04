@@ -1,0 +1,114 @@
+{
+ "id": "kfb_jetpack.diesel.r2",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-04",
+ "status": "pending-georg",
+ "job": "JETPACK_DIESEL_R2 (Georgs TUNE zu R1 über WS0): 1) Sitz ein klein wenig höher, Kopf bleibt frei; 2) FBs Hasenschwanz war auf den Folien nicht zu sehen – prüfen und seitlich sichtbar belegen. Gleiche Folien wie R1.",
+ "source": "KFB Claymation Reference/…/KFB MixedBag 15: „Kompakter Dieselpunk-Jetpack-Bauplan in sechs Ansichten-1“, „Explodierte Dieselpunk-Jetpack-Bauteile-2“, „Dieselpunk-Jetpack in sechs Bauschritten-3“",
+ "verfahren": {
+  "skin": "scripts/diesel_bau.py (Grundformen aus jp_lib + weiche Polster „slab“)",
+  "sitz": "scripts/bau_r4_r2.py = bau_r4.py + JP_PTOP (Rückenplatte oben um einen Anteil kürzen, unten fest), JP_TMAX=4.0 wie R1",
+  "hoehe": "z 0,85–1,08 gesucht; ab 0,88 ragt die Platte in Ruhe unter den Kopf, ab 0,90 berührt das Gehäuse im Idle_B den Kopf. Gewählt 0,89 (rund 2 cm höher als R1) mit Platte oben 10 % kürzer: Kopf in Ruhe, Idle und Gehen 0",
+  "groesse": "scale 1,8125 wie Comic/Retro groß r4 (1,25 × groß r2)",
+  "schwanz": "Der Schwanz (KFB_Tail_Bunny, Schwanz A) ist im Beleg-Träger vorhanden; in R1 lag er ganz hinter/in der unteren Platte (seitlich verdeckt). In R2 schaut er seitlich unten zwischen Rücken und Düse hervor; ganz frei wäre er nur mit kleinerem Pack."
+ },
+ "skins": {
+  "diesel": {
+   "root_node": "KFB_Jetpack_Diesel",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Diesel_gross.r2.glb",
+   "sha256": "d452a9554f14f9dd5f7f0e24c17dff2b72e8e1bb1aab6523ab38df38c72fac3f",
+   "bau": {
+    "scale": 1.8125,
+    "faktor_wie": "comic/retro gross r4",
+    "z_local": 0.89,
+    "neigung_deg_aus_rueckenlinie": 5.67,
+    "jp_tmax": 4.0,
+    "platte_oben_gekuerzt": 0.1
+   },
+   "stages": "S1 Platte, Gehäuse, Rostblech mit Delle und Abplatzern, Trichterdüse mit Rostwulst und Sprenkeln · S2 Rundknopf orange, Vierkant-Taste creme · S3 C-Rohrbügel mit zwei Muffen, zwei Nieten",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "rueckenplatte": {
+    "teil": "S1_platte",
+    "form": "glatte Quadratfläche an FBs Rücken, Vorderseite = Pack-Rückseite; 0,13 × 0,26 (schmaler als das Gehäuse 0,16 × 0,27, damit die Arme frei bleiben) · R2: oben 10 % kürzer (unten fest), damit sie nicht unter den Kopf ragt"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.81514025083763,
+      0.27941629364121157,
+      0,
+      0,
+      -0.27941629364121157,
+      2.81514025083763,
+      0,
+      4.1359294807307804e-22,
+      -0.08310269921250513,
+      -0.333982702752311,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.17
+   },
+   "gehen_cm": {
+    "Walking_B": {
+     "rumpf": 0.04,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 3.63
+    },
+    "Walking_A": {
+     "rumpf": 0.2,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 3.18
+    }
+   },
+   "clips17_worst_cm": {
+    "rumpf": 2.53,
+    "arme": 0.52,
+    "kopf": 8.84,
+    "schwanz": 3.82
+   },
+   "messung": "50_BLENDER/JETPACK_R1/data/messung_diesel_gross.r2.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_diesel_gross.r2.json",
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_diesel.r2.json",
+   "gruppen": [
+    "platte",
+    "gehaeuse",
+    "rostblech",
+    "duese",
+    "knoepfe",
+    "rohr",
+    "nieten"
+   ],
+   "schalten": "eine Gruppe ausblenden = alle Knoten mit dieser gruppe; Teile mit traeger folgen ihrem Träger (Nieten und Flecken mit dem Rostblech)",
+   "seiten": "L/R = Figurenseite (L = Figur links = +x)",
+   "weggelassen": [
+    "Gurtschiene und Schrauben auf der Körperseite der Platte (Bogen 2): lägen im Rücken der Figur",
+    "Schultergurte (Bogen 1): eigenes skinned Teil (GURTE_R1)"
+   ],
+   "material": "7 Knete-Farben (JP_Diesel_*), Knete-Körnung zur Laufzeit über kfb-clay (Profil midground) wie die anderen Packs",
+   "messhinweis": "Samba Arme 16,2 cm ist ein Messfehler der Normalen-Prüfung (Strahl-Paritätstest: nicht im Arm, 0); alle übrigen Treffer bestätigt, Rumpf-/Arm-Treffer nur durch die weiche Platte"
+  }
+ },
+ "messung": "17 Clips (16 wie korrektur1 + Walking_A), clips_auf_figur.mjs, messe_jp.py, tiefste Stelle in cm",
+ "gilt_unveraendert": "Kopf in Schleichen/Ducken taucht weit nach hinten (auch ohne Jetpack); Hüfte im Twist dreht gegen die Brust.",
+ "kritik": "ein Kritiker (blind, nur Bilder und Bögen): Runde 1 „nicht abnahmefähig“; umgesetzt: Spalt Platte/Gehäuse geschlossen, Platte heller und schmaler, Gehäuse 15 % flacher, Düse als Glocke mit Sprenkeln, Rohr 1,4 × dicker und tiefer, Rostblech schmaler mit senkrechter Delle, Abplatzer flach und grau, Farben kühler, Gruppen/Träger/Seiten in der Teile-Liste. Nicht umgesetzt: eigene Knete-Struktur im Mesh (kommt zur Laufzeit), Gruppen-Elternknoten (Werkzeuge erwarten Teile direkt unter der Wurzel; Gruppe steht in extras.kfb.gruppe)",
+ "nicht_geaendert": [
+  "alle anderen Skins und Sitze",
+  "bau_r4.py"
+ ],
+ "ersetzt": "kfb_jetpack.diesel.r1 (bleibt als r1-Datei liegen)"
+}

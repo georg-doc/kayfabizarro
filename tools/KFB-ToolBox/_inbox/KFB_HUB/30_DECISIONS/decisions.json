@@ -21866,6 +21866,21 @@
    "superseded_by": [],
    "why": "Eine Tafel dreht sich nicht; sie wechselt das Gesicht.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1490",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "STATUS",
+   "text": "Testlauf 5 = Stage-Stand 1: site/stage @fd11f2ee (WS1-Stamm @749e114f, Truhe/Tueren an I, Spielzustand S1+S2, RELEASE_HASH, 1155 MB, lokal bereit 4,3 s, 0 Fehler; nur an Domain-Wurzel) -> PR #49 an WSA (holen, Rauchtest). Stand 2 = Pop-up-Stapel @4fd30cf3 + Slops @a760843d (N-160). Georg q522 Diesel-Jetpack R2 = Standard (WS1 N-159), q521 Zensurmasse Richtung PASS. Flug Kipp-/Ansichtsregeln @a760843d; WS-Design fassade=r2 (7 m Weltmassstab, Abwicklung), Plakate mit Golden-Sample-Standposen und Hauskarten-Titel unter Zensurbalken; Texturen-Downloads warten auf Georgs Ja im WS-Design-Chat.",
+   "values": {},
+   "owner": "WS1 · WSA · WSB · WS-Design · Flug",
+   "check": "q521, q522, N-159, N-160",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Testlauf 5 ist kein Datum, sondern ein Stand auf der Stage.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
