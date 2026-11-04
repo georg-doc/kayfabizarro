@@ -1,3 +1,15 @@
+# GEORG FEEDBACK · BASES / GLYPH COST / ACTION SIZE · 2026-11-04
+
+Georg likes the skin directions and clarified that his original action-button request meant the carrier/well bases. The themed glyphs are a welcome possibility, conditional on readable, consistent and visually light in-game assembly. This is positive direction, not a blanket72glyph/gameplay PASS.
+
+SOP now records the distinction and prioritizes the neutral Master-Kit bases with separate container/glyph/content/key/state layers. Existing art is retained. Future shared-glyph fallback and responsive Auto + user Action Size are explicitly PROPOSALS; the current12-role-per-skin contract remains binding. Arbitrary global HUD zoom is not promised: the header has less native pixel headroom, and sizing must respect source pixels/DPR, readability, click targets, allocated zones and fixed L2 anchors.
+
+**Verified feedback checkpoint:**76cadc8d10c6394e1c88ea905c3cc03d7d1aadd6; repo georg-doc/kayfabizarro, branch design/kfb-clay-hud-skin-kit-r1-2026-11-04, PR468. Changed: SOP_CLAY_HUD_R1.md and this Return. Validation is exact GitHub file/head readback and comparison with unchanged HUD_CONTRACT_R1 blob8d52e2292ac259c9ddf150cfe3e0cb18628f97be; no new assets, runtime code, scaling controls, game test or publication. Existing MixedBag and cutter results below are unchanged.
+
+**Next owner gate:** Kartenkante proves clean assembly/readability in the current six-skin HUD and checks available size limits; neutral288pxMaster bases remain outstanding art work. No new question or action required from Georg.
+
+---
+
 # CURRENT · HUD CONTRACT R1 / NATIVE DELIVERY R4 · 2026-11-04
 
 WS0/Kartenkante answered all nine completeness questions in the private game repo `docs/hud-kit/HUD_CONTRACT_R1.md`. File blob `8d52e2292ac259c9ddf150cfe3e0cb18628f97be`; reported contract checkpoint `5c8d0c52`. Current receiving branch was subsequently checked at `2f2057657ff7cb2de70bc1674f915a12b25edfb9`; the three cutter/helper blobs used below are unchanged there. This binding contract supersedes the open-question, 2048, 4x4/16-glyph, bitmap-I and Sheet3 claims in the historical records below. No specification question remains for Georg.
