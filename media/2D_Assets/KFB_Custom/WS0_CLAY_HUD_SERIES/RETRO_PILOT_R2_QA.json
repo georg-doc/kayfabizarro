@@ -1,0 +1,59 @@
+{
+  "schema": "kfb.hud-atlas-qa/1",
+  "checks": {
+    "canvas_2048_RGBA": true,
+    "alpha_has_zero_and_opaque": true,
+    "border32_clear": true,
+    "band_gaps_clear": true,
+    "all_sprites_gap32": true,
+    "closed_silhouette_9to1": true,
+    "open_header_identical": true,
+    "radio_at_most861": true,
+    "nine_major_components": true,
+    "no_upscale": true
+  },
+  "all_technical_checks_pass": true,
+  "nearest_distances": [
+    {
+      "role": "fluff_closed",
+      "nearest_distance_px": 235.0
+    },
+    {
+      "role": "fluff_open",
+      "nearest_distance_px": 179.0
+    },
+    {
+      "role": "radio",
+      "nearest_distance_px": 180.0
+    },
+    {
+      "role": "gear_normal",
+      "nearest_distance_px": 74.24
+    },
+    {
+      "role": "gear_hover",
+      "nearest_distance_px": 94.0
+    },
+    {
+      "role": "arrow_knob",
+      "nearest_distance_px": 105.23
+    },
+    {
+      "role": "detail_tube",
+      "nearest_distance_px": 74.24
+    },
+    {
+      "role": "detail_elbow",
+      "nearest_distance_px": 134.18
+    },
+    {
+      "role": "detail_strap",
+      "nearest_distance_px": 153.88
+    }
+  ],
+  "sha256": "5a457e97a719f8587f0fa3498037de6b95ecbec9e67a1d25262e7abbe26d6ab1",
+  "human_status": "CANDIDATE",
+  "independent_critic": "NOT_RUN",
+  "runtime_integration": "NOT_RUN",
+  "note": "9:1 applies to header in both states; drawer adds height. Original runtime cutter exports1046px bar, full-source crops remain in cutter-check."
+}
