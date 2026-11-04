@@ -1,3 +1,31 @@
+# CURRENT · HUD CONTRACT R1 / NATIVE DELIVERY R4 · 2026-11-04
+
+WS0/Kartenkante answered all nine completeness questions in the private game repo `docs/hud-kit/HUD_CONTRACT_R1.md`. File blob `8d52e2292ac259c9ddf150cfe3e0cb18628f97be`; reported contract checkpoint `5c8d0c52`. Current receiving branch was subsequently checked at `2f2057657ff7cb2de70bc1674f915a12b25edfb9`; the three cutter/helper blobs used below are unchanged there. This binding contract supersedes the open-question, 2048, 4x4/16-glyph, bitmap-I and Sheet3 claims in the historical records below. No specification question remains for Georg.
+
+**Outcome / usable art:** the five remaining Sheet1a/1b pairs (Steam, Teal, Reactor Blue, Slime Green, Hazard v2) are assembled, plus six Sheet2 role-glyph sets (including Retro): 72 individual PNGs with per-role geometry, source hashes, layer and runtime-state manifests. All final sheets are1536×1024 RGBA. The existing accepted Retro pairR3 is included unchanged and was rerun through the current cutter. Neutral freestanding waypoint companion is rendered from the actual existing arrow GLB (source blob271caf31ae0649917bb85107fccacbaf4ae7bd65), not a new framed plaque or a13th grid cell.
+
+**Design contract:** four fixed Primary/Secondary/Movement/Context wells at L2, separate Travel; no item wells/reflow. Context stays empty in place when unavailable. I is runtime-only. Fredoka mixed case; no Bangers. Exactly12 base glyphs per skin; hover/focus/pressed/cooldown/locked are runtime-derived, stable hitboxes/reduced motion. One functional frame only. Hazard warning stripes only below panel/drawer, never under tabs. Weapons/vehicles/travel content, reticle and loading chip remain neutral. Sheet3/tacho/minimap explicitly deferred. Standard Retina is target; no enlarged output is passed off as native art.
+
+**Actual image checks:** five new pairs have grid warnings[], body ratios Steam10.73, Teal9.93, Blue9.02, Slime10.07, Hazard10.14; radio height900px; alpha0 in background/margins/gutters, soft edge≤3px. Six glyph atlases have warnings[],72/72 role entries, alpha0 outside cells, edges≤2.24px. No upscaling, palette recolor or blur/feather joins. Blue uses protected motif/well/end zones and a separate blank-number-field fit. Hazard removes one duplicated indicator column with an identical native seam cut in both states. Alpha-edge cleanup is explicit and reproducible; meaningful negative spaces remain transparent. Original generated PNGs, rejected trials, exact prompts and actual source images are preserved privately.
+
+**Current unmodified cutter:** Retro/Teal/Blue/Hazard exit0, six wells, four radio slots and three details, warnings[]. Blue additionally emits NumPy RuntimeWarnings on stderr; strict JSON parsing confirms all exported numbers finite. Steam exits1 (“Mulden:0statt6”), Slime exits1 (“Mulden:4statt6”). Steam's six visible interiors have3443–3547px each vs minimum4232px; two Slime interiors4970/5034px vs5080.32px. Read-only diagnoses are included. No fabricated success manifest, no adjusted detector, no silently recolored art. These two integration seams remain HOLD; source art and other work continue.
+
+**Dropbox COMPLETED:** `/CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Contract_R4_2026-11-04.zip`; file id `id:KeQLaY5-IIAAAAAAAA7eNg`;168993371bytes; SHA256 `fd0594cce7434ead6986bc384e66af7cef30501995f92c388ffb9180a6f6d9f2`; server time2026-11-04T20:18:47Z. Archive integrity tested,348files. Includes12Sheet1PNGs,6Sheet2PNGs, individual parts/glyphs, manifests, source/prompt ledger, QA/light-dark/64px proofs, source mesh/neutral waypoint, assembly scripts and pinned unmodified cutter/helpers. `DELIVERY_OVERVIEW.jpg` is the visual index. Source binaries remain outside public GitHub.
+
+**Durable owner:** georg-doc/kayfabizarro; branch `design/kfb-clay-hud-skin-kit-r1-2026-11-04`; Draft PR468. SOP R4 checkpoint `d6044641ef4e5084061cc4de0cb4d279c1b4f6b3`; material evidence commit `320376b4918937fc7ecbdb82a4c91c1da6a663ae`, verified exact content/blob70f14f4e9b4d92606d46b69480981c9c75c02799. Final Return/changelog commit is the latest verified branch head at handoff.
+Changed files this phase:
+- `media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/SOP_CLAY_HUD_R1.md`
+- `media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/DELIVERY_R4_QA.json`
+- `docs/hud-kit/RETURN.md`, `docs/hud-kit/CHANGELOG.md`
+
+**Not yet complete:** Steam/Slime automatic cut, all-six gameplay/format/state evidence, neutral Master-Kit288px sources and remaining standard-control coverage, responsive min/max measurements, WS0 integration acceptance/Georg design decision for new art. This is an art-and-manifest delivery, not a full skin/runtime PASS. No independent final art acceptance or browser/game run was performed. No game-repo writes, merge, Site/Stage publication or Live promotion. User forwards to WS0; no chat message sent.
+
+**One next gate:** Kartenkante consumes this MixedBag in the existing HUD owner, reconciles the Steam/Slime recognition seam and supplies the six-skin format/state game evidence to WS0. Georg need not answer another specification questionnaire.
+
+---
+
+# HISTORICAL RECORDS · superseded where conflicting with HUD_CONTRACT_R1 above
+
 # CURRENT · FULL HUD COMPLETENESS / DESIGN REVIEW · 2026-11-04
 
 Georg explicitly requested a full modular HUD questions/completeness check for WS0, including Primary/Secondary, separate Interact,1..6slots, all existing modules, exact dimensions and sharpness. Further binding requirements: formal tab/panel hierarchy; Hazard stripes must not run under tabs and erase their contours; canonical isolated Close-X; responsive headers; cartoon hover/pressed/active motion with stable layout; no double frames; real standard buttons distinct from sliders; padding/readable typography instead of blanket Bangers/all-caps; skin typography concept, individually isolated layers and explicit manifest state resolution.
