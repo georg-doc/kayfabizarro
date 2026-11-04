@@ -1,0 +1,135 @@
+{
+  "schema_version": "kfb.hud-skin-wave/1",
+  "date": "2026-11-04",
+  "owner": "KFB ToolBox / WS0 visual-authoring kit; runtime owned by KFB-Stunt-Car-Race",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "design/kfb-clay-hud-skin-kit-r1-2026-11-04",
+  "pr": 468,
+  "runtime_repo": "georg-doc/KFB-Stunt-Car-Race",
+  "runtime_branch": "module/hud-clay-r1",
+  "runtime_read_head": "c9e23d29c33913ad94a8129b2a91bb1cdb5aa013",
+  "source_reference": {
+    "uploaded_filename": "image(20261104-041849).png",
+    "sha256": "3c0d25a46f4f00eefd7e68d974a93cd97535e8ded3ecc8e71dbc613fd1c8447f",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "binary_pinned_in_github": false
+  },
+  "sheet_contract": {
+    "size_px": [
+      2048,
+      2048
+    ],
+    "alpha": "true_rgba",
+    "margin_px": 32,
+    "bands_px": [
+      [
+        32,
+        462
+      ],
+      [
+        494,
+        1059
+      ],
+      [
+        1091,
+        2016
+      ]
+    ],
+    "sheet2_grid": [
+      4,
+      4
+    ],
+    "radio_side": "left",
+    "radio_drawer_direction": "right",
+    "radio_drawer_owner": "code",
+    "fluff_cells": 6,
+    "radio_slots": 4,
+    "radio_lamps": 3
+  },
+  "queue": [
+    {
+      "id": "hazard_yellow",
+      "order": 1,
+      "label": "Yellow Hazard (top row far left)",
+      "status": "GEOMETRY_RESET_FROM_ACCEPTED_DONOR_READY__FULL_SHEET1_UNGENERATED",
+      "historical_panel_status": "GEORG_PASS_9SLICE_ONLY",
+      "sheet1": "NO_PASS__FRESH_GENERATOR_ATTEMPT_REJECTED__SOURCE_9SLICE_GEOMETRY_PROVEN",
+      "sheet2": "NOT_STARTED",
+      "runtime_skin": "NOT_REGISTERED",
+      "radio_source_sha256": "85b9f7c78cec51fbea1b95b82881459e3999f66100269a32b4818ba08170f80d",
+      "panel_source_sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638",
+      "new_reference_mode": "HAZARD_APPROVED_DONOR_STYLE_PLUS_TOP_ROW_ONLY_GEOMETRY",
+      "no_other_skin_images_in_active_job": true,
+      "preserved_exact_donor_sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638"
+    },
+    {
+      "id": "reactor_blue",
+      "order": 2,
+      "label": "Reactor Blue (bottom row far right)",
+      "status": "WAITING_AFTER_HAZARD",
+      "sheet1": "NOT_STARTED",
+      "sheet2": "NOT_STARTED",
+      "runtime_skin": "NOT_REGISTERED",
+      "radio_source_sha256": "687e987d53dd8465357718d02962d9c84f1dba31b0d62bcb16668336aefbc577",
+      "panel_source_sha256": "58556ccdc7d23a1a5873dcd5569b292c10e08bd7f9fab76c1afcd4a207ce10b1"
+    },
+    {
+      "id": "slime_green",
+      "order": 3,
+      "label": "Slime Green (bottom row third from left)",
+      "status": "WAITING_AFTER_BLUE",
+      "sheet1": "NOT_STARTED",
+      "sheet2": "NOT_STARTED",
+      "runtime_skin": "NOT_REGISTERED",
+      "radio_source_sha256": "ab8dad1533d488210fafce4c3e0cd0e348b4cd73b0c8f64d1607540a6dabf9d7",
+      "panel_source_sha256": "c0c22c086c4d8edf873ccb7e60fdb79fc43ed2d5dae2de2d106625481eaa0f21"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "skin": "hazard_yellow",
+      "job": 1,
+      "result": "FAIL_RGB_1536x1024_BLACK_AND_3_SKINS",
+      "sha256": "32e05b111100de2d908ff7df11d24f20e3d3a460ad68c8b5e2b47688432d95c2"
+    },
+    {
+      "skin": "hazard_yellow",
+      "job": 2,
+      "result": "FAIL_RGB_1536x1024_FAKE_CHECKERBOARD_AND_3_SKINS",
+      "sha256": "34296aa3d1036dbeda1c0374a484473006c26caf07c54e6210e0185b2f0b47e7"
+    }
+  ],
+  "failure_recovery": "PRESERVED_IN_CURRENT_CHAT_ZIP_NOT_GITHUB_BINARIES",
+  "next_gate": "New independent Hazard-Yellow Sheet1 job from ONLY source_hazard_panel_original_RGBA.png + top-row geometry crop. No failed job, no multicolour contact sheet, no reference lower rows. Validate 2048x2048 actual RGBA, 6 closed/open circles, 4 radio slots, left radio, layout bands, then human visual gate.",
+  "last_fresh_generation": {
+    "scope": "HAZARD_YELLOW_ONLY",
+    "result": "REJECTED_WRONG_DIMENSIONS_AND_OTHER_COLOR_VARIANTS",
+    "produced": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "c46ee85720350147a76dcee94910263f3268602202eb40b0978810ff2a5b8a74",
+    "status": "QUARANTINED_NOT_ACTIVE_DONOR"
+  },
+  "reset_source_package": {
+    "name": "KFB_Hazard_Modular_Donor_Reset_R1.zip",
+    "github_binary": false,
+    "transparent_art": "KFB_Hazard_Modular_Donor_Reset_R1/HAZARD_ONLY_9SLICE_SOURCE_ATLAS_RGBA.png",
+    "art_size": [
+      2048,
+      2048
+    ],
+    "sha256": "b32599cbf0ebcc6eabc49e3dcd628a04ebfd4b650cae4e2a9931a908dd87d05b",
+    "reconstruction": "PIXEL_IDENTICAL_9_TILES",
+    "full_sheet1_completed": false,
+    "geometry_reference": "HAZARD_GEOMETRY_ONLY_REF_TOP_ROW.png (cropped from user infographic)",
+    "accepted_source": "source_hazard_panel_original_RGBA.png",
+    "radio_candidate": "source_hazard_radio_candidate_RGBA.png (crop/hinge check still open)"
+  },
+  "previous_bad_generations_active_input": false
+}

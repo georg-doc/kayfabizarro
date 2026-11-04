@@ -1,0 +1,181 @@
+{
+  "schema_version": "kfb.hud-skin/1",
+  "description": "STRUCTURAL EXAMPLE ONLY · measurements are placeholders, never feed this file to runtime until cut-sheet1.py populates measured pixel values.",
+  "skin_id": "teal_w_tesla",
+  "reference": {
+    "asset_path": "SOURCE_REQUIRED",
+    "sha256": "SOURCE_REQUIRED",
+    "human_status": "CANDIDATE"
+  },
+  "palette": {
+    "rim": "#4b342d",
+    "body": "#2a8d8e",
+    "active": "#f7ae34",
+    "cream": "#f2c99e",
+    "glow": "#00d5f0"
+  },
+  "roles": [
+    "fluff_closed",
+    "fluff_open",
+    "radio_minified_4slot",
+    "radio_panel_drawer",
+    "action_glyphs_16",
+    "theme_details"
+  ],
+  "source_types": [
+    "signature_png",
+    "code_tinted_primitive",
+    "reused_existing_github"
+  ],
+  "geometry": {
+    "canvas_px": [
+      2048,
+      2048
+    ],
+    "alpha": "RGBA_TRANSPARENT",
+    "min_gap_px": 32,
+    "radio_slots": 4,
+    "fluff_slots": 6,
+    "actions_max": 6,
+    "slice_insets_px": "MEASURE_PER_SKIN",
+    "protected_features_px": [],
+    "drawer_slice_insets_px": {
+      "top": null,
+      "right": null,
+      "bottom": null,
+      "left": null
+    },
+    "drawer_split_px": null
+  },
+  "states": [
+    "normal",
+    "hover",
+    "pressed",
+    "active",
+    "disabled",
+    "locked",
+    "cooldown"
+  ],
+  "mode_routes": {
+    "walk": [
+      "primary",
+      "secondary",
+      "jump",
+      "context"
+    ],
+    "drive": [
+      "primary",
+      "secondary",
+      "boost",
+      "exit"
+    ],
+    "fly": [
+      "primary",
+      "secondary",
+      "boost",
+      "land"
+    ],
+    "conversation": [
+      "dialogue_only"
+    ]
+  },
+  "qa": {
+    "alpha": "NOT_TESTED",
+    "cropping": "NOT_TESTED",
+    "corners": "NOT_TESTED",
+    "at_48px": "NOT_TESTED",
+    "game_integration": "NOT_TESTED"
+  },
+  "runtime_skin_id": "teal",
+  "runtime_authority": "georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1/docs/hud-kit/HUD_SKIN_SPEC.md",
+  "radio_layout": {
+    "edge": "left",
+    "expanded_panel_direction": "right",
+    "expanded_panel_owner": "code_tinted_neutral_master_kit"
+  },
+  "palette_semantics": {
+    "body": "runtime Rand / master-kit.py SKINS[skin].rim (surface recoloring)",
+    "cream": "runtime Füllung / master-kit.py SKINS[skin].fill",
+    "active": "runtime gold Akzent (shared across skins)",
+    "rim": "artist-owned dark outline of signature PNG; NOT runtime rim recolor key",
+    "glow": "artist-owned light/emissive detail of signature PNG"
+  },
+  "available_runtime_skins": [
+    {
+      "runtime_id": "retro",
+      "authoring_id": "retro_alchemical_wood"
+    },
+    {
+      "runtime_id": "steam",
+      "authoring_id": "steampunk_copper"
+    },
+    {
+      "runtime_id": "teal",
+      "authoring_id": "teal_w_tesla"
+    }
+  ],
+  "runtime_hudbar": {
+    "bar": [
+      0,
+      0
+    ],
+    "open": [
+      0,
+      0
+    ],
+    "knob": [
+      0,
+      0
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "field": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "panel": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "knobAt": [
+      0,
+      0
+    ],
+    "panelTop": 0
+  },
+  "runtime_measurements_status": "PLACEHOLDERS_ONLY__REPLACE_FROM_RUNTIME_CUT_SHEET1_MEASURE"
+}
