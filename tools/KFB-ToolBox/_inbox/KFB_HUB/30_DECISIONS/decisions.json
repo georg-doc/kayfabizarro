@@ -21356,6 +21356,21 @@
    "superseded_by": [],
    "why": "Georg bekommt eine Adresse zum Ausprobieren, nicht nur Clips.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1456",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "HUD R2 Skins (Kartenkante module/hud-clay-r1 @c49ff79f): Hazard per add-skin.py, Formatmatrix 60 Messungen 0 Verstoesse, Reiter-Stufen/zwei Reihen, Warnband ganze Kante, Zahnrad 4,5:1; AD-Critic PASS -> Hub q511 (4 Folien, Folie 3 auf Retro zugeschnitten), WS1 N-137. Restpunkte im Code: Hochkant-Knopfzeilen, Radio-Platzhalter-Kontrast, Hazard-Scheibe. Slot jetzt Verteiler.",
+   "values": {},
+   "owner": "Kartenkante · WS1",
+   "check": "q511, N-137",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Responsiv heisst gemessen in jedem Format, nicht geschaetzt in einem.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
