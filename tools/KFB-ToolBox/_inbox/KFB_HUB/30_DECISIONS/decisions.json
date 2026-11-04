@@ -20801,6 +20801,21 @@
    "superseded_by": [],
    "why": "Der Gegner wird sichtbar zu seinem eigenen Goo.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1419",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "HUD-Skin-Produktion: WSA-Kit R1 (kayfabizarro PR #468, docs/hud-kit/HUD_SKIN_SPEC.md, WS0_IMAGE_JOBS.md, HUD_COMPONENT_COVERAGE.csv, Georgs xlsx-Inventar) ist die Bild-Produktions-Wahrheit; WS0_IMAGE_JOBS.md ersetzt Briefing b318. Laufzeit-Wahrheit (Masse, Zonen, Umfaerbung, Schnitte) bleibt Kartenkantes KFB-MVP-Spec; Kartenkante gleicht ab und stellt den Schnitt auf Baender 430/565/925 plus Manifest. Verteiler hat Stamm @5ce6a402 gemergt (@7ab62af3, 13 Konflikte geloest, 81 Tests PASS); Flug zieht ihn fuer den kombinierten WS1-Head.",
+   "values": {},
+   "owner": "Kartenkante · WSA · Verteiler · Rakete/Flug · Georg",
+   "check": "",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Wahrheit je Ebene: Bild-Prompt bei WSA, Laufzeit im Spiel-Repo.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
