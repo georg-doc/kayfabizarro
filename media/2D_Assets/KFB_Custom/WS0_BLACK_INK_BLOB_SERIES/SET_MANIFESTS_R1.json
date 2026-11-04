@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 32,
-    "pass_depictions": 192,
+    "selected_sheets": 33,
+    "pass_depictions": 198,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 30,
-    "intake_eligible_depictions": 180,
-    "other_authoring_depictions": 72
+    "intake_eligible_sheets": 31,
+    "intake_eligible_depictions": 186,
+    "other_authoring_depictions": 78
   },
   "excluded_sources": [
     {
@@ -233,20 +233,19 @@
       "georg_status": "PASS",
       "design_status": "GEORG_DESIGN_PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
       "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 1,
-    "depictions": 6,
-    "identities": 2,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "georg_pass": 0,
     "intake_eligible": 0
   }

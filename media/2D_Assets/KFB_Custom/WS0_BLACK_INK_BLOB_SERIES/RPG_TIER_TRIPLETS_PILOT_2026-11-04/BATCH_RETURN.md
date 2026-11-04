@@ -9,3 +9,6 @@ Previous leisure/clubs12 were explicitly accepted by Georg and persisted at da24
 Next gate: Georg reviews the tier triplet pilot.
 
 Technical limitation: native alpha interiors max254/255, residual background alpha1. R2 clears cell seams of visible artwork; final edge normalization remains deferred. R2 is a generative edit with small sculpt-detail changes, not a lossless repack.
+
+## Georg decision · 2026-11-05
+All six selected R2 depictions PASS. Intake-eligible source; cards remain DESIGN, alpha normalization deferred. Next production: twelve requested RPG identities at three tiers, six new sheets. No game/runtime implementation claimed.

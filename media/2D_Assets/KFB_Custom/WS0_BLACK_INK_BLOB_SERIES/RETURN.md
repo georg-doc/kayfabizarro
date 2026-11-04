@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · RPG pilot PASS
+
+Georg accepted all six pilot R2 depictions. Source inventory is now 33 PASS sheets / 198 depictions, 31 sheets / 186 depictions intake-eligible. Cards remain DESIGN. Next authorized outcome: six RPG tier sheets, twelve identities at three stages (36 depictions). Same WSA owner and branch/PR #469. Technical alpha notes remain; no runtime or Librarian publication claimed.
+
+---
+
 # Current WSA Return · 2026-11-05
 
 Owner WSA · georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · draft PR469.
