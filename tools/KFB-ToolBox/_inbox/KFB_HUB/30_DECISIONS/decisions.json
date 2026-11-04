@@ -21056,6 +21056,21 @@
    "superseded_by": [],
    "why": "Nach acht Kritiker-Runden entscheidet ein Blick auf den Beleg die Richtung, nicht die Zahl.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1436",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "WS1 Q-068: Stamm game/integration-r2 @0001fb78 gepusht (HUD R2, N-109..N-117, kamera=r2 aus); lokal obendrauf HUD @8c4861d3, Start-WFC @fe5b22f4, Schwanz-Korrektur, TESTFAHRT_HASH start=wfc; S1 Beobachter uhr/cueBus/spielZustand Unit PASS. fb-shoulder-shadow rot durch FB-Idles -> WSB beurteilt Schulterprofil. WS-Design rebased Tueren auf @0001fb78. fb-clips r2 @f759cc0c (L-02 schwer = Jump_Land->Crouching, L-06 hook_punch) -> N-129. Hub q500 kompakt-Folie r2 (1,55) getauscht.",
+   "values": {},
+   "owner": "WS1 · WSB · WS-Design",
+   "check": "Q-068, N-129, q500",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein gepushter Stamm ist der Takt; alle rebasen darauf.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
