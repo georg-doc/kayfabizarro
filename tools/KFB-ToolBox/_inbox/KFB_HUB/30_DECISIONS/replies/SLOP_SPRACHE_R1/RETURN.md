@@ -3,6 +3,17 @@
 Konzept-Probe auf Auftrag von WS0 (03.11.). Nichts davon ist im Spiel.
 
 
+
+## Slop-Tod Goo · R4 nach Georgs Urteil (04.11., Schalter slopgoo=1)
+Georg: „klappt so noch nicht“ – Blobs drehten sich als flache Figuren, der Übergang zum Spritzer fehlte, Wechsel flackerten. Jetzt:
+- **Ausrichtung:** Blobs stehen immer zur Kamera und schwenken beim Hüpfen und Laufen höchstens etwa 20° in die Laufrichtung; kein Spiegeln mehr.
+- **Blob wird zum Goo:** Er bläht sich auf und zittert, sackt zum Boden, staucht sich und dunkelt zur Goo-Farbe. Dann wächst an derselben Stelle ein Goo-Hügel aus seiner Mitte über ihn, und er wird hineingesaugt. Aus dem Hügel wächst die Krone, die Krone sackt in die Pfütze.
+- **Weich:** Jeder Bildwechsel wächst aus der dicksten Stelle bzw. zieht sich dorthin zurück (keine Überblendung, keine Transparenz, kein harter Tausch); Clips steigen weich ein und aus; Atlas vorgewärmt.
+- **Dazu:** Eigener nasser Fleck, der den Boden abdunkelt und vom Rand her trocknet; dunkle Randkante und aufgehellte dunkle Farben für jeden Boden; Tropfen in die Tiefe gestreut; die schwarzen Landeflecken vom Hüpfen sind jetzt dieselben Goo-Perlen.
+- Belege: `SLOP_GOO_R4_SPIEL.mp4`, `SLOP_GOO_R4_NAH.mp4` (mit Ton), `SLOP_GOO_R4_JEDES_BILD.png` (jedes Bild 3,5–4,8 s), `SLOP_GOO_R4_FARBEN.png`.
+- Flacker-Suche Bild für Bild (scripts/fx/flacker_suche.py): Spielkamera ohne Fund; Nahkamera nur Stellen, an denen die Kamera dem hüpfenden Blob folgt.
+- Kritiker (Frage „liest sich der Blob nie als flache Karte, und ist jeder Übergang weich?“): R5 5, R6 5, R7 5, R8 6, **R9 7/10** (Ausrichtung 8, wird zum Goo 7, weich 6, Pfütze und Fleck 8, Look 7). Offen laut Kritiker: Kronen-Zusammensacken noch etwas schnell, der Hügel wird beim letzten Blob-Rest kurz schmaler, gefärbte Pfützen mit leichtem Schattenrand, Lila auf lila Boden bleibt schwach.
+
 ## Slop-Tod aus Georgs Goo-Splash · R2 (04.11., Schalter slopgoo=1)
 Der Blob bläht sich kurz auf und platzt in einen von Georgs gemalten Spritz-Abläufen. Die Krone sackt in die Pfütze, die Pfütze läuft breit aus und liegt flach auf dem Gelände. Die Tropfen fliegen im Bogen und bleiben als Perlen liegen. Die Pfütze sickert ein, ein nasser Fleck bleibt und trocknet. Ton wie im Spiel: Tod-Glissando ab dem Treffer, nasser Klatsch beim Platzen.
 Umfärben im Code: Helligkeit und Glanz bleiben, die Farbe wechselt (sechs Story-Farben aus dem HUD).
