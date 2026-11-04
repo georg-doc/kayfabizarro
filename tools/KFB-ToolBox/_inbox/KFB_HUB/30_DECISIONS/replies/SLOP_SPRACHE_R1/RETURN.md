@@ -4,6 +4,13 @@ Konzept-Probe auf Auftrag von WS0 (03.11.). Nichts davon ist im Spiel.
 
 
 
+
+## Slops bildparallel (2,5D wie HD-2D) · R1 (04.11., Schalter slopbewegung=1 bzw. slopgoo=1)
+Georg: „das habt ihr immer noch nicht drauf“ – Tafeln drehten sich schräg. Jetzt richtet sich jede Slop-Tafel im Shader nach der Kamera, die gerade rendert: rechts = Kamera-Rechte waagrecht, oben = Welt-Oben, parallel zur Bildebene (nicht zum Kamera-Ort gedreht, kein Schwenk mehr). Schaut die Kamera steil von oben, lehnt die Tafel sich höchstens 20° zurück. Richtung nur per Spiegeln mit kurzem Squash-Flip (nie schmaler als gut die Hälfte, erst wenn die neue Laufrichtung kurz anhält). Gilt für Blob, Treffer, Schreck, Tod, Goo-Hügel, Krone und fliegende Tropfen; Pfütze und Perlen liegen flach.
+- Recherche (Paper Mario, Octopath/HD-2D, Don't Starve, Cult of the Lamb): alle richten nach der Blickrichtung der Kamera aus, spiegeln statt zu drehen und begrenzen zusätzlich die Kamera-Neigung; Kontaktschatten unter dem Fuß.
+- Beleg: `SLOP_BILDPARALLEL_R1_UMKREISEN.mp4` (Kamera 180° um die Gruppe mit Treffer und Goo-Tod, dann vorbei), `SLOP_BILDPARALLEL_R1_UEBERSICHT.png`.
+- Kritiker: keine Tafel schräg, als Kante oder als Karte; Kreisfahrt 9, Vorbeifahrt 9, Treffer und Krone 8, gesamt 8/10. Hinweis: im Sprung schwebt der Blob sichtbar über seinem Schatten.
+
 ## Slop-Tod Goo · R4 nach Georgs Urteil (04.11., Schalter slopgoo=1)
 Georg: „klappt so noch nicht“ – Blobs drehten sich als flache Figuren, der Übergang zum Spritzer fehlte, Wechsel flackerten. Jetzt:
 - **Ausrichtung:** Blobs stehen immer zur Kamera und schwenken beim Hüpfen und Laufen höchstens etwa 20° in die Laufrichtung; kein Spiegeln mehr.

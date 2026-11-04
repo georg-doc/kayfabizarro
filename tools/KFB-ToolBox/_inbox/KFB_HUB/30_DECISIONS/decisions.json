@@ -20861,6 +20861,21 @@
    "superseded_by": [],
    "why": "2D-Figuren bleiben immer bildparallel; die Welt eskaliert einfach und skalierbar.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1423",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Slops bildparallel R1: Tafeln im Vertex-Shader nach rendernder Kamera (Kamera-Rechte waagrecht, Welt-Oben, max 20 Grad Zuruecklehnen), keine Gier-Drehung, Richtung per Squash-Flip mit 0,3 s Haltezeit; Recherche Paper Mario/HD-2D/Dont Starve/Cult of the Lamb. Beleg Umkreisen 180 Grad plus Vorbeifahrt, Kritiker 8/10, WS0-Blick ok. fx/slop-r1 @638bfd8c FF auf integration-r2 -> WS1 N-117 (ersetzt Head aus N-115); Frage Kamera-Neigungsgrenze an WS1. Hub q495. Weiter: Eskalation K0-K3 hinter kontrolle=1.",
+   "values": {},
+   "owner": "Rakete/Flug · WS1",
+   "check": "q495, N-117",
+   "source": "Georg 04.11. q493",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bildparallel heisst: nach der Kamerablickrichtung ausrichten, spiegeln statt drehen, Neigung begrenzen.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
