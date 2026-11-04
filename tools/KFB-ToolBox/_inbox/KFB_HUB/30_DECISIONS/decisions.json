@@ -21701,6 +21701,21 @@
    "superseded_by": [],
    "why": "Was schon laeuft, wird der Weg fuer das Naechste: die Bibliothek zeigt, wie die Stage holt.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1479",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "DECIDED",
+   "text": "Georg q516: Distanzfeld-Kontur fuer Slops (inkline=sdf Standard, Feld vom Verteiler im Atlas gebacken, Rueckfall Rechnen beim Laden; spaeter alle 2D-Props hinter inkline2d=1). Georg q515 HUD R3 TUNE: Aktions-Knoepfe und Wegweiser-Pfeil alt (-> Bogen 2 HUD-Chat, b329 ergaenzt); Almanach/Karten-Faecher buendig im HUD-Rahmen ohne Gutter, als leicht unregelmaessiger schraeger Stapel mit Auffaecher-Animation bei Hover (ueberlagert Radio/Playlist); Wegweiser ohne Georgs Okay in Panel unter den Faecher verschoben -> zurueck an alte Stelle bis Entwurf abgenommen (V-HUD keep positions); Gesamt-Layout optimieren -> Kartenkante: Plan + Mock-up 2 Varianten vor Bau. HUD-Raster 1a/1b 1536x1024 (Spec 2a, @83e0f6a9) -> HUD-Chat b329.",
+   "values": {},
+   "owner": "Kartenkante · Flug · Verteiler",
+   "check": "q515, q516, b329",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was Georg nicht verschoben hat, bleibt, wo es war.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
