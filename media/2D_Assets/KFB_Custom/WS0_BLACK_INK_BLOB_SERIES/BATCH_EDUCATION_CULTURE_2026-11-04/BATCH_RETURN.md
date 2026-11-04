@@ -1,3 +1,7 @@
+# GEORG DECISION · ALL12 PASS ·2026-11-04
+
+Both education/culture sheets accepted in full. Two manifests/12figure statuses nowPASS, intake eligible. Source images unchanged; seam/crop QA preserved; writing remainsDESIGN. Prior DRAFT state below is history.
+
 # Education + Culture Slops · batch12 ·2026-11-04
 
 WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, Draft PR#469.

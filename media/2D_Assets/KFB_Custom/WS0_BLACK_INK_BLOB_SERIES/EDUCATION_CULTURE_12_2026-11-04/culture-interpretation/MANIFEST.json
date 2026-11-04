@@ -1,10 +1,9 @@
 {
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_AWAITING_GEORG",
-  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -18,8 +17,9 @@
   "production_record": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
   "cards": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "AWAITING_GEORG_DESIGN_DECISION"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source intake allowed; original QA/crop observations retained."
   },
   "figuren": [
     {
@@ -43,8 +43,8 @@
       ],
       "prompt_auszug": "TOP LEFT slot1 FEMALE-READ MUSEUM CURATOR: very low broad soft wavy ink splat with two elegant curled crown lobes, small faded plum beret and tiny cream scarf collar, one copper stud. Heavy disapproving half-lids WHITE sclera RED iris BLACK pupil looking sideways; long FLAT closed crooked lip with one small gold fang. Holds ONE beautifully worn thick ornate gold EMPTY picture frame slightly out at her OWN side, peering suspiciously at its opening. Frame at belly/side, not surrounding whole body or covering face, full goo base dominant, no painting/scenery/words.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -69,8 +69,8 @@
       ],
       "prompt_auszug": "TOP MIDDLE slot2 male LITERARY CRITIC: towering thin drooping pear ink blob, small moss soft cap and short rust scarf, brass pince-nez resting below one eye. Deep crooked offended UNDERBITE with THREE sparse irregular teeth, one eye wide and the other almost shut, WHITE/red/black gaze DOWN. Both hands embrace ONE absurdly FAT leather book whose massive rounded indigo spine contrasts with a single tiny ivory page sticking out. Closed plain cover, no text/marks, no pile or desk.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -96,8 +96,8 @@
       ],
       "prompt_auszug": "TOP RIGHT slot3 male THEATRE DRAMATURGE: compact almost spherical springy ink splat with THREE short irregular upper lobes, tiny faded teal collar and coral bow tie. Face nervously stretched into broad CLENCHED jagged tooth smile, one white/red/black eye bulging and other squinting toward object. One hand holds ONE small smooth cream clay theatrical tragedy mask with softly modeled drooping brows and tiny mouth opening, other buffs it with ONE plump burgundy polishing cloth. Mask below his face at own belly, no puppet body, stage, extra people or floating expressions.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -123,8 +123,8 @@
       ],
       "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ MUSEUM RESTORER: tall narrow curved bean ink blob, one violet curled goo bun held under tiny teal headscarf, short dusty rose collar. One eye fully CLOSED in concentrated effort, other WHITE/red/black looking down, narrow crooked lip with single ivory tooth biting upper lip, NO tongue. Carefully holds a very TINY chipped cream teacup in one palm and ONE comically huge soft rounded ivory-bristle restoration brush with copper handle in opposite hand, brush barely touches cup rim. Two clear tactile props, no table or human torso.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -149,8 +149,8 @@
       ],
       "prompt_auszug": "BOTTOM MIDDLE slot5 male ARBITER OF TASTE: very broad heavy rounded triangular UPRIGHT ink splat with low hanging side lobes, tiny cream bow tie and short charcoal collar, no hat. Profound complacent CLOSED asymmetric smile with two little uneven fangs, heavy lids and WHITE/red/black gaze calmly down. Cradles ONE gigantic beautifully worn rounded wooden judge's gavel tenderly like a pet, both goo hands supporting broad smooth barrel. Gavel stays at own belly, no block/table/action strike or legal writing; full ink body visible.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -175,10 +175,14 @@
       ],
       "prompt_auszug": "BOTTOM RIGHT slot6 male CULTURAL ACCESS GATEKEEPER: medium tall lopsided pear ink splat with one tall bent crown lobe, small faded navy uniform cap and short mustard collar. Huge wide WHITE/red/black eyes looking outward in alarm, long downward flat lip with two broad sparse bottom teeth, NO smile/tongue/O mouth. Both hands clutch the TWO large brass rounded ends of ONE short fat burgundy velvet barrier rope forming a shallow U across own belly. No posts/stanchions/door/scene, rope attaches only to his own hands, no crossing neighbor cells. Tragically determined guard of a portable boundary.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     }
-  ]
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04",
+    "verdict": "all12education/culturePASS"
+  }
 }

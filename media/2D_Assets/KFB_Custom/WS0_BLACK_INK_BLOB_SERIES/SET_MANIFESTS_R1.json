@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 24,
-    "pass_depictions": 144,
+    "selected_sheets": 26,
+    "pass_depictions": 156,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 22,
-    "intake_eligible_depictions": 132,
-    "other_authoring_depictions": 24
+    "intake_eligible_sheets": 24,
+    "intake_eligible_depictions": 144,
+    "other_authoring_depictions": 36
   },
   "excluded_sources": [
     {
@@ -177,27 +177,26 @@
       "georg_status": "PASS",
       "design_status": "GEORG_DESIGN_PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
       "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
       "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 2,
-    "depictions": 12,
+    "sheets": 0,
+    "depictions": 0,
     "georg_pass": 0,
     "intake_eligible": 0
   }

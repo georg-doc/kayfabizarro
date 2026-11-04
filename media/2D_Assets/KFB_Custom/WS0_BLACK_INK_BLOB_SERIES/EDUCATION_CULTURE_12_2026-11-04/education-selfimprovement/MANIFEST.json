@@ -1,10 +1,9 @@
 {
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_AWAITING_GEORG",
-  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -18,8 +17,9 @@
   "production_record": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
   "cards": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "AWAITING_GEORG_DESIGN_DECISION"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source intake allowed; original QA/crop observations retained."
   },
   "figuren": [
     {
@@ -43,8 +43,8 @@
       ],
       "prompt_auszug": "TOP LEFT slot1 male EXAM CUSTODIAN: tall pear-shaped ink blob with ONE crooked high crown lobe, tiny battered indigo academic cap and short mustard collar. Huge anxious WHITE eyes RED iris BLACK pupil staring downward, lower lip pulled into a crooked jagged underbite with TWO broad bottom teeth. Both goo arms hug ONE oversized beautifully rounded wooden HOURGLASS at belly, two fat glass bulbs and very little rust-colored clay sand inside; no clock numbers or floor. Hands squeeze wooden frame, timekeeper visibly more frightened than his candidates.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -69,8 +69,8 @@
       ],
       "prompt_auszug": "TOP MIDDLE slot2 male SUCCESS COACH: very broad low wavy ink splat, THREE short curling side lobes, tiny coral rolled work collar and absurdly small burgundy necktie. Explosive SIDEWAYS jagged tooth LAUGH, one eye tightly shut and other wide WHITE/red/black gazing outward, NO tongue. Both hands confidently cradle ONE chunky tarnished brass MEGAPHONE against own belly, big rounded flared bell pointed diagonally upward within cell. Mouth visible above prop, not speaking into it; human torso absent.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -96,8 +96,8 @@
       ],
       "prompt_auszug": "TOP RIGHT slot3 FEMALE-READ ADULT-EDUCATION INSTRUCTOR: compact rounded triangular ink splat, sculpted purple crown quiff under little teal kerchief, tiny cream collar and subtle lashes. One lid lifted almost vertically, other compressed in suspicious squint, CLOSED narrow crooked fang smile. Holds a very TINY blank slate in one palm, and delicately rubs it with ONE comically HUGE fat coral felt eraser clutched in other hand. Immediate disproportionate correction, beautifully rounded felt/slate/wood, no handwriting/letters or equations.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -122,8 +122,8 @@
       ],
       "prompt_auszug": "BOTTOM LEFT slot4 male OVERBURDENED ADULT LEARNER: squat heavy nearly circular ink blob, small soft mustard cap and short faded plum sweater collar. Eyes WHITE/red/black unevenly wide peering UP, compressed ZIGZAG mouth with three sparse crooked ivory teeth; hopeless concentration, NO grin. Arms squeeze THREE thick plump leather-bound books stacked precariously at belly, cream page edges, worn teal/rust/ivory spines completely blank. Small enough stack that whole wide goo base remains visible; no academic cap, desk or room.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -148,8 +148,8 @@
       ],
       "prompt_auszug": "BOTTOM MIDDLE slot5 male PRODUCTIVITY ASCETIC: very tall narrow curved bean ink blob, one long drooping upper lobe, tiny worn cream knitted collar and short indigo wrist cuffs. Flat severe lips CLENCH uneven teeth sideways, one eye squeezed and other WHITE/red/black focused on tool, furious effort at being efficient. Cradles ONE huge rounded old-fashioned coral tomato-shaped mechanical kitchen timer with small moss leaf cap and brass winding knob, blank dial no markings; one hand turns knob with exhausting precision. No electronics/icons/scene.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -174,10 +174,14 @@
       ],
       "prompt_auszug": "BOTTOM RIGHT slot6 FEMALE-READ CERTIFICATION OFFICIAL: medium tall broad-bottom asymmetric pear ink splat, soft purple rolled goo crest, little plum cap and short teal scarf collar. Smug dreamy half-lids WHITE/red/black upward, CLOSED lopsided gold-fang smile, subtle lashes. Both hands hold ONE fat tightly rolled ivory diploma with a comically HUGE warm red wax seal; ONE goo fingertip visibly stuck in the soft seal, drawing a tiny short sticky bridge back to her own hand. Keep diploma/seal one readable chunky prop, no ribbon clutter, heraldry, symbols or writing.",
       "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     }
-  ]
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04",
+    "verdict": "all12education/culturePASS"
+  }
 }
