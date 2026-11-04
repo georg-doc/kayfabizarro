@@ -20981,6 +20981,21 @@
    "superseded_by": [],
    "why": "Integration vor neuen Einzelteilen; jede Interaktion haengt an einer Uhr und einem Zustand.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1431",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "TRANSITIONS_R1 (Recherche Tiny Skies/Rift Apart/God of War/Fly-To): ein TransitionDirector mit einer Event-Uhr, Rezepte als JSON (Phasen, Spuren, Zeitspannen-Marker, reine Funktion von t), Vorladen mit Halte-Loop im Tunnel statt Blende; Portal-Ausloeser Streckentest + Scharfschalten fuer alle Fortbewegungsarten. Prioritaeten P1 Portal durchfahren/fliegen, P2 zu Fuss beruehren (+ASK), P4 Kamerawechsel, P5 Truhe, P6 Ein-/Aussteigen; P3 Globus-Intro nach MVP: WS0 entscheidet getrennter Globus mit Wechsel hinter Wolkenschicht, logarithmische Hoehe. WS1 N-123 (Doku im Kanal assets/transitions), WS-Design Look-Modul. MVP-Testlauf 5 auf der Site, prozedural, modular (N-122).",
+   "values": {},
+   "owner": "WS1 · WS-Design",
+   "check": "N-122, N-123",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Uebergaenge aus einem Guss brauchen einen Regisseur und eine Uhr, nicht viele Clips.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
