@@ -1,0 +1,82 @@
+{
+  "schema_version": "kfb.hud-skin/1",
+  "description": "Skin exchange manifest EXAMPLE, not a validated full JSON Schema",
+  "skin_id": "teal_w_tesla",
+  "reference": {
+    "asset_path": "SOURCE_REQUIRED",
+    "sha256": "SOURCE_REQUIRED",
+    "human_status": "CANDIDATE"
+  },
+  "palette": {
+    "rim": "#4b342d",
+    "body": "#2a8d8e",
+    "active": "#f7ae34",
+    "cream": "#f2c99e",
+    "glow": "#00d5f0"
+  },
+  "roles": [
+    "fluff_closed",
+    "fluff_open",
+    "radio_minified_4slot",
+    "radio_panel_drawer",
+    "action_glyphs_16",
+    "theme_details"
+  ],
+  "source_types": [
+    "signature_png",
+    "code_tinted_primitive",
+    "reused_existing_github"
+  ],
+  "geometry": {
+    "canvas_px": [
+      2048,
+      2048
+    ],
+    "alpha": "RGBA_TRANSPARENT",
+    "min_gap_px": 32,
+    "radio_slots": 4,
+    "fluff_slots": 6,
+    "actions_max": 6,
+    "slice_insets_px": "MEASURE_PER_SKIN",
+    "protected_features_px": []
+  },
+  "states": [
+    "normal",
+    "hover",
+    "pressed",
+    "active",
+    "disabled",
+    "locked",
+    "cooldown"
+  ],
+  "mode_routes": {
+    "walk": [
+      "primary",
+      "secondary",
+      "jump",
+      "context"
+    ],
+    "drive": [
+      "primary",
+      "secondary",
+      "boost",
+      "exit"
+    ],
+    "fly": [
+      "primary",
+      "secondary",
+      "boost",
+      "land"
+    ],
+    "conversation": [
+      "dialogue_only"
+    ]
+  },
+  "qa": {
+    "alpha": "NOT_TESTED",
+    "cropping": "NOT_TESTED",
+    "corners": "NOT_TESTED",
+    "at_48px": "NOT_TESTED",
+    "game_integration": "NOT_TESTED"
+  }
+}
