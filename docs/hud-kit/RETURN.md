@@ -1,3 +1,19 @@
+# CURRENT · RETRO NATIVE PAIR R3 · 2026-11-04
+
+WS0/Kartenkante user briefing supersedes2048 delivery and full-silhouette9:1 fitting. Original attempt1 design accepted; attempt2 rejected (closed includes drawer). New pair is a candidate assembled without upscaling from larger individual native sources; not falsely labeled pixel-identical to accepted1254 whole sheet. Original soft/feathered2048 montage is superseded.
+
+**Delivered:** RETRO_SHEET_1a_1536x1024_RGBA.png and RETRO_SHEET_1b_1536x1024_RGBA.png. Both1536x1024 RGBA.1a closed1472x177,open1472x331,same x32; body10.5:1. Closed has no drawer,open blank drawer+bottom centered arrow.1b radio900high,gears/arrow in prescribed top cells,3details in row2,row3empty. Current sheet_grid.check_pair warnings[]; background/margins/guttersalpha0. Edge distances <=2.24px. No recoloring/upscaling/feather joins. Mask/AA cleanup and transforms reproducible in archive build_pair.py.
+
+**Cutter HOLD:** unmodified current cut-sheet1.py --b exits1 'Mulden: Abstände der Mulden ungleich'. It selects first6bright round blobs, including dish/grille, then only4real wells. Read-only CELL_DIAGNOSTIC.json exposes all8candidates and the actual uniformly spaced6cell row; that row passes unchanged check_cells. No game/runtime write, no silent bypass, no cutter PASS claim. Exact report/hashes: media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/RETRO_PAIR_R3_RETURN.json (verified evidence commit8c29de8e511041f60ada6f5b20dc7f86891602f3). Spec blobe78a6a8556b4875436c0a1a924283bfd69b807d1; cutter2f56286cf088ddf8487b674c2f6718c8b5c0e67f; helpere54b7775ebed3c7786b91f9ce0cfe54e799150ab.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_Pair_R3_1536_2026-11-04.zip, id:KeQLaY5-IIAAAAAAAA7dxQ,12559289bytes. Pair,individuals,rawsources,QA,diagnosis,buildscript,unmodified cutter references and light/dark proof included.1a SHA25674e208f4c900b56b385129348a07e478710139885a516b5240d21b02bcf8f27f;1b8035d2b3c3b6d925d11fc936470e7037c4af00a24561c9687b7117f409d0c8c8.
+
+**Owner:**georg-doc/kayfabizarro;branch design/kfb-clay-hud-skin-kit-r1-2026-11-04;PR468. SOP updated toR3. No merge,Stage/Site or Live. User forwards WS0; no chat sent.
+
+**One next gate:** Kartenkante chooses actual6cell row and reruns one-call cutter on the delivered pair. Other five pairs,Sheet2/3 and neutral master pending; no all-state coverage claim.
+
+---
+
 # CURRENT · RETRO PILOT R2 · 2026-11-04
 
 User explicitly authorized separate generated parts plus image-script assembly without upscaling. **Native-source resolution seam resolved:** header source2172x724, radio724x2172, hardware1536x1024. Final atlas2048x2048 RGBA; closed/header1980x220 (9:1), open uses identical header pixels plus original donor drawer. No source image enlarged. Straight lower rail and plain numeric field are fitted separately while round wells/endcaps are protected;32px feather joins and external matte cleanup are explicit in archived assemble.py.
