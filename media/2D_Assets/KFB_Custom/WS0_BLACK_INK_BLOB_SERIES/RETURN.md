@@ -1,3 +1,17 @@
+# CURRENT CHECKPOINT · Pirate sheet + selected sailor R2 PASS · 2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
+
+- Sailors: Georg explicitly accepts SECOND displayed variant; selected sailors-historic-sheet-r2-selected.png now archived, SHA256 f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1. All six DESIGN PASS. Earlier original-selected statements superseded by this decision.
+- Pirates: ONE new original-reference-conditioned 3x2 six-character sheet, four historical pirates/privateers and dieselpunk space pirate couple (cells5/6). DRAFT awaiting Georg. Actual original inputs and exact prompt/receipt retained. SHA256 82de431cd80a51f560d3897da4147f1f8c9c902f1623905232cffe7ba167e33f.
+- Pirate alpha0..254; 446551 fully transparent pixels; checker composite inspected. Sample lower-right alpha1 records faint residual alpha, not clean-edge blanket PASS. No invented matte from residual RGB preview.
+- Mechanics all six DESIGN PASS unchanged; miners FAIL/TUNE unchanged. No Librarian registration, runtime tests, new owners, Stage/Site/Live or merge.
+
+## One next gate
+Georg design verdict on pirate sheet.
+
+## Historical Return
+
 # GEORG DECISION · SEAFARER SECOND VARIANT PASS · 2026-11-04
 
 Selected sailors-historic-sheet-r2-selected.png (SHA256 f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1). Georg expressly PASS for second displayed version, all six characters. Earlier original-selected/DRAFT statements below are historical and superseded. Mechanics all six PASS unchanged. Miners FAIL/TUNE unchanged. Next authorized image: one six-character pirate/privateer sheet including a dieselpunk space pirate couple. No game admission or merge.
