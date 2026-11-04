@@ -1,6 +1,24 @@
-# KFB Clay HUD Production SOP · R5 · 2026-11-04
+# KFB Clay HUD Production SOP · R6 · 2026-11-04
 
-## CURRENT ADDENDUM R5 · shared base first / receiving §2c · 2026-11-04
+## CURRENT GEORG CORRECTION R6 · shared object Hero-Shots / no added frames / no new skin · 2026-11-04
+
+Georg clarified the conceptual boundary: collected props, weapons, gear and power-ups must use their actual3DHero-Shot icons.400+objects do NOT require400+new drawings for every skin. He explicitly rejected unnecessary frames and identified the fresh brown/beige tray draft as an unrequested new skin. That draft is REJECTED/QUARANTINED, not a new Master or seventh skin. Its raw source SHA256 is51b65d3152fdc13c4f7f8c613bd71ff2f72e9c6087de3adc5b3db14e0a14fe4f; no runtime/catalog/skin registration or Dropbox delivery occurred.
+
+**Mandatory separation, existing owners retained:**
+- Skin owns the existing carrier/well surfaces and existing state treatment. One functional cavity rim only. No additional tile,pillow,plaque,ornamental outer frame or baked icon surround. The previous request to repaint the base never authorizes inventing a new visual skin.
+- A role glyph means an ACTION: jump,boost,talk,pickup,etc.; fist/grenade/travel are the defined default role cases. The twelve base/skin glyphs are not the object catalog.
+- A selected/acquired actual object uses ONE skin-neutral Hero-Shot tied to its canonical asset identity/source revision through the existing asset/thumbnail owner. The same content pixels/ref are reused across all six skins; changing skin must not recolor the actual object or generate another thumbnail. Reuse the existing Hero-Shot/cache pipeline; do not create a new rendering/runtime owner.
+- Actual object content takes precedence over the default role drawing when the slot represents a selected item. A concrete selected weapon is shown as itself, not replaced by a themed Faust/Granate because its id is absent from a small lookup table. Unarmed/default role is a distinct case. Missing Hero-Shot must be diagnosed in the existing owner, never silently mislabeled as another object. This is a binding intake requirement, not a claimed implemented resolver.
+- Fixed context actions such as pickup keep their role cue/I; the picked-up object's actual picture belongs at its approved inventory/selection/receipt location. No return of item slots in the fixed four-action bar, no layout move.
+- Hero-Shot/glyph is a transparent foreground inside the existing well with contain/optical padding; long/narrow objects retain aspect ratio. Labels/I, cooldown, lock/selection/focus are separate runtime layers. No second functional frame; no tiny extra container around the thumbnail.
+
+**Measured receiving seam (not fixed by this art chat):** current src/hud/hudV6.js blob4b5899b9be3ae051135b78eecf3631d7a66e8c69 lines30,249,401 uses a small WEAPON_ICON key mapping and generic gun/fist fallbacks; line239 hides the duplicate pillow in skin mode. This is not evidence of complete400+per-object Hero-Shot support. Kartenkante must route canonical content refs through current inventory/asset owners; no runtime right is taken here. Actual scene-to-thumbnail pipeline/catalog coverage was not exhaustively audited.
+
+**Native288source gate:** checked current canonical ui/bar_1/4/8.png are137×144,474×144,922×144. Bar_4 blobfcd6d7a9f45da77774c48a37eefa088204894e11. Two local HUD archives checked do not supply a matching native288tray source (R5empty rails88–101high; 3Dpacket has action objects but no tray mesh). Current144source height and115render reference must not be conflated; preserve original proportions and measured centers. No interpolation enlargement, palette redesign or new double border is an acceptable substitute for the original high-resolution/model source. Native288output is NOT delivered.
+
+Next authoring gate: obtain the existing tray's actual higher-resolution/model source from the owning pipeline, then export the same basis sharply. Continue only source-faithful art; do not generate another speculative tray design. Existing six skin directions and R5base delivery remain candidates under their previously recorded decisions; this correction is specific to the unwanted tray draft and content architecture. Next integration gate: one actual object Hero-Shot reused unchanged across six skins in the existing well, with no extra frame and actual readability/state proof.
+
+## PREVIOUS R5 ADDENDUM · shared base first / receiving §2c · 2026-11-04
 
 User relayed WS0's “HUD-Chat: Bogen 2 (Aktions-Glyphen) – verbindliche Zellenfolge und Basis-Satz”. Verified against CURRENT receiving HUD_SKIN_SPEC.md §2c (blob18ea7842190378daf4e09fc7a1dd4fd870e0d3fa), cut-glyphs.py (451cbac818f0228ed8982dd41715bc48df0cc45f), glyphs.js (ccfc579bbf5d7d07809788e89ef62cf0c82de774), actionSize.js (8c1c7f995319e65763a0f63a0287ea9c9e5d61ed) and hud-glyphs.r1.json (1348b4950d6876c81974839b546612fa90650f73). This addendum supersedes the earlier “future shared set / sizing proposal” status and the requirement that every future skin must repaint all12roles. The actual Hub note itself was not recovered; its supplied title/message is corroborated by these exact receiving sources, not falsely claimed as independently read.
 
