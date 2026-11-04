@@ -1,3 +1,7 @@
+# ADDITIVE GEORG VARIATION STEERING · 2026-11-04
+
+Watch recurring slot-specific expression inheritance across families, especially top-right round mouth and bottom-right protruding tongue. This is not automatically a material/style FAIL; prioritize consistency PLUS unique silhouettes, acting and offbeat tactile claymation appeal. Plan fresh face/pose choreography and move gender/expressions across cells; do not template all rows. Use fresh independent jobs conditioned on original references, not iterative generated style parents. Current native image tool does NOT expose seed input or seed receipts: state that limitation; never claim controlled seed variation. A two-job/twelve-character experiment is two generated3x2 sheets, not twelve independent jobs or proof of causal seed effects.
+
 # ADDITIVE GEORG CAST DECISION · 2026-11-04
 
 For normal six-character Slop / Ink Monster families ALWAYS include one or two female-read characters, unless Georg explicitly chooses a different cast. Keep whole footless ink anatomy; convey gender reading subtly through expression, lids/lashes, quiff/scarf and character design, not human torsos. Source-backed sheets remain valid. New explorer/pioneer/research family uses jungle/pyramid/alien planet as prop/costume vibe only, no scenelet.

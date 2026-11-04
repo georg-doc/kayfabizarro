@@ -1,3 +1,7 @@
+# GEORG DECISION · MAFIA ALL SIX PASS · TWO-SHEET VARIATION EXPERIMENT · 2026-11-04
+
+Mafia bosses/mob queens ALL SIX GEORG DESIGN PASS. Georg observes recurrent slot-specific motifs (top-right round mouth, bottom-right tongue); non-blocking but control next runs for consistency PLUS uniqueness and offbeat claymation charm. Explicit next experiment: TWO independent new 3x2 sheet jobs, twelve Slops total: six blue-collar workers, then six weird CEOs/corporate/board chiefs. Each two female-read characters, with positions varied. Seeds not exposed or controllable in current native tool; do not claim seed randomization. Use actual originals as style inputs, no previous-generation style chain. Compare material, body, eyes, slot repetition and prop individuality across both sheets. This is two distinct families, not a controlled same-theme A/B experiment.
+
 # CURRENT CHECKPOINT · Mafia six-sheet · hitmen PASS · 2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
