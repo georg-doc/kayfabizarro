@@ -1,3 +1,7 @@
+# GEORG DECISION ·12WORKERS+6CEOS ALL PASS · OFFICE12 AUTHORIZED ·2026-11-04
+
+Georg accepts all twelve workers plus six CEOs: ALL18 DESIGN PASS. Prior accepted families unchanged, miners FAIL/TUNE unchanged. New requested product: twelve cubicle-workforce/office workers, absurd accountants/civil servants/lower-middle management, historical to digital/dystopian sci-fi. Satirical insider office humor through character/ritual, not flat labels or generic cute Pixar-style treatment. TWO independent3x2 sheets, two female-read per sheet, fresh expression distribution and original references. No CEO luxury repeat, scenelets, registry/runtime admission or seed-control claim.
+
 # CURRENT CHECKPOINT · Two worker sheets + additional CEOs · 2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
