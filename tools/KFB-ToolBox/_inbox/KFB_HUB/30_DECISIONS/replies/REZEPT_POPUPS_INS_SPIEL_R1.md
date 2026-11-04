@@ -46,6 +46,8 @@ Ein neuer Ordner mit Georgs Claymation-Bildern (ZIPs, Einzelbilder, Bögen auf G
 
    Bekanntes bleibt, wie es ist: Ein zweiter Lauf über denselben Ordner meldet `neu: 0`.
 
+   Der Schnitt nimmt Reste des Nachbarstücks am Rand weg (Regel `randrest`: dünn, gerade und hart abgeschnitten, oder ein Krümel). Gemalte lose Teile wie Heiligenscheine, Noten und Funken bleiben. Für schon aufgenommene Stücke gibt es `--nachschnitt` (ohne Ordner): Es schneidet die gespeicherten Bilder nach und baut die Atlanten und Kontaktbögen neu.
+
    Kommen Slop-Units dazu, baut der Lauf auch das Gegner-Roster `src/data/mobs2d/slop-roster.r1.json` neu (`scripts/assets/slop_roster.mjs`). Name und evilAbility bleiben dabei erhalten.
 5. **Prüfen.**
    - Die neuen Kontaktbögen ansehen: Schnitt sauber, kein Grund mehr sichtbar, keine Doppelten. Neu-Renderings desselben Motivs bleiben als Varianten.

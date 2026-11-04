@@ -21371,6 +21371,36 @@
    "superseded_by": [],
    "why": "Responsiv heisst gemessen in jedem Format, nicht geschaetzt in einem.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1457",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "BLOCKER",
+   "text": "GitHub lehnt Deploy-Key kfb_private_assets_deploy (SHA256:K6nEnkr1...) fuer KFB-Stunt-Car-Race ab (Permission denied publickey, seit ca. 1 h); kayfabizarro-Key geht, GitHub-Status ok -> vermutlich Deploy-Key im Repo entfernt. Georg muss ihn neu eintragen (Settings > Deploy keys, write) -> Hub q512 + Push-Nachricht. Alle Sessions lokal committen, kein Push, nichts an Zugaengen. WS-Design-Slot: Atlas aktiv (9/21 Seiten, scharf, keine Saeume), Lichtseiten-Klappen nur ausserhalb des Bildes, Paris-Kulisse ueber kfbInsert, Einzeldatei-Build wieder 292 MB (GLB 181 MB groesster Brocken), Oval = Durchblick-Loch in vault-3-Fassade nach Treffer (buildings.js, WS-Design niedrige Prioritaet). Lokale Commits WS-Design 35197f21/bb325b7c ungepusht. Verteiler-Beleg Start-WFC Boden FAIL (Schnittreste ~10 Stuecke, Motivwiederholung, Hang, Kamera) -> Randrest-Filter, Motiv einmal je Startring, Platzpruefung nur Neigung (Aufsetzen kfbInsert).",
+   "values": {},
+   "owner": "Georg · alle Sessions",
+   "check": "q512",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zugaenge sind Georgs Sache; wir committen lokal und warten.",
+   "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1458",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "GitHub-Zugang war zeitweise gedrosselt (kein Sperren; q512 Entwarnung). WS0 hat gesammelt gepusht: assets/popups-ingest-r1 @07599060 (Nachschnitt, Einmal-Regel, Neigung, fuss_v, Slop-Fusspunkt fuss_u/fuss_v), design/kfbinsert-r1 @87c82e81 (Atlas, fuss_v, Paris), design/aufprall-r3 @f6bd1ce0, fx/slop-r1 @9c3fdc61; HUD und Figuren waren aktuell. Verteiler push_private freigegeben (einmal, keine Schleife). Start-WFC R3 FAIL besser (Bodenkontakt/Anordnung PASS; Freistellungsfehler im Katalog, Kamera Saat 0/21) -> Sichtung/Neuschnitt. Flug-Slot jetzt.",
+   "values": {},
+   "owner": "alle",
+   "check": "q512",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bei Drosselung buendelt einer die Pushes; alle anderen warten.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [

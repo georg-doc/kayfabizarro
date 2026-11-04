@@ -42,4 +42,11 @@ Ergebnis: Katalog 1118 Stücke, davon 124 Varianten. Slops 396 in 31 Familien. L
   - KTX2 erst nach Georgs Ja zum Werkzeug.
 - **Slop-Atlas:** Seite 1 hat 3072 × 4032 px (336 Zellen), Seite 2 inzwischen 3072 × 768 (60 Zellen). Jede weitere Familie verlängert Seite 2, bis 4096 px Höhe; danach Seite 3. Flug liest Seiten schon getrennt. Kommt dort dieselbe 2048-px-Grenze wie bei den Pop-ups, schneide ich den Slop-Atlas in 2048er-Seiten um.
 - **Platte:** Der Ingest braucht den privaten Stand im Scratch (etwa 0,9 GB) und entpackte Zips (etwa 0,2 GB). Ich lege beides nach dem Atlas in den Papierkorb.
+- **Sichtung der Freistellung (04.11., nach Beleg Start-WFC):** 1118 Stücke gemessen (hart geschnittene Ränder, Fransen, Randrauheit), 181 Kandidaten angesehen.
+  - Randreste des Nachbarstücks: 62 Stücke nachgeschnitten (Regel `randrest`).
+  - Neu aus der Quelle geschnitten (40): Böse Meister, Bosse und Schergen, Tonwelt-Türen 2, Clay-Dioramen weltweit 3 (Raster mit Überlauf bzw. höhere Keying-Toleranz). Die weißen Säume der Bosse sind weg.
+  - Raus: TR_ABENTEUER_01 (nur ein halber Truhenrand), Liste `aus_stuecke`.
+  - Bleibt, braucht neue Quelle: Monster-Wissenschaftler (SL_FORSCHER_09–16). Der Leuchtschein um die Figuren ist im Bild fast deckend; ohne ihn werden die Figuren löchrig. Ein sauberer Bogen mit echtem Alpha würde helfen.
+  - Kein Schnittfehler: die ausgefransten Ränder an SZ_APOKALYPSE_05/08 und mehreren Mystery-Szenen sind so gemalt.
+  - Rest: TUER_SURREAL_16 (Zitronentür) berührt im Bogen die Nachbartür; der Überlauf greift deshalb nicht, der Rand bleibt gerade.
 - **Ähnlichkeitsgrenze:** Ab 0,95 gilt ein Stück als Dublette, darunter als Variante. Die Sichtung aller 58 Paare bestätigt das: unter 0,95 sind es echte Neu-Renderings, darüber gleiche Bilder.
