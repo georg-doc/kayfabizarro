@@ -21926,6 +21926,21 @@
    "superseded_by": [],
    "why": "Ein Rahmen pro Funktion; was im Rahmen liegt, braucht keinen zweiten.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1494",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "STATUS",
+   "text": "Stage-Stand 5 site/stage @0d3a67ff (Oeffnungen 130 Eingaenge, Blasen @65db6687, Slops @94bf1b20, Kamera 70) -> PR #49; Tuer im Nahring 40-120 m -> Verteiler. Stand 6 Diesel-Jetpack R2, Bodenton r2, Slops @e727c46a (Tintenspur ab 60 Grad); Stand 7 Spielstand/Laufbericht. HUD: Aktionsleiste ohne Doppelrahmen (hud-clay-r1 @7adc5dc9: eine Plakette, randlose Plaetze, Zustaende als Flaeche; HUD-Chat Auftrag 4 entfaellt, b333); Almanach q523 Georg: so lassen, Optionen spaeter, Faecher bleibt im Bild (stackStep, @cbd41618).",
+   "values": {},
+   "owner": "WS1 · WSA · Verteiler · Kartenkante · Flug",
+   "check": "q523, N-167, N-168, b333",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Faecher, der aus dem Bild faellt, zeigt nichts mehr.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
