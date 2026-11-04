@@ -20726,6 +20726,21 @@
    "superseded_by": [],
    "why": "Gegner sind eine Fraktion mit Beziehung, nicht fest gegen den Spieler.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1414",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Kartenkante @3e81b002: Fluff-Welt nach 3D-Logik (Kugel staucht, wird in Figur-Brust bzw. Wagenmitte gezogen, Zelle ploppt am Ort; heroic orange; Kritiker PASS) Hub q490. Vorhang R4c (Flimmern = Sheen auf Faltenkaemmen, gesenkt/geglaettet; ElevenLabs-Vorhangton V01_curtain_open_c, -16 LUFS, Cue intro.curtain; fuellender Silhouetten-Schatten plus gleichmaessige Verdunkelung; Kamerafahrt am Oeffnungsgrad; gleichmaessiger Zug) Hub q491; Rest: gerade Innenkanten. HUD_SKIN_SPEC.md (Master-Kit vs Signatur-Teile, 2 Sheets 2048, Umfaerbung) -> wiederverwendbarer HUD-Skin-Prompt b318.",
+   "values": {},
+   "owner": "Kartenkante · Georg",
+   "check": "q479, q484, q490, q491",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fluff fliesst in die Figur, nicht uebers Bild.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
