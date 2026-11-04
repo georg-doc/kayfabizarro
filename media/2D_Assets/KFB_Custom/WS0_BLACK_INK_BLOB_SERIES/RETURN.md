@@ -1,3 +1,7 @@
+# GEORG DECISION · INTERNATIONAL COUPLE12 ALL PASS · RESIDENT EMOTION-STATES PILOT ·2026-11-04
+
+International portrait couples BOTH SHEETS ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New requested visual experiment: TWO portrait2columns x3rows six-slot sheets, interpreted as12depictions of6resident identities, each row same identity in stateA(left fear/confusion/panic) vs stateB(right rage/offended aggression). Counts explicit:6identities x2states=12depictions, not12identities/24images. Same outfits/personal props connect flexible/deformed ink bodies; no strict pixel-identical requirement. Everyday pajamas/robes/domestic-neighbor satire, no destroyed-building scene. Equal cell sizes/visual scale, no overlaps. Runtime destroyed-building reactions remain design intent/proposal, no gameplay implementation or forced hostility assignment.
+
 # CURRENT CHECKPOINT · International couple12 · original pilot PASS ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · issue466.
