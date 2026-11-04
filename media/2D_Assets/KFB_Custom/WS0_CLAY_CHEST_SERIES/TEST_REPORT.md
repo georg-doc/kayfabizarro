@@ -35,7 +35,7 @@ Keine Aussage über die *nicht* in diesen acht ZIPs enthaltenen frühen Bereiche
 
 ## Source-isolated style donor proof (nur Session-Artefakt)
 
-- **12 einzelne** 512×512-RGBA-Che sts aus verschiedenen **Georg-PASS-Reihen** isoliert und zu einem separaten Referenzpaket gepackt: ein Ur-Mimic, Trash-TV, Trash-Entchen, zwei Nature-Varianten, zwei Buch/Comic-Varianten, zwei Broadcast-Varianten, ein Robot-Brain, Zen und Herz.
+- **12 einzelne** 512×512-RGBA-Chests aus verschiedenen **Georg-PASS-Reihen** isoliert und zu einem separaten Referenzpaket gepackt: ein Ur-Mimic, Trash-TV, Trash-Entchen, zwei Nature-Varianten, zwei Buch/Comic-Varianten, zwei Broadcast-Varianten, ein Robot-Brain, Zen und Herz.
 - **12/12** Donor PNGs werden als RGBA gespeichert, alle mit transparentem Außeneck.
 - Kontaktbogen **4×3 ist ausschließlich ein isoliertes Donor-Vergleichsblatt**, **nicht** das 3×2-Produktionssheet.
 - Die visuellen Proofs `VISUAL_QA_DARK.jpg` und `QA_AT_96_PX_DARK.jpg` wurden im aktuellen Chat geöffnet; Augen, Lid und Kistenkörper sind in diesem Sample bei 96px insgesamt erkennbar, teils sehr kleine Zusatzdetails erwartbar verloren. Eine neue externe Kritik wurde **nicht** durchgeführt.
