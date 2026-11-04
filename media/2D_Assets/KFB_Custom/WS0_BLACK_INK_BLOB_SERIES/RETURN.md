@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · Office workforce12 · worker/CEO PASS ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469.
+
+-12workers+6CEOs ALL18 GEORG DESIGN PASS recorded. Prior accepted families retained; miners FAIL/TUNE unchanged. One or two female-read per normal six-family remains standing rule.
+-Office workforce: TWO new independent original-reference-conditioned1536x1024 transparent3x2 sheets =12pictured characters, analog/bureaucratic + digital/dystopian. Lower/middle management and clerical types, no CEO-luxury or scenelets. Two female-read each (analog1/5, digital3/4). BOTH DRAFT awaiting Georg.
+-Analog SHA256123921284e89a643da0da7211dbbf6f17afb92fc9f7cf68f4f2291509f0c6d4a; digital SHA256a4baad6907685ca18e60f55e608fd379271d49b7233450fc2d7d0dba5aba6c74. Both RGBA alpha0..254,542470/557284fully transparent pixels, five background samples0 on each. Correct alpha composite and12-at96px comparison inspected locally.
+-Exact args/receipts/QA/review persisted in OFFICE_WORKFORCE_12_2026-11-04. Heavy lids/curls/brass optics remain family motifs, large padlock reused; no complete-uniqueness claim or controlled seeds. No generated-image style chain.
+-No extracted sprites, registration/runtime tests, new owners, Stage/Site/Live/merge.
+
+## One next gate
+Georg design verdict on both office sheets.
+
+## Historical Return
+
 # GEORG DECISION ·12WORKERS+6CEOS ALL PASS · OFFICE12 AUTHORIZED ·2026-11-04
 
 Georg accepts all twelve workers plus six CEOs: ALL18 DESIGN PASS. Prior accepted families unchanged, miners FAIL/TUNE unchanged. New requested product: twelve cubicle-workforce/office workers, absurd accountants/civil servants/lower-middle management, historical to digital/dystopian sci-fi. Satirical insider office humor through character/ritual, not flat labels or generic cute Pixar-style treatment. TWO independent3x2 sheets, two female-read per sheet, fresh expression distribution and original references. No CEO luxury repeat, scenelets, registry/runtime admission or seed-control claim.
