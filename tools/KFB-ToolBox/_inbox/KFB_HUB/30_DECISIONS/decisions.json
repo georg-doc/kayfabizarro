@@ -20456,6 +20456,21 @@
    "superseded_by": [],
    "why": "Gemalte Bilder fuer Effekte, die sich physikalisch nicht als Material lesen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1396",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Georg 04.11. (q479): 2D/3D-Mix bei den Fluff-Kugeln vermeiden. Regel: HUD = 2D-PNGs (Georgs Claymation-Sprites); 3D-Welt = 3D im Licht-Rig mit kfb-clay (instanzierte Klumpen in Georgs Farben, Spritzer als GPU-Partikel aus kfbTropfen nach dem Vorbild der Splash-Bilder); Flug ins HUD mit Uebergabe 3D->Sprite im Bildschirmraum. Pop-ups bleiben bewusst 2D-Einfuegen-Ebene. Umbau Kartenkante nach dem Vorhang.",
+   "values": {},
+   "owner": "Kartenkante · Georg",
+   "check": "q479",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Bildsprache je Ebene: UI zweidimensional, Welt dreidimensional.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
