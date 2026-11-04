@@ -1,0 +1,25 @@
+# WS0 Clay Chest Series · additive Changelog
+
+## 2026-11-04 · Frost & Frozen Wonders R1 · VISUAL CANDIDATE
+
+- First production exercise of the WS0 style recipe: twelve new Frost/Arctic characters, delivered as two 3×2 transparent sprite sheets and twelve individual RGBA PNGs (chat-local, not GitHub image bytes).
+- Technical export checks: 12/12 sprites 512² RGBA with transparent corners; 2/2 sheets 1536×1024 RGBA; 12/12 >=41px sprite safety margin; ZIP 16 entries / archive CRC PASS; 96px dark contact proof opened.
+- Proven limitation: two generated 6×2 contact images were **repacked**, not native two independent 3×2 generations; repeated gold right-keyhole and similar gaze remain a visual TUNE seam. New art has not received Georg PASS.
+- Candidate record: `SERIES_FROST_R1_2026-11-04.md`.
+- **One next gate:** Georg reviews Frost R1 and decides PASS / TUNE / FAIL. No archive/merge/publish automatically.
+
+
+## 2026-11-04 · Prompt/style persistence v1.0 · DOCUMENTED, not yet a plugin
+
+- **Georg decision carried forward:** the complete visible chest-family run is **visual PASS**: one initial 6er and thirteen 12er topics (14 topic runs, 162 figure concepts); no claim that all binary exports are GitHub-hosted.
+- **New canonical WS0 authoring recipe:** README.md with single-entry fresh-chat prompt; PROMPT_SYSTEM.md with master image DNA, 12-slot gaze/lid/clasp/proportion matrix, separate 6er image prompts, negative and cross-asset extensions.
+- **Provenance preserved without inventing a generation seed:** SERIES_PROVENANCE.md contains the user’s original brief verbatim, four actual visible historical image-generation prompt texts, accepted category ledger and flags for non-archived source files.
+- **Maschinenlesbares Rezept:** `SERIES_RECIPE.template.json` definiert Style-Invarianten, 12 Slots mit Gaze/Lid/Closure-Vorgaben, zwei Bildprompts, Exportformat und noch ungeprüfte QA-Gates.
+- **Production export contract:** EXPORT_QA.md describes two 3×2 sheets, twelve 512px sprites, real-alpha verification, visual 96px QA, schema/packaging, retry/re-render behavior.
+- **Independent local smoke evidence:** 8 locally available ZIPs / 112 PNG entries; 112/112 RGBA, 112/112 valid alpha/extents, 96/96 512px individuals, 16/16 1536×1024 sheets; no builder/browser runtime test. See TEST_REPORT.md.
+- **Isolated source examples:** session-only donor pack (12 PNGs, separate comparison/96px proofs, SHA256 manifest). **Not uploaded into GitHub or Asset Librarian** by this slice; future Source Archive gate remains.
+- **Protected owners:** WS0 authoring, existing Asset Librarian and game owners unchanged. No new plugin runtime, Stage route, Hub card, UI, source asset replacement or auto-merge.
+
+### Next gate
+
+One future sample 12er chest family uses this exact doc recipe, checks variable gazes/clasps/proportions + alpha + 96px, then **Georg PASS/TUNE/FAIL**. Only after source files are imported and verified may a visual source-archived claim be made.
