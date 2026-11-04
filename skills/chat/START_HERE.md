@@ -1,3 +1,7 @@
+## CURRENT ADDITIVE AUTHORING ROUTE · 2026-11-04 · MODULAR CLAY HUD SKIN KIT R1
+WS0 / KFB ToolBox cross-game visual authoring contract now exists under docs/hud-kit/ on review branch design/kfb-clay-hud-skin-kit-r1-2026-11-04. Read docs/hud-kit/README.md then HUD_SKIN_SPEC.md and WS0_IMAGE_JOBS.md. Only thematic signature PNGs are generated; neutral panels/buttons/toggles/tiles are existing code primitives. Existing Race/World/Travel/Audio HUD state owners and Race hud_r1 occupancy remain unchanged. The 2048px two-sheet guide, 3/9-slice fixed-corner/protected-decoration rule, asset coverage and 7/7 local RGBA-geometry validator fixtures are authoring evidence, NOT a deployed game HUD. Actual approved reference PNG binaries remain outside GitHub and require source pinning; see LOCAL_SOURCE_HASHES.csv. No Cloudflare, Site, merge, Live or human final acceptance claim. One next gate: pin a true accepted visual donor and prove a real Sheet 1 2048px output before generating Sheet 2.
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
