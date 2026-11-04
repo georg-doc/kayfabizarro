@@ -1,3 +1,19 @@
+# Current WSA Return · 2026-11-05
+
+Owner WSA · georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · draft PR469.
+
+Latest implementation checkpoint: dcd03d3b4d9d0a9902efc41e4ee0eff43736802a. Leisure/clubs12 explicitly Georg PASS at da2487b317f17253eeac2857bee068d3e59b5388. Source inventory:32PASS sheets/192depictions;30sheets/180depictions eligible for receiving intake. International Couples remain excluded; Miners FAIL/TUNE excluded. This source count overlaps the game roster and must not be added to its609types.
+
+New RPG tier-triplet pilot: one native generation plus one layout edit, R1 retained/R2 candidate,2identities×3stages=6depictions. Manifest DRAFT pending Georg, intakefalse. Cards/names/field notes/stat proposals DESIGN. Eleven exact text readbacks and two byte-identical PNG readbacks completed; QA reviewed at64/96/160/192px. R2 cell seams clear of visible content. Alpha interiors peak254/255; final edge normalization remains deferred. No runtime tests, game import, Librarian publication, Stage or merge.
+
+Changed pilot folder RPG_TIER_TRIPLETS_PILOT_2026-11-04; root SET_MANIFESTS_R1.json, SLOP_TIER_TRIPLET_FORMAT_R1.md, CLUSTER_COVERAGE_REVIEW_2026-11-05.md and this Return. Current game stage contract was read at georg-doc/KFB-Stunt-Car-Race@1535d4cff060002cb082776876a129b07bd710fc. It distinguishes absurdity from stage and already defines6data tiers; this artwork only illustrates1–3. No game fields changed.
+
+One next gate: Georg's design verdict on R2 warrior/mage tier triplets. Subsequent canonical mapping/intake belongs to existing WS0/WS1/Librarian owners.
+
+---
+
+# Historical Return (superseded where it conflicts with current status above)
+
 # CURRENT RETURN · Leisure12PASS / RPG three-stage pilot next ·2026-11-04
 
 WSA → WS0/Verteiler, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, Draft PR#469. Georg acceptsALL12leisure/clubs. Index32PASS sheets/192depictions,30eligible sheets/180depictions; International Couples WS0 exclusion/discrepancy retained. Leisure implementation0d1fc748af0e29a5e2dc51a1fd5da2921b9cb11e:9exact text readbacks,2remote PNG byte matches; accepted kitchenR2also byte-matches. CardsDESIGN, historical crop QA preserved.
