@@ -21326,6 +21326,21 @@
    "superseded_by": [],
    "why": "Beiseitelegen statt loeschen, wenn lokale Dateien einem Update im Weg stehen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1454",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Einzeldatei-Build bricht mit vollem privaten Stand (popupClayCore bindet ~720 PNG eager als base64 ein, HTML > V8-Grenze). WS0: alle lokalen Belege mit KFB_SPLIT=1; WS-Design stellt popupClayCore in design/kfbinsert-r1 auf Atlas (Laufzeit-URL) + lazy Einzel-PNG-Rueckfall um und misst die Einzeldatei danach. Passt zu WS1 ein Build-Weg (Split/Site).",
+   "values": {},
+   "owner": "WS-Design · alle lokalen Sessions · WS1",
+   "check": "",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bilder gehoeren als Dateien in den Build, nicht als base64 in eine HTML.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
