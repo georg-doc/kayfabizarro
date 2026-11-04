@@ -1,0 +1,135 @@
+{
+  "jobs": 6,
+  "derived_sheets": 1,
+  "verdict": "Georg: eher fails oder TUNE; too much Pixar cliche; overcomplex dysfunctional prop concepts; incorrect implementation",
+  "assets": [
+    {
+      "id": "01-ore-assayer",
+      "sha256": "2380960fbbe8bb130acab0984d42aac18f7059a9837ce8a6e926e1197323e8ca",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        2,
+        1228,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "PILOT_PASS_THEN_SERIES_FAIL_TUNE"
+    },
+    {
+      "id": "02-tunnel-driller",
+      "sha256": "f3e27942fa78d172ae42092f28d9ea5ff8bedd0b21cff2d8da08362a21b8ad3f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1234,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "FAIL_TUNE_NOT_ADMITTED"
+    },
+    {
+      "id": "03-crystal-prospector",
+      "sha256": "50952a11167b275f671f900bde644419cc50804cbe066101599f689ecf79e814",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        20,
+        1240,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "FAIL_TUNE_NOT_ADMITTED"
+    },
+    {
+      "id": "04-gas-listener",
+      "sha256": "2de253db2b2918211b42d2e4729c7f9adbf305bbefdbb94c919df058a1ceda23",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        25,
+        1238,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "FAIL_TUNE_NOT_ADMITTED"
+    },
+    {
+      "id": "05-surveyor",
+      "sha256": "c455cfa5a51a054a231c552376a2f8d8e8ae3dd23b4ce9a095a00f114af97450",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        13,
+        1250,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "FAIL_TUNE_NOT_ADMITTED"
+    },
+    {
+      "id": "06-winch-mechanic",
+      "sha256": "6a4cc0be917b913498fe99f2252abaec9807361e06fb50565c17f2f55ca57a72",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1253,
+        1254
+      ],
+      "edge_hold": true,
+      "status": "FAIL_TUNE_NOT_ADMITTED"
+    }
+  ],
+  "admission": "NOT_REGISTERED_NOT_GAME_TESTED",
+  "derived_exports_location": "LOCAL_ONLY: deterministic contact sheet"
+}

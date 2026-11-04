@@ -1,3 +1,19 @@
+# CURRENT RETURN · Slops production · 2026-11-04
+
+Owner WS0 · repo georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04. New review branch from main after PR #467 was found merged; no auto-merge by this chat.
+
+## Latest result
+- MINERS_2026-11-04: six completed independent reference-conditioned jobs. Initial pilot PASS preserved historically. Later Georg verdict **FAIL / TUNE**, too much Pixar cliché, overcomplex dysfunctional prop concepts and incorrect implementation. Archived as evidence only; no admission. Sixth call was already running at critique and completed; no blind retry.
+- MECHANICS_DIESELPUNK_2026-11-04: one generated 3x2 six-character auto/jetpack mechanic sheet, three female-read designs planned, requested explicitly after critique. New original-reference-conditioned job; no failed image parent. Six local raw mechanical crops, not six independent jobs; derived crop/proof/contact files remain local and reproducible. GitHub archive holds all seven original generated PNGs. **DRAFT awaiting Georg**.
+- HOLD: new sheet has colored background despite transparency request. Miners have faint edge alpha reaching canvas boundary. Original bytes preserved; no false clean-alpha PASS.
+- Exact continuation/sheet arguments, receipts, SHA256, dimensions, decode/alpha audit persisted. Pilot verbatim prompt only survives in chat tool transcript. Model/seed not exposed.
+- Zero runtime tests; zero Librarian registrations; no product URLs changed. All existing owners retained.
+
+## One next gate
+Georg design decision on mechanic sheet; retain design before alpha cleanup / actual Asset Librarian admission.
+
+## Prior Return · historical
+
 # RETURN · R2 Ink Monster production recovery · 2026-11-04
 
 Owner WS0; repository georg-doc/kayfabizarro; branch docs/ws0-black-ink-blob-series-2026-11-04; existing intake issue #466. Documentation / plugin update only. Implementation checkpoint e46fd5582fa64f320acf69768ea4d3503ab2d7fe; final branch HEAD must be fetched after this closure commit. No new PR, merge, Stage, Site or Live deployment.

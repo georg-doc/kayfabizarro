@@ -1,0 +1,54 @@
+{
+  "sheet_sha256": "50186fdfc3ccf0658ee8beba2306ecd67b58697f7f7aaacf243b3394aa1a7121",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "generated_jobs": 1,
+  "characters": 6,
+  "mechanical_crops": 6,
+  "status": "DRAFT_AWAITING_GEORG",
+  "holds": [
+    "colored background despite requested transparency",
+    "raw grid crops not individually approved",
+    "no runtime tests or Librarian registration"
+  ],
+  "crops": [
+    {
+      "file": "cell-01-raw-candidate.png",
+      "sha256": "483539238b923356d51976a5d3bbd167d8b7276c81e07e9ca567a0b1b40e4e7c",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    },
+    {
+      "file": "cell-02-raw-candidate.png",
+      "sha256": "42c2ae9ff5efd05922078399e43b19ff1f9e55b1c2a111697530aca61d7a54ce",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    },
+    {
+      "file": "cell-03-raw-candidate.png",
+      "sha256": "e6a436f87c6ef20c052c0f3790b2717f049b5b5d658ba9c111b10362dd525b9b",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    },
+    {
+      "file": "cell-04-raw-candidate.png",
+      "sha256": "92f9c3741373de47b4a8476ad5d667a98f4547b94fbb3c6163c8bb191d5e791c",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    },
+    {
+      "file": "cell-05-raw-candidate.png",
+      "sha256": "1d6860ca4db7c69c088f88102b324e999c79e3dfd487195553ec18ebaebbe81b",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    },
+    {
+      "file": "cell-06-raw-candidate.png",
+      "sha256": "5beb32e1ec1b8382c99a471541059b05dff5108f7fd0072c77f6415d6e3024bf",
+      "status": "MECHANICAL_CELL_CROP_NOT_APPROVED_BACKGROUND_PRESENT"
+    }
+  ],
+  "derived_exports_location": "LOCAL_ONLY: six raw cell crops and 96px proof; reproducible from archived sheet"
+}
