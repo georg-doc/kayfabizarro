@@ -55,13 +55,16 @@
       "id": "hazard_yellow",
       "order": 1,
       "label": "Yellow Hazard (top row far left)",
-      "status": "BLOCKED_IMAGEGEN_SHEET1_FAILED_TWICE",
+      "status": "GEOMETRY_RESET_FROM_ACCEPTED_DONOR_READY__FULL_SHEET1_UNGENERATED",
       "historical_panel_status": "GEORG_PASS_9SLICE_ONLY",
-      "sheet1": "FAIL_2_ATTEMPTS",
+      "sheet1": "NO_PASS__FRESH_GENERATOR_ATTEMPT_REJECTED__SOURCE_9SLICE_GEOMETRY_PROVEN",
       "sheet2": "NOT_STARTED",
       "runtime_skin": "NOT_REGISTERED",
       "radio_source_sha256": "85b9f7c78cec51fbea1b95b82881459e3999f66100269a32b4818ba08170f80d",
-      "panel_source_sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638"
+      "panel_source_sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638",
+      "new_reference_mode": "HAZARD_APPROVED_DONOR_STYLE_PLUS_TOP_ROW_ONLY_GEOMETRY",
+      "no_other_skin_images_in_active_job": true,
+      "preserved_exact_donor_sha256": "df7783a82fbf7693aa9fdb12723a2c3f595ca1279cfd32a560a8522a62eaf638"
     },
     {
       "id": "reactor_blue",
@@ -101,5 +104,32 @@
     }
   ],
   "failure_recovery": "PRESERVED_IN_CURRENT_CHAT_ZIP_NOT_GITHUB_BINARIES",
-  "next_gate": "Produce Hazard Sheet1 only as genuine 2048x2048 RGBA with exact accepted donor in isolated fresh image job, validate, then Sheet2."
+  "next_gate": "New independent Hazard-Yellow Sheet1 job from ONLY source_hazard_panel_original_RGBA.png + top-row geometry crop. No failed job, no multicolour contact sheet, no reference lower rows. Validate 2048x2048 actual RGBA, 6 closed/open circles, 4 radio slots, left radio, layout bands, then human visual gate.",
+  "last_fresh_generation": {
+    "scope": "HAZARD_YELLOW_ONLY",
+    "result": "REJECTED_WRONG_DIMENSIONS_AND_OTHER_COLOR_VARIANTS",
+    "produced": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "c46ee85720350147a76dcee94910263f3268602202eb40b0978810ff2a5b8a74",
+    "status": "QUARANTINED_NOT_ACTIVE_DONOR"
+  },
+  "reset_source_package": {
+    "name": "KFB_Hazard_Modular_Donor_Reset_R1.zip",
+    "github_binary": false,
+    "transparent_art": "KFB_Hazard_Modular_Donor_Reset_R1/HAZARD_ONLY_9SLICE_SOURCE_ATLAS_RGBA.png",
+    "art_size": [
+      2048,
+      2048
+    ],
+    "sha256": "b32599cbf0ebcc6eabc49e3dcd628a04ebfd4b650cae4e2a9931a908dd87d05b",
+    "reconstruction": "PIXEL_IDENTICAL_9_TILES",
+    "full_sheet1_completed": false,
+    "geometry_reference": "HAZARD_GEOMETRY_ONLY_REF_TOP_ROW.png (cropped from user infographic)",
+    "accepted_source": "source_hazard_panel_original_RGBA.png",
+    "radio_candidate": "source_hazard_radio_candidate_RGBA.png (crop/hinge check still open)"
+  },
+  "previous_bad_generations_active_input": false
 }

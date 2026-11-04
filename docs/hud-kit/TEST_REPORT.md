@@ -29,3 +29,10 @@ Next gate: source-isolated first real 2048 Sheet1 with attached accepted donor a
 - Reference submitted in this turn: 1536×1024 RGBA transparent, SHA256 `3c0d25a46f4f00eefd7e68d974a93cd97535e8ded3ecc8e71dbc613fd1c8447f`.
 - Source objects were shown separately in conversation preview; no next-gen output, no game integration, no browser runtime QA. Local source/error ZIP contains 13 files and ~9.3 MB; binary not on GitHub.
 - Follow-up gate: isolated Hazard Sheet1 2048×2048 true-alpha and manual 48px silhouette + crop review; only then Sheet2 / Blue / Slime.
+
+## 2026-11-04 · latest independent generator reset and donor slicing
+- 1 independent new generator attempt rejected: file 1536×1024 RGBA with multicolor other skins and expanded demos, wrong requested one-Hazard 2048×2048 Sheet1. SHA256 `c46ee85720350147a76dcee94910263f3268602202eb40b0978810ff2a5b8a74`. Do not use as input.
+- Technical fallback FROM ACCEPTED DONOR (not image generation): 9 source tiles + 3 horizontal row tiles, pixel-identical reconstruction of original 259×400; **1/1 exact byte-for-byte pixel reconstruction PASS**.
+- Artifact `HAZARD_ONLY_9SLICE_SOURCE_ATLAS_RGBA.png`: 2048×2048, RGBA, alpha range 0..255, four corners completely transparent; only one Hazard design family. This is not a completed two-state 6-cell Fluffbar Sheet1.
+- Image generator failures are isolated from active input; new cropped geometry-only top-row image excludes colored alternative skins. Full source files not yet in GitHub; ZIP attached in producing conversation.
+- Manual review remains: candidate radio bottom crop, stripe protection at resized widths, actual 2048 WS0 Sheet1/Sheet2, game preview. No new public acceptance.
