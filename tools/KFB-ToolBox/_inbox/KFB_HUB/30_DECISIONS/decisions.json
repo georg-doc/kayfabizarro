@@ -21011,6 +21011,21 @@
    "superseded_by": [],
    "why": "Die Site muss bauen, was getestet wurde, und darf Gekauftes nie oeffentlich zeigen.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1433",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "Jetpack R1B (WSB assets/jetpack-r1 @19f70831, von WS0 gepusht): grosser Sitz je Skin (kompakt 2,0, Comic/Retro 1,45, Candy 1,35, schlank 1,2; Alien nur mit kuerzerer Glocke), neue Skins Comic/Tinte (34 Teile) und Retro-Computer (29, Gurte spaeter skinned), teile[] mit Explosionsversatz/Montage -> Hub q500. WSB-Messkorrektur: Arm/Bein-Werte (Schwanz, T-Shirt, Jetpack) ungueltig bis Neumessung. Flug fx/slop-r1 @cb14d276: Module bildparallel/einsickern -> Kartenkante/WS-Design; Treffer-Runde (ein Tod Goo, Schnipsel, Groessen, Atlas-Seite 2) wartet auf letzten Kritiker vor WS1-Freigabe. KTX-Installation und Playwright-WebKit/Firefox nur nach Georgs Ja -> Hub q501. Kartenkante Vorhang @8c4861d3 (ruht beim Laden, device.destroy, Site-Standard Ueberblendung) -> WS1 N-125 mit Vorwaermliste und Jetpack-Ein-Bild-Sprung.",
+   "values": {},
+   "owner": "WSB · Flug · Kartenkante · WS1",
+   "check": "q500, q501, N-125",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Jetpack muss von hinten lesbar sein; Werkzeuge kommen nur mit Georgs Ja.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
