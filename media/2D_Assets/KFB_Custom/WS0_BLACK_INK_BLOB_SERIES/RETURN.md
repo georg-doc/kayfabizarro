@@ -1,3 +1,18 @@
+# CURRENT CHECKPOINT · International couple12 · original pilot PASS ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · issue466.
+
+-Original portrait3couple pilot ALL SIX GEORG DESIGN PASS, first tea row borderline for standalone reuse. Standing format refinement persisted: relation through shared motifs/optional gaze, no object offering/handoff/reaching or partner-dependent body action. Rows2/3 were sweet spot. Prior accepted families retained; miners FAIL/TUNE unchanged.
+-International couple12: TWO independent new1024x1536transparent2x3portrait sheets,6couples=12actors, one pair/row, personal props centered, no handoffs observed.3female-read per sheet intentional relational cast. BOTH DRAFT awaiting Georg.
+-SheetA Alpine/Japan-Edo/Andean-inspired; sheetB Maghreb/Bengal/Mexico-inspired fantasy attire, not historical-accuracy claims or ethnic facial templates. Actual original Freche/Professions style pixels each call; no generated chain/model-seed claims. Exact args/receipts/hashes/QA/draft pair sidecar archived.
+-A SHA256658326db310bf4a8cf622bb08d494f40854e819afbd1b10e714b2793a776109e; B SHA256d59d4c5d032da9562f5844f4e3040b59548cca60b56b47a820d8f65487e04ae1. BothRGBA0..254,556701/591669alpha0pixels, five background samples0each; correct checker/12at96px proof inspected. Heavy embroidered wraps and prop occlusion recur; anatomy/individual export not accepted, no clean sprite claim.
+-No new canonical registry/runtime relationship schema. Later repair/catalogue queued, no helper or Asset Librarian Site writes, registry/runtime tests, new owners, Stage/Site/Live/merge.
+
+## One next gate
+Georg evaluates both international sheets for design, couple cohesion and standalone social reuse.
+
+## Historical Return
+
 # GEORG DECISION · COUPLE PILOT ALL SIX PASS · STANDALONE SOCIAL REUSE ·2026-11-04
 
 Portrait3couple/6actor pilot ALL GEORG DESIGN PASS. Caveat first tea pair: implied object transfer too partner-directed for standalone social reuse. Second/third row are preferred sweet spot. New standing relationship-format refinement: paired identity through motif/gaze/contrast but each actor usable independently; no offering/handoff/reaching or partner-dependent gestures. New production TWO portrait2x3sheets=6international couples/12Slops, stylized dress/accessory/historical cultural cues, still same ink species.3mixed couples/sheet,3female-read/sheet explicit relational cast. Prior accepted families retained; miners FAIL/TUNE unchanged. No new runtime/registry relations or historical-accuracy claim.
