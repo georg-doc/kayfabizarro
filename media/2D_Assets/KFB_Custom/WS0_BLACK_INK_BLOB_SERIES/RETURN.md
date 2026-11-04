@@ -1,3 +1,7 @@
+# GEORG DECISION · COUPLE PILOT ALL SIX PASS · STANDALONE SOCIAL REUSE ·2026-11-04
+
+Portrait3couple/6actor pilot ALL GEORG DESIGN PASS. Caveat first tea pair: implied object transfer too partner-directed for standalone social reuse. Second/third row are preferred sweet spot. New standing relationship-format refinement: paired identity through motif/gaze/contrast but each actor usable independently; no offering/handoff/reaching or partner-dependent gestures. New production TWO portrait2x3sheets=6international couples/12Slops, stylized dress/accessory/historical cultural cues, still same ink species.3mixed couples/sheet,3female-read/sheet explicit relational cast. Prior accepted families retained; miners FAIL/TUNE unchanged. No new runtime/registry relations or historical-accuracy claim.
+
 # CURRENT CHECKPOINT · Portrait couple-family pilot · lawkeepers PASS ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.

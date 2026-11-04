@@ -1,3 +1,7 @@
+# ADDITIVE GEORG REFINEMENT · STANDALONE COMPATIBILITY ·2026-11-04
+
+Pilot ALL SIX DESIGN PASS. First tea row is borderline because implied object handoff is too partner-directed; rows2/3 favored. Next paired actors must ALSO work alone in multiple social contexts: personal props held at own body, no offering/passing/reaching/pointing to spouse, no shared cross-cell item, no interaction pose requiring a counterpart. Couple connection via matching subtle cloth/colors/rings, light optional side-eye and complementary personality; neutral front/three-quarter body stance. No overlap or nominal cell-seam crossings. This is a visual authoring refinement, not a runtime schema. New international couple12 uses cultural/historical costume/accessory inspiration, same ink species and no ethnic facial caricature or claims of strict historical accuracy. Title/bio/pair metadata stays draft until separate acceptance.
+
 # Relationship cluster format · visual pilot ·2026-11-04
 
 Requested by Georg: retain KFB whole footless ink-monster/material/eye canon while experimenting with relationship rather than six isolated occupations. First product ONE portrait1024x1536 sheet,2columns x3rows,6actors=3married couples, pair per row. This is a pilot, not proof of a new superior production method or canonical registry schema.
