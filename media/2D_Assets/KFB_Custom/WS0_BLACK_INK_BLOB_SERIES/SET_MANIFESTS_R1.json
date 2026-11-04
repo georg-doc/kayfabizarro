@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 26,
-    "pass_depictions": 156,
+    "selected_sheets": 28,
+    "pass_depictions": 168,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 24,
-    "intake_eligible_depictions": 144,
-    "other_authoring_depictions": 36
+    "intake_eligible_sheets": 26,
+    "intake_eligible_depictions": 156,
+    "other_authoring_depictions": 48
   },
   "excluded_sources": [
     {
@@ -191,27 +191,26 @@
       "georg_status": "PASS",
       "design_status": "GEORG_DESIGN_PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_MEANING_WELLBEING_20261104",
       "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_FUTURE_PROMISES_20261104",
       "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 2,
-    "depictions": 12,
+    "sheets": 0,
+    "depictions": 0,
     "georg_pass": 0,
     "intake_eligible": 0
   }

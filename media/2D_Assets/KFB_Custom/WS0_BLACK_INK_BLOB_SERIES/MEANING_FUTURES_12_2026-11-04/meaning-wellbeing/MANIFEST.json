@@ -1,10 +1,9 @@
 {
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_MEANING_WELLBEING_20261104",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_AWAITING_GEORG",
-  "pending_status_note": "Null until actual Georg PASS/TUNE/FAIL; no automatic acceptance.",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -18,8 +17,9 @@
   "production_record": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
   "cards": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "AWAITING_GEORG_DESIGN_DECISION"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Original mask/crop and prop-detail observations retained; no repair requested."
   },
   "figuren": [
     {
@@ -44,8 +44,8 @@
       ],
       "prompt_auszug": "TOP LEFT slot1 male MINDFULNESS DIRECTOR: very broad LOW heavy rounded ink splat with three short side lobes, tiny worn moss cloth cap and short cream collar, NO religious symbols. Deep indignant FLAT mouth pulled sideways with two irregular lower teeth, one huge WHITE/red/black eye wide and other squeezed. Holds ONE enormous simple tarnished brass GONG disc at own belly by its thick rounded rim, other hand grips ONE tiny felt-headed mallet close to disc, no striking motion or floating sound symbols. Authoritarian effort at quiet, rich rounded clay brass.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -70,8 +70,8 @@
       ],
       "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ SERENITY COACH: tall leaning pear ink blob with one tall curling violet goo crest, tiny coral tied neckscarf and teal short collar, subtle lashes. Terrified wide WHITE/red/black eyes aimed DOWN, broad crooked CLENCHED tooth smile trying to be reassuring, no open O mouth/tongue. Both huge goo hands squeeze ONE giant plump red rubber stress ball into a lopsided squashed shape at own belly; big finger dents, plain unmarked ball, no smiley or text. Whole upright goo base and soft side lobes visible.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -96,8 +96,8 @@
       ],
       "prompt_auszug": "TOP RIGHT slot3 male KARMA ACCOUNTANT: extremely tall narrow bent bean ink splat, small plum soft cap and little mustard collar, thick brass pince-nez. One tired half-lidded WHITE/red/black eye and other almost closed, CLOSED smug crooked fang smile. Cradles ONE oversized rounded wooden ABACUS diagonally against own body: just THREE thick bars with a FEW large ivory/teal beads, one stubborn bead squeezed under a goo finger. Beautiful worn clay wood, no symbols/numbers/paper, apparatus simple and legible.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -123,8 +123,8 @@
       ],
       "prompt_auszug": "BOTTOM LEFT slot4 male exhausted RETREAT ORGANISER: compact nearly spherical ink splat with two small drooping crown lobes, short faded indigo scarf collar and tiny mustard cloth cap. Profoundly sagging lower lip with THREE widely spaced ivory teeth, heavy white/red/black eyes sideways, NO smile. One palm carries ONE tiny rounded copper handbell, opposite hand tenderly hugs a PAIR of absurdly oversized soft cream foam earplugs touching together as one simple prop pair. No door, room, meditation pose or lying body.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -150,8 +150,8 @@
       ],
       "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ FORTUNE CONSULTANT: broad squat asymmetric wavy ink splat, huge soft violet rolled quiff beneath little worn teal turban cap, short plum collar, single copper earring. One WHITE/red/black eye enormous and other narrowly suspicious, mouth crooked open UNDERBITE with two broad lower teeth and little fang, no O/tongue. One hand fans exactly THREE fat blank ivory cards at own chest, other cradles ONE bulbous cloudy lime-glass crystal ball on a small integral brass cup. No card writing, occult signs, glow, smoke or floating symbols, tactile rounded clay glass.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     },
@@ -177,10 +177,14 @@
       ],
       "prompt_auszug": "BOTTOM RIGHT slot6 male PURITY MERCHANT: medium tall round-triangular ink splat with thick low side lobes, tiny coral work collar and cream wrist cuff, no hat. Enormous SIDEWAYS jagged clenched teeth, one squint and other WHITE/red/black gaze focused down, fierce effort. Rubs ONE huge worn wooden scrub brush against ONE plump ivory soap block held at belly, just a tiny bead of clay suds attached to soap. No white patches on dark ink body, no water scene/suds cloud, whole footless goo body stays dominant.",
       "prompt_quelle": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": []
     }
-  ]
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04 during archive",
+    "verdict": "all12meaning/futuresPASS"
+  }
 }
