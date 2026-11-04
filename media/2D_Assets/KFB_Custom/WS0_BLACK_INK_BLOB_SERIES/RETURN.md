@@ -1,3 +1,7 @@
+# GEORG DECISION · 2026-11-04 · SIX MECHANICS DESIGN PASS
+
+Georg: “top! die 6 mechanics sind alle PASS!” All six designs accepted. Transparency hold remains; no Librarian/game admission implied. Next authorized production: ONE transparent 3x2 six-character historic sailor/naval soldier/veteran seafarer Slops sheet, including seamen/women; weird historic absurd-surreal tone. Existing originals as style references. No further miner generation.
+
 # CURRENT RETURN · Slops production · 2026-11-04
 
 Owner WS0 · repo georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04. New review branch from main after PR #467 was found merged; no auto-merge by this chat.
