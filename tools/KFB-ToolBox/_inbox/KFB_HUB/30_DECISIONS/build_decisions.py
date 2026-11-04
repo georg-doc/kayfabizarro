@@ -1432,6 +1432,7 @@ d('V-1451','04.11.2026','Look','PARKED','Knetkorn R4 FAIL (Fahrkamera ohne sicht
 d('V-1452','04.11.2026','Welt','KEEP','Pop-up-Atlas R1 (Verteiler, assets/private @cb56cc06 popup_atlas_r1/): 722 Pop-ups, nah 512 px 43 Seiten 46,5 MB, fern 256 px 13 Seiten 20,2 MB, WebP <=2048, popup_atlas.r1.json; privater Rest @dc4fb07e. popup_atlas.py ins Ingest-Rezept. WS-Design baut Atlas-Laden in kfbInsert (Seite einmal hochladen, Obergrenze/Entladen je Seite, nah/fern, Rueckfall Einzel-PNG). Ovales Fenster: zweiter Treffer = Fassade vault-3, vermutlich Fassadenloch auf Kartenflaeche -> WS-Design/WS-Himmel pruefen im naechsten Slot.','Verteiler · WS-Design','','WS0 04.11.'),
 d('V-1453','04.11.2026','Spiel','STATUS','Privater Spiegel ~/kfb-ws0/kfb-mvp/src/private ff da990fe -> cb56cc06 (Atlas); 230 ungetrackte, bytegleiche Dateien beiseite nach ~/kfb-ws0/_private_untracked_vor_ff_cb56cc06 (104 MB, nicht geloescht). Flug fx/slop-r1 @356317b4: Slop R9 6/10 (zackige Zellen, keine Fugen; offen Risswachstum, gestaffeltes Loesen, Tropfen-Ringe), Eskalation R2 6/10 (Anmarsch, Sprechzeile, Bingo; offen Auswahl ueber Blase, Anmarsch 13 s, K1/K2 klein) -> Clips an q503/q504 nachgetragen, naechste Code-Runde. Verteiler Atlas im Ingest @6ec1a788 (bytegleich), popup_spiel bei jedem Lauf. Slots: Kartenkante -> Verteiler -> WS-Design -> Flug.','Flug · Verteiler · WS-Design · Kartenkante','q503, q504','WS0 04.11.'),
 d('V-1454','04.11.2026','Spiel','DECISION','Einzeldatei-Build bricht mit vollem privaten Stand (popupClayCore bindet ~720 PNG eager als base64 ein, HTML > V8-Grenze). WS0: alle lokalen Belege mit KFB_SPLIT=1; WS-Design stellt popupClayCore in design/kfbinsert-r1 auf Atlas (Laufzeit-URL) + lazy Einzel-PNG-Rueckfall um und misst die Einzeldatei danach. Passt zu WS1 ein Build-Weg (Split/Site).','WS-Design · alle lokalen Sessions · WS1','','WS0 04.11.'),
+d('V-1455','04.11.2026','Spiel','STATUS','WS1 Q-070: Testfahrt-Server Heimnetz @fd87a613 bereit (subtleShim fuer http ohne crypto.subtle), Vorgabe und Alle-Schalter-Adresse 0 Seitenfehler -> Hub-Briefing b323 fuer Georg. N-136 an WS1: choiceLayer soll offenen Sprechblasen ausweichen; Einzeldatei-Build/Pop-up-Atlas-Umstellung (WS-Design kfbinsert-r1: virtual:kfb-popup-atlas, lazy PNG). Flug @042c4107 Code-Runde (Risse wachsen 0,25 s, 7x8 Zellen, gestaffelt, Tropfen dunkel; Streife von rechts 6 s; KONTROLLE_NAH).','WS1 · WS-Design · Flug','b323, N-136, Q-070','WS0 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2851,6 +2852,7 @@ WHY = {
  'V-1452':('Fuer die Site zaehlen Seiten, nicht hunderte Einzelbilder.','04.11.2026'),
  'V-1453':('Beiseitelegen statt loeschen, wenn lokale Dateien einem Update im Weg stehen.','04.11.2026'),
  'V-1454':('Bilder gehoeren als Dateien in den Build, nicht als base64 in eine HTML.','04.11.2026'),
+ 'V-1455':('Georg bekommt eine Adresse zum Ausprobieren, nicht nur Clips.','04.11.2026'),
 }
 SUP = {}
 for e in E:
