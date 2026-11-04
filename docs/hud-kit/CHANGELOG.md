@@ -34,3 +34,7 @@
 
 ## 2026-11-04 · WSA fixed HUD lane / Retro pilot
 Added sibling SOP media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/SOP_CLAY_HUD_R1.md. User's Retro-first order controls new production. Two native1254 RGBA jobs fail2048/border gate; quarantined without upscale. Return records hashes and pending coverage. Dropbox upload COMPLETED: /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_Pilot_R1_2026-11-04.zip, file id id:KeQLaY5-IIAAAAAAAA7dow,3895525bytes. No runtime or publication changes. Next: compliant native2048 Retro pilot; no further blind same-strategy jobs.
+
+
+## 2026-11-04 · WS0 Sheet1 pair R3
+SOP R3 adopts runtime §2a: two1536x1024 native-source sheets, body>=9:1 excluding motif, bound soft edge<=3px. Retro delivered in verified Dropbox MixedBag_HUD_Retro_Pair_R3_1536_2026-11-04.zip: image-grid warnings[],body10.5:1,radio900px,edge<=2.24px,no upscale/recolor/feather. Unmodified current cutter exits1 because first6bright candidates include dish/grille; actual6cell row passes plausibility. Exact evidence RETRO_PAIR_R3_RETURN.json and current Return. No game/Hub/publication write. Next gate Kartenkante detector correction/rerun; remaining skins and Sheets2/3 pending.
