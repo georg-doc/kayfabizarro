@@ -1,6 +1,20 @@
-# KFB Clay HUD Production SOP · R6 · 2026-11-04
+# KFB Clay HUD Production SOP · R7 · 2026-11-04
 
-## CURRENT GEORG CORRECTION R6 · shared object Hero-Shots / no added frames / no new skin · 2026-11-04
+## CURRENT R7 · productive288source-conditioned master candidates · 2026-11-04
+
+Georg authorized productive continuation after R6. The rejected brown/beige tray remains excluded. A FRESH native image job used ONLY the actual existing graphite-gray bar_4.png as the visual donor. No larger original was recovered: this is explicitly a SOURCE-CONDITIONED NATIVE RE-RENDER CANDIDATE, not pixel-identical original art or an accepted seventh skin.
+
+- New source2172×724RGBA; isolated tray2090×610. Existing gray palette/construction retained as the donor direction. No invented symbols, extra frame,pillow,plaque,hardware or skin decoration. No scripted enlargement of144pxsource pixels.
+- Eight standalone neutral bar_1…bar_8 PNGs, each288high; widths274/500/724/948/1172/1396/1620/1844 (old receiving widths×2). Downsampled native patches protect176pxwell floors and fit plain carrier regions; cap/cell repetition produces the size family. No feather/blur joins. This is one native source assembled into eight sizes, not eight generated originals.
+- Independent image-component measurement detects36cavities across8trays, exactly npertray. Mitten for n>=2:x137+224i,y142;1er:x136,y142,1nativepx from old-center target137, openly recorded. Contour soft edge<=3px; outside alpha0. Actual centers/bounds, segment transforms, source hashes and original comparison in MASTER_MANIFEST.json.
+- Existing unmodified hudskin.py/recolor and skins.r2.json produce48lossless tinted WebPs for the SAME six runtime IDs. Alpha masks remain byte-identical. Neutral gray is an asset source, not a new runtime skin. Do not recolor the item foreground.
+- SAME_CONTENT_SIX_SKINS.jpg is a local composition proof: one identical existing rocket-launcher PNG in Primary, existing role glyphs in Secondary/Movement, empty Context. It is NOT a game screenshot. The PNG's actual3Dmodel provenance was not independently verified, so it is a shared-content layout fixture, not a completed Hero-Shot pipeline.
+- Existing actionSize.js locally permits requested Large1.25with288source height;144source capped at1.016949at70.8referencepx,DPR2. Auto behavior unchanged. This is source-code/asset proof only, not an installed UI change. No slot-group positions/reflow/new settings.
+- Receiving use stays current: neutral sources for src/assets/hud_v6/ui/bar_n.png, colored sk_<skin>_ui_bar_n.webp in existing hudkit. This chat stages files only; receiving owner integrates and proves normal/large, 1er optical alignment, controls/states and source-identity Hero-Shot use in game.
+
+This supersedes ONLY the missing288asset output status in R6. R6's no-added-frame/no-new-skin and single-neutral-object-Hero-Shot requirements remain binding. Source likeness and actual HUD assembly remain candidate acceptance, never inferred from automated counters. Preserve R4/R5 artifacts and unresolved Sheet1detector seams. Next gate: Kartenkante consumes the measured candidates in the existing owner and returns actual game/readability evidence; Georg is not asked for another speculative file/design decision in this authoring step.
+
+## PREVIOUS GEORG CORRECTION R6 · shared object Hero-Shots / no added frames / no new skin · 2026-11-04
 
 Georg clarified the conceptual boundary: collected props, weapons, gear and power-ups must use their actual3DHero-Shot icons.400+objects do NOT require400+new drawings for every skin. He explicitly rejected unnecessary frames and identified the fresh brown/beige tray draft as an unrequested new skin. That draft is REJECTED/QUARANTINED, not a new Master or seventh skin. Its raw source SHA256 is51b65d3152fdc13c4f7f8c613bd71ff2f72e9c6087de3adc5b3db14e0a14fe4f; no runtime/catalog/skin registration or Dropbox delivery occurred.
 
