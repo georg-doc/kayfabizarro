@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "metadata consistency; no new visual/runtime/library test",
+  "checks": {
+    "manifests": 20,
+    "card_drafts": 120,
+    "unique_depiction_ids": 120,
+    "canonical_id_cell_matches": 108,
+    "resident_identities": 6,
+    "state_depictions": 12,
+    "source_png_hashes": 20,
+    "writer_scope_unique_ids": 531,
+    "writer_scope_new_card_drafts": 30,
+    "writer_scope_remaining": 501
+  },
+  "not_run": [
+    "receiving importer overlay integration",
+    "runtime",
+    "Librarian catalog refresh",
+    "new per-actor visual QA",
+    "531 completed biographies"
+  ],
+  "image_changes": 0,
+  "runtime_changes": 0,
+  "retired_slops": 0,
+  "github_readback": {
+    "implementation_head": "48ed006895e9fd1fb393eb7f5a14f4928d49373b",
+    "branch_ref_verified": true,
+    "exact_file_content_matches": 46,
+    "note": "PR metadata briefly lagged ref update; direct branch ref and subsequent PR read both matched; no retry write."
+  }
+}

@@ -1,3 +1,19 @@
+# CURRENT RETURN · Golden Slop metadata / Resident PASS · 2026-11-04
+
+Owner WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro · branch `assets/ws0-ink-miners-2026-11-04` · Draft PR [#469](https://github.com/georg-doc/kayfabizarro/pull/469) · coordination issue #466. Implementation checkpoint `48ed006895e9fd1fb393eb7f5a14f4928d49373b`: branch ref and 46/46 exact intended-file readbacks verified. Final evidence/Return head is returned after publication.
+
+Georg's latest PASS covers both resident-state sheets: six identities, twelve depictions. All selected source sets now have indexed `kfb.slop-set/1` manifests and individual DESIGN card drafts: 20 sheets / 120 depictions, 108 receiving IDs + twelve authoring state IDs. Changed files: SETS/*/{MANIFEST.json,SLOP_CARDS_DESIGN.json}, SET_MANIFESTS_R1.json, WS0_GOLDEN_SLOP_AUTHORING_CONTRACT_2026-11-04.md, WRITERS_ROOM_531/INTAKE.json, METADATA_VALIDATION_2026-11-04.json, resident QA/mapping and this Return. Source image files and prompts preserved.
+
+Validation: 20 selected PNG hashes, 108 canonical source-cell mappings, 120 unique depiction IDs/cards, six resident identity links, 531 unique original writer-task IDs. Thirty of that 531 have new source-backed card drafts here; 501 remain queued for individual source review/writing. No fabricated completion claim for the Writer's Room. Text/voice/rufe suggestions DESIGN; existing verified Triplet-ID assignment still empty. No combat/HP/rarity/atlas/runtime modifications, new image generation, per-actor repair or retirement.
+
+Current receiving snapshot is 609 actors @4fd30cf3eab57db75ff80794e7da97ecce1618a1, while writer scope pins531 @f9c0ff16343f6cc4a38f98ec6de8101bd40dbec7. International Couples already appear there despite the forwarded WS0 exclusion: manifest preserves PASS but marks current intake exclusion. No existing imports removed. Miners FAIL/TUNE remain excluded. Approved legacy casting retained; future normal six-set exactly two female-read actors.
+
+Actual receiving importer support for this new manifest/card overlay, game refresh and Librarian display are **not tested here**. No Stage/Site required. No merge/Live.
+
+One next gate: WS0/Verteiler verifies indexed manifest/card overlay on its existing importer and resolves the International Couples intake discrepancy, returning the real catalog revision. Writer's Room remaining501 stays a separate ongoing authoring queue, not a human approval block for design-PASS sets.
+
+## Historical Return (superseded statuses retained as history)
+
 # CURRENT CHECKPOINT · Resident A/B states · international couple12 PASS ·2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · issue466.
