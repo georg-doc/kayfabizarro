@@ -1,0 +1,11 @@
+# WSA AFK cluster batch · 2026-11-04
+
+Owner WSA → WS0. Repo georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, Draft PR #469. Georg authorized bounded orchestrated cluster production during about one hour AFK. Scope:24 NEW actors, four fresh six-cell landscape sheets, two health/care/self-measurement sheets and two everyday/services sheets. The other discussed clusters remain unproduced. Auto is execution authorization, never a human image verdict.
+
+Completed:4/4 independent native imagegen calls, each using exact original reference PNGs, sequential with progressive visual/alpha inspection. No retries, UNKNOWN outcomes, external provider, model/seed claims or generated-image style chain. Original reference hashes checked6/6; actual selected inputs freche-family and professions-props. Each sheet has six unique actors and exactly two female-read casting slots; upright camera-facing whole footless ink design, white/ivory-red-black eyes. New images remain DRAFT awaiting Georg. Per-set MANIFEST.json kfb.slop-set/1, original prompt/receipt, QA and six DESIGN cards delivered. Twenty-four authoring IDs; no canonical game IDs assigned.
+
+Technical observation: colored backgrounds in raw RGB previews are alpha-transparent, not a matte failure. Some nominal512px cell seams contain visible alpha, so blind mechanical crops are NOT accepted. Additional32px spacing guidance applied to last two jobs, actual outputs recorded without guaranteed compliance claim. No regeneration loop or silent alpha cleanup. The source sheets and all original outputs are preserved for review. Individually clipped game sprites:0; runtime tests:0; Librarian registrations:0. No automatic ingest/PASS, retirement or combat-stat changes.
+
+Next gate: Georg reviews these four candidate sheets, can PASS/TUNE/FAIL per sheet or cell. Then update exact manifests; only explicitly PASS sets become intake-eligible. Receiving owner handles canonical mapping and existing pipeline. Cards and loose deck associations stay DESIGN until reviewed; do not enforce thematic card matching.
+
+Implementation checkpoint0b2d39d08162af3a01043b4e3b9ea73fd4de9ce7: branch ref verified,17/17exact text readbacks and4/4remote PNG byte matches. Final evidence/Return head is returned after publication.

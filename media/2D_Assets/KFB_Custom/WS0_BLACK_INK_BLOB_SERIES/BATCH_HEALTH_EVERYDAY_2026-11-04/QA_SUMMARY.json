@@ -1,0 +1,96 @@
+{
+  "status": "GENERATED_DRAFT_AWAITING_GEORG",
+  "jobs": 4,
+  "sheets": 4,
+  "figures": 24,
+  "georg_pass": 0,
+  "cards_design": 24,
+  "actual_source_files": [
+    {
+      "key": "care-clinical",
+      "source": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+      "sha256": "92c504462735ba939d538b002fae4e04425604c38e0318723dbbd3c644cdafd8",
+      "git_blob_sha": "7e6d108f359faee3a3ba0b8941d4e50248dba2ac",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 52,
+        "1024": 0,
+        "horizontal512": 219
+      },
+      "outer_edge_pixels": 0,
+      "mechanical_crop_safe": false
+    },
+    {
+      "key": "health-selfcare",
+      "source": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+      "sha256": "9b8cf7918cdf0d4c6ebd3a4917faf0ff3b7144a5c537588876fcbdca56d976bb",
+      "git_blob_sha": "43bf8f385bddd5f128262e46a958ef7faf61f297",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 0,
+        "1024": 762,
+        "horizontal512": 87
+      },
+      "outer_edge_pixels": 0,
+      "mechanical_crop_safe": false
+    },
+    {
+      "key": "domestic-everyday",
+      "source": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+      "sha256": "8e7a0f29d95aae21252f1c0a052c737b9c18247c0907b7ea48283abe0817376e",
+      "git_blob_sha": "fa7762c52232645327ef9eae5d611aee1f2e803f",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 0,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0,
+      "mechanical_crop_safe": true
+    },
+    {
+      "key": "services-consumption",
+      "source": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+      "sha256": "09bcb06815d2d81c83dfaab57bbd589d5f80f827294a845ded3564d1cdcab555",
+      "git_blob_sha": "6329707ddd9f75b0be16b09a56194db1d9a3c189",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 0,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0,
+      "mechanical_crop_safe": true
+    }
+  ],
+  "reference_hashes_checked": 6,
+  "alpha_decode_checks": 4,
+  "image_edits": 0,
+  "qa_views_px": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "runtime_tests": 0,
+  "individual_game_crops": 0,
+  "intake_eligible": 0,
+  "github_verification": {
+    "implementation_head": "0b2d39d08162af3a01043b4e3b9ea73fd4de9ce7",
+    "branch_ref_verified": true,
+    "exact_text_readbacks": 17,
+    "remote_png_byte_matches": 4
+  }
+}

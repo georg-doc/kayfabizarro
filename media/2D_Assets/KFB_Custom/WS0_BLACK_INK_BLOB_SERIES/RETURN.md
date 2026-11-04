@@ -1,3 +1,17 @@
+# CURRENT RETURN · AFK cluster batch24 · 2026-11-04
+
+Owner WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469. Prior Golden metadata head725ae8b4a71911341631ca9dc451966517df2b8d remains preserved. Implementation checkpoint `0b2d39d08162af3a01043b4e3b9ea73fd4de9ce7`:17/17exact text readbacks and4/4remote PNG byte matches, branch ref verified. Final evidence/Return head is returned after publication.
+
+New authorized batch:4 native source-conditioned calls,4 transparent1536x1024sheets,24 candidate actors;12 health/care/self-measurement and12 everyday/services. Each six-set exactly2female-read. All24 DRAFT awaiting Georg, none automatically PASS or intake-eligible. Twenty-four individual DESIGN cards, manifests, exact prompts/receipts and QA alongside PNGs. Indexed under candidate_sets in SET_MANIFESTS_R1.json, accepted sets unchanged.
+
+Evidence/limits:6/6original reference hashes,4/4RGBA decode/source hashes, alpha0..254, actual seam/edge tests and64/96/160/192px review views. Some nominal cells contain neighboring fragments, so mechanical512px crops unaccepted; no alpha repair performed. Source images preserved. Model and seed not exposed. No retries/UNKNOWN jobs, runtime changes/tests, canonical game IDs, library writes, retirements, merge or Live. Existing writer531 queue not advanced by this image run.
+
+Details: BATCH_HEALTH_EVERYDAY_2026-11-04/BATCH_RETURN.md and QA_SUMMARY.json. PNGs/metadata under HEALTH_CARE_12_2026-11-04/{care-clinical,health-selfcare} and EVERYDAY_SERVICES_12_2026-11-04/{domestic-everyday,services-consumption}.
+
+One next gate: Georg gives PASS/TUNE/FAIL for the four sheets or individual cells. Only actual PASS updates intake. Existing metadata-import/Couples discrepancy remains with WS0, no second owner.
+
+## Previous Return
+
 # CURRENT RETURN · Golden Slop metadata / Resident PASS · 2026-11-04
 
 Owner WSA source authoring → WS0/Verteiler. georg-doc/kayfabizarro · branch `assets/ws0-ink-miners-2026-11-04` · Draft PR [#469](https://github.com/georg-doc/kayfabizarro/pull/469) · coordination issue #466. Implementation checkpoint `48ed006895e9fd1fb393eb7f5a14f4928d49373b`: branch ref and 46/46 exact intended-file readbacks verified. Final evidence/Return head is returned after publication.
