@@ -1,3 +1,7 @@
+# GEORG DECISION · EXPLORERS ALL SIX DESIGN PASS · 2026-11-04
+
+Georg: “super! alle PASS”. Explorer/pioneer/researcher six-sheet ALL SIX DESIGN PASS. Mechanics, selected sailor R2 and pirates PASS retained. Standing cast rule: one or two female-read Slops per normal family. New authorized production: one six-character absurd surreal killer/hitman/hitwoman gang sheet, exactly two female-read slots planned. No runtime or Librarian admission implied.
+
 # CURRENT CHECKPOINT · Explorer six-sheet · pirates PASS · 2026-11-04
 
 Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR #469.
