@@ -20906,6 +20906,21 @@
    "superseded_by": [],
    "why": "Jedes 2D-Teil schaut zur Kamera; jedes lose Teil rollt und sickert ein; jeder Treffer hat eine Ursache.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1426",
+   "date": "04.11.2026",
+   "area": "Look",
+   "verdict": "TUNE",
+   "text": "Georg 04.11.: Kontakt-AO an Baeumen/Steinen/Umgebungs-Props fehlt in der Demo-Fahrt -> WS-Himmel: deutlicher AO-artiger Kontaktschatten an der Basis (KayKit-Art) zusaetzlich zum Wurfschatten, im Material/Bodenfleck, keine Artefakte am Uebergang Krone-Stamm (V-964), Verteiler-Hooks. Studie GOLDEN_SAMPLES_2D_R1 (WS-Himmel): Georgs 2D-Claymation-Boegen = Benchmark der Designlinie; Materialcodes, Licht, Modularitaet, 2D->3D-Bruecken nach Etherington-Regeln. Bildauftrag Cartoon-Muster mit unregelmaessigen Zellen als Decals (b320). Backlog/out of scope: 3D-Cartoon-Augen mit Clay-Lidern/Brauen fuer Truhen und Slops. Fokus jetzt: 2D-Props sauber platziert, animiert, interaktionsbereit; 2D/3D-Brueche Farbe/Schatten; Animationen durch Cartoon-Kritiker. WS1 seit 01:52 still -> Anstoss b321.",
+   "values": {},
+   "owner": "WS-Himmel · Verteiler · WS-Design · WS1 · Georg",
+   "check": "b320, b321",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs 2D-Boegen sind der Massstab; die 3D-Welt lernt von ihnen Kontakt, Material und Licht.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
