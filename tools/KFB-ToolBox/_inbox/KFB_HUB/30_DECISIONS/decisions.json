@@ -20891,6 +20891,21 @@
    "superseded_by": [],
    "why": "Georgs Sheets werden direkt Vorlage: 3D an WSB, 2D in den Katalog; Doku-Abgleiche gehen nicht an WS1.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1425",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "q495 TUNE: REGEL alle 2D-Teile in der Welt (Slops, Pop-ups, Pickups, Gegner) dynamisch und weich zur Kamera, ein gemeinsames Modul bildparallel (Flug) fuer kfbInsert (WS-Design); Ausnahmen KFB-Karten und flach Liegendes. Slop-Groessen nur leicht variieren (ca. +-10 %, Boss etwas groesser). Treffer: lesbare Explosion aus der Blob-Mitte, dann Goo; kleine Tusche-/Papierschnipsel als GPU-Partikel, Goo-Tropfen kleiner. Fluff-Kugeln rollen hangab und versinken, gemeinsames Modul einsickern (Flug -> Kartenkante). Tueren R5b design/tueren-r3 @66691d1d -> Hub q496; Probe-Merge portalZiel auf fx/slop-r1 @638bfd8c. MixedBag-08-Jetpacks bei WSB nach T-Shirt.",
+   "values": {},
+   "owner": "Rakete/Flug · WS-Design · Kartenkante · WSB",
+   "check": "q495, q496",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jedes 2D-Teil schaut zur Kamera; jedes lose Teil rollt und sickert ein; jeder Treffer hat eine Ursache.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
