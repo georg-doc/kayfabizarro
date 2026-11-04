@@ -20921,6 +20921,21 @@
    "superseded_by": [],
    "why": "Georgs 2D-Boegen sind der Massstab; die 3D-Welt lernt von ihnen Kontakt, Material und Licht.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1427",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "KEEP",
+   "text": "HUD R2 merge-fertig (Kartenkante module/hud-clay-r1 @c9e23d29, assets/private @df51495d, Probe-Merge sauber; Vorhang geschlossen + Swoosh; Fluff nur Sauger) -> WS1 N-118. WS1 Q-065: N-109 bis N-117 lokal eingebaut (Augen R2, Testfahrt-Vorgabe, meshopt/KTX2-Entpacker, hero.glb raus, Deck-Viewer ohne PDF, Slop-Paket, FB-Idles, Schwanz/Bauch hinter fbhase=1), Push nach Stufe B. Kamera heute bis senkrecht -> N-119: Grenze hinter kamera=r2 (zu Fuss ca. 40 Grad, Wagen ca. 35 Grad nach unten, Flug unveraendert, Default aus bis Georg). Offen: Kartenpakete fuer mehr Decks (Deck-Paket), Saugarm-Modell (Cyber-Arm V-479) und Sammelwerkzeug Wagen -> WSB-Job spaeter; Steampunk-Reiter-Kontrast im Feintuning.",
+   "values": {},
+   "owner": "Kartenkante · WS1 · WSB",
+   "check": "N-118, N-119, Q-065",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bildparallele Figuren brauchen eine begrenzte Kamera-Neigung; beides zusammen ist die Loesung.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
