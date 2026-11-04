@@ -2,6 +2,16 @@
 Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 
+## 0 · Stand 05.11. früh (Register bis V-1502) – nach Neustart zuerst lesen
+- **Browser-Slot (ein Browser auf Georgs Mac):** jetzt WS-Design (Fassade nach Georg-FAIL q527/V-1500, @631c9554, drei Häuser gegen H15, Risse/Schramme/Aufkleber/Bresche zensur=1). Danach Kartenkante (sechs Skins × drei Größen, @9333eca9, Belege max. 4×2 in den Hub, Matrix ins Repo; keine 600-MB-Kopie, Weg = Stage über WS1, Skin-Schalter `hudskin=`).
+- **Hub offen:** q528 Aktionsleiste (Leiste skinbar, flache Scheiben, 3D-Hero-Icons N32 r2, V-1498/1502). Beantwortet heute: q525 PASS Slops sammeln (V-1496), q526 TUNE → V-1498, q527 FAIL → V-1500.
+- **Neue Regeln:** V-1498 Aktionsleiste (nur HUD-Elemente skinbar, 3D-Icons nie); V-1500 Fassade = lesbare, nicht repetitive Engine-Ebenen (Shot-Ring K=12, REDACT max. 1 Feld/Haus, Vorfüllen hinter dem Ladebildschirm `fassadeVorfuellen`).
+- **Slops sammeln:** SSOT replies/SLOP_SAMMELN_STUFEN_R1.md; Verteiler-Daten @1535d4cf (absurd, stufe 1–6, wanted, slop-sammeln.r1.json, Fenster je Stufe, min_ohne normie). Writer's-Room-Nachtrag b334 im Hub (Georg leitet weiter). Spawn (Flug), Almanach-Blatt (Kartenkante), MiB-Plakate (WS-Design) erst nach Testlauf 5.
+- **Ladebildschirm (V-1501):** WSV = Art Direction; Recherche, ein Konzept, Storyboard, Timing 10–30 s, Animatic aus theater_kit_r1 (assets/private @793ac09e, 21 Teile), Fehlteil-Liste für EINEN Bildlauf Georgs; Bau erst nach Georgs Ja (Kartenkante). WSV: keine großen Downloads mehr (Vertov, Prelinger) bis Platte geklärt.
+- **WS1:** Stand 6 @09ac1212, Stand 7 @767fe8a1 (Spielstand) auf site/stage, an WSA PR #49 gepostet (Smoke-Antworten fehlen für 1–7). Stand 8 = Eingänge Nahring @861ed630 + Tintenspur; start=wfc im Release. Letzte Nachrichten: N-169 / Q-081.
+- **Heads:** assets/popups-ingest-r1 @0795305c, module/hud-clay-r1 @e7865b33 (lokal 9333eca9), design/aufprall-r3 @631c9554, assets/private @c760aaf9.
+- **Platte:** 11 GB frei, Swap 4,8 GB (andere Apps); ≥ 9 GB halten.
+
 ## 0 · Stand 29.10. abends (Register bis V-1046) – zuerst lesen
 - **Seit 31.10. (V-1059, V-1060):** Sechs Arbeiten parallel auf eigenen Branches (spike/viertel-r1, module/card-edge-r1, design/kartengebaeude-r1, cast/alle-figuren-r1, game/flight-mib-r1, WS1-Testlink N-004); WSB Rakete, dann K10, Badewanne/Cape; WS0 merged nach So 20 Uhr; Gap-Liste Perplexity `replies/PERPLEXITY_GAP_R1.md`.
 - **Überholt durch V-1060:** Fokus bis So (V-1041): WS1-Integrationsblock hat Vorrang; keine neuen Nebenaufträge; Kleinkorrekturen genau eine Runde; Gate-Prüfer nach §1.4 (sonnet, eine Runde, nur Design/Specs/Architektur) – am 29.10. zu oft und zu breit eingesetzt.
