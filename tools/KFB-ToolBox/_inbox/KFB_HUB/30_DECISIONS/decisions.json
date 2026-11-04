@@ -21026,6 +21026,21 @@
    "superseded_by": [],
    "why": "Ein Jetpack muss von hinten lesbar sein; Werkzeuge kommen nur mit Georgs Ja.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1434",
+   "date": "04.11.2026",
+   "area": "Welt",
+   "verdict": "REVIEW",
+   "text": "Start-WFC (Verteiler assets/popups-ingest-r1 @fe5b22f4, start=wfc): Katalog-Stuecke per WFC im Ring 24-66 m um die Buehne statt Kristall-Laternen, Regeln je Klasse, Mindestzahlen, Biom-Passung -> Hub q502, WS1 N-126; WS0 entscheidet TESTFAHRT_HASH + start=wfc inkblobs=1. Katalog 937 (MB09 drin), Feld spiel, 27 Truhen nie gestellt -> Seltenheits-Boden. Atlas-Plan Pop-ups freigegeben nach Ingests. Kontakt-AO R1 (WS-Himmel world/kontakt-ao-r1 @f077ac02, kontakt=r1): in Fahrkamera zu schwach, Rest-Fleck hinter Hangstein -> zurueck, dann Hub. GOLDEN_SAMPLES_2D_R1: Kontakt = schmale harte Fuge in Tragmaterial-Farbe; Knetkorn auf Gelaende -> WS-Himmel neuer Besitzer; kfbInsert Fuge statt Scheibe, Saum weg, Lichtseite per Spiegel -> WS-Design.",
+   "values": {},
+   "owner": "Verteiler · WS-Himmel · WS-Design · WS1",
+   "check": "q502, N-126",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Start zeigt den Katalog, nicht Platzhalter; Kontakt ist eine Fuge, kein Teller.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
