@@ -1,0 +1,184 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HEALTH_SELFCARE_20261104",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_AWAITING_GEORG",
+  "pending_status_note": "Null Georg verdict is intentional: PASS/TUNE/FAIL only after actual human decision; Auto execution never implies PASS.",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+    "sha256": "9b8cf7918cdf0d4c6ebd3a4917faf0ff3b7144a5c537588876fcbdca56d976bb"
+  },
+  "production_record": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+  "cards": "HEALTH_CARE_12_2026-11-04/health-selfcare/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_DECISION"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Kontrollpuls",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "pressure gauge",
+        "rubber squeeze bulb"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 male HYPOCHONDRIAC SELF-MONITOR: squat crooked bean ink splat, faded mustard pajama collar and tiny cream sleep cap. Eyes very wide WHITE/red/black anxiously DOWN, asymmetric clenched zigzag mouth biting one lower tooth. One goo arm wears a simple soft teal pressure cuff, other hand nervously squeezes its fat red bulb; cuff linked by ONE short thick hose to oversized round brass pressure gauge held against own body. Only one coherent readable apparatus, no text/numbers.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Vitalitätsvorschuss",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sealed amber glass bottle"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ WELLNESS MERCHANT: tall elegant leaning pear ink blob, huge soft violet upper curl, short plum satin collar and one fat copper earring. Ecstatic crooked open tooth LAUGH, one eye smiling almost shut and the other gazing fondly at her prop. Both hands worshipfully cradle ONE tiny bulbous amber glass corked bottle with a large cream stopper and opaque teal clay liquid. No label, glow or magical effects.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Fallpauschale",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "long blank bill roll"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male HOSPITAL BILLING CLERK: broad low sagging ink splat, tiny moss eyeshade, worn indigo collar, round brass spectacles. Furious tight UNDERBITE, one wide eye and one squint focused down. Hugs ONE huge cream blank receipt roll unwinding into a SINGLE broad paper curl across his OWN belly, other hand holds a very small stubby pencil. No letters, coin clutter, background or paper crossing cell seam.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Dehnbar",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "exercise loop"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ PHYSIOTHERAPIST: compact round springy asymmetrical ink splat, short coral headband and tiny teal sporty collar, subtle lashes. One eye fully shut in physical effort, other WHITE/red/black wide looking right; huge SIDEWAYS toothy grin, NO tongue. Thick rounded goo arms stretch ONE wide mustard rubber exercise loop at belly level, loop pulled into a simple oval, fingers squeeze rubber visibly. Both full ink lobes stand upright.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Sollzustand",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "mechanical health gauge"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male SELF-OPTIMISATION DEVOTEE: very tall narrow ink bean with three short irregular crown lobes, tiny cream zip collar and faded orange wrist cuff. Both white eyes strained upward for approval, thin CLOSED crooked stressed smile with two sparse fangs. Cradles a single large bulbous copper mechanical wellbeing gauge with blank ivory dial, a big ivory winding key at side; one hand winds the key obsessively. Primitive retro-future material, no screen UI/icons.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Wartebestand",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "seat cushion",
+        "blank token"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male old WAITING-ROOM VETERAN: wide heavy asymmetric puddle that remains UPRIGHT facing camera, soft maroon knit cap and short mustard cardigan collar. Very tired half-closed eyes looking left, huge DROOPING lower lip with three widely spaced teeth, no grin. Hugs a plump faded teal round seat cushion like a life preserver, other hand pinches ONE oversized plain brass queue token. No chair/furniture, no numbers, not lying down.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/health-selfcare/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ]
+}

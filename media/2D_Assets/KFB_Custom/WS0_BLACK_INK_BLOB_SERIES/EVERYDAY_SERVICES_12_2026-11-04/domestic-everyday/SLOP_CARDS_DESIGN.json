@@ -1,0 +1,581 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+  "figuren": [
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_01",
+      "name": {
+        "v": "Herr Schlüsselgewalt",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He keeps the building in order by treating every new event as unauthorised access.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "building caretaker",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "measured low certainty with a late doubtful pause",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Schlüssel passt. Die Welt hat offenbar wieder das Schloss gewechselt.",
+        "black_white_logic": "He keeps the building in order by treating every new event as unauthorised access.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "role": "building caretaker",
+        "prompt_excerpt": "TOP LEFT slot1 male BUILDING CARETAKER: tall wide-bottom pear blob, soft moss peaked cap with plain brass roundel, tiny mustard work collar. Indignant jagged open-tooth ROAR with uneven teeth, one white eye bulging and other narrowed, no tongue. Grips ONE chunky brass key ring bearing THREE broad simple keys, one absurdly huge old iron key held upright; own goo fist barely contains ring. No doors or background."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_02",
+      "name": {
+        "v": "Frau Blattgemeinschaft",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She tolerates unpredictable growth provided it remains within her own flowerpot.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "houseplant neighbour",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "warm tired middle register, breath between clauses",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Sie lässt alles wachsen. Die Richtung muss vorher mit ihr besprochen werden.",
+        "black_white_logic": "She tolerates unpredictable growth provided it remains within her own flowerpot.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "role": "houseplant neighbour",
+        "prompt_excerpt": "TOP MIDDLE slot2 FEMALE-READ HOUSEPLANT NEIGHBOR: very low wide wavy ink splat, purple soft bun with two coral curlers and short teal housecoat collar. Loving but suspicious CLOSED sideways fang smile, one heavy lid and one raised, red gaze down. Both arms hug ONE little chunky terracotta pot containing a SINGLE tall bent fleshy green stem with three broad rounded leaves drooping protectively around the pot. No gardening scene, huge leafy clutter or text."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_03",
+      "name": {
+        "v": "Herr Empfangsbereit",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He listens carefully for proof that the interference is somebody else's fault.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "hobby radio listener",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "clipped precise upper register",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er empfängt etwas. Ob es eine Nachricht ist, hängt noch vom Absender ab.",
+        "black_white_logic": "He listens carefully for proof that the interference is somebody else's fault.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "role": "hobby radio listener",
+        "prompt_excerpt": "TOP RIGHT slot3 male HOBBY RADIO LISTENER: compact spherical ink blob with one long sideways curling crown lobe, tiny cream knitted collar and worn indigo soft cap. Enormous white eyes unevenly wide staring sideways, pinched crooked UNDERBITE with two lower teeth, no round mouth. Holds ONE fat faded coral retro portable radio tightly to own ear, brass tuning knob in free hand; short thick bent antenna wholly within cell, blank dark speaker grille, no writing/UI."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_04",
+      "name": {
+        "v": "Herr Schlafschuld",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He guards his rest with the exhausted determination of someone required to earn it twice.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "night-shift neighbour",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low sudden indignant emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Ruhezeit läuft. Er wäre gern rechtzeitig dabei gewesen.",
+        "black_white_logic": "He guards his rest with the exhausted determination of someone required to earn it twice.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "role": "night-shift neighbour",
+        "prompt_excerpt": "BOTTOM LEFT slot4 male SLEEP-DEPRIVED NIGHT-SHIFT NEIGHBOR: towering narrow slumped ink bean, faded teal pajama collar and small burgundy nightcap. Eyes almost closed with visible white/red/black slivers, profound downward FLAT pout with single broad ivory tooth, not smiling. Clutches ONE enormous rounded brass twin-bell alarm clock against own goo body like a shield, one hand covering its bells; blank ivory dial/no numerals. UPRIGHT whole ink base, no bed or lying figure."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_05",
+      "name": {
+        "v": "Frau Vereinsbestand",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She preserves community by remembering exactly what everyone owes it.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "club treasurer",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "bright rehearsed reassurance under strain",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Verein lebt. Sie hätte dazu gern noch die Belege.",
+        "black_white_logic": "She preserves community by remembering exactly what everyone owes it.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "role": "club treasurer",
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 FEMALE-READ CLUB TREASURER: medium tall rounded triangular splat, short mustard tied neckscarf, one soft violet quiff and little brass pince-nez. Tight crooked CLOSED gold-fang smile, one lazy eye down and other narrowed sideways. Cradles ONE comically tiny tarnished copper trophy cup in one giant goo hand, opposite arm hugs a fat worn indigo ledger with plain cover. Membership dignity, no symbols/letters."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_06",
+      "name": {
+        "v": "Herr Zustellglück",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He receives every parcel as evidence that the outside world has finally addressed him properly.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "parcel obsessive",
+              "biome": [],
+              "decks": [
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+                "bullshit_jobs_uncut",
+                "what_work_was_for",
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "dry slow middle register with an exhausted finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist angekommen. Was er damit anfangen wollte, war in der Sendung nicht enthalten.",
+        "black_white_logic": "He receives every parcel as evidence that the outside world has finally addressed him properly.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_DOMESTIC_EVERYDAY_20261104",
+        "image_cell": {
+          "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "role": "parcel obsessive",
+        "prompt_excerpt": "BOTTOM RIGHT slot6 male PARCEL-OBSESSED NEIGHBOR: broad compact asymmetrical ink splat with three low crown nubs, faded plum cardigan collar. ECSTATIC uneven SIDEWAYS toothy laugh, one wide eye and other delighted squint, no tongue. Both goo arms hug ONE dented cream cardboard parcel with broad rust-red string cross and one blank little tag; cheek presses possessively to box. Full goo body below box, no human torso or scene."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_AWAITING_GEORG",
+  "pending_status_note": "Null Georg verdict is intentional: PASS/TUNE/FAIL only after actual human decision; Auto execution never implies PASS.",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+    "sha256": "8e7a0f29d95aae21252f1c0a052c737b9c18247c0907b7ea48283abe0817376e"
+  },
+  "production_record": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+  "cards": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_DECISION"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schlüsselgewalt",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "key ring"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 male BUILDING CARETAKER: tall wide-bottom pear blob, soft moss peaked cap with plain brass roundel, tiny mustard work collar. Indignant jagged open-tooth ROAR with uneven teeth, one white eye bulging and other narrowed, no tongue. Grips ONE chunky brass key ring bearing THREE broad simple keys, one absurdly huge old iron key held upright; own goo fist barely contains ring. No doors or background.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Blattgemeinschaft",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "single potted plant"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ HOUSEPLANT NEIGHBOR: very low wide wavy ink splat, purple soft bun with two coral curlers and short teal housecoat collar. Loving but suspicious CLOSED sideways fang smile, one heavy lid and one raised, red gaze down. Both arms hug ONE little chunky terracotta pot containing a SINGLE tall bent fleshy green stem with three broad rounded leaves drooping protectively around the pot. No gardening scene, huge leafy clutter or text.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Empfangsbereit",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rounded portable radio"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male HOBBY RADIO LISTENER: compact spherical ink blob with one long sideways curling crown lobe, tiny cream knitted collar and worn indigo soft cap. Enormous white eyes unevenly wide staring sideways, pinched crooked UNDERBITE with two lower teeth, no round mouth. Holds ONE fat faded coral retro portable radio tightly to own ear, brass tuning knob in free hand; short thick bent antenna wholly within cell, blank dark speaker grille, no writing/UI.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schlafschuld",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "alarm clock"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 male SLEEP-DEPRIVED NIGHT-SHIFT NEIGHBOR: towering narrow slumped ink bean, faded teal pajama collar and small burgundy nightcap. Eyes almost closed with visible white/red/black slivers, profound downward FLAT pout with single broad ivory tooth, not smiling. Clutches ONE enormous rounded brass twin-bell alarm clock against own goo body like a shield, one hand covering its bells; blank ivory dial/no numerals. UPRIGHT whole ink base, no bed or lying figure.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Vereinsbestand",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small trophy",
+        "ledger"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ CLUB TREASURER: medium tall rounded triangular splat, short mustard tied neckscarf, one soft violet quiff and little brass pince-nez. Tight crooked CLOSED gold-fang smile, one lazy eye down and other narrowed sideways. Cradles ONE comically tiny tarnished copper trophy cup in one giant goo hand, opposite arm hugs a fat worn indigo ledger with plain cover. Membership dignity, no symbols/letters.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DOMESTIC_EVERYDAY_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Zustellglück",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single parcel"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male PARCEL-OBSESSED NEIGHBOR: broad compact asymmetrical ink splat with three low crown nubs, faded plum cardigan collar. ECSTATIC uneven SIDEWAYS toothy laugh, one wide eye and other delighted squint, no tongue. Both goo arms hug ONE dented cream cardboard parcel with broad rust-red string cross and one blank little tag; cheek presses possessively to box. Full goo body below box, no human torso or scene.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/PRODUCTION_RECORD.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ]
+}

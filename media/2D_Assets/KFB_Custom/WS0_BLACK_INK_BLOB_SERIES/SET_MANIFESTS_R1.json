@@ -149,5 +149,41 @@
       "georg_status": "PASS",
       "intake_eligible": true
     }
-  ]
+  ],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
+  "candidate_counts": {
+    "sheets": 4,
+    "depictions": 24,
+    "georg_pass": 0,
+    "intake_eligible": 0
+  }
 }
