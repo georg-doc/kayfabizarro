@@ -1,3 +1,15 @@
+# CURRENT WSA HUD PILOT · 2026-11-04
+
+User commission supersedes earlier Hazard-first routing below: one Retro Sheet1 first; then six complete skin families and neutral master. SOP: media/2D_Assets/KFB_Custom/WS0_CLAY_HUD_SERIES/SOP_CLAY_HUD_R1.md, implementation checkpoint a45299f1295069a758fac0bbf56524153f330e28 (file and branch verified).
+
+Two original-reference image_gen jobs produced native1254x1254 RGBA, not2048; both fail32px clear border. 0/2 structural passes. Attempt1 SHA256 18f449362fd8a774386d0c204fb8230e68d793065217a5c9b9f6f796e5150c3a; attempt2 d869f2cee7ba17abdc10a805c0578afe67eeab1eb7966a4ce071b241e1647be1. Actual donor2172x724 SHA256 8cb414aca1907fb0fe347d2173f068f60192071be61c0b397645440a1a9da7a4; differs from old ledger donor. Actual pixels inspected and attached. No upscale or fake Retina acceptance. Attempt2 also incorrectly paints a drawer under closed header and gold hover gear. Failed outputs quarantined, not style parents.
+
+MixedBag archive: /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_Pilot_R1_2026-11-04.zip (upload status must be checked separately before claiming saved). Contains two originals, SOURCE.json, QA.json, audit.py, prompt summaries and Return. Full exact tool prompts retained in originating chat. Independent critic and runtime cutter NOT_RUN. GAME_DEV_CLI_UNAVAILABLE; direct byte/dimension/alpha/border checks used.
+
+Pending: valid Retro pilot; other five Sheet1; all Sheet2/Sheet3; neutral master. No runtime, merge, Stage/Site or Live change. One next gate: resolve native2048 image-output seam and produce compliant original-reference Retro Sheet1 before more skins. Two non-improving jobs freeze this image strategy; documentation and failure preservation completed.
+
+---
+
 # KFB Modular Clay HUD Skin Kit · RETURN R1 + skin-wave checkpoint · 2026-11-04
 Owner: existing WS0 / KFB ToolBox design-authoring lane. Receiving HUD Runtimes retain existing owners.
 Repository: georg-doc/kayfabizarro
