@@ -1397,6 +1397,7 @@ d('V-1416','04.11.2026','Spiel','PLAN','Georg 04.11.: Kontroll-Eskalation als Wa
 d('V-1417','04.11.2026','Spiel','BUILD','Slop-Roster SSOT (Verteiler assets/popups-ingest-r1 @68212806, src/data/mobs2d/slop-roster.r1.json, kfb.slop-roster/1): 312 Typen/26 Familien; trash 104 (1 Treffer), common 192 (2), elite 16 (3, Anfuehrer); Stimme nach Statur; Seltenheit nach Quartilen; name/evilAbility spaeter via Triplet-SSOT; ingest baut nach. mobs2d.js gehoert Rakete/Flug: kombinierter Head in fx/slop-r1 fuer WS1. WSB startet Blinde Kritik R2 Animation sofort (kein meshopt-Modell angefangen), liefert als Bundle.','Verteiler · Rakete/Flug · WSB','','Georg 04.11.'),
 d('V-1418','04.11.2026','Spiel','REVIEW','Slop-Goo-Tod R4 (fx/slop-r1 @e1002c68, kombiniert mit Slop-Roster): Blobs zylindrisch zur Kamera (max ~20 Grad Schwenk), Blob wird zum Goo (Aufblaehen, Absacken, Abdunkeln, Huegel waechst aus der Mitte, Krone, Pfuetze), Bildwechsel per Abstandskarte ohne Ueberblenden, Atlas vorgewaermt, Flacker-Suche ohne Fund, Huepf-Landeflecken als Goo-Perlen; Kritiker 7/10. Hub q493. Probe-Merge mit integration-r2 @5ce6a402: 13 Konflikte in Verteiler-/WS1-Dateien -> Verteiler mergt den Stamm, dann neuer kombinierter Head.','Rakete/Flug · Verteiler · Georg','q487, q493','Georg 04.11.'),
 d('V-1419','04.11.2026','HUD','RULE','HUD-Skin-Produktion: WSA-Kit R1 (kayfabizarro PR #468, docs/hud-kit/HUD_SKIN_SPEC.md, WS0_IMAGE_JOBS.md, HUD_COMPONENT_COVERAGE.csv, Georgs xlsx-Inventar) ist die Bild-Produktions-Wahrheit; WS0_IMAGE_JOBS.md ersetzt Briefing b318. Laufzeit-Wahrheit (Masse, Zonen, Umfaerbung, Schnitte) bleibt Kartenkantes KFB-MVP-Spec; Kartenkante gleicht ab und stellt den Schnitt auf Baender 430/565/925 plus Manifest. Verteiler hat Stamm @5ce6a402 gemergt (@7ab62af3, 13 Konflikte geloest, 81 Tests PASS); Flug zieht ihn fuer den kombinierten WS1-Head.','Kartenkante · WSA · Verteiler · Rakete/Flug · Georg','','Georg 04.11.'),
+d('V-1420','04.11.2026','Spiel','BUILD','Ein WS1-Paket (N-115): fx/slop-r1 @073ad6b9 = FF auf integration-r2 @5ce6a402, enthaelt Verteiler @7ab62af3 (Katalog 871, Tueren, Slop-Roster, gummi), Goo-Tod R4, Slop-Bewegung/-Stimme; Schalter slopgoo/slopbewegung/slopton/gummi Default aus bis Georgs Blick; danach N-109/N-111/N-113/N-114 und eine Testfahrt-Adresse mit allen Schaltern.','Rakete/Flug · Verteiler · WS1','','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2781,6 +2782,7 @@ WHY = {
  'V-1417':('Gegner haben eine Datenbasis wie die Figuren.','04.11.2026'),
  'V-1418':('Der Gegner wird sichtbar zu seinem eigenen Goo.','04.11.2026'),
  'V-1419':('Eine Wahrheit je Ebene: Bild-Prompt bei WSA, Laufzeit im Spiel-Repo.','04.11.2026'),
+ 'V-1420':('Ein konfliktfreies Paket statt vieler Einzel-Merges.','04.11.2026'),
 }
 SUP = {}
 for e in E:
