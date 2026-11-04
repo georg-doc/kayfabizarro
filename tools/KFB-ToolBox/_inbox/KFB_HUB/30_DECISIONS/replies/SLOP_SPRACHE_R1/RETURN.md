@@ -114,3 +114,27 @@ Belege: `SLOP_R3_Storyboard_1/2.jpg`, `SLOP_R3_ZERFALL_VORN.mp4`, `SLOP_R3_ZERFA
   4. Die Rückseite wirkt als konturlose Fläche wie ein Loch.
   5. Nachzittern und Treffer sind in den Proben kaum zu sehen.
   6. Gesicht und Ausdruck können sich nicht ändern, das ist ein festes Bild. Dafür bräuchte es ein „erschrocken“-Bild je Blob.
+
+## B · Runde 2 (04.11.): Hüpfen, Schreck, Treffer, Tod
+- Belege: `SLOP_BEWEGUNG_R2.mp4` (9,4 s mit Ton), `SLOP_BEWEGUNG_R2_Tod_Folge.jpg`, `SLOP_BEWEGUNG_R2_Huepfen_Schreck_Treffer.jpg`.
+- Umgesetzt:
+  - Riss unter dem Gesicht: zwei echte Hälften, Kopf und Körper.
+  - Gemeinsamer Treffer-Stoß, kein Spalt mehr zwischen den Stücken.
+  - Fortlaufendes Hinlegen im Fall.
+  - Die Tinte kriecht quer über das liegende Blatt, die Pfütze kommt danach, die Stücke schmelzen hinein, und eine kleine Pfütze bleibt liegen.
+  - Rückseite mit Tintenkontur.
+  - Treffer mit weniger Scherung, Landungen schwingen sichtbarer nach, Nachzittern 5 Hz (Ton gleich, fx/slop-r1 @e13c68cb).
+- Kritiker, je ein Lauf, Noten in der Reihenfolge Bewegung / Papier / ein Effekt:
+  - Runde 1: 4 / 5 / 4.
+  - Runde 1b: 6 / 6 / 4.
+  - Runde 2a: 6 / 6 / 5.
+  - Runde 2c: 5 / 6 / 6.
+  - Die Noten schwanken je Lauf um etwa einen Punkt. 7 ist nicht erreicht.
+- Grundsätzliche Grenze in 2D:
+  1. Flachlegen per Höhen-Stauchung liest sich immer als Squash. Echtes Hinlegen braucht perspektivische Verkürzung.
+  2. Die runde Blob-Silhouette der Rückseite wirkt wie eine Wolke.
+  3. Ohne Ausdrucks-Bild bleibt der Schreck schwach. Auch die Erholung (Hold) ist zu lang.
+- **Häufigkeit der Familien** (aus der Platz-Logik):
+  - Teen, Magie, Alien, Bau, RPG und Nerd sind gleich häufig; ohne Biom am Platz auch Kultur, dann je etwa 13 % der Blobs.
+  - In ihren 6 Biomen (Wüste, Mesa, Canyon, Schnee, Moos, Pastell) stellt Kultur etwa 47 % der Blobs, jede andere Familie etwa 9 %.
+  - Anführer (Mütze, König) sind zusammen etwa 8 % der Blobs, stehen aber in jeder vierten Gruppe vorn.

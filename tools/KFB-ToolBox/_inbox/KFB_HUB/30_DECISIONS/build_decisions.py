@@ -1370,6 +1370,7 @@ d('V-1389','04.11.2026','Figuren','KEEP','FB-Idles (q471) Georg PASS im Chat, an
 d('V-1390','04.11.2026','Spiel','REVIEW','Hub-Runde: Hasenschwanz 3 Varianten (WSB assets/bunny-tail-r1 @725fab04, hips, WSB empfiehlt C) q472; Holo R2c (kartenbau-r4 @87e7c9cc: Ring zum Grundriss, kraeftige Cyan-Linien der grossen Formen) q473; Vorhang R3 Verlet-Stoff an Ringen ohne Volant, Kamerafahrt durch die Oeffnung (hud-clay-r1 @9d10d33b) q474; Fluff-HUD oben mittig + Alchemy + Kayfabricate-Overlay, Radio klein (@d78b0f22) q475; Farbzuordnung Fluff (heroic tuerkis?) q476. WS1: kein neuer Push seit cb50ba69 (03.11.), N-101 bis N-109 offen, um Stand gebeten.','WSB · WS-Design · Kartenkante · Georg','q472, q473, q474, q475, q476','Georg 04.11.'),
 d('V-1391','04.11.2026','Welt','REVIEW','Tueren R5 Konzept (design/tueren-r3 @2238a505, replies/TUEREN_R5/CHOREOGRAFIE.md): Recherche Mario-Gemaelde, Rift Apart, Hyperraum, Rick-and-Morty, Match Cut, Smear Frame; Tuer ist einziger Traeger, Oeffnung zeigt von Anfang an das Ziel, Eintauchen zieht Tuerbild zu Streifen, Ziel waechst heraus, Versatz im Spitzenlicht, ein Fortschrittswert/Farbkurve/Kamerakurve (FOV-Kick)/Tonbogen; kein Mittel-Loch, keine Punkt-Umwandlung, kein Farbschleier. Storyboard-Mockup, Hub q477. Slop-Bewegung R1 Kritiker 6/6/4 -> Runde 2 nur Huepfen/Schreck/Treffer/Tod.','WS-Design · Rakete/Flug · Georg','q477','Georg 04.11.'),
 d('V-1392','04.11.2026','Figuren','REVIEW','Augen-Vergleichstest KayKit (Figuren-Session test/augen-vergleich-r1 @81a70e07, nur Test): Vorschlag einheitlich +15 % (Ring, Mitte bleibt), Pupillen converge 0,45 statt 0,18; +30 % nur bei Farmer, Soldat (frisst Wangen), Skelett-Schurke/-Minion, Magierin; Grenzen Barbar, Lorekeeper, Skelett-Krieger/-Magier, Goth Girl. Vor Uebernahme: Gesamtwinkel kappen, Lidfarb-Sampler bei Goth Girl/Soldat korrigieren, Skelett-Leuchtaugen aus. Skelett-Kopf-Befund von WSB bei Figuren-Session nicht reproduzierbar. Hub q478.','Figuren · Georg','q478','Georg 04.11.'),
+d('V-1393','04.11.2026','HUD','REVIEW','Fluff-Kugeln aus Georgs 24 Sprites (Kartenkante module/hud-clay-r1 @4ac0a8d2, fluffpng=1, privat @0ab344ca): Atlas/Instanzen 189 Kugeln in 2 Draw Calls, kfbInsert mit Kontaktfleck, Atmen, Aufsammeln Squash->Pop->Bogen in HUD-Zelle; Score mit echten Werten geprueft. Hub q479. Radio-Tasten auf Action-Button-Groesse (Georg). Slop-Zerfall: 2D-Grenze erreicht (5-6/10), Weg a: Phasen aus slopKurven.ts mit echten 3D-Stuecken ins Spiel.','Kartenkante · Rakete/Flug · Georg','q479','Georg 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2727,6 +2728,7 @@ WHY = {
  'V-1390':('Eine Runde sauberer Belege statt halbfertiger Zwischenstaende.','04.11.2026'),
  'V-1391':('Bewaehrte Spiel-Vorbilder geben dem Uebergang ein Gesamtbild.','04.11.2026'),
  'V-1392':('Cartoon-Blick angleichen, Figuren-Identitaet behalten.','04.11.2026'),
+ 'V-1393':('Fluff fuehlt sich beim Einsammeln wie Fluff an.','04.11.2026'),
 }
 SUP = {}
 for e in E:

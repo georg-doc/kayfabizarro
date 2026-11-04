@@ -20411,6 +20411,21 @@
    "superseded_by": [],
    "why": "Cartoon-Blick angleichen, Figuren-Identitaet behalten.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1393",
+   "date": "04.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Fluff-Kugeln aus Georgs 24 Sprites (Kartenkante module/hud-clay-r1 @4ac0a8d2, fluffpng=1, privat @0ab344ca): Atlas/Instanzen 189 Kugeln in 2 Draw Calls, kfbInsert mit Kontaktfleck, Atmen, Aufsammeln Squash->Pop->Bogen in HUD-Zelle; Score mit echten Werten geprueft. Hub q479. Radio-Tasten auf Action-Button-Groesse (Georg). Slop-Zerfall: 2D-Grenze erreicht (5-6/10), Weg a: Phasen aus slopKurven.ts mit echten 3D-Stuecken ins Spiel.",
+   "values": {},
+   "owner": "Kartenkante · Rakete/Flug · Georg",
+   "check": "q479",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fluff fuehlt sich beim Einsammeln wie Fluff an.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
