@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "entries": [
   {
    "id": "V-001",
@@ -22042,6 +22042,21 @@
    "owner": "WSV · Verteiler · Kartenkante",
    "check": "",
    "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1502",
+   "date": "05.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Kartenkante Aktionsleiste nach V-1498 (module/hud-clay-r1 @e7865b33, privat @c760aaf9 von WS0 auf aktuellen Kopf gesetzt): skinbare Kapsel, flache runde Knopf-Flaechen ohne Mulde/Rahmen, 3D-Hero-Icons N32 r2 mit Schatten unten rechts, nie geskinnt (src/data/hud/hud-hero.r1.json); Hover heller/groesser, Druck dunkler/kleiner; Pistole zeigt eigenes Modell. Hub q528. Verteiler: Puppentheater-Kit freigeschnitten, 21 Teile, assets/private @793ac09e theater_kit_r1, Code @0795305c; an WSV. Naechster Slot Kartenkante: sechs Skins x drei Groessen (Georg direkt im HUD-Chat, R9-Flaechenpaket PR 468).",
+   "values": {},
+   "owner": "Kartenkante · Verteiler · WSV",
+   "check": "q528",
+   "source": "WS0 05.11.",
    "supersedes": null,
    "superseded_by": [],
    "why": "",
