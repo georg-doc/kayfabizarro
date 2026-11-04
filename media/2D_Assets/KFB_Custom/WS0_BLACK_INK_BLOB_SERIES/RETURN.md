@@ -1,3 +1,19 @@
+# CURRENT CHECKPOINT · Drivers12 + WS0 catalogue/repair proposal ·2026-11-04
+
+Owner WS0 · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · Draft PR#469 · intake issue466.
+
+-Office12 ALL GEORG DESIGN PASS recorded. Prior accepted families retained; miners FAIL/TUNE unchanged.
+-Drivers12: TWO new independent original-reference-conditioned1536x1024transparent3x2sheets,12transport contexts, two female-read each, BOTH DRAFT awaiting Georg. Source PNGs/exact args/receipts/hashes/alpha QA archived under DRIVERS_12_2026-11-04.
+-Ground SHA2565f7212d731f4deebd0e38a49d36ce322b147a2064513d786346873afb9d57732; space SHA2566de62e041c991b094e757ad2000bc26bafe20a7534a7520f2e6616bbda5891be. BothRGBA0..254,489127/516112alpha0pixels, five sampled background points0 each. Correct checker/96px proof inspected. Neighbor/cell-edge fragments require later per-actor export; no clean isolated sprite admission claimed.
+-WS0 catalogue/repair proposal persisted and linked on existing issue466, comment6638252338 read back. This is REVIEW REQUESTED, no owner reply/acceptance assumed. No Asset Librarian Site writes while edited elsewhere, no repair helper started now. Native source preservation, stable sourceKey->existing canonical IDs, independent source/cutout/design/metadata revisions, per-actor anatomy/alpha/crop holds; retain Design PASS. Catalogue portraits separate from game derivatives, no invented high-res detail.
+-12new driver title/type/FrizzleBob field-note drafts linked to sourceSHA/cell; metadata proposals only, previous-family naming backlog remains. Common/Elite/Boss1/2/3HP and discovered/defeated collection gallery remain WS1/receiving-owner PROPOSALS, no implementation. Ordinary civilian roles not automatically hostile.
+-Existing WS0/Asset Registry/Librarian/WS1 retained, no runtime tests/registry admission/Stage/Site/Live/merge.
+
+## One current next gate
+Georg design verdict on both driver sheets; later owner review/repair queued separately.
+
+## Historical Return
+
 # GEORG DECISION · OFFICE12 ALL PASS · DRIVERS + FUTURE CATALOGUE ·2026-11-04
 
 Office analog/digital ALL12 GEORG DESIGN PASS. Prior accepted families retained; miners FAIL/TUNE unchanged. New production: twelve diverse driver Slops across two3x2 sheets covering bus/taxi/gig/train/truck/delivery and plane/ship/spaceship/space taxi/race/pod racer, two female-read per sheet. Future repair/catalogue/metadata and1–3HP are owner-review proposals, not current game admission. Read SLOPS_CATALOGUE_REPAIR_WS0_PROPOSAL_2026-11-04.md. Asset Librarian Site currently being edited: no writes there, no repair agent started now.
