@@ -235,10 +235,18 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
+    "sheets": 1,
+    "depictions": 6,
+    "identities": 2,
     "georg_pass": 0,
     "intake_eligible": 0
   }

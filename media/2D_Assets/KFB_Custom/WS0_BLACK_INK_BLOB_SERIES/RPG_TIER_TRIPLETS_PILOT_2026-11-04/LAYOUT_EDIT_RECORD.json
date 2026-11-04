@@ -1,0 +1,16 @@
+{
+  "schema": "kfb.image-edit-record/1",
+  "tool": "image_gen.imagegen",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-levels-20261104/rpg-tier-triplets-sheet-r1.png"
+    ],
+    "transparent_background": true,
+    "prompt": "EDIT ONLY LAYOUT / ALPHA of attached KFB RPG tier sheet. Preserve exactly these SIX clay ink monsters and their artwork, colours, gear, expressions, teeth, eyes, material and row identities. DO NOT redesign. Return true transparent PNG landscape 1536x1024, exactly THREE columns and TWO rows. Repack each complete standalone character INCLUDING ALL own droplets, swords, hat tips and staff into its OWN equal 512x512 cell, with at least 32 transparent pixels margin INSIDE EVERY side of EVERY cell. Uniformly scale each figure down about15% as necessary; preserve similar visible body size across tiers. Top row same warrior Trash/Common/Elite; bottom row same mage Trash/Common/Elite, exact same order. Nothing may cross vertical x512/x1024 or horizontal y512; no fragments from neighbouring cells. Remove any stray marks unrelated to a character. ALPHA: fully clear background, fully opaque interiors, smoothly antialiased outer edges only. No background, floor, shadows, checkerboard, text, labels, borders. Only reposition/scale the existing six cutout characters cleanly."
+  },
+  "output_hint": "Generated images are saved to /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21 as /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-ba91a330-3717-4318-a7ea-0dad86563063.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "status": "DRAFT",
+  "note": "One layout repair after R1 grid-seam QA. Original R1 retained. New R2 visibly changes sculpt details slightly; not a lossless rearrangement."
+}
