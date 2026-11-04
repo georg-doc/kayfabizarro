@@ -1,4 +1,23 @@
-# KFB Clay HUD Production SOP · R8 · 2026-11-04
+# KFB Clay HUD Production SOP · R9 · 2026-11-04
+
+## CURRENT R9 · HUD SURFACES, SHARED CONTENT, ONE ACTION OUTER EDGE
+
+Georg's latest explicit production request supersedes R8's base-only production priority. R8 common glyphs already exist; do not produce further object/weapon/gear/power-up or role images. Finish the missing existing HUD surfaces and controls for Retro, Steam, Teal, Reactor Blue, Slime Green and Hazard v2. The garbled audio “Hälfte” is NOT a size instruction.
+
+- Reuse actual current panel, pill, tab, slider, toggle, title and satellite-panel donors; inspect source pixels before composition. Recolor with existing pure hudskin module and colors measured from native delivered R4 skins. Preserve canonical free-X alpha geometry.
+- The action background is ONE continuous blank surface with ONE outer edge. Its internal role positions have ZERO separate frames, wells, rings, pillows, tiles or painted cells. No bar_1..bar_8 family, including the rejected R7. One stretchable background plus existing runtime anchors covers the four fixed roles; travel remains separate.
+- R9 native action surface832×180 is derived from current panel1024×575 using nine source patches118px and destination caps32px. Every patch is downsampled or unchanged, never enlarged. Source slices, clean-alpha PNGs, lossless WebPs and source hashes are provided. At DPR2 the L2Normal141.6px and Large177px fit inside180source pixels. Runtime must still cap by actual source budget.
+- Shared canonical 3D Hero-Shots remain unchanged across skins; R8 role glyphs stay common fallbacks/actions. No400+per-skin content art. Runtime labels/key hints only; Fredoka mixed case, minimum14reference px, padding and label fit. No baked text.
+- Buttons, tabs, sliders, switches, panels and close-X retain distinct roles. Active tab taller/gold; inactive shorter/cream. No Hazard stripe under tabs. Radio-title fields retain existing semantic regions; never reuse them as action compartments.
+- Manifest declares each piece, aliases, native dimensions, slices, shared-content boundary, source hashes, states and layers. Hover/press/disabled/locked/cooldown derive from runtime layers with stable hitboxes and reduced-motion support; no duplicate raster-frame requirement.
+- Deliver private deploy/hudkit files under existing receiver naming, plus editable PNGs, build inputs/scripts, static proofs and actual QA. Existing receiver needs a bounded binding change from per-place bar_n art to one action_surface background; manifest alone does not implement it.
+- Keep R4 signature bar/sheet cutter holds for Steam and Slime explicit. These are independent inherited gates, not new surface QA failures and not permission to change accepted native bar art.
+- Existing owner Kartenkante imports and verifies actual Compact/Normal/Large in game. Do not claim runtime integration from local composition or a saved ZIP. No game runtime owner replacement or automatic merge.
+
+WS0/Kartenkante correction was posted, read back and verified as PR468 comment6643804099. It is a PR handoff, not proof of a WS0 response.
+
+## Superseded R8 production-priority record
+
 
 ## CURRENT GEORG/WS0 CORRECTION R8 · BASE ONLY / BORDERLESS PLACES / R7 RETRACTED · 2026-11-04
 
