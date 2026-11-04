@@ -1446,6 +1446,7 @@ d('V-1465','04.11.2026','Figuren','TUNE','Jetpack gross R3 (WSB assets/jetpack-g
 d('V-1466','04.11.2026','Assets','DECIDED','MixedBag 13: Diven-Slop-Familie (KFB_DIVA_R13, 12 Alpha-Einzelbilder + 4 Boegen als Varianten), Monster-Wissenschaftler-Neuauflage mit echtem Alpha (ersetzt SL_FORSCHER_09-16, b324 erledigt), Theaterbuehnen 2x3x2 als Scenelets (popup_tags.json) -> Verteiler-Ingest, Atlas/Roster neu, privat via WS0. Georg-Frage Asset-Librarian: Spielkatalog vollstaendig (1117/396 Slops/31 Familien), Bibliotheks-Ansicht WSA noch offen (b309 aktualisiert, Georg leitet weiter). Kartenkante: drei HUD-Skins eingelesen, Pipeline repariert (Mulden, Warnstreifen ab 20 Wechseln, graue Mulden nicht Randfarbe), wartet auf Slot nach Flug.','Verteiler · Kartenkante · WSA','b309, b324','Georg 04.11.'),
 d('V-1467','04.11.2026','Figuren','OPEN','Jetpack gross R4 (WSB assets/jetpack-gross-r4 @03601d51): 1,25x r2 (Alien 1,35), glatte Rueckenplatte auf FB-Rueckenflaeche, Neigung aus Rueckenlinie (5-19 Grad), Ruhe/Gehen Rumpf 0 -> q514. HUD-Skins blue/slime/hazard v2 privat auf 703f9b9 umgesetzt: assets/private @3dbfc0eb, module/hud-clay-r1 @c62e12fd9 gepusht. b320 Muster-Auftrag ohne Slop-Anhang (Georg: kein Leopard-Slop vorhanden).','WSB · Kartenkante','q514, b320','Georg 04.11.'),
 d('V-1468','04.11.2026','Figuren','PASS','q514 PASS: Jetpack gross R4 (assets/jetpack-gross-r4 @03601d51) ins Spiel als Standard-Sitz, r3 Rueckfall -> WS1 N-142. MixedBag 13 Verteiler @7466fa7d: Katalog 1162, Slops 429/32 Familien, Diven 12+21, Theater 12. Forscher-Neurender = Motive 01-08 -> uebernehmen deren Namen, alte Fransen-Schnitte in aus; Leuchtschein-Bogen (09-16) neu bestellen mit Motivliste (b324 Notiz).','WSB · WS1 · Verteiler','q514, b324','Georg 04.11.'),
+d('V-1469','04.11.2026','Assets','DECIDED','MixedBag 13 gepusht: assets/popups-ingest-r1 @c0d7f40f, assets/private @e3edfa8f. Katalog 1154, Slops 421/32 Familien, Forscher 01-08 = Neurender (Fransen-Schnitte im Papierkorb, Quellbogen in aus), 09-16 frei. Diven normale Familie. Neuer Bildauftrag b325: Leuchtbogen (Popup Assets 04 Set-1, 8 Motive benannt) mit echtem Alpha, 2 Bilder 2x2.','Verteiler · Flug','b325','WS0 04.11.'),
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
 WHY = {
@@ -2879,6 +2880,7 @@ WHY = {
  'V-1466':('Der Katalog ist die Wahrheit, die Bibliothek nur seine Ansicht; neue Ordner laufen durch dasselbe Rezept.','04.11.2026'),
  'V-1467':('Ein Bildauftrag verlangt nur Anhaenge, die es sicher gibt.','04.11.2026'),
  'V-1468':('Ein Neurender erbt den Namen seines Motivs, nicht den freien Platz.','04.11.2026'),
+ 'V-1469':('Ein Bildauftrag nennt seine Motive einzeln, sonst malt das Modell den naechstbesten Bogen.','04.11.2026'),
 }
 SUP = {}
 for e in E:
