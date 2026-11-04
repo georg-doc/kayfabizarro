@@ -20771,6 +20771,21 @@
    "superseded_by": [],
    "why": "Die Welt antwortet auf das Verhalten des Spielers mit wachsender Kontrolle.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1417",
+   "date": "04.11.2026",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Slop-Roster SSOT (Verteiler assets/popups-ingest-r1 @68212806, src/data/mobs2d/slop-roster.r1.json, kfb.slop-roster/1): 312 Typen/26 Familien; trash 104 (1 Treffer), common 192 (2), elite 16 (3, Anfuehrer); Stimme nach Statur; Seltenheit nach Quartilen; name/evilAbility spaeter via Triplet-SSOT; ingest baut nach. mobs2d.js gehoert Rakete/Flug: kombinierter Head in fx/slop-r1 fuer WS1. WSB startet Blinde Kritik R2 Animation sofort (kein meshopt-Modell angefangen), liefert als Bundle.",
+   "values": {},
+   "owner": "Verteiler · Rakete/Flug · WSB",
+   "check": "",
+   "source": "Georg 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gegner haben eine Datenbasis wie die Figuren.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
