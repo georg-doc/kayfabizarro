@@ -21881,6 +21881,21 @@
    "superseded_by": [],
    "why": "Testlauf 5 ist kein Datum, sondern ein Stand auf der Stage.",
    "applies": "04.11.2026"
+  },
+  {
+   "id": "V-1491",
+   "date": "04.11.2026",
+   "area": "Site",
+   "verdict": "STATUS",
+   "text": "Stage-Stand 2 site/stage @28eb276d (1286 MB): Pop-up-Stapel mit 609 Slops/108 golden + Slops, F/R-Tasten-Fix (Stand 1 ersetzen), 93 Units PASS -> PR #49. Luecke: 133 Katalog-Eingaenge ohne oeffnung -> Verteiler Vorrang. Stand 3 = HUD @05d15624; HUD R3b (@5d3448e4: Almanach 1:1 h3d, Zielhinweis oben Mitte, Retro R3, Blau neu, vier feste Aktionsplaetze, echte HUD-Flaechen fuer Blasen; privat @95039e17) -> Hub q523; Blasen @65db6687, ein Konflikt hudV6.js (N-161). Kontaktschatten R4 FAIL -> geparkt bis nach MVP (kontakt=r1 aus); Buschunterseiten fast schwarz -> Verteiler pruefen.",
+   "values": {},
+   "owner": "WS1 · WSA · Verteiler · Kartenkante · WS-Himmel",
+   "check": "q523, N-161, N-162",
+   "source": "WS0 04.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Eingang ohne Oeffnung ist eine Wand mit Bild.",
+   "applies": "04.11.2026"
   }
  ],
  "imported_acceptance": [
