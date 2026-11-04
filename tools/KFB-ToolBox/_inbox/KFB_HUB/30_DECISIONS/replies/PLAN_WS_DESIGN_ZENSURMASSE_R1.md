@@ -31,7 +31,9 @@ Ohne den Schalter bleibt die Bresche wie in design/aufprall-r3 @23a3270c.
   - Die Kante ist eine Tropfkante: Spalten mit Rauschen, einzelne lange Läufer, eine nasse Glanzlinie an der Kante.
   - Darunter erscheint das Motiv.
   - Jeder Schritt läuft etwa 1,5 s nach (Feder), kein Springen.
-- **Wert je Gebäude:** min(1, (Slops × 1 + Blobs × 0,2) / Bewohner), wie in §6 entschieden.
+- **Wert je Gebäude:** min(1, (Slops × 1 + Blobs × 0,05) / Bewohner).
+  - Den Blob-Faktor 0,05 hat WS0 am 04.11. entschieden. Er steht als `blob_faktor` in spill.r1.json.
+  - So wird die Karte erst durch die herauskommenden Slops frei; Blobs tragen etwa 20–40 % bei.
   - Slops und Bewohner kommen aus `slops.ausbruch` (cueBus, WS1).
   - Die Blobs zähle ich selbst beim Herausfallen.
 - **Prüfschalter:** `enthuellt=<0..1>` setzt den Wert für alle Gebäude fest, solange das Ereignis noch fehlt.
