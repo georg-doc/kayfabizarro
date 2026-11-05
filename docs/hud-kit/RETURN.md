@@ -1,3 +1,21 @@
+# CURRENT · THREE SUPPLIED SKIN CONCEPTS · CLAUDE DESIGN HANDOFF · 2026-11-05
+
+**Latest Georg instruction:** use the newly prepared “KFB HUB Skins + UI” sources for Reactor Blue / Slime Green / Hazard Yellow; concepts are set. Implement a clean consistent layout, or, if unable, deliver a concrete Claude Design briefing with sources, consistency checks and responsive/intake requirements. This is a new three-source task; no new concept or Retro repair. Georg explicitly rejected R16 in the intervening chat. Older “R16 pending” statements below are historical and must not be read as acceptance or a block on this expressly authorized three-concept task.
+
+**Actual outcome:** source inventory/visual isolation completed, then local dynamic bar/enlarged frame prototype failed visual seams. After two seam repair passes it is quarantined, NOT recommended for import. Fresh independent read-only /root/three_skin_seam_guard opened source/candidate images and routed QUARANTINE reconstruction + CONTINUE the user's explicit Claude Design fallback. No new image generation or repaint; no game writes/tests/integration, merge, Stage or deployment.
+
+**Deliverable:** docs/hud-kit/CLAUDE_DESIGN_THREE_SKINS_LAYOUT_BRIEF_R1_2026-11-05.md, verified first at7e7df0437384dde6b0797a6b4c08b5b05a343e95. The briefing preserves all three original concepts; distinguishes decoration from device identity; specifies fixed four primary roles versus4–6selection geometry, one consistent period, protected detail anchors, typography/padding, five176pxstates, source pixel limits and existing R7 adapter requirements. It includes full HUD/overlay/interaction completeness criteria. Public docs only; art/private sources stay private.
+
+**Private handoff Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB HUB Skins + UI/KFB_Claude_Design_Three_Skins_R1_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7j4w;23,887,340bytes;132files;131internal SHA256verified;ZIP SHA2563a3b120276ffc481f3645f117a9c36c11fe23ee88b2114c0015c636725e955c1. Includes briefing, consistency report, six unchanged main source PNGs with original-byte hashes,107ornaments+manifest, intact-reference overview, independent Guard route and clearly quarantined failed evidence/prototype. Do not import the nested FAILED_PROTOTYPE_DO_NOT_IMPORT.zip.
+
+**Factual tests and limits:** isolated local browser180combinations (3skins×5widths×4size modes×3counts), zeroJSerrors, measured bounds/no unintended header-radio-action rectangle overlaps, same period4/5/6per size,9native-corner comparisons, close/tab/hover/click/empty-context probes. These tests DID NOT establish clean visual joins; visible rectangular steps/collars/flat rails remain. Some programmatically set scene screenshots have unsynchronized toolbar values and are failure evidence only. Local source periods87/79/80px are not176pxfloor assets. New source panels593×429,609×403,583×473; naïve enlargement fails. No production state assets, no clean enlarged9slice or all-state game acceptance. New supplied Hazard source has a6-slot row, unlike older R1 candidate ZIP; do not conflate versions.
+
+**Boundary:** authorship georg-doc/kayfabizarro@design/kfb-clay-hud-skin-kit-r1-2026-11-04, DraftPR468; receiver remains Kartenkante/georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1. Current private HUD/SLOT_FACE/LAYOUT docs reread; no receiver writes. Original R11 fixes remain independent; no automatic rollback or import.
+
+**One next action:** give the private ZIP/folder plus briefing to Claude Design. It implements the existing three concepts with coherent layout and genuine seam/retina proof, then returns source-faithful whole views and exact mapping/remaining gaps for Kartenkante. No new Retro R16 gate, source-faithful layout review before game adoption.
+
+---
+
 # CURRENT · RETRO R16 FOR GEORG DESIGN REVIEW · R15 REJECTED · 2026-11-05
 
 R15 is rejected and withdrawn after Georg found disconnected action surfaces and inappropriate radio-specific motifs. R16 is a new Retro-only design proposal, not an accepted/integrated HUD. No further skins before Georg's explicit visual approval.
