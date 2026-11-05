@@ -7,6 +7,7 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 - **HUD:** altes Claymation-HUD als Basis (V-1532): WSA-HUD-Chat Inventur + fehlende Teile per Bildgenerierung → GitHub-Paket (Hub b336) → danach Claude-Design-Briefing schreiben (Gesamtlayout aus dem Paket) → Kartenkante setzt ein. Zielhinweis ohne Plakette (V-1480), Kartenkantes Raster-Regel dazu zurücknehmen. Postmortem V-1519 gilt.
 - **Kampf:** WSA Combat (b335 v3: Konzept alle Waffen, Sheets, Klangliste → WS0 erzeugt mit ElevenLabs). Pistolen-Referenz PR #53, Hörabnahme Georg. Flug-Abspieler @c35b3dce ruht; nur ein System behalten.
 - **Slops:** Intake #51 fertig (@cdd362a9, privat @35e31dbf); WSA soll Library-Export starten und 128 offene Bögen ins Intake legen. Assets Türme/Spielsteine nach Sonntag.
+- **Nach Sonntag:** Flug wertet `kreuzt` in mobs2d aus (Slop-Gruppen laufen über die Fahrlinie, V-1534); Verteiler-Assets Türme/Spielsteine; WS-Design Kit-Tafeln/Schramme belegen.
 - **Hub offen:** keine Fragen offen außer ggf. Antworten von Georg; Briefings b335, b336 zum Weiterleiten.
 
 ## 0 · Stand 05.11. früh (Register bis V-1502) – nach Neustart zuerst lesen
