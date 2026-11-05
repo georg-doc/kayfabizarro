@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Union soldiers Georg PASS
+
+Georg accepted all6Union/Yankee soldiers for use.54PASS sheets/324depictions;52eligible/312depictions. Six source-only IDs and DESIGN biographies retained. Source extraction/master/alpha holds independent of imagePASS; no catalogue/game/Library publication claimed. Next authorized output: fresh Roman legion six-sheet with varied ranks/functions/acting/props and2female-read, source-conditioned on original benchmarks. Same WSA owner/branch/PR469.
+
+---
+
 # Current WSA update · 2026-11-05 · Union/Yankee soldier six-sheet candidate
 
 One fresh original-reference-conditioned native image job, six distinct Union Civil War Slops: female brigade commander, male bugler sergeant, male engineer corporal, female signal lieutenant, male infantry recruit, male field-cook corporal. Fresh silhouettes/acting/props, not a recolour of accepted Confederate actors. Actual Veteran+RPG style paths passed.1536×1024RGBA unchanged; no resize/layout edit. Six source-only IDs/cards and individual DESIGN biographies; no inferred pair/trio/state links or canonical/deck mapping.
