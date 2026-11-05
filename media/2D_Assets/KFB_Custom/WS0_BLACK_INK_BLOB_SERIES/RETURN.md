@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Classic family doctors six-sheet candidate
+
+One native original-reference-conditioned job: six civilian primary-care/internal-medicine Slops, old-school country GP/patient family physician/meticulous internist/strict general-throat examiner/reflex-checkup enthusiast/absent-minded prescription GP,2female-read. Whole upright footless ink anatomy retained with shared short open white-coat panels, pockets and muted collars. All actual white-red-black eyes unobscured; forehead mirrors metal discs above brows. Four mirrors generated versus planned2, added to internist/prescription GP; visible variation recorded. Six source-only IDs/cards/individual DESIGN biographies, family Gemeinschaftspraxis Befund & Bedenken. No emergency gear/military theme, patient scene, real clinician likeness or clinical instruction. No pair/state/trio/medical-stat or canonical role binding.
+
+Actual1536×1024RGBA unchanged; one job/no layout edit/resize. Veteran+RPG actual style image paths supplied,6/6original hashes verified; native PNG Git blob matches local bytes. Native/checker/full-sheet64/96/160/192-per-logical-cell QA reviewed. Row diagnostic minimumpeak232full/1left/1centre/190right; no certified fixed512or single horizontalcut. Validated individual isolation, alpha0..254/low-alpha cleanup and individual catalogue masters remain holds; no game sprites or Library publication. Classic props treated as role motifs, not clinically validated diagrams.
+
+Prior acute6GeorgPASS persisted/verified at8e312ba94ac42786deff5964200f280675bda364. Accepted source63sheets/378depictions;61eligible/366depictions. New GP1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions retained. Same WSA source branch/PR469. Next gate: Georg design verdict on FAMILY_DOCTORS_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Acute medical team Georg PASS
 
 Georg accepted all6civilian emergency/acute medical Slops.63PASS sheets/378depictions;61eligible/366depictions. Source-only IDs/cards and individual DESIGN biographies retained; alpha/isolation/master holds unchanged. Next authorized output: six primary-care/internal-medicine archetypes with classic white-coat/head-mirror/practice accessories, varied personalities and2female-read. Whole ink anatomy retained, distinct from prior acute team. Same WSA owner/branch/PR469, no game/Library publication claim.
