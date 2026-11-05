@@ -1,3 +1,15 @@
+# CURRENT · THREE NEW SOURCE CONCEPTS / CLAUDE DESIGN ROUTE · 2026-11-05
+
+Georg has supplied new prepared art for Reactor Blue, Slime Green and Hazard Yellow; their concepts are set. Authoring may implement these three supplied concepts. Do not reopen skin ideation or propagate rejected R16. Georg subsequently rejected R16; its older HUMAN_DECISION labels below are history.
+
+Current handoff: docs/hud-kit/CLAUDE_DESIGN_THREE_SKINS_LAYOUT_BRIEF_R1_2026-11-05.md. Local reconstruction of enlarged frame/dynamic bars is VISUALLY FAILED and QUARANTINED after two seam repairs. Independent fresh read-only Guard /root/three_skin_seam_guard chose the user's explicitly authorized fallback: Claude Design gets intact source art and exact failures. No more patches to that prototype, no game import recommendation.
+
+Additional binding production lessons: fixed corner pixels and positive rectangle tests do not prove frame seam fidelity. Protect whole signature motifs without replacing connecting clay with flat repeated/extruded bands or introducing rectangular shoulders. Keep a single cell period as count changes; original4/5/6pictures have differing geometries. Do not multiply a bottom grille when repeating a slot unit. Existing contour lips in new originals must not acquire a second rim in state bitmaps. Do not reskin actual gear icons. Five176pxfaces require sufficient native source pixels and alignment to existing R7H288/period224; renaming small crops is insufficient. Large cannot exceed pixel capacity. No generic controller/radio motif fan-out.
+
+Briefing/consistency/source hashes and failed-evidence separation are privately delivered in KFB_Claude_Design_Three_Skins_R1_2026-11-05.zip at /CLAUDE/KFB Claymation Reference/KFB HUB Skins + UI/;id:KeQLaY5-IIAAAAAAAA7j4w;SHA2563a3b120276ffc481f3645f117a9c36c11fe23ee88b2114c0015c636725e955c1. Runtime owner remains Kartenkante. Public repo contains text/provenance only. One next action: Claude Design implements the existing three concepts and proves whole-layout consistency before receiver adoption. No auto-import, merge, Stage or deployment.
+
+---
+
 # CURRENT · RETRO R16 DESIGN PROPOSAL · GEORG VISUAL DECISION · 2026-11-05
 
 **R15 was rejected by Georg and is withdrawn.** Its independent review/technical tests are not design acceptance. Do not import it. R12–R14 remain rejected/withdrawn. R11 cutter history remains independently valid.
