@@ -22271,6 +22271,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1517",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "KEEP",
+   "text": "Georg q535: Ladebildschirm R6 PASS (Schmuckvorhang fest, schlichter Zugvorhang gerade auseinander), aber Schattenspiel der Kulissen am Anfang raus; Fortschritt nur ueber Rampenlichter und Tafel. WSV R7, danach Einbau ins Spiel durch Kartenkante (components/kfb-ladebild/). q536 Rocket: s. V-1516 (R4).",
+   "values": {},
+   "owner": "WSV · Kartenkante",
+   "check": "q535",
+   "source": "Georg q535",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1518",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "PLAN",
+   "text": "WSV freie Shortlist R3 (60_VIDEO/vfx_r1/FREIE_SHORTLIST_R3.md): Messung erklaert Georgs Urteil, R5-Bass-Schichten fast ganz unter 80 Hz (auf MacBook unhoerbar), Gatling-Bass -30 dB, Blaster/Explosion-Anschlag zu weich. Bestand: Kenney explosionCrunch, S050C ExploRetroDeep, impactMetal_heavy, Brackeys-Flipbooks, Kenney-Particles, FreeHitVfx-Maske. Plan: WSV repariert Ton aus Bestand (nach HUD-Raster), Flug baut Kampf-VFX-Modul combatfx=r1 aus Bestand nach Look-Regeln; kleine CC0-Downloads nur nach Georgs Ja im WSV-Chat; kein Kauf. Ladebildschirm R7 ohne Schattenspiel an Georg. WS-Design Runde 5 @bfefdaaa (Ring 16, Kit-Wortfeld, Uebergabe-Notiz replies/UEBERGABE_WS_DESIGN_FASSADE_R1.md); offener Fehler Feld-zu-Atlas-Zuordnung.",
+   "values": {},
+   "owner": "WSV · Flug · WS-Design",
+   "check": "",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
