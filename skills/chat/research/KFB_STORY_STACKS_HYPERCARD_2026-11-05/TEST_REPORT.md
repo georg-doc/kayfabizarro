@@ -30,3 +30,25 @@ External packages were **not** fetched, installed or integrated. No one has insp
 **Research status:** documented planning intake with verified source provenance; **not** technical feasibility PASS.
 
 **One next gate:** WS0 makes a source-backed, non-runtime concept interpretation if separately queued; later WS1 can evaluate a single real existing card + journey with its owners. DocCheck owner may independently decide a medical pilot.
+
+
+---
+
+## Additive Remotion / Claude short-video research · 2026-11-05
+
+**Outcome:** external research and KFB reuse audit; no code execution.
+
+- **8/8 intended internal source paths resolved** on GitHub (the Ink SSOT was first mistakenly sought under `skills/chat/`, then successfully resolved at `skills/SSOT_Card_Ink_Outline_v2.md`):
+  `skills/kfb-cartoon-animation/references/legacy-v2-full.md`,
+  `skills/cartoon-motion_v1.md`,
+  `tools/asset_registry/librarian/motion-preview.js`,
+  `skills/SSOT_Card_Ink_Outline_v2.md`,
+  `media/kfb/index.json`,
+  `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md`,
+  `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/WS0_MESSAGE.md`,
+  `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/DOCHECK.md`.
+- **External sources inspected:** official Remotion Agent Skills/Claude Code plugin/Player/Input Props/Render/License/Terms; Video Shotcraft/Claude Video Skills README and setup; Prompt-to-Video template README/source; 5 Reddit threads (community reports, not reproducible benchmark proof).
+- **Donor executable/screenshot tests:** 0; actual isolated KFB video source object: 0; Remotion frame renders/MP4: 0; technical performance measurements: 0; license approvals: 0; social publishing: 0.
+- **No guessed media rights:** no third-party repo cloned, no videos/assets imported, no local CLI version claim, no KFB assets staged. README/Reddit reported counts and performance are not first-party tests performed in this slice.
+- New report: `CLAUDE_REMOTION_VIDEO_RESEARCH_2026-11-05.md` — read back after write with exact content parity.
+- Conclusion remains **RESEARCH / PLANNING CANDIDATE**, not acceptance of an automated video engine.
