@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Clown troupe Georg PASS
+
+Georg accepted all6clowns.60PASS sheets/360depictions;58eligible/348depictions. Per-actor humour modes and DESIGN biographies retained; contour-mask isolation hold remains, no fixed512crop or clean individual sprite claim. Next authorized output: six historical outlaw/robber Slops, loose Schiller Die Räuber/Sturm-und-Drang inspiration, grim yet quirky/relatable,2female-read. Same WSA owner/branch/PR469; no game/Library publication claim.
+
+---
+
 # Current WSA update · 2026-11-05 · Clown troupe six-sheet candidate
 
 One native original-reference-conditioned job: six distinct classic comic archetypes Auguste, female white-clown, Pierrot, female Venetian Colombina, Harlequin and court fool.2female-read, whole upright footless ink anatomy, actual white-red-black cartoon eyes uncovered. Only one low-held half-mask; marotte dummy is wooden inanimate prop, not seventh actor. Actual Veteran+RPG style paths supplied,6/6reference hashes verified. Six source-only IDs/cards/individual DESIGN biographies and per-actor humour_modes preserve slapstick/perfectionism/melancholy/social wit/trickster timing/sardonic authority critique. Free ensemble, no performer likeness or exact costume reconstruction, no pair/state/trio/tier links inferred.
