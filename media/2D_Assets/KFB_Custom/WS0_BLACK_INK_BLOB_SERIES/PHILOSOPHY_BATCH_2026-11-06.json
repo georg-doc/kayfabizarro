@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 5,
     "depictions": 30,
@@ -18,8 +18,8 @@
       "manifest": "PHILOSOPHY_ACADEMIA_6_2026-11-06/MANIFEST.json",
       "sha256": "bbc908b181fdd9886d47441c58315c20edea86f42660df48703a8fb8dea57760",
       "git_blob_sha": "4c224279008cebeee9df2d07f35a63ccabdc2d9e",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "academic_anarchy_intellectual",
         "user_family_title": "Academic Anarchy",
@@ -45,8 +45,8 @@
       "manifest": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/MANIFEST.json",
       "sha256": "d1d42c30185c8c56afb8fddb8a73bac0e43e024cebdf40af2a42390252520c87",
       "git_blob_sha": "deea28cb06701bdc4176817e0bf1a997e9212ac4",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "kayfabizarro_philosophy",
         "user_family_title": "Philosophical Kayfabe Theories",
@@ -72,8 +72,8 @@
       "manifest": "PHILOSOPHY_DUNGEON_6_2026-11-06/MANIFEST.json",
       "sha256": "5d7af2807a7bcb81205901550b7774eb83d08b24152928ee3e54c6d4070893f2",
       "git_blob_sha": "b2c332815beb81d4e8d9c11abba1abde059e90c2",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "kayfabizarros_ontological_hazards",
         "user_family_title": "Plato's Dungeon Raids",
@@ -99,8 +99,8 @@
       "manifest": "PHILOSOPHY_HERO01_6_2026-11-06/MANIFEST.json",
       "sha256": "3e5f893251c0d5b14798c637a290cd777f4ef03d9e0d3a473ba659aa34c41f4a",
       "git_blob_sha": "f245e03eb030991f746c9922ea1ca1a417fa57f5",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "platos_dungeon_raid_hero_set_01",
         "user_family_title": "Hero Set 01",
@@ -126,8 +126,8 @@
       "manifest": "PHILOSOPHY_ROSTER_6_2026-11-06/MANIFEST.json",
       "sha256": "acf569fab0558cd1e6ca439c8bc877661706cb993fa831cb5c014ea63d8e42e5",
       "git_blob_sha": "5fd54eed557104aae39aa5246e5823b4365e95aa",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "platos_dungeon_raid_v05",
         "user_family_title": "Full Class Roster",
@@ -154,5 +154,6 @@
     "Chained Prisoner Pair freely adapted to one actor plus empty spare cuff;no binding pair relationship",
     "Two female-read intended per sheet;Roster duelist lid styling mildly ambiguous",
     "All text lore/cards DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }
