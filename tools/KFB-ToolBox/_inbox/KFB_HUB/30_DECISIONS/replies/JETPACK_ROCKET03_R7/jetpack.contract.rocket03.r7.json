@@ -1,0 +1,138 @@
+{
+ "id": "kfb_jetpack.rocket03.r7",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-05",
+ "status": "pending-georg",
+ "jetvar": "rocket",
+ "job": "JETPACK_ROCKET03_R7 (Georg über WS0: „Macht es wie bei den anderen Jetpacks. Das erste Bild der Serie in Ruhe ist okay. Wenn er schleicht und es ein bisschen im Kopf steckt, ist das auch okay. Seitlich kein Spalt.“): Lage wie R6b in Ruhe, Kapsel starr, Gelenk und Scharnier entfernt, Platte geskinnt wie R6.",
+ "verfahren": {
+  "groesse": "1,8125 wie R2/R3, Form unverändert",
+  "sitz": "z 0,95 an spine, Neigung 5,74° (Rückenlinie), Matrix gleich R6",
+  "platte": "bau_r4_r6.py (JP_FIT 4, JP_GAP 0,0005, oben −15 %, unten −20 %), dann skin_platte.py",
+  "wurzel_q080": "Wurzel ohne Eigenlage, Lage nur in matrix_gltf_local unter spine; geprüft 0 mm (pruef_q080.mjs)"
+ },
+ "skins": {
+  "rocket": {
+   "root_node": "KFB_Jetpack_Rocket",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_gross.r7.glb",
+   "sha256": "d2e96034b4629b82c4935bbffa5f5f4a971f8756414a16aa52a571689303b5b8",
+   "wurzel": "ohne Eigenlage (Q-080)",
+   "ohne_platte": true,
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.95,
+    "neigung_deg": 5.74,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005,
+    "platte_oben_gekuerzt": 0.15,
+    "platte_unten_gekuerzt": 0.2
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8147882844737344,
+      0.2829380685065533,
+      0,
+      0,
+      -0.2829380685065533,
+      2.8147882844737344,
+      0,
+      2.369605336801159e-22,
+      0.3518851824647353,
+      -0.31965442777807823,
+      1
+     ]
+    }
+   },
+   "platte_teil": {
+    "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_Platte_FB.r7.glb",
+    "sha256": "7b98d7eabd367bff7bb6fc0a141de79b58e382f752cc7b35cca4670f45b123c3",
+    "mesh_node": "S1_platte",
+    "kind": "skinned",
+    "slot": "back",
+    "gewichte_mittel": {
+     "spine": 0.737,
+     "chest": 0.205,
+     "hips": 0.058
+    },
+    "einbau": "über das Tausch-System wie GURTE_R1, zusammen mit jetvar=rocket ein- und ausblenden"
+   },
+   "einbau_hinweis": "Elternknochen spine; starres Pack wie die anderen Jetpacks (keine Gelenk-Datei), dazu die geskinnte Platte",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "gruppen": [
+    "platte (eigenes Teil)",
+    "kapsel",
+    "fenster",
+    "anzeige",
+    "knopf",
+    "griff",
+    "band",
+    "schrauben",
+    "duese"
+   ],
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_rocket.r7.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_rocket_gross.r7.json",
+   "messung_datei": "50_BLENDER/JETPACK_R1/data/messung_rocket_gross.r7.json",
+   "spalt_platte_ruecken_p90_cm_max": {
+    "unten": 0.56,
+    "oben": 1.24
+   },
+   "rumpf_cm_max": 0.0,
+   "platte_kapsel_ruhe": {
+    "ruecken_platte_cm_max": 1.79,
+    "platte_pack_cm_max": 2.68,
+    "bei": [
+     0.072,
+     0.643
+    ],
+    "platte_pack_cm_p90": 1.23,
+    "strahlen": 115
+   },
+   "kopf_eindringen_cm": {
+    "Crouching": 1.7,
+    "Jump_Idle": 0.7,
+    "Jump_Start": 2.7,
+    "Running_A": 2.6,
+    "Running_B": 1.91,
+    "Sneaking": 3.2,
+    "kfb_dance_hokey_pokey_a": 0.77,
+    "kfb_dance_twist_dance_a": 3.57,
+    "kfb_idle_happy_a": 0.68
+   },
+   "kopf_hinweis": "laut Georg erlaubt („wenn er schleicht und es ein bisschen im Kopf steckt“); in Ruhe, Gehen und Idle B frei",
+   "schwanz_sicht": {
+    "ruhe": {
+     "links": 71.8,
+     "rechts": 72.4
+    },
+    "Walking_A": {
+     "min_links": 67.5,
+     "min_rechts": 70.0,
+     "mittel_links": 70.9,
+     "bilder": 13
+    },
+    "Walking_B": {
+     "min_links": 57.8,
+     "min_rechts": 60.5,
+     "mittel_links": 61.4,
+     "bilder": 13
+    }
+   },
+   "messung": "messe_r4.py (alle 17 Clips, jedes 2. Bild): Kopf (Parität), Rumpf, Spalt Platten-Rückseite–Rücken unten/oben p90; Einheiten wie bisher"
+  }
+ },
+ "nicht_geaendert": [
+  "Form, Farben, Teile (rocket_bau.py unverändert)",
+  "Diesel R2 (bleibt Standard)"
+ ],
+ "ersetzt": "kfb_jetpack.rocket03.r6b (Gelenk und Scharnier entfallen)"
+}
