@@ -1,3 +1,21 @@
+# Current WSA Return · 2026-11-05 · Story trios
+
+Owner WSA · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · draft PR469.
+
+Previous career36 Georg PASS at8573dc434ed5cb659bb3f5d3c091ce538d692175. Accepted source45sheets/270depictions;43sheets/258depictions intake-eligible. Standing exclusions retained. Counts overlap the receiving roster. Cards/text remain DESIGN.
+
+Career source check-in: six approved PNGs plus31metadata files in private georg-doc/KFB-Stunt-Car-Race, assets/private, headf4748734619f76c6d217517c74b58cece1d6ee7d,75_REFS/WSA_SLOP_INTAKE/CAREER_TIERS_36_2026-11-05/. All37entries read back; six image Git blob IDs match local approved bytes. Existing importer lacks career rules/canonical mapping at99c3a8d94b8e3d224535bb65970fe46092cd2a3f. Actual sprite/catalogue/atlas import and Librarian export/rebuild pending WS0 via game issue51. Source check-in is not game or Site visibility. No new owner.
+
+New STORY_TRIOS_36_2026-11-05: six sheets,12trios,36distinct actors, two female-read per sheet. Each row3different complementary characters; trio links reciprocal, pair/state linksnull. Escape/heist, jazz/garage, family/plumbing, Macbeth/Hamlet, Odyssey/Casablanca, Musketeers/Quixote. Loose source associations, no actor likeness images or KFB deck/canon mapping. New manifests DRAFT, Georg-statusnull, intakefalse. Names/cards/voices/field notes DESIGN.
+
+Implementation checkpointd202e7854b679f9f6257dd4cb60a2413252a1639:50files,6reference-conditioned native generations plus2layout edits,8PNG versions retained/6selected. First two sheets select R2.42exact text readbacks and8byte-identical PNG comparisons complete. Selected1536×1024RGBA seams clear of visible content;36unique IDs/12groups/reciprocal memberships/two female actors per sheet checked. Reviewed64/96/160/192px, light/dark/checker. Model/seed not exposed. Native maxalpha254/residual1 normalization deferred; per-sheet sculpt/acting deviations retained, including one visible eye on ghost-father. Native edits not lossless.
+
+Changed story folder, SET_MANIFESTS_R1.json, STORY_TRIO_FORMAT_R1.md, private career intake evidence and this Return. No new runtime/combat, catalogue registration, canonical IDs, Library publication, Stage, merge or Live changes. No new local Git worktree created.
+
+One next design gate: Georg's verdict on six selected story-trio sheets. Accepted career intake proceeds via WS0 issue51 without another design gate.
+
+---
+
 # Current update · 2026-11-05 · Career36 PASS and trio production
 
 Georg accepted all36career depictions and requested game/Librarian check-in. Source inventory45PASS sheets/270depictions;43sheets/258depictions intake-eligible. Cards DESIGN, standing exclusions preserved. WSA authoring owner, same branch/PR469. Downstream import needs existing WS0 rules/canonical mapping and private sprites; sources will be checked into existing private game asset storage, not blindly appended as36unrelated identities. Next authorized image outcome: six sheets of12story/professional trios,36distinct identities. Unlike tier rows, trio members are different characters. No runtime/Live claim.
@@ -484,6 +502,7 @@ WS0 register `docs/kfb-decisions-register-2026-10-11` / DECISIONS.md holds decis
 
 ## Exactly one next gate
 **WS0:** use issue #466 to admit one actual six-actor `normie_a` low-level source sheet via existing Asset Librarian into the 72-actor receiving pipeline, prove alpha/96px, animate in existing `mobs2d`, show one real WS1 in-game bounce/hit/splatter/collision screenshot/clip with honest test counts. Do not merge/promote automatically. Georg action required now: **nothing**.
+
 
 
 

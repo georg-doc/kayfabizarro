@@ -13,3 +13,6 @@ QA: six selected1536×1024RGBA sheets, hashes/alpha/outer edges/seams,36unique a
 No new runtime, catalogue registration, canonical IDs, combat data, Librarian publication, Stage, merge or Live change.
 
 One next design gate: Georg reviews six selected story-trio sheets. Career intake proceeds through existing owner issue51 without another image-design gate.
+
+## Verified archival evidence
+Implementation head d202e7854b679f9f6257dd4cb60a2413252a1639:42exact text readbacks and8byte-identical PNG comparisons complete. Private career source blob IDs also match all6local approved PNG byte identities. Final evidence/Return checkpoint follows.
