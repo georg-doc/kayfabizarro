@@ -1,0 +1,21 @@
+{
+  "schema": "kfb.image-production-record/1",
+  "tool": "image_gen.imagegen",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "status": "DRAFT_PENDING_GEORG",
+  "sheet": "nachtjazz--garagenkrach-r2",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-trio-batch-20261105/02-nachtjazz--garagenkrach.png"
+    ],
+    "transparent_background": true,
+    "prompt": "Precise LAYOUT / CUTOUT edit of attached KFB clay ink sheet. Preserve exactly these SIX DISTINCT ink characters, faces/eyes/expressions/body shapes/colours/clothes/tools and ORDER. Do not redesign. One1536x1024 true transparent PNG, THREE columns TWO rows,512x512 each cell. Uniformly SHRINK each ENTIRE character including EVERY own prop and droplet to fit MAX340x340 centered in its own cell, at least86 transparent pixels on EACH side. Keep comparable overall body size, no crops or shared props. Each actor completely fits its own cell. Absolutely nothing may cross x512,x1024 or y512. Top row jazz: female sax, male bass player, male snare drummer. Bottom row garage band: female singer, male guitar, male bucket drummer. Most importantly entire double bass AND bass player's complete ink base fit within top-middle cell, no intrusion into bottom row. Clear background/holes actual alpha0, figures opaque alpha255, antialiased edges only. No gradient/backdrop/floor/shadow disc/checkerboard/text/labels/numbers. Keep full upright FOOTLESS dark ink bodies with white sclera/red iris/black pupil. Exactly SIX standalone actors in original order; change spacing/scale only."
+  },
+  "output_hint": "Generated images are saved to /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21 as /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-ed494df3-3641-47a9-8eab-22ec1e11e2ff.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_file": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-ed494df3-3641-47a9-8eab-22ec1e11e2ff.png",
+  "reference_roles": [
+    "R1 edit target only"
+  ],
+  "note": "Layout correction; original retained, not a lossless repack."
+}

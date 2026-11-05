@@ -1,0 +1,243 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_PENDING_GEORG",
+  "format": "STORY_TRIOS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+    "sha256": "70be546924394b8d229d7b682455ab733b9da61d154adae5d2d7cf241a6f6611"
+  },
+  "production_record": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+  "cards": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "PENDING_GEORG"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRIO_MACBETH_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "König Vielleichtmorgen",
+      "rolle_im_trio": "Macbeth archetype: anxious usurper",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_MACBETH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_MACBETH_20261105_02",
+        "WSA_TRIO_MACBETH_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "copper crown, short dagger"
+      ],
+      "prompt_auszug": "WIDE upright chunky ink splat, one split crown curl, TWO uneven lower tusks. Panicked side-looking WHITE/red/black eyes and crooked clenched teeth. Tiny battered copper CROWN tilted too far, short terracotta plaid collar. Holds ONE short thick dull ceremonial DAGGER low at own belly, no blood/action/victim.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_MACBETH_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lady Fleckenfreiheit",
+      "rolle_im_trio": "Lady Macbeth archetype: relentless guilt manager",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_MACBETH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_MACBETH_20261105_01",
+        "WSA_TRIO_MACBETH_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "soap bar, small wash bowl"
+      ],
+      "prompt_auszug": "TALL narrow upright ink pear, TWO smooth rolled crown lobes, heavy lashes, ONE sharp upper ivory tooth. Fixed cold wide gaze DOWN, CLOSED taut crooked lip. Tiny terracotta velvet-like collar with copper clasp, one little ivory hairpin. Both hands squeeze ONE large worn IVORY SOAP BAR over ONE tiny cream wash bowl held against own belly, no water scene.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_MACBETH_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Vorhersagbar",
+      "rolle_im_trio": "witch archetype: cheerful ambiguous oracle",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_MACBETH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_MACBETH_20261105_01",
+        "WSA_TRIO_MACBETH_20261105_02"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small cauldron, short spoon"
+      ],
+      "prompt_auszug": "SHORT ROUND upright ink dumpling, crown nubs under SMALL crooked dark-plum witch cap with terracotta patch, lashes, THREE sparse upper teeth. One WHITE/red/black eye wide and one squint shut, mischievous asymmetrical OPEN laugh with NO tongue. Hugs ONE small round black clay CAULDRON with fat copper rim and ONE very short wooden spoon, no smoke/spell FX.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_HAMLET_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Prinz Aufschub",
+      "rolle_im_trio": "Hamlet archetype: prince of deferred decisions",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_HAMLET_20261105",
+      "trio_mit": [
+        "WSA_TRIO_HAMLET_20261105_02",
+        "WSA_TRIO_HAMLET_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small theatrical skull"
+      ],
+      "prompt_auszug": "TALL bent upright ink bean, ONE long drooping crown lobe, one big upper tooth and tiny lower fang. Unequal wide WHITE/red/black eyes looking DOWN, heavy uncertain CLOSED pout. Tiny dark cap with short ivory feather and small blue princely collar. Holds ONE simple rounded little IVORY THEATRICAL SKULL at belly, no bones/gore elsewhere.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_HAMLET_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Nachtrag",
+      "rolle_im_trio": "Horatio archetype: patient witness",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_HAMLET_20261105",
+      "trio_mit": [
+        "WSA_TRIO_HAMLET_20261105_01",
+        "WSA_TRIO_HAMLET_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "notebook, quill"
+      ],
+      "prompt_auszug": "WIDE low upright ink splat with three blunt crown nubs, tiny navy soft cap, TWO offset upper teeth. Weary knowing half-lidded side gaze and CLOSED little crooked lip. Holds ONE small plain leather NOTEBOOK and ONE fat ivory quill, no writing/text.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_HAMLET_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vater Unabgeschlossen",
+      "rolle_im_trio": "ghost-father archetype: unresolved authority",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_HAMLET_20261105",
+      "trio_mit": [
+        "WSA_TRIO_HAMLET_20261105_01",
+        "WSA_TRIO_HAMLET_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "battered helmet, brass key"
+      ],
+      "prompt_auszug": "MEDIUM upright round-bottom ink bell, TWO backward crown curls, huge lower lip and ONE tiny upper fang. Stern affronted one-brow glare, CLOSED downturned lip. Small battered GREY knight brow helmet with broken brass crest and very short navy collar; one goo hand holds ONE fat old brass KEY, no transparency/ghost FX, no full armour.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ]
+}

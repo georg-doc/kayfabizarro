@@ -313,11 +313,49 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
+    "trios": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }

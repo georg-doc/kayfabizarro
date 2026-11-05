@@ -1,0 +1,93 @@
+{
+  "schema": "kfb.slop-source-intake/1",
+  "date": "2026-11-05",
+  "owner": "WS0/Verteiler; WSA source delivery",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "assets/ws0-ink-miners-2026-11-04",
+    "head": "8573dc434ed5cb659bb3f5d3c091ce538d692175",
+    "root": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/"
+  },
+  "destination": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "assets/private",
+    "root": "75_REFS/WSA_SLOP_INTAKE/CAREER_TIERS_36_2026-11-05/"
+  },
+  "counts": {
+    "sheets": 6,
+    "identities": 12,
+    "depictions": 36
+  },
+  "items": [
+    {
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "manifest": "01-medizin--pflege/MANIFEST.json",
+      "image": "01-medizin--pflege/sheet-r1.png",
+      "sha256": "ef9d183874efecbb98ac649cd575b81c42cb949d98831d42c6bd4559e4d71892",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    },
+    {
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "manifest": "02-kueche--handwerk/MANIFEST.json",
+      "image": "02-kueche--handwerk/sheet-r1.png",
+      "sha256": "84800a635b7d76240d55b8ab2450f1b8cf82b3355a3c8f5f4c43b1411c670352",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    },
+    {
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "manifest": "03-bildung--wissenschaft/MANIFEST.json",
+      "image": "03-bildung--wissenschaft/sheet-r1.png",
+      "sha256": "5fdc3facff4d21eaef0425402a5b1c03045190750d5b9bb7bbbdb5d117f003ef",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    },
+    {
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "manifest": "04-buero--justiz/MANIFEST.json",
+      "image": "04-buero--justiz/sheet-r1.png",
+      "sha256": "ab4da673e6b5c478e0926b2fcf0dd4b3a20a6ae1e6312672afe5d8f5ee68f343",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    },
+    {
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "manifest": "05-transport--handel/MANIFEST.json",
+      "image": "05-transport--handel/sheet-r2.png",
+      "sha256": "0c3bfd1e1bf0094a1315bf632cea5b2bb20d0cf1813729dffc67ef0eaebc6dec",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    },
+    {
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "manifest": "06-medien--verwaltung/MANIFEST.json",
+      "image": "06-medien--verwaltung/sheet-r1.png",
+      "sha256": "ef5585d2481a5ff0fd74f77c6b96fbd07ae05aeb34b9036b9690dde52a9d7284",
+      "source_path": "media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+      "georg_status": "PASS",
+      "identities": 2,
+      "depictions": 6
+    }
+  ],
+  "intake_status": "SOURCE_BYTES_CHECKED_IN_PENDING_WS0_IMPORT",
+  "canonical_mapping": "PENDING_EXISTING_OWNER",
+  "catalogue_registration": "NOT_RUN",
+  "atlas_build": "NOT_RUN",
+  "librarian_rebuild": "NOT_RUN",
+  "runtime_test": "NOT_RUN",
+  "note": "Do not treat career stages as36unrelated identities or automatic combat tiers; names/cards remain DESIGN. Existing ingest_popups.py has no matching CAREER_TIERS rule at99c3a8d94b8e3d224535bb65970fe46092cd2a3f. Existing Librarian export reads catalog+slop_r1, not this source inbox.",
+  "verified_private_head": "f4748734619f76c6d217517c74b58cece1d6ee7d",
+  "readbacks": 37,
+  "receiving_issue": 51
+}

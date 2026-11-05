@@ -1,0 +1,446 @@
+[
+  {
+    "sheet": 1,
+    "key": "ausbrecher--bruchkolonne",
+    "trios": [
+      {
+        "key": "ausbrecher",
+        "title": "Die unzuständige Zelle",
+        "kind": "gang",
+        "source": "Original escape-gang archetypes; broad striped-prisoner cartoon memory, no existing character copies.",
+        "anchor": "tiny black/ivory STRIPED cloth collars and little soft striped caps, ONE dull-red square patch each, exposed dark goo bodies",
+        "actors": [
+          {
+            "name": "Herr Fluchtweg",
+            "gender": "maennlich",
+            "role": "anxious escape planner",
+            "design": "TALL skinny hooked upright ink bean, one long sagging crown lobe, one enormous lower ivory tooth. Unequal wide WHITE/red/black eyes DOWN, worried crooked CLOSED lower lip. Hugs ONE rolled blank cream escape sketch with ONE short fat red carpenter pencil tucked in fold.",
+            "personality": "He has identified an exit for every eventuality except the present one."
+          },
+          {
+            "name": "Frau Löffelrecht",
+            "gender": "weiblich",
+            "role": "determined prison tunnel specialist",
+            "design": "SHORT very WIDE blunt-lobed ink splat, TWO low crown nubs, subtle lashes, THREE widely spaced upper teeth. One eye squints shut with effort, other forward, side-clenched tooth grimace. Grips ONE absurdly broad bent steel SOUP SPOON against own belly like her entire practical education.",
+            "personality": "She regards the wall as an unresolved question of cutlery."
+          },
+          {
+            "name": "Herr Bewährungsangst",
+            "gender": "maennlich",
+            "role": "nervous prison baggage keeper",
+            "design": "ROUND upright dumpling ink blob, crown forms THREE tiny offset drops, TWO big lower teeth, heavy trembling lip. White/red/black eyes stare SIDEWAYS, pinched worried half-open underbite. Both goo hands protect ONE tiny patched brown drawstring BUNDLE with a little blank ivory tag, no loot spilling.",
+            "personality": "He packed for freedom and is concerned about the return policy."
+          }
+        ]
+      },
+      {
+        "key": "bruchkolonne",
+        "title": "Der ordentliche Einbruch",
+        "kind": "professional gang",
+        "source": "Original heist crew.",
+        "anchor": "little BURGUNDY knit caps with a TEAL stitched patch and short cream neckerchiefs, no suits covering bodies",
+        "actors": [
+          {
+            "name": "Herr Schließzustand",
+            "gender": "maennlich",
+            "role": "punctilious lock specialist",
+            "design": "MEDIUM narrow upright pear ink blob, stiff sideways crown curl, thick upper lip and ONE crooked upper tooth. Half-lidded judgmental side-eye, CLOSED pursed lip. Holds ONE enormous old brass KEY and ONE short fat blunt lock pick together low at belly, simple readable tools.",
+            "personality": "He objects to locks mainly on procedural grounds."
+          },
+          {
+            "name": "Frau Fernverdacht",
+            "gender": "weiblich",
+            "role": "over-alert lookout",
+            "design": "TALL leaning inverted-drop ink splat, TWO antenna-like rounded crown lobes, subtle lashes, asymmetrical upper fangs. One eye CLOSED and one WHITE/red/black very wide looking outward, crooked small tense mouth. Hugs ONE stubby thick battered BRASS SPYGLASS at her own belly, not looking through it or pointing at another actor.",
+            "personality": "She has seen trouble coming and would like it to make an appointment."
+          },
+          {
+            "name": "Herr Leerlauf",
+            "gender": "maennlich",
+            "role": "unhurried getaway driver",
+            "design": "WIDE low upright bean splat with a huge coiled crown loop, ONE square lower tooth, sleepy drooping lids. Exhausted unimpressed WHITE/red/black gaze and enormous CLOSED pout. Holds ONE small three-spoke BLACK rubber steering wheel with iron hub, loose in both goo hands, no car.",
+            "personality": "He is ready to leave as soon as everyone stops making this urgent."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/professions-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Die unzuständige Zelle. Context: Original escape-gang archetypes; broad striped-prisoner cartoon memory, no existing character copies. SHARED restrained belonging cue: tiny black/ivory STRIPED cloth collars and little soft striped caps, ONE dull-red square patch each, exposed dark goo bodies.\nLEFT: A DIFFERENT male anxious escape planner. TALL skinny hooked upright ink bean, one long sagging crown lobe, one enormous lower ivory tooth. Unequal wide WHITE/red/black eyes DOWN, worried crooked CLOSED lower lip. Hugs ONE rolled blank cream escape sketch with ONE short fat red carpenter pencil tucked in fold.\nMIDDLE: A DIFFERENT FEMALE-READ determined prison tunnel specialist. SHORT very WIDE blunt-lobed ink splat, TWO low crown nubs, subtle lashes, THREE widely spaced upper teeth. One eye squints shut with effort, other forward, side-clenched tooth grimace. Grips ONE absurdly broad bent steel SOUP SPOON against own belly like her entire practical education.\nRIGHT: A DIFFERENT male nervous prison baggage keeper. ROUND upright dumpling ink blob, crown forms THREE tiny offset drops, TWO big lower teeth, heavy trembling lip. White/red/black eyes stare SIDEWAYS, pinched worried half-open underbite. Both goo hands protect ONE tiny patched brown drawstring BUNDLE with a little blank ivory tag, no loot spilling.\n\nBOTTOM ROW TRIO: Der ordentliche Einbruch. Context: Original heist crew. SHARED restrained belonging cue: little BURGUNDY knit caps with a TEAL stitched patch and short cream neckerchiefs, no suits covering bodies.\nLEFT: A DIFFERENT male punctilious lock specialist. MEDIUM narrow upright pear ink blob, stiff sideways crown curl, thick upper lip and ONE crooked upper tooth. Half-lidded judgmental side-eye, CLOSED pursed lip. Holds ONE enormous old brass KEY and ONE short fat blunt lock pick together low at belly, simple readable tools.\nMIDDLE: A DIFFERENT FEMALE-READ over-alert lookout. TALL leaning inverted-drop ink splat, TWO antenna-like rounded crown lobes, subtle lashes, asymmetrical upper fangs. One eye CLOSED and one WHITE/red/black very wide looking outward, crooked small tense mouth. Hugs ONE stubby thick battered BRASS SPYGLASS at her own belly, not looking through it or pointing at another actor.\nRIGHT: A DIFFERENT male unhurried getaway driver. WIDE low upright bean splat with a huge coiled crown loop, ONE square lower tooth, sleepy drooping lids. Exhausted unimpressed WHITE/red/black gaze and enormous CLOSED pout. Holds ONE small three-spoke BLACK rubber steering wheel with iron hub, loose in both goo hands, no car.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third."
+    }
+  },
+  {
+    "sheet": 2,
+    "key": "nachtjazz--garagenkrach",
+    "trios": [
+      {
+        "key": "nachtjazz",
+        "title": "Drei gegen die Stille",
+        "kind": "music ensemble",
+        "source": "Original jazz trio; no named musicians or likeness references.",
+        "anchor": "tiny midnight-blue collars, little COPPER oval pins and one restrained CORAL cloth accent each",
+        "actors": [
+          {
+            "name": "Frau Atemvorbehalt",
+            "gender": "weiblich",
+            "role": "jazz saxophonist",
+            "design": "TALL curving upright ink pear, high flowing crown quiff, long lids/lashes, TWO offset ivory upper teeth. One eye blissfully shut and one sideways, strong curved closed lip. Holds ONE short beautifully rounded BRASS SAXOPHONE with thick curved bell and THREE large keys at own belly, mouthpiece clear of face.",
+            "personality": "She considers silence a promising place to begin a disagreement."
+          },
+          {
+            "name": "Herr Grundton",
+            "gender": "maennlich",
+            "role": "double-bass anchor",
+            "design": "VERY WIDE low heavy upright ink splat, three blunt crown lobes, single big lower tusk. Low patient half-lids, CLOSED solemn downturned lip. Hugs ONE compact fat WOODEN DOUBLE BASS with short neck and THREE thick strings, entire instrument at belly with NO endpin/floor, goo face/body dominant.",
+            "personality": "He keeps the group together by refusing to hurry."
+          },
+          {
+            "name": "Herr Nebenbeat",
+            "gender": "maennlich",
+            "role": "impatient snare drummer",
+            "design": "SMALL narrow tilted upright goo bean, one springy crown hook, FOUR tiny irregular upper teeth. Both WHITE/red/black eyes wide and asymmetric, delighted sideways clenched-tooth grin. ONE small copper-rimmed SNARE DRUM strapped LOW to own belly, ONE short fat wooden stick in each goo hand, no kit/stool.",
+            "personality": "He heard the pause and has taken responsibility for correcting it."
+          }
+        ]
+      },
+      {
+        "key": "garagenkrach",
+        "title": "Die angekündigte Ruhestörung",
+        "kind": "music ensemble",
+        "source": "Original garage-punk trio; no celebrity likenesses.",
+        "anchor": "small worn plum collars with a MUSTARD stitch and tiny dull-copper hardware, no leather human torsos",
+        "actors": [
+          {
+            "name": "Frau Lautantrag",
+            "gender": "weiblich",
+            "role": "garage singer",
+            "design": "BROAD upright triangular ink splat, THREE thick crown waves like soft goo mohawk, lashes, TWO big uneven lower teeth. Defiant furious OPEN underbite SHOUT, one eye squeezed, no tongue. Holds ONE fat old black MICROPHONE with copper stem at belly, no stand or cable.",
+            "personality": "She has submitted the complaint at its intended volume."
+          },
+          {
+            "name": "Herr Akkordresten",
+            "gender": "maennlich",
+            "role": "obsessive guitarist",
+            "design": "TALL thin stooping-but-UPRIGHT bean, long drooping crown lobe, ONE off-centre upper ivory fang. Suspicious concentrated crosswise gaze, CLOSED lip biting tooth. Hugs ONE short rounded battered mustard ELECTRIC GUITAR with plum pickguard and THREE fat strings, no amp/cables.",
+            "personality": "He knows one chord thoroughly enough to distrust the others."
+          },
+          {
+            "name": "Herr Eimermaß",
+            "gender": "maennlich",
+            "role": "bucket percussionist",
+            "design": "VERY ROUND low upright ink dumpling, TWO tiny side crown nubs, large soft lower lip and THREE sparse upper teeth. Enormous delighted open tooth LAUGH, one eye shut, NO tongue. Holds ONE dented upside-down steel BUCKET as a small belly drum, ONE short fat wooden kitchen spoon for striking, no floor.",
+            "personality": "He brought the instrument that was available and now considers it essential."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/professions-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Drei gegen die Stille. Context: Original jazz trio; no named musicians or likeness references. SHARED restrained belonging cue: tiny midnight-blue collars, little COPPER oval pins and one restrained CORAL cloth accent each.\nLEFT: A DIFFERENT FEMALE-READ jazz saxophonist. TALL curving upright ink pear, high flowing crown quiff, long lids/lashes, TWO offset ivory upper teeth. One eye blissfully shut and one sideways, strong curved closed lip. Holds ONE short beautifully rounded BRASS SAXOPHONE with thick curved bell and THREE large keys at own belly, mouthpiece clear of face.\nMIDDLE: A DIFFERENT male double-bass anchor. VERY WIDE low heavy upright ink splat, three blunt crown lobes, single big lower tusk. Low patient half-lids, CLOSED solemn downturned lip. Hugs ONE compact fat WOODEN DOUBLE BASS with short neck and THREE thick strings, entire instrument at belly with NO endpin/floor, goo face/body dominant.\nRIGHT: A DIFFERENT male impatient snare drummer. SMALL narrow tilted upright goo bean, one springy crown hook, FOUR tiny irregular upper teeth. Both WHITE/red/black eyes wide and asymmetric, delighted sideways clenched-tooth grin. ONE small copper-rimmed SNARE DRUM strapped LOW to own belly, ONE short fat wooden stick in each goo hand, no kit/stool.\n\nBOTTOM ROW TRIO: Die angekündigte Ruhestörung. Context: Original garage-punk trio; no celebrity likenesses. SHARED restrained belonging cue: small worn plum collars with a MUSTARD stitch and tiny dull-copper hardware, no leather human torsos.\nLEFT: A DIFFERENT FEMALE-READ garage singer. BROAD upright triangular ink splat, THREE thick crown waves like soft goo mohawk, lashes, TWO big uneven lower teeth. Defiant furious OPEN underbite SHOUT, one eye squeezed, no tongue. Holds ONE fat old black MICROPHONE with copper stem at belly, no stand or cable.\nMIDDLE: A DIFFERENT male obsessive guitarist. TALL thin stooping-but-UPRIGHT bean, long drooping crown lobe, ONE off-centre upper ivory fang. Suspicious concentrated crosswise gaze, CLOSED lip biting tooth. Hugs ONE short rounded battered mustard ELECTRIC GUITAR with plum pickguard and THREE fat strings, no amp/cables.\nRIGHT: A DIFFERENT male bucket percussionist. VERY ROUND low upright ink dumpling, TWO tiny side crown nubs, large soft lower lip and THREE sparse upper teeth. Enormous delighted open tooth LAUGH, one eye shut, NO tongue. Holds ONE dented upside-down steel BUCKET as a small belly drum, ONE short fat wooden kitchen spoon for striking, no floor.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third."
+    }
+  },
+  {
+    "sheet": 3,
+    "key": "sonntagsfamilie--rohrkommando",
+    "trios": [
+      {
+        "key": "sonntagsfamilie",
+        "title": "Der gemeinsame freie Tag",
+        "kind": "family",
+        "source": "Original adult family: matriarch, adult son, grandfather.",
+        "anchor": "little burgundy cloth collars with ONE small IVORY oval button and modest worn cream household props",
+        "actors": [
+          {
+            "name": "Tante Letztentscheid",
+            "gender": "weiblich",
+            "role": "family matriarch",
+            "design": "WIDE upright heavy bell ink blob with TWO rolled crown curls tied in tiny ivory kerchief, lashes, ONE huge upper tooth. Terrifyingly cordial CLOSED crooked smile, high rounded brows and one half-lid. Holds ONE squat old cream PORCELAIN TEAPOT with thick copper lid, no cup/pouring.",
+            "personality": "She has invited everyone to enjoy the day according to her arrangement."
+          },
+          {
+            "name": "Herr Familiensonntag",
+            "gender": "maennlich",
+            "role": "overruled adult son",
+            "design": "TALL very narrow drooping ink pear, one long sagging crown hook, TWO small offset lower teeth. Unequal white/red/black eyes look UP, tired worried sagging underbite. Hugs ONE small cream PLATE holding ONE lonely crumbled toast corner, all attached to own hands.",
+            "personality": "He was told there would be no obligations today."
+          },
+          {
+            "name": "Opa Zeitreserve",
+            "gender": "maennlich",
+            "role": "grandfather of the gathering",
+            "design": "COMPACT almost-square ROUND-lobed upright ink splat with three low crown nubs, heavy wrinkled lids, single ivory lower tusk. Offended teeth-clenched sideways stare. Both goo hands hold ONE enormous old copper ALARM CLOCK with fat bells and BLANK face with TWO physical hands only, no digits.",
+            "personality": "He arrived early to establish that everyone else was late."
+          }
+        ]
+      },
+      {
+        "key": "rohrkommando",
+        "title": "Die letzte trockene Stelle",
+        "kind": "trade crew",
+        "source": "Original three-person plumbing crew.",
+        "anchor": "tiny faded TEAL work caps with little COPPER circles, short ochre work collars; dark ink bodies exposed",
+        "actors": [
+          {
+            "name": "Frau Hauptabsperrung",
+            "gender": "weiblich",
+            "role": "plumbing forewoman",
+            "design": "TALL broad upright rounded trapezoid ink blob, TWO strong sideways crown curls, lashes, THREE uneven upper teeth. One brow high and other eye narrowed, CLOSED compressed severe lower lip. Holds ONE thick old red PIPE WRENCH, short and beautifully rounded, no pipe maze.",
+            "personality": "She can stop the leak as soon as everyone stops explaining it."
+          },
+          {
+            "name": "Herr Dichtungslehre",
+            "gender": "maennlich",
+            "role": "hopeful apprentice",
+            "design": "SMALL lanky tilted ink bean, one springy crown nub, ONE enormous square lower tooth. Huge wide asymmetric eyes DOWN, crooked nervous lip. Carefully holds ONE massive black RUBBER WASHER with clear round hole as though it were the missing answer, no extra tools.",
+            "personality": "He has found the spare part and is waiting to discover what it replaces."
+          },
+          {
+            "name": "Herr Abnahmetermin",
+            "gender": "maennlich",
+            "role": "pompous work inspector",
+            "design": "VERY WIDE low upright ink splat, three thick blunt crown lobes, two tiny upper fangs, thick heavy lower lip. Disapproving nearly closed WHITE/red/black eyes, CLOSED lip folded into a long pout. Hugs ONE short silver PIPE ELBOW fitted with ONE chunky brass pressure gauge, blank face/two thick hands only; compact self-contained prop.",
+            "personality": "He has detected a discrepancy between the water and the paperwork."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/professions-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Der gemeinsame freie Tag. Context: Original adult family: matriarch, adult son, grandfather. SHARED restrained belonging cue: little burgundy cloth collars with ONE small IVORY oval button and modest worn cream household props.\nLEFT: A DIFFERENT FEMALE-READ family matriarch. WIDE upright heavy bell ink blob with TWO rolled crown curls tied in tiny ivory kerchief, lashes, ONE huge upper tooth. Terrifyingly cordial CLOSED crooked smile, high rounded brows and one half-lid. Holds ONE squat old cream PORCELAIN TEAPOT with thick copper lid, no cup/pouring.\nMIDDLE: A DIFFERENT male overruled adult son. TALL very narrow drooping ink pear, one long sagging crown hook, TWO small offset lower teeth. Unequal white/red/black eyes look UP, tired worried sagging underbite. Hugs ONE small cream PLATE holding ONE lonely crumbled toast corner, all attached to own hands.\nRIGHT: A DIFFERENT male grandfather of the gathering. COMPACT almost-square ROUND-lobed upright ink splat with three low crown nubs, heavy wrinkled lids, single ivory lower tusk. Offended teeth-clenched sideways stare. Both goo hands hold ONE enormous old copper ALARM CLOCK with fat bells and BLANK face with TWO physical hands only, no digits.\n\nBOTTOM ROW TRIO: Die letzte trockene Stelle. Context: Original three-person plumbing crew. SHARED restrained belonging cue: tiny faded TEAL work caps with little COPPER circles, short ochre work collars; dark ink bodies exposed.\nLEFT: A DIFFERENT FEMALE-READ plumbing forewoman. TALL broad upright rounded trapezoid ink blob, TWO strong sideways crown curls, lashes, THREE uneven upper teeth. One brow high and other eye narrowed, CLOSED compressed severe lower lip. Holds ONE thick old red PIPE WRENCH, short and beautifully rounded, no pipe maze.\nMIDDLE: A DIFFERENT male hopeful apprentice. SMALL lanky tilted ink bean, one springy crown nub, ONE enormous square lower tooth. Huge wide asymmetric eyes DOWN, crooked nervous lip. Carefully holds ONE massive black RUBBER WASHER with clear round hole as though it were the missing answer, no extra tools.\nRIGHT: A DIFFERENT male pompous work inspector. VERY WIDE low upright ink splat, three thick blunt crown lobes, two tiny upper fangs, thick heavy lower lip. Disapproving nearly closed WHITE/red/black eyes, CLOSED lip folded into a long pout. Hugs ONE short silver PIPE ELBOW fitted with ONE chunky brass pressure gauge, blank face/two thick hands only; compact self-contained prop.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third.\nSPACING PRIORITY OVERRIDE: sparse contact sheet with SMALL FIGURES, each only about65percent of its cell height, ample empty gaps. COMPLETE actor+props bounding box MAX340x340, at least86px transparent padding INSIDE each512cell. Don't fill the sheet, don't let any prop reach another row or column. Input sheet compositions are NOT layout references."
+    }
+  },
+  {
+    "sheet": 4,
+    "key": "macbeth--hamlet",
+    "trios": [
+      {
+        "key": "macbeth",
+        "title": "Macbeth · Krone, Fleck, Vorhersage",
+        "kind": "literary trio",
+        "source": "Shakespeare Macbeth, loose KFB archetypal interpretation; no actor likeness.",
+        "anchor": "tiny faded TERRACOTTA cloth accents and worn copper trim linking three different tragic archetypes",
+        "actors": [
+          {
+            "name": "König Vielleichtmorgen",
+            "gender": "maennlich",
+            "role": "Macbeth archetype: anxious usurper",
+            "design": "WIDE upright chunky ink splat, one split crown curl, TWO uneven lower tusks. Panicked side-looking WHITE/red/black eyes and crooked clenched teeth. Tiny battered copper CROWN tilted too far, short terracotta plaid collar. Holds ONE short thick dull ceremonial DAGGER low at own belly, no blood/action/victim.",
+            "personality": "He has acquired the crown and misplaced the future."
+          },
+          {
+            "name": "Lady Fleckenfreiheit",
+            "gender": "weiblich",
+            "role": "Lady Macbeth archetype: relentless guilt manager",
+            "design": "TALL narrow upright ink pear, TWO smooth rolled crown lobes, heavy lashes, ONE sharp upper ivory tooth. Fixed cold wide gaze DOWN, CLOSED taut crooked lip. Tiny terracotta velvet-like collar with copper clasp, one little ivory hairpin. Both hands squeeze ONE large worn IVORY SOAP BAR over ONE tiny cream wash bowl held against own belly, no water scene.",
+            "personality": "She has removed every visible objection except the one she can remember."
+          },
+          {
+            "name": "Frau Vorhersagbar",
+            "gender": "weiblich",
+            "role": "witch archetype: cheerful ambiguous oracle",
+            "design": "SHORT ROUND upright ink dumpling, crown nubs under SMALL crooked dark-plum witch cap with terracotta patch, lashes, THREE sparse upper teeth. One WHITE/red/black eye wide and one squint shut, mischievous asymmetrical OPEN laugh with NO tongue. Hugs ONE small round black clay CAULDRON with fat copper rim and ONE very short wooden spoon, no smoke/spell FX.",
+            "personality": "Her prediction is entirely accurate within a suitably flexible interpretation."
+          }
+        ]
+      },
+      {
+        "key": "hamlet",
+        "title": "Hamlet · Frage, Zeuge, Altlast",
+        "kind": "literary trio",
+        "source": "Shakespeare Hamlet, loose KFB archetypal interpretation; no actor likeness.",
+        "anchor": "small midnight-blue collars, worn IVORY and dull brass props, different faces/body contours",
+        "actors": [
+          {
+            "name": "Prinz Aufschub",
+            "gender": "maennlich",
+            "role": "Hamlet archetype: prince of deferred decisions",
+            "design": "TALL bent upright ink bean, ONE long drooping crown lobe, one big upper tooth and tiny lower fang. Unequal wide WHITE/red/black eyes looking DOWN, heavy uncertain CLOSED pout. Tiny dark cap with short ivory feather and small blue princely collar. Holds ONE simple rounded little IVORY THEATRICAL SKULL at belly, no bones/gore elsewhere.",
+            "personality": "He has narrowed the decision down to the question."
+          },
+          {
+            "name": "Herr Nachtrag",
+            "gender": "maennlich",
+            "role": "Horatio archetype: patient witness",
+            "design": "WIDE low upright ink splat with three blunt crown nubs, tiny navy soft cap, TWO offset upper teeth. Weary knowing half-lidded side gaze and CLOSED little crooked lip. Holds ONE small plain leather NOTEBOOK and ONE fat ivory quill, no writing/text.",
+            "personality": "He was asked to remember the facts and has remained inconveniently available."
+          },
+          {
+            "name": "Vater Unabgeschlossen",
+            "gender": "maennlich",
+            "role": "ghost-father archetype: unresolved authority",
+            "design": "MEDIUM upright round-bottom ink bell, TWO backward crown curls, huge lower lip and ONE tiny upper fang. Stern affronted one-brow glare, CLOSED downturned lip. Small battered GREY knight brow helmet with broken brass crest and very short navy collar; one goo hand holds ONE fat old brass KEY, no transparency/ghost FX, no full armour.",
+            "personality": "He has returned because the matter was not left in the approved state."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Macbeth · Krone, Fleck, Vorhersage. Context: Shakespeare Macbeth, loose KFB archetypal interpretation; no actor likeness. SHARED restrained belonging cue: tiny faded TERRACOTTA cloth accents and worn copper trim linking three different tragic archetypes.\nLEFT: A DIFFERENT male Macbeth archetype: anxious usurper. WIDE upright chunky ink splat, one split crown curl, TWO uneven lower tusks. Panicked side-looking WHITE/red/black eyes and crooked clenched teeth. Tiny battered copper CROWN tilted too far, short terracotta plaid collar. Holds ONE short thick dull ceremonial DAGGER low at own belly, no blood/action/victim.\nMIDDLE: A DIFFERENT FEMALE-READ Lady Macbeth archetype: relentless guilt manager. TALL narrow upright ink pear, TWO smooth rolled crown lobes, heavy lashes, ONE sharp upper ivory tooth. Fixed cold wide gaze DOWN, CLOSED taut crooked lip. Tiny terracotta velvet-like collar with copper clasp, one little ivory hairpin. Both hands squeeze ONE large worn IVORY SOAP BAR over ONE tiny cream wash bowl held against own belly, no water scene.\nRIGHT: A DIFFERENT FEMALE-READ witch archetype: cheerful ambiguous oracle. SHORT ROUND upright ink dumpling, crown nubs under SMALL crooked dark-plum witch cap with terracotta patch, lashes, THREE sparse upper teeth. One WHITE/red/black eye wide and one squint shut, mischievous asymmetrical OPEN laugh with NO tongue. Hugs ONE small round black clay CAULDRON with fat copper rim and ONE very short wooden spoon, no smoke/spell FX.\n\nBOTTOM ROW TRIO: Hamlet · Frage, Zeuge, Altlast. Context: Shakespeare Hamlet, loose KFB archetypal interpretation; no actor likeness. SHARED restrained belonging cue: small midnight-blue collars, worn IVORY and dull brass props, different faces/body contours.\nLEFT: A DIFFERENT male Hamlet archetype: prince of deferred decisions. TALL bent upright ink bean, ONE long drooping crown lobe, one big upper tooth and tiny lower fang. Unequal wide WHITE/red/black eyes looking DOWN, heavy uncertain CLOSED pout. Tiny dark cap with short ivory feather and small blue princely collar. Holds ONE simple rounded little IVORY THEATRICAL SKULL at belly, no bones/gore elsewhere.\nMIDDLE: A DIFFERENT male Horatio archetype: patient witness. WIDE low upright ink splat with three blunt crown nubs, tiny navy soft cap, TWO offset upper teeth. Weary knowing half-lidded side gaze and CLOSED little crooked lip. Holds ONE small plain leather NOTEBOOK and ONE fat ivory quill, no writing/text.\nRIGHT: A DIFFERENT male ghost-father archetype: unresolved authority. MEDIUM upright round-bottom ink bell, TWO backward crown curls, huge lower lip and ONE tiny upper fang. Stern affronted one-brow glare, CLOSED downturned lip. Small battered GREY knight brow helmet with broken brass crest and very short navy collar; one goo hand holds ONE fat old brass KEY, no transparency/ghost FX, no full armour.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third.\nSPACING PRIORITY OVERRIDE: sparse contact sheet with SMALL FIGURES, each only about65percent of its cell height, ample empty gaps. COMPLETE actor+props bounding box MAX340x340, at least86px transparent padding INSIDE each512cell. Don't fill the sheet, don't let any prop reach another row or column. Input sheet compositions are NOT layout references."
+    }
+  },
+  {
+    "sheet": 5,
+    "key": "odyssee--casablanca",
+    "trios": [
+      {
+        "key": "odyssee",
+        "title": "Odyssee · Heimweg, Geduld, Hausherr",
+        "kind": "epic trio",
+        "source": "Homer Odyssey: Odysseus, Penelope, Polyphemus as loose ink archetypes, no scene.",
+        "anchor": "small faded moss/cream cloth collars and worn WOOD/terracotta material accents",
+        "actors": [
+          {
+            "name": "Herr Heimwegabweichung",
+            "gender": "maennlich",
+            "role": "Odysseus archetype: resourceful delayed traveller",
+            "design": "TALL narrow hooked upright ink pear, ONE forked crown curl, TWO upper teeth far apart. Wary calculating sideways squint and crooked CLOSED fang smirk. Tiny battered bronze sailor brow helmet and moss collar. Holds ONE SHORT thick worn wooden OAR with broad oval blade low across own belly, no boat/sea.",
+            "personality": "He knows a shorter route but would prefer to describe it afterwards."
+          },
+          {
+            "name": "Frau Zwischengewebe",
+            "gender": "weiblich",
+            "role": "Penelope archetype: patient strategic weaver",
+            "design": "WIDE upright rounded triangle ink blob, TWO rolled quiff lobes in tiny cream kerchief, lashes, single big lower tooth. Serene skeptical half-lids and CLOSED raised-side lip. Holds ONE miniature rounded WOODEN HAND LOOM with FOUR thick cream strands and ONE little terracotta shuttle resting INSIDE frame, no textile scene.",
+            "personality": "She has made waiting into a craft with deliberately reversible progress."
+          },
+          {
+            "name": "Herr Einblick",
+            "gender": "maennlich",
+            "role": "Polyphemus archetype: affronted one-eyed host",
+            "design": "SHORT very WIDE blunt ink splat, THREE low crown nubs, exactly ONE CENTRAL LARGE EYE with WHITE sclera, RED iris, BLACK pupil, TWO large uneven lower tusks. Indignant squint on single eye and massive downturned heavy lip. Tiny terracotta collar, both hands hug ONE huge rounded CREAM CHEESE WHEEL with ONE wedge notch, no livestock/extra characters.",
+            "personality": "He objects to guests who misunderstand the house rules."
+          }
+        ]
+      },
+      {
+        "key": "casablanca",
+        "title": "Casablanca · Ausreise unter Vorbehalt",
+        "kind": "film-memory trio",
+        "source": "Casablanca: cafe keeper, departing beloved, principled traveller; archetypes only, no actor likenesses or film stills.",
+        "anchor": "tiny cream/tan formal collars, BLACK buttons and worn brass/ivory props; restrained old-film-era vibe only",
+        "actors": [
+          {
+            "name": "Herr LetzterAusschank",
+            "gender": "maennlich",
+            "role": "Rick-like cafe-keeper archetype",
+            "design": "WIDE upright heavy rounded bean ink splat, low flat side-part goo quiff, ONE square upper tooth. Jaded half-lidded WHITE/red/black side gaze, CLOSED thick crooked lip. Tiny IVORY dinner-jacket LAPEL COLLAR with BLACK bow tie only. Holds ONE stout small coupe GLASS with thick amber clay drink, no bar or human suit.",
+            "personality": "He keeps a place open for people who are about to leave."
+          },
+          {
+            "name": "Frau Abschiedsvorbehalt",
+            "gender": "weiblich",
+            "role": "Ilsa-like departing-beloved archetype",
+            "design": "TALL slender upright pear ink blob, TWO soft rolled crown curls beneath small cream travel hat, gentle lashes, TWO tiny lower teeth. One eye wide and one heavy lid, determined sad CLOSED curved mouth. Short ivory scarf collar, both hands hold ONE folded blank cream LETTER against own belly, no hands reaching toward another character.",
+            "personality": "She has made a decision that refuses to become a simple memory."
+          },
+          {
+            "name": "Herr Prinzipienreise",
+            "gender": "maennlich",
+            "role": "Victor-like principled-traveller archetype",
+            "design": "MEDIUM tall upright rounded trapezoid ink splat, THREE short asymmetric crown nubs, solitary upper fang and firm lower lip. Focused wary WHITE/red/black forward eyes, crooked CLOSED resolved mouth. Tiny tan lapel collar and one little brass oval pin. Holds TWO oversized plain ivory TRAVEL PAPERS bound by a short dark ribbon, absolutely no print/stamps/airplane/scene.",
+            "personality": "He carries the papers as though departure were a collective responsibility."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Odyssee · Heimweg, Geduld, Hausherr. Context: Homer Odyssey: Odysseus, Penelope, Polyphemus as loose ink archetypes, no scene. SHARED restrained belonging cue: small faded moss/cream cloth collars and worn WOOD/terracotta material accents.\nLEFT: A DIFFERENT male Odysseus archetype: resourceful delayed traveller. TALL narrow hooked upright ink pear, ONE forked crown curl, TWO upper teeth far apart. Wary calculating sideways squint and crooked CLOSED fang smirk. Tiny battered bronze sailor brow helmet and moss collar. Holds ONE SHORT thick worn wooden OAR with broad oval blade low across own belly, no boat/sea.\nMIDDLE: A DIFFERENT FEMALE-READ Penelope archetype: patient strategic weaver. WIDE upright rounded triangle ink blob, TWO rolled quiff lobes in tiny cream kerchief, lashes, single big lower tooth. Serene skeptical half-lids and CLOSED raised-side lip. Holds ONE miniature rounded WOODEN HAND LOOM with FOUR thick cream strands and ONE little terracotta shuttle resting INSIDE frame, no textile scene.\nRIGHT: A DIFFERENT male Polyphemus archetype: affronted one-eyed host. SHORT very WIDE blunt ink splat, THREE low crown nubs, exactly ONE CENTRAL LARGE EYE with WHITE sclera, RED iris, BLACK pupil, TWO large uneven lower tusks. Indignant squint on single eye and massive downturned heavy lip. Tiny terracotta collar, both hands hug ONE huge rounded CREAM CHEESE WHEEL with ONE wedge notch, no livestock/extra characters.\n\nBOTTOM ROW TRIO: Casablanca · Ausreise unter Vorbehalt. Context: Casablanca: cafe keeper, departing beloved, principled traveller; archetypes only, no actor likenesses or film stills. SHARED restrained belonging cue: tiny cream/tan formal collars, BLACK buttons and worn brass/ivory props; restrained old-film-era vibe only.\nLEFT: A DIFFERENT male Rick-like cafe-keeper archetype. WIDE upright heavy rounded bean ink splat, low flat side-part goo quiff, ONE square upper tooth. Jaded half-lidded WHITE/red/black side gaze, CLOSED thick crooked lip. Tiny IVORY dinner-jacket LAPEL COLLAR with BLACK bow tie only. Holds ONE stout small coupe GLASS with thick amber clay drink, no bar or human suit.\nMIDDLE: A DIFFERENT FEMALE-READ Ilsa-like departing-beloved archetype. TALL slender upright pear ink blob, TWO soft rolled crown curls beneath small cream travel hat, gentle lashes, TWO tiny lower teeth. One eye wide and one heavy lid, determined sad CLOSED curved mouth. Short ivory scarf collar, both hands hold ONE folded blank cream LETTER against own belly, no hands reaching toward another character.\nRIGHT: A DIFFERENT male Victor-like principled-traveller archetype. MEDIUM tall upright rounded trapezoid ink splat, THREE short asymmetric crown nubs, solitary upper fang and firm lower lip. Focused wary WHITE/red/black forward eyes, crooked CLOSED resolved mouth. Tiny tan lapel collar and one little brass oval pin. Holds TWO oversized plain ivory TRAVEL PAPERS bound by a short dark ribbon, absolutely no print/stamps/airplane/scene.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third.\nSPACING PRIORITY OVERRIDE: sparse contact sheet with SMALL FIGURES, each only about65percent of its cell height, ample empty gaps. COMPLETE actor+props bounding box MAX340x340, at least86px transparent padding INSIDE each512cell. Don't fill the sheet, don't let any prop reach another row or column. Input sheet compositions are NOT layout references."
+    }
+  },
+  {
+    "sheet": 6,
+    "key": "musketiere--quijote",
+    "trios": [
+      {
+        "key": "musketiere",
+        "title": "Drei für eine Zuständigkeit",
+        "kind": "literary-adventure trio",
+        "source": "Dumas Three Musketeers archetypes; Athos, Porthos and female-read Aramis reinterpreted as original ink characters.",
+        "anchor": "small faded BLUE collars, copper buttons and little soft brimmed caps with SHORT IVORY feather accents, no human capes",
+        "actors": [
+          {
+            "name": "Herr Würdeverlust",
+            "gender": "maennlich",
+            "role": "Athos-like reserved veteran",
+            "design": "TALL thin upright drooping ink bean with one long crown hook, ONE big lower tusk. Weary nearly closed WHITE/red/black eyes, heavy CLOSED downturned lip. Small dark-blue soft cap and short collar. Holds ONE plump short old copper GOBLET, other hand rests on own goo hip; no long sword/cape.",
+            "personality": "He has seen enough honour to prefer a quieter drink."
+          },
+          {
+            "name": "Herr Umfangseid",
+            "gender": "maennlich",
+            "role": "Porthos-like exuberant boaster",
+            "design": "VERY WIDE ROUND upright ink splat, THREE proud fat crown lobes, THREE big uneven upper teeth. Huge exuberant OPEN tooth laugh with NO tongue, raised asymmetrical brows. Small blue cap with stubby feather, broad copper collar button. Both hands hold ONE enormous rounded wooden TANKARD close to belly, no food pile.",
+            "personality": "He regards modesty as an unsuitable container for the available material."
+          },
+          {
+            "name": "Madame Hintergedanke",
+            "gender": "weiblich",
+            "role": "Aramis-like elegant ambiguous schemer",
+            "design": "MEDIUM curving upright ink pear, TWO rolled crown curls, long lashes, single long upper fang. Cool precise WHITE/red/black side-eye and CLOSED tiny crooked smirk. Small blue brimmed cap and short ivory neck tab. Holds ONE small plain LEATHER PRAYER BOOK with brass clasp, other goo hand supports ONE very short rounded RAPIER HILT with a SHORT blunt blade fully inside own cell.",
+            "personality": "She has prepared a sincere explanation for every possible allegiance."
+          }
+        ]
+      },
+      {
+        "key": "quijote",
+        "title": "Die zweckmäßige Einbildung",
+        "kind": "literary trio",
+        "source": "Cervantes Don Quixote: Quixote, Sancho and Dulcinea as loose KFB archetypes; all remain independent blobs.",
+        "anchor": "tiny worn TERRACOTTA/cream cloth collars, plain brass clasps and humble WOOD/iron household craft",
+        "actors": [
+          {
+            "name": "Ritter Zustandsbild",
+            "gender": "maennlich",
+            "role": "Quixote-like visionary knight",
+            "design": "TALL spindly-but-thick upright ink bean with TWO long soft crown lobes, solitary upper tooth and long lower lip. Ecstatic determined one-eye squint, crooked clenched uneven teeth. Tiny old iron COLANDER HELMET worn as brow cap, short terracotta collar. Holds ONE short bent wooden LANCE with a fat blunt cork-like tip, wholly inside cell, no horse/windmill/attack.",
+            "personality": "He recognises the world chiefly by what it ought to have been."
+          },
+          {
+            "name": "Herr Bodenhaftung",
+            "gender": "maennlich",
+            "role": "Sancho-like practical companion",
+            "design": "SHORT VERY WIDE upright ink dumpling, THREE low crown nubs under tiny cream cloth cap, TWO lower tusks. Skeptical WHITE/red/black eyes looking SIDEWAYS, huge CLOSED long pout. Hugs ONE small patched brown provision POUCH with a fat crust of BREAD sticking from opening, no mount.",
+            "personality": "He has brought provisions for the distance between the plan and the road."
+          },
+          {
+            "name": "Frau Eigenwirklichkeit",
+            "gender": "weiblich",
+            "role": "Dulcinea-like independent counterpart",
+            "design": "MEDIUM broad upright rounded triangle ink splat with ONE high coiled goo quiff in small cream kerchief, lashes, THREE sparse upper teeth. Offended strong one-brow raised direct gaze, crooked CLOSED tight-tooth smile. Tiny terracotta collar, both goo hands grip ONE thick worn wooden ROLLING PIN horizontally at own belly, no kitchen/interaction.",
+            "personality": "She would like to be consulted before becoming anyone's ideal."
+          }
+        ]
+      }
+    ],
+    "args": {
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+        "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. NEW KFB cartoon claymation ink blob STORY TRIOS. ONE landscape1536x1024 TRUE TRANSPARENT PNG, EXACTLY THREE columns TWO rows=SIX DIFFERENT standalone CHARACTERS. Top row THREE different individuals in ONE trio; bottom row THREE DIFFERENT individuals in a SECOND trio. THIS IS NOT A TIER/CAREER/EMOTION progression. Never repeat one identity across row. Three means a crowd: each row belongs together by restrained costume/material motif and complementary personality, but each actor must function independently outside group. No handoffs, pointing at neighbour, overlaps or shared objects.\nReference image1 ORIGINAL freche-family for whole dark INK morphology/material; image2 ORIGINAL props reference for modeling craft only. STYLE REFERENCES, NOT edit targets or character templates. No likenesses of actors/musicians, no film still reconstruction, all are ORIGINAL grotesque ink blobs.\nFAMILY INVARIANTS: complete UPRIGHT FOOTLESS charcoal/deep-violet rounded ink SPLATS with thick soft asymmetrical goo lobes, subtle violet sheen, tactile modeled plasticine/fingerprints, sculpted lids/lips and uneven ivory teeth. Hands are goo continuous with body. No humanoid torso/legs/feet/busts, no whole coats/robes hiding goo. Dark ink face/body dominant, accessories small and readable. Every OPEN eye has WHITE/ivory sclera surrounding separate RED iris and BLACK pupil. Planned cyclops has same colour rule. No all-red/glowing eyeballs. Offbeat absurd/surreal satirical peak acting, not generic cute Pixar babies, no repeated V-brow tooth grin. Differentiate body contour, eye/lid shapes, mouth, posture and temperament BEFORE props. Some mouths closed, some open, unequal gazes; NO protruding tongue in ANY cell.\nLAYOUT: equal512x512 cells, each ENTIRE actor and all own droplets/props inside MAX384x384 box with64px transparent margins ALL sides. Centres(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Never cross x512,x1024,y512. Similar overall body size, no giant boss. Few bold simple functional handmade props, rich softly rounded wood/metal/cloth, not machinery clutter. Entire figure isolated, no floor/cast shadows/scenelet/scenery/extra heads.\n\nTOP ROW TRIO: Drei für eine Zuständigkeit. Context: Dumas Three Musketeers archetypes; Athos, Porthos and female-read Aramis reinterpreted as original ink characters. SHARED restrained belonging cue: small faded BLUE collars, copper buttons and little soft brimmed caps with SHORT IVORY feather accents, no human capes.\nLEFT: A DIFFERENT male Athos-like reserved veteran. TALL thin upright drooping ink bean with one long crown hook, ONE big lower tusk. Weary nearly closed WHITE/red/black eyes, heavy CLOSED downturned lip. Small dark-blue soft cap and short collar. Holds ONE plump short old copper GOBLET, other hand rests on own goo hip; no long sword/cape.\nMIDDLE: A DIFFERENT male Porthos-like exuberant boaster. VERY WIDE ROUND upright ink splat, THREE proud fat crown lobes, THREE big uneven upper teeth. Huge exuberant OPEN tooth laugh with NO tongue, raised asymmetrical brows. Small blue cap with stubby feather, broad copper collar button. Both hands hold ONE enormous rounded wooden TANKARD close to belly, no food pile.\nRIGHT: A DIFFERENT FEMALE-READ Aramis-like elegant ambiguous schemer. MEDIUM curving upright ink pear, TWO rolled crown curls, long lashes, single long upper fang. Cool precise WHITE/red/black side-eye and CLOSED tiny crooked smirk. Small blue brimmed cap and short ivory neck tab. Holds ONE small plain LEATHER PRAYER BOOK with brass clasp, other goo hand supports ONE very short rounded RAPIER HILT with a SHORT blunt blade fully inside own cell.\n\nBOTTOM ROW TRIO: Die zweckmäßige Einbildung. Context: Cervantes Don Quixote: Quixote, Sancho and Dulcinea as loose KFB archetypes; all remain independent blobs. SHARED restrained belonging cue: tiny worn TERRACOTTA/cream cloth collars, plain brass clasps and humble WOOD/iron household craft.\nLEFT: A DIFFERENT male Quixote-like visionary knight. TALL spindly-but-thick upright ink bean with TWO long soft crown lobes, solitary upper tooth and long lower lip. Ecstatic determined one-eye squint, crooked clenched uneven teeth. Tiny old iron COLANDER HELMET worn as brow cap, short terracotta collar. Holds ONE short bent wooden LANCE with a fat blunt cork-like tip, wholly inside cell, no horse/windmill/attack.\nMIDDLE: A DIFFERENT male Sancho-like practical companion. SHORT VERY WIDE upright ink dumpling, THREE low crown nubs under tiny cream cloth cap, TWO lower tusks. Skeptical WHITE/red/black eyes looking SIDEWAYS, huge CLOSED long pout. Hugs ONE small patched brown provision POUCH with a fat crust of BREAD sticking from opening, no mount.\nRIGHT: A DIFFERENT FEMALE-READ Dulcinea-like independent counterpart. MEDIUM broad upright rounded triangle ink splat with ONE high coiled goo quiff in small cream kerchief, lashes, THREE sparse upper teeth. Offended strong one-brow raised direct gaze, crooked CLOSED tight-tooth smile. Tiny terracotta collar, both goo hands grip ONE thick worn wooden ROLLING PIN horizontally at own belly, no kitchen/interaction.\nEMPTY BACKGROUND AND HOLES ACTUAL ALPHA0, interiors opaque with soft antialiased outer edge only. No gradient/matte/checkerboard/floor/shadowdiscs, no lettering/numbers/logos/labels/borders or floating punctuation. Six complete distinct characters, two coherent TRIOS, exactly TWO female-read figures in sheet. Body/face individuality first; group relationship second; simple iconic props third.\nSPACING PRIORITY OVERRIDE: sparse contact sheet with SMALL FIGURES, each only about65percent of its cell height, ample empty gaps. COMPLETE actor+props bounding box MAX340x340, at least86px transparent padding INSIDE each512cell. Don't fill the sheet, don't let any prop reach another row or column. Input sheet compositions are NOT layout references."
+    }
+  }
+]
