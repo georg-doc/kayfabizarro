@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Acute medical team Georg PASS
+
+Georg accepted all6civilian emergency/acute medical Slops.63PASS sheets/378depictions;61eligible/366depictions. Source-only IDs/cards and individual DESIGN biographies retained; alpha/isolation/master holds unchanged. Next authorized output: six primary-care/internal-medicine archetypes with classic white-coat/head-mirror/practice accessories, varied personalities and2female-read. Whole ink anatomy retained, distinct from prior acute team. Same WSA owner/branch/PR469, no game/Library publication claim.
+
+---
+
 # Current WSA update · 2026-11-05 · Emergency/acute-care team six-sheet candidate
 
 One native original-reference-conditioned job: six civilian acute/intensive medical Slops, emergency physician/paramedic/anaesthetist/trauma surgeon/intensive-care nurse/cardiologist,2female-read. Whole upright footless ink bodies and unobscured white-red-black cartoon eyes retained. Shared partial teal/ivory clinic cues, orange rescue accents for paramedic. No military theme, patients, gore, real organization emblems, clinical instructions or real clinician likenesses. Six source-only IDs/cards and individual DESIGN biographies, family Akutteam der vorläufigen Entwarnung; no paired/trio/tier/medical skill-stat bindings. Props are stylized role motifs; scissors-like surgeon instrument recorded rather than falsely certified exact needle holder.
