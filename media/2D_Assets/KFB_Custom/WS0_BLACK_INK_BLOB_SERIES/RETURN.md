@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Woodland clan Georg acceptance
+
+Georg praised all6woodland-clan designs and proceeded to next family; recorded as designPASS.56PASS sheets/336depictions;54eligible/324depictions. Source-only IDs/individual DESIGN biographies and Roman-rival context retained; technical alpha/extraction/master holds unchanged. No game/Library visibility claimed. Next authorized output: one six-character Venetian/Renaissance merchant-court-secret-society/carnival-inspired family, subtle accessories, visible cartoon eyes, recognisable ink anatomy, two female-read. Same WSA owner/branch/PR469.
+
+---
+
 # Current WSA update · 2026-11-05 · Woodland clan six-sheet candidate
 
 One native original-reference-conditioned job: fictional Gallic/Germanic/Teutonic mixed woodland clan, six unique Slops,2female-read, loose roles chief/war-leader/elder/champion/scout/spoils-keeper. Entirely new characters with varied acting/props, two benchmark image paths supplied;6/6original hashes reverified.1536×1024RGBA unresized, no layout edit. Six source-only IDs/cards and individual DESIGN biographies. Family context names Stamm der Vorbehalte and records conceptual opposition to WSA_ROMAN_LEGION_20261105 as Georg-requested design context, not canonical faction or specific matchups. Each actor standalone, no pair/state/trio links inferred.
