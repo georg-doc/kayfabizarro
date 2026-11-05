@@ -1,3 +1,25 @@
+# CURRENT · R13 SLOT FACES DELIVERED / R12 REJECTED · 2026-11-05
+
+**Current delivery:**30files, six existing skins×five states, EXACT SLOT_FACE_CONTRACT_R1. Files sk_<skin>_slot_face{,_hover,_click,_active,_disabled}.webp,176×176losslessRGBA,center88,88,canvas-filling small-radius square. No shadow/rim/cavity or new icon. Same alpha/anchor in all30; states alter tone/light only. Runtime owns movement. This is a new source-conditioned MATERIAL CANDIDATE; actual-game assembly and Georg design acceptance remain PENDING. Do not call a technical pixel pass a design PASS.
+
+**R12 withdrawal remains binding:** prior generic coarse recolored master,288×244exports,action_facealias and R8-icon composition are REJECTED,not an install source. Its ZIP stays historical; no overwrite/deletion. R12 recommendation withdrawn in PR468 comment6647582263. Do not claim the generic R9 supporting-bar montage establishes faithful skin design. R11 Teal/Hazard cutter corrections remain independently valid.
+
+**Material sources actually used:** six independent Built-in ImageGen jobs, each conditioned on its ACTUAL R4 radio.png and gear_normal.png. Retro warm molded finish; Steam copper/brass; Teal aged petrol metal; Blue finely worn blue paint; Slime organic green mottling; Hazard yellow enamel. Reference pixels/hashes and exact prompts archived. Unlike R12 this is not one gray tile recolored six times. Generator edge/bulge/shadow is discarded: only the central60%-width planar material square is cropped and downsampled to176, then assembled with the common rounded-square contract mask. Near-opaque generator alpha within material crop is normalized opaque. No material enlargement, blur or sharpening. Exact native sizes/crops per skin are in SLOT_FACES_R13.manifest.json and public QA metadata.
+
+**Recipient contract pin:** private georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1 docs/hud-kit/SLOT_FACE_CONTRACT_R1.md blob597e5a4fec7afca0ea5ddc2b901f892a1e4f651a. Existing slot_face hooks are the receiving path, no second resolver. Merge deploy/slot-faces.r13.overlay.json into existing files list and pieces.<skin>.slot_face. Do NOT replace whole JSON or use R12action_face. Current contract keeps ui_bar_1..8/R7plaque/raster unchanged; do not silently substitute a generic R9bar or redesign slots. Faces repeat for variable choice counts while main role anchors remain unchanged.
+
+**Actual icons:** shared hero_fist/hero_bomb/hero_blaster etc from hud-hero.r1.json, then actual model shot for other weapons; base roles only where applicable. The R8hand-drawn fist/grenade are NOT substitute game Hero-Shots. Current source mapping verified at receiving head7c1ab22048c39459b2b967f320207d84fb9e2039; actual hero pixels unavailable in this authoring workspace, so R13 previews intentionally contain NO inserted icons. They show real reference gears beside exported state faces only. This is not a game capture or a claim to have inspected current selected content visually.
+
+**Actual validation:**30losslessRGBAroundtrips,all176×176, identical alpha/anchor/full bounds, outsidealpha0/RGB0,softedge1.4143pxmax. Isolated portable rebuild reproduces all30WebPs byte-for-byte. ZIP integrity and97internal hashes verified;98files. Material/state board viewed at native176px. No game/browser tests, no game source writes, no duplicate matrix.
+
+**Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7gHw;21,270,125bytes;98files;SHA2561faab3b98af02a834441c5264f03616dde909d3ccc36303df9c93240ee623508. Contents:30WebPs+30PNGs,exact-name merge overlay,manifest,private contract reference,6native inputs/6planar crops/12actualreferenceimages/prompts,build.py,README,QA,source-comparison board andhashes. Public evidence SLOT_FACES_R13_QA.json checkpointc9d789f22dc3da95ce604e0680d5867e3213ad92; private images/source stay outside public GitHub.
+
+**One next gate:** Kartenkante imports R13 through existing slot_face contract and shows actual current shared Hero-Shots in all six skins×five states as short clip, with Teil→Quelle list, in its existing receiving cycle. Georg decides whether the whole material/frame/content assembly now belongs to the accepted skins. R13 does NOT certify the current R7supporting frame's design by itself. No additional authoring game matrix or speculative material batch before that evidence. Owner remains Kartenkante; no merge, new layout/skin, Stage or Live promotion.
+
+---
+
+## Historical checkpoints · R12 rejected; earlier production status is superseded
+
 # CURRENT · R12 REJECTED / SLOT FACE CONTRACT R1 · 2026-11-05
 
 Georg rejected R12: a generic coarse clay rectangle tinted to the skin palette does NOT match the refined characteristic existing HUD. R12 MixedBag is historical REJECTED evidence; DO NOT import it. Prior R12 import recommendation is WITHDRAWN (PR468 comment6647582263). Its R8 glyph preview does not represent the actual selected game content. R9 generic action_surface preview is not proof of faithful skin design either. Existing R11 Teal/Hazard cut fixes remain independently valid.
