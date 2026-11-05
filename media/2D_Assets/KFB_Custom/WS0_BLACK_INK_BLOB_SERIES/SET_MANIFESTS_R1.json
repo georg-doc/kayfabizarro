@@ -355,11 +355,19 @@
       "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_WESTERN_WARRIORS_20261105",
+      "manifest": "WESTERN_WARRIORS_6_2026-11-05/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false,
+      "status": "DRAFT"
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 1,
+    "depictions": 6,
+    "identities": 6,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

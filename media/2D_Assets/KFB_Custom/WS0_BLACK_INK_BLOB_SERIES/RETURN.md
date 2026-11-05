@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Western warrior six-sheet candidate
+
+Georg explicitly requested one landscape six-character Western warrior family. Native original-reference-conditioned generation +one targeted layout edit; both versions retained, selectedR2 1536×1024RGBA. Six unique upright footless actors, two female-read;6source IDs/cards/individual DESIGN biographies recorded before intake. No real nation or deck mapping assigned; no pair/state/trio relations inferred.
+
+R1 props crossed512px cell boundaries. R2 visible alpha>16 cell heights421–431px, complete silhouettes within own cells; central row/column seams maxalpha1. Actual alpha extrema0..254, near-opaque interiors and residualalpha remain a technical hold, not catalogue-master certification. Checked native visual plus light/dark and checker QA previews. Original six benchmark hashes verified; actual two reference paths supplied. Model/seed not exposed. Generation1+layoutedit1, zero individual game exports. Native edit reconstructs details; it is not lossless.
+
+One DRAFT candidate sheet/6depictions now in candidate index, intakefalse; existing51PASS sheets/306depictions and exclusions unchanged. Names/cards/biographies DESIGN; no public Library/game import. Same WSA source owner, assets/ws0-ink-miners-2026-11-04, draftPR469. Prior integration/game receipts below remain valid. Next gate: Georg design verdict on selected sheet-r2.png.
+
+---
+
 # Current update · 2026-11-05 · Integrated writing and production workflow
 
 Owner WSA; georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, draft PR469. Source snapshot46ad5a152087762ab3521613a3fd7f26075e1aa4. Same51PASS sheets/306depictions;49eligible/294depictions,248source identities/236eligible. Standing Miners/InternationalCouples exclusions retained. No source image replaced.
