@@ -586,11 +586,40 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_DECK_KRIME_20261106",
+      "manifest": "DECK_KRIME_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DECK_COVERUP_20261106",
+      "manifest": "DECK_COVERUP_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DECK_MOVE1_20261106",
+      "manifest": "DECK_MOVE1_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DECK_MOVE2_20261106",
+      "manifest": "DECK_MOVE2_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 4,
+    "depictions": 24,
+    "identities": 24,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

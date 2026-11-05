@@ -1,3 +1,21 @@
+# WSA Return · Four deck-themed Slop families generated · 2026-11-06
+
+Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Outcome4 six-actor source sheets/24 identities: Organized Kayfabe-Krime(shadow_politics),How To Stage A Cover-Up(the_kayfabizarro_manifesto_cover_up),user-labelled MOVE1(the_move_1),user-labelled MOVE2(the_move_id).24 user keywords treated as creative inspirations,not literal mandated card illustrations. Deck registry files read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae; exact title/ID/path/ref stored. MOVE IDs have similar canonical titles/content; user1/2 labels preserved,canon not renamed/merged. Cards have DESIGN thematic deck associations,exact card-number mapping null.
+
+All4 new sets DRAFT pending Georg;2 female-read each. Accepted prior6 trades/36 designs recorded at 492361a70641425b15b1791b5e1f45d7c45afbed; totals84 PASS sheets/504 depictions,82 sheets/492 intake eligible. New24 excluded from PASS count. Old exclusions unchanged; newer accepted miners do not retroactively approve old failed miners. Prose remains DESIGN.
+
+Production:4 native jobs,0 layout edits,0 selected PNG resizes; original1536x1024 RGBA alpha0..254. Actual original veteran(body/material) and RPG(accessory craft) supplied as bounded STYLE references each job;6/6 benchmark hashes verified. Native/local/Git PNG bytes identical. Model/seed controls not exposed. Batch started2026-11-05,completed2026-11-06; IDs/folders use completion date. No generated output used as parent.
+
+Checks: four originals and checker composites visually inspected; light64/96/192 and dark160-per-logical-cell boards reviewed. Whole upright footless dark ink bodies,white/red/black eyes,2 female-read per sheet. Metaphors made self-contained: own strings/crossbars instead of extra puppets;redaction bars on document not eyes;parrot concept as feather/horn rather than animal body;miniature carried goal frame;rug carried,not a scene;reaction harvest three inanimate chili pods. Native minor variations:4 shredder ribbons vs3planned,whistleblower1 visible tooth vs2planned,elaborate hats/motion wedges,larger cupid arrow. Per-set QA retains these observations.
+
+Technical holds: true source-sheet alpha,not certified final sprite alpha edges/opacity; individual validated isolation and high-resolution native single catalogue masters pending. MOVE1 global row seam minimum peak65,not safe straight cut; logical cells not crop rectangles. No game sprites,receiving canonical-ID assignment,combat tier/hits,runtime/Asset Librarian rebuild,merge or public Stage claim.
+
+Changed files: DECK_{KRIME,COVERUP,MOVE1,MOVE2}_6_2026-11-06/,each original sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;DECK_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.24 original source-bound DESIGN personalities/cards/English bios/dry German FrizzleBob notes derive from own concepts/props and HyperNorm lore. Shared thematic family only,no invented pair/trio/state or canonical card binding.
+
+Next gate: Georg design verdict on the4 deck sheets,optionally by family.
+
+---
+
 # WSA Return · Six trades PASS; four deck families authorized · 2026-11-05
 
 Georg accepts all6 trades-across-eras sheets/36 designs, including recorded minor nuances. Manifests and biography intake flags updated; prose stays DESIGN and technical holds retained. Accepted84 sheets/504 depictions; eligible82/492. Existing WSA source owner, assets/ws0-ink-miners-2026-11-04, draft PR469. New bounded outcome:4 six-actor sheets tied thematically to user-provided deck IDs shadow_politics,the_kayfabizarro_manifesto_cover_up,the_move_1,the_move_id. User archetype lists are creative inspirations,not required literal card mappings. Actual registry files verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Both MOVE IDs have similar canonical titles/content; retain user labels MOVE1/MOVE2 without merging or renaming deck canon. All new candidates await Georg. Next step: source-conditioned visual production and archival. No runtime/Library rebuild or merge.

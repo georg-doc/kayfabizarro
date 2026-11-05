@@ -1,0 +1,283 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DECK_KRIME_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+    "sha256": "da79ae3c2a894c9aba9490e55690569bce66298474d6c61e7e5b8f62b6d768aa"
+  },
+  "production_record": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "DECK_KRIME_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "DECK_KRIME_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Organized Kayfabe-Krime",
+    "visual_context": "Deck-themed fictional satirical archetypes; user concepts freely adapted, not literal canonical card illustration mapping",
+    "relationship_policy": "Shared deck-themed ensemble; distinct standalone identities, no pair/state/trio/tier binding",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional mechanisms of power,cover-up and managed reactions; not real-person allegation"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lobbyist Beiläufig",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather briefcase",
+        "burgundy lapel panels",
+        "tiepin"
+      ],
+      "temperament": "Has never requested a favour that was not already everyone's idea.",
+      "prompt_auszug": "Lobbyist Beiläufig, maennlich-read. broad low rounded ink splat, tiny burgundy suit lapel panels and gold tiepin; ONE fat leather briefcase subtly bulging with cream papers, held firmly by side. One raised eyebrow, deep smug closed toothless asymmetric pout. Body remains goo,not human business torso. Personality: Has never requested a favour that was not already everyone's idea.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Lobbyist with Briefcase"
+    },
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ministerin Fadenschein",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "teal ceremonial hat",
+        "wooden crossbar",
+        "two shoulder strings"
+      ],
+      "temperament": "Calls it independence whenever the strings briefly go slack.",
+      "prompt_auszug": "Ministerin Fadenschein, weiblich-read. tall narrow crooked pear blob, small teal ceremonial hat ABOVE eyes,two subtle lashes, tiny cream collar; a little wooden puppet crossbar sits in own raised goo hand with TWO short loose strings attached to her own shoulder lobes,all within cell,no other puppet or offscreen master. Huge unequal ivory eyes glancing upward,small nervous toothless crooked open mouth. Personality: Calls it independence whenever the strings briefly go slack.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Puppet Politician"
+    },
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hinterzimmerboss Nebelrecht",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum smoking cap",
+        "cigar",
+        "single clay smoke curl"
+      ],
+      "temperament": "Prefers transparency that arrives thick enough to hide behind.",
+      "prompt_auszug": "Hinterzimmerboss Nebelrecht, maennlich-read. squat broad square splat, short plum smoking-cap and tiny velvet collar, holds ONE chunky unlit cigar beside mouth and one small solid curl of grey clay smoke separate above cigar,not background haze. Heavy hooded side-eye,closed compressed toothless wavy lips. Personality: Prefers transparency that arrives thick enough to hide behind.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Smoke-Filled Room Cigar Boss"
+    },
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wahlwart Einwurf",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plain official cap",
+        "overstuffed ballot box",
+        "folded slip"
+      ],
+      "temperament": "Believes participation improves noticeably when he supplies it himself.",
+      "prompt_auszug": "Wahlwart Einwurf, maennlich-read. round top-heavy blob, small plain official peaked cap without real symbols, ONE little wooden ballot box at flank visibly overstuffed with folded cream slips, own other goo hand holds one additional folded slip above slot. Bright triumphant crooked open grin with THREE irregular upper teeth,no text or political logos. Personality: Believes participation improves noticeably when he supplies it himself.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Ballot Box Stuffer"
+    },
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kurier Gegenleistung",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "courier cap",
+        "satchel",
+        "sealed envelope"
+      ],
+      "temperament": "Delivers things that nobody recalls agreeing to receive.",
+      "prompt_auszug": "Kurier Gegenleistung, maennlich-read. lean hooked comma blob, battered brown courier cap and tiny satchel, ONE thick cream envelope with plain wax seal pinched carefully in goo hand. Enormous uneven eyes checking sideways,tiny off-centre toothless triangular mouth,anxious professional innocence. Personality: Delivers things that nobody recalls agreeing to receive.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Bribe Envelope Courier"
+    },
+    {
+      "id": "WSA_DECK_KRIME_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hinweisgeberin Pfeifdrauf",
+      "bild": {
+        "datei": "DECK_KRIME_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "indigo work cap",
+        "whistle",
+        "document roll"
+      ],
+      "temperament": "Finds her voice just after deciding it is a terrible career move.",
+      "prompt_auszug": "Hinweisgeberin Pfeifdrauf, weiblich-read. wide asymmetrical rounded splat,tiny indigo work cap,two subtle lashes,short scarf; ONE large metal whistle on short cord raised near open mouth and small document roll tucked at flank. Huge decisive open bellow with TWO upper teeth,one worried eye and one determined eye,relatable courage. Personality: Finds her voice just after deciding it is a terrible career move.",
+      "prompt_quelle": "DECK_KRIME_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "shadow_politics",
+      "user_concept": "Whistleblower with Whistle"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "shadow_politics",
+    "user_family_title": "Organized Kayfabe-Krime",
+    "registry_title": "Ruled by Organized Kayfabe-Krime",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/shadow_politics.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}
