@@ -22586,6 +22586,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1538",
+   "date": "05.11.2026",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 05.11.: ab RC2 modular weiterentwickeln. Drei Ebenen: (1) Inhalte als Daten (Skins, Figuren, Slops, Waffen, Karten, Musik) per PR in eine Liste, pflicht.sh prueft, WS1 merged ohne Code, WS0 nicht noetig; (2) Module hinter Schalter mit festen Anschluessen (Bus, Listen, Engine-Schnittstelle), eigener Ordner, kein Eingriff in M1World, Vorschau je Branch auf der GPT-Site (b338), Einbau = Schalter im Release; (3) Kern (Welt, Streaming, Kamera, Steuerung, M1World) nur WS1 in Staenden. WS1 schreibt docs/MODULE.md (N-192). HUD: Skin und Bildschirm-Layout getrennt als Daten (N-190); Kopf-Radio eigene Grafik (b337).",
+   "values": {},
+   "owner": "alle",
+   "check": "N-190/N-191/N-192, b337, b338",
+   "source": "Georg 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Aenderung lief durch die grosse Stand- und Testschleife ueber WS0 und WS1; Georg will Module und Inhalte eigenstaendig mit einem Chat bauen, testen und nachziehen.",
+   "applies": "ab RC2"
   }
  ],
  "imported_acceptance": [
