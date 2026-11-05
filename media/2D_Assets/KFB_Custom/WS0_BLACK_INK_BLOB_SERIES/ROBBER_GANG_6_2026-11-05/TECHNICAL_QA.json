@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "c059c9ff8f51dffa9cdda240086ae57013fff35062f71443ff994e158c1c667e",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 473951,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "UNSAFE_PENDING_CONTOUR_MASKS",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha_by_strip": {
+      "(0, 1536)": 244,
+      "(0, 525)": 244,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 1
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254 and low-alpha residue; final production cleanup pending",
+    "No safe straight global rowcut atalpha<=16; contour-mask extraction pending",
+    "Logical3x2cells are not certified fixed512crops; no game sprites or safe rectangles asserted"
+  ],
+  "design_observations": [
+    "Six complete upright footless actors, two female-read at top-right and bottom-left",
+    "Grim faces differ in pride, anger, slyness, vigilance, anxiety and mistrust",
+    "Captain acquired a red hat feather not specified",
+    "Burglar padlock generated OPEN despite closed-lock prompt; biography reflects visible result, intended locked-out gag not claimed"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "original_benchmark_hashes_verified": 6
+}

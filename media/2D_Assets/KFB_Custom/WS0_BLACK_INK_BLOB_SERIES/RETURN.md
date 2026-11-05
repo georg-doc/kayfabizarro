@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Robber gang six-sheet candidate
+
+One native original-reference-conditioned job: six historical woodland outlaws, loose Friedrich Schiller Die Räuber/Sturm-und-Drang inspiration rather than exact dramatis personae. Captain/bruiser/pickpocket/outlaw lookout/inexperienced burglar/fence,2female-read, grim expressions with distinct relatable weaknesses. Six source-only IDs/cards/individual DESIGN biographies, family Bande der schlechten Gründe. Actual Veteran+RPG style image paths supplied;6/6original hashes verified, native PNG Git blob matches local bytes. No named game faction, pair/state/trio/tier or exact literary character assignment.
+
+1536×1024RGBA unchanged; one job/no layout edit/resize. Native/checker/full-sheet64/96/160/192-per-logical-cell QA reviewed. No final individual exports. No safe straight global rowcut atalpha<=16, minimumpeak244 in full/left strips (centre/right1); fixed512and one horizontalcut unsafe. Contour-mask isolation/master resolution and alpha0..254/low-alpha residue remain technical holds, not global design failure. Burglar padlock generated OPEN despite closed-lock prompt; visible result documented and reflected in biography, intended locked-out gag not falsely claimed. Captain added a red hat feather.
+
+Prior clown6GeorgPASS persisted/verified at5ab66fdb7126d8eabf339e2a80aba831c3cc6bef; clown isolation hold preserved. Accepted inventory60sheets/360depictions;58eligible/348depictions. Robber1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions unchanged. No game sprites, receiving ID mapping or Library publication. Same WSA source branch/PR469. Next gate: Georg design verdict on ROBBER_GANG_6_2026-11-05/sheet-r1.png; later single assets require validated contour masks.
+
+---
+
 # Current update · 2026-11-05 · Clown troupe Georg PASS
 
 Georg accepted all6clowns.60PASS sheets/360depictions;58eligible/348depictions. Per-actor humour modes and DESIGN biographies retained; contour-mask isolation hold remains, no fixed512crop or clean individual sprite claim. Next authorized output: six historical outlaw/robber Slops, loose Schiller Die Räuber/Sturm-und-Drang inspiration, grim yet quirky/relatable,2female-read. Same WSA owner/branch/PR469; no game/Library publication claim.
