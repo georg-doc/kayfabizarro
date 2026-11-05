@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 56,
-    "pass_depictions": 336,
+    "selected_sheets": 57,
+    "pass_depictions": 342,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 54,
-    "intake_eligible_depictions": 324,
-    "other_authoring_depictions": 216
+    "intake_eligible_sheets": 55,
+    "intake_eligible_depictions": 330,
+    "other_authoring_depictions": 222
   },
   "excluded_sources": [
     {
@@ -388,21 +388,20 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_VENETIAN_COURT_20261105",
       "manifest": "VENETIAN_COURT_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 1,
-    "depictions": 6,
-    "identities": 6,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

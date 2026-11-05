@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Venetian court Georg PASS
+
+Georg accepted all6Venetian court Slops for use.57PASS sheets/342depictions;55eligible/330depictions. Source-only IDs/cards and individual DESIGN biographies retained, no inferred pair links from transcribed Pairs. Alpha/extraction/master holds unchanged; no game/Library visibility claim. Next authorized output: fresh six-character Homer Odyssey-inspired family including iconic characters/entities/concepts, 3x2 transparent sheet and2female-read. Same WSA owner/branch/PR469.
+
+---
+
 # Current WSA update · 2026-11-05 · Venetian court six-sheet candidate
 
 One native original-reference-conditioned job: fictional Venetian/Renaissance family Gesellschaft der Nebenabreden,6distinct actors/2female-read: art patron, doge, merchant banker, gondolier, secret courier and lodge key keeper. Actual Veteran+RPG image paths supplied for body/material and prop craft;6/6original benchmark hashes verified. Medici-like wealth/secret-lodge/carnival cues remain fictional design context, no exact reconstruction or named historical likeness. Masks do not cover faces: one small ivory mask hangs low beside courier, all cartoon eyes visible. Six source-only IDs/cards and individual DESIGN biographies; no pair/trio/state or canon/deck links inferred.
