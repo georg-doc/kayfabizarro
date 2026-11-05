@@ -1,0 +1,317 @@
+{
+ "id": "kfb_jetpack.rocket03.r5",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-05",
+ "status": "pending-georg",
+ "jetvar": "rocket",
+ "job": "JETPACK_ROCKET03_R5 (Georg zu R4: „nicht im Kopf, sondern kurz darunter, so hoch, dass man von der Seite den Schwanz noch sieht, und diese Rückenplatte soll sich einfach an den Körper anschmiegen“). Alle drei Bedingungen gleichzeitig; Pack gleichmäßig kleiner, wenn es nicht passt.",
+ "bedingungen": {
+  "1_kurz_unter_dem_kopf": {
+   "kopf_eindringen_cm_max": 0.0,
+   "luft_kopf_cm_je_clip": {
+    "Sneaking": 0.38,
+    "kfb_dance_twist_dance_a": 1.39,
+    "Running_A": 1.92,
+    "Jump_Start": 2.0,
+    "Crouching": 2.27,
+    "Running_B": 2.41,
+    "kfb_dance_hokey_pokey_a": 3.3,
+    "Jump_Idle": 3.36,
+    "kfb_idle_happy_a": 3.37,
+    "Idle_A": 4.03,
+    "kfb_dance_samba_a": 4.29,
+    "Jump_Land": 4.49,
+    "Walking_A": 4.49,
+    "Walking_B": 4.61,
+    "kfb_dance_chicken_a": 5.7,
+    "Idle_B": 6.42,
+    "kfb_idle_standing_idle_03_a": 8.54
+   },
+   "hinweis": "engste Stelle Schleichen (Kopf taucht weit nach hinten); höher oder größer stößt die Kuppel dort an. Messung messe_r4.py (Parität) und rk_abstand.py, Maß wie bisher (61,6)"
+  },
+  "2_schwanz_sichtbar": {
+   "ruhe_prozent": {
+    "links": 100.0,
+    "rechts": 100.0
+   },
+   "walking_a": {
+    "min_links": 100.0,
+    "min_rechts": 100.0,
+    "mittel_links": 100.0,
+    "bilder": 13
+   },
+   "walking_b": {
+    "min_links": 100.0,
+    "min_rechts": 100.0,
+    "mittel_links": 100.0,
+    "bilder": 13
+   },
+   "vergleich": "R2 Ruhe 63/67, Gehen im Mittel 62–64; R3 Ruhe 62/65, Gehen 61–65",
+   "messung": "rk_sicht_r5.py, Anteil der seitlich sichtbaren Schwanz-Ecken gegenüber FB ohne Pack"
+  },
+  "3_platte_schmiegt_sich_an": {
+   "art": "geskinnt mit FBs Rumpf-Gewichten (nächster Punkt, interpoliert; wie GURTE_R1)",
+   "gewichte_mittel": {
+    "spine": 0.719,
+    "chest": 0.25,
+    "hips": 0.031
+   },
+   "spalt_p90_welt_cm_max": {
+    "unten": 0.42,
+    "oben": 1.12
+   },
+   "rumpf_eindringen_cm_max": 0.05
+  }
+ },
+ "verfahren": {
+  "groesse": "ganzes Pack gleichmäßig 0.85 statt 1,8125 (47 %). Gesucht 0,85–1,65: Der Platz zwischen Schwanz-Oberkante (Welt z 0,427) und der Kopfgrenze im Schleichen (Pack-Oberkante höchstens rund 0,74–0,75) ist 0,32 hoch; das R1-Pack ist 0,63 hoch. Bei 1,25 lag die Düse auf dem Schwanz (Kritiker: liest sich wie eine Rauchwolke), bei 0,90–1,05 mit Düse über dem Schwanz stößt die Kuppel an den Kopf (0,7–4,0 cm). 0,85 ist die größte Lage, in der Düse über dem Schwanz und Kopf frei zugleich gelten.",
+  "hoehe": "z 0.96 an spine",
+  "neigung": "aus der Rückenlinie (17.33°), kein Kippen",
+  "platte": "scripts/bau_r4_r4.py (JP_FIT 4, JP_GAP 0,0005) in Ruhe angepasst, dann scripts/skin_platte.py",
+  "wurzel_q080": "starres Pack: Wurzel ohne Eigenlage, Lage nur in matrix_gltf_local unter spine; geprüft 0 mm (pruef_q080.mjs). Die geskinnte Platte hat keine eigene Lage, sie folgt dem Skelett."
+ },
+ "skins": {
+  "rocket": {
+   "root_node": "KFB_Jetpack_Rocket",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_gross.r5.glb",
+   "sha256": "4f4e58d7518bb511d1debfe44b112db7c218c58bdd11c612ff2ae10ae547fbf4",
+   "wurzel": "ohne Eigenlage (Q-080)",
+   "ohne_platte": true,
+   "bau": {
+    "scale": 0.85,
+    "z_local": 0.96,
+    "neigung_deg_aus_rueckenlinie": 17.33,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      1.326690811017576,
+      0,
+      0,
+      0,
+      0,
+      1.2664987260166674,
+      0.3950816562287675,
+      0,
+      0,
+      -0.3950816562287675,
+      1.2664987260166674,
+      0,
+      2.369605336801159e-22,
+      0.36188515829163614,
+      -0.31573679374651564,
+      1
+     ]
+    }
+   },
+   "platte_teil": {
+    "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_Platte_FB.r5.glb",
+    "sha256": "6ba14850151bc56d85acf5aae9e0cf00ce8b2184a2e7903a305b67eef45ce265",
+    "mesh_node": "S1_platte",
+    "kind": "skinned",
+    "slot": "back",
+    "einbau": "wie GURTE_R1 über das Tausch-System (garment-system), an FBs Skelett gebunden; gehört zu jetvar=rocket und wird mit dem Pack ein- und ausgeblendet"
+   },
+   "einbau_hinweis": "Elternknochen spine (wie R4). Neu: Rückenplatte nicht mehr im starren Pack, sondern als eigenes geskinntes Teil.",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "gruppen": [
+    "platte (eigenes Teil)",
+    "kapsel",
+    "fenster",
+    "anzeige",
+    "knopf",
+    "griff",
+    "band",
+    "schrauben",
+    "duese"
+   ],
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_rocket.r5.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_rocket_gross.r5.json",
+   "messung_datei": "50_BLENDER/JETPACK_R1/data/messung_rocket_gross.r5.json",
+   "clips17": {
+    "Crouching": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.32,
+     "spalt_unten_bild": 16,
+     "spalt_oben_p90": 0.59,
+     "spalt_oben_bild": 0
+    },
+    "Idle_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.23,
+     "spalt_unten_bild": 12,
+     "spalt_oben_p90": 0.24,
+     "spalt_oben_bild": 0
+    },
+    "Idle_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.26,
+     "spalt_unten_bild": 38,
+     "spalt_oben_p90": 0.45,
+     "spalt_oben_bild": 38
+    },
+    "Jump_Idle": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.26,
+     "spalt_unten_bild": 12,
+     "spalt_oben_p90": 0.24,
+     "spalt_oben_bild": 8
+    },
+    "Jump_Land": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.27,
+     "spalt_unten_bild": 6,
+     "spalt_oben_p90": 0.41,
+     "spalt_oben_bild": 6
+    },
+    "Jump_Start": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.03,
+     "rumpf_bild": 10,
+     "spalt_unten_p90": 0.27,
+     "spalt_unten_bild": 6,
+     "spalt_oben_p90": 0.41,
+     "spalt_oben_bild": 6
+    },
+    "Running_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.24,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.29,
+     "spalt_oben_bild": 0
+    },
+    "Running_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.27,
+     "spalt_unten_bild": 4,
+     "spalt_oben_p90": 0.41,
+     "spalt_oben_bild": 4
+    },
+    "Sneaking": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.35,
+     "spalt_unten_bild": 44,
+     "spalt_oben_p90": 0.59,
+     "spalt_oben_bild": 0
+    },
+    "Walking_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.23,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.23,
+     "spalt_oben_bild": 8
+    },
+    "Walking_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.24,
+     "spalt_unten_bild": 4,
+     "spalt_oben_p90": 0.33,
+     "spalt_oben_bild": 4
+    },
+    "kfb_dance_chicken_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.33,
+     "spalt_unten_bild": 73,
+     "spalt_oben_p90": 0.72,
+     "spalt_oben_bild": 75
+    },
+    "kfb_dance_hokey_pokey_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.42,
+     "spalt_unten_bild": 201,
+     "spalt_oben_p90": 1.12,
+     "spalt_oben_bild": 201
+    },
+    "kfb_dance_samba_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.33,
+     "spalt_unten_bild": 329,
+     "spalt_oben_p90": 0.58,
+     "spalt_oben_bild": 259
+    },
+    "kfb_dance_twist_dance_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.05,
+     "rumpf_bild": 63,
+     "spalt_unten_p90": 0.34,
+     "spalt_unten_bild": 153,
+     "spalt_oben_p90": 0.68,
+     "spalt_oben_bild": 33
+    },
+    "kfb_idle_happy_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.23,
+     "spalt_unten_bild": 7,
+     "spalt_oben_p90": 0.2,
+     "spalt_oben_bild": 9
+    },
+    "kfb_idle_standing_idle_03_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.29,
+     "spalt_unten_bild": 95,
+     "spalt_oben_p90": 0.59,
+     "spalt_oben_bild": 99
+    }
+   }
+  }
+ },
+ "nicht_geaendert": [
+  "Form, Farben, Teile (rocket_bau.py unverändert)",
+  "Diesel R2 (bleibt Standard)"
+ ],
+ "ersetzt": "kfb_jetpack.rocket03.r4 (bleibt als r4-Datei liegen)",
+ "kritik": "ein blinder Kritiker mit Georgs Wortlaut: Runde 1 bei Größe 1,25 „not acceptable“ (Düse lag auf dem Schwanz, Schwanz las sich wie Rauch) – daher Größe 0,85 mit Düse über dem Schwanz; Runde 2 „acceptable“ in allen sechs Posen (Schleichen knapp). Hinweis des Kritikers: Das Pack wirkt in dieser Größe klein (wie eine Thermoskanne)."
+}
