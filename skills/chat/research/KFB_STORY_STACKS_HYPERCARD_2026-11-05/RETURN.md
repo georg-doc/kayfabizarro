@@ -41,3 +41,22 @@
 
 ## Exactly one next gate
 **WS0 CONCEPT INTAKE:** WS0 may take the pinned [issue #471](https://github.com/georg-doc/kayfabizarro/issues/471) into its existing concept backlog and, when individually commissioned, deliver one **source-isolated real-card → story links → existing encounter → Almanac** visual/authoring example for WS1 feasibility review. This handoff does not commission runtime work or DocCheck deployment. **Georg needs to do nothing for the documentation handoff.**
+
+
+---
+
+## ADDITIVE RETURN · 2026-11-05 · Claude/Remotion social video research
+
+**New request:** Georg asked for current Claude + Remotion repositories, skill collections, Reddit experiences and a source-true, non-generic KFB Card reel pipeline that could reuse HyperCard/Story-Stack semantics, with DocCheck medical video potential.
+
+**Delivered:** [CLAUDE_REMOTION_VIDEO_RESEARCH_2026-11-05.md](CLAUDE_REMOTION_VIDEO_RESEARCH_2026-11-05.md) plus appended [TEST_REPORT.md](TEST_REPORT.md).
+
+**Summary:** official Remotion skills + Claude plugin = tooling baseline; Video Shotcraft = promising technique/shot-library and editable-workbench donor; claude-video-skills = series/voiceover/caption orchestration donor. Remotion Prompt-to-Video's timeline is a reference, while its generative image/voice pipeline is **not** accepted for KFB source art. All third-party claims remain research, not a successful render. Same source story link can underpin a deterministic linear editorial selection, but no double runtime/state owner. KFB existing motion/ink/card/audio rules precede the video reference; DocCheck remains separate with medical editorial review.
+
+**Checks:** 8/8 intended KFB/DocCheck source paths found; one missing path typo corrected; exact new report readback PASS; 0 actual code/runtime/video/browser/art-isolation tests. No packages installed, no assets copied, no Stage/Site, no Live or automatic publishing.
+
+**Owners/gates unchanged:** existing KFB Story/WS0 concept lane; World R4 STOP and Four-Island A/B remain; DocCheck is distinct. No new engine commissioned, no Render/Claude skill adoption authorized, and no production license procurement implied.
+
+**Exactly one next gate (refined):** WS0 may later be separately commissioned to show **one true KFB source card isolated**, and produce a dual-use **Story-Stack path + source-pinned short-video shot/animatic plan**. Only then consider a bounded Remotion render experiment with an independent visual critic and human approval; DocCheck pilot is a parallel deferred path.
+
+**GitHub:** same Draft PR [#470](https://github.com/georg-doc/kayfabizarro/pull/470), WS0 issue [#471](https://github.com/georg-doc/kayfabizarro/issues/471), branch `research/hypercard-story-stacks-kfb-doccheck-2026-11-05`; exact final branch head is verified after the final metadata sync and reported in chat. No merge.
