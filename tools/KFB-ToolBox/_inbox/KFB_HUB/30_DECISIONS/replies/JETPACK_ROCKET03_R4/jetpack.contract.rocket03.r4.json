@@ -1,0 +1,265 @@
+{
+ "id": "kfb_jetpack.rocket03.r4",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-05",
+ "status": "pending-georg",
+ "jetvar": "rocket",
+ "job": "JETPACK_ROCKET03_R4 (Georg zu R3: „neue Lücke unten durch das Kippen, die obere Hälfte steckt im Kopf – macht euren Job ordentlich“). Bindend: in allen 17 Clips Spalt Platte–Rücken p90 ≤ 1,5 cm unten wie oben und Kopf-Kontakt 0; Vorwärts-Neigung zurück; Sitz an tieferem Wirbel prüfen; Höhe nur so hoch wie erlaubt; Größe und Form bleiben.",
+ "verfahren": {
+  "sitz_knochen": "spine statt chest: FBs Rückenhaut hängt zu 69 % an spine, 24 % an chest (Gewichte am Rücken gemessen). Am chest-Knochen folgt das starre Pack der Rückenbiegung nicht: R3 an chest Spalt unten bis 16,7 cm (Hokey-Pokey), Idle B 6,3; dieselbe Form an spine 1,7–2,5 cm.",
+  "platte": "scripts/bau_r4_r4.py = bau_r4_r3.py + JP_FIT 4 (Rückenfläche der Platte als glatte Fläche 4. Grades statt quadratisch) + JP_GAP 0,0005 (Abstand zur Haut); liegt enger an, bleibt glatt",
+  "neigung": "aus der Rückenlinie wie R1/R2 (kein JP_TILT): 5.47°",
+  "hoehe": "an spine z 0,83–0,89 gesucht: z 0,89 Kopf bis 1,5 (Schleichen, Twist), 0,86 bis 1,1, 0,85 bis 0,3, 0,84 und 0,83 in allen 17 Clips 0. Bei 0,84 bleibt im Schleichen nur 0,14 cm Luft (Twist 0,29), praktisch Berührung; gewählt z 0,83: kleinster Luftabstand Kopf–Kuppel 0,5 cm (Schleichen), 0,7 (Twist), Ducken 2,2, Rennen 1,5, Idle B 7,3 (scripts/rk_abstand.py). Unterkante 4,1 Welt-cm tiefer als R1 und 8,0 tiefer als R3.",
+  "wurzel_q080": "Liefer-GLB: Wurzel KFB_Jetpack_Rocket ohne Eigenlage; Lage nur in matrix_gltf_local unter spine. Geprüft: Liefer-GLB + Vertragsmatrix unter spine = Bau-Stand auf 0 mm (scripts/pruef_q080.mjs).",
+  "messung": "scripts/messe_r4.py, alle 17 Clips, jedes 2. Bild plus letztes: Kopf-Eindringen (Normalen-Test, jede Ecke per Strahl-Parität bestätigt), Rumpf (Normalen-Test), Spalt Platten-Rückseite–Rücken (Ecken mit Normale zum Rücken, ohne runde Kante) im unteren und oberen Drittel, p90 je Bild, Maximum je Clip",
+  "einheiten": "kopf_cm und rumpf_cm im Maß der bisherigen Messungen (Faktor 61,6); spalt und Höhen in Welt-cm (×100) wie rk_luecke.py"
+ },
+ "skins": {
+  "rocket": {
+   "root_node": "KFB_Jetpack_Rocket",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_gross.r4.glb",
+   "sha256": "91c08feb252e06778947ed466d4907251cee7ec73e0bc761b11b1678711215c2",
+   "wurzel": "ohne Eigenlage (Q-080)",
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.83,
+    "neigung_deg_aus_rueckenlinie": 5.47,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005,
+    "block_dy_lokal": -0.0292
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8160857084932296,
+      0.26972090454061975,
+      0,
+      0,
+      -0.26972090454061975,
+      2.8160857084932296,
+      0,
+      2.369605336801159e-22,
+      0.23188510041518584,
+      -0.34609461411963666,
+      1
+     ]
+    }
+   },
+   "einbau_hinweis": "NEU: Elternknochen spine (bisher chest). Die Matrix gilt nur unter spine.",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "stages": "wie R1",
+   "gruppen": [
+    "platte",
+    "kapsel",
+    "fenster",
+    "anzeige",
+    "knopf",
+    "griff",
+    "band",
+    "schrauben",
+    "duese"
+   ],
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_rocket.r4.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_rocket_gross.r4.json",
+   "messung_datei": "50_BLENDER/JETPACK_R1/data/messung_rocket_gross.r4.json",
+   "clips17_worst": {
+    "kopf_cm": 0.0,
+    "rumpf_cm": 0.31,
+    "spalt_unten_p90": 0.84,
+    "spalt_oben_p90": 1.18
+   },
+   "clips17": {
+    "Crouching": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.31,
+     "rumpf_bild": 0,
+     "spalt_unten_p90": 0.58,
+     "spalt_unten_bild": 6,
+     "spalt_oben_p90": 0.32,
+     "spalt_oben_bild": 6
+    },
+    "Idle_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.02,
+     "rumpf_bild": 8,
+     "spalt_unten_p90": 0.43,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.52,
+     "spalt_oben_bild": 12
+    },
+    "Idle_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.17,
+     "rumpf_bild": 38,
+     "spalt_unten_p90": 0.42,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.38,
+     "spalt_oben_bild": 0
+    },
+    "Jump_Idle": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.09,
+     "rumpf_bild": 8,
+     "spalt_unten_p90": 0.7,
+     "spalt_unten_bild": 12,
+     "spalt_oben_p90": 0.62,
+     "spalt_oben_bild": 18
+    },
+    "Jump_Land": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.17,
+     "rumpf_bild": 6,
+     "spalt_unten_p90": 0.43,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.5,
+     "spalt_oben_bild": 0
+    },
+    "Jump_Start": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.17,
+     "rumpf_bild": 6,
+     "spalt_unten_p90": 0.44,
+     "spalt_unten_bild": 10,
+     "spalt_oben_p90": 0.8,
+     "spalt_oben_bild": 10
+    },
+    "Running_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.05,
+     "rumpf_bild": 16,
+     "spalt_unten_p90": 0.43,
+     "spalt_unten_bild": 10,
+     "spalt_oben_p90": 0.58,
+     "spalt_oben_bild": 6
+    },
+    "Running_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.16,
+     "rumpf_bild": 4,
+     "spalt_unten_p90": 0.76,
+     "spalt_unten_bild": 10,
+     "spalt_oben_p90": 0.5,
+     "spalt_oben_bild": 10
+    },
+    "Sneaking": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.28,
+     "rumpf_bild": 18,
+     "spalt_unten_p90": 0.73,
+     "spalt_unten_bild": 0,
+     "spalt_oben_p90": 0.2,
+     "spalt_oben_bild": 8
+    },
+    "Walking_A": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.01,
+     "rumpf_bild": 0,
+     "spalt_unten_p90": 0.49,
+     "spalt_unten_bild": 12,
+     "spalt_oben_p90": 0.51,
+     "spalt_oben_bild": 12
+    },
+    "Walking_B": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.04,
+     "rumpf_bild": 4,
+     "spalt_unten_p90": 0.56,
+     "spalt_unten_bild": 12,
+     "spalt_oben_p90": 0.52,
+     "spalt_oben_bild": 10
+    },
+    "kfb_dance_chicken_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.31,
+     "rumpf_bild": 75,
+     "spalt_unten_p90": 0.55,
+     "spalt_unten_bild": 55,
+     "spalt_oben_p90": 0.39,
+     "spalt_oben_bild": 89
+    },
+    "kfb_dance_hokey_pokey_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.28,
+     "rumpf_bild": 205,
+     "spalt_unten_p90": 0.64,
+     "spalt_unten_bild": 97,
+     "spalt_oben_p90": 0.89,
+     "spalt_oben_bild": 201
+    },
+    "kfb_dance_samba_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.26,
+     "rumpf_bild": 13,
+     "spalt_unten_p90": 0.84,
+     "spalt_unten_bild": 431,
+     "spalt_oben_p90": 1.18,
+     "spalt_oben_bild": 431
+    },
+    "kfb_dance_twist_dance_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.31,
+     "rumpf_bild": 31,
+     "spalt_unten_p90": 0.84,
+     "spalt_unten_bild": 133,
+     "spalt_oben_p90": 1.06,
+     "spalt_oben_bild": 71
+    },
+    "kfb_idle_happy_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.0,
+     "rumpf_bild": null,
+     "spalt_unten_p90": 0.47,
+     "spalt_unten_bild": 37,
+     "spalt_oben_p90": 0.64,
+     "spalt_oben_bild": 35
+    },
+    "kfb_idle_standing_idle_03_a": {
+     "kopf_cm": 0.0,
+     "kopf_bild": null,
+     "rumpf_cm": 0.28,
+     "rumpf_bild": 97,
+     "spalt_unten_p90": 0.44,
+     "spalt_unten_bild": 99,
+     "spalt_oben_p90": 0.23,
+     "spalt_oben_bild": 211
+    }
+   },
+   "schwanz_sicht": {
+    "links": 17.6,
+    "rechts": 17.1
+   },
+   "schwanz_hinweis": "tiefer als R1–R3: seitlich 17–18 % sichtbar (R1 44–46, R2 63–67, R3 62–65)",
+   "messhinweis": "Rumpf bis 0.31 cm nur im Normalen-Test (ohne Parität), Werte wie bisher; Kopf ausschließlich parität-bestätigt"
+  }
+ },
+ "nicht_geaendert": [
+  "Form, Farben, Teile (rocket_bau.py unverändert)",
+  "Diesel R2 (bleibt Standard)"
+ ],
+ "ersetzt": "kfb_jetpack.rocket03.r3 (bleibt als r3-Datei liegen)"
+}
