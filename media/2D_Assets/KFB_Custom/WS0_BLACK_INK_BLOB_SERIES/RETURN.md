@@ -1,3 +1,15 @@
+# Current WSA update · 2026-11-05 · Seniors six-sheet candidate / tooth rule applied
+
+One native original-reference-conditioned job: six distinct older/retired Ink Slops,2female-read. Hearing-trumpet grandfather, knitting grandmother, gardening retiree, warmth-loving grandmother, close-focus collector and dignified napper. Soft sagging lobes/heavy lids/grey clay hair plus hobbies/minor age quirks, whole upright footless dark ink anatomy and actual white-red-black eyes retained. Hobbies/agency/dignity remain salient; no medical diagnoses or actual spouse relationships inferred. Six source-only IDs/cards/individual DESIGN biographies, family Seniorenkreis Morgen wieder.
+
+Georg tooth/lower-lip steering was included in exact prompt. Native/64/96/160/192QA observation: closed mouths0/3toothless; open cells1/2/4/5show2/3/1/2UPPER teeth emerging inside mouth cavity, none observed on exterior lower lip. No tongue appendage. This is builder observation, not Georg designPASS or a guarantee. Prior Dr.Nachschrift anomaly remains MINOR_TUNE_LATER under accepted prior set; no old pixels repaired/rejected. SOP additive rule already committed.
+
+Actual1536×1024RGBA unchanged; one job/no resize/layout edit. Veteran+RPG actual reference image paths supplied;6/6original hashes verified, native PNG Git blob equals local bytes. Native/checker/full-sheet64/96/160/192-per-logical-cell QA reviewed. Row diagnostic minpeak244full/244left/5centre/2right; safe fixed512or global horizontalcut not certified. Validated individual isolation, alpha0..254/low-alpha cleanup and native catalogue masters remain holds; no game sprites or Library publication.
+
+Prior GP6GeorgPASS plus mouth steering persisted/verified atc266d5b74a06664d72c25fe7d94047caef1ec1ed. Accepted source64sheets/384depictions;62eligible/372depictions. New senior1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions retained. Same WSA branch/PR469. Next gate: Georg design verdict on SENIORS_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Classic family doctors Georg PASS / lip rule
 
 Georg accepted all6classic primary-care Slops.64PASS sheets/384depictions;62eligible/372depictions. Bottom-right Dr.Nachschrift tooth/lower-lip placement logged as MINOR_TUNE_LATER_NON_BLOCKING; no current image changed or PASS revoked. SOP additive steering captures correct tooth emergence above/behind lower lip, and fresh expression/pose choreography. Next authorized output: six senior/retired/grandparent Ink Slops, varied ageing quirks/minor ailments/personality/outfits,2female-read. Source-only IDs/textDESIGN; technical alpha/isolation/master holds unchanged. Same WSA owner/branch/PR469; no game/Library publication claim.
