@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "9ad5a234c6f4f4430490e177c1ca64ead6d3999d677bd984c9f84578da77d206",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 496852,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha_by_strip": {
+      "(0, 1536)": 6,
+      "(0, 525)": 1,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 6
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254/low-alpha residue; final production cleanup pending",
+    "Logical3x2cells are not certified safe fixed512crops; individual contour isolation pending",
+    "No game sprites or safe extraction rectangles asserted"
+  ],
+  "design_observations": [
+    "Six complete upright footless actors, two female-read top-middle/bottom-middle",
+    "Shared black lapels/ivory collars/narrow black ties; dark ink bodies remain dominant",
+    "All actual eyes visible; one sunglasses pair held low only",
+    "Recorder two reels and coiled earpiece, camera single lens/reflector read as separate roles",
+    "Penlight lens rendered softly illuminated; no external beam"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "original_benchmark_hashes_verified": 6
+}

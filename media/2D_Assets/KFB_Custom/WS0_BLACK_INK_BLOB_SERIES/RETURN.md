@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Men-in-Black six-sheet candidate
+
+One native original-reference-conditioned job: six original secret-bureau/CIA-spook-style Ink Slop agents with shared black lapel accents, ivory collar triangles and narrow black ties. Distinct section chief/field agent/listening technician/redaction officer/interviewer/observation photographer,2female-read. Whole upright footless ink bodies retained; actual white-red-black eyes all unobscured, sunglasses held low only. Fictional agency archetypes, no real-agency claims/insignia or actor/movie-character replicas. Existing SLOP_METANARRATIV_R1 reread; source-only visual candidates do not replace or automatically assume existing canonical Men in Black identities/escalation tiers. Six individual DESIGN biographies preserve black-white rules, authority pressure and quirks; receiving WS0 maps roles/IDs.
+
+1536×1024RGBA unchanged; one job/no layout edit/resize. Actual Veteran+RPG style image paths supplied,6/6original hashes verified; native PNG Git blob matches local bytes. Native/checker/full-sheet64/96/160/192-per-logical-cell QA reviewed. Shared costume remains partial, goo body/face dominant. Row diagnostic minimumpeak6full/1left/1centre/6right; no fixed512crop or safe individual extraction asserted. Alpha0..254/low-alpha residue, validated per-actor isolation and individual catalogue masters remain holds. No game sprites or Library publication.
+
+Prior robber6GeorgPASS persisted/verified at650c5de37fa53fa3f8eb6d84301296dda62fe5b8. Accepted source61sheets/366depictions;59eligible/354depictions. New agent1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions unchanged. Same WSA source branch/PR469. Next gate: Georg design verdict on MEN_IN_BLACK_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Robber gang Georg PASS
 
 Georg accepted all6robber Slops.61PASS sheets/366depictions;59eligible/354depictions. Source-only IDs and individual DESIGN biographies retained; contour-isolation/alpha/master holds unchanged. Next authorized output: fresh six-character Men-in-Black/CIA-spook-inspired Slop family with shared black suit-collar/tie outfit cues, distinct actors,2female-read. Existing canonical Men in Black owner/identities remain protected; this is a new source-only visual family, not an automatic canon replacement. Same WSA source owner/branch/PR469, no game/Library publication claim.
