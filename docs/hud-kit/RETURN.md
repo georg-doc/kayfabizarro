@@ -14,6 +14,9 @@ UNRESOLVED: revised rail dimensions/header coordinates need alignment to current
 
 One next gate: Georg decides whether R16 as a WHOLE now carries the intended Retro form/material language. If accepted, continue receiver raster/cutter work, then other skins under the standing sequence.
 
+## Parallel art-only candidate · 2026-11-05 · Blue/Slime/Hazard action bars + overlays (not R16 acceptance)
+By Georg's separate request, three isolated RGBA design-candidate sheets were produced for new action bars, standalone buttons and modulated overlay frames. No neutral Master-Kit replacement or game integration. See `docs/hud-kit/ACTION_OVERLAY_SKIN_CANDIDATES_R1_2026-11-05.md`; private conversation ZIP SHA256 `b4aab06112209aefc0b06bec707a3f70d7d380758e11d75180ba98da462c5d8d` remains outside GitHub. 3/3 sheets 1536x1024 RGBA alpha-zero, 3/3 overlay 9-tile reconstructions pixel-identical at original size. Hazard native 6-slot missing, resize seam/human gate OPEN. R16 whole-design gate remains unchanged and still blocks game adoption.
+
 ---
 
 # CURRENT · R15 REJECTED BY GEORG · R16 RETRO DESIGN RECOVERY · 2026-11-05
