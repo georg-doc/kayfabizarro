@@ -1,3 +1,23 @@
+# CURRENT · RETRO R15 ONLY · GEORG DESIGN APPROVAL NEXT · 2026-11-05
+
+**Latest explicit Georg instruction supersedes the R14 stop for this NEW bounded approach:** use existing appropriate elements, create missing ones; flat upper bar with motif at the SIDE; Action-Bar uses the SAME frame construction as the other UI. Complete ONE skin → Georg approval → only then other skins. Selected first skin: Retro. R14 remains rejected and withdrawn; it is not a parent or current install source. No other skin work authorized before this design gate.
+
+**Retro result for review:**38individual parts with PNG/losslessWebP pairs, full source-preserving master controls, all38contact sheet, closed/open new bar, complete HUD design view, Settings/Radio-open modules, five action states with actual common content. This is a design candidate, NOT game acceptance or an installation recommendation. Existing radio column is consciously retained as the original device; the TOP FLUFF BAR is the newly flattened/laterally headed part.
+
+**Actual construction:** original whole Retro panel is the frame master (source/kit/panel.png). Action carriers1…8and plaque use its fixed corners/continuous bezel, not R14extracted counter strips. Single enclosing frame; no individual slot rims. Five176pxborderless faces derive from the same original panel floor, tone/light only. Settings retain existing pill/tab/slider/toggle/X parts. Radio-open casing now uses the same full master frame plus existing riveted straps as functional hinges. Original radio/gears/arrow/detail parts retained; all appropriate original pieces visible in context or isolation. No arbitrary gadget heads mounted on action buttons.
+
+**New header:** ONE Built-inImageGen source-conditioned edit using actual original Retro closed bar, panel and radio. Native2172×724; cleaned/cropped and only downsampled to1472×159 (ratio9.2579). Shared flat upper silhouette; dish/antenna projects left within body height. Exactly6empty round slots+number window. Open state appends original drawer; closed pixels are byte-identical. Generated source/prompt retained. No baked icons/keys/text in assets. Shared genuine hero_fist/hero_bomb etc,12base roles,24freeKitglyphs and6existingFluffsprites used unchanged for context; no hand-painted substitute weapon icons or extra circular icon carriers.
+
+**Checks/limits:**38PNG/WebP lossless pairs,alpha0/RGB0outside,edges≤3px;5same-alpha176pxfaces;8same-raster carriers;existing control pixels preserved. ExistingR11cutter ONE call: warnings[],6Fluff,4Radio,1476pxruntime bar. Portable rebuild reproduces all78part files incl2sheets. Independent fresh readonly /root/retro_r15_review opened original and candidate views; final routeCONTINUE_TO_GEORG_RETRO_GATE after minor tab-padding correction. It observed shared frame logic, lateral header, useful slider/X spacing, no extra slot rims. Neither technical checks nor reviewer route replace Georg approval. No game code/data changed, no game/browser run, no other skin production.
+
+**Private review packet Dropbox COMPLETED:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_R15_Design_Review_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7iAQ;28,614,349bytes;218files;217internal hashes;SHA256b8daef6a75a5bf0effd6c7d5fc38ea024609bc982c7d13f5437c2aadbaa3a1c2. Contains38part pairs,1a/1bapproval sheets,source originals/native new header/prompt/fonts+license,shared actual content,portablebuild/proofs/validator/cutter,measuredcandidateHUDbarJSON,5reviewboards,QA and independent report. Public RETRO_R15_REVIEW_QA.json checkpoint490671c14bf57533b268413dfb5bb833bd3ac138. Private images/source stay out of public GitHub.
+
+**Only next gate:** show Retro approval board+full view+all-elements/open-module boards to Georg and wait for his design decision. Changes remain on Retro until approved. Do not start Steam/Teal/Blue/Slime/Hazard, do not import candidate automatically, merge or promote Live. Runtime owner remains Kartenkante; authoring georg-doc/kayfabizarro@design/kfb-clay-hud-skin-kit-r1-2026-11-04,DraftPR468. Full series/production is NOT complete.
+
+---
+
+## Historical checkpoints · R14 stays rejected; R15 is a new Retro-only approval candidate
+
 # CURRENT · GEORG DESIGN FAIL · R14 WITHDRAWN · 2026-11-05
 
 Georg's verdict: “das ist kein design, das ist wieder ein FAIL.”
