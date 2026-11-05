@@ -22331,6 +22331,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1521",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "STATUS",
+   "text": "Kartenkante @7c1ab220: keine Flaeche/Form/Farbe mehr im Code, Zustands-Deformer hud-motion.r1.json, Vertrag docs/hud-kit/SLOT_FACE_CONTRACT_R1.md (je Skin 5 Zustaende 176x176 RGBA) und AKTIONSLEISTE_QUELLEN.md; HUD-Raster von WSV (E=28, ein Rand, Radio mit Rand E, Einfassung als Skin-9-Slice) direkt an Kartenkante statt Mockup-Frage. WSB Rocket R4 (assets/jetpack-rocket03-r4 @51324921, Eltern spine statt chest, Kopf 0, Spalt <=1,2 cm, tiefer, Schwanz 17 %), Hub q537. Flug Kampf-VFX-Abspieler fx/combatfx-r1 @ea055c28, privat @e3477b9b combat_vfx_r1, Hub erst mit WSA-Sheets. b335 mit Georgs Schichtenmodell (WSA Grundeffekte + additiv Rauch/Explosion je Waffe, Remotion-Feinschliff, Vektor-Ebenen Projektil/Laser/Muendung, GPU-Russ/Staub, instanzierte Huelsen; erst Konzeptblatt fuer alle Nah- und Fernkampfwaffen).",
+   "values": {},
+   "owner": "Kartenkante · WSV · WSB · Flug · WSA Combat",
+   "check": "q537, b335",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
