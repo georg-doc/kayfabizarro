@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 66,
-    "pass_depictions": 396,
+    "selected_sheets": 73,
+    "pass_depictions": 438,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 64,
-    "intake_eligible_depictions": 384,
-    "other_authoring_depictions": 276
+    "intake_eligible_sheets": 71,
+    "intake_eligible_depictions": 426,
+    "other_authoring_depictions": 318
   },
   "excluded_sources": [
     {
@@ -458,63 +458,62 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_MILITARY_US_20261105",
       "manifest": "MILITARY_US_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_FRANCE_20261105",
       "manifest": "MILITARY_FRANCE_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_UK_20261105",
       "manifest": "MILITARY_UK_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_ITALY_20261105",
       "manifest": "MILITARY_ITALY_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_GERMANY_20261105",
       "manifest": "MILITARY_GERMANY_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_USSR_20261105",
       "manifest": "MILITARY_USSR_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_MILITARY_SPAIN_20261105",
       "manifest": "MILITARY_SPAIN_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 7,
-    "depictions": 42,
-    "identities": 42,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

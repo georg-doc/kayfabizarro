@@ -1,3 +1,9 @@
+# WSA Return · Seven military families PASS; worker batch authorized · 2026-11-05
+
+Georg explicitly accepts all7 military sheets/42 designs. Manifests and biography intake flags updated; prose stays DESIGN, existing minor QA notes and technical holds retained without retroactive rejection. Accepted73 sheets/438 depictions; eligible71/426. Existing WSA source owner, branch assets/ws0-ink-miners-2026-11-04, draft PR469. Next bounded outcome:5 independent6-actor sheets: firefighters, construction crew, plumbers,1920s factory/dock workers,1920s strikers. Each2 female-read; all new candidates await Georg verdict. No merge/runtime/Library rebuild claim. Next step: source-conditioned production and archival of this authorized worker batch.
+
+---
+
 # WSA Return · Seven military families generated · 2026-11-05
 
 Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome: seven source-conditioned military six-actor sheets,42 depictions/42 authoring identities. Families: US, France, UK, Italy, Germany, USSR-inspired Russia, Civil-War/interwar-inspired Spain. Each has2 female-read figures. Free fictional historical visual archetypes, not a reenactment or documented unit. Spain is explicitly not represented as a WWII combatant unit. Satirical target is bureaucracy and hierarchy, not inherent national traits.
