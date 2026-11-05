@@ -1,0 +1,214 @@
+{
+  "status": "STATIC_CONTRACT_CHECKS_PASS_VISUAL_AND_RUNTIME_PENDING",
+  "contractBlob": "597e5a4fec7afca0ea5ddc2b901f892a1e4f651a",
+  "skinCount": 6,
+  "stateCountPerSkin": 5,
+  "fileCount": 30,
+  "size": [
+    176,
+    176
+  ],
+  "format": "lossless WebP RGBA",
+  "portableRebuildByteEqual": 30,
+  "commonAlphaAndAnchor": true,
+  "outsideAlphaAndRGBZero": true,
+  "maxSoftEdgePx": 1.4142135623730951,
+  "canvasBounds": [
+    0,
+    0,
+    176,
+    176
+  ],
+  "newMaterialUpscaled": false,
+  "newIconImages": 0,
+  "gameOrBrowserTest": false,
+  "R12": "REJECTED_DO_NOT_IMPORT",
+  "sources": {
+    "retro": {
+      "generatedFile": "source/retro/generated_native.png",
+      "sha256": "53cdf22e5720966b4c1c6e1a2a95af3ddeacc28a93d34bbdfcd39cbac83a278a",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        305,
+        308,
+        947,
+        950
+      ],
+      "cropSize": [
+        642,
+        642
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/retro/radio.png",
+        "source/retro/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "56a21bd3e0577b9779aa8f91ff41e7eabf47cbffbe122200ba6bcbc651f36fbe",
+        "gear_normal": "391d86b667a60a14d1517a4479ab15c96444ce5e954e0e851ecb2a03e7699421"
+      }
+    },
+    "steam": {
+      "generatedFile": "source/steam/generated_native.png",
+      "sha256": "c971f4fe6fabe505297a5da26bcf89d7767423960ee4974217976b0d59472da9",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        291,
+        297,
+        964,
+        970
+      ],
+      "cropSize": [
+        673,
+        673
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/steam/radio.png",
+        "source/steam/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "c740da84055b489b09f7ab20f6690919b5805e5b7d2d06f7191fd5e81c297372",
+        "gear_normal": "1fef292eb0dfa2066909abad1404ec6a385d105ea4406c5525e8fcbd565d4748"
+      }
+    },
+    "teal": {
+      "generatedFile": "source/teal/generated_native.png",
+      "sha256": "4e716b2d95d79e76a413bc3bdba2e728b877a4f93fc32b9e4181fe93e8a248a5",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        304,
+        305,
+        951,
+        952
+      ],
+      "cropSize": [
+        647,
+        647
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/teal/radio.png",
+        "source/teal/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "8a179e545c2a795e214b31fd5c9dd9a77ce30c6fdd7ee63af34a8813962ac554",
+        "gear_normal": "23524277226be9c71d6762c89be9cf4ac3303c2ae276f37a75b1e4be2d8981b0"
+      }
+    },
+    "blue": {
+      "generatedFile": "source/blue/generated_native.png",
+      "sha256": "0b4b9741ae5285bf50a588df3c5257834bc522e95c9fb73040ea87f2dfa69aa4",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        284,
+        288,
+        971,
+        975
+      ],
+      "cropSize": [
+        687,
+        687
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/blue/radio.png",
+        "source/blue/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "e775972041c5574b6eb6d88601477dbde7ef7371d0684973135500c132b5dbd8",
+        "gear_normal": "a77f9bde7ce3f5fe6ad7e098bb81bd34adbb1c2a69c0944006633faa58bdf5fe"
+      }
+    },
+    "slime": {
+      "generatedFile": "source/slime/generated_native.png",
+      "sha256": "6f950cf42b2f73ae20847c7571faf084d96c2eb435e9c81ab4625265d4206c64",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        304,
+        310,
+        949,
+        955
+      ],
+      "cropSize": [
+        645,
+        645
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/slime/radio.png",
+        "source/slime/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "41cbd4cdc36aa9ac386377b64384c4ea8b487a4ecfa8d17440881b10ce390358",
+        "gear_normal": "b490d93ca58f73bd409883236b47c49012ba1d451355f09830420042368b2b10"
+      }
+    },
+    "hazard": {
+      "generatedFile": "source/hazard/generated_native.png",
+      "sha256": "e22206ea6744f777a620afdccc93f21e9defdaccc844e0c7a4d6e60b9dea1c56",
+      "nativeCanvas": [
+        1254,
+        1254
+      ],
+      "planarCrop": [
+        285,
+        290,
+        969,
+        974
+      ],
+      "cropSize": [
+        684,
+        684
+      ],
+      "upsampled": false,
+      "referenceImages": [
+        "source/hazard/radio.png",
+        "source/hazard/gear_normal.png"
+      ],
+      "referenceHashes": {
+        "radio": "b70dbecd09cda3c314c90aa8b5d74dee2ec685828cce79651be8303986599b79",
+        "gear_normal": "ca1901a6386109999642a7121531ec3eb656495a079716847e7d294a64113f51"
+      }
+    }
+  },
+  "iconProof": "source mapping read, actual hero pixels unavailable locally; no substituted icon composition",
+  "receiverGate": "Kartenkante: actual shared content images and all6x5state clip plus part-to-source list; Georg design decision pending",
+  "archive": {
+    "filename": "KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip",
+    "bytes": 21270125,
+    "fileCount": 98,
+    "sha256": "1faab3b98af02a834441c5264f03616dde909d3ccc36303df9c93240ee623508",
+    "verifiedInternalHashes": 97,
+    "freshPortableRebuildMatches": 30
+  },
+  "dropbox": {
+    "file": {
+      "file": {
+        "size": 21270125
+      },
+      "file_id": "id:KeQLaY5-IIAAAAAAAA7gHw",
+      "modified_time": "2026-11-05T02:11:24Z",
+      "name": "KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip",
+      "object_type": "file",
+      "path": "ns:1174592111//CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip",
+      "path_display": "/CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip"
+    },
+    "status": "completed"
+  }
+}
