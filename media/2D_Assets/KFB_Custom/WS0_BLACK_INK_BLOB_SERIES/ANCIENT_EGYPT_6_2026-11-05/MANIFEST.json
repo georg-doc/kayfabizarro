@@ -1,0 +1,274 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_ANCIENT_EGYPT_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+    "sha256": "47f56d2f36cffa66164735d80b240e76a3d20d5e21c6446f1598deca9580549d"
+  },
+  "production_record": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "ANCIENT_EGYPT_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "ANCIENT_EGYPT_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "family_context": {
+    "name": "Amt für die vorläufige Ewigkeit",
+    "roles": [
+      "pharaoh",
+      "lotus priestess",
+      "scribe",
+      "commander",
+      "high priest",
+      "funerary custodian"
+    ],
+    "temperaments": [
+      "gekränkte Erhabenheit",
+      "skeptische Verzückung",
+      "besorgte Pedanterie",
+      "theatralischer Mut",
+      "erschöpfte Feierlichkeit",
+      "zärtlich genervte Endgültigkeit"
+    ],
+    "adaptation": "Fictional historical-Egypt-inspired archetype mixture, not an archaeological reconstruction or claims about real religion",
+    "relationship_policy": "Shared family context only; no binding pair/trio/combat-tier assignments",
+    "standalone_actors": true
+  },
+  "figuren": [
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pharao Unfehlbar der Vorläufige",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "nemes mit Kobra",
+        "Krummstab",
+        "goldener Kragen"
+      ],
+      "temperament": "gekränkte Erhabenheit",
+      "prompt_auszug": "Male-read PHARAOH: broad squat ink-splat with splendidly offended upward chin, one broad lifted brow, pursed asymmetric closed toothless mouth. Compact blue-and-gold nemes and small cobra ornament, one little curved crook held beside body. No giant mantle hiding ink. Regal pomposity undercut by gooey roundness.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lotus von Ungefähr",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "Lotusdiadem",
+        "goldenes Sistrum"
+      ],
+      "temperament": "skeptische Verzückung",
+      "prompt_auszug": "Female-read LOTUS PRIESTESS: tall pear-shaped ink blob, bright wide ivory eyes looking sidelong in skeptical wonder, uneven delighted grin with TWO upper teeth only. Narrow turquoise-and-gold lotus headband, compact handheld sistrum with simple gold rectangular loop and three visible crossbars. Two delicate lashes, no human hair or anatomy.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schreiber Schonvermerkt",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "Papyrusrolle",
+        "Schreibrohr",
+        "Leinenkappe"
+      ],
+      "temperament": "besorgte Pedanterie",
+      "prompt_auszug": "Male-read SCRIBE: narrow leaning comma-shaped blob with two different-sized bulging ivory eyes concentrating crosswise on a short papyrus roll. Tiny linen cap, reed stylus in other goo hand. Mouth pulled tight sideways with no visible teeth, absurdly meticulous worried concentration. Papyrus has only a few abstract shallow impressions, no legible text.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hauptmann Halbmond",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "Khopesch",
+        "Rundschild",
+        "Bronzehelm mit Leinenklappen"
+      ],
+      "temperament": "theatralischer Mut",
+      "prompt_auszug": "Male-read COMMANDER: wide square-ish rounded splat, tiny bronze helmet/cap with simple cloth side flaps, compact bronze crescent khopesh held clearly out to the side, small plain round shield down at flank. Fearless theatrical battle-bellow with two uneven upper teeth, broad open mouth wholly above thick lower lip. Full ink silhouette visible.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hohepriester Beinahewissend",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "zeremonielle Kopfbedeckung",
+        "Räucherschale",
+        "goldener Kragen"
+      ],
+      "temperament": "erschöpfte Feierlichkeit",
+      "prompt_auszug": "Male-read HIGH PRIEST: round lopsided blob, heavy drooping sleepy lids over visible ivory eyes with red irises, very solemn tiny closed crooked mouth, concentrated raised goo hand. Small simple gold ritual collar and short incense bowl with ONE curled solid clay wisp, not smoke cloud. Comically trying hard to be mysterious; no full robe.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ANCIENT_EGYPT_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hüterin Nachherfürimmer",
+      "bild": {
+        "datei": "ANCIENT_EGYPT_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "Kanopen-artiges Gefäß mit Schakaldeckel",
+        "Leinenkopftuch",
+        "goldener Ohrring"
+      ],
+      "temperament": "zärtlich genervte Endgültigkeit",
+      "prompt_auszug": "Female-read FUNERARY CUSTODIAN: top-heavy hooked teardrop-shaped ink splat, one eyebrow raised, other eye slightly squinting, exasperated tender crooked open smile with a single upper tooth. Modest narrow linen headwrap, one gold hoop earring, turquoise collar detail. Both goo hands cradle a SMALL canopic-style jar with unmistakably inanimate jackal lid; the jar is an object without living eyes, not seventh character. No mummy body, no corpse.",
+      "prompt_quelle": "ANCIENT_EGYPT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum254; low-alpha edge cleanup and production opacity validation pending",
+    "Individual isolation and safe extraction require validation; logical cells are not certified crop boxes",
+    "No game sprites produced"
+  ]
+}

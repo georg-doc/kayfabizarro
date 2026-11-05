@@ -1,3 +1,19 @@
+# WSA Return · Ancient Egypt candidate · 2026-11-05
+
+Owner WSA; repo georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR #469. Outcome: one new source-conditioned Ancient Egypt six-actor source sheet plus manifest, cards and six individual DESIGN biographies. No merge or game/Library runtime publication.
+
+Senior acceptance is recorded at 9570159d72cbf817d9f13bbfed26ac5c4bb9a545. Accepted inventory stays 65 PASS sheets /390 depictions; 63 sheets /378 depictions eligible for intake. International Couples remain excluded. New ANCIENT_EGYPT_6_2026-11-05 is DRAFT pending Georg; never auto-PASS.
+
+Production: exactly one native generation, zero layout edits/resizes; selected original1536x1024 RGBA sheet. Actual original veteran and RPG images attached as body/material and accessory-craft references; all6 benchmark SHA256 checks verified. Model/seed controls not exposed. Roles: pharaoh, lotus priestess, scribe, commander, high priest, funerary custodian; two female-read. Full upright footless ink forms, distinct expressions; white/red/black eye rule and upper-gum teeth checked. Native/checker and64/96/160/192 logical-cell previews inspected. Priest headpiece and sistrum bead-rattle interpretation are generation variations; no historical reconstruction claim.
+
+Technical status: transparent alpha0..254, raw native bytes preserved, no independent catalogue masters/game crops certified. Row diagnostic minimum peak alpha1; any crop/isolation still requires validation. Six DESIGN bios and cards source-bound to own roles/props, with shared HyperNorm metanarrative and no asserted game tiers/hits/canonical IDs.
+
+Changed files: ANCIENT_EGYPT_6_2026-11-05/{sheet-r1.png,CHARACTER_INTENT.json,MANIFEST.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json,ROW_DIAGNOSTIC.json}; SET_MANIFESTS_R1.json; RETURN.md.
+
+Next gate: Georg's design verdict on the Ancient Egypt six. Receiving canonical mapping, validated per-actor extraction and Library rebuild remain WS0 follow-up.
+
+---
+
 # Current update · 2026-11-05 · Seniors Georg PASS
 
 Georg accepted all6senior Slops.65PASS sheets/390depictions;63eligible/378depictions. Source-only IDs/cards, age/hobby motifs and individual DESIGN biographies retained; tooth/lower-lip steering remains binding, technical alpha/isolation/master holds unchanged. Next authorized output: six Ancient-Egypt-inspired ink characters with historical hierarchy/roles and restrained mythic/mysterious/occult cues,2female-read. Same WSA owner/branch/PR469; no game/Library publication claim.
