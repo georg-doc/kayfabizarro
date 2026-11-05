@@ -1,3 +1,11 @@
+# Packaging discipline
+
+Use the author-designated workspace for direct working files. Do not automatically create a new permanent ZIP for every iteration. Keep each original once, reference its provenance, and create transport archives only when needed. At handoff, verify the authoritative files and remove redundant temporary copies. Preserve unique work, history and shared dependencies. Keep private storage inventories private and report actual reclaimed space separately from nominal directory sizes.
+
+This changes packaging only; existing design ownership and review authority remain unchanged.
+
+---
+
 # CURRENT · THREE NEW SOURCE CONCEPTS / CLAUDE DESIGN ROUTE · 2026-11-05
 
 Georg has supplied new prepared art for Reactor Blue, Slime Green and Hazard Yellow; their concepts are set. Authoring may implement these three supplied concepts. Do not reopen skin ideation or propagate rejected R16. Georg subsequently rejected R16; its older HUMAN_DECISION labels below are history.
