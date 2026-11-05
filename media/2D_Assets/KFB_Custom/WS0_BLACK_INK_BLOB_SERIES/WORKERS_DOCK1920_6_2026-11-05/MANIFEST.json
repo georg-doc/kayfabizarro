@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS_DOCK1920_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+    "sha256": "09d59b94b763ed1ccbc715ae261c274ad4a11535c06dc56d610652c091059643"
+  },
+  "production_record": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WORKERS_DOCK1920_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WORKERS_DOCK1920_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "1920er – Schichtwechsel am Werkstor",
+    "visual_context": "fictional1920s factory and dock labour, soot brown, indigo cotton, muted rust, brass and rope, flatcaps, rolled cloth sleeves as small tabs, hand-riveted equipment; no modern hardhats or reflective safety vests; no scene",
+    "relationship_policy": "Shared visual worker family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Stauer Lastminute",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brown flatcap",
+        "rope coil",
+        "blunt cargo hook"
+      ],
+      "temperament": "Can move a mountain of cargo while being paid for a modest hill.",
+      "prompt_auszug": "Stauer Lastminute, maennlich-read. broad low square splat in weathered brown flatcap and short neckerchief, thick rope coil and small blunt cargo hook at flank; fierce crooked internal upper-tooth grin, one eyebrow lifted. Personality: Can move a mountain of cargo while being paid for a modest hill.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nieterin Nachklang",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "indigo headscarf",
+        "rivet hammer",
+        "riveted plate"
+      ],
+      "temperament": "Knows which noises are work and which are management.",
+      "prompt_auszug": "Nieterin Nachklang, weiblich-read. tall pear blob, tied indigo headscarf with subtle lashes, compact hand-rivet hammer and little plate with THREE modeled rivet heads; tightly pursed toothless sideways mouth, unequal weary lids. Personality: Knows which noises are work and which are management.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kranwart Pendelzeit",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dark flatcap",
+        "pulley block",
+        "rope coil"
+      ],
+      "temperament": "Has never seen time move as slowly as a suspended load.",
+      "prompt_auszug": "Kranwart Pendelzeit, maennlich-read. round top-heavy splat, dark flatcap and tiny leather shoulder pad, single short pulley block held clearly separate from coiled rope; enormous ivory eyes looking sideways in opposite directions, tiny open triangular toothless mouth. Personality: Has never seen time move as slowly as a suspended load.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Heizer Kohlenherz",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "newsboy cap",
+        "coal shovel",
+        "three coal lumps"
+      ],
+      "temperament": "Feeds a machine that has never once asked how he is doing.",
+      "prompt_auszug": "Heizer Kohlenherz, maennlich-read. heavy drooping blob with small charcoal newsboy cap, short canvas apron patch below mouth, small coal shovel with THREE chunky clay coal pieces; lopsided heavy lids, deep sad toothless pout. Personality: Feeds a machine that has never once asked how he is doing.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dreher Rundlauf",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "canvas cap",
+        "forehead goggles",
+        "calipers",
+        "metal cylinder"
+      ],
+      "temperament": "Finds comfort in the rare object that agrees to fit.",
+      "prompt_auszug": "Dreher Rundlauf, maennlich-read. lean hooked ink splat with little canvas cap and goggles above eyes, chunky calipers surrounding ONE short machined metal cylinder; bright delighted unequal eyes, open asymmetrical smile with two upper teeth. Personality: Finds comfort in the rare object that agrees to fit.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_DOCK1920_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Weberin Fadenhalt",
+      "bild": {
+        "datei": "WORKERS_DOCK1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream headscarf",
+        "weaving shuttle",
+        "cloth sample"
+      ],
+      "temperament": "Keeps the thread when the whole shift loses the plot.",
+      "prompt_auszug": "Weberin Fadenhalt, weiblich-read. low wide lopsided blob, small patterned cream headscarf and two lashes, one large wooden weaving shuttle with visible thread bobbin and short folded cloth sample; startled raised brows, small nervous open mouth with one upper tooth. Personality: Keeps the thread when the whole shift loses the plot.",
+      "prompt_quelle": "WORKERS_DOCK1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

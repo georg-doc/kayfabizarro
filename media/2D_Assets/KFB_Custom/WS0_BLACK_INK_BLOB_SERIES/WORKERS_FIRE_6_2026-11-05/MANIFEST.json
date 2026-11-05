@@ -1,0 +1,256 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS_FIRE_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+    "sha256": "f945e1e2cf40f390f87f6ee23a2296777e237ed295f788690b3552c974bd37d3"
+  },
+  "production_record": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WORKERS_FIRE_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WORKERS_FIRE_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Feuerwehr – Wache Nachlöschen",
+    "visual_context": "mixed timeless retro/contemporary fire brigade: warm brass/red helmets, dark navy cloth with small yellow trim; no human full suits",
+    "relationship_policy": "Shared visual worker family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Brandmeisterin Löschschluss",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "red fire helmet",
+        "speaking trumpet"
+      ],
+      "temperament": "Can organize an emergency faster than she can admit she needs a rest.",
+      "prompt_auszug": "Brandmeisterin Löschschluss, weiblich-read. tall top-heavy ink pear, red firefighter helmet with little brass crest, two subtle lashes, one goo hand holding compact speaking trumpet at flank and other planted on goo hip; broad lifted brow, gritted internal two upper teeth, exhausted determination. Personality: Can organize an emergency faster than she can admit she needs a rest.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schlauchwart Knickfrei",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass fire helmet",
+        "coiled hose and nozzle"
+      ],
+      "temperament": "Trusts water completely and hoses only provisionally.",
+      "prompt_auszug": "Schlauchwart Knickfrei, maennlich-read. broad flat-bottom rounded splat, brass retro fire helmet, short coiled red hose with brass nozzle clearly connected; wide uneven eyes following nozzle down, tiny toothless worried triangular open mouth. Personality: Trusts water completely and hoses only provisionally.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Axtträger Offenjetzt",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dark fire helmet",
+        "short fire axe"
+      ],
+      "temperament": "Regards every locked door as a discussion that has gone on too long.",
+      "prompt_auszug": "Axtträger Offenjetzt, maennlich-read. lean curved hook-shaped blob, small dark leather fire helmet, single short chunky fire axe held vertical beside body; one hooded eye one raised brow, closed sideways toothless sneer. Personality: Regards every locked door as a discussion that has gone on too long.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Maschinist Drucksache",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "navy cap",
+        "pressure gauge and valve"
+      ],
+      "temperament": "Can hold the pressure steady while everything else becomes approximate.",
+      "prompt_auszug": "Maschinist Drucksache, maennlich-read. round drooping blob in navy cap, tiny yellow collar tabs, compact pump-pressure gauge connected to ONE short shutoff valve; huge ivory eyes looking inward at dial, open oval mouth with one upper tooth. Personality: Can hold the pressure steady while everything else becomes approximate.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rettungsmann Ganzruhig",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "yellow fire helmet",
+        "rescue rope loop"
+      ],
+      "temperament": "Lends his calm to anyone who has temporarily misplaced theirs.",
+      "prompt_auszug": "Rettungsmann Ganzruhig, maennlich-read. square-ish broad splat, plain yellow fire helmet, one compact rescue rope loop held at side; eyes bright and determined, broad crooked toothy smile with two upper teeth, no external tongue. Personality: Lends his calm to anyone who has temporarily misplaced theirs.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_FIRE_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Funkerin Nachalarm",
+      "bild": {
+        "datei": "WORKERS_FIRE_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "red fire helmet",
+        "goggles above eyes",
+        "handheld radio"
+      ],
+      "temperament": "Hears the next emergency in the silence after the last one.",
+      "prompt_auszug": "Funkerin Nachalarm, weiblich-read. low lopsided asymmetrical blob, small red fire helmet with goggles parked high, two subtle lashes, chunky handheld radio and short dark scarf; droopy skeptical lids, closed toothless zigzag mouth. Personality: Hears the next emergency in the silence after the last one.",
+      "prompt_quelle": "WORKERS_FIRE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

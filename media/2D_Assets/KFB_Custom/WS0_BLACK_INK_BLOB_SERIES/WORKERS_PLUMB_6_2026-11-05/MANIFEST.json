@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS_PLUMB_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+    "sha256": "93fe511a808f5900d603d596d3e5247a2d9ddbf8aa1b8da9339a052483813bf5"
+  },
+  "production_record": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WORKERS_PLUMB_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WORKERS_PLUMB_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Klempner – Rohrdienst Gleichdicht",
+    "visual_context": "copper, dull red iron, muted teal canvas, blue work caps and vintage tool craft; keep few simple functional plumbing props",
+    "relationship_policy": "Shared visual worker family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Meister Rückstau",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "teal work cap",
+        "red pipe wrench",
+        "copper elbow"
+      ],
+      "temperament": "Has heard every pipe excuse and trusts the dripping one least.",
+      "prompt_auszug": "Meister Rückstau, maennlich-read. wide rounded square ink splat, faded teal work cap, single big red pipe wrench and simple short copper elbow held separately; one eye half closed, other narrow, enormous crooked closed toothless frown. Personality: Has heard every pipe excuse and trusts the dripping one least.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lecksucher Tropfgenau",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blue knit cap",
+        "listening probe",
+        "short pipe section"
+      ],
+      "temperament": "Can hear a leak rehearsing before it makes its first appearance.",
+      "prompt_auszug": "Lecksucher Tropfgenau, maennlich-read. tall thin question-mark splat, tiny rolled blue knit cap, one simple brass listening probe pressed to a short pipe section; one huge eye and one squint, small off-centre toothless round mouth. Personality: Can hear a leak rehearsing before it makes its first appearance.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Abflussmeisterin Freilauf",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ochre headscarf",
+        "compact drain-snake reel"
+      ],
+      "temperament": "Enjoys finding the one blockage everybody else has learned to live with.",
+      "prompt_auszug": "Abflussmeisterin Freilauf, weiblich-read. broad pear blob, tied muted ochre headscarf, subtle lashes, compact drain-snake reel with single short flexible tip hanging safely beside it; fierce delight, broad open grin with two upper teeth. Personality: Enjoys finding the one blockage everybody else has learned to live with.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Azubine Dichtungsfrage",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "blue cap",
+        "rubber washer",
+        "small toolkit"
+      ],
+      "temperament": "Suspects that the missing piece is asking the wrong question.",
+      "prompt_auszug": "Azubine Dichtungsfrage, weiblich-read. round top-heavy blob, soft blue cap slightly oversized, two lashes, holds one oversized RUBBER WASHER up near cheek and small toolkit at flank; raised uneven brows, crooked nervous closed toothless smile. Personality: Suspects that the missing piece is asking the wrong question.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Heizungswart Warmgenug",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "grey work cap",
+        "valve fitting",
+        "small spanner"
+      ],
+      "temperament": "Keeps the building warm through arguments that could heat it unaided.",
+      "prompt_auszug": "Heizungswart Warmgenug, maennlich-read. squat triangular rounded splat in grey work cap, small red valve wheel on a simple detached two-port radiator fitting, chunky little spanner; heavy tired eyelids, compressed closed toothless wavy mouth. Personality: Keeps the building warm through arguments that could heat it unaided.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_PLUMB_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rohrschmied Bogenmaß",
+      "bild": {
+        "datei": "WORKERS_PLUMB_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "work cap",
+        "forehead goggles",
+        "curved copper pipe",
+        "bending lever"
+      ],
+      "temperament": "Can persuade a straight line to consider other arrangements.",
+      "prompt_auszug": "Rohrschmied Bogenmaß, maennlich-read. tall broad-based asymmetrical splat, dark leather apron PATCH only, goggles parked on small cap, one gleaming curved copper pipe and short bending lever; gleeful wide open mouth with one big upper tooth. Personality: Can persuade a straight line to consider other arrangements.",
+      "prompt_quelle": "WORKERS_PLUMB_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

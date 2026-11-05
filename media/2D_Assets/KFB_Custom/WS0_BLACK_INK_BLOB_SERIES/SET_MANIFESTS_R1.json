@@ -509,11 +509,47 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_WORKERS_FIRE_20261105",
+      "manifest": "WORKERS_FIRE_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_WORKERS_BUILD_20261105",
+      "manifest": "WORKERS_BUILD_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_WORKERS_PLUMB_20261105",
+      "manifest": "WORKERS_PLUMB_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_WORKERS_DOCK1920_20261105",
+      "manifest": "WORKERS_DOCK1920_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_WORKERS_STRIKE1920_20261105",
+      "manifest": "WORKERS_STRIKE1920_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 5,
+    "depictions": 30,
+    "identities": 30,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

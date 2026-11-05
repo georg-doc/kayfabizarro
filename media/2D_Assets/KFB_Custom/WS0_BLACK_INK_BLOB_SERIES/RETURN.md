@@ -1,3 +1,21 @@
+# WSA Return · Five worker families generated · 2026-11-05
+
+Owner WSA; repo georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome:5 independent6-actor landscape transparent source sheets /30 authoring identities. Families: firefighters, construction crew, plumbers,1920s factory/dock labour,1920s strikers. Each2 female-read;10 total. Each actor has source-only ID/name,logical cell,role/accessories,prompt excerpt,DESIGN card,individual English biography and dry German FrizzleBob note,shared family only with no invented pair/trio/tier bindings.
+
+All five new sets DRAFT pending Georg. Seven military families were explicitly accepted by Georg and recorded at 617fd43d94e958d8cd557892736e9c0a53fd5b9b; accepted inventory73 sheets/438 depictions,71 sheets/426 intake eligible. New30 not included. International Couples/Miners exclusions unchanged. Prior minor military notes retained as non-blocking following PASS.
+
+Production: exactly5 native reference-conditioned jobs,0 layout edits,0 selected-image resizes;5 RGBA PNGs1536x1024,alpha0..254. Actual original veteran and RPG files supplied to every call as body/material and prop-craft STYLE references.6/6 original benchmark hashes verified. Original PNG bytes match local/native and Git blob hashes. No generated sheet used as style parent. Model/seed not exposed.
+
+Checks: each native output inspected; checker composites plus light64/96/192 and dark160-per-logical-cell boards reviewed. Whole upright footless ink anatomy,white sclera/red iris/black pupils,2 female-read each. Varied expressions and gender positions across sets. Native embellishments recorded: firefighter sweat/waterdrop/sound wedges; construction abstract plan/emblem; plumber extra emphasis wedges and separate clamp-like bending tool rather than operational bending assembly (PROP_DETAIL_REVIEW); turner extra gear badge; striker leaflets abstract nonverbal marks,blank picket sign,leader one upper tooth instead of planned two. No retroactive/self-issued Georg PASS.
+
+Technical holds: transparent native sheets preserved; final alpha opacity/edge cleanup,validated individual isolation and native single catalogue masters pending. Construction global straight-row alpha minimum63 despite per-column minima0/1: no globally certified fixed-row crop asserted. Logical cells are not extraction rectangles. No game sprites,canonical receiving mapping,combat hits/tiers,Asset Library rebuild,runtime publication,merge or Stage claim.
+
+Changed files: WORKERS_{FIRE,BUILD,PLUMB,DOCK1920,STRIKE1920}_6_2026-11-05/ each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json; WORKERS_BATCH_2026-11-05.json,SET_MANIFESTS_R1.json,RETURN.md. All text lore remains DESIGN even after later image acceptance.1920s contexts are fictional period-inspired visual archetypes,not reconstruction. Strike satire is about workplace certainty and bureaucracy,with solidarity and heart.
+
+Next gate: Georg design verdict on five worker sheets, optionally by family.
+
+---
+
 # WSA Return · Seven military families PASS; worker batch authorized · 2026-11-05
 
 Georg explicitly accepts all7 military sheets/42 designs. Manifests and biography intake flags updated; prose stays DESIGN, existing minor QA notes and technical holds retained without retroactive rejection. Accepted73 sheets/438 depictions; eligible71/426. Existing WSA source owner, branch assets/ws0-ink-miners-2026-11-04, draft PR469. Next bounded outcome:5 independent6-actor sheets: firefighters, construction crew, plumbers,1920s factory/dock workers,1920s strikers. Each2 female-read; all new candidates await Georg verdict. No merge/runtime/Library rebuild claim. Next step: source-conditioned production and archival of this authorized worker batch.
