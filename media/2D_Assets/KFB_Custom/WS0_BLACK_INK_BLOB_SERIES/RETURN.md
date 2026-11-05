@@ -1,3 +1,21 @@
+# WSA Return · Seven military families generated · 2026-11-05
+
+Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome: seven source-conditioned military six-actor sheets,42 depictions/42 authoring identities. Families: US, France, UK, Italy, Germany, USSR-inspired Russia, Civil-War/interwar-inspired Spain. Each has2 female-read figures. Free fictional historical visual archetypes, not a reenactment or documented unit. Spain is explicitly not represented as a WWII combatant unit. Satirical target is bureaucracy and hierarchy, not inherent national traits.
+
+All seven sets DRAFT, Georg verdict pending. Existing accepted count66 sheets/396 depictions;64 sheets/384 eligible. Egypt PASS recorded at d0f61483893858e215b3c3a8a04c6c0ff1157ca5. New42 are NOT included in accepted/eligible counts. International Couples/Miners exclusions unchanged.
+
+Production evidence: exactly7 native image jobs,0 layout edits,0 resizes of selected PNGs; all native1536x1024 RGBA alpha0..254. Each call supplied actual veteran-original.png and rpg-props.png as bounded STYLE references;6/6 benchmark hashes verified. Native PNG bytes match Git blob hashes. Model/seed controls not exposed. No previous generated output used as style parent.
+
+Checks: native images visually inspected, seven checker composites, light64/96/192 and dark160-per-logical-cell boards reviewed. Each6 complete upright footless ink forms, readable white/red/black eyes,2 female-read. No flags/political/extremist insignia observed. Distinct own expressions but recurring role-based equipment/mouth rhythms across families remain a possible tuning subject. France upper-middle tooth/lip relation flagged MINOR_DETAIL_REVIEW; Germany/Spain unprompted rosy lips flagged STYLE_VARIATION_REVIEW; USSR scout scope not clearly resolved and manifest reflects rifle as seen. Other generative costume/prop deviations in per-set QA. These flags are not Georg verdicts.
+
+Technical holds: source sheets are transparent, but final opacity/edge cleanup and validated individual isolation not certified. No fixed-cell extraction rectangles, high-resolution single catalogue masters or game sprites claimed. No receiving canonical IDs, hit tiers, game ingest, Asset Librarian rebuild, public Stage or merge.
+
+Changed files:7 folders MILITARY_{US,FRANCE,UK,ITALY,GERMANY,USSR,SPAIN}_6_2026-11-05/, each original sheet-r1.png plus MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json. Also MILITARY_BATCH_2026-11-05.json,SET_MANIFESTS_R1.json,RETURN.md. Every actor carries source-bound DESIGN personality/card/backstory and dry FrizzleBob note; family relation only, no invented pair/trio/tier binding. Military cast is fictional and not a claim about actual historical individuals or service eligibility.
+
+Next gate: Georg design verdict on these seven sheets, optionally by country. Prior accepted inventory remains eligible for receiving-owner follow-up.
+
+---
+
 # WSA Return · Egypt PASS; seven military families authorized · 2026-11-05
 
 Georg explicitly accepted all six Ancient Egypt designs. Manifest and bio intake flags updated; prose remains DESIGN and technical holds remain. Accepted66 sheets/396 depictions; eligible64/384. New bounded visual outcome: US, France, UK, Italy, Germany, USSR-inspired Russia and Civil-War/interwar-inspired Spain, one independent six-actor source sheet each. Each generated candidate awaits its own Georg verdict; no automatic PASS, no runtime/Library publication. Existing owner WSA, source branch assets/ws0-ink-miners-2026-11-04, draft PR469. Next step: source-conditioned military-family generation and original-byte archival.

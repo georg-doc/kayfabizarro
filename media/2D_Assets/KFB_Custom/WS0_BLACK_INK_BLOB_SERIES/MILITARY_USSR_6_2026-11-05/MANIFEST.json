@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_USSR_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+    "sha256": "aab9c5301b86244c08e1331cb4651b2b91d71581ecd520ddb9d9862bfb0ebe92"
+  },
+  "production_record": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_USSR_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_USSR_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Sowjetisch inspirierter Trupp",
+    "visual_context": "Soviet interwar/WWII-inspired khaki, quilted fabric, plain steel helmets and padded caps; Russian request interpreted visually as USSR-era without political emblems",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sergeant Festgefroren",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plain steel helmet",
+        "quilted shoulder patch",
+        "map"
+      ],
+      "temperament": "Keeps moving chiefly to avoid becoming another landmark.",
+      "prompt_auszug": "Sergeant Festgefroren; maennlich-read; low broad ink splat, plain khaki steel helmet, small quilted shoulder patch and folded map; one eyebrow high, long stubborn toothless closed mouth. Personality: Keeps moving chiefly to avoid becoming another landmark.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Späherin Weitsicht",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "khaki cap",
+        "scarf",
+        "wood-stock rifle; scope from prompt not visibly resolved"
+      ],
+      "temperament": "Notices the small detail missing from every grand plan.",
+      "prompt_auszug": "Späherin Weitsicht; weiblich-read; tall hooked pear blob, plain soft khaki cap and tiny grey scarf, compact scoped wood-stock rifle vertical beside body; lashes, one sharp eye one lifted lid, confident lopsided open grin with one upper tooth. Personality: Notices the small detail missing from every grand plan.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Funkerina Rauschen",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sidecap",
+        "headset",
+        "handset",
+        "paper strip"
+      ],
+      "temperament": "Translates static into something headquarters will accept.",
+      "prompt_auszug": "Funkerina Rauschen; weiblich-read; round top-heavy splat, plain sidecap and little headset, compact radio handset and small paper strip; lashes, huge startled eyes looking at paper, open oval mouth with no teeth. Personality: Translates static into something headquarters will accept.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tankist Rückwärtsgang",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "padded tanker helmet",
+        "goggles",
+        "spanner"
+      ],
+      "temperament": "Can hear an engine requesting permission to give up.",
+      "prompt_auszug": "Tankist Rückwärtsgang; maennlich-read; squat bulbous ink blob, dark ribbed padded tanker helmet, goggles above forehead, oversized short spanner; sleepy heavy lids and crooked closed toothless smirk. Personality: Can hear an engine requesting permission to give up.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Infanterist Nurweiter",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "steel helmet",
+        "canvas satchel",
+        "wood-stock carbine"
+      ],
+      "temperament": "Finds courage whenever somebody smaller is watching.",
+      "prompt_auszug": "Infanterist Nurweiter; maennlich-read; lean leaning splat, battered plain steel helmet, simple canvas satchel and wood-stock carbine safely up at side; broad bellowing open mouth with two upper teeth and one eye squeezed smaller. Personality: Finds courage whenever somebody smaller is watching.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_USSR_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Versorger Letzterrest",
+      "bild": {
+        "datei": "MILITARY_USSR_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "earflap cap",
+        "metal kettle",
+        "ration ledger"
+      ],
+      "temperament": "Distributes the last portion with the optimism of a man expecting another.",
+      "prompt_auszug": "Versorger Letzterrest; maennlich-read; round irregular blob, soft fur-edged earflap cap, small metal kettle and ration ledger; raised mournful brows and tiny toothless downturn. Personality: Distributes the last portion with the optimism of a man expecting another.",
+      "prompt_quelle": "MILITARY_USSR_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

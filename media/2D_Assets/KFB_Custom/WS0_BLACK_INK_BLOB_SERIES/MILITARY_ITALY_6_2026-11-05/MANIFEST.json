@@ -1,0 +1,260 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_ITALY_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+    "sha256": "d0e0eaf33b74acf9672e8edd2a5515a7abca7f3c5a517551f1a2c0e6fd3f40f0"
+  },
+  "production_record": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_ITALY_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_ITALY_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Italienischer Trupp",
+    "visual_context": "Italian interwar/WWII-inspired grey-green and warm khaki; alpini and bersaglieri-inspired headgear; fictional unmarked service uniforms",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alpino Nochhöher",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "alpine feather hat",
+        "rope loop",
+        "ice axe"
+      ],
+      "temperament": "Regards every summit as a badly placed supply depot.",
+      "prompt_auszug": "Alpino Nochhöher; maennlich-read; tall hunched comma blob, soft grey-green alpine hat with ONE long dark feather and short rope loop, compact ice axe; sorrowfully arched brows and deep toothless frown. Personality: Regards every summit as a badly placed supply depot.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bersagliere Eilfertig",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "feather-plumed helmet",
+        "wood-stock carbine"
+      ],
+      "temperament": "Runs ahead because waiting would make the order seem less certain.",
+      "prompt_auszug": "Bersagliere Eilfertig; maennlich-read; lean asymmetrical forward-tilted splat, compact dark feather-plumed helmet, wood-stock carbine upright beside body; ecstatic one-eye-squint open laugh, two upper teeth. Personality: Runs ahead because waiting would make the order seem less certain.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tenente Domani",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "peaked cap",
+        "map case",
+        "binoculars"
+      ],
+      "temperament": "Sees both sides of a situation and requisitions a third.",
+      "prompt_auszug": "Tenente Domani; maennlich-read; round top-heavy blob, plain grey-green peaked cap and small map case, brass binoculars held below mouth; wide uncertain eyes, little crooked toothless smile. Personality: Sees both sides of a situation and requisitions a third.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Meccanica Valvola",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "work cap",
+        "spanner",
+        "small valve"
+      ],
+      "temperament": "Treats impossible machinery as a personal invitation.",
+      "prompt_auszug": "Meccanica Valvola; weiblich-read; broad low splat in soft work cap, goggles on cap, tiny canvas bib patch; chunky spanner and single small valve; lashes, triumphant asymmetric grin with one upper tooth. Personality: Treats impossible machinery as a personal invitation.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Radiofonista Quasichiaro",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sidecap",
+        "headset",
+        "field radio"
+      ],
+      "temperament": "Keeps the channel clear of everything except inconvenient questions.",
+      "prompt_auszug": "Radiofonista Quasichiaro; weiblich-read; thin curved pear blob, khaki sidecap and short headset, one compact field radio with handset; lashes and heavy side-eye, tightly compressed toothless wavy lips. Personality: Keeps the channel clear of everything except inconvenient questions.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_ITALY_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sanitario Semprepronto",
+      "bild": {
+        "datei": "MILITARY_ITALY_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plain helmet",
+        "medical pouch",
+        "bandage roll"
+      ],
+      "temperament": "Has prepared for every emergency except the scheduled one.",
+      "prompt_auszug": "Sanitario Semprepronto; maennlich-read; round drooping ink splat, plain steel bowl helmet and medical pouch with simple ivory plus, rolled bandage balanced in goo hand; startled high brows and small open oval mouth with no teeth. Personality: Has prepared for every emergency except the scheduled one.",
+      "prompt_quelle": "MILITARY_ITALY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

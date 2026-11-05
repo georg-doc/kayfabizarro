@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_GERMANY_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+    "sha256": "d4da719a872a6315a5c4d72df4b6615c8af88b33276f0273dac8d0fb2bdd847b"
+  },
+  "production_record": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_GERMANY_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_GERMANY_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Deutscher Trupp",
+    "visual_context": "German interwar/WWII-inspired field-grey and leather, plain Stahlhelm silhouette; army archetypes without political or extremist symbols",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Feldwebel Vorschriftsmäßig",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plain steel helmet",
+        "whistle",
+        "inspection card"
+      ],
+      "temperament": "Can detect a regulation breach before a regulation exists.",
+      "prompt_auszug": "Feldwebel Vorschriftsmäßig; maennlich-read; broad square rounded splat, plain field-grey steel helmet, whistle and little blank inspection card; eyes narrowed to unequal heights, enormous disgruntled toothless lower-lip pout. Personality: Can detect a regulation breach before a regulation exists.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Funker Empfangsbereit",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sidecap",
+        "headset",
+        "handset"
+      ],
+      "temperament": "Receives certainty in bursts and doubt continuously.",
+      "prompt_auszug": "Funker Empfangsbereit; weiblich-read; tall thin crooked ink blob with plain field-grey sidecap, headset high on cap, handset on short coiled cord; lashes and wildly divergent gaze, tiny confused toothless mouth. Personality: Receives certainty in bursts and doubt continuously.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gefreiter Gleichda",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plain steel helmet",
+        "blanket roll",
+        "wood-stock rifle"
+      ],
+      "temperament": "Attempts to look ready while wondering what ready is for.",
+      "prompt_auszug": "Gefreiter Gleichda; maennlich-read; low wide splat with plain steel helmet slightly askew, small rolled blanket at flank and wood-stock rifle safely upright; fierce broad open mouth with two upper teeth, brows not symmetrical. Personality: Attempts to look ready while wondering what ready is for.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Werkmeister Klemmtnoch",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "padded work cap",
+        "goggles",
+        "spanner",
+        "oil can"
+      ],
+      "temperament": "Distrusts perfect machines and the people who promise them.",
+      "prompt_auszug": "Werkmeister Klemmtnoch; maennlich-read; pear-shaped lopsided blob, dark padded work cap with goggles above eyes, one hefty spanner and oil can; one big weary eye, other half shut, sideways toothless sneer. Personality: Distrusts perfect machines and the people who promise them.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sanitäterin Haltstill",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "grey cloth cap",
+        "medical bag",
+        "bandage roll"
+      ],
+      "temperament": "Issues kindness in a tone that sounds like an instruction.",
+      "prompt_auszug": "Sanitäterin Haltstill; weiblich-read; round asymmetrical splat, simple grey cloth cap and small ivory apron patch below face, compact medical bag marked ivory plus, rolled bandage; lashes, stern concerned open smile with one upper tooth. Personality: Issues kindness in a tone that sounds like an instruction.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_GERMANY_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Küchenwart Nachschlag",
+      "bild": {
+        "datei": "MILITARY_GERMANY_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "field cap with cook cloth",
+        "ladle",
+        "mess tin"
+      ],
+      "temperament": "Must feed a queue that grows whenever he counts it.",
+      "prompt_auszug": "Küchenwart Nachschlag; maennlich-read; tall drooping blob, field cap tucked under small folded cook cloth, metal ladle and lidded mess tin; high worried eyebrows, tiny open triangular toothless mouth. Personality: Must feed a queue that grows whenever he counts it.",
+      "prompt_quelle": "MILITARY_GERMANY_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

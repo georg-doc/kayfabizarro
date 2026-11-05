@@ -1,0 +1,86 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "date": "2026-11-05",
+  "owner": "WSA",
+  "status": "DRAFT_AWAITING_GEORG",
+  "counts": {
+    "sheets": 7,
+    "depictions": 42,
+    "identities": 42,
+    "female_read_identities": 14,
+    "generation_jobs": 7,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "US",
+      "set_id": "WSA_MILITARY_US_20261105",
+      "manifest": "MILITARY_US_6_2026-11-05/MANIFEST.json",
+      "sha256": "b96c6ed804b22a774639d51a1028fbf104ea816b6bed5c0222894c039f24ee09",
+      "git_blob_sha": "8d03613d3eb17c074302a2751388decb21040fb7",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "FRANCE",
+      "set_id": "WSA_MILITARY_FRANCE_20261105",
+      "manifest": "MILITARY_FRANCE_6_2026-11-05/MANIFEST.json",
+      "sha256": "4509d7e307f278e980c4212d41a1978c82f05f7f1acb8bfbbf281279fbd5be33",
+      "git_blob_sha": "4e8bfdee63540519be1dddf68a303c01ea8891ae",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "UK",
+      "set_id": "WSA_MILITARY_UK_20261105",
+      "manifest": "MILITARY_UK_6_2026-11-05/MANIFEST.json",
+      "sha256": "39d15ab5f4117ed635f5624dced09dbb6b8f27617d628e077af8b2b99917c2ef",
+      "git_blob_sha": "34d04cc491cad0d69fe0571fba9a257ca93d9b20",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "ITALY",
+      "set_id": "WSA_MILITARY_ITALY_20261105",
+      "manifest": "MILITARY_ITALY_6_2026-11-05/MANIFEST.json",
+      "sha256": "d0e0eaf33b74acf9672e8edd2a5515a7abca7f3c5a517551f1a2c0e6fd3f40f0",
+      "git_blob_sha": "717720d5d5cc247c5f921a7d73b3b71c7bf5bb3c",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "GERMANY",
+      "set_id": "WSA_MILITARY_GERMANY_20261105",
+      "manifest": "MILITARY_GERMANY_6_2026-11-05/MANIFEST.json",
+      "sha256": "d4da719a872a6315a5c4d72df4b6615c8af88b33276f0273dac8d0fb2bdd847b",
+      "git_blob_sha": "ab3dce5c18fed7b8691bd5dbf6eb54f6faba29a1",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "USSR",
+      "set_id": "WSA_MILITARY_USSR_20261105",
+      "manifest": "MILITARY_USSR_6_2026-11-05/MANIFEST.json",
+      "sha256": "aab9c5301b86244c08e1331cb4651b2b91d71581ecd520ddb9d9862bfb0ebe92",
+      "git_blob_sha": "a1e6196b2884dd76ac786e0639cd9167845e3800",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "code": "SPAIN",
+      "set_id": "WSA_MILITARY_SPAIN_20261105",
+      "manifest": "MILITARY_SPAIN_6_2026-11-05/MANIFEST.json",
+      "sha256": "7a95cece03c0746a55a628b55d1cbc230308b09b2af801772e2727576ad987f0",
+      "git_blob_sha": "66b53b7949a29e4d17743a7f6a20731bc3e2caac",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
+  "notes": [
+    "Source sheets only; each1536x1024 preserved at native size",
+    "Spain: free Civil War/interwar inspiration; no WWII unit claim",
+    "Russia interpreted as USSR-era visual inspiration",
+    "Model and seed not exposed",
+    "Exact prompts and input reference roles in each PRODUCTION_RECORD.json"
+  ]
+}
