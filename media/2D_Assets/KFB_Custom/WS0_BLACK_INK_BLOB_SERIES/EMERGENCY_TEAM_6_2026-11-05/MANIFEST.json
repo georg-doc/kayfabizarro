@@ -1,0 +1,280 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_EMERGENCY_TEAM_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+    "sha256": "db934a4fd68bcb99be7c0dffee8ccbbe803c89b1cc50bc120ad0705f492ec617"
+  },
+  "production_record": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "EMERGENCY_TEAM_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "EMERGENCY_TEAM_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "family_context": {
+    "name": "Akutteam der vorläufigen Entwarnung",
+    "roles": [
+      "emergency physician",
+      "paramedic",
+      "anaesthetist",
+      "trauma surgeon",
+      "intensive-care nurse",
+      "cardiologist"
+    ],
+    "temperaments": [
+      "urgent focused resolve / impatience with unresolved uncertainty",
+      "alarmed helpful optimism / determination to arrive prepared",
+      "exhausted controlled calm / insistence on predictability",
+      "meticulous concentration / impatience with untidy outcomes",
+      "tired compassionate firmness / sustained attention",
+      "anxious intense attention / uneasy trust in a tidy signal"
+    ],
+    "shared_outfit": "partial teal scrub cues, short ivory lapels; paramedic adds orange rescue accents",
+    "adaptation": "Civilian acute/intensive medical role archetypes as original fictional Ink Slops, not military, real clinicians or procedural instruction",
+    "relationship_policy": "Shared team context only; no pair/state/trio/combat-tier or medical skill-stat binding",
+    "lore_status": "DESIGN HyperNorm satire, not real-world claims about clinicians",
+    "standalone_actors": true
+  },
+  "figuren": [
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Akuta Jetzt",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ivory hairband",
+        "teal collar and ivory lapels",
+        "simple stethoscope",
+        "blank triage clipboard with three colored tabs"
+      ],
+      "temperament": "urgent focused resolve / impatience with unresolved uncertainty",
+      "prompt_auszug": "FEMALE-READ EMERGENCY PHYSICIAN. Tall broad pear blob with one hooked crown loop, tiny plain ivory hairband, short dark clay side curl and subtle lashes. Small teal collar, two short ivory coat lapels. Focused urgent resolve: one huge WHITE eye forward and other sharply squinting, one high/one low brow, shallow crooked clenched mouth with three uneven teeth, heavy lower lip. Holds ONE SIMPLE STETHOSCOPE low in one hand: two short metal ear tubes with rounded ear tips join one obvious Y-shaped black flexible tube leading to ONE round silver chest disc, no disconnected loops or impossible branches. Other hand holds ONE small plain triage CLIPBOARD with THREE bold colored edge tabs and blank cream paper, no writing. Entire device and board inside cell.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sanitäter Gleichda",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "orange rescue helmet with ivory heart",
+        "orange shoulder accents and teal fold",
+        "compact orange medical kit case"
+      ],
+      "temperament": "alarmed helpful optimism / determination to arrive prepared",
+      "prompt_auszug": "MALE-READ PARAMEDIC. Very wide low bean blob, three blunt crown nubs, small ORANGE RESCUE HELMET with a plain ivory HEART patch, one orange shoulder panel over a teal cloth fold, no full jacket or armor. Alarmed helpful enthusiasm: two unequal enormous WHITE eyes looking UP sideways, raised uneven inner brows, half-open crooked brave smile with two unequal teeth, tense lower lip. Both hands protect ONE compact ORANGE MEDICAL KIT CASE at belly, rounded corners, sturdy handle/two latches, one bold ivory heart emblem, no lettering or real logo. No stretcher or extra equipment pile.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Atemruhe",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small teal scrub cap",
+        "teal/ivory shoulder accents",
+        "blue resuscitation bag with short connector and clear mask held low"
+      ],
+      "temperament": "exhausted controlled calm / insistence on predictability",
+      "prompt_auszug": "MALE-READ ANAESTHETIST. Round top-heavy upright dumpling with one coiled crown lobe, tiny teal scrub cap above face, short teal V-collar and ivory cuff scrap. Controlled exhausted calm: very heavy half-lidded WHITE eyes looking SIDEWAYS, gently unequal flat brows, enormous CLOSED crooked pout with one tiny lower tooth. Both hands cradle ONE simplified BLUE SELF-INFLATING RESUSCITATION BAG with a short single connector to ONE clear rounded face MASK at its end; clear coherent continuous device, bag squeezable plasticine, mask tilted LOW away from own face. Mask is a held equipment prop only, never worn. No long tubes, oxygen tank or patient.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Schnittklar",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "teal scrub cap",
+        "ivory lapel/teal shoulder fold",
+        "rounded steel ring-handled instrument",
+        "folded ivory gauze stack"
+      ],
+      "temperament": "meticulous concentration / impatience with untidy outcomes",
+      "prompt_auszug": "MALE-READ TRAUMA SURGEON. Broad near-square soft splat with two uneven low crown lobes, small teal scrub cap and ONE short ivory lapel with teal shoulder fold. Ferocious meticulous concentration: one WHITE eye round and other compressed while looking DOWN, asymmetrically heavy brows, CLOSED pinched crooked lip with two offset ivory teeth. Holds ONE short blunt STEEL FORCEPS with two large simple ring handles and a single pair of rounded jaws, and ONE small stack of folded IVORY GAUZE in the other hand. Both props LOW at belly, no blood, blade, wound, suturing or operating scene. Face fully uncovered.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pflegerin Wachzeit",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small teal headband",
+        "short dark clay side curl",
+        "teal/ivory shoulder accents",
+        "clear fluid bag with short tube and teal clamp"
+      ],
+      "temperament": "tired compassionate firmness / sustained attention",
+      "prompt_auszug": "FEMALE-READ INTENSIVE-CARE NURSE. Tall wavy-edged soft bean blob, one small dark clay side curl, subtle lashes, plain small teal headband and shared teal/ivory shoulder accents. Tired compassionate firmness: unequal WHITE eyes look DOWN, one lid lowered and opposite brow raised thoughtfully, warm almost CLOSED asymmetric smile with one small upper tooth and a heavy lower lip. One hand holds ONE small clear IV FLUID BAG by its thick top tab, plain light-blue drop shape in bag, no labels/numbers. A SINGLE short transparent tube leads from bag bottom to one chunky teal ROLLER CLAMP held in other hand. Tube ends visibly below clamp, no needle/patient/pole, no tangled loops. Whole apparatus LOW beside body.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMERGENCY_TEAM_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Taktgefühl",
+      "bild": {
+        "datei": "EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short clay side lock",
+        "ivory lapels over teal collar",
+        "compact teal monitor with single symbolic pulse trace and heart button"
+      ],
+      "temperament": "anxious intense attention / uneasy trust in a tidy signal",
+      "prompt_auszug": "MALE-READ CARDIOLOGIST. Tall crooked pear blob with two folded crown lobes, no hat, one tiny rumpled clay side lock, short ivory lapels over teal collar. Anxious intense attention: one enormous WHITE eye and other narrowed stare DOWN at own screen, inner brow corners high, small clenched zigzag mouth with one central tooth and deep protruding lower lip. Both hands hold ONE compact TEAL HEART MONITOR with one large dark screen showing ONE simple WHITE STYLIZED PULSE ZIGZAG, one red heart-shaped button and a thick handle. No numbers, labels, detailed readouts, long wires or bedside machine. Device chunky and comprehensible, not a sci-fi console.",
+      "prompt_quelle": "EMERGENCY_TEAM_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254/low-alpha residue; final production cleanup pending",
+    "Logical3x2cells are not certified safe fixed512crops; validated individual isolation pending",
+    "No game sprites or safe extraction rectangles asserted"
+  ]
+}

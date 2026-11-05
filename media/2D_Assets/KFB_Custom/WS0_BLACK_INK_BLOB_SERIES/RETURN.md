@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Emergency/acute-care team six-sheet candidate
+
+One native original-reference-conditioned job: six civilian acute/intensive medical Slops, emergency physician/paramedic/anaesthetist/trauma surgeon/intensive-care nurse/cardiologist,2female-read. Whole upright footless ink bodies and unobscured white-red-black cartoon eyes retained. Shared partial teal/ivory clinic cues, orange rescue accents for paramedic. No military theme, patients, gore, real organization emblems, clinical instructions or real clinician likenesses. Six source-only IDs/cards and individual DESIGN biographies, family Akutteam der vorläufigen Entwarnung; no paired/trio/tier/medical skill-stat bindings. Props are stylized role motifs; scissors-like surgeon instrument recorded rather than falsely certified exact needle holder.
+
+Actual1536×1024RGBA unchanged, one job/no layout edit/resize. Veteran+RPG actual image paths supplied;6/6original reference hashes verified. Native/checker/full-sheet64/96/160/192-per-logical-cell QA reviewed. Row diagnostic minpeak1in all strips; safe individual fixed512extraction not certified, validated isolation pending. Alpha0..254/low-alpha residue and individual catalogue-master gap remain holds; no game sprites or Library publication. Native PNG Git blob equals local original bytes.
+
+Prior Men-in-Black6GeorgPASS persisted/verified at77dc4605f212f99e3d6386997e05da200d368fb8. Accepted source62sheets/372depictions;60eligible/360depictions. New medical1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions retained. Same WSA source branch/PR469. Next gate: Georg design verdict on EMERGENCY_TEAM_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Men-in-Black visual family Georg PASS
 
 Georg accepted all6agent Slops for check-in.62PASS sheets/372depictions;60eligible/360depictions. Existing source-only IDs/DESIGN biographies retained; no automatic replacement of canonical Men in Black or escalation mapping. Technical alpha/isolation/master holds remain. Next authorized output: civilian emergency/acute/intensive medical team, six disciplines and distinct actors,2female-read, common clinical cues with whole ink anatomy. Same WSA owner/branch/PR469, no game/Library publication claim.
