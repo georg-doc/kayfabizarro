@@ -1,3 +1,7 @@
+## 2026-11-05 · Retro R16 design recovery; R15 rejected
+
+Georg rejected R15; withdrawal recorded at b618aad4e523221fb56a0901fe04f967958ebf3c. R16 new sculpted gold caps, shared original panel/controls, purpose-specific header without radio hardware. Complete Retro design composition and37part pairs privately archived in R16 MixedBag (SHA256f88616826976f33f0348c94f46ed5a3cc3819705d782d0ad1ed6cfd21fe9654a). Five176pxstates, four review boards, lossless/alpha/ZIP checks; fresh Critic/Guard HUMAN_DECISION only. Not drop-in: receiver geometry/cutter/game work after Georg design gate. No other skins/game writes/tests/Stage/merge.
+
 # KFB HUD Kit · additive changelog
 ## 2026-11-04 · Hazard-only geometry reference and image-job reset
 - Previous image jobs and newly repeated multicolor result are explicitly QUARANTINED/REJECTED as active visual references; cannot erase historical image content or Git evidence.
