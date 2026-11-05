@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Robber gang Georg PASS
+
+Georg accepted all6robber Slops.61PASS sheets/366depictions;59eligible/354depictions. Source-only IDs and individual DESIGN biographies retained; contour-isolation/alpha/master holds unchanged. Next authorized output: fresh six-character Men-in-Black/CIA-spook-inspired Slop family with shared black suit-collar/tie outfit cues, distinct actors,2female-read. Existing canonical Men in Black owner/identities remain protected; this is a new source-only visual family, not an automatic canon replacement. Same WSA source owner/branch/PR469, no game/Library publication claim.
+
+---
+
 # Current WSA update · 2026-11-05 · Robber gang six-sheet candidate
 
 One native original-reference-conditioned job: six historical woodland outlaws, loose Friedrich Schiller Die Räuber/Sturm-und-Drang inspiration rather than exact dramatis personae. Captain/bruiser/pickpocket/outlaw lookout/inexperienced burglar/fence,2female-read, grim expressions with distinct relatable weaknesses. Six source-only IDs/cards/individual DESIGN biographies, family Bande der schlechten Gründe. Actual Veteran+RPG style image paths supplied;6/6original hashes verified, native PNG Git blob matches local bytes. No named game faction, pair/state/trio/tier or exact literary character assignment.

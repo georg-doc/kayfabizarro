@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 60,
-    "pass_depictions": 360,
+    "selected_sheets": 61,
+    "pass_depictions": 366,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 58,
-    "intake_eligible_depictions": 348,
-    "other_authoring_depictions": 240
+    "intake_eligible_sheets": 59,
+    "intake_eligible_depictions": 354,
+    "other_authoring_depictions": 246
   },
   "excluded_sources": [
     {
@@ -416,21 +416,20 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_ROBBER_GANG_20261105",
       "manifest": "ROBBER_GANG_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 1,
-    "depictions": 6,
-    "identities": 6,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
