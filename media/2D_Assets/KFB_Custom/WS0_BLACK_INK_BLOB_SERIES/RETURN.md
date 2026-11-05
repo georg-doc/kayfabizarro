@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Union/Yankee soldier six-sheet candidate
+
+One fresh original-reference-conditioned native image job, six distinct Union Civil War Slops: female brigade commander, male bugler sergeant, male engineer corporal, female signal lieutenant, male infantry recruit, male field-cook corporal. Fresh silhouettes/acting/props, not a recolour of accepted Confederate actors. Actual Veteran+RPG style paths passed.1536×1024RGBA unchanged; no resize/layout edit. Six source-only IDs/cards and individual DESIGN biographies; no inferred pair/trio/state links or canonical/deck mapping.
+
+Native and64/96/160/192QA viewed; complete visible silhouette sizes481–505px high. Explicit pixel extraction: horizontal seam504; top row columns[0,506,988,1536],bottom[0,477,988,1536]. Seams maxalpha1vertical/4horizontal, no visible clipping atalpha>16. Fixed512cuts are unsafe. Alpha0..254 with low-alpha residue remains a technical hold; no six individual high-resolution masters or game exports. No direct game/Library import.
+
+Georg's prior Confederate6PASS persisted and verified at1d4fa266f868fe2729499062affe9eff64491502. Current accepted inventory53sheets/318depictions;51eligible/306depictions. New Unioncandidate1sheet/6depictions is DRAFT/intakefalse. Standing exclusions retained; biographies remainDESIGN. Same WSA owner, assets/ws0-ink-miners-2026-11-04, draftPR469. One next gate: Georg design verdict on UNION_SOLDIERS_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Confederate soldiers Georg PASS
 
 Georg accepted all6Confederate soldier Slops.53PASS sheets/318depictions;51eligible/306depictions. Existing source-only IDs and individual DESIGN biographies retained; no canonical/game/Library import claimed. Explicit extraction rectangles and catalogue/alpha holds remain independent of designPASS. New authorized outcome: one fresh six-character Union/Yankee soldier sheet, unique acting/props/ranks,2female-read, original benchmark conditioning, no recolouring/reuse of the Southern cast. WSA owner, same branch/PR469.
