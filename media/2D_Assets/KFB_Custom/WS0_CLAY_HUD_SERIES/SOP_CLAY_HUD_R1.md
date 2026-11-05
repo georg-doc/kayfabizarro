@@ -1,3 +1,19 @@
+# CURRENT · R12 REJECTED / SLOT FACE CONTRACT R1 · 2026-11-05
+
+Georg rejected R12: a generic coarse clay rectangle tinted to the skin palette does NOT match the refined characteristic existing HUD. R12 MixedBag is historical REJECTED evidence; DO NOT import it. Prior R12 import recommendation is WITHDRAWN (PR468 comment6647582263). Its R8 glyph preview does not represent the actual selected game content. R9 generic action_surface preview is not proof of faithful skin design either. Existing R11 Teal/Hazard cut fixes remain independently valid.
+
+**Binding recipient contract:** georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1 docs/hud-kit/SLOT_FACE_CONTRACT_R1.md blob597e5a4fec7afca0ea5ddc2b901f892a1e4f651a. Five files per skin: sk_<skin>_slot_face{,_hover,_click,_active,_disabled}.webp,176×176losslessRGBA. Square slightly rounded face fills canvas bounds, alpha0/RGB0 outside,softedge≤3px; NO shadow/border/rim/cavity. Same contour,anchor,size across states; states alter only tone/light. Deformer owns motion. Icons remain shared. New contract supersedes R12's288×244export/action_facealias/runtime-stateproposal. Existing R7 ui_bar_1..8/plaque remains as specified by recipient; do not substitute R9 action_surface or invent another bar owner. Recipient slot_face hooks already exist; missing delivery means no code fallback.
+
+**Material review:** actual R4 signature parts inspected in isolation, not just palettes. Retro molded warm casing; Steam copper/brass with fine patina; Teal aged teal metal; Reactor Blue engineered blue-painted clay-metal; Slime organic mottled green; Hazard restrained industrial yellow enamel. Button face must adapt the actual material/finish at small scale, not copy hardware, emitters or a new frame onto it. Source-conditioned production starts with one blue pilot; keep center quiet for real content. No batch accepted from palette matches alone.
+
+**Actual icon mapping verified:** src/hud/glyphs.js blob4ea72289f0a659f4d46ec0e33d2b478c81364d11 and src/data/hud/hud-hero.r1.json blobd6fa1424cfafc6329770d050af09cc820d4e9895. hero_fist = KayKit Monstrosity hand, hero_blaster = Ultra Turbo Hero Man Blaster, hero_bomb = Clown-Bombe; hero_grenade is secondary alternative. WICON resolves actual weapon hero then original model shot then existing fallback. Shared R8 roles only where no hero asset applies. Future compositions must use exact runtime-selected images, never substitute the R8 fist/grenade and call them gameplay proof.
+
+**Status:** new contract recovered; R12 rejected; source-conditioned blue pilot in production, NOT yet delivered/accepted. Existing Kartenkante remains runtime owner. No game edits or duplicate game tests. One next gate: finish/check the source-conditioned pilot against actual Blue source and exact contract, then produce five tonal states and remaining material-specific skins; final MixedBag+PR468 and actual-game clip/part→source list stay with Kartenkante.
+
+---
+
+## Historical checkpoints · R12 is rejected, not current art
+
 # CURRENT · R12 ACTION FACES DELIVERED · RUNTIME REPAIR PENDING · 2026-11-05
 
 Georg explicitly commissioned production after rejecting the unskinned white circular buttons. Delivered24borderless rounded-rectangle PNGs and24lossless WebPs: primary/secondary/movement/context for each existing retro/steam/teal/blue/slime/hazard. Each skin intentionally shares identical face pixels across the four roles; travel and choice entries reuse the same face. Transparent shared glyphs/actual-object Hero-Shots remain separate. No new icon catalog, slot borders, circles, new skin or whole-bar redesign.
