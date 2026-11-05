@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Odyssey six-sheet candidate
+
+One native original-reference-conditioned job: Penelope, Polyphemus, Odysseus, Poseidon, Circe and personified Aeolus windbag as six distinct ink Slops;2female-read. All retain complete upright footless anatomy/white-red-black eyes, Polyphemus intentionally one center eye; windbag is the ink creature, not a seventh actor/carried sack. Actual Veteran+RPG reference paths supplied,6/6benchmark hashes verified. Six source-only IDs/cards/individual DESIGN biographies and separate LITERARY_MOTIFS.json. Family Die Heimkehrkommission; mythic associations/relationships are literary inspiration, not canonical KFB marriage/factions/runtime binding. No literal Homer illustration, quotations or book/verse verification claimed.
+
+1536×1024RGBA unchanged, one job/no resize/layout edit. Native/checker and64/96/160/192QA reviewed. Visible heights467–502px. Explicit extraction horizontalcut505; topcolumns[0,495,1024,1536],bottom[0,532,1012,1536]. Vertical seamsmax1/horizontal4pxseammax2. Alpha0..254 and low-alpha residue/individual catalogue-master gap remain holds. No game sprite export, receiving ID mapping or Library publication. Native PNG Git blob matches local original bytes.
+
+Previous Venetian6GeorgPASS persisted/verified ata8fcf4315eb8c76169a81fa550fd7a751b891d37. Accepted inventory57sheets/342depictions;55eligible/330depictions. New Odyssey1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions unchanged. Same WSA source branch/PR469. Next gate: Georg design verdict on ODYSSEY_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Venetian court Georg PASS
 
 Georg accepted all6Venetian court Slops for use.57PASS sheets/342depictions;55eligible/330depictions. Source-only IDs/cards and individual DESIGN biographies retained, no inferred pair links from transcribed Pairs. Alpha/extraction/master holds unchanged; no game/Library visibility claim. Next authorized output: fresh six-character Homer Odyssey-inspired family including iconic characters/entities/concepts, 3x2 transparent sheet and2female-read. Same WSA owner/branch/PR469.
