@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Painfully eager forced CLOSED tooth smile, very wide asymmetric eyes. Hugs ONE plain thin tan FILE FOLDER and ONE little chipped cream coffee mug.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Strained panicky sideways grimace, one eye bulging and other squinting. Same quiff/collar/tie. Holds SAME folder now thick with THREE broad blank tabs; coffee mug now bigger but still plain.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Weary hollow half-lid stare, thick downturned CLOSED pout, same lower tooth. Same small blue collar and coral tie with tiny brass clip. Holds SAME thick tabbed folder now with ONE giant plain brass binder CLIP, and same mug. File hierarchy through binding, no computer/floating icons or text.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Earnest stubborn eyes and defiant uneven tooth grimace. Holds ONE worn plain dark LAWBOOK with a short ivory ribbon tab and ONE small quill-shaped wooden bookmark.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Stern one-brow-raised direct gaze, CLOSED crooked thin-tooth lip. Same quiff/pin/collar/teeth. SAME lawbook with plain steel clasp, one hand holds ONE short fat wooden GAVEL low against belly.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Cold satisfied almost closed eyes and large sculpted sideways pout, no tongue. Same judicial collar/quiff/hairpin, one tiny copper collar brooch. SAME book now copper-clasped, same gavel with modest brass band. No scales/statues/thrones/courtroom or full robe.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

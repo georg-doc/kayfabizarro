@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Abashed wary side-looking white/red/black eyes, lips compressed off centre with lower tooth. Holds ONE little blank ivory pocket NOTEBOOK and ONE fat teal pencil.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Impassioned crooked OPEN shout, unequal eyes looking straight toward camera, NO tongue. Same hat/slip/scarf/glasses. SAME notebook thickened, other hand holds ONE very small black rounded MICROPHONE with copper stem, held low away from face.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Solemn censorious half-lids, CLOSED severe downward lip with lower tooth peeking, not smirk. Same hat/slip/scarf, little brass spectacles rim. SAME notebook now leather-bound, one hand grips ONE broad RED PENCIL with fat blunt point. No headlines/newspaper text/camera or newsroom scene.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Sparkling eager raised ONE brow and bright asymmetric eyes, small open crooked tooth smile with NO tongue. Holds ONE little bare wooden RUBBER STAMP and ONE tiny blank ivory document.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Blank unblinking bored gaze with one drooping lid, long CLOSED flat lower lip and one tooth. SAME scarf/collar/quiff. SAME stamp now thick worn wood with round dark rubber base, SAME document now a small blank ivory stack in one hand.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Terrifyingly cordial CLOSED lopsided smile with only one tiny tooth, high rounded eyebrows, clearly NOT tongue/round mouth. SAME teal scarf and plum collar with plain brass oval brooch. SAME stamp now copper-capped rich wood, SAME blank papers bound with a thick teal ribbon. No text/seals/official logos or desk.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

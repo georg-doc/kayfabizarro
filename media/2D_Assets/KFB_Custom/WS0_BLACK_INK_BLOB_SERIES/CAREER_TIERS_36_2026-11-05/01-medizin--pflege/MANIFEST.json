@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Concentrated lopsided squint, biting thick lower lip, other white/red/black eye looks down. Holds ONE little blank worn ivory medical notebook and ONE short thick wooden reflex hammer with soft rubber head. No stethoscope yet.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Brisk reassuring asymmetric open tooth smile, unequal alert eyes toward viewer. Same teal tab/collar/quiff/teeth. Holds ONE properly formed compact STETHOSCOPE with TWO distinct eartips on a U-shaped metal binaural piece, connected tubes merging into ONE short curved tube and ONE round chestpiece. Compact recognizable single object at belly, no tangled tubing.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Drained professorial sideways half-lids, long CLOSED downturned thick lip with single upper tooth peeking, no tongue/grin. SAME identity and tiny coat collar, one little brass round head mirror on thin band. One hand holds SAME compact correctly formed stethoscope, other hugs ONE fat closed ivory book with plain brass clasp. Similar body size, tools not a pile.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Alarmed wide unequal eyes, crooked open underbite, holds ONE large ivory bandage roll awkwardly against own goo belly, loose end short and fully contained.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Fearlessly stern side gaze, clenched irregular lower teeth and arched ONE brow. Same green cap/patch/teeth. Holds ONE small red-brown leather care case with a thick plain ivory bandage-shaped patch, and SAME bandage roll in a little front loop.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Calm exhausted one-eye-heavy side stare, CLOSED sideways compressed underbite. Same small cap/patch, tiny brass collar pin. Hugs SAME small care case and holds ONE compact ring of THREE fat brass ward keys, no chart/bed/scene.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

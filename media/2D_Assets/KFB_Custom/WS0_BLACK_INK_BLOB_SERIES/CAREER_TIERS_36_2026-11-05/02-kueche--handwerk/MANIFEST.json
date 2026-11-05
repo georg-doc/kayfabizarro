@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Overjoyed hopeful huge eyes, crooked tooth laugh with NO visible tongue. Holds ONE plain battered wooden SOUP LADLE upright and ONE tiny empty shallow copper tasting bowl.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Intense almost closed-eye squint, sideways clenched teeth, same cap and red scarf. Same wooden ladle now polished with copper ferrule; same tasting bowl with ONE thick pea-green clay soup dollop.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Operatic outraged OPEN crooked underbite shout, one eyebrow high and other eye squeezed. Same cap now neatly puffed but still SMALL, same scarf has tiny brass knot clasp. SAME short copper-mounted ladle like conductor baton, same shallow copper tasting bowl. No steam, stove, food spread or tall toque.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Furious embarrassed compressed mouth, ONE eye wide and other squints. Both goo hands grip ONE battered short rounded iron adjustable WRENCH a little awkwardly.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Confident sideways crooked tooth grin, relaxed asymmetric eyebrows. SAME hardhat/mark/collar/contour, ONE neat steel adjustable WRENCH with thick wooden handle, other hand at own hip lobe.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Disapproving MASTER'S half-lid stare, bottom lip pushed out with uneven teeth, no smile/tongue. Same little hardhat and indigo collar, ONE small plain copper badge at collar. Holds same proper wrench now beautifully steel/brass and ONE compact wooden folding rule folded CLOSED. Tools remain readable/functional.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

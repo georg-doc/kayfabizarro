@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/05-transport--handel/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Sleepy nervous half-eyes trying to focus, thick worried lip and lower tooth. Holds ONE small battered black STEERING WHEEL with THREE chunky spokes loose at own belly, no attached bus.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Exuberant confident open crooked underbite grin, raised asymmetrical eyebrows, no tongue. Same cap and scarf, same wheel now beautiful steel-centred black rubber, BOTH goo hands hold it.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Exasperated skewed eyes, clenched tooth expression with long heavy lip, no smile. SAME cap with little plain brass badge and cream scarf. One hand holds SAME small wheel, other ONE plain ivory CLIPBOARD with a compact brass clip; no route text/map/vehicle scene.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Astonished roundish unequal eyes but mouth CLOSED and skewed, lower lip curled. Holds ONE tiny worn wooden SHOP CASH BOX with TWO large plain copper coin discs.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Persuasive toothy sideways grin, one conspiratorial squint. SAME cap/patch/upper lip/collar. Same box now neat iron-banded wood with FOUR copper discs, opposite hand presents ONE blank little clay price tag on SHORT string INSIDE cell.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Protective suspicious narrow eyes and gritted crooked teeth, not usual smug closed grin. SAME cap with tiny brass edge, same green collar. SAME small cash box now handsome brass with FOUR coin discs, one little plain metal clasp; no money shower/huge pile/currency letters.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

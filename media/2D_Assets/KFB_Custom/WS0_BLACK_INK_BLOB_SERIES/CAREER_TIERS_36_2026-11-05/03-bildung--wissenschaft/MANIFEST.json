@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "CAREER_TIER_TRIPLETS_R1",
   "grid": {
     "columns": 3,
@@ -26,8 +26,9 @@
   "production_record": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
   "cards": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
   },
   "figuren": [
     {
@@ -54,8 +55,8 @@
       "prompt_auszug": "Nervously determined tight lip biting one upper tooth, white/red/black eyes wide behind clear spectacles. Holds ONE small blank dark-green framed SLATE and ONE fat chalk stick, close to own belly.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -91,8 +92,8 @@
       "prompt_auszug": "Fierce affronted one-brow glare, crooked uneven clenched teeth, same quiff/bow/glasses. Same green slate in one hand, other holds ONE very short rounded wooden POINTER, no written marks.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -128,8 +129,8 @@
       "prompt_auszug": "Terribly gracious CLOSED pursed-lip smile with one fang, one eye almost shut and other examining viewer. Same bow/glasses/collar, little brass button added. SAME slate now a leather-backed slim green clipboard; one small ring of TWO chunky brass keys hangs from hand. No school desk or blackboard scene.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -165,8 +166,8 @@
       "prompt_auszug": "Dreamy curious unequal wide eyes looking DOWN, little crooked lip and one tooth. Carefully cradles ONE small rounded clear glass FLASK with a SINGLE fat lime-green clay liquid blob inside, no bubbles or glow outside.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -202,8 +203,8 @@
       "prompt_auszug": "Wild excited open tooth LAUGH with NO tongue, one eye squints. Same glasses/tufts/tie. Same rounded flask now in a broad plain copper holder, held at belly; other hand holds ONE tiny blank ivory notepad.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -239,8 +240,8 @@
       "prompt_auszug": "Distracted burned-out unfocused eyes, thick sagging lower lip and tooth barely showing, NO smug grin. Same glasses and tiny teal bowtie, small copper collar medallion. Hugs SAME flask in copper holder and ONE thick closed cream book; no racks, complex lab apparatus, smoking effects.",
       "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "career_stage": {
@@ -252,5 +253,10 @@
       "hits": null,
       "absurd": null
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
 }

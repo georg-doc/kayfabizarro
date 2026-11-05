@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Career36 PASS and trio production
+
+Georg accepted all36career depictions and requested game/Librarian check-in. Source inventory45PASS sheets/270depictions;43sheets/258depictions intake-eligible. Cards DESIGN, standing exclusions preserved. WSA authoring owner, same branch/PR469. Downstream import needs existing WS0 rules/canonical mapping and private sprites; sources will be checked into existing private game asset storage, not blindly appended as36unrelated identities. Next authorized image outcome: six sheets of12story/professional trios,36distinct identities. Unlike tier rows, trio members are different characters. No runtime/Live claim.
+
+---
+
 # Current WSA Return · 2026-11-05 · Everyday career tiers
 
 Owner WSA · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · draft PR469.
