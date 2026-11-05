@@ -463,3 +463,5 @@ docs/hud-kit/RETURN.md
 ## One next gate
 Pin one accepted reference visual (prefer the user-supplied Retro Fluffbar) as source with hash and independently generate/inspect WS0 Sheet 1 at 2048px, including 48px readability and alpha/crop review. Sheet 2 follows only after Sheet1 visually matches. 
 No public Stage, no merge or Live promotion.
+## 2026-11-05 · Parallel ornament-only source candidates (no change to Retro R16 gate)
+Three independently freestanding ornament PNG sheets for Reactor Blue (33), Slime Green (39), Hazard Yellow (35), requested by Georg. Two image generator attempts mixed themes; the second source was RGBA with alpha=0 and 107 separated thematic motifs were repacked WITHOUT rescaling/editing as three independent transparent sheets. Package ZIP SHA256 `667f8fe37f49453d53edddab91d440d694ba47444dadc6eb82d08b59b8d6fcf5` available in originating conversation only. Per-object PNGs and source-manifest included. 3/3 structural alpha/margin checks, but no 48px human/game visual PASS or animating VFX. See `docs/hud-kit/SKIN_ORNAMENTS_R1_2026-11-05.md`. Retro R16 whole-design HUMAN_DECISION remains unaffected; no runtime or public Stage.
