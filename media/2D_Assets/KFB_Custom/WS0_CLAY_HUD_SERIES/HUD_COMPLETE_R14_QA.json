@@ -1,5 +1,5 @@
 {
-  "status": "STATIC_ASSET_AND_INTEGRATION_PREFLIGHT_PASS",
+  "status": "REJECTED_GEORG_DESIGN_FAIL_DO_NOT_IMPORT",
   "fileCount": 541,
   "skinCount": 6,
   "resolvedReferences": 692,
@@ -1075,5 +1075,15 @@
     "route": "CONTINUE",
     "scope": "static source-composed asset readiness and private patch review; no game or Georg acceptance",
     "repairs": "static settings nine-slice rim axes corrected and reinspected; regenerated current patch verified"
+  },
+  "previousTechnicalStatus": "STATIC_ASSET_AND_INTEGRATION_PREFLIGHT_PASS",
+  "designVerdict": "FAIL",
+  "installationRecommendation": "WITHDRAWN",
+  "rejection": {
+    "date": "2026-11-05",
+    "quote": "das ist kein design, das ist wieder ein FAIL.",
+    "nextAutomaticGeneration": false,
+    "notice": "https://github.com/georg-doc/kayfabizarro/pull/468#issuecomment-6648872748",
+    "runtimeAdoption": "UNKNOWN_NOT_CHECKED"
   }
 }
