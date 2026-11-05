@@ -1,3 +1,23 @@
+# CURRENT · RETRO R16 DESIGN PROPOSAL · GEORG VISUAL DECISION · 2026-11-05
+
+**R15 was rejected by Georg and is withdrawn.** Its independent review/technical tests are not design acceptance. Do not import it. R12–R14 remain rejected/withdrawn. R11 cutter history remains independently valid.
+
+R16 returns to verified original form grammar: one continuous existing Retro panel chassis; new raised gold clay caps developed from the existing gold pill button; original Tabs, slider/knob, toggles, free X, gears, radio and details retained. Five cap states change tone/light only, with equal alpha. The cap is a solid piece with its own integrated shoulder, not a frame around another inset. No individual sockets, white circles or grey inserts. Radio antenna, dish, speaker, lamps and vents are functional RADIO identity, never a generic resource/action-panel motif. The new resource header has six wells and a total field, no radio hardware.
+
+**Scope and authority:** ONE complete Retro art-design composition, then Georg design approval, then other skins. Shared actual Hero-Shots and base role glyphs stay separate and neutral; no per-skin weapon/prop artwork. Primary/secondary/movement/context stay four fixed roles, empty context stays empty; travel separate. Variable frame examples demonstrate choices without changing those fixed main roles. Runtime key hints/text are separate Fredoka layers. Original radio keeps its appliance identity; structural straps only join actual drawer components.
+
+**R16 evidence:** 37 isolated PNG/lossless RGBA-WebP pairs; five176×176caps, equal alpha; header1472×160 (9.2:1), open1472×314; existing masters preserved. Four static review boards: complete composition, action detail and five states, variable choice frames, full isolated roster. Three new Built-in ImageGen sources and exact prompts retained. Post-generation source-guided modular assembly, no enlargement of native source; frame middle regions extend. Rebuild validates PNG/WebP exact pixel equality and RGB0 at Alpha0. Not a game capture/test.
+
+Independent fresh read-only /root/retro_r16_critic_guard opened complete/detail boards and original panel/pill/radio. Route HUMAN_DECISION only. Reservation: new gold caps brighter/more uniform; click mainly darkens (physical motion intentionally runtime-owned). Context/drawer content arrangement not demonstrated. No design PASS.
+
+**NOT DROP-IN:** R16 new rail geometry/header coordinates do not match current R7 mapping. Receiver alignment, native Retina cutter/atlas and real game states/sizes remain AFTER Georg design approval with Kartenkante. Do not automatically import or run duplicate game tests. No other skins, auto-merge, Stage or Live promotion.
+
+Private Dropbox packet COMPLETED: /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_R16_Design_Review_2026-11-05.zip; file id id:KeQLaY5-IIAAAAAAAA7iUg;21,576,789bytes;184files;183internal hashes verified;SHA256 f88616826976f33f0348c94f46ed5a3cc3819705d782d0ad1ed6cfd21fe9654a. Sources/art/private game content remain private. Public PR contains design rules/status/provenance only.
+
+Only next gate: Georg judges the whole Retro R16 visual language, especially gold caps with existing controls. Runtime owner remains Kartenkante, source branch module/hud-clay-r1 at99ea893458ed0dca489897248372c64e3cc560d0, unchanged by this run.
+
+---
+
 # CURRENT · RETRO R15 ONLY · GEORG DESIGN APPROVAL NEXT · 2026-11-05
 
 **Latest explicit Georg instruction supersedes the R14 stop for this NEW bounded approach:** use existing appropriate elements, create missing ones; flat upper bar with motif at the SIDE; Action-Bar uses the SAME frame construction as the other UI. Complete ONE skin → Georg approval → only then other skins. Selected first skin: Retro. R14 remains rejected and withdrawn; it is not a parent or current install source. No other skin work authorized before this design gate.
