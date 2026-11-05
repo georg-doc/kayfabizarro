@@ -82,3 +82,10 @@ Six native cuts6Fluff/4radio each now succeed; unchanged sources,12baseline imag
 - Export288×244 from isolated1009×855, alpha≤2px, no face upscale or extra frame. Modular face+R9bar supports dynamic choices; main four fixed roles unchanged.
 -24lossless checks and24byte-identical portable rebuilds pass; ZIP74internal hashes verified. Local six-skin/1,4,6,8layout proofs are not game acceptance.
 - Completed Dropbox R12 ZIP id:KeQLaY5-IIAAAAAAAA7f_g;6131677bytes;75files;SHA256898c56e80a48635f68f9d5aecc0da18185bad344e98e7dc0c270e993ab89ccb4. SOP/QA/Return persist concrete import and renderer instructions. Next gate: Kartenkante face/cooldown repair plus blue actual-HUD proof in existing runtime cycle. No game edits/tests or merge by authoring chat.
+
+
+## 2026-11-05 · R12 rejected; R13 exact slot-face contract delivery
+- Georg rejected R12's generic recolored clay form and misleading R8-icon montage. R12do-not-import withdrawal sent and verified comment6647582263. Source skin originals and actual hero resolver/data inspected; icons remain exact shared game content.
+- Adopts SLOT_FACE_CONTRACT_R1 blob597e5a4fec7afca0ea5ddc2b901f892a1e4f651a:6skins×5states,176×176losslessRGBA,commonbounds/anchor,smallradius,no rim/shadow/cavity,states only tone/light. Existing R7plaque and receiving slot_face hooks retained.
+- R13uses6independent source-conditioned material jobs with actual radio/gear references; native planar crops downsampled, no material upscale.30lossless checks and30byte-identical portable rebuilds pass;maxsoftedge1.4143px;97archive hashes. Previews show reference gears and states, no substitute icons or game claims.
+- Dropbox COMPLETED KFB_MixedBag_HUD_Slot_Faces_R13_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7gHw;21270125bytes;98files;SHA2561faab3b98af02a834441c5264f03616dde909d3ccc36303df9c93240ee623508. SOP/QA/Return updated. New materialcandidate is not whole-HUD design acceptance. Nextgate Kartenkante actual6×5state clip+Teil→Quelle with realsharedHeroShots;Georgdesignjudgment. No gamewrite/test,merge/Live/Stage.
