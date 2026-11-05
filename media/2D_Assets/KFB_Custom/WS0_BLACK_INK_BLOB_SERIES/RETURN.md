@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Venetian court six-sheet candidate
+
+One native original-reference-conditioned job: fictional Venetian/Renaissance family Gesellschaft der Nebenabreden,6distinct actors/2female-read: art patron, doge, merchant banker, gondolier, secret courier and lodge key keeper. Actual Veteran+RPG image paths supplied for body/material and prop craft;6/6original benchmark hashes verified. Medici-like wealth/secret-lodge/carnival cues remain fictional design context, no exact reconstruction or named historical likeness. Masks do not cover faces: one small ivory mask hangs low beside courier, all cartoon eyes visible. Six source-only IDs/cards and individual DESIGN biographies; no pair/trio/state or canon/deck links inferred.
+
+Actual1536×1024RGBA, one image job, no layout edit/resize. Native/checker and64/96/160/192QA reviewed; whole visible heights477–500px. Explicit extraction cut511, topcolumns[0,496,1039,1536],bottom[0,505,1011,1536], row gap7px atalpha<=16. Vertical seamsmax0/horizontal4pxseammax5. Fixed512cuts unsafe; use explicit rectangles. Alpha0..254/low-alpha residue and catalogue-master preparation remain holds. No individual game exports or Library publication.
+
+Prior woodland6acceptance persisted/verified ate77a36e7519b404bd17358f5eeeb8c7cd112b117. Accepted inventory56sheets/336depictions;54eligible/324depictions. Venetian6candidate remainsDRAFT/intakefalse; textDESIGN; standing exclusions unchanged. Same WSA source branch/PR469. Next gate: Georg design verdict on VENETIAN_COURT_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Woodland clan Georg acceptance
 
 Georg praised all6woodland-clan designs and proceeded to next family; recorded as designPASS.56PASS sheets/336depictions;54eligible/324depictions. Source-only IDs/individual DESIGN biographies and Roman-rival context retained; technical alpha/extraction/master holds unchanged. No game/Library visibility claimed. Next authorized output: one six-character Venetian/Renaissance merchant-court-secret-society/carnival-inspired family, subtle accessories, visible cartoon eyes, recognisable ink anatomy, two female-read. Same WSA owner/branch/PR469.

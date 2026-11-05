@@ -1,0 +1,160 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "708a22b3c8708a1328e0a5a94ae7fcc8a50c02a0e835c3d892e7eda903cdcf70",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 514947,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        496,
+        511
+      ],
+      "alpha_gt16_bounds": [
+        28,
+        19,
+        473,
+        496
+      ],
+      "visible_size": [
+        445,
+        477
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        496,
+        0,
+        1039,
+        511
+      ],
+      "alpha_gt16_bounds": [
+        23,
+        8,
+        520,
+        508
+      ],
+      "visible_size": [
+        497,
+        500
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        1039,
+        0,
+        1536,
+        511
+      ],
+      "alpha_gt16_bounds": [
+        24,
+        10,
+        442,
+        501
+      ],
+      "visible_size": [
+        418,
+        491
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        511,
+        505,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        28,
+        4,
+        491,
+        503
+      ],
+      "visible_size": [
+        463,
+        499
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        505,
+        511,
+        1011,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        14,
+        8,
+        471,
+        492
+      ],
+      "visible_size": [
+        457,
+        484
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1011,
+        511,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        36,
+        8,
+        500,
+        487
+      ],
+      "visible_size": [
+        464,
+        479
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "safe_horizontal_seam_max_alpha": 5,
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending"
+  ],
+  "design_observations": [
+    "Six complete upright footless blobs; two female-read; white/red/black eyes",
+    "All six faces/eyes fully uncovered; only one mask, low beside courier body",
+    "Doge cap and collar more ornate than restrained prompt",
+    "Fan remains below face; ornament is more elaborate than restrained brief",
+    "No source resizing or layout edit performed"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "horizontal_cut_line_max_alpha": 3,
+  "reference_hash_checks": 6
+}
