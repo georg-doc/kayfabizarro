@@ -2,6 +2,13 @@
 Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 
+## 0 · Stand 05.11. spät (Register bis V-1532) – SPARMODUS bis Sonntag (Volumen 80 %)
+- **Nur:** WS1-Integrationsslices (Reihenfolge N-181: Fassade N-178, Taktung N-180 mit Messfahrt, Rocket R7 N-179, Atlas+SDF N-173/174; HUD-Head ZURÜCKHALTEN). Verteiler nur `welt.grund` nach Messfahrt. Alle anderen pausiert (WSV, WS-Design @73f2685c, Flug, WSB, Kartenkante @99ea8934).
+- **HUD:** altes Claymation-HUD als Basis (V-1532): WSA-HUD-Chat Inventur + fehlende Teile per Bildgenerierung → GitHub-Paket (Hub b336) → danach Claude-Design-Briefing schreiben (Gesamtlayout aus dem Paket) → Kartenkante setzt ein. Zielhinweis ohne Plakette (V-1480), Kartenkantes Raster-Regel dazu zurücknehmen. Postmortem V-1519 gilt.
+- **Kampf:** WSA Combat (b335 v3: Konzept alle Waffen, Sheets, Klangliste → WS0 erzeugt mit ElevenLabs). Pistolen-Referenz PR #53, Hörabnahme Georg. Flug-Abspieler @c35b3dce ruht; nur ein System behalten.
+- **Slops:** Intake #51 fertig (@cdd362a9, privat @35e31dbf); WSA soll Library-Export starten und 128 offene Bögen ins Intake legen. Assets Türme/Spielsteine nach Sonntag.
+- **Hub offen:** keine Fragen offen außer ggf. Antworten von Georg; Briefings b335, b336 zum Weiterleiten.
+
 ## 0 · Stand 05.11. früh (Register bis V-1502) – nach Neustart zuerst lesen
 - **NACH NEUSTART (05.11. ~00:40):** Slot-Reihenfolge: Kartenkante (Endlauf 6 Skins × 4 auf 77bd1d30, Code @ac4a433f, privat @2f96ab21 – darauf aufsetzen), dann WS-Design (@013c7b6c: Kit-Nischen, große Schrift, Puder, Putz-Risse, Karte in der Bresche, Schramme, ebenen=0-Messung, 20-m-Wortbild). WSV: Ladebildschirm-Animatic R1 fertig, Kritiker fehlt, NICHT zeigen; neues Kit Stage+Curtain 02 (5 Bögen, MixedBag 05) an WSV zum Abgleich der Fehlteil-Liste. Cutter-Befund für HUD-Chat: Hazard-Knauf = Sirene statt Pfeilplatte, Teal-Knauf winzig. q528 = Konzept passt, Design folgt (V-1503).
 - **Browser-Slot (ein Browser auf Georgs Mac):** jetzt WS-Design (Fassade nach Georg-FAIL q527/V-1500, @631c9554, drei Häuser gegen H15, Risse/Schramme/Aufkleber/Bresche zensur=1). Danach Kartenkante (sechs Skins × drei Größen, @9333eca9, Belege max. 4×2 in den Hub, Matrix ins Repo; keine 600-MB-Kopie, Weg = Stage über WS1, Skin-Schalter `hudskin=`).
