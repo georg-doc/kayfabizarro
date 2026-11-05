@@ -3,6 +3,7 @@ Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jede
 
 
 ## 0 · Stand 05.11. früh (Register bis V-1502) – nach Neustart zuerst lesen
+- **NACH NEUSTART (05.11. ~00:40):** Slot-Reihenfolge: Kartenkante (Endlauf 6 Skins × 4 auf 77bd1d30, Code @ac4a433f, privat @2f96ab21 – darauf aufsetzen), dann WS-Design (@013c7b6c: Kit-Nischen, große Schrift, Puder, Putz-Risse, Karte in der Bresche, Schramme, ebenen=0-Messung, 20-m-Wortbild). WSV: Ladebildschirm-Animatic R1 fertig, Kritiker fehlt, NICHT zeigen; neues Kit Stage+Curtain 02 (5 Bögen, MixedBag 05) an WSV zum Abgleich der Fehlteil-Liste. Cutter-Befund für HUD-Chat: Hazard-Knauf = Sirene statt Pfeilplatte, Teal-Knauf winzig. q528 = Konzept passt, Design folgt (V-1503).
 - **Browser-Slot (ein Browser auf Georgs Mac):** jetzt WS-Design (Fassade nach Georg-FAIL q527/V-1500, @631c9554, drei Häuser gegen H15, Risse/Schramme/Aufkleber/Bresche zensur=1). Danach Kartenkante (sechs Skins × drei Größen, @9333eca9, Belege max. 4×2 in den Hub, Matrix ins Repo; keine 600-MB-Kopie, Weg = Stage über WS1, Skin-Schalter `hudskin=`).
 - **Hub offen:** q528 Aktionsleiste (Leiste skinbar, flache Scheiben, 3D-Hero-Icons N32 r2, V-1498/1502). Beantwortet heute: q525 PASS Slops sammeln (V-1496), q526 TUNE → V-1498, q527 FAIL → V-1500.
 - **Neue Regeln:** V-1498 Aktionsleiste (nur HUD-Elemente skinbar, 3D-Icons nie); V-1500 Fassade = lesbare, nicht repetitive Engine-Ebenen (Shot-Ring K=12, REDACT max. 1 Feld/Haus, Vorfüllen hinter dem Ladebildschirm `fassadeVorfuellen`).

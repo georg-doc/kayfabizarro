@@ -22091,6 +22091,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1505",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "BUILD",
+   "text": "Ruckler (WS1 Q-086, Stand 12): Ursache Atlas-Seiten-Upload in einem Bild. Verteiler perf/atlas-takt-r1 @c0863c89 (eine Seite je Bild, 0,06 s, Vorrang, Budget 220 MB, vorladen() fuer den Ladebildschirm), popups-ingest @99c3a8d9, privat @88521e21 popup_atlas_r2 (302 Seiten 1024 mit SDF bitgleich Flug; groesster Upload 21,2->5,3 MB). WS-Design Vorwaermen gegen Spielszene (design/viertelgen-r1 @0bf6360f, aufprall-r3 @44a116d9). inkline2d wird Standard nach Flugs SDF-Anschluss. HUD-Head sechs Skins @817dac38 an WS1 (N-172), Hub erst nach Cutter R11. Cozy-Tracks nicht noetig (N-171). WSB: Jetpack Rocket 03 als Variante, niedrige Prioritaet.",
+   "values": {},
+   "owner": "Verteiler · WS-Design · Flug · Kartenkante · WS1 · WSB",
+   "check": "N-171..173",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
