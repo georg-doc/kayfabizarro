@@ -22211,6 +22211,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1513",
+   "date": "05.11.2026",
+   "area": "HUD",
+   "verdict": "REVIEW",
+   "text": "Kartenkante HUD R11 (module/hud-clay-r1 @0fc20677, Code 62e320dd, privat @5a3ba439 von WS0 auf aktuellen Kopf gesetzt): Cutter R11 (Teal-Knauf, Hazard Pfeilplatte), 24 Faelle PASS, Slime-Knauf und Steam-Innenkante stoeren nicht. Hub q533, an WS1 N-175. WS1 Q-088: Ruckler-Hauptquelle erste Vegetation (midground-Shader nach ready), Fix ready wartet auf Vegetationszelle (max 2,5 s), Stand 14 @af721460; Atlas-Takt niedrigere Prioritaet; Stand 13 ohne Cozy-Tracks, Mindscape-Betten zu Fuss.",
+   "values": {},
+   "owner": "Kartenkante · WS1",
+   "check": "q533, N-175, N-176",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1514",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "WSV Kampf-VFX Art Direction R2 (60_VIDEO/vfx_r1: Benchmark 34 Quellen, Diagnose Muendung unbeleuchtet/normal geblendet, Puff ohne Anschlag, Explosion ohne Bass-Schlag; Befund stilisierte Profi-Explosionen = Mesh/Stern mit Erosion und Farbrampe). Shortlist Stufe 1 Vefects, luezpz, Epic Stock Game Weapons (~100 USD, Georg kauft); Ember nicht. WS0: Abspiel-Shader als Stuetz-Ebene erlaubt. Hub q534.",
+   "values": {},
+   "owner": "WSV · Flug",
+   "check": "q534",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [

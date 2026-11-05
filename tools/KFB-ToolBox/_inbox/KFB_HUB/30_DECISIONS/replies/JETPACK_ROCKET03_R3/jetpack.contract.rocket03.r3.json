@@ -1,0 +1,135 @@
+{
+ "id": "kfb_jetpack.rocket03.r3",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-05",
+ "status": "pending-georg",
+ "job": "JETPACK_ROCKET03_R3 (Georgs TUNE q531 über WS0: „insgesamt etwas höher; dazu leicht nach vorne gekippt, ohne die neue Lücke im Bild“): Abstand zum Rücken aus R2 zurück, höher als R2, oben leicht nach vorn; Neigung freigegeben. Größe und Form bleiben. Diesel R2 bleibt Standard.",
+ "jetvar": "rocket",
+ "source": "KFB Claymation Reference/…/KFB MixedBag Assets 05/KFB Jetpack rocket 03: „Modularer Raketenrucksack – orthografisches Designblatt-1“, „Explosionsansicht eines Retro-Raketenrucksacks-2“, „Sechs Schritte zum schmalen Raketenrucksack-3“",
+ "verfahren": {
+  "skin": "scripts/rocket_bau.py (Grundformen aus jp_lib, Polster „slab“ aus scripts/form_lib.py = unverändert aus diesel_bau.py herausgelöst)",
+  "sitz": "scripts/bau_r4_r3.py (JP_TILT 6,5°), JP_TMAX 1,6, JP_TMIN Standard 0,6 (Abstand zum Rücken wie R1), JP_PTOP 0",
+  "hoehe": "z 0,92–0,99 × Neigung 5,74–12° gesucht, ohne Abrücken. Jede Lage über R2 berührt den Kopf im Idle_B mit der Kapselkuppel (z 0,92/7°: 0,5 cm, 0,93/7°: 0,8, 0,95/6,5°: 1,4, 0,96/8°: 2,2); mehr Neigung erhöht den Kontakt, ab z 0,99 schon im Stehen. Gewählt z 0,95 bei 6,5° (Unterkante 1,7 cm höher als R2): Stehen, Idle A und Gehen Kopf 0; Idle_B 1,4 cm, Rennen 2,8/3,7 cm. Kopffrei und höher als R2 ging nur mit dem Abstand aus R2",
+  "groesse": "scale 1,8125 wie Diesel R2 / Comic/Retro groß r4; Pack 0,34 lokal hoch wie Diesel (0,33), Kapsel 0,126 breit (Diesel-Gehäuse 0,16)",
+  "wurzel_q080": "Liefer-GLB: Wurzel KFB_Jetpack_Rocket ohne Eigenlage (Versatz 0, Drehung 0, Größe 1); Versatz, Neigung und Größe stecken nur in matrix_gltf_local. Geprüft: Liefer-GLB + Vertragsmatrix unter chest liegt auf 0 mm genau wie der Bau-Stand (scripts/pruef_q080.mjs)."
+ },
+ "skins": {
+  "rocket": {
+   "root_node": "KFB_Jetpack_Rocket",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_gross.r3.glb",
+   "sha256": "d6044d66876e212cc3e976eb8825659f252ba9232c3e0f6ed309571ec554cf2d",
+   "wurzel": "ohne Eigenlage (Q-080)",
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.95,
+    "neigung_deg_fest": 6.5,
+    "jp_tmax": 1.6,
+    "jp_tmin": 0.6,
+    "platte_oben_gekuerzt": 0.0,
+    "block_dy_lokal": -0.022
+   },
+   "stages": "S1 Platte, Kapsel mit Abplatzern und Delle, Band, Düse mit orangem Rand und dunklem Boden · S2 Fenster (Cremerahmen), Tankanzeige (Bernstein/dunkel), oranger Knopf · S3 Rohrgriff mit zwei Muffen, zwei Kreuzschrauben",
+   "thrust": [
+    "KFB_Thrust_0"
+   ],
+   "thrust_hinweis": "Leerobjekt unter der Düsenmitte, gleich ausgerichtet wie KFB_Thrust_0 beim Diesel: Anschluss für Flugs Rauch und Flamme",
+   "rueckenplatte": {
+    "teil": "S1_platte",
+    "form": "Grabstein-Umriss 0,11 × 0,24 lokal, glatte Fläche an FBs Rücken, Vorderseite folgt der Kapselrückseite (höchstens 1,6 × Plattendicke)"
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "chest",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.810788110143692,
+      0.32024889312437504,
+      0,
+      0,
+      -0.32024889312437504,
+      2.810788110143692,
+      0,
+      4.1359294807307804e-22,
+      -0.023102658187730385,
+      -0.31965442777807973,
+      1
+     ]
+    }
+   },
+   "ruhe_cm": {
+    "rumpf": 0.0,
+    "kopf": 0.0,
+    "schwanz": 3.44
+   },
+   "gehen_cm": {
+    "Walking_A": {
+     "rumpf": 0.13,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 3.52
+    },
+    "Walking_B": {
+     "rumpf": 0.0,
+     "arme": 0.0,
+     "kopf": 0.0,
+     "schwanz": 3.65
+    }
+   },
+   "clips17_worst_cm": {
+    "rumpf": 2.45,
+    "arme": 0.0,
+    "kopf": 10.26,
+    "schwanz": 3.88
+   },
+   "messung": "17 Clips wie Diesel R2 (clips_auf_figur.mjs, messe_jp.py), tiefste Stelle in cm",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_rocket_gross.r3.json",
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_rocket.r3.json",
+   "gruppen": [
+    "platte",
+    "kapsel",
+    "fenster",
+    "anzeige",
+    "knopf",
+    "griff",
+    "band",
+    "schrauben",
+    "duese"
+   ],
+   "schalten": "eine Gruppe ausblenden = alle Knoten mit dieser gruppe; Teile mit traeger folgen ihrem Träger (Abplatzer mit der Kapsel, Muffen mit dem Griff, Kreuze mit ihrer Schraube, Rand und Boden mit der Düse)",
+   "seiten": "L/R = Figurenseite (L = Figur links = +x); Griff links, Knopf rechts wie Bogen 1 (Blick von hinten)",
+   "weggelassen": [
+    "Cremelasche mit zwei Löchern und die zwei Zapfen der Platte (Bogen 2): liegen verdeckt zwischen Kapsel und Platte",
+    "Gurte: eigenes Teil (GURTE_R1)"
+   ],
+   "material": "12 Knete-Farben (JP_Rocket_*), Knete-Körnung zur Laufzeit über kfb-clay (Profil midground) wie die anderen Packs",
+   "messhinweis": "Samba Arme 15,4 cm ist ein Messfehler der Normalen-Prüfung (Strahl-Paritätstest 0, wie beim Diesel); in clips17_worst_cm nicht mitgezählt",
+   "schwanz_sicht": {
+    "links": 61.5,
+    "rechts": 64.7
+   },
+   "luecke": {
+    "ruecken_platte_cm_max": 1.67,
+    "platte_pack_cm_max": 3.5,
+    "bei": [
+     -0.072,
+     0.682
+    ],
+    "platte_pack_cm_p90": 1.67,
+    "strahlen": 115,
+    "hinweis": "rk_luecke.py, cm, Ruhepose: Luft Rücken–Platte (Messgrenze ~1,5–2, auch bei R1) und Platte–Kapsel; R1 p90 1,52, R2 p90 4,95"
+   },
+   "schwanz_sicht_hinweis": "rk_sicht.py: Anteil der von der Seite sichtbaren Schwanz-Ecken (Ruhepose, orthografisch), bezogen auf FB ohne Pack; R1 44/46 %, R2 63/67 %"
+  }
+ },
+ "gilt_unveraendert": "Kopf in Schleichen/Ducken taucht weit nach hinten (auch ohne Jetpack); Hüfte im Twist dreht gegen die Brust.",
+ "nicht_geaendert": [
+  "Form, Farben, Teile und Gruppen wie Rocket R1 (rocket_bau.py unverändert)",
+  "Diesel R2 (bleibt Standard) und alle anderen Skins und Sitze",
+  "bau_r4_r2.py"
+ ],
+ "ersetzt": "kfb_jetpack.rocket03.r2 (bleibt als r2-Datei liegen)"
+}
