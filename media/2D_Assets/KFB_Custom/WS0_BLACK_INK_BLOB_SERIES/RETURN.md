@@ -1,3 +1,23 @@
+# WSA Return · Five philosophy/academic/RPG families generated · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome5 independent6-actor source sheets/30 authoring identities:Academic Anarchy,Philosophical Kayfabe Theories,Plato's Dungeon Raids,Hero Set01,Full Class Roster. Exact deck registry IDs/title/path verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae;thematic DESIGN bindings,not exact canonical card mappings.
+
+All5 new sets DRAFT awaiting Georg. Prior4 deck families/24 designs accepted in prepared parent commit 65bd2f19987e7df2bb05b91aed1d96b15a3c64a1;totals88 PASS sheets/528 depictions,86 sheets/516 intake eligible. New30 excluded from PASS counts. No previous exclusions altered. Text remains DESIGN. Exactly2 female-read intended per sheet;Roster duelist male-intended has elongated lid styling that can read ambiguously,recorded in QA.
+
+Production:5 native jobs,0 layout edits,0 selected-image resizes;5 original1536x1024 RGBA alpha0..254. Actual veteran-original/body material and RPG/accessory craft attached as bounded STYLE references each job;all6 benchmark hashes verified. PNG bytes match native/local/Git blobs. Model/seed controls not exposed. No generated-sheet parent chain.
+
+Checks:each original,checker composites,light64/96/192 and dark160-per-logical-cell boards reviewed. Whole upright footless ink anatomy,white/red/black eyes,independent expressive silhouettes. Philosophical historical echoes are freely interpreted,not scientific diagrams/accurate portraits or claims about real thinkers. Diogenes carries barrel;tenure blob carries miniature chair;ideal form stays black ink holding golden sphere rather than stone human;prisoner-pair concept intentionally one actor with2 linked cuffs and spare empty cuff,no second prisoner/pair relation;Schrödinger concept cat-ear cap/box with no extra cat. Record deviations:interlocked puzzle rings instead of pretzel,elaborate hats/cloth,barbarian trim,three-pebble oracle bowl,thin downward rapier,wooden inanimate skull charm. No extra live actors.
+
+Technical holds:source-sheet alpha present,final opacity/edge cleanup/validated individual isolation/native high-resolution single catalogue masters pending. Roster global straight-row minimum peak144,no safe single horizontal crop. Logical cells not certified crop rectangles. No game sprites,receiving canonical mapping,tier/hits,Asset Librarian rebuild,runtime,merge or Stage claim.
+
+Changed files:PHILOSOPHY_{ACADEMIA,PHILOSOPHY,DUNGEON,HERO01,ROSTER}_6_2026-11-06/,each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;PHILOSOPHY_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.30 original source-bound DESIGN cards,English biographies and dry German FrizzleBob notes. Shared deck family only,no invented pair/trio/state/tier relations.
+
+Publication evidence:initial2 update_ref attempts for prepared PASS commit returned GitHub server UNKNOWN errors;actual branch was independently read unchanged at 8a4df3f2f4302ccabd643bddc73bcfe872ece08e. This final package descends from prepared PASS commit,so publication includes both accepted prior24 and new candidates. Exact branch and intended-file readbacks are required after update;object creation alone is not branch publication. Writer receipt records actual outcome.
+
+Next gate:Georg design verdict on5 new sheets once source publication readback is verified.
+
+---
+
 # WSA Return · Four deck families PASS; philosophy/RPG batch authorized · 2026-11-06
 
 Georg accepts all4 deck-themed sheets/24 designs. Manifests and biography intake flags updated; prose stays DESIGN,technical holds retained. Accepted88 sheets/528 depictions;eligible86/516. WSA source owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New outcome5 six-actor deck-themed sheets:Academic Anarchy,Philosophical Kayfabe Theories,Plato's Dungeon Raids,Hero Set01,Full Class Roster. Exact5 user deck IDs and registry titles verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. User concepts creative inspirations,not exact-card bindings. Each2 female-read;all new candidates await Georg. Next step:source-conditioned generation and archival,no runtime/Library rebuild or merge.

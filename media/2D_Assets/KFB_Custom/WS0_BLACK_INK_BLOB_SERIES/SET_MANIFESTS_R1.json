@@ -614,11 +614,47 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_PHILOSOPHY_ACADEMIA_20261106",
+      "manifest": "PHILOSOPHY_ACADEMIA_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_PHILOSOPHY_20261106",
+      "manifest": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_DUNGEON_20261106",
+      "manifest": "PHILOSOPHY_DUNGEON_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_HERO01_20261106",
+      "manifest": "PHILOSOPHY_HERO01_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_ROSTER_20261106",
+      "manifest": "PHILOSOPHY_ROSTER_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 5,
+    "depictions": 30,
+    "identities": 30,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
