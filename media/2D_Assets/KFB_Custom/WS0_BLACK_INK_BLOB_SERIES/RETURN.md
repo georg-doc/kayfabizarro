@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Confederate soldier six-sheet candidate
+
+One native original-reference-conditioned landscape sheet, six distinct upright footless soldiers across ranks/general-sergeant-private-captain-lieutenant-corporal;2female-read. Supplied actual Veteran+RPG benchmark paths as style-only references. Six source-only IDs/cards and individual DESIGN biographies preserved. No inferred pair/state/trio relation, no canonical/deck mapping.
+
+Requested3072×2048, actual1536×1024RGBA. Do not claim3072or six individual catalogue masters. No resize/layout edit. Visible full-figure heights459–489px. Preserve native larger actors via explicit pixel rectangles: columns[0,544,1024,1536],rows[0,524,1024]. They have clear visual seams(maxalpha1vertical/2horizontal); fixed512crops would cut props. Receiving owner must honor explicit rectangles or prepare masters first. Alpha max254/low-alpha residue remains a production hold. Reviewed native, transparent checker and64/96/160/192QA derivatives; no final game sprites exported.
+
+Selected sheet-r1.png is DRAFT/intakefalse pending Georg verdict. Source inventory remains52PASS sheets/312depictions,50eligible/300depictions; newcandidate1sheet/6depictions. Prior Western six nowGeorgPASS but individual master gap remains, scale reduction13.63percent documented separately. Existing WSA branch/PR469, no runtime/Library publication or new owners. One next gate: Georg design verdict on Confederate soldier sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Western warriors Georg PASS / catalogue gap explicit
 
 Georg accepted all6selectedWesternwarriors; R2 remains selected.52PASS sheets/312depictions;50eligible sheets/300depictions. New6sourceidentities have individual DESIGN biography drafts. No canonical ID creation or game/Library import. Standing exclusions unchanged.
