@@ -1,3 +1,19 @@
+# Current update · 2026-11-05 · Integrated writing and production workflow
+
+Owner WSA; georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, draft PR469. Source snapshot46ad5a152087762ab3521613a3fd7f26075e1aa4. Same51PASS sheets/306depictions;49eligible/294depictions,248source identities/236eligible. Standing Miners/InternationalCouples exclusions retained. No source image replaced.
+
+Three agents completed248individual DESIGN biographies,306variant notes and54group texts (10pairs/32identity-variant groups/12trios). English lore and German FrizzleBob notes linked to exact source IDs, prompt excerpts and explicit relations. Two writers cross-reviewed58identities in total as samples; concrete pair prop/gender and upright-pose prose errors corrected and independently rechecked. Text is DESIGN, not Georg acceptance. Missing local full prompts are not claimed as reread. Original531-ID queue overlaps30biographies;501remain without this new biography. No scope inflation to609game entries.
+
+Game receipt: existing private georg-doc/KFB-Stunt-Car-Race branch assets/popups-ingest-r1 now c1cc86c11100dcc8be83e184e5b859558cad49c5. Additive karte.biografie DESIGN wrapper for96eligible exact existing IDs. All609actors and every existing field/stat retained; complete roster JSON readback equals intended result.12excluded exact IDs untouched;140eligible source identity keys need WS0 mapping. Existing Library exporter preserves whole roster; rebuild and public UI visibility not verified. Career private-source receipt/issue51 remain, no new sprite/atlas import.
+
+Reusable POST_PASS_PRODUCTION_R1 includes workflow, source relation projection, biographies, group texts, field-note draft, exact mapping handoff and read-only intake adapter.23adapter tests passed. Actual integrated metadata-only run:49METADATA_READY_EVIDENCE_PENDING,2EXCLUDED,0source structural errors. PNG/full-prompt bytes absent from this metadata snapshot; this run is not image/import certification.
+
+One reference-conditioned native catalogue-master pilot was made for Frau Löffelrecht, WSA_TRIO_AUSBRECHER_20261105_02. Actual1254×1254RGBA, not requested1536. Independent review TUNE: reconstructed proportions/material/patches and alpha edge/interior issues; source and candidate both show3upper teeth despite inaccurate prompt request for4. Preserve candidate/evidence only. No master PASS, bulk-master production, image replacement or import.
+
+Next gate: WS0 maps remaining eligible source identities and completes existing intake/export. A future catalogue-master replacement requires faithful identity and technical acceptance. No runtime changes, merge, Live promotion or public Stage required/performed.
+
+---
+
 # Current update · 2026-11-05 · Trio PASS, scale audit and writing status
 
 Georg accepted36trio actors; source now51PASS sheets/306depictions,49sheets/294depictions intake-eligible. Catalogue-master readiness remains pending scale/native-resolution preparation. Original/R2 images unchanged. First two layout edits shrink mean visible figure height about23.4percent despite equal1536×1024 canvases; see SCALE audit and CATALOGUE_MASTER_QUALITY_R1.md. No new image jobs or runtime changes.
@@ -512,7 +528,3 @@ WS0 register `docs/kfb-decisions-register-2026-10-11` / DECISIONS.md holds decis
 
 ## Exactly one next gate
 **WS0:** use issue #466 to admit one actual six-actor `normie_a` low-level source sheet via existing Asset Librarian into the 72-actor receiving pipeline, prove alpha/96px, animate in existing `mobs2d`, show one real WS1 in-game bounce/hit/splatter/collision screenshot/clip with honest test counts. Do not merge/promote automatically. Georg action required now: **nothing**.
-
-
-
-
