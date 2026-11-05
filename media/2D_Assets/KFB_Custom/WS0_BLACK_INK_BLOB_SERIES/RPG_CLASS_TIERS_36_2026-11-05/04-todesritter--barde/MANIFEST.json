@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -25,8 +25,9 @@
   "production_record": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
   "cards": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
   },
   "figuren": [
     {
@@ -52,8 +53,8 @@
       "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
       "prompt_auszug": "Dejected sleepy asymmetrical eyes, open sagging jaw. Holds ONE tiny rusty FLAIL: fat short handle, very short chain, ONE rounded iron ball resting against own body, no floating weapon.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -87,8 +88,8 @@
       "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
       "prompt_auszug": "Indignant teeth clenched, eyebrows uneven, torso goo leans forward. Same compact flail now dark iron with blunt rounded studs, same broken helmet nub.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -122,8 +123,8 @@
       "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
       "prompt_auszug": "Terminally bored half-lids, huge pout and teeth barely peeking. Same flail beautifully dark steel and worn brass, tiny shoulder plate, SAME broken nub/collar; no skull mask/bones/ribcage.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -157,8 +158,8 @@
       "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
       "prompt_auszug": "Shy near-closed worried lips, eyes sideways. Cradles ONE tiny crooked wooden three-string LUTE, one string visibly slack but physical and contained.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -192,8 +193,8 @@
       "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
       "prompt_auszug": "Wild delighted sideways open tooth laugh, one eye shut, body flexed upright. SAME lute now neat polished wood with thick ivory soundhole rim, same beret/feather.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -227,8 +228,8 @@
       "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
       "prompt_auszug": "Withering diva side-eye, closed thick curled lip and two teeth. Same beautiful little lute with brass fittings and one tiny copper shoulder tassel, same feather, no stage/mic/music-note symbols.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -239,5 +240,10 @@
         "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
       }
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
 }

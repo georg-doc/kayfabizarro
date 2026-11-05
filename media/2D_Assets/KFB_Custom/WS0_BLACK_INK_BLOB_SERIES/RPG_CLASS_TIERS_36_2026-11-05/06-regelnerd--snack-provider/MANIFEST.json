@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -25,8 +25,9 @@
   "production_record": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
   "cards": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
   },
   "figuren": [
     {
@@ -52,8 +53,8 @@
       "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
       "prompt_auszug": "Insecure wide eyes, tilted shut mouth with single tooth peeking. Hugs ONE small plain battered clothbound RULEBOOK with TWO chunky paper tabs; no letters.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -87,8 +88,8 @@
       "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
       "prompt_auszug": "Furious pinpoint gaze and clenched crooked teeth, blob pulls up taller without body size growth. SAME book now thick with FIVE broad colourful tabs, hand marks place with short wooden RULER.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -122,8 +123,8 @@
       "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
       "prompt_auszug": "Smug imperious half-lids, compressed pout, same tooth. SAME compact thick rulebook now brass-clasped, FIVE tabs and same ruler held like ceremonial authority, one small brass collar pin. No written text/numbers/symbol jokes.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -157,8 +158,8 @@
       "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
       "prompt_auszug": "Timid solicitous wide eyes and crooked underbite. Holds ONE small ceramic BOWL with TWO fat triangular clay crisps, one little wooden serving tong.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -192,8 +193,8 @@
       "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
       "prompt_auszug": "Fiercely hospitable eyebrows and clenched underbite, eyes sideward. SAME bowl now fuller with FIVE fat crisps, same short tong, kerchief/collar unchanged.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -227,8 +228,8 @@
       "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
       "prompt_auszug": "Serene implacable half-lids and enormous proud lower lip. SAME bowl now beautiful copper-rimmed ceramic, FIVE crisps and one tiny plain lidded dip cup fitted INSIDE, tong like a sceptre. No table/food spread/floor.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -239,5 +240,10 @@
         "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
       }
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
 }

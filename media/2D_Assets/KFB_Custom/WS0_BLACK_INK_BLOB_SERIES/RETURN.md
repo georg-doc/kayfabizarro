@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · RPG concept variant accepted
+
+Georg accepted the six RPG class tier sheets as a concept variant. Source now 39 PASS sheets /234depictions,37sheets/222depictions intake-eligible. Cards remain DESIGN; technical notes retained. Same WSA owner, assets/ws0-ink-miners-2026-11-04, draft PR469. Next authorized outcome: twelve everyday career paths at three levels, six new sheets. No runtime, combat or catalogue publication claimed.
+
+---
+
 # Current WSA Return · 2026-11-05 · RPG class tier batch
 
 Owner WSA · georg-doc/kayfabizarro · branch assets/ws0-ink-miners-2026-11-04 · draft PR469.

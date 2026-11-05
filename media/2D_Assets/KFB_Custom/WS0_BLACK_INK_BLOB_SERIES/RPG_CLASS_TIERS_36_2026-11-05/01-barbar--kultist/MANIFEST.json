@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -25,8 +25,9 @@
   "production_record": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
   "cards": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
   },
   "figuren": [
     {
@@ -52,8 +53,8 @@
       "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
       "prompt_auszug": "Bewildered open underbite, raised asymmetric brows. Holds a short fat rough wooden CLUB tied with one cord; tiny ragged sheepskin collar.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -87,8 +88,8 @@
       "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
       "prompt_auszug": "Furious teeth clenched sideways, sideways leaning goo. Same club now stone-headed, same headband/bead, one broad leather wristband.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -122,8 +123,8 @@
       "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
       "prompt_auszug": "Rapturous roaring underbite, one eye squeezed shut, triumphant tilted crown. Same club now chunky iron-banded, tiny bone clasp on same sheepskin collar; not oversized armour.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -157,8 +158,8 @@
       "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
       "prompt_auszug": "Uneasy wide side-looking eyes, lips pressed with one fang. Both hands carefully hold ONE stubby unlit crooked CANDLE in a little clay saucer.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -192,8 +193,8 @@
       "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
       "prompt_auszug": "Ecstatic eyes up, broad crooked underbite smile. Same hood/patch; same candle now lit with SMALL solid clay flame, plain dark brass saucer; one twisted cord collar.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -227,8 +228,8 @@
       "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
       "prompt_auszug": "Chilly serene half-lidded eyes, tight smug single-fang smirk. Same small hood with modest copper edging; same candle now THREE fat fused stubs in ONE compact brass saucer, no flames near face, no cult scene.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -239,5 +240,10 @@
         "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
       }
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
 }

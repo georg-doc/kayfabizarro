@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -25,8 +25,9 @@
   "production_record": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
   "cards": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
   },
   "figuren": [
     {
@@ -52,8 +53,8 @@
       "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
       "prompt_auszug": "Anxious asymmetrical huge eyes, defensive crooked lower lip. Hugs ONE very small battered wooden treasure BOX containing ONE visibly worthless bent spoon.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -87,8 +88,8 @@
       "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
       "prompt_auszug": "Suspicious narrowed sideways eyes, clenched uneven teeth. SAME box now iron-banded with spoon plus TWO big smooth odd buttons, lid tilts but all contained.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -122,8 +123,8 @@
       "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
       "prompt_auszug": "Blissful possessive squint and stubborn closed-lip smile, body wraps protectively around SAME compact brass-banded box with spoon and THREE chunky trinkets. Same cap/collar, no huge pile/coins scattered.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -157,8 +158,8 @@
       "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
       "prompt_auszug": "Overwhelmed wide gaze, worried stretched lower lip. Holds ONE folded blank cardboard GM SCREEN with TWO short panels low at own belly, no desk.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -192,8 +193,8 @@
       "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
       "prompt_auszug": "Delighted conspiratorial raised brow, crooked underbite. Same two-panel screen now worn leather with ONE plain abstract embossed spiral, other hand holds ONE large blank faceted clay DIE.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -227,8 +228,8 @@
       "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
       "prompt_auszug": "Dry authoritarian half-lids and pursed crooked lip. Same little screen with modest copper corners, same faceted die now polished bone/brass dots only. Screen stays LOW so ink face/body remain dominant, no table or extra players.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -239,5 +240,10 @@
         "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
       }
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
 }

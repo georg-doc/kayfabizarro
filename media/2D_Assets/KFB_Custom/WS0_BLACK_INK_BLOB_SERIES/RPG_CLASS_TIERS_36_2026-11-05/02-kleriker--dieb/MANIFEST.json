@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "grid": {
     "columns": 3,
     "rows": 2,
@@ -25,8 +25,9 @@
   "production_record": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
   "cards": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
   },
   "figuren": [
     {
@@ -52,8 +53,8 @@
       "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
       "prompt_auszug": "Worried drooping mouth, wide eyes watching hands. One hand holds small wooden healing MALLET with linen-padded head, other cradles a plain bandage roll.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -87,8 +88,8 @@
       "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
       "prompt_auszug": "Sternly encouraging crooked teeth, one eyebrow raised. Same padded mallet now brass-capped, SAME bandage roll in little leather loop; cap/collar/medallion unchanged.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -122,8 +123,8 @@
       "signature": "broad upright bell-shaped goo blob with little curled crown emerging beside tiny ivory linen cap, short pale-blue stole collar only, subtle lashes, ONE square upper tooth and a big lower fang. A thick brass spoon-shaped sun medallion is always at collar.",
       "prompt_auszug": "Beatific closed-lip self-satisfaction, half-lidded sideways gaze. Same compact mallet now beautiful rounded brass with ivory padding, one modest copper shoulder clasp, no mitre or full robe.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -157,8 +158,8 @@
       "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
       "prompt_auszug": "Alarmed eyes glance back, puckered crooked worried lip. Holds one tiny bent iron KEY and a nearly flat worn purse.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "verwirrt",
       "ersetzt": [],
       "erneuert": [],
@@ -192,8 +193,8 @@
       "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
       "prompt_auszug": "Suspicious narrowed gaze to side, tight asymmetric closed tooth smile. Same green cap/patch and neckerchief; same key now on short brass ring with two other keys, purse slightly fuller.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "kaempferisch",
       "ersetzt": [],
       "erneuert": [],
@@ -227,8 +228,8 @@
       "signature": "small diagonal bean-shaped goo splat, one hooked ink curl and low side nubs, ONE long upper buck tooth, tiny sage-green soft cap with mustard patch and narrow burgundy neckerchief, always a plump old key.",
       "prompt_auszug": "Offended aristocratic squint, lower lip thrust forward. Same key ring now a splendid compact brass MASTER KEY and one matching little fat locked purse; not a huge treasure chest.",
       "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/PRODUCTION_RECORD.json",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "haltung_vorschlag": "unzufrieden",
       "ersetzt": [],
       "erneuert": [],
@@ -239,5 +240,10 @@
         "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
       }
     }
-  ]
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
 }
