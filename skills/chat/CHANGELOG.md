@@ -1,3 +1,11 @@
+## 2026-11-05 · Follow-up research · Claude/Remotion KFB Card Reels / Story-Stack video export
+
+- Added `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/CLAUDE_REMOTION_VIDEO_RESEARCH_2026-11-05.md` to existing planning Draft PR #470 / WS0 issue #471. **Research only**, not a new runtime, asset, clip or product authorization.
+- Vendor Remotion agent skills and Claude Code plugin inspected; Video Shotcraft shot library/workbench and Claude Video Skills transcript/brand pipeline classified as candidate donors. Official Prompt-to-Video timeline is a reference; generated filler assets and generic motion-preset branding rejected for KFB.
+- Community observations from five Reddit threads informed anti-slop QA: source-accurate original art, shot motives, KFB cartoon-motion hierarchy, reference-first art direction, isolated donor preview, sampled frames, independent critic, no default slideshow/stock/caption-kit.
+- Existing Card Registry/Almanac, ChatterBox, World/Quest, KFB Ink/Motion and Audio owners kept. DocCheck medical-case video path remains separate editorial/licensing gate. Current Remotion license is **not unrestricted open source**; commercial automation/organizational eligibility must be assessed before deployment.
+- Evidence: 8/8 intended KFB source refs resolved; exact report readback, 0 runtime/video/render/browser tests. One next gate: WS0 source-isolated true KFB Card + connected Story Stack and storyboard/cut-plan concept, only on separate execution go-ahead.
+
 ## 2026-11-05 · KFB Living Cards / HyperCard Story Stacks — Georg-approved concept research
 
 - Georg approved the HyperCard-style card-stack/linked-storytelling principle for KFB **planning/conception**, plus a **separate DocCheck interactive-medical-case research line**; no runtime or third-party dependency approved.
