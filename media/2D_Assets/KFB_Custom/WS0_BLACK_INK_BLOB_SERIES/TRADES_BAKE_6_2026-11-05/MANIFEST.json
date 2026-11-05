@@ -1,0 +1,269 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRADES_BAKE_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+    "sha256": "2dac98cba7791255fff56f7af367b8ec744ba36ca8ca1cbcb5ed4535506aec53"
+  },
+  "production_record": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "TRADES_BAKE_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRADES_BAKE_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Bäcker & Konditoren – Teig der Verhältnisse",
+    "visual_context": "historical bread oven and rococo patisserie,current artisan bakery/chocolate craft,retro-space pastry; warm cream,copper,muted berry,wood; visible ink bodies not human chef torsos",
+    "relationship_policy": "Six distinct standalone identities across historical/present/sci-fi contexts; shared trade family, not level/state/twin relations",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bäcker Frühzustand",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream baker cap",
+        "short bread peel",
+        "round loaf"
+      ],
+      "temperament": "Has already done tomorrow's work before today has explained itself.",
+      "prompt_auszug": "Bäcker Frühzustand, maennlich-read. HISTORICAL bread baker: wide low ink splat in soft cream nightcap-style baker cap, tiny apron patch, short wooden peel with ONE rustic round loaf balanced safely beside body. Deep uneven sleepy lids and enormous crooked closed toothless frown. Personality: Has already done tomorrow's work before today has explained itself.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Konditorin Zuckerrang",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ribboned pleated cap",
+        "small layered cake",
+        "copper plate",
+        "palette knife"
+      ],
+      "temperament": "Can make a grievance look beautifully presentable.",
+      "prompt_auszug": "Konditorin Zuckerrang, weiblich-read. HISTORICAL rococo-inspired pastry artisan: tall top-heavy pear blob, modest cream pleated cap with little berry ribbon ABOVE eyes, two lashes, holds ONE small ornate layered cake on little copper plate and short palette knife. Proud crooked open grin with TWO upper teeth, no big wig. Personality: Can make a grievance look beautifully presentable.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bäckerin Sauerhalt",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "indigo headscarf",
+        "starter jar",
+        "wooden spoon"
+      ],
+      "temperament": "Treats the starter as a colleague whose terms remain unclear.",
+      "prompt_auszug": "Bäckerin Sauerhalt, weiblich-read. CURRENT artisan baker: round asymmetrical ink blob, small tied indigo headscarf and subtle lashes, simple glass starter jar with visible cream dough and tiny wooden spoon; huge unequal eyes watching dough, small open triangular toothless mouth. Personality: Treats the starter as a colleague whose terms remain unclear.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Chocolatier Bruchkante",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dark chef cap",
+        "chocolate bar",
+        "metal scraper"
+      ],
+      "temperament": "Trusts a clean snap more than an enthusiastic endorsement.",
+      "prompt_auszug": "Chocolatier Bruchkante, maennlich-read. CURRENT chocolate maker: lean hooked splat, compact dark chef cap, short cream collar tabs, ONE small chocolate bar with one missing corner and small metal scraper held apart. Suspicious brow and dry closed toothless side-smirk. Personality: Trusts a clean snap more than an enthusiastic endorsement.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Orbitalbäcker Schwerelos",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open copper-rimmed cap",
+        "sealed domed proofing bowl",
+        "dough ball"
+      ],
+      "temperament": "Cannot tell whether the dough has risen or the rest of the bakery has fallen.",
+      "prompt_auszug": "Orbitalbäcker Schwerelos, maennlich-read. SCI-FI zero-gravity baker: tall curved pear splat, tiny copper-rimmed cream cap OPEN FACE, ONE small clear domed proofing bowl clipped into a handheld ring with single round dough ball INSIDE. One eye stretched high other squinting, little crooked open mouth with ONE upper tooth; no hovering objects outside bowl. Personality: Cannot tell whether the dough has risen or the rest of the bakery has fallen.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    },
+    {
+      "id": "WSA_TRADES_BAKE_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pâtissier Endglasur",
+      "bild": {
+        "datei": "TRADES_BAKE_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "berry workcap",
+        "forehead goggles",
+        "copper-nozzle piping bag",
+        "ring pastry"
+      ],
+      "temperament": "Believes every conclusion deserves one last unnecessary flourish.",
+      "prompt_auszug": "Pâtissier Endglasur, maennlich-read. SCI-FI retro-dieselpunk confectioner: squat broad square rounded splat, small berry workcap with goggles ABOVE eyes, thick copper piping nozzle attached to ONE compact cream-filled pastry bag and small finished ring pastry at flank. Gleeful asymmetric open grin with THREE upper teeth. Simple piping bag not complex machine. Personality: Believes every conclusion deserves one last unnecessary flourish.",
+      "prompt_quelle": "TRADES_BAKE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

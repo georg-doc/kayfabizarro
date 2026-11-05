@@ -1,3 +1,21 @@
+# WSA Return · Six trade families across eras generated · 2026-11-05
+
+Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome:6 independent6-actor transparent landscape sheets/36 authoring identities: miners/oil drillers,bar/cocktail workers,waiters/servants,cleaners,butchers,bakers/pastry chefs. Every sheet deliberately mixes2 historical,2 present-day,2 sci-fi types,with explicit era_variant per actor. Six distinct identities,not evolution levels/twins. Cast intent2 female-read per sheet,12 total; bake lower-left chocolatier intended male but lash/lid styling can read ambiguously. This visual nuance is recorded for Georg,not relabelled silently.
+
+All6 new sets DRAFT awaiting Georg. Five prior worker groups accepted and recorded at b119f9b148c5d23c94131bbc8e8a5334d8c2b514; inventory stays78 PASS sheets/468 depictions,76 sheets/456 intake eligible. New36 excluded from PASS counts. Historical excluded miners remain excluded; new TRADES_MINEROIL is not retrospective approval or automatic replacement.
+
+Production evidence: exactly6 native reference-conditioned jobs,0 layout edits,0 selected-image resizes. All original1536x1024 RGBA alpha0..254. Actual original veteran and RPG reference images supplied each call for bounded body/material and accessory-craft STYLE roles.6/6 benchmark hashes verified. Original PNG bytes match native/local/Git blobs. Model/seed controls not exposed. No generated sheets used as style parents.
+
+Checks: native images,6 checker composites,light64/96/192 and dark160 logical-cell previews visually reviewed. Complete upright footless ink bodies,white/red/black eyes,eyes uncovered. Native embellishments recorded in each QA: lit rather than unlit historical candle; bar elaborate historic/tropical headgear and tap-cylinder without clear spout (manifest reflects actual sealed vessel); service valet extra goggles; cleaner vacuum connection partly occluded; butcher culture cube marbled product/no gore; bake large cap,simplified dome ring,and ambiguous male-intended chocolatier lid styling. These are candidate observations,not human acceptance.
+
+Technical holds: transparent source sheets,not individual high-resolution catalogue masters. Alpha opacity/edge cleanup and validated per-actor isolation pending. MINEROIL global straight-row minimum peak alpha252/centre247:no certified straight horizontal row crop. No game crops or safe fixed-cell rectangles claimed. No canonical receiving-ID assignment,combat tiers/hits,game ingest,Asset Library rebuild,runtime publication,merge or Stage claim.
+
+Changed files: TRADES_{MINEROIL,BAR,SERVICE,CLEAN,BUTCHER,BAKE}_6_2026-11-05/ each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json; TRADES_BATCH_2026-11-05.json,SET_MANIFESTS_R1.json,RETURN.md.36 source-bound DESIGN cards,individual English biographies and dry German FrizzleBob notes derive from own role,props and HyperNorm metanarrative. Prose remains DESIGN separately from future image verdict. Shared trade-family relation only,not invented pair/state/trio/tier binding. Historical motifs freely inspired,not factual reconstructions.
+
+Next gate: Georg design verdict on six new trade-family sheets,optionally per family.
+
+---
+
 # WSA Return · Five worker families PASS; trades across eras authorized · 2026-11-05
 
 Georg accepts all5 worker sheets/30 designs. Manifest and biography intake flags updated; prose remains DESIGN, minor prop notes/technical holds retained. Accepted78 sheets/468 depictions; eligible76/456. Existing WSA source owner, assets/ws0-ink-miners-2026-11-04, draft PR469. New bounded outcome:6 independent6-actor sheets mixing historical,current and sci-fi versions within each family: miners/oil drillers,bar/cocktail staff,waiters/servants,cleaning staff,butchers,bakers/pastry chefs. Each2 female-read. All new candidates await Georg; no merge/runtime/Library claim. New miners are distinct candidates, not a retroactive PASS for old excluded miners. Next step: source-conditioned production and archival.

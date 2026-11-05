@@ -1,0 +1,267 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRADES_CLEAN_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+    "sha256": "802e01f0c36f6fbadfe87ac007510218734d519006965f85b481976fa8621f22"
+  },
+  "production_record": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "TRADES_CLEAN_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRADES_CLEAN_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Reinigung – Abteilung rückstandsfreie Wirklichkeit",
+    "visual_context": "historical domestic/industrial cleaning,current janitorial/window work,retro-space sanitation; muted teal,ochre,cream,copper;tools compact and readable",
+    "relationship_policy": "Six distinct standalone identities across historical/present/sci-fi contexts; shared trade family, not level/state/twin relations",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kaminkehrer Schwarzgenug",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "crushed top hat",
+        "round soot brush"
+      ],
+      "temperament": "Can tell useful soot from the soot that has acquired a title.",
+      "prompt_auszug": "Kaminkehrer Schwarzgenug, maennlich-read. HISTORICAL chimney sweep: tall thin bending comma blob, crushed tiny black top hat, short round soot-brush on wooden handle held upright at flank. One high brow, big cheeky open grin with TWO upper teeth; charcoal ink remains distinguishable from brush. Personality: Can tell useful soot from the soot that has acquired a title.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Waschfrau Seifenruh",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream headscarf",
+        "wooden washboard",
+        "folded cloth"
+      ],
+      "temperament": "Has washed everything except the assumption that it will stay clean.",
+      "prompt_auszug": "Waschfrau Seifenruh, weiblich-read. HISTORICAL laundry worker: low wide blob, cream tied headscarf and subtle lashes, small wooden washboard and ONE folded cloth. Extremely tired uneven eyelids, deep dark-purple closed toothless pout. Personality: Has washed everything except the assumption that it will stay clean.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hauswart Nassgenau",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "teal workcap",
+        "wringer bucket",
+        "short mop"
+      ],
+      "temperament": "Is still deciding which side of the floor counts as finished.",
+      "prompt_auszug": "Hauswart Nassgenau, maennlich-read. CURRENT janitor: round top-heavy blob in teal workcap and small apron patch, compact bucket with wringer and short mop held vertically, no puddle/ground. Big divergent eyes, tiny off-centre toothless triangular mouth. Personality: Is still deciding which side of the floor counts as finished.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fensterputzer Durchblick",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blue cap",
+        "forehead goggles",
+        "squeegee",
+        "spray bottle"
+      ],
+      "temperament": "Improves the view without changing his opinion of it.",
+      "prompt_auszug": "Fensterputzer Durchblick, maennlich-read. CURRENT window cleaner: tall broad-based pear blob, blue soft cap, goggles parked above eyes, simple short squeegee and small spray bottle. Narrow skeptical side-eye and compressed crooked toothless lip line. Personality: Improves the view without changing his opinion of it.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dekonwartin Reinstform",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "open-face ivory workcap",
+        "vacuum wand",
+        "small canister"
+      ],
+      "temperament": "Removes contaminants including several that turn out to be official policy.",
+      "prompt_auszug": "Dekonwartin Reinstform, weiblich-read. SCI-FI decontamination worker: wide asymmetrical splat, small ivory retro-space cleaning cap OPEN FACE, two lashes, ONE chunky copper vacuum wand connected by short tube to small hip canister; mouth forceful crooked open grin with ONE upper tooth. No giant suit or visor. Personality: Removes contaminants including several that turn out to be official policy.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    },
+    {
+      "id": "WSA_TRADES_CLEAN_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Staubsammler Restwelt",
+      "bild": {
+        "datei": "TRADES_CLEAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum lens cap",
+        "sealed dust jar",
+        "soft brush"
+      ],
+      "temperament": "Cannot discard the dust until somebody confirms it is not an ancestor.",
+      "prompt_auszug": "Staubsammler Restwelt, maennlich-read. SCI-FI archival dust collector: tall drooping blob, small plum knitcap with tiny lens ABOVE eyes, ONE sealed specimen jar containing three little grey dust pellets and miniature soft brush. Unequal bulging eyes looking at jar, closed nervous toothless wavy mouth. Personality: Cannot discard the dust until somebody confirms it is not an ancestor.",
+      "prompt_quelle": "TRADES_CLEAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}
