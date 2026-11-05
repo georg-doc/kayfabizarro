@@ -80,5 +80,9 @@ await popupClay.vorwaermen(renderer, camera, scene)   // dritter Wert scene ist 
 - **Kit-Häuser** werden beim Laden des Viertels vorgewärmt, nicht im Ladebildschirm, weil ihr Material im Modell steckt.
 - **Straßenseite:** Das Wortfeld sitzt auf Wand 0 des Hauses. Mit dem Viertel-Generator kann es die echte Straßenseite aus dem Plan nehmen.
 - **Ent-Zensur** (Treffer lässt einen Blob platzen, dann bunte Kugeln) wartet auf Flugs gooBlobMaterial und Goo-Platzen.
-- **Schramme:** als Rinne (dunkler Grund, Lichtkante, Schatten, Normale aus dem Linien-Gefälle). Sie ist noch nicht abgenommen; offener Punkt.
-- **Kit-Häuser mit HyperNorm:** neues Konzept mit gerahmten Flächen (Billboard, Leuchtkasten, Plakatwand, Schaufenster-Screen). Folgt erst als Bild mit Hub-Frage.
+- **Schramme:** Die Shader-Linien fielen beim Kritiker durch. Jetzt ist die Schramme ein Decal (cascade/r4/schramme.js, commit 73f2685c) mit gebackener Albedo-, Normal- und Tiefenkarte. Die alten Linien gibt es nur noch mit `schramme=linien`. Im Spiel noch nicht belegt; offener Punkt.
+- **Kit-Häuser mit HyperNorm:** gerahmte Flächen hinter `kittafeln=1` (cascade/r4/kitTafeln.js): Billboard, Leuchtkasten, Plakatwand, Schaufenster-Screen. Runde 1 hat der Kritiker abgelehnt (Blatt in review/kittafeln-r1). Die Nachbesserung steckt in 73f2685c und ist noch nicht belegt. Nicht für WS1, bis es belegt ist.
+- **Wiedereinstieg (Pause 05.11. auf WS0-Wunsch):**
+  1. Im Slot bauen: KFB_SPLIT=1 mit --base=./, site-extra verlinken.
+  2. Prüfen: `test/design/fassade.mjs` mit `KITTAFELN=1 WARTE_S=90 HASH_EXTRA=fassade=r2,kittafeln=1`, dazu `test/design/aufprall.mjs` mit `WARTE_S=60 HASH_EXTRA=fassade=r2`.
+  3. Bewerten: ein Blatt, ein Kritiker. Prüfmaß Schramme: aus 3,5 m eine Rinne mit Licht- und Schattenkante, aus 9 m ein klarer Streifschuss.
