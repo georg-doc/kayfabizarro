@@ -1,0 +1,35 @@
+{
+  "status": "PASS_STRUCTURAL_NOT_TEXT_APPROVAL",
+  "counts": {
+    "source_sheets": 51,
+    "source_depictions": 306,
+    "source_identities": 248,
+    "eligible_sheets": 49,
+    "eligible_depictions": 294,
+    "eligible_identities": 236,
+    "excluded_identities": 12,
+    "biographies_design": 248,
+    "variant_notes": 306,
+    "relation_units": 54,
+    "game_roster_existing": 609,
+    "exact_game_id_matches_all": 108,
+    "exact_game_id_enriched_eligible": 96,
+    "original_531_identity_biography_intersection": 30,
+    "original_531_remaining_without_this_biography": 501
+  },
+  "checks": [
+    "248 unique source IDs and names match briefs",
+    "306 exact variant and source-evidence ID memberships",
+    "54 group IDs match source graph",
+    "96 eligible exact canonical ID matches only; 12 excluded untouched",
+    "609 receiving actors unchanged except new DESIGN biography field on 96",
+    "No runtime stats, atlas, names, voices, existing card values or source images modified"
+  ],
+  "limitations": [
+    "Source snapshot is metadata only; absent media/prompt bytes are not reverified by this run",
+    "Independent textual review was sampled, not exhaustive",
+    "Full source prompts were not all locally available; brief excerpts and source pointers retained",
+    "DESIGN prose may invent lore; it does not certify visual details",
+    "Game export field preservation checked in existing exporter source; rebuild/public UI not verified"
+  ]
+}
