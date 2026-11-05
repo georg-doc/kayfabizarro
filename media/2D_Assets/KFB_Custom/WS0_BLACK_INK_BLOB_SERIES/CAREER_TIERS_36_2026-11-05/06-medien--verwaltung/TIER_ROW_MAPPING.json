@@ -1,0 +1,55 @@
+{
+  "schema": "kfb.slop-career-rows/1",
+  "status": "DESIGN",
+  "columns": [
+    "starter",
+    "practitioner",
+    "senior"
+  ],
+  "rows": [
+    {
+      "row": 0,
+      "identity": "WSA_CAREER_MEDIEN_20261105",
+      "occupation": "medien",
+      "name": "Herr Schlagzeile",
+      "members": [
+        "WSA_CAREER_MEDIEN_20261105_L1",
+        "WSA_CAREER_MEDIEN_20261105_L2",
+        "WSA_CAREER_MEDIEN_20261105_L3"
+      ],
+      "career_labels": [
+        "Redaktionspraktikant",
+        "Reporter",
+        "Chefredakteur"
+      ],
+      "alternative_readings": [
+        "career escalation of same identity",
+        "siblings at different ranks",
+        "professional gang"
+      ]
+    },
+    {
+      "row": 1,
+      "identity": "WSA_CAREER_VERWALTUNG_20261105",
+      "occupation": "verwaltung",
+      "name": "Frau Zuständigkeitsbereich",
+      "members": [
+        "WSA_CAREER_VERWALTUNG_20261105_L1",
+        "WSA_CAREER_VERWALTUNG_20261105_L2",
+        "WSA_CAREER_VERWALTUNG_20261105_L3"
+      ],
+      "career_labels": [
+        "Verwaltungsanwärterin",
+        "Sachbearbeiterin",
+        "Amtsleiterin"
+      ],
+      "alternative_readings": [
+        "career escalation of same identity",
+        "siblings at different ranks",
+        "professional gang"
+      ]
+    }
+  ],
+  "combat_mapping": null,
+  "note": "Career seniority is not automatically combat strength, moral worth or absurdity. No runtime fields changed."
+}

@@ -277,11 +277,48 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 12,
     "georg_pass": 0,
     "intake_eligible": 0
   }

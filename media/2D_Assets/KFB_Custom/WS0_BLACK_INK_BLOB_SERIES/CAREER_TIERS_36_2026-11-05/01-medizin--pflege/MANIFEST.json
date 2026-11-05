@@ -1,0 +1,256 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_PENDING_GEORG",
+  "format": "CAREER_TIER_TRIPLETS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Three career variants each of one female and one male identity; not six independent actors.",
+  "image": {
+    "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+    "sha256": "ef9d183874efecbb98ac649cd575b81c42cb949d98831d42c6bd4559e4d71892"
+  },
+  "production_record": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+  "cards": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "PENDING_GEORG"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CAREER_MEDIZIN_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Befundvorbehalt",
+      "variant_title": "Medizinstudentin",
+      "berufsfeld": "medizin",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_MEDIZIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "notebook, rubber-headed reflex hammer"
+      ],
+      "signature": "upright tall bent pear-shaped charcoal-violet ink splat, split curling crown tuft, soft lashes, ONE broad upper ivory tooth and one offset little lower fang. Tiny ivory coat-LAPEL COLLAR only with small TEAL cloth tab, no human coat torso.",
+      "prompt_auszug": "Concentrated lopsided squint, biting thick lower lip, other white/red/black eye looks down. Holds ONE little blank worn ivory medical notebook and ONE short thick wooden reflex hammer with soft rubber head. No stethoscope yet.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Medizinstudentin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_MEDIZIN_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Befundvorbehalt",
+      "variant_title": "Ärztin",
+      "berufsfeld": "medizin",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_MEDIZIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "compact stethoscope"
+      ],
+      "signature": "upright tall bent pear-shaped charcoal-violet ink splat, split curling crown tuft, soft lashes, ONE broad upper ivory tooth and one offset little lower fang. Tiny ivory coat-LAPEL COLLAR only with small TEAL cloth tab, no human coat torso.",
+      "prompt_auszug": "Brisk reassuring asymmetric open tooth smile, unequal alert eyes toward viewer. Same teal tab/collar/quiff/teeth. Holds ONE properly formed compact STETHOSCOPE with TWO distinct eartips on a U-shaped metal binaural piece, connected tubes merging into ONE short curved tube and ONE round chestpiece. Compact recognizable single object at belly, no tangled tubing.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Ärztin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_MEDIZIN_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Befundvorbehalt",
+      "variant_title": "Chefärztin / Professorin",
+      "berufsfeld": "medizin",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_MEDIZIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "stethoscope, clasped ivory book, head mirror"
+      ],
+      "signature": "upright tall bent pear-shaped charcoal-violet ink splat, split curling crown tuft, soft lashes, ONE broad upper ivory tooth and one offset little lower fang. Tiny ivory coat-LAPEL COLLAR only with small TEAL cloth tab, no human coat torso.",
+      "prompt_auszug": "Drained professorial sideways half-lids, long CLOSED downturned thick lip with single upper tooth peeking, no tongue/grin. SAME identity and tiny coat collar, one little brass round head mirror on thin band. One hand holds SAME compact correctly formed stethoscope, other hugs ONE fat closed ivory book with plain brass clasp. Similar body size, tools not a pile.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Chefärztin / Professorin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_PFLEGE_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Stationshaltung",
+      "variant_title": "Pflegeschüler",
+      "berufsfeld": "pflege",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_PFLEGE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "bandage roll"
+      ],
+      "signature": "broad low but UPRIGHT rounded bell ink blob, three uneven crown nubs, tiny moss-green scrub cap with mustard stitched patch and short cream collar, TWO big uneven lower teeth, no human uniform body.",
+      "prompt_auszug": "Alarmed wide unequal eyes, crooked open underbite, holds ONE large ivory bandage roll awkwardly against own goo belly, loose end short and fully contained.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Pflegeschüler",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_PFLEGE_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Stationshaltung",
+      "variant_title": "Pflegefachkraft",
+      "berufsfeld": "pflege",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_PFLEGE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "care case, bandage roll"
+      ],
+      "signature": "broad low but UPRIGHT rounded bell ink blob, three uneven crown nubs, tiny moss-green scrub cap with mustard stitched patch and short cream collar, TWO big uneven lower teeth, no human uniform body.",
+      "prompt_auszug": "Fearlessly stern side gaze, clenched irregular lower teeth and arched ONE brow. Same green cap/patch/teeth. Holds ONE small red-brown leather care case with a thick plain ivory bandage-shaped patch, and SAME bandage roll in a little front loop.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Pflegefachkraft",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_PFLEGE_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Stationshaltung",
+      "variant_title": "Stationsleiter",
+      "berufsfeld": "pflege",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_PFLEGE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "care case, ward keys"
+      ],
+      "signature": "broad low but UPRIGHT rounded bell ink blob, three uneven crown nubs, tiny moss-green scrub cap with mustard stitched patch and short cream collar, TWO big uneven lower teeth, no human uniform body.",
+      "prompt_auszug": "Calm exhausted one-eye-heavy side stare, CLOSED sideways compressed underbite. Same small cap/patch, tiny brass collar pin. Hugs SAME small care case and holds ONE compact ring of THREE fat brass ward keys, no chart/bed/scene.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Stationsleiter",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ]
+}

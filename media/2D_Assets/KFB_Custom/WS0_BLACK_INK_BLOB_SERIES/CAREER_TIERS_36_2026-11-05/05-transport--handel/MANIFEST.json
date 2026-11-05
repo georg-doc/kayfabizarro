@@ -1,0 +1,256 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_PENDING_GEORG",
+  "format": "CAREER_TIER_TRIPLETS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Three career variants each of one female and one male identity; not six independent actors.",
+  "image": {
+    "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+    "sha256": "0c3bfd1e1bf0094a1315bf632cea5b2bb20d0cf1813729dffc67ef0eaebc6dec"
+  },
+  "production_record": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+  "cards": "CAREER_TIERS_36_2026-11-05/05-transport--handel/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "PENDING_GEORG"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CAREER_TRANSPORT_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Anschlussverlust",
+      "variant_title": "Fahrschülerin",
+      "berufsfeld": "transport",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_TRANSPORT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "worn steering wheel"
+      ],
+      "signature": "upright wide rounded dumpling ink blob, ONE bent sideways goo crown antenna above small PLUM peaked driver cap with TEAL piping, lashes, TWO tiny offset upper teeth and one big lower tusk. Tiny cream neckerchief, no vehicle/human body.",
+      "prompt_auszug": "Sleepy nervous half-eyes trying to focus, thick worried lip and lower tooth. Holds ONE small battered black STEERING WHEEL with THREE chunky spokes loose at own belly, no attached bus.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Fahrschülerin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_TRANSPORT_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Anschlussverlust",
+      "variant_title": "Busfahrerin",
+      "berufsfeld": "transport",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_TRANSPORT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "steel-centred steering wheel"
+      ],
+      "signature": "upright wide rounded dumpling ink blob, ONE bent sideways goo crown antenna above small PLUM peaked driver cap with TEAL piping, lashes, TWO tiny offset upper teeth and one big lower tusk. Tiny cream neckerchief, no vehicle/human body.",
+      "prompt_auszug": "Exuberant confident open crooked underbite grin, raised asymmetrical eyebrows, no tongue. Same cap and scarf, same wheel now beautiful steel-centred black rubber, BOTH goo hands hold it.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Busfahrerin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_TRANSPORT_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Anschlussverlust",
+      "variant_title": "Fuhrparkleiterin",
+      "berufsfeld": "transport",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_TRANSPORT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wheel, clipboard, cap badge"
+      ],
+      "signature": "upright wide rounded dumpling ink blob, ONE bent sideways goo crown antenna above small PLUM peaked driver cap with TEAL piping, lashes, TWO tiny offset upper teeth and one big lower tusk. Tiny cream neckerchief, no vehicle/human body.",
+      "prompt_auszug": "Exasperated skewed eyes, clenched tooth expression with long heavy lip, no smile. SAME cap with little plain brass badge and cream scarf. One hand holds SAME small wheel, other ONE plain ivory CLIPBOARD with a compact brass clip; no route text/map/vehicle scene.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Fuhrparkleiterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_HANDEL_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Warenwert",
+      "variant_title": "Verkaufslehrling",
+      "berufsfeld": "handel",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_HANDEL_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wood cash box, two copper discs"
+      ],
+      "signature": "upright compact almost-round ink splat with low three-lobe crown and little moustache-shaped GOO upper lip (not hair), ONE square upper tooth, tiny ochre flat shop cap with burgundy patch, narrow sage-green collar.",
+      "prompt_auszug": "Astonished roundish unequal eyes but mouth CLOSED and skewed, lower lip curled. Holds ONE tiny worn wooden SHOP CASH BOX with TWO large plain copper coin discs.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Verkaufslehrling",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_HANDEL_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Warenwert",
+      "variant_title": "Ladeninhaber",
+      "berufsfeld": "handel",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_HANDEL_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "iron-banded box, four discs, blank tag"
+      ],
+      "signature": "upright compact almost-round ink splat with low three-lobe crown and little moustache-shaped GOO upper lip (not hair), ONE square upper tooth, tiny ochre flat shop cap with burgundy patch, narrow sage-green collar.",
+      "prompt_auszug": "Persuasive toothy sideways grin, one conspiratorial squint. SAME cap/patch/upper lip/collar. Same box now neat iron-banded wood with FOUR copper discs, opposite hand presents ONE blank little clay price tag on SHORT string INSIDE cell.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Ladeninhaber",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_HANDEL_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Warenwert",
+      "variant_title": "Filialdirektor",
+      "berufsfeld": "handel",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_HANDEL_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass box, four discs"
+      ],
+      "signature": "upright compact almost-round ink splat with low three-lobe crown and little moustache-shaped GOO upper lip (not hair), ONE square upper tooth, tiny ochre flat shop cap with burgundy patch, narrow sage-green collar.",
+      "prompt_auszug": "Protective suspicious narrow eyes and gritted crooked teeth, not usual smug closed grin. SAME cap with tiny brass edge, same green collar. SAME small cash box now handsome brass with FOUR coin discs, one little plain metal clasp; no money shower/huge pile/currency letters.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/05-transport--handel/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Filialdirektor",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ]
+}

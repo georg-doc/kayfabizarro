@@ -1,0 +1,256 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "DRAFT_PENDING_GEORG",
+  "format": "CAREER_TIER_TRIPLETS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Three career variants each of one female and one male identity; not six independent actors.",
+  "image": {
+    "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+    "sha256": "5fdc3facff4d21eaef0425402a5b1c03045190750d5b9bb7bbbdb5d117f003ef"
+  },
+  "production_record": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+  "cards": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "PENDING_GEORG"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CAREER_BILDUNG_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Lehrsatz",
+      "variant_title": "Referendarin",
+      "berufsfeld": "bildung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_BILDUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "blank green slate, chalk"
+      ],
+      "signature": "upright thin hooked ink pear, one long drooping crown curl with tiny plum cloth bow, small round dark spectacles, gentle lashes, TWO widely separated upper ivory teeth, short mustard cardigan collar with cream oval button.",
+      "prompt_auszug": "Nervously determined tight lip biting one upper tooth, white/red/black eyes wide behind clear spectacles. Holds ONE small blank dark-green framed SLATE and ONE fat chalk stick, close to own belly.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Referendarin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_BILDUNG_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Lehrsatz",
+      "variant_title": "Lehrerin",
+      "berufsfeld": "bildung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_BILDUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "green slate, short pointer"
+      ],
+      "signature": "upright thin hooked ink pear, one long drooping crown curl with tiny plum cloth bow, small round dark spectacles, gentle lashes, TWO widely separated upper ivory teeth, short mustard cardigan collar with cream oval button.",
+      "prompt_auszug": "Fierce affronted one-brow glare, crooked uneven clenched teeth, same quiff/bow/glasses. Same green slate in one hand, other holds ONE very short rounded wooden POINTER, no written marks.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Lehrerin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_BILDUNG_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Lehrsatz",
+      "variant_title": "Schulleiterin",
+      "berufsfeld": "bildung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_BILDUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "green clipboard, keys"
+      ],
+      "signature": "upright thin hooked ink pear, one long drooping crown curl with tiny plum cloth bow, small round dark spectacles, gentle lashes, TWO widely separated upper ivory teeth, short mustard cardigan collar with cream oval button.",
+      "prompt_auszug": "Terribly gracious CLOSED pursed-lip smile with one fang, one eye almost shut and other examining viewer. Same bow/glasses/collar, little brass button added. SAME slate now a leather-backed slim green clipboard; one small ring of TWO chunky brass keys hangs from hand. No school desk or blackboard scene.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Schulleiterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_WISSENSCHAFT_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Professor Resthypothese",
+      "variant_title": "Laborpraktikant",
+      "berufsfeld": "wissenschaft",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "glass flask with green liquid"
+      ],
+      "signature": "upright rounded egg ink blob with THREE stubby asymmetrical crown tufts, tiny cream lab-collar and TEAL bow tie, thick round copper safety spectacles with CLEAR lenses, ONE long upper front tooth and tiny gold side tooth.",
+      "prompt_auszug": "Dreamy curious unequal wide eyes looking DOWN, little crooked lip and one tooth. Carefully cradles ONE small rounded clear glass FLASK with a SINGLE fat lime-green clay liquid blob inside, no bubbles or glow outside.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Laborpraktikant",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_WISSENSCHAFT_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Professor Resthypothese",
+      "variant_title": "Forscher",
+      "berufsfeld": "wissenschaft",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "flask in copper holder, notepad"
+      ],
+      "signature": "upright rounded egg ink blob with THREE stubby asymmetrical crown tufts, tiny cream lab-collar and TEAL bow tie, thick round copper safety spectacles with CLEAR lenses, ONE long upper front tooth and tiny gold side tooth.",
+      "prompt_auszug": "Wild excited open tooth LAUGH with NO tongue, one eye squints. Same glasses/tufts/tie. Same rounded flask now in a broad plain copper holder, held at belly; other hand holds ONE tiny blank ivory notepad.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Forscher",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_WISSENSCHAFT_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Professor Resthypothese",
+      "variant_title": "Institutsleiter / Professor",
+      "berufsfeld": "wissenschaft",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "flask in holder, thick book"
+      ],
+      "signature": "upright rounded egg ink blob with THREE stubby asymmetrical crown tufts, tiny cream lab-collar and TEAL bow tie, thick round copper safety spectacles with CLEAR lenses, ONE long upper front tooth and tiny gold side tooth.",
+      "prompt_auszug": "Distracted burned-out unfocused eyes, thick sagging lower lip and tooth barely showing, NO smug grin. Same glasses and tiny teal bowtie, small copper collar medallion. Hugs SAME flask in copper holder and ONE thick closed cream book; no racks, complex lab apparatus, smoking effects.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT_PENDING_GEORG",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Institutsleiter / Professor",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ]
+}
