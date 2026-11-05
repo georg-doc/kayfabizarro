@@ -22301,6 +22301,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1519",
+   "date": "05.11.2026",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "POSTMORTEM (replies/POSTMORTEM_HUD_AKTIONSLEISTE_R1.md): Buttonflaechen der Aktionsleiste waren fest als cremeweisse Kreise im Code (inkl. Hover/Druck), nur die Ablage lud den Skin; WS0 hat q528/q533 durchgewinkt. Georg fassungslos. Bindend: (1) jede HUD-Form/Farbe/jeder Zustand aus dem Skin-Kit, nie Code-Konstanten, Liste Teil->Quelle vor jeder Hub-Frage; (2) diegetisches 3D-Cartoon-HUD, Welt als Spielzeug (V-333): jedes bedienbare Teil mindestens Active/Hover/Click mit Cartoon-Deformer, Belege als Bewegung; (3) Definition im Bild neben jedem Beleg; (4) Art-Direction-Blick (WSV) vor dem Hub; (5) Uebergaben mit Code-Abgleich. Korrektur: Georg mit WSA-HUD-Chat (leicht abgerundete Rechtecke im Skin-Design, ohne Einzelrahmen, gemeinsame Icons); Kartenkante laedt nur Skin-Flaechen und baut Zustands-Deformer. WS-Design Runde 5b @3275fce1 (Wiederholungen als andere Ausschnitte, ringtest=1).",
+   "values": {},
+   "owner": "Kartenkante · WSA HUD · WSV · WS-Design",
+   "check": "q533",
+   "source": "Georg 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
