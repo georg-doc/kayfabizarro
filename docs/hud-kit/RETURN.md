@@ -1,3 +1,27 @@
+# CURRENT RETURN · HUD CUTTER R11 · TWO KNOB CORRECTIONS · 2026-11-05
+
+WS0 via Georg narrows this delivery to Teal arrow scale and Hazard arrow-plate selection. Existing six-skin/action-surface integration is owned by Kartenkante; its current in-game six-skins × sizes check must NOT be duplicated. Earlier R10 restart/resume and acceptance TODOs below are historical, not instructions to restart gameplay testing here.
+
+**Method:** reuse unchanged native R4 Sheet1a/1b pairs. For paired §2a input, select the sole connected arrow plate from Sheet1b row1/column3 (x1168–1504,y32–352, proportional to sheet dimensions), never a size-ranked siren. Match the genuine source triangle and its polarity/shape to the open drawer's bottom-center marker; reject absent/ambiguous references instead of falling back to a bolt. No skin-specific detector coordinates. Retain native source pixels independently of logical placement dimensions; do not upscale, blur, sharpen, recolor or regenerate artwork. Two corrected cutouts use a bounded ≤2px alpha matte; transparent RGB is zero. Legacy single-sheet path and other roles stay unchanged.
+
+**Delta:** Teal arrow output204×86 native (old35×15), measured match182×77, runtime knob[129,55],knobAt[520.2,243.1],scale0.8918080720799182. Hazard output261×226 native is the actual arrow plate (old227×239 siren), measured match116×101,runtime knob[82,72],knobAt[501.0,249.5],scale0.445686892595848. Hazard siren remains detail_1. Runtime size is metadata, not a demand to discard native source resolution.
+
+**Private patch:** cut-sheet1.py plus NEW sibling knob_reference.py; apply both together. Baseline georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1 head817dac381a0349c4af9a67ca65bbfa4d8f4cead8, cutter blobcb9de81c861a882ea6dcb081b0b05cb59e33b63b. hudbar_measure.py and sheet_grid.py logic unchanged. Private code/art stay in Dropbox, not this public repository.
+
+**Actual checks:** six one-call CPU cuts exit0, no warnings,6Fluff/4radio each. Only2runtime raster images change;40others pixel-identical. Other four skin records unchanged; Teal changes knob+knobAt, Hazard only knob. Negative cases reject missing Hazard plate with siren retained and missing Teal genuine arrow with bolt retained. Both alpha edges≤2px. Patch applies in isolated baseline. Fresh ZIP extraction verifies66internal hashes, rebuilds six cuts and reproduces both deployment WebPs byte-for-byte. These are static/cutter checks, not game acceptance. No game/browser/GPU tests or game source writes by this chat.
+
+**Saved R11:** /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R11_2026-11-05.zip; Dropbox id:KeQLaY5-IIAAAAAAAA7ffQ;23295824bytes;67files;SHA256 f15c6a2eba8341cc19d82be769cf8fedfddcae664997b4c1f1e19ccf739e81f0. Upload COMPLETED. Includes patch/helper, exact baseline, source pairs, cut/teal+hazard, deploy/hudkit PNG/WebP, two-record deploy/hudbar.r11.json, reproducible checks and native before/after proof. Public evidence HUD_CUTTER_REPAIR_R11_QA.json at checkpoint01abf89a52e5b2d3cafa8e786dd96af2b2ca3d51.
+
+**One next gate:** Kartenkante applies the private two-file cutter patch and imports only Teal/Hazard knobs plus their two data records (or existing import-cut.py for these two supplied cut sets), preserving other skins, then includes these corrections in its already-running acceptance cycle. No new layouts, frames, icons, skins, action bars or parallel test matrix. No merge or Live promotion.
+
+---
+
+## Historical checkpoints · superseded where R11 conflicts
+
+**Authoring owner:** georg-doc/kayfabizarro@design/kfb-clay-hud-skin-kit-r1-2026-11-04, draft PR468. SOP checkpoint3360cddfc6ac8e0ed7582b50275ca05dfbcf7e15; QA checkpoint01abf89a52e5b2d3cafa8e786dd96af2b2ca3d51. Changed files this phase: SOP_CLAY_HUD_R1.md, HUD_CUTTER_REPAIR_R11_QA.json, this Return and CHANGELOG.md. Exact head and file readbacks follow each write. No Stage/Site/Hub routing change. Latest final head is recorded in PR468 handoff.
+
+---
+
 # CURRENT · HUD R10 · CUTS FIXED / GAME INTEGRATED / RESTART RECOVERY · 2026-11-05
 
 Steam and Slime's automatic well detection is fixed without changing native art. All six source pairs now cut in one call each:6Fluff+4radio,1476native. Existing12export comparisons unchanged;12actual source-well centers verified; two missing-well negative cases reject. Five expected current arrow-resize notices retained. Fresh ZIP extraction/rebuild passes. Independent receiving cutter critic PASS.
