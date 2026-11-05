@@ -1,3 +1,13 @@
+# Current update · 2026-11-05 · Trio PASS, scale audit and writing status
+
+Georg accepted36trio actors; source now51PASS sheets/306depictions,49sheets/294depictions intake-eligible. Catalogue-master readiness remains pending scale/native-resolution preparation. Original/R2 images unchanged. First two layout edits shrink mean visible figure height about23.4percent despite equal1536×1024 canvases; see SCALE audit and CATALOGUE_MASTER_QUALITY_R1.md. No new image jobs or runtime changes.
+
+Backstories explicitly required by current SLOP_METANARRATIV_R1 §4. Original531-ID writing tracker still30card drafts/501without draft; that is not30complete biographies. Latest trio36 has36individual personality lines and36FrizzleBob notes but one shared backstory template. STATUS_AND_NEW_SET_SUPPLEMENT_R1.json separates these scopes and the pending individual biography work. Text remains DESIGN.
+
+Same WSA owner, assets/ws0-ink-miners-2026-11-04, draft PR469. Existing career source check-in and WS0 game issue51 unchanged; actual catalogue/Library rebuild not claimed. Next recommended quality step, upon a new image brief: one approved-actor catalogue master pilot, then derive review/game grids from verified masters.
+
+---
+
 # Current WSA Return · 2026-11-05 · Story trios
 
 Owner WSA · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · draft PR469.

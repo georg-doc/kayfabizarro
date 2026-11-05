@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 45,
-    "pass_depictions": 270,
+    "selected_sheets": 51,
+    "pass_depictions": 306,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 43,
-    "intake_eligible_depictions": 258,
-    "other_authoring_depictions": 150
+    "intake_eligible_sheets": 49,
+    "intake_eligible_depictions": 294,
+    "other_authoring_depictions": 186
   },
   "excluded_sources": [
     {
@@ -311,51 +311,56 @@
       "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     },
     {
       "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     },
     {
       "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     },
     {
       "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     },
     {
       "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     },
     {
       "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
       "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
-    "trios": 12,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
+    "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
   }

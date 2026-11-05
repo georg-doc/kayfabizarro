@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "STORY_TRIOS_R1",
   "grid": {
     "columns": 3,
@@ -25,8 +25,10 @@
   "production_record": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
   "cards": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
   },
   "figuren": [
     {
@@ -56,8 +58,8 @@
       "prompt_auszug": "TALL thin upright drooping ink bean with one long crown hook, ONE big lower tusk. Weary nearly closed WHITE/red/black eyes, heavy CLOSED downturned lip. Small dark-blue soft cap and short collar. Holds ONE plump short old copper GOBLET, other hand rests on own goo hip; no long sword/cape.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -91,8 +93,8 @@
       "prompt_auszug": "VERY WIDE ROUND upright ink splat, THREE proud fat crown lobes, THREE big uneven upper teeth. Huge exuberant OPEN tooth laugh with NO tongue, raised asymmetrical brows. Small blue cap with stubby feather, broad copper collar button. Both hands hold ONE enormous rounded wooden TANKARD close to belly, no food pile.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -126,8 +128,8 @@
       "prompt_auszug": "MEDIUM curving upright ink pear, TWO rolled crown curls, long lashes, single long upper fang. Cool precise WHITE/red/black side-eye and CLOSED tiny crooked smirk. Small blue brimmed cap and short ivory neck tab. Holds ONE small plain LEATHER PRAYER BOOK with brass clasp, other goo hand supports ONE very short rounded RAPIER HILT with a SHORT blunt blade fully inside own cell.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -161,8 +163,8 @@
       "prompt_auszug": "TALL spindly-but-thick upright ink bean with TWO long soft crown lobes, solitary upper tooth and long lower lip. Ecstatic determined one-eye squint, crooked clenched uneven teeth. Tiny old iron COLANDER HELMET worn as brow cap, short terracotta collar. Holds ONE short bent wooden LANCE with a fat blunt cork-like tip, wholly inside cell, no horse/windmill/attack.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -196,8 +198,8 @@
       "prompt_auszug": "SHORT VERY WIDE upright ink dumpling, THREE low crown nubs under tiny cream cloth cap, TWO lower tusks. Skeptical WHITE/red/black eyes looking SIDEWAYS, huge CLOSED long pout. Hugs ONE small patched brown provision POUCH with a fat crust of BREAD sticking from opening, no mount.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -231,13 +233,22 @@
       "prompt_auszug": "MEDIUM broad upright rounded triangle ink splat with ONE high coiled goo quiff in small cream kerchief, lashes, THREE sparse upper teeth. Offended strong one-brow raised direct gaze, crooked CLOSED tight-tooth smile. Tiny terracotta collar, both goo hands grip ONE thick worn wooden ROLLING PIN horizontally at own belly, no kitchen/interaction.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
       "hits": null,
       "absurd": null
     }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
   ]
 }

@@ -16,3 +16,6 @@ One next design gate: Georg reviews six selected story-trio sheets. Career intak
 
 ## Verified archival evidence
 Implementation head d202e7854b679f9f6257dd4cb60a2413252a1639:42exact text readbacks and8byte-identical PNG comparisons complete. Private career source blob IDs also match all6local approved PNG byte identities. Final evidence/Return checkpoint follows.
+
+## Georg Design PASS and quality correction · 2026-11-05
+All36trio actors accepted. Scale concern acknowledged: first two R2 sheets reduced mean fixed-cell visible silhouette height from479.5/493px to367.5/377.8px, about23.4percent linear reduction. Measurements include props and R1 cell clipping, not exact body scale. All sheets1536×1024, so equal canvas dimensions did not preserve equal native character detail. This corrected spacing, not catalogue-master quality. Source intake eligible; catalogue-master resolution/scale preparation pending. New images were not generated for this audit. Names/cards remain DESIGN and individual full biographies remain pending.

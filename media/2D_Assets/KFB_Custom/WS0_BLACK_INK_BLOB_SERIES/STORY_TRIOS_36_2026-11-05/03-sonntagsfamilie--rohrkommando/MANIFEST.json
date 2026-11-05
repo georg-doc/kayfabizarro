@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "STORY_TRIOS_R1",
   "grid": {
     "columns": 3,
@@ -25,8 +25,10 @@
   "production_record": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
   "cards": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
   },
   "figuren": [
     {
@@ -56,8 +58,8 @@
       "prompt_auszug": "WIDE upright heavy bell ink blob with TWO rolled crown curls tied in tiny ivory kerchief, lashes, ONE huge upper tooth. Terrifyingly cordial CLOSED crooked smile, high rounded brows and one half-lid. Holds ONE squat old cream PORCELAIN TEAPOT with thick copper lid, no cup/pouring.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -91,8 +93,8 @@
       "prompt_auszug": "TALL very narrow drooping ink pear, one long sagging crown hook, TWO small offset lower teeth. Unequal white/red/black eyes look UP, tired worried sagging underbite. Hugs ONE small cream PLATE holding ONE lonely crumbled toast corner, all attached to own hands.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -126,8 +128,8 @@
       "prompt_auszug": "COMPACT almost-square ROUND-lobed upright ink splat with three low crown nubs, heavy wrinkled lids, single ivory lower tusk. Offended teeth-clenched sideways stare. Both goo hands hold ONE enormous old copper ALARM CLOCK with fat bells and BLANK face with TWO physical hands only, no digits.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -161,8 +163,8 @@
       "prompt_auszug": "TALL broad upright rounded trapezoid ink blob, TWO strong sideways crown curls, lashes, THREE uneven upper teeth. One brow high and other eye narrowed, CLOSED compressed severe lower lip. Holds ONE thick old red PIPE WRENCH, short and beautifully rounded, no pipe maze.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -196,8 +198,8 @@
       "prompt_auszug": "SMALL lanky tilted ink bean, one springy crown nub, ONE enormous square lower tooth. Huge wide asymmetric eyes DOWN, crooked nervous lip. Carefully holds ONE massive black RUBBER WASHER with clear round hole as though it were the missing answer, no extra tools.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "verwirrt",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -231,13 +233,22 @@
       "prompt_auszug": "VERY WIDE low upright ink splat, three thick blunt crown lobes, two tiny upper fangs, thick heavy lower lip. Disapproving nearly closed WHITE/red/black eyes, CLOSED lip folded into a long pout. Hugs ONE short silver PIPE ELBOW fitted with ONE chunky brass pressure gauge, blank face/two thick hands only; compact self-contained prop.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
       "hits": null,
       "absurd": null
     }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
   ]
 }

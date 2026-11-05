@@ -2,9 +2,9 @@
   "schema": "kfb.slop-set/1",
   "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
   "date": "2026-11-05",
-  "status": "DRAFT",
-  "georg_status": null,
-  "design_status": "DRAFT_PENDING_GEORG",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
   "format": "STORY_TRIOS_R1",
   "grid": {
     "columns": 3,
@@ -25,8 +25,10 @@
   "production_record": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
   "cards": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/SLOP_CARDS_DESIGN.json",
   "intake": {
-    "eligible": false,
-    "status": "PENDING_GEORG"
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
   },
   "figuren": [
     {
@@ -56,8 +58,8 @@
       "prompt_auszug": "TALL curving upright ink pear, high flowing crown quiff, long lids/lashes, TWO offset ivory upper teeth. One eye blissfully shut and one sideways, strong curved closed lip. Holds ONE short beautifully rounded BRASS SAXOPHONE with thick curved bell and THREE large keys at own belly, mouthpiece clear of face.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -91,8 +93,8 @@
       "prompt_auszug": "VERY WIDE low heavy upright ink splat, three blunt crown lobes, single big lower tusk. Low patient half-lids, CLOSED solemn downturned lip. Hugs ONE compact fat WOODEN DOUBLE BASS with short neck and THREE thick strings, entire instrument at belly with NO endpin/floor, goo face/body dominant.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -126,8 +128,8 @@
       "prompt_auszug": "SMALL narrow tilted upright goo bean, one springy crown hook, FOUR tiny irregular upper teeth. Both WHITE/red/black eyes wide and asymmetric, delighted sideways clenched-tooth grin. ONE small copper-rimmed SNARE DRUM strapped LOW to own belly, ONE short fat wooden stick in each goo hand, no kit/stool.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -161,8 +163,8 @@
       "prompt_auszug": "BROAD upright triangular ink splat, THREE thick crown waves like soft goo mohawk, lashes, TWO big uneven lower teeth. Defiant furious OPEN underbite SHOUT, one eye squeezed, no tongue. Holds ONE fat old black MICROPHONE with copper stem at belly, no stand or cable.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -196,8 +198,8 @@
       "prompt_auszug": "TALL thin stooping-but-UPRIGHT bean, long drooping crown lobe, ONE off-centre upper ivory fang. Suspicious concentrated crosswise gaze, CLOSED lip biting tooth. Hugs ONE short rounded battered mustard ELECTRIC GUITAR with plum pickguard and THREE fat strings, no amp/cables.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "unzufrieden",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
@@ -231,13 +233,22 @@
       "prompt_auszug": "VERY ROUND low upright ink dumpling, TWO tiny side crown nubs, large soft lower lip and THREE sparse upper teeth. Enormous delighted open tooth LAUGH, one eye shut, NO tongue. Holds ONE dented upside-down steel BUCKET as a small belly drum, ONE short fat wooden kitchen spoon for striking, no floor.",
       "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
       "haltung_vorschlag": "kaempferisch",
-      "georg_status": null,
-      "design_status": "DRAFT_PENDING_GEORG",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
       "hits": null,
       "absurd": null
     }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
   ]
 }
