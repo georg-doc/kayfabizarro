@@ -1,3 +1,7 @@
+# ADDITIVE GEORG MOUTH / INHERITANCE STEERING · 2026-11-05
+
+For future Slop generations: visible teeth emerge from inside the mouth; lower teeth sit behind/above the lower lip, upper teeth descend from upper gum/roof. Never attach a tooth to outside/below a thick protruding lower lip. In a completely closed mouth, omit visible teeth unless emergence is anatomically unambiguous. Plan new mouth/pose choreography per sheet to reduce inherited slot-specific expressions. Georg explicitly accepts current family-doctor set despite bottom-right lip/tooth issue; MINOR_TUNE_LATER, no retroactive image rejection or unrequested repair.
+
 # ADDITIVE GEORG VARIATION STEERING · 2026-11-04
 
 Watch recurring slot-specific expression inheritance across families, especially top-right round mouth and bottom-right protruding tongue. This is not automatically a material/style FAIL; prioritize consistency PLUS unique silhouettes, acting and offbeat tactile claymation appeal. Plan fresh face/pose choreography and move gender/expressions across cells; do not template all rows. Use fresh independent jobs conditioned on original references, not iterative generated style parents. Current native image tool does NOT expose seed input or seed receipts: state that limitation; never claim controlled seed variation. A two-job/twelve-character experiment is two generated3x2 sheets, not twelve independent jobs or proof of causal seed effects.

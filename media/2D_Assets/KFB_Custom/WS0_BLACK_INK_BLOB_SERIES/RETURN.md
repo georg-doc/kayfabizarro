@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Classic family doctors Georg PASS / lip rule
+
+Georg accepted all6classic primary-care Slops.64PASS sheets/384depictions;62eligible/372depictions. Bottom-right Dr.Nachschrift tooth/lower-lip placement logged as MINOR_TUNE_LATER_NON_BLOCKING; no current image changed or PASS revoked. SOP additive steering captures correct tooth emergence above/behind lower lip, and fresh expression/pose choreography. Next authorized output: six senior/retired/grandparent Ink Slops, varied ageing quirks/minor ailments/personality/outfits,2female-read. Source-only IDs/textDESIGN; technical alpha/isolation/master holds unchanged. Same WSA owner/branch/PR469; no game/Library publication claim.
+
+---
+
 # Current WSA update · 2026-11-05 · Classic family doctors six-sheet candidate
 
 One native original-reference-conditioned job: six civilian primary-care/internal-medicine Slops, old-school country GP/patient family physician/meticulous internist/strict general-throat examiner/reflex-checkup enthusiast/absent-minded prescription GP,2female-read. Whole upright footless ink anatomy retained with shared short open white-coat panels, pockets and muted collars. All actual white-red-black eyes unobscured; forehead mirrors metal discs above brows. Four mirrors generated versus planned2, added to internist/prescription GP; visible variation recorded. Six source-only IDs/cards/individual DESIGN biographies, family Gemeinschaftspraxis Befund & Bedenken. No emergency gear/military theme, patient scene, real clinician likeness or clinical instruction. No pair/state/trio/medical-stat or canonical role binding.
