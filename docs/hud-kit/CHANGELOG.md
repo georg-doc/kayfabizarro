@@ -103,3 +103,10 @@ Six native cuts6Fluff/4radio each now succeed; unchanged sources,12baseline imag
 - Explicit verdict: “das ist kein design, das ist wieder ein FAIL.” R14 is not an accepted integrated HUD; do not import its candidate art/data/patch as approved.
 - SOP/Return/QA and PR recommendation corrected; technical/static evidence does not override the human design FAIL. No automatic further generation from the same approach.
 - Originals and independent R11 cutter fixes preserved. No game write or blind recipient rollback; recipient adoption unverified. Withdrawal notice: https://github.com/georg-doc/kayfabizarro/pull/468#issuecomment-6648872748.
+
+
+## 2026-11-05 · R15 · complete Retro first, then Georg approval
+- New explicit user scope: original appropriate parts + missing new parts; flat upper bar with side motif; same whole-panel frame construction for Action-Bar; onecompleteSkin→approval→otherSkins. R14 remains rejected,notparent.
+- Retro38partpairs and five reviewboards: source-conditioned lateral header2172native→1472×159;originaldrawer;whole original panel master for carriers/windows;original controls/X;matching radio-open casing/functional strap hinges;actual shared gameHeroShots/baseglyphs/freeKitglyphs/Fluffs. One newImageGenjob,nootherSkins.
+- Cutter warnings[],6Fluff/4Radio,1476runtime. Lossless/alpha/state/raster checks and78byte-identical portable parts. Independent readonlycritic routesCONTINUE_TO_GEORG_RETRO_GATE,notdesignacceptance.
+- Dropbox reviewpacketCOMPLETED id:KeQLaY5-IIAAAAAAAA7iAQ;28614349bytes;218files;SHA256b8daef6a75a5bf0effd6c7d5fc38ea024609bc982c7d13f5437c2aadbaa3a1c2. NextonlyGeorgRetroapproval;noautofanout/import/gamewrite/merge/Live.
