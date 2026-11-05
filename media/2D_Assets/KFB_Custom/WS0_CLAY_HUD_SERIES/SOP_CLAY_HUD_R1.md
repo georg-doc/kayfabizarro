@@ -1,3 +1,19 @@
+# CURRENT · GEORG DESIGN FAIL · ACTION BUTTON FACES · 2026-11-05
+
+**Binding latest Georg correction:** The displayed action buttons are REJECTED. A skinned supporting bar beneath generic cream/white circular discs does not deliver the requested concept. Preserve the existing six skins: the bar/frame carries the skin (e.g. Reactor Blue blue frame); the button faces on it are simple slightly rounded RECTANGLES with skin-appropriate styling and NO individual border/rim/socket. Transparent isolated glyphs/actual-object Hero-Shots lie directly on those faces. No white circles, circular badges, extra icon plates or new skin design. Skin the HUD surfaces/elements, never the400+prop/weapon/gear content catalog. Prior references to “flache runde Scheiben” are superseded by this explicit correction.
+
+**Confirmed implementation cause:** receiving georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1 head0fc20677f4aa530851e7de2cd6e4de4ab6de98f4, src/hud/hudV6.js line55 defines .v6s with border-radius:50% and fixed cream/white normal/hover/pressed/off fills. Line256 independently gives the cooldown layer border-radius:50%. R9 action_surface loads the skin below these generic faces; that alone is insufficient. Current HUD_HEAD_WS1.md describes round discs and technical matrix success, which do not constitute Georg's design approval. This diagnosis is from exact current source; no new game/browser test performed here.
+
+**Correction owner:** Kartenkante remains the ONLY runtime writer. Replace the circular face styling and cooldown mask together, resolve surface/state styling from the existing chosen skin, and keep the glyph/content image neutral. Same face language for main actions, separate travel and weapon/travel choices; retain fixed positions, content size/padding, empty context behavior and stable hitboxes. Hover/focus/pressed/cooldown must preserve rounded-rectangle shape and readable content; no extra outline/frame. Do not re-render icons or alter R11 Teal/Hazard cuts, which are an independent completed cutter correction.
+
+**Current status:** design FAIL recorded, repair NOT IMPLEMENTED by this chat. Technical source selection/pixel checks of R9/R11 remain valid within their limits; all-six action-button visual acceptance is WITHDRAWN/PENDING correction. WSA supplies authoring guidance; it has no runtime-write right under HUD_CONTRACT_R1 §8.
+
+**One next gate:** Kartenkante corrects the existing renderer and presents Reactor Blue in the actual HUD (normal, hover, pressed, empty context) so the blue frame, skin-appropriate rounded rectangles and bare shared icons are visible together. Apply the same existing skin mapping to the other five and include the correction in the owning acceptance cycle. No parallel game-test matrix from this chat, no new layout, asset batch or seventh skin.
+
+---
+
+## Historical delivery checkpoints · not design acceptance of rejected button faces
+
 # CURRENT · HUD CUTTER R11 · TWO KNOB CORRECTIONS · 2026-11-05
 
 WS0 via Georg narrows this delivery to Teal arrow scale and Hazard arrow-plate selection. Existing six-skin/action-surface integration is owned by Kartenkante; its current in-game six-skins × sizes check must NOT be duplicated. Earlier R10 restart/resume and acceptance TODOs below are historical, not instructions to restart gameplay testing here.
