@@ -1,3 +1,11 @@
+## 2026-11-05 · KFB Living Cards / HyperCard Story Stacks — Georg-approved concept research
+
+- Georg approved the HyperCard-style card-stack/linked-storytelling principle for KFB **planning/conception**, plus a **separate DocCheck interactive-medical-case research line**; no runtime or third-party dependency approved.
+- Researched Ren'Py, Eliot Gardepe's CC BY-NC-SA Ren'Py Hypercard UI pack, original HyperCard concept, Twine, ink/inkjs, H5P Branching Scenario and Adapt with browser/license implications. **Preferred KFB UX donor:** Twine/HyperCard card-link authoring; **JS interpreter candidate:** inkjs; **no** Ren'Py/runtime/UI-pack adoption.
+- KFB source refs anchored to true Card Registry/Almanac, ChatterBox PR #305/#310, Four-Island Story Recovery and R4 FAIL. DocCheck research reuses existing `DC MicroLearning WS1` Living Doc; no cross-product runtime/brand.
+- Docs and evidence: `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/{RESEARCH,DOCHECK,WS0_MESSAGE,TEST_REPORT,RETURN}.md`. 10/10 existing internal source-path checks, 4/4 initial research/evidence doc readbacks, 0 runtime/browser/deployment tests.
+- Draft PR **#470** on `research/hypercard-story-stacks-kfb-doccheck-2026-11-05`; **WS0 handoff issue #471**. Next gate is WS0 concept intake (later one pinned source-card example), not a new KFB Runtime/Stage or DocCheck implementation authorization.
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.
