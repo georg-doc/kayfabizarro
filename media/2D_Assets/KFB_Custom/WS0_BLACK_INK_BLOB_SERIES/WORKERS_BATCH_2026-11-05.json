@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-05",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 5,
     "depictions": 30,
@@ -18,8 +18,8 @@
       "manifest": "WORKERS_FIRE_6_2026-11-05/MANIFEST.json",
       "sha256": "f945e1e2cf40f390f87f6ee23a2296777e237ed295f788690b3552c974bd37d3",
       "git_blob_sha": "0fd30d653dc2445695d36170ae49e337d29ae489",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "BUILD",
@@ -27,8 +27,8 @@
       "manifest": "WORKERS_BUILD_6_2026-11-05/MANIFEST.json",
       "sha256": "cbc2a00aee74467156c2a97ecf7ac9d0c82eae723ef48695ca386bd49a671e8f",
       "git_blob_sha": "f7bc790cebd5702d82888c24d2e6816546561445",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "PLUMB",
@@ -36,8 +36,8 @@
       "manifest": "WORKERS_PLUMB_6_2026-11-05/MANIFEST.json",
       "sha256": "93fe511a808f5900d603d596d3e5247a2d9ddbf8aa1b8da9339a052483813bf5",
       "git_blob_sha": "62de5c9db46c6a4d2cc3b49642ceb095386ffb2d",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "DOCK1920",
@@ -45,8 +45,8 @@
       "manifest": "WORKERS_DOCK1920_6_2026-11-05/MANIFEST.json",
       "sha256": "09d59b94b763ed1ccbc715ae261c274ad4a11535c06dc56d610652c091059643",
       "git_blob_sha": "ef9cfe73d3e3f7d8d284b1fe98ccd7fd85175643",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "STRIKE1920",
@@ -54,8 +54,8 @@
       "manifest": "WORKERS_STRIKE1920_6_2026-11-05/MANIFEST.json",
       "sha256": "337e7c0282f43ace054d8a7d73497ca3e7d75bd6094e687d226c56ad82d61009",
       "git_blob_sha": "91d4c5596dc14b104fda1d3562f4ebe2ba1b788c",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
   "notes": [
@@ -63,5 +63,6 @@
     "Exact prompts/style-reference paths in each production record",
     "Historical labour/strike settings freely inspired by1920s; no scenelets",
     "All prose/card drafts DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }

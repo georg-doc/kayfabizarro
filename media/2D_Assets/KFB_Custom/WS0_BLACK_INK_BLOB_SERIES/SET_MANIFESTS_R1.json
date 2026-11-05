@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 73,
-    "pass_depictions": 438,
+    "selected_sheets": 78,
+    "pass_depictions": 468,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 71,
-    "intake_eligible_depictions": 426,
-    "other_authoring_depictions": 318
+    "intake_eligible_sheets": 76,
+    "intake_eligible_depictions": 456,
+    "other_authoring_depictions": 348
   },
   "excluded_sources": [
     {
@@ -507,49 +507,48 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_WORKERS_FIRE_20261105",
       "manifest": "WORKERS_FIRE_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_WORKERS_BUILD_20261105",
       "manifest": "WORKERS_BUILD_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_WORKERS_PLUMB_20261105",
       "manifest": "WORKERS_PLUMB_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_WORKERS_DOCK1920_20261105",
       "manifest": "WORKERS_DOCK1920_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_WORKERS_STRIKE1920_20261105",
       "manifest": "WORKERS_STRIKE1920_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 5,
-    "depictions": 30,
-    "identities": 30,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

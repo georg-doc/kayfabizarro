@@ -1,3 +1,9 @@
+# WSA Return · Five worker families PASS; trades across eras authorized · 2026-11-05
+
+Georg accepts all5 worker sheets/30 designs. Manifest and biography intake flags updated; prose remains DESIGN, minor prop notes/technical holds retained. Accepted78 sheets/468 depictions; eligible76/456. Existing WSA source owner, assets/ws0-ink-miners-2026-11-04, draft PR469. New bounded outcome:6 independent6-actor sheets mixing historical,current and sci-fi versions within each family: miners/oil drillers,bar/cocktail staff,waiters/servants,cleaning staff,butchers,bakers/pastry chefs. Each2 female-read. All new candidates await Georg; no merge/runtime/Library claim. New miners are distinct candidates, not a retroactive PASS for old excluded miners. Next step: source-conditioned production and archival.
+
+---
+
 # WSA Return · Five worker families generated · 2026-11-05
 
 Owner WSA; repo georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome:5 independent6-actor landscape transparent source sheets /30 authoring identities. Families: firefighters, construction crew, plumbers,1920s factory/dock labour,1920s strikers. Each2 female-read;10 total. Each actor has source-only ID/name,logical cell,role/accessories,prompt excerpt,DESIGN card,individual English biography and dry German FrizzleBob note,shared family only with no invented pair/trio/tier bindings.
