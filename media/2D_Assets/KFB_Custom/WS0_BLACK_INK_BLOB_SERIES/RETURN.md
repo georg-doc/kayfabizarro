@@ -1,3 +1,21 @@
+# Current WSA Return · 2026-11-05 · Everyday career tiers
+
+Owner WSA · georg-doc/kayfabizarro · assets/ws0-ink-miners-2026-11-04 · draft PR469.
+
+Georg accepted the preceding RPG class batch as a concept variant at35b41f58f007e49db586d7d9c8c5ac705ee3709a. Accepted source39sheets/234depictions,37sheets/222depictions intake-eligible. Standing International Couples exclusion retained; Miners FAIL/TUNE excluded. These counts overlap receiving roster counts and must not be added.
+
+New CAREER_TIERS_36_2026-11-05: six sheets, twelve career identities×three stages=36depictions. Medicine/nursing, kitchen/tradecraft, education/science, office/judiciary, transport/retail, media/administration. One female and one male identity per sheet, three depictions each. All new manifests DRAFT, Georg-statusnull, intakefalse. Names/cards/voices/FrizzleBob notes DESIGN, authoring IDs only. Career level does not assign combat stage/hits/absurdity; these remainnull.
+
+Implementation checkpoint8e44df25772c50b86367b547b5a7231a104994e5:46files,6native generation jobs plus1native layout edit;7PNG versions retained/6selected. Original freche-family/professions PNGs used in every new call; R2 edit used only its R1 target. Model/seed not exposed.39exact text readbacks and7byte-identical PNG comparisons complete. Six selected1536×1024RGBA sources have clear visible cell seams. Reviewed at64/96/160/192px and on light/dark/checker. Transport/retail R2 selected; R1 preserved.
+
+Limitations: selected native alpha interiors max254 with residual alpha1–3; normalization deferred. Small sculpt/teeth continuity changes and acting deviations documented in per-sheet QA. Medical/tool props have visual icon review, not instrument-functionality approval. No runtime/game fields, canonical IDs, Librarian publication, Stage, merge or Live changes.
+
+Changed career folder, SET_MANIFESTS_R1.json, CAREER_TIER_TRIPLET_FORMAT_R1.md and this Return. Earlier RPG acceptance changes retained. No new local Git worktree created.
+
+One next gate: Georg's design verdict on the six selected career sheets.
+
+---
+
 # Current update · 2026-11-05 · RPG concept variant accepted
 
 Georg accepted the six RPG class tier sheets as a concept variant. Source now 39 PASS sheets /234depictions,37sheets/222depictions intake-eligible. Cards remain DESIGN; technical notes retained. Same WSA owner, assets/ws0-ink-miners-2026-11-04, draft PR469. Next authorized outcome: twelve everyday career paths at three levels, six new sheets. No runtime, combat or catalogue publication claimed.
@@ -460,5 +478,6 @@ WS0 register `docs/kfb-decisions-register-2026-10-11` / DECISIONS.md holds decis
 
 ## Exactly one next gate
 **WS0:** use issue #466 to admit one actual six-actor `normie_a` low-level source sheet via existing Asset Librarian into the 72-actor receiving pipeline, prove alpha/96px, animate in existing `mobs2d`, show one real WS1 in-game bounce/hit/splatter/collision screenshot/clip with honest test counts. Do not merge/promote automatically. Georg action required now: **nothing**.
+
 
 

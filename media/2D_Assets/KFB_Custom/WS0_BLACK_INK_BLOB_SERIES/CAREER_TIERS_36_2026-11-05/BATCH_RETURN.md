@@ -11,3 +11,6 @@ Technical checks: six selected1536×1024RGBA PNGs, hashes, transparent pixels, o
 Career level does not automatically assign combat stage, hit points or absurdity. No runtime, game data, canonical mapping, Librarian publication, Stage, merge or Live changes.
 
 Next gate: Georg's design verdict on the six selected career sheets.
+
+## Archival evidence
+Implementation head 8e44df25772c50b86367b547b5a7231a104994e5.39exact text readbacks and7byte-identical PNG comparisons complete. Evidence/Return checkpoint follows.
