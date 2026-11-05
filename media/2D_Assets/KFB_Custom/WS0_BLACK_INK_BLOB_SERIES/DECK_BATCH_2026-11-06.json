@@ -3,7 +3,7 @@
   "owner": "WSA",
   "date": "2026-11-06",
   "started_date": "2026-11-05",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 4,
     "depictions": 24,
@@ -19,8 +19,8 @@
       "manifest": "DECK_KRIME_6_2026-11-06/MANIFEST.json",
       "sha256": "da79ae3c2a894c9aba9490e55690569bce66298474d6c61e7e5b8f62b6d768aa",
       "git_blob_sha": "168ef0383275dae584fddc923ff3389d039a8ae3",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "shadow_politics",
         "user_family_title": "Organized Kayfabe-Krime",
@@ -46,8 +46,8 @@
       "manifest": "DECK_COVERUP_6_2026-11-06/MANIFEST.json",
       "sha256": "155e0211290d5e33139fd5baf07a0e0c8a19eabc258b942deeea4f4210125d60",
       "git_blob_sha": "438c0a8966cc7b8b7b82ff2311f5f2555b6a3535",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "the_kayfabizarro_manifesto_cover_up",
         "user_family_title": "How To Stage A Cover-Up",
@@ -73,8 +73,8 @@
       "manifest": "DECK_MOVE1_6_2026-11-06/MANIFEST.json",
       "sha256": "2f3795ca8865862388e5966c8f626d37ed5aee68b8bbd9fb99f6704e1deb5d8c",
       "git_blob_sha": "0976f654d2d13934299700b63162a90b8a6b298f",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "the_move_1",
         "user_family_title": "THE MOVE 1",
@@ -100,8 +100,8 @@
       "manifest": "DECK_MOVE2_6_2026-11-06/MANIFEST.json",
       "sha256": "e9db6a40ddcdca492ee722e497c9ed022566c624ea3ea71cce6156ccfe8ec80c",
       "git_blob_sha": "8ab72643c9125875b3401f2879c74cc47401b5a4",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "the_move_id",
         "user_family_title": "THE MOVE 2",
@@ -127,5 +127,6 @@
     "Exact actual prompts/reference input roles in production records",
     "MOVE1/MOVE2 are user family labels; canon deck IDs retained despite similar registry titles",
     "All24 textual cards/backstories DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }

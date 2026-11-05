@@ -1,3 +1,9 @@
+# WSA Return · Four deck families PASS; philosophy/RPG batch authorized · 2026-11-06
+
+Georg accepts all4 deck-themed sheets/24 designs. Manifests and biography intake flags updated; prose stays DESIGN,technical holds retained. Accepted88 sheets/528 depictions;eligible86/516. WSA source owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New outcome5 six-actor deck-themed sheets:Academic Anarchy,Philosophical Kayfabe Theories,Plato's Dungeon Raids,Hero Set01,Full Class Roster. Exact5 user deck IDs and registry titles verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. User concepts creative inspirations,not exact-card bindings. Each2 female-read;all new candidates await Georg. Next step:source-conditioned generation and archival,no runtime/Library rebuild or merge.
+
+---
+
 # WSA Return · Four deck-themed Slop families generated · 2026-11-06
 
 Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Outcome4 six-actor source sheets/24 identities: Organized Kayfabe-Krime(shadow_politics),How To Stage A Cover-Up(the_kayfabizarro_manifesto_cover_up),user-labelled MOVE1(the_move_1),user-labelled MOVE2(the_move_id).24 user keywords treated as creative inspirations,not literal mandated card illustrations. Deck registry files read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae; exact title/ID/path/ref stored. MOVE IDs have similar canonical titles/content; user1/2 labels preserved,canon not renamed/merged. Cards have DESIGN thematic deck associations,exact card-number mapping null.

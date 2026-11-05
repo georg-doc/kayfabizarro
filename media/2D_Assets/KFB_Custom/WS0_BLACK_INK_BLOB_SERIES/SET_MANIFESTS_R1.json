@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 84,
-    "pass_depictions": 504,
+    "selected_sheets": 88,
+    "pass_depictions": 528,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 82,
-    "intake_eligible_depictions": 492,
-    "other_authoring_depictions": 384
+    "intake_eligible_sheets": 86,
+    "intake_eligible_depictions": 516,
+    "other_authoring_depictions": 408
   },
   "excluded_sources": [
     {
@@ -584,42 +584,41 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_DECK_KRIME_20261106",
       "manifest": "DECK_KRIME_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_DECK_COVERUP_20261106",
       "manifest": "DECK_COVERUP_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_DECK_MOVE1_20261106",
       "manifest": "DECK_MOVE1_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_DECK_MOVE2_20261106",
       "manifest": "DECK_MOVE2_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 4,
-    "depictions": 24,
-    "identities": 24,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
