@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Woodland clan six-sheet candidate
+
+One native original-reference-conditioned job: fictional Gallic/Germanic/Teutonic mixed woodland clan, six unique Slops,2female-read, loose roles chief/war-leader/elder/champion/scout/spoils-keeper. Entirely new characters with varied acting/props, two benchmark image paths supplied;6/6original hashes reverified.1536×1024RGBA unresized, no layout edit. Six source-only IDs/cards and individual DESIGN biographies. Family context names Stamm der Vorbehalte and records conceptual opposition to WSA_ROMAN_LEGION_20261105 as Georg-requested design context, not canonical faction or specific matchups. Each actor standalone, no pair/state/trio links inferred.
+
+Reviewed native, transparent checker and64/96/160/192QA. Whole visible heights475–503px. Explicit extraction horizontalcut513; topcolumns[0,520,1013,1536],bottom[0,522,1003,1536]. Row gutter3px atalpha<=16; exact cut safe but padded crop would intersect content. Alpha0..254/low-alpha residue and individual native catalogue-master gap remain holds. No fixed512crop, game sprite export, Library publication or canonical mapping.
+
+Roman6GeorgPASS persisted/verified atb6e68012959f819d7be5ba2348a2ce3b159dde00. Accepted source55sheets/330depictions;53eligible/318depictions. New clan1candidate sheet/6depictions DRAFT/intakefalse. Standing exclusions preserved, textDESIGN. Same WSA owner/source branch/PR469. Next gate: Georg design verdict on WOODLAND_CLAN_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Roman legion Georg PASS
 
 Georg accepted all6Roman legion Slops.55PASS sheets/330depictions;53eligible/318depictions. Source-only IDs and individual DESIGN biographies retained, technical alpha/extraction/catalogue-master holds unchanged. No receiving canonical mapping/game/Library visibility claimed. Next authorized output: one fresh six-character fictional Gallic/Germanic/Teutonic mixed barbarian clan, loose rank hierarchy, two female-read, original benchmark conditioning, conceptual opponents to Romans but independently usable. Same WSA owner/branch/PR469.
