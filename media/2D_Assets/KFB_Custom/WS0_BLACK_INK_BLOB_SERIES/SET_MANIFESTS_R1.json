@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 64,
-    "pass_depictions": 384,
+    "selected_sheets": 65,
+    "pass_depictions": 390,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 62,
-    "intake_eligible_depictions": 372,
-    "other_authoring_depictions": 264
+    "intake_eligible_sheets": 63,
+    "intake_eligible_depictions": 378,
+    "other_authoring_depictions": 270
   },
   "excluded_sources": [
     {
@@ -444,21 +444,20 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_SENIORS_20261105",
       "manifest": "SENIORS_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 1,
-    "depictions": 6,
-    "identities": 6,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
