@@ -1,3 +1,13 @@
+# Current update · 2026-11-05 · Western warriors Georg PASS / catalogue gap explicit
+
+Georg accepted all6selectedWesternwarriors; R2 remains selected.52PASS sheets/312depictions;50eligible sheets/300depictions. New6sourceidentities have individual DESIGN biography drafts. No canonical ID creation or game/Library import. Standing exclusions unchanged.
+
+Measured R1 meanvisibleheight494.17px → R2 426.83px, down13.63percent due layout repair, same1536×1024sheet. No separate high-resolution individual catalogue masters exist for this set. CATALOGUE_MASTER_STATUS.json records that gap; originalR1retained. Earlier source sheets are not collectively master-certified. Human image PASS is preserved independently from technical/master status.
+
+Next authorized output: one six-character landscape Confederate Civil War soldier Slop sheet, varied ranks/acting/props and2female-read. Use original benchmarks; preplan gutters and common body scale. WSA owner and source branch/PR469 retained.
+
+---
+
 # Current WSA update · 2026-11-05 · Western warrior six-sheet candidate
 
 Georg explicitly requested one landscape six-character Western warrior family. Native original-reference-conditioned generation +one targeted layout edit; both versions retained, selectedR2 1536×1024RGBA. Six unique upright footless actors, two female-read;6source IDs/cards/individual DESIGN biographies recorded before intake. No real nation or deck mapping assigned; no pair/state/trio relations inferred.
