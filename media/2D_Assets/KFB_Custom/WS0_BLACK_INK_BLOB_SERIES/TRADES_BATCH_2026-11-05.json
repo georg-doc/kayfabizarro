@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-05",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 6,
     "depictions": 36,
@@ -26,8 +26,8 @@
       "manifest": "TRADES_MINEROIL_6_2026-11-05/MANIFEST.json",
       "sha256": "bed0c1e1395477302617a34c5a2e22bbafbef3dbb8628daa0d58f7a9d2fcbe97",
       "git_blob_sha": "a3414d33917df4f90d20b6b16b9ca73ec68e94bf",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "BAR",
@@ -35,8 +35,8 @@
       "manifest": "TRADES_BAR_6_2026-11-05/MANIFEST.json",
       "sha256": "d35241e19e1cf661a9420dadb06a0fc13ce181dd86b3d798963f0b05f894df41",
       "git_blob_sha": "59af04fd24e3bfb43754cbbeecfd585d72494d4d",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "SERVICE",
@@ -44,8 +44,8 @@
       "manifest": "TRADES_SERVICE_6_2026-11-05/MANIFEST.json",
       "sha256": "f3430bdbf8b6525bee546db9a6de9ab416e1158bce58e320e5c332ab2d6be45f",
       "git_blob_sha": "ae5488e31a8ba1299dbd72973f73dc95983bda27",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "CLEAN",
@@ -53,8 +53,8 @@
       "manifest": "TRADES_CLEAN_6_2026-11-05/MANIFEST.json",
       "sha256": "802e01f0c36f6fbadfe87ac007510218734d519006965f85b481976fa8621f22",
       "git_blob_sha": "e5540d46b619a7071c75de9197647957d0fe6b17",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "BUTCHER",
@@ -62,8 +62,8 @@
       "manifest": "TRADES_BUTCHER_6_2026-11-05/MANIFEST.json",
       "sha256": "a594fb82f15aed4a5825111fc9dd45d25891e50aa4643e917a52efed00b1a739",
       "git_blob_sha": "75f4afba67ee92990a53f731a5c52383ffc0d4de",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "code": "BAKE",
@@ -71,8 +71,8 @@
       "manifest": "TRADES_BAKE_6_2026-11-05/MANIFEST.json",
       "sha256": "2dac98cba7791255fff56f7af367b8ec744ba36ca8ca1cbcb5ed4535506aec53",
       "git_blob_sha": "4406c5ec7627d54fcf56e034e56f8acb29946955",
-      "georg_status": null,
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
   "notes": [
@@ -81,5 +81,6 @@
     "New miners do not supersede rejected historical miners",
     "Bake chocolatier intended male has ambiguous lid/lash styling; see QA",
     "All prose/card drafts DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }

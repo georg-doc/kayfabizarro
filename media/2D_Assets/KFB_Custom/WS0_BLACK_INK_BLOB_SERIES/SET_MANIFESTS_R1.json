@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 78,
-    "pass_depictions": 468,
+    "selected_sheets": 84,
+    "pass_depictions": 504,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 76,
-    "intake_eligible_depictions": 456,
-    "other_authoring_depictions": 348
+    "intake_eligible_sheets": 82,
+    "intake_eligible_depictions": 492,
+    "other_authoring_depictions": 384
   },
   "excluded_sources": [
     {
@@ -542,56 +542,55 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_TRADES_MINEROIL_20261105",
       "manifest": "TRADES_MINEROIL_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRADES_BAR_20261105",
       "manifest": "TRADES_BAR_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRADES_SERVICE_20261105",
       "manifest": "TRADES_SERVICE_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRADES_CLEAN_20261105",
       "manifest": "TRADES_CLEAN_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRADES_BUTCHER_20261105",
       "manifest": "TRADES_BUTCHER_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRADES_BAKE_20261105",
       "manifest": "TRADES_BAKE_6_2026-11-05/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

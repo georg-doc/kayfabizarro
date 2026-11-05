@@ -1,3 +1,9 @@
+# WSA Return · Six trades PASS; four deck families authorized · 2026-11-05
+
+Georg accepts all6 trades-across-eras sheets/36 designs, including recorded minor nuances. Manifests and biography intake flags updated; prose stays DESIGN and technical holds retained. Accepted84 sheets/504 depictions; eligible82/492. Existing WSA source owner, assets/ws0-ink-miners-2026-11-04, draft PR469. New bounded outcome:4 six-actor sheets tied thematically to user-provided deck IDs shadow_politics,the_kayfabizarro_manifesto_cover_up,the_move_1,the_move_id. User archetype lists are creative inspirations,not required literal card mappings. Actual registry files verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Both MOVE IDs have similar canonical titles/content; retain user labels MOVE1/MOVE2 without merging or renaming deck canon. All new candidates await Georg. Next step: source-conditioned visual production and archival. No runtime/Library rebuild or merge.
+
+---
+
 # WSA Return · Six trade families across eras generated · 2026-11-05
 
 Owner WSA; georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR469. Product outcome:6 independent6-actor transparent landscape sheets/36 authoring identities: miners/oil drillers,bar/cocktail workers,waiters/servants,cleaners,butchers,bakers/pastry chefs. Every sheet deliberately mixes2 historical,2 present-day,2 sci-fi types,with explicit era_variant per actor. Six distinct identities,not evolution levels/twins. Cast intent2 female-read per sheet,12 total; bake lower-left chocolatier intended male but lash/lid styling can read ambiguously. This visual nuance is recorded for Georg,not relabelled silently.
