@@ -22151,6 +22151,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1509",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "FAIL",
+   "text": "Georg q530 zum Ladebildschirm R5: Deformer-Formen schlampig, ohne Mentalmodell, Knicke gehen fuer Stoff gar nicht (Vorhang wie immer FAIL). Konzept/Ablauf/Kit bleiben. Entscheidung WS0: kein Deformer mehr fuer Stoff; echte Stoff-Simulation in Blender (WSB) als RGBA-Bildfolge, WSV schreibt Mentalmodell (Aufhaengung, Schwerkraft, weiche durchgehende Falten, Taille an der Kordel, schwerer Rock, Timing) als Vorgabe. WSA Combat Briefing b335: nur Waffen-Logik und Ereignisse (combat-events r1), Adapter combatFx/combatSfx, keine eigenen VFX/Klaenge. WS-Design Fassade Runde 2 @95893251 (20-m-Woerter knapp PASS, Bresche mit lesbarer zensierter Karte PASS, Schramme FAIL) noch nicht im Hub; dynamischer Import fassadeVorfuellen/Vorwaermen nur ueber cascade/r4/runtime.js.",
+   "values": {},
+   "owner": "WSV · WSB · WSA Combat · WS-Design",
+   "check": "q530, b335",
+   "source": "Georg q530",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
