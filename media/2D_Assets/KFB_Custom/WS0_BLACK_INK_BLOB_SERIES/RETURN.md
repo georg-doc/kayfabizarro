@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Clown troupe six-sheet candidate
+
+One native original-reference-conditioned job: six distinct classic comic archetypes Auguste, female white-clown, Pierrot, female Venetian Colombina, Harlequin and court fool.2female-read, whole upright footless ink anatomy, actual white-red-black cartoon eyes uncovered. Only one low-held half-mask; marotte dummy is wooden inanimate prop, not seventh actor. Actual Veteran+RPG style paths supplied,6/6reference hashes verified. Six source-only IDs/cards/individual DESIGN biographies and per-actor humour_modes preserve slapstick/perfectionism/melancholy/social wit/trickster timing/sardonic authority critique. Free ensemble, no performer likeness or exact costume reconstruction, no pair/state/trio/tier links inferred.
+
+1536×1024RGBA unchanged; one job/no resize/layout edit. Native/checker and full-sheet64/96/160/192-per-logical-cell QA viewed. No final individual crops created. Technical isolation diagnostic found no safe straight global row cut atalpha<=16: full-window minimumpeak252, left-column minimumpeak204. Therefore no safe fixed512/one-row-cut rectangles asserted. Deferred contour-mask extraction seam, not a global design FAIL; retain source body size and continue sheet outcome. Alpha0..254/low-alpha residue and individual native catalogue-master gap remain holds. Native PNG Git blob equals local original bytes. No game sprites, receiving canonical mapping or Library publication.
+
+Previous Greek philosopher6GeorgPASS persisted/verified at3e70dc99c1456b53d8bb7b05687749507c301d9b. Accepted source59sheets/354depictions;57eligible/342depictions. New clown1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions retained. Same WSA branch/PR469. Next gate: Georg design verdict on CLOWN_TROUPE_6_2026-11-05/sheet-r1.png; future individual extraction must use validated contour masks.
+
+---
+
 # Current update · 2026-11-05 · Greek philosophers Georg PASS
 
 Georg accepted all6Greek philosopher-inspired Slops and requested check-in.59PASS sheets/354depictions;57eligible/342depictions. Source-only IDs/individual DESIGN biographies and scholarly motif notes retained. Epikura remains explicitly a fictional female-read Epicurean persona, not historical Epicurus gender. Alpha/extraction/master holds unchanged; no game/Library visibility claimed. Next authorized output: fresh six-character iconic clown/harlequin/Venetian clown/court-jester family with distinct humour,2female-read, transparent3x2sheet. Same WSA owner/branch/PR469.
