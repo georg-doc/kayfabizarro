@@ -75,3 +75,10 @@ Six native cuts6Fluff/4radio each now succeed; unchanged sources,12baseline imag
 - Teal native knob204×86 with runtime129×55 and corrected anchor; Hazard native261×226 arrow plate with runtime82×72. Retain native pixels and ≤2px alpha; no generation/upscale.40other runtime raster images unchanged.
 - Six one-call CPU cuts, two negative cases, isolated patch application and fresh ZIP hash/rebuild checks pass. No duplicated gameplay/browser tests; Kartenkante owns current six-skin × sizes acceptance.
 - Completed Dropbox R11 MixedBag id:KeQLaY5-IIAAAAAAAA7ffQ;23295824bytes;67files;SHA256 f15c6a2eba8341cc19d82be769cf8fedfddcae664997b4c1f1e19ccf739e81f0. SOP/QA/Return updated in draftPR468; no merge/Live/Stage change. Next gate: Kartenkante imports only corrected knobs/data and patch into its existing cycle.
+
+
+## 2026-11-05 · R12 · borderless skin action faces delivered
+- Replaced rejected white-circle concept with a new native gray clay rounded-rectangle master and24role PNG/WebP exports in the six existing palettes. Shared object/glyph content remains separate; four role aliases intentionally use identical face pixels per skin.
+- Export288×244 from isolated1009×855, alpha≤2px, no face upscale or extra frame. Modular face+R9bar supports dynamic choices; main four fixed roles unchanged.
+-24lossless checks and24byte-identical portable rebuilds pass; ZIP74internal hashes verified. Local six-skin/1,4,6,8layout proofs are not game acceptance.
+- Completed Dropbox R12 ZIP id:KeQLaY5-IIAAAAAAAA7f_g;6131677bytes;75files;SHA256898c56e80a48635f68f9d5aecc0da18185bad344e98e7dc0c270e993ab89ccb4. SOP/QA/Return persist concrete import and renderer instructions. Next gate: Kartenkante face/cooldown repair plus blue actual-HUD proof in existing runtime cycle. No game edits/tests or merge by authoring chat.
