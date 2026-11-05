@@ -1,3 +1,15 @@
+# Current WSA update · 2026-11-05 · Greek philosopher six-sheet candidate
+
+One native original-reference-conditioned job: Socrates, Plato, Aristotle, Diogenes, Hypatia and fictional female-read Epicurean persona Epikura. Six unique whole upright footless ink Slops/2female-read, white-red-black eyes. This is personality/idea-based free interpretation, not exact portraits or historically simultaneous gathering. Historical Epicurus was male; Epikura female reading explicitly creative. Actual Veteran+RPG style paths supplied,6/6benchmark hashes verified. Six source-only IDs/cards/individual DESIGN biographies; original HyperNorm lore separated from historical/philosophical claims.
+
+PHILOSOPHY_MOTIFS_AND_SOURCES.json preserves scholarship-derived motifs with explicit access scopes: SEP Socrates/Plato/Aristotle/ancient ethics/Epicurus and Oxford Hypatia search excerpt (full page inaccessible). Jar/lamp and simple bread/water cues checked; Plato upward gesture, Aristotle leaf and Hypatia ring model are visual metaphors, not claimed personal objects/inventions or complete doctrinal summaries. No KFB faction, marriage, trio, difficulty or canonical ID assignment.
+
+1536×1024RGBA unchanged; one image job/no resize/layout edit. Native/checker and64/96/160/192QA reviewed. Visible whole-figure heights456–497px. Explicit extraction horizontalcut508; topcolumns[0,524,998,1536],bottom[0,514,1003,1536]. Exact cut clear, padded4pxrow seam reachesalpha17; fixed512cuts/padded automatic extraction unsafe. Alpha0..254 and low-alpha residue/master gap remain holds. Native PNG Git blob matches local original bytes. No game sprites or Library publication.
+
+Previous Odyssey6GeorgPASS persisted/verified at2627ff8b313c224dc76297666aea9cfeaf9dfbad. Accepted source58sheets/348depictions;56eligible/336depictions. New philosopher1candidate sheet/6depictions DRAFT/intakefalse, textDESIGN; standing exclusions retained. Same WSA branch/PR469. Next gate: Georg design verdict on GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Odyssey Georg PASS
 
 Georg accepted all6Odyssey-inspired Slops.58PASS sheets/348depictions;56eligible/336depictions. Source-only IDs, literary-inspiration relationships and individual DESIGN biographies retained; no automatic canonical marriage/faction/game binding. Technical alpha/extraction/master holds unchanged. Next authorized output: one six-character ancient Greek philosopher-inspired family, iconic personalities/ideas while retaining whole ink anatomy and2female-read. Same WSA source owner/branch/PR469; no game/Library publication claim.

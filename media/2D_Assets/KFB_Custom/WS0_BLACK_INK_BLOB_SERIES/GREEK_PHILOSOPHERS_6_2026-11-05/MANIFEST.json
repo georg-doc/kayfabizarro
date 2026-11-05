@@ -1,0 +1,366 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GREEK_PHILOSOPHERS_20261105",
+  "date": "2026-11-05",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "explicit_extraction_rects_required": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+    "sha256": "fefaa66ddcc9de403484cc4d7e4cd1e52528fd9817167a4ef8759dcc4ac593fd"
+  },
+  "production_record": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "GREEK_PHILOSOPHERS_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "GREEK_PHILOSOPHERS_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "group_context": "Six standalone satirical Greek philosophy personality and idea costume archetypes. No historical likeness, canonical deck mapping or inferred pair/trio relations.",
+  "figuren": [
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sokrates Rückfrage",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          0,
+          524,
+          508
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "bald ink crown with ivory side tufts",
+        "short split clay beard curls",
+        "ochre shoulder scrap",
+        "small terracotta cup"
+      ],
+      "prompt_auszug": "SOCRATES, MALE-READ persistent questioner. Very broad low barrel blob, bald domed crown with TWO tiny ivory clay hair tufts at sides, short split white clay chin curls framing mouth. Small faded ochre shoulder scrap. Huge unequal white eyes look at viewer, one brow high and other low, deeply inquisitive almost CLOSED crooked mouth, one large off-center upper tooth, lower lip pushed thoughtfully forward. One goo hand under OWN chin, other holds ONE plain small TERRACOTTA CUP low against belly. The cup is unlabelled, no drinking action, no death scene. Curious calm insolence rather than anger. No human nose.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_01",
+        "source_figure": "Socrates",
+        "concept": "persistent questioning",
+        "visual_anchor": "chin gesture and plain cup"
+      }
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Platon Überbau",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "ausschnitt_px": [
+          524,
+          0,
+          998,
+          508
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short ivory chin curls",
+        "violet shoulder fold",
+        "rolled cream scroll",
+        "upward blunt-finger gesture"
+      ],
+      "prompt_auszug": "PLATO, MALE-READ delighted idealist. Tall tapering pear blob with one elegantly coiled crown lobe, three SHORT ivory clay beard locks at chin edge, small muted violet shoulder fold and plain bronze clasp. White eyes gaze UP asymmetrically, one lid wide and other narrowed, eyebrows in uneven hopeful arches, shallow sideways smile with two tiny unequal teeth. Holds ONE rolled cream SCROLL at belly. Other tiny goo hand raises ONE blunt rounded finger upward beside own head, entirely inside cell. Thoughtful upward gesture, no diagram, text, extra book or human torso.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_02",
+        "source_figure": "Plato",
+        "concept": "ideal forms",
+        "visual_anchor": "upward gaze/finger and scroll"
+      }
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Aristoteles Einsort",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "ausschnitt_px": [
+          998,
+          0,
+          1536,
+          508
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short brown clay beard curls",
+        "red shoulder sash",
+        "wood-framed wax tablet",
+        "single green leaf specimen"
+      ],
+      "prompt_auszug": "ARISTOTLE, MALE-READ determined classifier. Near-square thick lobed blob with THREE low crown nubs, two short brown clay beard curls at face edge, short faded red cloth sash. Skeptical downward inspection: one white eye very round and other compressed, heavy crooked brow, CLOSED pinched lip and one small lower tooth. Holds ONE small WOOD-FRAMED WAX TABLET low across belly, one single large green LEAF specimen laid on the plain wax and steadied by a goo fingertip. Other hand touches a corner as if finding its proper category. No writing, microscope, magnifier or book pile.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_03",
+        "source_figure": "Aristotle",
+        "concept": "nature/investigation/classification",
+        "visual_anchor": "leaf specimen and tablet"
+      }
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Diogenes Unzuständig",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          508,
+          514,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "patched brown shoulder cloth",
+        "small antique bronze oil lamp",
+        "miniature chipped terracotta storage jar"
+      ],
+      "prompt_auszug": "DIOGENES, MALE-READ irreverent minimalist. Crooked wide bean blob with one long drooping crown lobe, two short scruffy ivory clay beard tips at mouth sides, tiny patched brown shoulder cloth, no full robe. Defiant amused disbelief: unequal huge white eyes glance SIDEWAYS, one squinting, very crooked open laugh with three widely spaced irregular teeth and enormous lower lip. Holds ONE small antique BRONZE OIL LAMP up beside own cheek, shallow rounded bowl, short spout and a tiny solid clay gold flame. Other hand hugs ONE MINIATURE CHIPPED TERRACOTTA STORAGE JAR against own belly, comically portable home. Jar does not enclose body or hide whole figure; no barrel/legs, no ground or scene.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_04",
+        "source_figure": "Diogenes",
+        "concept": "independence/frugality/challenge to convention",
+        "visual_anchor": "lamp and miniature storage jar"
+      }
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hypatia Umlauf",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "ausschnitt_px": [
+          514,
+          508,
+          1003,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ivory hairband",
+        "short dark clay curls",
+        "teal shoulder fold",
+        "simple brass ring model",
+        "short wooden stylus"
+      ],
+      "prompt_auszug": "HYPATIA, FEMALE-READ absorbed mathematical/astronomical thinker. Tall soft wavy-edged pear blob, simple ivory hairband pushed back, one compact dark clay curl and subtle lashes, short muted teal shoulder fold. Intense delighted concentration: one enormous white eye focuses DOWN and opposite eye squints, raised inner brow and asymmetric small open mouth with two tiny offset teeth. Holds ONE SIMPLE handheld BRASS ARMILLARY MODEL at belly: three thick rounded intersecting rings with one central ball on a short stem gripped by goo hand. Other hand points ONE short fat wooden STYLUS at own model. Exactly three simple coherent rings, not elaborate machinery, no labels, pedestal/floor, stars or cosmic scenery.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_05",
+        "source_figure": "Hypatia",
+        "concept": "mathematical and astronomical inquiry",
+        "visual_anchor": "simple three-ring model and stylus"
+      }
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Epikura Genug",
+      "bild": {
+        "datei": "GREEK_PHILOSOPHERS_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "ausschnitt_px": [
+          1003,
+          508,
+          1536,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "tiny olive-leaf pin",
+        "small cream shoulder fold",
+        "plain bitten bread roll",
+        "unadorned water cup"
+      ],
+      "prompt_auszug": "EPICUREAN / EPICURUS-INSPIRED FEMALE-READ SLOP, contentment in modest things. Round compact soft dumpling splat with two little curled crown lobes, subtle lashes and a tiny olive-leaf pin at side, small cream shoulder fold, no crown or long hair. Profound unhurried satisfaction, gently unequal half-lidded WHITE/red/black eyes looking toward viewer, relaxed asymmetric CLOSED smile with one tiny ivory lower tooth. One hand cradles ONE small rustic plain BREAD ROLL with a single bite removed; other holds ONE little unadorned cream WATER CUP. Simple bread and water, not a banquet, coins, wine or luxury. Body comfortable and bouncy but fully upright and footless.\n\nLayout: six LARGE complete self-contained silhouettes in regular3x2 grid, similar substantial BODY HEIGHT across both rows. Full actors450-475px tall in512pxlogical cells, safe margins/gutters and at least24-32px transparent gap between rows. Keep every tuft, finger, scroll, leaf, cup, lamp, jar, model, bread and droplet within OWN cell; no touching/overlap/props across seams, clipped silhouettes or miniature bottom row. Face/goo dominates, accessories sparing and bold enough for gameplay. No gridlines, background, floor, shadow disc, gradient, checkerboard, halo, floating symbols, text or watermark. Real alpha-zero transparency outside characters, opaque interiors, clean antialiased edges; soft upper-left studio lighting only on figures.",
+      "prompt_quelle": "GREEK_PHILOSOPHERS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "source_motif": {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_06",
+        "source_figure": "Epicurus / Epicurean outlook",
+        "concept": "sufficiency and simple satisfactions",
+        "visual_anchor": "bread and water",
+        "adaptation": "Epikura is female-read fictional Slop persona; not a claim that Epicurus was a woman"
+      }
+    }
+  ],
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending",
+    "Row gutter3px atalpha<=16; explicit cut line required, padded seam reachesalpha17"
+  ],
+  "family_context": {
+    "name": "Der Ausschuss für letzte Rückfragen",
+    "concepts": [
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_01",
+        "source_figure": "Socrates",
+        "concept": "persistent questioning",
+        "visual_anchor": "chin gesture and plain cup"
+      },
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_02",
+        "source_figure": "Plato",
+        "concept": "ideal forms",
+        "visual_anchor": "upward gaze/finger and scroll"
+      },
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_03",
+        "source_figure": "Aristotle",
+        "concept": "nature/investigation/classification",
+        "visual_anchor": "leaf specimen and tablet"
+      },
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_04",
+        "source_figure": "Diogenes",
+        "concept": "independence/frugality/challenge to convention",
+        "visual_anchor": "lamp and miniature storage jar"
+      },
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_05",
+        "source_figure": "Hypatia",
+        "concept": "mathematical and astronomical inquiry",
+        "visual_anchor": "simple three-ring model and stylus"
+      },
+      {
+        "id": "WSA_GREEK_PHILOSOPHER_20261105_06",
+        "source_figure": "Epicurus / Epicurean outlook",
+        "concept": "sufficiency and simple satisfactions",
+        "visual_anchor": "bread and water",
+        "adaptation": "Epikura is female-read fictional Slop persona; not a claim that Epicurus was a woman"
+      }
+    ],
+    "source_policy": "Free iconic personality/idea interpretations, not exact portraits or a historically simultaneous gathering",
+    "lore_policy": "HyperNorm/Men in Black/Hunky & Dory biographies are original KFB fiction, not historical claims about philosophers",
+    "female_read": "Hypatia and Epikura; latter intentionally free reinterpretation",
+    "relationship_policy": "No actual KFB pair/trio/faction or combat-tier bindings inferred",
+    "source_references_file": "GREEK_PHILOSOPHERS_6_2026-11-05/PHILOSOPHY_MOTIFS_AND_SOURCES.json"
+  }
+}

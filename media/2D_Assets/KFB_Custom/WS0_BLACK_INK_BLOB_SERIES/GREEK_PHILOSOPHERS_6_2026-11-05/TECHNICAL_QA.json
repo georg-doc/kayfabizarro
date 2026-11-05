@@ -1,0 +1,161 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "fefaa66ddcc9de403484cc4d7e4cd1e52528fd9817167a4ef8759dcc4ac593fd",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 500095,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        524,
+        508
+      ],
+      "alpha_gt16_bounds": [
+        27,
+        46,
+        512,
+        502
+      ],
+      "visible_size": [
+        485,
+        456
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        524,
+        0,
+        998,
+        508
+      ],
+      "alpha_gt16_bounds": [
+        12,
+        10,
+        464,
+        503
+      ],
+      "visible_size": [
+        452,
+        493
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        998,
+        0,
+        1536,
+        508
+      ],
+      "alpha_gt16_bounds": [
+        11,
+        15,
+        500,
+        507
+      ],
+      "visible_size": [
+        489,
+        492
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        508,
+        514,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        25,
+        7,
+        502,
+        499
+      ],
+      "visible_size": [
+        477,
+        492
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        514,
+        508,
+        1003,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        13,
+        2,
+        468,
+        499
+      ],
+      "visible_size": [
+        455,
+        497
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1003,
+        508,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        21,
+        15,
+        495,
+        493
+      ],
+      "visible_size": [
+        474,
+        478
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "safe_horizontal_seam_max_alpha": 17,
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending",
+    "Row gutter3px atalpha<=16; explicit cut line required, padded seam reachesalpha17"
+  ],
+  "design_observations": [
+    "Six whole footless ink figures, two female-read: Hypatia and free Epicurean persona",
+    "Historical Epicurus was male; Epikura is explicitly a fictional female-read Slop interpretation",
+    "Hypatia ring model is an astronomical visual metaphor, not a verified personal instrument",
+    "Diogenes laugh includes an internal tongue shape; no dangling tongue appendage",
+    "Plato pointing gesture and leaf specimen are original conceptual cues, not exact portrait reconstruction"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "horizontal_cut_line_max_alpha": 6,
+  "reference_hash_checks": 6
+}

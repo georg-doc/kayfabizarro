@@ -404,11 +404,19 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_GREEK_PHILOSOPHERS_20261105",
+      "manifest": "GREEK_PHILOSOPHERS_6_2026-11-05/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 1,
+    "depictions": 6,
+    "identities": 6,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
