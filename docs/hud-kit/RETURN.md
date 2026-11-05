@@ -1,3 +1,13 @@
+# CURRENT · R15 REJECTED BY GEORG · R16 RETRO DESIGN RECOVERY · 2026-11-05
+
+Georg rejected R15: the action surfaces do not carry the existing sculpted button/panel language; their grey-looking inset treatment is separate rather than integrated. The satellite dish is a RADIO-specific functional identity and must not migrate onto resource headers or ordinary controls. R15 is withdrawn: no import, no other skins, no acceptance claim. Older technical and independent-review results do not override this decision.
+
+Authorized outcome: one newly coherent, complete Retro design, then Georg visual approval, then other skins. Recover the shape/material/edge/depth grammar from verified original controls, distinguish grammar from device motifs, use actual shared game content as separate layers, show the full composition before claiming any production readiness. No generic recoloured tiles, per-slot sockets or replacement content icons. Runtime integration/testing stays with Kartenkante.
+
+Owner: georg-doc/kayfabizarro; branch design/kfb-clay-hud-skin-kit-r1-2026-11-04; Draft PR468. R16 is IN PROGRESS, no R16 deliverable yet. Next action: generate and inspect one complete source-conditioned Retro design proposal. Private source/art stays private.
+
+---
+
 # CURRENT · RETRO R15 ONLY · GEORG DESIGN APPROVAL NEXT · 2026-11-05
 
 **Latest explicit Georg instruction supersedes the R14 stop for this NEW bounded approach:** use existing appropriate elements, create missing ones; flat upper bar with motif at the SIDE; Action-Bar uses the SAME frame construction as the other UI. Complete ONE skin → Georg approval → only then other skins. Selected first skin: Retro. R14 remains rejected and withdrawn; it is not a parent or current install source. No other skin work authorized before this design gate.
