@@ -1,0 +1,241 @@
+{
+ "id": "kfb_jetpack.rocket03.r6",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-05",
+ "status": "pending-georg",
+ "jetvar": "rocket",
+ "job": "JETPACK_ROCKET03_R6 (WS0 nach R5: Größe etwa wie R2/R3, in Ruhe und Gehen kurz unter dem Kopf, Platte geskinnt wie R5, Kapsel an einem Ausweich-Gelenk, das bei Schleichen/Ducken/Twist/Rennen kippt und zurückfedert)",
+ "geometrie_hinweis": "In Ruhe liegt zwischen Schwanz-Oberkante (Welt z 0,427) und Kopf-Unterkante hinter dem Rücken (0,788) nur 0,36 Platz, das Pack in R2/R3-Größe ist 0,63 hoch. Die Düse kann bei dieser Größe nicht ganz über dem Schwanz sitzen (das ginge erst ab rund 54 % Größe). Umgesetzt nach Georgs Satz „so hoch, dass man den Schwanz noch sieht“ mit dem Maßstab aus R5 (≥ 60 % wie R2/R3): Platte unten 20 % kürzer, Schwanz in Ruhe 72 %, beim Gehen im Mittel 61–71 %.",
+ "verfahren": {
+  "groesse": "1,8125 wie R2/R3, Form unverändert",
+  "hoehe": "z 0,95 an spine (Luft Kopf–Kuppel in Ruhe 0,9 cm)",
+  "neigung": "fest 5,74° wie R1/R2 (Rückenlinie)",
+  "platte": "bau_r4_r6.py (JP_FIT 4, JP_GAP 0,0005, JP_PTOP 0,15: oben unter dem Kopf; JP_PBOT 0,20: unten über dem Schwanz), dann skin_platte.py (geskinnt wie R5)",
+  "gelenk": "Knoten KFB_Jetpack_Gelenk unten an der Kapselrückseite auf der Platte (gelenk.mjs); Steuerung und vorgerechnete Kurven in data/gelenk_rocket.r6.json; gemessen mit messe_r6.py gegen die echten Netze",
+  "wurzel_q080": "starres Pack mit Gelenk: Wurzel ohne Eigenlage, Lage nur in matrix_gltf_local unter spine; geprüft bei α = 0: 0 mm (pruef_q080.mjs)"
+ },
+ "skins": {
+  "rocket": {
+   "root_node": "KFB_Jetpack_Rocket",
+   "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_gross.r6.glb",
+   "sha256": "ea7792e08ee2812a000dc8fea65b520e1b368aeb64ea1502b28646dbc45cc472",
+   "wurzel": "ohne Eigenlage (Q-080)",
+   "ohne_platte": true,
+   "gelenk": {
+    "knoten": "KFB_Jetpack_Gelenk",
+    "drehpunkt_gltf_wurzel": [
+     0,
+     -0.12198395282030106,
+     -0.008713888004422188
+    ],
+    "achse": "lokal x, α ≥ 0 = Rx(−α), oben vom Rücken weg",
+    "steuerung": "50_BLENDER/JETPACK_R1/data/gelenk_rocket.r6.json",
+    "sha256": "3bc69cd3bb7c083539dd87bcb8c16735ff3048d9f117b038fa8d0a0d6bf34db1"
+   },
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.95,
+    "neigung_deg": 5.74,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005,
+    "platte_oben_gekuerzt": 0.15,
+    "platte_unten_gekuerzt": 0.2
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8147882844737344,
+      0.2829380685065533,
+      0,
+      0,
+      -0.2829380685065533,
+      2.8147882844737344,
+      0,
+      2.369605336801159e-22,
+      0.3518851824647353,
+      -0.31965442777807823,
+      1
+     ]
+    }
+   },
+   "platte_teil": {
+    "glb": "50_BLENDER/JETPACK_R1/glb/KFB_Jetpack_Rocket_Platte_FB.r6.glb",
+    "sha256": "7b98d7eabd367bff7bb6fc0a141de79b58e382f752cc7b35cca4670f45b123c3",
+    "mesh_node": "S1_platte",
+    "kind": "skinned",
+    "slot": "back",
+    "gewichte_mittel": {
+     "spine": 0.737,
+     "chest": 0.205,
+     "hips": 0.058
+    },
+    "einbau": "wie R5 / GURTE_R1 über das Tausch-System, mit jetvar=rocket"
+   },
+   "thrust": [
+    "KFB_Thrust_0 (am Gelenk, kippt mit)"
+   ],
+   "teile": "50_BLENDER/JETPACK_R1/data/teile_rocket.r6.json",
+   "bau_log": "50_BLENDER/JETPACK_R1/data/bau_rocket_gross.r6.json",
+   "messung_datei": "50_BLENDER/JETPACK_R1/data/messung_rocket_gross.r6.json",
+   "clips17": {
+    "Crouching": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.7,
+     "kippwinkel_max_deg": 8.9,
+     "spalt_unten_p90": 0.48,
+     "spalt_oben_p90": 0.74
+    },
+    "Idle_A": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.53,
+     "kippwinkel_max_deg": 1.2,
+     "spalt_unten_p90": 0.41,
+     "spalt_oben_p90": 0.4
+    },
+    "Idle_B": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 3.8,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.42,
+     "spalt_oben_p90": 0.6
+    },
+    "Jump_Idle": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.45,
+     "kippwinkel_max_deg": 5.0,
+     "spalt_unten_p90": 0.43,
+     "spalt_oben_p90": 0.41
+    },
+    "Jump_Land": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.91,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.43,
+     "spalt_oben_p90": 0.57
+    },
+    "Jump_Start": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.91,
+     "kippwinkel_max_deg": 12.7,
+     "spalt_unten_p90": 0.43,
+     "spalt_oben_p90": 0.57
+    },
+    "Running_A": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.55,
+     "kippwinkel_max_deg": 11.6,
+     "spalt_unten_p90": 0.42,
+     "spalt_oben_p90": 0.46
+    },
+    "Running_B": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.64,
+     "kippwinkel_max_deg": 8.9,
+     "spalt_unten_p90": 0.43,
+     "spalt_oben_p90": 0.57
+    },
+    "Sneaking": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.82,
+     "kippwinkel_max_deg": 13.7,
+     "spalt_unten_p90": 0.51,
+     "spalt_oben_p90": 0.74
+    },
+    "Walking_A": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.92,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.41,
+     "spalt_oben_p90": 0.4
+    },
+    "Walking_B": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 1.1,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.4,
+     "spalt_oben_p90": 0.5
+    },
+    "kfb_dance_chicken_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 2.63,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.48,
+     "spalt_oben_p90": 0.86
+    },
+    "kfb_dance_hokey_pokey_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.35,
+     "kippwinkel_max_deg": 9.3,
+     "spalt_unten_p90": 0.56,
+     "spalt_oben_p90": 1.24
+    },
+    "kfb_dance_samba_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.92,
+     "kippwinkel_max_deg": 2.1,
+     "spalt_unten_p90": 0.48,
+     "spalt_oben_p90": 0.73
+    },
+    "kfb_dance_twist_dance_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.3,
+     "kippwinkel_max_deg": 15.2,
+     "spalt_unten_p90": 0.49,
+     "spalt_oben_p90": 0.82
+    },
+    "kfb_idle_happy_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 0.39,
+     "kippwinkel_max_deg": 8.7,
+     "spalt_unten_p90": 0.4,
+     "spalt_oben_p90": 0.38
+    },
+    "kfb_idle_standing_idle_03_a": {
+     "kopf_eindringen_cm": 0.0,
+     "luft_kopf_cm": 6.65,
+     "kippwinkel_max_deg": 0.0,
+     "spalt_unten_p90": 0.45,
+     "spalt_oben_p90": 0.73
+    }
+   },
+   "clips17_worst": {
+    "kopf_eindringen_cm": 0.0,
+    "luft_kopf_cm_min": 0.3,
+    "kippwinkel_max_deg": 15.2,
+    "spalt_unten_p90": 0.56,
+    "spalt_oben_p90": 1.24
+   },
+   "schwanz_sicht": {
+    "ruhe": {
+     "links": 71.8,
+     "rechts": 72.4
+    },
+    "Walking_A": {
+     "min_links": 67.5,
+     "min_rechts": 70.0,
+     "mittel_links": 70.9,
+     "bilder": 13
+    },
+    "Walking_B": {
+     "min_links": 57.8,
+     "min_rechts": 60.5,
+     "mittel_links": 61.4,
+     "bilder": 13
+    }
+   }
+  }
+ },
+ "nicht_geaendert": [
+  "Form, Farben, Teile (rocket_bau.py unverändert)",
+  "Diesel R2 (bleibt Standard)"
+ ],
+ "ersetzt": "kfb_jetpack.rocket03.r5 (bleibt als r5-Datei liegen)",
+ "kritik": "ein blinder Kritiker mit Georgs Wortlaut: „acceptable“. Ruhe/Gehen: Kuppel klar unter dem Kopf, Schwanz sichtbar, Platte liegt an; Größe wieder richtig („no more thermos“). Schwachstelle: Beim Ausweichen (14°) fehlt ein sichtbares Scharnier, die Kapsel wirkt, als löse sie sich von der Platte; Vorschlag: kleines sichtbares Scharnier/Lasche unten an der Platte (nicht gebaut, neue Geometrie)"
+}

@@ -22406,6 +22406,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1526",
+   "date": "05.11.2026",
+   "area": "Figuren",
+   "verdict": "REVIEW",
+   "text": "WSB Rocket R6 (assets/jetpack-rocket03-r6 @e7440220): volle Groesse 1,8125, z 0,95 an spine, in Ruhe 0,9 cm unter dem Kopf, Schwanz 72 % (Gehen 61-71 %), Platte geskinnt (unten/oben gekuerzt), Kapsel an Gelenk KFB_Jetpack_Gelenk mit Laufzeit-Steuerung gelenk_rocket.r6.json (Kopfpunkte gegen Kapselprofil, sofort hoch, Feder zurueck), Eindringen 0 in 17 Clips, max 15 Grad. Fehlendes sichtbares Scharnier -> R6b vor dem Hub.",
+   "values": {},
+   "owner": "WSB",
+   "check": "q537",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1527",
+   "date": "05.11.2026",
+   "area": "Figuren",
+   "verdict": "REVIEW",
+   "text": "WSB Rocket R6b (assets/jetpack-rocket03-r6b @6cba793c): sichtbares Scharnier auf der Gelenkachse (Stift, Kappen, Laschen hellgrau, Knoechel kippen mit), sonst wie R6; Schwanz Ruhe 69 %, Kopf 0. Hub q539. Fassade an WS1 (N-178, design/aufprall-r3 @5b0c205b, nur Kartenhaeuser, kitfassade aus). Verteiler: Begegnungs-Taktung 20-40 s mit Ereignisdichte aus tempo.r1.json (WS1 Stand 17).",
+   "values": {},
+   "owner": "WSB · WS1 · Verteiler",
+   "check": "q539, N-178",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
