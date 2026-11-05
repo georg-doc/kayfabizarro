@@ -1,0 +1,251 @@
+{
+  "status": "CPU_CUTTER_EXPORT_CHECKS_PASS",
+  "scope": "Teal knob scale/anchor and Hazard arrow-plate role only",
+  "receiverBaseline": "817dac381a0349c4af9a67ca65bbfa4d8f4cead8",
+  "singleCallCuts": 6,
+  "warnings": [],
+  "fluffAndRadioCounts": [
+    6,
+    4
+  ],
+  "unchangedRuntimeRasterComparisons": 40,
+  "changedRuntimeRasterCount": 2,
+  "negativeCases": [
+    {
+      "case": "Hazard arrow plate removed, siren retained",
+      "rejected": true,
+      "stderr": "{\"fail\": \"Pfeilknopf: Pfeilzelle 1b: 0 statt genau einer Platte\"}"
+    },
+    {
+      "case": "Teal true yellow arrow removed, bolt retained",
+      "rejected": true,
+      "error": "Passendes Pfeilmotiv in der offenen Leiste fehlt"
+    }
+  ],
+  "artworkRegenerated": false,
+  "upscaled": false,
+  "gameRepoWritten": false,
+  "gameOrBrowserTestsRun": false,
+  "runtimeAcceptanceOwner": "Kartenkante",
+  "correctedAlphaChecks": [
+    {
+      "skin": "teal",
+      "size": [
+        204,
+        86
+      ],
+      "maxSoftEdgePx": 2,
+      "outsideAlpha": 0,
+      "transparentRGBZero": true
+    },
+    {
+      "skin": "hazard",
+      "size": [
+        261,
+        226
+      ],
+      "maxSoftEdgePx": 2,
+      "outsideAlpha": 0,
+      "transparentRGBZero": true
+    }
+  ],
+  "corrections": [
+    {
+      "skin": "teal",
+      "sourceHashes": {
+        "teal_SHEET_1a_1536x1024_RGBA.png": "b50f06911a90085598df99e8e76f7b060e340862094c8e29b26d9df4a0a69a8f",
+        "teal_SHEET_1b_1536x1024_RGBA.png": "2f8a2c8a24fd3f41c346b36c8ca2b4267c3e460b0cab122ebf87729b088e2c67"
+      },
+      "changedRuntimeFields": [
+        "knob",
+        "knobAt"
+      ],
+      "sourcePlateBBox": [
+        1226,
+        1205,
+        204,
+        86
+      ],
+      "knobBeforePx": [
+        35,
+        15
+      ],
+      "knobAfterPx": [
+        204,
+        86
+      ],
+      "arrowMeasurement": {
+        "source": {
+          "kind": "yellow",
+          "center": [
+            102,
+            41
+          ],
+          "size": [
+            72,
+            38
+          ],
+          "area": 1351,
+          "rgb": [
+            252,
+            182,
+            2
+          ]
+        },
+        "target": {
+          "kind": "yellow",
+          "center": [
+            734,
+            343
+          ],
+          "size": [
+            64,
+            34
+          ],
+          "area": 1058,
+          "rgb": [
+            249,
+            174,
+            1
+          ]
+        },
+        "scale": 0.8918080720799182,
+        "cost": 0.0470670771871998,
+        "candidates": 1,
+        "native_export_px": [
+          204,
+          86
+        ],
+        "matched_geometry_px": [
+          182,
+          77
+        ],
+        "bounded_edge_cleanup": true
+      }
+    },
+    {
+      "skin": "hazard",
+      "sourceHashes": {
+        "hazard_SHEET_1a_1536x1024_RGBA.png": "57f5a85aabf129b952ea7936bc006a37b59ca397d4eb5b0dff5032ec816cea69",
+        "hazard_SHEET_1b_1536x1024_RGBA.png": "a977aecd0e8f9f681c41aece3a1c3b0821d285de340a1f0d79ff5c96d28025cf"
+      },
+      "changedRuntimeFields": [
+        "knob"
+      ],
+      "sourcePlateBBox": [
+        1197,
+        1135,
+        261,
+        226
+      ],
+      "knobBeforePx": [
+        227,
+        239
+      ],
+      "knobAfterPx": [
+        261,
+        226
+      ],
+      "arrowMeasurement": {
+        "source": {
+          "kind": "dark",
+          "center": [
+            131.5,
+            119
+          ],
+          "size": [
+            79,
+            52
+          ],
+          "area": 2368,
+          "rgb": [
+            85,
+            44,
+            26
+          ]
+        },
+        "target": {
+          "kind": "dark",
+          "center": [
+            707,
+            352
+          ],
+          "size": [
+            34,
+            24
+          ],
+          "area": 447,
+          "rgb": [
+            89,
+            48,
+            29
+          ]
+        },
+        "scale": 0.445686892595848,
+        "cost": 0.14751450581231665,
+        "candidates": 1,
+        "native_export_px": [
+          261,
+          226
+        ],
+        "matched_geometry_px": [
+          116,
+          101
+        ],
+        "bounded_edge_cleanup": true
+      }
+    }
+  ],
+  "archive": {
+    "file": "KFB_MixedBag_HUD_Cutter_Fix_R11_2026-11-05.zip",
+    "size": 23295824,
+    "sha256": "f15c6a2eba8341cc19d82be769cf8fedfddcae664997b4c1f1e19ccf739e81f0",
+    "files": 67,
+    "patchApply": "PASS",
+    "deliverySkins": [
+      "teal",
+      "hazard"
+    ],
+    "gameTestsRun": false
+  },
+  "sourceProvenance": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "module/hud-clay-r1",
+    "baselineHead": "817dac381a0349c4af9a67ca65bbfa4d8f4cead8",
+    "scriptSha256": {
+      "cut-sheet1.py": "5d72f846ef859e7732ed519dd3501581338b76f3673f66d5dedd5dbb3be4e953",
+      "knob_reference.py": "cdec25301fd9069555d56ce21d7b62455ea5ab69596060d9121c3f8c5ff33358",
+      "hudbar_measure.py": "a4f5defa8a969176d6270d97687ad0999f675d062a487bef3e91381ab9c26a0b",
+      "sheet_grid.py": "ea3bc38da2377ae194965eb86b4a40c9adf96383207052f8724ed23768418123"
+    },
+    "baselineGitBlobs": {
+      "cut-sheet1.py": "cb9de81c861a882ea6dcb081b0b05cb59e33b63b",
+      "hudbar_measure.py": "d5121126e82416bb9853f13985a409433d0a0b63",
+      "sheet_grid.py": "330428687f68a63dcd7fdcc110ce6a7dd3562a2e"
+    },
+    "patchCheckAndApplyInIsolatedDirectory": "PASS",
+    "gameRepoWritten": false,
+    "gameTestsRun": false
+  },
+  "freshArchive": {
+    "archiveSha256": "f15c6a2eba8341cc19d82be769cf8fedfddcae664997b4c1f1e19ccf739e81f0",
+    "packageHashChecks": 66,
+    "freshRebuildSixCutsExit": 0,
+    "reproducedChangedWebPsByteExact": 2,
+    "gameTestsRun": false
+  },
+  "dropbox": {
+    "file": {
+      "file": {
+        "size": 23295824
+      },
+      "file_id": "id:KeQLaY5-IIAAAAAAAA7ffQ",
+      "modified_time": "2026-11-05T00:46:00Z",
+      "name": "KFB_MixedBag_HUD_Cutter_Fix_R11_2026-11-05.zip",
+      "object_type": "file",
+      "path": "ns:1174592111//CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R11_2026-11-05.zip",
+      "path_display": "/CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Cutter_Fix_R11_2026-11-05.zip"
+    },
+    "status": "completed"
+  }
+}
