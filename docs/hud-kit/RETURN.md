@@ -1,3 +1,21 @@
+# CURRENT · RETRO R16 FOR GEORG DESIGN REVIEW · R15 REJECTED · 2026-11-05
+
+R15 is rejected and withdrawn after Georg found disconnected action surfaces and inappropriate radio-specific motifs. R16 is a new Retro-only design proposal, not an accepted/integrated HUD. No further skins before Georg's explicit visual approval.
+
+Visible result: complete Retro composition using original panel/controls/radio plus new sculpted gold button caps. One shared chassis; no grey action inserts, per-slot sockets or backing circles. Antenna/speaker remain only on the actual radio. Resource header is now purpose-specific, clean top contour, six wells plus total. Real game Hero-Shots/base roles/Fluffs stay separate unchanged. Original standalone X/Fredoka and all appropriate original controls retained. Context deliberately empty, travel separate.
+
+Private delivery COMPLETED: /CLAUDE/KFB Claymation Reference/KFB_MixedBag_HUD_Retro_R16_Design_Review_2026-11-05.zip;id:KeQLaY5-IIAAAAAAAA7iUg;21,576,789bytes;184files;183internal hashes;SHA256 f88616826976f33f0348c94f46ed5a3cc3819705d782d0ad1ed6cfd21fe9654a. Contents: 37PNG/WebP part pairs, five176×176 equal-alpha states, closed1472×160/open1472×314 header, four review boards, three new native Built-in ImageGen outputs/exact prompts, original references and shared actual content/font+license, portable composition/QA/manifest/independent review.
+
+Actual checks: rebuilt all37pairs and four boards; PNG/WebP lossless equality; RGB0 outside alpha; equal state alpha;9.2:1closed-header body; ZIP integrity and183file hashes. One transient no-space write failed; unchanged rerun completed after space became available. No source/data deleted for this. Game checkout unchanged at99ea893458ed0dca489897248372c64e3cc560d0 with its two pre-existing untracked paths unchanged; no runtime/browser tests, no duplicate Kartenkante verification.
+
+Fresh independent read-only /root/retro_r16_critic_guard opened original/candidate art; route HUMAN_DECISION, no design PASS. Reservation: new caps brighter/more uniform; click tonal, depression remains code-owned. Content arrangement in empty drawer not demonstrated.
+
+UNRESOLVED: revised rail dimensions/header coordinates need alignment to current mapping, then canonical Retina atlases/cutter and game integration after visual approval. This packet is NOT DROP-IN and must not auto-import. Other five skins not produced here. Owner authoring georg-doc/kayfabizarro@design/kfb-clay-hud-skin-kit-r1-2026-11-04, DraftPR468; runtime Kartenkante only. No Stage, deployment, merge or Live claim.
+
+One next gate: Georg decides whether R16 as a WHOLE now carries the intended Retro form/material language. If accepted, continue receiver raster/cutter work, then other skins under the standing sequence.
+
+---
+
 # CURRENT · R15 REJECTED BY GEORG · R16 RETRO DESIGN RECOVERY · 2026-11-05
 
 Georg rejected R15: the action surfaces do not carry the existing sculpted button/panel language; their grey-looking inset treatment is separate rather than integrated. The satellite dish is a RADIO-specific functional identity and must not migrate onto resource headers or ordinary controls. R15 is withdrawn: no import, no other skins, no acceptance claim. Older technical and independent-review results do not override this decision.
