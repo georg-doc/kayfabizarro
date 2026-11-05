@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Confederate soldiers Georg PASS
+
+Georg accepted all6Confederate soldier Slops.53PASS sheets/318depictions;51eligible/306depictions. Existing source-only IDs and individual DESIGN biographies retained; no canonical/game/Library import claimed. Explicit extraction rectangles and catalogue/alpha holds remain independent of designPASS. New authorized outcome: one fresh six-character Union/Yankee soldier sheet, unique acting/props/ranks,2female-read, original benchmark conditioning, no recolouring/reuse of the Southern cast. WSA owner, same branch/PR469.
+
+---
+
 # Current WSA update · 2026-11-05 · Confederate soldier six-sheet candidate
 
 One native original-reference-conditioned landscape sheet, six distinct upright footless soldiers across ranks/general-sergeant-private-captain-lieutenant-corporal;2female-read. Supplied actual Veteran+RPG benchmark paths as style-only references. Six source-only IDs/cards and individual DESIGN biographies preserved. No inferred pair/state/trio relation, no canonical/deck mapping.
