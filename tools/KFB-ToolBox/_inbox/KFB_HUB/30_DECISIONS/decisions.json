@@ -22106,6 +22106,51 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1506",
+   "date": "05.11.2026",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "WSB Jetpack Rocket 03 R1 (assets/jetpack-rocket03-r1 @1b09020f, von WS0 gepusht; jetvar=rocket, Wurzel ohne Eigenlage, KFB_Thrust_0; Diesel R2 bleibt Standard). Georg q529 TUNE: etwas hoeher sitzen, Hasenschwanz sichtbar. Flug: SDF-Anschluss Pop-ups fx/inkline2d-atlas-r1 @734f5dff an WS1 (N-174), inkline2d Standard.",
+   "values": {},
+   "owner": "WSB · Flug · WS1",
+   "check": "q529",
+   "source": "Georg q529",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1507",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "REVIEW",
+   "text": "WSV Ladebildschirm R5 (Puppentheater aus Georgs Kits 01/02: Schattenspiel-Kulissen nach Ladefortschritt, Rampenlichter, Filz-Tafel, drei Klopfzeichen, Tableau-Raffung, Multiplane-Fahrt ins Spiel; Code components/kfb-ladebild/ fuer spaetere Uebernahme durch Kartenkante). Kritiker PASS nach R1-R4 FAIL. Hub q530, Video an Georg direkt.",
+   "values": {},
+   "owner": "WSV · Kartenkante",
+   "check": "q530",
+   "source": "WS0 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1508",
+   "date": "05.11.2026",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Georg 05.11.: Kampf-Linie neu aufsetzen. Benchmark und Vorlagen aus Action- und Sci-Fi-Games; keine Claude-Eigenbau-VFX ausser als Support-Layer; WSA work nur begrenzt. Plan: WSV Art Direction (Benchmark-Blatt je Ereignis, Shortlist fertiger Profi-Flipbooks fuer three.js und aufgenommener Ton-Bibliotheken, Look-Vorschlag) -> Hub, Georg waehlt/kauft -> Flug spielt Flipbooks ab (ein VFX-Modul), WSA Combat nur Waffen-Logik aus PR #48 (nicht mergen). Reihenfolge Pistole/Blaster, Explosion, Gatling.",
+   "values": {},
+   "owner": "WSV · Flug · WSA Combat",
+   "check": "q374",
+   "source": "Georg 05.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
