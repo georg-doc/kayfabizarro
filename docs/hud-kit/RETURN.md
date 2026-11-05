@@ -1,3 +1,17 @@
+# CURRENT · GEORG DESIGN FAIL · R14 WITHDRAWN · 2026-11-05
+
+Georg's verdict: “das ist kein design, das ist wieder ein FAIL.”
+
+R14 is REJECTED AS A DESIGN. Its installation recommendation is WITHDRAWN. Do not import the R14 MixedBag, replacement trays/panels/data or receiver patch as an accepted HUD. Previous technical file checks and independent static CONTINUE are historical technical evidence, not design acceptance and not grounds to override this FAIL. The requested coherent integrated HUD design has NOT been achieved.
+
+No automatic new batch or continuation of the same frame-extraction/material-tile approach. Preserve sources, rejected artifacts and evidence; do not overwrite accepted originals. Existing accepted signature art and independent R11 cutter fixes are separate. If the recipient already installed R14, flag it as rejected; this chat has not verified recipient adoption and performs no blind rollback of other owners' work.
+
+Only authorized work here: record Georg's FAIL and retract the receiving recommendation. Kartenkante remains runtime owner; Georg design authority. No new art, game write, merge or Live promotion. Withdrawal sent and read back in PR468: https://github.com/georg-doc/kayfabizarro/pull/468#issuecomment-6648872748.
+
+---
+
+## Rejected R14 delivery record · retained as history, NOT current recommendation
+
 # CURRENT · R14 COMPLETE INTEGRATABLE HUD KIT · 2026-11-05
 
 **Outcome:** one self-contained six-skin HUD package, not isolated recolored tiles. Receiver remains georg-doc/KFB-Stunt-Car-Race@module/hud-clay-r1, baseline99ea893458ed0dca489897248372c64e3cc560d0. Authoring owner georg-doc/kayfabizarro@design/kfb-clay-hud-skin-kit-r1-2026-11-04,DraftPR468. This chat is asset/patch writer only; Kartenkante remains sole runtime integrator. Status: STATIC_ASSET_AND_INTEGRATION_PREFLIGHT_PASS,NOT_GAME_ACCEPTED. Georg retains design authority.
