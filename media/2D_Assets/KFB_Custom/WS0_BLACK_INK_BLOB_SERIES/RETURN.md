@@ -1,3 +1,13 @@
+# Current WSA update · 2026-11-05 · Roman legion six-sheet candidate
+
+One fresh original-reference-conditioned native job: six Roman legion Slops, centurion/optio/aquilifer/cornicen/legionary/tribune,2female-read. Actual Veteran+RPG reference image paths supplied for body and prop craft.1536×1024RGBA, no layout edit/resize. Six source-only IDs/cards/individual DESIGN biographies, no canonical/deck mapping, no inferred pair/trio/state links.
+
+Native and64/96/160/192QA and transparent-checker review completed. Complete visible heights484–506px. Explicit extraction rectangles use horizontalcut503, topcolumns[0,551,978,1536],bottom[0,502,1013,1536]. Visible row gap only2px atalpha<=16; cut line clear but4px padded seam intersects character(alpha172). Do not use fixed512cuts or automatic padded extraction. Alpha0..254, final-alpha cleanup and individual native catalogue masters pending; no game sprites or Library publication. Horn simplified to compact circular instrument rather than large G-shaped cornu; retained for design review.
+
+Previous Union6GeorgPASS persisted/verified at366c0aa613ee4e2b0d528fcbe0e6ff7639723023. Accepted inventory54sheets/324depictions;52eligible/312depictions. Roman candidate1sheet/6depictions remainsDRAFT/intakefalse. Standing exclusions unchanged. Same WSA branch/PR469; no new runtime/registry or Live action. Next gate: Georg design verdict on ROMAN_LEGION_6_2026-11-05/sheet-r1.png.
+
+---
+
 # Current update · 2026-11-05 · Union soldiers Georg PASS
 
 Georg accepted all6Union/Yankee soldiers for use.54PASS sheets/324depictions;52eligible/312depictions. Six source-only IDs and DESIGN biographies retained. Source extraction/master/alpha holds independent of imagePASS; no catalogue/game/Library publication claimed. Next authorized output: fresh Roman legion six-sheet with varied ranks/functions/acting/props and2female-read, source-conditioned on original benchmarks. Same WSA owner/branch/PR469.
