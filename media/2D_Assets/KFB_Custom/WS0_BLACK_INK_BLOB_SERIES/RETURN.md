@@ -1,3 +1,9 @@
+# Current update · 2026-11-05 · Roman legion Georg PASS
+
+Georg accepted all6Roman legion Slops.55PASS sheets/330depictions;53eligible/318depictions. Source-only IDs and individual DESIGN biographies retained, technical alpha/extraction/catalogue-master holds unchanged. No receiving canonical mapping/game/Library visibility claimed. Next authorized output: one fresh six-character fictional Gallic/Germanic/Teutonic mixed barbarian clan, loose rank hierarchy, two female-read, original benchmark conditioning, conceptual opponents to Romans but independently usable. Same WSA owner/branch/PR469.
+
+---
+
 # Current WSA update · 2026-11-05 · Roman legion six-sheet candidate
 
 One fresh original-reference-conditioned native job: six Roman legion Slops, centurion/optio/aquilifer/cornicen/legionary/tribune,2female-read. Actual Veteran+RPG reference image paths supplied for body and prop craft.1536×1024RGBA, no layout edit/resize. Six source-only IDs/cards/individual DESIGN biographies, no canonical/deck mapping, no inferred pair/trio/state links.
