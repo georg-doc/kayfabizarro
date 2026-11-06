@@ -301,3 +301,28 @@ Jede Slice endet mit Hörprobe oder Demo-Link, nicht mit Architektur.
 - [Azure Static Web Apps: Authentifizierung](https://learn.microsoft.com/azure/static-web-apps/authentication-authorization)
 - [ChatGPT Sites: Funktionen und Grenzen (PlayCode)](https://playcode.io/blog/chatgpt-sites-explained)
 - [OpenAI Sites Guide (Kingy AI)](https://kingy.ai/news/openai-sites-a-detailed-guide-to-codexs-new-hosted-website-and-app-builder/)
+
+
+---
+
+## 13 · Additiver Forschungsnachtrag 2026-11-06: lokale TTS-Anbieter / DocCheck-Ausblick
+
+**Status: RESEARCH / OUTLOOK ONLY. Dieser Nachtrag ändert weder VoiceIO noch DocCheck-Hosting, Anbieterfreigaben oder ein Laufzeitprodukt.** Die älteren Modell- und Preisaussagen dieses Entwurfs sind historische Bestandsaufnahme; maßgeblich sind neue Originalquellen und die aktuelle Projekt-Return.
+
+Vollständiger WS0-/Voice-Dossierstand mit Quellen, Lizenzdifferenzierung, drei real verfügbaren Apple-Silicon-Geräten, Budget, Echtzeit-/Streaming-Grenzen und 18er A/B-Audition:
+
+[`WS0_LOCAL_TTS_PROVIDER_MAC_HARDWARE_AND_DOCCHECK_OUTLOOK_RESEARCH_2026-11-06.md`](../../../skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/WS0_LOCAL_TTS_PROVIDER_MAC_HARDWARE_AND_DOCCHECK_OUTLOOK_RESEARCH_2026-11-06.md)
+
+Verifizierungs- und Nicht-getestet-Bericht:
+
+[`WS0_LOCAL_TTS_DOCCHECK_SOURCE_AND_TEST_REPORT_2026-11-06.md`](../../../skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/WS0_LOCAL_TTS_DOCCHECK_SOURCE_AND_TEST_REPORT_2026-11-06.md)
+
+**DocCheck-Perspektive:** die vorhandene Kette `freigegebener Lerntext → Aussprachelexikon → austauschbarer TTS-Anbieter → versionsgebundene Audiodatei → DocCheck VoiceIO` kann perspektivisch für **Micro-Learnings**, didaktisch geprüfte **Flexikon-Vertonungen**, kommentierte Prozess-/SVG-Grafiken, Audio-Tutor-Erklärungen, Quiz-Rationales und sonstige redaktionell freigegebene DocCheck-Inhalte genutzt werden. Qwen3 0.6B/1.7B und Pocket TTS sind lokale Hörvergleichs-Kandidaten, **nicht** beschlossene Anbieter. Sprachvarianten und Voice Cloning verlangen getrennte Prüfung der Modell-, Sprecher- und Ausgaberechte. Metriken für medizinisch eindeutige Aussprache (z. B. pCO2, HCO3, ACE, mmHg), Betonung, Zahleneinheiten, Caption-Gleichlauf, Sprecherkonstanz und verständliche Pausen gehören zwingend zu einem späteren Hörtest.
+
+Für statische kuratierte Micro-Learnings ist *vorproduziert mit Cache pro Inhaltsrevision* vorzuziehen; Live-TTS nur bei tatsächlich dynamischen freigegebenen Texten. **Medizinische Quellen/Fakten dürfen nie vom TTS-Provider umgeschrieben oder nachträglich ergänzt werden.** Die DocCheck-IT-/Datenschutzfreigabe gilt für Hosting, Übertragung und Modellnutzung weiterhin gesondert; das Dokument ändert den früheren Cloudflare-Ausschluss für die DocCheck-Beta nicht.
+
+**Neue Quellenkorrekturen:** Pocket TTS kann gemäß Kyutai-Repo CPU-Streaming und Deutsch (Code MIT, Gewichte CC-BY-4.0; einzelne Voices gesondert); Higgs Audio v3 hat nichtkommerzielle Modellbedingungen; Resemble Chatterbox-TTS ist seit August 2026 nicht mehr gepflegte Forschung. Spokenly ist ein STT-/Diktierwerkzeug, kein Syntheseprovider. Etwaige Hersteller-Latenzen (~200 ms Pocket, Bestwert 97 ms Qwen) sind **nicht** als reale DocCheck-/KFB-Echtzeitmessung zu behandeln.
+
+**Besitzgrenze:** DocCheck `georg-doc/doccheck` bleibt ein eigener Owner. `DC_VOICEIO` ist alleiniger Besitzer von Mikrofon/Wiedergabe und wird weder durch Voicebox noch durch die KFB Audio-Engine ersetzt. Dieser KFB-Branch hat **keine DocCheck-Datei verändert**; künftige Umsetzung erfolgt nur nach eigenem DocCheck-Briefing/Freigabe.
+
+**Ein nächster gemeinsamer Forschungs-Gate:** Zunächst KFB-WS0-18er-Hörvergleich am vorhandenen Mac mini M4 / MacBook Pro M1 Max; danach kann DocCheck **separat** eine einzige fachlich freigegebene 60–90-s-Micro-Learning-Hörprobe als Reuse-Kandidat prüfen. Keine automatische Produkt- oder Site-Promotion.
