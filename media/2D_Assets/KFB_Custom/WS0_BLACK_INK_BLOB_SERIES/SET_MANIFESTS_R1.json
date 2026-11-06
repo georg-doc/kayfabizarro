@@ -768,11 +768,40 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_TRUST_20261106",
+      "manifest": "TRUSTSYSTEMS_TRUST_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
+      "manifest": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_MEDICINE_20261106",
+      "manifest": "TRUSTSYSTEMS_MEDICINE_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_ANTIRULES_20261106",
+      "manifest": "TRUSTSYSTEMS_ANTIRULES_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 4,
+    "depictions": 24,
+    "identities": 24,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

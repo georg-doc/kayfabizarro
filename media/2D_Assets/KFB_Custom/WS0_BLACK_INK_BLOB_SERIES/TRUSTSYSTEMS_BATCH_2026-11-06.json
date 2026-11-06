@@ -1,0 +1,130 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "status": "DRAFT_AWAITING_GEORG",
+  "counts": {
+    "sheets": 4,
+    "depictions": 24,
+    "identities": 24,
+    "female_read_identities": 8,
+    "generation_jobs": 4,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "TRUST",
+      "set_id": "WSA_TRUSTSYSTEMS_TRUST_20261106",
+      "manifest": "TRUSTSYSTEMS_TRUST_6_2026-11-06/MANIFEST.json",
+      "sha256": "6846f956e392ba5f940ff34b4abc2eba6dfb0f02bd651222581499c9f89f78cf",
+      "git_blob_sha": "a45ff7206750ccd045801e4fa7ace47e3cf415b3",
+      "georg_status": null,
+      "intake_eligible": false,
+      "deck_binding": {
+        "deck_id": "trust_and_betrayal",
+        "user_family_title": "Trust & Betrayal",
+        "registry_title": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/trust_and_betrayal.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Trust-Me-Bro Salesman",
+        "Backstabber with Rubber Knife",
+        "Pinky-Promise Pair",
+        "Double Agent Two-Face",
+        "Loyal Dog Slop",
+        "Fair-Weather Friend Umbrella"
+      ]
+    },
+    {
+      "code": "SYSTEMS",
+      "set_id": "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
+      "manifest": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/MANIFEST.json",
+      "sha256": "891bfddd218e1933e249d9410c7998b4f81fa1dcb19310e5fb2cbe28a06dfee0",
+      "git_blob_sha": "a9cbd51c2261c1daf3828132b3c52e8f2e4c3a26",
+      "georg_status": null,
+      "intake_eligible": false,
+      "deck_binding": {
+        "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+        "user_family_title": "Unspoken Systems",
+        "registry_title": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/unspoken_systems_kayfabizarro_meta_deck_01.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Invisible Hand Glove",
+        "Status Quo Rocking Chair",
+        "Gatekeeper with Keys",
+        "Social Ladder Climber",
+        "Unwritten Rule Book (blank)",
+        "Norm Enforcer Hall Monitor"
+      ]
+    },
+    {
+      "code": "MEDICINE",
+      "set_id": "WSA_TRUSTSYSTEMS_MEDICINE_20261106",
+      "manifest": "TRUSTSYSTEMS_MEDICINE_6_2026-11-06/MANIFEST.json",
+      "sha256": "cad0d4872ad72266795a8efa67f86041fe503568a20cca7d94dd9cc0a296bc6a",
+      "git_blob_sha": "d2cb5b7ec7a7bc9a9cfc8a564fd8e60ec1426f20",
+      "georg_status": null,
+      "intake_eligible": false,
+      "deck_binding": {
+        "deck_id": "saboteur_sketchbook_medicine_history_psyops_add_",
+        "user_family_title": "Medicine Madness",
+        "registry_title": "Medicine Madness: The Waiting Room Anarchy",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/saboteur_sketchbook_medicine_history_psyops_add_.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Waiting Room Number Ticket",
+        "Snake-Oil Salesman",
+        "Leech Doctor",
+        "Magazine Hoarder",
+        "Quack Duck",
+        "Receptionist Gatekeeper"
+      ]
+    },
+    {
+      "code": "ANTIRULES",
+      "set_id": "WSA_TRUSTSYSTEMS_ANTIRULES_20261106",
+      "manifest": "TRUSTSYSTEMS_ANTIRULES_6_2026-11-06/MANIFEST.json",
+      "sha256": "0d2523be66995a45a5969ab770bad307d523b53b0f1d7eaa5bdc46f2613421af",
+      "git_blob_sha": "11fc52bd83ce4fce39ceaf3e9af97f067a7fb9be",
+      "georg_status": null,
+      "intake_eligible": false,
+      "deck_binding": {
+        "deck_id": "anti_rules_toolkit",
+        "user_family_title": "Anti-Rules Manifesto",
+        "registry_title": "The Anti-Rules Manifesto",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/anti_rules_toolkit.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Rule Breaker with Hammer",
+        "Red Tape Mummy",
+        "Loophole Tunneler",
+        "Rebel Graffiti Kid",
+        "Order Robot",
+        "Chaos Confetti Cannon"
+      ]
+    }
+  ],
+  "notes": [
+    "Source1536x1024 alpha sheets,not individual catalogue masters",
+    "Exact actual prompts/reference roles recorded",
+    "Pair/animal/mummy/robot cues adapted to upright single ink actors",
+    "All text lore/cards DESIGN"
+  ]
+}

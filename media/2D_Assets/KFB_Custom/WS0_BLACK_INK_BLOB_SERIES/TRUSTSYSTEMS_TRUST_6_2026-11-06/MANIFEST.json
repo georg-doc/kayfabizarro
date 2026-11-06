@@ -1,0 +1,283 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRUSTSYSTEMS_TRUST_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+    "sha256": "6846f956e392ba5f940ff34b4abc2eba6dfb0f02bd651222581499c9f89f78cf"
+  },
+  "production_record": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "TRUSTSYSTEMS_TRUST_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRUSTSYSTEMS_TRUST_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Trust & Betrayal",
+    "visual_context": "Fictional satirical social/medical-history/rule archetypes,free deck inspiration not exact canonical card or real-person/clinical claim",
+    "relationship_policy": "Shared deck-themed family;distinct standalone identities,Pinky pair2prop gloves only,no pair/state/trio/tier binding",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional trust,gatekeeping,unspoken rules,medical-history caricature and rebellion;not real-person allegation,clinical advice or treatment claim"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Verkäufer Handschlag",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rust cap",
+        "sample briefcase",
+        "handshake badge"
+      ],
+      "temperament": "Makes the guarantee sound personal enough to avoid putting it in writing.",
+      "prompt_auszug": "Verkäufer Handschlag, maennlich-read. Trust-Me-Bro Salesman: broad low square rounded ink splat,small rust salesman cap,tiny teal lapel panels,ONE closed sample briefcase and brass handshake-shaped lapel badge. Huge overconfident crooked open grin with THREE upper teeth,one eye raised,one goo hand offers an open reassuring gesture. Personality: Makes the guarantee sound personal enough to avoid putting it in writing.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Trust-Me-Bro Salesman"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Freund Hinterher",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum cap",
+        "floppy rubber knife",
+        "apology flower"
+      ],
+      "temperament": "Had hoped the harmless prop would make the intention less noticeable.",
+      "prompt_auszug": "Freund Hinterher, maennlich-read. Backstabber with Rubber Knife: tall crooked pear ink blob,small plum cap,tiny cream collar,ONE obviously FLOPPY RUBBER TOY KNIFE with bent grey blade held low at flank and tiny apology flower in other hand. One huge eye one squint,closed toothless nervous zigzag smile,no attack/victim/blood. Personality: Had hoped the harmless prop would make the intention less noticeable.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Backstabber with Rubber Knife"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pinky-Promina Verbindlich",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "berry ribbon cap",
+        "two linked pink prop gloves"
+      ],
+      "temperament": "Remembers the promise exactly as it sounded before the exception arrived.",
+      "prompt_auszug": "Pinky-Promina Verbindlich, weiblich-read. Pinky-Promise Pair metaphor ONE actor: round top-heavy ink splat,small berry ribbon cap,two subtle lashes,tiny cream collar,ONE pair of little pink fabric GLOVES linked at their smallest fingers held as inanimate prop in own goo hands,no second person. Heavy unequal protective side-eye,closed toothless crooked pout. Personality: Remembers the promise exactly as it sounded before the exception arrived.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Pinky-Promise Pair"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Doppelagent Andersgemeint",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "two-tone fedora",
+        "two-tone tie",
+        "reversible gold-silver badge"
+      ],
+      "temperament": "Means both versions sincerely enough to keep them in separate rooms.",
+      "prompt_auszug": "Doppelagent Andersgemeint, maennlich-read. Double Agent Two-Face ONE FACE: squat broad lopsided ink blob,small reversible half-teal half-plum fedora ABOVE eyes,two-tone tie,ONE small reversible badge with blank gold side and blank silver side. ONE face with deliberately conflicting raised-left/low-right brows and crooked open grin with TWO upper teeth,no split second head/face. Personality: Means both versions sincerely enough to keep them in separate rooms.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Double Agent Two-Face"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Treuwart Immernoch",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dog-ear-fold cap",
+        "worn collar",
+        "old key",
+        "empty treat tin"
+      ],
+      "temperament": "Stays because leaving would make the waiting seem wasted.",
+      "prompt_auszug": "Treuwart Immernoch, maennlich-read. Loyal Dog Slop metaphor ink not dog body: tall broad-based pear ink blob,small tan cap with TWO floppy dog-ear cloth folds ABOVE eyes,tiny worn teal collar,ONE old housekey and small empty treat tin. Huge earnest unequal eyes,tiny toothless open oval mouth,patient needy loyalty. Personality: Stays because leaving would make the waiting seem wasted.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Loyal Dog Slop"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Freundin Wetterweise",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_TRUST_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream rain cap",
+        "berry scarf",
+        "half-open umbrella"
+      ],
+      "temperament": "Can be counted on whenever the forecast has already improved.",
+      "prompt_auszug": "Freundin Wetterweise, weiblich-read. Fair-Weather Friend Umbrella: broad asymmetrical round ink splat,small cream rain cap,two lashes,tiny berry scarf,ONE small HALF-OPEN teal umbrella carried at flank with curved handle,no actual rain scene. One hooded eye one raised brow,closed toothless dry side-smirk. Personality: Can be counted on whenever the forecast has already improved.",
+      "prompt_quelle": "TRUSTSYSTEMS_TRUST_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "trust_and_betrayal",
+      "user_concept": "Fair-Weather Friend Umbrella"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "trust_and_betrayal",
+    "user_family_title": "Trust & Betrayal",
+    "registry_title": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/trust_and_betrayal.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}

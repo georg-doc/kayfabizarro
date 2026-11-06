@@ -1,3 +1,21 @@
+# WSA Return · Trust/systems/medicine/anti-rules families generated · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome4 independent6-actor source sheets/24 authoring identities:Trust & Betrayal,Unspoken Systems,Medicine Madness,Anti-Rules Manifesto. Exact4 deck registry IDs/title/path/ref read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae;thematic DESIGN bindings,exact canonical card mapping null. Medicine deck exact ID saboteur_sketchbook_medicine_history_psyops_add_ retains trailing underscore. Fictional satirical historical/social archetypes,not treatment advice or real-person/clinical claims.
+
+All4 new sets DRAFT pending Georg;2 female-read each/8 total. Prior6 narrative families/36 designs accepted at 8373435d7b099d24900810bfaf27948de8f93b57;inventory110 PASS sheets/660 depictions,108 sheets/648 intake eligible. New24 excluded from PASS counts. Prose stays DESIGN;prior exclusions unchanged.
+
+Production:4 native reference-conditioned jobs,0 layout edits,0 selected-image resizes;all original1536x1024 RGBA alpha0..254. Actual veteran-original/body material and RPG/accessory craft supplied as bounded STYLE references;6/6 benchmark hashes verified before generation/packaging. Native/local/Git PNG bytes identical. Model/seed controls not exposed. No generated-sheet parent chain.
+
+Checks:all originals/checker composites,light64/96/192 and dark160-per-logical-cell views reviewed. Whole upright footless ink anatomy,white/red/black eyes,2 female-read each. Pair cue2linked prop gloves,not extra actor;double-agent1face with asymmetric expression/two-tone accessories;dog/duck/robot/mummy via accessories only;rocking chair carried,not seated scene;blank rulebook2empty pages;leech jar sealed3shapes,no procedure/patient/blood;confetti3rectangles. Native minor variations:keyring2keys plus blank tag vs3keys,quack horn more megaphone than duck rim,red-tape3bands vs2,large blank book covers more body but complete silhouette intact. Per-set observations preserved,not self-issued Georg verdict.
+
+Technical holds:source-sheet alpha present;final opacity/edge cleanup,validated individual isolation/native high-resolution single catalogue masters pending. Anti-Rules global straight-row minimum peak212,no certified single horizontal crop;logical cells not crop rectangles. No game sprites,canonical receiving-ID assignment,combat tier/hits,Asset Library rebuild,runtime publication,merge or public Stage claim.
+
+Changed files:TRUSTSYSTEMS_{TRUST,SYSTEMS,MEDICINE,ANTIRULES}_6_2026-11-06/,each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;TRUSTSYSTEMS_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.24 original source-bound DESIGN cards,English biographies and dry German FrizzleBob notes grounded in own concepts/props and HyperNorm lore. Shared thematic deck family only,no invented pair/state/trio/tier or exact-card binding.
+
+Next gate:Georg design verdict on4 new sheets,optionally per family.
+
+---
+
 # WSA Return · Narrative batch PASS; trust/systems/medicine/anti-rules authorized · 2026-11-06
 
 Georg accepts all6 narrative sheets/36 designs. Manifest and biography intake flags updated;prose DESIGN,minor QA/technical holds retained. Accepted110 sheets/660 depictions;eligible108/648. WSA owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New outcome4 six-actor sheets:Trust & Betrayal,Unspoken Systems,Medicine Madness,Anti-Rules Manifesto.4 exact registry deck IDs/title verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Keywords free inspirations,not exact card bindings;pair/animal/mummy/robot concepts adapted to upright complete ink actors.2 female-read per sheet,all new candidates await Georg. Medicine fictional historical absurdity,not clinical advice. Next step:source-conditioned generation/archival. No merge/runtime/Library rebuild.
