@@ -1,3 +1,11 @@
+# WSA Return · Supporters/outdoor batch PASS; six space crews authorized · 2026-11-06
+
+Georg accepts all six SPORTS4 sheets / 36 actors: fan A/B, reporters, volleyball, mountaineers and deepsea divers. Manifests and biography intake flags updated; lore stays DESIGN and recorded extraction/master holds remain. Inventory: 136 PASS sheets / 816 depictions; eligible: 134 / 804. Historical exclusions remain unchanged.
+
+Owner WSA, georg-doc/kayfabizarro, assets/ws0-ink-miners-2026-11-04, draft PR #469. New authorized outcome: six independent 3x2 sheets / 36 unique actors—astronauts, space soldiers, space pirates, ink blob cyborgs, spaceship mechanics and imperial troopers. Each two female-read. Whole upright footless ink anatomy and white-red-black eyes remain dominant. Retro space accessories, original reference conditioning, independent jobs and complete provenance/lore required. Next: generate/archive six DRAFT sheets. No runtime/Library publication or merge.
+
+---
+
 # WSA Return · Supporters, reporters and outdoor teams · 2026-11-06
 
 Owner: WSA. Repository: georg-doc/kayfabizarro. Branch: assets/ws0-ink-miners-2026-11-04. Draft PR #469. Outcome: six independent 3x2 source sheets and 36 unique authoring identities: fan group A, fan group B, sports reporters, beach volleyball, mountaineers and deepsea divers. Each set has two female-read figures, twelve in total. All six new sets are DRAFT awaiting Georg.
