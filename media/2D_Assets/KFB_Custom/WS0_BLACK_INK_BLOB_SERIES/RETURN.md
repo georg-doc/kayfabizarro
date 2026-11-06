@@ -1,3 +1,19 @@
+# WSA Return · Registered royal donor and animation-lane R2 · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome:verified Librarian single-source donor,royal-first queue,existing SDF/pirate pilot reuse,and an actual one-call GIF capability probe. Static Slop production remains separate. No new user-owned Work chat created;one read-only source-audit subagent used.
+
+Librarian Site appgprj_6ac1afef08148191b62b95f184bf845e version55 was opened. No MCP server or D1 data interface exposed;UI plus linked GitHub source inspected. King Ultimately asset slop-source:WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04 shows designPASS/PNGchecked. Exact PNG downloaded from Race ref51fd8e457711f28ec877545289a45fe88180ac7f,path75_REFS/WSA_ASSET_INTAKE/EXPANSION_2026-11-06_R2/slops/png/WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04.png. File455x515,motif451x511with2pxpadding,RGBAalpha0..255,SHA256aa5768edbfd7925c05fb2cc89bc49863fb3cb9eacd68ef0b4ad074cd4d0b0f1c,Gitblobbee2e8d327a405c38b6428407235efe10d66b327. Source unchanged. Registered LibraryID is sufficient for animation;runtimeIDnull is only a downstream game mapping seam. Queen donor not unambiguously identified in two visible name searches;no identity invented.
+
+One native reference-conditioned call requested6frame transparentGIFblink220ms with protected crown/book/body. Actual resultPNG1254x1254,1frame,SHA256714c4effd329c40dd6737922ccad6126c1326447a3be831aee03ceace27dcea1. OUTPUT_FORMAT_MISMATCH_NOT_ANIMATION. Zero retries,no GIF output,no animated registration. Static test output retained locally only;not replacement/master. Current channel needs an actual GIF-capable worker or explicitly selected API/CLI path;no key/API invocation performed.
+
+Read-only agent found actual SDF mechanism on Race fx/inkline2d-atlas-r1 head38da5bc68eb37cf7372e591b12f9daa3e90a2881:bildparallel.js,fwidth screen-adaptive outline,separate offline baker test/slopSdfBacken.mjs. White-fringe light-wrap suppression and newer wrap:false cleanup differ;the latter was not enabled in inspected Slop material. Preserve clean RGBA plus matching separate SDF,not baked outline master. Existing assets/slop-anim-pilot-r1 head3746e3563ec326989c8da64e5b989a4d427bf163 already holds pirat_bruellen GIF/color/SDF atlas. ItsGIF gitblob12b7bddeadd9c56699ed3a8d638eb069ded13037 matches both local pirateGIFs.6frames4.17fps,atlas1461x1006,cells487x503,sdf_max12. Pilot has no parent LibrarianID yet;no runtime acceptance inferred.
+
+Changed12files:ANIMATION_LANE_R2.md,ANIMATION_QUEUE_R2.json,ANIMATION_JOB_SCHEMA_R2.json,OUTLINE_SOURCE_AUDIT_R1.md,KING_SOURCE_RECEIPT.json,KING_GIF_PILOT_ARGS.json,KING_GIF_CAPABILITY_RESULT.json,ANIMATION_QUEUE_R1.json,LIVING_MASTERPLAN_R1.md,ANIMATION_PILOT_R1.md,WS0_HANDOFF_R1.md,RETURN.md. Inputs/results JSON parsed;source PNG dimensions/alpha/hash checked;existing atlas manifest read;UI source isolated. Exact finalhead/file readbacks saved in local receipt. No Site edits/publish,no second runtime,no game tests,no merge.
+
+Nextgate:execute verified King input through a genuinely GIF-capable channel,review one actual loop,then register animated_variant_of the same LibraryID and hand exact version to existing WS1 pilot. Do not ask for the already verified registered donor again.
+
+---
+
 # WSA Return · Slop living production plan and GIF audit · 2026-11-06
 
 Owner WSA; repository georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR #469. Outcome: existing Slop production consolidated into a living masterplan, five format recipes, source-backed coverage/deck views, proposal backlog and bounded motion-agent/WS1 handoff. No new images, GIFs or runtime implementation.

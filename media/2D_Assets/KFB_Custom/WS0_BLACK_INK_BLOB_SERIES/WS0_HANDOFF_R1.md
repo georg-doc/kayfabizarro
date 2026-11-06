@@ -1,3 +1,11 @@
+## Aktualisierung · 06.11.2026 · registrierter König und vorhandener SDF-Pilot
+
+[ANIMATION_LANE_R2.md](ANIMATION_LANE_R2.md) und [ANIMATION_QUEUE_R2.json](ANIMATION_QUEUE_R2.json) konkretisieren die nächste Ausführung. King Ultimately ist als Librarian-Einzelquelle geprüft; eine noch offene Spiel-ID blockiert die Bild-/Motion-Produktion nicht. Native PNG455×515mit451×511Motiv und2pxRand;Sourcehash undRegistry-ID liegen vor. Der hiesige einzelne GIF-Fähigkeitstest ergab eine statische PNG,keine Animation. Für die nächste Ausführung ist deshalb ein tatsächlich GIF-fähiger Kanal erforderlich.
+
+Vorhandener Piraten-GIF/Farb-/SDF-Atlas im Race-Zweig `assets/slop-anim-pilot-r1` wurde entdeckt;GIFbytegleich mit Georgs lokalem Beispiel. SDF-Outline und separate Light-wrap-/Randbehandlung sind belegt;Details im [Outline-Audit](OUTLINE_SOURCE_AUDIT_R1.md). Neue visuelle Priorität:Royal/Elite/Veteranen zuerst,ohne neue Kampfstufe aus dem Aussehen abzuleiten. R2 ersetzt die R1-Eingangshürde eines noch fehlenden registrierten Donors. Keine neue GIF-Datei oder Librarian-Animationsregistrierung in diesem Lauf.
+
+---
+
 # WS0-Handoff · Slop-Linie / Living Plan / Motion-Pilot
 
 06.11.2026. WSA erweitert die bestehende Authoring-Linie; kein zweiter Librarian und kein neuer Mob-Renderer.

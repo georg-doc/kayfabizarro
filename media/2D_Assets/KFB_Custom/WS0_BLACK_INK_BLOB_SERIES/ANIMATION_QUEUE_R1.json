@@ -1,6 +1,6 @@
 {
   "schema": "kfb.slop-motion-plan/1",
-  "status": "PLANNING_ONLY_NO_GENERATION_RUNNING",
+  "status": "SUPERSEDED_BY_R2_VERIFIED_LIBRARY_INPUT",
   "owner": "WSA",
   "runtime_owner": "WS1",
   "jobs": [
@@ -30,5 +30,6 @@
     }
   ],
   "after_pilot": "Six-case mixed validation pack;only then bounded production batches",
-  "provider_adapter_status": "NOT_EXECUTED_OR_VERIFIED_IN_THIS_SLICE"
+  "provider_adapter_status": "NOT_EXECUTED_OR_VERIFIED_IN_THIS_SLICE",
+  "superseded_by": "ANIMATION_QUEUE_R2.json"
 }
