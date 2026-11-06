@@ -1,5 +1,22 @@
 # RETURN · KFB ChatterBox Voice Layer v1 · 2026-10-08
 
+## 2026-11-06 · WS0 LOCAL APPLE-SILICON TTS PROVIDER RESEARCH + DOCCHECK MICRO-LEARNING OUTLOOK · SOURCES PERSISTED
+
+**Mode/outcome:** bounded **RESEARCH / DOCUMENTATION** in existing KFB ChatterBox/Resident Voice owner (Draft PR #379). Georg supplied concrete local hardware (**Mac mini M4 16 GB, MacBook Pro M1 Max 32 GB with restricted free disk, temporary MacBook Air M4 24 GB**) and requested persistence for **WS0** (canonical term; dictated "VS0") plus a **future DocCheck speech-generation outlook**. This is not an implementation authorization, no new player-facing TTS/WS0 runtime, no independent DocCheck owner write.
+
+**New authoritative donor audit**: `WS0_LOCAL_TTS_PROVIDER_MAC_HARDWARE_AND_DOCCHECK_OUTLOOK_RESEARCH_2026-11-06.md`; verified source research/decision matrix for Voicebox, Qwen3 Base/CustomVoice/VoiceDesign, Kyutai Pocket TTS, Boson Higgs v3, Spokenly STT, archived Resemble Chatterbox-TTS, costs and optional ElevenLabs, Apple Silicon/MLX/CPU performance limits, storage rights and private A/B trial. Source commit `8490230ff3f58a99ad8abe28faed779eeeb41c59` independently read back on exact branch.
+
+**New evidence boundary report**: `WS0_LOCAL_TTS_DOCCHECK_SOURCE_AND_TEST_REPORT_2026-11-06.md`; **18/18 real structural/document completeness assertions PASS** against exact returned research file and `0/18` audio render matrix done. No Qwen/Pocket/Higgs installation, no Mac throughput/TTFA/RTF measurements, no human listening/casting/rights clearance, no browser proof. Report commit `8a55324b3ab5e11fafce14f5c24dafa1dd5f62fe` read back. Manufacturer Pocket ~200 ms M4 Air and Qwen 97 ms best-case are **not product timings**.
+
+**Existing cross-product handover updated**: `tools/KFB-ToolBox/_inbox/HANDOVER_Voice-Layer_KFB_AudioTutor_2026-10-08.md` gained strictly additive §13 with research links, future approved 60–90-second German Micro-Learning, narrated Flexikon/process SVGs, quiz explanations, accessibility/multilingual audio and approved other DocCheck content. DocCheck `DC_VOICEIO` stays playback/mic owner, no patient/learner transcripts sent to vendors without approved privacy contract; medical source/caption/phoneme review before approved audio. DocCheck IT-hosting boundary unchanged. Commit `757c7e8735c42e76c5a71f9ff91c9079b45c32c0` verified via exact branch readback. **No `georg-doc/doccheck` repository edits.**
+
+**No changes:** `overworld/overworld/chatter-phrases.js`, source manifests, current KFB Audio Site / AudioContext, World/R5, existing Voice Acting Bench, any DocCheck product/runtime, KFB central router, Hub or Cloudflare publication; no PR merge or Live. Existing earlier developer/human/creative gates remain valid and are not superseded by this donor research.
+
+**ONE NEXT GATE**: `KFB_WS0_LOCAL_TTS_THREE_ACTOR_DRY_AB_R1` – if production is explicitly authorized, generate and benchmark a source-pinned private 18-clip matrix (Demon Lord, Robot One, Farmer A × Pocket CPU/Qwen 0.6B/Qwen 1.7B × Whole/fragment) on available Apple Silicon in the **existing** KFB Audio/Voice Acting receiving owner; obtain real-device timing, audible quality, rights evidence and Georg KEEP/TUNE/CUT. Only later and separately consider one verified DocCheck short German medical Micro-Learning sample. No Stage/Site required for this research-only documentation milestone.
+
+---
+
+
 
 ## 2026-10-14 · COMPLETE SOURCE-GROUNDED PROTOPIA 56 CARD SPOKEN WORD SET · HUMAN QA PENDING
 
