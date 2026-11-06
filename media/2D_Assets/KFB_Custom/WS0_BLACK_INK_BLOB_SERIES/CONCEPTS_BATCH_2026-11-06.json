@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 6,
     "depictions": 36,
@@ -18,8 +18,8 @@
       "manifest": "CONCEPTS_WRINKLE_6_2026-11-06/MANIFEST.json",
       "sha256": "71d1568f494142485378702579ea4addfb53402c99b83c4f90624b7a3da6fb4d",
       "git_blob_sha": "4068a39af977420292f844a1445359f2bdd1ba05",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "wrinkle_rumble",
         "user_family_title": "Wrinkle-Rumble",
@@ -45,8 +45,8 @@
       "manifest": "CONCEPTS_DRAMA_6_2026-11-06/MANIFEST.json",
       "sha256": "c8df93d619b51641a60b13b506522e37ee9b1b8a9408e6b61a933e934c292145",
       "git_blob_sha": "6f65d0b7deb7746a54bf6a80b1099564627dcfa5",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "plot_pusher_posse",
         "user_family_title": "Dramatic Drops & Konflikts",
@@ -72,8 +72,8 @@
       "manifest": "CONCEPTS_IMPROV_6_2026-11-06/MANIFEST.json",
       "sha256": "74cd3ce49b50899fda9f17eb89afe21a6046026b731086c60435f4b8b1149e26",
       "git_blob_sha": "7344becfa808d33867d1802673d192cf67949da2",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "kayfabizarro_improv_comedy",
         "user_family_title": "Improv Sketchbook",
@@ -99,8 +99,8 @@
       "manifest": "CONCEPTS_MORALITY_6_2026-11-06/MANIFEST.json",
       "sha256": "dc89a4f91ccbfa4fdaf74387a886e1447164267051d18a4e54e155d6944f55ce",
       "git_blob_sha": "d6c1029fa1e0a068aa9bbad6c6b92966b8032500",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "kayfabizarro_1_morale_ethics",
         "user_family_title": "Monster Morality",
@@ -126,8 +126,8 @@
       "manifest": "CONCEPTS_MISSION_6_2026-11-06/MANIFEST.json",
       "sha256": "e1769aa39e186b84b049d21c47a99befea146228a3f8e1404b25260b68ec63a9",
       "git_blob_sha": "c181abfa7f72110af59f84b19c69123cdb0a15f1",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "frizzlebob_s_mission_control",
         "user_family_title": "Mission Control",
@@ -153,8 +153,8 @@
       "manifest": "CONCEPTS_BRAIN_6_2026-11-06/MANIFEST.json",
       "sha256": "2896964cefb7bcc8585df94173bb04e145907f8fea95b2c4d33e5395feffb699",
       "git_blob_sha": "8f7adddfb177f4617a3993d01f63411dae8a2eab",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "brain_flipper_image_spots",
         "user_family_title": "Brain-Flipper Pack",
@@ -180,5 +180,6 @@
     "Exact actual prompts/reference roles recorded",
     "Pair/animal/hanging/upside-down cues adapted to upright standalone ink anatomy",
     "All text lore/cards DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }

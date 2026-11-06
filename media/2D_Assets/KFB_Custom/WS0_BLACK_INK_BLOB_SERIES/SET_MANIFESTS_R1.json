@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 98,
-    "pass_depictions": 588,
+    "selected_sheets": 104,
+    "pass_depictions": 624,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 96,
-    "intake_eligible_depictions": 576,
-    "other_authoring_depictions": 468
+    "intake_eligible_sheets": 102,
+    "intake_eligible_depictions": 612,
+    "other_authoring_depictions": 504
   },
   "excluded_sources": [
     {
@@ -682,56 +682,55 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_CONCEPTS_WRINKLE_20261106",
       "manifest": "CONCEPTS_WRINKLE_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CONCEPTS_DRAMA_20261106",
       "manifest": "CONCEPTS_DRAMA_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CONCEPTS_IMPROV_20261106",
       "manifest": "CONCEPTS_IMPROV_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CONCEPTS_MORALITY_20261106",
       "manifest": "CONCEPTS_MORALITY_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CONCEPTS_MISSION_20261106",
       "manifest": "CONCEPTS_MISSION_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CONCEPTS_BRAIN_20261106",
       "manifest": "CONCEPTS_BRAIN_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0
