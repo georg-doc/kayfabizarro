@@ -726,11 +726,54 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_NARRATIVE_AGE_20261106",
+      "manifest": "NARRATIVE_AGE_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_NARRATIVE_NIBELUNGEN_20261106",
+      "manifest": "NARRATIVE_NIBELUNGEN_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_NARRATIVE_KOSMIK_20261106",
+      "manifest": "NARRATIVE_KOSMIK_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_NARRATIVE_EGO_20261106",
+      "manifest": "NARRATIVE_EGO_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_NARRATIVE_FLAWS_20261106",
+      "manifest": "NARRATIVE_FLAWS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_NARRATIVE_MUSEUM_20261106",
+      "manifest": "NARRATIVE_MUSEUM_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

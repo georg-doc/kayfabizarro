@@ -1,3 +1,21 @@
+# WSA Return · Six narrative deck families generated · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome6 independent6-actor transparent source sheets/36 authoring identities:Koming-of-Age,Nibelungen,Kosmik Kollektive,It's All About Me,Tragic Flaws,Museum of Modern Mess. Exact6 deck registry IDs/title/path/ref read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae;thematic DESIGN bindings,exact card mapping null. Free creative myth/narrative archetypes,not exact historical/literary reconstruction,clinical diagnosis or real-person claim.
+
+All6 new sets DRAFT pending Georg;2 female-read per set/12 total. Prior6 concept families/36 designs explicitly accepted at b6762fd7a39d76d73be09678cbd45b103b82ecfb;inventory104 PASS sheets/624 depictions,102 sheets/612 intake eligible. New36 excluded from PASS counts. Prose stays DESIGN;prior exclusions unchanged.
+
+Production:6 native reference-conditioned jobs,0 layout edits,0 selected-image resizes;all original1536x1024 RGBA alpha0..254. Actual veteran-original/body material and RPG/accessory craft supplied as bounded STYLE references;6/6 benchmark hashes verified before generation/packaging. Native/local/Git PNG bytes identical. Model/seed controls not exposed. No generated-sheet parent chain.
+
+Checks:each original/checker composite,light64/96/192 and dark160-per-logical-cell boards visually reviewed. Whole upright footless dark ink bodies,white/red/black eyes,2 female-read per sheet. Prom-pair adapted1actor2corsages,no extra partner. Mythical dragon/dwarf/robot/animal metaphors remain ink:small horns/wings/beard/cap cues,not alternate humanoid/animal/metal body. Black-hole concept spiral snack prop;green jealousy accessory only;banana mounted on hand-carried board;sculpture small brass loop in hand,no room/wall/pedestal scene. Native minor observations:learner cap L despite no-lettering brief;Imperator unprompted rosy lip;Hubris1prominent visible eye and4 ladder rungs vs3planned;critic monocle raised toward eye vsheld below,actual pupils readable;giftshop sweat and paintdrop native additions. All per-set QA,not automatic Georg verdict.
+
+Technical holds:source-sheet transparency present;final alpha opacity/edge cleanup,validated individual isolation and native high-resolution single catalogue masters pending. Nibelungen global straight-row minimum peak246,left-column246;no safe single horizontal crop. Logical cells not crop rectangles. No game sprites,receiving canonical-ID mapping,combat tiers/hits,Asset Library rebuild,runtime,merge or public Stage claim.
+
+Changed files:NARRATIVE_{AGE,NIBELUNGEN,KOSMIK,EGO,FLAWS,MUSEUM}_6_2026-11-06/,each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;NARRATIVE_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.36 original source-bound DESIGN cards,English biographies,dry German FrizzleBob notes grounded in own concepts/props and HyperNorm lore. Shared deck-family relations only,no invented pair/twin/state/trio or exact-card binding.
+
+Next gate:Georg design verdict on6 new narrative sheets,optionally per family.
+
+---
+
 # WSA Return · Concept batch PASS; six new narrative families authorized · 2026-11-06
 
 Georg accepts all6 concept sheets/36 designs. Manifests and biography intake flags updated;prose DESIGN,minor QA/technical holds retained. Accepted104 sheets/624 depictions;eligible102/612. WSA owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New bounded outcome6 six-actor sheets:Koming-of-Age,Nibelungen,Kosmik Kollektive,It's All About Me,Tragic Flaws,Museum of Modern Mess.6 exact deck IDs/titles verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Keywords creative inspirations,not exact card mappings;pair/dragon/robot/animal/wall concepts adapted to6 upright independent footless ink actors. Each2 female-read;new candidates await Georg. Next step:source-conditioned generation/archival. No merge/runtime/Library rebuild.
