@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 5,
     "depictions": 30,
@@ -18,8 +18,8 @@
       "manifest": "SPORTS_SOCCER_6_2026-11-06/MANIFEST.json",
       "sha256": "bd1b11baaea08197b7f10dab0668bd9757f77cd8e676dc3cf647d2ed914f05a0",
       "git_blob_sha": "9ebc7a17cbf9f177bde4d3979fabf4890b2cabbf",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "FC Nachspielzeit",
       "sports_roles": [
         "goalkeeper",
@@ -36,8 +36,8 @@
       "manifest": "SPORTS_FOOTBALL_6_2026-11-06/MANIFEST.json",
       "sha256": "9b71720c995fe850abfcdd04ed0460366ef6c5ffc236337d780a84442956c197",
       "git_blob_sha": "4611c7f94a0b124fdf6f8acf88cf14964628432a",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "HyperNorm Hail Marys",
       "sports_roles": [
         "quarterback",
@@ -54,8 +54,8 @@
       "manifest": "SPORTS_BASKETBALL_6_2026-11-06/MANIFEST.json",
       "sha256": "4d1d375ef823c02311a690bfd18d38e246ac6460e83c4ed7f9a11351c9504cf5",
       "git_blob_sha": "70d0089b98ec774f69b4ff3521bd14abd5481317",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Die Auszeitbehörde",
       "sports_roles": [
         "point guard",
@@ -72,8 +72,8 @@
       "manifest": "SPORTS_BASEBALL_6_2026-11-06/MANIFEST.json",
       "sha256": "eac93355909cc91b3d896ddd02236f8ae98c8f3faf7b90c42ee33e51b97ce504",
       "git_blob_sha": "9d1c026f4a5f35515a6d49a4c5969fe8e8dbcc7d",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "The Pending Innings",
       "sports_roles": [
         "pitcher",
@@ -90,8 +90,8 @@
       "manifest": "SPORTS_TENNIS_6_2026-11-06/MANIFEST.json",
       "sha256": "4004104bca0bcf7e5db96e2b5cbbfc5b33c97b1b22dc8e5851a8b1dfb492f2f3",
       "git_blob_sha": "f9f7a5e4e9a32cacd2a08f51cf28a9824758d9e0",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Der Verein zum zweiten Aufschlag",
       "sports_roles": [
         "serve-and-volley attacker",
@@ -109,5 +109,6 @@
     "Logical cells not certified crops;independent catalogue masters/extraction pending",
     "All30 source-bound cards and biographies DESIGN",
     "No real sports team branding or factual complete-lineup claim;no canonical deck/tier/ID bindings invented"
-  ]
+  ],
+  "georg_status": "PASS"
 }

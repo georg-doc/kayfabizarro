@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 114,
-    "pass_depictions": 684,
+    "selected_sheets": 119,
+    "pass_depictions": 714,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 112,
-    "intake_eligible_depictions": 672,
-    "other_authoring_depictions": 564
+    "intake_eligible_sheets": 117,
+    "intake_eligible_depictions": 702,
+    "other_authoring_depictions": 594
   },
   "excluded_sources": [
     {
@@ -794,49 +794,48 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_SPORTS_SOCCER_20261106",
       "manifest": "SPORTS_SOCCER_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS_FOOTBALL_20261106",
       "manifest": "SPORTS_FOOTBALL_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS_BASKETBALL_20261106",
       "manifest": "SPORTS_BASKETBALL_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS_BASEBALL_20261106",
       "manifest": "SPORTS_BASEBALL_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS_TENNIS_20261106",
       "manifest": "SPORTS_TENNIS_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 5,
-    "depictions": 30,
-    "identities": 30,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

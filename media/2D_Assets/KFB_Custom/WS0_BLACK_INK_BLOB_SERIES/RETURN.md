@@ -1,3 +1,9 @@
+# WSA Return · First five sports teams PASS; next five authorized · 2026-11-06
+
+Georg accepts all5 soccer/Americanfootball/basketball/baseball/tennis sheets/30actors. Source manifests and biography intake flags updated;prose remains DESIGN,technical master/isolation holds retained. Inventory119 PASS sheets/714depictions;eligible117/702;existing exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. Authorized new outcome5six-actor3x2 sport sheets:hockey(interpreted as ice hockey),riding,swimming,athletics,rugby. Two female-read each,all whole upright footless ink actors;roles/equipment carry sport idea without horse/pool/field scenelets. Native source references,full prompts,metadata and DESIGN lore required. Next step:produce/archive5DRAFTs. No runtime/Library publication/merge.
+
+---
+
 # WSA Return · Five retro sports teams generated · 2026-11-06
 
 Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Bounded outcome5 new independent3x2 sheets/30 unique source-authoring actors:soccer,American football,basketball,baseball,tennis. Two female-read each/10total. Fictional retro team palettes,distinct sport roles and acting;no real team brands,not legal complete-lineup assertions. All5 DRAFT awaiting Georg. Prior4 concept-family PASS persisted and11files verified at4608d7c6eb70aac6808292679494dc07330ca9b4. Accepted inventory114 sheets/684depictions;eligible112/672,unchanged by30new DRAFT actors;old Miners/International Couples exclusions preserved.
