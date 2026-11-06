@@ -1,3 +1,11 @@
+# WSA Return · Space crews PASS; living production plan and animation audit · 2026-11-06
+
+Georg accepts all six space crews / 36 actors,including the pirate captain as drawn. Manifests and biography intake flags updated;historical squint observation retained,not a rejection. Text remains DESIGN;extraction/master/runtime holds remain. Inventory142 PASS sheets/852 depictions;eligible140/840. These are depictions,not a claimed count of distinct canonical identities. Historical exclusions unchanged.
+
+Owner WSA,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome:versioned living production masterplan,format recipes,coverage/gap register and bounded animation-agent pilot/handoff informed by read-only local GIF audit. No new image/GIF generation or runtime implementation in this planning slice. Existing Asset Librarian and WS1 remain owners. Next:read source manifests,review existing loops and archive masterplan.
+
+---
+
 # WSA Return · Six retro space crews generated · 2026-11-06
 
 Owner: WSA. Repository: georg-doc/kayfabizarro. Branch: assets/ws0-ink-miners-2026-11-04. Draft PR #469. Outcome: six independent 3x2 source sheets / 36 unique authoring identities—astronauts, space soldiers, space pirates, ink blob cyborgs, spaceship mechanics and imperial troopers. Each has two female-read actors, twelve total. All new sets are DRAFT awaiting Georg.
