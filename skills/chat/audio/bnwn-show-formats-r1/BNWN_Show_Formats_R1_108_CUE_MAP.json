@@ -1,0 +1,1799 @@
+{
+  "schema": "kfb.bnwn.show-formats.authoring.v1",
+  "title": "Brave New World News · Studio & Game Shows R1",
+  "status": "AUTHORING_CANDIDATE_NOT_RECORDED",
+  "canonical_voice": "Existing female BNWN presenter (single speaker; no male/guest voices needed)",
+  "source_anchor": "Georg BNWN R3 SRT, 20 source captions; prior Sponsor Stingers R2 donor PR #472",
+  "separator": "<break time=\"1.6s\" />",
+  "cue_count": 108,
+  "show_count": 12,
+  "bridge_count": 12,
+  "shows": [
+    {
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "title": "Citizen of the Week",
+      "format_pitch": "NPC social-compliance awards",
+      "suggested_anchor_event": "npc_week",
+      "cue_count": 8
+    },
+    {
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "title": "Who Wants to Be Compliant?",
+      "format_pitch": "Riggable radio quiz with no losing answer",
+      "suggested_anchor_event": "ambient",
+      "cue_count": 8
+    },
+    {
+      "show_id": "DEMOCRACY_DELUXE",
+      "title": "Democracy Deluxe!",
+      "format_pitch": "Election-night spectacle and managed participation",
+      "suggested_anchor_event": "ambient",
+      "cue_count": 8
+    },
+    {
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "title": "The Consensus Challenge",
+      "format_pitch": "Expert panels and scientific-public-relations theater",
+      "suggested_anchor_event": "ambient",
+      "cue_count": 8
+    },
+    {
+      "show_id": "EULA_BINGO",
+      "title": "EULA Bingo",
+      "format_pitch": "App consent and biometric terms as a competition",
+      "suggested_anchor_event": "ambient",
+      "cue_count": 8
+    },
+    {
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "title": "Neighborhood Watch-Along",
+      "format_pitch": "Participatory CCTV and social surveillance",
+      "suggested_anchor_event": "npc_witness",
+      "cue_count": 8
+    },
+    {
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "title": "The Founder Knows Best",
+      "format_pitch": "Dark-enlightenment shareholder monarchy",
+      "suggested_anchor_event": "ambient",
+      "cue_count": 8
+    },
+    {
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "title": "The Price Is Permitted",
+      "format_pitch": "Programmable currency and social-credit shopping game",
+      "suggested_anchor_event": "economy",
+      "cue_count": 8
+    },
+    {
+      "show_id": "MEMORY_MAKEOVER",
+      "title": "Memory Makeover",
+      "format_pitch": "Historical revision as lifestyle makeover",
+      "suggested_anchor_event": "district_destroyed",
+      "cue_count": 8
+    },
+    {
+      "show_id": "THE_HAPPINESS_INDEX",
+      "title": "The Happiness Index",
+      "format_pitch": "Social-score wellness and behavioral conditioning",
+      "suggested_anchor_event": "social_score",
+      "cue_count": 8
+    },
+    {
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "title": "Public Enemy Makeover",
+      "format_pitch": "Player disobedience reframed as celebrity or threat",
+      "suggested_anchor_event": "wanted_level_up",
+      "cue_count": 8
+    },
+    {
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "title": "The Great Normalize-Off",
+      "format_pitch": "Competitions to explain away disasters as success",
+      "suggested_anchor_event": "building_destroyed",
+      "cue_count": 8
+    }
+  ],
+  "cues": [
+    {
+      "id": "BNWN-SHOW-001",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to Citizen of the Week, where ordinary people achieve extraordinary levels of not getting involved. Nominations are collected automatically.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-001"
+    },
+    {
+      "id": "BNWN-SHOW-002",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This week's finalist watched his neighbor's house collapse, checked the evacuation app, and reported an excellent user experience.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-002"
+    },
+    {
+      "id": "BNWN-SHOW-003",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our next nominee found an unfamiliar card in the street and handed it to Security without reading a single word. A beautiful example of functional literacy.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 26,
+      "estimated_speech_seconds": 10.4,
+      "synthesis_id": "BNWN-SHOW-003"
+    },
+    {
+      "id": "BNWN-SHOW-004",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "One resident corrected her own eyewitness account before officials asked. <break time=\"0.45s\" /> She has been promoted to witness for the prosecution.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-004"
+    },
+    {
+      "id": "BNWN-SHOW-005",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "And a special commendation for the citizen who noticed an unmarked van, smiled politely, and made room at the curb.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-005"
+    },
+    {
+      "id": "BNWN-SHOW-006",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The winner of Citizen of the Week has agreed to donate the prize money to the department that selected them. That's what we call community.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 25,
+      "estimated_speech_seconds": 10,
+      "synthesis_id": "BNWN-SHOW-006"
+    },
+    {
+      "id": "BNWN-SHOW-007",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Honorable mention goes to a resident who reported his own suspicious silence. Investigators described the conversation as highly productive.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-007"
+    },
+    {
+      "id": "BNWN-SHOW-008",
+      "show_id": "CITIZEN_OF_THE_WEEK",
+      "show_title": "Citizen of the Week",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Remember, anyone can become Citizen of the Week. Some people are entered more than once, under different names.",
+      "suggested_events": [
+        "ambient",
+        "npc_week"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-008"
+    },
+    {
+      "id": "BNWN-SHOW-009",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to Who Wants to Be Compliant? Four choices, one correct answer, and a sponsor who knows which one.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-009"
+    },
+    {
+      "id": "BNWN-SHOW-010",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Question one! Who owns the information collected by your household appliances? A: you. B: the manufacturer. C: a trusted partner. The correct answer is: thank you for participating.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 28,
+      "estimated_speech_seconds": 11.2,
+      "synthesis_id": "BNWN-SHOW-010"
+    },
+    {
+      "id": "BNWN-SHOW-011",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Quick-fire round! Is compulsory participation voluntary? Yes, yes with enthusiasm, or yes after reviewing the terms? <break time=\"0.45s\" /> All three advance to the next round.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-011"
+    },
+    {
+      "id": "BNWN-SHOW-012",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A viewer asks whether the quiz can be skipped. Congratulations! That was our trick question. The viewer has already qualified.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-012"
+    },
+    {
+      "id": "BNWN-SHOW-013",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "What is the safest response to an unexplained government vehicle? Keep walking, stop walking, or report the walking? Our judges accept any response submitted in advance.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 26,
+      "estimated_speech_seconds": 10.4,
+      "synthesis_id": "BNWN-SHOW-013"
+    },
+    {
+      "id": "BNWN-SHOW-014",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's jackpot is a lifetime exemption from unnecessary questions. Winners receive a certificate, which is itself a necessary question.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-014"
+    },
+    {
+      "id": "BNWN-SHOW-015",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our contestant used the phone-a-friend lifeline. The friend's phone answered on behalf of both parties. A brilliant team effort.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-015"
+    },
+    {
+      "id": "BNWN-SHOW-016",
+      "show_id": "WHO_WANTS_TO_BE_COMPLIANT",
+      "show_title": "Who Wants to Be Compliant?",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Another flawless game! Remember, on Who Wants to Be Compliant, you can't lose. The losses are processed by another department.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-016"
+    },
+    {
+      "id": "BNWN-SHOW-017",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "It's election night on Democracy Deluxe! Stay for the count, the charts, and the moving tribute to a winner we can already confirm.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-017"
+    },
+    {
+      "id": "BNWN-SHOW-018",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The public has narrowed the field to a remarkable range of approved opinions, from strongly recommended to very strongly recommended.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-018"
+    },
+    {
+      "id": "BNWN-SHOW-019",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our interactive voting line is open! Press one to support the outcome. Press two to support the process. All other keys are comments.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-019"
+    },
+    {
+      "id": "BNWN-SHOW-020",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This evening's exit poll has achieved a hundred percent accuracy. It was conducted entirely inside the ballot-printing facility.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-020"
+    },
+    {
+      "id": "BNWN-SHOW-021",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "We asked citizens what mattered most: freedom, security, or convenient billing. Our sponsor was deeply moved by their answers and selected security.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-021"
+    },
+    {
+      "id": "BNWN-SHOW-022",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The undecided voters have finally decided. They will be moved to a separate statistical category with no effect on the result.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-022"
+    },
+    {
+      "id": "BNWN-SHOW-023",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The opposition has made an important contribution to democracy by appearing in the official photograph. Their objections were cropped for clarity.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-023"
+    },
+    {
+      "id": "BNWN-SHOW-024",
+      "show_id": "DEMOCRACY_DELUXE",
+      "show_title": "Democracy Deluxe!",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Democracy Deluxe will return after a brief emergency. Emergency extensions are determined by popular demand from the board.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-024"
+    },
+    {
+      "id": "BNWN-SHOW-025",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This is The Consensus Challenge, the only quiz where the experts agree before we've finished asking the question.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-025"
+    },
+    {
+      "id": "BNWN-SHOW-026",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Round one! Can you tell the peer-reviewed study from the shareholder presentation? Hint: the shareholder presentation has fewer footnotes and a better catering budget.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-026"
+    },
+    {
+      "id": "BNWN-SHOW-027",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Follow the science! Our contestants are following it down the hallway, past the ethics office, and into a private investor briefing.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-027"
+    },
+    {
+      "id": "BNWN-SHOW-028",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's hypothesis is officially evidence-based. The evidence will be delivered as soon as procurement completes its internal review.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-028"
+    },
+    {
+      "id": "BNWN-SHOW-029",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A caller has requested the raw data. Wonderful curiosity! Our help desk has sent them a beautifully illustrated summary of why they don't need it.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 25,
+      "estimated_speech_seconds": 10,
+      "synthesis_id": "BNWN-SHOW-029"
+    },
+    {
+      "id": "BNWN-SHOW-030",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "In a stunning display of independence, all five panelists arrived at the same conclusion. The sixth panelist arrived at the airport and was turned away.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 25,
+      "estimated_speech_seconds": 10,
+      "synthesis_id": "BNWN-SHOW-030"
+    },
+    {
+      "id": "BNWN-SHOW-031",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our audience has correctly identified the expert by his credentials, the approved backdrop, and the tiny logo on the coffee mug.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-031"
+    },
+    {
+      "id": "BNWN-SHOW-032",
+      "show_id": "THE_CONSENSUS_CHALLENGE",
+      "show_title": "The Consensus Challenge",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "That's all for The Consensus Challenge. Stay tuned for tomorrow's new findings, which will have been true all along.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-032"
+    },
+    {
+      "id": "BNWN-SHOW-033",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "EULA Bingo is back! Fill an entire card with permissions you didn't know you granted, and win one additional permission.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-033"
+    },
+    {
+      "id": "BNWN-SHOW-034",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Today's first square: perpetual retention. Your grandmother had the family albums. Your toaster has the family's movement history.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-034"
+    },
+    {
+      "id": "BNWN-SHOW-035",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Eyes down for our bonus square: legitimate interest! Nobody knows whose interest, but the lawyers look absolutely thrilled.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-035"
+    },
+    {
+      "id": "BNWN-SHOW-036",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A player selected Decline All. That's a rare one! The system recorded her preference and opened the full terms in a new window.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-036"
+    },
+    {
+      "id": "BNWN-SHOW-037",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our next number is thirty-seven: the number of third parties who became first parties while you were reading the consent screen.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-037"
+    },
+    {
+      "id": "BNWN-SHOW-038",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "We've reached the blackout round! Every box is ticked, every option is grey, and the prize is continued access to your own front door.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-038"
+    },
+    {
+      "id": "BNWN-SHOW-039",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The winner receives a handwritten copy of their privacy agreement. For security, the handwriting will be replaced with a QR code.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-039"
+    },
+    {
+      "id": "BNWN-SHOW-040",
+      "show_id": "EULA_BINGO",
+      "show_title": "EULA Bingo",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Thanks for playing EULA Bingo. Your attendance has already been shared with our affiliates, including those who don't exist yet.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-040"
+    },
+    {
+      "id": "BNWN-SHOW-041",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to Neighborhood Watch-Along! The camera never blinks, so we don't have to worry about missing your little moments.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-041"
+    },
+    {
+      "id": "BNWN-SHOW-042",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our live mystery tonight: who entered the empty street after curfew? Was it a trespasser, an authorized patrol, or the person who wrote the curfew?",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 25,
+      "estimated_speech_seconds": 10,
+      "synthesis_id": "BNWN-SHOW-042"
+    },
+    {
+      "id": "BNWN-SHOW-043",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Look closely at this harmless shadow near the doorway. If it belongs to you, congratulations: you've identified yourself for our prize department.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-043"
+    },
+    {
+      "id": "BNWN-SHOW-044",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A resident's refrigerator detected a three-second pause before breakfast. The neighborhood voted to classify it as suspicious contemplation.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-044"
+    },
+    {
+      "id": "BNWN-SHOW-045",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "We've brought back audience voting! Tap the face you recognize. The faces will be retained after the program ends.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-045"
+    },
+    {
+      "id": "BNWN-SHOW-046",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "That unmarked vehicle is our mystery guest. We won't reveal the driver, because the driver knows who you are.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-046"
+    },
+    {
+      "id": "BNWN-SHOW-047",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our caller says there are no cameras on her street. <break time=\"0.45s\" /> That's exactly what the camera report says as well.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-047"
+    },
+    {
+      "id": "BNWN-SHOW-048",
+      "show_id": "NEIGHBORHOOD_WATCHALONG",
+      "show_title": "Neighborhood Watch-Along",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Neighborhood Watch-Along is brought to you by Smart Dust. We're everywhere in the community, especially between the community.",
+      "suggested_events": [
+        "ambient",
+        "npc_witness"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-048"
+    },
+    {
+      "id": "BNWN-SHOW-049",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to The Founder Knows Best, where democracy gets a performance review and the chief executive takes the throne without leaving his ergonomic chair.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-049"
+    },
+    {
+      "id": "BNWN-SHOW-050",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's design challenge: build a nation with the customer service of a cable company and the accountability of a private island.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-050"
+    },
+    {
+      "id": "BNWN-SHOW-051",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our founder explains that voting is an outdated interface. Now every citizen gets a login, a dashboard, and the opportunity to renew their contract.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-051"
+    },
+    {
+      "id": "BNWN-SHOW-052",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The shareholder council has approved freedom of movement for all premium residents. Standard users may enjoy freedom of scrolling.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-052"
+    },
+    {
+      "id": "BNWN-SHOW-053",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our meritocracy is open to everyone. The qualifying round takes place before birth, and winners inherit their entry fees.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-053"
+    },
+    {
+      "id": "BNWN-SHOW-054",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A question from the audience: who watches the sovereign? Excellent question! The sovereign's venture capital partners are watching very closely.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-054"
+    },
+    {
+      "id": "BNWN-SHOW-055",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This week's constitutional amendment reduces the number of constitutional amendments requiring approval. It's what we call frictionless government.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-055"
+    },
+    {
+      "id": "BNWN-SHOW-056",
+      "show_id": "THE_FOUNDER_KNOWS_BEST",
+      "show_title": "The Founder Knows Best",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "You've been watching The Founder Knows Best. Next week: why your town hall is now a co-working space with armed receptionists.",
+      "suggested_events": [
+        "ambient"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-056"
+    },
+    {
+      "id": "BNWN-SHOW-057",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to The Price Is Permitted! Guess the price of everyday necessities before your wallet decides whether you deserve them.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-057"
+    },
+    {
+      "id": "BNWN-SHOW-058",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "First prize: a loaf of bread. Retail value, three credits. Purchase eligibility, twenty-seven variables. Our contestant is missing one approved smile.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-058"
+    },
+    {
+      "id": "BNWN-SHOW-059",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "We've got a special on freedom! It's available in three easy installments and cannot be transferred, inherited, or spent outside your designated district.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-059"
+    },
+    {
+      "id": "BNWN-SHOW-060",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Spin the wheel! Food, fuel, or personal travel? <break time=\"0.45s\" /> The wheel has landed on risk assessment. What a popular category.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-060"
+    },
+    {
+      "id": "BNWN-SHOW-061",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A contestant tried to tip the cashier in cash. The studio lights went red, and the cashier received a valuable training opportunity.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-061"
+    },
+    {
+      "id": "BNWN-SHOW-062",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The bonus round is Reverse Shopping: the less you buy, the more we learn about what prevented you.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-062"
+    },
+    {
+      "id": "BNWN-SHOW-063",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's grand prize is debt forgiveness! The debt remains, but our app will stop calling it a debt until Thursday.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-063"
+    },
+    {
+      "id": "BNWN-SHOW-064",
+      "show_id": "THE_PRICE_IS_PERMITTED",
+      "show_title": "The Price Is Permitted",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Thank you for playing The Price Is Permitted. All winnings expire if the terms of your personality change.",
+      "suggested_events": [
+        "ambient",
+        "economy"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-064"
+    },
+    {
+      "id": "BNWN-SHOW-065",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to Memory Makeover! We take the troubling news you remember and give it the finish it deserves.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-065"
+    },
+    {
+      "id": "BNWN-SHOW-066",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our first before-and-after features a collapsed apartment block. Before: rubble. After: a sustainable open-plan view. The tenants are still in post-production.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-066"
+    },
+    {
+      "id": "BNWN-SHOW-067",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Do you remember the blackout? Of course you do! Our new archive has restored the electricity to every official photograph.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-067"
+    },
+    {
+      "id": "BNWN-SHOW-068",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This caller insists her street used to have a library. Good news: the building remains in our files as a successful digital learning space.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-068"
+    },
+    {
+      "id": "BNWN-SHOW-069",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Today's makeover challenge is a missing person. We can't bring the person back, but we can give the absence a more inclusive name.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-069"
+    },
+    {
+      "id": "BNWN-SHOW-070",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our archivist found two contradictory eyewitness accounts. For a seamless result, we selected the one already printed on the banner.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-070"
+    },
+    {
+      "id": "BNWN-SHOW-071",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Everyone loves the new timeline! It contains twelve fewer emergencies and an unexpectedly large number of product launches.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-071"
+    },
+    {
+      "id": "BNWN-SHOW-072",
+      "show_id": "MEMORY_MAKEOVER",
+      "show_title": "Memory Makeover",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Memory Makeover is sponsored by YesterdayPlus. Because the future shouldn't have to apologize for the past.",
+      "suggested_events": [
+        "ambient",
+        "district_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 16,
+      "estimated_speech_seconds": 6.4,
+      "synthesis_id": "BNWN-SHOW-072"
+    },
+    {
+      "id": "BNWN-SHOW-073",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "You're watching The Happiness Index, where we measure your joy so you can stop pretending to feel it yourself.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-073"
+    },
+    {
+      "id": "BNWN-SHOW-074",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Today's most improved citizen raised their happiness score by smiling at a security checkpoint. Facial discomfort has been logged as enthusiasm.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-074"
+    },
+    {
+      "id": "BNWN-SHOW-075",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Here's our wellness tip: if the world outside is upsetting, turn off the window and consult the official mood forecast.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-075"
+    },
+    {
+      "id": "BNWN-SHOW-076",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Let's check the leaderboard! First place is held by an anonymous account with excellent benefits and no documented physical body.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-076"
+    },
+    {
+      "id": "BNWN-SHOW-077",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The audience has reported a drop in morale. Our researchers fixed the questionnaire. Morale is up forty percent.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-077"
+    },
+    {
+      "id": "BNWN-SHOW-078",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Your employer has purchased a happiness subscription for you. Cancellation requires a written statement that you are unhappy, which lowers your score.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-078"
+    },
+    {
+      "id": "BNWN-SHOW-079",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our weekly winner receives a full weekend of rest, subject to productivity monitoring and weekday availability.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 16,
+      "estimated_speech_seconds": 6.4,
+      "synthesis_id": "BNWN-SHOW-079"
+    },
+    {
+      "id": "BNWN-SHOW-080",
+      "show_id": "THE_HAPPINESS_INDEX",
+      "show_title": "The Happiness Index",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "That's The Happiness Index. Remember, your smile is yours. The measurements belong to us.",
+      "suggested_events": [
+        "ambient",
+        "social_score"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 14,
+      "estimated_speech_seconds": 5.6,
+      "synthesis_id": "BNWN-SHOW-080"
+    },
+    {
+      "id": "BNWN-SHOW-081",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "It's time for Public Enemy Makeover, the show that turns every unexplained stranger into the face of a national conversation.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-081"
+    },
+    {
+      "id": "BNWN-SHOW-082",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our mystery contestant has collected another unauthorized card. Is that a hobby, a political movement, or a merchandising opportunity? Stay tuned.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-082"
+    },
+    {
+      "id": "BNWN-SHOW-083",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A building has disappeared, and the authorities have a new suspect. The before picture is classified. The after picture is available on a commemorative mug.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 25,
+      "estimated_speech_seconds": 10,
+      "synthesis_id": "BNWN-SHOW-083"
+    },
+    {
+      "id": "BNWN-SHOW-084",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's challenge: identify the public enemy using only a coat, a blurry silhouette, and an increasingly confident voice-over.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-084"
+    },
+    {
+      "id": "BNWN-SHOW-085",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our studio audience has voted the fugitive a national disgrace. The advertising department has voted them an excellent brand partner.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-085"
+    },
+    {
+      "id": "BNWN-SHOW-086",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Security has issued a fresh warning: do not approach the suspect. Fans are advised that autographs are prohibited within the cordon.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-086"
+    },
+    {
+      "id": "BNWN-SHOW-087",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "An exciting twist! Yesterday's terrorist is today's urban-renewal pioneer. The category changed while our commercial was playing.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 17,
+      "estimated_speech_seconds": 6.8,
+      "synthesis_id": "BNWN-SHOW-087"
+    },
+    {
+      "id": "BNWN-SHOW-088",
+      "show_id": "PUBLIC_ENEMY_MAKEOVER",
+      "show_title": "Public Enemy Makeover",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Don't miss Public Enemy Makeover. The search continues, even when the story says the suspect has already been found.",
+      "suggested_events": [
+        "ambient",
+        "wanted_level_up"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-088"
+    },
+    {
+      "id": "BNWN-SHOW-089",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "INTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Welcome to The Great Normalize-Off! Our panel has sixty seconds to turn a public disaster into an award-winning lifestyle announcement.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 20,
+      "estimated_speech_seconds": 8,
+      "synthesis_id": "BNWN-SHOW-089"
+    },
+    {
+      "id": "BNWN-SHOW-090",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Round one! A bridge is gone. The planning department calls it a pedestrian-friendly gap. The sponsor calls it an invitation to upgrade your commute.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-090"
+    },
+    {
+      "id": "BNWN-SHOW-091",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The winning entry for a missing neighborhood is: temporary reduction in urban density. Bonus points for the word temporary.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-091"
+    },
+    {
+      "id": "BNWN-SHOW-092",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A factory exploded near the town square. The publicist calls it a new approach to open-air manufacturing. The jury is delighted by the transparency.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 24,
+      "estimated_speech_seconds": 9.6,
+      "synthesis_id": "BNWN-SHOW-092"
+    },
+    {
+      "id": "BNWN-SHOW-093",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Now for our speed round: sirens become sound baths; barricades become wellness borders; missing witnesses become data minimization.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-093"
+    },
+    {
+      "id": "BNWN-SHOW-094",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Tonight's final challenge: explain why the cameras went dark. Our contestant says privacy. Security says scheduled maintenance. Both earn a prize.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-094"
+    },
+    {
+      "id": "BNWN-SHOW-095",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "SEGMENT",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The audience says it saw the incident. The judges say it saw an opportunity. Only the judges' answer fits on the billboard.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-095"
+    },
+    {
+      "id": "BNWN-SHOW-096",
+      "show_id": "THE_GREAT_NORMALIZE_OFF",
+      "show_title": "The Great Normalize-Off",
+      "slot": "OUTRO",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Thank you for watching The Great Normalize-Off. Nothing happened, and the winners will be recognized at the site of the event.",
+      "suggested_events": [
+        "ambient",
+        "building_destroyed"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 21,
+      "estimated_speech_seconds": 8.4,
+      "synthesis_id": "BNWN-SHOW-096"
+    },
+    {
+      "id": "BNWN-SHOW-097",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "And after this brief commercial break: a democracy special brought to you by the people who wrote the ballot.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-097"
+    },
+    {
+      "id": "BNWN-SHOW-098",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Coming up on Brave New World News: one missing district, three successful narratives, and absolutely no outstanding questions.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 18,
+      "estimated_speech_seconds": 7.2,
+      "synthesis_id": "BNWN-SHOW-098"
+    },
+    {
+      "id": "BNWN-SHOW-099",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Vote now for tonight's most convincing explanation! Your vote may be retained for training and is not required to influence the outcome.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 22,
+      "estimated_speech_seconds": 8.8,
+      "synthesis_id": "BNWN-SHOW-099"
+    },
+    {
+      "id": "BNWN-SHOW-100",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Our studio poll is open. We can assure you that your answer will remain anonymous until it becomes useful.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-100"
+    },
+    {
+      "id": "BNWN-SHOW-101",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "A round of applause for our studio audience of everyday citizens, whose attendance was selected by an independent algorithm.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-101"
+    },
+    {
+      "id": "BNWN-SHOW-102",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The opinions expressed by our audience are not necessarily the opinions they had before entering the building.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 17,
+      "estimated_speech_seconds": 6.8,
+      "synthesis_id": "BNWN-SHOW-102"
+    },
+    {
+      "id": "BNWN-SHOW-103",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Thank you for that spontaneous applause. The applause signs have now been switched off. Please continue.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 16,
+      "estimated_speech_seconds": 6.4,
+      "synthesis_id": "BNWN-SHOW-103"
+    },
+    {
+      "id": "BNWN-SHOW-104",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "The Brave New World News truth hotline is open twenty-four hours a day. Calls will be answered by whatever you need to hear.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 23,
+      "estimated_speech_seconds": 9.2,
+      "synthesis_id": "BNWN-SHOW-104"
+    },
+    {
+      "id": "BNWN-SHOW-105",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "It's the final round! The contestant is free to choose the answer, provided the answer has already been cleared.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 19,
+      "estimated_speech_seconds": 7.6,
+      "synthesis_id": "BNWN-SHOW-105"
+    },
+    {
+      "id": "BNWN-SHOW-106",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "We interrupt this program with a correction to the announcement we haven't made yet.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 14,
+      "estimated_speech_seconds": 5.6,
+      "synthesis_id": "BNWN-SHOW-106"
+    },
+    {
+      "id": "BNWN-SHOW-107",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "Consume. Believe. Obey. <break time=\"0.45s\" /> And now, back to the game.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.6,
+      "synthesis_id": "BNWN-SHOW-107"
+    },
+    {
+      "id": "BNWN-SHOW-108",
+      "show_id": "STUDIO_BRIDGES",
+      "show_title": "Studio Links",
+      "slot": "BRIDGE",
+      "voice": "BNWN_FEMALE_ANCHOR",
+      "text": "This is Brave New World News. The audience has been wonderful. Their profiles will be reviewed overnight.",
+      "suggested_events": [
+        "ambient",
+        "station_transition",
+        "after_news"
+      ],
+      "status": "AUTHORING_CANDIDATE",
+      "word_count": 17,
+      "estimated_speech_seconds": 6.8,
+      "synthesis_id": "BNWN-SHOW-108"
+    }
+  ]
+}
