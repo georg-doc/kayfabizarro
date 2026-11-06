@@ -1,3 +1,21 @@
+# WSA Return · Six surreal concept deck families generated · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome6 independent6-actor transparent sheets/36 authoring identities:Wrinkle-Rumble,Dramatic Drops & Konflikts,Improv Sketchbook,Monster Morality,Mission Control,Brain-Flipper Pack. Exact6 deck registry IDs/title/path/ref read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae;thematic DESIGN bindings,exact card mapping null.
+
+All6 new sets DRAFT pending Georg,2 female-read each/12 total. Prior5 culture families/30 designs explicitly accepted at 944543466e32acd75c3d14110434af56f7409629;inventory98 PASS sheets/588 depictions,96 sheets/576 intake eligible. New36 excluded from PASS counts. Prose remains DESIGN,prior exclusions unchanged.
+
+Production:6 native reference-conditioned jobs,0 layout edits,0 selected-image resizes;all original1536x1024 RGBA alpha0..254. Actual veteran-original/body-material and RPG/accessory-craft images supplied as bounded STYLE references each call;all6 benchmark SHA256 checks verified before generation and packaging. PNG bytes identical native/local/Git. Model/seed controls not exposed. No generated-sheet parent chain.
+
+Checks:each native output/checker composite,light64/96/192 and dark160-per-logical-cell boards reviewed. Whole upright footless dark ink bodies,white/red/black eyes,2 female-read per sheet. Special concepts adapted consistently:fractal twin via empty mirror props;cliffhanger upright holding rope/grapnel,no hanging scene;scene partner2prop gloves;angel/devil1ink body;ethics owl feather cap,no bird body;upside-down thinker upright holding inverted landscape;mindmap spider3peg/thread board,no spiderlegs;sphinx headcloth/box,no lion body. Native minor variations:whole halo vs half,sharper corkscrew than blunt brief,larger mini-crane,carved eye on inanimate red fish,extra sweat drops,upside-down thinker cap remains upright though card inverted. Candidate observations in QA,not human verdict.
+
+Technical holds:source-sheet transparency present,final alpha opacity/edge cleanup,validated individual isolation and native high-resolution single catalogue masters pending. Wrinkle global straight-row minimum peak247,no safe single horizontal crop;logical cells not extraction rectangles. No game sprites,receiving canonical mapping,combat tier/hits,Asset Library rebuild,runtime publication,merge or public Stage claim.
+
+Changed files:CONCEPTS_{WRINKLE,DRAMA,IMPROV,MORALITY,MISSION,BRAIN}_6_2026-11-06/,each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;CONCEPTS_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.36 original source-bound DESIGN cards,English biographies and dry German FrizzleBob notes grounded in own props/concepts and HyperNorm lore. Shared deck-family relations only,no invented pair/twin/state/trio or exact-card binding. Fictional visual metaphors,not scientific diagrams or real-person allegations.
+
+Next gate:Georg design verdict on6 new concept sheets,optionally per family.
+
+---
+
 # WSA Return · Culture batch PASS; six concept families authorized · 2026-11-06
 
 Georg accepts all5 culture sheets/30 designs. Manifests and biography intake flags updated;prose DESIGN,technical/minor QA notes retained. Accepted98 sheets/588 depictions;eligible96/576. WSA owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New bounded outcome6 six-actor sheets:Wrinkle-Rumble,Dramatic Drops & Konflikts,Improv Sketchbook,Monster Morality,Mission Control,Brain-Flipper Pack.6 exact deck IDs/titles verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Keywords free inspirations,not exact card bindings;pair/animal/upside-down/hanging concepts adapted to independent upright footless blobs. Each2 female-read,all new candidates await Georg. Next step:source-conditioned production/archival. No merge/runtime/Library rebuild.
