@@ -1,3 +1,23 @@
+# WSA Return · Supporters, reporters and outdoor teams · 2026-11-06
+
+Owner: WSA. Repository: georg-doc/kayfabizarro. Branch: assets/ws0-ink-miners-2026-11-04. Draft PR #469. Outcome: six independent 3x2 source sheets and 36 unique authoring identities: fan group A, fan group B, sports reporters, beach volleyball, mountaineers and deepsea divers. Each set has two female-read figures, twelve in total. All six new sets are DRAFT awaiting Georg.
+
+Georg's PASS for the preceding six SPORTS3 sheets / 36 actors was persisted at e67ed0dbe562aca1f9f04bda9e92c89aea5ee5eb and all 15 intended files were read back. Accepted inventory: 130 sheets / 780 depictions; intake eligible: 128 / 768. New DRAFT actors are excluded from those totals. Historical Miners and International Couples exclusions remain unchanged; lore prose remains DESIGN.
+
+Production: six native image jobs, zero layout edits, zero resizes to selected images, zero extracted sprites. Actual veteran-original/body and RPG/accessory references were supplied as bounded STYLE inputs. All six original benchmark SHA256 values matched. Model and seed are not exposed. All six outputs are original 1536x1024 RGBA PNGs with alpha extrema 0..254 and 540773–590988 fully clear pixels. Native/local/Git blob hashes match. No generated-sheet style parent chain. Exact final head and 45 file readbacks are recorded in the local GITHUB_RECEIPT.json; this Return does not invent its own future commit.
+
+Visual checks: every native output and checker composite, plus light64/96/192 and dark160 logical-cell previews, were inspected. Full upright footless ink bodies, white sclera/red iris/black pupils and two female-read actors per set. Fan A uses blue/cream, fan B rustred/cream, with distinct casts and sport-neutral props. Their opposing-family links are DESIGN affiliation metadata, not actor pairs or runtime/combat assignments. Reporter equipment remains below faces. Volleyball uses goo-arm gestures without human sporting anatomy. Mountaineering tools are hand props, not a scenelet. Deepsea helmet has a large open face; no full humanoid diving suit.
+
+Native differences are retained per set: fan A sound wedges/sweat drops and changed mouths; fan B flower/patches and larger ticket/scarf; reporters flower trim and recorder buttons; volleyball larger arms/net and tight ball margin; mountaineer feather/flower and compass-like rather than clearly altitude dial; deepsea specimen is a luminous teardrop rather than sphere. These are observations, not self-issued Georg PASS.
+
+Technical holds: volleyball setter ball has exceptionally little top clearance. Top-row count of alpha>32 pixels is zero, so no visible hard clipping was found, but generous extraction margin was not achieved. Deepsea global row minimum peak is 249 (left column24), so a single straight row cut is not certified. Logical cells are not crop rectangles. Alpha opacity/edge cleanup, validated individual extraction and native high-resolution single catalogue masters remain pending. No game/runtime export, Library publication, canonical receiving-ID assignment, combat tier/hit mapping, merge or public Stage claim.
+
+Changed files: SPORTS4_{FANA,FANB,REPORTERS,VOLLEYBALL,MOUNTAIN,DEEPSEA}_6_2026-11-06/, each with sheet-r1.png, CHARACTER_INTENT.json, MANIFEST.json, SLOP_CARDS_DESIGN.json, BIOGRAPHIES_DESIGN.json, PRODUCTION_RECORD.json and TECHNICAL_QA.json; SPORTS4_BATCH_2026-11-06.json, SET_MANIFESTS_R1.json and RETURN.md. All 36 figures have individual English biographies, dry German FrizzleBob notes, actual full prompts and family/role metadata. Prose stays DESIGN; no invented exact deck, pair, state or trio bindings. Local output/slop-sports4-* folders preserve plans, original PNGs and QA previews.
+
+Next gate: Georg's design verdict on the six new sheets, optionally per family.
+
+---
+
 # WSA Return · Third sports batch PASS; supporters/reporters/outdoor teams authorized · 2026-11-06
 
 Georg accepts all6 poker/ski/motor/cycling/secondhockey/marathon sheets,36actors. Manifests and biography intake updated;prose DESIGN,technical isolation/master holds retained. Inventory130PASS sheets/780depictions;eligible128/768;old exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome6independent3x2six-actor sheets:sport-neutral fanTeamA,fanTeamB,sportsreporters,beachvolleyball,mountaineers,deepseadivers. Two female-read each,fresh expressive whole upright footless ink bodies,retro craft,actual original references. TeamA/B are colour-coded fictional affiliations not realteams or canonicalpair/combat mappings. Next:generate/archive6DRAFTs. No runtime/Librarypublication/merge.

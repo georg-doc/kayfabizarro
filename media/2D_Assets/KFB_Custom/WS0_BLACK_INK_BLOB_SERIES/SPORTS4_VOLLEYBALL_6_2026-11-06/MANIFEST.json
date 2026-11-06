@@ -1,0 +1,265 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_VOLLEYBALL_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+    "sha256": "b0d64b4d5da04bc13edd03b85cc9bbe3372cf195d08ad63739e153aaf3a4c619"
+  },
+  "production_record": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_VOLLEYBALL_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_VOLLEYBALL_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "VC Sand im Verfahren",
+    "visual_context": "Retro beach volleyball club,cinnamon-orange and faded turquoise small towel/collar accents,leather-panel cream balls,no bikinis/humanbody,no beachscene",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "VOLLEYBALL",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "VOLLEYBALL"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Verteilspiel",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream panelled volleyball",
+        "turquoise headband"
+      ],
+      "temperament": "She distributes chances according to a plan she is still improvising.",
+      "prompt_auszug": "Vera Verteilspiel, female-read. Tall curving ink blob with swept quiff,subtle lashes and bright precise eyes,CLOSED confident crooked smile;small turquoise headband and cream collar;both short goo hands raised above eyebrows in clear SETTING gesture,ONE cream leather volleyball balanced between hands without obscuring eyes.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "setter / play organiser"
+    },
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Blockbescheid",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cinnamon neckerchief",
+        "turquoise wristbands"
+      ],
+      "temperament": "He blocks incoming problems before establishing whether they were invitations.",
+      "prompt_auszug": "Bert Blockbescheid, male-read. Very broad tall square-lobed ink splat,low bored eyelids and toothless long frown;small cinnamon neckerchief,turquoise wristbands;both short goo palms raised beside face in imposing BLOCK gesture,no net.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "middle blocker"
+    },
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sven Sandalarm",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "folded towel",
+        "cream visor"
+      ],
+      "temperament": "He is ready to save the rally and deeply opposed to surprises.",
+      "prompt_auszug": "Sven Sandalarm, male-read. Compact round ink pear with bent crest,huge worried sideways eyes,tiny wavering CLOSED smile;small cream visor,turquoise collar;holds folded orange towel at flank,other hand low cupped in DIG-ready gesture,fullyupright notdiving.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "defensive dig specialist"
+    },
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ulf Aufschlagamt",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather volleyball",
+        "orange sweatband"
+      ],
+      "temperament": "He treats the serve as a formal opening statement with physical consequences.",
+      "prompt_auszug": "Ulf Aufschlagamt, male-read. Lean upright reverse-comma ink blob,high swept crest,manically delighted white eyes and three-upper-tooth crooked open shout;orange sweatband,tiny cream collar;ONE cream leather volleyball held in open palm at waist,other palm high for a serve,owncell only.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "serve / attacking specialist"
+    },
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mira Mauerhöhe",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "folded miniature net",
+        "turquoise sunvisor"
+      ],
+      "temperament": "She doubts the net is high enough to justify all this enthusiasm.",
+      "prompt_auszug": "Mira Mauerhöhe, female-read. Broad diamond-lobed ink blob,strong modest lashes and unimpressed side-eyed stare,small pursed toothless mouth;turquoise sunvisor ABOVE brows,small cinnamon towel shoulder;holds ONE short folded three-square miniature net in one hand,other palm measured high.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "net specialist / veteran"
+    },
+    {
+      "id": "WSA_SPORTS4_VOLLEYBALL_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fips FünfterSatz",
+      "bild": {
+        "datei": "SPORTS4_VOLLEYBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "enamel bottle",
+        "striped towel",
+        "patched cap"
+      ],
+      "temperament": "He entered for a casual game and is now part of a system.",
+      "prompt_auszug": "Fips FünfterSatz, male-read. Tall wavy ink bell with drooping curled crest,huge tired hopeful eyes and small toothless open exhale;cream clothcap with turquoise patch,small orange collar;holds dented enamel waterbottle and short striped towel,bodydominant.",
+      "prompt_quelle": "SPORTS4_VOLLEYBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "recreational all-rounder / substitute"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -908,11 +908,54 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_SPORTS4_FANA_20261106",
+      "manifest": "SPORTS4_FANA_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS4_FANB_20261106",
+      "manifest": "SPORTS4_FANB_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS4_REPORTERS_20261106",
+      "manifest": "SPORTS4_REPORTERS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS4_VOLLEYBALL_20261106",
+      "manifest": "SPORTS4_VOLLEYBALL_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS4_MOUNTAIN_20261106",
+      "manifest": "SPORTS4_MOUNTAIN_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS4_DEEPSEA_20261106",
+      "manifest": "SPORTS4_DEEPSEA_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
     "pass": 0
   },
   "production_supplement": {

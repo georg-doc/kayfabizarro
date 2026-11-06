@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_DEEPSEA_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+    "sha256": "a6a58db4818c0b1ec65d5781f07f9832a7fdc97811ee702ead09d7b4e944edf8"
+  },
+  "production_record": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_DEEPSEA_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_DEEPSEA_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Expedition Unter Vorbehalt",
+    "visual_context": "Retro deepsea exploration with copper/brass,verdigris and faded cream gear,subtle dieselpunk science vibe;darkINKbodies remain dominant,no fullhumanoiddivingsuits",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "DEEPSEA",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "DEEPSEA"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kapitän Druckfest",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open-front copper diving helmet",
+        "brass diving lamp"
+      ],
+      "temperament": "He regards pressure as something that should have been settled before departure.",
+      "prompt_auszug": "Kapitän Druckfest, male-read. Very broad scalloped ink blob,heavy patient eyelids and deep CLOSED toothless frown;ONE classic copper divinghelmet as crown-and-collar with HUGE completelyclear openfront framing ENTIRE ink face/eyes/mouth,unobscuredno glassreflection;small cream neckpanel;holds ONE thick short brass divinglamp at flank.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "helmet diver / expedition chief"
+    },
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Bergungsgut",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large brass salvage key",
+        "small rope coil",
+        "cream cap"
+      ],
+      "temperament": "He calls every wreck a storage problem with an optimistic balance sheet.",
+      "prompt_auszug": "Bert Bergungsgut, male-read. Tall leaning ink pear with high swept crest,delighted sharp eyes and three-upper-tooth crooked open laugh;small cream knitcap,verdigris collar;holds ONE old oversized brass salvage key and small leather ropecoil over goo wrist,not sprawling hoses.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "salvage and wreck diver"
+    },
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Nachtprobe",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sealed specimen jar with luminous clay pearl",
+        "open hood"
+      ],
+      "temperament": "She collects evidence and is worried that it might be looking back.",
+      "prompt_auszug": "Nora Nachtprobe, female-read. Tall thin curved ink bell,sidequiff,lashes,huge curious white eyes and tiny toothless CLOSED worried smile;small verdigris hood framingfaceopen,cream collar;holds ONE thick rounded sealed glass samplejar containing SINGLE luminous turquoise pearl-shaped CLAY specimen,no live animal,other palm shelters jar.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "deepsea specimen researcher"
+    },
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto OhneEcho",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one-joystick control box",
+        "blank sonar dial",
+        "brass headphones"
+      ],
+      "temperament": "He pilots the remote vehicle with the confidence of someone waiting for the echo.",
+      "prompt_auszug": "Otto OhneEcho, male-read. Compact star-lobed ink blob with bent crest,anxious unequal eyes and small toothless open gasp;two small brass headphones on sides of ink head,eyesclear;verdigris tiny collar;holds ONE simple brass remote-control box with one stout joystick and blank round sonar dial,not clutteredbuttons.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "ROV operator / expedition diver"
+    },
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Franz Flutlicht",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "porthole camera",
+        "single lamp bulb",
+        "cream cap"
+      ],
+      "temperament": "He wants a clear picture of something that has spent centuries avoiding publicity.",
+      "prompt_auszug": "Franz Flutlicht, male-read. Round broad ink blob with tall inkcurl,focused sideways eyes and CLOSED sly grin;cream clothcap,small verdigris collar;holds ONE chunky round waterproof retro camera with brass porthole lens and single lamp bulb,at CHESTbelow face.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "underwater photographer"
+    },
+    {
+      "id": "WSA_SPORTS4_DEEPSEA_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dora Dekompression",
+      "bild": {
+        "datei": "SPORTS4_DEEPSEA_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "brass pressure gauge",
+        "tin tea cup",
+        "cream cap"
+      ],
+      "temperament": "She waits professionally for conditions to become ordinary again.",
+      "prompt_auszug": "Dora Dekompression, female-read. Wide upright bell ink blob,modest lashes,deeply weary half-lidded white eyes and long CLOSED toothless pout;small verdigris scarf,cream cap with copperband;holds ONE round brass pressure gauge with simple blank face in one hand and a tiny tin tea cup in the other,no hoses acrossface.",
+      "prompt_quelle": "SPORTS4_DEEPSEA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "saturation diver / pressure specialist"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}
