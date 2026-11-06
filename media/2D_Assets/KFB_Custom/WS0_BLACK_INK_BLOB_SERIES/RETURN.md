@@ -1,3 +1,21 @@
+# WSA Return · Five cinema/music/romance/Wilde families generated · 2026-11-06
+
+Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome5 independent6-actor transparent sheets/30 authoring identities:Cinematic Legacy,Music Industry,Iceberg Session Cards,Love-Wrestling & Heartbreaks,Kayfab-Earnest. Exact5 user deck IDs and registry title/path/ref verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. Thematic DESIGN bindings,not exact card mapping or real-person likeness.
+
+All5 new sets DRAFT awaiting Georg. Prior5 philosophy families/30 designs accepted at b024273d05c966dd890967509eba5065e99aa6f8;inventory93 PASS sheets/558 depictions,91 sheets/546 intake eligible. New30 not counted as accepted. Each new family2 female-read/10 total. Prose remains DESIGN,existing exclusions unchanged.
+
+Production:5 native reference-conditioned jobs,0 layout edits,0 selected-image resizes;all original1536x1024 RGBA alpha0..254. Actual veteran-original/body material and RPG/accessory craft supplied as bounded STYLE references;6/6 benchmark hashes verified. Native/local/Git PNG bytes identical. Model/seed not exposed. No generated-sheet parent chain.
+
+Checks:each original/checker composite,light64/96/192 and dark160-per-logical-cell boards reviewed. Whole upright footless ink bodies,white/red/black eyes,2 female-read each. Pair/twin/couple inspirations adapted to standalone actors with paired inanimate props:stunt spare cap,fan2cards/2wristbands,2loveletters,2interlocking cake hearts. No extra live actors or asserted pair/trio relations. Film-snake reel/tape curl remains prop;autotune organic ink with headset/dial mic;lost tape/Bunbury ghosts remain dark complete ink. Native minor deviations:popcorn more than3puffs,elaborate feathers/stole,epigram blank speech-bubble paddle instead of hollow bubble,ticket train icon. Music One-Hit-Wonder cream collar below closed mouth may read as2tooth shapes at small scale:CLOTHING_READABILITY_REVIEW,not asserted external teeth. No self-issued Georg verdict.
+
+Technical holds:transparent source sheets,final opacity/edge cleanup and validated individual isolation/native high-resolution single catalogue masters pending. Cinema/Earnest global row-seam minimum peak20,no safe fixed-row extraction certified. Logical cells are not crop boxes. No game sprites,receiving canonical ID mapping,combat tiers/hits,Asset Library rebuild,runtime,merge or public Stage claim.
+
+Changed files:CULTURE_{CINEMA,INDUSTRY,ICEBERG,ROMANCE,EARNEST}_6_2026-11-06/,each sheet-r1.png,MANIFEST.json,CHARACTER_INTENT.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;CULTURE_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.30 original source-bound DESIGN cards,English bios and dry German FrizzleBob notes grounded in own concepts/props and HyperNorm lore. Shared deck-family relations only,no invented canonical card/person/event claims.
+
+Next gate:Georg design verdict on5 new culture sheets,optionally by family.
+
+---
+
 # WSA Return · Philosophy batch PASS; cinema/music/romance/Wilde batch authorized · 2026-11-06
 
 Georg accepts all5 philosophy/academic/RPG sheets/30 designs,minor notes retained. Manifests and biography intake flags updated;prose DESIGN,technical holds unchanged. Accepted93 sheets/558 depictions;eligible91/546. WSA source owner,assets/ws0-ink-miners-2026-11-04,draft PR469. New bounded outcome5 six-actor sheets:Cinematic Legacy,Music Industry,Iceberg Session Cards,Love-Wrestling & Heartbreaks,Kayfab-Earnest. Exact deck IDs and current registry titles verified at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae. User concepts creative inspirations,not exact card bindings. Each2 female-read;pair/twin concepts freely adapted to standalone single actors keeping6 per sheet. All new candidates await Georg. Next step:source-conditioned production/archival. No merge/runtime/Library rebuild.
