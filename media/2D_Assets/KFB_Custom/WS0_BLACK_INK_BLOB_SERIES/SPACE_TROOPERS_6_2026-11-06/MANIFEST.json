@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPACE_TROOPERS_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+    "sha256": "e6b4d43160904fafc636804d390c0d0f6d2f04bf0d79d55a16fd2dedbac587cc"
+  },
+  "production_record": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPACE_TROOPERS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPACE_TROOPERS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Imperiale Ordnung Auf Widerruf",
+    "visual_context": "Original retro galactic imperial garrison,ivory enamel/brass and midnight-blue SMALLarmorcollars/helmetcrowns,civic grandeur with tragicomic authoritarian fussiness",
+    "relationship_policy": "Shared fictional space crew and distinct role intentions; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Exploration, authority, maintenance, possession, enhancement, certainty and neighbourly care; fictional HyperNorm residents",
+    "domain": "TROOPERS",
+    "role_status": "FICTIONAL_AUTHORING_INTENT_NOT_RUNTIME_ASSIGNMENT"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Leutnant Linienrein",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open peaked helmet",
+        "commandbaton",
+        "blank ordercard"
+      ],
+      "temperament": "He enforces the line because deciding where it goes would exceed his rank.",
+      "prompt_auszug": "Leutnant Linienrein, male-read. Tall rigid bell ink blob,one haughty raised brow,heavy whiteeyes,CLOSED severe tiny pout;ivory peaked open officerhelmet with simple brass lozengebadge,nofullfacemask,midnightblue highcollar;holds ONE short plain ivory commandbaton and small blank ordercard.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "garrison officer"
+    },
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Berta Blockordnung",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small side-held shield",
+        "small shoulderplates",
+        "brass collarpin"
+      ],
+      "temperament": "She is proud of protecting the order and occasionally the people standing behind it.",
+      "prompt_auszug": "Berta Blockordnung, female-read. Very broad squat scalloped ink splat,modestlashes and fierce alert eyes,joyful crooked two-upper-tooth grin;two SMALLivory shoulderplates,brass collarpin;holds ONE modest rounded rectangular ivory riotshield at SIDE coveringless thanquarterbody,plainblueband,noemblem.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "shield / protection trooper"
+    },
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Niko Nachkommando",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized open domehelmet",
+        "short raycarbine",
+        "bluecollar"
+      ],
+      "temperament": "He joined for certainty and is surprised how many instructions contradict it.",
+      "prompt_auszug": "Niko Nachkommando, male-read. Narrow bent pear ink blob with highcurled crest,giant uncertain whiteeyes and tiny toothless gasp;ivory open domehelmet too large,noblackvisor,small bluecollar;holds ONE stubby brass raycarbine pointed DOWN besidebody,no firing.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "rookie patrol trooper"
+    },
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Meldepflicht",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "dish-antenna communicator",
+        "blue cap",
+        "brass clasp"
+      ],
+      "temperament": "She forwards every command with the smallest possible amount of belief.",
+      "prompt_auszug": "Mara Meldepflicht, female-read. Tall offset comma ink blob,lashed skeptical eyes,sidequiff,CLOSED sidewayssmirk;small midnightblue cap withivoryband,brass collarclasp;holds ONE compact ivory fieldcommunicator with single brassdishantenna and one largeknob.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "signals trooper"
+    },
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Ordnungskern",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "sealed powercell",
+        "small wrench",
+        "open helmet crown"
+      ],
+      "temperament": "He keeps the imperial machinery running by treating doctrine as a loose fitting.",
+      "prompt_auszug": "Otto Ordnungskern, male-read. Round wide star-lobed ink blob,high sweptcrest,excited precise whiteeyes and three-upper-tooth openlaugh;ivory openhelmetcrown and small blue scarf;holds ONE sealed brass powercell and single small chunky wrench,nobomb/fuse.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "technical trooper"
+    },
+    {
+      "id": "WSA_SPACE_TROOPERS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fritz Formularschutz",
+      "bild": {
+        "datei": "SPACE_TROOPERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-tab blank ledger",
+        "ivory garrison cap"
+      ],
+      "temperament": "He guards the paperwork from a galaxy that refuses to stay in its categories.",
+      "prompt_auszug": "Fritz Formularschutz, male-read. Wide tall domed ink blob with drooping curl,huge worriedunequaleyes and tiny CLOSED waveringmouth;small ivory softgarrisoncap,bluecollar;clutches ONE thick blank ledger with three ivory page-tabs at flank,free palm halfwayraised.",
+      "prompt_quelle": "SPACE_TROOPERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "records / checkpoint clerk"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

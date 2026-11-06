@@ -950,11 +950,54 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_SPACE_ASTRO_20261106",
+      "manifest": "SPACE_ASTRO_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPACE_SOLDIERS_20261106",
+      "manifest": "SPACE_SOLDIERS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPACE_PIRATES_20261106",
+      "manifest": "SPACE_PIRATES_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPACE_CYBORGS_20261106",
+      "manifest": "SPACE_CYBORGS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPACE_MECHANICS_20261106",
+      "manifest": "SPACE_MECHANICS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPACE_TROOPERS_20261106",
+      "manifest": "SPACE_TROOPERS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
     "pass": 0
   },
   "production_supplement": {

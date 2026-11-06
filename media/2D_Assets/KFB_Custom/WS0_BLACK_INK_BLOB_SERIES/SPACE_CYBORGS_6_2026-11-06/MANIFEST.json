@@ -1,0 +1,269 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPACE_CYBORGS_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+    "sha256": "73773736874fcd4f4eb37e668f72872a7c39111864dc12423d17b0171d1e0fc2"
+  },
+  "production_record": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPACE_CYBORGS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPACE_CYBORGS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Die teilweise Verbesserungsfähigen",
+    "visual_context": "Retro cybernetic ink inhabitants,oxidisedbrass/teal/enamel small upgrades,soft organic black-violet goo remainsatleast75percent;NOrobotbody/metalhead",
+    "relationship_policy": "Shared fictional space crew and distinct role intentions; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Exploration, authority, maintenance, possession, enhancement, certainty and neighbourly care; fictional HyperNorm residents",
+    "domain": "CYBORGS",
+    "role_status": "FICTIONAL_AUTHORING_INTENT_NOT_RUNTIME_ASSIGNMENT"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Zusatzgriff",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass three-finger hand",
+        "teacup",
+        "teal collar"
+      ],
+      "temperament": "He acquired an extra grip and now finds ordinary things alarmingly delicate.",
+      "prompt_auszug": "Egon Zusatzgriff, male-read. Broad bell ink blob,one curled crest,huge anxious whiteeyes and tiny CLOSED baffled smile;ONE short goo forearm capped by a single chunky brass THREEfinger hand,otherhand stillgoo;small teal collar;mechanical hand carefully holds one little enamel teacup as if overqualified.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "precision-hand augment"
+    },
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Versionsstand",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "single antenna",
+        "three-hole paper roll",
+        "brass collar ring"
+      ],
+      "temperament": "She remembers every update except the one that was meant to improve her mood.",
+      "prompt_auszug": "Vera Versionsstand, female-read. Tall slender ink comma with sidequiff,lashes,one sharply raised eyelid,CLOSED dry smirk;small brass collar ring and ONE tiny bolt-on antenna abovecrest;holds ONE blank punchedpaper roll with three round holes,not wiresalloverbody.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "memory / update interface"
+    },
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Batteriebauch",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small flank servicehatch",
+        "short plug cable",
+        "tin mug"
+      ],
+      "temperament": "He has excellent capacity and no intention of spending it on this meeting.",
+      "prompt_auszug": "Bert Batteriebauch, male-read. Very wide low scalloped ink blob,low bored whiteeyes and long CLOSED pout;ONE small brass square servicehatch on flank with TWO ivory bolts,goo belly otherwisevisible;holds a squat plug-ended cable in goo hand and small empty teal tin mug in other.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "power-storage augment"
+    },
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mona Messfehler",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "outer-eyelid brass ring",
+        "blankdial scanner",
+        "teal collar"
+      ],
+      "temperament": "She can detect almost anything except whether she is expected to enjoy it.",
+      "prompt_auszug": "Mona Messfehler, female-read. Round diamond-lobed ink blob,modest lashes,sidecurl,huge curiousunequal whiteeyes and tiny toothless gasp;ONE thin brass ring encircles OUTERdarkeyelid around one normal WHITE-red-black eye,not coveringsclera/iris;small teal collar;holds one squat brass blankdial scanner BELOWface.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "sensor augment"
+    },
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Nachlauf",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small shoulder clockwork box",
+        "single winding key",
+        "teal strap"
+      ],
+      "temperament": "He is powered by a reserve of determination somebody forgot how to switch off.",
+      "prompt_auszug": "Otto Nachlauf, male-read. Tall bent ink column with sweptcrest,joyful determined eyes and crooked three-upper-tooth openlaugh;ONE small clockwork box attached to back/shoulder with singlebrass windingkey and tiny tealstrap,otherwiseallgoo;empty hands in upbeat readygestures.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "clockwork-assist augment"
+    },
+    {
+      "id": "WSA_SPACE_CYBORGS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fips Fehlerpflege",
+      "bild": {
+        "datei": "SPACE_CYBORGS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small elbow brace",
+        "screwdriver",
+        "loose bolt"
+      ],
+      "temperament": "He maintains the upgrades by keeping the original faults in excellent condition.",
+      "prompt_auszug": "Fips Fehlerpflege, male-read. Compact star-lobed ink splat,high wavycurl,sharp mischievous whiteeyes,CLOSED crooked grin;ONE small flexible brass segmented supportbrace along OUTSIDE ofgoo elbow,not replacingbody;holds short screwdriver and a SINGLE loose oversized bolt.",
+      "prompt_quelle": "SPACE_CYBORGS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "self-maintenance tinkerer"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -1,3 +1,23 @@
+# WSA Return · Six retro space crews generated · 2026-11-06
+
+Owner: WSA. Repository: georg-doc/kayfabizarro. Branch: assets/ws0-ink-miners-2026-11-04. Draft PR #469. Outcome: six independent 3x2 source sheets / 36 unique authoring identities—astronauts, space soldiers, space pirates, ink blob cyborgs, spaceship mechanics and imperial troopers. Each has two female-read actors, twelve total. All new sets are DRAFT awaiting Georg.
+
+The preceding six SPORTS4 sheets / 36 actors were explicitly accepted by Georg. PASS was persisted at 1b65ab2c97667f35947bf64a96267b95dc78481a and all 15 intended files read back. Accepted inventory: 136 sheets / 816 depictions; eligible: 134 / 804. New 36 DRAFT actors are excluded from those totals. Historical exclusions remain unchanged. Lore prose stays DESIGN.
+
+Production: six native original-reference-conditioned jobs, zero layout edits, zero selected-image resizes and zero sprites extracted. Actual veteran-original/body material and RPG/accessory craft references were supplied as bounded STYLE inputs; all six original benchmark SHA256 values matched. Model and seed are not exposed. Every selected PNG is original 1536x1024 RGBA with alpha extrema 0..254; fully clear pixel counts range 559209–679217. Native/local/Git blob hashes match. No generated-sheet parent chain. Final branch head and 45 exact file readbacks are retained in local GITHUB_RECEIPT.json; this Return does not invent its own future commit.
+
+Actual visual checks: all six native originals and checker composites; light64/96/192 and dark160 logical-cell views. Complete upright footless ink bodies, two female-read actors per crew, few readable props, distinct palettes/roles. Open helmets frame faces; cyborg upgrades remain small additions to organic ink. The imperial palette is ivory/brass/midnight-blue; field soldiers olive/orange; explorers ivory/skyblue; pirates teal/burgundy/copper; mechanics petrol/ochre.
+
+Explicit design concern: the pirate captain's far eye is heavily squinted, leaving a white sliver without a legible red iris/black pupil. This is recorded in manifest and QA; no blanket eye-rule PASS is claimed. Georg verdict remains pending. Other native variations: soldier cannon roughly horizontal rather than down, sergeant patches/scar; larger explorer collars and starfinder; strongly nautical pirate props; floral cyborg teacup and partly burgundy crest; mechanic engine has four fins instead of three; crown-like imperial helmet additions and larger ledger. Observations are not self-issued acceptance, and no repair generations were spent.
+
+Technical holds: alpha opacity/edge validation, safe per-actor extraction and independent native high-resolution catalogue masters remain pending. Row diagnostic minima are 6/1/12/2/2/1, which do not certify crop rectangles. No runtime/game sprite export, Library publication, canonical receiving-ID assignment, combat tier/hit mapping, merge or public Stage claim.
+
+Changed files: SPACE_{ASTRO,SOLDIERS,PIRATES,CYBORGS,MECHANICS,TROOPERS}_6_2026-11-06/, each containing sheet-r1.png, CHARACTER_INTENT.json, MANIFEST.json, SLOP_CARDS_DESIGN.json, BIOGRAPHIES_DESIGN.json, PRODUCTION_RECORD.json and TECHNICAL_QA.json; SPACE_BATCH_2026-11-06.json, SET_MANIFESTS_R1.json and RETURN.md. All 36 actors have individual English biographies, dry German FrizzleBob notes, actual prompts/reference receipts and family/role metadata. Text remains DESIGN. No exact deck, pair, state, trio or combat assignment invented. Local output/slop-space-* preserves plans, native PNGs and QA previews.
+
+Next gate: Georg's design verdict on the six crews, including the pirate captain's eye readability.
+
+---
+
 # WSA Return · Supporters/outdoor batch PASS; six space crews authorized · 2026-11-06
 
 Georg accepts all six SPORTS4 sheets / 36 actors: fan A/B, reporters, volleyball, mountaineers and deepsea divers. Manifests and biography intake flags updated; lore stays DESIGN and recorded extraction/master holds remain. Inventory: 136 PASS sheets / 816 depictions; eligible: 134 / 804. Historical exclusions remain unchanged.

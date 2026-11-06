@@ -1,0 +1,65 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "42aa4cfcbf8dc0479329f7d7c211520ec56105a77ea5b4356db368f506df6940",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 568834,
+  "low_alpha_pixels_1_16": 80940,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 12,
+      "(0, 525)": 2,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 7
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced",
+    "Captain far-eye readability concern;no self-issued eye rule PASS"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors;white/red/black open eyes generally visible,EXCEPT captain far-eye iris/pupil not legible under heavy squint",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Two female-read captain/navigator;full ink bodies,nautical brassprops",
+    "Captain far eye heavily squinted with white sliver but iris/pupil not legible;eye-readability concern for Georg,not a self-issued eye PASS",
+    "Cutlass/canister/sextant/hook/teapot clear;sextant has extra decorative tickmarks,no legible lettering;spacehardware restrained so family reads strongly nautical"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each native output and QA board visually reviewed;selected PNG bytes unchanged"
+  },
+  "eye_review": {
+    "status": "READABILITY_CONCERN",
+    "actor_cell": 0,
+    "detail": "Captain far eye white sliver without legible red iris/black pupil;Georg design verdict pending"
+  }
+}
