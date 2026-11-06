@@ -1,0 +1,285 @@
+{
+  "schema": "kfb.slop-gap-backlog/1",
+  "status": "PROPOSALS_NOT_GENERATION_AUTHORITY",
+  "source_ref": "6fffc6b05429ceccff8947f80946a7498df09160",
+  "items": [
+    {
+      "id": "G01",
+      "priority": "P1",
+      "title": "Emotionen als eigenständige Bewohner",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Scham",
+        "Erleichterung",
+        "Schadenfreude",
+        "Trotz",
+        "Verlegenheit",
+        "Sehnsucht"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_RESIDENTS_A_20261104",
+        "WSA_NARRATIVE_FLAWS_20261106"
+      ],
+      "rationale": "Zustände und Tragic Flaws existieren; eine ausdrücklich reine Emotions-Family fehlt als benannte Reihe im geprüften Index.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G02",
+      "priority": "P1",
+      "title": "Ambivalente Emotionen",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "stolz und unsicher",
+        "neidisch und bewundernd",
+        "erleichtert und beschämt",
+        "hoffnungsvoll und misstrauisch",
+        "siegreich und leer",
+        "wütend und fürsorglich"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_TRUSTSYSTEMS_TRUST_20261106"
+      ],
+      "rationale": "Ambivalenz ergänzt die vielen klaren Rollen und Autoritätsposen; keine Behauptung, dass diese Mimiken noch nie sichtbar waren.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G03",
+      "priority": "P1",
+      "title": "Unaufgeräumte Alltagsbewohner",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "verschlafener Mieter",
+        "überforderte Besucherin",
+        "pedantischer Nachbar",
+        "ungeduldige Wartende",
+        "besorgter Heimkehrer",
+        "zufriedener Nichtstuer"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_RESIDENTS_A_20261104",
+        "WSA_DOMESTIC_EVERYDAY_20261104"
+      ],
+      "rationale": "Für Gebäudeausbrüche mehr schlichte Ink-Silhouetten mit minimalen Props statt nochmals aufwendiger Berufsausrüstung.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G04",
+      "priority": "P1",
+      "title": "Alltag vor und nach der Bresche",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "müde zu panisch",
+        "selbstsicher zu verwirrt",
+        "ängstlich zu trotzig"
+      ],
+      "format": "RESIDENT_STATES_2X3",
+      "existing_neighbors": [
+        "WSA_RESIDENTS_A_20261104",
+        "WSA_RESIDENTS_B_20261104"
+      ],
+      "rationale": "Vorhandenes Format erweitern; erst vorhandene sechs Bewohneridentitäten für passende Reaktion verwenden.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G05",
+      "priority": "P1",
+      "title": "Gewissheitsmaschinen und Ideologien",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Kennzahlen-Gläubiger",
+        "Nostalgie-Verwalterin",
+        "Konsens-Erzwinger",
+        "Reinheits-Prüfer",
+        "Markt-Magierin",
+        "Sicherheits-Romantiker"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
+        "WSA_OFFICE_DIGITAL_20261104"
+      ],
+      "rationale": "Ideologie als gelebtes Verhalten und Schwarz-Weiß-Regel ausdrücken; kulturelle Herkunft und Kampfrolle separat halten.",
+      "proposed_deck_contexts": [
+        "ideology_wrestling"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G06",
+      "priority": "P1",
+      "title": "Nachbarschaftliche Mini-Rituale",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Platz freihalten",
+        "Hilfe ungern annehmen",
+        "ungefragt erklären",
+        "leise widersprechen",
+        "Ausnahme gewähren",
+        "Gesicht wahren"
+      ],
+      "format": "STORY_TRIOS_3X2",
+      "existing_neighbors": [
+        "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105"
+      ],
+      "rationale": "WFC-Nachbarschaften gewinnen durch soziale Funktionen; Props dürfen nicht nur innerhalb der Dreierreihe Sinn ergeben.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G07",
+      "priority": "P2",
+      "title": "Kulturelle Alltagsschichten und Epochen",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Gastfreundschaft",
+        "Markt",
+        "Fest",
+        "Reise",
+        "Haushalt",
+        "gemeinschaftliches Handwerk"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_COUPLES_A_20261104",
+        "WSA_COUPLES_B_20261104"
+      ],
+      "rationale": "Kulturelle Recherche und konkrete Alltagspraxis als Ausgangspunkt. Historische Couple-Ausnahmen bleiben bis WS0/Georg-Auswahl ausgeschlossen.",
+      "proposed_deck_contexts": [
+        "1001_kayfabe_nights"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G08",
+      "priority": "P2",
+      "title": "Utopie, Dystopie, Protopie",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "perfekter Plan",
+        "normalisierter Mangel",
+        "kleine Reparatur",
+        "mitdenkender Zweifel",
+        "übererfüllte Harmonie",
+        "unfertige Zusammenarbeit"
+      ],
+      "format": "STORY_TRIOS_3X2",
+      "existing_neighbors": [
+        "WSA_FUTURE_PROMISES_20261104",
+        "WSA_MEANING_WELLBEING_20261104"
+      ],
+      "rationale": "Vorhandene Figuren zuerst als kontrastierende Trios lesen; Prototyp-Zuordnung statt automatisch neue Motive.",
+      "proposed_deck_contexts": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G09",
+      "priority": "P2",
+      "title": "Digitale Glaubens- und Plattformrituale",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "automatisierter Ratgeber",
+        "Algorithmus-Orakel",
+        "Update-Wartender",
+        "Datensammlerin",
+        "Feedback-Schleife",
+        "menschliche Ausnahme"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_OFFICE_DIGITAL_20261104",
+        "WSA_SPACE_CYBORGS_20261106"
+      ],
+      "rationale": "KI/Plattformen sind durch vorhandene Digital-/Cyborg-Motive teilweise abgedeckt; genaue Deck-Zuordnung zuerst.",
+      "proposed_deck_contexts": [
+        "ai_kayfabe",
+        "epistemic_sabotage"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G10",
+      "priority": "P2",
+      "title": "Unbewusstes und Selbstbilder",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Traumprotokollant",
+        "Schatten-Sammlerin",
+        "Projektionswart",
+        "innerer Kritiker",
+        "Wunsch-Verwalterin",
+        "Gedächtnis-Lücke"
+      ],
+      "format": "SIX_UNIQUE_3X2",
+      "existing_neighbors": [
+        "WSA_CONCEPTS_BRAIN_20261106",
+        "WSA_NARRATIVE_EGO_20261106"
+      ],
+      "rationale": "Metaphorische menschliche Selbstdeutung, keine Diagnosen oder medizinische Typisierung.",
+      "proposed_deck_contexts": [
+        "dream_wrestling_with_kayfabe_freud",
+        "jung_and_shinn_a_guide_to_cosmic_cringe"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G11",
+      "priority": "P3",
+      "title": "Weitere Erzählstoffe",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [
+        "Märchen-Dreiergruppen",
+        "Scheitern der Heldenreise",
+        "Weggefährten",
+        "Widersacher",
+        "unzuverlässige Erzähler",
+        "unterschätzte Nebenfigur"
+      ],
+      "format": "STORY_TRIOS_3X2",
+      "existing_neighbors": [
+        "WSA_TRIOS_MACBETH__HAMLET_20261105",
+        "WSA_ODYSSEY_20261105"
+      ],
+      "rationale": "Literarische Reihe stark vorhanden; neue Stoffe gezielt nach Decklücke und Rollenfunktion priorisieren.",
+      "proposed_deck_contexts": [
+        "grimms_kayfabe_legends_expansion_set_02",
+        "kayfabizarro_monomyth_mayhem"
+      ],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    },
+    {
+      "id": "G12",
+      "priority": "P1",
+      "title": "Zuordnung der 100 noch ungebundenen Decks",
+      "status": "PROPOSAL_NOT_ORDERED",
+      "ideas": [],
+      "format": "REUSE_FIRST",
+      "existing_neighbors": [],
+      "rationale": "30/130 Decks haben ausdrückliche Bindungen. Die übrigen100 zuerst mit akzeptierten Figuren vergleichen; nur belegte visuelle Lücke generieren.",
+      "proposed_deck_contexts": [],
+      "exact_card_mapping": null,
+      "evidence_scope": "142 source manifests and130-deck index;not exhaustive visual/emotion audit"
+    }
+  ]
+}

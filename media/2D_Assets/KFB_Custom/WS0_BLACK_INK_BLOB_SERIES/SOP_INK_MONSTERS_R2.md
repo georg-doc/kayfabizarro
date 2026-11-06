@@ -1,3 +1,11 @@
+## Aktueller Betriebsstand · 06.11.2026 · additive Fortsetzung
+
+Georgs später ausdrücklich beauftragte Sheet-Serie ist etabliert:142Sheets/852Darstellungen Design-PASS einschließlich sechs Space-Crews. Der alte Recovery-STOP weiter unten bleibt Historie des verworfenen Veteranenlaufs und ist keine globale Produktionssperre. Die bestehenden visuellen R2-Regeln gelten weiter; neues/riskantes Format zuerst als Pilot, akzeptierte Formate als begrenzter Batch nach aktueller Beauftragung.
+
+Fortsetzung und Formatwahl: [LIVING_MASTERPLAN_R1.md](LIVING_MASTERPLAN_R1.md), [FORMAT_RECIPES_R1.md](FORMAT_RECIPES_R1.md), [GOLDEN_REFERENCES_R1.json](GOLDEN_REFERENCES_R1.json). Vollständige Originalreferenzen tatsächlich dem Bildjob mitgeben; kein generierter Stil-Elternlauf. Für Animation die exakte registrierte Einzelidentität als Donor, Motion-PASS separat vom Bild-PASS. [ANIMATION_PILOT_R1.md](ANIMATION_PILOT_R1.md) dokumentiert den noch nicht ausgeführten Generierungs-/Runtime-Pilot. Historisch akzeptierte Ausnahmen werden nicht rückwirkend verworfen.
+
+---
+
 # ADDITIVE GEORG MOUTH / INHERITANCE STEERING · 2026-11-05
 
 For future Slop generations: visible teeth emerge from inside the mouth; lower teeth sit behind/above the lower lip, upper teeth descend from upper gum/roof. Never attach a tooth to outside/below a thick protruding lower lip. In a completely closed mouth, omit visible teeth unless emergence is anatomically unambiguous. Plan new mouth/pose choreography per sheet to reduce inherited slot-specific expressions. Georg explicitly accepts current family-doctor set despite bottom-right lip/tooth issue; MINOR_TUNE_LATER, no retroactive image rejection or unrequested repair.

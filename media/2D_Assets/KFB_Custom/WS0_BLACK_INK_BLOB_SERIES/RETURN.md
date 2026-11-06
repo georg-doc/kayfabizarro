@@ -1,3 +1,21 @@
+# WSA Return · Slop living production plan and GIF audit · 2026-11-06
+
+Owner WSA; repository georg-doc/kayfabizarro; branch assets/ws0-ink-miners-2026-11-04; draft PR #469. Outcome: existing Slop production consolidated into a living masterplan, five format recipes, source-backed coverage/deck views, proposal backlog and bounded motion-agent/WS1 handoff. No new images, GIFs or runtime implementation.
+
+Georg accepted all six space crews /36 actors, including the pirate captain as drawn. PASS checkpoint 6fffc6b05429ceccff8947f80946a7498df09160 was pushed and all15 files verified. Current authoring totals:142PASS sheets/852depictions;eligible140/840. 794 distinct authoring identity keys are not a canonical character census. Historical International Couples intake exceptions and old Miners failure retained; new lore text stays DESIGN.
+
+Evidence:142/142 manifests read at the checkpoint;five format counts118/3/2/13/6 for uniques/couples/residentstates/progression/storytrios. Main deck registry at bf1a7ca132b3d10ab99e5de382df4964a0b007ae has130decks;30explicit binding IDs resolve,100lack explicit mapping but may already have suitable art. All proposal set/deck references and JSON syntax/counts checked. Three local PNG source hashes match known mechanics/sailors/pirates sheets.
+
+Six local GIF files contain five unique six-frame transparent loops;pirate duplicate is byte-identical. A separate read-only agent inspected decoded frame sequences. King crown edge contact in frames2/3;wizard1–2px headroom;body/accessory wobble beyond facial motion. Difference metric has no gross wrap outlier but does not certify playback or identity fidelity. Originals unchanged;no GIF binaries imported into public source. Audit/metadata/continuity evidence persisted.
+
+Official image documentation checked for GIF capability;no API invocation,account/cost check or native GIF batch adapter tested. Existing game source src/npc/mobs2d.js was read at KFB-Stunt-Car-Race assets/popups-ingest-r1 head cdd362a9c5ee5ca7d7e159001d6d1c29ad6e8997:static atlas/instancing/rects. Proposed GIF-review to frame-atlas runtime path and screen-size/distance LOD need WS1 implementation and measurement. Zero browser/runtime tests. No claimed Library publication,clean-cutout certification,new high-resolution single masters,complete531-lore approval,merge or Stage.
+
+Changed files: LIVING_MASTERPLAN_R1.md,FORMAT_RECIPES_R1.md,COVERAGE_R1.md,COVERAGE_R1.json,DECK_COVERAGE_R1.json,GAP_BACKLOG_R1.json,GOLDEN_REFERENCES_R1.json,ANIMATION_PILOT_R1.md,ANIMATION_JOB_SCHEMA_R1.json,ANIMATION_QUEUE_R1.json,ANIMATION_AUDIT_R1.md,ANIMATION_SOURCE_AUDIT_R1.json,ANIMATION_CONTINUITY_R1.json,WS0_HANDOFF_R1.md,MASTERPLAN_TEST_REPORT_R1.json,README.md,SOP_INK_MONSTERS_R2.md,RETURN.md.18files. Final exact head/readback receipt retained locally;this file does not invent its future commit SHA.
+
+Next gate: WS0/Librarian returns one approved canonical single master with source hash/ID/anchor;then execute and review one identity-preserving idle blink through a verified GIF-capable channel,followed by WS1's same-candidate runtime proof. Existing separate asset preparation is not duplicated.
+
+---
+
 # WSA Return · Space crews PASS; living production plan and animation audit · 2026-11-06
 
 Georg accepts all six space crews / 36 actors,including the pirate captain as drawn. Manifests and biography intake flags updated;historical squint observation retained,not a rejection. Text remains DESIGN;extraction/master/runtime holds remain. Inventory142 PASS sheets/852 depictions;eligible140/840. These are depictions,not a claimed count of distinct canonical identities. Historical exclusions unchanged.

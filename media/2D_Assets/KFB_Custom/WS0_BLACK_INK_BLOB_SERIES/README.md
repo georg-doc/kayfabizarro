@@ -1,3 +1,11 @@
+## Aktueller Einstieg · Slop-Linie · 06.11.2026
+
+Die fortgesetzte Serie ist von Georg freigegeben: **142 Sheets / 852 Darstellungen**, davon140/840 für den bestehenden Intake. Aktueller Einstieg ist der [Living Masterplan R1](LIVING_MASTERPLAN_R1.md), ergänzt durch [Formatrezepte](FORMAT_RECIPES_R1.md), [Coverage](COVERAGE_R1.md), [Lücken-Vorschläge](GAP_BACKLOG_R1.json) und [Animations-Pilot](ANIMATION_PILOT_R1.md). Quellen bleiben Setmanifeste/Index; Asset Librarian und WS1 bleiben die Receiving-/Runtime-Owner.
+
+Die historische TOTAL-FAIL-Sperre unten betrifft den damals abgelehnten Veteranenlauf. Sie ist keine Sperre der später ausdrücklich beauftragten und akzeptierten Sheet-Serie. Neue riskante Methoden erhalten weiter einen Pilot; keine automatischen Wiederholungsjobs oder rückwirkenden Reparaturen akzeptierter Bilder. Animation ist aktuell auditiert/geplant, nicht neu erzeugt oder im Spiel verifiziert. [WS0-Handoff](WS0_HANDOFF_R1.md).
+
+---
+
 ## CURRENT R2 OVERRIDE · 2026-11-04 · TOTAL FAIL RECOVERY
 
 Read SOP_INK_MONSTERS_R2.md and POSTMORTEM_2026-11-04.md FIRST. White sclera / red iris / black pupil is now default. User-selected original pixels must actually be provided as STYLE references for new subjects. The rejected veteran batch is TOTAL FAIL and stopped. On a newly authorized image request use ONE pilot before six-image expansion; accepted pilot counts as slot 1 of the requested six unless Georg requests a separate style study. Six singles are experimental, not proven superior to explicit 3x2 sheet production. Old examples below remain historical recipes and must be adapted to R2, never copied blindly.
