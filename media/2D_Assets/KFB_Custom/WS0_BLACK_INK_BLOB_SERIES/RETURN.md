@@ -1,3 +1,9 @@
+# WSA Return · Third sports batch PASS; supporters/reporters/outdoor teams authorized · 2026-11-06
+
+Georg accepts all6 poker/ski/motor/cycling/secondhockey/marathon sheets,36actors. Manifests and biography intake updated;prose DESIGN,technical isolation/master holds retained. Inventory130PASS sheets/780depictions;eligible128/768;old exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome6independent3x2six-actor sheets:sport-neutral fanTeamA,fanTeamB,sportsreporters,beachvolleyball,mountaineers,deepseadivers. Two female-read each,fresh expressive whole upright footless ink bodies,retro craft,actual original references. TeamA/B are colour-coded fictional affiliations not realteams or canonicalpair/combat mappings. Next:generate/archive6DRAFTs. No runtime/Librarypublication/merge.
+
+---
+
 # WSA Return · Six further retro sports teams generated · 2026-11-06
 
 Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome6independent3x2 source sheets/36unique authoring identities:poker,skiers,motor racing,cycle racing,second icehockey team,marathon. All6DRAFT awaiting Georg;2female-read each/12total. Previous5sports2 sheets/30actors explicitly PASS persisted and13files readback-verified at7ee7ce6ceb6caba3ef81b31fb420785ebc17dd1a. Inventory124PASS sheets/744depictions;eligible122/732;new36excluded from PASS totals;old exclusions unchanged. Fictional retro clubs with role intentions,not factual legal lineup assertions or real branding. Second scarlet/navy hockey team distinct authoring identities from green SPORTS2_HOCKEY,not replacement/pairedstate.

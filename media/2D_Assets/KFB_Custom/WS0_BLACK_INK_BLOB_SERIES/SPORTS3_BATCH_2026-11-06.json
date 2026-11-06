@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 6,
     "depictions": 36,
@@ -18,8 +18,8 @@
       "manifest": "SPORTS3_POKER_6_2026-11-06/MANIFEST.json",
       "sha256": "b5c79cc92b82f50ce2619eeb04beb2abe64a6e785bbb2222c17cdf890389a5e2",
       "git_blob_sha": "f4f897488f19209f62d80f5027f5dd1eb68dadbb",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Club Zum letzten Einsatz",
       "sports_roles": [
         "tight veteran / poker face",
@@ -36,8 +36,8 @@
       "manifest": "SPORTS3_SKI_6_2026-11-06/MANIFEST.json",
       "sha256": "93f224b1c76d721415ffbdd1b1c55dafcca9d317d3a15a3b1e84dde7d0fa544d",
       "git_blob_sha": "3b138ef5dd0ecc35a714fa5fb3e0b30c25b7f0d7",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "SC Hang zur Gewissheit",
       "sports_roles": [
         "slalom specialist",
@@ -54,8 +54,8 @@
       "manifest": "SPORTS3_MOTOR_6_2026-11-06/MANIFEST.json",
       "sha256": "9b65590ee193a7ad0938ff1d3415a40c8bbc20ebe2d8a7c4fe04cd1a23d0dd05",
       "git_blob_sha": "7efc01b4779a736960adde71cc33e8c4c25c494b",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Rennstall Vorbehalt",
       "sports_roles": [
         "Grand Prix circuit driver",
@@ -72,8 +72,8 @@
       "manifest": "SPORTS3_CYCLING_6_2026-11-06/MANIFEST.json",
       "sha256": "6fa4f5fa27360e08c495b200e71a4fc37d50097bebc93894b69406649ee4c3b7",
       "git_blob_sha": "2a9ce6da86af7fcc4eac313114724183d6fa04a7",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "VC Gegenwindordnung",
       "sports_roles": [
         "sprinter",
@@ -90,8 +90,8 @@
       "manifest": "SPORTS3_ICEHOCKEY_6_2026-11-06/MANIFEST.json",
       "sha256": "294e652909ee061b7c146422e97e9511ad1ba6da6832f8050337f8a0833a6335",
       "git_blob_sha": "aacb50ec474c89f9ecbdb12b7c580eb77712d786",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "HC Rostrote Revanche",
       "sports_roles": [
         "captain / veteran defender",
@@ -108,8 +108,8 @@
       "manifest": "SPORTS3_MARATHON_6_2026-11-06/MANIFEST.json",
       "sha256": "daec2c27374cfadbe0407d7e815801a59e78c7eacb4e2228d51df591b45461f9",
       "git_blob_sha": "0926043ce3d1c40a73cfb41a1ca61e6e4b47b828",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Laufgruppe Fast Am Ziel",
       "sports_roles": [
         "pacemaker",
@@ -127,5 +127,6 @@
     "Selected1536x1024 PNGs unchanged;true alpha0..254",
     "All36 cards/biographies DESIGN;no canonical exact deck or tier bindings invented",
     "Source logical cells are not certified crop rectangles;individual catalogue masters/extraction pending"
-  ]
+  ],
+  "georg_status": "PASS"
 }

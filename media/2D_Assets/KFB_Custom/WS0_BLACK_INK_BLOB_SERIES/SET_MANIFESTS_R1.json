@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 124,
-    "pass_depictions": 744,
+    "selected_sheets": 130,
+    "pass_depictions": 780,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 122,
-    "intake_eligible_depictions": 732,
-    "other_authoring_depictions": 624
+    "intake_eligible_sheets": 128,
+    "intake_eligible_depictions": 768,
+    "other_authoring_depictions": 660
   },
   "excluded_sources": [
     {
@@ -864,56 +864,55 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_SPORTS3_POKER_20261106",
       "manifest": "SPORTS3_POKER_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS3_SKI_20261106",
       "manifest": "SPORTS3_SKI_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS3_MOTOR_20261106",
       "manifest": "SPORTS3_MOTOR_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS3_CYCLING_20261106",
       "manifest": "SPORTS3_CYCLING_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS3_ICEHOCKEY_20261106",
       "manifest": "SPORTS3_ICEHOCKEY_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS3_MARATHON_20261106",
       "manifest": "SPORTS3_MARATHON_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {
