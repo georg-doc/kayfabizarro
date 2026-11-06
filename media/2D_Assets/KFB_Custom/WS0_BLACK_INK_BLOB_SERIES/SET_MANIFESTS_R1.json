@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 119,
-    "pass_depictions": 714,
+    "selected_sheets": 124,
+    "pass_depictions": 744,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 117,
-    "intake_eligible_depictions": 702,
-    "other_authoring_depictions": 594
+    "intake_eligible_sheets": 122,
+    "intake_eligible_depictions": 732,
+    "other_authoring_depictions": 624
   },
   "excluded_sources": [
     {
@@ -829,49 +829,48 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_SPORTS2_HOCKEY_20261106",
       "manifest": "SPORTS2_HOCKEY_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS2_RIDING_20261106",
       "manifest": "SPORTS2_RIDING_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS2_SWIMMING_20261106",
       "manifest": "SPORTS2_SWIMMING_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS2_ATHLETICS_20261106",
       "manifest": "SPORTS2_ATHLETICS_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SPORTS2_RUGBY_20261106",
       "manifest": "SPORTS2_RUGBY_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 5,
-    "depictions": 30,
-    "identities": 30,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

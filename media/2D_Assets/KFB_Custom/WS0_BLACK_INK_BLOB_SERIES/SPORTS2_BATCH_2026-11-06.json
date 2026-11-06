@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 5,
     "depictions": 30,
@@ -18,8 +18,8 @@
       "manifest": "SPORTS2_HOCKEY_6_2026-11-06/MANIFEST.json",
       "sha256": "04175663789a5b631f7341dec995af529e562ff80a51e7a67360c0867179f047",
       "git_blob_sha": "4354e55f3e45caf8be9782ee3a14f3c5d995b8bc",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "HC Eisordnung",
       "sports_roles": [
         "goalkeeper",
@@ -36,8 +36,8 @@
       "manifest": "SPORTS2_RIDING_6_2026-11-06/MANIFEST.json",
       "sha256": "fcc07b7b4abcbc9dc1525f0947888c7ffc74954c054be6c9865569dfe35982f4",
       "git_blob_sha": "fe7a15cc9900562763e372230068e8bf3e1d15ed",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "Reitverein Freier Zügel",
       "sports_roles": [
         "dressage rider",
@@ -54,8 +54,8 @@
       "manifest": "SPORTS2_SWIMMING_6_2026-11-06/MANIFEST.json",
       "sha256": "d6ab97310f9aea172154faf9d51bd4fbf3df263049808e42d74e30894af42e9e",
       "git_blob_sha": "42930d8e5fda0235eee87ec2a28022db02b5b4a8",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "SV Trockener Ernst",
       "sports_roles": [
         "freestyle sprinter",
@@ -72,8 +72,8 @@
       "manifest": "SPORTS2_ATHLETICS_6_2026-11-06/MANIFEST.json",
       "sha256": "6821656868c2be1cd34698f55a37ee033e7e77211cf74e451847d29eecb11bc3",
       "git_blob_sha": "cc389edf05a926e17f277dbbdd4bff0e74cab24f",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "TSV Letzter Versuch",
       "sports_roles": [
         "sprinter",
@@ -90,8 +90,8 @@
       "manifest": "SPORTS2_RUGBY_6_2026-11-06/MANIFEST.json",
       "sha256": "6573e117aff2ce23f2f15df24624d7f4d12257cd3757a45bb5b657dcbae100f7",
       "git_blob_sha": "222c5800dd63e7d2c7307e2e75f94119f703d7f7",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "team": "RFC Anständiger Zusammenstoß",
       "sports_roles": [
         "prop / front-row anchor",
@@ -110,5 +110,6 @@
     "Logical cells not crop rectangles;individual validated isolation/catalogue masters pending",
     "All30 source-bound cards and biographies DESIGN",
     "Fictional retro sports archetypes and role intentions,not factual complete lineup assertions"
-  ]
+  ],
+  "georg_status": "PASS"
 }

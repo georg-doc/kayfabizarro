@@ -1,3 +1,9 @@
+# WSA Return · Second sports batch PASS; six new teams authorized · 2026-11-06
+
+Georg accepts all5 hockey/riding/swimming/athletics/rugby sheets,30actors. Manifest and biography intake updated;prose stays DESIGN,technical extraction/master holds retained. Inventory124 PASS sheets/744depictions;eligible122/732;old exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome6independent6-actor3x2 sheets:poker,skiers,motor racing,cycle racing,second icehockey team,marathon. Each2female-read,whole upright footless ink actors. Original benchmark references,restrained sport-props,retro charm,fresh expressive designs and source-bound metadata/lore. Second hockey team deliberately separate from prior green team. Next:generate/archive6DRAFTs. No runtime/Library publication/merge.
+
+---
+
 # WSA Return · Second five retro sports teams generated · 2026-11-06
 
 Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome5 independent3x2 source sheets/30unique authoring identities:hockey(ice hockey interpretation),riding,swimming,athletics,rugby. All5DRAFT awaiting Georg;2female-read each/10total. First5sports/30actors explicitly PASS persisted and13files readback-verified atd40ee5e691b4a74df4f68ad5385cda8a548978b4. Inventory119PASS sheets/714depictions;eligible117/702;new30excluded from PASS totals;old exclusions preserved. Fictional retro clubs and distinct sport-role intentions,not real brands or factual legal lineups.
