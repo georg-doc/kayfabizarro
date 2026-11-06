@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 93,
-    "pass_depictions": 558,
+    "selected_sheets": 98,
+    "pass_depictions": 588,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 91,
-    "intake_eligible_depictions": 546,
-    "other_authoring_depictions": 438
+    "intake_eligible_sheets": 96,
+    "intake_eligible_depictions": 576,
+    "other_authoring_depictions": 468
   },
   "excluded_sources": [
     {
@@ -647,49 +647,48 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_CULTURE_CINEMA_20261106",
       "manifest": "CULTURE_CINEMA_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CULTURE_INDUSTRY_20261106",
       "manifest": "CULTURE_INDUSTRY_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CULTURE_ICEBERG_20261106",
       "manifest": "CULTURE_ICEBERG_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CULTURE_ROMANCE_20261106",
       "manifest": "CULTURE_ROMANCE_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_CULTURE_EARNEST_20261106",
       "manifest": "CULTURE_EARNEST_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 5,
-    "depictions": 30,
-    "identities": 30,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "trios": 0,
     "georg_pass": 0,
     "intake_eligible": 0

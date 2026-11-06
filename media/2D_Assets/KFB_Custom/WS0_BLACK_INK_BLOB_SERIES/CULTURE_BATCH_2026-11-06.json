@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 5,
     "depictions": 30,
@@ -18,8 +18,8 @@
       "manifest": "CULTURE_CINEMA_6_2026-11-06/MANIFEST.json",
       "sha256": "5b366d854db557531925091d9a3b90687dcd06e671facb538edf393355a4c6d4",
       "git_blob_sha": "bd5f5b9da6f0eb4a4a4a0ee3c3059616473a55dd",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "cinematic_kayfabizarro_2",
         "user_family_title": "Cinematic Legacy",
@@ -45,8 +45,8 @@
       "manifest": "CULTURE_INDUSTRY_6_2026-11-06/MANIFEST.json",
       "sha256": "c7ce229dcd5326a821f9042e48c72fe494815ab2cfdcde78c0c16714ba9535ad",
       "git_blob_sha": "55ba0dd91ad946d3ae125ce871e2a8720e9e6a1e",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "sonic_slaughterhouse",
         "user_family_title": "Music Industry",
@@ -72,8 +72,8 @@
       "manifest": "CULTURE_ICEBERG_6_2026-11-06/MANIFEST.json",
       "sha256": "3ebcbd80aed07f5bbaabcad9e3a18d2c160d63dc9d03c227c57659876be22947",
       "git_blob_sha": "2935aa9a5f7e4fb104b4762315be44bc49715915",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "sonic_warfare_music_history_01",
         "user_family_title": "Iceberg Session Cards",
@@ -99,8 +99,8 @@
       "manifest": "CULTURE_ROMANCE_6_2026-11-06/MANIFEST.json",
       "sha256": "111bc8078458c6f8a8e72ae22b1655509ccf43281e9b5627fd484d387e3325f2",
       "git_blob_sha": "df039637111588a3a735e982d5df4cf3d3ac96eb",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "romantic_kayfabe",
         "user_family_title": "Love-Wrestling & Heartbreaks",
@@ -126,8 +126,8 @@
       "manifest": "CULTURE_EARNEST_6_2026-11-06/MANIFEST.json",
       "sha256": "766d62b30de2d63884d42dcd706e792992d5f7496daf023425e651ef1b422407",
       "git_blob_sha": "96ec89705b0bc41b6201fe3b5ba563e82b9fe665",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "the_importance_of_being_kayfab_earnest",
         "user_family_title": "Kayfab-Earnest",
@@ -154,5 +154,6 @@
     "Pair/twin/couple cues in paired inanimate props,no binding actor relations",
     "One-hit cream collar small-scale readability note retained",
     "All text lore/cards DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }
