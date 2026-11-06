@@ -1,0 +1,263 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS_BASKETBALL_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+    "sha256": "4d1d375ef823c02311a690bfd18d38e246ac6460e83c4ed7f9a11351c9504cf5"
+  },
+  "production_record": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS_BASKETBALL_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS_BASKETBALL_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Die Auszeitbehörde",
+    "visual_context": "1940s-inspired faded teal-and-ochre basketball club, narrow cotton jersey front panels, brown leather panelled balls",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "BASKETBALL",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Paula Passgenau",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "leather basketball",
+        "teal headband"
+      ],
+      "temperament": "She distributes opportunities with the calm of someone who owns the queue.",
+      "prompt_auszug": "Paula Passgenau; female-read. Slim comma-shaped upright blob with modest quiff/lashes, one sharply raised eyelid, toothless cool smirk; teal headband and small ochre-edged jersey bib; one hand directs, other balances a brown leather basketball at waist.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "point guard"
+    },
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Eigenwurf",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "teal jersey bib",
+        "ochre wristbands"
+      ],
+      "temperament": "He has never met a shot he considered somebody else's responsibility.",
+      "prompt_auszug": "Egon Eigenwurf; male-read. Round star-lobed blob with high uneven eyes and deliriously proud open grin, two upper teeth; tiny teal jersey bib, holds both empty goo hands in an exaggerated delicate follow-through near his face.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "shooting guard"
+    },
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Willi Wechselwinkel",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "triangle-fold towel",
+        "sweatband"
+      ],
+      "temperament": "He adapts beautifully to situations that have already ended.",
+      "prompt_auszug": "Willi Wechselwinkel; male-read. Tall bent pear splat, worried crooked brow, tiny closed sideways mouth; ochre sweatband slightly slipping, small teal collar; holds a folded towel shaped into a simple unexpected triangle.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "small forward / utility player"
+    },
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Greta Gegenbrett",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "hugged basketball",
+        "teal jersey panel"
+      ],
+      "temperament": "She calls every rebound a recoverable household asset.",
+      "prompt_auszug": "Greta Gegenbrett; female-read. Broad square-lobed blob, two filled thick eyelids with lashes, stubborn closed frown; ochre neck trim and small teal jersey panel; hugs a scuffed brown basketball tightly as if it were the last hot-water bottle.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "power forward / rebounder"
+    },
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Oberkante",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "canvas shoe",
+        "teal collar"
+      ],
+      "temperament": "He is the tallest person in the room and apologises for the view.",
+      "prompt_auszug": "Otto Oberkante; male-read. Very tall slender rounded ink tower with drooping crest yet fits cell; huge bashful white eyes, small astonished mouth with no visible teeth; tiny teal collar, one old canvas high-top shoe held in a goo hand as lucky charm, no legs or feet.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "center"
+    },
+    {
+      "id": "WSA_SPORTS_BASKETBALL_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Bankreserve",
+      "bild": {
+        "datei": "SPORTS_BASKETBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "thermos",
+        "folded towel"
+      ],
+      "temperament": "He has perfected the warm-up for an opportunity that remains administratively pending.",
+      "prompt_auszug": "Bert Bankreserve; male-read. Wide flattened but upright blob, deeply unimpressed half-lidded stare, compressed long mouth; old teal warm-up jacket as SMALL open shoulder cape, holds one squat thermos and a single folded towel on shoulder.",
+      "prompt_quelle": "SPORTS_BASKETBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "sixth player / reserve"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -1,3 +1,19 @@
+# WSA Return · Five retro sports teams generated · 2026-11-06
+
+Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Bounded outcome5 new independent3x2 sheets/30 unique source-authoring actors:soccer,American football,basketball,baseball,tennis. Two female-read each/10total. Fictional retro team palettes,distinct sport roles and acting;no real team brands,not legal complete-lineup assertions. All5 DRAFT awaiting Georg. Prior4 concept-family PASS persisted and11files verified at4608d7c6eb70aac6808292679494dc07330ca9b4. Accepted inventory114 sheets/684depictions;eligible112/672,unchanged by30new DRAFT actors;old Miners/International Couples exclusions preserved.
+
+Production5 native jobs,0layout edit jobs,0selected-image resizes,0sprites extracted. Original veteran/body and RPG/accessory references supplied as actual style inputs;all6 benchmark SHA256verified. Model/seed not exposed. Alloriginals1536x1024 RGBA alpha0..254 with548838–670141 fully clear pixels;native/local/Git blob hashes matched. No generated-sheet style parent. Final archive exact ref/38file readback receipt retained locally;this file does not invent its own future head.
+
+Actual visual checks:5native outputs,5checker composites,5light64/96/192 and dark160-per-logical-cell boards. Allcomplete upright footless ink bodies,white-red-black eyes,visible diverse expressions,2female-read each. Catcher mask aside,held boots/shoe not anatomicalfeet,tennis nets/racquets as props,no court/scenelet. Source intent and actual observations differentiated. Minor native variations:soccer knit cap insteadflat cap,captain unprompted breath cloud/tongue;football cream helmet crest and rosy-violet closed lips;basketball some larger front panels;base bag soft cushion reading;tennis larger foldednet/slack string bowed ink strand,open crying mouth/tongue. No self-issued Georg PASS or automatic corrective generations.
+
+Technical holds:alpha opacity/edges and validated individual actor isolation pending;Americanfootball global straight-row minimum peak237,basketball162,no certified global horizontalcut. Logicalcells not crop rectangles. These source sheets are not six individual native high-resolution catalogue masters. No runtime/game sprite,Library publication,canonical receiving-ID mapping,combat tier/hit assignment,merge or Stage claim.
+
+Changed files:SPORTS_{SOCCER,FOOTBALL,BASKETBALL,BASEBALL,TENNIS}_6_2026-11-06/,each sheet-r1.png,CHARACTER_INTENT.json,MANIFEST.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;SPORTS_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.30individual English biographies/dry German FrizzleBobnotes,team/role links,actual fullprompts and reference receipts;all prose DESIGN. No pair/state/trio binding fabricated. Prompt/PNG/QA originals retained in local output/slop-sports-* folders.
+
+Next gate:Georg design verdict on5 sports sheets,optionally per team.
+
+---
+
 # WSA Return · Four concept families PASS; five sports teams authorized · 2026-11-06
 
 Georg explicitly accepts all4 Trust/System/Medicine/Anti-Rules sheets/24 actors. Source manifest/biography intake flags updated; prose remains DESIGN and technical extraction/master holds remain. Inventory114 PASS sheets/684 depictions;eligible112 sheets/672 depictions. Existing Miners and International Couples exclusions unchanged. Owner WSA,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome:five independent retro sport teams—soccer,American football,basketball,baseball,tennis—six unique upright footless ink actors per3x2 sheet,two female-read each. Source-conditioned original benchmark generation;no inherited generated parent,no image resizes. Next step:generate/archive five new DRAFT sheets. No merge/runtime/Library publication.

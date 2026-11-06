@@ -1,0 +1,264 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS_BASEBALL_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+    "sha256": "eac93355909cc91b3d896ddd02236f8ae98c8f3faf7b90c42ee33e51b97ce504"
+  },
+  "production_record": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS_BASEBALL_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS_BASEBALL_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Pending Innings",
+    "visual_context": "1930s vintage dusty brick-red and ivory baseball club, soft caps and sparse pinstriped front panels",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "BASEBALL",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pitch Pünktlich",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "baseball",
+        "backward cap"
+      ],
+      "temperament": "He can delay a decision until it becomes a delivery.",
+      "prompt_auszug": "Pitch Pünktlich; male-read. Narrow top-heavy droplet blob, cap backward, intense mismatched wide stare, tiny anxious closed mouth; brick-red collar and short ivory pinstripe panel; holds one stitched baseball close to face with delicate fingertips.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "pitcher"
+    },
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cora Fangfrage",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "catcher mitt",
+        "side-held catcher mask",
+        "small chest bib"
+      ],
+      "temperament": "She catches everything except the explanation for why it happened.",
+      "prompt_auszug": "Cora Fangfrage; female-read. Broad squat scalloped blob, subtle lashes and dry one-eyelid squint, irritated two-upper-tooth complaint; catcher cap, small leather chest bib, giant thick mitt in one hand; wire catcher mask carried at SIDE below face, eyes fully unobscured.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "catcher"
+    },
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hank Hauptsache",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden bat",
+        "red cap"
+      ],
+      "temperament": "He mistakes a swing for a comprehensive strategy.",
+      "prompt_auszug": "Hank Hauptsache; male-read. Pear-shaped robust blob, enormous crooked laughing grin upper teeth inside mouth, proud high ink crest under red cap; tiny ivory collar; holds one thick wooden baseball bat vertically beside body, complete bat within cell.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "batter"
+    },
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Stella Kurzschluss",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "fielding glove",
+        "red visor"
+      ],
+      "temperament": "She fields problems before anyone can assign a committee.",
+      "prompt_auszug": "Stella Kurzschluss; female-read. Lean crescent blob with little side quiff, lively lashed eyes and toothless sly smile; red visor, small pinstriped collar; worn leather fielding glove held open low, other hand poised in a short sharp pointing gesture.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "shortstop"
+    },
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Floyd Fernsicht",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather mitt",
+        "crooked cap"
+      ],
+      "temperament": "He is always ready for a ball that may simply be a cloud.",
+      "prompt_auszug": "Floyd Fernsicht; male-read. Tall wavy column blob, cap perched crooked, huge eyes staring upwards in mild existential alarm, uneven small open mouth; brick-red scarf and one pinstriped shoulder patch; mitt raised at chest while free hand shades brow.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "outfielder"
+    },
+    {
+      "id": "WSA_SPORTS_BASEBALL_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lou Laufzettel",
+      "bild": {
+        "datei": "SPORTS_BASEBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small base bag",
+        "soft cap"
+      ],
+      "temperament": "He steals a base only after obtaining three copies of its consent.",
+      "prompt_auszug": "Lou Laufzettel; male-read. Wide offset-lobed blob with swept ink curl, heavy suspicious eyelids and closed sideways sneer; soft ivory cap with red peak, red collar; holds one small dusty square fabric base bag under arm like a briefcase.",
+      "prompt_quelle": "SPORTS_BASEBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "baserunner"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

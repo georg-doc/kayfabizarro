@@ -1,0 +1,265 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS_TENNIS_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+    "sha256": "4004104bca0bcf7e5db96e2b5cbbfc5b33c97b1b22dc8e5851a8b1dfb492f2f3"
+  },
+  "production_record": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS_TENNIS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS_TENNIS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Der Verein zum zweiten Aufschlag",
+    "visual_context": "1920s-to-1970s retro tennis club, ivory and faded sage cotton accessories, wooden racquets, no human anatomy",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "TENNIS",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Elsa Ersteraufschlag",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wooden racquet",
+        "felt ball",
+        "headband"
+      ],
+      "temperament": "She serves certainty at a speed the committee has not approved.",
+      "prompt_auszug": "Elsa Ersteraufschlag; female-read. Tall teardrop blob, swept ink curl and subtle lashes, wide delighted white eyes and sharp asymmetrical two-upper-tooth grin; ivory headband and sage sailor-style tiny collar; holds short wooden racquet upright and one cream felt ball high in other hand.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "serve-and-volley attacker"
+    },
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gustav Grundlinie",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden racquet",
+        "sage sweatband"
+      ],
+      "temperament": "He remains at the baseline because all change should come to him.",
+      "prompt_auszug": "Gustav Grundlinie; male-read. Broad stubborn bell-shaped blob, bushy ink brow, closed flat sulky mouth; sage sweatband and small ivory knit collar; wooden racquet held low across one flank, strings clearly visible not covering body/face.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "baseline defender"
+    },
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nelly Netzgewinn",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "folded miniature net",
+        "wooden racquet",
+        "visor"
+      ],
+      "temperament": "She is excellent at doubles until somebody asks whose turn it is.",
+      "prompt_auszug": "Nelly Netzgewinn; female-read. Compact square splat, fluttering side ink crest, lashed eyes glancing sideways and nervous toothless smile; tiny ivory visor and sage neckerchief; hugs a little folded three-square net in one hand, wooden racquet at side.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "doubles net player"
+    },
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Viktor Rückhand",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden racquet",
+        "ivory wristbands"
+      ],
+      "temperament": "He returns criticism with interest and a pleasing amount of spin.",
+      "prompt_auszug": "Viktor Rückhand; male-read. Lean reverse-comma blob, one high skeptical eyelid and crooked closed victorious smirk; sage narrow collar and ivory wristbands; wooden racquet held backhand across lower side with both short goo hands, not face.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "backhand / spin specialist"
+    },
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Ballwechsel",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-ball tin",
+        "headband"
+      ],
+      "temperament": "He believes every rally can be settled by keeping one more ball in reserve.",
+      "prompt_auszug": "Bodo Ballwechsel; male-read. Round wobbly upright blob, exhausted raised eyebrows, tiny toothless panting mouth; sagging ivory headband and small sage collar; embraces vintage open cylindrical ball tin with three visible cream tennis balls.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "rally retriever"
+    },
+    {
+      "id": "WSA_SPORTS_TENNIS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sir Satzverlust",
+      "bild": {
+        "datei": "SPORTS_TENNIS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden racquet with slack strings",
+        "cable-knit collar"
+      ],
+      "temperament": "He loses with such formality that victory feels insufficiently dressed.",
+      "prompt_auszug": "Sir Satzverlust; male-read. Tall oval splat, deeply weary half-lidded eyes and magnificent asymmetrical downturned mouth; tiny ivory cable-knit cricket-style collar with sage edge, little moustache-shaped INK upper lip not hair; holds a broken wooden racquet with ONE clean sag in string bed, body whole.",
+      "prompt_quelle": "SPORTS_TENNIS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "veteran club captain"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}
