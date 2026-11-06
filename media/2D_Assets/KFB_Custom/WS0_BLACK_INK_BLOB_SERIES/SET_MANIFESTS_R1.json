@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 110,
-    "pass_depictions": 660,
+    "selected_sheets": 114,
+    "pass_depictions": 684,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 108,
-    "intake_eligible_depictions": 648,
-    "other_authoring_depictions": 540
+    "intake_eligible_sheets": 112,
+    "intake_eligible_depictions": 672,
+    "other_authoring_depictions": 564
   },
   "excluded_sources": [
     {
@@ -766,45 +766,42 @@
       "status": "PASS",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_TRUSTSYSTEMS_TRUST_20261106",
       "manifest": "TRUSTSYSTEMS_TRUST_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
       "manifest": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRUSTSYSTEMS_MEDICINE_20261106",
       "manifest": "TRUSTSYSTEMS_MEDICINE_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_TRUSTSYSTEMS_ANTIRULES_20261106",
       "manifest": "TRUSTSYSTEMS_ANTIRULES_6_2026-11-06/MANIFEST.json",
-      "status": "DRAFT",
-      "georg_status": null,
-      "intake_eligible": false
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 4,
-    "depictions": 24,
-    "identities": 24,
-    "trios": 0,
-    "georg_pass": 0,
-    "intake_eligible": 0
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
+    "pass": 0
   },
   "production_supplement": {
     "biographies": "POST_PASS_PRODUCTION_R1/BIOGRAPHIES_DESIGN_R1.json",

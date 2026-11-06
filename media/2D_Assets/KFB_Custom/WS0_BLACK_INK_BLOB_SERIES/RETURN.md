@@ -1,3 +1,9 @@
+# WSA Return · Four concept families PASS; five sports teams authorized · 2026-11-06
+
+Georg explicitly accepts all4 Trust/System/Medicine/Anti-Rules sheets/24 actors. Source manifest/biography intake flags updated; prose remains DESIGN and technical extraction/master holds remain. Inventory114 PASS sheets/684 depictions;eligible112 sheets/672 depictions. Existing Miners and International Couples exclusions unchanged. Owner WSA,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome:five independent retro sport teams—soccer,American football,basketball,baseball,tennis—six unique upright footless ink actors per3x2 sheet,two female-read each. Source-conditioned original benchmark generation;no inherited generated parent,no image resizes. Next step:generate/archive five new DRAFT sheets. No merge/runtime/Library publication.
+
+---
+
 # WSA Return · Trust/systems/medicine/anti-rules families generated · 2026-11-06
 
 Owner WSA;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome4 independent6-actor source sheets/24 authoring identities:Trust & Betrayal,Unspoken Systems,Medicine Madness,Anti-Rules Manifesto. Exact4 deck registry IDs/title/path/ref read at main bf1a7ca132b3d10ab99e5de382df4964a0b007ae;thematic DESIGN bindings,exact canonical card mapping null. Medicine deck exact ID saboteur_sketchbook_medicine_history_psyops_add_ retains trailing underscore. Fictional satirical historical/social archetypes,not treatment advice or real-person/clinical claims.

@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 4,
     "depictions": 24,
@@ -18,8 +18,8 @@
       "manifest": "TRUSTSYSTEMS_TRUST_6_2026-11-06/MANIFEST.json",
       "sha256": "6846f956e392ba5f940ff34b4abc2eba6dfb0f02bd651222581499c9f89f78cf",
       "git_blob_sha": "a45ff7206750ccd045801e4fa7ace47e3cf415b3",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "trust_and_betrayal",
         "user_family_title": "Trust & Betrayal",
@@ -45,8 +45,8 @@
       "manifest": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/MANIFEST.json",
       "sha256": "891bfddd218e1933e249d9410c7998b4f81fa1dcb19310e5fb2cbe28a06dfee0",
       "git_blob_sha": "a9cbd51c2261c1daf3828132b3c52e8f2e4c3a26",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
         "user_family_title": "Unspoken Systems",
@@ -72,8 +72,8 @@
       "manifest": "TRUSTSYSTEMS_MEDICINE_6_2026-11-06/MANIFEST.json",
       "sha256": "cad0d4872ad72266795a8efa67f86041fe503568a20cca7d94dd9cc0a296bc6a",
       "git_blob_sha": "d2cb5b7ec7a7bc9a9cfc8a564fd8e60ec1426f20",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "saboteur_sketchbook_medicine_history_psyops_add_",
         "user_family_title": "Medicine Madness",
@@ -99,8 +99,8 @@
       "manifest": "TRUSTSYSTEMS_ANTIRULES_6_2026-11-06/MANIFEST.json",
       "sha256": "0d2523be66995a45a5969ab770bad307d523b53b0f1d7eaa5bdc46f2613421af",
       "git_blob_sha": "11fc52bd83ce4fce39ceaf3e9af97f067a7fb9be",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "anti_rules_toolkit",
         "user_family_title": "Anti-Rules Manifesto",
@@ -126,5 +126,6 @@
     "Exact actual prompts/reference roles recorded",
     "Pair/animal/mummy/robot cues adapted to upright single ink actors",
     "All text lore/cards DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }
