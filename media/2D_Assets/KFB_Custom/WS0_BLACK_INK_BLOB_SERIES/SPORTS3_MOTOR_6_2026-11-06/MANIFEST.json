@@ -1,0 +1,269 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_MOTOR_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+    "sha256": "9b65590ee193a7ad0938ff1d3415a40c8bbc20ebe2d8a7c4fe04cd1a23d0dd05"
+  },
+  "production_record": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_MOTOR_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_MOTOR_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Rennstall Vorbehalt",
+    "visual_context": "1920s-to-1960s motorsport paddock vibe,ivory and faded scarlet small racing collars,leather helmets,enamel and metal,no actual cars",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "MOTOR",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rolf Rundstrecke",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-spoke steering wheel",
+        "leather racing cap",
+        "raised goggles"
+      ],
+      "temperament": "He believes every circuit was built to bring the audience back to him.",
+      "prompt_auszug": "Rolf Rundstrecke, male-read. Round broad ink blob with high swept crest,arrogantly raised brow and crooked CLOSED smile;old scarlet leather racing cap with goggles perched ABOVE eyes,small ivory collar;holds ONE simple three-spoke vintage steering wheel low at side,not across face.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "Grand Prix circuit driver"
+    },
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rita Richtungsfrage",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three-line roadbook",
+        "cream cloth helmet",
+        "scarlet scarf"
+      ],
+      "temperament": "She trusts the route note until it mentions the road.",
+      "prompt_auszug": "Rita Richtungsfrage, female-read. Slender curved ink bell,side quiff and lashes,wide suspicious side glance and tiny tense toothless mouth;cream cloth helmet open face,scarlet scarf;holds folded roadbook with THREE plain black zigzag route lines and no letters,other hand taps it.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "rally driver"
+    },
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Heinz Halbezeit",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tin coffee mug",
+        "brass stopwatch",
+        "wool cap"
+      ],
+      "temperament": "He measures endurance in the distance between two promises of a break.",
+      "prompt_auszug": "Heinz Halbezeit, male-read. Tall domed drooping ink blob,deeply exhausted eyelids and long closed compressed pout;scarlet wool cap,small ivory high collar;one tin coffee mug in hand and squat brass stopwatch in other.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "endurance driver"
+    },
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Nurvorne",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small chequered flag",
+        "open helmet",
+        "scarlet neckerchief"
+      ],
+      "temperament": "She sees overtaking as an efficient way to shorten an argument.",
+      "prompt_auszug": "Nora Nurvorne, female-read. Very broad low scalloped ink blob,lively lashed eyes and ecstatic three-upper-tooth grin;small ivory helmet with scarlet stripe OPEN FACE,small scarlet neckerchief;holds short chequered cloth flag on SHORT stick beside flank,flag entirely within cell.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "oval-track racer"
+    },
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Bergauf",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single gear cog",
+        "folded gloves",
+        "leather helmet"
+      ],
+      "temperament": "He chose hill climbing because the problem was at least clearly uphill.",
+      "prompt_auszug": "Bert Bergauf, male-read. Tall tapering reverse-comma ink blob,huge worried eyes looking up and tiny toothless gasp;old brown leather helmet open face,cream collar;holds one small metal gear cog and short folded scarlet gloves,no exposed machine anatomy.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "hill-climb driver"
+    },
+    {
+      "id": "WSA_SPORTS3_MOTOR_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Boxengasse",
+      "bild": {
+        "datei": "SPORTS3_MOTOR_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small tire wheel",
+        "grease cloth",
+        "scarlet cap"
+      ],
+      "temperament": "He races small machines with grievances built for much larger ones.",
+      "prompt_auszug": "Pip Boxengasse, male-read. Compact star-lobed ink blob,one bent crest,heavy annoyed eyelids and asymmetrical toothless downturned mouth;scarlet flat cap,small cream collar;holds tiny round racing wheel with rubber tire as hand prop,other hand lifts one grease-stained cloth.",
+      "prompt_quelle": "SPORTS3_MOTOR_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "kart racer"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -1,3 +1,19 @@
+# WSA Return · Six further retro sports teams generated · 2026-11-06
+
+Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome6independent3x2 source sheets/36unique authoring identities:poker,skiers,motor racing,cycle racing,second icehockey team,marathon. All6DRAFT awaiting Georg;2female-read each/12total. Previous5sports2 sheets/30actors explicitly PASS persisted and13files readback-verified at7ee7ce6ceb6caba3ef81b31fb420785ebc17dd1a. Inventory124PASS sheets/744depictions;eligible122/732;new36excluded from PASS totals;old exclusions unchanged. Fictional retro clubs with role intentions,not factual legal lineup assertions or real branding. Second scarlet/navy hockey team distinct authoring identities from green SPORTS2_HOCKEY,not replacement/pairedstate.
+
+Production6native original-reference-conditioned jobs,0layout edit jobs,0selectedPNG resizes,0individual spriteexports. Actual veteran-original/body and RPG/accessory craft references supplied as bounded STYLE inputs;6/6original benchmark SHA256matched. Model/seed not exposed. All6native1536x1024RGBA alpha0..254;fullyclear520750–661967pixels. Original/local/GitPNGblob hashes matched. No generated styleparent chain. Exact finalhead and45file readbacks recorded in local GITHUB_RECEIPT.json;this Return does not invent its future head.
+
+Visual QA:all6native originals,6checker composites,light64/96/192 and dark160logical-cell previews reviewed. Complete upright footless ink bodies and white-red-black eyes;twofemale-read each;props fitcells and do not cover faces. Held ski/boot/bikeparts/steeringwheel,not human feet/full vehicles;no poker table/sports scenery. Native minor variations preserved:Poker extra clubsuitbadges and coloured crests;Ski extra floral trim andcrosscountry slyface;Motor roadbook1zigzag andunprompted coffeesteam;Cycling pennant handheld vswrist,climber hopeful;Hockey C oncaptain band despite noletteringbrief,rookie softtwopartmitt;Marathon small openbanana-runner mouth andslightly rosy pacemakerlip. No self-issued GeorgPASS,no repair/regeneration calls.
+
+Technical holds:alpha opacity/edges and validated per-actor isolation pending;no independent native high-resolution catalogue masters. Motor globalrowminimumpeak252,Hockey25:no certified single horizontal cut. Other rowdiagnostics remain evidenceonly;logicalcells are not croprectangles. No runtime/gameexports,Librarypublication,receiving canonical-IDassignment,combat-tier/hitmapping,merge or Stageclaim.
+
+Changedfiles:SPORTS3_{POKER,SKI,MOTOR,CYCLING,ICEHOCKEY,MARATHON}_6_2026-11-06/,each sheet-r1.png,CHARACTER_INTENT.json,MANIFEST.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;SPORTS3_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.36individual English biographies,dryGermanFrizzleBobnotes,fullactualprompts andteam/sportsrolelinks;allprose DESIGN,no invented pair/state/trio/exactdeck bindings. Local output/slop-sports3-* preserves plans/originals/QA.
+
+Nextgate:Georg design verdict on6new sheets,optionally perfamily.
+
+---
+
 # WSA Return · Second sports batch PASS; six new teams authorized · 2026-11-06
 
 Georg accepts all5 hockey/riding/swimming/athletics/rugby sheets,30actors. Manifest and biography intake updated;prose stays DESIGN,technical extraction/master holds retained. Inventory124 PASS sheets/744depictions;eligible122/732;old exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. New authorized outcome6independent6-actor3x2 sheets:poker,skiers,motor racing,cycle racing,second icehockey team,marathon. Each2female-read,whole upright footless ink actors. Original benchmark references,restrained sport-props,retro charm,fresh expressive designs and source-bound metadata/lore. Second hockey team deliberately separate from prior green team. Next:generate/archive6DRAFTs. No runtime/Library publication/merge.

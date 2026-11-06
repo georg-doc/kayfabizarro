@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_ICEHOCKEY_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+    "sha256": "294e652909ee061b7c146422e97e9511ad1ba6da6832f8050337f8a0833a6335"
+  },
+  "production_record": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_ICEHOCKEY_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_ICEHOCKEY_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "HC Rostrote Revanche",
+    "visual_context": "Distinct SECOND retro ice hockey team,oxidised scarlet and dark navy small knitted accents,cream leather equipment;NOT prior green team",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "ICEHOCKEY",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP",
+    "distinct_from_set": "WSA_SPORTS2_HOCKEY_20261106"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kapitänin Kante",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wooden stick",
+        "captain armband",
+        "scarlet collar"
+      ],
+      "temperament": "She leads by making every alternative feel insufficiently organised.",
+      "prompt_auszug": "Kapitänin Kante, female-read. Tall offset pear ink blob with high looping quiff,subtle lashes,steely side-eyed stare and asymmetric closed severe smirk;small scarlet collar with navy trim,cream captain armband;holds ONE short thick wooden hockey stick beside body,blade down inside cell.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "captain / veteran defender"
+    },
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gustav Gegentor",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "two goalie blocker gloves",
+        "open leather helmet"
+      ],
+      "temperament": "He anticipates every shot as if it were addressed to his childhood.",
+      "prompt_auszug": "Gustav Gegentor, male-read. Very wide low scalloped ink blob,one bent crest,giant frightened white eyes and clenched internal teeth;navy leather helmet open face,no visor or mask;small scarlet collar;two bulky cream-brown goalie blocker gloves held upright near cheeks,NO separate mask.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "goalkeeper"
+    },
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ewald Eisbremse",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "black puck",
+        "scarlet headband"
+      ],
+      "temperament": "He stops the attack mainly because movement offends him.",
+      "prompt_auszug": "Ewald Eisbremse, male-read. Broad tall domed ink blob with two uneven short curls,heavy bored lids and deep toothless pout;scarlet wool headband,small navy collar;holds one squat black puck pinched in goo hand as though confiscated,other arm crossed.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "defensive anchor"
+    },
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toni Taktlücke",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-arrow tactics slate",
+        "navy cap"
+      ],
+      "temperament": "He sees passing lanes where others have sensibly drawn walls.",
+      "prompt_auszug": "Toni Taktlücke, male-read. Slender reverse-comma ink blob,eyes keenly sideways,three-upper-tooth delighted narrow grin;navy soft cap,small cream collar;one plain small navy tactics slate with THREE cream arrows held low,other hand directs inward.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "center / passing playmaker"
+    },
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frida Fernschuss",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short hockey stick",
+        "puck",
+        "scarlet neckerchief"
+      ],
+      "temperament": "She shoots from distance to avoid the unnecessary intimacy of consultation.",
+      "prompt_auszug": "Frida Fernschuss, female-read. Round diamond-lobed ink blob with swept side quiff,lively lashed white eyes and huge joyous asymmetric open two-upper-tooth grin;scarlet neckerchief,navy wrist wraps;short wooden hockey stick at flank and ONE puck held near chest,not attacking neighbour.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "shooting wing"
+    },
+    {
+      "id": "WSA_SPORTS3_ICEHOCKEY_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Niko Nachrücker",
+      "bild": {
+        "datei": "SPORTS3_ICEHOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one oversized hockey glove",
+        "navy knit cap"
+      ],
+      "temperament": "He is thrilled to be selected and alarmed by the prospect of being needed.",
+      "prompt_auszug": "Niko Nachrücker, male-read. Tall narrow crooked ink teardrop,high springy curl,huge uncertain eyes and small toothless wavering smile;too-large navy knit cap,small scarlet collar;holds ONE oversized worn leather hockey glove in both hands like a borrowed responsibility.",
+      "prompt_quelle": "SPORTS3_ICEHOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "rookie / utility wing"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

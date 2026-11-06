@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_CYCLING_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+    "sha256": "6fa4f5fa27360e08c495b200e71a4fc37d50097bebc93894b69406649ee4c3b7"
+  },
+  "production_record": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_CYCLING_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_CYCLING_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "VC Gegenwindordnung",
+    "visual_context": "Vintage road cycling squad with faded lavender-and-cream small jersey panels,cotton caps,leather and chrome parts,no full bicycles",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "CYCLING",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gerd Geradeaus",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "drop handlebar",
+        "striped cotton cap"
+      ],
+      "temperament": "He saves his energy for the exact moment everyone else would like some.",
+      "prompt_auszug": "Gerd Geradeaus, male-read. Wide compact ink pear with swept aerodynamic crest,furious delighted white eyes and two-upper-tooth open victory shout;lavender cycling cap with cream center stripe,small collar;holds ONE old drop handlebar with thick cream tape low at waist,full prop in cell.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "sprinter"
+    },
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Klara Kletterklasse",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "single chainring",
+        "cream cycling cap",
+        "lavender scarf"
+      ],
+      "temperament": "She fears the climb chiefly because it may eventually stop giving her a reason to be slow.",
+      "prompt_auszug": "Klara Kletterklasse, female-read. Tall thin wavering ink column,high side quiff and lashes,wide eyes looking upwards,small anxious CLOSED smile;cream cotton cap,small lavender scarf;holds ONE small toothed chainring like a cherished medal,other hand touches chest.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "climber"
+    },
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Taktstrich",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass stopwatch",
+        "blank oval plate",
+        "headband"
+      ],
+      "temperament": "He rides against the clock because the clock does not ask follow-up questions.",
+      "prompt_auszug": "Theo Taktstrich, male-read. Tall smooth bell ink blob with modest curled crest,one exacting raised eyebrow and pursed toothless side-mouth;lavender narrow headband and cream collar;holds brass stopwatch and a tiny blank oval race plate with no lettering.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "time-trial specialist"
+    },
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dora Durstträger",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "two aluminum bottles",
+        "lavender cap"
+      ],
+      "temperament": "She supplies the entire team and receives thanks in theoretical form.",
+      "prompt_auszug": "Dora Durstträger, female-read. Broad round scalloped ink blob,soft modest lashes and heavily weary half-lidded stare,closed long frown;lavender cycling cap and small cream shoulder panel;holds TWO dented aluminum water bottles one in each goo hand,no extra bag clutter.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "domestique / support rider"
+    },
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fritz Fluchtgruppe",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rolled route map",
+        "small wrist pennant",
+        "cream cap"
+      ],
+      "temperament": "He calls leaving everyone behind a temporary act of collective interest.",
+      "prompt_auszug": "Fritz Fluchtgruppe, male-read. Leaning upright comma ink blob with high wavy crest,sideways conspiratorial eyes and crooked toothless smirk;cream cap pushed back,tiny lavender neckerchief;one small rolled route map in hand and short little pennant tied to wrist,all within silhouette.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "breakaway specialist"
+    },
+    {
+      "id": "WSA_SPORTS3_CYCLING_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kapitän Nachtritt",
+      "bild": {
+        "datei": "SPORTS3_CYCLING_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "held leather saddle",
+        "open strip helmet"
+      ],
+      "temperament": "He leads the group mainly by knowing which complaints can wait.",
+      "prompt_auszug": "Kapitän Nachtritt, male-read. Wide tall asymmetrical blob,low falling ink crest,puzzled raised eyes and tiny toothless open exhale;old leather strip cycling helmet OPEN FACE,small lavender collar;holds one saddle as separate hand prop,other hand opens in weary appeal.",
+      "prompt_quelle": "SPORTS3_CYCLING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "road captain / all-rounder"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}
