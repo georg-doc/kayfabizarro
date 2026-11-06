@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "entries": [
   {
    "id": "V-001",
@@ -22601,6 +22601,21 @@
    "superseded_by": [],
    "why": "Jede Aenderung lief durch die grosse Stand- und Testschleife ueber WS0 und WS1; Georg will Module und Inhalte eigenstaendig mit einem Chat bauen, testen und nachziehen.",
    "applies": "ab RC2"
+  },
+  {
+   "id": "V-1539",
+   "date": "06.11.2026",
+   "area": "Video",
+   "verdict": "DECISION",
+   "text": "Georg 06.11.: Film-Ausschnitte der HyperNorm-Engine (q540, ~100 x 60-90 s, 360p, nur Katalog-Titel mit Haken) spiegelt WSA statt WS1, Medien auf der GPT-Site, Manifest media/hypernorm-films/manifest.r1.json im privaten Spiel-Repo; Engine-Site auf der GPT-Site konsolidieren (H15 gepinnt, Ton von aussen, Schnittstellen-Seite) fuer Spiel, Remotion-Video und Marketing. H16 (Zeitquelle, Steuerspur, Audio-Merkmale, Render-Aufruf) baut WSV als additive Kopie von H15; WSA hostet. Seitenradio raus, Radio oben rechts aus Georgs Glyphen (N-198). MedKayfab-Decks Backlog.",
+   "values": {},
+   "owner": "WSA · WSV · WS1",
+   "check": "b351, N-197/N-198/N-199, WS0_ANTWORT_R1",
+   "source": "Georg 06.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat WSA-Volumen frei; Filme und Engine-Site sind ein begrenzter Job, und die Engine soll ueber Spiel hinaus fuer Video und Marketing nutzbar werden.",
+   "applies": "ab 06.11."
   }
  ],
  "imported_acceptance": [
