@@ -2,7 +2,7 @@
   "schema": "kfb.slop-batch/1",
   "owner": "WSA",
   "date": "2026-11-06",
-  "status": "DRAFT_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "counts": {
     "sheets": 6,
     "depictions": 36,
@@ -18,8 +18,8 @@
       "manifest": "NARRATIVE_AGE_6_2026-11-06/MANIFEST.json",
       "sha256": "27118ff54d96c03552f1b505f74529a7c013d715a0a50c8f0c80805fdfb1a203",
       "git_blob_sha": "02d470c2a2a781f579a341bdaf0e6f82825b2f0b",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "the_kayfabe_crucible_coming_of_age",
         "user_family_title": "Koming-of-Age",
@@ -45,8 +45,8 @@
       "manifest": "NARRATIVE_NIBELUNGEN_6_2026-11-06/MANIFEST.json",
       "sha256": "9a667297cf5b94b165731b773ec720557ab588e194b48a55d49960cb8975b5c5",
       "git_blob_sha": "eee58462a1fb59b72b46f37c388e43c7fa6b7de2",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "nibelungen_booster_pack_design",
         "user_family_title": "Nibelungen",
@@ -72,8 +72,8 @@
       "manifest": "NARRATIVE_KOSMIK_6_2026-11-06/MANIFEST.json",
       "sha256": "7ff10b2216758b026288c87c5784ce57d0aff3471ffbb3d31904ba02a5dbacb8",
       "git_blob_sha": "533891f5a3e03143323416686bd4ee4855012238",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "kosmik_kayfabizarro_sci_fi_space_opera",
         "user_family_title": "Kosmik Kollektive",
@@ -99,8 +99,8 @@
       "manifest": "NARRATIVE_EGO_6_2026-11-06/MANIFEST.json",
       "sha256": "c086777bdec9947fd22720c26d108fa7577c98fbc088f40489b97ad9d0ef3cfa",
       "git_blob_sha": "35a5604d45db9aa03f047ec67956a426b8731610",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "frizzlebob_s_ego_mania_narcissist",
         "user_family_title": "It's All About Me",
@@ -126,8 +126,8 @@
       "manifest": "NARRATIVE_FLAWS_6_2026-11-06/MANIFEST.json",
       "sha256": "803b4aff260f8a875f89d72afbdcd106cf71744bee0ac9c7dfd23b484b0da5b6",
       "git_blob_sha": "b290c0744f1033da77840cfa596474b5d6909aff",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "uncle_frizzlebob_s_tragic_flaws_id",
         "user_family_title": "Tragic Flaws",
@@ -153,8 +153,8 @@
       "manifest": "NARRATIVE_MUSEUM_6_2026-11-06/MANIFEST.json",
       "sha256": "99e003a24cafbd59ec51c497a582d764757ad06c379e6ebd2b7a949e5ecfe68f",
       "git_blob_sha": "a93964d58421d30a899ef935f7176d4ae96e078f",
-      "georg_status": null,
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "intake_eligible": true,
       "deck_binding": {
         "deck_id": "museum_of_modern_mess",
         "user_family_title": "Museum of Modern Mess",
@@ -180,5 +180,6 @@
     "Exact actual prompts/style-reference roles recorded",
     "Prom pair1actor2corsages;myth/robot/animal/wall cues keep upright ink anatomy",
     "All text lore/cards DESIGN"
-  ]
+  ],
+  "georg_status": "PASS"
 }
