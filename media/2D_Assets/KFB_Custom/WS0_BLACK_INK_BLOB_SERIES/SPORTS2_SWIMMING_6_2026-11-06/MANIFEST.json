@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS2_SWIMMING_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+    "sha256": "d6ab97310f9aea172154faf9d51bd4fbf3df263049808e42d74e30894af42e9e"
+  },
+  "production_record": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS2_SWIMMING_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS2_SWIMMING_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "SV Trockener Ernst",
+    "visual_context": "Vintage seaside swim club in muted coral and cream, rubber swim caps, small terry towel collars, brass goggles held clear of eyes",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "SWIMMING",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Franz Freistilamt",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "coral swim cap",
+        "wooden kickboard"
+      ],
+      "temperament": "He treats the shortest route as a competitive moral achievement.",
+      "prompt_auszug": "Franz Freistilamt, male-read. Compact forward-leaning but upright comma ink blob, gleeful focused white eyes, crooked wide open grin with two upper teeth; coral rubber cap, tiny cream towel collar; one single thick wooden kickboard tucked at flank, short goo hands ready.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "freestyle sprinter"
+    },
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bruno Brustton",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "striped rubber cap",
+        "coral towel collar"
+      ],
+      "temperament": "He insists that progress should be symmetrical even when the world is not.",
+      "prompt_auszug": "Bruno Brustton, male-read. Very broad scalloped ink blob, low skeptical lids, toothless proud pout; cream rubber cap with coral stripe, little coral towel collar; presses both goo palms neatly together at chest in exaggerated breaststroke preparation, no human torso/legs.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "breaststroke specialist"
+    },
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rita Rückenruhe",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream swim cap",
+        "hand-held brass goggles",
+        "coral towel scarf"
+      ],
+      "temperament": "She trusts the direction of travel less than the ceiling.",
+      "prompt_auszug": "Rita Rückenruhe, female-read. Tall curved teardrop blob completely UPRIGHT, side ink curl peeking from cream cap, lashed wide eyes looking up and worried small closed mouth; coral towel scarf; holds antique brass swim goggles in one hand LOW away from eyes, other palm raised defensively.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "backstroke specialist"
+    },
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Butterflug",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "coral cap",
+        "cream wristbands"
+      ],
+      "temperament": "He performs effort so visibly that the pool feels obliged to applaud.",
+      "prompt_auszug": "Bodo Butterflug, male-read. Round star-lobed ink blob, two swept-up ink crests, ecstatic raised eyes, delighted asymmetrical three-upper-tooth shout; small coral cap, two cream wristbands; both short goo arms spread high at sides in dramatic symmetrical stroke preparation, no actual wings.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "butterfly specialist"
+    },
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mira Mehrbahn",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "flower-trim swim cap",
+        "tin cup",
+        "rolled towel"
+      ],
+      "temperament": "She has swum enough laps to suspect the finish is being moved.",
+      "prompt_auszug": "Mira Mehrbahn, female-read. Broad tall bell-shaped blob with modest lashes and exhausted half-lidded stare, small lopsided toothless grimace; faded coral flower-trim swim cap, small cream towel shoulder; holds tiny tin cup and rolled striped towel, body dominant.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "distance swimmer"
+    },
+    {
+      "id": "WSA_SPORTS2_SWIMMING_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Paul Pausenpfiff",
+      "bild": {
+        "datei": "SPORTS2_SWIMMING_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass stopwatch",
+        "baton-shaped rolled towel",
+        "cream cap"
+      ],
+      "temperament": "He prepares for the next relay leg by checking whether it is still his turn.",
+      "prompt_auszug": "Paul Pausenpfiff, male-read. Narrow upright pear blob, raised questioning brow and tiny toothless sideways mouth; cream cap with coral seam, tiny coral collar; holds brass stopwatch in one hand and a short baton-shaped rolled towel in the other like an uncertain relay handover kept entirely within cell.",
+      "prompt_quelle": "SPORTS2_SWIMMING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "relay anchor / team timer"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

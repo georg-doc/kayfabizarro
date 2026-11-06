@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS2_HOCKEY_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+    "sha256": "04175663789a5b631f7341dec995af529e562ff80a51e7a67360c0867179f047"
+  },
+  "production_record": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS2_HOCKEY_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS2_HOCKEY_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "HC Eisordnung",
+    "visual_context": "1930s-to-1950s ice hockey team, faded bottle-green and cream knitted collar panels, brown leather equipment",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "HOCKEY",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kuno Kastenangst",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "goalie glove",
+        "side-carried goalie mask",
+        "green cap"
+      ],
+      "temperament": "He guards the goal as if every puck were an unannounced inspection.",
+      "prompt_auszug": "Kuno Kastenangst, male-read. Bulky pear ink blob, two giant startled white eyes and tiny wavering toothless mouth; old soft green cap, cream knit collar; huge vintage brown leather goalie catcher glove held open, small wire goalie mask carried LOW at other side completely away from face.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "goalkeeper"
+    },
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Berta Bandeisen",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wooden hockey stick",
+        "taped grip",
+        "knit shoulder cape"
+      ],
+      "temperament": "She considers the blue line a perfectly reasonable place to end a conversation.",
+      "prompt_auszug": "Berta Bandeisen, female-read. Wide short squared scalloped ink blob, modest lashes under one heavy lifted brow, tightly closed stubborn side-frown; tiny cream-green shoulder cape; one short thick wooden hockey stick held upright beside body, curved blade fully inside cell, taped grip.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "defender"
+    },
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nils Nullpunkt",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "black puck",
+        "green headband"
+      ],
+      "temperament": "He organises every face-off around his personal need to be right.",
+      "prompt_auszug": "Nils Nullpunkt, male-read. Tall tapered curving ink blob, sharp confident sideways eyes, delighted asymmetrical open three-upper-tooth grin; green headband, tiny cream collar; balances one chunky black hockey puck flat in open goo palm, other hand directing sideways.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "center / playmaker"
+    },
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fredo Frostlauf",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "held leather ice skate",
+        "green neckerchief"
+      ],
+      "temperament": "He is ready to accelerate as soon as somebody explains which way.",
+      "prompt_auszug": "Fredo Frostlauf, male-read. Narrow leaning but upright comma blob, curled crest, huge worried upward glance, inward-sucked toothless lips; small green neckerchief; holds ONE worn leather ice skate by its laces as lucky charm, no feet or legs.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "left wing"
+    },
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ida Eisbrecher",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short wooden stick",
+        "puck",
+        "cream wrist wrap"
+      ],
+      "temperament": "She scores chiefly to interrupt the captain's speech.",
+      "prompt_auszug": "Ida Eisbrecher, female-read. Round star-lobed ink blob, long side quiff, lively lashed eyes and impish crooked CLOSED smile; tiny green jersey patch and cream wrist wrap; holds compact wooden stick diagonally against flank and one puck in free hand, props not across face.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "right wing / scorer"
+    },
+    {
+      "id": "WSA_SPORTS2_HOCKEY_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Boris Strafminute",
+      "bild": {
+        "datei": "SPORTS2_HOCKEY_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass egg timer",
+        "leather elbow pad"
+      ],
+      "temperament": "He serves every penalty with the dignity of a wrongly filed invoice.",
+      "prompt_auszug": "Boris Strafminute, male-read. Very broad tall domed blob, one drooping crest, exhausted half-lidded eyes and wide open indignant bark with two upper teeth; green wool collar, patched leather elbow pad; holds squat brass egg timer, free hand palm up demanding explanation.",
+      "prompt_quelle": "SPORTS2_HOCKEY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "physical veteran / penalty specialist"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

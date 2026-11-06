@@ -1,3 +1,19 @@
+# WSA Return · Second five retro sports teams generated · 2026-11-06
+
+Owner WSA;repo georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome5 independent3x2 source sheets/30unique authoring identities:hockey(ice hockey interpretation),riding,swimming,athletics,rugby. All5DRAFT awaiting Georg;2female-read each/10total. First5sports/30actors explicitly PASS persisted and13files readback-verified atd40ee5e691b4a74df4f68ad5385cda8a548978b4. Inventory119PASS sheets/714depictions;eligible117/702;new30excluded from PASS totals;old exclusions preserved. Fictional retro clubs and distinct sport-role intentions,not real brands or factual legal lineups.
+
+Production5native image jobs,0layout edits,0resizes to selectedPNG,0individual sprites. Actual veteran-original/body material and RPG/accessory craft refs supplied as bounded STYLE inputs;6/6original reference hashes verified. Model/seed not exposed. All5native1536x1024RGBA alpha0..254;fullyclear599011–698969pixels. Native/local/Git blob hashes matched. No generated style-parent chain. Exact finalhead and38file readbacks recorded in local GITHUB_RECEIPT.json;Return does not invent its own future commit.
+
+Visual QA:all5native outputs/checker composites/light64,96,192and dark160logical-cell previews reviewed. Full upright footless ink silhouettes and white/red/black eyes,twofemale-read each. Hockey masks heldaside;skate/boot are handprops;hobbyhorse is a small carved toy,no mount;swimmers upright without pool;athletics bamboo pole fitscell,rugby eyes visible undercaps. Distinct gazes/mouths,body proportions,coherent restrained retro equipment. Native minor variation observations retained per-set:upward hockey blade/tape placement,brass hourglass;two-ring dressagebit,hurdle uprights;unplanned goggles on several swimcaps andRitaflower;athletics striped hurdle;additional scrumcaps andFina leaf ornament. No self-issued GeorgPASS,no extra repair calls.
+
+Technical holds:alpha opacity/edges and validated independent actor extraction stillpending;logicalcells are not certified croprectangles;no individual native high-resolution catalogue masters. Source-row minimumpeaks1/5/1/4/4are diagnostic only,not extraction acceptance. No runtime/gameexports,Librarypublication,receiving canonical-IDassignment,combat-tier/hitmapping,merge or Stageclaim.
+
+Changedfiles:SPORTS2_{HOCKEY,RIDING,SWIMMING,ATHLETICS,RUGBY}_6_2026-11-06/,each sheet-r1.png,CHARACTER_INTENT.json,MANIFEST.json,SLOP_CARDS_DESIGN.json,BIOGRAPHIES_DESIGN.json,PRODUCTION_RECORD.json,TECHNICAL_QA.json;SPORTS2_BATCH_2026-11-06.json,SET_MANIFESTS_R1.json,RETURN.md.30individual English biographies,dryGermanFrizzleBobnotes,actual fullprompts,teamand sportsrolelinks;prose DESIGN,no invented pair/state/trio/exactdeck mapping. Local originals/plans/QA under output/slop-sports2-*.
+
+Nextgate:Georg design verdict on5new sports sheets,optionally perteam.
+
+---
+
 # WSA Return · First five sports teams PASS; next five authorized · 2026-11-06
 
 Georg accepts all5 soccer/Americanfootball/basketball/baseball/tennis sheets/30actors. Source manifests and biography intake flags updated;prose remains DESIGN,technical master/isolation holds retained. Inventory119 PASS sheets/714depictions;eligible117/702;existing exclusions unchanged. WSA owner,georg-doc/kayfabizarro,assets/ws0-ink-miners-2026-11-04,draft PR469. Authorized new outcome5six-actor3x2 sport sheets:hockey(interpreted as ice hockey),riding,swimming,athletics,rugby. Two female-read each,all whole upright footless ink actors;roles/equipment carry sport idea without horse/pool/field scenelets. Native source references,full prompts,metadata and DESIGN lore required. Next step:produce/archive5DRAFTs. No runtime/Library publication/merge.

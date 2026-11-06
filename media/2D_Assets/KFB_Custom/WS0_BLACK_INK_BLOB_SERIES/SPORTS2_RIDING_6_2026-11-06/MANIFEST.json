@@ -1,0 +1,267 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS2_RIDING_20261106",
+  "date": "2026-11-06",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+    "sha256": "fcc07b7b4abcbc9dc1525f0947888c7ffc74954c054be6c9865569dfe35982f4"
+  },
+  "production_record": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS2_RIDING_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS2_RIDING_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Reitverein Freier Zügel",
+    "visual_context": "Retro equestrian club with faded plum and cream collars, worn brown leather tack, velvet caps and country-sport details",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "RIDING",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dora Dressurordnung",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "velvet riding cap",
+        "coiled reins",
+        "stock tie"
+      ],
+      "temperament": "She believes freedom is most attractive when performed in a prescribed sequence.",
+      "prompt_auszug": "Dora Dressurordnung, female-read. Tall perfectly upright bell-shaped ink blob, arched lashed eyelids and disdainful tiny closed mouth; small black velvet riding cap, tiny cream stock-tie and plum collar; carries neatly coiled leather reins with ONE shiny simple bit ring, no horse.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "dressage rider"
+    },
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugo Hindernis",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "riding helmet",
+        "miniature striped hurdle rail"
+      ],
+      "temperament": "He has cleared the obstacle and is now concerned about the landing committee.",
+      "prompt_auszug": "Hugo Hindernis, male-read. Squat wide asymmetric blob, one bent ink crest, crossed worried gaze and tense irregular upper teeth inside mouth; small plum riding helmet, cream scarf; hugs one miniature red-and-cream striped hurdle rail horizontally at waist, full rail clear of neighbours.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "show jumper"
+    },
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Querfeldein",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "held muddy riding boot",
+        "flat cap",
+        "folded route map"
+      ],
+      "temperament": "He calls every detour an advanced form of obedience.",
+      "prompt_auszug": "Egon Querfeldein, male-read. Rugged offset-lobed pear blob, bold laughing side glance and three-upper-tooth open grin; brown flat cap, tiny plum neckerchief; holds one muddy tall riding BOOT as separate hand prop and a folded blank route map tucked at flank, no feet.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "eventing / cross-country rider"
+    },
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pippa Photofinish",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "striped jockey cap",
+        "small carved hobbyhorse prop"
+      ],
+      "temperament": "She is desperate to win and deeply worried about inconveniencing the others.",
+      "prompt_auszug": "Pippa Photofinish, female-read. Narrow teardrop blob with upturned side crest and lashes, eager huge eyes, pinched toothless anxious smile; tiny plum-and-cream striped jockey cap, small cream collar; hugs a tiny polished wooden hobbyhorse head on SHORT stick, clearly carved toy prop, not living extra creature.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "racing jockey"
+    },
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Walt Weiterzügel",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "western hat",
+        "leather lasso coil",
+        "plum bandana"
+      ],
+      "temperament": "He has all the time in the world and resents being asked to use it.",
+      "prompt_auszug": "Walt Weiterzügel, male-read. Round broad puddle-lobed upright blob, sloping bored eyelids and long closed sideways scowl; small worn western hat, tiny plum bandana; holds ONE modest leather lasso coil in one goo hand, other hand at flank, NO gun.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "western rider"
+    },
+    {
+      "id": "WSA_SPORTS2_RIDING_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oskar Langstrecke",
+      "bild": {
+        "datei": "SPORTS2_RIDING_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "enamel flask",
+        "rolled saddle blanket",
+        "cloth cap"
+      ],
+      "temperament": "He measures endurance by the number of polite reasons to stop that he has ignored.",
+      "prompt_auszug": "Oskar Langstrecke, male-read. Tall wavy ink column with drooping curl, enormous weary-but-resolute eyes, small toothless exhale opening; old cream cloth riding cap, tiny plum collar; dented enamel water flask in hand, rolled saddle blanket over one shoulder, no saddle/horse scene.",
+      "prompt_quelle": "SPORTS2_RIDING_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "endurance rider"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

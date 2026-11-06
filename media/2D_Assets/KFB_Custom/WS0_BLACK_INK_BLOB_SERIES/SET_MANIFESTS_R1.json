@@ -831,11 +831,47 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_SPORTS2_HOCKEY_20261106",
+      "manifest": "SPORTS2_HOCKEY_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS2_RIDING_20261106",
+      "manifest": "SPORTS2_RIDING_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS2_SWIMMING_20261106",
+      "manifest": "SPORTS2_SWIMMING_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS2_ATHLETICS_20261106",
+      "manifest": "SPORTS2_ATHLETICS_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_SPORTS2_RUGBY_20261106",
+      "manifest": "SPORTS2_RUGBY_6_2026-11-06/MANIFEST.json",
+      "status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 5,
+    "depictions": 30,
+    "identities": 30,
     "pass": 0
   },
   "production_supplement": {
