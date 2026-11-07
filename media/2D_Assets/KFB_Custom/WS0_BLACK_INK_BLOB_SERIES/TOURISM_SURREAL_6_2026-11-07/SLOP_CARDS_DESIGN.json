@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+      "name": "Nora Erarep",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Unimpressed time tour guide with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay in the designated century."
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora Erarep booked a place with The Wrong Century Excursion. Stay in the designated century. The incident report lists chunky clock-faced paddle and rolled itinerary as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Stay in the designated century.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "unimpressed time tour guide",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+      "name": "Pip Portalpose",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Delighted paradox photographer with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I got the before and the after!"
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pip Portalpose booked a place with The Wrong Century Excursion. I got the before and the after! The incident report lists chunky instant camera with one miniature print coming out as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I got the before and the after!",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "delighted paradox photographer",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_03",
+      "name": "Hal Epochlag",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Drowsy era-hopper with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "My body thinks it's Thursday BC."
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hal Epochlag booked a place with The Wrong Century Excursion. My body thinks it's Thursday BC. The incident report lists oversized hourglass neck pillow and stamped passport as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: My body thinks it's Thursday BC.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "drowsy era-hopper",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+      "name": "Mara Mooncheap",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Offended off-world bargain guest with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I was promised a moon-facing crater."
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara Mooncheap booked a place with The Wrong Century Excursion. I was promised a moon-facing crater. The incident report lists miniature crater souvenir in a clear globe as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I was promised a moon-facing crater.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "offended off-world bargain guest",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+      "name": "Bert Tomorrowbag",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Panicking lost luggage traveller with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "My luggage arrives yesterday."
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert Tomorrowbag booked a place with The Wrong Century Excursion. My luggage arrives yesterday. The incident report lists small scuffed suitcase with wildly mismatched clock tags as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: My luggage arrives yesterday.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "panicking lost luggage traveller",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_06",
+      "name": "Otto Lastwitness",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Fascinated destruction tourist with a gift for holding up a group.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Can we see the facade fall again?"
+          ],
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_SURREAL_20261107",
+            "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otto Lastwitness booked a place with The Wrong Century Excursion. Can we see the facade fall again? The incident report lists fat toy binoculars and rolled viewing map as the only personal effect accounted for.",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Can we see the facade fall again?",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "fascinated destruction tourist",
+          "src": "TOURISM_SURREAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

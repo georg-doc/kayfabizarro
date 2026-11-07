@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_01",
+      "name": "Nell Gatechange",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Furious connection runner with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The gate moved again."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_A"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nell Gatechange booked a place with The Gate Has Moved. The gate moved again. The incident report lists wheeled carry-on with big blank tag, held entirely within cell as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The gate moved again.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "furious connection runner",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_02",
+      "name": "Hank Bagscale",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Guilty overpacker with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The scale is holding a grudge."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_A"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hank Bagscale booked a place with The Gate Has Moved. The scale is holding a grudge. The incident report lists stuffed suitcase cinched with a strap and portable bag scale as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The scale is holding a grudge.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "guilty overpacker",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_03",
+      "name": "Pip Traytable",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Overwhelmed security passenger with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I think that's my shoe."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_A"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pip Traytable booked a place with The Gate Has Moved. I think that's my shoe. The incident report lists small tray with belt and one single loose shoe as props as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I think that's my shoe.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "overwhelmed security passenger",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_04",
+      "name": "Drew Neckpillow",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Oblivious sleepy passenger with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Wake me when we have a gate."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_B"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Drew Neckpillow booked a place with The Gate Has Moved. Wake me when we have a gate. The incident report lists U-shaped neck pillow and tiny sleep mask pushed onto forehead as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Wake me when we have a gate.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "oblivious sleepy passenger",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_05",
+      "name": "Jade Dutyfree",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Delighted duty-free shopper with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It's travel size if you squint."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_B"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jade Dutyfree booked a place with The Gate Has Moved. It's travel size if you squint. The incident report lists one small shiny shopping bag with absurdly huge perfume bottle peeking out as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: It's travel size if you squint.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "delighted duty-free shopper",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_06",
+      "name": "Stan Boardingzone",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Offended queue guardian with a gift for holding up a group.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I was in this zone first."
+          ],
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_AIR_20261107",
+            "trio": "WSA_TOURISM_AIR_20261107_TRIO_B"
+          },
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Stan Boardingzone booked a place with The Gate Has Moved. I was in this zone first. The incident report lists oversized blank boarding pass and folded barrier strap as the only personal effect accounted for.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I was in this zone first.",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "offended queue guardian",
+          "src": "TOURISM_AIR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

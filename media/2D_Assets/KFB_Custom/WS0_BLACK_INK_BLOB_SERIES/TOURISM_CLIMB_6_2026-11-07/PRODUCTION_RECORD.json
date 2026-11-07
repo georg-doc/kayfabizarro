@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-e5953b29-7239-4fab-a9e2-96460c6b6359.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "59e1d4760a10564e9d246bde7fa631b9cc2fc47075bee139a9c924273fc4191f",
+  "git_blob_sha": "15a5dd607ef070fe998788bedb32046fbcc7d005",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Scenic Miscalculation. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: mismatched fleece capes, neon rope, chalk pouches and retro climbing hardware. Row-major cast:\n1. Male-read hubristic route finder: broad trapezoid blob, chin high, crooked smug smile. Prop: folded trail map and giant compass.\n2. Female-read impatient climber: tall scalloped blob, irritated narrowed eyes, gritted inner teeth. Prop: bulging chalk pouch and thick carabiner.\n3. Male-read height-shy hiker: wobbly upright teardrop, unequal trembling eyes, small toothless gasp. Prop: two collapsed trekking poles held tightly.\n4. Female-read gleeful summit photographer: curved blob, eyebrow lifted, skewed delighted laugh. Prop: chunky compact camera clipped to a fat rope coil.\n5. Male-read weary belay partner: low rounded splat, lidded sidelong gaze, short bored frown. Prop: rope loop and half-unwrapped granola bar.\n6. Male-read offended gear enthusiast: lopsided cube blob, glowering eye, puffed closed lips. Prop: one tiny hiking boot held by its laces as a prop, bare ink base.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null
+}

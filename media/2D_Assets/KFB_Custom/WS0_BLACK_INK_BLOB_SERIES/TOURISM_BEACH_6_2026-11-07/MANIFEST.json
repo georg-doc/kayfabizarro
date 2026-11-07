@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_BEACH_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+    "sha256": "08b88305089a7c58ed19dd06c505998388f81b93aefae118cf429fa01bba3063"
+  },
+  "production_record": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_BEACH_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_BEACH_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Sunburn Society",
+    "theme": "The Sunburn Society",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tina Tidecheck",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "appalled paddler",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small inflatable flamingo ring"
+      ],
+      "temperament": "Appalled paddler with a gift for holding up a group.",
+      "prompt_auszug": "round perched blob, widened eyes, clenched tiny grimace",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "appalled paddler"
+    },
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Milo Lotion",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overconfident sunbather",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "giant soft sunscreen tube with cap"
+      ],
+      "temperament": "Overconfident sunbather with a gift for holding up a group.",
+      "prompt_auszug": "wide flattened body with upright face, low eyes, lopsided smile",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overconfident sunbather"
+    },
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Sandtax",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "irritable sandcastle architect",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sand bucket and stubby spade"
+      ],
+      "temperament": "Irritable sandcastle architect with a gift for holding up a group.",
+      "prompt_auszug": "squat peaked blob, pinched eyelids, drooping dark lip",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "irritable sandcastle architect"
+    },
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gail Gullproof",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "panicking snack defender",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "wrapped ice cream clutched tightly against chest"
+      ],
+      "temperament": "Panicking snack defender with a gift for holding up a group.",
+      "prompt_auszug": "tall bent splat, startled eyes aimed upward, asymmetric gasp",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "panicking snack defender"
+    },
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Beachread",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "bored shade seeker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "folded striped parasol and paperback"
+      ],
+      "temperament": "Bored shade seeker with a gift for holding up a group.",
+      "prompt_auszug": "skinny comma, sleepy eyes, pursed straight mouth",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "bored shade seeker"
+    },
+    {
+      "id": "WSA_TOURISM_BEACH_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Finn Floatplan",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "gleeful float photographer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_BEACH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+        "WSA_TOURISM_BEACH_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "waterproof camera on a bright flotation handle"
+      ],
+      "temperament": "Gleeful float photographer with a gift for holding up a group.",
+      "prompt_auszug": "plump heart blob, one delighted wink, uneven toothy laugh",
+      "prompt_quelle": "TOURISM_BEACH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "gleeful float photographer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Sunburn Society",
+    "team_kit": "ugly citrus swim wraps, fuchsia sun gear, terry towels and turquoise rubber",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_BEACH_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_BEACH_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+      "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+      "WSA_TOURISM_BEACH_ACTOR_20261107_03",
+      "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+      "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+      "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+    ]
+  }
+}

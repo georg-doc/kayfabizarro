@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-d9bc8e40-9373-437f-847d-cd101bc197cf.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "9e23f3d43a4ae26b72600c6fe177c3482d20ef30e5c5523144ebb443c729f7ba",
+  "git_blob_sha": "6173d4f96d079ea6b1f32e136ea71b39dbbd5468",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Gate Has Moved. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: clashing carry-on gear, red neck pillows, acid green luggage straps and tropical airport outfits. Row-major cast:\n1. Female-read furious connection runner: upright lean splash, glaring sideways eyes, narrow teeth clenched. Prop: wheeled carry-on with big blank tag, held entirely within cell.\n2. Male-read guilty overpacker: broad worried body, cross gaze, tiny closed grimace. Prop: stuffed suitcase cinched with a strap and portable bag scale.\n3. Male-read overwhelmed security passenger: tilted wide squish, unequal eyes, open shocked oval. Prop: small tray with belt and one single loose shoe as props.\n4. Male-read oblivious sleepy passenger: low bean, sleepy half lids, content closed smile. Prop: U-shaped neck pillow and tiny sleep mask pushed onto forehead.\n5. Female-read delighted duty-free shopper: tall curved blob, lifted gaze, wide laugh. Prop: one small shiny shopping bag with absurdly huge perfume bottle peeking out.\n6. Male-read offended queue guardian: square lopsided blob, narrow uneven eyes, protruding closed pout. Prop: oversized blank boarding pass and folded barrier strap.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null
+}

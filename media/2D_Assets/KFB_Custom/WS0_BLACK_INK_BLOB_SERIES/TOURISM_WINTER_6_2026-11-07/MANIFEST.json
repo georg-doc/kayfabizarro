@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_WINTER_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+    "sha256": "be0952e768bbbd518dd4c71d8ca6b9db1064c20f07827ad98a8fd00b677b08a9"
+  },
+  "production_record": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_WINTER_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_WINTER_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Off Piste Beginners",
+    "theme": "The Off Piste Beginners",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Wipeout",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "embarrassed ski beginner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "two short crossed skis held in arms"
+      ],
+      "temperament": "Embarrassed ski beginner with a gift for holding up a group.",
+      "prompt_auszug": "tilted pear, upward guilty eyes, tight uneven grin",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "embarrassed ski beginner"
+    },
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Snowblind",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "confused piste reader",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "folded piste map with simple colored trails"
+      ],
+      "temperament": "Confused piste reader with a gift for holding up a group.",
+      "prompt_auszug": "tall rippling splat, eyes going opposite ways, tiny pursed mouth",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "confused piste reader"
+    },
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Liftpass",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "outraged lift-pass holder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "oversized colorful pass on a short lanyard"
+      ],
+      "temperament": "Outraged lift-pass holder with a gift for holding up a group.",
+      "prompt_auszug": "wide squared body, one bulging eye, open asymmetric complaint",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "outraged lift-pass holder"
+    },
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Hotchoc",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sleepy lodge regular",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "big cocoa mug with one fat marshmallow"
+      ],
+      "temperament": "Sleepy lodge regular with a gift for holding up a group.",
+      "prompt_auszug": "low soft bean, heavy lids, slow closed smile",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sleepy lodge regular"
+    },
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cora Snowglobe",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted souvenir collector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small snow globe with a tiny cabin inside"
+      ],
+      "temperament": "Delighted souvenir collector with a gift for holding up a group.",
+      "prompt_auszug": "plump comma, eyes shining upward, crooked open chuckle",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "delighted souvenir collector"
+    },
+    {
+      "id": "WSA_TOURISM_WINTER_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jules Snowplow",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "nervous snowboard renter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_WINTER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+        "WSA_TOURISM_WINTER_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short bright snowboard hugged across belly"
+      ],
+      "temperament": "Nervous snowboard renter with a gift for holding up a group.",
+      "prompt_auszug": "lean upright blob, clenched mouth, eyes drawn inward",
+      "prompt_quelle": "TOURISM_WINTER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "nervous snowboard renter"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Off Piste Beginners",
+    "team_kit": "tangerine, violet and icy cyan retro ski wraps and knitwear",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_WINTER_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_WINTER_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+      "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+      "WSA_TOURISM_WINTER_ACTOR_20261107_03",
+      "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+      "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+      "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+    ]
+  }
+}

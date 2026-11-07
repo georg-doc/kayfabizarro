@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-bfdf83ca-3317-4e06-8f2a-3f7bc1ec8ada.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "a6e6394a784467dbaf722ab0e2b09be9558deea98abe0d1bb373843bf7607cc1",
+  "git_blob_sha": "856374426c5b5e578d8b893fe4ea7a67ba8e2be5",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Complimentary Demonstration. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: ugly discount excursion windbreakers, shiny gold accents and gaudy prize ribbons. Row-major cast:\n1. Female-read skeptical butter-trip guest: wide lopsided blob, side-eye, flat mouth. Prop: small wrapped butter brick and curled blank receipt.\n2. Male-read gleeful souvenir hawker: upright cone, overbright eyes, slanted laugh. Prop: sparkly souvenir snow globe perched on a small display paddle.\n3. Male-read shocked tourist trap customer: lean tilted blob, round eyes, clenched grimace. Prop: enormous blank price tag tied to a tiny trinket.\n4. Female-read triumphant excursion shopper: round scalloped body, eyes half shut, smug tight smile. Prop: ridiculously fluffy packaged pillow and blank discount rosette.\n5. Male-read weary bargain coach guide: squat asymmetric bean, tired eyes, deep frown. Prop: tiny plastic megaphone and battered clipboard.\n6. Male-read confused raffle participant: crooked tall blob, unequal gaze, tiny mouth off centre. Prop: sealed small gift box and giant ticket stub.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null
+}

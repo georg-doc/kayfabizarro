@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_AIR_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+    "sha256": "9e23f3d43a4ae26b72600c6fe177c3482d20ef30e5c5523144ebb443c729f7ba"
+  },
+  "production_record": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_AIR_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_AIR_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Gate Has Moved",
+    "theme": "The Gate Has Moved",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Gatechange",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "furious connection runner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_02",
+        "WSA_TOURISM_AIR_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "wheeled carry-on with big blank tag, held entirely within cell"
+      ],
+      "temperament": "Furious connection runner with a gift for holding up a group.",
+      "prompt_auszug": "upright lean splash, glaring sideways eyes, narrow teeth clenched",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "furious connection runner"
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hank Bagscale",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "guilty overpacker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_01",
+        "WSA_TOURISM_AIR_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "stuffed suitcase cinched with a strap and portable bag scale"
+      ],
+      "temperament": "Guilty overpacker with a gift for holding up a group.",
+      "prompt_auszug": "broad worried body, cross gaze, tiny closed grimace",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "guilty overpacker"
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Traytable",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overwhelmed security passenger",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_01",
+        "WSA_TOURISM_AIR_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small tray with belt and one single loose shoe as props"
+      ],
+      "temperament": "Overwhelmed security passenger with a gift for holding up a group.",
+      "prompt_auszug": "tilted wide squish, unequal eyes, open shocked oval",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overwhelmed security passenger"
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Drew Neckpillow",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "oblivious sleepy passenger",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_05",
+        "WSA_TOURISM_AIR_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "U-shaped neck pillow and tiny sleep mask pushed onto forehead"
+      ],
+      "temperament": "Oblivious sleepy passenger with a gift for holding up a group.",
+      "prompt_auszug": "low bean, sleepy half lids, content closed smile",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "oblivious sleepy passenger"
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jade Dutyfree",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted duty-free shopper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_04",
+        "WSA_TOURISM_AIR_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small shiny shopping bag with absurdly huge perfume bottle peeking out"
+      ],
+      "temperament": "Delighted duty-free shopper with a gift for holding up a group.",
+      "prompt_auszug": "tall curved blob, lifted gaze, wide laugh",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "delighted duty-free shopper"
+    },
+    {
+      "id": "WSA_TOURISM_AIR_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Stan Boardingzone",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended queue guardian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_AIR_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_AIR_ACTOR_20261107_04",
+        "WSA_TOURISM_AIR_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "oversized blank boarding pass and folded barrier strap"
+      ],
+      "temperament": "Offended queue guardian with a gift for holding up a group.",
+      "prompt_auszug": "square lopsided blob, narrow uneven eyes, protruding closed pout",
+      "prompt_quelle": "TOURISM_AIR_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "offended queue guardian"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Gate Has Moved",
+    "team_kit": "clashing carry-on gear, red neck pillows, acid green luggage straps and tropical airport outfits",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_AIR_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_AIR_ACTOR_20261107_01",
+          "WSA_TOURISM_AIR_ACTOR_20261107_02",
+          "WSA_TOURISM_AIR_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_AIR_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_AIR_ACTOR_20261107_04",
+          "WSA_TOURISM_AIR_ACTOR_20261107_05",
+          "WSA_TOURISM_AIR_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_AIR_ACTOR_20261107_01",
+      "WSA_TOURISM_AIR_ACTOR_20261107_02",
+      "WSA_TOURISM_AIR_ACTOR_20261107_03",
+      "WSA_TOURISM_AIR_ACTOR_20261107_04",
+      "WSA_TOURISM_AIR_ACTOR_20261107_05",
+      "WSA_TOURISM_AIR_ACTOR_20261107_06"
+    ]
+  }
+}

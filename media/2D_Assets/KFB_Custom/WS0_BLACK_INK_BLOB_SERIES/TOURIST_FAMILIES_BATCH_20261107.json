@@ -1,0 +1,711 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_TOURISM_FAMILIES_20261107",
+  "date": "2026-11-07",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 12,
+  "unique_identities": 72,
+  "depictions": 72,
+  "native_generation_jobs": 12,
+  "image_edits": 1,
+  "counts": {
+    "trios": 24,
+    "full_families": 12,
+    "female_read_casting_intents": 24
+  },
+  "sets": [
+    {
+      "set_id": "WSA_TOURISM_PACKAGE_20261107",
+      "title": "The All Inclusive Incident",
+      "manifest": "TOURISM_PACKAGE_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_PACKAGE_6_2026-11-07/sheet-r1.png",
+      "sha256": "b70261ab83fd6e004fc127d7444b84832c7ad3433df8e49415bba21aa7b6ae05",
+      "git_blob": "57d07170caf196d0cd091170e6cb8506ff80ffd0",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The All Inclusive Incident",
+        "team_kit": "loud tropical shirts, mismatched plastic wristbands and tired lime or coral nylon",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_PACKAGE_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_01",
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_02",
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_PACKAGE_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_04",
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_05",
+              "WSA_TOURISM_PACKAGE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_01",
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_02",
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_03",
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_04",
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_05",
+          "WSA_TOURISM_PACKAGE_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_BEACH_20261107",
+      "title": "The Sunburn Society",
+      "manifest": "TOURISM_BEACH_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_BEACH_6_2026-11-07/sheet-r1.png",
+      "sha256": "08b88305089a7c58ed19dd06c505998388f81b93aefae118cf429fa01bba3063",
+      "git_blob": "f6b3bda73f977d91ef66745ce98bc60dc91ab309",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Sunburn Society",
+        "team_kit": "ugly citrus swim wraps, fuchsia sun gear, terry towels and turquoise rubber",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_BEACH_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+              "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+              "WSA_TOURISM_BEACH_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_BEACH_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+              "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+              "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_BEACH_ACTOR_20261107_01",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_02",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_03",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_04",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_05",
+          "WSA_TOURISM_BEACH_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_CLIMB_20261107",
+      "title": "The Scenic Miscalculation",
+      "manifest": "TOURISM_CLIMB_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+      "sha256": "59e1d4760a10564e9d246bde7fa631b9cc2fc47075bee139a9c924273fc4191f",
+      "git_blob": "15a5dd607ef070fe998788bedb32046fbcc7d005",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Scenic Miscalculation",
+        "team_kit": "mismatched fleece capes, neon rope, chalk pouches and retro climbing hardware",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_CLIMB_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_CLIMB_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+              "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_03",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_WINTER_20261107",
+      "title": "The Off Piste Beginners",
+      "manifest": "TOURISM_WINTER_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_WINTER_6_2026-11-07/sheet-r1.png",
+      "sha256": "be0952e768bbbd518dd4c71d8ca6b9db1064c20f07827ad98a8fd00b677b08a9",
+      "git_blob": "1e2ae29130644f5dec26758217d8f0753d098118",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Off Piste Beginners",
+        "team_kit": "tangerine, violet and icy cyan retro ski wraps and knitwear",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_WINTER_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+              "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+              "WSA_TOURISM_WINTER_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_WINTER_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+              "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+              "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_WINTER_ACTOR_20261107_01",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_02",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_03",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_04",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_05",
+          "WSA_TOURISM_WINTER_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_BACKPACK_20261107",
+      "title": "The Semester Abroad Equation",
+      "manifest": "TOURISM_BACKPACK_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_BACKPACK_6_2026-11-07/sheet-r1.png",
+      "sha256": "f7c26416ed74f1bdc35792c95a771016661d99abbe03610222e07f7bc5f82db8",
+      "git_blob": "e670fc4da588dbd922c60e83e2823835f96184ad",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Semester Abroad Equation",
+        "team_kit": "mended student hoodies, clashing rain covers, old canvas and neon hostel tags",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_BACKPACK_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_01",
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_02",
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_BACKPACK_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_04",
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_05",
+              "WSA_TOURISM_BACKPACK_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_01",
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_02",
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_03",
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_04",
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_05",
+          "WSA_TOURISM_BACKPACK_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_CRUISE_20261107",
+      "title": "The Floating Buffet",
+      "manifest": "TOURISM_CRUISE_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_CRUISE_6_2026-11-07/sheet-r1.png",
+      "sha256": "323504197c1292ffda10ce5b5e02a3a505f5c98a69e87a5b89ddf4797fd4690d",
+      "git_blob": "2e2cf919e2c3590d500b2813247b5ebc4e720fa3",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Floating Buffet",
+        "team_kit": "navy deck wraps, coral nautical prints, life vest colors and gaudy gold trim",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_CRUISE_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_01",
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_02",
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_CRUISE_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_04",
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_05",
+              "WSA_TOURISM_CRUISE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_01",
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_02",
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_03",
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_04",
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_05",
+          "WSA_TOURISM_CRUISE_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_AIR_20261107",
+      "title": "The Gate Has Moved",
+      "manifest": "TOURISM_AIR_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_AIR_6_2026-11-07/sheet-r1.png",
+      "sha256": "9e23f3d43a4ae26b72600c6fe177c3482d20ef30e5c5523144ebb443c729f7ba",
+      "git_blob": "6173d4f96d079ea6b1f32e136ea71b39dbbd5468",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Gate Has Moved",
+        "team_kit": "clashing carry-on gear, red neck pillows, acid green luggage straps and tropical airport outfits",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_AIR_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_AIR_ACTOR_20261107_01",
+              "WSA_TOURISM_AIR_ACTOR_20261107_02",
+              "WSA_TOURISM_AIR_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_AIR_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_AIR_ACTOR_20261107_04",
+              "WSA_TOURISM_AIR_ACTOR_20261107_05",
+              "WSA_TOURISM_AIR_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_AIR_ACTOR_20261107_01",
+          "WSA_TOURISM_AIR_ACTOR_20261107_02",
+          "WSA_TOURISM_AIR_ACTOR_20261107_03",
+          "WSA_TOURISM_AIR_ACTOR_20261107_04",
+          "WSA_TOURISM_AIR_ACTOR_20261107_05",
+          "WSA_TOURISM_AIR_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_RAIL_20261107",
+      "title": "Platform Zero Again",
+      "manifest": "TOURISM_RAIL_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_RAIL_6_2026-11-07/sheet-r2.png",
+      "sha256": "eb2da8bff22f526f29b8b0059eaadda284900f14b0ff78a0fddc9f22103be69d",
+      "git_blob": "b045ca9d815000b08ec150956fb81e30fcbdcede",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "Platform Zero Again",
+        "team_kit": "unfashionable rail-tour clothing, cobalt rainwear, mustard scarves and scuffed luggage",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_RAIL_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_RAIL_ACTOR_20261107_01",
+              "WSA_TOURISM_RAIL_ACTOR_20261107_02",
+              "WSA_TOURISM_RAIL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_RAIL_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_RAIL_ACTOR_20261107_04",
+              "WSA_TOURISM_RAIL_ACTOR_20261107_05",
+              "WSA_TOURISM_RAIL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_RAIL_ACTOR_20261107_01",
+          "WSA_TOURISM_RAIL_ACTOR_20261107_02",
+          "WSA_TOURISM_RAIL_ACTOR_20261107_03",
+          "WSA_TOURISM_RAIL_ACTOR_20261107_04",
+          "WSA_TOURISM_RAIL_ACTOR_20261107_05",
+          "WSA_TOURISM_RAIL_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_HITCH_20261107",
+      "title": "The Uncertain Lift",
+      "manifest": "TOURISM_HITCH_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+      "sha256": "7b0441fa39717bd3569c05531e6424c206973318963681e7e7ddd981f5a695b0",
+      "git_blob": "993da8581875dd1ffb8116d859a33ac5f6c8acd0",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Uncertain Lift",
+        "team_kit": "fluorescent thrift-shop windbreakers, corduroy wraps, faded patches and battered packs",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_HITCH_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+              "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+              "WSA_TOURISM_HITCH_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_HITCH_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+              "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+              "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_03",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_SCAM_20261107",
+      "title": "The Complimentary Demonstration",
+      "manifest": "TOURISM_SCAM_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_SCAM_6_2026-11-07/sheet-r1.png",
+      "sha256": "a6e6394a784467dbaf722ab0e2b09be9558deea98abe0d1bb373843bf7607cc1",
+      "git_blob": "856374426c5b5e578d8b893fe4ea7a67ba8e2be5",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Complimentary Demonstration",
+        "team_kit": "ugly discount excursion windbreakers, shiny gold accents and gaudy prize ribbons",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_SCAM_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_SCAM_ACTOR_20261107_01",
+              "WSA_TOURISM_SCAM_ACTOR_20261107_02",
+              "WSA_TOURISM_SCAM_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_SCAM_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_SCAM_ACTOR_20261107_04",
+              "WSA_TOURISM_SCAM_ACTOR_20261107_05",
+              "WSA_TOURISM_SCAM_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_SCAM_ACTOR_20261107_01",
+          "WSA_TOURISM_SCAM_ACTOR_20261107_02",
+          "WSA_TOURISM_SCAM_ACTOR_20261107_03",
+          "WSA_TOURISM_SCAM_ACTOR_20261107_04",
+          "WSA_TOURISM_SCAM_ACTOR_20261107_05",
+          "WSA_TOURISM_SCAM_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_WELLNESS_20261107",
+      "title": "The Compulsory Relaxation",
+      "manifest": "TOURISM_WELLNESS_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_WELLNESS_6_2026-11-07/sheet-r1.png",
+      "sha256": "72f723c74f3ef67cb781e6bbadd50f1cc32587b74a11b5ae3e5328ef96aeff9f",
+      "git_blob": "c4f152418cff1f713f7c1bf7cf905cc006b553cd",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Compulsory Relaxation",
+        "team_kit": "over-bright spa wraps in lilac, peach and mint, rumpled terry fabric",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_WELLNESS_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_01",
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_02",
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_WELLNESS_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_04",
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_05",
+              "WSA_TOURISM_WELLNESS_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_01",
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_02",
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_03",
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_04",
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_05",
+          "WSA_TOURISM_WELLNESS_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_TOURISM_SURREAL_20261107",
+      "title": "The Wrong Century Excursion",
+      "manifest": "TOURISM_SURREAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "d7e63be4dbef2b451b32bcc763a3aae9a33a4f43f45c2e937a01a305548415f4",
+      "git_blob": "23a70e43077466cbddf7deaba827520a87f4a58e",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "tour_group": "The Wrong Century Excursion",
+        "team_kit": "retro future holiday kits, tourist florals, teal plastic travel gadgets and paper tags",
+        "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+        "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+        "trios": [
+          {
+            "id": "WSA_TOURISM_SURREAL_20261107_TRIO_A",
+            "name": "Outbound Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_TOURISM_SURREAL_20261107_TRIO_B",
+            "name": "Return Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+              "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_03",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+        ]
+      }
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 185,
+    "depictions": 1110,
+    "intake_eligible_sheets": 183,
+    "intake_eligible_depictions": 1098
+  },
+  "usage_candidates": [
+    "Individual tourist passersby",
+    "Small sightseeing parties",
+    "Six-member vacation groups",
+    "Spectators who stop to watch player destruction"
+  ],
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "PACKAGE": 540043,
+      "BEACH": 591329,
+      "CLIMB": 607630,
+      "WINTER": 533283,
+      "BACKPACK": 482062,
+      "CRUISE": 584683,
+      "AIR": 577323,
+      "RAIL": 493970,
+      "HITCH": 550704,
+      "SCAM": 594713,
+      "WELLNESS": 524764,
+      "SURREAL": 540378
+    },
+    "outer_and_cell_checks": {
+      "PACKAGE": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 617
+      },
+      "BEACH": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "CLIMB": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 142,
+        "x1024": 0,
+        "y512": 13
+      },
+      "WINTER": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "BACKPACK": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 241,
+        "x1024": 0,
+        "y512": 30
+      },
+      "CRUISE": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 63,
+        "x1024": 25,
+        "y512": 0
+      },
+      "AIR": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 28,
+        "x1024": 29,
+        "y512": 0
+      },
+      "RAIL": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 17
+      },
+      "HITCH": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 65,
+        "y512": 0
+      },
+      "SCAM": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "WELLNESS": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 0,
+        "x1024": 21,
+        "y512": 0
+      },
+      "SURREAL": {
+        "opaque_outer_edge_pixels": 0,
+        "x512": 35,
+        "x1024": 30,
+        "y512": 13
+      }
+    },
+    "nominal_cell_crossings": [
+      "PACKAGE",
+      "CLIMB",
+      "BACKPACK",
+      "CRUISE",
+      "AIR",
+      "RAIL",
+      "HITCH",
+      "WELLNESS",
+      "SURREAL"
+    ],
+    "rail_alpha_repair": "One native edit. Selected r2 retains all six role cues and has 493970 fully transparent pixels. r1 remains in local provenance.",
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg's per-sheet design verdict"
+  }
+}

@@ -1,3 +1,15 @@
+# WSA Return · Tourist families · 2026-11-07
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg's historical PASS is recorded at aecc6bd1b3ce3bb00db51dfb9d586146627a0920 with 28 file readbacks. Game and Asset Librarian intake follows individual isolation.
+
+Twelve transparent 3×2 sheets introduce 72 distinct tourist Slops. Themes cover package holidays, beach and summer holidays, climbing, winter holidays, student backpacking, cruises, flights, rail, hitchhiking, bargain coach trips and tourist traps, wellness and surreal time travel. Each set has English names, character cards, short background notes and two trio relations. All twelve sets await Georg's design verdict. Accepted totals are 185 sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions.
+
+Twelve native original-reference generations produced twelve 1536×1024 RGBA sheets. The rail sheet's first version had background haze. One native edit produced the selected r2 with true alpha and slight modelled detail changes. Visual review covered full sheets and small light composites. All 72 authoring IDs match card, biography and trio records. 9 sheets with nominal cell crossings need silhouette-aware extraction. Individual isolation and runtime proof remain pending.
+
+[Batch record](TOURIST_FAMILIES_BATCH_20261107.json) lists the source images, checks and encounter proposals. This checkpoint contains 100 paths. The branch head and paths are checked after writing. The next gate is Georg's design verdict on the twelve tourist groups.
+
+---
+
 ## Historical multiverse design acceptance
 
 Georg accepted all six historical sheets and their 36 designs. The index records 185 accepted sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions. Game and Asset Librarian receive the designs through the existing intake after individual isolation. The next production slice covers twelve fictional tourist families.

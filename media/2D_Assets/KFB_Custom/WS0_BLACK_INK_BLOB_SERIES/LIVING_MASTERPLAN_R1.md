@@ -1,3 +1,11 @@
+## Tourist families · 2026-11-07
+
+Twelve transparent 3×2 sheets introduce 72 distinct tourist Slops. Themes cover package holidays, beach and summer holidays, climbing, winter holidays, student backpacking, cruises, flights, rail, hitchhiking, bargain coach trips and tourist traps, wellness and surreal time travel. Each set has English names, character cards, short background notes and two trio relations. All twelve sets await Georg's design verdict. Accepted totals are 185 sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions.
+
+Suggested roles include passersby, sightseeing groups and witnesses to facade destruction. [Batch record](TOURIST_FAMILIES_BATCH_20261107.json).
+
+---
+
 ## Historical multiverse design acceptance
 
 Georg accepted all six historical sheets and their 36 designs. The index records 185 accepted sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions. Game and Asset Librarian receive the designs through the existing intake after individual isolation. The next production slice covers twelve fictional tourist families.
