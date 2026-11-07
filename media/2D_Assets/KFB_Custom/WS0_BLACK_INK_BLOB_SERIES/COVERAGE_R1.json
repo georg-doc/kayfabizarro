@@ -4,26 +4,26 @@
   "snapshot_ref": "6fffc6b05429ceccff8947f80946a7498df09160",
   "source_index": "SET_MANIFESTS_R1.json",
   "counts": {
-    "selected_sheets": 148,
-    "pass_depictions": 888,
+    "selected_sheets": 154,
+    "pass_depictions": 924,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 146,
-    "intake_eligible_depictions": 876,
-    "other_authoring_depictions": 768
+    "intake_eligible_sheets": 152,
+    "intake_eligible_depictions": 912,
+    "other_authoring_depictions": 804
   },
   "verified": {
-    "manifest_reads": 148,
-    "depictions": 888,
+    "manifest_reads": 154,
+    "depictions": 924,
     "formats": {
-      "SIX_UNIQUE_3X2": 124,
+      "SIX_UNIQUE_3X2": 130,
       "COUPLES_2X3": 3,
       "RESIDENT_STATES_2X3": 2,
       "PROGRESSION_3X2": 13,
       "STORY_TRIOS_3X2": 6
     },
-    "distinct_authoring_identity_keys": 830,
+    "distinct_authoring_identity_keys": 866,
     "canonical_identity_census": false
   },
   "deck_coverage": {
@@ -2106,6 +2106,90 @@
       "biographies": "REACTIONS_FRICTION_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
       "identity_count": 6,
       "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_DOOM_20261107",
+      "manifest": "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "One More Terrible Thing",
+      "production_record": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_DOOM_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_DOOM_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_NEURAL_20261107",
+      "manifest": "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "Terms of Thought",
+      "production_record": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_NEURAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_NEURAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+      "manifest": "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "Publicly Private",
+      "production_record": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_SOCIAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_SOCIAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_GAMING_20261107",
+      "manifest": "DIGITAL_GAMING_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "The Next Small Reward",
+      "production_record": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_GAMING_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_GAMING_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+      "manifest": "DIGITAL_INFLUENCE_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "An Entirely Personal Recommendation",
+      "production_record": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_INFLUENCE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_INFLUENCE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
+    },
+    {
+      "set_id": "WSA_DIGITAL_PODCAST_20261107",
+      "manifest": "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "identity_count": 6,
+      "theme": "Everyone Has a Microphone",
+      "production_record": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "DIGITAL_PODCAST_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "DIGITAL_PODCAST_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "deck_id": null
     }
   ],
   "incremental_update": {
@@ -2117,8 +2201,14 @@
       "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json",
       "REACTIONS_ALARM_6_2026-11-07/MANIFEST.json",
       "REACTIONS_CONTACT_6_2026-11-07/MANIFEST.json",
-      "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json"
+      "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_GAMING_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_INFLUENCE_6_2026-11-07/MANIFEST.json",
+      "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json"
     ],
-    "scope": "Original142manifest audit plus six new current accepted manifests;not new full census"
+    "scope": "Original 142-manifest audit plus twelve accepted additions."
   }
 }

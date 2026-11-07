@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 148,
-    "pass_depictions": 888,
+    "selected_sheets": 154,
+    "pass_depictions": 924,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 146,
-    "intake_eligible_depictions": 876,
-    "other_authoring_depictions": 768
+    "intake_eligible_sheets": 152,
+    "intake_eligible_depictions": 912,
+    "other_authoring_depictions": 804
   },
   "excluded_sources": [
     {
@@ -1024,6 +1024,42 @@
     {
       "set_id": "WSA_REACTIONS_FRICTION_20261107",
       "manifest": "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_DOOM_20261107",
+      "manifest": "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_NEURAL_20261107",
+      "manifest": "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+      "manifest": "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_GAMING_20261107",
+      "manifest": "DIGITAL_GAMING_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+      "manifest": "DIGITAL_INFLUENCE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_PODCAST_20261107",
+      "manifest": "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

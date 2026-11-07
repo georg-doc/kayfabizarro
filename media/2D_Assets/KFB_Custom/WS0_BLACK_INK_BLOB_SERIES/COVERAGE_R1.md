@@ -1,3 +1,9 @@
+## Digital satire design acceptance
+
+Georg accepted all six digital satire sheets and their 36 designs. The authoring index now contains 154 accepted sheets with 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions. Individual extraction remains a separate step.
+
+---
+
 ## 2026-11-07 · Eighteen reactions PASS
 
 Current148accepted sheets/888depictions;146eligible/876depictions.124unique-six sheets;830authoring identity keys,not canonical census. Previous142manifest audit plus six current additions. All three English reaction-resident sheets accepted,earlier snapshots below historical.

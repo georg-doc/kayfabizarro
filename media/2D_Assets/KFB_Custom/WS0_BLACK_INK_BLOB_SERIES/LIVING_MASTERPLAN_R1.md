@@ -1,3 +1,11 @@
+## Digital satire design acceptance
+
+Georg accepted all six digital satire sheets and their 36 designs. The authoring index now contains 154 accepted sheets with 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions. Individual extraction remains a separate step.
+
+The next authorized batch covers seven response teams. Each sheet proposes two trios that also combine into a six-member team. Encounter order and dispatch remain design proposals.
+
+---
+
 ## 2026-11-07 · Digital satire batch complete / awaiting Georg
 
 [DIGITAL_SATIRE_BATCH_20261107.json](DIGITAL_SATIRE_BATCH_20261107.json) now records all6requested transparent3x2sheets/36new independent Slops:doom/brainrot,neural-link smombies,socialmedia,gaming/dopamine,influencer placement,podcast archetypes. All DRAFT,intakefalse pending Georg;148accepted sheets/888depictions unchanged. English game-facing names/cards/bios/calls. Actual original reference inputs per job,same gentle material direction. Source/metadata checks complete;individual extraction/runtime untested. Influencer cell2 cream-colored wink is flagged as a possible dark-lid TUNE detail,not self-classified as GeorgFAIL/PASS. Earlier halfway checkpoint below historical.
