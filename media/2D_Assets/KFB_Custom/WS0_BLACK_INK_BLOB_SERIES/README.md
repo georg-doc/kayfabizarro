@@ -1,3 +1,9 @@
+## 2026-11-07 · Latest acceptance and language rule
+
+145DesignPASS sheets/870depictions;143eligible/858. Certainty six accepted. Game-facing text strictly English for new production;latest18authoring records localized,stableIDs/pixels unchanged. Current[SOP](SOP_INK_MONSTERS_R2.md),[Return](RETURN.md),[set index](SET_MANIFESTS_R1.json). Three new reaction sheets in production,not yet accepted.
+
+---
+
 ## 07.11.2026 · Latest Georg PASS
 
 144DesignPASS sheets/864depictions;142/852eligible for existing intake. All six neighbourhood residents accepted. [Current Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json) govern continuation. Next ideological-habits sheet not yet counted as accepted.

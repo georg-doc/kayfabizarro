@@ -1,3 +1,13 @@
+# WSA Return · Certainty PASS / strict English authoring · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Georg accepts all six certainty figures and directs game strictly English including names/meta/backstories. Certainty manifest allPASS,intakeeligible pending technical extraction. Current145accepted sheets/870depictions;143eligible/858.812authoring keys,not registry census;incremental coverage,historical142audit plus three current manifests.
+
+Latest18authoring names/states/FrizzleBob notes (Emotions,Neighbourhood,Certainty) converted to English in manifest,intent,cards,biographies. Existing English backstories updated to match names. Image bytes,stableIDs and relationships preserved. English display translations supplied for existing German-valued schema enums;keys/tokens retained for receiving compatibility,not rendered text. Biographies use frizzlebob_note_en. Lore stays DESIGN,not silently approved by imagePASS. Historical immutable generation prompts/decisions retained as evidence. Not a claim that all145sets or existing receiving/runtime copies were localized. SOP records binding prospective English rule and deferred legacy localization seam. Exacthead/readbacks required.
+
+Next authorized series:three new original-reference-conditioned6unique sheets (18depictions) ordinary residents/passersby with broad alarm/contact/friction reactions,two female-read each,transparent3x2. Low equipment/trash/NPC candidates,not new combat/hits assignments. Images generated sequentially and visually inspected;no new runtime,registry,Site,publishing,merge or Live. Nextgate:finish three-sheet series and show actual designs for Georg judgement.
+
+---
+
 # WSA Return · Six certainty types generated / neighbourhood PASS · 2026-11-07
 
 Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. All six previous neighbourhood designs explicitly Georg PASS,persisted atb5a793fddfe8cadf33442d6b5835fb11e73ab43e with11/11text readbacks. Current144accepted sheets/864depictions;142eligible/852. New draft not counted as accepted.

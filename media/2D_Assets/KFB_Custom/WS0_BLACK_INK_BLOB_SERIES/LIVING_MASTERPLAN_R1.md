@@ -1,3 +1,9 @@
+## 2026-11-07 · English-only authoring / certainty PASS
+
+All six certainty designs accepted.145DesignPASS sheets/870depictions;143eligible/858. Latest18names/field notes/state displays now English;technical IDs and image bytes unchanged. Historical catalogue/receiving-copy localization requires separate inventory,not claimed complete. Next bounded series:18new reaction residents inthree independent landscape3x2transparent sheets,English metadata throughout. No automatic enemy/NPC assignment from appearance.
+
+---
+
 ## 07.11.2026 · Certainty habits sheet generated
 
 [CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json](CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json): six independent expressive residents embodying ideological habits and compulsive certainty, two female-read. One original-reference-conditioned transparent landscape3x2 sheet, DRAFT awaiting Georg,not counted in144accepted sheets. Same accepted gentle material steering. G05 experiment,not blanket closure of ideological coverage.

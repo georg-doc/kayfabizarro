@@ -27,7 +27,7 @@
   "cards": "NEIGHBOUR_RITUALS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
   "biographies": "NEIGHBOUR_RITUALS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
   "family_context": {
-    "name": "Die vorläufig gute Nachbarschaft",
+    "name": "Provisional Good Neighbours",
     "backlog_neighbors": [
       "G03",
       "G06"
@@ -44,7 +44,7 @@
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_01",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Kuno Freihalt",
+      "name": "Kuno Keepfree",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 0,
@@ -54,7 +54,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Platz freihalten",
+      "zustand": "reserving a place",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -73,12 +73,14 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "male-read"
     },
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_02",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Irma Alleineschon",
+      "name": "Irma Allbymyself",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 1,
@@ -88,7 +90,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Hilfe ungern annehmen",
+      "zustand": "reluctantly accepting help",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -107,12 +109,14 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "female-read"
     },
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_03",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Egon Eigentlich",
+      "name": "Edgar Actually",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 2,
@@ -122,7 +126,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Ungefragt erklären",
+      "zustand": "explaining without being asked",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -141,12 +145,14 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "combative",
+      "gender_reading_en": "male-read"
     },
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_04",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Vera Immerhin",
+      "name": "Vera Nevertheless",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 3,
@@ -156,7 +162,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Leise widersprechen",
+      "zustand": "quietly disagreeing",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -175,12 +181,14 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "confused",
+      "gender_reading_en": "female-read"
     },
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_05",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Herr Ausnahmsweise",
+      "name": "Mr. Justthisonce",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 4,
@@ -190,7 +198,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Eine Ausnahme widerwillig gewähren",
+      "zustand": "reluctantly granting an exception",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -209,12 +217,14 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "male-read"
     },
     {
       "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_06",
       "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
-      "name": "Bodo Wiederda",
+      "name": "Bodie Backagain",
       "bild": {
         "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
         "zelle": 5,
@@ -224,7 +234,7 @@
         "cell_semantics": "logical layout only;not certified crop",
         "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
       },
-      "zustand": "Geliehenes überfeierlich zurückgeben",
+      "zustand": "ceremonially returning a borrowed item",
       "paar_mit": null,
       "zustand_von": null,
       "trio": null,
@@ -242,12 +252,16 @@
       "ersetzt": [],
       "erneuert": [],
       "combat_stage": null,
-      "hits": null
+      "hits": null,
+      "haltung_display_en": "combative",
+      "gender_reading_en": "male-read"
     }
   ],
   "georg_decision": {
     "date": "2026-11-07",
     "quote": "super, die sind alle PASS :)",
     "scope": "all six designs;not extraction/catalogue/runtime approval"
-  }
+  },
+  "language": "en",
+  "localization_policy": "All active display names and game-facing prose English. Stable schema keys, technical IDs and established enum tokens retained;display translations supplied."
 }

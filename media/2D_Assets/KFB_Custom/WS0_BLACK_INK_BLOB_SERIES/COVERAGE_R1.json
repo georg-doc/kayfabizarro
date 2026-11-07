@@ -4,26 +4,26 @@
   "snapshot_ref": "6fffc6b05429ceccff8947f80946a7498df09160",
   "source_index": "SET_MANIFESTS_R1.json",
   "counts": {
-    "selected_sheets": 144,
-    "pass_depictions": 864,
+    "selected_sheets": 145,
+    "pass_depictions": 870,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 142,
-    "intake_eligible_depictions": 852,
-    "other_authoring_depictions": 744
+    "intake_eligible_sheets": 143,
+    "intake_eligible_depictions": 858,
+    "other_authoring_depictions": 750
   },
   "verified": {
-    "manifest_reads": 144,
-    "depictions": 864,
+    "manifest_reads": 145,
+    "depictions": 870,
     "formats": {
-      "SIX_UNIQUE_3X2": 120,
+      "SIX_UNIQUE_3X2": 121,
       "COUPLES_2X3": 3,
       "RESIDENT_STATES_2X3": 2,
       "PROGRESSION_3X2": 13,
       "STORY_TRIOS_3X2": 6
     },
-    "distinct_authoring_identity_keys": 806,
+    "distinct_authoring_identity_keys": 812,
     "canonical_identity_census": false
   },
   "deck_coverage": {
@@ -2050,6 +2050,20 @@
       "biographies": "NEIGHBOUR_RITUALS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
       "identity_count": 6,
       "deck_id": null
+    },
+    {
+      "set_id": "WSA_CERTAINTY_HABITS_20261107",
+      "manifest": "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json",
+      "format": "SIX_UNIQUE_3X2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "depictions": 6,
+      "theme": "Ideological habits and compulsive certainty",
+      "production_record": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "cards": "CERTAINTY_HABITS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+      "biographies": "CERTAINTY_HABITS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+      "identity_count": 6,
+      "deck_id": null
     }
   ],
   "incremental_update": {
@@ -2057,8 +2071,9 @@
     "base_snapshot_ref": "6fffc6b05429ceccff8947f80946a7498df09160",
     "added_manifests": [
       "EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json",
-      "NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json"
+      "NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json",
+      "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json"
     ],
-    "scope": "Previous142manifest audit plus two current accepted manifests;not full re-audit"
+    "scope": "Historical142manifest census plus three current accepted manifests;English localization of18display identities;not new full census"
   }
 }

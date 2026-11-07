@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 144,
-    "pass_depictions": 864,
+    "selected_sheets": 145,
+    "pass_depictions": 870,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 142,
-    "intake_eligible_depictions": 852,
-    "other_authoring_depictions": 744
+    "intake_eligible_sheets": 143,
+    "intake_eligible_depictions": 858,
+    "other_authoring_depictions": 750
   },
   "excluded_sources": [
     {
@@ -1000,6 +1000,12 @@
     {
       "set_id": "WSA_NEIGHBOUR_RITUALS_20261107",
       "manifest": "NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CERTAINTY_HABITS_20261107",
+      "manifest": "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

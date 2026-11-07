@@ -1,3 +1,11 @@
+## Georg language decision · 2026-11-07 · Game strictly English
+
+All new Slop display names, titles, states, personality/backstory prose, FrizzleBob field notes, voice directions and proposed calls MUST be English. Chat conversation and historical German briefs need not be rewritten. Preserve stable IDs,provenance,accepted pixels and receiving-schema keys/enum tokens;provide English display values for those tokens. Do not repurpose identifiers as display names. Latest18authoring records (Emotions,Neighbourhood,Certainty) localized in place with image PASS intact;not a claim that all historical catalogue/runtime copies are migrated. Immutable historical generation prompts remain exact evidence,not current display text. New batches contain no German game-facing prose. Existing registry/game owners apply receiving updates;no second localization owner.
+
+Georg also accepts all six CERTAINTY_HABITS designs. Next authorized bounded series:three new six-unique sheets of ordinary residents/passersby with diverse emotions/reactions,low equipment and two female-read each. Trash/NPC are usage candidates,not automatic combat-tier or hit assignments. Keep accepted gentle material steering and original reference conditioning.
+
+---
+
 ## Georg PASS · 07.11.2026 · Gentle material direction accepted
 
 All six EMOTIONS_AMBIVALENCE_6_2026-11-07 designs PASS. Georg explicitly accepts the cautious style correction. Continue that SAME small charcoal bias/subtle plum/soft satin sculpted clay direction; do not intensify darkening or remove tactile volume. Earlier pending language below is historical. Keep actual ORIGINAL reference inputs, no generated-image style-parent chain. No retrofit of accepted assets. Next authorized sheet: six simple building residents and absurd neighbourhood rituals, two female-read.

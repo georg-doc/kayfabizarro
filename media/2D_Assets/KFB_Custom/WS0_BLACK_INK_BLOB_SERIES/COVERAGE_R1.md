@@ -1,3 +1,9 @@
+## 2026-11-07 · Certainty six PASS / English-only display text
+
+145accepted sheets/870depictions;143eligible/858depictions.121unique-six sheets;812authoring identity keys,not canonical census. Historical142manifest census plus three current accepted manifests. Active names/notes/states in the latest18authoring figures localized to English,stable technical IDs/schema tokens unchanged. Earlier snapshots below historical.
+
+---
+
 ## 07.11.2026 · Neighbourhood six PASS
 
 Current144DesignPASS sheets/864depictions;142eligible/852depictions.120unique-six sheets,806authoring identity keys (not canonical registry census). Previous142manifest audit plus two new current reads. Earlier snapshots below historical. See current COVERAGE_R1.json.
