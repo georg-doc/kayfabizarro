@@ -2,7 +2,7 @@
   "schema": "kfb.slop-production-batch/1",
   "date": "2026-11-07",
   "language": "en",
-  "status": "GENERATED_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "generation_jobs": 3,
   "edit_jobs": 0,
   "retries": 0,
@@ -19,9 +19,9 @@
       "manifest": "REACTIONS_ALARM_6_2026-11-07/MANIFEST.json",
       "sheet": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
       "sha256": "5b236ac8151496493af74fc7e785130570d265ef41b620873cc5cf4fca65b89a",
-      "georg_status": null,
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
       "names": [
         "Stanley Startle",
         "Penny Scatter",
@@ -45,9 +45,9 @@
       "manifest": "REACTIONS_CONTACT_6_2026-11-07/MANIFEST.json",
       "sheet": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
       "sha256": "b30e754cd6193521491e275555f7efcc4f95086f42a676c5ad7b74c32024154c",
-      "georg_status": null,
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
       "names": [
         "Grace Afterall",
         "Gilbert Muchobliged",
@@ -71,9 +71,9 @@
       "manifest": "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
       "sheet": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
       "sha256": "4e02255dbccc5bb05cfc0c5b987d640aed1f464d5873e0e00ab1bd0bb69429c6",
-      "georg_status": null,
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
       "names": [
         "Percy Outrage",
         "Bert Wontbudge",
@@ -97,5 +97,6 @@
     "No certified individual extraction, catalogue native-single masters, registry update or runtime tests.",
     "Friction bottom-right gained lashes and may read more ambiguously than the planned male-read figure.",
     "English game-facing names/cards/biographies;receiving-schema keys/enum tokens retained with English display values."
-  ]
+  ],
+  "georg_status": "PASS"
 }

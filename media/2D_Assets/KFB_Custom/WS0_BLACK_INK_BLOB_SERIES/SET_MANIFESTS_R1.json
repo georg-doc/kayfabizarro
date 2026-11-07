@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 145,
-    "pass_depictions": 870,
+    "selected_sheets": 148,
+    "pass_depictions": 888,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 143,
-    "intake_eligible_depictions": 858,
-    "other_authoring_depictions": 750
+    "intake_eligible_sheets": 146,
+    "intake_eligible_depictions": 876,
+    "other_authoring_depictions": 768
   },
   "excluded_sources": [
     {
@@ -1006,6 +1006,24 @@
     {
       "set_id": "WSA_CERTAINTY_HABITS_20261107",
       "manifest": "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_ALARM_20261107",
+      "manifest": "REACTIONS_ALARM_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_CONTACT_20261107",
+      "manifest": "REACTIONS_CONTACT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_FRICTION_20261107",
+      "manifest": "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

@@ -1,3 +1,9 @@
+## 2026-11-07 · Eighteen reactions PASS
+
+Current148accepted sheets/888depictions;146eligible/876depictions.124unique-six sheets;830authoring identity keys,not canonical census. Previous142manifest audit plus six current additions. All three English reaction-resident sheets accepted,earlier snapshots below historical.
+
+---
+
 ## 2026-11-07 · Certainty six PASS / English-only display text
 
 145accepted sheets/870depictions;143eligible/858depictions.121unique-six sheets;812authoring identity keys,not canonical census. Historical142manifest census plus three current accepted manifests. Active names/notes/states in the latest18authoring figures localized to English,stable technical IDs/schema tokens unchanged. Earlier snapshots below historical.

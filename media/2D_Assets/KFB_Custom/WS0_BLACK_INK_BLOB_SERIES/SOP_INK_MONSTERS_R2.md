@@ -1,3 +1,9 @@
+## Georg PASS / next digital satire batch · 2026-11-07
+
+All three REACTIONS_ALARM/CONTACT/FRICTION six-sheets (18figures) Georg DESIGN PASS,including minor generated details noted in QA. Existing strict-English game text and gentle material steering remain binding. Next authorized outcome:six fresh unique-six transparent landscape sheets:doomscroll/brainrot,fictional neural-link smombies,social-media addicts,gamers/dopamine seekers,influencers with absurd product placement,podcaster archetypes.2female-read planned each,organic ink body dominant,readable simple props,actual original reference inputs. Fictional devices/brand-free props,no claims about actual products. No extra runtime or GIF task.
+
+---
+
 ## Georg language decision · 2026-11-07 · Game strictly English
 
 All new Slop display names, titles, states, personality/backstory prose, FrizzleBob field notes, voice directions and proposed calls MUST be English. Chat conversation and historical German briefs need not be rewritten. Preserve stable IDs,provenance,accepted pixels and receiving-schema keys/enum tokens;provide English display values for those tokens. Do not repurpose identifiers as display names. Latest18authoring records (Emotions,Neighbourhood,Certainty) localized in place with image PASS intact;not a claim that all historical catalogue/runtime copies are migrated. Immutable historical generation prompts remain exact evidence,not current display text. New batches contain no German game-facing prose. Existing registry/game owners apply receiving updates;no second localization owner.

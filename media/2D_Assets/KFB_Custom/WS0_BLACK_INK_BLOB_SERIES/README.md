@@ -1,3 +1,9 @@
+## 2026-11-07 · Latest accepted authoring count
+
+148DesignPASS sheets/888depictions;146eligible/876. All18new English reaction residents accepted. Current[Return](RETURN.md),[index](SET_MANIFESTS_R1.json),[SOP](SOP_INK_MONSTERS_R2.md). Six digital-satire sheets authorized,inproduction,not yet counted as accepted.
+
+---
+
 ## 2026-11-07 · Latest acceptance and language rule
 
 145DesignPASS sheets/870depictions;143eligible/858. Certainty six accepted. Game-facing text strictly English for new production;latest18authoring records localized,stableIDs/pixels unchanged. Current[SOP](SOP_INK_MONSTERS_R2.md),[Return](RETURN.md),[set index](SET_MANIFESTS_R1.json). Three new reaction sheets in production,not yet accepted.
