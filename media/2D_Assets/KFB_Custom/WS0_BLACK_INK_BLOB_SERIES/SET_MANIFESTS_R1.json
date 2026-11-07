@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 154,
-    "pass_depictions": 924,
+    "selected_sheets": 161,
+    "pass_depictions": 966,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 152,
-    "intake_eligible_depictions": 912,
-    "other_authoring_depictions": 804
+    "intake_eligible_sheets": 159,
+    "intake_eligible_depictions": 954,
+    "other_authoring_depictions": 846
   },
   "excluded_sources": [
     {
@@ -1060,6 +1060,48 @@
     {
       "set_id": "WSA_DIGITAL_PODCAST_20261107",
       "manifest": "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_PATROL_20261107",
+      "manifest": "RESPONSE_PATROL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_RIOT_20261107",
+      "manifest": "RESPONSE_RIOT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_SWAT_20261107",
+      "manifest": "RESPONSE_SWAT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_PARAMILITARY_20261107",
+      "manifest": "RESPONSE_PARAMILITARY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_INFANTRY_20261107",
+      "manifest": "RESPONSE_INFANTRY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_SPECIAL_20261107",
+      "manifest": "RESPONSE_SPECIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
+      "manifest": "RESPONSE_BLACKOPS_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

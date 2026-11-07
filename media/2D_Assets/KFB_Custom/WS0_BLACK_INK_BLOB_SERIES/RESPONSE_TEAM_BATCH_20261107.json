@@ -2,14 +2,14 @@
   "schema": "kfb.slop-production-batch/1",
   "date": "2026-11-07",
   "language": "en",
-  "status": "GENERATED_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "planned_generation_jobs": 7,
   "completed_generation_jobs": 7,
   "image_edit_jobs": 1,
   "completed_depictions": 42,
   "independent_identities": 42,
   "female_read_planned": 14,
-  "georg_status": null,
+  "georg_status": "PASS",
   "coverage_context": {
     "existing_examples": [
       "WSA_PIRATES_20261104",
@@ -68,8 +68,9 @@
         ],
         "gameplay_beat": "Street contact and visible warnings"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_RIOT_20261107",
@@ -115,8 +116,9 @@
         ],
         "gameplay_beat": "Containment at a crossing or boundary"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_SWAT_20261107",
@@ -162,8 +164,9 @@
         ],
         "gameplay_beat": "Focused intervention around an entry"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_PARAMILITARY_20261107",
@@ -209,8 +212,9 @@
         ],
         "gameplay_beat": "Reinforcement from a local field detail"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_INFANTRY_20261107",
@@ -256,8 +260,9 @@
         ],
         "gameplay_beat": "A sustained military presence"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_SPECIAL_20261107",
@@ -303,8 +308,9 @@
         ],
         "gameplay_beat": "A targeted reconnaissance or recovery encounter"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
@@ -350,8 +356,9 @@
         ],
         "gameplay_beat": "A rare covert intervention"
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     }
   ],
   "checks": {
