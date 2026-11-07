@@ -1,3 +1,11 @@
+## Injured and recovering residents · 2026-11-07
+
+Six transparent 3×2 sheets introduce 36 distinct injured and recovering residents across explosion, firearm grazes, boxing, traffic collisions, building debris and convalescence. The first-aid and mobility cues are stylized for use with the existing emergency teams. English names, character cards and two trio relations accompany every sheet. Georg's design verdict is pending.
+
+[Batch record](INJURY_FAMILIES_BATCH_20261107.json).
+
+---
+
 ## Tourist design acceptance · 2026-11-07
 
 Georg accepted all twelve tourist sheets and their 72 designs. The index contains 197 accepted sheets and 1182 depictions. Intake eligibility covers 195 sheets and 1170 depictions. The Game and Asset Librarian receiving step follows individual isolation.

@@ -1,3 +1,15 @@
+# WSA Return · Injured and recovering residents · 2026-11-07
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Tourist PASS and material steering are recorded at e499cbeeb57a6bd1839fcf551ff2ac60f7fbbc95 with 53 file readbacks. The accepted index records 197 sheets and 1182 depictions, including 195 sheets and 1170 depictions eligible for intake.
+
+Six transparent 3×2 sheets introduce 36 distinct injured and recovering residents across explosion, firearm grazes, boxing, traffic collisions, building debris and convalescence. The first-aid and mobility cues are stylized for use with the existing emergency teams. English names, character cards and two trio relations accompany every sheet. Georg's design verdict is pending.
+
+Six original-reference image jobs produced six 1536×1024 RGBA sheets with true background transparency. The bottle in Boxing has a smooth clear shell and a visible waterline. Soot and debris retain local texture. Cheek adhesive patches recur across all six recovery characters. The close calls use dressing and impact cues. Their specific firearm context is captured in the design records. Five sheets require silhouette-aware isolation where opaque pixels cross nominal grid lines. Individual isolation and runtime checks remain pending.
+
+[Batch record](INJURY_FAMILIES_BATCH_20261107.json) lists the source sheets, fingerprints and checks. The phase writes 52 paths. The next gate is Georg's design verdict.
+
+---
+
 ## Tourist design acceptance · 2026-11-07
 
 Georg accepted all twelve tourist sheets and their 72 designs. The index contains 197 accepted sheets and 1182 depictions. Intake eligibility covers 195 sheets and 1170 depictions. The Game and Asset Librarian receiving step follows individual isolation.

@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_INJURY_BOX_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+    "sha256": "0a0aa0278585104e70c9ad01da800ebd408a739d86a637f49b2ab26f7ae25b40"
+  },
+  "production_record": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "INJURY_BOX_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "INJURY_BOX_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Last Round",
+    "theme": "Boxing and contact impacts",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "injured resident",
+      "first responder encounter",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dora Belllate",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dazed boxer with swollen brow",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_02",
+        "WSA_INJURY_BOX_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one drooping red glove and small white brow patch"
+      ],
+      "temperament": "Dazed boxer with swollen brow.",
+      "prompt_auszug": "tall swaying comma, one eyelid heavier, confused slack mouth",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dazed boxer with swollen brow"
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Milo Jawdrop",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sore jaw boxer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_01",
+        "WSA_INJURY_BOX_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "thin fabric jaw support and one folded towel"
+      ],
+      "temperament": "Sore jaw boxer.",
+      "prompt_auszug": "wide thick square blob, pupils looking upward, tightly pressed lips",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sore jaw boxer"
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rafe Coldpack",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exasperated boxer with cheek swelling",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_01",
+        "WSA_INJURY_BOX_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "smooth blue gel cold pack pushed to one broad cheek"
+      ],
+      "temperament": "Exasperated boxer with cheek swelling.",
+      "prompt_auszug": "rounded pear, one narrow eye, compressed sideways pout",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "exasperated boxer with cheek swelling"
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hank Knucklewrap",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "embarrassed boxer with wrapped knuckles",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_05",
+        "WSA_INJURY_BOX_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "ivory hand wraps and one glove tucked against belly"
+      ],
+      "temperament": "Embarrassed boxer with wrapped knuckles.",
+      "prompt_auszug": "broad low splat, shy downcast eyes, awkward closed smile",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "embarrassed boxer with wrapped knuckles"
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Cornerseat",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "furious boxer with nose dressing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_04",
+        "WSA_INJURY_BOX_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "two small crossed strips on the central face above mouth, red glove hanging from strap"
+      ],
+      "temperament": "Furious boxer with nose dressing.",
+      "prompt_auszug": "upright scalloped blob, glaring eyes, teeth clenched behind lips",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "furious boxer with nose dressing"
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vic Endbell",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted boxer after a hard round",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BOX_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BOX_ACTOR_20261107_04",
+        "WSA_INJURY_BOX_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small water bottle with clear smooth liquid and a simple clean towel"
+      ],
+      "temperament": "Exhausted boxer after a hard round.",
+      "prompt_auszug": "slumped upright droplet, heavy lids, quiet open pant",
+      "prompt_quelle": "INJURY_BOX_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "exhausted boxer after a hard round"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "injury_family": "Boxing and contact impacts",
+    "team_kit": "Scuffed retro terracotta and teal sports wraps, clean corner towels, broad charcoal-violet bruise shading on dark clay.",
+    "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+    "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+    "trios": [
+      {
+        "id": "WSA_INJURY_BOX_20261107_TRIO_A",
+        "name": "First Response Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_INJURY_BOX_ACTOR_20261107_01",
+          "WSA_INJURY_BOX_ACTOR_20261107_02",
+          "WSA_INJURY_BOX_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_INJURY_BOX_20261107_TRIO_B",
+        "name": "Follow-up Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_INJURY_BOX_ACTOR_20261107_04",
+          "WSA_INJURY_BOX_ACTOR_20261107_05",
+          "WSA_INJURY_BOX_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_INJURY_BOX_ACTOR_20261107_01",
+      "WSA_INJURY_BOX_ACTOR_20261107_02",
+      "WSA_INJURY_BOX_ACTOR_20261107_03",
+      "WSA_INJURY_BOX_ACTOR_20261107_04",
+      "WSA_INJURY_BOX_ACTOR_20261107_05",
+      "WSA_INJURY_BOX_ACTOR_20261107_06"
+    ]
+  }
+}

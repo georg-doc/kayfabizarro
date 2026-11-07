@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_INJURY_DEBRIS_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+    "sha256": "b5c7691ad7dd303057c7bacffa2c4d20fcac7d85f40c5f349d9c4fcdf1b83d40"
+  },
+  "production_record": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "INJURY_DEBRIS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "INJURY_DEBRIS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Falling Block Detail",
+    "theme": "Building accident and disaster injuries",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "injured resident",
+      "first responder encounter",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jade Ceilingdrop",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "irritated resident after falling plaster",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "clean bandage cap with one short folded tail and tiny chipped plaster slab held low"
+      ],
+      "temperament": "Irritated resident after falling plaster.",
+      "prompt_auszug": "wide scalloped blob, lowered brow, tight side frown",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "irritated resident after falling plaster"
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sid Bracedown",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "worried resident with lower lobe supported",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short smooth splint strapped to one base lobe, one broad crutch"
+      ],
+      "temperament": "Worried resident with lower lobe supported.",
+      "prompt_auszug": "tall slanted bean, one eye wide, quivering closed lip",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "worried resident with lower lobe supported"
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Doorjam",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dazed resident after a doorframe hit",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "clean side head pad and a small bent brass handle"
+      ],
+      "temperament": "Dazed resident after a doorframe hit.",
+      "prompt_auszug": "square squat blob, eyes aimed at different angles, tiny oval mouth",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dazed resident after a doorframe hit"
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Windowdraft",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled resident with forearm dressing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "broad wrapped forearm held to belly and a torn curtain ribbon"
+      ],
+      "temperament": "Startled resident with forearm dressing.",
+      "prompt_auszug": "upright narrow reverse comma, wide eyes, clenched teeth behind lip",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled resident with forearm dressing"
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cobb Dustcough",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary resident recovering after dusty debris",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded clean cloth lowered beneath face and shoulder wrap"
+      ],
+      "temperament": "Weary resident recovering after dusty debris.",
+      "prompt_auszug": "rounded squashed body with large dust patches, sleepy lids, tired open mouth",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary resident recovering after dusty debris"
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Roofwatch",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stunned resident with neck support",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+        "WSA_INJURY_DEBRIS_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short soft neck brace and one miniature broken roof tile in hand"
+      ],
+      "temperament": "Stunned resident with neck support.",
+      "prompt_auszug": "broad teardrop, eyebrows lifted, flat stunned mouth",
+      "prompt_quelle": "INJURY_DEBRIS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "stunned resident with neck support"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "injury_family": "Building accident and disaster injuries",
+    "team_kit": "Muted rust, slate blue and brown household cloth. Clean dressings, broad dust marks, a few blunt carried fragments.",
+    "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+    "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+    "trios": [
+      {
+        "id": "WSA_INJURY_DEBRIS_20261107_TRIO_A",
+        "name": "First Response Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_INJURY_DEBRIS_20261107_TRIO_B",
+        "name": "Follow-up Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_03",
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+      "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+    ]
+  }
+}

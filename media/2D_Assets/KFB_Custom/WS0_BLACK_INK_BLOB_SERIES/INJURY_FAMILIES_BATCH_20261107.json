@@ -1,0 +1,345 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_INJURY_FAMILIES_20261107",
+  "date": "2026-11-07",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_families": 6,
+    "female_read_casting_intents": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_INJURY_BLAST_20261107",
+      "title": "The Blast Survivors",
+      "manifest": "INJURY_BLAST_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+      "sha256": "14da458bfeaa836d396df593f1cd51b1a0c28243713ec76ad84daefb7a314011",
+      "git_blob": "49bb7a903b797e85d2e2d529028de9df5d408762",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Explosion impact",
+        "team_kit": "Smoky gray and dusty ochre with clean ivory wraps. A few large, soft soot marks on surface and simple singed garment hems.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_BLAST_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_BLAST_ACTOR_20261107_01",
+              "WSA_INJURY_BLAST_ACTOR_20261107_02",
+              "WSA_INJURY_BLAST_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_BLAST_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_BLAST_ACTOR_20261107_04",
+              "WSA_INJURY_BLAST_ACTOR_20261107_05",
+              "WSA_INJURY_BLAST_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_BLAST_ACTOR_20261107_01",
+          "WSA_INJURY_BLAST_ACTOR_20261107_02",
+          "WSA_INJURY_BLAST_ACTOR_20261107_03",
+          "WSA_INJURY_BLAST_ACTOR_20261107_04",
+          "WSA_INJURY_BLAST_ACTOR_20261107_05",
+          "WSA_INJURY_BLAST_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_INJURY_GRAZE_20261107",
+      "title": "The Close Calls",
+      "manifest": "INJURY_GRAZE_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_GRAZE_6_2026-11-07/sheet-r1.png",
+      "sha256": "aa1d6efe99ab03d055e691a58542c22ddb871b780610546ac229bb576af5fef5",
+      "git_blob": "e5a403b96df35daef1f68f30323a3287e79784d3",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Firearm grazes and blunt cartoon impacts",
+        "team_kit": "Minimal cream gauze, rust red plain cloth, graphite and warm gray. Clean stylized dressing treatment.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_GRAZE_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_GRAZE_ACTOR_20261107_01",
+              "WSA_INJURY_GRAZE_ACTOR_20261107_02",
+              "WSA_INJURY_GRAZE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_GRAZE_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_GRAZE_ACTOR_20261107_04",
+              "WSA_INJURY_GRAZE_ACTOR_20261107_05",
+              "WSA_INJURY_GRAZE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_GRAZE_ACTOR_20261107_01",
+          "WSA_INJURY_GRAZE_ACTOR_20261107_02",
+          "WSA_INJURY_GRAZE_ACTOR_20261107_03",
+          "WSA_INJURY_GRAZE_ACTOR_20261107_04",
+          "WSA_INJURY_GRAZE_ACTOR_20261107_05",
+          "WSA_INJURY_GRAZE_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_INJURY_BOX_20261107",
+      "title": "The Last Round",
+      "manifest": "INJURY_BOX_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
+      "sha256": "0a0aa0278585104e70c9ad01da800ebd408a739d86a637f49b2ab26f7ae25b40",
+      "git_blob": "cb0d73e50f6f2f242d925be911439b004f115539",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Boxing and contact impacts",
+        "team_kit": "Scuffed retro terracotta and teal sports wraps, clean corner towels, broad charcoal-violet bruise shading on dark clay.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_BOX_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_BOX_ACTOR_20261107_01",
+              "WSA_INJURY_BOX_ACTOR_20261107_02",
+              "WSA_INJURY_BOX_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_BOX_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_BOX_ACTOR_20261107_04",
+              "WSA_INJURY_BOX_ACTOR_20261107_05",
+              "WSA_INJURY_BOX_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_BOX_ACTOR_20261107_01",
+          "WSA_INJURY_BOX_ACTOR_20261107_02",
+          "WSA_INJURY_BOX_ACTOR_20261107_03",
+          "WSA_INJURY_BOX_ACTOR_20261107_04",
+          "WSA_INJURY_BOX_ACTOR_20261107_05",
+          "WSA_INJURY_BOX_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_INJURY_ROAD_20261107",
+      "title": "The Crosswalk Incident",
+      "manifest": "INJURY_ROAD_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+      "sha256": "7038fb77afeab84cc849443c29db26a058adde52b7ba1063491c96ffb207de63",
+      "git_blob": "e6c2f70a3a740b1fe4aa2aa7b82885784fe3f6fa",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Vehicle collision injuries",
+        "team_kit": "City raincoats, dull reflective strips, red or ochre fabric, a few large broad scuff marks, clean first-aid gear.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_ROAD_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_ROAD_ACTOR_20261107_01",
+              "WSA_INJURY_ROAD_ACTOR_20261107_02",
+              "WSA_INJURY_ROAD_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_ROAD_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_ROAD_ACTOR_20261107_04",
+              "WSA_INJURY_ROAD_ACTOR_20261107_05",
+              "WSA_INJURY_ROAD_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_ROAD_ACTOR_20261107_01",
+          "WSA_INJURY_ROAD_ACTOR_20261107_02",
+          "WSA_INJURY_ROAD_ACTOR_20261107_03",
+          "WSA_INJURY_ROAD_ACTOR_20261107_04",
+          "WSA_INJURY_ROAD_ACTOR_20261107_05",
+          "WSA_INJURY_ROAD_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_INJURY_DEBRIS_20261107",
+      "title": "The Falling Block Detail",
+      "manifest": "INJURY_DEBRIS_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
+      "sha256": "b5c7691ad7dd303057c7bacffa2c4d20fcac7d85f40c5f349d9c4fcdf1b83d40",
+      "git_blob": "48dbfbf0d323bd49761c1730372e58bb8fbeae61",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Building accident and disaster injuries",
+        "team_kit": "Muted rust, slate blue and brown household cloth. Clean dressings, broad dust marks, a few blunt carried fragments.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_DEBRIS_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_DEBRIS_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+              "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_03",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+          "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_INJURY_RECOVERY_20261107",
+      "title": "The Recovery Club",
+      "manifest": "INJURY_RECOVERY_6_2026-11-07/MANIFEST.json",
+      "sheet": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+      "sha256": "84299f8926ae4272bc3883a4990673160df0f75c92d174ab51024fa2e8ca1eeb",
+      "git_blob": "edbc86a7fdbcb08eb9a6256c47618be4052bd282",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "injury_family": "Convalescents and mobility aids",
+        "team_kit": "Soft warm ivory dressings, dusty blue and pale sage clothing. Smooth sealed plaster, thick fabric, plain mobility supports.",
+        "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+        "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+        "trios": [
+          {
+            "id": "WSA_INJURY_RECOVERY_20261107_TRIO_A",
+            "name": "First Response Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_INJURY_RECOVERY_20261107_TRIO_B",
+            "name": "Follow-up Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+              "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_03",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+        ]
+      }
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 197,
+    "depictions": 1182,
+    "intake_eligible_sheets": 195,
+    "intake_eligible_depictions": 1170
+  },
+  "usage_candidates": [
+    "Injured residents",
+    "First responder encounters",
+    "Convalescents with mobility aids"
+  ],
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "BLAST": 630447,
+      "GRAZE": 605378,
+      "BOX": 574417,
+      "ROAD": 620363,
+      "DEBRIS": 656919,
+      "RECOVERY": 680018
+    },
+    "visible_outer_edge_pixels_at_alpha_128": 0,
+    "nominal_cell_crossings": [
+      "BLAST",
+      "GRAZE",
+      "BOX",
+      "ROAD",
+      "RECOVERY"
+    ],
+    "material_review": "Broad modeled forms, restrained grain and smooth clear water bottle. Local soot and plaster dust retain texture. Cheek adhesive patches recur on all six recovery figures.",
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg design verdict"
+  }
+}
