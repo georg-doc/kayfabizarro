@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 161,
-    "pass_depictions": 966,
+    "selected_sheets": 167,
+    "pass_depictions": 1002,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 159,
-    "intake_eligible_depictions": 954,
-    "other_authoring_depictions": 846
+    "intake_eligible_sheets": 165,
+    "intake_eligible_depictions": 990,
+    "other_authoring_depictions": 882
   },
   "excluded_sources": [
     {
@@ -1102,6 +1102,42 @@
     {
       "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
       "manifest": "RESPONSE_BLACKOPS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_BIO_20261107",
+      "manifest": "CONTAINMENT_BIO_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_PANDEMIC_20261107",
+      "manifest": "CONTAINMENT_PANDEMIC_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_REACTOR_20261107",
+      "manifest": "CONTAINMENT_REACTOR_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CHEMICAL_20261107",
+      "manifest": "CONTAINMENT_CHEMICAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_RESCUE_20261107",
+      "manifest": "CONTAINMENT_RESCUE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CARD_20261107",
+      "manifest": "CONTAINMENT_CARD_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

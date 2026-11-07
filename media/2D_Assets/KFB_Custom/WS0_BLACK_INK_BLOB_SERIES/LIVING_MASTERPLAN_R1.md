@@ -1,3 +1,11 @@
+## Containment crew design acceptance
+
+Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.
+
+The next authorized batch covers six full-suit crews. Three draw their equipment palette and hazard vocabulary from the supplied cyan, acid-green and yellow HUD skins. Small visible ink feet and varied mouth shapes are requested for this batch.
+
+---
+
 ## Containment crew batch
 
 Six transparent 3×2 sheets add 36 distinct Slops across biohazard isolation, pandemic response, reactor incidents, chemical spills, disaster rescue and dangerous-card containment. Each sheet proposes two named trios and a full six-member team. Handheld Hypernormalization Screens and sealed card props are part of the fictional kit. The [batch record](CONTAINMENT_CREW_BATCH_20261107.json) carries incident types, member IDs and source receipts. The artwork awaits Georg's design verdict.

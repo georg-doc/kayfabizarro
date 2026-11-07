@@ -1,3 +1,9 @@
+## Containment crew design acceptance
+
+Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.
+
+---
+
 ## Response team design acceptance
 
 Georg accepted all seven response team sheets and their 42 designs. The authoring index now contains 161 accepted sheets with 966 depictions. Existing intake eligibility covers 159 sheets and 954 depictions. The team and trio memberships are available for receiving review after individual extraction.

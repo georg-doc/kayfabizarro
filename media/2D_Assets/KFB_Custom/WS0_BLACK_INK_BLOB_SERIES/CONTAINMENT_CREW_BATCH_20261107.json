@@ -2,14 +2,14 @@
   "schema": "kfb.slop-production-batch/1",
   "date": "2026-11-07",
   "language": "en",
-  "status": "GENERATED_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "planned_generation_jobs": 6,
   "completed_generation_jobs": 6,
   "image_edit_jobs": 2,
   "completed_depictions": 36,
   "independent_identities": 36,
   "female_read_planned": 12,
-  "georg_status": null,
+  "georg_status": "PASS",
   "encounter_design": {
     "status": "DESIGN",
     "selection_policy": "Select a crew by incident type. Each sheet provides two fixed details of three characters and a combined six-member roster.",
@@ -65,8 +65,9 @@
           "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_CONTAINMENT_PANDEMIC_20261107",
@@ -114,8 +115,9 @@
           "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_CONTAINMENT_REACTOR_20261107",
@@ -163,8 +165,9 @@
           "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_CONTAINMENT_CHEMICAL_20261107",
@@ -212,8 +215,9 @@
           "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_CONTAINMENT_RESCUE_20261107",
@@ -259,8 +263,9 @@
           "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_CONTAINMENT_CARD_20261107",
@@ -309,8 +314,9 @@
           "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     }
   ],
   "checks": {

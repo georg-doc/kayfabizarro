@@ -1,3 +1,11 @@
+## Containment crew design acceptance
+
+Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.
+
+The next authorized batch covers six full-suit crews. Three draw their equipment palette and hazard vocabulary from the supplied cyan, acid-green and yellow HUD skins. Small visible ink feet and varied mouth shapes are requested for this batch.
+
+---
+
 # WSA Return · Six containment crews · 2026-11-07
 
 WSA/WS0 Slop authoring in georg-doc/kayfabizarro on assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg accepted the previous 42 response-team designs. That checkpoint is ee7285625b480fdbe9304e02bc60725e19095b0a and passed 35 text readbacks. The accepted authoring index contains 161 sheets and 966 depictions. Existing intake eligibility covers 159 sheets and 954 depictions.
