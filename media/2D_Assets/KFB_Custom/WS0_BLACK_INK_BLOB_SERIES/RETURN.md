@@ -1,3 +1,17 @@
+# WSA Return · Small material adjustment / emotional residents pilot · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome: ONE new original-reference-conditioned1536x1024 landscape3x2 PNG with six unique everyday residents (two female-read), themes shame,relief,schadenfreude,saving face,compulsive rule certainty,reluctant helpfulness. New set WSA_EMOTIONS_AMBIVALENCE_20261107 is DRAFT/AWAITING_GEORG, intake false. Existing142DesignPASS sheets/852depictions unchanged; new draft not counted as accepted. No new animation.
+
+Georg requests minimal prospective material correction only. SOP records gentle charcoal bias while preserving tactile clay, subtle plum, volume,eyes,props and original references. Existing accepted images unchanged. Original veteran and freche reference hashes verified and actual PNGs supplied to native call; neither a generated style chain nor text-only generation. Model/seed not exposed. One completed job,zero retry/edit/resize jobs,zero extracted sprites. Exact args,original output hash,technicalQA,six authoring identities/relations/cards and six DESIGN biographies archived under EMOTIONS_AMBIVALENCE_6_2026-11-07/. No pair/state/trio or combat/hit assignments inferred.
+
+Actual PNG1536x1024 RGBAalpha0..254;570282fullytransparentpixels;four tested background points0 and lowerleftcorner1. SHA25675ad867464115b081c91eee43e433d5562f46a83aadb049d11333f7bf0b40da5;Gitblob4c4f778e001fa1df98b474319ce8a46c2319e3ba. Full light and96px dark/light composites visually inspected. Six whole upright footless figures with broadly similar row scale; native gutters/headroom need receiving extraction validation. Plum remains conspicuous; not a proven correction, controlled A/B or clean-alpha certification. No automatic repair. Metadata distinguishes planned acting from observed additions (flower pin,cup decoration). Lore follows Georg's supplied HyperNorm brief; named remote replies/SLOP_METANARRATIV_R1.md and replies directory returned404, so canonical lore reread remains deferred; all text DESIGN,not game canon.
+
+Changed12files: eight set files (PNG plus7JSON),SOP_INK_MONSTERS_R2.md,GAP_BACKLOG_R1.json,LIVING_MASTERPLAN_R1.md,RETURN.md. Backlog experiments cross-reference G01/G02/G03/G05/G06 without claiming those clusters completed. No asset registry admission,game tests,Site change,publishing,merge or Live. Exact final ref/file readback receipt retained locally.
+
+Nextgate: Georg judges first emotional-resident sheet and whether the gentle material direction is appropriate before expanding.
+
+---
+
 # WSA Return · Registered royal donor and animation-lane R2 · 2026-11-06
 
 Owner WSA;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome:verified Librarian single-source donor,royal-first queue,existing SDF/pirate pilot reuse,and an actual one-call GIF capability probe. Static Slop production remains separate. No new user-owned Work chat created;one read-only source-audit subagent used.

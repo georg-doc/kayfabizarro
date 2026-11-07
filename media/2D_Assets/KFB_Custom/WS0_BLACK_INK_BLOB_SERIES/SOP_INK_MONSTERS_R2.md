@@ -1,3 +1,11 @@
+## Georg steering · 07.11.2026 · gentle material correction, future runs only
+
+Georg chooses SMALL style adjustments to avoid overcorrection while continuing the accepted Slop line. Preserve rounded tactile modeled clay, expressive ink anatomy, original references, white/ivory sclera + red iris + black pupil, prop craft and established output formats. Nudge broad body tone only slightly toward charcoal/ink black; retain subtle deep-plum undertone and restrained satin highlights. Do not flatten all volume into matte black, replace clay with liquid/chrome, or globally darken eyes/teeth/props. Avoid luminous white/lavender rim glow and fibrous material on the goo. Existing approved artwork stays accepted and unchanged. This is prospective prompt steering, not a claim of a validated new material baseline.
+
+First bounded candidate: [EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json](EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json), six standalone residents combining emotion/ambivalence/simple social habits. ONE original-reference-conditioned landscape3x2 sheet, DRAFT awaiting Georg. Visible plum remains prominent; do not claim the color correction succeeded or use this generated sheet as a new style parent. Review before further expansion of this material adjustment. Separate GIF work remains independent.
+
+---
+
 ## Aktueller Betriebsstand · 06.11.2026 · additive Fortsetzung
 
 Georgs später ausdrücklich beauftragte Sheet-Serie ist etabliert:142Sheets/852Darstellungen Design-PASS einschließlich sechs Space-Crews. Der alte Recovery-STOP weiter unten bleibt Historie des verworfenen Veteranenlaufs und ist keine globale Produktionssperre. Die bestehenden visuellen R2-Regeln gelten weiter; neues/riskantes Format zuerst als Pilot, akzeptierte Formate als begrenzter Batch nach aktueller Beauftragung.

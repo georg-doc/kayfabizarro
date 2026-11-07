@@ -1,0 +1,255 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_EMOTIONS_AMBIVALENCE_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+    "sha256": "75ad867464115b081c91eee43e433d5562f46a83aadb049d11333f7bf0b40da5"
+  },
+  "production_record": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "EMOTIONS_AMBIVALENCE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "EMOTIONS_AMBIVALENCE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Hausordnung der Gefühle",
+    "backlog_neighbors": [
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G06"
+    ],
+    "relationship_policy": "Six standalone residents, no pairs/states/trios or combat tiers assigned"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ella Erröta",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Scham / Normalität vorspielen",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "coral scarf",
+        "knitted mitten",
+        "flower hairpin (generated addition)"
+      ],
+      "temperament": "She hopes nobody noticed, and is watching everyone to make sure.",
+      "prompt_auszug": "SHAME / trying to look normal. Female-read pear-shaped resident, lopsided pinned-up ink quiff, short faded coral neck scarf. Eyes conspicuously glance away while brows lift unevenly; lips squeezed into a small crooked embarrassed line. One ink hand bashfully shields lower cheek, the other clutches an inside-out little knitted mitten. Upright body trying to make itself narrow, still fills the cell. Comic exposed vulnerability, not sad baby cuteness.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bruno Nochmalsgut",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Erleichterung nach dem Schreck",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "pale-blue pajama collar",
+        "single house key"
+      ],
+      "temperament": "He calls every narrow escape a sensible arrangement that worked as expected.",
+      "prompt_auszug": "RELIEF / nearly laughing after a scare. Broad squat male-read resident with two gently flopping crest lobes, small rumpled pale-blue pajama collar only. One hand presses to chest, the other loosely holds an old single house key. Drooping released shoulders, eyelids half open with visible white eyes, mouth in a lopsided breathy relieved toothy exhale, not a screaming O. The tension has just left him.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Nebenfreud",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Schadenfreude hinter Anteilnahme",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "olive knitted collar",
+        "small tea cup"
+      ],
+      "temperament": "He is terribly sorry about your inconvenience and would like to hear it again.",
+      "prompt_auszug": "SCHADENFREUDE / delight badly concealed. Small round male-read neighbor with a hook-shaped goo crest, dull olive sleeveless knitted collar. Red irises dart sideways, one brow raised. One hand held over a crumpled smug snicker, a couple of irregular upper teeth visible inside mouth; other hand holds a modest tea cup. Delighted eyes contradict his attempted solemnity. No giant tongue.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Haltung",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Gesichtwahren trotz kleiner Katastrophe",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "threadbare burgundy bow tie",
+        "cracked handleless cup"
+      ],
+      "temperament": "He insists that the damage is a deliberate improvement in presentation.",
+      "prompt_auszug": "SAVING FACE / dignity after a minor disaster. Tall narrow male-read resident with drooping loop crest, threadbare burgundy bow tie and one cracked handleless teacup held proudly upright. Chin/lower goo lip lifted, tightly controlled asymmetrical smile, eyes wide with injured dignity and one twitching lid. Other ink hand pats his own bow tie. No mask or literal extra face.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Vorschrift",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Zwanghafte Regelgewissheit mit leisem Zweifel",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "beige domestic cap",
+        "brass-rim reading spectacles",
+        "blank folded household card"
+      ],
+      "temperament": "He feels safest when the exception has been explicitly forbidden.",
+      "prompt_auszug": "COMPULSIVE RULE CERTAINTY / brittle confidence. Blocky-rounded male-read resident, tiny beige domestic cap, little brass-rim reading spectacles BELOW brows so eyes remain readable. Clutches one very small blank folded household rule card against his chest; other hand sternly raises one rounded ink finger. Pursed indignant mouth, one eyebrow rigid and the other betraying anxious doubt. No symbols, writing, giant books, machine anatomy or bureaucratic clutter.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_EMOTIONS_AMBIVALENCE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Martha Trotzdem",
+      "bild": {
+        "datei": "EMOTIONS_AMBIVALENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Widerwillige Hilfsbereitschaft",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "mustard headscarf",
+        "small patched apron front",
+        "soup bowl and spoon"
+      ],
+      "temperament": "She resents the interruption and has already made enough soup for two.",
+      "prompt_auszug": "RELUCTANT HELPFULNESS / annoyed but caring. Female-read wide crescent-shaped upright blob, short loosely tied mustard headscarf and a single small apron-front patch leaving most goo exposed. Holds a plain little bowl of soup securely to herself, spare spoon tucked in the bowl. One brow scowls and the other lifts with concern; mouth crooked in a resigned closed-lip sigh, gaze attentive toward camera. Clearly capable of kindness while mildly offended by the inconvenience. No matching stock grin or round shouting mouth.",
+      "prompt_quelle": "EMOTIONS_AMBIVALENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ]
+}

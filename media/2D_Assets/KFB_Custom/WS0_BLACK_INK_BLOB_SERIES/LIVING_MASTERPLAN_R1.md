@@ -1,3 +1,9 @@
+## 07.11.2026 · New emotional-resident candidate / gentle material trial
+
+Georg continues the existing line with small prospective style adjustments. First mixed G01/G02/G03/G05/G06 candidate: [EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json](EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json). Six standalone residents, one sheet, DRAFT; not a completed cluster or new Golden Sample. No change to142accepted sheets or the separate GIF lane. New material treatment awaits visual judgement; pronounced plum remains. Current [SOP](SOP_INK_MONSTERS_R2.md) and [Return](RETURN.md) carry actual limits.
+
+---
+
 ## Aktualisierung · 06.11.2026 · registrierter König und vorhandener SDF-Pilot
 
 [ANIMATION_LANE_R2.md](ANIMATION_LANE_R2.md) und [ANIMATION_QUEUE_R2.json](ANIMATION_QUEUE_R2.json) konkretisieren die nächste Ausführung. King Ultimately ist als Librarian-Einzelquelle geprüft; eine noch offene Spiel-ID blockiert die Bild-/Motion-Produktion nicht. Native PNG455×515mit451×511Motiv und2pxRand;Sourcehash undRegistry-ID liegen vor. Der hiesige einzelne GIF-Fähigkeitstest ergab eine statische PNG,keine Animation. Für die nächste Ausführung ist deshalb ein tatsächlich GIF-fähiger Kanal erforderlich.
