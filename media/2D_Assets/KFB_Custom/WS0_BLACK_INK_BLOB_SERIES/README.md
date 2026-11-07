@@ -1,3 +1,9 @@
+## 07.11.2026 · Latest accepted count
+
+143DesignPASS sheets/858depictions,141/846eligible for existing intake. Emotions/Ambivalence six and gentle material correction accepted. See current [Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json). New neighbourhood sheet in production,not counted until Georg PASS.
+
+---
+
 ## Aktueller Einstieg · Slop-Linie · 06.11.2026
 
 Die fortgesetzte Serie ist von Georg freigegeben: **142 Sheets / 852 Darstellungen**, davon140/840 für den bestehenden Intake. Aktueller Einstieg ist der [Living Masterplan R1](LIVING_MASTERPLAN_R1.md), ergänzt durch [Formatrezepte](FORMAT_RECIPES_R1.md), [Coverage](COVERAGE_R1.md), [Lücken-Vorschläge](GAP_BACKLOG_R1.json) und [Animations-Pilot](ANIMATION_PILOT_R1.md). Quellen bleiben Setmanifeste/Index; Asset Librarian und WS1 bleiben die Receiving-/Runtime-Owner.

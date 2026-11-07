@@ -1,3 +1,9 @@
+## 07.11.2026 · Emotional residents and gentle style steering accepted
+
+Georg: all six PASS, cautious style correction fits. Current143accepted sheets/858depictions;141/846eligible. Authoring index and incremental coverage updated;800identity keys are not a canonical registry census. Earlier142-count and pending text below are historical snapshots. Next authorized outcome: one six-character landscape transparent sheet of simple residents and absurd neighbourhood rituals. No GIF/runtime task added.
+
+---
+
 ## 07.11.2026 · New emotional-resident candidate / gentle material trial
 
 Georg continues the existing line with small prospective style adjustments. First mixed G01/G02/G03/G05/G06 candidate: [EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json](EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json). Six standalone residents, one sheet, DRAFT; not a completed cluster or new Golden Sample. No change to142accepted sheets or the separate GIF lane. New material treatment awaits visual judgement; pronounced plum remains. Current [SOP](SOP_INK_MONSTERS_R2.md) and [Return](RETURN.md) carry actual limits.

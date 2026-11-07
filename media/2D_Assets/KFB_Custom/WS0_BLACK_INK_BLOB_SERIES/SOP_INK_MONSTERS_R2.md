@@ -1,3 +1,9 @@
+## Georg PASS · 07.11.2026 · Gentle material direction accepted
+
+All six EMOTIONS_AMBIVALENCE_6_2026-11-07 designs PASS. Georg explicitly accepts the cautious style correction. Continue that SAME small charcoal bias/subtle plum/soft satin sculpted clay direction; do not intensify darkening or remove tactile volume. Earlier pending language below is historical. Keep actual ORIGINAL reference inputs, no generated-image style-parent chain. No retrofit of accepted assets. Next authorized sheet: six simple building residents and absurd neighbourhood rituals, two female-read.
+
+---
+
 ## Georg steering · 07.11.2026 · gentle material correction, future runs only
 
 Georg chooses SMALL style adjustments to avoid overcorrection while continuing the accepted Slop line. Preserve rounded tactile modeled clay, expressive ink anatomy, original references, white/ivory sclera + red iris + black pupil, prop craft and established output formats. Nudge broad body tone only slightly toward charcoal/ink black; retain subtle deep-plum undertone and restrained satin highlights. Do not flatten all volume into matte black, replace clay with liquid/chrome, or globally darken eyes/teeth/props. Avoid luminous white/lavender rim glow and fibrous material on the goo. Existing approved artwork stays accepted and unchanged. This is prospective prompt steering, not a claim of a validated new material baseline.

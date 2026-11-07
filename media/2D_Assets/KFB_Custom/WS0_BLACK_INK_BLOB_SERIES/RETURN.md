@@ -1,3 +1,11 @@
+# WSA Return · Emotional residents PASS / neighbourhood continuation · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Georg explicitly accepts all six emotions/ambivalence designs AND the cautious style correction. Manifest all six PASS,intake eligible for downstream extraction;cards/lore remain DESIGN,technical alpha and native-master limitations preserved. Index143PASS sheets/858depictions;141eligible/846depictions. Coverage increment only:previous142manifest audit plus current accepted one,800authoring identity keys not registry census. Material steering accepted without demanding stronger correction or retroactive repairs.
+
+Changed12files: prior set manifest,production record,technicalQA,biographies;SOP,index,coverageJSON/MD,backlog,masterplan,README,Return. Exact branch/file readbacks required. No image changed,merge,registry admission or runtime test. Next authorized sheet: one new original-reference-conditioned3x2 transparent PNG,six simple residents with absurd neighborhood rituals,two female-read. Next gate: finish that new sheet and present actual design,not reapprove accepted material pilot.
+
+---
+
 # WSA Return · Small material adjustment / emotional residents pilot · 2026-11-07
 
 Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;branch assets/ws0-ink-miners-2026-11-04;draft PR469. Outcome: ONE new original-reference-conditioned1536x1024 landscape3x2 PNG with six unique everyday residents (two female-read), themes shame,relief,schadenfreude,saving face,compulsive rule certainty,reluctant helpfulness. New set WSA_EMOTIONS_AMBIVALENCE_20261107 is DRAFT/AWAITING_GEORG, intake false. Existing142DesignPASS sheets/852depictions unchanged; new draft not counted as accepted. No new animation.

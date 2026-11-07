@@ -1,20 +1,20 @@
 {
   "schema": "kfb.slop-set-index/1",
-  "date": "2026-11-04",
+  "date": "2026-11-07",
   "source_owner": {
     "repo": "georg-doc/kayfabizarro",
     "branch": "assets/ws0-ink-miners-2026-11-04",
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 142,
-    "pass_depictions": 852,
+    "selected_sheets": 143,
+    "pass_depictions": 858,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 140,
-    "intake_eligible_depictions": 840,
-    "other_authoring_depictions": 732
+    "intake_eligible_sheets": 141,
+    "intake_eligible_depictions": 846,
+    "other_authoring_depictions": 738
   },
   "excluded_sources": [
     {
@@ -988,6 +988,12 @@
       "set_id": "WSA_SPACE_TROOPERS_20261106",
       "manifest": "SPACE_TROOPERS_6_2026-11-06/MANIFEST.json",
       "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EMOTIONS_AMBIVALENCE_20261107",
+      "manifest": "EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }
