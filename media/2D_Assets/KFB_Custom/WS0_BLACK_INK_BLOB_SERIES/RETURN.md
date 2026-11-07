@@ -1,3 +1,23 @@
+# CURRENT RETURN · Manual Webchat GIF Worklist R1 · 2026-11-07
+
+**Outcome:** Georg rejected the CLI/API fallback and selected manual ChatGPT Web production. A standalone, directly usable HTML worklist was generated at `artifacts/KFB_Slop_GIF_Worklist.html` in the current KFB Hub project. The same additive Asset Librarian implementation is preserved in the existing Site source repository at commit `8d208cd19978220d42d9bf20dd41fc3c61b1be77`.
+
+**Coverage:** 1,191 canonical Slop records from pinned media commit `58ca51561a70957aa77013d4e75e8a5727886c52`: 1,077 base actors shown by default and 114 optional variants. Each row supplies the pinned GitHub original, direct raw PNG URL, stable asset ID, proposed `*_idle_r1.gif` filename and a copy-ready German Webchat prompt requiring the actual PNG attachment, six frames, approximately 220 ms/frame, transparency, seamless looping and exact character identity.
+
+**Workflow decision:** Webchat generates and downloads the GIF only. Do not let every individual chat write GitHub. Mark accepted files `Batch-bereit`, export the manifest, then perform one controlled check-in/registry QA pass per 20–30 files. Game acceptance remains a separate WS1 gate.
+
+**Checks:** standalone inline scripts compile; embedded inventory 1,191/1,077/114; Blitzmagier present; Site worklist test PASS; library model PASS (24,508 assets); popup roster/filter PASS; Slop metadata PASS (1,191 canonical Slops); workflow parity PASS; intake reconciliation PASS. The Site package build also passed its content and expanded-archive budget checks.
+
+**Publication status:** the existing public Asset Librarian remains live at version 59 / source `b20514738d8c710b88a78a28620bff07abb66afc`. No new public version is claimed. The worklist source commit is remotely preserved, but two archive transfers timed out after five minutes before any version was created; version history was inspected after the timeout and contained no partial or duplicate version. The upload seam was stopped after two non-improving attempts. No registry, game, merge or Live promotion was performed.
+
+**Owners preserved:** WS0 remains character/curation owner; the existing Asset Registry/KFB Asset Librarian remains asset truth; WS1 remains game/runtime owner. The worklist records candidates and progress but does not admit GIF bytes.
+
+**Exactly one next gate:** Georg opens the standalone HTML worklist, produces the first controlled batch of 20 base Slops in ChatGPT Web, then returns the 20 named GIFs plus the exported batch manifest for one verified intake/check-in pass.
+
+Final branch HEAD must be fetched after this Return commit.
+
+---
+
 # CURRENT RETURN · GIF Loop Pilot R0 · 2026-11-07
 
 **Outcome:** one explicitly requested, reference-conditioned `SL_MAGIE_BLITZMAGIER` loop pilot was run through the current built-in Work image path. The canonical GitHub PNG was shown alone and supplied as the identity authority. Five unique user-provided Golden GIF payloads were inspected as motion/format references.
