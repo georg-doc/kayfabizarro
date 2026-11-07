@@ -1,0 +1,326 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESTORE_NORMALITY_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+    "sha256": "02f8e24c81b1b0efa2349c73848ca16b0019692709bcdd242999b6ea3991c9fb"
+  },
+  "production_record": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESTORE_NORMALITY_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESTORE_NORMALITY_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Routine Restoration Office",
+    "theme": "Steampunk Normality Repair",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "restoration encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Reg Patchday",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "confident service lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one portable brass gauge with a single blank dial"
+      ],
+      "temperament": "Reg Patchday is the crew's confident service lead.",
+      "prompt_auszug": "slender reverse-comma shape, eager eyes and a narrow open two-upper-tooth grin",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "confident service lead"
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Seamless",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dubiously optimistic seam fixer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one short roll of wide cream repair tape"
+      ],
+      "temperament": "Mina Seamless is the crew's dubiously optimistic seam fixer.",
+      "prompt_auszug": "broad scalloped silhouette, heavy skeptical eyes and a straight closed dark mouth",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dubiously optimistic seam fixer"
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Edwin Reset",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled reset technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small copper reset box with a single big blank green button"
+      ],
+      "temperament": "Edwin Reset is the crew's startled reset technician.",
+      "prompt_auszug": "lean pear silhouette, one high brow and a closed crooked determined smirk",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled reset technician"
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frank Again",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "bored continuity keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small spring-wound clockwork spool"
+      ],
+      "temperament": "Frank Again is the crew's bored continuity keeper.",
+      "prompt_auszug": "round low body, wide unequal eyes and a tiny startled oval mouth without teeth",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "bored continuity keeper"
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Almostnew",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "patient cosmetic restorer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one little brass polishing brush"
+      ],
+      "temperament": "Nell Almostnew is the crew's patient cosmetic restorer.",
+      "prompt_auszug": "wide soft square body, half-lidded eyes and a dry closed smile",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "patient cosmetic restorer"
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toby Asbefore",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quietly worried handoff lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+        "WSA_RESTORE_NORMALITY_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one compact green latch case holding a blank replacement facade tile"
+      ],
+      "temperament": "Toby Asbefore is the crew's quietly worried handoff lead.",
+      "prompt_auszug": "curved upright body, attentive uneven brows and a tight closed pursed mouth",
+      "prompt_quelle": "RESTORE_NORMALITY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "quietly worried handoff lead"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "restoration_task": "Steampunk Normality Repair",
+    "team_kit": "dark moss-green short coveralls, plum collars, worn brass and copper instrument housings, muted ivory gloves, rounded clockwork tool accents",
+    "trios": [
+      {
+        "id": "WSA_RESTORE_NORMALITY_20261107_TRIO_A",
+        "name": "Reset Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESTORE_NORMALITY_20261107_TRIO_B",
+        "name": "Continuity Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_03",
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+      "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+    ]
+  }
+}

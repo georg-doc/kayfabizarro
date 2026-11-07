@@ -1,3 +1,15 @@
+# WSA Return · Six cleanup and restoration crews · 2026-11-07
+
+Owner WSA, repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg's full-suit containment PASS is verified at b792ed4defca0b103b2c03e7e696585865ea7dd0 with 31 readbacks. The accepted authoring index contains 173 sheets / 1038 depictions; intake eligibility covers 171 sheets / 1026 depictions.
+
+Six native image jobs produced 36 cleanup and rebuilding workers, using the two verified original clay ink benchmarks. The six 1536×1024 RGBA PNGs retain their original bytes. English cards, biographies, prompts, hashes and twelve named trio assignments accompany the images. [RESTORATION_CREW_BATCH_20261107.json](RESTORATION_CREW_BATCH_20261107.json) indexes all six packages. Each new set is DRAFT and intake false pending Georg.
+
+Checked 36 unique identities, matching card/biography IDs, twelve trios and six full rosters. Transparent alpha is present on every sheet; 29 of 30 sampled backgrounds are alpha zero and one is alpha one. Artwork crosses nominal cell divisions on all six sheets, so individual extraction requires silhouette-aware bounds. The salvage scale is clock-like. Cleaner and normality figures inherit some pale wing-like appendages, and normality top-left inherits an eyepatch; these remain explicit design review notes. No extraction or runtime test is claimed.
+
+This phase writes 51 paths: six PNGs, 42 metadata files, the batch record, masterplan and this Return. Exact branch head and intended files are fetched after the write. Next gate: Georg's per-sheet design verdict. Game restoration behaviour and dispatch are proposals.
+
+---
+
 ## Full-suit containment design acceptance
 
 Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.

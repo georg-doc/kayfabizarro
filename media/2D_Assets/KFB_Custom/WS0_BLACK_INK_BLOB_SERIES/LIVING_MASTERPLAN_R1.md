@@ -1,3 +1,9 @@
+## Cleanup and restoration crews · 2026-11-07
+
+Six transparent 3×2 sheets add 36 distinct workers across street sweeping, technical salvage, decontamination, discreet scene cleaning, rapid facade building and clockwork normality repair. Each crew has two fixed trios and a full six-member roster. English names, cards, biographies, source prompts and QA are indexed in [RESTORATION_CREW_BATCH_20261107.json](RESTORATION_CREW_BATCH_20261107.json). All new designs are DRAFT pending Georg. The accepted index remains at 173 sheets / 1038 depictions; 171 sheets / 1026 depictions are intake eligible. Restoration phases and dispatch remain design proposals.
+
+---
+
 ## Full-suit containment design acceptance
 
 Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.

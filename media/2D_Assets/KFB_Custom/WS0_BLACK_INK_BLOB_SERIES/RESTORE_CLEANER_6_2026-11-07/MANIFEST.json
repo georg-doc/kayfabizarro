@@ -1,0 +1,326 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESTORE_CLEANER_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+    "sha256": "ee80c25ef0f133b98bce75dcf4cc5206037b9bb8539ae548795613c610c6aab8"
+  },
+  "production_record": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESTORE_CLEANER_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESTORE_CLEANER_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Unremarkable Finish",
+    "theme": "Discreet Scene Cleaners",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "restoration encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vin Untrace",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "severely polite lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one short folded mop with a clean cream cloth head"
+      ],
+      "temperament": "Vin Untrace is the crew's severely polite lead.",
+      "prompt_auszug": "wide soft square body, half-lidded eyes and a dry closed smile",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "severely polite lead"
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Spotless",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "skeptical stain inspector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one tiny brass inspection loupe held below eyes"
+      ],
+      "temperament": "Faye Spotless is the crew's skeptical stain inspector.",
+      "prompt_auszug": "curved upright body, attentive uneven brows and a tight closed pursed mouth",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "skeptical stain inspector"
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Neil Bagwell",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "nervously tidy courier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small closed charcoal cleanup bag"
+      ],
+      "temperament": "Neil Bagwell is the crew's nervously tidy courier.",
+      "prompt_auszug": "slender reverse-comma shape, eager eyes and a narrow open two-upper-tooth grin",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "nervously tidy courier"
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Polish",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "serenely thorough finisher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one thick round buffing pad"
+      ],
+      "temperament": "Hal Polish is the crew's serenely thorough finisher.",
+      "prompt_auszug": "broad scalloped silhouette, heavy skeptical eyes and a straight closed dark mouth",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "serenely thorough finisher"
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Plausible",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly satisfied surface painter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one stubby cream paint roller"
+      ],
+      "temperament": "Vera Plausible is the crew's dryly satisfied surface painter.",
+      "prompt_auszug": "lean pear silhouette, one high brow and a closed crooked determined smirk",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dryly satisfied surface painter"
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sid Ordinary",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary final checker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+        "WSA_RESTORE_CLEANER_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small blank ivory sign panel without lettering"
+      ],
+      "temperament": "Sid Ordinary is the crew's weary final checker.",
+      "prompt_auszug": "round low body, wide unequal eyes and a tiny startled oval mouth without teeth",
+      "prompt_quelle": "RESTORE_CLEANER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary final checker"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "restoration_task": "Discreet Scene Cleaners",
+    "team_kit": "coal-grey work aprons, dusty burgundy sleeve cuffs, cream gloves, dull brass buckles, small neatly closed cases",
+    "trios": [
+      {
+        "id": "WSA_RESTORE_CLEANER_20261107_TRIO_A",
+        "name": "Removal Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESTORE_CLEANER_20261107_TRIO_B",
+        "name": "Finish Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_03",
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+      "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+    ]
+  }
+}

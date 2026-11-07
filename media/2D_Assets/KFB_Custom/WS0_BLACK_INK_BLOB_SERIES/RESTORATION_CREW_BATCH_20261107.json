@@ -1,0 +1,346 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_RESTORATION_CREWS_20261107",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "date": "2026-11-07",
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_teams": 6,
+    "female_read": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_RESTORE_SWEEP_20261107",
+      "title": "The Morning After",
+      "unit": "Street Sweepers",
+      "manifest": "RESTORE_SWEEP_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_SWEEP_6_2026-11-07/sheet-r1.png",
+      "sha256": "e251e2d2fbb61076dd2e565bd788fbb6939c8e4e217842a3996bfb3f0aae6932",
+      "git_blob": "a2e44939e43710b4ba43357a503365acfae47268",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Street Sweepers",
+        "team_kit": "weathered petrol-teal short work smocks, ochre collars, scuffed orange gloves, small steel bin fittings",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_SWEEP_20261107_TRIO_A",
+            "name": "Brush Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_01",
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_02",
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_SWEEP_20261107_TRIO_B",
+            "name": "Collection Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_04",
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_05",
+              "WSA_RESTORE_SWEEP_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_01",
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_02",
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_03",
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_04",
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_05",
+          "WSA_RESTORE_SWEEP_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESTORE_SALVAGE_20261107",
+      "title": "The Bent Bolt Detail",
+      "unit": "Technical Salvage",
+      "manifest": "RESTORE_SALVAGE_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_SALVAGE_6_2026-11-07/sheet-r1.png",
+      "sha256": "2bd1dcc46eced97f94da3ff67def34c3593d738099847212ba84f9a60ed19041",
+      "git_blob": "82fff81e88ab7c68b9bee2116ad7147208c90473",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Technical Salvage",
+        "team_kit": "rusty ochre hardhats, graphite short utility bibs, muted steel fittings, tan glove cuffs, visibly used dieselfantasy tools",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_SALVAGE_20261107_TRIO_A",
+            "name": "Recovery Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_01",
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_02",
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_SALVAGE_20261107_TRIO_B",
+            "name": "Sorting Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_04",
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_05",
+              "WSA_RESTORE_SALVAGE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_01",
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_02",
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_03",
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_04",
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_05",
+          "WSA_RESTORE_SALVAGE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESTORE_DECON_20261107",
+      "title": "The Rinse Shift",
+      "unit": "Decontamination Cleaners",
+      "manifest": "RESTORE_DECON_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+      "sha256": "68c76c9b6f1da4c5774c79d54571697c8de53eb717277c334e3393613f34991e",
+      "git_blob": "fefc2ee48430f76e1be6cdf50c6edc0f8c6ad6de",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Decontamination Cleaners",
+        "team_kit": "faded ivory and sea-green rubber coveralls over round ink bodies, tiny ink feet, teal gloves, grey couplers, green rinse pods",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_DECON_20261107_TRIO_A",
+            "name": "Wash Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_DECON_ACTOR_20261107_01",
+              "WSA_RESTORE_DECON_ACTOR_20261107_02",
+              "WSA_RESTORE_DECON_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_DECON_20261107_TRIO_B",
+            "name": "Release Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_DECON_ACTOR_20261107_04",
+              "WSA_RESTORE_DECON_ACTOR_20261107_05",
+              "WSA_RESTORE_DECON_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_DECON_ACTOR_20261107_01",
+          "WSA_RESTORE_DECON_ACTOR_20261107_02",
+          "WSA_RESTORE_DECON_ACTOR_20261107_03",
+          "WSA_RESTORE_DECON_ACTOR_20261107_04",
+          "WSA_RESTORE_DECON_ACTOR_20261107_05",
+          "WSA_RESTORE_DECON_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESTORE_CLEANER_20261107",
+      "title": "The Unremarkable Finish",
+      "unit": "Discreet Scene Cleaners",
+      "manifest": "RESTORE_CLEANER_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_CLEANER_6_2026-11-07/sheet-r1.png",
+      "sha256": "ee80c25ef0f133b98bce75dcf4cc5206037b9bb8539ae548795613c610c6aab8",
+      "git_blob": "c3f8cdb90ed687e9397c613df1d2223ccfb4e8c8",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Discreet Scene Cleaners",
+        "team_kit": "coal-grey work aprons, dusty burgundy sleeve cuffs, cream gloves, dull brass buckles, small neatly closed cases",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_CLEANER_20261107_TRIO_A",
+            "name": "Removal Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_CLEANER_20261107_TRIO_B",
+            "name": "Finish Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+              "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_03",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+          "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESTORE_FACADE_20261107",
+      "title": "The Instant Front",
+      "unit": "Rapid Facade Builders",
+      "manifest": "RESTORE_FACADE_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+      "sha256": "2e0f0a6170b8643f0174fdd12dfa4844da3d0425eaba36e85d0cb7cbd1831ed5",
+      "git_blob": "bc5d1781cb34924f02a4dd499b564c0d63a1e712",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Rapid Facade Builders",
+        "team_kit": "faded sky-blue work caps, cream canvas bib tabs, worn yellow latch panels, clay steel tools with modest retro-sci-fi inserts",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_FACADE_20261107_TRIO_A",
+            "name": "Panel Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+              "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+              "WSA_RESTORE_FACADE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_FACADE_20261107_TRIO_B",
+            "name": "Fit Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+              "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+              "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_03",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESTORE_NORMALITY_20261107",
+      "title": "The Routine Restoration Office",
+      "unit": "Steampunk Normality Repair",
+      "manifest": "RESTORE_NORMALITY_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESTORE_NORMALITY_6_2026-11-07/sheet-r1.png",
+      "sha256": "02f8e24c81b1b0efa2349c73848ca16b0019692709bcdd242999b6ea3991c9fb",
+      "git_blob": "150a81acd9132f2c172445e338d511e7ae8d9bcd",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "restoration_task": "Steampunk Normality Repair",
+        "team_kit": "dark moss-green short coveralls, plum collars, worn brass and copper instrument housings, muted ivory gloves, rounded clockwork tool accents",
+        "trios": [
+          {
+            "id": "WSA_RESTORE_NORMALITY_20261107_TRIO_A",
+            "name": "Reset Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESTORE_NORMALITY_20261107_TRIO_B",
+            "name": "Continuity Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+              "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_03",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+          "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 173,
+    "depictions": 1038,
+    "intake_eligible_sheets": 171,
+    "intake_eligible_depictions": 1026
+  },
+  "restoration_proposal": {
+    "status": "DESIGN",
+    "phases": [
+      "Sweep loose debris",
+      "Recover reusable parts",
+      "Wash and isolate residue",
+      "Remove visible traces",
+      "Erect provisional facades",
+      "Reassert an apparently ordinary routine"
+    ],
+    "dispatch": "Each crew can be read as two fixed trios or one six-member unit. Phase order is a narrative proposal.",
+    "game_implementation": "NOT_IMPLEMENTED"
+  },
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "transparent_background_verified": true,
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "background_samples": {
+      "count": 30,
+      "alpha_zero": 29,
+      "alpha_one": 1
+    },
+    "identity_card_biography_membership_checks": "PASS",
+    "individual_extraction": "NOT_PERFORMED",
+    "nominal_equal_cell_divisions": "Every sheet has substantial artwork crossing at least one nominal grid division. Extraction must use observed silhouettes rather than blind equal-cell cuts.",
+    "runtime": "NOT_TESTED",
+    "design_deviations": [
+      "Salvage spring scale reads as a clock-like instrument.",
+      "Cleaner bag reads as a satchel; pale wing-like appendages appear on two upper-row figures.",
+      "Normality top-left inherits an eyepatch and pale wing-like appendages from the veteran reference. Gauge face is blank; repair tape resembles tissue paper."
+    ],
+    "next_gate": "Georg's per-sheet design verdict"
+  }
+}
