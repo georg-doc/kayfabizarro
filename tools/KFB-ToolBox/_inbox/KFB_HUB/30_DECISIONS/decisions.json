@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "entries": [
   {
    "id": "V-001",
@@ -22646,6 +22646,21 @@
    "superseded_by": [],
    "why": "Spieler sollen sehen und hoeren, wann ein Haus faellt und was sie befreit haben, ohne Kampf oder Fahrt zu unterbrechen.",
    "applies": "ab 06.11."
+  },
+  {
+   "id": "V-1542",
+   "date": "07.11.2026",
+   "area": "HyperNorm",
+   "verdict": "DECISION",
+   "text": "Georg 07.11.: Terrain-Farbbaender als HyperNorm-Ebene. WS1 gibt die Farbbaender einer Stelle als Daten heraus (kfb.hn-farbbaender/1: Farbstufen, Bandbreiten, Kantenart, Themen-Mischung; node-safe, Worker-tauglich); WSV baut den Darsteller Farbband im Kern (Beat-/Stem-Kopplung, Mischmodus aus der Farbwelt), eine Ebene unter mehreren, nie dominant. Schritt 2: Baender laufen bei Bresche/Einsturz ins Gelaende (wie V-849). Reihenfolge: WSV nach Demo-Ebene (W-015), WS1 nach #81 und RC4. WHY: Gebaeude gehoeren sichtbar zum Ort (V-907 lebendig statt nur Palette); Farbbaender sind das Erkennungszeichen der Welt und eine starke Stapel-Ebene im 6–12-Ebenen-Modell.",
+   "values": {},
+   "owner": "WSV, WS1",
+   "check": "W-017, N-229",
+   "source": "Georg 07.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
@@ -22908,66 +22923,6 @@
    "source": "KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/HANDOVER_WSA.md:33",
    "part": "",
    "georg": "Kompaktes Review-Paket: genauer PR/Head, tatsächlich gelaufene Tests, sichtbarer Beleg, offene Punkte, **ein** nächstes Gate. Bericht im Format `SOURCE / DECISI"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:114",
-   "part": "",
-   "georg": "- GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:124",
-   "part": "",
-   "georg": "- OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank."
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:127",
-   "part": "",
-   "georg": "- GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“)."
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:3",
-   "part": "",
-   "georg": "Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:8",
-   "part": "Oberseite, ein Mesh, Farb- und Maskenkarte 1024²",
-   "georg": "Richtung gut"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:9",
-   "part": "Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung",
-   "georg": "gut"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:11",
-   "part": "5 Biome (Burg, Utopia, Dystopia, Protopia, Schnee): Palette, Pflanzen, Gelände, ",
-   "georg": "Biome-Logik gut"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:12",
-   "part": "Schnee bis zur Kante, kein Rand-Wall",
-   "georg": "offen"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:13",
-   "part": "Landmarken (Hexagon Pack) ohne Verformung",
-   "georg": "„cool, aber zu eckig, passt nicht zum Knet-Look“"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:14",
-   "part": "Platzierung Bäume (nicht auf Straße, nicht im Bach)",
-   "georg": "offen"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:15",
-   "part": "**Unterseite v2–v6**",
-   "georg": "**FAIL**"
-  },
-  {
-   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:16",
-   "part": "Wasser, Bach, Wasserfall",
-   "georg": "zurückgestellt"
   },
   {
    "source": "_kfb_checkin/router/CHANGELOG.md:278",

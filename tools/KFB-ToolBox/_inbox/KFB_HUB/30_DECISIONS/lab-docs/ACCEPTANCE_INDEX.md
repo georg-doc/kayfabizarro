@@ -1,4 +1,4 @@
-# Acceptance-Index (automatisch, 2026-11-06)
+# Acceptance-Index (automatisch, 2026-11-07)
 
 Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien unter ~/Dropbox/CLAUDE (ohne KFB Open World). Spalte bzw. Zeile „GEORG ACCEPTANCE“ bzw. „Georg-Abnahme“.
 
@@ -56,18 +56,6 @@ Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien 
 | `KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.md:16` |  | - GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge |
 | `KFB Stunt Car Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/CHANGELOG.stage-first.md:4` |  | - GEORG ACCEPTANCE: `ACCEPTED FOR WORKING BASELINE` (16.09., WSA-Chat). Kein Bug-frei-, kein Final-Look-Anspruch. Nächster Slice `Pose → Props → Stage` NICHT ge |
 | `KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/HANDOVER_WSA.md:33` |  | Kompaktes Review-Paket: genauer PR/Head, tatsächlich gelaufene Tests, sichtbarer Beleg, offene Punkte, **ein** nächstes Gate. Bericht im Format `SOURCE / DECISI |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:114` |  | - GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:124` |  | - OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank. |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:127` |  | - GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“). |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:3` |  | Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:8` | Oberseite, ein Mesh, Farb- und Maskenkarte 1024² | Richtung gut |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:9` | Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung | gut |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:11` | 5 Biome (Burg, Utopia, Dystopia, Protopia, Schnee): Palette, Pflanzen, Gelände,  | Biome-Logik gut |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:12` | Schnee bis zur Kante, kein Rand-Wall | offen |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:13` | Landmarken (Hexagon Pack) ohne Verformung | „cool, aber zu eckig, passt nicht zum Knet-Look“ |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:14` | Platzierung Bäume (nicht auf Straße, nicht im Bach) | offen |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:15` | **Unterseite v2–v6** | **FAIL** |
-| `Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:16` | Wasser, Bach, Wasserfall | zurückgestellt |
 | `_kfb_checkin/router/CHANGELOG.md:278` |  | Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source |
 | `_kfb_checkin/router/CHANGELOG.md:776` |  | - Georg acceptance OPEN |
 | `_kfb_checkin/router/CHANGELOG.md:810` |  | Georg acceptance remains OPEN. No merge or consumer integration. |
