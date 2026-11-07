@@ -7,8 +7,8 @@
   "pull_request": 469,
   "date": "2026-11-07",
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -63,8 +63,9 @@
           "WSA_RESTORE_SWEEP_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESTORE_SALVAGE_20261107",
@@ -109,8 +110,9 @@
           "WSA_RESTORE_SALVAGE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESTORE_DECON_20261107",
@@ -155,8 +157,9 @@
           "WSA_RESTORE_DECON_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESTORE_CLEANER_20261107",
@@ -201,8 +204,9 @@
           "WSA_RESTORE_CLEANER_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESTORE_FACADE_20261107",
@@ -247,8 +251,9 @@
           "WSA_RESTORE_FACADE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_RESTORE_NORMALITY_20261107",
@@ -293,15 +298,16 @@
           "WSA_RESTORE_NORMALITY_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     }
   ],
   "accepted_authoring_snapshot": {
-    "sheets": 173,
-    "depictions": 1038,
-    "intake_eligible_sheets": 171,
-    "intake_eligible_depictions": 1026
+    "sheets": 179,
+    "depictions": 1074,
+    "intake_eligible_sheets": 177,
+    "intake_eligible_depictions": 1062
   },
   "restoration_proposal": {
     "status": "DESIGN",
@@ -341,6 +347,8 @@
       "Cleaner bag reads as a satchel; pale wing-like appendages appear on two upper-row figures.",
       "Normality top-left inherits an eyepatch and pale wing-like appendages from the veteran reference. Gauge face is blank; repair tape resembles tissue paper."
     ],
-    "next_gate": "Georg's per-sheet design verdict"
-  }
+    "next_gate": "Existing Game/Asset Librarian owner intake after validated individual isolation."
+  },
+  "georg_status": "PASS",
+  "georg_feedback": "All six cleanup and restoration sheets PASS; minor reference inheritances accepted."
 }

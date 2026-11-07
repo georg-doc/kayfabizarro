@@ -1,3 +1,11 @@
+## Cleanup and restoration design acceptance
+
+Georg accepted all six cleanup/restoration sheets and all 36 designs, including their minor reference inheritances. The authoring index contains 179 accepted sheets / 1074 depictions, with 177 sheets / 1062 depictions intake eligible. The existing Game and Asset Librarian owners are the recipients; individual isolation and receiving registration remain pending. Original PNG bytes are unchanged.
+
+Next authorized production: six historically inspired families spanning Stone Age daily life, Sumer, Indus cities, Bronze Age Crete, Maya city-states and medieval Silk Road trades. These are fictional multiverse Slops with English metadata and two female-read figures per sheet.
+
+---
+
 # WSA Return · Six cleanup and restoration crews · 2026-11-07
 
 Owner WSA, repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg's full-suit containment PASS is verified at b792ed4defca0b103b2c03e7e696585865ea7dd0 with 31 readbacks. The accepted authoring index contains 173 sheets / 1038 depictions; intake eligibility covers 171 sheets / 1026 depictions.

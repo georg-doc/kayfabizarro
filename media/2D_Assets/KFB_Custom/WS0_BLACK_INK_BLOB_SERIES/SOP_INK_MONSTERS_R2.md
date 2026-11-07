@@ -1,3 +1,9 @@
+## Georg PASS / historical family continuation · 2026-11-07
+
+The six cleanup and restoration crews are DESIGN PASS, including minor reference inheritances. Continue the accepted 3×2 transparent sheet format, original reference conditioning, gentle charcoal/plum clay, white/red/black eyes, strict-English game text, distinct expressive acting and two female-read characters per sheet. The next series uses historically inspired multiverse families. No new runtime or animation scope.
+
+---
+
 ## Georg PASS / next digital satire batch · 2026-11-07
 
 All three REACTIONS_ALARM/CONTACT/FRICTION six-sheets (18figures) Georg DESIGN PASS,including minor generated details noted in QA. Existing strict-English game text and gentle material steering remain binding. Next authorized outcome:six fresh unique-six transparent landscape sheets:doomscroll/brainrot,fictional neural-link smombies,social-media addicts,gamers/dopamine seekers,influencers with absurd product placement,podcaster archetypes.2female-read planned each,organic ink body dominant,readable simple props,actual original reference inputs. Fictional devices/brand-free props,no claims about actual products. No extra runtime or GIF task.

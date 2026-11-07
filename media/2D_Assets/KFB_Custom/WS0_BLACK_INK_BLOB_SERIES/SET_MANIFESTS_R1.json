@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 173,
-    "pass_depictions": 1038,
+    "selected_sheets": 179,
+    "pass_depictions": 1074,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 171,
-    "intake_eligible_depictions": 1026,
-    "other_authoring_depictions": 918
+    "intake_eligible_sheets": 177,
+    "intake_eligible_depictions": 1062,
+    "other_authoring_depictions": 954
   },
   "excluded_sources": [
     {
@@ -1174,6 +1174,42 @@
     {
       "set_id": "WSA_SUITED_CARD_20261107",
       "manifest": "SUITED_CARD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_SWEEP_20261107",
+      "manifest": "RESTORE_SWEEP_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_SALVAGE_20261107",
+      "manifest": "RESTORE_SALVAGE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_DECON_20261107",
+      "manifest": "RESTORE_DECON_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_CLEANER_20261107",
+      "manifest": "RESTORE_CLEANER_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_FACADE_20261107",
+      "manifest": "RESTORE_FACADE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_NORMALITY_20261107",
+      "manifest": "RESTORE_NORMALITY_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }
