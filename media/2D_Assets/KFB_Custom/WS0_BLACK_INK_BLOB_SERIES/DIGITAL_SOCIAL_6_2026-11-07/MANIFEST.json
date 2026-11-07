@@ -1,0 +1,274 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+    "sha256": "8e97c81b376a0ca1ae92e8e9baf7e0d1029b275e08cd503701f781e4016583dc"
+  },
+  "production_record": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_SOCIAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_SOCIAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Publicly Private",
+    "theme": "six different social-media dependencies",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Refresh",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "desperate for validation",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one little phone",
+        "tiny dusty-blue ribbon"
+      ],
+      "temperament": "She would like to be liked without having to keep checking.",
+      "prompt_auszug": "Female-read tall pear-shaped blob, modest lashes, tiny dusty-blue ribbon. Phone clutched to chest in one hand, other hand makes tiny pleading palm-up. Eyes hugely hopeful with red irises looking DOWN to phone, raised inner brows, CLOSED strained upturned smile with one worried corner. She waits for approval, not excited gamer.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Outrage",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "performatively furious",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one little phone",
+        "small rust-colored collar"
+      ],
+      "temperament": "He has found an outrage large enough to fill the interval before the next one.",
+      "prompt_auszug": "Male-read wide box-rounded splat, short rust collar. One hand thrusts phone a little away, other ink fist tight beside own chest. One huge eye and other narrowed, ridges unequal, OPEN sideways three-upper-tooth rant. Outrage at something trivial, not soldier with angryVgrin; no floating flames.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Felix Filter",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "obsessively curating himself",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny handmirror",
+        "one little phone"
+      ],
+      "temperament": "He looks exactly like himself after several necessary improvements.",
+      "prompt_auszug": "Male-read lean high-curled ink blob. Holds one TINY handmirror and one tiny phone together low beside own body, face entirelyvisible. One half-lidded vain eye, other appraising squint, CLOSED sharply tilted self-satisfied smile. Ink hand pats own crest while mirror/phone held by opposite hand. No full glam outfit or cosmetics pile.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mabel Mutual",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "terrified of missing out",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small phone",
+        "short faded green scarf"
+      ],
+      "temperament": "She fears missing the occasion more than she enjoys attending it.",
+      "prompt_auszug": "Female-read broad scalloped blob, modest lashes, short fadedgreen scarf. Phone held low in one hand, other hand cups own ear as though listening for the next event. Huge whiteeyes dart sideways opposite bodytilt, brows high with anxious eagerness, OPEN tiny crooked two-tooth gasp. Upright restless twist, no ears as humananatomy.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lenny Lurker",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "silently judging",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small phone"
+      ],
+      "temperament": "He contributes nothing publicly and maintains a comprehensive private verdict.",
+      "prompt_auszug": "Male-read short round low-crest blob, bare goo. Tiny phone held just below mouth by both hands, not obscuring eyes. Thick heavy unequal lids, white sclera visible, irises slide sharply sideways; CLOSED tiny compressed smirk, one brow raised. Whole posture tucked-in but upright/fullcellsize. No trenchcoat, sunglasses or hiding behind wall.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_SOCIAL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Barry Broadcast",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "compulsively oversharing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one compact phone on very short hand grip"
+      ],
+      "temperament": "He mistakes being visible for having arrived.",
+      "prompt_auszug": "Male-read broad triangular splat, three uneven short goo crests. One smallphone on VERYSHORThandgrip at flank angled back toward him, other hand grandly points toward own belly. Wide earnest whiteeyes, asymmetrical OPEN four-upper-tooth announcement mouth, brows raised in exhausting enthusiasm. No longselfiestick, big tripod, screenspeech or lettering.",
+      "prompt_quelle": "DIGITAL_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ]
+}

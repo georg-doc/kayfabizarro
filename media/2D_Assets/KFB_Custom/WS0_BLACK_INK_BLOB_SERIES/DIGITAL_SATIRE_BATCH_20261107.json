@@ -1,0 +1,69 @@
+{
+  "schema": "kfb.slop-production-batch/1",
+  "language": "en",
+  "date": "2026-11-07",
+  "status": "IN_PROGRESS",
+  "planned_generation_jobs": 6,
+  "completed_generation_jobs": 3,
+  "running_generation_jobs": 1,
+  "planned_depictions": 36,
+  "completed_depictions": 18,
+  "georg_status": null,
+  "lore_context": "Fictional HyperNorm residents with binary thought habits, encouraged by the Men in Black and Hunky & Dory;satirical with human warmth. Narrative/calls/voice DESIGN.",
+  "sets": [
+    {
+      "set_id": "WSA_DIGITAL_DOOM_20261107",
+      "title": "One More Terrible Thing",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "design_status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DIGITAL_NEURAL_20261107",
+      "title": "Terms of Thought",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "design_status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+      "title": "Publicly Private",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "design_status": "DRAFT",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DIGITAL_GAMING_20261107",
+      "title": "The Next Small Reward",
+      "generation_status": "RUNNING",
+      "manifest": null,
+      "design_status": "NOT_GENERATED",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+      "title": "An Entirely Personal Recommendation",
+      "generation_status": "PLANNED",
+      "manifest": null,
+      "design_status": "NOT_GENERATED",
+      "georg_status": null,
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_DIGITAL_PODCAST_20261107",
+      "title": "Everyone Has a Microphone",
+      "generation_status": "PLANNED",
+      "manifest": null,
+      "design_status": "NOT_GENERATED",
+      "georg_status": null,
+      "intake_eligible": false
+    }
+  ]
+}
