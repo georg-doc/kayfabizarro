@@ -1,3 +1,9 @@
+## 2026-11-07 · Three English reaction-resident sheets generated
+
+[REACTION_RESIDENT_BATCH_20261107.json](REACTION_RESIDENT_BATCH_20261107.json) records3new landscape3x2transparent sheets/18independent identities: The Unexpected Residents (alarm),Small Openings (contact),The Last Small Inconvenience (friction). All DRAFT awaiting Georg;not counted in145accepted sheets. Low equipment,English names/cards/backstories/field notes/calls. No pair/state/trio relation or combat tier assigned;trash/NPC/resident/pedestrian uses are proposals. Exact prompts and actual original-reference paths archived. G01/G02/G03 experiments;not exhaustive gap closure.
+
+---
+
 ## 2026-11-07 · English-only authoring / certainty PASS
 
 All six certainty designs accepted.145DesignPASS sheets/870depictions;143eligible/858. Latest18names/field notes/state displays now English;technical IDs and image bytes unchanged. Historical catalogue/receiving-copy localization requires separate inventory,not claimed complete. Next bounded series:18new reaction residents inthree independent landscape3x2transparent sheets,English metadata throughout. No automatic enemy/NPC assignment from appearance.

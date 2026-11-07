@@ -1,3 +1,19 @@
+# WSA Return · Three English reaction sheets /18new residents · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Prior certainty six explicitlyPASS and English-only game rule persisted ata429faa48402239affcbd3a528c32ff6132fdfbd with22/22text readbacks. Latest18previous authoring names/states/FrizzleBob notes localized to English;pixels and stable IDs preserved. Existing145accepted sheets/870depictions;143eligible/858.812authoring identity keys not canonical registry census. No claim of complete legacy-catalogue or receiving-copy language migration.
+
+New bounded series:3completed sequential original-reference-conditioned landscape3x2transparent PNG jobs,18independent unique everyday residents/passersby;6female-read planned (2per sheet). ALARM:Six startled,panicked,incredulous,frozen,suspicious,overwhelmed. CONTACT:Six relieved,grateful,awkwardly delighted,guardedly hopeful,embarrassed,compassionate. FRICTION:Six indignant,defiant,impatient,resigned,exhausted,schadenfreude. All three setsDRAFT/intakefalse pending Georg. Eighteen English cards/biographies/personality/voice/call/field-note records archived;proseDESIGN. Technical schema keys/enum tokens retained with English displays. No pair/state/trio links or combat/hit allocation. Trash/NPC uses remain candidates,not new gameplay owner/assignment.
+
+Production:actual original veteran/freche PNGs viewed and hashes verified,passed directly to each job;no generated output as style parent. Same accepted cautious charcoal/plum soft satin clay steering,not further aggressive correction.3generationjobs,0retries/edits/master resizes,0extracted sprites. Model/seed not exposed. Each result inspected before next call. All1536x1024RGBAalpha0..254;fullytransparentpixels605909/622811/595660.15tested background points13alpha0,2alpha1 (CONTACT/FRICTION lowerleft). Full light and96px dark/light composites inspected for each. All six whole upright footless per sheet and broadly similar row scale;not exact margin or universal clean-edge/catalogue-master proof.
+
+Actual source SHA256:ALARM5b236ac8151496493af74fc7e785130570d265ef41b620873cc5cf4fca65b89a;CONTACTb30e754cd6193521491e275555f7efcc4f95086f42a676c5ad7b74c32024154c;FRICTION4e02255dbccc5bb05cfc0c5b987d640aed1f464d5873e0e00ab1bd0bb69429c6. Gitblobs dd29431e951fca4aae76dd358cadb9b7d4b68204 /35e9b9a0d41324a907594202dcfe19e3fdfb2c35 /54a3fb9364ae30c47db2035f31aa9eff86ccc6c0. Detailed prompts/QA/intent preserve differences from plan:ALARM frozen mouth slightly open;CONTACT blanket reads scarf-like;FRICTION watch dial gained marks and bottomright Felix additional lashes/more ambiguous gender reading than planned. No automatic cosmetic repair or self-issued designPASS.
+
+Changed28files:24new setfiles (3PNGs+21JSON),batch record,backlog,masterplan,Return.18unique authoringIDs,matching names/cards/bios and English active game-text fields checked;3x6records and intended gender counts validated. Historical full catalogue re-audit not repeated. Exact branch/head,text equality and PNGGitblob matches verified in final receipt;large binary API may omit actual base64 content,so byte reread not falsely claimed. No new Librarian registration,runtime tests,game rules,Site,publishing,merge or Live. GIF work remains separate.
+
+Nextgate:Georg design verdict on the three reaction sheets,then persist per-sheet PASS/TUNE/FAIL for existing intake.
+
+---
+
 # WSA Return · Certainty PASS / strict English authoring · 2026-11-07
 
 Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Georg accepts all six certainty figures and directs game strictly English including names/meta/backstories. Certainty manifest allPASS,intakeeligible pending technical extraction. Current145accepted sheets/870depictions;143eligible/858.812authoring keys,not registry census;incremental coverage,historical142audit plus three current manifests.
