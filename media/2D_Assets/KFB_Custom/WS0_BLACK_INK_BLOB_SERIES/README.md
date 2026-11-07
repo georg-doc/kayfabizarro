@@ -1,3 +1,9 @@
+## 07.11.2026 · Latest Georg PASS
+
+144DesignPASS sheets/864depictions;142/852eligible for existing intake. All six neighbourhood residents accepted. [Current Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json) govern continuation. Next ideological-habits sheet not yet counted as accepted.
+
+---
+
 ## 07.11.2026 · Latest accepted count
 
 143DesignPASS sheets/858depictions,141/846eligible for existing intake. Emotions/Ambivalence six and gentle material correction accepted. See current [Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json). New neighbourhood sheet in production,not counted until Georg PASS.

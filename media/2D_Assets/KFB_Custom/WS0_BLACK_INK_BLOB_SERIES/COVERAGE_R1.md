@@ -1,3 +1,9 @@
+## 07.11.2026 · Neighbourhood six PASS
+
+Current144DesignPASS sheets/864depictions;142eligible/852depictions.120unique-six sheets,806authoring identity keys (not canonical registry census). Previous142manifest audit plus two new current reads. Earlier snapshots below historical. See current COVERAGE_R1.json.
+
+---
+
 ## 07.11.2026 · Incremental Georg PASS
 
 Emotionen/Ambivalenzen all six DESIGN PASS, gentle material direction accepted. Current143PASS sheets/858depictions,eligible141/846;119unique-six format sheets;800authoring identity keys (not registry census). Previous142manifest audit plus one current accepted manifest,not full re-audit. See COVERAGE_R1.json.

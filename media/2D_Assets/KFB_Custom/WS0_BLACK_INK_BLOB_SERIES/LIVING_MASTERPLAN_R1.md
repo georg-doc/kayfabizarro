@@ -1,3 +1,9 @@
+## 07.11.2026 · Neighbourhood residents accepted
+
+All six NEIGHBOUR_RITUALS_6_2026-11-07 designs Georg PASS. Current144accepted sheets/864depictions,142eligible/852depictions.806authoring identity keys,not canonical census;earlier counts/pending text below historical. Next authorized one-sheet outcome:ideological habits and compulsive certainty types,unique expressive six with two female-read,usual transparent landscape3x2. Keep accepted gentle style direction.
+
+---
+
 ## 07.11.2026 · Next neighbourhood sheet generated
 
 [NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json](NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json): six simple residents performing absurd neighbourhood rituals, two female-read, one original-reference-conditioned3x2 transparent PNG. DRAFT awaiting Georg;not counted among143accepted sheets. Continues the accepted gentle material steering;no further correction or GIF task. All six remain independent;no shared props/pairs/trios.
