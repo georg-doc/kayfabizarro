@@ -1,69 +1,329 @@
 {
   "schema": "kfb.slop-production-batch/1",
-  "language": "en",
   "date": "2026-11-07",
-  "status": "IN_PROGRESS",
+  "language": "en",
+  "status": "GENERATED_AWAITING_GEORG",
   "planned_generation_jobs": 6,
-  "completed_generation_jobs": 3,
-  "running_generation_jobs": 1,
+  "completed_generation_jobs": 6,
+  "running_generation_jobs": 0,
+  "edit_jobs": 0,
+  "retries": 0,
   "planned_depictions": 36,
-  "completed_depictions": 18,
+  "completed_depictions": 36,
+  "independent_identities": 36,
+  "female_read_planned": 12,
   "georg_status": null,
   "lore_context": "Fictional HyperNorm residents with binary thought habits, encouraged by the Men in Black and Hunky & Dory;satirical with human warmth. Narrative/calls/voice DESIGN.",
+  "source_policy": "Two actual original benchmark PNGs per fresh native job,viewed/hashed before use;no generated style parent.",
   "sets": [
     {
       "set_id": "WSA_DIGITAL_DOOM_20261107",
       "title": "One More Terrible Thing",
+      "theme": "doomscrollers and brain-rot content fans",
       "generation_status": "GENERATED",
       "manifest": "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+      "sha256": "c7ff8d139beab7ea9f66b3b75c667d92dcae2d67751d143440b3b3c82449291d",
+      "git_blob": "6fc491d03bea67c1c6ec078a388af4ddd90cfb6c",
       "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Dread Already",
+        "Bella Replay",
+        "Ned Next",
+        "Dot Deadpan",
+        "Monty Deepfeed",
+        "Gus Lastpercent"
+      ],
+      "states": [
+        "compulsively alarmed",
+        "entranced by nonsense",
+        "restless anticipation",
+        "laughing through disgust",
+        "conspiratorial certainty",
+        "unable to stop despite exhaustion"
+      ]
     },
     {
       "set_id": "WSA_DIGITAL_NEURAL_20261107",
       "title": "Terms of Thought",
+      "theme": "smombies with fictional neural-link implants, comic digital dependency",
       "generation_status": "GENERATED",
       "manifest": "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "03bbb929e9b89e1a17a9a9a447cf1c576c041a8f942cdcbe698f2a1764962d72",
+      "git_blob": "5c4af113df571f02e97347a503dc80b1a6fb8718",
       "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Cliff Cloudlink",
+        "Nora Buffering",
+        "Hugh Autocomplete",
+        "Alma Airgap",
+        "Percy Pending",
+        "Zen Unplugged"
+      ],
+      "states": [
+        "rapturously connected",
+        "mentally buffering",
+        "smugly over-assisted",
+        "anxiously disconnecting",
+        "indignant about mandatory updates",
+        "blissfully offline"
+      ]
     },
     {
       "set_id": "WSA_DIGITAL_SOCIAL_20261107",
       "title": "Publicly Private",
+      "theme": "six different social-media dependencies",
       "generation_status": "GENERATED",
       "manifest": "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_SOCIAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "8e97c81b376a0ca1ae92e8e9baf7e0d1029b275e08cd503701f781e4016583dc",
+      "git_blob": "134112194ffeedb41704e13b6116550ad81d0406",
       "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Vera Refresh",
+        "Ollie Outrage",
+        "Felix Filter",
+        "Mabel Mutual",
+        "Lenny Lurker",
+        "Barry Broadcast"
+      ],
+      "states": [
+        "desperate for validation",
+        "performatively furious",
+        "obsessively curating himself",
+        "terrified of missing out",
+        "silently judging",
+        "compulsively oversharing"
+      ]
     },
     {
       "set_id": "WSA_DIGITAL_GAMING_20261107",
       "title": "The Next Small Reward",
-      "generation_status": "RUNNING",
-      "manifest": null,
-      "design_status": "NOT_GENERATED",
+      "theme": "gamers and dopamine-chasing hobbyists, different play styles",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_GAMING_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+      "sha256": "4c6641a5bd94b073e5bd315bdcbd0000b6cea2a08a9d331ae8a10bc6f083ff73",
+      "git_blob": "9c23bc36f461456c450f2b3f6c35b8330a397dcc",
+      "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Rex Respawn",
+        "Pip Pixels",
+        "Lottie Loot",
+        "Sven Speedskip",
+        "Clyde Dailylogin",
+        "Dee Moreplease"
+      ],
+      "states": [
+        "furious after losing",
+        "delighted by retro play",
+        "enchanted by a possible reward",
+        "frantically optimizing play",
+        "too tired to break a streak",
+        "overstimulated and craving another round"
+      ]
     },
     {
       "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
       "title": "An Entirely Personal Recommendation",
-      "generation_status": "PLANNED",
-      "manifest": null,
-      "design_status": "NOT_GENERATED",
+      "theme": "influencers performing absurd brand-free product placement",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_INFLUENCE_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+      "sha256": "0a00a05f675df2bb8905d20a39b53aecbd5f99d7e3de5467830a536fbb1339c4",
+      "git_blob": "b092a2952bc9bdd1ef62d1582345d953a1a0fd79",
+      "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Ava Airquote",
+        "Brad Bricksoft",
+        "Theo Glowbro",
+        "Cal Cannedcalm",
+        "Petra Plug",
+        "Woody Wellpaid"
+      ],
+      "states": [
+        "ecstatically promoting nothing",
+        "proud of a ridiculous convenience",
+        "smugly demonstrating an unconvincing beauty product",
+        "frantically selling relaxation",
+        "hard-selling authenticity",
+        "exhausted by his own enthusiasm"
+      ]
     },
     {
       "set_id": "WSA_DIGITAL_PODCAST_20261107",
       "title": "Everyone Has a Microphone",
-      "generation_status": "PLANNED",
-      "manifest": null,
-      "design_status": "NOT_GENERATED",
+      "theme": "six distinct podcaster archetypes, minimal handheld recording props",
+      "generation_status": "GENERATED",
+      "manifest": "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json",
+      "sheet": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+      "sha256": "18d5ac78ea30229ed8895142f759eae27b7f3f4a98199219937ec6e6d1413d54",
+      "git_blob": "a447a350d2e77f4f0a9072b473dbbaa15855eb88",
+      "design_status": "DRAFT",
       "georg_status": null,
-      "intake_eligible": false
+      "intake_eligible": false,
+      "names": [
+        "Brock Longform",
+        "Connie Coldcase",
+        "Hank Hottake",
+        "Ned Nodwell",
+        "Otto Optimize",
+        "Isla Footnote"
+      ],
+      "states": [
+        "expansively explaining everything",
+        "suspiciously fascinated",
+        "furiously certain about a small point",
+        "agreeing without listening",
+        "converting every pause into advice",
+        "politely doubtful"
+      ]
     }
+  ],
+  "checks": {
+    "sets": 6,
+    "figures": 36,
+    "female_read_planned": 12,
+    "language": "en",
+    "matching_card_biography_ids_and_names": true,
+    "source_hashes_match": true,
+    "no_assigned_combat_stats": true,
+    "sheets": [
+      {
+        "key": "doom",
+        "figures": 6,
+        "source_sha": "c7ff8d139beab7ea9f66b3b75c667d92dcae2d67751d143440b3b3c82449291d",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 663894,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "neural",
+        "figures": 6,
+        "source_sha": "03bbb929e9b89e1a17a9a9a447cf1c576c041a8f942cdcbe698f2a1764962d72",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 601143,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "social",
+        "figures": 6,
+        "source_sha": "8e97c81b376a0ca1ae92e8e9baf7e0d1029b275e08cd503701f781e4016583dc",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 600467,
+        "samples": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "gaming",
+        "figures": 6,
+        "source_sha": "4c6641a5bd94b073e5bd315bdcbd0000b6cea2a08a9d331ae8a10bc6f083ff73",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 641749,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "influence",
+        "figures": 6,
+        "source_sha": "0a00a05f675df2bb8905d20a39b53aecbd5f99d7e3de5467830a536fbb1339c4",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 600627,
+        "samples": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "podcast",
+        "figures": 6,
+        "source_sha": "18d5ac78ea30229ed8895142f759eae27b7f3f4a98199219937ec6e6d1413d54",
+        "alpha": [
+          0,
+          254
+        ],
+        "transparent_pixels": 595030,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "builder_review_notes": [
+    {
+      "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+      "cell": 1,
+      "index_base": 0,
+      "detail": "Viewer-right wink rendered cream-colored,possible dark-lid TUNE;Georg verdict pending,not a retroactive or globalFAIL."
+    },
+    {
+      "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+      "detail": "Phone props overlap doomscroll family;stock tongue/open grin recurs bottomright despite steering;no uniqueness guarantee."
+    },
+    {
+      "scope": "batch",
+      "detail": "Added patches,blush/sweat/signal accents and some expression/prop deviations recorded in individualQA. No automatic repair."
+    }
+  ],
+  "technical_limits": [
+    "Native sheets1536x1024RGBAalpha0..254;30background samples28zero and2one.",
+    "No certified individual extraction,upscaled/high-resolution single masters,registry admission or runtime tests.",
+    "Machine schema keys/enum tokens retained with English displays;active names/cards/bios/notes/calls English.",
+    "Combat tier/hits/runtime role not assigned."
   ]
 }

@@ -1,0 +1,272 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_GAMING_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+    "sha256": "4c6641a5bd94b073e5bd315bdcbd0000b6cea2a08a9d331ae8a10bc6f083ff73"
+  },
+  "production_record": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_GAMING_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_GAMING_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Next Small Reward",
+    "theme": "gamers and dopamine-chasing hobbyists, different play styles",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rex Respawn",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "furious after losing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small chunky gamepad"
+      ],
+      "temperament": "He is certain the next attempt will explain why the last one did not count.",
+      "prompt_auszug": "Male-read wide squared soft blob, low forked crest. Both inkhands squeeze ONElittle chunkygamepad close at chest. One huge eye and other disgusted squint, CLOSED massive wavy pout, brows unequal. Whole body woundtight upright, not yellingroundO or weapons.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Pixels",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted by retro play",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny old red-ball joystick"
+      ],
+      "temperament": "He remembers when the pixels were larger and his obligations smaller.",
+      "prompt_auszug": "Male-read tall slim comma blob with swept droopycrest. Holds one tiny old joystick base inonehand, other grips redballtop, allbesidebelly. Wide happy whiteeyes, one archedbrow, OPEN tiny skewed two-upper-tooth laugh. Excited carefulprecision, not same rageface.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lottie Loot",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "enchanted by a possible reward",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small half-open wooden reward box"
+      ],
+      "temperament": "She loves the possibility of a prize before the prize can disappoint her.",
+      "prompt_auszug": "Female-read chubby round scalloped blob, modestlashes and small coral headribbon. Bothhands cradle ONEtiny half-openwooden rewardbox containing ONEplainbrassdisc, no glow. Whiteeyes dreamyunequal, brows lifted in tendergreed, CLOSED small crooked anticipatorysmile. Body organicdominant, no RPGarmor orcoinpile.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sven Speedskip",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "frantically optimizing play",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny gamepad",
+        "one little hourglass on short wrist loop"
+      ],
+      "temperament": "He is saving seconds without knowing where the saved ones go.",
+      "prompt_auszug": "Male-read tall wavy pearblob, one bentcrest. Onehand grips tinygamepad while other points urgently to ONElittlehourglass on SHORTwristloop insideownsilhouette. Giantunequalwhiteeyes, raisedtensebrows, OPEN narrowangled three-upper-tooth shout. Uprighttwist, no runningfeet or racingcar.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Clyde Dailylogin",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "too tired to break a streak",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one compact handheld game"
+      ],
+      "temperament": "He no longer enjoys the habit enough to risk interrupting it.",
+      "prompt_auszug": "Male-read broad drooping lowcrestblob, otherwisebare. Onehand holds ONEcompacthandheldgame lowbybelly, other supports owncheek. Bothunequallids heavybuteye structurevisible, CLOSED long slantsighmouth. Full uprightbody, no chair/pillow/sleeping. Dutifulfatigue rather thanactivefun.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_GAMING_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dee Moreplease",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_GAMING_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overstimulated and craving another round",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small gamepad",
+        "one tiny blank soda can"
+      ],
+      "temperament": "She is having more fun than she has room to notice.",
+      "prompt_auszug": "Female-read reversecomma blob, modestlashes,tinytealcollar. Onehandclutches smallgamepad,other ONEtinyblanksoftsodacan. Eyes extremelyunequalandbright withinwhite/red/blackrule, brows tooeager, OPEN crooked four-upper-tooth giggle. Wholebodytaut andbouncyupright,not sixstockgrins,no lightning/floatingsymbols.",
+      "prompt_quelle": "DIGITAL_GAMING_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ]
+}
