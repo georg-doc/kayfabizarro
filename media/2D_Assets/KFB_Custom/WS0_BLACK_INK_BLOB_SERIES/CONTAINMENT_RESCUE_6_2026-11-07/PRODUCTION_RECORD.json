@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-f5b41346-9193-4e14-9fc7-ff70939d95d2.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "a903ab47bd91733258c3796577750c5ce7059c3206b07bb32dde2f562155391f",
+  "git_blob_sha": "b85b916f8dd0510d41d998ee0967481a2dddc120",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a NEW KFB claymation ink-blob sheet using the two attached original benchmarks solely for anatomy, clay surface, and sculpted eyes. Exactly six complete independent footless characters in three columns by two rows. Landscape 1536×1024 PNG. TRUE transparent alpha-zero background in all gaps and margins. No white matte, floor, vignette, scenery, large backdrop screens, shadow discs, labels, grid lines, real organization logos or national badges. Disaster Rescue crew. Shared kit: vermilion open-face rescue helmets with short cream bands, sand rope loops and ochre canvas harness tabs, weathered tactile clay. Top row Search Detail, bottom row Evacuation Detail. Each blob is a separate character with a full standalone silhouette at comparable scale. Art direction: richly tactile dark charcoal-plum satin clay with soft highlights, round organic goo bodies and short goo hands. Equipment rests directly against the clay body with chunky rounded shapes. Keep each full face unobstructed, including white ivory sclera, distinct red iris and black pupil, dark sculpted lids and dark ink lips. Protective hoods have wide open face rings or a clear visor raised above the forehead. Two subtly female-read figures in cells 2 and 5. Mouth and body silhouette vary deliberately. Teeth sit within an open mouth. No human torso, legs, boots or rigid armor. Props: a Hypernormalization Screen is a little portable slab the character holds beside its body, with dark smoked glass and a chunky rim. A dangerous card is a sealed abstract blank card with one tiny dark corner mark. No lettering. Keep all silhouettes including droplets and equipment in their cells, with generous air around each. Row-major direction:\n1. Male-read determined search lead. stubby cream search lamp held down. wide lobed blob, forward gaze and firm mouth.\n2. Female-read brisk rope specialist. small neatly coiled tan rope. tall pear blob, bright lifted brows.\n3. Male-read suspiciously attentive spotter. handheld acoustic listening puck with small ear cup. lean reverse comma, one eye wider and pursed mouth.\n4. Male-read warily helpful evacuation lead. compact red-and-cream rescue float with short grab loop. squat round blob, focused eyes and crooked smile.\n5. Female-read steadily reassuring shelter runner. small folded ochre emergency blanket. broad scalloped blob with raised inner brows.\n6. Male-read startled but ready communicator. tiny red hand radio with short aerial. upright egg blob, wide eyes and narrow call.\nMake the theme readable at thumbnail size. Render all six as independent character cutouts with true alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null
+}

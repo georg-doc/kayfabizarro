@@ -1,0 +1,330 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CONTAINMENT_CARD_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+    "sha256": "32a8b252bd33d73af7279d4501e5528863f7fb3aa8bb5e1c0b2797245f0d1bc4"
+  },
+  "production_record": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "CONTAINMENT_CARD_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "CONTAINMENT_CARD_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Card Lock Bureau",
+    "theme": "Dangerous Card Containment",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "containment encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Voss Screen",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "coldly attentive screen operator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "compact handheld Hypernormalization Screen with bone frame, indigo fittings and smoked glass facing outward"
+      ],
+      "temperament": "Voss Screen is the crew's screen operator.",
+      "prompt_auszug": "tall narrow blob, tense side glance",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "coldly attentive screen operator"
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nyx Sleeve",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "curiously guarded card capturer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "sealed translucent sleeve holding one blank card with an abstract dark corner mark"
+      ],
+      "temperament": "Nyx Sleeve is the crew's card capturer.",
+      "prompt_auszug": "round soft crest, sharp unequal eyes",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "curiously guarded card capturer"
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ike Margin",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly irritated perimeter guard",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "closed indigo latch box with thick ceramic hinge"
+      ],
+      "temperament": "Ike Margin is the crew's perimeter guard.",
+      "prompt_auszug": "wide box-rounded blob, frown and heavy lids",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dryly irritated perimeter guard"
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hale Clip",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "serenely methodical archive custodian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small upright case with a visible blank card in its clear lid"
+      ],
+      "temperament": "Hale Clip is the crew's archive custodian.",
+      "prompt_auszug": "squat broad blob, closed unsettling smile",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "serenely methodical archive custodian"
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Frame",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "intently focused screen technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "second smaller Hypernormalization Screen with bone casing, dark inset and lilac corner bumpers"
+      ],
+      "temperament": "Mina Frame is the crew's screen technician.",
+      "prompt_auszug": "tall crescent blob, uneven raised brow",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "intently focused screen technician"
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Della Index",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "uneasily composed evidence courier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_CARD_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small closed card cassette with two ceramic latches"
+      ],
+      "temperament": "Della Index is the crew's evidence courier.",
+      "prompt_auszug": "pear blob, large wary eyes and forced crooked smile",
+      "prompt_quelle": "CONTAINMENT_CARD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "uneasily composed evidence courier"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "incident_type": "Dangerous Card Containment",
+    "screen_operator_ids": [
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_05"
+    ],
+    "team_kit": "indigo fabric collar rings, bone-white ceramic helmet rims, black smoked displays and dusty lilac fasteners, portable retro bureau equipment",
+    "trios": [
+      {
+        "id": "WSA_CONTAINMENT_CARD_20261107_TRIO_A",
+        "name": "Capture Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_CONTAINMENT_CARD_20261107_TRIO_B",
+        "name": "Archive Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_03",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+      "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+    ]
+  }
+}

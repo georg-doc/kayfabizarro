@@ -1,3 +1,17 @@
+# WSA Return · Six containment crews · 2026-11-07
+
+WSA/WS0 Slop authoring in georg-doc/kayfabizarro on assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg accepted the previous 42 response-team designs. That checkpoint is ee7285625b480fdbe9304e02bc60725e19095b0a and passed 35 text readbacks. The accepted authoring index contains 161 sheets and 966 depictions. Existing intake eligibility covers 159 sheets and 954 depictions.
+
+Six fresh native generations produced 36 containment characters using the two verified original clay ink references. Two selected image edits vary expressions in the pandemic crew and correct an extra eye detail in the card crew. Six original-sized selected PNGs and their English character cards, bios, prompts and QA records are indexed in [CONTAINMENT_CREW_BATCH_20261107.json](CONTAINMENT_CREW_BATCH_20261107.json). Each new sheet is DRAFT pending Georg.
+
+Each incident crew provides two named details of three and a full six-member roster. Handheld Hypernormalization Screens and protected blank cards are prop designs. Team selection, encounters and dispatch remain design proposals. Individual extraction and runtime verification are pending.
+
+Checked six 1536×1024 RGBA sheets, 36 unique member IDs, matching cards and bios, and 12 trio memberships. 29 of 30 sampled background pixels were alpha zero. The remaining samples were alpha one. Reduced-size previews preserve the crew colors and tool cues. Some artwork crosses nominal equal-cell divisions, recorded in the batch checks. The selected facial edits and remaining detail notes are recorded there.
+
+This phase writes 51 paths across the six set packages, batch record, masterplan and Return. The branch head and individual files are read back after writing. The next gate is Georg's per-sheet design verdict.
+
+---
+
 ## Response team design acceptance
 
 Georg accepted all seven response team sheets and their 42 designs. The authoring index now contains 161 accepted sheets with 966 depictions. Existing intake eligibility covers 159 sheets and 954 depictions. The team and trio memberships are available for receiving review after individual extraction.

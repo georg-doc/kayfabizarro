@@ -1,0 +1,473 @@
+{
+  "schema": "kfb.slop-production-batch/1",
+  "date": "2026-11-07",
+  "language": "en",
+  "status": "GENERATED_AWAITING_GEORG",
+  "planned_generation_jobs": 6,
+  "completed_generation_jobs": 6,
+  "image_edit_jobs": 2,
+  "completed_depictions": 36,
+  "independent_identities": 36,
+  "female_read_planned": 12,
+  "georg_status": null,
+  "encounter_design": {
+    "status": "DESIGN",
+    "selection_policy": "Select a crew by incident type. Each sheet provides two fixed details of three characters and a combined six-member roster.",
+    "trio_count": 12,
+    "full_team_count": 6,
+    "screen_prop": "Handheld Hypernormalization Screens are proposed prop variants with smoked glass and crew-specific housings.",
+    "dangerous_card_prop": "Blank cards in protective sleeves or cases represent dangerous cards in the game world."
+  },
+  "sets": [
+    {
+      "set_id": "WSA_CONTAINMENT_BIO_20261107",
+      "title": "The Spore Detail",
+      "unit": "Biohazard Isolation",
+      "manifest": "CONTAINMENT_BIO_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+      "sha256": "1907d8c989285d29d7f66123570e1aa269775864023c28fea948a79fa34959df",
+      "git_blob": "11b8244b486cdc9366356ebab39c6dc47d914a69",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Biohazard Isolation",
+        "screen_operator_ids": [
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_04"
+        ],
+        "team_kit": "mustard-yellow sealed collar rings, dull olive gloves integrated into goo, wide raised clear helmet rims, moss-green fittings",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_BIO_20261107_TRIO_A",
+            "name": "Sample Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_BIO_20261107_TRIO_B",
+            "name": "Isolation Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_PANDEMIC_20261107",
+      "title": "The Quiet Ward",
+      "unit": "Pandemic Response",
+      "manifest": "CONTAINMENT_PANDEMIC_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+      "sha256": "17a27c0fcc1cdd3e4378b283741a9f2e5b0e5c6158f17b452b0d97f7d2fe45f1",
+      "git_blob": "5fdbb4ddf870292e14f0ed98b8418c8f4683476b",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Pandemic Response",
+        "screen_operator_ids": [
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05"
+        ],
+        "team_kit": "warm ivory protective hoods with clear open face rims, teal trim, tiny soft fabric straps and cool blue medical accessories",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A",
+            "name": "Care Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B",
+            "name": "Contact Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_REACTOR_20261107",
+      "title": "The Cooling Detail",
+      "unit": "Reactor Incident",
+      "manifest": "CONTAINMENT_REACTOR_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_REACTOR_6_2026-11-07/sheet-r1.png",
+      "sha256": "e105442738b919da815aa42ef43e1dd37318d930a11927eb2b06feac614754da",
+      "git_blob": "f826d16e747eeffb9dd49339708896eea2e081ac",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Reactor Incident",
+        "screen_operator_ids": [
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_05"
+        ],
+        "team_kit": "burnt-orange helmet shells, dark graphite collar rings, pale ivory ceramic buckles and metallic amber equipment, industrial retro clay",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_A",
+            "name": "Survey Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_B",
+            "name": "Control Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CHEMICAL_20261107",
+      "title": "The Spill Boundary",
+      "unit": "Chemical Spill Containment",
+      "manifest": "CONTAINMENT_CHEMICAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_CHEMICAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "ec98cee317cb954265ad0ff5beadbaa0511d851f6e65e5d9ddf6851b4919637c",
+      "git_blob": "b1cc36a26087fa6392c3b8b5d0a89f4f9eb906e7",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Chemical Spill Containment",
+        "screen_operator_ids": [
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_05"
+        ],
+        "team_kit": "petrol-blue open-face protective helmets, mint seam tape, charcoal collars and small cream latches, clean industrial kit",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_A",
+            "name": "Assessment Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_B",
+            "name": "Recovery Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_RESCUE_20261107",
+      "title": "The High Ground Crew",
+      "unit": "Disaster Rescue",
+      "manifest": "CONTAINMENT_RESCUE_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_RESCUE_6_2026-11-07/sheet-r1.png",
+      "sha256": "a903ab47bd91733258c3796577750c5ce7059c3206b07bb32dde2f562155391f",
+      "git_blob": "b85b916f8dd0510d41d998ee0967481a2dddc120",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Disaster Rescue",
+        "screen_operator_ids": [],
+        "team_kit": "vermilion open-face rescue helmets with short cream bands, sand rope loops and ochre canvas harness tabs, weathered tactile clay",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_A",
+            "name": "Search Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_B",
+            "name": "Evacuation Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CARD_20261107",
+      "title": "The Card Lock Bureau",
+      "unit": "Dangerous Card Containment",
+      "manifest": "CONTAINMENT_CARD_6_2026-11-07/MANIFEST.json",
+      "sheet": "CONTAINMENT_CARD_6_2026-11-07/sheet-r1.png",
+      "sha256": "32a8b252bd33d73af7279d4501e5528863f7fb3aa8bb5e1c0b2797245f0d1bc4",
+      "git_blob": "11fc1ea42572762646928c59f1087184cbaefc27",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Dangerous Card Containment",
+        "screen_operator_ids": [
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_05"
+        ],
+        "team_kit": "indigo fabric collar rings, bone-white ceramic helmet rims, black smoked displays and dusty lilac fasteners, portable retro bureau equipment",
+        "trios": [
+          {
+            "id": "WSA_CONTAINMENT_CARD_20261107_TRIO_A",
+            "name": "Capture Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_CONTAINMENT_CARD_20261107_TRIO_B",
+            "name": "Archive Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+              "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_03",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_CARD_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    }
+  ],
+  "checks": {
+    "source_dimensions": "1536x1024 RGBA",
+    "png_count": 6,
+    "distinct_identity_count": 36,
+    "trios_verified": 12,
+    "background_zero_alpha_samples": 29,
+    "background_samples": 30,
+    "logical_grid_order": "x=512, x=1024, y=512",
+    "sheets": [
+      {
+        "key": "BIO",
+        "sha256": "1907d8c989285d29d7f66123570e1aa269775864023c28fea948a79fa34959df",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 506637,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          177,
+          141,
+          0
+        ]
+      },
+      {
+        "key": "PANDEMIC",
+        "sha256": "17a27c0fcc1cdd3e4378b283741a9f2e5b0e5c6158f17b452b0d97f7d2fe45f1",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 509656,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          214,
+          0,
+          99
+        ]
+      },
+      {
+        "key": "REACTOR",
+        "sha256": "e105442738b919da815aa42ef43e1dd37318d930a11927eb2b06feac614754da",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 587475,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          68,
+          0,
+          102
+        ]
+      },
+      {
+        "key": "CHEMICAL",
+        "sha256": "ec98cee317cb954265ad0ff5beadbaa0511d851f6e65e5d9ddf6851b4919637c",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 546883,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          0,
+          0,
+          275
+        ]
+      },
+      {
+        "key": "RESCUE",
+        "sha256": "a903ab47bd91733258c3796577750c5ce7059c3206b07bb32dde2f562155391f",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 577759,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          177,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "CARD",
+        "sha256": "32a8b252bd33d73af7279d4501e5528863f7fb3aa8bb5e1c0b2797245f0d1bc4",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 582289,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          0,
+          130,
+          64
+        ]
+      }
+    ]
+  },
+  "review_notes": [
+    {
+      "team": "Pandemic Response",
+      "detail": "A focused facial edit varies the mouth shapes. A small side tooth remains on the lower-right grimace."
+    },
+    {
+      "team": "Dangerous Card Containment",
+      "detail": "A focused facial edit removes an extra eye detail from the lower-center screen technician."
+    },
+    {
+      "team": "Chemical Spill Containment",
+      "detail": "The catch tray appears open, and the upper-left character shows small mouth-corner teeth."
+    },
+    {
+      "team": "All",
+      "detail": "Grid coordinates describe roster order. Some props and droplets cross nominal equal-cell divisions. Individual contour extraction requires its own verification."
+    }
+  ],
+  "runtime_status": "DESIGN_PROPOSALS_PENDING_RECEIVING_REVIEW",
+  "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+}

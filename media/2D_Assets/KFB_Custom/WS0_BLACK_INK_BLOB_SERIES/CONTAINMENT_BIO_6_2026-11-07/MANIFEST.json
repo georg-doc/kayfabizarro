@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CONTAINMENT_BIO_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+    "sha256": "1907d8c989285d29d7f66123570e1aa269775864023c28fea948a79fa34959df"
+  },
+  "production_record": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "CONTAINMENT_BIO_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "CONTAINMENT_BIO_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Spore Detail",
+    "theme": "Biohazard Isolation",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "containment encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hollis Sample",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "cautious collector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small capped glass sample tube in a thick olive cradle"
+      ],
+      "temperament": "Hollis Sample is the crew's collector.",
+      "prompt_auszug": "tall pear with an uneasy single raised brow",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "cautious collector"
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bea Seal",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "brisk seal inspector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "stubby olive seam-checking roller"
+      ],
+      "temperament": "Bea Seal is the crew's seal inspector.",
+      "prompt_auszug": "wide scalloped blob with focused sideways eyes",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "brisk seal inspector"
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Moss Canister",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overprepared courier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sealed squat specimen jar with an abstract dark fleck inside"
+      ],
+      "temperament": "Moss Canister is the crew's overprepared courier.",
+      "prompt_auszug": "round lump with wide eyes and a small worried mouth",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overprepared courier"
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Perimeter",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stern isolation lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "compact portable Hypernormalization Screen with chunky mustard frame and smoked green inset"
+      ],
+      "temperament": "Wes Perimeter is the crew's isolation lead.",
+      "prompt_auszug": "broad squared blob, hard sideways gaze",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "stern isolation lead"
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Inez Tag",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quietly alert card custodian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one blank ivory card in a small sealed clear case"
+      ],
+      "temperament": "Inez Tag is the crew's card custodian.",
+      "prompt_auszug": "lean curved blob, guarded eyes and tight mouth",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "quietly alert card custodian"
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Decon",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_BIO_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "patient rinse technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_BIO_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short scrub brush and capped rinse flask"
+      ],
+      "temperament": "Len Decon is the crew's rinse technician.",
+      "prompt_auszug": "low broad blob, heavy lids and dry smile",
+      "prompt_quelle": "CONTAINMENT_BIO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "patient rinse technician"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "incident_type": "Biohazard Isolation",
+    "screen_operator_ids": [
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_04"
+    ],
+    "team_kit": "mustard-yellow sealed collar rings, dull olive gloves integrated into goo, wide raised clear helmet rims, moss-green fittings",
+    "trios": [
+      {
+        "id": "WSA_CONTAINMENT_BIO_20261107_TRIO_A",
+        "name": "Sample Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_CONTAINMENT_BIO_20261107_TRIO_B",
+        "name": "Isolation Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_03",
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+      "WSA_CONTAINMENT_BIO_ACTOR_20261107_06"
+    ]
+  }
+}
