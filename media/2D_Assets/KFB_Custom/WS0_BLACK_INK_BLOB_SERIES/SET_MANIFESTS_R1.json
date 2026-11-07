@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 179,
-    "pass_depictions": 1074,
+    "selected_sheets": 185,
+    "pass_depictions": 1110,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 177,
-    "intake_eligible_depictions": 1062,
-    "other_authoring_depictions": 954
+    "intake_eligible_sheets": 183,
+    "intake_eligible_depictions": 1098,
+    "other_authoring_depictions": 990
   },
   "excluded_sources": [
     {
@@ -1212,56 +1212,49 @@
       "manifest": "RESTORE_NORMALITY_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_HISTORY_STONE_20261107",
       "manifest": "HISTORY_STONE_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_HISTORY_SUMER_20261107",
       "manifest": "HISTORY_SUMER_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_HISTORY_INDUS_20261107",
       "manifest": "HISTORY_INDUS_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_HISTORY_CRETE_20261107",
       "manifest": "HISTORY_CRETE_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_HISTORY_MAYA_20261107",
       "manifest": "HISTORY_MAYA_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_HISTORY_SILK_20261107",
       "manifest": "HISTORY_SILK_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

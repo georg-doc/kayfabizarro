@@ -1,3 +1,9 @@
+## Historical multiverse design acceptance
+
+Georg accepted all six historical sheets and their 36 designs. The index records 185 accepted sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions. Game and Asset Librarian receive the designs through the existing intake after individual isolation. The next production slice covers twelve fictional tourist families.
+
+---
+
 # WSA Return · Historical multiverse families · 2026-11-07
 
 WSA authoring in georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Cleanup/restoration Georg PASS persisted at 21728718573481eb9d1950e3a243c22230017c5b with 29 exact file readbacks. Its minor reference inheritances are explicitly accepted. Accepted index: 179 sheets / 1074 depictions, of which 177 sheets / 1062 depictions are intake eligible. Existing Game/Asset Librarian receiving owners are noted; individual extraction and registration remain receiving work.

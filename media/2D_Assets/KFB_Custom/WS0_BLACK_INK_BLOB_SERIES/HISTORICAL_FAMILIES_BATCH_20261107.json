@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -65,8 +65,9 @@
           "WSA_HISTORY_STONE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_HISTORY_SUMER_20261107",
@@ -113,8 +114,9 @@
           "WSA_HISTORY_SUMER_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_HISTORY_INDUS_20261107",
@@ -161,8 +163,9 @@
           "WSA_HISTORY_INDUS_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_HISTORY_CRETE_20261107",
@@ -209,8 +212,9 @@
           "WSA_HISTORY_CRETE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_HISTORY_MAYA_20261107",
@@ -257,8 +261,9 @@
           "WSA_HISTORY_MAYA_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_HISTORY_SILK_20261107",
@@ -305,15 +310,16 @@
           "WSA_HISTORY_SILK_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     }
   ],
   "accepted_authoring_snapshot": {
-    "sheets": 179,
-    "depictions": 1074,
-    "intake_eligible_sheets": 177,
-    "intake_eligible_depictions": 1062
+    "sheets": 185,
+    "depictions": 1110,
+    "intake_eligible_sheets": 183,
+    "intake_eligible_depictions": 1098
   },
   "historical_direction": {
     "scope": "Fictional multiverse Slops using bounded historical material cues; names, personalities, costumes and story are authored interpretations.",
@@ -392,6 +398,7 @@
       }
     ],
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg's per-sheet design verdict"
-  }
+    "next_gate": "Receiving isolation and intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS"
 }

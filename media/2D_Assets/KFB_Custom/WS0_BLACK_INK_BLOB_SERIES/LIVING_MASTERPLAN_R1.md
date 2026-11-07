@@ -1,3 +1,9 @@
+## Historical multiverse design acceptance
+
+Georg accepted all six historical sheets and their 36 designs. The index records 185 accepted sheets and 1110 depictions. Intake eligibility covers 183 sheets and 1098 depictions. Game and Asset Librarian receive the designs through the existing intake after individual isolation. The next production slice covers twelve fictional tourist families.
+
+---
+
 ## Historical multiverse families · 2026-11-07
 
 Six transparent 3×2 sheets add 36 independent Slops inspired by Stone Age daily life, Sumerian city work, Indus trade/crafts, Bronze Age Crete, Classic Maya workshops/court and a medieval Silk Road caravan. The [batch record](HISTORICAL_FAMILIES_BATCH_20261107.json) carries six native PNGs, English names, cards, biographies, twelve trio relations and visual findings. Each new set is DRAFT, intake false pending Georg. Accepted totals remain 179 sheets / 1074 depictions; 177 sheets / 1062 depictions intake eligible.
