@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_CRETE_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+    "sha256": "fd8a1c57ab493e51486ebdb9280cf0408ffd57f4912ef78614cdcbdc2a477427"
+  },
+  "production_record": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_CRETE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_CRETE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Palace Backstage",
+    "theme": "Bronze Age Crete-inspired palace crafts and provisioning",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Manyhandles",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overwhelmed storage keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small clay storage jar with absurdly many chunky handles"
+      ],
+      "temperament": "Has a handle on everything except the inventory.",
+      "prompt_auszug": "low broad splat, one eyelid twitching, tight closed grimace",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overwhelmed storage keeper"
+    },
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Almostbull",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "nervous festival athlete",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small padded bull-horn-shaped practice grip held at belly"
+      ],
+      "temperament": "Performs confidence several seconds before acquiring it.",
+      "prompt_auszug": "tall thin curving blob, enormous wary eyes, a tiny round toothless gasp",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "nervous festival athlete"
+    },
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Bluecurl",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "self-satisfied pottery painter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "round marine-style flask with a simple curled octopus motif and short brush"
+      ],
+      "temperament": "Signs every commission with an extra tentacle.",
+      "prompt_auszug": "round heavy bean, one sleepy eye and one checking eye, closed wry smirk",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "self-satisfied pottery painter"
+    },
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dorian Softbronze",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended palace guard",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny figure-eight shield and very short blunt bronze spear"
+      ],
+      "temperament": "Regrets being assigned the ceremonial entrance.",
+      "prompt_auszug": "wide soft hourglass splat, elevated outraged brows, a tight lower-lip pout",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "offended palace guard"
+    },
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Frescowet",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rapturous wall painter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "shallow blue pigment dish and broad stubby brush"
+      ],
+      "temperament": "Would happily repaint the end of the world.",
+      "prompt_auszug": "asymmetric droplet with a wide flat base, dreamy cross-directed eyes, crooked open two-tooth laugh",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "rapturous wall painter"
+    },
+    {
+      "id": "WSA_HISTORY_CRETE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Niko Tiedcargo",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "miserable harbour porter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_CRETE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+        "WSA_HISTORY_CRETE_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small rope-bound amphora-shaped jar with a short folded sailcloth"
+      ],
+      "temperament": "Has carried the same urgent delivery since the last era.",
+      "prompt_auszug": "slumped chunky oval, low lids, thin deeply downturned closed mouth",
+      "prompt_quelle": "HISTORY_CRETE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "miserable harbour porter"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "Bronze Age Crete-inspired palace crafts and provisioning",
+    "team_kit": "cream and rust-red short woven wraps, turquoise bead bands, spiral clay details, marine-blue pottery; face and blob anatomy dominant",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_CRETE_20261107_TRIO_A",
+        "name": "Palace Workshop",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_CRETE_20261107_TRIO_B",
+        "name": "Harbour Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+      "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+      "WSA_HISTORY_CRETE_ACTOR_20261107_03",
+      "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+      "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+      "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+    ]
+  }
+}

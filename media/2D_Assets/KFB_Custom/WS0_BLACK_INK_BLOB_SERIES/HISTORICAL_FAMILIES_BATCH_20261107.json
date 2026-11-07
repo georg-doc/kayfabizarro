@@ -1,0 +1,397 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_HISTORICAL_FAMILIES_20261107",
+  "date": "2026-11-07",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_families": 6,
+    "female_read": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_HISTORY_STONE_20261107",
+      "title": "The First Residents",
+      "unit": "Stone Age daily-life multiverse family",
+      "manifest": "HISTORY_STONE_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+      "sha256": "4853be8dfb5dae6901e817098e87a9857b5985be6bace1ff77a6150bd430d594",
+      "git_blob": "b1160003156dcebbd3a8fac15d9326c811e6f562",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "Stone Age daily-life multiverse family",
+        "team_kit": "warm ochre hide capes, sinew ties, flint, bone and red earth; all organic ink body visible, no modern boots",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_STONE_20261107_TRIO_A",
+            "name": "Hearth Circle",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_STONE_ACTOR_20261107_01",
+              "WSA_HISTORY_STONE_ACTOR_20261107_02",
+              "WSA_HISTORY_STONE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_STONE_20261107_TRIO_B",
+            "name": "Gathering Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_STONE_ACTOR_20261107_04",
+              "WSA_HISTORY_STONE_ACTOR_20261107_05",
+              "WSA_HISTORY_STONE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_STONE_ACTOR_20261107_01",
+          "WSA_HISTORY_STONE_ACTOR_20261107_02",
+          "WSA_HISTORY_STONE_ACTOR_20261107_03",
+          "WSA_HISTORY_STONE_ACTOR_20261107_04",
+          "WSA_HISTORY_STONE_ACTOR_20261107_05",
+          "WSA_HISTORY_STONE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HISTORY_SUMER_20261107",
+      "title": "The Clay Account",
+      "unit": "Sumerian-inspired city workshop and storehouse",
+      "manifest": "HISTORY_SUMER_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+      "sha256": "51bdb7468433a6a1a0ca18832d38f6a595bf05d0258adeedc72c5805cbc42664",
+      "git_blob": "954a59a6fe995e6ee307a93e0a6495b29f22c103",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "Sumerian-inspired city workshop and storehouse",
+        "team_kit": "ivory tufted wool wraps, copper bands, indigo bead accents, bare charcoal goo bases; no Egyptian crowns or Roman helmets",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_SUMER_20261107_TRIO_A",
+            "name": "Tablet House",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+              "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+              "WSA_HISTORY_SUMER_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_SUMER_20261107_TRIO_B",
+            "name": "Storehouse Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+              "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+              "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_03",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HISTORY_INDUS_20261107",
+      "title": "The Exact Measure",
+      "unit": "Indus city-inspired trade and craft family",
+      "manifest": "HISTORY_INDUS_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+      "sha256": "11d6337449b51b3f08cf3883f1352b74fb84b5976ce38f21e59059ee7a9c1644",
+      "git_blob": "ab514ec2df471e9264665350c658613cb5a5dbbd",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "Indus city-inspired trade and craft family",
+        "team_kit": "ivory cotton-like short wraps, terracotta-red hems, carnelian beads, shell and muted steatite; modest headcloths, visible ink silhouettes",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_INDUS_20261107_TRIO_A",
+            "name": "Market Measures",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+              "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+              "WSA_HISTORY_INDUS_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_INDUS_20261107_TRIO_B",
+            "name": "Workshop Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+              "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+              "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_03",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HISTORY_CRETE_20261107",
+      "title": "The Palace Backstage",
+      "unit": "Bronze Age Crete-inspired palace crafts and provisioning",
+      "manifest": "HISTORY_CRETE_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_CRETE_6_2026-11-07/sheet-r1.png",
+      "sha256": "fd8a1c57ab493e51486ebdb9280cf0408ffd57f4912ef78614cdcbdc2a477427",
+      "git_blob": "a71f9252cffcff5d097fa930995ff0b53074f4b3",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "Bronze Age Crete-inspired palace crafts and provisioning",
+        "team_kit": "cream and rust-red short woven wraps, turquoise bead bands, spiral clay details, marine-blue pottery; face and blob anatomy dominant",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_CRETE_20261107_TRIO_A",
+            "name": "Palace Workshop",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+              "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+              "WSA_HISTORY_CRETE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_CRETE_20261107_TRIO_B",
+            "name": "Harbour Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+              "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+              "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_CRETE_ACTOR_20261107_01",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_02",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_03",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_04",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_05",
+          "WSA_HISTORY_CRETE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HISTORY_MAYA_20261107",
+      "title": "The Courtyard Committee",
+      "unit": "Classic Maya-inspired court, workshop and market family",
+      "manifest": "HISTORY_MAYA_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+      "sha256": "8dd73d27f12c6a8ea388650dd1dd6bf380c99038df285f56b88589620a83689e",
+      "git_blob": "d0c794d78e4b6c48d6dcbc533f5e1ee9b5aa9275",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "Classic Maya-inspired court, workshop and market family",
+        "team_kit": "short cotton-like cream wraps with brick red and jade-green accents, carved jade bead collar, restrained woven headbands; ink faces clear, no giant feather towers",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_MAYA_20261107_TRIO_A",
+            "name": "Court Circle",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+              "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+              "WSA_HISTORY_MAYA_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_MAYA_20261107_TRIO_B",
+            "name": "Market Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+              "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+              "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_03",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_HISTORY_SILK_20261107",
+      "title": "The Long Way Round",
+      "unit": "medieval Silk Road caravan trade multiverse family",
+      "manifest": "HISTORY_SILK_6_2026-11-07/MANIFEST.json",
+      "sheet": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+      "sha256": "4f2149cff2edb5eb4fdf6db8501418c32bc4159fa489cf09c7f205cb7143ea6b",
+      "git_blob": "ab7d1e50ee4cad93ed4312141ae36bf74ce2e8b5",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "historical_family": "medieval Silk Road caravan trade multiverse family",
+        "team_kit": "layered short rust, indigo and cream wraps, varied soft travel caps and headscarves, rolled textiles, leather cases, rope and worn brass; no humanoid legs",
+        "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+        "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+        "trios": [
+          {
+            "id": "WSA_HISTORY_SILK_20261107_TRIO_A",
+            "name": "Caravan Circle",
+            "row": 0,
+            "member_ids": [
+              "WSA_HISTORY_SILK_ACTOR_20261107_01",
+              "WSA_HISTORY_SILK_ACTOR_20261107_02",
+              "WSA_HISTORY_SILK_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_HISTORY_SILK_20261107_TRIO_B",
+            "name": "Bazaar Circle",
+            "row": 1,
+            "member_ids": [
+              "WSA_HISTORY_SILK_ACTOR_20261107_04",
+              "WSA_HISTORY_SILK_ACTOR_20261107_05",
+              "WSA_HISTORY_SILK_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_HISTORY_SILK_ACTOR_20261107_01",
+          "WSA_HISTORY_SILK_ACTOR_20261107_02",
+          "WSA_HISTORY_SILK_ACTOR_20261107_03",
+          "WSA_HISTORY_SILK_ACTOR_20261107_04",
+          "WSA_HISTORY_SILK_ACTOR_20261107_05",
+          "WSA_HISTORY_SILK_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 179,
+    "depictions": 1074,
+    "intake_eligible_sheets": 177,
+    "intake_eligible_depictions": 1062
+  },
+  "historical_direction": {
+    "scope": "Fictional multiverse Slops using bounded historical material cues; names, personalities, costumes and story are authored interpretations.",
+    "satirical_target": "HyperNorm certainty, hierarchy and bureaucratic habits embodied by fictional individuals",
+    "source_ledger": "HISTORICAL_INSPIRATION_20261107.json",
+    "continuation": "HISTORICAL_EXPANSION_BACKLOG_R1.json",
+    "time_travel": "Narrative association in cards and group context; no new time-travel game mechanic is implemented."
+  },
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "background_samples": {
+      "count": 30,
+      "alpha_zero": 24,
+      "alpha_one": 6
+    },
+    "visual_checks": [
+      "Native full image",
+      "64 px per logical cell on dark",
+      "96 px per logical cell on light",
+      "160 px per logical cell on checker",
+      "192 px per logical cell on dark"
+    ],
+    "checks": "36 distinct IDs and matching cards/biographies, twelve 3-member relations and six full rosters",
+    "technical_extraction": "NOT_PERFORMED",
+    "cell_boundaries": "Substantial alpha crosses one nominal vertical division in five sheets; Crete's sampled x512/x1024/y512 lines are clear. No equal-cell crop certification.",
+    "observations": [
+      {
+        "key": "STONE",
+        "notes": [
+          "Six complete upright ink figures with large simple flint, hammer, hearth bowl, short spear, ochre handprint stone and berry basket. Two female-read figures at cells 2 and 4 (zero-based).",
+          "Acting includes focused wink, exuberant inventor, disapproving hearth keeper, frightened tracker, gleeful painter and suspicious collector. Inventor and artist have larger open grins than planned; individuality remains visible."
+        ]
+      },
+      {
+        "key": "SUMER",
+        "notes": [
+          "Cream tufted wraps, copper and indigo beads distinguish a coherent six-member family. Tablet, cylinder seal, grain, adze/ingot, reed bundle and jug/cup are visibly separate.",
+          "Cylinder seal is exaggerated and wide, tablet marks are decorative pseudo-writing, not a readable or verified inscription. Mouths and gaze differ across six faces; round goo anatomy is retained."
+        ]
+      },
+      {
+        "key": "INDUS",
+        "notes": [
+          "Six whole upright figures with compact wraps and readable brick/rod, balance, animal seal, bead strand/drill, scoop/pipe and cargo basket. Female-read cells 1 and 3 (zero-based), distinct from the other sheets' layout.",
+          "Some wrap motifs resemble Greek-key shapes; exact ancient dress is not asserted. Animal seal and scale remain stylized broad props. Filled wink eyelid and white-red-black eyes are visible."
+        ]
+      },
+      {
+        "key": "CRETE",
+        "notes": [
+          "Six distinct full ink silhouettes: many-handled jar keeper, frightened horn-grip athlete, flask painter, figure-eight-shield guard, ecstatic pigment painter and weary cargo carrier. Female-read cells 0 and 4 (zero-based).",
+          "The guard's helmet has a Greek/Roman-like crest, a period-mix deviation. Wraps and decorative motifs are fictional interpretations. Large uneven eyes and distinct closed, gritted, open and downturned mouths remain legible."
+        ]
+      },
+      {
+        "key": "MAYA",
+        "notes": [
+          "Six jade/red/cream workshop-court figures, including booklet, bead drill, cacao vessel, stone basket, ball and weaving shuttle. Female-read cells 2 and 5 (zero-based).",
+          "The mason's planned square is absent; the basket and held stone carry the role. Decorative booklet dots and jade motifs are not asserted as readable ancient writing. Expressions are varied and all dark eyelids filled."
+        ]
+      },
+      {
+        "key": "SILK",
+        "notes": [
+          "Six travel/workshop figures with individual route sheet, textile bolt, spice vessels, tabbed book, tea kettle and large-clasp chest. Female-read cells 1 and 4 (zero-based).",
+          "Clothing is a deliberately mixed caravan-route vocabulary rather than one reconstructed historical uniform. A similar surprised mouth occupies top-right here and in Sumer, but face/eyelid silhouettes and prop situations remain distinct."
+        ]
+      }
+    ],
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg's per-sheet design verdict"
+  }
+}

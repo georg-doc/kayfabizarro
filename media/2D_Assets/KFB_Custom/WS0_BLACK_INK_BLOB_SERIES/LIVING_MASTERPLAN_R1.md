@@ -1,3 +1,11 @@
+## Historical multiverse families · 2026-11-07
+
+Six transparent 3×2 sheets add 36 independent Slops inspired by Stone Age daily life, Sumerian city work, Indus trade/crafts, Bronze Age Crete, Classic Maya workshops/court and a medieval Silk Road caravan. The [batch record](HISTORICAL_FAMILIES_BATCH_20261107.json) carries six native PNGs, English names, cards, biographies, twelve trio relations and visual findings. Each new set is DRAFT, intake false pending Georg. Accepted totals remain 179 sheets / 1074 depictions; 177 sheets / 1062 depictions intake eligible.
+
+[Material inspiration](HISTORICAL_INSPIRATION_20261107.json) separates verified object cues from fictional designs. [Continuation proposals](HISTORICAL_EXPANSION_BACKLOG_R1.json) cover Persian roads, Han workshops, Sahel urban life, Andean roads, Edo streets, early printing and the telegraph era. Check the accepted catalogue for overlap before selecting future batches. These have not been generated.
+
+---
+
 ## Cleanup and restoration design acceptance
 
 Georg accepted all six cleanup/restoration sheets and all 36 designs, including their minor reference inheritances. The authoring index contains 179 accepted sheets / 1074 depictions, with 177 sheets / 1062 depictions intake eligible. The existing Game and Asset Librarian owners are the recipients; individual isolation and receiving registration remain pending. Original PNG bytes are unchanged.

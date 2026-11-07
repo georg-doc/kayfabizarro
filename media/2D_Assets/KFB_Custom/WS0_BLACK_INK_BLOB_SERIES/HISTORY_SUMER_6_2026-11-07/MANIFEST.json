@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_SUMER_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+    "sha256": "51bdb7468433a6a1a0ca18832d38f6a595bf05d0258adeedc72c5805cbc42664"
+  },
+  "production_record": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_SUMER_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_SUMER_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Clay Account",
+    "theme": "Sumerian-inspired city workshop and storehouse",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tessa Wedgewise",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "furious tablet scribe",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small wet-clay tablet and thick reed stylus"
+      ],
+      "temperament": "Will correct a contradiction before the clay dries.",
+      "prompt_auszug": "lean reverse comma blob, brows lifted unevenly, stern tight lip pressing left",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "furious tablet scribe"
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Orrin Rollseal",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "smug seal custodian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "large copper-colored cylinder seal held above a flat clay pad"
+      ],
+      "temperament": "Finds an impression more trustworthy than a conversation.",
+      "prompt_auszug": "round narrow-topped body, half-lidded side-glance, closed asymmetric smirk",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "smug seal custodian"
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Basil Barleydue",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "shocked grain assessor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small woven grain scoop with a single absurdly large barley ear"
+      ],
+      "temperament": "Believes a missing grain can explain a falling empire.",
+      "prompt_auszug": "wide sagging splat, unequal round eyes and a tiny puckered gasp",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "shocked grain assessor"
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gil Copperclink",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary copper artisan",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short blunt copper adze and one rounded ingot"
+      ],
+      "temperament": "Measures progress by how long a tool stays repaired.",
+      "prompt_auszug": "tall crooked soft cone, flat tired lids, heavy drooping closed mouth",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary copper artisan"
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Enno Reedraft",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "haughty boat provisioner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small rolled reed bundle bound with rope"
+      ],
+      "temperament": "Insists the supply boat was early and the river was late.",
+      "prompt_auszug": "broad buoyant scalloped body, one eyelid high, cheeks puffed with a closed indignant lip",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "haughty boat provisioner"
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Luma Cupmeasure",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SUMER_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "gleeful ration brewer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+        "WSA_HISTORY_SUMER_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "rounded clay pouring jug and one small measuring cup"
+      ],
+      "temperament": "Makes a ceremony of giving everyone slightly less.",
+      "prompt_auszug": "plump tilted pear, amused upward eyes, open sideways two-tooth chuckle",
+      "prompt_quelle": "HISTORY_SUMER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "gleeful ration brewer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "Sumerian-inspired city workshop and storehouse",
+    "team_kit": "ivory tufted wool wraps, copper bands, indigo bead accents, bare charcoal goo bases; no Egyptian crowns or Roman helmets",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_SUMER_20261107_TRIO_A",
+        "name": "Tablet House",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_SUMER_20261107_TRIO_B",
+        "name": "Storehouse Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+          "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+      "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+      "WSA_HISTORY_SUMER_ACTOR_20261107_03",
+      "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+      "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+      "WSA_HISTORY_SUMER_ACTOR_20261107_06"
+    ]
+  }
+}

@@ -1,3 +1,17 @@
+# WSA Return · Historical multiverse families · 2026-11-07
+
+WSA authoring in georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Cleanup/restoration Georg PASS persisted at 21728718573481eb9d1950e3a243c22230017c5b with 29 exact file readbacks. Its minor reference inheritances are explicitly accepted. Accepted index: 179 sheets / 1074 depictions, of which 177 sheets / 1062 depictions are intake eligible. Existing Game/Asset Librarian receiving owners are noted; individual extraction and registration remain receiving work.
+
+Produced six new transparent 3×2 sheets / 36 distinct historically inspired Slops. Stone Age, Sumer, Indus, Crete, Maya and Silk Road families each include two female-read figures in varying cells. Six native original-reference-conditioned image calls, zero edits, six unchanged 1536×1024 RGBA PNGs. Names, personalities, biographies, field notes, calls and display states are English; receiving schema keys/enums are preserved. The canonical Slop metanarrative was reread before authoring these DESIGN biographies. Proposed calls are not claimed as canonical Triplet phrases.
+
+[HISTORICAL_FAMILIES_BATCH_20261107.json](HISTORICAL_FAMILIES_BATCH_20261107.json) indexes all packages, source receipts and twelve trio relations. [HISTORICAL_INSPIRATION_20261107.json](HISTORICAL_INSPIRATION_20261107.json) records museum/research prop cues and distinguishes them from fictional costume/personality interpretation. [HISTORICAL_EXPANSION_BACKLOG_R1.json](HISTORICAL_EXPANSION_BACKLOG_R1.json) preserves ungenerated era proposals. New sets remain DRAFT / intake false pending Georg.
+
+Checked 36 unique IDs, matching cards and biographies, twelve trios, six family rosters, two verified original reference hashes and six PNG hashes. Reviewed native images and 64/96/160/192px-per-cell previews across dark/light/checker backgrounds. Alpha is 0..254 on all PNGs; 24 of 30 sampled backgrounds are alpha zero and six are alpha one. Five sheets cross a nominal equal-cell vertical cut; no individual crop is certified. Indus wraps show some Greek-key-like motifs; the Crete guard has a Greek/Roman-like crested helmet; the Maya mason lacks the planned square. Sumer tablet marks are decorative. These are recorded design deviations. No runtime or Librarian registration test is claimed.
+
+This phase writes 54 paths: six PNGs, 42 package metadata files, batch, source ledger, backlog, candidate index, masterplan and Return. Exact branch head and all intended files are read back. Next gate: Georg's per-sheet design verdict.
+
+---
+
 ## Cleanup and restoration design acceptance
 
 Georg accepted all six cleanup/restoration sheets and all 36 designs, including their minor reference inheritances. The authoring index contains 179 accepted sheets / 1074 depictions, with 177 sheets / 1062 depictions intake eligible. The existing Game and Asset Librarian owners are the recipients; individual isolation and receiving registration remain pending. Original PNG bytes are unchanged.
