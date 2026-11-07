@@ -1,3 +1,17 @@
+# WSA Return · Six neighbourhood residents generated / prior emotions PASS · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Previous six emotional residents and cautious material correction explicitly PASS,persisted at2b23d3f2a4527681176d406df8bef2de38ab46ba with12/12text readbacks. Current143accepted sheets/858depictions;141eligible/846. No new image acceptance implied.
+
+New set WSA_NEIGHBOUR_RITUALS_20261107:ONE fresh1536x1024 landscape3x2 PNG, six unique simple HyperNorm residents, two female-read. Rituals:reserving a place,reluctantly accepting help,unsolicited explaining,quiet disagreement,granting an exception,ceremonially returning a borrowed spoon. Each standalone,not pairs or trios. Body/material continue the same gentle accepted prompt steering using actual original veteran/freche files;hashes verified. One native job,zero retries/edits/master resizes,zero extracted sprites. Model/seed not exposed. DRAFT/intakefalse awaiting Georg. Six DESIGN cards/biographies/voice&call proposals and authoring relations persisted;no canonical/runtime or combat-tier assignments.
+
+Actual output SHA256423752eb86e78af0b72f44f12a6b1a970d86a35c40db30a0124f4d4d6f4f2320,Gitblobb491e59872a2063ea2d7914ccc65549412e3725f;RGBAalpha0..254,640584fullytransparentpixels,five background samplesalpha0. Native light composite and96px light/dark inspected;similar apparent row scale. Not a universal clean-edge/isolated-master certification. Top-left rosy lip is a generated deviation,not automatically repaired;minor accessory differences retained for design judgement. No claim of causal material A/B or exact margin compliance.
+
+Changed11files:eight new set files (PNG+7JSON),GAP_BACKLOG_R1.json,LIVING_MASTERPLAN_R1.md,RETURN.md. G03/G06 referenced without marking full clusters complete. Local original preserved. Exact ref/intended-text and PNG Gitblob verification required;large-file API may return no binarycontent,so identical local/remoteGitblob proves stored-source identity. No asset-registry admission,Site publication,game tests,merge or Live. GIF lane unchanged.
+
+Nextgate:Georg design verdict on six neighbourhood residents;then record PASS/TUNE/FAIL before next bounded batch.
+
+---
+
 # WSA Return · Emotional residents PASS / neighbourhood continuation · 2026-11-07
 
 Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Georg explicitly accepts all six emotions/ambivalence designs AND the cautious style correction. Manifest all six PASS,intake eligible for downstream extraction;cards/lore remain DESIGN,technical alpha and native-master limitations preserved. Index143PASS sheets/858depictions;141eligible/846depictions. Coverage increment only:previous142manifest audit plus current accepted one,800authoring identity keys not registry census. Material steering accepted without demanding stronger correction or retroactive repairs.

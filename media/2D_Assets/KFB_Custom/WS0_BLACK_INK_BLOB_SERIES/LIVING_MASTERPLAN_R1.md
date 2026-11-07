@@ -1,3 +1,9 @@
+## 07.11.2026 · Next neighbourhood sheet generated
+
+[NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json](NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json): six simple residents performing absurd neighbourhood rituals, two female-read, one original-reference-conditioned3x2 transparent PNG. DRAFT awaiting Georg;not counted among143accepted sheets. Continues the accepted gentle material steering;no further correction or GIF task. All six remain independent;no shared props/pairs/trios.
+
+---
+
 ## 07.11.2026 · Emotional residents and gentle style steering accepted
 
 Georg: all six PASS, cautious style correction fits. Current143accepted sheets/858depictions;141/846eligible. Authoring index and incremental coverage updated;800identity keys are not a canonical registry census. Earlier142-count and pending text below are historical snapshots. Next authorized outcome: one six-character landscape transparent sheet of simple residents and absurd neighbourhood rituals. No GIF/runtime task added.
