@@ -1,3 +1,11 @@
+## Full-suit containment design acceptance
+
+Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.
+
+The next authorized batch covers six cleanup and restoration crews. The teams propose street sweeping, salvage, decontamination, discreet scene cleaning, rapid facade construction and clockwork normality repair. Each crew has two fixed trios and a combined six-member roster.
+
+---
+
 ## Full-suit containment crews
 
 Six transparent 3×2 sheets add 36 Slops in full protective coveralls with gloves and small exposed ink feet. Three crews use the supplied HUD skins for cyan electrical, acid-green slime and yellow industrial containment. Ivory-teal quarantine, brick-red heat and indigo card crews complete the series. The [batch record](SUITED_CONTAINMENT_BATCH_20261107.json) carries the twelve trios, six full team rosters, references and review notes. The artwork awaits Georg's design verdict.

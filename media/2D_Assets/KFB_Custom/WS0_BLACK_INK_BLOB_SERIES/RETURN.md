@@ -1,3 +1,11 @@
+## Full-suit containment design acceptance
+
+Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.
+
+The next authorized batch covers six cleanup and restoration crews. The teams propose street sweeping, salvage, decontamination, discreet scene cleaning, rapid facade construction and clockwork normality repair. Each crew has two fixed trios and a combined six-member roster.
+
+---
+
 # WSA Return · Six full-suit containment crews · 2026-11-07
 
 WSA/WS0 Slop authoring in georg-doc/kayfabizarro on assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg accepted the previous 36 containment designs. That checkpoint is 6e53393e92088844834b258e0f52aa08bd187dbb and passed 31 text readbacks. The accepted authoring index contains 167 sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions.

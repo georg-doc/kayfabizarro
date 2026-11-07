@@ -2,14 +2,14 @@
   "schema": "kfb.slop-production-batch/1",
   "date": "2026-11-07",
   "language": "en",
-  "status": "GENERATED_AWAITING_GEORG",
+  "status": "GEORG_DESIGN_PASS",
   "planned_generation_jobs": 6,
   "completed_generation_jobs": 6,
   "image_edit_jobs": 0,
   "completed_depictions": 36,
   "independent_identities": 36,
   "female_read_planned": 12,
-  "georg_status": null,
+  "georg_status": "PASS",
   "hud_reference": {
     "name": "Dreifaches Gadget-Sticker-Set-2.png",
     "sha256": "95a9d8f05e1d93ed702e26c0cec568dbc0b219d0420bc69cac6552fbcf555188",
@@ -76,8 +76,9 @@
           "WSA_SUITED_CYAN_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SUITED_ACID_20261107",
@@ -127,8 +128,9 @@
           "WSA_SUITED_ACID_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SUITED_YELLOW_20261107",
@@ -178,8 +180,9 @@
           "WSA_SUITED_YELLOW_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SUITED_QUARANTINE_20261107",
@@ -229,8 +232,9 @@
           "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SUITED_THERMAL_20261107",
@@ -280,8 +284,9 @@
           "WSA_SUITED_THERMAL_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SUITED_CARD_20261107",
@@ -332,8 +337,9 @@
           "WSA_SUITED_CARD_ACTOR_20261107_06"
         ]
       },
-      "design_status": "DRAFT",
-      "intake_eligible": false
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
     }
   ],
   "checks": {

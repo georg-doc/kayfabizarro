@@ -1,3 +1,9 @@
+## Full-suit containment design acceptance
+
+Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.
+
+---
+
 ## Containment crew design acceptance
 
 Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.

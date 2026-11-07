@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 167,
-    "pass_depictions": 1002,
+    "selected_sheets": 173,
+    "pass_depictions": 1038,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 165,
-    "intake_eligible_depictions": 990,
-    "other_authoring_depictions": 882
+    "intake_eligible_sheets": 171,
+    "intake_eligible_depictions": 1026,
+    "other_authoring_depictions": 918
   },
   "excluded_sources": [
     {
@@ -1138,6 +1138,42 @@
     {
       "set_id": "WSA_CONTAINMENT_CARD_20261107",
       "manifest": "CONTAINMENT_CARD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_CYAN_20261107",
+      "manifest": "SUITED_CYAN_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_ACID_20261107",
+      "manifest": "SUITED_ACID_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_YELLOW_20261107",
+      "manifest": "SUITED_YELLOW_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_QUARANTINE_20261107",
+      "manifest": "SUITED_QUARANTINE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_THERMAL_20261107",
+      "manifest": "SUITED_THERMAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_CARD_20261107",
+      "manifest": "SUITED_CARD_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }
