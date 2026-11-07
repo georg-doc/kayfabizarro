@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 197,
-    "pass_depictions": 1182,
+    "selected_sheets": 203,
+    "pass_depictions": 1218,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 195,
-    "intake_eligible_depictions": 1170,
-    "other_authoring_depictions": 1062
+    "intake_eligible_sheets": 201,
+    "intake_eligible_depictions": 1206,
+    "other_authoring_depictions": 1098
   },
   "excluded_sources": [
     {
@@ -1320,56 +1320,49 @@
       "manifest": "TOURISM_SURREAL_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_INJURY_BLAST_20261107",
       "manifest": "INJURY_BLAST_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_INJURY_GRAZE_20261107",
       "manifest": "INJURY_GRAZE_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_INJURY_BOX_20261107",
       "manifest": "INJURY_BOX_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_INJURY_ROAD_20261107",
       "manifest": "INJURY_ROAD_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_INJURY_DEBRIS_20261107",
       "manifest": "INJURY_DEBRIS_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_INJURY_RECOVERY_20261107",
       "manifest": "INJURY_RECOVERY_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

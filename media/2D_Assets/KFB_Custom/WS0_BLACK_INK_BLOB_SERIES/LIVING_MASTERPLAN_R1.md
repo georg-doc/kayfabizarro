@@ -1,3 +1,11 @@
+## Injury and recovery design acceptance · 2026-11-07
+
+Georg accepted all six injury and recovery sheets and their 36 designs. The index contains 203 accepted sheets and 1218 depictions. Intake eligibility covers 201 sheets and 1206 depictions. Game and Asset Librarian intake follows individual isolation.
+
+Next production covers six psychology and psychoanalysis families with the existing restrained surface treatment.
+
+---
+
 ## Injured and recovering residents · 2026-11-07
 
 Six transparent 3×2 sheets introduce 36 distinct injured and recovering residents across explosion, firearm grazes, boxing, traffic collisions, building debris and convalescence. The first-aid and mobility cues are stylized for use with the existing emergency teams. English names, character cards and two trio relations accompany every sheet. Georg's design verdict is pending.

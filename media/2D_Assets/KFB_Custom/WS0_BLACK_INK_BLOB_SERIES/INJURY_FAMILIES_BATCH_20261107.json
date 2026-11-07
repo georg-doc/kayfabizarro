@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -27,8 +27,8 @@
       "sheet": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
       "sha256": "14da458bfeaa836d396df593f1cd51b1a0c28243713ec76ad84daefb7a314011",
       "git_blob": "49bb7a903b797e85d2e2d529028de9df5d408762",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Explosion impact",
@@ -65,7 +65,8 @@
           "WSA_INJURY_BLAST_ACTOR_20261107_05",
           "WSA_INJURY_BLAST_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_INJURY_GRAZE_20261107",
@@ -74,8 +75,8 @@
       "sheet": "INJURY_GRAZE_6_2026-11-07/sheet-r1.png",
       "sha256": "aa1d6efe99ab03d055e691a58542c22ddb871b780610546ac229bb576af5fef5",
       "git_blob": "e5a403b96df35daef1f68f30323a3287e79784d3",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Firearm grazes and blunt cartoon impacts",
@@ -112,7 +113,8 @@
           "WSA_INJURY_GRAZE_ACTOR_20261107_05",
           "WSA_INJURY_GRAZE_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_INJURY_BOX_20261107",
@@ -121,8 +123,8 @@
       "sheet": "INJURY_BOX_6_2026-11-07/sheet-r1.png",
       "sha256": "0a0aa0278585104e70c9ad01da800ebd408a739d86a637f49b2ab26f7ae25b40",
       "git_blob": "cb0d73e50f6f2f242d925be911439b004f115539",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Boxing and contact impacts",
@@ -159,7 +161,8 @@
           "WSA_INJURY_BOX_ACTOR_20261107_05",
           "WSA_INJURY_BOX_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_INJURY_ROAD_20261107",
@@ -168,8 +171,8 @@
       "sheet": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
       "sha256": "7038fb77afeab84cc849443c29db26a058adde52b7ba1063491c96ffb207de63",
       "git_blob": "e6c2f70a3a740b1fe4aa2aa7b82885784fe3f6fa",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Vehicle collision injuries",
@@ -206,7 +209,8 @@
           "WSA_INJURY_ROAD_ACTOR_20261107_05",
           "WSA_INJURY_ROAD_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_INJURY_DEBRIS_20261107",
@@ -215,8 +219,8 @@
       "sheet": "INJURY_DEBRIS_6_2026-11-07/sheet-r1.png",
       "sha256": "b5c7691ad7dd303057c7bacffa2c4d20fcac7d85f40c5f349d9c4fcdf1b83d40",
       "git_blob": "48dbfbf0d323bd49761c1730372e58bb8fbeae61",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Building accident and disaster injuries",
@@ -253,7 +257,8 @@
           "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
           "WSA_INJURY_DEBRIS_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_INJURY_RECOVERY_20261107",
@@ -262,8 +267,8 @@
       "sheet": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
       "sha256": "84299f8926ae4272bc3883a4990673160df0f75c92d174ab51024fa2e8ca1eeb",
       "git_blob": "edbc86a7fdbcb08eb9a6256c47618be4052bd282",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "injury_family": "Convalescents and mobility aids",
@@ -300,14 +305,15 @@
           "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
           "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "accepted_authoring_snapshot": {
-    "sheets": 197,
-    "depictions": 1182,
-    "intake_eligible_sheets": 195,
-    "intake_eligible_depictions": 1170
+    "sheets": 203,
+    "depictions": 1218,
+    "intake_eligible_sheets": 201,
+    "intake_eligible_depictions": 1206
   },
   "usage_candidates": [
     "Injured residents",
@@ -340,6 +346,7 @@
     "material_review": "Broad modeled forms, restrained grain and smooth clear water bottle. Local soot and plaster dust retain texture. Cheek adhesive patches recur on all six recovery figures.",
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
-  }
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS"
 }

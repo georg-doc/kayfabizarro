@@ -1,3 +1,11 @@
+## Injury and recovery design acceptance · 2026-11-07
+
+Georg accepted all six injury and recovery sheets and their 36 designs. The index contains 203 accepted sheets and 1218 depictions. Intake eligibility covers 201 sheets and 1206 depictions. Game and Asset Librarian intake follows individual isolation.
+
+Next production covers six psychology and psychoanalysis families with the existing restrained surface treatment.
+
+---
+
 # WSA Return · Injured and recovering residents · 2026-11-07
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Tourist PASS and material steering are recorded at e499cbeeb57a6bd1839fcf551ff2ac60f7fbbc95 with 53 file readbacks. The accepted index records 197 sheets and 1182 depictions, including 195 sheets and 1170 depictions eligible for intake.
