@@ -1,3 +1,19 @@
+# CURRENT RETURN · GIF Loop Pilot R0 · 2026-11-07
+
+**Outcome:** one explicitly requested, reference-conditioned `SL_MAGIE_BLITZMAGIER` loop pilot was run through the current built-in Work image path. The canonical GitHub PNG was shown alone and supplied as the identity authority. Five unique user-provided Golden GIF payloads were inspected as motion/format references.
+
+**Result:** **TECHNICAL FAIL · STOPPED AFTER ONE PILOT.** The path returned a single 1254×1254 RGBA PNG, not a 6-frame 512×512 looping GIF, and visibly re-rendered the actor. The static output is quarantined, not registered, not a style parent and not imported into the Site or game.
+
+**Durable evidence:** `GIF_LOOP_PILOT_R0_2026-11-07.md` at evidence commit `f8f6c680a9e32c24921f84829fe88a88be8807ef`. It records source/Golden identities and hashes, exact prompt/exposed arguments, output hash and the acceptance matrix.
+
+**Owners preserved:** WS0 remains character/curation owner; existing Asset Registry/KFB Asset Librarian remains asset truth; WS1 remains game runtime owner. Existing Site project `appgprj_6ac1afef08148191b62b95f184bf845e` was read-only inspected at source head `7b3e16cbc36f7d386069f3d7648981f0a1dbeff8`, live version 56. Zero Site files changed; zero deployment, Stage, game or registry writes.
+
+**Exactly one next gate:** Georg explicitly decides whether to authorize one CLI/API fallback pilot for the same Blitzmagier source in a locally configured OpenAI API project. No fallback job, synthetic wobble/deformer, series expansion, Librarian admission or game intake before that decision.
+
+Final branch HEAD must be fetched after this Return commit.
+
+---
+
 # RETURN · R2 Ink Monster production recovery · 2026-11-04
 
 Owner WS0; repository georg-doc/kayfabizarro; branch docs/ws0-black-ink-blob-series-2026-11-04; existing intake issue #466. Documentation / plugin update only. Implementation checkpoint e46fd5582fa64f320acf69768ea4d3503ab2d7fe; final branch HEAD must be fetched after this closure commit. No new PR, merge, Stage, Site or Live deployment.
