@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -27,8 +27,8 @@
       "sheet": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
       "sha256": "a949424bde9929d4fce6c7e46849ae838a2e82679fabd6f93157abc2301644d5",
       "git_blob": "2aa33200ea628c33121b85aaa89d6369602d3298",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "Freud and psychoanalysis",
@@ -65,7 +65,8 @@
           "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
           "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_PSYCHE_JUNG_20261107",
@@ -74,8 +75,8 @@
       "sheet": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
       "sha256": "eb1a1b7626d4b3c98c3d3baee3c5e651298dfed943509ccffaf370e335a3766e",
       "git_blob": "ae6dccb1db6dccc554321c30157e3454af8f9130",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "C. G. Jung and analytical psychology",
@@ -112,7 +113,8 @@
           "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
           "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_PSYCHE_ARCHETYPES_20261107",
@@ -121,8 +123,8 @@
       "sheet": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
       "sha256": "26515f10226bb2b291022fd5fd9a2585440ff691a8e8012742421e7b2a433e22",
       "git_blob": "db21f66f35b8d2954adcacf88ca807be7c1a84c6",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "Jung-inspired archetype figures",
@@ -159,7 +161,8 @@
           "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
           "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_PSYCHE_SYMBOLS_20261107",
@@ -168,8 +171,8 @@
       "sheet": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
       "sha256": "fbdb5d998e35ca2bb9b0cb76518742f28748856b0eebeaf46d5fd82f3ff9ad5e",
       "git_blob": "e414a460a263020778c0e9bd94d19d936cb297f4",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "Surreal dream symbolism",
@@ -206,7 +209,8 @@
           "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
           "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_PSYCHE_THERAPY_20261107",
@@ -215,8 +219,8 @@
       "sheet": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
       "sha256": "edce8920dc9619630a7783eb61205e39a1afd6b78b6ae006c29e0e7297d11876",
       "git_blob": "b0ab05e95fedfab4475687168eec13d042776f21",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "Group therapy and psychiatric care",
@@ -253,7 +257,8 @@
           "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
           "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_PSYCHE_SOCIAL_20261107",
@@ -262,8 +267,8 @@
       "sheet": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
       "sha256": "f051a9c4656c2022cf2b35ab26760f6b1b856196e30861112920acf798c704e8",
       "git_blob": "bf0ec5daa3cf3c4d5705736db3acc980689d73d8",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "psyche_family": "Social dynamics and distress as visual metaphors",
@@ -300,14 +305,15 @@
           "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
           "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "accepted_authoring_snapshot": {
-    "sheets": 203,
-    "depictions": 1218,
-    "intake_eligible_sheets": 201,
-    "intake_eligible_depictions": 1206
+    "sheets": 209,
+    "depictions": 1254,
+    "intake_eligible_sheets": 207,
+    "intake_eligible_depictions": 1242
   },
   "concept_references": [
     {
@@ -352,6 +358,7 @@
     ],
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
-  }
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS"
 }

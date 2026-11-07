@@ -1,3 +1,11 @@
+## Psychology design acceptance and nine new themes · 2026-11-07
+
+Georg accepted all six psychology and psychoanalysis sheets and their 36 designs. The index contains 209 accepted sheets and 1254 depictions. Intake eligibility covers 207 sheets and 1242 depictions. Game and Asset Librarian intake follows individual isolation.
+
+The [nine-theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) records the proposed groups and their order. The first two batches cover entries one through six. Entries seven through nine are queued for a subsequent round.
+
+---
+
 ## Psychology and psychoanalysis families · 2026-11-07
 
 Six transparent 3×2 sheets introduce 36 Slops across Freud and psychoanalysis, C. G. Jung, Jung-inspired archetypes, dream symbols, therapy and social patterns. Each set includes English names, design cards, short biographies and two trio relations. Georg's design verdict is pending.
