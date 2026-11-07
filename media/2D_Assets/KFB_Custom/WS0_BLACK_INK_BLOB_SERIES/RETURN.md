@@ -1,3 +1,17 @@
+# WSA Return · Seven response teams · 2026-11-07
+
+WSA/WS0 Slop authoring in georg-doc/kayfabizarro on assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg accepted the previous 36 digital satire designs. That checkpoint is 4929056edb6449b28a59da86e7ceabb38f234424 and passed 32 text readbacks. The accepted authoring index contains 154 sheets and 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions.
+
+Seven fresh native generations produced 42 response characters. Each job used the two verified original clay ink references. The selected U.S.-inspired infantry sheet includes a targeted image edit for alpha and helmet tabs. Seven original-sized selected PNGs and their English character cards, bios, prompts and QA records are indexed in [RESPONSE_TEAM_BATCH_20261107.json](RESPONSE_TEAM_BATCH_20261107.json). Each new sheet remains DRAFT pending Georg.
+
+Each sheet contains two named rows of three distinct member IDs and a full six-member roster. The optional encounter progression runs from patrol through riot, SWAT, paramilitary, infantry and Special Forces to Black Ops. Encounter choice, dispatch and behavior remain design proposals. Individual extraction and runtime verification are pending.
+
+Checked seven 1536×1024 RGBA sheets, 42 unique IDs, matching cards and bios, and 14 row memberships. 30 of 35 sampled background pixels were alpha zero. The remaining samples were alpha one. Reduced-size previews preserve the team palette and key equipment cues. The SWAT mouth-corner teeth and infantry edit are recorded for review.
+
+This phase writes 59 paths across the seven set packages, batch record, masterplan and Return. The branch head and individual files are read back after writing. The next gate is Georg's per-sheet design verdict.
+
+---
+
 ## Digital satire design acceptance
 
 Georg accepted all six digital satire sheets and their 36 designs. The authoring index now contains 154 accepted sheets with 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions. Individual extraction remains a separate step.

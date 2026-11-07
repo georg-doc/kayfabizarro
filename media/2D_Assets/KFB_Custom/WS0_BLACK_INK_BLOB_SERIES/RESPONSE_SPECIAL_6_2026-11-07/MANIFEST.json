@@ -1,0 +1,319 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_SPECIAL_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+    "sha256": "330542246399fa7a7bd72fac94b09aebeb43bf79a6655986267a240bcf68a53b"
+  },
+  "production_record": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_SPECIAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_SPECIAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Quiet Insert",
+    "theme": "Special Forces",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gabe Longview",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "concentrated and calm",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sage boonie and tiny binoculars held at chest"
+      ],
+      "temperament": "Gabe Longview stays concentrated and calm when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall rounded comma, sharp side gaze and tiny flat mouth",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sable Quickstep",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quietly energized",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tan helmet, compact headset and small compass"
+      ],
+      "temperament": "Sable Quickstep stays quietly energized when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "slender pear, lively uneven brows, crooked smile",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Reed Stillwater",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "deliberately patient",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "boonie and short rope coil"
+      ],
+      "temperament": "Reed Stillwater stays deliberately patient when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad low scalloped blob, half-open steady eyes, closed smirk",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Finn Trace",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled by a clue",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sand wrap and small marker flag"
+      ],
+      "temperament": "Finn Trace stays startled by a clue when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "lean wavy blob, wide eyes and angled gasp",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Piper Recovery",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "focused and reassuring",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tan open-face helmet, small rolled fabric sling"
+      ],
+      "temperament": "Piper Recovery stays focused and reassuring when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "wide pear blob, soft raised brows, little smile",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dean Spareline",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly resourceful",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+        "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "boonie and small folding tool held closed"
+      ],
+      "temperament": "Dean Spareline stays dryly resourceful when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "squat irregular blob, one lifted brow and tight closed smile",
+      "prompt_quelle": "RESPONSE_SPECIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 6,
+    "team_kit": "muted sand and sage harness tabs, soft boonie hats and open-face tan helmets, short olive wraps. Compact specialist tools and visible faces. Sandy silhouette, distinct from navy SWAT and charcoal Black Ops.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A",
+        "name": "Recon Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B",
+        "name": "Recovery Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03",
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+      "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+    ]
+  }
+}

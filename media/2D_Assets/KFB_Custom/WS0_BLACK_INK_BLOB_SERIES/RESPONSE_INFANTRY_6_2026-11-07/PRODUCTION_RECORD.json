@@ -1,0 +1,57 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-d5bc1c65-60eb-4523-8979-0aa108ef7468.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "864abea0f6182f8fd377fc64ef5079ee96a244d6c5a4d42efab89cb7349898b9",
+  "git_blob_sha": "3e137b02e5f22a5079b4a908f5dc4d68c95c61b2",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Make a NEW KFB claymation ink-blob character sheet using the attached images solely as style references. Precisely six entirely distinct complete footless ink blobs in three columns by two rows, landscape 1536x1024 transparent PNG. U.S.-Inspired Infantry. Shared team palette and craft: classic olive drab and muted khaki canvas, rounded steel helmet silhouettes, faded tan straps. Generic tiny red-white-blue fabric tabs without text. Distinct from improvised orange paramilitary. Top row Rifle Detail, bottom row Service Detail. They are separate characters posed independently, each contained in its own cell with broad transparent breathing room and comparable scale. No floor, text, marks of a real unit, gridlines, shadow discs or touching. Expressive sculpted organic charcoal-plum ink from the reference, modest dark satin highlights and fine tactile fingerprints. Rounded goo base and short goo hands. Gear is sparse, chunky handmade accessories fitted directly onto ink. No human torso, legs, boots, armor exoskeleton, face masks or concealed pupils. White ivory sclera, distinct red irises, black pupils, dark sculpted lids. Dark ink lips. Teeth only inside an open mouth. Asymmetric faces and silhouettes before equipment. Fictional stylized game art, no active combat. Two subtly female-read blobs, cells 2 and 5. Row-major character direction:\n1. Male-read, steady and observant. olive helmet, folded pocket map. broad pear, narrow purposeful gaze and closed firm mouth.\n2. Female-read, brightly focused. rounded helmet and box radio with short aerial. upright comma blob, uneven raised eyebrows, side call.\n3. Male-read, stubbornly composed. olive helmet, tiny toy-like slinged rifle pointing down along flank. wide square blob, heavy eyes, tight dark pout.\n4. Male-read, dryly unbothered. olive helmet and small metal canteen. squat scalloped blob, half-lidded smirk.\n5. Female-read, warily inquisitive. helmet and round brass pocket compass. tall oval blob, wide uneven eyes, small quizzical mouth.\n6. Male-read, earnestly determined. helmet and small rolled canvas blanket. broad round blob, raised brow and crooked two-tooth smile.\nReadable unit identity at thumbnail size. Keep all helmets, hands, gear, crest and droplets fully within the sheet. The input references supply material and anatomy. Create these six new characters in the designated team kit."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null,
+  "image_edit_jobs": 1,
+  "selected_edit": {
+    "reason": "Remove the continuous pale matte and replace vertical tricolor tabs with small olive star patches.",
+    "args": {
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-d0706655-3504-4bc8-bc0d-ba9b19a62676.png"
+      ],
+      "prompt": "Edit the supplied six-figure clay ink blob character sheet. Deliver a 1536x1024 landscape PNG on a TRUE fully transparent alpha background. Cut out the complete six figures and their associated droplets from the pale background. Every gap between figures and the outer margins must be fully transparent, alpha zero. Remove all pale backdrop, matte and cast shadows. Keep the existing independent 3-column 2-row layout, size, spacing, faces, props, ivory sclera with red iris and black pupils, olive M1-style rounded helmets and khaki canvas straps. Change only one art detail: remove every vertical red-white-blue tricolor tab from the helmets and replace it with a small plain olive cloth square, optionally a tiny single cream star stitched on the square. Olive steel helmets, canvas straps and small plain star accents suggest classic U.S.-inspired infantry. Keep the organic footless clay silhouettes. Preserve all six designs with generous clear breathing room. No scene, white or colored backdrop, gradient or floor. Output true alpha PNG."
+    },
+    "original_source": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-d0706655-3504-4bc8-bc0d-ba9b19a62676.png",
+    "original_sha256": "e93493cf8eaca03a07dd855598bef26d01d85d1ce762df270d48af5de35beb5b",
+    "original_alpha_extrema": [
+      28,
+      252
+    ],
+    "selected_sha256": "864abea0f6182f8fd377fc64ef5079ee96a244d6c5a4d42efab89cb7349898b9"
+  }
+}

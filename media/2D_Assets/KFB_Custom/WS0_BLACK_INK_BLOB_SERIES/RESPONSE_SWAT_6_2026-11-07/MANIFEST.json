@@ -1,0 +1,319 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_SWAT_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+    "sha256": "2ac6fde6700c1bc8cdfdc6c1f115d1af29fb21e25ecd7d063f4a8029725dc016"
+  },
+  "production_record": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_SWAT_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_SWAT_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Door Detail",
+    "theme": "SWAT",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hank Threshold",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "decisively focused",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small door ram held vertically beside body"
+      ],
+      "temperament": "Hank Threshold stays decisively focused when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "square broad blob, alert eyes and tight determined mouth",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ivy Hush",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "intently listening",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small radio and slim ear cup"
+      ],
+      "temperament": "Ivy Hush stays intently listening when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "slim reverse comma, one finger to ear, closed skeptical mouth",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Miles Lookfirst",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled but curious",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short inspection mirror on stubby handle"
+      ],
+      "temperament": "Miles Lookfirst stays startled but curious when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall egg blob, uneven wide eyes, small open gasp",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Barrier",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "firmly protective",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short opaque navy shield with cobalt stripe"
+      ],
+      "temperament": "Bert Barrier stays firmly protective when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "low wide scalloped body, dark grimace and steady eyes",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Patch",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "kindly urgent",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "compact navy medical pouch with plain pale square"
+      ],
+      "temperament": "Ada Patch stays kindly urgent when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "round soft crest, worried brows and small reassuring smile",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Walt Wedge",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly prepared",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+        "WSA_RESPONSE_SWAT_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "stubby door wedge and flashlight"
+      ],
+      "temperament": "Walt Wedge stays dryly prepared when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "curved pear, raised brow, sly closed mouth",
+      "prompt_quelle": "RESPONSE_SWAT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 3,
+    "team_kit": "midnight navy matte cloth, compact navy open-face helmets, cobalt harness tabs and tiny desaturated copper details. Small equipment held low. Faces fully exposed.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_SWAT_20261107_TRIO_A",
+        "name": "Entry Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_SWAT_20261107_TRIO_B",
+        "name": "Support Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_03",
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+      "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+    ]
+  }
+}

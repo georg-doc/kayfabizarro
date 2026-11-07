@@ -1,3 +1,9 @@
+## Response team batch
+
+Seven transparent 3×2 sheets add 42 distinct Slops in patrol, riot, SWAT, paramilitary, U.S.-inspired infantry, Special Forces and Black Ops kits. Each sheet proposes two named trios and a full six-member team. The [batch record](RESPONSE_TEAM_BATCH_20261107.json) carries the suggested encounter order, member IDs and source receipts. The artwork awaits Georg's design verdict.
+
+---
+
 ## Digital satire design acceptance
 
 Georg accepted all six digital satire sheets and their 36 designs. The authoring index now contains 154 accepted sheets with 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions. Individual extraction remains a separate step.

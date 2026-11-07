@@ -1,0 +1,491 @@
+{
+  "schema": "kfb.slop-production-batch/1",
+  "date": "2026-11-07",
+  "language": "en",
+  "status": "GENERATED_AWAITING_GEORG",
+  "planned_generation_jobs": 7,
+  "completed_generation_jobs": 7,
+  "image_edit_jobs": 1,
+  "completed_depictions": 42,
+  "independent_identities": 42,
+  "female_read_planned": 14,
+  "georg_status": null,
+  "coverage_context": {
+    "existing_examples": [
+      "WSA_PIRATES_20261104",
+      "WSA_MILITARY_US_20261105"
+    ],
+    "target": "Visually distinct response teams with explicit three-member details and full six-member compositions."
+  },
+  "encounter_design": {
+    "status": "DESIGN",
+    "sequence_policy": "A suggested encounter order for escalation. Each entry can also be selected independently for a scene.",
+    "trio_count": 14,
+    "full_team_count": 7
+  },
+  "sets": [
+    {
+      "set_id": "WSA_RESPONSE_PATROL_20261107",
+      "title": "The Local Detail",
+      "unit": "Patrol Police",
+      "manifest": "RESPONSE_PATROL_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+      "sha256": "e5b9b4b75280c8cdba823d2d5058b8cbce2fe9be71d1417809f2199eaa4bdc8e",
+      "git_blob": "71d96fc378c65a61b226e0afb5b63d5f1a149dd3",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 1,
+        "team_kit": "faded navy cloth, short peaked patrol caps and small brass generic badges, powder-blue collar accents. No armor or combat helmets.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_PATROL_20261107_TRIO_A",
+            "name": "Street Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_PATROL_20261107_TRIO_B",
+            "name": "Neighbourhood Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+              "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_03",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "Street contact and visible warnings"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_RIOT_20261107",
+      "title": "The Holding Line",
+      "unit": "Riot Unit",
+      "manifest": "RESPONSE_RIOT_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_RIOT_6_2026-11-07/sheet-r1.png",
+      "sha256": "ebd168abb22e90dc2c1a13b321b8b7ae4e86cfcd27364e74dcab107690a6a2d4",
+      "git_blob": "02e6bba637b3daa049cf66ab87f61a08c48fd7ad",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 2,
+        "team_kit": "ivory rounded helmets with short raised clear visors above eyes, slate blue padding tabs and compact shields. Faces fully exposed. Distinct from SWAT navy kit.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_RIOT_20261107_TRIO_A",
+            "name": "Shield Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_01",
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_02",
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_RIOT_20261107_TRIO_B",
+            "name": "Relief Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_04",
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_05",
+              "WSA_RESPONSE_RIOT_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_01",
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_02",
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_03",
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_04",
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_05",
+          "WSA_RESPONSE_RIOT_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "Containment at a crossing or boundary"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_SWAT_20261107",
+      "title": "The Door Detail",
+      "unit": "SWAT",
+      "manifest": "RESPONSE_SWAT_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_SWAT_6_2026-11-07/sheet-r1.png",
+      "sha256": "2ac6fde6700c1bc8cdfdc6c1f115d1af29fb21e25ecd7d063f4a8029725dc016",
+      "git_blob": "96fbdf11134cbba1746419ca82eaefc0168b0385",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 3,
+        "team_kit": "midnight navy matte cloth, compact navy open-face helmets, cobalt harness tabs and tiny desaturated copper details. Small equipment held low. Faces fully exposed.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_SWAT_20261107_TRIO_A",
+            "name": "Entry Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_SWAT_20261107_TRIO_B",
+            "name": "Support Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+              "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_03",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+          "WSA_RESPONSE_SWAT_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "Focused intervention around an entry"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_PARAMILITARY_20261107",
+      "title": "The Provisional Brigade",
+      "unit": "Paramilitary Response",
+      "manifest": "RESPONSE_PARAMILITARY_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+      "sha256": "e09cae652f9e5afae53cc8c962d484d885384fcd0ae11fe03024993437be931e",
+      "git_blob": "53966701e0216dba90e886be5bac23c08025f9a0",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 4,
+        "team_kit": "dusty olive caps and helmets, rusty orange canvas armbands, brown rope and tan canvas pouches. Improvised retro-dieselpunk uniforms, generic invented markings only.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A",
+            "name": "Checkpoint Crew",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B",
+            "name": "Field Crew",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+              "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "Reinforcement from a local field detail"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_INFANTRY_20261107",
+      "title": "The Field Detail",
+      "unit": "U.S.-Inspired Infantry",
+      "manifest": "RESPONSE_INFANTRY_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+      "sha256": "864abea0f6182f8fd377fc64ef5079ee96a244d6c5a4d42efab89cb7349898b9",
+      "git_blob": "3e137b02e5f22a5079b4a908f5dc4d68c95c61b2",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 5,
+        "team_kit": "classic olive drab and muted khaki canvas, rounded steel helmet silhouettes, faded tan straps. Generic tiny red-white-blue fabric tabs without text. Distinct from improvised orange paramilitary.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A",
+            "name": "Rifle Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B",
+            "name": "Service Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+              "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "A sustained military presence"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_SPECIAL_20261107",
+      "title": "The Quiet Insert",
+      "unit": "Special Forces",
+      "manifest": "RESPONSE_SPECIAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_SPECIAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "330542246399fa7a7bd72fac94b09aebeb43bf79a6655986267a240bcf68a53b",
+      "git_blob": "db149551c479cf3e6da3144b7e3d17d3692028fc",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 6,
+        "team_kit": "muted sand and sage harness tabs, soft boonie hats and open-face tan helmets, short olive wraps. Compact specialist tools and visible faces. Sandy silhouette, distinct from navy SWAT and charcoal Black Ops.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A",
+            "name": "Recon Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B",
+            "name": "Recovery Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+              "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+          "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "A targeted reconnaissance or recovery encounter"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
+      "title": "The Unlisted Detail",
+      "unit": "Black Ops",
+      "manifest": "RESPONSE_BLACKOPS_6_2026-11-07/MANIFEST.json",
+      "sheet": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+      "sha256": "c5b4653024f76d162932c5087bd7b3dec3bde0d09fe106af7275e9f2bcf54aab",
+      "git_blob": "41eb833e90135b8cc035730beabbecdafea65117",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "sequence": 7,
+        "team_kit": "coal charcoal gear with muted oxblood stitch accents and grey lenses clipped to temple or raised above forehead, never cover eyes. Small stealth equipment and retro spy silhouette, organic plum-charcoal goo dominates.",
+        "trios": [
+          {
+            "id": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A",
+            "name": "Silent Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B",
+            "name": "Containment Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+              "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+        ],
+        "gameplay_beat": "A rare covert intervention"
+      },
+      "design_status": "DRAFT",
+      "intake_eligible": false
+    }
+  ],
+  "checks": {
+    "source_dimensions": "1536x1024 RGBA",
+    "png_count": 7,
+    "distinct_identity_count": 42,
+    "trios_verified": 14,
+    "background_zero_alpha_samples": 30,
+    "background_samples": 35,
+    "sheets": [
+      {
+        "key": "PATROL",
+        "sha256": "e5b9b4b75280c8cdba823d2d5058b8cbce2fe9be71d1417809f2199eaa4bdc8e",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 610712,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "RIOT",
+        "sha256": "ebd168abb22e90dc2c1a13b321b8b7ae4e86cfcd27364e74dcab107690a6a2d4",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 662446,
+        "background_samples": {
+          "(0, 0)": 1,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "SWAT",
+        "sha256": "2ac6fde6700c1bc8cdfdc6c1f115d1af29fb21e25ecd7d063f4a8029725dc016",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 625781,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "PARAMILITARY",
+        "sha256": "e09cae652f9e5afae53cc8c962d484d885384fcd0ae11fe03024993437be931e",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 553621,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "INFANTRY",
+        "sha256": "864abea0f6182f8fd377fc64ef5079ee96a244d6c5a4d42efab89cb7349898b9",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 705022,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "SPECIAL",
+        "sha256": "330542246399fa7a7bd72fac94b09aebeb43bf79a6655986267a240bcf68a53b",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 695297,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        }
+      },
+      {
+        "key": "BLACKOPS",
+        "sha256": "c5b4653024f76d162932c5087bd7b3dec3bde0d09fe106af7275e9f2bcf54aab",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 710301,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        }
+      }
+    ]
+  },
+  "review_notes": [
+    {
+      "team": "SWAT",
+      "detail": "A small tooth shows at the mouth corner in cells 1 and 6."
+    },
+    {
+      "team": "U.S.-Inspired Infantry",
+      "detail": "A focused image edit removed the pale matte and replaced vertical tricolors with olive star patches. The selected PNG contains fully transparent pixels, with one sampled corner at alpha 1."
+    }
+  ],
+  "runtime_status": "DESIGN_PROPOSALS_PENDING_RECEIVING_REVIEW",
+  "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+}
