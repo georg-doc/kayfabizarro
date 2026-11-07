@@ -1,3 +1,11 @@
+## Georg PASS and surface steering · 2026-11-07
+
+Keep soft satin charcoal-plum plasticine with larger, sparse modeled marks and broad fabric folds. Reduce fine stipple across bodies, bandages and accessories. Render clear liquid as a smooth homogeneous volume. Use clean smooth finishes for plastic, glass, and glazed surfaces. The hitchhiking sheet's empty bottle shows an unwanted sand-like texture and informs this forward correction.
+
+The 72 tourist designs are accepted. Apply the material direction to the upcoming cartoon injury and recovery sheets and subsequent production.
+
+---
+
 ## Georg PASS / historical family continuation · 2026-11-07
 
 The six cleanup and restoration crews are DESIGN PASS, including minor reference inheritances. Continue the accepted 3×2 transparent sheet format, original reference conditioning, gentle charcoal/plum clay, white/red/black eyes, strict-English game text, distinct expressive acting and two female-read characters per sheet. The next series uses historically inspired multiverse families. No new runtime or animation scope.

@@ -1,3 +1,13 @@
+## Tourist design acceptance · 2026-11-07
+
+Georg accepted all twelve tourist sheets and their 72 designs. The index contains 197 accepted sheets and 1182 depictions. Intake eligibility covers 195 sheets and 1170 depictions. The Game and Asset Librarian receiving step follows individual isolation.
+
+Keep soft satin charcoal-plum plasticine with larger, sparse modeled marks and broad fabric folds. Reduce fine stipple across bodies, bandages and accessories. Render clear liquid as a smooth homogeneous volume. Use clean smooth finishes for plastic, glass, and glazed surfaces. The hitchhiking sheet's empty bottle shows an unwanted sand-like texture and informs this forward correction.
+
+Next production covers six cartoon injury and recovery families.
+
+---
+
 # WSA Return · Tourist families · 2026-11-07
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg's historical PASS is recorded at aecc6bd1b3ce3bb00db51dfb9d586146627a0920 with 28 file readbacks. Game and Asset Librarian intake follows individual isolation.
