@@ -1,3 +1,9 @@
+## 07.11.2026 · Certainty habits sheet generated
+
+[CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json](CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json): six independent expressive residents embodying ideological habits and compulsive certainty, two female-read. One original-reference-conditioned transparent landscape3x2 sheet, DRAFT awaiting Georg,not counted in144accepted sheets. Same accepted gentle material steering. G05 experiment,not blanket closure of ideological coverage.
+
+---
+
 ## 07.11.2026 · Neighbourhood residents accepted
 
 All six NEIGHBOUR_RITUALS_6_2026-11-07 designs Georg PASS. Current144accepted sheets/864depictions,142eligible/852depictions.806authoring identity keys,not canonical census;earlier counts/pending text below historical. Next authorized one-sheet outcome:ideological habits and compulsive certainty types,unique expressive six with two female-read,usual transparent landscape3x2. Keep accepted gentle style direction.

@@ -1,0 +1,248 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CERTAINTY_HABITS_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+    "sha256": "dc28df553615be3409f477a579bf6f296aa073f16a8fa596f30437ee307e1950"
+  },
+  "production_record": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "CERTAINTY_HABITS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "CERTAINTY_HABITS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Das wird man wohl noch gewiss sein dürfen",
+    "backlog_neighbors": [
+      "G05"
+    ],
+    "relationship_policy": "Six independent residents; thematic neighbours, not pairs/trios/shared props. No canonical combat roles."
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Zifferfest",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Kennzahlen-Glaube",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tiny brass tally counter",
+        "short ivory office collar"
+      ],
+      "temperament": "He can count everything except the reasons anybody agreed to be counted.",
+      "prompt_auszug": "Compact tall egg-shaped male-read ink blob, two very unequal soft crest nubs, tiny ivory office collar only. One hand holds a SINGLE small old brass mechanical tally counter with a plain blank dial; other hand proudly presses the counter button. Wide feverishly delighted eyes, brows arched in revelation, narrow tilted OPEN mouth with two uneven UPPER teeth. He believes a count has settled an argument. No graphs, numbers, text, labcoat or machinery body.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Frühergut",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Nostalgie als Gewissheit",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small faded sepia oval mirror",
+        "dusty blue lace collar"
+      ],
+      "temperament": "She remembers the past with admirable accuracy wherever it agrees with her.",
+      "prompt_auszug": "Female-read broad pear-shaped ink splat with a small pinned ink curl and modest lashes, dusty blue lace COLLAR accent only. Clutches a SINGLE small old oval handmirror whose glass is dull sepia, NO portrait/face inside it. Eyes turned upward in wistful certainty, one brow gentle and other defensive; long asymmetric CLOSED fond smile with one corner drooping. Other ink hand fondly polishes mirror edge with a fingertip. She knows the past was better because she has stopped inspecting it. No full dress, hair wig, framed scene or text.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugo Einstimmig",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Konsens erzwingen",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single tiny brass service bell",
+        "faded coral bow tie"
+      ],
+      "temperament": "He welcomes every opinion that can be made to sound like his own.",
+      "prompt_auszug": "Wide flat-topped rounded male-read ink blob with three short floppy uneven crest lobes, one small faded coral bow tie. One hand grips a SINGLE tiny brass desk service bell, other hand slowly gives a reassuring THUMBS UP close to his body. Terribly strained broad CLOSED toothless smile, eyelids very uneven: one forced kindly wide eye, other sharp inspecting squint. The broad smile looks exhausting. No closed-eye grin, badges, voting slips, poster or second person.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Makellos",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Reinheit zwanghaft prüfen",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one small white feather duster",
+        "short faded moss apron patch"
+      ],
+      "temperament": "He checks for contamination until even his own certainty looks suspicious.",
+      "prompt_auszug": "Tall thin wavering male-read ink blob with one drooping side crest, tiny faded moss apron FRONT PATCH leaving goo dominant. Holds a SINGLE very small white feather duster at chest height, other dark ink hand meticulously inspects his own dark fingertip. One eye enormous and the other narrowed anxiously, forehead folds of self-suspicion, tiny crooked OPEN breath-catching mouth with ONE upper tooth inside. The compulsive purity tester is himself a blob of ink. No spotless white full-body costume, soap bubbles, microscope, literal cross-eyed gag or dirt cloud.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mira Unsichtbarhand",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Der Markt wird es richten",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "one tiny empty brass balance scale",
+        "muted mustard neck ribbon"
+      ],
+      "temperament": "She trusts the balance most when nobody has put a need on either side.",
+      "prompt_auszug": "Female-read curvy asymmetrical upright crescent ink blob, tiny soft swept inkquiff and subtle lashes, muted mustard neck ribbon only. Holds ONE tiny old-fashioned brass balance scale with two clearly EMPTY shallow pans, simple thick readable geometry, no coins. Other ink hand open in a compact conjurer's flourish. Cool overconfident half-lidded eyes with white sclera, one amused lifted brow, skewed OPEN three-upper-tooth laugh. No witch hat, wand, extra floating props, symbols, graphs or human body.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CERTAINTY_HABITS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ewald Vorsorglich",
+      "bild": {
+        "datei": "CERTAINTY_HABITS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Sicherheit als romantisches Ideal",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one small brass padlock",
+        "short soft burgundy scarf"
+      ],
+      "temperament": "He loves being safe so much that departure feels like a personal betrayal.",
+      "prompt_auszug": "Broad round male-read ink blob with low rippling crest and a soft small burgundy scarf. Both ink hands tenderly cradle ONE small closed brass padlock against his chest like a cherished keepsake. Half-lidded dreamy white eyes glance at it with utter devotion, brows steeply tender rather than angry, tiny CLOSED puckered almost-kiss mouth. Sweet but faintly worried reverence, upright whole body. No key, door, cage, giant lock, heart symbols or pink human lips.",
+      "prompt_quelle": "CERTAINTY_HABITS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ]
+}

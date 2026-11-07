@@ -1,3 +1,17 @@
+# WSA Return · Six certainty types generated / neighbourhood PASS · 2026-11-07
+
+Owner WSA/WS0 Slop authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. All six previous neighbourhood designs explicitly Georg PASS,persisted atb5a793fddfe8cadf33442d6b5835fb11e73ab43e with11/11text readbacks. Current144accepted sheets/864depictions;142eligible/852. New draft not counted as accepted.
+
+New WSA_CERTAINTY_HABITS_20261107:ONE native original-reference-conditioned1536x1024 landscape3x2 PNG, six unique ideological habits/compulsive certainty residents. Roles:metrics believer,nostalgia curator,consensus enforcer,purity tester,market conjurer,security romantic. Two female-read cells2/5;all upright whole footless bodies,white/ivory-red-black eyes. Independent actors,no canonical pair/state/trio/combat/hits assigned. Same accepted cautious charcoal/plum satin clay steering, no stronger correction or generated style-parent chain. Original veteran/freche PNG hashes verified and actual paths included. One job,zero retry/edit/resize,zero extracted sprites;model/seed not exposed.
+
+Actual output SHA256dc28df553615be3409f477a579bf6f296aa073f16a8fa596f30437ee307e1950;Gitblob78d8272a18203b5dc5905b78ab4f5e8fd62ed1ae;RGBAalpha0..254,607019fullytransparentpixels,five background samplesalpha0. Full light and96px dark/light previews inspected. Rows broadly similar apparent scale;not exact safe-margin,universal clean-edge or native individual-master certification. Plum remains visible,props differ in degree from intended size;no silent repair. Six DESIGN cards/biographies/voice/call suggestions from authoring intent and Georg-supplied HyperNorm brief archived. Canonical lore reread remains deferred as documented before,not new canon approval.
+
+Changed11files:eight new set files (PNG+7JSON),backlog,masterplan,Return. G05 experiment referenced without claiming exhaustive ideological coverage. Exact branch/text readbacks and local/remote PNGGitblob equality required;large-file byte content may be omitted by connector. No registry admission,game tests,Site change,publication,merge or Live. Existing source and GIF lane unchanged.
+
+Nextgate:Georg design verdict on six certainty types,then persist PASS/TUNE/FAIL before further bounded production.
+
+---
+
 # WSA Return · Neighbourhood six PASS / certainty continuation · 2026-11-07
 
 Owner WSA/WS0 authoring;georg-doc/kayfabizarro;assets/ws0-ink-miners-2026-11-04;draft PR469. Georg explicitly accepts all six NEIGHBOUR_RITUALS designs,including generated lip/accessory details. Manifest/production/QA/biography intake flags updated;all prose DESIGN,individual extraction/master/runtime limits preserved. No accepted pixels changed. Index144PASS sheets/864depictions;142eligible/852depictions. Coverage incremental:previous142manifest audit plus two new current manifests;806authoring keys not canonical census. G03/G06 experiment PASS,not entire cluster completion.
