@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GAPS_ESTATE_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+    "sha256": "42a0d1ba90ef32c23a2b32dff00f2ad355608644f2ad43d2b62be96caadbf738"
+  },
+  "production_record": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "GAPS_ESTATE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "GAPS_ESTATE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Estate Committee",
+    "theme": "The Estate Committee",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ivy Longribbon",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wreath maker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small oval wreath with extra ribbon rolled in one goo hand"
+      ],
+      "temperament": "Wreath maker.",
+      "prompt_auszug": "upright comma, brisk gaze and closed pursed lips",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "wreath maker"
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Smallbequest",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "heir with a small inheritance",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny sealed parcel held close in both hands"
+      ],
+      "temperament": "Heir with a small inheritance.",
+      "prompt_auszug": "broad low pear, raised brows and reluctant smile",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "heir with a small inheritance"
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Indexcards",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "speaker keeping notes out of the wind",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "three large cards with one edge curled upward"
+      ],
+      "temperament": "Speaker keeping notes out of the wind.",
+      "prompt_auszug": "tall tilted blob, intent narrowed eyes and tightly drawn mouth",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "speaker keeping notes out of the wind"
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf Obituary",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "deliberate obituary editor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "folded blank obituary proof with large pencil"
+      ],
+      "temperament": "Deliberate obituary editor.",
+      "prompt_auszug": "square low blob, solemn eyes and small crooked frown",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "deliberate obituary editor"
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Willfold",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "keeper of a slightly confusing will",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "rolled cream folio tied with a blunt wax seal"
+      ],
+      "temperament": "Keeper of a slightly confusing will.",
+      "prompt_auszug": "rounded high teardrop, doubtful sideways gaze",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "keeper of a slightly confusing will"
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Keepsake",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quiet keepsake bearer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+        "WSA_GAPS_ESTATE_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny portrait locket held open at belly with a simple abstract silhouette"
+      ],
+      "temperament": "Quiet keepsake bearer.",
+      "prompt_auszug": "wide scalloped body, soft lids and warm small smile",
+      "prompt_quelle": "GAPS_ESTATE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "quiet keepsake bearer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "thematic_family": "The Estate Committee",
+    "team_kit": "Soft ink-blue, muted plum and cream, compact formal wear and quiet florist accents",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Everyday roles and absurd material encounters.",
+    "trios": [
+      {
+        "id": "WSA_GAPS_ESTATE_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_GAPS_ESTATE_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+      "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+      "WSA_GAPS_ESTATE_ACTOR_20261107_03",
+      "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+      "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+      "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+    ]
+  }
+}

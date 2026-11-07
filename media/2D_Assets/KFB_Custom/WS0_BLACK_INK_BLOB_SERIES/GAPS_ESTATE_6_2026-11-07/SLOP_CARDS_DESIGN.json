@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+      "name": "Ivy Longribbon",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wreath maker.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Leave enough ribbon for the name."
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ivy Longribbon joins The Estate Committee as wreath maker. “Leave enough ribbon for the name.”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small oval wreath with extra ribbon rolled in one goo hand.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wreath maker",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+      "name": "Bram Smallbequest",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Heir with a small inheritance.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It feels heavier than it looks."
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram Smallbequest joins The Estate Committee as heir with a small inheritance. “It feels heavier than it looks.”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny sealed parcel held close in both hands.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "heir with a small inheritance",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_03",
+      "name": "Faye Indexcards",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Speaker keeping notes out of the wind.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the top one, please."
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_A"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Faye Indexcards joins The Estate Committee as speaker keeping notes out of the wind. “Hold the top one, please.”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: three large cards with one edge curled upward.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "speaker keeping notes out of the wind",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+      "name": "Alf Obituary",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Deliberate obituary editor.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The final sentence needs a comma."
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Alf Obituary joins The Estate Committee as deliberate obituary editor. “The final sentence needs a comma.”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: folded blank obituary proof with large pencil.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "deliberate obituary editor",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+      "name": "Perry Willfold",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeper of a slightly confusing will.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Which copy says who gets the lamp?"
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Perry Willfold joins The Estate Committee as keeper of a slightly confusing will. “Which copy says who gets the lamp?”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: rolled cream folio tied with a blunt wax seal.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "keeper of a slightly confusing will",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_ESTATE_ACTOR_20261107_06",
+      "name": "Wes Keepsake",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Quiet keepsake bearer.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I remember the coat."
+          ],
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_ESTATE_20261107",
+            "trio": "WSA_GAPS_ESTATE_20261107_TRIO_B"
+          },
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Wes Keepsake joins The Estate Committee as quiet keepsake bearer. “I remember the coat.”",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny portrait locket held open at belly with a simple abstract silhouette.",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quiet keepsake bearer",
+          "src": "GAPS_ESTATE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

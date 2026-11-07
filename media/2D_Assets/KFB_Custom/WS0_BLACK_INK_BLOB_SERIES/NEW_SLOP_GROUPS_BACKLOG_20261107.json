@@ -24,7 +24,10 @@
           "prop": "short windsock bent the wrong way on a stubby pole"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_WEATHER_20261107",
+      "manifest": "GAPS_WEATHER_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 2,
@@ -46,7 +49,10 @@
           "prop": "blank claim slip and pencil poised to improvise"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_LOST_20261107",
+      "manifest": "GAPS_LOST_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_LOST_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 3,
@@ -68,7 +74,10 @@
           "prop": "three large cards with one edge curled upward"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_ESTATE_20261107",
+      "manifest": "GAPS_ESTATE_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 4,
@@ -90,7 +99,10 @@
           "prop": "small amber jar and oversized clean rubber stamp"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_INSECT_20261107",
+      "manifest": "GAPS_INSECT_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_INSECT_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 5,
@@ -112,7 +124,10 @@
           "prop": "small pale rolled tube at flank and a short chunky thermometer with red tip"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_DEEP_20261107",
+      "manifest": "GAPS_DEEP_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_DEEP_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 6,
@@ -134,7 +149,10 @@
           "prop": "small large-spiral fossil half exposed in a clay matrix held in both hands"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_GEO_20261107",
+      "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_GEO_6_2026-11-07/sheet-r1.png"
     },
     {
       "order": 7,
@@ -143,9 +161,15 @@
       "title_de": "Setzerei der entlaufenen Druckfehler",
       "title_en": "The Runaway Misprint Foundry",
       "seed_roles": [
-        "Typesetter holding a reversed letter",
-        "Proofreader with an oversized comma",
-        "Misprint hiding in its proof sheet"
+        {
+          "role": "Typesetter holding a reversed letter"
+        },
+        {
+          "role": "Proofreader with an oversized comma"
+        },
+        {
+          "role": "Misprint hiding in its proof sheet"
+        }
       ],
       "status": "QUEUED"
     },
@@ -156,9 +180,15 @@
       "title_de": "Kleiner Haushaltsspuk",
       "title_en": "Small Domestic Hauntings",
       "seed_roles": [
-        "Radiator ghost with bleed key",
-        "Bedsheet ghost with clothespins",
-        "Night fright carrying its own nightlight"
+        {
+          "role": "Radiator ghost with bleed key"
+        },
+        {
+          "role": "Bedsheet ghost with clothespins"
+        },
+        {
+          "role": "Night fright carrying its own nightlight"
+        }
       ],
       "status": "QUEUED"
     },
@@ -169,11 +199,23 @@
       "title_de": "Dolmetscher für Unübersetzbares",
       "title_en": "Interpreters for the Untranslatable",
       "seed_roles": [
-        "Interpreter for creaking doors",
-        "Recorder of meaningful pauses",
-        "Interpreter filing a shrug in three binders"
+        {
+          "role": "Interpreter for creaking doors"
+        },
+        {
+          "role": "Recorder of meaningful pauses"
+        },
+        {
+          "role": "Interpreter filing a shrug in three binders"
+        }
       ],
       "status": "QUEUED"
     }
-  ]
+  ],
+  "counts": {
+    "queued": 3,
+    "draft_awaiting_georg": 6,
+    "pass": 0
+  },
+  "next_queued_batch": 3
 }

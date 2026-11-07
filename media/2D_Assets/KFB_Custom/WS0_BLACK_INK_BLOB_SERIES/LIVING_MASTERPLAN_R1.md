@@ -1,3 +1,11 @@
+## New theme backlog, batches 1 and 2 · 2026-11-07
+
+The first two batches introduce 36 Slops across weather maintenance, lost property, the estate committee, the insect hotel, deep sea after hours and geological complaints. Six transparent 3×2 sheets include English character records and two trio relations per sheet. Georg's design verdict is pending. Printing, domestic hauntings and interpreters remain queued in the nine-theme backlog.
+
+[Backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) · [Batch record](NEW_SLOP_GROUPS_BATCHES_01_02_20261107.json)
+
+---
+
 ## Psychology design acceptance and nine new themes · 2026-11-07
 
 Georg accepted all six psychology and psychoanalysis sheets and their 36 designs. The index contains 209 accepted sheets and 1254 depictions. Intake eligibility covers 207 sheets and 1242 depictions. Game and Asset Librarian intake follows individual isolation.

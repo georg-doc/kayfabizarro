@@ -1,3 +1,17 @@
+# WSA Return · New theme batches 1 and 2 · 2026-11-07
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The psychology PASS and nine-theme queue are recorded at c1b2edeb698a8d2b963ad24cf4697ae0f40f8796 with 29 file readbacks. The accepted index has 209 sheets and 1254 depictions, including 207 sheets and 1242 depictions eligible for intake.
+
+The first two batches introduce 36 Slops across weather maintenance, lost property, the estate committee, the insect hotel, deep sea after hours and geological complaints. Six transparent 3×2 sheets include English character records and two trio relations per sheet. Georg's design verdict is pending. Printing, domestic hauntings and interpreters remain queued in the nine-theme backlog.
+
+Six native image jobs used the two original style inputs. All six 1536×1024 RGBA sheets contain true alpha. Visual review covered the full images and light composites. Four sheets cross nominal cell divisions. Pale handprints repeat on the deep-sea figures and mineral smears repeat on the geology figures. Individual isolation and runtime checks remain pending.
+
+[Backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) · [Batch record](NEW_SLOP_GROUPS_BATCHES_01_02_20261107.json)
+
+This phase writes 53 paths. The next gate is Georg's design verdict on the six sheets.
+
+---
+
 ## Psychology design acceptance and nine new themes · 2026-11-07
 
 Georg accepted all six psychology and psychoanalysis sheets and their 36 designs. The index contains 209 accepted sheets and 1254 depictions. Intake eligibility covers 207 sheets and 1242 depictions. Game and Asset Librarian intake follows individual isolation.

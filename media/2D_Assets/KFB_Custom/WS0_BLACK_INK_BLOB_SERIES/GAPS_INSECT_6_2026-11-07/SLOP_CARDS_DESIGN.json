@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_01",
+      "name": "Mina Lamplight",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Moth guest.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is the lamp included?"
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_A"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Lamplight joins The Insect Hotel as moth guest. “Is the lamp included?”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short rounded fuzzy antenna accents and a tiny bedside lamp held in hand.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "moth guest",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_02",
+      "name": "Bert Bagbeetle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Beetle porter.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One bag. Very round."
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_A"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert Bagbeetle joins The Insect Hotel as beetle porter. “One bag. Very round.”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two small beetle-shell shoulder plates and a smooth luggage ball on a short strap.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "beetle porter",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_03",
+      "name": "Tess Pollenstamp",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bee at pollen customs.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Please declare the pollen."
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_A"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Tess Pollenstamp joins The Insect Hotel as bee at pollen customs. “Please declare the pollen.”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small amber jar and oversized clean rubber stamp.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "bee at pollen customs",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_04",
+      "name": "Ned Roomreed",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Reception clerk.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The middle reed is yours."
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_B"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ned Roomreed joins The Insect Hotel as reception clerk. “The middle reed is yours.”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: three bundled hollow reeds with tiny blank room tags.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "reception clerk",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_05",
+      "name": "Hal Cocoonlaundry",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Laundry attendant.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The silk is almost dry."
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_B"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hal Cocoonlaundry joins The Insect Hotel as laundry attendant. “The silk is almost dry.”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny folded cocoon-shaped blanket held at waist.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "laundry attendant",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_INSECT_ACTOR_20261107_06",
+      "name": "Otto Leafbell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Night porter.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Someone rang in the bark."
+          ],
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_INSECT_20261107",
+            "trio": "WSA_GAPS_INSECT_20261107_TRIO_B"
+          },
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otto Leafbell joins The Insect Hotel as night porter. “Someone rang in the bark.”",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: little leaf-shaped call bell with brass knob.",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "night porter",
+          "src": "GAPS_INSECT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}
