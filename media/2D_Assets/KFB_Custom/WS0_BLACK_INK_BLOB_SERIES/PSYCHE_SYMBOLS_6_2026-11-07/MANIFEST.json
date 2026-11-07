@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_SYMBOLS_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+    "sha256": "fbdb5d998e35ca2bb9b0cb76518742f28748856b0eebeaf46d5fd82f3ff9ad5e"
+  },
+  "production_record": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_SYMBOLS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_SYMBOLS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Night Symbols",
+    "theme": "Surreal dream symbolism",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Sparekey",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "curious threshold dreamer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "stubby oversized brass key with a round handle"
+      ],
+      "temperament": "Curious threshold dreamer.",
+      "prompt_auszug": "thin sideways comma, bright lifted eyes and parted smile",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "curious threshold dreamer"
+    },
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Stairloop",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "confused impossible-stair traveller",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small impossible stair sculpture cupped in both hands"
+      ],
+      "temperament": "Confused impossible-stair traveller.",
+      "prompt_auszug": "wide squat blob, off-axis eyes and small O mouth",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "confused impossible-stair traveller"
+    },
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Mooncup",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted moon collector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny smooth crescent resting upright in a pale teacup"
+      ],
+      "temperament": "Delighted moon collector.",
+      "prompt_auszug": "round high pear, pleased upward gaze and open asymmetric grin",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "delighted moon collector"
+    },
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Threadend",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "uneasy maze navigator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "single red thread wound around a palm-sized clay labyrinth tile"
+      ],
+      "temperament": "Uneasy maze navigator.",
+      "prompt_auszug": "tall soft oval, knitted brows and tight frown",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "uneasy maze navigator"
+    },
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Mirrorwell",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "doubtful mirror bearer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small silver-backed hand mirror angled outward, smooth face with abstract reflection"
+      ],
+      "temperament": "Doubtful mirror bearer.",
+      "prompt_auszug": "broad uneven splat, sidelong eyes and compressed lips",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "doubtful mirror bearer"
+    },
+    {
+      "id": "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Hourglass",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary time dreamer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+        "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short clean glass hourglass with homogeneous warm clay sand volume"
+      ],
+      "temperament": "Weary time dreamer.",
+      "prompt_auszug": "drooping upright bean, sleepy lids and tiny wavy mouth",
+      "prompt_quelle": "PSYCHE_SYMBOLS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary time dreamer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "Surreal dream symbolism",
+    "team_kit": "Muted midnight blue with warm clay gold, smooth enamel and glass",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03",
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+      "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+    ]
+  }
+}

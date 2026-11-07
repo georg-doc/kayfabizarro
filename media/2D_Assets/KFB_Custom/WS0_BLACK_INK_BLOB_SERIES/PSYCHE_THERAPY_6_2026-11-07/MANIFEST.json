@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_THERAPY_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+    "sha256": "edce8920dc9619630a7783eb61205e39a1afd6b78b6ae006c29e0e7297d11876"
+  },
+  "production_record": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_THERAPY_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_THERAPY_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Circle With One Extra Chair",
+    "theme": "Group therapy and psychiatric care",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Mara Round",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "attentive group facilitator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small egg timer and open palm gesture"
+      ],
+      "temperament": "Attentive group facilitator.",
+      "prompt_auszug": "broad upright splat, patient gaze, attentive small smile",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "attentive group facilitator"
+    },
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Drew Turnyet",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "eager participant learning to wait",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "simple padded talking token pressed to belly"
+      ],
+      "temperament": "Eager participant learning to wait.",
+      "prompt_auszug": "springy tall bean, upturned wide eyes and closed eager smile",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "eager participant learning to wait"
+    },
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gordon Firstword",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "hesitant newcomer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded note held between two goo hands"
+      ],
+      "temperament": "Hesitant newcomer.",
+      "prompt_auszug": "narrow tucked-in pear, eyes peeking sideways, trembling lip",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "hesitant newcomer"
+    },
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Boundaries",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "determined boundary setter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short soft knitted ribbon stretched just in front of body"
+      ],
+      "temperament": "Determined boundary setter.",
+      "prompt_auszug": "low wide blob, eyebrows set, calm firm mouth",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "determined boundary setter"
+    },
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf Longpause",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary listener who has found a quiet moment",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny plain tea mug with a simple smooth handle"
+      ],
+      "temperament": "Weary listener who has found a quiet moment.",
+      "prompt_auszug": "broad slumped bean, half lids and relief smile",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary listener who has found a quiet moment"
+    },
+    {
+      "id": "WSA_PSYCHE_THERAPY_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cobb Checklist",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "earnest intake administrator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_THERAPY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+        "WSA_PSYCHE_THERAPY_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "thick plain clipboard with large blank checkboxes"
+      ],
+      "temperament": "Earnest intake administrator.",
+      "prompt_auszug": "square offset splat, worried gaze and tight mouth",
+      "prompt_quelle": "PSYCHE_THERAPY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "earnest intake administrator"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "Group therapy and psychiatric care",
+    "team_kit": "Warm teal, soft sage, quiet gray and ochre, plain comfortable wraps",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_THERAPY_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_THERAPY_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_03",
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+      "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+    ]
+  }
+}

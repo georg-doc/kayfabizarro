@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_SOCIAL_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+    "sha256": "f051a9c4656c2022cf2b35ab26760f6b1b856196e30861112920acf798c704e8"
+  },
+  "production_record": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_SOCIAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_SOCIAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Committee of Bad Habits",
+    "theme": "Social dynamics and distress as visual metaphors",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Echo",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "self-reinforcing echo chamber",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "two small tin speaking funnels facing one another"
+      ],
+      "temperament": "Self-reinforcing echo chamber.",
+      "prompt_auszug": "wide angled body, eyes following the echo, smug tight grin",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "self-reinforcing echo chamber"
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Borrowblame",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "scapegoating habit",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "plain pointing-arrow token held upside down"
+      ],
+      "temperament": "Scapegoating habit.",
+      "prompt_auszug": "squat broad blob, eyes averted, pinched defensive mouth",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "scapegoating habit"
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Statuspin",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "status anxiety",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small stepped podium ornament and oversized blank badge"
+      ],
+      "temperament": "Status anxiety.",
+      "prompt_auszug": "thin upright droplet, furrowed raised brows, worried closed lips",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "status anxiety"
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jade Thoughtloop",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rumination",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short looped strip of smooth clay ribbon at belly"
+      ],
+      "temperament": "Rumination.",
+      "prompt_auszug": "curved pear, downcast eyes tracking loop, tired flat mouth",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "rumination"
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Spiral",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rising panic",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "palm-sized curled spring clutched in both hands"
+      ],
+      "temperament": "Rising panic.",
+      "prompt_auszug": "tall tilted blob, wide offset eyes, small round mouth",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "rising panic"
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Avoidance",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "avoidant habit",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+        "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small clay folding screen held sideways at flank, full body visible"
+      ],
+      "temperament": "Avoidant habit.",
+      "prompt_auszug": "low curved blob, sideways watchful gaze, puckered lips",
+      "prompt_quelle": "PSYCHE_SOCIAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "avoidant habit"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "Social dynamics and distress as visual metaphors",
+    "team_kit": "Rust, slate and amber on dark satin clay. Strong symbolic props",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03",
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+      "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+    ]
+  }
+}

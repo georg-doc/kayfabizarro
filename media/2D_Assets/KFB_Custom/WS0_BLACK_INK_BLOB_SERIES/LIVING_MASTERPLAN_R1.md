@@ -1,3 +1,11 @@
+## Psychology and psychoanalysis families · 2026-11-07
+
+Six transparent 3×2 sheets introduce 36 Slops across Freud and psychoanalysis, C. G. Jung, Jung-inspired archetypes, dream symbols, therapy and social patterns. Each set includes English names, design cards, short biographies and two trio relations. Georg's design verdict is pending.
+
+[Batch record](PSYCHE_FAMILIES_BATCH_20261107.json).
+
+---
+
 ## Injury and recovery design acceptance · 2026-11-07
 
 Georg accepted all six injury and recovery sheets and their 36 designs. The index contains 203 accepted sheets and 1218 depictions. Intake eligibility covers 201 sheets and 1206 depictions. Game and Asset Librarian intake follows individual isolation.

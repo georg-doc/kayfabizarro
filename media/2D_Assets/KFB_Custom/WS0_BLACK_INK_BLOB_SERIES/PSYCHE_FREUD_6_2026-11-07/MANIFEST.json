@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_FREUD_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+    "sha256": "a949424bde9929d4fce6c7e46849ae838a2e82679fabd6f93157abc2301644d5"
+  },
+  "production_record": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_FREUD_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_FREUD_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Couch Has Notes",
+    "theme": "Freud and psychoanalysis",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sigmund Freud",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wry historical analyst",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short gray pointed beard, round spectacles, compact dark waistcoat, small notebook at flank"
+      ],
+      "temperament": "Wry historical analyst.",
+      "prompt_auszug": "broad pear, one lid raised, tight amused smile",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "wry historical analyst"
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Wordchain",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "eager free associator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short ribbon of three tactile pictogram beads, a key, an apple and a bell"
+      ],
+      "temperament": "Eager free associator.",
+      "prompt_auszug": "tall upright comma, wide curious eyes, mouth half open",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "eager free associator"
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Slipword",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "embarrassed verbal slip",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two mismatched speech-shaped clay tokens held against chest, blank surfaces"
+      ],
+      "temperament": "Embarrassed verbal slip.",
+      "prompt_auszug": "squashed block blob, caught mid-gasp with off-axis pupils",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "embarrassed verbal slip"
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Couchfold",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "skeptical analysand",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small upholstered chaise cushion with a folded rug corner, held in hand"
+      ],
+      "temperament": "Skeptical analysand.",
+      "prompt_auszug": "lean reverse comma, side-eye and taut crooked lip",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "skeptical analysand"
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Giles Defence",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "defensive intellectualizer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "thick hardcover held like a miniature shield"
+      ],
+      "temperament": "Defensive intellectualizer.",
+      "prompt_auszug": "round squat splat, raised eyebrows and pressed lips",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "defensive intellectualizer"
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Dreamnote",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sleepy keeper of dreams",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+        "WSA_PSYCHE_FREUD_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small bedside notebook and old brass pencil"
+      ],
+      "temperament": "Sleepy keeper of dreams.",
+      "prompt_auszug": "wide droop, heavy lids and faint closed smile",
+      "prompt_quelle": "PSYCHE_FREUD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sleepy keeper of dreams"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "Freud and psychoanalysis",
+    "team_kit": "Burgundy, walnut, brass, muted cream and a small oriental-patterned textile accent",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_FREUD_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_FREUD_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_03",
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+      "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+    ]
+  }
+}

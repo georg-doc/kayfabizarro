@@ -1358,11 +1358,54 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_PSYCHE_FREUD_20261107",
+      "manifest": "PSYCHE_FREUD_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PSYCHE_JUNG_20261107",
+      "manifest": "PSYCHE_JUNG_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PSYCHE_ARCHETYPES_20261107",
+      "manifest": "PSYCHE_ARCHETYPES_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PSYCHE_SYMBOLS_20261107",
+      "manifest": "PSYCHE_SYMBOLS_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PSYCHE_THERAPY_20261107",
+      "manifest": "PSYCHE_THERAPY_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_PSYCHE_SOCIAL_20261107",
+      "manifest": "PSYCHE_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
     "pass": 0
   },
   "production_supplement": {

@@ -1,3 +1,15 @@
+# WSA Return · Psychology and psychoanalysis · 2026-11-07
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Injury and recovery PASS is recorded at a797d17142a2d0cbb9b75306d563b77e530dbd7d with 28 file readbacks. The accepted index records 203 sheets and 1218 depictions, including 201 sheets and 1206 depictions eligible for intake.
+
+Six transparent 3×2 sheets introduce 36 Slops across Freud and psychoanalysis, C. G. Jung, Jung-inspired archetypes, dream symbols, therapy and social patterns. Each set includes English names, design cards, short biographies and two trio relations. Georg's design verdict is pending.
+
+Six native original-reference jobs produced 1536×1024 RGBA sheets with true background alpha. Visual review covered full sheets and small composites. 5 sheets have visible pixels crossing nominal cell divisions. The symbol sheet has a detached question mark, and fabric texture is still pronounced on parts of the archetype and Jung sheets. Individual isolation and runtime checks remain pending.
+
+[Batch record](PSYCHE_FAMILIES_BATCH_20261107.json) holds the images, checks and thematic sources. This phase writes 52 paths. The next gate is Georg's design verdict.
+
+---
+
 ## Injury and recovery design acceptance · 2026-11-07
 
 Georg accepted all six injury and recovery sheets and their 36 designs. The index contains 203 accepted sheets and 1218 depictions. Intake eligibility covers 201 sheets and 1206 depictions. Game and Asset Librarian intake follows individual isolation.
